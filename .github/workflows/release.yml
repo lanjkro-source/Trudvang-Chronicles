@@ -11,11 +11,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Validate system
         run: node tools/validate-system.mjs
@@ -23,14 +23,17 @@ jobs:
       - name: Package system
         run: node tools/package-system.mjs
 
-      - name: Read version
-        id: version
-        shell: pwsh
-        run: 'echo "value=$((Get-Content system.json -Raw | ConvertFrom-Json).version)" >> $env:GITHUB_OUTPUT'
-
       - name: Publish release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ steps.version.outputs.value }}
-          name: Trudvang Chronicles v${{ steps.version.outputs.value }}
-          files: dist/trudvang-chronicles.zip
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          $tag = "v$((Get-Content system.json -Raw | ConvertFrom-Json).version)"
+          gh release view $tag > $null 2>&1
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag dist/trudvang-chronicles.zip --clobber
+            Write-Output "Release $tag mise a jour."
+          } else {
+            gh release create $tag dist/trudvang-chronicles.zip --title "Trudvang Chronicles $tag" --generate-notes
+            Write-Output "Release $tag creee."
+          }
