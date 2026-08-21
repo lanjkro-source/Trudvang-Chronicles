@@ -189,7 +189,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
-      "item-equip", "item-create"
+      "item-equip", "item-create", "show-catalog-detail"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = event.currentTarget.closest("[data-item-id]")?.dataset.itemId;

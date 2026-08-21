@@ -48,7 +48,8 @@
 .trudvang-sheet .profile-img { width: 92px; height: 92px; border: 2px solid var(--trudvang-gold); object-fit: cover; background: #d6c49f; box-shadow: 0 2px 8px #0008; }
 .trudvang-sheet .compact .profile-img { width: 68px; height: 68px; }
 .trudvang-sheet .actor-name { width: 100%; height: 38px; padding: 0 4px; color: #f7edd9; background: transparent; border: 0; border-bottom: 1px solid #b8985e; font-size: 1.55rem; font-weight: 600; }
-.trudvang-sheet .identity-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px 9px; margin-top: 7px; }
+.trudvang-sheet .identity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px 9px; margin-top: 7px; }
+.trudvang-sheet .identity-secondary { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 9px; }
 .trudvang-sheet .identity-grid label { color: #d8c59f; font-size: .67rem; text-transform: uppercase; letter-spacing: .06em; }
 .trudvang-sheet .identity-grid input, .trudvang-sheet .identity-grid select { width: 100%; height: 20px; padding: 0 3px; color: #fff4df; background: rgba(255,255,255,.08); border-color: #9d8050; font-size: .82rem; text-transform: none; }
 .trudvang-sheet .identity-grid option { color: var(--trudvang-ink); }

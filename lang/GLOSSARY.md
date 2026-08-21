@@ -100,6 +100,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ShowInactiveMagic` | Show inaccessible powers | Afficher les pouvoirs inaccessibles |
 | `TRUDVANG.Action.ExpandAll` | Expand the entire skill tree | Déplier toute l'arborescence des compétences |
 | `TRUDVANG.Action.CollapseAll` | Collapse the entire skill tree | Replier toute l'arborescence des compétences |
+| `TRUDVANG.Action.Delete` | Delete | Supprimer |
 
 ## `TRUDVANG.Field`
 

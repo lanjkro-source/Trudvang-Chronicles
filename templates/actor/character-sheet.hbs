@@ -9,8 +9,10 @@
         </label>
         <label>{{localize "TRUDVANG.Field.Culture"}}<select name="system.details.culture" {{#unless creationMode}}disabled{{/unless}}><option value=""></option>{{selectOptions config.cultures selected=system.details.culture}}</select></label>
         <label>{{localize "TRUDVANG.Field.NativeLanguage"}}<select name="system.details.nativeLanguage" {{#unless creationMode}}disabled{{/unless}}>{{selectOptions config.nativeLanguages selected=system.details.nativeLanguage}}</select></label>
-        <label>{{localize "TRUDVANG.Field.Archetype"}}<select name="system.details.archetype" {{#unless creationMode}}disabled{{/unless}}><option value=""></option>{{selectOptions config.archetypes selected=system.details.archetype}}</select></label>
-        <label>{{localize "TRUDVANG.Field.Religion"}}<select name="system.details.religion" {{#unless religionEditable}}disabled{{/unless}}><option value=""></option>{{selectOptions config.religions selected=system.details.religion}}</select></label>
+        <div class="identity-secondary">
+          <label>{{localize "TRUDVANG.Field.Religion"}}<select name="system.details.religion" {{#unless religionEditable}}disabled{{/unless}}><option value=""></option>{{selectOptions config.religions selected=system.details.religion}}</select></label>
+          <label>{{localize "TRUDVANG.Field.Archetype"}}<select name="system.details.archetype" {{#unless creationMode}}disabled{{/unless}}><option value=""></option>{{selectOptions config.archetypes selected=system.details.archetype}}</select></label>
+        </div>
       </div>
     </div>
     <button type="button" class="initiative-button" data-action="roll-initiative" title="{{localize 'TRUDVANG.Action.RollInitiative'}}">

@@ -15,6 +15,10 @@ export class TrudvangItemSheet extends BaseItemSheet {
       && Number(this.item.system.level || 0) > 0;
   }
 
+  get structuralLocked() {
+    return this.item.type === "ability" && Boolean(this.item.system.catalogId);
+  }
+
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["trudvang", "sheet", "item"],
@@ -45,11 +49,24 @@ export class TrudvangItemSheet extends BaseItemSheet {
     super.activateListeners(html);
     const root = html[0] ?? html;
     if (this.levelManaged) root.querySelector("[name='system.level']")?.setAttribute("disabled", "disabled");
+    if (this.structuralLocked) {
+      for (const name of ["system.kind", "system.parentSkill", "system.parentDiscipline", "system.costTrait", "system.level"]) {
+        root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
+      }
+    }
     if (this.advancementLocked) {
       for (const name of ["system.kind", "system.parentSkill", "system.parentDiscipline", "system.costTrait", "system.tabletType"]) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
+    root.querySelector("[data-action='delete-item']")?.addEventListener("click", async () => {
+      const parent = this.item.parent;
+      if (parent?.type === "character" && !parent.system.experience?.creationMode) {
+        return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CreationModeRequired"));
+      }
+      await this.item.delete();
+      this.close();
+    });
     root.querySelector("[data-action='roll']")?.addEventListener("click", event => {
       event.preventDefault();
       this.item.roll();

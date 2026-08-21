@@ -76,7 +76,8 @@
       "HideInactiveMagic": "Masquer les pouvoirs inaccessibles",
       "ShowInactiveMagic": "Afficher les pouvoirs inaccessibles",
       "ExpandAll": "Déplier toute l'arborescence des compétences",
-      "CollapseAll": "Replier toute l'arborescence des compétences"
+      "CollapseAll": "Replier toute l'arborescence des compétences",
+      "Delete": "Supprimer"
     },
     "Field": {
       "Name": "Nom",

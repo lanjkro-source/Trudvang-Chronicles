@@ -76,7 +76,8 @@
       "HideInactiveMagic": "Hide inaccessible powers",
       "ShowInactiveMagic": "Show inaccessible powers",
       "ExpandAll": "Expand the entire skill tree",
-      "CollapseAll": "Collapse the entire skill tree"
+      "CollapseAll": "Collapse the entire skill tree",
+      "Delete": "Delete"
     },
     "Field": {
       "Name": "Name",
