@@ -1,0 +1,36 @@
+name: Build release
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate system
+        run: node tools/validate-system.mjs
+
+      - name: Package system
+        run: node tools/package-system.mjs
+
+      - name: Read version
+        id: version
+        shell: pwsh
+        run: 'echo "value=$((Get-Content system.json -Raw | ConvertFrom-Json).version)" >> $env:GITHUB_OUTPUT'
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.value }}
+          name: Trudvang Chronicles v${{ steps.version.outputs.value }}
+          files: dist/trudvang-chronicles.zip
