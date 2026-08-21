@@ -1,0 +1,2766 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "Non-Player Character"
+    },
+    "Item": {
+      "weapon": "Weapon",
+      "armor": "Armor",
+      "shield": "Shield",
+      "gear": "Gear",
+      "potion": "Extract / Potion",
+      "spell": "Spell",
+      "tablet": "Tablet",
+      "divineFeat": "Divine Feat",
+      "ability": "Discipline / Specialty"
+    }
+  },
+  "TRUDVANG": {
+    "Sheets": {
+      "Character": "Trudvang Character Sheet",
+      "Npc": "Trudvang Compact NPC Sheet",
+      "Item": "Trudvang Item Sheet"
+    },
+    "Settings": {
+      "StarterContentName": "Starter content version",
+      "StarterContentHint": "Tracks the installed Trudvang starter library."
+    },
+    "Tab": {
+      "Summary": "Summary",
+      "Skills": "Skills",
+      "Equipment": "Equipment",
+      "Magic": "Magic & Faith",
+      "Notes": "Notes",
+      "Actions": "Actions"
+    },
+    "Section": {
+      "Traits": "Character Traits",
+      "Status": "Status",
+      "Experience": "Creation & Experience",
+      "QuickActions": "Quick Actions",
+      "Skills": "Skills",
+      "Disciplines": "Disciplines & Specialties",
+      "Weapons": "Weapons",
+      "Protection": "Armor & Shields",
+      "Gear": "Gear & Extracts",
+      "Magic": "Tablets, Spells & Divine Feats",
+      "Appearance": "Appearance",
+      "History": "History",
+      "Notes": "Notes",
+      "Description": "Description",
+      "Affinities": "Magical & Religious Affinities"
+    },
+    "Action": {
+      "Roll": "Roll",
+      "Cancel": "Cancel",
+      "Use": "Use",
+      "Damage": "Damage",
+      "Parry": "Parry",
+      "RollDamage": "Roll Damage",
+      "RollInitiative": "Roll Initiative",
+      "ResetCombat": "Reset Combat Points",
+      "AdvanceSkill": "Buy the next Skill Value with Adventure Points",
+      "AdvanceItem": "Buy the next level with Adventure Points",
+      "StartCreation": "Character creation mode",
+      "FinishCreation": "Finish character creation",
+      "ConfirmAdvancement": "Confirm",
+      "CancelAdvancement": "Cancel and refund",
+      "AddKnowledge": "Add discipline or specialty",
+      "Add": "Add",
+      "Close": "Close",
+      "AddTablet": "Add a compatible tablet",
+      "ToggleTree": "Expand or collapse",
+      "HideUnlearned": "Hide level-0 knowledge",
+      "ShowUnlearned": "Show level-0 knowledge",
+      "HideInactiveMagic": "Hide inaccessible powers",
+      "ShowInactiveMagic": "Show inaccessible powers",
+      "ExpandAll": "Expand the entire skill tree",
+      "CollapseAll": "Collapse the entire skill tree"
+    },
+    "Field": {
+      "Name": "Name",
+      "Race": "Race",
+      "Culture": "Culture",
+      "Archetype": "Archetype",
+      "NativeLanguage": "Mother Tongue",
+      "Religion": "Religion",
+      "CreatureType": "Type",
+      "Size": "Size",
+      "FearFactor": "Fear Factor",
+      "SV": "SV",
+      "Bonus": "Bonus",
+      "CreationTotal": "Creation Points",
+      "BuildCost": "Calculated build cost",
+      "CreationRemaining": "Remaining",
+      "AdventurePoints": "Adventure Points",
+      "PendingAdventurePoints": "Pending Adventure Points",
+      "AdventureSpent": "Adventure Points spent",
+      "Unassigned": "Unassigned",
+      "CostTrait": "Trait affecting cost",
+      "Automatic": "Automatic",
+      "CoreBonus": "Core-skill bonus",
+      "CoreBonusHint": "Up to 50 creation points are automatically applied first to Knowledge and the archetype's other core skill.",
+      "CoreSkill": "Archetype core skill",
+      "Quantity": "Quantity",
+      "Weight": "Weight (kg)",
+      "Value": "Value (silver coins)",
+      "Category": "Category",
+      "Damage": "Damage Formula",
+      "OpenRoll": "Open Roll Threshold (0 = none)",
+      "WeaponActions": "Weapon Actions",
+      "AttackValue": "Default CP per Attack",
+      "InitiativeModifier": "Initiative Modifier",
+      "VitnerType": "Vitner Type",
+      "PerfectSuccess": "Perfect Success on",
+      "NoPerfectSuccess": "No perfect success",
+      "FatalDie": "Fatal Effect Die",
+      "Protection": "Protection Value",
+      "Breach": "Breach Value / Maximum",
+      "Equipped": "Equipped",
+      "Heft": "Heft",
+      "MovementModifier": "Movement Modifier",
+      "Strength": "Extract Strength",
+      "Application": "Application",
+      "Duration": "Duration",
+      "Effect": "Effect",
+      "Level": "Level",
+      "Cost": "Cost",
+      "Modifier": "Skill Modifier",
+      "Tablet": "Tablet",
+      "Range": "Range",
+      "WeavingTime": "Weaving Time",
+      "TabletType": "Tablet Type",
+      "AbilityKind": "Knowledge Type",
+      "ParentSkill": "Parent Skill",
+      "ParentDiscipline": "Parent Discipline",
+      "RollBonus": "Bonus per Level",
+      "Source": "Source",
+      "ActiveSpell": "Currently maintained spell",
+      "ActiveCost": "Vitner cost when activated"
+    },
+    "Resource": {
+      "Body": "Body Points",
+      "Combat": "Combat Points",
+      "Raud": "Raud",
+      "Fear": "Fear",
+      "Vitner": "Vitner Points",
+      "Divinity": "Divinity Points",
+      "Initiative": "Initiative",
+      "Movement": "Movement",
+      "Protection": "Protection",
+      "DamageLevel": "Damage Level",
+      "FearPenalty": "Fear Penalty",
+      "PersistenceInWild": "Persistence in the Wild",
+      "VitnerCost": "Vitner Point Cost",
+      "DivinityCost": "Divinity Point Cost"
+    },
+    "Trait": {
+      "Charisma": "Charisma",
+      "Constitution": "Constitution",
+      "Dexterity": "Dexterity",
+      "Intelligence": "Intelligence",
+      "Perception": "Perception",
+      "Psyche": "Psyche",
+      "Strength": "Strength"
+    },
+    "Skill": {
+      "Agility": "Agility",
+      "Care": "Care",
+      "Entertainment": "Entertainment",
+      "Faith": "Faith",
+      "Fighting": "Fighting",
+      "Knowledge": "Knowledge",
+      "ShadowArts": "Shadow Arts",
+      "VitnerCraft": "Vitner Craft",
+      "Wilderness": "Wilderness",
+      "agility": "Agility",
+      "care": "Care",
+      "entertainment": "Entertainment",
+      "faith": "Faith",
+      "fighting": "Fighting",
+      "knowledge": "Knowledge",
+      "shadowArts": "Shadow Arts",
+      "vitnerCraft": "Vitner Craft",
+      "wilderness": "Wilderness"
+    },
+    "SkillDescription": {
+      "agility": "Agility governs balance, movement, riding, evasion, and other feats of bodily control.",
+      "care": "Care covers crafts, treatment, leadership, trade, extracts, and practical professional work.",
+      "entertainment": "Entertainment covers performance, music, dance, storytelling, and games of chance.",
+      "faith": "Faith governs religious knowledge, invocations, divine power, and access to Holy Tablets.",
+      "fighting": "Fighting governs armed and unarmed combat, defensive reactions, and battle experience.",
+      "knowledge": "Knowledge covers languages, cultures, learning, religion, lore, and scholarly insight.",
+      "shadowArts": "Shadow Arts covers stealth, disguise, theft, traps, and covert observation.",
+      "vitnerCraft": "Vitner Craft governs perceiving, calling, and shaping vitner through spells and Vitner Tablets.",
+      "wilderness": "Wilderness covers travel, survival, hunting, navigation, nature, and seafaring."
+    },
+    "Race": {
+      "Human": "Human",
+      "Elf": "Elf",
+      "Buratja": "Buratja Dwarf",
+      "Borjornikka": "Borjornikka Dwarf",
+      "Zvorda": "Zvorda Dwarf",
+      "HalfElf": "Half-Elf",
+      "Changeling": "Changeling",
+      "GrayBrute": "Gray Brute",
+      "Ogro": "Ogro"
+    },
+    "Weapon": {
+      "OneHandedLight": "One-Handed Light",
+      "OneHandedHeavy": "One-Handed Heavy",
+      "TwoHanded": "Two-Handed",
+      "Ranged": "Ranged",
+      "Natural": "Natural"
+    },
+    "Tablet": {
+      "Vitner": "Vitner Tablet",
+      "Holy": "Holy Tablet",
+      "vitner": "Vitner Tablet",
+      "holy": "Holy Tablet"
+    },
+    "AbilityKind": {
+      "discipline": "Discipline",
+      "specialty": "Specialty",
+      "feat": "Creature Feat"
+    },
+    "Unit": {
+      "Days": "days"
+    },
+    "Culture": {
+      "Stormlander": "Stormlander",
+      "Mittlander": "Mittlander",
+      "Virann": "Virann",
+      "Wildfolk": "Wildfolk",
+      "Korpikalli": "Korpikalli",
+      "Illmalaini": "Illmalaini",
+      "Buratja": "Buratja",
+      "Borjornikka": "Borjornikka",
+      "HalfElf": "Half-Elf",
+      "HalfTroll": "Half-Troll",
+      "DwarfTroll": "Dwarf-Troll",
+      "Changeling": "Changeling",
+      "Dyfir": "Dyfir",
+      "Zvorda": "Zvorda",
+      "GrayBrute": "Gray Brute",
+      "Barkbrule": "Barkbrule",
+      "Ogro": "Ogro"
+    },
+    "Language": {
+      "Eika": "Eika (Elf / Half-Elf)",
+      "Futhark": "Futhark (Dwarf / Half-Dwarf)",
+      "Rona": "Rona (Human)",
+      "Vrok": "Vrok (Human)",
+      "WildVrok": "Wild Vrok (Human / Half-Troll)"
+    },
+    "Archetype": {
+      "Bard": "Bard",
+      "Dimwalker": "Dimwalker",
+      "Dweller": "Dweller",
+      "Ranger": "Ranger",
+      "Rogue": "Rogue",
+      "VitnerWeaver": "Vitner Weaver",
+      "Warrior": "Warrior"
+    },
+    "Knowledge": {
+      "bodyControl": "Body Control",
+      "ambidexterity": "Ambidexterity",
+      "jestering": "Jestering",
+      "jumpingClimbingBalancing": "Jumping, Climbing & Balancing",
+      "swimming": "Swimming",
+      "horsemanship": "Horsemanship",
+      "drivingWagon": "Driving Wagon",
+      "riding": "Riding",
+      "battleManeuver": "Battle Maneuver",
+      "combatMovement": "Combat Movement",
+      "evade": "Evade",
+      "ironclad": "Ironclad",
+      "handler": "Handler",
+      "commander": "Commander",
+      "sage": "Sage",
+      "handicraft": "Handicraft",
+      "counterfeiting": "Counterfeiting",
+      "hardMaterials": "Hard Materials",
+      "softMaterials": "Soft Materials",
+      "tradesman": "Tradesman",
+      "barber": "Barber",
+      "brewer": "Brewer",
+      "cook": "Cook",
+      "peasant": "Peasant",
+      "trader": "Trader",
+      "healingDrugs": "Healing & Drugs",
+      "extractsPotions": "Extracts & Potions",
+      "firstAidNursing": "First Aid & Nursing",
+      "gambling": "Gambling",
+      "cheater": "Cheater",
+      "gameStrategist": "Game Strategist",
+      "greatGambler": "Great Gambler",
+      "musicDancing": "Music & Dancing",
+      "dance": "Dance",
+      "singingPlayingInstruments": "Singing & Playing Instruments",
+      "storytelling": "Storytelling",
+      "acting": "Acting",
+      "libel": "Libel",
+      "godFocus": "God Focus",
+      "composed": "Composed",
+      "lightningQuickInvocation": "Lightning-Quick Invocation",
+      "potent": "Potent",
+      "rigorous": "Rigorous",
+      "divinePower": "Divine Power",
+      "faithful": "Faithful",
+      "powerful": "Powerful",
+      "invoke": "Invoke",
+      "bruid": "Bruid",
+      "gavlian": "Gavlian",
+      "ihana": "Ihana",
+      "noaj": "Noaj",
+      "thuulForging": "Thuul Forging",
+      "stormkelt": "Stormkelt",
+      "armedFighting": "Armed Fighting",
+      "oneHandedLightWeapons": "1H Light Weapons",
+      "oneHandedHeavyWeapons": "1H Heavy Weapons",
+      "throwingWeapons": "Throwing Weapons",
+      "shieldBearer": "Shield Bearer",
+      "twoHandedWeapons": "Two-Handed Weapons",
+      "crossbow": "Crossbow",
+      "bowsSlings": "Bows & Slings",
+      "unarmedFighting": "Unarmed Fighting",
+      "brawling": "Brawling",
+      "wrestling": "Wrestling",
+      "battleExperience": "Battle Experience",
+      "armorBearer": "Armor Bearer",
+      "combatActions": "Combat Actions",
+      "combatReaction": "Combat Reaction",
+      "crossbowLoader": "Crossbow Loader",
+      "fighter": "Fighter",
+      "cultureKnowledge": "Culture Knowledge",
+      "customsLaw": "Customs & Law",
+      "loreLegends": "Lore & Legends",
+      "religion": "Religion",
+      "learning": "Learning",
+      "insight": "Insight",
+      "raceKnowledge": "Race Knowledge",
+      "monsterLore": "Monster Lore",
+      "spiritLore": "Spirit Lore",
+      "language": "Language",
+      "bribery": "Bribery",
+      "calculate": "Calculate",
+      "foreignTongue": "Foreign Tongue",
+      "motherTongue": "Mother Tongue",
+      "readWrite": "Read & Write",
+      "silvertongue": "Silvertongue",
+      "shadowing": "Shadowing",
+      "camouflageHiding": "Camouflage & Hiding",
+      "findingSpotting": "Finding & Spotting",
+      "sneakAttack": "Sneak Attack",
+      "walkingShadows": "Walking in Shadows",
+      "thievery": "Thievery",
+      "disguise": "Disguise",
+      "locksTraps": "Locks & Traps",
+      "stealing": "Stealing",
+      "shadowWorld": "Shadow World",
+      "thiefSigns": "Thief Signs",
+      "vitnerFocus": "Vitner Focus",
+      "potency": "Potency",
+      "safeWeaving": "Safe-weaving",
+      "strenuous": "Strenuous",
+      "vitnerShaping": "Vitner Shaping",
+      "galding": "Galding",
+      "sejding": "Sejding",
+      "vitnerRunes": "Vitner Runes",
+      "vyrding": "Vyrding",
+      "callVitner": "Call of Vitner",
+      "hwitalja": "Hwitalja",
+      "darkhwitalja": "Darkhwitalja",
+      "vaagritalja": "Vaagritalja",
+      "vitnerHabit": "Vitner Habit",
+      "geography": "Geography",
+      "cityKnowledge": "City Knowledge",
+      "landKnowledge": "Land Knowledge",
+      "orienteeringCartography": "Orienteering & Cartography",
+      "seaKnowledge": "Sea Knowledge",
+      "huntingExperience": "Hunting Experience",
+      "carveButcher": "Carve & Butcher",
+      "huntingFishing": "Hunting & Fishing",
+      "speciesHunter": "Species Hunter",
+      "tracker": "Tracker",
+      "wildernessSigns": "Wilderness Signs",
+      "natureKnowledge": "Nature Knowledge",
+      "animalFriend": "Animal Friend",
+      "botany": "Botany",
+      "weatherman": "Weatherman",
+      "zoology": "Zoology",
+      "seafarer": "Seafarer",
+      "navigation": "Navigation",
+      "seaman": "Seaman",
+      "survival": "Survival",
+      "camper": "Camper",
+      "pathwalker": "Pathwalker",
+      "terrainExperience": "Terrain Experience",
+      "weathered": "Weathered"
+    },
+    "KnowledgeDescription": {
+      "strenuous": "Strenuous lets the conjurer spend 2 additional Vitner Points per specialty level to gain +1 SV per amount spent when weaving a spell."
+    },
+    "Damage": {
+      "light": "Lightly Damaged",
+      "injured": "Injured",
+      "serious": "Seriously Injured",
+      "critical": "Critically Injured"
+    },
+    "Dialog": {
+      "BaseTarget": "Base target: {target}",
+      "Modifier": "Situation Modifier",
+      "CombatPoints": "Combat Points to Spend",
+      "AttackTitle": "Attack: {item}",
+      "ParryTitle": "Parry: {item}",
+      "MagicAction": "Magic or Divine Action",
+      "NoMagicAction": "No magic modifier",
+      "InitiativeAction": "Weapon, spell, or divine action",
+      "NoInitiativeAction": "No action modifier",
+      "AddTablet": "Add a compatible tablet",
+      "MagicMethod": "Method and specialty",
+      "FinalTarget": "Final Skill Value",
+      "Strenuous": "Strenuous effort",
+      "FinalVitnerCost": "Final Vitner cost"
+    },
+    "Roll": {
+      "Success": "Success",
+      "Failure": "Failure",
+      "Critical": {
+        "success": "Perfect success",
+        "failure": "Automatic failure"
+      },
+      "OpenRoll": "Open roll on",
+      "OpenInitiative": "Initiative uses 1d10 with an open roll on 10.",
+      "Margin": "Success margin"
+    },
+    "Warning": {
+      "NotEnoughPower": "There are not enough points in this power reserve.",
+      "SkillMaximum": "A general Skill Value cannot exceed 10.",
+      "NotEnoughExperience": "The next level costs {cost} Adventure Points.",
+      "LevelMaximum": "This knowledge is already at level 5.",
+      "SkillRequirement": "The next level requires a base Skill Value of {sv}.",
+      "ExitCreationFirst": "Finish character creation before spending Adventure Points.",
+      "ResolveAdvancementsFirst": "Confirm or cancel the pending advancements first.",
+      "CreationBudgetExceeded": "The character exceeds the creation budget by {cost} points.",
+      "CreationModeRequired": "This change is only available in character creation mode.",
+      "TraitLimit": "This trait cannot be raised or lowered further.",
+      "SkillLimit": "Skill Value must remain between 1 and 10.",
+      "KnowledgeLimit": "Knowledge level must remain between 1 and 5.",
+      "SkillSupportsKnowledge": "This Skill Value is required by one of its disciplines, specialties, or tablets.",
+      "ParentDisciplineRequired": "The parent discipline must be learned before this specialty.",
+      "KnowledgeRequirement": "{item} requires {skill} at SV {sv}.",
+      "MissingParentDiscipline": "{item} must be assigned to a learned parent discipline.",
+      "KnowledgeNotLearned": "This discipline or specialty has not been learned yet.",
+      "DisciplineSupportsSpecialty": "This discipline cannot be removed while one of its specialties is learned.",
+      "CultureRequired": "Choose a culture before completing character creation.",
+      "ArchetypeRequired": "Choose an archetype before completing character creation.",
+      "VitnerExclusive": "Hwitalja, Darkhwitalja, and Vaagritalja are mutually exclusive.",
+      "ReligionExclusive": "Only one religious path can grant divine powers.",
+      "ReligionIncompatible": "This religious path is not compatible with the character's race.",
+      "FatalTableMissing": "The required fatal-effects table is not installed.",
+      "UnknownTablet": "This item is not a tablet from the system catalogue.",
+      "TabletAlreadyKnown": "This tablet is already known.",
+      "TabletSkillRequirement": "Faith or Vitner Craft must have a Skill Value of at least 4.",
+      "TabletKnowledgeRequired": "Learn Vitner Shaping or the Invoke specialty of the chosen religion before adding one of its tablets.",
+      "VitnerRequired": "Choose a Vitner tradition before adding a Vitner Tablet.",
+      "ReligionRequired": "Choose a compatible religious path before adding a Holy Tablet.",
+      "TabletReligionMismatch": "This Holy Tablet does not belong to the character's compatible chosen religion.",
+      "NoCompatibleTablets": "No additional tablet is currently compatible with this character.",
+      "MagicMethodRequired": "Learn the required discipline and at least one applicable invocation or weaving specialty."
+    },
+    "Description": {
+      "SkillSummary": "{name} is a general skill used as the base value for its related actions and knowledge.",
+      "KnowledgeSummary": "{name} is a discipline or specialty that improves the related skill checks.",
+      "DisciplineSummary": "{name} covers {topics} and adds its level to the related checks.",
+      "SpecialtySummary": "{name} focuses on this particular application of {discipline} and adds twice its level to applicable checks.",
+      "TabletSummary": "{name} gathers the spells or divine powers belonging to this magical tradition.",
+      "PowerSummary": "{name} is a power from {tablet}; its complete rules description will be added later.",
+      "SourcePage": "Player's Handbook, p. {page}"
+    },
+    "Cost": {
+      "Increase": "Increase: costs {cost} points",
+      "Refund": "Decrease: refunds {cost} points",
+      "IncreaseCore": "Increase: {cost} points, including {bonus} from the archetype bonus and {creation} regular creation points"
+    },
+    "Calculation": {
+      "Discipline": "Skill SV {skill} + Discipline {discipline} = SV {total}",
+      "Specialty": "Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total}",
+      "MagicMethod": "Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier",
+      "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points"
+    },
+    "Religion": {
+      "Gerbanis": "Gerbanis",
+      "TenetNid": "Tenet of Nid",
+      "EaldTradition": "Eald Tradition",
+      "Haminges": "Haminges",
+      "Thuuldom": "Thuuldom",
+      "Toikalokke": "Toikalokke"
+    },
+    "TraitBenefit": {
+      "charisma": "Situation modifier {value}. Raud modifier {value} (-4 removes all Raud). Entertainment knowledge and Tradesman cost modifier: {inverse} points per level.",
+      "constitution": "Situation modifier {value}. Body Points modifier {value}; recovery rate also depends on this trait.",
+      "dexterity": "Situation modifier {value}. Movement and initiative modifier {value}. Agility knowledge cost modifier: {inverse} points per level.",
+      "intelligence": "Situation modifier {value}. Knowledge, Faith, and Vitner Craft knowledge cost modifier: {inverse} points per level.",
+      "perception": "Situation modifier {value}. Listed observation, tracking, navigation, weather, and extract specialties have a cost modifier of {inverse} points per level.",
+      "psyche": "Situation modifier {value}. Wilderness persistence {value} days and fear-factor modifier {inverse}. Pathwalker, Terrain Experience, and Weathered cost modifier: {inverse} points per level.",
+      "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
+    },
+    "Notification": {
+      "AdvancementConfirmed": "The advancements have been confirmed.",
+      "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",
+      "CreationModeEnabled": "Character creation mode enabled.",
+      "CreationModeDisabled": "Character creation completed.",
+      "InvalidTraitsRepaired": "Reset invalid -4 defaults to 0 on {count} character(s)."
+    },
+    "New": {
+      "Item": "New {type}"
+    },
+    "Empty": {
+      "Weapons": "Equip a weapon to place it among the quick actions."
+    },
+    "Import": {
+      "Started": "Installing the Trudvang starter library...",
+      "Complete": "Trudvang starter library installed: {items} items, {tables} tables, and {actors} NPCs.",
+      "Failed": "The Trudvang starter library could not be installed. See the console for details."
+    },
+    "Content": {
+      "Folder": {
+        "Weapons": "Trudvang - Weapons",
+        "Armor": "Trudvang - Armor & Shields",
+        "Gear": "Trudvang - Gear & Extracts",
+        "Magic": "Trudvang - Tablets & Magic",
+        "Abilities": "Trudvang - Disciplines & Specialties",
+        "Tables": "Trudvang - Roll Tables",
+        "Creatures": "Trudvang - Creatures"
+      },
+      "Source": {
+        "GMG69": "Game Master's Guide, p. 69",
+        "GMG70": "Game Master's Guide, p. 70",
+        "GMG72": "Game Master's Guide, p. 72",
+        "GMG74": "Game Master's Guide, p. 74",
+        "GMG76": "Game Master's Guide, p. 76",
+        "GMG77": "Game Master's Guide, p. 77",
+        "GMG80": "Game Master's Guide, p. 80",
+        "GMG90": "Game Master's Guide, p. 90",
+        "GMG93": "Game Master's Guide, p. 93",
+        "GMG94": "Game Master's Guide, p. 94",
+        "PHB47": "Player's Handbook, p. 47",
+        "PHB48": "Player's Handbook, p. 48",
+        "PHB50": "Player's Handbook, p. 50",
+        "PHB55": "Player's Handbook, p. 55",
+        "PHB59": "Player's Handbook, p. 59",
+        "PHB69": "Player's Handbook, p. 69",
+        "PHB74": "Player's Handbook, p. 74",
+        "PHB92": "Player's Handbook, p. 92",
+        "PHB201": "Player's Handbook, p. 201"
+      },
+      "Item": {
+        "Seax": {
+          "Name": "Seax (Dagger or Knife)",
+          "Description": "A ubiquitous single-edged knife used for work, ritual blood gifting, throwing, and as a last-resort weapon."
+        },
+        "Glaaf": {
+          "Name": "Glaaf (Short Sword)",
+          "Description": "A short sword, usually double-edged, common in eastern Trudvang and associated with the ancient Brots."
+        },
+        "HringSeax": {
+          "Name": "Hring Seax (Ring Knife)",
+          "Description": "A Mittlander fighting blade with a single inward-curving edge and a ring at the pommel, often tied to the wrist."
+        },
+        "BattleAxe": {
+          "Name": "Barda Axi (Battle Axe)",
+          "Description": "A refined and enlarged hand axe designed for combat."
+        },
+        "Broadsword": {
+          "Name": "Breid Swerd (Broadsword)",
+          "Description": "A robust cutting sword, commonly wielded by Mittlander warriors and sometimes used as a paired weapon."
+        },
+        "BeardedAxe": {
+          "Name": "Villtur Axi (Bearded Axe)",
+          "Description": "A long-shafted Stormlander axe whose L-shaped blade widens the cutting surface without excessive weight."
+        },
+        "LongSpear": {
+          "Name": "Spjot (Long Spear)",
+          "Description": "An effective and inexpensive long spear, especially dangerous in disciplined formations or from horseback."
+        },
+        "TwoHandedAxe": {
+          "Name": "Tvei Axi (Two-Handed Axe)",
+          "Description": "A mighty two-handed axe. Fine examples use iron for both shaft and head."
+        },
+        "TwoHandedSword": {
+          "Name": "Tvei Swerd (Two-Handed Sword)",
+          "Description": "A huge, heavy sword that sacrifices speed for reach, power, and terror on the battlefield."
+        },
+        "HuntingBow": {
+          "Name": "Veidi Bogi (Hunting Bow)",
+          "Description": "A simple hunting bow. It deals full damage at short range and half damage at long range."
+        },
+        "Longbow": {
+          "Name": "Lang Bogi (Longbow)",
+          "Description": "A heavy, composite Stormlander war bow with greater range and a more dangerous open damage roll."
+        },
+        "Crossbow": {
+          "Name": "Krossbogur (Crossbow)",
+          "Description": "A powerful defensive crossbow with excellent range but a slow loading cycle."
+        },
+        "FurLeather": {
+          "Name": "Fur / Leather Armor",
+          "Description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans."
+        },
+        "HardenedLeather": {
+          "Name": "Hardened Leather Armor",
+          "Description": "Leather boiled in oil and formed to the wearer. It is quieter than metal armor and offers moderate protection."
+        },
+        "ChainMail": {
+          "Name": "Chain Mail",
+          "Description": "Thousands of interlinked metal rings worn over padding. Mail is heavy but comparatively flexible."
+        },
+        "PlateArmor": {
+          "Name": "Plate Armor",
+          "Description": "Rare, custom-fitted overlapping metal plates. Plate offers exceptional protection at severe weight and initiative cost."
+        },
+        "SmallShield": {
+          "Name": "Small Wooden Shield",
+          "Description": "A quick shield allowing three weapon actions per round. Shields are used primarily to parry successful melee attacks."
+        },
+        "MediumShield": {
+          "Name": "Medium Wooden Shield",
+          "Description": "A balanced shield allowing two weapon actions per round. On a successful parry, damage is applied to the shield."
+        },
+        "LargeShield": {
+          "Name": "Large Wooden Shield",
+          "Description": "A slow but highly protective shield allowing one weapon action per round."
+        },
+        "AdventureKit": {
+          "Name": "Adventure Kit",
+          "Description": "A bundle of common expedition supplies. Make a Situation roll with a value of 10 to determine whether an ordinary kit contains a plausible item."
+        },
+        "Rope": {
+          "Name": "Hemp Rope",
+          "Description": "A practical length of hemp rope for climbing, binding, hauling, and camp work."
+        },
+        "Torch": {
+          "Name": "Torch",
+          "Description": "A resinous wooden torch providing portable light until consumed."
+        },
+        "DragonBlood": {
+          "Name": "Dragon Blood",
+          "Description": "A legendary altering extract taken from a dragon. It is exceedingly rare and worth about 1,000 silver coins per dose.",
+          "Effect": "Roll 1d20 + extract Strength - Constitution. Mild, moderate, substantial, and complete effects grant +2, +4, +8, or +12 natural Protection Value for one day."
+        },
+        "FrostboarFat": {
+          "Name": "Frostboar's Fat",
+          "Description": "Thick brown fat cut from a frostboar's neck. It smells terrible and can be used without further preparation.",
+          "Effect": "Rubbed on the body, the fat protects against extreme cold and heat for two hours. Determine its degree with the extract-effect roll."
+        },
+        "WoundBalm": {
+          "Name": "Wound-Balm",
+          "Description": "A healing salve prepared for direct application to injuries.",
+          "Effect": "Apply the balm to a wound and resolve its healing degree with the standard extract-effect roll."
+        },
+        "Manetter": {
+          "Name": "Manetter",
+          "Description": "A dangerous poison that slowly strangles its victim and ignores armor and natural protection.",
+          "Effect": "Roll 1d20 + 2 - Constitution and consult the Extract Effect table. Damage is removed directly from Body Points."
+        },
+        "AnimalVitner": {
+          "Name": "Animal Vitner Tablet",
+          "Description": "A Vitner Tablet concerned with speaking to, calling, controlling, possessing, and sending messages through animals."
+        },
+        "FlameCraft": {
+          "Name": "Flame Craft Tablet",
+          "Description": "A Vitner Tablet governing sparks, heat, fire protection, flame control, and devastating seas of fire."
+        },
+        "PowerThought": {
+          "Name": "Power of Thought Tablet",
+          "Description": "A Vitner Tablet governing language, courage, fear, telepathy, memory, control, possession, and mind reading."
+        },
+        "TabletShield": {
+          "Name": "Tablet of the Shield",
+          "Description": "A Holy Tablet of the Tenet of Nid whose divine feats concern shelter, endurance, and protection."
+        },
+        "Messenger": {
+          "Name": "Messenger",
+          "Description": "Imbues a small animal with a simple message and a destination it can reasonably reach.",
+          "Effect": "The animal attempts to travel to the named recipient and deliver the message. Extra levels of power can extend the message or distance."
+        },
+        "SpeakAnimals": {
+          "Name": "Speak to Animals",
+          "Description": "Allows the enchanter to understand and communicate with a nearby animal.",
+          "Effect": "For the duration, the caster can exchange simple ideas with animals; intelligence and disposition still limit the conversation."
+        },
+        "CallAnimals": {
+          "Name": "Call on Animals",
+          "Description": "Calls animals of a chosen general kind from the surrounding area.",
+          "Effect": "Nearby animals may travel toward the caster. Extra levels of power increase range, number, or duration as approved by the game master."
+        },
+        "Spark": {
+          "Name": "Spark",
+          "Description": "Creates a focused magical spark capable of igniting suitable tinder.",
+          "Effect": "Ignites a small combustible target within range. It is not a full combat flame unless enhanced by levels of power."
+        },
+        "BurningHand": {
+          "Name": "Burning Hand",
+          "Description": "Wraps the caster's hand in searing magical flame for a close attack.",
+          "Effect": "The touched target suffers magical fire damage determined by the spell's level of power; ordinary protection may be limited by the game master."
+        },
+        "FlameBurst": {
+          "Name": "Flame Burst",
+          "Description": "Hurls a compact burst of flame that detonates at the selected point.",
+          "Effect": "Targets in the burst suffer fire damage. Additional levels of power can increase damage or area."
+        },
+        "Courage": {
+          "Name": "Courage",
+          "Description": "Strengthens a creature's mind against dread.",
+          "Effect": "Reduces Fear Points or grants a bonus against fear for the duration, according to the spell's level of power."
+        },
+        "Fear": {
+          "Name": "Fear",
+          "Description": "Projects a terrifying thought directly into a target's mind.",
+          "Effect": "The target gains Fear Points; Psyche and other protections may reduce the effect."
+        },
+        "ArmedFighting": {
+          "Name": "Armed Fighting",
+          "Description": "A Fighting discipline covering combat with manufactured weapons. Each level contributes +1 in applicable actions."
+        },
+        "OneHandLight": {
+          "Name": "One-Handed Light Weapons",
+          "Description": "An Armed Fighting specialty. Each level contributes +2 when fighting with one-handed light weapons and adds locked Combat Points."
+        },
+        "ShieldBearer": {
+          "Name": "Shield Bearer",
+          "Description": "An Armed Fighting specialty. Its first level removes the normal shield-hand penalty when using shields; further levels improve shield use."
+        },
+        "BattleExperience": {
+          "Name": "Battle Experience",
+          "Description": "A Fighting discipline covering combat awareness, initiative, armor use, and tactical maneuvers."
+        },
+        "BodyControl": {
+          "Name": "Body Control",
+          "Description": "An Agility discipline covering balance, controlled movement, evasion, and ambidexterity."
+        },
+        "Horsemanship": {
+          "Name": "Horsemanship",
+          "Description": "An Agility discipline covering riding, mounted movement, and mounted combat."
+        },
+        "HealingDrugs": {
+          "Name": "Healing and Drugs",
+          "Description": "A Care discipline covering diagnosis, healing, extracts, poisons, potions, and treatment."
+        },
+        "DivinePower": {
+          "Name": "Divine Power",
+          "Description": "A Faith discipline that grants divinity capacity and access to Holy Tablets and divine feats."
+        },
+        "VitnerShaping": {
+          "Name": "Vitner Shaping",
+          "Description": "A Vitner Craft discipline used with Galding, Sejding, or Vyrding specialties to weave spells."
+        },
+        "Survival": {
+          "Name": "Survival",
+          "Description": "A Wilderness discipline covering prolonged travel, shelter, weather, food, and life beyond settled lands."
+        }
+      },
+      "Table": {
+        "StormlanderMale": {
+          "Name": "Names - Stormlander Men"
+        },
+        "StormlanderFemale": {
+          "Name": "Names - Stormlander Women"
+        },
+        "ExtractEffect": {
+          "Name": "Extract Effects",
+          "Mild": "Mild effect (1-5)",
+          "Moderate": "Moderate effect (6-10), followed by mild",
+          "Substantial": "Substantial effect (11-15), followed by moderate and mild",
+          "Complete": "Complete effect (16-20), followed by each lower effect"
+        },
+        "FearLevel": {
+          "Name": "Fear Levels",
+          "One": "Fear level 1 (1-10): uneasy, no universal modifier",
+          "Two": "Fear level 2 (11-20): frightened, -1 SV and initiative",
+          "Three": "Fear level 3 (21-30): horrified, -3 SV and initiative",
+          "Four": "Fear level 4 (31-40): terrified, -5 SV and initiative",
+          "Five": "Fear level 5 (41-50): petrified, -7 SV and initiative"
+        },
+        "StartingExperience": {
+          "Name": "Starting Experience",
+          "Beginner": "Beginner - 300 Creation Points",
+          "Practiced": "Practiced - 500 Creation Points",
+          "Experienced": "Experienced - 700 Creation Points"
+        },
+        "RandomExtract": {
+          "Name": "Random Extract"
+        },
+        "TraitCost": {
+          "Name": "Trait Levels and Creation Cost",
+          "MinusFour": "Trait -4: gain 60 Creation Points",
+          "MinusTwo": "Trait -2: gain 30 Creation Points",
+          "MinusOne": "Trait -1: gain 15 Creation Points",
+          "PlusOne": "Trait +1: spend 15 Creation Points",
+          "PlusTwo": "Trait +2: spend 30 Creation Points",
+          "PlusFour": "Trait +4: spend 60 Creation Points"
+        },
+        "DisciplineCost": {
+          "Name": "Discipline and Specialty Costs",
+          "One": "Level 1: requires base SV 4; costs 7 points",
+          "Two": "Level 2: requires base SV 7; costs 14 points",
+          "Three": "Level 3: requires base SV 7; costs 21 points",
+          "Four": "Level 4: requires base SV 10; costs 28 points",
+          "Five": "Level 5: requires base SV 10; costs 35 points"
+        },
+        "WeaponDamage": {
+          "Name": "Weapon Damage and Open Rolls",
+          "Light": "One-handed light: 1d10, open roll on 10",
+          "Heavy": "One-handed heavy: 1d10, open roll on 9-10",
+          "TwoHanded": "Two-handed: 1d10, open roll on 8-10"
+        },
+        "RaceStats": {
+          "Name": "Racial Body Points and Movement"
+        },
+        "FatalMagic": {
+          "Name": "Fatal Magic Effects",
+          "E0": "Nothing special happens.",
+          "E21": "The enchanter becomes lethargic and apathetic, suffering -2 on everything for 1d3 hours.",
+          "E23": "The enchanter loses 1d10 Vitner Points from their capacity (minimum 1) for 1d3 hours.",
+          "E25": "The enchanter suffers -2 on everything and loses 1d10 Vitner Points from their capacity (minimum 1) for 1d3 hours.",
+          "E29": "The enchanter suffers -2 on everything and loses 1d10 Vitner Points from their capacity (minimum 1) for 1d6 hours.",
+          "E31": "The enchanter loses 1d10 (OR 9-10) Vitner Points from their remaining capacity (minimum 1) for one day.",
+          "E33": "The failed spell absorbs vitner within 1d10 (OR 10) meters. Each creature loses 1d3 Vitner Points; creatures without Vitner Points instead lose that many Body Points.",
+          "E35": "A vitner enclosure surrounds the enchanter. Within 10 meters of another enchanter it flashes for 1d6 damage that ignores non-magical armor, losing equal strength until emptied.",
+          "E37": "The failed spell absorbs vitner within 1d10 (OR 10) meters. Each creature loses 1d6 Vitner Points; creatures without Vitner Points instead lose that many Body Points.",
+          "E39": "The enchanter loses one third of their vitner capacity for 1d3 days and suffers a visual negation (1d10): 1-2 bark skin; 3-4 doubled finger length; 5-6 grass hair; 7-8 local-animal fur; 9 the closest person suffers 1-8; 10 everyone within 10 meters suffers 1-8.",
+          "E41": "A vitner enclosure surrounds the enchanter. Within 20 meters of another enchanter it flashes for 1d6 damage that ignores non-magical armor, losing equal strength until emptied.",
+          "E43": "The failed spell absorbs vitner within 1d10 (OR 10) meters. Each creature loses 1d10 Vitner Points; creatures without Vitner Points instead lose that many Body Points.",
+          "E44": "A vitner enclosure surrounds the enchanter. Within 50 meters of another enchanter it flashes for 1d6 damage that ignores non-magical armor, losing equal strength until emptied.",
+          "E45": "The enchanter loses half their vitner capacity for 1d6 days and suffers a visual negation (1d10): 1-2 bark skin; 3-4 doubled finger length; 5-6 peat-moss hair; 7-8 local-animal fur; 9 the closest person suffers 1-8; 10 everyone within 10 meters suffers 1-8.",
+          "E46": "The enchanter becomes vitner-blind and cannot evoke spells for 1d6 days. Within 1d10 (OR 10) meters, each creature loses 1d6 Vitner Points; creatures without Vitner Points instead lose that many Body Points.",
+          "E47": "A vitner enclosure surrounds the enchanter. Everyone within 1d10 (OR 10) meters is hit for 1d10 damage that ignores non-magical armor; each discharge drains 1d3 Vitner Points from the enclosure until emptied.",
+          "E48": "The enchanter loses their memory for 1d3 days and cannot evoke spells or perform skills.",
+          "E49": "A harmless light explosion empties the enchanter of vitner. Capacity drops to 1 and starts recovering after one week.",
+          "E50": "A vitner enclosure surrounds the enchanter. Everyone within 1d10 (OR 9-10) meters is hit for 1d10 damage that ignores non-magical armor; each discharge drains 1 Vitner Point until emptied.",
+          "E51": "The enchanter and every creature within 2d6 meters suffer 1d10 damage that ignores non-magical armor. The enchanter loses half their remaining Vitner Points and recovery starts after one week.",
+          "E52": "The enchanter suffers Body Point damage equal to the spell's total vitner cost, falls unconscious for 1d10 minutes, and drops to 1 vitner capacity; recovery starts after one week.",
+          "E53": "A blinding discharge forces everyone within 2d6 meters to pass a Psyche-modified Situation roll against 10 or go blind for 1d5 minutes. The enchanter suffers damage equal to the spell's vitner cost, falls unconscious for 1d10 (OR 9-10) minutes, and drops to 1 capacity; recovery starts after one week.",
+          "E54": "The enchanter suffers a minor stroke, takes 2d10 (OR 10) damage, and falls into a coma for 1d10 days.",
+          "E55": "The enchanter suffers damage equal to the spell's vitner cost and falls unconscious for 1d10 (OR 7-10) minutes; everyone within 2d6 meters suffers half that damage. Capacity drops to 1 and recovery starts after two weeks.",
+          "E56": "The enchanter suffers a severe stroke, takes 2d10 (OR 9-10) damage, loses one Intelligence step, and falls unconscious for 1d10 days.",
+          "E57": "An enormous negation absorbs 1d10 (OR 6-10) Body Points and empties all vitner. Capacity drops to 1 and recovery starts after two weeks.",
+          "E58": "The enchanter opens a fog portal to Bloodheim, which devours them.",
+          "E59": "The enchanter becomes a lightning orb that explodes after 2d6 action rounds. Everything within 50 meters suffers 1d10 (OR 7-10) Body Point damage; the enchanter disappears.",
+          "E60": "The enchanter becomes a black-energy orb that explodes after 1d6 action rounds. Everything within 100 meters suffers 1d10 (OR 5-10) Body Point damage and everything within 300 meters suffers half; the enchanter disappears."
+        },
+        "FatalFailure": {
+          "Name": "Fatal Failure Effects",
+          "E0": "Nothing happens.",
+          "E21": "The dimwalker loses touch with spiritual power for 1d6 minutes and cannot use Divinity Points.",
+          "E31": "The dimwalker loses touch with spiritual power for 1d6 hours and cannot use Divinity Points.",
+          "E36": "The dimwalker loses the knowledge and ability to invoke 1d3 random abilities for 1d6 days.",
+          "E41": "The dimwalker loses the knowledge and ability to invoke the attempted ability for 2d6 days.",
+          "E46": "The dimwalker loses the knowledge and ability to invoke 1d3 random abilities for 2d6 days.",
+          "E51": "The dimwalker loses touch with spiritual power for 1d6 days and cannot use Divinity Points.",
+          "E55": "The gods permanently revoke the attempted ability; it will always fail.",
+          "E57": "The gods permanently revoke 1d3 random accessible abilities; they will always fail.",
+          "E59": "The god permanently refuses to grant the dimwalker any divine abilities.",
+          "E60": "The gods immediately destroy the blasphemer and revoke their very existence."
+        }
+      },
+      "Actor": {
+        "Galtir": {
+          "Name": "Galtir",
+          "Description": "A brutish tusked humanoid. This standard specimen has 23 Body Points, Dexterity -1, Intelligence -4, and Strength +2."
+        },
+        "GiantSnake": {
+          "Name": "Giant Snake",
+          "Description": "A massive serpent with crushing coils, Hylja camouflage, and a paralyzing stare. Standard specimen: 95 Body Points."
+        },
+        "GiantSpider": {
+          "Name": "Giant Spider",
+          "Description": "An ancient colossal spider able to throw webs, paralyze prey, and cocoon victims. Standard specimen: 95 Body Points."
+        },
+        "Gryphon": {
+          "Name": "Gryphon",
+          "Description": "A huge winged hunter combining an eagle's head and wings with a feline body. Standard specimen: 87 Body Points."
+        },
+        "NightUlm": {
+          "Name": "Night Ulm",
+          "Description": "A small winged blood-drinker whose numbing saliva can spread the dreaded rugtanne infection. Standard specimen: 25 Body Points."
+        },
+        "ThornBeast": {
+          "Name": "Thorn Beast",
+          "Description": "An immense flying beast whose stench alone can inflict Fear Points. Standard specimen: 171 Body Points."
+        },
+        "TrollBull": {
+          "Name": "Troll Bull",
+          "Description": "A hulking Haminges-worshiping humanoid with horns, natural armor, and a devastating charge. Standard specimen: 58 Body Points."
+        },
+        "Warg": {
+          "Name": "Warg",
+          "Description": "A fast predatory quadruped whose bite can spread warg sickness. Standard specimen: 18 Body Points."
+        }
+      },
+      "Attack": {
+        "BiteTusk": {
+          "Name": "Bite / Tusk"
+        },
+        "Bite": {
+          "Name": "Bite"
+        },
+        "Claws": {
+          "Name": "Claws"
+        },
+        "ImpalingLeg": {
+          "Name": "Impaling Leg"
+        },
+        "Horns": {
+          "Name": "Horns"
+        }
+      },
+      "Feat": {
+        "DeepBellow": {
+          "Name": "Deep Bellow",
+          "Description": "The galtir unleashes a violent bellow; nearby creatures may need to resist fear or distraction."
+        },
+        "Fearless": {
+          "Name": "Fearless",
+          "Description": "The creature is unusually resistant or immune to ordinary sources of Fear Points."
+        },
+        "Constricting": {
+          "Name": "Constricting (SV 10)",
+          "Description": "After surrounding a victim, the snake tightens its coils. The victim must break free or suffer crushing consequences."
+        },
+        "ParalyzingStare": {
+          "Name": "Paralyzing Stare",
+          "Description": "The victim makes a Psyche-based Situation roll with Situation Value 6 or is paralyzed for 1d3 action rounds."
+        },
+        "AttackWeb": {
+          "Name": "Attack Web (SV 9)",
+          "Description": "Throws a broad sticky web. A trapped victim needs a Strength-based Situation roll, usually against Situation Value 7, to break free."
+        },
+        "AttackAbove": {
+          "Name": "Attack From Above",
+          "Description": "The gryphon exploits flight and momentum to strike from above before climbing away."
+        },
+        "Bloodsucker": {
+          "Name": "Bloodsucker",
+          "Description": "Once attached, the night ulm drains blood in subsequent rounds and may expose a human victim to disease."
+        },
+        "TerrifyingStench": {
+          "Name": "Terrifying Stench",
+          "Description": "Creatures within 5 meters gain 1d10 open Fear Points from the overwhelming smell unless accustomed to it."
+        },
+        "Charge": {
+          "Name": "Charge",
+          "Description": "The troll bull begins combat with a horn-first rush capable of knocking victims down and increasing damage."
+        },
+        "TrollHeart": {
+          "Name": "Troll Bull Heart",
+          "Description": "The creature's brutal vitality and protective rage make it exceptionally difficult to stop."
+        },
+        "WargSickness": {
+          "Name": "Warg Sickness",
+          "Description": "A bitten human may contract a transformative disease. A Constitution- and Psyche-based Situation roll is commonly required to resist it."
+        }
+      },
+      "Tablet": {
+        "vitner-animal-vitner": {
+          "Name": "Animal Vitner"
+        },
+        "vitner-body-vitner": {
+          "Name": "Body Vitner"
+        },
+        "vitner-delusion-vitner": {
+          "Name": "Delusion Vitner"
+        },
+        "vitner-dimvitner": {
+          "Name": "Dimvitner"
+        },
+        "vitner-flame-craft": {
+          "Name": "Flame Craft"
+        },
+        "vitner-perceiving": {
+          "Name": "Perceiving"
+        },
+        "vitner-power-of-thought": {
+          "Name": "Power of Thought"
+        },
+        "vitner-power-of-vision": {
+          "Name": "Power of Vision"
+        },
+        "vitner-soil-craft": {
+          "Name": "Soil Craft"
+        },
+        "vitner-vitner-craft": {
+          "Name": "Vitner Craft"
+        },
+        "vitner-vitner-of-objects": {
+          "Name": "Vitner of Objects"
+        },
+        "vitner-water-craft": {
+          "Name": "Water Craft"
+        },
+        "vitner-wind-craft": {
+          "Name": "Wind Craft"
+        },
+        "vitner-witchcraft": {
+          "Name": "Witchcraft"
+        },
+        "holy-gerbanis-influence-of-jorn": {
+          "Name": "Influence of Jorn"
+        },
+        "holy-gerbanis-power-of-enken": {
+          "Name": "Power of Enken"
+        },
+        "holy-gerbanis-strength-of-stormi": {
+          "Name": "Strength of Stormi"
+        },
+        "holy-gerbanis-warmth-of-sunvei": {
+          "Name": "Warmth of Sunvei"
+        },
+        "holy-gerbanis-wisdom-of-windinna": {
+          "Name": "Wisdom of Windinna"
+        },
+        "holy-gerbanis-wrath-of-tyrd": {
+          "Name": "Wrath of Tyrd"
+        },
+        "holy-ealdtradition-gift-of-thanja": {
+          "Name": "Gift of Thanja"
+        },
+        "holy-ealdtradition-halawen-s-offering": {
+          "Name": "Halawen's Offering"
+        },
+        "holy-ealdtradition-heritage-of-majne": {
+          "Name": "Heritage of Majne"
+        },
+        "holy-ealdtradition-magh-s-gift": {
+          "Name": "Magh's Gift"
+        },
+        "holy-ealdtradition-nema-s-usefulness": {
+          "Name": "Nema's Usefulness"
+        },
+        "holy-ealdtradition-tribute-of-morgu": {
+          "Name": "Tribute of Morgu"
+        },
+        "holy-tenetnid-tablet-of-anger": {
+          "Name": "Tablet of Anger"
+        },
+        "holy-tenetnid-tablet-of-grace": {
+          "Name": "Tablet of Grace"
+        },
+        "holy-tenetnid-tablet-of-the-knight": {
+          "Name": "Tablet of the Knight"
+        },
+        "holy-tenetnid-tablet-of-the-shield": {
+          "Name": "Tablet of the Shield"
+        },
+        "holy-tenetnid-tablet-of-the-sun": {
+          "Name": "Tablet of the Sun"
+        },
+        "holy-tenetnid-tablet-of-voices": {
+          "Name": "Tablet of Voices"
+        },
+        "holy-haminges-power-of-the-beast": {
+          "Name": "Power of the Beast"
+        },
+        "holy-haminges-power-of-the-dragon": {
+          "Name": "Power of the Dragon"
+        },
+        "holy-haminges-power-of-men": {
+          "Name": "Power of Men"
+        },
+        "holy-haminges-power-of-the-scale": {
+          "Name": "Power of the Scale"
+        },
+        "holy-haminges-power-of-the-thurses": {
+          "Name": "Power of the Thurses"
+        },
+        "holy-haminges-power-of-trolls": {
+          "Name": "Power of Trolls"
+        },
+        "holy-thuuldom-anvil-shock": {
+          "Name": "Anvil Shock"
+        },
+        "holy-thuuldom-borjorn-s-hand": {
+          "Name": "Borjorn's Hand"
+        },
+        "holy-thuuldom-cave-spider-s-grip": {
+          "Name": "Cave Spider's Grip"
+        },
+        "holy-thuuldom-earthquake": {
+          "Name": "Earthquake"
+        },
+        "holy-thuuldom-fang-of-yukk": {
+          "Name": "Fang of Yukk"
+        },
+        "holy-thuuldom-gills-of-the-blackfish": {
+          "Name": "Gills of the Blackfish"
+        },
+        "holy-thuuldom-hammer-fists": {
+          "Name": "Hammer Fists"
+        },
+        "holy-thuuldom-healing-rune": {
+          "Name": "Healing Rune"
+        },
+        "holy-thuuldom-heat-of-the-depths": {
+          "Name": "Heat of the Depths"
+        },
+        "holy-thuuldom-labyrinth-blood": {
+          "Name": "Labyrinth Blood"
+        },
+        "holy-thuuldom-mark-of-brokk": {
+          "Name": "Mark of Brokk"
+        },
+        "holy-thuuldom-power-of-repair": {
+          "Name": "Power of Repair"
+        },
+        "holy-thuuldom-scales": {
+          "Name": "Scales"
+        },
+        "holy-thuuldom-stoneling": {
+          "Name": "Stoneling"
+        },
+        "holy-thuuldom-stone-to-clay": {
+          "Name": "Stone to Clay"
+        },
+        "holy-thuuldom-stoneshape": {
+          "Name": "Stoneshape"
+        },
+        "holy-thuuldom-well-of-water": {
+          "Name": "Well of Water"
+        },
+        "holy-toikalokke-animal-mind": {
+          "Name": "Animal Mind"
+        },
+        "holy-toikalokke-lynx-power": {
+          "Name": "Lynx Power"
+        },
+        "holy-toikalokke-master-of-elements": {
+          "Name": "Master of Elements"
+        }
+      },
+      "Power": {
+        "vitner-animal-vitner:messenger:0": {
+          "Name": "Messenger",
+          "Summary": "By singing a special song, the mage can use creatures nearby to pass on a message."
+        },
+        "vitner-animal-vitner:speak-to-animals:1": {
+          "Name": "Speak to Animals",
+          "Summary": "This spell creates a spiritual link between the mage and a chosen animal within 50 meters."
+        },
+        "vitner-animal-vitner:call-on-animals:2": {
+          "Name": "Call on Animals",
+          "Summary": "Calls nearby animals of a chosen kind to gather around the mage."
+        },
+        "vitner-animal-vitner:conjure-ravens:3": {
+          "Name": "Conjure Ravens",
+          "Summary": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target."
+        },
+        "vitner-animal-vitner:control-animals:4": {
+          "Name": "Control Animals",
+          "Summary": "The mage can control and direct one or more unintelligent animals."
+        },
+        "vitner-animal-vitner:mind-of-the-wolf:5": {
+          "Name": "Mind of the Wolf",
+          "Summary": "The one affected by the spell gains something that resembles a wolf ’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety , and strength."
+        },
+        "vitner-animal-vitner:possess-animals:6": {
+          "Name": "Possess Animals",
+          "Summary": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body."
+        },
+        "vitner-animal-vitner:create-messenger:7": {
+          "Name": "Create Messenger",
+          "Summary": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination."
+        },
+        "vitner-animal-vitner:send-message:8": {
+          "Name": "Send Message",
+          "Summary": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing."
+        },
+        "vitner-body-vitner:grip:0": {
+          "Name": "Grip",
+          "Summary": "This spell changes the vitner flowing through the enchanted character’s hands and feet so their skin becomes more coarse and adhesive."
+        },
+        "vitner-body-vitner:tipping:1": {
+          "Name": "Tipping",
+          "Summary": "Unbalances a creature so that it falls to the ground."
+        },
+        "vitner-body-vitner:hearing-deafness:2": {
+          "Name": "Hearing/Deafness",
+          "Summary": "This spell can increase the hearing of the enchanted for the duration."
+        },
+        "vitner-body-vitner:sense-of-smell:3": {
+          "Name": "Sense of Smell",
+          "Summary": "This spell can temporarily increase the enchanted person’s sense of smell."
+        },
+        "vitner-body-vitner:vision-blindness:4": {
+          "Name": "Vision/Blindness",
+          "Summary": "This spell can increase the vision of the enchanted for the duration."
+        },
+        "vitner-body-vitner:leather-skin:5": {
+          "Name": "Leather Skin",
+          "Summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather."
+        },
+        "vitner-body-vitner:immobilize:6": {
+          "Name": "Immobilize",
+          "Summary": "This spell creates a prohibitive energy that immobilizes a chosen victim."
+        },
+        "vitner-body-vitner:appearance-change:7": {
+          "Name": "Appearance Change",
+          "Summary": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance."
+        },
+        "vitner-body-vitner:strengthen:8": {
+          "Name": "Strengthen",
+          "Summary": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power."
+        },
+        "vitner-body-vitner:hasten:9": {
+          "Name": "Hasten",
+          "Summary": "This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile."
+        },
+        "vitner-body-vitner:imprison:10": {
+          "Name": "Imprison",
+          "Summary": "The spell is an extension of the spell Immobilize, which means that the enchanter must first successfully immobilize the victim through that spell before attempting to weave this one."
+        },
+        "vitner-body-vitner:change-creature:11": {
+          "Name": "Change Creature",
+          "Summary": "The vitner that the spell brings forth is powerful enough to turn a living creature into the form of an entirely different one."
+        },
+        "vitner-delusion-vitner:roar:0": {
+          "Name": "Roar",
+          "Summary": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap."
+        },
+        "vitner-delusion-vitner:phantom-sound:1": {
+          "Name": "Phantom Sound",
+          "Summary": "The spell suddenly generates one or more noises within the designated range."
+        },
+        "vitner-delusion-vitner:shriek:2": {
+          "Name": "Shriek",
+          "Summary": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell)."
+        },
+        "vitner-delusion-vitner:increase-sounds:3": {
+          "Name": "Increase Sounds",
+          "Summary": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes."
+        },
+        "vitner-delusion-vitner:traceless:4": {
+          "Name": "Traceless",
+          "Summary": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by."
+        },
+        "vitner-delusion-vitner:ghost-voice:5": {
+          "Name": "Ghost Voice",
+          "Summary": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range."
+        },
+        "vitner-delusion-vitner:depict:6": {
+          "Name": "Depict",
+          "Summary": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it."
+        },
+        "vitner-delusion-vitner:camouflage:7": {
+          "Name": "Camouflage",
+          "Summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings."
+        },
+        "vitner-delusion-vitner:landscape-illusion:8": {
+          "Name": "Landscape Illusion",
+          "Summary": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape."
+        },
+        "vitner-delusion-vitner:silence:9": {
+          "Name": "Silence",
+          "Summary": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location."
+        },
+        "vitner-delusion-vitner:lindwurm-illusion:10": {
+          "Name": "Lindwurm Illusion",
+          "Summary": "The spell creates the illusion of a vast lindwurm (or a different beast)."
+        },
+        "vitner-delusion-vitner:invisibility:11": {
+          "Name": "Invisibility",
+          "Summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective."
+        },
+        "vitner-dimvitner:animate-undead:0": {
+          "Name": "Animate Undead",
+          "Summary": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains."
+        },
+        "vitner-dimvitner:hand-of-death:1": {
+          "Name": "Hand of Death",
+          "Summary": "The mage sucks life force out of a living creature, dealing damages."
+        },
+        "vitner-dimvitner:dismiss-undead:2": {
+          "Name": "Dismiss Undead",
+          "Summary": "Drives undead creatures away from the mage with repelling deathly power."
+        },
+        "vitner-dimvitner:speak-to-undead:3": {
+          "Name": "Speak to Undead",
+          "Summary": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse."
+        },
+        "vitner-dimvitner:tendril-of-dimhall:4": {
+          "Name": "Tendril of Dimhall",
+          "Summary": "Channels a tendril of Dimhall's deathly energy through the mage's hands."
+        },
+        "vitner-dimvitner:vitner-theft:5": {
+          "Name": "Vitner Theft",
+          "Summary": "Steals vitner energy from another creature and transfers it to the mage."
+        },
+        "vitner-dimvitner:summon-wight:6": {
+          "Name": "Summon Wight",
+          "Summary": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight."
+        },
+        "vitner-dimvitner:control-undead:7": {
+          "Name": "Control Undead",
+          "Summary": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons."
+        },
+        "vitner-dimvitner:darkness-of-dimhall:8": {
+          "Name": "Darkness of Dimhall",
+          "Summary": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall."
+        },
+        "vitner-flame-craft:heat-water:0": {
+          "Name": "Heat Water",
+          "Summary": "By touching water, the mage can bring up to 5 liters to a boil in that location."
+        },
+        "vitner-flame-craft:spark:1": {
+          "Name": "Spark",
+          "Summary": "Vitner Type Effects for Flame Craft"
+        },
+        "vitner-flame-craft:burning-hand:2": {
+          "Name": "Burning Hand",
+          "Summary": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune)."
+        },
+        "vitner-flame-craft:flame-burst:3": {
+          "Name": "Flame Burst",
+          "Summary": "The spell creates a sudden fire that ignites within 10 meters of the enchanter."
+        },
+        "vitner-flame-craft:protection-from-fire:4": {
+          "Name": "Protection from Fire",
+          "Summary": "The spell creates a film of protective vitner around the body of the enchanter or a selected creature."
+        },
+        "vitner-flame-craft:flame-control:5": {
+          "Name": "Flame Control",
+          "Summary": "armed actions in the same action round in which they conjure the spell."
+        },
+        "vitner-flame-craft:warmth:6": {
+          "Name": "Warmth",
+          "Summary": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C)."
+        },
+        "vitner-flame-craft:sea-of-fire:7": {
+          "Name": "Sea of Fire",
+          "Summary": "The mage points to an area within range, and it suddenly explodes in a sea of flame."
+        },
+        "vitner-perceiving:find-home:0": {
+          "Name": "Find Home",
+          "Summary": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours."
+        },
+        "vitner-perceiving:retrace-tracks:1": {
+          "Name": "Retrace Tracks",
+          "Summary": "The spell allows the enchanted person to easily see their own footprints on the ground."
+        },
+        "vitner-perceiving:detect-object:2": {
+          "Name": "Detect Object",
+          "Summary": "The spell makes it possible for the enchanter to find designated objects within the range."
+        },
+        "vitner-perceiving:orientation:3": {
+          "Name": "Orientation",
+          "Summary": "The spell makes it possible for the enchanter to find designated objects within the range."
+        },
+        "vitner-perceiving:detect-being:4": {
+          "Name": "Detect Being",
+          "Summary": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range."
+        },
+        "vitner-perceiving:detect-undead:5": {
+          "Name": "Detect Undead",
+          "Summary": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range."
+        },
+        "vitner-perceiving:surrounding:6": {
+          "Name": "Surrounding",
+          "Summary": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings."
+        },
+        "vitner-perceiving:map:7": {
+          "Name": "Map",
+          "Summary": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings."
+        },
+        "vitner-power-of-thought:understanding-script:0": {
+          "Name": "Understanding Script",
+          "Summary": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read."
+        },
+        "vitner-power-of-thought:understanding-speech:1": {
+          "Name": "Understanding Speech",
+          "Summary": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand."
+        },
+        "vitner-power-of-thought:courage:2": {
+          "Name": "Courage",
+          "Summary": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage."
+        },
+        "vitner-power-of-thought:fear:3": {
+          "Name": "Fear",
+          "Summary": "The spell sends a wave of manipulative energy through a chosen victim, overwhelming its thoughts with horrific visions."
+        },
+        "vitner-power-of-thought:telepathy:4": {
+          "Name": "Telepathy",
+          "Summary": "The spell creates a mental link between the enchanter and a chosen person within range."
+        },
+        "vitner-power-of-thought:ecstasy:5": {
+          "Name": "Ecstasy",
+          "Summary": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4."
+        },
+        "vitner-power-of-thought:imagining:6": {
+          "Name": "Imagining",
+          "Summary": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind."
+        },
+        "vitner-power-of-thought:memory:7": {
+          "Name": "Memory",
+          "Summary": "Allows the enchanted creature to recall past events with supernatural clarity."
+        },
+        "vitner-power-of-thought:creature-control:8": {
+          "Name": "Creature Control",
+          "Summary": "The enchanter can control and direct an intelligent creature (not an animal) that is within range and line of sight."
+        },
+        "vitner-power-of-thought:aura-of-power:9": {
+          "Name": "Aura of Power",
+          "Summary": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority , and glory."
+        },
+        "vitner-power-of-thought:possess-creature:10": {
+          "Name": "Possess Creature",
+          "Summary": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body."
+        },
+        "vitner-power-of-thought:mind-reading:11": {
+          "Name": "Mind Reading",
+          "Summary": "The enchanter can read a creature’s memories simply by touching it."
+        },
+        "vitner-power-of-vision:tracking:0": {
+          "Name": "Tracking",
+          "Summary": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground."
+        },
+        "vitner-power-of-vision:scanning:1": {
+          "Name": "Scanning",
+          "Summary": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane."
+        },
+        "vitner-power-of-vision:far-sight:2": {
+          "Name": "Far Sight",
+          "Summary": "The mage concentrates on a space, and the swirling energies there form a single hair, a drop of blood, a fingernail, or something similar from the one being pursued."
+        },
+        "vitner-power-of-vision:seeing:3": {
+          "Name": "Seeing",
+          "Summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances."
+        },
+        "vitner-power-of-vision:espionage:4": {
+          "Name": "Espionage",
+          "Summary": "temporarily shifting their consciousness into the object."
+        },
+        "vitner-power-of-vision:astral-voyage:5": {
+          "Name": "Astral Voyage",
+          "Summary": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute."
+        },
+        "vitner-power-of-vision:read-vitner:6": {
+          "Name": "Read Vitner",
+          "Summary": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it."
+        },
+        "vitner-power-of-vision:true-sight:7": {
+          "Name": "True Sight",
+          "Summary": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects."
+        },
+        "vitner-soil-craft:rock-throw:0": {
+          "Name": "Rock Throw",
+          "Summary": "The enchanter picks up a small rock and throws it at a target within range."
+        },
+        "vitner-soil-craft:shape-soil:1": {
+          "Name": "Shape Soil",
+          "Summary": "Softens and reshapes nearby earth and soil according to the mage's will."
+        },
+        "vitner-soil-craft:earthquake:2": {
+          "Name": "Earthquake",
+          "Summary": "The spell causes an area within the range to rumble with a single, heavy tremor."
+        },
+        "vitner-soil-craft:quagmire:3": {
+          "Name": "Quagmire",
+          "Summary": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters."
+        },
+        "vitner-soil-craft:soil-blast:4": {
+          "Name": "Soil Blast",
+          "Summary": "The enchanter picks up a handful of soil from the ground (or a pocket) and hurls it at a target within range."
+        },
+        "vitner-soil-craft:soil-walk:5": {
+          "Name": "Soil Walk",
+          "Summary": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them."
+        },
+        "vitner-soil-craft:shape-stone:6": {
+          "Name": "Shape Stone",
+          "Summary": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay."
+        },
+        "vitner-soil-craft:stone-walk:7": {
+          "Name": "Stone Walk",
+          "Summary": "The spell creates a coating of vitner around the target that pushes away"
+        },
+        "vitner-soil-craft:petrify-remove-petrification:8": {
+          "Name": "Petrify/Remove Petrification",
+          "Summary": "Turns a creature to stone or restores a petrified creature to flesh."
+        },
+        "vitner-vitner-craft:channeling:0": {
+          "Name": "Channeling",
+          "Summary": "The enchanter can benefit from the help of others while weaving a spell."
+        },
+        "vitner-vitner-craft:vitner-pouch:1": {
+          "Name": "Vitner Pouch",
+          "Summary": "The enchanter weaves vitner together to create an astral pouch."
+        },
+        "vitner-vitner-craft:enchant-object:2": {
+          "Name": "Enchant Object",
+          "Summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties."
+        },
+        "vitner-vitner-craft:anti-magic:3": {
+          "Name": "Anti Magic",
+          "Summary": "The spell creates a film of protective vitner around the target."
+        },
+        "vitner-vitner-craft:enchant-being:4": {
+          "Name": "Enchant Being",
+          "Summary": "The spell weaves together a layer of beneficial vitner around a target within range."
+        },
+        "vitner-vitner-craft:seal:5": {
+          "Name": "Seal",
+          "Summary": "The magic in the Seal spell binds another spell within it, which is later added to an object."
+        },
+        "vitner-vitner-craft:dispel-vitner:6": {
+          "Name": "Dispel Vitner",
+          "Summary": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being."
+        },
+        "vitner-vitner-craft:trace-vitner:7": {
+          "Name": "Trace Vitner",
+          "Summary": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation."
+        },
+        "vitner-vitner-craft:wall-of-vitner:8": {
+          "Name": "Wall of Vitner",
+          "Summary": "The enchanter forms a circular wall of vitner with a diameter of 2 meters."
+        },
+        "vitner-vitner-of-objects:detect-composition:0": {
+          "Name": "Detect Composition",
+          "Summary": "The enchanter can identify all nonorganic materials, such as metals and If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall."
+        },
+        "vitner-vitner-of-objects:waterproof:1": {
+          "Name": "Waterproof",
+          "Summary": "The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction."
+        },
+        "vitner-vitner-of-objects:bind:2": {
+          "Name": "Bind",
+          "Summary": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue."
+        },
+        "vitner-vitner-of-objects:rust:3": {
+          "Name": "Rust",
+          "Summary": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on."
+        },
+        "vitner-vitner-of-objects:alarm-object:4": {
+          "Name": "Alarm Object",
+          "Summary": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed."
+        },
+        "vitner-vitner-of-objects:unlock-lock:5": {
+          "Name": "Unlock/Lock",
+          "Summary": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items."
+        },
+        "vitner-vitner-of-objects:enlarge-reduce-object:6": {
+          "Name": "Enlarge/Reduce Object",
+          "Summary": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³)."
+        },
+        "vitner-vitner-of-objects:alter-object:7": {
+          "Name": "Alter Object",
+          "Summary": "The spell affects any object with a size equal to or smaller than a large box."
+        },
+        "vitner-vitner-of-objects:create-object:8": {
+          "Name": "Create Object",
+          "Summary": "Vitner Points This rare and powerful spell creates objects out of thin air."
+        },
+        "vitner-water-craft:find-water:0": {
+          "Name": "Find Water",
+          "Summary": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range."
+        },
+        "vitner-water-craft:purify-water:1": {
+          "Name": "Purify Water",
+          "Summary": "The spell filters water and removes all dangerous and unhealthy substances from up to 10 liters of liquid."
+        },
+        "vitner-water-craft:breathe:2": {
+          "Name": "Breathe",
+          "Summary": "The spell gives the enchanted gills on their neck, which allow them to breathe underwater just as easily as if they were in air."
+        },
+        "vitner-water-craft:form-water:3": {
+          "Name": "Form Water",
+          "Summary": "By controlling the vitner that flows through a source of water within range, the enchanter can form and shape the water as desired."
+        },
+        "vitner-water-craft:create-water:4": {
+          "Name": "Create Water",
+          "Summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground."
+        },
+        "vitner-water-craft:solid-water:5": {
+          "Name": "Solid Water",
+          "Summary": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet."
+        },
+        "vitner-water-craft:control-precipitation:6": {
+          "Name": "Control Precipitation",
+          "Summary": "The spell can change the amount of precipitation that falls to the ground."
+        },
+        "vitner-water-craft:water-walk:7": {
+          "Name": "Water Walk",
+          "Summary": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater."
+        },
+        "vitner-water-craft:wave-master:8": {
+          "Name": "Wave Master",
+          "Summary": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it."
+        },
+        "vitner-wind-craft:purify-air:0": {
+          "Name": "Purify Air",
+          "Summary": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely."
+        },
+        "vitner-wind-craft:wind-gust:1": {
+          "Name": "Wind Gust",
+          "Summary": "The spell creates a small wind gust that the enchanter can use to blow away insects, small animals, or small objects (less than 1 kg)."
+        },
+        "vitner-wind-craft:fog:2": {
+          "Name": "Fog",
+          "Summary": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range."
+        },
+        "vitner-wind-craft:control-wind:3": {
+          "Name": "Control Wind",
+          "Summary": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets."
+        },
+        "vitner-wind-craft:air-armor:4": {
+          "Name": "Air Armor",
+          "Summary": "Wraps the target in protective currents of compressed air."
+        },
+        "vitner-wind-craft:lift:5": {
+          "Name": "Lift",
+          "Summary": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground."
+        },
+        "vitner-wind-craft:air-shield:6": {
+          "Name": "Air Shield",
+          "Summary": "The spell creates controlled flurries of wind around one or several characters, causing each of them to lift off the ground."
+        },
+        "vitner-wind-craft:wind-blast:7": {
+          "Name": "Wind Blast",
+          "Summary": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets."
+        },
+        "vitner-wind-craft:storm:8": {
+          "Name": "Storm",
+          "Summary": "The spell creates a sudden storm, which swirls and blows away all trash, dust, insects, objects, and beings smaller than 50 kg that are within a 20-meter radius of the enchanter."
+        },
+        "vitner-wind-craft:wind-catcher:9": {
+          "Name": "Wind Catcher",
+          "Summary": "By singing a special song, the mage can use creatures nearby to pass on a message."
+        },
+        "vitner-witchcraft:uprooted-tree:0": {
+          "Name": "Uprooted Tree",
+          "Summary": "The spell causes a tree to uproot and collapse."
+        },
+        "vitner-witchcraft:phantom-plague:1": {
+          "Name": "Phantom Plague",
+          "Summary": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear."
+        },
+        "vitner-witchcraft:fever:2": {
+          "Name": "Fever",
+          "Summary": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically."
+        },
+        "vitner-witchcraft:curse-object:3": {
+          "Name": "Curse Object",
+          "Summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use."
+        },
+        "vitner-witchcraft:amnesia:4": {
+          "Name": "Amnesia",
+          "Summary": "The spell creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory."
+        },
+        "vitner-witchcraft:curse-creature:5": {
+          "Name": "Curse Creature",
+          "Summary": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being)."
+        },
+        "vitner-witchcraft:bad-harvest:6": {
+          "Name": "Bad Harvest",
+          "Summary": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation."
+        },
+        "vitner-witchcraft:tree-curse:7": {
+          "Name": "Tree Curse",
+          "Summary": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root."
+        },
+        "holy-gerbanis-influence-of-jorn:death-gust:0": {
+          "Name": "Death Gust",
+          "Summary": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range."
+        },
+        "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": {
+          "Name": "Wall of Dusk",
+          "Summary": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters."
+        },
+        "holy-gerbanis-influence-of-jorn:falfax:2": {
+          "Name": "Falfax",
+          "Summary": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi."
+        },
+        "holy-gerbanis-influence-of-jorn:night-curtain:3": {
+          "Name": "Night Curtain",
+          "Summary": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 20 meters."
+        },
+        "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
+          "Name": "The Coat of Jorn",
+          "Summary": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 50 meters."
+        },
+        "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {
+          "Name": "The Breath of Mogunda",
+          "Summary": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range."
+        },
+        "holy-gerbanis-influence-of-jorn:asiblack:6": {
+          "Name": "Asiblack",
+          "Summary": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi."
+        },
+        "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {
+          "Name": "Will of Bodvildur",
+          "Summary": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range."
+        },
+        "holy-gerbanis-influence-of-jorn:snarfari:8": {
+          "Name": "Snarfari",
+          "Summary": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi."
+        },
+        "holy-gerbanis-power-of-enken:night-vision:0": {
+          "Name": "Night Vision",
+          "Summary": "The Stormkelt is granted night vision for one minute."
+        },
+        "holy-gerbanis-power-of-enken:willpower:1": {
+          "Name": "Willpower",
+          "Summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual."
+        },
+        "holy-gerbanis-power-of-enken:bold:2": {
+          "Name": "Bold",
+          "Summary": "The Stormkelt prays to Enken and is granted courage for herself or bestows courage upon a chosen individual."
+        },
+        "holy-gerbanis-power-of-enken:wind-shield:3": {
+          "Name": "Wind Shield",
+          "Summary": "The Stormkelt summons a shield of small storm flurries, which provide a Protection Value of 1 against melee weapons and a Protection Value of 3 against ranged"
+        },
+        "holy-gerbanis-power-of-enken:soul-sight:4": {
+          "Name": "Soul Sight",
+          "Summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual."
+        },
+        "holy-gerbanis-power-of-enken:storm-armor:5": {
+          "Name": "Storm Armor",
+          "Summary": "The Stormkelt summons an armor of storm flurries around himself or a chosen character."
+        },
+        "holy-gerbanis-power-of-enken:heart-of-enken:6": {
+          "Name": "Heart of Enken",
+          "Summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual."
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7": {
+          "Name": "Hurricane Armor",
+          "Summary": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character."
+        },
+        "holy-gerbanis-power-of-enken:eye-of-enken:8": {
+          "Name": "Eye of Enken",
+          "Summary": "The Stormkelt summons an armor of storm flurries around himself or a chosen character."
+        },
+        "holy-gerbanis-strength-of-stormi:troll-strength:0": {
+          "Name": "Troll Strength",
+          "Summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength."
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
+          "Name": "Voice of Command",
+          "Summary": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range."
+        },
+        "holy-gerbanis-strength-of-stormi:havar:2": {
+          "Name": "Havar",
+          "Summary": "The Stormkelt begs Stormi for protection."
+        },
+        "holy-gerbanis-strength-of-stormi:hinji-strength:3": {
+          "Name": "Hinji Strength",
+          "Summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength."
+        },
+        "holy-gerbanis-strength-of-stormi:jarl-s-call:4": {
+          "Name": "Jarl's Call",
+          "Summary": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range."
+        },
+        "holy-gerbanis-strength-of-stormi:shield-disir:5": {
+          "Name": "Shield Dísir",
+          "Summary": "The Stormkelt begs Stormi for protection."
+        },
+        "holy-gerbanis-strength-of-stormi:jotun-strength:6": {
+          "Name": "Jotun Strength",
+          "Summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength."
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": {
+          "Name": "Voice of Stormi",
+          "Summary": "The Stormkelt’s voice resounds mightily , which affects three listeners of the dimwalker’s choosing within range."
+        },
+        "holy-gerbanis-strength-of-stormi:einharjar:8": {
+          "Name": "Einharjar",
+          "Summary": "The Stormkelt begs Stormi for protection."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing:0": {
+          "Name": "Healing",
+          "Summary": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms."
+        },
+        "holy-gerbanis-warmth-of-sunvei:sunray:1": {
+          "Name": "Sunray",
+          "Summary": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
+          "Name": "Healing Glow",
+          "Summary": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei."
+        },
+        "holy-gerbanis-warmth-of-sunvei:summer-place:3": {
+          "Name": "Summer Place",
+          "Summary": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear."
+        },
+        "holy-gerbanis-warmth-of-sunvei:firon-power:4": {
+          "Name": "Firon Power",
+          "Summary": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5": {
+          "Name": "Healing Warmth",
+          "Summary": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms."
+        },
+        "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6": {
+          "Name": "Time of the Hunt",
+          "Summary": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear."
+        },
+        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7": {
+          "Name": "Breath of Sunvei",
+          "Summary": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-sun:8": {
+          "Name": "Healing Sun",
+          "Summary": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei."
+        },
+        "holy-gerbanis-wisdom-of-windinna:inspiration:0": {
+          "Name": "Inspiration",
+          "Summary": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear."
+        },
+        "holy-gerbanis-wisdom-of-windinna:sixth-sense:1": {
+          "Name": "Sixth Sense",
+          "Summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person."
+        },
+        "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": {
+          "Name": "Joy of Creating",
+          "Summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi."
+        },
+        "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
+          "Name": "Steel Mind",
+          "Summary": "A fire encompasses the affected individual and purifies their body of all evil, transformation, and outside influence."
+        },
+        "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": {
+          "Name": "Wave of Truth",
+          "Summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person."
+        },
+        "holy-gerbanis-wisdom-of-windinna:vitner-protection:5": {
+          "Name": "Vitner Protection",
+          "Summary": "A fire encompasses the affected individual and purifies their body of any evil, transformation, and outside influence."
+        },
+        "holy-gerbanis-wisdom-of-windinna:swine-rush:6": {
+          "Name": "Swine Rush",
+          "Summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi."
+        },
+        "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7": {
+          "Name": "Gaze of Windinna",
+          "Summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person."
+        },
+        "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8": {
+          "Name": "Hearth of Windinna",
+          "Summary": "A fire encompasses the afflicted and purifies their body of any evil, transformation, and outside influence."
+        },
+        "holy-gerbanis-wrath-of-tyrd:fire-iron:0": {
+          "Name": "Fire Iron",
+          "Summary": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range."
+        },
+        "holy-gerbanis-wrath-of-tyrd:battle-cry:1": {
+          "Name": "Battle Cry",
+          "Summary": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale."
+        },
+        "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2": {
+          "Name": "Wolf Tongue",
+          "Summary": "The Stormkelt makes a sinister face and speaks the triggering words of the ability."
+        },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": {
+          "Name": "Pyre Mark",
+          "Summary": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range."
+        },
+        "holy-gerbanis-wrath-of-tyrd:war-cry:4": {
+          "Name": "War Cry",
+          "Summary": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies."
+        },
+        "holy-gerbanis-wrath-of-tyrd:dark-visage:5": {
+          "Name": "Dark Visage",
+          "Summary": "The Stormkelt makes a sinister face and speaks the triggering words of the ability."
+        },
+        "holy-gerbanis-wrath-of-tyrd:firestorm:6": {
+          "Name": "Firestorm",
+          "Summary": "Unleashes a violent storm of divine fire across the chosen area."
+        },
+        "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": {
+          "Name": "Thunder of Victory",
+          "Summary": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale, while shattering the morale of their enemies."
+        },
+        "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": {
+          "Name": "Tyrd's Bellow",
+          "Summary": "The Stormkelt makes a sinister face and speaks the triggering words of the ability."
+        },
+        "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0": {
+          "Name": "Behind Tree and Pine",
+          "Summary": "The Bruid alters their appearance so as to blend in with the surrounding environment."
+        },
+        "holy-ealdtradition-gift-of-thanja:animal-speech:1": {
+          "Name": "Animal Speech",
+          "Summary": "The Bruid is able to speak with ordinary animals for the duration of the ability."
+        },
+        "holy-ealdtradition-gift-of-thanja:stagshape:2": {
+          "Name": "Stagshape",
+          "Summary": "This ability grants the Bruid the power to transform into a stag."
+        },
+        "holy-ealdtradition-gift-of-thanja:bestial-tongue:3": {
+          "Name": "Bestial Tongue",
+          "Summary": "The Bruid is able to speak with beasts for the duration of the ability."
+        },
+        "holy-ealdtradition-gift-of-thanja:salmonshape:4": {
+          "Name": "Salmonshape",
+          "Summary": "This ability grants the Bruid the power to transform into a salmon."
+        },
+        "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5": {
+          "Name": "Beneath Root and Rock",
+          "Summary": "The Bruid alters their appearance so as to blend in with the surrounding environment."
+        },
+        "holy-ealdtradition-gift-of-thanja:dragon-tongue:6": {
+          "Name": "Dragon Tongue",
+          "Summary": "The Bruid can communicate in the language of dragons and their kin."
+        },
+        "holy-ealdtradition-gift-of-thanja:forest-denizen:7": {
+          "Name": "Forest Denizen",
+          "Summary": "The Bruid alters their appearance so as to blend in with the surrounding environment."
+        },
+        "holy-ealdtradition-gift-of-thanja:ravenshape:8": {
+          "Name": "Ravenshape",
+          "Summary": "This ability grants the Bruid the power to transform into a raven."
+        },
+        "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": {
+          "Name": "Willpower of the Ancestors",
+          "Summary": "Strengthens the recipient's resolve with the courage of their ancestors."
+        },
+        "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
+          "Name": "Vitner Shield",
+          "Summary": "The Bruid lets their ancestors watch over them and receives a divine protection against vitner."
+        },
+        "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
+          "Name": "Bloodfangsbane",
+          "Summary": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact."
+        },
+        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
+          "Name": "Boldness of the Ancestors",
+          "Summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances."
+        },
+        "holy-ealdtradition-halawen-s-offering:bolgemek:4": {
+          "Name": "Bolgemek",
+          "Summary": "Calls upon ancestral protection to resist hostile supernatural forces."
+        },
+        "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
+          "Name": "Witch Wall",
+          "Summary": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact."
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6": {
+          "Name": "Fearless",
+          "Summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances."
+        },
+        "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": {
+          "Name": "Mistur Barrier",
+          "Summary": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner."
+        },
+        "holy-ealdtradition-halawen-s-offering:roggdrasil:8": {
+          "Name": "Roggdrasil",
+          "Summary": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact."
+        },
+        "holy-ealdtradition-heritage-of-majne:strong-beer:0": {
+          "Name": "Strong Beer",
+          "Summary": "By brewing Majne’s light ale, the Bruid can drink with friends and strengthen the connection among them before an upcoming adventure."
+        },
+        "holy-ealdtradition-heritage-of-majne:trollslayer:1": {
+          "Name": "Trollslayer",
+          "Summary": "The Bruid will receive the divine power to harm trolls and trollkin with greater potency for the duration of the ability."
+        },
+        "holy-ealdtradition-heritage-of-majne:giantslayer:2": {
+          "Name": "Giantslayer",
+          "Summary": "The Bruid will receive the divine power to harm giantfolk (giants or jotun, turses, ogres, and ice trolls) with greater potency for the duration of the ability."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-militia:3": {
+          "Name": "King's Militia",
+          "Summary": "The Bruid summons a spirit warrior from the great King’s militia."
+        },
+        "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {
+          "Name": "Hero's Brew",
+          "Summary": "The Bruid will receive the divine power to harm trolls and trollkin with greater potency for the duration of the ability."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-guard:5": {
+          "Name": "King's Guard",
+          "Summary": "The Bruid summons a spirit warrior from the great King’s guard."
+        },
+        "holy-ealdtradition-heritage-of-majne:dragonslayer:6": {
+          "Name": "Dragonslayer",
+          "Summary": "The Bruid will receive the divine power to harm dragons and dragonkin with greater potency for the duration of the ability."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-ale:7": {
+          "Name": "King's Ale",
+          "Summary": "By brewing Majne’s light ale, the Bruid can drink with friends and strengthen the connection among them before an upcoming adventure."
+        },
+        "holy-ealdtradition-heritage-of-majne:the-nine-kings:8": {
+          "Name": "The Nine Kings",
+          "Summary": "The Bruid calls upon the nine great Kings, who send a memory of their the dimwalker."
+        },
+        "holy-ealdtradition-magh-s-gift:journey-wind:0": {
+          "Name": "Journey Wind",
+          "Summary": "The Bruid calls for a helpful tailwind and fair weather."
+        },
+        "holy-ealdtradition-magh-s-gift:rider-s-melody:1": {
+          "Name": "Rider's Melody",
+          "Summary": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-tether:2": {
+          "Name": "Magh's Tether",
+          "Summary": "past strength and spirit to the dimwalker to aid in the most difficult situations."
+        },
+        "holy-ealdtradition-magh-s-gift:elf-summer:3": {
+          "Name": "Elf Summer",
+          "Summary": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area."
+        },
+        "holy-ealdtradition-magh-s-gift:hero-s-song:4": {
+          "Name": "Hero's Song",
+          "Summary": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-chain:5": {
+          "Name": "Magh's Chain",
+          "Summary": "The Bruid can use Geas, which is a promise or a restriction imposed upon others."
+        },
+        "holy-ealdtradition-magh-s-gift:king-s-anthem:6": {
+          "Name": "King's Anthem",
+          "Summary": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-hawser:7": {
+          "Name": "Magh's Hawser",
+          "Summary": "The Bruid can use Geas, which is a promise or a restriction imposed upon others."
+        },
+        "holy-ealdtradition-magh-s-gift:harvest-year:8": {
+          "Name": "Harvest Year",
+          "Summary": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility , and unnaturally pleasant weather."
+        },
+        "holy-ealdtradition-nema-s-usefulness:horse-ears:0": {
+          "Name": "Horse Ears",
+          "Summary": "The Bruid hears all noises and conversations within range."
+        },
+        "holy-ealdtradition-nema-s-usefulness:gust-of-release:1": {
+          "Name": "Gust of Release",
+          "Summary": "A modest but refreshing breeze flits through the area designated by the Bruid, freeing something as it passes, pushing something over a ledge, unlatching a hook, solving a knot, or something similar."
+        },
+        "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2": {
+          "Name": "Gloomy Trail",
+          "Summary": "The Bruid summons a blanket of fog that spreads out before them and their allies."
+        },
+        "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
+          "Name": "Owl Hearing",
+          "Summary": "The Bruid hears all noises and conversations within range."
+        },
+        "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4": {
+          "Name": "Freeing Breeze",
+          "Summary": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person."
+        },
+        "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5": {
+          "Name": "Meall's Trail",
+          "Summary": "The Bruid summons a blanket of fog that spreads out before them and their allies."
+        },
+        "holy-ealdtradition-nema-s-usefulness:liberating-wind:6": {
+          "Name": "Liberating Wind",
+          "Summary": "Sends a liberating wind that removes obstacles, restraints, and imprisoning magic."
+        },
+        "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
+          "Name": "Griffon's Sense",
+          "Summary": "The Bruid hears all noises and conversations within range."
+        },
+        "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": {
+          "Name": "Mongfind's Travel",
+          "Summary": "The Bruid summons a blanket of fog that spreads out before them and their allies."
+        },
+        "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": {
+          "Name": "Simmering Blood",
+          "Summary": "Through this ability , Morgu bestows more life essence upon the Bruid."
+        },
+        "holy-ealdtradition-tribute-of-morgu:battle-arrow:1": {
+          "Name": "Battle Arrow",
+          "Summary": "To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14."
+        },
+        "holy-ealdtradition-tribute-of-morgu:boiling-blood:2": {
+          "Name": "Boiling Blood",
+          "Summary": "Through this ability , Morgu bestows more life essence upon the Bruid."
+        },
+        "holy-ealdtradition-tribute-of-morgu:rage:3": {
+          "Name": "Rage",
+          "Summary": "Fills the target with supernatural battle rage."
+        },
+        "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
+          "Name": "Shower of Arrows",
+          "Summary": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker."
+        },
+        "holy-ealdtradition-tribute-of-morgu:madness:5": {
+          "Name": "Madness",
+          "Summary": "Overwhelms warriors with Morgu's influence and drives them into uncontrollable fury."
+        },
+        "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
+          "Name": "Bloodfire",
+          "Summary": "Through this ability , Morgu bestows more life essence upon the Bruid."
+        },
+        "holy-ealdtradition-tribute-of-morgu:riastarthae:7": {
+          "Name": "Riastarthae",
+          "Summary": "Transforms the invoker into a terrifying battle-frenzied champion."
+        },
+        "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
+          "Name": "Blacken the Sky",
+          "Summary": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker."
+        },
+        "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
+          "Name": "Power of Blood",
+          "Summary": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak."
+        },
+        "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
+          "Name": "Holy Bolt",
+          "Summary": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range."
+        },
+        "holy-tenetnid-tablet-of-anger:stone-senses:2": {
+          "Name": "Stone Senses",
+          "Summary": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify."
+        },
+        "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
+          "Name": "Visions of the Oak",
+          "Summary": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak."
+        },
+        "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
+          "Name": "Sacred Burst",
+          "Summary": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify."
+        },
+        "holy-tenetnid-tablet-of-anger:statue:5": {
+          "Name": "Statue",
+          "Summary": "The priest directs their powerful gaze at an opponent."
+        },
+        "holy-tenetnid-tablet-of-anger:divine-purge:6": {
+          "Name": "Divine Purge",
+          "Summary": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range."
+        },
+        "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
+          "Name": "Memory of a Martyr",
+          "Summary": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak."
+        },
+        "holy-tenetnid-tablet-of-anger:stone-monument:8": {
+          "Name": "Stone Monument",
+          "Summary": "The priest directs their powerful gaze at an opponent."
+        },
+        "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": {
+          "Name": "Hand of Mercy",
+          "Summary": "The priest invokes Gave and lays glowing hands upon an ailing person in their care."
+        },
+        "holy-tenetnid-tablet-of-grace:holy-mending:1": {
+          "Name": "Holy Mending",
+          "Summary": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care."
+        },
+        "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": {
+          "Name": "Will of Bete Wiemdas",
+          "Summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care."
+        },
+        "holy-tenetnid-tablet-of-grace:life-spirit:3": {
+          "Name": "Life Spirit",
+          "Summary": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death."
+        },
+        "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4": {
+          "Name": "Chalk of Bete Wiemdas",
+          "Summary": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care."
+        },
+        "holy-tenetnid-tablet-of-grace:recall:5": {
+          "Name": "Recall",
+          "Summary": "The priest can resurrect intelligent humanoids that have already lost the breath of life."
+        },
+        "holy-tenetnid-tablet-of-grace:breath-of-gave:6": {
+          "Name": "Breath of Gave",
+          "Summary": "Restores life and strength through Gave's merciful breath."
+        },
+        "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
+          "Name": "Hand of Gave",
+          "Summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care."
+        },
+        "holy-tenetnid-tablet-of-grace:wind-of-immortality:8": {
+          "Name": "Wind of Immortality",
+          "Summary": "The priest can revive any creature, whether intelligent or unintelligent, that has already lost the breath of life."
+        },
+        "holy-tenetnid-tablet-of-the-knight:blessed-armor:0": {
+          "Name": "Blessed Armor",
+          "Summary": "An aura of holy protection is created around the selected armor, increasing the Protection Value by +1."
+        },
+        "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": {
+          "Name": "Blessed Spear",
+          "Summary": "A holy aura is created around the selected weapon."
+        },
+        "holy-tenetnid-tablet-of-the-knight:holy-authority:2": {
+          "Name": "Holy Authority",
+          "Summary": "The prayer invokes Gave’s presence and holiness."
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3": {
+          "Name": "Rowthguard Cuirass",
+          "Summary": "Surrounds the recipient with the sacred protection of a Rowthguard cuirass."
+        },
+        "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": {
+          "Name": "Majestic Revelation",
+          "Summary": "The prayer invokes Gave’s presence and holiness."
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5": {
+          "Name": "Rowthguard's Battle Scourge",
+          "Summary": "Conjures or empowers a sacred battle scourge fit for a Rowthguard."
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6": {
+          "Name": "Belo Seoth's White Armor",
+          "Summary": "Clothes the recipient in Belo Seoth's radiant supernatural armor."
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": {
+          "Name": "Belo Seoth's Axe",
+          "Summary": "A holy aura is created around the selected weapon."
+        },
+        "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": {
+          "Name": "Guise of Gave",
+          "Summary": "The priest positively radiates with divine power while the surrounding air is saturated with the god’s tangible presence."
+        },
+        "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": {
+          "Name": "Snares of the Holy Ground",
+          "Summary": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions."
+        },
+        "holy-tenetnid-tablet-of-the-shield:sheltering:1": {
+          "Name": "Sheltering",
+          "Summary": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions."
+        },
+        "holy-tenetnid-tablet-of-the-shield:storm-protection:2": {
+          "Name": "Storm Protection",
+          "Summary": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold."
+        },
+        "holy-tenetnid-tablet-of-the-shield:thornwall:3": {
+          "Name": "Thornwall",
+          "Summary": "The one praying invokes the force of the black oak."
+        },
+        "holy-tenetnid-tablet-of-the-shield:bark-skin:4": {
+          "Name": "Bark Skin",
+          "Summary": "The Gavlian invokes the force of the black oak."
+        },
+        "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5": {
+          "Name": "Demonic Impotence",
+          "Summary": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold."
+        },
+        "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6": {
+          "Name": "Vitner Resistance",
+          "Summary": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental."
+        },
+        "holy-tenetnid-tablet-of-the-shield:banishment:7": {
+          "Name": "Banishment",
+          "Summary": "The priest prays to Gave, and as a result a radiant beam of divine light pierces the sky (or the ceiling, if indoors) and engulfs all demons within range."
+        },
+        "holy-tenetnid-tablet-of-the-shield:tree-port:8": {
+          "Name": "Tree Port",
+          "Summary": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day."
+        },
+        "holy-tenetnid-tablet-of-the-sun:dawn-shine:0": {
+          "Name": "Dawn Shine",
+          "Summary": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her."
+        },
+        "holy-tenetnid-tablet-of-the-sun:protective-ground:1": {
+          "Name": "Protective Ground",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats."
+        },
+        "holy-tenetnid-tablet-of-the-sun:augury:2": {
+          "Name": "Augury",
+          "Summary": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing."
+        },
+        "holy-tenetnid-tablet-of-the-sun:thermal-light:3": {
+          "Name": "Thermal Light",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats."
+        },
+        "holy-tenetnid-tablet-of-the-sun:omen:4": {
+          "Name": "Omen",
+          "Summary": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing."
+        },
+        "holy-tenetnid-tablet-of-the-sun:blessed-home:5": {
+          "Name": "Blessed Home",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats."
+        },
+        "holy-tenetnid-tablet-of-the-sun:sacred-grove:6": {
+          "Name": "Sacred Grove",
+          "Summary": "The prayer acts as protection against vitner and other religions’ feats."
+        },
+        "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": {
+          "Name": "Holy Radiance",
+          "Summary": "The priest asks her god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her."
+        },
+        "holy-tenetnid-tablet-of-the-sun:portent:8": {
+          "Name": "Portent",
+          "Summary": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing."
+        },
+        "holy-tenetnid-tablet-of-voices:holy-consideration:0": {
+          "Name": "Holy Consideration",
+          "Summary": "Grants divine clarity when considering words, intentions, and difficult choices."
+        },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": {
+          "Name": "Sirowerd's Ear",
+          "Summary": "The priest is gifted with a temporary understanding of a foreign language when it is spoken."
+        },
+        "holy-tenetnid-tablet-of-voices:blood-brothers:2": {
+          "Name": "Blood Brothers",
+          "Summary": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally."
+        },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": {
+          "Name": "Sirowerd's Tongue",
+          "Summary": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill."
+        },
+        "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": {
+          "Name": "Kindred's Bond",
+          "Summary": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally."
+        },
+        "holy-tenetnid-tablet-of-voices:grace-of-gave:5": {
+          "Name": "Grace of Gave",
+          "Summary": "The Gavlian can bless someone and their future circumstances."
+        },
+        "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": {
+          "Name": "Sanity of Gave",
+          "Summary": "The priest and their allies within range are gifted with a temporary capacity to speak and understand a foreign language, with a bonus of +3 to each individual’s Skill Value in the Knowledge skill for speaking/understanding."
+        },
+        "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": {
+          "Name": "Favorites of Gave",
+          "Summary": "The Gavlian can bless someone and their future circumstances."
+        },
+        "holy-tenetnid-tablet-of-voices:divine-pact:8": {
+          "Name": "Divine Pact",
+          "Summary": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally."
+        },
+        "holy-haminges-power-of-the-beast:resilience:0": {
+          "Name": "Resilience",
+          "Summary": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury."
+        },
+        "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
+          "Name": "Mind of the Predator",
+          "Summary": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey."
+        },
+        "holy-haminges-power-of-the-beast:mastomant-s-tusks:2": {
+          "Name": "Mastomant's Tusks",
+          "Summary": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw."
+        },
+        "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": {
+          "Name": "Endurance of the Boar",
+          "Summary": "The spirit gives power to the dimwalker that manifests in a greater"
+        },
+        "holy-haminges-power-of-the-beast:mastomant-s-fur:4": {
+          "Name": "Mastomant's Fur",
+          "Summary": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability."
+        },
+        "holy-haminges-power-of-the-beast:wolf-claws:5": {
+          "Name": "Wolf Claws",
+          "Summary": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey."
+        },
+        "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": {
+          "Name": "Endurance of the Giant",
+          "Summary": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury."
+        },
+        "holy-haminges-power-of-the-beast:master-of-wolfkin:7": {
+          "Name": "Master of Wolfkin",
+          "Summary": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby."
+        },
+        "holy-haminges-power-of-the-beast:mastomantshape:8": {
+          "Name": "Mastomantshape",
+          "Summary": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way."
+        },
+        "holy-haminges-power-of-the-dragon:constriction:0": {
+          "Name": "Constriction",
+          "Summary": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way."
+        },
+        "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": {
+          "Name": "Rampage of the Huvfurwurm",
+          "Summary": "Imbues the recipient with the destructive momentum of a rampaging huvfurwurm."
+        },
+        "holy-haminges-power-of-the-dragon:flame-hardened:2": {
+          "Name": "Flame Hardened",
+          "Summary": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath and skin that appears to darken slightly and grow somewhat scaly."
+        },
+        "holy-haminges-power-of-the-dragon:paralyzing-gaze:3": {
+          "Name": "Paralyzing Gaze",
+          "Summary": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze."
+        },
+        "holy-haminges-power-of-the-dragon:dragon-skin:4": {
+          "Name": "Dragon Skin",
+          "Summary": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly."
+        },
+        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
+          "Name": "Attack of the Huvfurwurm",
+          "Summary": "The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +2 weapon actions per action round, as well as +10 Combat Points per action round."
+        },
+        "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
+          "Name": "Head of the Huvfurwurm",
+          "Summary": "The spirit conjurer is able to survive the normally fatal blow of having their head severed from the body."
+        },
+        "holy-haminges-power-of-the-dragon:dragon-soul:7": {
+          "Name": "Dragon Soul",
+          "Summary": "The spirit conjurer calls upon the dwarves’ feared fighting techniques and becomes more proficient at handling weapons in combat."
+        },
+        "holy-haminges-power-of-the-dragon:giant-snakeshape:8": {
+          "Name": "Giant Snakeshape",
+          "Summary": "The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability."
+        },
+        "holy-haminges-power-of-men:sight-of-the-dwarves:0": {
+          "Name": "Sight of the Dwarves",
+          "Summary": "The spirit conjurer calls upon the vision of the dwarven spirit, gaining night vision for the duration of the ability."
+        },
+        "holy-haminges-power-of-men:accomplished:1": {
+          "Name": "Accomplished",
+          "Summary": "The spirit conjurer can add +1 to the Skill Value of any single Skill roll attempted within the ability’s duration."
+        },
+        "holy-haminges-power-of-men:curative-draught:2": {
+          "Name": "Curative Draught",
+          "Summary": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit."
+        },
+        "holy-haminges-power-of-men:mastery:3": {
+          "Name": "Mastery",
+          "Summary": "Temporarily grants exceptional mastery of a chosen mortal craft or skill."
+        },
+        "holy-haminges-power-of-men:remedial-potion:4": {
+          "Name": "Remedial Potion",
+          "Summary": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit."
+        },
+        "holy-haminges-power-of-men:weapon-prowess:5": {
+          "Name": "Weapon Prowess",
+          "Summary": "The spirit conjurer calls upon the dwarves’ feared fighting techniques and becomes more proficient at handling weapons in combat."
+        },
+        "holy-haminges-power-of-men:dwarven-smith:6": {
+          "Name": "Dwarven Smith",
+          "Summary": "The spirit conjurer calls upon the dwarves’ superior knowledge of craftsmanship and gains +6 in any single specialty under the handicraft discipline (Care skill) for the duration of the ability."
+        },
+        "holy-haminges-power-of-men:legendary:7": {
+          "Name": "Legendary",
+          "Summary": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration."
+        },
+        "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": {
+          "Name": "Life Elixir of the Devouress",
+          "Summary": "Creates a legendary elixir capable of restoring life and vitality."
+        },
+        "holy-haminges-power-of-the-scale:dreadful-screech:0": {
+          "Name": "Dreadful Screech",
+          "Summary": "Releases a dreadful supernatural screech that terrifies nearby creatures."
+        },
+        "holy-haminges-power-of-the-scale:shattered-mind:1": {
+          "Name": "Shattered Mind",
+          "Summary": "The spirit conjurer directs their powerful gaze at an opponent who suddenly feels his mind begin to petrify."
+        },
+        "holy-haminges-power-of-the-scale:terrifying-howl:2": {
+          "Name": "Terrifying Howl",
+          "Summary": "The spirit conjurer unleashes a terrifying howl."
+        },
+        "holy-haminges-power-of-the-scale:regenerative-blood:3": {
+          "Name": "Regenerative Blood",
+          "Summary": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration."
+        },
+        "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4": {
+          "Name": "Blood of the Lindwurm",
+          "Summary": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration."
+        },
+        "holy-haminges-power-of-the-scale:limb-of-stone:5": {
+          "Name": "Limb of Stone",
+          "Summary": "The spirit conjurer directs their petrifying gaze toward an opponent’s limb, such as an arm or a leg."
+        },
+        "holy-haminges-power-of-the-scale:scream-of-the-devouress:6": {
+          "Name": "Scream of the Devouress",
+          "Summary": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment."
+        },
+        "holy-haminges-power-of-the-scale:petrify:7": {
+          "Name": "Petrify",
+          "Summary": "The spirit conjurer directs their powerful gaze at an opponent who turns to stone."
+        },
+        "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8": {
+          "Name": "Heart of the Lindwurm",
+          "Summary": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability."
+        },
+        "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0": {
+          "Name": "Skin of the Hrim Troll",
+          "Summary": "The spirit conjurer is filled with a portion of the ice troll’s essence and is unaffected by non-magical cold."
+        },
+        "holy-haminges-power-of-the-thurses:troll-strength:1": {
+          "Name": "Troll Strength",
+          "Summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength."
+        },
+        "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2": {
+          "Name": "Mountain Ogre's Fury",
+          "Summary": "sized (from half the size of a human up to 1.5 times the size of a human)."
+        },
+        "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3": {
+          "Name": "Strength of the Stone Hinji",
+          "Summary": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer."
+        },
+        "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4": {
+          "Name": "Mountain Ogre's Madness",
+          "Summary": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead."
+        },
+        "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": {
+          "Name": "Breath of the Hrim Troll",
+          "Summary": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach."
+        },
+        "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": {
+          "Name": "The Destroyer's Rage",
+          "Summary": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead."
+        },
+        "holy-haminges-power-of-the-thurses:thurse-strength:7": {
+          "Name": "Thurse Strength",
+          "Summary": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer."
+        },
+        "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": {
+          "Name": "The Hrim Troll's Rime Body",
+          "Summary": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach."
+        },
+        "holy-haminges-power-of-trolls:disease-carrier:0": {
+          "Name": "Disease Carrier",
+          "Summary": "The spirit conjurer begins to reek of troll, grease, sweat, and feces."
+        },
+        "holy-haminges-power-of-trolls:willpower:1": {
+          "Name": "Willpower",
+          "Summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual."
+        },
+        "holy-haminges-power-of-trolls:illusion-tricks:2": {
+          "Name": "Illusion Tricks",
+          "Summary": "The spirit conjurer can perform simple and mundane illusions."
+        },
+        "holy-haminges-power-of-trolls:fearless:3": {
+          "Name": "Fearless",
+          "Summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances."
+        },
+        "holy-haminges-power-of-trolls:contagious:4": {
+          "Name": "Contagious",
+          "Summary": "The spirit conjurer begins to stink of troll, grease, sweat, and feces."
+        },
+        "holy-haminges-power-of-trolls:persuade:5": {
+          "Name": "Persuade",
+          "Summary": "The spirit conjurer can have an incredibly persuasive effect on an opponent."
+        },
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6": {
+          "Name": "Lord of the Flies",
+          "Summary": "Surrounds the invoker with diseased flies that torment and infect nearby creatures."
+        },
+        "holy-haminges-power-of-trolls:troll-wit:7": {
+          "Name": "Troll Wit",
+          "Summary": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration."
+        },
+        "holy-haminges-power-of-trolls:taken-by-the-mountain:8": {
+          "Name": "Taken by the Mountain",
+          "Summary": "The spirit conjurer can whisper a task to any person within range."
+        },
+        "holy-thuuldom-anvil-shock:anvil-shock:0": {
+          "Name": "Anvil Shock",
+          "Summary": "Makes a blunt weapon release an earth-shattering shock when it strikes."
+        },
+        "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": {
+          "Name": "Borjorn's Hand",
+          "Summary": "When the Thuul activates the rune, he receives guidance from the mountain that will aid him in the next action he undertakes."
+        },
+        "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": {
+          "Name": "Cave Spider's Grip",
+          "Summary": "The rune makes it possible for the Thuul to climb vertical walls."
+        },
+        "holy-thuuldom-earthquake:earthquake:0": {
+          "Name": "Earthquake",
+          "Summary": "The spell causes an area within the range to rumble with a single, heavy tremor."
+        },
+        "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": {
+          "Name": "Fang of Yukk",
+          "Summary": "Empowers an inscribed weapon with the deadly bite of Yukk."
+        },
+        "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": {
+          "Name": "Gills of the Blackfish",
+          "Summary": "The rune makes it possible for the one bearing the sacred object to breathe underwater for the duration."
+        },
+        "holy-thuuldom-hammer-fists:hammer-fists:0": {
+          "Name": "Hammer Fists",
+          "Summary": "Hardens the Thuul's fists into crushing weapons like smithing hammers."
+        },
+        "holy-thuuldom-healing-rune:healing-rune:0": {
+          "Name": "Healing Rune",
+          "Summary": "The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound."
+        },
+        "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": {
+          "Name": "Heat of the Depths",
+          "Summary": "The Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths."
+        },
+        "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": {
+          "Name": "Labyrinth Blood",
+          "Summary": "Grants an instinctive supernatural sense for navigating tunnels and labyrinths."
+        },
+        "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": {
+          "Name": "Mark of Brokk",
+          "Summary": "When the Thuul activates the rune-inscribed object, it is able to miraculously repair broken or damaged items."
+        },
+        "holy-thuuldom-power-of-repair:power-of-repair:0": {
+          "Name": "Power of Repair",
+          "Summary": "The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound."
+        },
+        "holy-thuuldom-scales:scales:0": {
+          "Name": "Scales",
+          "Summary": "The power from the rune stretches like a snakeskin of metal over the Thuul’s body."
+        },
+        "holy-thuuldom-stoneling:stoneling:0": {
+          "Name": "Stoneling",
+          "Summary": "The Thuul connects a minor mountain spirit to a single stone the size of a fist."
+        },
+        "holy-thuuldom-stone-to-clay:stone-to-clay:0": {
+          "Name": "Stone to Clay",
+          "Summary": "By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level)."
+        },
+        "holy-thuuldom-stoneshape:stoneshape:0": {
+          "Name": "Stoneshape",
+          "Summary": "The Thuul and his gear seem to melt into the mountain when the rune is activated."
+        },
+        "holy-thuuldom-well-of-water:well-of-water:0": {
+          "Name": "Well of Water",
+          "Summary": "The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location."
+        },
+        "holy-toikalokke-animal-mind:animal-friend:0": {
+          "Name": "Animal Friend",
+          "Summary": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away."
+        },
+        "holy-toikalokke-animal-mind:animal-tracks:1": {
+          "Name": "Animal Tracks",
+          "Summary": "Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints."
+        },
+        "holy-toikalokke-animal-mind:talk-to-animals:2": {
+          "Name": "Talk to Animals",
+          "Summary": "The Ihana can communicate with animals."
+        },
+        "holy-toikalokke-animal-mind:invisible-to-animals:3": {
+          "Name": "Invisible to Animals",
+          "Summary": "The chosen one can, when desired, become completely invisible to unintelligent animals."
+        },
+        "holy-toikalokke-animal-mind:animal-spirit:4": {
+          "Name": "Animal Spirit",
+          "Summary": "The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits."
+        },
+        "holy-toikalokke-animal-mind:animal-master:5": {
+          "Name": "Animal Master",
+          "Summary": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat."
+        },
+        "holy-toikalokke-animal-mind:animal-shape:6": {
+          "Name": "Animal Shape",
+          "Summary": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem."
+        },
+        "holy-toikalokke-lynx-power:orientation:0": {
+          "Name": "Orientation",
+          "Summary": "The spell makes it possible for the enchanter to find designated objects within the range."
+        },
+        "holy-toikalokke-lynx-power:tree-walk:1": {
+          "Name": "Tree Walk",
+          "Summary": "The Ihana can move among the trees at half their normal movement rate."
+        },
+        "holy-toikalokke-lynx-power:hearing:2": {
+          "Name": "Hearing",
+          "Summary": "By concentrating on a visual point within the designated range, the Ihana is able to hear everything within 10 meters of that point."
+        },
+        "holy-toikalokke-lynx-power:feline-leap:3": {
+          "Name": "Feline Leap",
+          "Summary": "The Ihana has the ability to leap with the incredible agility and grace of a feline."
+        },
+        "holy-toikalokke-lynx-power:feline-reflexes:4": {
+          "Name": "Feline Reflexes",
+          "Summary": "The Ihana evades an incoming ranged attack."
+        },
+        "holy-toikalokke-lynx-power:aim:5": {
+          "Name": "Aim",
+          "Summary": "When the Ihana attacks with ranged weapons, they can take extra aim at a target for the duration of the ability , gaining an additional +1 to the SV to strike the target."
+        },
+        "holy-toikalokke-lynx-power:track:6": {
+          "Name": "Track",
+          "Summary": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem."
+        },
+        "holy-toikalokke-lynx-power:concealment:7": {
+          "Name": "Concealment",
+          "Summary": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability."
+        },
+        "holy-toikalokke-lynx-power:forest-path:8": {
+          "Name": "Forest Path",
+          "Summary": "The Ihana can move through the forest at double their normal movement rate."
+        },
+        "holy-toikalokke-lynx-power:pathfinder:9": {
+          "Name": "Pathfinder",
+          "Summary": "The Ihana can travel through otherwise impassable forest or shrubbery when desired."
+        },
+        "holy-toikalokke-master-of-elements:earth-wall:0": {
+          "Name": "Earth Wall",
+          "Summary": "The Ihana causes a wall of earth to shoot up from the ground for protection."
+        },
+        "holy-toikalokke-master-of-elements:control-fire:1": {
+          "Name": "Control Fire",
+          "Summary": "The elf can control fire to a limited extent."
+        },
+        "holy-toikalokke-master-of-elements:purify-water:2": {
+          "Name": "Purify Water",
+          "Summary": "The spell filters water and removes all dangerous and unhealthy substances from up to 10 liters of liquid."
+        },
+        "holy-toikalokke-master-of-elements:gift-of-water:3": {
+          "Name": "Gift of Water",
+          "Summary": "The Ihana feels right at home in the water, as if it were their natural environment (allowing the character to swim even without the Swim specialty)."
+        },
+        "holy-toikalokke-master-of-elements:fire-tamer:4": {
+          "Name": "Fire Tamer",
+          "Summary": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range."
+        },
+        "holy-toikalokke-master-of-elements:shape-earth:5": {
+          "Name": "Shape Earth",
+          "Summary": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will."
+        },
+        "holy-toikalokke-master-of-elements:elemental-arrow:6": {
+          "Name": "Elemental Arrow",
+          "Summary": "Forms an arrow of elemental force and hurls it at a chosen target."
+        },
+        "holy-toikalokke-master-of-elements:earthquake:7": {
+          "Name": "Earthquake",
+          "Summary": "The spell causes an area within the range to rumble with a single, heavy tremor."
+        },
+        "holy-toikalokke-master-of-elements:spring-of-water:8": {
+          "Name": "Spring of Water",
+          "Summary": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this)."
+        },
+        "holy-toikalokke-master-of-elements:control-wind:9": {
+          "Name": "Control Wind",
+          "Summary": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets."
+        },
+        "holy-toikalokke-master-of-elements:hot-and-cold:10": {
+          "Name": "Hot and Cold",
+          "Summary": "The Ihana can control the temperature."
+        },
+        "holy-toikalokke-master-of-elements:fire-resistant:11": {
+          "Name": "Fire Resistant",
+          "Summary": "Protects the recipient from heat, flame, and supernatural fire."
+        }
+      },
+      "Theme": {
+        "vitner-animal-vitner": "Magic for communicating with, summoning, controlling, possessing, and carrying messages through animals.",
+        "vitner-body-vitner": "Magic that alters bodies and senses, restrains creatures, and enhances speed, strength, or resilience.",
+        "vitner-delusion-vitner": "Illusions that manipulate sound, appearance, concealment, landscapes, silence, and invisibility.",
+        "vitner-dimvitner": "Death magic that speaks with, summons, controls, dismisses, or drains the undead and the powers of Dimhall.",
+        "vitner-flame-craft": "Fire magic that creates heat and flame, protects against fire, and controls conflagrations.",
+        "vitner-perceiving": "Divinations for finding places, beings, objects, undead, routes, and the surrounding terrain.",
+        "vitner-power-of-thought": "Mental magic affecting language, courage, fear, memory, telepathy, control, possession, and thought reading.",
+        "vitner-power-of-vision": "Sight magic for tracking, remote observation, astral travel, reading vitner, and seeing truth.",
+        "vitner-soil-craft": "Earth magic that moves or shapes soil and stone, creates tremors and quagmires, and petrifies creatures.",
+        "vitner-vitner-craft": "Metamagic for channeling, enchanting, sealing, tracing, dispelling, and blocking vitner.",
+        "vitner-vitner-of-objects": "Magic that identifies, protects, binds, alters, creates, locks, or destroys objects.",
+        "vitner-water-craft": "Water magic for finding, purifying, creating, shaping, solidifying, and walking upon water or waves.",
+        "vitner-wind-craft": "Air magic that purifies air, creates fog and wind, grants lift or protection, and summons storms.",
+        "vitner-witchcraft": "Curses and maladies that bring fever, amnesia, plague, blighted harvests, and hostile trees.",
+        "holy-gerbanis-influence-of-jorn": "Powers of darkness, deathly winds, storm-born steeds, protection, and Jorn's supernatural influence.",
+        "holy-gerbanis-power-of-enken": "Powers granting courage, will, soul sight, night vision, and increasingly mighty storm armor.",
+        "holy-gerbanis-strength-of-stormi": "Battle blessings that grant giant strength, commanding voices, divine guards, and heroic warriors.",
+        "holy-gerbanis-warmth-of-sunvei": "Solar powers of healing, warmth, light, summer, hunting, and restoration.",
+        "holy-gerbanis-wisdom-of-windinna": "Powers of inspiration, truth, creativity, mental resolve, protection, and Windinna's insight.",
+        "holy-gerbanis-wrath-of-tyrd": "War powers of fiery weapons, terrifying cries, battle fury, firestorms, and victory.",
+        "holy-ealdtradition-gift-of-thanja": "Nature powers for animal speech and shapes, concealment in the wild, and communion with forest beings.",
+        "holy-ealdtradition-halawen-s-offering": "Ancestral protections against fear, bloodfangs, hostile vitner, and supernatural assault.",
+        "holy-ealdtradition-heritage-of-majne": "Heroic draughts and royal blessings for slaying trolls, giants, and dragons and rallying warriors.",
+        "holy-ealdtradition-magh-s-gift": "Songs and bonds that aid travel, riders, harvests, heroes, and the changing seasons.",
+        "holy-ealdtradition-nema-s-usefulness": "Powers that sharpen animal senses, reveal trails, remove restraints, and hasten journeys.",
+        "holy-ealdtradition-tribute-of-morgu": "Blood-fueled battle powers that provoke rage and unleash volleys, fire, and murderous fury.",
+        "holy-tenetnid-tablet-of-anger": "Sacred powers of blood, stone, martyrdom, destructive bolts, bursts, and divine purging.",
+        "holy-tenetnid-tablet-of-grace": "Merciful powers that heal, restore life and memory, recall allies, and preserve them from death.",
+        "holy-tenetnid-tablet-of-the-knight": "Knightly blessings that empower armor, spears, authority, sacred weapons, and holy battle forms.",
+        "holy-tenetnid-tablet-of-the-shield": "Protective powers that create sanctuaries, barriers, resistance, banishment, and safe passage.",
+        "holy-tenetnid-tablet-of-the-sun": "Solar signs and sacred radiance that protect homes and groves, reveal omens, and illuminate darkness.",
+        "holy-tenetnid-tablet-of-voices": "Powers of speech, hearing, fellowship, sanity, divine favor, and binding sacred pacts.",
+        "holy-haminges-power-of-the-beast": "Bestial powers granting predator instincts, tusks, claws, fur, endurance, and animal transformation.",
+        "holy-haminges-power-of-the-dragon": "Draconic powers granting constriction, flame resistance, paralyzing sight, scales, and serpent forms.",
+        "holy-haminges-power-of-men": "Mortal and dwarven arts of mastery, weapon skill, healing draughts, smithing, and legendary achievement.",
+        "holy-haminges-power-of-the-scale": "Lindwurm powers of terror, regeneration, stone limbs, petrification, and monstrous resilience.",
+        "holy-haminges-power-of-the-thurses": "Troll and thurse powers granting icy hides, immense strength, breath weapons, and destructive rage.",
+        "holy-haminges-power-of-trolls": "Troll powers of disease, illusion, persuasion, fearlessness, cunning, and mountain enchantment.",
+        "holy-toikalokke-animal-mind": "Powers for befriending, tracking, speaking with, mastering, and assuming the forms of animals.",
+        "holy-toikalokke-lynx-power": "Feline gifts of hearing, leaping, reflexes, aim, tracking, concealment, and pathfinding.",
+        "holy-toikalokke-master-of-elements": "Elemental powers controlling earth, fire, water, wind, temperature, and elemental projectiles."
+      },
+      "ThuulRunePrefix": "A sacred Thuul rune that {summary}"
+    }
+  }
+}

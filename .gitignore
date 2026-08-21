@@ -1,0 +1,14 @@
+# Fichiers de travail locaux — jamais publiés
+tmp/
+dist/
+
+# Livres propriétaires et miroirs texte dérivés (droits RiotMinds/Black Book Éditions)
+game doc/
+
+# Dépendances et artefacts système
+node_modules/
+Thumbs.db
+
+# Caches d'outillage local
+.codegraph/
+.omo/

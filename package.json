@@ -1,0 +1,10 @@
+{
+  "name": "trudvang-chronicles-foundry",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node tools/validate-system.mjs",
+    "package": "node tools/package-system.mjs"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "trudvang-chronicles",
+  "title": "Trudvang Chronicles",
+  "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
+  "version": "0.1.9",
+  "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
+  "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/latest/download/trudvang-chronicles.zip",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "Trudvang Foundry Community"
+    }
+  ],
+  "esmodules": ["trudvang.mjs"],
+  "styles": ["styles/trudvang.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {
+        "htmlFields": ["notes", "appearance", "history"]
+      },
+      "npc": {
+        "htmlFields": ["notes", "description"]
+      }
+    },
+    "Item": {
+      "weapon": {"htmlFields": ["description"]},
+      "armor": {"htmlFields": ["description"]},
+      "shield": {"htmlFields": ["description"]},
+      "gear": {"htmlFields": ["description"]},
+      "potion": {"htmlFields": ["description", "effect"]},
+      "spell": {"htmlFields": ["description", "effect"]},
+      "tablet": {"htmlFields": ["description"]},
+      "divineFeat": {"htmlFields": ["description", "effect"]},
+      "ability": {"htmlFields": ["description"]}
+    }
+  },
+  "grid": {
+    "distance": 1,
+    "units": "m"
+  },
+  "primaryTokenAttribute": "resources.body",
+  "secondaryTokenAttribute": "resources.combat",
+  "initiative": "1d10x10 + @initiative.current",
+  "socket": false,
+  "background": "systems/trudvang-chronicles/assets/art/character-sheet-header.webp",
+  "flags": {
+    "hotReload": {
+      "extensions": ["css", "hbs", "json", "mjs"],
+      "paths": ["styles", "templates", "lang", "modules", "data"]
+    }
+  }
+}

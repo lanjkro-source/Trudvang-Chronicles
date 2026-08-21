@@ -1,0 +1,2766 @@
+{
+  "TYPES": {
+    "Actor": {
+      "character": "Personnage",
+      "npc": "PNJ"
+    },
+    "Item": {
+      "weapon": "Arme",
+      "armor": "Armure",
+      "shield": "Bouclier",
+      "gear": "Équipement",
+      "potion": "Extrait / Potion",
+      "spell": "Sortilège",
+      "tablet": "Tablette",
+      "divineFeat": "Pouvoir divin",
+      "ability": "Discipline / Specialité"
+    }
+  },
+  "TRUDVANG": {
+    "Sheets": {
+      "Character": "Feuille de personnage",
+      "Npc": "Feuille de PNJ",
+      "Item": "Feuille d'objet"
+    },
+    "Settings": {
+      "StarterContentName": "Starter content version",
+      "StarterContentHint": "Tracks the installed Trudvang starter library."
+    },
+    "Tab": {
+      "Summary": "Résumé",
+      "Skills": "Compétences",
+      "Equipment": "Équipement",
+      "Magic": "Magie & Foi",
+      "Notes": "Notes",
+      "Actions": "Actions"
+    },
+    "Section": {
+      "Traits": "Traits de personnage",
+      "Status": "État",
+      "Experience": "Création & Expérience",
+      "QuickActions": "Actions Rapides",
+      "Skills": "Compétences",
+      "Disciplines": "Disciplines & Spécialités",
+      "Weapons": "Armes",
+      "Protection": "Armure & Boucliers",
+      "Gear": "Équipement & Extraits",
+      "Magic": "Tablettes, Sortilèges & Pouvoirs divins",
+      "Appearance": "Apparence",
+      "History": "Histoire",
+      "Notes": "Notes",
+      "Description": "Description",
+      "Affinities": "Affinités magiques & religieuses"
+    },
+    "Action": {
+      "Roll": "Jet de dé",
+      "Cancel": "Annuler",
+      "Use": "Utiliser",
+      "Damage": "Dégâts",
+      "Parry": "Parer",
+      "RollDamage": "Jet de Dégâts",
+      "RollInitiative": "Jet d'initiative",
+      "ResetCombat": "Réinitialiser les points de combat",
+      "AdvanceSkill": "Acheter la valeur de compétence suivante avec les points d'aventure",
+      "AdvanceItem": "Acheter le prochain niveau avec les points d'aventure",
+      "StartCreation": "Mode création de personnage",
+      "FinishCreation": "Terminer la création",
+      "ConfirmAdvancement": "Valider",
+      "CancelAdvancement": "Annuler et rembourser",
+      "AddKnowledge": "Ajouter une discipline ou spécialité",
+      "Add": "Ajouter",
+      "Close": "Fermer",
+      "AddTablet": "Ajouter une tablette compatible",
+      "ToggleTree": "Déplier ou replier",
+      "HideUnlearned": "Masquer les compétences à 0",
+      "ShowUnlearned": "Afficher les compétences à 0",
+      "HideInactiveMagic": "Masquer les pouvoirs inaccessibles",
+      "ShowInactiveMagic": "Afficher les pouvoirs inaccessibles",
+      "ExpandAll": "Déplier toute l'arborescence des compétences",
+      "CollapseAll": "Replier toute l'arborescence des compétences"
+    },
+    "Field": {
+      "Name": "Nom",
+      "Race": "Race",
+      "Culture": "Culture",
+      "Archetype": "Archétype",
+      "NativeLanguage": "Langue maternelle",
+      "Religion": "Religion",
+      "CreatureType": "Type",
+      "Size": "Taille",
+      "FearFactor": "Facteur de peur",
+      "SV": "VC",
+      "Bonus": "Bonus",
+      "CreationTotal": "Points de création",
+      "BuildCost": "Coût calculé",
+      "CreationRemaining": "PC Restant",
+      "AdventurePoints": "Points d'aventure",
+      "PendingAdventurePoints": "PA en attente",
+      "AdventureSpent": "PA dépensés",
+      "Unassigned": "Non rattaché",
+      "CostTrait": "Trait modifiant le coût",
+      "Automatic": "Automatique",
+      "CoreBonus": "Bonus de compétences principales",
+      "CoreBonusHint": "Jusqu'à 50 points de création sont automatiquement dépensés en priorité dans Connaissances et l'autre compétence principale de l'archétype.",
+      "CoreSkill": "Compétence principale de l'archétype",
+      "Quantity": "Quantité",
+      "Weight": "Poids (kg)",
+      "Value": "Valeur (pièces d'argent)",
+      "Category": "Catégorie",
+      "Damage": "Dégâts",
+      "OpenRoll": "Seuil de jet ouvert (0 = aucun)",
+      "WeaponActions": "Actions d'arme",
+      "AttackValue": "Nombre de CP par attaque",
+      "InitiativeModifier": "Modificateur d'initiative",
+      "VitnerType": "Type d'enchanteur",
+      "PerfectSuccess": "Réussite parfaite sur",
+      "NoPerfectSuccess": "Aucune réussite parfaite",
+      "FatalDie": "Dé de magie funeste",
+      "Protection": "Valeur de protection (VP)",
+      "Breach": "Valeur d'intégrité (VI) / Maximum",
+      "Equipped": "Équipé",
+      "Heft": "Encombrement",
+      "MovementModifier": "Modificateur de mouvement",
+      "Strength": "Force de l'extrait",
+      "Application": "Application",
+      "Duration": "Durée",
+      "Effect": "Effet",
+      "Level": "Niveau",
+      "Cost": "Coût",
+      "Modifier": "Modificateur de compétence",
+      "Tablet": "Tablette",
+      "Range": "Portée",
+      "WeavingTime": "Temps de tissage",
+      "TabletType": "Type de tablette",
+      "AbilityKind": "Type de connaissance",
+      "ParentSkill": "Compétence parente",
+      "ParentDiscipline": "Discipline parente",
+      "RollBonus": "Bonus par niveau",
+      "Source": "Source",
+      "ActiveSpell": "Sortilège actuellement maintenu",
+      "ActiveCost": "Coût en vitner lors de l'activation"
+    },
+    "Resource": {
+      "Body": "Points de santé (PS)",
+      "Combat": "Points de combat (CP)",
+      "Raud": "Raud",
+      "Fear": "Peur",
+      "Vitner": "Points de vitner",
+      "Divinity": "Points de divinité",
+      "Initiative": "Initiative",
+      "Movement": "Mouvement",
+      "Protection": "Protection",
+      "DamageLevel": "Niveau de dégâts",
+      "FearPenalty": "Pénalité de peur",
+      "PersistenceInWild": "Persistance dans la nature",
+      "VitnerCost": "Coût en points de vitner",
+      "DivinityCost": "Coût en points de divinité"
+    },
+    "Trait": {
+      "Charisma": "Charisme",
+      "Constitution": "Constitution",
+      "Dexterity": "Dextérité",
+      "Intelligence": "Intelligence",
+      "Perception": "Perception",
+      "Psyche": "Psychisme",
+      "Strength": "Force"
+    },
+    "Skill": {
+      "Agility": "Agilité",
+      "Care": "Savoir-faire",
+      "Entertainment": "Divertissement",
+      "Faith": "Foi",
+      "Fighting": "Combat",
+      "Knowledge": "Connaissances",
+      "ShadowArts": "Arts des ombres",
+      "VitnerCraft": "Maîtrise du vitner",
+      "Wilderness": "Nature",
+      "agility": "Agilité",
+      "care": "Savoir-faire",
+      "entertainment": "Divertissement",
+      "faith": "Foi",
+      "fighting": "Combat",
+      "knowledge": "Connaissances",
+      "shadowArts": "Arts des ombres",
+      "vitnerCraft": "Maîtrise du vitner",
+      "wilderness": "Nature"
+    },
+    "SkillDescription": {
+      "agility": "Agilité régit l'équilibre, le mouvement, l'équitation, l'esquive et les autres prouesses de contrôle corporel.",
+      "care": "Savoir-faire couvre l'artisanat, les soins, le commandement, le commerce, les extraits et poisons et les métiers pratiques.",
+      "entertainment": "Divertissement couvre le spectacle, la musique, la danse, les récits et les jeux de hasard.",
+      "faith": "Foi régit le savoir religieux, les invocations, la puissance divine et l'accès aux tablettes sacrées.",
+      "fighting": "Combat régit les affrontements armés ou à mains nues, les réactions défensives et l'expérience de la bataille.",
+      "knowledge": "Connaissances couvre les langues, les cultures, l'étude, la religion, les légendes et l'érudition.",
+      "shadowArts": "Arts des ombres couvre la discrétion, le déguisement, le vol, les pièges et l'observation clandestine.",
+      "vitnerCraft": "Maîtrise du vitner régit la perception, l'appel et le modelage du vitner par les sortilèges et les tablettes de vitner.",
+      "wilderness": "Nature couvre le voyage, la survie, la chasse, la navigation, le monde naturel et la vie maritime."
+    },
+    "Race": {
+      "Human": "Humain",
+      "Elf": "Elfe",
+      "Buratja": "Nain buratja",
+      "Borjornikka": "Nain borjornikka",
+      "Zvorda": "Zvorda (nain-troll)",
+      "HalfElf": "Demi-elfe",
+      "Changeling": "Changelin",
+      "GrayBrute": "Brute grise",
+      "Ogro": "Ogro"
+    },
+    "Weapon": {
+      "OneHandedLight": "Légère à une main",
+      "OneHandedHeavy": "Lourde à une main",
+      "TwoHanded": "À deux mains",
+      "Ranged": "À distance",
+      "Natural": "Naturelle"
+    },
+    "Tablet": {
+      "Vitner": "Tablette de vitner",
+      "Holy": "Tablette sacrée",
+      "vitner": "Tablette de vitner",
+      "holy": "Tablette sacrée"
+    },
+    "AbilityKind": {
+      "discipline": "Discipline",
+      "specialty": "Spécialité",
+      "feat": "Talent de créature"
+    },
+    "Unit": {
+      "Days": "jours"
+    },
+    "Culture": {
+      "Stormlander": "Stormlander",
+      "Mittlander": "Mittlander",
+      "Virann": "Virann",
+      "Wildfolk": "Sauvage",
+      "Korpikalli": "Korpikalla",
+      "Illmalaini": "Illmalaina",
+      "Buratja": "Buratja",
+      "Borjornikka": "Borjornikka",
+      "HalfElf": "Demi-elfe",
+      "HalfTroll": "Demi-troll",
+      "DwarfTroll": "Nain-troll",
+      "Changeling": "Changelin",
+      "Dyfir": "Dyfir",
+      "Zvorda": "Zvorda",
+      "GrayBrute": "Brute grise",
+      "Barkbrule": "Barkbrule",
+      "Ogro": "Ogro"
+    },
+    "Language": {
+      "Eika": "Eika (elfe / demi-elfe)",
+      "Futhark": "Futhark (nain / demi-nain)",
+      "Rona": "Rona (humain)",
+      "Vrok": "Vrok (humain)",
+      "WildVrok": "Vrok sauvage (humain / demi-troll)"
+    },
+    "Archetype": {
+      "Bard": "Barde",
+      "Dimwalker": "Arpenteur des brumes",
+      "Dweller": "Colon",
+      "Ranger": "Rôdeur",
+      "Rogue": "Malfrat",
+      "VitnerWeaver": "Tisseur de vitner",
+      "Warrior": "Guerrier"
+    },
+    "Knowledge": {
+      "bodyControl": "Contrôle corporel",
+      "ambidexterity": "Ambidextrie",
+      "jestering": "Jonglerie",
+      "jumpingClimbingBalancing": "Sauts, escalade & équilibre",
+      "swimming": "Natation",
+      "horsemanship": "Maîtrise équestre",
+      "drivingWagon": "Conduite de chariot",
+      "riding": "Equitation",
+      "battleManeuver": "Manœuvres de combat",
+      "combatMovement": "Mouvement de combat",
+      "evade": "Esquive",
+      "ironclad": "Cuirassé",
+      "handler": "Diriger",
+      "commander": "Commander",
+      "sage": "Administrer",
+      "handicraft": "Artisanat",
+      "counterfeiting": "Contrefaçon",
+      "hardMaterials": "Matériaux durs",
+      "softMaterials": "Matériaux souples",
+      "tradesman": "Commerce",
+      "barber": "Barbier",
+      "brewer": "Brasseur",
+      "cook": "Cuisinier",
+      "peasant": "Paysan",
+      "trader": "Marchand",
+      "healingDrugs": "Soins & remèdes",
+      "extractsPotions": "Extraits & poisons",
+      "firstAidNursing": "Premiers secours & soins",
+      "gambling": "Jeux",
+      "cheater": "Tricheur",
+      "gameStrategist": "Stratège de jeux",
+      "greatGambler": "Grand joueur",
+      "musicDancing": "Musique & danse",
+      "dance": "Danse",
+      "singingPlayingInstruments": "Chants & instruments de musique",
+      "storytelling": "Narration",
+      "acting": "Comédie",
+      "libel": "Calomnies",
+      "godFocus": "Concentration religieuse",
+      "composed": "Sérénité",
+      "lightningQuickInvocation": "Invocation instantanée",
+      "potent": "Transcendance",
+      "rigorous": "Rigoureux",
+      "divinePower": "Pouvoirs divins",
+      "faithful": "Dévotion",
+      "powerful": "Puissant",
+      "invoke": "Invocation",
+      "bruid": "Bruide",
+      "gavlian": "Gavlien",
+      "ihana": "Ihana",
+      "noaj": "Noaj",
+      "thuulForging": "Forgeage thuul",
+      "stormkelt": "Stormikjalt",
+      "armedFighting": "Combat armé",
+      "oneHandedLightWeapons": "Armes légères à une main",
+      "oneHandedHeavyWeapons": "Armes lourdes à une main",
+      "throwingWeapons": "Armes de lancer",
+      "shieldBearer": "Porteur de bouclier",
+      "twoHandedWeapons": "Armes à deux mains",
+      "crossbow": "Arbalète",
+      "bowsSlings": "Arcs & frondes",
+      "unarmedFighting": "Combat à mains nues",
+      "brawling": "Bagarre",
+      "wrestling": "Lutte",
+      "battleExperience": "Expérience du combat",
+      "armorBearer": "Porteur d'armure",
+      "combatActions": "Actions de combat",
+      "combatReaction": "Réaction de combat",
+      "crossbowLoader": "Chargeur d'arbalète",
+      "fighter": "Combattant",
+      "cultureKnowledge": "Connaissances culturelles",
+      "customsLaw": "Coutumes & lois",
+      "loreLegends": "Contes & légendes",
+      "religion": "Religions",
+      "learning": "Apprentissage",
+      "insight": "Érudition",
+      "raceKnowledge": "Connaissance des créatures",
+      "monsterLore": "Connaissance des monstres",
+      "spiritLore": "Connaissance des esprits",
+      "language": "Langage",
+      "bribery": "Corruption",
+      "calculate": "Calcul",
+      "foreignTongue": "Langue étrangère",
+      "motherTongue": "Langue maternelle",
+      "readWrite": "Lire & écrire",
+      "silvertongue": "Beau parleur",
+      "shadowing": "Discrétion",
+      "camouflageHiding": "Camouflage & dissimulation",
+      "findingSpotting": "Trouver & remarquer",
+      "sneakAttack": "Attaque furtive",
+      "walkingShadows": "Marcher dans les ombres",
+      "thievery": "Larcin",
+      "disguise": "Déguisement",
+      "locksTraps": "Serrures & pièges",
+      "stealing": "Voler",
+      "shadowWorld": "Monde des ombres",
+      "thiefSigns": "Signes de voleur",
+      "vitnerFocus": "Concentration du tisseur",
+      "potency": "Puissance",
+      "safeWeaving": "Tissage attentif",
+      "strenuous": "Renforcement",
+      "vitnerShaping": "Modelage du vitner",
+      "galding": "Galda",
+      "sejding": "Sejda",
+      "vitnerRunes": "Runes de vitner",
+      "vyrding": "Vyrda",
+      "callVitner": "Appel du vitner",
+      "hwitalja": "Hwitalja",
+      "darkhwitalja": "Morkvitalja",
+      "vaagritalja": "Vaagritalja",
+      "vitnerHabit": "Habitude du vitner",
+      "geography": "Géographie",
+      "cityKnowledge": "Connaissance des cités",
+      "landKnowledge": "Connaissance régionale",
+      "orienteeringCartography": "Orientation & cartographie",
+      "seaKnowledge": "Connaissance des mers",
+      "huntingExperience": "Expérience de la chasse",
+      "carveButcher": "Découper & dépecer",
+      "huntingFishing": "Chasser & pêcher",
+      "speciesHunter": "Chasser une espèce",
+      "tracker": "Pister",
+      "wildernessSigns": "Signes de la nature",
+      "natureKnowledge": "Connaissance de la nature",
+      "animalFriend": "Ami des animaux",
+      "botany": "Botanique",
+      "weatherman": "Météorologie",
+      "zoology": "Zoologie",
+      "seafarer": "Marin",
+      "navigation": "Navigation",
+      "seaman": "Matelot",
+      "survival": "Survie",
+      "camper": "Campement",
+      "pathwalker": "Exploration",
+      "terrainExperience": "Connaissance de l'environnement",
+      "weathered": "Endurci"
+    },
+    "KnowledgeDescription": {
+      "strenuous": "Renforcement permet au tisseur de dépenser 2 points de vitner supplémentaires par niveau de spécialité pour gagner +1 VC par tranche dépensée lors du tissage d'un sortilège."
+    },
+    "Damage": {
+      "light": "Égratigné",
+      "injured": "Blessé",
+      "serious": "Gravement blessé",
+      "critical": "Mortellement blessé"
+    },
+    "Dialog": {
+      "BaseTarget": "Cible de base: {target}",
+      "Modifier": "Modificateur situationnel",
+      "CombatPoints": "CP à dépenser",
+      "AttackTitle": "Attaque: {item}",
+      "ParryTitle": " Parade: {item}",
+      "MagicAction": "Action magique ou divine",
+      "NoMagicAction": "Aucun modificateur magique",
+      "InitiativeAction": "Arme, sortilège ou pouvoir divin",
+      "NoInitiativeAction": "Aucun modificateur d'action",
+      "AddTablet": "Ajouter une tablette compatible",
+      "MagicMethod": "Méthode et spécialité",
+      "FinalTarget": "Valeur de compétence finale",
+      "Strenuous": "Renforcement",
+      "FinalVitnerCost": "Coût final en vitner"
+    },
+    "Roll": {
+      "Success": "Succès",
+      "Failure": "Échec",
+      "Critical": {
+        "success": "Réussite parfaite",
+        "failure": "Échec automatique"
+      },
+      "OpenRoll": "Jet ouvert sur",
+      "OpenInitiative": "L'initiative utilise 1d10 avec un jet ouvert sur 10.",
+      "Margin": "Marge de réussite"
+    },
+    "Warning": {
+      "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
+      "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
+      "NotEnoughExperience": "Le niveau suivant coûte {cost} PA.",
+      "LevelMaximum": "Cette discipline/spécialité est déjà au niveau 5.",
+      "SkillRequirement": "Le niveau suivant nécessite une valeur de compétence de base de {sv}.",
+      "ExitCreationFirst": "Terminez la création du personnage avant de dépenser des points d'aventure.",
+      "ResolveAdvancementsFirst": "Validez ou annulez d'abord les améliorations en attente.",
+      "CreationBudgetExceeded": "Le personnage dépasse le budget de création de {cost} points.",
+      "CreationModeRequired": "Cette modification n'est disponible qu'en mode création de personnage.",
+      "TraitLimit": "Ce trait ne peut pas être davantage augmenté ou diminué.",
+      "SkillLimit": "La valeur de compétence doit rester comprise entre 1 et 10.",
+      "KnowledgeLimit": "Le niveau de connaissance doit rester compris entre 1 et 5.",
+      "SkillSupportsKnowledge": "Cette valeur de compétence est requise par une discipline, une spécialité ou une tablette.",
+      "ParentDisciplineRequired": "La discipline parente doit être apprise avant cette spécialité.",
+      "KnowledgeRequirement": "{item} exige {skill} à la valeur de compétence {sv}.",
+      "MissingParentDiscipline": "{item} doit être rattaché à une discipline parente apprise.",
+      "KnowledgeNotLearned": "Cette discipline ou spécialité n'a pas encore été apprise.",
+      "DisciplineSupportsSpecialty": "Cette discipline ne peut pas être supprimée tant qu'une de ses spécialités est apprise.",
+      "CultureRequired": "Choisissez une culture avant de terminer la création du personnage.",
+      "ArchetypeRequired": "Choisissez un archétype avant de terminer la création du personnage.",
+      "VitnerExclusive": "Hwitalja, Morkvitalja et Vaagritalja sont mutuellement exclusifs.",
+      "ReligionExclusive": "Une seule voie religieuse peut accorder des pouvoirs divins.",
+      "ReligionIncompatible": "Cette voie religieuse n'est pas compatible avec la race du personnage.",
+      "FatalTableMissing": "La table de magie funeste requise n'est pas installée.",
+      "UnknownTablet": "Cet objet n'est pas une tablette du catalogue du système.",
+      "TabletAlreadyKnown": "Cette tablette est déjà connue.",
+      "TabletSkillRequirement": "Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4.",
+      "TabletKnowledgeRequired": "Apprenez Modelage du vitner ou la spécialité d'Invocation de la religion choisie avant d'ajouter l'une de ses tablettes.",
+      "VitnerRequired": "Choisissez une tradition du vitner avant d'ajouter une tablette de vitner.",
+      "ReligionRequired": "Choisissez une voie religieuse compatible avant d'ajouter une tablette sacrée.",
+      "TabletReligionMismatch": "Cette tablette sacrée n'appartient pas à la religion compatible choisie par le personnage.",
+      "NoCompatibleTablets": "Aucune tablette supplémentaire n'est actuellement compatible avec ce personnage.",
+      "MagicMethodRequired": "Apprenez la discipline requise et au moins une spécialité d'invocation ou de tissage applicable."
+    },
+    "Description": {
+      "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",
+      "KnowledgeSummary": "{name} est une discipline ou spécialité qui améliore les tests de la compétence associée.",
+      "DisciplineSummary": "{name} couvre {topics} et ajoute son niveau aux tests associés.",
+      "SpecialtySummary": "{name} approfondit cette application particulière de {discipline} et ajoute deux fois son niveau aux tests concernés.",
+      "TabletSummary": "{name} rassemble les sortilèges ou pouvoirs divins appartenant à cette tradition magique.",
+      "PowerSummary": "{name} est un pouvoir de {tablet} ; sa description de règles complète sera ajoutée ultérieurement.",
+      "SourcePage": "Manuel du joueur, p. {page}"
+    },
+    "Cost": {
+      "Increase": "Augmentation : coûte {cost} points",
+      "Refund": "Diminution : rembourse {cost} points",
+      "IncreaseCore": "Augmentation : {cost} points, dont {bonus} pris sur le bonus d'archétype et {creation} points de création ordinaires"
+    },
+    "Calculation": {
+      "Discipline": "VC de la compétence {skill} + discipline {discipline} = VC {total}",
+      "Specialty": "VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total}",
+      "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
+      "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires"
+    },
+    "Religion": {
+      "Gerbanis": "Gerbanis",
+      "TenetNid": "Doctrine de Nid",
+      "EaldTradition": "Ancienne tradition",
+      "Haminges": "Haminges",
+      "Thuuldom": "Thuuldom",
+      "Toikalokke": "Toikalokke"
+    },
+    "TraitBenefit": {
+      "charisma": "Modificateur de situation {value}. Modificateur de Raud {value} (-4 supprime tout le Raud). Modificateur de coût pour Divertissement et Commerce : {inverse} points par niveau.",
+      "constitution": "Modificateur de situation {value}. Modificateur de points de santé (PS) {value} ; la récupération dépend également de ce trait.",
+      "dexterity": "Modificateur de situation {value}. Modificateur de mouvement et d'initiative {value}. Modificateur de coût des connaissances d'Agilité : {inverse} points par niveau.",
+      "intelligence": "Modificateur de situation {value}. Modificateur de coût des connaissances de Connaissances, Foi et Maîtrise du vitner : {inverse} points par niveau.",
+      "perception": "Modificateur de situation {value}. Les spécialités d'observation, pistage, navigation, météo et extraits indiquées par les règles ont un modificateur de coût de {inverse} points par niveau.",
+      "psyche": "Modificateur de situation {value}. Persistance dans la nature {value} jours et modificateur de facteur de peur {inverse}. Modificateur de coût pour Exploration, Connaissance de l'environnement et Endurci : {inverse} points par niveau.",
+      "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
+    },
+    "Notification": {
+      "AdvancementConfirmed": "Les améliorations ont été validées.",
+      "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",
+      "CreationModeEnabled": "Mode création de personnage activé.",
+      "CreationModeDisabled": "Création du personnage terminée.",
+      "InvalidTraitsRepaired": "Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s)."
+    },
+    "New": {
+      "Item": "Nouveau {type}"
+    },
+    "Empty": {
+      "Weapons": "Equipez une arme pour l'ajouter aux actions rapides."
+    },
+    "Import": {
+      "Started": "Installation de la bibliothèque de démarrage Trudvang...",
+      "Complete": "Bibliothèque de démarrage Trudvang installée: {items} objets, {tables} tables, et {actors} PNJs.",
+      "Failed": "La bibliothèque de démarrage Trudvang n'a pas pu être installée. Consultez la console pour plus de détails."
+    },
+    "Content": {
+      "Folder": {
+        "Weapons": "Trudvang - Armes",
+        "Armor": "Trudvang - Armures & Boucliers",
+        "Gear": "Trudvang - Équipements & Extraits",
+        "Magic": "Trudvang - Tables & Magie",
+        "Abilities": "Trudvang - Disciplines & Spécialités",
+        "Tables": "Trudvang - Tables de Lancers",
+        "Creatures": "Trudvang - Créatures"
+      },
+      "Source": {
+        "GMG69": "Guide du maître, p. 69",
+        "GMG70": "Guide du maître, p. 70",
+        "GMG72": "Guide du maître, p. 72",
+        "GMG74": "Guide du maître, p. 74",
+        "GMG76": "Guide du maître, p. 76",
+        "GMG77": "Guide du maître, p. 77",
+        "GMG80": "Guide du maître, p. 80",
+        "GMG90": "Guide du maître, p. 90",
+        "GMG93": "Guide du maître, p. 93",
+        "GMG94": "Guide du maître, p. 94",
+        "PHB47": "Manuel du joueur, p. 47",
+        "PHB48": "Manuel du joueur, p. 48",
+        "PHB50": "Manuel du joueur, p. 50",
+        "PHB55": "Manuel du joueur, p. 55",
+        "PHB59": "Manuel du joueur, p. 59",
+        "PHB69": "Manuel du joueur, p. 69",
+        "PHB74": "Manuel du joueur, p. 74",
+        "PHB92": "Manuel du joueur, p. 92",
+        "PHB201": "Manuel du joueur, p. 201"
+      },
+      "Item": {
+        "Seax": {
+          "Name": "Seax (dague/couteau)",
+          "Description": "Un couteau à un seul tranchant omniprésent, utilisé pour le travail, le don rituel de sang, le jet et comme arme de dernier recours."
+        },
+        "Glaaf": {
+          "Name": "Glaaf (épée courte)",
+          "Description": "Une épée courte généralement à double tranchant, courante dans l'est de Trudvang et associée aux anciens Brots."
+        },
+        "HringSeax": {
+          "Name": "Hring seax (couteau à anneau)",
+          "Description": "Une lame de combat mittlander à un seul tranchant incurvé vers l'intérieur, munie d'un anneau au pommeau souvent attaché au poignet."
+        },
+        "BattleAxe": {
+          "Name": "Barda axi (hache de bataille)",
+          "Description": "Une hache d'arme raffinée et agrandie, conçue pour le combat."
+        },
+        "Broadsword": {
+          "Name": "Breid swerd (épée large)",
+          "Description": "Une épée de taille robuste, maniée couramment par les guerriers mittlanders et parfois utilisée comme arme d'appoint."
+        },
+        "BeardedAxe": {
+          "Name": "Villtur axi (hache courbée)",
+          "Description": "Une hache stormlander au long manche dont la lame en L élargit la surface de coupe sans excès de poids."
+        },
+        "LongSpear": {
+          "Name": "Spjót (lance longue)",
+          "Description": "Une lance longue efficace et peu coûteuse, particulièrement redoutable en formation disciplinée ou à cheval."
+        },
+        "TwoHandedAxe": {
+          "Name": "Tvei axi (hache à deux mains)",
+          "Description": "Une puissante hache à deux mains. Les plus beaux exemplaires utilisent le fer pour le manche comme pour la tête."
+        },
+        "TwoHandedSword": {
+          "Name": "Tvei swerd (épée à deux mains)",
+          "Description": "Une épée immense et lourde qui sacrifie la vitesse à la portée, à la puissance et à la terreur sur le champ de bataille."
+        },
+        "HuntingBow": {
+          "Name": "Veidi bogi (arc de chasse)",
+          "Description": "Un arc de chasse simple. Il inflige tous ses dégâts à courte portée et la moitié à longue portée."
+        },
+        "Longbow": {
+          "Name": "Lang bogi (arc long)",
+          "Description": "Un arc de guerre stormlander lourd et composite, à la portée supérieure et au jet ouvert de dégâts plus dangereux."
+        },
+        "Crossbow": {
+          "Name": "Krossbogur (arbalète)",
+          "Description": "Une arbalète défensive puissante, à l'excellente portée mais au rechargement lent."
+        },
+        "FurLeather": {
+          "Name": "Fourrure/cuir",
+          "Description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord."
+        },
+        "HardenedLeather": {
+          "Name": "Cuir rigide",
+          "Description": "Du cuir bouilli dans l'huile puis moulé sur son porteur. Plus silencieux que les armures métalliques, il offre une protection modérée."
+        },
+        "ChainMail": {
+          "Name": "Cotte de mailles",
+          "Description": "Des milliers d'anneaux métalliques entrelacés portés sur un rembourrage. Lourde mais comparativement souple."
+        },
+        "PlateArmor": {
+          "Name": "Armure de plate",
+          "Description": "De rares plaques métalliques superposées ajustées sur mesure. La plate offre une protection exceptionnelle au prix d'un poids et d'une pénalité d'initiative sévères."
+        },
+        "SmallShield": {
+          "Name": "Petit bouclier en bois",
+          "Description": "Un bouclier rapide permettant trois actions d'arme par tour. Les boucliers servent avant tout à parer les attaques au contact réussies."
+        },
+        "MediumShield": {
+          "Name": "Bouclier moyen en bois",
+          "Description": "Un bouclier équilibré permettant deux actions d'arme par tour. En cas de parade réussie, les dégâts s'appliquent au bouclier."
+        },
+        "LargeShield": {
+          "Name": "Grand bouclier en bois",
+          "Description": "Un bouclier lent mais très protecteur, permettant une seule action d'arme par tour."
+        },
+        "AdventureKit": {
+          "Name": "Kit d'aventure",
+          "Description": "Un ensemble d'équipement d'expédition courant. Effectuez un test de situation contre 10 pour déterminer si un kit ordinaire contient l'objet plausible recherché."
+        },
+        "Rope": {
+          "Name": "Corde de chanvre",
+          "Description": "Une corde de chanvre pratique pour escalader, attacher, haler et pour les travaux de camp."
+        },
+        "Torch": {
+          "Name": "Torche",
+          "Description": "Une torche de bois résineux fournissant une lumière portable jusqu'à consommation."
+        },
+        "DragonBlood": {
+          "Name": "Sang de dragon",
+          "Description": "Un extrait altérant légendaire prélevé sur un dragon. Excessivement rare, il vaut environ 1 000 pièces d'argent la dose.",
+          "Effect": "Lancez 1d20 + force de l'extrait - Constitution. Les effets léger, modéré, substantiel et complet accordent respectivement +2, +4, +8 ou +12 de valeur de protection naturelle pendant un jour."
+        },
+        "FrostboarFat": {
+          "Name": "Graisse de frostboar",
+          "Description": "Une épaisse graisse brune prélevée sur la nuque d'un frostboar. Son odeur est terrible et elle s'emploie sans préparation supplémentaire.",
+          "Effect": "Frottée sur le corps, la graisse protège du froid extrême et de la chaleur pendant deux heures. Déterminez son degré avec le jet d'effet d'extrait."
+        },
+        "WoundBalm": {
+          "Name": "Baume aux blessures",
+          "Description": "Un onguent cicatrisant préparé pour être appliqué directement sur les blessures.",
+          "Effect": "Appliquez le baume sur la blessure et déterminez son degré de guérison avec le jet d'effet d'extrait standard."
+        },
+        "Manetter": {
+          "Name": "Manetter",
+          "Description": "Un poison dangereux qui étrangle lentement sa victime et ignore les armures et la protection naturelle.",
+          "Effect": "Lancez 1d20 + 2 - Constitution et consultez la table des effets des extraits. Les dégâts sont retirés directement aux points de santé."
+        },
+        "AnimalVitner": {
+          "Name": "Tablette Vitner animal",
+          "Description": "Une tablette de vitner consacrée au dialogue avec les animaux, à leur appel, leur contrôle, leur possession et au transport de messages."
+        },
+        "FlameCraft": {
+          "Name": "Tablette Maîtrise du feu",
+          "Description": "Une tablette de vitner régnant sur les flammèches, la chaleur, la protection contre le feu, le contrôle des flammes et les dévastatrices mers de flammes."
+        },
+        "PowerThought": {
+          "Name": "Tablette Pouvoir de la pensée",
+          "Description": "Une tablette de vitner régnant sur le langage, le courage, la peur, la télépathie, la mémoire, le contrôle, la possession et la lecture des pensées."
+        },
+        "TabletShield": {
+          "Name": "Tablette du bouclier",
+          "Description": "Une tablette sacrée de la Doctrine de Nid dont les pouvoirs divins concernent le refuge, l'endurance et la protection."
+        },
+        "Messenger": {
+          "Name": "Messager",
+          "Description": "Imprègne un petit animal d'un message simple et d'une destination qu'il peut raisonnablement atteindre.",
+          "Effect": "L'animal tente de rejoindre le destinataire désigné pour lui transmettre le message. Des niveaux de puissance supplémentaires peuvent étendre le message ou la distance."
+        },
+        "SpeakAnimals": {
+          "Name": "Parler aux animaux",
+          "Description": "Permet à l'enchanteur de comprendre et de communiquer avec un animal proche.",
+          "Effect": "Pendant la durée, le lanceur peut échanger des idées simples avec les animaux ; l'intelligence et l'humeur de l'animal limitent toujours la conversation."
+        },
+        "CallAnimals": {
+          "Name": "Appel des animaux",
+          "Description": "Appelle des animaux du type général choisi présents dans les environs.",
+          "Effect": "Les animaux proches peuvent se diriger vers le lanceur. Des niveaux de puissance supplémentaires étendent la portée, le nombre ou la durée, avec l'accord du maître de jeu."
+        },
+        "Spark": {
+          "Name": "Flammèche",
+          "Description": "Crée une étincelle magique concentrée capable d'enflammer un amadou approprié.",
+          "Effect": "Enflamme une petite cible combustible à portée. Ce n'est pas une flamme de combat complète, sauf renforcement par des niveaux de puissance."
+        },
+        "BurningHand": {
+          "Name": "Main brûlante",
+          "Description": "Enveloppe la main du lanceur d'une flamme magique ardente pour une attaque au contact.",
+          "Effect": "La cible touchée subit des dégâts de feu magique selon le niveau de puissance du sortilège ; le maître de jeu peut limiter la protection ordinaire."
+        },
+        "FlameBurst": {
+          "Name": "Éruption de flammes",
+          "Description": "Projette une gerbe compacte de flammes qui explose au point désigné.",
+          "Effect": "Les cibles dans l'éruption subissent des dégâts de feu. Des niveaux de puissance supplémentaires peuvent accroître les dégâts ou la zone."
+        },
+        "Courage": {
+          "Name": "Courage",
+          "Description": "Fortifie l'esprit d'une créature contre la frayeur.",
+          "Effect": "Réduit les points de peur ou accorde un bonus contre la peur pendant la durée, selon le niveau de puissance du sortilège."
+        },
+        "Fear": {
+          "Name": "Peur",
+          "Description": "Projette une pensée terrifiante directement dans l'esprit de la cible.",
+          "Effect": "La cible gagne des points de peur ; le Psychisme et d'autres protections peuvent réduire l'effet."
+        },
+        "ArmedFighting": {
+          "Name": "Combat armé",
+          "Description": "Une discipline de Combat couvrant le combat avec des armes fabriquées. Chaque niveau ajoute +1 aux actions applicables."
+        },
+        "OneHandLight": {
+          "Name": "Armes légères à une main",
+          "Description": "Une spécialité de Combat armé. Chaque niveau ajoute +2 lors du combat avec des armes légères à une main et verrouille des points de combat."
+        },
+        "ShieldBearer": {
+          "Name": "Porteur de bouclier",
+          "Description": "Une spécialité de Combat armé. Son premier niveau supprime le malus normal de la main de bouclier ; les niveaux suivants améliorent l'usage du bouclier."
+        },
+        "BattleExperience": {
+          "Name": "Expérience du combat",
+          "Description": "Une discipline de Combat couvrant le sens du combat, l'initiative, l'usage des armures et les manœuvres tactiques."
+        },
+        "BodyControl": {
+          "Name": "Contrôle corporel",
+          "Description": "Une discipline d'Agilité couvrant l'équilibre, le mouvement contrôlé, l'esquive et l'ambidextrie."
+        },
+        "Horsemanship": {
+          "Name": "Maîtrise équestre",
+          "Description": "Une discipline d'Agilité couvrant l'équitation, le mouvement monté et le combat monté."
+        },
+        "HealingDrugs": {
+          "Name": "Soins & remèdes",
+          "Description": "Une discipline de Savoir-faire couvrant le diagnostic, les soins, les extraits, les poisons, les potions et les traitements."
+        },
+        "DivinePower": {
+          "Name": "Pouvoirs divins",
+          "Description": "Une discipline de Foi qui accorde une capacité de divinité et l'accès aux tablettes sacrées et aux pouvoirs divins."
+        },
+        "VitnerShaping": {
+          "Name": "Modelage du vitner",
+          "Description": "Une discipline de Maîtrise du vitner utilisée avec les spécialités Galda, Sejda ou Vyrda pour tisser des sortilèges."
+        },
+        "Survival": {
+          "Name": "Survie",
+          "Description": "Une discipline de Nature couvrant les voyages prolongés, l'abri, la météo, la nourriture et la vie au-delà des terres civilisées."
+        }
+      },
+      "Table": {
+        "StormlanderMale": {
+          "Name": "Noms - Hommes stormlander"
+        },
+        "StormlanderFemale": {
+          "Name": "Noms - Femmes stormlander"
+        },
+        "ExtractEffect": {
+          "Name": "Effets des extraits",
+          "Mild": "Effet léger (1-5)",
+          "Moderate": "Effet modéré (6-10), suivi de l'effet léger",
+          "Substantial": "Effet substantiel (11-15), suivi des effets modéré et léger",
+          "Complete": "Effet complet (16-20), suivi de chaque effet inférieur"
+        },
+        "FearLevel": {
+          "Name": "Niveaux de peur",
+          "One": "Niveau de peur 1 (1-10) : angoissé, aucun modificateur universel",
+          "Two": "Niveau de peur 2 (11-20) : effrayé, -1 VC et initiative",
+          "Three": "Niveau de peur 3 (21-30) : horrifié, -3 VC et initiative",
+          "Four": "Niveau de peur 4 (31-40) : terrifié, -5 VC et initiative",
+          "Five": "Niveau de peur 5 (41-50) : pétrifié, -7 VC et initiative"
+        },
+        "StartingExperience": {
+          "Name": "Expérience de départ",
+          "Beginner": "Débutant - 300 points de création",
+          "Practiced": "Confirmé - 500 points de création",
+          "Experienced": "Expérimenté - 700 points de création"
+        },
+        "RandomExtract": {
+          "Name": "Extrait aléatoire"
+        },
+        "TraitCost": {
+          "Name": "Niveaux de traits et coût en création",
+          "MinusFour": "Trait -4 : accorde 60 points de création",
+          "MinusTwo": "Trait -2 : accorde 30 points de création",
+          "MinusOne": "Trait -1 : accorde 15 points de création",
+          "PlusOne": "Trait +1 : coûte 15 points de création",
+          "PlusTwo": "Trait +2 : coûte 30 points de création",
+          "PlusFour": "Trait +4 : coûte 60 points de création"
+        },
+        "DisciplineCost": {
+          "Name": "Coûts des disciplines et spécialités",
+          "One": "Niveau 1 : exige une VC de base de 4 ; coûte 7 points",
+          "Two": "Niveau 2 : exige une VC de base de 7 ; coûte 14 points",
+          "Three": "Niveau 3 : exige une VC de base de 7 ; coûte 21 points",
+          "Four": "Niveau 4 : exige une VC de base de 10 ; coûte 28 points",
+          "Five": "Niveau 5 : exige une VC de base de 10 ; coûte 35 points"
+        },
+        "WeaponDamage": {
+          "Name": "Dégâts des armes et jets ouverts",
+          "Light": "Légère à une main : 1d10, jet ouvert sur 10",
+          "Heavy": "Lourde à une main : 1d10, jet ouvert sur 9-10",
+          "TwoHanded": "À deux mains : 1d10, jet ouvert sur 8-10"
+        },
+        "RaceStats": {
+          "Name": "Points de santé et mouvement raciaux"
+        },
+        "FatalMagic": {
+          "Name": "Effets de magie funeste",
+          "E0": "Rien de particulier ne se produit.",
+          "E21": "Le tisseur devient léthargique et apathique : -2 à toutes ses actions pendant 1d3 heures.",
+          "E23": "Le tisseur perd 1d10 points de vitner de sa capacité (minimum 1) pendant 1d3 heures.",
+          "E25": "Le tisseur subit -2 à toutes ses actions et perd 1d10 points de vitner de sa capacité (minimum 1) pendant 1d3 heures.",
+          "E29": "Le tisseur subit -2 à toutes ses actions et perd 1d10 points de vitner de sa capacité (minimum 1) pendant 1d6 heures.",
+          "E31": "Le tisseur perd 1d10 (JO 9-10) points de vitner de sa capacité restante (minimum 1) pendant une journée.",
+          "E33": "Le sortilège absorbe le vitner dans un rayon de 1d10 (JO 10) mètres. Chaque créature perd 1d3 points de vitner ; celles qui n'en ont pas perdent autant de points de santé (PS).",
+          "E35": "Une enceinte de vitner entoure le tisseur. À moins de 10 mètres d'un autre tisseur, elle inflige 1d6 dégâts ignorant les armures non magiques et perd autant de puissance, jusqu'à épuisement.",
+          "E37": "Le sortilège absorbe le vitner dans un rayon de 1d10 (JO 10) mètres. Chaque créature perd 1d6 points de vitner ; celles qui n'en ont pas perdent autant de points de santé (PS).",
+          "E39": "Le tisseur perd un tiers de sa capacité de vitner pendant 1d3 jours et subit une négation cosmétique (1d10) : 1-2 peau d'écorce ; 3-4 doigts deux fois plus longs ; 5-6 cheveux d'herbe ; 7-8 fourrure locale ; 9 la personne la plus proche subit 1-8 ; 10 tous dans un rayon de 10 mètres subissent 1-8.",
+          "E41": "Une enceinte de vitner entoure le tisseur. À moins de 20 mètres d'un autre tisseur, elle inflige 1d6 dégâts ignorant les armures non magiques et perd autant de puissance, jusqu'à épuisement.",
+          "E43": "Le sortilège absorbe le vitner dans un rayon de 1d10 (JO 10) mètres. Chaque créature perd 1d10 points de vitner ; celles qui n'en ont pas perdent autant de points de santé (PS).",
+          "E44": "Une enceinte de vitner entoure le tisseur. À moins de 50 mètres d'un autre tisseur, elle inflige 1d6 dégâts ignorant les armures non magiques et perd autant de puissance, jusqu'à épuisement.",
+          "E45": "Le tisseur perd la moitié de sa capacité de vitner pendant 1d6 jours et subit une négation cosmétique (1d10) : 1-2 peau d'écorce ; 3-4 doigts deux fois plus longs ; 5-6 cheveux de tourbe ; 7-8 fourrure locale ; 9 la personne la plus proche subit 1-8 ; 10 tous dans un rayon de 10 mètres subissent 1-8.",
+          "E46": "Le tisseur devient aveugle au vitner et ne peut lancer de sortilèges pendant 1d6 jours. Dans un rayon de 1d10 (JO 10) mètres, chacun perd 1d6 points de vitner ; ceux qui n'en ont pas perdent autant de points de santé (PS).",
+          "E47": "Une enceinte de vitner entoure le tisseur. Tous dans un rayon de 1d10 (JO 10) mètres subissent 1d10 dégâts ignorant les armures non magiques ; chaque décharge retire 1d3 points de vitner à l'enceinte, jusqu'à épuisement.",
+          "E48": "Le tisseur perd la mémoire pendant 1d3 jours et ne peut ni lancer de sortilèges ni utiliser de compétences.",
+          "E49": "Une explosion lumineuse inoffensive vide le vitner du tisseur. Sa capacité tombe à 1 et ne commence à se rétablir qu'après une semaine.",
+          "E50": "Une enceinte de vitner entoure le tisseur. Tous dans un rayon de 1d10 (JO 9-10) mètres subissent 1d10 dégâts ignorant les armures non magiques ; chaque décharge retire 1 point de vitner, jusqu'à épuisement.",
+          "E51": "Le tisseur et toutes les créatures dans un rayon de 2d6 mètres subissent 1d10 dégâts ignorant les armures non magiques. Le tisseur perd la moitié de ses points de vitner restants et ne récupère qu'après une semaine.",
+          "E52": "Le tisseur subit autant de dégâts aux points de santé (PS) que le coût total en vitner du sortilège, sombre dans l'inconscience pendant 1d10 minutes et sa capacité tombe à 1 ; elle ne récupère qu'après une semaine.",
+          "E53": "Une décharge aveuglante oblige tous ceux situés dans un rayon de 2d6 mètres à réussir un jet de situation modifié par la Psyché contre 10 ou être aveuglés pendant 1d5 minutes. Le tisseur subit autant de dégâts que le coût du sortilège, sombre dans l'inconscience pendant 1d10 (JO 9-10) minutes et sa capacité tombe à 1 pour une semaine.",
+          "E54": "Le tisseur subit une attaque cérébrale mineure, reçoit 2d10 (JO 10) dégâts et sombre dans le coma pendant 1d10 jours.",
+          "E55": "Le tisseur subit autant de dégâts que le coût du sortilège et sombre dans l'inconscience pendant 1d10 (JO 7-10) minutes ; tous dans un rayon de 2d6 mètres subissent la moitié. Sa capacité tombe à 1 et ne récupère qu'après deux semaines.",
+          "E56": "Le tisseur subit une grave attaque cérébrale, reçoit 2d10 (JO 9-10) dégâts, perd un cran d'Intelligence et sombre dans l'inconscience pendant 1d10 jours.",
+          "E57": "Une négation colossale absorbe 1d10 (JO 6-10) points de santé (PS) et vide tout le vitner. La capacité tombe à 1 et ne récupère qu'après deux semaines.",
+          "E58": "Le tisseur ouvre un portail de brume vers Blotheim, qui le dévore.",
+          "E59": "Le tisseur devient un orbe de foudre qui explose après 2d6 tours de jeu. Tout ce qui se trouve dans un rayon de 50 mètres subit 1d10 (JO 7-10) dégâts aux points de santé (PS) ; le tisseur disparaît.",
+          "E60": "Le tisseur devient un orbe d'énergie noire qui explose après 1d6 tours de jeu. Tout ce qui se trouve dans un rayon de 100 mètres subit 1d10 (JO 5-10) dégâts aux points de santé (PS) et tout ce qui se trouve dans un rayon de 300 mètres en subit la moitié ; le tisseur disparaît."
+        },
+        "FatalFailure": {
+          "Name": "Effets d'échec critique",
+          "E0": "Rien ne se produit.",
+          "E21": "L'arpenteur des brumes perd le contact avec sa puissance spirituelle pendant 1d6 minutes et ne peut utiliser de points de divinité.",
+          "E31": "L'arpenteur des brumes perd le contact avec sa puissance spirituelle pendant 1d6 heures et ne peut utiliser de points de divinité.",
+          "E36": "L'arpenteur des brumes perd la connaissance et la capacité d'invoquer 1d3 pouvoirs choisis au hasard pendant 1d6 jours.",
+          "E41": "L'arpenteur des brumes perd la connaissance et la capacité d'invoquer le pouvoir qu'il vient d'essayer d'activer pendant 2d6 jours.",
+          "E46": "L'arpenteur des brumes perd la connaissance et la capacité d'invoquer 1d3 pouvoirs choisis au hasard pendant 2d6 jours.",
+          "E51": "L'arpenteur des brumes perd le contact avec sa puissance spirituelle pendant 1d6 jours et ne peut utiliser de points de divinité.",
+          "E55": "Les dieux lui retirent définitivement le pouvoir qu'il vient d'essayer d'activer ; celui-ci échouera toujours.",
+          "E57": "Les dieux lui retirent définitivement 1d3 pouvoirs accessibles choisis au hasard ; ceux-ci échoueront toujours.",
+          "E59": "Le dieu refuse définitivement d'accorder le moindre pouvoir divin à l'arpenteur des brumes.",
+          "E60": "Les dieux considèrent l'arpenteur des brumes comme une insulte à leur majesté et retirent immédiatement cette souillure du visage de Trudvang, en faisant disparaître le blasphémateur et en effaçant toute trace de son existence."
+        }
+      },
+      "Actor": {
+        "Galtir": {
+          "Name": "Galtir",
+          "Description": "Un humanoïde bestial pourvu de défenses. Ce spécimen standard possède 23 points de santé, Dextérité -1, Intelligence -4 et Force +2."
+        },
+        "GiantSnake": {
+          "Name": "Serpent géant",
+          "Description": "Un serpent massif aux anneaux écrasants, doué de camouflage et doté d'un regard paralysant. Spécimen standard : 95 points de santé."
+        },
+        "GiantSpider": {
+          "Name": "Araignée géante",
+          "Description": "Une araignée colossale et ancestrale, capable de projeter des toiles, de paralyser ses proies et de les envelopper dans un cocon. Spécimen standard : 95 points de santé."
+        },
+        "Gryphon": {
+          "Name": "Griffon",
+          "Description": "Un immense chasseur ailé associant tête et ailes d'aigle à un corps félin. Spécimen standard : 87 points de santé."
+        },
+        "NightUlm": {
+          "Name": "Nattulm",
+          "Description": "Un petit buveur de sang ailé dont la salive anesthésiante peut transmettre la redoutable infection rugtanne. Spécimen standard : 25 points de santé."
+        },
+        "ThornBeast": {
+          "Name": "Bête épineuse",
+          "Description": "Une immense bête volante dont la seule puanteur peut infliger des points de peur. Spécimen standard : 171 points de santé."
+        },
+        "TrollBull": {
+          "Name": "Minokks (taureau troll)",
+          "Description": "Un humanoïde massif vénérant Haminges, pourvu de cornes, d'une protection naturelle et d'une charge dévastatrice. Spécimen standard : 58 points de santé."
+        },
+        "Warg": {
+          "Name": "Warg",
+          "Description": "Un quadrupède prédateur et rapide dont la morsure peut transmettre le mal du warg. Spécimen standard : 18 points de santé."
+        }
+      },
+      "Attack": {
+        "BiteTusk": {
+          "Name": "Morsure / Défenses"
+        },
+        "Bite": {
+          "Name": "Morsure"
+        },
+        "Claws": {
+          "Name": "Griffes"
+        },
+        "ImpalingLeg": {
+          "Name": "Patte empalante"
+        },
+        "Horns": {
+          "Name": "Cornes"
+        }
+      },
+      "Feat": {
+        "DeepBellow": {
+          "Name": "Mugissement profond",
+          "Description": "Le galtir pousse un mugissement violent ; les créatures proches peuvent devoir résister à la peur ou à la distraction."
+        },
+        "Fearless": {
+          "Name": "Sans peur",
+          "Description": "La créature résiste inhabituellement bien aux sources ordinaires de points de peur, voire y est immunisée."
+        },
+        "Constricting": {
+          "Name": "Constriction (VC 10)",
+          "Description": "Après avoir enserré sa victime, le serpent resserre ses anneaux. La victime doit se libérer ou subir les conséquences de l'écrasement."
+        },
+        "ParalyzingStare": {
+          "Name": "Regard paralysant",
+          "Description": "La victime effectue un test de situation basé sur le Psychisme contre une valeur de situation de 6, sinon elle est paralysée pendant 1d3 tours de jeu."
+        },
+        "AttackWeb": {
+          "Name": "Attaque par toile (VC 9)",
+          "Description": "Projette une large toile poisseuse. Une victime piégée doit réussir un test de situation basé sur la Force, généralement contre une valeur de situation de 7, pour se libérer."
+        },
+        "AttackAbove": {
+          "Name": "Attaque depuis les hauteurs",
+          "Description": "Le griffon exploite son vol et son élan pour frapper d'en haut avant de remonter."
+        },
+        "Bloodsucker": {
+          "Name": "Suceur de sang",
+          "Description": "Une fois accroché, le nattulm draine le sang aux tours suivants et peut exposer une victime humaine à la maladie."
+        },
+        "TerrifyingStench": {
+          "Name": "Puanteur terrifiante",
+          "Description": "Les créatures situées à moins de 5 mètres gagnent 1d10 points de peur à jet ouvert à cause de l'odeur insupportable, sauf si elles y sont habituées."
+        },
+        "Charge": {
+          "Name": "Charge",
+          "Description": "Le minokks commence le combat par une ruée cornes en avant capable de renverser les victimes et d'augmenter les dégâts."
+        },
+        "TrollHeart": {
+          "Name": "Cœur de minokks",
+          "Description": "La vitalité brutale et la rage protectrice de la créature la rendent exceptionnellement difficile à arrêter."
+        },
+        "WargSickness": {
+          "Name": "Maladie du warg",
+          "Description": "Un humain mordu peut contracter une maladie transformative. Un test de situation basé sur la Constitution et le Psychisme est généralement requis pour y résister."
+        }
+      },
+      "Tablet": {
+        "vitner-animal-vitner": {
+          "Name": "Vitner animal"
+        },
+        "vitner-body-vitner": {
+          "Name": "Vitner corporel"
+        },
+        "vitner-delusion-vitner": {
+          "Name": "Vitner illusoire"
+        },
+        "vitner-dimvitner": {
+          "Name": "Dimvitner"
+        },
+        "vitner-flame-craft": {
+          "Name": "Maîtrise des flammes"
+        },
+        "vitner-perceiving": {
+          "Name": "Perception"
+        },
+        "vitner-power-of-thought": {
+          "Name": "Pouvoir de la pensée"
+        },
+        "vitner-power-of-vision": {
+          "Name": "Pouvoir de la vision"
+        },
+        "vitner-soil-craft": {
+          "Name": "Maîtrise de la terre"
+        },
+        "vitner-vitner-craft": {
+          "Name": "Art du vitner"
+        },
+        "vitner-vitner-of-objects": {
+          "Name": "Vitner des objets"
+        },
+        "vitner-water-craft": {
+          "Name": "Maîtrise de l'eau"
+        },
+        "vitner-wind-craft": {
+          "Name": "Maîtrise du vent"
+        },
+        "vitner-witchcraft": {
+          "Name": "Sorcellerie"
+        },
+        "holy-gerbanis-influence-of-jorn": {
+          "Name": "Influence de Jorn"
+        },
+        "holy-gerbanis-power-of-enken": {
+          "Name": "Pouvoir d'Enken"
+        },
+        "holy-gerbanis-strength-of-stormi": {
+          "Name": "Force de Storme"
+        },
+        "holy-gerbanis-warmth-of-sunvei": {
+          "Name": "Chaleur de Solvei"
+        },
+        "holy-gerbanis-wisdom-of-windinna": {
+          "Name": "Sagesse de Windinna"
+        },
+        "holy-gerbanis-wrath-of-tyrd": {
+          "Name": "Fureur de Tyrd"
+        },
+        "holy-ealdtradition-gift-of-thanja": {
+          "Name": "Don de Thanja"
+        },
+        "holy-ealdtradition-halawen-s-offering": {
+          "Name": "Offrande de Halawen"
+        },
+        "holy-ealdtradition-heritage-of-majne": {
+          "Name": "Héritage de Majne"
+        },
+        "holy-ealdtradition-magh-s-gift": {
+          "Name": "Don de Magh"
+        },
+        "holy-ealdtradition-nema-s-usefulness": {
+          "Name": "Utilité de Nema"
+        },
+        "holy-ealdtradition-tribute-of-morgu": {
+          "Name": "Tribut de Morgu"
+        },
+        "holy-tenetnid-tablet-of-anger": {
+          "Name": "Tablette de la colère"
+        },
+        "holy-tenetnid-tablet-of-grace": {
+          "Name": "Tablette de la grâce"
+        },
+        "holy-tenetnid-tablet-of-the-knight": {
+          "Name": "Tablette du chevalier"
+        },
+        "holy-tenetnid-tablet-of-the-shield": {
+          "Name": "Tablette du bouclier"
+        },
+        "holy-tenetnid-tablet-of-the-sun": {
+          "Name": "Tablette du soleil"
+        },
+        "holy-tenetnid-tablet-of-voices": {
+          "Name": "Tablette des voix"
+        },
+        "holy-haminges-power-of-the-beast": {
+          "Name": "Pouvoir de la bête"
+        },
+        "holy-haminges-power-of-the-dragon": {
+          "Name": "Puissance du dragon"
+        },
+        "holy-haminges-power-of-men": {
+          "Name": "Puissance des hommes"
+        },
+        "holy-haminges-power-of-the-scale": {
+          "Name": "Puissance de l'écaille"
+        },
+        "holy-haminges-power-of-the-thurses": {
+          "Name": "Puissance des tursirs"
+        },
+        "holy-haminges-power-of-trolls": {
+          "Name": "Puissance des trolls"
+        },
+        "holy-thuuldom-anvil-shock": {
+          "Name": "Choc de l'enclume"
+        },
+        "holy-thuuldom-borjorn-s-hand": {
+          "Name": "Main de Borjorn"
+        },
+        "holy-thuuldom-cave-spider-s-grip": {
+          "Name": "Prise de l'araignée des cavernes"
+        },
+        "holy-thuuldom-earthquake": {
+          "Name": "Tremblement de terre"
+        },
+        "holy-thuuldom-fang-of-yukk": {
+          "Name": "Croc de Yukk"
+        },
+        "holy-thuuldom-gills-of-the-blackfish": {
+          "Name": "Branchies du brochet"
+        },
+        "holy-thuuldom-hammer-fists": {
+          "Name": "Poings d'acier"
+        },
+        "holy-thuuldom-healing-rune": {
+          "Name": "Rune de guérison"
+        },
+        "holy-thuuldom-heat-of-the-depths": {
+          "Name": "Chaleur des profondeurs"
+        },
+        "holy-thuuldom-labyrinth-blood": {
+          "Name": "Sang du labyrinthe"
+        },
+        "holy-thuuldom-mark-of-brokk": {
+          "Name": "Marque de Brokk"
+        },
+        "holy-thuuldom-power-of-repair": {
+          "Name": "Pouvoir de réparation"
+        },
+        "holy-thuuldom-scales": {
+          "Name": "Écailles"
+        },
+        "holy-thuuldom-stoneling": {
+          "Name": "Enfant de la pierre"
+        },
+        "holy-thuuldom-stone-to-clay": {
+          "Name": "Transformation de pierre en argile"
+        },
+        "holy-thuuldom-stoneshape": {
+          "Name": "Aspect de la pierre"
+        },
+        "holy-thuuldom-well-of-water": {
+          "Name": "Source d'eau"
+        },
+        "holy-toikalokke-animal-mind": {
+          "Name": "Esprit animal"
+        },
+        "holy-toikalokke-lynx-power": {
+          "Name": "Agilité du lynx"
+        },
+        "holy-toikalokke-master-of-elements": {
+          "Name": "Maître des éléments"
+        }
+      },
+      "Power": {
+        "vitner-animal-vitner:messenger:0": {
+          "Name": "Messager",
+          "Summary": "En entonnant un chant particulier, l’enchanteur peut se servir des créatures des environs pour transmettre un message."
+        },
+        "vitner-animal-vitner:speak-to-animals:1": {
+          "Name": "Parler aux animaux",
+          "Summary": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres."
+        },
+        "vitner-animal-vitner:call-on-animals:2": {
+          "Name": "Appel des animaux",
+          "Summary": "L’enchanteur peut appeler un ou plusieurs animaux non intelligents."
+        },
+        "vitner-animal-vitner:conjure-ravens:3": {
+          "Name": "Conjuration de corbeaux",
+          "Summary": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible."
+        },
+        "vitner-animal-vitner:control-animals:4": {
+          "Name": "Contrôle des animaux",
+          "Summary": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents."
+        },
+        "vitner-animal-vitner:mind-of-the-wolf:5": {
+          "Name": "Esprit du loup",
+          "Summary": "La personne affectée par ce sort déve loppe une faculté semblable à la capacité d’un loup à percevoir dans les odeurs des choses subtiles comme la peur, l’agressivité, l’anxiété et la force."
+        },
+        "vitner-animal-vitner:possess-animals:6": {
+          "Name": "Possession animale",
+          "Summary": "Ce sort permet à l’enchanteur de projeter sa conscience dans le corps d’un vertébré non intelligent."
+        },
+        "vitner-animal-vitner:create-messenger:7": {
+          "Name": "Création de messager",
+          "Summary": "L’enchanteur crée un messager de chair et de sang, qui peut délivrer un message en un lieu prédéfini."
+        },
+        "vitner-animal-vitner:send-message:8": {
+          "Name": "Messager magique",
+          "Summary": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’en chanteur."
+        },
+        "vitner-body-vitner:grip:0": {
+          "Name": "Adhérence",
+          "Summary": "Ce sort change le vitner qui s’écoule à travers les mains et les pieds du per sonnage enchanté et rend la peau qui les recouvre plus rugueuse et adhésive."
+        },
+        "vitner-body-vitner:tipping:1": {
+          "Name": "Croche-pied",
+          "Summary": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre."
+        },
+        "vitner-body-vitner:hearing-deafness:2": {
+          "Name": "Acuité auditive/surdité",
+          "Summary": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts."
+        },
+        "vitner-body-vitner:sense-of-smell:3": {
+          "Name": "Sens de l'odorat",
+          "Summary": "Ce sort peut améliorer temporairement l’odorat de la personne enchantée, qui reçoit un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’odorat est un facteur de réussite important."
+        },
+        "vitner-body-vitner:vision-blindness:4": {
+          "Name": "Vision/cécité",
+          "Summary": "La vision de la personne enchantée est améliorée pendant toute la durée du sort."
+        },
+        "vitner-body-vitner:leather-skin:5": {
+          "Name": "Peau de cuir",
+          "Summary": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir."
+        },
+        "vitner-body-vitner:immobilize:6": {
+          "Name": "Immobilisation",
+          "Summary": "Ce sort crée une énergie restrictive qui immobilise la victime choisie."
+        },
+        "vitner-body-vitner:appearance-change:7": {
+          "Name": "Modification d'apparence",
+          "Summary": "L’énergie de ce sort crée un déséqui libre dans le corps de la personne en chantée, ce qui a pour conséquence de modifier immédiatement son apparence physique."
+        },
+        "vitner-body-vitner:strengthen:8": {
+          "Name": "Vigueur",
+          "Summary": "Ce sort renforce les muscles du béné ficiaire, qui gagnent instantanément en taille et en puissance."
+        },
+        "vitner-body-vitner:hasten:9": {
+          "Name": "Hâte",
+          "Summary": "Ce sort crée une énergie restrictive qui immobilise la victime choisie."
+        },
+        "vitner-body-vitner:imprison:10": {
+          "Name": "Emprisonnement",
+          "Summary": "Ce sort est une extension du sort Immobilisation, ce qui signifie que l’en chanteur doit d’abord réussir à immobili ser la victime par le biais de ce sort avant de pouvoir tisser Emprisonnement."
+        },
+        "vitner-body-vitner:change-creature:11": {
+          "Name": "Transformation",
+          "Summary": "Le vitner que conjure ce sort est assez puissant pour donner à une créature vivante la forme d’une tout autre créature."
+        },
+        "vitner-delusion-vitner:roar:0": {
+          "Name": "Grondement",
+          "Summary": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre."
+        },
+        "vitner-delusion-vitner:phantom-sound:1": {
+          "Name": "Son illusoire",
+          "Summary": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée."
+        },
+        "vitner-delusion-vitner:shriek:2": {
+          "Name": "Son aigu",
+          "Summary": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort)."
+        },
+        "vitner-delusion-vitner:increase-sounds:3": {
+          "Name": "Amplification des sons",
+          "Summary": "L’enchanteur tisse le vitner autour d’une personne ou d’une créature afin d’amplifier tous les sons qu’elle produit."
+        },
+        "vitner-delusion-vitner:traceless:4": {
+          "Name": "Sans trace",
+          "Summary": "Ce sort crée une barrière d’énergie qui accompagne la personne enchantée en faisant disparaître les traces, indices et même odeurs qu’elle sème derrière elle et laisse le terrain dans l’état précédent son passage."
+        },
+        "vitner-delusion-vitner:ghost-voice:5": {
+          "Name": "Voix illusoire",
+          "Summary": "Ce sort permet à la personne enchan tée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent."
+        },
+        "vitner-delusion-vitner:depict:6": {
+          "Name": "Image",
+          "Summary": "En se concentrant sur un objet, une créature ou une personne, l’enchanteur peut en évoquer une réplique exacte."
+        },
+        "vitner-delusion-vitner:camouflage:7": {
+          "Name": "Camouflage",
+          "Summary": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement."
+        },
+        "vitner-delusion-vitner:landscape-illusion:8": {
+          "Name": "Paysage illusoire",
+          "Summary": "Ce sort crée une immense sphère d’il lusion autour de l’enchanteur qui imite le paysage de son choix."
+        },
+        "vitner-delusion-vitner:silence:9": {
+          "Name": "Silence",
+          "Summary": "Ce sort génère une sphère d’énergie qui empêche de percevoir les sons provenant du site enchanté."
+        },
+        "vitner-delusion-vitner:lindwurm-illusion:10": {
+          "Name": "Lindwurm illusoire",
+          "Summary": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête)."
+        },
+        "vitner-delusion-vitner:invisibility:11": {
+          "Name": "Invisibilité",
+          "Summary": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur."
+        },
+        "vitner-dimvitner:animate-undead:0": {
+          "Name": "Animation des morts-vivants",
+          "Summary": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes."
+        },
+        "vitner-dimvitner:hand-of-death:1": {
+          "Name": "Main funeste",
+          "Summary": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts."
+        },
+        "vitner-dimvitner:dismiss-undead:2": {
+          "Name": "Renvoi des morts-vivants",
+          "Summary": "En tranchant le lien entre les mortsvivants et le royaume des morts, l’enchanteur parvient à bannir une ou plusieurs créatures mortes-vivantes vers Dimhall."
+        },
+        "vitner-dimvitner:speak-to-undead:3": {
+          "Name": "Conversation de l'au-delà",
+          "Summary": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre."
+        },
+        "vitner-dimvitner:tendril-of-dimhall:4": {
+          "Name": "Vrille de Dimhall",
+          "Summary": "L’enchanteur concentre autour de lui la puissance de la mort et canalise cette énergie humide à travers ses mains et ses doigts."
+        },
+        "vitner-dimvitner:vitner-theft:5": {
+          "Name": "Vol de vitner",
+          "Summary": "Ce sort crée un lien spirituel entre l’enchanteur et la victime de son choix."
+        },
+        "vitner-dimvitner:summon-wight:6": {
+          "Name": "Invocation d'un revenant",
+          "Summary": "Ce sort crée un lien entre Trudvang et Dimhall, le royaume des morts, qui permet à l’enchanteur d’appeler l’esprit et l’âme d’une personne décédée."
+        },
+        "vitner-dimvitner:control-undead:7": {
+          "Name": "Contrôle des morts-vivants",
+          "Summary": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons."
+        },
+        "vitner-dimvitner:darkness-of-dimhall:8": {
+          "Name": "Ténèbres de Dimhall",
+          "Summary": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall."
+        },
+        "vitner-flame-craft:heat-water:0": {
+          "Name": "Ébullition",
+          "Summary": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition."
+        },
+        "vitner-flame-craft:spark:1": {
+          "Name": "Flammèche",
+          "Summary": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie."
+        },
+        "vitner-flame-craft:burning-hand:2": {
+          "Name": "Main brûlante",
+          "Summary": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé)."
+        },
+        "vitner-flame-craft:flame-burst:3": {
+          "Name": "Éruption de flammes",
+          "Summary": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur."
+        },
+        "vitner-flame-craft:protection-from-fire:4": {
+          "Name": "Protection contre le feu",
+          "Summary": "Ce sort génère une couche protectrice de vitner autour de l’enchanteur ou de la créature ciblée."
+        },
+        "vitner-flame-craft:flame-control:5": {
+          "Name": "Contrôle des flammes",
+          "Summary": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques."
+        },
+        "vitner-flame-craft:warmth:6": {
+          "Name": "Chaleur",
+          "Summary": "d’une plaine venteuse la durée de ce sort sera réduite de moitié."
+        },
+        "vitner-flame-craft:sea-of-fire:7": {
+          "Name": "Mer de flammes",
+          "Summary": "L’enchanteur désigne une zone située à portée, qui est soudain envahie par les flammes."
+        },
+        "vitner-perceiving:find-home:0": {
+          "Name": "Chemin du retour",
+          "Summary": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures."
+        },
+        "vitner-perceiving:retrace-tracks:1": {
+          "Name": "Traces",
+          "Summary": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur PUISSANCE DE LA TEMPÊTE Poids de la victime Valeur de situation Distance de projection Modificateur aux actions 3 fois le"
+        },
+        "vitner-perceiving:detect-object:2": {
+          "Name": "Détection d'objet",
+          "Summary": "préciser l’objet qu’il recherche."
+        },
+        "vitner-perceiving:orientation:3": {
+          "Name": "Orientation",
+          "Summary": "Ce sort permet à son bénéficiaire de conserver son sens de l’orienta tion pendant toute la durée du sort."
+        },
+        "vitner-perceiving:detect-being:4": {
+          "Name": "Détection des êtres vivants",
+          "Summary": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée."
+        },
+        "vitner-perceiving:detect-undead:5": {
+          "Name": "Détection des morts-vivants",
+          "Summary": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vi vante à portée."
+        },
+        "vitner-perceiving:surrounding:6": {
+          "Name": "Environnement",
+          "Summary": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats."
+        },
+        "vitner-perceiving:map:7": {
+          "Name": "Cartographie",
+          "Summary": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats."
+        },
+        "vitner-power-of-thought:understanding-script:0": {
+          "Name": "Compréhension des écrits",
+          "Summary": "Ce sort permet à l’enchanteur de dé chiffrer un texte qu’il serait normalement incapable de lire."
+        },
+        "vitner-power-of-thought:understanding-speech:1": {
+          "Name": "Compréhension orale",
+          "Summary": "Une fois qu’il s’est enchanté lui-même, l’enchanteur est capable de comprendre tout ce qui se dit dans une langue qu’il ne parle pas normalement."
+        },
+        "vitner-power-of-thought:courage:2": {
+          "Name": "Courage",
+          "Summary": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage."
+        },
+        "vitner-power-of-thought:fear:3": {
+          "Name": "Peur",
+          "Summary": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions."
+        },
+        "vitner-power-of-thought:telepathy:4": {
+          "Name": "Télépathie",
+          "Summary": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée."
+        },
+        "vitner-power-of-thought:ecstasy:5": {
+          "Name": "Extase",
+          "Summary": "L’enchanteur projette son énergie ma nipulatrice vers la personne de son choix, qui se sent immédiatement submergée par une vague d’émotions."
+        },
+        "vitner-power-of-thought:imagining:6": {
+          "Name": "Influence",
+          "Summary": "L’enchanteur se sert du vitner pour créer une pensée et l’implanter dans l’esprit d’un autre être intelligent."
+        },
+        "vitner-power-of-thought:memory:7": {
+          "Name": "Mémoire",
+          "Summary": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée."
+        },
+        "vitner-power-of-thought:creature-control:8": {
+          "Name": "Contrôle des créatures",
+          "Summary": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision."
+        },
+        "vitner-power-of-thought:aura-of-power:9": {
+          "Name": "Aura de puissance",
+          "Summary": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puis sance, d’autorité et de gloire."
+        },
+        "vitner-power-of-thought:possess-creature:10": {
+          "Name": "Possession de créature",
+          "Summary": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente."
+        },
+        "vitner-power-of-thought:mind-reading:11": {
+          "Name": "Lecture des pensées",
+          "Summary": "L’enchanteur peut lire les souvenirs de la créature qu’il touche."
+        },
+        "vitner-power-of-vision:tracking:0": {
+          "Name": "Pistage",
+          "Summary": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les em preintes d’une autre créature sur le sol."
+        },
+        "vitner-power-of-vision:scanning:1": {
+          "Name": "Examen d'objet",
+          "Summary": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral."
+        },
+        "vitner-power-of-vision:far-sight:2": {
+          "Name": "Vision lointaine",
+          "Summary": "Le sort Vision lointaine confère un bonus de +1 à la valeur de compé tence pour toucher à l’aide d’une arme à distance."
+        },
+        "vitner-power-of-vision:seeing:3": {
+          "Name": "Vision parfaite",
+          "Summary": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus dif ficiles."
+        },
+        "vitner-power-of-vision:espionage:4": {
+          "Name": "Espionnage",
+          "Summary": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour."
+        },
+        "vitner-power-of-vision:astral-voyage:5": {
+          "Name": "Voyage astral",
+          "Summary": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute."
+        },
+        "vitner-power-of-vision:read-vitner:6": {
+          "Name": "Lecture du vitner",
+          "Summary": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour."
+        },
+        "vitner-power-of-vision:true-sight:7": {
+          "Name": "Vision véritable",
+          "Summary": "Ce sort permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de vitner illusoire qui entourent les êtres et les objets."
+        },
+        "vitner-soil-craft:rock-throw:0": {
+          "Name": "Jet de pierre",
+          "Summary": "L’enchanteur ramasse une petite pierre et la lance sur une cible à portée."
+        },
+        "vitner-soil-craft:shape-soil:1": {
+          "Name": "Façonnage de la terre",
+          "Summary": "Ce sort transforme toute la terre alentour en une glaise épaisse, lisse et malléable."
+        },
+        "vitner-soil-craft:earthquake:2": {
+          "Name": "Tremblement de terre",
+          "Summary": "Ce sort génère un violent tremblement de terre dans une zone située à portée."
+        },
+        "vitner-soil-craft:quagmire:3": {
+          "Name": "Bourbier",
+          "Summary": "Ce sort crée un épais marécage circu laire de 3 mètres de diamètre et de 10 centimètres de profondeur."
+        },
+        "vitner-soil-craft:soil-blast:4": {
+          "Name": "Projection de terre",
+          "Summary": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée."
+        },
+        "vitner-soil-craft:soil-walk:5": {
+          "Name": "Marche dans la terre",
+          "Summary": "Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle."
+        },
+        "vitner-soil-craft:shape-stone:6": {
+          "Name": "Façonnage de la pierre",
+          "Summary": "Ce sort transforme tous types de pierres et de minerais, les rendant lisses et malléables comme de la glaise épaisse."
+        },
+        "vitner-soil-craft:stone-walk:7": {
+          "Name": "Marche dans la pierre",
+          "Summary": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle."
+        },
+        "vitner-soil-craft:petrify-remove-petrification:8": {
+          "Name": "Pétrification/Annuler une pétrification",
+          "Summary": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre."
+        },
+        "vitner-vitner-craft:channeling:0": {
+          "Name": "Canalisation",
+          "Summary": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort."
+        },
+        "vitner-vitner-craft:vitner-pouch:1": {
+          "Name": "Bourse de vitner",
+          "Summary": "L’enchanteur tisse le vitner de façon à créer une bourse astrale."
+        },
+        "vitner-vitner-craft:enchant-object:2": {
+          "Name": "Enchantement d'objet",
+          "Summary": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée."
+        },
+        "vitner-vitner-craft:anti-magic:3": {
+          "Name": "Antimagie",
+          "Summary": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant."
+        },
+        "vitner-vitner-craft:enchant-being:4": {
+          "Name": "Enchantement de créature",
+          "Summary": "Ce sort tisse une couche de vitner bé néfique autour d’une cible située à portée."
+        },
+        "vitner-vitner-craft:seal:5": {
+          "Name": "Sceau",
+          "Summary": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’inté grer ensuite à un objet."
+        },
+        "vitner-vitner-craft:dispel-vitner:6": {
+          "Name": "Dissipation du vitner",
+          "Summary": "forme permanente ne peut pas être dissipé (sauf précision contraire dans la descrip tion du sort)."
+        },
+        "vitner-vitner-craft:trace-vitner:7": {
+          "Name": "Piste du vitner",
+          "Summary": "L’enchanteur tisse le vitner de façon à révéler l’origine d’un sort ou d’une négation."
+        },
+        "vitner-vitner-craft:wall-of-vitner:8": {
+          "Name": "Mur de vitner",
+          "Summary": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre."
+        },
+        "vitner-vitner-of-objects:detect-composition:0": {
+          "Name": "Analyse de la composition",
+          "Summary": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes."
+        },
+        "vitner-vitner-of-objects:waterproof:1": {
+          "Name": "Résistance à l'eau",
+          "Summary": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires."
+        },
+        "vitner-vitner-of-objects:bind:2": {
+          "Name": "Lien",
+          "Summary": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante."
+        },
+        "vitner-vitner-of-objects:rust:3": {
+          "Name": "Rouille",
+          "Summary": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc."
+        },
+        "vitner-vitner-of-objects:alarm-object:4": {
+          "Name": "Objet d'alarme",
+          "Summary": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange."
+        },
+        "vitner-vitner-of-objects:unlock-lock:5": {
+          "Name": "Verrouillage/déverrouillage",
+          "Summary": "Ce sort fonctionne comme une clé uni verselle capable d’ouvrir n’importe quelle serrure de porte, de tiroir, de coffre et d’autres objets similaires."
+        },
+        "vitner-vitner-of-objects:enlarge-reduce-object:6": {
+          "Name": "Agrandissement/rapetissement d'objet",
+          "Summary": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³)."
+        },
+        "vitner-vitner-of-objects:alter-object:7": {
+          "Name": "Altération d'objet",
+          "Summary": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte."
+        },
+        "vitner-vitner-of-objects:create-object:8": {
+          "Name": "Création d'objet",
+          "Summary": "de 2 points de vitner Ce sort aussi rare que puissant crée des objets à partir de rien."
+        },
+        "vitner-water-craft:find-water:0": {
+          "Name": "Sourcier",
+          "Summary": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchan teur peut localiser toutes les sources et Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582"
+        },
+        "vitner-water-craft:purify-water:1": {
+          "Name": "Purification de l'eau",
+          "Summary": "Ce sort filtre jusqu’à 10 litres d’eau et en retire toutes les substances dange reuses ou toxiques."
+        },
+        "vitner-water-craft:breathe:2": {
+          "Name": "Respiration aquatique",
+          "Summary": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui per mettent de respirer sous l’eau aussi facilement que s’il était à l’air libre."
+        },
+        "vitner-water-craft:form-water:3": {
+          "Name": "Façonnage de l'eau",
+          "Summary": "En contrôlant le vitner qui s’écoule dans une source d’eau située à proximité, l’enchanteur peut diriger et modeler l’eau comme bon lui semble."
+        },
+        "vitner-water-craft:create-water:4": {
+          "Name": "Création d'eau",
+          "Summary": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi."
+        },
+        "vitner-water-craft:solid-water:5": {
+          "Name": "Eau solide",
+          "Summary": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse"
+        },
+        "vitner-water-craft:control-precipitation:6": {
+          "Name": "Contrôle des précipitations",
+          "Summary": "Ce sort permet de modifier l’impor tance des précipitations."
+        },
+        "vitner-water-craft:water-walk:7": {
+          "Name": "Marche sur l'eau",
+          "Summary": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau."
+        },
+        "vitner-water-craft:wave-master:8": {
+          "Name": "Maître des flots",
+          "Summary": "Ce sort affecte l’eau d’une rivière, d’un lac ou d’un océan, qui devient soit l’alliée, soit l’ennemie des créatures et des navires qui la traversent."
+        },
+        "vitner-wind-craft:purify-air:0": {
+          "Name": "Purification de l'air",
+          "Summary": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’en chanteur, ce qui lui permet de respirer en toute sécurité."
+        },
+        "vitner-wind-craft:wind-gust:1": {
+          "Name": "Coup de vent",
+          "Summary": "Ce sort crée un vent léger dont l’en chanteur peut se servir pour chasser des insectes, de petits animaux ou de petits objets (moins de 1 kg)."
+        },
+        "vitner-wind-craft:fog:2": {
+          "Name": "Brouillard",
+          "Summary": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne."
+        },
+        "vitner-wind-craft:control-wind:3": {
+          "Name": "Contrôle du vent",
+          "Summary": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon."
+        },
+        "vitner-wind-craft:air-armor:4": {
+          "Name": "Armure d'air",
+          "Summary": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de pro tection de 1."
+        },
+        "vitner-wind-craft:lift:5": {
+          "Name": "Vent porteur",
+          "Summary": "F Temps de tissage : 1 tour de jeu Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles."
+        },
+        "vitner-wind-craft:air-shield:6": {
+          "Name": "Bouclier d'air",
+          "Summary": "Ce sort permet de créer un grand bouclier (la moitié de la taille d’un humain, cf."
+        },
+        "vitner-wind-craft:wind-blast:7": {
+          "Name": "Rafale de vent",
+          "Summary": "Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles."
+        },
+        "vitner-wind-craft:storm:8": {
+          "Name": "Tempête",
+          "Summary": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur."
+        },
+        "vitner-wind-craft:wind-catcher:9": {
+          "Name": "Seigneur des vents",
+          "Summary": "Ce sort déchaîne des rafales de vent autour d’un ou plusieurs personnages, qui les soulèvent du sol."
+        },
+        "vitner-witchcraft:uprooted-tree:0": {
+          "Name": "Déracinement",
+          "Summary": "Ce sort déracine un arbre et provoque son effondrement."
+        },
+        "vitner-witchcraft:phantom-plague:1": {
+          "Name": "Mal imaginaire",
+          "Summary": "L’enchanteur peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute."
+        },
+        "vitner-witchcraft:fever:2": {
+          "Name": "Fièvre",
+          "Summary": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corpo relle interne."
+        },
+        "vitner-witchcraft:curse-object:3": {
+          "Name": "Malédiction d'objet",
+          "Summary": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative."
+        },
+        "vitner-witchcraft:amnesia:4": {
+          "Name": "Amnésie",
+          "Summary": "Ce sort génère une énergie perturba trice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs."
+        },
+        "vitner-witchcraft:curse-creature:5": {
+          "Name": "Malédiction de créature",
+          "Summary": "Pour maudire une créature, l’enchan teur doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de sorts tels que Détection des êtres vivants."
+        },
+        "vitner-witchcraft:bad-harvest:6": {
+          "Name": "Mauvaise récolte",
+          "Summary": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation."
+        },
+        "vitner-witchcraft:tree-curse:7": {
+          "Name": "Malédiction de l'arbre",
+          "Summary": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine."
+        },
+        "holy-gerbanis-influence-of-jorn:death-gust:0": {
+          "Name": "Souffle de mort",
+          "Summary": "Le stormikjalt frappe dans ses mains, ce qui génère une vague de pression to nitruante qui endommage une créature morte-vivante située à portée."
+        },
+        "holy-gerbanis-influence-of-jorn:wall-of-dusk:1": {
+          "Name": "Mur du crépuscule",
+          "Summary": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui."
+        },
+        "holy-gerbanis-influence-of-jorn:falfax:2": {
+          "Name": "Falfax",
+          "Summary": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme."
+        },
+        "holy-gerbanis-influence-of-jorn:night-curtain:3": {
+          "Name": "Rideau de la nuit",
+          "Summary": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui."
+        },
+        "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
+          "Name": "Manteau de Jorn",
+          "Summary": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui."
+        },
+        "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5": {
+          "Name": "Souffle de Mogunda",
+          "Summary": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée."
+        },
+        "holy-gerbanis-influence-of-jorn:asiblack:6": {
+          "Name": "Svartasi",
+          "Summary": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme."
+        },
+        "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7": {
+          "Name": "Volonté de Bodvilur",
+          "Summary": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée."
+        },
+        "holy-gerbanis-influence-of-jorn:snarfari:8": {
+          "Name": "Snarfari",
+          "Summary": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme."
+        },
+        "holy-gerbanis-power-of-enken:night-vision:0": {
+          "Name": "Vision nocturne",
+          "Summary": "Le stormikjalt est doté d’une vision nocturne pendant une minute, ce qui lui permet de voir dans l’obscurité totale, mais pas aussi bien qu’en plein jour."
+        },
+        "holy-gerbanis-power-of-enken:willpower:1": {
+          "Name": "Force d'âme",
+          "Summary": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix."
+        },
+        "holy-gerbanis-power-of-enken:bold:2": {
+          "Name": "Témérité",
+          "Summary": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix."
+        },
+        "holy-gerbanis-power-of-enken:wind-shield:3": {
+          "Name": "Bouclier de vent",
+          "Summary": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance."
+        },
+        "holy-gerbanis-power-of-enken:soul-sight:4": {
+          "Name": "Regard de l'âme",
+          "Summary": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui."
+        },
+        "holy-gerbanis-power-of-enken:storm-armor:5": {
+          "Name": "Armure de la tempête",
+          "Summary": ""
+        },
+        "holy-gerbanis-power-of-enken:heart-of-enken:6": {
+          "Name": "Cœur d'Enken",
+          "Summary": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix."
+        },
+        "holy-gerbanis-power-of-enken:hurricane-armor:7": {
+          "Name": "Armure de l'ouragan",
+          "Summary": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillon nant autour de lui ou du personnage de son choix."
+        },
+        "holy-gerbanis-power-of-enken:eye-of-enken:8": {
+          "Name": "Œil d'Enken",
+          "Summary": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui."
+        },
+        "holy-gerbanis-strength-of-stormi:troll-strength:0": {
+          "Name": "Force du troll",
+          "Summary": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix)."
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
+          "Name": "Autorité",
+          "Summary": "La voix du stormikjalt résonne de puissance et de sincérité et affecte la personne de son choix située à portée."
+        },
+        "holy-gerbanis-strength-of-stormi:havar:2": {
+          "Name": "Havar",
+          "Summary": "Le stormikjalt implore la protection de Storme, qui lui envoie un havar, un guerrier saint venu de Stormvakk pour le protéger."
+        },
+        "holy-gerbanis-strength-of-stormi:hinji-strength:3": {
+          "Name": "Force de hinje",
+          "Summary": "FORCE DE HINJE :"
+        },
+        "holy-gerbanis-strength-of-stormi:jarl-s-call:4": {
+          "Name": "Appel du Jarl",
+          "Summary": "La voix du stormikjalt résonne avec puissance et affecte une personne située à portée au choix de l’arpenteur des brumes."
+        },
+        "holy-gerbanis-strength-of-stormi:shield-disir:5": {
+          "Name": "Skölddíser",
+          "Summary": "Le stormikjalt implore la protection de Storme, qui lui envoie des skölddí sers, des guerrières sacrées venues de Stormvakk pour le protéger."
+        },
+        "holy-gerbanis-strength-of-stormi:jotun-strength:6": {
+          "Name": "Force du jotun",
+          "Summary": "FORCE DU JOTUN :"
+        },
+        "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": {
+          "Name": "Voix de Storme",
+          "Summary": "La voix du stormikjalt résonne avec puissance et affecte trois personnes situées à portée au choix de l’arpen teur des brumes."
+        },
+        "holy-gerbanis-strength-of-stormi:einharjar:8": {
+          "Name": "Einharjar",
+          "Summary": "apparaît et les guerriers abandonnent le stormikjalt et disparaissent à l’intérieur."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing:0": {
+          "Name": "Guérison",
+          "Summary": "Le stormikjalt place ses mains sur les membres blessés d’une personne, et ses paumes commencent à émettre une faible lumière chaude."
+        },
+        "holy-gerbanis-warmth-of-sunvei:sunray:1": {
+          "Name": "Rayons du soleil",
+          "Summary": "Solvei répond au souhait de l’arpen teur des brumes et fait briller les rayons du soleil sur lui."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
+          "Name": "Lumière guérisseuse",
+          "Summary": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei."
+        },
+        "holy-gerbanis-warmth-of-sunvei:summer-place:3": {
+          "Name": "Cœur de l'été",
+          "Summary": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil."
+        },
+        "holy-gerbanis-warmth-of-sunvei:firon-power:4": {
+          "Name": "Pouvoir de Firon",
+          "Summary": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-warmth:5": {
+          "Name": "Chaleur guérisseuse",
+          "Summary": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains."
+        },
+        "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6": {
+          "Name": "Heure de la chasse",
+          "Summary": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil."
+        },
+        "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7": {
+          "Name": "Souffle de Solvei",
+          "Summary": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains."
+        },
+        "holy-gerbanis-warmth-of-sunvei:healing-sun:8": {
+          "Name": "Soleil guérisseur",
+          "Summary": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei."
+        },
+        "holy-gerbanis-wisdom-of-windinna:inspiration:0": {
+          "Name": "Inspiration",
+          "Summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme."
+        },
+        "holy-gerbanis-wisdom-of-windinna:sixth-sense:1": {
+          "Name": "Sixième sens",
+          "Summary": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne."
+        },
+        "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": {
+          "Name": "Esprit d'acier",
+          "Summary": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure."
+        },
+        "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
+          "Name": "Joie de la création",
+          "Summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes"
+        },
+        "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": {
+          "Name": "Vague de vérité",
+          "Summary": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne."
+        },
+        "holy-gerbanis-wisdom-of-windinna:vitner-protection:5": {
+          "Name": "Protection contre le vitner",
+          "Summary": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure."
+        },
+        "holy-gerbanis-wisdom-of-windinna:swine-rush:6": {
+          "Name": "Ruée du porc",
+          "Summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme."
+        },
+        "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7": {
+          "Name": "Regard de Windinna",
+          "Summary": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne."
+        },
+        "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8": {
+          "Name": "Âtre de Windinna",
+          "Summary": "Des flammes engloutissent la cible et purifient son corps de tout mal, transformation ou influence extérieure."
+        },
+        "holy-gerbanis-wrath-of-tyrd:fire-iron:0": {
+          "Name": "Tisonnier",
+          "Summary": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée."
+        },
+        "holy-gerbanis-wrath-of-tyrd:battle-cry:1": {
+          "Name": "Cri de bataille",
+          "Summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés."
+        },
+        "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2": {
+          "Name": "Langue du loup",
+          "Summary": "Le stormikjalt prend un air sinistre et prononce les mots déclencheurs de ce pouvoir."
+        },
+        "holy-gerbanis-wrath-of-tyrd:pyre-mark:3": {
+          "Name": "Marque du brasier",
+          "Summary": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée."
+        },
+        "holy-gerbanis-wrath-of-tyrd:war-cry:4": {
+          "Name": "Cri de guerre",
+          "Summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis."
+        },
+        "holy-gerbanis-wrath-of-tyrd:dark-visage:5": {
+          "Name": "Figure sinistre",
+          "Summary": "Le stormikjalt prend un air sinistre et prononce les mots déclencheurs de ce pouvoir."
+        },
+        "holy-gerbanis-wrath-of-tyrd:firestorm:6": {
+          "Name": "Tempête de feu",
+          "Summary": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction de tous ses ennemis situés à portée."
+        },
+        "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7": {
+          "Name": "Tonnerre victorieux",
+          "Summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis."
+        },
+        "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": {
+          "Name": "Grondement de Tyrd",
+          "Summary": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582"
+        },
+        "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0": {
+          "Name": "Derrière le frêne et le pin",
+          "Summary": "Le bruide modifie son apparence afin de se fondre dans son environnement."
+        },
+        "holy-ealdtradition-gift-of-thanja:animal-speech:1": {
+          "Name": "Langue animale",
+          "Summary": "Le bruide développe la faculté de parler aux animaux ordinaires jusqu’à expiration de ce pouvoir."
+        },
+        "holy-ealdtradition-gift-of-thanja:stagshape:2": {
+          "Name": "Aspect du cerf",
+          "Summary": "Ce pouvoir confère au bruide la faculté de se transformer en cerf."
+        },
+        "holy-ealdtradition-gift-of-thanja:bestial-tongue:3": {
+          "Name": "Langage des bêtes",
+          "Summary": "Le bruide développe la faculté de parler aux bêtes normales jusqu’à expi ration de ce pouvoir."
+        },
+        "holy-ealdtradition-gift-of-thanja:salmonshape:4": {
+          "Name": "Aspect du saumon",
+          "Summary": "Ce pouvoir confère au bruide la faculté de se transformer en saumon."
+        },
+        "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5": {
+          "Name": "Sous la roche et l'écorce",
+          "Summary": "Le bruide modifie son apparence afin de se fondre dans son environnement."
+        },
+        "holy-ealdtradition-gift-of-thanja:dragon-tongue:6": {
+          "Name": "Langue des dragons",
+          "Summary": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins."
+        },
+        "holy-ealdtradition-gift-of-thanja:forest-denizen:7": {
+          "Name": "Enfant de la forêt",
+          "Summary": "Le bruide modifie son apparence afin de se fondre dans son environnement."
+        },
+        "holy-ealdtradition-gift-of-thanja:ravenshape:8": {
+          "Name": "Aspect du corbeau",
+          "Summary": "Ce pouvoir confère au bruide la faculté de se transformer en corbeau."
+        },
+        "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0": {
+          "Name": "Volonté des ancêtres",
+          "Summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales."
+        },
+        "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
+          "Name": "Bouclier contre le vitner",
+          "Summary": "F Durée : 10 minutes F Portée : personnelle F Temps d’invocation : 1 minute Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains."
+        },
+        "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
+          "Name": "Courage des ancêtres",
+          "Summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales."
+        },
+        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
+          "Name": "Fléau de Blotfang",
+          "Summary": "F Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3 F Confère au porteur un bonus de +2 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as so"
+        },
+        "holy-ealdtradition-halawen-s-offering:bolgemek:4": {
+          "Name": "Bolgomek",
+          "Summary": "F Dégâts : 1d10 (JO 7-10) + 6 ; valeur de protection : 20 ; valeur d’intégrité : 200 ; MI : -4 ; AA : 3 F Confère au porteur un bonus de +4 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as "
+        },
+        "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
+          "Name": "Mur contre la sorcellerie",
+          "Summary": "Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner."
+        },
+        "holy-ealdtradition-halawen-s-offering:fearless:6": {
+          "Name": "Sans peur",
+          "Summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales."
+        },
+        "holy-ealdtradition-halawen-s-offering:mistur-barrier:7": {
+          "Name": "Barrière des brumes",
+          "Summary": "Le bruide demande à ses ancêtres de veiller sur lui et sur trois de ses alliés, et tous reçoivent une protection divine contre le vitner."
+        },
+        "holy-ealdtradition-halawen-s-offering:roggdrasil:8": {
+          "Name": "Roggdrasil",
+          "Summary": "F Dégâts : 1d10 (JO 7-10) + 8 ; valeur de protection : 30 ; valeur d’intégrité : 300 ; MI : -2 ; AA : 4 F Confère au porteur un bonus de +6 à sa valeur de protection F Confère au porteur un bonus de +4 à toutes ses valeurs de compétence as "
+        },
+        "holy-ealdtradition-heritage-of-majne:strong-beer:0": {
+          "Name": "Bière forte",
+          "Summary": ""
+        },
+        "holy-ealdtradition-heritage-of-majne:trollslayer:1": {
+          "Name": "Tueur de trolls",
+          "Summary": "Le bruide se voit doté du pouvoir divin d’infliger de terribles dommages aux trolls en tous genres jusqu’à expira tion du pouvoir."
+        },
+        "holy-ealdtradition-heritage-of-majne:giantslayer:2": {
+          "Name": "Tueur de géants",
+          "Summary": "Le bruide se voit doté du pouvoir divin d’infliger de terribles dommages aux géants en tous genres (jotuns, tursirs, ogres et hrimtrolls) jusqu’à expiration du pouvoir."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-militia:3": {
+          "Name": "Milice du roi",
+          "Summary": ""
+        },
+        "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {
+          "Name": "Bière du héros",
+          "Summary": "En brassant la bière légère de Majne, le bruide peut boire avec des amis et renforcer les liens qui les unissent avant de se lancer dans une nouvelle aventure."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-guard:5": {
+          "Name": "Garde royale",
+          "Summary": "Le bruide invoque un esprit guerrier venant de la grande garde royale."
+        },
+        "holy-ealdtradition-heritage-of-majne:dragonslayer:6": {
+          "Name": "Tueur de dragons",
+          "Summary": "Le bruide se voit doté du pouvoir divin d’infliger de terribles dommages aux dragons en tous genres jusqu’à expira tion du pouvoir."
+        },
+        "holy-ealdtradition-heritage-of-majne:king-s-ale:7": {
+          "Name": "Bière royale",
+          "Summary": "En brassant la bière légère de Majne, le bruide peut boire avec des amis et renforcer les liens qui les unissent avant de se lancer dans une nouvelle aventure."
+        },
+        "holy-ealdtradition-heritage-of-majne:the-nine-kings:8": {
+          "Name": "Les neuf rois",
+          "Summary": "Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’ar penteur des brumes dans les situations les plus délicates."
+        },
+        "holy-ealdtradition-magh-s-gift:journey-wind:0": {
+          "Name": "Brise du voyage",
+          "Summary": "Le bruide peut recourir à une geas, une promesse ou une restriction imposée à autrui."
+        },
+        "holy-ealdtradition-magh-s-gift:rider-s-melody:1": {
+          "Name": "Mélodie du cavalier",
+          "Summary": "Le bruide appelle une brise favorable et une météo clémente."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-tether:2": {
+          "Name": "Entrave de Magh",
+          "Summary": "Le bruide peut recourir à une geas, une promesse ou une restriction imposée à autrui."
+        },
+        "holy-ealdtradition-magh-s-gift:elf-summer:3": {
+          "Name": "Été elfique",
+          "Summary": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée."
+        },
+        "holy-ealdtradition-magh-s-gift:hero-s-song:4": {
+          "Name": "Chant du héros",
+          "Summary": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-chain:5": {
+          "Name": "Chaîne de Magh",
+          "Summary": "Le bruide peut recourir à une geas, une promesse ou une restriction imposée à autrui."
+        },
+        "holy-ealdtradition-magh-s-gift:king-s-anthem:6": {
+          "Name": "Hymne royal",
+          "Summary": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir."
+        },
+        "holy-ealdtradition-magh-s-gift:magh-s-hawser:7": {
+          "Name": "Joug de Magh",
+          "Summary": "Le bruide peut recourir à une geas, une promesse ou une restriction imposée à autrui."
+        },
+        "holy-ealdtradition-magh-s-gift:harvest-year:8": {
+          "Name": "Année de récolte",
+          "Summary": "Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité mira culeuse et un temps inhabituellement plaisant."
+        },
+        "holy-ealdtradition-nema-s-usefulness:horse-ears:0": {
+          "Name": "Oreilles de cheval",
+          "Summary": "Une paire d’oreilles de cheval émerge de la tête du bruide aussi longtemps que ce pouvoir est actif."
+        },
+        "holy-ealdtradition-nema-s-usefulness:gust-of-release:1": {
+          "Name": "Souffle libérateur",
+          "Summary": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-des sus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre."
+        },
+        "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2": {
+          "Name": "Ouïe du hibou",
+          "Summary": "Le bruide perçoit tous les bruits et conversations à portée."
+        },
+        "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
+          "Name": "Piste des brumes",
+          "Summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui."
+        },
+        "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4": {
+          "Name": "Brise libératrice",
+          "Summary": "Une brise rafraîchissante traverse la zone désignée par le bruide et ouvre une porte, déverrouille une serrure difficile, ouvre une cellule de prison ou dissipe un vitner de contrôle ou de contrainte touchant une autre personne."
+        },
+        "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5": {
+          "Name": "Piste de Meall",
+          "Summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui."
+        },
+        "holy-ealdtradition-nema-s-usefulness:liberating-wind:6": {
+          "Name": "Sens du griffon",
+          "Summary": "Le bruide entend tous les bruits et conversations à portée."
+        },
+        "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
+          "Name": "Vent libérateur",
+          "Summary": "Un vent rafraîchissant traverse la zone désignée par le bruide."
+        },
+        "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": {
+          "Name": "Voyage de Mongfind",
+          "Summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui."
+        },
+        "holy-ealdtradition-tribute-of-morgu:simmering-blood:0": {
+          "Name": "Sang brûlant",
+          "Summary": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir."
+        },
+        "holy-ealdtradition-tribute-of-morgu:battle-arrow:1": {
+          "Name": "Flèche de bataille",
+          "Summary": "noire. Cette flèche touche automatique ment si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts."
+        },
+        "holy-ealdtradition-tribute-of-morgu:boiling-blood:2": {
+          "Name": "Sang bouillant",
+          "Summary": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 2d10 points de santé supplémentaires jusqu’à expiration du pouvoir."
+        },
+        "holy-ealdtradition-tribute-of-morgu:rage:3": {
+          "Name": "Rage",
+          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl"
+        },
+        "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
+          "Name": "Folie",
+          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl"
+        },
+        "holy-ealdtradition-tribute-of-morgu:madness:5": {
+          "Name": "Pluie de flèches",
+          "Summary": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes."
+        },
+        "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
+          "Name": "Embrasement du sang",
+          "Summary": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir."
+        },
+        "holy-ealdtradition-tribute-of-morgu:riastarthae:7": {
+          "Name": "Cieux obscurcis",
+          "Summary": "F Type : instantané F Portée : 30 mètres F Temps d’invocation : 2 tours de jeu Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes."
+        },
+        "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
+          "Name": "Riastarthae",
+          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl"
+        },
+        "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
+          "Name": "Puissance du sang",
+          "Summary": ""
+        },
+        "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
+          "Name": "Éclair sacré",
+          "Summary": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque."
+        },
+        "holy-tenetnid-tablet-of-anger:stone-senses:2": {
+          "Name": "Sens pétrifiés",
+          "Summary": "Le prêtre dirige son regard puissant vers un adversaire qui sent soudain son esprit commencer à se pétrifier."
+        },
+        "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
+          "Name": "Visions du chêne",
+          "Summary": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir."
+        },
+        "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
+          "Name": "Explosion sacrée",
+          "Summary": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque."
+        },
+        "holy-tenetnid-tablet-of-anger:statue:5": {
+          "Name": "Statue",
+          "Summary": "Le prêtre dirige son regard puissant vers un adversaire."
+        },
+        "holy-tenetnid-tablet-of-anger:divine-purge:6": {
+          "Name": "Purification divine",
+          "Summary": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque."
+        },
+        "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
+          "Name": "Souvenir du martyr",
+          "Summary": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir."
+        },
+        "holy-tenetnid-tablet-of-anger:stone-monument:8": {
+          "Name": "Monument en pierre",
+          "Summary": "Le prêtre dirige son regard puissant vers un adversaire."
+        },
+        "holy-tenetnid-tablet-of-grace:hand-of-mercy:0": {
+          "Name": "Main de la miséricorde",
+          "Summary": "Le prêtre invoque Gave et place ses mains sur une personne souffrante."
+        },
+        "holy-tenetnid-tablet-of-grace:holy-mending:1": {
+          "Name": "Soins sacrés",
+          "Summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée."
+        },
+        "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2": {
+          "Name": "Volonté de Bete Wiemdas",
+          "Summary": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante."
+        },
+        "holy-tenetnid-tablet-of-grace:life-spirit:3": {
+          "Name": "Esprit de la vie",
+          "Summary": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence infé rieure (comme les oiseaux, les serpents et les cerfs)."
+        },
+        "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4": {
+          "Name": "Craie de Bete Wiemdas",
+          "Summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée."
+        },
+        "holy-tenetnid-tablet-of-grace:recall:5": {
+          "Name": "Rappel",
+          "Summary": "Le prêtre peut ranimer une créature humanoïde intelligente qui a perdu la vie."
+        },
+        "holy-tenetnid-tablet-of-grace:breath-of-gave:6": {
+          "Name": "Main de Gave",
+          "Summary": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante."
+        },
+        "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
+          "Name": "Souffle de Gave",
+          "Summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée."
+        },
+        "holy-tenetnid-tablet-of-grace:wind-of-immortality:8": {
+          "Name": "Vent d'immortalité",
+          "Summary": "Le prêtre peut ranimer une créature (intelligente ou non) qui a perdu la vie."
+        },
+        "holy-tenetnid-tablet-of-the-knight:blessed-armor:0": {
+          "Name": "Armure bénie",
+          "Summary": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 1."
+        },
+        "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": {
+          "Name": "Lance bénie",
+          "Summary": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 1 point de dégâts supplémentaire (+2 contre les morts-vivants et +3 contre les démons)."
+        },
+        "holy-tenetnid-tablet-of-the-knight:holy-authority:2": {
+          "Name": "Sainte autorité",
+          "Summary": "Cette prière invoque la présence sacrée de Gave."
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3": {
+          "Name": "Cuirasse des gardiens du Rortan",
+          "Summary": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 3."
+        },
+        "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": {
+          "Name": "Révélation majestueuse",
+          "Summary": "Cette prière invoque la présence sacrée de Gave."
+        },
+        "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5": {
+          "Name": "Chaîne de bataille des gardiens du Rortan",
+          "Summary": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons)."
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6": {
+          "Name": "Armure blanche de Belo Seoth",
+          "Summary": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 5."
+        },
+        "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": {
+          "Name": "Hache de Belo Seoth",
+          "Summary": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige +5 points de dégâts supplémentaires (+8 contre les morts-vivants et +11 contre les démons)."
+        },
+        "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": {
+          "Name": "Aura de Gave",
+          "Summary": "Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu."
+        },
+        "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": {
+          "Name": "Entraves de la terre consacrée",
+          "Summary": "Tandis que le prêtre adresse sa prière à Gave, des racines tortueuses jaillissent du sol et agrippent les démons et les empêchent d’agir physiquement."
+        },
+        "holy-tenetnid-tablet-of-the-shield:sheltering:1": {
+          "Name": "Refuge",
+          "Summary": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique."
+        },
+        "holy-tenetnid-tablet-of-the-shield:storm-protection:2": {
+          "Name": "Protection contre les éléments",
+          "Summary": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie, la neige et les températures naturelles, ainsi que contre les conditions météoro logiques magiques."
+        },
+        "holy-tenetnid-tablet-of-the-shield:thornwall:3": {
+          "Name": "Mur d'épines",
+          "Summary": "Par cette prière, le prêtre invoque la force du chêne noir."
+        },
+        "holy-tenetnid-tablet-of-the-shield:bark-skin:4": {
+          "Name": "Peau d'écorce",
+          "Summary": "Le gavlien invoque la force du chêne noir."
+        },
+        "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5": {
+          "Name": "Impuissance des démons",
+          "Summary": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire."
+        },
+        "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6": {
+          "Name": "Résistance au vitner",
+          "Summary": ""
+        },
+        "holy-tenetnid-tablet-of-the-shield:banishment:7": {
+          "Name": "Bannissement",
+          "Summary": "Le prêtre adresse une prière à Gave, qui répond en envoyant un rayon flam boyant de lumière divine qui perce le ciel (ou le plafond, si la scène se passe à l’intérieur)."
+        },
+        "holy-tenetnid-tablet-of-the-shield:tree-port:8": {
+          "Name": "Refuge arboricole",
+          "Summary": "Le gavlien invoque la force du chêne noir, ce qui lui confère la faculté de se transformer en un grand chêne noir pendant une journée."
+        },
+        "holy-tenetnid-tablet-of-the-sun:dawn-shine:0": {
+          "Name": "Lueur de l'aube",
+          "Summary": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui."
+        },
+        "holy-tenetnid-tablet-of-the-sun:protective-ground:1": {
+          "Name": "Sol protecteur",
+          "Summary": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions."
+        },
+        "holy-tenetnid-tablet-of-the-sun:augury:2": {
+          "Name": "Augure",
+          "Summary": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix."
+        },
+        "holy-tenetnid-tablet-of-the-sun:thermal-light:3": {
+          "Name": "Lumière rassurante",
+          "Summary": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui."
+        },
+        "holy-tenetnid-tablet-of-the-sun:omen:4": {
+          "Name": "Présage",
+          "Summary": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix."
+        },
+        "holy-tenetnid-tablet-of-the-sun:blessed-home:5": {
+          "Name": "Foyer béni",
+          "Summary": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions."
+        },
+        "holy-tenetnid-tablet-of-the-sun:sacred-grove:6": {
+          "Name": "Bosquet sacré",
+          "Summary": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions."
+        },
+        "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": {
+          "Name": "Radiance sacrée",
+          "Summary": "Le prêtre crée une source sacrée de lumière qui s’étend autour de lui."
+        },
+        "holy-tenetnid-tablet-of-the-sun:portent:8": {
+          "Name": "Oracle",
+          "Summary": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix."
+        },
+        "holy-tenetnid-tablet-of-voices:holy-consideration:0": {
+          "Name": "Considération sacrée",
+          "Summary": "Le gavlien peut bénir quelqu’un et ses futurs agissements."
+        },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": {
+          "Name": "Oreille de Siro Werte",
+          "Summary": "Le prêtre développe pour un temps la faculté de comprendre une langue étrangère."
+        },
+        "holy-tenetnid-tablet-of-voices:blood-brothers:2": {
+          "Name": "Frères de sang",
+          "Summary": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sen timents de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié."
+        },
+        "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3": {
+          "Name": "Langue de Siro Werte",
+          "Summary": "Le prêtre développe pour un temps la faculté de parler et de comprendre une langue étrangère, avec un bonus de +2 à sa valeur de compétence en Connaissances."
+        },
+        "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": {
+          "Name": "Grâce de Gave",
+          "Summary": "Le gavlien peut bénir quelqu’un et ses futurs agissements."
+        },
+        "holy-tenetnid-tablet-of-voices:grace-of-gave:5": {
+          "Name": "Liens fraternels",
+          "Summary": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sen timents de compassion et de grâce, de sorte qu’un adversaire devient tem porairement un allié."
+        },
+        "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": {
+          "Name": "Sagesse de Gave",
+          "Summary": "Le prêtre et ses alliés situés à portée développent la faculté temporaire de pouvoir comprendre et parler une langue étrangère, avec un bonus de +3 à leur valeur de compétence dans la compé tence de Connaissance correspondante."
+        },
+        "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": {
+          "Name": "Faveurs de Gave",
+          "Summary": "Le gavlien peut bénir quelqu’un et ses futurs agissements."
+        },
+        "holy-tenetnid-tablet-of-voices:divine-pact:8": {
+          "Name": "Pacte divin",
+          "Summary": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sentiments de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié."
+        },
+        "holy-haminges-power-of-the-beast:resilience:0": {
+          "Name": "Résilience",
+          "Summary": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures."
+        },
+        "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
+          "Name": "Instinct du prédateur",
+          "Summary": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie."
+        },
+        "holy-haminges-power-of-the-beast:mastomant-s-tusks:2": {
+          "Name": "Défenses du mastomant",
+          "Summary": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cin quantaine de centimètres surgissent de sa mâchoire."
+        },
+        "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": {
+          "Name": "Endurance du sanglier",
+          "Summary": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures."
+        },
+        "holy-haminges-power-of-the-beast:mastomant-s-fur:4": {
+          "Name": "Fourrure du mastomant",
+          "Summary": "Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir."
+        },
+        "holy-haminges-power-of-the-beast:wolf-claws:5": {
+          "Name": "Griffes du loup",
+          "Summary": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie."
+        },
+        "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": {
+          "Name": "Endurance du géant",
+          "Summary": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures."
+        },
+        "holy-haminges-power-of-the-beast:master-of-wolfkin:7": {
+          "Name": "Maître des loups",
+          "Summary": "En poussant un hurlement, le conju rateur peut appeler un loup situé à proximité."
+        },
+        "holy-haminges-power-of-the-beast:mastomantshape:8": {
+          "Name": "Aspect du mastomant",
+          "Summary": "Le conjurateur fait appel au pouvoir de l’esprit lié et se transforme (ainsi que tout son équipement) en un mastomant géant jusqu’à expiration du pouvoir."
+        },
+        "holy-haminges-power-of-the-dragon:constriction:0": {
+          "Name": "Constriction",
+          "Summary": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire."
+        },
+        "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": {
+          "Name": "Ravage du huvfurwurm",
+          "Summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu."
+        },
+        "holy-haminges-power-of-the-dragon:flame-hardened:2": {
+          "Name": "Fils des flammes",
+          "Summary": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse."
+        },
+        "holy-haminges-power-of-the-dragon:paralyzing-gaze:3": {
+          "Name": "Regard paralysant",
+          "Summary": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de pa ralyser ses adversaires avec son puissant regard."
+        },
+        "holy-haminges-power-of-the-dragon:dragon-skin:4": {
+          "Name": "Attaque du huvfurwurm",
+          "Summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu."
+        },
+        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
+          "Name": "Peau du dragon",
+          "Summary": "Le conjurateur est envahi par la puis sance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles."
+        },
+        "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
+          "Name": "Tête du huvfurwurm",
+          "Summary": "Le conjurateur est capable de survivre à une décapitation."
+        },
+        "holy-haminges-power-of-the-dragon:dragon-soul:7": {
+          "Name": "Âme du dragon",
+          "Summary": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582"
+        },
+        "holy-haminges-power-of-the-dragon:giant-snakeshape:8": {
+          "Name": "Aspect du serpent géant",
+          "Summary": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expira tion de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits."
+        },
+        "holy-haminges-power-of-men:sight-of-the-dwarves:0": {
+          "Name": "Vision des nains",
+          "Summary": "F Durée : 2 minutes F Portée : personnelle F Temps d’invocation : 2 tours de jeu Le conjurateur bénéficie d’un bonus de +3 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir."
+        },
+        "holy-haminges-power-of-men:accomplished:1": {
+          "Name": "Accompli",
+          "Summary": "Le conjurateur bénéficie d’un bonus de +1 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir."
+        },
+        "holy-haminges-power-of-men:curative-draught:2": {
+          "Name": "Mixture curative",
+          "Summary": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié."
+        },
+        "holy-haminges-power-of-men:mastery:3": {
+          "Name": "Maître",
+          "Summary": "Le conjurateur bénéficie d’un bonus de +3 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir."
+        },
+        "holy-haminges-power-of-men:remedial-potion:4": {
+          "Name": "Potion de guérison",
+          "Summary": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié."
+        },
+        "holy-haminges-power-of-men:weapon-prowess:5": {
+          "Name": "Prouesse martiale",
+          "Summary": "Le conjurateur fait appel aux redou tables techniques de combat des nains et devient plus efficace dans le maniement des armes au combat."
+        },
+        "holy-haminges-power-of-men:dwarven-smith:6": {
+          "Name": "Forgeron nain",
+          "Summary": "Le conjurateur fait appel à la connais sance approfondie qu’ont les nains de l’artisanat et bénéficie d’un bonus de +6 à une spécialité dépendant de la disci pline Artisanat (compétence Savoir-faire) jusqu’à expiration du pouvoir."
+        },
+        "holy-haminges-power-of-men:legendary:7": {
+          "Name": "Légendaire",
+          "Summary": "Le conjurateur réussit automatique ment un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir."
+        },
+        "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": {
+          "Name": "Élixir de vie de la dévoreuse",
+          "Summary": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié."
+        },
+        "holy-haminges-power-of-the-scale:dreadful-screech:0": {
+          "Name": "Cri effrayant",
+          "Summary": "Le conjurateur profère un son terri fiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’en tendre (à l’exception du conjurateur lui-même)."
+        },
+        "holy-haminges-power-of-the-scale:shattered-mind:1": {
+          "Name": "Esprit brisé",
+          "Summary": "Le conjurateur dirige son puissant regard vers un adversaire qui sent soudain son esprit se pétrifier."
+        },
+        "holy-haminges-power-of-the-scale:terrifying-howl:2": {
+          "Name": "Hurlement terrifiant",
+          "Summary": "Le conjurateur pousse un hurlement à glacer le sang qui possède un facteur de peur de 1d10 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même)."
+        },
+        "holy-haminges-power-of-the-scale:regenerative-blood:3": {
+          "Name": "Sang régénérant",
+          "Summary": "F Type : persistant F Durée : 3 tours de jeu F Portée : 10 mètres F Temps d’invocation : 1 tour de jeu Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusq"
+        },
+        "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4": {
+          "Name": "Sang du lindwurm",
+          "Summary": "F Type : instantané F Portée : 20 mètres F Temps d’invocation : 1 tour de jeu Le conjurateur émet une horrible plainte qui flétrit les plantes et noircit le ciel pendant un instant."
+        },
+        "holy-haminges-power-of-the-scale:limb-of-stone:5": {
+          "Name": "Membre de pierre",
+          "Summary": "Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent."
+        },
+        "holy-haminges-power-of-the-scale:scream-of-the-devouress:6": {
+          "Name": "Clameur de la dévoreuse",
+          "Summary": "Le conjurateur émet une horrible plainte qui flétrit les plantes et noircit le ciel pendant un instant."
+        },
+        "holy-haminges-power-of-the-scale:petrify:7": {
+          "Name": "Pétrification",
+          "Summary": "Le conjurateur dirige son puissant regard vers un adversaire qui se change en pierre."
+        },
+        "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8": {
+          "Name": "Cœur du lindwurm",
+          "Summary": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir."
+        },
+        "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0": {
+          "Name": "Peau du hrimtroll",
+          "Summary": "F Durée : 1 minute F Portée : personnelle F Temps d’invocation : 2 tours de jeu L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje."
+        },
+        "holy-haminges-power-of-the-thurses:troll-strength:1": {
+          "Name": "Force du troll",
+          "Summary": "L’esprit du hrimtursir confère au conjurateur la force d’un troll."
+        },
+        "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2": {
+          "Name": "Fureur de l'ogre des montagnes",
+          "Summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front."
+        },
+        "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3": {
+          "Name": "Force du stenhinje",
+          "Summary": "L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje."
+        },
+        "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4": {
+          "Name": "Folie de l'ogre des montagnes",
+          "Summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front."
+        },
+        "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5": {
+          "Name": "Souffle du hrimtroll",
+          "Summary": "test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance."
+        },
+        "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": {
+          "Name": "Rage du destructeur",
+          "Summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front."
+        },
+        "holy-haminges-power-of-the-thurses:thurse-strength:7": {
+          "Name": "Force du tursir",
+          "Summary": "F Type : persistant F Durée : 7 tours de jeu F Portée : personnelle F Temps d’invocation : 1 tour de jeu Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front."
+        },
+        "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8": {
+          "Name": "Corps de glace du hrimtroll",
+          "Summary": "Le conjurateur est investi d’une partie de l’essence du troll des glaces, qui se manifeste par un corps de glace qui gèle toute personne située à portée du pouvoir."
+        },
+        "holy-haminges-power-of-trolls:disease-carrier:0": {
+          "Name": "Infection",
+          "Summary": "une valeur de situation de 8 (le modificateur de Constitution s’applique)."
+        },
+        "holy-haminges-power-of-trolls:willpower:1": {
+          "Name": "Volonté",
+          "Summary": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur."
+        },
+        "holy-haminges-power-of-trolls:illusion-tricks:2": {
+          "Name": "Tours illusoires",
+          "Summary": "Le conjurateur peut générer des il lusions simples."
+        },
+        "holy-haminges-power-of-trolls:fearless:3": {
+          "Name": "Sans peur",
+          "Summary": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur."
+        },
+        "holy-haminges-power-of-trolls:contagious:4": {
+          "Name": "Contagion",
+          "Summary": "une valeur de situation de 6 (le modificateur de Constitution s’applique)."
+        },
+        "holy-haminges-power-of-trolls:persuade:5": {
+          "Name": "Persuasion",
+          "Summary": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire."
+        },
+        "holy-haminges-power-of-trolls:lord-of-the-flies:6": {
+          "Name": "Seigneur des mouches",
+          "Summary": "une valeur de situation de 4 (le modificateur de Constitution s’applique)."
+        },
+        "holy-haminges-power-of-trolls:troll-wit:7": {
+          "Name": "Hardiesse des trolls",
+          "Summary": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir."
+        },
+        "holy-haminges-power-of-trolls:taken-by-the-mountain:8": {
+          "Name": "Charme de la montagne",
+          "Summary": "Le conjurateur peut suggérer une tâche à toute personne située à portée."
+        },
+        "holy-thuuldom-anvil-shock:anvil-shock:0": {
+          "Name": "Choc de l'enclume",
+          "Summary": "Cette rune doit être placée sur une arme contondante (n’importe quelle arme dénuée de lame) dont l’impact est désormais aussi puissant qu’un choc sismique quand le thuul s’en sert pour frapper."
+        },
+        "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": {
+          "Name": "Main de Borjorn",
+          "Summary": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre."
+        },
+        "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": {
+          "Name": "Prise de l'araignée des cavernes",
+          "Summary": "La rune permet au thuul d’escala der des surfaces verticales."
+        },
+        "holy-thuuldom-earthquake:earthquake:0": {
+          "Name": "Tremblement de terre",
+          "Summary": "Le thuul enfonce l’objet sacré dans le sol et invoque un puissant tremblement de terre qui secoue le sol et tout ce qui se trouve autour de lui."
+        },
+        "holy-thuuldom-fang-of-yukk:fang-of-yukk:0": {
+          "Name": "Croc de Yukk",
+          "Summary": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir."
+        },
+        "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": {
+          "Name": "Branchies du brochet",
+          "Summary": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne."
+        },
+        "holy-thuuldom-hammer-fists:hammer-fists:0": {
+          "Name": "Poings d'acier",
+          "Summary": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de bras sards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues."
+        },
+        "holy-thuuldom-healing-rune:healing-rune:0": {
+          "Name": "Rune de guérison",
+          "Summary": "Le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure."
+        },
+        "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0": {
+          "Name": "Chaleur des profondeurs",
+          "Summary": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne."
+        },
+        "holy-thuuldom-labyrinth-blood:labyrinth-blood:0": {
+          "Name": "Sang du labyrinthe",
+          "Summary": "Cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir."
+        },
+        "holy-thuuldom-mark-of-brokk:mark-of-brokk:0": {
+          "Name": "Marque de Brokk",
+          "Summary": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de bras sards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues."
+        },
+        "holy-thuuldom-power-of-repair:power-of-repair:0": {
+          "Name": "Pouvoir de réparation",
+          "Summary": "La rune permet au thuul d’escala der des surfaces verticales."
+        },
+        "holy-thuuldom-scales:scales:0": {
+          "Name": "Écailles",
+          "Summary": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul."
+        },
+        "holy-thuuldom-stoneling:stoneling:0": {
+          "Name": "Enfant de la pierre",
+          "Summary": "Le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing."
+        },
+        "holy-thuuldom-stone-to-clay:stone-to-clay:0": {
+          "Name": "Transformation de pierre en argile",
+          "Summary": "elle expire, la pierre reprend sa forme d’origine."
+        },
+        "holy-thuuldom-stoneshape:stoneshape:0": {
+          "Name": "Aspect de la pierre",
+          "Summary": "À l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne."
+        },
+        "holy-thuuldom-well-of-water:well-of-water:0": {
+          "Name": "Source d'eau",
+          "Summary": "Le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi."
+        },
+        "holy-toikalokke-animal-mind:animal-friend:0": {
+          "Name": "Ami des animaux",
+          "Summary": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’at taqueront jamais volontairement le bé néficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement."
+        },
+        "holy-toikalokke-animal-mind:animal-tracks:1": {
+          "Name": "Traces animales",
+          "Summary": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace."
+        },
+        "holy-toikalokke-animal-mind:talk-to-animals:2": {
+          "Name": "Invisibilité aux animaux",
+          "Summary": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux."
+        },
+        "holy-toikalokke-animal-mind:invisible-to-animals:3": {
+          "Name": "Parler avec les animaux",
+          "Summary": "L’ihana peut communiquer avec les animaux."
+        },
+        "holy-toikalokke-animal-mind:animal-spirit:4": {
+          "Name": "Esprit de la bête",
+          "Summary": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582"
+        },
+        "holy-toikalokke-animal-mind:animal-master:5": {
+          "Name": "Maître des animaux",
+          "Summary": "L’ihana peut domestiquer un animal sauvage ou une bête, qui se comporte alors comme un chat de ferme domes tique."
+        },
+        "holy-toikalokke-animal-mind:animal-shape:6": {
+          "Name": "Aspect animal",
+          "Summary": "L’elfe peut revêtir la forme de l’animal de son choix."
+        },
+        "holy-toikalokke-lynx-power:orientation:0": {
+          "Name": "Orientation",
+          "Summary": "L’ihana sait toujours à quelle direc tion il fait face (nord, sud, etc.) quand il voyage dans les bois, quelles que soient les conditions défavorables pouvant gêner sa vision, comme le brouillard ou l’obscurité."
+        },
+        "holy-toikalokke-lynx-power:tree-walk:1": {
+          "Name": "Chemin forestier",
+          "Summary": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mou vement normale."
+        },
+        "holy-toikalokke-lynx-power:hearing:2": {
+          "Name": "Ouïe fine",
+          "Summary": "En concentrant son regard sur un point situé à portée de ce pouvoir, l’ihana est capable d’entendre tout ce qui se passe dans un rayon de 10 mètres autour de ce point."
+        },
+        "holy-toikalokke-lynx-power:feline-leap:3": {
+          "Name": "Bond du félin",
+          "Summary": "L’ihana a la faculté de bondir avec l’incroyable agilité et la grâce d’un félin."
+        },
+        "holy-toikalokke-lynx-power:feline-reflexes:4": {
+          "Name": "Réflexes de félin",
+          "Summary": "L’ihana esquive une attaque à distance qui le vise."
+        },
+        "holy-toikalokke-lynx-power:aim:5": {
+          "Name": "Visée",
+          "Summary": "Quand l’ihana utilise une arme à distance pour attaquer, il peut viser la cible pendant la durée du pouvoir, ce qui lui confère un bonus de +1 à la VC pour toucher la cible."
+        },
+        "holy-toikalokke-lynx-power:track:6": {
+          "Name": "Pistage",
+          "Summary": "L’ihana obtient une image visible d’une personne ou d’une créature qui parcourt le sentier sur lequel il se trouve en exa minant ses traces, ce qui lui permet de la pister facilement."
+        },
+        "holy-toikalokke-lynx-power:concealment:7": {
+          "Name": "Camouflage",
+          "Summary": "L’ihana est capable de se fondre dans le décor jusqu’à expiration de ce pouvoir."
+        },
+        "holy-toikalokke-lynx-power:forest-path:8": {
+          "Name": "Sentier forestier",
+          "Summary": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale."
+        },
+        "holy-toikalokke-lynx-power:pathfinder:9": {
+          "Name": "Éclaireur",
+          "Summary": "L’ihana peut traverser des forêts in franchissables ou des fourrés denses sans la moindre difficulté."
+        },
+        "holy-toikalokke-master-of-elements:earth-wall:0": {
+          "Name": "Mur de terre",
+          "Summary": "L’ihana se protège en faisant surgir un mur de terre devant lui."
+        },
+        "holy-toikalokke-master-of-elements:control-fire:1": {
+          "Name": "Contrôle du feu",
+          "Summary": "L’ihana développe un certain contrôle des flammes."
+        },
+        "holy-toikalokke-master-of-elements:purify-water:2": {
+          "Name": "Purification de l'eau",
+          "Summary": "L’ihana peut purifier jusqu’à 1 litre d’eau."
+        },
+        "holy-toikalokke-master-of-elements:gift-of-water:3": {
+          "Name": "Don de l'eau",
+          "Summary": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation)."
+        },
+        "holy-toikalokke-master-of-elements:fire-tamer:4": {
+          "Name": "Dompteur du feu",
+          "Summary": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu."
+        },
+        "holy-toikalokke-master-of-elements:shape-earth:5": {
+          "Name": "Façonnage de la terre",
+          "Summary": "L’ihana peut transformer 1 mètre cube de terre en boue et lui donner la forme de son choix, après quoi la boue se change de nouveau en terre solide et conserve sa nouvelle forme jusqu’à expiration du pouvoir."
+        },
+        "holy-toikalokke-master-of-elements:elemental-arrow:6": {
+          "Name": "Flèche élémentaire",
+          "Summary": "L’ihana comprime la chaleur environ nante pour former une flèche qui s’en flamme."
+        },
+        "holy-toikalokke-master-of-elements:earthquake:7": {
+          "Name": "Tremblement de terre",
+          "Summary": "L’ihana peut provoquer un séisme qui secoue le sol tout autour de lui et jette au sol toutes les créatures situées à portée (sauf l’ihana)."
+        },
+        "holy-toikalokke-master-of-elements:spring-of-water:8": {
+          "Name": "Source d'eau",
+          "Summary": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir)."
+        },
+        "holy-toikalokke-master-of-elements:control-wind:9": {
+          "Name": "Contrôle des vents",
+          "Summary": "L’ihana contrôle la force du vent au sein d’une sphère de 10 mètres de rayon autour de lui."
+        },
+        "holy-toikalokke-master-of-elements:hot-and-cold:10": {
+          "Name": "Chaud et froid",
+          "Summary": "L’ihana peut augmenter ou réduire la température de 10°C maximum dans un espace de 2m ³ autour de lui pendant six heures."
+        },
+        "holy-toikalokke-master-of-elements:fire-resistant:11": {
+          "Name": "Résistance au feu",
+          "Summary": "Les flammes naturelles n’infligent aucun dégât à l’ihana, et les flammes magiques ou celles crachées par les dragons ne lui infligent que la moitié de leurs dégâts normaux."
+        }
+      },
+      "Theme": {
+        "vitner-animal-vitner": "Magie de communication avec les animaux, d'invocation, de contrôle, de possession et de transport de messages.",
+        "vitner-body-vitner": "Magie modifiant les corps et les sens, retenant les créatures et renforçant la vitesse, la force ou la résilience.",
+        "vitner-delusion-vitner": "Illusions manipulant sons, apparence, dissimulation, paysages, silence et invisibilité.",
+        "vitner-dimvitner": "Magie de la mort permettant de parler aux morts-vivants, de les invoquer, les contrôler, les renvoyer ou drainer les pouvoirs de Dimhall.",
+        "vitner-flame-craft": "Magie du feu créant chaleur et flammes, protégeant du feu et contrôlant les incendies.",
+        "vitner-perceiving": "Divinations pour trouver lieux, êtres, objets, morts-vivants, routes et terrain environnant.",
+        "vitner-power-of-thought": "Magie mentale affectant le langage, le courage, la peur, la mémoire, la télépathie, le contrôle, la possession et la lecture des pensées.",
+        "vitner-power-of-vision": "Magie de la vue pour le pistage, l'observation à distance, le voyage astral, la lecture du vitner et la vision de la vérité.",
+        "vitner-soil-craft": "Magie de la terre déplaçant ou modelant sol et pierre, créant tremblements et bourbiers, pétrifiant les créatures.",
+        "vitner-vitner-craft": "Métamagie de canalisation, enchantement, scellement, traçage, dissipation et blocage du vitner.",
+        "vitner-vitner-of-objects": "Magie identifiant, protégeant, liant, altérant, créant, verrouillant ou détruisant des objets.",
+        "vitner-water-craft": "Magie de l'eau pour trouver, purifier, créer, façonner, solidifier et marcher sur l'eau ou les vagues.",
+        "vitner-wind-craft": "Magie de l'air purifiant l'air, créant brume et vent, accordant portance ou protection, invoquant les tempêtes.",
+        "vitner-witchcraft": "Malédictions et maladies apportant fièvre, amnésie, peste, mauvaises récoltes et arbres hostiles.",
+        "holy-gerbanis-influence-of-jorn": "Pouvoirs de ténèbres, vents mortels, destriers nés de la tempête, protection et influence surnaturelle de Jorn.",
+        "holy-gerbanis-power-of-enken": "Pouvoirs accordant courage, volonté, vision de l'âme, vision nocturne et armures de tempête de plus en plus puissantes.",
+        "holy-gerbanis-strength-of-stormi": "Bénédictions de combat accordant force géante, voix commandement, gardes divins et guerriers héroïques.",
+        "holy-gerbanis-warmth-of-sunvei": "Pouvoirs solaires de guérison, de chaleur, de lumière, d'été, de chasse et de restauration.",
+        "holy-gerbanis-wisdom-of-windinna": "Pouvoirs d'inspiration, de vérité, de créativité, de résolution mentale, de protection et de clairvoyance de Windinna.",
+        "holy-gerbanis-wrath-of-tyrd": "Pouvoirs de guerre aux armes enflammées, cris terrifiants, fureur belliqueuse, tempêtes de feu et victoire.",
+        "holy-ealdtradition-gift-of-thanja": "Pouvoirs de nature pour parler aux animaux et prendre leur forme, se dissimiler dans les terres sauvages et communier avec les êtres de la forêt.",
+        "holy-ealdtradition-halawen-s-offering": "Protections ancestrales contre la peur, les Blotfangs, le vitner hostile et les assauts surnaturels.",
+        "holy-ealdtradition-heritage-of-majne": "Breuvages héroïques et bénédictions royales pour abattre trolls, géants et dragons et rallier les guerriers.",
+        "holy-ealdtradition-magh-s-gift": "Chants et liens aidant voyages, cavaliers, récoltes, héros et le changement des saisons.",
+        "holy-ealdtradition-nema-s-usefulness": "Pouvoirs aiguisant les sens animaliers, révélant les pistes, levant les entraves et accélérant les voyages.",
+        "holy-ealdtradition-tribute-of-morgu": "Pouvoirs de combat nourris par le sang, provoquant la rage et déchaînant volées, feu et fureur meurtrière.",
+        "holy-tenetnid-tablet-of-anger": "Pouvoirs sacrés de sang, de pierre, de martyre, d'éclairs destructeurs, d'explosions et de purge divine.",
+        "holy-tenetnid-tablet-of-grace": "Pouvoirs miséricordieux qui soignent, rendent la vie et la mémoire, rappellent les alliés et les préservent de la mort.",
+        "holy-tenetnid-tablet-of-the-knight": "Bénédictions chevaleresques renforçant armure, lance, autorité, armes sacrées et formes de combat saintes.",
+        "holy-tenetnid-tablet-of-the-shield": "Pouvoirs protecteurs créant sanctuaires, barrières, résistances, bannissements et passages sûrs.",
+        "holy-tenetnid-tablet-of-the-sun": "Signes solaires et radiance sacrée protégeant foyers et bosquets, révélant les présages et illuminant les ténèbres.",
+        "holy-tenetnid-tablet-of-voices": "Pouvoirs de parole, d'ouïe, de communion, de lucidité, de faveur divine et de pactes sacrés contraignants.",
+        "holy-haminges-power-of-the-beast": "Pouvoirs bestiaux accordant instinct de prédateur, défenses, griffes, fourrure, endurance et transformation animale.",
+        "holy-haminges-power-of-the-dragon": "Pouvoirs draconiques accordant constriction, résistance au feu, regard paralysant, écailles et formes serpentesques.",
+        "holy-haminges-power-of-men": "Arts mortels et nains de maîtrise, d'adresse aux armes, de breuvages curatifs, de forge et d'exploits légendaires.",
+        "holy-haminges-power-of-the-scale": "Pouvoirs de lindwurm de terreur, régénération, membres de pierre, pétrification et résilience monstrueuse.",
+        "holy-haminges-power-of-the-thurses": "Pouvoirs de trolls et de tursirs accordant peaux de glace, force immense, souffles destructeurs et rage dévastatrice.",
+        "holy-haminges-power-of-trolls": "Pouvoirs des trolls de maladie, illusion, persuasion, intrépidité, ruse et enchantement de la montagne.",
+        "holy-toikalokke-animal-mind": "Pouvoirs pour se lier d'amitié avec les animaux, les pister, leur parler, les maîtriser et prendre leur forme.",
+        "holy-toikalokke-lynx-power": "Dons félins d'ouïe, de bond, de réflexes, de visée, de pistage, de camouflage et de repérage des sentiers.",
+        "holy-toikalokke-master-of-elements": "Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires."
+      },
+      "ThuulRunePrefix": "Une rune thuul sacrée qui {summary}"
+    }
+  }
+}

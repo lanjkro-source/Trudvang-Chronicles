@@ -1,0 +1,153 @@
+<form class="{{cssClass}} trudvang-sheet character-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
+    <div class="identity">
+      <input class="actor-name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'TRUDVANG.Field.Name'}}">
+      <div class="identity-grid">
+        <label>{{localize "TRUDVANG.Field.Race"}}
+          <select name="system.details.race" {{#unless creationMode}}disabled{{/unless}}>{{selectOptions config.races selected=system.details.race}}</select>
+        </label>
+        <label>{{localize "TRUDVANG.Field.Culture"}}<select name="system.details.culture" {{#unless creationMode}}disabled{{/unless}}><option value=""></option>{{selectOptions config.cultures selected=system.details.culture}}</select></label>
+        <label>{{localize "TRUDVANG.Field.NativeLanguage"}}<select name="system.details.nativeLanguage" {{#unless creationMode}}disabled{{/unless}}>{{selectOptions config.nativeLanguages selected=system.details.nativeLanguage}}</select></label>
+        <label>{{localize "TRUDVANG.Field.Archetype"}}<select name="system.details.archetype" {{#unless creationMode}}disabled{{/unless}}><option value=""></option>{{selectOptions config.archetypes selected=system.details.archetype}}</select></label>
+        <label>{{localize "TRUDVANG.Field.Religion"}}<select name="system.details.religion" {{#unless religionEditable}}disabled{{/unless}}><option value=""></option>{{selectOptions config.religions selected=system.details.religion}}</select></label>
+      </div>
+    </div>
+    <button type="button" class="initiative-button" data-action="roll-initiative" title="{{localize 'TRUDVANG.Action.RollInitiative'}}">
+      <i class="fas fa-bolt"></i><strong>{{system.initiative.current}}</strong><span>{{localize "TRUDVANG.Resource.Initiative"}}</span>
+    </button>
+  </header>
+
+  <section class="resource-bar">
+    <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Combat"}}</span><span><input name="system.resources.combat.value" type="number" value="{{system.resources.combat.value}}"> / {{system.resources.combat.max}}</span><button type="button" data-action="reset-combat" title="{{localize 'TRUDVANG.Action.ResetCombat'}}"><i class="fas fa-rotate"></i></button></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}}</span></label>
+    <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
+  </section>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="summary"><i class="fas fa-shield-halved"></i> {{localize "TRUDVANG.Tab.Summary"}}</a>
+    <a class="item" data-tab="skills"><i class="fas fa-dice-d20"></i> {{localize "TRUDVANG.Tab.Skills"}}</a>
+    <a class="item" data-tab="equipment"><i class="fas fa-backpack"></i> {{localize "TRUDVANG.Tab.Equipment"}}</a>
+    <a class="item" data-tab="magic"><i class="fas fa-wand-sparkles"></i> {{localize "TRUDVANG.Tab.Magic"}}</a>
+    <a class="item" data-tab="notes"><i class="fas fa-book-open"></i> {{localize "TRUDVANG.Tab.Notes"}}</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab summary" data-group="primary" data-tab="summary">
+      <div class="summary-grid">
+        <section class="panel traits-panel">
+          <h2>{{localize "TRUDVANG.Section.Traits"}}</h2>
+          <div class="trait-grid">
+            {{#each traitRows as |trait|}}
+              <div class="trait-row" title="{{trait.tooltip}}">
+                <button type="button" class="rollable" data-action="roll-trait" data-trait="{{trait.key}}"><i class="fas fa-dice-d20"></i> {{trait.label}}</button>
+                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="-1" title="{{trait.decreaseTitle}}" {{#unless trait.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{signed trait.value}}</strong>{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="1" title="{{trait.increaseTitle}}" {{#unless trait.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button>{{/if}}</div>
+              </div>
+            {{/each}}
+          </div>
+        </section>
+        <section class="panel status-panel">
+          <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
+          <dl class="status-list">
+            <dt>{{localize "TRUDVANG.Resource.DamageLevel"}}</dt><dd>{{localize (concat "TRUDVANG.Damage." system.damage.level)}} ({{signed system.damage.penalty}})</dd>
+            <dt>{{localize "TRUDVANG.Resource.Protection"}}</dt><dd>{{system.protection}}</dd>
+            <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd>{{system.movement.current}} m</dd>
+            <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd>{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}}</dd>
+            <dt>{{localize "TRUDVANG.Resource.FearPenalty"}}</dt><dd>{{signed system.fearPenalty}}</dd>
+          </dl>
+        </section>
+      </div>
+      <section class="panel quick-actions">
+        <h2>{{localize "TRUDVANG.Section.QuickActions"}}</h2>
+        <ol class="item-list compact-list">
+          {{#each itemsByGroup.weapons as |item|}}{{#if item.system.equipped}}
+            <li class="item" data-item-id="{{item.id}}">
+              <img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button>
+              <span>{{item.system.damage}}{{#if item.system.openRoll}} (OR {{item.system.openRoll}}-10){{/if}}</span>
+              <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}"><i class="fas fa-shield"></i></button><button type="button" data-action="item-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button>
+              <button type="button" data-action="item-edit"><i class="fas fa-pen"></i></button>
+            </li>
+          {{/if}}{{/each}}
+          {{#unless itemsByGroup.weapons.length}}<li class="empty">{{localize "TRUDVANG.Empty.Weapons"}}</li>{{/unless}}
+        </ol>
+      </section>
+    </div>
+
+    <div class="tab skills" data-group="primary" data-tab="skills">
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Skills"}}</h2><span class="tree-controls"><button type="button" data-action="toggle-zero-knowledge"><i class="fas fa-eye-slash"></i> <span>{{localize "TRUDVANG.Action.HideUnlearned"}}</span></button><button type="button" data-action="expand-tree" title="{{localize 'TRUDVANG.Action.ExpandAll'}}"><i class="fas fa-angles-down"></i></button><button type="button" data-action="collapse-tree" title="{{localize 'TRUDVANG.Action.CollapseAll'}}"><i class="fas fa-angles-up"></i></button><button type="button" data-action="item-create" data-type="ability"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Action.AddKnowledge"}}</button></span></div>
+        <div class="knowledge-tree">
+          {{#each skillTrees as |branch|}}
+            <details class="skill-branch" data-tree-key="skill:{{branch.key}}" open>
+              <summary><div class="skill-row tree-root">
+                <button type="button" class="tree-toggle" data-action="toggle-tree" title="{{localize 'TRUDVANG.Action.ToggleTree'}}"><i class="fas fa-book-open"></i></button><button type="button" class="roll-icon" data-action="roll-skill" data-skill="{{branch.key}}" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><button type="button" class="skill-name" data-action="show-skill-detail" data-skill="{{branch.key}}">{{branch.label}} {{#if branch.isCore}}<i class="fas fa-star core-skill-marker" title="{{localize 'TRUDVANG.Field.CoreSkill'}}"></i>{{/if}}</button>
+                <span class="level-label">{{localize "TRUDVANG.Field.SV"}} <strong>{{branch.level}}</strong></span>
+                <span class="cost-badge" title="{{branch.increaseTitle}}">+{{branch.nextCost}}</span>
+                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="-1" title="{{branch.decreaseTitle}}" {{#unless branch.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{branch.level}}</strong><button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="1" title="{{branch.increaseTitle}}" {{#unless branch.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>
+              </div></summary>
+              {{#each branch.disciplines as |node|}}
+                <details class="discipline-branch {{#unless node.level}}zero-level{{/unless}}" data-tree-key="discipline:{{node.catalogId}}"><summary><div class="knowledge-node discipline-node" data-item-id="{{node.item.id}}" data-catalog-id="{{node.catalogId}}" title="{{node.calculation}}">
+                  <button type="button" class="image-toggle" data-action="toggle-tree"><img src="{{node.item.img}}"></button><button type="button" class="roll-icon" data-action="roll-catalog" {{#unless node.level}}disabled{{/unless}}><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="show-catalog-detail">{{node.item.name}}</button><span class="kind-label">{{localize "TRUDVANG.AbilityKind.discipline"}} · SV {{node.breakdown.total}}</span><span class="cost-badge" title="{{node.increaseTitle}}">+{{node.nextCost}}</span>
+                  <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{node.catalogId}}" data-direction="-1" title="{{node.decreaseTitle}}" {{#unless node.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{node.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{node.catalogId}}" data-direction="1" title="{{node.increaseTitle}}" {{#unless node.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>
+                  {{#if node.exists}}<button type="button" data-action="item-edit"><i class="fas fa-pen"></i></button>{{/if}}
+                </div></summary>
+                {{#each node.specialties as |child|}}<div class="knowledge-node specialty-node {{#unless child.level}}zero-level{{/unless}}" data-item-id="{{child.item.id}}" data-catalog-id="{{child.catalogId}}" title="{{child.calculation}}"><img src="{{child.item.img}}"><button type="button" class="roll-icon" data-action="roll-catalog" {{#unless child.level}}disabled{{/unless}}><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="show-catalog-detail">{{child.item.name}}</button><span class="kind-label">{{localize "TRUDVANG.AbilityKind.specialty"}} · SV {{child.breakdown.total}}</span><span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="-1" title="{{child.decreaseTitle}}" {{#unless child.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{child.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="1" title="{{child.increaseTitle}}" {{#unless child.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>{{#if child.exists}}<button type="button" data-action="item-edit"><i class="fas fa-pen"></i></button>{{/if}}</div>{{/each}}
+                </details>
+              {{/each}}
+              {{#each branch.unassigned as |child|}}<div class="knowledge-node specialty-node orphan" data-item-id="{{child.item.id}}"><img src="{{child.item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{child.item.name}}</button><span class="kind-label">{{localize "TRUDVANG.Field.Unassigned"}}</span><span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><div class="level-control"><strong>{{child.item.system.level}}</strong><button type="button" data-action="adjust-item-level" data-direction="1" title="{{child.increaseTitle}}"><i class="fas fa-plus"></i></button></div></div>{{/each}}
+            </details>
+          {{/each}}
+        </div>
+      </section>
+    </div>
+
+    <div class="tab equipment" data-group="primary" data-tab="equipment">
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Weapons"}}</h2><button type="button" data-action="item-create" data-type="weapon"><i class="fas fa-plus"></i></button></div>
+        <ol class="item-list">{{#each itemsByGroup.weapons as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span>{{item.system.damage}} · IM {{signed item.system.initiativeModifier}} · WA {{item.system.weaponActions}}</span><button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i class="fas fa-hand-fist"></i></button><button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}"><i class="fas fa-shield"></i></button><button type="button" data-action="item-damage"><i class="fas fa-burst"></i></button><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+      </section>
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Protection"}}</h2><span><button type="button" data-action="item-create" data-type="armor"><i class="fas fa-plus"></i> {{localize "TYPES.Item.armor"}}</button><button type="button" data-action="item-create" data-type="shield"><i class="fas fa-plus"></i> {{localize "TYPES.Item.shield"}}</button></span></div>
+        <ol class="item-list">{{#each itemsByGroup.protection as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}">{{#if (eq item.type "shield")}}<button type="button" class="roll-icon" data-action="item-parry"><i class="fas fa-dice-d20"></i></button>{{else}}<span></span>{{/if}}<button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span>PV {{item.system.protection}} · BV {{item.system.breach.value}}/{{item.system.breach.max}}</span><button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i class="fas fa-shield"></i></button><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+      </section>
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Gear"}}</h2><span><button type="button" data-action="item-create" data-type="gear"><i class="fas fa-plus"></i></button><button type="button" data-action="item-create" data-type="potion"><i class="fas fa-flask"></i></button></span></div>
+        <ol class="item-list">{{#each itemsByGroup.equipment as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span>× {{item.system.quantity}} · {{item.system.weight}} kg</span><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+      </section>
+    </div>
+
+    <div class="tab magic" data-group="primary" data-tab="magic">
+      <section class="panel"><h2>{{localize "TRUDVANG.Section.Affinities"}}</h2><dl class="status-list"><dt>{{localize "TRUDVANG.Field.VitnerType"}}</dt><dd>{{#if vitnerProfile}}{{localize vitnerProfile.label}} · {{localize "TRUDVANG.Resource.Vitner"}} {{system.resources.vitner.max}} · {{#if vitnerProfile.perfectSuccessMax}}{{localize "TRUDVANG.Field.PerfectSuccess"}} {{vitnerProfile.perfectSuccessMax}}{{else}}{{localize "TRUDVANG.Field.NoPerfectSuccess"}}{{/if}} · {{localize "TRUDVANG.Field.FatalDie"}} 1d10 (OR {{vitnerProfile.fatalRange}}){{else}}—{{/if}}</dd><dt>{{localize "TRUDVANG.Field.Religion"}}</dt><dd>{{#if religionProfile}}{{localize religionProfile.label}} · {{localize "TRUDVANG.Resource.Divinity"}} {{system.resources.divinity.max}}{{else}}—{{/if}}</dd></dl></section>
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Magic"}}</h2><span class="tree-controls"><button type="button" data-action="toggle-inactive-magic"><i class="fas fa-eye-slash"></i> <span>{{localize "TRUDVANG.Action.HideInactiveMagic"}}</span></button><button type="button" data-action="add-tablet"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Action.AddTablet"}}</button></span></div>
+        <div class="knowledge-tree magic-tree">
+          {{#each magicTree as |node|}}
+          <details class="magic-branch" data-tree-key="tablet:{{node.item.id}}" open>
+            <summary><div class="knowledge-node tablet-node" data-item-id="{{node.item.id}}">
+              <button type="button" class="image-toggle" data-action="toggle-tree"><img src="{{node.item.img}}"></button><button type="button" class="item-name" data-action="item-edit">{{node.item.name}}</button><span class="kind-label">{{localize (concat "TRUDVANG.Tablet." node.item.system.tabletType)}}</span><span class="cost-badge" title="{{node.increaseTitle}}">+{{node.nextCost}}</span><div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-item-level" data-direction="-1" title="{{node.decreaseTitle}}" {{#unless node.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{node.item.system.level}}</strong><button type="button" data-action="adjust-item-level" data-direction="1" title="{{node.increaseTitle}}" {{#unless node.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>{{#if @root.creationMode}}<button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button>{{/if}}
+            </div></summary>
+            {{#each node.children as |child|}}<div class="knowledge-node spell-node {{#if child.inactive}}inactive-magic{{/if}}" data-item-id="{{child.item.id}}"><img src="{{child.item.img}}"><button type="button" class="roll-icon" data-action="item-roll" {{#if child.inactive}}disabled{{/if}}><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{child.item.name}}</button><span class="kind-label">{{localize (concat "TYPES.Item." child.item.type)}} · {{localize "TRUDVANG.Field.Level"}} {{child.item.system.level}}</span><span></span><span class="power-cost">{{localize "TRUDVANG.Field.Cost"}} {{child.item.system.cost}}</span></div>{{/each}}
+          </details>
+          {{/each}}
+          {{#if unassignedMagic.length}}<h3>{{localize "TRUDVANG.Field.Unassigned"}}</h3>{{#each unassignedMagic as |item|}}<div class="knowledge-node spell-node orphan" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span class="kind-label">{{localize (concat "TYPES.Item." item.type)}}</span></div>{{/each}}{{/if}}
+        </div>
+      </section>
+    </div>
+
+    <div class="tab notes" data-group="primary" data-tab="notes">
+      <div class="notes-grid">
+        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Appearance"}}</h2>{{editor enriched.appearance target="system.appearance" button=true editable=editable}}</section>
+        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.History"}}</h2>{{editor enriched.history target="system.history" button=true editable=editable}}</section>
+        <section class="panel editor-panel full"><h2>{{localize "TRUDVANG.Section.Notes"}}</h2>{{editor enriched.notes target="system.notes" button=true editable=editable}}</section>
+      </div>
+    </div>
+  </section>
+  <footer class="progress-footer">
+    <button type="button" class="creation-mode-button {{#if creationMode}}active{{/if}}" data-action="toggle-creation-mode"><i class="fas fa-user-pen"></i> {{#if creationMode}}{{localize "TRUDVANG.Action.FinishCreation"}}{{else}}{{localize "TRUDVANG.Action.StartCreation"}}{{/if}}</button>
+    {{#if creationMode}}<div class="progress-values"><label>{{localize "TRUDVANG.Field.CreationTotal"}} <input name="system.experience.creationTotal" type="number" value="{{system.experience.creationTotal}}"></label><span>{{localize "TRUDVANG.Field.BuildCost"}} <strong>{{system.buildCost}}</strong></span><span>{{localize "TRUDVANG.Field.CreationRemaining"}} <strong>{{creationRemaining}}</strong></span><span title="{{localize 'TRUDVANG.Field.CoreBonusHint'}}">{{localize "TRUDVANG.Field.CoreBonus"}} <strong>{{creationCosts.coreBonusUsed}} / {{creationCosts.coreBonusTotal}}</strong></span></div>{{else}}<div class="progress-values"><label>{{localize "TRUDVANG.Field.AdventurePoints"}} <input name="system.experience.adventureAvailable" type="number" value="{{system.experience.adventureAvailable}}" {{#unless isGM}}disabled{{/unless}}></label><span>{{localize "TRUDVANG.Field.AdventureSpent"}} <strong>{{system.experience.adventureSpent}}</strong></span><span>{{localize "TRUDVANG.Field.PendingAdventurePoints"}} <strong>{{pendingAdventureCost}}</strong></span></div>{{/if}}
+    {{#if pendingAdvancements.length}}<div class="footer-actions"><button type="button" data-action="confirm-advancement"><i class="fas fa-check"></i> {{localize "TRUDVANG.Action.ConfirmAdvancement"}}</button><button type="button" data-action="cancel-advancement"><i class="fas fa-rotate-left"></i> {{localize "TRUDVANG.Action.CancelAdvancement"}}</button></div>{{/if}}
+  </footer>
+</form>
