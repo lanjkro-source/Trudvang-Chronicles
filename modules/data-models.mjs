@@ -252,6 +252,7 @@ export class AbilityData extends BaseItemData {
       parentDiscipline: string(),
       costTrait: string(),
       catalogId: string(),
+      summary: string(),
       freeLevels: integer(0, {min: 0, max: 5}),
       level: integer(1, {min: 0, max: 5}),
       rollBonus: integer(1)

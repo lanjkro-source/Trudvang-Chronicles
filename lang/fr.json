@@ -137,7 +137,8 @@
       "RollBonus": "Bonus par niveau",
       "Source": "Source",
       "ActiveSpell": "Sortilège actuellement maintenu",
-      "ActiveCost": "Coût en vitner lors de l'activation"
+      "ActiveCost": "Coût en vitner lors de l'activation",
+      "Summary": "Résumé"
     },
     "Resource": {
       "Body": "Points de santé (PS)",

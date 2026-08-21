@@ -91,10 +91,12 @@ export class TrudvangActorSheet extends BaseActorSheet {
     const buildNode = (entry, skillKey, kind, parentDiscipline = "") => {
       const existing = this.actor.findKnowledgeItem(entry.id);
       const level = Number(existing?.system.level || 0);
-      const item = existing ?? {id: "", name: game.i18n.localize(entry.label), img: "icons/svg/book.svg", type: "ability", system: {description: this._knowledgeSummary({...entry, kind, parentDiscipline}), catalogId: entry.id, kind, parentSkill: skillKey, parentDiscipline, level, rollBonus: kind === "specialty" ? 2 : 1, freeLevels: 0}};
+      const generatedSummary = this._knowledgeSummary({...entry, kind, parentDiscipline});
+      const item = existing ?? {id: "", name: game.i18n.localize(entry.label), img: "icons/svg/book.svg", type: "ability", system: {description: generatedSummary, catalogId: entry.id, kind, parentSkill: skillKey, parentDiscipline, level, rollBonus: kind === "specialty" ? 2 : 1, freeLevels: 0}};
       const breakdown = this.actor.getAbilityBreakdown(item);
       return {
         catalogId: entry.id, item, level, breakdown,
+        summary: existing?.system.summary || generatedSummary,
         calculation: kind === "specialty"
           ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total})
           : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
@@ -114,8 +116,10 @@ export class TrudvangActorSheet extends BaseActorSheet {
       const decorate = item => {
         const itemLevel = Number(item.system.level ?? 0);
         const breakdown = this.actor.getAbilityBreakdown(item);
+        const entry = this.actor.getCatalogEntry(item.system.catalogId);
         return {
           item, level: itemLevel, breakdown,
+          summary: item.system.summary || (entry ? this._knowledgeSummary(entry) : item.system.description || ""),
           calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
           refundCost: this.actor.getKnowledgeLevelCost(item, itemLevel),
           nextCost: this.actor.getKnowledgeLevelCost(item, itemLevel + 1),

@@ -164,6 +164,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Source` | Source | Source |
 | `TRUDVANG.Field.ActiveSpell` | Currently maintained spell | Sortilège actuellement maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
+| `TRUDVANG.Field.Summary` | Summary | Résumé |
 
 ## `TRUDVANG.Resource`
 

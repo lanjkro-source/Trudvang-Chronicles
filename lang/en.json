@@ -137,7 +137,8 @@
       "RollBonus": "Bonus per Level",
       "Source": "Source",
       "ActiveSpell": "Currently maintained spell",
-      "ActiveCost": "Vitner cost when activated"
+      "ActiveCost": "Vitner cost when activated",
+      "Summary": "Summary"
     },
     "Resource": {
       "Body": "Body Points",
