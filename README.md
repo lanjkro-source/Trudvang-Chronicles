@@ -41,6 +41,12 @@ No build step or third-party JavaScript dependency is required.
 - Click a spell or divine feat to roll and spend Vitner or Divinity Points. The cost can be raised for levels of power.
 - Drag world Items into an Actor sheet, or duplicate any starter NPC and edit the copy.
 
+## Repository layout
+
+- `origin` — this public repository: the installable system source (no proprietary books).
+- `backup` — private mirror (`Trudvang-Chronicles-Dev`): identical history, pushed alongside `origin`.
+- `game doc/` — proprietary source books, versioned in a **separate private repository** nested here; clone it into place on a new machine, then regenerate the text mirrors with `python tools/extract_pdf_rules.py`.
+
 ## Content and art notice
 
 Rules data and artwork were derived from the PDF books supplied in `game doc` (English books) and `game doc/fr` (official French edition from Black Book Éditions; the « Livre des règles » combines the Player's Handbook and Game Master's Guide). Searchable text mirrors live in `game doc/markdown/` and `game doc/markdown-fr/`; regenerate them with `tools/extract_pdf_rules.py` after any source PDF change. The original Trudvang text and art remain the property of their respective rights holders. Before publishing or redistributing this system or its extracted images, obtain the necessary permission or replace restricted content with licensed assets.
