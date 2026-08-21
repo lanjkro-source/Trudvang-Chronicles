@@ -72,10 +72,13 @@
 .trudvang-sheet .sheet-body > .tab { height: 100%; overflow-y: auto; padding: 10px; }
 
 .trudvang-sheet .panel { padding: 9px; border: 1px solid var(--trudvang-line); background: rgba(249,242,225,.76); box-shadow: 0 1px 2px rgba(50,30,20,.12); }
-.trudvang-sheet .summary-grid, .trudvang-sheet .npc-stats-grid, .trudvang-sheet .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.trudvang-sheet .npc-stats-grid, .trudvang-sheet .notes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.trudvang-sheet .summary-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; }
 .trudvang-sheet .quick-actions { margin-top: 10px; }
 .trudvang-sheet .trait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 9px; }
-.trudvang-sheet .trait-row, .trudvang-sheet .mini-stat { min-height: 27px; display: grid; grid-template-columns: 1fr 94px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
+.trudvang-sheet .trait-row { display: grid; row-gap: 2px; align-items: center; }
+.trudvang-sheet .trait-row .level-control:not(:has(button)) { grid-template-columns: auto; }
+.trudvang-sheet .mini-stat { min-height: 27px; display: grid; grid-template-columns: 1fr 94px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
 .trudvang-sheet .mini-stat:has(.roll-icon) { grid-template-columns: 27px 1fr 44px; gap: 3px; }
 .trudvang-sheet .trait-row button, .trudvang-sheet .mini-stat button { margin: 0; padding: 2px; text-align: left; font-weight: 600; }
 .trudvang-sheet .trait-row select, .trudvang-sheet .mini-stat input { width: 44px; text-align: center; }
