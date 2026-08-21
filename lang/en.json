@@ -173,16 +173,7 @@
       "Knowledge": "Knowledge",
       "ShadowArts": "Shadow Arts",
       "VitnerCraft": "Vitner Craft",
-      "Wilderness": "Wilderness",
-      "agility": "Agility",
-      "care": "Care",
-      "entertainment": "Entertainment",
-      "faith": "Faith",
-      "fighting": "Fighting",
-      "knowledge": "Knowledge",
-      "shadowArts": "Shadow Arts",
-      "vitnerCraft": "Vitner Craft",
-      "wilderness": "Wilderness"
+      "Wilderness": "Wilderness"
     },
     "SkillDescription": {
       "agility": "Agility governs balance, movement, riding, evasion, and other feats of bodily control.",
@@ -214,8 +205,6 @@
       "Natural": "Natural"
     },
     "Tablet": {
-      "Vitner": "Vitner Tablet",
-      "Holy": "Holy Tablet",
       "vitner": "Vitner Tablet",
       "holy": "Holy Tablet"
     },
@@ -236,9 +225,6 @@
       "Illmalaini": "Illmalaini",
       "Buratja": "Buratja",
       "Borjornikka": "Borjornikka",
-      "HalfElf": "Half-Elf",
-      "HalfTroll": "Half-Troll",
-      "DwarfTroll": "Dwarf-Troll",
       "Changeling": "Changeling",
       "Dyfir": "Dyfir",
       "Zvorda": "Zvorda",
@@ -247,11 +233,11 @@
       "Ogro": "Ogro"
     },
     "Language": {
-      "Eika": "Eika (Elf / Half-Elf)",
-      "Futhark": "Futhark (Dwarf / Half-Dwarf)",
-      "Rona": "Rona (Human)",
-      "Vrok": "Vrok (Human)",
-      "WildVrok": "Wild Vrok (Human / Half-Troll)"
+      "Eika": "Eika",
+      "Futhark": "Futhark",
+      "Rona": "Rona",
+      "Vrok": "Vrok",
+      "WildVrok": "Wild Vrok"
     },
     "Archetype": {
       "Bard": "Bard",

@@ -198,9 +198,24 @@ export class TrudvangActor extends BaseActor {
     return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, total: skill + discipline + own};
   }
 
+  async alignCreationOrigins() {
+    if (this.type !== "character") return false;
+    const details = this.system.details ?? {};
+    const allowedCultures = TRUDVANG.raceCultures[details.race] ?? Object.keys(TRUDVANG.cultures);
+    const changes = {};
+    if (!allowedCultures.includes(details.culture)) changes["system.details.culture"] = allowedCultures[0];
+    const cultureId = changes["system.details.culture"] ?? details.culture;
+    const allowedLanguages = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
+    if (!allowedLanguages.includes(details.nativeLanguage)) changes["system.details.nativeLanguage"] = allowedLanguages[0];
+    if (Object.keys(changes).length) await this.update(changes);
+    return Object.keys(changes).length > 0;
+  }
+
   async syncCreationDefaults() {
     if (this.type !== "character") return;
-    const language = TRUDVANG.nativeLanguages[this.system.details?.nativeLanguage] ? this.system.details.nativeLanguage : "rona";
+    const allowedLanguages = TRUDVANG.cultureLanguages[this.system.details?.culture] ?? Object.keys(TRUDVANG.nativeLanguages);
+    const current = this.system.details?.nativeLanguage;
+    const language = allowedLanguages.includes(current) ? current : allowedLanguages[0] ?? "rona";
     const defaults = [
       {catalogId: "cultureKnowledge", level: 1},
       {catalogId: "language", level: 1},

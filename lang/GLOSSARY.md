@@ -209,15 +209,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Skill.ShadowArts` | Shadow Arts | Arts des ombres |
 | `TRUDVANG.Skill.VitnerCraft` | Vitner Craft | Maîtrise du vitner |
 | `TRUDVANG.Skill.Wilderness` | Wilderness | Nature |
-| `TRUDVANG.Skill.agility` | Agility | Agilité |
-| `TRUDVANG.Skill.care` | Care | Savoir-faire |
-| `TRUDVANG.Skill.entertainment` | Entertainment | Divertissement |
-| `TRUDVANG.Skill.faith` | Faith | Foi |
-| `TRUDVANG.Skill.fighting` | Fighting | Combat |
-| `TRUDVANG.Skill.knowledge` | Knowledge | Connaissances |
-| `TRUDVANG.Skill.shadowArts` | Shadow Arts | Arts des ombres |
-| `TRUDVANG.Skill.vitnerCraft` | Vitner Craft | Maîtrise du vitner |
-| `TRUDVANG.Skill.wilderness` | Wilderness | Nature |
 
 ## `TRUDVANG.SkillDescription`
 
@@ -261,8 +252,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Tablet.Vitner` | Vitner Tablet | Tablette de vitner |
-| `TRUDVANG.Tablet.Holy` | Holy Tablet | Tablette sacrée |
 | `TRUDVANG.Tablet.vitner` | Vitner Tablet | Tablette de vitner |
 | `TRUDVANG.Tablet.holy` | Holy Tablet | Tablette sacrée |
 
@@ -292,9 +281,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Culture.Illmalaini` | Illmalaini | Illmalaina |
 | `TRUDVANG.Culture.Buratja` | Buratja | Buratja |
 | `TRUDVANG.Culture.Borjornikka` | Borjornikka | Borjornikka |
-| `TRUDVANG.Culture.HalfElf` | Half-Elf | Demi-elfe |
-| `TRUDVANG.Culture.HalfTroll` | Half-Troll | Demi-troll |
-| `TRUDVANG.Culture.DwarfTroll` | Dwarf-Troll | Nain-troll |
 | `TRUDVANG.Culture.Changeling` | Changeling | Changelin |
 | `TRUDVANG.Culture.Dyfir` | Dyfir | Dyfir |
 | `TRUDVANG.Culture.Zvorda` | Zvorda | Zvorda |
@@ -306,11 +292,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Language.Eika` | Eika (Elf / Half-Elf) | Eika (elfe / demi-elfe) |
-| `TRUDVANG.Language.Futhark` | Futhark (Dwarf / Half-Dwarf) | Futhark (nain / demi-nain) |
-| `TRUDVANG.Language.Rona` | Rona (Human) | Rona (humain) |
-| `TRUDVANG.Language.Vrok` | Vrok (Human) | Vrok (humain) |
-| `TRUDVANG.Language.WildVrok` | Wild Vrok (Human / Half-Troll) | Vrok sauvage (humain / demi-troll) |
+| `TRUDVANG.Language.Eika` | Eika | Eika |
+| `TRUDVANG.Language.Futhark` | Futhark | Futhark |
+| `TRUDVANG.Language.Rona` | Rona | Rona |
+| `TRUDVANG.Language.Vrok` | Vrok | Vrok |
+| `TRUDVANG.Language.WildVrok` | Wild Vrok | Vrok sauvage |
 
 ## `TRUDVANG.Archetype`
 

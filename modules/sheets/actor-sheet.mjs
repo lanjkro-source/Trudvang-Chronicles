@@ -44,6 +44,12 @@ export class TrudvangActorSheet extends BaseActorSheet {
       traitChoices: TRUDVANG.traitChoices,
       itemTypes: TRUDVANG.itemTypes
     };
+    const raceId = this.actor.system.details?.race || "human";
+    const allowedCultureIds = TRUDVANG.raceCultures[raceId] ?? Object.keys(TRUDVANG.cultures);
+    context.config.cultures = localizeConfig(Object.fromEntries(allowedCultureIds.map(id => [id, TRUDVANG.cultures[id]]).filter(entry => entry[1])));
+    const cultureId = this.actor.system.details?.culture || allowedCultureIds[0];
+    const allowedLanguageIds = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
+    context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
     context.vitnerProfile = this.actor.selectedVitnerType;
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
@@ -347,8 +353,17 @@ export class TrudvangActorSheet extends BaseActorSheet {
 
   async _onChangeInput(event) {
     await super._onChangeInput(event);
-    if (["system.details.culture", "system.details.nativeLanguage"].includes(event.currentTarget?.name) && this.actor.system.experience?.creationMode) await this.actor.syncCreationDefaults();
-    if (event.currentTarget?.name === "system.details.race" && this.actor.system.experience?.creationMode && !this.actor.allowedReligionIds.includes(this.actor.system.details.religion)) await this.actor.update({"system.details.religion": ""});
+    if (!this.actor.system.experience?.creationMode) return;
+    const name = event.currentTarget?.name;
+    if (["system.details.race", "system.details.culture", "system.details.nativeLanguage"].includes(name)) {
+      await this.actor.alignCreationOrigins();
+      await this.actor.syncCreationDefaults();
+    }
+    if (name === "system.details.race") {
+      const allowed = this.actor.allowedReligionIds;
+      if (allowed.length === 1 && !this.actor.system.details.religion) await this.actor.update({"system.details.religion": allowed[0]});
+      else if (!allowed.includes(this.actor.system.details.religion)) await this.actor.update({"system.details.religion": ""});
+    }
   }
 
   async _deleteItem(item) {

@@ -70,11 +70,40 @@ export const TRUDVANG = {
   cultures: {
     stormlander: "TRUDVANG.Culture.Stormlander", mittlander: "TRUDVANG.Culture.Mittlander", virann: "TRUDVANG.Culture.Virann", wildfolk: "TRUDVANG.Culture.Wildfolk",
     korpikalli: "TRUDVANG.Culture.Korpikalli", illmalaini: "TRUDVANG.Culture.Illmalaini", buratja: "TRUDVANG.Culture.Buratja", borjornikka: "TRUDVANG.Culture.Borjornikka",
-    halfElf: "TRUDVANG.Culture.HalfElf", halfTroll: "TRUDVANG.Culture.HalfTroll", dwarfTroll: "TRUDVANG.Culture.DwarfTroll", changeling: "TRUDVANG.Culture.Changeling",
+    changeling: "TRUDVANG.Culture.Changeling",
     dyfir: "TRUDVANG.Culture.Dyfir", zvorda: "TRUDVANG.Culture.Zvorda", grayBrute: "TRUDVANG.Culture.GrayBrute", barkbrule: "TRUDVANG.Culture.Barkbrule", ogro: "TRUDVANG.Culture.Ogro"
   },
   nativeLanguages: {
     eika: "TRUDVANG.Language.Eika", futhark: "TRUDVANG.Language.Futhark", rona: "TRUDVANG.Language.Rona", vrok: "TRUDVANG.Language.Vrok", wildVrok: "TRUDVANG.Language.WildVrok"
+  },
+  raceCultures: {
+    human: ["stormlander", "mittlander", "virann", "wildfolk"],
+    elf: ["illmalaini", "korpikalli"],
+    buratja: ["buratja"],
+    borjornikka: ["borjornikka"],
+    zvorda: ["zvorda"],
+    halfElf: ["dyfir", "barkbrule", "illmalaini", "korpikalli", "stormlander", "mittlander", "virann", "wildfolk"],
+    changeling: ["changeling", "stormlander", "mittlander", "virann", "wildfolk"],
+    grayBrute: ["grayBrute", "stormlander", "mittlander", "virann", "wildfolk"],
+    ogro: ["ogro", "stormlander", "mittlander", "virann", "wildfolk"]
+  },
+  cultureLanguages: {
+    stormlander: ["vrok"],
+    mittlander: ["rona", "vrok"],
+    virann: ["rona"],
+    wildfolk: ["wildVrok"],
+    illmalaini: ["eika"],
+    korpikalli: ["eika"],
+    buratja: ["futhark"],
+    borjornikka: ["futhark"],
+    zvorda: ["futhark"],
+    dyfir: ["eika", "rona", "vrok"],
+    barkbrule: ["eika", "rona", "vrok"],
+    changeling: ["rona", "vrok", "wildVrok"],
+    grayBrute: ["rona", "vrok", "wildVrok"],
+    ogro: ["rona", "vrok", "wildVrok"],
+    halfElf: ["eika", "rona", "vrok"],
+    halfTroll: ["rona", "vrok", "wildVrok"]
   },
   archetypes: {
     bard: {label: "TRUDVANG.Archetype.Bard", core: ["knowledge", "entertainment"]},
