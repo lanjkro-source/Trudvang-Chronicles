@@ -94,7 +94,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
   const options = methods.map(method => {
     const target = Number(method.target || 0) + Number(spellModifier || 0);
-    return `<option value="${escapeHtml(method.id)}">${escapeHtml(method.label)} — SV ${target}</option>`;
+    return `<option value="${escapeHtml(method.id)}">${escapeHtml(method.label)} — VC ${target}</option>`;
   }).join("");
   const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0);
   const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} SV (+${bonus * 2} ${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Vitner"))})</option>`).join("");

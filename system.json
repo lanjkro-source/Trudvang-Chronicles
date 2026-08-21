@@ -2,7 +2,7 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
   "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/latest/download/trudvang-chronicles.zip",
@@ -15,8 +15,12 @@
       "name": "Trudvang Foundry Community"
     }
   ],
-  "esmodules": ["trudvang.mjs"],
-  "styles": ["styles/trudvang.css"],
+  "esmodules": [
+    "trudvang.mjs"
+  ],
+  "styles": [
+    "styles/trudvang.css"
+  ],
   "languages": [
     {
       "lang": "en",
@@ -32,22 +36,68 @@
   "documentTypes": {
     "Actor": {
       "character": {
-        "htmlFields": ["notes", "appearance", "history"]
+        "htmlFields": [
+          "notes",
+          "appearance",
+          "history"
+        ]
       },
       "npc": {
-        "htmlFields": ["notes", "description"]
+        "htmlFields": [
+          "notes",
+          "description"
+        ]
       }
     },
     "Item": {
-      "weapon": {"htmlFields": ["description"]},
-      "armor": {"htmlFields": ["description"]},
-      "shield": {"htmlFields": ["description"]},
-      "gear": {"htmlFields": ["description"]},
-      "potion": {"htmlFields": ["description", "effect"]},
-      "spell": {"htmlFields": ["description", "effect"]},
-      "tablet": {"htmlFields": ["description"]},
-      "divineFeat": {"htmlFields": ["description", "effect"]},
-      "ability": {"htmlFields": ["description"]}
+      "weapon": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "armor": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "shield": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "gear": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "potion": {
+        "htmlFields": [
+          "description",
+          "effect"
+        ]
+      },
+      "spell": {
+        "htmlFields": [
+          "description",
+          "effect"
+        ]
+      },
+      "tablet": {
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "divineFeat": {
+        "htmlFields": [
+          "description",
+          "effect"
+        ]
+      },
+      "ability": {
+        "htmlFields": [
+          "description"
+        ]
+      }
     }
   },
   "grid": {
@@ -61,8 +111,19 @@
   "background": "systems/trudvang-chronicles/assets/art/character-sheet-header.webp",
   "flags": {
     "hotReload": {
-      "extensions": ["css", "hbs", "json", "mjs"],
-      "paths": ["styles", "templates", "lang", "modules", "data"]
+      "extensions": [
+        "css",
+        "hbs",
+        "json",
+        "mjs"
+      ],
+      "paths": [
+        "styles",
+        "templates",
+        "lang",
+        "modules",
+        "data"
+      ]
     }
   }
 }

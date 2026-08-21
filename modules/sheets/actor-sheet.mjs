@@ -205,7 +205,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
       case "adjust-item-level": return item ? this.actor.adjustItemLevel(item, Number(event.currentTarget.dataset.direction)) : null;
       case "adjust-catalog-knowledge": return this.actor.adjustCatalogKnowledge(catalogId, Number(event.currentTarget.dataset.direction));
       case "roll-catalog": return item && Number(item.system.level || 0) > 0 ? item.roll() : ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeNotLearned"));
-      case "show-catalog-detail": return this._showCatalogDetail(catalogId);
+      case "show-catalog-detail": return this._openKnowledgeSheet(catalogId);
       case "toggle-creation-mode": return this.actor.toggleCreationMode();
       case "confirm-advancement": return this.actor.confirmAdvancements();
       case "cancel-advancement": return this.actor.cancelAdvancements();
@@ -307,6 +307,21 @@ export class TrudvangActorSheet extends BaseActorSheet {
     if (!entry) return;
     const name = game.i18n.localize(entry.label);
     return this._showDetail(name, this._knowledgeSummary(entry));
+  }
+
+  async _openKnowledgeSheet(catalogId) {
+    const existing = this.actor.findKnowledgeItem(catalogId);
+    if (existing) return existing.sheet.render(true);
+    const entry = this.actor.getCatalogEntry(catalogId);
+    if (!entry) return;
+    const kind = entry.kind ?? "discipline";
+    const description = this._knowledgeSummary({...entry, kind, parentDiscipline: entry.parentDiscipline ?? ""});
+    const [item] = await this.actor.createEmbeddedDocuments("Item", [{
+      name: game.i18n.localize(entry.label),
+      type: "ability",
+      system: {catalogId: entry.id, kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline ?? "", level: 0, freeLevels: 0, rollBonus: entry.rollBonus ?? (kind === "specialty" ? 2 : 1), description}
+    }]);
+    return item?.sheet.render(true);
   }
 
   _knowledgeSummary(entry) {
