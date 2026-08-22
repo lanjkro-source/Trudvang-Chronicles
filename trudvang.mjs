@@ -63,28 +63,34 @@ Hooks.once("init", () => {
     default: ""
   });
 
-  const DialogClass = foundry.appv1?.apps?.Dialog ?? globalThis.Dialog;
-  class ReimportMenu extends DialogClass {
-    constructor() {
-      super({
+  registerHandlebarsHelpers();
+
+  const FormApplicationClass = foundry.appv1?.api?.FormApplication ?? globalThis.FormApplication;
+  class ReimportMenu extends FormApplicationClass {
+    static get defaultOptions() {
+      return foundry.utils.mergeObject(super.defaultOptions, {
+        id: "trudvang-reimport",
         title: game.i18n.localize("TRUDVANG.Settings.ReimportTitle"),
-        content: `<p>${game.i18n.localize("TRUDVANG.Settings.ReimportHint")}</p>`,
-        buttons: {
-          go: {icon: '<i class="fas fa-recycle"></i>', label: game.i18n.localize("TRUDVANG.Settings.ReimportConfirm"), callback: () => importStarterContent({force: true})},
-          cancel: {icon: '<i class="fas fa-xmark"></i>', label: game.i18n.localize("TRUDVANG.Settings.ReimportCancel")}
-        }
-      }, {width: 470});
+        template: "systems/trudvang-chronicles/templates/app/reimport-menu.hbs",
+        width: 470
+      });
+    }
+    getData() { return {}; }
+    async _updateObject() {
+      return importStarterContent({force: true});
     }
   }
-  game.settings.registerMenu("trudvang-chronicles", "reimportStarter", {
-    name: "TRUDVANG.Settings.ReimportName",
-    hint: "TRUDVANG.Settings.ReimportHint",
-    icon: "fas fa-recycle",
-    type: ReimportMenu,
-    restricted: true
-  });
-
-  registerHandlebarsHelpers();
+  try {
+    game.settings.registerMenu("trudvang-chronicles", "reimportStarter", {
+      name: "TRUDVANG.Settings.ReimportName",
+      hint: "TRUDVANG.Settings.ReimportHint",
+      icon: "fas fa-recycle",
+      type: ReimportMenu,
+      restricted: true
+    });
+  } catch (error) {
+    console.error("Trudvang Chronicles | Could not register the starter-content reimport menu", error);
+  }
 });
 
 Hooks.once("ready", async () => {

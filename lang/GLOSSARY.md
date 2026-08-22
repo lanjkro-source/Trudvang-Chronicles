@@ -43,7 +43,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.ReimportHint` | Runs the starter library import again in the current display language: names, descriptions, and images of previously installed items, tables, and NPCs are refreshed instead of duplicated. | Relance l'import de la bibliothèque de démarrage dans la langue d'affichage actuelle : les noms, descriptions et images des items, tables et PNJ déjà installés sont mis à jour au lieu d'être dupliqués. |
 | `TRUDVANG.Settings.ReimportTitle` | Reinstall starter content | Réinstaller le contenu de démarrage |
 | `TRUDVANG.Settings.ReimportConfirm` | Reinstall | Réinstaller |
-| `TRUDVANG.Settings.ReimportCancel` | Cancel | Annuler |
 
 ## `TRUDVANG.Tab`
 
