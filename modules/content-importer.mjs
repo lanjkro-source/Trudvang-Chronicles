@@ -207,6 +207,9 @@ async function upsertActors(source, folders, translationsByKey) {
 async function syncSkillPack(packId, language) {
   const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
   if (!pack) return;
+  // System-shipped packs are locked by default in v14+; unlock for the duration of the rebuild.
+  const wasLocked = pack.locked;
+  if (wasLocked) await pack.configure({locked: false});
   const lang = await fetchLangPack(language);
   const text = (keyPath) => {
     const value = resolveNested(lang, keyPath);
@@ -279,6 +282,9 @@ async function syncSkillPack(packId, language) {
   for (const blueprint of blueprints) {
     await ItemClass.createDocuments([blueprint], {pack: pack.collection});
   }
+  if (wasLocked) await pack.configure({locked: true}).catch((error) => {
+    console.warn(`Trudvang Chronicles | Could not re-lock compendium ${packId}`, error);
+  });
 }
 
 export async function importStarterContent({force = false} = {}) {
