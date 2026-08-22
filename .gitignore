@@ -12,3 +12,7 @@ Thumbs.db
 # Caches d'outillage local
 .codegraph/
 .omo/
+
+# Stockage LevelDB généré par Foundry lors de la migration des packs
+packs/skills-en/
+packs/skills-fr/
