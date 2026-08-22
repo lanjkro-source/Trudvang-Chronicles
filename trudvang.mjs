@@ -106,6 +106,10 @@ Hooks.once("ready", async () => {
     }
     if (affected.length) ui.notifications.info(game.i18n.format("TRUDVANG.Notification.InvalidTraitsRepaired", {count: affected.length}));
     for (const actor of game.actors.filter(actor => actor.type === "character" && actor.system.experience?.creationMode)) await actor.syncCreationDefaults();
-    await importStarterContent();
+    try {
+      await importStarterContent();
+    } catch (error) {
+      console.error("Trudvang Chronicles | Starter content import crashed outside its own guard", error);
+    }
   }
 });

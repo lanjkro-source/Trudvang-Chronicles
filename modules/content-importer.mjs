@@ -18,10 +18,15 @@ function localizeTree(value) {
 const starterKey = (nameKey) => typeof nameKey === "string" ? nameKey.replace(/\.Name$/, "") : undefined;
 const flagOf = (document, key = "starterId") => document.getFlag(SYSTEM_ID, key);
 
+// Foundry <=12 exposed game.i18n.lang() as a method, newer versions as a plain property.
+function activeLanguage() {
+  return typeof game.i18n.lang === "function" ? String(game.i18n.lang()) : String(game.i18n.lang ?? "");
+}
+
 // Names this i18n key takes across shipped languages plus the active one — used to adopt
 // documents created before imports were tracked by stable ids.
 async function loadTranslations(keys) {
-  const langs = [...new Set(["en", "fr", game.i18n.lang()])];
+  const langs = [...new Set(["en", "fr", activeLanguage()].filter(Boolean))];
   const packs = [];
   for (const lang of langs) {
     try {
@@ -177,13 +182,13 @@ async function upsertActors(source, folders, translationsByKey) {
 }
 
 export async function importStarterContent({force = false} = {}) {
-  const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
-  const importedLocale = String(game.settings.get(SYSTEM_ID, "starterContentLocale") || "");
-  const currentLocale = game.i18n.lang();
-  if (!force && installed >= CONTENT_VERSION && importedLocale === currentLocale) return false;
-
-  ui.notifications.info(game.i18n.localize("TRUDVANG.Import.Started"));
   try {
+    const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
+    const importedLocale = String(game.settings.get(SYSTEM_ID, "starterContentLocale") || "");
+    const currentLocale = activeLanguage();
+    if (!force && installed >= CONTENT_VERSION && importedLocale === currentLocale) return false;
+
+    ui.notifications.info(game.i18n.localize("TRUDVANG.Import.Started"));
     const response = await fetch(`systems/${SYSTEM_ID}/data/starter-content.json`);
     if (!response.ok) throw new Error(`Starter content request failed: ${response.status}`);
     const source = await response.json();
