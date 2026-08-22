@@ -1,6 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
+import { TRUDVANG } from "./config.mjs";
 
-const CONTENT_VERSION = 10;
+const CONTENT_VERSION = 11;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -25,17 +26,33 @@ function activeLanguage() {
 
 // Names this i18n key takes across shipped languages plus the active one — used to adopt
 // documents created before imports were tracked by stable ids.
+const langPackCache = new Map();
+async function fetchLangPack(lang) {
+  if (langPackCache.has(lang)) return langPackCache.get(lang);
+  try {
+    const response = await fetch(`systems/${SYSTEM_ID}/lang/${lang}.json`);
+    const pack = response.ok ? await response.json() : {};
+    langPackCache.set(lang, pack);
+    return pack;
+  } catch (error) {
+    console.warn(`Trudvang Chronicles | Could not load ${lang}.json`, error);
+    langPackCache.set(lang, {});
+    return {};
+  }
+}
+function resolveNested(pack, keyPath) {
+  let node = pack;
+  for (const part of keyPath.split(".")) {
+    node = node?.[part];
+    if (node === undefined) return undefined;
+  }
+  return typeof node === "string" ? node : undefined;
+}
+
 async function loadTranslations(keys) {
   const langs = [...new Set(["en", "fr", activeLanguage()].filter(Boolean))];
   const packs = [];
-  for (const lang of langs) {
-    try {
-      const response = await fetch(`systems/${SYSTEM_ID}/lang/${lang}.json`);
-      if (response.ok) packs.push(await response.json());
-    } catch (error) {
-      console.warn(`Trudvang Chronicles | Could not load ${lang}.json for content adoption`, error);
-    }
-  }
+  for (const lang of langs) packs.push(await fetchLangPack(lang));
   const map = new Map();
   for (const key of keys) {
     const names = new Set();
@@ -181,6 +198,83 @@ async function upsertActors(source, folders, translationsByKey) {
   return updated;
 }
 
+// Repairs/refreshes a bilingual Skills compendium through official document APIs, healing
+// any stale LevelDB state left behind by earlier NEDB migrations.
+async function syncSkillPack(packId, language) {
+  const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
+  if (!pack) return;
+  const lang = await fetchLangPack(language);
+  const text = (keyPath) => {
+    const value = resolveNested(lang, keyPath);
+    return typeof value === "string" ? value : keyPath;
+  };
+  const FolderClass = foundry.utils.getDocumentClass("Folder");
+  const ItemClass = foundry.utils.getDocumentClass("Item");
+
+  const folderIds = new Map();
+  const existingFolders = [...pack.folders.values()];
+  const desiredSkillKeys = Object.keys(TRUDVANG.knowledgeTree);
+  for (const skillKey of desiredSkillKeys) {
+    const name = text(TRUDVANG.skills[skillKey]);
+    let folder = existingFolders.find((f) => f.name === name);
+    if (!folder) {
+      const [created] = await FolderClass.createDocuments([{name, type: "Item", sorting: "a", description: "", flags: {}}], {pack: pack.collection});
+      folder = created;
+    }
+    folderIds.set(skillKey, folder.id);
+  }
+  const keptFolderIds = new Set(folderIds.values());
+  for (const folder of existingFolders) {
+    if (!keptFolderIds.has(folder.id)) await folder.delete();
+  }
+
+  const blueprints = [];
+  for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
+    for (const discipline of disciplines) {
+      const entries = [{...discipline, kind: "discipline"}, ...discipline.specialties.map(specialty => ({...specialty, kind: "specialty"}))];
+      for (const entry of entries) {
+        const description = text(`TRUDVANG.Content.Ability.${entry.id}.Description`);
+        const summary = text(`TRUDVANG.Content.Ability.${entry.id}.Summary`);
+        if (!description || !summary) continue;
+        blueprints.push({
+          name: text(entry.label),
+          type: "ability",
+          img: "icons/svg/book.svg",
+          folder: folderIds.get(skillKey),
+          system: {
+            description, summary,
+            catalogId: entry.id,
+            kind: entry.kind,
+            parentSkill: skillKey,
+            parentDiscipline: entry.kind === "specialty" ? discipline.name : "",
+            level: 0,
+            rollBonus: entry.kind === "specialty" ? 2 : 1,
+            freeLevels: 0
+          },
+          flags: {}
+        });
+      }
+    }
+  }
+
+  const documents = await pack.getDocuments();
+  const byCatalogId = new Map(documents.map(document => [document.system?.catalogId, document]));
+  const staleIds = documents.filter(document => !blueprints.some(blueprint => blueprint.system.catalogId === document.system?.catalogId)).map(document => document.id);
+  if (staleIds.length) await ItemClass.deleteDocuments(staleIds, {pack: pack.collection});
+
+  const remaining = await pack.getDocuments();
+  const survivors = new Map(remaining.map(document => [document.system?.catalogId, document]));
+  for (const blueprint of blueprints) {
+    const existing = survivors.get(blueprint.system.catalogId);
+    if (existing) {
+      const changes = {name: blueprint.name, img: blueprint.img, folder: blueprint.folder, "system.description": blueprint.system.description, "system.summary": blueprint.system.summary};
+      await existing.update(changes);
+    } else {
+      await ItemClass.createDocuments([blueprint], {pack: pack.collection});
+    }
+  }
+}
+
 export async function importStarterContent({force = false} = {}) {
   try {
     const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
@@ -248,6 +342,12 @@ export async function importStarterContent({force = false} = {}) {
 
     await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
     await game.settings.set(SYSTEM_ID, "starterContentLocale", currentLocale);
+    try {
+      await syncSkillPack("skills-en", "en");
+      await syncSkillPack("skills-fr", "fr");
+    } catch (packError) {
+      console.error("Trudvang Chronicles | Skills compendium sync failed", packError);
+    }
     ui.notifications.info(game.i18n.format("TRUDVANG.Import.Complete", {
       items: updated + created + catalogDocuments.length,
       tables: source.tables.length,
