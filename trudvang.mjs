@@ -55,6 +55,34 @@ Hooks.once("init", () => {
     type: Number,
     default: 0
   });
+  game.settings.register("trudvang-chronicles", "starterContentLocale", {
+    name: "TRUDVANG.Settings.StarterContentName",
+    scope: "world",
+    config: false,
+    type: String,
+    default: ""
+  });
+
+  const DialogClass = foundry.appv1?.apps?.Dialog ?? globalThis.Dialog;
+  class ReimportMenu extends DialogClass {
+    constructor() {
+      super({
+        title: game.i18n.localize("TRUDVANG.Settings.ReimportTitle"),
+        content: `<p>${game.i18n.localize("TRUDVANG.Settings.ReimportHint")}</p>`,
+        buttons: {
+          go: {icon: '<i class="fas fa-recycle"></i>', label: game.i18n.localize("TRUDVANG.Settings.ReimportConfirm"), callback: () => importStarterContent({force: true})},
+          cancel: {icon: '<i class="fas fa-xmark"></i>', label: game.i18n.localize("TRUDVANG.Settings.ReimportCancel")}
+        }
+      }, {width: 470});
+    }
+  }
+  game.settings.registerMenu("trudvang-chronicles", "reimportStarter", {
+    name: "TRUDVANG.Settings.ReimportName",
+    hint: "TRUDVANG.Settings.ReimportHint",
+    icon: "fas fa-recycle",
+    type: ReimportMenu,
+    restricted: true
+  });
 
   registerHandlebarsHelpers();
 });

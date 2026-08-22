@@ -23,8 +23,13 @@
       "Item": "Feuille d'objet"
     },
     "Settings": {
-      "StarterContentName": "Starter content version",
-      "StarterContentHint": "Tracks the installed Trudvang starter library."
+      "StarterContentName": "Version du contenu de démarrage",
+      "StarterContentHint": "Suit la version installée de la bibliothèque de démarrage Trudvang.",
+      "ReimportName": "Réinstaller le contenu de démarrage",
+      "ReimportHint": "Relance l'import de la bibliothèque de démarrage dans la langue d'affichage actuelle : les noms, descriptions et images des items, tables et PNJ déjà installés sont mis à jour au lieu d'être dupliqués.",
+      "ReimportTitle": "Réinstaller le contenu de démarrage",
+      "ReimportConfirm": "Réinstaller",
+      "ReimportCancel": "Annuler"
     },
     "Tab": {
       "Summary": "Résumé",

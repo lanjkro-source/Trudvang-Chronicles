@@ -24,7 +24,12 @@
     },
     "Settings": {
       "StarterContentName": "Starter content version",
-      "StarterContentHint": "Tracks the installed Trudvang starter library."
+      "StarterContentHint": "Tracks the installed Trudvang starter library.",
+      "ReimportName": "Reinstall starter content",
+      "ReimportHint": "Runs the starter library import again in the current display language: names, descriptions, and images of previously installed items, tables, and NPCs are refreshed instead of duplicated.",
+      "ReimportTitle": "Reinstall starter content",
+      "ReimportConfirm": "Reinstall",
+      "ReimportCancel": "Cancel"
     },
     "Tab": {
       "Summary": "Summary",
