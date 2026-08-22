@@ -15,7 +15,7 @@ function localizeTree(value) {
   return result;
 }
 
-const starterKey = (nameKey) => nameKey.replace(/\.Name$/, "");
+const starterKey = (nameKey) => typeof nameKey === "string" ? nameKey.replace(/\.Name$/, "") : undefined;
 const flagOf = (document, key = "starterId") => document.getFlag(SYSTEM_ID, key);
 
 // Names this i18n key takes across shipped languages plus the active one — used to adopt
@@ -57,9 +57,19 @@ async function upsertFolder(slug, config, translations) {
     const update = {[`flags.${SYSTEM_ID}.starterId`]: slug};
     if (existing.name !== localized) update.name = localized;
     await existing.update(update);
-    return game.folders.get(existing.id);
   }
-  return Folder.create({name: localized, type: config.type, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}});
+  const canonical = existing ?? await Folder.create({name: localized, type: config.type, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}});
+
+  // Previous imports could leave empty duplicates named in another language — fold them into the canonical folder.
+  const duplicates = game.folders.filter(folder => folder.id !== canonical.id
+    && folder.type === config.type
+    && !flagOf(folder, "starterId")
+    && translations.has(folder.name));
+  for (const duplicate of duplicates) {
+    for (const child of duplicate.contents) await child.update({folder: canonical.id});
+    await Folder.deleteDocuments([duplicate.id]);
+  }
+  return game.folders.get(canonical.id);
 }
 
 // Refreshes only presentation text/images on an existing document; numeric rules stay untouched.
@@ -129,10 +139,15 @@ async function upsertActors(source, folders, translationsByKey) {
     const payload = localizeTree(entry);
     payload.folder = folders[entry.folder]?.id;
     const translations = translationsByKey.get(entry.nameKey);
+    // Raw children carry the stable nameKeys; localizeTree strips them, so pair both lists by index.
+    const rawChildren = entry.items ?? [];
     let actor = game.actors.find(candidate => flagOf(candidate, "starterId") === key)
       ?? game.actors.find(candidate => !flagOf(candidate, "starterId") && translations?.has(candidate.name));
     if (!actor) {
-      const children = (payload.items ?? []).map(child => ({...child, flags: {[SYSTEM_ID]: {starterId: starterKey(child.nameKey)}}}));
+      const children = rawChildren.map((rawChild, index) => ({
+        ...(payload.items?.[index] ?? localizeTree(rawChild)),
+        flags: {[SYSTEM_ID]: {starterId: starterKey(rawChild.nameKey)}}
+      }));
       await Actor.createDocuments([{...payload, items: children, flags: {[SYSTEM_ID]: {starterId: key}}}]);
       continue;
     }
@@ -140,18 +155,20 @@ async function upsertActors(source, folders, translationsByKey) {
     if (!renamedOrCustom(actor, translations)) update.name = payload.name;
     await actor.update(update);
 
-    for (const child of payload.items ?? []) {
-      const childKey = starterKey(child.nameKey);
-      const childTranslations = translationsByKey.get(child.nameKey);
+    for (const [index, childPayload] of (payload.items ?? []).entries()) {
+      const rawChild = rawChildren[index];
+      if (!rawChild) break;
+      const childKey = starterKey(rawChild.nameKey);
+      const childTranslations = translationsByKey.get(rawChild.nameKey);
       const embedded = actor.items.find(item => flagOf(item, "starterId") === childKey)
-        ?? actor.items.find(item => !flagOf(item, "starterId") && item.type === child.type && childTranslations?.has(item.name));
+        ?? actor.items.find(item => !flagOf(item, "starterId") && item.type === rawChild.type && childTranslations?.has(item.name));
       if (embedded) {
-        const childUpdate = {img: child.img, [`flags.${SYSTEM_ID}.starterId`]: childKey};
-        if (!renamedOrCustom(embedded, childTranslations)) childUpdate.name = child.name;
-        if (child.system?.description !== undefined) childUpdate["system.description"] = child.system.description;
+        const childUpdate = {img: childPayload.img, [`flags.${SYSTEM_ID}.starterId`]: childKey};
+        if (!renamedOrCustom(embedded, childTranslations)) childUpdate.name = childPayload.name;
+        if (childPayload.system?.description !== undefined) childUpdate["system.description"] = childPayload.system.description;
         await actor.updateEmbeddedDocuments("Item", [{_id: embedded.id, ...childUpdate}]);
       } else {
-        await actor.createEmbeddedDocuments("Item", [{...child, flags: {[SYSTEM_ID]: {starterId: childKey}}}]);
+        await actor.createEmbeddedDocuments("Item", [{...childPayload, flags: {[SYSTEM_ID]: {starterId: childKey}}}]);
       }
     }
     updated++;
@@ -182,7 +199,7 @@ export async function importStarterContent({force = false} = {}) {
     const folders = {};
     for (const [slug, config] of Object.entries(source.folders)) folders[slug] = await upsertFolder(slug, config, translationsByKey.get(config.nameKey));
 
-    const {created} = await upsertBaseItems(source, folders, translationsByKey);
+    const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
 
     const obsoleteCatalog = game.items.filter(item => item.getFlag(SYSTEM_ID, "catalogId"));
     if (obsoleteCatalog.length) await Item.deleteDocuments(obsoleteCatalog.map(item => item.id));
@@ -207,7 +224,7 @@ export async function importStarterContent({force = false} = {}) {
     await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
     await game.settings.set(SYSTEM_ID, "starterContentLocale", currentLocale);
     ui.notifications.info(game.i18n.format("TRUDVANG.Import.Complete", {
-      items: created + catalogDocuments.length,
+      items: updated + created + catalogDocuments.length,
       tables: source.tables.length,
       actors: source.actors.length
     }));
