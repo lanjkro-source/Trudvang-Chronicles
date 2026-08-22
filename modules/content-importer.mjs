@@ -1,6 +1,6 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 
-const CONTENT_VERSION = 8;
+const CONTENT_VERSION = 9;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -217,11 +217,31 @@ export async function importStarterContent({force = false} = {}) {
     const obsoleteWorldKnowledge = game.items.filter(item => item.type === "ability" && item.system.catalogId === "vitnerWeavers");
     if (obsoleteWorldKnowledge.length) await Item.deleteDocuments(obsoleteWorldKnowledge.map(item => item.id));
 
+    // Refresh world ability texts (descriptions/summaries) against the current localization.
+    const catalogText = (catalogId, suffix) => {
+      const key = `TRUDVANG.Content.Ability.${catalogId}.${suffix}`;
+      const text = game.i18n.localize(key);
+      return text === key ? "" : text;
+    };
+    for (const item of game.items.filter(item => item.type === "ability" && item.system.catalogId)) {
+      const description = catalogText(item.system.catalogId, "Description");
+      if (!description || description === item.system.description) continue;
+      const changes = {"system.description": description};
+      if (!item.system.summary || item.system.summary === item.system.description) changes["system.summary"] = catalogText(item.system.catalogId, "Summary");
+      await item.update(changes);
+    }
+
     const catalogById = new Map(catalogDocuments.map(document => [document.system.catalogId, document]));
     for (const actor of game.actors) {
       const updates = actor.items.map(item => {
         const match = catalogById.get(item.system.catalogId || item.getFlag(SYSTEM_ID, "catalogId"));
-        return match ? {_id: item.id, "system.description": match.system.description, "system.source": match.system.source} : null;
+        if (match) return {_id: item.id, "system.description": match.system.description, "system.source": match.system.source};
+        if (item.type !== "ability") return null;
+        const description = catalogText(item.system.catalogId, "Description");
+        if (!description || description === item.system.description) return null;
+        const update = {_id: item.id, "system.description": description};
+        if (!item.system.summary || item.system.summary === item.system.description) update["system.summary"] = catalogText(item.system.catalogId, "Summary");
+        return update;
       }).filter(Boolean);
       if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
     }

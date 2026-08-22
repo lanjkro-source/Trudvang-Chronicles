@@ -34,6 +34,16 @@ const hasFlameAfter = (lines, index) => {
   return false;
 };
 const isTocNoise = (line) => /\.{3,}/.test(line) || /\.{2}/.test(line);
+// Per-page furniture stamped by the PDF layout: page markers, running headers/footers, buyer watermarks.
+const isPageNoise = (line) => {
+  const trimmed = line.trim();
+  if (!trimmed) return false;
+  if (/^##\s*PDF page/i.test(trimmed)) return true;
+  if (/^\d{1,3}\s*\|/.test(trimmed) || /\|\s*\d{1,3}\s*$/.test(trimmed)) return true;
+  if (/\b(chapitre|chapter)\b/i.test(trimmed) && trimmed.includes("|")) return true;
+  if (/[\w.'+-]+@[\w.-]+\.[a-z]{2,}/i.test(trimmed)) return true;
+  return false;
+};
 
 // Headings that differ from the localized labels (book spellings/abbreviations).
 const NAME_ALIASES = {
@@ -109,24 +119,15 @@ function extractLanguage(file, languageField) {
       const bodyLines = [];
       for (let scan = candidate.start + candidate.headingLines; scan < windowEnd; scan += 1) {
         const line = lines[scan];
-        if (isFlameMeta(line)) continue;
-        const trimmed = line.trim();
-        bodyLines.push(trimmed);
+        if (isFlameMeta(line) || isPageNoise(line)) continue;
+        bodyLines.push(line.trim());
       }
       let text = bodyLines.join("\n");
       text = text.replace(/(\p{Ll})\s*[-\u2010\u2011]\r?\n\s*(\p{Ll})/gu, "$1$2");
       text = text.replace(/(\p{Ll})[-\u2010\u2011]\n\s*(\p{L})/gu, "$1-$2");
       text = text.replace(/[ \t]*\r?\n[ \t]*/g, " ").replace(/\s{2,}/g, " ").trim();
-      text = text.replace(/##\s*PDF page \d+/gi, "").replace(/\d{1,3}\s*\|\s*(chapter|chapitre)[^|]*/gi, "");
-      text = text.replace(/^\((?:[^)]{0,45})\)\s*/, "");
       text = text.replace(/\((?:à préciser|to be specified|left or right hand|main gauche ou main droite)\)\s*/gi, "");
-      text = text.replace(/(\p{Ll})\s-\s(\p{Ll})/gu, "$1$2");
-      text = text.replace(/c'està-dire/gi, "c’est-à-dire").replace(/\s([,;.])/g, "$1").replace(/\s{2,}/g, " ").trim();
       if (/^,/.test(text)) text = text.slice(1).trim();
-      if (text.length > 2800) {
-        const cutoff = text.lastIndexOf(".", 2800);
-        text = (cutoff > 400 ? text.slice(0, cutoff + 1) : text.slice(0, 2800)).trim();
-      }
       if (text.length > 40) { results[entry.id] = text; break; }
       if (traceIds?.has(entry.id)) console.log(`[trace] ${entry.id}@${candidate.start}: span rejected (${text.length} chars)`);
     }
