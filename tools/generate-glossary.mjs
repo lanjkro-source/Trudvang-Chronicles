@@ -12,7 +12,7 @@ function collect(object, prefix = "", output = []) {
   for (const [key, value] of Object.entries(object || {})) {
     const path = prefix ? `${prefix}.${key}` : key;
     if (value && typeof value === "object" && !Array.isArray(value)) collect(value, path, output);
-    else if (!path.startsWith("TRUDVANG.Content.Power.") || !path.endsWith(".Summary")) output.push(path);
+    else if (!path.startsWith("TRUDVANG.Content.") || !path.endsWith(".Summary")) output.push(path);
   }
   return output;
 }

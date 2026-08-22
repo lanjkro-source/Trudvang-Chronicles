@@ -92,11 +92,13 @@ export class TrudvangActorSheet extends BaseActorSheet {
       const existing = this.actor.findKnowledgeItem(entry.id);
       const level = Number(existing?.system.level || 0);
       const generatedSummary = this._knowledgeSummary({...entry, kind, parentDiscipline});
-      const item = existing ?? {id: "", name: game.i18n.localize(entry.label), img: "icons/svg/book.svg", type: "ability", system: {description: generatedSummary, catalogId: entry.id, kind, parentSkill: skillKey, parentDiscipline, level, rollBonus: kind === "specialty" ? 2 : 1, freeLevels: 0}};
+      const descriptionText = this._abilityText(entry.id, "Description") || generatedSummary;
+      const summaryText = this._abilityText(entry.id, "Summary") || generatedSummary;
+      const item = existing ?? {id: "", name: game.i18n.localize(entry.label), img: "icons/svg/book.svg", type: "ability", system: {description: descriptionText, summary: summaryText, catalogId: entry.id, kind, parentSkill: skillKey, parentDiscipline, level, rollBonus: kind === "specialty" ? 2 : 1, freeLevels: 0}};
       const breakdown = this.actor.getAbilityBreakdown(item);
       return {
         catalogId: entry.id, item, level, breakdown,
-        summary: existing?.system.summary || generatedSummary,
+        summary: existing?.system.summary || summaryText,
         calculation: kind === "specialty"
           ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total})
           : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
@@ -119,7 +121,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
         const entry = this.actor.getCatalogEntry(item.system.catalogId);
         return {
           item, level: itemLevel, breakdown,
-          summary: item.system.summary || (entry ? this._knowledgeSummary(entry) : item.system.description || ""),
+          summary: item.system.summary || (entry ? (this._abilityText(entry.id, "Summary") || this._knowledgeSummary(entry)) : item.system.description || ""),
           calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
           refundCost: this.actor.getKnowledgeLevelCost(item, itemLevel),
           nextCost: this.actor.getKnowledgeLevelCost(item, itemLevel + 1),
@@ -302,11 +304,17 @@ export class TrudvangActorSheet extends BaseActorSheet {
     return new DialogClass({title, content: `<div class="trudvang detail-dialog"><p>${escapeHtml(description)}</p></div>`, buttons: {close: {label: game.i18n.localize("TRUDVANG.Action.Close")}}}).render(true);
   }
 
+  _abilityText(catalogId, suffix) {
+    const key = `TRUDVANG.Content.Ability.${catalogId}.${suffix}`;
+    const text = game.i18n.localize(key);
+    return text === key ? "" : text;
+  }
+
   _showCatalogDetail(catalogId) {
     const entry = this.actor.getCatalogEntry(catalogId);
     if (!entry) return;
     const name = game.i18n.localize(entry.label);
-    return this._showDetail(name, this._knowledgeSummary(entry));
+    return this._showDetail(name, this._abilityText(entry.id, "Description") || this._knowledgeSummary(entry));
   }
 
   async _openKnowledgeSheet(catalogId) {
@@ -315,11 +323,12 @@ export class TrudvangActorSheet extends BaseActorSheet {
     const entry = this.actor.getCatalogEntry(catalogId);
     if (!entry) return;
     const kind = entry.kind ?? "discipline";
-    const description = this._knowledgeSummary({...entry, kind, parentDiscipline: entry.parentDiscipline ?? ""});
+    const description = this._abilityText(entry.id, "Description") || this._knowledgeSummary({...entry, kind, parentDiscipline: entry.parentDiscipline ?? ""});
+    const summary = this._abilityText(entry.id, "Summary");
     const [item] = await this.actor.createEmbeddedDocuments("Item", [{
       name: game.i18n.localize(entry.label),
       type: "ability",
-      system: {catalogId: entry.id, kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline ?? "", level: 0, freeLevels: 0, rollBonus: entry.rollBonus ?? (kind === "specialty" ? 2 : 1), description}
+      system: {catalogId: entry.id, kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline ?? "", level: 0, freeLevels: 0, rollBonus: entry.rollBonus ?? (kind === "specialty" ? 2 : 1), description, summary}
     }]);
     return item?.sheet.render(true);
   }

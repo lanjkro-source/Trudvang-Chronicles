@@ -7,7 +7,7 @@ const system = JSON.parse(readFileSync(join(root, "system.json"), "utf8"));
 const outputDir = join(root, "dist");
 const zipPath = join(outputDir, "trudvang-chronicles.zip");
 
-const includedRoots = ["modules", "templates", "styles", "lang", "data", "assets"];
+const includedRoots = ["modules", "templates", "styles", "lang", "data", "assets", "packs"];
 const includedFiles = ["system.json", "trudvang.mjs"];
 
 const excluded = new Set(["lang/GLOSSARY.md"]);

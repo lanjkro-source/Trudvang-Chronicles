@@ -2,10 +2,26 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.1.19",
+  "version": "0.2.0",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
   "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/latest/download/trudvang-chronicles.zip",
+  "packs": [
+    {
+      "name": "skills-en",
+      "label": "Skills",
+      "path": "packs/skills-en",
+      "type": "Item",
+      "system": "trudvang-chronicles"
+    },
+    {
+      "name": "skills-fr",
+      "label": "Compétences",
+      "path": "packs/skills-fr",
+      "type": "Item",
+      "system": "trudvang-chronicles"
+    }
+  ],
   "compatibility": {
     "minimum": "13",
     "verified": "14"
