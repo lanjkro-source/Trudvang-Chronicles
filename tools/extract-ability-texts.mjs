@@ -40,10 +40,25 @@ const isPageNoise = (line) => {
   if (!trimmed) return false;
   if (/^##\s*PDF page/i.test(trimmed)) return true;
   if (/^\d{1,3}\s*\|/.test(trimmed) || /\|\s*\d{1,3}\s*$/.test(trimmed)) return true;
-  if (/\b(chapitre|chapter)\b/i.test(trimmed) && trimmed.includes("|")) return true;
+  if (/^(chapter|chapitre)\b/i.test(trimmed)) return true;
+  if (/^_\[No extractable text.*\]_$/i.test(trimmed)) return true;
+  if (/^\((?:d|à préciser)\)$/i.test(trimmed)) return true;
   if (/[\w.'+-]+@[\w.-]+\.[a-z]{2,}/i.test(trimmed)) return true;
   return false;
 };
+// Skill-level introduction blocks reprinted beside the first specialty in the English books.
+const INTRO_SENTINELS = [
+  "The Fighting skill is", "The Faith skill is", "The Shadow Arts skill is",
+  "The Knowledge skill provides", "The Vitner Craft skill is", "The Care skill"
+];
+function trimIntroBoilerplate(text) {
+  let cutoff = text.length;
+  for (const sentinel of INTRO_SENTINELS) {
+    const index = text.indexOf(sentinel);
+    if (index > 120 && index < cutoff) cutoff = index;
+  }
+  return text.slice(0, cutoff).trim();
+}
 
 // Headings that differ from the localized labels (book spellings/abbreviations).
 const NAME_ALIASES = {
@@ -116,18 +131,41 @@ function extractLanguage(file, languageField) {
     for (const candidate of candidates) {
       const nextStart = boundaries.find(boundary => boundary > candidate.start) ?? Math.min(lines.length, candidate.start + 400);
       const windowEnd = Math.min(nextStart, candidate.start + candidate.headingLines + 120);
-      const bodyLines = [];
-      for (let scan = candidate.start + candidate.headingLines; scan < windowEnd; scan += 1) {
-        const line = lines[scan];
-        if (isFlameMeta(line) || isPageNoise(line)) continue;
-        bodyLines.push(line.trim());
+      let scanEnd = windowEnd;
+      // First pass: does the plain span end with a complete sentence?
+      const collect = (from, to) => {
+        const collected = [];
+        for (let scan = from; scan < to; scan += 1) {
+          const line = lines[scan];
+          const trimmed = line.trim();
+          if (/^(?:F\s*)+$/.test(trimmed)) break;
+          if (trimmed.length >= 4 && !/\p{Ll}/u.test(trimmed.replace(/[0-9&'.\- ]/gu, "")) && /\p{Lu}{4}/u.test(trimmed)) break;
+          if (isFlameMeta(line) || isPageNoise(line)) continue;
+          if (byName.has(normalize(stripHeadingMarks(trimmed))) && collected.length) break;
+          collected.push(trimmed);
+        }
+        return collected;
+      };
+      const finalize = (collected) => {
+        let text = collected.join("\n");
+        text = text.replace(/(\p{Ll})\s*[-\u2010\u2011]\r?\n\s*(\p{Ll})/gu, "$1$2");
+        text = text.replace(/(\p{Ll})[-\u2010\u2011]\n\s*(\p{L})/gu, "$1-$2");
+        text = text.replace(/[ \t]*\r?\n[ \t]*/g, " ").replace(/\s{2,}/g, " ").trim();
+        text = text.replace(/\((?:à préciser|to be specified|left or right hand|main gauche ou main droite)\)\s*/gi, "");
+        if (/^,/.test(text)) text = text.slice(1).trim();
+        return text;
+      };
+      let bodyLines = collect(candidate.start + candidate.headingLines, windowEnd);
+      let text = finalize(bodyLines);
+      // Jumbled PDF columns sometimes displace the paragraph continuation beyond the next
+      // heading; extend the scan until the text ends with sentence punctuation.
+      if (!/[.!?»”)]$/.test(text)) {
+        const extendedEnd = Math.min(lines.length, candidate.start + candidate.headingLines + 320);
+        const extended = collect(windowEnd, extendedEnd);
+        const merged = finalize([...bodyLines, ...extended]);
+        if (merged.length > text.length) { text = merged; scanEnd = extendedEnd; }
       }
-      let text = bodyLines.join("\n");
-      text = text.replace(/(\p{Ll})\s*[-\u2010\u2011]\r?\n\s*(\p{Ll})/gu, "$1$2");
-      text = text.replace(/(\p{Ll})[-\u2010\u2011]\n\s*(\p{L})/gu, "$1-$2");
-      text = text.replace(/[ \t]*\r?\n[ \t]*/g, " ").replace(/\s{2,}/g, " ").trim();
-      text = text.replace(/\((?:à préciser|to be specified|left or right hand|main gauche ou main droite)\)\s*/gi, "");
-      if (/^,/.test(text)) text = text.slice(1).trim();
+      text = trimIntroBoilerplate(text);
       if (text.length > 40) { results[entry.id] = text; break; }
       if (traceIds?.has(entry.id)) console.log(`[trace] ${entry.id}@${candidate.start}: span rejected (${text.length} chars)`);
     }

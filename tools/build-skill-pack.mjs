@@ -47,7 +47,7 @@ for (const {code, packName, label} of LANGUAGES) {
     lines.push(JSON.stringify({
       _id: folderId,
       name: localize(TRUDVANG.skills[skillKey]),
-      type: "Item",
+      type: "Folder",
       sorting: "a",
       description: "",
       flags: {}

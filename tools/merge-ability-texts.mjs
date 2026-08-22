@@ -3,6 +3,19 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const extracted = JSON.parse(readFileSync("tmp/abilities-extracted.json", "utf8")).entries;
+const overrides = JSON.parse(readFileSync("tools/ability-text-overrides.json", "utf8"));
+for (const [id, override] of Object.entries(overrides)) {
+  const entry = extracted[id];
+  if (!entry) { console.error(`Override for unknown entry ${id}`); process.exit(1); }
+  if (override.trimFrBefore && entry.descriptionFr.includes(override.trimFrBefore)) {
+    entry.descriptionFr = entry.descriptionFr.slice(0, entry.descriptionFr.indexOf(override.trimFrBefore)).trim();
+  }
+  if (override.trimEnBefore && entry.descriptionEn.includes(override.trimEnBefore)) {
+    entry.descriptionEn = entry.descriptionEn.slice(0, entry.descriptionEn.indexOf(override.trimEnBefore)).trim();
+  }
+  if (override.descriptionFr) entry.descriptionFr = override.descriptionFr;
+  if (override.descriptionEn) entry.descriptionEn = override.descriptionEn;
+}
 const summaries = {};
 for (const batch of ["batch-1", "batch-2", "batch-3", "batch-4"]) {
   Object.assign(summaries, JSON.parse(readFileSync(`tmp/abilities-batches/summaries-${batch}.json`, "utf8")));

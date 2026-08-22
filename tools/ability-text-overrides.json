@@ -1,0 +1,36 @@
+{
+  "bodyControl": { "trimEnBefore": " Ambidexterity " },
+  "drivingWagon": { "trimEnBefore": " their breath underwater" },
+  "healingDrugs": {
+    "descriptionEn": "The Healing and Drugs discipline teaches a person to mend and care for the sick and wounded so they recover faster than normal, as well as to impair others’ health through drugs or poisons. Tending to wounds and illnesses requires one of the specialties below; rolls made with the discipline’s knowledge alone (without any specialty) can only stop bleeding and keep the patients’ conditions from worsening."
+  },
+  "firstAidNursing": {
+    "trimFrBefore": " le coMMerce En Trudvang",
+    "trimEnBefore": " clothing, fur",
+    "descriptionEn": "The character has learned to tend wounds. Any injury treated immediately (within ten minutes) heals at a rate of 1 health point per specialty level, provided the treated injury actually caused that health loss. The character can care for the sick and wounded so they recover faster than normal — though this requires the patient to rest and receive the necessary treatment throughout the day. The healer must spend at least two hours per care attempt on a patient; a successful Skill roll means the patient heals twice as fast."
+  },
+  "composed": { "trimEnBefore": " Lightning-Quick Invocation" },
+  "lightningQuickInvocation": { "trimEnBefore": " A character’s Skill Value in the Faith skill" },
+  "gavlian": { "trimEnBefore": " specialties (Bruid, Gavlian" },
+  "shieldBearer": {
+    "trimEnBefore": " The Fighting skill is",
+    "descriptionEn": "The shield bearer has learned the art of using a shield in battle, gaining 2 extra Combat Points per level to distribute among parries made with the shield — points usable only when parrying with it. Characters with Shield Bearer also ignore the usual -15 penalty for actions performed with the shield hand (this exception applies only while the character is using a shield)."
+  },
+  "shadowing": { "trimEnBefore": " Camouflage and Hiding The person knows" },
+  "locksTraps": {
+    "descriptionEn": "The character has learned to pick locks and understands how most locking mechanisms work, adding +2 to Skill Value per level when manipulating or picking a lock; without this specialty, picking a lock is impossible. Every lock has a difficulty set by the game master (a basic door lock -1, a very complex one up to -20): a successful attempt takes 2 action rounds and lowers the difficulty by two steps, a failed attempt restores it, and repeated failures risk snapping the pick inside, making further attempts impossible. When the difficulty reaches a positive value, the lock opens. This specialty also covers building traps to discourage prying eyes or warn of an approach, and studying traps patiently without triggering them to learn how they were made and how to disarm them more easily."
+  },
+  "shadowWorld": { "trimEnBefore": " late or pick a lock." },
+  "vitnerRunes": { "trimEnBefore": " Vitner Tablet (Selected Tablet)" },
+  "darkhwitalja": {
+    "descriptionEn": "After years of study, the conjurer has uncovered the dark vitner and can summon it, becoming a Darkhwitalja among the dark tamers. Choosing to weave the morkvitner forever bars learning Vaagritalja and Hwitalja. Its effects on the conjurer: the reserve grows by 20 Vitner Points; perfect results are impossible because this vitner is impure; its failures can be fatal — on a critical failure roll 1d10 (open 8-10) on the Fatal Magic table; and every Vitner Tablet description accounts for morkvitalja specifics, usually a Vitner Point cost."
+  },
+  "wildernessSigns": {
+    "descriptionEn": "A person with this specialty can read and create wilderness signs: a symbol carved into tree bark or a doorframe, stones arranged in a pattern, or anything else only the knowledgeable would find. Every sign carries meaning — how game-rich a region is, whether trolls haunt a forest and how many left eastward, a good resting spot half a day’s walk east, landslide risks — whatever the sign-maker wishes to convey. Most signs combine several elements: the main message, such as “beware of trolls”, elaborated with the trolls’ type, number and direction of travel. Signs sit where untrained eyes pass over, yet stand out plainly to the experienced."
+  },
+  "battleExperience": {
+    "descriptionEn": "Having taken part in many battles, the character has learned to react, fight and attempt risky maneuvers. They receive 1 extra Combat Point per level to assign to their combat actions during a combat round, plus a +1 per level bonus to combat initiative."
+  },
+  "stormkelt": { "trimFrBefore": " Tablette sacrée (tablette à préciser)" },
+  "sejding": { "trimFrBefore": " Tablette de vitner (tablette à préciser)" }
+}
