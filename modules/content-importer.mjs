@@ -1,7 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
 
-const CONTENT_VERSION = 12;
+const CONTENT_VERSION = 13;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -261,21 +261,23 @@ async function syncSkillPack(packId, language) {
     }
   }
 
+  // Full rebuild on every sync: legacy NEDB migrations can strand documents (including
+  // misplaced Folder copies) inside the primary sublevel, which no API surface cleans up.
   const documents = await pack.getDocuments();
-  const byCatalogId = new Map(documents.map(document => [document.system?.catalogId, document]));
-  const staleIds = documents.filter(document => !blueprints.some(blueprint => blueprint.system.catalogId === document.system?.catalogId)).map(document => document.id);
-  if (staleIds.length) await ItemClass.deleteDocuments(staleIds, {pack: pack.collection});
-
-  const remaining = await pack.getDocuments();
-  const survivors = new Map(remaining.map(document => [document.system?.catalogId, document]));
-  for (const blueprint of blueprints) {
-    const existing = survivors.get(blueprint.system.catalogId);
-    if (existing) {
-      const changes = {name: blueprint.name, img: blueprint.img, folder: blueprint.folder, "system.description": blueprint.system.description, "system.summary": blueprint.system.summary};
-      await existing.update(changes);
-    } else {
-      await ItemClass.createDocuments([blueprint], {pack: pack.collection});
+  const allIds = documents.map(document => document.id);
+  if (allIds.length) {
+    try {
+      await ItemClass.deleteDocuments(allIds, {pack: pack.collection});
+    } catch (error) {
+      console.warn("Trudvang Chronicles | Bulk pack wipe failed, falling back per document", error);
+      for (const id of allIds) {
+        const document = documents.find(candidate => candidate.id === id);
+        await document?.delete().catch(() => {});
+      }
     }
+  }
+  for (const blueprint of blueprints) {
+    await ItemClass.createDocuments([blueprint], {pack: pack.collection});
   }
 }
 
@@ -376,14 +378,17 @@ export async function importStarterContent({force = false} = {}) {
       if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
     }
 
-    await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
-    await game.settings.set(SYSTEM_ID, "starterContentLocale", currentLocale);
     try {
       await syncSkillPack("skills-en", "en");
       await syncSkillPack("skills-fr", "fr");
     } catch (packError) {
       console.error("Trudvang Chronicles | Skills compendium sync failed", packError);
     }
+
+    // Persist the version only after every repair step succeeded, so a partial
+    // failure re-runs the whole pass on the next world entry.
+    await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
+    await game.settings.set(SYSTEM_ID, "starterContentLocale", currentLocale);
     ui.notifications.info(game.i18n.format("TRUDVANG.Import.Complete", {
       items: updated + created + catalogDocuments.length,
       tables: source.tables.length,
