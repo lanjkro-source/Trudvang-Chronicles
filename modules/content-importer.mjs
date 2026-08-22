@@ -1,7 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
 
-const CONTENT_VERSION = 11;
+const CONTENT_VERSION = 12;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -18,6 +18,10 @@ function localizeTree(value) {
 
 const starterKey = (nameKey) => typeof nameKey === "string" ? nameKey.replace(/\.Name$/, "") : undefined;
 const flagOf = (document, key = "starterId") => document.getFlag(SYSTEM_ID, key);
+const normalizeLabel = (value) => String(value).toLowerCase()
+  .replace(/œ/g, "oe").replace(/æ/g, "ae")
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  .replace(/[^a-z0-9]/g, "");
 
 // Foundry <=12 exposed game.i18n.lang() as a method, newer versions as a plain property.
 function activeLanguage() {
@@ -323,6 +327,38 @@ export async function importStarterContent({force = false} = {}) {
       const changes = {"system.description": description};
       if (!item.system.summary || item.system.summary === item.system.description) changes["system.summary"] = catalogText(item.system.catalogId, "Summary");
       await item.update(changes);
+    }
+
+    // Fold orphaned ability copies (no catalogId but an official label) into the catalog:
+    // the first occurrence gets linked, exact duplicates of a linked knowledge are removed.
+    const labelIndex = new Map();
+    for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
+      for (const discipline of disciplines) {
+        const entries = [
+          {...discipline, kind: "discipline", parentSkill: skillKey},
+          ...discipline.specialties.map(specialty => ({...specialty, kind: "specialty", parentSkill: skillKey, parentDiscipline: discipline.name}))
+        ];
+        for (const entry of entries) {
+          for (const language of ["fr", "en"]) {
+            const name = resolveNested(await fetchLangPack(language), entry.label);
+            if (name) labelIndex.set(normalizeLabel(name), entry);
+          }
+        }
+      }
+    }
+    for (const scope of [game.items, ...game.actors.map(actor => actor.items)]) {
+      const linked = new Map([...scope].filter(item => item.type === "ability" && item.system.catalogId).map(item => [item.system.catalogId, item]));
+      for (const item of [...scope]) {
+        if (item.type !== "ability" || item.system.catalogId) continue;
+        const entry = labelIndex.get(normalizeLabel(item.name));
+        if (!entry) continue;
+        const canonical = linked.get(entry.id);
+        if (canonical && canonical.id !== item.id) { await item.delete(); continue; }
+        const changes = {"system.catalogId": entry.id, "system.kind": entry.kind, "system.parentSkill": entry.parentSkill, "system.rollBonus": entry.rollBonus ?? (entry.kind === "specialty" ? 2 : 1)};
+        if (entry.parentDiscipline) changes["system.parentDiscipline"] = entry.parentDiscipline;
+        await item.update(changes);
+        linked.set(entry.id, item);
+      }
     }
 
     const catalogById = new Map(catalogDocuments.map(document => [document.system.catalogId, document]));
