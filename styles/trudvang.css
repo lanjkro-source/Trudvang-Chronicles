@@ -21,6 +21,12 @@
 .trudvang-sheet { height: 100%; display: flex; flex-direction: column; gap: 0; overflow: hidden; }
 .trudvang-sheet button { color: var(--trudvang-ink); border: 0; background: transparent; line-height: 1.2; }
 .trudvang-sheet button:hover, .trudvang-sheet .rollable:hover { color: var(--trudvang-red); text-shadow: 0 0 8px rgba(168,130,67,.55); }
+.trudvang-sheet button i.fas { color: var(--trudvang-red); }
+.trudvang-sheet .initiative-button i.fas,
+.trudvang-sheet .creation-mode-button i.fas,
+.trudvang-sheet .footer-actions button i.fas,
+.trudvang-sheet .resource-bar .resource button i.fas { color: inherit; }
+.trudvang-sheet button i.core-skill-marker { color: var(--trudvang-gold); }
 .trudvang-sheet input, .trudvang-sheet select, .trudvang-sheet textarea {
   color: var(--trudvang-ink);
   border: 0;
@@ -114,6 +120,8 @@
 .trudvang-sheet .knowledge-node { min-height: 32px; display: grid; grid-template-columns: 27px 27px minmax(145px,1fr) minmax(90px,.7fr) 42px 78px 26px 26px; gap: 3px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
 .trudvang-sheet .tablet-node { grid-template-columns: 27px minmax(145px,1fr) minmax(90px,.7fr) 42px 78px 26px; }
 .trudvang-sheet .knowledge-node img { width: 25px; height: 25px; object-fit: cover; border: 1px solid var(--trudvang-line); }
+.trudvang-sheet .book-icon { width: 25px; height: 25px; box-sizing: border-box; flex: none; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--trudvang-line); border-radius: 3px; background: rgba(255,255,255,.4); color: var(--trudvang-muted); font-size: .8rem; }
+.trudvang-sheet .book-icon.invested { color: var(--trudvang-red); }
 .trudvang-sheet .image-toggle { width: 27px; height: 27px; padding: 0; border: 0; }
 .trudvang-sheet .roll-icon, .trudvang-sheet .tree-toggle { width: 26px; padding: 2px; color: var(--trudvang-red); }
 .trudvang-sheet .knowledge-node .item-name { padding: 2px; text-align: left; font-weight: 600; }
