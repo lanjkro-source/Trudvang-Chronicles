@@ -1,7 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
 
-const CONTENT_VERSION = 13;
+const CONTENT_VERSION = 14;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -219,20 +219,15 @@ async function syncSkillPack(packId, language) {
   const ItemClass = foundry.utils.getDocumentClass("Item");
 
   const folderIds = new Map();
-  const existingFolders = [...pack.folders.values()];
-  const desiredSkillKeys = Object.keys(TRUDVANG.knowledgeTree);
+  // Folders are rebuilt from scratch on every sync: legacy migrations strand folder
+  // copies inside the items sublevel, which nothing else can clean up.
+  for (const folder of existingFolders) {
+    await folder.delete().catch((error) => console.warn(`Trudvang Chronicles | Could not delete pack folder "${folder.name}"`, error));
+  }
   for (const skillKey of desiredSkillKeys) {
     const name = text(TRUDVANG.skills[skillKey]);
-    let folder = existingFolders.find((f) => f.name === name);
-    if (!folder) {
-      const [created] = await FolderClass.createDocuments([{name, type: "Item", sorting: "a", description: "", flags: {}}], {pack: pack.collection});
-      folder = created;
-    }
+    const [folder] = await FolderClass.createDocuments([{name, type: "Item", sorting: "a", description: "", flags: {}}], {pack: pack.collection});
     folderIds.set(skillKey, folder.id);
-  }
-  const keptFolderIds = new Set(folderIds.values());
-  for (const folder of existingFolders) {
-    if (!keptFolderIds.has(folder.id)) await folder.delete();
   }
 
   const blueprints = [];
