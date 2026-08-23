@@ -26,6 +26,10 @@ for (const directory of includedRoots) {
   try {
     collect(directory, files);
   } catch {
+    if (directory === "packs") {
+      // Packs are now generated at runtime via the importer; an empty/missing directory is not an error.
+      continue;
+    }
     console.error(`Répertoire attendu manquant: ${directory}/`);
     process.exit(1);
   }

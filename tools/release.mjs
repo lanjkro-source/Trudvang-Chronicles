@@ -47,8 +47,10 @@ if (git(["ls-remote", "origin", `refs/tags/${tag}`])) fail(`Remote tag ${tag} al
 
 const steps = [];
 steps.push({label: `system.json version -> ${version}`, run: () => {
-  const raw = readFileSync("system.json", "utf8");
-  writeFileSync("system.json", raw.replace(/"version":\s*"[^"]+"/, `"version": "${version}"`), "utf8");
+  let raw = readFileSync("system.json", "utf8");
+  raw = raw.replace(/"version":\s*"[^"]+"/, `"version": "${version}"`);
+  raw = raw.replace(/"download":\s*"[^"]+"/, `"download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v${version}/trudvang-chronicles.zip"`);
+  writeFileSync("system.json", raw, "utf8");
 }});
 steps.push({label: "npm run check", run: () => {
   const runner = process.platform === "win32"
