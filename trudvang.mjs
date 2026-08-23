@@ -26,10 +26,9 @@ Hooks.once("init", () => {
   CONFIG.Actor.documentClass = TrudvangActor;
   CONFIG.Item.documentClass = TrudvangItem;
 
+  // Actor sheets — still AppV1 (migration planned separately)
   const actorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
-  const itemSheet = foundry.appv1?.sheets?.ItemSheet ?? globalThis.ItemSheet;
   const ActorSheets = foundry.documents.collections.Actors;
-  const ItemSheets = foundry.documents.collections.Items;
   ActorSheets.unregisterSheet("core", actorSheet);
   ActorSheets.registerSheet("trudvang-chronicles", TrudvangCharacterSheet, {
     types: ["character"],
@@ -41,11 +40,24 @@ Hooks.once("init", () => {
     makeDefault: true,
     label: "TRUDVANG.Sheets.Npc"
   });
-  ItemSheets.unregisterSheet("core", itemSheet);
-  ItemSheets.registerSheet("trudvang-chronicles", TrudvangItemSheet, {
-    makeDefault: true,
-    label: "TRUDVANG.Sheets.Item"
-  });
+
+  // Item sheet — ApplicationV2
+  const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;
+  if (DocumentSheetConfig) {
+    DocumentSheetConfig.registerSheet(foundry.documents.Item, "trudvang-chronicles", TrudvangItemSheet, {
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Item"
+    });
+  } else {
+    // Fallback for V14 compatibility
+    const itemSheet = foundry.appv1?.sheets?.ItemSheet ?? globalThis.ItemSheet;
+    const ItemSheets = foundry.documents.collections.Items;
+    ItemSheets.unregisterSheet("core", itemSheet);
+    ItemSheets.registerSheet("trudvang-chronicles", TrudvangItemSheet, {
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Item"
+    });
+  }
 
   game.settings.register("trudvang-chronicles", "starterContentVersion", {
     name: "TRUDVANG.Settings.StarterContentName",
@@ -72,18 +84,28 @@ Hooks.once("init", () => {
 
   registerHandlebarsHelpers();
 
-  const FormApplicationClass = foundry.appv1?.api?.FormApplication ?? globalThis.FormApplication;
-  class ReimportMenu extends FormApplicationClass {
-    static get defaultOptions() {
-      return foundry.utils.mergeObject(super.defaultOptions, {
-        id: "trudvang-reimport",
-        title: game.i18n.localize("TRUDVANG.Settings.ReimportTitle"),
-        template: "systems/trudvang-chronicles/templates/app/reimport-menu.hbs",
-        width: 470
-      });
+  const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
+
+  class ReimportMenu extends HandlebarsApplicationMixin(ApplicationV2) {
+    static DEFAULT_OPTIONS = {
+      id: "trudvang-reimport",
+      tag: "form",
+      classes: ["trudvang", "settings-menu"],
+      position: { width: 470 },
+      window: { title: "TRUDVANG.Settings.ReimportTitle" },
+      form: {
+        handler: ReimportMenu.#onSubmit,
+        submitOnChange: false,
+        closeOnSubmit: true
+      }
+    };
+    static PARTS = {
+      main: { template: "systems/trudvang-chronicles/templates/app/reimport-menu.hbs" }
+    };
+    async _prepareContext() {
+      return {};
     }
-    getData() { return {}; }
-    async _updateObject() {
+    static async #onSubmit(event, form, formData, submitOptions) {
       return importStarterContent({force: true});
     }
   }
@@ -99,17 +121,26 @@ Hooks.once("init", () => {
     console.error("Trudvang Chronicles | Could not register the starter-content reimport menu", error);
   }
 
-  class RebuildPacksMenu extends FormApplicationClass {
-    static get defaultOptions() {
-      return foundry.utils.mergeObject(super.defaultOptions, {
-        id: "trudvang-rebuild-packs",
-        title: game.i18n.localize("TRUDVANG.Settings.RebuildPacksTitle"),
-        template: "systems/trudvang-chronicles/templates/app/rebuild-packs-menu.hbs",
-        width: 470
-      });
+  class RebuildPacksMenu extends HandlebarsApplicationMixin(ApplicationV2) {
+    static DEFAULT_OPTIONS = {
+      id: "trudvang-rebuild-packs",
+      tag: "form",
+      classes: ["trudvang", "settings-menu"],
+      position: { width: 470 },
+      window: { title: "TRUDVANG.Settings.RebuildPacksTitle" },
+      form: {
+        handler: RebuildPacksMenu.#onSubmit,
+        submitOnChange: false,
+        closeOnSubmit: true
+      }
+    };
+    static PARTS = {
+      main: { template: "systems/trudvang-chronicles/templates/app/rebuild-packs-menu.hbs" }
+    };
+    async _prepareContext() {
+      return {};
     }
-    getData() { return {}; }
-    async _updateObject() {
+    static async #onSubmit(event, form, formData, submitOptions) {
       return repairKnowledgePacks();
     }
   }

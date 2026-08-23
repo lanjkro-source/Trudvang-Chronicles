@@ -24,9 +24,8 @@ const normalizeLabel = (value) => String(value).toLowerCase()
   .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
   .replace(/[^a-z0-9]/g, "");
 
-// Foundry <=12 exposed game.i18n.lang() as a method, newer versions as a plain property.
 function activeLanguage() {
-  return typeof game.i18n.lang === "function" ? String(game.i18n.lang()) : String(game.i18n.lang ?? "");
+  return String(game.i18n.lang ?? "");
 }
 
 // Names this i18n key takes across shipped languages plus the active one — used to adopt

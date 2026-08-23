@@ -1,4 +1,4 @@
-<form class="{{cssClass}} trudvang-sheet item-sheet" autocomplete="off">
+<form class="trudvang-sheet item-sheet" autocomplete="off">
   <header class="sheet-header compact"><img class="profile-img" src="{{item.img}}" data-edit="img"><div class="identity"><input class="actor-name" name="name" value="{{item.name}}"><p class="item-type">{{localize (concat "TYPES.Item." item.type)}}</p></div><button type="button" data-action="roll" class="initiative-button"><i class="fas fa-dice-d20"></i><span>{{localize "TRUDVANG.Action.Use"}}</span></button>{{#if (and (eq item.type "ability") (not system.catalogId))}}<button type="button" data-action="delete-item" class="initiative-button" title="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i><span>{{localize "TRUDVANG.Action.Delete"}}</span></button>{{/if}}</header>
   <section class="item-fields">
     {{#if (includes (array "weapon" "armor" "shield" "gear" "potion") item.type)}}
