@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "check": "node tools/validate-system.mjs",
-    "package": "node tools/package-system.mjs"
+    "package": "node tools/package-system.mjs",
+    "release": "node tools/release.mjs"
   }
 }
