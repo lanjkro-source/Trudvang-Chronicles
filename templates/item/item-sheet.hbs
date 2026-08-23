@@ -15,6 +15,6 @@
     {{#if (includes (array "ability" "tablet") item.type)}}<label>{{localize "TRUDVANG.Field.CostTrait"}}<select name="system.costTrait"><option value="">{{localize "TRUDVANG.Field.Automatic"}}</option>{{selectOptions config.traits selected=system.costTrait localize=true}}</select></label>{{/if}}
     <label class="wide">{{localize "TRUDVANG.Field.Source"}}<input name="system.source" value="{{system.source}}"></label>
   </section>
-  {{#if (eq item.type "ability")}}<section class="panel"><h2>{{localize "TRUDVANG.Field.Summary"}}</h2><textarea name="system.summary" rows="3">{{system.summary}}</textarea></section>{{/if}}
-<section class="panel editor-panel item-description"><h2>{{localize "TRUDVANG.Section.Description"}}</h2>{{#if (and (eq item.type "ability") system.catalogId)}}<div class="trudvang detail-dialog">{{{enrichedDescription}}}</div>{{else}}{{editor enrichedDescription target="system.description" button=true editable=editable}}{{/if}}</section>
+  {{#if (eq item.type "ability")}}<section class="panel summary-panel"><h2>{{localize "TRUDVANG.Field.Summary"}}</h2><textarea name="system.summary" rows="3">{{system.summary}}</textarea></section>{{/if}}
+<section class="panel editor-panel item-description"><h2>{{localize "TRUDVANG.Section.Description"}}</h2>{{#if (and (eq item.type "ability") system.catalogId)}}<div class="trudvang detail-dialog">{{{enrichedDescription}}}</div>{{else}}<div class="editor-container">{{editor enrichedDescription target="system.description" button=true editable=true owner=true}}</div>{{/if}}</section>
 </form>
