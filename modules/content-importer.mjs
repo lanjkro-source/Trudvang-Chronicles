@@ -259,28 +259,34 @@ export async function repairKnowledgePacks() {
   ui.notifications.info(game.i18n.format("TRUDVANG.Import.PacksRebuilt", {packs: SKILL_PACKS.length}));
 }
 
-const KNOWLEDGE_SYNC_VERSION = CONTENT_VERSION;
+// Bumped independently of CONTENT_VERSION whenever the knowledge refresh matching or
+// scope changes, so worlds that already ran an earlier pass re-run it exactly once.
+// 17: first scope covering actor-embedded abilities and legacy copies without
+// compendium provenance (items bought through the sheet were invisible to earlier runs).
+const KNOWLEDGE_SYNC_VERSION = 17;
 
-// UUID prefix identifying world copies that were dragged out of our Skills packs.
-const KNOWLEDGE_SOURCE_PREFIX = `Compendium.${SYSTEM_ID}.skills-`;
+const normalizedLabel = (value) => String(value ?? "").trim().toLocaleLowerCase();
 
-const knowledgeSourceId = (item) => String(item._stats?.compendiumSource ?? item.getFlag("core", "sourceId") ?? "");
-
-// One-time refresh of ability items players imported from earlier releases of the Skills
-// packs: presentation text is healed against the current compendium contents and stale
-// provenance ids are repointed at the current documents. Numeric rule state (levels,
-// bonuses) stays untouched. Shipped packs update automatically with the system; these
-// world copies would otherwise keep the wording of whatever version they came from.
+// One-time refresh of ability knowledge items living in the world: presentation text is
+// healed against the current compendium contents and stale provenance ids are stamped
+// or repointed at the current documents. Numeric rule state (levels, bonuses) stays
+// untouched. This must cover far more than packs imports:
+// - knowledge bought through the sheet (adjustCatalogKnowledge) is created without any
+//   compendium provenance and lives embedded in actors, not in game.items;
+// - pre-catalogue creations may even lack system.catalogId and are only recognisable
+//   by their name and kind.
 export async function syncImportedKnowledgeItems({force = false} = {}) {
   try {
     const done = Number(game.settings.get(SYSTEM_ID, "knowledgeSyncVersion") || 0);
     if (!force && done >= KNOWLEDGE_SYNC_VERSION) return false;
 
-    // Index pack documents by catalogId, preferring the pack matching the active language,
-    // plus every known label across languages to detect user-renamed copies.
+    // Index pack documents by catalogId (preferring the active language), plus every known
+    // label across languages: labels detect user-renamed copies and also identify legacy
+    // items that never carried a catalogId.
     const currentLocale = activeLanguage();
     const documentsByCatalog = new Map();
     const namesByCatalog = new Map();
+    const documentsByName = new Map();
     for (const {code, packName} of SKILL_PACKS) {
       const pack = game.packs.get(`${SYSTEM_ID}.${packName}`);
       if (!pack) continue;
@@ -290,24 +296,47 @@ export async function syncImportedKnowledgeItems({force = false} = {}) {
         if (!documentsByCatalog.has(catalogId) || code === currentLocale) documentsByCatalog.set(catalogId, document);
         if (!namesByCatalog.has(catalogId)) namesByCatalog.set(catalogId, new Set());
         namesByCatalog.get(catalogId).add(document.name);
+        const nameKey = normalizedLabel(document.name);
+        if (!documentsByName.has(nameKey)) documentsByName.set(nameKey, document);
       }
     }
 
+    // Match every owned copy: unowned world items plus each ability embedded in an actor.
+    const targets = [];
+    const collect = (container) => {
+      for (const item of container.items) {
+        if (item.type !== "ability") continue;
+        let match = null;
+        if (item.system.catalogId) {
+          match = documentsByCatalog.get(item.system.catalogId) ?? null;
+        } else {
+          const candidate = documentsByName.get(normalizedLabel(item.name));
+          // Kind equality keeps same-named custom entries of other kinds untouched.
+          if (candidate && candidate.system.kind === item.system.kind) match = candidate;
+        }
+        if (match) targets.push({item, match});
+      }
+    };
+    collect(game.items);
+    for (const actor of game.actors) collect(actor);
+
     let updated = 0;
-    for (const item of game.items.filter(item => item.type === "ability"
-      && item.system.catalogId
-      && knowledgeSourceId(item).startsWith(KNOWLEDGE_SOURCE_PREFIX))) {
-      const match = documentsByCatalog.get(item.system.catalogId);
-      if (!match) continue;
+    for (const {item, match} of targets) {
       const changes = {
         img: match.img,
         "system.description": match.system.description,
         "system.summary": match.system.summary,
         "_stats.compendiumSource": match.uuid
       };
+      if (!item.system.catalogId) changes["system.catalogId"] = match.system.catalogId;
       if (item.getFlag("core", "sourceId")) changes["flags.core.sourceId"] = match.uuid;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
-      if (namesByCatalog.get(item.system.catalogId)?.has(item.name)) changes.name = match.name;
+      if (namesByCatalog.get(match.system.catalogId)?.has(item.name)) changes.name = match.name;
+      // Skip fields that already carry the target value so healthy content is not rewritten.
+      for (const key of Object.keys(changes)) {
+        if (String(foundry.utils.getProperty(item, key) ?? "") === String(changes[key] ?? "")) delete changes[key];
+      }
+      if (!Object.keys(changes).length) continue;
       await item.update(changes);
       updated++;
     }
