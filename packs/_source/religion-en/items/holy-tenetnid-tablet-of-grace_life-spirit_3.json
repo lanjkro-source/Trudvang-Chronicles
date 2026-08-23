@@ -1,0 +1,28 @@
+{
+  "name": "Life Spirit",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Nkh0auYtZu0v1w2x",
+  "_id": "Nkh0auYtZu0v1w2x",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15200000,
+  "ownership": {
+    "default": 0
+  }
+}

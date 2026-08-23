@@ -1,0 +1,25 @@
+{
+  "name": "Dimvitner",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner",
+    "description": "Magie de la mort permettant de parler aux morts-vivants, de les invoquer, les contrôler, les renvoyer ou drainer les pouvoirs de Dimhall.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!qej56KfLgMhNiOjP",
+  "_id": "qej56KfLgMhNiOjP",
+  "folder": null,
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  }
+}

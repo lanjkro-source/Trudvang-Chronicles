@@ -1,0 +1,28 @@
+{
+  "name": "Giant Snakeshape",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Power of the Dragon",
+    "description": "The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!OA90M6z5A6B7C8D9",
+  "_id": "OA90M6z5A6B7C8D9",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 22400000,
+  "ownership": {
+    "default": 0
+  }
+}

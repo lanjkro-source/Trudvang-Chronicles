@@ -1,0 +1,28 @@
+{
+  "name": "Aspect du saumon",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!OEaQvKcIdJeKfLgM",
+  "_id": "OEaQvKcIdJeKfLgM",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7500000,
+  "ownership": {
+    "default": 0
+  }
+}

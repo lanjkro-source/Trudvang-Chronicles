@@ -1,0 +1,28 @@
+{
+  "name": "Understanding Script",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:understanding-script:0",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:understanding-script:0",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Power of Thought",
+    "description": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!g7iC4KeKfLgMhNiO",
+  "_id": "g7iC4KeKfLgMhNiO",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8000000,
+  "ownership": {
+    "default": 0
+  }
+}

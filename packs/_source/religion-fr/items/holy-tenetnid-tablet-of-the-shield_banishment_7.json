@@ -1,0 +1,28 @@
+{
+  "name": "Bannissement",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:banishment:7",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:banishment:7",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablette du bouclier",
+    "description": "Le prêtre adresse une prière à Gave, qui répond en envoyant un rayon flam boyant de lumière divine qui perce le ciel (ou le plafond, si la scène se passe à l’intérieur).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!hNBhjZsYtZu0v1w2",
+  "_id": "hNBhjZsYtZu0v1w2",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17800000,
+  "ownership": {
+    "default": 0
+  }
+}

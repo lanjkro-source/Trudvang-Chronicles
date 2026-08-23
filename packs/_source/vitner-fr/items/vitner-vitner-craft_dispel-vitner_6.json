@@ -1,0 +1,28 @@
+{
+  "name": "Dissipation du vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Art du vitner",
+    "description": "forme permanente ne peut pas être dissipé (sauf précision contraire dans la descrip tion du sort).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!s1GSKKbHcIdJeKfL",
+  "_id": "s1GSKKbHcIdJeKfL",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Transformation de pierre en argile",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stone-to-clay"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stone-to-clay",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!4R35fPhNiOjPkQlR",
+  "_id": "4R35fPhNiOjPkQlR",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 31200000,
+  "ownership": {
+    "default": 0
+  }
+}

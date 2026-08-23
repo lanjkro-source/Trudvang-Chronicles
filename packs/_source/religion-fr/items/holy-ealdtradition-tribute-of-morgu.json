@@ -1,0 +1,25 @@
+{
+  "name": "Tribut de Morgu",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu",
+    "description": "Pouvoirs de combat nourris par le sang, provoquant la rage et déchaînant volées, feu et fureur meurtrière.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!R9uU2UoUpVqWrXsY",
+  "_id": "R9uU2UoUpVqWrXsY",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 12400000,
+  "ownership": {
+    "default": 0
+  }
+}

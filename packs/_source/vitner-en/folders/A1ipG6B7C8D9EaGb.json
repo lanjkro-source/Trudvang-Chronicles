@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!A1ipG6B7C8D9EaGb",
+  "_id": "A1ipG6B7C8D9EaGb",
+  "name": "Wind Craft",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 14100000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

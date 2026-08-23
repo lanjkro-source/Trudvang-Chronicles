@@ -1,0 +1,28 @@
+{
+  "name": "Hasten",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:hasten:9",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:hasten:9",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!gnEctaC7C8D9EaGb",
+  "_id": "gnEctaC7C8D9EaGb",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Attaque du huvfurwurm",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Puissance du dragon",
+    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!gOBOK7z5A6B7C8D9",
+  "_id": "gOBOK7z5A6B7C8D9",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 22000000,
+  "ownership": {
+    "default": 0
+  }
+}

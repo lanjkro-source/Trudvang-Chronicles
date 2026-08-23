@@ -1,0 +1,28 @@
+{
+  "name": "Sainte autorité",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Cette prière invoque la présence sacrée de Gave.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!1XUcdgIdJeKfLgMh",
+  "_id": "1XUcdgIdJeKfLgMh",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16200000,
+  "ownership": {
+    "default": 0
+  }
+}

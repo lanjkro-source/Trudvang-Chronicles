@@ -1,6 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
+import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 
 const CONTENT_VERSION = 16;
 const SYSTEM_ID = "trudvang-chronicles";
@@ -206,26 +207,14 @@ async function upsertActors(source, folders, translationsByKey) {
 // modules/skill-pack-data.mjs, healing any stale LevelDB state left behind by earlier
 // NEDB migrations or interrupted system updates. Not part of the normal startup path:
 // shipped packs already contain this data, so this is a GM-triggered repair only.
-export async function syncSkillPack(packId, language) {
-  const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
-  if (!pack) return;
-  // System-shipped packs are locked by default in v14+; unlock for the duration of the rebuild.
-  const wasLocked = pack.locked;
-  if (wasLocked) await pack.configure({locked: false});
-  const lang = await fetchLangPack(language);
-  const fallback = await fetchLangPack("en");
-  const localize = (keyPath) => {
-    const value = resolveNested(lang, keyPath) ?? resolveNested(fallback, keyPath);
-    return typeof value === "string" ? value : "";
-  };
+// Shared wipe-and-recreate core for blueprint-driven compendium repairs. Folders and
+// items are rebuilt from scratch on every repair: legacy NEDB migrations can strand
+// documents (including misplaced Folder copies) inside the primary sublevel, which no
+// API surface cleans up. Blueprints carry stable deterministic ids, so repairs never
+// invalidate compendium links from previously imported copies.
+async function rebuildCompendiumFromBlueprints(pack, blueprints) {
   const FolderClass = foundry.utils.getDocumentClass("Folder");
   const ItemClass = foundry.utils.getDocumentClass("Item");
-
-  const {folders, items} = buildSkillPackDocuments({localize});
-
-  // Folders and items are rebuilt from scratch on every repair: legacy NEDB migrations can
-  // strand documents (including misplaced Folder copies) inside the primary sublevel,
-  // which no API surface cleans up.
   for (const folder of [...pack.folders.values()]) {
     await folder.delete().catch((error) => console.warn(`Trudvang Chronicles | Could not delete pack folder "${folder.name}"`, error));
   }
@@ -240,22 +229,69 @@ export async function syncSkillPack(packId, language) {
       }
     }
   }
-  // Blueprints carry stable deterministic ids, so repairs never invalidate compendium
-  // links from previously imported copies.
-  await FolderClass.createDocuments(folders.map(toCreateData), {pack: pack.collection});
-  await ItemClass.createDocuments(items.map(toCreateData), {pack: pack.collection});
-  if (wasLocked) await pack.configure({locked: true}).catch((error) => {
-    console.warn(`Trudvang Chronicles | Could not re-lock compendium ${packId}`, error);
+  await FolderClass.createDocuments(blueprints.folders.map(toCreateData), {pack: pack.collection});
+  await ItemClass.createDocuments(blueprints.items.map(toCreateData), {pack: pack.collection});
+}
+
+// Language text resolvers built from the fetched translation JSONs — not game.i18n,
+// whose active locale may differ from the language pack being rebuilt.
+function langResolvers(lang, fallback) {
+  const localize = (keyPath, defaultValue = "") => {
+    const value = resolveNested(lang, keyPath) ?? resolveNested(fallback, keyPath);
+    return typeof value === "string" ? value : defaultValue;
+  };
+  const format = (key, params) => Object.entries(params ?? {}).reduce((text, [name, value]) => text.split(`{${name}}`).join(String(value)), key);
+  return {localize, format};
+}
+
+async function unlockPackWhile(pack, work) {
+  // System-shipped packs are locked by default in v14+; unlock for the duration of the rebuild.
+  const wasLocked = pack.locked;
+  if (wasLocked) await pack.configure({locked: false});
+  try {
+    await work();
+  } finally {
+    if (wasLocked) await pack.configure({locked: true}).catch((error) => {
+      console.warn(`Trudvang Chronicles | Could not re-lock compendium ${pack.collection}`, error);
+    });
+  }
+}
+
+export async function syncSkillPack(packId, language) {
+  const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
+  if (!pack) return;
+  await unlockPackWhile(pack, async () => {
+    const {localize} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"));
+    await rebuildCompendiumFromBlueprints(pack, buildSkillPackDocuments({localize}));
   });
 }
 
-// Manual GM repair entry point: rebuilds both Skills compendiums from the shared blueprints.
+// Repairs one bilingual Vitner or Religion compendium from the shared blueprints in
+// modules/tablet-pack-data.mjs. Not part of the normal startup path: shipped packs
+// already contain this data, so this is a GM-triggered repair only.
+export async function syncTabletPack(packId, language, tabletType) {
+  const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
+  if (!pack) return;
+  await unlockPackWhile(pack, async () => {
+    const {localize, format} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"));
+    await rebuildCompendiumFromBlueprints(pack, buildTabletPackDocuments({localize, format, tabletType}));
+  });
+}
+
+// Manual GM repair entry point: rebuilds every knowledge compendium (Skills, Vitner,
+// Religion) from the shared blueprints.
 export async function repairKnowledgePacks() {
   ui.notifications.info(game.i18n.localize("TRUDVANG.Import.PacksRebuildStarted"));
+  let rebuilt = 0;
   for (const {code, packName} of SKILL_PACKS) {
     await syncSkillPack(packName, code);
+    rebuilt += 1;
   }
-  ui.notifications.info(game.i18n.format("TRUDVANG.Import.PacksRebuilt", {packs: SKILL_PACKS.length}));
+  for (const {code, packName, tabletType} of TABLET_PACKS) {
+    await syncTabletPack(packName, code, tabletType);
+    rebuilt += 1;
+  }
+  ui.notifications.info(game.i18n.format("TRUDVANG.Import.PacksRebuilt", {packs: rebuilt}));
 }
 
 // Bumped independently of CONTENT_VERSION whenever the knowledge refresh matching or

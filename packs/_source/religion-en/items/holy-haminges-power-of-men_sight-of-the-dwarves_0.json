@@ -1,0 +1,28 @@
+{
+  "name": "Sight of the Dwarves",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:sight-of-the-dwarves:0",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:sight-of-the-dwarves:0",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "The spirit conjurer calls upon the vision of the dwarven spirit, gaining night vision for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!oW21ThKfLgMhNiOj",
+  "_id": "oW21ThKfLgMhNiOj",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 22700000,
+  "ownership": {
+    "default": 0
+  }
+}

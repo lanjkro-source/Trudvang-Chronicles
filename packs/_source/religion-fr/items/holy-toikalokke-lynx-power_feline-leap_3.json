@@ -1,0 +1,28 @@
+{
+  "name": "Bond du félin",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:feline-leap:3",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:feline-leap:3",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "L’ihana a la faculté de bondir avec l’incroyable agilité et la grâce d’un félin.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!m9uLlWpVqWrXsYtZ",
+  "_id": "m9uLlWpVqWrXsYtZ",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33600000,
+  "ownership": {
+    "default": 0
+  }
+}

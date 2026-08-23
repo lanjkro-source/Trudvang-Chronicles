@@ -1,0 +1,28 @@
+{
+  "name": "Portent",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablet of the Sun",
+    "description": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!yliFqSjPkQlRmSnT",
+  "_id": "yliFqSjPkQlRmSnT",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 19000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Résilience",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:resilience:0",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:resilience:0",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Pouvoir de la bête",
+    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!OhcF9HbHcIdJeKfL",
+  "_id": "OhcF9HbHcIdJeKfL",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 20500000,
+  "ownership": {
+    "default": 0
+  }
+}

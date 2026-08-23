@@ -1,0 +1,28 @@
+{
+  "name": "Bouclier de vent",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Pouvoir d'Enken",
+    "description": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!bPnlMMdJeKfLgMhN",
+  "_id": "bPnlMMdJeKfLgMhN",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1800000,
+  "ownership": {
+    "default": 0
+  }
+}

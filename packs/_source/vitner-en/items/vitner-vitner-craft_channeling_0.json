@@ -1,0 +1,28 @@
+{
+  "name": "Channeling",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:channeling:0",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:channeling:0",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Vitner Craft",
+    "description": "The enchanter can benefit from the help of others while weaving a spell.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!t0gvE8D9EaGbHcId",
+  "_id": "t0gvE8D9EaGbHcId",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Sous la roche et l'écorce",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!O3PkaOfLgMhNiOjP",
+  "_id": "O3PkaOfLgMhNiOjP",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7600000,
+  "ownership": {
+    "default": 0
+  }
+}

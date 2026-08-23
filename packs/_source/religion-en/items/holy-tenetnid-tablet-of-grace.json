@@ -1,0 +1,25 @@
+{
+  "name": "Tablet of Grace",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace",
+    "description": "Merciful powers that heal, restore life and memory, recall allies, and preserve them from death.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!B7syvVqWrXsYtZu0",
+  "_id": "B7syvVqWrXsYtZu0",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 14700000,
+  "ownership": {
+    "default": 0
+  }
+}

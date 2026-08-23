@@ -1,0 +1,25 @@
+{
+  "name": "Rune de guérison",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-healing-rune"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-healing-rune",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!QYOKvSmSnToUpVqW",
+  "_id": "QYOKvSmSnToUpVqW",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 29100000,
+  "ownership": {
+    "default": 0
+  }
+}

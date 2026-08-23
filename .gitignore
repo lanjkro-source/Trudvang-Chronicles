@@ -16,3 +16,7 @@ Thumbs.db
 # Artefacts de compilation des compendiums (npm run build:packs ; les sources révisables restent suivies dans packs/_source/)
 packs/skills-en/
 packs/skills-fr/
+packs/vitner-en/
+packs/vitner-fr/
+packs/religion-en/
+packs/religion-fr/

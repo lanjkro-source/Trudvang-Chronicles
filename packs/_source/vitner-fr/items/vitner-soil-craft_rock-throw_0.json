@@ -1,0 +1,28 @@
+{
+  "name": "Jet de pierre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:rock-throw:0",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:rock-throw:0",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "L’enchanteur ramasse une petite pierre et la lance sur une cible à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!TEHj94v1w2x3y4z5",
+  "_id": "TEHj94v1w2x3y4z5",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10200000,
+  "ownership": {
+    "default": 0
+  }
+}

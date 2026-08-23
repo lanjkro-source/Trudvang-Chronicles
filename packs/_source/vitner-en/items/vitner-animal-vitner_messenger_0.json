@@ -1,0 +1,28 @@
+{
+  "name": "Messenger",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:messenger:0",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:messenger:0",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Animal Vitner",
+    "description": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!tdy7M4z5A6B7C8D9",
+  "_id": "tdy7M4z5A6B7C8D9",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 1600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Chalk of Bete Wiemdas",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!zR8JlaFaGbHcIdJe",
+  "_id": "zR8JlaFaGbHcIdJe",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15300000,
+  "ownership": {
+    "default": 0
+  }
+}

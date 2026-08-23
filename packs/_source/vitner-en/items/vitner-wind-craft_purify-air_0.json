@@ -1,0 +1,28 @@
+{
+  "name": "Purify Air",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:purify-air:0",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:purify-air:0",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Wind Craft",
+    "description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!y0vb09A6B7C8D9Ea",
+  "_id": "y0vb09A6B7C8D9Ea",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14200000,
+  "ownership": {
+    "default": 0
+  }
+}

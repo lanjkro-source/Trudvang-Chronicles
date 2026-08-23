@@ -1,0 +1,28 @@
+{
+  "name": "Memory of a Martyr",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablet of Anger",
+    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!HM9llgJeKfLgMhNi",
+  "_id": "HM9llgJeKfLgMhNi",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 14500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Pyre Mark",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Wrath of Tyrd",
+    "description": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!SJ0AiqSnToUpVqWr",
+  "_id": "SJ0AiqSnToUpVqWr",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6200000,
+  "ownership": {
+    "default": 0
+  }
+}

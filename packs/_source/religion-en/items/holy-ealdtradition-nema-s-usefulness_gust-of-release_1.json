@@ -1,0 +1,28 @@
+{
+  "name": "Gust of Release",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Nema's Usefulness",
+    "description": "A modest but refreshing breeze flits through the area designated by the Bruid, freeing something as it passes, pushing something over a ledge, unlatching a hook, solving a knot, or something similar.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ZpWnIA3y4z5A6B7C",
+  "_id": "ZpWnIA3y4z5A6B7C",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11600000,
+  "ownership": {
+    "default": 0
+  }
+}

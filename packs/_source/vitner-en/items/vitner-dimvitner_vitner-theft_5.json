@@ -1,0 +1,28 @@
+{
+  "name": "Vitner Theft",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:vitner-theft:5",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:vitner-theft:5",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "Steals vitner energy from another creature and transfers it to the mage.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!CR1gbsUpVqWrXsYt",
+  "_id": "CR1gbsUpVqWrXsYt",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5700000,
+  "ownership": {
+    "default": 0
+  }
+}

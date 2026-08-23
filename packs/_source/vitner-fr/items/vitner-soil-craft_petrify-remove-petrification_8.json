@@ -1,0 +1,28 @@
+{
+  "name": "Pétrification/Annuler une pétrification",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:petrify-remove-petrification:8",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:petrify-remove-petrification:8",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Vj9uxC5A6B7C8D9E",
+  "_id": "Vj9uxC5A6B7C8D9E",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 11000000,
+  "ownership": {
+    "default": 0
+  }
+}

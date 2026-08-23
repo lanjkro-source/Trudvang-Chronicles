@@ -1,0 +1,28 @@
+{
+  "name": "Earthquake",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-earthquake:earthquake:0",
+      "tabletId": "holy-thuuldom-earthquake"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-earthquake:earthquake:0",
+    "tabletId": "holy-thuuldom-earthquake",
+    "tablet": "Earthquake",
+    "description": "The spell causes an area within the range to rumble with a single, heavy tremor.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Qk1ohYsYtZu0v1w2",
+  "_id": "Qk1ohYsYtZu0v1w2",
+  "folder": "DzVFkRkQlRmSnToU",
+  "sort": 28100000,
+  "ownership": {
+    "default": 0
+  }
+}

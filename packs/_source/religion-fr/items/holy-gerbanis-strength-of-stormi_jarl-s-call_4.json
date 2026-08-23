@@ -1,0 +1,28 @@
+{
+  "name": "Appel du Jarl",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Force de Storme",
+    "description": "La voix du stormikjalt résonne avec puissance et affecte une personne située à portée au choix de l’arpenteur des brumes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!D3z2g0u0v1w2x3y4",
+  "_id": "D3z2g0u0v1w2x3y4",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 3000000,
+  "ownership": {
+    "default": 0
+  }
+}

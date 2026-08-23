@@ -1,0 +1,28 @@
+{
+  "name": "Lecture des pensées",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:mind-reading:11",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:mind-reading:11",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Pouvoir de la pensée",
+    "description": "L’enchanteur peut lire les souvenirs de la créature qu’il touche.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!vcRI4ToUpVqWrXsY",
+  "_id": "vcRI4ToUpVqWrXsY",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 9100000,
+  "ownership": {
+    "default": 0
+  }
+}

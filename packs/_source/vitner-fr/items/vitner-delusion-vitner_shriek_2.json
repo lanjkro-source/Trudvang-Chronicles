@@ -1,0 +1,28 @@
+{
+  "name": "Son aigu",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:shriek:2",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:shriek:2",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!vUIe5YrXsYtZu0v1",
+  "_id": "vUIe5YrXsYtZu0v1",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4100000,
+  "ownership": {
+    "default": 0
+  }
+}

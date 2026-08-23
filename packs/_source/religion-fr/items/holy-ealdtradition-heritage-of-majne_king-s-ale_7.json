@@ -1,0 +1,28 @@
+{
+  "name": "Bière royale",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-ale:7",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Héritage de Majne",
+    "description": "En brassant la bière légère de Majne, le bruide peut boire avec des amis et renforcer les liens qui les unissent avant de se lancer dans une nouvelle aventure.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!0H9hCUmSnToUpVqW",
+  "_id": "0H9hCUmSnToUpVqW",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 10000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Inspiration",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:inspiration:0",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:inspiration:0",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!59S04w2x3y4z5A6B",
+  "_id": "59S04w2x3y4z5A6B",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 4800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Fang of Yukk",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+      "tabletId": "holy-thuuldom-fang-of-yukk"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+    "tabletId": "holy-thuuldom-fang-of-yukk",
+    "tablet": "Fang of Yukk",
+    "description": "Empowers an inscribed weapon with the deadly bite of Yukk.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!YBdqtLgMhNiOjPkQ",
+  "_id": "YBdqtLgMhNiOjPkQ",
+  "folder": "7mgMNjMhNiOjPkQl",
+  "sort": 28400000,
+  "ownership": {
+    "default": 0
+  }
+}

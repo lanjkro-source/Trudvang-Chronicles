@@ -1,0 +1,28 @@
+{
+  "name": "Main brûlante",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:burning-hand:2",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:burning-hand:2",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Maîtrise des flammes",
+    "description": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!2qZ8N4v1w2x3y4z5",
+  "_id": "2qZ8N4v1w2x3y4z5",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Voyage astral",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:astral-voyage:5",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:astral-voyage:5",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Pouvoir de la vision",
+    "description": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!TmmgO2v1w2x3y4z5",
+  "_id": "TmmgO2v1w2x3y4z5",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9800000,
+  "ownership": {
+    "default": 0
+  }
+}

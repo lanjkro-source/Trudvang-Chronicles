@@ -1,0 +1,25 @@
+{
+  "name": "Influence of Jorn",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn",
+    "description": "Powers of darkness, deathly winds, storm-born steeds, protection, and Jorn's supernatural influence.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!rIMSAKfLgMhNiOjP",
+  "_id": "rIMSAKfLgMhNiOjP",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Holy Bolt",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:holy-bolt:1",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:holy-bolt:1",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablet of Anger",
+    "description": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!qw2zCtYtZu0v1w2x",
+  "_id": "qw2zCtYtZu0v1w2x",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 13900000,
+  "ownership": {
+    "default": 0
+  }
+}

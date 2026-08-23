@@ -1,0 +1,28 @@
+{
+  "name": "Fearless",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:fearless:3",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:fearless:3",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Power of Trolls",
+    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!IR5jyOjPkQlRmSnT",
+  "_id": "IR5jyOjPkQlRmSnT",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26300000,
+  "ownership": {
+    "default": 0
+  }
+}

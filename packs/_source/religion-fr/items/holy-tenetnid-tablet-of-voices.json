@@ -1,0 +1,25 @@
+{
+  "name": "Tablette des voix",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices",
+    "description": "Pouvoirs de parole, d'ouïe, de communion, de lucidité, de faveur divine et de pactes sacrés contraignants.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!szVucOgMhNiOjPkQ",
+  "_id": "szVucOgMhNiOjPkQ",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 19100000,
+  "ownership": {
+    "default": 0
+  }
+}

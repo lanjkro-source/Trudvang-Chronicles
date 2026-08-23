@@ -1,0 +1,28 @@
+{
+  "name": "Frères de sang",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:blood-brothers:2",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:blood-brothers:2",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablette des voix",
+    "description": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sen timents de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!HjsLWLdJeKfLgMhN",
+  "_id": "HjsLWLdJeKfLgMhN",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19500000,
+  "ownership": {
+    "default": 0
+  }
+}

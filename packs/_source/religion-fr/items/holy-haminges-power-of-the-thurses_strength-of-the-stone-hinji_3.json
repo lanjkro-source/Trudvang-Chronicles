@@ -1,0 +1,28 @@
+{
+  "name": "Force du stenhinje",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Puissance des tursirs",
+    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!1t7XBtVqWrXsYtZu",
+  "_id": "1t7XBtVqWrXsYtZu",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25200000,
+  "ownership": {
+    "default": 0
+  }
+}

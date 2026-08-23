@@ -1,0 +1,28 @@
+{
+  "name": "Monument en pierre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablette de la colère",
+    "description": "Le prêtre dirige son regard puissant vers un adversaire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!cPWkLuZu0v1w2x3y",
+  "_id": "cPWkLuZu0v1w2x3y",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 14600000,
+  "ownership": {
+    "default": 0
+  }
+}

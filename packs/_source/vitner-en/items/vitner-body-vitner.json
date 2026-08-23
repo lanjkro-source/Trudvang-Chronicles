@@ -1,0 +1,25 @@
+{
+  "name": "Body Vitner",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner",
+    "description": "Magic that alters bodies and senses, restrains creatures, and enhances speed, strength, or resilience.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!1FRwXgMhNiOjPkQl",
+  "_id": "1FRwXgMhNiOjPkQl",
+  "folder": null,
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  }
+}

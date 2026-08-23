@@ -1,0 +1,28 @@
+{
+  "name": "Conjure Ravens",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:conjure-ravens:3",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:conjure-ravens:3",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Animal Vitner",
+    "description": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!VX8iGlNiOjPkQlRm",
+  "_id": "VX8iGlNiOjPkQlRm",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 1900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Mind of the Wolf",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:mind-of-the-wolf:5",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:mind-of-the-wolf:5",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Animal Vitner",
+    "description": "The one affected by the spell gains something that resembles a wolf ’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety , and strength.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!WCEo2eHcIdJeKfLg",
+  "_id": "WCEo2eHcIdJeKfLg",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 2100000,
+  "ownership": {
+    "default": 0
+  }
+}

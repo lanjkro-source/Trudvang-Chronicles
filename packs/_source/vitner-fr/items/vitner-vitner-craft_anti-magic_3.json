@@ -1,0 +1,28 @@
+{
+  "name": "Antimagie",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:anti-magic:3",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:anti-magic:3",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Art du vitner",
+    "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!xkWdPF8D9EaGbHcI",
+  "_id": "xkWdPF8D9EaGbHcI",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11500000,
+  "ownership": {
+    "default": 0
+  }
+}

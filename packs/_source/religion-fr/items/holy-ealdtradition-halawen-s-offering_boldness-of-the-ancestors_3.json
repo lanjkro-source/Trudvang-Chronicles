@@ -1,0 +1,28 @@
+{
+  "name": "Fléau de Blotfang",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Offrande de Halawen",
+    "description": "F Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3 F Confère au porteur un bonus de +2 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as so",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!v4sHJNhNiOjPkQlR",
+  "_id": "v4sHJNhNiOjPkQlR",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8500000,
+  "ownership": {
+    "default": 0
+  }
+}

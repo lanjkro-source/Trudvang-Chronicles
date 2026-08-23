@@ -1,0 +1,28 @@
+{
+  "name": "Animal Spirit",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Animal Mind",
+    "description": "The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!FtYGk7B7C8D9EaGb",
+  "_id": "FtYGk7B7C8D9EaGb",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 32800000,
+  "ownership": {
+    "default": 0
+  }
+}

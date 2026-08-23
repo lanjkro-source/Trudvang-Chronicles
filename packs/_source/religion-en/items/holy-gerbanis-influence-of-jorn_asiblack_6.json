@@ -1,0 +1,28 @@
+{
+  "name": "Asiblack",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:asiblack:6",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:asiblack:6",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!8aaAFYsYtZu0v1w2",
+  "_id": "8aaAFYsYtZu0v1w2",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  }
+}

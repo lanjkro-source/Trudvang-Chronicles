@@ -1,0 +1,28 @@
+{
+  "name": "Send Message",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:send-message:8",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:send-message:8",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Animal Vitner",
+    "description": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!irkX8ToUpVqWrXsY",
+  "_id": "irkX8ToUpVqWrXsY",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 2400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Detect Object",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:detect-object:2",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:detect-object:2",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perceiving",
+    "description": "The spell makes it possible for the enchanter to find designated objects within the range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!2FiI3XoUpVqWrXsY",
+  "_id": "2FiI3XoUpVqWrXsY",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7300000,
+  "ownership": {
+    "default": 0
+  }
+}

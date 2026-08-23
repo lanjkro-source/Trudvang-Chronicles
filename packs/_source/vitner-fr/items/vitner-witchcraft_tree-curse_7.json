@@ -1,0 +1,28 @@
+{
+  "name": "Malédiction de l'arbre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:tree-curse:7",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:tree-curse:7",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Sorcellerie",
+    "description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!QeocGD6B7C8D9EaG",
+  "_id": "QeocGD6B7C8D9EaG",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 16000000,
+  "ownership": {
+    "default": 0
+  }
+}

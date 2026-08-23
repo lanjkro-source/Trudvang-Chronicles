@@ -1,0 +1,28 @@
+{
+  "name": "Source d'eau",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!pcJPpA2x3y4z5A6B",
+  "_id": "pcJPpA2x3y4z5A6B",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35300000,
+  "ownership": {
+    "default": 0
+  }
+}

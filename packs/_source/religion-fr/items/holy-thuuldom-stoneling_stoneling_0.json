@@ -1,0 +1,28 @@
+{
+  "name": "Enfant de la pierre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stoneling:stoneling:0",
+      "tabletId": "holy-thuuldom-stoneling"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stoneling:stoneling:0",
+    "tabletId": "holy-thuuldom-stoneling",
+    "tablet": "Enfant de la pierre",
+    "description": "Le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!6I6XtZsYtZu0v1w2",
+  "_id": "6I6XtZsYtZu0v1w2",
+  "folder": "5O0vncGbHcIdJeKf",
+  "sort": 31100000,
+  "ownership": {
+    "default": 0
+  }
+}

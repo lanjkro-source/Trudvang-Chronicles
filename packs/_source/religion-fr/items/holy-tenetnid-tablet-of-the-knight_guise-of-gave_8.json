@@ -1,0 +1,28 @@
+{
+  "name": "Aura de Gave",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!ypQsIcFaGbHcIdJe",
+  "_id": "ypQsIcFaGbHcIdJe",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16800000,
+  "ownership": {
+    "default": 0
+  }
+}

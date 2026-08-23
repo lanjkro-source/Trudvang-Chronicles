@@ -1,0 +1,28 @@
+{
+  "name": "Camouflage",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:camouflage:7",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:camouflage:7",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Delusion Vitner",
+    "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!k3aEMuZu0v1w2x3y",
+  "_id": "k3aEMuZu0v1w2x3y",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Création de messager",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:create-messenger:7",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:create-messenger:7",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Vitner animal",
+    "description": "L’enchanteur crée un messager de chair et de sang, qui peut délivrer un message en un lieu prédéfini.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Dm4bDVmSnToUpVqW",
+  "_id": "Dm4bDVmSnToUpVqW",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 2300000,
+  "ownership": {
+    "default": 0
+  }
+}

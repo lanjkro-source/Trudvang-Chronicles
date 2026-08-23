@@ -1,0 +1,28 @@
+{
+  "name": "Swine Rush",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:swine-rush:6",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all who are devoted to Stormi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!OFCLdYrXsYtZu0v1",
+  "_id": "OFCLdYrXsYtZu0v1",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5400000,
+  "ownership": {
+    "default": 0
+  }
+}

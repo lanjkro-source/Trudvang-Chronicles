@@ -1,0 +1,28 @@
+{
+  "name": "Détection des morts-vivants",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:detect-undead:5",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:detect-undead:5",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vi vante à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!9slxDWqWrXsYtZu0",
+  "_id": "9slxDWqWrXsYtZu0",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7600000,
+  "ownership": {
+    "default": 0
+  }
+}

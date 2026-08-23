@@ -1,0 +1,28 @@
+{
+  "name": "Snares of the Holy Ground",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!4xNpRZqWrXsYtZu0",
+  "_id": "4xNpRZqWrXsYtZu0",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17100000,
+  "ownership": {
+    "default": 0
+  }
+}

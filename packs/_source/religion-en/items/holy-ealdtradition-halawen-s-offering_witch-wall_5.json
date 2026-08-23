@@ -1,0 +1,28 @@
+{
+  "name": "Witch Wall",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!smaS82u0v1w2x3y4",
+  "_id": "smaS82u0v1w2x3y4",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8700000,
+  "ownership": {
+    "default": 0
+  }
+}

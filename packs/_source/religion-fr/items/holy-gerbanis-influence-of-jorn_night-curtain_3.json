@@ -1,0 +1,28 @@
+{
+  "name": "Rideau de la nuit",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!y3ZJvC4z5A6B7C8D",
+  "_id": "y3ZJvC4z5A6B7C8D",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 700000,
+  "ownership": {
+    "default": 0
+  }
+}

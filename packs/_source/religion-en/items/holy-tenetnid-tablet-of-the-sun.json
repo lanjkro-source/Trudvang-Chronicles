@@ -1,0 +1,25 @@
+{
+  "name": "Tablet of the Sun",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun",
+    "description": "Solar signs and sacred radiance that protect homes and groves, reveal omens, and illuminate darkness.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!NZYzB5y4z5A6B7C8",
+  "_id": "NZYzB5y4z5A6B7C8",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 18000000,
+  "ownership": {
+    "default": 0
+  }
+}

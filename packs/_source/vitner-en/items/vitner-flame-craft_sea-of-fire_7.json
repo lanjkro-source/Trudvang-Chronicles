@@ -1,0 +1,28 @@
+{
+  "name": "Sea of Fire",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:sea-of-fire:7",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:sea-of-fire:7",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Flame Craft",
+    "description": "The mage points to an area within range, and it suddenly explodes in a sea of flame.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!0ixzDD7C8D9EaGbH",
+  "_id": "0ixzDD7C8D9EaGbH",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6900000,
+  "ownership": {
+    "default": 0
+  }
+}

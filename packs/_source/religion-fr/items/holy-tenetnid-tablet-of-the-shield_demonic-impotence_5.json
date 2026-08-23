@@ -1,0 +1,28 @@
+{
+  "name": "Impuissance des démons",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablette du bouclier",
+    "description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!gtBOdgJeKfLgMhNi",
+  "_id": "gtBOdgJeKfLgMhNi",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17600000,
+  "ownership": {
+    "default": 0
+  }
+}

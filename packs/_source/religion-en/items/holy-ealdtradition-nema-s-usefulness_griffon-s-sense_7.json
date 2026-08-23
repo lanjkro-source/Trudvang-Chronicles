@@ -1,0 +1,28 @@
+{
+  "name": "Griffon's Sense",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Nema's Usefulness",
+    "description": "The Bruid hears all noises and conversations within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!uDy0ZbGbHcIdJeKf",
+  "_id": "uDy0ZbGbHcIdJeKf",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 12200000,
+  "ownership": {
+    "default": 0
+  }
+}

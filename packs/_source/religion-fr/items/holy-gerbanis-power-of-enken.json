@@ -1,0 +1,25 @@
+{
+  "name": "Pouvoir d'Enken",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken",
+    "description": "Pouvoirs accordant courage, volonté, vision de l'âme, vision nocturne et armures de tempête de plus en plus puissantes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!5acYIeHcIdJeKfLg",
+  "_id": "5acYIeHcIdJeKfLg",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 1300000,
+  "ownership": {
+    "default": 0
+  }
+}

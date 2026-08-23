@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!lERuMHaGbHcIdJeK",
+  "_id": "lERuMHaGbHcIdJeK",
+  "name": "Power of Repair",
+  "type": "Item",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sorting": "a",
+  "sort": 30400000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

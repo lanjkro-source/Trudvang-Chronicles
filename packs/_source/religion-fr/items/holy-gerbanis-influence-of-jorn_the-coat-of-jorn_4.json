@@ -1,0 +1,28 @@
+{
+  "name": "Manteau de Jorn",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 50 mètres de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!3XWxV0tZu0v1w2x3",
+  "_id": "3XWxV0tZu0v1w2x3",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  }
+}

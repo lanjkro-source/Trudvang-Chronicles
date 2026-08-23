@@ -1,0 +1,28 @@
+{
+  "name": "Regenerative Blood",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:regenerative-blood:3",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:regenerative-blood:3",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!HTlNYuXsYtZu0v1w",
+  "_id": "HTlNYuXsYtZu0v1w",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24100000,
+  "ownership": {
+    "default": 0
+  }
+}

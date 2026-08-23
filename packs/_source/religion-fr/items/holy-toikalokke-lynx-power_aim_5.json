@@ -1,0 +1,28 @@
+{
+  "name": "Visée",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:aim:5",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:aim:5",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "Quand l’ihana utilise une arme à distance pour attaquer, il peut viser la cible pendant la durée du pouvoir, ce qui lui confère un bonus de +1 à la VC pour toucher la cible.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!vBlwuTnToUpVqWrX",
+  "_id": "vBlwuTnToUpVqWrX",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33800000,
+  "ownership": {
+    "default": 0
+  }
+}

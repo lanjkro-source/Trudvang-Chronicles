@@ -1,0 +1,28 @@
+{
+  "name": "Animal Tracks",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Animal Mind",
+    "description": "Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!xI0gXvXsYtZu0v1w",
+  "_id": "xI0gXvXsYtZu0v1w",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 32500000,
+  "ownership": {
+    "default": 0
+  }
+}

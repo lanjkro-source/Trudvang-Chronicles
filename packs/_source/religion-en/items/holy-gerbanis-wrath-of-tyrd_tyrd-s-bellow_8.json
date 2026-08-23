@@ -1,0 +1,28 @@
+{
+  "name": "Tyrd's Bellow",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Wrath of Tyrd",
+    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Mabj95y4z5A6B7C8",
+  "_id": "Mabj95y4z5A6B7C8",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6700000,
+  "ownership": {
+    "default": 0
+  }
+}

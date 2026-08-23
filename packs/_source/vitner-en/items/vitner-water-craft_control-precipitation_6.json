@@ -1,0 +1,28 @@
+{
+  "name": "Control Precipitation",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:control-precipitation:6",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:control-precipitation:6",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "The spell can change the amount of precipitation that falls to the ground.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!kOuCfSkQlRmSnToU",
+  "_id": "kOuCfSkQlRmSnToU",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13800000,
+  "ownership": {
+    "default": 0
+  }
+}

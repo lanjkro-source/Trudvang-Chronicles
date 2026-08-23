@@ -1,0 +1,25 @@
+{
+  "name": "Choc de l'enclume",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-anvil-shock"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-anvil-shock",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!gBTKHZqWrXsYtZu0",
+  "_id": "gBTKHZqWrXsYtZu0",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 27000000,
+  "ownership": {
+    "default": 0
+  }
+}

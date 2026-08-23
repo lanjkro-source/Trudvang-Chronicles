@@ -1,0 +1,28 @@
+{
+  "name": "Seeing",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:seeing:3",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:seeing:3",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Power of Vision",
+    "description": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!3zQe6gKfLgMhNiOj",
+  "_id": "3zQe6gKfLgMhNiOj",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9600000,
+  "ownership": {
+    "default": 0
+  }
+}

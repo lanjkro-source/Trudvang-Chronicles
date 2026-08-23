@@ -1,0 +1,25 @@
+{
+  "name": "Tablet of Anger",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger",
+    "description": "Sacred powers of blood, stone, martyrdom, destructive bolts, bursts, and divine purging.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!0vmDqMeKfLgMhNiO",
+  "_id": "0vmDqMeKfLgMhNiO",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 13600000,
+  "ownership": {
+    "default": 0
+  }
+}

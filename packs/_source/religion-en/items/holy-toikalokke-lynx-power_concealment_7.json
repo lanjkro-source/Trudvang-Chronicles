@@ -1,0 +1,28 @@
+{
+  "name": "Concealment",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:concealment:7",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:concealment:7",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!7pr2JdGbHcIdJeKf",
+  "_id": "7pr2JdGbHcIdJeKf",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 34000000,
+  "ownership": {
+    "default": 0
+  }
+}

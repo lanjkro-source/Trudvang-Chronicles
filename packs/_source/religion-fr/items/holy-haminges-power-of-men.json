@@ -1,0 +1,25 @@
+{
+  "name": "Puissance des hommes",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men",
+    "description": "Arts mortels et nains de maîtrise, d'adresse aux armes, de breuvages curatifs, de forge et d'exploits légendaires.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!dxEBghLgMhNiOjPk",
+  "_id": "dxEBghLgMhNiOjPk",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 22500000,
+  "ownership": {
+    "default": 0
+  }
+}

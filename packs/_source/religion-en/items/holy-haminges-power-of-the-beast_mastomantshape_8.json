@@ -1,0 +1,28 @@
+{
+  "name": "Mastomantshape",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Power of the Beast",
+    "description": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!sKngxNeKfLgMhNiO",
+  "_id": "sKngxNeKfLgMhNiO",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 21300000,
+  "ownership": {
+    "default": 0
+  }
+}

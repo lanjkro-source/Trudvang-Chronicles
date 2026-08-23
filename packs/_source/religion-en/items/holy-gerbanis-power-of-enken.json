@@ -1,0 +1,25 @@
+{
+  "name": "Power of Enken",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken",
+    "description": "Powers granting courage, will, soul sight, night vision, and increasingly mighty storm armor.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!5acYIeHcIdJeKfLg",
+  "_id": "5acYIeHcIdJeKfLg",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 1300000,
+  "ownership": {
+    "default": 0
+  }
+}

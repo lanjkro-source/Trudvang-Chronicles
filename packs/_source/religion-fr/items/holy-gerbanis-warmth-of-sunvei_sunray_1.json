@@ -1,0 +1,28 @@
+{
+  "name": "Rayons du soleil",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Solvei répond au souhait de l’arpen teur des brumes et fait briller les rayons du soleil sur lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ghCHGLgMhNiOjPkQ",
+  "_id": "ghCHGLgMhNiOjPkQ",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 3800000,
+  "ownership": {
+    "default": 0
+  }
+}

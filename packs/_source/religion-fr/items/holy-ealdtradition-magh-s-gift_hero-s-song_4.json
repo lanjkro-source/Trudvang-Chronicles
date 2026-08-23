@@ -1,0 +1,28 @@
+{
+  "name": "Chant du héros",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:hero-s-song:4",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Don de Magh",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!mR6M18D9EaGbHcId",
+  "_id": "mR6M18D9EaGbHcId",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 10800000,
+  "ownership": {
+    "default": 0
+  }
+}

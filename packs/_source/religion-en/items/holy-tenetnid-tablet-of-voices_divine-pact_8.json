@@ -1,0 +1,28 @@
+{
+  "name": "Divine Pact",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablet of Voices",
+    "description": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!RGtjXA4z5A6B7C8D",
+  "_id": "RGtjXA4z5A6B7C8D",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 20100000,
+  "ownership": {
+    "default": 0
+  }
+}

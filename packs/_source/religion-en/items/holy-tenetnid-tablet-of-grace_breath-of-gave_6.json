@@ -1,0 +1,28 @@
+{
+  "name": "Breath of Gave",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "Restores life and strength through Gave's merciful breath.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Ix8EyRmSnToUpVqW",
+  "_id": "Ix8EyRmSnToUpVqW",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15500000,
+  "ownership": {
+    "default": 0
+  }
+}

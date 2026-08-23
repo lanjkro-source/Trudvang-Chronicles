@@ -1,0 +1,25 @@
+{
+  "name": "Pouvoir de la bête",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast",
+    "description": "Pouvoirs bestiaux accordant instinct de prédateur, défenses, griffes, fourrure, endurance et transformation animale.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!k1cnmA5A6B7C8D9E",
+  "_id": "k1cnmA5A6B7C8D9E",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 20300000,
+  "ownership": {
+    "default": 0
+  }
+}

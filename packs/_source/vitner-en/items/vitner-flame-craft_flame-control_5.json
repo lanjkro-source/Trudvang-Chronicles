@@ -1,0 +1,28 @@
+{
+  "name": "Flame Control",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:flame-control:5",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:flame-control:5",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Flame Craft",
+    "description": "armed actions in the same action round in which they conjure the spell.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!xUD5kXpVqWrXsYtZ",
+  "_id": "xUD5kXpVqWrXsYtZ",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6700000,
+  "ownership": {
+    "default": 0
+  }
+}

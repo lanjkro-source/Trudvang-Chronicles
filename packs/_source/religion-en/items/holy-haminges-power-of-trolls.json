@@ -1,0 +1,25 @@
+{
+  "name": "Power of Trolls",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls",
+    "description": "Troll powers of disease, illusion, persuasion, fearlessness, cunning, and mountain enchantment.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!tQP0nMfLgMhNiOjP",
+  "_id": "tQP0nMfLgMhNiOjP",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 25800000,
+  "ownership": {
+    "default": 0
+  }
+}

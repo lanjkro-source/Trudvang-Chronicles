@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle des vents",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:control-wind:9",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:control-wind:9",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana contrôle la force du vent au sein d’une sphère de 10 mètres de rayon autour de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!PuM17gJeKfLgMhNi",
+  "_id": "PuM17gJeKfLgMhNi",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35400000,
+  "ownership": {
+    "default": 0
+  }
+}

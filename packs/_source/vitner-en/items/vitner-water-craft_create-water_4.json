@@ -1,0 +1,28 @@
+{
+  "name": "Create Water",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:create-water:4",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:create-water:4",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!RCIZRbD8D9EaGbHc",
+  "_id": "RCIZRbD8D9EaGbHc",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13600000,
+  "ownership": {
+    "default": 0
+  }
+}

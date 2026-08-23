@@ -1,0 +1,28 @@
+{
+  "name": "King's Militia",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Heritage of Majne",
+    "description": "The Bruid summons a spirit warrior from the great King’s militia.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!D21XkOjPkQlRmSnT",
+  "_id": "D21XkOjPkQlRmSnT",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9600000,
+  "ownership": {
+    "default": 0
+  }
+}

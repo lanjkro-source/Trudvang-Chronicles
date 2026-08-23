@@ -1,0 +1,28 @@
+{
+  "name": "Grace of Gave",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablet of Voices",
+    "description": "The Gavlian can bless someone and their future circumstances.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!EWlBzVnToUpVqWrX",
+  "_id": "EWlBzVnToUpVqWrX",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19800000,
+  "ownership": {
+    "default": 0
+  }
+}

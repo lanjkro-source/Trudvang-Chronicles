@@ -1,0 +1,25 @@
+{
+  "name": "Chaleur des profondeurs",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-heat-of-the-depths"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-heat-of-the-depths",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!SRxyStVqWrXsYtZu",
+  "_id": "SRxyStVqWrXsYtZu",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 29400000,
+  "ownership": {
+    "default": 0
+  }
+}

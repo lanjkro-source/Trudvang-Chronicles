@@ -1,0 +1,28 @@
+{
+  "name": "Call on Animals",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:call-on-animals:2",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:call-on-animals:2",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Animal Vitner",
+    "description": "Calls nearby animals of a chosen kind to gather around the mage.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!QSDkvWqWrXsYtZu0",
+  "_id": "QSDkvWqWrXsYtZu0",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 1800000,
+  "ownership": {
+    "default": 0
+  }
+}

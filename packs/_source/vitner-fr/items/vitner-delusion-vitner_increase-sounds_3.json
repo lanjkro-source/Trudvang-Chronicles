@@ -1,0 +1,28 @@
+{
+  "name": "Amplification des sons",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "L’enchanteur tisse le vitner autour d’une personne ou d’une créature afin d’amplifier tous les sons qu’elle produit.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!bVOJpnQlRmSnToUp",
+  "_id": "bVOJpnQlRmSnToUp",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4200000,
+  "ownership": {
+    "default": 0
+  }
+}

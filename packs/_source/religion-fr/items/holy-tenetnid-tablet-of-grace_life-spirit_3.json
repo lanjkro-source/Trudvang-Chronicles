@@ -1,0 +1,28 @@
+{
+  "name": "Esprit de la vie",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence infé rieure (comme les oiseaux, les serpents et les cerfs).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Nkh0auYtZu0v1w2x",
+  "_id": "Nkh0auYtZu0v1w2x",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15200000,
+  "ownership": {
+    "default": 0
+  }
+}

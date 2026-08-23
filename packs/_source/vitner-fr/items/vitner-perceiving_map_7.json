@@ -1,0 +1,28 @@
+{
+  "name": "Cartographie",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:map:7",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:map:7",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!8VKJK5z5A6B7C8D9",
+  "_id": "8VKJK5z5A6B7C8D9",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7800000,
+  "ownership": {
+    "default": 0
+  }
+}

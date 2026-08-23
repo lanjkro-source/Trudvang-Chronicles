@@ -1,0 +1,28 @@
+{
+  "name": "Objet d'alarme",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:alarm-object:4",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alarm-object:4",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner des objets",
+    "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!PThxJMdJeKfLgMhN",
+  "_id": "PThxJMdJeKfLgMhN",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12600000,
+  "ownership": {
+    "default": 0
+  }
+}

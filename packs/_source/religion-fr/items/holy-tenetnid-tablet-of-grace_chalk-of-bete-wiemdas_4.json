@@ -1,0 +1,28 @@
+{
+  "name": "Craie de Bete Wiemdas",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!zR8JlaFaGbHcIdJe",
+  "_id": "zR8JlaFaGbHcIdJe",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15300000,
+  "ownership": {
+    "default": 0
+  }
+}

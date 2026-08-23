@@ -1,0 +1,28 @@
+{
+  "name": "Piste des brumes",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!PFeMrQlRmSnToUpV",
+  "_id": "PFeMrQlRmSnToUpV",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11800000,
+  "ownership": {
+    "default": 0
+  }
+}

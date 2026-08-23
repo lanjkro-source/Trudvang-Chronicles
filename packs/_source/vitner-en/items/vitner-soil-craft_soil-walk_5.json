@@ -1,0 +1,28 @@
+{
+  "name": "Soil Walk",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:soil-walk:5",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:soil-walk:5",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Soil Craft",
+    "description": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!FhSR83v1w2x3y4z5",
+  "_id": "FhSR83v1w2x3y4z5",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10700000,
+  "ownership": {
+    "default": 0
+  }
+}

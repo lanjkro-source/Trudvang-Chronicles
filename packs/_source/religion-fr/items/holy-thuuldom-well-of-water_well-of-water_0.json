@@ -1,0 +1,28 @@
+{
+  "name": "Source d'eau",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-well-of-water:well-of-water:0",
+      "tabletId": "holy-thuuldom-well-of-water"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-well-of-water:well-of-water:0",
+    "tabletId": "holy-thuuldom-well-of-water",
+    "tablet": "Source d'eau",
+    "description": "Le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!yk2Mj9A6B7C8D9Ea",
+  "_id": "yk2Mj9A6B7C8D9Ea",
+  "folder": "0S1216z5A6B7C8D9",
+  "sort": 32000000,
+  "ownership": {
+    "default": 0
+  }
+}

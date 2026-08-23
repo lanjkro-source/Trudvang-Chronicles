@@ -1,0 +1,28 @@
+{
+  "name": "Paralyzing Gaze",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Power of the Dragon",
+    "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!jCx1lPhNiOjPkQlR",
+  "_id": "jCx1lPhNiOjPkQlR",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 21900000,
+  "ownership": {
+    "default": 0
+  }
+}

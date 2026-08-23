@@ -1,0 +1,28 @@
+{
+  "name": "Simmering Blood",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "Through this ability , Morgu bestows more life essence upon the Bruid.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!IC7PcVnToUpVqWrX",
+  "_id": "IC7PcVnToUpVqWrX",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 12600000,
+  "ownership": {
+    "default": 0
+  }
+}

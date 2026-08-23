@@ -1,0 +1,28 @@
+{
+  "name": "Protection contre le vitner",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Sagesse de Windinna",
+    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!yzAJnXqWrXsYtZu0",
+  "_id": "yzAJnXqWrXsYtZu0",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5300000,
+  "ownership": {
+    "default": 0
+  }
+}

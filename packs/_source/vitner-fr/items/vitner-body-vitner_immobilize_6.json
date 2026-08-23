@@ -1,0 +1,28 @@
+{
+  "name": "Immobilisation",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:immobilize:6",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:immobilize:6",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "Ce sort crée une énergie restrictive qui immobilise la victime choisie.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!blXbgUlRmSnToUpV",
+  "_id": "blXbgUlRmSnToUpV",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Fureur de Tyrd",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd",
+    "description": "Pouvoirs de guerre aux armes enflammées, cris terrifiants, fureur belliqueuse, tempêtes de feu et victoire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!YBYKCE8D9EaGbHcI",
+  "_id": "YBYKCE8D9EaGbHcI",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 5700000,
+  "ownership": {
+    "default": 0
+  }
+}

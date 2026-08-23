@@ -1,0 +1,28 @@
+{
+  "name": "Voix illusoire",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "Ce sort permet à la personne enchan tée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Y09LhnSnToUpVqWr",
+  "_id": "Y09LhnSnToUpVqWr",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4400000,
+  "ownership": {
+    "default": 0
+  }
+}

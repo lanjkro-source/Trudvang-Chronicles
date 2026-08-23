@@ -1,0 +1,25 @@
+{
+  "name": "Magh's Gift",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift",
+    "description": "Songs and bonds that aid travel, riders, harvests, heroes, and the changing seasons.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!dG6OVQhNiOjPkQlR",
+  "_id": "dG6OVQhNiOjPkQlR",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 10200000,
+  "ownership": {
+    "default": 0
+  }
+}

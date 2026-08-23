@@ -1,0 +1,28 @@
+{
+  "name": "Wolf Claws",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Power of the Beast",
+    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!5BU37QiOjPkQlRmS",
+  "_id": "5BU37QiOjPkQlRmS",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 21000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Accomplished",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:accomplished:1",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:accomplished:1",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "The spirit conjurer can add +1 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Z2GUhfJeKfLgMhNi",
+  "_id": "Z2GUhfJeKfLgMhNi",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 22800000,
+  "ownership": {
+    "default": 0
+  }
+}

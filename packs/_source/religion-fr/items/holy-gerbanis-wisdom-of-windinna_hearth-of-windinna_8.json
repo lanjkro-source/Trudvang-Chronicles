@@ -1,0 +1,28 @@
+{
+  "name": "Âtre de Windinna",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Sagesse de Windinna",
+    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, transformation ou influence extérieure.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!GiNm9gKfLgMhNiOj",
+  "_id": "GiNm9gKfLgMhNiOj",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5600000,
+  "ownership": {
+    "default": 0
+  }
+}

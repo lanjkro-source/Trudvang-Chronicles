@@ -1,0 +1,25 @@
+{
+  "name": "Vitner illusoire",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner",
+    "description": "Illusions manipulant sons, apparence, dissimulation, paysages, silence et invisibilité.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!QuGPdlPkQlRmSnTo",
+  "_id": "QuGPdlPkQlRmSnTo",
+  "folder": null,
+  "sort": 300000,
+  "ownership": {
+    "default": 0
+  }
+}

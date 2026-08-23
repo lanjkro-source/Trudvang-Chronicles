@@ -1,0 +1,28 @@
+{
+  "name": "Volonté",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:willpower:1",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:willpower:1",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Puissance des trolls",
+    "description": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!gf4qoLfLgMhNiOjP",
+  "_id": "gf4qoLfLgMhNiOjP",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26100000,
+  "ownership": {
+    "default": 0
+  }
+}

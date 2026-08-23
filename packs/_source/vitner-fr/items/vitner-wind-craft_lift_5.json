@@ -1,0 +1,28 @@
+{
+  "name": "Vent porteur",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:lift:5",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:lift:5",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "F Temps de tissage : 1 tour de jeu Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!yoxhuz2x3y4z5A6B",
+  "_id": "yoxhuz2x3y4z5A6B",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14700000,
+  "ownership": {
+    "default": 0
+  }
+}

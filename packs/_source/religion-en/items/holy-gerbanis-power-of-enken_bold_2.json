@@ -1,0 +1,28 @@
+{
+  "name": "Bold",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:bold:2",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:bold:2",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Power of Enken",
+    "description": "The Stormkelt prays to Enken and is granted courage for herself or bestows courage upon a chosen individual.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!H7Agl4x3y4z5A6B7",
+  "_id": "H7Agl4x3y4z5A6B7",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1700000,
+  "ownership": {
+    "default": 0
+  }
+}

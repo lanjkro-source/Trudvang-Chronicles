@@ -1,0 +1,28 @@
+{
+  "name": "Tremblement de terre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:earthquake:7",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:earthquake:7",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana peut provoquer un séisme qui secoue le sol tout autour de lui et jette au sol toutes les créatures situées à portée (sauf l’ihana).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!SDB1S4v1w2x3y4z5",
+  "_id": "SDB1S4v1w2x3y4z5",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35200000,
+  "ownership": {
+    "default": 0
+  }
+}

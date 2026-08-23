@@ -1,0 +1,25 @@
+{
+  "name": "Sorcellerie",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft",
+    "description": "Malédictions et maladies apportant fièvre, amnésie, peste, mauvaises récoltes et arbres hostiles.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!v1RNuE6B7C8D9EaG",
+  "_id": "v1RNuE6B7C8D9EaG",
+  "folder": null,
+  "sort": 1400000,
+  "ownership": {
+    "default": 0
+  }
+}

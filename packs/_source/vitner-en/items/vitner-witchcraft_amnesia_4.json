@@ -1,0 +1,28 @@
+{
+  "name": "Amnesia",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:amnesia:4",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:amnesia:4",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Witchcraft",
+    "description": "The spell creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!EyBYbhLgMhNiOjPk",
+  "_id": "EyBYbhLgMhNiOjPk",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15700000,
+  "ownership": {
+    "default": 0
+  }
+}

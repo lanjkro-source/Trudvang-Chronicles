@@ -1,0 +1,28 @@
+{
+  "name": "Force du tursir",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Puissance des tursirs",
+    "description": "F Type : persistant F Durée : 7 tours de jeu F Portée : personnelle F Temps d’invocation : 1 tour de jeu Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!2ylZ5gIdJeKfLgMh",
+  "_id": "2ylZ5gIdJeKfLgMh",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Maîtrise du vent",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft",
+    "description": "Magie de l'air purifiant l'air, créant brume et vent, accordant portance ou protection, invoquant les tempêtes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!TjcgoI9EaGbHcIdJ",
+  "_id": "TjcgoI9EaGbHcIdJ",
+  "folder": null,
+  "sort": 1300000,
+  "ownership": {
+    "default": 0
+  }
+}

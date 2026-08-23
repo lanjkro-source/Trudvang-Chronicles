@@ -1,0 +1,28 @@
+{
+  "name": "Hymne royal",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Don de Magh",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!NHLBISlRmSnToUpV",
+  "_id": "NHLBISlRmSnToUpV",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 11000000,
+  "ownership": {
+    "default": 0
+  }
+}

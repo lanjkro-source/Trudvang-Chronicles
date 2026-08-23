@@ -1,0 +1,28 @@
+{
+  "name": "Foyer béni",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablette du soleil",
+    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!jB8uIqSnToUpVqWr",
+  "_id": "jB8uIqSnToUpVqWr",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18700000,
+  "ownership": {
+    "default": 0
+  }
+}

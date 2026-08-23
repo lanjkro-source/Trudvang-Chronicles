@@ -1,0 +1,28 @@
+{
+  "name": "Power of Blood",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablet of Anger",
+    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!DtDiZlQlRmSnToUp",
+  "_id": "DtDiZlQlRmSnToUp",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 13800000,
+  "ownership": {
+    "default": 0
+  }
+}

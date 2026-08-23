@@ -1,0 +1,28 @@
+{
+  "name": "Chaleur des profondeurs",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
+      "tabletId": "holy-thuuldom-heat-of-the-depths"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
+    "tabletId": "holy-thuuldom-heat-of-the-depths",
+    "tablet": "Chaleur des profondeurs",
+    "description": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!iO9FJD8D9EaGbHcI",
+  "_id": "iO9FJD8D9EaGbHcI",
+  "folder": "fdWMTlRmSnToUpVq",
+  "sort": 29600000,
+  "ownership": {
+    "default": 0
+  }
+}

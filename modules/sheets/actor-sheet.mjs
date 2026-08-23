@@ -1,6 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
-import { TABLET_BY_ID } from "../tablet-catalog.mjs";
+import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 
 const BaseActorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -351,7 +351,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
     const tablets = this.actor.compatibleTablets;
     if (!tablets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCompatibleTablets"));
     const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
-    const options = tablets.map(tablet => `<option value="${tablet.id}">${escapeHtml(tablet.name)}</option>`).join("");
+    const options = tablets.map(tablet => `<option value="${tablet.id}">${escapeHtml(tabletName(tablet))}</option>`).join("");
     return new DialogClass({
       title: game.i18n.localize("TRUDVANG.Dialog.AddTablet"),
       content: `<form class="trudvang"><div class="form-group"><label>${game.i18n.localize("TYPES.Item.tablet")}</label><select name="tabletId">${options}</select></div></form>`,

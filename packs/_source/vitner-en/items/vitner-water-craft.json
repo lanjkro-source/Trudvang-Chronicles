@@ -1,0 +1,25 @@
+{
+  "name": "Water Craft",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft",
+    "description": "Water magic for finding, purifying, creating, shaping, solidifying, and walking upon water or waves.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!mLMoNeJeKfLgMhNi",
+  "_id": "mLMoNeJeKfLgMhNi",
+  "folder": null,
+  "sort": 1200000,
+  "ownership": {
+    "default": 0
+  }
+}

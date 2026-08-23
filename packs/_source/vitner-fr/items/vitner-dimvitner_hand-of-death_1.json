@@ -1,0 +1,28 @@
+{
+  "name": "Main funeste",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:hand-of-death:1",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:hand-of-death:1",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ONfRGeHcIdJeKfLg",
+  "_id": "ONfRGeHcIdJeKfLg",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5300000,
+  "ownership": {
+    "default": 0
+  }
+}

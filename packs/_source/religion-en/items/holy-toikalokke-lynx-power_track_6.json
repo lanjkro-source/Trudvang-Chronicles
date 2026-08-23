@@ -1,0 +1,28 @@
+{
+  "name": "Track",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:track:6",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:track:6",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!84WG5HbHcIdJeKfL",
+  "_id": "84WG5HbHcIdJeKfL",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33900000,
+  "ownership": {
+    "default": 0
+  }
+}

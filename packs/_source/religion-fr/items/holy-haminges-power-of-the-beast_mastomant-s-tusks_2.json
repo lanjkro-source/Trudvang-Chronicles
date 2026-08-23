@@ -1,0 +1,28 @@
+{
+  "name": "Défenses du mastomant",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Pouvoir de la bête",
+    "description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cin quantaine de centimètres surgissent de sa mâchoire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!mphWHYpVqWrXsYtZ",
+  "_id": "mphWHYpVqWrXsYtZ",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 20700000,
+  "ownership": {
+    "default": 0
+  }
+}

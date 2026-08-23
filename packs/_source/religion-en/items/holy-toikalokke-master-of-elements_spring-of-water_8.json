@@ -1,0 +1,28 @@
+{
+  "name": "Spring of Water",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:spring-of-water:8",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!pcJPpA2x3y4z5A6B",
+  "_id": "pcJPpA2x3y4z5A6B",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35300000,
+  "ownership": {
+    "default": 0
+  }
+}

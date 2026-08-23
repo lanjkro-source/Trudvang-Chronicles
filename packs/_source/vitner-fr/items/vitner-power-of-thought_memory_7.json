@@ -1,0 +1,28 @@
+{
+  "name": "Mémoire",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:memory:7",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:memory:7",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Pouvoir de la pensée",
+    "description": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!AW7jKE9EaGbHcIdJ",
+  "_id": "AW7jKE9EaGbHcIdJ",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8700000,
+  "ownership": {
+    "default": 0
+  }
+}

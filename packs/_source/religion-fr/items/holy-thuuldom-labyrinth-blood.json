@@ -1,0 +1,25 @@
+{
+  "name": "Sang du labyrinthe",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-labyrinth-blood"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-labyrinth-blood",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!JFxRQLdJeKfLgMhN",
+  "_id": "JFxRQLdJeKfLgMhN",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 29700000,
+  "ownership": {
+    "default": 0
+  }
+}

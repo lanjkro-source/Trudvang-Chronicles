@@ -1,0 +1,28 @@
+{
+  "name": "Fire Tamer",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!mbg30KeKfLgMhNiO",
+  "_id": "mbg30KeKfLgMhNiO",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34900000,
+  "ownership": {
+    "default": 0
+  }
+}

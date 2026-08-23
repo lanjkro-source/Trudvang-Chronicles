@@ -1,0 +1,28 @@
+{
+  "name": "Dawn Shine",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablet of the Sun",
+    "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!igr90jNiOjPkQlRm",
+  "_id": "igr90jNiOjPkQlRm",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18200000,
+  "ownership": {
+    "default": 0
+  }
+}

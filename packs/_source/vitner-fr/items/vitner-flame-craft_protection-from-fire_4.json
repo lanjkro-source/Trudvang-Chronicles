@@ -1,0 +1,28 @@
+{
+  "name": "Protection contre le feu",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:protection-from-fire:4",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:protection-from-fire:4",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Maîtrise des flammes",
+    "description": "Ce sort génère une couche protectrice de vitner autour de l’enchanteur ou de la créature ciblée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!G2xeh0u0v1w2x3y4",
+  "_id": "G2xeh0u0v1w2x3y4",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6600000,
+  "ownership": {
+    "default": 0
+  }
+}

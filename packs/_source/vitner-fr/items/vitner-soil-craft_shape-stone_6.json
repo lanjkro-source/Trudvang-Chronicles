@@ -1,0 +1,28 @@
+{
+  "name": "Façonnage de la pierre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:shape-stone:6",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:shape-stone:6",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "Ce sort transforme tous types de pierres et de minerais, les rendant lisses et malléables comme de la glaise épaisse.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!QuES9VnToUpVqWrX",
+  "_id": "QuES9VnToUpVqWrX",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10800000,
+  "ownership": {
+    "default": 0
+  }
+}

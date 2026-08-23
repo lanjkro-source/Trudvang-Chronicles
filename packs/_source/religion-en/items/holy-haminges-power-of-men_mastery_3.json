@@ -1,0 +1,28 @@
+{
+  "name": "Mastery",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:mastery:3",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:mastery:3",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "Temporarily grants exceptional mastery of a chosen mortal craft or skill.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!82ew2XqWrXsYtZu0",
+  "_id": "82ew2XqWrXsYtZu0",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23000000,
+  "ownership": {
+    "default": 0
+  }
+}

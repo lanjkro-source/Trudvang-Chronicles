@@ -1,0 +1,28 @@
+{
+  "name": "Hurricane Armor",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Power of Enken",
+    "description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!MFmTyE9EaGbHcIdJ",
+  "_id": "MFmTyE9EaGbHcIdJ",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 2200000,
+  "ownership": {
+    "default": 0
+  }
+}

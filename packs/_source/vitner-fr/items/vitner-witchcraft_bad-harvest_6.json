@@ -1,0 +1,28 @@
+{
+  "name": "Mauvaise récolte",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:bad-harvest:6",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:bad-harvest:6",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Sorcellerie",
+    "description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!rcQskvYtZu0v1w2x",
+  "_id": "rcQskvYtZu0v1w2x",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Lecture du vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:read-vitner:6",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:read-vitner:6",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Pouvoir de la vision",
+    "description": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!UVfOw7A6B7C8D9Ea",
+  "_id": "UVfOw7A6B7C8D9Ea",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Joy of Creating",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!T3EdzhKfLgMhNiOj",
+  "_id": "T3EdzhKfLgMhNiOj",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5000000,
+  "ownership": {
+    "default": 0
+  }
+}

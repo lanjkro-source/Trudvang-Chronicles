@@ -1,0 +1,28 @@
+{
+  "name": "Seigneur des vents",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:wind-catcher:9",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:wind-catcher:9",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "Ce sort déchaîne des rafales de vent autour d’un ou plusieurs personnages, qui les soulèvent du sol.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Anjz5x3y4z5A6B7C",
+  "_id": "Anjz5x3y4z5A6B7C",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 15100000,
+  "ownership": {
+    "default": 0
+  }
+}

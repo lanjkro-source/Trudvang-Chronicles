@@ -1,0 +1,25 @@
+{
+  "name": "Puissance des tursirs",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses",
+    "description": "Pouvoirs de trolls et de tursirs accordant peaux de glace, force immense, souffles destructeurs et rage dévastatrice.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!VPx39eGbHcIdJeKf",
+  "_id": "VPx39eGbHcIdJeKf",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 24700000,
+  "ownership": {
+    "default": 0
+  }
+}

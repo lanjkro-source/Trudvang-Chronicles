@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle des flammes",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:flame-control:5",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:flame-control:5",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Maîtrise des flammes",
+    "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!xUD5kXpVqWrXsYtZ",
+  "_id": "xUD5kXpVqWrXsYtZ",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6700000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Disease Carrier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Power of Trolls",
+    "description": "The spirit conjurer begins to reek of troll, grease, sweat, and feces.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!pTKXR6B7C8D9EaGb",
+  "_id": "pTKXR6B7C8D9EaGb",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Instinct du prédateur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Pouvoir de la bête",
+    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!wuPRFYpVqWrXsYtZ",
+  "_id": "wuPRFYpVqWrXsYtZ",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 20600000,
+  "ownership": {
+    "default": 0
+  }
+}

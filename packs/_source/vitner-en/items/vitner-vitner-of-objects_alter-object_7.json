@@ -1,0 +1,28 @@
+{
+  "name": "Alter Object",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:alter-object:7",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:alter-object:7",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner of Objects",
+    "description": "The spell affects any object with a size equal to or smaller than a large box.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!bfToqRjPkQlRmSnT",
+  "_id": "bfToqRjPkQlRmSnT",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12900000,
+  "ownership": {
+    "default": 0
+  }
+}

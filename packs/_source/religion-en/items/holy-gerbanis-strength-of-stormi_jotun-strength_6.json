@@ -1,0 +1,28 @@
+{
+  "name": "Jotun Strength",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Strength of Stormi",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!ZbUvaPjPkQlRmSnT",
+  "_id": "ZbUvaPjPkQlRmSnT",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 3200000,
+  "ownership": {
+    "default": 0
+  }
+}

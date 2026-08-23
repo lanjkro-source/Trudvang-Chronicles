@@ -1,0 +1,28 @@
+{
+  "name": "Snarfari",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:snarfari:8",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:snarfari:8",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!qHo6RMdJeKfLgMhN",
+  "_id": "qHo6RMdJeKfLgMhN",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 1200000,
+  "ownership": {
+    "default": 0
+  }
+}

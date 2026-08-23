@@ -1,0 +1,28 @@
+{
+  "name": "Façonnage de l'eau",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:form-water:3",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:form-water:3",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Maîtrise de l'eau",
+    "description": "En contrôlant le vitner qui s’écoule dans une source d’eau située à proximité, l’enchanteur peut diriger et modeler l’eau comme bon lui semble.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!2Blp1bE9EaGbHcId",
+  "_id": "2Blp1bE9EaGbHcId",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13500000,
+  "ownership": {
+    "default": 0
+  }
+}

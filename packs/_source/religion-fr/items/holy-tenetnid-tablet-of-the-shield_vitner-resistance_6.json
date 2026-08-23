@@ -1,0 +1,28 @@
+{
+  "name": "Résistance au vitner",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablette du bouclier",
+    "description": "TRUDVANG.Description.PowerSummary",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Ft02ccFaGbHcIdJe",
+  "_id": "Ft02ccFaGbHcIdJe",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17700000,
+  "ownership": {
+    "default": 0
+  }
+}

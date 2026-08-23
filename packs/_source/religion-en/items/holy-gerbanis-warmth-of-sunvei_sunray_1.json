@@ -1,0 +1,28 @@
+{
+  "name": "Sunray",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Warmth of Sunvei",
+    "description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ghCHGLgMhNiOjPkQ",
+  "_id": "ghCHGLgMhNiOjPkQ",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 3800000,
+  "ownership": {
+    "default": 0
+  }
+}

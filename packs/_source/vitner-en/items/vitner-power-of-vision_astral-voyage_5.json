@@ -1,0 +1,28 @@
+{
+  "name": "Astral Voyage",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:astral-voyage:5",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:astral-voyage:5",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Power of Vision",
+    "description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!TmmgO2v1w2x3y4z5",
+  "_id": "TmmgO2v1w2x3y4z5",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9800000,
+  "ownership": {
+    "default": 0
+  }
+}

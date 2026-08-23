@@ -1,0 +1,25 @@
+{
+  "name": "Don de Thanja",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja",
+    "description": "Pouvoirs de nature pour parler aux animaux et prendre leur forme, se dissimiler dans les terres sauvages et communier avec les êtres de la forêt.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!w65LAqUpVqWrXsYt",
+  "_id": "w65LAqUpVqWrXsYt",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 6900000,
+  "ownership": {
+    "default": 0
+  }
+}

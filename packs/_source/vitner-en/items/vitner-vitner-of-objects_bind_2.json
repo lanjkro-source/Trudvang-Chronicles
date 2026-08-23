@@ -1,0 +1,28 @@
+{
+  "name": "Bind",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:bind:2",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:bind:2",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner of Objects",
+    "description": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!xhBmeUnToUpVqWrX",
+  "_id": "xhBmeUnToUpVqWrX",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12400000,
+  "ownership": {
+    "default": 0
+  }
+}

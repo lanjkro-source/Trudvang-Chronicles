@@ -1,0 +1,28 @@
+{
+  "name": "Hot and Cold",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:hot-and-cold:10",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:hot-and-cold:10",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The Ihana can control the temperature.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!H0oz2NiOjPkQlRmS",
+  "_id": "H0oz2NiOjPkQlRmS",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35500000,
+  "ownership": {
+    "default": 0
+  }
+}

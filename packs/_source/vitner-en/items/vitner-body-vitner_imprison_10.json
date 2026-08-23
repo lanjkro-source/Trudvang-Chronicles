@@ -1,0 +1,28 @@
+{
+  "name": "Imprison",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:imprison:10",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:imprison:10",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "The spell is an extension of the spell Immobilize, which means that the enchanter must first successfully immobilize the victim through that spell before attempting to weave this one.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!q4yAUTmSnToUpVqW",
+  "_id": "q4yAUTmSnToUpVqW",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3600000,
+  "ownership": {
+    "default": 0
+  }
+}

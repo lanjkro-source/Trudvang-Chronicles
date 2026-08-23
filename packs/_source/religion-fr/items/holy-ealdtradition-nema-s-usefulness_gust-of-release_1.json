@@ -1,0 +1,28 @@
+{
+  "name": "Souffle libérateur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-des sus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ZpWnIA3y4z5A6B7C",
+  "_id": "ZpWnIA3y4z5A6B7C",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Detect Being",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:detect-being:4",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:detect-being:4",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perceiving",
+    "description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!mmnbXVmSnToUpVqW",
+  "_id": "mmnbXVmSnToUpVqW",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7500000,
+  "ownership": {
+    "default": 0
+  }
+}

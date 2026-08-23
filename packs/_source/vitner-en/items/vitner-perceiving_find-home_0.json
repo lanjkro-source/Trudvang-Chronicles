@@ -1,0 +1,28 @@
+{
+  "name": "Find Home",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:find-home:0",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:find-home:0",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perceiving",
+    "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!28C0LcHcIdJeKfLg",
+  "_id": "28C0LcHcIdJeKfLg",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7100000,
+  "ownership": {
+    "default": 0
+  }
+}

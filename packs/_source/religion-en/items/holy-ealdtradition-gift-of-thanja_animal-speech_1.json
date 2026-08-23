@@ -1,0 +1,28 @@
+{
+  "name": "Animal Speech",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:animal-speech:1",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:animal-speech:1",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Gift of Thanja",
+    "description": "The Bruid is able to speak with ordinary animals for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!xPP8sJeKfLgMhNiO",
+  "_id": "xPP8sJeKfLgMhNiO",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7200000,
+  "ownership": {
+    "default": 0
+  }
+}

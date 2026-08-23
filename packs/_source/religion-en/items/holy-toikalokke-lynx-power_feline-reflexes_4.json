@@ -1,0 +1,28 @@
+{
+  "name": "Feline Reflexes",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "The Ihana evades an incoming ranged attack.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!DjjCffIdJeKfLgMh",
+  "_id": "DjjCffIdJeKfLgMh",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33700000,
+  "ownership": {
+    "default": 0
+  }
+}

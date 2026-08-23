@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!lbCNyNhNiOjPkQlR",
+  "_id": "lbCNyNhNiOjPkQlR",
+  "name": "Soil Craft",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 10100000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

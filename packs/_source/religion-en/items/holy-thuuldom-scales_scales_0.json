@@ -1,0 +1,28 @@
+{
+  "name": "Scales",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-scales:scales:0",
+      "tabletId": "holy-thuuldom-scales"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-scales:scales:0",
+    "tabletId": "holy-thuuldom-scales",
+    "tablet": "Scales",
+    "description": "The power from the rune stretches like a snakeskin of metal over the Thuul’s body.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Wero4z4z5A6B7C8D",
+  "_id": "Wero4z4z5A6B7C8D",
+  "folder": "LSBwvHcIdJeKfLgM",
+  "sort": 30800000,
+  "ownership": {
+    "default": 0
+  }
+}

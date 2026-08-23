@@ -1,0 +1,28 @@
+{
+  "name": "Cri de bataille",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Fureur de Tyrd",
+    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!9UoJTbE9EaGbHcId",
+  "_id": "9UoJTbE9EaGbHcId",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6000000,
+  "ownership": {
+    "default": 0
+  }
+}

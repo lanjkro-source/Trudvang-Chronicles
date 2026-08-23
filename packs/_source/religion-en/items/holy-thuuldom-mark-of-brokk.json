@@ -1,0 +1,25 @@
+{
+  "name": "Mark of Brokk",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-mark-of-brokk"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-mark-of-brokk",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!oOP2NUmSnToUpVqW",
+  "_id": "oOP2NUmSnToUpVqW",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 30000000,
+  "ownership": {
+    "default": 0
+  }
+}

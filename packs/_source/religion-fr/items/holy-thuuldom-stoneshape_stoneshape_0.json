@@ -1,0 +1,28 @@
+{
+  "name": "Aspect de la pierre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stoneshape:stoneshape:0",
+      "tabletId": "holy-thuuldom-stoneshape"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stoneshape:stoneshape:0",
+    "tabletId": "holy-thuuldom-stoneshape",
+    "tablet": "Aspect de la pierre",
+    "description": "À l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!mJxFrrSnToUpVqWr",
+  "_id": "mJxFrrSnToUpVqWr",
+  "folder": "IXpRkWqWrXsYtZu0",
+  "sort": 31700000,
+  "ownership": {
+    "default": 0
+  }
+}

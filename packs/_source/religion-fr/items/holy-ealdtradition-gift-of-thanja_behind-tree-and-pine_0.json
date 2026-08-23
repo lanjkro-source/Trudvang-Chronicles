@@ -1,0 +1,28 @@
+{
+  "name": "Derrière le frêne et le pin",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!LVAU0B4z5A6B7C8D",
+  "_id": "LVAU0B4z5A6B7C8D",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Rafale de vent",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:wind-blast:7",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:wind-blast:7",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!YJDogqVqWrXsYtZu",
+  "_id": "YJDogqVqWrXsYtZu",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14900000,
+  "ownership": {
+    "default": 0
+  }
+}

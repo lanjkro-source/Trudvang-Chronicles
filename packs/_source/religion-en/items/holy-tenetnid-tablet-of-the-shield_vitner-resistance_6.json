@@ -1,0 +1,28 @@
+{
+  "name": "Vitner Resistance",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Ft02ccFaGbHcIdJe",
+  "_id": "Ft02ccFaGbHcIdJe",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17700000,
+  "ownership": {
+    "default": 0
+  }
+}

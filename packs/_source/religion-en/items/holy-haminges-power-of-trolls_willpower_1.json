@@ -1,0 +1,28 @@
+{
+  "name": "Willpower",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:willpower:1",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:willpower:1",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Power of Trolls",
+    "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!gf4qoLfLgMhNiOjP",
+  "_id": "gf4qoLfLgMhNiOjP",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Agrandissement/rapetissement d'objet",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner des objets",
+    "description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!75PrZ2x3y4z5A6B7",
+  "_id": "75PrZ2x3y4z5A6B7",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Tribute of Morgu",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu",
+    "description": "Blood-fueled battle powers that provoke rage and unleash volleys, fire, and murderous fury.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!R9uU2UoUpVqWrXsY",
+  "_id": "R9uU2UoUpVqWrXsY",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 12400000,
+  "ownership": {
+    "default": 0
+  }
+}

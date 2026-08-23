@@ -1,0 +1,28 @@
+{
+  "name": "Belo Seoth's White Armor",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "Clothes the recipient in Belo Seoth's radiant supernatural armor.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!l5u0jHbHcIdJeKfL",
+  "_id": "l5u0jHbHcIdJeKfL",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16600000,
+  "ownership": {
+    "default": 0
+  }
+}

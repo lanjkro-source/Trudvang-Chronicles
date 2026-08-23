@@ -1,0 +1,28 @@
+{
+  "name": "Seigneur des mouches",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:lord-of-the-flies:6",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:lord-of-the-flies:6",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Puissance des trolls",
+    "description": "une valeur de situation de 4 (le modificateur de Constitution s’applique).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!HjkFCZu0v1w2x3y4",
+  "_id": "HjkFCZu0v1w2x3y4",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26600000,
+  "ownership": {
+    "default": 0
+  }
+}

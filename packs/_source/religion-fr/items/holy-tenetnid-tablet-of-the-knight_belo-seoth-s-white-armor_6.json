@@ -1,0 +1,28 @@
+{
+  "name": "Armure blanche de Belo Seoth",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 5.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!l5u0jHbHcIdJeKfL",
+  "_id": "l5u0jHbHcIdJeKfL",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16600000,
+  "ownership": {
+    "default": 0
+  }
+}

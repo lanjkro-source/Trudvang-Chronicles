@@ -1,0 +1,28 @@
+{
+  "name": "Bière forte",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:strong-beer:0",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:strong-beer:0",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Héritage de Majne",
+    "description": "TRUDVANG.Description.PowerSummary",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!5UtNKYqWrXsYtZu0",
+  "_id": "5UtNKYqWrXsYtZu0",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9300000,
+  "ownership": {
+    "default": 0
+  }
+}

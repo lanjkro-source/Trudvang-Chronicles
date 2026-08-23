@@ -1,0 +1,28 @@
+{
+  "name": "Oreilles de cheval",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:horse-ears:0",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Une paire d’oreilles de cheval émerge de la tête du bruide aussi longtemps que ce pouvoir est actif.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!WVJrp0rXsYtZu0v1",
+  "_id": "WVJrp0rXsYtZu0v1",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11500000,
+  "ownership": {
+    "default": 0
+  }
+}

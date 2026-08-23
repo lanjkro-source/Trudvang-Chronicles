@@ -1,0 +1,28 @@
+{
+  "name": "Dompteur du feu",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-tamer:4",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!mbg30KeKfLgMhNiO",
+  "_id": "mbg30KeKfLgMhNiO",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34900000,
+  "ownership": {
+    "default": 0
+  }
+}

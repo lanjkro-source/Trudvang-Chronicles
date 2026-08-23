@@ -1,0 +1,28 @@
+{
+  "name": "Freeing Breeze",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Nema's Usefulness",
+    "description": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!XOaaA9A6B7C8D9Ea",
+  "_id": "XOaaA9A6B7C8D9Ea",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11900000,
+  "ownership": {
+    "default": 0
+  }
+}

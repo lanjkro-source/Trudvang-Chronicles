@@ -1,0 +1,28 @@
+{
+  "name": "Stone Walk",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:stone-walk:7",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:stone-walk:7",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Soil Craft",
+    "description": "The spell creates a coating of vitner around the target that pushes away",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!T4CVQYrXsYtZu0v1",
+  "_id": "T4CVQYrXsYtZu0v1",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10900000,
+  "ownership": {
+    "default": 0
+  }
+}

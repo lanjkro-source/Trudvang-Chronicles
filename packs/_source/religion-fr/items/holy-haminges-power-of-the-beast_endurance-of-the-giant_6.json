@@ -1,0 +1,28 @@
+{
+  "name": "Endurance du géant",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Pouvoir de la bête",
+    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!uruysXrXsYtZu0v1",
+  "_id": "uruysXrXsYtZu0v1",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 21100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Falfax",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:falfax:2",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:falfax:2",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!yOdVL6y4z5A6B7C8",
+  "_id": "yOdVL6y4z5A6B7C8",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  }
+}

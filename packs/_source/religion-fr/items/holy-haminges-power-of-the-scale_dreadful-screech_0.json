@@ -1,0 +1,28 @@
+{
+  "name": "Cri effrayant",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:dreadful-screech:0",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:dreadful-screech:0",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Puissance de l'écaille",
+    "description": "Le conjurateur profère un son terri fiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’en tendre (à l’exception du conjurateur lui-même).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!pcndlx1w2x3y4z5A",
+  "_id": "pcndlx1w2x3y4z5A",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 23800000,
+  "ownership": {
+    "default": 0
+  }
+}

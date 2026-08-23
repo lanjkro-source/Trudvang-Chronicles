@@ -1,0 +1,28 @@
+{
+  "name": "Ouïe du hibou",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Le bruide perçoit tous les bruits et conversations à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!ZyYMnNhNiOjPkQlR",
+  "_id": "ZyYMnNhNiOjPkQlR",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11700000,
+  "ownership": {
+    "default": 0
+  }
+}

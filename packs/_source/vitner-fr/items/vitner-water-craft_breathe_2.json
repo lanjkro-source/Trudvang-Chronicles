@@ -1,0 +1,28 @@
+{
+  "name": "Respiration aquatique",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:breathe:2",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:breathe:2",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Maîtrise de l'eau",
+    "description": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui per mettent de respirer sous l’eau aussi facilement que s’il était à l’air libre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!U00XOcE9EaGbHcId",
+  "_id": "U00XOcE9EaGbHcId",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13400000,
+  "ownership": {
+    "default": 0
+  }
+}

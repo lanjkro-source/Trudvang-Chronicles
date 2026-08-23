@@ -1,0 +1,28 @@
+{
+  "name": "Membre de pierre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Puissance de l'écaille",
+    "description": "Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!fOMoRoToUpVqWrXs",
+  "_id": "fOMoRoToUpVqWrXs",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24300000,
+  "ownership": {
+    "default": 0
+  }
+}

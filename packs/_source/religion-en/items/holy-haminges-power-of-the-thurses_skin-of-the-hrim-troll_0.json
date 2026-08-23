@@ -1,0 +1,28 @@
+{
+  "name": "Skin of the Hrim Troll",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "The spirit conjurer is filled with a portion of the ice troll’s essence and is unaffected by non-magical cold.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!8VjMQaD8D9EaGbHc",
+  "_id": "8VjMQaD8D9EaGbHc",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 24900000,
+  "ownership": {
+    "default": 0
+  }
+}

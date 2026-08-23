@@ -1,0 +1,28 @@
+{
+  "name": "Acuité auditive/surdité",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:hearing-deafness:2",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:hearing-deafness:2",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!66Tea5x3y4z5A6B7",
+  "_id": "66Tea5x3y4z5A6B7",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 2800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Taken by the Mountain",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Power of Trolls",
+    "description": "The spirit conjurer can whisper a task to any person within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!3TAVeVoUpVqWrXsY",
+  "_id": "3TAVeVoUpVqWrXsY",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26800000,
+  "ownership": {
+    "default": 0
+  }
+}

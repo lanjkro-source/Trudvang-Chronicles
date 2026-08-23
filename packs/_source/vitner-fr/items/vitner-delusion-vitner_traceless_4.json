@@ -1,0 +1,28 @@
+{
+  "name": "Sans trace",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:traceless:4",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:traceless:4",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "Ce sort crée une barrière d’énergie qui accompagne la personne enchantée en faisant disparaître les traces, indices et même odeurs qu’elle sème derrière elle et laisse le terrain dans l’état précédent son passage.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!XfSmjQhNiOjPkQlR",
+  "_id": "XfSmjQhNiOjPkQlR",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4300000,
+  "ownership": {
+    "default": 0
+  }
+}

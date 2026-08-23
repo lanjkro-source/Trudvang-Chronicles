@@ -1,0 +1,28 @@
+{
+  "name": "Autorité",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Force de Storme",
+    "description": "La voix du stormikjalt résonne de puissance et de sincérité et affecte la personne de son choix située à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!wxWGY8B7C8D9EaGb",
+  "_id": "wxWGY8B7C8D9EaGb",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 2700000,
+  "ownership": {
+    "default": 0
+  }
+}

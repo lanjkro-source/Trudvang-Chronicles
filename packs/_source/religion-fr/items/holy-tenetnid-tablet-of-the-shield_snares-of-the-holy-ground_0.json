@@ -1,0 +1,28 @@
+{
+  "name": "Entraves de la terre consacrée",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablette du bouclier",
+    "description": "Tandis que le prêtre adresse sa prière à Gave, des racines tortueuses jaillissent du sol et agrippent les démons et les empêchent d’agir physiquement.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!4xNpRZqWrXsYtZu0",
+  "_id": "4xNpRZqWrXsYtZu0",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17100000,
+  "ownership": {
+    "default": 0
+  }
+}

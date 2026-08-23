@@ -1,0 +1,28 @@
+{
+  "name": "Trace Vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:trace-vitner:7",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:trace-vitner:7",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Vitner Craft",
+    "description": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!HfGpw9D9EaGbHcId",
+  "_id": "HfGpw9D9EaGbHcId",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11900000,
+  "ownership": {
+    "default": 0
+  }
+}

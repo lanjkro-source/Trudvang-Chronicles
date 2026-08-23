@@ -1,0 +1,28 @@
+{
+  "name": "Détection d'objet",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:detect-object:2",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:detect-object:2",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "préciser l’objet qu’il recherche.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!2FiI3XoUpVqWrXsY",
+  "_id": "2FiI3XoUpVqWrXsY",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7300000,
+  "ownership": {
+    "default": 0
+  }
+}

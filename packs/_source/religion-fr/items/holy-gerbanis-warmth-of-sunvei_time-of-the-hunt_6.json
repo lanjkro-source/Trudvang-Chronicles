@@ -1,0 +1,28 @@
+{
+  "name": "Heure de la chasse",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!KvdwScIdJeKfLgMh",
+  "_id": "KvdwScIdJeKfLgMh",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4300000,
+  "ownership": {
+    "default": 0
+  }
+}

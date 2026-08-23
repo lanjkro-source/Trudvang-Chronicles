@@ -1,0 +1,28 @@
+{
+  "name": "Rouille",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:rust:3",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:rust:3",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner des objets",
+    "description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!jgWVqsWrXsYtZu0v",
+  "_id": "jgWVqsWrXsYtZu0v",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12500000,
+  "ownership": {
+    "default": 0
+  }
+}

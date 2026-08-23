@@ -1,0 +1,28 @@
+{
+  "name": "Troll Strength",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!CwSME9B7C8D9EaGb",
+  "_id": "CwSME9B7C8D9EaGb",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Remedial Potion",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:remedial-potion:4",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:remedial-potion:4",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!3LTcaQkQlRmSnToU",
+  "_id": "3LTcaQkQlRmSnToU",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23100000,
+  "ownership": {
+    "default": 0
+  }
+}

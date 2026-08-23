@@ -1,0 +1,28 @@
+{
+  "name": "Enlarge/Reduce Object",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner of Objects",
+    "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!75PrZ2x3y4z5A6B7",
+  "_id": "75PrZ2x3y4z5A6B7",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12800000,
+  "ownership": {
+    "default": 0
+  }
+}

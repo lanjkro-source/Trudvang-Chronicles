@@ -1,0 +1,28 @@
+{
+  "name": "Scream of the Devouress",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Sw4KRPiOjPkQlRmS",
+  "_id": "Sw4KRPiOjPkQlRmS",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24400000,
+  "ownership": {
+    "default": 0
+  }
+}

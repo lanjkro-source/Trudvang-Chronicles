@@ -1,0 +1,25 @@
+{
+  "name": "Pouvoir de réparation",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-power-of-repair"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-power-of-repair",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!mD936TlRmSnToUpV",
+  "_id": "mD936TlRmSnToUpV",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 30300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Tablet of Voices",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices",
+    "description": "Powers of speech, hearing, fellowship, sanity, divine favor, and binding sacred pacts.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!szVucOgMhNiOjPkQ",
+  "_id": "szVucOgMhNiOjPkQ",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 19100000,
+  "ownership": {
+    "default": 0
+  }
+}

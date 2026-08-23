@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle des créatures",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:creature-control:8",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:creature-control:8",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Pouvoir de la pensée",
+    "description": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!NplFQjNiOjPkQlRm",
+  "_id": "NplFQjNiOjPkQlRm",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8800000,
+  "ownership": {
+    "default": 0
+  }
+}

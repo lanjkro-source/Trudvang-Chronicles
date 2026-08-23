@@ -1,0 +1,28 @@
+{
+  "name": "Main de Borjorn",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
+      "tabletId": "holy-thuuldom-borjorn-s-hand"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
+    "tabletId": "holy-thuuldom-borjorn-s-hand",
+    "tablet": "Main de Borjorn",
+    "description": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!sBWkh2u0v1w2x3y4",
+  "_id": "sBWkh2u0v1w2x3y4",
+  "folder": "2MaIwA3y4z5A6B7C",
+  "sort": 27500000,
+  "ownership": {
+    "default": 0
+  }
+}

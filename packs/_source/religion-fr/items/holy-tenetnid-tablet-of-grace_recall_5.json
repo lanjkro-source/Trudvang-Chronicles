@@ -1,0 +1,28 @@
+{
+  "name": "Rappel",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:recall:5",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:recall:5",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre peut ranimer une créature humanoïde intelligente qui a perdu la vie.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!y2yyHpSnToUpVqWr",
+  "_id": "y2yyHpSnToUpVqWr",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15400000,
+  "ownership": {
+    "default": 0
+  }
+}

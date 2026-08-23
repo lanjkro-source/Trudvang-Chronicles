@@ -1,0 +1,28 @@
+{
+  "name": "Appearance Change",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:appearance-change:7",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:appearance-change:7",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!m2B1rGbHcIdJeKfL",
+  "_id": "m2B1rGbHcIdJeKfL",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3300000,
+  "ownership": {
+    "default": 0
+  }
+}

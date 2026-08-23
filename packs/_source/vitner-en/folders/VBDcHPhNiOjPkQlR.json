@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!VBDcHPhNiOjPkQlR",
+  "_id": "VBDcHPhNiOjPkQlR",
+  "name": "Water Craft",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 13100000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

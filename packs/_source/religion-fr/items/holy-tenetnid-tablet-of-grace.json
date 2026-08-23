@@ -1,0 +1,25 @@
+{
+  "name": "Tablette de la grâce",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace",
+    "description": "Pouvoirs miséricordieux qui soignent, rendent la vie et la mémoire, rappellent les alliés et les préservent de la mort.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!B7syvVqWrXsYtZu0",
+  "_id": "B7syvVqWrXsYtZu0",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 14700000,
+  "ownership": {
+    "default": 0
+  }
+}

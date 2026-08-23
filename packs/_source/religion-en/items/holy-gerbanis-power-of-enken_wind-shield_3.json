@@ -1,0 +1,28 @@
+{
+  "name": "Wind Shield",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Power of Enken",
+    "description": "The Stormkelt summons a shield of small storm flurries, which provide a Protection Value of 1 against melee weapons and a Protection Value of 3 against ranged",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!bPnlMMdJeKfLgMhN",
+  "_id": "bPnlMMdJeKfLgMhN",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1800000,
+  "ownership": {
+    "default": 0
+  }
+}

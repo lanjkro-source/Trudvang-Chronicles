@@ -1,0 +1,28 @@
+{
+  "name": "Marche sur l'eau",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:water-walk:7",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:water-walk:7",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Maîtrise de l'eau",
+    "description": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!ZZ0To1sYtZu0v1w2",
+  "_id": "ZZ0To1sYtZu0v1w2",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13900000,
+  "ownership": {
+    "default": 0
+  }
+}

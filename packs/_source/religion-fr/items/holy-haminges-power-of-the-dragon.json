@@ -1,0 +1,25 @@
+{
+  "name": "Puissance du dragon",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon",
+    "description": "Pouvoirs draconiques accordant constriction, résistance au feu, regard paralysant, écailles et formes serpentesques.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!W8ZUeoSnToUpVqWr",
+  "_id": "W8ZUeoSnToUpVqWr",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 21400000,
+  "ownership": {
+    "default": 0
+  }
+}

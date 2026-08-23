@@ -1,0 +1,28 @@
+{
+  "name": "Vitner Protection",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:vitner-protection:5",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "A fire encompasses the affected individual and purifies their body of any evil, transformation, and outside influence.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!yzAJnXqWrXsYtZu0",
+  "_id": "yzAJnXqWrXsYtZu0",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5300000,
+  "ownership": {
+    "default": 0
+  }
+}

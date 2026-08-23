@@ -1,0 +1,28 @@
+{
+  "name": "Volonté des ancêtres",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Offrande de Halawen",
+    "description": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!RluLdSmSnToUpVqW",
+  "_id": "RluLdSmSnToUpVqW",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8200000,
+  "ownership": {
+    "default": 0
+  }
+}

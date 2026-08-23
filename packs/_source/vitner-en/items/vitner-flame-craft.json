@@ -1,0 +1,25 @@
+{
+  "name": "Flame Craft",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft",
+    "description": "Fire magic that creates heat and flame, protects against fire, and controls conflagrations.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!Gp1uJ3v1w2x3y4z5",
+  "_id": "Gp1uJ3v1w2x3y4z5",
+  "folder": null,
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  }
+}

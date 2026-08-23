@@ -1,0 +1,28 @@
+{
+  "name": "Hearth of Windinna",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "A fire encompasses the afflicted and purifies their body of any evil, transformation, and outside influence.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!GiNm9gKfLgMhNiOj",
+  "_id": "GiNm9gKfLgMhNiOj",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Telepathy",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:telepathy:4",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:telepathy:4",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Power of Thought",
+    "description": "The spell creates a mental link between the enchanter and a chosen person within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!CxBahQjPkQlRmSnT",
+  "_id": "CxBahQjPkQlRmSnT",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8400000,
+  "ownership": {
+    "default": 0
+  }
+}

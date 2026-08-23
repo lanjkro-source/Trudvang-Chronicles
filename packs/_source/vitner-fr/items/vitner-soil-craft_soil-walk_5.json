@@ -1,0 +1,28 @@
+{
+  "name": "Marche dans la terre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:soil-walk:5",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:soil-walk:5",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!FhSR83v1w2x3y4z5",
+  "_id": "FhSR83v1w2x3y4z5",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10700000,
+  "ownership": {
+    "default": 0
+  }
+}

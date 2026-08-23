@@ -1,0 +1,28 @@
+{
+  "name": "Été elfique",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Don de Magh",
+    "description": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!YlRC94y4z5A6B7C8",
+  "_id": "YlRC94y4z5A6B7C8",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 10700000,
+  "ownership": {
+    "default": 0
+  }
+}

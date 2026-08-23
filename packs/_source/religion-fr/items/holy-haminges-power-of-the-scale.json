@@ -1,0 +1,25 @@
+{
+  "name": "Puissance de l'écaille",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale",
+    "description": "Pouvoirs de lindwurm de terreur, régénération, membres de pierre, pétrification et résilience monstrueuse.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!LsYJkF7C8D9EaGbH",
+  "_id": "LsYJkF7C8D9EaGbH",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 23600000,
+  "ownership": {
+    "default": 0
+  }
+}

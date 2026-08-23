@@ -1,0 +1,28 @@
+{
+  "name": "Traces",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:retrace-tracks:1",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:retrace-tracks:1",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur PUISSANCE DE LA TEMPÊTE Poids de la victime Valeur de situation Distance de projection Modificateur aux actions 3 fois le",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!1GpwgkPkQlRmSnTo",
+  "_id": "1GpwgkPkQlRmSnTo",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7200000,
+  "ownership": {
+    "default": 0
+  }
+}

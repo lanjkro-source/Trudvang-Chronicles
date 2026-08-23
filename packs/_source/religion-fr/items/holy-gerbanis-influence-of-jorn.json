@@ -1,0 +1,25 @@
+{
+  "name": "Influence de Jorn",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn",
+    "description": "Pouvoirs de ténèbres, vents mortels, destriers nés de la tempête, protection et influence surnaturelle de Jorn.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!rIMSAKfLgMhNiOjP",
+  "_id": "rIMSAKfLgMhNiOjP",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Force de Storme",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi",
+    "description": "Bénédictions de combat accordant force géante, voix commandement, gardes divins et guerriers héroïques.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!gglHVA5A6B7C8D9E",
+  "_id": "gglHVA5A6B7C8D9E",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 2400000,
+  "ownership": {
+    "default": 0
+  }
+}

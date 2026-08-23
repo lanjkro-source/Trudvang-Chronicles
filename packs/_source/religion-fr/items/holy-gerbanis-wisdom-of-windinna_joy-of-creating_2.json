@@ -1,0 +1,28 @@
+{
+  "name": "Esprit d'acier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Sagesse de Windinna",
+    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!T3EdzhKfLgMhNiOj",
+  "_id": "T3EdzhKfLgMhNiOj",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5000000,
+  "ownership": {
+    "default": 0
+  }
+}

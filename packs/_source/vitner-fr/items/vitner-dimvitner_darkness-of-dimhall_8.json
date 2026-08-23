@@ -1,0 +1,28 @@
+{
+  "name": "Ténèbres de Dimhall",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!qqG16XqWrXsYtZu0",
+  "_id": "qqG16XqWrXsYtZu0",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 6000000,
+  "ownership": {
+    "default": 0
+  }
+}

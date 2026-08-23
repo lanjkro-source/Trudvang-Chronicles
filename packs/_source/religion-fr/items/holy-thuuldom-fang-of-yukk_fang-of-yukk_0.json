@@ -1,0 +1,28 @@
+{
+  "name": "Croc de Yukk",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+      "tabletId": "holy-thuuldom-fang-of-yukk"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
+    "tabletId": "holy-thuuldom-fang-of-yukk",
+    "tablet": "Croc de Yukk",
+    "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!YBdqtLgMhNiOjPkQ",
+  "_id": "YBdqtLgMhNiOjPkQ",
+  "folder": "7mgMNjMhNiOjPkQl",
+  "sort": 28400000,
+  "ownership": {
+    "default": 0
+  }
+}

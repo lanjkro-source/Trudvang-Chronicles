@@ -1,0 +1,28 @@
+{
+  "name": "Rage du destructeur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Puissance des tursirs",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!dieIoLcIdJeKfLgM",
+  "_id": "dieIoLcIdJeKfLgM",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25500000,
+  "ownership": {
+    "default": 0
+  }
+}

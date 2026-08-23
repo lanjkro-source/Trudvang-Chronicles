@@ -1,0 +1,28 @@
+{
+  "name": "Protective Ground",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablet of the Sun",
+    "description": "The prayer acts as protection against vitner and other religions’ feats.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!2nFFlUoUpVqWrXsY",
+  "_id": "2nFFlUoUpVqWrXsY",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18300000,
+  "ownership": {
+    "default": 0
+  }
+}

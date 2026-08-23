@@ -1,0 +1,28 @@
+{
+  "name": "Quagmire",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:quagmire:3",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:quagmire:3",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Soil Craft",
+    "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!NwPNFtXsYtZu0v1w",
+  "_id": "NwPNFtXsYtZu0v1w",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10500000,
+  "ownership": {
+    "default": 0
+  }
+}

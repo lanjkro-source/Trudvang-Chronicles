@@ -1,0 +1,25 @@
+{
+  "name": "Maîtrise des flammes",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft",
+    "description": "Magie du feu créant chaleur et flammes, protégeant du feu et contrôlant les incendies.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!Gp1uJ3v1w2x3y4z5",
+  "_id": "Gp1uJ3v1w2x3y4z5",
+  "folder": null,
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  }
+}

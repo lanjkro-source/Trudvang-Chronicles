@@ -1,0 +1,28 @@
+{
+  "name": "Guérison",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Le stormikjalt place ses mains sur les membres blessés d’une personne, et ses paumes commencent à émettre une faible lumière chaude.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!jLyAsB3y4z5A6B7C",
+  "_id": "jLyAsB3y4z5A6B7C",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 3700000,
+  "ownership": {
+    "default": 0
+  }
+}

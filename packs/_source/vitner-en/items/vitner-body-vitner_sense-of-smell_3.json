@@ -1,0 +1,28 @@
+{
+  "name": "Sense of Smell",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:sense-of-smell:3",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:sense-of-smell:3",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell can temporarily increase the enchanted person’s sense of smell.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Jub3BE5A6B7C8D9E",
+  "_id": "Jub3BE5A6B7C8D9E",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 2900000,
+  "ownership": {
+    "default": 0
+  }
+}

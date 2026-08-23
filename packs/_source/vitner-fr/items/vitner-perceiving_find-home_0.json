@@ -1,0 +1,28 @@
+{
+  "name": "Chemin du retour",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:find-home:0",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:find-home:0",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!28C0LcHcIdJeKfLg",
+  "_id": "28C0LcHcIdJeKfLg",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7100000,
+  "ownership": {
+    "default": 0
+  }
+}

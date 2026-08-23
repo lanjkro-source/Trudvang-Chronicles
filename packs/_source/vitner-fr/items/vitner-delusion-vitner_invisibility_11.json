@@ -1,0 +1,28 @@
+{
+  "name": "Invisibilité",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:invisibility:11",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:invisibility:11",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!SBWUZ8B7C8D9EaGb",
+  "_id": "SBWUZ8B7C8D9EaGb",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 5000000,
+  "ownership": {
+    "default": 0
+  }
+}

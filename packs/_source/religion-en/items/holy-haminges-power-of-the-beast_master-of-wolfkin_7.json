@@ -1,0 +1,28 @@
+{
+  "name": "Master of Wolfkin",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:master-of-wolfkin:7",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Power of the Beast",
+    "description": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!D6LfE1u0v1w2x3y4",
+  "_id": "D6LfE1u0v1w2x3y4",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 21200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Considération sacrée",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:holy-consideration:0",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:holy-consideration:0",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablette des voix",
+    "description": "Le gavlien peut bénir quelqu’un et ses futurs agissements.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!gnxQmjLgMhNiOjPk",
+  "_id": "gnxQmjLgMhNiOjPk",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19300000,
+  "ownership": {
+    "default": 0
+  }
+}

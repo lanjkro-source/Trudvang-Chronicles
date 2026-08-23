@@ -1,0 +1,25 @@
+{
+  "name": "Croc de Yukk",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-fang-of-yukk"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-fang-of-yukk",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!g2C9YeJeKfLgMhNi",
+  "_id": "g2C9YeJeKfLgMhNi",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 28200000,
+  "ownership": {
+    "default": 0
+  }
+}

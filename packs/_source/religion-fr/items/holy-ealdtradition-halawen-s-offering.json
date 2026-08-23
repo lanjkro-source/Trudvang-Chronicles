@@ -1,0 +1,25 @@
+{
+  "name": "Offrande de Halawen",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering",
+    "description": "Protections ancestrales contre la peur, les Blotfangs, le vitner hostile et les assauts surnaturels.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!KAjKIx0v1w2x3y4z",
+  "_id": "KAjKIx0v1w2x3y4z",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 8000000,
+  "ownership": {
+    "default": 0
+  }
+}

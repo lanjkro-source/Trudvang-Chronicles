@@ -1,0 +1,28 @@
+{
+  "name": "Skölddíser",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:shield-disir:5",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:shield-disir:5",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Force de Storme",
+    "description": "Le stormikjalt implore la protection de Storme, qui lui envoie des skölddí sers, des guerrières sacrées venues de Stormvakk pour le protéger.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!3uspBnQlRmSnToUp",
+  "_id": "3uspBnQlRmSnToUp",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 3100000,
+  "ownership": {
+    "default": 0
+  }
+}

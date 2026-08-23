@@ -1,0 +1,28 @@
+{
+  "name": "Limb of Stone",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer directs their petrifying gaze toward an opponent’s limb, such as an arm or a leg.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!fOMoRoToUpVqWrXs",
+  "_id": "fOMoRoToUpVqWrXs",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24300000,
+  "ownership": {
+    "default": 0
+  }
+}

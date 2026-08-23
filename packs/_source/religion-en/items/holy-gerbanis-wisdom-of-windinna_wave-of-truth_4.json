@@ -1,0 +1,28 @@
+{
+  "name": "Wave of Truth",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!CaFuD2tZu0v1w2x3",
+  "_id": "CaFuD2tZu0v1w2x3",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5200000,
+  "ownership": {
+    "default": 0
+  }
+}

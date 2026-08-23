@@ -1,0 +1,28 @@
+{
+  "name": "Steel Mind",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Wisdom of Windinna",
+    "description": "A fire encompasses the affected individual and purifies their body of all evil, transformation, and outside influence.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!edyJDZsYtZu0v1w2",
+  "_id": "edyJDZsYtZu0v1w2",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5100000,
+  "ownership": {
+    "default": 0
+  }
+}

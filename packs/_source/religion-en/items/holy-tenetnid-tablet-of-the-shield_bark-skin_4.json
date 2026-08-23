@@ -1,0 +1,28 @@
+{
+  "name": "Bark Skin",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The Gavlian invokes the force of the black oak.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!17m5afGbHcIdJeKf",
+  "_id": "17m5afGbHcIdJeKf",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17500000,
+  "ownership": {
+    "default": 0
+  }
+}

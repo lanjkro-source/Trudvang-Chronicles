@@ -1,0 +1,28 @@
+{
+  "name": "Fils des flammes",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Puissance du dragon",
+    "description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!62Y5frWrXsYtZu0v",
+  "_id": "62Y5frWrXsYtZu0v",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 21800000,
+  "ownership": {
+    "default": 0
+  }
+}

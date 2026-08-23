@@ -1,0 +1,28 @@
+{
+  "name": "Hammer Fists",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+      "tabletId": "holy-thuuldom-hammer-fists"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+    "tabletId": "holy-thuuldom-hammer-fists",
+    "tablet": "Hammer Fists",
+    "description": "Hardens the Thuul's fists into crushing weapons like smithing hammers.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!GcXifqToUpVqWrXs",
+  "_id": "GcXifqToUpVqWrXs",
+  "folder": "iaGVdz3y4z5A6B7C",
+  "sort": 29000000,
+  "ownership": {
+    "default": 0
+  }
+}

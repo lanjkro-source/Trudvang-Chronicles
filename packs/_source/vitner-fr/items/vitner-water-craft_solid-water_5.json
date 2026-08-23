@@ -1,0 +1,28 @@
+{
+  "name": "Eau solide",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:solid-water:5",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:solid-water:5",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Maîtrise de l'eau",
+    "description": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!j0uNG2u0v1w2x3y4",
+  "_id": "j0uNG2u0v1w2x3y4",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13700000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Perception",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving",
+    "description": "Divinations pour trouver lieux, êtres, objets, morts-vivants, routes et terrain environnant.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!gsLHISmSnToUpVqW",
+  "_id": "gsLHISmSnToUpVqW",
+  "folder": null,
+  "sort": 600000,
+  "ownership": {
+    "default": 0
+  }
+}

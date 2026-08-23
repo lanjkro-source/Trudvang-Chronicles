@@ -1,0 +1,28 @@
+{
+  "name": "Summer Place",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Warmth of Sunvei",
+    "description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays appear.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Bl5ojnPkQlRmSnTo",
+  "_id": "Bl5ojnPkQlRmSnTo",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4000000,
+  "ownership": {
+    "default": 0
+  }
+}

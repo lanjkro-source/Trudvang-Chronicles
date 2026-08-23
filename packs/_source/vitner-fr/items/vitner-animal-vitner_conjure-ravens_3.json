@@ -1,0 +1,28 @@
+{
+  "name": "Conjuration de corbeaux",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:conjure-ravens:3",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:conjure-ravens:3",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Vitner animal",
+    "description": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!VX8iGlNiOjPkQlRm",
+  "_id": "VX8iGlNiOjPkQlRm",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 1900000,
+  "ownership": {
+    "default": 0
+  }
+}

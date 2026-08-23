@@ -1,0 +1,28 @@
+{
+  "name": "Blessed Armor",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "An aura of holy protection is created around the selected armor, increasing the Protection Value by +1.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Peil3jOjPkQlRmSn",
+  "_id": "Peil3jOjPkQlRmSn",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16000000,
+  "ownership": {
+    "default": 0
+  }
+}

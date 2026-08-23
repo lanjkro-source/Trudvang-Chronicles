@@ -1,0 +1,28 @@
+{
+  "name": "Tueur de trolls",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:trollslayer:1",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:trollslayer:1",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Héritage de Majne",
+    "description": "Le bruide se voit doté du pouvoir divin d’infliger de terribles dommages aux trolls en tous genres jusqu’à expira tion du pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!TfNxj7B7C8D9EaGb",
+  "_id": "TfNxj7B7C8D9EaGb",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9400000,
+  "ownership": {
+    "default": 0
+  }
+}

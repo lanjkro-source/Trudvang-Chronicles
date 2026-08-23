@@ -1,0 +1,28 @@
+{
+  "name": "Holy Radiance",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablet of the Sun",
+    "description": "The priest asks her god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!VB1PbUnToUpVqWrX",
+  "_id": "VB1PbUnToUpVqWrX",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18900000,
+  "ownership": {
+    "default": 0
+  }
+}

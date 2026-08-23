@@ -1,0 +1,28 @@
+{
+  "name": "Gift of Water",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The Ihana feels right at home in the water, as if it were their natural environment (allowing the character to swim even without the Swim specialty).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!jo6i7KfLgMhNiOjP",
+  "_id": "jo6i7KfLgMhNiOjP",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34800000,
+  "ownership": {
+    "default": 0
+  }
+}

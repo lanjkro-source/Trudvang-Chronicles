@@ -1,0 +1,28 @@
+{
+  "name": "Rider's Melody",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:rider-s-melody:1",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Magh's Gift",
+    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Ko0sJIbHcIdJeKfL",
+  "_id": "Ko0sJIbHcIdJeKfL",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 10500000,
+  "ownership": {
+    "default": 0
+  }
+}

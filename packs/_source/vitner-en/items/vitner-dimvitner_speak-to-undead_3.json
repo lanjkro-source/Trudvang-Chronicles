@@ -1,0 +1,28 @@
+{
+  "name": "Speak to Undead",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:speak-to-undead:3",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:speak-to-undead:3",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!ETSuKYqWrXsYtZu0",
+  "_id": "ETSuKYqWrXsYtZu0",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5500000,
+  "ownership": {
+    "default": 0
+  }
+}

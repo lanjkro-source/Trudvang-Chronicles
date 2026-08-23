@@ -1,0 +1,28 @@
+{
+  "name": "Extase",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:ecstasy:5",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:ecstasy:5",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Pouvoir de la pensée",
+    "description": "L’enchanteur projette son énergie ma nipulatrice vers la personne de son choix, qui se sent immédiatement submergée par une vague d’émotions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!nAtSLeJeKfLgMhNi",
+  "_id": "nAtSLeJeKfLgMhNi",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8500000,
+  "ownership": {
+    "default": 0
+  }
+}

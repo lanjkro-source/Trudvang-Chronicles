@@ -1,0 +1,28 @@
+{
+  "name": "Ghost Voice",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Delusion Vitner",
+    "description": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Y09LhnSnToUpVqWr",
+  "_id": "Y09LhnSnToUpVqWr",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4400000,
+  "ownership": {
+    "default": 0
+  }
+}

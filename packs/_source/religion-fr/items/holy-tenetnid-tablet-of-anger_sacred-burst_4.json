@@ -1,0 +1,28 @@
+{
+  "name": "Explosion sacrée",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:sacred-burst:4",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:sacred-burst:4",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablette de la colère",
+    "description": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!q8SF3bGbHcIdJeKf",
+  "_id": "q8SF3bGbHcIdJeKf",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 14200000,
+  "ownership": {
+    "default": 0
+  }
+}

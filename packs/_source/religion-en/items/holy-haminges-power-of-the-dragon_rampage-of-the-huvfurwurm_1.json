@@ -1,0 +1,28 @@
+{
+  "name": "Rampage of the Huvfurwurm",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Power of the Dragon",
+    "description": "Imbues the recipient with the destructive momentum of a rampaging huvfurwurm.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!HHd4ARlRmSnToUpV",
+  "_id": "HHd4ARlRmSnToUpV",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 21700000,
+  "ownership": {
+    "default": 0
+  }
+}

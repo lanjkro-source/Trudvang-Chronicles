@@ -1,0 +1,28 @@
+{
+  "name": "Sentier forestier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:forest-path:8",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:forest-path:8",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!QzDyUlOjPkQlRmSn",
+  "_id": "QzDyUlOjPkQlRmSn",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 34100000,
+  "ownership": {
+    "default": 0
+  }
+}

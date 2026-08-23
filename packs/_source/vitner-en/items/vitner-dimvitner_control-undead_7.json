@@ -1,0 +1,28 @@
+{
+  "name": "Control Undead",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:control-undead:7",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:control-undead:7",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!h1kohNfLgMhNiOjP",
+  "_id": "h1kohNfLgMhNiOjP",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5900000,
+  "ownership": {
+    "default": 0
+  }
+}

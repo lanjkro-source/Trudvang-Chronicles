@@ -1,0 +1,28 @@
+{
+  "name": "True Sight",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:true-sight:7",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:true-sight:7",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Power of Vision",
+    "description": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!4TkbmE8D9EaGbHcI",
+  "_id": "4TkbmE8D9EaGbHcI",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 10000000,
+  "ownership": {
+    "default": 0
+  }
+}

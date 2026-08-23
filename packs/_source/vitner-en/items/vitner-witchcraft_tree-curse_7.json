@@ -1,0 +1,28 @@
+{
+  "name": "Tree Curse",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:tree-curse:7",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:tree-curse:7",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Witchcraft",
+    "description": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!QeocGD6B7C8D9EaG",
+  "_id": "QeocGD6B7C8D9EaG",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 16000000,
+  "ownership": {
+    "default": 0
+  }
+}

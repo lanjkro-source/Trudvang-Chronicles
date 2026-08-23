@@ -1,0 +1,28 @@
+{
+  "name": "Surrounding",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:surrounding:6",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:surrounding:6",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perceiving",
+    "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!n34bQVnToUpVqWrX",
+  "_id": "n34bQVnToUpVqWrX",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7700000,
+  "ownership": {
+    "default": 0
+  }
+}

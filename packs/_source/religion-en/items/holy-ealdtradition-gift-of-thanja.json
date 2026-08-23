@@ -1,0 +1,25 @@
+{
+  "name": "Gift of Thanja",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja",
+    "description": "Nature powers for animal speech and shapes, concealment in the wild, and communion with forest beings.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!w65LAqUpVqWrXsYt",
+  "_id": "w65LAqUpVqWrXsYt",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 6900000,
+  "ownership": {
+    "default": 0
+  }
+}

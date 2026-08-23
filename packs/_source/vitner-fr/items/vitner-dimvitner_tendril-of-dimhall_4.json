@@ -1,0 +1,28 @@
+{
+  "name": "Vrille de Dimhall",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:tendril-of-dimhall:4",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:tendril-of-dimhall:4",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "L’enchanteur concentre autour de lui la puissance de la mort et canalise cette énergie humide à travers ses mains et ses doigts.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!NXVWLRmSnToUpVqW",
+  "_id": "NXVWLRmSnToUpVqW",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5600000,
+  "ownership": {
+    "default": 0
+  }
+}

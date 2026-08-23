@@ -1,0 +1,28 @@
+{
+  "name": "Dark Visage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:dark-visage:5",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Wrath of Tyrd",
+    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!apLEFjLgMhNiOjPk",
+  "_id": "apLEFjLgMhNiOjPk",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6400000,
+  "ownership": {
+    "default": 0
+  }
+}

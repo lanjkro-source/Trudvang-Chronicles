@@ -1,0 +1,28 @@
+{
+  "name": "Armure de la tempête",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Pouvoir d'Enken",
+    "description": "TRUDVANG.Description.PowerSummary",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!ynjLjaC7C8D9EaGb",
+  "_id": "ynjLjaC7C8D9EaGb",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 2000000,
+  "ownership": {
+    "default": 0
+  }
+}

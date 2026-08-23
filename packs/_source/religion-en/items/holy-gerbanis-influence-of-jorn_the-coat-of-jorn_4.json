@@ -1,0 +1,28 @@
+{
+  "name": "The Coat of Jorn",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 50 meters.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!3XWxV0tZu0v1w2x3",
+  "_id": "3XWxV0tZu0v1w2x3",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  }
+}

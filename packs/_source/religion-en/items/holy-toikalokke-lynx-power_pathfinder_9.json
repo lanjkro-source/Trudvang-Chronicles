@@ -1,0 +1,28 @@
+{
+  "name": "Pathfinder",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:pathfinder:9",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:pathfinder:9",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "The Ihana can travel through otherwise impassable forest or shrubbery when desired.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!7Cn7ReGbHcIdJeKf",
+  "_id": "7Cn7ReGbHcIdJeKf",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 34200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Chaîne de bataille des gardiens du Rortan",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!RKCmzdGbHcIdJeKf",
+  "_id": "RKCmzdGbHcIdJeKf",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16500000,
+  "ownership": {
+    "default": 0
+  }
+}

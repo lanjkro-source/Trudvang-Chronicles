@@ -1,0 +1,25 @@
+{
+  "name": "Soil Craft",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft",
+    "description": "Earth magic that moves or shapes soil and stone, creates tremors and quagmires, and petrifies creatures.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!2iC3SeKfLgMhNiOj",
+  "_id": "2iC3SeKfLgMhNiOj",
+  "folder": null,
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  }
+}

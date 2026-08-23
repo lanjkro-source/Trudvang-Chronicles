@@ -1,0 +1,28 @@
+{
+  "name": "Âme du dragon",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Puissance du dragon",
+    "description": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!NPnIQeGbHcIdJeKf",
+  "_id": "NPnIQeGbHcIdJeKf",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 22300000,
+  "ownership": {
+    "default": 0
+  }
+}

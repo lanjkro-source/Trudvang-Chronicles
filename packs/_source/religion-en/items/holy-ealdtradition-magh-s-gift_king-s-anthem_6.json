@@ -1,0 +1,28 @@
+{
+  "name": "King's Anthem",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Magh's Gift",
+    "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!NHLBISlRmSnToUpV",
+  "_id": "NHLBISlRmSnToUpV",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 11000000,
+  "ownership": {
+    "default": 0
+  }
+}

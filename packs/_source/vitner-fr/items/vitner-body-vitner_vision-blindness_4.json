@@ -1,0 +1,28 @@
+{
+  "name": "Vision/cécité",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:vision-blindness:4",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "La vision de la personne enchantée est améliorée pendant toute la durée du sort.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!NO0r3cGbHcIdJeKf",
+  "_id": "NO0r3cGbHcIdJeKf",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3000000,
+  "ownership": {
+    "default": 0
+  }
+}

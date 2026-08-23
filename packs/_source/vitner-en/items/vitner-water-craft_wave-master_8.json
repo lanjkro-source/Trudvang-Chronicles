@@ -1,0 +1,28 @@
+{
+  "name": "Wave Master",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:wave-master:8",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:wave-master:8",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!HwC9aTlRmSnToUpV",
+  "_id": "HwC9aTlRmSnToUpV",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 14000000,
+  "ownership": {
+    "default": 0
+  }
+}

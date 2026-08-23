@@ -1,0 +1,28 @@
+{
+  "name": "Earth Wall",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The Ihana causes a wall of earth to shoot up from the ground for protection.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!7pf3tmRmSnToUpVq",
+  "_id": "7pf3tmRmSnToUpVq",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34500000,
+  "ownership": {
+    "default": 0
+  }
+}

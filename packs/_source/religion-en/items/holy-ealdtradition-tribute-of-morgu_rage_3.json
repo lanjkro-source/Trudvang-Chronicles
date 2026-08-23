@@ -1,0 +1,28 @@
+{
+  "name": "Rage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "Fills the target with supernatural battle rage.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!m9tkXVnToUpVqWrX",
+  "_id": "m9tkXVnToUpVqWrX",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 12900000,
+  "ownership": {
+    "default": 0
+  }
+}

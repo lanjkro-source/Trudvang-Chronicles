@@ -1,0 +1,28 @@
+{
+  "name": "Cœur du lindwurm",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Puissance de l'écaille",
+    "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!FM8d8dGbHcIdJeKf",
+  "_id": "FM8d8dGbHcIdJeKf",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24600000,
+  "ownership": {
+    "default": 0
+  }
+}

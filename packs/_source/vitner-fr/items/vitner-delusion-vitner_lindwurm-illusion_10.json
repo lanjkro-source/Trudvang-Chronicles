@@ -1,0 +1,28 @@
+{
+  "name": "Lindwurm illusoire",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!kKbL9kQlRmSnToUp",
+  "_id": "kKbL9kQlRmSnToUp",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Poings d'acier",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-hammer-fists"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-hammer-fists",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!f6VgZUoUpVqWrXsY",
+  "_id": "f6VgZUoUpVqWrXsY",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 28800000,
+  "ownership": {
+    "default": 0
+  }
+}

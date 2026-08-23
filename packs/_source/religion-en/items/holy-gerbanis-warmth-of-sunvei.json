@@ -1,0 +1,25 @@
+{
+  "name": "Warmth of Sunvei",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei",
+    "description": "Solar powers of healing, warmth, light, summer, hunting, and restoration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!kCytFaE9EaGbHcId",
+  "_id": "kCytFaE9EaGbHcId",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 3500000,
+  "ownership": {
+    "default": 0
+  }
+}

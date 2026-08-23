@@ -1,0 +1,28 @@
+{
+  "name": "Soins sacrés",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!yQSljXrXsYtZu0v1",
+  "_id": "yQSljXrXsYtZu0v1",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle du vent",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:control-wind:3",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:control-wind:3",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!7HTSH9D9EaGbHcId",
+  "_id": "7HTSH9D9EaGbHcId",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14500000,
+  "ownership": {
+    "default": 0
+  }
+}

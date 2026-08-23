@@ -1,0 +1,28 @@
+{
+  "name": "Sheltering",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!pHmEe5x3y4z5A6B7",
+  "_id": "pHmEe5x3y4z5A6B7",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17200000,
+  "ownership": {
+    "default": 0
+  }
+}

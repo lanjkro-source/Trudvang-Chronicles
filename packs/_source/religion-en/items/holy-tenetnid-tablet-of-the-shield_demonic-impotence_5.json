@@ -1,0 +1,28 @@
+{
+  "name": "Demonic Impotence",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!gtBOdgJeKfLgMhNi",
+  "_id": "gtBOdgJeKfLgMhNi",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17600000,
+  "ownership": {
+    "default": 0
+  }
+}

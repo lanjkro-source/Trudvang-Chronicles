@@ -1,0 +1,28 @@
+{
+  "name": "Warmth",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:warmth:6",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:warmth:6",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Flame Craft",
+    "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!SzbcryZu0v1w2x3y",
+  "_id": "SzbcryZu0v1w2x3y",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6800000,
+  "ownership": {
+    "default": 0
+  }
+}

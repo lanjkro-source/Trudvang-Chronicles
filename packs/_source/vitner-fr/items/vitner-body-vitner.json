@@ -1,0 +1,25 @@
+{
+  "name": "Vitner corporel",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner",
+    "description": "Magie modifiant les corps et les sens, retenant les créatures et renforçant la vitesse, la force ou la résilience.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!1FRwXgMhNiOjPkQl",
+  "_id": "1FRwXgMhNiOjPkQl",
+  "folder": null,
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  }
+}

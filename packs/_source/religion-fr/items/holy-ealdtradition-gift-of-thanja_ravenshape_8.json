@@ -1,0 +1,28 @@
+{
+  "name": "Aspect du corbeau",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Ce pouvoir confère au bruide la faculté de se transformer en corbeau.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!6irL9tXsYtZu0v1w",
+  "_id": "6irL9tXsYtZu0v1w",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7900000,
+  "ownership": {
+    "default": 0
+  }
+}

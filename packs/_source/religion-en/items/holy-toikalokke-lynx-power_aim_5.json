@@ -1,0 +1,28 @@
+{
+  "name": "Aim",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:aim:5",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:aim:5",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "When the Ihana attacks with ranged weapons, they can take extra aim at a target for the duration of the ability , gaining an additional +1 to the SV to strike the target.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!vBlwuTnToUpVqWrX",
+  "_id": "vBlwuTnToUpVqWrX",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33800000,
+  "ownership": {
+    "default": 0
+  }
+}

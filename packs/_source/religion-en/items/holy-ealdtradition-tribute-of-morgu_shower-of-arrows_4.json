@@ -1,0 +1,28 @@
+{
+  "name": "Shower of Arrows",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!vJbvVdIdJeKfLgMh",
+  "_id": "vJbvVdIdJeKfLgMh",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 13000000,
+  "ownership": {
+    "default": 0
+  }
+}

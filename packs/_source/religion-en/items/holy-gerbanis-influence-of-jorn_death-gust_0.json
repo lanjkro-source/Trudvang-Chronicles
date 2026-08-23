@@ -1,0 +1,28 @@
+{
+  "name": "Death Gust",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!KPpcMbE9EaGbHcId",
+  "_id": "KPpcMbE9EaGbHcId",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  }
+}

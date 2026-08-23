@@ -1,0 +1,28 @@
+{
+  "name": "Talk to Animals",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:talk-to-animals:2",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:talk-to-animals:2",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Animal Mind",
+    "description": "The Ihana can communicate with animals.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!77l109C8D9EaGbHc",
+  "_id": "77l109C8D9EaGbHc",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 32600000,
+  "ownership": {
+    "default": 0
+  }
+}

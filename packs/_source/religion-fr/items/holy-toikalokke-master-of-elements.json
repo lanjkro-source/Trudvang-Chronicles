@@ -1,0 +1,25 @@
+{
+  "name": "Maître des éléments",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements",
+    "description": "Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "toikalokke"
+  },
+  "_key": "!items!dGZSmA5A6B7C8D9E",
+  "_id": "dGZSmA5A6B7C8D9E",
+  "folder": "8Z4yoOgMhNiOjPkQ",
+  "sort": 34300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Havar",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:havar:2",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:havar:2",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Force de Storme",
+    "description": "Le stormikjalt implore la protection de Storme, qui lui envoie un havar, un guerrier saint venu de Stormvakk pour le protéger.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!rn3J4w2x3y4z5A6B",
+  "_id": "rn3J4w2x3y4z5A6B",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 2800000,
+  "ownership": {
+    "default": 0
+  }
+}

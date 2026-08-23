@@ -1,0 +1,28 @@
+{
+  "name": "Sol protecteur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:protective-ground:1",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablette du soleil",
+    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!2nFFlUoUpVqWrXsY",
+  "_id": "2nFFlUoUpVqWrXsY",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18300000,
+  "ownership": {
+    "default": 0
+  }
+}

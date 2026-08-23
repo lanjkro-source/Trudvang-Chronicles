@@ -1,0 +1,28 @@
+{
+  "name": "Souffle de Mogunda",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!BeZPjKfLgMhNiOjP",
+  "_id": "BeZPjKfLgMhNiOjP",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  }
+}

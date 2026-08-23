@@ -1,0 +1,28 @@
+{
+  "name": "Endurance of the Boar",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Power of the Beast",
+    "description": "The spirit gives power to the dimwalker that manifests in a greater",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!SfULsC5A6B7C8D9E",
+  "_id": "SfULsC5A6B7C8D9E",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 20800000,
+  "ownership": {
+    "default": 0
+  }
+}

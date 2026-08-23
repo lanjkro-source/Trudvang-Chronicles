@@ -1,0 +1,28 @@
+{
+  "name": "Souffle de Gave",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!o0LQ2bHcIdJeKfLg",
+  "_id": "o0LQ2bHcIdJeKfLg",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Mur de vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Art du vitner",
+    "description": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Bdk403u0v1w2x3y4",
+  "_id": "Bdk403u0v1w2x3y4",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 12000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Visions of the Oak",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
+      "tabletId": "holy-tenetnid-tablet-of-anger"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
+    "tabletId": "holy-tenetnid-tablet-of-anger",
+    "tablet": "Tablet of Anger",
+    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!bqRGOTkQlRmSnToU",
+  "_id": "bqRGOTkQlRmSnToU",
+  "folder": "by5nBz2x3y4z5A6B",
+  "sort": 14100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Vision/Blindness",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:vision-blindness:4",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:vision-blindness:4",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell can increase the vision of the enchanted for the duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!NO0r3cGbHcIdJeKf",
+  "_id": "NO0r3cGbHcIdJeKf",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3000000,
+  "ownership": {
+    "default": 0
+  }
+}

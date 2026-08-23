@@ -1,0 +1,28 @@
+{
+  "name": "Lance bénie",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 1 point de dégâts supplémentaire (+2 contre les morts-vivants et +3 contre les démons).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!YZgnQXpVqWrXsYtZ",
+  "_id": "YZgnQXpVqWrXsYtZ",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16100000,
+  "ownership": {
+    "default": 0
+  }
+}

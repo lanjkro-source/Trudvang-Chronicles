@@ -1,0 +1,28 @@
+{
+  "name": "Increase Sounds",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Delusion Vitner",
+    "description": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!bVOJpnQlRmSnToUp",
+  "_id": "bVOJpnQlRmSnToUp",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4200000,
+  "ownership": {
+    "default": 0
+  }
+}

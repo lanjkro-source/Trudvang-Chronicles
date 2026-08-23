@@ -1,0 +1,28 @@
+{
+  "name": "Shape Soil",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:shape-soil:1",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:shape-soil:1",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Soil Craft",
+    "description": "Softens and reshapes nearby earth and soil according to the mage's will.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!ZjAfzeGbHcIdJeKf",
+  "_id": "ZjAfzeGbHcIdJeKf",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10300000,
+  "ownership": {
+    "default": 0
+  }
+}

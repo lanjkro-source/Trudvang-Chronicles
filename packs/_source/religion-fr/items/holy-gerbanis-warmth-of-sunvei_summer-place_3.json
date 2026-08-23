@@ -1,0 +1,28 @@
+{
+  "name": "Cœur de l'été",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Bl5ojnPkQlRmSnTo",
+  "_id": "Bl5ojnPkQlRmSnTo",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4000000,
+  "ownership": {
+    "default": 0
+  }
+}

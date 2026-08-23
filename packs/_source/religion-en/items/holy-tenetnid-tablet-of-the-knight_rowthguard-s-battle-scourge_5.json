@@ -1,0 +1,28 @@
+{
+  "name": "Rowthguard's Battle Scourge",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "Conjures or empowers a sacred battle scourge fit for a Rowthguard.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!RKCmzdGbHcIdJeKf",
+  "_id": "RKCmzdGbHcIdJeKf",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16500000,
+  "ownership": {
+    "default": 0
+  }
+}

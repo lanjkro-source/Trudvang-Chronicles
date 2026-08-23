@@ -1,0 +1,28 @@
+{
+  "name": "The Destroyer's Rage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!dieIoLcIdJeKfLgM",
+  "_id": "dieIoLcIdJeKfLgM",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25500000,
+  "ownership": {
+    "default": 0
+  }
+}

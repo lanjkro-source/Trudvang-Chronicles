@@ -1,0 +1,28 @@
+{
+  "name": "Meall's Trail",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:meall-s-trail:5",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Nema's Usefulness",
+    "description": "The Bruid summons a blanket of fog that spreads out before them and their allies.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!CQJRCz4z5A6B7C8D",
+  "_id": "CQJRCz4z5A6B7C8D",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 12000000,
+  "ownership": {
+    "default": 0
+  }
+}

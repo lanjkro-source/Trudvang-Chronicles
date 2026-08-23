@@ -1,0 +1,28 @@
+{
+  "name": "Gloomy Trail",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Nema's Usefulness",
+    "description": "The Bruid summons a blanket of fog that spreads out before them and their allies.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!ZyYMnNhNiOjPkQlR",
+  "_id": "ZyYMnNhNiOjPkQlR",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11700000,
+  "ownership": {
+    "default": 0
+  }
+}

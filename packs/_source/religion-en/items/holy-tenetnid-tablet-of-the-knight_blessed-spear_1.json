@@ -1,0 +1,28 @@
+{
+  "name": "Blessed Spear",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "A holy aura is created around the selected weapon.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!YZgnQXpVqWrXsYtZ",
+  "_id": "YZgnQXpVqWrXsYtZ",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16100000,
+  "ownership": {
+    "default": 0
+  }
+}

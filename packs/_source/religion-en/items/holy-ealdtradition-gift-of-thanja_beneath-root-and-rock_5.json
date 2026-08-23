@@ -1,0 +1,28 @@
+{
+  "name": "Beneath Root and Rock",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Gift of Thanja",
+    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!O3PkaOfLgMhNiOjP",
+  "_id": "O3PkaOfLgMhNiOjP",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7600000,
+  "ownership": {
+    "default": 0
+  }
+}

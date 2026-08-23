@@ -1,0 +1,28 @@
+{
+  "name": "Stone to Clay",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+      "tabletId": "holy-thuuldom-stone-to-clay"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+    "tabletId": "holy-thuuldom-stone-to-clay",
+    "tablet": "Stone to Clay",
+    "description": "By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!cYG1LXrXsYtZu0v1",
+  "_id": "cYG1LXrXsYtZu0v1",
+  "folder": "DpKokMhNiOjPkQlR",
+  "sort": 31400000,
+  "ownership": {
+    "default": 0
+  }
+}

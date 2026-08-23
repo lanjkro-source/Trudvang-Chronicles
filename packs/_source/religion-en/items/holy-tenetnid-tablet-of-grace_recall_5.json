@@ -1,0 +1,28 @@
+{
+  "name": "Recall",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:recall:5",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:recall:5",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "The priest can resurrect intelligent humanoids that have already lost the breath of life.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!y2yyHpSnToUpVqWr",
+  "_id": "y2yyHpSnToUpVqWr",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15400000,
+  "ownership": {
+    "default": 0
+  }
+}

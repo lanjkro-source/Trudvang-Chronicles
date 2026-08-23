@@ -1,0 +1,28 @@
+{
+  "name": "Bestial Tongue",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:bestial-tongue:3",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Gift of Thanja",
+    "description": "The Bruid is able to speak with beasts for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!N9ZJ3E6B7C8D9EaG",
+  "_id": "N9ZJ3E6B7C8D9EaG",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7400000,
+  "ownership": {
+    "default": 0
+  }
+}

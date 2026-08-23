@@ -1,0 +1,28 @@
+{
+  "name": "Shattered Mind",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:shattered-mind:1",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:shattered-mind:1",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer directs their powerful gaze at an opponent who suddenly feels his mind begin to petrify.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!68r53XqWrXsYtZu0",
+  "_id": "68r53XqWrXsYtZu0",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 23900000,
+  "ownership": {
+    "default": 0
+  }
+}

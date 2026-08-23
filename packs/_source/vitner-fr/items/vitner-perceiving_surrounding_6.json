@@ -1,0 +1,28 @@
+{
+  "name": "Environnement",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:surrounding:6",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:surrounding:6",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!n34bQVnToUpVqWrX",
+  "_id": "n34bQVnToUpVqWrX",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7700000,
+  "ownership": {
+    "default": 0
+  }
+}

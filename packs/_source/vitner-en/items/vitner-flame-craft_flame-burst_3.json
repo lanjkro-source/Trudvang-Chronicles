@@ -1,0 +1,28 @@
+{
+  "name": "Flame Burst",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:flame-burst:3",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:flame-burst:3",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Flame Craft",
+    "description": "The spell creates a sudden fire that ignites within 10 meters of the enchanter.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!sseR1oToUpVqWrXs",
+  "_id": "sseR1oToUpVqWrXs",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6500000,
+  "ownership": {
+    "default": 0
+  }
+}

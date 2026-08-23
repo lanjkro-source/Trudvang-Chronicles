@@ -1,0 +1,28 @@
+{
+  "name": "Hardiesse des trolls",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Puissance des trolls",
+    "description": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!zAuKDx0v1w2x3y4z",
+  "_id": "zAuKDx0v1w2x3y4z",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26700000,
+  "ownership": {
+    "default": 0
+  }
+}

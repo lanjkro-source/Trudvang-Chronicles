@@ -1,0 +1,28 @@
+{
+  "name": "Air Shield",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:air-shield:6",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:air-shield:6",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Wind Craft",
+    "description": "The spell creates controlled flurries of wind around one or several characters, causing each of them to lift off the ground.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!m5oxn8C8D9EaGbHc",
+  "_id": "m5oxn8C8D9EaGbHc",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14800000,
+  "ownership": {
+    "default": 0
+  }
+}

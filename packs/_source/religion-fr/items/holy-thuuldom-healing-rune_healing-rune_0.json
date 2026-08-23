@@ -1,0 +1,28 @@
+{
+  "name": "Rune de guérison",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-healing-rune:healing-rune:0",
+      "tabletId": "holy-thuuldom-healing-rune"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-healing-rune:healing-rune:0",
+    "tabletId": "holy-thuuldom-healing-rune",
+    "tablet": "Rune de guérison",
+    "description": "Le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!UjK6h0rXsYtZu0v1",
+  "_id": "UjK6h0rXsYtZu0v1",
+  "folder": "hheuoXoUpVqWrXsY",
+  "sort": 29300000,
+  "ownership": {
+    "default": 0
+  }
+}

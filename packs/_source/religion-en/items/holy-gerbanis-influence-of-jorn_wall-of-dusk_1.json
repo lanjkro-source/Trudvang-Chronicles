@@ -1,0 +1,28 @@
+{
+  "name": "Wall of Dusk",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!hOAWQVmSnToUpVqW",
+  "_id": "hOAWQVmSnToUpVqW",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  }
+}

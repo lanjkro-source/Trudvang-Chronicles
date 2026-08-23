@@ -1,0 +1,28 @@
+{
+  "name": "Tisonnier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:fire-iron:0",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:fire-iron:0",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Fureur de Tyrd",
+    "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!6LhsyRjPkQlRmSnT",
+  "_id": "6LhsyRjPkQlRmSnT",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 5900000,
+  "ownership": {
+    "default": 0
+  }
+}

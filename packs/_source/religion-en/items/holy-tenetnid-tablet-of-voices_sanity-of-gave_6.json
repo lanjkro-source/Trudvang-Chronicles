@@ -1,0 +1,28 @@
+{
+  "name": "Sanity of Gave",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablet of Voices",
+    "description": "The priest and their allies within range are gifted with a temporary capacity to speak and understand a foreign language, with a bonus of +3 to each individual’s Skill Value in the Knowledge skill for speaking/understanding.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!F4XC4gJeKfLgMhNi",
+  "_id": "F4XC4gJeKfLgMhNi",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19900000,
+  "ownership": {
+    "default": 0
+  }
+}

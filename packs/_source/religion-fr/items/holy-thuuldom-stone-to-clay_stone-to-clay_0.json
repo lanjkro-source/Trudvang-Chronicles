@@ -1,0 +1,28 @@
+{
+  "name": "Transformation de pierre en argile",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+      "tabletId": "holy-thuuldom-stone-to-clay"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
+    "tabletId": "holy-thuuldom-stone-to-clay",
+    "tablet": "Transformation de pierre en argile",
+    "description": "elle expire, la pierre reprend sa forme d’origine.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!cYG1LXrXsYtZu0v1",
+  "_id": "cYG1LXrXsYtZu0v1",
+  "folder": "DpKokMhNiOjPkQlR",
+  "sort": 31400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Camouflage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:concealment:7",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:concealment:7",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "L’ihana est capable de se fondre dans le décor jusqu’à expiration de ce pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!7pr2JdGbHcIdJeKf",
+  "_id": "7pr2JdGbHcIdJeKf",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 34000000,
+  "ownership": {
+    "default": 0
+  }
+}

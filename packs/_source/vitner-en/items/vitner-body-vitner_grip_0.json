@@ -1,0 +1,28 @@
+{
+  "name": "Grip",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:grip:0",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:grip:0",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell changes the vitner flowing through the enchanted character’s hands and feet so their skin becomes more coarse and adhesive.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!yp9B86x3y4z5A6B7",
+  "_id": "yp9B86x3y4z5A6B7",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 2600000,
+  "ownership": {
+    "default": 0
+  }
+}

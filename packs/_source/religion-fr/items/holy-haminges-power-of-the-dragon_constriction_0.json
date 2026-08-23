@@ -1,0 +1,28 @@
+{
+  "name": "Constriction",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:constriction:0",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:constriction:0",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Puissance du dragon",
+    "description": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!21o2kv0v1w2x3y4z",
+  "_id": "21o2kv0v1w2x3y4z",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 21600000,
+  "ownership": {
+    "default": 0
+  }
+}

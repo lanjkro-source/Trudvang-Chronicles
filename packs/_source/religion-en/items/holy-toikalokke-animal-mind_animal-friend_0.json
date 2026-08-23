@@ -1,0 +1,28 @@
+{
+  "name": "Animal Friend",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:animal-friend:0",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-friend:0",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Animal Mind",
+    "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Oa2zF4v1w2x3y4z5",
+  "_id": "Oa2zF4v1w2x3y4z5",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 32400000,
+  "ownership": {
+    "default": 0
+  }
+}

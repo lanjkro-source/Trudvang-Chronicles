@@ -1,0 +1,28 @@
+{
+  "name": "Vigueur",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:strengthen:8",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:strengthen:8",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "Ce sort renforce les muscles du béné ficiaire, qui gagnent instantanément en taille et en puissance.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!gqQs2lPkQlRmSnTo",
+  "_id": "gqQs2lPkQlRmSnTo",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3400000,
+  "ownership": {
+    "default": 0
+  }
+}

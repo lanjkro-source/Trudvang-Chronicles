@@ -1,0 +1,28 @@
+{
+  "name": "Firestorm",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Wrath of Tyrd",
+    "description": "Unleashes a violent storm of divine fire across the chosen area.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Ch7Buz3y4z5A6B7C",
+  "_id": "Ch7Buz3y4z5A6B7C",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6500000,
+  "ownership": {
+    "default": 0
+  }
+}

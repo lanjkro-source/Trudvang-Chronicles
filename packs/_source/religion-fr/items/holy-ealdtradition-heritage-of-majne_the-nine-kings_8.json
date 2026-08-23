@@ -1,0 +1,28 @@
+{
+  "name": "Les neuf rois",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Héritage de Majne",
+    "description": "Le bruide en appelle aux neuf grands rois, qui envoient un souvenir de leur force passée et de leur esprit aider l’ar penteur des brumes dans les situations les plus délicates.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!wHvVtXsYtZu0v1w2",
+  "_id": "wHvVtXsYtZu0v1w2",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 10100000,
+  "ownership": {
+    "default": 0
+  }
+}

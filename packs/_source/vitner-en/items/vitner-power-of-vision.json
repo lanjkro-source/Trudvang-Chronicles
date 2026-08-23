@@ -1,0 +1,25 @@
+{
+  "name": "Power of Vision",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision",
+    "description": "Sight magic for tracking, remote observation, astral travel, reading vitner, and seeing truth.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!kx7J04z5A6B7C8D9",
+  "_id": "kx7J04z5A6B7C8D9",
+  "folder": null,
+  "sort": 800000,
+  "ownership": {
+    "default": 0
+  }
+}

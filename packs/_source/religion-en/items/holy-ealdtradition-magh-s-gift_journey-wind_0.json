@@ -1,0 +1,28 @@
+{
+  "name": "Journey Wind",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:journey-wind:0",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Magh's Gift",
+    "description": "The Bruid calls for a helpful tailwind and fair weather.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!bTVbj6x3y4z5A6B7",
+  "_id": "bTVbj6x3y4z5A6B7",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 10400000,
+  "ownership": {
+    "default": 0
+  }
+}

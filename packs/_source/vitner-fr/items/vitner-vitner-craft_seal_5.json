@@ -1,0 +1,28 @@
+{
+  "name": "Sceau",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:seal:5",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:seal:5",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Art du vitner",
+    "description": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’inté grer ensuite à un objet.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!kW0JwB4z5A6B7C8D",
+  "_id": "kW0JwB4z5A6B7C8D",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11700000,
+  "ownership": {
+    "default": 0
+  }
+}

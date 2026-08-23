@@ -1,0 +1,28 @@
+{
+  "name": "Breath of the Hrim Troll",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!OInpYG8D9EaGbHcI",
+  "_id": "OInpYG8D9EaGbHcI",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25400000,
+  "ownership": {
+    "default": 0
+  }
+}

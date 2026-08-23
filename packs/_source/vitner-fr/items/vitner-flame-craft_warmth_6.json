@@ -1,0 +1,28 @@
+{
+  "name": "Chaleur",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:warmth:6",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:warmth:6",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Maîtrise des flammes",
+    "description": "d’une plaine venteuse la durée de ce sort sera réduite de moitié.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!SzbcryZu0v1w2x3y",
+  "_id": "SzbcryZu0v1w2x3y",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6800000,
+  "ownership": {
+    "default": 0
+  }
+}

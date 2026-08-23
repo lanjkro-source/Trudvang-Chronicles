@@ -1,0 +1,25 @@
+{
+  "name": "Lynx Power",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power",
+    "description": "Feline gifts of hearing, leaping, reflexes, aim, tracking, concealment, and pathfinding.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "toikalokke"
+  },
+  "_key": "!items!OR2M2E8D9EaGbHcI",
+  "_id": "OR2M2E8D9EaGbHcI",
+  "folder": "8Z4yoOgMhNiOjPkQ",
+  "sort": 33100000,
+  "ownership": {
+    "default": 0
+  }
+}

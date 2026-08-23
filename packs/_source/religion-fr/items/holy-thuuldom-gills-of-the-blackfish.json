@@ -1,0 +1,25 @@
+{
+  "name": "Branchies du brochet",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-gills-of-the-blackfish"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-gills-of-the-blackfish",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!IGijF5z5A6B7C8D9",
+  "_id": "IGijF5z5A6B7C8D9",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 28500000,
+  "ownership": {
+    "default": 0
+  }
+}

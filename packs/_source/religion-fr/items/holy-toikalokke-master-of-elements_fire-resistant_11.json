@@ -1,0 +1,28 @@
+{
+  "name": "Résistance au feu",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:fire-resistant:11",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:fire-resistant:11",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "Les flammes naturelles n’infligent aucun dégât à l’ihana, et les flammes magiques ou celles crachées par les dragons ne lui infligent que la moitié de leurs dégâts normaux.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!aLMmOgJeKfLgMhNi",
+  "_id": "aLMmOgJeKfLgMhNi",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35600000,
+  "ownership": {
+    "default": 0
+  }
+}

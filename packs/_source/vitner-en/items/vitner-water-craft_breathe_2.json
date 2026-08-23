@@ -1,0 +1,28 @@
+{
+  "name": "Breathe",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:breathe:2",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:breathe:2",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "The spell gives the enchanted gills on their neck, which allow them to breathe underwater just as easily as if they were in air.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!U00XOcE9EaGbHcId",
+  "_id": "U00XOcE9EaGbHcId",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13400000,
+  "ownership": {
+    "default": 0
+  }
+}

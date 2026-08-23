@@ -1,0 +1,28 @@
+{
+  "name": "Volonté de Bete Wiemdas",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablette de la grâce",
+    "description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!msGnBLdJeKfLgMhN",
+  "_id": "msGnBLdJeKfLgMhN",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15100000,
+  "ownership": {
+    "default": 0
+  }
+}

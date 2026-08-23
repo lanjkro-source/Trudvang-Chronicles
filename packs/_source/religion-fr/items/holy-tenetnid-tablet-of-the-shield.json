@@ -1,0 +1,25 @@
+{
+  "name": "Tablette du bouclier",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield",
+    "description": "Pouvoirs protecteurs créant sanctuaires, barrières, résistances, bannissements et passages sûrs.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!GCZkmYsYtZu0v1w2",
+  "_id": "GCZkmYsYtZu0v1w2",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 16900000,
+  "ownership": {
+    "default": 0
+  }
+}

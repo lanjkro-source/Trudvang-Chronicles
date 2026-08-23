@@ -1,0 +1,28 @@
+{
+  "name": "Understanding Speech",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:understanding-speech:1",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:understanding-speech:1",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Power of Thought",
+    "description": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!EMkbw8C8D9EaGbHc",
+  "_id": "EMkbw8C8D9EaGbHc",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8100000,
+  "ownership": {
+    "default": 0
+  }
+}

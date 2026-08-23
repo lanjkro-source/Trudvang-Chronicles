@@ -1,0 +1,28 @@
+{
+  "name": "Well of Water",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-well-of-water:well-of-water:0",
+      "tabletId": "holy-thuuldom-well-of-water"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-well-of-water:well-of-water:0",
+    "tabletId": "holy-thuuldom-well-of-water",
+    "tablet": "Well of Water",
+    "description": "The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!yk2Mj9A6B7C8D9Ea",
+  "_id": "yk2Mj9A6B7C8D9Ea",
+  "folder": "0S1216z5A6B7C8D9",
+  "sort": 32000000,
+  "ownership": {
+    "default": 0
+  }
+}

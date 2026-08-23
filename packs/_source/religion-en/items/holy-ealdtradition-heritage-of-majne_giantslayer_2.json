@@ -1,0 +1,28 @@
+{
+  "name": "Giantslayer",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Heritage of Majne",
+    "description": "The Bruid will receive the divine power to harm giantfolk (giants or jotun, turses, ogres, and ice trolls) with greater potency for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!UIQ6nbFaGbHcIdJe",
+  "_id": "UIQ6nbFaGbHcIdJe",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9500000,
+  "ownership": {
+    "default": 0
+  }
+}

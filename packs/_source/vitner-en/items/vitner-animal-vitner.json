@@ -1,0 +1,25 @@
+{
+  "name": "Animal Vitner",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner",
+    "description": "Magic for communicating with, summoning, controlling, possessing, and carrying messages through animals.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!xpmxNGbHcIdJeKfL",
+  "_id": "xpmxNGbHcIdJeKfL",
+  "folder": null,
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Joug de Magh",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:magh-s-hawser:7",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:magh-s-hawser:7",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Don de Magh",
+    "description": "Le bruide peut recourir à une geas, une promesse ou une restriction imposée à autrui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!BWKfmPiOjPkQlRmS",
+  "_id": "BWKfmPiOjPkQlRmS",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 11100000,
+  "ownership": {
+    "default": 0
+  }
+}

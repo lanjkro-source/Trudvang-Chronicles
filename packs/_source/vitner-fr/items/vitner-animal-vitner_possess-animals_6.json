@@ -1,0 +1,28 @@
+{
+  "name": "Possession animale",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:possess-animals:6",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:possess-animals:6",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Vitner animal",
+    "description": "Ce sort permet à l’enchanteur de projeter sa conscience dans le corps d’un vertébré non intelligent.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!KvY25OgMhNiOjPkQ",
+  "_id": "KvY25OgMhNiOjPkQ",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 2200000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bourse de vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Art du vitner",
+    "description": "L’enchanteur tisse le vitner de façon à créer une bourse astrale.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!xdeIRHcIdJeKfLgM",
+  "_id": "xdeIRHcIdJeKfLgM",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Purification de l'eau",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:purify-water:2",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:purify-water:2",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana peut purifier jusqu’à 1 litre d’eau.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!XMtzE4w2x3y4z5A6",
+  "_id": "XMtzE4w2x3y4z5A6",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34700000,
+  "ownership": {
+    "default": 0
+  }
+}

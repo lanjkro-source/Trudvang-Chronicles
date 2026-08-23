@@ -1,0 +1,25 @@
+{
+  "name": "Art du vitner",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft",
+    "description": "Métamagie de canalisation, enchantement, scellement, traçage, dissipation et blocage du vitner.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!5ZVrcvWrXsYtZu0v",
+  "_id": "5ZVrcvWrXsYtZu0v",
+  "folder": null,
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  }
+}

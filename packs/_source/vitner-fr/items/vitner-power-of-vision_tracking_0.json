@@ -1,0 +1,28 @@
+{
+  "name": "Pistage",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:tracking:0",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:tracking:0",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Pouvoir de la vision",
+    "description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les em preintes d’une autre créature sur le sol.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!QUMULNiOjPkQlRmS",
+  "_id": "QUMULNiOjPkQlRmS",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9300000,
+  "ownership": {
+    "default": 0
+  }
+}

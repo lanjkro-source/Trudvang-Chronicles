@@ -1,0 +1,28 @@
+{
+  "name": "Boldness of the Ancestors",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!v4sHJNhNiOjPkQlR",
+  "_id": "v4sHJNhNiOjPkQlR",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8500000,
+  "ownership": {
+    "default": 0
+  }
+}

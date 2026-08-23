@@ -1,0 +1,28 @@
+{
+  "name": "Soleil guérisseur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!oQT18TlRmSnToUpV",
+  "_id": "oQT18TlRmSnToUpV",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4500000,
+  "ownership": {
+    "default": 0
+  }
+}

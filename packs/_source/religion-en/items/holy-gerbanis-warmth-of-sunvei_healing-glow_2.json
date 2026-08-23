@@ -1,0 +1,28 @@
+{
+  "name": "Healing Glow",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-glow:2",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Warmth of Sunvei",
+    "description": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!fMXx6HcIdJeKfLgM",
+  "_id": "fMXx6HcIdJeKfLgM",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 3900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Weapon Prowess",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:weapon-prowess:5",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:weapon-prowess:5",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "The spirit conjurer calls upon the dwarves’ feared fighting techniques and becomes more proficient at handling weapons in combat.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!lRDk7UpVqWrXsYtZ",
+  "_id": "lRDk7UpVqWrXsYtZ",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23200000,
+  "ownership": {
+    "default": 0
+  }
+}

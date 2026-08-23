@@ -1,0 +1,28 @@
+{
+  "name": "Amnésie",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:amnesia:4",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:amnesia:4",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Sorcellerie",
+    "description": "Ce sort génère une énergie perturba trice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!EyBYbhLgMhNiOjPk",
+  "_id": "EyBYbhLgMhNiOjPk",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15700000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bouclier contre le vitner",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Offrande de Halawen",
+    "description": "F Durée : 10 minutes F Portée : personnelle F Temps d’invocation : 1 minute Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!uD44F6B7C8D9EaGb",
+  "_id": "uD44F6B7C8D9EaGb",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8300000,
+  "ownership": {
+    "default": 0
+  }
+}

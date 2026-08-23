@@ -1,0 +1,25 @@
+{
+  "name": "Écailles",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-scales"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-scales",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!CyPkxNeKfLgMhNiO",
+  "_id": "CyPkxNeKfLgMhNiO",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 30600000,
+  "ownership": {
+    "default": 0
+  }
+}

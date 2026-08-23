@@ -1,0 +1,28 @@
+{
+  "name": "Sirowerd's Tongue",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablet of Voices",
+    "description": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!W69Ij8B7C8D9EaGb",
+  "_id": "W69Ij8B7C8D9EaGb",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19600000,
+  "ownership": {
+    "default": 0
+  }
+}

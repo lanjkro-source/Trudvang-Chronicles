@@ -1,0 +1,28 @@
+{
+  "name": "Traces animales",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Esprit animal",
+    "description": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!xI0gXvXsYtZu0v1w",
+  "_id": "xI0gXvXsYtZu0v1w",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 32500000,
+  "ownership": {
+    "default": 0
+  }
+}

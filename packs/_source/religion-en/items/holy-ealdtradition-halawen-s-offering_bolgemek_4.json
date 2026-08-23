@@ -1,0 +1,28 @@
+{
+  "name": "Bolgemek",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:bolgemek:4",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:bolgemek:4",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "Calls upon ancestral protection to resist hostile supernatural forces.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!JNToRdFaGbHcIdJe",
+  "_id": "JNToRdFaGbHcIdJe",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8600000,
+  "ownership": {
+    "default": 0
+  }
+}

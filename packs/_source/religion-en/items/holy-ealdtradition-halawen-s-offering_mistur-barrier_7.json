@@ -1,0 +1,28 @@
+{
+  "name": "Mistur Barrier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!aPblZRlRmSnToUpV",
+  "_id": "aPblZRlRmSnToUpV",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8900000,
+  "ownership": {
+    "default": 0
+  }
+}

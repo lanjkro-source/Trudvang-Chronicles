@@ -1,0 +1,25 @@
+{
+  "name": "Vitner Craft",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft",
+    "description": "Metamagic for channeling, enchanting, sealing, tracing, dispelling, and blocking vitner.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!5ZVrcvWrXsYtZu0v",
+  "_id": "5ZVrcvWrXsYtZu0v",
+  "folder": null,
+  "sort": 1000000,
+  "ownership": {
+    "default": 0
+  }
+}

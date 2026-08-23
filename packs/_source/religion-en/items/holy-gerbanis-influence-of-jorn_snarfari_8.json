@@ -1,0 +1,28 @@
+{
+  "name": "Snarfari",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:snarfari:8",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:snarfari:8",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence of Jorn",
+    "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!qHo6RMdJeKfLgMhN",
+  "_id": "qHo6RMdJeKfLgMhN",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 1200000,
+  "ownership": {
+    "default": 0
+  }
+}

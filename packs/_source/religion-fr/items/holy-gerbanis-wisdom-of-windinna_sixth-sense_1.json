@@ -1,0 +1,28 @@
+{
+  "name": "Sixième sens",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Sagesse de Windinna",
+    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!lCojn1u0v1w2x3y4",
+  "_id": "lCojn1u0v1w2x3y4",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 4900000,
+  "ownership": {
+    "default": 0
+  }
+}

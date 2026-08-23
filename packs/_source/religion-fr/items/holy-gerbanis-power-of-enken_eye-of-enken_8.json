@@ -1,0 +1,28 @@
+{
+  "name": "Œil d'Enken",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:eye-of-enken:8",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:eye-of-enken:8",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Pouvoir d'Enken",
+    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!HAjOD3y4z5A6B7C8",
+  "_id": "HAjOD3y4z5A6B7C8",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 2300000,
+  "ownership": {
+    "default": 0
+  }
+}

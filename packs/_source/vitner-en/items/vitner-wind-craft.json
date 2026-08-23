@@ -1,0 +1,25 @@
+{
+  "name": "Wind Craft",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft",
+    "description": "Air magic that purifies air, creates fog and wind, grants lift or protection, and summons storms.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!TjcgoI9EaGbHcIdJ",
+  "_id": "TjcgoI9EaGbHcIdJ",
+  "folder": null,
+  "sort": 1300000,
+  "ownership": {
+    "default": 0
+  }
+}

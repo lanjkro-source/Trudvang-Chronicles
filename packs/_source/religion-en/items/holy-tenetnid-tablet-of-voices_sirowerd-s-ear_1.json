@@ -1,0 +1,28 @@
+{
+  "name": "Sirowerd's Ear",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablet of Voices",
+    "description": "The priest is gifted with a temporary understanding of a foreign language when it is spoken.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!UhaPkRjPkQlRmSnT",
+  "_id": "UhaPkRjPkQlRmSnT",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19400000,
+  "ownership": {
+    "default": 0
+  }
+}

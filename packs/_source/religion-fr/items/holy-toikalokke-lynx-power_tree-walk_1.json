@@ -1,0 +1,28 @@
+{
+  "name": "Chemin forestier",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:tree-walk:1",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:tree-walk:1",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mou vement normale.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!eBs0PPhNiOjPkQlR",
+  "_id": "eBs0PPhNiOjPkQlR",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33400000,
+  "ownership": {
+    "default": 0
+  }
+}

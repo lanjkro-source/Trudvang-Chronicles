@@ -1,0 +1,28 @@
+{
+  "name": "Hearing",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:hearing:2",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:hearing:2",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Lynx Power",
+    "description": "By concentrating on a visual point within the designated range, the Ihana is able to hear everything within 10 meters of that point.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!rMDKWVnToUpVqWrX",
+  "_id": "rMDKWVnToUpVqWrX",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33500000,
+  "ownership": {
+    "default": 0
+  }
+}

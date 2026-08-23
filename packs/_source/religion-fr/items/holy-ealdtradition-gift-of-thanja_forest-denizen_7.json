@@ -1,0 +1,28 @@
+{
+  "name": "Enfant de la forêt",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!t89qe7B7C8D9EaGb",
+  "_id": "t89qe7B7C8D9EaGb",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Strengthen",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:strengthen:8",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:strengthen:8",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!gqQs2lPkQlRmSnTo",
+  "_id": "gqQs2lPkQlRmSnTo",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3400000,
+  "ownership": {
+    "default": 0
+  }
+}

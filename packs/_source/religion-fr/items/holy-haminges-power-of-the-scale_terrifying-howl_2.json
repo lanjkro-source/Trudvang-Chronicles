@@ -1,0 +1,28 @@
+{
+  "name": "Hurlement terrifiant",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:terrifying-howl:2",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:terrifying-howl:2",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Puissance de l'écaille",
+    "description": "Le conjurateur pousse un hurlement à glacer le sang qui possède un facteur de peur de 1d10 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!mjV59gMhNiOjPkQl",
+  "_id": "mjV59gMhNiOjPkQl",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24000000,
+  "ownership": {
+    "default": 0
+  }
+}

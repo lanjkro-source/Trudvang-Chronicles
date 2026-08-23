@@ -1,0 +1,28 @@
+{
+  "name": "Wind Gust",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:wind-gust:1",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:wind-gust:1",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Wind Craft",
+    "description": "The spell creates a small wind gust that the enchanter can use to blow away insects, small animals, or small objects (less than 1 kg).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!T4TPBPiOjPkQlRmS",
+  "_id": "T4TPBPiOjPkQlRmS",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14300000,
+  "ownership": {
+    "default": 0
+  }
+}

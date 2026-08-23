@@ -1,0 +1,28 @@
+{
+  "name": "Grondement",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:roar:0",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:roar:0",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Vitner illusoire",
+    "description": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!1fDJX4y4z5A6B7C8",
+  "_id": "1fDJX4y4z5A6B7C8",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 3900000,
+  "ownership": {
+    "default": 0
+  }
+}

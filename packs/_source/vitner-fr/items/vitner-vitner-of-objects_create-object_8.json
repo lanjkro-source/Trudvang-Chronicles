@@ -1,0 +1,28 @@
+{
+  "name": "Création d'objet",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:create-object:8",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:create-object:8",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner des objets",
+    "description": "de 2 points de vitner Ce sort aussi rare que puissant crée des objets à partir de rien.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Eokp3OgMhNiOjPkQ",
+  "_id": "Eokp3OgMhNiOjPkQ",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 13000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Behind Tree and Pine",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Gift of Thanja",
+    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!LVAU0B4z5A6B7C8D",
+  "_id": "LVAU0B4z5A6B7C8D",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7100000,
+  "ownership": {
+    "default": 0
+  }
+}

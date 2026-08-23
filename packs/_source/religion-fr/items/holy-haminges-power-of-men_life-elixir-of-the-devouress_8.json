@@ -1,0 +1,28 @@
+{
+  "name": "Élixir de vie de la dévoreuse",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Puissance des hommes",
+    "description": "Cette relique permet au conjurateur de créer une potion de soins en utilisant le pouvoir de l’esprit lié.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Tdg4duXsYtZu0v1w",
+  "_id": "Tdg4duXsYtZu0v1w",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Tremblement de terre",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-earthquake"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-earthquake",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!GPDAKQkQlRmSnToU",
+  "_id": "GPDAKQkQlRmSnToU",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 27900000,
+  "ownership": {
+    "default": 0
+  }
+}

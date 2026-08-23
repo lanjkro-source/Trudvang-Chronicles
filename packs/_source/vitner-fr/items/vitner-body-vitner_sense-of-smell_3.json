@@ -1,0 +1,28 @@
+{
+  "name": "Sens de l'odorat",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:sense-of-smell:3",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:sense-of-smell:3",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "Ce sort peut améliorer temporairement l’odorat de la personne enchantée, qui reçoit un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’odorat est un facteur de réussite important.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Jub3BE5A6B7C8D9E",
+  "_id": "Jub3BE5A6B7C8D9E",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 2900000,
+  "ownership": {
+    "default": 0
+  }
+}

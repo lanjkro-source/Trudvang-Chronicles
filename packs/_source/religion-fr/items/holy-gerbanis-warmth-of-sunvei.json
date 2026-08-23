@@ -1,0 +1,25 @@
+{
+  "name": "Chaleur de Solvei",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei",
+    "description": "Pouvoirs solaires de guérison, de chaleur, de lumière, d'été, de chasse et de restauration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!kCytFaE9EaGbHcId",
+  "_id": "kCytFaE9EaGbHcId",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 3500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Dragonslayer",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Heritage of Majne",
+    "description": "The Bruid will receive the divine power to harm dragons and dragonkin with greater potency for the duration of the ability.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!CT0k1rXsYtZu0v1w",
+  "_id": "CT0k1rXsYtZu0v1w",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9900000,
+  "ownership": {
+    "default": 0
+  }
+}

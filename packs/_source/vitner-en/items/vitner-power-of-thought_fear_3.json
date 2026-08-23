@@ -1,0 +1,28 @@
+{
+  "name": "Fear",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-thought:fear:3",
+      "tabletId": "vitner-power-of-thought"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-thought:fear:3",
+    "tabletId": "vitner-power-of-thought",
+    "tablet": "Power of Thought",
+    "description": "The spell sends a wave of manipulative energy through a chosen victim, overwhelming its thoughts with horrific visions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!nHH1k2v1w2x3y4z5",
+  "_id": "nHH1k2v1w2x3y4z5",
+  "folder": "81dlTQiOjPkQlRmS",
+  "sort": 8300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Mur de terre",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana se protège en faisant surgir un mur de terre devant lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!7pf3tmRmSnToUpVq",
+  "_id": "7pf3tmRmSnToUpVq",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34500000,
+  "ownership": {
+    "default": 0
+  }
+}

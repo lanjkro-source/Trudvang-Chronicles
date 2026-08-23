@@ -1,0 +1,28 @@
+{
+  "name": "Mur d'épines",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablette du bouclier",
+    "description": "Par cette prière, le prêtre invoque la force du chêne noir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!PESfbF8D9EaGbHcI",
+  "_id": "PESfbF8D9EaGbHcI",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17400000,
+  "ownership": {
+    "default": 0
+  }
+}

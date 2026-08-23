@@ -1,0 +1,28 @@
+{
+  "name": "Belo Seoth's Axe",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "A holy aura is created around the selected weapon.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!p4pfOSnToUpVqWrX",
+  "_id": "p4pfOSnToUpVqWrX",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16700000,
+  "ownership": {
+    "default": 0
+  }
+}

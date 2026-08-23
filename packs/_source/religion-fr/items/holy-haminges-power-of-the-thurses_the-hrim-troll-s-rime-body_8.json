@@ -1,0 +1,28 @@
+{
+  "name": "Corps de glace du hrimtroll",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Puissance des tursirs",
+    "description": "Le conjurateur est investi d’une partie de l’essence du troll des glaces, qui se manifeste par un corps de glace qui gèle toute personne située à portée du pouvoir.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!zTcKUQjPkQlRmSnT",
+  "_id": "zTcKUQjPkQlRmSnT",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25700000,
+  "ownership": {
+    "default": 0
+  }
+}

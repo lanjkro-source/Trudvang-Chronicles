@@ -1,0 +1,28 @@
+{
+  "name": "Aspect du serpent géant",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+      "tabletId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+    "tabletId": "holy-haminges-power-of-the-dragon",
+    "tablet": "Puissance du dragon",
+    "description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expira tion de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!OA90M6z5A6B7C8D9",
+  "_id": "OA90M6z5A6B7C8D9",
+  "folder": "TZDxQfLgMhNiOjPk",
+  "sort": 22400000,
+  "ownership": {
+    "default": 0
+  }
+}

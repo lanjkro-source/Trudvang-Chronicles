@@ -1,0 +1,28 @@
+{
+  "name": "Phantom Plague",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:phantom-plague:1",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:phantom-plague:1",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Witchcraft",
+    "description": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!BXqIpKeKfLgMhNiO",
+  "_id": "BXqIpKeKfLgMhNiO",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15400000,
+  "ownership": {
+    "default": 0
+  }
+}

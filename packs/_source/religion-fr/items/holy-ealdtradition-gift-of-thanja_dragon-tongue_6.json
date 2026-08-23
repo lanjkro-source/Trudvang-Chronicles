@@ -1,0 +1,28 @@
+{
+  "name": "Langue des dragons",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
+      "tabletId": "holy-ealdtradition-gift-of-thanja"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
+    "tabletId": "holy-ealdtradition-gift-of-thanja",
+    "tablet": "Don de Thanja",
+    "description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!rLFgP2w2x3y4z5A6",
+  "_id": "rLFgP2w2x3y4z5A6",
+  "folder": "nJof7x3y4z5A6B7C",
+  "sort": 7700000,
+  "ownership": {
+    "default": 0
+  }
+}

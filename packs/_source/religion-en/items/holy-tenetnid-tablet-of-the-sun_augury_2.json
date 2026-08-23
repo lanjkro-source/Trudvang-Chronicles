@@ -1,0 +1,28 @@
+{
+  "name": "Augury",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:augury:2",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:augury:2",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablet of the Sun",
+    "description": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!hfdXNKbHcIdJeKfL",
+  "_id": "hfdXNKbHcIdJeKfL",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Souffle de mort",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui génère une vague de pression to nitruante qui endommage une créature morte-vivante située à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!KPpcMbE9EaGbHcId",
+  "_id": "KPpcMbE9EaGbHcId",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 400000,
+  "ownership": {
+    "default": 0
+  }
+}

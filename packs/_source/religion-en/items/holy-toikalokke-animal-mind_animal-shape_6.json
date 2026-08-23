@@ -1,0 +1,28 @@
+{
+  "name": "Animal Shape",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-animal-mind:animal-shape:6",
+      "tabletId": "holy-toikalokke-animal-mind"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-shape:6",
+    "tabletId": "holy-toikalokke-animal-mind",
+    "tablet": "Animal Mind",
+    "description": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Xi0VV0tZu0v1w2x3",
+  "_id": "Xi0VV0tZu0v1w2x3",
+  "folder": "tnbugJeKfLgMhNiO",
+  "sort": 33000000,
+  "ownership": {
+    "default": 0
+  }
+}

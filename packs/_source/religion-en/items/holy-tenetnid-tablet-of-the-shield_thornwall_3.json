@@ -1,0 +1,28 @@
+{
+  "name": "Thornwall",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The one praying invokes the force of the black oak.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!PESfbF8D9EaGbHcI",
+  "_id": "PESfbF8D9EaGbHcI",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Well of Water",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-well-of-water"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-well-of-water",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!fNv1DiKfLgMhNiOj",
+  "_id": "fNv1DiKfLgMhNiOj",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 31800000,
+  "ownership": {
+    "default": 0
+  }
+}

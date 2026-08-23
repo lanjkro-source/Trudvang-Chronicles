@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle du feu",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:control-fire:1",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:control-fire:1",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana développe un certain contrôle des flammes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!vwMY10rXsYtZu0v1",
+  "_id": "vwMY10rXsYtZu0v1",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bosquet sacré",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablette du soleil",
+    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!Mylm5JcIdJeKfLgM",
+  "_id": "Mylm5JcIdJeKfLgM",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18800000,
+  "ownership": {
+    "default": 0
+  }
+}

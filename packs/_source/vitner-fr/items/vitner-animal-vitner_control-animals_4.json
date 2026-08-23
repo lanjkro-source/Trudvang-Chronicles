@@ -1,0 +1,28 @@
+{
+  "name": "Contrôle des animaux",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:control-animals:4",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:control-animals:4",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Vitner animal",
+    "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!ZidWA1u0v1w2x3y4",
+  "_id": "ZidWA1u0v1w2x3y4",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 2000000,
+  "ownership": {
+    "default": 0
+  }
+}

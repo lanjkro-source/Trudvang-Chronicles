@@ -1,0 +1,28 @@
+{
+  "name": "Regard de Windinna",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
+      "tabletId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
+    "tabletId": "holy-gerbanis-wisdom-of-windinna",
+    "tablet": "Sagesse de Windinna",
+    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!eu3h28z5A6B7C8D9",
+  "_id": "eu3h28z5A6B7C8D9",
+  "folder": "hp58jRkQlRmSnToU",
+  "sort": 5500000,
+  "ownership": {
+    "default": 0
+  }
+}

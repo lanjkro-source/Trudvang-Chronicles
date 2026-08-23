@@ -1,0 +1,28 @@
+{
+  "name": "Tonnerre victorieux",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+      "tabletId": "holy-gerbanis-wrath-of-tyrd"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
+    "tabletId": "holy-gerbanis-wrath-of-tyrd",
+    "tablet": "Fureur de Tyrd",
+    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!LKLKtqRmSnToUpVq",
+  "_id": "LKLKtqRmSnToUpVq",
+  "folder": "5n8SPdIdJeKfLgMh",
+  "sort": 6600000,
+  "ownership": {
+    "default": 0
+  }
+}

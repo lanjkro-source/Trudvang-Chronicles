@@ -1,0 +1,28 @@
+{
+  "name": "Shriek",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:shriek:2",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:shriek:2",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Delusion Vitner",
+    "description": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!vUIe5YrXsYtZu0v1",
+  "_id": "vUIe5YrXsYtZu0v1",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4100000,
+  "ownership": {
+    "default": 0
+  }
+}

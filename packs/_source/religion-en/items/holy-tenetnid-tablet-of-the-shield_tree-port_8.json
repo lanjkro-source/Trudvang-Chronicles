@@ -1,0 +1,28 @@
+{
+  "name": "Tree Port",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
+      "tabletId": "holy-tenetnid-tablet-of-the-shield"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
+    "tabletId": "holy-tenetnid-tablet-of-the-shield",
+    "tablet": "Tablet of the Shield",
+    "description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!1bIRF4w2x3y4z5A6",
+  "_id": "1bIRF4w2x3y4z5A6",
+  "folder": "hXR0cNfLgMhNiOjP",
+  "sort": 17900000,
+  "ownership": {
+    "default": 0
+  }
+}

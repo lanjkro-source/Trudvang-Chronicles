@@ -1,0 +1,28 @@
+{
+  "name": "Sens du griffon",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Le bruide entend tous les bruits et conversations à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!PuCKfOhNiOjPkQlR",
+  "_id": "PuCKfOhNiOjPkQlR",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 12100000,
+  "ownership": {
+    "default": 0
+  }
+}

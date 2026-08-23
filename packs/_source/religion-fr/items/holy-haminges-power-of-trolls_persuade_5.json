@@ -1,0 +1,28 @@
+{
+  "name": "Persuasion",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:persuade:5",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:persuade:5",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Puissance des trolls",
+    "description": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!OsYQI7z5A6B7C8D9",
+  "_id": "OsYQI7z5A6B7C8D9",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26500000,
+  "ownership": {
+    "default": 0
+  }
+}

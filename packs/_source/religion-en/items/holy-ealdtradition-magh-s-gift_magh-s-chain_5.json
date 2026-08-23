@@ -1,0 +1,28 @@
+{
+  "name": "Magh's Chain",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-magh-s-gift:magh-s-chain:5",
+      "tabletId": "holy-ealdtradition-magh-s-gift"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-magh-s-gift:magh-s-chain:5",
+    "tabletId": "holy-ealdtradition-magh-s-gift",
+    "tablet": "Magh's Gift",
+    "description": "The Bruid can use Geas, which is a promise or a restriction imposed upon others.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!e3vIJ3w2x3y4z5A6",
+  "_id": "e3vIJ3w2x3y4z5A6",
+  "folder": "MeyzHC6B7C8D9EaG",
+  "sort": 10900000,
+  "ownership": {
+    "default": 0
+  }
+}

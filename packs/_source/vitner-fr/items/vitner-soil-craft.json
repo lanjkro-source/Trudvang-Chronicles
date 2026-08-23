@@ -1,0 +1,25 @@
+{
+  "name": "Maîtrise de la terre",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft",
+    "description": "Magie de la terre déplaçant ou modelant sol et pierre, créant tremblements et bourbiers, pétrifiant les créatures.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!2iC3SeKfLgMhNiOj",
+  "_id": "2iC3SeKfLgMhNiOj",
+  "folder": null,
+  "sort": 900000,
+  "ownership": {
+    "default": 0
+  }
+}

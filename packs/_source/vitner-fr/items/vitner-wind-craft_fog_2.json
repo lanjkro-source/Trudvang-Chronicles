@@ -1,0 +1,28 @@
+{
+  "name": "Brouillard",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:fog:2",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:fog:2",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Y5cQ6bFaGbHcIdJe",
+  "_id": "Y5cQ6bFaGbHcIdJe",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14400000,
+  "ownership": {
+    "default": 0
+  }
+}

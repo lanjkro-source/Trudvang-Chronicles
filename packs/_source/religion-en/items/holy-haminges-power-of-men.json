@@ -1,0 +1,25 @@
+{
+  "name": "Power of Men",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men",
+    "description": "Mortal and dwarven arts of mastery, weapon skill, healing draughts, smithing, and legendary achievement.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!dxEBghLgMhNiOjPk",
+  "_id": "dxEBghLgMhNiOjPk",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 22500000,
+  "ownership": {
+    "default": 0
+  }
+}

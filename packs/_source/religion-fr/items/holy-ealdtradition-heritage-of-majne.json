@@ -1,0 +1,25 @@
+{
+  "name": "Héritage de Majne",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne",
+    "description": "Breuvages héroïques et bénédictions royales pour abattre trolls, géants et dragons et rallier les guerriers.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!6yeUCaD8D9EaGbHc",
+  "_id": "6yeUCaD8D9EaGbHc",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 9100000,
+  "ownership": {
+    "default": 0
+  }
+}

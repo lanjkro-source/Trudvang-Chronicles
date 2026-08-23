@@ -1,0 +1,28 @@
+{
+  "name": "Soil Blast",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:soil-blast:4",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:soil-blast:4",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Soil Craft",
+    "description": "The enchanter picks up a handful of soil from the ground (or a pocket) and hurls it at a target within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!zcjP1XqWrXsYtZu0",
+  "_id": "zcjP1XqWrXsYtZu0",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10600000,
+  "ownership": {
+    "default": 0
+  }
+}

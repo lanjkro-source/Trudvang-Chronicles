@@ -1,0 +1,28 @@
+{
+  "name": "Garde royale",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5",
+      "tabletId": "holy-ealdtradition-heritage-of-majne"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5",
+    "tabletId": "holy-ealdtradition-heritage-of-majne",
+    "tablet": "Héritage de Majne",
+    "description": "Le bruide invoque un esprit guerrier venant de la grande garde royale.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!ZcbgE7z5A6B7C8D9",
+  "_id": "ZcbgE7z5A6B7C8D9",
+  "folder": "9ADoAKeKfLgMhNiO",
+  "sort": 9800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Breath of Sunvei",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Warmth of Sunvei",
+    "description": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!5CAjCgLgMhNiOjPk",
+  "_id": "5CAjCgLgMhNiOjPk",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4400000,
+  "ownership": {
+    "default": 0
+  }
+}

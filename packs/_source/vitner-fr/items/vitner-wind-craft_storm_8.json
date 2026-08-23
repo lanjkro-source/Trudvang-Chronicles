@@ -1,0 +1,28 @@
+{
+  "name": "Tempête",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:storm:8",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:storm:8",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!dbMZtXpVqWrXsYtZ",
+  "_id": "dbMZtXpVqWrXsYtZ",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 15000000,
+  "ownership": {
+    "default": 0
+  }
+}

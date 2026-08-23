@@ -1,0 +1,28 @@
+{
+  "name": "Gills of the Blackfish",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0",
+      "tabletId": "holy-thuuldom-gills-of-the-blackfish"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0",
+    "tabletId": "holy-thuuldom-gills-of-the-blackfish",
+    "tablet": "Gills of the Blackfish",
+    "description": "The rune makes it possible for the one bearing the sacred object to breathe underwater for the duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!sdEiOD6B7C8D9EaG",
+  "_id": "sdEiOD6B7C8D9EaG",
+  "folder": "9o30LMgMhNiOjPkQ",
+  "sort": 28700000,
+  "ownership": {
+    "default": 0
+  }
+}

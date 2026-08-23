@@ -1,0 +1,25 @@
+{
+  "name": "Utilité de Nema",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness",
+    "description": "Pouvoirs aiguisant les sens animaliers, révélant les pistes, levant les entraves et accélérant les voyages.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "ealdTradition"
+  },
+  "_key": "!items!CfqiiLcIdJeKfLgM",
+  "_id": "CfqiiLcIdJeKfLgM",
+  "folder": "43OdbfHcIdJeKfLg",
+  "sort": 11300000,
+  "ownership": {
+    "default": 0
+  }
+}

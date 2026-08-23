@@ -1,0 +1,28 @@
+{
+  "name": "Curse Creature",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:curse-creature:5",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:curse-creature:5",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Witchcraft",
+    "description": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!3PUQzvXsYtZu0v1w",
+  "_id": "3PUQzvXsYtZu0v1w",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15800000,
+  "ownership": {
+    "default": 0
+  }
+}

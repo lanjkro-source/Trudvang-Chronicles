@@ -1,0 +1,28 @@
+{
+  "name": "Dispel Vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Vitner Craft",
+    "description": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!s1GSKKbHcIdJeKfL",
+  "_id": "s1GSKKbHcIdJeKfL",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bloodfire",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "Through this ability , Morgu bestows more life essence upon the Bruid.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!CWPUdLeKfLgMhNiO",
+  "_id": "CWPUdLeKfLgMhNiO",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 13200000,
+  "ownership": {
+    "default": 0
+  }
+}

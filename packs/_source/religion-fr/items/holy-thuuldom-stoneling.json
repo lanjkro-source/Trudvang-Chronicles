@@ -1,0 +1,25 @@
+{
+  "name": "Enfant de la pierre",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stoneling"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stoneling",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!emciIZqWrXsYtZu0",
+  "_id": "emciIZqWrXsYtZu0",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 30900000,
+  "ownership": {
+    "default": 0
+  }
+}

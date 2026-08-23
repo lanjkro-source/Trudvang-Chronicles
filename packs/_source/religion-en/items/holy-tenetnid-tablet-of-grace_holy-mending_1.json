@@ -1,0 +1,28 @@
+{
+  "name": "Holy Mending",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:holy-mending:1",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!yQSljXrXsYtZu0v1",
+  "_id": "yQSljXrXsYtZu0v1",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 15000000,
+  "ownership": {
+    "default": 0
+  }
+}

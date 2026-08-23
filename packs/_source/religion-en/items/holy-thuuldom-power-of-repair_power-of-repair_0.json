@@ -1,0 +1,28 @@
+{
+  "name": "Power of Repair",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-power-of-repair:power-of-repair:0",
+      "tabletId": "holy-thuuldom-power-of-repair"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-power-of-repair:power-of-repair:0",
+    "tabletId": "holy-thuuldom-power-of-repair",
+    "tablet": "Power of Repair",
+    "description": "The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!cItpRB4z5A6B7C8D",
+  "_id": "cItpRB4z5A6B7C8D",
+  "folder": "lERuMHaGbHcIdJeK",
+  "sort": 30500000,
+  "ownership": {
+    "default": 0
+  }
+}

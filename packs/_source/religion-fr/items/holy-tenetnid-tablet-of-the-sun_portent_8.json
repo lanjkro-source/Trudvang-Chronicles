@@ -1,0 +1,28 @@
+{
+  "name": "Oracle",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablette du soleil",
+    "description": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!yliFqSjPkQlRmSnT",
+  "_id": "yliFqSjPkQlRmSnT",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 19000000,
+  "ownership": {
+    "default": 0
+  }
+}

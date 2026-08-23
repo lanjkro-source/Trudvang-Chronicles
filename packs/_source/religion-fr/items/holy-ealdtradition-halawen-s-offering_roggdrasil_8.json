@@ -1,0 +1,28 @@
+{
+  "name": "Roggdrasil",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:roggdrasil:8",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Offrande de Halawen",
+    "description": "F Dégâts : 1d10 (JO 7-10) + 8 ; valeur de protection : 30 ; valeur d’intégrité : 300 ; MI : -2 ; AA : 4 F Confère au porteur un bonus de +6 à sa valeur de protection F Confère au porteur un bonus de +4 à toutes ses valeurs de compétence as ",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!rFKiJy2x3y4z5A6B",
+  "_id": "rFKiJy2x3y4z5A6B",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 9000000,
+  "ownership": {
+    "default": 0
+  }
+}

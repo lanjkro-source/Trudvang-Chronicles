@@ -1,0 +1,28 @@
+{
+  "name": "Griffes du loup",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+      "tabletId": "holy-haminges-power-of-the-beast"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
+    "tabletId": "holy-haminges-power-of-the-beast",
+    "tablet": "Pouvoir de la bête",
+    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!5BU37QiOjPkQlRmS",
+  "_id": "5BU37QiOjPkQlRmS",
+  "folder": "hx6ZZRjPkQlRmSnT",
+  "sort": 21000000,
+  "ownership": {
+    "default": 0
+  }
+}

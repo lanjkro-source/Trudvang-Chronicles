@@ -1,0 +1,28 @@
+{
+  "name": "Blood of the Lindwurm",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!zHfJ1nPkQlRmSnTo",
+  "_id": "zHfJ1nPkQlRmSnTo",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24200000,
+  "ownership": {
+    "default": 0
+  }
+}

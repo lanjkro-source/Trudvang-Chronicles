@@ -1,0 +1,25 @@
+{
+  "name": "Cave Spider's Grip",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-cave-spider-s-grip"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-cave-spider-s-grip",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!Nj3QFQjPkQlRmSnT",
+  "_id": "Nj3QFQjPkQlRmSnT",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 27600000,
+  "ownership": {
+    "default": 0
+  }
+}

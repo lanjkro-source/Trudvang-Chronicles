@@ -1,0 +1,28 @@
+{
+  "name": "Armure d'air",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-wind-craft:air-armor:4",
+      "tabletId": "vitner-wind-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-wind-craft:air-armor:4",
+    "tabletId": "vitner-wind-craft",
+    "tablet": "Maîtrise du vent",
+    "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de pro tection de 1.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!2900V3u0v1w2x3y4",
+  "_id": "2900V3u0v1w2x3y4",
+  "folder": "A1ipG6B7C8D9EaGb",
+  "sort": 14600000,
+  "ownership": {
+    "default": 0
+  }
+}

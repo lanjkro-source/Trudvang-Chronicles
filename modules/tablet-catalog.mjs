@@ -6,6 +6,15 @@ const localized = (key, fallback) => {
   return i18n && typeof i18n.has === "function" && i18n.has(key) ? i18n.localize(key) : fallback;
 };
 
+// Runtime text resolvers. The compendium pack builder injects Node-side equivalents via
+// {localize, format} so shipped packs and runtime-created items resolve text identically.
+const defaultLocalize = (key, fallback = "") => localized(key, fallback);
+const defaultFormat = (key, params) => {
+  const i18n = globalThis.game?.i18n;
+  if (i18n && typeof i18n.format === "function") return i18n.format(key, params);
+  return Object.entries(params ?? {}).reduce((text, [name, value]) => text.split(`{${name}}`).join(String(value)), String(key));
+};
+
 export const getPowerSummary = power => localized(`TRUDVANG.Content.Power.${power.id}.Summary`, "");
 
 export const tabletName = tablet => localized(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
@@ -74,14 +83,15 @@ export const TABLET_CATALOG = DEFINITIONS.map(([name, tabletType, religion, page
 
 export const TABLET_BY_ID = new Map(TABLET_CATALOG.map(tablet => [tablet.id, tablet]));
 
-export function tabletItemData(tablet) {
-  const runeId = tablet.powers[0]?.id;
-  const runeSummary = tablet.religion === "thuuldom" ? getPowerSummary(tablet.powers[0]) : "";
-  const name = tabletName(tablet);
-  const theme = localized(`TRUDVANG.Content.Theme.${tablet.id}`, "");
+export function tabletItemData(tablet, resolvers = {}) {
+  const localize = resolvers.localize ?? defaultLocalize;
+  const format = resolvers.format ?? defaultFormat;
+  const runeSummary = tablet.religion === "thuuldom" && tablet.powers[0] ? localize(`TRUDVANG.Content.Power.${tablet.powers[0].id}.Summary`) : "";
+  const name = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
+  const theme = localize(`TRUDVANG.Content.Theme.${tablet.id}`);
   const description = theme
-    || (runeSummary ? game.i18n.format("TRUDVANG.Content.ThuulRunePrefix", {summary: runeSummary.charAt(0).toLowerCase() + runeSummary.slice(1)}) : "")
-    || game.i18n.format("TRUDVANG.Description.TabletSummary", {name});
+    || (runeSummary ? format("TRUDVANG.Content.ThuulRunePrefix", {summary: runeSummary.charAt(0).toLowerCase() + runeSummary.slice(1)}) : "")
+    || format("TRUDVANG.Description.TabletSummary", {name});
   return {
     name,
     type: "tablet",
@@ -90,23 +100,26 @@ export function tabletItemData(tablet) {
     system: {
       catalogId: tablet.id,
       description,
-      source: game.i18n.format("TRUDVANG.Description.SourcePage", {page: tablet.page}),
+      source: format("TRUDVANG.Description.SourcePage", {page: tablet.page}),
       level: 1, tabletType: tablet.tabletType, religion: tablet.religion
     }
   };
 }
 
-export function powerItemData(power, tablet) {
-  const name = powerName(power);
+export function powerItemData(power, tablet, resolvers = {}) {
+  const localize = resolvers.localize ?? defaultLocalize;
+  const format = resolvers.format ?? defaultFormat;
+  const name = localize(`TRUDVANG.Content.Power.${power.id}.Name`, power.name);
+  const tabletLabel = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
   return {
     name,
     type: power.type,
     img: power.type === "spell" ? "icons/svg/daze.svg" : "icons/svg/angel.svg",
     flags: {"trudvang-chronicles": {catalogId: power.id, tabletId: tablet.id}},
     system: {
-      catalogId: power.id, tabletId: tablet.id, tablet: tabletName(tablet),
-      description: getPowerSummary(power) || game.i18n.format("TRUDVANG.Description.PowerSummary", {name, tablet: tabletName(tablet)}),
-      source: game.i18n.format("TRUDVANG.Description.SourcePage", {page: tablet.page}),
+      catalogId: power.id, tabletId: tablet.id, tablet: tabletLabel,
+      description: localize(`TRUDVANG.Content.Power.${power.id}.Summary`) || format("TRUDVANG.Description.PowerSummary", {name, tablet: tabletLabel}),
+      source: format("TRUDVANG.Description.SourcePage", {page: tablet.page}),
       level: power.level, cost: power.cost, modifier: power.modifier
     }
   };

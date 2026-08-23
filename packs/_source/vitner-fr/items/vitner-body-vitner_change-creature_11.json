@@ -1,0 +1,28 @@
+{
+  "name": "Transformation",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:change-creature:11",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:change-creature:11",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "Le vitner que conjure ce sort est assez puissant pour donner à une créature vivante la forme d’une tout autre créature.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!24o2l6z5A6B7C8D9",
+  "_id": "24o2l6z5A6B7C8D9",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3700000,
+  "ownership": {
+    "default": 0
+  }
+}

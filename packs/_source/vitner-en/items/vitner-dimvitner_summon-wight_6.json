@@ -1,0 +1,28 @@
+{
+  "name": "Summon Wight",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:summon-wight:6",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:summon-wight:6",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!6lGDfnQlRmSnToUp",
+  "_id": "6lGDfnQlRmSnToUp",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5800000,
+  "ownership": {
+    "default": 0
+  }
+}

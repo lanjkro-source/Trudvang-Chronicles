@@ -1,0 +1,28 @@
+{
+  "name": "Modification d'apparence",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:appearance-change:7",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:appearance-change:7",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Vitner corporel",
+    "description": "L’énergie de ce sort crée un déséqui libre dans le corps de la personne en chantée, ce qui a pour conséquence de modifier immédiatement son apparence physique.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!m2B1rGbHcIdJeKfL",
+  "_id": "m2B1rGbHcIdJeKfL",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3300000,
+  "ownership": {
+    "default": 0
+  }
+}

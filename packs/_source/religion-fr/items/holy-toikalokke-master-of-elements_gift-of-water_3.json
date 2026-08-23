@@ -1,0 +1,28 @@
+{
+  "name": "Don de l'eau",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:gift-of-water:3",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Maître des éléments",
+    "description": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!jo6i7KfLgMhNiOjP",
+  "_id": "jo6i7KfLgMhNiOjP",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 34800000,
+  "ownership": {
+    "default": 0
+  }
+}

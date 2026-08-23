@@ -1,0 +1,28 @@
+{
+  "name": "Petrify",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale:petrify:7",
+      "tabletId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:petrify:7",
+    "tabletId": "holy-haminges-power-of-the-scale",
+    "tablet": "Power of the Scale",
+    "description": "The spirit conjurer directs their powerful gaze at an opponent who turns to stone.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!uwn1oE9EaGbHcIdJ",
+  "_id": "uwn1oE9EaGbHcIdJ",
+  "folder": "Akvm54z5A6B7C8D9",
+  "sort": 24500000,
+  "ownership": {
+    "default": 0
+  }
+}

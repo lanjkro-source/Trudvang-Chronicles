@@ -1,0 +1,28 @@
+{
+  "name": "Read Vitner",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:read-vitner:6",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:read-vitner:6",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Power of Vision",
+    "description": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!UVfOw7A6B7C8D9Ea",
+  "_id": "UVfOw7A6B7C8D9Ea",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9900000,
+  "ownership": {
+    "default": 0
+  }
+}

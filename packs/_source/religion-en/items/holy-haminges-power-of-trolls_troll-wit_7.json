@@ -1,0 +1,28 @@
+{
+  "name": "Troll Wit",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Power of Trolls",
+    "description": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!zAuKDx0v1w2x3y4z",
+  "_id": "zAuKDx0v1w2x3y4z",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26700000,
+  "ownership": {
+    "default": 0
+  }
+}

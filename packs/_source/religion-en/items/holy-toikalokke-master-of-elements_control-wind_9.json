@@ -1,0 +1,28 @@
+{
+  "name": "Control Wind",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-master-of-elements:control-wind:9",
+      "tabletId": "holy-toikalokke-master-of-elements"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-master-of-elements:control-wind:9",
+    "tabletId": "holy-toikalokke-master-of-elements",
+    "tablet": "Master of Elements",
+    "description": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!PuM17gJeKfLgMhNi",
+  "_id": "PuM17gJeKfLgMhNi",
+  "folder": "sbmMriKfLgMhNiOj",
+  "sort": 35400000,
+  "ownership": {
+    "default": 0
+  }
+}

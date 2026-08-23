@@ -1,0 +1,28 @@
+{
+  "name": "Tremblement de terre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:earthquake:2",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:earthquake:2",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "Ce sort génère un violent tremblement de terre dans une zone située à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!go3Yu4w2x3y4z5A6",
+  "_id": "go3Yu4w2x3y4z5A6",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10400000,
+  "ownership": {
+    "default": 0
+  }
+}

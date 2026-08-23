@@ -1,0 +1,28 @@
+{
+  "name": "Ébullition",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-flame-craft:heat-water:0",
+      "tabletId": "vitner-flame-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-flame-craft:heat-water:0",
+    "tabletId": "vitner-flame-craft",
+    "tablet": "Maîtrise des flammes",
+    "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!teHsqJaGbHcIdJeK",
+  "_id": "teHsqJaGbHcIdJeK",
+  "folder": "bRheqmQlRmSnToUp",
+  "sort": 6200000,
+  "ownership": {
+    "default": 0
+  }
+}

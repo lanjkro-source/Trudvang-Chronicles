@@ -1,0 +1,28 @@
+{
+  "name": "Water Walk",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:water-walk:7",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:water-walk:7",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!ZZ0To1sYtZu0v1w2",
+  "_id": "ZZ0To1sYtZu0v1w2",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13900000,
+  "ownership": {
+    "default": 0
+  }
+}

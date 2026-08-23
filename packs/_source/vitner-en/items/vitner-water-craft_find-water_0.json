@@ -1,0 +1,28 @@
+{
+  "name": "Find Water",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-water-craft:find-water:0",
+      "tabletId": "vitner-water-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-water-craft:find-water:0",
+    "tabletId": "vitner-water-craft",
+    "tablet": "Water Craft",
+    "description": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!MG4q9XrXsYtZu0v1",
+  "_id": "MG4q9XrXsYtZu0v1",
+  "folder": "VBDcHPhNiOjPkQlR",
+  "sort": 13200000,
+  "ownership": {
+    "default": 0
+  }
+}

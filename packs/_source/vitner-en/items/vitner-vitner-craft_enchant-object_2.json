@@ -1,0 +1,28 @@
+{
+  "name": "Enchant Object",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-craft:enchant-object:2",
+      "tabletId": "vitner-vitner-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-craft:enchant-object:2",
+    "tabletId": "vitner-vitner-craft",
+    "tablet": "Vitner Craft",
+    "description": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!vqgJhTkQlRmSnToU",
+  "_id": "vqgJhTkQlRmSnToU",
+  "folder": "AzQi2B5A6B7C8D9E",
+  "sort": 11400000,
+  "ownership": {
+    "default": 0
+  }
+}

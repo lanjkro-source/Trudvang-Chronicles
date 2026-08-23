@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!hheuoXoUpVqWrXsY",
+  "_id": "hheuoXoUpVqWrXsY",
+  "name": "Healing Rune",
+  "type": "Item",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sorting": "a",
+  "sort": 29200000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

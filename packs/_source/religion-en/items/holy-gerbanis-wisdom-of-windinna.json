@@ -1,0 +1,25 @@
+{
+  "name": "Wisdom of Windinna",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna",
+    "description": "Powers of inspiration, truth, creativity, mental resolve, protection, and Windinna's insight.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!cmXivlQlRmSnToUp",
+  "_id": "cmXivlQlRmSnToUp",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 4600000,
+  "ownership": {
+    "default": 0
+  }
+}

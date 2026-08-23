@@ -1,0 +1,28 @@
+{
+  "name": "Legendary",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:legendary:7",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:legendary:7",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!aWYqd2v1w2x3y4z5",
+  "_id": "aWYqd2v1w2x3y4z5",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Réflexes de félin",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
+      "tabletId": "holy-toikalokke-lynx-power"
+    }
+  },
+  "system": {
+    "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
+    "tabletId": "holy-toikalokke-lynx-power",
+    "tablet": "Agilité du lynx",
+    "description": "L’ihana esquive une attaque à distance qui le vise.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!DjjCffIdJeKfLgMh",
+  "_id": "DjjCffIdJeKfLgMh",
+  "folder": "DWwAI8B7C8D9EaGb",
+  "sort": 33700000,
+  "ownership": {
+    "default": 0
+  }
+}

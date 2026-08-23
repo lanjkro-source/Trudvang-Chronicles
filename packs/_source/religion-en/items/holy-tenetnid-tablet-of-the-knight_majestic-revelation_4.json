@@ -1,0 +1,28 @@
+{
+  "name": "Majestic Revelation",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "The prayer invokes Gave’s presence and holiness.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!VQcKOVnToUpVqWrX",
+  "_id": "VQcKOVnToUpVqWrX",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16400000,
+  "ownership": {
+    "default": 0
+  }
+}

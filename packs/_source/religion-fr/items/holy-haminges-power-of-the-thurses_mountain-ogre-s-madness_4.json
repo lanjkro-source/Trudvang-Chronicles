@@ -1,0 +1,28 @@
+{
+  "name": "Folie de l'ogre des montagnes",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Puissance des tursirs",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!DyenH5y4z5A6B7C8",
+  "_id": "DyenH5y4z5A6B7C8",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25300000,
+  "ownership": {
+    "default": 0
+  }
+}

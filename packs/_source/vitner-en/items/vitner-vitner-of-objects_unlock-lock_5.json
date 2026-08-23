@@ -1,0 +1,28 @@
+{
+  "name": "Unlock/Lock",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner of Objects",
+    "description": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!jnUNTZqWrXsYtZu0",
+  "_id": "jnUNTZqWrXsYtZu0",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12700000,
+  "ownership": {
+    "default": 0
+  }
+}

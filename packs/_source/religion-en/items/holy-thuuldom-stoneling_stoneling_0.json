@@ -1,0 +1,28 @@
+{
+  "name": "Stoneling",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-stoneling:stoneling:0",
+      "tabletId": "holy-thuuldom-stoneling"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-stoneling:stoneling:0",
+    "tabletId": "holy-thuuldom-stoneling",
+    "tablet": "Stoneling",
+    "description": "The Thuul connects a minor mountain spirit to a single stone the size of a fist.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!6I6XtZsYtZu0v1w2",
+  "_id": "6I6XtZsYtZu0v1w2",
+  "folder": "5O0vncGbHcIdJeKf",
+  "sort": 31100000,
+  "ownership": {
+    "default": 0
+  }
+}

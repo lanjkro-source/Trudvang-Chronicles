@@ -1,0 +1,28 @@
+{
+  "name": "Chaleur guérisseuse",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-warmth:5",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!AGAvSKdJeKfLgMhN",
+  "_id": "AGAvSKdJeKfLgMhN",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4200000,
+  "ownership": {
+    "default": 0
+  }
+}

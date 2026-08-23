@@ -1,0 +1,28 @@
+{
+  "name": "Leather Skin",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-body-vitner:leather-skin:5",
+      "tabletId": "vitner-body-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-body-vitner:leather-skin:5",
+    "tabletId": "vitner-body-vitner",
+    "tablet": "Body Vitner",
+    "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!yrRINPkQlRmSnToU",
+  "_id": "yrRINPkQlRmSnToU",
+  "folder": "i7KPHw1w2x3y4z5A",
+  "sort": 3100000,
+  "ownership": {
+    "default": 0
+  }
+}

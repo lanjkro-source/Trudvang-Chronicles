@@ -1,0 +1,28 @@
+{
+  "name": "Résistance à l'eau",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:waterproof:1",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:waterproof:1",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner des objets",
+    "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!GGywJWoUpVqWrXsY",
+  "_id": "GGywJWoUpVqWrXsY",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12300000,
+  "ownership": {
+    "default": 0
+  }
+}

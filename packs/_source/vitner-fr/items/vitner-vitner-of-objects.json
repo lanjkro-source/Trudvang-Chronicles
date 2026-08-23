@@ -1,0 +1,25 @@
+{
+  "name": "Vitner des objets",
+  "type": "tablet",
+  "img": "icons/svg/book.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects",
+    "description": "Magie identifiant, protégeant, liant, altérant, créant, verrouillant ou détruisant des objets.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "vitner",
+    "religion": ""
+  },
+  "_key": "!items!ffmMyB2x3y4z5A6B",
+  "_id": "ffmMyB2x3y4z5A6B",
+  "folder": null,
+  "sort": 1100000,
+  "ownership": {
+    "default": 0
+  }
+}

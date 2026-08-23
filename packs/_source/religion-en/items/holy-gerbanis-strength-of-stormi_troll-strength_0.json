@@ -1,0 +1,28 @@
+{
+  "name": "Troll Strength",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Strength of Stormi",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!c56BlNfLgMhNiOjP",
+  "_id": "c56BlNfLgMhNiOjP",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 2600000,
+  "ownership": {
+    "default": 0
+  }
+}

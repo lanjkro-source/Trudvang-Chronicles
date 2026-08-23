@@ -1,0 +1,28 @@
+{
+  "name": "Parler aux animaux",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-animal-vitner:speak-to-animals:1",
+      "tabletId": "vitner-animal-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-animal-vitner:speak-to-animals:1",
+    "tabletId": "vitner-animal-vitner",
+    "tablet": "Vitner animal",
+    "description": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!jkJAvz4z5A6B7C8D",
+  "_id": "jkJAvz4z5A6B7C8D",
+  "folder": "KxYOBgIdJeKfLgMh",
+  "sort": 1700000,
+  "ownership": {
+    "default": 0
+  }
+}

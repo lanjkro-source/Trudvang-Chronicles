@@ -1,0 +1,28 @@
+{
+  "name": "Cave Spider's Grip",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+      "tabletId": "holy-thuuldom-cave-spider-s-grip"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
+    "tabletId": "holy-thuuldom-cave-spider-s-grip",
+    "tablet": "Cave Spider's Grip",
+    "description": "The rune makes it possible for the Thuul to climb vertical walls.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!8FNcPKdJeKfLgMhN",
+  "_id": "8FNcPKdJeKfLgMhN",
+  "folder": "ovkcooPkQlRmSnTo",
+  "sort": 27800000,
+  "ownership": {
+    "default": 0
+  }
+}

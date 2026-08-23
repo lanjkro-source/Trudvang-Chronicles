@@ -1,0 +1,28 @@
+{
+  "name": "Regard de l'âme",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:soul-sight:4",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:soul-sight:4",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Pouvoir d'Enken",
+    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!TZBhe1tZu0v1w2x3",
+  "_id": "TZBhe1tZu0v1w2x3",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1900000,
+  "ownership": {
+    "default": 0
+  }
+}

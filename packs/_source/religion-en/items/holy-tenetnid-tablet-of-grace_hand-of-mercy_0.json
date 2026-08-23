@@ -1,0 +1,28 @@
+{
+  "name": "Hand of Mercy",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-mercy:0",
+      "tabletId": "holy-tenetnid-tablet-of-grace"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-mercy:0",
+    "tabletId": "holy-tenetnid-tablet-of-grace",
+    "tablet": "Tablet of Grace",
+    "description": "The priest invokes Gave and lays glowing hands upon an ailing person in their care.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Asx00IcIdJeKfLgM",
+  "_id": "Asx00IcIdJeKfLgM",
+  "folder": "ascQNsXsYtZu0v1w",
+  "sort": 14900000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Cieux obscurcis",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribut de Morgu",
+    "description": "F Type : instantané F Portée : 30 mètres F Temps d’invocation : 2 tours de jeu Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!leHBI1sYtZu0v1w2",
+  "_id": "leHBI1sYtZu0v1w2",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 13300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Thurse Strength",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!2ylZ5gIdJeKfLgMh",
+  "_id": "2ylZ5gIdJeKfLgMh",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25600000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Bourbier",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:quagmire:3",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:quagmire:3",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "Ce sort crée un épais marécage circu laire de 3 mètres de diamètre et de 10 centimètres de profondeur.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!NwPNFtXsYtZu0v1w",
+  "_id": "NwPNFtXsYtZu0v1w",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10500000,
+  "ownership": {
+    "default": 0
+  }
+}

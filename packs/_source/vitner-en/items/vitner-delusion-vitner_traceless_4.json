@@ -1,0 +1,28 @@
+{
+  "name": "Traceless",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-delusion-vitner:traceless:4",
+      "tabletId": "vitner-delusion-vitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-delusion-vitner:traceless:4",
+    "tabletId": "vitner-delusion-vitner",
+    "tablet": "Delusion Vitner",
+    "description": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!XfSmjQhNiOjPkQlR",
+  "_id": "XfSmjQhNiOjPkQlR",
+  "folder": "hGwjiZqWrXsYtZu0",
+  "sort": 4300000,
+  "ownership": {
+    "default": 0
+  }
+}

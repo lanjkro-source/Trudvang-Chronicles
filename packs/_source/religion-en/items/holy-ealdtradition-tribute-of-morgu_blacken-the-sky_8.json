@@ -1,0 +1,28 @@
+{
+  "name": "Blacken the Sky",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!aR7YuvYtZu0v1w2x",
+  "_id": "aR7YuvYtZu0v1w2x",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 13400000,
+  "ownership": {
+    "default": 0
+  }
+}

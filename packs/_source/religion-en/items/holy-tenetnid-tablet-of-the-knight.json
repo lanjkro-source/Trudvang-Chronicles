@@ -1,0 +1,25 @@
+{
+  "name": "Tablet of the Knight",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight",
+    "description": "Knightly blessings that empower armor, spears, authority, sacred weapons, and holy battle forms.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "tenetNid"
+  },
+  "_key": "!items!4glp7IcIdJeKfLgM",
+  "_id": "4glp7IcIdJeKfLgM",
+  "folder": "7Gu1oqVqWrXsYtZu",
+  "sort": 15800000,
+  "ownership": {
+    "default": 0
+  }
+}

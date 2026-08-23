@@ -1,0 +1,28 @@
+{
+  "name": "Orientation",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-perceiving:orientation:3",
+      "tabletId": "vitner-perceiving"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-perceiving:orientation:3",
+    "tabletId": "vitner-perceiving",
+    "tablet": "Perception",
+    "description": "Ce sort permet à son bénéficiaire de conserver son sens de l’orienta tion pendant toute la durée du sort.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!KFm0NWnToUpVqWrX",
+  "_id": "KFm0NWnToUpVqWrX",
+  "folder": "hRcrSpSnToUpVqWr",
+  "sort": 7400000,
+  "ownership": {
+    "default": 0
+  }
+}

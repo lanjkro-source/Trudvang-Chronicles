@@ -1,0 +1,25 @@
+{
+  "name": "Power of the Dragon",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-dragon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon",
+    "description": "Draconic powers granting constriction, flame resistance, paralyzing sight, scales, and serpent forms.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!W8ZUeoSnToUpVqWr",
+  "_id": "W8ZUeoSnToUpVqWr",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 21400000,
+  "ownership": {
+    "default": 0
+  }
+}

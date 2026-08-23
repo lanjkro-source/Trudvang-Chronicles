@@ -1,0 +1,28 @@
+{
+  "name": "Healing",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:healing:0",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Warmth of Sunvei",
+    "description": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!jLyAsB3y4z5A6B7C",
+  "_id": "jLyAsB3y4z5A6B7C",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 3700000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Night Vision",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:night-vision:0",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:night-vision:0",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Power of Enken",
+    "description": "The Stormkelt is granted night vision for one minute.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!Jfea26x3y4z5A6B7",
+  "_id": "Jfea26x3y4z5A6B7",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1500000,
+  "ownership": {
+    "default": 0
+  }
+}

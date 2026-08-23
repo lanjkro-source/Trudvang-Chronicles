@@ -1,0 +1,28 @@
+{
+  "name": "Detect Composition",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-vitner-of-objects:detect-composition:0",
+      "tabletId": "vitner-vitner-of-objects"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-vitner-of-objects:detect-composition:0",
+    "tabletId": "vitner-vitner-of-objects",
+    "tablet": "Vitner of Objects",
+    "description": "The enchanter can identify all nonorganic materials, such as metals and If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!utoIyIcIdJeKfLgM",
+  "_id": "utoIyIcIdJeKfLgM",
+  "folder": "K5h8NuXsYtZu0v1w",
+  "sort": 12200000,
+  "ownership": {
+    "default": 0
+  }
+}

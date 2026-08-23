@@ -1,0 +1,28 @@
+{
+  "name": "Willpower of the Ancestors",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "Strengthens the recipient's resolve with the courage of their ancestors.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!RluLdSmSnToUpVqW",
+  "_id": "RluLdSmSnToUpVqW",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8200000,
+  "ownership": {
+    "default": 0
+  }
+}

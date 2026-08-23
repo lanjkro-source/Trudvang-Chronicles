@@ -1,0 +1,28 @@
+{
+  "name": "Conversation de l'au-delà",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-dimvitner:speak-to-undead:3",
+      "tabletId": "vitner-dimvitner"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-dimvitner:speak-to-undead:3",
+    "tabletId": "vitner-dimvitner",
+    "tablet": "Dimvitner",
+    "description": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!ETSuKYqWrXsYtZu0",
+  "_id": "ETSuKYqWrXsYtZu0",
+  "folder": "fRWwTKeKfLgMhNiO",
+  "sort": 5500000,
+  "ownership": {
+    "default": 0
+  }
+}

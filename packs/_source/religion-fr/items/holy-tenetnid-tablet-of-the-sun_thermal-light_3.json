@@ -1,0 +1,28 @@
+{
+  "name": "Lumière rassurante",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3",
+      "tabletId": "holy-tenetnid-tablet-of-the-sun"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-sun:thermal-light:3",
+    "tabletId": "holy-tenetnid-tablet-of-the-sun",
+    "tablet": "Tablette du soleil",
+    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!r5FfOhJeKfLgMhNi",
+  "_id": "r5FfOhJeKfLgMhNi",
+  "folder": "Wya7jhMhNiOjPkQl",
+  "sort": 18500000,
+  "ownership": {
+    "default": 0
+  }
+}

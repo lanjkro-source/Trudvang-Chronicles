@@ -1,0 +1,28 @@
+{
+  "name": "Malédiction d'objet",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-witchcraft:curse-object:3",
+      "tabletId": "vitner-witchcraft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-witchcraft:curse-object:3",
+    "tabletId": "vitner-witchcraft",
+    "tablet": "Sorcellerie",
+    "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!xOTqeTkQlRmSnToU",
+  "_id": "xOTqeTkQlRmSnToU",
+  "folder": "CcDjzKeKfLgMhNiO",
+  "sort": 15600000,
+  "ownership": {
+    "default": 0
+  }
+}

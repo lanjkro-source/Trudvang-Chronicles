@@ -1,0 +1,28 @@
+{
+  "name": "Force de hinje",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
+      "tabletId": "holy-gerbanis-strength-of-stormi"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
+    "tabletId": "holy-gerbanis-strength-of-stormi",
+    "tablet": "Force de Storme",
+    "description": "FORCE DE HINJE :",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!SPUw0RkQlRmSnToU",
+  "_id": "SPUw0RkQlRmSnToU",
+  "folder": "Tl9niNhNiOjPkQlR",
+  "sort": 2900000,
+  "ownership": {
+    "default": 0
+  }
+}

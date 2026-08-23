@@ -1,0 +1,28 @@
+{
+  "name": "Infection",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0",
+      "tabletId": "holy-haminges-power-of-trolls"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-trolls:disease-carrier:0",
+    "tabletId": "holy-haminges-power-of-trolls",
+    "tablet": "Puissance des trolls",
+    "description": "une valeur de situation de 8 (le modificateur de Constitution s’applique).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!pTKXR6B7C8D9EaGb",
+  "_id": "pTKXR6B7C8D9EaGb",
+  "folder": "0aTVJMfLgMhNiOjP",
+  "sort": 26000000,
+  "ownership": {
+    "default": 0
+  }
+}

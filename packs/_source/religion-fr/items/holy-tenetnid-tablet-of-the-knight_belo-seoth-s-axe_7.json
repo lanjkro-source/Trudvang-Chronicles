@@ -1,0 +1,28 @@
+{
+  "name": "Hache de Belo Seoth",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablette du chevalier",
+    "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige +5 points de dégâts supplémentaires (+8 contre les morts-vivants et +11 contre les démons).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!p4pfOSnToUpVqWrX",
+  "_id": "p4pfOSnToUpVqWrX",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16700000,
+  "ownership": {
+    "default": 0
+  }
+}

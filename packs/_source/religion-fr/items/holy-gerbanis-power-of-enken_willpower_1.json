@@ -1,0 +1,28 @@
+{
+  "name": "Force d'âme",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-power-of-enken:willpower:1",
+      "tabletId": "holy-gerbanis-power-of-enken"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:willpower:1",
+    "tabletId": "holy-gerbanis-power-of-enken",
+    "tablet": "Pouvoir d'Enken",
+    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!QBGSaLdJeKfLgMhN",
+  "_id": "QBGSaLdJeKfLgMhN",
+  "folder": "WWPg77z5A6B7C8D9",
+  "sort": 1600000,
+  "ownership": {
+    "default": 0
+  }
+}

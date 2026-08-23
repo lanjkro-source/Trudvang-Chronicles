@@ -1,0 +1,28 @@
+{
+  "name": "Mountain Ogre's Fury",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+      "tabletId": "holy-haminges-power-of-the-thurses"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+    "tabletId": "holy-haminges-power-of-the-thurses",
+    "tablet": "Power of the Thurses",
+    "description": "sized (from half the size of a human up to 1.5 times the size of a human).",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!0tN8AdIdJeKfLgMh",
+  "_id": "0tN8AdIdJeKfLgMh",
+  "folder": "SAjqky2x3y4z5A6B",
+  "sort": 25100000,
+  "ownership": {
+    "default": 0
+  }
+}

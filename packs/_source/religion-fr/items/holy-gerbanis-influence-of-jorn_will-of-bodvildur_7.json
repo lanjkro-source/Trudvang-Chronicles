@@ -1,0 +1,28 @@
+{
+  "name": "Volonté de Bodvilur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7",
+      "tabletId": "holy-gerbanis-influence-of-jorn"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7",
+    "tabletId": "holy-gerbanis-influence-of-jorn",
+    "tablet": "Influence de Jorn",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!zs0VdB5A6B7C8D9E",
+  "_id": "zs0VdB5A6B7C8D9E",
+  "folder": "YjFWLNiOjPkQlRmS",
+  "sort": 1100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Vitner Shield",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+      "tabletId": "holy-ealdtradition-halawen-s-offering"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
+    "tabletId": "holy-ealdtradition-halawen-s-offering",
+    "tablet": "Halawen's Offering",
+    "description": "The Bruid lets their ancestors watch over them and receives a divine protection against vitner.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!uD44F6B7C8D9EaGb",
+  "_id": "uD44F6B7C8D9EaGb",
+  "folder": "5uTfVF7C8D9EaGbH",
+  "sort": 8300000,
+  "ownership": {
+    "default": 0
+  }
+}

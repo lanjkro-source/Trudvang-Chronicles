@@ -1,0 +1,28 @@
+{
+  "name": "Examen d'objet",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-power-of-vision:scanning:1",
+      "tabletId": "vitner-power-of-vision"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-power-of-vision:scanning:1",
+    "tabletId": "vitner-power-of-vision",
+    "tablet": "Pouvoir de la vision",
+    "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Xe6H32v1w2x3y4z5",
+  "_id": "Xe6H32v1w2x3y4z5",
+  "folder": "3qVwF4v1w2x3y4z5",
+  "sort": 9400000,
+  "ownership": {
+    "default": 0
+  }
+}

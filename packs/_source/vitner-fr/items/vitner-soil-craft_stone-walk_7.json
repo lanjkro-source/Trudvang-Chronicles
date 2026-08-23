@@ -1,0 +1,28 @@
+{
+  "name": "Marche dans la pierre",
+  "type": "spell",
+  "img": "icons/svg/daze.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "vitner-soil-craft:stone-walk:7",
+      "tabletId": "vitner-soil-craft"
+    }
+  },
+  "system": {
+    "catalogId": "vitner-soil-craft:stone-walk:7",
+    "tabletId": "vitner-soil-craft",
+    "tablet": "Maîtrise de la terre",
+    "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!T4CVQYrXsYtZu0v1",
+  "_id": "T4CVQYrXsYtZu0v1",
+  "folder": "lbCNyNhNiOjPkQlR",
+  "sort": 10900000,
+  "ownership": {
+    "default": 0
+  }
+}

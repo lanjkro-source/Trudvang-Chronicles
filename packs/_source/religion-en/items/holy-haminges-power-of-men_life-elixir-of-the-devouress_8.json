@@ -1,0 +1,28 @@
+{
+  "name": "Life Elixir of the Devouress",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+      "tabletId": "holy-haminges-power-of-men"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-men:life-elixir-of-the-devouress:8",
+    "tabletId": "holy-haminges-power-of-men",
+    "tablet": "Power of Men",
+    "description": "Creates a legendary elixir capable of restoring life and vitality.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!Tdg4duXsYtZu0v1w",
+  "_id": "Tdg4duXsYtZu0v1w",
+  "folder": "QKDwicE9EaGbHcId",
+  "sort": 23500000,
+  "ownership": {
+    "default": 0
+  }
+}

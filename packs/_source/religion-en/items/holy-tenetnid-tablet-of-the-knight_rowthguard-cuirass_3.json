@@ -1,0 +1,28 @@
+{
+  "name": "Rowthguard Cuirass",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3",
+      "tabletId": "holy-tenetnid-tablet-of-the-knight"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3",
+    "tabletId": "holy-tenetnid-tablet-of-the-knight",
+    "tablet": "Tablet of the Knight",
+    "description": "Surrounds the recipient with the sacred protection of a Rowthguard cuirass.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!GRAdtMfLgMhNiOjP",
+  "_id": "GRAdtMfLgMhNiOjP",
+  "folder": "vudydKcIdJeKfLgM",
+  "sort": 16300000,
+  "ownership": {
+    "default": 0
+  }
+}

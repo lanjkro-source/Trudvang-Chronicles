@@ -1,0 +1,28 @@
+{
+  "name": "Langue de Siro Werte",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+      "tabletId": "holy-tenetnid-tablet-of-voices"
+    }
+  },
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
+    "tabletId": "holy-tenetnid-tablet-of-voices",
+    "tablet": "Tablette des voix",
+    "description": "Le prêtre développe pour un temps la faculté de parler et de comprendre une langue étrangère, avec un bonus de +2 à sa valeur de compétence en Connaissances.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!W69Ij8B7C8D9EaGb",
+  "_id": "W69Ij8B7C8D9EaGb",
+  "folder": "jJvQm6y4z5A6B7C8",
+  "sort": 19600000,
+  "ownership": {
+    "default": 0
+  }
+}

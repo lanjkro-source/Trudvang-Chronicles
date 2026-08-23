@@ -1,0 +1,25 @@
+{
+  "name": "Main de Borjorn",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-thuuldom-borjorn-s-hand"
+    }
+  },
+  "system": {
+    "catalogId": "holy-thuuldom-borjorn-s-hand",
+    "description": "TRUDVANG.Content.ThuulRunePrefix",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "thuuldom"
+  },
+  "_key": "!items!rmEfh7y4z5A6B7C8",
+  "_id": "rmEfh7y4z5A6B7C8",
+  "folder": "OFB0ZaFaGbHcIdJe",
+  "sort": 27300000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Brise libératrice",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
+      "tabletId": "holy-ealdtradition-nema-s-usefulness"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
+    "tabletId": "holy-ealdtradition-nema-s-usefulness",
+    "tablet": "Utilité de Nema",
+    "description": "Une brise rafraîchissante traverse la zone désignée par le bruide et ouvre une porte, déverrouille une serrure difficile, ouvre une cellule de prison ou dissipe un vitner de contrôle ou de contrainte touchant une autre personne.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!XOaaA9A6B7C8D9Ea",
+  "_id": "XOaaA9A6B7C8D9Ea",
+  "folder": "fXNKAXrXsYtZu0v1",
+  "sort": 11900000,
+  "ownership": {
+    "default": 0
+  }
+}

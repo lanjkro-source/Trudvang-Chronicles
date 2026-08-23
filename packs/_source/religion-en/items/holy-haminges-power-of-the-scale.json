@@ -1,0 +1,25 @@
+{
+  "name": "Power of the Scale",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-haminges-power-of-the-scale"
+    }
+  },
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale",
+    "description": "Lindwurm powers of terror, regeneration, stone limbs, petrification, and monstrous resilience.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "haminges"
+  },
+  "_key": "!items!LsYJkF7C8D9EaGbH",
+  "_id": "LsYJkF7C8D9EaGbH",
+  "folder": "Oq6uEKeKfLgMhNiO",
+  "sort": 23600000,
+  "ownership": {
+    "default": 0
+  }
+}

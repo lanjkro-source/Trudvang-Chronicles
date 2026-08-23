@@ -1,0 +1,28 @@
+{
+  "name": "Madness",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:madness:5",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:madness:5",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribute of Morgu",
+    "description": "Overwhelms warriors with Morgu's influence and drives them into uncontrollable fury.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!mjWEiVoUpVqWrXsY",
+  "_id": "mjWEiVoUpVqWrXsY",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 13100000,
+  "ownership": {
+    "default": 0
+  }
+}

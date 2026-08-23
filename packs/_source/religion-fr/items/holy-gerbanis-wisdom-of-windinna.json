@@ -1,0 +1,25 @@
+{
+  "name": "Sagesse de Windinna",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-wisdom-of-windinna"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-wisdom-of-windinna",
+    "description": "Pouvoirs d'inspiration, de vérité, de créativité, de résolution mentale, de protection et de clairvoyance de Windinna.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "gerbanis"
+  },
+  "_key": "!items!cmXivlQlRmSnToUp",
+  "_id": "cmXivlQlRmSnToUp",
+  "folder": "NS97uQiOjPkQlRmS",
+  "sort": 4600000,
+  "ownership": {
+    "default": 0
+  }
+}

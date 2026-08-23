@@ -1,0 +1,28 @@
+{
+  "name": "Pouvoir de Firon",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
+      "tabletId": "holy-gerbanis-warmth-of-sunvei"
+    }
+  },
+  "system": {
+    "catalogId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
+    "tabletId": "holy-gerbanis-warmth-of-sunvei",
+    "tablet": "Chaleur de Solvei",
+    "description": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!FTbxD5y4z5A6B7C8",
+  "_id": "FTbxD5y4z5A6B7C8",
+  "folder": "jGkvw6z5A6B7C8D9",
+  "sort": 4100000,
+  "ownership": {
+    "default": 0
+  }
+}

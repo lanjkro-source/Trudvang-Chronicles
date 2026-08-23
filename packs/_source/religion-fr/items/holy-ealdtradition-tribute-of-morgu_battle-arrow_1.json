@@ -1,0 +1,28 @@
+{
+  "name": "Flèche de bataille",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1",
+      "tabletId": "holy-ealdtradition-tribute-of-morgu"
+    }
+  },
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1",
+    "tabletId": "holy-ealdtradition-tribute-of-morgu",
+    "tablet": "Tribut de Morgu",
+    "description": "noire. Cette flèche touche automatique ment si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+    "source": "TRUDVANG.Description.SourcePage",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!HchpYXpVqWrXsYtZ",
+  "_id": "HchpYXpVqWrXsYtZ",
+  "folder": "WT5IroToUpVqWrXs",
+  "sort": 12700000,
+  "ownership": {
+    "default": 0
+  }
+}
