@@ -303,7 +303,8 @@ export async function syncImportedKnowledgeItems({force = false} = {}) {
     // Match every owned copy: unowned world items plus each ability embedded in an actor.
     const targets = [];
     const collect = (container) => {
-      for (const item of container.items) {
+      const items = container.items ?? container;
+      for (const item of items) {
         if (item.type !== "ability") continue;
         let match = null;
         if (item.system.catalogId) {

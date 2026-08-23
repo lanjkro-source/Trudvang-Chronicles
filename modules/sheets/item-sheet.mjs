@@ -41,6 +41,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
+    context.item = this.item;
+    context.editable = this.isEditable;
     context.system = this.item.system;
     context.itemType = this.item.type;
     context.isType = type => this.item.type === type;
