@@ -1,0 +1,24 @@
+{
+  "_key": "!items!P4FmplMhNiOjPkQl",
+  "_id": "P4FmplMhNiOjPkQl",
+  "name": "Arbalète",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6000000,
+  "system": {
+    "description": "Cette spécialité développe la capacité du personnage à utiliser des arbalètes. Il gagne un modificateur de +2 par niveau à la valeur de compétence lorsqu’il tire avec une arbalète.",
+    "summary": "Développe la maîtrise de l’arbalète au tir.",
+    "catalogId": "crossbow",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

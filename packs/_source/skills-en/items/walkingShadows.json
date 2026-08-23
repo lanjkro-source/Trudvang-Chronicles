@@ -1,0 +1,24 @@
+{
+  "_key": "!items!RH8AldIdJeKfLgMh",
+  "_id": "RH8AldIdJeKfLgMh",
+  "name": "Walking in Shadows",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9100000,
+  "system": {
+    "description": "The person has learned to sneak around without being detected. They know how to step in ways that generate as little noise as possible. The specialty is good not only for sneaking, but also for movement in various environments such as shadows, brush, and wilderness, and also through crowds. Walking in the shadows has limits. One can move only up to half their maximum movement when trying to remain hidden, and only up to 20% of the maximum movement when also trying to remain silent.",
+    "summary": "Moves the character silently through shadows, brush, wilderness or even crowds.",
+    "catalogId": "walkingShadows",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

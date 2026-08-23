@@ -1,0 +1,24 @@
+{
+  "_key": "!items!A05GSXoUpVqWrXsY",
+  "_id": "A05GSXoUpVqWrXsY",
+  "name": "Combat Reaction",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6800000,
+  "system": {
+    "description": "The person has learned to react quickly in battle. The specialty gives the person +2 per level in initiative in combat.",
+    "summary": "Sharpens the character’s reactions during combat.",
+    "catalogId": "combatReaction",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

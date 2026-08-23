@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Vn1k4fKfLgMhNiOj",
+  "_id": "Vn1k4fKfLgMhNiOj",
+  "name": "Tissage attentif",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10000000,
+  "system": {
+    "description": "L’invocateur tisse ses sorts avec minutie. Lorsqu’il rencontre un échec de sort, cette spécialité lui permet d’appliquer un modificateur de -2 par niveau au jet effectué sur la table de magie funeste (Cf. le paragraphe « Magie funeste » au L’invocateur est également difficile à déconcentrer lorsqu’il prépare ou invoque un sort. À chaque fois qu’il doit faire un test de situation pour voir s’il est suffisamment déconcentré pour que le sort soit annulé, son jet reçoit un modificateur de +2 par niveau (cf. le paragraphe « Être déconcentré » au chapitre Tisseurs de vitner).",
+    "summary": "Tisse ses sorts avec minutie : atténue les conséquences de la magie funeste et rend l’invocateur difficile à déconcentrer.",
+    "catalogId": "safeWeaving",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!lcqZPKbHcIdJeKfL",
+  "_id": "lcqZPKbHcIdJeKfL",
+  "name": "Cook",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2300000,
+  "system": {
+    "description": "The person has learned how to cook good food.",
+    "summary": "Teaches how to cook good food.",
+    "catalogId": "cook",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

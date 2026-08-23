@@ -1,0 +1,24 @@
+{
+  "_key": "!items!JnNUyTlRmSnToUpV",
+  "_id": "JnNUyTlRmSnToUpV",
+  "name": "Language",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8000000,
+  "system": {
+    "description": "The Language discipline develops the character’s ability to express themselves in a specific language (which would be their Mother Tongue before they learn more languages). Vrok, which is the more widespread of the two human languages, is spoken by people in Nhoordland, in the Stormlands, and in parts of Mittland and Soj. Rona, the other human language, is spoken in Westmark, Soj, and parts of Mittland. Human characters from Mittland may choose which language they speak, with approval from the game master. If the character is a supporter of the Tenet of Nid, however, they should always speak Rona. In addition, there are other languages such as Eika (spoken by elves), Futhark (spoken by dwarves), and Bastjumal (spoken by trolls and giants). A character cannot read or write until they acquire the Reading and Writing specialty.",
+    "summary": "Lets the character speak a specific language, starting with their mother tongue before learning others.",
+    "catalogId": "language",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

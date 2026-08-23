@@ -1,0 +1,24 @@
+{
+  "_key": "!items!SvPVS2x3y4z5A6B7",
+  "_id": "SvPVS2x3y4z5A6B7",
+  "name": "Contrôle corporel",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 100000,
+  "system": {
+    "description": "La discipline Contrôle corporel développe la capacité du personnage à tirer le meilleur de son agilité pour plonger sur le côté, escalader, atterrir sur ses pieds en douceur après une chute, etc. La discipline peut aussi être utilisée pour faire des sauts ou d’autres manœuvres acrobatiques. Le malus qui s’applique aux attaques effectuées avec la main de bouclier est réduit de 1 par niveau.",
+    "summary": "Le personnage exploite au mieux son agilité pour plonger, escalader, atterrir sans mal et enchaîner les acrobaties ; il réduit aussi le malus d’attaque de sa main de bouclier.",
+    "catalogId": "bodyControl",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

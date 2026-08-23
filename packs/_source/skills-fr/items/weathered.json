@@ -1,0 +1,24 @@
+{
+  "_key": "!items!QxFUJ0v1w2x3y4z5",
+  "_id": "QxFUJ0v1w2x3y4z5",
+  "name": "Endurci",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13500000,
+  "system": {
+    "description": "Le personnage est habitué à passer de longues périodes dans la nature et est donc capable de supporter la pluie, le vent et le froid. Le bonus de spécialité est utilisé lorsque le personnage doit affronter une météo défavorable en pleine nature.",
+    "summary": "Habitué aux longues expositions aux éléments : pluie, vent et froid ne lui font plus peur.",
+    "catalogId": "weathered",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

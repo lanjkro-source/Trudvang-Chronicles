@@ -1,0 +1,24 @@
+{
+  "_key": "!items!IR8YwMdJeKfLgMhN",
+  "_id": "IR8YwMdJeKfLgMhN",
+  "name": "Jestering",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 300000,
+  "system": {
+    "description": "The character has learned to perform with fire, juggling, and other jester tricks. The knowledge enables them to breathe fire, pull their hands through flame, and juggle. When the game master requires a Skill roll, the character can add +2 to their Skill Value per level in this specialty.",
+    "summary": "Teaches jester tricks: juggling, spitting fire and passing hands through flames.",
+    "catalogId": "jestering",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

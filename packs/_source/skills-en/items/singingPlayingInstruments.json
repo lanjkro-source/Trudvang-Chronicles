@@ -1,0 +1,24 @@
+{
+  "_key": "!items!UcrWQiLgMhNiOjPk",
+  "_id": "UcrWQiLgMhNiOjPk",
+  "name": "Singing & Playing Instruments",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3500000,
+  "system": {
+    "description": "The person has a good voice that can captivate an audience. The specialty also gives them the ability to play music on most of Trudvang’s instruments. They can add +2 to their Skill Value in the ability to sing or play instruments. This skill includes all kinds of entertainment. A person with this skill has learned the rules for gambling and social games and can take part in such activities. They can also sing common songs or tell of an event or legend with a skill great enough to spellbind an audience. The person can perform common dances and act or pretend to be others (which may include dressing up in costume to increase the authenticity of their acting).",
+    "summary": "Grants a beautiful voice and mastery of most Trudvang instruments to enchant an audience.",
+    "catalogId": "singingPlayingInstruments",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Music & Dancing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

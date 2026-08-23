@@ -1,0 +1,24 @@
+{
+  "_key": "!items!5ejIjbGbHcIdJeKf",
+  "_id": "5ejIjbGbHcIdJeKf",
+  "name": "Thuul Forging",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5200000,
+  "system": {
+    "description": "The dwarf has chosen to indulge in the mountain’s ancient power and the holy Thuuldom, and can learn to create rune-inscribed objects through which to activate the mountain’s forces. By obtaining the Holy Tablet (Thuuldom) specialty , the dimwalker can activate the runes found in the learned Holy Tablet. The specialty gives +2 in Skill Value per level for creating items and runes and inserting Divinity Points in the runes.",
+    "summary": "Dedicates the dwarf to the ancient powers of Thuuldom: engraving runes that draw on the mountain’s strength.",
+    "catalogId": "thuulForging",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!UXFPN5y4z5A6B7C8",
+  "_id": "UXFPN5y4z5A6B7C8",
+  "name": "Connaissance des cités",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11300000,
+  "system": {
+    "description": "Le personnage a appris tout ce qu’il y a à savoir sur une cité en particulier, et a acquis la connaissance de choses telles que l’endroit où vit le dirigeant et la localisation des commerces, des tavernes, des bains, des lieux sacrés et d’autres endroits intéressants. La spécialité doit être développée pour chaque ville ou cité spécifique.",
+    "summary": "Connaît tout d’une cité précise : résidence du dirigeant, commerces, tavernes, lieux sacrés et recoins utiles.",
+    "catalogId": "cityKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

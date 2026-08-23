@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!GyWCwQhNiOjPkQlR",
+  "_id": "GyWCwQhNiOjPkQlR",
+  "name": "Savoir-faire",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 200000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

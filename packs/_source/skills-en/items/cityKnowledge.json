@@ -1,0 +1,24 @@
+{
+  "_key": "!items!UXFPN5y4z5A6B7C8",
+  "_id": "UXFPN5y4z5A6B7C8",
+  "name": "City Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11300000,
+  "system": {
+    "description": "( Specification Required) The person has learned all about a particular city and gained knowledge of things like where the ruler lives and where trading houses, inns, baths, sacred buildings, and other places of interest are located. The specialty must be designated to a specific town or city.",
+    "summary": "Knows everything about one particular city: where the ruler lives, shops, taverns, sacred sites and other useful spots.",
+    "catalogId": "cityKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

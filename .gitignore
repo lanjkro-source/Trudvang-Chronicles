@@ -13,6 +13,6 @@ Thumbs.db
 .codegraph/
 .omo/
 
-# Stockage LevelDB généré par Foundry lors de la migration des packs
+# Artefacts de compilation des compendiums (npm run build:packs ; les sources révisables restent suivies dans packs/_source/)
 packs/skills-en/
 packs/skills-fr/

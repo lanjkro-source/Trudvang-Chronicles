@@ -1,0 +1,24 @@
+{
+  "_key": "!items!YCCkxfKfLgMhNiOj",
+  "_id": "YCCkxfKfLgMhNiOj",
+  "name": "Natation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 500000,
+  "system": {
+    "description": "Le personnage a appris à nager (sans cette connaissance, il ne sait pas nager) et peut ajouter +2 par niveau de spécialité à sa valeur de compétence. Il peut se déplacer dans l’eau normalement au rythme de 1 mètre par niveau et par tour de jeu, et retenir son souffle sous l’eau pendant 10 tours de jeu par niveau de spécialisation (maximum 50 tours de jeu, ou quatre minutes et dix secondes, un tour de jeu ayant une durée de cinq secondes). Un personnage qui n’a pas cette spécialité peut retenir son souffle pendant 12 tours en restant immobile, ou 6 tours s’il est sous l’eau ou s’il se déplace. Il est possible de nager en portant une armure dans la mesure où celle-ci a un poids maximum de 1 par niveau de spécialité (poids maximum de 5). On peut alors facilement se déplacer sous l’eau jusqu’à 3 tours de jeu. Pour chaque tour de jeu supplémentaire, il faut effectuer un test de compétence avec un malus cumulatif de -2. Au bout de 3 tours de jeu (trois malus cumulatifs), le personnage doit réussir avec un malus de -6. S’il échoue à son test, le personnage doit remonter à la surface pour respirer. La vitesse de déplacement est la même que pour la natation sans armure.",
+    "summary": "Permet de nager, de se déplacer dans l’eau et de retenir longuement sa respiration.",
+    "catalogId": "swimming",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

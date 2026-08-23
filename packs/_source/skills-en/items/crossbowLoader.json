@@ -1,0 +1,24 @@
+{
+  "_key": "!items!SuVLegLgMhNiOjPk",
+  "_id": "SuVLegLgMhNiOjPk",
+  "name": "Crossbow Loader",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6900000,
+  "system": {
+    "description": "The Crossbow loader specialty lets the person load their crossbow faster. The loading time for a crossbow is reduced by -1 per level, but never lower than 1 in a combat round. and to attemt risky things. They receive an additional +1 Combat Point per level to distribute on their combat actions during an action round. The person also gets +1 per level in initiative in combat.",
+    "summary": "Reduces the time needed to reload a crossbow between shots.",
+    "catalogId": "crossbowLoader",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

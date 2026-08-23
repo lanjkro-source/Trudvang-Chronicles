@@ -1,0 +1,24 @@
+{
+  "_key": "!items!lNokBhKfLgMhNiOj",
+  "_id": "lNokBhKfLgMhNiOj",
+  "name": "Composed",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4000000,
+  "system": {
+    "description": "The dimwalker is rarely disturbed when invoking a divine feat and knows how to limit disasters. Anytime they must make a Situation roll to see if they’re disturbed enough to cancel the invocation is modified by +2 per level. When rolling on the Table for Fatal Failure subtract -2 per level of this specialty",
+    "summary": "Shields the conjurer from distractions while invoking divine power and softens critical failure consequences.",
+    "catalogId": "composed",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

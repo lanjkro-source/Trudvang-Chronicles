@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Omwk6jLgMhNiOjPk",
+  "_id": "Omwk6jLgMhNiOjPk",
+  "name": "Zoology",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12700000,
+  "system": {
+    "description": "This specialty gives a person extra knowledge regarding creatures in Trudvang that lack higher intelligence. The person is familiar with these animals’ strengths and weaknesses, how they live, what they fear, what tracks they make, and much more. The specialty bonus is used when the person wants to know something about a particular creature.",
+    "summary": "Studies creatures lacking higher intelligence: their strengths, weaknesses, way of life and tracks.",
+    "catalogId": "zoology",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

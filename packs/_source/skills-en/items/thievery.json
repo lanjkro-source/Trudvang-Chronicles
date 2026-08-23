@@ -1,0 +1,24 @@
+{
+  "_key": "!items!z2oziG9EaGbHcIdJ",
+  "_id": "z2oziG9EaGbHcIdJ",
+  "name": "Thievery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9200000,
+  "system": {
+    "description": "This discipline enables the person to get into locked places and steal items from locations or people. They also know the hidden signs of the underworld that criminals use to communicate.",
+    "summary": "Opens locked places and lets the character steal goods; also knows the underworld’s secret signs.",
+    "catalogId": "thievery",
+    "kind": "discipline",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

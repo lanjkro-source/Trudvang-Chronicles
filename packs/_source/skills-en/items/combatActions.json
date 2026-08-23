@@ -1,0 +1,24 @@
+{
+  "_key": "!items!8YNiJVnToUpVqWrX",
+  "_id": "8YNiJVnToUpVqWrX",
+  "name": "Combat Actions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6700000,
+  "system": {
+    "description": "This specialty allows a person to perform combat actions almost effortlessly in battle (this does not apply to attacks or Bribery The person has learned to gauge how people react to bribes. The person quickly discovers whether someone can be bribed, and if so, they know how it should be delivered and how much is necessary. By using this specialty , the person can add +2 to their Skill Value per level when trying to bribe someone.",
+    "summary": "Makes combat’s tactical gestures almost effortless: drawing weapons, standing up, repositioning — without spending Combat Points.",
+    "catalogId": "combatActions",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

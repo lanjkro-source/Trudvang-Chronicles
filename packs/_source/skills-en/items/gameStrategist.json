@@ -1,0 +1,24 @@
+{
+  "_key": "!items!daKp3kMhNiOjPkQl",
+  "_id": "daKp3kMhNiOjPkQl",
+  "name": "Game Strategist",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3100000,
+  "system": {
+    "description": "The person is good at seeing the smartest moves in strategic games such as Koke’s Boxes, Bultconan, and Ship on Fire. The person can add +2 to their Skill Value in the ability when playing a strategic game of any kind.",
+    "summary": "Makes the character adept at strategy games, moving their pieces to best effect whatever the game.",
+    "catalogId": "gameStrategist",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

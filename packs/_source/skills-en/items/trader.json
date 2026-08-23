@@ -1,0 +1,24 @@
+{
+  "_key": "!items!rp0tJXpVqWrXsYtZ",
+  "_id": "rp0tJXpVqWrXsYtZ",
+  "name": "Trader",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2500000,
+  "system": {
+    "description": "The person has learned where to buy goods cheaply and sell them at a higher price elsewhere. The trader also knows what taxes to pay on goods, what it costs to transport the goods in different ways, trades Man (d) The person has learned to operate a farm, an inn, a barber shop, or a trade that offers other services. Through this skill, they also know who to bribe when something needs to be smuggled or how to evade taxes.",
+    "summary": "Knows how to buy cheap and sell high while mastering taxes, transport and trade paperwork.",
+    "catalogId": "trader",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

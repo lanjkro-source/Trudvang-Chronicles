@@ -1,0 +1,24 @@
+{
+  "_key": "!items!un2oxmRmSnToUpVq",
+  "_id": "un2oxmRmSnToUpVq",
+  "name": "Battle Maneuver",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 900000,
+  "system": {
+    "description": "This discipline grants improvements in moving in battle and wearing armor. The bonus modifier is used only in conjunction with the Evade specialty.",
+    "summary": "Gathers the specialties easing combat movement and armor use.",
+    "catalogId": "battleManeuver",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

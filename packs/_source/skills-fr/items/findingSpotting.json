@@ -1,0 +1,24 @@
+{
+  "_key": "!items!4rFuzSkQlRmSnToU",
+  "_id": "4rFuzSkQlRmSnToU",
+  "name": "Trouver & remarquer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 8900000,
+  "system": {
+    "description": "Cette spécialité donne à un personnage la capacité de remarquer ce qui n’est pas apparent, comme des personnes ou des créatures qui se cachent ou se faufilent discrètement, mais aussi des choses habilement dissimulées dans des objets, des bâtiments ou dans le paysage. Le personnage s’est exercé pour dépasser la première impression afin de détecter ce qui est caché. Par exemple, une épine empoisonnée dans un tiroir, un objet dissimulé, un plancher ou un sol piégé, une porte secrète dans un mur, etc. Cette spécialité peut également permettre d’effectuer des tests de détection lorsque quelqu’un n’effectue pas une recherche active. Il revient au MJ de décider si elle peut être utilisée ou non.",
+    "summary": "Enseigne à remarquer ce qui n’est pas apparent : personnes cachées, créatures furtives et objets habilement dissimulés.",
+    "catalogId": "findingSpotting",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

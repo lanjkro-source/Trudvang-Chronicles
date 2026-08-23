@@ -1,0 +1,24 @@
+{
+  "_key": "!items!KeyBTMgMhNiOjPkQ",
+  "_id": "KeyBTMgMhNiOjPkQ",
+  "name": "Driving Wagon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 700000,
+  "system": {
+    "description": "The Driving Wagon specialty develops the character’s ability to drive a wagon coupled to one or more draft animals. Skill rolls are normally required only during hunts, chases or in difficult terrain or weather conditions.",
+    "summary": "Develops driving animal-drawn wagons, mainly useful during chases or over rough terrain.",
+    "catalogId": "drivingWagon",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Horsemanship",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

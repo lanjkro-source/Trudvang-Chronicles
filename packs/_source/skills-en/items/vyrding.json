@@ -1,0 +1,24 @@
+{
+  "_key": "!items!4sIhnaD8D9EaGbHc",
+  "_id": "4sIhnaD8D9EaGbHc",
+  "name": "Vyrding",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10600000,
+  "system": {
+    "description": "The spell method known as Vyrding is quiet and tranquil, and often goes completely unnoticed until the effect arrives. Conjurers who Vyrd fill themselves with vitner and, for a moment, become one with their own being. They mold the vitner with pure learns. For more details, see Vitner Tablets and Spells in Weavers of Magic. The following are the Vitner Tablets: Animal Vitner, Body Vitner, Delusion Vitner, Dimvitner, Flame Craft, Perceiving, Power of Thought, Power of Vision, Soil Craft, Vitner Craft, Vitner of Objects, Water Craft, Wind Craft, and Witchcraft.",
+    "summary": "Shapes the vitner by sheer thought: a silent, calm method often unnoticed until the effect takes place.",
+    "catalogId": "vyrding",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Shaping",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

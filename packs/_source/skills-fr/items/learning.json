@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Pbm3zB2x3y4z5A6B",
+  "_id": "Pbm3zB2x3y4z5A6B",
+  "name": "Apprentissage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7500000,
+  "system": {
+    "description": "La discipline Apprentissage donne au personnage une éducation et une connaissance étendue concernant un sujet spécifique de son choix. En principe, il peut s’agir de n’importe quel sujet : épées, littérature, rois, démons, symboles, ou tout autre sujet intéressant le personnage. La discipline est associée à une infinité de spécialités, chaque spécialité couvrant un sujet spécifique. Le modificateur à la VC provenant de la discipline ne s’applique qu’aux spécialités apprises par le personnage. La discipline Géographie et ses spécialités, rattachées à la compétence Nature, pourraient constituer une compétence théorique de Connaissances. Autrement dit, le personnage a étudié le sujet mais n’en a pas d’expérience pratique.",
+    "summary": "Offre une éducation étendue sur le sujet de son choix, chaque spécialité couvrant un thème particulier.",
+    "catalogId": "learning",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

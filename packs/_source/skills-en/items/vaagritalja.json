@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xD6ptE5A6B7C8D9E",
+  "_id": "xD6ptE5A6B7C8D9E",
+  "name": "Vaagritalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 11000000,
+  "system": {
+    "description": "The conjurer has, after years of study , found the vaagri vitner, which is a mix between the dark and white vitner. This is the vitner they shall weave in perpetuity. The conjurer has now become a Vaagritalja and belongs to the ones called the wave masters. The choice to weave vaagri vitner, however, brings consequences to the conjurer, who can never learn Hwitalja or Darkhwitalja after learning this specialty. Vaagri vitner has the following effects on the conjurer: ✦ Vaagritalja increases vitner capacity by +15 Vitner Points. ✦ Vaagritalja otherwise has no positive or negative effects on the conjurer’s ability to learn to weave, refine vitner for extra power, access the vitner or weave perfectly. In case of a fatal failure, the Vaagritalja rolls 1d10 (OR 9-10) on the fatal magic table. ✦ The description of each specific Vitner Tablet includes the specific effects of Vaagritalja, usually in terms of Vitner points cost.",
+    "summary": "Unites white and dark vitner in a singular balance — that of the wave masters — chosen for life.",
+    "catalogId": "vaagritalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

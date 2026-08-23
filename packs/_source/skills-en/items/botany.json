@@ -1,0 +1,24 @@
+{
+  "_key": "!items!euKjOz2x3y4z5A6B",
+  "_id": "euKjOz2x3y4z5A6B",
+  "name": "Botany",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12500000,
+  "system": {
+    "description": "This specialty gives a person more knowledge regarding the trees and flowers of Trudvang. The specialty bonus is used when the person wants to know something regarding plants.",
+    "summary": "Deepens knowledge of Trudvang’s trees and flowers.",
+    "catalogId": "botany",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

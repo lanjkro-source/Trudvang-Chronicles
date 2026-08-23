@@ -1,0 +1,24 @@
+{
+  "_key": "!items!sNXYZ8D9EaGbHcId",
+  "_id": "sNXYZ8D9EaGbHcId",
+  "name": "Langue maternelle",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8400000,
+  "system": {
+    "description": "Tous les personnages parlent leur langue maternelle couramment (spécialité Langue maternelle au niveau 3).",
+    "summary": "Tous les personnages parlent couramment leur langue maternelle grâce à cette spécialité.",
+    "catalogId": "motherTongue",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

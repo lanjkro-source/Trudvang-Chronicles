@@ -1,0 +1,24 @@
+{
+  "_key": "!items!4rFuzSkQlRmSnToU",
+  "_id": "4rFuzSkQlRmSnToU",
+  "name": "Finding & Spotting",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 8900000,
+  "system": {
+    "description": "This specialty gives the person the ability to notice hidden things, such as people and creatures that are hiding or sneaking, but also things that are cleverly concealed in objects, buildings, or terrain. The person develops a trained eye to spot what is hidden beyond the first glance. Examples include a hidden poison thorn in a drawer, a stashed object, a trap in the floor or the ground, a secret door in the wall, and so on. This specialty may allow spotting rolls even when one is not actively searching. The GM decides whether it is the case or not.",
+    "summary": "Teaches noticing what is not obvious: hidden people, stealthy creatures and cleverly concealed objects.",
+    "catalogId": "findingSpotting",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

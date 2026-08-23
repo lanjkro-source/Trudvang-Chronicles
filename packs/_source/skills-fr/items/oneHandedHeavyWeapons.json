@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Vy1bWIcIdJeKfLgM",
+  "_id": "Vy1bWIcIdJeKfLgM",
+  "name": "Armes lourdes à une main",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5600000,
+  "system": {
+    "description": "Cette spécialité développe la capacité du personnage à utiliser des armes lourdes tenues à une main, telles que les épées ou les haches de bataille. Il gagne un modificateur de +2 par niveau à la valeur de compétence lorsqu’il utilise une arme lourde à une main. Toutefois, cette spécialité est liée soit à la main droite, soit à la main gauche. Si le personnage veut utiliser une arme lourde à une main dans chaque main, il doit apprendre la spécialité deux fois, une pour chaque main.",
+    "summary": "Spécialise le personnage dans les armes lourdes maniables à une main ; elle est liée à un côté précis du personnage.",
+    "catalogId": "oneHandedHeavyWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!rp0tJXpVqWrXsYtZ",
+  "_id": "rp0tJXpVqWrXsYtZ",
+  "name": "Marchand",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2500000,
+  "system": {
+    "description": "Le personnage a appris où il peut acheter des biens pour pas cher et à les vendre ailleurs à un prix plus élevé. Le marchand sait également quels impôts sur les produits il doit payer, le coût des différents modes de transport des biens, les objets qui peuvent être vendus et ceux qui ne le peuvent pas, à qui on peut ou doit verser des pots-de-vin, etc. Le personnage sait quels papiers il faut remplir pour pouvoir entrer dans une ville ou pour être autorisé à y faire commerce. Il a aussi appris à évaluer les objets du point de vue du prix actuel et ce qu’il peut en tirer en les vendant ailleurs.",
+    "summary": "Sait acheter bon marché et revendre plus cher, tout en maîtrisant impôts, transports et formalités du négoce.",
+    "catalogId": "trader",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

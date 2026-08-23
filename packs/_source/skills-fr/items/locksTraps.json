@@ -1,0 +1,24 @@
+{
+  "_key": "!items!XdIIgNgMhNiOjPkQ",
+  "_id": "XdIIgNgMhNiOjPkQ",
+  "name": "Serrures & pièges",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9400000,
+  "system": {
+    "description": "Le personnage a appris à crocheter les serrures et sait comment fonctionnent la plupart des mécanismes de verrouillage. Il bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie de manipuler une serrure ou de la crocheter. Sans cette spécialité, le personnage est incapable de crocheter une serrure. Toutes les serrures ont un niveau de difficulté (qui est aussi le modificateur à appliquer à la valeur de compétence du personnage) déterminé par le maître de jeu. Une serrure de porte basique a une difficulté de -1, alors qu’une serrure très complexe a une difficulté de -20. Toute tentative de crochetage de serrure réussie prend 2 tours de jeu et réduit le niveau de difficulté de deux rangs. Si une tentative échoue, la serrure retrouve son niveau de difficulté initial. Si le personnage échoue plusieurs fois, l’outil de crochetage risque de se casser dans la serrure, ce qui rend impossible de nouvelles tentatives. Lorsque le niveau de difficulté de la serrure atteint une valeur positive, la serrure est déverrouillée. Cette spécialité est également utilisée pour créer des pièges destinés à empêcher les indiscrétions ou à prévenir lorsque quelqu’un ou quelque chose arrive. Le personnage a également appris à étudier les pièges progressivement et méthodiquement sans les déclencher. Après une étude prudente, il sait comment le piège a été réalisé et ainsi comment le neutraliser plus facilement.",
+    "summary": "Apprend à manipuler et crocheter serrures et mécanismes ; sans elle, impossible d’en venir à bout.",
+    "catalogId": "locksTraps",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!XdIIgNgMhNiOjPkQ",
+  "_id": "XdIIgNgMhNiOjPkQ",
+  "name": "Locks & Traps",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9400000,
+  "system": {
+    "description": "The character has learned to pick locks and understands how most locking mechanisms work, adding +2 to Skill Value per level when manipulating or picking a lock; without this specialty, picking a lock is impossible. Every lock has a difficulty set by the game master (a basic door lock -1, a very complex one up to -20): a successful attempt takes 2 action rounds and lowers the difficulty by two steps, a failed attempt restores it, and repeated failures risk snapping the pick inside, making further attempts impossible. When the difficulty reaches a positive value, the lock opens. This specialty also covers building traps to discourage prying eyes or warn of an approach, and studying traps patiently without triggering them to learn how they were made and how to disarm them more easily.",
+    "summary": "Teaches handling and picking locks and mechanisms; without it, picking is impossible.",
+    "catalogId": "locksTraps",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

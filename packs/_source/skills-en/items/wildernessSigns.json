@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Fy9416A6B7C8D9Ea",
+  "_id": "Fy9416A6B7C8D9Ea",
+  "name": "Wilderness Signs",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12200000,
+  "system": {
+    "description": "A person with this specialty can read and create wilderness signs: a symbol carved into tree bark or a doorframe, stones arranged in a pattern, or anything else only the knowledgeable would find. Every sign carries meaning — how game-rich a region is, whether trolls haunt a forest and how many left eastward, a good resting spot half a day’s walk east, landslide risks — whatever the sign-maker wishes to convey. Most signs combine several elements: the main message, such as “beware of trolls”, elaborated with the trolls’ type, number and direction of travel. Signs sit where untrained eyes pass over, yet stand out plainly to the experienced.",
+    "summary": "Reads and creates wilderness signs carved into bark or doorframes or arranged in stones.",
+    "catalogId": "wildernessSigns",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!RH8AldIdJeKfLgMh",
+  "_id": "RH8AldIdJeKfLgMh",
+  "name": "Marcher dans les ombres",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9100000,
+  "system": {
+    "description": "Le personnage a appris à se déplacer discrètement sans être remarqué. Il sait comment marcher en faisant le moins de bruit possible. Cette spécialité permet non seulement de s’avancer en douce, mais aussi de se déplacer dans divers environnements tels que les ombres, les broussailles ou la nature, et même dans la foule. Marcher dans les ombres a ses limites : on ne peut se déplacer au mieux qu’à la moitié de son mouvement maximum lorsqu’on essaie de rester caché, et seulement à 20 % de son mouvement maximum lorsqu’on essaie d’être silencieux.",
+    "summary": "Déplace le personnage en silence dans les ombres, les broussailles, la nature ou même la foule.",
+    "catalogId": "walkingShadows",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

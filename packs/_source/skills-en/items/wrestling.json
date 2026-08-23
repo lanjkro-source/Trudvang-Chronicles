@@ -1,0 +1,24 @@
+{
+  "_key": "!items!8MbKi2v1w2x3y4z5",
+  "_id": "8MbKi2v1w2x3y4z5",
+  "name": "Wrestling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6400000,
+  "system": {
+    "description": "The character has learned to wrestle and perform combat actions such as grapple and glima. The character receives +2 Combat Points per level when using grapple and glima in combat actions. The specialty’s Combat Points can be used only in Wrestling. parries). The specialty gives +2 Combat Points per level. These points can be used only for actions related to a person’s role in combat, such as drawing weapons, standing up, or performing combat movement.",
+    "summary": "Teaches wrestling: holds and throws during combat actions.",
+    "catalogId": "wrestling",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Unarmed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

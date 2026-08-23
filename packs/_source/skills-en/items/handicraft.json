@@ -1,0 +1,24 @@
+{
+  "_key": "!items!FvcMTgMhNiOjPkQl",
+  "_id": "FvcMTgMhNiOjPkQl",
+  "name": "Handicraft",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1600000,
+  "system": {
+    "description": "The character is good at building and crafting things. This discipline is linked to three different craft groups, Counterfeiting, Hard materials and Soft materials, and each has their own specialty.",
+    "summary": "Lets the character build and shape objects, split into counterfeiting and hard or soft materials.",
+    "catalogId": "handicraft",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

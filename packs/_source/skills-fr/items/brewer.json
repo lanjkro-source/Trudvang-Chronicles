@@ -1,0 +1,24 @@
+{
+  "_key": "!items!0rtlJPgMhNiOjPkQ",
+  "_id": "0rtlJPgMhNiOjPkQ",
+  "name": "Brasseur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2200000,
+  "system": {
+    "description": "Le personnage a appris à préparer de délicieuses boissons. Le brasseur sait comment produire toutes sortes de boissons, depuis l’hydromel jusqu’aux alcools épicés les plus forts, en passant par le vin.",
+    "summary": "Prépare toutes sortes de boissons, de l’hydromel aux alcools épicés les plus forts.",
+    "catalogId": "brewer",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

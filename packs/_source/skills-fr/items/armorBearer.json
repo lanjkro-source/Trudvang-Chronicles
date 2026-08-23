@@ -1,0 +1,24 @@
+{
+  "_key": "!items!b7KnXXsYtZu0v1w2",
+  "_id": "b7KnXXsYtZu0v1w2",
+  "name": "Porteur d'armure",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6600000,
+  "system": {
+    "description": "Le personnage a appris à porter une armure au combat, ce qui lui permet de porter une armure avec une valeur d’encombrement de 2 par niveau dans cette spécialité. Par exemple, une personne ayant le niveau 3 peut porter une armure ayant une valeur d’encombrement de 6 ou moins.",
+    "summary": "Habitue le personnage au poids de l’armure, lui permettant d’en porter une plus encombrante selon son niveau.",
+    "catalogId": "armorBearer",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

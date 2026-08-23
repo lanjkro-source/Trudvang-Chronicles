@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!l154h0tZu0v1w2x3",
+  "_id": "l154h0tZu0v1w2x3",
+  "name": "Fighting",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 500000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

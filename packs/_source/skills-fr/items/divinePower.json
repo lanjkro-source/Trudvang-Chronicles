@@ -1,0 +1,24 @@
+{
+  "_key": "!items!fMtPsLgMhNiOjPkQ",
+  "_id": "fMtPsLgMhNiOjPkQ",
+  "name": "Pouvoirs divins",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4400000,
+  "system": {
+    "description": "Niveau Cette discipline donne à l’arpenteur des brumes la capacité de recevoir des pouvoirs de sa divinité (sous forme de points de divinité) et ainsi une plus grande réserve divine. La somme des points de divinité de la discipline constitue la réserve divine de l’arpenteur des brumes. Ainsi, un arpenteur des brumes ayant le premier niveau de la discipline gagne 3 points de divinité supplémentaires par jour, tandis qu’un arpenteur des brumes ayant le cinquième niveau reçoit 15 points de divinité supplémentaires par jour. En apprenant des niveaux dans une spécialité associée à cette discipline, le personnage peut encore augmenter sa réserve divine. Les nains qui acquièrent cette discipline reçoivent autant de points de divinité que les autres arpenteurs des brumes, mais ceux-ci étant spécifiquement liés à des objets, les points sont consommés aussitôt qu’ils sont sertis dans l’objet.",
+    "summary": "Donne accès aux pouvoirs de la divinité sous forme de points de divinité, constituant la réserve divine quotidienne de l’invocateur.",
+    "catalogId": "divinePower",
+    "kind": "discipline",
+    "parentSkill": "faith",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

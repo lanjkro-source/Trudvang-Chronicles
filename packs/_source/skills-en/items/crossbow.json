@@ -1,0 +1,24 @@
+{
+  "_key": "!items!P4FmplMhNiOjPkQl",
+  "_id": "P4FmplMhNiOjPkQl",
+  "name": "Crossbow",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6000000,
+  "system": {
+    "description": "This specialty develops the character’s ability to use crossbows. The character gains +2 per level in Skill Value on attacks made with crossbows.",
+    "summary": "Develops mastery of shooting the crossbow.",
+    "catalogId": "crossbow",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

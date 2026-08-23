@@ -1,0 +1,24 @@
+{
+  "_key": "!items!SuVLegLgMhNiOjPk",
+  "_id": "SuVLegLgMhNiOjPk",
+  "name": "Chargeur d'arbalète",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6900000,
+  "system": {
+    "description": "La spécialité Chargeur d’arbalète permet au personnage de charger son arbalète plus rapidement. Le temps de chargement d’une arbalète est réduit de 1 par niveau, pour un minimum de 1 au cours d’un tour de combat.",
+    "summary": "Réduit le temps nécessaire pour recharger une arbalète entre deux tirs.",
+    "catalogId": "crossbowLoader",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

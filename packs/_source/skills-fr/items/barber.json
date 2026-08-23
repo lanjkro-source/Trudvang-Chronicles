@@ -1,0 +1,24 @@
+{
+  "_key": "!items!n0Hbd7y4z5A6B7C8",
+  "_id": "n0Hbd7y4z5A6B7C8",
+  "name": "Barbier",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2100000,
+  "system": {
+    "description": "Le personnage a appris à couper les cheveux et à raser la barbe, ainsi qu’à extraire les « mauvaises » dents.",
+    "summary": "Coupe les cheveux, rase la barbe et extrait les « mauvaises » dents.",
+    "catalogId": "barber",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

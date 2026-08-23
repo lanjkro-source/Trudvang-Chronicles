@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xxNd2w0v1w2x3y4z",
+  "_id": "xxNd2w0v1w2x3y4z",
+  "name": "Acting",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3700000,
+  "system": {
+    "description": "The person has learned, through acting, to express feelings in such a poignant manner that every observer is able to understand what they feel. The person knows how to speak and act to elicit a specific mood. By speaking mournfully , they can make listeners gloomy , and by speaking inspiringly , they can rally others.",
+    "summary": "Expresses feelings so movingly that every spectator shares them, enough to sadden or rally a crowd.",
+    "catalogId": "acting",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Storytelling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

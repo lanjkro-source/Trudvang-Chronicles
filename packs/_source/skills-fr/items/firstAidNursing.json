@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZYf2FnRmSnToUpVq",
+  "_id": "ZYf2FnRmSnToUpVq",
+  "name": "Premiers secours & soins",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2800000,
+  "system": {
+    "description": "Le personnage a appris à soigner les blessures. Toute blessure qui est immédiatement prise en charge (dans les dix minutes) guérit au rythme de 1 point de santé par niveau de spécialité, si tant est que la blessure soignée a bien causé la perte de point de santé. Le personnage peut s’occuper des malades et des blessés de façon à leur permettre de guérir plus vite que la normale. Cependant, cela implique que le patient se repose et reçoive le traitement nécessaire au cours de la journée. Le soigneur doit passer au moins deux heures par tentative de soin sur un patient. Un jet de compétence réussi signifie que le patient guérit au double du rythme normal.",
+    "summary": "Prend en charge rapidement les blessures pour accélérer la guérison, et accompagne malades et convalescents.",
+    "catalogId": "firstAidNursing",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Healing & Drugs",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!yLAb2KcIdJeKfLgM",
+  "_id": "yLAb2KcIdJeKfLgM",
+  "name": "Armes à deux mains",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5900000,
+  "system": {
+    "description": "Cette spécialité développe la capacité du personnage à utiliser des armes à deux mains, telles que les épées ou les haches à deux mains. Il gagne un modificateur de +2 par niveau à la valeur de compétence lorsqu’il utilise des armes à deux mains. Aux niveaux 3 et 5 de cette spécialité, le personnage reçoit également une action d’arme supplémentaire par tour. Ainsi, au lieu des deux actions d’arme habituelles par tour de combat, il peut en réaliser trois (aux niveaux 3 et 4) ou quatre (au niveau 5) avec une arme à deux mains.",
+    "summary": "Spécialise dans les épées et haches à deux mains ; aux niveaux élevés, une action d’arme supplémentaire par tour s’y ajoute.",
+    "catalogId": "twoHandedWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!kDHG8bGbHcIdJeKf",
+  "_id": "kDHG8bGbHcIdJeKf",
+  "name": "Soins & remèdes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2600000,
+  "system": {
+    "description": "Avec la discipline Soins et remèdes, un personnage a appris à soigner et à s’occuper des malades et des blessés de façon à leur permettre de se remettre plus vite que la normale, mais aussi à altérer la santé de certains par l’intermédiaire de drogues ou de poisons. Pour s’occuper des blessures et des maladies, l’une des spécialités ci-dessous est nécessaire. Les tests de compétence réalisés en n’utilisant que la connaissance de cette discipline (et donc sans avoir de spécialité) permettent seulement de stopper les hémorragies et d’éviter l’aggravation de la situation des malades et des blessés.",
+    "summary": "Permet de soigner les malades et les blessés et de tirer le meilleur des remèdes et extraits.",
+    "catalogId": "healingDrugs",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!X2LPJQlRmSnToUpV",
+  "_id": "X2LPJQlRmSnToUpV",
+  "name": "Combat à mains nues",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6200000,
+  "system": {
+    "description": "La discipline Combat à mains nues enseigne à un personnage à se battre sans arme. Grâce à cette discipline, il reçoit 1 point de combat par niveau qu’il peut utiliser pour effectuer des actions décrites par les spécialités ci-dessous.",
+    "summary": "Enseigne à se battre sans arme, avec des points de combat dédiés aux actions décrites par ses spécialités.",
+    "catalogId": "unarmedFighting",
+    "kind": "discipline",
+    "parentSkill": "fighting",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

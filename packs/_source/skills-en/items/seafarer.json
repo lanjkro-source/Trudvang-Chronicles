@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ajf5C1u0v1w2x3y4",
+  "_id": "ajf5C1u0v1w2x3y4",
+  "name": "Seafarer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12800000,
+  "system": {
+    "description": "The Seafarer discipline provides knowledge of the sea and the basics of how to operate various types of boats. The person knows how things work on a boat, such as how teams of workers should look and act, how to load the cargo, which ropes and knots to use, how to set sails, and most importantly how to sail and steer a ship. Seafaring also provides knowledge of which winds are expected in various sea environments, as well as which signs to follow to find the right place on the high seas.",
+    "summary": "Knows the sea and the basics of ship handling: crews, cargo loading, ropes, knots and sails.",
+    "catalogId": "seafarer",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

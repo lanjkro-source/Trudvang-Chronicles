@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VZcN4qVqWrXsYtZu",
+  "_id": "VZcN4qVqWrXsYtZu",
+  "name": "Découper & dépecer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11800000,
+  "system": {
+    "description": "Le personnage a appris à découper la viande et à dépecer les animaux correctement, et gagne 10 % de rations de plus que ce qu’il obtiendrait avec la spécialité Chasser et pêcher. Il est également capable d’écorcher les animaux et de préserver leur fourrure. Plus le personnage est compétent, plus les fourrures qu’il pourra tirer d’un animal abattu seront grandes et de belle qualité. Le modificateur de la spécialité est utilisé lorsque le personnage écorche l’animal afin d’en exploiter la fourrure.",
+    "summary": "Découpe la viande et dépèce proprement les animaux, avec davantage de rations et de belles fourrures préservées.",
+    "catalogId": "carveButcher",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

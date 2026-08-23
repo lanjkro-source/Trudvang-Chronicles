@@ -1,0 +1,24 @@
+{
+  "_key": "!items!1ty9ngLgMhNiOjPk",
+  "_id": "1ty9ngLgMhNiOjPk",
+  "name": "Jumping, Climbing & Balancing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 400000,
+  "system": {
+    "description": "The character is adept at jumping in different environments and can add +2 to their Skill Value in the ability to jump. With a successful Skill roll, they can leap up to 2 meters + 1 meter per level in length (maximum 7 m), jump up to 60 cm + 20 cm per level in height (maximum 1.6 m), and fall up to 3 meters + 1/2 meter per level (maximum 6 m) without getting hurt. A successful Jumping roll for falls from heights also reduces the damage dice by one level (3d6 points of damage becomes 2d6, and so on). When a character wants to leap farther, jump higher, or fall farther than the level permits, it is up to the GM to set a suitable modifier on the Skill roll. The character is also good at climbing and balancing. While balancing, they move at about a third of their movement ability under normal conditions. While climbing, they move at about a fifth of their movement ability under normal conditions. Ultimately , the GM determines how far a character climbs or balances during an action round based on the prevailing conditions.",
+    "summary": "Expertise in jumping and climbing: the character leaps farther and higher and handles falls better.",
+    "catalogId": "jumpingClimbingBalancing",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

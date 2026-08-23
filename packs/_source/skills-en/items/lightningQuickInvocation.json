@@ -1,0 +1,24 @@
+{
+  "_key": "!items!q4HmetXsYtZu0v1w",
+  "_id": "q4HmetXsYtZu0v1w",
+  "name": "Lightning-Quick Invocation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4100000,
+  "system": {
+    "description": "The dimwalker has learned to invoke a divine feat extra quickly , which gives +2 per level on the initiative.",
+    "summary": "Allows invoking divine power at remarkable speed, benefiting initiative.",
+    "catalogId": "lightningQuickInvocation",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

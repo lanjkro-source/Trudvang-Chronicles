@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Zqr09w2x3y4z5A6B",
+  "_id": "Zqr09w2x3y4z5A6B",
+  "name": "Érudition",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7600000,
+  "system": {
+    "description": "Le personnage sait beaucoup de choses sur un sujet spécifique de son choix. Il bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer ce qu’il sait sur le sujet choisi.",
+    "summary": "Fait du personnage un érudit du sujet précis qu’il a retenu.",
+    "catalogId": "insight",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Learning",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

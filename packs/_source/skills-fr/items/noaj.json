@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VQhvBnRmSnToUpVq",
+  "_id": "VQhvBnRmSnToUpVq",
+  "name": "Noaj",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5100000,
+  "system": {
+    "description": "L’arpenteur des brumes a choisi de se consacrer à la religion d’Haminges et peut apprendre à invoquer les esprits pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Haminges), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. Cette spécialité lui accorde un modificateur de +2 par niveau à la valeur de compétence pour voler les âmes de ses victimes, qui accordent au noaj des points de divinité temporaires supplémentaires. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre l’invocateur au culte d’Haminges : invoquer les esprits et soutirer les âmes des victimes via sa Tablette sacrée.",
+    "catalogId": "noaj",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

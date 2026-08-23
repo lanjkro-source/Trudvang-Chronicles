@@ -1,0 +1,24 @@
+{
+  "_key": "!items!FbGtuiLgMhNiOjPk",
+  "_id": "FbGtuiLgMhNiOjPk",
+  "name": "Bagarre",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6300000,
+  "system": {
+    "description": "Le personnage a appris à donner des coups de poing et de pied puissants, mais aussi à se défendre contre les attaques aussi bien armées qu’à mains nues, simplement en utilisant son corps. Il bénéficie de 2 points de combat supplémentaires par niveau dans la spécialité qu’il peut répartir entre ses coups de poing ou de pied et ses parades à mains nues.",
+    "summary": "Coups de poing et de pied puissants, et défense à mains nues contre les attaques armées comme non armées.",
+    "catalogId": "brawling",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Unarmed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!0FImW5x3y4z5A6B7",
+  "_id": "0FImW5x3y4z5A6B7",
+  "name": "Read & Write",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8500000,
+  "system": {
+    "description": "( Specification Required) This specialty enables a person to read and write texts in the selected language. It can be purchased multiple times, They can add +2 to their Skill Value per level when trying to learn about the chosen race’s history. The specialty focuses on a single culture: Stormlanders, Mittlanders, Viranns, Wildfolks, Dwarves, and Elves.",
+    "summary": "Allows reading and writing in the chosen tongue once that foreign language has been learned.",
+    "catalogId": "readWrite",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

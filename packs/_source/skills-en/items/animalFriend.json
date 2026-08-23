@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pLixfsWrXsYtZu0v",
+  "_id": "pLixfsWrXsYtZu0v",
+  "name": "Animal Friend",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12400000,
+  "system": {
+    "description": "This specialty gives a person improved knowledge regarding the lives of animals. The specialty bonus is used when the person wants to know something regarding their ways and patterns. The knowledge is also used to train an animal to perform tricks and activities. The person has also learned to train wild animals so as to domesticate them. To domesticate an animal, it must first be captured. A caught animal becomes domesticated if the tamer succeeds on five rolls for the Wilderness skill. The tamer may roll only once per week. Thus, it takes at least five weeks to domesticate a wild animal. Because there are a great variety of animals in Trudvang, it is up to the game master to determine which ones can be trained and for what. Some examples of animals that can be trained are horses, dogs, birds, cats, bears, snakes, and rodents. The specialty bonus is used when the person wants to train or command an animal to do something. Different animals can be taught different skills (see the Trained Animals section in the Game Master Guide book for more details). There are eight different types of training: fetching, jumping, hunting, couriering, sprinting, tracking, combat, and guarding. All these training areas have five capability levels: obedient, capable, excellent, skilled, and masterful. A dog can therefore have excellent training could convey how rich the area is with animals, if there are trolls in the forest, how many trolls there are, what kind of trolls, that a good resting place is a half day’s march eastward, that there is a risk of landslides, and much more. It all depends on what the person who made the sign wanted to convey. Most signs consist of several parts. Most important is the part that conveys the main message, such as “Beware of trolls.” The other parts expand the main message, such as detailing what kind of trolls, how many there are, and in what direction they went. Signs are positioned in places that are not obvious to an untrained eye, but to an experienced person they are quite clear.",
+    "summary": "Knows animal life intimately and can train animals into tricks and special tasks.",
+    "catalogId": "animalFriend",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

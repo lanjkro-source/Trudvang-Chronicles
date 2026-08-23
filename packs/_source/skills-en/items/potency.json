@@ -1,0 +1,24 @@
+{
+  "_key": "!items!dArvaRiOjPkQlRmS",
+  "_id": "dArvaRiOjPkQlRmS",
+  "name": "Potency",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 9900000,
+  "system": {
+    "description": "The conjurer’s spells are very powerful. All Situation values that the victim must roll at or below to resist a spell are reduced by -2 per level due to the conjurer’s force. The conjurer can also put up great resistance to spells directed toward them. All Situation values that the conjurer must roll at or above to resist or reduce a spell’s effect are increased by +2 per level.",
+    "summary": "Makes its spells fearsome: victims struggle to resist them, while the conjurer withstands opposing magic well.",
+    "catalogId": "potency",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

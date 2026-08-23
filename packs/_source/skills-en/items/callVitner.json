@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZUf2p5z5A6B7C8D9",
+  "_id": "ZUf2p5z5A6B7C8D9",
+  "name": "Call of Vitner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10700000,
+  "system": {
+    "description": "This discipline is the first step to see and call for the vitner and receive a Vitner Capacity. But a character also must learn one of the specialties (Hwitalja, Darkhwitalja, or Vaagritalja) in order to use the Vitner Points that the discipline gives. Seeing the vitner is a long process that is described in more detail in the Three Types of Vitner section in Weavers of Magic. The conjurer increases their vitner capacity by +5 Vitner Points per level of the discipline.",
+    "summary": "The first step toward perceiving the vitner and building a reserve; one of Hwitalja, Morkvitalja or Vaagritalja is required to use those points.",
+    "catalogId": "callVitner",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

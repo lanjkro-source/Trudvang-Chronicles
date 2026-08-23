@@ -1,0 +1,24 @@
+{
+  "_key": "!items!LaXFbOiOjPkQlRmS",
+  "_id": "LaXFbOiOjPkQlRmS",
+  "name": "Darkhwitalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10900000,
+  "system": {
+    "description": "After years of study, the conjurer has uncovered the dark vitner and can summon it, becoming a Darkhwitalja among the dark tamers. Choosing to weave the morkvitner forever bars learning Vaagritalja and Hwitalja. Its effects on the conjurer: the reserve grows by 20 Vitner Points; perfect results are impossible because this vitner is impure; its failures can be fatal — on a critical failure roll 1d10 (open 8-10) on the Fatal Magic table; and every Vitner Tablet description accounts for morkvitalja specifics, usually a Vitner Point cost.",
+    "summary": "Discovers and calls the morkvitner, the dark vitner, becoming a dark tamer bound to this path forever.",
+    "catalogId": "darkhwitalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

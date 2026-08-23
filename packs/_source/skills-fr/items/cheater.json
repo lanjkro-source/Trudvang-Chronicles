@@ -1,0 +1,24 @@
+{
+  "_key": "!items!FvItCtXsYtZu0v1w",
+  "_id": "FvItCtXsYtZu0v1w",
+  "name": "Tricheur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3000000,
+  "system": {
+    "description": "Le personnage a appris différentes astuces pour tricher. Lorsqu’il y fait appel, il bénéficie d’un bonus à la VC de son test de compétence. Le joueur du tricheur décide de la valeur du modificateur, qui traduit à quel point le PJ triche (modificateur maximum de +10). Si le test de compétence réussit, le maître de jeu détermine si l’adversaire se rend compte de la tricherie ou pas selon les circonstances, la situation, l’adversaire et le niveau de compétence du tricheur. Les adversaires ont toujours la possibilité de se rendre compte de la tricherie en effectuant un test basé sur la compétence Arts des ombres (ou la discipline Jeux, ou la spécialité Tricheur si l’une ou l’autre sont plus élevées). Si le test de compétence échoue, l’adversaire bénéficie d’un bonus au test pour se rendre compte de la tricherie (comme évoqué ci-dessus), égal au bonus choisi par le joueur du personnage ayant voulu tricher.",
+    "summary": "Apprend différentes astuces pour tricher ; l’ampleur de la triche est choisie par le joueur, avec un risque d’être découvert.",
+    "catalogId": "cheater",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

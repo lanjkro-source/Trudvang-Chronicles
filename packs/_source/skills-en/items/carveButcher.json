@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VZcN4qVqWrXsYtZu",
+  "_id": "VZcN4qVqWrXsYtZu",
+  "name": "Carve & Butcher",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11800000,
+  "system": {
+    "description": "The person has learned to carve meat and butcher animals properly , and can get 10% more daily rations than usual through hunting or fishing. The person is also good at skinning animals and taking care of the fur. The more skillful the person is, the greater and finer piece of fur they can get from a killed animal. The specialty bonus is used when the person is skinning an animal in order to take care of the fur.",
+    "summary": "Carves meat and dresses game properly, yielding extra rations and fine preserved furs.",
+    "catalogId": "carveButcher",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

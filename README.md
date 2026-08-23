@@ -29,7 +29,12 @@ Run the local validation suite with:
 npm run check
 ```
 
-No build step or third-party JavaScript dependency is required.
+The bilingual Skills compendium packs under `packs/` are build artifacts compiled from reviewable JSON sources (`packs/_source/`) generated out of `lang/*.json` and the knowledge tree in `modules/config.mjs`. The repository has exactly one build step, powered by the `@foundryvtt/foundryvtt-cli` dev dependency; rebuild the packs after any rules-text or catalogue change:
+
+```powershell
+npm install
+npm run build:packs
+```
 
 ## Playing
 

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!aYgXjhKfLgMhNiOj",
+  "_id": "aYgXjhKfLgMhNiOj",
+  "name": "Dévotion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4500000,
+  "system": {
+    "description": "Niveau Le fidèle s’est plongé profondément dans la religion et augmente sa réserve divine de 7 points de divinité supplémentaires par niveau. Les nains obtiennent 7 points de divinité supplémentaires par niveau à sertir dans un objet.",
+    "summary": "Approfondit la foi du fidèle et accroît durablement sa réserve de points de divinité.",
+    "catalogId": "faithful",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Divine Power",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

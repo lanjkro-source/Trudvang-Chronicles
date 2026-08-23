@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Omwk6jLgMhNiOjPk",
+  "_id": "Omwk6jLgMhNiOjPk",
+  "name": "Zoologie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12700000,
+  "system": {
+    "description": "Cette spécialité apporte au personnage une connaissance supplémentaire concernant les créatures de Trudvang qui ne sont pas dotées d’une intelligence supérieure. Le personnage est familier avec les forces et les faiblesses de ces animaux, leur mode de vie, ce qu’ils craignent, le type de traces qu’ils laissent, etc. Le bonus de spécialité est utilisé lorsque le personnage doit déterminer s’il sait quelque chose au sujet d’une créature spécifique.",
+    "summary": "Étudie les créatures dépourvues d’intelligence supérieure : forces, faiblesses, mode de vie et traces qu’elles laissent.",
+    "catalogId": "zoology",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

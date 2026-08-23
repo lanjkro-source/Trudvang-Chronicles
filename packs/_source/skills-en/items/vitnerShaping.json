@@ -1,0 +1,24 @@
+{
+  "_key": "!items!bQi7TpSnToUpVqWr",
+  "_id": "bQi7TpSnToUpVqWr",
+  "name": "Vitner Shaping",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10200000,
+  "system": {
+    "description": "Vitner can be shaped through various methods:songs and sounds (Galding), gestures (Sejding) and thoughts (Vyrding). This discipline give modifiers to all three but the conjurer must know at least one of the related specialties in order to cast a spell. The three ways cannot be combined with one another; a spell is Galded, Sejded, or Vyrded. The discipline also provides knowledge of the written language of the incantation arts.",
+    "summary": "The founding discipline of vitner shaping: galda through song, sejda through gesture, vyrda through thought; knowing at least one method is required, and they never combine.",
+    "catalogId": "vitnerShaping",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

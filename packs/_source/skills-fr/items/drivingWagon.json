@@ -1,0 +1,24 @@
+{
+  "_key": "!items!KeyBTMgMhNiOjPkQ",
+  "_id": "KeyBTMgMhNiOjPkQ",
+  "name": "Conduite de chariot",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 700000,
+  "system": {
+    "description": "La spécialité Conduite de chariot développe la capacité d’un personnage à conduire un chariot attelé à un ou plusieurs animaux de trait. Les tests de compétence ne sont habituellement requis qu’au cours d’une chasse, lors d’une poursuite, ou si le terrain est difficile ou les conditions météorologiques mauvaises.",
+    "summary": "Développe la conduite des chariots attelés, surtout utile lors de poursuites ou sur terrain difficile.",
+    "catalogId": "drivingWagon",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Horsemanship",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

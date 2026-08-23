@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ECqOV8B7C8D9EaGb",
+  "_id": "ECqOV8B7C8D9EaGb",
+  "name": "Race Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7700000,
+  "system": {
+    "description": "This discipline gives a person knowledge about Trudvang’s different and exotic races such as trollkin, wyrms ( dragonbeasts), serguronts (ancient spirits), and salhele (undead). The person knows their ideologies, governance, lifestyle, fears, strengths, weaknesses, and more. The person can add +1 to their Skill Value per level when trying to learn about Trudvang’s residents.",
+    "summary": "Knows Trudvang’s exotic races: the minds, hierarchies, fears, strengths and weaknesses of trolls, wurms, serguronts and salhele.",
+    "catalogId": "raceKnowledge",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!8MbKi2v1w2x3y4z5",
+  "_id": "8MbKi2v1w2x3y4z5",
+  "name": "Lutte",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6400000,
+  "system": {
+    "description": "Le personnage a appris la lutte et à réaliser des actions de combat telles que la saisie ou la glima (projection au sol). Il bénéficie de 2 points de combat supplémentaires par niveau lorsqu’il effectue une saisie ou une glima au cours d’une action de combat. Les points de combat de la spécialité ne peuvent être utilisés qu’au cours d’une lutte.",
+    "summary": "Apprend la lutte : saisies et projections au sol lors des actions de combat.",
+    "catalogId": "wrestling",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Unarmed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

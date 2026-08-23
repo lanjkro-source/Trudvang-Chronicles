@@ -1,0 +1,24 @@
+{
+  "_key": "!items!MmlVubGbHcIdJeKf",
+  "_id": "MmlVubGbHcIdJeKf",
+  "name": "Throwing Weapons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5700000,
+  "system": {
+    "description": "This specialty develops a character’s ability to throw weapons with fatal accuracy. The specialty applies only to weapons suited for this purpose, such as throwing knives, throwing axes, and stones. The character gets +2 per level in Skill Value when throwing weapons. The specialty is tied to the right or left hand, just like the one-handed heavy or light weapons. If the character wants to throw weapons with both hands, they must learn the specialty twice, once for each hand.",
+    "summary": "Teaches hurling purpose-built weapons — throwing knives, throwing axes and stones — with deadly accuracy.",
+    "catalogId": "throwingWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

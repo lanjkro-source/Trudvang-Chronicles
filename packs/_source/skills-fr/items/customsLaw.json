@@ -1,0 +1,24 @@
+{
+  "_key": "!items!9664YVqWrXsYtZu0",
+  "_id": "9664YVqWrXsYtZu0",
+  "name": "Coutumes & lois",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7200000,
+  "system": {
+    "description": "Le personnage sait tout ce qu’il y a à savoir sur les lois et le système légal d’une culture, sur ses coutumes, ses gestuelles, ses tabous, ses habitudes alimentaires, ses codes de conduite, ses vêtements typiques et ses logements, ainsi que sur ses caractéristiques communes, ses personnalités et son apparence. Le personnage peut ajouter +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer s’il sait quelque chose sur les coutumes d’un peuple. La spécialité est centrée sur une seule culture : les Stormlanders, les Mittlanders, les Viranns, les Sauvages, les nains ou les elfes.",
+    "summary": "Sait tout d’une culture donnée : lois, coutumes, tabous, habitudes alimentaires, codes de conduite et apparences typiques.",
+    "catalogId": "customsLaw",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Culture Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

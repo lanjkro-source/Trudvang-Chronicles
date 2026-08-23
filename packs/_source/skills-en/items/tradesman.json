@@ -1,0 +1,24 @@
+{
+  "_key": "!items!cbyxisVqWrXsYtZu",
+  "_id": "cbyxisVqWrXsYtZu",
+  "name": "Tradesman",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2000000,
+  "system": {
+    "description": "The person has learned to operate a farm, an inn, a barber shop, or a trade that offers other services. Through this skill, they also know who to bribe when something needs to be smuggled or how to evade taxes.",
+    "summary": "Teaches running a farm, tavern or shop while knowing the trade’s ways, from taxes to bribes.",
+    "catalogId": "tradesman",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

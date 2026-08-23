@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ihehF7y4z5A6B7C8",
+  "_id": "ihehF7y4z5A6B7C8",
+  "name": "Nature Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12300000,
+  "system": {
+    "description": "The Nature Knowledge discipline gives the person knowledge regarding the flora and fauna of Trudvang as well as the ability to predict weather. The person knows what plants are located in an area, which animals and beasts are there, how they behave, and why. The person also is familiar with the landscapes and terrains of Trudvang, and what characterizes a particular area.",
+    "summary": "Knows Trudvang’s flora and fauna, their behavior and surrounding landscapes, and can forecast the weather.",
+    "catalogId": "natureKnowledge",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

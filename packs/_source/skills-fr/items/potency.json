@@ -1,0 +1,24 @@
+{
+  "_key": "!items!dArvaRiOjPkQlRmS",
+  "_id": "dArvaRiOjPkQlRmS",
+  "name": "Puissance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 9900000,
+  "system": {
+    "description": "Les sorts de l’invocateur sont très puissants. Lorsqu’une victime doit faire un test de situation pour résister à un sort, la valeur de situation est réduite de -2 par niveau en raison de la puissance de l’invocateur. L’invocateur peut également opposer une forte résistance aux sorts qui le visent. Lorsqu’il doit faire un test de situation pour résister à un sort ou en réduire les effets, la valeur de situation est augmentée de 2 par niveau.",
+    "summary": "Rend ses sorts redoutables : leurs victimes peinent à y résister, tandis que lui-même oppose une forte résistance aux sorts adverses.",
+    "catalogId": "potency",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

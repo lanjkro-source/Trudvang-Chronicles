@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Vn1k4fKfLgMhNiOj",
+  "_id": "Vn1k4fKfLgMhNiOj",
+  "name": "Safe-weaving",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10000000,
+  "system": {
+    "description": "The conjurer is meticulous when weaving spells. On the occasions that the conjurer’s spell malfunctions, because of this specialty they subtract -2 per level from the roll on the fatal magic table (see the Fatal Magic section in Weavers of Magic). The conjurer is also very hard to disturb when preparing or conjuring a spell. Anytime they must thought force, and the only indication of trying to create a spell is the virtually non-existent gesture or movement that finally channels the magic out through the body. The movements may be a simple twist of a wrist, a flick of the fingers, or a wink of an eye. The downside to Vyrding is that it takes twice as long to shape vitner into a spell as in other styles.",
+    "summary": "Weaves spells with care: softens Fatal Magic consequences and makes the conjurer hard to distract.",
+    "catalogId": "safeWeaving",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

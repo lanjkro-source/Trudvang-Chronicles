@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZWCR9TnToUpVqWrX",
+  "_id": "ZWCR9TnToUpVqWrX",
+  "name": "Weatherman",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12600000,
+  "system": {
+    "description": "The person has learned to interpret the signs of nature and can use them to predict the weather for the next few days. The specialty bonus is used when the person tries to predict weather for the next two days +1 day per level.",
+    "summary": "Interprets natural signs to predict the weather of coming days.",
+    "catalogId": "weatherman",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

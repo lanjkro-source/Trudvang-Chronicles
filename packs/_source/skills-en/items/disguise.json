@@ -1,0 +1,24 @@
+{
+  "_key": "!items!cgkF4tYtZu0v1w2x",
+  "_id": "cgkF4tYtZu0v1w2x",
+  "name": "Disguise",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9300000,
+  "system": {
+    "description": "The person is good at dressing up convincingly and mimicking people. With the right accessories, they can blend into the environment. The person can add +2 to their Skill Value per level when trying to blend in. By changing both body language and speech, they can imitate another person (including the opposite sex) so well that others who are not familiar with the intended person are likely to believe the deception. However, to prevent a close friend from noticing the deception, a very good disguise is required.",
+    "summary": "Disguises convincingly and imitates people through body language and voice alike.",
+    "catalogId": "disguise",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

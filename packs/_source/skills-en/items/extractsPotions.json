@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zZnK3QkQlRmSnToU",
+  "_id": "zZnK3QkQlRmSnToU",
+  "name": "Extracts & Potions",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2700000,
+  "system": {
+    "description": "The person has learned what substances cause the body to react in a certain way. In addition to the extract preparation, this specialty includes what can happen to a person exposed to a particular extract and what can help the victim overcome the drug’s effect. The person has learned to recognize a specific extract depending on its taste, smell, appearance, and effect when someone has been exposed to it. After determining the extract involved, the character knows what can be used as an antidote to neutralize the effect. The character has also learned to improve the balance of the body and speed healing by applying various substances. For this specialty , everything from diseases to broken limbs and wounds count as injuries.",
+    "summary": "Knows how substances affect the body: preparing extracts, identifying poisons and aiding their victims.",
+    "catalogId": "extractsPotions",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Healing & Drugs",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

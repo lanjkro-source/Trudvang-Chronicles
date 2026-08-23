@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZWCR9TnToUpVqWrX",
+  "_id": "ZWCR9TnToUpVqWrX",
+  "name": "Météorologie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12600000,
+  "system": {
+    "description": "Le personnage a appris à interpréter les signes de la nature et peut les utiliser pour prédire le temps qu’il fera durant les prochains jours. Le bonus de spécialité est utilisé lorsque le personnage essaie de prédire la météo des deux prochains jours + 1 jour par niveau.",
+    "summary": "Interprète les signes de la nature pour prédire la météo des jours à venir.",
+    "catalogId": "weatherman",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ogInDC3y4z5A6B7C",
+  "_id": "ogInDC3y4z5A6B7C",
+  "name": "Combat Movement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1000000,
+  "system": {
+    "description": "A person with this specialty can move quickly and effortlessly during battle. They can move 1 meter per level (maximum 5 m) without spending Combat Points and beyound the maaximum movement. After moving that distance, the character must spend 2 Combat Points for every additional meter they want to move.",
+    "summary": "Lets the character cover extra ground during combat without spending Combat Points.",
+    "catalogId": "combatMovement",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

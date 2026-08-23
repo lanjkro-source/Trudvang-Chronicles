@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZUf2p5z5A6B7C8D9",
+  "_id": "ZUf2p5z5A6B7C8D9",
+  "name": "Appel du vitner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10700000,
+  "system": {
+    "description": "Cette discipline est la première étape pour pouvoir voir le vitner, y faire appel, et obtenir une réserve de vitner. Mais un personnage doit également apprendre l’une des spécialités (Hwitalja, Morkvitalja ou Vaagritalja) afin de pouvoir utiliser les points de vitner accordés par la discipline. Percevoir le vitner est un processus long qui est décrit plus en détail dans les sections du aux trois types de vitner. L’invocateur augmente sa réserve de vitner de 5 points de vitner par niveau de discipline.",
+    "summary": "Première étape pour percevoir le vitner et bâtir sa réserve ; l’une des voies Hwitalja, Morkvitalja ou Vaagritalja est requise pour en exploiter les points.",
+    "catalogId": "callVitner",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

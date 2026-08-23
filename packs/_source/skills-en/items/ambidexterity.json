@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ymPKwWnToUpVqWrX",
+  "_id": "ymPKwWnToUpVqWrX",
+  "name": "Ambidexterity",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 200000,
+  "system": {
+    "description": "The character improves their ability to fight even with the shield hand (which is the left hand for a right-handed person or vice versa). The penalties on attacks with the shield hand are reduced by 2 points per level. By learning all levels of the Ambidexterity specialty and the Body Control discipline, the character becomes equally skilled at using both hands. The modifiers from both Discipline and Specialty are stacked in order to offset the penalty for the shield hand. Once both Body Control Discipline and the Ambidexterity Specialty have been mastered to the highest level, the -15 penalty to the shield hand is completely nullified. The Agility skill is used in most cases when a person performs something with their body. It may be, for example, when a character jumps, climbs, does a handstand, balances, falls and lands on their feet, or leaps away from a runaway horse. In addition to these maneuvers, Agility is used in a number of other physical situations, such as when the character drives a wagon or sleigh, canoes, skis or rides a horse. Remember that in all these situations wearing armor will affect the results. In all areas, it is ultimately up to the game master to determine when a Skill roll is needed, and what modifiers the character receives in each situation.",
+    "summary": "Improves fighting with the shield hand by reducing its penalty; taken to the top alongside Body Control, it grants competence with both hands.",
+    "catalogId": "ambidexterity",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

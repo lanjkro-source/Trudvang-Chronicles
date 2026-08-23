@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Uh04yKeKfLgMhNiO",
+  "_id": "Uh04yKeKfLgMhNiO",
+  "name": "Evade",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1100000,
+  "system": {
+    "description": "The character has learned to evade an attack without parrying. To successfully evade an attack, they make a Skill roll modified negatively by the attacker’s degree of success, which is the amount by which they beat their target SV (SV – dice result = modifier). For example, if the attacker has SV 14 and rolls 10, the Riding The character has learned to ride a horse and is able to do maneuvers on horseback. Because of this, they get +2 on their Skill Value per level in the specialty whenever they try to ride fast, get the horse to jump, or do other tricks. The Riding specialty can also be used in conjunction with long rides, when battles are fought, or for complications in the wild. Each combat round that a rider fights on horseback, they must pay 15 (-3 per specialty level) Combat Points. So at full specialty level, there is no extra cost for fighting on horseback. More information on Mounted Combat is in the Game Master Guide book, page 95.",
+    "summary": "Refines the art of dodging attacks rather than parrying them; at higher levels multiple dodges become possible.",
+    "catalogId": "evade",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

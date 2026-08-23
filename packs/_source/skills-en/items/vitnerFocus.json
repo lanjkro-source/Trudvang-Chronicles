@@ -1,0 +1,24 @@
+{
+  "_key": "!items!rIHrx0tZu0v1w2x3",
+  "_id": "rIHrx0tZu0v1w2x3",
+  "name": "Vitner Focus",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 9800000,
+  "system": {
+    "description": "The conjurer has learned to focus their mind on the vitner energies receiving the following modifiers per level: +1 on situation rolls to remain focused while distrurbed and -1 to rolls on the table for fatal failure.",
+    "summary": "Focuses the conjurer’s mind on vitner energies: resisting distractions better and softening critical failures.",
+    "catalogId": "vitnerFocus",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

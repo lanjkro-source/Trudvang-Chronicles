@@ -1,0 +1,24 @@
+{
+  "_key": "!items!usYAvIcIdJeKfLgM",
+  "_id": "usYAvIcIdJeKfLgM",
+  "name": "Land Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11400000,
+  "system": {
+    "description": "( Specification Required) The person has knowledge regarding a country’s geography and can add +2 per level to their Skill Value when trying to learn about its forests, rivers, lakes, coastlines, mountains, cities, trails, and more. Every country in Trudvang has its own Land Knowledge specialty.",
+    "summary": "Masters the geography of one specific region: forests, rivers, mountains, cities and roads.",
+    "catalogId": "landKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

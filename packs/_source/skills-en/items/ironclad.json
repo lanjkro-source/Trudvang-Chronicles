@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VoEkC4x3y4z5A6B7",
+  "_id": "VoEkC4x3y4z5A6B7",
+  "name": "Ironclad",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1200000,
+  "system": {
+    "description": "The person finds it easy to move and maneuver in armor. Their worn armor is counted as if it has 1 less in Heft (-1) for each level of specialty (minimum Heft of 1) to assess the armor modifiers the person receives.",
+    "summary": "Makes wearing armor easier by reducing its effective encumbrance.",
+    "catalogId": "ironclad",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!fMtPsLgMhNiOjPkQ",
+  "_id": "fMtPsLgMhNiOjPkQ",
+  "name": "Divine Power",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4400000,
+  "system": {
+    "description": "This discipline gives the human dimwalker the ability to get power (in the form of Divinity Points from their deity) and thus greater divinity capacity. The sum of the discipline’s Divinity Points constitutes the dimwalker’s divinity capacity. Therefore, a dimwalker at first level has access to 3 more Divinity Points per day , while a dimwalker at fifth level has access to 15 more Divinity Points per day. By learning one or more levels of a specialty associated with this discipline, the dimwalker can increase their divinity capacity even further. Dwarves who acquire this discipline receive as many Divinity Points as humans, but since these are specifically tied to items, the points are consumed as soon as they are inserted into the object.",
+    "summary": "Grants access to the deity’s power as Divinity Points, forming the conjurer’s daily divine reserve.",
+    "catalogId": "divinePower",
+    "kind": "discipline",
+    "parentSkill": "faith",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!bV8XTpToUpVqWrXs",
+  "_id": "bV8XTpToUpVqWrXs",
+  "name": "Soft Materials",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1900000,
+  "system": {
+    "description": "The character has learned to make and repair items of soft materials such as what items can and cannot be sold, who can or should be bribed, and so on. The person knows what papers are required for admission to a town or for receiving approval to conduct their trade. The person has also learned to appraise objects in terms of the current price and what they could get by selling it elsewhere.",
+    "summary": "Crafting and repairing objects of cloth, fur and leather.",
+    "catalogId": "softMaterials",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handicraft",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

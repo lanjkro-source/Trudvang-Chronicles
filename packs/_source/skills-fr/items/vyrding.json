@@ -1,0 +1,24 @@
+{
+  "_key": "!items!4sIhnaD8D9EaGbHc",
+  "_id": "4sIhnaD8D9EaGbHc",
+  "name": "Vyrda",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10600000,
+  "system": {
+    "description": "La méthode de lancer de sorts connue sous le nom de vyrda est silencieuse et calme, et passe souvent complètement inaperçue jusqu’à ce que l’effet se produise. Les invocateurs qui y font appel se remplissent de vitner et, pour un instant, leur être et l’énergie magique ne font plus qu’un. Ils modèlent le vitner uniquement à la force de la pensée, et le seul indice permettant de comprendre qu’ils essaient de créer un sort est le geste ou le mouvement pratiquement inexistant qui, au final, canalise la magie hors du corps. Ce mouvement peut consister en une simple torsion de poignet, une pichenette du doigt ou un clin d’œil. L’inconvénient du vyrda est qu’il faut deux fois plus de temps pour modeler le vitner pour en faire un sort qu’avec les autres méthodes.",
+    "summary": "Modèle le vitner à la seule force de la pensée : méthode silencieuse et calme, souvent invisible jusqu’à l’effet produit.",
+    "catalogId": "vyrding",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Shaping",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

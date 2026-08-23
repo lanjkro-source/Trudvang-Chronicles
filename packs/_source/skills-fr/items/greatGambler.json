@@ -1,0 +1,24 @@
+{
+  "_key": "!items!oL0njNgMhNiOjPkQ",
+  "_id": "oL0njNgMhNiOjPkQ",
+  "name": "Grand joueur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3200000,
+  "system": {
+    "description": "Le personnage est un joueur accompli. Il comprend le fonctionnement des règles de jeu, et sait combien et quand il doit miser pour maximiser son gain. Le personnage peut ajouter +2 par niveau à sa valeur de compétence lorsqu’il joue à des jeux. La spécialité n’a d’effet que s’il y a un enjeu.",
+    "summary": "Fait du personnage un joueur accompli qui sait quand et combien miser pour maximiser son gain.",
+    "catalogId": "greatGambler",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

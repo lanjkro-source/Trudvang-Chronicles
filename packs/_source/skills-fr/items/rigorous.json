@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xWrETYqWrXsYtZu0",
+  "_id": "xWrETYqWrXsYtZu0",
+  "name": "Rigoureux",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4300000,
+  "system": {
+    "description": "Le fidèle sait comment gérer ses pouvoirs pour augmenter ses chances de réussite. En utilisant des points de divinité supplémentaires durant l’invocation, les chances de réussite sont augmentées. Pour chaque niveau de la spécialité, le fidèle peut utiliser 2 points de divinité pour obtenir un modificateur de +1 à un test de compétence. Ainsi, un fidèle ayant former 6 points de divinité en un modificateur de +3 à un test de compétence, et un fidèle ayant un niveau 5 peut transformer 10 points de divinité en un modificateur de +5 sur un test. Le fidèle décide du nombre de points de divinité qu’il utilise dans la limite du nombre autorisé par le niveau de la spécialité.",
+    "summary": "Apprend à investir davantage de points de divinité dans une invocation pour accroître ses chances de réussite.",
+    "catalogId": "rigorous",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ahU0m7A6B7C8D9Ea",
+  "_id": "ahU0m7A6B7C8D9Ea",
+  "name": "Danse",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3400000,
+  "system": {
+    "description": "Le personnage sait danser. Il peut ajouter +2 par niveau à sa valeur de compétence lorsqu’il essaie de capter l’attention du public en dansant.",
+    "summary": "Apprend à danser pour capter et retenir l’attention d’un public.",
+    "catalogId": "dance",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Music & Dancing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zvFLoHcIdJeKfLgM",
+  "_id": "zvFLoHcIdJeKfLgM",
+  "name": "Calomnies",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3800000,
+  "system": {
+    "description": "Le personnage est capable de raconter une histoire fausse et calomnieuse au sujet de quelqu’un. Il se base souvent sur des faits réels mais les transforme pour renvoyer une mauvaise image de sa victime. En réussissant son test de Calomnies, le personnage peut amener une foule à se dresser contre la personne visée.",
+    "summary": "Sait forger des récits calomnieux, mêlés de vérité déformée, pour retourner une foule contre sa victime.",
+    "catalogId": "libel",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Storytelling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

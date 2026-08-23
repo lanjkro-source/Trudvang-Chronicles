@@ -1,0 +1,24 @@
+{
+  "_key": "!items!WvnqpcHcIdJeKfLg",
+  "_id": "WvnqpcHcIdJeKfLg",
+  "name": "Horsemanship",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 600000,
+  "system": {
+    "description": "The Horsemanship discipline develops the character’s ability to ride animals sitting up and to drive a chariot pulled by four-footed animals.",
+    "summary": "Lets the character ride four-legged animals and drive their teams.",
+    "catalogId": "horsemanship",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!MKGGB5A6B7C8D9Ea",
+  "_id": "MKGGB5A6B7C8D9Ea",
+  "name": "Sea Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11600000,
+  "system": {
+    "description": "The person is familiar with the sea that surrounds a specific coast, and can add +2 per level to their Skill Value when trying to learn about the seas of a selected region.",
+    "summary": "Makes the shoreline and waters of a specific coast familiar territory.",
+    "catalogId": "seaKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!IR8YwMdJeKfLgMhN",
+  "_id": "IR8YwMdJeKfLgMhN",
+  "name": "Jonglerie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 300000,
+  "system": {
+    "description": "Le personnage a appris à faire un numéro avec du feu, en jonglant et en effectuant d’autres tours de bouffon. Cette connaissance lui permet de cracher du feu, de passer ses mains à travers les flammes et de jongler. Lorsque le maître de jeu demande un test de compétence, le personnage peut ajouter un bonus de +2 par niveau dans cette spécialité à sa valeur de compétence.",
+    "summary": "Apprend les tours de bouffon : jongler, cracher du feu et passer les mains à travers les flammes.",
+    "catalogId": "jestering",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zX07B1w2x3y4z5A6",
+  "_id": "zX07B1w2x3y4z5A6",
+  "name": "Renforcement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10100000,
+  "system": {
+    "description": "Lorsqu’il tisse le vitner, l’invocateur se concentre de façon très intense. En utilisant des points de vitner supplémentaires lorsqu’il lance un sort, il augmente ses chances de succès. Pour chaque niveau qu’il a dans cette spécialité, il peut utiliser 2 points de vitner pour obtenir un modificateur de +1 à son test de compétence. Un invocateur ayant la spécialité au niveau 3 peut ainsi utiliser 6 points de vitner supplémentaires pour obtenir un modificateur de +3 à sa valeur de compétence, et un invocateur ayant le niveau 5 peut dépenser 10 points de vitner pour obtenir un bonus de +5. Il revient à l’invocateur de décider du nombre de points de vitner supplémentaires qu’il souhaite dépenser, dans la mesure où ils n’excèdent pas la valeur autorisée par le niveau de spécialité.",
+    "summary": "Investit des points de vitner supplémentaires lors du lancer pour augmenter ses chances de succès.",
+    "catalogId": "strenuous",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

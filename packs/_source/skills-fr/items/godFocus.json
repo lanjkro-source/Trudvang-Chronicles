@@ -1,0 +1,24 @@
+{
+  "_key": "!items!jORnpMhNiOjPkQlR",
+  "_id": "jORnpMhNiOjPkQlR",
+  "name": "Concentration religieuse",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 3900000,
+  "system": {
+    "description": "Cette discipline consiste en une profonde concentration sur les pratiques religieuses liées à l’invocation des pouvoirs divins. Elle permet aux arpenteurs des brumes de bénéficier des modificateurs par niveau suivants : +1 aux tests de situation effectués pour rester concentré lorsqu’ils sont la cible d’une distraction, et -1 aux jets effectués sur la table de Magie funeste.",
+    "summary": "Concentre profondément les pratiques religieuses liées à l’invocation : mieux résister aux distractions et limiter les risques de la Magie funeste.",
+    "catalogId": "godFocus",
+    "kind": "discipline",
+    "parentSkill": "faith",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

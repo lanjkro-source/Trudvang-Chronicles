@@ -1,0 +1,24 @@
+{
+  "_key": "!items!PSKIFUoUpVqWrXsY",
+  "_id": "PSKIFUoUpVqWrXsY",
+  "name": "Handler",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1300000,
+  "system": {
+    "description": "The person has learned management and administration in various forms. It can be anything from controlling a village or town to planning wars and campaigns. The handler is the one behind a city’s prosperity and knows why taxes are needed, who runs the administration, and what they do. Even if the handler does not know everyone personally , they know which authorities are responsible for which tasks.",
+    "summary": "Covers management and administration from village to town, up to planning wars and campaigns.",
+    "catalogId": "handler",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

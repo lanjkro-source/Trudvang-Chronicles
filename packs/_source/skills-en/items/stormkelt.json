@@ -1,0 +1,24 @@
+{
+  "_key": "!items!E8YulPgMhNiOjPkQ",
+  "_id": "E8YulPgMhNiOjPkQ",
+  "name": "Stormkelt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5300000,
+  "system": {
+    "description": "The dimwalker has chosen to indulge in the religion of Gerbanis and can learn to invoke the gods to activate supernatural powers. By obtaining the Holy Tablet (Gerbanis) specialty , the dimwalker can activate the divine powers in the learned Holy Tablet. The specialty provides +2 in Skill Value for performing blood gifting, which in turn gives the Stormkelt additional temporary Divinity Points. By choosing this specialty , the character forfeits the opportunity to acquire any of the specialties of other religions. Holy Tablet (Selected Tablet) The faithful learns a Holy Tablet’s divine abilities in a specific Holy Tablet associated with their religion. Each cult has its own prerequisites for allowing access to Holy Tablets. The details are explained in Dimwalkers. By learning this specialty , the faithful can invoke any divine feat that exists under the selected Holy Tablet at that level. Each new level of the specialty provides all the divine abilities included in the Tablet’s new level and in all the previous levels. For example, a faithful who learned the third level of the Holy Tablet (Power of Enken) specialty may invoke the divine feats that belong to the first three levels.",
+    "summary": "Dedicates the conjurer to the Gerbanis faith: offering blood to call the gods through its Sacred Tablet.",
+    "catalogId": "stormkelt",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

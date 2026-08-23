@@ -1,0 +1,24 @@
+{
+  "_key": "!items!3PYBK5w2x3y4z5A6",
+  "_id": "3PYBK5w2x3y4z5A6",
+  "name": "Contes & légendes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7300000,
+  "system": {
+    "description": "Le personnage en sait beaucoup sur l’histoire, les mythes et les légendes d’une culture. Il bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer s’il sait quelque chose sur l’histoire de la race choisie. La spécialité est centrée sur une seule culture : les Stormlanders, les Mittlanders, les Viranns, les Sauvages, les nains ou les elfes.",
+    "summary": "Connaisseur de l’histoire, des mythes et des légendes d’une seule culture choisie.",
+    "catalogId": "loreLegends",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Culture Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

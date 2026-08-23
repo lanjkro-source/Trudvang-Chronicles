@@ -1,0 +1,24 @@
+{
+  "_key": "!items!WvnqpcHcIdJeKfLg",
+  "_id": "WvnqpcHcIdJeKfLg",
+  "name": "Maîtrise équestre",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 600000,
+  "system": {
+    "description": "La discipline Maîtrise équestre développe la capacité du personnage à chevaucher des animaux en se tenant droit et à conduire un chariot tiré par des animaux à quatre pattes.",
+    "summary": "Permet de chevaucher des animaux à quatre pattes et de conduire leurs attelages.",
+    "catalogId": "horsemanship",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

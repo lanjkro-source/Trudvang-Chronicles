@@ -1,0 +1,24 @@
+{
+  "_key": "!items!0rtlJPgMhNiOjPkQ",
+  "_id": "0rtlJPgMhNiOjPkQ",
+  "name": "Brewer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2200000,
+  "system": {
+    "description": "The person has learned to prepare delicious drinks. The brewer knows how to produce everything from mead and wine to the strongest of spiced spirits.",
+    "summary": "Brews every kind of drink, from mead to the strongest spiced spirits.",
+    "catalogId": "brewer",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

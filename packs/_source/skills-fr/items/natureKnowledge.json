@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ihehF7y4z5A6B7C8",
+  "_id": "ihehF7y4z5A6B7C8",
+  "name": "Connaissance de la nature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12300000,
+  "system": {
+    "description": "La discipline Connaissance de la nature donne au personnage des connaissances concernant la flore et la faune de Trudvang, ainsi que la capacité à prévoir le temps. Il connaît les plantes présentes dans une région, les animaux et les créatures qu’on peut y rencontrer, ainsi que leur comportement. Le personnage est également familier avec les différents paysages et terrains de Trudvang, et sait ce qui caractérise une région spécifique.",
+    "summary": "Connaît la flore et la faune de Trudvang, leurs comportements, les paysages environnants et sait prévoir le temps.",
+    "catalogId": "natureKnowledge",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

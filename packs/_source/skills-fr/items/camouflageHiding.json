@@ -1,0 +1,24 @@
+{
+  "_key": "!items!AtrUp2v1w2x3y4z5",
+  "_id": "AtrUp2v1w2x3y4z5",
+  "name": "Camouflage & dissimulation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 8800000,
+  "system": {
+    "description": "Le personnage sait comment faire en sorte qu’un objet se fonde dans son environnement et devienne ainsi plus difficile à remarquer. Cette spécialité comprend aussi bien des objets de grande taille, tels qu’une tente, un canot ou un chariot, que des objets plus petits comme des pièges, des coffres, des épées et des livres. Elle permet aussi de se cacher soi-même ou de dissimuler d’autres personnes. Camouflage est principalement utilisé dans les grands espaces où le personnage peut profiter des éléments du paysage comme les hautes herbes, les bosquets et les arbres, mais cette spécialité peut aussi servir dans des environnements tels que les grottes et les pièces.",
+    "summary": "Apprend à fondre un objet — d’une tente à un piège — dans son environnement, ou à se cacher soi-même et à dissimuler autrui.",
+    "catalogId": "camouflageHiding",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

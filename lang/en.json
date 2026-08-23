@@ -28,7 +28,11 @@
       "ReimportName": "Reinstall starter content",
       "ReimportHint": "Runs the starter library import again in the current display language: names, descriptions, and images of previously installed items, tables, and NPCs are refreshed instead of duplicated.",
       "ReimportTitle": "Reinstall starter content",
-      "ReimportConfirm": "Reinstall"
+      "ReimportConfirm": "Reinstall",
+      "RebuildPacksName": "Rebuild the Skills compendiums",
+      "RebuildPacksHint": "Wipes and rebuilds the two Skills compendium packs from the system data, repairing any corrupted compendium content. Items already imported into this world are not touched.",
+      "RebuildPacksTitle": "Rebuild the Skills compendiums",
+      "RebuildPacksConfirm": "Rebuild"
     },
     "Tab": {
       "Summary": "Summary",
@@ -504,7 +508,8 @@
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",
       "CreationModeEnabled": "Character creation mode enabled.",
       "CreationModeDisabled": "Character creation completed.",
-      "InvalidTraitsRepaired": "Reset invalid -4 defaults to 0 on {count} character(s)."
+      "InvalidTraitsRepaired": "Reset invalid -4 defaults to 0 on {count} character(s).",
+      "KnowledgeSynced": "{count} knowledge item(s) imported from the Skills compendiums were refreshed."
     },
     "New": {
       "Item": "New {type}"
@@ -515,7 +520,9 @@
     "Import": {
       "Started": "Installing the Trudvang starter library...",
       "Complete": "Trudvang starter library installed: {items} items, {tables} tables, and {actors} NPCs.",
-      "Failed": "The Trudvang starter library could not be installed. See the console for details."
+      "Failed": "The Trudvang starter library could not be installed. See the console for details.",
+      "PacksRebuildStarted": "Rebuilding the Skills compendiums...",
+      "PacksRebuilt": "Skills compendiums rebuilt ({packs} packs)."
     },
     "Content": {
       "Folder": {

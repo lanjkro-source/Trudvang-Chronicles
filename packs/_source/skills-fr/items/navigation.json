@@ -1,0 +1,24 @@
+{
+  "_key": "!items!1xgfALeKfLgMhNiO",
+  "_id": "1xgfALeKfLgMhNiO",
+  "name": "Navigation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12900000,
+  "system": {
+    "description": "En mer, en se référant à des amers connus et à la position relative des étoiles et des corps astraux, un personnage connaît son cap actuel et éventuellement sa position. La spécialité aide un personnage à prendre la meilleure route et si possible la plus directe pour se rendre d’un endroit à un autre par la mer. Selon la distance et la météo, le maître de jeu détermine le nombre de tests de compétence qu’un navigateur doit réussir pour maintenir le bon cap. Si un personnage dispose d’une bonne carte marine qui indique les amers, il peut déterminer sa position et son cap avec une grande précision.",
+    "summary": "Détermine son cap et sa position en mer grâce aux amers et aux astres, en choisissant la meilleure route.",
+    "catalogId": "navigation",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Seafarer",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

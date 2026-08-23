@@ -1,0 +1,24 @@
+{
+  "_key": "!items!LaXFbOiOjPkQlRmS",
+  "_id": "LaXFbOiOjPkQlRmS",
+  "name": "Morkvitalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10900000,
+  "system": {
+    "description": "Après des années d’étude, l’invocateur a découvert le morkvitner et peut l’invoquer. Il est à présent devenu un morkvitalja et fait partie des dompteurs sombres. Choisir de tisser le morkvitner a des conséquences pour l’invocateur, qui ne pourra jamais apprendre les spécialités Vaagritalja et Hwitalja. Le morkvitner a les effets suivants sur l’invocateur : F Morkvitalja augmente la réserve de vitner de 20 points de vitner. F Le morkvitalja ne peut jamais obtenir un résultat parfait car ce vitner est impur. F Les échecs d’un morkvitalja peuvent être fatals. En cas d’échec critique, il lance 1d10 (JO 8-10) sur la table de Magie funeste. F La description de chaque Tablette de vitner intègre les effets spécifiques de morkvitalja, qui se traduisent habituellement par un coût en points de vitner.",
+    "summary": "Découvre et invoque le morkvitner, le vitner sombre, devenant un dompteur sombre lié à cette voie pour toujours.",
+    "catalogId": "darkhwitalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

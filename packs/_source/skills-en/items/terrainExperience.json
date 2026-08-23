@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Iyt35VoUpVqWrXsY",
+  "_id": "Iyt35VoUpVqWrXsY",
+  "name": "Terrain Experience",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13400000,
+  "system": {
+    "description": "( Specification Required) The person has great expertise regarding survival in a certain terrain. The specialty bonus is used when a Skill roll is required to find shelter, food, water, or other necessities in the selected terrain. Available terrains are mountain, forest, sea, snow and cold, and plains.",
+    "summary": "Survival expertise in one specific environment: mountain, forest, sea, snow and cold, and so on.",
+    "catalogId": "terrainExperience",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

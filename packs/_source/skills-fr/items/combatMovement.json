@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ogInDC3y4z5A6B7C",
+  "_id": "ogInDC3y4z5A6B7C",
+  "name": "Mouvement de combat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1000000,
+  "system": {
+    "description": "Une personne ayant cette spécialité peut se déplacer rapidement et sans effort pendant un combat. Elle peut se déplacer de 1 mètre par niveau (maximum 5 m) au-delà du mouvement maximum sans dépenser de point de combat. Une fois qu’il a parcouru cette distance, le personnage doit dépenser 2 points de combat pour chaque mètre supplémentaire.",
+    "summary": "Permet de parcourir une distance supplémentaire pendant un combat sans dépenser de points de combat.",
+    "catalogId": "combatMovement",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

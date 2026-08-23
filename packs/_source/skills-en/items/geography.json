@@ -1,0 +1,24 @@
+{
+  "_key": "!items!dGPMqVoUpVqWrXsY",
+  "_id": "dGPMqVoUpVqWrXsY",
+  "name": "Geography",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11200000,
+  "system": {
+    "description": "With the Geography discipline, a person knows what the environment looks like and how it is laid out. This gives the ability to interpret and create maps, know where different places are in relation to others, and which direction to travel in order to reach a certain destination. The discipline allows the person to get a rough idea of how the selected part of the world is constructed. They know which countries exist and all boundaries, popular routes, and towns and villages that exist. The person receives a bonus of +1 per level to a Skill roll to determine if they have knowledge regarding the area. Characters begin with level 1 in this discipline and level 1 as a basic specialty in Land Knowledge, specified according to the country where they grew up. The discipline must specify one of the following countries: Westmark, Mittland, the Stormlands, Nhoordland, Muspelheim, or Soj. In effect each country requires its own different Discipline.",
+    "summary": "Reads the lay of the land, letting the character interpret or draw maps, locate places relative to each other and choose travel routes.",
+    "catalogId": "geography",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

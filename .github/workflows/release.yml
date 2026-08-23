@@ -17,11 +17,14 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
       - name: Validate system
         run: node tools/validate-system.mjs
 
-      - name: Package system
-        run: node tools/package-system.mjs
+      - name: Build compendium packs and package system
+        run: npm run package
 
       - name: Publish release
         env:

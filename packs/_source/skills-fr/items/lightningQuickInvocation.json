@@ -1,0 +1,24 @@
+{
+  "_key": "!items!q4HmetXsYtZu0v1w",
+  "_id": "q4HmetXsYtZu0v1w",
+  "name": "Invocation instantanée",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4100000,
+  "system": {
+    "description": "L’arpenteur des brumes a appris à invoquer un pouvoir divin très rapidement, ce qui lui donne un modificateur de +2 par niveau à l’initiative.",
+    "summary": "Permet d’invoquer un pouvoir divin à une vitesse remarquable, au bénéfice de l’initiative.",
+    "catalogId": "lightningQuickInvocation",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

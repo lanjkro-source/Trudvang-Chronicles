@@ -1,0 +1,24 @@
+{
+  "_key": "!items!XX23yPhNiOjPkQlR",
+  "_id": "XX23yPhNiOjPkQlR",
+  "name": "Signes de voleur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9700000,
+  "system": {
+    "description": "Un personnage ayant cette spécialité est capable de lire les signes de voleur et d’en créer des simples pour communiquer. Un signe de voleur pourrait être, par exemple, un symbole gravé sur les fondations d’une maison ou sur un montant de porte, des pierres disposées selon un certain motif, ou autre chose que la plupart des gens ne remarqueraient pas. Chaque signe a sa propre importance et indique à celui qui en a l’habitude combien de personnes vivent dans une maison, si elles sont riches ou importantes, le nombre de hirdmen dans le secteur, la meilleure échappatoire pour sortir de la ville, où se trouve un passage secret, et bien d’autres choses encore. L’utilisation est presque sans limites, selon ce que la personne qui a créé le signe souhaite exprimer. La plupart des signes sont constitués d’au moins deux éléments : une idée principale et un élément particulier qui lui est rattaché. La partie la plus importante est celle qui exprime le message principal, par exemple s’il y a des gardes à l’endroit indiqué. L’autre élément donne une indication relative au message principal, par exemple le nombre de gardes. Un personnage ayant cette spécialité peut lire et créer des signes de voleur contenant deux ou trois éléments ajoutés au message principal, tels que « ici se trouvent des gardes violents », « la quatrième planche craque » ou « dix relèves de la garde ». Les signes de voleur sont positionnés à des endroits invisibles pour l’œil non averti, mais ils sont évidents pour les initiés. Il suffit de savoir où regarder.",
+    "summary": "Sait lire les signes de voleur et en créer de simples pour communiquer avec la confrérie.",
+    "catalogId": "thiefSigns",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

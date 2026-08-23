@@ -1,0 +1,24 @@
+{
+  "_key": "!items!MmlVubGbHcIdJeKf",
+  "_id": "MmlVubGbHcIdJeKf",
+  "name": "Armes de lancer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5700000,
+  "system": {
+    "description": "Cette spécialité développe la capacité d’un personnage à lancer des armes avec une précision mortelle. La spécialité ne s’applique qu’aux armes adaptées à cet usage, telles que les couteaux de lancer, les haches de lancer et les pierres. Le personnage bénéficie d’un bonus de +2 par niveau à sa valeur de compétence lorsqu’il lance des armes. Cette spécialité est liée soit à la main droite, soit à la main gauche, comme celle des armes légères ou lourdes à une main. Si le personnage veut lancer des armes avec ses deux mains, il doit apprendre la spécialité deux fois, une pour chaque main.",
+    "summary": "Apprend à lancer avec une précision redoutable les armes conçues pour cela : couteaux, haches de lancer et pierres.",
+    "catalogId": "throwingWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

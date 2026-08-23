@@ -1,0 +1,24 @@
+{
+  "_key": "!items!b7KnXXsYtZu0v1w2",
+  "_id": "b7KnXXsYtZu0v1w2",
+  "name": "Armor Bearer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6600000,
+  "system": {
+    "description": "The person has learned to wear armor in battle, allowing armor with Heft Value of 2 per level of the specialty. For example, a person with level 3 can wear armor with a Heft Value of up to 6.",
+    "summary": "Accustoms the character to armor’s weight, letting them wear heavier armor as level rises.",
+    "catalogId": "armorBearer",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

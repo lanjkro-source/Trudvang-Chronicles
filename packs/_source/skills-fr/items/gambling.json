@@ -1,0 +1,24 @@
+{
+  "_key": "!items!CKwVaVmSnToUpVqW",
+  "_id": "CKwVaVmSnToUpVqW",
+  "name": "Jeux",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 2900000,
+  "system": {
+    "description": "Le personnage a appris à jouer aux cartes, pierres, dés et autres types de jeux d’argent, ce qui lui permet souvent de faire des profits. Cette discipline lui permet de savoir comment gagner aux jeux les plus courants et les plus connus de Trudvang. Lorsqu’il effectue un test de compétence dans le cadre d’un jeu d’argent, le personnage peut ajouter un modificateur de +1 par niveau à sa valeur de compétence.",
+    "summary": "Couvre les jeux d’argent et les jeux sociaux : connaître les règles des jeux les plus courants de Trudvang pour en tirer profit.",
+    "catalogId": "gambling",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

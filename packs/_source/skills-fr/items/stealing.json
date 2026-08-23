@@ -1,0 +1,24 @@
+{
+  "_key": "!items!euioqhMhNiOjPkQl",
+  "_id": "euioqhMhNiOjPkQl",
+  "name": "Voler",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9500000,
+  "system": {
+    "description": "Le personnage a appris les règles de base pour voler des objets aux personnes et bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence dans ce cadre. Les personnes présentes lorsque le vol a lieu peuvent faire un test de situation spécifique déterminé par le MJ ou un test de compétence Arts des ombres pour découvrir ou remarquer le vol.",
+    "summary": "Couvre le vol d’objets aux personnes, avec un risque que celles qui sont présentes s’en aperçoivent.",
+    "catalogId": "stealing",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

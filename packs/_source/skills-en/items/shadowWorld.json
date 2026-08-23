@@ -1,0 +1,24 @@
+{
+  "_key": "!items!7hzrrSmSnToUpVqW",
+  "_id": "7hzrrSmSnToUpVqW",
+  "name": "Shadow World",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9600000,
+  "system": {
+    "description": "The person has learned the ways of the shadow world: how to obtain counterfeits and contracts, how to receive and send information that can lead to better thefts, and how to find and use black markets.",
+    "summary": "Initiates into the ways of the shadow world: forgeries, contracts, useful information and the black market.",
+    "catalogId": "shadowWorld",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

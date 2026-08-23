@@ -1,0 +1,24 @@
+{
+  "_key": "!items!YePlajOjPkQlRmSn",
+  "_id": "YePlajOjPkQlRmSn",
+  "name": "Ihana",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5000000,
+  "system": {
+    "description": "The elf has chosen to indulge in the religion of Toikalokke and can learn to decipher the stars through which to activate the elven divine abilities. By getting the Holy Tablet (Toikalokke) specialty , the faithful can invoke the godly powers in that Holy Tablet. The specialty provides +2 in Skill Value per level for performing stargazing, which in turn provides the Ihana with additional temporary Divinity Points. By choosing this specialty , the character forfeits the opportunity to acquire any of the specialties of other religions.",
+    "summary": "Dedicates the elf to the Toikalokke faith: reading the stars to reach the elven divine feats of its Sacred Tablet.",
+    "catalogId": "ihana",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!YCCkxfKfLgMhNiOj",
+  "_id": "YCCkxfKfLgMhNiOj",
+  "name": "Swimming",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 500000,
+  "system": {
+    "description": "The character has learned to swim (without this knowledge, they cannot swim) and can add +2 to their Skill Value per level in the ability. They can normally move +1 meter per level per action round in the water, and hold person evading has a -4 modifier on their chance to succeed. The character cannot do anything else besides try to evade during that action. During a combat round, the character can evade one attack at specialty levels 1-2, two attacks at levels 3-4, and three attacks at level 5.",
+    "summary": "Allows swimming, moving through water and holding breath for extended periods.",
+    "catalogId": "swimming",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

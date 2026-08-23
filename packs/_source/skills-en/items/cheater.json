@@ -1,0 +1,24 @@
+{
+  "_key": "!items!FvItCtXsYtZu0v1w",
+  "_id": "FvItCtXsYtZu0v1w",
+  "name": "Cheater",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3000000,
+  "system": {
+    "description": "The person has learned different tricks to cheat in games. Cheating consists of a positive modifier to the Skill roll’s Skill Value. The cheating player decides the size of the modifier, that is, how much they want to cheat (maximum modifier of +10). Upon a successful Skill roll, the game master determines whether the opponent discovers the cheat or not based on the circumstances, the situation, the opponent, and the cheater’s skill level. Opponents always get a chance to see through the cheat with a roll for the Shadow Arts skill (or the Gambling discipline or Cheater specialty , if those are higher). If the cheater’s Skill roll fails, the opponent gets the same positive modifier that the cheater used when trying to cheat.",
+    "summary": "Teaches tricks for cheating at games; the scale of cheating is chosen by the player, with a risk of being caught.",
+    "catalogId": "cheater",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

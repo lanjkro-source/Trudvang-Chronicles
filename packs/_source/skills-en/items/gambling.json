@@ -1,0 +1,24 @@
+{
+  "_key": "!items!CKwVaVmSnToUpVqW",
+  "_id": "CKwVaVmSnToUpVqW",
+  "name": "Gambling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 2900000,
+  "system": {
+    "description": "The person has learned to play cards, stone, dice, and other forms of gambling, which often results in profit. This discipline gives the person the knowledge to succeed at the most common and best-known games in Trudvang. When making a Skill roll involving gambling, the character can add +1 to their Skill Value.",
+    "summary": "Covers games of chance and social play: knowing the rules of Trudvang’s most common games in order to profit from them.",
+    "catalogId": "gambling",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

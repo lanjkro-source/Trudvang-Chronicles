@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zXtReYpVqWrXsYtZ",
+  "_id": "zXtReYpVqWrXsYtZ",
+  "name": "Potent",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4200000,
+  "system": {
+    "description": "The dimwalker’s divine abilities are extra powerful. When a victim makes a Situation roll to avoid or stand up to a divine ability , the roll is modified by -2 per level due to the dimwalker’s force.",
+    "summary": "Makes divine feats especially forceful: their victims struggle to resist them.",
+    "catalogId": "potent",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

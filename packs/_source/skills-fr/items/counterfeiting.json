@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ncxq7lOjPkQlRmSn",
+  "_id": "ncxq7lOjPkQlRmSn",
+  "name": "Contrefaçon",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1700000,
+  "system": {
+    "description": "Le personnage a appris à contrefaire des objets impressionnants, qui ressemblent autant que possible à l’original. Plus il a passé de temps avec l’original, plus la contrefaçon est difficile à percevoir. Le personnage doit également posséder la spécialité requise par le matériau.",
+    "summary": "Permet de créer des copies convaincantes d’objets, d’autant meilleures que l’original a été étudié.",
+    "catalogId": "counterfeiting",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handicraft",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

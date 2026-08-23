@@ -1,0 +1,24 @@
+{
+  "_key": "!items!nZvI1bD8D9EaGbHc",
+  "_id": "nZvI1bD8D9EaGbHc",
+  "name": "Vitner Habit",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 11100000,
+  "system": {
+    "description": "The conjurer reaches an important insight into the vitner art, which increases their ability to draw in vitner from the surroundings. The conjurer must have a minimum level of 1 in one of the other specialties: Hwitalja, Darkhwitalja, or Vaagritalja. They increase its capacity by +10 Vitner Points per level of Vitner Habit.",
+    "summary": "Deepens mastery of vitner craft to increase the ability to draw on surrounding energies.",
+    "catalogId": "vitnerHabit",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

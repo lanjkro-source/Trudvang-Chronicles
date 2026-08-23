@@ -1,0 +1,24 @@
+{
+  "_key": "!items!rIHrx0tZu0v1w2x3",
+  "_id": "rIHrx0tZu0v1w2x3",
+  "name": "Concentration du tisseur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 9800000,
+  "system": {
+    "description": "L’invocateur a appris à concentrer son esprit sur les énergies du vitner. De ce fait, il reçoit les modificateurs suivants par niveau : +1 sur les tests de situation pour rester concentré lorsqu’il fait l’objet d’une distraction, et -1 aux jets sur la table des échecs critiques.",
+    "summary": "Concentre l’esprit de l’invocateur sur les énergies du vitner : mieux résister aux distractions et atténuer les échecs critiques.",
+    "catalogId": "vitnerFocus",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

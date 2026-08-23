@@ -1,5 +1,5 @@
 import {spawnSync} from "node:child_process";
-import {copyFileSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync} from "node:fs";
+import {copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync} from "node:fs";
 import {join, relative, sep} from "node:path";
 
 const root = process.cwd();
@@ -11,11 +11,15 @@ const includedRoots = ["modules", "templates", "styles", "lang", "data", "assets
 const includedFiles = ["system.json", "trudvang.mjs"];
 
 const excluded = new Set(["lang/GLOSSARY.md"]);
+// Reviewable JSON sources used by tools/build-packs.mjs: never shipped inside the zip,
+// only the compiled LevelDB directories belong in the published archive.
+const excludedPrefixes = ["packs/_source/"];
 
 function collect(directory, output) {
   for (const entry of readdirSync(join(root, directory))) {
     const path = `${directory}/${entry}`;
     if (excluded.has(path)) continue;
+    if (excludedPrefixes.some(prefix => path.startsWith(prefix))) continue;
     if (statSync(join(root, path)).isDirectory()) collect(path, output);
     else output.push(path);
   }
@@ -27,10 +31,19 @@ for (const directory of includedRoots) {
     collect(directory, files);
   } catch {
     if (directory === "packs") {
-      // Packs are now generated at runtime via the importer; an empty/missing directory is not an error.
-      continue;
+      console.error("packs/ manquant : lancez d'abord « npm run build:packs » pour compiler les compendiums embarqués.");
+      process.exit(1);
     }
     console.error(`Répertoire attendu manquant: ${directory}/`);
+    process.exit(1);
+  }
+}
+// Guard against shipping a half-built tree: every pack declared in system.json must be a
+// compiled LevelDB directory, not just its JSON sources.
+for (const declaredPack of system.packs ?? []) {
+  const marker = join(root, "packs", String(declaredPack.name), "CURRENT");
+  if (!existsSync(marker)) {
+    console.error(`Pack non compilé: packs/${declaredPack.name} (fichier ${marker} absent). Lancez « npm run build:packs ».`);
     process.exit(1);
   }
 }

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pV3HDXoUpVqWrXsY",
+  "_id": "pV3HDXoUpVqWrXsY",
+  "name": "Survival",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13100000,
+  "system": {
+    "description": "This discipline makes the person a true survivor who can subsist on the few assets that nature has to offer. The discipline bonus is used when the person has to survive in the wild and must find shelter, food, water, or other necessities.",
+    "summary": "Makes the character a true survivor able to find shelter, food and water in the wild.",
+    "catalogId": "survival",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

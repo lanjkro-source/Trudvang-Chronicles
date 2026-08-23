@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pCOhG3w2x3y4z5A6",
+  "_id": "pCOhG3w2x3y4z5A6",
+  "name": "Puissant",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4600000,
+  "system": {
+    "description": "Niveau L’arpenteur des brumes a appris à tirer plus de pouvoir de la source divine et ajoute 7 points de divinité par niveau à sa réserve divine. Les nains obtiennent 7 points de divinité par niveau qu’ils peuvent sertir dans un objet.",
+    "summary": "Apprend à tirer davantage de pouvoir de la source divine pour enrichir encore la réserve divine.",
+    "catalogId": "powerful",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Divine Power",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

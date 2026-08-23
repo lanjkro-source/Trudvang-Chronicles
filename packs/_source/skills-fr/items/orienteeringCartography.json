@@ -1,0 +1,24 @@
+{
+  "_key": "!items!aW1VOdHcIdJeKfLg",
+  "_id": "aW1VOdHcIdJeKfLg",
+  "name": "Orientation & cartographie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11500000,
+  "system": {
+    "description": "En comparant des repères connus et les positions relatives des étoiles et des corps célestes les uns par rapport aux autres, un personnage peut déterminer sa localisation et la direction dans laquelle il se déplace. La spécialité l’aide à emprunter la route la plus rapide et la plus directe possible pour se rendre d’un lieu à un autre. Le personnage a également appris à réaliser des cartes en observant la physionomie d’une zone et en calculant avec attention les distances et les espaces. Si le dessinateur d’une carte sait lire et écrire, les informations qui y sont reportées sont plus faciles à comprendre. On ne peut créer une carte d’une zone que si on s’y est rendu et qu’on l’a observée.",
+    "summary": "Détermine sa position et sa direction grâce aux repères et aux astres, choisit l’itinéraire le plus direct et sait tracer des cartes.",
+    "catalogId": "orienteeringCartography",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

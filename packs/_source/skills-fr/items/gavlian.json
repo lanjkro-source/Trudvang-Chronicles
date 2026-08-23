@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Nye2B9B7C8D9EaGb",
+  "_id": "Nye2B9B7C8D9EaGb",
+  "name": "Gavlien",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4900000,
+  "system": {
+    "description": "L’arpenteur des brumes a choisi de se consacrer à la religion de la Doctrine de Nid et peut apprendre à invoquer le dieu Gave pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Doctrine de Nid), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. Cette spécialité accorde un modificateur de +2 par niveau à la valeur de compétence pour effectuer des prières, qui accordent au gavlien des points de divinité temporaires supplémentaires. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre l’invocateur à la Doctrine de Nid : invoquer le dieu Gave via la Tablette sacrée correspondante.",
+    "catalogId": "gavlian",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

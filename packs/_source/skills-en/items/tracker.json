@@ -1,0 +1,24 @@
+{
+  "_key": "!items!PeCdlYrXsYtZu0v1",
+  "_id": "PeCdlYrXsYtZu0v1",
+  "name": "Tracker",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12100000,
+  "system": {
+    "description": "The person is good at spotting trails in the terrain. The specialty bonus is used when they try to find or follow a trail.",
+    "summary": "Spots tracks in the wild and follows their trail.",
+    "catalogId": "tracker",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

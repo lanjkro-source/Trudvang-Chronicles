@@ -1,0 +1,24 @@
+{
+  "_key": "!items!oL0njNgMhNiOjPkQ",
+  "_id": "oL0njNgMhNiOjPkQ",
+  "name": "Great Gambler",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3200000,
+  "system": {
+    "description": "The person is an accomplished gambler. They know how game rules work and how much and when to invest to win as much as possible. The person can add +2 to their Skill Value in the ability when playing games. The specialty is effective only if the game has a stake.",
+    "summary": "Makes the character an accomplished gambler who knows when and how much to stake to maximize winnings.",
+    "catalogId": "greatGambler",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

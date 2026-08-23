@@ -1,0 +1,24 @@
+{
+  "_key": "!items!z8gdu6y4z5A6B7C8",
+  "_id": "z8gdu6y4z5A6B7C8",
+  "name": "Culture Knowledge",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7100000,
+  "system": {
+    "description": "This discipline covers most things that have to do with a race’s culture, religion, history , and legends. The person is familiar with the culture’s way of life, feasts, laws, and background. A character has level 1 of the discipline as a base (for the culture they originate from). Stormlanders, Mittlanders, Viranns, Wildfolks, Dwarves, and Elves, all have their own cultures.",
+    "summary": "Deep knowledge of one culture: its way of life, feasts, laws and history; known by default for one’s own culture.",
+    "catalogId": "cultureKnowledge",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

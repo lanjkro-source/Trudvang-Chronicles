@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Uh04yKeKfLgMhNiO",
+  "_id": "Uh04yKeKfLgMhNiO",
+  "name": "Esquive",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1100000,
+  "system": {
+    "description": "Le personnage a perfectionné l’art d’éviter ou d’esquiver une attaque sans la parer. Effectuer une esquive nécessite une action ; l’esquive ne peut pas être combinée avec quelque autre action que ce soit. Normalement, même ceux qui ne disposent pas de cette spécialité peuvent essayer d’esquiver une attaque. Cependant, en développant la spécialité à haut niveau, il devient possible de tenter d’esquiver plusieurs attaques : F Jusqu’à 2 attaques au niveau 3 F Jusqu’à 3 attaques au niveau 5 Le joueur peut alors répartir sa valeur de compétence totale comme il le souhaite entre les différentes esquives qu’il veut effectuer. Prenons un personnage ayant Agilité 8, Manœuvres de combat 2 et Esquive 3, et donc une VC totale de 16. Il peut esquiver jusqu’à 2 attaques par tour (car il a Esquive 3), par exemple une attaque avec VC 9 et une autre avec VC 7. Un personnage ne peut esquiver (ou parer) une attaque qu’une seule fois.",
+    "summary": "Perfectionne l’art d’esquiver une attaque plutôt que de la parer ; à haut niveau, plusieurs esquives deviennent possibles.",
+    "catalogId": "evade",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Dxy0lYsYtZu0v1w2",
+  "_id": "Dxy0lYsYtZu0v1w2",
+  "name": "Calcul",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8200000,
+  "system": {
+    "description": "Le personnage a appris à réaliser des calculs difficiles et à résoudre des problèmes mathématiques en faisant des additions, des soustractions, des multiplications et des divisions. Il bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie d’effectuer un calcul.",
+    "summary": "Apprend à résoudre des calculs complexes et des problèmes mathématiques.",
+    "catalogId": "calculate",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

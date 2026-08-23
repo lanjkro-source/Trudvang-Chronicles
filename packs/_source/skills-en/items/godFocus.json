@@ -1,0 +1,24 @@
+{
+  "_key": "!items!jORnpMhNiOjPkQlR",
+  "_id": "jORnpMhNiOjPkQlR",
+  "name": "God Focus",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 3900000,
+  "system": {
+    "description": "This discipline represents a deep focus on the religious practices linked with invocation of divine powers. It helps the dimwalker with modifiers per level as follows: +1 on situation rolls to remain focused while distrurbed and -1 to rolls on the table for fatal failure.",
+    "summary": "Deepens religious practices tied to invocation: resisting distractions better and limiting Fatal Magic risks.",
+    "catalogId": "godFocus",
+    "kind": "discipline",
+    "parentSkill": "faith",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

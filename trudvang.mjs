@@ -4,7 +4,7 @@ import { TrudvangItem } from "./modules/documents/item.mjs";
 import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
 import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
-import { importStarterContent } from "./modules/content-importer.mjs";
+import { importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 
@@ -62,6 +62,13 @@ Hooks.once("init", () => {
     type: String,
     default: ""
   });
+  game.settings.register("trudvang-chronicles", "knowledgeSyncVersion", {
+    name: "TRUDVANG.Settings.StarterContentName",
+    scope: "world",
+    config: false,
+    type: Number,
+    default: 0
+  });
 
   registerHandlebarsHelpers();
 
@@ -91,6 +98,32 @@ Hooks.once("init", () => {
   } catch (error) {
     console.error("Trudvang Chronicles | Could not register the starter-content reimport menu", error);
   }
+
+  class RebuildPacksMenu extends FormApplicationClass {
+    static get defaultOptions() {
+      return foundry.utils.mergeObject(super.defaultOptions, {
+        id: "trudvang-rebuild-packs",
+        title: game.i18n.localize("TRUDVANG.Settings.RebuildPacksTitle"),
+        template: "systems/trudvang-chronicles/templates/app/rebuild-packs-menu.hbs",
+        width: 470
+      });
+    }
+    getData() { return {}; }
+    async _updateObject() {
+      return repairKnowledgePacks();
+    }
+  }
+  try {
+    game.settings.registerMenu("trudvang-chronicles", "rebuildKnowledgePacks", {
+      name: "TRUDVANG.Settings.RebuildPacksName",
+      hint: "TRUDVANG.Settings.RebuildPacksHint",
+      icon: "fas fa-book-bookmark",
+      type: RebuildPacksMenu,
+      restricted: true
+    });
+  } catch (error) {
+    console.error("Trudvang Chronicles | Could not register the compendium rebuild menu", error);
+  }
 });
 
 Hooks.once("ready", async () => {
@@ -110,6 +143,11 @@ Hooks.once("ready", async () => {
       await importStarterContent();
     } catch (error) {
       console.error("Trudvang Chronicles | Starter content import crashed outside its own guard", error);
+    }
+    try {
+      await syncImportedKnowledgeItems();
+    } catch (error) {
+      console.error("Trudvang Chronicles | Knowledge import sync crashed outside its own guard", error);
     }
   }
 });

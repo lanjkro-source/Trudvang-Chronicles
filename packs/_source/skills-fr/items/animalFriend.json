@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pLixfsWrXsYtZu0v",
+  "_id": "pLixfsWrXsYtZu0v",
+  "name": "Ami des animaux",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12400000,
+  "system": {
+    "description": "Cette spécialité donne au personnage une connaissance approfondie concernant la vie des animaux. Le bonus de spécialité est utilisé lorsqu’il doit déterminer s’il sait quelque chose au sujet de leur mode de vie et de leurs habitudes. Cette connaissance peut aussi être utilisée pour dresser un animal en vue de lui faire réaliser des tours et des activités particulières. Le personnage a également appris à dresser des animaux sauvages pour les domestiquer. Pour ce faire, l’animal doit d’abord être capturé. Ensuite, le dresseur doit réussir cinq tests de la compétence Nature. Il ne peut effectuer le test qu’une fois par semaine. Ainsi, il faut au moins cinq semaines pour domestiquer un animal sauvage. Comme il existe une grande variété d’animaux sur Trudvang, il appartient au maître de jeu de déterminer lesquels peuvent être dressés et ce qu’ils peuvent alors réaliser. Parmi les animaux qui peuvent être dressés figurent les chevaux, les chiens, les oiseaux, les chats, les ours, les serpents et les rongeurs. Le bonus de spécialité est utilisé lorsque le personnage veut dresser un animal ou lui ordonner de réaliser une tâche. On peut enseigner différentes compétences à différents animaux (cf. la section Animaux dressés du chapitre Équipement, page 128, pour plus de détails). Il existe huit types d’entraînements différents : rapporter, sauter, chasser, porter un message, courir vite, pister, attaquer et monter la garde. Chacun de ces entraînements dispose de cinq niveaux d’aptitude : obéissant, compétent, excellent, expert et magistral. Un chien peut ainsi avoir un entraînement excellent pour attaquer et compétent pour monter la garde. Cependant, un animal ne peut être entraîné avant d’avoir été dressé.",
+    "summary": "Connaît intimement la vie des animaux et peut les dresser à accomplir tours et activités particulières.",
+    "catalogId": "animalFriend",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Nature Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

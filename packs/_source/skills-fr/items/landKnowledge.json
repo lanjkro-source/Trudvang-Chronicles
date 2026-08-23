@@ -1,0 +1,24 @@
+{
+  "_key": "!items!usYAvIcIdJeKfLgM",
+  "_id": "usYAvIcIdJeKfLgM",
+  "name": "Connaissance régionale",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11400000,
+  "system": {
+    "description": "Le personnage a acquis la connaissance géographique d’une région et bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer ce qu’il sait de ses forêts, rivières, lacs, côtes, montagnes, cités, chemins, etc. Il existe une spécialité Connaissance régionale pour chaque région d’un pays de Trudvang.",
+    "summary": "Maîtrise la géographie d’une région précise : forêts, rivières, montagnes, cités et chemins.",
+    "catalogId": "landKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

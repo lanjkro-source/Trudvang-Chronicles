@@ -1,0 +1,24 @@
+{
+  "_key": "!items!HxYDcXpVqWrXsYtZ",
+  "_id": "HxYDcXpVqWrXsYtZ",
+  "name": "Camper",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13200000,
+  "system": {
+    "description": "The person is good at building camps in the wilderness. Primarily , it is not just about a camp you set up for the night, but a camp where you can stay for several days to hunt, repair equipment, or simply rest. The camp takes eight hours to build and requires a successful Skill roll. If the person manages to build a camp, it means that those in the camp will not suffer negative modifiers for being in the wilderness. People can also rest and recover from injuries just like they would if they were in a city. The person is also good at making fire without a tinderbox or other tools.",
+    "summary": "Raises a lasting campsite, far beyond a night’s bivouac, fit to live in for days.",
+    "catalogId": "camper",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ahU0m7A6B7C8D9Ea",
+  "_id": "ahU0m7A6B7C8D9Ea",
+  "name": "Dance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3400000,
+  "system": {
+    "description": "The person knows how to dance. They can add +2 to their Skill Value in the skill when trying to capture an audience’s interest through dance.",
+    "summary": "Teaches dancing so as to capture and hold an audience’s attention.",
+    "catalogId": "dance",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Music & Dancing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

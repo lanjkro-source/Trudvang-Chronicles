@@ -1,0 +1,24 @@
+{
+  "_key": "!items!PeCdlYrXsYtZu0v1",
+  "_id": "PeCdlYrXsYtZu0v1",
+  "name": "Pister",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12100000,
+  "system": {
+    "description": "Le personnage sait repérer des pistes dans la nature. Le bonus de spécialité est utilisé lorsqu’il essaie de trouver ou de suivre une piste.",
+    "summary": "Sait repérer des pistes dans la nature puis suivre leur trace.",
+    "catalogId": "tracker",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

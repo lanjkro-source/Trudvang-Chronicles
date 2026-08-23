@@ -1,0 +1,24 @@
+{
+  "_key": "!items!G2b1rB4z5A6B7C8D",
+  "_id": "G2b1rB4z5A6B7C8D",
+  "name": "Hunting Experience",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11700000,
+  "system": {
+    "description": "With the Hunting Experience discipline, a person knows how to track and hunt prey , as well as how to survive in the wild and difficult environments. The person knows a lot regarding different prey and has learned to read their trails, habits, and behavior. They also know the best way to chase prey and fish in different waters.",
+    "summary": "Teaches stalking and hunting prey, reading tracks and habits, and surviving harsh wild lands.",
+    "catalogId": "huntingExperience",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

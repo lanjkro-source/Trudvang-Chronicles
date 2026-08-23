@@ -1,0 +1,24 @@
+{
+  "_key": "!items!aYgXjhKfLgMhNiOj",
+  "_id": "aYgXjhKfLgMhNiOj",
+  "name": "Faithful",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4500000,
+  "system": {
+    "description": "level The faithful one has delved deeply into religion and gains a further +7 Divinity Points per level to their divinity capacity. Dwarves get +7 Divinity Points per level to insert into an object.",
+    "summary": "Deepens the faithful one’s devotion and steadily enlarges their Divinity Point reserve.",
+    "catalogId": "faithful",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Divine Power",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

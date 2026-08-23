@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xD6ptE5A6B7C8D9E",
+  "_id": "xD6ptE5A6B7C8D9E",
+  "name": "Vaagritalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 11000000,
+  "system": {
+    "description": "Après des années d’étude, l’invocateur a découvert le vaagrivitner, une combinaison de hvitavitner et de morkvitner. C’est la forme de vitner qu’il tissera pour toujours. L’invocateur est à présent devenu un vaagritalja et fait partie de ceux que l’on appelle les maîtres de l’onde. Choisir de tisser le vaagrivitner a des conséquences pour l’invocateur, qui ne pourra jamais apprendre les spécialités Hwitalja et Morkvitalja. Le vaagrivitner a les effets suivants sur l’invocateur : F Vaagritalja augmente la réserve de vitner de 15 points de vitner. F Le vaagritalja n’a pas d’effet positif ou négatif sur la capacité de l’invocateur à apprendre à tisser, à perfectionner le vitner pour obtenir plus de puissance, à accéder au vitner ou à atteindre la perfection dans le tissage. En cas d’échec critique, le vaagritalja lance 1d10 (JO 9-10) sur la table de Magie funeste. F La description de chaque Tablette de vitner intègre les effets spécifiques de vaagritalja, qui se traduisent habituellement par un coût en points de vitner.",
+    "summary": "Unit le vitner blanc et le vitner sombre dans un équilibre unique, celui des maîtres de l’onde, choisi à vie.",
+    "catalogId": "vaagritalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!OM0QKdJeKfLgMhNi",
+  "_id": "OM0QKdJeKfLgMhNi",
+  "name": "Spirit Lore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7900000,
+  "system": {
+    "description": "The specialty gives a person extra knowledge about the undead, spirits, mist creatures, demons, and similar entities. The person knows their ideologies, governance, lifestyle, fears, strengths, weaknesses, and more. The person can add +2 to their Skill Value per level when trying to learn about these types of creatures.",
+    "summary": "Illuminates undead, spirits, mist creatures and demons: their nature, fears and weaknesses.",
+    "catalogId": "spiritLore",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Race Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

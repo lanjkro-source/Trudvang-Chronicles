@@ -1,0 +1,24 @@
+{
+  "_key": "!items!QxFUJ0v1w2x3y4z5",
+  "_id": "QxFUJ0v1w2x3y4z5",
+  "name": "Weathered",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13500000,
+  "system": {
+    "description": "The person is used to spending long periods of time in the wilderness, and can therefore endure rain, wind, and cold. The specialty bonus is used when the person needs to overcome the weather in the wild. There are three types of vitner that together form the worldwide force, which makes up all of the worlds as well as the gap between them. Together, the three powers build and surround everyone and everything, from the smallest piece of gravel to the largest mountain, from the smallest mouse to the largest giant.",
+    "summary": "Accustomed to long exposure to the elements: rain, wind and cold no longer daunt them.",
+    "catalogId": "weathered",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

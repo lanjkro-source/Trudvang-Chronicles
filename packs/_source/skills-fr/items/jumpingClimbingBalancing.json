@@ -1,0 +1,24 @@
+{
+  "_key": "!items!1ty9ngLgMhNiOjPk",
+  "_id": "1ty9ngLgMhNiOjPk",
+  "name": "Sauts, escalade & équilibre",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 400000,
+  "system": {
+    "description": "Le personnage est expert en saut dans différents environnements et peut ajouter un bonus de +2 à sa valeur de compétence lorsqu’il effectue des sauts. Lorsqu’il réussit un test de compétence, il peut effectuer un saut en longueur jusqu’à une distance de 2 mètres + 1 mètre par niveau (maximum 7 m), un bond en hauteur allant jusqu’à 60 cm + 20 cm par niveau (maximum 1,60 m), ou une chute de 3 mètres + ½ mètre par niveau (maximum 6 m) sans se faire mal. Un test de Saut réussit pour les chutes réduit également les dés de dégâts de un par niveau (3d6 points de dégâts deviennent 2d6, etc.). Lorsqu’un personnage veut sauter plus loin, plus haut ou chuter de plus haut que le niveau de spécialité le permet, c’est au MJ de fixer le modificateur adapté au test de compétence. Le personnage est aussi doué pour l’escalade que pour l’équilibre. Lorsqu’il se déplace en équilibre, il avance au tiers de sa capacité de mouvement en conditions normales. Lorsqu’il fait de l’escalade, il se déplace au cinquième de sa capacité de mouvement en conditions normales. Au bout du compte, le MJ détermine en fonction des conditions jusqu’où un personnage se hisse ou avance en équilibre au cours d’un tour de jeu.",
+    "summary": "Expertise en sauts et escalade : le personnage bondit plus loin et plus haut, et encaisse mieux les chutes.",
+    "catalogId": "jumpingClimbingBalancing",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

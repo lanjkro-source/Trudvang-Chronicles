@@ -1,0 +1,24 @@
+{
+  "_key": "!items!HxYDcXpVqWrXsYtZ",
+  "_id": "HxYDcXpVqWrXsYtZ",
+  "name": "Campement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13200000,
+  "system": {
+    "description": "Le personnage sait établir un campement dans la nature. Pour l’essentiel, il ne s’agit pas simplement d’un bivouac qu’il établit pour passer la nuit, mais d’un campement où il pourra rester pendant plusieurs jours, le temps de chasser, de réparer du matériel ou simplement de se reposer. Il faut huit heures et réussir un test de compétence pour monter le camp. Si le personnage parvient à dresser un campement, ceux qui s’y trouvent ne subiront pas de modificateur négatif lié à une présence prolongée dans la nature. Les personnes peuvent également se reposer et se remettre de leurs blessures comme s’ils étaient en ville. Le personnage sait également faire un feu sans un briquet à amadou ou tout autre outil.",
+    "summary": "Établit un campement durable, bien au-delà d’un simple bivouac, où vivre plusieurs jours.",
+    "catalogId": "camper",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

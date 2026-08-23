@@ -1,0 +1,24 @@
+{
+  "_key": "!items!MKGGB5A6B7C8D9Ea",
+  "_id": "MKGGB5A6B7C8D9Ea",
+  "name": "Connaissance des mers",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11600000,
+  "system": {
+    "description": "Le personnage est familier avec la mer ou l’océan qui borde une côte spécifique, et bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer ce qu’il sait des eaux d’un secteur donné.",
+    "summary": "Rend familier le littoral et les eaux d’un secteur côtier particulier.",
+    "catalogId": "seaKnowledge",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

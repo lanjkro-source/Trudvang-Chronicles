@@ -1,0 +1,24 @@
+{
+  "_key": "!items!daKp3kMhNiOjPkQl",
+  "_id": "daKp3kMhNiOjPkQl",
+  "name": "Stratège de jeux",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3100000,
+  "system": {
+    "description": "Le personnage est doué pour savoir comment déplacer ses pions au mieux dans des jeux tels que les Boîtes de Koke, Bultconan ou encore Navire en feu. Il peut ajouter +2 par niveau à sa valeur de compétence lorsqu’il joue à un jeu de stratégie, quel qu’il soit.",
+    "summary": "Rend doué pour les jeux de stratégie, en déplaçant ses pions au mieux quel que soit le jeu.",
+    "catalogId": "gameStrategist",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Gambling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

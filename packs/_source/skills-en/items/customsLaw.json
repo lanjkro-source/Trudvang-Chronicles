@@ -1,0 +1,24 @@
+{
+  "_key": "!items!9664YVqWrXsYtZu0",
+  "_id": "9664YVqWrXsYtZu0",
+  "name": "Customs & Law",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7200000,
+  "system": {
+    "description": "(Specification Required) The person knows all about a culture’s laws and legal systems, customs, gestures, taboos, food habits, rules of conduct, typical dress, and housing, as well as their common attributes, personalities, and appearances. The person can add +2 to their Skill Value per level when trying to learn about a people’s customs. The specialty focuses on a single culture: Stormlanders, Mittlanders, Viranns, Wildfolks, Dwarves, or Elves.",
+    "summary": "Knows everything about a given culture: its laws, customs, taboos, foodways, codes of conduct and typical appearance.",
+    "catalogId": "customsLaw",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Culture Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!aW1VOdHcIdJeKfLg",
+  "_id": "aW1VOdHcIdJeKfLg",
+  "name": "Orienteering & Cartography",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11500000,
+  "system": {
+    "description": "By comparing famous landmarks, and the positions of stars and celestial bodies in relation to each other, a person knows their current location and in which direction they are moving. The specialty helps them take the quickest and most direct route possible from one place to another. The person has also learned how to make maps by being observant of how areas look and being careful when calculating distance and space. If the mapmaker can read and write, the information on the maps they create is much easier to understand. A mapmaker can only draw a map of an area that they have visited and witnessed.",
+    "summary": "Determines position and direction from landmarks and stars, picks the most direct route and knows how to draw maps.",
+    "catalogId": "orienteeringCartography",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Geography",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

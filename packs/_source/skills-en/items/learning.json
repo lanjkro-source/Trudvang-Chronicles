@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Pbm3zB2x3y4z5A6B",
+  "_id": "Pbm3zB2x3y4z5A6B",
+  "name": "Learning",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7500000,
+  "system": {
+    "description": "The Learning discipline gives a person education and extensive knowledge involving a specific subject of their choosing. In principle, this can be anything: swords, literature, kings, demons, symbols, or whatever is desired. The discipline involves an infinite number of specialties where each specialty is a specific subject. The SV modifier given by the discipline applies only to specialties that the person has learned. The Geography discipline and its specialties under the Wilderness skill could be a theoretical knowledge skill. In other words, the person studied the subject but did not experience it.",
+    "summary": "Grants broad education on a chosen subject, each specialty covering a particular theme.",
+    "catalogId": "learning",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

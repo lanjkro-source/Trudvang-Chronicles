@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ymPKwWnToUpVqWrX",
+  "_id": "ymPKwWnToUpVqWrX",
+  "name": "Ambidextrie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 200000,
+  "system": {
+    "description": "Le personnage améliore sa capacité à se battre avec sa main de bouclier (c’està-dire la main gauche pour un droitier, ou inversement). Le malus aux attaques effectuées avec la main de bouclier est réduit de 2 par niveau. En apprenant tous les niveaux de la spécialité Ambidextrie et de la discipline Contrôle corporel, le personnage est aussi compétent avec ses deux mains. Les modificateurs de la discipline et de la spécialité se cumulent pour annuler le malus de la main de bouclier. En effet, une fois que la discipline Contrôle corporel et la spécialité Ambidextrie ont toutes deux été maîtrisées au plus haut niveau, le malus de -15 dû à la main de bouclier est totalement annulé.",
+    "summary": "Améliore le combat avec la main de bouclier en réduisant son malus ; menée au plus haut niveau avec Contrôle corporel, elle rend le personnage compétent des deux mains.",
+    "catalogId": "ambidexterity",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Body Control",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

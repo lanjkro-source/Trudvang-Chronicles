@@ -1,0 +1,24 @@
+{
+  "_key": "!items!cgkF4tYtZu0v1w2x",
+  "_id": "cgkF4tYtZu0v1w2x",
+  "name": "Déguisement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9300000,
+  "system": {
+    "description": "Le personnage est doué pour se déguiser de manière convaincante et pour imiter les gens. Avec les accessoires adaptés, il peut se fondre dans l’environnement. Le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie de se fondre dans la masse. En modifiant à la fois son langage corporel et sa voix, il peut imiter une autre personne (même du sexe opposé) à tel point que ceux qui ne sont pas proches de la personne imitée ont toutes les chances de n’y voir que du feu. Cependant, pour abuser un proche, le déguisement doit vraiment être bon.",
+    "summary": "Sait se déguiser de façon convaincante et imiter une personne par le langage corporel comme par la voix.",
+    "catalogId": "disguise",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

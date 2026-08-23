@@ -1,0 +1,24 @@
+{
+  "_key": "!items!qNx4YUmSnToUpVqW",
+  "_id": "qNx4YUmSnToUpVqW",
+  "name": "Beau parleur",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8600000,
+  "system": {
+    "description": "La spécialité Éloquence et baratin permet à un personnage de parler en utilisant des mots formels et techniques dans des phrases complexes. Il a appris à inventer rapidement et de façon convaincante des mensonges, grands ou petits. Le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit effectuer un test de compétence pour déterminer sa réussite lorsqu’il ment ou fait preuve d’éloquence pour persuader son auditoire.",
+    "summary": "Parle avec éloquence et invente des mensonges convaincants, petits ou grands, pour persuader son auditoire.",
+    "catalogId": "silvertongue",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

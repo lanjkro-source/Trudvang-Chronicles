@@ -1,0 +1,24 @@
+{
+  "_key": "!items!lNokBhKfLgMhNiOj",
+  "_id": "lNokBhKfLgMhNiOj",
+  "name": "Sérénité",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4000000,
+  "system": {
+    "description": "L’arpenteur des brumes est rarement distrait lorsqu’il invoque un pouvoir divin, et il sait comment limiter les dégâts. À chaque fois qu’il doit effectuer un test de situation pour déterminer s’il est suffisamment distrait pour que l’invocation soit annulée, il bénéficie d’un modificateur de +2 par niveau. S’il doit faire un jet sur la table des échecs critiques, il bénéficie d’un modificateur de -2 par niveau dans cette spécialité.",
+    "summary": "Protège l’invocateur des distractions pendant l’invocation d’un pouvoir divin, et atténue les conséquences des échecs critiques.",
+    "catalogId": "composed",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

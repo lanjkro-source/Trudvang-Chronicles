@@ -1,0 +1,24 @@
+{
+  "_key": "!items!fwl39hJeKfLgMhNi",
+  "_id": "fwl39hJeKfLgMhNi",
+  "name": "Hwitalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10800000,
+  "system": {
+    "description": "Niveau Après des années d’étude, l’invocateur a tracé son chemin entre le morkvitner (le vitner sombre) et le vaagrivitner, trouvant au bout du compte la forme la plus pure : le hvitavitner (le vitner blanc). Il est à présent devenu un hwitalja et fait partie de ceux qui apportent la lumière. Choisir de tisser le hvitavitner a des conséquences pour l’invocateur, qui ne pourra jamais apprendre les spécialités Vaagritalja et Morkvitalja. Le hvitavitner a les effets suivants sur l’invocateur : F Hwitalja augmente la réserve de vitner de 10 points de vitner. F L’invocateur tisse le vitner à la perfection lorsqu’il obtient 1-2 sur le dé. F En cas d’échec critique, on ne lance que 1d10 (JO 10) sur la table de Magie funeste. F La description de chaque Tablette de vitner intègre les effets spécifiques de hwitalja, qui se traduisent habituellement par un coût en points de vitner.",
+    "summary": "Trace son chemin entre l’ombre et la lumière pour tisser le vitner blanc, forme pure dont l’usage engage définitivement l’invocateur.",
+    "catalogId": "hwitalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

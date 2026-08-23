@@ -1,0 +1,24 @@
+{
+  "_key": "!items!gSjI70v1w2x3y4z5",
+  "_id": "gSjI70v1w2x3y4z5",
+  "name": "Bribery",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8100000,
+  "system": {
+    "description": "The person has learned to gauge how people react to bribes. The person quickly discovers whether someone can be bribed, and if so, they know how it should be delivered and how much is necessary. By using this specialty , the person can add +2 to their Skill Value per level when trying to bribe someone.",
+    "summary": "Knows who can be bribed, and how and to what extent.",
+    "catalogId": "bribery",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

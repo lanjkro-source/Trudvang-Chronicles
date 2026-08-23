@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Whn3PkOjPkQlRmSn",
+  "_id": "Whn3PkOjPkQlRmSn",
+  "name": "Religion",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7400000,
+  "system": {
+    "description": "This specialty tells how a culture’s religion works. What gods exist, and what do they stand for? How do the faithful live? What are their feasts? What is the religion’s history? All these questions can be answered with a successful Skill roll. The person can add +2 to their Skill Value per level when trying to learn about a people’s language (d) The Language discipline develops the character’s ability to express themselves in a specific language (which would be their Mother Tongue before they learn more languages). Vrok, which is the more widespread of the two human languages, is spoken by people in Nhoordland, in the Stormlands, and in parts of Mittland and Soj. Rona, the other human language, is spoken in Westmark, Soj, and parts of Mittland. Human characters from Mittland may choose which language they speak, with approval from the game master. If the character is a supporter of the Tenet of Nid, however, they should always speak Rona. In addition, there are other languages such as Eika (spoken by elves), Futhark (spoken by dwarves), and Bastjumal (spoken by trolls and giants). A character cannot read or write until they acquire the Reading and Writing specialty.",
+    "summary": "Explains how a culture’s religion works: its gods, faithful, feasts and history.",
+    "catalogId": "religion",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Culture Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

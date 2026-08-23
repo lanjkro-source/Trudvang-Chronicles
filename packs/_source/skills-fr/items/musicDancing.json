@@ -1,0 +1,24 @@
+{
+  "_key": "!items!kPqfK4z5A6B7C8D9",
+  "_id": "kPqfK4z5A6B7C8D9",
+  "name": "Musique & danse",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3300000,
+  "system": {
+    "description": "Cette discipline permet à un personnage de distraire son entourage grâce à la musique. Il peut chanter, danser et jouer d’instruments, mais aussi faire appel à des techniques de narration.",
+    "summary": "Permet de divertir un auditoire grâce à la musique : chanter, danser, jouer d’instruments et recourir à la narration.",
+    "catalogId": "musicDancing",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zX07B1w2x3y4z5A6",
+  "_id": "zX07B1w2x3y4z5A6",
+  "name": "Strenuous",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10100000,
+  "system": {
+    "description": "The conjurer concentrates especially hard when weaving the vitner. By using extra vitner during a spell, the chances to succeed increase. For each level of this specialty , the conjurer may use 2 Vitner Points to get a +1 modifier on the Skill roll. A conjurer with level 3 of the specialty can therefore use an extra 6 Vitner Points to get +3 on their Skill Value, and a conjurer with level 5 can use an extra 10 Vitner Points to get +5. How many Vitner Points the conjurer wants to add is up to them, provided that they do not exceed what their specialty level permits.",
+    "summary": "Invests extra Vitner Points while casting to increase the odds of success.",
+    "catalogId": "strenuous",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

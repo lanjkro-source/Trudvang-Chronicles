@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VV8ILnQlRmSnToUp",
+  "_id": "VV8ILnQlRmSnToUp",
+  "name": "Invocation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4700000,
+  "system": {
+    "description": "Cette discipline donne au fidèle la capacité de faire appel aux pouvoirs divins de sa religion en utilisant des Tablettes sacrées (groupes de talents divins). Pour pouvoir invoquer un pouvoir divin, le fidèle doit aussi apprendre l’une des spécialités (Bruide, Gavlien, Noaj ou Stormikjalt) et au moins une Tablette sacrée. Les nains doivent apprendre la spécialité Forgeage Thuul et au moins une Tablette sacrée, et les elfes doivent apprendre la spécialité Ihana et au moins une Tablette sacrée. Un personnage ne peut invoquer que les pouvoirs divins liés à sa propre race. Pour les sangs-mêlés, il revient au maître de jeu de décider si le personnage peut invoquer des pouvoirs divins ou pas, et si c’est le cas, la race dont les dieux sont impliqués. La discipline donne également au fidèle la capacité d’effectuer différents rituels selon sa religion, et de faire appel à des points de divinité supplémentaires (mais temporaires). Ces points de divinité supplémentaires disparaissent au rythme de 1 point par jour. Les fidèles ne peuvent pas effectuer un autre rituel tant que ces points de divinité temporaires n’ont pas disparu, soit par épuisement naturel, soit en étant utilisés pour invoquer un pouvoir divin. L’arpenteur des brumes a choisi d’adhérer à une religion spécifique et peut apprendre à invoquer ses différents aspects pour utiliser des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée, l’arpenteur des brumes peut faire appel aux talents divins appartenant à la Tablette sacrée. Cette spécialité lui accorde un modificateur de +2 par niveau à la valeur de compétence lorsqu’il réalise la tâche décrite dans la table ci-dessous, qui à son tour lui accorde des points de divinité temporaires supplémentaires. En choisissant une religion spécifique comme spécialité, un personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Donne au fidèle le pouvoir d’appeler les pouvoirs divins de sa religion au moyen des Tablettes sacrées.",
+    "catalogId": "invoke",
+    "kind": "discipline",
+    "parentSkill": "faith",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

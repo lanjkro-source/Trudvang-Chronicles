@@ -1,0 +1,24 @@
+{
+  "_key": "!items!OM0QKdJeKfLgMhNi",
+  "_id": "OM0QKdJeKfLgMhNi",
+  "name": "Connaissance des esprits",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7900000,
+  "system": {
+    "description": "Cette spécialité donne à un personnage des connaissances supplémentaires sur les morts-vivants, les esprits, les créatures des brumes, les démons et autres entités similaires. Il connaît leur façon de penser, leur organisation hiérarchique, leur mode de vie, leurs peurs, leurs forces et faiblesses, et plus encore. Le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie de déterminer ce qu’il sait sur ce type de créatures.",
+    "summary": "Éclaire les morts-vivants, esprits, créatures des brumes et démons : leur nature, leurs craintes et leurs faiblesses.",
+    "catalogId": "spiritLore",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Race Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

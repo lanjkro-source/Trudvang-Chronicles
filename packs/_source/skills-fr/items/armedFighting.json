@@ -1,0 +1,24 @@
+{
+  "_key": "!items!y4L5V3w2x3y4z5A6",
+  "_id": "y4L5V3w2x3y4z5A6",
+  "name": "Combat armé",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5400000,
+  "system": {
+    "description": "Le personnage sait se battre avec toutes sortes d’armes. Cela comprend aussi bien les armes à distance que les armes de corps à corps et les boucliers.",
+    "summary": "Le personnage sait se battre avec toutes sortes d’armes : de mêlée comme à distance, ainsi qu’avec les boucliers.",
+    "catalogId": "armedFighting",
+    "kind": "discipline",
+    "parentSkill": "fighting",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

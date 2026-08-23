@@ -1,0 +1,24 @@
+{
+  "_key": "!items!XX23yPhNiOjPkQlR",
+  "_id": "XX23yPhNiOjPkQlR",
+  "name": "Thief Signs",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9700000,
+  "system": {
+    "description": "A person with this specialty can read thief signs and create simple thief signs to communicate with. A thief sign could, for example, be a symbol carved on the foundation of a house or a gatepost, stones laid in a certain pattern, or something else that most people would not notice. Each sign has its own importance and can tell the experienced interpreter how many people are living in the house, whether they are rich or important, how many hirdmen are in the area, which is the best escape route out of the city , where a secret passage can be found, and so much more. The use can be almost limitless, depending on what the person who placed the sign wanted to convey. Most signs consist of at least two parts: a main idea and something specific about it. Most important is the part that conveys the main message, for example, whether there are guards at the place. The other part tells something about the main message, for example, how many guards there are. A person with this specialty can read and create thief signs with two or three additions to the main message, such as “ murderous guards here,” “fourth plank cracks,” or “10 shifts of guards.” Thief signs are created in places that are hidden to the untrained eye, but for the initiated they are quite obvious. A person just needs to know where to look. This specialty is also used to build traps to hinder prying or to warn when someone or something is coming. The person has also learned to gradually and methodically examine traps without activating them. After some careful examination, they know how the trap is constructed and therefore can disable it easier.",
+    "summary": "Reads thief signs and creates simple ones to communicate with the brotherhood.",
+    "catalogId": "thiefSigns",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Thievery",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

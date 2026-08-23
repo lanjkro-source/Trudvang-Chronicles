@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pCOhG3w2x3y4z5A6",
+  "_id": "pCOhG3w2x3y4z5A6",
+  "name": "Powerful",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4600000,
+  "system": {
+    "description": "level The dimwalker has learned to draw extra power from the divine source and adds +7 Divinity Points per level to their divinity capacity. Dwarves get +7 Divinity Points per level to insert into an object.",
+    "summary": "Teaches drawing more power from the divine source to further swell the divine reserve.",
+    "catalogId": "powerful",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Divine Power",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

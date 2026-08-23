@@ -1,0 +1,24 @@
+{
+  "_key": "!items!kPqfK4z5A6B7C8D9",
+  "_id": "kPqfK4z5A6B7C8D9",
+  "name": "Music & Dancing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3300000,
+  "system": {
+    "description": "The discipline gives a person the ability to entertain others through music. The character can sing, dance, and play instruments, as well as use many narrative techniques.",
+    "summary": "Lets the character entertain an audience through music: singing, dancing, playing instruments and storytelling.",
+    "catalogId": "musicDancing",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

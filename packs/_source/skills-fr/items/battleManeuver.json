@@ -1,0 +1,24 @@
+{
+  "_key": "!items!un2oxmRmSnToUpVq",
+  "_id": "un2oxmRmSnToUpVq",
+  "name": "Manœuvres de combat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 900000,
+  "system": {
+    "description": "Cette discipline permet d’accéder à des spécialités facilitant les mouvements au combat et le port d’armure. Le modificateur qu’elle accorde n’est généralement utilisé que pour augmenter la VC des tentatives d’esquive.",
+    "summary": "Regroupe les spécialités facilitant les mouvements au combat et le port de l’armure.",
+    "catalogId": "battleManeuver",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

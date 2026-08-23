@@ -1,0 +1,24 @@
+{
+  "_key": "!items!MfnOINeKfLgMhNiO",
+  "_id": "MfnOINeKfLgMhNiO",
+  "name": "Arcs & frondes",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6100000,
+  "system": {
+    "description": "Cette spécialité développe la capacité du personnage à utiliser des arcs et des frondes. Il gagne un modificateur de +2 par niveau à la valeur de compétence lorsqu’il utilise un arc ou une fronde.",
+    "summary": "Développe la maîtrise des arcs et des frondes.",
+    "catalogId": "bowsSlings",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

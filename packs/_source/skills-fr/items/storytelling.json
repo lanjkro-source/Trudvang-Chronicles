@@ -1,0 +1,24 @@
+{
+  "_key": "!items!NqipcfIdJeKfLgMh",
+  "_id": "NqipcfIdJeKfLgMh",
+  "name": "Narration",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3600000,
+  "system": {
+    "description": "Le personnage a appris l’art du conte. Il maîtrise l’art de la parole et sait poser une ambiance auprès de ceux qui l’écoutent. Sans véritable préparation, il est capable d’inventer une histoire à n’importe quel sujet ou de narrer des légendes épiques.",
+    "summary": "Maîtrise l’art du conte : inventer une histoire sur n’importe quel sujet ou narrer des légendes épiques en posant l’ambiance.",
+    "catalogId": "storytelling",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

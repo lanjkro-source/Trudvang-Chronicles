@@ -1,0 +1,24 @@
+{
+  "_key": "!items!DNCkrPhNiOjPkQlR",
+  "_id": "DNCkrPhNiOjPkQlR",
+  "name": "Sage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1500000,
+  "system": {
+    "description": "The person has gained great insight into the city’s management and administration (or into that of the country , later in their careers). Therefore, they may be involved in solving the city’s or country’s problems.",
+    "summary": "Grants deep understanding of town or country administration to help resolve its problems.",
+    "catalogId": "sage",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handler",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

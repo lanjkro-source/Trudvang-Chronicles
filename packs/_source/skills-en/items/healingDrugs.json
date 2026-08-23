@@ -1,0 +1,24 @@
+{
+  "_key": "!items!kDHG8bGbHcIdJeKf",
+  "_id": "kDHG8bGbHcIdJeKf",
+  "name": "Healing & Drugs",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2600000,
+  "system": {
+    "description": "The Healing and Drugs discipline teaches a person to mend and care for the sick and wounded so they recover faster than normal, as well as to impair others’ health through drugs or poisons. Tending to wounds and illnesses requires one of the specialties below; rolls made with the discipline’s knowledge alone (without any specialty) can only stop bleeding and keep the patients’ conditions from worsening.",
+    "summary": "Lets the character care for the sick and wounded and make good use of remedies and extracts.",
+    "catalogId": "healingDrugs",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

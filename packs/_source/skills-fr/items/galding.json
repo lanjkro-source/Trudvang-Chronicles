@@ -1,0 +1,24 @@
+{
+  "_key": "!items!L6H9mXqWrXsYtZu0",
+  "_id": "L6H9mXqWrXsYtZu0",
+  "name": "Galda",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10300000,
+  "system": {
+    "description": "L’invocateur est spécialisé dans le chant des sorts. Avec le galda, c’est uniquement en chantant et en produisant des sons mystérieux que l’invocateur tisse et modèle le vitner pour en faire un sort. Certains chants sont à la fois longs et complexes, tandis que d’autres ne sont rien de plus qu’une note prolongée au moment adéquat. Cependant, les chants et sons sont propres à chaque invocateur, et un même sort sonnera de façon totalement différente s’il est évoqué par un autre invocateur. Pour l’un, le sort pourra être une chanson magnifique alors que pour un autre, il pourra s’agir d’un gargouillis venant du fond de sa gorge. Certains invocateurs utilisent même des instruments de musique et invoquent et modèlent le vitner en combinant leur voix et le son d’un instrument. Quel que soit l’aspect sonore du sort, il peut souvent être entendu à distance, ce qui signifie que l’invocateur est facilement repéré et reconnu en tant que tel.",
+    "summary": "Modèle le vitner uniquement par le chant et des sons mystérieux, d’une simple note tenue au chant le plus complexe.",
+    "catalogId": "galding",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Shaping",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

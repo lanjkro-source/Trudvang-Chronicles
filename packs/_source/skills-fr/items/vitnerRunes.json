@@ -1,0 +1,24 @@
+{
+  "_key": "!items!iR4xRB6B7C8D9EaG",
+  "_id": "iR4xRB6B7C8D9EaG",
+  "name": "Runes de vitner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10500000,
+  "system": {
+    "description": "Le personnage a appris à déchiffrer les symboles compliqués qui constituent la langue écrite de l’art du vitner.",
+    "summary": "Apprend à déchiffrer les symboles complexes qui constituent la langue écrite du vitner.",
+    "catalogId": "vitnerRunes",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Shaping",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

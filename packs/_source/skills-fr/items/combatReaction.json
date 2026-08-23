@@ -1,0 +1,24 @@
+{
+  "_key": "!items!A05GSXoUpVqWrXsY",
+  "_id": "A05GSXoUpVqWrXsY",
+  "name": "Réaction de combat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6800000,
+  "system": {
+    "description": "Le personnage a appris à réagir rapidement durant un combat. Cette spécialité lui accorde un bonus de +2 par niveau à l’initiative au combat.",
+    "summary": "Aiguise les réflexes du personnage pendant un combat.",
+    "catalogId": "combatReaction",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

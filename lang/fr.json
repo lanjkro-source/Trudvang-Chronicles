@@ -28,7 +28,11 @@
       "ReimportName": "Réinstaller le contenu de démarrage",
       "ReimportHint": "Relance l'import de la bibliothèque de démarrage dans la langue d'affichage actuelle : les noms, descriptions et images des items, tables et PNJ déjà installés sont mis à jour au lieu d'être dupliqués.",
       "ReimportTitle": "Réinstaller le contenu de démarrage",
-      "ReimportConfirm": "Réinstaller"
+      "ReimportConfirm": "Réinstaller",
+      "RebuildPacksName": "Reconstruire les compendiums de Compétences",
+      "RebuildPacksHint": "Vide puis reconstruit les deux compendiums de Compétences à partir des données du système, réparant tout contenu de compendium corrompu. Les éléments déjà importés dans ce monde ne sont pas touchés.",
+      "RebuildPacksTitle": "Reconstruire les compendiums de Compétences",
+      "RebuildPacksConfirm": "Reconstruire"
     },
     "Tab": {
       "Summary": "Résumé",
@@ -504,7 +508,8 @@
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",
       "CreationModeEnabled": "Mode création de personnage activé.",
       "CreationModeDisabled": "Création du personnage terminée.",
-      "InvalidTraitsRepaired": "Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s)."
+      "InvalidTraitsRepaired": "Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s).",
+      "KnowledgeSynced": "{count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour."
     },
     "New": {
       "Item": "Nouveau {type}"
@@ -515,7 +520,9 @@
     "Import": {
       "Started": "Installation de la bibliothèque de démarrage Trudvang...",
       "Complete": "Bibliothèque de démarrage Trudvang installée: {items} objets, {tables} tables, et {actors} PNJs.",
-      "Failed": "La bibliothèque de démarrage Trudvang n'a pas pu être installée. Consultez la console pour plus de détails."
+      "Failed": "La bibliothèque de démarrage Trudvang n'a pas pu être installée. Consultez la console pour plus de détails.",
+      "PacksRebuildStarted": "Reconstruction des compendiums de Compétences...",
+      "PacksRebuilt": "Compendiums de Compétences reconstruits ({packs} packs)."
     },
     "Content": {
       "Folder": {

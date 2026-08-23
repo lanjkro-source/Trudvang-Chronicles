@@ -43,6 +43,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.ReimportHint` | Runs the starter library import again in the current display language: names, descriptions, and images of previously installed items, tables, and NPCs are refreshed instead of duplicated. | Relance l'import de la bibliothèque de démarrage dans la langue d'affichage actuelle : les noms, descriptions et images des items, tables et PNJ déjà installés sont mis à jour au lieu d'être dupliqués. |
 | `TRUDVANG.Settings.ReimportTitle` | Reinstall starter content | Réinstaller le contenu de démarrage |
 | `TRUDVANG.Settings.ReimportConfirm` | Reinstall | Réinstaller |
+| `TRUDVANG.Settings.RebuildPacksName` | Rebuild the Skills compendiums | Reconstruire les compendiums de Compétences |
+| `TRUDVANG.Settings.RebuildPacksHint` | Wipes and rebuilds the two Skills compendium packs from the system data, repairing any corrupted compendium content. Items already imported into this world are not touched. | Vide puis reconstruit les deux compendiums de Compétences à partir des données du système, réparant tout contenu de compendium corrompu. Les éléments déjà importés dans ce monde ne sont pas touchés. |
+| `TRUDVANG.Settings.RebuildPacksTitle` | Rebuild the Skills compendiums | Reconstruire les compendiums de Compétences |
+| `TRUDVANG.Settings.RebuildPacksConfirm` | Rebuild | Reconstruire |
 
 ## `TRUDVANG.Tab`
 
@@ -606,6 +610,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.CreationModeEnabled` | Character creation mode enabled. | Mode création de personnage activé. |
 | `TRUDVANG.Notification.CreationModeDisabled` | Character creation completed. | Création du personnage terminée. |
 | `TRUDVANG.Notification.InvalidTraitsRepaired` | Reset invalid -4 defaults to 0 on {count} character(s). | Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s). |
+| `TRUDVANG.Notification.KnowledgeSynced` | {count} knowledge item(s) imported from the Skills compendiums were refreshed. | {count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour. |
 
 ## `TRUDVANG.New`
 
@@ -626,6 +631,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Import.Started` | Installing the Trudvang starter library... | Installation de la bibliothèque de démarrage Trudvang... |
 | `TRUDVANG.Import.Complete` | Trudvang starter library installed: {items} items, {tables} tables, and {actors} NPCs. | Bibliothèque de démarrage Trudvang installée: {items} objets, {tables} tables, et {actors} PNJs. |
 | `TRUDVANG.Import.Failed` | The Trudvang starter library could not be installed. See the console for details. | La bibliothèque de démarrage Trudvang n'a pas pu être installée. Consultez la console pour plus de détails. |
+| `TRUDVANG.Import.PacksRebuildStarted` | Rebuilding the Skills compendiums... | Reconstruction des compendiums de Compétences... |
+| `TRUDVANG.Import.PacksRebuilt` | Skills compendiums rebuilt ({packs} packs). | Compendiums de Compétences reconstruits ({packs} packs). |
 
 ## `TRUDVANG.Content.Folder`
 

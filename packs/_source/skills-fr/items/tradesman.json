@@ -1,0 +1,24 @@
+{
+  "_key": "!items!cbyxisVqWrXsYtZu",
+  "_id": "cbyxisVqWrXsYtZu",
+  "name": "Commerce",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2000000,
+  "system": {
+    "description": "Le personnage a appris à gérer une ferme, une taverne, un salon de barbier ou un commerce qui propose d’autres services. Grâce à cette compétence, il sait également à qui il doit verser des pots-de-vin lorsqu’il a besoin de produits de contrebande ou s’il veut échapper à l’impôt.",
+    "summary": "Apprend à gérer ferme, taverne ou commerce, et à connaître les rouages du négoce, des impôts aux pots-de-vin.",
+    "catalogId": "tradesman",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

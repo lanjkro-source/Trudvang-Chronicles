@@ -1,0 +1,14 @@
+{
+  "_key": "!folders!70rhhMhNiOjPkQlR",
+  "_id": "70rhhMhNiOjPkQlR",
+  "name": "Knowledge",
+  "type": "Item",
+  "folder": null,
+  "sorting": "a",
+  "sort": 600000,
+  "description": "",
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

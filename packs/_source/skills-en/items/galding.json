@@ -1,0 +1,24 @@
+{
+  "_key": "!items!L6H9mXqWrXsYtZu0",
+  "_id": "L6H9mXqWrXsYtZu0",
+  "name": "Galding",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10300000,
+  "system": {
+    "description": "The conjurer specializes in singing up a spell. Galding means that the conjurer weaves and shapes vitner into spells entirely through mysterious songs and sounds. Some songs are both long and complex, while others are no more than a protracted tone at the right time. The songs and sounds are, however, highly Vitner Habit The conjurer reaches an important insight into the vitner art, which increases their ability to draw in vitner from the surroundings. The conjurer must have a minimum level of 1 in one of the other specialties: Hwitalja, Darkhwitalja, or Vaagritalja. They increase its capacity by +10 Vitner Points per level of Vitner Habit.",
+    "summary": "Shapes the vitner purely through song and mysterious sounds, from a single held note to the most complex chant.",
+    "catalogId": "galding",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Vitner Shaping",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

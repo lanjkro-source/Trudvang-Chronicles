@@ -1,0 +1,24 @@
+{
+  "_key": "!items!E8YulPgMhNiOjPkQ",
+  "_id": "E8YulPgMhNiOjPkQ",
+  "name": "Stormikjalt",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5300000,
+  "system": {
+    "description": "L’arpenteur des brumes a choisi de se consacrer à la religion de Gerbanis et peut apprendre à invoquer les dieux pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Gerbanis), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. Cette spécialité lui accorde un modificateur de +2 par niveau à la valeur de compétence pour réaliser des offrandes de sang, qui donnent au stormikjalt des points de divinité temporaires supplémentaires. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre l’invocateur au culte de Gerbanis : offrir du sang pour appeler les dieux via sa Tablette sacrée.",
+    "catalogId": "stormkelt",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

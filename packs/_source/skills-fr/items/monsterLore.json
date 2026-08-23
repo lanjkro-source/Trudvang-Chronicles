@@ -1,0 +1,24 @@
+{
+  "_key": "!items!lXjsAvYtZu0v1w2x",
+  "_id": "lXjsAvYtZu0v1w2x",
+  "name": "Connaissance des monstres",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7800000,
+  "system": {
+    "description": "Cette spécialité donne à un personnage des connaissances supplémentaires sur les créatures de Trudvang qui sont considérées comme étant plus que de simples animaux, comme les trolls, les jotuns, les tursirs (géants), les wurms (dragons) et d’autres créatures intelligentes. Il connaît leur façon de penser, leur organisation hiérarchique, leur mode de vie, leurs peurs, leurs forces et faiblesses, et plus encore. Le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie de déterminer ce qu’il sait sur ce type de créatures.",
+    "summary": "Approfondit la connaissance des créatures douées d’intelligence : trolls, jotuns, tursirs, wurms et autres monstres.",
+    "catalogId": "monsterLore",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Race Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

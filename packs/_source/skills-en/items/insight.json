@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Zqr09w2x3y4z5A6B",
+  "_id": "Zqr09w2x3y4z5A6B",
+  "name": "Insight",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7600000,
+  "system": {
+    "description": "The person knows a lot about a particular chosen subject. The person can add +2 to their Skill Value per level when trying to learn about the chosen subject.",
+    "summary": "Makes the character a scholar of the specific field they have embraced.",
+    "catalogId": "insight",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Learning",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

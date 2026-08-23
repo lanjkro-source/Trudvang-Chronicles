@@ -1,0 +1,24 @@
+{
+  "_key": "!items!3Y78ztWrXsYtZu0v",
+  "_id": "3Y78ztWrXsYtZu0v",
+  "name": "Species Hunter",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12000000,
+  "system": {
+    "description": "This specialty is for hunting a specific animal. The character has learned how and where the animal lives and which tracks to search for when stalking it. Animal species may include hare, wolf, bear, fox, lynx, wild horse, deer, salmon, and so on. The specialty bonus is used when tracking the chosen animal species and also when hunting in the area where the species dwells.",
+    "summary": "Specializes hunting in one animal species: its habitat, habits and the tracks leading to it.",
+    "catalogId": "speciesHunter",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

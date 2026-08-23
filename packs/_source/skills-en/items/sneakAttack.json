@@ -1,0 +1,24 @@
+{
+  "_key": "!items!TBBeDRiOjPkQlRmS",
+  "_id": "TBBeDRiOjPkQlRmS",
+  "name": "Sneak Attack",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9000000,
+  "system": {
+    "description": "Those who have this specialty can perform a Sneak Attack instead of a Surprise Attack (the two things are never added up). When successfully using Camouflage and Hiding or Walking in Shadows to sneak up on a target, they can launch a Sneak Attack, if the GM allows it. The attack hits automatically and provides an additional open roll of damage no matter the result of the first roll. In addition to the open roll, the victim takes an additional 2 points of damage for each level of Sneak Attack that the attacker has learned. The attack and the damage applies only to a single action round. Afterward, the sneaking attacker is detected. If the person fails with Walking in Shadows, they are discovered before striking the blow, and combat commences as usual with no sneak attack.",
+    "summary": "Replaces the surprise attack: after a successful stealthy approach, the strike hits its target automatically.",
+    "catalogId": "sneakAttack",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

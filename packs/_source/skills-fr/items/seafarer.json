@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ajf5C1u0v1w2x3y4",
+  "_id": "ajf5C1u0v1w2x3y4",
+  "name": "Marin",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12800000,
+  "system": {
+    "description": "La discipline Marin donne au personnage la connaissance de la mer et les bases pour manœuvrer différents types de bateaux. Il sait comment les choses se déroulent à bord d’un navire : comment sont composées les équipes de marins et quelles tâches ils ont à effectuer, comment charger une cargaison, quelles cordes et nœuds utiliser, comment mettre les voiles, et plus important que tout, comment naviguer et manœuvrer un navire. Cette discipline permet également de savoir à quels vents s’attendre selon l’environnement marin, et de connaître les signes à repérer pour bien manœuvrer le navire en haute mer.",
+    "summary": "Connaît la mer et les bases des manœuvres navales : équipages, chargement, cordes, nœuds et voiles.",
+    "catalogId": "seafarer",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

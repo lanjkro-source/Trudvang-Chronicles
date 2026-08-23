@@ -1,0 +1,24 @@
+{
+  "_key": "!items!VoEkC4x3y4z5A6B7",
+  "_id": "VoEkC4x3y4z5A6B7",
+  "name": "Cuirassé",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 1200000,
+  "system": {
+    "description": "-1/Niveau Le personnage peut se déplacer et manœuvrer plus facilement avec une armure. Pour évaluer ses modificateurs d’armure, on considère que l’armure qu’il porte a un encombrement réduit de 1 pour chaque niveau de spécialité (encombrement minimum de 1).",
+    "summary": "Rend le port de l’armure plus aisé en réduisant son encombrement effectif.",
+    "catalogId": "ironclad",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Battle Maneuver",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

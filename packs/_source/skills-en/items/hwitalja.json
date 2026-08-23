@@ -1,0 +1,24 @@
+{
+  "_key": "!items!fwl39hJeKfLgMhNi",
+  "_id": "fwl39hJeKfLgMhNi",
+  "name": "Hwitalja",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10800000,
+  "system": {
+    "description": "The conjurer has, after years of study , found the way past both dark vitner and vaagri vitner to eventually find the purest form: white vitner. The conjurer has now become a Hwitalja and belongs to those who bring light. The choice to weave white vitner, however, brings consequences to the conjurer, who can never learn Vaagritalja or Darkhwitalja after learning this specialty. White vitner has the following effects on the conjurer: ✦ Hwitalja increases vitner capacity by +10 Vitner Points. ✦ The conjurer weaves the vitner perfectly on a roll of 1-2. ✦ In case of a fatal failure, only 1d10 (OR 10) is rolled on the fatal magic table. ✦ The description of each specific Vitner Tablet includes the specific effects of Hwitalja, usually in terms of Vitner points cost.",
+    "summary": "Finds a path between shadow and light to weave the white vitner, a pure form whose use binds the conjurer forever.",
+    "catalogId": "hwitalja",
+    "kind": "specialty",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "Call of Vitner",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!1xgfALeKfLgMhNiO",
+  "_id": "1xgfALeKfLgMhNiO",
+  "name": "Navigation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12900000,
+  "system": {
+    "description": "By comparing famous landmarks at sea, and the positions of stars and celestial bodies in relation to each other, a person knows their current heading or direction as well as location. The specialty helps a person take the best and most direct possible route from one place to another at sea. Depending on distance and weather, the game master determines how often a navigator needs to succeed with a Skill roll to stay on the right course. If a person has a good sea map that shows landmarks, they can determine their location and heading with great accuracy.",
+    "summary": "Determines heading and position at sea from landmarks and stars while choosing the best route.",
+    "catalogId": "navigation",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Seafarer",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

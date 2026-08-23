@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xWrETYqWrXsYtZu0",
+  "_id": "xWrETYqWrXsYtZu0",
+  "name": "Rigorous",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4300000,
+  "system": {
+    "description": "The faithful one knows how to spend power to increase the chances of success. By using extra Divinity Points during the summoning, the chance of success is increased. For each level of the specialty , the faithful one can use 2 Divinity Points to obtain a modifier of +1 on the Skill roll. Thus, a faithful one with level 3 in the specialty can transform 6 Divinity Points into a +3 on the Skill roll, and a faithful one with level 5 can transform 10 Divinity Points into a +5 on the roll. The faithful one decides how many Divinity Points to use, up to the amount allowed by the specialty level.",
+    "summary": "Teaches investing extra Divinity Points into an invocation to improve its odds of success.",
+    "catalogId": "rigorous",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

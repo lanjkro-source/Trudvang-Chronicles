@@ -1,0 +1,24 @@
+{
+  "_key": "!items!TBBeDRiOjPkQlRmS",
+  "_id": "TBBeDRiOjPkQlRmS",
+  "name": "Attaque furtive",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9000000,
+  "system": {
+    "description": "Ceux qui disposent de cette spécialité peuvent réaliser une attaque furtive à la place d’une attaque par surprise (les deux ne pouvant se cumuler). Si le MJ le permet, lorsqu’un personnage a réussi à se glisser discrètement jusqu’à une cible en utilisant Camouflage et dissimulation ou Marcher dans les ombres, il peut lancer une Attaque furtive. L’attaque touche automatiquement et accorde un jet ouvert de dégâts supplémentaires quel que soit le résultat du premier jet de dégâts. En plus du jet ouvert, la victime encaisse aussi 2 points de dégâts supplémentaires par niveau d’Attaque furtive de l’attaquant. L’attaque et les dégâts ne s’appliquent que pour un seul tour de jeu. Ensuite, l’attaquant est repéré. Si le personnage échoue à son test de Marcher dans les ombres, il est repéré avant de pouvoir porter son coup et le combat commence normalement, sans Attaque furtive.",
+    "summary": "Remplace l’attaque par surprise : après une approche discrète réussie, la frappe touche automatiquement sa cible.",
+    "catalogId": "sneakAttack",
+    "kind": "specialty",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "Shadowing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!PSKIFUoUpVqWrXsY",
+  "_id": "PSKIFUoUpVqWrXsY",
+  "name": "Diriger",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1300000,
+  "system": {
+    "description": "Le personnage a appris la gestion et l’administration dans toutes ses formes. Il peut s’agir de diriger un village ou une ville, ou de planifier des guerres et des campagnes. Le gestionnaire est la personne en charge de la prospérité de la ville, et sait pourquoi les impôts sont nécessaires, qui dirige l’administration et ce qu’ils font. Même si le gestionnaire ne connaît pas tout le monde à titre personnel, il sait quelles sont les autorités chargées des différentes tâches.",
+    "summary": "Couvre la gestion et l’administration, du village à la ville, jusqu’à la planification des guerres et des campagnes.",
+    "catalogId": "handler",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

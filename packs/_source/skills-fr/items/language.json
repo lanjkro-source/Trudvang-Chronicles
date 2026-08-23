@@ -1,0 +1,24 @@
+{
+  "_key": "!items!JnNUyTlRmSnToUpV",
+  "_id": "JnNUyTlRmSnToUpV",
+  "name": "Langage",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8000000,
+  "system": {
+    "description": "La discipline Langage développe la capacité d’un personnage à s’exprimer dans une langue spécifique (qui est sa langue maternelle avant qu’il n’apprenne d’autres langues). Le vrok, qui est la plus répandue des deux langues humaines, est parlé par les habitants du Nhoordland, dans les Stormländer et dans certaines régions du Mittland et de Soj. Le rona, l’autre langue humaine, est parlé au Vastermark, en Soj et dans certaines régions du Mittland. Des personnages humains originaires du Mittland peuvent choisir la langue qu’ils parlent avec l’approbation du maître de jeu. Cependant, si le personnage est un partisan de la Doctrine de Nid, il devra forcément parler le rona. Il existe aussi d’autres langues telles que l’eika (parlée par les elfes), le futhark (parlé par les nains) et le bastjumal (parlé par les trolls et les géants). Un personnage ne sait pas lire ou écrire à moins d’acquérir la spécialité Lire et écrire.",
+    "summary": "Permet au personnage de s’exprimer dans une langue spécifique, dont sa langue maternelle avant tout apprentissage.",
+    "catalogId": "language",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

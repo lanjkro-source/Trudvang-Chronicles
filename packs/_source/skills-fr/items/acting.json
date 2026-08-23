@@ -1,0 +1,24 @@
+{
+  "_key": "!items!xxNd2w0v1w2x3y4z",
+  "_id": "xxNd2w0v1w2x3y4z",
+  "name": "Comédie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3700000,
+  "system": {
+    "description": "Le personnage a appris, grâce à l’art de la comédie, à exprimer des sentiments d’une façon tellement émouvante que chaque spectateur peut les ressentir à son tour. Il maîtrise le verbe et se comporte de façon à susciter une certaine humeur. En parlant avec tristesse, il peut rendre les spectateurs mélancoliques, et en parlant de façon inspirante, il peut les rassembler.",
+    "summary": "Exprime des sentiments si émouvants qu’ils touchent chaque spectateur, jusqu’à mélancoliser ou rassembler une foule.",
+    "catalogId": "acting",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Storytelling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

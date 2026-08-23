@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zXtReYpVqWrXsYtZ",
+  "_id": "zXtReYpVqWrXsYtZ",
+  "name": "Transcendance",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 4200000,
+  "system": {
+    "description": "Les talents divins de l’arpenteur des brumes sont particulièrement forts. Lorsqu’une de ses victimes doit faire un test de situation pour éviter ou résister à un talent divin, elle subit un malus de -2 par niveau de la spécialité du fait de la force de l’arpenteur des brumes.",
+    "summary": "Rend les talents divins particulièrement puissants : leurs victimes peinent à y résister.",
+    "catalogId": "potent",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "God Focus",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Iyt35VoUpVqWrXsY",
+  "_id": "Iyt35VoUpVqWrXsY",
+  "name": "Connaissance de l'environnement",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13400000,
+  "system": {
+    "description": "Le personnage possède une grande expertise en matière de survie dans un environnement spécifique. Le bonus de spécialité est utilisé lorsque le personnage doit effectuer un test de compétence pour trouver un abri, de la nourriture, de l’eau ou d’autres produits indispensables dans l’environnement choisi. Les différents environnements sont : montagne, forêt, mer, neige et froid, et plaines.",
+    "summary": "Expertise de survie dans un environnement spécifique : montagne, forêt, mer, neige et froid, etc.",
+    "catalogId": "terrainExperience",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

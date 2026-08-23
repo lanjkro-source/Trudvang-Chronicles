@@ -1,0 +1,24 @@
+{
+  "_key": "!items!SvPVS2x3y4z5A6B7",
+  "_id": "SvPVS2x3y4z5A6B7",
+  "name": "Body Control",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 100000,
+  "system": {
+    "description": "The Body Control discipline develops the character’s ability to get the most out of their agility to duck, climb, land softly on their feet after a fall, and so on. The discipline can also be used to make flips in the air and engage in other acrobatic maneuvers. The penalties on attacks with the shield hand are reduced by 1 point per level",
+    "summary": "The character makes the most of agility to dive, climb, land softly and perform acrobatics; shield-hand attack penalties are also reduced.",
+    "catalogId": "bodyControl",
+    "kind": "discipline",
+    "parentSkill": "agility",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!dGPMqVoUpVqWrXsY",
+  "_id": "dGPMqVoUpVqWrXsY",
+  "name": "Géographie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11200000,
+  "system": {
+    "description": "Grâce à la discipline Géographie, un personnage a une idée de l’aspect physique du terrain et de la façon dont il se présente. Elle lui permet d’interpréter et de créer des cartes, de savoir où se trouvent différents endroits les uns par rapport aux autres, et dans quelle direction il faut voyager pour atteindre une destination particulière. Cette discipline permet au personnage de se faire une idée générale de la façon dont est organisée la partie du monde à laquelle elle s’applique. Le personnage connaît les pays et leurs frontières, les itinéraires populaires et les villes et villages. Il reçoit un modificateur de +1 par niveau au test de compétence effectué pour déterminer la connaissance qu’il a d’une certaine région. À la création, les personnages commencent avec le niveau 1 dans cette discipline et le niveau 1 dans la spécialité Connaissance régionale, la région concernée étant celle dans laquelle ils ont grandi. La discipline doit préciser le pays concerné parmi les suivants : le Vastermark, le Mittland, les Stormländer, le Nhoordland, Muspelheim ou Soj. En effet, chaque pays nécessite le développement d’une discipline qui lui est propre.",
+    "summary": "Donne une lecture du terrain et permet d’interpréter ou créer des cartes, de situer les lieux entre eux et de choisir la route d’un voyage.",
+    "catalogId": "geography",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

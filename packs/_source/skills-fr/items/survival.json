@@ -1,0 +1,24 @@
+{
+  "_key": "!items!pV3HDXoUpVqWrXsY",
+  "_id": "pV3HDXoUpVqWrXsY",
+  "name": "Survie",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13100000,
+  "system": {
+    "description": "Cette discipline fait du personnage un vrai survivant, qui peut subsister avec les rares ressources que la nature peut lui offrir. Le bonus de discipline est utilisé lorsque le personnage essaie de survivre dans la nature et doit trouver un abri, de la nourriture, de l’eau ou d’autres produits indispensables.",
+    "summary": "Fait du personnage un véritable survivant capable de trouver abri, nourriture et eau dans la nature.",
+    "catalogId": "survival",
+    "kind": "discipline",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

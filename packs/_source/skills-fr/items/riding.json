@@ -1,0 +1,24 @@
+{
+  "_key": "!items!c5bC4lQlRmSnToUp",
+  "_id": "c5bC4lQlRmSnToUp",
+  "name": "Equitation",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 800000,
+  "system": {
+    "description": "Le personnage a appris à monter à cheval et est capable de réaliser des manœuvres sur leur dos. De ce fait, il obtient un bonus de +2 par niveau de spécialité à sa valeur de compétence dès qu’il essaie de monter à vive allure, de faire sauter son cheval ou de réaliser d’autres tours. La spécialité Équitation peut aussi être utilisée pour de longues chevauchées, dans les batailles ou en cas de complications dans la nature. À chaque tour de combat passé à cheval, un cavalier doit dépenser (15 - 3/ niveau de spécialité) points de combat. Ainsi, en ayant tous les niveaux de spécialité, il n’y a pas de coût supplémentaire pour combattre à cheval. Vous trouverez plus d’informations sur le combat à cheval au chapitre Combat, page 321.",
+    "summary": "Permet de monter à cheval et d’y exécuter des manœuvres, même à vive allure.",
+    "catalogId": "riding",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Horsemanship",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

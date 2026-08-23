@@ -1,0 +1,24 @@
+{
+  "_key": "!items!tfjwfmNiOjPkQlRm",
+  "_id": "tfjwfmNiOjPkQlRm",
+  "name": "Battle Experience",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6500000,
+  "system": {
+    "description": "Having taken part in many battles, the character has learned to react, fight and attempt risky maneuvers. They receive 1 extra Combat Point per level to assign to their combat actions during a combat round, plus a +1 per level bonus to combat initiative.",
+    "summary": "Tempered by many battles: more combat actions available and an edge on initiative.",
+    "catalogId": "battleExperience",
+    "kind": "discipline",
+    "parentSkill": "fighting",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

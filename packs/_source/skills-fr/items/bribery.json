@@ -1,0 +1,24 @@
+{
+  "_key": "!items!gSjI70v1w2x3y4z5",
+  "_id": "gSjI70v1w2x3y4z5",
+  "name": "Corruption",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8100000,
+  "system": {
+    "description": "Le personnage a appris à évaluer la façon dont les personnes réagissent à la corruption. Il se rend rapidement compte si quelqu’un peut être corrompu, et si c’est le cas, il sait de quelle façon et dans quelle mesure. En faisant appel à cette spécialité, le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il essaie de corrompre quelqu’un.",
+    "summary": "Sait juger qui peut être corrompu, comment et dans quelle mesure.",
+    "catalogId": "bribery",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

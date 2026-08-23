@@ -1,0 +1,24 @@
+{
+  "_key": "!items!z2oziG9EaGbHcIdJ",
+  "_id": "z2oziG9EaGbHcIdJ",
+  "name": "Larcin",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "9E2QCA3y4z5A6B7C",
+  "sort": 9200000,
+  "system": {
+    "description": "Cette discipline permet à un personnage d’entrer dans des endroits fermés à clé, et de voler des objets entreposés dans des lieux ou à des personnes. Le personnage connaît les signes cachés de la pègre que les criminels utilisent pour communiquer entre eux.",
+    "summary": "Ouvre les lieux fermés à clé et permet de subtiliser des biens ; connaît aussi les signes secrets de la pègre.",
+    "catalogId": "thievery",
+    "kind": "discipline",
+    "parentSkill": "shadowArts",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

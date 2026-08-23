@@ -1,0 +1,24 @@
+{
+  "_key": "!items!8YNiJVnToUpVqWrX",
+  "_id": "8YNiJVnToUpVqWrX",
+  "name": "Actions de combat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6700000,
+  "system": {
+    "description": "Cette spécialité permet à un personnage de réaliser des actions de combat presque sans effort (ne s’applique pas aux attaques ou aux parades). Elle accorde 2 points de combat supplémentaires par niveau. Ces points ne peuvent être utilisés que pour des actions liées au positionnement du personnage dans le combat, par exemple dégainer une arme, se relever ou effectuer un mouvement de combat.",
+    "summary": "Rend quasi naturels les gestes tactiques du combat : dégainer, se relever, se replacer — sans y consacrer ses points de combat.",
+    "catalogId": "combatActions",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Battle Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

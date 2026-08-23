@@ -1,0 +1,24 @@
+{
+  "_key": "!items!lXjsAvYtZu0v1w2x",
+  "_id": "lXjsAvYtZu0v1w2x",
+  "name": "Monster Lore",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7800000,
+  "system": {
+    "description": "The specialty gives a person extra knowledge about Trudvang’s beasts that are considered to be more than just animals, such as trolls, jotuns, tursirs (giants), wurms (dragons), and other intelligent creatures. The person knows their ideologies, governance, lifestyle, fears, strengths, weaknesses, and more. The person can add +2 to their Skill Value per level when trying to learn about these types of creatures.",
+    "summary": "Deepens knowledge of intelligent creatures: trolls, jotuns, tursirs, wurms and other monsters.",
+    "catalogId": "monsterLore",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Race Knowledge",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

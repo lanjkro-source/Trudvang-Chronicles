@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zvFLoHcIdJeKfLgM",
+  "_id": "zvFLoHcIdJeKfLgM",
+  "name": "Libel",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3800000,
+  "system": {
+    "description": "The person can tell a false and undermining story about someone. The speaker often uses a real event but twists it to make the victim look bad. By succeeding with libel, the speaker can make a crowd disapprove of the intended victim.",
+    "summary": "Forges slanderous tales woven from twisted truths to turn a crowd against its target.",
+    "catalogId": "libel",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Storytelling",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

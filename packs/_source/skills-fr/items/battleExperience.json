@@ -1,0 +1,24 @@
+{
+  "_key": "!items!tfjwfmNiOjPkQlRm",
+  "_id": "tfjwfmNiOjPkQlRm",
+  "name": "Expérience du combat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 6500000,
+  "system": {
+    "description": "Le personnage a participé à de nombreux combats et a appris à réagir, se battre et tenter des manœuvres risquées. Il reçoit 1 point de combat supplémentaire par niveau qu’il peut attribuer à ses actions de combat au cours d’un tour de combat. Le personnage reçoit également un bonus de +1 par niveau à l’initiative en combat.",
+    "summary": "Forgé par de nombreux combats : davantage d’actions de combat possibles et un avantage d’initiative.",
+    "catalogId": "battleExperience",
+    "kind": "discipline",
+    "parentSkill": "fighting",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

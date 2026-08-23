@@ -1,0 +1,24 @@
+{
+  "_key": "!items!axqRuYpVqWrXsYtZ",
+  "_id": "axqRuYpVqWrXsYtZ",
+  "name": "Hunting & Fishing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 11900000,
+  "system": {
+    "description": "The person is good at hunting in the wilderness or on a lake. The person can also build and manage traps used in hunting. The specialty bonus is used when the person goes hunting or fishing.",
+    "summary": "Knows how to hunt in the wild, fish lakes, and build and set traps.",
+    "catalogId": "huntingFishing",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

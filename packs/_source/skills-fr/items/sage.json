@@ -1,0 +1,24 @@
+{
+  "_key": "!items!DNCkrPhNiOjPkQlR",
+  "_id": "DNCkrPhNiOjPkQlR",
+  "name": "Administrer",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1500000,
+  "system": {
+    "description": "Le personnage a atteint une grande compréhension de la gestion et de l’administration d’une ville (ou d’un pays, plus tard dans sa carrière). Ainsi, il peut être impliqué dans la résolution des problèmes de la ville ou du pays.",
+    "summary": "Confère une compréhension approfondie de l’administration d’une ville ou d’un pays, pour aider à résoudre ses problèmes.",
+    "catalogId": "sage",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handler",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

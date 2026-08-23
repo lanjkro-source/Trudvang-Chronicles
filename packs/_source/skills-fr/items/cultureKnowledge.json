@@ -1,0 +1,24 @@
+{
+  "_key": "!items!z8gdu6y4z5A6B7C8",
+  "_id": "z8gdu6y4z5A6B7C8",
+  "name": "Connaissances culturelles",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7100000,
+  "system": {
+    "description": "Cette discipline recouvre la plupart des choses qui ont un rapport avec la culture, la religion, l’histoire et les légendes d’une race. Le personnage est familier avec le mode de vie de la culture, ses fêtes, ses lois et son contexte général. De base, le personnage a le niveau 1 dans cette discipline (pour sa culture d’origine). Les Stormlanders, Mittlanders, Viranns, Sauvages, nains et elfes ont chacun leur propre culture.",
+    "summary": "Connaissance profonde d’une culture : mode de vie, fêtes, lois et histoire ; acquise de base pour sa propre culture.",
+    "catalogId": "cultureKnowledge",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

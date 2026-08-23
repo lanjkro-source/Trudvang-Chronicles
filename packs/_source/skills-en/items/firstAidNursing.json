@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ZYf2FnRmSnToUpVq",
+  "_id": "ZYf2FnRmSnToUpVq",
+  "name": "First Aid & Nursing",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2800000,
+  "system": {
+    "description": "The character has learned to tend wounds. Any injury treated immediately (within ten minutes) heals at a rate of 1 health point per specialty level, provided the treated injury actually caused that health loss. The character can care for the sick and wounded so they recover faster than normal — though this requires the patient to rest and receive the necessary treatment throughout the day. The healer must spend at least two hours per care attempt on a patient; a successful Skill roll means the patient heals twice as fast.",
+    "summary": "Attends to wounds quickly to speed recovery and cares for the sick and convalescent.",
+    "catalogId": "firstAidNursing",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Healing & Drugs",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

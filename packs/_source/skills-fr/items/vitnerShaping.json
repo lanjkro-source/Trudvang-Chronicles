@@ -1,0 +1,24 @@
+{
+  "_key": "!items!bQi7TpSnToUpVqWr",
+  "_id": "bQi7TpSnToUpVqWr",
+  "name": "Modelage du vitner",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "xLsr00rXsYtZu0v1",
+  "sort": 10200000,
+  "system": {
+    "description": "Le vitner peut être modelé au travers de différentes méthodes : les chants et les sons (galda), la gestuelle (sejda) et les pensées (vyrda). Quelle que soit la méthode, cette discipline accorde des modificateurs, mais l’invocateur doit connaître au moins l’une des trois spécialités pour pouvoir lancer un sort. Les trois méthodes ne peuvent pas être combinées ; un sort est modelé soit par le galda, soit par le sejda, soit par le vyrda. Cette discipline donne également la connaissance du langage écrit des arts de l’incantation.",
+    "summary": "Discipline fondatrice du modelage du vitner : galda par les chants, sejda par la gestuelle, vyrda par la pensée ; connaître au moins une méthode est indispensable, et elles ne se combinent pas.",
+    "catalogId": "vitnerShaping",
+    "kind": "discipline",
+    "parentSkill": "vitnerCraft",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!zZnK3QkQlRmSnToU",
+  "_id": "zZnK3QkQlRmSnToU",
+  "name": "Extraits & poisons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2700000,
+  "system": {
+    "description": "Le personnage a appris les effets de différentes substances sur le corps. En plus de la préparation d’extraits, cette spécialité inclut la connaissance de ce qui peut arriver à une personne exposée à un extrait spécifique et la façon dont on peut aider la victime à surmonter ses effets. Le personnage a appris à reconnaître un extrait grâce à son goût, son odeur, son apparence et ses effets lorsque quelqu’un y a été exposé. Après avoir identifié l’extrait impliqué, le personnage peut déterminer l’antidote à utiliser pour neutraliser les effets. Il a également appris à améliorer l’équilibre corporel et à augmenter la vitesse de guérison grâce à diverses substances. Dans le cadre de cette spécialité, on considère comme « blessure » tout ce qui cause une altération au corps, depuis les maladies jusqu’aux fractures en passant par les plaies.",
+    "summary": "Connaît les effets des substances sur le corps : préparer des extraits, identifier un poison et venir en aide à ses victimes.",
+    "catalogId": "extractsPotions",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Healing & Drugs",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

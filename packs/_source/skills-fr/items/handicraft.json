@@ -1,0 +1,24 @@
+{
+  "_key": "!items!FvcMTgMhNiOjPkQl",
+  "_id": "FvcMTgMhNiOjPkQl",
+  "name": "Artisanat",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1600000,
+  "system": {
+    "description": "Le personnage sait construire et façonner des choses. Cette discipline est liée à trois différents groupes d’artisanat, Contrefaçon, Matériaux durs et Matériaux souples, chacun ayant ses propres spécialités.",
+    "summary": "Permet de construire et de façonner des objets ; elle se décline en contrefaçon et en matériaux durs ou souples.",
+    "catalogId": "handicraft",
+    "kind": "discipline",
+    "parentSkill": "care",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

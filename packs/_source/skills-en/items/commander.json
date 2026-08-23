@@ -1,0 +1,24 @@
+{
+  "_key": "!items!RdBekXrXsYtZu0v1",
+  "_id": "RdBekXrXsYtZu0v1",
+  "name": "Commander",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1400000,
+  "system": {
+    "description": "The person has become proficient in the management of armies and warfare, how to move troops, what it takes to entertain troops, and which defenses should be built around the squad. In short, the specialty covers everything connected with managing armies and waging war.",
+    "summary": "Masters commanding armies: troop movements, distractions and squad defenses.",
+    "catalogId": "commander",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handler",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

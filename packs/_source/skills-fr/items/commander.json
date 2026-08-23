@@ -1,0 +1,24 @@
+{
+  "_key": "!items!RdBekXrXsYtZu0v1",
+  "_id": "RdBekXrXsYtZu0v1",
+  "name": "Commander",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1400000,
+  "system": {
+    "description": "Le personnage maîtrise la gestion des armées et de la guerre, sait comment déplacer les troupes et ce qui est nécessaire pour les distraire, et connaît les défenses à mettre en œuvre pour protéger une escouade. En résumé, la spécialité couvre tout ce qui a trait à la gestion des armées et à la façon de mener une guerre.",
+    "summary": "Maîtrise la conduite des armées : mouvements de troupes, diversions et défenses d’une escouade.",
+    "catalogId": "commander",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handler",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

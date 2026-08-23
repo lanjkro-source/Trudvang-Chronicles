@@ -1,0 +1,24 @@
+{
+  "_key": "!items!NqipcfIdJeKfLgMh",
+  "_id": "NqipcfIdJeKfLgMh",
+  "name": "Storytelling",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3600000,
+  "system": {
+    "description": "The person has learned the art of storytelling. They know how to speak and act to evoke a certain mood among listeners and can, without much preparation, come up with a story about anything or tell epic legends.",
+    "summary": "Masters the storyteller’s art: inventing tales on any subject or recounting epic legends while setting the mood.",
+    "catalogId": "storytelling",
+    "kind": "discipline",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

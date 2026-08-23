@@ -1,0 +1,24 @@
+{
+  "_key": "!items!5ejIjbGbHcIdJeKf",
+  "_id": "5ejIjbGbHcIdJeKf",
+  "name": "Forgeage thuul",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5200000,
+  "system": {
+    "description": "Le nain a choisi de se consacrer aux anciennes puissances de la montagne et au Thuuldom sacré, et peut apprendre à créer des objets gravés de runes grâce auxquelles il peut faire appel aux forces de la montagne. En acquérant la spécialité Tablette sacrée (Thuuldom), l’arpenteur des brumes peut utiliser les runes découvertes grâce à la Tablette sacrée. Cette spécialité accorde un modificateur de +2 par niveau à la valeur de compétence pour créer des objets et des runes, et sertir des points de divinité dans les runes. Le Forgeage Thuul est simplement un terme générique pour désigner la capacité des nains à donner vie aux esprits des montagnes par l’intermédiaire de matériaux provenant des montagnes. Les thuuls n’ont pas toujours besoin de forger le métal et peuvent également créer des objets avec des matériaux tels que le granite ou des pierres précieuses. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre le nain aux anciennes puissances du Thuuldom : graver des runes puisant dans les forces de la montagne.",
+    "catalogId": "thuulForging",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

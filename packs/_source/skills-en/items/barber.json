@@ -1,0 +1,24 @@
+{
+  "_key": "!items!n0Hbd7y4z5A6B7C8",
+  "_id": "n0Hbd7y4z5A6B7C8",
+  "name": "Barber",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2100000,
+  "system": {
+    "description": "The person has learned to cut and shave hair, and also to pull out “evil” teeth.",
+    "summary": "Cuts hair, shaves beards and extracts bad teeth.",
+    "catalogId": "barber",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

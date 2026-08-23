@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Q2PoYmOjPkQlRmSn",
+  "_id": "Q2PoYmOjPkQlRmSn",
+  "name": "Hard Materials",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1800000,
+  "system": {
+    "description": "The character has learned to make and repair items of hard materials such as stone, metal, wood, and bone. In case of repairs, a successful Skill roll restores 2 in the Breach Value per level of specialty and requires one hour of work.",
+    "summary": "Crafting and repairing objects of stone, metal, wood and bone.",
+    "catalogId": "hardMaterials",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handicraft",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

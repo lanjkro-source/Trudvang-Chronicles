@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Rgg3kJeKfLgMhNiO",
+  "_id": "Rgg3kJeKfLgMhNiO",
+  "name": "Paysan",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2400000,
+  "system": {
+    "description": "Un paysan sait quand et comment il faut s’occuper des animaux ou vendre les biens produits par sa ferme. Il sait également ce qu’il faut faire pour que la ferme puisse survivre à l’hiver et s’y connaît bien dans les tâches quotidiennes.",
+    "summary": "Sait s’occuper des animaux, vendre les biens de la ferme et la faire traverser l’hiver.",
+    "catalogId": "peasant",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

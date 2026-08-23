@@ -1,0 +1,24 @@
+{
+  "_key": "!items!qNx4YUmSnToUpVqW",
+  "_id": "qNx4YUmSnToUpVqW",
+  "name": "Silvertongue",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 8600000,
+  "system": {
+    "description": "The Silvertongue specialty allows a person to speak with formal and technical words in complex sentences. The person has also learned to quickly and convincingly fabricate an untruth, whether great or small. The person can add +2 to their Skill Value per level when making a Skill roll to determine success when lying or using eloquence for something such as persuasion.",
+    "summary": "Speaks with eloquence and invents convincing lies, great or small, to sway any audience.",
+    "catalogId": "silvertongue",
+    "kind": "specialty",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "Language",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

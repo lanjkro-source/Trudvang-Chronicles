@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ncxq7lOjPkQlRmSn",
+  "_id": "ncxq7lOjPkQlRmSn",
+  "name": "Counterfeiting",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 1700000,
+  "system": {
+    "description": "The person has learned to forge impressive objects that appear as close to the original as possible. The more time they spend with the original, the more difficult it is to see through the counterfeit. The person must also have the specialty that the material requires.",
+    "summary": "Enables convincing copies of objects, improved by studying the original.",
+    "catalogId": "counterfeiting",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Handicraft",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Vy1bWIcIdJeKfLgM",
+  "_id": "Vy1bWIcIdJeKfLgM",
+  "name": "1H Heavy Weapons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5600000,
+  "system": {
+    "description": "This specialty develops the character’s ability to use heavy weapons held in one hand, such as arming swords or battle axes. The character gains +2 per level in Skill Value when using one-handed heavy weapons. The specialty , however, is tied to the right or left hand. If the character wants to use one-handed heavy weapons in each hand, they must learn the specialty twice, once for each hand.",
+    "summary": "Specializes the character in heavy weapons wielded one-handed; it is bound to a specific side of the body.",
+    "catalogId": "oneHandedHeavyWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

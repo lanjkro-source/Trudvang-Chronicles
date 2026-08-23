@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Fy9416A6B7C8D9Ea",
+  "_id": "Fy9416A6B7C8D9Ea",
+  "name": "Signes de la nature",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 12200000,
+  "system": {
+    "description": "Un personnage disposant de cette spécialité sait lire et créer des signes de la nature. Il peut s’agir, par exemple, d’un symbole gravé dans l’écorce d’un tronc d’arbre ou dans un encadrement de porte, de pierres positionnées selon un motif particulier, ou de tout autre signe que seul le connaisseur peut trouver. Chaque signe a une importance et peut indiquer à quel point une région est riche en animaux ; s’il y a des trolls dans la forêt, leur nombre et leur type ; qu’on peut trouver un bon endroit pour se reposer à une demi-journée de marche à l’est ; qu’il y a un risque de glissement de terrain, etc. Tout dépend de ce que la personne qui a réalisé le signe veut transmettre. La plupart des signes sont constitués de plusieurs éléments. La partie la plus importante est celle qui transmet le message principal, tel que « Attention aux trolls ». Les autres parties développent le message principal, détaillant par exemple le type de trolls, leur nombre et la direction dans laquelle ils sont partis. Les signes sont positionnés à des endroits qui ne sautent pas aux yeux d’un public non averti, mais pour une personne expérimentée, ils sont relativement évidents.",
+    "summary": "Lit et crée les signes de la nature gravés dans l’écorce, les encadrements ou disposés en pierres.",
+    "catalogId": "wildernessSigns",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Hunting Experience",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

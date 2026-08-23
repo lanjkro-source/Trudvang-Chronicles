@@ -1,0 +1,24 @@
+{
+  "_key": "!items!GtuhRQhNiOjPkQlR",
+  "_id": "GtuhRQhNiOjPkQlR",
+  "name": "Seaman",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13000000,
+  "system": {
+    "description": "The person is familiar with spending long periods of time at sea and does not need to go ashore as often as someone with less experience. The person uses this specialty when a successful Skill roll is required to keep from getting sick on the stormy ocean, or anything that has to do with life on board a ship. The person has also learned most of the common routines and chores that are required when working on a ship. The person knows, for example, how to set sail, how to load the cargo, which ropes and knots to use, and perhaps most importantly , how to sail.",
+    "summary": "Endures long voyages without going ashore, from seasickness to every shipboard chore.",
+    "catalogId": "seaman",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Seafarer",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

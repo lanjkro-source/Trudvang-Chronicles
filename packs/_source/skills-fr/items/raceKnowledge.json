@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ECqOV8B7C8D9EaGb",
+  "_id": "ECqOV8B7C8D9EaGb",
+  "name": "Connaissance des créatures",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "70rhhMhNiOjPkQlR",
+  "sort": 7700000,
+  "system": {
+    "description": "Cette discipline donne à un personnage la connaissance des différentes races exotiques de Trudvang telles que les différentes espèces de trolls, les wurms (ou dragons), les serguronts (anciens esprits) et les salhele (morts-vivants). Il connaît leur façon de penser, leur organisation hiérarchique, leur mode de vie, leurs peurs, leurs forces et faiblesses, et plus encore. Le personnage bénéficie d’un modificateur de +1 par niveau à sa valeur de compétence lorsqu’il essaie de déterminer ce qu’il sait sur des créatures de Trudvang.",
+    "summary": "Connaît les races exotiques de Trudvang : pensée, organisation, peurs, forces et faiblesses des trolls, wurms, serguronts et salhele.",
+    "catalogId": "raceKnowledge",
+    "kind": "discipline",
+    "parentSkill": "knowledge",
+    "parentDiscipline": "",
+    "level": 0,
+    "rollBonus": 1,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

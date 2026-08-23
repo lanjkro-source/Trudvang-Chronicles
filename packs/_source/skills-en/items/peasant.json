@@ -1,0 +1,24 @@
+{
+  "_key": "!items!Rgg3kJeKfLgMhNiO",
+  "_id": "Rgg3kJeKfLgMhNiO",
+  "name": "Peasant",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "GyWCwQhNiOjPkQlR",
+  "sort": 2400000,
+  "system": {
+    "description": "A peasant knows when and how to carry out animal care or trade in their farm’s goods. They also know what it takes for a farm to survive the winter and are well versed in what needs to be done from day to day.",
+    "summary": "Knows how to tend animals, sell the farm’s goods and see it through winter.",
+    "catalogId": "peasant",
+    "kind": "specialty",
+    "parentSkill": "care",
+    "parentDiscipline": "Tradesman",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

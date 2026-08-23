@@ -1,0 +1,24 @@
+{
+  "_key": "!items!ovDp6FaGbHcIdJeK",
+  "_id": "ovDp6FaGbHcIdJeK",
+  "name": "Exploration",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "dqOeVcGbHcIdJeKf",
+  "sort": 13300000,
+  "system": {
+    "description": "Le personnage a une grande endurance lorsqu’il voyage en pleine nature. Le bonus de spécialité est utilisé lorsqu’il doit effectuer un test de compétence au cours d’un long voyage en terres sauvages. De plus, la distance parcourue en un jour par un personnage disposant de cette spécialité est augmentée de 10 % par niveau.",
+    "summary": "Endurance hors norme lors des longs voyages en terres sauvages, avec une distance quotidienne accrue.",
+    "catalogId": "pathwalker",
+    "kind": "specialty",
+    "parentSkill": "wilderness",
+    "parentDiscipline": "Survival",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

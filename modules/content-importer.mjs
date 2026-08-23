@@ -1,7 +1,8 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
+import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 
-const CONTENT_VERSION = 15;
+const CONTENT_VERSION = 16;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -202,86 +203,121 @@ async function upsertActors(source, folders, translationsByKey) {
   return updated;
 }
 
-// Repairs/refreshes a bilingual Skills compendium through official document APIs, healing
-// any stale LevelDB state left behind by earlier NEDB migrations.
-async function syncSkillPack(packId, language) {
+// Repairs a bilingual Skills compendium by rebuilding it from the shared blueprints in
+// modules/skill-pack-data.mjs, healing any stale LevelDB state left behind by earlier
+// NEDB migrations or interrupted system updates. Not part of the normal startup path:
+// shipped packs already contain this data, so this is a GM-triggered repair only.
+export async function syncSkillPack(packId, language) {
   const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
   if (!pack) return;
   // System-shipped packs are locked by default in v14+; unlock for the duration of the rebuild.
   const wasLocked = pack.locked;
   if (wasLocked) await pack.configure({locked: false});
   const lang = await fetchLangPack(language);
-  const text = (keyPath) => {
-    const value = resolveNested(lang, keyPath);
-    return typeof value === "string" ? value : keyPath;
+  const fallback = await fetchLangPack("en");
+  const localize = (keyPath) => {
+    const value = resolveNested(lang, keyPath) ?? resolveNested(fallback, keyPath);
+    return typeof value === "string" ? value : "";
   };
   const FolderClass = foundry.utils.getDocumentClass("Folder");
   const ItemClass = foundry.utils.getDocumentClass("Item");
 
-  const folderIds = new Map();
-  const existingFolders = [...pack.folders.values()];
-  const desiredSkillKeys = Object.keys(TRUDVANG.knowledgeTree);
-  // Folders are rebuilt from scratch on every sync: legacy migrations strand folder
-  // copies inside the items sublevel, which nothing else can clean up.
-  for (const folder of existingFolders) {
+  const {folders, items} = buildSkillPackDocuments({localize});
+
+  // Folders and items are rebuilt from scratch on every repair: legacy NEDB migrations can
+  // strand documents (including misplaced Folder copies) inside the primary sublevel,
+  // which no API surface cleans up.
+  for (const folder of [...pack.folders.values()]) {
     await folder.delete().catch((error) => console.warn(`Trudvang Chronicles | Could not delete pack folder "${folder.name}"`, error));
   }
-  for (const skillKey of desiredSkillKeys) {
-    const name = text(TRUDVANG.skills[skillKey]);
-    const [folder] = await FolderClass.createDocuments([{name, type: "Item", sorting: "a", description: "", flags: {}}], {pack: pack.collection});
-    folderIds.set(skillKey, folder.id);
-  }
-
-  const blueprints = [];
-  for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
-    for (const discipline of disciplines) {
-      const entries = [{...discipline, kind: "discipline"}, ...discipline.specialties.map(specialty => ({...specialty, kind: "specialty"}))];
-      for (const entry of entries) {
-        const description = text(`TRUDVANG.Content.Ability.${entry.id}.Description`);
-        const summary = text(`TRUDVANG.Content.Ability.${entry.id}.Summary`);
-        if (!description || !summary) continue;
-        blueprints.push({
-          name: text(entry.label),
-          type: "ability",
-          img: "icons/svg/book.svg",
-          folder: folderIds.get(skillKey),
-          system: {
-            description, summary,
-            catalogId: entry.id,
-            kind: entry.kind,
-            parentSkill: skillKey,
-            parentDiscipline: entry.kind === "specialty" ? discipline.name : "",
-            level: 0,
-            rollBonus: entry.kind === "specialty" ? 2 : 1,
-            freeLevels: 0
-          },
-          flags: {}
-        });
-      }
-    }
-  }
-
-  // Full rebuild on every sync: legacy NEDB migrations can strand documents (including
-  // misplaced Folder copies) inside the primary sublevel, which no API surface cleans up.
-  const documents = await pack.getDocuments();
-  const allIds = documents.map(document => document.id);
-  if (allIds.length) {
+  const existing = await pack.getDocuments();
+  if (existing.length) {
     try {
-      await ItemClass.deleteDocuments(allIds, {pack: pack.collection});
+      await ItemClass.deleteDocuments(existing.map(document => document.id), {pack: pack.collection});
     } catch (error) {
       console.warn("Trudvang Chronicles | Bulk pack wipe failed, falling back per document", error);
-      for (const id of allIds) {
-        const document = documents.find(candidate => candidate.id === id);
+      for (const document of existing) {
         await document?.delete().catch(() => {});
       }
     }
   }
-  for (const blueprint of blueprints) {
-    await ItemClass.createDocuments([blueprint], {pack: pack.collection});
-  }
+  // Blueprints carry stable deterministic ids, so repairs never invalidate compendium
+  // links from previously imported copies.
+  await FolderClass.createDocuments(folders.map(toCreateData), {pack: pack.collection});
+  await ItemClass.createDocuments(items.map(toCreateData), {pack: pack.collection});
   if (wasLocked) await pack.configure({locked: true}).catch((error) => {
     console.warn(`Trudvang Chronicles | Could not re-lock compendium ${packId}`, error);
   });
+}
+
+// Manual GM repair entry point: rebuilds both Skills compendiums from the shared blueprints.
+export async function repairKnowledgePacks() {
+  ui.notifications.info(game.i18n.localize("TRUDVANG.Import.PacksRebuildStarted"));
+  for (const {code, packName} of SKILL_PACKS) {
+    await syncSkillPack(packName, code);
+  }
+  ui.notifications.info(game.i18n.format("TRUDVANG.Import.PacksRebuilt", {packs: SKILL_PACKS.length}));
+}
+
+const KNOWLEDGE_SYNC_VERSION = CONTENT_VERSION;
+
+// UUID prefix identifying world copies that were dragged out of our Skills packs.
+const KNOWLEDGE_SOURCE_PREFIX = `Compendium.${SYSTEM_ID}.skills-`;
+
+const knowledgeSourceId = (item) => String(item._stats?.compendiumSource ?? item.getFlag("core", "sourceId") ?? "");
+
+// One-time refresh of ability items players imported from earlier releases of the Skills
+// packs: presentation text is healed against the current compendium contents and stale
+// provenance ids are repointed at the current documents. Numeric rule state (levels,
+// bonuses) stays untouched. Shipped packs update automatically with the system; these
+// world copies would otherwise keep the wording of whatever version they came from.
+export async function syncImportedKnowledgeItems({force = false} = {}) {
+  try {
+    const done = Number(game.settings.get(SYSTEM_ID, "knowledgeSyncVersion") || 0);
+    if (!force && done >= KNOWLEDGE_SYNC_VERSION) return false;
+
+    // Index pack documents by catalogId, preferring the pack matching the active language,
+    // plus every known label across languages to detect user-renamed copies.
+    const currentLocale = activeLanguage();
+    const documentsByCatalog = new Map();
+    const namesByCatalog = new Map();
+    for (const {code, packName} of SKILL_PACKS) {
+      const pack = game.packs.get(`${SYSTEM_ID}.${packName}`);
+      if (!pack) continue;
+      for (const document of await pack.getDocuments()) {
+        const catalogId = document.system?.catalogId;
+        if (!catalogId) continue;
+        if (!documentsByCatalog.has(catalogId) || code === currentLocale) documentsByCatalog.set(catalogId, document);
+        if (!namesByCatalog.has(catalogId)) namesByCatalog.set(catalogId, new Set());
+        namesByCatalog.get(catalogId).add(document.name);
+      }
+    }
+
+    let updated = 0;
+    for (const item of game.items.filter(item => item.type === "ability"
+      && item.system.catalogId
+      && knowledgeSourceId(item).startsWith(KNOWLEDGE_SOURCE_PREFIX))) {
+      const match = documentsByCatalog.get(item.system.catalogId);
+      if (!match) continue;
+      const changes = {
+        img: match.img,
+        "system.description": match.system.description,
+        "system.summary": match.system.summary,
+        "_stats.compendiumSource": match.uuid
+      };
+      if (item.getFlag("core", "sourceId")) changes["flags.core.sourceId"] = match.uuid;
+      // Leave player-renamed copies alone apart from artwork and wording refresh.
+      if (namesByCatalog.get(item.system.catalogId)?.has(item.name)) changes.name = match.name;
+      await item.update(changes);
+      updated++;
+    }
+    await game.settings.set(SYSTEM_ID, "knowledgeSyncVersion", KNOWLEDGE_SYNC_VERSION);
+    if (updated) ui.notifications.info(game.i18n.format("TRUDVANG.Notification.KnowledgeSynced", {count: updated}));
+    return updated > 0;
+  } catch (error) {
+    console.error("Trudvang Chronicles | Knowledge import sync failed", error);
+    return false;
+  }
 }
 
 export async function importStarterContent({force = false} = {}) {
@@ -390,8 +426,8 @@ export async function importStarterContent({force = false} = {}) {
       if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
     }
 
-    await syncSkillPack("skills-en", "en");
-    await syncSkillPack("skills-fr", "fr");
+    // The Skills compendiums ship as compiled packs with the system and update with it;
+    // they are no longer rebuilt at runtime (see syncSkillPack / repairKnowledgePacks).
 
     // Persist the version only after every repair step succeeded, so a partial
     // failure re-runs the whole pass on the next world entry.

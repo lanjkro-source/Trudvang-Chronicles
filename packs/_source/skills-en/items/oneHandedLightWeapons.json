@@ -1,0 +1,24 @@
+{
+  "_key": "!items!aWd0H5y4z5A6B7C8",
+  "_id": "aWd0H5y4z5A6B7C8",
+  "name": "1H Light Weapons",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "l154h0tZu0v1w2x3",
+  "sort": 5500000,
+  "system": {
+    "description": "This specialty develops the character’s ability to use light weapons held with one hand, such as a dagger or a club. The character gains +2 per level in Skill Value when using one-handed light weapons. The specialty , however, is tied to the right or left hand. If the character wants to use one-handed light weapons in each hand, they must learn the specialty twice, once for each hand.",
+    "summary": "Specializes the character in light weapons held in one hand; the skill is bound to the right or left hand.",
+    "catalogId": "oneHandedLightWeapons",
+    "kind": "specialty",
+    "parentSkill": "fighting",
+    "parentDiscipline": "Armed Fighting",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

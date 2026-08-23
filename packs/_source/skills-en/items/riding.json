@@ -1,0 +1,24 @@
+{
+  "_key": "!items!c5bC4lQlRmSnToUp",
+  "_id": "c5bC4lQlRmSnToUp",
+  "name": "Riding",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "WkJvggLgMhNiOjPk",
+  "sort": 800000,
+  "system": {
+    "description": "The character has learned to ride a horse and is able to do maneuvers on horseback. Because of this, they get +2 on their Skill Value per level in the specialty whenever they try to ride fast, get the horse to jump, or do other tricks. The Riding specialty can also be used in conjunction with long rides, when battles are fought, or for complications in the wild. Each combat round that a rider fights on horseback, they must pay 15 (-3 per specialty level) Combat Points. So at full specialty level, there is no extra cost for fighting on horseback. More information on Mounted Combat is in the Game Master Guide book, page 95.",
+    "summary": "Lets the character ride horses and perform maneuvers on their backs, even at full gallop.",
+    "catalogId": "riding",
+    "kind": "specialty",
+    "parentSkill": "agility",
+    "parentDiscipline": "Horsemanship",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

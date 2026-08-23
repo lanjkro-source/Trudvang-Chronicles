@@ -1,0 +1,24 @@
+{
+  "_key": "!items!UcrWQiLgMhNiOjPk",
+  "_id": "UcrWQiLgMhNiOjPk",
+  "name": "Chants & instruments de musique",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "PyGcwz2x3y4z5A6B",
+  "sort": 3500000,
+  "system": {
+    "description": "Le personnage dispose d’une belle voix grâce à laquelle il peut captiver une audience. La spécialité lui donne également la capacité de jouer de la musique avec la plupart des instruments de Trudvang. Il peut ajouter +2 par niveau à sa valeur de compétence lorsqu’il chante ou joue d’un instrument.",
+    "summary": "Confère une belle voix et la maîtrise de la plupart des instruments de Trudvang pour envoûter une audience.",
+    "catalogId": "singingPlayingInstruments",
+    "kind": "specialty",
+    "parentSkill": "entertainment",
+    "parentDiscipline": "Music & Dancing",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

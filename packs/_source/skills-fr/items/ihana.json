@@ -1,0 +1,24 @@
+{
+  "_key": "!items!YePlajOjPkQlRmSn",
+  "_id": "YePlajOjPkQlRmSn",
+  "name": "Ihana",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5000000,
+  "system": {
+    "description": "L’elfe a choisi de se consacrer à la religion Toikalokke et peut apprendre à lire les étoiles au travers desquelles il peut accéder aux talents divins elfiques. En acquérant la spécialité Tablette sacrée (Toikalokke), le fidèle peut invoquer les pouvoirs divins de la Tablette sacrée. Cette spécialité accorde un modificateur de +2 par niveau à la valeur de compétence pour observer les étoiles, qui accordent à l’ihana des points de divinité temporaires supplémentaires. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre l’elfe au culte Toikalokke : lire les étoiles pour atteindre les talents divins elfiques de sa Tablette sacrée.",
+    "catalogId": "ihana",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}
