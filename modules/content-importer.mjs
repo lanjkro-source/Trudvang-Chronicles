@@ -1,7 +1,7 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
 import { TRUDVANG } from "./config.mjs";
 
-const CONTENT_VERSION = 14;
+const CONTENT_VERSION = 15;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -219,6 +219,8 @@ async function syncSkillPack(packId, language) {
   const ItemClass = foundry.utils.getDocumentClass("Item");
 
   const folderIds = new Map();
+  const existingFolders = [...pack.folders.values()];
+  const desiredSkillKeys = Object.keys(TRUDVANG.knowledgeTree);
   // Folders are rebuilt from scratch on every sync: legacy migrations strand folder
   // copies inside the items sublevel, which nothing else can clean up.
   for (const folder of existingFolders) {
@@ -319,17 +321,24 @@ export async function importStarterContent({force = false} = {}) {
     if (obsoleteWorldKnowledge.length) await Item.deleteDocuments(obsoleteWorldKnowledge.map(item => item.id));
 
     // Refresh world ability texts (descriptions/summaries) against the current localization.
+    // Each field is healed independently: a legacy item can carry an up-to-date description
+    // with an empty/collapsed summary (the pre-0.2.8 shape), which must still be repaired.
     const catalogText = (catalogId, suffix) => {
       const key = `TRUDVANG.Content.Ability.${catalogId}.${suffix}`;
       const text = game.i18n.localize(key);
       return text === key ? "" : text;
     };
-    for (const item of game.items.filter(item => item.type === "ability" && item.system.catalogId)) {
+    const abilityTextChanges = (item) => {
       const description = catalogText(item.system.catalogId, "Description");
-      if (!description || description === item.system.description) continue;
-      const changes = {"system.description": description};
-      if (!item.system.summary || item.system.summary === item.system.description) changes["system.summary"] = catalogText(item.system.catalogId, "Summary");
-      await item.update(changes);
+      const summary = catalogText(item.system.catalogId, "Summary");
+      const changes = {};
+      if (description && description !== item.system.description) changes["system.description"] = description;
+      if (summary && (!item.system.summary || item.system.summary === item.system.description)) changes["system.summary"] = summary;
+      return Object.keys(changes).length ? changes : null;
+    };
+    for (const item of game.items.filter(item => item.type === "ability" && item.system.catalogId)) {
+      const changes = abilityTextChanges(item);
+      if (changes) await item.update(changes);
     }
 
     // Fold orphaned ability copies (no catalogId but an official label) into the catalog:
@@ -368,23 +377,21 @@ export async function importStarterContent({force = false} = {}) {
     for (const actor of game.actors) {
       const updates = actor.items.map(item => {
         const match = catalogById.get(item.system.catalogId || item.getFlag(SYSTEM_ID, "catalogId"));
-        if (match) return {_id: item.id, "system.description": match.system.description, "system.source": match.system.source};
+        if (match) {
+          const changes = {_id: item.id};
+          if (match.system.description !== item.system.description) changes["system.description"] = match.system.description;
+          if (match.system.source !== item.system.source) changes["system.source"] = match.system.source;
+          return Object.keys(changes).length > 1 ? changes : null;
+        }
         if (item.type !== "ability") return null;
-        const description = catalogText(item.system.catalogId, "Description");
-        if (!description || description === item.system.description) return null;
-        const update = {_id: item.id, "system.description": description};
-        if (!item.system.summary || item.system.summary === item.system.description) update["system.summary"] = catalogText(item.system.catalogId, "Summary");
-        return update;
+        const changes = abilityTextChanges(item);
+        return changes ? {_id: item.id, ...changes} : null;
       }).filter(Boolean);
       if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
     }
 
-    try {
-      await syncSkillPack("skills-en", "en");
-      await syncSkillPack("skills-fr", "fr");
-    } catch (packError) {
-      console.error("Trudvang Chronicles | Skills compendium sync failed", packError);
-    }
+    await syncSkillPack("skills-en", "en");
+    await syncSkillPack("skills-fr", "fr");
 
     // Persist the version only after every repair step succeeded, so a partial
     // failure re-runs the whole pass on the next world entry.
