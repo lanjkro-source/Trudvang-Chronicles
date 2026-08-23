@@ -132,6 +132,8 @@ export class TrudvangActorSheet extends BaseActorSheet {
       };
       const disciplineNodes = (TRUDVANG.knowledgeTree[key] || []).map(discipline => ({...buildNode(discipline, key, "discipline"), specialties: discipline.specialties.map(specialty => buildNode(specialty, key, "specialty", discipline.name))}));
       const catalogItemIds = new Set(disciplineNodes.flatMap(node => [node.item.id, ...node.specialties.map(child => child.item.id)]).filter(Boolean));
+      // Catalog-backed items always render through their tree node, never as orphans.
+      const knownCatalogIds = new Set(Object.values(TRUDVANG.knowledgeTree).flatMap(disciplines => [disciplines.map(d => d.id), ...disciplines.map(d => d.specialties.map(s => s.id))].flat()));
       return {
         key, label, skill, level,
         description: game.i18n.localize(TRUDVANG.skillDescriptions[key]),
@@ -143,7 +145,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
         canDecrease: level > 1,
         canIncrease: level < 10,
         disciplines: disciplineNodes,
-        unassigned: abilities.filter(item => !catalogItemIds.has(item.id)).map(decorate)
+        unassigned: abilities.filter(item => !catalogItemIds.has(item.id) && !knownCatalogIds.has(item.system.catalogId)).map(decorate)
       };
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");

@@ -213,8 +213,12 @@ export class TrudvangActor extends BaseActor {
     const cultureId = changes["system.details.culture"] ?? details.culture;
     const allowedLanguages = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
     if (!allowedLanguages.includes(details.nativeLanguage)) changes["system.details.nativeLanguage"] = allowedLanguages[0];
-    if (Object.keys(changes).length) await this.update(changes);
-    return Object.keys(changes).length > 0;
+    if (Object.keys(changes).length) {
+      await this.update(changes);
+      await this.syncCreationDefaults();
+      return true;
+    }
+    return false;
   }
 
   async syncCreationDefaults() {
