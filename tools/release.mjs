@@ -51,8 +51,10 @@ steps.push({label: `system.json version -> ${version}`, run: () => {
   writeFileSync("system.json", raw.replace(/"version":\s*"[^"]+"/, `"version": "${version}"`), "utf8");
 }});
 steps.push({label: "npm run check", run: () => {
-  const result = spawnSync("npm.cmd", ["run", "check"], {encoding: "utf8"});
-  if (result.status !== 0) fail(`Validation failed:\n${result.stdout}\n${result.stderr}`);
+  const runner = process.platform === "win32"
+    ? spawnSync("cmd", ["/d", "/s", "/c", "npm run check"], {encoding: "utf8"})
+    : spawnSync("npm", ["run", "check"], {encoding: "utf8"});
+  if (runner.status !== 0) fail(`Validation failed:\n${runner.stdout}\n${runner.stderr}`);
 }});
 steps.push({label: `commit (${dirty ? `${dirty.split("\n").length} changed paths` : "no changes besides bump"})`, run: () => {
   git(["add", "-A"]);

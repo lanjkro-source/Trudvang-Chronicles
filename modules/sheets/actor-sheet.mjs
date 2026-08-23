@@ -427,6 +427,16 @@ export class TrudvangCharacterSheet extends TrudvangActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {width: 780, height: 740});
   }
+
+  // Leaving creation mode finalizes the character (validations, spent points); closing the
+  // window mid-creation would otherwise strand the work in a half-configured state.
+  async close(options = {}) {
+    if (this.actor?.isOwner && this.actor.system?.experience?.creationMode) {
+      try { await this.actor.toggleCreationMode(); }
+      catch (error) { console.warn("Trudvang Chronicles | Could not leave character creation on close", error); }
+    }
+    return super.close(options);
+  }
 }
 
 export class TrudvangNpcSheet extends TrudvangActorSheet {

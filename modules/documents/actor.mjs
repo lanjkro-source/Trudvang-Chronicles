@@ -190,6 +190,12 @@ export class TrudvangActor extends BaseActor {
       || (entry && item.system.parentSkill === entry.skillKey && item.system.kind === entry.kind && String(item.name).trim().toLocaleLowerCase() === entry.name.toLocaleLowerCase())));
   }
 
+  catalogText(catalogId, suffix) {
+    const key = `TRUDVANG.Content.Ability.${catalogId}.${suffix}`;
+    const text = game.i18n.localize(key);
+    return text === key ? "" : text;
+  }
+
   getAbilityBreakdown(item) {
     const skill = Number(this.system.skills?.[item.system.parentSkill]?.value || 1);
     const own = Number(item.system.level || 0) * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
@@ -226,7 +232,7 @@ export class TrudvangActor extends BaseActor {
       const existing = this.findKnowledgeItem(definition.catalogId);
       const name = definition.suffix ? `${game.i18n.localize(entry.label)} (${definition.suffix})` : game.i18n.localize(entry.label);
       if (!existing) {
-        await this.createEmbeddedDocuments("Item", [{name, type: "ability", system: {catalogId: entry.id, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: definition.level, freeLevels: definition.level, rollBonus: entry.rollBonus}}]);
+        await this.createEmbeddedDocuments("Item", [{name, type: "ability", system: {catalogId: entry.id, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: definition.level, freeLevels: definition.level, rollBonus: entry.rollBonus, description: this.catalogText(entry.id, "Description"), summary: this.catalogText(entry.id, "Summary")}}]);
       } else {
         const changes = {name, "system.catalogId": entry.id, "system.freeLevels": definition.level};
         if (Number(existing.system.level || 0) < definition.level) changes["system.level"] = definition.level;
@@ -361,10 +367,11 @@ export class TrudvangActor extends BaseActor {
     const name = game.i18n.localize(entry.label);
     const discipline = entry.parentCatalogId ? this.getCatalogEntry(entry.parentCatalogId) : null;
     const topics = entry.kind === "discipline" ? new Intl.ListFormat(game.i18n.lang, {style: "long", type: "conjunction"}).format(entry.specialties.map(specialty => game.i18n.localize(specialty.label))) : "";
-    const description = TRUDVANG.knowledgeDescriptions[entry.id] ? game.i18n.localize(TRUDVANG.knowledgeDescriptions[entry.id]) : entry.kind === "discipline"
+    const description = this.catalogText(catalogId, "Description") || (TRUDVANG.knowledgeDescriptions[entry.id] ? game.i18n.localize(TRUDVANG.knowledgeDescriptions[entry.id]) : entry.kind === "discipline"
       ? game.i18n.format("TRUDVANG.Description.DisciplineSummary", {name, topics})
-      : game.i18n.format("TRUDVANG.Description.SpecialtySummary", {name, discipline: discipline ? game.i18n.localize(discipline.label) : entry.parentDiscipline});
-    const data = {name, type: "ability", system: {description, catalogId, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: 1, rollBonus: entry.rollBonus}};
+      : game.i18n.format("TRUDVANG.Description.SpecialtySummary", {name, discipline: discipline ? game.i18n.localize(discipline.label) : entry.parentDiscipline}));
+    const summary = this.catalogText(catalogId, "Summary") || description;
+    const data = {name, type: "ability", system: {description, summary, catalogId, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: 1, rollBonus: entry.rollBonus}};
     const religion = this.getReligionForSpecialty(catalogId);
     if (this.system.experience?.creationMode) {
       const created = await this.createEmbeddedDocuments("Item", [data]);
