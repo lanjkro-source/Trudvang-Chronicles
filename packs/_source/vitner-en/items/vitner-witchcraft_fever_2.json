@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
     "description": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 143",
     "level": 2,
     "cost": 4,
     "modifier": -4

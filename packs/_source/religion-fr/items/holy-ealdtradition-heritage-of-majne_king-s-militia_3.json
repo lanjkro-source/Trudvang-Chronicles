@@ -12,8 +12,8 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
-    "description": "TRUDVANG.Description.PowerSummary",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Milice du roi est un pouvoir de Héritage de Majne ; sa description de règles complète sera ajoutée ultérieurement.",
+    "source": "Livre des règles, p. 236",
     "level": 2,
     "cost": 4,
     "modifier": -4

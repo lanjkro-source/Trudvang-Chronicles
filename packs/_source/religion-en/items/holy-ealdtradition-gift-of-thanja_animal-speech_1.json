@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
     "description": "The Bruid is able to speak with ordinary animals for the duration of the ability.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 176",
     "level": 1,
     "cost": 2,
     "modifier": -2

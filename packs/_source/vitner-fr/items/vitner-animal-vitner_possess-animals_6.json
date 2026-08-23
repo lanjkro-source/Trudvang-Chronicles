@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "Ce sort permet à l’enchanteur de projeter sa conscience dans le corps d’un vertébré non intelligent.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 4,
     "cost": 8,
     "modifier": -8

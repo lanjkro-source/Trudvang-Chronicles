@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
     "description": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 129",
     "level": 5,
     "cost": 10,
     "modifier": -10

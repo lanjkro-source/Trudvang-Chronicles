@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Power of Trolls",
     "description": "The spirit conjurer can whisper a task to any person within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 223",
     "level": 5,
     "cost": 10,
     "modifier": -10

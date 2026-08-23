@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
     "description": "L’ihana obtient une image visible d’une personne ou d’une créature qui parcourt le sentier sur lequel il se trouve en exa minant ses traces, ce qui lui permet de la pister facilement.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 293",
     "level": 3,
     "cost": 6,
     "modifier": -6

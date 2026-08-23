@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 2,
     "cost": 4,
     "modifier": -4

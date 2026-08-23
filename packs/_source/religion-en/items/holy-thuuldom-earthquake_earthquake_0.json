@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-earthquake",
     "tablet": "Earthquake",
     "description": "The spell causes an area within the range to rumble with a single, heavy tremor.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 2,
     "modifier": -2

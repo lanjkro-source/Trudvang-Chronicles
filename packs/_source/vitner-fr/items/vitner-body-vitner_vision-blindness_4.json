@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "La vision de la personne enchantée est améliorée pendant toute la durée du sort.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 192",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
     "description": "Le prêtre crée une source sacrée de lumière qui s’étend autour de lui.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 262",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "Ce sort permet de créer un grand bouclier (la moitié de la taille d’un humain, cf.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 4,
     "cost": 8,
     "modifier": -8

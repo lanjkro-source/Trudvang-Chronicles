@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-healing-rune",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure.",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

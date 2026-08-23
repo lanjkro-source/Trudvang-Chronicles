@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
     "description": "The priest positively radiates with divine power while the surrounding air is saturated with the god’s tangible presence.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 199",
     "level": 5,
     "cost": 10,
     "modifier": -10

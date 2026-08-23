@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 176",
     "level": 2,
     "cost": 4,
     "modifier": -4

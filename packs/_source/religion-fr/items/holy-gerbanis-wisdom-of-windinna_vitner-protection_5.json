@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
     "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 226",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "Le sort Vision lointaine confère un bonus de +1 à la valeur de compé tence pour toucher à l’aide d’une arme à distance.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 176",
     "level": 2,
     "cost": 4,
     "modifier": -4

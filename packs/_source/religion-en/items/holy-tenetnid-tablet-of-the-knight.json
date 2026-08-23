@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-knight",
     "description": "Knightly blessings that empower armor, spears, authority, sacred weapons, and holy battle forms.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 199",
     "level": 1,
     "tabletType": "holy",
     "religion": "tenetNid"

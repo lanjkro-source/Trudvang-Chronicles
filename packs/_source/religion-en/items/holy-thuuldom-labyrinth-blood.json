@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-labyrinth-blood",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that grants an instinctive supernatural sense for navigating tunnels and labyrinths.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

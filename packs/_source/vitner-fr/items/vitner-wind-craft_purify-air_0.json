@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’en chanteur, ce qui lui permet de respirer en toute sécurité.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 1,
     "cost": 2,
     "modifier": -2

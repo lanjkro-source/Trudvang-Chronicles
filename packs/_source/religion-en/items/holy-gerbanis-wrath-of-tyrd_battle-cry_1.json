@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
     "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 171",
     "level": 1,
     "cost": 2,
     "modifier": -2

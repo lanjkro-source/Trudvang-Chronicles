@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
     "description": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 101",
     "level": 3,
     "cost": 6,
     "modifier": -6

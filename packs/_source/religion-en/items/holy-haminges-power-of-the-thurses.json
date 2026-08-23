@@ -1,5 +1,5 @@
 {
-  "name": "Power of the Thurses",
+  "name": "Power of Thurses",
   "type": "tablet",
   "img": "icons/svg/holy-shield.svg",
   "flags": {
@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses",
     "description": "Troll and thurse powers granting icy hides, immense strength, breath weapons, and destructive rage.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 1,
     "tabletType": "holy",
     "religion": "haminges"

@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 3,
     "cost": 6,
     "modifier": -6

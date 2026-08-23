@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-borjorn-s-hand",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that when the Thuul activates the rune, he receives guidance from the mountain that will aid him in the next action he undertakes.",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

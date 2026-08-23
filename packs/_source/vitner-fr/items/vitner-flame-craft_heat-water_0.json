@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 166",
     "level": 1,
     "cost": 2,
     "modifier": -2

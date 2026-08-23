@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
     "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 112",
     "level": 4,
     "cost": 8,
     "modifier": -8

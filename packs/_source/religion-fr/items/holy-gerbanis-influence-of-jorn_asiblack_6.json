@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
     "description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 222",
     "level": 4,
     "cost": 8,
     "modifier": -8

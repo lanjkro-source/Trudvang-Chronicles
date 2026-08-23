@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
     "description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 112",
     "level": 3,
     "cost": 6,
     "modifier": -6

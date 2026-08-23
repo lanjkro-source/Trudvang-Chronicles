@@ -11,9 +11,9 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
     "tabletId": "holy-haminges-power-of-the-thurses",
-    "tablet": "Power of the Thurses",
+    "tablet": "Power of Thurses",
     "description": "The spirit conjurer is filled with a portion of the ice troll’s essence and is unaffected by non-magical cold.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 1,
     "cost": 2,
     "modifier": -2

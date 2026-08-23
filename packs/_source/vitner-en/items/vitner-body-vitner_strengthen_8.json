@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
     "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 96",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
     "description": "The enchanter forms a circular wall of vitner with a diameter of 2 meters.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 129",
     "level": 5,
     "cost": 10,
     "modifier": -10

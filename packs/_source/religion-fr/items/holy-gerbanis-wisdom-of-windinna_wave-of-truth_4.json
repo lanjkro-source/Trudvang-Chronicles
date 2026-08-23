@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
     "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 226",
     "level": 3,
     "cost": 6,
     "modifier": -6

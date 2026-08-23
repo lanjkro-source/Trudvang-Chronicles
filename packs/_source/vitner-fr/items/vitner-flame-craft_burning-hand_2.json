@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 166",
     "level": 2,
     "cost": 4,
     "modifier": -4

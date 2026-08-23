@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
     "description": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 185",
     "level": 3,
     "cost": 6,
     "modifier": -6

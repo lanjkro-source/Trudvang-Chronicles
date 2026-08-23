@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
     "description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 212",
     "level": 3,
     "cost": 6,
     "modifier": -6

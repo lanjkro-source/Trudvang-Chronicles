@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihana peut purifier jusqu’à 1 litre d’eau.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 297",
     "level": 1,
     "cost": 2,
     "modifier": -2

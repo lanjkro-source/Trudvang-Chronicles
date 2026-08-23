@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Don de Magh",
     "description": "Le héros implore une bonne année pour les récoltes, et pendant l’année qui suit, la zone affectée sera bénie par des récoltes abondantes, une fertilité mira culeuse et un temps inhabituellement plaisant.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 232",
     "level": 5,
     "cost": 10,
     "modifier": -10

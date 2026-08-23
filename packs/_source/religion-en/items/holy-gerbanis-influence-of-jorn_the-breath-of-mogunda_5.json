@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence of Jorn",
     "description": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 160",
     "level": 3,
     "cost": 6,
     "modifier": -6

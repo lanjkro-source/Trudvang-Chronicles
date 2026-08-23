@@ -11,9 +11,9 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1",
     "tabletId": "holy-haminges-power-of-the-thurses",
-    "tablet": "Power of the Thurses",
+    "tablet": "Power of Thurses",
     "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "En entonnant un chant particulier, l’enchanteur peut se servir des créatures des environs pour transmettre un message.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 1,
     "cost": 2,
     "modifier": -2

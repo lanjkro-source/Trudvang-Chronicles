@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
     "description": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 143",
     "level": 4,
     "cost": 8,
     "modifier": -8

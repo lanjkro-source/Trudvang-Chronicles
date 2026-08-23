@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 3,
     "cost": 6,
     "modifier": -6

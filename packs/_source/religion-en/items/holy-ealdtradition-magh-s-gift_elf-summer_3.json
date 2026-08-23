@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Magh's Gift",
     "description": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 183",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-magh-s-gift",
     "description": "Chants et liens aidant voyages, cavaliers, récoltes, héros et le changement des saisons.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 232",
     "level": 1,
     "tabletType": "holy",
     "religion": "ealdTradition"

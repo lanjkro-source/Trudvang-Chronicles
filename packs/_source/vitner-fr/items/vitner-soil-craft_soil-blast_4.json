@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 3,
     "cost": 6,
     "modifier": -6

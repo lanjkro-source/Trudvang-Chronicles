@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
     "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 132",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
     "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 123",
     "level": 2,
     "cost": 4,
     "modifier": -4

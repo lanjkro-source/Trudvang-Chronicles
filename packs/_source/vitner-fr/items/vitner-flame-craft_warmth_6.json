@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "d’une plaine venteuse la durée de ce sort sera réduite de moitié.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 166",
     "level": 4,
     "cost": 8,
     "modifier": -8

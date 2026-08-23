@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "L’ihana peut domestiquer un animal sauvage ou une bête, qui se comporte alors comme un chat de ferme domes tique.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 295",
     "level": 4,
     "cost": 8,
     "modifier": -8

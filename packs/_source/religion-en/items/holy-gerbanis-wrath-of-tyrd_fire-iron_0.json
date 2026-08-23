@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
     "description": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 171",
     "level": 1,
     "cost": 2,
     "modifier": -2

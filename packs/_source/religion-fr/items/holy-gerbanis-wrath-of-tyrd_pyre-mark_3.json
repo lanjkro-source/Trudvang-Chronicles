@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
     "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 220",
     "level": 2,
     "cost": 4,
     "modifier": -4

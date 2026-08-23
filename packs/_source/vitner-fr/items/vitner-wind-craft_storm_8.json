@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 5,
     "cost": 10,
     "modifier": -10

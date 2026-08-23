@@ -11,9 +11,9 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
     "tabletId": "holy-haminges-power-of-the-thurses",
-    "tablet": "Power of the Thurses",
+    "tablet": "Power of Thurses",
     "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 4,
     "cost": 8,
     "modifier": -8

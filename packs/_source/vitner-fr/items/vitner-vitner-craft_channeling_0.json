@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "Protects the recipient from heat, flame, and supernatural fire.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 241",
     "level": 5,
     "cost": 10,
     "modifier": -10

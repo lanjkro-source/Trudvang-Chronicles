@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "L’enchanteur se sert du vitner pour créer une pensée et l’implanter dans l’esprit d’un autre être intelligent.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 176",
     "level": 3,
     "cost": 6,
     "modifier": -6

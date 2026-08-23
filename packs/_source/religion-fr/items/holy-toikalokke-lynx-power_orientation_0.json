@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
     "description": "L’ihana sait toujours à quelle direc tion il fait face (nord, sud, etc.) quand il voyage dans les bois, quelles que soient les conditions défavorables pouvant gêner sa vision, comme le brouillard ou l’obscurité.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 293",
     "level": 1,
     "cost": 2,
     "modifier": -2

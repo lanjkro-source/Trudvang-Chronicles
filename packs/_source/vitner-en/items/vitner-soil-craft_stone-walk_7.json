@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
     "description": "The spell creates a coating of vitner around the target that pushes away",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 123",
     "level": 4,
     "cost": 8,
     "modifier": -8

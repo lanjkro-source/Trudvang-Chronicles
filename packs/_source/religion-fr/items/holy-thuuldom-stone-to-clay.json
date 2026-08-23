@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stone-to-clay",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui elle expire, la pierre reprend sa forme d’origine.",
+    "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

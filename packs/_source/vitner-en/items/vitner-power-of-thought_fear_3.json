@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
     "description": "The spell sends a wave of manipulative energy through a chosen victim, overwhelming its thoughts with horrific visions.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 116",
     "level": 2,
     "cost": 4,
     "modifier": -4

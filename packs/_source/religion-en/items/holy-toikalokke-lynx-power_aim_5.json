@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
     "description": "When the Ihana attacks with ranged weapons, they can take extra aim at a target for the duration of the ability , gaining an additional +1 to the SV to strike the target.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 239",
     "level": 3,
     "cost": 6,
     "modifier": -6

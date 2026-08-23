@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 2,
     "cost": 4,
     "modifier": -4

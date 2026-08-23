@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur pousse un hurlement à glacer le sang qui possède un facteur de peur de 1d10 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 270",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui quand on inscrit cette rune sur une paire de gants, de bracelets ou de bras sards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues.",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

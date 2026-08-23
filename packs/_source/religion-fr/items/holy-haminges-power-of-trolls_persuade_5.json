@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 274",
     "level": 3,
     "cost": 6,
     "modifier": -6

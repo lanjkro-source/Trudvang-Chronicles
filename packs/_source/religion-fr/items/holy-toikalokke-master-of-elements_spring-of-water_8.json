@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 297",
     "level": 3,
     "cost": 6,
     "modifier": -6

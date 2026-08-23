@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 2,
     "cost": 4,
     "modifier": -4

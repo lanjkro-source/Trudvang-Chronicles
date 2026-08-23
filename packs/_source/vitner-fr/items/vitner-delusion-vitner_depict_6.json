@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "En se concentrant sur un objet, une créature ou une personne, l’enchanteur peut en évoquer une réplique exacte.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 3,
     "cost": 6,
     "modifier": -6

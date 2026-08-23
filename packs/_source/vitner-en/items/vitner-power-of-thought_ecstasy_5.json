@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
     "description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 116",
     "level": 3,
     "cost": 6,
     "modifier": -6

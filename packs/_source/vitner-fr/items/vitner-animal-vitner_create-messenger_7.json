@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur crée un messager de chair et de sang, qui peut délivrer un message en un lieu prédéfini.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 4,
     "cost": 8,
     "modifier": -8

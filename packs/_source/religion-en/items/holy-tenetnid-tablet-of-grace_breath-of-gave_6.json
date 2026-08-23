@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
     "description": "Restores life and strength through Gave's merciful breath.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 197",
     "level": 4,
     "cost": 8,
     "modifier": -8

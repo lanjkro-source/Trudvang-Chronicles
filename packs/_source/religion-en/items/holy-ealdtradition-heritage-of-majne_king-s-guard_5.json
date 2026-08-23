@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
     "description": "The Bruid summons a spirit warrior from the great King’s guard.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 181",
     "level": 3,
     "cost": 6,
     "modifier": -6

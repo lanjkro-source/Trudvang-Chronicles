@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "The Ihana can domesticate a wild animal or beast, getting it to act like a tame farm cat.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 237",
     "level": 4,
     "cost": 8,
     "modifier": -8

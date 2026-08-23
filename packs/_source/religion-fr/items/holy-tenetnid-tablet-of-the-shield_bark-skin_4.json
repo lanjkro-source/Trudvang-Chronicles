@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
     "description": "Le gavlien invoque la force du chêne noir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 257",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
     "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 197",
     "level": 3,
     "cost": 6,
     "modifier": -6

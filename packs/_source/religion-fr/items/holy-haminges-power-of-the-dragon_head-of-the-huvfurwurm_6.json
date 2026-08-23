@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
     "description": "Le conjurateur est capable de survivre à une décapitation.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 277",
     "level": 4,
     "cost": 8,
     "modifier": -8

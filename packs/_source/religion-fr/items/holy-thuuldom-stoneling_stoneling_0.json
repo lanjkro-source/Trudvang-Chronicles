@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stoneling",
     "tablet": "Enfant de la pierre",
     "description": "Le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 2,
     "modifier": -2

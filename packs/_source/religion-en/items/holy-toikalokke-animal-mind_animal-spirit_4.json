@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 237",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "F Type : persistant F Durée : 7 tours de jeu F Portée : personnelle F Temps d’invocation : 1 tour de jeu Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 275",
     "level": 4,
     "cost": 8,
     "modifier": -8

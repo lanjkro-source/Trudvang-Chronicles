@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
     "description": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 143",
     "level": 1,
     "cost": 2,
     "modifier": -2

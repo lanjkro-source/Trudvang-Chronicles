@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 259",
     "level": 3,
     "cost": 6,
     "modifier": -6

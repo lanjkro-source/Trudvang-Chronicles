@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-labyrinth-blood",
     "tablet": "Labyrinth Blood",
     "description": "Grants an instinctive supernatural sense for navigating tunnels and labyrinths.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "cost": 2,
     "modifier": -2

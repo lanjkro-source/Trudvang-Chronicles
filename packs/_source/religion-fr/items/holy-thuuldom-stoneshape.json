@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stoneshape",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui à l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne.",
+    "source": "Livre des règles, p. 285",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

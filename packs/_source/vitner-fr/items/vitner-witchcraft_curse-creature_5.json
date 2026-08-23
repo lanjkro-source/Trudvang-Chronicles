@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "Pour maudire une créature, l’enchan teur doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de sorts tels que Détection des êtres vivants.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 184",
     "level": 4,
     "cost": 8,
     "modifier": -8

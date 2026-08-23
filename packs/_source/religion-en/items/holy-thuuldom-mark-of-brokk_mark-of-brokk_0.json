@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-mark-of-brokk",
     "tablet": "Mark of Brokk",
     "description": "When the Thuul activates the rune-inscribed object, it is able to miraculously repair broken or damaged items.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "cost": 2,
     "modifier": -2

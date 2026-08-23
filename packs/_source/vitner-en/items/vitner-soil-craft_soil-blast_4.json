@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
     "description": "The enchanter picks up a handful of soil from the ground (or a pocket) and hurls it at a target within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 123",
     "level": 3,
     "cost": 6,
     "modifier": -6

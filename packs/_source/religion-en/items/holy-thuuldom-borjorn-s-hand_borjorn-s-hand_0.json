@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-borjorn-s-hand",
     "tablet": "Borjorn's Hand",
     "description": "When the Thuul activates the rune, he receives guidance from the mountain that will aid him in the next action he undertakes.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
     "description": "The priest prays to Gave, and as a result a radiant beam of divine light pierces the sky (or the ceiling, if indoors) and engulfs all demons within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 201",
     "level": 5,
     "cost": 10,
     "modifier": -10

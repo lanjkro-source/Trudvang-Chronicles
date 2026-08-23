@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 166",
     "level": 4,
     "cost": 8,
     "modifier": -8

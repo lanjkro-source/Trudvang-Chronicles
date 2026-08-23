@@ -12,8 +12,8 @@
     "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "TRUDVANG.Description.PowerSummary",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Armure de la tempête est un pouvoir de Pouvoir d'Enken ; sa description de règles complète sera ajoutée ultérieurement.",
+    "source": "Livre des règles, p. 224",
     "level": 3,
     "cost": 6,
     "modifier": -6

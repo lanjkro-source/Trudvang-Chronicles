@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
     "description": "An aura of holy protection is created around the selected armor, increasing the Protection Value by +1.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 199",
     "level": 1,
     "cost": 2,
     "modifier": -2

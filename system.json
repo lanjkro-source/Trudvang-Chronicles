@@ -2,49 +2,49 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
-  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.4.0/trudvang-chronicles.zip",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.4.1/trudvang-chronicles.zip",
   "packs": [
     {
       "name": "skills-en",
-      "label": "Skills",
+      "label": "Skills (en)",
       "path": "packs/skills-en",
       "type": "Item",
       "system": "trudvang-chronicles"
     },
     {
       "name": "skills-fr",
-      "label": "Compétences",
+      "label": "Compétences (fr)",
       "path": "packs/skills-fr",
       "type": "Item",
       "system": "trudvang-chronicles"
     },
     {
       "name": "vitner-en",
-      "label": "Vitner",
+      "label": "Vitner (en)",
       "path": "packs/vitner-en",
       "type": "Item",
       "system": "trudvang-chronicles"
     },
     {
       "name": "vitner-fr",
-      "label": "Vitner",
+      "label": "Vitner (fr)",
       "path": "packs/vitner-fr",
       "type": "Item",
       "system": "trudvang-chronicles"
     },
     {
       "name": "religion-en",
-      "label": "Religion",
+      "label": "Religion (en)",
       "path": "packs/religion-en",
       "type": "Item",
       "system": "trudvang-chronicles"
     },
     {
       "name": "religion-fr",
-      "label": "Religion",
+      "label": "Religion (fr)",
       "path": "packs/religion-fr",
       "type": "Item",
       "system": "trudvang-chronicles"

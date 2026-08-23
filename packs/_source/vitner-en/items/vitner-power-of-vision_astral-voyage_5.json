@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
     "description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 120",
     "level": 4,
     "cost": 8,
     "modifier": -8

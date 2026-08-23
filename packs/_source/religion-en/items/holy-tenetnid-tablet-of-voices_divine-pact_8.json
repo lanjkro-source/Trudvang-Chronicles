@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
     "description": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 206",
     "level": 5,
     "cost": 10,
     "modifier": -10

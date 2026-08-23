@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 2,
     "cost": 4,
     "modifier": -4

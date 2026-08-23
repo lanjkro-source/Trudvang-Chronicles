@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 105",
     "level": 4,
     "cost": 8,
     "modifier": -8

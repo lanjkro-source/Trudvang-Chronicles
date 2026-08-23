@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 4,
     "cost": 8,
     "modifier": -8

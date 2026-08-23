@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Channels a tendril of Dimhall's deathly energy through the mage's hands.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 105",
     "level": 3,
     "cost": 6,
     "modifier": -6

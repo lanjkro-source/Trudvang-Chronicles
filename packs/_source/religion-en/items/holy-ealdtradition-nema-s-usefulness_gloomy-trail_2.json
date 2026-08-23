@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
     "description": "The Bruid summons a blanket of fog that spreads out before them and their allies.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 185",
     "level": 2,
     "cost": 4,
     "modifier": -4

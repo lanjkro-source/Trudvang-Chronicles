@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi",
     "description": "Bénédictions de combat accordant force géante, voix commandement, gardes divins et guerriers héroïques.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 218",
     "level": 1,
     "tabletType": "holy",
     "religion": "gerbanis"

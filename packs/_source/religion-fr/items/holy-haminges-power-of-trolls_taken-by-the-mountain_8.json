@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "Le conjurateur peut suggérer une tâche à toute personne située à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 274",
     "level": 5,
     "cost": 10,
     "modifier": -10

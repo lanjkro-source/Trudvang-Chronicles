@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
     "description": "The spell allows the enchanted person to easily see their own footprints on the ground.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 112",
     "level": 1,
     "cost": 2,
     "modifier": -2

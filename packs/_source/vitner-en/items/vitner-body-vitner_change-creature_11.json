@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
     "description": "The vitner that the spell brings forth is powerful enough to turn a living creature into the form of an entirely different one.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 96",
     "level": 5,
     "cost": 10,
     "modifier": -10

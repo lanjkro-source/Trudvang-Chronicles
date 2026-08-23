@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "une valeur de situation de 6 (le modificateur de Constitution s’applique).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 274",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 295",
     "level": 1,
     "cost": 2,
     "modifier": -2

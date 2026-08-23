@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 1,
     "cost": 2,
     "modifier": -2

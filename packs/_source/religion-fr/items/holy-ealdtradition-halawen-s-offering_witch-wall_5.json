@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
     "description": "Le bruide demande à ses ancêtres de veiller sur lui et sur l’un de ses alliés, et tous deux reçoivent une protection divine contre le vitner.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 239",
     "level": 3,
     "cost": 6,
     "modifier": -6

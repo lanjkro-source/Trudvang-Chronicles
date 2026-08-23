@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’inté grer ensuite à un objet.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 4,
     "cost": 8,
     "modifier": -8

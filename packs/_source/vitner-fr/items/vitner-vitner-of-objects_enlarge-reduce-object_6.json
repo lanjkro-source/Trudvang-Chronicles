@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 4,
     "cost": 8,
     "modifier": -8

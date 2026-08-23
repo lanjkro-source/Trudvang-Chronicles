@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 1,
     "cost": 2,
     "modifier": -2

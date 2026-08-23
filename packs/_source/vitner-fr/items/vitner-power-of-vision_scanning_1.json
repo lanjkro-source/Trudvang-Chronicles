@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 2,
     "cost": 4,
     "modifier": -4

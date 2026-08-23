@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
     "description": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 277",
     "level": 1,
     "cost": 2,
     "modifier": -2

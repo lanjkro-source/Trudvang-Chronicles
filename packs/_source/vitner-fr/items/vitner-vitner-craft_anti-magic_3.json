@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 3,
     "cost": 6,
     "modifier": -6

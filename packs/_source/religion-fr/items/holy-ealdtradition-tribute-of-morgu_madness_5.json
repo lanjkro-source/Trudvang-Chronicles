@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
     "description": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 241",
     "level": 3,
     "cost": 6,
     "modifier": -6

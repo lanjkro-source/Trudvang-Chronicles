@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-heat-of-the-depths",
     "tablet": "Heat of the Depths",
     "description": "The Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "cost": 2,
     "modifier": -2

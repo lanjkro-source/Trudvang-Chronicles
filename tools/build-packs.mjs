@@ -32,8 +32,16 @@ const resolversFor = code => {
     const value = resolveKey(langPack, keyPath) ?? resolveKey(enLang, keyPath);
     return typeof value === "string" ? value : fallback;
   };
-  const format = (key, params) => Object.entries(params ?? {}).reduce((text, [name, value]) => text.split(`{${name}}`).join(String(value)), key);
-  return {localize, format};
+  // Foundry's i18n.format resolves the key to its template BEFORE interpolating; mirror
+  // that here, falling back to the raw key only when the translation is missing.
+  const format = (key, params) => {
+    const template = resolveKey(langPack, key) ?? resolveKey(enLang, key);
+    const text = typeof template === "string" ? template : String(key);
+    return Object.entries(params ?? {}).reduce((acc, [name, value]) => acc.split(`{${name}}`).join(String(value)), text);
+  };
+  // The tablet catalogue stores one page per edition (page / pageFr); each language pack
+  // therefore cites its own edition explicitly.
+  return {localize, format, isFrench: () => code === "fr"};
 };
 
 // Defensive cleanup: provenance fields must never leak into published packs — a stale
@@ -121,8 +129,8 @@ for (const {code, packName, label} of SKILL_PACKS) {
 }
 
 for (const {code, packName, label, tabletType} of TABLET_PACKS) {
-  const {localize, format} = resolversFor(code);
-  const {folders, items} = buildTabletPackDocuments({localize, format, tabletType, strict: true});
+  const {localize, format, isFrench} = resolversFor(code);
+  const {folders, items} = buildTabletPackDocuments({localize, format, isFrench, tabletType, strict: true});
   const tablets = items.filter(item => item.type === "tablet").length;
   const powers = items.length - tablets;
   await processPack({packName, label, documents: [...folders, ...items].map(sanitize), summary: `${tablets} tablets, ${powers} powers, ${folders.length} folders`});

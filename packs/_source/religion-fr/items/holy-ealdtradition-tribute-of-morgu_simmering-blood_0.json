@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
     "description": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 241",
     "level": 1,
     "cost": 2,
     "modifier": -2

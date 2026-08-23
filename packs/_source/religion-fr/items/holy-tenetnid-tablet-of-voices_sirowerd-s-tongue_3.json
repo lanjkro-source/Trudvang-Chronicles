@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
     "description": "Le prêtre développe pour un temps la faculté de parler et de comprendre une langue étrangère, avec un bonus de +2 à sa valeur de compétence en Connaissances.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 255",
     "level": 2,
     "cost": 4,
     "modifier": -4

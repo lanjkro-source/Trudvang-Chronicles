@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillon nant autour de lui ou du personnage de son choix.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 224",
     "level": 4,
     "cost": 8,
     "modifier": -8

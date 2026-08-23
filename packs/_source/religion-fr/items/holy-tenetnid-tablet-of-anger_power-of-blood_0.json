@@ -12,8 +12,8 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
-    "description": "TRUDVANG.Description.PowerSummary",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Puissance du sang est un pouvoir de Tablette de la colère ; sa description de règles complète sera ajoutée ultérieurement.",
+    "source": "Livre des règles, p. 250",
     "level": 1,
     "cost": 2,
     "modifier": -2

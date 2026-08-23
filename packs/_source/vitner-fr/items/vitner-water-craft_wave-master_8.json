@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort affecte l’eau d’une rivière, d’un lac ou d’un océan, qui devient soit l’alliée, soit l’ennemie des créatures et des navires qui la traversent.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 5,
     "cost": 10,
     "modifier": -10

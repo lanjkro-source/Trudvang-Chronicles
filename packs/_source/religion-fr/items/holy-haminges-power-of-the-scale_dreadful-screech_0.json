@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur profère un son terri fiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’en tendre (à l’exception du conjurateur lui-même).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 270",
     "level": 1,
     "cost": 2,
     "modifier": -2

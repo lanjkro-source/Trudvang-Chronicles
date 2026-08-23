@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-gills-of-the-blackfish",
     "tablet": "Gills of the Blackfish",
     "description": "The rune makes it possible for the one bearing the sacred object to breathe underwater for the duration.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "Ce sort tisse une couche de vitner bé néfique autour d’une cible située à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "L’enchanteur peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 184",
     "level": 1,
     "cost": 2,
     "modifier": -2

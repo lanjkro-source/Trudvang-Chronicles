@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-mark-of-brokk",
     "tablet": "Marque de Brokk",
     "description": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de bras sards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 2,
     "modifier": -2

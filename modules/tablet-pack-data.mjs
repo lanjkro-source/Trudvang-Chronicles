@@ -14,10 +14,10 @@ import { deterministicId } from "./skill-pack-data.mjs";
 //   plus a subfolder per tablet holding its divine powers.
 
 export const TABLET_PACKS = [
-  {code: "en", packName: "vitner-en", label: "Vitner", tabletType: "vitner"},
-  {code: "fr", packName: "vitner-fr", label: "Vitner", tabletType: "vitner"},
-  {code: "en", packName: "religion-en", label: "Religion", tabletType: "holy"},
-  {code: "fr", packName: "religion-fr", label: "Religion", tabletType: "holy"}
+  {code: "en", packName: "vitner-en", label: "Vitner (en)", tabletType: "vitner"},
+  {code: "fr", packName: "vitner-fr", label: "Vitner (fr)", tabletType: "vitner"},
+  {code: "en", packName: "religion-en", label: "Religion (en)", tabletType: "holy"},
+  {code: "fr", packName: "religion-fr", label: "Religion (fr)", tabletType: "holy"}
 ];
 
 function folderDocument({id, name, parent = null, sort}) {
@@ -45,10 +45,10 @@ function packItem(data, {id, folder = null, sort}) {
 // localize(keyPath[, fallback]) resolves a localization key; format(key, params)
 // interpolates {placeholders}. With strict=true a missing essential name throws —
 // the package build must never ship an incomplete pack.
-export function buildTabletPackDocuments({localize, format, tabletType, strict = false} = {}) {
+export function buildTabletPackDocuments({localize, format, isFrench, tabletType, strict = false} = {}) {
   if (typeof localize !== "function" || typeof format !== "function") throw new Error("buildTabletPackDocuments requires localize(keyPath) and format(key, params) callbacks");
   if (!["vitner", "holy"].includes(tabletType)) throw new Error(`Unknown tablet type: ${tabletType}`);
-  const resolvers = {localize, format};
+  const resolvers = {localize, format, isFrench};
   const tablets = TABLET_CATALOG.filter(tablet => tablet.tabletType === tabletType);
   if (!tablets.length) throw new Error(`No ${tabletType} tablets found in the catalogue`);
 

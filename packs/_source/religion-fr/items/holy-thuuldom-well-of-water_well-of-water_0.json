@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-well-of-water",
     "tablet": "Source d'eau",
     "description": "Le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 288",
     "level": 1,
     "cost": 2,
     "modifier": -2

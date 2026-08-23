@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
     "description": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 239",
     "level": 4,
     "cost": 8,
     "modifier": -8

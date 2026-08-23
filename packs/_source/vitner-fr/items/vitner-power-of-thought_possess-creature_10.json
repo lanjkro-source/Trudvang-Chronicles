@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 176",
     "level": 5,
     "cost": 10,
     "modifier": -10

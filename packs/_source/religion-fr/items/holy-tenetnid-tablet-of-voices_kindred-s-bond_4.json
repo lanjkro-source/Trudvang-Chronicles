@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
     "description": "Le gavlien peut bénir quelqu’un et ses futurs agissements.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 255",
     "level": 3,
     "cost": 6,
     "modifier": -6

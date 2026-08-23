@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
     "description": "Le bruide invoque un esprit guerrier venant de la grande garde royale.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 236",
     "level": 3,
     "cost": 6,
     "modifier": -6

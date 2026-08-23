@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 237",
     "level": 1,
     "cost": 2,
     "modifier": -2

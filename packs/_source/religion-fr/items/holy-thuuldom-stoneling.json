@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stoneling",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing.",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

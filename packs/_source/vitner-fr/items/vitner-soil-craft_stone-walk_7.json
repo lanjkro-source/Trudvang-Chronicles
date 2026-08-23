@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "L’énergie de ce sort crée un déséqui libre dans le corps de la personne en chantée, ce qui a pour conséquence de modifier immédiatement son apparence physique.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 192",
     "level": 3,
     "cost": 6,
     "modifier": -6

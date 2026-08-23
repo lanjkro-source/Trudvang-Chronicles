@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "En contrôlant le vitner qui s’écoule dans une source d’eau située à proximité, l’enchanteur peut diriger et modeler l’eau comme bon lui semble.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 2,
     "cost": 4,
     "modifier": -4

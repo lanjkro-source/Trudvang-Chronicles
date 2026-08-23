@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence of Jorn",
     "description": "The Stormkelt asks Jorn for speed and assistance, summoning a steed out of a sudden rolling fog from the land of Stormi.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 160",
     "level": 4,
     "cost": 8,
     "modifier": -8

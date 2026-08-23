@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "F Temps de tissage : 1 tour de jeu Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 3,
     "cost": 6,
     "modifier": -6

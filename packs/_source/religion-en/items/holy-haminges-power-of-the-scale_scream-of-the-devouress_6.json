@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
     "description": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 218",
     "level": 4,
     "cost": 8,
     "modifier": -8

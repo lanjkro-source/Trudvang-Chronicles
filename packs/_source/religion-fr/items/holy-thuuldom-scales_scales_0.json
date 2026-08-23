@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-scales",
     "tablet": "Écailles",
     "description": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 2,
     "modifier": -2

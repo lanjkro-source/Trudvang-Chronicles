@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
     "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 109",
     "level": 4,
     "cost": 8,
     "modifier": -8

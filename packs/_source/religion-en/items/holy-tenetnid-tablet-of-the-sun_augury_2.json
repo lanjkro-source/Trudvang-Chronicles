@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablet of the Sun",
     "description": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 203",
     "level": 2,
     "cost": 4,
     "modifier": -4

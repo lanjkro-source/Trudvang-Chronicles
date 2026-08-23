@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort permet à la personne enchan tée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 2,
     "cost": 4,
     "modifier": -4

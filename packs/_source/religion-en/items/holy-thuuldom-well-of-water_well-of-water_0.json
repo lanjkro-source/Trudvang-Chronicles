@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-well-of-water",
     "tablet": "Well of Water",
     "description": "The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 232",
     "level": 1,
     "cost": 2,
     "modifier": -2

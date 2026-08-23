@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
     "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 139",
     "level": 2,
     "cost": 4,
     "modifier": -4

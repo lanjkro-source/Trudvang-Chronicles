@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 5,
     "cost": 10,
     "modifier": -10

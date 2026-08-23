@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
     "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 178",
     "level": 2,
     "cost": 4,
     "modifier": -4

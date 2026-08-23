@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-cave-spider-s-grip",
     "tablet": "Cave Spider's Grip",
     "description": "The rune makes it possible for the Thuul to climb vertical walls.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 2,
     "modifier": -2

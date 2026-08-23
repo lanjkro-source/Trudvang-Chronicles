@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stone-to-clay",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that by placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level).",
+    "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

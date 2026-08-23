@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "Ce sort transforme tous types de pierres et de minerais, les rendant lisses et malléables comme de la glaise épaisse.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 4,
     "cost": 8,
     "modifier": -8

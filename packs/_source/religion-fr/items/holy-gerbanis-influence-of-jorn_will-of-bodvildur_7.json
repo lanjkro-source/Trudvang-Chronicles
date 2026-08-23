@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
     "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 222",
     "level": 4,
     "cost": 8,
     "modifier": -8

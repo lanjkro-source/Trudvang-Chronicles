@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort peut améliorer temporairement l’odorat de la personne enchantée, qui reçoit un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’odorat est un facteur de réussite important.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 192",
     "level": 2,
     "cost": 4,
     "modifier": -4

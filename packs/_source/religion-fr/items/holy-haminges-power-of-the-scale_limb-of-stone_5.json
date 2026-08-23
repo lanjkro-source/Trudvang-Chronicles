@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 270",
     "level": 3,
     "cost": 6,
     "modifier": -6

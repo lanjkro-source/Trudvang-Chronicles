@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "Ce sort permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de vitner illusoire qui entourent les êtres et les objets.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 5,
     "cost": 10,
     "modifier": -10

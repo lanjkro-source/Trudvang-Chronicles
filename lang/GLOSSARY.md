@@ -559,7 +559,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Description.SpecialtySummary` | {name} focuses on this particular application of {discipline} and adds twice its level to applicable checks. | {name} approfondit cette application particulière de {discipline} et ajoute deux fois son niveau aux tests concernés. |
 | `TRUDVANG.Description.TabletSummary` | {name} gathers the spells or divine powers belonging to this magical tradition. | {name} rassemble les sortilèges ou pouvoirs divins appartenant à cette tradition magique. |
 | `TRUDVANG.Description.PowerSummary` | {name} is a power from {tablet}; its complete rules description will be added later. | {name} est un pouvoir de {tablet} ; sa description de règles complète sera ajoutée ultérieurement. |
-| `TRUDVANG.Description.SourcePage` | Player's Handbook, p. {page} | Manuel du joueur, p. {page} |
+| `TRUDVANG.Description.SourcePage` | Player's Handbook, p. {page} | Livre des règles, p. {page} |
 
 ## `TRUDVANG.Cost`
 
@@ -660,15 +660,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Source.GMG90` | Game Master's Guide, p. 90 | Guide du maître, p. 90 |
 | `TRUDVANG.Content.Source.GMG93` | Game Master's Guide, p. 93 | Guide du maître, p. 93 |
 | `TRUDVANG.Content.Source.GMG94` | Game Master's Guide, p. 94 | Guide du maître, p. 94 |
-| `TRUDVANG.Content.Source.PHB47` | Player's Handbook, p. 47 | Manuel du joueur, p. 47 |
-| `TRUDVANG.Content.Source.PHB48` | Player's Handbook, p. 48 | Manuel du joueur, p. 48 |
-| `TRUDVANG.Content.Source.PHB50` | Player's Handbook, p. 50 | Manuel du joueur, p. 50 |
-| `TRUDVANG.Content.Source.PHB55` | Player's Handbook, p. 55 | Manuel du joueur, p. 55 |
-| `TRUDVANG.Content.Source.PHB59` | Player's Handbook, p. 59 | Manuel du joueur, p. 59 |
-| `TRUDVANG.Content.Source.PHB69` | Player's Handbook, p. 69 | Manuel du joueur, p. 69 |
-| `TRUDVANG.Content.Source.PHB74` | Player's Handbook, p. 74 | Manuel du joueur, p. 74 |
-| `TRUDVANG.Content.Source.PHB92` | Player's Handbook, p. 92 | Manuel du joueur, p. 92 |
-| `TRUDVANG.Content.Source.PHB201` | Player's Handbook, p. 201 | Manuel du joueur, p. 201 |
+| `TRUDVANG.Content.Source.PHB47` | Player's Handbook, p. 47 | Livre des règles, p. 47 |
+| `TRUDVANG.Content.Source.PHB48` | Player's Handbook, p. 48 | Livre des règles, p. 48 |
+| `TRUDVANG.Content.Source.PHB50` | Player's Handbook, p. 50 | Livre des règles, p. 50 |
+| `TRUDVANG.Content.Source.PHB55` | Player's Handbook, p. 55 | Livre des règles, p. 55 |
+| `TRUDVANG.Content.Source.PHB59` | Player's Handbook, p. 59 | Livre des règles, p. 59 |
+| `TRUDVANG.Content.Source.PHB69` | Player's Handbook, p. 69 | Livre des règles, p. 69 |
+| `TRUDVANG.Content.Source.PHB74` | Player's Handbook, p. 74 | Livre des règles, p. 74 |
+| `TRUDVANG.Content.Source.PHB92` | Player's Handbook, p. 92 | Livre des règles, p. 92 |
+| `TRUDVANG.Content.Source.PHB201` | Player's Handbook, p. 201 | Livre des règles, p. 201 |
 
 ## `TRUDVANG.Content.Item.Seax`
 
@@ -1539,7 +1539,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Name` | Power of the Thurses | Puissance des tursirs |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Name` | Power of Thurses | Puissance des tursirs |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls`
 

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 237",
     "level": 1,
     "cost": 2,
     "modifier": -2

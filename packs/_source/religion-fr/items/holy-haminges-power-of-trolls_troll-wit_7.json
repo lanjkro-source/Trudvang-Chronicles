@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 274",
     "level": 4,
     "cost": 8,
     "modifier": -8

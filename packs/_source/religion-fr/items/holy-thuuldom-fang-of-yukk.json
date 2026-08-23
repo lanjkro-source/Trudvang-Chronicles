@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-fang-of-yukk",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihana peut provoquer un séisme qui secoue le sol tout autour de lui et jette au sol toutes les créatures situées à portée (sauf l’ihana).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 297",
     "level": 3,
     "cost": 6,
     "modifier": -6

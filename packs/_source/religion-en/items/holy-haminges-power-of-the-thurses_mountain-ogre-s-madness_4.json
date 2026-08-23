@@ -11,9 +11,9 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
     "tabletId": "holy-haminges-power-of-the-thurses",
-    "tablet": "Power of the Thurses",
+    "tablet": "Power of Thurses",
     "description": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 3,
     "cost": 6,
     "modifier": -6

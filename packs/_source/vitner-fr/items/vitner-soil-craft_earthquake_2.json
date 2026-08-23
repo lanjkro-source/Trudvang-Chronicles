@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "Ce sort génère un violent tremblement de terre dans une zone située à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 2,
     "cost": 4,
     "modifier": -4

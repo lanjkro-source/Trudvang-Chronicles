@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-well-of-water",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location.",
+    "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
     "description": "Le prêtre développe pour un temps la faculté de comprendre une langue étrangère.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 255",
     "level": 1,
     "cost": 2,
     "modifier": -2

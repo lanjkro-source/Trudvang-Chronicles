@@ -235,13 +235,18 @@ async function rebuildCompendiumFromBlueprints(pack, blueprints) {
 
 // Language text resolvers built from the fetched translation JSONs — not game.i18n,
 // whose active locale may differ from the language pack being rebuilt.
-function langResolvers(lang, fallback) {
+function langResolvers(lang, fallback, {isFrench} = {}) {
   const localize = (keyPath, defaultValue = "") => {
     const value = resolveNested(lang, keyPath) ?? resolveNested(fallback, keyPath);
     return typeof value === "string" ? value : defaultValue;
   };
-  const format = (key, params) => Object.entries(params ?? {}).reduce((text, [name, value]) => text.split(`{${name}}`).join(String(value)), key);
-  return {localize, format};
+  // Resolve the key to its template before interpolating params, mirroring game.i18n.format.
+  const format = (key, params) => {
+    const template = resolveNested(lang, key) ?? resolveNested(fallback, key);
+    const text = typeof template === "string" ? template : key;
+    return Object.entries(params ?? {}).reduce((acc, [name, value]) => acc.split(`{${name}}`).join(String(value)), text);
+  };
+  return {localize, format, isFrench};
 }
 
 async function unlockPackWhile(pack, work) {
@@ -273,8 +278,8 @@ export async function syncTabletPack(packId, language, tabletType) {
   const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
   if (!pack) return;
   await unlockPackWhile(pack, async () => {
-    const {localize, format} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"));
-    await rebuildCompendiumFromBlueprints(pack, buildTabletPackDocuments({localize, format, tabletType}));
+    const {localize, format, isFrench} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"), {isFrench: () => language === "fr"});
+    await rebuildCompendiumFromBlueprints(pack, buildTabletPackDocuments({localize, format, isFrench, tabletType}));
   });
 }
 

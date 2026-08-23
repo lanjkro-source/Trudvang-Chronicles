@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
     "description": "F Dégâts : 1d10 (JO 7-10) + 8 ; valeur de protection : 30 ; valeur d’intégrité : 300 ; MI : -2 ; AA : 4 F Confère au porteur un bonus de +6 à sa valeur de protection F Confère au porteur un bonus de +4 à toutes ses valeurs de compétence as ",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 239",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
     "description": "The magic in the Seal spell binds another spell within it, which is later added to an object.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 129",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "By singing a special song, the mage can use creatures nearby to pass on a message.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 1,
     "cost": 2,
     "modifier": -2

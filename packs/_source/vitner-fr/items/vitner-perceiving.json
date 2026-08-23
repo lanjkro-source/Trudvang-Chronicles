@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "vitner-perceiving",
     "description": "Divinations pour trouver lieux, êtres, objets, morts-vivants, routes et terrain environnant.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 173",
     "level": 1,
     "tabletType": "vitner",
     "religion": ""

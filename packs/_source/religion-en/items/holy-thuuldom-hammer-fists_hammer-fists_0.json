@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-hammer-fists",
     "tablet": "Hammer Fists",
     "description": "Hardens the Thuul's fists into crushing weapons like smithing hammers.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "cost": 2,
     "modifier": -2

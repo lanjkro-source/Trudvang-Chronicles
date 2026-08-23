@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
     "description": "Le prêtre dirige son regard puissant vers un adversaire.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 250",
     "level": 3,
     "cost": 6,
     "modifier": -6

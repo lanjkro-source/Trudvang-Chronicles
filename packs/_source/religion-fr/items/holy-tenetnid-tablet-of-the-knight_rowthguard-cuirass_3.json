@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 3.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 259",
     "level": 2,
     "cost": 4,
     "modifier": -4

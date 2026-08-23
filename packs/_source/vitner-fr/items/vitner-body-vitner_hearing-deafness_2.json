@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 192",
     "level": 2,
     "cost": 4,
     "modifier": -4

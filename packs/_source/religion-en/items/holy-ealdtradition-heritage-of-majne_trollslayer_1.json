@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
     "description": "The Bruid will receive the divine power to harm trolls and trollkin with greater potency for the duration of the ability.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 181",
     "level": 1,
     "cost": 2,
     "modifier": -2

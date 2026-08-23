@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-scales",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the power from the rune stretches like a snakeskin of metal over the Thuul’s body.",
+    "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

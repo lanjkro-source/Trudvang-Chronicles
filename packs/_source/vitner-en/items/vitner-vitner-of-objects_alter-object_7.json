@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
     "description": "The spell affects any object with a size equal to or smaller than a large box.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 132",
     "level": 4,
     "cost": 8,
     "modifier": -8

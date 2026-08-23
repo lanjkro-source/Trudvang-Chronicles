@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
     "description": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 109",
     "level": 2,
     "cost": 4,
     "modifier": -4

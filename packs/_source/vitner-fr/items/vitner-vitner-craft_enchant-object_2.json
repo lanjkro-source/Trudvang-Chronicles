@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-fang-of-yukk",
     "tablet": "Fang of Yukk",
     "description": "Empowers an inscribed weapon with the deadly bite of Yukk.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 230",
     "level": 1,
     "cost": 2,
     "modifier": -2

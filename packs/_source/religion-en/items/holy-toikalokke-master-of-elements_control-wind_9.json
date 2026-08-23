@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 241",
     "level": 4,
     "cost": 8,
     "modifier": -8

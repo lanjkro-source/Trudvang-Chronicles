@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Le vitner que conjure ce sort est assez puissant pour donner à une créature vivante la forme d’une tout autre créature.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 192",
     "level": 5,
     "cost": 10,
     "modifier": -10

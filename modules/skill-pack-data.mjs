@@ -6,8 +6,8 @@ import { TRUDVANG } from "./config.mjs";
 // This module must stay free of any Foundry or browser global.
 
 export const SKILL_PACKS = [
-  {code: "en", packName: "skills-en", label: "Skills"},
-  {code: "fr", packName: "skills-fr", label: "Compétences"}
+  {code: "en", packName: "skills-en", label: "Skills (en)"},
+  {code: "fr", packName: "skills-fr", label: "Compétences (fr)"}
 ];
 
 // Deterministic FNV-based id: pack document ids must never change between releases,

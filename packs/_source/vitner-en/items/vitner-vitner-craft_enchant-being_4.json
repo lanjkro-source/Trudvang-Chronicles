@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
     "description": "The spell weaves together a layer of beneficial vitner around a target within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 129",
     "level": 3,
     "cost": 6,
     "modifier": -6

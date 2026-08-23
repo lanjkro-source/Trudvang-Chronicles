@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that hardens the Thuul's fists into crushing weapons like smithing hammers.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

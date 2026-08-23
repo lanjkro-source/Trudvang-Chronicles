@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
     "description": "The spell creates a sudden storm, which swirls and blows away all trash, dust, insects, objects, and beings smaller than 50 kg that are within a 20-meter radius of the enchanter.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 139",
     "level": 5,
     "cost": 10,
     "modifier": -10

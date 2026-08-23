@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
     "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 222",
     "level": 2,
     "cost": 4,
     "modifier": -4

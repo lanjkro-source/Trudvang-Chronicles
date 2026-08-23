@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Ce sort crée un lien entre Trudvang et Dimhall, le royaume des morts, qui permet à l’enchanteur d’appeler l’esprit et l’âme d’une personne décédée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 4,
     "cost": 8,
     "modifier": -8

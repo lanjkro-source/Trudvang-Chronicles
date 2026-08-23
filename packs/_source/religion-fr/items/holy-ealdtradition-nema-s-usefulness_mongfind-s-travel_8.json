@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
     "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 244",
     "level": 5,
     "cost": 10,
     "modifier": -10

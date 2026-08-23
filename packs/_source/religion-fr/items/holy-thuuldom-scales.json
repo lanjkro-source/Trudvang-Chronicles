@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-scales",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul.",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

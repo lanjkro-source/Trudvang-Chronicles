@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
     "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 277",
     "level": 3,
     "cost": 6,
     "modifier": -6

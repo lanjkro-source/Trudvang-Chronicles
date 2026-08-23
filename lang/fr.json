@@ -473,7 +473,7 @@
       "SpecialtySummary": "{name} approfondit cette application particulière de {discipline} et ajoute deux fois son niveau aux tests concernés.",
       "TabletSummary": "{name} rassemble les sortilèges ou pouvoirs divins appartenant à cette tradition magique.",
       "PowerSummary": "{name} est un pouvoir de {tablet} ; sa description de règles complète sera ajoutée ultérieurement.",
-      "SourcePage": "Manuel du joueur, p. {page}"
+      "SourcePage": "Livre des règles, p. {page}"
     },
     "Cost": {
       "Increase": "Augmentation : coûte {cost} points",
@@ -545,15 +545,15 @@
         "GMG90": "Guide du maître, p. 90",
         "GMG93": "Guide du maître, p. 93",
         "GMG94": "Guide du maître, p. 94",
-        "PHB47": "Manuel du joueur, p. 47",
-        "PHB48": "Manuel du joueur, p. 48",
-        "PHB50": "Manuel du joueur, p. 50",
-        "PHB55": "Manuel du joueur, p. 55",
-        "PHB59": "Manuel du joueur, p. 59",
-        "PHB69": "Manuel du joueur, p. 69",
-        "PHB74": "Manuel du joueur, p. 74",
-        "PHB92": "Manuel du joueur, p. 92",
-        "PHB201": "Manuel du joueur, p. 201"
+        "PHB47": "Livre des règles, p. 47",
+        "PHB48": "Livre des règles, p. 48",
+        "PHB50": "Livre des règles, p. 50",
+        "PHB55": "Livre des règles, p. 55",
+        "PHB59": "Livre des règles, p. 59",
+        "PHB69": "Livre des règles, p. 69",
+        "PHB74": "Livre des règles, p. 74",
+        "PHB92": "Livre des règles, p. 92",
+        "PHB201": "Livre des règles, p. 201"
       },
       "Item": {
         "Seax": {

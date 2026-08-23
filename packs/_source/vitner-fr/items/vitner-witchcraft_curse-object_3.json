@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 184",
     "level": 2,
     "cost": 4,
     "modifier": -4

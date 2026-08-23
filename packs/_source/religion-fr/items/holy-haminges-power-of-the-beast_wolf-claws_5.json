@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
     "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 268",
     "level": 3,
     "cost": 6,
     "modifier": -6

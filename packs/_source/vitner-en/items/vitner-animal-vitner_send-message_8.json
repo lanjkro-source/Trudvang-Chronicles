@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "The mage creates a vitner being that has a single purpose: to deliver a message to intelligent creatures of the mage’s choosing.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 5,
     "cost": 10,
     "modifier": -10

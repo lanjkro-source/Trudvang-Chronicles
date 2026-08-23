@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur émet une horrible plainte qui flétrit les plantes et noircit le ciel pendant un instant.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 270",
     "level": 4,
     "cost": 8,
     "modifier": -8

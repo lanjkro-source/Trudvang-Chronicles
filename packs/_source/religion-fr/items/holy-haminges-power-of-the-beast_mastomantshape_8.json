@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
     "description": "Le conjurateur fait appel au pouvoir de l’esprit lié et se transforme (ainsi que tout son équipement) en un mastomant géant jusqu’à expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 268",
     "level": 5,
     "cost": 10,
     "modifier": -10

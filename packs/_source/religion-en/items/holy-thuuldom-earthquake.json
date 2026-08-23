@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-earthquake",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the spell causes an area within the range to rumble with a single, heavy tremor.",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

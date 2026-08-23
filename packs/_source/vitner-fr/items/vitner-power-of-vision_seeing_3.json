@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus dif ficiles.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 3,
     "cost": 6,
     "modifier": -6

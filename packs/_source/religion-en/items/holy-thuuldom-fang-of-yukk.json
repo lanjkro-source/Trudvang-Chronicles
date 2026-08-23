@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-fang-of-yukk",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that empowers an inscribed weapon with the deadly bite of Yukk.",
+    "source": "Player's Handbook, p. 230",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

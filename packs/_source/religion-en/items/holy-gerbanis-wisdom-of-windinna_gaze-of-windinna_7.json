@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
     "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 168",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "The spell filters water and removes all dangerous and unhealthy substances from up to 10 liters of liquid.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 241",
     "level": 1,
     "cost": 2,
     "modifier": -2

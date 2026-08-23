@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Magh's Gift",
     "description": "The Bruid begins to sing a beautiful song about heroic actions and magnificent destinies in the future.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 183",
     "level": 3,
     "cost": 6,
     "modifier": -6

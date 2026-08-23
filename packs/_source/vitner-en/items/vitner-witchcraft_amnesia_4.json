@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
     "description": "The spell creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 143",
     "level": 3,
     "cost": 6,
     "modifier": -6

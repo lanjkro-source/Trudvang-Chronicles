@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "The mage can control and direct one or more unintelligent animals.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
     "description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 201",
     "level": 2,
     "cost": 4,
     "modifier": -4

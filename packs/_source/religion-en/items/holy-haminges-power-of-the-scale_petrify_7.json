@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
     "description": "The spirit conjurer directs their powerful gaze at an opponent who turns to stone.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 218",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "Ce sort permet à son bénéficiaire de conserver son sens de l’orienta tion pendant toute la durée du sort.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 173",
     "level": 2,
     "cost": 4,
     "modifier": -4

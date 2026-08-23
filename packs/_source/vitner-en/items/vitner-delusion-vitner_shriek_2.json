@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
     "description": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 101",
     "level": 1,
     "cost": 2,
     "modifier": -2

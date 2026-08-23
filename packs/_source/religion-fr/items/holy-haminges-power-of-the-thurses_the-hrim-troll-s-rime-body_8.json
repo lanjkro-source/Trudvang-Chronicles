@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "Le conjurateur est investi d’une partie de l’essence du troll des glaces, qui se manifeste par un corps de glace qui gèle toute personne située à portée du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 275",
     "level": 5,
     "cost": 10,
     "modifier": -10

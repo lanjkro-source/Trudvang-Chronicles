@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 166",
     "level": 3,
     "cost": 6,
     "modifier": -6

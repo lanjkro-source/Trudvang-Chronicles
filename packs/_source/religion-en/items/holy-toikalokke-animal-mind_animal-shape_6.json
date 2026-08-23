@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
     "description": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 237",
     "level": 5,
     "cost": 10,
     "modifier": -10

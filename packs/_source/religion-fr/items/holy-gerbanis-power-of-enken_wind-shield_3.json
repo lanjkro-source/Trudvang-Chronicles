@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 224",
     "level": 2,
     "cost": 4,
     "modifier": -4

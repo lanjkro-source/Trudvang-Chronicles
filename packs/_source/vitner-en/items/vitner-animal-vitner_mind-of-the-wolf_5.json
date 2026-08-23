@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
     "description": "The one affected by the spell gains something that resembles a wolf ’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety , and strength.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 92",
     "level": 3,
     "cost": 6,
     "modifier": -6

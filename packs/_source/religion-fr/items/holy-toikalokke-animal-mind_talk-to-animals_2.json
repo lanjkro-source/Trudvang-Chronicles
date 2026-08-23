@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 295",
     "level": 2,
     "cost": 4,
     "modifier": -4

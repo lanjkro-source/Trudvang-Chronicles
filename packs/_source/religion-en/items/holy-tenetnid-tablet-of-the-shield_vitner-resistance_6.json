@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
     "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 201",
     "level": 4,
     "cost": 8,
     "modifier": -8

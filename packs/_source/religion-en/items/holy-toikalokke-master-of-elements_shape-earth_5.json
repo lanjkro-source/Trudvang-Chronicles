@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 241",
     "level": 2,
     "cost": 4,
     "modifier": -4

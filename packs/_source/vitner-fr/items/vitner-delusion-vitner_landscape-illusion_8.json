@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort crée une immense sphère d’il lusion autour de l’enchanteur qui imite le paysage de son choix.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 4,
     "cost": 8,
     "modifier": -8

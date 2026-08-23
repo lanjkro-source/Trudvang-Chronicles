@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vi vante à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 173",
     "level": 4,
     "cost": 8,
     "modifier": -8

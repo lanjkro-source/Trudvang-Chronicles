@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablet of the Sun",
     "description": "The prayer acts as protection against vitner and other religions’ feats.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 203",
     "level": 1,
     "cost": 2,
     "modifier": -2

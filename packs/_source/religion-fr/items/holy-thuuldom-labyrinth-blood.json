@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-labyrinth-blood",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir.",
+    "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

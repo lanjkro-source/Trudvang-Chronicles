@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
     "description": "Unleashes a violent storm of divine fire across the chosen area.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 171",
     "level": 4,
     "cost": 8,
     "modifier": -8

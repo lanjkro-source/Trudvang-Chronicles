@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort filtre jusqu’à 10 litres d’eau et en retire toutes les substances dange reuses ou toxiques.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 1,
     "cost": 2,
     "modifier": -2

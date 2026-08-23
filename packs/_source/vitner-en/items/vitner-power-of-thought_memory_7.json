@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
     "description": "Allows the enchanted creature to recall past events with supernatural clarity.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 116",
     "level": 3,
     "cost": 6,
     "modifier": -6

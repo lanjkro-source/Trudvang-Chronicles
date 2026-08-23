@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’at taqueront jamais volontairement le bé néficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 295",
     "level": 1,
     "cost": 2,
     "modifier": -2

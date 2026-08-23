@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
     "description": "Le conjurateur réussit automatique ment un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 272",
     "level": 4,
     "cost": 8,
     "modifier": -8

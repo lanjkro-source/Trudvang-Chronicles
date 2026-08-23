@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "Ce sort crée un épais marécage circu laire de 3 mètres de diamètre et de 10 centimètres de profondeur.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 158",
     "level": 2,
     "cost": 4,
     "modifier": -4

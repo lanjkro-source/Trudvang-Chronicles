@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-earthquake",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le thuul enfonce l’objet sacré dans le sol et invoque un puissant tremblement de terre qui secoue le sol et tout ce qui se trouve autour de lui.",
+    "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

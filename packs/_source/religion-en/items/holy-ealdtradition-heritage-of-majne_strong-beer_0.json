@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
     "description": "By brewing Majne’s light ale, the Bruid can drink with friends and strengthen the connection among them before an upcoming adventure.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 181",
     "level": 1,
     "cost": 2,
     "modifier": -2

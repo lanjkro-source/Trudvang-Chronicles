@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 4,
     "cost": 8,
     "modifier": -8

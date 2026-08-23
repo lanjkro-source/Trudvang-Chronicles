@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-labyrinth-blood",
     "tablet": "Sang du labyrinthe",
     "description": "Cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 288",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre peut ranimer une créature humanoïde intelligente qui a perdu la vie.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 253",
     "level": 3,
     "cost": 6,
     "modifier": -6

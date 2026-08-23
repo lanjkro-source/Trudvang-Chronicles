@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 3,
     "cost": 6,
     "modifier": -6

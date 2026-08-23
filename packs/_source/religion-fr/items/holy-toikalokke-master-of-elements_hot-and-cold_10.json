@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihana peut augmenter ou réduire la température de 10°C maximum dans un espace de 2m ³ autour de lui pendant six heures.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 297",
     "level": 4,
     "cost": 8,
     "modifier": -8

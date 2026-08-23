@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
     "description": "The spell gives the enchanted gills on their neck, which allow them to breathe underwater just as easily as if they were in air.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 135",
     "level": 2,
     "cost": 4,
     "modifier": -4

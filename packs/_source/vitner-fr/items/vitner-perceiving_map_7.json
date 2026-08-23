@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 173",
     "level": 5,
     "cost": 10,
     "modifier": -10

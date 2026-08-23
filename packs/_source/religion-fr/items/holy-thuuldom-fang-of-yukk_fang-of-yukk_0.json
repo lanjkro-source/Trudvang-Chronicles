@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-fang-of-yukk",
     "tablet": "Croc de Yukk",
     "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 2,
     "modifier": -2

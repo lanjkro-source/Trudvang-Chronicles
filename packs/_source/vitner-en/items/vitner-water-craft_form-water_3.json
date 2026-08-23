@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
     "description": "By controlling the vitner that flows through a source of water within range, the enchanter can form and shape the water as desired.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 135",
     "level": 2,
     "cost": 4,
     "modifier": -4

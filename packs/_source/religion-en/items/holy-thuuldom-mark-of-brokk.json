@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-mark-of-brokk",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that when the Thuul activates the rune-inscribed object, it is able to miraculously repair broken or damaged items.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

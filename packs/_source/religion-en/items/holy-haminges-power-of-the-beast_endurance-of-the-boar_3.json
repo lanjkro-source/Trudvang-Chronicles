@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
     "description": "The spirit gives power to the dimwalker that manifests in a greater",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 212",
     "level": 2,
     "cost": 4,
     "modifier": -4

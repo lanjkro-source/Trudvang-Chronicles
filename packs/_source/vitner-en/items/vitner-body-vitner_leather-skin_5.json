@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
     "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 96",
     "level": 3,
     "cost": 6,
     "modifier": -6

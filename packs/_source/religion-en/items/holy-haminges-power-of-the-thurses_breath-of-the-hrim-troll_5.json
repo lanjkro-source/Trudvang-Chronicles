@@ -11,9 +11,9 @@
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5",
     "tabletId": "holy-haminges-power-of-the-thurses",
-    "tablet": "Power of the Thurses",
+    "tablet": "Power of Thurses",
     "description": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 221",
     "level": 3,
     "cost": 6,
     "modifier": -6

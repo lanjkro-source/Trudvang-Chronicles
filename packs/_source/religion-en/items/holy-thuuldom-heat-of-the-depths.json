@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-heat-of-the-depths",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

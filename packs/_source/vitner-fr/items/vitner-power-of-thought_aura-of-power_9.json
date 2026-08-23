@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puis sance, d’autorité et de gloire.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 176",
     "level": 4,
     "cost": 8,
     "modifier": -8

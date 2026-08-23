@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
     "description": "F Durée : 2 minutes F Portée : personnelle F Temps d’invocation : 2 tours de jeu Le conjurateur bénéficie d’un bonus de +3 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 272",
     "level": 1,
     "cost": 2,
     "modifier": -2

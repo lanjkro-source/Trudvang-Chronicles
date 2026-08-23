@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
     "description": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 143",
     "level": 4,
     "cost": 8,
     "modifier": -8

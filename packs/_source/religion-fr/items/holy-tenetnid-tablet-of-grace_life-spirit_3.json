@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence infé rieure (comme les oiseaux, les serpents et les cerfs).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 253",
     "level": 2,
     "cost": 4,
     "modifier": -4

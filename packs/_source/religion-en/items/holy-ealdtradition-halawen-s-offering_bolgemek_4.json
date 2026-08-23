@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
     "description": "Calls upon ancestral protection to resist hostile supernatural forces.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 178",
     "level": 3,
     "cost": 6,
     "modifier": -6

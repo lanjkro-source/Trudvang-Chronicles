@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-cave-spider-s-grip",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the rune makes it possible for the Thuul to climb vertical walls.",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

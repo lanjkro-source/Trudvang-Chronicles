@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-power-of-repair",
     "tablet": "Pouvoir de réparation",
     "description": "La rune permet au thuul d’escala der des surfaces verticales.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui per mettent de respirer sous l’eau aussi facilement que s’il était à l’air libre.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 163",
     "level": 2,
     "cost": 4,
     "modifier": -4

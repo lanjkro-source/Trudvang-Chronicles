@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 1,
     "cost": 2,
     "modifier": -2

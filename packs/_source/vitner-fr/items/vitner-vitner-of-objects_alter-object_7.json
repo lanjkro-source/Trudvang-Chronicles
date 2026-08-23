@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 200",
     "level": 4,
     "cost": 8,
     "modifier": -8

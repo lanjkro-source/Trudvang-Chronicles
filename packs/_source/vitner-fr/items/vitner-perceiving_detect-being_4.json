@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 173",
     "level": 3,
     "cost": 6,
     "modifier": -6

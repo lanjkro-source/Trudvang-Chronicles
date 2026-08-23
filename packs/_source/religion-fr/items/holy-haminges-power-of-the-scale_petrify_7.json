@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur dirige son puissant regard vers un adversaire qui se change en pierre.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 270",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
     "description": "The spell makes it possible for the enchanter to find designated objects within the range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 239",
     "level": 1,
     "cost": 2,
     "modifier": -2

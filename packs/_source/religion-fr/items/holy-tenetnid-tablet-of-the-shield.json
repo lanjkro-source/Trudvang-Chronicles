@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield",
     "description": "Pouvoirs protecteurs créant sanctuaires, barrières, résistances, bannissements et passages sûrs.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 257",
     "level": 1,
     "tabletType": "holy",
     "religion": "tenetNid"

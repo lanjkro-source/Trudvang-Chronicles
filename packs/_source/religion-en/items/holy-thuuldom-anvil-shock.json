@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that makes a blunt weapon release an earth-shattering shock when it strikes.",
+    "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

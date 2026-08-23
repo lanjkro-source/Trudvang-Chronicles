@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stone-to-clay",
     "tablet": "Stone to Clay",
     "description": "By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 232",
     "level": 1,
     "cost": 2,
     "modifier": -2

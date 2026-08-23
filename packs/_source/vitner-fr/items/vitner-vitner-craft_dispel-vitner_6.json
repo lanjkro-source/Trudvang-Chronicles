@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "forme permanente ne peut pas être dissipé (sauf précision contraire dans la descrip tion du sort).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 152",
     "level": 4,
     "cost": 8,
     "modifier": -8

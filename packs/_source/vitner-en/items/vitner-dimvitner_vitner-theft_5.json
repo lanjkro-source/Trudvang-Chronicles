@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Steals vitner energy from another creature and transfers it to the mage.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 105",
     "level": 3,
     "cost": 6,
     "modifier": -6

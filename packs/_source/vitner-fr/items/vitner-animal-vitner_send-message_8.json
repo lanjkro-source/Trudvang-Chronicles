@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’en chanteur.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 5,
     "cost": 10,
     "modifier": -10

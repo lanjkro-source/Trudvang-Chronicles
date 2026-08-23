@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
     "description": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 216",
     "level": 2,
     "cost": 4,
     "modifier": -4

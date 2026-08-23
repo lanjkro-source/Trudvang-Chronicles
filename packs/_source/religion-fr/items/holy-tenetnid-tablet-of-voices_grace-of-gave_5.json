@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
     "description": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sen timents de compassion et de grâce, de sorte qu’un adversaire devient tem porairement un allié.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 255",
     "level": 3,
     "cost": 6,
     "modifier": -6

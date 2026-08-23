@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-gills-of-the-blackfish",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "source": "Livre des règles, p. 285",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

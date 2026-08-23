@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
     "description": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 239",
     "level": 3,
     "cost": 6,
     "modifier": -6

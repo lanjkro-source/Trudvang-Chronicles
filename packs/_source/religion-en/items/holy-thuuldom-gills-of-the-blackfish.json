@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-gills-of-the-blackfish",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the rune makes it possible for the one bearing the sacred object to breathe underwater for the duration.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

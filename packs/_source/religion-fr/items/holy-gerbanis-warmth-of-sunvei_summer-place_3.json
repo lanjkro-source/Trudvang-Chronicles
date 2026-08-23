@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
     "description": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 216",
     "level": 2,
     "cost": 4,
     "modifier": -4

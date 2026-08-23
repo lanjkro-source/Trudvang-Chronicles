@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
     "description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 293",
     "level": 4,
     "cost": 8,
     "modifier": -8

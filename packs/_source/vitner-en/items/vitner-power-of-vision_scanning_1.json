@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
     "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 120",
     "level": 2,
     "cost": 4,
     "modifier": -4

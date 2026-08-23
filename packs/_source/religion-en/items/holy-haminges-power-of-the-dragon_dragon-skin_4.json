@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
     "description": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 214",
     "level": 3,
     "cost": 6,
     "modifier": -6

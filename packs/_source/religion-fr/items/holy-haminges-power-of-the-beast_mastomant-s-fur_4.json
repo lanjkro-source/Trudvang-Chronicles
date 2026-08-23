@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
     "description": "Le conjurateur fait appel à l’esprit du mastomant, qui confère à l’arpenteur des brumes une immunité aux dégâts provoqués par le froid non magique jusqu’à expiration de ce pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 268",
     "level": 3,
     "cost": 6,
     "modifier": -6

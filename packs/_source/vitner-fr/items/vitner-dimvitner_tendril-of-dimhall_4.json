@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "L’enchanteur concentre autour de lui la puissance de la mort et canalise cette énergie humide à travers ses mains et ses doigts.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 3,
     "cost": 6,
     "modifier": -6

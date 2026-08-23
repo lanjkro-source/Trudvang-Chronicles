@@ -10,7 +10,7 @@
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu",
     "description": "Pouvoirs de combat nourris par le sang, provoquant la rage et déchaînant volées, feu et fureur meurtrière.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 241",
     "level": 1,
     "tabletType": "holy",
     "religion": "ealdTradition"

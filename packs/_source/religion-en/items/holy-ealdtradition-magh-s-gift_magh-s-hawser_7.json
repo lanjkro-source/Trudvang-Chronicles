@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Magh's Gift",
     "description": "The Bruid can use Geas, which is a promise or a restriction imposed upon others.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 183",
     "level": 5,
     "cost": 10,
     "modifier": -10

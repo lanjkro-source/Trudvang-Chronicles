@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
     "description": "The mage concentrates on a space, and the swirling energies there form a single hair, a drop of blood, a fingernail, or something similar from the one being pursued.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 120",
     "level": 2,
     "cost": 4,
     "modifier": -4

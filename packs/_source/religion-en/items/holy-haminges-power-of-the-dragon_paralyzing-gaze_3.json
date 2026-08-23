@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
     "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 214",
     "level": 2,
     "cost": 4,
     "modifier": -4

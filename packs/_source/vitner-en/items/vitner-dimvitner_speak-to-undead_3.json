@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 105",
     "level": 2,
     "cost": 4,
     "modifier": -4

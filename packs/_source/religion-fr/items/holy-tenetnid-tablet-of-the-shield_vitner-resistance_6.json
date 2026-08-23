@@ -12,8 +12,8 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "TRUDVANG.Description.PowerSummary",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Résistance au vitner est un pouvoir de Tablette du bouclier ; sa description de règles complète sera ajoutée ultérieurement.",
+    "source": "Livre des règles, p. 257",
     "level": 4,
     "cost": 8,
     "modifier": -8

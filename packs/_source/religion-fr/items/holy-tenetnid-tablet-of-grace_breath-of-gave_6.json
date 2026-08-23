@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 253",
     "level": 4,
     "cost": 8,
     "modifier": -8

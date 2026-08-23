@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this).",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 241",
     "level": 3,
     "cost": 6,
     "modifier": -6

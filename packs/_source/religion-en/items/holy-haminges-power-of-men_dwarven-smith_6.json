@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
     "description": "The spirit conjurer calls upon the dwarves’ superior knowledge of craftsmanship and gains +6 in any single specialty under the handicraft discipline (Care skill) for the duration of the ability.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 216",
     "level": 4,
     "cost": 8,
     "modifier": -8

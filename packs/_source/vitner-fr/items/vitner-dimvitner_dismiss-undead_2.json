@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "En tranchant le lien entre les mortsvivants et le royaume des morts, l’enchanteur parvient à bannir une ou plusieurs créatures mortes-vivantes vers Dimhall.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 2,
     "cost": 4,
     "modifier": -4

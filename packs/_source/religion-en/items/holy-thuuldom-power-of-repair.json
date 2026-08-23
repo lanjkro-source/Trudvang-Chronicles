@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-power-of-repair",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "A sacred Thuul rune that the Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound.",
+    "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
     "description": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 197",
     "level": 2,
     "cost": 4,
     "modifier": -4

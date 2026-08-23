@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-gills-of-the-blackfish",
     "tablet": "Branchies du brochet",
     "description": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 285",
     "level": 1,
     "cost": 2,
     "modifier": -2

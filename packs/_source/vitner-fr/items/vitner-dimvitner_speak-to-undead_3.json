@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 2,
     "cost": 4,
     "modifier": -4

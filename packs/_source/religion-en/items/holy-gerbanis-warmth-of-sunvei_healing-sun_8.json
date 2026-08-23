@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Warmth of Sunvei",
     "description": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 166",
     "level": 5,
     "cost": 10,
     "modifier": -10

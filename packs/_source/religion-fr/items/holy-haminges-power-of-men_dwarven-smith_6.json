@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
     "description": "Le conjurateur fait appel à la connais sance approfondie qu’ont les nains de l’artisanat et bénéficie d’un bonus de +6 à une spécialité dépendant de la disci pline Artisanat (compétence Savoir-faire) jusqu’à expiration du pouvoir.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 272",
     "level": 4,
     "cost": 8,
     "modifier": -8

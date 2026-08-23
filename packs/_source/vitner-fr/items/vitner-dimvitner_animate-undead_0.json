@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 1,
     "cost": 2,
     "modifier": -2

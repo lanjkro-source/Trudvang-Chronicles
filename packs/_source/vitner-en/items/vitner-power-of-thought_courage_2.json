@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
     "description": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 116",
     "level": 2,
     "cost": 4,
     "modifier": -4

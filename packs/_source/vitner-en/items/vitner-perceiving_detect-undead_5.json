@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
     "description": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 112",
     "level": 4,
     "cost": 8,
     "modifier": -8

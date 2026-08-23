@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 3,
     "cost": 6,
     "modifier": -6

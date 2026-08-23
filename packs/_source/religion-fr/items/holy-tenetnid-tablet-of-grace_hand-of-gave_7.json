@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 253",
     "level": 4,
     "cost": 8,
     "modifier": -8

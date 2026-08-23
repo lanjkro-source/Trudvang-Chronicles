@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 275",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
     "description": "armed actions in the same action round in which they conjure the spell.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 109",
     "level": 4,
     "cost": 8,
     "modifier": -8

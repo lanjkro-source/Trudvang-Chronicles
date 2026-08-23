@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 1,
     "cost": 2,
     "modifier": -2

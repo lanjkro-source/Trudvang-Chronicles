@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-cave-spider-s-grip",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui la rune permet au thuul d’escala der des surfaces verticales.",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"

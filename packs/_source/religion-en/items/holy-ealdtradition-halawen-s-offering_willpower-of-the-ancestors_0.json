@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
     "description": "Strengthens the recipient's resolve with the courage of their ancestors.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 178",
     "level": 1,
     "cost": 2,
     "modifier": -2

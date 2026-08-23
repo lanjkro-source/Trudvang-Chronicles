@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
     "description": "The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 132",
     "level": 1,
     "cost": 2,
     "modifier": -2

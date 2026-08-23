@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Ce sort crée un lien spirituel entre l’enchanteur et la victime de son choix.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 155",
     "level": 3,
     "cost": 6,
     "modifier": -6

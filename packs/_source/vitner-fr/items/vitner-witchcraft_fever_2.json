@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corpo relle interne.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 184",
     "level": 2,
     "cost": 4,
     "modifier": -4

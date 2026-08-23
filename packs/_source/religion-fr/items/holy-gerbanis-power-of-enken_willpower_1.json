@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 224",
     "level": 1,
     "cost": 2,
     "modifier": -2

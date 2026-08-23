@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 169",
     "level": 2,
     "cost": 4,
     "modifier": -4

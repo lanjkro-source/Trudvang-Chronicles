@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
     "description": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 216",
     "level": 4,
     "cost": 8,
     "modifier": -8

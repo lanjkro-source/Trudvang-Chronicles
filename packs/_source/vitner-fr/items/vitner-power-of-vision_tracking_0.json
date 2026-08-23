@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les em preintes d’une autre créature sur le sol.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 180",
     "level": 1,
     "cost": 2,
     "modifier": -2

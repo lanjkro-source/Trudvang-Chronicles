@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
     "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 216",
     "level": 3,
     "cost": 6,
     "modifier": -6

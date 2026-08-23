@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Power of Trolls",
     "description": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 223",
     "level": 4,
     "cost": 8,
     "modifier": -8

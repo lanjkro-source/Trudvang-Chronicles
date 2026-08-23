@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
     "description": "Wraps the target in protective currents of compressed air.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 139",
     "level": 3,
     "cost": 6,
     "modifier": -6

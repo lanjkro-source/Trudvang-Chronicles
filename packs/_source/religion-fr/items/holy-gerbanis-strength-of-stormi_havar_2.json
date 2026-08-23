@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
     "description": "Le stormikjalt implore la protection de Storme, qui lui envoie un havar, un guerrier saint venu de Stormvakk pour le protéger.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 218",
     "level": 2,
     "cost": 4,
     "modifier": -4

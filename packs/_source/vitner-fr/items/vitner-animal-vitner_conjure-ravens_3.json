@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 187",
     "level": 2,
     "cost": 4,
     "modifier": -4

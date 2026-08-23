@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
     "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority , and glory.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 116",
     "level": 4,
     "cost": 8,
     "modifier": -8

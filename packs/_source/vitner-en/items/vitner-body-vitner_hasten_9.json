@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
     "description": "This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 96",
     "level": 4,
     "cost": 8,
     "modifier": -8

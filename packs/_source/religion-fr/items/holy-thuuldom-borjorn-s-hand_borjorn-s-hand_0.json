@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-borjorn-s-hand",
     "tablet": "Main de Borjorn",
     "description": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
     "description": "The Stormkelt is granted night vision for one minute.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Player's Handbook, p. 162",
     "level": 1,
     "cost": 2,
     "modifier": -2

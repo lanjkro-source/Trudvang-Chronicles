@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur.",
-    "source": "TRUDVANG.Description.SourcePage",
+    "source": "Livre des règles, p. 197",
     "level": 5,
     "cost": 10,
     "modifier": -10

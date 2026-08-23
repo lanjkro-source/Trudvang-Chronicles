@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock",
-    "description": "TRUDVANG.Content.ThuulRunePrefix",
-    "source": "TRUDVANG.Description.SourcePage",
+    "description": "Une rune thuul sacrée qui cette rune doit être placée sur une arme contondante (n’importe quelle arme dénuée de lame) dont l’impact est désormais aussi puissant qu’un choc sismique quand le thuul s’en sert pour frapper.",
+    "source": "Livre des règles, p. 285",
     "level": 1,
     "tabletType": "holy",
     "religion": "thuuldom"
