@@ -26,7 +26,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     position: { width: 560, height: 620 },
     resizable: true,
     form: {
-      submitOnChange: true,
+      handler: TrudvangItemSheet.#onSubmit,
+      submitOnChange: false,
       closeOnSubmit: false
     },
     actions: {
@@ -42,7 +43,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.item = this.item;
-    context.editable = this.isEditable;
+    context.editable = true;
     context.system = this.item.system;
     context.itemType = this.item.type;
     context.isType = type => this.item.type === type;
@@ -66,6 +67,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
+  }
+
+  static async #onSubmit(event, form, formData, submitOptions) {
+    await this.item.update(formData.object);
   }
 
   static async #onRoll(event, target) {

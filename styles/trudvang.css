@@ -179,6 +179,8 @@
 .trudvang-sheet.item-sheet .item-fields .checkbox input { width: auto; }
 .trudvang-sheet.item-sheet .split-input { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
 .trudvang-sheet.item-sheet .item-description { min-height: 0; margin: 10px; flex: 1; overflow-y: auto; }
+.trudvang-sheet.item-sheet .panel { width: calc(100% - 20px); margin: 0 10px; }
+.trudvang-sheet.item-sheet .panel textarea { width: 100%; box-sizing: border-box; }
 .detail-dialog { max-height: 60vh; overflow-y: auto; }
 .trudvang-sheet .item-type { margin: 6px 4px; color: #dbc59a; font: .75rem Georgia, serif; text-transform: uppercase; }
 
