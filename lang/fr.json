@@ -154,7 +154,9 @@
       "OpenRollShort": "JO",
       "VpProtectionLabel": "VP: PROTECTION",
       "VpIntegrityLabel": "VP: INTÉGRITÉ",
-      "BonusCpLabel": "BONUS CP"
+      "BonusCpLabel": "BONUS CP",
+      "RangeShort": "Portée courte (limite haute)",
+      "RangeLong": "Portée longue (limite haute)"
     },
     "Resource": {
       "Body": "Points de santé (PS)",

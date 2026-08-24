@@ -181,6 +181,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.VpProtectionLabel` | VP: PROTECTION | VP: PROTECTION |
 | `TRUDVANG.Field.VpIntegrityLabel` | VP: INTEGRITY | VP: INTÉGRITÉ |
 | `TRUDVANG.Field.BonusCpLabel` | CP BONUS | BONUS CP |
+| `TRUDVANG.Field.RangeShort` | Short range (upper limit) | Portée courte (limite haute) |
+| `TRUDVANG.Field.RangeLong` | Long range (upper limit) | Portée longue (limite haute) |
 
 ## `TRUDVANG.Resource`
 

@@ -154,7 +154,9 @@
       "OpenRollShort": "O",
       "VpProtectionLabel": "VP: PROTECTION",
       "VpIntegrityLabel": "VP: INTEGRITY",
-      "BonusCpLabel": "CP BONUS"
+      "BonusCpLabel": "CP BONUS",
+      "RangeShort": "Short range (upper limit)",
+      "RangeLong": "Long range (upper limit)"
     },
     "Resource": {
       "Body": "Body Points",
