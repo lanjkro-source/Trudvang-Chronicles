@@ -144,7 +144,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Damage` | Damage Formula | Dégâts |
 | `TRUDVANG.Field.OpenRoll` | Open Roll Threshold (0 = none) | Seuil de jet ouvert (0 = aucun) |
 | `TRUDVANG.Field.WeaponActions` | Weapon Actions | Actions d'arme |
-| `TRUDVANG.Field.AttackValue` | Default CP per Attack | Nombre de CP par attaque |
+| `TRUDVANG.Field.AttackValue` | MAX CP PER TURN | CP MAX PAR TOUR |
 | `TRUDVANG.Field.InitiativeModifier` | Initiative Modifier | Modificateur d'initiative |
 | `TRUDVANG.Field.VitnerType` | Vitner Type | Type d'enchanteur |
 | `TRUDVANG.Field.PerfectSuccess` | Perfect Success on | Réussite parfaite sur |
@@ -174,6 +174,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ActiveSpell` | Currently maintained spell | Sortilège actuellement maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
 | `TRUDVANG.Field.Summary` | Summary | Résumé |
+| `TRUDVANG.Field.PassiveProtection` | Passive Protection (PP) | Protection passive (PP) |
+| `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
+| `TRUDVANG.Field.BreachMax` | Breach Value (max) | Valeur d'intégrité (maximale) |
 
 ## `TRUDVANG.Resource`
 

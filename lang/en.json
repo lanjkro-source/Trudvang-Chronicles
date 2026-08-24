@@ -118,7 +118,7 @@
       "Damage": "Damage Formula",
       "OpenRoll": "Open Roll Threshold (0 = none)",
       "WeaponActions": "Weapon Actions",
-      "AttackValue": "Default CP per Attack",
+      "AttackValue": "MAX CP PER TURN",
       "InitiativeModifier": "Initiative Modifier",
       "VitnerType": "Vitner Type",
       "PerfectSuccess": "Perfect Success on",
@@ -147,7 +147,10 @@
       "Source": "Source",
       "ActiveSpell": "Currently maintained spell",
       "ActiveCost": "Vitner cost when activated",
-      "Summary": "Summary"
+      "Summary": "Summary",
+      "PassiveProtection": "Passive Protection (PP)",
+      "BreachCurrent": "Breach Value (current)",
+      "BreachMax": "Breach Value (max)"
     },
     "Resource": {
       "Body": "Body Points",

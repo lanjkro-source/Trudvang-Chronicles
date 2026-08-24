@@ -157,6 +157,7 @@
 /* Foundry's default icons/svg/* glyphs are white-filled (designed for dark backgrounds) — print them as ink on parchment. */
 .trudvang-sheet .item-list .item > img[src^="icons/svg/"], .trudvang-sheet .knowledge-node img[src^="icons/svg/"] { filter: brightness(0); opacity: .82; background: rgba(255,255,255,.4); }
 .trudvang-sheet .item-list .item-name { margin: 0; padding: 2px; text-align: left; font-weight: 600; }
+.trudvang-sheet .item-list .qty-input { width: 44px; min-width: 44px; height: 20px; padding: 0 3px; color: var(--trudvang-ink); background: rgba(255,255,255,.08); border-color: #9d8050; font-size: .8rem; text-align: center; }
 .trudvang-sheet .item-list .item > span { overflow: hidden; color: var(--trudvang-muted); font-size: .74rem; text-overflow: ellipsis; white-space: nowrap; }
 .trudvang-sheet .item-list .item button:not(.item-name) { width: 26px; padding: 2px; }
 .trudvang-sheet .item-list .equip.active { color: var(--trudvang-red); background: rgba(115,59,45,.12); }

@@ -44,6 +44,10 @@ export class TrudvangActorSheet extends BaseActorSheet {
       traitChoices: TRUDVANG.traitChoices,
       itemTypes: TRUDVANG.itemTypes
     };
+    context.config.races = Object.fromEntries(Object.entries(TRUDVANG.races).map(([id, race]) => {
+      const name = game.i18n.localize(race.label);
+      return [id, context.creationMode ? `${name} (${race.body}/${race.movement})` : name];
+    }));
     const raceId = this.actor.system.details?.race || "human";
     const allowedCultureIds = TRUDVANG.raceCultures[raceId] ?? Object.keys(TRUDVANG.cultures);
     context.config.cultures = localizeConfig(Object.fromEntries(allowedCultureIds.map(id => [id, TRUDVANG.cultures[id]]).filter(entry => entry[1])));
@@ -180,6 +184,13 @@ export class TrudvangActorSheet extends BaseActorSheet {
       element.addEventListener("toggle", () => {
         this._treeState ??= new Map();
         this._treeState.set(element.dataset.treeKey, element.open);
+      });
+    });
+    root.querySelectorAll("input[data-item-field]").forEach(input => {
+      input.addEventListener("change", async event => {
+        const container = event.currentTarget.closest("[data-item-id]");
+        const item = container && this.actor.items.get(container.dataset.itemId);
+        if (item) await item.update({[`system.${event.currentTarget.dataset.itemField}`]: Number(event.currentTarget.value) || 0});
       });
     });
     this._restoreViewState(root);

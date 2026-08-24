@@ -191,8 +191,11 @@ export class ShieldData extends BaseItemData {
     return {
       ...super.defineSchema(),
       ...equipmentSchema(),
+      damage: string("1d10"),
+      openRoll: integer(0, {min: 0, max: 10}),
       weaponActions: integer(2, {min: 0}),
-      attackValue: integer(5, {min: 0})
+      attackValue: integer(5, {min: 0}),
+      passiveProtection: integer(0, {min: 0})
     };
   }
 }
