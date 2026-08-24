@@ -325,13 +325,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
   }
 
-  /** @override — point d'entrée générique V2 : log + délégation */
+  /** @override — délègue au parent V2 (le diagnostic a été retiré en 0.5.4) */
   async _onDrop(event) {
-    // Log pour diagnostic — visible en F12
-    try {
-      const data = TextEditorImpl.getDragEventData(event);
-      console.log("Trudvang | _onDrop", data);
-    } catch (e) { console.log("Trudvang | _onDrop (no data)", e); }
     return super._onDrop(event);
   }
 
