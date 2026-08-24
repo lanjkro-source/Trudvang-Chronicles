@@ -89,10 +89,10 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
         weight: string(),
         handedness: string("right")
       }),
+      money: schema({copper: integer(0), silver: integer(0), gold: integer(0)}),
       experience: schema({
         creationMode: boolean(false),
-        creationTotal: integer(300),
-        creationSpent: integer(0),
+        creationTotal: integer(300),        creationSpent: integer(0),
         adventureAvailable: integer(0),
         adventureSpent: integer(0)
       }),

@@ -26,8 +26,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     position: { width: 560, height: 620 },
     resizable: true,
     form: {
-      handler: TrudvangItemSheet.#onSubmit,
-      submitOnChange: false,
+      submitOnChange: true,
       closeOnSubmit: false
     },
     actions: {
@@ -43,7 +42,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.item = this.item;
-    context.editable = true;
+    context.editable = this.item.isOwner;
     context.system = this.item.system;
     context.itemType = this.item.type;
     context.isType = type => this.item.type === type;
@@ -56,6 +55,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _onRender(context, options) {
     await super._onRender(context, options);
     const root = this.element;
+    if (!this.item.isOwner) {
+      root.querySelectorAll("input, select, textarea").forEach(element => element.setAttribute("disabled", "disabled"));
+    }
     if (this.levelManaged) root.querySelector("[name='system.level']")?.setAttribute("disabled", "disabled");
     if (this.structuralLocked) {
       for (const name of ["system.kind", "system.parentSkill", "system.parentDiscipline", "system.costTrait", "system.level"]) {
@@ -67,10 +69,6 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
-  }
-
-  static async #onSubmit(event, form, formData, submitOptions) {
-    await this.item.update(formData.object);
   }
 
   static async #onRoll(event, target) {

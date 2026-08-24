@@ -181,8 +181,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.VpProtectionLabel` | VP: PROTECTION | VP: PROTECTION |
 | `TRUDVANG.Field.VpIntegrityLabel` | VP: INTEGRITY | VP: INTÉGRITÉ |
 | `TRUDVANG.Field.BonusCpLabel` | CP BONUS | BONUS CP |
-| `TRUDVANG.Field.RangeShort` | Short range (upper limit) | Portée courte (limite haute) |
-| `TRUDVANG.Field.RangeLong` | Long range (upper limit) | Portée longue (limite haute) |
+| `TRUDVANG.Field.RangeShort` | Short range | Portée courte |
+| `TRUDVANG.Field.RangeLong` | Long range | Portée longue |
+| `TRUDVANG.Field.CoinCopper` | Copper | Cuivre |
+| `TRUDVANG.Field.CoinSilver` | Silver | Argent |
+| `TRUDVANG.Field.CoinGold` | Gold | Or |
+| `TRUDVANG.Field.TotalWeight` | Total carried weight | Poids total transporté |
 
 ## `TRUDVANG.Resource`
 

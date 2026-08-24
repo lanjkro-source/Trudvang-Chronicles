@@ -155,8 +155,12 @@
       "VpProtectionLabel": "VP: PROTECTION",
       "VpIntegrityLabel": "VP: INTEGRITY",
       "BonusCpLabel": "CP BONUS",
-      "RangeShort": "Short range (upper limit)",
-      "RangeLong": "Long range (upper limit)"
+      "RangeShort": "Short range",
+      "RangeLong": "Long range",
+      "CoinCopper": "Copper",
+      "CoinSilver": "Silver",
+      "CoinGold": "Gold",
+      "TotalWeight": "Total carried weight"
     },
     "Resource": {
       "Body": "Body Points",

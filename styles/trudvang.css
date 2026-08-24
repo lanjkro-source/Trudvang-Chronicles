@@ -59,6 +59,10 @@
 .trudvang-sheet .identity-grid label { color: #d8c59f; font-size: .67rem; text-transform: uppercase; letter-spacing: .06em; }
 .trudvang-sheet .identity-grid input, .trudvang-sheet .identity-grid select { width: 100%; height: 20px; padding: 0 3px; color: #fff4df; background: rgba(255,255,255,.08); border-color: #9d8050; font-size: .82rem; text-transform: none; }
 .trudvang-sheet .identity-grid option { color: var(--trudvang-ink); }
+.trudvang-sheet .money-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 10px; }
+.trudvang-sheet .money-row label { color: #d8c59f; font-size: .67rem; text-transform: uppercase; letter-spacing: .06em; display: flex; flex-direction: column; }
+.trudvang-sheet .money-row input { width: 100%; height: 22px; color: var(--trudvang-ink); background: rgba(255,255,255,.08); border-color: #9d8050; }
+.trudvang-sheet .weight-total { text-align: right; font-size: .78rem; color: #d8c59f; margin: 2px 4px 10px; }
 .trudvang-sheet .initiative-button { height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #f3dfb4; border: 1px solid #b9985e; border-radius: 50%; background: rgba(20,10,8,.45); }
 .trudvang-sheet .initiative-button i { font-size: 1rem; }
 .trudvang-sheet .initiative-button strong { font: 700 1.45rem Georgia, serif; }
@@ -186,6 +190,10 @@
 .trudvang-sheet.item-sheet .damage-parts .damage-open { font-weight: 700; color: var(--trudvang-muted); text-transform: none; }
 .trudvang-sheet.item-sheet .damage-parts .damage-seuil,
 .trudvang-sheet.item-sheet .damage-parts .damage-bonus { width: 56px; min-width: 56px; padding: 0 3px; text-align: center; }
+.trudvang-sheet.item-sheet .damage-parts .damage-plus { color: var(--trudvang-muted); font-weight: 700; }
+.trudvang-sheet.item-sheet .range-parts { display: flex; align-items: center; gap: 4px; }
+.trudvang-sheet.item-sheet .range-parts input { flex: 1; min-width: 0; }
+.trudvang-sheet.item-sheet .range-parts .unit-suffix { font-size: .75rem; color: var(--trudvang-muted); }
 .trudvang-sheet.item-sheet .split-input { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
 .trudvang-sheet.item-sheet .item-description { min-height: 0; margin: 10px; flex: 1; overflow-y: auto; }
 .trudvang-sheet.item-sheet .panel { width: calc(100% - 20px); margin: 0 10px; }
