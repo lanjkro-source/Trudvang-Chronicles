@@ -325,10 +325,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
   }
 
-  /** @override */
-  async _onDropItem(event, data) {
-    const ItemClass = foundry.utils.getDocumentClass("Item");
-    const item = await ItemClass.implementation.fromDropData(data);
+  /** @override — AppV2 passes the resolved Item document, not raw data. */
+  async _onDropItem(event, item) {
     const itemData = item.toObject();
     // Handle item sorting within the same Actor.
     if (this.actor.items.has(item.id)) return this._onSortItem(event, itemData);

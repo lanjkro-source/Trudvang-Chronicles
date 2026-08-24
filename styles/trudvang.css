@@ -132,9 +132,9 @@
 .trudvang-sheet .knowledge-node .item-name { padding: 2px; text-align: left; font-weight: 600; }
 .trudvang-sheet .discipline-node, .trudvang-sheet .tablet-node { margin-left: 18px; }
 .trudvang-sheet .specialty-node, .trudvang-sheet .spell-node { margin-left: 44px; padding-left: 8px; border-left: 1px solid var(--trudvang-gold); }
-.trudvang-sheet.hide-zero-knowledge .knowledge-tree .zero-level { display: none; }
+.hide-zero-knowledge .knowledge-tree .zero-level { display: none; }
 .trudvang-sheet .inactive-magic { opacity: .42; filter: grayscale(1); }
-.trudvang-sheet.hide-inactive-magic .inactive-magic { display: none; }
+.hide-inactive-magic .inactive-magic { display: none; }
 .trudvang-sheet .orphan { color: #8a3d34; border-left-color: #8a3d34; }
 
 .trudvang-sheet .progress-footer { min-height: 48px; display: flex; align-items: center; gap: 10px; padding: 5px 9px; color: #f4e7cc; border-top: 2px solid var(--trudvang-gold); background: linear-gradient(100deg, rgba(47,31,25,.97), rgba(87,53,38,.96)); }
