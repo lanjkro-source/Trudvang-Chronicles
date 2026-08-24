@@ -154,7 +154,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Breach` | Breach Value / Maximum | Valeur d'intégrité (VI) / Maximum |
 | `TRUDVANG.Field.Equipped` | Equipped | Équipé |
 | `TRUDVANG.Field.Heft` | Heft | Encombrement |
-| `TRUDVANG.Field.MovementModifier` | Movement Modifier | Modificateur de mouvement |
+| `TRUDVANG.Field.MovementModifier` | MM: MOVEMENT MODIFIER | MM : MOD. MOUVEMENT |
 | `TRUDVANG.Field.Strength` | Extract Strength | Force de l'extrait |
 | `TRUDVANG.Field.Application` | Application | Application |
 | `TRUDVANG.Field.Duration` | Duration | Durée |

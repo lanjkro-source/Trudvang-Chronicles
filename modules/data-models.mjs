@@ -157,7 +157,15 @@ class BaseItemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return itemBaseSchema();
   }
+
+  prepareDerivedData() {
+    if (this.breach && Number.isFinite(Number(this.breach.value))) {
+      this.protection = Math.ceil(Math.max(0, Number(this.breach.value)) / 10);
+    }
+  }
 }
+
+const ARMOR_ENCUMBRANCE_PENALTIES = {0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1], 5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]};
 
 export class WeaponData extends BaseItemData {
   static defineSchema() {
@@ -184,6 +192,14 @@ export class ArmorData extends BaseItemData {
       heft: integer(0, {min: 0}),
       movementModifier: integer(0)
     };
+  }
+
+  prepareDerivedData() {
+    super.prepareDerivedData();
+    const key = Math.min(10, Math.max(0, Number(this.heft) || 0));
+    const [initiative, movement] = ARMOR_ENCUMBRANCE_PENALTIES[key] ?? [0, 0];
+    this.initiativeModifier = initiative;
+    this.movementModifier = movement;
   }
 }
 
