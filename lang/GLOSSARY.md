@@ -174,12 +174,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ActiveSpell` | Currently maintained spell | Sortilège actuellement maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
 | `TRUDVANG.Field.Summary` | Summary | Résumé |
-| `TRUDVANG.Field.PassiveProtection` | Passive Protection (PP) | Protection passive (PP) |
+| `TRUDVANG.Field.PassiveProtection` | PP: PASSIVE PROTECTION | PP : PROTECTION PASSIVE |
 | `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
 | `TRUDVANG.Field.BreachMax` | Breach Value (max) | Valeur d'intégrité (maximale) |
 | `TRUDVANG.Field.OpenRollShort` | O | JO |
 | `TRUDVANG.Field.VpProtectionLabel` | VP: PROTECTION | VP: PROTECTION |
 | `TRUDVANG.Field.VpIntegrityLabel` | VP: INTEGRITY | VP: INTÉGRITÉ |
+| `TRUDVANG.Field.BonusCpLabel` | CP BONUS | BONUS CP |
 
 ## `TRUDVANG.Resource`
 

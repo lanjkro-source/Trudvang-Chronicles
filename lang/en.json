@@ -148,12 +148,13 @@
       "ActiveSpell": "Currently maintained spell",
       "ActiveCost": "Vitner cost when activated",
       "Summary": "Summary",
-      "PassiveProtection": "Passive Protection (PP)",
+      "PassiveProtection": "PP: PASSIVE PROTECTION",
       "BreachCurrent": "Breach Value (current)",
       "BreachMax": "Breach Value (max)",
       "OpenRollShort": "O",
       "VpProtectionLabel": "VP: PROTECTION",
-      "VpIntegrityLabel": "VP: INTEGRITY"
+      "VpIntegrityLabel": "VP: INTEGRITY",
+      "BonusCpLabel": "CP BONUS"
     },
     "Resource": {
       "Body": "Body Points",
