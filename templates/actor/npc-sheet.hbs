@@ -1,4 +1,4 @@
-﻿<form class="{{cssClass}} trudvang-sheet npc-sheet" autocomplete="off">
+﻿<div class="trudvang-sheet npc-sheet">
   <header class="sheet-header compact">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
     <div class="identity"><input class="actor-name" name="name" value="{{actor.name}}"><div class="identity-grid"><label>{{localize "TRUDVANG.Field.CreatureType"}}<input name="system.details.creatureType" value="{{system.details.creatureType}}"></label><label>{{localize "TRUDVANG.Field.Size"}}<input name="system.details.size" value="{{system.details.size}}"></label><label>{{localize "TRUDVANG.Field.FearFactor"}}<input name="system.details.fearFactor" value="{{system.details.fearFactor}}"></label><label>{{localize "TRUDVANG.Resource.Protection"}}<input name="system.details.naturalArmor" type="number" value="{{system.details.naturalArmor}}"></label></div></div>
@@ -15,4 +15,4 @@
     </div>
     <div class="tab notes" data-group="primary" data-tab="notes"><section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Description"}}</h2>{{editor enriched.description target="system.description" button=true editable=editable}}</section><section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Notes"}}</h2>{{editor enriched.notes target="system.notes" button=true editable=editable}}</section></div>
   </section>
-</form>
+</div>

@@ -1,4 +1,4 @@
-<form class="{{cssClass}} trudvang-sheet character-sheet" autocomplete="off">
+<div class="trudvang-sheet character-sheet">
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
     <div class="identity">
@@ -160,4 +160,4 @@
     {{#if creationMode}}<div class="progress-values"><label>{{localize "TRUDVANG.Field.CreationTotal"}} <input name="system.experience.creationTotal" type="number" value="{{system.experience.creationTotal}}"></label><span>{{localize "TRUDVANG.Field.BuildCost"}} <strong>{{system.buildCost}}</strong></span><span>{{localize "TRUDVANG.Field.CreationRemaining"}} <strong>{{creationRemaining}}</strong></span><span title="{{localize 'TRUDVANG.Field.CoreBonusHint'}}">{{localize "TRUDVANG.Field.CoreBonus"}} <strong>{{creationCosts.coreBonusUsed}} / {{creationCosts.coreBonusTotal}}</strong></span></div>{{else}}<div class="progress-values"><label>{{localize "TRUDVANG.Field.AdventurePoints"}} <input name="system.experience.adventureAvailable" type="number" value="{{system.experience.adventureAvailable}}" {{#unless isGM}}disabled{{/unless}}></label><span>{{localize "TRUDVANG.Field.AdventureSpent"}} <strong>{{system.experience.adventureSpent}}</strong></span><span>{{localize "TRUDVANG.Field.PendingAdventurePoints"}} <strong>{{pendingAdventureCost}}</strong></span></div>{{/if}}
     {{#if pendingAdvancements.length}}<div class="footer-actions"><button type="button" data-action="confirm-advancement"><i class="fas fa-check"></i> {{localize "TRUDVANG.Action.ConfirmAdvancement"}}</button><button type="button" data-action="cancel-advancement"><i class="fas fa-rotate-left"></i> {{localize "TRUDVANG.Action.CancelAdvancement"}}</button></div>{{/if}}
   </footer>
-</form>
+</div>

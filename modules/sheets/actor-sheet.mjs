@@ -2,31 +2,60 @@ import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 
-const BaseActorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
+const { HandlebarsApplicationMixin } = foundry.applications.api;
+const { ActorSheetV2 } = foundry.applications.sheets;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const normalized = value => String(value || "").trim().toLocaleLowerCase();
 
-export class TrudvangActorSheet extends BaseActorSheet {
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["trudvang", "sheet", "actor"],
-      width: 760,
-      height: 720,
-      resizable: true,
+export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
+  static DEFAULT_OPTIONS = {
+    tag: "form",
+    classes: ["trudvang", "sheet", "actor"],
+    position: {width: 760, height: 720},
+    window: {resizable: true},
+    form: {
+      handler: TrudvangActorSheet.#onSubmit,
       submitOnChange: true,
-      closeOnSubmit: false,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "summary"}],
-      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
-    });
-  }
+      closeOnSubmit: false
+    },
+    dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}],
+    actions: {
+      "roll-skill": TrudvangActorSheet.#onAction,
+      "show-skill-detail": TrudvangActorSheet.#onAction,
+      "roll-trait": TrudvangActorSheet.#onAction,
+      "advance-skill": TrudvangActorSheet.#onAction,
+      "adjust-trait": TrudvangActorSheet.#onAction,
+      "adjust-skill": TrudvangActorSheet.#onAction,
+      "adjust-item-level": TrudvangActorSheet.#onAction,
+      "adjust-catalog-knowledge": TrudvangActorSheet.#onAction,
+      "roll-catalog": TrudvangActorSheet.#onAction,
+      "show-catalog-detail": TrudvangActorSheet.#onAction,
+      "toggle-creation-mode": TrudvangActorSheet.#onAction,
+      "confirm-advancement": TrudvangActorSheet.#onAction,
+      "cancel-advancement": TrudvangActorSheet.#onAction,
+      "roll-initiative": TrudvangActorSheet.#onAction,
+      "reset-combat": TrudvangActorSheet.#onAction,
+      "item-roll": TrudvangActorSheet.#onAction,
+      "item-parry": TrudvangActorSheet.#onAction,
+      "item-damage": TrudvangActorSheet.#onAction,
+      "item-advance": TrudvangActorSheet.#onAction,
+      "item-edit": TrudvangActorSheet.#onAction,
+      "item-delete": TrudvangActorSheet.#onAction,
+      "item-equip": TrudvangActorSheet.#onAction,
+      "item-create": TrudvangActorSheet.#onAction,
+      "add-tablet": TrudvangActorSheet.#onAction,
+      "toggle-tree": TrudvangActorSheet.#onAction,
+      "toggle-zero-knowledge": TrudvangActorSheet.#onAction,
+      "toggle-inactive-magic": TrudvangActorSheet.#onAction,
+      "expand-tree": TrudvangActorSheet.#onAction,
+      "collapse-tree": TrudvangActorSheet.#onAction
+    }
+  };
 
-  get template() {
-    return `systems/trudvang-chronicles/templates/actor/${this.actor.type}-sheet.hbs`;
-  }
-
-  async getData(options = {}) {
-    const context = await super.getData(options);
+  async _prepareContext(options) {
+    const context = await super._prepareContext(options);
+    context.actor = this.actor;
     context.system = this.actor.system;
     context.editable = this.isEditable;
     context.owner = this.actor.isOwner;
@@ -178,12 +207,9 @@ export class TrudvangActorSheet extends BaseActorSheet {
     return context;
   }
 
-  activateListeners(html) {
-    super.activateListeners(html);
-    const root = html[0] ?? html;
-    root.querySelectorAll("[data-action]").forEach(element => {
-      element.addEventListener("click", event => this._onAction(event));
-    });
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    const root = this.element;
     root.querySelectorAll("details[data-tree-key]").forEach(element => {
       element.addEventListener("toggle", () => {
         this._treeState ??= new Map();
@@ -197,32 +223,54 @@ export class TrudvangActorSheet extends BaseActorSheet {
         if (item) await item.update({[`system.${event.currentTarget.dataset.itemField}`]: Number(event.currentTarget.value) || 0});
       });
     });
+    this._activateTabs(root);
     this._restoreViewState(root);
   }
 
-  async _onAction(event) {
+  _activateTabs(root) {
+    const nav = root.querySelector(".sheet-tabs");
+    if (!nav) return;
+    this._activeTab ??= nav.querySelector("[data-tab]")?.dataset.tab ?? "summary";
+    const apply = () => {
+      nav.querySelectorAll("[data-tab]").forEach(link => link.classList.toggle("active", link.dataset.tab === this._activeTab));
+      root.querySelectorAll(".sheet-body > .tab[data-tab]").forEach(panel => {
+        panel.classList.toggle("active", panel.dataset.tab === this._activeTab);
+        panel.style.display = panel.dataset.tab === this._activeTab ? "" : "none";
+      });
+    };
+    apply();
+    nav.addEventListener("click", event => {
+      const link = event.target.closest("[data-tab]");
+      if (!link || !nav.contains(link)) return;
+      event.preventDefault();
+      this._activeTab = link.dataset.tab;
+      apply();
+    });
+  }
+
+  static async #onAction(event, target) {
     event.preventDefault();
     event.stopPropagation();
-    const action = event.currentTarget.dataset.action;
-    const root = event.currentTarget.closest("form") ?? this.element?.[0];
+    const action = target.dataset.action;
+    const root = target.closest("form") ?? this.element;
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
       "item-equip", "item-create", "show-catalog-detail"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
-    const itemId = event.currentTarget.closest("[data-item-id]")?.dataset.itemId;
-    const catalogId = event.currentTarget.dataset.catalogId || event.currentTarget.closest("[data-catalog-id]")?.dataset.catalogId;
+    const itemId = target.closest("[data-item-id]")?.dataset.itemId;
+    const catalogId = target.dataset.catalogId || target.closest("[data-catalog-id]")?.dataset.catalogId;
     const item = itemId ? this.actor.items.get(itemId) : null;
     switch (action) {
-      case "roll-skill": return this.actor.rollSkill(event.currentTarget.dataset.skill);
-      case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[event.currentTarget.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[event.currentTarget.dataset.skill]));
-      case "roll-trait": return this.actor.rollTrait(event.currentTarget.dataset.trait);
-      case "advance-skill": return this.actor.advanceSkill(event.currentTarget.dataset.skill);
-      case "adjust-trait": return this.actor.adjustTrait(event.currentTarget.dataset.trait, Number(event.currentTarget.dataset.direction));
-      case "adjust-skill": return this.actor.adjustSkill(event.currentTarget.dataset.skill, Number(event.currentTarget.dataset.direction));
-      case "adjust-item-level": return item ? this.actor.adjustItemLevel(item, Number(event.currentTarget.dataset.direction)) : null;
-      case "adjust-catalog-knowledge": return this.actor.adjustCatalogKnowledge(catalogId, Number(event.currentTarget.dataset.direction));
+      case "roll-skill": return this.actor.rollSkill(target.dataset.skill);
+      case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[target.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[target.dataset.skill]));
+      case "roll-trait": return this.actor.rollTrait(target.dataset.trait);
+      case "advance-skill": return this.actor.advanceSkill(target.dataset.skill);
+      case "adjust-trait": return this.actor.adjustTrait(target.dataset.trait, Number(target.dataset.direction));
+      case "adjust-skill": return this.actor.adjustSkill(target.dataset.skill, Number(target.dataset.direction));
+      case "adjust-item-level": return item ? this.actor.adjustItemLevel(item, Number(target.dataset.direction)) : null;
+      case "adjust-catalog-knowledge": return this.actor.adjustCatalogKnowledge(catalogId, Number(target.dataset.direction));
       case "roll-catalog": return item && Number(item.system.level || 0) > 0 ? item.roll() : ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeNotLearned"));
       case "show-catalog-detail": return this._openKnowledgeSheet(catalogId);
       case "toggle-creation-mode": return this.actor.toggleCreationMode();
@@ -234,13 +282,13 @@ export class TrudvangActorSheet extends BaseActorSheet {
       case "item-parry": return item ? this.actor.rollWeaponParry(item) : null;
       case "item-damage": return this.actor.rollDamage(item);
       case "item-advance": return item ? this.actor.advanceItem(item) : null;
-      case "item-edit": return item?.sheet.render(true);
+      case "item-edit": return item?.sheet.render({force: true});
       case "item-delete": return this._deleteItem(item);
       case "item-equip": return item?.update({"system.equipped": !item.system.equipped});
-      case "item-create": return this._createItem(event.currentTarget.dataset.type);
+      case "item-create": return this._createItem(target.dataset.type);
       case "add-tablet": return this._openTabletPicker();
       case "toggle-tree": {
-        const details = event.currentTarget.closest("details");
+        const details = target.closest("details");
         if (details) details.open = !details.open;
         return;
       }
@@ -254,6 +302,52 @@ export class TrudvangActorSheet extends BaseActorSheet {
       case "collapse-tree": return this._setTreeExpanded(root, false);
       default: return null;
     }
+  }
+
+  static async #onSubmit(event, form, formData) {
+    const changes = formData.object;
+    const previousOrigins = {
+      race: this.actor.system.details?.race,
+      culture: this.actor.system.details?.culture,
+      nativeLanguage: this.actor.system.details?.nativeLanguage
+    };
+    await this.actor.update(changes);
+    if (!this.actor.system.experience?.creationMode) return;
+    const originsChanged = ["race", "culture", "nativeLanguage"].some(key => this.actor.system.details?.[key] !== previousOrigins[key]);
+    if (originsChanged) {
+      await this.actor.alignCreationOrigins();
+      await this.actor.syncCreationDefaults();
+    }
+    if (this.actor.system.details?.race !== previousOrigins.race) {
+      const allowed = this.actor.allowedReligionIds;
+      if (allowed.length === 1 && !this.actor.system.details.religion) await this.actor.update({"system.details.religion": allowed[0]});
+      else if (!allowed.includes(this.actor.system.details.religion)) await this.actor.update({"system.details.religion": ""});
+    }
+  }
+
+  /** @override */
+  async _onDropItem(event, data) {
+    const ItemClass = foundry.utils.getDocumentClass("Item");
+    const item = await ItemClass.implementation.fromDropData(data);
+    const itemData = item.toObject();
+    // Handle item sorting within the same Actor.
+    if (this.actor.items.has(item.id)) return this._onSortItem(event, itemData);
+    return TrudvangActorSheet.#onDrop.call(this, event, itemData);
+  }
+
+  static async #onDrop(event, itemData) {
+    const entries = Array.isArray(itemData) ? itemData : [itemData];
+    if (entries.length === 1 && entries[0].type === "tablet") {
+      const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
+      if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.UnknownTablet"));
+    }
+    const prepared = entries.map(data => {
+      const copy = foundry.utils.deepClone(data);
+      if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
+      return copy;
+    });
+    return this.actor.createEmbeddedDocuments("Item", Array.isArray(itemData) ? prepared : prepared[0]);
   }
 
   _captureViewState(root) {
@@ -386,8 +480,14 @@ export class TrudvangActorSheet extends BaseActorSheet {
   }
 
   _showDetail(title, description) {
-    const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
-    return new DialogClass({title, content: `<div class="trudvang detail-dialog"><p>${escapeHtml(description)}</p></div>`, buttons: {close: {label: game.i18n.localize("TRUDVANG.Action.Close")}}}).render(true);
+    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+    return DialogClass.wait({
+      window: {title},
+      content: `<div class="trudvang detail-dialog"><p>${escapeHtml(description)}</p></div>`,
+      buttons: [{action: "close", icon: "fas fa-check", label: game.i18n.localize("TRUDVANG.Action.Close")}],
+      modal: false,
+      rejectClose: false
+    });
   }
 
   _abilityText(catalogId, suffix) {
@@ -405,7 +505,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
 
   async _openKnowledgeSheet(catalogId) {
     const existing = this.actor.findKnowledgeItem(catalogId);
-    if (existing) return existing.sheet.render(true);
+    if (existing) return existing.sheet.render({force: true});
     const entry = this.actor.getCatalogEntry(catalogId);
     if (!entry) return;
     const kind = entry.kind ?? "discipline";
@@ -416,7 +516,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
       type: "ability",
       system: {catalogId: entry.id, kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline ?? "", level: 0, freeLevels: 0, rollBonus: entry.rollBonus ?? (kind === "specialty" ? 2 : 1), description, summary}
     }]);
-    return item?.sheet.render(true);
+    return item?.sheet.render({force: true});
   }
 
   _knowledgeSummary(entry) {
@@ -434,13 +534,20 @@ export class TrudvangActorSheet extends BaseActorSheet {
   _openTabletPicker() {
     const tablets = this.actor.compatibleTablets;
     if (!tablets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCompatibleTablets"));
-    const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
     const options = tablets.map(tablet => `<option value="${tablet.id}">${escapeHtml(tabletName(tablet))}</option>`).join("");
-    return new DialogClass({
-      title: game.i18n.localize("TRUDVANG.Dialog.AddTablet"),
-      content: `<form class="trudvang"><div class="form-group"><label>${game.i18n.localize("TYPES.Item.tablet")}</label><select name="tabletId">${options}</select></div></form>`,
-      buttons: {add: {icon: "<i class='fas fa-plus'></i>", label: game.i18n.localize("TRUDVANG.Action.Add"), callback: html => this.actor.addTabletFromCatalog((html[0] ?? html).querySelector("[name=tabletId]")?.value)}, cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")}}
-    }).render(true);
+    return DialogClass.prompt({
+      window: {title: game.i18n.localize("TRUDVANG.Dialog.AddTablet")},
+      content: `<div class="form-group"><label>${game.i18n.localize("TYPES.Item.tablet")}</label><select name="tabletId">${options}</select></div>`,
+      ok: {
+        icon: "fas fa-plus",
+        label: game.i18n.localize("TRUDVANG.Action.Add"),
+        callback: (event, button, dialog) => this.actor.addTabletFromCatalog(button.form?.elements.tabletId?.value)
+      },
+      cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
+      modal: false,
+      rejectClose: false
+    });
   }
 
   _setTreeExpanded(root, expanded) {
@@ -462,22 +569,7 @@ export class TrudvangActorSheet extends BaseActorSheet {
       type,
       system: type === "ability" ? {level: 0} : {}
     }]);
-    item[0]?.sheet.render(true);
-  }
-
-  async _onChangeInput(event) {
-    await super._onChangeInput(event);
-    if (!this.actor.system.experience?.creationMode) return;
-    const name = event.currentTarget?.name;
-    if (["system.details.race", "system.details.culture", "system.details.nativeLanguage"].includes(name)) {
-      await this.actor.alignCreationOrigins();
-      await this.actor.syncCreationDefaults();
-    }
-    if (name === "system.details.race") {
-      const allowed = this.actor.allowedReligionIds;
-      if (allowed.length === 1 && !this.actor.system.details.religion) await this.actor.update({"system.details.religion": allowed[0]});
-      else if (!allowed.includes(this.actor.system.details.religion)) await this.actor.update({"system.details.religion": ""});
-    }
+    item[0]?.sheet.render({force: true});
   }
 
   async _deleteItem(item) {
@@ -492,27 +584,17 @@ export class TrudvangActorSheet extends BaseActorSheet {
     }
     return item.delete();
   }
-
-  async _onDropItemCreate(itemData) {
-    const entries = Array.isArray(itemData) ? itemData : [itemData];
-    if (entries.length === 1 && entries[0].type === "tablet") {
-      const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
-      if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
-      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.UnknownTablet"));
-    }
-    const prepared = entries.map(data => {
-      const copy = foundry.utils.deepClone(data);
-      if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
-      return copy;
-    });
-    return super._onDropItemCreate(Array.isArray(itemData) ? prepared : prepared[0]);
-  }
 }
 
 export class TrudvangCharacterSheet extends TrudvangActorSheet {
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {width: 780, height: 740});
-  }
+  static PARTS = {
+    main: {template: "systems/trudvang-chronicles/templates/actor/character-sheet.hbs"}
+  };
+
+  static DEFAULT_OPTIONS = {
+    position: {width: 780, height: 740},
+    classes: ["character-sheet"]
+  };
 
   // Leaving creation mode finalizes the character (validations, spent points); closing the
   // window mid-creation would otherwise strand the work in a half-configured state.
@@ -526,7 +608,12 @@ export class TrudvangCharacterSheet extends TrudvangActorSheet {
 }
 
 export class TrudvangNpcSheet extends TrudvangActorSheet {
-  static get defaultOptions() {
-    return foundry.utils.mergeObject(super.defaultOptions, {width: 580, height: 650});
-  }
+  static PARTS = {
+    main: {template: "systems/trudvang-chronicles/templates/actor/npc-sheet.hbs"}
+  };
+
+  static DEFAULT_OPTIONS = {
+    position: {width: 580, height: 650},
+    classes: ["npc-sheet"]
+  };
 }

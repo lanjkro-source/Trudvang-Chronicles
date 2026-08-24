@@ -26,23 +26,37 @@ Hooks.once("init", () => {
   CONFIG.Actor.documentClass = TrudvangActor;
   CONFIG.Item.documentClass = TrudvangItem;
 
-  // Actor sheets — still AppV1 (migration planned separately)
-  const actorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
-  const ActorSheets = foundry.documents.collections.Actors;
-  ActorSheets.unregisterSheet("core", actorSheet);
-  ActorSheets.registerSheet("trudvang-chronicles", TrudvangCharacterSheet, {
-    types: ["character"],
-    makeDefault: true,
-    label: "TRUDVANG.Sheets.Character"
-  });
-  ActorSheets.registerSheet("trudvang-chronicles", TrudvangNpcSheet, {
-    types: ["npc"],
-    makeDefault: true,
-    label: "TRUDVANG.Sheets.Npc"
-  });
+  // Actor sheets — ApplicationV2
+  const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;
+  if (DocumentSheetConfig) {
+    DocumentSheetConfig.registerSheet(foundry.documents.Actor, "trudvang-chronicles", TrudvangCharacterSheet, {
+      types: ["character"],
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Character"
+    });
+    DocumentSheetConfig.registerSheet(foundry.documents.Actor, "trudvang-chronicles", TrudvangNpcSheet, {
+      types: ["npc"],
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Npc"
+    });
+  } else {
+    // Fallback for V14 compatibility
+    const actorSheet = foundry.appv1?.sheets?.ActorSheet ?? globalThis.ActorSheet;
+    const ActorSheets = foundry.documents.collections.Actors;
+    ActorSheets.unregisterSheet("core", actorSheet);
+    ActorSheets.registerSheet("trudvang-chronicles", TrudvangCharacterSheet, {
+      types: ["character"],
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Character"
+    });
+    ActorSheets.registerSheet("trudvang-chronicles", TrudvangNpcSheet, {
+      types: ["npc"],
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Npc"
+    });
+  }
 
   // Item sheet — ApplicationV2
-  const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;
   if (DocumentSheetConfig) {
     DocumentSheetConfig.registerSheet(foundry.documents.Item, "trudvang-chronicles", TrudvangItemSheet, {
       makeDefault: true,
