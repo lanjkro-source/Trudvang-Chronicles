@@ -325,15 +325,69 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
   }
 
-  /** @override — AppV2 passes the resolved Item document, not raw data. */
-  async _onDropItem(event, item) {
-    const itemData = item.toObject();
-    // Handle item sorting within the same Actor.
-    if (this.actor.items.has(item.id)) return this._onSortItem(event, itemData);
-    return TrudvangActorSheet.#onDrop.call(this, event, itemData);
+  /** @override — point d'entrée générique V2 : log + délégation */
+  async _onDrop(event) {
+    // Log pour diagnostic — visible en F12
+    try {
+      const data = TextEditorImpl.getDragEventData(event);
+      console.log("Trudvang | _onDrop", data);
+    } catch (e) { console.log("Trudvang | _onDrop (no data)", e); }
+    return super._onDrop(event);
   }
 
+  /** @override — ActorSheetV2 passes un Item document résolu ; on gère aussi les données brutes par sécurité. */
+  async _onDropItem(event, item) {
+    let itemDoc = item;
+    // Défensif : si ce n'est pas déjà un Document Foundry (drop brut / compat), le résoudre.
+    if (!itemDoc?.documentName) {
+      try {
+        const ItemClass = foundry.utils.getDocumentClass("Item");
+        // fromDropData existe sur ItemClass ou ItemClass.implementation selon version
+        const resolved = ItemClass.implementation?.fromDropData
+          ? await ItemClass.implementation.fromDropData(item)
+          : await ItemClass.fromDropData(item);
+        if (!resolved) throw new Error("fromDropData returned null");
+        itemDoc = resolved;
+      } catch (err) {
+        console.error("Trudvang | _onDropItem: impossible de résoudre le drop", err, item);
+        return false;
+      }
+    }
+    // Tri interne si l'item appartient déjà à cet acteur
+    if (this.actor.items.has(itemDoc.id)) {
+      try {
+        return await this._onSortItem(event, itemDoc);
+      } catch (err) {
+        console.error("Trudvang | _onSortItem failed", err);
+        // fallback : on ne crée pas de doublon
+        return false;
+      }
+    }
+    const itemData = itemDoc.toObject();
+    return this._handleDrop(itemData);
+  }
+
+  /** Tablettes : via catalogue ; sinon création standard avec reset niveau ability hors création. */
+  async _handleDrop(itemData) {
+    const entries = Array.isArray(itemData) ? itemData : [itemData];
+    if (entries.length === 1 && entries[0].type === "tablet") {
+      const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
+      if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.UnknownTablet"));
+    }
+    const prepared = entries.map(data => {
+      const copy = foundry.utils.deepClone(data);
+      if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
+      return copy;
+    });
+    return this.actor.createEmbeddedDocuments("Item", Array.isArray(itemData) ? prepared : prepared[0]);
+  }
+
+  // Compat : l'ancien #onDrop statique reste mais délègue (évite de casser d'éventuels appels)
   static async #onDrop(event, itemData) {
+    // Appelé via .call(this, ...) avec this = instance — on délègue à l'instance
+    if (this?._handleDrop) return this._handleDrop(itemData);
+    // Fallback statique (ne devrait pas arriver)
     const entries = Array.isArray(itemData) ? itemData : [itemData];
     if (entries.length === 1 && entries[0].type === "tablet") {
       const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
