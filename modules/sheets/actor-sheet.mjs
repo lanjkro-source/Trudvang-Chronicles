@@ -380,7 +380,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
       return copy;
     });
-    return this.actor.createEmbeddedDocuments("Item", Array.isArray(itemData) ? prepared : prepared[0]);
+    return this.actor.createEmbeddedDocuments("Item", prepared);
   }
 
   // Compat : l'ancien #onDrop statique reste mais délègue (évite de casser d'éventuels appels)
@@ -399,7 +399,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
       return copy;
     });
-    return this.actor.createEmbeddedDocuments("Item", Array.isArray(itemData) ? prepared : prepared[0]);
+    return this.actor.createEmbeddedDocuments("Item", prepared);
   }
 
   _captureViewState(root) {
