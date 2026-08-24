@@ -6,14 +6,14 @@ async function evaluate(formula) {
   return roll;
 }
 
-export async function openD10({dice = 1, threshold = 10, modifier = 0} = {}) {
+export async function openDice({dice = 1, faces = 10, threshold = 10, modifier = 0} = {}) {
   const rolls = [];
   let total = Number(modifier) || 0;
   for (let die = 0; die < dice; die += 1) {
     let chained = true;
     let guard = 0;
     while (chained && guard < 100) {
-      const roll = await evaluate("1d10");
+      const roll = await evaluate(`1d${faces}`);
       const result = Number(roll.total);
       rolls.push(result);
       total += result;
@@ -22,6 +22,10 @@ export async function openD10({dice = 1, threshold = 10, modifier = 0} = {}) {
     }
   }
   return {total, rolls, threshold, modifier: Number(modifier) || 0};
+}
+
+export async function openD10(options = {}) {
+  return openDice({...options, faces: 10});
 }
 
 export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1}) {
@@ -136,19 +140,22 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
 
 export async function rollDamage({actor, item}) {
   const formula = String(item.system.damage || "1d10").replace(/\s/g, "");
-  const match = formula.match(/^(\d+)d10(?:\+(\d+))?$/i);
+  const match = formula.match(/^(\d+)d(\d+)$/i);
   const strength = item.system.strengthApplies ? Number(actor.system.traits?.strength || 0) : 0;
+  const damageBonus = Number(item.system.damageBonus || 0);
   let total;
   let detail;
   let rolls = [];
   if (match) {
     const dice = Number(match[1]);
-    const fixed = Number(match[2] || 0) + strength;
-    const exploded = await openD10({dice, threshold: Number(item.system.openRoll || 0), modifier: fixed});
+    const faces = Number(match[2]);
+    const fixed = damageBonus + strength;
+    const exploded = await openDice({dice, faces, threshold: Number(item.system.openRoll || 0), modifier: fixed});
     total = exploded.total;
     detail = exploded.rolls.join(" + ");
   } else {
-    const roll = await evaluate(`(${formula}) + ${strength}`);
+    const bonus = damageBonus ? ` + ${damageBonus}` : "";
+    const roll = await evaluate(`(${formula}) + ${strength}${bonus}`);
     total = roll.total;
     detail = roll.formula;
     rolls = [roll];

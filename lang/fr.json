@@ -117,9 +117,9 @@
       "Category": "Catégorie",
       "Damage": "Dégâts",
       "OpenRoll": "Seuil de jet ouvert (0 = aucun)",
-      "WeaponActions": "Actions d'arme",
-      "AttackValue": "CP MAX PAR TOUR",
-      "InitiativeModifier": "Modificateur d'initiative",
+      "WeaponActions": "AA : ACTIONS D'ARME",
+      "AttackValue": "BONUS CP",
+      "InitiativeModifier": "MI : MOD. INITIATIVE",
       "VitnerType": "Type d'enchanteur",
       "PerfectSuccess": "Réussite parfaite sur",
       "NoPerfectSuccess": "Aucune réussite parfaite",
@@ -150,7 +150,10 @@
       "Summary": "Résumé",
       "PassiveProtection": "Protection passive (PP)",
       "BreachCurrent": "Valeur d'intégrité (actuelle)",
-      "BreachMax": "Valeur d'intégrité (maximale)"
+      "BreachMax": "Valeur d'intégrité (maximale)",
+      "OpenRollShort": "JO",
+      "VpProtectionLabel": "VP: PROTECTION",
+      "VpIntegrityLabel": "VP: INTÉGRITÉ"
     },
     "Resource": {
       "Body": "Points de santé (PS)",

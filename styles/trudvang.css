@@ -178,6 +178,14 @@
 .trudvang-sheet.item-sheet .item-fields textarea { min-height: 58px; resize: vertical; }
 .trudvang-sheet.item-sheet .item-fields .checkbox { flex-direction: row; align-items: center; gap: 4px; }
 .trudvang-sheet.item-sheet .item-fields .checkbox input { width: auto; }
+.trudvang-sheet.item-sheet .damage-complex { grid-column: span 2; }
+.trudvang-sheet.item-sheet .damage-complex > label { display: flex; flex-direction: column; gap: 3px; }
+.trudvang-sheet.item-sheet .damage-parts { display: flex; align-items: center; gap: 5px; }
+.trudvang-sheet.item-sheet .damage-parts input { height: 25px; }
+.trudvang-sheet.item-sheet .damage-parts .damage-dice { flex: 1 1 auto; min-width: 60px; }
+.trudvang-sheet.item-sheet .damage-parts .damage-open { font-weight: 700; color: var(--trudvang-muted); text-transform: none; }
+.trudvang-sheet.item-sheet .damage-parts .damage-seuil,
+.trudvang-sheet.item-sheet .damage-parts .damage-bonus { width: 56px; min-width: 56px; padding: 0 3px; text-align: center; }
 .trudvang-sheet.item-sheet .split-input { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
 .trudvang-sheet.item-sheet .item-description { min-height: 0; margin: 10px; flex: 1; overflow-y: auto; }
 .trudvang-sheet.item-sheet .panel { width: calc(100% - 20px); margin: 0 10px; }

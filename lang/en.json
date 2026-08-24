@@ -115,11 +115,11 @@
       "Weight": "Weight (kg)",
       "Value": "Value (silver coins)",
       "Category": "Category",
-      "Damage": "Damage Formula",
+      "Damage": "Damages",
       "OpenRoll": "Open Roll Threshold (0 = none)",
-      "WeaponActions": "Weapon Actions",
-      "AttackValue": "MAX CP PER TURN",
-      "InitiativeModifier": "Initiative Modifier",
+      "WeaponActions": "AA: WEAPON ACTIONS",
+      "AttackValue": "CP BONUS",
+      "InitiativeModifier": "MI: INITIATIVE MODIFIER",
       "VitnerType": "Vitner Type",
       "PerfectSuccess": "Perfect Success on",
       "NoPerfectSuccess": "No perfect success",
@@ -150,7 +150,10 @@
       "Summary": "Summary",
       "PassiveProtection": "Passive Protection (PP)",
       "BreachCurrent": "Breach Value (current)",
-      "BreachMax": "Breach Value (max)"
+      "BreachMax": "Breach Value (max)",
+      "OpenRollShort": "O",
+      "VpProtectionLabel": "VP: PROTECTION",
+      "VpIntegrityLabel": "VP: INTEGRITY"
     },
     "Resource": {
       "Body": "Body Points",

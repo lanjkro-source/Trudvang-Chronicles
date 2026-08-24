@@ -169,7 +169,8 @@ export class WeaponData extends BaseItemData {
       openRoll: integer(10, {min: 0, max: 10}),
       strengthApplies: boolean(true),
       weaponActions: integer(4, {min: 0}),
-      attackValue: integer(5, {min: 0}),
+      attackValue: integer(0, {min: 0}),
+      damageBonus: integer(0),
       range: schema({short: string(), long: string()})
     };
   }

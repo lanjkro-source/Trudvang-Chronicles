@@ -50,6 +50,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.config = TRUDVANG;
     context.advancementLocked = this.advancementLocked;
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
+    context.protectionComputed = Math.ceil((Number(this.item.system.breach?.value) || 0) / 10);
     return context;
   }
 
@@ -70,7 +71,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onSubmit(event, form, formData, submitOptions) {
-    await this.item.update(formData.object);
+    const changes = {...formData.object};
+    if (this.item.type === "weapon" && changes["system.breach.value"] !== undefined) {
+      const integrity = Math.max(0, Number(changes["system.breach.value"]) || 0);
+      changes["system.protection"] = Math.ceil(integrity / 10);
+    }
+    await this.item.update(changes);
   }
 
   static async #onRoll(event, target) {
