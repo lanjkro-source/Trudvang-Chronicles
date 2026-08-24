@@ -73,7 +73,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onSubmit(event, form, formData) {
-    await this.item.update(formData.object);
+    await this.document.update(formData.object);
   }
 
   static async #onRoll(event, target) {
