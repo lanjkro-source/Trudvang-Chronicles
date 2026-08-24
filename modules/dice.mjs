@@ -59,7 +59,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
 }
 
 export async function initiativeDialog({actor, target, lightningQuickLevel = 0}) {
-  const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const magicChoices = actor.items.filter(item => ["spell", "divineFeat"].includes(item.type)).filter(item => {
     const tablet = actor.items.find(candidate => candidate.type === "tablet" && (candidate.system.catalogId === item.system.tabletId || candidate.name === item.system.tablet));
     return !tablet || Number(item.system.level || 1) <= Number(tablet.system.level || 1);
@@ -74,35 +74,35 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
   }).join("");
   const choices = `${weaponChoices}${magicChoices}`;
   const content = `
-    <form class="trudvang roll-dialog">
+    <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeAction"))}</label><select name="magicModifier"><option value="0">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoInitiativeAction"))}</option>${choices}</select></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
-    </form>`;
-  return new Promise(resolve => {
-    new DialogClass({
-      title: game.i18n.localize("TRUDVANG.Action.RollInitiative"), content,
-      buttons: {
-        roll: {icon: "<i class='fas fa-dice-d10'></i>", label: game.i18n.localize("TRUDVANG.Action.Roll"), callback: html => {
-          const root = html[0] ?? html;
-          resolve({modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0)});
-        }},
-        cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => resolve(null)}
-      },
-      default: "roll", close: () => resolve(null)
-    }).render(true);
+    </div>`;
+  return DialogClass.wait({
+    window: {title: game.i18n.localize("TRUDVANG.Action.RollInitiative")},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0)};
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+    ],
+    modal: false,
+    rejectClose: false
   });
 }
 
 export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0}) {
-  const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const options = methods.map(method => {
     const target = Number(method.target || 0) + Number(spellModifier || 0);
     return `<option value="${escapeHtml(method.id)}">${escapeHtml(method.label)} — VC ${target}</option>`;
   }).join("");
   const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0);
   const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} SV (+${bonus * 2} ${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Vitner"))})</option>`).join("");
-  const content = `<form class="trudvang roll-dialog magic-roll-dialog">
+  const content = `<div class="trudvang roll-dialog magic-roll-dialog">
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MagicMethod"))}</label><select name="method">${options}</select></div>
     <p class="magic-breakdown">${escapeHtml(methods[0]?.breakdown || "")}</p>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
@@ -110,17 +110,13 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Strenuous"))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     ${strenuousMax ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalVitnerCost"))}: <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>` : ""}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
-  </form>`;
-  return new Promise(resolve => {
-    new DialogClass({title, content, buttons: {
-      roll: {icon: "<i class='fas fa-dice-d20'></i>", label: game.i18n.localize("TRUDVANG.Action.Roll"), callback: html => {
-        const root = html[0] ?? html;
-        const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
-        const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
-        resolve({method, strenuousBonus, target: Number(method?.target || 0) + Number(spellModifier || 0) + strenuousBonus, cost: Math.max(0, Number(root.querySelector("[name=cost]")?.value || 0)) + (2 * strenuousBonus), modifier: Number(root.querySelector("[name=modifier]")?.value || 0)});
-      }}, cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => resolve(null)}
-    }, default: "roll", close: () => resolve(null), render: html => {
-      const root = html[0] ?? html;
+  </div>`;
+  // Local subclass so the live breakdown refresh (FinalTarget / FinalVitnerCost) survives the
+  // AppV1 -> AppV2 migration: DialogV2 exposes the old `render` hook through `_onRender`.
+  class MagicRollDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
       const refresh = () => {
         const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
@@ -134,7 +130,22 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
       root.querySelector("[name=method]")?.addEventListener("change", refresh);
       root.querySelector("[name=strenuous]")?.addEventListener("change", refresh);
       root.querySelector("[name=cost]")?.addEventListener("input", refresh);
-    }}).render(true);
+    }
+  }
+  return MagicRollDialog.wait({
+    window: {title},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
+        const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
+        return {method, strenuousBonus, target: Number(method?.target || 0) + Number(spellModifier || 0) + strenuousBonus, cost: Math.max(0, Number(root.querySelector("[name=cost]")?.value || 0)) + (2 * strenuousBonus), modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+    ],
+    modal: false,
+    rejectClose: false
   });
 }
 
@@ -175,36 +186,37 @@ export async function rollDamage({actor, item}) {
 }
 
 export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = ""}) {
-  const DialogClass = foundry.appv1?.api?.Dialog ?? globalThis.Dialog;
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
-    <form class="trudvang roll-dialog">
+    <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
-    </form>`;
-  return new Promise(resolve => {
-    new DialogClass({
-      title,
-      content,
-      buttons: {
-        roll: {
-          icon: "<i class='fas fa-dice-d20'></i>",
-          label: game.i18n.localize("TRUDVANG.Action.Roll"),
-          callback: html => {
-            const root = html[0] ?? html;
-            resolve({
-              modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
-              cost: Number(root.querySelector("[name=cost]")?.value || defaultCost)
-            });
-          }
-        },
-        cancel: {
-          label: game.i18n.localize("TRUDVANG.Action.Cancel"),
-          callback: () => resolve(null)
+    </div>`;
+  return DialogClass.wait({
+    window: {title},
+    content,
+    buttons: [
+      {
+        action: "roll",
+        icon: "fas fa-dice-d20",
+        label: game.i18n.localize("TRUDVANG.Action.Roll"),
+        default: true,
+        callback: (event, button, dialog) => {
+          const root = button.form ?? dialog.element;
+          return {
+            modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
+            cost: Number(root.querySelector("[name=cost]")?.value || defaultCost)
+          };
         }
       },
-      default: "roll",
-      close: () => resolve(null)
-    }).render(true);
+      {
+        action: "cancel",
+        label: game.i18n.localize("TRUDVANG.Action.Cancel"),
+        callback: () => null
+      }
+    ],
+    modal: false,
+    rejectClose: false
   });
 }
