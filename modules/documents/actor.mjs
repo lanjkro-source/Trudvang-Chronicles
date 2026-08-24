@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder } from "../dice.mjs";
+import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -433,7 +434,9 @@ export class TrudvangActor extends BaseActor {
       detail,
       modifier: result.modifier
     });
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content});
+    // Pass the raw d10 Roll objects (V16/Dice So Nice): without `rolls` the chat card renders
+    // but no 3D dice are animated. Same objects that produced `total`, so nothing is re-rolled.
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: result.diceRolls});
     return result.total;
   }
 

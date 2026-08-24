@@ -1,3 +1,5 @@
+import { renderTemplate } from "../helpers.mjs";
+
 const BaseItem = foundry.documents.Item;
 
 export class TrudvangItem extends BaseItem {

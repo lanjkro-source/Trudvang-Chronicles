@@ -1,4 +1,4 @@
-import { escapeHtml } from "./helpers.mjs";
+import { escapeHtml, renderTemplate } from "./helpers.mjs";
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -8,6 +8,7 @@ async function evaluate(formula) {
 
 export async function openDice({dice = 1, faces = 10, threshold = 10, modifier = 0} = {}) {
   const rolls = [];
+  const diceRolls = []; // Real Roll objects kept so chat messages can animate them (Dice So Nice).
   let total = Number(modifier) || 0;
   for (let die = 0; die < dice; die += 1) {
     let chained = true;
@@ -16,12 +17,13 @@ export async function openDice({dice = 1, faces = 10, threshold = 10, modifier =
       const roll = await evaluate(`1d${faces}`);
       const result = Number(roll.total);
       rolls.push(result);
+      diceRolls.push(roll);
       total += result;
       chained = threshold > 0 && result >= threshold;
       guard += 1;
     }
   }
-  return {total, rolls, threshold, modifier: Number(modifier) || 0};
+  return {total, rolls, diceRolls, threshold, modifier: Number(modifier) || 0};
 }
 
 export async function openD10(options = {}) {
@@ -164,6 +166,7 @@ export async function rollDamage({actor, item}) {
     const exploded = await openDice({dice, faces, threshold: Number(item.system.openRoll || 0), modifier: fixed});
     total = exploded.total;
     detail = exploded.rolls.join(" + ");
+    rolls = exploded.diceRolls; // Pass the open-ended Roll objects so Dice So Nice animates them too.
   } else {
     const bonus = damageBonus ? ` + ${damageBonus}` : "";
     const roll = await evaluate(`(${formula}) + ${strength}${bonus}`);
