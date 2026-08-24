@@ -63,6 +63,9 @@ export class TrudvangActorSheet extends BaseActorSheet {
     for (const [group, types] of Object.entries(TRUDVANG.actorItemGroups)) {
       context.itemsByGroup[group] = this.actor.items.filter(item => types.includes(item.type)).sort((a, b) => a.name.localeCompare(b.name));
     }
+    for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
+      item._hoverTitle = this._getItemHoverTitle(item);
+    }
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
       appearance: await TextEditorImpl.enrichHTML(this.actor.system.appearance || "", {async: true, secrets: this.actor.isOwner}),
@@ -311,6 +314,75 @@ export class TrudvangActorSheet extends BaseActorSheet {
     if (label) label.textContent = game.i18n.localize(key);
     const icon = button.querySelector("i");
     if (icon) icon.className = this._showInactiveMagic ? "fas fa-eye-slash" : "fas fa-eye";
+  }
+
+  _getSpecialtyLevel(id) {
+    return Number(this.actor.findKnowledgeItem(id)?.system.level || 0);
+  }
+
+  _getItemHoverTitle(item) {
+    const isEN = game.i18n.lang === "en";
+    const aaLab = isEN ? "WA" : "AA";
+    const miLab = isEN ? "IM" : "MI";
+    const mmLab = "MM";
+    const vpLab = isEN ? "PV" : "VP";
+    const viLab = isEN ? "BV" : "VI";
+    const cpLab = "CP";
+    const openShort = isEN ? "O" : "JO";
+    const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
+    const strength = Number(this.actor.system.traits?.strength || 0);
+    if (item.type === "weapon") {
+      let AA = Number(item.system.weaponActions || 0);
+      const catBonusMap = {
+        oneHandedLight: "oneHandedLightWeapons",
+        oneHandedHeavy: "oneHandedHeavyWeapons",
+        twoHanded: "twoHandedWeapons",
+        ranged: "bowsSlings",
+        natural: "brawling"
+      };
+      const specId = catBonusMap[item.system.category];
+      if (specId && this._getSpecialtyLevel(specId) >= 3) AA += 1;
+      if (item.system.category === "ranged") {
+        const cross = this._getSpecialtyLevel("crossbow");
+        if (cross >= 3) AA = Math.max(AA, Number(item.system.weaponActions || 0) + 1);
+      }
+      let MI = Number(item.system.initiativeModifier || 0);
+      const cr = this._getSpecialtyLevel("combatReaction");
+      if (cr) MI += cr;
+      const VI = Number(item.system.breach?.value ?? 0);
+      const VImax = Number(item.system.breach?.max ?? 0);
+      const VP = Math.ceil(Math.max(0, VI) / 10);
+      let CP = Number(item.system.attackValue || 0);
+      const heavyCP = this._getSpecialtyLevel("oneHandedHeavyWeapons");
+      if (item.system.category === "oneHandedHeavy" && heavyCP) CP += Math.floor(heavyCP / 2);
+      const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
+      const dmg = `${item.system.damage || "1d10"}${openShort}${Number(item.system.openRoll ?? 10)}${signed(bonus)}`;
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
+    }
+    if (item.type === "shield") {
+      let AA = Number(item.system.weaponActions || 0);
+      const sb = this._getSpecialtyLevel("shieldBearer");
+      if (sb >= 3) AA += 1;
+      let MI = Number(item.system.initiativeModifier || 0);
+      const cr = this._getSpecialtyLevel("combatReaction");
+      if (cr) MI += cr;
+      const VI = Number(item.system.breach?.value ?? 0);
+      const VImax = Number(item.system.breach?.max ?? 0);
+      const VP = Math.ceil(Math.max(0, VI) / 10);
+      let CP = Number(item.system.attackValue || 0);
+      const dmg = `${item.system.damage || "1d10"}${openShort}${Number(item.system.openRoll ?? 0)}${Number(item.system.damageBonus||0) ? signed(item.system.damageBonus) : ""}`;
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
+    }
+    if (item.type === "armor") {
+      const AA = Number(item.system.weaponActions ?? 0) || Number(this._getSpecialtyLevel("armorBearer") ? 1 : 0);
+      let MI = Number(item.system.initiativeModifier || 0);
+      let MM = Number(item.system.movementModifier || 0);
+      const VI = Number(item.system.breach?.value ?? 0);
+      const VImax = Number(item.system.breach?.max ?? 0);
+      const VP = Math.ceil(Math.max(0, VI) / 10);
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${mmLab}:${signed(MM)} ${vpLab}:${VP}/${VImax}`;
+    }
+    return "";
   }
 
   _showDetail(title, description) {
