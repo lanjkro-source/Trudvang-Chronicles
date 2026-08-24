@@ -59,10 +59,11 @@
 .trudvang-sheet .identity-grid label { color: #d8c59f; font-size: .67rem; text-transform: uppercase; letter-spacing: .06em; }
 .trudvang-sheet .identity-grid input, .trudvang-sheet .identity-grid select { width: 100%; height: 20px; padding: 0 3px; color: #fff4df; background: rgba(255,255,255,.08); border-color: #9d8050; font-size: .82rem; text-transform: none; }
 .trudvang-sheet .identity-grid option { color: var(--trudvang-ink); }
-.trudvang-sheet .money-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 10px; }
-.trudvang-sheet .money-row label { color: #d8c59f; font-size: .67rem; text-transform: uppercase; letter-spacing: .06em; display: flex; flex-direction: column; }
-.trudvang-sheet .money-row input { width: 100%; height: 22px; color: var(--trudvang-ink); background: rgba(255,255,255,.08); border-color: #9d8050; }
-.trudvang-sheet .weight-total { text-align: right; font-size: .78rem; color: #d8c59f; margin: 2px 4px 10px; }
+.trudvang-sheet .money-weight-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 8px; min-height: 28px; }
+.trudvang-sheet .money-weight-bar .coins { display: flex; gap: 6px; align-items: center; }
+.trudvang-sheet .money-weight-bar .coins label { display: flex; align-items: center; gap: 3px; color: #d8c59f; font-size: .65rem; text-transform: uppercase; letter-spacing: .04em; }
+.trudvang-sheet .money-weight-bar .coins input { width: 52px; height: 18px; padding: 0 3px; font-size: .78rem; text-align: center; }
+.trudvang-sheet .money-weight-bar .weight-compact { font-size: .75rem; color: var(--trudvang-muted); white-space: nowrap; }
 .trudvang-sheet .initiative-button { height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #f3dfb4; border: 1px solid #b9985e; border-radius: 50%; background: rgba(20,10,8,.45); }
 .trudvang-sheet .initiative-button i { font-size: 1rem; }
 .trudvang-sheet .initiative-button strong { font: 700 1.45rem Georgia, serif; }

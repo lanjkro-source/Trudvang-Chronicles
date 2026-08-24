@@ -26,6 +26,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     position: { width: 560, height: 620 },
     resizable: true,
     form: {
+      handler: TrudvangItemSheet.#onSubmit,
       submitOnChange: true,
       closeOnSubmit: false
     },
@@ -69,6 +70,10 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
+  }
+
+  static async #onSubmit(event, form, formData) {
+    await this.item.update(formData.object);
   }
 
   static async #onRoll(event, target) {
