@@ -89,7 +89,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
         const root = button.form ?? dialog.element;
         return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0)};
       }},
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],
     modal: false,
     rejectClose: false
@@ -144,7 +144,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
         return {method, strenuousBonus, target: Number(method?.target || 0) + Number(spellModifier || 0) + strenuousBonus, cost: Math.max(0, Number(root.querySelector("[name=cost]")?.value || 0)) + (2 * strenuousBonus), modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
       }},
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],
     modal: false,
     rejectClose: false
@@ -216,7 +216,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
       {
         action: "cancel",
         label: game.i18n.localize("TRUDVANG.Action.Cancel"),
-        callback: () => null
+        callback: () => false
       }
     ],
     modal: false,
