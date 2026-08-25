@@ -94,6 +94,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
     for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
       item._hoverTitle = this._getItemHoverTitle(item);
+      item._damageText = this._getItemDamageText(item);
     }
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
@@ -497,7 +498,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const heavyCP = this._getSpecialtyLevel("oneHandedHeavyWeapons");
       if (item.system.category === "oneHandedHeavy" && heavyCP) CP += Math.floor(heavyCP / 2);
       const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
-      const dmg = `${item.system.damage || "1d10"}${openShort}${Number(item.system.openRoll ?? 10)}${signed(bonus)}`;
+      const open = Number(item.system.openRoll ?? 10);
+      const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "shield") {
@@ -511,7 +513,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const VImax = Number(item.system.breach?.max ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       let CP = Number(item.system.attackValue || 0);
-      const dmg = `${item.system.damage || "1d10"}${openShort}${Number(item.system.openRoll ?? 0)}${Number(item.system.damageBonus||0) ? signed(item.system.damageBonus) : ""}`;
+      const open = Number(item.system.openRoll ?? 0);
+      const bonus = Number(item.system.damageBonus || 0);
+      const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "armor") {
@@ -522,6 +526,24 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const VImax = Number(item.system.breach?.max ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${mmLab}:${signed(MM)} ${vpLab}:${VP}/${VImax}`;
+    }
+    return "";
+  }
+
+  _getItemDamageText(item) {
+    const isEN = game.i18n.lang === "en";
+    const openShort = isEN ? "O" : "JO";
+    const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
+    const strength = Number(this.actor.system.traits?.strength || 0);
+    if (item.type === "weapon") {
+      const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
+      const open = Number(item.system.openRoll ?? 10);
+      return `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
+    }
+    if (item.type === "shield") {
+      const open = Number(item.system.openRoll ?? 0);
+      const bonus = Number(item.system.damageBonus || 0);
+      return `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
     }
     return "";
   }
