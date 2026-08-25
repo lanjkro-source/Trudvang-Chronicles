@@ -517,9 +517,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "armor") {
-      const ic = this._getSpecialtyLevel("ironclad");
-      let HE = Number(item.system.heft ?? item.system.Heft ?? 0) - ic;
-      HE = Math.min(10, Math.max(0, HE));
+      let HE = Number(item.system.heft ?? 0);
+      if (HE > 1) { // ironclad ne peut pas réduire en-dessous de 1
+        const ic = this._getSpecialtyLevel("ironclad");
+        HE = Math.min(10, Math.max(1, HE - ic));
+      }
       // Recalcule comme ArmorData.prepareDerivedData mais avec HE réduit par ironclad
       const [baseMI, baseMM] = ARMOR_ENCUMBRANCE_PENALTIES[HE] ?? [0, 0];
       let MI = baseMI;
