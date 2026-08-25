@@ -152,9 +152,10 @@
 .trudvang-sheet .skill-row label { display: grid; grid-template-columns: auto 30px; gap: 2px; align-items: center; color: var(--trudvang-muted); font-size: .7rem; }
 .trudvang-sheet .skill-row input { width: 30px; text-align: center; }
 
-.trudvang-sheet .section-heading { min-height: 28px; display: flex; justify-content: space-between; align-items: start; border-bottom: 1px solid var(--trudvang-gold); }
+.trudvang-sheet .section-heading { min-height: 28px; display: flex; justify-content: space-between; align-items: center; gap: 8px; border-bottom: 1px solid var(--trudvang-gold); }
 .trudvang-sheet .section-heading h2 { flex: 1; border: 0; }
 .trudvang-sheet .section-heading button { width: auto; padding: 2px 6px; font-size: .72rem; }
+.trudvang-sheet .section-heading > span { display: flex; gap: 6px; align-items: center; flex-wrap: nowrap; justify-content: flex-end; }
 .trudvang-sheet .tree-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
 .trudvang-sheet .item-list { margin: 0; padding: 0; list-style: none; }
 .trudvang-sheet .item-list .item { min-height: 34px; display: grid; grid-template-columns: 30px 27px 27px 26px 10px minmax(0, 1fr) auto repeat(3, 27px); gap: 3px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }

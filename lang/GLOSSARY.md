@@ -86,6 +86,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Roll` | Roll | Jet de dé |
 | `TRUDVANG.Action.Cancel` | Cancel | Annuler |
 | `TRUDVANG.Action.Use` | Use | Utiliser |
+| `TRUDVANG.Action.Attack` | Attack | Attaquer |
 | `TRUDVANG.Action.Damage` | Damage | Dégâts |
 | `TRUDVANG.Action.Parry` | Parry | Parer |
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
@@ -143,9 +144,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Category` | Category | Catégorie |
 | `TRUDVANG.Field.Damage` | Damages | Dégâts |
 | `TRUDVANG.Field.OpenRoll` | Open Roll Threshold (0 = none) | Seuil de jet ouvert (0 = aucun) |
-| `TRUDVANG.Field.WeaponActions` | AA: WEAPON ACTIONS | AA : ACTIONS D'ARME |
+| `TRUDVANG.Field.WeaponActions` | WA: WEAPON ACTIONS | AA : ACTIONS D'ARME |
 | `TRUDVANG.Field.AttackValue` | CP BONUS | BONUS CP |
-| `TRUDVANG.Field.InitiativeModifier` | MI: INITIATIVE MODIFIER | MI : MOD. INITIATIVE |
+| `TRUDVANG.Field.InitiativeModifier` | IM: INITIATIVE MODIFIER | MI : MOD. INITIATIVE |
 | `TRUDVANG.Field.VitnerType` | Vitner Type | Type d'enchanteur |
 | `TRUDVANG.Field.PerfectSuccess` | Perfect Success on | Réussite parfaite sur |
 | `TRUDVANG.Field.NoPerfectSuccess` | No perfect success | Aucune réussite parfaite |
@@ -178,8 +179,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
 | `TRUDVANG.Field.BreachMax` | Breach Value (max) | Valeur d'intégrité (maximale) |
 | `TRUDVANG.Field.OpenRollShort` | O | JO |
-| `TRUDVANG.Field.VpProtectionLabel` | VP: PROTECTION | VP: PROTECTION |
-| `TRUDVANG.Field.VpIntegrityLabel` | VP: INTEGRITY | VP: INTÉGRITÉ |
+| `TRUDVANG.Field.VpProtectionLabel` | PV: PROTECTION | VP: PROTECTION |
+| `TRUDVANG.Field.VpIntegrityLabel` | BV: INTEGRITY | VI: INTÉGRITÉ |
 | `TRUDVANG.Field.BonusCpLabel` | CP BONUS | BONUS CP |
 | `TRUDVANG.Field.RangeShort` | Short range | Portée courte |
 | `TRUDVANG.Field.RangeLong` | Long range | Portée longue |

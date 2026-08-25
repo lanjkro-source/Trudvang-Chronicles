@@ -116,16 +116,60 @@
         <div class="weight-compact">{{localize "TRUDVANG.Field.TotalWeight"}}: <strong>{{totalWeight}} kg</strong></div>
       </section>
       <section class="panel">
-        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Weapons"}}</h2><button type="button" data-action="item-create" data-type="weapon"><i class="fas fa-plus"></i></button></div>
-        <ol class="item-list weapons-list">{{#each itemsByGroup.weapons as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="roll-icon" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}"><i class="fas fa-shield"></i></button><input class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity" title="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit" title="{{item._hoverTitle}}">{{item.name}}</button><span class="item-detail">{{item._damageText}}</span><button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i class="fas fa-hand-fist"></i></button><button type="button" data-action="item-damage"><i class="fas fa-burst"></i></button><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+        <div class="section-heading">
+          <h2>{{localize "TRUDVANG.Section.Weapons"}}</h2><button type="button" data-action="item-create"
+            data-type="weapon" data-tooltip="{{localize 'TYPES.Item.weapon'}}"><i class="fas fa-plus"></i> <i class="fas fa-sword"></i></button>
+        </div>
+        <ol class="item-list weapons-list">{{#each itemsByGroup.weapons as |item|}}<li class="item" data-item-id="{{item.id}}">
+            <img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"
+              data-tooltip="{{localize 'TRUDVANG.Action.Attack'}}"><i class="fas fa-dice-d20"></i></button><button type="button"
+              class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}"><i
+                class="fas fa-shield"></i></button><input class="qty-input" type="number" min="0" max="99"
+              value="{{item.system.quantity}}" data-item-field="quantity" data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span
+              class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit"
+              data-tooltip="{{item._hoverTitle}}">{{item.name}}</button><span class="item-detail">{{item._hoverTitle}}</span><button
+              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i
+                class="fas fa-hand-fist"></i></button><button type="button" data-action="item-damage"><i
+                class="fas fa-burst"></i></button><button type="button" data-action="item-delete"><i
+                class="fas fa-trash"></i></button></li>{{/each}}</ol>
       </section>
       <section class="panel">
-        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Protection"}}</h2><span><button type="button" data-action="item-create" data-type="armor"><i class="fas fa-plus"></i> {{localize "TYPES.Item.armor"}}</button><button type="button" data-action="item-create" data-type="shield"><i class="fas fa-plus"></i> {{localize "TYPES.Item.shield"}}</button></span></div>
-        <ol class="item-list protection-list">{{#each itemsByGroup.protection as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><span class="icon-placeholder"></span>{{#if (eq item.type "shield")}}<button type="button" class="roll-icon" data-action="item-parry"><i class="fas fa-dice-d20"></i></button>{{else}}<span class="icon-placeholder"></span>{{/if}}<input class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity" title="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit" title="{{item._hoverTitle}}">{{item.name}}</button>{{#if (eq item.type "shield")}}<span class="item-detail">{{item._damageText}}</span>{{else}}<span class="item-detail">VP {{item.system.protection}} · VI {{item.system.breach.value}}/{{item.system.breach.max}}</span>{{/if}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i class="fas fa-tshirt"></i></button><span class="icon-placeholder"></span><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+        <div class="section-heading">
+          <h2>{{localize "TRUDVANG.Section.Protection"}}</h2><span><button type="button" data-action="item-create"
+              data-type="armor" data-tooltip="{{localize 'TYPES.Item.armor'}}"><i class="fas fa-plus"></i> <i
+                class="fas fa-tshirt"></i></button><button type="button" data-action="item-create" data-type="shield"
+              data-tooltip="{{localize 'TYPES.Item.shield'}}"><i class="fas fa-plus"></i> <i
+                class="fas fa-shield"></i></button></span>
+        </div>
+        <ol class="item-list protection-list">{{#each itemsByGroup.protection as |item|}}<li class="item"
+            data-item-id="{{item.id}}"><img src="{{item.img}}"><span class="icon-placeholder"></span>{{#if (eq item.type
+            "shield")}}<button type="button" class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}"><i
+                class="fas fa-shield"></i></button>{{else}}<span class="icon-placeholder"></span>{{/if}}<input
+              class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity"
+              data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button"
+              class="item-name" data-action="item-edit" data-tooltip="{{item._hoverTitle}}">{{item.name}}</button>
+              <span class="item-detail">{{item._hoverTitle}}</span><button
+              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip"><i
+                class="fas fa-tshirt"></i></button><span class="icon-placeholder"></span><button type="button"
+              data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
       </section>
       <section class="panel">
-        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Gear"}}</h2><span><button type="button" data-action="item-create" data-type="gear"><i class="fas fa-plus"></i></button><button type="button" data-action="item-create" data-type="potion"><i class="fas fa-flask"></i></button></span></div>
-        <ol class="item-list equipment-list">{{#each itemsByGroup.equipment as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><span class="icon-placeholder"></span><input class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity" title="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit" title="{{item._hoverTitle}}">{{item.name}}</button><span class="item-detail">{{item.system.weight}} kg</span><span class="icon-placeholder"></span><span class="icon-placeholder"></span><button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
+        <div class="section-heading">
+          <h2>{{localize "TRUDVANG.Section.Gear"}}</h2><span><button type="button" data-action="item-create"
+              data-type="gear" data-tooltip="{{localize 'TYPES.Item.gear'}}"><i class="fas fa-plus"></i> <i
+                class="fas fa-toolbox"></i></button><button type="button" data-action="item-create"
+              data-type="potion" data-tooltip="{{localize 'TYPES.Item.potion'}}"><i class="fas fa-plus"></i> <i
+                class="fas fa-flask"></i></button></span>
+        </div>
+        <ol class="item-list equipment-list">{{#each itemsByGroup.equipment as |item|}}<li class="item"
+            data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon"
+              data-action="item-roll"><i class="fas fa-dice-d20"></i></button><span class="icon-placeholder"></span><input
+              class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity"
+              data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button"
+              class="item-name" data-action="item-edit" data-tooltip="{{item._hoverTitle}}">{{item.name}}</button><span
+              class="item-detail">{{item.system.weight}} kg</span><span class="icon-placeholder"></span><span
+              class="icon-placeholder"></span><button type="button" data-action="item-delete"><i
+                class="fas fa-trash"></i></button></li>{{/each}}</ol>
       </section>
     </div>
 
