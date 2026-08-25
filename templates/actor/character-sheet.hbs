@@ -59,6 +59,7 @@
             <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd>{{system.movement.current}} m</dd>
             <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd>{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}}</dd>
             <dt>{{localize "TRUDVANG.Resource.FearPenalty"}}</dt><dd>{{signed system.fearPenalty}}</dd>
+            {{#if system.armorVCPenalty}}<dt>{{localize "TRUDVANG.Resource.ArmorVCPenalty"}}</dt><dd>-{{system.armorVCPenalty}}</dd>{{/if}}
           </dl>
         </section>
       </div>

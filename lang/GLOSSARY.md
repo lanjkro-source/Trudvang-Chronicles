@@ -205,6 +205,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Resource.Protection` | Protection | Protection |
 | `TRUDVANG.Resource.DamageLevel` | Damage Level | Niveau de dégâts |
 | `TRUDVANG.Resource.FearPenalty` | Fear Penalty | Pénalité de peur |
+| `TRUDVANG.Resource.ArmorVCPenalty` | Armor Encumbrance (VC) | Encombrement armure (VC) |
 | `TRUDVANG.Resource.PersistenceInWild` | Persistence in the Wild | Persistance dans la nature |
 | `TRUDVANG.Resource.VitnerCost` | Vitner Point Cost | Coût en points de vitner |
 | `TRUDVANG.Resource.DivinityCost` | Divinity Point Cost | Coût en points de divinité |

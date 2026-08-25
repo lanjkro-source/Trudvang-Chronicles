@@ -2,6 +2,7 @@ import { TRUDVANG } from "../config.mjs";
 import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder } from "../dice.mjs";
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
+import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 
 const BaseActor = foundry.documents.Actor;
 
@@ -32,7 +33,7 @@ export class TrudvangActor extends BaseActor {
     if (this.type === "character") {
       const fighting = Number(system.skills?.fighting?.value || 1) + Number(system.skills?.fighting?.bonus || 0);
       const be = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
-      const fighter = Number(this.findKnowledgeItem("fighter")?.system.level || 0);
+      const fighter = Number(this.findKnowledgeItem("fighter")?.system.level || 0) * 2;
       system.resources.combat.max = Math.max(1, fighting + be + fighter);
       const vitnerType = this.selectedVitnerType;
       const callVitner = Number(this.findKnowledgeItem("callVitner")?.system.level || 0);
@@ -51,9 +52,22 @@ export class TrudvangActor extends BaseActor {
       system.resources.divinity.value = Math.min(Number(system.resources.divinity.value || 0), system.resources.divinity.max);
     }
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
-    const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0);
+    const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + Number(system.traits?.dexterity || 0) + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit;
     system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection;
+    // Malus d'encombrement armure sur le VC en combat : sommé sur toutes les armures équipées
+    let armorVCPenalty = 0;
+    for (const item of this.equippedItems.filter(i => i.type === "armor")) {
+      let HE = Number(item.system.heft ?? 0);
+      if (HE > 1) {
+        const ic = Number(this.findKnowledgeItem("ironclad")?.system.level || 0);
+        HE = Math.min(10, Math.max(1, HE - ic));
+      }
+      const ab = Number(this.findKnowledgeItem("armorBearer")?.system.level || 0);
+      const oh = Math.ceil(HE / 2) - ab;
+      if (oh > 0) armorVCPenalty += oh * 2;
+    }
+    system.armorVCPenalty = armorVCPenalty;
     system.buildCost = this.calculateBuildCost();
   }
 
@@ -148,6 +162,14 @@ export class TrudvangActor extends BaseActor {
     return this.equippedItems.reduce((sum, item) => sum + Number(item.system.protection || 0), 0);
   }
 
+  isInCombatActive() {
+    if (typeof this.inCombat === "boolean") return this.inCombat;
+    const combat = game.combat ?? game.combats?.active;
+    if (!combat) return false;
+    if (typeof combat.getCombatantByActor === "function") return Boolean(combat.getCombatantByActor(this.id));
+    return combat.combatants.some(c => c.actorId === this.id || (c.tokenId && this.getActiveTokens(true, true).some(t => t.id === c.tokenId)));
+  }
+
   calculateBuildCost() {
     return this.calculateCreationCosts().total;
   }
@@ -206,7 +228,9 @@ export class TrudvangActor extends BaseActor {
     const own = Number(item.system.level || 0) * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
     const discipline = parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
-    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, total: skill + discipline + own};
+    let total = skill + discipline + own;
+    if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
+    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, total};
   }
 
   async alignCreationOrigins() {
@@ -399,7 +423,9 @@ export class TrudvangActor extends BaseActor {
 
   getSkillTarget(skillKey, extra = 0) {
     const skill = this.system.skills?.[skillKey];
-    return Number(skill?.value || 1) + Number(skill?.bonus || 0) + Number(extra || 0);
+    let total = Number(skill?.value || 1) + Number(skill?.bonus || 0) + Number(extra || 0);
+    if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
+    return total;
   }
 
   async rollSkill(skillKey, {label = null, bonus = 0} = {}) {

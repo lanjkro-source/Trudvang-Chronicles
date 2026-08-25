@@ -527,10 +527,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       let MI = baseMI;
       let MM = baseMM;
       const ab = this._getSpecialtyLevel("armorBearer");
-      const oh = HE - (ab * 2);
+      const oh = Math.ceil(HE / 2) - ab;
       if (oh > 0) {
-        MI -= oh;
-        MM -= oh;
+        MI -= oh * 2;
+        MM -= oh * 2;
+        // todo : ajouter un malus de oh * 2 sur le vc de toutes les actions de combat
       }
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);

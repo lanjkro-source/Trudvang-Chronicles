@@ -176,6 +176,7 @@
       "Protection": "Protection",
       "DamageLevel": "Niveau de dégâts",
       "FearPenalty": "Pénalité de peur",
+      "ArmorVCPenalty": "Encombrement armure (VC)",
       "PersistenceInWild": "Persistance dans la nature",
       "VitnerCost": "Coût en points de vitner",
       "DivinityCost": "Coût en points de divinité"

@@ -176,6 +176,7 @@
       "Protection": "Protection",
       "DamageLevel": "Damage Level",
       "FearPenalty": "Fear Penalty",
+      "ArmorVCPenalty": "Armor Encumbrance (VC)",
       "PersistenceInWild": "Persistence in the Wild",
       "VitnerCost": "Vitner Point Cost",
       "DivinityCost": "Divinity Point Cost"
