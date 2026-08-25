@@ -162,11 +162,11 @@
 .trudvang-sheet .item-list .item img { width: 28px; height: 28px; border: 1px solid var(--trudvang-line); object-fit: cover; }
 /* Foundry's default icons/svg/* glyphs are white-filled (designed for dark backgrounds) — print them as ink on parchment. */
 .trudvang-sheet .item-list .item > img[src^="icons/svg/"], .trudvang-sheet .knowledge-node img[src^="icons/svg/"] { filter: brightness(0); opacity: .82; background: rgba(255,255,255,.4); }
-.trudvang-sheet .item-list .item-name { margin: 0; padding: 2px 2px 2px 4px; text-align: left; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; justify-self: stretch; }
+.trudvang-sheet .item-list .item-name { margin: 0; padding: 2px 2px 2px 4px; text-align: left !important; justify-content: flex-start !important; display: block; width: 100%; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; justify-self: stretch; align-self: center; }
 .trudvang-sheet .item-list .qty-input { width: 26px; min-width: 26px; height: 20px; padding: 0 1px; color: var(--trudvang-ink); background: rgba(255,255,255,.08); border-color: #9d8050; font-size: .8rem; text-align: center; }
 .trudvang-sheet .item-list .qty-sep { width: 10px; text-align: center; color: var(--trudvang-muted); font-size: .74rem; line-height: 20px; }
 .trudvang-sheet .item-list .icon-placeholder { width: 27px; height: 26px; display: inline-block; }
-.trudvang-sheet .item-list .item > span, .trudvang-sheet .item-list .item-detail { overflow: hidden; color: var(--trudvang-muted); font-size: .74rem; text-overflow: ellipsis; white-space: nowrap; }
+.trudvang-sheet .item-list .item > span, .trudvang-sheet .item-list .item-detail { overflow: hidden; color: var(--trudvang-muted); font-size: .74rem; text-overflow: ellipsis; white-space: nowrap; margin-right: 4px; }
 .trudvang-sheet .item-list .item button:not(.item-name) { width: 26px; padding: 2px; }
 .trudvang-sheet .item-list .equip.active { color: var(--trudvang-red); background: rgba(115,59,45,.12); }
 .trudvang-sheet .compact-list .item { grid-template-columns: 30px 27px 1fr auto 30px 30px 30px; }
