@@ -1,6 +1,7 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
+import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -483,49 +484,55 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         natural: "brawling"
       };
       const specId = catBonusMap[item.system.category];
-      if (specId && this._getSpecialtyLevel(specId) >= 3) AA += 1;
+      if (specId) {
+        if (this._getSpecialtyLevel(specId) >= 5) AA += 2;
+        else if (this._getSpecialtyLevel(specId) >= 3) AA += 1;
+      }
       if (item.system.category === "ranged") {
         const cross = this._getSpecialtyLevel("crossbow");
         if (cross >= 3) AA = Math.max(AA, Number(item.system.weaponActions || 0) + 1);
       }
       let MI = Number(item.system.initiativeModifier || 0);
-      const cr = this._getSpecialtyLevel("combatReaction");
-      if (cr) MI += cr;
       const VI = Number(item.system.breach?.value ?? 0);
-      const VImax = Number(item.system.breach?.max ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       let CP = Number(item.system.attackValue || 0);
-      const heavyCP = this._getSpecialtyLevel("oneHandedHeavyWeapons");
-      if (item.system.category === "oneHandedHeavy" && heavyCP) CP += Math.floor(heavyCP / 2);
       const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
       const open = Number(item.system.openRoll ?? 10);
       const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "shield") {
       let AA = Number(item.system.weaponActions || 0);
-      const sb = this._getSpecialtyLevel("shieldBearer");
-      if (sb >= 3) AA += 1;
       let MI = Number(item.system.initiativeModifier || 0);
-      const cr = this._getSpecialtyLevel("combatReaction");
-      if (cr) MI += cr;
       const VI = Number(item.system.breach?.value ?? 0);
-      const VImax = Number(item.system.breach?.max ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       let CP = Number(item.system.attackValue || 0);
+      const sb = this._getSpecialtyLevel("shieldBearer");
+      const bc = this._getSpecialtyLevel("bodyControl");
+      const ad = this._getSpecialtyLevel("ambidexterity");
+      if (sb < 1) CP += ad*2 + bc - 15;
       const open = Number(item.system.openRoll ?? 0);
       const bonus = Number(item.system.damageBonus || 0);
       const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VImax} ${cpLab}:${CP} ${dmg}`;
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "armor") {
-      const AA = Number(item.system.weaponActions ?? 0) || Number(this._getSpecialtyLevel("armorBearer") ? 1 : 0);
-      let MI = Number(item.system.initiativeModifier || 0);
-      let MM = Number(item.system.movementModifier || 0);
+      const ic = this._getSpecialtyLevel("ironclad");
+      let HE = Number(item.system.heft ?? item.system.Heft ?? 0) - ic;
+      HE = Math.min(10, Math.max(0, HE));
+      // Recalcule comme ArmorData.prepareDerivedData mais avec HE réduit par ironclad
+      const [baseMI, baseMM] = ARMOR_ENCUMBRANCE_PENALTIES[HE] ?? [0, 0];
+      let MI = baseMI;
+      let MM = baseMM;
+      const ab = this._getSpecialtyLevel("armorBearer");
+      const oh = HE - (ab * 2);
+      if (oh > 0) {
+        MI -= oh;
+        MM -= oh;
+      }
       const VI = Number(item.system.breach?.value ?? 0);
-      const VImax = Number(item.system.breach?.max ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${mmLab}:${signed(MM)} ${vpLab}:${VP}/${VImax}`;
+      return `${miLab}:${signed(MI)} ${mmLab}:${signed(MM)} ${vpLab}:${VP}/${VI}`;
     }
     return "";
   }

@@ -165,7 +165,7 @@ class BaseItemData extends foundry.abstract.TypeDataModel {
   }
 }
 
-const ARMOR_ENCUMBRANCE_PENALTIES = {0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1], 5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]};
+export const ARMOR_ENCUMBRANCE_PENALTIES = {0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1], 5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]};
 
 export class WeaponData extends BaseItemData {
   static defineSchema() {
@@ -179,7 +179,7 @@ export class WeaponData extends BaseItemData {
       weaponActions: integer(4, {min: 0}),
       attackValue: integer(0, {min: 0}),
       damageBonus: integer(0),
-      range: schema({short: string(), long: string()})
+      range: schema({short: integer(0), long: integer(0)})
     };
   }
 }

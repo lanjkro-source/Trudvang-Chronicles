@@ -31,7 +31,9 @@ export class TrudvangActor extends BaseActor {
     system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
     if (this.type === "character") {
       const fighting = Number(system.skills?.fighting?.value || 1) + Number(system.skills?.fighting?.bonus || 0);
-      system.resources.combat.max = Math.max(1, fighting);
+      const be = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
+      const fighter = Number(this.findKnowledgeItem("fighter")?.system.level || 0);
+      system.resources.combat.max = Math.max(1, fighting + be + fighter);
       const vitnerType = this.selectedVitnerType;
       const callVitner = Number(this.findKnowledgeItem("callVitner")?.system.level || 0);
       const vitnerHabit = Number(this.findKnowledgeItem("vitnerHabit")?.system.level || 0);
@@ -48,7 +50,9 @@ export class TrudvangActor extends BaseActor {
       system.resources.vitner.value = Math.min(Number(system.resources.vitner.value || 0), system.resources.vitner.max);
       system.resources.divinity.value = Math.min(Number(system.resources.divinity.value || 0), system.resources.divinity.max);
     }
-    system.initiative.current = Number(system.initiative.base || 0) + Number(system.traits?.dexterity || 0) + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty;
+    const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
+    const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0);
+    system.initiative.current = Number(system.initiative.base || 0) + Number(system.traits?.dexterity || 0) + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit;
     system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection;
     system.buildCost = this.calculateBuildCost();
   }
