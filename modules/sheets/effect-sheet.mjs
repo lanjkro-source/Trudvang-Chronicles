@@ -24,7 +24,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static TABS = {
     sheet: {
       ...super.TABS.sheet,
-      tabs: [...super.TABS.sheet.tabs, {id: "trudvang", icon: "fa-solid fa-layer-group", label: "TRUDVANG.Effect.RulesTab"}]
+      tabs: [...super.TABS.sheet.tabs, {id: "trudvang", icon: "fas fa-layer-group", label: "TRUDVANG.Effect.RulesTab"}]
     }
   };
 

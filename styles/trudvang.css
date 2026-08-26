@@ -185,14 +185,169 @@
 .trudvang-sheet.item-sheet .item-effects .effect-row { grid-template-columns: 32px minmax(120px,1fr) minmax(100px,.7fr) 28px 28px; }
 .trudvang-sheet .npc-stats-grid .effective-value { min-width: 22px; text-align: center; }
 
+.trudvang.effect-sheet .window-content {
+  padding: 0;
+  color: var(--trudvang-ink);
+  background:
+    linear-gradient(rgba(241, 230, 205, 0.93), rgba(225, 208, 174, 0.96)),
+    url("../assets/art/character-sheet-frame.webp") center / 100% 100% no-repeat;
+}
+
+.trudvang.effect-sheet nav.tabs,
+.trudvang.effect-sheet .tabs {
+  min-height: 38px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 5px 8px 0;
+  background: rgba(237,222,193,.92);
+  border-bottom: 1px solid var(--trudvang-line);
+}
+
+.trudvang.effect-sheet nav.tabs .item,
+.trudvang.effect-sheet .tabs .item,
+.trudvang.effect-sheet nav.tabs a,
+.trudvang.effect-sheet .tabs a {
+  flex: 1;
+  padding: 6px 4px;
+  color: var(--trudvang-muted);
+  border: 1px solid transparent;
+  border-bottom: 0;
+  text-align: center;
+  font-size: .75rem;
+  text-decoration: none;
+}
+
+.trudvang.effect-sheet nav.tabs .item.active,
+.trudvang.effect-sheet .tabs .item.active,
+.trudvang.effect-sheet nav.tabs a.active,
+.trudvang.effect-sheet .tabs a.active {
+  color: var(--trudvang-red);
+  border-color: var(--trudvang-line);
+  background: rgba(255,250,236,.68);
+  text-shadow: none;
+}
+
+.trudvang.effect-sheet form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.trudvang.effect-sheet .sheet-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.trudvang.effect-sheet .tab {
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.trudvang.effect-sheet fieldset {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--trudvang-line);
+  background: rgba(249,242,225,.76);
+  box-shadow: 0 1px 2px rgba(50,30,20,.12);
+  border-radius: 3px;
+}
+
+.trudvang.effect-sheet legend {
+  padding: 0 6px;
+  color: var(--trudvang-red);
+  font-weight: 600;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet h2,
+.trudvang.effect-sheet h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--trudvang-red);
+  border-bottom: 1px solid var(--trudvang-gold);
+  margin: 0 0 6px;
+}
+
+.trudvang.effect-sheet .form-group {
+  margin-bottom: 8px;
+}
+
+.trudvang.effect-sheet label,
+.trudvang.effect-sheet p.hint {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--trudvang-ink);
+  font-size: .85rem;
+}
+
+.trudvang.effect-sheet input,
+.trudvang.effect-sheet select,
+.trudvang.effect-sheet textarea {
+  color: var(--trudvang-ink);
+  border: 0;
+  border-bottom: 1px solid var(--trudvang-line);
+  background: rgba(255,255,255,.25);
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 2px 4px;
+}
+
+.trudvang.effect-sheet input:focus,
+.trudvang.effect-sheet select:focus,
+.trudvang.effect-sheet textarea:focus {
+  box-shadow: 0 0 0 1px var(--trudvang-gold);
+  outline: 0;
+}
+
+.trudvang.effect-sheet button {
+  color: var(--trudvang-ink);
+  border: 1px solid var(--trudvang-line);
+  background: rgba(255,255,255,.3);
+  border-radius: 3px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet button:hover {
+  color: var(--trudvang-red);
+  border-color: var(--trudvang-gold);
+  background: rgba(255,250,236,.8);
+  text-shadow: 0 0 8px rgba(168,130,67,.55);
+}
+
+.trudvang.effect-sheet footer,
+.trudvang.effect-sheet .window-footer {
+  padding: 8px 10px;
+  background: linear-gradient(100deg, rgba(47,31,25,.97), rgba(87,53,38,.96));
+  border-top: 2px solid var(--trudvang-gold);
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.trudvang.effect-sheet footer button,
+.trudvang.effect-sheet .window-footer button {
+  color: #f4e7cc;
+  border: 1px solid #a88b59;
+  background: rgba(20,10,8,.45);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet footer button:hover,
+.trudvang.effect-sheet .window-footer button:hover {
+  color: #fff;
+  background: var(--trudvang-red);
+  border-color: var(--trudvang-gold);
+}
+
 .trudvang.effect-sheet .trudvang-effect-rules fieldset { margin-bottom: 10px; }
 .trudvang.effect-sheet .trudvang-stage-list { margin: 0; padding: 0; list-style: none; }
-.trudvang.effect-sheet .trudvang-stage-list > li { margin: 8px 0; padding: 8px; border: 1px solid var(--color-border-light-primary); border-radius: 4px; }
-.trudvang.effect-sheet .trudvang-stage-list header { display: flex; align-items: center; justify-content: space-between; }
+.trudvang.effect-sheet .trudvang-stage-list > li { margin: 8px 0; padding: 8px; border: 1px solid var(--trudvang-line); border-radius: 4px; background: rgba(255,255,255,.2); }
+.trudvang.effect-sheet .trudvang-stage-list header { display: flex; align-items: center; justify-content: space-between; font-family: Georgia, "Times New Roman", serif; }
 .trudvang.effect-sheet .trudvang-stage-list header button { flex: 0 0 30px; }
-.trudvang.effect-sheet .trudvang-stage-list textarea { width: 100%; min-height: 110px; font-family: monospace; font-size: .75rem; }
-.trudvang.effect-sheet .effect-key-help { margin-top: 10px; }
-.trudvang.effect-sheet .effect-key-help code { display: block; margin: 2px 0; padding: 2px 5px; user-select: all; }
+.trudvang.effect-sheet .trudvang-stage-list textarea { width: 100%; min-height: 110px; font-family: monospace; font-size: .75rem; background: rgba(255,255,255,.4); border: 1px solid var(--trudvang-line); }
+.trudvang.effect-sheet .effect-key-help { margin-top: 10px; padding: 8px; border: 1px solid var(--trudvang-line); background: rgba(255,255,255,.15); border-radius: 3px; font-family: Georgia, "Times New Roman", serif; }
+.trudvang.effect-sheet .effect-key-help code { display: block; margin: 2px 0; padding: 2px 5px; user-select: all; background: rgba(0,0,0,.05); font-family: monospace; font-size: .75rem; }
 
 .trudvang-sheet .notes-grid .full { grid-column: 1 / -1; }
 .trudvang-sheet .editor-panel { min-height: 205px; display: flex; flex-direction: column; }
