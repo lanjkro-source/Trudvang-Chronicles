@@ -263,9 +263,7 @@ export class WeaponData extends BaseItemData {
       weaponActions: integer(4, {min: 0}),
       attackValue: integer(0, {min: 0}),
       damageBonus: integer(0),
-      // Ranges are displayed as rulebook bands (for example "2-30 m"), not
-      // scalar distances; keep them textual so starter weapons validate.
-      range: schema({short: string(), long: string()})
+      range: schema({short: integer(0), long: integer(0)})
     };
   }
 }
