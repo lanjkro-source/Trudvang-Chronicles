@@ -185,14 +185,196 @@
 .trudvang-sheet.item-sheet .item-effects .effect-row { grid-template-columns: 32px minmax(120px,1fr) minmax(100px,.7fr) 28px 28px; }
 .trudvang-sheet .npc-stats-grid .effective-value { min-width: 22px; text-align: center; }
 
-.trudvang.effect-sheet .trudvang-effect-rules fieldset { margin-bottom: 10px; }
-.trudvang.effect-sheet .trudvang-stage-list { margin: 0; padding: 0; list-style: none; }
-.trudvang.effect-sheet .trudvang-stage-list > li { margin: 8px 0; padding: 8px; border: 1px solid var(--color-border-light-primary); border-radius: 4px; }
-.trudvang.effect-sheet .trudvang-stage-list header { display: flex; align-items: center; justify-content: space-between; }
-.trudvang.effect-sheet .trudvang-stage-list header button { flex: 0 0 30px; }
-.trudvang.effect-sheet .trudvang-stage-list textarea { width: 100%; min-height: 110px; font-family: monospace; font-size: .75rem; }
-.trudvang.effect-sheet .effect-key-help { margin-top: 10px; }
-.trudvang.effect-sheet .effect-key-help code { display: block; margin: 2px 0; padding: 2px 5px; user-select: all; }
+.trudvang.effect-sheet .window-content {
+  padding: 10px;
+  color: var(--trudvang-ink);
+  background:
+    linear-gradient(rgba(241, 230, 205, 0.93), rgba(225, 208, 174, 0.96)),
+    url("../assets/art/character-sheet-frame.webp") center / 100% 100% no-repeat;
+  font-family: Georgia, "Times New Roman", serif;
+  overflow-y: auto;
+}
+
+.trudvang.effect-sheet header.window-header {
+  background: linear-gradient(110deg, rgba(46,31,24,.91), rgba(92,56,39,.82));
+  color: #f5ead2;
+  border-bottom: 2px solid var(--trudvang-gold);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet nav.tabs,
+.trudvang.effect-sheet .sheet-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 5px 8px 0;
+  background: rgba(237,222,193,.92);
+  border-bottom: 1px solid var(--trudvang-line);
+}
+
+.trudvang.effect-sheet nav.tabs a,
+.trudvang.effect-sheet .sheet-tabs .item {
+  flex: 1;
+  padding: 6px 4px;
+  color: var(--trudvang-muted);
+  border: 1px solid transparent;
+  border-bottom: 0;
+  text-align: center;
+  font-size: .75rem;
+  font-family: Georgia, "Times New Roman", serif;
+  text-decoration: none;
+}
+
+.trudvang.effect-sheet nav.tabs a.active,
+.trudvang.effect-sheet .sheet-tabs .item.active {
+  color: var(--trudvang-red);
+  border-color: var(--trudvang-line);
+  background: rgba(255,250,236,.68);
+  text-shadow: none;
+}
+
+.trudvang.effect-sheet input,
+.trudvang.effect-sheet select,
+.trudvang.effect-sheet textarea {
+  color: var(--trudvang-ink);
+  border: 0;
+  border-bottom: 1px solid var(--trudvang-line);
+  background: rgba(255,255,255,.25);
+  font-family: inherit;
+  font-size: .85rem;
+}
+
+.trudvang.effect-sheet input:focus,
+.trudvang.effect-sheet select:focus,
+.trudvang.effect-sheet textarea:focus {
+  box-shadow: 0 0 0 1px var(--trudvang-gold);
+  outline: 0;
+}
+
+.trudvang.effect-sheet fieldset {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid var(--trudvang-gold);
+  background: rgba(249, 242, 225, 0.76);
+  box-shadow: 0 1px 2px rgba(50, 30, 20, 0.12);
+  border-radius: 4px;
+}
+
+.trudvang.effect-sheet legend {
+  color: var(--trudvang-red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  padding: 0 6px;
+  border-bottom: 1px solid var(--trudvang-gold);
+}
+
+.trudvang.effect-sheet .form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  gap: 8px;
+}
+
+.trudvang.effect-sheet .form-group label {
+  color: var(--trudvang-muted);
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet button {
+  color: var(--trudvang-ink);
+  border: 1px solid var(--trudvang-line);
+  background: rgba(255,255,255,.35);
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.trudvang.effect-sheet button:hover {
+  color: var(--trudvang-red);
+  text-shadow: 0 0 8px rgba(168,130,67,.55);
+  border-color: var(--trudvang-gold);
+  background: rgba(241, 230, 205, 0.9);
+}
+
+.trudvang.effect-sheet button i.fas {
+  color: var(--trudvang-red);
+}
+
+.trudvang.effect-sheet .trudvang-stage-list {
+  margin: 0 0 8px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trudvang.effect-sheet .trudvang-stage-list > li {
+  margin: 8px 0;
+  padding: 9px;
+  border: 1px solid var(--trudvang-line);
+  background: rgba(249, 242, 225, 0.76);
+  box-shadow: 0 1px 2px rgba(50, 30, 20, 0.12);
+  border-radius: 4px;
+}
+
+.trudvang.effect-sheet .trudvang-stage-list header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--trudvang-gold);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  color: var(--trudvang-red);
+  font-weight: 700;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet .trudvang-stage-list header button {
+  flex: 0 0 30px;
+}
+
+.trudvang.effect-sheet .trudvang-stage-list textarea {
+  width: 100%;
+  min-height: 110px;
+  font-family: monospace;
+  font-size: .75rem;
+  resize: vertical;
+}
+
+.trudvang.effect-sheet .effect-key-help {
+  margin-top: 10px;
+  padding: 8px;
+  border: 1px solid var(--trudvang-line);
+  background: rgba(249, 242, 225, 0.5);
+  border-radius: 4px;
+}
+
+.trudvang.effect-sheet .effect-key-help summary {
+  color: var(--trudvang-red);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.trudvang.effect-sheet .effect-key-help code {
+  display: block;
+  margin: 2px 0;
+  padding: 2px 5px;
+  user-select: all;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dotted var(--trudvang-line);
+  font-size: .72rem;
+  color: var(--trudvang-ink);
+}
+
+.trudvang.effect-sheet p.hint {
+  color: var(--trudvang-muted);
+  font-size: .75rem;
+  font-style: italic;
+  margin: 4px 0;
+}
 
 .trudvang-sheet .notes-grid .full { grid-column: 1 / -1; }
 .trudvang-sheet .editor-panel { min-height: 205px; display: flex; flex-direction: column; }
