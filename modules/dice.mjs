@@ -154,7 +154,9 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
 export async function rollDamage({actor, item}) {
   const formula = String(item.system.damage || "1d10").replace(/\s/g, "");
   const match = formula.match(/^(\d+)d(\d+)$/i);
-  const strength = item.system.strengthApplies ? Number(actor.system.traits?.strength || 0) : 0;
+  const strength = item.system.strengthApplies
+    ? Number(actor.getTraitValue?.("strength") ?? actor.system.traits?.strength ?? 0)
+    : 0;
   const damageBonus = Number(item.system.damageBonus || 0);
   let total;
   let detail;

@@ -34,6 +34,7 @@
     <a class="item" data-tab="skills"><i class="fas fa-dice-d20"></i> {{localize "TRUDVANG.Tab.Skills"}}</a>
     <a class="item" data-tab="equipment"><i class="fas fa-backpack"></i> {{localize "TRUDVANG.Tab.Equipment"}}</a>
     <a class="item" data-tab="magic"><i class="fas fa-wand-sparkles"></i> {{localize "TRUDVANG.Tab.Magic"}}</a>
+    <a class="item" data-tab="effects"><i class="fas fa-person-rays"></i> {{localize "TRUDVANG.Tab.Effects"}}</a>
     <a class="item" data-tab="notes"><i class="fas fa-book-open"></i> {{localize "TRUDVANG.Tab.Notes"}}</a>
   </nav>
 
@@ -46,7 +47,7 @@
             {{#each traitRows as |trait|}}
               <div class="trait-row" title="{{trait.tooltip}}">
                 <button type="button" class="rollable" data-action="roll-trait" data-trait="{{trait.key}}"><i class="fas fa-dice-d20"></i> {{trait.label}}</button>
-                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="-1" title="{{trait.decreaseTitle}}" {{#unless trait.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{signed trait.value}}</strong>{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="1" title="{{trait.increaseTitle}}" {{#unless trait.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button>{{/if}}</div>
+                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="-1" title="{{trait.decreaseTitle}}" {{#unless trait.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong class="{{#if trait.modified}}modified-value{{/if}}">{{signed trait.value}}</strong>{{#if trait.modified}}<small class="base-value" title="{{localize 'TRUDVANG.Effect.BaseValue'}}">{{signed trait.baseValue}}</small>{{/if}}{{#if @root.creationMode}}<button type="button" data-action="adjust-trait" data-trait="{{trait.key}}" data-direction="1" title="{{trait.increaseTitle}}" {{#unless trait.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button>{{/if}}</div>
               </div>
             {{/each}}
           </div>
@@ -89,7 +90,7 @@
                 <button type="button" class="tree-toggle" data-action="toggle-tree" title="{{localize 'TRUDVANG.Action.ToggleTree'}}"><i class="fas fa-book-open"></i></button><button type="button" class="roll-icon" data-action="roll-skill" data-skill="{{branch.key}}" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><button type="button" class="skill-name" data-action="show-skill-detail" data-skill="{{branch.key}}" title="{{branch.description}}">{{branch.label}} {{#if branch.isCore}}<i class="fas fa-star core-skill-marker" title="{{localize 'TRUDVANG.Field.CoreSkill'}}"></i>{{/if}}</button>
                 <span class="level-label">{{localize "TRUDVANG.Field.SV"}} <strong>{{branch.level}}</strong></span>
                 <span class="cost-badge" title="{{branch.increaseTitle}}">+{{branch.nextCost}}</span>
-                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="-1" title="{{branch.decreaseTitle}}" {{#unless branch.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{branch.level}}</strong><button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="1" title="{{branch.increaseTitle}}" {{#unless branch.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>
+                <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="-1" title="{{branch.decreaseTitle}}" {{#unless branch.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{branch.baseLevel}}</strong><button type="button" data-action="adjust-skill" data-skill="{{branch.key}}" data-direction="1" title="{{branch.increaseTitle}}" {{#unless branch.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>
               </div></summary>
               {{#each branch.disciplines as |node|}}
                 <details class="discipline-branch {{#unless node.level}}zero-level{{/unless}}" data-tree-key="discipline:{{node.catalogId}}"><summary><div class="knowledge-node discipline-node" data-item-id="{{node.item.id}}" data-catalog-id="{{node.catalogId}}" title="{{node.calculation}}">
@@ -189,6 +190,21 @@
           {{/each}}
           {{#if unassignedMagic.length}}<h3>{{localize "TRUDVANG.Field.Unassigned"}}</h3>{{#each unassignedMagic as |item|}}<div class="knowledge-node spell-node orphan" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span class="kind-label">{{localize (concat "TYPES.Item." item.type)}}</span></div>{{/each}}{{/if}}
         </div>
+      </section>
+    </div>
+
+    <div class="tab effects" data-group="primary" data-tab="effects">
+      <section class="panel effects-panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Effects"}}</h2><span><button type="button" data-action="effect-add"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Action.AddEffect"}}</button></span></div>
+        <ol class="effect-list">
+          {{#each effects as |effect|}}
+            <li class="effect-row {{#unless effect.active}}inactive{{/unless}}" data-effect-uuid="{{effect.uuid}}" title="{{effect.summary}}">
+              <img src="{{effect.img}}"><button type="button" class="effect-name" data-action="effect-edit" data-effect-uuid="{{effect.uuid}}">{{effect.name}}</button>
+              <span class="effect-source">{{effect.source}}</span><span class="effect-duration"><i class="fas fa-clock"></i> {{effect.duration}}</span>
+              {{#if effect.canEdit}}<button type="button" data-action="effect-toggle" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.ToggleEffect'}}"><i class="fas {{#if effect.disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></button><button type="button" data-action="effect-delete" data-effect-uuid="{{effect.uuid}}" title="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i></button>{{/if}}
+            </li>
+          {{else}}<li class="empty">{{localize "TRUDVANG.Empty.Effects"}}</li>{{/each}}
+        </ol>
       </section>
     </div>
 

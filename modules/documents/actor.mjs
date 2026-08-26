@@ -3,6 +3,7 @@ import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rol
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
+import { isIncapacitated, isImmobilized } from "../effects.mjs";
 
 const BaseActor = foundry.documents.Actor;
 
@@ -14,47 +15,58 @@ export class TrudvangActor extends BaseActor {
 
     if (this.type === "character") {
       const race = TRUDVANG.races[system.details?.race] ?? TRUDVANG.races.human;
-      system.resources.body.max = Math.max(1, race.body + Number(system.traits.constitution || 0) + Number(system.traits.strength || 0));
-      system.movement.current = Math.max(0, race.movement + Number(system.traits.dexterity || 0) + this.equippedMovementModifier);
+      system.resources.body.max = Math.max(1, race.body + this.getTraitValue("constitution") + this.getTraitValue("strength") + Number(system.modifiers.bodyMax || 0));
+      system.movement.current = Math.max(0, race.movement + this.getTraitValue("dexterity") + this.equippedMovementModifier + Number(system.modifiers.movement || 0));
       system.persistenceInWild = this.calculatePersistenceInWild();
+    } else {
+      system.resources.body.max = Math.max(1, Number(system.resources.body.max || 1) + Number(system.modifiers.bodyMax || 0));
+      system.movement.current = Math.max(0, Number(system.movement.base || 0) + Number(system.modifiers.movement || 0));
     }
+    if (isImmobilized(this)) system.movement.current = 0;
 
-    const bodyMax = Number(system.resources.body.max || 1);
-    system.resources.body.value = Math.min(Number(system.resources.body.value || 0), bodyMax);
-    const damage = Math.max(0, bodyMax - Number(system.resources.body.value || 0));
-    const quarter = bodyMax / 4;
-    system.damage = {
-      taken: damage,
-      penalty: damage > quarter * 3 ? -7 : damage > quarter * 2 ? -3 : damage > quarter ? -1 : 0,
-      level: damage > quarter * 3 ? "critical" : damage > quarter * 2 ? "serious" : damage > quarter ? "injured" : "light"
-    };
-    const fear = Number(system.resources.fear.value || 0);
-    system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
     if (this.type === "character") {
-      const fighting = Number(system.skills?.fighting?.value || 1) + Number(system.skills?.fighting?.bonus || 0);
+      const fighting = this.getSkillValue("fighting");
       const be = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
       const fighter = Number(this.findKnowledgeItem("fighter")?.system.level || 0) * 2;
-      system.resources.combat.max = Math.max(1, fighting + be + fighter);
+      system.resources.combat.max = Math.max(1, fighting + be + fighter + Number(system.modifiers.combatMax || 0));
       const vitnerType = this.selectedVitnerType;
       const callVitner = Number(this.findKnowledgeItem("callVitner")?.system.level || 0);
       const vitnerHabit = Number(this.findKnowledgeItem("vitnerHabit")?.system.level || 0);
       system.resources.vitner.max = vitnerType && callVitner
-        ? Number(system.skills?.vitnerCraft?.value || 1) + (5 * callVitner) + (vitnerType.capacityPerLevel * vitnerType.level) + (10 * vitnerHabit)
+        ? this.getSkillValue("vitnerCraft") + (5 * callVitner) + (vitnerType.capacityPerLevel * vitnerType.level) + (10 * vitnerHabit) + Number(system.modifiers.vitnerMax || 0)
         : 0;
       const religion = this.selectedReligion;
       const divinePower = Number(this.findKnowledgeItem("divinePower")?.system.level || 0);
       const faithful = Number(this.findKnowledgeItem("faithful")?.system.level || 0);
       const powerful = Number(this.findKnowledgeItem("powerful")?.system.level || 0);
       system.resources.divinity.max = religion && divinePower
-        ? Number(system.skills?.faith?.value || 1) + (3 * divinePower) + (7 * faithful) + (7 * powerful)
+        ? this.getSkillValue("faith") + (3 * divinePower) + (7 * faithful) + (7 * powerful) + Number(system.modifiers.divinityMax || 0)
         : 0;
-      system.resources.vitner.value = Math.min(Number(system.resources.vitner.value || 0), system.resources.vitner.max);
-      system.resources.divinity.value = Math.min(Number(system.resources.divinity.value || 0), system.resources.divinity.max);
     }
+
+    // Resource values are persisted as their unmodified base. Active Effects alter only
+    // the prepared value/current, so an expiring effect never destroys spent points.
+    for (const [key, resource] of Object.entries(system.resources)) {
+      const modifier = Number(system.modifiers?.[`${key}Value`] || 0);
+      const current = Math.max(0, Math.min(Number(resource.max || 0), Number(resource.value || 0) + modifier));
+      resource.current = current;
+      resource.value = current;
+    }
+
+    const bodyMax = Number(system.resources.body.max || 1);
+    const damage = Math.max(0, bodyMax - Number(system.resources.body.current || 0));
+    const quarter = bodyMax / 4;
+    system.damage = {
+      taken: damage,
+      penalty: damage > quarter * 3 ? -7 : damage > quarter * 2 ? -3 : damage > quarter ? -1 : 0,
+      level: damage > quarter * 3 ? "critical" : damage > quarter * 2 ? "serious" : damage > quarter ? "injured" : "light"
+    };
+    const fear = Number(system.resources.fear.current || 0);
+    system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
-    system.initiative.current = Number(system.initiative.base || 0) + Number(system.traits?.dexterity || 0) + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit;
-    system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection;
+    system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);
+    system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection + Number(system.modifiers.protection || 0);
     // Malus d'encombrement armure sur le VC en combat : sommé sur toutes les armures équipées
     let armorVCPenalty = 0;
     for (const item of this.equippedItems.filter(i => i.type === "armor")) {
@@ -69,6 +81,39 @@ export class TrudvangActor extends BaseActor {
     }
     system.armorVCPenalty = armorVCPenalty;
     system.buildCost = this.calculateBuildCost();
+  }
+
+  getTraitValue(traitKey) {
+    return Number(this.system.effective?.traits?.[traitKey] ?? this.system.traits?.[traitKey] ?? 0);
+  }
+
+  getSkillValue(skillKey) {
+    const prepared = this.system.effective?.skills?.[skillKey];
+    if (prepared !== undefined) return Number(prepared || 0);
+    const skill = this.system.skills?.[skillKey];
+    return Number(skill?.value || 0) + Number(skill?.bonus || 0);
+  }
+
+  getRollModifier({kind = "", skillKey = "", traitKey = "", movement = false} = {}) {
+    const modifiers = this.system.modifiers?.rolls || {};
+    let total = Number(modifiers.allActions || 0);
+    const combatKinds = new Set(["attack", "parry", "ability", "magic"]);
+    if (combatKinds.has(kind) || (this.isInCombatActive() && kind === "skill")) total += Number(modifiers.combatActions || 0);
+    if (movement) total += Number(modifiers.movementActions || 0);
+    if (["attack", "parry", "magic"].includes(kind)) total += Number(modifiers[kind] || 0);
+    if (skillKey) total += Number(modifiers.skills?.[skillKey] || 0);
+    if (traitKey) total += Number(modifiers.traits?.[traitKey] || 0);
+    return total;
+  }
+
+  canPerformAction({movement = false} = {}) {
+    if (isIncapacitated(this)) return false;
+    if (movement && isImmobilized(this)) return false;
+    return true;
+  }
+
+  warnCannotAct() {
+    return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotAct"));
   }
 
   get selectedVitnerType() {
@@ -116,7 +161,7 @@ export class TrudvangActor extends BaseActor {
   calculatePersistenceInWild() {
     const survival = this.findKnowledgeItem("survival");
     const weathered = this.findKnowledgeItem("weathered");
-    return Math.max(0, 10 + Number(this.system.traits?.psyche || 0) + Number(survival?.system.level || 0) + (2 * Number(weathered?.system.level || 0)));
+    return Math.max(0, 10 + this.getTraitValue("psyche") + Number(survival?.system.level || 0) + (2 * Number(weathered?.system.level || 0)));
   }
 
   get equippedInitiativeModifier() {
@@ -224,13 +269,14 @@ export class TrudvangActor extends BaseActor {
   }
 
   getAbilityBreakdown(item) {
-    const skill = Number(this.system.skills?.[item.system.parentSkill]?.value || 1);
+    const skill = this.getSkillValue(item.system.parentSkill);
     const own = Number(item.system.level || 0) * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
     const discipline = parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
-    let total = skill + discipline + own;
+    const modifier = this.getRollModifier({kind: "ability", skillKey: item.system.parentSkill});
+    let total = skill + discipline + own + modifier;
     if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
-    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, total};
+    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, modifier, total};
   }
 
   async alignCreationOrigins() {
@@ -421,14 +467,14 @@ export class TrudvangActor extends BaseActor {
     return this._queueAdvancement({kind: "item", itemId: item.id, from: 0, to: 1, cost, created: true});
   }
 
-  getSkillTarget(skillKey, extra = 0) {
-    const skill = this.system.skills?.[skillKey];
-    let total = Number(skill?.value || 1) + Number(skill?.bonus || 0) + Number(extra || 0);
+  getSkillTarget(skillKey, extra = 0, {kind = "skill", movement = false} = {}) {
+    let total = this.getSkillValue(skillKey) + Number(extra || 0) + this.getRollModifier({kind, skillKey, movement});
     if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
     return total;
   }
 
   async rollSkill(skillKey, {label = null, bonus = 0} = {}) {
+    if (!this.canPerformAction()) return this.warnCannotAct();
     const target = this.getSkillTarget(skillKey, bonus);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
     const options = await modifierDialog({title: name, target});
@@ -437,7 +483,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollTrait(traitKey) {
-    const target = 10 + Number(this.system.traits?.[traitKey] || 0);
+    if (!this.canPerformAction()) return this.warnCannotAct();
+    const target = 10 + this.getTraitValue(traitKey) + this.getRollModifier({kind: "trait", traitKey});
     const label = game.i18n.localize(TRUDVANG.traits[traitKey] ?? traitKey);
     const options = await modifierDialog({title: label, target});
     if (!options) return null;
@@ -445,6 +492,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollAbility(item) {
+    if (!this.canPerformAction()) return this.warnCannotAct();
     const key = item.system.parentSkill;
     const target = this.getAbilityBreakdown(item).total;
     const options = await modifierDialog({title: item.name, target});
@@ -453,6 +501,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollInitiativeTrudvang() {
+    if (!this.canPerformAction()) return this.warnCannotAct();
     const options = await initiativeDialog({actor: this, target: Number(this.system.initiative.current || 0), lightningQuickLevel: Number(this.findKnowledgeItem("lightningQuickInvocation")?.system.level || 0)});
     if (!options) return null;
     const result = await openD10({threshold: 10, modifier: Number(this.system.initiative.current || 0) + options.modifier});
@@ -479,7 +528,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollWeaponAction(item, kind) {
-    const available = Number(this.system.resources.combat.value || this.system.resources.combat.max || 1);
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    const available = Number(this.system.resources.combat.current ?? this.system.resources.combat.value ?? this.system.resources.combat.max ?? 1);
     const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
     const options = await modifierDialog({
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
@@ -490,18 +540,23 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const spend = Math.max(0, Math.min(available, options.cost));
-    if (this.isOwner) await this.update({"system.resources.combat.value": available - spend});
-    return rollUnder({actor: this, label: item.name, target: spend, modifier: options.modifier, kind, item});
+    if (this.isOwner) {
+      const stored = Number(this._source.system.resources.combat.value || 0);
+      await this.update({"system.resources.combat.value": Math.max(0, stored - spend)});
+    }
+    const effectModifier = this.getRollModifier({kind, movement: true});
+    return rollUnder({actor: this, label: item.name, target: spend, modifier: options.modifier + effectModifier, kind, item});
   }
 
   async rollSpell(item) {
+    if (!this.canPerformAction()) return this.warnCannotAct();
     const isDivine = item.type === "divineFeat";
     const resource = isDivine ? "divinity" : "vitner";
     const skillKey = isDivine ? "faith" : "vitnerCraft";
     const disciplineId = isDivine ? "invoke" : "vitnerShaping";
     const specialtyIds = isDivine ? Object.values(TRUDVANG.religions).map(religion => religion.specialty) : ["galding", "sejding", "vyrding"];
     const disciplineLevel = Number(this.findKnowledgeItem(disciplineId)?.system.level || 0);
-    const skillValue = this.getSkillTarget(skillKey);
+    const skillValue = this.getSkillTarget(skillKey, 0, {kind: "magic"});
     const methods = specialtyIds.map(id => ({id, item: this.findKnowledgeItem(id)})).filter(entry => Number(entry.item?.system.level || 0) > 0).map(entry => {
       const specialtyBonus = 2 * Number(entry.item.system.level || 0);
       const target = skillValue + disciplineLevel + specialtyBonus;
@@ -519,7 +574,7 @@ export class TrudvangActor extends BaseActor {
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
     });
     if (!options) return null;
-    const available = Number(this.system.resources[resource].value || 0);
+    const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0);
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
     const vitnerType = this.selectedVitnerType;
     const perfectSuccessMax = isDivine ? 1 : (vitnerType?.perfectSuccessMax ?? 1);
@@ -527,7 +582,10 @@ export class TrudvangActor extends BaseActor {
     const flavor = `${options.method.breakdown}${strenuousFlavor}${item.system.effect ? `<hr>${item.system.effect}` : ""}`;
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`, target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell", flavor, item, perfectSuccessMax});
     const spent = isDivine && !result.success ? defaultCost : options.cost;
-    if (this.isOwner) await this.update({[`system.resources.${resource}.value`]: Math.max(0, available - spent)});
+    if (this.isOwner) {
+      const stored = Number(this._source.system.resources[resource].value || 0);
+      await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
+    }
     if (result?.result === 20) await this.rollFatalEffect(isDivine ? "faith" : "vitner", options.cost, item);
     return result;
   }
@@ -550,7 +608,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   async resetCombatPoints() {
-    return this.update({"system.resources.combat.value": this.system.resources.combat.max});
+    const baseMax = Math.max(1, Number(this.system.resources.combat.max || 1) - Number(this.system.modifiers.combatMax || 0));
+    return this.update({"system.resources.combat.value": baseMax});
   }
 
   async advanceSkill(skillKey) {
@@ -656,6 +715,46 @@ export class TrudvangActor extends BaseActor {
     await this.update(changes);
     if (entering) await this.syncCreationDefaults();
     ui.notifications.info(game.i18n.localize(entering ? "TRUDVANG.Notification.CreationModeEnabled" : "TRUDVANG.Notification.CreationModeDisabled"));
+  }
+
+  async createTrudvangEffect(data) {
+    if (!this.canUserModify(game.user, "update")) {
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.EffectPermission"));
+    }
+    const prepared = foundry.utils.deepClone(data);
+    prepared.type = "effect";
+    prepared.system ??= {};
+    const stackId = String(prepared.system.stackId || "").trim();
+    const stacking = prepared.system.stacking || "stack";
+    const existing = stackId ? this.effects.find(effect => effect.type === "effect" && effect.system.stackId === stackId) : null;
+    if (existing && stacking !== "stack") {
+      if (stacking === "highest" && Number(existing.system.potency || 0) > Number(prepared.system.potency || 0)) {
+        const start = foundry.documents.ActiveEffect.implementation.getEffectStart();
+        await existing.update({start, duration: {...existing._source.duration, expired: false}});
+        return existing;
+      }
+      if (stacking === "refresh") {
+        const update = foundry.utils.deepClone(prepared);
+        delete update._id;
+        update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
+        update.duration = {...(update.duration || existing._source.duration), expired: false};
+        await existing.update(update);
+        return existing;
+      }
+      await existing.delete();
+    }
+    const [created] = await this.createEmbeddedDocuments("ActiveEffect", [prepared]);
+    return created;
+  }
+
+  async createBlankEffect() {
+    const effect = await this.createTrudvangEffect({
+      name: game.i18n.localize("TRUDVANG.New.Effect"),
+      img: "icons/svg/aura.svg",
+      system: {stacking: "stack", changes: []}
+    });
+    effect?.sheet.render({force: true});
+    return effect;
   }
 
   async rollItem(item) {

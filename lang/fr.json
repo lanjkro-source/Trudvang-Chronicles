@@ -1,5 +1,8 @@
 {
   "TYPES": {
+    "ActiveEffect": {
+      "effect": "Effet de Trudvang"
+    },
     "Actor": {
       "character": "Personnage",
       "npc": "PNJ"
@@ -20,7 +23,8 @@
     "Sheets": {
       "Character": "Feuille de personnage",
       "Npc": "Feuille de PNJ",
-      "Item": "Feuille d'objet"
+      "Item": "Feuille d'objet",
+      "Effect": "Feuille d'effet de Trudvang"
     },
     "Settings": {
       "StarterContentName": "Version du contenu de démarrage",
@@ -39,6 +43,7 @@
       "Skills": "Compétences",
       "Equipment": "Équipement",
       "Magic": "Magie & Foi",
+      "Effects": "Effets",
       "Notes": "Notes",
       "Actions": "Actions"
     },
@@ -57,7 +62,8 @@
       "History": "Histoire",
       "Notes": "Notes",
       "Description": "Description",
-      "Affinities": "Affinités magiques & religieuses"
+      "Affinities": "Affinités magiques & religieuses",
+      "Effects": "Effets actifs"
     },
     "Action": {
       "Roll": "Jet de dé",
@@ -87,7 +93,10 @@
       "ShowInactiveMagic": "Afficher les pouvoirs inaccessibles",
       "ExpandAll": "Déplier toute l'arborescence des compétences",
       "CollapseAll": "Replier toute l'arborescence des compétences",
-      "Delete": "Supprimer"
+      "Delete": "Supprimer",
+      "AddEffect": "Ajouter un effet",
+      "ToggleEffect": "Activer ou désactiver l'effet",
+      "ApplyEffects": "Appliquer les effets aux cibles sélectionnées"
     },
     "Field": {
       "Name": "Nom",
@@ -480,7 +489,12 @@
       "ReligionRequired": "Choisissez une voie religieuse compatible avant d'ajouter une tablette sacrée.",
       "TabletReligionMismatch": "Cette tablette sacrée n'appartient pas à la religion compatible choisie par le personnage.",
       "NoCompatibleTablets": "Aucune tablette supplémentaire n'est actuellement compatible avec ce personnage.",
-      "MagicMethodRequired": "Apprenez la discipline requise et au moins une spécialité d'invocation ou de tissage applicable."
+      "MagicMethodRequired": "Apprenez la discipline requise et au moins une spécialité d'invocation ou de tissage applicable.",
+      "CannotAct": "L'état actuel du personnage l'empêche d'effectuer cette action.",
+      "EffectPermission": "Vous n'avez pas l'autorisation de modifier les effets de cette cible.",
+      "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
+      "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
+      "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
     },
     "Description": {
       "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",
@@ -525,13 +539,39 @@
       "CreationModeEnabled": "Mode création de personnage activé.",
       "CreationModeDisabled": "Création du personnage terminée.",
       "InvalidTraitsRepaired": "Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s).",
-      "KnowledgeSynced": "{count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour."
+      "KnowledgeSynced": "{count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour.",
+      "EffectsApplied": "{count} effet(s) appliqué(s).",
+      "EffectStageAdvanced": "{effect} passe au palier {stage}."
     },
     "New": {
-      "Item": "Nouveau {type}"
+      "Item": "Nouveau {type}",
+      "Effect": "Nouvel effet"
     },
     "Empty": {
-      "Weapons": "Equipez une arme pour l'ajouter aux actions rapides."
+      "Weapons": "Equipez une arme pour l'ajouter aux actions rapides.",
+      "Effects": "Aucun effet actif."
+    },
+    "Effect": {
+      "Permanent": "Permanent",
+      "BaseValue": "Valeur de base",
+      "Transferred": "Transféré tant que l'objet est actif",
+      "Applied": "Appliqué aux cibles sélectionnées",
+      "RulesTab": "Trudvang",
+      "Stacking": "Règle de cumul",
+      "StackId": "Identifiant de cumul",
+      "StackIdHint": "Les effets partageant un même identifiant non vide suivent la règle de cumul sélectionnée.",
+      "Potency": "Puissance",
+      "Stack": "Cumuler",
+      "Refresh": "Rafraîchir la durée",
+      "Replace": "Remplacer l'effet existant",
+      "Highest": "Conserver la puissance la plus élevée",
+      "Stages": "Paliers successifs",
+      "StagesHint": "À l'expiration du palier courant, le MJ actif fait passer l'effet au suivant. Les modifications utilisent le format JSON natif des ActiveEffect.",
+      "Stage": "Palier",
+      "StageChanges": "Modifications (JSON)",
+      "AddStage": "Ajouter un palier",
+      "SupportedPaths": "Chemins de modification pris en charge",
+      "SupportedPathsHint": "Les identifiants de traits sont charisma, constitution, dexterity, intelligence, perception, psyche et strength. Les identifiants de compétences sont agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft et wilderness. Utilisez la phase initiale pour les modifications qui doivent alimenter les calculs dérivés."
     },
     "Import": {
       "Started": "Installation de la bibliothèque de démarrage Trudvang...",
@@ -1984,7 +2024,7 @@
           "Summary": "Le bruide se voit doté du pouvoir divin d’infliger de terribles dommages aux géants en tous genres (jotuns, tursirs, ogres et hrimtrolls) jusqu’à expiration du pouvoir."
         },
         "holy-ealdtradition-heritage-of-majne:king-s-militia:3": {
-          "Name": "Milice du roi",
+          "Name": "Milice royale",
           "Summary": ""
         },
         "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {

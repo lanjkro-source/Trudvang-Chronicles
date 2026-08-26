@@ -3,14 +3,18 @@ import { TrudvangActor } from "./modules/documents/actor.mjs";
 import { TrudvangItem } from "./modules/documents/item.mjs";
 import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
 import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
+import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
+import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
+  configureEffects();
+  registerEffectHooks();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);
   Object.assign(CONFIG.Item.dataModels, ITEM_DATA_MODELS);
   CONFIG.Actor.trackableAttributes = {
@@ -29,6 +33,11 @@ Hooks.once("init", () => {
   // Actor sheets — ApplicationV2
   const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;
   if (DocumentSheetConfig) {
+    DocumentSheetConfig.registerSheet(foundry.documents.ActiveEffect, "trudvang-chronicles", TrudvangEffectSheet, {
+      types: ["effect"],
+      makeDefault: true,
+      label: "TRUDVANG.Sheets.Effect"
+    });
     DocumentSheetConfig.registerSheet(foundry.documents.Actor, "trudvang-chronicles", TrudvangCharacterSheet, {
       types: ["character"],
       makeDefault: true,

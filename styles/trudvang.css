@@ -171,6 +171,28 @@
 .trudvang-sheet .item-list .equip.active { color: var(--trudvang-red); background: rgba(115,59,45,.12); }
 .trudvang-sheet .compact-list .item { grid-template-columns: 30px 27px 1fr auto 30px 30px 30px; }
 .trudvang-sheet .empty { padding: 8px; color: var(--trudvang-muted); font-style: italic; }
+.trudvang-sheet .modified-value, .trudvang-sheet .effective-value { color: #2f6d46; font-weight: 700; }
+.trudvang-sheet .base-value { margin-left: 2px; color: var(--trudvang-muted); font-size: .62rem; text-decoration: line-through; }
+.trudvang-sheet .effect-list { margin: 0; padding: 0; list-style: none; }
+.trudvang-sheet .effect-row { min-height: 38px; display: grid; grid-template-columns: 32px minmax(130px,1fr) minmax(90px,.7fr) minmax(90px,.7fr) 28px 28px; gap: 5px; align-items: center; border-bottom: 1px dotted var(--trudvang-line); }
+.trudvang-sheet .effect-row.inactive { opacity: .5; filter: grayscale(.8); }
+.trudvang-sheet .effect-row img { width: 30px; height: 30px; object-fit: cover; border: 1px solid var(--trudvang-line); }
+.trudvang-sheet .effect-row img[src^="icons/svg/"] { filter: brightness(0); opacity: .82; background: rgba(255,255,255,.4); }
+.trudvang-sheet .effect-row .effect-name { min-width: 0; padding: 2px; overflow: hidden; text-align: left; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+.trudvang-sheet .effect-row .effect-source, .trudvang-sheet .effect-row .effect-duration { min-width: 0; overflow: hidden; color: var(--trudvang-muted); text-overflow: ellipsis; white-space: nowrap; font-size: .7rem; }
+.trudvang-sheet .effect-row > button:not(.effect-name) { width: 27px; padding: 2px; }
+.trudvang-sheet.item-sheet .item-effects { margin-bottom: 8px; }
+.trudvang-sheet.item-sheet .item-effects .effect-row { grid-template-columns: 32px minmax(120px,1fr) minmax(100px,.7fr) 28px 28px; }
+.trudvang-sheet .npc-stats-grid .effective-value { min-width: 22px; text-align: center; }
+
+.trudvang.effect-sheet .trudvang-effect-rules fieldset { margin-bottom: 10px; }
+.trudvang.effect-sheet .trudvang-stage-list { margin: 0; padding: 0; list-style: none; }
+.trudvang.effect-sheet .trudvang-stage-list > li { margin: 8px 0; padding: 8px; border: 1px solid var(--color-border-light-primary); border-radius: 4px; }
+.trudvang.effect-sheet .trudvang-stage-list header { display: flex; align-items: center; justify-content: space-between; }
+.trudvang.effect-sheet .trudvang-stage-list header button { flex: 0 0 30px; }
+.trudvang.effect-sheet .trudvang-stage-list textarea { width: 100%; min-height: 110px; font-family: monospace; font-size: .75rem; }
+.trudvang.effect-sheet .effect-key-help { margin-top: 10px; }
+.trudvang.effect-sheet .effect-key-help code { display: block; margin: 2px 0; padding: 2px 5px; user-select: all; }
 
 .trudvang-sheet .notes-grid .full { grid-column: 1 / -1; }
 .trudvang-sheet .editor-panel { min-height: 205px; display: flex; flex-direction: column; }

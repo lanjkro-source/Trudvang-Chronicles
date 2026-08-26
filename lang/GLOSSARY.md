@@ -4,6 +4,12 @@ Ce glossaire constitue la référence terminologique pour les traductions du sys
 
 La terminologie française s'appuie sur l'édition officielle Black Book Éditions (« Livre des règles », miroir texte dans `game doc/markdown-fr/`). Avant d'ajouter ou de modifier une entrée dans les fichiers de langue, rechercher ici les termes apparentés et conserver les choix terminologiques existants. Toute nouvelle terminologie validée doit être répercutée dans ce document.
 
+## `TYPES.ActiveEffect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TYPES.ActiveEffect.effect` | Trudvang Effect | Effet de Trudvang |
+
 ## `TYPES.Actor`
 
 | Clé | English | Français |
@@ -32,6 +38,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sheets.Character` | Trudvang Character Sheet | Feuille de personnage |
 | `TRUDVANG.Sheets.Npc` | Trudvang Compact NPC Sheet | Feuille de PNJ |
 | `TRUDVANG.Sheets.Item` | Trudvang Item Sheet | Feuille d'objet |
+| `TRUDVANG.Sheets.Effect` | Trudvang Effect Sheet | Feuille d'effet de Trudvang |
 
 ## `TRUDVANG.Settings`
 
@@ -56,6 +63,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tab.Skills` | Skills | Compétences |
 | `TRUDVANG.Tab.Equipment` | Equipment | Équipement |
 | `TRUDVANG.Tab.Magic` | Magic & Faith | Magie & Foi |
+| `TRUDVANG.Tab.Effects` | Effects | Effets |
 | `TRUDVANG.Tab.Notes` | Notes | Notes |
 | `TRUDVANG.Tab.Actions` | Actions | Actions |
 
@@ -78,6 +86,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Section.Notes` | Notes | Notes |
 | `TRUDVANG.Section.Description` | Description | Description |
 | `TRUDVANG.Section.Affinities` | Magical & Religious Affinities | Affinités magiques & religieuses |
+| `TRUDVANG.Section.Effects` | Active Effects | Effets actifs |
 
 ## `TRUDVANG.Action`
 
@@ -111,6 +120,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ExpandAll` | Expand the entire skill tree | Déplier toute l'arborescence des compétences |
 | `TRUDVANG.Action.CollapseAll` | Collapse the entire skill tree | Replier toute l'arborescence des compétences |
 | `TRUDVANG.Action.Delete` | Delete | Supprimer |
+| `TRUDVANG.Action.AddEffect` | Add effect | Ajouter un effet |
+| `TRUDVANG.Action.ToggleEffect` | Enable or disable effect | Activer ou désactiver l'effet |
+| `TRUDVANG.Action.ApplyEffects` | Apply effects to selected targets | Appliquer les effets aux cibles sélectionnées |
 
 ## `TRUDVANG.Field`
 
@@ -564,6 +576,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.TabletReligionMismatch` | This Holy Tablet does not belong to the character's compatible chosen religion. | Cette tablette sacrée n'appartient pas à la religion compatible choisie par le personnage. |
 | `TRUDVANG.Warning.NoCompatibleTablets` | No additional tablet is currently compatible with this character. | Aucune tablette supplémentaire n'est actuellement compatible avec ce personnage. |
 | `TRUDVANG.Warning.MagicMethodRequired` | Learn the required discipline and at least one applicable invocation or weaving specialty. | Apprenez la discipline requise et au moins une spécialité d'invocation ou de tissage applicable. |
+| `TRUDVANG.Warning.CannotAct` | The character's current condition prevents this action. | L'état actuel du personnage l'empêche d'effectuer cette action. |
+| `TRUDVANG.Warning.EffectPermission` | You are not allowed to modify effects on this target. | Vous n'avez pas l'autorisation de modifier les effets de cette cible. |
+| `TRUDVANG.Warning.NoApplicableEffects` | This item has no enabled effect to apply. | Cet objet ne possède aucun effet actif à appliquer. |
+| `TRUDVANG.Warning.NoEffectTarget` | Select at least one target before applying this effect. | Sélectionnez au moins une cible avant d'appliquer cet effet. |
+| `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
 
 ## `TRUDVANG.Description`
 
@@ -627,18 +644,47 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.CreationModeDisabled` | Character creation completed. | Création du personnage terminée. |
 | `TRUDVANG.Notification.InvalidTraitsRepaired` | Reset invalid -4 defaults to 0 on {count} character(s). | Les valeurs initiales invalides à -4 ont été remises à 0 sur {count} personnage(s). |
 | `TRUDVANG.Notification.KnowledgeSynced` | {count} knowledge item(s) imported from the Skills compendiums were refreshed. | {count} connaissance(s) importée(s) depuis les compendiums de Compétences ont été mise(s) à jour. |
+| `TRUDVANG.Notification.EffectsApplied` | Applied {count} effect(s). | {count} effet(s) appliqué(s). |
+| `TRUDVANG.Notification.EffectStageAdvanced` | {effect} advanced to stage {stage}. | {effect} passe au palier {stage}. |
 
 ## `TRUDVANG.New`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.New.Item` | New {type} | Nouveau {type} |
+| `TRUDVANG.New.Effect` | New effect | Nouvel effet |
 
 ## `TRUDVANG.Empty`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Empty.Weapons` | Equip a weapon to place it among the quick actions. | Equipez une arme pour l'ajouter aux actions rapides. |
+| `TRUDVANG.Empty.Effects` | No active effect. | Aucun effet actif. |
+
+## `TRUDVANG.Effect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Effect.Permanent` | Permanent | Permanent |
+| `TRUDVANG.Effect.BaseValue` | Base value | Valeur de base |
+| `TRUDVANG.Effect.Transferred` | Transferred while the item is active | Transféré tant que l'objet est actif |
+| `TRUDVANG.Effect.Applied` | Applied to selected targets | Appliqué aux cibles sélectionnées |
+| `TRUDVANG.Effect.RulesTab` | Trudvang | Trudvang |
+| `TRUDVANG.Effect.Stacking` | Stacking rule | Règle de cumul |
+| `TRUDVANG.Effect.StackId` | Stack identifier | Identifiant de cumul |
+| `TRUDVANG.Effect.StackIdHint` | Effects with the same non-empty identifier use the selected stacking rule. | Les effets partageant un même identifiant non vide suivent la règle de cumul sélectionnée. |
+| `TRUDVANG.Effect.Potency` | Potency | Puissance |
+| `TRUDVANG.Effect.Stack` | Stack | Cumuler |
+| `TRUDVANG.Effect.Refresh` | Refresh duration | Rafraîchir la durée |
+| `TRUDVANG.Effect.Replace` | Replace existing effect | Remplacer l'effet existant |
+| `TRUDVANG.Effect.Highest` | Keep highest potency | Conserver la puissance la plus élevée |
+| `TRUDVANG.Effect.Stages` | Successive stages | Paliers successifs |
+| `TRUDVANG.Effect.StagesHint` | When the current stage expires, the active GM advances the effect to the next stage. Stage changes use the native ActiveEffect JSON format. | À l'expiration du palier courant, le MJ actif fait passer l'effet au suivant. Les modifications utilisent le format JSON natif des ActiveEffect. |
+| `TRUDVANG.Effect.Stage` | Stage | Palier |
+| `TRUDVANG.Effect.StageChanges` | Changes (JSON) | Modifications (JSON) |
+| `TRUDVANG.Effect.AddStage` | Add stage | Ajouter un palier |
+| `TRUDVANG.Effect.SupportedPaths` | Supported change paths | Chemins de modification pris en charge |
+| `TRUDVANG.Effect.SupportedPathsHint` | Trait identifiers are charisma, constitution, dexterity, intelligence, perception, psyche, and strength. Skill identifiers are agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft, and wilderness. Use the initial phase for changes that must feed derived calculations. | Les identifiants de traits sont charisma, constitution, dexterity, intelligence, perception, psyche et strength. Les identifiants de compétences sont agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft et wilderness. Utilisez la phase initiale pour les modifications qui doivent alimenter les calculs dérivés. |
 
 ## `TRUDVANG.Import`
 
@@ -2929,7 +2975,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3.Name` | King's Militia | Milice du roi |
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3.Name` | King's Militia | Milice royale |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:hero-s-brew:4`
 

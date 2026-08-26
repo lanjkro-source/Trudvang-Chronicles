@@ -12,9 +12,16 @@ function attachListeners(message, html) {
   html.querySelectorAll("[data-action='damage']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();
-      const actor = await fromUuid(button.dataset.actorUuid);
-      const item = await fromUuid(button.dataset.itemUuid);
+      const actor = await foundry.utils.fromUuid(button.dataset.actorUuid);
+      const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
       if (actor?.isOwner && item) await actor.rollDamage(item);
+    });
+  });
+  html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
+      if (item?.isOwner) await item.applyEffects();
     });
   });
 }

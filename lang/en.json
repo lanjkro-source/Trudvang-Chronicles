@@ -1,5 +1,8 @@
 {
   "TYPES": {
+    "ActiveEffect": {
+      "effect": "Trudvang Effect"
+    },
     "Actor": {
       "character": "Character",
       "npc": "Non-Player Character"
@@ -20,7 +23,8 @@
     "Sheets": {
       "Character": "Trudvang Character Sheet",
       "Npc": "Trudvang Compact NPC Sheet",
-      "Item": "Trudvang Item Sheet"
+      "Item": "Trudvang Item Sheet",
+      "Effect": "Trudvang Effect Sheet"
     },
     "Settings": {
       "StarterContentName": "Starter content version",
@@ -39,6 +43,7 @@
       "Skills": "Skills",
       "Equipment": "Equipment",
       "Magic": "Magic & Faith",
+      "Effects": "Effects",
       "Notes": "Notes",
       "Actions": "Actions"
     },
@@ -57,7 +62,8 @@
       "History": "History",
       "Notes": "Notes",
       "Description": "Description",
-      "Affinities": "Magical & Religious Affinities"
+      "Affinities": "Magical & Religious Affinities",
+      "Effects": "Active Effects"
     },
     "Action": {
       "Roll": "Roll",
@@ -87,7 +93,10 @@
       "ShowInactiveMagic": "Show inaccessible powers",
       "ExpandAll": "Expand the entire skill tree",
       "CollapseAll": "Collapse the entire skill tree",
-      "Delete": "Delete"
+      "Delete": "Delete",
+      "AddEffect": "Add effect",
+      "ToggleEffect": "Enable or disable effect",
+      "ApplyEffects": "Apply effects to selected targets"
     },
     "Field": {
       "Name": "Name",
@@ -480,7 +489,12 @@
       "ReligionRequired": "Choose a compatible religious path before adding a Holy Tablet.",
       "TabletReligionMismatch": "This Holy Tablet does not belong to the character's compatible chosen religion.",
       "NoCompatibleTablets": "No additional tablet is currently compatible with this character.",
-      "MagicMethodRequired": "Learn the required discipline and at least one applicable invocation or weaving specialty."
+      "MagicMethodRequired": "Learn the required discipline and at least one applicable invocation or weaving specialty.",
+      "CannotAct": "The character's current condition prevents this action.",
+      "EffectPermission": "You are not allowed to modify effects on this target.",
+      "NoApplicableEffects": "This item has no enabled effect to apply.",
+      "NoEffectTarget": "Select at least one target before applying this effect.",
+      "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
     },
     "Description": {
       "SkillSummary": "{name} is a general skill used as the base value for its related actions and knowledge.",
@@ -525,13 +539,39 @@
       "CreationModeEnabled": "Character creation mode enabled.",
       "CreationModeDisabled": "Character creation completed.",
       "InvalidTraitsRepaired": "Reset invalid -4 defaults to 0 on {count} character(s).",
-      "KnowledgeSynced": "{count} knowledge item(s) imported from the Skills compendiums were refreshed."
+      "KnowledgeSynced": "{count} knowledge item(s) imported from the Skills compendiums were refreshed.",
+      "EffectsApplied": "Applied {count} effect(s).",
+      "EffectStageAdvanced": "{effect} advanced to stage {stage}."
     },
     "New": {
-      "Item": "New {type}"
+      "Item": "New {type}",
+      "Effect": "New effect"
     },
     "Empty": {
-      "Weapons": "Equip a weapon to place it among the quick actions."
+      "Weapons": "Equip a weapon to place it among the quick actions.",
+      "Effects": "No active effect."
+    },
+    "Effect": {
+      "Permanent": "Permanent",
+      "BaseValue": "Base value",
+      "Transferred": "Transferred while the item is active",
+      "Applied": "Applied to selected targets",
+      "RulesTab": "Trudvang",
+      "Stacking": "Stacking rule",
+      "StackId": "Stack identifier",
+      "StackIdHint": "Effects with the same non-empty identifier use the selected stacking rule.",
+      "Potency": "Potency",
+      "Stack": "Stack",
+      "Refresh": "Refresh duration",
+      "Replace": "Replace existing effect",
+      "Highest": "Keep highest potency",
+      "Stages": "Successive stages",
+      "StagesHint": "When the current stage expires, the active GM advances the effect to the next stage. Stage changes use the native ActiveEffect JSON format.",
+      "Stage": "Stage",
+      "StageChanges": "Changes (JSON)",
+      "AddStage": "Add stage",
+      "SupportedPaths": "Supported change paths",
+      "SupportedPathsHint": "Trait identifiers are charisma, constitution, dexterity, intelligence, perception, psyche, and strength. Skill identifiers are agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft, and wilderness. Use the initial phase for changes that must feed derived calculations."
     },
     "Import": {
       "Started": "Installing the Trudvang starter library...",

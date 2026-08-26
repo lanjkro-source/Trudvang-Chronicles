@@ -1,4 +1,5 @@
 import { TRUDVANG } from "../config.mjs";
+import { effectChangeSummary } from "../effects.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -32,7 +33,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     },
     actions: {
       roll: TrudvangItemSheet.#onRoll,
-      "delete-item": TrudvangItemSheet.#onDeleteItem
+      "delete-item": TrudvangItemSheet.#onDeleteItem,
+      "effect-add": TrudvangItemSheet.#onEffectAdd,
+      "effect-edit": TrudvangItemSheet.#onEffectEdit,
+      "effect-toggle": TrudvangItemSheet.#onEffectToggle,
+      "effect-delete": TrudvangItemSheet.#onEffectDelete,
+      "apply-effects": TrudvangItemSheet.#onApplyEffects
     }
   };
 
@@ -49,6 +55,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.isType = type => this.item.type === type;
     context.config = TRUDVANG;
     context.advancementLocked = this.advancementLocked;
+    context.effects = this.item.effects.map(effect => ({
+      id: effect.id,
+      name: effect.name,
+      img: effect.img,
+      transfer: effect.transfer,
+      disabled: effect.disabled,
+      summary: effectChangeSummary(effect)
+    }));
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
     return context;
   }
@@ -88,5 +102,33 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     }
     await this.item.delete();
     await this.close();
+  }
+
+  static async #onEffectAdd() {
+    const [effect] = await this.item.createEmbeddedDocuments("ActiveEffect", [{
+      name: game.i18n.localize("TRUDVANG.New.Effect"),
+      type: "effect",
+      img: "icons/svg/aura.svg",
+      transfer: ["weapon", "armor", "shield", "gear", "ability"].includes(this.item.type),
+      system: {stacking: "stack", changes: []}
+    }]);
+    effect?.sheet.render({force: true});
+  }
+
+  static async #onEffectEdit(event, target) {
+    return this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId)?.sheet.render({force: true});
+  }
+
+  static async #onEffectToggle(event, target) {
+    const effect = this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId);
+    return effect?.update({disabled: !effect.disabled});
+  }
+
+  static async #onEffectDelete(event, target) {
+    return this.item.effects.get(target.closest("[data-effect-id]")?.dataset.effectId)?.delete();
+  }
+
+  static async #onApplyEffects() {
+    return this.item.applyEffects();
   }
 }

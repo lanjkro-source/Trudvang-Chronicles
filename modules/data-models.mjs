@@ -30,8 +30,24 @@ function traitSchema() {
   });
 }
 
+function effectiveTraitSchema() {
+  return schema({
+    charisma: integer(0, {persisted: false}),
+    constitution: integer(0, {persisted: false}),
+    dexterity: integer(0, {persisted: false}),
+    intelligence: integer(0, {persisted: false}),
+    perception: integer(0, {persisted: false}),
+    psyche: integer(0, {persisted: false}),
+    strength: integer(0, {persisted: false})
+  });
+}
+
 function resource(initialValue, initialMax) {
-  return schema({value: number(initialValue), max: number(initialMax)});
+  return schema({
+    value: number(initialValue),
+    max: number(initialMax),
+    current: number(initialValue, {persisted: false})
+  });
 }
 
 function skill(initial = 1) {
@@ -52,9 +68,56 @@ function skillsSchema() {
   });
 }
 
+function effectiveSkillsSchema(initial = 1) {
+  return schema({
+    agility: integer(initial, {persisted: false}),
+    care: integer(initial, {persisted: false}),
+    entertainment: integer(initial, {persisted: false}),
+    faith: integer(initial, {persisted: false}),
+    fighting: integer(initial, {persisted: false}),
+    knowledge: integer(initial, {persisted: false}),
+    shadowArts: integer(initial, {persisted: false}),
+    vitnerCraft: integer(initial, {persisted: false}),
+    wilderness: integer(initial, {persisted: false})
+  });
+}
+
+function rollModifiersSchema() {
+  return schema({
+    allActions: integer(0, {persisted: false}),
+    combatActions: integer(0, {persisted: false}),
+    movementActions: integer(0, {persisted: false}),
+    attack: integer(0, {persisted: false}),
+    parry: integer(0, {persisted: false}),
+    initiative: integer(0, {persisted: false}),
+    magic: integer(0, {persisted: false}),
+    traits: effectiveTraitSchema(),
+    skills: effectiveSkillsSchema(0)
+  });
+}
+
 function actorCommonSchema() {
   return {
     traits: traitSchema(),
+    effective: schema({
+      traits: effectiveTraitSchema(),
+      skills: effectiveSkillsSchema()
+    }),
+    modifiers: schema({
+      rolls: rollModifiersSchema(),
+      movement: integer(0, {persisted: false}),
+      protection: integer(0, {persisted: false}),
+      bodyMax: integer(0, {persisted: false}),
+      combatMax: integer(0, {persisted: false}),
+      vitnerMax: integer(0, {persisted: false}),
+      divinityMax: integer(0, {persisted: false}),
+      bodyValue: integer(0, {persisted: false}),
+      combatValue: integer(0, {persisted: false}),
+      vitnerValue: integer(0, {persisted: false}),
+      divinityValue: integer(0, {persisted: false}),
+      raudValue: integer(0, {persisted: false}),
+      fearValue: integer(0, {persisted: false})
+    }),
     resources: schema({
       body: resource(32, 32),
       raud: resource(0, 0),
@@ -72,6 +135,17 @@ function actorCommonSchema() {
     persistenceInWild: integer(10),
     buildCost: integer(0)
   };
+}
+
+function prepareEffectiveActorData(model) {
+  for (const key of Object.keys(model.effective.traits)) {
+    model.effective.traits[key] = Number(model.traits?.[key] || 0);
+  }
+  for (const key of Object.keys(model.effective.skills)) {
+    const skill = model.skills?.[key];
+    model.effective.skills[key] = Number(skill?.value || 0) + Number(skill?.bonus || 0);
+  }
+  for (const resource of Object.values(model.resources || {})) resource.current = Number(resource.value || 0);
 }
 
 export class CharacterData extends foundry.abstract.TypeDataModel {
@@ -101,6 +175,11 @@ export class CharacterData extends foundry.abstract.TypeDataModel {
       history: html()
     };
   }
+
+  prepareBaseData() {
+    super.prepareBaseData();
+    prepareEffectiveActorData(this);
+  }
 }
 
 export class NpcData extends foundry.abstract.TypeDataModel {
@@ -117,6 +196,11 @@ export class NpcData extends foundry.abstract.TypeDataModel {
       skills: skillsSchema(),
       description: html()
     };
+  }
+
+  prepareBaseData() {
+    super.prepareBaseData();
+    prepareEffectiveActorData(this);
   }
 }
 
@@ -218,7 +302,11 @@ export class ShieldData extends BaseItemData {
   }
 }
 
-export class GearData extends BaseItemData {}
+export class GearData extends BaseItemData {
+  static defineSchema() {
+    return {...super.defineSchema(), equipped: boolean(false)};
+  }
+}
 
 export class PotionData extends BaseItemData {
   static defineSchema() {

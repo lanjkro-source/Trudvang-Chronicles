@@ -1,6 +1,6 @@
 # Trudvang Chronicles for Foundry VTT
 
-This repository contains a bilingual (English/French) Foundry VTT game system for **Trudvang Chronicles**. It targets Foundry VTT 13 and 14 and is designed around compact, clickable character and NPC sheets. French terminology follows the official Black Book Éditions rulebook (« Livre des règles »).
+This repository contains a bilingual (English/French) Foundry VTT game system for **Trudvang Chronicles**. It targets Foundry VTT 14 and is designed around compact, clickable character and NPC sheets. French terminology follows the official Black Book Éditions rulebook (« Livre des règles »).
 
 ## Features
 
@@ -9,6 +9,7 @@ This repository contains a bilingual (English/French) Foundry VTT game system fo
 - Clickable 1d20 roll-under Skill and Situation rolls. A natural 1 always succeeds and a natural 20 always fails.
 - Combat Point spending for attacks and parries, round reset, open initiative rolls, damage rolls with weapon-class open-roll thresholds, and automatic Strength modifiers.
 - Derived Body Points, movement, damage-level penalties, fear penalties, equipped protection, and initiative modifiers.
+- Native Active Effects with separate base/effective traits and skills, temporary resource and roll modifiers, item-transferred effects, stacking policies, and staged durations.
 - Creation-cost display plus rule-aware Adventure Point purchases for Skill Values, disciplines, specialties, and tablets.
 - Drag-and-drop Item documents for weapons, armor, shields, gear, extracts, spells, tablets, divine feats, disciplines, specialties, and creature feats.
 - An automatically installed starter library with 40+ detailed Items, the Fatal Magic and Fatal Failure Roll Tables, and 8 illustrated NPCs.
@@ -45,6 +46,8 @@ npm run build:packs
 - Click a weapon name to attack, the shield icon to parry, or the burst icon to roll damage. The attack/parry dialog chooses how many Combat Points to spend.
 - Click a spell or divine feat to roll and spend Vitner or Divinity Points. The cost can be raised for levels of power.
 - Drag world Items into an Actor sheet, or duplicate any starter NPC and edit the copy.
+- Use the Effects tab to create a temporary modifier. Item effects can transfer while equipped/active, or be applied to selected tokens from the Item sheet or chat card.
+- In an effect's Trudvang tab, choose its stacking policy and optional timed stages. The supported data paths are listed directly in the editor.
 
 ## Repository layout
 

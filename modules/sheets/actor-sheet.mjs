@@ -2,6 +2,7 @@ import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
+import { effectChangeSummary } from "../effects.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -50,7 +51,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "toggle-zero-knowledge": TrudvangActorSheet.#onAction,
       "toggle-inactive-magic": TrudvangActorSheet.#onAction,
       "expand-tree": TrudvangActorSheet.#onAction,
-      "collapse-tree": TrudvangActorSheet.#onAction
+      "collapse-tree": TrudvangActorSheet.#onAction,
+      "effect-add": TrudvangActorSheet.#onAction,
+      "effect-edit": TrudvangActorSheet.#onAction,
+      "effect-toggle": TrudvangActorSheet.#onAction,
+      "effect-delete": TrudvangActorSheet.#onAction
     }
   };
 
@@ -89,6 +94,19 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
     context.religionProfile = this.actor.selectedReligion;
     context.religionEditable = context.creationMode && !Object.values(TRUDVANG.religions).some(religion => Number(this.actor.findKnowledgeItem(religion.specialty)?.system.level || 0) > 0);
+    context.effects = Array.from(this.actor.allApplicableEffects()).map(effect => ({
+      uuid: effect.uuid,
+      name: effect.name,
+      img: effect.img,
+      source: effect.sourceName,
+      duration: effect.duration?.label || game.i18n.localize("TRUDVANG.Effect.Permanent"),
+      summary: effectChangeSummary(effect),
+      active: effect.active,
+      disabled: effect.disabled,
+      suppressed: effect.isSuppressed,
+      transferred: effect.parent?.documentName === "Item",
+      canEdit: effect.canUserModify(game.user, "update")
+    }));
     context.itemsByGroup = {};
     for (const [group, types] of Object.entries(TRUDVANG.actorItemGroups)) {
       context.itemsByGroup[group] = this.actor.items.filter(item => types.includes(item.type)).sort((a, b) => a.name.localeCompare(b.name));
@@ -108,16 +126,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.creationOverBudget = context.creationRemaining < 0;
     context.creationCosts = this.actor.calculateCreationCosts();
     context.traitRows = Object.entries(context.config.traits).map(([key, label]) => {
-      const value = Number(this.actor.system.traits?.[key] || 0);
+      const baseValue = Number(this.actor.system.traits?.[key] || 0);
+      const value = this.actor.getTraitValue(key);
       const choices = TRUDVANG.traitChoices;
-      const index = choices.indexOf(value);
+      const index = choices.indexOf(baseValue);
       const previous = choices[index - 1];
       const next = choices[index + 1];
       return {
-        key, label, value,
+        key, label, value, baseValue, modified: value !== baseValue,
         tooltip: game.i18n.format(`TRUDVANG.TraitBenefit.${key}`, {value: signed(value), inverse: signed(-value)}),
-        decreaseTitle: previous === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Refund", {cost: (value - previous) * 15}),
-        increaseTitle: next === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Increase", {cost: (next - value) * 15}),
+        decreaseTitle: previous === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Refund", {cost: (baseValue - previous) * 15}),
+        increaseTitle: next === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Increase", {cost: (next - baseValue) * 15}),
         canDecrease: previous !== undefined,
         canIncrease: next !== undefined
       };
@@ -152,7 +171,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     };
     context.skillTrees = Object.entries(context.config.skills).map(([key, label]) => {
       const skill = this.actor.system.skills[key];
-      const level = Number(skill.value || 1);
+      const baseLevel = Number(skill.value || 1);
+      const level = this.actor.getSkillValue(key);
       const abilities = this.actor.items.filter(item => item.type === "ability" && item.system.parentSkill === key);
       const decorate = item => {
         const itemLevel = Number(item.system.level ?? 0);
@@ -174,15 +194,15 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       // Catalog-backed items always render through their tree node, never as orphans.
       const knownCatalogIds = new Set(Object.values(TRUDVANG.knowledgeTree).flatMap(disciplines => [disciplines.map(d => d.id), ...disciplines.map(d => d.specialties.map(s => s.id))].flat()));
       return {
-        key, label, skill, level,
+        key, label, skill, level, baseLevel, modified: level !== baseLevel,
         description: game.i18n.localize(TRUDVANG.skillDescriptions[key]),
         isCore: Boolean(TRUDVANG.archetypes[this.actor.system.details?.archetype]?.core.includes(key)),
-        refundCost: level,
-        nextCost: level + 1,
-        decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: level}),
-        increaseTitle: increaseTitle(level + 1, key),
-        canDecrease: level > 1,
-        canIncrease: level < 10,
+        refundCost: baseLevel,
+        nextCost: baseLevel + 1,
+        decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: baseLevel}),
+        increaseTitle: increaseTitle(baseLevel + 1, key),
+        canDecrease: baseLevel > 1,
+        canIncrease: baseLevel < 10,
         disciplines: disciplineNodes,
         unassigned: abilities.filter(item => !catalogItemIds.has(item.id) && !knownCatalogIds.has(item.system.catalogId)).map(decorate)
       };
@@ -258,12 +278,13 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
-      "item-equip", "item-create", "show-catalog-detail"
+      "item-equip", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = target.closest("[data-item-id]")?.dataset.itemId;
     const catalogId = target.dataset.catalogId || target.closest("[data-catalog-id]")?.dataset.catalogId;
     const item = itemId ? this.actor.items.get(itemId) : null;
+    const effect = target.dataset.effectUuid ? foundry.utils.fromUuidSync(target.dataset.effectUuid) : null;
     switch (action) {
       case "roll-skill": return this.actor.rollSkill(target.dataset.skill);
       case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[target.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[target.dataset.skill]));
@@ -302,12 +323,37 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return this._applyInactiveMagicVisibility(root);
       case "expand-tree": return this._setTreeExpanded(root, true);
       case "collapse-tree": return this._setTreeExpanded(root, false);
+      case "effect-add": return this.actor.createBlankEffect();
+      case "effect-edit": return effect?.sheet.render({force: true});
+      case "effect-toggle": return effect?.update({disabled: !effect.disabled});
+      case "effect-delete": return effect?.delete();
       default: return null;
     }
   }
 
   static async #onSubmit(event, form, formData) {
-    const changes = formData.object;
+    const changes = foundry.utils.expandObject(formData.object);
+    const editedPath = event.target?.name || "";
+    const sourceResources = this.actor._source.system.resources || {};
+    const maxModifiers = {body: "bodyMax", combat: "combatMax", vitner: "vitnerMax", divinity: "divinityMax"};
+
+    // The sheet shows prepared values, including temporary effects. Preserve the
+    // stored base on unrelated submissions, or remove the modifier from an edited
+    // value before persisting it.
+    for (const [key, source] of Object.entries(sourceResources)) {
+      const valuePath = `system.resources.${key}.value`;
+      const maxPath = `system.resources.${key}.max`;
+      if (foundry.utils.hasProperty(changes, valuePath)) {
+        const shown = Number(foundry.utils.getProperty(changes, valuePath) || 0);
+        const modifier = Number(this.actor.system.modifiers?.[`${key}Value`] || 0);
+        foundry.utils.setProperty(changes, valuePath, editedPath === valuePath ? Math.max(0, shown - modifier) : source.value);
+      }
+      if (foundry.utils.hasProperty(changes, maxPath)) {
+        const shown = Number(foundry.utils.getProperty(changes, maxPath) || 0);
+        const modifier = Number(this.actor.system.modifiers?.[maxModifiers[key]] || 0);
+        foundry.utils.setProperty(changes, maxPath, editedPath === maxPath ? Math.max(0, shown - modifier) : source.max);
+      }
+    }
     const previousOrigins = {
       race: this.actor.system.details?.race,
       culture: this.actor.system.details?.culture,
@@ -473,7 +519,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const cpLab = "CP";
     const openShort = isEN ? "O" : "JO";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
-    const strength = Number(this.actor.system.traits?.strength || 0);
+    const strength = this.actor.getTraitValue("strength");
     if (item.type === "weapon") {
       let AA = Number(item.system.weaponActions || 0);
       const catBonusMap = {
@@ -544,7 +590,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const isEN = game.i18n.lang === "en";
     const openShort = isEN ? "O" : "JO";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
-    const strength = Number(this.actor.system.traits?.strength || 0);
+    const strength = this.actor.getTraitValue("strength");
     if (item.type === "weapon") {
       const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
       const open = Number(item.system.openRoll ?? 10);
