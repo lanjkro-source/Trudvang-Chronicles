@@ -4,6 +4,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static DEFAULT_OPTIONS = {
     classes: ["trudvang", "effect-sheet"],
     position: {width: 620, height: 720},
+    window: {title: "TRUDVANG.Sheets.Effect"},
     actions: {
       addTrudvangStage: TrudvangEffectSheet.onAddStage,
       deleteTrudvangStage: TrudvangEffectSheet.onDeleteStage
