@@ -202,10 +202,23 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
-/* Restore Font Awesome for icons that inherit Georgia from above */
 .trudvang.effect-sheet i[class*="fa-"],
-.trudvang.effect-sheet i[class*="fa-"]::before {
+.trudvang.effect-sheet i[class*="fa-"]::before,
+.trudvang.effect-sheet i.fas,
+.trudvang.effect-sheet i.fas::before,
+.trudvang.effect-sheet i.fa-solid,
+.trudvang.effect-sheet i.fa-solid::before {
   font-family: "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+}
+.trudvang.effect-sheet i.far,
+.trudvang.effect-sheet i.fa-regular,
+.trudvang.effect-sheet i.far::before,
+.trudvang.effect-sheet i.fa-regular::before {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
 }
 
 .trudvang.effect-sheet nav.tabs,
