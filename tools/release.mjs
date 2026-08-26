@@ -22,6 +22,68 @@ function fail(message) {
   process.exit(1);
 }
 
+function githubRepository() {
+  const remote = git(["remote", "get-url", "origin"]);
+  const match = remote.match(/github\.com[/:]([^/]+)\/([^/]+?)(?:\.git)?$/);
+  if (!match) fail(`The origin remote is not a GitHub repository: ${remote}`);
+  return `${match[1]}/${match[2]}`;
+}
+
+function githubToken() {
+  const credential = spawnSync("git", ["credential", "fill"], {
+    input: "protocol=https\nhost=github.com\n\n",
+    encoding: "utf8"
+  });
+  const password = `${credential.stdout}`.split(/\r?\n/).find(line => line.startsWith("password="));
+  if (!password) fail("No GitHub credential is available to dispatch the release workflow.");
+  return password.slice("password=".length);
+}
+
+async function dispatchReleaseWorkflow({repository, token, ref}) {
+  const response = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/release.yml/dispatches`, {
+    method: "POST",
+    headers: {
+      Accept: "application/vnd.github+json",
+      Authorization: `Bearer ${token}`,
+      "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "Trudvang-release-script"
+    },
+    body: JSON.stringify({ref})
+  });
+  if (!response.ok) fail(`Could not dispatch the GitHub release workflow (${response.status}): ${await response.text()}`);
+}
+
+async function waitForReleaseAsset({repository, token, tag, headHash}) {
+  const headers = {
+    Accept: "application/vnd.github+json",
+    Authorization: `Bearer ${token}`,
+    "X-GitHub-Api-Version": "2022-11-28",
+    "User-Agent": "Trudvang-release-script"
+  };
+  const deadline = Date.now() + (5 * 60 * 1000);
+  while (Date.now() < deadline) {
+    const releaseResponse = await fetch(`https://api.github.com/repos/${repository}/releases/tags/${tag}`, {headers});
+    if (releaseResponse.ok) {
+      const release = await releaseResponse.json();
+      const asset = release.assets.find(candidate => candidate.name === "trudvang-chronicles.zip");
+      if (asset) return asset.browser_download_url;
+    } else if (releaseResponse.status !== 404) {
+      fail(`Could not verify GitHub release ${tag} (${releaseResponse.status}): ${await releaseResponse.text()}`);
+    }
+
+    const runsResponse = await fetch(`https://api.github.com/repos/${repository}/actions/workflows/release.yml/runs?event=workflow_dispatch&per_page=20`, {headers});
+    if (runsResponse.ok) {
+      const {workflow_runs: runs} = await runsResponse.json();
+      const run = runs.find(candidate => candidate.head_sha === headHash);
+      if (run?.status === "completed" && run.conclusion !== "success") {
+        fail(`GitHub release workflow failed: ${run.html_url}`);
+      }
+    }
+    await new Promise(resolve => setTimeout(resolve, 5000));
+  }
+  fail(`Timed out waiting for GitHub to attach trudvang-chronicles.zip to ${tag}.`);
+}
+
 const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]);
 if (branch !== "main") fail(`Releases happen from main (current: ${branch}).`);
 const head = git(["rev-parse", "HEAD"]);
@@ -79,6 +141,14 @@ steps.push({label: "verify remote state", run: () => {
     if (hash !== headHash) fail(`Post-push verification failed for ${name}: "${hash || "missing"}" != ${headHash}. Push manually: git push origin main ${tag} && git push backup main`);
   }
 }});
+steps.push({label: "dispatch GitHub release workflow", run: async () => {
+  const repository = githubRepository();
+  const token = githubToken();
+  const headHash = git(["rev-parse", "HEAD"]);
+  await dispatchReleaseWorkflow({repository, token, ref: tag});
+  const assetUrl = await waitForReleaseAsset({repository, token, tag, headHash});
+  console.log(`GitHub release asset: ${assetUrl}`);
+}});
 
 console.log(`Release plan for v${version}${dryRun ? " (dry-run)" : ""}:`);
 for (const step of steps) console.log(`  - ${step.label}`);
@@ -86,6 +156,6 @@ if (dryRun) process.exit(0);
 
 for (const step of steps) {
   console.log(`▶ ${step.label}`);
-  step.run();
+  await step.run();
 }
-console.log(`\n✔ Release v${version} pushed to origin and backup. The GitHub workflow builds and publishes the release in about a minute.`);
+console.log(`\n✔ Release v${version} pushed to origin and backup; the GitHub ZIP is available.`);
