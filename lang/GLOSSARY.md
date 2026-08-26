@@ -706,6 +706,26 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.AddStage` | Add stage | Ajouter un palier |
 | `TRUDVANG.Effect.SupportedPaths` | Supported change paths | Chemins de modification pris en charge |
 | `TRUDVANG.Effect.SupportedPathsHint` | Trait identifiers are charisma, constitution, dexterity, intelligence, perception, psyche, and strength. Skill identifiers are agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft, and wilderness. Use the initial phase for changes that must feed derived calculations. | Les identifiants de traits sont charisma, constitution, dexterity, intelligence, perception, psyche et strength. Les identifiants de compétences sont agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft et wilderness. Utilisez la phase initiale pour les modifications qui doivent alimenter les calculs dérivés. |
+| `TRUDVANG.Effect.TabDurationChanges` | Duration & Changes | Durée & Modifications |
+| `TRUDVANG.Effect.Duration` | Duration | Durée |
+| `TRUDVANG.Effect.RoundHint` | 1 round = 5 seconds (game turn) | 1 round = 5 secondes (tour de jeu) |
+| `TRUDVANG.Effect.Expiry` | Expiry | Expiration |
+| `TRUDVANG.Effect.ExpiryNone` | None | Aucune |
+| `TRUDVANG.Effect.TurnStart` | Start of turn | Début de tour |
+| `TRUDVANG.Effect.TurnEnd` | End of turn | Fin de tour |
+| `TRUDVANG.Effect.PriorityHint` | Application priority (lower applied first; 20 by default). | Priorité d'application (plus petit appliqué en premier ; 20 par défaut). |
+| `TRUDVANG.Effect.ChangeKey` | Key | Clé |
+| `TRUDVANG.Effect.ChangeType` | Type | Type |
+| `TRUDVANG.Effect.ChangeValue` | Value | Valeur |
+| `TRUDVANG.Effect.ChangePriority` | Priority | Priorité |
+| `TRUDVANG.Effect.AddChange` | Add change | Ajouter une modification |
+| `TRUDVANG.Effect.ChangeTypeCustom` | Custom | Personnalisé |
+| `TRUDVANG.Effect.ChangeTypeAdd` | Add | Ajout |
+| `TRUDVANG.Effect.ChangeTypeSubtract` | Subtract | Soustraction |
+| `TRUDVANG.Effect.ChangeTypeMultiply` | Multiply | Multiplication |
+| `TRUDVANG.Effect.ChangeTypeDowngrade` | Downgrade | Minimum |
+| `TRUDVANG.Effect.ChangeTypeUpgrade` | Upgrade | Maximum |
+| `TRUDVANG.Effect.ChangeTypeOverride` | Override | Remplacement |
 
 ## `TRUDVANG.Import`
 

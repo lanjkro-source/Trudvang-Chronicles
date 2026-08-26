@@ -1,0 +1,14 @@
+<section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
+  <fieldset>
+    <legend>{{localize "EFFECT.Description"}}</legend>
+    <div class="form-group stacked">
+      {{editor enrichedDescription target="description" button=true editable=editable}}
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>{{localize "EFFECT.Origin"}}</legend>
+    <div class="form-group">
+      <input type="text" name="origin" value="{{origin}}" readonly>
+    </div>
+  </fieldset>
+</section>

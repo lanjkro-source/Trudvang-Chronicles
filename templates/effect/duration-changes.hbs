@@ -1,0 +1,52 @@
+<section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
+  <fieldset>
+    <legend>{{localize "TRUDVANG.Effect.Duration"}}</legend>
+    <div class="form-group">
+      <div class="form-fields">
+        <input type="number" name="duration.value" value="{{duration.value}}" min="0" step="1">
+        <select name="duration.units">{{selectOptions durationUnits selected=duration.units}}</select>
+      </div>
+      {{#if showRoundHint}}<p class="hint">{{localize "TRUDVANG.Effect.RoundHint"}}</p>{{/if}}
+    </div>
+    {{#if showExpiry}}
+    <div class="form-group">
+      <label>{{localize "TRUDVANG.Effect.Expiry"}}</label>
+      <select name="duration.expiry">{{selectOptions expiryChoices selected=duration.expiry}}</select>
+    </div>
+    {{/if}}
+  </fieldset>
+  <fieldset>
+    <legend>{{localize "EFFECT.TABS.Changes"}}</legend>
+    <p class="hint">{{localize "TRUDVANG.Effect.PriorityHint"}}</p>
+    <div class="effect-changes-list">
+      <div class="effect-changes-header">
+        <span>{{localize "TRUDVANG.Effect.ChangeKey"}}</span>
+        <span>{{localize "TRUDVANG.Effect.ChangeType"}}</span>
+        <span>{{localize "TRUDVANG.Effect.ChangeValue"}}</span>
+        <span>{{localize "TRUDVANG.Effect.ChangePriority"}}</span>
+        <span></span>
+      </div>
+      {{#each changes as |change index|}}
+      <div class="effect-change-row" data-change-index="{{index}}">
+        <input type="text" name="system.changes.{{index}}.key" value="{{change.key}}" list="effect-supported-paths" placeholder="{{localize 'TRUDVANG.Effect.ChangeKey'}}">
+        <select name="system.changes.{{index}}.type">
+          {{selectOptions ../changeTypes selected=change.type}}
+        </select>
+        <input type="text" name="system.changes.{{index}}.value" value="{{change.value}}" placeholder="0">
+        <input type="number" name="system.changes.{{index}}.priority" value="{{change.priority}}" step="1" title="{{localize 'TRUDVANG.Effect.PriorityHint'}}">
+        <input type="hidden" name="system.changes.{{index}}.phase" value="{{change.phase}}">
+        <button type="button" data-action="deleteChange"><i class="fas fa-trash"></i></button>
+      </div>
+      {{/each}}
+    </div>
+    <button type="button" data-action="addChange"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Effect.AddChange"}}</button>
+    <datalist id="effect-supported-paths">
+      {{#each supportedPaths as |path|}}<option value="{{path}}">{{/each}}
+    </datalist>
+    <details class="effect-key-help">
+      <summary>{{localize "TRUDVANG.Effect.SupportedPaths"}}</summary>
+      <p class="hint">{{localize "TRUDVANG.Effect.SupportedPathsHint"}}</p>
+      {{#each supportedPaths as |path|}}<code>{{path}}</code>{{/each}}
+    </details>
+  </fieldset>
+</section>
