@@ -1,4 +1,19 @@
 {
+  "EFFECT": {
+    "TABS": {
+      "Details": "Détails",
+      "Duration": "Durée",
+      "Changes": "Modifications"
+    },
+    "IconTintColor": "Teinte de l'icône",
+    "TintColor": "Teinte de l'icône",
+    "Description": "Description de l'effet",
+    "Suspended": "Effet suspendu",
+    "Origin": "Origine de l'effet",
+    "StatusConditions": "États",
+    "Submit": "Valider les modifications",
+    "SubmitChanges": "Valider les modifications"
+  },
   "TYPES": {
     "ActiveEffect": {
       "effect": "Effet de Trudvang"

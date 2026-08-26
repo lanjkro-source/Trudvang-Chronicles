@@ -195,17 +195,17 @@
   overflow-y: auto;
 }
 
-/* Preserve Font Awesome for all icon elements — Georgia overrides FA glyphs */
-.trudvang.effect-sheet i[class*="fa-"] {
-  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free", "Font Awesome 4 Webfont", sans-serif !important;
-  font-weight: 900;
-}
-
 .trudvang.effect-sheet header.window-header {
   background: linear-gradient(110deg, rgba(46,31,24,.91), rgba(92,56,39,.82));
   color: #f5ead2;
   border-bottom: 2px solid var(--trudvang-gold);
   font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Restore Font Awesome for icons that inherit Georgia from above */
+.trudvang.effect-sheet i[class*="fa-"],
+.trudvang.effect-sheet i[class*="fa-"]::before {
+  font-family: "Font Awesome 6 Free", "Font Awesome 5 Free" !important;
 }
 
 .trudvang.effect-sheet nav.tabs,

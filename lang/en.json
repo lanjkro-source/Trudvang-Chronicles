@@ -1,4 +1,19 @@
 {
+  "EFFECT": {
+    "TABS": {
+      "Details": "Details",
+      "Duration": "Duration",
+      "Changes": "Changes"
+    },
+    "IconTintColor": "Icon Tint Color",
+    "TintColor": "Icon Tint Color",
+    "Description": "Effect Description",
+    "Suspended": "Effect Suspended",
+    "Origin": "Effect Origin",
+    "StatusConditions": "Status Conditions",
+    "Submit": "Submit Changes",
+    "SubmitChanges": "Submit Changes"
+  },
   "TYPES": {
     "ActiveEffect": {
       "effect": "Trudvang Effect"

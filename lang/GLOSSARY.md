@@ -4,6 +4,27 @@ Ce glossaire constitue la référence terminologique pour les traductions du sys
 
 La terminologie française s'appuie sur l'édition officielle Black Book Éditions (« Livre des règles », miroir texte dans `game doc/markdown-fr/`). Avant d'ajouter ou de modifier une entrée dans les fichiers de langue, rechercher ici les termes apparentés et conserver les choix terminologiques existants. Toute nouvelle terminologie validée doit être répercutée dans ce document.
 
+## `EFFECT.TABS`
+
+| Clé | English | Français |
+|---|---|---|
+| `EFFECT.TABS.Details` | Details | Détails |
+| `EFFECT.TABS.Duration` | Duration | Durée |
+| `EFFECT.TABS.Changes` | Changes | Modifications |
+
+## `EFFECT`
+
+| Clé | English | Français |
+|---|---|---|
+| `EFFECT.IconTintColor` | Icon Tint Color | Teinte de l'icône |
+| `EFFECT.TintColor` | Icon Tint Color | Teinte de l'icône |
+| `EFFECT.Description` | Effect Description | Description de l'effet |
+| `EFFECT.Suspended` | Effect Suspended | Effet suspendu |
+| `EFFECT.Origin` | Effect Origin | Origine de l'effet |
+| `EFFECT.StatusConditions` | Status Conditions | États |
+| `EFFECT.Submit` | Submit Changes | Valider les modifications |
+| `EFFECT.SubmitChanges` | Submit Changes | Valider les modifications |
+
 ## `TYPES.ActiveEffect`
 
 | Clé | English | Français |
