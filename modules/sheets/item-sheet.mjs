@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { effectChangeSummary } from "../effects.mjs";
+import { weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -52,6 +53,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.editable = this.item.isOwner;
     context.system = this.item.system;
     context.itemType = this.item.type;
+    context.usesSeparateHands = weaponUsesSeparateHands(this.item);
     context.isType = type => this.item.type === type;
     context.config = TRUDVANG;
     context.advancementLocked = this.advancementLocked;

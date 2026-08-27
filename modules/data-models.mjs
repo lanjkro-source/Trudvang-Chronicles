@@ -70,8 +70,11 @@ function combatPoolsSchema() {
     wrestling: combatPool(),
     shieldParry: combatPool(),
     oneHandedLightWeapons: combatPool(),
+    oneHandedLightWeaponsOffHand: combatPool(),
     oneHandedHeavyWeapons: combatPool(),
+    oneHandedHeavyWeaponsOffHand: combatPool(),
     throwingWeapons: combatPool(),
+    throwingWeaponsOffHand: combatPool(),
     twoHandedWeapons: combatPool(),
     crossbow: combatPool(),
     bowsSlings: combatPool()
@@ -395,6 +398,7 @@ export class AbilityData extends BaseItemData {
       summary: string(),
       freeLevels: integer(0, {min: 0, max: 5}),
       level: integer(1, {min: 0, max: 5}),
+      offHandLevel: integer(0, {min: 0, max: 5}),
       rollBonus: integer(1)
     };
   }

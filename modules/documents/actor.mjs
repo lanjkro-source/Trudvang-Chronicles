@@ -8,6 +8,7 @@ import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
 import { normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
+const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
 
 export class TrudvangActor extends BaseActor {
   prepareDerivedData() {
@@ -242,10 +243,15 @@ export class TrudvangActor extends BaseActor {
       else regular += cost;
     }
     for (const item of this.items.filter(item => ["ability", "tablet"].includes(item.type))) {
-      const level = Math.max(0, Number(item.system.level || 0));
-      const freeLevels = Math.min(level, Number(item.system.freeLevels || 0));
+      const levels = [
+        {level: Math.max(0, Number(item.system.level || 0)), free: Number(item.system.freeLevels || 0)},
+        ...(SEPARATE_HAND_SPECIALTIES.has(item.system.catalogId) ? [{level: Math.max(0, Number(item.system.offHandLevel || 0)), free: 0}] : [])
+      ];
       let cost = 0;
-      for (let rank = freeLevels + 1; rank <= level; rank += 1) cost += this.getKnowledgeLevelCost(item, rank);
+      for (const track of levels) {
+        const freeLevels = Math.min(track.level, track.free);
+        for (let rank = freeLevels + 1; rank <= track.level; rank += 1) cost += this.getKnowledgeLevelCost(item, rank);
+      }
       if (coreSkills.has(this.getKnowledgeSkillKey(item))) coreEligible += cost;
       else regular += cost;
     }
@@ -277,9 +283,12 @@ export class TrudvangActor extends BaseActor {
     return text === key ? "" : text;
   }
 
-  getAbilityBreakdown(item) {
+  getAbilityBreakdown(item, {hand = "weapon"} = {}) {
     const skill = this.getSkillValue(item.system.parentSkill);
-    const own = Number(item.system.level || 0) * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
+    const level = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(item.system.catalogId)
+      ? Number(item.system.offHandLevel || 0)
+      : Number(item.system.level || 0);
+    const own = level * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
     const discipline = parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
     const modifier = this.getRollModifier({kind: "ability", skillKey: item.system.parentSkill});
@@ -378,8 +387,8 @@ export class TrudvangActor extends BaseActor {
   canLowerSkill(skillKey, nextValue) {
     return !this.items.some(item => ["ability", "tablet"].includes(item.type)
       && this.getKnowledgeSkillKey(item) === skillKey
-      && Number(item.system.level || 0) > Number(item.system.freeLevels || 0)
-      && this.getRequiredSkillValue(Number(item.system.level || 0)) > nextValue);
+      && Math.max(Number(item.system.level || 0), Number(item.system.offHandLevel || 0)) > Number(item.system.freeLevels || 0)
+      && this.getRequiredSkillValue(Math.max(Number(item.system.level || 0), Number(item.system.offHandLevel || 0))) > nextValue);
   }
 
   async adjustTrait(traitKey, direction) {
@@ -426,21 +435,25 @@ export class TrudvangActor extends BaseActor {
     return item.update({"system.level": next});
   }
 
-  async adjustCatalogKnowledge(catalogId, direction) {
+  async adjustCatalogKnowledge(catalogId, direction, hand = "weapon") {
     const entry = this.getCatalogEntry(catalogId);
     if (!entry) return;
     let item = this.findKnowledgeItem(catalogId);
-    const current = Number(item?.system.level || 0);
+    const levelField = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(catalogId) ? "offHandLevel" : "level";
+    const current = Number(item?.system?.[levelField] || 0);
     if (direction < 0) {
       if (!this.system.experience?.creationMode) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CreationModeRequired"));
-      const minimum = Number(item?.system.freeLevels || 0);
+      const minimum = levelField === "level" ? Number(item?.system.freeLevels || 0) : 0;
       if (!item || current <= minimum) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
       if (entry.kind === "discipline") {
-        const hasSpecialties = entry.specialties.some(specialty => Number(this.findKnowledgeItem(specialty.id)?.system.level || 0) > 0);
+        const hasSpecialties = entry.specialties.some(specialty => {
+          const specialtyItem = this.findKnowledgeItem(specialty.id);
+          return Math.max(Number(specialtyItem?.system.level || 0), Number(specialtyItem?.system.offHandLevel || 0)) > 0;
+        });
         if (current === 1 && hasSpecialties) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DisciplineSupportsSpecialty"));
       }
-      if (current === 1) return item.delete();
-      return item.update({"system.level": current - 1});
+      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0) return item.delete();
+      return item.update({[`system.${levelField}`]: current - 1});
     }
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
     if (direction > 0 && !this.canChooseCatalogKnowledge(catalogId)) {
@@ -451,7 +464,8 @@ export class TrudvangActor extends BaseActor {
     const requirement = this.getRequiredSkillValue(next);
     if (Number(this.system.skills?.[entry.skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
     if (entry.kind === "specialty" && Number(this.findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
-    if (item) return this.adjustItemLevel(item, 1);
+    if (item && levelField === "level") return this.adjustItemLevel(item, 1);
+    if (item) return this.advanceKnowledgeTrack(item, levelField);
     const name = game.i18n.localize(entry.label);
     const discipline = entry.parentCatalogId ? this.getCatalogEntry(entry.parentCatalogId) : null;
     const topics = entry.kind === "discipline" ? new Intl.ListFormat(game.i18n.lang, {style: "long", type: "conjunction"}).format(entry.specialties.map(specialty => game.i18n.localize(specialty.label))) : "";
@@ -459,7 +473,7 @@ export class TrudvangActor extends BaseActor {
       ? game.i18n.format("TRUDVANG.Description.DisciplineSummary", {name, topics})
       : game.i18n.format("TRUDVANG.Description.SpecialtySummary", {name, discipline: discipline ? game.i18n.localize(discipline.label) : entry.parentDiscipline}));
     const summary = this.catalogText(catalogId, "Summary") || description;
-    const data = {name, type: "ability", system: {description, summary, catalogId, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: 1, rollBonus: entry.rollBonus}};
+    const data = {name, type: "ability", system: {description, summary, catalogId, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: levelField === "level" ? 1 : 0, offHandLevel: levelField === "offHandLevel" ? 1 : 0, rollBonus: entry.rollBonus}};
     const religion = this.getReligionForSpecialty(catalogId);
     if (this.system.experience?.creationMode) {
       const created = await this.createEmbeddedDocuments("Item", [data]);
@@ -473,7 +487,20 @@ export class TrudvangActor extends BaseActor {
     [item] = await this.createEmbeddedDocuments("Item", [data]);
     if (religion) await this.update({"system.details.religion": religion.id});
     await this.update({"system.experience.adventureAvailable": available - cost, "system.experience.adventureSpent": Number(this.system.experience.adventureSpent || 0) + cost});
-    return this._queueAdvancement({kind: "item", itemId: item.id, from: 0, to: 1, cost, created: true});
+    return this._queueAdvancement({kind: "item", itemId: item.id, field: levelField, from: 0, to: 1, cost, created: true});
+  }
+
+  async advanceKnowledgeTrack(item, levelField = "level") {
+    if (this.system.experience?.creationMode) {
+      const current = Number(item.system[levelField] || 0);
+      const next = current + 1;
+      if (next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
+      const requirement = this.getRequiredSkillValue(next);
+      const skillKey = this.getKnowledgeSkillKey(item);
+      if (Number(this.system.skills?.[skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
+      return item.update({[`system.${levelField}`]: next});
+    }
+    return this.advanceItem(item, levelField);
   }
 
   getSkillTarget(skillKey, extra = 0, {kind = "skill", movement = false} = {}) {
@@ -553,6 +580,68 @@ export class TrudvangActor extends BaseActor {
     return this.rollWeaponAction(item, "parry");
   }
 
+  get humanoidNaturalWeapon() {
+    return {
+      id: "humanoid-natural", uuid: "", type: "weapon",
+      name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
+      img: "icons/svg/fist.svg",
+      system: {category: "natural", equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4, attackValue: 5}
+    };
+  }
+
+  async rollNaturalCombatAction(kind = "attack") {
+    return this.rollWeaponAction(this.humanoidNaturalWeapon, kind);
+  }
+
+  async rollNaturalDamage() {
+    return this.rollDamage(this.humanoidNaturalWeapon);
+  }
+
+  async rollWrestlingAction(kind = "grapple") {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    const poolResolution = resolveCombatPools({actor: this, context: {action: kind}});
+    const options = await combatPointDialog({
+      title: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"),
+      pools: poolResolution.eligible,
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(10, poolResolution.eligibleCurrent))
+    });
+    if (!options) return null;
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    const strength = this.getTraitValue("strength");
+    const target = Math.floor(spending.total / 2);
+    const actionModifier = this.getRollModifier({kind: "attack", movement: true}) - Number(this.system.armorVCPenalty || 0);
+    const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
+    const flavor = [
+      game.i18n.format("TRUDVANG.Calculation.WrestlingCost", {points: spending.total, target, strength}),
+      ...Object.entries(spending.allocation).filter(([, amount]) => amount > 0).map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {amount, pool: game.i18n.localize(poolById[id].labelKey)}))
+    ].join("<br>");
+    return rollUnder({actor: this, label: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"), target, modifier: strength + actionModifier + Number(options.modifier || 0), kind, flavor});
+  }
+
+  async toggleReadiedItem(item) {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    if (!item || !["weapon", "shield"].includes(item.type)) return null;
+    const wasEquipped = Boolean(item.system.equipped);
+    const action = wasEquipped ? "sheatheWeapon" : "drawWeapon";
+    const poolResolution = resolveCombatPools({actor: this, item, context: {action}});
+    const cost = 10;
+    if (poolResolution.eligibleCurrent < cost) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughCombatPointsToReady"));
+    const options = await combatPointDialog({
+      title: game.i18n.format(wasEquipped ? "TRUDVANG.Dialog.SheatheTitle" : "TRUDVANG.Dialog.DrawTitle", {item: item.name}),
+      pools: poolResolution.eligible,
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, cost),
+      showModifier: false,
+      totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
+    });
+    if (!options) return null;
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (spending.total !== cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.ExactCombatCost", {cost}));
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    await item.update({"system.equipped": !wasEquipped});
+    return ui.notifications.info(game.i18n.format(wasEquipped ? "TRUDVANG.Notification.Sheathed" : "TRUDVANG.Notification.Drawn", {item: item.name, cost}));
+  }
+
   async rollWeaponAction(item, kind) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind}});
@@ -567,6 +656,7 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (this.isOwner) await this.spendCombatPoints(spending.allocation);
     const effectModifier = this.getRollModifier({kind, movement: true});
+    const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const spendingFlavor = Object.entries(spending.allocation)
@@ -582,7 +672,7 @@ export class TrudvangActor extends BaseActor {
       actor: this,
       label: item.name,
       target: spending.total,
-      modifier: options.modifier + effectModifier + equipmentModifier.value,
+      modifier: options.modifier + effectModifier + armorModifier + equipmentModifier.value,
       kind,
       flavor,
       item
@@ -698,10 +788,10 @@ export class TrudvangActor extends BaseActor {
     return this._queueAdvancement({kind: "skill", key: skillKey, from: current, to: current + 1, cost});
   }
 
-  async advanceItem(item) {
+  async advanceItem(item, levelField = "level") {
     if (this.system.experience?.creationMode) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ExitCreationFirst"));
     if (!["ability", "tablet"].includes(item.type)) return;
-    const current = Number(item.system.level || 0);
+    const current = Number(item.system[levelField] || 0);
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
     const next = current + 1;
     const requirement = this.getRequiredSkillValue(next);
@@ -712,12 +802,12 @@ export class TrudvangActor extends BaseActor {
     const cost = this.getKnowledgeLevelCost(item, next);
     const available = Number(this.system.experience?.adventureAvailable || 0);
     if (available < cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NotEnoughExperience", {cost}));
-    await item.update({"system.level": next});
+    await item.update({[`system.${levelField}`]: next});
     await this.update({
       "system.experience.adventureAvailable": available - cost,
       "system.experience.adventureSpent": Number(this.system.experience.adventureSpent || 0) + cost
     });
-    return this._queueAdvancement({kind: "item", itemId: item.id, from: current, to: next, cost});
+    return this._queueAdvancement({kind: "item", itemId: item.id, field: levelField, from: current, to: next, cost});
   }
 
   get pendingAdvancements() {
@@ -745,7 +835,7 @@ export class TrudvangActor extends BaseActor {
       refund += Number(operation.cost || 0);
       if (operation.kind === "skill") actorChanges[`system.skills.${operation.key}.value`] = operation.from;
       if (operation.kind === "item" && operation.created) createdItems.add(operation.itemId);
-      else if (operation.kind === "item" && this.items.get(operation.itemId) && !createdItems.has(operation.itemId)) itemChanges.set(operation.itemId, {_id: operation.itemId, "system.level": operation.from});
+      else if (operation.kind === "item" && this.items.get(operation.itemId) && !createdItems.has(operation.itemId)) itemChanges.set(operation.itemId, {_id: operation.itemId, [`system.${operation.field || "level"}`]: operation.from});
     }
     for (const itemId of createdItems) itemChanges.delete(itemId);
     if (createdItems.size) await this.deleteEmbeddedDocuments("Item", [...createdItems]);
@@ -771,10 +861,11 @@ export class TrudvangActor extends BaseActor {
       const chosenVitners = Object.keys(TRUDVANG.vitnerTypes).filter(id => Number(this.findKnowledgeItem(id)?.system.level || 0) > 0);
       if (chosenVitners.length > 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.VitnerExclusive"));
       for (const item of this.items.filter(candidate => ["ability", "tablet"].includes(candidate.type))) {
-        if (Number(item.system.level || 0) <= 0) continue;
+        const highestLevel = Math.max(Number(item.system.level || 0), Number(item.system.offHandLevel || 0));
+        if (highestLevel <= 0) continue;
         const skillKey = this.getKnowledgeSkillKey(item);
-        const paidLevel = Math.max(0, Number(item.system.level || 1) - Number(item.system.freeLevels || 0));
-        const requirement = paidLevel ? this.getRequiredSkillValue(Number(item.system.level || 1)) : 0;
+        const paidLevel = Math.max(0, highestLevel - Number(item.system.freeLevels || 0));
+        const requirement = paidLevel ? this.getRequiredSkillValue(highestLevel) : 0;
         if (skillKey && Number(this.system.skills?.[skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.KnowledgeRequirement", {item: item.name, skill: game.i18n.localize(TRUDVANG.skills[skillKey] || skillKey), sv: requirement}));
         if (item.type === "ability" && item.system.kind === "specialty" && !this.findParentDiscipline(item)) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.MissingParentDiscipline", {item: item.name}));
       }

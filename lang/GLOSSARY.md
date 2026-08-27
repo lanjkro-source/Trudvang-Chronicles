@@ -81,6 +81,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Tab.Summary` | Summary | Résumé |
+| `TRUDVANG.Tab.Combat` | Combat | Combat |
 | `TRUDVANG.Tab.Skills` | Skills | Compétences |
 | `TRUDVANG.Tab.Equipment` | Equipment | Équipement |
 | `TRUDVANG.Tab.Magic` | Magic & Faith | Magie & Foi |
@@ -96,6 +97,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Section.Status` | Status | État |
 | `TRUDVANG.Section.Experience` | Creation & Experience | Création & Expérience |
 | `TRUDVANG.Section.QuickActions` | Quick Actions | Actions Rapides |
+| `TRUDVANG.Section.CombatActions` | Attacks, parries & readied weapons | Attaques, parades & armes préparées |
+| `TRUDVANG.Section.UnarmedCombat` | Unarmed combat & wrestling | Combat à mains nues & lutte |
 | `TRUDVANG.Section.Skills` | Skills | Compétences |
 | `TRUDVANG.Section.Disciplines` | Disciplines & Specialties | Disciplines & Spécialités |
 | `TRUDVANG.Section.Weapons` | Weapons | Armes |
@@ -124,6 +127,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
+| `TRUDVANG.Action.Draw` | Draw (10 CP) | Dégainer (10 PC) |
+| `TRUDVANG.Action.Sheathe` | Sheathe (10 CP) | Rengainer (10 PC) |
 | `TRUDVANG.Action.Continue` | Continue | Continuer |
 | `TRUDVANG.Action.AdvanceSkill` | Buy the next Skill Value with Adventure Points | Acheter la valeur de compétence suivante avec les points d'aventure |
 | `TRUDVANG.Action.AdvanceItem` | Buy the next level with Adventure Points | Acheter le prochain niveau avec les points d'aventure |
@@ -262,8 +267,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.CombatPool.Wrestling` | Wrestling | Lutte |
 | `TRUDVANG.CombatPool.ShieldParry` | Shield Parries | Parades au bouclier |
 | `TRUDVANG.CombatPool.OneHandedLightWeapons` | One-Handed Light Weapons | Armes légères à une main |
+| `TRUDVANG.CombatPool.OneHandedLightWeaponsOffHand` | Light weapons — shield hand | Armes légères — main de bouclier |
 | `TRUDVANG.CombatPool.OneHandedHeavyWeapons` | One-Handed Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.CombatPool.OneHandedHeavyWeaponsOffHand` | Heavy weapons — shield hand | Armes lourdes — main de bouclier |
 | `TRUDVANG.CombatPool.ThrowingWeapons` | Throwing Weapons | Armes de lancer |
+| `TRUDVANG.CombatPool.ThrowingWeaponsOffHand` | Throwing weapons — shield hand | Armes de lancer — main de bouclier |
 | `TRUDVANG.CombatPool.TwoHandedWeapons` | Two-Handed Weapons | Armes à deux mains |
 | `TRUDVANG.CombatPool.Crossbow` | Crossbow | Arbalète |
 | `TRUDVANG.CombatPool.BowsSlings` | Bows & Slings | Arcs & frondes |
@@ -274,6 +282,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Hand.Weapon` | Weapon hand | Main d’arme |
 | `TRUDVANG.Hand.Shield` | Shield hand | Main de bouclier |
+| `TRUDVANG.Hand.WeaponShort` | WH | MA |
+| `TRUDVANG.Hand.ShieldShort` | SH | MB |
+
+## `TRUDVANG.Combat`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Combat.HumanoidNaturalWeapons` | Fists & feet | Poings & pieds |
+| `TRUDVANG.Combat.Grapple` | Grapple | Saisie |
+| `TRUDVANG.Combat.Glima` | Glima | Glima |
+| `TRUDVANG.Combat.WrestlingHint` | Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target. | Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible. |
 
 ## `TRUDVANG.CombatActionType`
 
@@ -574,6 +593,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.AllocatedCombatPoints` | SV from allocated Combat Points | VC obtenue par les CP alloués |
 | `TRUDVANG.Dialog.AllocatedPoints` | Allocated CP | PC alloués |
 | `TRUDVANG.Dialog.CombatActionSpendingTitle` | Combat action, movement, or positioning | Action de combat, mouvement ou positionnement |
+| `TRUDVANG.Dialog.DrawTitle` | Draw: {item} (10 CP) | Dégainer : {item} (10 PC) |
+| `TRUDVANG.Dialog.SheatheTitle` | Sheathe: {item} (10 CP) | Rengainer : {item} (10 PC) |
 | `TRUDVANG.Dialog.CombatActionType` | Action type | Type d’action |
 | `TRUDVANG.Dialog.AttackTitle` | Attack: {item} | Attaque: {item} |
 | `TRUDVANG.Dialog.ParryTitle` | Parry: {item} |  Parade: {item} |
@@ -654,6 +675,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.EffectPermission` | You are not allowed to modify effects on this target. | Vous n'avez pas l'autorisation de modifier les effets de cette cible. |
 | `TRUDVANG.Warning.NoApplicableEffects` | This item has no enabled effect to apply. | Cet objet ne possède aucun effet actif à appliquer. |
 | `TRUDVANG.Warning.NoEffectTarget` | Select at least one target before applying this effect. | Sélectionnez au moins une cible avant d'appliquer cet effet. |
+| `TRUDVANG.Warning.NotEnoughCombatPointsToReady` | 10 available CP are required to draw or sheathe this weapon. | Il faut 10 PC disponibles pour dégainer ou rengainer cette arme. |
+| `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
 
 ## `TRUDVANG.Description`
@@ -685,6 +708,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
+| `TRUDVANG.Calculation.WrestlingCost` | {points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies. | {points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique. |
 | `TRUDVANG.Calculation.CombatPoolSource` | {source} level {level}: {max} CP pool. | {source} niveau {level} : réserve de {max} PC. |
 | `TRUDVANG.Calculation.FreeCombatPoolSource` | Fighting skill: {max} free CP pool. | Compétence Combat : réserve de {max} PC libres. |
 
@@ -732,6 +756,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
+| `TRUDVANG.Notification.Sheathed` | {item} sheathed for {cost} CP. | {item} rengainé pour {cost} PC. |
 | `TRUDVANG.Notification.AdvancementConfirmed` | The advancements have been confirmed. | Les améliorations ont été validées. |
 | `TRUDVANG.Notification.AdvancementCancelled` | The advancements were cancelled and {cost} Adventure Points were refunded. | Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés. |
 | `TRUDVANG.Notification.CreationModeEnabled` | Character creation mode enabled. | Mode création de personnage activé. |

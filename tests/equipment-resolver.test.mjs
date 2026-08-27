@@ -13,7 +13,8 @@ import {
   normalizeCombatAllocation,
   resolveCombatPools,
   suggestCombatAllocation,
-  weaponCombatSpecialty
+  weaponCombatSpecialty,
+  weaponUsesSeparateHands
 } from "../modules/rules/combat-pool-resolver.mjs";
 
 function combatActor(levels = {}, {fighting = 9, spent = {}} = {}) {
@@ -33,7 +34,7 @@ function actorWithKnowledge(levels = {}) {
   const items = Object.entries(levels).map(([catalogId, level]) => ({
     uuid: `Actor.actor-id.Item.${catalogId}`,
     name: catalogId,
-    system: {catalogId, level}
+    system: {catalogId, ...(typeof level === "object" ? level : {level})}
   }));
   return {
     id: "actor-id",
@@ -294,6 +295,17 @@ test("natural weapons are exempt even when an off-hand context is supplied", () 
   assert.deepEqual(result.steps, []);
 });
 
+test("two-handed weapons, bows and crossbows never expose a hand choice or shield-hand penalty", () => {
+  for (const item of [
+    weapon({category: "twoHanded"}),
+    weapon({category: "ranged"}),
+    Object.assign(weapon({category: "ranged"}), {system: {...weapon({category: "ranged"}).system, combatSpecialty: "crossbow"}})
+  ]) {
+    assert.equal(weaponUsesSeparateHands(item), false);
+    assert.equal(resolveCombatActionModifier({item, context: {hand: "offHand"}}).value, 0);
+  }
+});
+
 test("linked Combat Point pools retain their distinct maxima", () => {
   const actor = combatActor({
     battleExperience: 1,
@@ -379,7 +391,7 @@ test("manual brawling and wrestling actions expose their own linked pools", () =
   const brawling = resolveCombatPools({actor, context: {action: "brawling"}});
   const wrestling = resolveCombatPools({actor, context: {action: "wrestling"}});
   assert.deepEqual(brawling.eligible.map(pool => pool.id), ["free", "battleExperience", "unarmedFighting", "attacksParries", "brawling"]);
-  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "battleExperience", "unarmedFighting", "wrestling"]);
+  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "unarmedFighting", "wrestling"]);
 });
 
 test("Combat Point allocations are always whole numbers", () => {
@@ -388,4 +400,30 @@ test("Combat Point allocations are always whole numbers", () => {
   const normalized = normalizeCombatAllocation(pools, {free: 2.9, attacksParries: 1.8});
   assert.deepEqual(normalized.allocation, {free: 2, attacksParries: 1});
   assert.equal(normalized.total, 3);
+});
+
+test("hand-specific weapon specialties expose independent combat pools", () => {
+  const actor = combatActor({armedFighting: 1, oneHandedLightWeapons: {level: 2, offHandLevel: 3}});
+  const weaponHand = weapon({category: "oneHandedLight"});
+  weaponHand.system.hand = "weapon";
+  const shieldHand = weapon({category: "oneHandedLight"});
+  shieldHand.system.hand = "offHand";
+  const weaponPools = resolveCombatPools({actor, item: weaponHand, context: {action: "attack"}}).eligible;
+  const shieldPools = resolveCombatPools({actor, item: shieldHand, context: {action: "attack"}}).eligible;
+  assert.equal(weaponPools.find(pool => pool.id === "oneHandedLightWeapons")?.max, 4);
+  assert.equal(weaponPools.some(pool => pool.id === "oneHandedLightWeaponsOffHand"), false);
+  assert.equal(shieldPools.find(pool => pool.id === "oneHandedLightWeaponsOffHand")?.max, 6);
+  assert.equal(shieldPools.some(pool => pool.id === "oneHandedLightWeapons"), false);
+});
+
+test("ranged weapon parries may spend only free combat points", () => {
+  const actor = combatActor({battleExperience: 2, armedFighting: 2, bowsSlings: 2});
+  const eligible = resolveCombatPools({actor, item: weapon({category: "ranged"}), context: {action: "parry"}}).eligible.map(pool => pool.id);
+  assert.deepEqual(eligible, ["free"]);
+});
+
+test("glima uses only free, unarmed and wrestling pools", () => {
+  const actor = combatActor({battleExperience: 2, unarmedFighting: 2, fighter: 2, wrestling: 3});
+  const eligible = resolveCombatPools({actor, context: {action: "glima"}}).eligible.map(pool => pool.id);
+  assert.deepEqual(eligible, ["free", "unarmedFighting", "wrestling"]);
 });

@@ -4,7 +4,7 @@ import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { resolveCombatActionModifier, resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
-import { resolveCombatPools } from "../rules/combat-pool-resolver.mjs";
+import { resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -48,6 +48,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "item-edit": TrudvangActorSheet.#onAction,
       "item-delete": TrudvangActorSheet.#onAction,
       "item-equip": TrudvangActorSheet.#onAction,
+      "item-ready": TrudvangActorSheet.#onAction,
+      "natural-attack": TrudvangActorSheet.#onAction,
+      "natural-parry": TrudvangActorSheet.#onAction,
+      "natural-damage": TrudvangActorSheet.#onAction,
+      "wrestling-action": TrudvangActorSheet.#onAction,
       "item-create": TrudvangActorSheet.#onAction,
       "add-tablet": TrudvangActorSheet.#onAction,
       "toggle-tree": TrudvangActorSheet.#onAction,
@@ -126,6 +131,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       item._hoverTitle = this._getItemHoverTitle(item);
       item._damageText = this._getItemDamageText(item);
     }
+    context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
+      .map(item => ({item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText}));
+    context.naturalWeapon = this.actor.humanoidNaturalWeapon;
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
       appearance: await TextEditorImpl.enrichHTML(this.actor.system.appearance || "", {async: true, secrets: this.actor.isOwner}),
@@ -165,8 +173,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const summaryText = this._abilityText(entry.id, "Summary") || generatedSummary;
       const item = existing ?? {id: "", name: game.i18n.localize(entry.label), img: "icons/svg/book.svg", type: "ability", system: {description: descriptionText, summary: summaryText, catalogId: entry.id, kind, parentSkill: skillKey, parentDiscipline, level, rollBonus: kind === "specialty" ? 2 : 1, freeLevels: 0}};
       const breakdown = this.actor.getAbilityBreakdown(item);
+      const separateHands = weaponUsesSeparateHands({type: "weapon", system: {combatSpecialty: entry.id}});
+      const offHandLevel = separateHands ? Number(existing?.system.offHandLevel || 0) : 0;
+      const offHandBreakdown = separateHands ? this.actor.getAbilityBreakdown(item, {hand: "offHand"}) : null;
       return {
-        catalogId: entry.id, item, level, breakdown,
+        catalogId: entry.id, item, level, breakdown, separateHands, offHandLevel, offHandBreakdown,
         summary: existing?.system.summary || summaryText,
         calculation: kind === "specialty"
           ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total})
@@ -177,6 +188,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         increaseTitle: increaseTitle(this.actor.getKnowledgeLevelCost(item, level + 1), skillKey),
         canDecrease: level > Number(item.system.freeLevels || 0),
         canIncrease: level < 5 && this.actor.canChooseCatalogKnowledge(entry.id),
+        offHandDecreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: offHandLevel ? this.actor.getKnowledgeLevelCost(item, offHandLevel) : 0}),
+        offHandIncreaseTitle: increaseTitle(this.actor.getKnowledgeLevelCost(item, offHandLevel + 1), skillKey),
+        offHandNextCost: this.actor.getKnowledgeLevelCost(item, offHandLevel + 1),
+        offHandCanDecrease: offHandLevel > 0,
+        offHandCanIncrease: offHandLevel < 5 && this.actor.canChooseCatalogKnowledge(entry.id),
         exists: Boolean(existing)
       };
     };
@@ -289,7 +305,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
-      "item-equip", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete"
+      "item-equip", "item-ready", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = target.closest("[data-item-id]")?.dataset.itemId;
@@ -304,7 +320,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "adjust-trait": return this.actor.adjustTrait(target.dataset.trait, Number(target.dataset.direction));
       case "adjust-skill": return this.actor.adjustSkill(target.dataset.skill, Number(target.dataset.direction));
       case "adjust-item-level": return item ? this.actor.adjustItemLevel(item, Number(target.dataset.direction)) : null;
-      case "adjust-catalog-knowledge": return this.actor.adjustCatalogKnowledge(catalogId, Number(target.dataset.direction));
+      case "adjust-catalog-knowledge": return this.actor.adjustCatalogKnowledge(catalogId, Number(target.dataset.direction), target.dataset.hand || "weapon");
       case "roll-catalog": return item && Number(item.system.level || 0) > 0 ? item.roll() : ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeNotLearned"));
       case "show-catalog-detail": return this._openKnowledgeSheet(catalogId);
       case "toggle-creation-mode": return this.actor.toggleCreationMode();
@@ -320,6 +336,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "item-edit": return item?.sheet.render({force: true});
       case "item-delete": return this._deleteItem(item);
       case "item-equip": return item?.update({"system.equipped": !item.system.equipped});
+      case "item-ready": return item ? this.actor.toggleReadiedItem(item) : null;
+      case "natural-attack": return this.actor.rollNaturalCombatAction("attack");
+      case "natural-parry": return this.actor.rollNaturalCombatAction("parry");
+      case "natural-damage": return this.actor.rollNaturalDamage();
+      case "wrestling-action": return this.actor.rollWrestlingAction(target.dataset.kind || "grapple");
       case "item-create": return this._createItem(target.dataset.type);
       case "add-tablet": return this._openTabletPicker();
       case "toggle-tree": {

@@ -22,22 +22,17 @@
 
   <section class="resource-bar">
     <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
-    <label class="resource"><span>{{localize "TRUDVANG.CombatPool.Free"}}</span><span><strong>{{freeCombatPool.current}}</strong>&nbsp;/&nbsp;{{freeCombatPool.max}}</span><button type="button" data-action="reset-combat" title="{{localize 'TRUDVANG.Action.ResetCombat'}}"><i class="fas fa-rotate"></i></button></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}}</span></label>
     <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
   </section>
-  <section class="combat-pool-bar" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">
-    {{#each combatPools as |pool|}}<span class="combat-pool" title="{{pool.sourceTitle}}"><strong>{{pool.label}}</strong> {{pool.current}}/{{pool.max}}</span>{{/each}}
-    <button type="button" class="combat-pool-spend" data-action="spend-combat" title="{{localize 'TRUDVANG.Action.SpendCombat'}}"><i class="fas fa-minus-circle"></i> {{localize "TRUDVANG.Action.SpendCombat"}}</button>
-  </section>
-
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="summary"><i class="fas fa-shield-halved"></i> {{localize "TRUDVANG.Tab.Summary"}}</a>
+    <a class="item" data-tab="combat"><i class="fas fa-swords"></i> {{localize "TRUDVANG.Tab.Combat"}}</a>
+    <a class="item" data-tab="magic"><i class="fas fa-wand-sparkles"></i> {{localize "TRUDVANG.Tab.Magic"}}</a>
     <a class="item" data-tab="skills"><i class="fas fa-dice-d20"></i> {{localize "TRUDVANG.Tab.Skills"}}</a>
     <a class="item" data-tab="equipment"><i class="fas fa-backpack"></i> {{localize "TRUDVANG.Tab.Equipment"}}</a>
-    <a class="item" data-tab="magic"><i class="fas fa-wand-sparkles"></i> {{localize "TRUDVANG.Tab.Magic"}}</a>
     <a class="item" data-tab="effects"><i class="fas fa-person-rays"></i> {{localize "TRUDVANG.Tab.Effects"}}</a>
     <a class="item" data-tab="notes"><i class="fas fa-book-open"></i> {{localize "TRUDVANG.Tab.Notes"}}</a>
   </nav>
@@ -68,19 +63,29 @@
           </dl>
         </section>
       </div>
-      <section class="panel quick-actions">
-        <h2>{{localize "TRUDVANG.Section.QuickActions"}}</h2>
-        <ol class="item-list compact-list">
-          {{#each itemsByGroup.weapons as |item|}}{{#if item.system.equipped}}
-            <li class="item" data-item-id="{{item.id}}">
-              <img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button>
-              <span>{{item.system.damage}}{{#if item.system.openRoll}} (JO {{item.system.openRoll}}-10){{/if}}</span>
-              <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}"><i class="fas fa-shield"></i></button><button type="button" data-action="item-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button>
-              <button type="button" data-action="item-edit"><i class="fas fa-pen"></i></button>
-            </li>
-          {{/if}}{{/each}}
-          {{#unless itemsByGroup.weapons.length}}<li class="empty">{{localize "TRUDVANG.Empty.Weapons"}}</li>{{/unless}}
+    </div>
+
+    <div class="tab combat" data-group="primary" data-tab="combat">
+      <section class="panel combat-reserves-panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Resource.CombatPools"}}</h2><span><button type="button" data-action="spend-combat"><i class="fas fa-minus-circle"></i> {{localize "TRUDVANG.Action.SpendCombat"}}</button><button type="button" data-action="reset-combat"><i class="fas fa-rotate"></i> {{localize "TRUDVANG.Action.ResetCombat"}}</button></span></div>
+        <div class="combat-pool-bar" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">{{#each combatPools as |pool|}}<span class="combat-pool" title="{{pool.sourceTitle}}"><strong>{{pool.label}}</strong> {{pool.current}}/{{pool.max}}</span>{{/each}}</div>
+      </section>
+      <section class="panel">
+        <h2>{{localize "TRUDVANG.Section.CombatActions"}}</h2>
+        <ol class="item-list combat-action-list">
+          {{#each combatItems as |entry|}}<li class="item {{#unless entry.readied}}not-readied{{/unless}}" data-item-id="{{entry.item.id}}">
+            <img src="{{entry.item.img}}"><button type="button" class="item-name" data-action="item-edit" title="{{entry.hoverTitle}}">{{entry.item.name}}</button><span class="item-detail">{{entry.hoverTitle}}</span>
+            {{#if (eq entry.item.type "weapon")}}<button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Attack'}}" {{#unless entry.readied}}disabled{{/unless}}><i class="fas fa-sword"></i></button>{{else}}<span class="icon-placeholder"></span>{{/if}}
+            <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless entry.readied}}disabled{{/unless}}><i class="fas fa-shield"></i></button>
+            {{#if (eq entry.item.type "weapon")}}<button type="button" data-action="item-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button>{{else}}<span class="icon-placeholder"></span>{{/if}}
+            <button type="button" class="ready-action {{#if entry.readied}}active{{/if}}" data-action="item-ready" title="{{#if entry.readied}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i class="fas {{#if entry.readied}}fa-box-archive{{else}}fa-hand-fist{{/if}}"></i></button>
+          </li>{{else}}<li class="empty">{{localize "TRUDVANG.Empty.Weapons"}}</li>{{/each}}
         </ol>
+      </section>
+      <section class="panel">
+        <h2>{{localize "TRUDVANG.Section.UnarmedCombat"}}</h2>
+        <ol class="item-list combat-action-list"><li class="item natural-action"><img src="{{naturalWeapon.img}}"><span class="item-name">{{naturalWeapon.name}}</span><span class="item-detail">4 AA · 1d5</span><button type="button" data-action="natural-attack" title="{{localize 'TRUDVANG.Action.Attack'}}"><i class="fas fa-hand-fist"></i></button><button type="button" data-action="natural-parry" title="{{localize 'TRUDVANG.Action.Parry'}}"><i class="fas fa-shield"></i></button><button type="button" data-action="natural-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button><span class="icon-placeholder"></span></li></ol>
+        <div class="wrestling-actions"><button type="button" data-action="wrestling-action" data-kind="grapple"><i class="fas fa-hands-bound"></i> {{localize "TRUDVANG.Combat.Grapple"}}</button><button type="button" data-action="wrestling-action" data-kind="glima"><i class="fas fa-person-falling"></i> {{localize "TRUDVANG.Combat.Glima"}}</button><small>{{localize "TRUDVANG.Combat.WrestlingHint"}}</small></div>
       </section>
     </div>
 
@@ -102,7 +107,14 @@
 <div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{node.catalogId}}" data-direction="-1" title="{{node.decreaseTitle}}" {{#unless node.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{node.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{node.catalogId}}" data-direction="1" title="{{node.increaseTitle}}" {{#unless node.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>
 
                 </div></summary>
-                {{#each node.specialties as |child|}}<div class="knowledge-node specialty-node {{#unless child.level}}zero-level{{/unless}}" data-item-id="{{child.item.id}}" data-catalog-id="{{child.catalogId}}" title="{{child.calculation}}"><i class="fas {{#if child.level}}fa-book-open{{else}}fa-book{{/if}} book-icon{{#if child.level}} invested{{/if}}"></i><button type="button" class="roll-icon" data-action="roll-catalog" {{#unless child.level}}disabled{{/unless}}><i class="fas fa-dice-d20"></i></button>{{#if child.exists}}<button type="button" class="item-name" data-action="item-edit" title="{{child.summary}}">{{child.item.name}}</button>{{else}}<button type="button" class="item-name" data-action="show-catalog-detail" title="{{child.summary}}">{{child.item.name}}</button>{{/if}}<span class="kind-label">{{localize "TRUDVANG.AbilityKind.specialty"}} · VC {{child.breakdown.total}}</span><span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="-1" title="{{child.decreaseTitle}}" {{#unless child.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{child.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="1" title="{{child.increaseTitle}}" {{#unless child.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div></div>{{/each}}
+                {{#each node.specialties as |child|}}<div class="knowledge-node specialty-node {{#unless child.level}}{{#unless child.offHandLevel}}zero-level{{/unless}}{{/unless}} {{#if child.separateHands}}two-hand-levels{{/if}}" data-item-id="{{child.item.id}}" data-catalog-id="{{child.catalogId}}" title="{{child.calculation}}">
+                  <i class="fas {{#if child.level}}fa-book-open{{else}}fa-book{{/if}} book-icon{{#if child.level}} invested{{/if}}"></i><button type="button" class="roll-icon" data-action="roll-catalog" {{#unless child.level}}{{#unless child.offHandLevel}}disabled{{/unless}}{{/unless}}><i class="fas fa-dice-d20"></i></button>{{#if child.exists}}<button type="button" class="item-name" data-action="item-edit" title="{{child.summary}}">{{child.item.name}}</button>{{else}}<button type="button" class="item-name" data-action="show-catalog-detail" title="{{child.summary}}">{{child.item.name}}</button>{{/if}}
+                  <span class="kind-label">{{localize "TRUDVANG.AbilityKind.specialty"}} · {{#if child.separateHands}}{{localize "TRUDVANG.Hand.WeaponShort"}} VC {{child.breakdown.total}} · {{localize "TRUDVANG.Hand.ShieldShort"}} VC {{child.offHandBreakdown.total}}{{else}}VC {{child.breakdown.total}}{{/if}}</span>
+                  {{#if child.separateHands}}<div class="hand-level-pair">
+                    <span class="hand-level" title="{{localize 'TRUDVANG.Hand.Weapon'}}"><small>{{localize "TRUDVANG.Hand.WeaponShort"}}</small><span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><span class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-hand="weapon" data-direction="-1" title="{{child.decreaseTitle}}" {{#unless child.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{child.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-hand="weapon" data-direction="1" title="{{child.increaseTitle}}" {{#unless child.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></span></span>
+                    <span class="hand-level" title="{{localize 'TRUDVANG.Hand.Shield'}}"><small>{{localize "TRUDVANG.Hand.ShieldShort"}}</small><span class="cost-badge" title="{{child.offHandIncreaseTitle}}">+{{child.offHandNextCost}}</span><span class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-hand="offHand" data-direction="-1" title="{{child.offHandDecreaseTitle}}" {{#unless child.offHandCanDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{child.offHandLevel}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-hand="offHand" data-direction="1" title="{{child.offHandIncreaseTitle}}" {{#unless child.offHandCanIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></span></span>
+                  </div>{{else}}<span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><div class="level-control">{{#if @root.creationMode}}<button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="-1" title="{{child.decreaseTitle}}" {{#unless child.canDecrease}}disabled{{/unless}}><i class="fas fa-minus"></i></button>{{/if}}<strong>{{child.level}}</strong><button type="button" data-action="adjust-catalog-knowledge" data-catalog-id="{{child.catalogId}}" data-direction="1" title="{{child.increaseTitle}}" {{#unless child.canIncrease}}disabled{{/unless}}><i class="fas fa-plus"></i></button></div>{{/if}}
+                </div>{{/each}}
                 </details>
               {{/each}}
               {{#each branch.unassigned as |child|}}<div class="knowledge-node specialty-node orphan" data-item-id="{{child.item.id}}"><img src="{{child.item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit" title="{{child.item.system.summary}}">{{child.item.name}}</button><span class="kind-label">{{localize "TRUDVANG.Field.Unassigned"}}</span><span class="cost-badge" title="{{child.increaseTitle}}">+{{child.nextCost}}</span><div class="level-control"><strong>{{child.item.system.level}}</strong><button type="button" data-action="adjust-item-level" data-direction="1" title="{{child.increaseTitle}}"><i class="fas fa-plus"></i></button></div></div>{{/each}}
@@ -128,13 +140,13 @@
         </div>
         <ol class="item-list weapons-list">{{#each itemsByGroup.weapons as |item|}}<li class="item" data-item-id="{{item.id}}">
             <img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"
-              data-tooltip="{{localize 'TRUDVANG.Action.Attack'}}"><i class="fas fa-dice-d20"></i></button><button type="button"
-              class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}"><i
+              data-tooltip="{{localize 'TRUDVANG.Action.Attack'}}" {{#unless item.system.equipped}}disabled{{/unless}}><i class="fas fa-dice-d20"></i></button><button type="button"
+              class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless item.system.equipped}}disabled{{/unless}}><i
                 class="fas fa-shield"></i></button><input class="qty-input" type="number" min="0" max="99"
               value="{{item.system.quantity}}" data-item-field="quantity" data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span
               class="qty-sep">x</span><button type="button" class="item-name" data-action="item-edit"
               data-tooltip="{{item._hoverTitle}}">{{item.name}}</button><span class="item-detail">{{item._hoverTitle}}</span><button
-              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" data-tooltip="{{localize 'TRUDVANG.Action.Equip'}}"><i
+              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-ready" data-tooltip="{{#if item.system.equipped}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i
                 class="fas fa-hand-fist"></i></button><button type="button" data-action="item-damage" data-tooltip="{{localize 'TRUDVANG.Action.Damage'}}"><i
                 class="fas fa-burst"></i></button><button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i
                 class="fas fa-trash"></i></button></li>{{/each}}</ol>
@@ -149,14 +161,14 @@
         </div>
         <ol class="item-list protection-list">{{#each itemsByGroup.protection as |item|}}<li class="item"
             data-item-id="{{item.id}}"><img src="{{item.img}}"><span class="icon-placeholder"></span>{{#if (eq item.type
-            "shield")}}<button type="button" class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}"><i
+            "shield")}}<button type="button" class="roll-icon" data-action="item-parry" data-tooltip="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless item.system.equipped}}disabled{{/unless}}><i
                 class="fas fa-shield"></i></button>{{else}}<span class="icon-placeholder"></span>{{/if}}<input
               class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity"
               data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button"
               class="item-name" data-action="item-edit" data-tooltip="{{item._hoverTitle}}">{{item.name}}</button>
-              <span class="item-detail">{{item._hoverTitle}}</span><button
-              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" data-tooltip="{{localize 'TRUDVANG.Action.Equip'}}"><i
-                class="fas fa-tshirt"></i></button><span class="icon-placeholder"></span><button type="button"
+              <span class="item-detail">{{item._hoverTitle}}</span>{{#if (eq item.type "shield")}}<button
+              type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-ready" data-tooltip="{{#if item.system.equipped}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i
+                class="fas fa-shield"></i></button>{{else}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" data-tooltip="{{localize 'TRUDVANG.Action.Equip'}}"><i class="fas fa-tshirt"></i></button>{{/if}}<span class="icon-placeholder"></span><button type="button"
               data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i class="fas fa-trash"></i></button></li>{{/each}}</ol>
       </section>
       <section class="panel">

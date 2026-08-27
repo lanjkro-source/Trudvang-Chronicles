@@ -200,9 +200,11 @@ function strengthDamageModifiers(item, actor, context) {
 }
 
 function shieldHandActionModifiers(item, actor, context) {
+  const specialty = item?.system?.combatSpecialty || ({oneHandedLight: "oneHandedLightWeapons", oneHandedHeavy: "oneHandedHeavyWeapons"})[item?.system?.category] || "";
+  const supportsSeparateHands = ["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"].includes(specialty);
   const usesShieldHand = item?.system?.category !== "natural" && (
     item?.type === "shield" || ["shield", "offHand"].includes(context.hand)
-  );
+  ) && (item?.type === "shield" || supportsSeparateHands);
   if (!usesShieldHand) return [];
 
   const bodyControl = specialtyItem(actor, "bodyControl");

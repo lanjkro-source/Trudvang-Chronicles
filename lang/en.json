@@ -55,6 +55,7 @@
     },
     "Tab": {
       "Summary": "Summary",
+      "Combat": "Combat",
       "Skills": "Skills",
       "Equipment": "Equipment",
       "Magic": "Magic & Faith",
@@ -67,6 +68,8 @@
       "Status": "Status",
       "Experience": "Creation & Experience",
       "QuickActions": "Quick Actions",
+      "CombatActions": "Attacks, parries & readied weapons",
+      "UnarmedCombat": "Unarmed combat & wrestling",
       "Skills": "Skills",
       "Disciplines": "Disciplines & Specialties",
       "Weapons": "Weapons",
@@ -92,6 +95,8 @@
       "RollInitiative": "Roll Initiative",
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
+      "Draw": "Draw (10 CP)",
+      "Sheathe": "Sheathe (10 CP)",
       "Continue": "Continue",
       "AdvanceSkill": "Buy the next Skill Value with Adventure Points",
       "AdvanceItem": "Buy the next level with Adventure Points",
@@ -221,13 +226,17 @@
       "Wrestling": "Wrestling",
       "ShieldParry": "Shield Parries",
       "OneHandedLightWeapons": "One-Handed Light Weapons",
+      "OneHandedLightWeaponsOffHand": "Light weapons — shield hand",
       "OneHandedHeavyWeapons": "One-Handed Heavy Weapons",
+      "OneHandedHeavyWeaponsOffHand": "Heavy weapons — shield hand",
       "ThrowingWeapons": "Throwing Weapons",
+      "ThrowingWeaponsOffHand": "Throwing weapons — shield hand",
       "TwoHandedWeapons": "Two-Handed Weapons",
       "Crossbow": "Crossbow",
       "BowsSlings": "Bows & Slings"
     },
-    "Hand": {"Weapon": "Weapon hand", "Shield": "Shield hand"},
+    "Hand": {"Weapon": "Weapon hand", "Shield": "Shield hand", "WeaponShort": "WH", "ShieldShort": "SH"},
+    "Combat": {"HumanoidNaturalWeapons": "Fists & feet", "Grapple": "Grapple", "Glima": "Glima", "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target."},
     "CombatActionType": {"Positioning": "Combat action, movement, or positioning", "Brawling": "Brawling or unarmed parry", "Wrestling": "Wrestling, grapple, or glima"},
     "Trait": {
       "Charisma": "Charisma",
@@ -475,6 +484,12 @@
       "AllocatedCombatPoints": "SV from allocated Combat Points",
       "AllocatedPoints": "Allocated CP",
       "CombatActionSpendingTitle": "Combat action, movement, or positioning",
+      "DrawTitle": "Draw: {item} (10 CP)",
+      "SheatheTitle": "Sheathe: {item} (10 CP)",
+      "DrawTitle": "Draw: {item} (10 CP)",
+      "SheatheTitle": "Sheathe: {item} (10 CP)",
+      "DrawTitle": "Draw: {item} (10 CP)",
+      "SheatheTitle": "Sheathe: {item} (10 CP)",
       "CombatActionType": "Action type",
       "AttackTitle": "Attack: {item}",
       "ParryTitle": "Parry: {item}",
@@ -546,6 +561,8 @@
       "EffectPermission": "You are not allowed to modify effects on this target.",
       "NoApplicableEffects": "This item has no enabled effect to apply.",
       "NoEffectTarget": "Select at least one target before applying this effect.",
+      "NotEnoughCombatPointsToReady": "10 available CP are required to draw or sheathe this weapon.",
+      "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
     },
     "Description": {
@@ -568,6 +585,7 @@
       "MagicMethod": "Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier",
       "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points",
       "CombatPoolSpent": "{amount} CP spent from the {pool} pool.",
+      "WrestlingCost": "{points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies.",
       "CombatPoolSource": "{source} level {level}: {max} CP pool.",
       "FreeCombatPoolSource": "Fighting skill: {max} free CP pool.",
       "Equipment": {
@@ -603,6 +621,8 @@
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
     "Notification": {
+      "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
+      "Sheathed": "{item} sheathed for {cost} CP.",
       "AdvancementConfirmed": "The advancements have been confirmed.",
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",
       "CreationModeEnabled": "Character creation mode enabled.",

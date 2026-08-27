@@ -11,8 +11,11 @@ export const COMBAT_POOL_IDS = Object.freeze([
   "wrestling",
   "shieldParry",
   "oneHandedLightWeapons",
+  "oneHandedLightWeaponsOffHand",
   "oneHandedHeavyWeapons",
+  "oneHandedHeavyWeaponsOffHand",
   "throwingWeapons",
+  "throwingWeaponsOffHand",
   "twoHandedWeapons",
   "crossbow",
   "bowsSlings"
@@ -29,8 +32,11 @@ const DEFINITIONS = Object.freeze({
   wrestling: {labelKey: "TRUDVANG.CombatPool.Wrestling", catalogId: "wrestling", multiplier: 2, priority: 80},
   shieldParry: {labelKey: "TRUDVANG.CombatPool.ShieldParry", catalogId: "shieldBearer", multiplier: 2, priority: 100},
   oneHandedLightWeapons: {labelKey: "TRUDVANG.CombatPool.OneHandedLightWeapons", catalogId: "oneHandedLightWeapons", multiplier: 2, priority: 90},
+  oneHandedLightWeaponsOffHand: {labelKey: "TRUDVANG.CombatPool.OneHandedLightWeaponsOffHand", catalogId: "oneHandedLightWeapons", levelField: "offHandLevel", multiplier: 2, priority: 90},
   oneHandedHeavyWeapons: {labelKey: "TRUDVANG.CombatPool.OneHandedHeavyWeapons", catalogId: "oneHandedHeavyWeapons", multiplier: 2, priority: 90},
+  oneHandedHeavyWeaponsOffHand: {labelKey: "TRUDVANG.CombatPool.OneHandedHeavyWeaponsOffHand", catalogId: "oneHandedHeavyWeapons", levelField: "offHandLevel", multiplier: 2, priority: 90},
   throwingWeapons: {labelKey: "TRUDVANG.CombatPool.ThrowingWeapons", catalogId: "throwingWeapons", multiplier: 2, priority: 90},
+  throwingWeaponsOffHand: {labelKey: "TRUDVANG.CombatPool.ThrowingWeaponsOffHand", catalogId: "throwingWeapons", levelField: "offHandLevel", multiplier: 2, priority: 90},
   twoHandedWeapons: {labelKey: "TRUDVANG.CombatPool.TwoHandedWeapons", catalogId: "twoHandedWeapons", multiplier: 2, priority: 90},
   crossbow: {labelKey: "TRUDVANG.CombatPool.Crossbow", catalogId: "crossbow", multiplier: 2, priority: 90},
   bowsSlings: {labelKey: "TRUDVANG.CombatPool.BowsSlings", catalogId: "bowsSlings", multiplier: 2, priority: 90}
@@ -63,6 +69,10 @@ export function weaponCombatSpecialty(item) {
   return item.system?.combatSpecialty || CATEGORY_SPECIALTIES[item.system?.category] || "";
 }
 
+export function weaponUsesSeparateHands(item) {
+  return ["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"].includes(weaponCombatSpecialty(item));
+}
+
 function poolMaximum(actor, id) {
   const character = actor?.type === "character";
   if (id === "free") {
@@ -74,25 +84,31 @@ function poolMaximum(actor, id) {
   }
   if (!character) return 0;
   const definition = DEFINITIONS[id];
-  return Math.max(0, Math.trunc(finite(knowledge(actor, definition.catalogId)?.system?.level, 0) * definition.multiplier));
+  const levelField = definition.levelField || "level";
+  return Math.max(0, Math.trunc(finite(knowledge(actor, definition.catalogId)?.system?.[levelField], 0) * definition.multiplier));
 }
 
 function poolEligibility(id, item, context) {
   const action = context.action || context.usage || "";
   if (!action) return true;
+  if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "unarmedFighting", "wrestling"].includes(id);
+  const rangedParry = action === "parry" && item?.type === "weapon" && item.system?.category === "ranged";
+  if (rangedParry) return id === "free";
   if (id === "free" || id === "battleExperience") return true;
 
   const weaponAction = ["attack", "parry", "brawling"].includes(action);
   const natural = item?.type === "weapon" && item.system?.category === "natural";
   const armed = ["weapon", "shield"].includes(item?.type) && !natural;
   if (id === "attacksParries") return weaponAction;
-  if (id === "combatActions") return ["combatAction", "movement", "positioning", "drawWeapon", "standUp"].includes(action);
+  if (id === "combatActions") return ["combatAction", "movement", "positioning", "drawWeapon", "sheatheWeapon", "standUp"].includes(action);
   if (id === "armedFighting") return weaponAction && armed;
   if (id === "unarmedFighting") return ["brawling", "wrestling", "grapple", "glima"].includes(action) || (natural && ["attack", "parry"].includes(action));
   if (id === "brawling") return action === "brawling" || (natural && ["attack", "parry"].includes(action));
   if (id === "wrestling") return ["wrestling", "grapple", "glima"].includes(action);
   if (id === "shieldParry") return action === "parry" && item?.type === "shield";
-  return weaponAction && id === weaponCombatSpecialty(item);
+  const specialty = weaponCombatSpecialty(item);
+  const specialtyPool = weaponUsesSeparateHands(item) && item?.system?.hand === "offHand" ? `${specialty}OffHand` : specialty;
+  return weaponAction && id === specialtyPool;
 }
 
 /** Return every pool with its maximum, remaining points, source and contextual eligibility. */
@@ -122,7 +138,7 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
         id: definition.catalogId,
         uuid: sourceItem?.uuid || "",
         name: sourceItem?.name || "",
-        level: finite(sourceItem?.system?.level, 0)
+        level: finite(sourceItem?.system?.[definition.levelField || "level"], 0)
       } : {kind: "skill", id: "fighting", uuid: "", name: "", level: max},
       rule: {book: "coreRules", printedPage: 315, englishBook: "gameMastersGuide", englishPrintedPage: 41}
     };

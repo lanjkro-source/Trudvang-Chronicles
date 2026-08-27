@@ -55,6 +55,7 @@
     },
     "Tab": {
       "Summary": "Résumé",
+      "Combat": "Combat",
       "Skills": "Compétences",
       "Equipment": "Équipement",
       "Magic": "Magie & Foi",
@@ -67,6 +68,8 @@
       "Status": "État",
       "Experience": "Création & Expérience",
       "QuickActions": "Actions Rapides",
+      "CombatActions": "Attaques, parades & armes préparées",
+      "UnarmedCombat": "Combat à mains nues & lutte",
       "Skills": "Compétences",
       "Disciplines": "Disciplines & Spécialités",
       "Weapons": "Armes",
@@ -92,6 +95,8 @@
       "RollInitiative": "Jet d'initiative",
       "ResetCombat": "Réinitialiser les points de combat",
       "SpendCombat": "Dépenser des PC",
+      "Draw": "Dégainer (10 PC)",
+      "Sheathe": "Rengainer (10 PC)",
       "Continue": "Continuer",
       "AdvanceSkill": "Acheter la valeur de compétence suivante avec les points d'aventure",
       "AdvanceItem": "Acheter le prochain niveau avec les points d'aventure",
@@ -221,13 +226,17 @@
       "Wrestling": "Lutte",
       "ShieldParry": "Parades au bouclier",
       "OneHandedLightWeapons": "Armes légères à une main",
+      "OneHandedLightWeaponsOffHand": "Armes légères — main de bouclier",
       "OneHandedHeavyWeapons": "Armes lourdes à une main",
+      "OneHandedHeavyWeaponsOffHand": "Armes lourdes — main de bouclier",
       "ThrowingWeapons": "Armes de lancer",
+      "ThrowingWeaponsOffHand": "Armes de lancer — main de bouclier",
       "TwoHandedWeapons": "Armes à deux mains",
       "Crossbow": "Arbalète",
       "BowsSlings": "Arcs & frondes"
     },
-    "Hand": {"Weapon": "Main d’arme", "Shield": "Main de bouclier"},
+    "Hand": {"Weapon": "Main d’arme", "Shield": "Main de bouclier", "WeaponShort": "MA", "ShieldShort": "MB"},
+    "Combat": {"HumanoidNaturalWeapons": "Poings & pieds", "Grapple": "Saisie", "Glima": "Glima", "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."},
     "CombatActionType": {"Positioning": "Action de combat, mouvement ou positionnement", "Brawling": "Bagarre ou parade à mains nues", "Wrestling": "Lutte, saisie ou glima"},
     "Trait": {
       "Charisma": "Charisme",
@@ -475,6 +484,12 @@
       "AllocatedCombatPoints": "VC obtenue par les CP alloués",
       "AllocatedPoints": "PC alloués",
       "CombatActionSpendingTitle": "Action de combat, mouvement ou positionnement",
+      "DrawTitle": "Dégainer : {item} (10 PC)",
+      "SheatheTitle": "Rengainer : {item} (10 PC)",
+      "DrawTitle": "Dégainer : {item} (10 PC)",
+      "SheatheTitle": "Rengainer : {item} (10 PC)",
+      "DrawTitle": "Dégainer : {item} (10 PC)",
+      "SheatheTitle": "Rengainer : {item} (10 PC)",
       "CombatActionType": "Type d’action",
       "AttackTitle": "Attaque: {item}",
       "ParryTitle": " Parade: {item}",
@@ -546,6 +561,8 @@
       "EffectPermission": "Vous n'avez pas l'autorisation de modifier les effets de cette cible.",
       "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
       "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
+      "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer ou rengainer cette arme.",
+      "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
     },
     "Description": {
@@ -568,6 +585,7 @@
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
       "CombatPoolSpent": "{amount} PC dépensé(s) depuis la réserve {pool}.",
+      "WrestlingCost": "{points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique.",
       "CombatPoolSource": "{source} niveau {level} : réserve de {max} PC.",
       "FreeCombatPoolSource": "Compétence Combat : réserve de {max} PC libres.",
       "Equipment": {
@@ -603,6 +621,8 @@
       "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
     },
     "Notification": {
+      "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
+      "Sheathed": "{item} rengainé pour {cost} PC.",
       "AdvancementConfirmed": "Les améliorations ont été validées.",
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",
       "CreationModeEnabled": "Mode création de personnage activé.",

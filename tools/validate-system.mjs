@@ -165,7 +165,7 @@ if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.act
 if (!modelText.includes("combatPools: combatPoolsSchema()") || !actorDocumentText.includes("resolveCombatPools({actor: this, item, context: {action: kind}})")) {
   failures.push("Actors and weapon actions must use distinct linked Combat Point pools.");
 }
-if (!combatPoolResolverText.includes('id === "shieldParry"') || !combatPoolResolverText.includes('id === weaponCombatSpecialty(item)')) {
+if (!combatPoolResolverText.includes('id === "shieldParry"') || !combatPoolResolverText.includes('id === specialtyPool')) {
   failures.push("Combat Point eligibility must retain shield-parry and weapon-specialty restrictions.");
 }
 if (actorDocumentText.includes('update({"system.resources.combat.value"')) {
