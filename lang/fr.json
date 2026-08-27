@@ -458,7 +458,15 @@
       "MagicMethod": "Méthode et spécialité",
       "FinalTarget": "Valeur de compétence finale",
       "Strenuous": "Renforcement",
-      "FinalVitnerCost": "Coût final en vitner"
+      "FinalVitnerCost": "Coût final en vitner",
+      "TraitRollMode": "Mode de jet",
+      "SituationRoll": "Jet de situation",
+      "OpenRoll": "Jet ouvert",
+      "SituationValue": "Valeur de situation",
+      "EffectModifier": "Effets",
+      "TotalSituationValue": "Valeur de situation totale",
+      "OpenRollBonus": "Bonus",
+      "OpenRollBreakdown": "Modificateur total"
     },
     "Roll": {
       "Success": "Succès",
@@ -469,7 +477,8 @@
       },
       "OpenRoll": "Jet ouvert sur",
       "OpenInitiative": "L'initiative utilise 1d10 avec un jet ouvert sur 10.",
-      "Margin": "Marge de réussite"
+      "Margin": "Marge de réussite",
+      "OpenTraitFormula": "1d10 (jet ouvert sur 10) + trait + bonus + effets"
     },
     "Warning": {
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",

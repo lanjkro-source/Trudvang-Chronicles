@@ -190,6 +190,75 @@ export async function rollDamage({actor, item}) {
   return total;
 }
 
+/**
+ * Select the kind of roll made from a character trait.
+ *
+ * Trait values already include changes made directly to the trait; `effect` is
+ * reserved for roll modifiers supplied by active effects. Keeping the two
+ * visible makes the source of the final value clear to the player.
+ */
+export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const trait = Number(traitValue) || 0;
+  const effectModifier = Number(effect) || 0;
+  const localize = key => escapeHtml(game.i18n.localize(key));
+  const displayModifier = value => value >= 0 ? `+${value}` : `${value}`;
+  const content = `<div class="trudvang roll-dialog trait-roll-dialog">
+    <div class="form-group"><label>${localize("TRUDVANG.Dialog.TraitRollMode")}</label><select name="mode">
+      <option value="situation">${localize("TRUDVANG.Dialog.SituationRoll")}</option>
+      <option value="open">${localize("TRUDVANG.Dialog.OpenRoll")}</option>
+    </select></div>
+    <div class="trait-roll-values">
+      <div class="form-group"><label>${escapeHtml(traitLabel)}</label><input name="trait" type="number" value="${trait}" readonly></div>
+      <div class="form-group"><label>${localize("TRUDVANG.Dialog.EffectModifier")}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
+    </div>
+    <section data-roll-mode="situation">
+      <div class="form-group"><label>${localize("TRUDVANG.Dialog.SituationValue")}</label><input name="situationValue" type="number" value="10"></div>
+      <p>${localize("TRUDVANG.Dialog.TotalSituationValue")}: <strong data-final-target>${10 + trait + effectModifier}</strong></p>
+    </section>
+    <section data-roll-mode="open" hidden>
+      <div class="form-group"><label>${localize("TRUDVANG.Dialog.OpenRollBonus")}</label><input name="bonus" type="number" value="0"></div>
+      <p>${localize("TRUDVANG.Dialog.OpenRollBreakdown")}: <strong data-open-modifier>${trait + effectModifier}</strong></p>
+    </section>
+  </div>`;
+  class TraitRollDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const mode = root.querySelector("[name=mode]")?.value || "situation";
+        root.querySelector("[data-roll-mode=situation]")?.toggleAttribute("hidden", mode !== "situation");
+        root.querySelector("[data-roll-mode=open]")?.toggleAttribute("hidden", mode !== "open");
+        const target = root.querySelector("[data-final-target]");
+        if (target) target.textContent = Number(root.querySelector("[name=situationValue]")?.value || 0) + trait + effectModifier;
+        const openModifier = root.querySelector("[data-open-modifier]");
+        if (openModifier) openModifier.textContent = displayModifier(trait + Number(root.querySelector("[name=bonus]")?.value || 0) + effectModifier);
+      };
+      root.querySelector("[name=mode]")?.addEventListener("change", refresh);
+      root.querySelector("[name=situationValue]")?.addEventListener("input", refresh);
+      root.querySelector("[name=bonus]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return TraitRollDialog.wait({
+    window: {title},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {
+          mode: root.querySelector("[name=mode]")?.value || "situation",
+          situationValue: Number(root.querySelector("[name=situationValue]")?.value || 0),
+          bonus: Number(root.querySelector("[name=bonus]")?.value || 0)
+        };
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
 export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = ""}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `

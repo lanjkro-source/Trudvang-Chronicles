@@ -1,5 +1,5 @@
 import { TRUDVANG } from "../config.mjs";
-import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder } from "../dice.mjs";
+import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
@@ -484,11 +484,28 @@ export class TrudvangActor extends BaseActor {
 
   async rollTrait(traitKey) {
     if (!this.canPerformAction()) return this.warnCannotAct();
-    const target = 10 + this.getTraitValue(traitKey) + this.getRollModifier({kind: "trait", traitKey});
+    const trait = this.getTraitValue(traitKey);
+    const effect = this.getRollModifier({kind: "trait", traitKey});
     const label = game.i18n.localize(TRUDVANG.traits[traitKey] ?? traitKey);
-    const options = await modifierDialog({title: label, target});
+    const options = await traitRollDialog({title: label, traitLabel: label, traitValue: trait, effect});
     if (!options) return null;
-    return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "situation"});
+    if (options.mode === "situation") {
+      const target = options.situationValue + trait + effect;
+      return rollUnder({actor: this, label, target, kind: "situation"});
+    }
+    const openRoll = await openD10({threshold: 10, modifier: trait + options.bonus + effect});
+    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/open-trait-roll-card.hbs", {
+      actorName: this.name,
+      actorImg: this.img,
+      label,
+      total: openRoll.total,
+      rolls: openRoll.rolls.join(" + "),
+      trait,
+      bonus: options.bonus,
+      effect
+    });
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: openRoll.diceRolls});
+    return openRoll;
   }
 
   async rollAbility(item) {

@@ -458,7 +458,15 @@
       "MagicMethod": "Method and specialty",
       "FinalTarget": "Final Skill Value",
       "Strenuous": "Strenuous effort",
-      "FinalVitnerCost": "Final Vitner cost"
+      "FinalVitnerCost": "Final Vitner cost",
+      "TraitRollMode": "Roll mode",
+      "SituationRoll": "Situation Roll",
+      "OpenRoll": "Open Roll",
+      "SituationValue": "Situation Value",
+      "EffectModifier": "Effects",
+      "TotalSituationValue": "Total Situation Value",
+      "OpenRollBonus": "Bonus",
+      "OpenRollBreakdown": "Total modifier"
     },
     "Roll": {
       "Success": "Success",
@@ -469,7 +477,8 @@
       },
       "OpenRoll": "Open roll on",
       "OpenInitiative": "Initiative uses 1d10 with an open roll on 10.",
-      "Margin": "Success margin"
+      "Margin": "Success margin",
+      "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects"
     },
     "Warning": {
       "NotEnoughPower": "There are not enough points in this power reserve.",

@@ -542,6 +542,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
+| `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |
+| `TRUDVANG.Dialog.SituationRoll` | Situation Roll | Jet de situation |
+| `TRUDVANG.Dialog.OpenRoll` | Open Roll | Jet ouvert |
+| `TRUDVANG.Dialog.SituationValue` | Situation Value | Valeur de situation |
+| `TRUDVANG.Dialog.EffectModifier` | Effects | Effets |
+| `TRUDVANG.Dialog.TotalSituationValue` | Total Situation Value | Valeur de situation totale |
+| `TRUDVANG.Dialog.OpenRollBonus` | Bonus | Bonus |
+| `TRUDVANG.Dialog.OpenRollBreakdown` | Total modifier | Modificateur total |
 
 ## `TRUDVANG.Roll`
 
@@ -552,6 +560,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Roll.OpenRoll` | Open roll on | Jet ouvert sur |
 | `TRUDVANG.Roll.OpenInitiative` | Initiative uses 1d10 with an open roll on 10. | L'initiative utilise 1d10 avec un jet ouvert sur 10. |
 | `TRUDVANG.Roll.Margin` | Success margin | Marge de réussite |
+| `TRUDVANG.Roll.OpenTraitFormula` | 1d10 (open on 10) + trait + bonus + effects | 1d10 (jet ouvert sur 10) + trait + bonus + effets |
 
 ## `TRUDVANG.Roll.Critical`
 
