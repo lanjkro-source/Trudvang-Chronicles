@@ -145,6 +145,7 @@ for (const key of collectGlossaryKeys(language)) {
 const localAssetPattern = /systems\/trudvang-chronicles\/([^"']+)/g;
 const contentText = readFileSync(join(root, "data/starter-content.json"), "utf8");
 const modelText = readFileSync(join(root, "modules/data-models.mjs"), "utf8");
+const combatPoolResolverText = readFileSync(join(root, "modules/rules/combat-pool-resolver.mjs"), "utf8");
 const characterSheetText = readFileSync(join(root, "templates/actor/character-sheet.hbs"), "utf8");
 const actorSheetText = readFileSync(join(root, "modules/sheets/actor-sheet.mjs"), "utf8");
 const actorDocumentText = readFileSync(join(root, "modules/documents/actor.mjs"), "utf8");
@@ -158,8 +159,17 @@ if (!actorSheetText.includes("resolveWeaponActions({item, actor: this.actor}).va
 if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !diceText.includes("resolveDamage({actor, item})")) {
   failures.push("Damage display and rolls must use the shared equipment resolver.");
 }
-if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.actor})") || !actorDocumentText.includes("resolveCombatActionModifier({item, actor: this, context: {usage: kind}})")) {
+if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.actor})") || !actorDocumentText.includes("resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}})")) {
   failures.push("Shield-hand display and rolls must use the shared equipment resolver.");
+}
+if (!modelText.includes("combatPools: combatPoolsSchema()") || !actorDocumentText.includes("resolveCombatPools({actor: this, item, context: {action: kind}})")) {
+  failures.push("Actors and weapon actions must use distinct linked Combat Point pools.");
+}
+if (!combatPoolResolverText.includes('id === "shieldParry"') || !combatPoolResolverText.includes('id === weaponCombatSpecialty(item)')) {
+  failures.push("Combat Point eligibility must retain shield-parry and weapon-specialty restrictions.");
+}
+if (actorDocumentText.includes('update({"system.resources.combat.value"')) {
+  failures.push("Weapon actions must never spend the deprecated aggregate Combat Point resource.");
 }
 for (const [documentName, types] of Object.entries(system.documentTypes || {})) {
   const exportedMap = documentName === "Actor" ? "ACTOR_DATA_MODELS" : documentName === "Item" ? "ITEM_DATA_MODELS" : null;

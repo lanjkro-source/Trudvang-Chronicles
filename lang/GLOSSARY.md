@@ -123,6 +123,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
+| `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
+| `TRUDVANG.Action.Continue` | Continue | Continuer |
 | `TRUDVANG.Action.AdvanceSkill` | Buy the next Skill Value with Adventure Points | Acheter la valeur de compétence suivante avec les points d'aventure |
 | `TRUDVANG.Action.AdvanceItem` | Buy the next level with Adventure Points | Acheter le prochain niveau avec les points d'aventure |
 | `TRUDVANG.Action.StartCreation` | Character creation mode | Mode création de personnage |
@@ -222,6 +224,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.CoinSilver` | Silver | Argent |
 | `TRUDVANG.Field.CoinGold` | Gold | Or |
 | `TRUDVANG.Field.TotalWeight` | Total carried weight | Poids total transporté |
+| `TRUDVANG.Field.CombatSpecialty` | Linked combat specialty | Spécialité de combat liée |
+| `TRUDVANG.Field.Hand` | Used hand | Main utilisée |
 
 ## `TRUDVANG.Resource`
 
@@ -229,6 +233,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Resource.Body` | Body Points | Points de santé (PS) |
 | `TRUDVANG.Resource.Combat` | Combat Points | Points de combat (CP) |
+| `TRUDVANG.Resource.CombatPools` | Combat Point pools | Réserves de points de combat |
 | `TRUDVANG.Resource.Raud` | Raud | Raud |
 | `TRUDVANG.Resource.Fear` | Fear | Peur |
 | `TRUDVANG.Resource.Vitner` | Vitner Points | Points de vitner |
@@ -242,6 +247,41 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Resource.PersistenceInWild` | Persistence in the Wild | Persistance dans la nature |
 | `TRUDVANG.Resource.VitnerCost` | Vitner Point Cost | Coût en points de vitner |
 | `TRUDVANG.Resource.DivinityCost` | Divinity Point Cost | Coût en points de divinité |
+
+## `TRUDVANG.CombatPool`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.CombatPool.Free` | Free | Libres |
+| `TRUDVANG.CombatPool.BattleExperience` | Battle Experience | Expérience du combat |
+| `TRUDVANG.CombatPool.ArmedFighting` | Armed Fighting | Combat armé |
+| `TRUDVANG.CombatPool.UnarmedFighting` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.CombatPool.AttacksParries` | Attacks & Parries | Attaques & parades |
+| `TRUDVANG.CombatPool.CombatActions` | Combat Actions | Actions de combat |
+| `TRUDVANG.CombatPool.Brawling` | Brawling | Bagarre |
+| `TRUDVANG.CombatPool.Wrestling` | Wrestling | Lutte |
+| `TRUDVANG.CombatPool.ShieldParry` | Shield Parries | Parades au bouclier |
+| `TRUDVANG.CombatPool.OneHandedLightWeapons` | One-Handed Light Weapons | Armes légères à une main |
+| `TRUDVANG.CombatPool.OneHandedHeavyWeapons` | One-Handed Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.CombatPool.ThrowingWeapons` | Throwing Weapons | Armes de lancer |
+| `TRUDVANG.CombatPool.TwoHandedWeapons` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.CombatPool.Crossbow` | Crossbow | Arbalète |
+| `TRUDVANG.CombatPool.BowsSlings` | Bows & Slings | Arcs & frondes |
+
+## `TRUDVANG.Hand`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Hand.Weapon` | Weapon hand | Main d’arme |
+| `TRUDVANG.Hand.Shield` | Shield hand | Main de bouclier |
+
+## `TRUDVANG.CombatActionType`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.CombatActionType.Positioning` | Combat action, movement, or positioning | Action de combat, mouvement ou positionnement |
+| `TRUDVANG.CombatActionType.Brawling` | Brawling or unarmed parry | Bagarre ou parade à mains nues |
+| `TRUDVANG.CombatActionType.Wrestling` | Wrestling, grapple, or glima | Lutte, saisie ou glima |
 
 ## `TRUDVANG.Trait`
 
@@ -531,6 +571,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.BaseTarget` | Base target: {target} | Cible de base: {target} |
 | `TRUDVANG.Dialog.Modifier` | Situation Modifier | Modificateur situationnel |
 | `TRUDVANG.Dialog.CombatPoints` | Combat Points to Spend | CP à dépenser |
+| `TRUDVANG.Dialog.AllocatedCombatPoints` | SV from allocated Combat Points | VC obtenue par les CP alloués |
+| `TRUDVANG.Dialog.AllocatedPoints` | Allocated CP | PC alloués |
+| `TRUDVANG.Dialog.CombatActionSpendingTitle` | Combat action, movement, or positioning | Action de combat, mouvement ou positionnement |
+| `TRUDVANG.Dialog.CombatActionType` | Action type | Type d’action |
 | `TRUDVANG.Dialog.AttackTitle` | Attack: {item} | Attaque: {item} |
 | `TRUDVANG.Dialog.ParryTitle` | Parry: {item} |  Parade: {item} |
 | `TRUDVANG.Dialog.MagicAction` | Magic or Divine Action | Action magique ou divine |
@@ -640,6 +684,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
+| `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
+| `TRUDVANG.Calculation.CombatPoolSource` | {source} level {level}: {max} CP pool. | {source} niveau {level} : réserve de {max} PC. |
+| `TRUDVANG.Calculation.FreeCombatPoolSource` | Fighting skill: {max} free CP pool. | Compétence Combat : réserve de {max} PC libres. |
 
 ## `TRUDVANG.Calculation.Equipment`
 

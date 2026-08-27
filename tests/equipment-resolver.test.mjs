@@ -9,6 +9,25 @@ import {
   resolveNumericEquipmentStat,
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
+import {
+  normalizeCombatAllocation,
+  resolveCombatPools,
+  suggestCombatAllocation,
+  weaponCombatSpecialty
+} from "../modules/rules/combat-pool-resolver.mjs";
+
+function combatActor(levels = {}, {fighting = 9, spent = {}} = {}) {
+  const actor = actorWithKnowledge(levels);
+  actor.type = "character";
+  actor.system = {
+    skills: {fighting: {value: fighting}},
+    modifiers: {combatMax: 0, combatValue: 0},
+    combatPools: Object.fromEntries(Object.entries(spent).map(([id, value]) => [id, {spent: value}]))
+  };
+  actor._source = {system: {combatPools: actor.system.combatPools}};
+  actor.getSkillValue = key => key === "fighting" ? fighting : 0;
+  return actor;
+}
 
 function actorWithKnowledge(levels = {}) {
   const items = Object.entries(levels).map(([catalogId, level]) => ({
@@ -273,4 +292,100 @@ test("natural weapons are exempt even when an off-hand context is supplied", () 
   const result = resolveCombatActionModifier({item, context: {hand: "offHand"}});
   assert.equal(result.value, 0);
   assert.deepEqual(result.steps, []);
+});
+
+test("linked Combat Point pools retain their distinct maxima", () => {
+  const actor = combatActor({
+    battleExperience: 1,
+    armedFighting: 1,
+    fighter: 2,
+    combatActions: 3,
+    oneHandedLightWeapons: 2,
+    shieldBearer: 2
+  });
+  const result = resolveCombatPools({actor});
+  assert.equal(result.pools.find(pool => pool.id === "free").max, 9);
+  assert.equal(result.pools.find(pool => pool.id === "attacksParries").max, 4);
+  assert.equal(result.pools.find(pool => pool.id === "combatActions").max, 6);
+  assert.equal(result.pools.find(pool => pool.id === "shieldParry").max, 4);
+});
+
+test("a light-weapon attack exposes only compatible pools", () => {
+  const actor = combatActor({battleExperience: 1, armedFighting: 1, fighter: 2, combatActions: 3, oneHandedLightWeapons: 2, shieldBearer: 2});
+  const item = weapon({category: "oneHandedLight"});
+  const result = resolveCombatPools({actor, item, context: {action: "attack"}});
+  assert.deepEqual(result.eligible.map(pool => pool.id), [
+    "free", "battleExperience", "armedFighting", "attacksParries", "oneHandedLightWeapons"
+  ]);
+  assert.equal(result.eligibleCurrent, 19);
+});
+
+test("shield-only points are eligible for shield parries but not shield attacks", () => {
+  const actor = combatActor({battleExperience: 1, armedFighting: 1, fighter: 2, shieldBearer: 2});
+  const parry = resolveCombatPools({actor, item: shield(), context: {action: "parry"}});
+  const attack = resolveCombatPools({actor, item: shield(), context: {action: "attack"}});
+  assert.equal(parry.eligible.some(pool => pool.id === "shieldParry"), true);
+  assert.equal(attack.eligible.some(pool => pool.id === "shieldParry"), false);
+  assert.equal(parry.eligibleCurrent - attack.eligibleCurrent, 4);
+});
+
+test("positioning actions use Combat Actions but not attack pools", () => {
+  const actor = combatActor({battleExperience: 1, fighter: 2, combatActions: 3, oneHandedLightWeapons: 2});
+  const result = resolveCombatPools({actor, context: {action: "movement"}});
+  assert.deepEqual(result.eligible.map(pool => pool.id), ["free", "battleExperience", "combatActions"]);
+  assert.equal(result.eligibleCurrent, 16);
+});
+
+test("spending one linked pool does not consume another", () => {
+  const actor = combatActor({fighter: 2, oneHandedLightWeapons: 2}, {spent: {oneHandedLightWeapons: 3, free: 2}});
+  const result = resolveCombatPools({actor, item: weapon({category: "oneHandedLight"}), context: {action: "attack"}});
+  assert.equal(result.pools.find(pool => pool.id === "oneHandedLightWeapons").current, 1);
+  assert.equal(result.pools.find(pool => pool.id === "attacksParries").current, 4);
+  assert.equal(result.pools.find(pool => pool.id === "free").current, 7);
+});
+
+test("allocation helpers prioritize restricted pools and reject overspending", () => {
+  const actor = combatActor({battleExperience: 1, armedFighting: 1, fighter: 2, oneHandedLightWeapons: 2});
+  const pools = resolveCombatPools({actor, item: weapon({category: "oneHandedLight"}), context: {action: "attack"}}).eligible;
+  const suggested = suggestCombatAllocation(pools, 7);
+  assert.deepEqual(suggested, {oneHandedLightWeapons: 4, armedFighting: 1, attacksParries: 2});
+  const normalized = normalizeCombatAllocation(pools, {free: 99, combatActions: 99, oneHandedLightWeapons: -2});
+  assert.equal(normalized.total, 9);
+  assert.equal(normalized.allocation.free, 9);
+  assert.equal(Object.hasOwn(normalized.allocation, "combatActions"), false);
+});
+
+test("an explicit ranged specialty distinguishes crossbows from bows", () => {
+  const item = weapon({category: "ranged"});
+  assert.equal(weaponCombatSpecialty(item), "bowsSlings");
+  item.system.combatSpecialty = "crossbow";
+  assert.equal(weaponCombatSpecialty(item), "crossbow");
+});
+
+test("legacy NPC Combat Points remain a single free pool with their current spending", () => {
+  const actor = {
+    type: "npc",
+    system: {resources: {combat: {value: 7, max: 20}}, modifiers: {}},
+    _source: {system: {resources: {combat: {value: 7, max: 20}}}}
+  };
+  const result = resolveCombatPools({actor});
+  assert.equal(result.totalMax, 20);
+  assert.equal(result.totalCurrent, 7);
+  assert.deepEqual(result.active.map(pool => pool.id), ["free"]);
+});
+
+test("manual brawling and wrestling actions expose their own linked pools", () => {
+  const actor = combatActor({battleExperience: 1, unarmedFighting: 2, fighter: 1, brawling: 3, wrestling: 4});
+  const brawling = resolveCombatPools({actor, context: {action: "brawling"}});
+  const wrestling = resolveCombatPools({actor, context: {action: "wrestling"}});
+  assert.deepEqual(brawling.eligible.map(pool => pool.id), ["free", "battleExperience", "unarmedFighting", "attacksParries", "brawling"]);
+  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "battleExperience", "unarmedFighting", "wrestling"]);
+});
+
+test("Combat Point allocations are always whole numbers", () => {
+  const actor = combatActor({fighter: 2});
+  const pools = resolveCombatPools({actor, item: weapon(), context: {action: "attack"}}).eligible;
+  const normalized = normalizeCombatAllocation(pools, {free: 2.9, attacksParries: 1.8});
+  assert.deepEqual(normalized.allocation, {free: 2, attacksParries: 1});
+  assert.equal(normalized.total, 3);
 });

@@ -4,6 +4,7 @@ import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { resolveCombatActionModifier, resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
+import { resolveCombatPools } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -39,6 +40,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "cancel-advancement": TrudvangActorSheet.#onAction,
       "roll-initiative": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
+      "spend-combat": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
       "item-parry": TrudvangActorSheet.#onAction,
       "item-damage": TrudvangActorSheet.#onAction,
@@ -91,6 +93,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const allowedLanguageIds = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
+    context.combatPools = resolveCombatPools({actor: this.actor}).active.map(pool => ({
+      ...pool,
+      label: game.i18n.localize(pool.labelKey),
+      sourceTitle: pool.source.name
+        ? game.i18n.format("TRUDVANG.Calculation.CombatPoolSource", {source: pool.source.name, level: pool.source.level, max: pool.max})
+        : game.i18n.format("TRUDVANG.Calculation.FreeCombatPoolSource", {max: pool.max})
+    }));
+    context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
     context.vitnerProfile = this.actor.selectedVitnerType;
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
     context.religionProfile = this.actor.selectedReligion;
@@ -302,6 +312,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
       case "reset-combat": return this.actor.resetCombatPoints();
+      case "spend-combat": return this.actor.allocateCombatActionPoints();
       case "item-roll": return item?.roll();
       case "item-parry": return item ? this.actor.rollWeaponParry(item) : null;
       case "item-damage": return this.actor.rollDamage(item);
@@ -527,7 +538,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const VP = Math.ceil(Math.max(0, VI) / 10);
       let CP = Number(item.system.attackValue || 0);
       const dmg = this._getItemDamageText(item);
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
+      const actionModifier = resolveCombatActionModifier({item, actor: this.actor, context: {hand: item.system.hand}});
+      const actionText = actionModifier.steps.length ? ` ${svLab}:${signed(actionModifier.value)} — ${actionModifier.steps.map(step => game.i18n.format(step.explanationKey, step.explanationData)).join(" ")}` : "";
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}${actionText}`;
     }
     if (item.type === "shield") {
       const AA = resolveWeaponActions({item, actor: this.actor}).value;

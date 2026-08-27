@@ -50,6 +50,34 @@ function resource(initialValue, initialMax) {
   });
 }
 
+function combatPool() {
+  return schema({
+    spent: integer(-1, {min: -1}),
+    max: integer(0, {persisted: false}),
+    current: integer(0, {persisted: false})
+  });
+}
+
+function combatPoolsSchema() {
+  return schema({
+    free: combatPool(),
+    battleExperience: combatPool(),
+    armedFighting: combatPool(),
+    unarmedFighting: combatPool(),
+    attacksParries: combatPool(),
+    combatActions: combatPool(),
+    brawling: combatPool(),
+    wrestling: combatPool(),
+    shieldParry: combatPool(),
+    oneHandedLightWeapons: combatPool(),
+    oneHandedHeavyWeapons: combatPool(),
+    throwingWeapons: combatPool(),
+    twoHandedWeapons: combatPool(),
+    crossbow: combatPool(),
+    bowsSlings: combatPool()
+  });
+}
+
 function skill(initial = 1) {
   return schema({value: integer(initial, {min: 0}), bonus: integer(0)});
 }
@@ -126,6 +154,7 @@ function actorCommonSchema() {
       vitner: resource(0, 0),
       divinity: resource(0, 0)
     }),
+    combatPools: combatPoolsSchema(),
     initiative: schema({base: integer(0), current: integer(0)}),
     movement: schema({base: integer(10), current: integer(10)}),
     notes: html(),
@@ -257,6 +286,8 @@ export class WeaponData extends BaseItemData {
       ...super.defineSchema(),
       ...equipmentSchema(),
       category: string("oneHandedLight"),
+      combatSpecialty: string(),
+      hand: string("weapon"),
       damage: string("1d10"),
       openRoll: integer(10, {min: 0, max: 10}),
       strengthApplies: boolean(true),

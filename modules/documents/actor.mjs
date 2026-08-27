@@ -1,10 +1,11 @@
 import { TRUDVANG } from "../config.mjs";
-import { initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatActionTypeDialog, combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
+import { normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 
@@ -26,10 +27,6 @@ export class TrudvangActor extends BaseActor {
     if (isImmobilized(this)) system.movement.current = 0;
 
     if (this.type === "character") {
-      const fighting = this.getSkillValue("fighting");
-      const be = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
-      const fighter = Number(this.findKnowledgeItem("fighter")?.system.level || 0) * 2;
-      system.resources.combat.max = Math.max(1, fighting + be + fighter + Number(system.modifiers.combatMax || 0));
       const vitnerType = this.selectedVitnerType;
       const callVitner = Number(this.findKnowledgeItem("callVitner")?.system.level || 0);
       const vitnerHabit = Number(this.findKnowledgeItem("vitnerHabit")?.system.level || 0);
@@ -45,9 +42,20 @@ export class TrudvangActor extends BaseActor {
         : 0;
     }
 
+    const combatPools = resolveCombatPools({actor: this});
+    for (const pool of combatPools.pools) {
+      system.combatPools[pool.id].spent = pool.spent;
+      system.combatPools[pool.id].max = pool.max;
+      system.combatPools[pool.id].current = pool.current;
+    }
+    system.resources.combat.max = combatPools.totalMax;
+    system.resources.combat.value = combatPools.totalCurrent;
+    system.resources.combat.current = combatPools.totalCurrent;
+
     // Resource values are persisted as their unmodified base. Active Effects alter only
     // the prepared value/current, so an expiring effect never destroys spent points.
     for (const [key, resource] of Object.entries(system.resources)) {
+      if (key === "combat") continue;
       const modifier = Number(system.modifiers?.[`${key}Value`] || 0);
       const current = Math.max(0, Math.min(Number(resource.max || 0), Number(resource.value || 0) + modifier));
       resource.current = current;
@@ -547,30 +555,33 @@ export class TrudvangActor extends BaseActor {
 
   async rollWeaponAction(item, kind) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
-    const available = Number(this.system.resources.combat.current ?? this.system.resources.combat.value ?? this.system.resources.combat.max ?? 1);
+    const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind}});
+    const available = poolResolution.eligibleCurrent;
     const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
-    const options = await modifierDialog({
+    const options = await combatPointDialog({
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
-      target: defaultCost,
-      showCost: true,
-      defaultCost,
-      resourceLabel: game.i18n.localize("TRUDVANG.Dialog.CombatPoints")
+      pools: poolResolution.eligible,
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, defaultCost)
     });
     if (!options) return null;
-    const spend = Math.max(0, Math.min(available, options.cost));
-    if (this.isOwner) {
-      const stored = Number(this._source.system.resources.combat.value || 0);
-      await this.update({"system.resources.combat.value": Math.max(0, stored - spend)});
-    }
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
     const effectModifier = this.getRollModifier({kind, movement: true});
-    const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind}});
-    const flavor = equipmentModifier.steps
+    const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
+    const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
+    const spendingFlavor = Object.entries(spending.allocation)
+      .filter(([, amount]) => amount > 0)
+      .map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {
+        amount,
+        pool: game.i18n.localize(poolById[id].labelKey)
+      }));
+    const flavor = [...spendingFlavor, ...equipmentModifier.steps
       .map(step => game.i18n.format(step.explanationKey, step.explanationData))
-      .join("<br>");
+    ].join("<br>");
     return rollUnder({
       actor: this,
       label: item.name,
-      target: spend,
+      target: spending.total,
       modifier: options.modifier + effectModifier + equipmentModifier.value,
       kind,
       flavor,
@@ -638,8 +649,38 @@ export class TrudvangActor extends BaseActor {
   }
 
   async resetCombatPoints() {
-    const baseMax = Math.max(1, Number(this.system.resources.combat.max || 1) - Number(this.system.modifiers.combatMax || 0));
-    return this.update({"system.resources.combat.value": baseMax});
+    const updates = Object.keys(this.system.combatPools || {})
+      .map(id => [`system.combatPools.${id}.spent`, 0]);
+    return this.update(Object.fromEntries(updates));
+  }
+
+  async allocateCombatActionPoints() {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    const action = await combatActionTypeDialog();
+    if (!action) return null;
+    const poolResolution = resolveCombatPools({actor: this, context: {action}});
+    const options = await combatPointDialog({
+      title: game.i18n.localize("TRUDVANG.Dialog.CombatActionSpendingTitle"),
+      pools: poolResolution.eligible,
+      buttonLabelKey: "TRUDVANG.Action.SpendCombat",
+      showModifier: false,
+      totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
+    });
+    if (!options) return null;
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    return spending;
+  }
+
+  async spendCombatPoints(allocation = {}) {
+    const updates = {};
+    for (const [id, amount] of Object.entries(allocation)) {
+      if (!Object.hasOwn(this.system.combatPools || {}, id) || Number(amount) <= 0) continue;
+      const stored = Number(this.system.combatPools?.[id]?.spent || 0);
+      updates[`system.combatPools.${id}.spent`] = stored + Number(amount);
+    }
+    if (Object.keys(updates).length) return this.update(updates);
+    return this;
   }
 
   async advanceSkill(skillKey) {

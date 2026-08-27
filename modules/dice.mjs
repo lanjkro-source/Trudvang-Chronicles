@@ -304,3 +304,81 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
     rejectClose: false
   });
 }
+
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints"}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const rows = pools.map(pool => {
+    const amount = Number(defaultAllocation[pool.id] || 0);
+    return `<div class="form-group combat-pool-allocation">
+      <label>${escapeHtml(game.i18n.localize(pool.labelKey))} <small>${pool.current}/${pool.max}</small></label>
+      <input data-pool-id="${escapeHtml(pool.id)}" type="number" min="0" max="${pool.current}" step="1" value="${amount}">
+    </div>`;
+  }).join("");
+  const initialTotal = Object.values(defaultAllocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
+  const content = `<div class="trudvang roll-dialog combat-pool-dialog">
+    ${rows}
+    <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
+    ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
+  </div>`;
+
+  class CombatPointDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const total = Array.from(root.querySelectorAll("[data-pool-id]"))
+          .reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
+        const output = root.querySelector("[data-combat-total]");
+        if (output) output.textContent = String(total);
+      };
+      root.querySelectorAll("[data-pool-id]").forEach(input => input.addEventListener("input", refresh));
+      refresh();
+    }
+  }
+
+  return CombatPointDialog.wait({
+    window: {title},
+    content,
+    buttons: [
+      {
+        action: "roll",
+        icon: "fas fa-dice-d20",
+        label: game.i18n.localize(buttonLabelKey),
+        default: true,
+        callback: (event, button, dialog) => {
+          const root = button.form ?? dialog.element;
+          return {
+            modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
+            allocation: Object.fromEntries(Array.from(root.querySelectorAll("[data-pool-id]"))
+              .map(input => [input.dataset.poolId, Number(input.value || 0)]))
+          };
+        }
+      },
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
+export async function combatActionTypeDialog() {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const content = `<div class="trudvang roll-dialog"><div class="form-group">
+    <label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatActionType"))}</label>
+    <select name="actionType">
+      <option value="combatAction">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Positioning"))}</option>
+      <option value="brawling">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Brawling"))}</option>
+      <option value="wrestling">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Wrestling"))}</option>
+    </select>
+  </div></div>`;
+  return DialogClass.wait({
+    window: {title: game.i18n.localize("TRUDVANG.Dialog.CombatActionSpendingTitle")},
+    content,
+    buttons: [
+      {action: "continue", label: game.i18n.localize("TRUDVANG.Action.Continue"), default: true, callback: (event, button, dialog) => (button.form ?? dialog.element).querySelector("[name=actionType]")?.value || "combatAction"},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}

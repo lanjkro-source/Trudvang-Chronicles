@@ -3,7 +3,7 @@ import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 
-const CONTENT_VERSION = 16;
+const CONTENT_VERSION = 17;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -128,6 +128,7 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     if (existing) {
       const update = presentationUpdate(payload, key);
       update.folder = payload.folder;
+      if (payload.system?.combatSpecialty && !existing.system?.combatSpecialty) update["system.combatSpecialty"] = payload.system.combatSpecialty;
       // Leave player-renamed copies alone apart from artwork and wording refresh.
       if (renamedOrCustom(existing, translations)) delete update.name;
       await existing.update(update);
@@ -493,6 +494,20 @@ export async function importStarterContent({force = false} = {}) {
         const changes = abilityTextChanges(item);
         return changes ? {_id: item.id, ...changes} : null;
       }).filter(Boolean);
+      if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+    }
+
+    // Structural classification added with linked Combat Point pools. Only canonical
+    // starter weapons are repaired automatically; custom ranged weapons remain a GM choice.
+    const starterWeaponPools = new Map([
+      ["TRUDVANG.Content.Item.HuntingBow", "bowsSlings"],
+      ["TRUDVANG.Content.Item.Longbow", "bowsSlings"],
+      ["TRUDVANG.Content.Item.Crossbow", "crossbow"]
+    ]);
+    for (const actor of game.actors) {
+      const updates = actor.items.filter(item => item.type === "weapon" && !item.system.combatSpecialty)
+        .map(item => ({_id: item.id, "system.combatSpecialty": starterWeaponPools.get(flagOf(item))}))
+        .filter(update => update["system.combatSpecialty"]);
       if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
     }
 

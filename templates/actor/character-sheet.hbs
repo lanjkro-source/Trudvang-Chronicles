@@ -22,11 +22,15 @@
 
   <section class="resource-bar">
     <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
-    <label class="resource"><span>{{localize "TRUDVANG.Resource.Combat"}}</span><span><input name="system.resources.combat.value" type="number" value="{{system.resources.combat.value}}"> / {{system.resources.combat.max}}</span><button type="button" data-action="reset-combat" title="{{localize 'TRUDVANG.Action.ResetCombat'}}"><i class="fas fa-rotate"></i></button></label>
+    <label class="resource"><span>{{localize "TRUDVANG.CombatPool.Free"}}</span><span><strong>{{freeCombatPool.current}}</strong>&nbsp;/&nbsp;{{freeCombatPool.max}}</span><button type="button" data-action="reset-combat" title="{{localize 'TRUDVANG.Action.ResetCombat'}}"><i class="fas fa-rotate"></i></button></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}}</span></label>
     <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
+  </section>
+  <section class="combat-pool-bar" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">
+    {{#each combatPools as |pool|}}<span class="combat-pool" title="{{pool.sourceTitle}}"><strong>{{pool.label}}</strong> {{pool.current}}/{{pool.max}}</span>{{/each}}
+    <button type="button" class="combat-pool-spend" data-action="spend-combat" title="{{localize 'TRUDVANG.Action.SpendCombat'}}"><i class="fas fa-minus-circle"></i> {{localize "TRUDVANG.Action.SpendCombat"}}</button>
   </section>
 
   <nav class="sheet-tabs tabs" data-group="primary">
