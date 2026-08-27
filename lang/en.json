@@ -542,6 +542,10 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
+        "ShieldHandPenalty": "Shield hand: {amount} SV.",
+        "BodyControlShieldHand": "Body Control level {level}: +{amount} SV with the shield hand.",
+        "AmbidexterityShieldHand": "Ambidexterity level {level}: +{amount} SV with the shield hand.",
+        "ShieldBearerShieldHand": "Shield Bearer level {level}: cancels the remaining shield-hand penalty.",
         "IntrinsicDamageBonus": "Item damage modifier: {amount}.",
         "MinimumDamage": "The negative modifier cannot reduce a successful attack below 1 damage.",
         "IgnoredCondition": "The modifier's conditions are not met.",

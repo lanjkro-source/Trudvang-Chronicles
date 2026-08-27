@@ -3,11 +3,37 @@ import assert from "node:assert/strict";
 
 import {
   parseSimpleDamageFormula,
+  resolveCombatActionModifier,
   resolveDamage,
   resolveEquipment,
   resolveNumericEquipmentStat,
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
+
+function actorWithKnowledge(levels = {}) {
+  const items = Object.entries(levels).map(([catalogId, level]) => ({
+    uuid: `Actor.actor-id.Item.${catalogId}`,
+    name: catalogId,
+    system: {catalogId, level}
+  }));
+  return {
+    id: "actor-id",
+    uuid: "Actor.actor-id",
+    name: "Test wearer",
+    items,
+    findKnowledgeItem: id => items.find(item => item.system.catalogId === id) ?? null
+  };
+}
+
+function shield() {
+  return {
+    id: "shield-id",
+    uuid: "Actor.actor-id.Item.shield-id",
+    name: "Test shield",
+    type: "shield",
+    system: {weaponActions: 2, attackValue: 5, equipped: true}
+  };
+}
 
 function weapon({category = "twoHanded", weaponActions = 2, equipped = false} = {}) {
   return {
@@ -191,4 +217,60 @@ test("damage effects are ordered after the wearer's Strength", () => {
 test("the standard damage parser accepts signed fixed terms and rejects arbitrary formulas", () => {
   assert.deepEqual(parseSimpleDamageFormula("1d10 - 2"), {formula: "1d10-2", dice: 1, faces: 10, modifier: -2});
   assert.equal(parseSimpleDamageFormula("max(1, 1d10)"), null);
+});
+
+test("a shield-hand action has a traceable -15 SV penalty", () => {
+  const result = resolveCombatActionModifier({item: shield()});
+  assert.equal(result.base, 0);
+  assert.equal(result.value, -15);
+  assert.equal(result.steps[0].id, "shield-hand-penalty");
+  assert.equal(result.steps[0].rule.printedPage, 318);
+});
+
+test("Body Control and Ambidexterity reduce the shield-hand penalty", () => {
+  const result = resolveCombatActionModifier({
+    item: shield(),
+    actor: actorWithKnowledge({bodyControl: 2, ambidexterity: 3})
+  });
+  assert.equal(result.value, -7);
+  assert.deepEqual(result.steps.map(step => [step.id, step.before, step.after]), [
+    ["shield-hand-penalty", 0, -15],
+    ["body-control-shield-hand", -15, -13],
+    ["ambidexterity-shield-hand", -13, -7]
+  ]);
+});
+
+test("Shield Bearer level 1 cancels the penalty when using a shield", () => {
+  const result = resolveCombatActionModifier({
+    item: shield(),
+    actor: actorWithKnowledge({bodyControl: 2, ambidexterity: 3, shieldBearer: 1})
+  });
+  assert.equal(result.value, 0);
+  assert.equal(result.steps.at(-1).id, "shield-bearer-shield-hand");
+  assert.equal(result.steps.at(-1).before, -7);
+  assert.equal(result.steps.at(-1).after, 0);
+});
+
+test("Shield Bearer does not cancel the penalty for an off-hand weapon", () => {
+  const item = weapon({category: "oneHandedLight"});
+  const result = resolveCombatActionModifier({
+    item,
+    actor: actorWithKnowledge({bodyControl: 2, ambidexterity: 3, shieldBearer: 5}),
+    context: {hand: "offHand"}
+  });
+  assert.equal(result.value, -7);
+  assert.equal(result.steps.some(step => step.id === "shield-bearer-shield-hand"), false);
+});
+
+test("a weapon in the weapon hand has no contextual action modifier", () => {
+  const result = resolveCombatActionModifier({item: weapon(), actor: actorWithKnowledge({})});
+  assert.equal(result.value, 0);
+  assert.deepEqual(result.steps, []);
+});
+
+test("natural weapons are exempt even when an off-hand context is supplied", () => {
+  const item = weapon({category: "natural"});
+  const result = resolveCombatActionModifier({item, context: {hand: "offHand"}});
+  assert.equal(result.value, 0);
+  assert.deepEqual(result.steps, []);
 });

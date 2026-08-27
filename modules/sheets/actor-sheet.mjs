@@ -3,7 +3,7 @@ import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
-import { resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
+import { resolveCombatActionModifier, resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -518,6 +518,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const vpLab = isEN ? "PV" : "VP";
     const viLab = isEN ? "BV" : "VI";
     const cpLab = "CP";
+    const svLab = isEN ? "SV" : "VC";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
     if (item.type === "weapon") {
       const AA = resolveWeaponActions({item, actor: this.actor}).value;
@@ -529,17 +530,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "shield") {
-      let AA = Number(item.system.weaponActions || 0);
-      let MI = Number(item.system.initiativeModifier || 0);
+      const AA = resolveWeaponActions({item, actor: this.actor}).value;
+      const MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
-      let CP = Number(item.system.attackValue || 0);
-      const sb = this._getSpecialtyLevel("shieldBearer");
-      const bc = this._getSpecialtyLevel("bodyControl");
-      const ad = this._getSpecialtyLevel("ambidexterity");
-      if (sb < 1) CP += ad*2 + bc - 15;
+      const CP = Number(item.system.attackValue || 0);
+      const actionModifier = resolveCombatActionModifier({item, actor: this.actor});
+      const explanation = actionModifier.steps
+        .map(step => game.i18n.format(step.explanationKey, step.explanationData))
+        .join(" ");
       const dmg = this._getItemDamageText(item);
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
+      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${svLab}:${signed(actionModifier.value)} ${dmg} — ${explanation}`;
     }
     if (item.type === "armor") {
       let HE = Number(item.system.heft ?? 0);

@@ -199,6 +199,72 @@ function strengthDamageModifiers(item, actor, context) {
   }];
 }
 
+function shieldHandActionModifiers(item, actor, context) {
+  const usesShieldHand = item?.system?.category !== "natural" && (
+    item?.type === "shield" || ["shield", "offHand"].includes(context.hand)
+  );
+  if (!usesShieldHand) return [];
+
+  const bodyControl = specialtyItem(actor, "bodyControl");
+  const bodyControlLevel = finiteNumber(bodyControl?.system?.level, 0);
+  const ambidexterity = specialtyItem(actor, "ambidexterity");
+  const ambidexterityLevel = finiteNumber(ambidexterity?.system?.level, 0);
+  const shieldBearer = specialtyItem(actor, "shieldBearer");
+  const shieldBearerLevel = finiteNumber(shieldBearer?.system?.level, 0);
+  const modifiers = [{
+    id: "shield-hand-penalty",
+    target: "combatActionModifier",
+    operation: "subtract",
+    amount: 15,
+    phase: "item",
+    source: {kind: "rule", id: "shieldHand"},
+    explanationKey: "TRUDVANG.Calculation.Equipment.ShieldHandPenalty",
+    explanationData: {amount: -15},
+    rule: {book: "coreRules", printedPage: 318, englishBook: "gameMastersGuide", englishPrintedPage: 44}
+  }];
+
+  if (bodyControlLevel > 0) modifiers.push({
+    id: "body-control-shield-hand",
+    target: "combatActionModifier",
+    operation: "add",
+    amount: bodyControlLevel,
+    phase: "wearer",
+    priority: 10,
+    source: {kind: "discipline", id: "bodyControl", uuid: bodyControl?.uuid, name: bodyControl?.name, level: bodyControlLevel},
+    explanationKey: "TRUDVANG.Calculation.Equipment.BodyControlShieldHand",
+    explanationData: {level: bodyControlLevel, amount: bodyControlLevel},
+    rule: {book: "coreRules", printedPage: 75, englishBook: "playersHandbook", englishPrintedPage: 47}
+  });
+
+  if (ambidexterityLevel > 0) modifiers.push({
+    id: "ambidexterity-shield-hand",
+    target: "combatActionModifier",
+    operation: "add",
+    amount: ambidexterityLevel * 2,
+    phase: "wearer",
+    priority: 20,
+    source: {kind: "specialty", id: "ambidexterity", uuid: ambidexterity?.uuid, name: ambidexterity?.name, level: ambidexterityLevel},
+    explanationKey: "TRUDVANG.Calculation.Equipment.AmbidexterityShieldHand",
+    explanationData: {level: ambidexterityLevel, amount: ambidexterityLevel * 2},
+    rule: {book: "coreRules", printedPage: 75, englishBook: "playersHandbook", englishPrintedPage: 47}
+  });
+
+  if (item?.type === "shield" && shieldBearerLevel > 0) modifiers.push({
+    id: "shield-bearer-shield-hand",
+    target: "combatActionModifier",
+    operation: "set",
+    amount: 0,
+    phase: "wearer",
+    priority: 30,
+    source: {kind: "specialty", id: "shieldBearer", uuid: shieldBearer?.uuid, name: shieldBearer?.name, level: shieldBearerLevel},
+    explanationKey: "TRUDVANG.Calculation.Equipment.ShieldBearerShieldHand",
+    explanationData: {level: shieldBearerLevel},
+    rule: {book: "coreRules", printedPage: 82, englishBook: "playersHandbook", englishPrintedPage: 59}
+  });
+
+  return modifiers;
+}
+
 /** Resolve the first implemented contextual characteristic: weapon actions (AA/WA). */
 export function resolveWeaponActions({item, actor = null, modifiers = []} = {}) {
   return resolveNumericEquipmentStat({
@@ -233,6 +299,17 @@ export function resolveDamage({item, actor = null, context = {}, modifiers = []}
   };
 }
 
+/** Resolve the SV modifier for an action performed with the shield hand. */
+export function resolveCombatActionModifier({item, actor = null, context = {}, modifiers = []} = {}) {
+  return resolveNumericEquipmentStat({
+    key: "combatActionModifier",
+    base: 0,
+    modifiers: [...shieldHandActionModifiers(item, actor, context), ...modifiers],
+    maximum: 0,
+    integer: true
+  });
+}
+
 /**
  * Public resolver contract. Further equipment characteristics and wearer impacts
  * will be added to these maps without changing callers or persisted Item data.
@@ -242,6 +319,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
   if (["weapon", "shield"].includes(item?.type)) {
     characteristics.weaponActions = resolveWeaponActions({item, actor, modifiers});
     characteristics.damage = resolveDamage({item, actor, context, modifiers});
+    characteristics.combatActionModifier = resolveCombatActionModifier({item, actor, context, modifiers});
   }
   return {
     version: EQUIPMENT_RESOLUTION_VERSION,

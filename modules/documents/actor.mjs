@@ -4,6 +4,7 @@ import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
+import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 
@@ -562,7 +563,19 @@ export class TrudvangActor extends BaseActor {
       await this.update({"system.resources.combat.value": Math.max(0, stored - spend)});
     }
     const effectModifier = this.getRollModifier({kind, movement: true});
-    return rollUnder({actor: this, label: item.name, target: spend, modifier: options.modifier + effectModifier, kind, item});
+    const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind}});
+    const flavor = equipmentModifier.steps
+      .map(step => game.i18n.format(step.explanationKey, step.explanationData))
+      .join("<br>");
+    return rollUnder({
+      actor: this,
+      label: item.name,
+      target: spend,
+      modifier: options.modifier + effectModifier + equipmentModifier.value,
+      kind,
+      flavor,
+      item
+    });
   }
 
   async rollSpell(item) {

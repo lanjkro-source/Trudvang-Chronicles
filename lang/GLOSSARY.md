@@ -647,6 +647,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
 | `TRUDVANG.Calculation.Equipment.StrengthDamage` | Strength: {amount} melee damage. | Force : {amount} aux dégâts de corps à corps. |
+| `TRUDVANG.Calculation.Equipment.ShieldHandPenalty` | Shield hand: {amount} SV. | Main de bouclier : {amount} à la VC. |
+| `TRUDVANG.Calculation.Equipment.BodyControlShieldHand` | Body Control level {level}: +{amount} SV with the shield hand. | Contrôle corporel niveau {level} : +{amount} à la VC de la main de bouclier. |
+| `TRUDVANG.Calculation.Equipment.AmbidexterityShieldHand` | Ambidexterity level {level}: +{amount} SV with the shield hand. | Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier. |
+| `TRUDVANG.Calculation.Equipment.ShieldBearerShieldHand` | Shield Bearer level {level}: cancels the remaining shield-hand penalty. | Porteur de bouclier niveau {level} : annule le malus restant de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus` | Item damage modifier: {amount}. | Modificateur de dégâts propre à l’objet : {amount}. |
 | `TRUDVANG.Calculation.Equipment.MinimumDamage` | The negative modifier cannot reduce a successful attack below 1 damage. | Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât. |
 | `TRUDVANG.Calculation.Equipment.IgnoredCondition` | The modifier's conditions are not met. | Les conditions de la modification ne sont pas remplies. |

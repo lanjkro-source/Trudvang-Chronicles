@@ -542,6 +542,10 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
+        "ShieldHandPenalty": "Main de bouclier : {amount} à la VC.",
+        "BodyControlShieldHand": "Contrôle corporel niveau {level} : +{amount} à la VC de la main de bouclier.",
+        "AmbidexterityShieldHand": "Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier.",
+        "ShieldBearerShieldHand": "Porteur de bouclier niveau {level} : annule le malus restant de la main de bouclier.",
         "IntrinsicDamageBonus": "Modificateur de dégâts propre à l’objet : {amount}.",
         "MinimumDamage": "Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât.",
         "IgnoredCondition": "Les conditions de la modification ne sont pas remplies.",

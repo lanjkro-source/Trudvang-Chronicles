@@ -147,6 +147,7 @@ const contentText = readFileSync(join(root, "data/starter-content.json"), "utf8"
 const modelText = readFileSync(join(root, "modules/data-models.mjs"), "utf8");
 const characterSheetText = readFileSync(join(root, "templates/actor/character-sheet.hbs"), "utf8");
 const actorSheetText = readFileSync(join(root, "modules/sheets/actor-sheet.mjs"), "utf8");
+const actorDocumentText = readFileSync(join(root, "modules/documents/actor.mjs"), "utf8");
 const diceText = readFileSync(join(root, "modules/dice.mjs"), "utf8");
 if (!characterSheetText.includes('data-action="adjust-trait"') || characterSheetText.includes("lookup ../system.traits key")) {
   failures.push("Character traits must use the validated creation controls and the root sheet data.");
@@ -156,6 +157,9 @@ if (!actorSheetText.includes("resolveWeaponActions({item, actor: this.actor}).va
 }
 if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !diceText.includes("resolveDamage({actor, item})")) {
   failures.push("Damage display and rolls must use the shared equipment resolver.");
+}
+if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.actor})") || !actorDocumentText.includes("resolveCombatActionModifier({item, actor: this, context: {usage: kind}})")) {
+  failures.push("Shield-hand display and rolls must use the shared equipment resolver.");
 }
 for (const [documentName, types] of Object.entries(system.documentTypes || {})) {
   const exportedMap = documentName === "Actor" ? "ACTOR_DATA_MODELS" : documentName === "Item" ? "ITEM_DATA_MODELS" : null;
