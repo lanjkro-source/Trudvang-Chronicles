@@ -3,6 +3,7 @@ import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
+import { resolveWeaponActions } from "../rules/equipment-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -521,23 +522,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
     const strength = this.actor.getTraitValue("strength");
     if (item.type === "weapon") {
-      let AA = Number(item.system.weaponActions || 0);
-      const catBonusMap = {
-        oneHandedLight: "oneHandedLightWeapons",
-        oneHandedHeavy: "oneHandedHeavyWeapons",
-        twoHanded: "twoHandedWeapons",
-        ranged: "bowsSlings",
-        natural: "brawling"
-      };
-      const specId = catBonusMap[item.system.category];
-      if (specId) {
-        if (this._getSpecialtyLevel(specId) >= 5) AA += 2;
-        else if (this._getSpecialtyLevel(specId) >= 3) AA += 1;
-      }
-      if (item.system.category === "ranged") {
-        const cross = this._getSpecialtyLevel("crossbow");
-        if (cross >= 3) AA = Math.max(AA, Number(item.system.weaponActions || 0) + 1);
-      }
+      const AA = resolveWeaponActions({item, actor: this.actor}).value;
       let MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
