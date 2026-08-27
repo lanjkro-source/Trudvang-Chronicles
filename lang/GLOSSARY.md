@@ -646,6 +646,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
+| `TRUDVANG.Calculation.Equipment.StrengthDamage` | Strength: {amount} melee damage. | Force : {amount} aux dégâts de corps à corps. |
+| `TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus` | Item damage modifier: {amount}. | Modificateur de dégâts propre à l’objet : {amount}. |
+| `TRUDVANG.Calculation.Equipment.MinimumDamage` | The negative modifier cannot reduce a successful attack below 1 damage. | Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât. |
 | `TRUDVANG.Calculation.Equipment.IgnoredCondition` | The modifier's conditions are not met. | Les conditions de la modification ne sont pas remplies. |
 | `TRUDVANG.Calculation.Equipment.UnsupportedOperation` | The modifier uses an unsupported operation. | La modification utilise une opération non prise en charge. |
 | `TRUDVANG.Calculation.Equipment.InvalidAmount` | The modifier does not contain a valid numeric value. | La modification ne contient pas de valeur numérique valide. |

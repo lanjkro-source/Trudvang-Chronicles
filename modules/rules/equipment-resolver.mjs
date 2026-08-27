@@ -168,6 +168,37 @@ function twoHandedWeaponActionModifiers(item, actor) {
   }));
 }
 
+/** Parse the standard Trudvang damage notation without evaluating a roll. */
+export function parseSimpleDamageFormula(value) {
+  const formula = String(value || "1d10").replace(/\s/g, "");
+  const match = formula.match(/^(\d+)d(\d+)([+-]\d+)?$/i);
+  if (!match) return null;
+  return {
+    formula,
+    dice: Number(match[1]),
+    faces: Number(match[2]),
+    modifier: Number(match[3] || 0)
+  };
+}
+
+function strengthDamageModifiers(item, actor, context) {
+  const rangedUsage = context.usage === "ranged" || (!context.usage && item?.system?.category === "ranged");
+  if (!actor || rangedUsage || !item?.system?.strengthApplies) return [];
+  const value = finiteNumber(actor.getTraitValue?.("strength") ?? actor.system?.traits?.strength, 0);
+  return [{
+    id: "strength-damage",
+    target: "damageModifier",
+    operation: "add",
+    amount: value,
+    phase: "wearer",
+    priority: 0,
+    source: {kind: "trait", id: "strength", level: value},
+    explanationKey: "TRUDVANG.Calculation.Equipment.StrengthDamage",
+    explanationData: {amount: value},
+    rule: {book: "coreRules", printedPage: 16, englishBook: "playersHandbook", englishPrintedPage: 16}
+  }];
+}
+
 /** Resolve the first implemented contextual characteristic: weapon actions (AA/WA). */
 export function resolveWeaponActions({item, actor = null, modifiers = []} = {}) {
   return resolveNumericEquipmentStat({
@@ -179,6 +210,29 @@ export function resolveWeaponActions({item, actor = null, modifiers = []} = {}) 
   });
 }
 
+/** Resolve an item's intrinsic damage notation and its contextual fixed modifier. */
+export function resolveDamage({item, actor = null, context = {}, modifiers = []} = {}) {
+  const formula = String(item?.system?.damage || "1d10").replace(/\s/g, "");
+  return {
+    formula,
+    parsed: parseSimpleDamageFormula(formula),
+    openRoll: resolveNumericEquipmentStat({
+      key: "openRoll",
+      base: item?.system?.openRoll,
+      modifiers,
+      minimum: 0,
+      maximum: 10,
+      integer: true
+    }),
+    modifier: resolveNumericEquipmentStat({
+      key: "damageModifier",
+      base: item?.system?.damageBonus,
+      modifiers: [...strengthDamageModifiers(item, actor, context), ...modifiers]
+    }),
+    minimumTotal: 1
+  };
+}
+
 /**
  * Public resolver contract. Further equipment characteristics and wearer impacts
  * will be added to these maps without changing callers or persisted Item data.
@@ -187,6 +241,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
   const characteristics = {};
   if (["weapon", "shield"].includes(item?.type)) {
     characteristics.weaponActions = resolveWeaponActions({item, actor, modifiers});
+    characteristics.damage = resolveDamage({item, actor, context, modifiers});
   }
   return {
     version: EQUIPMENT_RESOLUTION_VERSION,

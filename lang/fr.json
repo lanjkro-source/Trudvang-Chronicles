@@ -541,6 +541,9 @@
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
+        "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
+        "IntrinsicDamageBonus": "Modificateur de dégâts propre à l’objet : {amount}.",
+        "MinimumDamage": "Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât.",
         "IgnoredCondition": "Les conditions de la modification ne sont pas remplies.",
         "UnsupportedOperation": "La modification utilise une opération non prise en charge.",
         "InvalidAmount": "La modification ne contient pas de valeur numérique valide.",

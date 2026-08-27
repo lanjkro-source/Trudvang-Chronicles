@@ -3,7 +3,7 @@ import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
-import { resolveWeaponActions } from "../rules/equipment-resolver.mjs";
+import { resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -518,18 +518,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const vpLab = isEN ? "PV" : "VP";
     const viLab = isEN ? "BV" : "VI";
     const cpLab = "CP";
-    const openShort = isEN ? "O" : "JO";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
-    const strength = this.actor.getTraitValue("strength");
     if (item.type === "weapon") {
       const AA = resolveWeaponActions({item, actor: this.actor}).value;
       let MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       let CP = Number(item.system.attackValue || 0);
-      const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
-      const open = Number(item.system.openRoll ?? 10);
-      const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
+      const dmg = this._getItemDamageText(item);
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "shield") {
@@ -542,9 +538,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const bc = this._getSpecialtyLevel("bodyControl");
       const ad = this._getSpecialtyLevel("ambidexterity");
       if (sb < 1) CP += ad*2 + bc - 15;
-      const open = Number(item.system.openRoll ?? 0);
-      const bonus = Number(item.system.damageBonus || 0);
-      const dmg = `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
+      const dmg = this._getItemDamageText(item);
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}`;
     }
     if (item.type === "armor") {
@@ -575,16 +569,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const isEN = game.i18n.lang === "en";
     const openShort = isEN ? "O" : "JO";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
-    const strength = this.actor.getTraitValue("strength");
-    if (item.type === "weapon") {
-      const bonus = Number(item.system.damageBonus || 0) + (item.system.strengthApplies ? strength : 0);
-      const open = Number(item.system.openRoll ?? 10);
-      return `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
-    }
-    if (item.type === "shield") {
-      const open = Number(item.system.openRoll ?? 0);
-      const bonus = Number(item.system.damageBonus || 0);
-      return `${item.system.damage || "1d10"}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
+    if (["weapon", "shield"].includes(item.type)) {
+      const damage = resolveDamage({item, actor: this.actor});
+      const open = damage.openRoll.value;
+      const bonus = damage.modifier.value;
+      return `${damage.formula}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
     }
     return "";
   }

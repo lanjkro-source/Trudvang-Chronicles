@@ -1,4 +1,5 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
+import { resolveDamage } from "./rules/equipment-resolver.mjs";
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -152,29 +153,38 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
 }
 
 export async function rollDamage({actor, item}) {
-  const formula = String(item.system.damage || "1d10").replace(/\s/g, "");
-  const match = formula.match(/^(\d+)d(\d+)$/i);
-  const strength = item.system.strengthApplies
-    ? Number(actor.getTraitValue?.("strength") ?? actor.system.traits?.strength ?? 0)
-    : 0;
-  const damageBonus = Number(item.system.damageBonus || 0);
+  const damage = resolveDamage({actor, item});
+  const formula = damage.formula;
+  const parsed = damage.parsed;
   let total;
+  let unclampedTotal;
   let detail;
   let rolls = [];
-  if (match) {
-    const dice = Number(match[1]);
-    const faces = Number(match[2]);
-    const fixed = damageBonus + strength;
-    const exploded = await openDice({dice, faces, threshold: Number(item.system.openRoll || 0), modifier: fixed});
-    total = exploded.total;
+  if (parsed) {
+    const fixed = parsed.modifier + damage.modifier.value;
+    const exploded = await openDice({dice: parsed.dice, faces: parsed.faces, threshold: damage.openRoll.value, modifier: fixed});
+    unclampedTotal = exploded.total;
+    total = Math.max(damage.minimumTotal, unclampedTotal);
     detail = exploded.rolls.join(" + ");
+    if (fixed > 0) detail += ` + ${fixed}`;
+    else if (fixed < 0) detail += ` - ${Math.abs(fixed)}`;
     rolls = exploded.diceRolls; // Pass the open-ended Roll objects so Dice So Nice animates them too.
   } else {
-    const bonus = damageBonus ? ` + ${damageBonus}` : "";
-    const roll = await evaluate(`(${formula}) + ${strength}${bonus}`);
-    total = roll.total;
+    const roll = await evaluate(`(${formula}) + (${damage.modifier.value})`);
+    unclampedTotal = Number(roll.total);
+    total = Math.max(damage.minimumTotal, unclampedTotal);
     detail = roll.formula;
     rolls = [roll];
+  }
+  const modifierDetails = [];
+  const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
+  const intrinsicModifier = Number(parsed?.modifier || 0) + damage.modifier.base;
+  if (intrinsicModifier) modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus", {amount: signed(intrinsicModifier)}));
+  for (const step of damage.modifier.steps) {
+    if (step.amount && step.explanationKey) modifierDetails.push(game.i18n.format(step.explanationKey, {...step.explanationData, amount: signed(step.amount)}));
+  }
+  if (total !== unclampedTotal) {
+    modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
   }
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
@@ -183,8 +193,8 @@ export async function rollDamage({actor, item}) {
     itemImg: item.img,
     total,
     detail,
-    openRoll: Number(item.system.openRoll || 0),
-    strength
+    openRoll: damage.openRoll.value,
+    modifierDetails
   });
   await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls});
   return total;
