@@ -538,7 +538,14 @@
       "Discipline": "VC de la compétence {skill} + discipline {discipline} = VC {total}",
       "Specialty": "VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total}",
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
-      "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires"
+      "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
+      "Equipment": {
+        "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
+        "IgnoredCondition": "Les conditions de la modification ne sont pas remplies.",
+        "UnsupportedOperation": "La modification utilise une opération non prise en charge.",
+        "InvalidAmount": "La modification ne contient pas de valeur numérique valide.",
+        "Constraint": "La valeur a été ajustée aux limites autorisées pour cette caractéristique."
+      }
     },
     "Religion": {
       "Gerbanis": "Gerbanis",

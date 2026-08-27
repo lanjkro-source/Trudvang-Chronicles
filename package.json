@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "node tools/validate-system.mjs",
+    "test": "node --test tests/equipment-resolver.test.mjs",
+    "check": "npm test && node tools/validate-system.mjs",
     "build:packs": "node tools/build-packs.mjs",
     "build:packs:sources": "node tools/build-packs.mjs --sources-only",
     "package": "node tools/build-packs.mjs && node tools/package-system.mjs",

@@ -538,7 +538,14 @@
       "Discipline": "Skill SV {skill} + Discipline {discipline} = SV {total}",
       "Specialty": "Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total}",
       "MagicMethod": "Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier",
-      "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points"
+      "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points",
+      "Equipment": {
+        "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
+        "IgnoredCondition": "The modifier's conditions are not met.",
+        "UnsupportedOperation": "The modifier uses an unsupported operation.",
+        "InvalidAmount": "The modifier does not contain a valid numeric value.",
+        "Constraint": "The value was adjusted to the characteristic's permitted range."
+      }
     },
     "Religion": {
       "Gerbanis": "Gerbanis",

@@ -641,6 +641,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
 
+## `TRUDVANG.Calculation.Equipment`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
+| `TRUDVANG.Calculation.Equipment.IgnoredCondition` | The modifier's conditions are not met. | Les conditions de la modification ne sont pas remplies. |
+| `TRUDVANG.Calculation.Equipment.UnsupportedOperation` | The modifier uses an unsupported operation. | La modification utilise une opération non prise en charge. |
+| `TRUDVANG.Calculation.Equipment.InvalidAmount` | The modifier does not contain a valid numeric value. | La modification ne contient pas de valeur numérique valide. |
+| `TRUDVANG.Calculation.Equipment.Constraint` | The value was adjusted to the characteristic's permitted range. | La valeur a été ajustée aux limites autorisées pour cette caractéristique. |
+
 ## `TRUDVANG.Religion`
 
 | Clé | English | Français |
