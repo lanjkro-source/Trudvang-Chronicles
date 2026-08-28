@@ -98,7 +98,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const allowedLanguageIds = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
-    context.combatPools = resolveCombatPools({actor: this.actor}).active.map(pool => ({
+    context.isInCombat = this.actor.isInActiveCombat;
+    context.combatPools = resolveCombatPools({actor: this.actor, context: {ignoreSpent: !context.isInCombat}}).active.map(pool => ({
       ...pool,
       label: game.i18n.localize(pool.labelKey),
       sourceTitle: pool.source.name

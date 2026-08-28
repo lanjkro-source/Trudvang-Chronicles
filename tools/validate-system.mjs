@@ -162,7 +162,7 @@ if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !dic
 if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.actor})") || !actorDocumentText.includes("resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}})")) {
   failures.push("Shield-hand display and rolls must use the shared equipment resolver.");
 }
-if (!modelText.includes("combatPools: combatPoolsSchema()") || !actorDocumentText.includes("resolveCombatPools({actor: this, item, context: {action: kind}})")) {
+if (!modelText.includes("combatPools: combatPoolsSchema()") || !actorDocumentText.includes("resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}})")) {
   failures.push("Actors and weapon actions must use distinct linked Combat Point pools.");
 }
 if (!combatPoolResolverText.includes('id === "shieldParry"') || !combatPoolResolverText.includes('id === specialtyPool')) {

@@ -5,12 +5,16 @@ import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
-import { normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
+import { actorParticipatesInCombat, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
 
 export class TrudvangActor extends BaseActor {
+  get isInActiveCombat() {
+    return actorParticipatesInCombat(this, game.combat);
+  }
+
   prepareDerivedData() {
     super.prepareDerivedData();
     const system = this.system;
@@ -599,7 +603,8 @@ export class TrudvangActor extends BaseActor {
 
   async rollWrestlingAction(kind = "grapple") {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
-    const poolResolution = resolveCombatPools({actor: this, context: {action: kind}});
+    const inCombat = this.isInActiveCombat;
+    const poolResolution = resolveCombatPools({actor: this, context: {action: kind, ignoreSpent: !inCombat}});
     const options = await combatPointDialog({
       title: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"),
       pools: poolResolution.eligible,
@@ -607,14 +612,14 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
-    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation);
     const strength = this.getTraitValue("strength");
     const target = Math.floor(spending.total / 2);
     const actionModifier = this.getRollModifier({kind: "attack", movement: true}) - Number(this.system.armorVCPenalty || 0);
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const flavor = [
       game.i18n.format("TRUDVANG.Calculation.WrestlingCost", {points: spending.total, target, strength}),
-      ...Object.entries(spending.allocation).filter(([, amount]) => amount > 0).map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {amount, pool: game.i18n.localize(poolById[id].labelKey)}))
+      ...(inCombat ? Object.entries(spending.allocation).filter(([, amount]) => amount > 0).map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {amount, pool: game.i18n.localize(poolById[id].labelKey)})) : [])
     ].join("<br>");
     return rollUnder({actor: this, label: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"), target, modifier: strength + actionModifier + Number(options.modifier || 0), kind, flavor});
   }
@@ -633,6 +638,10 @@ export class TrudvangActor extends BaseActor {
         item: item.name,
         conflicts: conflicts.map(conflict => conflict.name).join(", ")
       }));
+    }
+    if (!this.isInActiveCombat) {
+      await item.update({"system.equipped": true});
+      return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DrawnOutsideCombat", {item: item.name}));
     }
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: "drawWeapon"}});
     const cost = 10;
@@ -655,7 +664,8 @@ export class TrudvangActor extends BaseActor {
 
   async rollWeaponAction(item, kind) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
-    const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind}});
+    const inCombat = this.isInActiveCombat;
+    const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}});
     const available = poolResolution.eligibleCurrent;
     const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
     const options = await combatPointDialog({
@@ -665,17 +675,17 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
-    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation);
     const effectModifier = this.getRollModifier({kind, movement: true});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
-    const spendingFlavor = Object.entries(spending.allocation)
+    const spendingFlavor = inCombat ? Object.entries(spending.allocation)
       .filter(([, amount]) => amount > 0)
       .map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {
         amount,
         pool: game.i18n.localize(poolById[id].labelKey)
-      }));
+      })) : [];
     const flavor = [...spendingFlavor, ...equipmentModifier.steps
       .map(step => game.i18n.format(step.explanationKey, step.explanationData))
     ].join("<br>");
@@ -757,6 +767,7 @@ export class TrudvangActor extends BaseActor {
 
   async allocateCombatActionPoints() {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    if (!this.isInActiveCombat) return null;
     const action = await combatActionTypeDialog();
     if (!action) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action}});
@@ -774,6 +785,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async spendCombatPoints(allocation = {}) {
+    if (!this.isInActiveCombat) return this;
     const updates = {};
     for (const [id, amount] of Object.entries(allocation)) {
       if (!Object.hasOwn(this.system.combatPools || {}, id) || Number(amount) <= 0) continue;

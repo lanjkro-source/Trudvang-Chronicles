@@ -760,6 +760,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
+| `TRUDVANG.Notification.DrawnOutsideCombat` | {item} drawn. | {item} dégainé. |
 | `TRUDVANG.Notification.Sheathed` | {item} sheathed for free. | {item} rengainé gratuitement. |
 | `TRUDVANG.Notification.AdvancementConfirmed` | The advancements have been confirmed. | Les améliorations ont été validées. |
 | `TRUDVANG.Notification.AdvancementCancelled` | The advancements were cancelled and {cost} Adventure Points were refunded. | Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés. |

@@ -10,6 +10,7 @@ import {
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
 import {
+  actorParticipatesInCombat,
   categoryForWeaponType,
   normalizeCombatAllocation,
   readiedHandConflicts,
@@ -413,6 +414,26 @@ test("legacy NPC Combat Points remain a single free pool with their current spen
   assert.equal(result.totalMax, 20);
   assert.equal(result.totalCurrent, 7);
   assert.deepEqual(result.active.map(pool => pool.id), ["free"]);
+});
+
+test("combat participation is based on the active encounter's combatants", () => {
+  const actor = {id: "actor-id", uuid: "Actor.actor-id"};
+  assert.equal(actorParticipatesInCombat(actor, null), false);
+  assert.equal(actorParticipatesInCombat(actor, {started: false, combatants: [{actorId: "actor-id"}]}), false);
+  assert.equal(actorParticipatesInCombat(actor, {started: true, combatants: []}), false);
+  assert.equal(actorParticipatesInCombat(actor, {started: true, combatants: [{actorId: "actor-id"}]}), true);
+  assert.equal(actorParticipatesInCombat(actor, {started: true, combatants: [{actor: {id: "other"}}]}), false);
+});
+
+test("out-of-combat pool resolution ignores spending without erasing it", () => {
+  const actor = combatActor({fighter: 2, oneHandedLightWeapons: 2}, {spent: {free: 7, attacksParries: 3, oneHandedLightWeapons: 4}});
+  const item = weapon({category: "oneHandedLight"});
+  const inCombat = resolveCombatPools({actor, item, context: {action: "attack"}});
+  const outsideCombat = resolveCombatPools({actor, item, context: {action: "attack", ignoreSpent: true}});
+  assert.equal(inCombat.eligibleCurrent, 3);
+  assert.equal(outsideCombat.eligibleCurrent, 17);
+  assert.equal(outsideCombat.pools.find(pool => pool.id === "free").spent, 0);
+  assert.equal(actor.system.combatPools.free.spent, 7);
 });
 
 test("manual brawling and wrestling actions expose their own linked pools", () => {

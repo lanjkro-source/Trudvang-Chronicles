@@ -115,15 +115,22 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onSubmit(event, form, formData) {
+    const updateData = foundry.utils.expandObject(formData.object);
     if (this.item.type === "weapon") {
-      const type = foundry.utils.getProperty(formData.object, "system.combatSpecialty");
-      if (type) foundry.utils.setProperty(formData.object, "system.category", categoryForWeaponType(type, this.item.system.category));
+      const type = foundry.utils.getProperty(updateData, "system.combatSpecialty")
+        ?? formData.object["system.combatSpecialty"]
+        ?? formData.get?.("system.combatSpecialty");
+      if (type) foundry.utils.setProperty(updateData, "system.category", categoryForWeaponType(type, this.item.system.category));
+      const hand = foundry.utils.getProperty(updateData, "system.hand")
+        ?? formData.object["system.hand"]
+        ?? formData.get?.("system.hand");
+      if (["weapon", "offHand"].includes(hand)) foundry.utils.setProperty(updateData, "system.hand", hand);
     }
     if (["weapon", "shield"].includes(this.item.type) && this.item.parent?.documentName === "Actor") {
       const candidate = {
         id: this.item.id,
         type: this.item.type,
-        system: {...this.item.system.toObject(), ...(formData.object.system || {})}
+        system: {...this.item.system.toObject(), ...(updateData.system || {})}
       };
       if (candidate.system.equipped) {
         const conflicts = readiedHandConflicts(this.item.parent.items, candidate);
@@ -136,7 +143,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         }
       }
     }
-    await this.document.update(formData.object);
+    await this.document.update(updateData);
   }
 
   static async #onRoll(event, target) {

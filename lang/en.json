@@ -621,6 +621,7 @@
     },
     "Notification": {
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
+      "DrawnOutsideCombat": "{item} drawn.",
       "Sheathed": "{item} sheathed for free.",
       "AdvancementConfirmed": "The advancements have been confirmed.",
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",

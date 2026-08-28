@@ -76,6 +76,15 @@ function sourcePoolData(actor, id) {
   return actor?._source?.system?.combatPools?.[id] ?? actor?.system?.combatPools?.[id] ?? {};
 }
 
+/** Whether the actor currently participates in Foundry's active combat encounter. */
+export function actorParticipatesInCombat(actor, combat) {
+  if (!actor || !combat?.started) return false;
+  return Array.from(combat.combatants || []).some(combatant => combatant.actor === actor
+    || combatant.actor?.uuid === actor.uuid
+    || combatant.actor?.id === actor.id
+    || combatant.actorId === actor.id);
+}
+
 export function weaponCombatSpecialty(item) {
   const type = weaponType(item);
   return type === "natural" ? "" : type;
@@ -167,8 +176,8 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     const definition = DEFINITIONS[id];
     const max = poolMaximum(actor, id);
     const storedSpent = finite(sourcePoolData(actor, id).spent, -1);
-    let spent = Math.max(0, storedSpent);
-    if (id === "free" && actor?.type !== "character" && storedSpent < 0) {
+    let spent = context.ignoreSpent ? 0 : Math.max(0, storedSpent);
+    if (!context.ignoreSpent && id === "free" && actor?.type !== "character" && storedSpent < 0) {
       const legacyValue = finite(actor?._source?.system?.resources?.combat?.value ?? actor?.system?.resources?.combat?.value, max);
       spent = Math.max(0, max - legacyValue);
     }

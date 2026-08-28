@@ -621,6 +621,7 @@
     },
     "Notification": {
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
+      "DrawnOutsideCombat": "{item} dégainé.",
       "Sheathed": "{item} rengainé gratuitement.",
       "AdvancementConfirmed": "Les améliorations ont été validées.",
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",

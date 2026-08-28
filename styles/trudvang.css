@@ -123,8 +123,8 @@
 .trudvang-sheet .knowledge-tree details { margin: 0; }
 .trudvang-sheet .knowledge-tree summary { position: relative; display: block; cursor: pointer; list-style: none; }
 .trudvang-sheet .knowledge-tree summary::-webkit-details-marker { display: none; }
-.trudvang-sheet .knowledge-tree details > summary::before { position: absolute; z-index: 1; top: 8px; left: 4px; content: "\25B8"; color: var(--trudvang-gold); font-size: .72rem; }
-.trudvang-sheet .knowledge-tree details[open] > summary::before { content: "\25BE"; }
+.trudvang-sheet .knowledge-tree details > summary::before { position: absolute; z-index: 1; top: 7px; left: 2px; width: 16px; height: 16px; box-sizing: border-box; content: "\25B6"; color: var(--trudvang-red); border: 1px solid var(--trudvang-gold); border-radius: 50%; background: var(--trudvang-paper-light); font-size: .65rem; font-weight: 900; line-height: 14px; text-align: center; box-shadow: 0 1px 2px rgba(50,30,20,.2); }
+.trudvang-sheet .knowledge-tree details[open] > summary::before { content: "\25BC"; }
 .trudvang-sheet .knowledge-tree .discipline-branch > summary::before { left: 20px; }
 .trudvang-sheet .skill-row.tree-root { grid-template-columns: 27px 27px minmax(150px,1fr) 65px 42px 78px; min-height: 34px; padding: 2px 4px; background: rgba(115,59,45,.07); border-top: 1px solid var(--trudvang-line); }
 .trudvang-sheet .skill-row.tree-root .skill-name { text-align: left; }
