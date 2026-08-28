@@ -40,7 +40,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "cancel-advancement": TrudvangActorSheet.#onAction,
       "roll-initiative": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
-      "spend-combat": TrudvangActorSheet.#onAction,
+      "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
       "item-parry": TrudvangActorSheet.#onAction,
       "item-damage": TrudvangActorSheet.#onAction,
@@ -113,6 +113,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       return {...pool, label: game.i18n.localize(pool.labelKey), sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")};
     });
     context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
+    context.combatMovementHint = game.i18n.format("TRUDVANG.Combat.MovementHint", {
+      free: Number(this.actor.findKnowledgeItem("combatMovement")?.system.level || 0),
+      movement: Number(this.actor.system.movement?.current || 0)
+    });
     context.vitnerProfile = this.actor.selectedVitnerType;
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
     context.religionProfile = this.actor.selectedReligion;
@@ -336,7 +340,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
       case "reset-combat": return this.actor.resetCombatPoints();
-      case "spend-combat": return this.actor.allocateCombatActionPoints();
+      case "movement-action": return this.actor.rollCombatMovement();
       case "item-roll": return item?.roll();
       case "item-parry": return item ? this.actor.rollWeaponParry(item) : null;
       case "item-damage": return this.actor.rollDamage(item);

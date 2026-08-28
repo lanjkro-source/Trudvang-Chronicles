@@ -240,7 +240,7 @@
       "BowsSlings": "Arcs & frondes"
     },
     "Hand": {"Weapon": "Main d’arme", "Shield": "Main de bouclier", "WeaponShort": "MA", "ShieldShort": "MB"},
-    "Combat": {"HumanoidNaturalWeapons": "Poings & pieds", "Dodge": "Esquiver", "Grapple": "Saisie", "Glima": "Glima", "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."},
+    "Combat": {"HumanoidNaturalWeapons": "Poings & pieds", "Dodge": "Esquiver", "MovementAction": "Action de mouvement", "MovementHint": "2 PC par mètre payant · {free} m gratuit(s) · Mouvement {movement} m", "Grapple": "Saisie", "Glima": "Glima", "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."},
     "CombatActionType": {"Positioning": "Action de combat, mouvement ou positionnement", "Brawling": "Bagarre ou parade à mains nues", "Wrestling": "Lutte, saisie ou glima"},
     "Trait": {
       "Charisma": "Charisme",
@@ -562,6 +562,7 @@
       "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
       "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
       "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer, ou n’avoir encore dépensé aucun PC afin d’y consacrer tout le tour.",
+      "InvalidCombatMovementCost": "Le mouvement de combat coûte exactement 2 PC par mètre ; allouez un nombre positif et pair de PC.",
       "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
       "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
@@ -625,6 +626,7 @@
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
       "DrawnOutsideCombat": "{item} dégainé.",
       "DrawnFullRound": "{item} dégainé en y consacrant tout le tour ; toutes les réserves de PC ont été vidées.",
+      "CombatMovement": "{points} PC dépensés pour {meters} mètre(s) payant(s) de mouvement de combat.",
       "Sheathed": "{item} rengainé gratuitement.",
       "AdvancementConfirmed": "Les améliorations ont été validées.",
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",

@@ -240,7 +240,7 @@
       "BowsSlings": "Bows & Slings"
     },
     "Hand": {"Weapon": "Weapon hand", "Shield": "Shield hand", "WeaponShort": "WH", "ShieldShort": "SH"},
-    "Combat": {"HumanoidNaturalWeapons": "Fists & feet", "Dodge": "Dodge", "Grapple": "Grapple", "Glima": "Glima", "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target."},
+    "Combat": {"HumanoidNaturalWeapons": "Fists & feet", "Dodge": "Dodge", "MovementAction": "Movement action", "MovementHint": "2 CP per paid metre · {free} free m · Movement {movement} m", "Grapple": "Grapple", "Glima": "Glima", "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target."},
     "CombatActionType": {"Positioning": "Combat action, movement, or positioning", "Brawling": "Brawling or unarmed parry", "Wrestling": "Wrestling, grapple, or glima"},
     "Trait": {
       "Charisma": "Charisma",
@@ -562,6 +562,7 @@
       "NoApplicableEffects": "This item has no enabled effect to apply.",
       "NoEffectTarget": "Select at least one target before applying this effect.",
       "NotEnoughCombatPointsToReady": "Drawing requires 10 available CP, or no CP spent yet so the entire round can be devoted to it.",
+      "InvalidCombatMovementCost": "Combat movement costs exactly 2 CP per metre; allocate a positive, even number of CP.",
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
@@ -625,6 +626,7 @@
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
       "DrawnOutsideCombat": "{item} drawn.",
       "DrawnFullRound": "{item} drawn by devoting the entire round to it; every CP pool was emptied.",
+      "CombatMovement": "{points} CP spent on {meters} paid metre(s) of combat movement.",
       "Sheathed": "{item} sheathed for free.",
       "AdvancementConfirmed": "The advancements have been confirmed.",
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",

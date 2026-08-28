@@ -1,5 +1,5 @@
 import { TRUDVANG } from "../config.mjs";
-import { combatActionTypeDialog, combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
@@ -790,23 +790,25 @@ export class TrudvangActor extends BaseActor {
     return this.update(Object.fromEntries(updates));
   }
 
-  async allocateCombatActionPoints() {
+  async rollCombatMovement() {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
-    const action = await combatActionTypeDialog();
-    if (!action) return null;
-    const poolResolution = resolveCombatPools({actor: this, context: {action}});
+    const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
     const options = await combatPointDialog({
-      title: game.i18n.localize("TRUDVANG.Dialog.CombatActionSpendingTitle"),
+      title: game.i18n.localize("TRUDVANG.Combat.MovementAction"),
       pools: poolResolution.eligible,
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(2, poolResolution.eligibleCurrent)),
       buttonLabelKey: "TRUDVANG.Action.SpendCombat",
       showModifier: false,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
+    const paidMeters = spending.total / 2;
     if (this.isOwner) await this.spendCombatPoints(spending.allocation);
-    return spending;
+    ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));
+    return {...spending, paidMeters};
   }
 
   async spendCombatPoints(allocation = {}) {

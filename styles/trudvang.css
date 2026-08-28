@@ -78,10 +78,16 @@
 .trudvang-sheet .combat-pool-bar { min-height: 28px; display: flex; gap: 4px; align-items: center; overflow-x: auto; padding: 3px 7px; color: #ead9b9; background: rgba(83,57,42,.94); border-bottom: 1px solid #b18d50; font-size: .66rem; white-space: nowrap; }
 .trudvang-sheet .combat-pool { padding: 2px 6px; border: 1px solid #aa875666; border-radius: 3px; background: rgba(255,255,255,.05); }
 .trudvang-sheet .combat-pool strong { color: #fff0d3; font-weight: 600; }
+.trudvang-sheet .combat-pool.depleted { color: #f0b9aa; border-color: rgba(181,91,70,.72); background: rgba(115,59,45,.48); }
+.trudvang-sheet .combat-pool.depleted strong { color: #ffd8cc; }
 .trudvang-sheet .combat-pool-spend { margin-left: auto; color: #ead9b9; white-space: nowrap; }
 .trudvang-sheet .combat-reserves-panel .combat-pool-bar { margin: 0 -9px -9px; border-bottom: 0; }
 .trudvang-sheet .tab.combat { display: flex; flex-direction: column; gap: 10px; }
-.trudvang.roll-dialog .combat-pool-allocation small { color: var(--trudvang-muted); font-weight: normal; }
+.trudvang.roll-dialog.combat-pool-dialog { min-width: min(520px, calc(100vw - 90px)); }
+.trudvang.roll-dialog .combat-pool-allocation { display: grid; grid-template-columns: minmax(0, 2fr) minmax(64px, 1fr) minmax(64px, 1fr); gap: 8px; align-items: center; }
+.trudvang.roll-dialog .combat-pool-allocation label { min-width: 0; white-space: normal; }
+.trudvang.roll-dialog .combat-pool-allocation .combat-pool-current { color: inherit; font-size: inherit; text-align: center; }
+.trudvang.roll-dialog .combat-pool-allocation input { width: 100%; min-width: 0; }
 
 .trudvang-sheet .sheet-tabs { min-height: 38px; display: flex; justify-content: center; gap: 2px; padding: 5px 8px 0; background: rgba(237,222,193,.92); border-bottom: 1px solid var(--trudvang-line); }
 .trudvang-sheet .sheet-tabs .item { flex: 1; padding: 6px 4px; color: var(--trudvang-muted); border: 1px solid transparent; border-bottom: 0; text-align: center; font-size: .75rem; }

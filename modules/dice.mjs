@@ -310,9 +310,11 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const rows = pools.map(pool => {
     const amount = Number(defaultAllocation[pool.id] || 0);
+    const label = escapeHtml(game.i18n.localize(pool.labelKey));
     return `<div class="form-group combat-pool-allocation">
-      <label>${escapeHtml(game.i18n.localize(pool.labelKey))} <small>${pool.current}/${pool.max}</small></label>
-      <input data-pool-id="${escapeHtml(pool.id)}" type="number" min="0" max="${pool.current}" step="1" value="${amount}">
+      <label for="combat-pool-${escapeHtml(pool.id)}">${label}</label>
+      <span class="combat-pool-current">${pool.current}/${pool.max}</span>
+      <input id="combat-pool-${escapeHtml(pool.id)}" data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}">
     </div>`;
   }).join("");
   const initialTotal = Object.values(defaultAllocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
@@ -365,28 +367,6 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     window: {title},
     content,
     buttons,
-    modal: false,
-    rejectClose: false
-  });
-}
-
-export async function combatActionTypeDialog() {
-  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-  const content = `<div class="trudvang roll-dialog"><div class="form-group">
-    <label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatActionType"))}</label>
-    <select name="actionType">
-      <option value="combatAction">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Positioning"))}</option>
-      <option value="brawling">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Brawling"))}</option>
-      <option value="wrestling">${escapeHtml(game.i18n.localize("TRUDVANG.CombatActionType.Wrestling"))}</option>
-    </select>
-  </div></div>`;
-  return DialogClass.wait({
-    window: {title: game.i18n.localize("TRUDVANG.Dialog.CombatActionSpendingTitle")},
-    content,
-    buttons: [
-      {action: "continue", label: game.i18n.localize("TRUDVANG.Action.Continue"), default: true, callback: (event, button, dialog) => (button.form ?? dialog.element).querySelector("[name=actionType]")?.value || "combatAction"},
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
-    ],
     modal: false,
     rejectClose: false
   });
