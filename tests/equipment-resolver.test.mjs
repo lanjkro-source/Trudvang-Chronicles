@@ -10,10 +10,15 @@ import {
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
 import {
+  categoryForWeaponType,
   normalizeCombatAllocation,
+  readiedHandConflicts,
+  readiedItemHands,
   resolveCombatPools,
   suggestCombatAllocation,
   weaponCombatSpecialty,
+  weaponType,
+  weaponUsesTwoHands,
   weaponUsesSeparateHands
 } from "../modules/rules/combat-pool-resolver.mjs";
 
@@ -55,13 +60,13 @@ function shield() {
   };
 }
 
-function weapon({category = "twoHanded", weaponActions = 2, equipped = false} = {}) {
+function weapon({category = "twoHanded", weaponActions = 2, equipped = false, ...system} = {}) {
   return {
     id: "weapon-id",
     uuid: "Actor.actor-id.Item.weapon-id",
     name: "Test weapon",
     type: "weapon",
-    system: {category, weaponActions, equipped}
+    system: {category, weaponActions, equipped, ...system}
   };
 }
 
@@ -304,6 +309,30 @@ test("two-handed weapons, bows and crossbows never expose a hand choice or shiel
     assert.equal(weaponUsesSeparateHands(item), false);
     assert.equal(resolveCombatActionModifier({item, context: {hand: "offHand"}}).value, 0);
   }
+});
+
+test("canonical weapon types preserve legacy data and synchronize its category", () => {
+  assert.equal(weaponType(weapon({category: "ranged"})), "bowsSlings");
+  assert.equal(weaponType(weapon({category: "ranged", combatSpecialty: "crossbow"})), "crossbow");
+  assert.equal(categoryForWeaponType("crossbow"), "ranged");
+  assert.equal(categoryForWeaponType("twoHandedWeapons"), "twoHanded");
+});
+
+test("two-handed weapons, bows, and crossbows occupy both hands", () => {
+  for (const combatSpecialty of ["twoHandedWeapons", "bowsSlings", "crossbow"]) {
+    const item = weapon({combatSpecialty});
+    assert.equal(weaponUsesTwoHands(item), true);
+    assert.deepEqual(readiedItemHands(item), ["weapon", "offHand"]);
+  }
+});
+
+test("readied equipment conflicts only when it shares a required hand", () => {
+  const sword = {...weapon({combatSpecialty: "oneHandedLightWeapons", hand: "weapon", equipped: true}), id: "sword", name: "Sword"};
+  const shieldItem = {...shield(), id: "shield", name: "Shield", system: {...shield().system, equipped: true}};
+  const bow = {...weapon({combatSpecialty: "bowsSlings"}), id: "bow", name: "Bow"};
+  assert.deepEqual(readiedHandConflicts([sword, shieldItem], bow).map(item => item.id), ["sword", "shield"]);
+  const dagger = {...weapon({combatSpecialty: "oneHandedLightWeapons", hand: "weapon"}), id: "dagger"};
+  assert.deepEqual(readiedHandConflicts([shieldItem], dagger), []);
 });
 
 test("linked Combat Point pools retain their distinct maxima", () => {

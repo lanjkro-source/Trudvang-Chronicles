@@ -61,7 +61,8 @@
       "Magic": "Magic & Faith",
       "Effects": "Effects",
       "Notes": "Notes",
-      "Actions": "Actions"
+      "Actions": "Actions",
+      "Details": "Details"
     },
     "Section": {
       "Traits": "Character Traits",
@@ -96,7 +97,7 @@
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
       "Draw": "Draw (10 CP)",
-      "Sheathe": "Sheathe (10 CP)",
+      "Sheathe": "Sheathe (free)",
       "Continue": "Continue",
       "AdvanceSkill": "Buy the next Skill Value with Adventure Points",
       "AdvanceItem": "Buy the next level with Adventure Points",
@@ -148,6 +149,7 @@
       "Weight": "Weight (kg)",
       "Value": "Value (silver coins)",
       "Category": "Category",
+      "WeaponType": "Type",
       "Damage": "Damages",
       "OpenRoll": "Open Roll Threshold (0 = none)",
       "WeaponActions": "WA: WEAPON ACTIONS",
@@ -485,11 +487,7 @@
       "AllocatedPoints": "Allocated CP",
       "CombatActionSpendingTitle": "Combat action, movement, or positioning",
       "DrawTitle": "Draw: {item} (10 CP)",
-      "SheatheTitle": "Sheathe: {item} (10 CP)",
-      "DrawTitle": "Draw: {item} (10 CP)",
-      "SheatheTitle": "Sheathe: {item} (10 CP)",
-      "DrawTitle": "Draw: {item} (10 CP)",
-      "SheatheTitle": "Sheathe: {item} (10 CP)",
+      "SheatheTitle": "Sheathe: {item} (free)",
       "CombatActionType": "Action type",
       "AttackTitle": "Attack: {item}",
       "ParryTitle": "Parry: {item}",
@@ -561,8 +559,9 @@
       "EffectPermission": "You are not allowed to modify effects on this target.",
       "NoApplicableEffects": "This item has no enabled effect to apply.",
       "NoEffectTarget": "Select at least one target before applying this effect.",
-      "NotEnoughCombatPointsToReady": "10 available CP are required to draw or sheathe this weapon.",
+      "NotEnoughCombatPointsToReady": "10 available CP are required to draw this weapon.",
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
+      "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
     },
     "Description": {
@@ -622,7 +621,7 @@
     },
     "Notification": {
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
-      "Sheathed": "{item} sheathed for {cost} CP.",
+      "Sheathed": "{item} sheathed for free.",
       "AdvancementConfirmed": "The advancements have been confirmed.",
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",
       "CreationModeEnabled": "Character creation mode enabled.",

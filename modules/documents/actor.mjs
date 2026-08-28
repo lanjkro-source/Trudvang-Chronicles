@@ -5,7 +5,7 @@ import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
-import { normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
+import { normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -623,14 +623,25 @@ export class TrudvangActor extends BaseActor {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!item || !["weapon", "shield"].includes(item.type)) return null;
     const wasEquipped = Boolean(item.system.equipped);
-    const action = wasEquipped ? "sheatheWeapon" : "drawWeapon";
-    const poolResolution = resolveCombatPools({actor: this, item, context: {action}});
+    if (wasEquipped) {
+      await item.update({"system.equipped": false});
+      return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Sheathed", {item: item.name}));
+    }
+    const conflicts = readiedHandConflicts(this.items, item);
+    if (conflicts.length) {
+      return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.HandsOccupied", {
+        item: item.name,
+        conflicts: conflicts.map(conflict => conflict.name).join(", ")
+      }));
+    }
+    const poolResolution = resolveCombatPools({actor: this, item, context: {action: "drawWeapon"}});
     const cost = 10;
     if (poolResolution.eligibleCurrent < cost) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughCombatPointsToReady"));
     const options = await combatPointDialog({
-      title: game.i18n.format(wasEquipped ? "TRUDVANG.Dialog.SheatheTitle" : "TRUDVANG.Dialog.DrawTitle", {item: item.name}),
+      title: game.i18n.format("TRUDVANG.Dialog.DrawTitle", {item: item.name}),
       pools: poolResolution.eligible,
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, cost),
+      buttonLabelKey: "TRUDVANG.Action.Draw",
       showModifier: false,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
     });
@@ -638,8 +649,8 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total !== cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.ExactCombatCost", {cost}));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation);
-    await item.update({"system.equipped": !wasEquipped});
-    return ui.notifications.info(game.i18n.format(wasEquipped ? "TRUDVANG.Notification.Sheathed" : "TRUDVANG.Notification.Drawn", {item: item.name, cost}));
+    await item.update({"system.equipped": true});
+    return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Drawn", {item: item.name, cost}));
   }
 
   async rollWeaponAction(item, kind) {

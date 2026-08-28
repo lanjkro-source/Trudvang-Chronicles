@@ -1,6 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
-import { effectChangeSummary } from "../effects.mjs";
-import { weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
+import { EFFECT_ITEM_TYPES, effectChangeSummary } from "../effects.mjs";
+import { categoryForWeaponType, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -53,18 +53,22 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.editable = this.item.isOwner;
     context.system = this.item.system;
     context.itemType = this.item.type;
+    context.supportsEffects = EFFECT_ITEM_TYPES.has(this.item.type);
+    context.weaponType = weaponType(this.item);
+    context.isRangedWeapon = ["crossbow", "bowsSlings"].includes(context.weaponType);
     context.usesSeparateHands = weaponUsesSeparateHands(this.item);
     context.isType = type => this.item.type === type;
     context.config = TRUDVANG;
     context.advancementLocked = this.advancementLocked;
-    context.effects = this.item.effects.map(effect => ({
+    context.effects = context.supportsEffects ? this.item.effects.map(effect => ({
       id: effect.id,
       name: effect.name,
       img: effect.img,
       transfer: effect.transfer,
       disabled: effect.disabled,
       summary: effectChangeSummary(effect)
-    }));
+    })) : [];
+    context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
     return context;
   }
@@ -86,9 +90,52 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
+    this._activateTabs(root);
+  }
+
+  _activateTabs(root) {
+    const nav = root.querySelector(".item-sheet-tabs");
+    if (!nav) return;
+    this._activeTab ??= "details";
+    const apply = () => {
+      nav.querySelectorAll("[data-tab]").forEach(link => link.classList.toggle("active", link.dataset.tab === this._activeTab));
+      root.querySelectorAll(".item-sheet-body > .tab[data-tab]").forEach(panel => {
+        panel.classList.toggle("active", panel.dataset.tab === this._activeTab);
+        panel.style.display = panel.dataset.tab === this._activeTab ? "" : "none";
+      });
+    };
+    apply();
+    nav.addEventListener("click", event => {
+      const link = event.target.closest("[data-tab]");
+      if (!link || !nav.contains(link)) return;
+      event.preventDefault();
+      this._activeTab = link.dataset.tab;
+      apply();
+    });
   }
 
   static async #onSubmit(event, form, formData) {
+    if (this.item.type === "weapon") {
+      const type = foundry.utils.getProperty(formData.object, "system.combatSpecialty");
+      if (type) foundry.utils.setProperty(formData.object, "system.category", categoryForWeaponType(type, this.item.system.category));
+    }
+    if (["weapon", "shield"].includes(this.item.type) && this.item.parent?.documentName === "Actor") {
+      const candidate = {
+        id: this.item.id,
+        type: this.item.type,
+        system: {...this.item.system.toObject(), ...(formData.object.system || {})}
+      };
+      if (candidate.system.equipped) {
+        const conflicts = readiedHandConflicts(this.item.parent.items, candidate);
+        if (conflicts.length) {
+          ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.HandsOccupied", {
+            item: this.item.name,
+            conflicts: conflicts.map(conflict => conflict.name).join(", ")
+          }));
+          return this.render({force: true});
+        }
+      }
+    }
     await this.document.update(formData.object);
   }
 
@@ -107,11 +154,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onEffectAdd() {
+    if (!EFFECT_ITEM_TYPES.has(this.item.type)) return;
     const [effect] = await this.item.createEmbeddedDocuments("ActiveEffect", [{
       name: game.i18n.localize("TRUDVANG.New.Effect"),
       type: "effect",
       img: "icons/svg/aura.svg",
-      transfer: ["weapon", "armor", "shield", "gear", "ability"].includes(this.item.type),
+      transfer: ["weapon", "armor", "shield", "gear"].includes(this.item.type),
       system: {stacking: "stack", changes: []}
     }]);
     effect?.sheet.render({force: true});

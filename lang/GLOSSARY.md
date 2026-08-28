@@ -88,6 +88,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tab.Effects` | Effects | Effets |
 | `TRUDVANG.Tab.Notes` | Notes | Notes |
 | `TRUDVANG.Tab.Actions` | Actions | Actions |
+| `TRUDVANG.Tab.Details` | Details | Détails |
 
 ## `TRUDVANG.Section`
 
@@ -128,7 +129,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
 | `TRUDVANG.Action.Draw` | Draw (10 CP) | Dégainer (10 PC) |
-| `TRUDVANG.Action.Sheathe` | Sheathe (10 CP) | Rengainer (10 PC) |
+| `TRUDVANG.Action.Sheathe` | Sheathe (free) | Rengainer (gratuit) |
 | `TRUDVANG.Action.Continue` | Continue | Continuer |
 | `TRUDVANG.Action.AdvanceSkill` | Buy the next Skill Value with Adventure Points | Acheter la valeur de compétence suivante avec les points d'aventure |
 | `TRUDVANG.Action.AdvanceItem` | Buy the next level with Adventure Points | Acheter le prochain niveau avec les points d'aventure |
@@ -183,6 +184,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Weight` | Weight (kg) | Poids (kg) |
 | `TRUDVANG.Field.Value` | Value (silver coins) | Valeur (pièces d'argent) |
 | `TRUDVANG.Field.Category` | Category | Catégorie |
+| `TRUDVANG.Field.WeaponType` | Type | Type |
 | `TRUDVANG.Field.Damage` | Damages | Dégâts |
 | `TRUDVANG.Field.OpenRoll` | Open Roll Threshold (0 = none) | Seuil de jet ouvert (0 = aucun) |
 | `TRUDVANG.Field.WeaponActions` | WA: WEAPON ACTIONS | AA : ACTIONS D'ARME |
@@ -594,7 +596,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.AllocatedPoints` | Allocated CP | PC alloués |
 | `TRUDVANG.Dialog.CombatActionSpendingTitle` | Combat action, movement, or positioning | Action de combat, mouvement ou positionnement |
 | `TRUDVANG.Dialog.DrawTitle` | Draw: {item} (10 CP) | Dégainer : {item} (10 PC) |
-| `TRUDVANG.Dialog.SheatheTitle` | Sheathe: {item} (10 CP) | Rengainer : {item} (10 PC) |
+| `TRUDVANG.Dialog.SheatheTitle` | Sheathe: {item} (free) | Rengainer : {item} (gratuit) |
 | `TRUDVANG.Dialog.CombatActionType` | Action type | Type d’action |
 | `TRUDVANG.Dialog.AttackTitle` | Attack: {item} | Attaque: {item} |
 | `TRUDVANG.Dialog.ParryTitle` | Parry: {item} |  Parade: {item} |
@@ -675,8 +677,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.EffectPermission` | You are not allowed to modify effects on this target. | Vous n'avez pas l'autorisation de modifier les effets de cette cible. |
 | `TRUDVANG.Warning.NoApplicableEffects` | This item has no enabled effect to apply. | Cet objet ne possède aucun effet actif à appliquer. |
 | `TRUDVANG.Warning.NoEffectTarget` | Select at least one target before applying this effect. | Sélectionnez au moins une cible avant d'appliquer cet effet. |
-| `TRUDVANG.Warning.NotEnoughCombatPointsToReady` | 10 available CP are required to draw or sheathe this weapon. | Il faut 10 PC disponibles pour dégainer ou rengainer cette arme. |
+| `TRUDVANG.Warning.NotEnoughCombatPointsToReady` | 10 available CP are required to draw this weapon. | Il faut 10 PC disponibles pour dégainer cette arme. |
 | `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
+| `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
 
 ## `TRUDVANG.Description`
@@ -757,7 +760,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
-| `TRUDVANG.Notification.Sheathed` | {item} sheathed for {cost} CP. | {item} rengainé pour {cost} PC. |
+| `TRUDVANG.Notification.Sheathed` | {item} sheathed for free. | {item} rengainé gratuitement. |
 | `TRUDVANG.Notification.AdvancementConfirmed` | The advancements have been confirmed. | Les améliorations ont été validées. |
 | `TRUDVANG.Notification.AdvancementCancelled` | The advancements were cancelled and {cost} Adventure Points were refunded. | Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés. |
 | `TRUDVANG.Notification.CreationModeEnabled` | Character creation mode enabled. | Mode création de personnage activé. |

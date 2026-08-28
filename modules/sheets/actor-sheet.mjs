@@ -130,6 +130,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
       item._hoverTitle = this._getItemHoverTitle(item);
       item._damageText = this._getItemDamageText(item);
+      item._compactDetail = this._getItemCompactDetail(item);
     }
     context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
       .map(item => ({item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText}));
@@ -610,6 +611,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const bonus = damage.modifier.value;
       return `${damage.formula}${open ? `${openShort}${open}` : ""}${bonus ? signed(bonus) : ""}`;
     }
+    return "";
+  }
+
+  _getItemCompactDetail(item) {
+    const isEN = game.i18n.lang === "en";
+    const vp = Math.ceil(Math.max(0, Number(item.system.breach?.value ?? 0)) / 10);
+    if (["weapon", "shield"].includes(item.type)) {
+      const actions = resolveWeaponActions({item, actor: this.actor}).value;
+      return `${isEN ? "WA" : "AA"}:${actions} ${isEN ? "PV" : "VP"}:${vp} ${this._getItemDamageText(item)}`;
+    }
+    if (item.type === "armor") return `${isEN ? "PV" : "VP"}:${vp}`;
     return "";
   }
 

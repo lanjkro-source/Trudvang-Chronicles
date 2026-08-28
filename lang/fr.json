@@ -61,7 +61,8 @@
       "Magic": "Magie & Foi",
       "Effects": "Effets",
       "Notes": "Notes",
-      "Actions": "Actions"
+      "Actions": "Actions",
+      "Details": "Détails"
     },
     "Section": {
       "Traits": "Traits de personnage",
@@ -96,7 +97,7 @@
       "ResetCombat": "Réinitialiser les points de combat",
       "SpendCombat": "Dépenser des PC",
       "Draw": "Dégainer (10 PC)",
-      "Sheathe": "Rengainer (10 PC)",
+      "Sheathe": "Rengainer (gratuit)",
       "Continue": "Continuer",
       "AdvanceSkill": "Acheter la valeur de compétence suivante avec les points d'aventure",
       "AdvanceItem": "Acheter le prochain niveau avec les points d'aventure",
@@ -148,6 +149,7 @@
       "Weight": "Poids (kg)",
       "Value": "Valeur (pièces d'argent)",
       "Category": "Catégorie",
+      "WeaponType": "Type",
       "Damage": "Dégâts",
       "OpenRoll": "Seuil de jet ouvert (0 = aucun)",
       "WeaponActions": "AA : ACTIONS D'ARME",
@@ -485,11 +487,7 @@
       "AllocatedPoints": "PC alloués",
       "CombatActionSpendingTitle": "Action de combat, mouvement ou positionnement",
       "DrawTitle": "Dégainer : {item} (10 PC)",
-      "SheatheTitle": "Rengainer : {item} (10 PC)",
-      "DrawTitle": "Dégainer : {item} (10 PC)",
-      "SheatheTitle": "Rengainer : {item} (10 PC)",
-      "DrawTitle": "Dégainer : {item} (10 PC)",
-      "SheatheTitle": "Rengainer : {item} (10 PC)",
+      "SheatheTitle": "Rengainer : {item} (gratuit)",
       "CombatActionType": "Type d’action",
       "AttackTitle": "Attaque: {item}",
       "ParryTitle": " Parade: {item}",
@@ -561,8 +559,9 @@
       "EffectPermission": "Vous n'avez pas l'autorisation de modifier les effets de cette cible.",
       "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
       "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
-      "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer ou rengainer cette arme.",
+      "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer cette arme.",
       "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
+      "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
     },
     "Description": {
@@ -622,7 +621,7 @@
     },
     "Notification": {
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
-      "Sheathed": "{item} rengainé pour {cost} PC.",
+      "Sheathed": "{item} rengainé gratuitement.",
       "AdvancementConfirmed": "Les améliorations ont été validées.",
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",
       "CreationModeEnabled": "Mode création de personnage activé.",

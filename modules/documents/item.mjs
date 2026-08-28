@@ -1,4 +1,5 @@
 import { renderTemplate } from "../helpers.mjs";
+import { EFFECT_ITEM_TYPES } from "../effects.mjs";
 
 const BaseItem = foundry.documents.Item;
 
@@ -12,7 +13,7 @@ export class TrudvangItem extends BaseItem {
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/item-card.hbs", {
       item: this,
       system: this.system,
-      canApplyEffects: this.effects.some(effect => !effect.transfer && !effect.disabled),
+      canApplyEffects: EFFECT_ITEM_TYPES.has(this.type) && this.effects.some(effect => !effect.transfer && !effect.disabled),
       description: await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true})
     });
     return ChatMessage.create({
@@ -22,6 +23,7 @@ export class TrudvangItem extends BaseItem {
   }
 
   async applyEffects(targets = null) {
+    if (!EFFECT_ITEM_TYPES.has(this.type)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoApplicableEffects"));
     const templates = this.effects.filter(effect => !effect.transfer && !effect.disabled && !effect.duration?.expired);
     if (!templates.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoApplicableEffects"));
     const candidates = targets ? Array.from(targets) : Array.from(game.user.targets || []);

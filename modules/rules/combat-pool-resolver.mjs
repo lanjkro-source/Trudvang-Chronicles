@@ -49,6 +49,18 @@ const CATEGORY_SPECIALTIES = Object.freeze({
   ranged: "bowsSlings"
 });
 
+const TWO_HANDED_WEAPON_TYPES = new Set(["twoHandedWeapons", "crossbow", "bowsSlings"]);
+const SEPARATE_HAND_WEAPON_TYPES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
+
+const TYPE_CATEGORIES = Object.freeze({
+  oneHandedLightWeapons: "oneHandedLight",
+  oneHandedHeavyWeapons: "oneHandedHeavy",
+  twoHandedWeapons: "twoHanded",
+  crossbow: "ranged",
+  bowsSlings: "ranged",
+  natural: "natural"
+});
+
 function finite(value, fallback = 0) {
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
@@ -65,12 +77,50 @@ function sourcePoolData(actor, id) {
 }
 
 export function weaponCombatSpecialty(item) {
-  if (item?.type !== "weapon" || item.system?.category === "natural") return "";
-  return item.system?.combatSpecialty || CATEGORY_SPECIALTIES[item.system?.category] || "";
+  const type = weaponType(item);
+  return type === "natural" ? "" : type;
+}
+
+/** Canonical weapon type. Explicit modern data wins over the legacy display category. */
+export function weaponType(item) {
+  if (item?.type !== "weapon") return "";
+  if (item.system?.combatSpecialty) return item.system.combatSpecialty;
+  if (item.system?.category === "natural") return "natural";
+  return CATEGORY_SPECIALTIES[item.system?.category] || "";
+}
+
+/** Keep the legacy category synchronized while older worlds and modules still read it. */
+export function categoryForWeaponType(type, current = "oneHandedLight") {
+  if (type === "throwingWeapons") {
+    return ["oneHandedLight", "oneHandedHeavy"].includes(current) ? current : "oneHandedLight";
+  }
+  return TYPE_CATEGORIES[type] || current;
 }
 
 export function weaponUsesSeparateHands(item) {
-  return ["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"].includes(weaponCombatSpecialty(item));
+  return SEPARATE_HAND_WEAPON_TYPES.has(weaponType(item));
+}
+
+export function weaponUsesTwoHands(item) {
+  return item?.type === "weapon" && TWO_HANDED_WEAPON_TYPES.has(weaponType(item));
+}
+
+/** Return the physical hand slots occupied while the item is readied. */
+export function readiedItemHands(item) {
+  if (!item) return [];
+  if (item.type === "shield") return ["offHand"];
+  if (item.type !== "weapon" || weaponType(item) === "natural") return [];
+  if (weaponUsesTwoHands(item)) return ["weapon", "offHand"];
+  return [item.system?.hand === "offHand" ? "offHand" : "weapon"];
+}
+
+/** Find readied equipment which already occupies a hand required by the candidate. */
+export function readiedHandConflicts(items, candidate) {
+  const required = new Set(readiedItemHands(candidate));
+  if (!required.size) return [];
+  return Array.from(items || []).filter(item => item?.id !== candidate?.id
+    && item?.system?.equipped
+    && readiedItemHands(item).some(hand => required.has(hand)));
 }
 
 function poolMaximum(actor, id) {
@@ -92,12 +142,12 @@ function poolEligibility(id, item, context) {
   const action = context.action || context.usage || "";
   if (!action) return true;
   if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "unarmedFighting", "wrestling"].includes(id);
-  const rangedParry = action === "parry" && item?.type === "weapon" && item.system?.category === "ranged";
+  const rangedParry = action === "parry" && item?.type === "weapon" && ["crossbow", "bowsSlings"].includes(weaponType(item));
   if (rangedParry) return id === "free";
   if (id === "free" || id === "battleExperience") return true;
 
   const weaponAction = ["attack", "parry", "brawling"].includes(action);
-  const natural = item?.type === "weapon" && item.system?.category === "natural";
+  const natural = item?.type === "weapon" && weaponType(item) === "natural";
   const armed = ["weapon", "shield"].includes(item?.type) && !natural;
   if (id === "attacksParries") return weaponAction;
   if (id === "combatActions") return ["combatAction", "movement", "positioning", "drawWeapon", "sheatheWeapon", "standUp"].includes(action);

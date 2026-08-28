@@ -201,6 +201,9 @@
 .trudvang-sheet .effect-row > button:not(.effect-name) { width: 27px; padding: 2px; }
 .trudvang-sheet.item-sheet .item-effects { margin-bottom: 8px; }
 .trudvang-sheet.item-sheet .item-effects .effect-row { grid-template-columns: 32px minmax(120px,1fr) minmax(100px,.7fr) 28px 28px; }
+.trudvang-sheet.item-sheet .item-sheet-body { min-height: 0; flex: 1; overflow: hidden; }
+.trudvang-sheet.item-sheet .item-sheet-body > .tab { height: 100%; overflow-y: auto; padding-bottom: 10px; }
+.trudvang-sheet.item-sheet .item-sheet-body > .tab[data-tab="effects"] { padding-top: 10px; }
 .trudvang-sheet .npc-stats-grid .effective-value { min-width: 22px; text-align: center; }
 
 .trudvang.effect-sheet .window-content {

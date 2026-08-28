@@ -1,6 +1,8 @@
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
 
+export const EFFECT_ITEM_TYPES = new Set(["weapon", "armor", "shield", "gear", "potion"]);
+
 const string = (initial = "") => new fields.StringField({required: true, nullable: false, initial});
 const integer = (initial = 0, options = {}) => new fields.NumberField({
   required: true,
@@ -44,10 +46,9 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     if (super.isSuppressed) return true;
     if (!this.item || !this.transfer) return false;
     const item = this.item;
+    if (!EFFECT_ITEM_TYPES.has(item.type)) return true;
     if (["weapon", "armor", "shield", "gear"].includes(item.type)) return !item.system.equipped;
-    if (item.type === "spell") return !item.system.active;
     if (item.type === "potion") return true;
-    if (item.type === "ability") return Number(item.system.level || 0) <= 0;
     return false;
   }
 

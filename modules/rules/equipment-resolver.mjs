@@ -1,3 +1,5 @@
+import { weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
+
 /**
  * Pure equipment calculation primitives.
  *
@@ -144,7 +146,7 @@ export function resolveNumericEquipmentStat({
 }
 
 function twoHandedWeaponActionModifiers(item, actor) {
-  if (item?.type !== "weapon" || item.system?.category !== "twoHanded") return [];
+  if (item?.type !== "weapon" || weaponType(item) !== "twoHandedWeapons") return [];
   const specialty = specialtyItem(actor, "twoHandedWeapons");
   const level = finiteNumber(specialty?.system?.level, 0);
   const source = {
@@ -182,7 +184,7 @@ export function parseSimpleDamageFormula(value) {
 }
 
 function strengthDamageModifiers(item, actor, context) {
-  const rangedUsage = context.usage === "ranged" || (!context.usage && item?.system?.category === "ranged");
+  const rangedUsage = context.usage === "ranged" || (!context.usage && ["crossbow", "bowsSlings"].includes(weaponType(item)));
   if (!actor || rangedUsage || !item?.system?.strengthApplies) return [];
   const value = finiteNumber(actor.getTraitValue?.("strength") ?? actor.system?.traits?.strength, 0);
   return [{
@@ -200,9 +202,8 @@ function strengthDamageModifiers(item, actor, context) {
 }
 
 function shieldHandActionModifiers(item, actor, context) {
-  const specialty = item?.system?.combatSpecialty || ({oneHandedLight: "oneHandedLightWeapons", oneHandedHeavy: "oneHandedHeavyWeapons"})[item?.system?.category] || "";
-  const supportsSeparateHands = ["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"].includes(specialty);
-  const usesShieldHand = item?.system?.category !== "natural" && (
+  const supportsSeparateHands = weaponUsesSeparateHands(item);
+  const usesShieldHand = weaponType(item) !== "natural" && (
     item?.type === "shield" || ["shield", "offHand"].includes(context.hand)
   ) && (item?.type === "shield" || supportsSeparateHands);
   if (!usesShieldHand) return [];
