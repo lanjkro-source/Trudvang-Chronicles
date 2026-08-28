@@ -97,6 +97,7 @@
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
       "Draw": "Draw (10 CP)",
+      "DoNothingElse": "Do nothing else",
       "Sheathe": "Sheathe (free)",
       "Continue": "Continue",
       "AdvanceSkill": "Buy the next Skill Value with Adventure Points",
@@ -224,6 +225,7 @@
       "UnarmedFighting": "Unarmed Fighting",
       "AttacksParries": "Attacks & Parries",
       "CombatActions": "Combat Actions",
+      "CombatActionsHint": "Usable for any combat action except attacks and parries.",
       "Brawling": "Brawling",
       "Wrestling": "Wrestling",
       "ShieldParry": "Shield Parries",
@@ -238,7 +240,7 @@
       "BowsSlings": "Bows & Slings"
     },
     "Hand": {"Weapon": "Weapon hand", "Shield": "Shield hand", "WeaponShort": "WH", "ShieldShort": "SH"},
-    "Combat": {"HumanoidNaturalWeapons": "Fists & feet", "Grapple": "Grapple", "Glima": "Glima", "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target."},
+    "Combat": {"HumanoidNaturalWeapons": "Fists & feet", "Dodge": "Dodge", "Grapple": "Grapple", "Glima": "Glima", "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target."},
     "CombatActionType": {"Positioning": "Combat action, movement, or positioning", "Brawling": "Brawling or unarmed parry", "Wrestling": "Wrestling, grapple, or glima"},
     "Trait": {
       "Charisma": "Charisma",
@@ -559,7 +561,7 @@
       "EffectPermission": "You are not allowed to modify effects on this target.",
       "NoApplicableEffects": "This item has no enabled effect to apply.",
       "NoEffectTarget": "Select at least one target before applying this effect.",
-      "NotEnoughCombatPointsToReady": "10 available CP are required to draw this weapon.",
+      "NotEnoughCombatPointsToReady": "Drawing requires 10 available CP, or no CP spent yet so the entire round can be devoted to it.",
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
@@ -586,7 +588,7 @@
       "CombatPoolSpent": "{amount} CP spent from the {pool} pool.",
       "WrestlingCost": "{points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies.",
       "CombatPoolSource": "{source} level {level}: {max} CP pool.",
-      "FreeCombatPoolSource": "Fighting skill: {max} free CP pool.",
+      "FreeCombatPoolSource": "Fighting skill: {skill} CP; Battle Experience: +{experience} CP; other modifiers: {modifier} CP; total: {max} free CP.",
       "Equipment": {
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
@@ -622,6 +624,7 @@
     "Notification": {
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
       "DrawnOutsideCombat": "{item} drawn.",
+      "DrawnFullRound": "{item} drawn by devoting the entire round to it; every CP pool was emptied.",
       "Sheathed": "{item} sheathed for free.",
       "AdvancementConfirmed": "The advancements have been confirmed.",
       "AdvancementCancelled": "The advancements were cancelled and {cost} Adventure Points were refunded.",

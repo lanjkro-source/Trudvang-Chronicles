@@ -601,6 +601,22 @@ export class TrudvangActor extends BaseActor {
     return this.rollDamage(this.humanoidNaturalWeapon);
   }
 
+  get dodgeTarget() {
+    const evade = this.findKnowledgeItem("evade");
+    if (evade) return this.getAbilityBreakdown(evade).total;
+    const battleManeuver = Number(this.findKnowledgeItem("battleManeuver")?.system.level || 0);
+    return this.getSkillTarget("agility", battleManeuver, {kind: "ability", movement: true});
+  }
+
+  async rollDodge() {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    const label = game.i18n.localize("TRUDVANG.Combat.Dodge");
+    const target = this.dodgeTarget;
+    const options = await modifierDialog({title: label, target});
+    if (!options) return null;
+    return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "dodge"});
+  }
+
   async rollWrestlingAction(kind = "grapple") {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
@@ -645,16 +661,25 @@ export class TrudvangActor extends BaseActor {
     }
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: "drawWeapon"}});
     const cost = 10;
-    if (poolResolution.eligibleCurrent < cost) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughCombatPointsToReady"));
+    const fullRoundDraw = poolResolution.eligibleCurrent < cost && poolResolution.active.every(pool => pool.spent <= 0);
+    if (poolResolution.eligibleCurrent < cost && !fullRoundDraw) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughCombatPointsToReady"));
     const options = await combatPointDialog({
       title: game.i18n.format("TRUDVANG.Dialog.DrawTitle", {item: item.name}),
       pools: poolResolution.eligible,
-      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, cost),
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(cost, poolResolution.eligibleCurrent)),
       buttonLabelKey: "TRUDVANG.Action.Draw",
       showModifier: false,
-      totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
+      totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints",
+      alternateButtonLabelKey: fullRoundDraw ? "TRUDVANG.Action.DoNothingElse" : "",
+      hidePrimary: fullRoundDraw
     });
     if (!options) return null;
+    if (options.alternate) {
+      const allPools = Object.fromEntries(poolResolution.active.filter(pool => pool.current > 0).map(pool => [pool.id, pool.current]));
+      if (this.isOwner) await this.spendCombatPoints(allPools);
+      await item.update({"system.equipped": true});
+      return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DrawnFullRound", {item: item.name}));
+    }
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total !== cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.ExactCombatCost", {cost}));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation);

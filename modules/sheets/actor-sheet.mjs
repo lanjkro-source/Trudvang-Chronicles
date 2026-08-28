@@ -52,6 +52,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "natural-attack": TrudvangActorSheet.#onAction,
       "natural-parry": TrudvangActorSheet.#onAction,
       "natural-damage": TrudvangActorSheet.#onAction,
+      "dodge-action": TrudvangActorSheet.#onAction,
       "wrestling-action": TrudvangActorSheet.#onAction,
       "item-create": TrudvangActorSheet.#onAction,
       "add-tablet": TrudvangActorSheet.#onAction,
@@ -99,13 +100,18 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
     context.isInCombat = this.actor.isInActiveCombat;
-    context.combatPools = resolveCombatPools({actor: this.actor, context: {ignoreSpent: !context.isInCombat}}).active.map(pool => ({
-      ...pool,
-      label: game.i18n.localize(pool.labelKey),
-      sourceTitle: pool.source.name
+    context.combatPools = resolveCombatPools({actor: this.actor, context: {ignoreSpent: !context.isInCombat}}).active.map(pool => {
+      const sourceTitle = pool.source.name
         ? game.i18n.format("TRUDVANG.Calculation.CombatPoolSource", {source: pool.source.name, level: pool.source.level, max: pool.max})
-        : game.i18n.format("TRUDVANG.Calculation.FreeCombatPoolSource", {max: pool.max})
-    }));
+        : game.i18n.format("TRUDVANG.Calculation.FreeCombatPoolSource", {
+          skill: pool.source.level,
+          experience: pool.source.battleExperience,
+          modifier: Number(pool.source.modifier) > 0 ? `+${pool.source.modifier}` : pool.source.modifier,
+          max: pool.max
+        });
+      const hint = pool.hintKey ? game.i18n.localize(pool.hintKey) : "";
+      return {...pool, label: game.i18n.localize(pool.labelKey), sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")};
+    });
     context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
     context.vitnerProfile = this.actor.selectedVitnerType;
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
@@ -342,6 +348,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "natural-attack": return this.actor.rollNaturalCombatAction("attack");
       case "natural-parry": return this.actor.rollNaturalCombatAction("parry");
       case "natural-damage": return this.actor.rollNaturalDamage();
+      case "dodge-action": return this.actor.rollDodge();
       case "wrestling-action": return this.actor.rollWrestlingAction(target.dataset.kind || "grapple");
       case "item-create": return this._createItem(target.dataset.type);
       case "add-tablet": return this._openTabletPicker();

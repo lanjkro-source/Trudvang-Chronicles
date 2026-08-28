@@ -97,6 +97,7 @@
       "ResetCombat": "Réinitialiser les points de combat",
       "SpendCombat": "Dépenser des PC",
       "Draw": "Dégainer (10 PC)",
+      "DoNothingElse": "Ne rien faire d’autre",
       "Sheathe": "Rengainer (gratuit)",
       "Continue": "Continuer",
       "AdvanceSkill": "Acheter la valeur de compétence suivante avec les points d'aventure",
@@ -224,6 +225,7 @@
       "UnarmedFighting": "Combat à mains nues",
       "AttacksParries": "Attaques & parades",
       "CombatActions": "Actions de combat",
+      "CombatActionsHint": "Utilisables pour toute action de combat sauf les attaques et les parades.",
       "Brawling": "Bagarre",
       "Wrestling": "Lutte",
       "ShieldParry": "Parades au bouclier",
@@ -238,7 +240,7 @@
       "BowsSlings": "Arcs & frondes"
     },
     "Hand": {"Weapon": "Main d’arme", "Shield": "Main de bouclier", "WeaponShort": "MA", "ShieldShort": "MB"},
-    "Combat": {"HumanoidNaturalWeapons": "Poings & pieds", "Grapple": "Saisie", "Glima": "Glima", "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."},
+    "Combat": {"HumanoidNaturalWeapons": "Poings & pieds", "Dodge": "Esquiver", "Grapple": "Saisie", "Glima": "Glima", "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."},
     "CombatActionType": {"Positioning": "Action de combat, mouvement ou positionnement", "Brawling": "Bagarre ou parade à mains nues", "Wrestling": "Lutte, saisie ou glima"},
     "Trait": {
       "Charisma": "Charisme",
@@ -559,7 +561,7 @@
       "EffectPermission": "Vous n'avez pas l'autorisation de modifier les effets de cette cible.",
       "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
       "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
-      "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer cette arme.",
+      "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer, ou n’avoir encore dépensé aucun PC afin d’y consacrer tout le tour.",
       "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
       "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
@@ -586,7 +588,7 @@
       "CombatPoolSpent": "{amount} PC dépensé(s) depuis la réserve {pool}.",
       "WrestlingCost": "{points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique.",
       "CombatPoolSource": "{source} niveau {level} : réserve de {max} PC.",
-      "FreeCombatPoolSource": "Compétence Combat : réserve de {max} PC libres.",
+      "FreeCombatPoolSource": "Compétence Combat : {skill} PC ; Expérience du combat : +{experience} PC ; autres modificateurs : {modifier} PC ; total : {max} PC libres.",
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
@@ -622,6 +624,7 @@
     "Notification": {
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
       "DrawnOutsideCombat": "{item} dégainé.",
+      "DrawnFullRound": "{item} dégainé en y consacrant tout le tour ; toutes les réserves de PC ont été vidées.",
       "Sheathed": "{item} rengainé gratuitement.",
       "AdvancementConfirmed": "Les améliorations ont été validées.",
       "AdvancementCancelled": "Les améliorations ont été annulées et {cost} points d'aventure ont été remboursés.",

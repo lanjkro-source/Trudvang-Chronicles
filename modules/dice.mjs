@@ -51,6 +51,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     flavor,
     itemUuid: item?.uuid ?? "",
+    naturalDamage: item?.id === "humanoid-natural",
     actorUuid: actor.uuid
   });
   await ChatMessage.create({
@@ -305,7 +306,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
   });
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints"}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const rows = pools.map(pool => {
     const amount = Number(defaultAllocation[pool.id] || 0);
@@ -336,26 +337,34 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     }
   }
 
+  const buttons = [];
+  if (!hidePrimary) buttons.push({
+    action: "roll",
+    icon: "fas fa-dice-d20",
+    label: game.i18n.localize(buttonLabelKey),
+    default: true,
+    callback: (event, button, dialog) => {
+      const root = button.form ?? dialog.element;
+      return {
+        modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
+        allocation: Object.fromEntries(Array.from(root.querySelectorAll("[data-pool-id]"))
+          .map(input => [input.dataset.poolId, Number(input.value || 0)]))
+      };
+    }
+  });
+  if (alternateButtonLabelKey) buttons.push({
+    action: "alternate",
+    icon: "fas fa-hourglass-end",
+    label: game.i18n.localize(alternateButtonLabelKey),
+    default: hidePrimary,
+    callback: () => ({alternate: true})
+  });
+  buttons.push({action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false});
+
   return CombatPointDialog.wait({
     window: {title},
     content,
-    buttons: [
-      {
-        action: "roll",
-        icon: "fas fa-dice-d20",
-        label: game.i18n.localize(buttonLabelKey),
-        default: true,
-        callback: (event, button, dialog) => {
-          const root = button.form ?? dialog.element;
-          return {
-            modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
-            allocation: Object.fromEntries(Array.from(root.querySelectorAll("[data-pool-id]"))
-              .map(input => [input.dataset.poolId, Number(input.value || 0)]))
-          };
-        }
-      },
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
-    ],
+    buttons,
     modal: false,
     rejectClose: false
   });

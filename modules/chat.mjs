@@ -13,6 +13,10 @@ function attachListeners(message, html) {
     button.addEventListener("click", async event => {
       event.preventDefault();
       const actor = await foundry.utils.fromUuid(button.dataset.actorUuid);
+      if (button.dataset.naturalDamage === "true") {
+        if (actor?.isOwner) await actor.rollNaturalDamage();
+        return;
+      }
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
       if (actor?.isOwner && item) await actor.rollDamage(item);
     });

@@ -2,11 +2,11 @@
 
 export const COMBAT_POOL_IDS = Object.freeze([
   "free",
+  "combatActions",
+  "attacksParries",
   "battleExperience",
   "armedFighting",
   "unarmedFighting",
-  "attacksParries",
-  "combatActions",
   "brawling",
   "wrestling",
   "shieldParry",
@@ -23,11 +23,12 @@ export const COMBAT_POOL_IDS = Object.freeze([
 
 const DEFINITIONS = Object.freeze({
   free: {labelKey: "TRUDVANG.CombatPool.Free", priority: 0},
-  battleExperience: {labelKey: "TRUDVANG.CombatPool.BattleExperience", catalogId: "battleExperience", multiplier: 1, priority: 10},
+  combatActions: {labelKey: "TRUDVANG.CombatPool.CombatActions", hintKey: "TRUDVANG.CombatPool.CombatActionsHint", catalogId: "combatActions", multiplier: 2, priority: 60},
+  attacksParries: {labelKey: "TRUDVANG.CombatPool.AttacksParries", catalogId: "fighter", multiplier: 2, priority: 30},
+  // Kept as a zero-capacity legacy pool so existing world data remains readable.
+  battleExperience: {labelKey: "TRUDVANG.CombatPool.BattleExperience", catalogId: "battleExperience", multiplier: 0, priority: 10},
   armedFighting: {labelKey: "TRUDVANG.CombatPool.ArmedFighting", catalogId: "armedFighting", multiplier: 1, priority: 40},
   unarmedFighting: {labelKey: "TRUDVANG.CombatPool.UnarmedFighting", catalogId: "unarmedFighting", multiplier: 1, priority: 40},
-  attacksParries: {labelKey: "TRUDVANG.CombatPool.AttacksParries", catalogId: "fighter", multiplier: 2, priority: 30},
-  combatActions: {labelKey: "TRUDVANG.CombatPool.CombatActions", catalogId: "combatActions", multiplier: 2, priority: 60},
   brawling: {labelKey: "TRUDVANG.CombatPool.Brawling", catalogId: "brawling", multiplier: 2, priority: 70},
   wrestling: {labelKey: "TRUDVANG.CombatPool.Wrestling", catalogId: "wrestling", multiplier: 2, priority: 80},
   shieldParry: {labelKey: "TRUDVANG.CombatPool.ShieldParry", catalogId: "shieldBearer", multiplier: 2, priority: 100},
@@ -137,7 +138,8 @@ function poolMaximum(actor, id) {
   if (id === "free") {
     if (character) {
       const fighting = finite(actor.getSkillValue?.("fighting") ?? actor.system?.effective?.skills?.fighting ?? actor.system?.skills?.fighting?.value, 1);
-      return Math.max(0, Math.trunc(fighting + finite(actor.system?.modifiers?.combatMax, 0)));
+      const battleExperience = finite(knowledge(actor, "battleExperience")?.system?.level, 0);
+      return Math.max(0, Math.trunc(fighting + battleExperience + finite(actor.system?.modifiers?.combatMax, 0)));
     }
     return Math.max(0, Math.trunc(finite(actor?._source?.system?.resources?.combat?.max ?? actor?.system?.resources?.combat?.max, 1)));
   }
@@ -150,16 +152,16 @@ function poolMaximum(actor, id) {
 function poolEligibility(id, item, context) {
   const action = context.action || context.usage || "";
   if (!action) return true;
-  if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "unarmedFighting", "wrestling"].includes(id);
+  if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "combatActions", "unarmedFighting", "wrestling"].includes(id);
   const rangedParry = action === "parry" && item?.type === "weapon" && ["crossbow", "bowsSlings"].includes(weaponType(item));
   if (rangedParry) return id === "free";
-  if (id === "free" || id === "battleExperience") return true;
+  if (id === "free") return true;
 
   const weaponAction = ["attack", "parry", "brawling"].includes(action);
   const natural = item?.type === "weapon" && weaponType(item) === "natural";
   const armed = ["weapon", "shield"].includes(item?.type) && !natural;
   if (id === "attacksParries") return weaponAction;
-  if (id === "combatActions") return ["combatAction", "movement", "positioning", "drawWeapon", "sheatheWeapon", "standUp"].includes(action);
+  if (id === "combatActions") return !weaponAction;
   if (id === "armedFighting") return weaponAction && armed;
   if (id === "unarmedFighting") return ["brawling", "wrestling", "grapple", "glima"].includes(action) || (natural && ["attack", "parry"].includes(action));
   if (id === "brawling") return action === "brawling" || (natural && ["attack", "parry"].includes(action));
@@ -187,6 +189,7 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     return {
       id,
       labelKey: definition.labelKey,
+      hintKey: definition.hintKey || "",
       max,
       spent,
       current,
@@ -198,7 +201,15 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
         uuid: sourceItem?.uuid || "",
         name: sourceItem?.name || "",
         level: finite(sourceItem?.system?.[definition.levelField || "level"], 0)
-      } : {kind: "skill", id: "fighting", uuid: "", name: "", level: max},
+      } : {
+        kind: "skill",
+        id: "fighting",
+        uuid: "",
+        name: "",
+        level: finite(actor?.getSkillValue?.("fighting") ?? actor?.system?.effective?.skills?.fighting ?? actor?.system?.skills?.fighting?.value, max),
+        battleExperience: finite(knowledge(actor, "battleExperience")?.system?.level, 0),
+        modifier: finite(actor?.system?.modifiers?.combatMax, 0)
+      },
       rule: {book: "coreRules", printedPage: 315, englishBook: "gameMastersGuide", englishPrintedPage: 41}
     };
   });

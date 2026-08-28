@@ -336,7 +336,7 @@ test("readied equipment conflicts only when it shares a required hand", () => {
   assert.deepEqual(readiedHandConflicts([shieldItem], dagger), []);
 });
 
-test("linked Combat Point pools retain their distinct maxima", () => {
+test("Battle Experience contributes to free CP while linked pools retain distinct maxima", () => {
   const actor = combatActor({
     battleExperience: 1,
     armedFighting: 1,
@@ -346,10 +346,13 @@ test("linked Combat Point pools retain their distinct maxima", () => {
     shieldBearer: 2
   });
   const result = resolveCombatPools({actor});
-  assert.equal(result.pools.find(pool => pool.id === "free").max, 9);
+  assert.equal(result.pools.find(pool => pool.id === "free").max, 10);
+  assert.equal(result.pools.find(pool => pool.id === "free").source.battleExperience, 1);
+  assert.equal(result.pools.find(pool => pool.id === "battleExperience").max, 0);
   assert.equal(result.pools.find(pool => pool.id === "attacksParries").max, 4);
   assert.equal(result.pools.find(pool => pool.id === "combatActions").max, 6);
   assert.equal(result.pools.find(pool => pool.id === "shieldParry").max, 4);
+  assert.deepEqual(result.active.slice(0, 3).map(pool => pool.id), ["free", "combatActions", "attacksParries"]);
 });
 
 test("a light-weapon attack exposes only compatible pools", () => {
@@ -357,7 +360,7 @@ test("a light-weapon attack exposes only compatible pools", () => {
   const item = weapon({category: "oneHandedLight"});
   const result = resolveCombatPools({actor, item, context: {action: "attack"}});
   assert.deepEqual(result.eligible.map(pool => pool.id), [
-    "free", "battleExperience", "armedFighting", "attacksParries", "oneHandedLightWeapons"
+    "free", "attacksParries", "armedFighting", "oneHandedLightWeapons"
   ]);
   assert.equal(result.eligibleCurrent, 19);
 });
@@ -374,7 +377,7 @@ test("shield-only points are eligible for shield parries but not shield attacks"
 test("positioning actions use Combat Actions but not attack pools", () => {
   const actor = combatActor({battleExperience: 1, fighter: 2, combatActions: 3, oneHandedLightWeapons: 2});
   const result = resolveCombatPools({actor, context: {action: "movement"}});
-  assert.deepEqual(result.eligible.map(pool => pool.id), ["free", "battleExperience", "combatActions"]);
+  assert.deepEqual(result.eligible.map(pool => pool.id), ["free", "combatActions"]);
   assert.equal(result.eligibleCurrent, 16);
 });
 
@@ -392,8 +395,8 @@ test("allocation helpers prioritize restricted pools and reject overspending", (
   const suggested = suggestCombatAllocation(pools, 7);
   assert.deepEqual(suggested, {oneHandedLightWeapons: 4, armedFighting: 1, attacksParries: 2});
   const normalized = normalizeCombatAllocation(pools, {free: 99, combatActions: 99, oneHandedLightWeapons: -2});
-  assert.equal(normalized.total, 9);
-  assert.equal(normalized.allocation.free, 9);
+  assert.equal(normalized.total, 10);
+  assert.equal(normalized.allocation.free, 10);
   assert.equal(Object.hasOwn(normalized.allocation, "combatActions"), false);
 });
 
@@ -437,11 +440,11 @@ test("out-of-combat pool resolution ignores spending without erasing it", () => 
 });
 
 test("manual brawling and wrestling actions expose their own linked pools", () => {
-  const actor = combatActor({battleExperience: 1, unarmedFighting: 2, fighter: 1, brawling: 3, wrestling: 4});
+  const actor = combatActor({battleExperience: 1, combatActions: 2, unarmedFighting: 2, fighter: 1, brawling: 3, wrestling: 4});
   const brawling = resolveCombatPools({actor, context: {action: "brawling"}});
   const wrestling = resolveCombatPools({actor, context: {action: "wrestling"}});
-  assert.deepEqual(brawling.eligible.map(pool => pool.id), ["free", "battleExperience", "unarmedFighting", "attacksParries", "brawling"]);
-  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "unarmedFighting", "wrestling"]);
+  assert.deepEqual(brawling.eligible.map(pool => pool.id), ["free", "attacksParries", "unarmedFighting", "brawling"]);
+  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "combatActions", "unarmedFighting", "wrestling"]);
 });
 
 test("Combat Point allocations are always whole numbers", () => {
@@ -472,8 +475,8 @@ test("ranged weapon parries may spend only free combat points", () => {
   assert.deepEqual(eligible, ["free"]);
 });
 
-test("glima uses only free, unarmed and wrestling pools", () => {
-  const actor = combatActor({battleExperience: 2, unarmedFighting: 2, fighter: 2, wrestling: 3});
+test("glima may use Combat Actions in addition to unarmed and wrestling pools", () => {
+  const actor = combatActor({battleExperience: 2, combatActions: 1, unarmedFighting: 2, fighter: 2, wrestling: 3});
   const eligible = resolveCombatPools({actor, context: {action: "glima"}}).eligible.map(pool => pool.id);
-  assert.deepEqual(eligible, ["free", "unarmedFighting", "wrestling"]);
+  assert.deepEqual(eligible, ["free", "combatActions", "unarmedFighting", "wrestling"]);
 });
