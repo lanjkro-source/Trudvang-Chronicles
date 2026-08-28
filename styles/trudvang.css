@@ -442,7 +442,9 @@
 .trudvang-sheet .npc-stats-grid .mini-stat { min-height: 24px; }
 .trudvang-sheet .npc-stats-grid .mini-stat button { font-size: .78rem; }
 
-.trudvang-sheet.item-sheet .item-fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px 10px; padding: 10px; background: rgba(238,220,188,.92); border-bottom: 1px solid var(--trudvang-line); }
+.trudvang-sheet.item-sheet .item-fields { display: block; padding: 10px; background: rgba(238,220,188,.92); border-bottom: 1px solid var(--trudvang-line); }
+.trudvang-sheet.item-sheet .item-field-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 10px; align-items: end; }
+.trudvang-sheet.item-sheet .item-field-row + .item-field-row { margin-top: 7px; }
 .trudvang-sheet.item-sheet .item-fields label { display: flex; flex-direction: column; color: var(--trudvang-muted); font-size: .7rem; text-transform: uppercase; }
 .trudvang-sheet.item-sheet .item-fields input, .trudvang-sheet.item-sheet .item-fields select { height: 25px; color: var(--trudvang-ink); font-size: .85rem; text-transform: none; }
 .trudvang-sheet.item-sheet .item-fields .wide { grid-column: 1 / -1; }
