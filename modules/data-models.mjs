@@ -1,3 +1,5 @@
+import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
+
 const fields = foundry.data.fields;
 
 const string = (initial = "") => new fields.StringField({required: true, nullable: false, initial});
@@ -280,8 +282,6 @@ class BaseItemData extends foundry.abstract.TypeDataModel {
     }
   }
 }
-
-export const ARMOR_ENCUMBRANCE_PENALTIES = {0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1], 5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]};
 
 export class WeaponData extends BaseItemData {
   static defineSchema() {

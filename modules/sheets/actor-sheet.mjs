@@ -1,9 +1,9 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
-import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { effectChangeSummary } from "../effects.mjs";
-import { resolveCombatActionModifier, resolveDamage, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
+import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
+import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
 import { resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -64,7 +64,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "effect-add": TrudvangActorSheet.#onAction,
       "effect-edit": TrudvangActorSheet.#onAction,
       "effect-toggle": TrudvangActorSheet.#onAction,
-      "effect-delete": TrudvangActorSheet.#onAction
+      "effect-delete": TrudvangActorSheet.#onAction,
+      "inspect-item": TrudvangActorSheet.#onAction,
+      "inspect-global-stat": TrudvangActorSheet.#onAction
     }
   };
 
@@ -142,6 +144,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       item._hoverTitle = this._getItemHoverTitle(item);
       item._damageText = this._getItemDamageText(item);
       item._compactDetail = this._getItemCompactDetail(item);
+      item._inspection = prepareEquipmentInspection(item, this.actor);
+      item._shortTitle = item._inspection?.shortTitle || item._compactDetail;
+      item._inspectionModified = Boolean(item._inspection?.modified);
     }
     context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
       .map(item => ({item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText}));
@@ -339,6 +344,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "confirm-advancement": return this.actor.confirmAdvancements();
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
+      case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();
       case "movement-action": return this.actor.rollCombatMovement();
       case "item-roll": return item?.roll();
@@ -346,6 +352,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "item-damage": return this.actor.rollDamage(item);
       case "item-advance": return item ? this.actor.advanceItem(item) : null;
       case "item-edit": return item?.sheet.render({force: true});
+      case "inspect-item": return item ? showInspectionDialog(prepareEquipmentInspection(item, this.actor)) : null;
       case "item-delete": return this._deleteItem(item);
       case "item-equip": return item?.update({"system.equipped": !item.system.equipped});
       case "item-ready": return item ? this.actor.toggleReadiedItem(item) : null;
@@ -590,22 +597,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${svLab}:${signed(actionModifier.value)} ${dmg} — ${explanation}`;
     }
     if (item.type === "armor") {
-      let HE = Number(item.system.heft ?? 0);
-      if (HE > 1) { // ironclad ne peut pas réduire en-dessous de 1
-        const ic = this._getSpecialtyLevel("ironclad");
-        HE = Math.min(10, Math.max(1, HE - ic));
-      }
-      // Recalcule comme ArmorData.prepareDerivedData mais avec HE réduit par ironclad
-      const [baseMI, baseMM] = ARMOR_ENCUMBRANCE_PENALTIES[HE] ?? [0, 0];
-      let MI = baseMI;
-      let MM = baseMM;
-      const ab = this._getSpecialtyLevel("armorBearer");
-      const oh = Math.ceil(HE / 2) - ab;
-      if (oh > 0) {
-        MI -= oh * 2;
-        MM -= oh * 2;
-        // todo : ajouter un malus de oh * 2 sur le vc de toutes les actions de combat
-      }
+      const profile = resolveArmorProfile({item, actor: this.actor});
+      const MI = profile.initiativeModifier.value;
+      const MM = profile.movementModifier.value;
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
       return `${miLab}:${signed(MI)} ${mmLab}:${signed(MM)} ${vpLab}:${VP}/${VI}`;

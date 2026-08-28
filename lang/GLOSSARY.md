@@ -234,6 +234,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.TotalWeight` | Total carried weight | Poids total transporté |
 | `TRUDVANG.Field.CombatSpecialty` | Linked combat specialty | Spécialité de combat liée |
 | `TRUDVANG.Field.Hand` | Used hand | Main utilisée |
+| `TRUDVANG.Field.CombatActionModifier` | Combat action modifier | Modificateur d’action de combat |
+| `TRUDVANG.Field.NaturalArmor` | Natural armor | Armure naturelle |
 
 ## `TRUDVANG.Resource`
 
@@ -255,6 +257,46 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Resource.PersistenceInWild` | Persistence in the Wild | Persistance dans la nature |
 | `TRUDVANG.Resource.VitnerCost` | Vitner Point Cost | Coût en points de vitner |
 | `TRUDVANG.Resource.DivinityCost` | Divinity Point Cost | Coût en points de divinité |
+
+## `TRUDVANG.Inspection`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Inspection.Object` | Item | Objet |
+| `TRUDVANG.Inspection.ForWearer` | For {wearer} | Pour {wearer} |
+| `TRUDVANG.Inspection.EffectiveValues` | Effective values | Valeurs effectives |
+| `TRUDVANG.Inspection.WearerImpacts` | Effects on the wearer | Effets sur le porteur |
+| `TRUDVANG.Inspection.NoWearerImpact` | No direct effect on the wearer. | Aucun effet direct sur le porteur. |
+| `TRUDVANG.Inspection.Inspect` | Inspect calculation | Inspecter le calcul |
+| `TRUDVANG.Inspection.ClickForDetails` | Click to see the complete calculation | Cliquer pour voir le calcul complet |
+| `TRUDVANG.Inspection.Modified` | Modified for this wearer | Modifié pour ce porteur |
+| `TRUDVANG.Inspection.Permanent` | Permanent and currently applied | Permanents et actuellement appliqués |
+| `TRUDVANG.Inspection.Conditional` | Conditional | Conditionnels |
+| `TRUDVANG.Inspection.Total` | Current total | Total actuel |
+| `TRUDVANG.Inspection.Base` | Base value | Valeur de base |
+| `TRUDVANG.Inspection.ActiveEffects` | Active effects and modifiers | Effets actifs et modificateurs |
+| `TRUDVANG.Inspection.OtherModifiers` | Other modifiers | Autres modificateurs |
+| `TRUDVANG.Inspection.CombatActionValue` | Combat action SV | VC des actions de combat |
+| `TRUDVANG.Inspection.ItemTitle` | {item} for {wearer} | {item} pour {wearer} |
+
+## `TRUDVANG.Inspection.Mode`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Inspection.Mode.permanent` | Applied while equipped | Appliqué tant que l’objet est équipé |
+| `TRUDVANG.Inspection.Mode.conditional` | Conditional — chosen action | Conditionnel — action choisie |
+| `TRUDVANG.Inspection.Mode.inactive` | Not currently applied | Non appliqué actuellement |
+
+## `TRUDVANG.Inspection.Source`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Inspection.Source.rule` | Rule | Règle |
+| `TRUDVANG.Inspection.Source.specialty` | Specialty | Spécialité |
+| `TRUDVANG.Inspection.Source.discipline` | Discipline | Discipline |
+| `TRUDVANG.Inspection.Source.trait` | Trait | Trait |
+| `TRUDVANG.Inspection.Source.effect` | Effect | Effet |
+| `TRUDVANG.Inspection.Source.constraint` | Limit | Limite |
 
 ## `TRUDVANG.CombatPool`
 
@@ -609,6 +651,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.NoMagicAction` | No magic modifier | Aucun modificateur magique |
 | `TRUDVANG.Dialog.InitiativeAction` | Weapon, spell, or divine action | Arme, sortilège ou pouvoir divin |
 | `TRUDVANG.Dialog.NoInitiativeAction` | No action modifier | Aucun modificateur d'action |
+| `TRUDVANG.Dialog.InitiativeEquipment` | Conditional equipment used this round | Équipements conditionnels utilisés ce round |
+| `TRUDVANG.Dialog.InitiativeMagic` | Spell or divine action | Sortilège ou pouvoir divin |
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
@@ -727,6 +771,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
 | `TRUDVANG.Calculation.Equipment.StrengthDamage` | Strength: {amount} melee damage. | Force : {amount} aux dégâts de corps à corps. |
+| `TRUDVANG.Calculation.Equipment.IroncladHeft` | Ironclad level {level}: {amount} effective Heft. | Cuirassé niveau {level} : {amount} en Encombrement effectif. |
+| `TRUDVANG.Calculation.Equipment.IroncladArmorPenalty` | Ironclad level {level}: recalculates the armor penalties from its effective Heft. | Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif. |
+| `TRUDVANG.Calculation.Equipment.ArmorOverload` | Armor Bearer level {level} is insufficient for Heft {heft}: {amount}. | Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}. |
 | `TRUDVANG.Calculation.Equipment.ShieldHandPenalty` | Shield hand: {amount} SV. | Main de bouclier : {amount} à la VC. |
 | `TRUDVANG.Calculation.Equipment.BodyControlShieldHand` | Body Control level {level}: +{amount} SV with the shield hand. | Contrôle corporel niveau {level} : +{amount} à la VC de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.AmbidexterityShieldHand` | Ambidexterity level {level}: +{amount} SV with the shield hand. | Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier. |

@@ -2,9 +2,8 @@ import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
-import { ARMOR_ENCUMBRANCE_PENALTIES } from "../data-models.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
-import { resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
+import { resolveArmorProfile, resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
 import { actorParticipatesInCombat, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -81,19 +80,8 @@ export class TrudvangActor extends BaseActor {
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);
     system.protection = Number(system.details?.naturalArmor || 0) + this.equippedProtection + Number(system.modifiers.protection || 0);
-    // Malus d'encombrement armure sur le VC en combat : sommé sur toutes les armures équipées
-    let armorVCPenalty = 0;
-    for (const item of this.equippedItems.filter(i => i.type === "armor")) {
-      let HE = Number(item.system.heft ?? 0);
-      if (HE > 1) {
-        const ic = Number(this.findKnowledgeItem("ironclad")?.system.level || 0);
-        HE = Math.min(10, Math.max(1, HE - ic));
-      }
-      const ab = Number(this.findKnowledgeItem("armorBearer")?.system.level || 0);
-      const oh = Math.ceil(HE / 2) - ab;
-      if (oh > 0) armorVCPenalty += oh * 2;
-    }
-    system.armorVCPenalty = armorVCPenalty;
+    system.armorVCPenalty = -this.equippedItems.filter(item => item.type === "armor")
+      .reduce((sum, item) => sum + resolveArmorProfile({item, actor: this}).combatActionModifier.value, 0);
     system.buildCost = this.calculateBuildCost();
   }
 
@@ -179,8 +167,8 @@ export class TrudvangActor extends BaseActor {
   }
 
   get equippedInitiativeModifier() {
-    // Weapons are selected as the combat action in the initiative dialog.
-    return this.equippedItems.filter(item => item.type !== "weapon").reduce((sum, item) => sum + Number(item.system.initiativeModifier || 0), 0);
+    // Weapons and shields are conditional choices in the initiative dialog; armor is permanent.
+    return this.equippedItems.filter(item => item.type === "armor").reduce((sum, item) => sum + resolveArmorProfile({item, actor: this}).initiativeModifier.value, 0);
   }
 
   getTabletCompatibility(tablet) {
@@ -214,11 +202,12 @@ export class TrudvangActor extends BaseActor {
   }
 
   get equippedMovementModifier() {
-    return this.equippedItems.reduce((sum, item) => sum + Number(item.system.movementModifier || 0), 0);
+    return this.equippedItems.reduce((sum, item) => sum + (item.type === "armor" ? resolveArmorProfile({item, actor: this}).movementModifier.value : Number(item.system.movementModifier || 0)), 0);
   }
 
   get equippedProtection() {
-    return this.equippedItems.reduce((sum, item) => sum + Number(item.system.protection || 0), 0);
+    return this.equippedItems.filter(item => item.type === "armor")
+      .reduce((sum, item) => sum + resolveArmorProfile({item, actor: this}).protection.value, 0);
   }
 
   isInCombatActive() {

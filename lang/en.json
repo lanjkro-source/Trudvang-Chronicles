@@ -198,7 +198,9 @@
       "CoinGold": "Gold",
       "TotalWeight": "Total carried weight",
       "CombatSpecialty": "Linked combat specialty",
-      "Hand": "Used hand"
+      "Hand": "Used hand",
+      "CombatActionModifier": "Combat action modifier",
+      "NaturalArmor": "Natural armor"
     },
     "Resource": {
       "Body": "Body Points",
@@ -217,6 +219,26 @@
       "PersistenceInWild": "Persistence in the Wild",
       "VitnerCost": "Vitner Point Cost",
       "DivinityCost": "Divinity Point Cost"
+    },
+    "Inspection": {
+      "Object": "Item",
+      "ForWearer": "For {wearer}",
+      "EffectiveValues": "Effective values",
+      "WearerImpacts": "Effects on the wearer",
+      "NoWearerImpact": "No direct effect on the wearer.",
+      "Inspect": "Inspect calculation",
+      "ClickForDetails": "Click to see the complete calculation",
+      "Modified": "Modified for this wearer",
+      "Permanent": "Permanent and currently applied",
+      "Conditional": "Conditional",
+      "Total": "Current total",
+      "Base": "Base value",
+      "ActiveEffects": "Active effects and modifiers",
+      "OtherModifiers": "Other modifiers",
+      "CombatActionValue": "Combat action SV",
+      "ItemTitle": "{item} for {wearer}",
+      "Mode": {"permanent": "Applied while equipped", "conditional": "Conditional — chosen action", "inactive": "Not currently applied"},
+      "Source": {"rule": "Rule", "specialty": "Specialty", "discipline": "Discipline", "trait": "Trait", "effect": "Effect", "constraint": "Limit"}
     },
     "CombatPool": {
       "Free": "Free",
@@ -497,6 +519,8 @@
       "NoMagicAction": "No magic modifier",
       "InitiativeAction": "Weapon, spell, or divine action",
       "NoInitiativeAction": "No action modifier",
+      "InitiativeEquipment": "Conditional equipment used this round",
+      "InitiativeMagic": "Spell or divine action",
       "AddTablet": "Add a compatible tablet",
       "MagicMethod": "Method and specialty",
       "FinalTarget": "Final Skill Value",
@@ -593,6 +617,9 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
+        "IroncladHeft": "Ironclad level {level}: {amount} effective Heft.",
+        "IroncladArmorPenalty": "Ironclad level {level}: recalculates the armor penalties from its effective Heft.",
+        "ArmorOverload": "Armor Bearer level {level} is insufficient for Heft {heft}: {amount}.",
         "ShieldHandPenalty": "Shield hand: {amount} SV.",
         "BodyControlShieldHand": "Body Control level {level}: +{amount} SV with the shield hand.",
         "AmbidexterityShieldHand": "Ambidexterity level {level}: +{amount} SV with the shield hand.",

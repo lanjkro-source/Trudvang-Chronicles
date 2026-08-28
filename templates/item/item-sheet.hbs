@@ -4,6 +4,7 @@
   <div class="item-sheet-body">
   <div class="tab active" data-tab="details">
   <section class="item-fields">
+    {{#if equipmentInspection}}<h2 class="item-fields-title">{{localize "TRUDVANG.Inspection.Object"}}</h2>{{/if}}
     {{#if (eq item.type "weapon")}}
       <div class="item-field-row">
         <label>{{localize "TRUDVANG.Field.WeaponType"}}<select name="system.combatSpecialty"><option value="oneHandedLightWeapons" {{#if (eq weaponType "oneHandedLightWeapons")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.oneHandedLightWeapons"}}</option><option value="oneHandedHeavyWeapons" {{#if (eq weaponType "oneHandedHeavyWeapons")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.oneHandedHeavyWeapons"}}</option><option value="throwingWeapons" {{#if (eq weaponType "throwingWeapons")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.throwingWeapons"}}</option><option value="twoHandedWeapons" {{#if (eq weaponType "twoHandedWeapons")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.twoHandedWeapons"}}</option><option value="crossbow" {{#if (eq weaponType "crossbow")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.crossbow"}}</option><option value="bowsSlings" {{#if (eq weaponType "bowsSlings")}}selected{{/if}}>{{localize "TRUDVANG.Knowledge.bowsSlings"}}</option><option value="natural" {{#if (eq weaponType "natural")}}selected{{/if}}>{{localize "TRUDVANG.Weapon.Natural"}}</option></select></label>
@@ -54,6 +55,18 @@
     {{#if (eq item.type "ability")}}<div class="item-field-row flowing"><label>{{localize "TRUDVANG.Field.AbilityKind"}}<select name="system.kind"><option value="discipline" {{#if (eq system.kind "discipline")}}selected{{/if}}>{{localize "TRUDVANG.AbilityKind.discipline"}}</option><option value="specialty" {{#if (eq system.kind "specialty")}}selected{{/if}}>{{localize "TRUDVANG.AbilityKind.specialty"}}</option><option value="feat" {{#if (eq system.kind "feat")}}selected{{/if}}>{{localize "TRUDVANG.AbilityKind.feat"}}</option></select></label><label>{{localize "TRUDVANG.Field.ParentSkill"}}<select name="system.parentSkill">{{selectOptions config.skills selected=system.parentSkill localize=true}}</select></label><label>{{localize "TRUDVANG.Field.ParentDiscipline"}}<input name="system.parentDiscipline" value="{{system.parentDiscipline}}"></label><label>{{localize "TRUDVANG.Field.Level"}}<input name="system.level" type="number" min="1" max="5" value="{{system.level}}"></label><label>{{localize "TRUDVANG.Field.RollBonus"}}<input name="system.rollBonus" type="number" value="{{system.rollBonus}}"></label><label>{{localize "TRUDVANG.Field.CostTrait"}}<select name="system.costTrait"><option value="">{{localize "TRUDVANG.Field.Automatic"}}</option>{{selectOptions config.traits selected=system.costTrait localize=true}}</select></label></div>{{/if}}
     <div class="item-field-row"><label class="wide">{{localize "TRUDVANG.Field.Source"}}<input name="system.source" value="{{system.source}}"></label></div>
   </section>
+  {{#if equipmentInspection}}
+  <section class="panel equipment-effective-panel">
+    <h2>{{localize "TRUDVANG.Inspection.ForWearer" wearer=equipmentInspection.wearerName}}</h2>
+    <div class="equipment-effective-grid">
+      {{#each equipmentInspection.stats as |stat|}}<button type="button" class="equipment-effective-stat {{#if stat.modified}}modified{{/if}}" data-action="inspect-equipment-stat" data-stat="{{stat.key}}" title="{{localize 'TRUDVANG.Inspection.ClickForDetails'}}"><span>{{stat.label}}</span><strong>{{stat.comparison}}</strong><i class="fas fa-circle-info"></i></button>{{/each}}
+    </div>
+  </section>
+  <section class="panel wearer-impact-panel">
+    <h2>{{localize "TRUDVANG.Inspection.WearerImpacts"}}</h2>
+    <div class="wearer-impact-list">{{#each equipmentInspection.impacts as |impact|}}<div class="wearer-impact {{impact.mode}}"><span>{{impact.label}}</span><strong>{{impact.value}}</strong><small>{{impact.modeLabel}}</small></div>{{/each}}{{#each equipmentInspection.effects as |effect|}}<div class="wearer-impact {{effect.mode}}"><span>{{effect.label}}</span><strong>{{effect.value}}</strong><small>{{effect.modeLabel}}</small></div>{{/each}}{{#unless equipmentInspection.impacts.length}}{{#unless equipmentInspection.effects.length}}<p class="empty">{{localize "TRUDVANG.Inspection.NoWearerImpact"}}</p>{{/unless}}{{/unless}}</div>
+  </section>
+  {{/if}}
   {{#if (eq item.type "ability")}}<section class="panel summary-panel"><h2>{{localize "TRUDVANG.Field.Summary"}}</h2><textarea name="system.summary" rows="3">{{system.summary}}</textarea></section>{{/if}}
   <section class="panel editor-panel item-description"><h2>{{localize "TRUDVANG.Section.Description"}}</h2>{{#if (and (eq item.type "ability") system.catalogId)}}<div class="trudvang detail-dialog">{{{enrichedDescription}}}</div>{{else}}<div class="editor-container">{{editor enrichedDescription target="system.description" button=true editable=editable}}</div>{{/if}}</section>
   </div>

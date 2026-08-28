@@ -1,5 +1,7 @@
 import { weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 
+export const ARMOR_ENCUMBRANCE_PENALTIES = Object.freeze({0: [0, 0], 1: [0, 0], 2: [-1, -1], 3: [-1, -1], 4: [-1, -1], 5: [-2, -2], 6: [-2, -2], 7: [-2, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]});
+
 /**
  * Pure equipment calculation primitives.
  *
@@ -38,6 +40,10 @@ function specialtyItem(actor, catalogId) {
   if (!actor || !catalogId) return null;
   if (typeof actor.findKnowledgeItem === "function") return actor.findKnowledgeItem(catalogId) ?? null;
   return Array.from(actor.items || []).find(item => item?.system?.catalogId === catalogId) ?? null;
+}
+
+function itemProtection(item) {
+  return Math.ceil(Math.max(0, finiteNumber(item?.system?.breach?.value, 0)) / 10);
 }
 
 function sourceSnapshot(source = {}) {
@@ -313,17 +319,77 @@ export function resolveCombatActionModifier({item, actor = null, context = {}, m
   });
 }
 
+/** Resolve armor heft and every wearer-dependent penalty derived from it. */
+export function resolveArmorProfile({item, actor = null, modifiers = []} = {}) {
+  const baseHeft = Math.min(10, Math.max(0, finiteNumber(item?.system?.heft, 0)));
+  const ironclad = specialtyItem(actor, "ironclad");
+  const ironcladLevel = finiteNumber(ironclad?.system?.level, 0);
+  const heftModifiers = baseHeft > 1 && ironcladLevel > 0 ? [{
+    id: "ironclad-heft",
+    target: "heft",
+    operation: "subtract",
+    amount: ironcladLevel,
+    phase: "wearer",
+    source: {kind: "specialty", id: "ironclad", uuid: ironclad?.uuid, name: ironclad?.name, level: ironcladLevel},
+    explanationKey: "TRUDVANG.Calculation.Equipment.IroncladHeft",
+    explanationData: {level: ironcladLevel, amount: -ironcladLevel},
+    rule: {book: "coreRules", printedPage: 119, englishBook: "gameMastersGuide", englishPrintedPage: 79}
+  }] : [];
+  const heft = resolveNumericEquipmentStat({key: "heft", base: baseHeft, modifiers: [...heftModifiers, ...modifiers], minimum: baseHeft > 1 ? 1 : 0, maximum: 10, integer: true});
+  const [baseInitiative, baseMovement] = ARMOR_ENCUMBRANCE_PENALTIES[baseHeft] ?? [0, 0];
+  const [reducedInitiative, reducedMovement] = ARMOR_ENCUMBRANCE_PENALTIES[heft.value] ?? [0, 0];
+  const armorBearer = specialtyItem(actor, "armorBearer");
+  const armorBearerLevel = finiteNumber(armorBearer?.system?.level, 0);
+  const overload = Math.max(0, Math.ceil(heft.value / 2) - armorBearerLevel);
+  const shared = [];
+  if (reducedInitiative !== baseInitiative || reducedMovement !== baseMovement) shared.push({
+    id: "ironclad-armor-penalty",
+    operation: "add",
+    phase: "wearer",
+    source: {kind: "specialty", id: "ironclad", uuid: ironclad?.uuid, name: ironclad?.name, level: ironcladLevel},
+    explanationKey: "TRUDVANG.Calculation.Equipment.IroncladArmorPenalty",
+    explanationData: {level: ironcladLevel},
+    rule: {book: "coreRules", printedPage: 119, englishBook: "gameMastersGuide", englishPrintedPage: 79}
+  });
+  const initiativeModifiers = shared.map(entry => ({...entry, target: "initiativeModifier", amount: reducedInitiative - baseInitiative}));
+  const movementModifiers = shared.map(entry => ({...entry, target: "movementModifier", amount: reducedMovement - baseMovement}));
+  if (overload > 0) {
+    const source = {kind: "specialty", id: "armorBearer", uuid: armorBearer?.uuid || "", name: armorBearer?.name || "", level: armorBearerLevel};
+    const rule = {book: "coreRules", printedPage: 119, englishBook: "gameMastersGuide", englishPrintedPage: 79};
+    initiativeModifiers.push({id: "armor-overload-initiative", target: "initiativeModifier", operation: "subtract", amount: overload * 2, phase: "wearer", source, explanationKey: "TRUDVANG.Calculation.Equipment.ArmorOverload", explanationData: {heft: heft.value, level: armorBearerLevel, amount: -(overload * 2)}, rule});
+    movementModifiers.push({id: "armor-overload-movement", target: "movementModifier", operation: "subtract", amount: overload * 2, phase: "wearer", source, explanationKey: "TRUDVANG.Calculation.Equipment.ArmorOverload", explanationData: {heft: heft.value, level: armorBearerLevel, amount: -(overload * 2)}, rule});
+  }
+  return {
+    heft,
+    initiativeModifier: resolveNumericEquipmentStat({key: "initiativeModifier", base: baseInitiative, modifiers: initiativeModifiers, integer: true}),
+    movementModifier: resolveNumericEquipmentStat({key: "movementModifier", base: baseMovement, modifiers: movementModifiers, integer: true}),
+    combatActionModifier: resolveNumericEquipmentStat({key: "combatActionModifier", base: 0, modifiers: overload > 0 ? [{id: "armor-overload-actions", target: "combatActionModifier", operation: "subtract", amount: overload * 2, phase: "wearer", source: {kind: "specialty", id: "armorBearer", uuid: armorBearer?.uuid || "", name: armorBearer?.name || "", level: armorBearerLevel}, explanationKey: "TRUDVANG.Calculation.Equipment.ArmorOverload", explanationData: {heft: heft.value, level: armorBearerLevel, amount: -(overload * 2)}, rule: {book: "coreRules", printedPage: 119, englishBook: "gameMastersGuide", englishPrintedPage: 79}}] : [], maximum: 0, integer: true}),
+    protection: resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true})
+  };
+}
+
 /**
  * Public resolver contract. Further equipment characteristics and wearer impacts
  * will be added to these maps without changing callers or persisted Item data.
  */
 export function resolveEquipment({item, actor = null, context = {}, modifiers = []} = {}) {
-  const characteristics = {};
+  const characteristics = {
+    weight: resolveNumericEquipmentStat({key: "weight", base: item?.system?.weight, modifiers, minimum: 0})
+  };
   if (["weapon", "shield"].includes(item?.type)) {
     characteristics.weaponActions = resolveWeaponActions({item, actor, modifiers});
     characteristics.damage = resolveDamage({item, actor, context, modifiers});
     characteristics.combatActionModifier = resolveCombatActionModifier({item, actor, context, modifiers});
+    characteristics.attackValue = resolveNumericEquipmentStat({key: "attackValue", base: item?.system?.attackValue, modifiers, minimum: 0, integer: true});
+    characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
+    characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
+    if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});
   }
+  if (item?.type === "armor") {
+    Object.assign(characteristics, resolveArmorProfile({item, actor, modifiers}));
+  }
+  const equipped = Boolean(item?.system?.equipped);
+  const conditionalInitiative = equipped && ["weapon", "shield"].includes(item?.type);
   return {
     version: EQUIPMENT_RESOLUTION_VERSION,
     equipment: {
@@ -339,6 +405,11 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
       usage: context.usage || null
     },
     characteristics,
-    wearerImpacts: {}
+    wearerImpacts: {
+      initiative: characteristics.initiativeModifier ? {value: characteristics.initiativeModifier.value, applies: equipped && item.type === "armor", conditional: conditionalInitiative} : null,
+      movement: characteristics.movementModifier ? {value: characteristics.movementModifier.value, applies: equipped, conditional: false} : null,
+      protection: characteristics.protection && item.type === "armor" ? {value: characteristics.protection.value, applies: equipped, conditional: false} : null,
+      combatActions: characteristics.combatActionModifier && item.type === "armor" ? {value: characteristics.combatActionModifier.value, applies: equipped, conditional: false} : null
+    }
   };
 }

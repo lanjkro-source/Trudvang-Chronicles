@@ -1,5 +1,5 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
-import { resolveDamage } from "./rules/equipment-resolver.mjs";
+import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs";
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -72,15 +72,15 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
     const modifier = -level + (item.type === "divineFeat" ? 2 * Number(lightningQuickLevel || 0) : 0);
     return `<option value="${modifier}">${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</option>`;
   }).join("");
-  const weaponChoices = actor.items.filter(item => item.type === "weapon" && item.system.equipped).map(item => {
-    const modifier = Number(item.system.initiativeModifier || 0);
-    return `<option value="${modifier}">${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</option>`;
+  const equipmentChoices = actor.items.filter(item => ["weapon", "shield"].includes(item.type) && item.system.equipped).map(item => {
+    const modifier = resolveEquipment({item, actor}).characteristics.initiativeModifier.value;
+    return `<label class="checkbox"><input type="checkbox" data-initiative-equipment value="${modifier}"> ${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</label>`;
   }).join("");
-  const choices = `${weaponChoices}${magicChoices}`;
   const content = `
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
-      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeAction"))}</label><select name="magicModifier"><option value="0">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoInitiativeAction"))}</option>${choices}</select></div>
+      ${equipmentChoices ? `<fieldset class="initiative-equipment"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeEquipment"))}</legend>${equipmentChoices}</fieldset>` : ""}
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeMagic"))}</label><select name="magicModifier"><option value="0">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoInitiativeAction"))}</option>${magicChoices}</select></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     </div>`;
   return DialogClass.wait({
@@ -89,7 +89,8 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
     buttons: [
       {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
-        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0)};
+        const equipmentModifier = Array.from(root.querySelectorAll("[data-initiative-equipment]:checked")).reduce((sum, input) => sum + Number(input.value || 0), 0);
+        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0) + equipmentModifier};
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

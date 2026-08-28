@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { EFFECT_ITEM_TYPES, effectChangeSummary } from "../effects.mjs";
+import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipment-inspection.mjs";
 import { categoryForWeaponType, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -25,7 +26,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static DEFAULT_OPTIONS = {
     tag: "form",
     classes: ["trudvang", "sheet", "item"],
-    position: { width: 560, height: 620 },
+    position: { width: 640, height: 700 },
     resizable: true,
     form: {
       handler: TrudvangItemSheet.#onSubmit,
@@ -39,7 +40,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "effect-edit": TrudvangItemSheet.#onEffectEdit,
       "effect-toggle": TrudvangItemSheet.#onEffectToggle,
       "effect-delete": TrudvangItemSheet.#onEffectDelete,
-      "apply-effects": TrudvangItemSheet.#onApplyEffects
+      "apply-effects": TrudvangItemSheet.#onApplyEffects,
+      "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat
     }
   };
 
@@ -69,6 +71,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       summary: effectChangeSummary(effect)
     })) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
+    context.equipmentInspection = this.item.parent?.documentName === "Actor" ? prepareEquipmentInspection(this.item) : null;
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
     return context;
   }
@@ -187,5 +190,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onApplyEffects() {
     return this.item.applyEffects();
+  }
+
+  static async #onInspectEquipmentStat(event, target) {
+    return showEquipmentStatDetail(prepareEquipmentInspection(this.item), target.dataset.stat);
   }
 }

@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 
 import {
   parseSimpleDamageFormula,
+  resolveArmorProfile,
   resolveCombatActionModifier,
   resolveDamage,
   resolveEquipment,
@@ -164,7 +165,40 @@ test("the public equipment contract separates characteristics from wearer impact
   assert.equal(result.version, 1);
   assert.equal(result.characteristics.weaponActions.value, 3);
   assert.deepEqual(result.context, {equipped: true, hand: "right", usage: "attack"});
-  assert.deepEqual(result.wearerImpacts, {});
+  assert.deepEqual(result.wearerImpacts.initiative, {value: 0, applies: false, conditional: true});
+  assert.equal(result.wearerImpacts.movement, null);
+  assert.equal(result.wearerImpacts.protection, null);
+  assert.equal(result.wearerImpacts.combatActions, null);
+});
+
+test("an armor profile explains wearer-specific heft and encumbrance", () => {
+  const item = {
+    id: "armor-id",
+    name: "Test armor",
+    type: "armor",
+    system: {heft: 5, breach: {value: 50}, equipped: true}
+  };
+  const actor = actorWithKnowledge({ironclad: 2, armorBearer: 2});
+  const result = resolveArmorProfile({item, actor});
+  assert.equal(result.heft.base, 5);
+  assert.equal(result.heft.value, 3);
+  assert.equal(result.initiativeModifier.base, -2);
+  assert.equal(result.initiativeModifier.value, -1);
+  assert.equal(result.movementModifier.base, -2);
+  assert.equal(result.movementModifier.value, -1);
+  assert.equal(result.combatActionModifier.value, 0);
+  assert.equal(result.protection.value, 5);
+  assert.equal(result.heft.steps[0].source.id, "ironclad");
+  assert.equal(result.initiativeModifier.steps[0].explanationKey, "TRUDVANG.Calculation.Equipment.IroncladArmorPenalty");
+});
+
+test("insufficient Armor Bearer creates traceable armor penalties", () => {
+  const item = {type: "armor", system: {heft: 5, breach: {value: 20}}};
+  const result = resolveArmorProfile({item, actor: actorWithKnowledge({armorBearer: 0})});
+  assert.equal(result.initiativeModifier.value, -8);
+  assert.equal(result.movementModifier.value, -8);
+  assert.equal(result.combatActionModifier.value, -6);
+  assert.equal(result.combatActionModifier.steps[0].source.id, "armorBearer");
 });
 
 test("a standalone damage profile preserves its intrinsic formula and bonus", () => {

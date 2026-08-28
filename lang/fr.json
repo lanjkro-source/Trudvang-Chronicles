@@ -198,7 +198,9 @@
       "CoinGold": "Or",
       "TotalWeight": "Poids total transporté",
       "CombatSpecialty": "Spécialité de combat liée",
-      "Hand": "Main utilisée"
+      "Hand": "Main utilisée",
+      "CombatActionModifier": "Modificateur d’action de combat",
+      "NaturalArmor": "Armure naturelle"
     },
     "Resource": {
       "Body": "Points de santé (PS)",
@@ -217,6 +219,26 @@
       "PersistenceInWild": "Persistance dans la nature",
       "VitnerCost": "Coût en points de vitner",
       "DivinityCost": "Coût en points de divinité"
+    },
+    "Inspection": {
+      "Object": "Objet",
+      "ForWearer": "Pour {wearer}",
+      "EffectiveValues": "Valeurs effectives",
+      "WearerImpacts": "Effets sur le porteur",
+      "NoWearerImpact": "Aucun effet direct sur le porteur.",
+      "Inspect": "Inspecter le calcul",
+      "ClickForDetails": "Cliquer pour voir le calcul complet",
+      "Modified": "Modifié pour ce porteur",
+      "Permanent": "Permanents et actuellement appliqués",
+      "Conditional": "Conditionnels",
+      "Total": "Total actuel",
+      "Base": "Valeur de base",
+      "ActiveEffects": "Effets actifs et modificateurs",
+      "OtherModifiers": "Autres modificateurs",
+      "CombatActionValue": "VC des actions de combat",
+      "ItemTitle": "{item} pour {wearer}",
+      "Mode": {"permanent": "Appliqué tant que l’objet est équipé", "conditional": "Conditionnel — action choisie", "inactive": "Non appliqué actuellement"},
+      "Source": {"rule": "Règle", "specialty": "Spécialité", "discipline": "Discipline", "trait": "Trait", "effect": "Effet", "constraint": "Limite"}
     },
     "CombatPool": {
       "Free": "Libres",
@@ -497,6 +519,8 @@
       "NoMagicAction": "Aucun modificateur magique",
       "InitiativeAction": "Arme, sortilège ou pouvoir divin",
       "NoInitiativeAction": "Aucun modificateur d'action",
+      "InitiativeEquipment": "Équipements conditionnels utilisés ce round",
+      "InitiativeMagic": "Sortilège ou pouvoir divin",
       "AddTablet": "Ajouter une tablette compatible",
       "MagicMethod": "Méthode et spécialité",
       "FinalTarget": "Valeur de compétence finale",
@@ -593,6 +617,9 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
+        "IroncladHeft": "Cuirassé niveau {level} : {amount} en Encombrement effectif.",
+        "IroncladArmorPenalty": "Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif.",
+        "ArmorOverload": "Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}.",
         "ShieldHandPenalty": "Main de bouclier : {amount} à la VC.",
         "BodyControlShieldHand": "Contrôle corporel niveau {level} : +{amount} à la VC de la main de bouclier.",
         "AmbidexterityShieldHand": "Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier.",
