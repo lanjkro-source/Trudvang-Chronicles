@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 
 import {
+  ARMOR_ENCUMBRANCE_PENALTIES,
   parseSimpleDamageFormula,
   resolveArmorProfile,
   resolveCombatActionModifier,
@@ -86,6 +87,13 @@ function actorWithSpecialty(level) {
     findKnowledgeItem: id => id === "twoHandedWeapons" ? specialty : null
   };
 }
+
+test("the intentional armor MI/MM house-rule progression remains distinct from the grouped book table", () => {
+  assert.deepEqual(ARMOR_ENCUMBRANCE_PENALTIES, {
+    0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1],
+    5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]
+  });
+});
 
 test("an intrinsic weapon profile keeps its persisted weapon actions", () => {
   const result = resolveWeaponActions({item: weapon({weaponActions: 4})});
@@ -184,7 +192,7 @@ test("an armor profile explains wearer-specific heft and encumbrance", () => {
   assert.equal(result.heft.value, 3);
   assert.equal(result.initiativeModifier.base, -2);
   assert.equal(result.initiativeModifier.value, -1);
-  assert.equal(result.movementModifier.base, -2);
+  assert.equal(result.movementModifier.base, -1);
   assert.equal(result.movementModifier.value, -1);
   assert.equal(result.combatActionModifier.value, 0);
   assert.equal(result.protection.value, 5);
@@ -196,7 +204,7 @@ test("insufficient Armor Bearer creates traceable armor penalties", () => {
   const item = {type: "armor", system: {heft: 5, breach: {value: 20}}};
   const result = resolveArmorProfile({item, actor: actorWithKnowledge({armorBearer: 0})});
   assert.equal(result.initiativeModifier.value, -8);
-  assert.equal(result.movementModifier.value, -8);
+  assert.equal(result.movementModifier.value, -7);
   assert.equal(result.combatActionModifier.value, -6);
   assert.equal(result.combatActionModifier.steps[0].source.id, "armorBearer");
 });

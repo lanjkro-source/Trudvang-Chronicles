@@ -1,6 +1,9 @@
 import { weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 
-export const ARMOR_ENCUMBRANCE_PENALTIES = Object.freeze({0: [0, 0], 1: [0, 0], 2: [-1, -1], 3: [-1, -1], 4: [-1, -1], 5: [-2, -2], 6: [-2, -2], 7: [-2, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]});
+// Intentional house rule: these MI/MM values use a finer progression than the
+// official grouped table. Do not “correct” them to the book values without an
+// explicit request from the project owner.
+export const ARMOR_ENCUMBRANCE_PENALTIES = Object.freeze({0: [0, 0], 1: [0, 0], 2: [-1, 0], 3: [-1, -1], 4: [-1, -1], 5: [-2, -1], 6: [-2, -2], 7: [-3, -2], 8: [-3, -3], 9: [-4, -3], 10: [-5, -4]});
 
 /**
  * Pure equipment calculation primitives.
