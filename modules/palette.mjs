@@ -4,13 +4,11 @@
  * `autumn` (P2), `winter` (P3) and `spring` are the alternates.
  *
  * Spring is derived from #F8F4E9 (cream), #4C5D3F (dark olive), #F9D5E0 (pink)
- * and #A3C293 (sage) — red/gold swapped per request:
- *   - ink      = #2B2B2B (neutral dark) — guarantees >7:1 contrast on cream
- *                paper (olive #4C5D3F alone only ~6.5:1), consistent with
- *                other palettes where ink is darkest.
+ * and #A3C293 (sage) — luminosities swapped per request (hue kept):
+ *   - ink      = #2B2B2B (neutral dark) — guarantees >7:1 contrast on cream.
  *   - muted    = #6B7A6B — lighter sage-gray.
- *   - red      = #F9D5E0 (pink) — warm accent for titles/active (swapped).
- *   - gold     = #A3C293 (sage) — light warm accent for borders/focus (swapped).
+ *   - red      = #E8A0B5 (pink hue #F9D5E0, lightness of sage #A3C293).
+ *   - gold     = #DDE8D5 (sage hue #A3C293, lightness of pink #F9D5E0).
  *   - green    = #4C5D3F (dark olive) — coldest source tone for cost pips.
  *   - paper    = #F8F4E9, paperLight = #FDF8ED, line = rgba(43,43,43,0.38).
  * Summer is derived from #F4EEE0 (ivory), #1B2A4E (navy), #F28C28 (orange):
@@ -55,8 +53,8 @@ export const PALETTES = {
   spring: {
     ink: "#2B2B2B",
     muted: "#6B7A6B",
-    red: "#F9D5E0",
-    gold: "#A3C293",
+    red: "#E8A0B5",
+    gold: "#DDE8D5",
     green: "#4C5D3F",
     paper: "#F8F4E9",
     paperLight: "#FDF8ED",
