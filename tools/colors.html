@@ -102,11 +102,90 @@
     </section>
   </div>
   <style>.palettes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}@media(max-width:860px){.palettes{grid-template-columns:1fr}}.palette .sw{border-bottom:1px dotted var(--trudvang-line)}</style>
+
+  <h2 style="margin:28px 0 10px;font-size:1.05rem;border-bottom:1px solid var(--trudvang-line);padding-bottom:6px">8 couleurs Trudvang générées à partir de chaque palette</h2>
+  <p class="hint" style="font-size:.85rem;color:var(--trudvang-muted);margin:0 0 12px">Chaque bloc ci-dessous dérive les 8 <code>--trudvang-*</code> depuis les 3-4 couleurs sources. Clique <em>Appliquer</em> pour prévisualiser toute la page dans ce thème.</p>
+  <div id="generated"></div>
+  <style>
+    .gen{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+    @media(max-width:860px){.gen{grid-template-columns:1fr}}
+    .gen section{border:1px solid var(--trudvang-line);border-radius:8px;overflow:hidden;background:rgba(255,255,255,.55)}
+    .gen header{padding:8px 10px;background:rgba(249,242,225,.8);border-bottom:1px solid var(--trudvang-line);display:flex;justify-content:space-between;align-items:center}
+    .gen header strong{font-size:.85rem}
+    .gen header button{font-size:.7rem}
+    .mini{display:grid;grid-template-columns:1fr 1fr;gap:0}
+    .mini .sw{padding:6px 8px;gap:8px}
+    .mini .chip{width:36px;height:22px}
+    .mini .meta strong{font-size:.75rem}
+    .mini .meta code{font-size:.65rem}
+    .mock{margin:8px 10px;border:1px solid var(--trudvang-line);border-radius:6px;overflow:hidden}
+    .mock .bar{padding:6px 8px;font-size:.75rem;display:flex;justify-content:space-between}
+    .mock .tabs{display:flex;gap:2px;padding:4px 6px 0;background:rgba(237,222,193,.92);border-bottom:1px solid var(--trudvang-line)}
+    .mock .tabs span{flex:1;padding:4px;text-align:center;font-size:.6rem;border:1px solid transparent;border-bottom:0}
+    .mock .tabs span.active{background:rgba(255,250,236,.68);color:var(--trudvang-red);border-color:var(--trudvang-line)}
+    .mock .body{padding:8px;background:rgba(249,242,225,.76)}
+    .mock .fieldset{border:1px solid var(--trudvang-gold);padding:6px;border-radius:3px;margin-bottom:6px;background:rgba(255,255,255,.2)}
+    .mock .legend{color:var(--trudvang-red);font-weight:700;font-size:.7rem;padding:0 4px}
+  </style>
 </main>
 <script>
 document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='copié';setTimeout(()=>b.textContent='copier',900)}catch(e){prompt('Copier',b.dataset.copy)}
 }));
+// Génération des 8 depuis 4 palettes sources
+const palettes = [
+  {name:"Palette 1", src:["#B23B3B","#344E3D","#EAE1CC","#2B2B2B"], gen:{ink:"#2B2B2B",muted:"#6B5A4A",red:"#B23B3B",gold:"#C49A5A",green:"#344E3D",paper:"#EAE1CC",paperLight:"#F2EAD6",line:"rgba(43,43,43,0.38)"}},
+  {name:"Palette 2", src:["#C8411D","#1C1C1C","#D4AF37"], gen:{ink:"#1C1C1C",muted:"#5A4A3A",red:"#C8411D",gold:"#D4AF37",green:"#5C6B4A",paper:"#F5E8C8",paperLight:"#FDF6E3",line:"rgba(28,28,28,0.38)"}},
+  {name:"Palette 3", src:["#7A4E8F","#BCBCBE","#2B2B2B","#F4EEE0"], gen:{ink:"#2B2B2B",muted:"#6B5E6B",red:"#7A4E8F",gold:"#C4A882",green:"#6B7A6B",paper:"#F4EEE0",paperLight:"#FDF8ED",line:"rgba(43,43,43,0.38)"}},
+  {name:"Palette 4", src:["#8A5A3B","#D4AF37","#2B2B2B"], gen:{ink:"#2B2B2B",muted:"#6B5A4A",red:"#8A5A3B",gold:"#D4AF37",green:"#5A6B4F",paper:"#F1E6C8",paperLight:"#FDF6E3",line:"rgba(43,43,43,0.38)"}},
+];
+const labels = {ink:"encre principale",muted:"encre secondaire",red:"rouge / titres",gold:"or / bordures",green:"vert / coûts",paper:"parchemin",paperLight:"parchemin clair",line:"trait fin"};
+const container = document.getElementById('generated');
+const wrap = document.createElement('div'); wrap.className='gen';
+palettes.forEach((p,i)=>{
+  const sec=document.createElement('section');
+  const hdr=document.createElement('header');
+  hdr.innerHTML=`<strong>${p.name}</strong><button class="copy" style="border:1px solid var(--trudvang-line);background:rgba(255,255,255,.6);border-radius:4px;padding:3px 6px;cursor:pointer">Appliquer</button>`;
+  hdr.querySelector('button').addEventListener('click',()=>{
+    const r=document.documentElement;
+    Object.entries(p.gen).forEach(([k,v])=> r.style.setProperty(`--trudvang-${k.replace(/([A-Z])/g, m=>'-'+m.toLowerCase())}`,v));
+    // line needs special: keep as rgba
+    r.style.setProperty('--trudvang-line',p.gen.line);
+    document.querySelector('header').style.background=`linear-gradient(110deg,${p.gen.ink},${p.gen.muted})`;
+    document.querySelector('header').style.borderBottomColor=p.gen.gold;
+  });
+  sec.appendChild(hdr);
+  const mini=document.createElement('div'); mini.className='mini';
+  Object.entries(p.gen).forEach(([k,v])=>{
+    const row=document.createElement('div'); row.className='sw';
+    const chip=document.createElement('div'); chip.className='chip'; chip.style.background=v;
+    if(k==='line') chip.style.background=p.gen.ink; chip.style.opacity='.38'; chip.style.borderStyle='dashed';
+    const meta=document.createElement('div'); meta.className='meta';
+    meta.innerHTML=`<strong>--trudvang-${k}</strong><div>${labels[k]}</div><code>${v}</code>`;
+    const btn=document.createElement('button'); btn.className='copy'; btn.dataset.copy=v; btn.textContent='copier';
+    btn.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(v);btn.textContent='copié';setTimeout(()=>btn.textContent='copier',900)}catch(e){prompt('Copier',v)}});
+    row.append(chip,meta,btn); mini.appendChild(row);
+  });
+  sec.appendChild(mini);
+  const mock=document.createElement('div'); mock.className='mock';
+  mock.style.setProperty('--trudvang-ink',p.gen.ink);
+  mock.style.setProperty('--trudvang-muted',p.gen.muted);
+  mock.style.setProperty('--trudvang-red',p.gen.red);
+  mock.style.setProperty('--trudvang-gold',p.gen.gold);
+  mock.style.setProperty('--trudvang-paper',p.gen.paper);
+  mock.style.setProperty('--trudvang-paper-light',p.gen.paperLight);
+  mock.style.setProperty('--trudvang-line',p.gen.line);
+  mock.innerHTML=`
+    <div class="bar" style="background:linear-gradient(110deg,${p.gen.ink},${p.gen.muted});color:${p.gen.paperLight};border-bottom:2px solid ${p.gen.gold}"><span>Feuille Trudvang</span><span style="opacity:.7">preview</span></div>
+    <div class="tabs"><span> Détails</span><span class="active"> Durée/Changements</span><span> Trudvang</span></div>
+    <div class="body" style="background:linear-gradient(${p.gen.paperLight},${p.gen.paper});color:${p.gen.ink}">
+      <div class="fieldset" style="border-color:${p.gen.gold}"><span class="legend" style="color:${p.gen.red};border-color:${p.gen.gold}">Durée</span><div style="font-size:.7rem;color:${p.gen.muted}">1 round = 5s · Fin de tour</div></div>
+      <div class="fieldset" style="border-color:${p.gen.line}"><span class="legend" style="color:${p.gen.red}">Changements</span><div style="display:flex;gap:4px"><span style="flex:1;background:rgba(255,255,255,.3);border:1px solid ${p.gen.line};padding:3px;border-radius:3px;font-size:.65rem">system.movement +2</span><span style="background:${p.gen.red};color:white;padding:3px 6px;border-radius:3px;font-size:.65rem">20</span></div></div>
+    </div>`;
+  sec.appendChild(mock);
+  wrap.appendChild(sec);
+});
+container.appendChild(wrap);
 </script>
 </body>
 </html>
