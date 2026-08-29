@@ -75,6 +75,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.RebuildPacksHint` | Wipes and rebuilds the two Skills compendium packs from the system data, repairing any corrupted compendium content. Items already imported into this world are not touched. | Vide puis reconstruit les deux compendiums de Compétences à partir des données du système, réparant tout contenu de compendium corrompu. Les éléments déjà importés dans ce monde ne sont pas touchés. |
 | `TRUDVANG.Settings.RebuildPacksTitle` | Rebuild the Skills compendiums | Reconstruire les compendiums de Compétences |
 | `TRUDVANG.Settings.RebuildPacksConfirm` | Rebuild | Reconstruire |
+| `TRUDVANG.Settings.PaletteName` | Color palette | Palette de couleurs |
+| `TRUDVANG.Settings.PaletteHint` | Selects the color palette applied to the Trudvang theme. | Choisit la palette de couleurs appliquée au thème Trudvang. |
+| `TRUDVANG.Settings.PaletteDefault` | Default | Défaut |
+| `TRUDVANG.Settings.PaletteSummer` | Summer | Été |
+| `TRUDVANG.Settings.PaletteWinter` | Winter | Hiver |
 
 ## `TRUDVANG.Tab`
 

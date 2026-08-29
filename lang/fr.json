@@ -51,7 +51,12 @@
       "RebuildPacksName": "Reconstruire les compendiums de Compétences",
       "RebuildPacksHint": "Vide puis reconstruit les deux compendiums de Compétences à partir des données du système, réparant tout contenu de compendium corrompu. Les éléments déjà importés dans ce monde ne sont pas touchés.",
       "RebuildPacksTitle": "Reconstruire les compendiums de Compétences",
-      "RebuildPacksConfirm": "Reconstruire"
+      "RebuildPacksConfirm": "Reconstruire",
+      "PaletteName": "Palette de couleurs",
+      "PaletteHint": "Choisit la palette de couleurs appliquée au thème Trudvang.",
+      "PaletteDefault": "Défaut",
+      "PaletteSummer": "Été",
+      "PaletteWinter": "Hiver"
     },
     "Tab": {
       "Summary": "Résumé",

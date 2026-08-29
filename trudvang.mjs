@@ -9,6 +9,7 @@ import { importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems 
 import { registerChatListeners } from "./modules/chat.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
+import { applyPalette } from "./modules/palette.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
@@ -104,6 +105,22 @@ Hooks.once("init", () => {
     type: Number,
     default: 0
   });
+  game.settings.register("trudvang-chronicles", "colorPalette", {
+    name: "TRUDVANG.Settings.PaletteName",
+    hint: "TRUDVANG.Settings.PaletteHint",
+    scope: "world",
+    config: true,
+    type: String,
+    choices: {
+      default: "TRUDVANG.Settings.PaletteDefault",
+      summer: "TRUDVANG.Settings.PaletteSummer",
+      winter: "TRUDVANG.Settings.PaletteWinter"
+    },
+    default: "default",
+    onChange: value => applyPalette(value)
+  });
+
+  applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
 
   registerHandlebarsHelpers();
 
@@ -181,6 +198,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", async () => {
+  applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
   registerChatListeners();
   if (game.user.isGM) {
     const traitKeys = Object.keys(TRUDVANG.traits);

@@ -51,7 +51,12 @@
       "RebuildPacksName": "Rebuild the Skills compendiums",
       "RebuildPacksHint": "Wipes and rebuilds the two Skills compendium packs from the system data, repairing any corrupted compendium content. Items already imported into this world are not touched.",
       "RebuildPacksTitle": "Rebuild the Skills compendiums",
-      "RebuildPacksConfirm": "Rebuild"
+      "RebuildPacksConfirm": "Rebuild",
+      "PaletteName": "Color palette",
+      "PaletteHint": "Selects the color palette applied to the Trudvang theme.",
+      "PaletteDefault": "Default",
+      "PaletteSummer": "Summer",
+      "PaletteWinter": "Winter"
     },
     "Tab": {
       "Summary": "Summary",
