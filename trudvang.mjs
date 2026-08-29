@@ -113,7 +113,7 @@ Hooks.once("init", () => {
     type: String,
     choices: {
       default: "TRUDVANG.Settings.PaletteDefault",
-      summer: "TRUDVANG.Settings.PaletteSummer",
+      autumn: "TRUDVANG.Settings.PaletteAutumn",
       winter: "TRUDVANG.Settings.PaletteWinter",
       spring: "TRUDVANG.Settings.PaletteSpring"
     },

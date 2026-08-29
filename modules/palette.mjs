@@ -1,22 +1,19 @@
 /**
  * Color palettes for the Trudvang theme. Each palette maps the 8 CSS custom
- * properties (--trudvang-*) to concrete values. The `default` palette is the
- * original Trudvang theme; `summer` (now labelled "Automne"/"Autumn", kept for
- * backward compatibility), `winter` and `spring` are the alternates.
+ * properties (--trudvang-*) to concrete values. `default` is the original,
+ * `autumn` (P2), `winter` (P3) and `spring` are the alternates.
  *
- * Spring is derived from the source colors #F8F4E9 (cream), #4C5D3F (dark
- * olive), #F9D5E0 (pink) and #A3C293 (sage). Mapping logic:
- *   - ink      = #2B2B2B (neutral dark) — guarantees >7:1 contrast on the
- *                cream paper (the olive #4C5D3F alone only reaches ~6.5:1),
- *                consistent with the other palettes where ink is the darkest.
- *   - muted    = #6B7A6B — lighter sage-gray derived from the olive family.
- *   - red      = #A3C293 (sage) — the more saturated/usable of the two warm
- *                accents; the pink #F9D5E0 is too pale for titles/active text.
- *   - gold     = #F9D5E0 (pink) — the light warm accent for borders/focus.
- *   - green    = #4C5D3F (dark olive) — the coldest source tone, used for cost
- *                pips; keeps the olive identity in the palette.
- *   - paper    = #F8F4E9 (cream), paperLight = #FDF8ED (lighter cream).
- *   - line     = rgba(43,43,43,0.38) — ink at 38%.
+ * Spring is derived from #F8F4E9 (cream), #4C5D3F (dark olive), #F9D5E0 (pink)
+ * and #A3C293 (sage):
+ *   - ink      = #2B2B2B (neutral dark) — guarantees >7:1 contrast on cream
+ *                paper (olive #4C5D3F alone only ~6.5:1), consistent with
+ *                other palettes where ink is darkest.
+ *   - muted    = #6B7A6B — lighter sage-gray.
+ *   - red      = #A3C293 (sage) — more saturated warm accent; pink #F9D5E0
+ *                too pale for titles/active.
+ *   - gold     = #F9D5E0 (pink) — light warm accent for borders/focus.
+ *   - green    = #4C5D3F (dark olive) — coldest source tone for cost pips.
+ *   - paper    = #F8F4E9, paperLight = #FDF8ED, line = rgba(43,43,43,0.38).
  */
 export const PALETTES = {
   default: {
@@ -29,7 +26,7 @@ export const PALETTES = {
     paperLight: "#f4ecd9",
     line: "rgba(72,48,35,0.38)"
   },
-  summer: {
+  autumn: {
     ink: "#1C1C1C",
     muted: "#5A4A3A",
     red: "#C8411D",
