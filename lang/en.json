@@ -55,9 +55,10 @@
       "PaletteName": "Color palette",
       "PaletteHint": "Selects the color palette applied to the Trudvang theme.",
       "PaletteDefault": "Default",
+      "PaletteSpring": "Spring",
+      "PaletteSummer": "Summer",
       "PaletteAutumn": "Autumn",
-      "PaletteWinter": "Winter",
-      "PaletteSpring": "Spring"
+      "PaletteWinter": "Winter"
     },
     "Tab": {
       "Summary": "Summary",

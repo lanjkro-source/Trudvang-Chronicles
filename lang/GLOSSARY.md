@@ -78,9 +78,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Settings.PaletteName` | Color palette | Palette de couleurs |
 | `TRUDVANG.Settings.PaletteHint` | Selects the color palette applied to the Trudvang theme. | Choisit la palette de couleurs appliquée au thème Trudvang. |
 | `TRUDVANG.Settings.PaletteDefault` | Default | Défaut |
+| `TRUDVANG.Settings.PaletteSpring` | Spring | Printemps |
+| `TRUDVANG.Settings.PaletteSummer` | Summer | Été |
 | `TRUDVANG.Settings.PaletteAutumn` | Autumn | Automne |
 | `TRUDVANG.Settings.PaletteWinter` | Winter | Hiver |
-| `TRUDVANG.Settings.PaletteSpring` | Spring | Printemps |
 
 ## `TRUDVANG.Tab`
 

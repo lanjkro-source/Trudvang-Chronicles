@@ -4,16 +4,22 @@
  * `autumn` (P2), `winter` (P3) and `spring` are the alternates.
  *
  * Spring is derived from #F8F4E9 (cream), #4C5D3F (dark olive), #F9D5E0 (pink)
- * and #A3C293 (sage):
+ * and #A3C293 (sage) — red/gold swapped per request:
  *   - ink      = #2B2B2B (neutral dark) — guarantees >7:1 contrast on cream
  *                paper (olive #4C5D3F alone only ~6.5:1), consistent with
  *                other palettes where ink is darkest.
  *   - muted    = #6B7A6B — lighter sage-gray.
- *   - red      = #A3C293 (sage) — more saturated warm accent; pink #F9D5E0
- *                too pale for titles/active.
- *   - gold     = #F9D5E0 (pink) — light warm accent for borders/focus.
+ *   - red      = #F9D5E0 (pink) — warm accent for titles/active (swapped).
+ *   - gold     = #A3C293 (sage) — light warm accent for borders/focus (swapped).
  *   - green    = #4C5D3F (dark olive) — coldest source tone for cost pips.
  *   - paper    = #F8F4E9, paperLight = #FDF8ED, line = rgba(43,43,43,0.38).
+ * Summer is derived from #F4EEE0 (ivory), #1B2A4E (navy), #F28C28 (orange):
+ *   - ink      = #1B2A4E (navy) — darkest, >8:1 on ivory.
+ *   - muted    = #5A637A — lighter navy-gray.
+ *   - red      = #F28C28 (orange) — saturated warm accent.
+ *   - gold     = #E8C86A — light gold derived from orange, for borders/focus.
+ *   - green    = #6B7A6B — muted sage for cost pips (neutral, complements orange/navy).
+ *   - paper    = #F4EEE0, paperLight = #FDF8ED, line = rgba(27,42,78,0.38).
  */
 export const PALETTES = {
   default: {
@@ -49,12 +55,22 @@ export const PALETTES = {
   spring: {
     ink: "#2B2B2B",
     muted: "#6B7A6B",
-    red: "#A3C293",
-    gold: "#F9D5E0",
+    red: "#F9D5E0",
+    gold: "#A3C293",
     green: "#4C5D3F",
     paper: "#F8F4E9",
     paperLight: "#FDF8ED",
     line: "rgba(43,43,43,0.38)"
+  },
+  summer: {
+    ink: "#1B2A4E",
+    muted: "#5A637A",
+    red: "#F28C28",
+    gold: "#E8C86A",
+    green: "#6B7A6B",
+    paper: "#F4EEE0",
+    paperLight: "#FDF8ED",
+    line: "rgba(27,42,78,0.38)"
   }
 };
 
