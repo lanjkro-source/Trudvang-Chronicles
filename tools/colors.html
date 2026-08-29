@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trudvang — Palette (8 couleurs → 3 catégories)</title>
+<style>
+  :root{
+    --trudvang-ink:#2d211c;
+    --trudvang-muted:#69564b;
+    --trudvang-red:#733b2d;
+    --trudvang-gold:#a88243;
+    --trudvang-green:#334b3d;
+    --trudvang-paper:#e8dcc4;
+    --trudvang-paper-light:#f4ecd9;
+    --trudvang-line:rgba(72,48,35,0.38);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Georgia,"Times New Roman",serif;background:#f4ecd9;color:var(--trudvang-ink)}
+  header{padding:22px 18px;background:linear-gradient(110deg,rgba(46,31,24,.91),rgba(92,56,39,.82));color:#f5ead2;border-bottom:3px double var(--trudvang-gold)}
+  header h1{margin:0;font-size:1.35rem}
+  header p{margin:6px 0 0;opacity:.85;font-size:.9rem}
+  header code{background:rgba(255,255,255,.12);padding:1px 6px;border-radius:3px}
+  main{max-width:980px;margin:0 auto;padding:18px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}
+  @media(max-width:860px){.grid{grid-template-columns:1fr}}
+  .cat{background:rgba(255,255,255,.55);border:1px solid var(--trudvang-line);border-radius:8px;overflow:hidden;box-shadow:0 1px 2px rgba(50,30,20,.12)}
+  .cat h2{margin:0;padding:10px 12px;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--trudvang-line);background:rgba(249,242,225,.8)}
+  .cat h2 small{font-weight:400;text-transform:none;letter-spacing:0;opacity:.7;margin-left:6px}
+  .sw{display:grid;grid-template-columns:56px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px dotted var(--trudvang-line)}
+  .sw:last-child{border-bottom:0}
+  .chip{width:56px;height:36px;border-radius:6px;border:1px solid rgba(0,0,0,.18);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+  .meta strong{font-size:.9rem}
+  .meta div{font-size:.75rem;color:var(--trudvang-muted)}
+  .meta code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.75rem;background:rgba(0,0,0,.06);padding:1px 4px;border-radius:3px}
+  .copy{font-size:.7rem;border:1px solid var(--trudvang-line);background:rgba(255,255,255,.6);border-radius:4px;padding:4px 6px;cursor:pointer}
+  .copy:hover{border-color:var(--trudvang-gold);color:var(--trudvang-red)}
+  .note{margin-top:16px;padding:10px 12px;background:rgba(249,242,225,.76);border:1px solid var(--trudvang-line);border-radius:6px;font-size:.85rem;line-height:1.4}
+  .note b{color:var(--trudvang-red)}
+</style>
+</head>
+<body>
+<header>
+  <h1>Trudvang — 8 couleurs regroupées en 3 catégories</h1>
+  <p><code>:root</code> actuel &nbsp;→&nbsp; Claire (fonds) · Foncée (encres) · Accent (repères). Clique une valeur pour copier.</p>
+</header>
+<main>
+  <div class="grid">
+    <section class="cat">
+      <h2>Claire — fonds <small>3</small></h2>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-paper)"></div><div class="meta"><strong>--trudvang-paper</strong><div>fond parchemin</div><code>#e8dcc4</code></div><button class="copy" data-copy="#e8dcc4">copier</button></div>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-paper-light)"></div><div class="meta"><strong>--trudvang-paper-light</strong><div>fond clair / header</div><code>#f4ecd9</code></div><button class="copy" data-copy="#f4ecd9">copier</button></div>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-line);border-style:dashed"></div><div class="meta"><strong>--trudvang-line</strong><div>trait fin (ink à 38%)</div><code>rgba(72,48,35,0.38)</code></div><button class="copy" data-copy="rgba(72,48,35,0.38)">copier</button></div>
+    </section>
+    <section class="cat">
+      <h2>Foncée — encres <small>2</small></h2>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-ink)"></div><div class="meta"><strong>--trudvang-ink</strong><div>texte principal</div><code>#2d211c</code></div><button class="copy" data-copy="#2d211c">copier</button></div>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-muted)"></div><div class="meta"><strong>--trudvang-muted</strong><div>texte secondaire</div><code>#69564b</code></div><button class="copy" data-copy="#69564b">copier</button></div>
+    </section>
+    <section class="cat">
+      <h2>Accent — repères <small>3</small></h2>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-red)"></div><div class="meta"><strong>--trudvang-red</strong><div>titres / h2 / actif</div><code>#733b2d</code></div><button class="copy" data-copy="#733b2d">copier</button></div>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-gold)"></div><div class="meta"><strong>--trudvang-gold</strong><div>bordures / filets / focus</div><code>#a88243</code></div><button class="copy" data-copy="#a88243">copier</button></div>
+      <div class="sw"><div class="chip" style="background:var(--trudvang-green)"></div><div class="meta"><strong>--trudvang-green</strong><div>pastilles coût</div><code>#334b3d</code></div><button class="copy" data-copy="#334b3d">copier</button></div>
+    </section>
+  </div>
+  <div class="note">
+    <b>2 contrastées + 1 accent suffisent</b> : Claire → dérive <code>paper</code>/<code>paper-light</code>/<code>line</code> · Foncée → dérive <code>ink</code>/<code>muted</code> · Accent → dérive <code>red</code>/<code>gold</code> (et <code>green</code> = accent assombri). Donne-moi ces 3 et je régénère les 8 en gardant la hiérarchie lisibilité/bordures/hover.
+  </div>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(b.dataset.copy);b.textContent='copié';setTimeout(()=>b.textContent='copier',900)}catch(e){prompt('Copier',b.dataset.copy)}
+}));
+</script>
+</body>
+</html>
