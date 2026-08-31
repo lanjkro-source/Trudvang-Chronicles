@@ -13,16 +13,16 @@ const raceStats = {
 };
 
 const pages = [
-  ["human", "races", "human", "assets/art/journals/humans.jpg"],
-  ["elf", "races", "elf", "assets/art/journals/elves.jpg"],
-  ["dwarf", "races", "dwarf", "assets/art/journals/dwarves.jpg"],
-  ["dimwalker", "archetypes", "dimwalker", "assets/art/journals/dimwalker.jpg"],
-  ["bard", "archetypes", "bard", "assets/art/journals/bard.jpg"],
-  ["dweller", "archetypes", "dweller", "assets/art/journals/dweller.jpg"],
-  ["warrior", "archetypes", "warrior", "assets/art/journals/warrior.jpg"],
-  ["rogue", "archetypes", "rogue", "assets/art/journals/rogue.jpg"],
-  ["ranger", "archetypes", "ranger", "assets/art/journals/ranger.jpg"],
-  ["vitnerWeaver", "archetypes", "vitnerWeaver", "assets/art/journals/vitner-weaver.jpg"]
+  ["human", "races", "human", "assets/art/journals/humans.png"],
+  ["elf", "races", "elf", "assets/art/journals/elves.png"],
+  ["dwarf", "races", "dwarf", "assets/art/journals/dwarves.png"],
+  ["dimwalker", "archetypes", "dimwalker", "assets/art/journals/dimwalker.png"],
+  ["bard", "archetypes", "bard", "assets/art/journals/bard.png"],
+  ["dweller", "archetypes", "dweller", "assets/art/journals/dweller.png"],
+  ["warrior", "archetypes", "warrior", "assets/art/journals/warrior.png"],
+  ["rogue", "archetypes", "rogue", "assets/art/journals/rogue.png"],
+  ["ranger", "archetypes", "ranger", "assets/art/journals/ranger.png"],
+  ["vitnerWeaver", "archetypes", "vitnerWeaver", "assets/art/journals/vitner-weaver.png"]
 ];
 
 const l = key => game.i18n.localize(key);
