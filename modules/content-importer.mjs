@@ -20,6 +20,8 @@ function localizeTree(value) {
 
 const starterKey = (nameKey) => typeof nameKey === "string" ? nameKey.replace(/\.Name$/, "") : undefined;
 const flagOf = (document, key = "starterId") => document.getFlag(SYSTEM_ID, key);
+const isLegacyWorldMagicCatalogItem = (item) => ["tablet", "spell", "divineFeat"].includes(item.type)
+  && Boolean(item.system?.catalogId || flagOf(item, "catalogId"));
 const normalizeLabel = (value) => String(value).toLowerCase()
   .replace(/œ/g, "oe").replace(/æ/g, "ae")
   .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -416,10 +418,12 @@ export async function importStarterContent({force = false} = {}) {
 
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
 
-    const obsoleteCatalog = game.items.filter(item => item.getFlag(SYSTEM_ID, "catalogId"));
+    // TEMPORARY WORLD MIGRATION — documented in docs/development-world-migrations.md.
+    // Tablettes and their powers are now supplied by the Vitner/Religion compendiums;
+    // remove only the obsolete world-level catalogue copies, never actor-owned magic.
+    const obsoleteCatalog = game.items.filter(isLegacyWorldMagicCatalogItem);
     if (obsoleteCatalog.length) await Item.deleteDocuments(obsoleteCatalog.map(item => item.id));
     const catalogDocuments = TABLET_CATALOG.flatMap(tablet => [tabletItemData(tablet), ...tablet.powers.map(power => powerItemData(power, tablet))]);
-    await Item.createDocuments(catalogDocuments.map(document => ({...document, folder: folders.magic?.id})));
 
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
@@ -519,7 +523,7 @@ export async function importStarterContent({force = false} = {}) {
     await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
     await game.settings.set(SYSTEM_ID, "starterContentLocale", currentLocale);
     ui.notifications.info(game.i18n.format("TRUDVANG.Import.Complete", {
-      items: updated + created + catalogDocuments.length,
+      items: updated + created,
       tables: source.tables.length,
       actors: source.actors.length
     }));
