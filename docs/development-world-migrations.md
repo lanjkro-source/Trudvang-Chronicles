@@ -27,6 +27,7 @@ Toute nouvelle migration de monde doit :
 | `obsoleteWorldKnowledge` pour `vitnerWeavers` | Retire une connaissance mondiale issue d'un ancien catalogue Vitner. | Les mondes antérieurs ont disparu. |
 | Réparation des textes de connaissances, rapprochement par libellé et rafraîchissement des sorts/tablettes intégrés | Met à niveau les descriptions et liens des anciennes copies dans les Items et les acteurs. | Les mondes historiques ont été supprimés. |
 | `starterWeaponPools` | Complète `combatSpecialty` sur les trois armes de départ à distance d'anciens acteurs. | Aucun acteur créé avant les pools de PC liés ne subsiste. |
+| `CONTENT_VERSION = 18` et `upsertJournals()` | Ajoutent les Journaux Équipement, Races et Archétypes aux mondes déjà créés. | Tous les mondes antérieurs ont reçu les Journaux, ou ont été supprimés. |
 
 ## `modules/rules/combat-pool-resolver.mjs`
 

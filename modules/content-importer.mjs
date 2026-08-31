@@ -2,8 +2,9 @@ import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.
 import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
+import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 17;
+const CONTENT_VERSION = 18;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -204,6 +205,21 @@ async function upsertActors(source, folders, translationsByKey) {
     updated++;
   }
   return updated;
+}
+
+async function upsertJournals() {
+  const folders = {};
+  const translations = await loadTranslations(Object.values(JOURNAL_FOLDERS).map(config => config.nameKey));
+  for (const [slug, config] of Object.entries(JOURNAL_FOLDERS)) folders[slug] = await upsertFolder(slug, config, translations.get(config.nameKey));
+  for (const payload of journalDocuments(folders)) {
+    const existing = game.journal.find(entry => flagOf(entry) === payload.flags[SYSTEM_ID].starterId);
+    if (existing) {
+      await existing.update({name: payload.name, folder: payload.folder, [`flags.${SYSTEM_ID}.starterId`]: payload.flags[SYSTEM_ID].starterId});
+      if (existing.pages.size) await existing.deleteEmbeddedDocuments("JournalEntryPage", [...existing.pages.keys()]);
+      await existing.createEmbeddedDocuments("JournalEntryPage", payload.pages);
+    }
+    else await JournalEntry.create(payload);
+  }
 }
 
 // Repairs a bilingual Skills compendium by rebuilding it from the shared blueprints in
@@ -427,6 +443,7 @@ export async function importStarterContent({force = false} = {}) {
 
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
+    await upsertJournals();
 
     const obsoleteWorldKnowledge = game.items.filter(item => item.type === "ability" && item.system.catalogId === "vitnerWeavers");
     if (obsoleteWorldKnowledge.length) await Item.deleteDocuments(obsoleteWorldKnowledge.map(item => item.id));
