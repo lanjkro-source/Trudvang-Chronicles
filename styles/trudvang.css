@@ -507,9 +507,9 @@
 .trudvang.inspection-dialog li.conditional { border-left: 3px solid var(--trudvang-gold); padding-left: 7px; }
 .trudvang.combat-pool-dialog .combat-pool-slider { display: grid; grid-template-columns: 1fr; gap: 3px; margin: 8px 0 4px; }
 .trudvang.combat-pool-dialog .combat-pool-slider input { width: 100%; accent-color: var(--trudvang-gold); }
-.trudvang.combat-pool-dialog .combat-modifier-breakdown { margin: 5px 0; padding: 0; list-style: none; }
-.trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-muted); }
-.trudvang.combat-pool-dialog .combat-modifier-breakdown b { color: var(--trudvang-ink); }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown { margin: 5px 0; padding: 5px 7px; list-style: none; background: rgba(82, 68, 112, .34); border-left: 2px solid #a99ac9; }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: #d9d2ed; }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown b { color: #f2d59b; }
 .trudvang-sheet.item-sheet .damage-complex { grid-column: span 2; }
 .trudvang-sheet.item-sheet .damage-complex > label { display: flex; flex-direction: column; gap: 3px; }
 .trudvang-sheet.item-sheet .damage-parts { display: flex; align-items: center; gap: 5px; }
@@ -537,6 +537,8 @@
 .trudvang.chat-card header h3, .trudvang.chat-card header strong { margin: 0; font-family: Georgia, "Times New Roman", serif; }
 .trudvang.chat-card .roll-result { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
 .trudvang.chat-card .die, .trudvang.chat-card .target, .trudvang.chat-card .damage-result { min-width: 54px; text-align: center; font: 700 2rem Georgia, serif; }
+.trudvang.chat-card .roll-detail-toggle { color: var(--trudvang-ink); border: 0; background: transparent; cursor: pointer; }
+.trudvang.chat-card .roll-detail-toggle:hover { color: var(--trudvang-red); text-shadow: 0 0 6px #fff8; }
 .trudvang.chat-card .die { color: #fff7e7; border: 2px solid #6a4737; border-radius: 8px; background: #7c4a39; }
 .trudvang.chat-card.success .outcome { color: #2e5a3c; }
 .trudvang.chat-card.failure .outcome { color: #872e29; }

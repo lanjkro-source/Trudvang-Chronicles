@@ -1,8 +1,8 @@
 <article class="trudvang chat-card {{kind}} {{#if success}}success{{else}}failure{{/if}}">
   <header><img src="{{actorImg}}"><div><strong>{{actorName}}</strong><h3>{{label}}</h3></div></header>
-  <div class="roll-result"><span class="die">{{result}}</span><span class="versus">≤</span><span class="target">{{target}}</span></div>
+  <div class="roll-result"><span class="die">{{result}}</span><span class="versus">≤</span><button type="button" class="target roll-detail-toggle" data-action="toggle-roll-details" aria-expanded="false">{{target}}</button></div>
   <p class="outcome">{{#if success}}{{localize "TRUDVANG.Roll.Success"}}{{else}}{{localize "TRUDVANG.Roll.Failure"}}{{/if}}{{#if critical}} — {{localize (concat "TRUDVANG.Roll.Critical." critical)}}{{/if}}</p>
   {{#if success}}<p class="success-margin">{{localize "TRUDVANG.Roll.Margin"}} : <strong>{{margin}}</strong></p>{{/if}}
-  {{#if flavor}}<div class="card-flavor">{{{flavor}}}</div>{{/if}}
+  {{#if flavor}}<div class="card-flavor" data-roll-details hidden>{{{flavor}}}</div>{{/if}}
   {{#if success}}{{#if (eq kind "attack")}}{{#if itemUuid}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{else}}{{#if naturalDamage}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-natural-damage="true"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{/if}}{{/if}}{{/if}}{{/if}}
 </article>
