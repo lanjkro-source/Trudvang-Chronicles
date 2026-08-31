@@ -236,13 +236,6 @@
 .trudvang.effect-sheet .window-header { color: var(--trudvang-paper-light); background: linear-gradient(100deg, var(--trudvang-ink), var(--trudvang-muted)); border-bottom: 2px solid var(--trudvang-gold); }
 .trudvang.effect-sheet .window-header .window-title, .trudvang.effect-sheet .window-header button { color: inherit; }
 
-.trudvang.effect-sheet i.fas,
-.trudvang.effect-sheet i.fa-solid,
-.trudvang.effect-sheet i[class*="fa-"] {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900 !important;
-}
-
 .trudvang.effect-sheet nav.tabs,
 .trudvang.effect-sheet .tabs {
   min-height: 38px;
@@ -342,6 +335,17 @@
 }
 .trudvang.effect-sheet input[type="number"] { width: 60px; text-align: center; }
 .trudvang.effect-sheet input[readonly] { opacity: .7; background: rgba(255,255,255,.08); }
+.trudvang.effect-sheet .editor,
+.trudvang.effect-sheet .editor-content,
+.trudvang.effect-sheet .prosemirror,
+.trudvang.effect-sheet .ProseMirror {
+  min-height: 150px;
+  color: var(--trudvang-ink);
+  background: rgba(255,255,255,.32);
+}
+.trudvang.effect-sheet .editor-content,
+.trudvang.effect-sheet .ProseMirror { padding: 6px; border: 1px solid var(--trudvang-line); }
+.trudvang.effect-sheet .editor-edit { color: var(--trudvang-red); }
 
 .trudvang.effect-sheet button {
   color: var(--trudvang-ink);
@@ -355,7 +359,7 @@
   background: rgba(255,250,236,.8);
   text-shadow: 0 0 8px rgba(168,130,67,.55);
 }
-.trudvang.effect-sheet button i.fas { color: var(--trudvang-red); }
+.trudvang.effect-sheet button i.fa-solid { color: var(--trudvang-red); }
 
 .trudvang.effect-sheet footer,
 .trudvang.effect-sheet .window-footer {

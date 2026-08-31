@@ -12,7 +12,20 @@
     "Origin": "Effect Origin",
     "StatusConditions": "Status Conditions",
     "Submit": "Submit Changes",
-    "SubmitChanges": "Submit Changes"
+    "SubmitChanges": "Submit Changes",
+    "DURATION": {
+      "UNITS": {
+        "rounds": "rounds",
+        "turns": "turns",
+        "seconds": "seconds",
+        "minutes": "minutes",
+        "hours": "hours",
+        "days": "days",
+        "weeks": "weeks",
+        "months": "months",
+        "years": "years"
+      }
+    }
   },
   "TYPES": {
     "ActiveEffect": {

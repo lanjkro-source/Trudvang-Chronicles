@@ -12,7 +12,20 @@
     "Origin": "Origine de l'effet",
     "StatusConditions": "États",
     "Submit": "Valider les modifications",
-    "SubmitChanges": "Valider les modifications"
+    "SubmitChanges": "Valider les modifications",
+    "DURATION": {
+      "UNITS": {
+        "rounds": "tours de jeu",
+        "turns": "tours",
+        "seconds": "secondes",
+        "minutes": "minutes",
+        "hours": "heures",
+        "days": "jours",
+        "weeks": "semaines",
+        "months": "mois",
+        "years": "années"
+      }
+    }
   },
   "TYPES": {
     "ActiveEffect": {

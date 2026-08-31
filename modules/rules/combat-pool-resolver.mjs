@@ -77,6 +77,17 @@ function sourcePoolData(actor, id) {
   return actor?._source?.system?.combatPools?.[id] ?? actor?.system?.combatPools?.[id] ?? {};
 }
 
+/**
+ * Free Combat Points are shared with movement, then apply once per weapon hand
+ * (Core Rules, p. 318). A shield-hand action therefore does not consume the
+ * weapon-hand use of the same remaining Free CP, but movement does reduce both.
+ */
+export function freeCombatPoolScope(item, context = {}) {
+  if (!["attack", "parry"].includes(context.action || context.usage || "")) return "shared";
+  if (item?.type === "shield" || item?.system?.hand === "offHand") return "offHand";
+  return "weapon";
+}
+
 /** Whether the actor currently participates in Foundry's active combat encounter. */
 export function actorParticipatesInCombat(actor, combat) {
   if (!actor || !combat?.started) return false;
@@ -174,6 +185,7 @@ function poolEligibility(id, item, context) {
 
 /** Return every pool with its maximum, remaining points, source and contextual eligibility. */
 export function resolveCombatPools({actor, item = null, context = {}} = {}) {
+  const freeScope = freeCombatPoolScope(item, context);
   const pools = COMBAT_POOL_IDS.map(id => {
     const definition = DEFINITIONS[id];
     const max = poolMaximum(actor, id);
@@ -184,7 +196,10 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       spent = Math.max(0, max - legacyValue);
     }
     const currentModifier = id === "free" ? finite(actor?.system?.modifiers?.combatValue, 0) : 0;
-    const current = Math.max(0, Math.min(max, max - spent + currentModifier));
+    const handSpent = id === "free" && freeScope !== "shared" && !context.ignoreSpent
+      ? Math.max(0, finite(sourcePoolData(actor, "free")[`${freeScope}Spent`], 0))
+      : 0;
+    const current = Math.max(0, Math.min(max, max - spent - handSpent + currentModifier));
     const sourceItem = definition.catalogId ? knowledge(actor, definition.catalogId) : null;
     return {
       id,
@@ -192,6 +207,8 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       hintKey: definition.hintKey || "",
       max,
       spent,
+      handSpent,
+      freeScope: id === "free" ? freeScope : "",
       current,
       eligible: poolEligibility(id, item, context),
       priority: definition.priority,
@@ -219,7 +236,8 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     eligible: pools.filter(pool => pool.max > 0 && pool.eligible),
     totalMax: pools.reduce((sum, pool) => sum + pool.max, 0),
     totalCurrent: pools.reduce((sum, pool) => sum + pool.current, 0),
-    eligibleCurrent: pools.filter(pool => pool.eligible).reduce((sum, pool) => sum + pool.current, 0)
+    eligibleCurrent: pools.filter(pool => pool.eligible).reduce((sum, pool) => sum + pool.current, 0),
+    freeScope
   };
 }
 

@@ -431,6 +431,27 @@ test("spending one linked pool does not consume another", () => {
   assert.equal(result.pools.find(pool => pool.id === "free").current, 7);
 });
 
+test("Free CP are reusable once per hand but movement reduces both uses", () => {
+  const actor = combatActor({}, {fighting: 10});
+  actor.system.combatPools.free = {spent: 6, weaponSpent: 4, offHandSpent: 0};
+  actor._source.system.combatPools = actor.system.combatPools;
+  const weaponHand = weapon({category: "oneHandedLight"});
+  const shieldHand = shield();
+  const weaponFree = resolveCombatPools({actor, item: weaponHand, context: {action: "attack"}}).pools.find(pool => pool.id === "free");
+  const shieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
+  assert.equal(weaponFree.current, 0, "6 CP of movement and 4 weapon-hand CP exhaust that hand");
+  assert.equal(shieldFree.current, 4, "the same remaining 4 CP are still available to the shield hand");
+
+  actor.system.combatPools.free.offHandSpent = 4;
+  const exhaustedShieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
+  assert.equal(exhaustedShieldFree.current, 0);
+
+  actor.system.combatPools.free = {spent: 0, weaponSpent: 10, offHandSpent: 0};
+  actor._source.system.combatPools = actor.system.combatPools;
+  const renewedShieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
+  assert.equal(renewedShieldFree.current, 10, "without movement, Free CP remain wholly available to the other hand");
+});
+
 test("allocation helpers prioritize restricted pools and reject overspending", () => {
   const actor = combatActor({battleExperience: 1, armedFighting: 1, fighter: 2, oneHandedLightWeapons: 2});
   const pools = resolveCombatPools({actor, item: weapon({category: "oneHandedLight"}), context: {action: "attack"}}).eligible;

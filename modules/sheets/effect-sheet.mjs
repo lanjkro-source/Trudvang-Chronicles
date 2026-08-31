@@ -1,5 +1,6 @@
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
+const DURATION_UNITS = ["rounds", "turns", "seconds", "minutes", "hours", "days", "weeks", "months", "years"];
 
 export class TrudvangEffectSheet extends ActiveEffectConfig {
   static DEFAULT_OPTIONS = {
@@ -26,9 +27,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   static TABS = {
     sheet: {
       tabs: [
-        {id: "details", icon: "fas fa-align-left", label: "EFFECT.TABS.Details"},
-        {id: "durationChanges", icon: "fas fa-hourglass-half", label: "TRUDVANG.Effect.TabDurationChanges"},
-        {id: "trudvang", icon: "fas fa-layer-group", label: "TRUDVANG.Effect.RulesTab"}
+        {id: "details", icon: "fa-solid fa-align-left", label: "EFFECT.TABS.Details"},
+        {id: "durationChanges", icon: "fa-solid fa-hourglass-half", label: "TRUDVANG.Effect.TabDurationChanges"},
+        {id: "trudvang", icon: "fa-solid fa-layer-group", label: "TRUDVANG.Effect.RulesTab"}
       ],
       initial: "details"
     }
@@ -39,6 +40,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
+      partContext.editable = this.isEditable;
       partContext.enrichedDescription = await TextEditorImpl.enrichHTML(
         this.document.description || "",
         {async: true, secrets: this.document.isOwner}
@@ -55,7 +57,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         units: dur.units ?? "rounds",
         expiry: dur.expiry ?? ""
       };
-      partContext.durationUnits = ["rounds", "minutes", "hours", "days"].reduce((choices, unit) => {
+      partContext.durationUnits = DURATION_UNITS.reduce((choices, unit) => {
         choices[unit] = game.i18n.localize(`EFFECT.DURATION.UNITS.${unit}`);
         return choices;
       }, {});
@@ -113,7 +115,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         replace: game.i18n.localize("TRUDVANG.Effect.Replace"),
         highest: game.i18n.localize("TRUDVANG.Effect.Highest")
       };
-      partContext.durationUnits = ["seconds", "minutes", "hours", "days", "rounds", "turns"].reduce((choices, unit) => {
+      partContext.durationUnits = DURATION_UNITS.reduce((choices, unit) => {
         choices[unit] = game.i18n.localize(`EFFECT.DURATION.UNITS.${unit}`);
         return choices;
       }, {});

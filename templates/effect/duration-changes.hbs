@@ -35,11 +35,11 @@
         <input type="text" name="system.changes.{{index}}.value" value="{{change.value}}" placeholder="0">
         <input type="number" name="system.changes.{{index}}.priority" value="{{change.priority}}" step="1" title="{{localize 'TRUDVANG.Effect.PriorityHint'}}">
         <input type="hidden" name="system.changes.{{index}}.phase" value="{{change.phase}}">
-        <button type="button" data-action="deleteChange"><i class="fas fa-trash"></i></button>
+        <button type="button" data-action="deleteChange"><i class="fa-solid fa-trash"></i></button>
       </div>
       {{/each}}
     </div>
-    <button type="button" data-action="addChange"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Effect.AddChange"}}</button>
+    <button type="button" data-action="addChange"><i class="fa-solid fa-plus"></i> {{localize "TRUDVANG.Effect.AddChange"}}</button>
     <datalist id="effect-supported-paths">
       {{#each supportedPaths as |path|}}<option value="{{path}}">{{/each}}
     </datalist>

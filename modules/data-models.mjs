@@ -55,6 +55,9 @@ function resource(initialValue, initialMax) {
 function combatPool() {
   return schema({
     spent: integer(-1, {min: -1}),
+    // Free CP are used independently by each hand, but movement spends them for both.
+    weaponSpent: integer(0, {min: 0}),
+    offHandSpent: integer(0, {min: 0}),
     max: integer(0, {persisted: false}),
     current: integer(0, {persisted: false})
   });

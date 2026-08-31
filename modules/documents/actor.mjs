@@ -617,7 +617,7 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
-    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     const strength = this.getTraitValue("strength");
     const target = Math.floor(spending.total / 2);
     const actionModifier = this.getRollModifier({kind: "attack", movement: true}) - Number(this.system.armorVCPenalty || 0);
@@ -671,7 +671,7 @@ export class TrudvangActor extends BaseActor {
     }
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total !== cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.ExactCombatCost", {cost}));
-    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     await item.update({"system.equipped": true});
     return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Drawn", {item: item.name, cost}));
   }
@@ -689,7 +689,7 @@ export class TrudvangActor extends BaseActor {
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
-    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     const effectModifier = this.getRollModifier({kind, movement: true});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
@@ -774,8 +774,10 @@ export class TrudvangActor extends BaseActor {
   }
 
   async resetCombatPoints() {
-    const updates = Object.keys(this.system.combatPools || {})
-      .map(id => [`system.combatPools.${id}.spent`, 0]);
+    const updates = Object.keys(this.system.combatPools || {}).flatMap(id => [
+      [`system.combatPools.${id}.spent`, 0],
+      ...(id === "free" ? [["system.combatPools.free.weaponSpent", 0], ["system.combatPools.free.offHandSpent", 0]] : [])
+    ]);
     return this.update(Object.fromEntries(updates));
   }
 
@@ -800,11 +802,16 @@ export class TrudvangActor extends BaseActor {
     return {...spending, paidMeters};
   }
 
-  async spendCombatPoints(allocation = {}) {
+  async spendCombatPoints(allocation = {}, {freeScope = "shared"} = {}) {
     if (!this.isInActiveCombat) return this;
     const updates = {};
     for (const [id, amount] of Object.entries(allocation)) {
       if (!Object.hasOwn(this.system.combatPools || {}, id) || Number(amount) <= 0) continue;
+      if (id === "free" && freeScope !== "shared") {
+        const key = `system.combatPools.free.${freeScope}Spent`;
+        updates[key] = Number(this.system.combatPools.free?.[`${freeScope}Spent`] || 0) + Number(amount);
+        continue;
+      }
       const stored = Number(this.system.combatPools?.[id]?.spent || 0);
       updates[`system.combatPools.${id}.spent`] = stored + Number(amount);
     }

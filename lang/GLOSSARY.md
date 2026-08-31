@@ -25,6 +25,20 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `EFFECT.Submit` | Submit Changes | Valider les modifications |
 | `EFFECT.SubmitChanges` | Submit Changes | Valider les modifications |
 
+## `EFFECT.DURATION.UNITS`
+
+| Clé | English | Français |
+|---|---|---|
+| `EFFECT.DURATION.UNITS.rounds` | rounds | tours de jeu |
+| `EFFECT.DURATION.UNITS.turns` | turns | tours |
+| `EFFECT.DURATION.UNITS.seconds` | seconds | secondes |
+| `EFFECT.DURATION.UNITS.minutes` | minutes | minutes |
+| `EFFECT.DURATION.UNITS.hours` | hours | heures |
+| `EFFECT.DURATION.UNITS.days` | days | jours |
+| `EFFECT.DURATION.UNITS.weeks` | weeks | semaines |
+| `EFFECT.DURATION.UNITS.months` | months | mois |
+| `EFFECT.DURATION.UNITS.years` | years | années |
+
 ## `TYPES.ActiveEffect`
 
 | Clé | English | Français |

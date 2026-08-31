@@ -10,13 +10,13 @@
     <p class="hint">{{localize "TRUDVANG.Effect.StagesHint"}}</p>
     <ol class="trudvang-stage-list">
       {{#each stages as |stage|}}<li data-stage-index="{{stage.index}}">
-        <header><strong>{{localize "TRUDVANG.Effect.Stage"}} {{stage.number}}</strong><button type="button" data-action="deleteTrudvangStage"><i class="fas fa-trash"></i></button></header>
+        <header><strong>{{localize "TRUDVANG.Effect.Stage"}} {{stage.number}}</strong><button type="button" data-action="deleteTrudvangStage"><i class="fa-solid fa-trash"></i></button></header>
         <div class="form-group"><label>{{localize "TRUDVANG.Field.Name"}}</label><input name="system.stages.{{stage.index}}.label" value="{{stage.label}}"></div>
         <div class="form-group slim"><label>{{localize "TRUDVANG.Field.Duration"}}</label><div class="form-fields"><input name="system.stages.{{stage.index}}.durationValue" type="number" min="0" value="{{stage.durationValue}}"><select name="system.stages.{{stage.index}}.durationUnit">{{selectOptions ../durationUnits selected=stage.durationUnit}}</select></div></div>
         <div class="form-group stacked"><label>{{localize "TRUDVANG.Effect.StageChanges"}}</label><textarea name="trudvang.stageChanges.{{stage.index}}" rows="6">{{stage.changesJson}}</textarea></div>
       </li>{{/each}}
     </ol>
-    <button type="button" data-action="addTrudvangStage"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Effect.AddStage"}}</button>
+    <button type="button" data-action="addTrudvangStage"><i class="fa-solid fa-plus"></i> {{localize "TRUDVANG.Effect.AddStage"}}</button>
   </fieldset>
   <details class="effect-key-help"><summary>{{localize "TRUDVANG.Effect.SupportedPaths"}}</summary><p class="hint">{{localize "TRUDVANG.Effect.SupportedPathsHint"}}</p><code>system.effective.traits.&lt;trait&gt;</code><code>system.effective.skills.&lt;skill&gt;</code><code>system.modifiers.rolls.allActions</code><code>system.modifiers.rolls.combatActions</code><code>system.modifiers.rolls.movementActions</code><code>system.modifiers.rolls.attack</code><code>system.modifiers.rolls.parry</code><code>system.modifiers.rolls.magic</code><code>system.modifiers.rolls.traits.&lt;trait&gt;</code><code>system.modifiers.rolls.skills.&lt;skill&gt;</code><code>system.modifiers.movement</code><code>system.modifiers.protection</code><code>system.modifiers.bodyMax</code><code>system.modifiers.combatMax</code><code>system.modifiers.vitnerMax</code><code>system.modifiers.divinityMax</code><code>system.modifiers.bodyValue</code><code>system.modifiers.combatValue</code><code>system.modifiers.vitnerValue</code><code>system.modifiers.divinityValue</code><code>system.modifiers.raudValue</code><code>system.modifiers.fearValue</code></details>
 </section>
