@@ -266,8 +266,7 @@ function magicSchema() {
     range: string("Personal"),
     weavingTime: string("1 action round"),
     active: boolean(false),
-    activeCost: integer(0, {min: 0}),
-    effect: html()
+    activeCost: integer(0, {min: 0})
   };
 }
 

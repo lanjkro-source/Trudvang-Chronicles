@@ -72,6 +72,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     })) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.equipmentInspection = this.item.parent?.documentName === "Actor" ? prepareEquipmentInspection(this.item) : null;
+    context.hasModifiers = Boolean(context.equipmentInspection);
+    context.hasItemTabs = context.supportsEffects || context.hasModifiers;
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
     return context;
   }

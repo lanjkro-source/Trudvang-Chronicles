@@ -96,6 +96,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tab.Notes` | Notes | Notes |
 | `TRUDVANG.Tab.Actions` | Actions | Actions |
 | `TRUDVANG.Tab.Details` | Details | Détails |
+| `TRUDVANG.Tab.Modifiers` | Modifiers | Modificateurs |
 
 ## `TRUDVANG.Section`
 

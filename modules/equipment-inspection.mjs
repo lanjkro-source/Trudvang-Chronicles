@@ -32,9 +32,20 @@ function localized(key, data = {}) {
 
 function effectChangeDisplay(change) {
   const value = number(change.value);
-  if (Number(change.mode) === 2) return signed(value);
-  if (Number(change.mode) === 1) return `× ${value}`;
+  const type = change.type ?? change.mode;
+  if (type === "add" || Number(type) === 2) return signed(value);
+  if (type === "multiply" || Number(type) === 1) return `× ${value}`;
   return `= ${change.value}`;
+}
+
+function changeTone(value) {
+  const numeric = number(value);
+  return numeric > 0 ? "positive" : numeric < 0 ? "negative" : "neutral";
+}
+
+function effectChangeTone(change) {
+  const type = change.type ?? change.mode;
+  return (type === "add" || Number(type) === 2) ? changeTone(change.value) : "neutral";
 }
 
 function applicableEffectRows(actor, key, total) {
@@ -43,8 +54,8 @@ function applicableEffectRows(actor, key, total) {
   for (const effect of Array.from(actor.allApplicableEffects?.() || [])) {
     if (effect.disabled || effect.isSuppressed || effect.active === false) continue;
     for (const change of Array.from(effect.system?.changes || []).filter(entry => entry.key === key)) {
-      if (Number(change.mode) === 2) additive += number(change.value);
-      rows.push(row(effect.name, effectChangeDisplay(change), {source: effect.parent?.documentName === "Item" ? effect.parent.name : effect.sourceName || ""}));
+      if (change.type === "add" || Number(change.mode) === 2) additive += number(change.value);
+      rows.push(row(effect.name, effectChangeDisplay(change), {source: effect.parent?.documentName === "Item" ? effect.parent.name : effect.sourceName || "", tone: effectChangeTone(change)}));
     }
   }
   const residual = number(total) - additive;
@@ -60,11 +71,13 @@ function damageDisplay(value) {
 function statDisplays(key, value) {
   if (key === "damage") {
     const base = {...value, modifier: {...value.modifier, value: value.modifier.base}, openRoll: {...value.openRoll, value: value.openRoll.base}};
-    return {base: damageDisplay(base), effective: damageDisplay(value), modified: value.modifier.modified || value.openRoll.modified};
+    // A lower open-roll threshold is beneficial: JO 8–10 opens more often than JO 10.
+    const delta = number(value.modifier.value) - number(value.modifier.base) + number(value.openRoll.base) - number(value.openRoll.value);
+    return {base: damageDisplay(base), effective: damageDisplay(value), modified: value.modifier.modified || value.openRoll.modified, tone: changeTone(delta)};
   }
   const useSigned = ["combatActionModifier", "initiativeModifier", "movementModifier"].includes(key);
   const display = current => useSigned ? signed(current) : `${current}`;
-  return {base: display(value.base), effective: display(value.value), modified: Boolean(value.modified)};
+  return {base: display(value.base), effective: display(value.value), modified: Boolean(value.modified), tone: changeTone(number(value.value) - number(value.base))};
 }
 
 function statSteps(key, value) {
@@ -72,6 +85,7 @@ function statSteps(key, value) {
   return sources.flatMap(source => (source?.steps || []).map(step => ({
     label: step.source?.name || localized(`TRUDVANG.Inspection.Source.${step.source?.kind || "rule"}`),
     value: `${step.before} → ${step.after} (${signed(step.delta)})`,
+    tone: changeTone(key === "damage" && source === value.openRoll ? -step.delta : step.delta),
     explanation: localized(step.explanationKey, step.explanationData)
   })));
 }
@@ -90,6 +104,7 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
       effectiveDisplay: display.effective,
       comparison: display.modified ? `${display.base} → ${display.effective}` : display.effective,
       modified: display.modified,
+      tone: display.tone,
       steps
     };
   });
@@ -100,15 +115,19 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
       label: localized(IMPACT_LABELS[key] || key),
       value: signed(impact.value),
       mode,
+      tone: changeTone(impact.value),
       modeLabel: localized(`TRUDVANG.Inspection.Mode.${mode}`)
     };
   });
-  const effects = Array.from(item.effects || []).filter(effect => effect.transfer && !effect.disabled).map(effect => ({
+  const effects = Array.from(item.effects || []).filter(effect => effect.transfer && !effect.disabled).map(effect => {
+    const changes = Array.from(effect.system?.changes || []);
+    return {
     label: effect.name,
-    value: Array.from(effect.system?.changes || []).map(change => `${change.key}: ${effectChangeDisplay(change)}`).join(" · ") || "—",
+    value: changes.map(change => `${change.key}: ${effectChangeDisplay(change)}`).join(" · ") || "—",
     mode: effect.isSuppressed ? "inactive" : "permanent",
+    tone: changes.map(effectChangeTone).find(tone => tone !== "neutral") || "neutral",
     modeLabel: localized(`TRUDVANG.Inspection.Mode.${effect.isSuppressed ? "inactive" : "permanent"}`)
-  }));
+  }; });
   return {
     itemId: item.id,
     itemName: item.name,
@@ -122,8 +141,8 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
   };
 }
 
-function row(label, value, {source = "", conditional = false} = {}) {
-  return {label, value: typeof value === "number" ? signed(value) : value, source, conditional};
+function row(label, value, {source = "", conditional = false, tone = typeof value === "number" ? changeTone(value) : "neutral"} = {}) {
+  return {label, value: typeof value === "number" ? signed(value) : value, source, conditional, tone};
 }
 
 export function prepareActorStatInspection(actor, key, config = {}) {
@@ -190,7 +209,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
 }
 
 function rowsHtml(rows) {
-  return rows.map(entry => `<li class="${entry.conditional ? "conditional" : ""}"><span><strong>${escapeHtml(entry.label)}</strong>${entry.source ? `<small>${escapeHtml(entry.source)}</small>` : ""}</span><b>${escapeHtml(entry.value)}</b></li>`).join("");
+  return rows.map(entry => `<li class="${[entry.conditional ? "conditional" : "", entry.tone || ""].filter(Boolean).join(" ")}"><span><strong>${escapeHtml(entry.label)}</strong>${entry.source ? `<small>${escapeHtml(entry.source)}</small>` : ""}</span><b>${escapeHtml(entry.value)}</b></li>`).join("");
 }
 
 export function showInspectionDialog(model) {
@@ -198,9 +217,9 @@ export function showInspectionDialog(model) {
   const sections = model.stats ? [
     {
       title: localized("TRUDVANG.Inspection.EffectiveValues"),
-      rows: model.stats.map(stat => ({label: stat.label, value: stat.comparison, source: stat.source || (stat.modified ? localized("TRUDVANG.Inspection.Modified") : "")}))
+      rows: model.stats.map(stat => ({label: stat.label, value: stat.comparison, source: stat.source || (stat.modified ? localized("TRUDVANG.Inspection.Modified") : ""), tone: stat.tone}))
     },
-    {title: localized("TRUDVANG.Inspection.WearerImpacts"), rows: [...model.impacts.map(impact => ({label: impact.label, value: impact.value, source: impact.modeLabel, conditional: impact.mode === "conditional"})), ...(model.effects || []).map(effect => ({label: effect.label, value: effect.value, source: effect.modeLabel}))]}
+    {title: localized("TRUDVANG.Inspection.WearerImpacts"), rows: [...model.impacts.map(impact => ({label: impact.label, value: impact.value, source: impact.modeLabel, conditional: impact.mode === "conditional", tone: impact.tone})), ...(model.effects || []).map(effect => ({label: effect.label, value: effect.value, source: effect.modeLabel, tone: effect.tone}))]}
   ] : [
     {title: localized("TRUDVANG.Inspection.Permanent"), rows: model.permanent},
     {title: localized("TRUDVANG.Inspection.Conditional"), rows: model.conditional}
@@ -227,6 +246,7 @@ export function showEquipmentStatDetail(inspection, key) {
       comparison: step.value,
       effectiveDisplay: step.value,
       modified: true,
+      tone: step.tone,
       source: step.explanation
     }))],
     impacts: inspection.impacts.filter(impact => impact.key === key)
