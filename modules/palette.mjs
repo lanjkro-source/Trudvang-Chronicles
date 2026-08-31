@@ -1,6 +1,8 @@
 /**
  * Color palettes for the Trudvang theme. Each palette maps semantic CSS custom
- * properties (--trudvang-*) to concrete values. `default` is the original,
+ * properties (--trudvang-*) to concrete values. The roles include surfaces,
+ * readable accents and Foundry window chrome so sheets never need a fixed
+ * colour. `default` is the original,
  * `autumn` (P2), `winter` (P3) and `spring` are the alternates.
  *
  * Spring is derived from #F8F4E9 (cream), #4C5D3F (dark olive), #F9D5E0 (pink)
@@ -32,7 +34,13 @@ export const PALETTES = {
     negativeSoft: "rgba(115,59,45,.16)",
     paper: "#e8dcc4",
     paperLight: "#f4ecd9",
-    line: "rgba(72,48,35,0.38)"
+    line: "rgba(72,48,35,0.38)",
+    accent: "#733b2d",
+    warning: "#805d28",
+    header: "#2e1f18",
+    headerAlt: "#5c3827",
+    onHeader: "#f5ead2",
+    onHeaderMuted: "#d8c59f"
   },
   autumn: {
     ink: "#1C1C1C",
@@ -46,7 +54,13 @@ export const PALETTES = {
     negativeSoft: "rgba(168,50,24,.16)",
     paper: "#F5E8C8",
     paperLight: "#FDF6E3",
-    line: "rgba(28,28,28,0.38)"
+    line: "rgba(28,28,28,0.38)",
+    accent: "#A83218",
+    warning: "#7a5b12",
+    header: "#1c1c1c",
+    headerAlt: "#5a4a3a",
+    onHeader: "#FDF6E3",
+    onHeaderMuted: "#e2cfa8"
   },
   winter: {
     ink: "#2B2B2B",
@@ -60,7 +74,13 @@ export const PALETTES = {
     negativeSoft: "rgba(122,78,143,.16)",
     paper: "#F4EEE0",
     paperLight: "#FDF8ED",
-    line: "rgba(43,43,43,0.38)"
+    line: "rgba(43,43,43,0.38)",
+    accent: "#7A4E8F",
+    warning: "#725c3d",
+    header: "#2b2b2b",
+    headerAlt: "#574a57",
+    onHeader: "#FDF8ED",
+    onHeaderMuted: "#d9d0df"
   },
   spring: {
     ink: "#2B2B2B",
@@ -75,7 +95,13 @@ export const PALETTES = {
     negativeSoft: "rgba(155,64,94,.16)",
     paper: "#F8F4E9",
     paperLight: "#FDF8ED",
-    line: "rgba(43,43,43,0.38)"
+    line: "rgba(43,43,43,0.38)",
+    accent: "#9B405E",
+    warning: "#607250",
+    header: "#354230",
+    headerAlt: "#4c5d3f",
+    onHeader: "#FDF8ED",
+    onHeaderMuted: "#dde8d5"
   },
   summer: {
     ink: "#1B2A4E",
@@ -89,7 +115,13 @@ export const PALETTES = {
     negativeSoft: "rgba(184,90,19,.16)",
     paper: "#F4EEE0",
     paperLight: "#FDF8ED",
-    line: "rgba(27,42,78,0.38)"
+    line: "rgba(27,42,78,0.38)",
+    accent: "#B85A13",
+    warning: "#8a641b",
+    header: "#1b2a4e",
+    headerAlt: "#394a70",
+    onHeader: "#FDF8ED",
+    onHeaderMuted: "#d8dff0"
   }
 };
 
