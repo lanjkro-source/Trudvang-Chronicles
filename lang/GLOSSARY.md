@@ -929,7 +929,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Gear` | Trudvang - Gear & Extracts | Trudvang - Équipements & Extraits |
 | `TRUDVANG.Content.Folder.Magic` | Trudvang - Tablets & Magic | Trudvang - Tables & Magie |
 | `TRUDVANG.Content.Folder.Abilities` | Trudvang - Disciplines & Specialties | Trudvang - Disciplines & Spécialités |
-| `TRUDVANG.Content.Folder.Tables` | Trudvang - Roll Tables | Trudvang - Tables de Lancers |
+| `TRUDVANG.Content.Folder.Tables` | Magic | Magie |
 | `TRUDVANG.Content.Folder.Creatures` | Trudvang - Creatures | Trudvang - Créatures |
 
 ## `TRUDVANG.Content.Source`
