@@ -505,6 +505,11 @@
 .trudvang.inspection-dialog li > span { display: flex; flex-direction: column; min-width: 0; }
 .trudvang.inspection-dialog li small { color: var(--trudvang-muted); font-size: .7rem; }
 .trudvang.inspection-dialog li.conditional { border-left: 3px solid var(--trudvang-gold); padding-left: 7px; }
+.trudvang.combat-pool-dialog .combat-pool-slider { display: grid; grid-template-columns: 1fr; gap: 3px; margin: 8px 0 4px; }
+.trudvang.combat-pool-dialog .combat-pool-slider input { width: 100%; accent-color: var(--trudvang-gold); }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown { margin: 5px 0; padding: 0; list-style: none; }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-muted); }
+.trudvang.combat-pool-dialog .combat-modifier-breakdown b { color: var(--trudvang-ink); }
 .trudvang-sheet.item-sheet .damage-complex { grid-column: span 2; }
 .trudvang-sheet.item-sheet .damage-complex > label { display: flex; flex-direction: column; gap: 3px; }
 .trudvang-sheet.item-sheet .damage-parts { display: flex; align-items: center; gap: 5px; }

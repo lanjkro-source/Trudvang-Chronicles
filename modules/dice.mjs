@@ -307,7 +307,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
   });
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const rows = pools.map(pool => {
     const amount = Number(defaultAllocation[pool.id] || 0);
@@ -319,9 +319,15 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     </div>`;
   }).join("");
   const initialTotal = Object.values(defaultAllocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
+  const maximum = pools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+  const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(row.label)}</span><b>${Number(row.value) > 0 ? "+" : ""}${Number(row.value || 0)}</b></li>`).join("");
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
     ${rows}
+    <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
     <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
+    ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
+    ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
+    ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
     ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
   </div>`;
 
@@ -334,8 +340,28 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
           .reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
         const output = root.querySelector("[data-combat-total]");
         if (output) output.textContent = String(total);
+        const finalTarget = root.querySelector("[data-combat-final-target]");
+        if (finalTarget) {
+          const manual = Number(root.querySelector("[name=modifier]")?.value || 0);
+          const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
+          finalTarget.textContent = String(total + manual + fixed);
+        }
       };
-      root.querySelectorAll("[data-pool-id]").forEach(input => input.addEventListener("input", refresh));
+      const inputs = Array.from(root.querySelectorAll("[data-pool-id]"));
+      const slider = root.querySelector("[data-combat-slider]");
+      const allocate = requested => {
+        let remaining = Math.max(0, Number(requested || 0));
+        for (const pool of [...pools].sort((left, right) => right.priority - left.priority)) {
+          const input = inputs.find(candidate => candidate.dataset.poolId === pool.id);
+          if (!input) continue;
+          const amount = Math.min(Number(pool.current || 0), remaining);
+          input.value = String(amount);
+          remaining -= amount;
+        }
+      };
+      slider?.addEventListener("input", event => { allocate(event.currentTarget.value); refresh(); });
+      inputs.forEach(input => input.addEventListener("input", () => { if (slider) slider.value = String(inputs.reduce((sum, field) => sum + Math.max(0, Number(field.value || 0)), 0)); refresh(); }));
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       refresh();
     }
   }

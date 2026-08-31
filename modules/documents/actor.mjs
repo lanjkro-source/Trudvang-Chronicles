@@ -682,17 +682,26 @@ export class TrudvangActor extends BaseActor {
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}});
     const available = poolResolution.eligibleCurrent;
     const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
+    const combatPointBonus = item.system.combatPointBonusUsed ? 0 : Number(item.system.combatPointBonus || 0);
+    const effectModifier = this.getRollModifier({kind, movement: true});
+    const armorModifier = -Number(this.system.armorVCPenalty || 0);
+    const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
+    const modifierRows = [
+      {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
+      {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
+      ...equipmentModifier.steps.map(step => ({label: game.i18n.format(step.explanationKey, step.explanationData), value: step.delta}))
+    ].filter(row => Number(row.value));
     const options = await combatPointDialog({
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
       pools: poolResolution.eligible,
-      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, defaultCost)
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, defaultCost),
+      combatPointBonus,
+      modifierRows
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
-    const effectModifier = this.getRollModifier({kind, movement: true});
-    const armorModifier = -Number(this.system.armorVCPenalty || 0);
-    const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
+    if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const spendingFlavor = inCombat ? Object.entries(spending.allocation)
       .filter(([, amount]) => amount > 0)
@@ -700,14 +709,16 @@ export class TrudvangActor extends BaseActor {
         amount,
         pool: game.i18n.localize(poolById[id].labelKey)
       })) : [];
-    const flavor = [...spendingFlavor, ...equipmentModifier.steps
-      .map(step => game.i18n.format(step.explanationKey, step.explanationData))
+    const flavor = [
+      ...spendingFlavor,
+      ...(combatPointBonus ? [game.i18n.format("TRUDVANG.Calculation.EquipmentCombatPointBonus", {amount: combatPointBonus > 0 ? `+${combatPointBonus}` : combatPointBonus})] : []),
+      ...modifierRows.map(row => `${row.label}: ${row.value > 0 ? "+" : ""}${row.value}`)
     ].join("<br>");
     return rollUnder({
       actor: this,
       label: item.name,
       target: spending.total,
-      modifier: options.modifier + effectModifier + armorModifier + equipmentModifier.value,
+      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value,
       kind,
       flavor,
       item
@@ -778,7 +789,10 @@ export class TrudvangActor extends BaseActor {
       [`system.combatPools.${id}.spent`, 0],
       ...(id === "free" ? [["system.combatPools.free.weaponSpent", 0], ["system.combatPools.free.offHandSpent", 0]] : [])
     ]);
-    return this.update(Object.fromEntries(updates));
+    await this.update(Object.fromEntries(updates));
+    const equipped = this.items.filter(item => ["weapon", "shield"].includes(item.type) && item.system.combatPointBonusUsed);
+    if (equipped.length) await this.updateEmbeddedDocuments("Item", equipped.map(item => ({_id: item.id, "system.combatPointBonusUsed": false})));
+    return this;
   }
 
   async rollCombatMovement() {

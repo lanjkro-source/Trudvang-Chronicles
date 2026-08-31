@@ -68,7 +68,7 @@
     <div class="tab combat" data-group="primary" data-tab="combat">
       <section class="panel combat-reserves-panel">
         <div class="section-heading"><h2>{{localize "TRUDVANG.Resource.CombatPools"}}</h2><span><button type="button" data-action="inspect-global-stat" data-stat="combat" title="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-circle-info"></i></button><button type="button" data-action="reset-combat"><i class="fas fa-rotate"></i> {{localize "TRUDVANG.Action.ResetCombat"}}</button></span></div>
-        <div class="combat-pool-bar" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">{{#each combatPools as |pool|}}<span class="combat-pool {{#unless pool.current}}depleted{{/unless}}" title="{{pool.sourceTitle}}"><strong>{{pool.label}}</strong> {{pool.current}}/{{pool.max}}</span>{{/each}}</div>
+        <div class="combat-pool-bar" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">{{#each combatPools as |pool|}}<span class="combat-pool {{#if pool.depleted}}depleted{{/if}}" title="{{pool.sourceTitle}}"><strong>{{pool.label}}</strong> {{pool.displayCurrent}}/{{pool.max}}</span>{{/each}}</div>
       </section>
       <section class="panel">
         <h2>{{localize "TRUDVANG.Section.CombatActions"}}</h2>

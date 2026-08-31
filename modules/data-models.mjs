@@ -298,6 +298,8 @@ export class WeaponData extends BaseItemData {
       strengthApplies: boolean(true),
       weaponActions: integer(4, {min: 0}),
       attackValue: integer(0, {min: 0}),
+      combatPointBonus: integer(0),
+      combatPointBonusUsed: boolean(false),
       damageBonus: integer(0),
       range: schema({short: integer(0), long: integer(0)})
     };
@@ -332,6 +334,8 @@ export class ShieldData extends BaseItemData {
       openRoll: integer(0, {min: 0, max: 10}),
       weaponActions: integer(2, {min: 0}),
       attackValue: integer(0, {min: 0}),
+      combatPointBonus: integer(0),
+      combatPointBonusUsed: boolean(false),
       damageBonus: integer(0),
       passiveProtection: integer(0, {min: 0})
     };

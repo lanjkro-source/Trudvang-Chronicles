@@ -526,6 +526,8 @@
     },
     "Dialog": {
       "BaseTarget": "Cible de base: {target}",
+      "CombatPoolSlider": "Allocation rapide",
+      "EquipmentCombatPointBonus": "Bonus de PC de l’équipement",
       "Modifier": "Modificateur situationnel",
       "CombatPoints": "CP à dépenser",
       "AllocatedCombatPoints": "VC obtenue par les CP alloués",
@@ -632,6 +634,7 @@
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
       "CombatPoolSpent": "{amount} PC dépensé(s) depuis la réserve {pool}.",
+      "EquipmentCombatPointBonus": "Bonus de PC de l’équipement : {amount}.",
       "WrestlingCost": "{points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique.",
       "CombatPoolSource": "{source} niveau {level} : réserve de {max} PC.",
       "FreeCombatPoolSource": "Compétence Combat : {skill} PC ; Expérience du combat : +{experience} PC ; autres modificateurs : {modifier} PC ; total : {max} PC libres.",

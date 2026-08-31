@@ -102,7 +102,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
     context.isInCombat = this.actor.isInActiveCombat;
-    context.combatPools = resolveCombatPools({actor: this.actor, context: {ignoreSpent: !context.isInCombat}}).active.map(pool => {
+    const poolContext = {ignoreSpent: !context.isInCombat};
+    const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
+    const offHandFree = resolveCombatPools({actor: this.actor, item: {type: "shield", system: {}}, context: {...poolContext, action: "parry"}}).pools.find(pool => pool.id === "free");
+    context.combatPools = resolveCombatPools({actor: this.actor, context: poolContext}).active.map(pool => {
       const sourceTitle = pool.source.name
         ? game.i18n.format("TRUDVANG.Calculation.CombatPoolSource", {source: pool.source.name, level: pool.source.level, max: pool.max})
         : game.i18n.format("TRUDVANG.Calculation.FreeCombatPoolSource", {
@@ -112,7 +115,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
           max: pool.max
         });
       const hint = pool.hintKey ? game.i18n.localize(pool.hintKey) : "";
-      return {...pool, label: game.i18n.localize(pool.labelKey), sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")};
+      const isFree = pool.id === "free";
+      return {...pool, label: game.i18n.localize(pool.labelKey), displayCurrent: isFree ? `${weaponFree.current}|${offHandFree.current}` : pool.current, depleted: isFree ? !weaponFree.current && !offHandFree.current : !pool.current, sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")};
     });
     context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
     context.combatMovementHint = game.i18n.format("TRUDVANG.Combat.MovementHint", {
