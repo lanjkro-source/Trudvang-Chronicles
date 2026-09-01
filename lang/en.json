@@ -550,6 +550,7 @@
       "strenuous": "Strenuous lets the conjurer spend 2 additional Vitner Points per specialty level to gain +1 SV per amount spent when weaving a spell."
     },
     "Damage": {
+      "unhurt": "Unhurt",
       "light": "Lightly Damaged",
       "injured": "Injured",
       "serious": "Seriously Injured",
@@ -559,6 +560,7 @@
       "RecoveryDaily": "{amount} BP/day",
       "RecoveryEveryDays": "{amount} BP/{days} days",
       "DamageConsequence": {
+        "unhurt": "No penalty",
         "light": "No penalty",
         "injured": "−1 to SV and initiative",
         "serious": "−3 to SV and initiative",

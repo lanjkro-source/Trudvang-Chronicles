@@ -61,7 +61,7 @@
             </section>
             <section class="status-vital health-vital">
               <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span class="status-vital-value">{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
-              <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 25%"></i><i class="vital-meter-mark" style="left: 50%"></i><i class="vital-meter-mark" style="left: 75%"></i></div>
+              <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span>{{#each healthStatus.marks as |mark|}}<i class="vital-meter-mark" style="left: {{mark}}%"></i>{{/each}}</div>
               <p class="status-consequence"><strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong><span>{{healthStatus.consequence}}</span></p>
             </section>
             <section class="status-protection status-fear-factor">

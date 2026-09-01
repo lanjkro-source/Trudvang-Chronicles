@@ -652,6 +652,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Damage.unhurt` | Unhurt | Indemne |
 | `TRUDVANG.Damage.light` | Lightly Damaged | Égratigné |
 | `TRUDVANG.Damage.injured` | Injured | Blessé |
 | `TRUDVANG.Damage.serious` | Seriously Injured | Gravement blessé |
@@ -668,6 +669,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Status.DamageConsequence.unhurt` | No penalty | Aucune pénalité |
 | `TRUDVANG.Status.DamageConsequence.light` | No penalty | Aucune pénalité |
 | `TRUDVANG.Status.DamageConsequence.injured` | −1 to SV and initiative | −1 aux VC et à l’initiative |
 | `TRUDVANG.Status.DamageConsequence.serious` | −3 to SV and initiative | −3 aux VC et à l’initiative |

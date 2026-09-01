@@ -17,6 +17,15 @@ function percent(value, max) {
   return Math.max(0, Math.min(100, (Number(value || 0) / maximum) * 100));
 }
 
+function healthThresholdMarks(max) {
+  const maximum = Math.max(1, Number(max || 1));
+  const baseRange = Math.floor(maximum / 4);
+  const remainder = maximum % 4;
+  const thresholds = Array.from({length: 4}, (_, index) => baseRange + (index < remainder ? 1 : 0))
+    .reduce((ranges, range) => [...ranges, range + (ranges.at(-1) || 0)], []);
+  return [...new Set(thresholds.slice(0, -1).map(threshold => Math.round(((maximum - threshold) / maximum) * 1000) / 10))];
+}
+
 function getFearStatus(fear) {
   const value = Number(fear || 0);
   if (value <= 0) return {level: "calm", penalty: 0};
@@ -108,6 +117,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       current: Number(body.current || 0),
       max: Number(body.max || 0),
       percent: percent(body.current, body.max),
+      marks: healthThresholdMarks(body.max),
       recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery),
       level: this.actor.system.damage.level,
       consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`)

@@ -16,6 +16,7 @@ function getDamageStatus(bodyMax, bodyCurrent) {
   const remainder = max % 4;
   const thresholds = Array.from({length: 4}, (_, index) => baseRange + (index < remainder ? 1 : 0))
     .reduce((ranges, range) => [...ranges, range + (ranges.at(-1) || 0)], []);
+  if (taken === 0) return {taken, penalty: 0, level: "unhurt", thresholds};
   const stage = Math.min(3, thresholds.findIndex(threshold => taken <= threshold));
   const levels = ["light", "injured", "serious", "critical"];
   const penalties = [0, -1, -3, -7];

@@ -550,6 +550,7 @@
       "strenuous": "Renforcement permet au tisseur de dépenser 2 points de vitner supplémentaires par niveau de spécialité pour gagner +1 VC par tranche dépensée lors du tissage d'un sortilège."
     },
     "Damage": {
+      "unhurt": "Indemne",
       "light": "Égratigné",
       "injured": "Blessé",
       "serious": "Gravement blessé",
@@ -559,6 +560,7 @@
       "RecoveryDaily": "{amount} PS/jour",
       "RecoveryEveryDays": "{amount} PS/{days} jours",
       "DamageConsequence": {
+        "unhurt": "Aucune pénalité",
         "light": "Aucune pénalité",
         "injured": "−1 aux VC et à l’initiative",
         "serious": "−3 aux VC et à l’initiative",
