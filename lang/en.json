@@ -639,6 +639,7 @@
       "NoApplicableEffects": "This item has no enabled effect to apply.",
       "NoEffectTarget": "Select at least one target before applying this effect.",
       "NotEnoughCombatPointsToReady": "Drawing requires 10 available CP, or no CP spent yet so the entire round can be devoted to it.",
+      "NoWeaponActionsLeft": "{item} has no weapon actions remaining this round.",
       "InvalidCombatMovementCost": "Combat movement costs exactly 2 CP per metre; allocate a positive, even number of CP.",
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",

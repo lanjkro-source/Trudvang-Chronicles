@@ -153,8 +153,8 @@ const diceText = readFileSync(join(root, "modules/dice.mjs"), "utf8");
 if (!characterSheetText.includes('data-action="adjust-trait"') || characterSheetText.includes("lookup ../system.traits key")) {
   failures.push("Character traits must use the validated creation controls and the root sheet data.");
 }
-if (!actorSheetText.includes("resolveWeaponActions({item, actor: this.actor}).value") || actorSheetText.includes("catBonusMap")) {
-  failures.push("The character sheet must display weapon actions from the shared equipment resolver.");
+if (!actorSheetText.includes("getWeaponActionState(item)") || actorSheetText.includes("catBonusMap")) {
+  failures.push("The character sheet must display current weapon actions through the actor's shared equipment resolver state.");
 }
 if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !diceText.includes("resolveDamage({actor, item})")) {
   failures.push("Damage display and rolls must use the shared equipment resolver.");

@@ -73,10 +73,10 @@
       <section class="panel">
         <h2>{{localize "TRUDVANG.Section.CombatActions"}}</h2>
         <ol class="item-list combat-action-list">
-          {{#each combatItems as |entry|}}<li class="item {{#unless entry.readied}}not-readied{{/unless}}" data-item-id="{{entry.item.id}}">
+          {{#each combatItems as |entry|}}<li class="item {{#unless entry.readied}}not-readied{{/unless}} {{#if entry.depleted}}depleted{{/if}}" data-item-id="{{entry.item.id}}">
             <img src="{{entry.item.img}}"><button type="button" class="item-name" data-action="item-edit" title="{{entry.hoverTitle}}">{{entry.item.name}}</button><span class="item-detail">{{entry.hoverTitle}}</span>
-            <button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Attack'}}" {{#unless entry.readied}}disabled{{/unless}}><i class="fas fa-sword"></i></button>
-            <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless entry.readied}}disabled{{/unless}}><i class="fas fa-shield"></i></button>
+            <button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Attack'}}" {{#unless entry.readied}}disabled{{/unless}} {{#unless entry.canUseAction}}disabled{{/unless}}><i class="fas fa-sword"></i></button>
+            <button type="button" data-action="item-parry" title="{{localize 'TRUDVANG.Action.Parry'}}" {{#unless entry.readied}}disabled{{/unless}} {{#unless entry.canUseAction}}disabled{{/unless}}><i class="fas fa-shield"></i></button>
             <button type="button" data-action="item-damage" title="{{localize 'TRUDVANG.Action.Damage'}}"><i class="fas fa-burst"></i></button>
             <button type="button" class="ready-action {{#if entry.readied}}active{{/if}}" data-action="item-ready" title="{{#if entry.readied}}{{localize 'TRUDVANG.Action.Sheathe'}}{{else}}{{localize 'TRUDVANG.Action.Draw'}}{{/if}}"><i class="fas {{#if entry.readied}}fa-box-archive{{else}}fa-hand-fist{{/if}}"></i></button>
           </li>{{else}}<li class="empty">{{localize "TRUDVANG.Empty.Weapons"}}</li>{{/each}}

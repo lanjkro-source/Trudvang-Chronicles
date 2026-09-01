@@ -573,6 +573,20 @@ export class TrudvangActor extends BaseActor {
     return this.rollWeaponAction(item, "parry");
   }
 
+  getWeaponActionState(item, {ignoreSpent = !this.isInActiveCombat} = {}) {
+    const max = resolveEquipment({item, actor: this}).characteristics.weaponActions.value;
+    const spent = ignoreSpent ? 0 : Math.min(max, Math.max(0, Number(item?.system?.weaponActionsSpent || 0)));
+    return {max, spent, current: Math.max(0, max - spent)};
+  }
+
+  async spendWeaponAction(item) {
+    if (!this.isInActiveCombat || !item?.id || typeof item.update !== "function") return true;
+    const state = this.getWeaponActionState(item);
+    if (state.current <= 0) return false;
+    if (this.isOwner) await item.update({"system.weaponActionsSpent": state.spent + 1});
+    return true;
+  }
+
   get humanoidNaturalWeapon() {
     return {
       id: "humanoid-natural", uuid: "", type: "weapon",
@@ -652,6 +666,7 @@ export class TrudvangActor extends BaseActor {
       await item.update({"system.equipped": true});
       return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DrawnOutsideCombat", {item: item.name}));
     }
+    if (this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: "drawWeapon"}});
     const cost = 10;
     const fullRoundDraw = poolResolution.eligibleCurrent < cost && poolResolution.active.every(pool => pool.spent <= 0);
@@ -670,12 +685,14 @@ export class TrudvangActor extends BaseActor {
     if (options.alternate) {
       const allPools = Object.fromEntries(poolResolution.active.filter(pool => pool.current > 0).map(pool => [pool.id, pool.current]));
       if (this.isOwner) await this.spendCombatPoints(allPools);
+      await this.spendWeaponAction(item);
       await item.update({"system.equipped": true});
       return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DrawnFullRound", {item: item.name}));
     }
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total !== cost) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.ExactCombatCost", {cost}));
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    await this.spendWeaponAction(item);
     await item.update({"system.equipped": true});
     return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Drawn", {item: item.name, cost}));
   }
@@ -683,6 +700,7 @@ export class TrudvangActor extends BaseActor {
   async rollWeaponAction(item, kind) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
+    if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}});
     const available = poolResolution.eligibleCurrent;
     const defaultCost = Math.min(5, available);
@@ -711,6 +729,7 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     const feint = kind === "attack" ? Math.min(spending.total, feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    if (inCombat) await this.spendWeaponAction(item);
     if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const spendingFlavor = inCombat ? Object.entries(spending.allocation)
@@ -802,8 +821,8 @@ export class TrudvangActor extends BaseActor {
       ...(id === "free" ? [["system.combatPools.free.weaponSpent", 0], ["system.combatPools.free.offHandSpent", 0]] : [])
     ]);
     await this.update(Object.fromEntries(updates));
-    const equipped = this.items.filter(item => ["weapon", "shield"].includes(item.type) && item.system.combatPointBonusUsed);
-    if (equipped.length) await this.updateEmbeddedDocuments("Item", equipped.map(item => ({_id: item.id, "system.combatPointBonusUsed": false})));
+    const combatEquipment = this.items.filter(item => ["weapon", "shield"].includes(item.type));
+    if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0})));
     return this;
   }
 

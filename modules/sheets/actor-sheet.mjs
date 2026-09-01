@@ -3,7 +3,7 @@ import { escapeHtml, localizeConfig } from "../helpers.mjs";
 import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
-import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
+import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -154,7 +154,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       item._inspectionModified = Boolean(item._inspection?.modified);
     }
     context.combatItems = [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []).filter(item => item.type === "shield")]
-      .map(item => ({item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText}));
+      .map(item => {
+        const weaponActions = this.actor.getWeaponActionState(item);
+        return {item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
+      });
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
@@ -578,7 +581,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const svLab = isEN ? "SV" : "VC";
     const signed = value => Number(value) > 0 ? `+${value}` : `${value}`;
     if (item.type === "weapon") {
-      const AA = resolveWeaponActions({item, actor: this.actor}).value;
+      const {current: AA, max: maxAA} = this.actor.getWeaponActionState(item);
       let MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
@@ -586,10 +589,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const dmg = this._getItemDamageText(item);
       const actionModifier = resolveCombatActionModifier({item, actor: this.actor, context: {hand: item.system.hand}});
       const actionText = actionModifier.steps.length ? ` ${svLab}:${signed(actionModifier.value)} — ${actionModifier.steps.map(step => game.i18n.format(step.explanationKey, step.explanationData)).join(" ")}` : "";
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}${actionText}`;
+      return `${aaLab}:${AA}/${maxAA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${dmg}${actionText}`;
     }
     if (item.type === "shield") {
-      const AA = resolveWeaponActions({item, actor: this.actor}).value;
+      const {current: AA, max: maxAA} = this.actor.getWeaponActionState(item);
       const MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
@@ -599,7 +602,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         .map(step => game.i18n.format(step.explanationKey, step.explanationData))
         .join(" ");
       const dmg = this._getItemDamageText(item);
-      return `${aaLab}:${AA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${svLab}:${signed(actionModifier.value)} ${dmg} — ${explanation}`;
+      return `${aaLab}:${AA}/${maxAA} ${miLab}:${signed(MI)} ${vpLab}:${VP}/${VI} ${cpLab}:${CP} ${svLab}:${signed(actionModifier.value)} ${dmg} — ${explanation}`;
     }
     if (item.type === "armor") {
       const profile = resolveArmorProfile({item, actor: this.actor});
@@ -629,9 +632,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const isEN = game.i18n.lang === "en";
     const vp = Math.ceil(Math.max(0, Number(item.system.breach?.value ?? 0)) / 10);
     if (["weapon", "shield"].includes(item.type)) {
-      const actions = resolveWeaponActions({item, actor: this.actor}).value;
+      const {current: actions, max: maxActions} = this.actor.getWeaponActionState(item);
       const bonus = resolveEquipment({item, actor: this.actor, context: {hand: item.system.hand}}).characteristics.combatPointBonus.value;
-      return `${isEN ? "WA" : "AA"}:${actions} CP:${bonus >= 0 ? "+" : ""}${bonus} ${isEN ? "PV" : "VP"}:${vp} ${this._getItemDamageText(item)}`;
+      return `${isEN ? "WA" : "AA"}:${actions}/${maxActions} CP:${bonus >= 0 ? "+" : ""}${bonus} ${isEN ? "PV" : "VP"}:${vp} ${this._getItemDamageText(item)}`;
     }
     if (item.type === "armor") return `${isEN ? "PV" : "VP"}:${vp}`;
     return "";

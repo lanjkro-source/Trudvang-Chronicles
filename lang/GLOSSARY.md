@@ -753,6 +753,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NoApplicableEffects` | This item has no enabled effect to apply. | Cet objet ne possède aucun effet actif à appliquer. |
 | `TRUDVANG.Warning.NoEffectTarget` | Select at least one target before applying this effect. | Sélectionnez au moins une cible avant d'appliquer cet effet. |
 | `TRUDVANG.Warning.NotEnoughCombatPointsToReady` | Drawing requires 10 available CP, or no CP spent yet so the entire round can be devoted to it. | Il faut 10 PC disponibles pour dégainer, ou n’avoir encore dépensé aucun PC afin d’y consacrer tout le tour. |
+| `TRUDVANG.Warning.NoWeaponActionsLeft` | {item} has no weapon actions remaining this round. | {item} n’a plus d’action d’arme disponible pour ce tour. |
 | `TRUDVANG.Warning.InvalidCombatMovementCost` | Combat movement costs exactly 2 CP per metre; allocate a positive, even number of CP. | Le mouvement de combat coûte exactement 2 PC par mètre ; allouez un nombre positif et pair de PC. |
 | `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
 | `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |

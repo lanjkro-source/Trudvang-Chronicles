@@ -639,6 +639,7 @@
       "NoApplicableEffects": "Cet objet ne possède aucun effet actif à appliquer.",
       "NoEffectTarget": "Sélectionnez au moins une cible avant d'appliquer cet effet.",
       "NotEnoughCombatPointsToReady": "Il faut 10 PC disponibles pour dégainer, ou n’avoir encore dépensé aucun PC afin d’y consacrer tout le tour.",
+      "NoWeaponActionsLeft": "{item} n’a plus d’action d’arme disponible pour ce tour.",
       "InvalidCombatMovementCost": "Le mouvement de combat coûte exactement 2 PC par mètre ; allouez un nombre positif et pair de PC.",
       "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
       "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
