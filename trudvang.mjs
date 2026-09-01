@@ -10,12 +10,14 @@ import { registerChatListeners } from "./modules/chat.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
+import { registerCombatHooks } from "./modules/combat.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
   CONFIG.TRUDVANG = TRUDVANG;
   configureEffects();
   registerEffectHooks();
+  registerCombatHooks();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);
   Object.assign(CONFIG.Item.dataModels, ITEM_DATA_MODELS);
   CONFIG.Actor.trackableAttributes = {
