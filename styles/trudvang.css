@@ -143,6 +143,8 @@
 .trudvang-sheet .status-protection { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 3px 10px; color: var(--trudvang-muted); font-size: .76rem; }
 .trudvang-sheet .status-protection strong { color: var(--trudvang-ink); }
 .trudvang-sheet .status-protection .inspectable-stat { display: inline-flex; align-items: baseline; gap: 3px; white-space: nowrap; }
+.trudvang-sheet .status-fear-factor .status-action { padding: 2px 6px; border: 1px solid var(--trudvang-line); border-radius: 3px; background: color-mix(in srgb, var(--trudvang-paper-light) 45%, transparent); font-size: .7rem; }
+.trudvang-sheet .status-fear-factor .status-action:disabled { opacity: .45; }
 .trudvang-sheet .status-vital { display: grid; gap: 4px; }
 .trudvang-sheet .health-vital { padding-bottom: 8px; border-bottom: 1px dotted var(--trudvang-line); }
 .trudvang-sheet .status-vital-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px; align-items: baseline; color: var(--trudvang-muted); font-size: .76rem; }

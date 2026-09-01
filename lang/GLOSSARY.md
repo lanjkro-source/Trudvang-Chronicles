@@ -148,6 +148,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Parry` | Parry | Parer |
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
+| `TRUDVANG.Action.CalmFear` | Calm down | Se rasséréner |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
 | `TRUDVANG.Action.Draw` | Draw (10 CP) | Dégainer (10 PC) |
@@ -881,6 +882,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |
 | `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
 | `TRUDVANG.Notification.DrawnOutsideCombat` | {item} drawn. | {item} dégainé. |
 | `TRUDVANG.Notification.DrawnFullRound` | {item} drawn by devoting the entire round to it; every CP pool was emptied. | {item} dégainé en y consacrant tout le tour ; toutes les réserves de PC ont été vidées. |

@@ -65,6 +65,7 @@
             </section>
             <section class="status-protection status-fear-factor">
               <span><strong>{{localize "TRUDVANG.Field.FearFactor"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="fearFactor">{{signed system.fearFactorModifier}} <i class="fas fa-circle-info"></i></button></span>
+              <button type="button" class="status-action" data-action="calm-fear" {{#if (eq fearStatus.current 0)}}disabled{{/if}}><i class="fas fa-heart"></i> {{localize "TRUDVANG.Action.CalmFear"}}</button>
             </section>
             <section class="status-vital fear-vital">
               <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Fear"}}</strong><span class="status-vital-value">{{fearStatus.current}} / {{fearStatus.max}}</span><span></span></div>

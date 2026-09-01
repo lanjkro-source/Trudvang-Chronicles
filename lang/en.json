@@ -115,6 +115,7 @@
       "Parry": "Parry",
       "RollDamage": "Roll Damage",
       "RollInitiative": "Roll Initiative",
+      "CalmFear": "Calm down",
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
       "Draw": "Draw (10 CP)",
@@ -734,6 +735,7 @@
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
     "Notification": {
+      "CalmFear": "{actor} calms down: −{amount} Fear Points ({before} → {after}).",
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
       "DrawnOutsideCombat": "{item} drawn.",
       "DrawnFullRound": "{item} drawn by devoting the entire round to it; every CP pool was emptied.",

@@ -1,6 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
-import { renderTemplate } from "../helpers.mjs";
+import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment } from "../rules/equipment-resolver.mjs";
@@ -843,6 +843,25 @@ export class TrudvangActor extends BaseActor {
     const combatEquipment = this.items.filter(item => ["weapon", "shield"].includes(item.type));
     if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0})));
     return this;
+  }
+
+  async calmFear() {
+    if (!this.isOwner) return;
+    const before = Number(this.system.resources.fear.current || 0);
+    if (before <= 0) return;
+    const roll = new Roll("1d10");
+    await roll.evaluate();
+    const recovered = Math.min(before, Number(roll.total || 0));
+    const stored = Number(this._source.system.resources.fear.value || 0);
+    await this.update({"system.resources.fear.value": Math.max(0, stored - recovered)});
+    const after = Math.max(0, before - recovered);
+    const message = game.i18n.format("TRUDVANG.Notification.CalmFear", {actor: this.name, amount: recovered, before, after});
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({actor: this}),
+      content: `<p class="trudvang fear-recovery"><i class="fas fa-heart"></i> ${escapeHtml(message)}</p>`,
+      rolls: [roll]
+    });
+    return {roll, recovered, before, after};
   }
 
   async rollCombatMovement() {
