@@ -203,6 +203,13 @@ export function prepareActorStatInspection(actor, key, config = {}) {
       row(localized("TRUDVANG.Knowledge.weathered"), number(actor.findKnowledgeItem("weathered")?.system.level || 0) * 2)
     );
     total = `${number(actor.system.persistenceInWild)} ${localized("TRUDVANG.Unit.Days")}`;
+  } else if (key === "fearFactor") {
+    title = localized("TRUDVANG.Field.FearFactor");
+    permanent.push(
+      row(localized("TRUDVANG.Trait.Psyche"), -actor.getTraitValue("psyche")),
+      ...applicableEffectRows(actor, "system.modifiers.fearFactor", actor.system.modifiers?.fearFactor)
+    );
+    total = signed(actor.system.fearFactorModifier);
   } else if (key === "combat") {
     title = localized("TRUDVANG.Resource.CombatPools");
     const pools = resolveCombatPools({actor, context: {ignoreSpent: !actor.isInActiveCombat}});

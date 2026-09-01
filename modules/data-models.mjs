@@ -143,6 +143,7 @@ function actorCommonSchema() {
       rolls: rollModifiersSchema(),
       movement: integer(0, {persisted: false}),
       protection: integer(0, {persisted: false}),
+      fearFactor: integer(0, {persisted: false}),
       bodyMax: integer(0, {persisted: false}),
       combatMax: integer(0, {persisted: false}),
       vitnerMax: integer(0, {persisted: false}),
@@ -168,6 +169,7 @@ function actorCommonSchema() {
     notes: html(),
     damage: schema({taken: number(0), penalty: integer(0), level: string("light")}),
     fearPenalty: integer(0),
+    fearFactorModifier: integer(0),
     protection: integer(0),
     persistenceInWild: integer(10),
     buildCost: integer(0)

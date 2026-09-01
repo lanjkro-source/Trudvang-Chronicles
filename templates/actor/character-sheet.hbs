@@ -63,15 +63,17 @@
               <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 25%"></i><i class="vital-meter-mark" style="left: 50%"></i><i class="vital-meter-mark" style="left: 75%"></i></div>
               <p class="status-consequence"><strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong><span>{{healthStatus.consequence}}</span></p>
             </section>
+            <section class="status-protection status-fear-factor">
+              <span><strong>{{localize "TRUDVANG.Field.FearFactor"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="fearFactor">{{signed system.fearFactorModifier}} <i class="fas fa-circle-info"></i></button></span>
+            </section>
             <section class="status-vital fear-vital">
-              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Fear"}}</strong><span>{{fearStatus.current}} / {{fearStatus.max}}</span></div>
+              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Fear"}}</strong><span class="status-vital-value">{{fearStatus.current}} / {{fearStatus.max}}</span><span></span></div>
               <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Fear'}}" aria-valuemin="0" aria-valuemax="{{fearStatus.max}}" aria-valuenow="{{fearStatus.current}}"><span class="vital-meter-fill" style="width: {{fearStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 20%"></i><i class="vital-meter-mark" style="left: 40%"></i><i class="vital-meter-mark" style="left: 60%"></i><i class="vital-meter-mark" style="left: 80%"></i></div>
               <p class="status-consequence"><strong>{{fearStatus.state}}</strong><span>{{fearStatus.consequence}}</span></p>
             </section>
           </div>
           <dl class="status-list">
-            <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="movement">{{system.movement.current}} m <i class="fas fa-circle-info"></i></button></dd>
-            <dt>{{localize "TRUDVANG.Resource.FreeCombatMovement"}}</dt><dd>{{freeCombatMovement}} m</dd>
+            <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="movement">{{system.movement.current}} m + {{freeCombatMovement}} m <i class="fas fa-circle-info"></i></button></dd>
             <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="persistence">{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}} <i class="fas fa-circle-info"></i></button></dd>
             {{#if system.armorVCPenalty}}<dt>{{localize "TRUDVANG.Resource.ArmorVCPenalty"}}</dt><dd>-{{system.armorVCPenalty}}</dd>{{/if}}
           </dl>

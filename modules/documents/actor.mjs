@@ -90,6 +90,7 @@ export class TrudvangActor extends BaseActor {
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
     const fear = Number(system.resources.fear.current || 0);
+    system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
     system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
