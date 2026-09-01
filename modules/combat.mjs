@@ -7,6 +7,18 @@ export function isCombatTurnStart(previous = {}, current = {}) {
   return Number(current.turn) === Number(previous.turn) && current.combatantId !== previous.combatantId;
 }
 
+/** Whether Foundry advanced to a new combat round rather than rewinding the tracker. */
+export function isCombatRoundStart(previous = {}, current = {}) {
+  return Number(current.round) > Number(previous.round);
+}
+
+/** Clear every combatant's initiative at the start of a new round. */
+export async function resetCombatInitiatives(combat, previous, current, {isActiveGM = game.user.isActiveGM} = {}) {
+  if (!isActiveGM || !combat?.started || !isCombatRoundStart(previous, current) || typeof combat.resetAll !== "function") return false;
+  await combat.resetAll();
+  return true;
+}
+
 /** Reset per-turn combat resources for the combatant whose turn has just begun. */
 export async function resetCurrentCombatantResources(combat, current, {isActiveGM = game.user.isActiveGM} = {}) {
   if (!isActiveGM || !combat?.started || !current?.combatantId) return false;
@@ -20,6 +32,7 @@ export async function resetCurrentCombatantResources(combat, current, {isActiveG
 /** Register the Foundry lifecycle hook after the active combatant changes. */
 export function registerCombatHooks() {
   Hooks.on("combatTurnChange", async (combat, previous, current) => {
+    await resetCombatInitiatives(combat, previous, current);
     if (!isCombatTurnStart(previous, current)) return;
     await resetCurrentCombatantResources(combat, current);
   });
