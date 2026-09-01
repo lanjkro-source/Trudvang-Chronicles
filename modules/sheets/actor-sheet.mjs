@@ -4,7 +4,7 @@ import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment, resolveWeaponActions } from "../rules/equipment-resolver.mjs";
-import { resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
+import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -102,6 +102,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.config.nativeLanguages = localizeConfig(Object.fromEntries(allowedLanguageIds.map(id => [id, TRUDVANG.nativeLanguages[id]])));
     context.config.religions = Object.fromEntries(this.actor.allowedReligionIds.map(id => [id, game.i18n.localize(TRUDVANG.religions[id].label)]));
     context.isInCombat = this.actor.isInActiveCombat;
+    context.canDodge = context.isInCombat && combatPoolsAreFull(this.actor);
     const poolContext = {ignoreSpent: !context.isInCombat};
     const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
     const offHandFree = resolveCombatPools({actor: this.actor, item: {type: "shield", system: {}}, context: {...poolContext, action: "parry"}}).pools.find(pool => pool.id === "free");
