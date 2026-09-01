@@ -611,6 +611,7 @@
       "CreationModeRequired": "Cette modification n'est disponible qu'en mode création de personnage.",
       "TraitLimit": "Ce trait ne peut pas être davantage augmenté ou diminué.",
       "SkillLimit": "La valeur de compétence doit rester comprise entre 1 et 10.",
+      "DodgeRequiresFullCombatPools": "L’esquive exige que toutes les réserves de PC soient complètes.",
       "KnowledgeLimit": "Le niveau de connaissance doit rester compris entre 1 et 5.",
       "SkillSupportsKnowledge": "Cette valeur de compétence est requise par une discipline, une spécialité ou une tablette.",
       "ParentDisciplineRequired": "La discipline parente doit être apprise avant cette spécialité.",

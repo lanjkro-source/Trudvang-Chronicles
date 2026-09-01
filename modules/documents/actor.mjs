@@ -4,7 +4,7 @@ import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment } from "../rules/equipment-resolver.mjs";
-import { actorParticipatesInCombat, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
+import { actorParticipatesInCombat, combatPoolsAreFull, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -599,10 +599,14 @@ export class TrudvangActor extends BaseActor {
 
   async rollDodge() {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    if (!this.isInActiveCombat) return null;
+    if (!combatPoolsAreFull(this)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DodgeRequiresFullCombatPools"));
     const label = game.i18n.localize("TRUDVANG.Combat.Dodge");
     const target = this.dodgeTarget;
     const options = await modifierDialog({title: label, target});
     if (!options) return null;
+    const pools = resolveCombatPools({actor: this}).active;
+    if (this.isOwner) await this.spendCombatPoints(Object.fromEntries(pools.map(pool => [pool.id, pool.current])));
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "dodge"});
   }
 
@@ -829,6 +833,12 @@ export class TrudvangActor extends BaseActor {
     const updates = {};
     for (const [id, amount] of Object.entries(allocation)) {
       if (!Object.hasOwn(this.system.combatPools || {}, id) || Number(amount) <= 0) continue;
+      if (id === "free" && freeScope === "both") {
+        const free = this.system.combatPools.free || {};
+        updates["system.combatPools.free.weaponSpent"] = Number(free.weaponSpent || 0) + Number(amount);
+        updates["system.combatPools.free.offHandSpent"] = Number(free.offHandSpent || 0) + Number(amount);
+        continue;
+      }
       if (id === "free" && freeScope !== "shared") {
         const key = `system.combatPools.free.${freeScope}Spent`;
         updates[key] = Number(this.system.combatPools.free?.[`${freeScope}Spent`] || 0) + Number(amount);

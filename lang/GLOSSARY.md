@@ -725,6 +725,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.CreationModeRequired` | This change is only available in character creation mode. | Cette modification n'est disponible qu'en mode création de personnage. |
 | `TRUDVANG.Warning.TraitLimit` | This trait cannot be raised or lowered further. | Ce trait ne peut pas être davantage augmenté ou diminué. |
 | `TRUDVANG.Warning.SkillLimit` | Skill Value must remain between 1 and 10. | La valeur de compétence doit rester comprise entre 1 et 10. |
+| `TRUDVANG.Warning.DodgeRequiresFullCombatPools` | Evade requires every Combat Point pool to be full. | L’esquive exige que toutes les réserves de PC soient complètes. |
 | `TRUDVANG.Warning.KnowledgeLimit` | Knowledge level must remain between 1 and 5. | Le niveau de connaissance doit rester compris entre 1 et 5. |
 | `TRUDVANG.Warning.SkillSupportsKnowledge` | This Skill Value is required by one of its disciplines, specialties, or tablets. | Cette valeur de compétence est requise par une discipline, une spécialité ou une tablette. |
 | `TRUDVANG.Warning.ParentDisciplineRequired` | The parent discipline must be learned before this specialty. | La discipline parente doit être apprise avant cette spécialité. |

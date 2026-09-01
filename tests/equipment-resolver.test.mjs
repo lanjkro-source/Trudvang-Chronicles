@@ -13,6 +13,7 @@ import {
 } from "../modules/rules/equipment-resolver.mjs";
 import {
   actorParticipatesInCombat,
+  combatPoolsAreFull,
   categoryForWeaponType,
   normalizeCombatAllocation,
   readiedHandConflicts,
@@ -456,6 +457,28 @@ test("Free CP are reusable once per hand but movement reduces both uses", () => 
   actor._source.system.combatPools = actor.system.combatPools;
   const renewedShieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
   assert.equal(renewedShieldFree.current, 10, "without movement, Free CP remain wholly available to the other hand");
+});
+
+test("a two-handed weapon spends the Free CP available to both hands", () => {
+  const actor = combatActor({}, {fighting: 10});
+  actor.system.combatPools.free = {spent: 0, weaponSpent: 2, offHandSpent: 5};
+  actor._source.system.combatPools = actor.system.combatPools;
+  const result = resolveCombatPools({actor, item: weapon({category: "twoHanded"}), context: {action: "attack"}});
+  const free = result.pools.find(pool => pool.id === "free");
+  assert.equal(result.freeScope, "both");
+  assert.equal(free.current, 5, "the two-handed action is limited by the less available hand");
+});
+
+test("Evade requires every Combat Point pool, including both Free CP hand uses, to be full", () => {
+  const actor = combatActor({fighter: 1, oneHandedLightWeapons: 1}, {fighting: 10});
+  actor.system.combatPools.free = {spent: 0, weaponSpent: 0, offHandSpent: 0};
+  actor._source.system.combatPools = actor.system.combatPools;
+  assert.equal(combatPoolsAreFull(actor), true);
+  actor.system.combatPools.free.offHandSpent = 1;
+  assert.equal(combatPoolsAreFull(actor), false);
+  actor.system.combatPools.free.offHandSpent = 0;
+  actor.system.combatPools.attacksParries = {spent: 1};
+  assert.equal(combatPoolsAreFull(actor), false);
 });
 
 test("allocation helpers prioritize restricted pools and reject overspending", () => {

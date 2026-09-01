@@ -84,6 +84,7 @@ function sourcePoolData(actor, id) {
  */
 export function freeCombatPoolScope(item, context = {}) {
   if (!["attack", "parry"].includes(context.action || context.usage || "")) return "shared";
+  if (weaponUsesTwoHands(item)) return "both";
   if (item?.type === "shield" || item?.system?.hand === "offHand") return "offHand";
   return "weapon";
 }
@@ -196,8 +197,11 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       spent = Math.max(0, max - legacyValue);
     }
     const currentModifier = id === "free" ? finite(actor?.system?.modifiers?.combatValue, 0) : 0;
+    const freeData = sourcePoolData(actor, "free");
     const handSpent = id === "free" && freeScope !== "shared" && !context.ignoreSpent
-      ? Math.max(0, finite(sourcePoolData(actor, "free")[`${freeScope}Spent`], 0))
+      ? freeScope === "both"
+        ? Math.max(Math.max(0, finite(freeData.weaponSpent, 0)), Math.max(0, finite(freeData.offHandSpent, 0)))
+        : Math.max(0, finite(freeData[`${freeScope}Spent`], 0))
       : 0;
     const current = Math.max(0, Math.min(max, max - spent - handSpent + currentModifier));
     const sourceItem = definition.catalogId ? knowledge(actor, definition.catalogId) : null;
@@ -239,6 +243,18 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     eligibleCurrent: pools.filter(pool => pool.eligible).reduce((sum, pool) => sum + pool.current, 0),
     freeScope
   };
+}
+
+/** An Evade action is only available before any Combat Point reserve has been used. */
+export function combatPoolsAreFull(actor) {
+  const base = resolveCombatPools({actor});
+  const weaponFree = resolveCombatPools({actor, item: {type: "weapon", system: {hand: "weapon"}}, context: {action: "attack"}})
+    .pools.find(pool => pool.id === "free");
+  const offHandFree = resolveCombatPools({actor, item: {type: "shield", system: {}}, context: {action: "parry"}})
+    .pools.find(pool => pool.id === "free");
+  return base.active.every(pool => pool.current === pool.max)
+    && (!weaponFree || weaponFree.current === weaponFree.max)
+    && (!offHandFree || offHandFree.current === offHandFree.max);
 }
 
 /** Suggest a conservative allocation, spending the most restricted pools first. */

@@ -611,6 +611,7 @@
       "CreationModeRequired": "This change is only available in character creation mode.",
       "TraitLimit": "This trait cannot be raised or lowered further.",
       "SkillLimit": "Skill Value must remain between 1 and 10.",
+      "DodgeRequiresFullCombatPools": "Evade requires every Combat Point pool to be full.",
       "KnowledgeLimit": "Knowledge level must remain between 1 and 5.",
       "SkillSupportsKnowledge": "This Skill Value is required by one of its disciplines, specialties, or tablets.",
       "ParentDisciplineRequired": "The parent discipline must be learned before this specialty.",
