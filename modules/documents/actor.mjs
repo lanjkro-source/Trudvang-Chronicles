@@ -9,6 +9,27 @@ import { actorParticipatesInCombat, combatPoolsAreFull, normalizeCombatAllocatio
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
 
+function getDamageStatus(bodyMax, bodyCurrent) {
+  const max = Math.max(1, Number(bodyMax || 1));
+  const taken = Math.max(0, max - Number(bodyCurrent || 0));
+  const baseRange = Math.floor(max / 4);
+  const remainder = max % 4;
+  const thresholds = Array.from({length: 4}, (_, index) => baseRange + (index < remainder ? 1 : 0))
+    .reduce((ranges, range) => [...ranges, range + (ranges.at(-1) || 0)], []);
+  const stage = Math.min(3, thresholds.findIndex(threshold => taken <= threshold));
+  const levels = ["light", "injured", "serious", "critical"];
+  const penalties = [0, -1, -3, -7];
+  return {taken, penalty: penalties[stage], level: levels[stage], thresholds};
+}
+
+function getHealthRecovery(constitution) {
+  if (constitution >= 4) return {amount: 4, days: 1};
+  if (constitution >= 2) return {amount: 3, days: 1};
+  if (constitution >= 1) return {amount: 2, days: 1};
+  if (constitution <= -2) return {amount: 1, days: 2};
+  return {amount: 1, days: 1};
+}
+
 export class TrudvangActor extends BaseActor {
   get isInActiveCombat() {
     return actorParticipatesInCombat(this, game.combat);
@@ -66,14 +87,8 @@ export class TrudvangActor extends BaseActor {
       resource.value = current;
     }
 
-    const bodyMax = Number(system.resources.body.max || 1);
-    const damage = Math.max(0, bodyMax - Number(system.resources.body.current || 0));
-    const quarter = bodyMax / 4;
-    system.damage = {
-      taken: damage,
-      penalty: damage > quarter * 3 ? -7 : damage > quarter * 2 ? -3 : damage > quarter ? -1 : 0,
-      level: damage > quarter * 3 ? "critical" : damage > quarter * 2 ? "serious" : damage > quarter ? "injured" : "light"
-    };
+    system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
+    system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
     const fear = Number(system.resources.fear.current || 0);
     system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);

@@ -551,6 +551,32 @@
       "serious": "Gravement blessé",
       "critical": "Mortellement blessé"
     },
+    "Status": {
+      "RecoveryDaily": "{amount} PS/jour",
+      "RecoveryEveryDays": "{amount} PS/{days} jours",
+      "DamageConsequence": {
+        "light": "Aucune pénalité",
+        "injured": "−1 aux VC et à l’initiative",
+        "serious": "−3 aux VC et à l’initiative",
+        "critical": "−7 aux VC et à l’initiative"
+      },
+      "FearState": {
+        "calm": "Calme",
+        "one": "Niveau 1 : angoissé",
+        "two": "Niveau 2 : effrayé",
+        "three": "Niveau 3 : horrifié",
+        "four": "Niveau 4 : terrifié",
+        "five": "Niveau 5 : pétrifié"
+      },
+      "FearConsequence": {
+        "calm": "Aucune pénalité",
+        "one": "Aucun modificateur universel",
+        "two": "−1 aux VC et à l’initiative",
+        "three": "−3 aux VC et à l’initiative",
+        "four": "−5 aux VC et à l’initiative",
+        "five": "−7 aux VC et à l’initiative"
+      }
+    },
     "Dialog": {
       "BaseTarget": "Cible de base: {target}",
       "CombatPoolSlider": "Allocation rapide",

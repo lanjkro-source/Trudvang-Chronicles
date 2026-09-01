@@ -12,6 +12,21 @@ const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? g
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const normalized = value => String(value || "").trim().toLocaleLowerCase();
 
+function percent(value, max) {
+  const maximum = Math.max(1, Number(max || 1));
+  return Math.max(0, Math.min(100, (Number(value || 0) / maximum) * 100));
+}
+
+function getFearStatus(fear) {
+  const value = Number(fear || 0);
+  if (value <= 0) return {level: "calm", penalty: 0};
+  if (value <= 10) return {level: "one", penalty: 0};
+  if (value <= 20) return {level: "two", penalty: -1};
+  if (value <= 30) return {level: "three", penalty: -3};
+  if (value <= 40) return {level: "four", penalty: -5};
+  return {level: "five", penalty: -7};
+}
+
 export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
     tag: "form",
@@ -77,6 +92,26 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.editable = this.isEditable;
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
+    const body = this.actor.system.resources.body;
+    const fear = this.actor.system.resources.fear;
+    const recovery = this.actor.system.healthRecovery ?? {amount: 1, days: 1};
+    context.healthStatus = {
+      current: Number(body.current || 0),
+      max: Number(body.max || 0),
+      percent: percent(body.current, body.max),
+      recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery),
+      level: this.actor.system.damage.level,
+      consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`)
+    };
+    const fearStatus = getFearStatus(fear.current);
+    context.fearStatus = {
+      current: Number(fear.current || 0),
+      max: Number(fear.max || 0),
+      percent: percent(fear.current, fear.max),
+      ...fearStatus,
+      state: game.i18n.localize(`TRUDVANG.Status.FearState.${fearStatus.level}`),
+      consequence: game.i18n.localize(`TRUDVANG.Status.FearConsequence.${fearStatus.level}`)
+    };
     context.creationMode = Boolean(this.actor.system.experience?.creationMode);
     context.pendingAdvancements = this.actor.pendingAdvancements ?? [];
     context.pendingAdventureCost = context.pendingAdvancements.reduce((sum, operation) => sum + Number(operation.cost || 0), 0);

@@ -653,6 +653,44 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.serious` | Seriously Injured | Gravement blessé |
 | `TRUDVANG.Damage.critical` | Critically Injured | Mortellement blessé |
 
+## `TRUDVANG.Status`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Status.RecoveryDaily` | {amount} BP/day | {amount} PS/jour |
+| `TRUDVANG.Status.RecoveryEveryDays` | {amount} BP/{days} days | {amount} PS/{days} jours |
+
+## `TRUDVANG.Status.DamageConsequence`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Status.DamageConsequence.light` | No penalty | Aucune pénalité |
+| `TRUDVANG.Status.DamageConsequence.injured` | −1 to SV and initiative | −1 aux VC et à l’initiative |
+| `TRUDVANG.Status.DamageConsequence.serious` | −3 to SV and initiative | −3 aux VC et à l’initiative |
+| `TRUDVANG.Status.DamageConsequence.critical` | −7 to SV and initiative | −7 aux VC et à l’initiative |
+
+## `TRUDVANG.Status.FearState`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Status.FearState.calm` | Calm | Calme |
+| `TRUDVANG.Status.FearState.one` | Level 1: uneasy | Niveau 1 : angoissé |
+| `TRUDVANG.Status.FearState.two` | Level 2: frightened | Niveau 2 : effrayé |
+| `TRUDVANG.Status.FearState.three` | Level 3: horrified | Niveau 3 : horrifié |
+| `TRUDVANG.Status.FearState.four` | Level 4: terrified | Niveau 4 : terrifié |
+| `TRUDVANG.Status.FearState.five` | Level 5: petrified | Niveau 5 : pétrifié |
+
+## `TRUDVANG.Status.FearConsequence`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Status.FearConsequence.calm` | No penalty | Aucune pénalité |
+| `TRUDVANG.Status.FearConsequence.one` | No universal modifier | Aucun modificateur universel |
+| `TRUDVANG.Status.FearConsequence.two` | −1 to SV and initiative | −1 aux VC et à l’initiative |
+| `TRUDVANG.Status.FearConsequence.three` | −3 to SV and initiative | −3 aux VC et à l’initiative |
+| `TRUDVANG.Status.FearConsequence.four` | −5 to SV and initiative | −5 aux VC et à l’initiative |
+| `TRUDVANG.Status.FearConsequence.five` | −7 to SV and initiative | −7 aux VC et à l’initiative |
+
 ## `TRUDVANG.Dialog`
 
 | Clé | English | Français |

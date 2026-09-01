@@ -551,6 +551,32 @@
       "serious": "Seriously Injured",
       "critical": "Critically Injured"
     },
+    "Status": {
+      "RecoveryDaily": "{amount} BP/day",
+      "RecoveryEveryDays": "{amount} BP/{days} days",
+      "DamageConsequence": {
+        "light": "No penalty",
+        "injured": "−1 to SV and initiative",
+        "serious": "−3 to SV and initiative",
+        "critical": "−7 to SV and initiative"
+      },
+      "FearState": {
+        "calm": "Calm",
+        "one": "Level 1: uneasy",
+        "two": "Level 2: frightened",
+        "three": "Level 3: horrified",
+        "four": "Level 4: terrified",
+        "five": "Level 5: petrified"
+      },
+      "FearConsequence": {
+        "calm": "No penalty",
+        "one": "No universal modifier",
+        "two": "−1 to SV and initiative",
+        "three": "−3 to SV and initiative",
+        "four": "−5 to SV and initiative",
+        "five": "−7 to SV and initiative"
+      }
+    },
     "Dialog": {
       "BaseTarget": "Base target: {target}",
       "CombatPoolSlider": "Quick allocation",

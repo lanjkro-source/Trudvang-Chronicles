@@ -22,10 +22,10 @@
 
   <section class="resource-bar">
     <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
-    <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
+    <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}}</span></label>
-    <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
   </section>
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="summary"><i class="fas fa-shield-halved"></i> {{localize "TRUDVANG.Tab.Summary"}}</a>
@@ -53,12 +53,22 @@
         </section>
         <section class="panel status-panel">
           <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
+          <div class="status-vitals">
+            <section class="status-vital health-vital">
+              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span>{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
+              <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 25%"></i><i class="vital-meter-mark" style="left: 50%"></i><i class="vital-meter-mark" style="left: 75%"></i></div>
+              <p class="status-consequence"><strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong><span>{{healthStatus.consequence}}</span></p>
+            </section>
+            <section class="status-vital fear-vital">
+              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Fear"}}</strong><span>{{fearStatus.current}} / {{fearStatus.max}}</span></div>
+              <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Fear'}}" aria-valuemin="0" aria-valuemax="{{fearStatus.max}}" aria-valuenow="{{fearStatus.current}}"><span class="vital-meter-fill" style="width: {{fearStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 20%"></i><i class="vital-meter-mark" style="left: 40%"></i><i class="vital-meter-mark" style="left: 60%"></i><i class="vital-meter-mark" style="left: 80%"></i></div>
+              <p class="status-consequence"><strong>{{fearStatus.state}}</strong><span>{{fearStatus.consequence}}</span></p>
+            </section>
+          </div>
           <dl class="status-list">
-            <dt>{{localize "TRUDVANG.Resource.DamageLevel"}}</dt><dd>{{localize (concat "TRUDVANG.Damage." system.damage.level)}} ({{signed system.damage.penalty}})</dd>
             <dt>{{localize "TRUDVANG.Resource.Protection"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="protection">{{system.protection}} <i class="fas fa-circle-info"></i></button></dd>
             <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="movement">{{system.movement.current}} m <i class="fas fa-circle-info"></i></button></dd>
             <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd>{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}}</dd>
-            <dt>{{localize "TRUDVANG.Resource.FearPenalty"}}</dt><dd>{{signed system.fearPenalty}}</dd>
             {{#if system.armorVCPenalty}}<dt>{{localize "TRUDVANG.Resource.ArmorVCPenalty"}}</dt><dd>-{{system.armorVCPenalty}}</dd>{{/if}}
           </dl>
         </section>
