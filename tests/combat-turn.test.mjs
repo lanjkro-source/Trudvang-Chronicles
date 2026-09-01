@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { isCombatRoundStart, isCombatTurnStart, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
+import { activateHighestInitiativeCombatant, combatInitiativesAreReady, isCombatRoundStart, isCombatTurnStart, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
 
 test("combat resource resets occur only when the tracker advances to a turn", () => {
   assert.equal(isCombatTurnStart({round: 0, turn: null, combatantId: null}, {round: 1, turn: 0, combatantId: "combatant-id"}), true);
@@ -16,6 +16,27 @@ test("a new round clears the initiatives of every combatant once through Foundry
   assert.equal(await resetCombatInitiatives(combat, {round: 2}, {round: 1}, {isActiveGM: true}), false);
   assert.equal(await resetCombatInitiatives(combat, {round: 2}, {round: 3}, {isActiveGM: false}), false);
   assert.equal(resets, 1);
+});
+
+test("once every initiative is rolled, the new leader becomes active and receives refreshed resources", async () => {
+  let turn = 1;
+  let resets = 0;
+  const leader = {id: "leader", initiative: 18, actor: {resetCombatPoints: async () => { resets += 1; }}};
+  const follower = {id: "follower", initiative: 12, actor: {resetCombatPoints: async () => { throw new Error("wrong actor"); }}};
+  const combat = {
+    started: true,
+    combatants: new Map([[leader.id, leader], [follower.id, follower]]),
+    turns: [leader, follower],
+    current: {combatantId: follower.id},
+    update: async update => { turn = update.turn; }
+  };
+  assert.equal(combatInitiativesAreReady(combat), true);
+  assert.equal(await activateHighestInitiativeCombatant(combat, {isActiveGM: true}), true);
+  assert.equal(turn, 0);
+  assert.equal(resets, 1);
+  follower.initiative = null;
+  assert.equal(combatInitiativesAreReady(combat), false);
+  assert.equal(await activateHighestInitiativeCombatant(combat, {isActiveGM: true}), false);
 });
 
 test("the active GM resets the resources of the combatant whose turn begins", async () => {
