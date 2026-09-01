@@ -148,6 +148,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Parry` | Parry | Parer |
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
+| `TRUDVANG.Action.RestForNight` | Spend a night sleeping | Passer une nuit de sommeil |
 | `TRUDVANG.Action.CalmFear` | Calm down | Se rasséréner |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
@@ -882,6 +883,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
+| `TRUDVANG.Notification.NotRestored` | not restored | non renouvelée |
 | `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |
 | `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
 | `TRUDVANG.Notification.DrawnOutsideCombat` | {item} drawn. | {item} dégainé. |

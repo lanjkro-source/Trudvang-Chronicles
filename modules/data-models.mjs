@@ -44,11 +44,12 @@ function effectiveTraitSchema() {
   });
 }
 
-function resource(initialValue, initialMax) {
+function resource(initialValue, initialMax, {temporary = false} = {}) {
   return schema({
     value: number(initialValue),
     max: number(initialMax),
-    current: number(initialValue, {persisted: false})
+    current: number(initialValue, {persisted: false}),
+    ...(temporary ? {temporary: number(0)} : {})
   });
 }
 
@@ -161,11 +162,12 @@ function actorCommonSchema() {
       fear: resource(0, 50),
       combat: resource(1, 1),
       vitner: resource(0, 0),
-      divinity: resource(0, 0)
+      divinity: resource(0, 0, {temporary: true})
     }),
     combatPools: combatPoolsSchema(),
     initiative: schema({base: integer(0), current: integer(0)}),
     movement: schema({base: integer(10), current: integer(10)}),
+    rest: schema({healthRecoveryNights: integer(0, {min: 0})}),
     notes: html(),
     damage: schema({taken: number(0), penalty: integer(0), level: string("light")}),
     fearPenalty: integer(0),

@@ -96,8 +96,11 @@
 .trudvang-sheet .inspectable-stat { padding: 0; font: inherit; }
 .trudvang-sheet .inspectable-stat i { margin-left: 3px; font-size: .7rem; opacity: .72; }
 
-.trudvang-sheet .resource-bar { display: grid; grid-template-columns: 1.2fr repeat(4, 1fr); min-height: 49px; background: color-mix(in srgb, var(--trudvang-header) 92%, transparent); color: var(--trudvang-on-header); border-bottom: 1px solid var(--trudvang-gold); }
+.trudvang-sheet .resource-bar { display: grid; grid-template-columns: 40px 1.2fr repeat(4, 1fr); min-height: 49px; background: color-mix(in srgb, var(--trudvang-header) 92%, transparent); color: var(--trudvang-on-header); border-bottom: 1px solid var(--trudvang-gold); }
 .trudvang-sheet .resource-bar.compact { grid-template-columns: 1.25fr 1.25fr 1fr .8fr; }
+.trudvang-sheet .resource-bar .rest-button { display: grid; place-items: center; color: var(--trudvang-on-header); border-right: 1px solid color-mix(in srgb, var(--trudvang-gold) 40%, transparent); background: color-mix(in srgb, var(--trudvang-on-header) 5%, transparent); }
+.trudvang-sheet .resource-bar .rest-button:hover { color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-gold) 32%, transparent); }
+.trudvang-sheet .resource-bar .rest-button i { color: inherit; font-size: 1rem; }
 .trudvang-sheet .resource { position: relative; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid color-mix(in srgb, var(--trudvang-gold) 40%, transparent); font-size: .72rem; text-transform: uppercase; }
 .trudvang-sheet .resource > span:last-child { display: flex; align-items: center; font-size: .9rem; }
 .trudvang-sheet .resource input { width: 34px; height: 20px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-on-header) 6%, transparent); text-align: center; }
@@ -593,7 +596,7 @@
 @media (max-width: 680px) {
   .trudvang-sheet .identity-grid { grid-template-columns: 1fr 1fr; }
   .trudvang-sheet .skill-list, .trudvang-sheet .summary-grid { grid-template-columns: 1fr; }
-  .trudvang-sheet .resource-bar { grid-template-columns: repeat(3, 1fr); }
+  .trudvang-sheet .resource-bar { grid-template-columns: 40px repeat(3, 1fr); }
   .trudvang-sheet .progress-footer { flex-wrap: wrap; }
   .trudvang-sheet .progress-values { order: 3; flex-basis: 100%; gap: 8px; }
   .trudvang-sheet .knowledge-node { grid-template-columns: 25px 25px minmax(100px,1fr) 70px 38px 76px 24px 24px; }

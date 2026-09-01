@@ -21,10 +21,11 @@
   </header>
 
   <section class="resource-bar">
+    <button type="button" class="rest-button" data-action="rest-for-night" title="{{localize 'TRUDVANG.Action.RestForNight'}}"><i class="fas fa-bed"></i><span class="visually-hidden">{{localize "TRUDVANG.Action.RestForNight"}}</span></button>
     <label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / {{system.resources.body.max}}</span></label>
     <label class="resource fear"><span>{{localize "TRUDVANG.Resource.Fear"}}</span><input name="system.resources.fear.value" type="number" value="{{system.resources.fear.value}}"></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Vitner"}}</span><span><input name="system.resources.vitner.value" type="number" value="{{system.resources.vitner.value}}"> / {{system.resources.vitner.max}}</span></label>
-    <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}}</span></label>
+    <label class="resource"><span>{{localize "TRUDVANG.Resource.Divinity"}}</span><span><input name="system.resources.divinity.value" type="number" value="{{system.resources.divinity.value}}"> / {{system.resources.divinity.max}} + <input name="system.resources.divinity.temporary" type="number" min="0" value="{{system.resources.divinity.temporary}}"></span></label>
     <label class="resource"><span>{{localize "TRUDVANG.Resource.Raud"}}</span><span><input name="system.resources.raud.value" type="number" value="{{system.resources.raud.value}}"> / <input name="system.resources.raud.max" type="number" value="{{system.resources.raud.max}}"></span></label>
   </section>
   <nav class="sheet-tabs tabs" data-group="primary">

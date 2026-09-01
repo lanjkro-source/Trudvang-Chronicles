@@ -801,7 +801,8 @@ export class TrudvangActor extends BaseActor {
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
     });
     if (!options) return null;
-    const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0);
+    const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
+    const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
     const vitnerType = this.selectedVitnerType;
     const perfectSuccessMax = isDivine ? 1 : (vitnerType?.perfectSuccessMax ?? 1);
@@ -811,7 +812,14 @@ export class TrudvangActor extends BaseActor {
     const spent = isDivine && !result.success ? defaultCost : options.cost;
     if (this.isOwner) {
       const stored = Number(this._source.system.resources[resource].value || 0);
-      await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
+      if (isDivine) {
+        const storedTemporary = Number(this._source.system.resources.divinity.temporary || 0);
+        const temporarySpent = Math.min(storedTemporary, spent);
+        await this.update({
+          "system.resources.divinity.temporary": storedTemporary - temporarySpent,
+          "system.resources.divinity.value": Math.max(0, stored - (spent - temporarySpent))
+        });
+      } else await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
     if (result?.result === 20) await this.rollFatalEffect(isDivine ? "faith" : "vitner", options.cost, item);
     return result;
@@ -862,6 +870,34 @@ export class TrudvangActor extends BaseActor {
       rolls: [roll]
     });
     return {roll, recovered, before, after};
+  }
+
+  async restForNight() {
+    if (!this.isOwner) return;
+    const recovery = this.system.healthRecovery ?? {amount: 1, days: 1};
+    const recordedNights = Number(this._source.system.rest?.healthRecoveryNights || 0);
+    const recoveryNights = recordedNights + 1;
+    const canRecoverHealth = recoveryNights >= Number(recovery.days || 1);
+    const bodyBefore = Number(this.system.resources.body.current || 0);
+    const bodyMax = Number(this.system.resources.body.max || 0);
+    const healthRecovered = canRecoverHealth ? Math.min(Number(recovery.amount || 0), Math.max(0, bodyMax - bodyBefore)) : 0;
+    const bodyStored = Number(this._source.system.resources.body.value || 0);
+    const updates = {
+      "system.rest.healthRecoveryNights": canRecoverHealth ? 0 : recoveryNights,
+      "system.resources.body.value": Math.min(bodyMax, bodyStored + healthRecovered),
+      "system.resources.vitner.value": Number(this.system.resources.vitner.max || 0),
+      "system.resources.divinity.temporary": 0
+    };
+    if (this.selectedReligion?.id !== "thuuldom") updates["system.resources.divinity.value"] = Number(this.system.resources.divinity.max || 0);
+    await this.update(updates);
+    const fear = await this.calmFear();
+    ui.notifications.info(game.i18n.format("TRUDVANG.Notification.RestCompleted", {
+      health: healthRecovered,
+      vitner: Number(this.system.resources.vitner.max || 0),
+      divinity: this.selectedReligion?.id === "thuuldom" ? game.i18n.localize("TRUDVANG.Notification.NotRestored") : Number(this.system.resources.divinity.max || 0),
+      fear: fear?.recovered || 0
+    }));
+    return {healthRecovered, fear};
   }
 
   async rollCombatMovement() {

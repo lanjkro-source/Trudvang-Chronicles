@@ -115,6 +115,7 @@
       "Parry": "Parer",
       "RollDamage": "Jet de Dégâts",
       "RollInitiative": "Jet d'initiative",
+      "RestForNight": "Passer une nuit de sommeil",
       "CalmFear": "Se rasséréner",
       "ResetCombat": "Réinitialiser les points de combat",
       "SpendCombat": "Dépenser des PC",
@@ -735,6 +736,8 @@
       "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
     },
     "Notification": {
+      "RestCompleted": "Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur.",
+      "NotRestored": "non renouvelée",
       "CalmFear": "{actor} se rassérène : −{amount} points de peur ({before} → {after}).",
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
       "DrawnOutsideCombat": "{item} dégainé.",

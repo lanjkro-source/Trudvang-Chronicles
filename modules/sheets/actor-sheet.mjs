@@ -54,6 +54,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "confirm-advancement": TrudvangActorSheet.#onAction,
       "cancel-advancement": TrudvangActorSheet.#onAction,
       "roll-initiative": TrudvangActorSheet.#onAction,
+      "rest-for-night": TrudvangActorSheet.#onAction,
       "calm-fear": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
@@ -395,6 +396,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "confirm-advancement": return this.actor.confirmAdvancements();
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
+      case "rest-for-night": return this.actor.restForNight();
       case "calm-fear": return this.actor.calmFear();
       case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();

@@ -115,6 +115,7 @@
       "Parry": "Parry",
       "RollDamage": "Roll Damage",
       "RollInitiative": "Roll Initiative",
+      "RestForNight": "Spend a night sleeping",
       "CalmFear": "Calm down",
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
@@ -735,6 +736,8 @@
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
     "Notification": {
+      "RestCompleted": "Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear.",
+      "NotRestored": "not restored",
       "CalmFear": "{actor} calms down: −{amount} Fear Points ({before} → {after}).",
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
       "DrawnOutsideCombat": "{item} drawn.",
