@@ -194,6 +194,15 @@ export function prepareActorStatInspection(actor, key, config = {}) {
     }
     permanent.push(...applicableEffectRows(actor, "system.modifiers.protection", actor.system.modifiers?.protection));
     total = number(actor.system.protection);
+  } else if (key === "persistence") {
+    title = localized("TRUDVANG.Resource.PersistenceInWild");
+    permanent.push(
+      row(localized("TRUDVANG.Inspection.Base"), 10),
+      row(localized("TRUDVANG.Trait.Psyche"), actor.getTraitValue("psyche")),
+      row(localized("TRUDVANG.Knowledge.survival"), number(actor.findKnowledgeItem("survival")?.system.level || 0)),
+      row(localized("TRUDVANG.Knowledge.weathered"), number(actor.findKnowledgeItem("weathered")?.system.level || 0) * 2)
+    );
+    total = `${number(actor.system.persistenceInWild)} ${localized("TRUDVANG.Unit.Days")}`;
   } else if (key === "combat") {
     title = localized("TRUDVANG.Resource.CombatPools");
     const pools = resolveCombatPools({actor, context: {ignoreSpent: !actor.isInActiveCombat}});

@@ -95,6 +95,13 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const body = this.actor.system.resources.body;
     const fear = this.actor.system.resources.fear;
     const recovery = this.actor.system.healthRecovery ?? {amount: 1, days: 1};
+    const equippedArmor = this.actor.items.filter(item => item.type === "armor" && item.system.equipped);
+    context.armorStatus = {
+      protection: Number(this.actor.system.protection || 0),
+      integrityCurrent: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.value || 0), 0),
+      integrityMax: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.max || 0), 0)
+    };
+    context.freeCombatMovement = Math.min(5, Number(this.actor.findKnowledgeItem("combatMovement")?.system.level || 0));
     context.healthStatus = {
       current: Number(body.current || 0),
       max: Number(body.max || 0),

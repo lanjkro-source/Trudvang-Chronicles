@@ -271,7 +271,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Resource.Divinity` | Divinity Points | Points de divinité |
 | `TRUDVANG.Resource.Initiative` | Initiative | Initiative |
 | `TRUDVANG.Resource.Movement` | Movement | Mouvement |
+| `TRUDVANG.Resource.FreeCombatMovement` | Free combat movement | Mouvement de combat gratuit |
 | `TRUDVANG.Resource.Protection` | Protection | Protection |
+| `TRUDVANG.Resource.Integrity` | Integrity | Intégrité |
 | `TRUDVANG.Resource.DamageLevel` | Damage Level | Niveau de dégâts |
 | `TRUDVANG.Resource.FearPenalty` | Fear Penalty | Pénalité de peur |
 | `TRUDVANG.Resource.ArmorVCPenalty` | Armor Encumbrance (VC) | Encombrement armure (VC) |

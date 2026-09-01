@@ -54,8 +54,12 @@
         <section class="panel status-panel">
           <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
           <div class="status-vitals">
+            <section class="status-protection">
+              <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="protection">{{armorStatus.protection}} VP <i class="fas fa-circle-info"></i></button></span>
+              <span><strong>{{localize "TRUDVANG.Resource.Integrity"}} :</strong> {{armorStatus.integrityCurrent}} / {{armorStatus.integrityMax}} VI</span>
+            </section>
             <section class="status-vital health-vital">
-              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span>{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
+              <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span class="status-vital-value">{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
               <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.current}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span><i class="vital-meter-mark" style="left: 25%"></i><i class="vital-meter-mark" style="left: 50%"></i><i class="vital-meter-mark" style="left: 75%"></i></div>
               <p class="status-consequence"><strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong><span>{{healthStatus.consequence}}</span></p>
             </section>
@@ -66,9 +70,9 @@
             </section>
           </div>
           <dl class="status-list">
-            <dt>{{localize "TRUDVANG.Resource.Protection"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="protection">{{system.protection}} <i class="fas fa-circle-info"></i></button></dd>
             <dt>{{localize "TRUDVANG.Resource.Movement"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="movement">{{system.movement.current}} m <i class="fas fa-circle-info"></i></button></dd>
-            <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd>{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}}</dd>
+            <dt>{{localize "TRUDVANG.Resource.FreeCombatMovement"}}</dt><dd>{{freeCombatMovement}} m</dd>
+            <dt>{{localize "TRUDVANG.Resource.PersistenceInWild"}}</dt><dd><button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="persistence">{{system.persistenceInWild}} {{localize "TRUDVANG.Unit.Days"}} <i class="fas fa-circle-info"></i></button></dd>
             {{#if system.armorVCPenalty}}<dt>{{localize "TRUDVANG.Resource.ArmorVCPenalty"}}</dt><dd>-{{system.armorVCPenalty}}</dd>{{/if}}
           </dl>
         </section>
