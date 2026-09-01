@@ -12,17 +12,18 @@ const raceStats = {
   dwarf: [["TRUDVANG.Culture.Borjornikka", 30, 8], ["TRUDVANG.Culture.Buratja", 28, 8], ["TRUDVANG.Culture.Zvorda", 34, 6]]
 };
 
-const pages = [
-  ["human", "races", "human", "assets/art/journals/humans.png"],
-  ["elf", "races", "elf", "assets/art/journals/elves.png"],
-  ["dwarf", "races", "dwarf", "assets/art/journals/dwarves.png"],
-  ["dimwalker", "archetypes", "dimwalker", "assets/art/journals/dimwalker.png"],
-  ["bard", "archetypes", "bard", "assets/art/journals/bard.png"],
-  ["dweller", "archetypes", "dweller", "assets/art/journals/dweller.png"],
-  ["warrior", "archetypes", "warrior", "assets/art/journals/warrior.png"],
-  ["rogue", "archetypes", "rogue", "assets/art/journals/rogue.png"],
-  ["ranger", "archetypes", "ranger", "assets/art/journals/ranger.png"],
-  ["vitnerWeaver", "archetypes", "vitnerWeaver", "assets/art/journals/vitner-weaver.png"]
+const journals = [
+  {id: "human", folder: "races", key: "human", image: "assets/art/journals/humans.png"},
+  {id: "elf", folder: "races", key: "elf", image: "assets/art/journals/elves.png"},
+  {id: "dwarf", folder: "races", key: "dwarf", image: "assets/art/journals/dwarves.png"},
+  {id: "dimwalker", folder: "archetypes", key: "dimwalker", image: "assets/art/journals/dimwalker.png"},
+  {id: "bard", folder: "archetypes", key: "bard", image: "assets/art/journals/bard.png"},
+  {id: "dweller", folder: "archetypes", key: "dweller", image: "assets/art/journals/dweller.png"},
+  {id: "warrior", folder: "archetypes", key: "warrior", image: "assets/art/journals/warrior.png"},
+  {id: "rogue", folder: "archetypes", key: "rogue", image: "assets/art/journals/rogue.png"},
+  {id: "ranger", folder: "archetypes", key: "ranger", image: "assets/art/journals/ranger.png"},
+  {id: "vitnerWeaver", folder: "archetypes", key: "vitnerWeaver", image: "assets/art/journals/vitner-weaver.png"},
+  {id: "armorEncumbrance", folder: "equipment", key: "armorEncumbrance"}
 ];
 
 const l = key => game.i18n.localize(key);
@@ -34,9 +35,9 @@ function raceTable(id) {
 }
 
 export function journalDocuments(folders) {
-  return pages.map(([id, folder, key, image]) => ({
+  return journals.map(({id, folder, key, image}) => ({
     id, name: l(`TRUDVANG.Content.Journal.${key}.Name`), folder: folders[folder]?.id,
     flags: {[SYSTEM_ID]: {starterId: `journal-${id}`}},
-    pages: [{name: l(`TRUDVANG.Content.Journal.${key}.Name`), type: "text", text: {format: 1, content: `<article class="trudvang-starter-journal"><figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${content(key)}${raceStats[key] ? raceTable(key) : ""}</article>`}}]
+    pages: [{name: l(`TRUDVANG.Content.Journal.${key}.Name`), type: "text", text: {format: 1, content: image ? `<article class="trudvang-starter-journal"><figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${content(key)}${raceStats[key] ? raceTable(key) : ""}</article>` : content(key)}}]
   }));
 }
