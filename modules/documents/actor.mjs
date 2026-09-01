@@ -578,7 +578,7 @@ export class TrudvangActor extends BaseActor {
       id: "humanoid-natural", uuid: "", type: "weapon",
       name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
       img: "icons/svg/fist.svg",
-      system: {category: "natural", equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4, attackValue: 5}
+      system: {category: "natural", equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4}
     };
   }
 
@@ -681,7 +681,7 @@ export class TrudvangActor extends BaseActor {
     const inCombat = this.isInActiveCombat;
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}});
     const available = poolResolution.eligibleCurrent;
-    const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
+    const defaultCost = Math.min(5, available);
     const equipment = resolveEquipment({item, actor: this, context: {usage: kind, hand: item.system.hand}});
     const combatPointBonus = item.system.combatPointBonusUsed ? 0 : equipment.characteristics.combatPointBonus.value;
     const effectModifier = this.getRollModifier({kind, movement: true});

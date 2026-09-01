@@ -59,7 +59,7 @@ function shield() {
     uuid: "Actor.actor-id.Item.shield-id",
     name: "Test shield",
     type: "shield",
-    system: {weaponActions: 2, attackValue: 5, equipped: true}
+    system: {weaponActions: 2, equipped: true}
   };
 }
 
@@ -180,10 +180,9 @@ test("the public equipment contract separates characteristics from wearer impact
 });
 
 test("the displayed equipment CP bonus is the single intrinsic bonus used by the resolver", () => {
-  const result = resolveEquipment({item: weapon({attackValue: 9, combatPointBonus: 2})});
+  const result = resolveEquipment({item: weapon({combatPointBonus: 2})});
   assert.equal(result.characteristics.combatPointBonus.base, 2);
   assert.equal(result.characteristics.combatPointBonus.value, 2);
-  assert.equal(Object.hasOwn(result.characteristics, "attackValue"), false);
 });
 
 test("an armor profile explains wearer-specific heft and encumbrance", () => {
