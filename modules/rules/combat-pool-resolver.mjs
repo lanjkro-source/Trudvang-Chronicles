@@ -234,12 +234,21 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       rule: {book: "coreRules", printedPage: 315, englishBook: "gameMastersGuide", englishPrintedPage: 41}
     };
   });
+  const free = pools.find(pool => pool.id === "free");
+  // A compact tracker can show only one number for Free CP. Use the amount available
+  // to either hand, rather than the shared display value which intentionally preserves
+  // the other hand's independent reuse.
+  const trackerFreeCurrent = free && freeScope === "shared" && !context.ignoreSpent
+    ? Math.max(0, Math.min(free.max, free.max - free.spent - Math.max(0, finite(sourcePoolData(actor, "free").weaponSpent, 0), finite(sourcePoolData(actor, "free").offHandSpent, 0)) + finite(actor?.system?.modifiers?.combatValue, 0)))
+    : free?.current ?? 0;
+  const totalCurrent = pools.reduce((sum, pool) => sum + pool.current, 0);
   return {
     pools,
     active: pools.filter(pool => pool.max > 0),
     eligible: pools.filter(pool => pool.max > 0 && pool.eligible),
     totalMax: pools.reduce((sum, pool) => sum + pool.max, 0),
-    totalCurrent: pools.reduce((sum, pool) => sum + pool.current, 0),
+    totalCurrent,
+    totalTrackerCurrent: totalCurrent - (free?.current ?? 0) + trackerFreeCurrent,
     eligibleCurrent: pools.filter(pool => pool.eligible).reduce((sum, pool) => sum + pool.current, 0),
     freeScope
   };

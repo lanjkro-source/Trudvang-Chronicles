@@ -37,6 +37,14 @@ export async function activateHighestInitiativeCombatant(combat, {isActiveGM = g
   return true;
 }
 
+/** Refresh the cached combat-tracker resource for every combatant representing an updated actor. */
+export function refreshCombatantResources(combat, actor) {
+  const combatants = Array.from(combat?.combatants?.values?.() ?? combat?.combatants ?? []);
+  const matching = combatants.filter(combatant => combatant.actor === actor || combatant.actor?.uuid === actor?.uuid || combatant.actorId === actor?.id);
+  for (const combatant of matching) combatant.updateResource?.();
+  return matching.length;
+}
+
 /** Reset per-turn combat resources for the combatant whose turn has just begun. */
 export async function resetCurrentCombatantResources(combat, current, {isActiveGM = game.user.isActiveGM} = {}) {
   if (!isActiveGM || !combat?.started || !current?.combatantId) return false;
@@ -58,5 +66,8 @@ export function registerCombatHooks() {
   Hooks.on("updateCombatant", async (combatant, changed) => {
     if (!("initiative" in changed)) return;
     await activateHighestInitiativeCombatant(combatant.parent);
+  });
+  Hooks.on("updateActor", actor => {
+    if (refreshCombatantResources(game.combat, actor)) ui.combat?.render();
   });
 }

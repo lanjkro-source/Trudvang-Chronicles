@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { activateHighestInitiativeCombatant, combatInitiativesAreReady, isCombatRoundStart, isCombatTurnStart, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
+import { activateHighestInitiativeCombatant, combatInitiativesAreReady, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
 
 test("combat resource resets occur only when the tracker advances to a turn", () => {
   assert.equal(isCombatTurnStart({round: 0, turn: null, combatantId: null}, {round: 1, turn: 0, combatantId: "combatant-id"}), true);
@@ -37,6 +37,17 @@ test("once every initiative is rolled, the new leader becomes active and receive
   follower.initiative = null;
   assert.equal(combatInitiativesAreReady(combat), false);
   assert.equal(await activateHighestInitiativeCombatant(combat, {isActiveGM: true}), false);
+});
+
+test("actor updates refresh only their matching combatant resources", () => {
+  let updates = 0;
+  const actor = {id: "actor-id", uuid: "Actor.actor-id"};
+  const combat = {combatants: new Map([
+    ["matching", {actor, updateResource: () => { updates += 1; }}],
+    ["other", {actor: {id: "other"}, updateResource: () => { throw new Error("wrong combatant"); }}]
+  ])};
+  assert.equal(refreshCombatantResources(combat, actor), 1);
+  assert.equal(updates, 1);
 });
 
 test("the active GM resets the resources of the combatant whose turn begins", async () => {

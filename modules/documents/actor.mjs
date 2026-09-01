@@ -53,8 +53,8 @@ export class TrudvangActor extends BaseActor {
       system.combatPools[pool.id].current = pool.current;
     }
     system.resources.combat.max = combatPools.totalMax;
-    system.resources.combat.value = combatPools.totalCurrent;
-    system.resources.combat.current = combatPools.totalCurrent;
+    system.resources.combat.value = combatPools.totalTrackerCurrent;
+    system.resources.combat.current = combatPools.totalTrackerCurrent;
 
     // Resource values are persisted as their unmodified base. Active Effects alter only
     // the prepared value/current, so an expiring effect never destroys spent points.

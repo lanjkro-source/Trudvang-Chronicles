@@ -446,8 +446,10 @@ test("Free CP are reusable once per hand but movement reduces both uses", () => 
   const shieldHand = shield();
   const weaponFree = resolveCombatPools({actor, item: weaponHand, context: {action: "attack"}}).pools.find(pool => pool.id === "free");
   const shieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
+  const tracker = resolveCombatPools({actor});
   assert.equal(weaponFree.current, 0, "6 CP of movement and 4 weapon-hand CP exhaust that hand");
   assert.equal(shieldFree.current, 4, "the same remaining 4 CP are still available to the shield hand");
+  assert.equal(tracker.totalTrackerCurrent, 0, "the compact tracker uses the Free CP available to either hand");
 
   actor.system.combatPools.free.offHandSpent = 4;
   const exhaustedShieldFree = resolveCombatPools({actor, item: shieldHand, context: {action: "parry"}}).pools.find(pool => pool.id === "free");
