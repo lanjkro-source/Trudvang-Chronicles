@@ -10,12 +10,19 @@ function attachListeners(message, html) {
   if (html.dataset.trudvangBound === "true") return;
   html.dataset.trudvangBound = "true";
   html.querySelectorAll("[data-action='toggle-roll-details']").forEach(button => {
+    const details = button.closest(".chat-card")?.querySelector("[data-roll-details]");
+    if (details) {
+      details.classList.add("is-collapsed");
+      details.hidden = true;
+      button.setAttribute("aria-expanded", "false");
+    }
     button.addEventListener("click", event => {
       event.preventDefault();
       const details = button.closest(".chat-card")?.querySelector("[data-roll-details]");
       if (!details) return;
-      const expanded = details.toggleAttribute("hidden");
-      button.setAttribute("aria-expanded", String(!expanded));
+      const collapsed = details.classList.toggle("is-collapsed");
+      details.hidden = collapsed;
+      button.setAttribute("aria-expanded", String(!collapsed));
     });
   });
   html.querySelectorAll("[data-action='damage']").forEach(button => {

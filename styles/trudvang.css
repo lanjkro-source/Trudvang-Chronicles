@@ -565,7 +565,7 @@
 .trudvang.chat-card .success-margin { margin: 0; padding: 0 8px 7px; color: var(--trudvang-positive); text-align: center; font-weight: 700; }
 .trudvang.chat-card .damage-result { margin: 10px auto 2px; color: var(--trudvang-negative); }
 .trudvang.chat-card .card-flavor { padding: 8px; font-size: .9rem; }
-.trudvang.chat-card [data-roll-details][hidden] { display: none !important; }
+.trudvang.chat-card .roll-details.is-collapsed { display: none !important; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card small { display: block; padding: 2px 8px 7px; color: var(--trudvang-muted); text-align: center; }
 
