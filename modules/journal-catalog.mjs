@@ -37,6 +37,6 @@ export function journalDocuments(folders) {
   return pages.map(([id, folder, key, image]) => ({
     id, name: l(`TRUDVANG.Content.Journal.${key}.Name`), folder: folders[folder]?.id,
     flags: {[SYSTEM_ID]: {starterId: `journal-${id}`}},
-    pages: [{name: l(`TRUDVANG.Content.Journal.${key}.Name`), type: "text", text: {format: 1, content: `<figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${content(key)}${raceStats[key] ? raceTable(key) : ""}`}}]
+    pages: [{name: l(`TRUDVANG.Content.Journal.${key}.Name`), type: "text", text: {format: 1, content: `<article class="trudvang-starter-journal"><figure><img src="systems/${SYSTEM_ID}/${image}" alt=""></figure>${content(key)}${raceStats[key] ? raceTable(key) : ""}</article>`}}]
   }));
 }

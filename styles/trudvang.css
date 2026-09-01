@@ -28,6 +28,23 @@
   font-family: Georgia, "Times New Roman", serif;
 }
 
+/* Starter race and archetype journals carry this explicit marker, so ordinary
+   world journals retain Foundry's native appearance. */
+.trudvang-starter-journal {
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  color: var(--trudvang-ink);
+  background:
+    linear-gradient(color-mix(in srgb, var(--trudvang-paper-light) 93%, transparent), color-mix(in srgb, var(--trudvang-paper) 96%, transparent)),
+    url("../assets/art/character-sheet-frame.webp") center / 100% 100% no-repeat;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.trudvang-starter-journal figure { margin: 0 0 16px; text-align: center; }
+.trudvang-starter-journal figure img { max-width: 100%; height: auto; }
+.trudvang-starter-journal h2 { color: var(--trudvang-ink); border-bottom: 1px solid var(--trudvang-gold); font-family: Georgia, "Times New Roman", serif; }
+.trudvang-starter-journal table { color: var(--trudvang-ink); }
+
 .trudvang-sheet { height: 100%; display: flex; flex-direction: column; gap: 0; overflow: hidden; }
 .trudvang-sheet button { color: var(--trudvang-ink); border: 0; background: transparent; line-height: 1.2; }
 .trudvang-sheet button:hover, .trudvang-sheet .rollable:hover { color: var(--trudvang-accent); text-shadow: 0 0 8px color-mix(in srgb, var(--trudvang-gold) 55%, transparent); }
