@@ -3,6 +3,7 @@
   <div class="roll-result"><span class="die">{{result}}</span><span class="versus">≤</span><button type="button" class="target roll-detail-toggle" data-action="toggle-roll-details" aria-expanded="false">{{target}}</button></div>
   <p class="outcome">{{#if success}}{{localize "TRUDVANG.Roll.Success"}}{{else}}{{localize "TRUDVANG.Roll.Failure"}}{{/if}}{{#if critical}} — {{localize (concat "TRUDVANG.Roll.Critical." critical)}}{{/if}}</p>
   {{#if success}}<p class="success-margin">{{localize "TRUDVANG.Roll.Margin"}} : <strong>{{margin}}</strong></p>{{/if}}
+  {{#if success}}{{#if feint}}<p class="feint-result">{{localize "TRUDVANG.Roll.FeintParry" points=feint}}</p>{{/if}}{{/if}}
   {{#if flavor}}<div class="card-flavor roll-details is-collapsed" data-roll-details hidden>{{{flavor}}}</div>{{/if}}
   {{#if success}}{{#if (eq kind "attack")}}{{#if itemUuid}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-item-uuid="{{itemUuid}}"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{else}}{{#if naturalDamage}}<button type="button" data-action="damage" data-actor-uuid="{{actorUuid}}" data-natural-damage="true"><i class="fas fa-burst"></i> {{localize "TRUDVANG.Action.RollDamage"}}</button>{{/if}}{{/if}}{{/if}}{{/if}}
 </article>

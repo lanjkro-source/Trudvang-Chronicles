@@ -687,6 +687,9 @@ export class TrudvangActor extends BaseActor {
     const effectModifier = this.getRollModifier({kind, movement: true});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});
+    const targetActor = Array.from(game.user.targets || []).map(target => target?.actor).find(Boolean);
+    const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
+    const feintMax = kind === "attack" ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0;
     const modifierRows = [
       {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
@@ -697,10 +700,12 @@ export class TrudvangActor extends BaseActor {
       pools: poolResolution.eligible,
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, defaultCost),
       combatPointBonus,
-      modifierRows
+      modifierRows,
+      feintMax
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    const feint = kind === "attack" ? Math.min(spending.total, feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
@@ -717,12 +722,13 @@ export class TrudvangActor extends BaseActor {
     ].join("<br>");
     return rollUnder({
       actor: this,
-      label: item.name,
-      target: spending.total,
+      label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : "TRUDVANG.Action.Attack")}`,
+      target: spending.total - feint,
       modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value,
       kind,
       flavor,
-      item
+      item,
+      feint
     });
   }
 

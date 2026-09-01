@@ -574,6 +574,7 @@
       "AddTablet": "Add a compatible tablet",
       "MagicMethod": "Method and specialty",
       "FinalTarget": "Final Skill Value",
+      "Feint": "Feint (max. {max} CP)",
       "Strenuous": "Strenuous effort",
       "FinalVitnerCost": "Final Vitner cost",
       "TraitRollMode": "Roll mode",
@@ -595,6 +596,7 @@
       "OpenRoll": "Open roll on",
       "OpenInitiative": "Initiative uses 1d10 with an open roll on 10.",
       "Margin": "Success margin",
+      "FeintParry": "Feint → Parry -{points}",
       "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects"
     },
     "Warning": {

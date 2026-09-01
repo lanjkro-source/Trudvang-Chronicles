@@ -31,7 +31,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -49,6 +49,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     margin,
     critical,
     kind,
+    feint: Math.max(0, Number(feint || 0)),
     flavor,
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
@@ -307,7 +308,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
   });
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = []}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const rows = pools.map(pool => {
     const amount = Number(defaultAllocation[pool.id] || 0);
@@ -320,10 +321,12 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   }).join("");
   const initialTotal = Object.values(defaultAllocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
   const maximum = pools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+  const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(row.label)}</span><b>${Number(row.value) > 0 ? "+" : ""}${Number(row.value || 0)}</b></li>`).join("");
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
     ${rows}
     <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
+    ${maximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: maximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(maximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
     <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
     ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
     ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
@@ -338,13 +341,20 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const refresh = () => {
         const total = Array.from(root.querySelectorAll("[data-pool-id]"))
           .reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
+        const feintInput = root.querySelector("[name=feint]");
+        const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), maximumFeint, total) : 0;
+        if (feintInput) {
+          feintInput.max = String(Math.min(maximumFeint, total));
+          feintInput.value = String(feint);
+        }
+        const attackTotal = total - feint;
         const output = root.querySelector("[data-combat-total]");
-        if (output) output.textContent = String(total);
+        if (output) output.textContent = String(attackTotal);
         const finalTarget = root.querySelector("[data-combat-final-target]");
         if (finalTarget) {
           const manual = Number(root.querySelector("[name=modifier]")?.value || 0);
           const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
-          finalTarget.textContent = String(total + manual + fixed);
+          finalTarget.textContent = String(attackTotal + manual + fixed);
         }
       };
       const inputs = Array.from(root.querySelectorAll("[data-pool-id]"));
@@ -361,6 +371,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       };
       slider?.addEventListener("input", event => { allocate(event.currentTarget.value); refresh(); });
       inputs.forEach(input => input.addEventListener("input", () => { if (slider) slider.value = String(inputs.reduce((sum, field) => sum + Math.max(0, Number(field.value || 0)), 0)); refresh(); }));
+      root.querySelector("[name=feint]")?.addEventListener("input", refresh);
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       refresh();
     }
@@ -376,6 +387,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const root = button.form ?? dialog.element;
       return {
         modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
+        feint: Number(root.querySelector("[name=feint]")?.value || 0),
         allocation: Object.fromEntries(Array.from(root.querySelectorAll("[data-pool-id]"))
           .map(input => [input.dataset.poolId, Number(input.value || 0)]))
       };

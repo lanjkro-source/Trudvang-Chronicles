@@ -679,6 +679,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
+| `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
 | `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |
@@ -699,6 +700,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Roll.OpenRoll` | Open roll on | Jet ouvert sur |
 | `TRUDVANG.Roll.OpenInitiative` | Initiative uses 1d10 with an open roll on 10. | L'initiative utilise 1d10 avec un jet ouvert sur 10. |
 | `TRUDVANG.Roll.Margin` | Success margin | Marge de réussite |
+| `TRUDVANG.Roll.FeintParry` | Feint → Parry -{points} | Feinte → Parade -{points} |
 | `TRUDVANG.Roll.OpenTraitFormula` | 1d10 (open on 10) + trait + bonus + effects | 1d10 (jet ouvert sur 10) + trait + bonus + effets |
 
 ## `TRUDVANG.Roll.Critical`
