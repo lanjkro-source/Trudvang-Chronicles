@@ -663,6 +663,7 @@
       "MagicMethod": "Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier",
       "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points",
       "CombatPoolSpent": "{amount} CP spent from the {pool} pool.",
+      "FeintCost": "Feint: -{points} SV ({points} CP).",
       "EquipmentCombatPointBonus": "Equipment CP bonus: {amount}.",
       "WrestlingCost": "{points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies.",
       "CombatPoolSource": "{source} level {level}: {max} CP pool.",

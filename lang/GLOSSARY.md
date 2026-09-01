@@ -786,6 +786,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
+| `TRUDVANG.Calculation.FeintCost` | Feint: -{points} SV ({points} CP). | Feinte : -{points} VC ({points} PC). |
 | `TRUDVANG.Calculation.EquipmentCombatPointBonus` | Equipment CP bonus: {amount}. | Bonus de PC de l’équipement : {amount}. |
 | `TRUDVANG.Calculation.WrestlingCost` | {points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies. | {points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique. |
 | `TRUDVANG.Calculation.CombatPoolSource` | {source} level {level}: {max} CP pool. | {source} niveau {level} : réserve de {max} PC. |

@@ -717,6 +717,7 @@ export class TrudvangActor extends BaseActor {
       })) : [];
     const flavor = [
       ...spendingFlavor,
+      ...(feint ? [game.i18n.format("TRUDVANG.Calculation.FeintCost", {points: feint})] : []),
       ...(combatPointBonus ? [game.i18n.format("TRUDVANG.Calculation.EquipmentCombatPointBonus", {amount: combatPointBonus > 0 ? `+${combatPointBonus}` : combatPointBonus})] : []),
       ...modifierRows.map(row => `${row.label}: ${row.value > 0 ? "+" : ""}${row.value}`)
     ].join("<br>");

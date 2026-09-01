@@ -663,6 +663,7 @@
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
       "CombatPoolSpent": "{amount} PC dépensé(s) depuis la réserve {pool}.",
+      "FeintCost": "Feinte : -{points} VC ({points} PC).",
       "EquipmentCombatPointBonus": "Bonus de PC de l’équipement : {amount}.",
       "WrestlingCost": "{points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique.",
       "CombatPoolSource": "{source} niveau {level} : réserve de {max} PC.",
