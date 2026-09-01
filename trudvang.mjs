@@ -1,6 +1,7 @@
 import { TRUDVANG } from "./modules/config.mjs";
 import { TrudvangActor } from "./modules/documents/actor.mjs";
 import { TrudvangItem } from "./modules/documents/item.mjs";
+import { TrudvangCombat } from "./modules/documents/combat.mjs";
 import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
 import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
@@ -32,6 +33,7 @@ Hooks.once("init", () => {
   };
   CONFIG.Actor.documentClass = TrudvangActor;
   CONFIG.Item.documentClass = TrudvangItem;
+  CONFIG.Combat.documentClass = TrudvangCombat;
 
   // Actor sheets — ApplicationV2
   const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;

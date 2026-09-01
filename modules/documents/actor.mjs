@@ -546,12 +546,15 @@ export class TrudvangActor extends BaseActor {
     return rollUnder({actor: this, label: item.name, target, modifier: options.modifier, kind: "ability", item});
   }
 
-  async rollInitiativeTrudvang() {
+  async rollInitiativeTrudvang({combatant = null} = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
     const options = await initiativeDialog({actor: this, target: Number(this.system.initiative.current || 0), lightningQuickLevel: Number(this.findKnowledgeItem("lightningQuickInvocation")?.system.level || 0)});
     if (!options) return null;
     const result = await openD10({threshold: 10, modifier: Number(this.system.initiative.current || 0) + options.modifier});
     const detail = result.rolls.join(" + ");
+    const activeCombat = game.combat;
+    const combatants = combatant ? [combatant] : Array.from(activeCombat?.combatants ?? []).filter(candidate => candidate.actor === this || candidate.actor?.uuid === this.uuid);
+    if (combatants.length) await Promise.all(combatants.map(candidate => candidate.update({initiative: result.total})));
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/initiative-card.hbs", {
       actorName: this.name,
       actorImg: this.img,
