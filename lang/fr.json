@@ -175,7 +175,7 @@
       "Damage": "Dégâts",
       "OpenRoll": "Seuil de jet ouvert (0 = aucun)",
       "WeaponActions": "AA : ACTIONS D'ARME",
-      "AttackValue": "BONUS CP",
+      "AttackValue": "Dépense suggérée (PC)",
       "InitiativeModifier": "MI : MOD. INITIATIVE",
       "VitnerType": "Type d'enchanteur",
       "PerfectSuccess": "Réussite parfaite sur",

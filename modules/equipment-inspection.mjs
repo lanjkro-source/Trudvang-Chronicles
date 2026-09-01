@@ -10,7 +10,7 @@ const STAT_LABELS = {
   weaponActions: "TRUDVANG.Field.WeaponActions",
   damage: "TRUDVANG.Field.Damage",
   combatActionModifier: "TRUDVANG.Field.CombatActionModifier",
-  attackValue: "TRUDVANG.Field.AttackValue",
+  combatPointBonus: "TRUDVANG.Field.BonusCpLabel",
   initiativeModifier: "TRUDVANG.Field.InitiativeModifier",
   protection: "TRUDVANG.Field.VpProtectionLabel",
   passiveProtection: "TRUDVANG.Field.PassiveProtection",
@@ -136,7 +136,7 @@ export function prepareEquipmentInspection(item, actor = item?.parent?.documentN
     impacts,
     effects,
     modified: stats.some(stat => stat.modified),
-    shortTitle: stats.filter(stat => ["weaponActions", "attackValue", "damage", "heft", "protection", "weight"].includes(stat.key))
+    shortTitle: stats.filter(stat => ["weaponActions", "combatPointBonus", "damage", "heft", "protection", "weight"].includes(stat.key))
       .slice(0, 3).map(stat => `${stat.label}: ${stat.effectiveDisplay}`).join(" · ")
   };
 }

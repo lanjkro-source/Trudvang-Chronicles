@@ -383,7 +383,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
     characteristics.weaponActions = resolveWeaponActions({item, actor, modifiers});
     characteristics.damage = resolveDamage({item, actor, context, modifiers});
     characteristics.combatActionModifier = resolveCombatActionModifier({item, actor, context, modifiers});
-    characteristics.attackValue = resolveNumericEquipmentStat({key: "attackValue", base: item?.system?.attackValue, modifiers, minimum: 0, integer: true});
+    characteristics.combatPointBonus = resolveNumericEquipmentStat({key: "combatPointBonus", base: item?.system?.combatPointBonus, modifiers, integer: true});
     characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
     characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
     if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});

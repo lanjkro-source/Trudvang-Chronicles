@@ -581,7 +581,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       let MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
-      let CP = Number(item.system.attackValue || 0);
+      const CP = resolveEquipment({item, actor: this.actor, context: {hand: item.system.hand}}).characteristics.combatPointBonus.value;
       const dmg = this._getItemDamageText(item);
       const actionModifier = resolveCombatActionModifier({item, actor: this.actor, context: {hand: item.system.hand}});
       const actionText = actionModifier.steps.length ? ` ${svLab}:${signed(actionModifier.value)} — ${actionModifier.steps.map(step => game.i18n.format(step.explanationKey, step.explanationData)).join(" ")}` : "";
@@ -592,7 +592,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const MI = Number(item.system.initiativeModifier || 0);
       const VI = Number(item.system.breach?.value ?? 0);
       const VP = Math.ceil(Math.max(0, VI) / 10);
-      const CP = Number(item.system.attackValue || 0);
+      const CP = resolveEquipment({item, actor: this.actor, context: {hand: "shield"}}).characteristics.combatPointBonus.value;
       const actionModifier = resolveCombatActionModifier({item, actor: this.actor});
       const explanation = actionModifier.steps
         .map(step => game.i18n.format(step.explanationKey, step.explanationData))
@@ -629,7 +629,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const vp = Math.ceil(Math.max(0, Number(item.system.breach?.value ?? 0)) / 10);
     if (["weapon", "shield"].includes(item.type)) {
       const actions = resolveWeaponActions({item, actor: this.actor}).value;
-      return `${isEN ? "WA" : "AA"}:${actions} ${isEN ? "PV" : "VP"}:${vp} ${this._getItemDamageText(item)}`;
+      const bonus = resolveEquipment({item, actor: this.actor, context: {hand: item.system.hand}}).characteristics.combatPointBonus.value;
+      return `${isEN ? "WA" : "AA"}:${actions} CP:${bonus >= 0 ? "+" : ""}${bonus} ${isEN ? "PV" : "VP"}:${vp} ${this._getItemDamageText(item)}`;
     }
     if (item.type === "armor") return `${isEN ? "PV" : "VP"}:${vp}`;
     return "";

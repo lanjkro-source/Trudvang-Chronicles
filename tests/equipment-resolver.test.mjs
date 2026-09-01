@@ -179,6 +179,13 @@ test("the public equipment contract separates characteristics from wearer impact
   assert.equal(result.wearerImpacts.combatActions, null);
 });
 
+test("the displayed equipment CP bonus is the single intrinsic bonus used by the resolver", () => {
+  const result = resolveEquipment({item: weapon({attackValue: 9, combatPointBonus: 2})});
+  assert.equal(result.characteristics.combatPointBonus.base, 2);
+  assert.equal(result.characteristics.combatPointBonus.value, 2);
+  assert.equal(Object.hasOwn(result.characteristics, "attackValue"), false);
+});
+
 test("an armor profile explains wearer-specific heft and encumbrance", () => {
   const item = {
     id: "armor-id",

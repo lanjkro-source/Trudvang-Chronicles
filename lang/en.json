@@ -175,7 +175,7 @@
       "Damage": "Damages",
       "OpenRoll": "Open Roll Threshold (0 = none)",
       "WeaponActions": "WA: WEAPON ACTIONS",
-      "AttackValue": "CP BONUS",
+      "AttackValue": "Suggested CP spend",
       "InitiativeModifier": "IM: INITIATIVE MODIFIER",
       "VitnerType": "Vitner Type",
       "PerfectSuccess": "Perfect Success on",

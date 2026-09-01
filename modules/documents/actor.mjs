@@ -3,7 +3,7 @@ import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD
 import { renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
-import { resolveArmorProfile, resolveCombatActionModifier } from "../rules/equipment-resolver.mjs";
+import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { actorParticipatesInCombat, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -682,7 +682,8 @@ export class TrudvangActor extends BaseActor {
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: kind, ignoreSpent: !inCombat}});
     const available = poolResolution.eligibleCurrent;
     const defaultCost = Math.min(Number(item.system.attackValue || 5), available);
-    const combatPointBonus = item.system.combatPointBonusUsed ? 0 : Number(item.system.combatPointBonus || 0);
+    const equipment = resolveEquipment({item, actor: this, context: {usage: kind, hand: item.system.hand}});
+    const combatPointBonus = item.system.combatPointBonusUsed ? 0 : equipment.characteristics.combatPointBonus.value;
     const effectModifier = this.getRollModifier({kind, movement: true});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item, actor: this, context: {usage: kind, hand: item.system.hand}});

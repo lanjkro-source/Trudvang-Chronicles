@@ -211,7 +211,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Damage` | Damages | Dégâts |
 | `TRUDVANG.Field.OpenRoll` | Open Roll Threshold (0 = none) | Seuil de jet ouvert (0 = aucun) |
 | `TRUDVANG.Field.WeaponActions` | WA: WEAPON ACTIONS | AA : ACTIONS D'ARME |
-| `TRUDVANG.Field.AttackValue` | CP BONUS | BONUS CP |
+| `TRUDVANG.Field.AttackValue` | Suggested CP spend | Dépense suggérée (PC) |
 | `TRUDVANG.Field.InitiativeModifier` | IM: INITIATIVE MODIFIER | MI : MOD. INITIATIVE |
 | `TRUDVANG.Field.VitnerType` | Vitner Type | Type d'enchanteur |
 | `TRUDVANG.Field.PerfectSuccess` | Perfect Success on | Réussite parfaite sur |

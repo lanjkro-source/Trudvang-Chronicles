@@ -553,7 +553,7 @@
 .trudvang.chat-card { overflow: hidden; color: var(--trudvang-ink); border: 1px solid var(--trudvang-line); background: linear-gradient(145deg, var(--trudvang-paper-light), var(--trudvang-paper)); box-shadow: 0 2px 5px color-mix(in srgb, var(--trudvang-ink) 27%, transparent); font-family: Georgia, "Times New Roman", serif; }
 .trudvang.chat-card header { display: flex; align-items: center; gap: 8px; padding: 6px 8px; color: var(--trudvang-on-header); background: linear-gradient(100deg, var(--trudvang-header), var(--trudvang-header-alt)); border-bottom: 2px solid var(--trudvang-gold); }
 .trudvang.chat-card header img { width: 36px; height: 36px; border: 1px solid var(--trudvang-gold); object-fit: cover; }
-.trudvang.chat-card header h3, .trudvang.chat-card header strong { margin: 0; font-family: Georgia, "Times New Roman", serif; }
+.trudvang.chat-card header h3, .trudvang.chat-card header strong { margin: 0; color: var(--trudvang-on-header); font-family: Georgia, "Times New Roman", serif; }
 .trudvang.chat-card .roll-result { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
 .trudvang.chat-card .die, .trudvang.chat-card .target, .trudvang.chat-card .damage-result { min-width: 54px; text-align: center; font: 700 2rem Georgia, serif; }
 .trudvang.chat-card .roll-detail-toggle { color: var(--trudvang-ink); border: 0; background: transparent; cursor: pointer; }
@@ -565,6 +565,7 @@
 .trudvang.chat-card .success-margin { margin: 0; padding: 0 8px 7px; color: var(--trudvang-positive); text-align: center; font-weight: 700; }
 .trudvang.chat-card .damage-result { margin: 10px auto 2px; color: var(--trudvang-negative); }
 .trudvang.chat-card .card-flavor { padding: 8px; font-size: .9rem; }
+.trudvang.chat-card [data-roll-details][hidden] { display: none !important; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card small { display: block; padding: 2px 8px 7px; color: var(--trudvang-muted); text-align: center; }
 
