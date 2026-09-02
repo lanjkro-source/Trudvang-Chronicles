@@ -56,6 +56,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "roll-initiative": TrudvangActorSheet.#onAction,
       "rest-for-night": TrudvangActorSheet.#onAction,
       "calm-fear": TrudvangActorSheet.#onAction,
+      "roll-survival-rounds": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
@@ -457,7 +458,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       if (foundry.utils.hasProperty(changes, valuePath)) {
         const shown = Number(foundry.utils.getProperty(changes, valuePath) || 0);
         const modifier = Number(this.actor.system.modifiers?.[`${key}Value`] || 0);
-        foundry.utils.setProperty(changes, valuePath, editedPath === valuePath ? Math.max(0, shown - modifier) : source.value);
+        const minimum = key === "body" ? Number.NEGATIVE_INFINITY : 0;
+        foundry.utils.setProperty(changes, valuePath, editedPath === valuePath ? Math.max(minimum, shown - modifier) : source.value);
       }
       if (foundry.utils.hasProperty(changes, maxPath)) {
         const shown = Number(foundry.utils.getProperty(changes, maxPath) || 0);

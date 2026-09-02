@@ -49,6 +49,18 @@ export class TrudvangActor extends BaseActor {
     if (insane !== Boolean(this._source.system.fearInsane)) changed["system.fearInsane"] = insane;
   }
 
+  /** Keep Body Points unbounded below when they are changed from a token bar. */
+  async modifyTokenAttribute(attribute, value, isDelta = false, isBar = true) {
+    if (attribute !== "resources.body" || !isBar) return super.modifyTokenAttribute(attribute, value, isDelta, isBar);
+    const body = this.system.resources.body;
+    const current = Number(body.value || 0);
+    const update = isDelta ? current + Number(value || 0) : Number(value || 0);
+    if (update === current) return this;
+    const updates = {"system.resources.body.value": update};
+    const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates, this);
+    return allowed !== false ? this.update(updates) : this;
+  }
+
   prepareDerivedData() {
     super.prepareDerivedData();
     const system = this.system;
@@ -630,7 +642,7 @@ export class TrudvangActor extends BaseActor {
     return {
       id: "humanoid-natural", uuid: "", type: "weapon",
       name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
-      img: "icons/svg/fist.svg",
+      img: "icons/svg/combat.svg",
       system: {category: "natural", equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4}
     };
   }
