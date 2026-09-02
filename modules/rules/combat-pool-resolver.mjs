@@ -78,15 +78,18 @@ function sourcePoolData(actor, id) {
 }
 
 /**
- * Free Combat Points are shared with movement, then apply once per weapon hand
- * (Core Rules, p. 318). A shield-hand action therefore does not consume the
- * weapon-hand use of the same remaining Free CP, but movement does reduce both.
+ * Free Combat Points apply once to each hand (Core Rules, p. 318). Actions tied
+ * to a light, heavy, or throwing weapon (or shield) use the matching hand only.
+ * Every other action, including movement, needs and spends both hand uses.
  */
 export function freeCombatPoolScope(item, context = {}) {
-  if (!["attack", "parry"].includes(context.action || context.usage || "")) return "shared";
+  const action = context.action || context.usage || "";
+  const handBoundAction = ["attack", "parry", "drawWeapon"].includes(action);
+  if (!handBoundAction) return "both";
   if (weaponUsesTwoHands(item)) return "both";
   if (item?.type === "shield" || item?.system?.hand === "offHand") return "offHand";
-  return "weapon";
+  if (item?.type === "weapon" && weaponUsesSeparateHands(item)) return "weapon";
+  return "both";
 }
 
 /** Whether the actor currently participates in Foundry's active combat encounter. */
@@ -235,9 +238,9 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     };
   });
   const free = pools.find(pool => pool.id === "free");
-  // A compact tracker can show only one number for Free CP. Use the amount available
-  // to either hand, rather than the shared display value which intentionally preserves
-  // the other hand's independent reuse.
+  // A compact tracker can show only one number for Free CP. When resolving a
+  // legacy shared action, use the lower remaining hand value: either hand must
+  // be able to pay an action that consumes both uses.
   const trackerFreeCurrent = free && freeScope === "shared" && !context.ignoreSpent
     ? Math.max(0, Math.min(free.max, free.max - free.spent - Math.max(0, finite(sourcePoolData(actor, "free").weaponSpent, 0), finite(sourcePoolData(actor, "free").offHandSpent, 0)) + finite(actor?.system?.modifiers?.combatValue, 0)))
     : free?.current ?? 0;

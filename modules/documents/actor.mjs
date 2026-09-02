@@ -724,7 +724,7 @@ export class TrudvangActor extends BaseActor {
     if (this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const poolResolution = resolveCombatPools({actor: this, item, context: {action: "drawWeapon"}});
     const cost = 10;
-    const fullRoundDraw = poolResolution.eligibleCurrent < cost && poolResolution.active.every(pool => pool.spent <= 0);
+    const fullRoundDraw = poolResolution.eligibleCurrent < cost && combatPoolsAreFull(this);
     if (poolResolution.eligibleCurrent < cost && !fullRoundDraw) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughCombatPointsToReady"));
     const options = await combatPointDialog({
       title: game.i18n.format("TRUDVANG.Dialog.DrawTitle", {item: item.name}),
@@ -739,7 +739,7 @@ export class TrudvangActor extends BaseActor {
     if (!options) return null;
     if (options.alternate) {
       const allPools = Object.fromEntries(poolResolution.active.filter(pool => pool.current > 0).map(pool => [pool.id, pool.current]));
-      if (this.isOwner) await this.spendCombatPoints(allPools);
+      if (this.isOwner) await this.spendCombatPoints(allPools, {freeScope: poolResolution.freeScope});
       await this.spendWeaponAction(item);
       await item.update({"system.equipped": true});
       return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DrawnFullRound", {item: item.name}));
@@ -969,12 +969,12 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
     const paidMeters = spending.total / 2;
-    if (this.isOwner) await this.spendCombatPoints(spending.allocation);
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));
     return {...spending, paidMeters};
   }
 
-  async spendCombatPoints(allocation = {}, {freeScope = "shared"} = {}) {
+  async spendCombatPoints(allocation = {}, {freeScope = "both"} = {}) {
     if (!this.isInActiveCombat) return this;
     const updates = {};
     for (const [id, amount] of Object.entries(allocation)) {
