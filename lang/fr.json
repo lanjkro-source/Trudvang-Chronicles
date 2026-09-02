@@ -556,7 +556,8 @@
       "injured": "Blessé",
       "serious": "Gravement blessé",
       "critical": "Mortellement blessé",
-      "dying": "Mourant"
+      "dying": "Mourant",
+      "dead": "Mort"
     },
     "Status": {
       "RecoveryDaily": "{amount} PS/jour",

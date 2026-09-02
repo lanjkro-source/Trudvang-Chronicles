@@ -659,6 +659,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.serious` | Seriously Injured | Gravement blessé |
 | `TRUDVANG.Damage.critical` | Critically Injured | Mortellement blessé |
 | `TRUDVANG.Damage.dying` | Dying | Mourant |
+| `TRUDVANG.Damage.dead` | Dead | Mort |
 
 ## `TRUDVANG.Status`
 

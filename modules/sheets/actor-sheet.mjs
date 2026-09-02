@@ -114,7 +114,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       level: this.actor.system.damage.level,
       consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`),
       survivalRounds: Number(this.actor.system.survivalRounds ?? -1),
-      survivalStarted: Number(this.actor.system.survivalRounds ?? -1) >= 0
+      survivalStarted: Number(this.actor.system.survivalRounds ?? -1) >= 0,
+      survivalExpired: Number(this.actor.system.survivalRounds ?? -1) === 0
     };
     const fearStatus = resolveFearStatus({fear: fear.current, insane: this.actor.system.fearInsane});
     context.fearStatus = {

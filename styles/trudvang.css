@@ -161,6 +161,7 @@
 .trudvang-sheet .vital-meter-mark { position: absolute; z-index: 1; top: 0; bottom: 0; width: 0; border-left: 1px solid color-mix(in srgb, var(--trudvang-paper-light) 90%, var(--trudvang-ink)); opacity: .9; }
 .trudvang-sheet .status-consequence { display: flex; flex-wrap: wrap; gap: 4px 7px; margin: 0; color: var(--trudvang-muted); font-size: .73rem; line-height: 1.2; }
 .trudvang-sheet .status-consequence strong { color: var(--trudvang-ink); }
+.trudvang-sheet .status-consequence .status-dead { color: var(--trudvang-negative); }
 .trudvang-sheet .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; }
 .trudvang-sheet .experience-grid label { display: flex; justify-content: space-between; gap: 4px; color: var(--trudvang-muted); font-size: .75rem; }
 .trudvang-sheet .experience-grid input, .trudvang-sheet .experience-grid output { width: 46px; text-align: center; font-weight: 600; }

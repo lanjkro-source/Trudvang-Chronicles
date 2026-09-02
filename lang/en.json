@@ -556,7 +556,8 @@
       "injured": "Injured",
       "serious": "Seriously Injured",
       "critical": "Critically Injured",
-      "dying": "Dying"
+      "dying": "Dying",
+      "dead": "Dead"
     },
     "Status": {
       "RecoveryDaily": "{amount} BP/day",

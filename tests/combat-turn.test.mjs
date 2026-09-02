@@ -26,8 +26,11 @@ test("once every initiative is rolled, the new leader becomes active and receive
   const combat = {
     started: true,
     combatants: new Map([[leader.id, leader], [follower.id, follower]]),
-    turns: [leader, follower],
+    // Deliberately stale: Foundry may not have rebuilt turns when the final
+    // updateCombatant hook fires.
+    turns: [follower, leader],
     current: {combatantId: follower.id},
+    setupTurns: () => { combat.turns = [leader, follower]; },
     update: async update => { turn = update.turn; }
   };
   assert.equal(combatInitiativesAreReady(combat), true);

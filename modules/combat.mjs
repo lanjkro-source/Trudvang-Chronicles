@@ -29,10 +29,14 @@ export function combatInitiativesAreReady(combat) {
 /** Activate the highest-initiative combatant once every participant has rolled. */
 export async function activateHighestInitiativeCombatant(combat, {isActiveGM = game.user.isActiveGM} = {}) {
   if (!isActiveGM || !combat?.started || !combatInitiativesAreReady(combat)) return false;
-  const combatant = Array.from(combat.turns ?? [])[0];
+  // The updateCombatant hook can fire before Foundry rebuilds combat.turns.
+  // Select from the current initiatives, then rebuild turns before activating it.
+  const combatant = Array.from(combat.combatants?.values?.() ?? combat.combatants ?? [])
+    .sort((left, right) => Number(right.initiative) - Number(left.initiative))[0];
   if (!combatant || typeof combatant.actor?.resetCombatPoints !== "function") return false;
-  const turn = Array.from(combat.turns).findIndex(candidate => candidate.id === combatant.id);
-  if (combat.current?.combatantId !== combatant.id && turn >= 0) await combat.update({turn});
+  combat.setupTurns?.();
+  const turn = Array.from(combat.turns ?? []).findIndex(candidate => candidate.id === combatant.id);
+  if (combat.current?.combatantId !== combatant.id) await combat.update({turn: turn >= 0 ? turn : 0});
   await combatant.actor.resetCombatPoints();
   return true;
 }

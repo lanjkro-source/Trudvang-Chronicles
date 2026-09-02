@@ -601,7 +601,8 @@ export class TrudvangActor extends BaseActor {
     const result = await openD10({threshold: 10, modifier: Number(this.system.initiative.current || 0) + options.modifier});
     const detail = result.rolls.join(" + ");
     const activeCombat = game.combat;
-    const combatants = combatant ? [combatant] : Array.from(activeCombat?.combatants ?? []).filter(candidate => candidate.actor === this || candidate.actor?.uuid === this.uuid);
+    const combatants = combatant ? [combatant] : Array.from(activeCombat?.combatants?.values?.() ?? activeCombat?.combatants ?? [])
+      .filter(candidate => candidate.actor === this || candidate.actor?.uuid === this.uuid);
     if (combatants.length) await Promise.all(combatants.map(candidate => candidate.update({initiative: result.total})));
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/initiative-card.hbs", {
       actorName: this.name,
