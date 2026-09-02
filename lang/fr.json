@@ -116,6 +116,7 @@
       "RollDamage": "Jet de Dégâts",
       "RollInitiative": "Jet d'initiative",
       "RestForNight": "Passer une nuit de sommeil",
+      "RollSurvivalRounds": "Rounds de survie",
       "CalmFear": "Se rasséréner",
       "ResetCombat": "Réinitialiser les points de combat",
       "SpendCombat": "Dépenser des PC",
@@ -554,7 +555,8 @@
       "light": "Égratigné",
       "injured": "Blessé",
       "serious": "Gravement blessé",
-      "critical": "Mortellement blessé"
+      "critical": "Mortellement blessé",
+      "dying": "Mourant"
     },
     "Status": {
       "RecoveryDaily": "{amount} PS/jour",
@@ -564,8 +566,10 @@
         "light": "Aucune pénalité",
         "injured": "−1 aux VC et à l’initiative",
         "serious": "−3 aux VC et à l’initiative",
-        "critical": "−7 aux VC et à l’initiative"
+        "critical": "−7 aux VC et à l’initiative",
+        "dying": "−7 aux VC et à l’initiative"
       },
+      "LifeSparkCountdown": "La dernière étincelle de vie s’éteindra dans {rounds} rounds.",
       "FearState": {
         "calm": "Calme",
         "one": "Niveau 1 : angoissé",
@@ -741,6 +745,7 @@
       "RestCompleted": "Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur.",
       "NotRestored": "non renouvelée",
       "CalmFear": "{actor} se rassérène : −{amount} points de peur ({before} → {after}).",
+      "SurvivalRounds": "{actor} est mourant : la dernière étincelle de vie s’éteindra dans {rounds} rounds.",
       "Drawn": "{item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes).",
       "DrawnOutsideCombat": "{item} dégainé.",
       "DrawnFullRound": "{item} dégainé en y consacrant tout le tour ; toutes les réserves de PC ont été vidées.",

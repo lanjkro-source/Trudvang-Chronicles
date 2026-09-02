@@ -11,12 +11,16 @@ const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHe
 
 function getDamageStatus(bodyMax, bodyCurrent) {
   const max = Math.max(1, Number(bodyMax || 1));
-  const taken = Math.max(0, max - Number(bodyCurrent || 0));
+  const current = Number(bodyCurrent || 0);
+  const taken = Math.max(0, max - current);
   const baseRange = Math.floor(max / 4);
   const remainder = max % 4;
   const thresholds = Array.from({length: 4}, (_, index) => baseRange + (index < remainder ? 1 : 0))
     .reduce((ranges, range) => [...ranges, range + (ranges.at(-1) || 0)], []);
   if (taken === 0) return {taken, penalty: 0, level: "unhurt", thresholds};
+  // A character at or below zero Body Points is dying. The sheet keeps its
+  // meter bounded, while this prepared value preserves the negative total.
+  if (current <= 0) return {taken, penalty: -7, level: "dying", thresholds};
   const stage = Math.min(3, thresholds.findIndex(threshold => taken <= threshold));
   const levels = ["light", "injured", "serious", "critical"];
   const penalties = [0, -1, -3, -7];
@@ -83,7 +87,10 @@ export class TrudvangActor extends BaseActor {
     for (const [key, resource] of Object.entries(system.resources)) {
       if (key === "combat") continue;
       const modifier = Number(system.modifiers?.[`${key}Value`] || 0);
-      const current = Math.max(0, Math.min(Number(resource.max || 0), Number(resource.value || 0) + modifier));
+      const value = Number(resource.value || 0) + modifier;
+      const current = key === "body"
+        ? Math.min(Number(resource.max || 0), value)
+        : Math.max(0, Math.min(Number(resource.max || 0), value));
       resource.current = current;
       resource.value = current;
     }
@@ -873,6 +880,22 @@ export class TrudvangActor extends BaseActor {
     return {roll, recovered, before, after};
   }
 
+  /** Roll the final life-spark duration for a dying character. */
+  async rollSurvivalRounds() {
+    if (!this.isOwner || Number(this.system.resources.body.current || 0) > 0) return null;
+    const roll = new Roll(`1d6 + ${this.getTraitValue("constitution")}`);
+    await roll.evaluate();
+    const rounds = Math.max(0, Number(roll.total || 0));
+    await this.update({"system.survivalRounds": rounds});
+    const message = game.i18n.format("TRUDVANG.Notification.SurvivalRounds", {actor: this.name, rounds});
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({actor: this}),
+      content: `<p class="trudvang survival-rounds"><i class="fas fa-hourglass-half"></i> ${escapeHtml(message)}</p>`,
+      rolls: [roll]
+    });
+    return {roll, rounds};
+  }
+
   async restForNight() {
     if (!this.isOwner) return;
     const recovery = this.system.healthRecovery ?? {amount: 1, days: 1};
@@ -889,6 +912,7 @@ export class TrudvangActor extends BaseActor {
       "system.resources.vitner.value": Number(this.system.resources.vitner.max || 0),
       "system.resources.divinity.temporary": 0
     };
+    if (bodyBefore <= 0 && bodyBefore + healthRecovered > 0) updates["system.survivalRounds"] = -1;
     if (this.selectedReligion?.id !== "thuuldom") updates["system.resources.divinity.value"] = Number(this.system.resources.divinity.max || 0);
     await this.update(updates);
     const fear = await this.calmFear();

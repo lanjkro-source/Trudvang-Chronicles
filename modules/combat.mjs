@@ -55,12 +55,29 @@ export async function resetCurrentCombatantResources(combat, current, {isActiveG
   return true;
 }
 
+/** Decrease the remaining life-spark duration of every dying combatant once per round. */
+export async function decrementSurvivalRounds(combat, {isActiveGM = game.user.isActiveGM} = {}) {
+  if (!isActiveGM || !combat?.started) return 0;
+  const combatants = Array.from(combat.combatants?.values?.() ?? combat.combatants ?? []);
+  const actors = [...new Map(combatants
+    .map(combatant => [combatant.actor?.uuid ?? combatant.actor?.id, combatant.actor])
+    .filter(([id, actor]) => id && actor)).values()];
+  const dying = actors.filter(actor => Number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? 1) <= 0
+    && Number(actor.system?.survivalRounds ?? -1) > 0 && typeof actor.update === "function");
+  await Promise.all(dying.map(actor => actor.update({"system.survivalRounds": Number(actor.system.survivalRounds) - 1})));
+  return dying.length;
+}
+
 /** Register the Foundry lifecycle hook after the active combatant changes. */
 export function registerCombatHooks() {
   Hooks.on("combatTurnChange", async (combat, previous, current) => {
     const roundStarted = isCombatRoundStart(previous, current);
     await resetCombatInitiatives(combat, previous, current);
-    if (roundStarted || !isCombatTurnStart(previous, current)) return;
+    if (roundStarted) {
+      await decrementSurvivalRounds(combat);
+      return;
+    }
+    if (!isCombatTurnStart(previous, current)) return;
     await resetCurrentCombatantResources(combat, current);
   });
   Hooks.on("updateCombatant", async (combatant, changed) => {

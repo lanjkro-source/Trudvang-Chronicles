@@ -149,6 +149,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
 | `TRUDVANG.Action.RestForNight` | Spend a night sleeping | Passer une nuit de sommeil |
+| `TRUDVANG.Action.RollSurvivalRounds` | Survival rounds | Rounds de survie |
 | `TRUDVANG.Action.CalmFear` | Calm down | Se rasséréner |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
@@ -657,6 +658,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.injured` | Injured | Blessé |
 | `TRUDVANG.Damage.serious` | Seriously Injured | Gravement blessé |
 | `TRUDVANG.Damage.critical` | Critically Injured | Mortellement blessé |
+| `TRUDVANG.Damage.dying` | Dying | Mourant |
 
 ## `TRUDVANG.Status`
 
@@ -664,6 +666,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Status.RecoveryDaily` | {amount} BP/day | {amount} PS/jour |
 | `TRUDVANG.Status.RecoveryEveryDays` | {amount} BP/{days} days | {amount} PS/{days} jours |
+| `TRUDVANG.Status.LifeSparkCountdown` | The last spark of life will go out in {rounds} rounds. | La dernière étincelle de vie s’éteindra dans {rounds} rounds. |
 
 ## `TRUDVANG.Status.DamageConsequence`
 
@@ -674,6 +677,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Status.DamageConsequence.injured` | −1 to SV and initiative | −1 aux VC et à l’initiative |
 | `TRUDVANG.Status.DamageConsequence.serious` | −3 to SV and initiative | −3 aux VC et à l’initiative |
 | `TRUDVANG.Status.DamageConsequence.critical` | −7 to SV and initiative | −7 aux VC et à l’initiative |
+| `TRUDVANG.Status.DamageConsequence.dying` | −7 to SV and initiative | −7 aux VC et à l’initiative |
 
 ## `TRUDVANG.Status.FearState`
 
@@ -888,6 +892,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
 | `TRUDVANG.Notification.NotRestored` | not restored | non renouvelée |
 | `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |
+| `TRUDVANG.Notification.SurvivalRounds` | {actor} is dying: the last spark of life will go out in {rounds} rounds. | {actor} est mourant : la dernière étincelle de vie s’éteindra dans {rounds} rounds. |
 | `TRUDVANG.Notification.Drawn` | {item} drawn for {cost} CP (−10 initiative for following actions). | {item} dégainé pour {cost} PC (−10 à l’initiative des actions suivantes). |
 | `TRUDVANG.Notification.DrawnOutsideCombat` | {item} drawn. | {item} dégainé. |
 | `TRUDVANG.Notification.DrawnFullRound` | {item} drawn by devoting the entire round to it; every CP pool was emptied. | {item} dégainé en y consacrant tout le tour ; toutes les réserves de PC ont été vidées. |

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { activateHighestInitiativeCombatant, combatInitiativesAreReady, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
+import { activateHighestInitiativeCombatant, combatInitiativesAreReady, decrementSurvivalRounds, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
 
 test("combat resource resets occur only when the tracker advances to a turn", () => {
   assert.equal(isCombatTurnStart({round: 0, turn: null, combatantId: null}, {round: 1, turn: 0, combatantId: "combatant-id"}), true);
@@ -67,4 +67,24 @@ test("turn resource resets ignore inactive combats, missing combatants, and non-
   assert.equal(await resetCurrentCombatantResources({...combat, started: false}, {combatantId: "combatant-id"}, {isActiveGM: true}), false);
   assert.equal(await resetCurrentCombatantResources(combat, {combatantId: "missing"}, {isActiveGM: true}), false);
   assert.equal(resets, 0);
+});
+
+test("a new round consumes one life-spark round for each unique dying combatant", async () => {
+  const updates = [];
+  const dying = {
+    id: "dying", system: {resources: {body: {current: -2}}, survivalRounds: 3},
+    update: async change => updates.push(change)
+  };
+  const stable = {
+    id: "stable", system: {resources: {body: {current: 4}}, survivalRounds: 3},
+    update: async () => { throw new Error("living actor must not be updated"); }
+  };
+  const expired = {
+    id: "expired", system: {resources: {body: {current: 0}}, survivalRounds: 0},
+    update: async () => { throw new Error("expired timer must not become negative"); }
+  };
+  const combat = {started: true, combatants: new Map([["first", {actor: dying}], ["duplicate", {actor: dying}], ["stable", {actor: stable}], ["expired", {actor: expired}]])};
+  assert.equal(await decrementSurvivalRounds(combat, {isActiveGM: true}), 1);
+  assert.deepEqual(updates, [{"system.survivalRounds": 2}]);
+  assert.equal(await decrementSurvivalRounds(combat, {isActiveGM: false}), 0);
 });

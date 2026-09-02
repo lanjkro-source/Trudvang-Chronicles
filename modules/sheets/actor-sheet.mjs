@@ -120,7 +120,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       marks: healthThresholdMarks(body.max),
       recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery),
       level: this.actor.system.damage.level,
-      consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`)
+      consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`),
+      survivalRounds: Number(this.actor.system.survivalRounds ?? -1),
+      survivalStarted: Number(this.actor.system.survivalRounds ?? -1) >= 0
     };
     const fearStatus = getFearStatus(fear.current);
     context.fearStatus = {
@@ -408,6 +410,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
       case "rest-for-night": return this.actor.restForNight();
       case "calm-fear": return this.actor.calmFear();
+      case "roll-survival-rounds": return this.actor.rollSurvivalRounds();
       case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();
       case "movement-action": return this.actor.rollCombatMovement();

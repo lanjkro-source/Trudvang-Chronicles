@@ -116,6 +116,7 @@
       "RollDamage": "Roll Damage",
       "RollInitiative": "Roll Initiative",
       "RestForNight": "Spend a night sleeping",
+      "RollSurvivalRounds": "Survival rounds",
       "CalmFear": "Calm down",
       "ResetCombat": "Reset Combat Points",
       "SpendCombat": "Spend CP",
@@ -554,7 +555,8 @@
       "light": "Lightly Damaged",
       "injured": "Injured",
       "serious": "Seriously Injured",
-      "critical": "Critically Injured"
+      "critical": "Critically Injured",
+      "dying": "Dying"
     },
     "Status": {
       "RecoveryDaily": "{amount} BP/day",
@@ -564,8 +566,10 @@
         "light": "No penalty",
         "injured": "−1 to SV and initiative",
         "serious": "−3 to SV and initiative",
-        "critical": "−7 to SV and initiative"
+        "critical": "−7 to SV and initiative",
+        "dying": "−7 to SV and initiative"
       },
+      "LifeSparkCountdown": "The last spark of life will go out in {rounds} rounds.",
       "FearState": {
         "calm": "Calm",
         "one": "Level 1: uneasy",
@@ -741,6 +745,7 @@
       "RestCompleted": "Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear.",
       "NotRestored": "not restored",
       "CalmFear": "{actor} calms down: −{amount} Fear Points ({before} → {after}).",
+      "SurvivalRounds": "{actor} is dying: the last spark of life will go out in {rounds} rounds.",
       "Drawn": "{item} drawn for {cost} CP (−10 initiative for following actions).",
       "DrawnOutsideCombat": "{item} drawn.",
       "DrawnFullRound": "{item} drawn by devoting the entire round to it; every CP pool was emptied.",

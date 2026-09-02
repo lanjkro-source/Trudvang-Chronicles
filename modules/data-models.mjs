@@ -168,6 +168,8 @@ function actorCommonSchema() {
     initiative: schema({base: integer(0), current: integer(0)}),
     movement: schema({base: integer(10), current: integer(10)}),
     rest: schema({healthRecoveryNights: integer(0, {min: 0})}),
+    // -1 means the dying character has not yet rolled their final life-spark duration.
+    survivalRounds: integer(-1),
     notes: html(),
     damage: schema({taken: number(0), penalty: integer(0), level: string("light")}),
     fearPenalty: integer(0),
