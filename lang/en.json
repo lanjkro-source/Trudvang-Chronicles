@@ -640,6 +640,7 @@
     },
     "Warning": {
       "NotEnoughPower": "There are not enough points in this power reserve.",
+      "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
       "NotEnoughExperience": "The next level costs {cost} Adventure Points.",
       "LevelMaximum": "This knowledge is already at level 5.",

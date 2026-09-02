@@ -640,6 +640,7 @@
     },
     "Warning": {
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
+      "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
       "NotEnoughExperience": "Le niveau suivant coûte {cost} PA.",
       "LevelMaximum": "Cette discipline/spécialité est déjà au niveau 5.",
