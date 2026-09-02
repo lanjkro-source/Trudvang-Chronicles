@@ -576,7 +576,8 @@
         "two": "Niveau 2 : effrayé",
         "three": "Niveau 3 : horrifié",
         "four": "Niveau 4 : terrifié",
-        "five": "Niveau 5 : pétrifié"
+        "five": "Niveau 5 : pétrifié",
+        "mad": "Fou"
       },
       "FearConsequence": {
         "calm": "Aucune pénalité",
@@ -584,7 +585,8 @@
         "two": "−1 aux VC et à l’initiative",
         "three": "−3 aux VC et à l’initiative",
         "four": "−5 aux VC et à l’initiative",
-        "five": "−7 aux VC et à l’initiative"
+        "five": "−7 aux VC et à l’initiative",
+        "mad": "−7 aux VC et à l’initiative"
       }
     },
     "Dialog": {

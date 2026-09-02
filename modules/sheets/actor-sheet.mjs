@@ -5,6 +5,7 @@ import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
+import { resolveFearStatus } from "../rules/fear-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -24,16 +25,6 @@ function healthThresholdMarks(max) {
   const thresholds = Array.from({length: 4}, (_, index) => baseRange + (index < remainder ? 1 : 0))
     .reduce((ranges, range) => [...ranges, range + (ranges.at(-1) || 0)], []);
   return [...new Set(thresholds.slice(0, -1).map(threshold => Math.round(((maximum - threshold) / maximum) * 1000) / 10))];
-}
-
-function getFearStatus(fear) {
-  const value = Number(fear || 0);
-  if (value <= 0) return {level: "calm", penalty: 0};
-  if (value <= 10) return {level: "one", penalty: 0};
-  if (value <= 20) return {level: "two", penalty: -1};
-  if (value <= 30) return {level: "three", penalty: -3};
-  if (value <= 40) return {level: "four", penalty: -5};
-  return {level: "five", penalty: -7};
 }
 
 export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2) {
@@ -124,7 +115,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       survivalRounds: Number(this.actor.system.survivalRounds ?? -1),
       survivalStarted: Number(this.actor.system.survivalRounds ?? -1) >= 0
     };
-    const fearStatus = getFearStatus(fear.current);
+    const fearStatus = resolveFearStatus({fear: fear.current, insane: this.actor.system.fearInsane});
     context.fearStatus = {
       current: Number(fear.current || 0),
       max: Number(fear.max || 0),

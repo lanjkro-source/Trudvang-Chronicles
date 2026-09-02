@@ -576,7 +576,8 @@
         "two": "Level 2: frightened",
         "three": "Level 3: horrified",
         "four": "Level 4: terrified",
-        "five": "Level 5: petrified"
+        "five": "Level 5: petrified",
+        "mad": "Mad"
       },
       "FearConsequence": {
         "calm": "No penalty",
@@ -584,7 +585,8 @@
         "two": "−1 to SV and initiative",
         "three": "−3 to SV and initiative",
         "four": "−5 to SV and initiative",
-        "five": "−7 to SV and initiative"
+        "five": "−7 to SV and initiative",
+        "mad": "−7 to SV and initiative"
       }
     },
     "Dialog": {

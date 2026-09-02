@@ -689,6 +689,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Status.FearState.three` | Level 3: horrified | Niveau 3 : horrifié |
 | `TRUDVANG.Status.FearState.four` | Level 4: terrified | Niveau 4 : terrifié |
 | `TRUDVANG.Status.FearState.five` | Level 5: petrified | Niveau 5 : pétrifié |
+| `TRUDVANG.Status.FearState.mad` | Mad | Fou |
 
 ## `TRUDVANG.Status.FearConsequence`
 
@@ -700,6 +701,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Status.FearConsequence.three` | −3 to SV and initiative | −3 aux VC et à l’initiative |
 | `TRUDVANG.Status.FearConsequence.four` | −5 to SV and initiative | −5 aux VC et à l’initiative |
 | `TRUDVANG.Status.FearConsequence.five` | −7 to SV and initiative | −7 aux VC et à l’initiative |
+| `TRUDVANG.Status.FearConsequence.mad` | −7 to SV and initiative | −7 aux VC et à l’initiative |
 
 ## `TRUDVANG.Dialog`
 

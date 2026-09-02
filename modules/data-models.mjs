@@ -170,6 +170,8 @@ function actorCommonSchema() {
     rest: schema({healthRecoveryNights: integer(0, {min: 0})}),
     // -1 means the dying character has not yet rolled their final life-spark duration.
     survivalRounds: integer(-1),
+    // Persists the 51+ fear state until fear has fallen back to 40 or less.
+    fearInsane: boolean(false),
     notes: html(),
     damage: schema({taken: number(0), penalty: integer(0), level: string("light")}),
     fearPenalty: integer(0),

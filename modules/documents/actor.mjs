@@ -5,6 +5,7 @@ import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { actorParticipatesInCombat, combatPoolsAreFull, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation } from "../rules/combat-pool-resolver.mjs";
+import { resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -38,6 +39,14 @@ function getHealthRecovery(constitution) {
 export class TrudvangActor extends BaseActor {
   get isInActiveCombat() {
     return actorParticipatesInCombat(this, game.combat);
+  }
+
+  async _preUpdate(changed, options, userId) {
+    await super._preUpdate(changed, options, userId);
+    const fear = changed["system.resources.fear.value"] ?? changed.system?.resources?.fear?.value;
+    if (fear === undefined) return;
+    const insane = resolveInsanityState({fear, insane: this._source.system.fearInsane});
+    if (insane !== Boolean(this._source.system.fearInsane)) changed["system.fearInsane"] = insane;
   }
 
   prepareDerivedData() {
@@ -90,7 +99,9 @@ export class TrudvangActor extends BaseActor {
       const value = Number(resource.value || 0) + modifier;
       const current = key === "body"
         ? Math.min(Number(resource.max || 0), value)
-        : Math.max(0, Math.min(Number(resource.max || 0), value));
+        : key === "fear"
+          ? Math.max(0, value)
+          : Math.max(0, Math.min(Number(resource.max || 0), value));
       resource.current = current;
       resource.value = current;
     }
@@ -98,8 +109,9 @@ export class TrudvangActor extends BaseActor {
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
     const fear = Number(system.resources.fear.current || 0);
+    const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});
     system.fearFactorModifier = -this.getTraitValue("psyche") + Number(system.modifiers.fearFactor || 0);
-    system.fearPenalty = fear > 40 ? -7 : fear > 30 ? -5 : fear > 20 ? -3 : fear > 10 ? -1 : 0;
+    system.fearPenalty = fearStatus.penalty;
     const beInit = Number(this.findKnowledgeItem("battleExperience")?.system.level || 0);
     const crInit = Number(this.findKnowledgeItem("combatReaction")?.system.level || 0) * 2;
     system.initiative.current = Number(system.initiative.base || 0) + this.getTraitValue("dexterity") + this.equippedInitiativeModifier + system.damage.penalty + system.fearPenalty + beInit + crInit + Number(system.modifiers.rolls?.initiative || 0);
