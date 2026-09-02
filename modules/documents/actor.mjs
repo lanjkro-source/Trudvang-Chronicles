@@ -44,9 +44,12 @@ export class TrudvangActor extends BaseActor {
   async _preUpdate(changed, options, userId) {
     await super._preUpdate(changed, options, userId);
     const fear = changed["system.resources.fear.value"] ?? changed.system?.resources?.fear?.value;
-    if (fear === undefined) return;
-    const insane = resolveInsanityState({fear, insane: this._source.system.fearInsane});
-    if (insane !== Boolean(this._source.system.fearInsane)) changed["system.fearInsane"] = insane;
+    if (fear !== undefined) {
+      const insane = resolveInsanityState({fear, insane: this._source.system.fearInsane});
+      if (insane !== Boolean(this._source.system.fearInsane)) changed["system.fearInsane"] = insane;
+    }
+    const body = changed["system.resources.body.value"] ?? changed.system?.resources?.body?.value;
+    if (body !== undefined && Number(body) > 0) changed["system.survivalRounds"] = -1;
   }
 
   /** Keep Body Points unbounded below when they are changed from a token bar. */
