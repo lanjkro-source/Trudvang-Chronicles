@@ -244,9 +244,6 @@
 .trudvang-sheet .combat-action-list .item.not-readied { opacity: .62; }
 .trudvang-sheet .combat-action-list .item.not-readied .ready-action { opacity: 1; }
 .trudvang-sheet .combat-action-list .ready-action.active { color: var(--trudvang-accent); background: color-mix(in srgb, var(--trudvang-accent) 12%, transparent); }
-.trudvang-sheet .wrestling-actions { display: flex; gap: 6px; align-items: center; margin-top: 8px; }
-.trudvang-sheet .wrestling-actions button { padding: 4px 8px; }
-.trudvang-sheet .wrestling-actions small { margin-left: auto; color: var(--trudvang-muted); }
 .trudvang-sheet .empty { padding: 8px; color: var(--trudvang-muted); font-style: italic; }
 .trudvang-sheet .modified-value, .trudvang-sheet .effective-value { color: var(--trudvang-positive); font-weight: 700; }
 .trudvang-sheet .inspection-badge { display: inline-flex; min-width: 16px; height: 16px; align-items: center; justify-content: center; color: var(--trudvang-paper-light); border-radius: 8px; background: var(--trudvang-positive); font-size: .58rem; vertical-align: middle; }

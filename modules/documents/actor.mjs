@@ -974,6 +974,25 @@ export class TrudvangActor extends BaseActor {
     return {...spending, paidMeters};
   }
 
+  /** Spend Combat Points on a manoeuvre not otherwise represented in the sheet. */
+  async spendGenericCombatAction() {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    if (!this.isInActiveCombat) return null;
+    const poolResolution = resolveCombatPools({actor: this, context: {action: "other"}});
+    const options = await combatPointDialog({
+      title: game.i18n.localize("TRUDVANG.Combat.OtherAction"),
+      pools: poolResolution.eligible,
+      buttonLabelKey: "TRUDVANG.Action.SpendCombat",
+      showModifier: false,
+      totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
+    });
+    if (!options) return null;
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    if (spending.total <= 0) return null;
+    if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    return spending;
+  }
+
   async spendCombatPoints(allocation = {}, {freeScope = "both"} = {}) {
     if (!this.isInActiveCombat) return this;
     const updates = {};

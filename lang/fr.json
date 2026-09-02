@@ -310,7 +310,9 @@
       "MovementHint": "2 PC par mètre payant · {free} m gratuit(s) · Mouvement {movement} m",
       "Grapple": "Saisie",
       "Glima": "Glima",
-      "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible."
+      "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible.",
+      "OtherAction": "Autre action",
+      "OtherActionHint": "Dépense des PC pour une autre action de combat."
     },
     "CombatActionType": {
       "Positioning": "Action de combat, mouvement ou positionnement",

@@ -41,4 +41,5 @@ test("two-handed weapons and ordinary actions consume both Free CP hand uses", (
   const twoHanded = {type: "weapon", system: {combatSpecialty: "twoHandedWeapons"}};
   assert.equal(freeCombatPoolScope(twoHanded, {action: "attack"}), "both");
   assert.equal(freeCombatPoolScope(null, {action: "glima"}), "both");
+  assert.equal(freeCombatPoolScope(null, {action: "other"}), "both");
 });

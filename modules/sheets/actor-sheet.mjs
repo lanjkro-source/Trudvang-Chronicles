@@ -72,6 +72,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "natural-damage": TrudvangActorSheet.#onAction,
       "dodge-action": TrudvangActorSheet.#onAction,
       "wrestling-action": TrudvangActorSheet.#onAction,
+      "generic-combat-action": TrudvangActorSheet.#onAction,
       "item-create": TrudvangActorSheet.#onAction,
       "add-tablet": TrudvangActorSheet.#onAction,
       "toggle-tree": TrudvangActorSheet.#onAction,
@@ -421,6 +422,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "natural-damage": return this.actor.rollNaturalDamage();
       case "dodge-action": return this.actor.rollDodge();
       case "wrestling-action": return this.actor.rollWrestlingAction(target.dataset.kind || "grapple");
+      case "generic-combat-action": return this.actor.spendGenericCombatAction();
       case "item-create": return this._createItem(target.dataset.type);
       case "add-tablet": return this._openTabletPicker();
       case "toggle-tree": {
