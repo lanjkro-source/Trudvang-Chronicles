@@ -764,7 +764,7 @@ export class TrudvangActor extends BaseActor {
       const usageItem = weaponForUsage(item, {throwing});
       const poolResolution = resolveCombatPools({actor: this, item: usageItem, context: {action: kind, ignoreSpent: !inCombat}});
       const ranged = throwing || ["crossbow", "bowsSlings"].includes(weaponType(usageItem));
-      const range = ranged ? resolveWeaponRange({item, actor: this}) : null;
+      const range = ranged ? resolveWeaponRange({item, actor: this, throwing}) : null;
       return {
         id: throwing ? "throwing" : "melee",
         throwing,
@@ -773,6 +773,7 @@ export class TrudvangActor extends BaseActor {
         pools: poolResolution.eligible,
         defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(5, poolResolution.eligibleCurrent)),
         ranged,
+        rangeSelection: item.system.rangeSelection === "long" ? "long" : "short",
         feintMax: kind === "attack" && !ranged ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0,
         rangeText: range ? game.i18n.format("TRUDVANG.Dialog.WeaponRanges", {short: range.short.value, long: range.long.value}) : ""
       };
@@ -815,7 +816,7 @@ export class TrudvangActor extends BaseActor {
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     const feint = kind === "attack" && !mode.ranged ? Math.min(spending.total, mode.feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
     const rangedOptions = mode.ranged ? {
-      longRange: Boolean(options.ranged?.longRange),
+      longRange: options.ranged?.rangeSelection === "long",
       targetInMelee: Boolean(options.ranged?.targetInMelee),
       targetMoving: Boolean(options.ranged?.targetMoving)
     } : {longRange: false, targetInMelee: false, targetMoving: false};
@@ -823,6 +824,7 @@ export class TrudvangActor extends BaseActor {
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (inCombat) await this.spendWeaponAction(item);
     if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
+    if (mode.ranged && this.isOwner && item.system.rangeSelection !== options.ranged?.rangeSelection) await item.update({"system.rangeSelection": rangedOptions.longRange ? "long" : "short"});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const spendingFlavor = inCombat ? Object.entries(spending.allocation)
       .filter(([, amount]) => amount > 0)

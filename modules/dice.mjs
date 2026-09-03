@@ -334,20 +334,24 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const label = escapeHtml(game.i18n.localize(pool.labelKey));
       return `<div class="form-group combat-pool-allocation"><label>${label}</label><span class="combat-pool-current">${pool.current}/${pool.max}</span><input data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}"></div>`;
     }).join("");
-    const rangedOptions = mode.ranged ? `<fieldset class="combat-ranged-options"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RangedAttackOptions"))}</legend>
-      <label class="checkbox"><input type="checkbox" data-ranged-option="longRange" data-ranged-modifier="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.LongRange"))}</label>
+    const rangeSelection = mode.ranged ? `<div class="form-group combat-range-selection"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Field.Range"))}</label><select data-range-selection>
+      <option value="short" ${mode.rangeSelection === "short" ? "selected" : ""}>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.ShortRange"))}</option>
+      <option value="long" ${mode.rangeSelection === "long" ? "selected" : ""}>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.LongRange"))}</option>
+    </select></div>` : "";
+    const rangedTargetOptions = mode.ranged ? `<div class="combat-ranged-target-options">
       <label class="checkbox"><input type="checkbox" data-ranged-option="targetInMelee" data-ranged-modifier="-5"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetInMelee"))}</label>
       <label class="checkbox"><input type="checkbox" data-ranged-option="targetMoving" data-ranged-modifier="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetMoving"))}</label>
-    </fieldset>` : "";
+    </div>` : "";
     return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
       ${mode.rangeText ? `<p class="combat-range-notice">${escapeHtml(mode.rangeText)}</p>` : ""}
-      ${rangedOptions}
+      ${rangeSelection}
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
       <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
+      ${rangedTargetOptions}
       ${ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(ruleNotice)}</p>` : ""}
       ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
@@ -372,7 +376,8 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         if (!section) return;
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
         const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
-        const rangedModifier = Array.from(section.querySelectorAll("[data-ranged-modifier]:checked")).reduce((sum, input) => sum + Number(input.dataset.rangedModifier || 0), 0);
+        const longRange = section.querySelector("[data-range-selection]")?.value === "long";
+        const rangedModifier = (longRange ? -10 : 0) + Array.from(section.querySelectorAll("[data-ranged-modifier]:checked")).reduce((sum, input) => sum + Number(input.dataset.rangedModifier || 0), 0);
         const feintInput = section.querySelector("[name=feint]");
         const modeMaximumFeint = Math.max(0, Math.floor(Number(selectedMode().feintMax ?? maximumFeint)));
         const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), modeMaximumFeint, total) : 0;
@@ -405,7 +410,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         refresh();
       }));
       root.querySelectorAll("[data-combat-slider]").forEach(slider => slider.addEventListener("input", event => { allocate(event.currentTarget.closest("[data-combat-mode]"), event.currentTarget.value); refresh(); }));
-      root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier], [data-ranged-modifier]").forEach(input => input.addEventListener("input", refresh));
+      root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier], [data-ranged-modifier], [data-range-selection]").forEach(input => input.addEventListener("input", refresh));
       refresh();
     }
   }
@@ -426,7 +431,10 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         mode,
         modifier: Number(section.querySelector("[name=modifier]")?.value || 0),
         feint: Number(section.querySelector("[name=feint]")?.value || 0),
-        ranged: Object.fromEntries(Array.from(section.querySelectorAll("[data-ranged-option]")).map(input => [input.dataset.rangedOption, input.checked])),
+        ranged: {
+          rangeSelection: section.querySelector("[data-range-selection]")?.value || "short",
+          ...Object.fromEntries(Array.from(section.querySelectorAll("[data-ranged-option]")).map(input => [input.dataset.rangedOption, input.checked]))
+        },
         allocation: Object.fromEntries(Array.from(section.querySelectorAll("[data-pool-id]"))
           .map(input => [input.dataset.poolId, Number(input.value || 0)]))
       };

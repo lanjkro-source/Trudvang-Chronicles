@@ -549,6 +549,7 @@
 .trudvang.combat-pool-dialog .combat-modifier-breakdown { margin: 5px 0; padding: 5px 7px; list-style: none; background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); border-left: 2px solid var(--trudvang-gold); }
 .trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-on-header-muted); }
 .trudvang.combat-pool-dialog .combat-modifier-breakdown b { color: var(--trudvang-on-header); }
+.trudvang.combat-pool-dialog .combat-ranged-target-options { display: flex; flex-direction: column; gap: 3px; margin: 5px 0; color: var(--trudvang-on-header-muted); }
 .trudvang.combat-pool-dialog .combat-rule-notice { margin: 6px 0; padding: 6px 8px; color: var(--trudvang-on-header); border-left: 2px solid var(--trudvang-warning); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); font-size: .82rem; }
 .trudvang-sheet.item-sheet .damage-complex { grid-column: span 2; }
 .trudvang-sheet.item-sheet .damage-complex > label { display: flex; flex-direction: column; gap: 3px; }

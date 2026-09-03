@@ -310,6 +310,7 @@ export class WeaponData extends BaseItemData {
       combatPointBonus: integer(0),
       combatPointBonusUsed: boolean(false),
       damageBonus: integer(0),
+      rangeSelection: string("short"),
       range: schema({short: integer(0), long: integer(0)})
     };
   }

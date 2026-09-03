@@ -745,7 +745,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
 | `TRUDVANG.Dialog.MeleeAttack` | Melee attack | Attaque en mêlée |
 | `TRUDVANG.Dialog.WeaponRanges` | Short range: {short} m · long range: {long} m | Portée courte : {short} m · portée longue : {long} m |
-| `TRUDVANG.Dialog.RangedAttackOptions` | Target situation | Situation de la cible |
+| `TRUDVANG.Dialog.ShortRange` | Short range (normal damage) | Portée courte (dégâts normaux) |
 | `TRUDVANG.Dialog.LongRange` | Long range (SV -10; damage halved) | Portée longue (VC -10 ; dégâts divisés par deux) |
 | `TRUDVANG.Dialog.TargetInMelee` | Target in melee (SV -5) | Cible en mêlée (VC -5) |
 | `TRUDVANG.Dialog.TargetMoving` | Moving target (SV -10) | Cible en mouvement (VC -10) |

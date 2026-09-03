@@ -628,7 +628,7 @@
       "ThrowWeapon": "Lancer l’arme",
       "MeleeAttack": "Attaque en mêlée",
       "WeaponRanges": "Portée courte : {short} m · portée longue : {long} m",
-      "RangedAttackOptions": "Situation de la cible",
+      "ShortRange": "Portée courte (dégâts normaux)",
       "LongRange": "Portée longue (VC -10 ; dégâts divisés par deux)",
       "TargetInMelee": "Cible en mêlée (VC -5)",
       "TargetMoving": "Cible en mouvement (VC -10)",

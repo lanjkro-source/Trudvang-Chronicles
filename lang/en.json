@@ -630,7 +630,7 @@
       "ThrowWeapon": "Throw the weapon",
       "MeleeAttack": "Melee attack",
       "WeaponRanges": "Short range: {short} m · long range: {long} m",
-      "RangedAttackOptions": "Target situation",
+      "ShortRange": "Short range (normal damage)",
       "LongRange": "Long range (SV -10; damage halved)",
       "TargetInMelee": "Target in melee (SV -5)",
       "TargetMoving": "Moving target (SV -10)",
