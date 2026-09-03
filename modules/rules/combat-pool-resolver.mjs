@@ -79,16 +79,17 @@ function sourcePoolData(actor, id) {
 
 /**
  * Free Combat Points apply once to each hand (Core Rules, p. 318). Actions tied
- * to a light, heavy, or throwing weapon (or shield) use the matching hand only.
- * Every other action, including movement, needs and spends both hand uses.
+ * to a light, heavy, or throwing one-handed weapon (or shield) use the matching
+ * hand only. Every other action, including natural attacks, movement, and any
+ * two-handed or ranged weapon, needs and spends both hand uses.
  */
 export function freeCombatPoolScope(item, context = {}) {
   const action = context.action || context.usage || "";
   const handBoundAction = ["attack", "parry", "drawWeapon"].includes(action);
   if (!handBoundAction) return "both";
   if (weaponUsesTwoHands(item)) return "both";
-  if (item?.type === "shield" || item?.system?.hand === "offHand") return "offHand";
-  if (item?.type === "weapon" && weaponUsesSeparateHands(item)) return "weapon";
+  if (item?.type === "shield") return "offHand";
+  if (item?.type === "weapon" && weaponUsesSeparateHands(item)) return item.system?.hand === "offHand" ? "offHand" : "weapon";
   return "both";
 }
 

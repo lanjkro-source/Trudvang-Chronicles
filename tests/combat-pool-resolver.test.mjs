@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {freeCombatPoolScope, resolveCombatPools} from "../modules/rules/combat-pool-resolver.mjs";
+import {freeCombatPoolScope, resolveCombatPools, weaponForUsage} from "../modules/rules/combat-pool-resolver.mjs";
 
 function actor({weaponSpent = 4, offHandSpent = 0} = {}) {
   return {
@@ -35,6 +35,15 @@ test("hand-bound weapon, shield, and draw actions use only their matching Free C
   assert.equal(freeCombatPoolScope(shield, {action: "drawWeapon"}), "offHand");
   assert.equal(freePool({actor: character, item: weapon, context: {action: "attack"}}).current, 4);
   assert.equal(freePool({actor: character, item: shield, context: {action: "parry"}}).current, 8);
+});
+
+test("off-hand one-handed throws use only the shield-hand Free CP, while natural attacks use both", () => {
+  const offHandWeapon = {type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "offHand"}};
+  const thrown = weaponForUsage(offHandWeapon, {throwing: true});
+  const naturalWeapon = {type: "weapon", system: {combatSpecialty: "natural", hand: "offHand"}};
+  assert.equal(freeCombatPoolScope(thrown, {action: "attack"}), "offHand");
+  assert.equal(freeCombatPoolScope(offHandWeapon, {action: "drawWeapon"}), "offHand");
+  assert.equal(freeCombatPoolScope(naturalWeapon, {action: "attack"}), "both");
 });
 
 test("two-handed weapons and ordinary actions consume both Free CP hand uses", () => {
