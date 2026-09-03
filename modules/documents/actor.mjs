@@ -843,7 +843,7 @@ export class TrudvangActor extends BaseActor {
     ].join("<br>");
     return rollUnder({
       actor: this,
-      label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : "TRUDVANG.Action.Attack")}`,
+      label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : mode.throwing ? "TRUDVANG.Action.Throw" : "TRUDVANG.Action.Attack")}`,
       target: spending.total - feint,
       modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier,
       kind,

@@ -187,7 +187,7 @@ export async function rollDamage({actor, item, context = {}}) {
   const intrinsicModifier = Number(parsed?.modifier || 0) + damage.modifier.base;
   if (intrinsicModifier) modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus", {amount: signed(intrinsicModifier)}));
   for (const step of damage.modifier.steps) {
-    if (step.amount && step.explanationKey) modifierDetails.push(game.i18n.format(step.explanationKey, {...step.explanationData, amount: signed(step.amount)}));
+    if (step.delta && step.explanationKey) modifierDetails.push(game.i18n.format(step.explanationKey, {...step.explanationData, amount: signed(step.delta)}));
   }
   if (total !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));

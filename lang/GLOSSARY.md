@@ -143,6 +143,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Cancel` | Cancel | Annuler |
 | `TRUDVANG.Action.Use` | Use | Utiliser |
 | `TRUDVANG.Action.Attack` | Attack | Attaquer |
+| `TRUDVANG.Action.Throw` | Throw | Lancer |
 | `TRUDVANG.Action.Equip` | Equip | Équiper |
 | `TRUDVANG.Action.Damage` | Damage | Dégâts |
 | `TRUDVANG.Action.Parry` | Parry | Parer |
