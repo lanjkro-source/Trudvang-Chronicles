@@ -4,7 +4,7 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 20;
+const CONTENT_VERSION = 21;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -444,6 +444,29 @@ export async function importStarterContent({force = false} = {}) {
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
     await upsertJournals();
+
+    // TEMPORARY WORLD MIGRATION: before v0.23.0, purpose-built throwing weapons
+    // were stored as the throwing specialty itself. Restore their melee profile
+    // and mark them with the dedicated flag used by the current attack modes.
+    const meleeSpecialtyForCategory = category => ({
+      oneHandedLight: "oneHandedLightWeapons",
+      oneHandedHeavy: "oneHandedHeavyWeapons",
+      twoHanded: "twoHandedWeapons"
+    })[category] || "oneHandedLightWeapons";
+    const throwingWeaponChanges = item => item.type === "weapon" && item.system.combatSpecialty === "throwingWeapons"
+      ? {"system.combatSpecialty": meleeSpecialtyForCategory(item.system.category), "system.isThrowingWeapon": true}
+      : null;
+    for (const item of game.items) {
+      const changes = throwingWeaponChanges(item);
+      if (changes) await item.update(changes);
+    }
+    for (const actor of game.actors) {
+      const updates = actor.items.map(item => {
+        const changes = throwingWeaponChanges(item);
+        return changes ? {_id: item.id, ...changes} : null;
+      }).filter(Boolean);
+      if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+    }
 
     const obsoleteWorldKnowledge = game.items.filter(item => item.type === "ability" && item.system.catalogId === "vitnerWeavers");
     if (obsoleteWorldKnowledge.length) await Item.deleteDocuments(obsoleteWorldKnowledge.map(item => item.id));

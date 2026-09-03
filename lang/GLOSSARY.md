@@ -211,6 +211,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Value` | Value (silver coins) | Valeur (pièces d'argent) |
 | `TRUDVANG.Field.Category` | Category | Catégorie |
 | `TRUDVANG.Field.WeaponType` | Type | Type |
+| `TRUDVANG.Field.MeleeWeaponType` | Melee type | Type en mêlée |
+| `TRUDVANG.Field.ThrowingWeapon` | Throwing weapon | Arme de lancer |
 | `TRUDVANG.Field.Damage` | Damages | Dégâts |
 | `TRUDVANG.Field.OpenRoll` | Open Roll Threshold (0 = none) | Seuil de jet ouvert (0 = aucun) |
 | `TRUDVANG.Field.WeaponActions` | WA: WEAPON ACTIONS | AA : ACTIONS D'ARME |
@@ -441,6 +443,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Weapon.OneHandedLight` | One-Handed Light | Légère à une main |
 | `TRUDVANG.Weapon.OneHandedHeavy` | One-Handed Heavy | Lourde à une main |
 | `TRUDVANG.Weapon.TwoHanded` | Two-Handed | À deux mains |
+| `TRUDVANG.Weapon.Throwing` | Throwing weapon | Arme de lancer |
 | `TRUDVANG.Weapon.Ranged` | Ranged | À distance |
 | `TRUDVANG.Weapon.Natural` | Natural | Naturelle |
 
@@ -739,6 +742,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
 | `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
+| `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
+| `TRUDVANG.Dialog.MeleeAttack` | Melee attack | Attaque en mêlée |
+| `TRUDVANG.Dialog.WeaponRanges` | Short range: {short} m · long range: {long} m | Portée courte : {short} m · portée longue : {long} m |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
 | `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |
@@ -869,6 +875,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Equipment.AmbidexterityShieldHand` | Ambidexterity level {level}: +{amount} SV with the shield hand. | Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.ShieldBearerShieldHand` | Shield Bearer level {level}: cancels the remaining shield-hand penalty. | Porteur de bouclier niveau {level} : annule le malus restant de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus` | Item damage modifier: {amount}. | Modificateur de dégâts propre à l’objet : {amount}. |
+| `TRUDVANG.Calculation.Equipment.ImprovisedThrowingDamage` | Weapon not designed for throwing: {amount} damage. | Arme non conçue pour le lancer : {amount} dégâts. |
 | `TRUDVANG.Calculation.Equipment.MinimumDamage` | The negative modifier cannot reduce a successful attack below 1 damage. | Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât. |
 | `TRUDVANG.Calculation.Equipment.IgnoredCondition` | The modifier's conditions are not met. | Les conditions de la modification ne sont pas remplies. |
 | `TRUDVANG.Calculation.Equipment.UnsupportedOperation` | The modifier uses an unsupported operation. | La modification utilise une opération non prise en charge. |

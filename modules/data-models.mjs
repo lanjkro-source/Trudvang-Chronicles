@@ -300,6 +300,7 @@ export class WeaponData extends BaseItemData {
       ...equipmentSchema(),
       category: string("oneHandedLight"),
       combatSpecialty: string(),
+      isThrowingWeapon: boolean(false),
       hand: string("weapon"),
       damage: string("1d10"),
       openRoll: integer(10, {min: 0, max: 10}),

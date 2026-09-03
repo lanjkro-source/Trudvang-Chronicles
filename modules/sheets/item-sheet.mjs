@@ -1,7 +1,8 @@
 import { TRUDVANG } from "../config.mjs";
 import { EFFECT_ITEM_TYPES, effectChangeSummary } from "../effects.mjs";
 import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipment-inspection.mjs";
-import { categoryForWeaponType, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
+import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
+import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -58,6 +59,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.supportsEffects = EFFECT_ITEM_TYPES.has(this.item.type);
     context.weaponType = weaponType(this.item);
     context.isRangedWeapon = ["crossbow", "bowsSlings"].includes(context.weaponType);
+    context.isThrowingWeapon = isThrowingWeapon(this.item);
+    context.canBeThrown = canThrowWeapon(this.item);
+    context.throwingRange = context.isThrowingWeapon ? resolveThrowingRange({item: this.item, actor: this.item.parent}) : null;
     context.usesSeparateHands = weaponUsesSeparateHands(this.item);
     context.isType = type => this.item.type === type;
     context.config = TRUDVANG;
@@ -125,7 +129,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       const type = foundry.utils.getProperty(updateData, "system.combatSpecialty")
         ?? formData.object["system.combatSpecialty"]
         ?? formData.get?.("system.combatSpecialty");
-      if (type) foundry.utils.setProperty(updateData, "system.category", categoryForWeaponType(type, this.item.system.category));
+      if (type && type !== "throwingWeapons") foundry.utils.setProperty(updateData, "system.category", categoryForWeaponType(type, this.item.system.category));
       const hand = foundry.utils.getProperty(updateData, "system.hand")
         ?? formData.object["system.hand"]
         ?? formData.get?.("system.hand");

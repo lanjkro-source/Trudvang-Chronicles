@@ -126,6 +126,26 @@ export function weaponUsesSeparateHands(item) {
   return SEPARATE_HAND_WEAPON_TYPES.has(weaponType(item));
 }
 
+/** A melee weapon may be thrown; purpose-built throwing weapons carry a separate flag. */
+export function canThrowWeapon(item) {
+  if (item?.type !== "weapon") return false;
+  return ["oneHandedLightWeapons", "oneHandedHeavyWeapons", "twoHandedWeapons"].includes(weaponType(item));
+}
+
+export function isThrowingWeapon(item) {
+  return Boolean(item?.type === "weapon" && item.system?.isThrowingWeapon);
+}
+
+/**
+ * Return a transient item profile for the selected attack mode. The persisted
+ * weapon category remains its melee category; only a thrown attack spends the
+ * dedicated throwing-weapon Combat Point pool.
+ */
+export function weaponForUsage(item, {throwing = false} = {}) {
+  if (!throwing || !canThrowWeapon(item)) return item;
+  return {...item, system: {...item.system, combatSpecialty: "throwingWeapons"}};
+}
+
 export function weaponUsesTwoHands(item) {
   return item?.type === "weapon" && TWO_HANDED_WEAPON_TYPES.has(weaponType(item));
 }

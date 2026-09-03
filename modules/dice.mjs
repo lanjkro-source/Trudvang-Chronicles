@@ -32,7 +32,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0, usage = ""}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -54,7 +54,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     flavor,
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
-    actorUuid: actor.uuid
+    actorUuid: actor.uuid,
+    usage
   });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({actor}),
@@ -156,8 +157,8 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   });
 }
 
-export async function rollDamage({actor, item}) {
-  const damage = resolveDamage({actor, item});
+export async function rollDamage({actor, item, context = {}}) {
+  const damage = resolveDamage({actor, item, context});
   const formula = damage.formula;
   const parsed = damage.parsed;
   let total;
@@ -310,72 +311,86 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
   });
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = ""}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-  const rows = pools.map(pool => {
-    const amount = Number(defaultAllocation[pool.id] || 0);
-    const label = escapeHtml(game.i18n.localize(pool.labelKey));
-    return `<div class="form-group combat-pool-allocation">
-      <label for="combat-pool-${escapeHtml(pool.id)}">${label}</label>
-      <span class="combat-pool-current">${pool.current}/${pool.max}</span>
-      <input id="combat-pool-${escapeHtml(pool.id)}" data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}">
-    </div>`;
-  }).join("");
-  const initialTotal = Object.values(defaultAllocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
-  const maximum = pools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+  const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
+  const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
   const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(row.label)}</span><b>${Number(row.value) > 0 ? "+" : ""}${Number(row.value || 0)}</b></li>`).join("");
+  const renderMode = mode => {
+    const modePools = mode.pools || [];
+    const allocation = mode.defaultAllocation || {};
+    const initialTotal = Object.values(allocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
+    const maximum = modePools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+    const rows = modePools.map(pool => {
+      const amount = Number(allocation[pool.id] || 0);
+      const label = escapeHtml(game.i18n.localize(pool.labelKey));
+      return `<div class="form-group combat-pool-allocation"><label>${label}</label><span class="combat-pool-current">${pool.current}/${pool.max}</span><input data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}"></div>`;
+    }).join("");
+    return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
+      ${mode.rangeText ? `<p class="combat-range-notice">${escapeHtml(mode.rangeText)}</p>` : ""}
+      ${rows}
+      <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
+      ${maximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: maximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(maximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
+      <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
+      ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
+      ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
+      ${ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(ruleNotice)}</p>` : ""}
+      ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
+      ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
+    </section>`;
+  };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
-    ${rows}
-    <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
-    ${maximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: maximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(maximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
-    <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
-    ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
-    ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
-    ${ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(ruleNotice)}</p>` : ""}
-    ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
-    ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
+    ${combatModes ? `<label class="checkbox"><input type="checkbox" data-combat-mode-toggle ${combatModes.checked ? "checked" : ""}> ${escapeHtml(combatModes.label)}</label>` : ""}
+    ${modes.map(renderMode).join("")}
   </div>`;
 
   class CombatPointDialog extends DialogClass {
     _onRender(context, options) {
       super._onRender(context, options);
       const root = this.element;
+      const selectedMode = () => {
+        if (!combatModes) return defaultMode;
+        return modes.find(mode => mode.id === (root.querySelector("[data-combat-mode-toggle]")?.checked ? combatModes.checkedMode : combatModes.uncheckedMode)) ?? defaultMode;
+      };
+      const selectedSection = () => root.querySelector(`[data-combat-mode="${selectedMode().id}"]`);
       const refresh = () => {
-        const total = Array.from(root.querySelectorAll("[data-pool-id]"))
-          .reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
-        const feintInput = root.querySelector("[name=feint]");
+        const section = selectedSection();
+        if (!section) return;
+        const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
+        const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
+        const feintInput = section.querySelector("[name=feint]");
         const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), maximumFeint, total) : 0;
-        if (feintInput) {
-          feintInput.max = String(Math.min(maximumFeint, total));
-          feintInput.value = String(feint);
-        }
+        if (feintInput) { feintInput.max = String(Math.min(maximumFeint, total)); feintInput.value = String(feint); }
         const attackTotal = total - feint;
-        const output = root.querySelector("[data-combat-total]");
+        const output = section.querySelector("[data-combat-total]");
         if (output) output.textContent = String(attackTotal);
-        const finalTarget = root.querySelector("[data-combat-final-target]");
+        const finalTarget = section.querySelector("[data-combat-final-target]");
         if (finalTarget) {
-          const manual = Number(root.querySelector("[name=modifier]")?.value || 0);
+          const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
           const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
           finalTarget.textContent = String(attackTotal + manual + fixed);
         }
+        const slider = section.querySelector("[data-combat-slider]");
+        if (slider) slider.value = String(total);
       };
-      const inputs = Array.from(root.querySelectorAll("[data-pool-id]"));
-      const slider = root.querySelector("[data-combat-slider]");
-      const allocate = requested => {
+      const allocate = (section, requested) => {
         let remaining = Math.max(0, Number(requested || 0));
-        for (const pool of [...pools].sort((left, right) => right.priority - left.priority)) {
-          const input = inputs.find(candidate => candidate.dataset.poolId === pool.id);
+        for (const pool of [...selectedMode().pools].sort((left, right) => right.priority - left.priority)) {
+          const input = Array.from(section.querySelectorAll("[data-pool-id]")).find(candidate => candidate.dataset.poolId === pool.id);
           if (!input) continue;
           const amount = Math.min(Number(pool.current || 0), remaining);
           input.value = String(amount);
           remaining -= amount;
         }
       };
-      slider?.addEventListener("input", event => { allocate(event.currentTarget.value); refresh(); });
-      inputs.forEach(input => input.addEventListener("input", () => { if (slider) slider.value = String(inputs.reduce((sum, field) => sum + Math.max(0, Number(field.value || 0)), 0)); refresh(); }));
-      root.querySelector("[name=feint]")?.addEventListener("input", refresh);
-      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      root.querySelectorAll("[data-combat-mode-toggle]").forEach(toggle => toggle.addEventListener("change", () => {
+        const active = selectedMode().id;
+        root.querySelectorAll("[data-combat-mode]").forEach(section => section.hidden = section.dataset.combatMode !== active);
+        refresh();
+      }));
+      root.querySelectorAll("[data-combat-slider]").forEach(slider => slider.addEventListener("input", event => { allocate(event.currentTarget.closest("[data-combat-mode]"), event.currentTarget.value); refresh(); }));
+      root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier]").forEach(input => input.addEventListener("input", refresh));
       refresh();
     }
   }
@@ -388,10 +403,15 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     default: true,
     callback: (event, button, dialog) => {
       const root = button.form ?? dialog.element;
+      const mode = combatModes
+        ? (root.querySelector("[data-combat-mode-toggle]")?.checked ? combatModes.checkedMode : combatModes.uncheckedMode)
+        : defaultMode.id;
+      const section = root.querySelector(`[data-combat-mode="${mode}"]`) ?? root;
       return {
-        modifier: Number(root.querySelector("[name=modifier]")?.value || 0),
-        feint: Number(root.querySelector("[name=feint]")?.value || 0),
-        allocation: Object.fromEntries(Array.from(root.querySelectorAll("[data-pool-id]"))
+        mode,
+        modifier: Number(section.querySelector("[name=modifier]")?.value || 0),
+        feint: Number(section.querySelector("[name=feint]")?.value || 0),
+        allocation: Object.fromEntries(Array.from(section.querySelectorAll("[data-pool-id]"))
           .map(input => [input.dataset.poolId, Number(input.value || 0)]))
       };
     }

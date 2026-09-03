@@ -783,7 +783,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const item = await this.actor.createEmbeddedDocuments("Item", [{
       name: game.i18n.format("TRUDVANG.New.Item", {type: game.i18n.localize(`TYPES.Item.${type}`)}),
       type,
-      system: type === "ability" ? {level: 0} : {}
+      system: type === "ability" ? {level: 0} : type === "weapon" ? {isThrowingWeapon: false} : {}
     }]);
     item[0]?.sheet.render({force: true});
   }

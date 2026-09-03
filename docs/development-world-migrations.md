@@ -28,6 +28,7 @@ Toute nouvelle migration de monde doit :
 | Réparation des textes de connaissances, rapprochement par libellé et rafraîchissement des sorts/tablettes intégrés | Met à niveau les descriptions et liens des anciennes copies dans les Items et les acteurs. | Les mondes historiques ont été supprimés. |
 | `starterWeaponPools` | Complète `combatSpecialty` sur les trois armes de départ à distance d'anciens acteurs. | Aucun acteur créé avant les pools de PC liés ne subsiste. |
 | `CONTENT_VERSION = 18` et `upsertJournals()` | Ajoutent les Journaux Équipement, Races et Archétypes aux mondes déjà créés. | Tous les mondes antérieurs ont reçu les Journaux, ou ont été supprimés. |
+| `CONTENT_VERSION = 21` et `throwingWeaponChanges()` | Convertissent les anciennes armes de lancer, autrefois enregistrées avec `combatSpecialty: throwingWeapons`, en armes de mêlée marquées `isThrowingWeapon`. | Aucun monde ne contient plus d'arme créée avant la séparation entre profil de mêlée et mode de lancer. |
 
 ## `modules/rules/combat-pool-resolver.mjs`
 

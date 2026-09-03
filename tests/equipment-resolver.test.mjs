@@ -9,10 +9,12 @@ import {
   resolveDamage,
   resolveEquipment,
   resolveNumericEquipmentStat,
+  resolveThrowingRange,
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
 import {
   actorParticipatesInCombat,
+  canThrowWeapon,
   combatPoolsAreFull,
   categoryForWeaponType,
   normalizeCombatAllocation,
@@ -21,6 +23,7 @@ import {
   resolveCombatPools,
   suggestCombatAllocation,
   weaponCombatSpecialty,
+  weaponForUsage,
   weaponType,
   weaponUsesTwoHands,
   weaponUsesSeparateHands
@@ -366,6 +369,29 @@ test("canonical weapon types preserve legacy data and synchronize its category",
   assert.equal(weaponType(weapon({category: "ranged", combatSpecialty: "crossbow"})), "crossbow");
   assert.equal(categoryForWeaponType("crossbow"), "ranged");
   assert.equal(categoryForWeaponType("twoHandedWeapons"), "twoHanded");
+});
+
+test("a purpose-built throwing weapon keeps its melee profile until it is thrown", () => {
+  const item = weapon({category: "oneHandedLight", combatSpecialty: "oneHandedLightWeapons", isThrowingWeapon: true});
+  assert.equal(canThrowWeapon(item), true);
+  assert.equal(weaponType(item), "oneHandedLightWeapons");
+  assert.equal(weaponType(weaponForUsage(item, {throwing: true})), "throwingWeapons");
+});
+
+test("throwing ranges follow the weapon category and the wielder's Strength", () => {
+  const actor = {getTraitValue: key => key === "strength" ? 3 : 0};
+  const light = resolveThrowingRange({item: weapon({category: "oneHandedLight"}), actor});
+  const heavy = resolveThrowingRange({item: weapon({category: "oneHandedHeavy"}), actor});
+  assert.deepEqual(light, {short: {from: 2, to: 18}, long: {from: 16, to: 23}, strength: 3});
+  assert.deepEqual(heavy, {short: {from: 2, to: 13}, long: {from: 11, to: 18}, strength: 3});
+});
+
+test("only an improvised thrown weapon receives the five-damage reduction", () => {
+  const actor = {...actorWithSpecialty(0), getTraitValue: () => 0};
+  const improvised = resolveDamage({item: weapon({category: "oneHandedLight", strengthApplies: false}), actor, context: {usage: "throwing"}});
+  const purposeBuilt = resolveDamage({item: weapon({category: "oneHandedLight", isThrowingWeapon: true, strengthApplies: false}), actor, context: {usage: "throwing"}});
+  assert.equal(improvised.modifier.value, -5);
+  assert.equal(purposeBuilt.modifier.value, 0);
 });
 
 test("two-handed weapons, bows, and crossbows occupy both hands", () => {

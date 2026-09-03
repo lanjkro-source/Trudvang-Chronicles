@@ -192,6 +192,36 @@ export function parseSimpleDamageFormula(value) {
   };
 }
 
+const THROWING_RANGES = Object.freeze({
+  oneHandedLightWeapons: {short: [2, 15], long: [16, 20]},
+  oneHandedHeavyWeapons: {short: [2, 10], long: [11, 15]},
+  twoHandedWeapons: {short: [2, 5], long: [6, 9]}
+});
+
+/** Resolve the rule-table range of a thrown melee weapon, adjusted by Strength. */
+export function resolveThrowingRange({item, actor = null} = {}) {
+  const base = THROWING_RANGES[weaponType(item)];
+  if (!base) return null;
+  const strength = finiteNumber(actor?.getTraitValue?.("strength") ?? actor?.system?.traits?.strength, 0);
+  const adjust = ([from, to]) => ({from, to: Math.max(from, to + strength)});
+  return {short: adjust(base.short), long: adjust(base.long), strength};
+}
+
+function improvisedThrowingDamageModifiers(item, context) {
+  if (context.usage !== "throwing" || item?.system?.isThrowingWeapon) return [];
+  return [{
+    id: "improvised-throwing-damage",
+    target: "damageModifier",
+    operation: "subtract",
+    amount: 5,
+    phase: "item",
+    source: {kind: "rule", id: "improvisedThrowingWeapon"},
+    explanationKey: "TRUDVANG.Calculation.Equipment.ImprovisedThrowingDamage",
+    explanationData: {amount: -5},
+    rule: {book: "coreRules", printedPage: 118, englishBook: "gameMastersGuide", englishPrintedPage: 76}
+  }];
+}
+
 function strengthDamageModifiers(item, actor, context) {
   const rangedUsage = context.usage === "ranged" || (!context.usage && ["crossbow", "bowsSlings"].includes(weaponType(item)));
   if (!actor || rangedUsage || !item?.system?.strengthApplies) return [];
@@ -305,7 +335,7 @@ export function resolveDamage({item, actor = null, context = {}, modifiers = []}
     modifier: resolveNumericEquipmentStat({
       key: "damageModifier",
       base: item?.system?.damageBonus,
-      modifiers: [...strengthDamageModifiers(item, actor, context), ...modifiers]
+      modifiers: [...improvisedThrowingDamageModifiers(item, context), ...strengthDamageModifiers(item, actor, context), ...modifiers]
     }),
     minimumTotal: 1
   };
@@ -386,6 +416,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
     characteristics.combatPointBonus = resolveNumericEquipmentStat({key: "combatPointBonus", base: item?.system?.combatPointBonus, modifiers, integer: true});
     characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
     characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
+    if (item.type === "weapon" && item.system?.isThrowingWeapon) characteristics.throwingRange = resolveThrowingRange({item, actor});
     if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});
   }
   if (item?.type === "armor") {
