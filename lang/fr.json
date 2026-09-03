@@ -915,6 +915,10 @@
           "Name": "Krossbogur (arbalète)",
           "Description": "Une arbalète défensive puissante, à l'excellente portée mais au rechargement lent."
         },
+        "ThrowingAxe": {
+          "Name": "Hache de lancer",
+          "Description": "Une hache légère, équilibrée pour être lancée d'une seule main."
+        },
         "FurLeather": {
           "Name": "Fourrure/cuir",
           "Description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord."

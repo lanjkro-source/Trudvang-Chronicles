@@ -915,6 +915,10 @@
           "Name": "Krossbogur (Crossbow)",
           "Description": "A powerful defensive crossbow with excellent range but a slow loading cycle."
         },
+        "ThrowingAxe": {
+          "Name": "Throwing Axe",
+          "Description": "A light axe balanced for throwing with one hand."
+        },
         "FurLeather": {
           "Name": "Fur / Leather Armor",
           "Description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans."

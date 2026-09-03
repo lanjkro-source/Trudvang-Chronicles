@@ -1114,6 +1114,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Item.Crossbow.Name` | Krossbogur (Crossbow) | Krossbogur (arbalète) |
 | `TRUDVANG.Content.Item.Crossbow.Description` | A powerful defensive crossbow with excellent range but a slow loading cycle. | Une arbalète défensive puissante, à l'excellente portée mais au rechargement lent. |
 
+## `TRUDVANG.Content.Item.ThrowingAxe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ThrowingAxe.Name` | Throwing Axe | Hache de lancer |
+| `TRUDVANG.Content.Item.ThrowingAxe.Description` | A light axe balanced for throwing with one hand. | Une hache légère, équilibrée pour être lancée d'une seule main. |
+
 ## `TRUDVANG.Content.Item.FurLeather`
 
 | Clé | English | Français |
