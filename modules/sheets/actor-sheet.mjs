@@ -154,7 +154,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.isInCombat = this.actor.isInActiveCombat;
     context.canDodge = context.isInCombat && combatPoolsAreFull(this.actor);
     const poolContext = {ignoreSpent: !context.isInCombat};
-    const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
+    const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
     const offHandFree = resolveCombatPools({actor: this.actor, item: {type: "shield", system: {}}, context: {...poolContext, action: "parry"}}).pools.find(pool => pool.id === "free");
     context.combatPools = resolveCombatPools({actor: this.actor, context: poolContext}).active.map(pool => {
       const sourceTitle = pool.source.name

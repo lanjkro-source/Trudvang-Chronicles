@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {freeCombatPoolScope, resolveCombatPools, weaponForUsage} from "../modules/rules/combat-pool-resolver.mjs";
+import {combatPointSpendingUpdates, freeCombatPoolScope, resolveCombatPools, weaponForUsage} from "../modules/rules/combat-pool-resolver.mjs";
 
 function actor({weaponSpent = 4, offHandSpent = 0} = {}) {
   return {
@@ -44,6 +44,31 @@ test("off-hand one-handed throws use only the shield-hand Free CP, while natural
   assert.equal(freeCombatPoolScope(thrown, {action: "attack"}), "offHand");
   assert.equal(freeCombatPoolScope(offHandWeapon, {action: "drawWeapon"}), "offHand");
   assert.equal(freeCombatPoolScope(naturalWeapon, {action: "attack"}), "both");
+});
+
+test("a one-handed throw reads the chosen hand's Free CP instead of the lower shared value", () => {
+  const character = actor({weaponSpent: 2, offHandSpent: 7});
+  const weaponHandThrow = weaponForUsage({type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "weapon"}}, {throwing: true});
+  const shieldHandThrow = weaponForUsage({type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "offHand"}}, {throwing: true});
+  assert.equal(freePool({actor: character, item: weaponHandThrow, context: {action: "attack"}}).current, 6);
+  assert.equal(freePool({actor: character, item: shieldHandThrow, context: {action: "attack"}}).current, 1);
+  assert.equal(freePool({actor: character, context: {action: "movement"}}).current, 1);
+});
+
+test("spending a one-handed throw updates only the matching hand, regardless of allocation source", () => {
+  const pools = {free: {weaponSpent: 2, offHandSpent: 7}, throwingWeapons: {spent: 1}};
+  assert.deepEqual(combatPointSpendingUpdates(pools, {free: 3, throwingWeapons: 2}, {freeScope: "offHand"}), {
+    "system.combatPools.free.offHandSpent": 10,
+    "system.combatPools.throwingWeapons.spent": 3
+  });
+  assert.deepEqual(combatPointSpendingUpdates(pools, {free: 3, throwingWeapons: 2}, {freeScope: "weapon"}), {
+    "system.combatPools.free.weaponSpent": 5,
+    "system.combatPools.throwingWeapons.spent": 3
+  });
+  assert.deepEqual(combatPointSpendingUpdates(pools, {free: 3}, {freeScope: "both"}), {
+    "system.combatPools.free.weaponSpent": 5,
+    "system.combatPools.free.offHandSpent": 10
+  });
 });
 
 test("two-handed weapons and ordinary actions consume both Free CP hand uses", () => {

@@ -4,7 +4,7 @@ import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
-import { actorParticipatesInCombat, canThrowWeapon, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
+import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -1041,23 +1041,7 @@ export class TrudvangActor extends BaseActor {
 
   async spendCombatPoints(allocation = {}, {freeScope = "both"} = {}) {
     if (!this.isInActiveCombat) return this;
-    const updates = {};
-    for (const [id, amount] of Object.entries(allocation)) {
-      if (!Object.hasOwn(this.system.combatPools || {}, id) || Number(amount) <= 0) continue;
-      if (id === "free" && freeScope === "both") {
-        const free = this.system.combatPools.free || {};
-        updates["system.combatPools.free.weaponSpent"] = Number(free.weaponSpent || 0) + Number(amount);
-        updates["system.combatPools.free.offHandSpent"] = Number(free.offHandSpent || 0) + Number(amount);
-        continue;
-      }
-      if (id === "free" && freeScope !== "shared") {
-        const key = `system.combatPools.free.${freeScope}Spent`;
-        updates[key] = Number(this.system.combatPools.free?.[`${freeScope}Spent`] || 0) + Number(amount);
-        continue;
-      }
-      const stored = Number(this.system.combatPools?.[id]?.spent || 0);
-      updates[`system.combatPools.${id}.spent`] = stored + Number(amount);
-    }
+    const updates = combatPointSpendingUpdates(this.system.combatPools, allocation, {freeScope});
     if (Object.keys(updates).length) return this.update(updates);
     return this;
   }

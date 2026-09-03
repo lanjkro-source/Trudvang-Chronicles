@@ -383,7 +383,13 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const section = selectedSection();
         if (!section) return;
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
-        const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
+        const poolById = new Map(selectedMode().pools.map(pool => [pool.id, pool]));
+        const total = inputs.reduce((sum, input) => {
+          const maximum = Math.max(0, Number(poolById.get(input.dataset.poolId)?.current || 0));
+          const amount = Math.min(maximum, Math.max(0, Math.trunc(Number(input.value || 0))));
+          if (Number(input.value || 0) !== amount) input.value = String(amount);
+          return sum + amount;
+        }, 0);
         const longRange = section.querySelector("[data-range-selection]")?.value === "long";
         section.querySelectorAll("[data-range-selection-value]").forEach(button => {
           const selected = (button.dataset.rangeSelectionValue === "long") === longRange;

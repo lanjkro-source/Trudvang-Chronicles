@@ -93,6 +93,32 @@ export function freeCombatPoolScope(item, context = {}) {
   return "both";
 }
 
+/**
+ * Build the persisted pool updates for an allocation.  Keeping this alongside
+ * the resolver guarantees that the value offered by the dialog and the value
+ * actually spent obey the same hand-scope rule.
+ */
+export function combatPointSpendingUpdates(combatPools = {}, allocation = {}, {freeScope = "both"} = {}) {
+  const updates = {};
+  for (const [id, rawAmount] of Object.entries(allocation)) {
+    const amount = Math.max(0, Math.trunc(finite(rawAmount, 0)));
+    if (!Object.hasOwn(combatPools || {}, id) || amount <= 0) continue;
+    if (id === "free" && freeScope === "both") {
+      const free = combatPools.free || {};
+      updates["system.combatPools.free.weaponSpent"] = finite(free.weaponSpent, 0) + amount;
+      updates["system.combatPools.free.offHandSpent"] = finite(free.offHandSpent, 0) + amount;
+      continue;
+    }
+    if (id === "free" && ["weapon", "offHand"].includes(freeScope)) {
+      const key = `system.combatPools.free.${freeScope}Spent`;
+      updates[key] = finite(combatPools.free?.[`${freeScope}Spent`], 0) + amount;
+      continue;
+    }
+    updates[`system.combatPools.${id}.spent`] = finite(combatPools?.[id]?.spent, 0) + amount;
+  }
+  return updates;
+}
+
 /** Whether the actor currently participates in Foundry's active combat encounter. */
 export function actorParticipatesInCombat(actor, combat) {
   if (!actor || !combat?.started) return false;
