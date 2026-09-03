@@ -382,8 +382,8 @@ test("throwing ranges follow the weapon category and the wielder's Strength", ()
   const actor = {getTraitValue: key => key === "strength" ? 3 : 0};
   const light = resolveThrowingRange({item: weapon({category: "oneHandedLight"}), actor});
   const heavy = resolveThrowingRange({item: weapon({category: "oneHandedHeavy"}), actor});
-  assert.deepEqual(light, {short: {from: 2, to: 18}, long: {from: 16, to: 23}, strength: 3});
-  assert.deepEqual(heavy, {short: {from: 2, to: 13}, long: {from: 11, to: 18}, strength: 3});
+  assert.deepEqual(light, {short: 18, long: 23, strength: 3});
+  assert.deepEqual(heavy, {short: 13, long: 18, strength: 3});
 });
 
 test("only an improvised thrown weapon receives the five-damage reduction", () => {

@@ -629,7 +629,7 @@
       "Feint": "Feint (max. {max} CP)",
       "ThrowWeapon": "Throw the weapon",
       "MeleeAttack": "Melee attack",
-      "WeaponRanges": "Short range: {short} m · long range: {long} m",
+      "WeaponRanges": "Short range: ≤ {short} m · long range: ≤ {long} m",
       "Strenuous": "Strenuous effort",
       "FinalVitnerCost": "Final Vitner cost",
       "TraitRollMode": "Roll mode",

@@ -770,7 +770,7 @@ export class TrudvangActor extends BaseActor {
         defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(5, poolResolution.eligibleCurrent)),
         rangeText: throwing ? game.i18n.format("TRUDVANG.Dialog.WeaponRanges", (() => {
           const range = resolveThrowingRange({item, actor: this});
-          return {short: `${range.short.from}–${range.short.to}`, long: `${range.long.from}–${range.long.to}`};
+          return {short: range.short, long: range.long};
         })()) : ""
       };
     };

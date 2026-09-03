@@ -193,9 +193,9 @@ export function parseSimpleDamageFormula(value) {
 }
 
 const THROWING_RANGES = Object.freeze({
-  oneHandedLightWeapons: {short: [2, 15], long: [16, 20]},
-  oneHandedHeavyWeapons: {short: [2, 10], long: [11, 15]},
-  twoHandedWeapons: {short: [2, 5], long: [6, 9]}
+  oneHandedLightWeapons: {short: 15, long: 20},
+  oneHandedHeavyWeapons: {short: 10, long: 15},
+  twoHandedWeapons: {short: 5, long: 9}
 });
 
 /** Resolve the rule-table range of a thrown melee weapon, adjusted by Strength. */
@@ -203,8 +203,8 @@ export function resolveThrowingRange({item, actor = null} = {}) {
   const base = THROWING_RANGES[weaponType(item)];
   if (!base) return null;
   const strength = finiteNumber(actor?.getTraitValue?.("strength") ?? actor?.system?.traits?.strength, 0);
-  const adjust = ([from, to]) => ({from, to: Math.max(from, to + strength)});
-  return {short: adjust(base.short), long: adjust(base.long), strength};
+  const short = Math.max(0, base.short + strength);
+  return {short, long: Math.max(short, base.long + strength), strength};
 }
 
 function improvisedThrowingDamageModifiers(item, context) {

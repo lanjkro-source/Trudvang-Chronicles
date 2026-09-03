@@ -18,8 +18,8 @@
         <span></span>
       </div>
       {{#if isThrowingWeapon}}<div class="item-field-row">
-        <label>{{localize "TRUDVANG.Field.RangeShort"}}<div class="range-parts"><input value="{{throwingRange.short.from}}–{{throwingRange.short.to}}" disabled><span class="unit-suffix">m</span></div></label>
-        <label>{{localize "TRUDVANG.Field.RangeLong"}}<div class="range-parts"><input value="{{throwingRange.long.from}}–{{throwingRange.long.to}}" disabled><span class="unit-suffix">m</span></div></label><span></span>
+        <label>{{localize "TRUDVANG.Field.RangeShort"}}<div class="range-parts"><input value="≤ {{throwingRange.short}}" disabled><span class="unit-suffix">m</span></div></label>
+        <label>{{localize "TRUDVANG.Field.RangeLong"}}<div class="range-parts"><input value="≤ {{throwingRange.long}}" disabled><span class="unit-suffix">m</span></div></label><span></span>
       </div>{{else if isRangedWeapon}}<div class="item-field-row">
         <label>{{localize "TRUDVANG.Field.RangeShort"}}<div class="range-parts"><input name="system.range.short" value="{{system.range.short}}" placeholder="50"><span class="unit-suffix">m</span></div></label>
         <label>{{localize "TRUDVANG.Field.RangeLong"}}<div class="range-parts"><input name="system.range.long" value="{{system.range.long}}" placeholder="110"><span class="unit-suffix">m</span></div></label><span></span>
