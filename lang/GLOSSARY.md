@@ -370,7 +370,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Combat.WrestlingHint` | Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target. | Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible. |
 | `TRUDVANG.Combat.OtherAction` | Other action | Autre action |
 | `TRUDVANG.Combat.OtherActionHint` | Spend CP on another combat action. | Dépense des PC pour une autre action de combat. |
-| `TRUDVANG.Combat.NaturalParryHint` | Against an armed or natural attack, a successful parry reduces final damage by only half, rounded up. | Contre une attaque armée ou naturelle, une parade réussie ne réduit les dégâts finaux que de moitié, arrondie au supérieur. |
+| `TRUDVANG.Combat.NaturalParryHint` | Against an armed or natural attack, a successful parry reduces final damage by only half. | Contre une attaque armée ou naturelle, une parade réussie ne réduit les dégâts finaux que de moitié. |
 
 ## `TRUDVANG.CombatActionType`
 

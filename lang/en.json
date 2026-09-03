@@ -313,7 +313,7 @@
       "WrestlingHint": "Grapple and glima: 2 CP per SV point; the Strength modifier applies. A successful glima deals 1d3 damage, or 1d5 when falling with the target.",
       "OtherAction": "Other action",
       "OtherActionHint": "Spend CP on another combat action.",
-      "NaturalParryHint": "Against an armed or natural attack, a successful parry reduces final damage by only half, rounded up."
+      "NaturalParryHint": "Against an armed or natural attack, a successful parry reduces final damage by only half."
     },
     "CombatActionType": {
       "Positioning": "Combat action, movement, or positioning",

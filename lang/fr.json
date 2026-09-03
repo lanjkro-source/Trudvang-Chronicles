@@ -313,7 +313,7 @@
       "WrestlingHint": "Saisie et glima : 2 PC par point de VC ; le modificateur de Force s’applique. Une glima réussie inflige 1d3 dégâts, ou 1d5 en chutant avec la cible.",
       "OtherAction": "Autre action",
       "OtherActionHint": "Dépense des PC pour une autre action de combat.",
-      "NaturalParryHint": "Contre une attaque armée ou naturelle, une parade réussie ne réduit les dégâts finaux que de moitié, arrondie au supérieur."
+      "NaturalParryHint": "Contre une attaque armée ou naturelle, une parade réussie ne réduit les dégâts finaux que de moitié."
     },
     "CombatActionType": {
       "Positioning": "Action de combat, mouvement ou positionnement",
