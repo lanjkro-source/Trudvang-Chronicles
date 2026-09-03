@@ -744,7 +744,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
 | `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
 | `TRUDVANG.Dialog.MeleeAttack` | Melee attack | Attaque en mêlée |
-| `TRUDVANG.Dialog.WeaponRanges` | Short range: ≤ {short} m · long range: ≤ {long} m | Portée courte : ≤ {short} m · portée longue : ≤ {long} m |
+| `TRUDVANG.Dialog.WeaponRanges` | Short range: {short} m · long range: {long} m | Portée courte : {short} m · portée longue : {long} m |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
 | `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |

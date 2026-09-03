@@ -416,7 +416,6 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
     characteristics.combatPointBonus = resolveNumericEquipmentStat({key: "combatPointBonus", base: item?.system?.combatPointBonus, modifiers, integer: true});
     characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
     characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
-    if (item.type === "weapon" && item.system?.isThrowingWeapon) characteristics.throwingRange = resolveThrowingRange({item, actor});
     if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});
   }
   if (item?.type === "armor") {

@@ -627,7 +627,7 @@
       "Feint": "Feinte (max. {max} PC)",
       "ThrowWeapon": "Lancer l’arme",
       "MeleeAttack": "Attaque en mêlée",
-      "WeaponRanges": "Portée courte : ≤ {short} m · portée longue : ≤ {long} m",
+      "WeaponRanges": "Portée courte : {short} m · portée longue : {long} m",
       "Strenuous": "Renforcement",
       "FinalVitnerCost": "Coût final en vitner",
       "TraitRollMode": "Mode de jet",
