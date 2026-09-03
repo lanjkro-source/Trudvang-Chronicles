@@ -623,6 +623,7 @@
       "InitiativeAction": "Weapon, spell, or divine action",
       "NoInitiativeAction": "No action modifier",
       "InitiativeEquipment": "Conditional equipment used this round",
+      "DrawInitiative": "Draw a weapon (initiative −10)",
       "InitiativeMagic": "Spell or divine action",
       "AddTablet": "Add a compatible tablet",
       "MagicMethod": "Method and specialty",

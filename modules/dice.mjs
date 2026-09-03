@@ -66,7 +66,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   return {roll, result, target: finalTarget, success, critical, margin};
 }
 
-export async function initiativeDialog({actor, target, lightningQuickLevel = 0}) {
+export async function initiativeDialog({actor, target, lightningQuickLevel = 0, rememberedEquipment = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const magicChoices = actor.items.filter(item => ["spell", "divineFeat"].includes(item.type)).filter(item => {
     const tablet = actor.items.find(candidate => candidate.type === "tablet" && (candidate.system.catalogId === item.system.tabletId || candidate.name === item.system.tablet));
@@ -76,14 +76,18 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
     const modifier = -level + (item.type === "divineFeat" ? 2 * Number(lightningQuickLevel || 0) : 0);
     return `<option value="${modifier}">${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</option>`;
   }).join("");
+  const remembered = new Set(rememberedEquipment);
   const equipmentChoices = actor.items.filter(item => ["weapon", "shield"].includes(item.type) && item.system.equipped).map(item => {
     const modifier = resolveEquipment({item, actor}).characteristics.initiativeModifier.value;
-    return `<label class="checkbox"><input type="checkbox" data-initiative-equipment value="${modifier}"> ${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</label>`;
+    return `<label class="checkbox"><input type="checkbox" data-initiative-equipment data-item-id="${escapeHtml(item.id)}" value="${modifier}" ${remembered.has(item.id) ? "checked" : ""}> ${escapeHtml(item.name)} (${modifier > 0 ? "+" : ""}${modifier})</label>`;
   }).join("");
+  const drawChoice = actor.items.some(item => item.type === "weapon" && !item.system.equipped)
+    ? `<label class="checkbox"><input type="checkbox" data-initiative-draw value="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.DrawInitiative"))}</label>`
+    : "";
   const content = `
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
-      ${equipmentChoices ? `<fieldset class="initiative-equipment"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeEquipment"))}</legend>${equipmentChoices}</fieldset>` : ""}
+      ${equipmentChoices || drawChoice ? `<fieldset class="initiative-equipment"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeEquipment"))}</legend>${equipmentChoices}${drawChoice}</fieldset>` : ""}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeMagic"))}</label><select name="magicModifier"><option value="0">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoInitiativeAction"))}</option>${magicChoices}</select></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     </div>`;
@@ -93,8 +97,13 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0})
     buttons: [
       {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
-        const equipmentModifier = Array.from(root.querySelectorAll("[data-initiative-equipment]:checked")).reduce((sum, input) => sum + Number(input.value || 0), 0);
-        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0) + equipmentModifier};
+        const equipment = Array.from(root.querySelectorAll("[data-initiative-equipment]:checked"));
+        const equipmentModifier = equipment.reduce((sum, input) => sum + Number(input.value || 0), 0);
+        const drawModifier = Number(root.querySelector("[data-initiative-draw]:checked")?.value || 0);
+        return {
+          modifier: Number(root.querySelector("[name=modifier]")?.value || 0) + Number(root.querySelector("[name=magicModifier]")?.value || 0) + equipmentModifier + drawModifier,
+          equipmentIds: equipment.map(input => input.dataset.itemId).filter(Boolean)
+        };
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

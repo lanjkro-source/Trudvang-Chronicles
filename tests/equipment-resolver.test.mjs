@@ -17,6 +17,7 @@ import {
   actorParticipatesInCombat,
   canThrowWeapon,
   combatPoolsAreFull,
+  freeCombatPoolScope,
   categoryForWeaponType,
   normalizeCombatAllocation,
   readiedHandConflicts,
@@ -377,6 +378,12 @@ test("a purpose-built throwing weapon keeps its melee profile until it is thrown
   assert.equal(canThrowWeapon(item), true);
   assert.equal(weaponType(item), "oneHandedLightWeapons");
   assert.equal(weaponType(weaponForUsage(item, {throwing: true})), "throwingWeapons");
+});
+
+test("a two-handed weapon thrown at range consumes both free Combat Point hand uses", () => {
+  const thrown = weaponForUsage(weapon({category: "twoHanded", combatSpecialty: "twoHandedWeapons"}), {throwing: true});
+  assert.equal(weaponType(thrown), "throwingWeapons");
+  assert.equal(freeCombatPoolScope(thrown, {action: "attack"}), "both");
 });
 
 test("throwing ranges follow the weapon category and the wielder's Strength", () => {

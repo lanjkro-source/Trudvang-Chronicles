@@ -621,6 +621,7 @@
       "InitiativeAction": "Arme, sortilège ou pouvoir divin",
       "NoInitiativeAction": "Aucun modificateur d'action",
       "InitiativeEquipment": "Équipements conditionnels utilisés ce round",
+      "DrawInitiative": "Dégainer (initiative −10)",
       "InitiativeMagic": "Sortilège ou pouvoir divin",
       "AddTablet": "Ajouter une tablette compatible",
       "MagicMethod": "Méthode et spécialité",

@@ -738,6 +738,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.InitiativeAction` | Weapon, spell, or divine action | Arme, sortilège ou pouvoir divin |
 | `TRUDVANG.Dialog.NoInitiativeAction` | No action modifier | Aucun modificateur d'action |
 | `TRUDVANG.Dialog.InitiativeEquipment` | Conditional equipment used this round | Équipements conditionnels utilisés ce round |
+| `TRUDVANG.Dialog.DrawInitiative` | Draw a weapon (initiative −10) | Dégainer (initiative −10) |
 | `TRUDVANG.Dialog.InitiativeMagic` | Spell or divine action | Sortilège ou pouvoir divin |
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |

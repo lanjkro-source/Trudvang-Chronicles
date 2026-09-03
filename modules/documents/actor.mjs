@@ -599,8 +599,10 @@ export class TrudvangActor extends BaseActor {
 
   async rollInitiativeTrudvang({combatant = null} = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
-    const options = await initiativeDialog({actor: this, target: Number(this.system.initiative.current || 0), lightningQuickLevel: Number(this.findKnowledgeItem("lightningQuickInvocation")?.system.level || 0)});
+    const rememberedEquipment = this.getFlag("trudvang-chronicles", "initiativeEquipment") || [];
+    const options = await initiativeDialog({actor: this, target: Number(this.system.initiative.current || 0), lightningQuickLevel: Number(this.findKnowledgeItem("lightningQuickInvocation")?.system.level || 0), rememberedEquipment});
     if (!options) return null;
+    if (this.isOwner) await this.setFlag("trudvang-chronicles", "initiativeEquipment", options.equipmentIds);
     const result = await openD10({threshold: 10, modifier: Number(this.system.initiative.current || 0) + options.modifier});
     const detail = result.rolls.join(" + ");
     const activeCombat = game.combat;

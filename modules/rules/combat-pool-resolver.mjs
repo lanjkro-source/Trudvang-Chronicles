@@ -143,11 +143,11 @@ export function isThrowingWeapon(item) {
  */
 export function weaponForUsage(item, {throwing = false} = {}) {
   if (!throwing || !canThrowWeapon(item)) return item;
-  return {...item, system: {...item.system, combatSpecialty: "throwingWeapons"}};
+  return {...item, system: {...item.system, combatSpecialty: "throwingWeapons", throwingUsesBothHands: weaponUsesTwoHands(item)}};
 }
 
 export function weaponUsesTwoHands(item) {
-  return item?.type === "weapon" && TWO_HANDED_WEAPON_TYPES.has(weaponType(item));
+  return item?.type === "weapon" && (Boolean(item.system?.throwingUsesBothHands) || TWO_HANDED_WEAPON_TYPES.has(weaponType(item)));
 }
 
 /** Return the physical hand slots occupied while the item is readied. */
