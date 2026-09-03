@@ -814,6 +814,12 @@ export class TrudvangActor extends BaseActor {
     const poolResolution = mode.poolResolution;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     const feint = kind === "attack" && !mode.ranged ? Math.min(spending.total, mode.feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
+    const rangedOptions = mode.ranged ? {
+      longRange: Boolean(options.ranged?.longRange),
+      targetInMelee: Boolean(options.ranged?.targetInMelee),
+      targetMoving: Boolean(options.ranged?.targetMoving)
+    } : {longRange: false, targetInMelee: false, targetMoving: false};
+    const rangedModifier = (rangedOptions.longRange ? -10 : 0) + (rangedOptions.targetInMelee ? -5 : 0) + (rangedOptions.targetMoving ? -10 : 0);
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (inCombat) await this.spendWeaponAction(item);
     if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
@@ -827,6 +833,9 @@ export class TrudvangActor extends BaseActor {
     const flavor = [
       ...spendingFlavor,
       ...(feint ? [game.i18n.format("TRUDVANG.Calculation.FeintCost", {points: feint})] : []),
+      ...(rangedOptions.longRange ? [game.i18n.localize("TRUDVANG.Calculation.LongRangeAttack")] : []),
+      ...(rangedOptions.targetInMelee ? [game.i18n.localize("TRUDVANG.Calculation.TargetInMelee")] : []),
+      ...(rangedOptions.targetMoving ? [game.i18n.localize("TRUDVANG.Calculation.TargetMoving")] : []),
       ...(combatPointBonus ? [game.i18n.format("TRUDVANG.Calculation.EquipmentCombatPointBonus", {amount: combatPointBonus > 0 ? `+${combatPointBonus}` : combatPointBonus})] : []),
       ...modifierRows.map(row => `${row.label}: ${row.value > 0 ? "+" : ""}${row.value}`)
     ].join("<br>");
@@ -834,12 +843,13 @@ export class TrudvangActor extends BaseActor {
       actor: this,
       label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : "TRUDVANG.Action.Attack")}`,
       target: spending.total - feint,
-      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value,
+      modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier,
       kind,
       flavor,
       item,
       feint,
-      usage: mode.throwing ? "throwing" : "melee"
+      usage: mode.throwing ? "throwing" : "melee",
+      longRange: rangedOptions.longRange
     });
   }
 

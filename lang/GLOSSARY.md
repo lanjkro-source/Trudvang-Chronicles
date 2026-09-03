@@ -745,6 +745,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
 | `TRUDVANG.Dialog.MeleeAttack` | Melee attack | Attaque en mêlée |
 | `TRUDVANG.Dialog.WeaponRanges` | Short range: {short} m · long range: {long} m | Portée courte : {short} m · portée longue : {long} m |
+| `TRUDVANG.Dialog.RangedAttackOptions` | Target situation | Situation de la cible |
+| `TRUDVANG.Dialog.LongRange` | Long range (SV -10; damage halved) | Portée longue (VC -10 ; dégâts divisés par deux) |
+| `TRUDVANG.Dialog.TargetInMelee` | Target in melee (SV -5) | Cible en mêlée (VC -5) |
+| `TRUDVANG.Dialog.TargetMoving` | Moving target (SV -10) | Cible en mouvement (VC -10) |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
 | `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |
@@ -860,6 +864,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.WrestlingCost` | {points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies. | {points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique. |
 | `TRUDVANG.Calculation.CombatPoolSource` | {source} level {level}: {max} CP pool. | {source} niveau {level} : réserve de {max} PC. |
 | `TRUDVANG.Calculation.FreeCombatPoolSource` | Fighting skill: {skill} CP; Battle Experience: +{experience} CP; other modifiers: {modifier} CP; total: {max} free CP. | Compétence Combat : {skill} PC ; Expérience du combat : +{experience} PC ; autres modificateurs : {modifier} PC ; total : {max} PC libres. |
+| `TRUDVANG.Calculation.LongRangeAttack` | Long-range target: -10 SV; damage halved. | Cible à longue portée : -10 à la VC ; dégâts divisés par deux. |
+| `TRUDVANG.Calculation.TargetInMelee` | Target engaged in melee: -5 SV. | Cible engagée dans un combat au corps à corps : -5 à la VC. |
+| `TRUDVANG.Calculation.TargetMoving` | Moving target: -10 SV. | Cible en mouvement : -10 à la VC. |
+| `TRUDVANG.Calculation.LongRangeDamage` | Long-range target: {before} → {after} damage (halved). | Cible à longue portée : {before} → {after} dégâts (divisés par deux). |
 
 ## `TRUDVANG.Calculation.Equipment`
 

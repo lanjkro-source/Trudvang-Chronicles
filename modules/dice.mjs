@@ -32,7 +32,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0, usage = ""}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0, usage = "", longRange = false}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -55,7 +55,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
     actorUuid: actor.uuid,
-    usage
+    usage,
+    longRange: Boolean(longRange)
   });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({actor}),
@@ -190,6 +191,11 @@ export async function rollDamage({actor, item, context = {}}) {
   }
   if (total !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
+  }
+  if (context.longRange) {
+    const beforeLongRange = total;
+    total = Math.ceil(total / 2);
+    modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
@@ -328,8 +334,14 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const label = escapeHtml(game.i18n.localize(pool.labelKey));
       return `<div class="form-group combat-pool-allocation"><label>${label}</label><span class="combat-pool-current">${pool.current}/${pool.max}</span><input data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}"></div>`;
     }).join("");
+    const rangedOptions = mode.ranged ? `<fieldset class="combat-ranged-options"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RangedAttackOptions"))}</legend>
+      <label class="checkbox"><input type="checkbox" data-ranged-option="longRange" data-ranged-modifier="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.LongRange"))}</label>
+      <label class="checkbox"><input type="checkbox" data-ranged-option="targetInMelee" data-ranged-modifier="-5"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetInMelee"))}</label>
+      <label class="checkbox"><input type="checkbox" data-ranged-option="targetMoving" data-ranged-modifier="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetMoving"))}</label>
+    </fieldset>` : "";
     return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
       ${mode.rangeText ? `<p class="combat-range-notice">${escapeHtml(mode.rangeText)}</p>` : ""}
+      ${rangedOptions}
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
@@ -360,6 +372,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         if (!section) return;
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
         const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
+        const rangedModifier = Array.from(section.querySelectorAll("[data-ranged-modifier]:checked")).reduce((sum, input) => sum + Number(input.dataset.rangedModifier || 0), 0);
         const feintInput = section.querySelector("[name=feint]");
         const modeMaximumFeint = Math.max(0, Math.floor(Number(selectedMode().feintMax ?? maximumFeint)));
         const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), modeMaximumFeint, total) : 0;
@@ -371,7 +384,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         if (finalTarget) {
           const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
           const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
-          finalTarget.textContent = String(attackTotal + manual + fixed);
+          finalTarget.textContent = String(attackTotal + manual + fixed + rangedModifier);
         }
         const slider = section.querySelector("[data-combat-slider]");
         if (slider) slider.value = String(total);
@@ -392,7 +405,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         refresh();
       }));
       root.querySelectorAll("[data-combat-slider]").forEach(slider => slider.addEventListener("input", event => { allocate(event.currentTarget.closest("[data-combat-mode]"), event.currentTarget.value); refresh(); }));
-      root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier]").forEach(input => input.addEventListener("input", refresh));
+      root.querySelectorAll("[data-pool-id], [name=feint], [name=modifier], [data-ranged-modifier]").forEach(input => input.addEventListener("input", refresh));
       refresh();
     }
   }
@@ -413,6 +426,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         mode,
         modifier: Number(section.querySelector("[name=modifier]")?.value || 0),
         feint: Number(section.querySelector("[name=feint]")?.value || 0),
+        ranged: Object.fromEntries(Array.from(section.querySelectorAll("[data-ranged-option]")).map(input => [input.dataset.rangedOption, input.checked])),
         allocation: Object.fromEntries(Array.from(section.querySelectorAll("[data-pool-id]"))
           .map(input => [input.dataset.poolId, Number(input.value || 0)]))
       };

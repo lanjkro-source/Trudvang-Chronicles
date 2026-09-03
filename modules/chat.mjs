@@ -36,7 +36,7 @@ function attachListeners(message, html) {
         return;
       }
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
-      if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || ""});
+      if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true"});
     });
   });
   html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
