@@ -772,13 +772,17 @@ export class TrudvangActor extends BaseActor {
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
       ...equipmentModifier.steps.map(step => ({label: game.i18n.format(step.explanationKey, step.explanationData), value: step.delta}))
     ].filter(row => Number(row.value));
+    const ruleNotice = kind === "parry" && (item.system?.combatSpecialty === "natural" || item.system?.category === "natural")
+      ? game.i18n.localize("TRUDVANG.Combat.NaturalParryHint")
+      : "";
     const options = await combatPointDialog({
       title: game.i18n.format(kind === "parry" ? "TRUDVANG.Dialog.ParryTitle" : "TRUDVANG.Dialog.AttackTitle", {item: item.name}),
       pools: poolResolution.eligible,
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, defaultCost),
       combatPointBonus,
       modifierRows,
-      feintMax
+      feintMax,
+      ruleNotice
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
