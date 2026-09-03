@@ -334,16 +334,15 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       const label = escapeHtml(game.i18n.localize(pool.labelKey));
       return `<div class="form-group combat-pool-allocation"><label>${label}</label><span class="combat-pool-current">${pool.current}/${pool.max}</span><input data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}"></div>`;
     }).join("");
-    const rangeSelection = mode.ranged ? `<div class="form-group combat-range-selection"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Field.Range"))}</label><select data-range-selection>
-      <option value="short" ${mode.rangeSelection === "short" ? "selected" : ""}>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.ShortRange"))}</option>
-      <option value="long" ${mode.rangeSelection === "long" ? "selected" : ""}>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.LongRange"))}</option>
-    </select></div>` : "";
+    const rangeSelection = mode.ranged && mode.range ? `<section class="combat-range-selector"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Field.Range"))}</span><div class="combat-range-cells" role="radiogroup">
+      <button type="button" data-range-selection-value="short" aria-pressed="${mode.rangeSelection !== "long"}">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RangeShortSelection", {range: mode.range.short}))}</button>
+      <button type="button" data-range-selection-value="long" aria-pressed="${mode.rangeSelection === "long"}">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RangeLongSelection", {range: mode.range.long}))}</button>
+    </div><p data-range-consequence></p><input type="hidden" data-range-selection value="${mode.rangeSelection}"></section>` : "";
     const rangedTargetOptions = mode.ranged ? `<div class="combat-ranged-target-options">
       <label class="checkbox"><input type="checkbox" data-ranged-option="targetInMelee" data-ranged-modifier="-5"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetInMelee"))}</label>
       <label class="checkbox"><input type="checkbox" data-ranged-option="targetMoving" data-ranged-modifier="-10"> ${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TargetMoving"))}</label>
     </div>` : "";
     return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
-      ${mode.rangeText ? `<p class="combat-range-notice">${escapeHtml(mode.rangeText)}</p>` : ""}
       ${rangeSelection}
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
@@ -377,6 +376,13 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
         const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
         const longRange = section.querySelector("[data-range-selection]")?.value === "long";
+        section.querySelectorAll("[data-range-selection-value]").forEach(button => {
+          const selected = (button.dataset.rangeSelectionValue === "long") === longRange;
+          button.classList.toggle("selected", selected);
+          button.setAttribute("aria-pressed", String(selected));
+        });
+        const consequence = section.querySelector("[data-range-consequence]");
+        if (consequence) consequence.textContent = game.i18n.localize(longRange ? "TRUDVANG.Dialog.RangeLongConsequence" : "TRUDVANG.Dialog.RangeShortConsequence");
         const rangedModifier = (longRange ? -10 : 0) + Array.from(section.querySelectorAll("[data-ranged-modifier]:checked")).reduce((sum, input) => sum + Number(input.dataset.rangedModifier || 0), 0);
         const feintInput = section.querySelector("[name=feint]");
         const modeMaximumFeint = Math.max(0, Math.floor(Number(selectedMode().feintMax ?? maximumFeint)));
@@ -407,6 +413,12 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       root.querySelectorAll("[data-combat-mode-toggle]").forEach(toggle => toggle.addEventListener("change", () => {
         const active = selectedMode().id;
         root.querySelectorAll("[data-combat-mode]").forEach(section => section.hidden = section.dataset.combatMode !== active);
+        refresh();
+      }));
+      root.querySelectorAll("[data-range-selection-value]").forEach(button => button.addEventListener("click", event => {
+        const section = event.currentTarget.closest("[data-combat-mode]");
+        const selection = section?.querySelector("[data-range-selection]");
+        if (selection) selection.value = event.currentTarget.dataset.rangeSelectionValue;
         refresh();
       }));
       root.querySelectorAll("[data-combat-slider]").forEach(slider => slider.addEventListener("input", event => { allocate(event.currentTarget.closest("[data-combat-mode]"), event.currentTarget.value); refresh(); }));

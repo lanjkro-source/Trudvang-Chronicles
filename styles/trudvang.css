@@ -550,6 +550,11 @@
 .trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-on-header-muted); }
 .trudvang.combat-pool-dialog .combat-modifier-breakdown b { color: var(--trudvang-on-header); }
 .trudvang.combat-pool-dialog .combat-ranged-target-options { display: flex; flex-direction: column; gap: 3px; margin: 5px 0; color: var(--trudvang-on-header-muted); }
+.trudvang.combat-pool-dialog .combat-range-selector { display: grid; grid-template-columns: auto 1fr; gap: 5px 8px; align-items: center; margin: 7px 0; }
+.trudvang.combat-pool-dialog .combat-range-cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.trudvang.combat-pool-dialog .combat-range-cells button { min-height: 30px; color: var(--trudvang-on-header-muted); background: var(--trudvang-header-alt); border-color: var(--trudvang-border); }
+.trudvang.combat-pool-dialog .combat-range-cells button.selected { color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-gold) 30%, var(--trudvang-header-alt)); border-color: var(--trudvang-gold); }
+.trudvang.combat-pool-dialog .combat-range-selector [data-range-consequence] { grid-column: 2; margin: 0; color: var(--trudvang-on-header-muted); font-size: .82rem; }
 .trudvang.combat-pool-dialog .combat-rule-notice { margin: 6px 0; padding: 6px 8px; color: var(--trudvang-on-header); border-left: 2px solid var(--trudvang-warning); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); font-size: .82rem; }
 .trudvang-sheet.item-sheet .damage-complex { grid-column: span 2; }
 .trudvang-sheet.item-sheet .damage-complex > label { display: flex; flex-direction: column; gap: 3px; }

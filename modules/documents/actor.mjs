@@ -775,7 +775,7 @@ export class TrudvangActor extends BaseActor {
         ranged,
         rangeSelection: item.system.rangeSelection === "long" ? "long" : "short",
         feintMax: kind === "attack" && !ranged ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0,
-        rangeText: range ? game.i18n.format("TRUDVANG.Dialog.WeaponRanges", {short: range.short.value, long: range.long.value}) : ""
+        range: range ? {short: range.short.value, long: range.long.value} : null
       };
     };
     const modes = canThrow ? [prepareMode(false), prepareMode(true)] : [prepareMode(false)];
