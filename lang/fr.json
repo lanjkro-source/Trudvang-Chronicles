@@ -728,6 +728,7 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
+        "StrengthThrowingRange": "Force : {amount} m aux portées de lancer.",
         "IroncladHeft": "Cuirassé niveau {level} : {amount} en Encombrement effectif.",
         "IroncladArmorPenalty": "Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif.",
         "ArmorOverload": "Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}.",

@@ -198,13 +198,33 @@ const THROWING_RANGES = Object.freeze({
   twoHandedWeapons: {short: 5, long: 9}
 });
 
-/** Resolve the rule-table range of a thrown melee weapon, adjusted by Strength. */
-export function resolveThrowingRange({item, actor = null} = {}) {
-  const base = THROWING_RANGES[weaponType(item)];
+/** Resolve a ranged weapon's two upper distance limits, preserving their calculation trace. */
+export function resolveWeaponRange({item, actor = null, modifiers = [], throwing = Boolean(item?.system?.isThrowingWeapon)} = {}) {
+  const base = throwing ? THROWING_RANGES[weaponType(item)] : item?.system?.range;
   if (!base) return null;
-  const strength = finiteNumber(actor?.getTraitValue?.("strength") ?? actor?.system?.traits?.strength, 0);
-  const short = Math.max(0, base.short + strength);
-  return {short, long: Math.max(short, base.long + strength), strength};
+  const strength = throwing ? finiteNumber(actor?.getTraitValue?.("strength") ?? actor?.system?.traits?.strength, 0) : 0;
+  const source = {kind: "trait", id: "strength", name: "Strength"};
+  const strengthModifiers = throwing && strength ? ["rangeShort", "rangeLong"].map(target => ({
+    id: `strength-${target}`,
+    target,
+    operation: "add",
+    amount: strength,
+    phase: "wearer",
+    source,
+    explanationKey: "TRUDVANG.Calculation.Equipment.StrengthThrowingRange",
+    explanationData: {amount: strength},
+    rule: {book: "coreRules", printedPage: 118, englishBook: "gameMastersGuide", englishPrintedPage: 76}
+  })) : [];
+  const short = resolveNumericEquipmentStat({key: "rangeShort", base: base.short, modifiers: [...strengthModifiers, ...modifiers], minimum: 0, integer: true});
+  const long = resolveNumericEquipmentStat({key: "rangeLong", base: base.long, modifiers: [...strengthModifiers, ...modifiers], minimum: short.value, integer: true});
+  return {short, long, strength, throwing};
+}
+
+/** Resolve the rule-table range of a thrown melee weapon, adjusted by Strength. */
+export function resolveThrowingRange({item, actor = null, modifiers = []} = {}) {
+  const range = resolveWeaponRange({item, actor, modifiers, throwing: true});
+  if (!range?.throwing) return null;
+  return {short: range.short.value, long: range.long.value, strength: range.strength};
 }
 
 function improvisedThrowingDamageModifiers(item, context) {
@@ -416,6 +436,7 @@ export function resolveEquipment({item, actor = null, context = {}, modifiers = 
     characteristics.combatPointBonus = resolveNumericEquipmentStat({key: "combatPointBonus", base: item?.system?.combatPointBonus, modifiers, integer: true});
     characteristics.initiativeModifier = resolveNumericEquipmentStat({key: "initiativeModifier", base: item?.system?.initiativeModifier, modifiers, integer: true});
     characteristics.protection = resolveNumericEquipmentStat({key: "protection", base: itemProtection(item), modifiers, minimum: 0, integer: true});
+    if (item.system?.isThrowingWeapon) characteristics.throwingRange = resolveWeaponRange({item, actor, modifiers});
     if (item.type === "shield") characteristics.passiveProtection = resolveNumericEquipmentStat({key: "passiveProtection", base: item?.system?.passiveProtection, modifiers, minimum: 0, integer: true});
   }
   if (item?.type === "armor") {

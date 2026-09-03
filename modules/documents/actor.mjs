@@ -3,8 +3,8 @@ import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
-import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveThrowingRange } from "../rules/equipment-resolver.mjs";
-import { actorParticipatesInCombat, canThrowWeapon, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage } from "../rules/combat-pool-resolver.mjs";
+import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
+import { actorParticipatesInCombat, canThrowWeapon, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -758,9 +758,13 @@ export class TrudvangActor extends BaseActor {
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const canThrow = kind === "attack" && canThrowWeapon(item);
     const defaultThrowing = canThrow && isThrowingWeapon(item);
+    const targetActor = Array.from(game.user.targets || []).map(target => target?.actor).find(Boolean);
+    const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
     const prepareMode = throwing => {
       const usageItem = weaponForUsage(item, {throwing});
       const poolResolution = resolveCombatPools({actor: this, item: usageItem, context: {action: kind, ignoreSpent: !inCombat}});
+      const ranged = throwing || ["crossbow", "bowsSlings"].includes(weaponType(usageItem));
+      const range = ranged ? resolveWeaponRange({item, actor: this}) : null;
       return {
         id: throwing ? "throwing" : "melee",
         throwing,
@@ -768,10 +772,9 @@ export class TrudvangActor extends BaseActor {
         poolResolution,
         pools: poolResolution.eligible,
         defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(5, poolResolution.eligibleCurrent)),
-        rangeText: throwing ? game.i18n.format("TRUDVANG.Dialog.WeaponRanges", (() => {
-          const range = resolveThrowingRange({item, actor: this});
-          return {short: range.short, long: range.long};
-        })()) : ""
+        ranged,
+        feintMax: kind === "attack" && !ranged ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0,
+        rangeText: range ? game.i18n.format("TRUDVANG.Dialog.WeaponRanges", {short: range.short.value, long: range.long.value}) : ""
       };
     };
     const modes = canThrow ? [prepareMode(false), prepareMode(true)] : [prepareMode(false)];
@@ -781,9 +784,6 @@ export class TrudvangActor extends BaseActor {
     const effectModifier = this.getRollModifier({kind, movement: true});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item: defaultMode.usageItem, actor: this, context: {usage: kind, hand: item.system.hand}});
-    const targetActor = Array.from(game.user.targets || []).map(target => target?.actor).find(Boolean);
-    const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
-    const feintMax = kind === "attack" ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0;
     const modifierRows = [
       {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
@@ -798,7 +798,7 @@ export class TrudvangActor extends BaseActor {
       defaultAllocation: defaultMode.defaultAllocation,
       combatPointBonus,
       modifierRows,
-      feintMax,
+      feintMax: defaultMode.feintMax,
       ruleNotice,
       combatModes: canThrow ? {
         label: game.i18n.localize(defaultThrowing ? "TRUDVANG.Dialog.MeleeAttack" : "TRUDVANG.Dialog.ThrowWeapon"),
@@ -813,7 +813,7 @@ export class TrudvangActor extends BaseActor {
     const mode = modes.find(candidate => candidate.id === options.mode) ?? defaultMode;
     const poolResolution = mode.poolResolution;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
-    const feint = kind === "attack" ? Math.min(spending.total, feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
+    const feint = kind === "attack" && !mode.ranged ? Math.min(spending.total, mode.feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (inCombat) await this.spendWeaponAction(item);
     if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});

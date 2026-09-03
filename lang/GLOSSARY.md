@@ -867,6 +867,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Calculation.Equipment.TwoHandedWeaponActions` | Two-Handed Weapons level {threshold}: +{amount} weapon action. | Armes à deux mains au niveau {threshold} : +{amount} action d’arme. |
 | `TRUDVANG.Calculation.Equipment.StrengthDamage` | Strength: {amount} melee damage. | Force : {amount} aux dégâts de corps à corps. |
+| `TRUDVANG.Calculation.Equipment.StrengthThrowingRange` | Strength: {amount} m to throwing ranges. | Force : {amount} m aux portées de lancer. |
 | `TRUDVANG.Calculation.Equipment.IroncladHeft` | Ironclad level {level}: {amount} effective Heft. | Cuirassé niveau {level} : {amount} en Encombrement effectif. |
 | `TRUDVANG.Calculation.Equipment.IroncladArmorPenalty` | Ironclad level {level}: recalculates the armor penalties from its effective Heft. | Cuirassé niveau {level} : recalcule les malus de l’armure depuis son Encombrement effectif. |
 | `TRUDVANG.Calculation.Equipment.ArmorOverload` | Armor Bearer level {level} is insufficient for Heft {heft}: {amount}. | Porteur d’armure niveau {level} est insuffisant pour un Encombrement de {heft} : {amount}. |

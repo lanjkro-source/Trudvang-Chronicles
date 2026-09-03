@@ -322,6 +322,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     const allocation = mode.defaultAllocation || {};
     const initialTotal = Object.values(allocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
     const maximum = modePools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+    const modeMaximumFeint = Math.max(0, Math.floor(Number(mode.feintMax ?? maximumFeint)));
     const rows = modePools.map(pool => {
       const amount = Number(allocation[pool.id] || 0);
       const label = escapeHtml(game.i18n.localize(pool.labelKey));
@@ -331,7 +332,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${mode.rangeText ? `<p class="combat-range-notice">${escapeHtml(mode.rangeText)}</p>` : ""}
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
-      ${maximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: maximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(maximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
+      ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
       <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
@@ -360,8 +361,9 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const inputs = Array.from(section.querySelectorAll("[data-pool-id]"));
         const total = inputs.reduce((sum, input) => sum + Math.max(0, Number(input.value || 0)), 0);
         const feintInput = section.querySelector("[name=feint]");
-        const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), maximumFeint, total) : 0;
-        if (feintInput) { feintInput.max = String(Math.min(maximumFeint, total)); feintInput.value = String(feint); }
+        const modeMaximumFeint = Math.max(0, Math.floor(Number(selectedMode().feintMax ?? maximumFeint)));
+        const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), modeMaximumFeint, total) : 0;
+        if (feintInput) { feintInput.max = String(Math.min(modeMaximumFeint, total)); feintInput.value = String(feint); }
         const attackTotal = total - feint;
         const output = section.querySelector("[data-combat-total]");
         if (output) output.textContent = String(attackTotal);

@@ -10,6 +10,7 @@ import {
   resolveEquipment,
   resolveNumericEquipmentStat,
   resolveThrowingRange,
+  resolveWeaponRange,
   resolveWeaponActions
 } from "../modules/rules/equipment-resolver.mjs";
 import {
@@ -384,6 +385,17 @@ test("throwing ranges follow the weapon category and the wielder's Strength", ()
   const heavy = resolveThrowingRange({item: weapon({category: "oneHandedHeavy"}), actor});
   assert.deepEqual(light, {short: 18, long: 23, strength: 3});
   assert.deepEqual(heavy, {short: 13, long: 18, strength: 3});
+});
+
+test("a throwing weapon exposes a translated, traceable Strength range modifier", () => {
+  const item = weapon({category: "oneHandedLight", isThrowingWeapon: true});
+  const actor = {getTraitValue: key => key === "strength" ? 3 : 0};
+  const range = resolveWeaponRange({item, actor});
+  const inspection = resolveEquipment({item, actor}).characteristics.throwingRange;
+  assert.equal(range.short.value, 18);
+  assert.equal(range.long.value, 23);
+  assert.equal(range.short.steps[0].explanationKey, "TRUDVANG.Calculation.Equipment.StrengthThrowingRange");
+  assert.equal(inspection.short.value, 18);
 });
 
 test("only an improvised thrown weapon receives the five-damage reduction", () => {

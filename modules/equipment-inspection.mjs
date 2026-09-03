@@ -15,7 +15,8 @@ const STAT_LABELS = {
   protection: "TRUDVANG.Field.VpProtectionLabel",
   passiveProtection: "TRUDVANG.Field.PassiveProtection",
   heft: "TRUDVANG.Field.Heft",
-  movementModifier: "TRUDVANG.Field.MovementModifier"
+  movementModifier: "TRUDVANG.Field.MovementModifier",
+  throwingRange: "TRUDVANG.Field.Range"
 };
 
 const IMPACT_LABELS = {
@@ -69,6 +70,15 @@ function damageDisplay(value) {
 }
 
 function statDisplays(key, value) {
+  if (key === "throwingRange") {
+    const display = range => `${range.short} m · ${range.long} m`;
+    return {
+      base: display({short: value.short.base, long: value.long.base}),
+      effective: display({short: value.short.value, long: value.long.value}),
+      modified: value.short.modified || value.long.modified,
+      tone: changeTone(value.strength)
+    };
+  }
   if (key === "damage") {
     const base = {...value, modifier: {...value.modifier, value: value.modifier.base}, openRoll: {...value.openRoll, value: value.openRoll.base}};
     // A lower open-roll threshold is beneficial: JO 8–10 opens more often than JO 10.
@@ -81,6 +91,19 @@ function statDisplays(key, value) {
 }
 
 function statSteps(key, value) {
+  if (key === "throwingRange") {
+    return (value.short?.steps || []).map((step, index) => {
+      const longStep = value.long?.steps?.[index];
+      const beforeLong = longStep?.before ?? value.long.base;
+      const afterLong = longStep?.after ?? value.long.value;
+      return {
+        label: step.source?.id === "strength" ? localized("TRUDVANG.Trait.Strength") : step.source?.name || localized(`TRUDVANG.Inspection.Source.${step.source?.kind || "rule"}`),
+        value: `${step.before} m · ${beforeLong} m → ${step.after} m · ${afterLong} m (${signed(step.delta)} m)`,
+        tone: changeTone(step.delta),
+        explanation: localized(step.explanationKey, step.explanationData)
+      };
+    });
+  }
   const sources = key === "damage" ? [value.openRoll, value.modifier] : [value];
   return sources.flatMap(source => (source?.steps || []).map(step => ({
     label: step.source?.name || localized(`TRUDVANG.Inspection.Source.${step.source?.kind || "rule"}`),

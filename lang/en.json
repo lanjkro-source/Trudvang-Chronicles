@@ -730,6 +730,7 @@
       "Equipment": {
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
+        "StrengthThrowingRange": "Strength: {amount} m to throwing ranges.",
         "IroncladHeft": "Ironclad level {level}: {amount} effective Heft.",
         "IroncladArmorPenalty": "Ironclad level {level}: recalculates the armor penalties from its effective Heft.",
         "ArmorOverload": "Armor Bearer level {level} is insufficient for Heft {heft}: {amount}.",
