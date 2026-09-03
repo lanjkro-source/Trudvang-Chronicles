@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { calculateArmoredDamage, defensiveItem } from "../modules/damage-application.mjs";
+import { applyDamageToActor, calculateArmoredDamage, defensiveItem } from "../modules/damage-application.mjs";
 
 const armor = (id, integrity) => ({id, type: "armor", system: {equipped: true, breach: {value: integrity}}});
 
@@ -14,6 +14,20 @@ test("natural protection absorbs the remainder after worn armor", () => {
   const result = calculateArmoredDamage({damage: 8, totalProtection: 6, armor: [armor("mail", 50)]});
   assert.equal(result.bodyDamage, 2);
   assert.equal(result.armorDamage[0].integrityLoss, 3);
+});
+
+test("damage that ignores armor bypasses every source of protection", async () => {
+  const updates = [];
+  const actor = {
+    isOwner: true,
+    items: [armor("mail", 50)],
+    system: {protection: 6, resources: {body: {current: 20}}},
+    updateEmbeddedDocuments: async () => { throw new Error("armor must not be damaged"); },
+    update: async update => updates.push(update)
+  };
+  const result = await applyDamageToActor({actor, damage: 8, ignoreArmor: true});
+  assert.equal(result.bodyDamage, 8);
+  assert.deepEqual(updates, [{"system.resources.body.value": 12}]);
 });
 
 test("a shield is preferred over an off-hand or two-handed weapon for defense damage", () => {

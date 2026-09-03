@@ -48,17 +48,14 @@ export function calculateArmoredDamage({damage, totalProtection, armor = []} = {
   return {bodyDamage: Math.max(0, remaining - otherProtection), armorDamage};
 }
 
-/** Apply damage to the target's Body Points, optionally resolving worn armor first. */
+/** Apply damage to the target's Body Points, optionally bypassing all protection. */
 export async function applyDamageToActor({actor, damage, ignoreArmor = false} = {}) {
   if (!actor?.isOwner) return null;
   const amount = Math.max(0, Math.trunc(number(damage)));
-  const wornArmor = Array.from(actor.items || []).filter(item => item.type === "armor" && item.system?.equipped);
-  const armor = ignoreArmor ? [] : wornArmor;
-  const wornArmorProtection = wornArmor.reduce((total, item) => total + protection(item), 0);
-  const totalProtection = ignoreArmor
-    ? Math.max(0, number(actor.system?.protection) - wornArmorProtection)
-    : actor.system?.protection;
-  const result = calculateArmoredDamage({damage: amount, totalProtection, armor});
+  const armor = Array.from(actor.items || []).filter(item => item.type === "armor" && item.system?.equipped);
+  const result = ignoreArmor
+    ? {bodyDamage: amount, armorDamage: []}
+    : calculateArmoredDamage({damage: amount, totalProtection: actor.system?.protection, armor});
   const armorUpdates = result.armorDamage
     .filter(entry => entry.integrityLoss > 0)
     .map(entry => ({_id: entry.item.id, "system.breach.value": entry.integrity}));
