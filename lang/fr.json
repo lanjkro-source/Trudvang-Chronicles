@@ -553,6 +553,11 @@
       "strenuous": "Renforcement permet au tisseur de dépenser 2 points de vitner supplémentaires par niveau de spécialité pour gagner +1 VC par tranche dépensée lors du tissage d'un sortilège."
     },
     "Damage": {
+      "Targets": "Cibles",
+      "Apply": "Appliquer les dégâts",
+      "ApplyIgnoringArmor": "Appliquer les dégâts sans armure",
+      "ApplyToDefense": "Appliquer les dégâts à {item}",
+      "NoDefenseItem": "Aucune arme de défense équipée",
       "unhurt": "Indemne",
       "light": "Égratigné",
       "injured": "Blessé",
@@ -641,6 +646,7 @@
       "OpenTraitFormula": "1d10 (jet ouvert sur 10) + trait + bonus + effets"
     },
     "Warning": {
+      "CannotApplyDamage": "Vous ne pouvez pas appliquer ces dégâts à cette cible.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
@@ -748,6 +754,8 @@
       "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
     },
     "Notification": {
+      "DamageApplied": "{damage} dégâts appliqués à {target}.",
+      "DefenseDamageApplied": "{damage} dégâts appliqués à {item}.",
       "RestCompleted": "Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur.",
       "NotRestored": "non renouvelée",
       "CalmFear": "{actor} se rassérène : −{amount} points de peur ({before} → {after}).",

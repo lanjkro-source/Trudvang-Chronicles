@@ -655,6 +655,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Damage.Targets` | Targets | Cibles |
+| `TRUDVANG.Damage.Apply` | Apply damage | Appliquer les dégâts |
+| `TRUDVANG.Damage.ApplyIgnoringArmor` | Apply damage ignoring armor | Appliquer les dégâts sans armure |
+| `TRUDVANG.Damage.ApplyToDefense` | Apply damage to {item} | Appliquer les dégâts à {item} |
+| `TRUDVANG.Damage.NoDefenseItem` | No defensive item equipped | Aucune arme de défense équipée |
 | `TRUDVANG.Damage.unhurt` | Unhurt | Indemne |
 | `TRUDVANG.Damage.light` | Lightly Damaged | Égratigné |
 | `TRUDVANG.Damage.injured` | Injured | Blessé |
@@ -767,6 +772,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Warning.CannotApplyDamage` | You cannot apply this damage to that target. | Vous ne pouvez pas appliquer ces dégâts à cette cible. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
@@ -895,6 +901,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Notification.DamageApplied` | {damage} damage applied to {target}. | {damage} dégâts appliqués à {target}. |
+| `TRUDVANG.Notification.DefenseDamageApplied` | {damage} damage applied to {item}. | {damage} dégâts appliqués à {item}. |
 | `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
 | `TRUDVANG.Notification.NotRestored` | not restored | non renouvelée |
 | `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |

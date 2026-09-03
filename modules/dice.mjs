@@ -1,5 +1,6 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
 import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs";
+import { prepareDamageTargets } from "./damage-application.mjs";
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -197,7 +198,8 @@ export async function rollDamage({actor, item}) {
     total,
     detail,
     openRoll: damage.openRoll.value,
-    modifierDetails
+    modifierDetails,
+    targets: prepareDamageTargets(game.user?.targets)
   });
   await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls});
   return total;

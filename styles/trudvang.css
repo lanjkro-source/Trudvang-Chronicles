@@ -590,6 +590,12 @@
 .trudvang.chat-card .roll-details.is-collapsed { display: none !important; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card small { display: block; padding: 2px 8px 7px; color: var(--trudvang-muted); text-align: center; }
+.trudvang.chat-card .damage-targets { margin: 8px; border-top: 1px solid var(--trudvang-line); }
+.trudvang.chat-card .damage-targets h4 { margin: 6px 0 4px; color: var(--trudvang-ink); font-size: .85rem; }
+.trudvang.chat-card .damage-target { display: grid; grid-template-columns: 24px minmax(0, 1fr) repeat(3, 29px); gap: 4px; align-items: center; padding: 3px 0; }
+.trudvang.chat-card .damage-target img { width: 23px; height: 23px; border: 1px solid var(--trudvang-line); object-fit: cover; }
+.trudvang.chat-card .damage-target span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 700; }
+.trudvang.chat-card .damage-target button { min-height: 25px; padding: 2px; }
 
 @media (max-width: 680px) {
   .trudvang-sheet .identity-grid { grid-template-columns: 1fr 1fr; }

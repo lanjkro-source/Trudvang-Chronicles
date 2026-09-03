@@ -553,6 +553,11 @@
       "strenuous": "Strenuous lets the conjurer spend 2 additional Vitner Points per specialty level to gain +1 SV per amount spent when weaving a spell."
     },
     "Damage": {
+      "Targets": "Targets",
+      "Apply": "Apply damage",
+      "ApplyIgnoringArmor": "Apply damage ignoring armor",
+      "ApplyToDefense": "Apply damage to {item}",
+      "NoDefenseItem": "No defensive item equipped",
       "unhurt": "Unhurt",
       "light": "Lightly Damaged",
       "injured": "Injured",
@@ -641,6 +646,7 @@
       "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects"
     },
     "Warning": {
+      "CannotApplyDamage": "You cannot apply this damage to that target.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
@@ -748,6 +754,8 @@
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
     "Notification": {
+      "DamageApplied": "{damage} damage applied to {target}.",
+      "DefenseDamageApplied": "{damage} damage applied to {item}.",
       "RestCompleted": "Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear.",
       "NotRestored": "not restored",
       "CalmFear": "{actor} calms down: −{amount} Fear Points ({before} → {after}).",
