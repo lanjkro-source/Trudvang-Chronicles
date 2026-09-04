@@ -679,7 +679,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Fear.ApplyToTargets` | Apply to targeted characters | Appliquer aux personnages ciblés |
+| `TRUDVANG.Fear.ApplyToTargets` | Apply to controlled characters | Appliquer aux personnages contrôlés |
 
 ## `TRUDVANG.Status`
 
@@ -800,7 +800,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Warning.CannotApplyDamage` | You cannot apply this damage to that target. | Vous ne pouvez pas appliquer ces dégâts à cette cible. |
 | `TRUDVANG.Warning.InvalidFearFactor` | The fear factor must use the form 1d10 or 1d10 (OR 8-10). | Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10). |
-| `TRUDVANG.Warning.NoCharacterFearTargets` | Select at least one character to apply Fear to. | Sélectionnez au moins un personnage auquel appliquer la peur. |
+| `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |

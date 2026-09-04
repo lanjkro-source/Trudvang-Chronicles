@@ -574,7 +574,7 @@
       "dead": "Mort"
     },
     "Fear": {
-      "ApplyToTargets": "Appliquer aux personnages ciblés"
+      "ApplyToTargets": "Appliquer aux personnages contrôlés"
     },
     "Status": {
       "RecoveryDaily": "{amount} PS/jour",
@@ -671,7 +671,7 @@
     "Warning": {
       "CannotApplyDamage": "Vous ne pouvez pas appliquer ces dégâts à cette cible.",
       "InvalidFearFactor": "Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10).",
-      "NoCharacterFearTargets": "Sélectionnez au moins un personnage auquel appliquer la peur.",
+      "NoControlledFearCharacters": "Contrôlez au moins un personnage auquel appliquer la peur.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",

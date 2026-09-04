@@ -576,7 +576,7 @@
       "dead": "Dead"
     },
     "Fear": {
-      "ApplyToTargets": "Apply to targeted characters"
+      "ApplyToTargets": "Apply to controlled characters"
     },
     "Status": {
       "RecoveryDaily": "{amount} BP/day",
@@ -673,7 +673,7 @@
     "Warning": {
       "CannotApplyDamage": "You cannot apply this damage to that target.",
       "InvalidFearFactor": "The fear factor must use the form 1d10 or 1d10 (OR 8-10).",
-      "NoCharacterFearTargets": "Select at least one character to apply Fear to.",
+      "NoControlledFearCharacters": "Control at least one character to apply Fear to.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",

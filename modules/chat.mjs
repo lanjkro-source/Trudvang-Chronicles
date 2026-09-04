@@ -58,9 +58,9 @@ function attachListeners(message, html) {
   html.querySelectorAll("[data-action='apply-fear']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();
-      const targets = Array.from(game.user?.targets || []).map(token => token.actor).filter(actor => actor?.type === "character" && actor.isOwner);
-      if (!targets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCharacterFearTargets"));
-      const results = await Promise.all(targets.map(actor => actor.applyFearFactor(button.dataset.fear)));
+      const controlledActors = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).filter(actor => actor?.type === "character" && actor.isOwner);
+      if (!controlledActors.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledFearCharacters"));
+      const results = await Promise.all(controlledActors.map(actor => actor.applyFearFactor(button.dataset.fear)));
       const applied = results.reduce((total, result) => total + Number(result?.applied || 0), 0);
       ui.notifications.info(game.i18n.format("TRUDVANG.Notification.FearApplied", {targets: results.filter(Boolean).length, amount: applied}));
     });
