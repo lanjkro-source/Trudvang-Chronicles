@@ -326,6 +326,23 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
   });
 }
 
+/** Gather the encounter-specific modifiers applied to an NPC's fear-factor roll. */
+export async function fearFactorDialog({title, factor}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const content = `<div class="trudvang roll-dialog fear-factor-dialog">
+    <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.FearFactorBase", {factor}))}</p>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AcclimatizationModifier"))}</label><input name="acclimatization" type="number" value="0"></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationalModifier"))}</label><input name="situational" type="number" value="0"></div>
+  </div>`;
+  return DialogClass.wait({window: {title}, content, buttons: [
+    {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+      const root = button.form ?? dialog.element;
+      return {acclimatization: Number(root.querySelector("[name=acclimatization]")?.value || 0), situational: Number(root.querySelector("[name=situational]")?.value || 0)};
+    }},
+    {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+  ], modal: false, rejectClose: false});
+}
+
 export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];

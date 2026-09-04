@@ -17,3 +17,20 @@ export function resolveInsanityState({fear = 0, insane = false} = {}) {
   if (value <= 40) return false;
   return Boolean(insane);
 }
+
+/** Parse the NPC fear-factor notation, e.g. `1d10 (JO 8-10)`. */
+export function parseFearFactor(value = "") {
+  const match = String(value || "").trim().match(/^(\d*)d(\d+)(?:\s*\(\s*(?:JO|O)\s*(\d+)(?:\s*-\s*\d+)?\s*\))?$/i);
+  if (!match) return {dice: 1, faces: 10, threshold: 0, valid: false};
+  return {dice: Math.max(1, Number(match[1] || 1)), faces: Math.max(2, Number(match[2] || 10)), threshold: Math.max(0, Number(match[3] || 0)), valid: true};
+}
+
+/** Store a factor in the book's familiar notation while the sheet edits its two components. */
+export function formatFearFactor({dice = 1, faces = 10, threshold = 0} = {}) {
+  const parsedDice = String(dice || "").trim().match(/^(\d*)d(\d+)$/i);
+  const notation = parsedDice
+    ? `${Math.max(1, Number(parsedDice[1] || 1))}d${Math.max(2, Number(parsedDice[2] || 10))}`
+    : `${Math.max(1, Number(dice) || 1)}d${Math.max(2, Number(faces) || 10)}`;
+  const openRoll = Math.max(0, Number(threshold) || 0);
+  return openRoll ? `${notation} (JO ${openRoll}-10)` : notation;
+}

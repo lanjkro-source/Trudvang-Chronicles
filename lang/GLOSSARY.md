@@ -148,6 +148,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Damage` | Damage | Dégâts |
 | `TRUDVANG.Action.Parry` | Parry | Parer |
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
+| `TRUDVANG.Action.RollFearFactor` | Roll Fear Factor | Lancer le facteur de peur |
+| `TRUDVANG.Action.ShowDetails` | Show details | Afficher le détail |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
 | `TRUDVANG.Action.RestForNight` | Spend a night sleeping | Passer une nuit de sommeil |
 | `TRUDVANG.Action.RollSurvivalRounds` | Survival rounds | Rounds de survie |
@@ -673,6 +675,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.dying` | Dying | Mourant |
 | `TRUDVANG.Damage.dead` | Dead | Mort |
 
+## `TRUDVANG.Fear`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Fear.ApplyToTargets` | Apply to targeted characters | Appliquer aux personnages ciblés |
+
 ## `TRUDVANG.Status`
 
 | Clé | English | Français |
@@ -753,6 +761,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.RangeLongConsequence` | SV -10; damage halved. | VC -10 ; dégâts divisés par deux. |
 | `TRUDVANG.Dialog.TargetInMelee` | Target in melee (SV -5) | Cible en mêlée (VC -5) |
 | `TRUDVANG.Dialog.TargetMoving` | Moving target (SV -10) | Cible en mouvement (VC -10) |
+| `TRUDVANG.Dialog.FearFactorBase` | Fear factor: {factor} | Facteur de peur : {factor} |
+| `TRUDVANG.Dialog.AcclimatizationModifier` | Acclimatization | Acclimatation |
+| `TRUDVANG.Dialog.SituationalModifier` | Situational modifier | Modificateur situationnel |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
 | `TRUDVANG.Dialog.FinalVitnerCost` | Final Vitner cost | Coût final en vitner |
 | `TRUDVANG.Dialog.TraitRollMode` | Roll mode | Mode de jet |
@@ -788,6 +799,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Warning.CannotApplyDamage` | You cannot apply this damage to that target. | Vous ne pouvez pas appliquer ces dégâts à cette cible. |
+| `TRUDVANG.Warning.InvalidFearFactor` | The fear factor must use the form 1d10 or 1d10 (OR 8-10). | Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10). |
+| `TRUDVANG.Warning.NoCharacterFearTargets` | Select at least one character to apply Fear to. | Sélectionnez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
@@ -872,6 +885,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.TargetInMelee` | Target engaged in melee: -5 SV. | Cible engagée dans un combat au corps à corps : -5 à la VC. |
 | `TRUDVANG.Calculation.TargetMoving` | Moving target: -10 SV. | Cible en mouvement : -10 à la VC. |
 | `TRUDVANG.Calculation.LongRangeDamage` | Long-range target: {before} → {after} damage (halved). | Cible à longue portée : {before} → {after} dégâts (divisés par deux). |
+| `TRUDVANG.Calculation.FearAcclimatization` | Acclimatization: {amount} Fear point(s). | Acclimatation : {amount} point(s) de peur. |
+| `TRUDVANG.Calculation.FearSituation` | Situation: {amount} Fear point(s). | Situation : {amount} point(s) de peur. |
 
 ## `TRUDVANG.Calculation.Equipment`
 
@@ -924,6 +939,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Notification.DamageApplied` | {damage} damage applied to {target}. | {damage} dégâts appliqués à {target}. |
 | `TRUDVANG.Notification.DefenseDamageApplied` | {damage} damage applied to {item}. | {damage} dégâts appliqués à {item}. |
+| `TRUDVANG.Notification.FearApplied` | {amount} Fear point(s) applied to {targets} character(s). | {amount} point(s) de peur appliqué(s) à {targets} personnage(s). |
 | `TRUDVANG.Notification.RestCompleted` | Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear. | Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur. |
 | `TRUDVANG.Notification.NotRestored` | not restored | non renouvelée |
 | `TRUDVANG.Notification.CalmFear` | {actor} calms down: −{amount} Fear Points ({before} → {after}). | {actor} se rassérène : −{amount} points de peur ({before} → {after}). |

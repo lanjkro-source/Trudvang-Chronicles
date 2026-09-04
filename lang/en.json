@@ -115,6 +115,8 @@
       "Damage": "Damage",
       "Parry": "Parry",
       "RollDamage": "Roll Damage",
+      "RollFearFactor": "Roll Fear Factor",
+      "ShowDetails": "Show details",
       "RollInitiative": "Roll Initiative",
       "RestForNight": "Spend a night sleeping",
       "RollSurvivalRounds": "Survival rounds",
@@ -573,6 +575,9 @@
       "dying": "Dying",
       "dead": "Dead"
     },
+    "Fear": {
+      "ApplyToTargets": "Apply to targeted characters"
+    },
     "Status": {
       "RecoveryDaily": "{amount} BP/day",
       "RecoveryEveryDays": "{amount} BP/{days} days",
@@ -638,6 +643,9 @@
       "RangeLongConsequence": "SV -10; damage halved.",
       "TargetInMelee": "Target in melee (SV -5)",
       "TargetMoving": "Moving target (SV -10)",
+      "FearFactorBase": "Fear factor: {factor}",
+      "AcclimatizationModifier": "Acclimatization",
+      "SituationalModifier": "Situational modifier",
       "Strenuous": "Strenuous effort",
       "FinalVitnerCost": "Final Vitner cost",
       "TraitRollMode": "Roll mode",
@@ -664,6 +672,8 @@
     },
     "Warning": {
       "CannotApplyDamage": "You cannot apply this damage to that target.",
+      "InvalidFearFactor": "The fear factor must use the form 1d10 or 1d10 (OR 8-10).",
+      "NoCharacterFearTargets": "Select at least one character to apply Fear to.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
@@ -739,6 +749,8 @@
       "TargetInMelee": "Target engaged in melee: -5 SV.",
       "TargetMoving": "Moving target: -10 SV.",
       "LongRangeDamage": "Long-range target: {before} → {after} damage (halved).",
+      "FearAcclimatization": "Acclimatization: {amount} Fear point(s).",
+      "FearSituation": "Situation: {amount} Fear point(s).",
       "Equipment": {
         "TwoHandedWeaponActions": "Two-Handed Weapons level {threshold}: +{amount} weapon action.",
         "StrengthDamage": "Strength: {amount} melee damage.",
@@ -779,6 +791,7 @@
     "Notification": {
       "DamageApplied": "{damage} damage applied to {target}.",
       "DefenseDamageApplied": "{damage} damage applied to {item}.",
+      "FearApplied": "{amount} Fear point(s) applied to {targets} character(s).",
       "RestCompleted": "Rest complete: +{health} BP, Vitner restored ({vitner}), Divinity {divinity}, −{fear} Fear.",
       "NotRestored": "not restored",
       "CalmFear": "{actor} calms down: −{amount} Fear Points ({before} → {after}).",

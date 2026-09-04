@@ -115,6 +115,8 @@
       "Damage": "Dégâts",
       "Parry": "Parer",
       "RollDamage": "Jet de Dégâts",
+      "RollFearFactor": "Lancer le facteur de peur",
+      "ShowDetails": "Afficher le détail",
       "RollInitiative": "Jet d'initiative",
       "RestForNight": "Passer une nuit de sommeil",
       "RollSurvivalRounds": "Rounds de survie",
@@ -571,6 +573,9 @@
       "dying": "Mourant",
       "dead": "Mort"
     },
+    "Fear": {
+      "ApplyToTargets": "Appliquer aux personnages ciblés"
+    },
     "Status": {
       "RecoveryDaily": "{amount} PS/jour",
       "RecoveryEveryDays": "{amount} PS/{days} jours",
@@ -636,6 +641,9 @@
       "RangeLongConsequence": "VC -10 ; dégâts divisés par deux.",
       "TargetInMelee": "Cible en mêlée (VC -5)",
       "TargetMoving": "Cible en mouvement (VC -10)",
+      "FearFactorBase": "Facteur de peur : {factor}",
+      "AcclimatizationModifier": "Acclimatation",
+      "SituationalModifier": "Modificateur situationnel",
       "Strenuous": "Renforcement",
       "FinalVitnerCost": "Coût final en vitner",
       "TraitRollMode": "Mode de jet",
@@ -662,6 +670,8 @@
     },
     "Warning": {
       "CannotApplyDamage": "Vous ne pouvez pas appliquer ces dégâts à cette cible.",
+      "InvalidFearFactor": "Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10).",
+      "NoCharacterFearTargets": "Sélectionnez au moins un personnage auquel appliquer la peur.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
@@ -737,6 +747,8 @@
       "TargetInMelee": "Cible engagée dans un combat au corps à corps : -5 à la VC.",
       "TargetMoving": "Cible en mouvement : -10 à la VC.",
       "LongRangeDamage": "Cible à longue portée : {before} → {after} dégâts (divisés par deux).",
+      "FearAcclimatization": "Acclimatation : {amount} point(s) de peur.",
+      "FearSituation": "Situation : {amount} point(s) de peur.",
       "Equipment": {
         "TwoHandedWeaponActions": "Armes à deux mains au niveau {threshold} : +{amount} action d’arme.",
         "StrengthDamage": "Force : {amount} aux dégâts de corps à corps.",
@@ -777,6 +789,7 @@
     "Notification": {
       "DamageApplied": "{damage} dégâts appliqués à {target}.",
       "DefenseDamageApplied": "{damage} dégâts appliqués à {item}.",
+      "FearApplied": "{amount} point(s) de peur appliqué(s) à {targets} personnage(s).",
       "RestCompleted": "Repos terminé : +{health} PS, vitner renouvelé ({vitner}), divinité {divinity}, −{fear} peur.",
       "NotRestored": "non renouvelée",
       "CalmFear": "{actor} se rassérène : −{amount} points de peur ({before} → {after}).",

@@ -565,6 +565,12 @@
 .trudvang-sheet.item-sheet .damage-parts .damage-seuil,
 .trudvang-sheet.item-sheet .damage-parts .damage-bonus { width: 56px; min-width: 56px; padding: 0 3px; text-align: center; }
 .trudvang-sheet.item-sheet .damage-parts .damage-plus { color: var(--trudvang-muted); font-weight: 700; }
+.trudvang-sheet.npc-sheet .fear-factor-parts { display: flex; align-items: center; gap: 4px; }
+.trudvang-sheet.npc-sheet .fear-factor-parts input:first-child { min-width: 0; flex: 1; }
+.trudvang-sheet.npc-sheet .fear-factor-parts input:last-child { width: 38px; padding: 0 2px; text-align: center; }
+.trudvang-sheet.npc-sheet .fear-open { color: var(--trudvang-muted); font-weight: 700; }
+.trudvang-sheet.npc-sheet .fear-factor-roll { align-self: end; min-height: 27px; }
+.trudvang.chat-card.fear .damage-result { display: block; border: 0; background: transparent; cursor: pointer; }
 .trudvang-sheet.item-sheet .range-parts { display: flex; align-items: center; gap: 4px; }
 .trudvang-sheet.item-sheet .range-parts input { flex: 1; min-width: 0; }
 .trudvang-sheet.item-sheet .range-parts .unit-suffix { font-size: .75rem; color: var(--trudvang-muted); }

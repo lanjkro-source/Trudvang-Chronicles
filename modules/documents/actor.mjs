@@ -1,11 +1,11 @@
 import { TRUDVANG } from "../config.mjs";
-import { combatPointDialog, initiativeDialog, magicDialog, modifierDialog, openD10, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatPointDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
-import { resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
+import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -952,6 +952,36 @@ export class TrudvangActor extends BaseActor {
       rolls: [roll]
     });
     return {roll, recovered, before, after};
+  }
+
+  /** Add a rolled fear factor to this character after its personal mitigation. */
+  async applyFearFactor(factor) {
+    if (this.type !== "character" || !this.isOwner) return null;
+    const rolled = Math.max(0, Math.trunc(Number(factor) || 0));
+    const modifier = Number(this.system.fearFactorModifier || 0);
+    const applied = Math.max(0, rolled + modifier);
+    const stored = Number(this._source.system.resources?.fear?.value || 0);
+    await this.update({"system.resources.fear.value": stored + applied});
+    return {rolled, modifier, applied};
+  }
+
+  /** Roll this NPC's fear factor and create an actionable compact chat card. */
+  async rollFearFactor() {
+    if (this.type !== "npc") return null;
+    const factor = parseFearFactor(this.system.details?.fearFactor);
+    if (!factor.valid) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidFearFactor"));
+    const notation = `${factor.dice}d${factor.faces}${factor.threshold ? ` (JO ${factor.threshold}-10)` : ""}`;
+    const options = await fearFactorDialog({title: game.i18n.localize("TRUDVANG.Action.RollFearFactor"), factor: notation});
+    if (!options) return null;
+    const modifier = Number(options.acclimatization || 0) + Number(options.situational || 0);
+    const roll = await openDice({dice: factor.dice, faces: factor.faces, threshold: factor.threshold, modifier});
+    const modifierDetails = [
+      ...(Number(options.acclimatization || 0) ? [game.i18n.format("TRUDVANG.Calculation.FearAcclimatization", {amount: Number(options.acclimatization)})] : []),
+      ...(Number(options.situational || 0) ? [game.i18n.format("TRUDVANG.Calculation.FearSituation", {amount: Number(options.situational)})] : [])
+    ];
+    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/fear-card.hbs", {actorName: this.name, actorImg: this.img, total: Math.max(0, roll.total), detail: roll.rolls.join(" + "), factor: notation, modifierDetails});
+    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: roll.diceRolls});
+    return roll;
   }
 
   /** Roll the final life-spark duration for a dying character. */

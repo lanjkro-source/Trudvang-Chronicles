@@ -5,7 +5,7 @@ import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
-import { resolveFearStatus } from "../rules/fear-resolver.mjs";
+import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -57,6 +57,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "rest-for-night": TrudvangActorSheet.#onAction,
       "calm-fear": TrudvangActorSheet.#onAction,
       "roll-survival-rounds": TrudvangActorSheet.#onAction,
+      "roll-fear-factor": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
@@ -96,6 +97,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.editable = this.isEditable;
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
+    context.fearFactor = parseFearFactor(this.actor.system.details?.fearFactor);
     const body = this.actor.system.resources.body;
     const fear = this.actor.system.resources.fear;
     const recovery = this.actor.system.healthRecovery ?? {amount: 1, days: 1};
@@ -405,6 +407,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "rest-for-night": return this.actor.restForNight();
       case "calm-fear": return this.actor.calmFear();
       case "roll-survival-rounds": return this.actor.rollSurvivalRounds();
+      case "roll-fear-factor": return this.actor.rollFearFactor();
       case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();
       case "movement-action": return this.actor.rollCombatMovement();
@@ -449,6 +452,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   static async #onSubmit(event, form, formData) {
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
+    const fearDice = formData.object["trudvang.fearFactorDice"];
+    const fearThreshold = formData.object["trudvang.fearFactorThreshold"];
+    if (fearDice !== undefined || fearThreshold !== undefined) {
+      foundry.utils.setProperty(changes, "system.details.fearFactor", formatFearFactor({dice: fearDice, faces: 10, threshold: fearThreshold}));
+      delete changes.trudvang;
+    }
     const sourceResources = this.actor._source.system.resources || {};
     const maxModifiers = {body: "bodyMax", combat: "combatMax", vitner: "vitnerMax", divinity: "divinityMax"};
 

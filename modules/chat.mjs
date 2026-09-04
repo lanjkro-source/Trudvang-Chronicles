@@ -55,6 +55,16 @@ function attachListeners(message, html) {
       ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DamageApplied", {target: actor.name, damage: result.bodyDamage}));
     });
   });
+  html.querySelectorAll("[data-action='apply-fear']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const targets = Array.from(game.user?.targets || []).map(token => token.actor).filter(actor => actor?.type === "character" && actor.isOwner);
+      if (!targets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCharacterFearTargets"));
+      const results = await Promise.all(targets.map(actor => actor.applyFearFactor(button.dataset.fear)));
+      const applied = results.reduce((total, result) => total + Number(result?.applied || 0), 0);
+      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.FearApplied", {targets: results.filter(Boolean).length, amount: applied}));
+    });
+  });
   html.querySelectorAll("[data-action='apply-defense-damage']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();
