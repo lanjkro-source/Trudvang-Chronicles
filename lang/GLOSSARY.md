@@ -1048,7 +1048,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Weapons` | Trudvang - Weapons | Trudvang - Armes |
 | `TRUDVANG.Content.Folder.Armor` | Trudvang - Armor & Shields | Trudvang - Armures & Boucliers |
 | `TRUDVANG.Content.Folder.Gear` | Trudvang - Gear & Extracts | Trudvang - Équipements & Extraits |
-| `TRUDVANG.Content.Folder.Equipment` | Equipment | Équipement |
+| `TRUDVANG.Content.Folder.Equipment` | Trudvang - Equipment | Trudvang - Équipements |
+| `TRUDVANG.Content.Folder.Extracts` | Trudvang - Extracts | Trudvang - Extraits |
 | `TRUDVANG.Content.Folder.Races` | Races | Races |
 | `TRUDVANG.Content.Folder.Archetypes` | Archetypes | Archétypes |
 | `TRUDVANG.Content.Folder.Magic` | Trudvang - Tablets & Magic | Trudvang - Tables & Magie |
@@ -1070,6 +1071,19 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Source.GMG90` | Game Master's Guide, p. 90 | Guide du maître, p. 90 |
 | `TRUDVANG.Content.Source.GMG93` | Game Master's Guide, p. 93 | Guide du maître, p. 93 |
 | `TRUDVANG.Content.Source.GMG94` | Game Master's Guide, p. 94 | Guide du maître, p. 94 |
+| `TRUDVANG.Content.Source.Rulebook111` | Rulebook, p. 111 | Livre des règles, p. 111 |
+| `TRUDVANG.Content.Source.Rulebook112` | Rulebook, p. 112 | Livre des règles, p. 112 |
+| `TRUDVANG.Content.Source.Rulebook114` | Rulebook, p. 114 | Livre des règles, p. 114 |
+| `TRUDVANG.Content.Source.Rulebook116` | Rulebook, p. 116 | Livre des règles, p. 116 |
+| `TRUDVANG.Content.Source.Rulebook118` | Rulebook, p. 118 | Livre des règles, p. 118 |
+| `TRUDVANG.Content.Source.Rulebook119` | Rulebook, p. 119 | Livre des règles, p. 119 |
+| `TRUDVANG.Content.Source.Rulebook126` | Rulebook, p. 126 | Livre des règles, p. 126 |
+| `TRUDVANG.Content.Source.Rulebook127` | Rulebook, p. 127 | Livre des règles, p. 127 |
+| `TRUDVANG.Content.Source.Rulebook131` | Rulebook, p. 131 | Livre des règles, p. 131 |
+| `TRUDVANG.Content.Source.Rulebook132` | Rulebook, p. 132 | Livre des règles, p. 132 |
+| `TRUDVANG.Content.Source.Rulebook133` | Rulebook, p. 133 | Livre des règles, p. 133 |
+| `TRUDVANG.Content.Source.Rulebook134` | Rulebook, p. 134 | Livre des règles, p. 134 |
+| `TRUDVANG.Content.Source.Rulebook135` | Rulebook, p. 135 | Livre des règles, p. 135 |
 | `TRUDVANG.Content.Source.PHB47` | Player's Handbook, p. 47 | Livre des règles, p. 47 |
 | `TRUDVANG.Content.Source.PHB48` | Player's Handbook, p. 48 | Livre des règles, p. 48 |
 | `TRUDVANG.Content.Source.PHB50` | Player's Handbook, p. 50 | Livre des règles, p. 50 |
@@ -1079,6 +1093,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Source.PHB74` | Player's Handbook, p. 74 | Livre des règles, p. 74 |
 | `TRUDVANG.Content.Source.PHB92` | Player's Handbook, p. 92 | Livre des règles, p. 92 |
 | `TRUDVANG.Content.Source.PHB201` | Player's Handbook, p. 201 | Livre des règles, p. 201 |
+
+## `TRUDVANG.Content.ExtractType`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.ExtractType.Alteration` | Alteration | Altération |
+| `TRUDVANG.Content.ExtractType.Healing` | Healing | Soin |
+| `TRUDVANG.Content.ExtractType.Poison` | Poison | Toxique |
+
+## `TRUDVANG.Content.Duration`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Duration.OneDay` | 1 day | 1 jour |
+| `TRUDVANG.Content.Duration.TwoHours` | 2 hours | 2 heures |
+| `TRUDVANG.Content.Duration.TwentyFourHours` | 24 hours | 24 heures |
+| `TRUDVANG.Content.Duration.OneD6Rounds` | 1d6 rounds | 1d6 tours |
+| `TRUDVANG.Content.Duration.EightHours` | 8 hours | 8 heures |
+| `TRUDVANG.Content.Duration.OneD6Minutes` | 1d6 minutes | 1d6 minutes |
+| `TRUDVANG.Content.Duration.FourMinutes` | 4 minutes | 4 minutes |
+| `TRUDVANG.Content.Duration.OneHour` | 1 hour | 1 heure |
+| `TRUDVANG.Content.Duration.SixHours` | 6 hours | 6 heures |
 
 ## `TRUDVANG.Content.Item.Seax`
 
@@ -1269,9 +1305,665 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Item.Manetter.Name` | Manetter | Manetter |
+| `TRUDVANG.Content.Item.Manetter.Name` | Mandrake | Mandrape |
 | `TRUDVANG.Content.Item.Manetter.Description` | A dangerous poison that slowly strangles its victim and ignores armor and natural protection. | Un poison dangereux qui étrangle lentement sa victime et ignore les armures et la protection naturelle. |
 | `TRUDVANG.Content.Item.Manetter.Effect` | Roll 1d20 + 2 - Constitution and consult the Extract Effect table. Damage is removed directly from Body Points. | Lancez 1d20 + 2 - Constitution et consultez la table des effets des extraits. Les dégâts sont retirés directement aux points de santé. |
+
+## `TRUDVANG.Content.Item.Klubb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Klubb.Name` | Klubb (club) | Klubb (massue) |
+
+## `TRUDVANG.Content.Item.KrumSwerd`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.KrumSwerd.Name` | Krum swerd (scimitar) | Krum swerd (cimeterre) |
+
+## `TRUDVANG.Content.Item.LillSpjot`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.LillSpjot.Name` | Lill spjót (short spear) | Lill spjót (lance courte) |
+
+## `TRUDVANG.Content.Item.NagliKlubb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.NagliKlubb.Name` | Nagli klubb (spiked club) | Nagli klubb (massue à pointes) |
+
+## `TRUDVANG.Content.Item.SplitAxi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SplitAxi.Name` | Split axi (hand axe) | Split axi (hache à une main) |
+
+## `TRUDVANG.Content.Item.Stafur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Stafur.Name` | Stafur (staff) | Stafur (bâton) |
+
+## `TRUDVANG.Content.Item.BardaFaldir`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BardaFaldir.Name` | Barda faldir (battle flail) | Barda faldir (fléau de bataille) |
+
+## `TRUDVANG.Content.Item.BardaHammri`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BardaHammri.Name` | Barda hammri (battle hammer) | Barda hammri (marteau de bataille) |
+
+## `TRUDVANG.Content.Item.BardaKlot`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BardaKlot.Name` | Barda klót (battle chain) | Barda klót (chaîne de bataille) |
+
+## `TRUDVANG.Content.Item.BardaMakir`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BardaMakir.Name` | Barda makir (battle mace) | Barda makir (masse de bataille) |
+
+## `TRUDVANG.Content.Item.BardaSwerd`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BardaSwerd.Name` | Barda swerd (battle sword) | Barda swerd (épée de bataille) |
+
+## `TRUDVANG.Content.Item.BastjurKedja`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BastjurKedja.Name` | Bastjur kedjá (troll chain) | Bastjur kedjá (chaîne troll) |
+
+## `TRUDVANG.Content.Item.DropiAxi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.DropiAxi.Name` | Dropi axi (pendulum axe) | Dropi axi (hache pendule) |
+
+## `TRUDVANG.Content.Item.Hakk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Hakk.Name` | Hakk (war pick) | Hakk (bec-de-corbeau) |
+
+## `TRUDVANG.Content.Item.Miekka`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Miekka.Name` | Miekka | Miekka |
+
+## `TRUDVANG.Content.Item.StaafSpjot`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.StaafSpjot.Name` | Staaf spjót (hunting spear) | Staaf spjót (lance de chasse) |
+
+## `TRUDVANG.Content.Item.StakkSwerd`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.StakkSwerd.Name` | Stakk swerd (arming sword) | Stakk swerd (épée d’armes) |
+
+## `TRUDVANG.Content.Item.StjornMakir`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.StjornMakir.Name` | Stjorn makir (morning star) | Stjorn makir (étoile du matin) |
+
+## `TRUDVANG.Content.Item.BreidSpjot`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BreidSpjot.Name` | Breid spjót (broad spear) | Breid spjót (lance à lame large) |
+
+## `TRUDVANG.Content.Item.TveiFaldir`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TveiFaldir.Name` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
+
+## `TRUDVANG.Content.Item.TveiHakk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TveiHakk.Name` | Tvei hakk (two-handed pick) | Tvei hakk (pioche à deux mains) |
+
+## `TRUDVANG.Content.Item.TveiHammri`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TveiHammri.Name` | Tvei hammri (two-handed hammer) | Tvei hammri (merlin) |
+
+## `TRUDVANG.Content.Item.TveiKlubb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TveiKlubb.Name` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
+
+## `TRUDVANG.Content.Item.TveBogi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TveBogi.Name` | Tve bogi (composite bow) | Tve bogi (arc composite) |
+
+## `TRUDVANG.Content.Item.Slingu`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Slingu.Name` | Slingu (sling) | Slingu (fronde) |
+
+## `TRUDVANG.Content.Item.StafurSlingu`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.StafurSlingu.Name` | Stafur slingu (staff sling) | Stafur slingu (fronde à manche) |
+
+## `TRUDVANG.Content.Item.VolkKrossbogur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.VolkKrossbogur.Name` | Volk krossbogur (light crossbow) | Volk krossbogur (arbalète légère) |
+
+## `TRUDVANG.Content.Item.TunkurKrossbogur`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.TunkurKrossbogur.Name` | Tunkur krossbogur (heavy crossbow) | Tunkur krossbogur (arbalète lourde) |
+
+## `TRUDVANG.Content.Item.ThickFabric`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ThickFabric.Name` | Thick fabric armor | Vêtement matelassé |
+
+## `TRUDVANG.Content.Item.MetalReinforcedLeather`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MetalReinforcedLeather.Name` | Metal-reinforced leather armor | Cuir renforcé de métal |
+
+## `TRUDVANG.Content.Item.ScaleReinforcedChainMail`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ScaleReinforcedChainMail.Name` | Scale-reinforced chain mail | Cotte de mailles renforcée d’écailles |
+
+## `TRUDVANG.Content.Item.ScalePlating`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ScalePlating.Name` | Scale armor | Armure d’écailles |
+
+## `TRUDVANG.Content.Item.DoubleChainMail`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.DoubleChainMail.Name` | Double chain mail | Double cotte de mailles |
+
+## `TRUDVANG.Content.Item.BandedArmor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BandedArmor.Name` | Banded armor | Armure à bandes |
+
+## `TRUDVANG.Content.Item.SmallFurShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SmallFurShield.Name` | Small fur-reinforced shield | Petit bouclier renforcé de fourrure |
+
+## `TRUDVANG.Content.Item.MediumFurShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MediumFurShield.Name` | Medium fur-reinforced shield | Bouclier moyen renforcé de fourrure |
+
+## `TRUDVANG.Content.Item.LargeFurShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.LargeFurShield.Name` | Large fur-reinforced shield | Grand bouclier renforcé de fourrure |
+
+## `TRUDVANG.Content.Item.SmallMetalShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SmallMetalShield.Name` | Small metal-reinforced shield | Petit bouclier renforcé de métal |
+
+## `TRUDVANG.Content.Item.MediumMetalShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MediumMetalShield.Name` | Medium metal-reinforced shield | Bouclier moyen renforcé de métal |
+
+## `TRUDVANG.Content.Item.LargeMetalShield`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.LargeMetalShield.Name` | Large metal-reinforced shield | Grand bouclier renforcé de métal |
+
+## `TRUDVANG.Content.Item.SlaveClothes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SlaveClothes.Name` | Slave clothes | Vêtements d’esclave |
+
+## `TRUDVANG.Content.Item.PoorClothes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.PoorClothes.Name` | Poor clothes | Vêtements pauvres |
+
+## `TRUDVANG.Content.Item.AverageClothes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.AverageClothes.Name` | Common clothes | Vêtements ordinaires |
+
+## `TRUDVANG.Content.Item.RichClothes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.RichClothes.Name` | Rich clothes | Vêtements riches |
+
+## `TRUDVANG.Content.Item.RoyalClothes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.RoyalClothes.Name` | Royal clothes | Vêtements royaux |
+
+## `TRUDVANG.Content.Item.RoyalAttire`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.RoyalAttire.Name` | Royal attire | Tenue royale |
+
+## `TRUDVANG.Content.Item.ArmamentKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitSmall.Name` | Small armament kit | Petit paquetage d’armement |
+
+## `TRUDVANG.Content.Item.ArmamentKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitOrdinary.Name` | Ordinary armament kit | Paquetage d’armement ordinaire |
+
+## `TRUDVANG.Content.Item.ArmamentKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitLarge.Name` | Large armament kit | Grand paquetage d’armement |
+
+## `TRUDVANG.Content.Item.CraftKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitSmall.Name` | Small craft kit | Petit paquetage d’artisanat |
+
+## `TRUDVANG.Content.Item.CraftKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitOrdinary.Name` | Ordinary craft kit | Paquetage d’artisanat ordinaire |
+
+## `TRUDVANG.Content.Item.CraftKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitLarge.Name` | Large craft kit | Grand paquetage d’artisanat |
+
+## `TRUDVANG.Content.Item.BurglaryKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitSmall.Name` | Small burglary kit | Petit paquetage de cambriolage |
+
+## `TRUDVANG.Content.Item.BurglaryKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitOrdinary.Name` | Ordinary burglary kit | Paquetage de cambriolage ordinaire |
+
+## `TRUDVANG.Content.Item.BurglaryKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitLarge.Name` | Large burglary kit | Grand paquetage de cambriolage |
+
+## `TRUDVANG.Content.Item.CampingKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitSmall.Name` | Small camping kit | Petit paquetage de campement |
+
+## `TRUDVANG.Content.Item.CampingKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitOrdinary.Name` | Ordinary camping kit | Paquetage de campement ordinaire |
+
+## `TRUDVANG.Content.Item.CampingKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitLarge.Name` | Large camping kit | Grand paquetage de campement |
+
+## `TRUDVANG.Content.Item.HuntingKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitSmall.Name` | Small hunting kit | Petit paquetage de chasse |
+
+## `TRUDVANG.Content.Item.HuntingKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitOrdinary.Name` | Ordinary hunting kit | Paquetage de chasse ordinaire |
+
+## `TRUDVANG.Content.Item.HuntingKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitLarge.Name` | Large hunting kit | Grand paquetage de chasse |
+
+## `TRUDVANG.Content.Item.WritingKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitSmall.Name` | Small writing kit | Petit paquetage d’écriture |
+
+## `TRUDVANG.Content.Item.WritingKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitOrdinary.Name` | Ordinary writing kit | Paquetage d’écriture ordinaire |
+
+## `TRUDVANG.Content.Item.WritingKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitLarge.Name` | Large writing kit | Grand paquetage d’écriture |
+
+## `TRUDVANG.Content.Item.MusicKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitSmall.Name` | Small music kit | Petit paquetage de musique |
+
+## `TRUDVANG.Content.Item.MusicKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitOrdinary.Name` | Ordinary music kit | Paquetage de musique ordinaire |
+
+## `TRUDVANG.Content.Item.MusicKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitLarge.Name` | Large music kit | Grand paquetage de musique |
+
+## `TRUDVANG.Content.Item.FishingKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitSmall.Name` | Small fishing kit | Petit paquetage de pêche |
+
+## `TRUDVANG.Content.Item.FishingKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitOrdinary.Name` | Ordinary fishing kit | Paquetage de pêche ordinaire |
+
+## `TRUDVANG.Content.Item.FishingKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitLarge.Name` | Large fishing kit | Grand paquetage de pêche |
+
+## `TRUDVANG.Content.Item.HealingKitSmall`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitSmall.Name` | Small healing kit | Petit paquetage de soins |
+
+## `TRUDVANG.Content.Item.HealingKitOrdinary`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitOrdinary.Name` | Ordinary healing kit | Paquetage de soins ordinaire |
+
+## `TRUDVANG.Content.Item.HealingKitLarge`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitLarge.Name` | Large healing kit | Grand paquetage de soins |
+
+## `TRUDVANG.Content.Item.ArmamentKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitBasic.Name` | Basic armament kit | Paquetage d’armement basique |
+
+## `TRUDVANG.Content.Item.ArmamentKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitStandard.Name` | Standard armament kit | Paquetage d’armement standard |
+
+## `TRUDVANG.Content.Item.ArmamentKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.ArmamentKitComplete.Name` | Complete armament kit | Paquetage d’armement complet |
+
+## `TRUDVANG.Content.Item.CraftKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitBasic.Name` | Basic craft kit | Paquetage d’artisanat basique |
+
+## `TRUDVANG.Content.Item.CraftKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitStandard.Name` | Standard craft kit | Paquetage d’artisanat standard |
+
+## `TRUDVANG.Content.Item.CraftKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CraftKitComplete.Name` | Complete craft kit | Paquetage d’artisanat complet |
+
+## `TRUDVANG.Content.Item.BurglaryKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitBasic.Name` | Basic burglary kit | Paquetage de cambriolage basique |
+
+## `TRUDVANG.Content.Item.BurglaryKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitStandard.Name` | Standard burglary kit | Paquetage de cambriolage standard |
+
+## `TRUDVANG.Content.Item.BurglaryKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.BurglaryKitComplete.Name` | Complete burglary kit | Paquetage de cambriolage complet |
+
+## `TRUDVANG.Content.Item.CampingKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitBasic.Name` | Basic camping kit | Paquetage de campement basique |
+
+## `TRUDVANG.Content.Item.CampingKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitStandard.Name` | Standard camping kit | Paquetage de campement standard |
+
+## `TRUDVANG.Content.Item.CampingKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.CampingKitComplete.Name` | Complete camping kit | Paquetage de campement complet |
+
+## `TRUDVANG.Content.Item.HuntingKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitBasic.Name` | Basic hunting kit | Paquetage de chasse basique |
+
+## `TRUDVANG.Content.Item.HuntingKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitStandard.Name` | Standard hunting kit | Paquetage de chasse standard |
+
+## `TRUDVANG.Content.Item.HuntingKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HuntingKitComplete.Name` | Complete hunting kit | Paquetage de chasse complet |
+
+## `TRUDVANG.Content.Item.WritingKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitBasic.Name` | Basic writing kit | Paquetage d’écriture basique |
+
+## `TRUDVANG.Content.Item.WritingKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitStandard.Name` | Standard writing kit | Paquetage d’écriture standard |
+
+## `TRUDVANG.Content.Item.WritingKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.WritingKitComplete.Name` | Complete writing kit | Paquetage d’écriture complet |
+
+## `TRUDVANG.Content.Item.MusicKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitBasic.Name` | Basic music kit | Paquetage de musique basique |
+
+## `TRUDVANG.Content.Item.MusicKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitStandard.Name` | Standard music kit | Paquetage de musique standard |
+
+## `TRUDVANG.Content.Item.MusicKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.MusicKitComplete.Name` | Complete music kit | Paquetage de musique complet |
+
+## `TRUDVANG.Content.Item.FishingKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitBasic.Name` | Basic fishing kit | Paquetage de pêche basique |
+
+## `TRUDVANG.Content.Item.FishingKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitStandard.Name` | Standard fishing kit | Paquetage de pêche standard |
+
+## `TRUDVANG.Content.Item.FishingKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.FishingKitComplete.Name` | Complete fishing kit | Paquetage de pêche complet |
+
+## `TRUDVANG.Content.Item.HealingKitBasic`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitBasic.Name` | Basic healing kit | Paquetage de soins basique |
+
+## `TRUDVANG.Content.Item.HealingKitStandard`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitStandard.Name` | Standard healing kit | Paquetage de soins standard |
+
+## `TRUDVANG.Content.Item.HealingKitComplete`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.HealingKitComplete.Name` | Complete healing kit | Paquetage de soins complet |
+
+## `TRUDVANG.Content.Item.Argmurkla`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Argmurkla.Name` | Argmurkla | Argmurkla |
+| `TRUDVANG.Content.Item.Argmurkla.Effect` | Causes berserker rage and progressively strengthens attacks and Strength. | Déclenche une rage de berserker et renforce progressivement les attaques et la Force. |
+
+## `TRUDVANG.Content.Item.Gaveblom`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Gaveblom.Name` | Gaveblom | Gaveblom |
+| `TRUDVANG.Content.Item.Gaveblom.Effect` | Accelerates natural healing at an increasing rate. | Accélère la guérison naturelle à un rythme croissant. |
+
+## `TRUDVANG.Content.Item.Grindblom`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Grindblom.Name` | Grindblom | Grindblom |
+| `TRUDVANG.Content.Item.Grindblom.Effect` | Lets the user pass into the mists to cross obstacles, at the risk of becoming lost. | Fait passer son consommateur dans les brumes, pour traverser les obstacles au risque de s’y perdre. |
+
+## `TRUDVANG.Content.Item.Pustartobak`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Pustartobak.Name` | Pustartobak | Pustartobak |
+| `TRUDVANG.Content.Item.Pustartobak.Effect` | Inhaled spores obstruct breathing and inflict increasingly serious harm. | Les spores inhalées obstruent les voies respiratoires et infligent des dégâts croissants. |
+
+## `TRUDVANG.Content.Item.Svartljunghed`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Svartljunghed.Name` | Svartljunghed | Svartljunghed |
+| `TRUDVANG.Content.Item.Svartljunghed.Effect` | Numbs pain, eases fear, and can put the user to sleep. | Engourdit la douleur, apaise la peur et peut endormir le consommateur. |
+
+## `TRUDVANG.Content.Item.Tornrot`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Tornrot.Name` | Tornrot | Tornrot |
+| `TRUDVANG.Content.Item.Tornrot.Effect` | Suppresses pain and fatigue, reduces fear, and strengthens damage at the cost of weaker parries. | Supprime douleur et fatigue, réduit la peur puis renforce les dégâts, au prix de parades plus faibles. |
+
+## `TRUDVANG.Content.Item.Trollilles`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Trollilles.Name` | Trollilles | Trollilles |
+| `TRUDVANG.Content.Item.Trollilles.Effect` | Temporarily rejuvenates the user and increasingly protects against disease and poison. | Rajeunit temporairement et protège progressivement contre maladies et poisons. |
+
+## `TRUDVANG.Content.Item.Tungelin`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.Tungelin.Name` | Tungelin | Tungelin |
+| `TRUDVANG.Content.Item.Tungelin.Effect` | Progressively reduces the need for sleep. | Réduit progressivement le besoin de sommeil. |
 
 ## `TRUDVANG.Content.Item.AnimalVitner`
 
@@ -5386,6 +6078,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Journal.armorEncumbrance.Name` | Armour Encumbrance | Encombrement des armures |
 | `TRUDVANG.Content.Journal.armorEncumbrance.Content` | <p>This house table applies a more gradual progression of initiative and movement modifiers according to the armour's effective Encumbrance.</p><table><thead><tr><th>Effective Encumbrance</th><th>IM</th><th>MM</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0 m</td></tr><tr><td>1</td><td>0</td><td>0 m</td></tr><tr><td>2</td><td>−1</td><td>0 m</td></tr><tr><td>3</td><td>−1</td><td>−1 m</td></tr><tr><td>4</td><td>−1</td><td>−1 m</td></tr><tr><td>5</td><td>−2</td><td>−1 m</td></tr><tr><td>6</td><td>−2</td><td>−2 m</td></tr><tr><td>7</td><td>−3</td><td>−2 m</td></tr><tr><td>8</td><td>−3</td><td>−3 m</td></tr><tr><td>9</td><td>−4</td><td>−3 m</td></tr><tr><td>10</td><td>−5</td><td>−4 m</td></tr></tbody></table> | <p>Cette table maison applique une progression plus graduée des modificateurs d’initiative et de mouvement selon l’encombrement effectif de l’armure.</p><table><thead><tr><th>Encombrement effectif</th><th>MI</th><th>MM</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0 m</td></tr><tr><td>1</td><td>0</td><td>0 m</td></tr><tr><td>2</td><td>−1</td><td>0 m</td></tr><tr><td>3</td><td>−1</td><td>−1 m</td></tr><tr><td>4</td><td>−1</td><td>−1 m</td></tr><tr><td>5</td><td>−2</td><td>−1 m</td></tr><tr><td>6</td><td>−2</td><td>−2 m</td></tr><tr><td>7</td><td>−3</td><td>−2 m</td></tr><tr><td>8</td><td>−3</td><td>−3 m</td></tr><tr><td>9</td><td>−4</td><td>−3 m</td></tr><tr><td>10</td><td>−5</td><td>−4 m</td></tr></tbody></table> |
+
+## `TRUDVANG.Content.Journal.purchasePrices`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Journal.purchasePrices.Name` | Purchase prices | Prix d’achat |
+| `TRUDVANG.Content.Journal.purchasePrices.Content` | <p>Prices are in silver coins (sc), unless stated otherwise. Source: Rulebook, pp. 126–127.</p><h2>Goods</h2><table><thead><tr><th>Goods</th><th>Price</th></tr></thead><tbody><tr><td>Copper / bronze / iron</td><td>1 / 1.6 / 2.5 sc/kg</td></tr><tr><td>Silver / gold</td><td>100 / 1,000 sc/kg</td></tr><tr><td>Stone / wood</td><td>0.1 / 0.05 sc/kg</td></tr><tr><td>Wool and linen</td><td>1 sc/kg</td></tr><tr><td>Hare pelt / goat fur / cowhide</td><td>1 / 1.5 / 2.5 sc</td></tr><tr><td>Sheep hide / pig fur / boar hide</td><td>3 / 2 / 2 sc</td></tr><tr><td>Wolf pelt / bear pelt / mastomant fur</td><td>6 / 10 / 50 sc</td></tr></tbody></table><h2>Animals</h2><table><thead><tr><th>Animal</th><th>Price</th></tr></thead><tbody><tr><td>Hen / goat / pig</td><td>1 / 5 / 20 sc</td></tr><tr><td>Dairy cow / bull / ox</td><td>30 / 36 / 30 sc</td></tr><tr><td>Mule / horse / sled dog</td><td>25 / 50 / 8 sc</td></tr></tbody></table><h2>Food</h2><table><thead><tr><th>Food</th><th>Price</th></tr></thead><tbody><tr><td>Grain / bread / milk</td><td>0.2 sc/kg / 0.1 sc/kg / 0.1 sc/l</td></tr><tr><td>Dried meat / fish / fruit / turnips</td><td>0.5 / 0.4 / 0.3 / 0.1 sc/kg</td></tr><tr><td>Mead or beer / soured milk</td><td>0.2 / 0.15 sc/l</td></tr><tr><td>Fodder</td><td>0.1 sc/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Vehicle</th><th>Price</th></tr></thead><tbody><tr><td>Sledge / sled (2 / 4 seats)</td><td>2 / 6 / 10 sc</td></tr><tr><td>Two-wheeled cart (2 / 4 seats)</td><td>6 / 10 sc</td></tr><tr><td>Four-wheeled wagon (2+2 / 2+4 / 2+8 seats)</td><td>18 / 22 / 26 sc</td></tr><tr><td>War wagon (2 seats)</td><td>100 sc</td></tr><tr><td>Punt / skin canoe / wooden canoe</td><td>2 / 4 / 10 sc</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 sc</td></tr></tbody></table><h2>Lodging & meals</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Farmhouse / dormitory / princely rooms</td><td>0.2 / 1 / 20 sc</td></tr><tr><td>Poor / ordinary / princely meal</td><td>0.2 / 0.5 / 20 sc</td></tr></tbody></table><h2>Other services</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Craftsperson: apprentice / journeyman / artisan / master / legend (hour)</td><td>0.2 / 0.5 / 1 / 3 / 5 sc</td></tr><tr><td>Errand boy / farm labourer (day)</td><td>0.1 / 1 sc</td></tr><tr><td>Scholar: copy per page / poem / chronicle per day</td><td>1 / 1.5 / 3–5 sc</td></tr><tr><td>Mercenary: novice / professional / hero / master (day)</td><td>1 / 2 / 4 / 8 sc</td></tr><tr><td>Shadowing, by target</td><td>2–2,000 sc</td></tr><tr><td>Boat travel (day)</td><td>1 sc</td></tr></tbody></table> | <p>Prix en pièces d’argent (pa), sauf mention contraire. Source : Livre des règles, pp. 126–127.</p><h2>Marchandises</h2><table><thead><tr><th>Marchandise</th><th>Prix</th></tr></thead><tbody><tr><td>Cuivre / bronze / fer</td><td>1 / 1,6 / 2,5 pa/kg</td></tr><tr><td>Argent / or</td><td>100 / 1 000 pa/kg</td></tr><tr><td>Pierre / bois</td><td>0,1 / 0,05 pa/kg</td></tr><tr><td>Laine et lin</td><td>1 pa/kg</td></tr><tr><td>Peau de lièvre / fourrure de chèvre / peau de vache</td><td>1 / 1,5 / 2,5 pa</td></tr><tr><td>Peau de mouton / fourrure de cochon / peau de sanglier</td><td>3 / 2 / 2 pa</td></tr><tr><td>Peau de loup / peau d’ours / fourrure de mastomant</td><td>6 / 10 / 50 pa</td></tr></tbody></table><h2>Animaux</h2><table><thead><tr><th>Animal</th><th>Prix</th></tr></thead><tbody><tr><td>Poule / chèvre / cochon</td><td>1 / 5 / 20 pa</td></tr><tr><td>Vache à lait / taureau / bœuf</td><td>30 / 36 / 30 pa</td></tr><tr><td>Mule / cheval / chien de traîneau</td><td>25 / 50 / 8 pa</td></tr></tbody></table><h2>Nourriture</h2><table><thead><tr><th>Produit</th><th>Prix</th></tr></thead><tbody><tr><td>Céréales / pain / lait</td><td>0,2 pa/kg / 0,1 pa/kg / 0,1 pa/l</td></tr><tr><td>Viande séchée / poisson / fruits / navets</td><td>0,5 / 0,4 / 0,3 / 0,1 pa/kg</td></tr><tr><td>Hydromel ou bière / lait fermenté</td><td>0,2 / 0,15 pa/l</td></tr><tr><td>Fourrage</td><td>0,1 pa/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Véhicule</th><th>Prix</th></tr></thead><tbody><tr><td>Luge / traîneau (2 / 4 places)</td><td>2 / 6 / 10 pa</td></tr><tr><td>Chariot à 2 roues (2 / 4 places)</td><td>6 / 10 pa</td></tr><tr><td>Chariot à 4 roues (2+2 / 2+4 / 2+8 places)</td><td>18 / 22 / 26 pa</td></tr><tr><td>Chariot de guerre (2 places)</td><td>100 pa</td></tr><tr><td>Barque / canoë de peau / canoë en bois</td><td>2 / 4 / 10 pa</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 pa</td></tr></tbody></table><h2>Logement & repas</h2><table><thead><tr><th>Prestation</th><th>Prix</th></tr></thead><tbody><tr><td>Ferme / dortoir / appartements princiers</td><td>0,2 / 1 / 20 pa</td></tr><tr><td>Repas pauvre / moyen / princier</td><td>0,2 / 0,5 / 20 pa</td></tr></tbody></table><h2>Autres services</h2><table><thead><tr><th>Service</th><th>Prix</th></tr></thead><tbody><tr><td>Artisan : apprenti / compagnon / artisan / maître / légende (heure)</td><td>0,2 / 0,5 / 1 / 3 / 5 pa</td></tr><tr><td>Garçon de course / ouvrier agricole (jour)</td><td>0,1 / 1 pa</td></tr><tr><td>Érudit : copie par page / poème / chronique par jour</td><td>1 / 1,5 / 3–5 pa</td></tr><tr><td>Mercenaire : novice / professionnel / héros / maître (jour)</td><td>1 / 2 / 4 / 8 pa</td></tr><tr><td>Filature selon la cible</td><td>2–2 000 pa</td></tr><tr><td>Voyage en bateau (jour)</td><td>1 pa</td></tr></tbody></table> |
 
 ## `TRUDVANG.Content.Journal`
 

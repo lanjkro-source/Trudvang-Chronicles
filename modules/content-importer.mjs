@@ -4,7 +4,7 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 21;
+const CONTENT_VERSION = 22;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 
@@ -81,7 +81,9 @@ const renamedOrCustom = (document, translations) => !translations.has(document.n
 
 async function upsertFolder(slug, config, translations) {
   const localized = game.i18n.localize(config.nameKey);
+  const legacySlugs = {equipment: ["gear"]};
   const existing = game.folders.find(folder => folder.type === config.type && flagOf(folder, "starterId") === slug)
+    ?? game.folders.find(folder => folder.type === config.type && legacySlugs[slug]?.includes(flagOf(folder, "starterId")))
     ?? game.folders.find(folder => folder.type === config.type && !flagOf(folder, "starterId") && translations.has(folder.name));
   if (existing) {
     const update = {[`flags.${SYSTEM_ID}.starterId`]: slug};
@@ -109,9 +111,9 @@ function presentationUpdate(payload, key) {
     img: payload.img,
     [`flags.${SYSTEM_ID}.starterId`]: key
   };
-  if (payload.system?.description !== undefined) update["system.description"] = payload.system.description;
-  if (payload.system?.source !== undefined) update["system.source"] = payload.system.source;
-  if (payload.system?.summary !== undefined) update["system.summary"] = payload.system.summary;
+  for (const field of ["description", "source", "summary", "effect", "appearance", "preparation", "usage", "efficacy"]) {
+    if (payload.system?.[field] !== undefined) update[`system.${field}`] = payload.system[field];
+  }
   return update;
 }
 

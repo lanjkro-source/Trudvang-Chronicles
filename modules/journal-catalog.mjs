@@ -23,7 +23,8 @@ const journals = [
   {id: "rogue", folder: "archetypes", key: "rogue", image: "assets/art/journals/rogue.png"},
   {id: "ranger", folder: "archetypes", key: "ranger", image: "assets/art/journals/ranger.png"},
   {id: "vitnerWeaver", folder: "archetypes", key: "vitnerWeaver", image: "assets/art/journals/vitner-weaver.png"},
-  {id: "armorEncumbrance", folder: "equipment", key: "armorEncumbrance"}
+  {id: "armorEncumbrance", folder: "equipment", key: "armorEncumbrance"},
+  {id: "purchasePrices", folder: "equipment", key: "purchasePrices"}
 ];
 
 const l = key => game.i18n.localize(key);

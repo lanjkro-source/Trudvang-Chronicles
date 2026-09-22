@@ -881,7 +881,8 @@
         "Weapons": "Trudvang - Armes",
         "Armor": "Trudvang - Armures & Boucliers",
         "Gear": "Trudvang - Équipements & Extraits",
-        "Equipment": "Équipement",
+        "Equipment": "Trudvang - Équipements",
+        "Extracts": "Trudvang - Extraits",
         "Races": "Races",
         "Archetypes": "Archétypes",
         "Magic": "Trudvang - Tables & Magie",
@@ -900,6 +901,19 @@
         "GMG90": "Guide du maître, p. 90",
         "GMG93": "Guide du maître, p. 93",
         "GMG94": "Guide du maître, p. 94",
+        "Rulebook111": "Livre des règles, p. 111",
+        "Rulebook112": "Livre des règles, p. 112",
+        "Rulebook114": "Livre des règles, p. 114",
+        "Rulebook116": "Livre des règles, p. 116",
+        "Rulebook118": "Livre des règles, p. 118",
+        "Rulebook119": "Livre des règles, p. 119",
+        "Rulebook126": "Livre des règles, p. 126",
+        "Rulebook127": "Livre des règles, p. 127",
+        "Rulebook131": "Livre des règles, p. 131",
+        "Rulebook132": "Livre des règles, p. 132",
+        "Rulebook133": "Livre des règles, p. 133",
+        "Rulebook134": "Livre des règles, p. 134",
+        "Rulebook135": "Livre des règles, p. 135",
         "PHB47": "Livre des règles, p. 47",
         "PHB48": "Livre des règles, p. 48",
         "PHB50": "Livre des règles, p. 50",
@@ -910,6 +924,8 @@
         "PHB92": "Livre des règles, p. 92",
         "PHB201": "Livre des règles, p. 201"
       },
+      "ExtractType": {"Alteration":"Altération","Healing":"Soin","Poison":"Toxique"},
+      "Duration": {"OneDay":"1 jour","TwoHours":"2 heures","TwentyFourHours":"24 heures","OneD6Rounds":"1d6 tours","EightHours":"8 heures","OneD6Minutes":"1d6 minutes","FourMinutes":"4 minutes","OneHour":"1 heure","SixHours":"6 heures"},
       "Item": {
         "Seax": {
           "Name": "Seax (dague/couteau)",
@@ -1019,10 +1035,21 @@
           "Effect": "Appliquez le baume sur la blessure et déterminez son degré de guérison avec le jet d'effet d'extrait standard."
         },
         "Manetter": {
-          "Name": "Manetter",
+          "Name": "Mandrape",
           "Description": "Un poison dangereux qui étrangle lentement sa victime et ignore les armures et la protection naturelle.",
           "Effect": "Lancez 1d20 + 2 - Constitution et consultez la table des effets des extraits. Les dégâts sont retirés directement aux points de santé."
         },
+        "Klubb":{"Name":"Klubb (massue)"}, "KrumSwerd":{"Name":"Krum swerd (cimeterre)"}, "LillSpjot":{"Name":"Lill spjót (lance courte)"}, "NagliKlubb":{"Name":"Nagli klubb (massue à pointes)"}, "SplitAxi":{"Name":"Split axi (hache à une main)"}, "Stafur":{"Name":"Stafur (bâton)"},
+        "BardaFaldir":{"Name":"Barda faldir (fléau de bataille)"}, "BardaHammri":{"Name":"Barda hammri (marteau de bataille)"}, "BardaKlot":{"Name":"Barda klót (chaîne de bataille)"}, "BardaMakir":{"Name":"Barda makir (masse de bataille)"}, "BardaSwerd":{"Name":"Barda swerd (épée de bataille)"}, "BastjurKedja":{"Name":"Bastjur kedjá (chaîne troll)"}, "DropiAxi":{"Name":"Dropi axi (hache pendule)"}, "Hakk":{"Name":"Hakk (bec-de-corbeau)"}, "Miekka":{"Name":"Miekka"}, "StaafSpjot":{"Name":"Staaf spjót (lance de chasse)"}, "StakkSwerd":{"Name":"Stakk swerd (épée d’armes)"}, "StjornMakir":{"Name":"Stjorn makir (étoile du matin)"},
+        "BreidSpjot":{"Name":"Breid spjót (lance à lame large)"}, "TveiFaldir":{"Name":"Tvei faldir (fléau à deux mains)"}, "TveiHakk":{"Name":"Tvei hakk (pioche à deux mains)"}, "TveiHammri":{"Name":"Tvei hammri (merlin)"}, "TveiKlubb":{"Name":"Tvei klubb (massue à deux mains)"},
+        "TveBogi":{"Name":"Tve bogi (arc composite)"}, "Slingu":{"Name":"Slingu (fronde)"}, "StafurSlingu":{"Name":"Stafur slingu (fronde à manche)"}, "VolkKrossbogur":{"Name":"Volk krossbogur (arbalète légère)"}, "TunkurKrossbogur":{"Name":"Tunkur krossbogur (arbalète lourde)"},
+        "ThickFabric":{"Name":"Vêtement matelassé"}, "MetalReinforcedLeather":{"Name":"Cuir renforcé de métal"}, "ScaleReinforcedChainMail":{"Name":"Cotte de mailles renforcée d’écailles"}, "ScalePlating":{"Name":"Armure d’écailles"}, "DoubleChainMail":{"Name":"Double cotte de mailles"}, "BandedArmor":{"Name":"Armure à bandes"},
+        "SmallFurShield":{"Name":"Petit bouclier renforcé de fourrure"}, "MediumFurShield":{"Name":"Bouclier moyen renforcé de fourrure"}, "LargeFurShield":{"Name":"Grand bouclier renforcé de fourrure"}, "SmallMetalShield":{"Name":"Petit bouclier renforcé de métal"}, "MediumMetalShield":{"Name":"Bouclier moyen renforcé de métal"}, "LargeMetalShield":{"Name":"Grand bouclier renforcé de métal"},
+        "SlaveClothes":{"Name":"Vêtements d’esclave"}, "PoorClothes":{"Name":"Vêtements pauvres"}, "AverageClothes":{"Name":"Vêtements ordinaires"}, "RichClothes":{"Name":"Vêtements riches"}, "RoyalClothes":{"Name":"Vêtements royaux"},
+        "RoyalAttire":{"Name":"Tenue royale"},
+        "ArmamentKitSmall":{"Name":"Petit paquetage d’armement"}, "ArmamentKitOrdinary":{"Name":"Paquetage d’armement ordinaire"}, "ArmamentKitLarge":{"Name":"Grand paquetage d’armement"}, "CraftKitSmall":{"Name":"Petit paquetage d’artisanat"}, "CraftKitOrdinary":{"Name":"Paquetage d’artisanat ordinaire"}, "CraftKitLarge":{"Name":"Grand paquetage d’artisanat"}, "BurglaryKitSmall":{"Name":"Petit paquetage de cambriolage"}, "BurglaryKitOrdinary":{"Name":"Paquetage de cambriolage ordinaire"}, "BurglaryKitLarge":{"Name":"Grand paquetage de cambriolage"}, "CampingKitSmall":{"Name":"Petit paquetage de campement"}, "CampingKitOrdinary":{"Name":"Paquetage de campement ordinaire"}, "CampingKitLarge":{"Name":"Grand paquetage de campement"}, "HuntingKitSmall":{"Name":"Petit paquetage de chasse"}, "HuntingKitOrdinary":{"Name":"Paquetage de chasse ordinaire"}, "HuntingKitLarge":{"Name":"Grand paquetage de chasse"}, "WritingKitSmall":{"Name":"Petit paquetage d’écriture"}, "WritingKitOrdinary":{"Name":"Paquetage d’écriture ordinaire"}, "WritingKitLarge":{"Name":"Grand paquetage d’écriture"}, "MusicKitSmall":{"Name":"Petit paquetage de musique"}, "MusicKitOrdinary":{"Name":"Paquetage de musique ordinaire"}, "MusicKitLarge":{"Name":"Grand paquetage de musique"}, "FishingKitSmall":{"Name":"Petit paquetage de pêche"}, "FishingKitOrdinary":{"Name":"Paquetage de pêche ordinaire"}, "FishingKitLarge":{"Name":"Grand paquetage de pêche"}, "HealingKitSmall":{"Name":"Petit paquetage de soins"}, "HealingKitOrdinary":{"Name":"Paquetage de soins ordinaire"}, "HealingKitLarge":{"Name":"Grand paquetage de soins"},
+        "ArmamentKitBasic":{"Name":"Paquetage d’armement basique"}, "ArmamentKitStandard":{"Name":"Paquetage d’armement standard"}, "ArmamentKitComplete":{"Name":"Paquetage d’armement complet"}, "CraftKitBasic":{"Name":"Paquetage d’artisanat basique"}, "CraftKitStandard":{"Name":"Paquetage d’artisanat standard"}, "CraftKitComplete":{"Name":"Paquetage d’artisanat complet"}, "BurglaryKitBasic":{"Name":"Paquetage de cambriolage basique"}, "BurglaryKitStandard":{"Name":"Paquetage de cambriolage standard"}, "BurglaryKitComplete":{"Name":"Paquetage de cambriolage complet"}, "CampingKitBasic":{"Name":"Paquetage de campement basique"}, "CampingKitStandard":{"Name":"Paquetage de campement standard"}, "CampingKitComplete":{"Name":"Paquetage de campement complet"}, "HuntingKitBasic":{"Name":"Paquetage de chasse basique"}, "HuntingKitStandard":{"Name":"Paquetage de chasse standard"}, "HuntingKitComplete":{"Name":"Paquetage de chasse complet"}, "WritingKitBasic":{"Name":"Paquetage d’écriture basique"}, "WritingKitStandard":{"Name":"Paquetage d’écriture standard"}, "WritingKitComplete":{"Name":"Paquetage d’écriture complet"}, "MusicKitBasic":{"Name":"Paquetage de musique basique"}, "MusicKitStandard":{"Name":"Paquetage de musique standard"}, "MusicKitComplete":{"Name":"Paquetage de musique complet"}, "FishingKitBasic":{"Name":"Paquetage de pêche basique"}, "FishingKitStandard":{"Name":"Paquetage de pêche standard"}, "FishingKitComplete":{"Name":"Paquetage de pêche complet"}, "HealingKitBasic":{"Name":"Paquetage de soins basique"}, "HealingKitStandard":{"Name":"Paquetage de soins standard"}, "HealingKitComplete":{"Name":"Paquetage de soins complet"},
+        "Argmurkla":{"Name":"Argmurkla","Effect":"Déclenche une rage de berserker et renforce progressivement les attaques et la Force."}, "Gaveblom":{"Name":"Gaveblom","Effect":"Accélère la guérison naturelle à un rythme croissant."}, "Grindblom":{"Name":"Grindblom","Effect":"Fait passer son consommateur dans les brumes, pour traverser les obstacles au risque de s’y perdre."}, "Pustartobak":{"Name":"Pustartobak","Effect":"Les spores inhalées obstruent les voies respiratoires et infligent des dégâts croissants."}, "Svartljunghed":{"Name":"Svartljunghed","Effect":"Engourdit la douleur, apaise la peur et peut endormir le consommateur."}, "Tornrot":{"Name":"Tornrot","Effect":"Supprime douleur et fatigue, réduit la peur puis renforce les dégâts, au prix de parades plus faibles."}, "Trollilles":{"Name":"Trollilles","Effect":"Rajeunit temporairement et protège progressivement contre maladies et poisons."}, "Tungelin":{"Name":"Tungelin","Effect":"Réduit progressivement le besoin de sommeil."},
         "AnimalVitner": {
           "Name": "Tablette Vitner animal",
           "Description": "Une tablette de vitner consacrée au dialogue avec les animaux, à leur appel, leur contrôle, leur possession et au transport de messages."
@@ -3706,6 +3733,7 @@
           "Name": "Encombrement des armures",
           "Content": "<p>Cette table maison applique une progression plus graduée des modificateurs d’initiative et de mouvement selon l’encombrement effectif de l’armure.</p><table><thead><tr><th>Encombrement effectif</th><th>MI</th><th>MM</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0 m</td></tr><tr><td>1</td><td>0</td><td>0 m</td></tr><tr><td>2</td><td>−1</td><td>0 m</td></tr><tr><td>3</td><td>−1</td><td>−1 m</td></tr><tr><td>4</td><td>−1</td><td>−1 m</td></tr><tr><td>5</td><td>−2</td><td>−1 m</td></tr><tr><td>6</td><td>−2</td><td>−2 m</td></tr><tr><td>7</td><td>−3</td><td>−2 m</td></tr><tr><td>8</td><td>−3</td><td>−3 m</td></tr><tr><td>9</td><td>−4</td><td>−3 m</td></tr><tr><td>10</td><td>−5</td><td>−4 m</td></tr></tbody></table>"
         },
+        "purchasePrices": {"Name":"Prix d’achat","Content":"<p>Prix en pièces d’argent (pa), sauf mention contraire. Source : Livre des règles, pp. 126–127.</p><h2>Marchandises</h2><table><thead><tr><th>Marchandise</th><th>Prix</th></tr></thead><tbody><tr><td>Cuivre / bronze / fer</td><td>1 / 1,6 / 2,5 pa/kg</td></tr><tr><td>Argent / or</td><td>100 / 1 000 pa/kg</td></tr><tr><td>Pierre / bois</td><td>0,1 / 0,05 pa/kg</td></tr><tr><td>Laine et lin</td><td>1 pa/kg</td></tr><tr><td>Peau de lièvre / fourrure de chèvre / peau de vache</td><td>1 / 1,5 / 2,5 pa</td></tr><tr><td>Peau de mouton / fourrure de cochon / peau de sanglier</td><td>3 / 2 / 2 pa</td></tr><tr><td>Peau de loup / peau d’ours / fourrure de mastomant</td><td>6 / 10 / 50 pa</td></tr></tbody></table><h2>Animaux</h2><table><thead><tr><th>Animal</th><th>Prix</th></tr></thead><tbody><tr><td>Poule / chèvre / cochon</td><td>1 / 5 / 20 pa</td></tr><tr><td>Vache à lait / taureau / bœuf</td><td>30 / 36 / 30 pa</td></tr><tr><td>Mule / cheval / chien de traîneau</td><td>25 / 50 / 8 pa</td></tr></tbody></table><h2>Nourriture</h2><table><thead><tr><th>Produit</th><th>Prix</th></tr></thead><tbody><tr><td>Céréales / pain / lait</td><td>0,2 pa/kg / 0,1 pa/kg / 0,1 pa/l</td></tr><tr><td>Viande séchée / poisson / fruits / navets</td><td>0,5 / 0,4 / 0,3 / 0,1 pa/kg</td></tr><tr><td>Hydromel ou bière / lait fermenté</td><td>0,2 / 0,15 pa/l</td></tr><tr><td>Fourrage</td><td>0,1 pa/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Véhicule</th><th>Prix</th></tr></thead><tbody><tr><td>Luge / traîneau (2 / 4 places)</td><td>2 / 6 / 10 pa</td></tr><tr><td>Chariot à 2 roues (2 / 4 places)</td><td>6 / 10 pa</td></tr><tr><td>Chariot à 4 roues (2+2 / 2+4 / 2+8 places)</td><td>18 / 22 / 26 pa</td></tr><tr><td>Chariot de guerre (2 places)</td><td>100 pa</td></tr><tr><td>Barque / canoë de peau / canoë en bois</td><td>2 / 4 / 10 pa</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 pa</td></tr></tbody></table><h2>Logement & repas</h2><table><thead><tr><th>Prestation</th><th>Prix</th></tr></thead><tbody><tr><td>Ferme / dortoir / appartements princiers</td><td>0,2 / 1 / 20 pa</td></tr><tr><td>Repas pauvre / moyen / princier</td><td>0,2 / 0,5 / 20 pa</td></tr></tbody></table><h2>Autres services</h2><table><thead><tr><th>Service</th><th>Prix</th></tr></thead><tbody><tr><td>Artisan : apprenti / compagnon / artisan / maître / légende (heure)</td><td>0,2 / 0,5 / 1 / 3 / 5 pa</td></tr><tr><td>Garçon de course / ouvrier agricole (jour)</td><td>0,1 / 1 pa</td></tr><tr><td>Érudit : copie par page / poème / chronique par jour</td><td>1 / 1,5 / 3–5 pa</td></tr><tr><td>Mercenaire : novice / professionnel / héros / maître (jour)</td><td>1 / 2 / 4 / 8 pa</td></tr><tr><td>Filature selon la cible</td><td>2–2 000 pa</td></tr><tr><td>Voyage en bateau (jour)</td><td>1 pa</td></tr></tbody></table>"},
         "Statistics": "Caractéristiques",
         "Culture": "Culture ou métissage",
         "BodyPoints": "Points de santé",

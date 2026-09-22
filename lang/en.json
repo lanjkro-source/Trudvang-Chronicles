@@ -883,7 +883,8 @@
         "Weapons": "Trudvang - Weapons",
         "Armor": "Trudvang - Armor & Shields",
         "Gear": "Trudvang - Gear & Extracts",
-        "Equipment": "Equipment",
+        "Equipment": "Trudvang - Equipment",
+        "Extracts": "Trudvang - Extracts",
         "Races": "Races",
         "Archetypes": "Archetypes",
         "Magic": "Trudvang - Tablets & Magic",
@@ -902,6 +903,19 @@
         "GMG90": "Game Master's Guide, p. 90",
         "GMG93": "Game Master's Guide, p. 93",
         "GMG94": "Game Master's Guide, p. 94",
+        "Rulebook111": "Rulebook, p. 111",
+        "Rulebook112": "Rulebook, p. 112",
+        "Rulebook114": "Rulebook, p. 114",
+        "Rulebook116": "Rulebook, p. 116",
+        "Rulebook118": "Rulebook, p. 118",
+        "Rulebook119": "Rulebook, p. 119",
+        "Rulebook126": "Rulebook, p. 126",
+        "Rulebook127": "Rulebook, p. 127",
+        "Rulebook131": "Rulebook, p. 131",
+        "Rulebook132": "Rulebook, p. 132",
+        "Rulebook133": "Rulebook, p. 133",
+        "Rulebook134": "Rulebook, p. 134",
+        "Rulebook135": "Rulebook, p. 135",
         "PHB47": "Player's Handbook, p. 47",
         "PHB48": "Player's Handbook, p. 48",
         "PHB50": "Player's Handbook, p. 50",
@@ -912,6 +926,8 @@
         "PHB92": "Player's Handbook, p. 92",
         "PHB201": "Player's Handbook, p. 201"
       },
+      "ExtractType": {"Alteration":"Alteration","Healing":"Healing","Poison":"Poison"},
+      "Duration": {"OneDay":"1 day","TwoHours":"2 hours","TwentyFourHours":"24 hours","OneD6Rounds":"1d6 rounds","EightHours":"8 hours","OneD6Minutes":"1d6 minutes","FourMinutes":"4 minutes","OneHour":"1 hour","SixHours":"6 hours"},
       "Item": {
         "Seax": {
           "Name": "Seax (Dagger or Knife)",
@@ -1021,10 +1037,21 @@
           "Effect": "Apply the balm to a wound and resolve its healing degree with the standard extract-effect roll."
         },
         "Manetter": {
-          "Name": "Manetter",
+          "Name": "Mandrake",
           "Description": "A dangerous poison that slowly strangles its victim and ignores armor and natural protection.",
           "Effect": "Roll 1d20 + 2 - Constitution and consult the Extract Effect table. Damage is removed directly from Body Points."
         },
+        "Klubb":{"Name":"Klubb (club)"}, "KrumSwerd":{"Name":"Krum swerd (scimitar)"}, "LillSpjot":{"Name":"Lill spjót (short spear)"}, "NagliKlubb":{"Name":"Nagli klubb (spiked club)"}, "SplitAxi":{"Name":"Split axi (hand axe)"}, "Stafur":{"Name":"Stafur (staff)"},
+        "BardaFaldir":{"Name":"Barda faldir (battle flail)"}, "BardaHammri":{"Name":"Barda hammri (battle hammer)"}, "BardaKlot":{"Name":"Barda klót (battle chain)"}, "BardaMakir":{"Name":"Barda makir (battle mace)"}, "BardaSwerd":{"Name":"Barda swerd (battle sword)"}, "BastjurKedja":{"Name":"Bastjur kedjá (troll chain)"}, "DropiAxi":{"Name":"Dropi axi (pendulum axe)"}, "Hakk":{"Name":"Hakk (war pick)"}, "Miekka":{"Name":"Miekka"}, "StaafSpjot":{"Name":"Staaf spjót (hunting spear)"}, "StakkSwerd":{"Name":"Stakk swerd (arming sword)"}, "StjornMakir":{"Name":"Stjorn makir (morning star)"},
+        "BreidSpjot":{"Name":"Breid spjót (broad spear)"}, "TveiFaldir":{"Name":"Tvei faldir (two-handed flail)"}, "TveiHakk":{"Name":"Tvei hakk (two-handed pick)"}, "TveiHammri":{"Name":"Tvei hammri (two-handed hammer)"}, "TveiKlubb":{"Name":"Tvei klubb (two-handed club)"},
+        "TveBogi":{"Name":"Tve bogi (composite bow)"}, "Slingu":{"Name":"Slingu (sling)"}, "StafurSlingu":{"Name":"Stafur slingu (staff sling)"}, "VolkKrossbogur":{"Name":"Volk krossbogur (light crossbow)"}, "TunkurKrossbogur":{"Name":"Tunkur krossbogur (heavy crossbow)"},
+        "ThickFabric":{"Name":"Thick fabric armor"}, "MetalReinforcedLeather":{"Name":"Metal-reinforced leather armor"}, "ScaleReinforcedChainMail":{"Name":"Scale-reinforced chain mail"}, "ScalePlating":{"Name":"Scale armor"}, "DoubleChainMail":{"Name":"Double chain mail"}, "BandedArmor":{"Name":"Banded armor"},
+        "SmallFurShield":{"Name":"Small fur-reinforced shield"}, "MediumFurShield":{"Name":"Medium fur-reinforced shield"}, "LargeFurShield":{"Name":"Large fur-reinforced shield"}, "SmallMetalShield":{"Name":"Small metal-reinforced shield"}, "MediumMetalShield":{"Name":"Medium metal-reinforced shield"}, "LargeMetalShield":{"Name":"Large metal-reinforced shield"},
+        "SlaveClothes":{"Name":"Slave clothes"}, "PoorClothes":{"Name":"Poor clothes"}, "AverageClothes":{"Name":"Common clothes"}, "RichClothes":{"Name":"Rich clothes"}, "RoyalClothes":{"Name":"Royal clothes"},
+        "RoyalAttire":{"Name":"Royal attire"},
+        "ArmamentKitSmall":{"Name":"Small armament kit"}, "ArmamentKitOrdinary":{"Name":"Ordinary armament kit"}, "ArmamentKitLarge":{"Name":"Large armament kit"}, "CraftKitSmall":{"Name":"Small craft kit"}, "CraftKitOrdinary":{"Name":"Ordinary craft kit"}, "CraftKitLarge":{"Name":"Large craft kit"}, "BurglaryKitSmall":{"Name":"Small burglary kit"}, "BurglaryKitOrdinary":{"Name":"Ordinary burglary kit"}, "BurglaryKitLarge":{"Name":"Large burglary kit"}, "CampingKitSmall":{"Name":"Small camping kit"}, "CampingKitOrdinary":{"Name":"Ordinary camping kit"}, "CampingKitLarge":{"Name":"Large camping kit"}, "HuntingKitSmall":{"Name":"Small hunting kit"}, "HuntingKitOrdinary":{"Name":"Ordinary hunting kit"}, "HuntingKitLarge":{"Name":"Large hunting kit"}, "WritingKitSmall":{"Name":"Small writing kit"}, "WritingKitOrdinary":{"Name":"Ordinary writing kit"}, "WritingKitLarge":{"Name":"Large writing kit"}, "MusicKitSmall":{"Name":"Small music kit"}, "MusicKitOrdinary":{"Name":"Ordinary music kit"}, "MusicKitLarge":{"Name":"Large music kit"}, "FishingKitSmall":{"Name":"Small fishing kit"}, "FishingKitOrdinary":{"Name":"Ordinary fishing kit"}, "FishingKitLarge":{"Name":"Large fishing kit"}, "HealingKitSmall":{"Name":"Small healing kit"}, "HealingKitOrdinary":{"Name":"Ordinary healing kit"}, "HealingKitLarge":{"Name":"Large healing kit"},
+        "ArmamentKitBasic":{"Name":"Basic armament kit"}, "ArmamentKitStandard":{"Name":"Standard armament kit"}, "ArmamentKitComplete":{"Name":"Complete armament kit"}, "CraftKitBasic":{"Name":"Basic craft kit"}, "CraftKitStandard":{"Name":"Standard craft kit"}, "CraftKitComplete":{"Name":"Complete craft kit"}, "BurglaryKitBasic":{"Name":"Basic burglary kit"}, "BurglaryKitStandard":{"Name":"Standard burglary kit"}, "BurglaryKitComplete":{"Name":"Complete burglary kit"}, "CampingKitBasic":{"Name":"Basic camping kit"}, "CampingKitStandard":{"Name":"Standard camping kit"}, "CampingKitComplete":{"Name":"Complete camping kit"}, "HuntingKitBasic":{"Name":"Basic hunting kit"}, "HuntingKitStandard":{"Name":"Standard hunting kit"}, "HuntingKitComplete":{"Name":"Complete hunting kit"}, "WritingKitBasic":{"Name":"Basic writing kit"}, "WritingKitStandard":{"Name":"Standard writing kit"}, "WritingKitComplete":{"Name":"Complete writing kit"}, "MusicKitBasic":{"Name":"Basic music kit"}, "MusicKitStandard":{"Name":"Standard music kit"}, "MusicKitComplete":{"Name":"Complete music kit"}, "FishingKitBasic":{"Name":"Basic fishing kit"}, "FishingKitStandard":{"Name":"Standard fishing kit"}, "FishingKitComplete":{"Name":"Complete fishing kit"}, "HealingKitBasic":{"Name":"Basic healing kit"}, "HealingKitStandard":{"Name":"Standard healing kit"}, "HealingKitComplete":{"Name":"Complete healing kit"},
+        "Argmurkla":{"Name":"Argmurkla","Effect":"Causes berserker rage and progressively strengthens attacks and Strength."}, "Gaveblom":{"Name":"Gaveblom","Effect":"Accelerates natural healing at an increasing rate."}, "Grindblom":{"Name":"Grindblom","Effect":"Lets the user pass into the mists to cross obstacles, at the risk of becoming lost."}, "Pustartobak":{"Name":"Pustartobak","Effect":"Inhaled spores obstruct breathing and inflict increasingly serious harm."}, "Svartljunghed":{"Name":"Svartljunghed","Effect":"Numbs pain, eases fear, and can put the user to sleep."}, "Tornrot":{"Name":"Tornrot","Effect":"Suppresses pain and fatigue, reduces fear, and strengthens damage at the cost of weaker parries."}, "Trollilles":{"Name":"Trollilles","Effect":"Temporarily rejuvenates the user and increasingly protects against disease and poison."}, "Tungelin":{"Name":"Tungelin","Effect":"Progressively reduces the need for sleep."},
         "AnimalVitner": {
           "Name": "Animal Vitner Tablet",
           "Description": "A Vitner Tablet concerned with speaking to, calling, controlling, possessing, and sending messages through animals."
@@ -3708,6 +3735,7 @@
           "Name": "Armour Encumbrance",
           "Content": "<p>This house table applies a more gradual progression of initiative and movement modifiers according to the armour's effective Encumbrance.</p><table><thead><tr><th>Effective Encumbrance</th><th>IM</th><th>MM</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0 m</td></tr><tr><td>1</td><td>0</td><td>0 m</td></tr><tr><td>2</td><td>−1</td><td>0 m</td></tr><tr><td>3</td><td>−1</td><td>−1 m</td></tr><tr><td>4</td><td>−1</td><td>−1 m</td></tr><tr><td>5</td><td>−2</td><td>−1 m</td></tr><tr><td>6</td><td>−2</td><td>−2 m</td></tr><tr><td>7</td><td>−3</td><td>−2 m</td></tr><tr><td>8</td><td>−3</td><td>−3 m</td></tr><tr><td>9</td><td>−4</td><td>−3 m</td></tr><tr><td>10</td><td>−5</td><td>−4 m</td></tr></tbody></table>"
         },
+        "purchasePrices": {"Name":"Purchase prices","Content":"<p>Prices are in silver coins (sc), unless stated otherwise. Source: Rulebook, pp. 126–127.</p><h2>Goods</h2><table><thead><tr><th>Goods</th><th>Price</th></tr></thead><tbody><tr><td>Copper / bronze / iron</td><td>1 / 1.6 / 2.5 sc/kg</td></tr><tr><td>Silver / gold</td><td>100 / 1,000 sc/kg</td></tr><tr><td>Stone / wood</td><td>0.1 / 0.05 sc/kg</td></tr><tr><td>Wool and linen</td><td>1 sc/kg</td></tr><tr><td>Hare pelt / goat fur / cowhide</td><td>1 / 1.5 / 2.5 sc</td></tr><tr><td>Sheep hide / pig fur / boar hide</td><td>3 / 2 / 2 sc</td></tr><tr><td>Wolf pelt / bear pelt / mastomant fur</td><td>6 / 10 / 50 sc</td></tr></tbody></table><h2>Animals</h2><table><thead><tr><th>Animal</th><th>Price</th></tr></thead><tbody><tr><td>Hen / goat / pig</td><td>1 / 5 / 20 sc</td></tr><tr><td>Dairy cow / bull / ox</td><td>30 / 36 / 30 sc</td></tr><tr><td>Mule / horse / sled dog</td><td>25 / 50 / 8 sc</td></tr></tbody></table><h2>Food</h2><table><thead><tr><th>Food</th><th>Price</th></tr></thead><tbody><tr><td>Grain / bread / milk</td><td>0.2 sc/kg / 0.1 sc/kg / 0.1 sc/l</td></tr><tr><td>Dried meat / fish / fruit / turnips</td><td>0.5 / 0.4 / 0.3 / 0.1 sc/kg</td></tr><tr><td>Mead or beer / soured milk</td><td>0.2 / 0.15 sc/l</td></tr><tr><td>Fodder</td><td>0.1 sc/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Vehicle</th><th>Price</th></tr></thead><tbody><tr><td>Sledge / sled (2 / 4 seats)</td><td>2 / 6 / 10 sc</td></tr><tr><td>Two-wheeled cart (2 / 4 seats)</td><td>6 / 10 sc</td></tr><tr><td>Four-wheeled wagon (2+2 / 2+4 / 2+8 seats)</td><td>18 / 22 / 26 sc</td></tr><tr><td>War wagon (2 seats)</td><td>100 sc</td></tr><tr><td>Punt / skin canoe / wooden canoe</td><td>2 / 4 / 10 sc</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 sc</td></tr></tbody></table><h2>Lodging & meals</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Farmhouse / dormitory / princely rooms</td><td>0.2 / 1 / 20 sc</td></tr><tr><td>Poor / ordinary / princely meal</td><td>0.2 / 0.5 / 20 sc</td></tr></tbody></table><h2>Other services</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Craftsperson: apprentice / journeyman / artisan / master / legend (hour)</td><td>0.2 / 0.5 / 1 / 3 / 5 sc</td></tr><tr><td>Errand boy / farm labourer (day)</td><td>0.1 / 1 sc</td></tr><tr><td>Scholar: copy per page / poem / chronicle per day</td><td>1 / 1.5 / 3–5 sc</td></tr><tr><td>Mercenary: novice / professional / hero / master (day)</td><td>1 / 2 / 4 / 8 sc</td></tr><tr><td>Shadowing, by target</td><td>2–2,000 sc</td></tr><tr><td>Boat travel (day)</td><td>1 sc</td></tr></tbody></table>"},
         "Statistics": "Statistics",
         "Culture": "Culture or mixed breed",
         "BodyPoints": "Body Points",
