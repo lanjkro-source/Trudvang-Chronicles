@@ -1046,9 +1046,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Folder.Weapons` | Trudvang - Weapons | Trudvang - Armes |
+| `TRUDVANG.Content.Folder.WeaponsLight` | Light weapons | Armes légères |
+| `TRUDVANG.Content.Folder.WeaponsHeavy` | Heavy weapons | Armes lourdes |
+| `TRUDVANG.Content.Folder.WeaponsTwoHanded` | Two-handed weapons | Armes à deux mains |
+| `TRUDVANG.Content.Folder.WeaponsRanged` | Ranged weapons | Armes à distance |
 | `TRUDVANG.Content.Folder.Armor` | Trudvang - Armor & Shields | Trudvang - Armures & Boucliers |
 | `TRUDVANG.Content.Folder.Gear` | Trudvang - Gear & Extracts | Trudvang - Équipements & Extraits |
 | `TRUDVANG.Content.Folder.Equipment` | Trudvang - Equipment | Trudvang - Équipements |
+| `TRUDVANG.Content.Folder.Packages` | Packages | Paquetages |
 | `TRUDVANG.Content.Folder.Extracts` | Trudvang - Extracts | Trudvang - Extraits |
 | `TRUDVANG.Content.Folder.Races` | Races | Races |
 | `TRUDVANG.Content.Folder.Archetypes` | Archetypes | Archétypes |
@@ -1115,6 +1120,38 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Duration.FourMinutes` | 4 minutes | 4 minutes |
 | `TRUDVANG.Content.Duration.OneHour` | 1 hour | 1 heure |
 | `TRUDVANG.Content.Duration.SixHours` | 6 hours | 6 heures |
+
+## `TRUDVANG.Content.GenericDescription.Weapon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.GenericDescription.Weapon.oneHandedLight` | A light one-handed weapon, quick to wield in close combat. | Une arme légère à une main, rapide à manier et adaptée au combat rapproché. |
+| `TRUDVANG.Content.GenericDescription.Weapon.oneHandedHeavy` | A heavy one-handed weapon designed for powerful blows. | Une arme lourde à une main, conçue pour les coups puissants au combat. |
+| `TRUDVANG.Content.GenericDescription.Weapon.twoHanded` | A powerful two-handed weapon that demands both hands. | Une arme à deux mains, puissante mais exigeante à manier. |
+| `TRUDVANG.Content.GenericDescription.Weapon.ranged` | A ranged weapon for striking targets beyond reach. | Une arme à distance destinée à frapper une cible hors de portée. |
+
+## `TRUDVANG.Content.GenericDescription`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.GenericDescription.Shield` | A shield used to parry melee attacks and absorb damage for its bearer. | Un bouclier destiné à parer les attaques de mêlée et à encaisser les dégâts à la place de son porteur. |
+| `TRUDVANG.Content.GenericDescription.Armor` | Protective armor whose Encumbrance determines movement and initiative penalties. | Une armure protectrice ; son encombrement conditionne les pénalités de mouvement et d’initiative. |
+| `TRUDVANG.Content.GenericDescription.Extract` | An extract prepared from rare substances, whose result depends on its Strength. | Un extrait préparé à partir de substances rares, dont l’effet dépend de sa force. |
+| `TRUDVANG.Content.GenericDescription.Gear` | Useful equipment for travel and everyday activities. | Un équipement utile aux voyages et aux activités quotidiennes. |
+
+## `TRUDVANG.Content.GenericDescription.Package`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.GenericDescription.Package.ArmamentKit` | A package for maintaining weapons and combat equipment. | Un paquetage pour entretenir armes et équipement de combat. |
+| `TRUDVANG.Content.GenericDescription.Package.CraftKit` | A package of tools for one specific craft, without fixed installations. | Un paquetage d’outils choisi pour un artisanat précis, sans les installations fixes. |
+| `TRUDVANG.Content.GenericDescription.Package.BurglaryKit` | A burglary package with tools and clothing for discreet intrusion. | Un paquetage de cambriolage avec les outils et vêtements utiles à l’intrusion discrète. |
+| `TRUDVANG.Content.GenericDescription.Package.CampingKit` | A package for setting camp and surviving in the wilderness. | Un paquetage pour installer un camp et survivre en pleine nature. |
+| `TRUDVANG.Content.GenericDescription.Package.HuntingKit` | A package for hunting and preparing game in the wilderness. | Un paquetage pour chasser et préparer les prises en pleine nature. |
+| `TRUDVANG.Content.GenericDescription.Package.WritingKit` | A package for writing, note-taking, and preserving documents. | Un paquetage destiné à l’écriture, aux notes et à la conservation des documents. |
+| `TRUDVANG.Content.GenericDescription.Package.MusicKit` | A bard’s package containing instruments, songs, and stage accessories. | Un paquetage de barde comprenant instruments, paroles et accessoires de scène. |
+| `TRUDVANG.Content.GenericDescription.Package.FishingKit` | A package for fishing and preparing catches. | Un paquetage pour pêcher et préparer les prises. |
+| `TRUDVANG.Content.GenericDescription.Package.HealingKit` | A healing package with bandages, herbs, and medical equipment. | Un paquetage de soins contenant bandages, simples et matériel médical. |
 
 ## `TRUDVANG.Content.Item.Seax`
 
@@ -1282,32 +1319,60 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.DragonBlood.Name` | Dragon Blood | Sang de dragon |
-| `TRUDVANG.Content.Item.DragonBlood.Description` | A legendary altering extract taken from a dragon. It is exceedingly rare and worth about 1,000 silver coins per dose. | Un extrait altérant légendaire prélevé sur un dragon. Excessivement rare, il vaut environ 1 000 pièces d'argent la dose. |
-| `TRUDVANG.Content.Item.DragonBlood.Effect` | Roll 1d20 + extract Strength - Constitution. Mild, moderate, substantial, and complete effects grant +2, +4, +8, or +12 natural Protection Value for one day. | Lancez 1d20 + force de l'extrait - Constitution. Les effets léger, modéré, substantiel et complet accordent respectivement +2, +4, +8 ou +12 de valeur de protection naturelle pendant un jour. |
+| `TRUDVANG.Content.Item.DragonBlood.Description` | Black blood from a slain dragon that grants temporary natural protection. | Le sang noir d’un dragon abattu, qui confère une protection naturelle temporaire. |
+| `TRUDVANG.Content.Item.DragonBlood.Appearance` | Black blood taken from a dragon that has been killed. | Sang noir prélevé sur un dragon tué ; le blesser ne suffit pas à en obtenir. |
+| `TRUDVANG.Content.Item.DragonBlood.Preparation` | None; one dragon yields one dose. | Aucune ; un dragon fournit une dose. |
+| `TRUDVANG.Content.Item.DragonBlood.Usage` | Drink it or pour it over the body. | Se boit ou se verse sur le corps. |
+| `TRUDVANG.Content.Item.DragonBlood.Effect` | Grants natural Protection Value for one day. | Accorde une valeur de protection naturelle pendant un jour. |
+| `TRUDVANG.Content.Item.DragonBlood.Mild` | +2 natural Protection Value. | +2 à la valeur de protection naturelle. |
+| `TRUDVANG.Content.Item.DragonBlood.Moderate` | +4 natural Protection Value. | +4 à la valeur de protection naturelle. |
+| `TRUDVANG.Content.Item.DragonBlood.Strong` | +8 natural Protection Value. | +8 à la valeur de protection naturelle. |
+| `TRUDVANG.Content.Item.DragonBlood.Total` | +12 natural Protection Value. | +12 à la valeur de protection naturelle. |
 
 ## `TRUDVANG.Content.Item.FrostboarFat`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.FrostboarFat.Name` | Frostboar's Fat | Graisse de frostboar |
-| `TRUDVANG.Content.Item.FrostboarFat.Description` | Thick brown fat cut from a frostboar's neck. It smells terrible and can be used without further preparation. | Une épaisse graisse brune prélevée sur la nuque d'un frostboar. Son odeur est terrible et elle s'emploie sans préparation supplémentaire. |
-| `TRUDVANG.Content.Item.FrostboarFat.Effect` | Rubbed on the body, the fat protects against extreme cold and heat for two hours. Determine its degree with the extract-effect roll. | Frottée sur le corps, la graisse protège du froid extrême et de la chaleur pendant deux heures. Déterminez son degré avec le jet d'effet d'extrait. |
+| `TRUDVANG.Content.Item.FrostboarFat.Description` | A foul-smelling fat that protects against extreme temperatures. | Une graisse nauséabonde qui protège des températures extrêmes. |
+| `TRUDVANG.Content.Item.FrostboarFat.Appearance` | Thick brown fat with an incredibly bad smell. | Graisse épaisse brunâtre à l’odeur incroyablement mauvaise. |
+| `TRUDVANG.Content.Item.FrostboarFat.Preparation` | Cut the brown fatty tissue from a frostboar’s neck; use immediately. | Découper les tissus graisseux bruns du cou d’un sanglier des glaces ; utilisable immédiatement. |
+| `TRUDVANG.Content.Item.FrostboarFat.Usage` | Apply to the body. | S’applique sur le corps. |
+| `TRUDVANG.Content.Item.FrostboarFat.Effect` | Protects from cold and heat for two hours. | Protège du froid et de la chaleur pendant deux heures. |
+| `TRUDVANG.Content.Item.FrostboarFat.Mild` | Protects from −20 °C to +30 °C. | Protège de −20 °C à +30 °C. |
+| `TRUDVANG.Content.Item.FrostboarFat.Moderate` | Protects from −40 °C to +50 °C, including magical temperatures. | Protège de −40 °C à +50 °C, même d’origine magique. |
+| `TRUDVANG.Content.Item.FrostboarFat.Strong` | As moderate; reduces harmful fire and cold effects by 25%. | Comme modéré, et réduit de 25 % les effets néfastes du feu et du froid. |
+| `TRUDVANG.Content.Item.FrostboarFat.Total` | As moderate; reduces harmful fire and cold effects by 50%. | Comme modéré, et réduit de 50 % les effets néfastes du feu et du froid. |
 
 ## `TRUDVANG.Content.Item.WoundBalm`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.WoundBalm.Name` | Wound-Balm | Baume aux blessures |
-| `TRUDVANG.Content.Item.WoundBalm.Description` | A healing salve prepared for direct application to injuries. | Un onguent cicatrisant préparé pour être appliqué directement sur les blessures. |
-| `TRUDVANG.Content.Item.WoundBalm.Effect` | Apply the balm to a wound and resolve its healing degree with the standard extract-effect roll. | Appliquez le baume sur la blessure et déterminez son degré de guérison avec le jet d'effet d'extrait standard. |
+| `TRUDVANG.Content.Item.WoundBalm.Description` | A yellow ointment that accelerates natural healing at the cost of dizziness and thirst. | Un onguent jaunâtre qui accélère la guérison naturelle, au prix de vertiges et de soif. |
+| `TRUDVANG.Content.Item.WoundBalm.Appearance` | A yellow ointment of royal elk antler, juniper, water, and birch sap. | Onguent jaunâtre composé de bois d’élan royal, de genévrier, d’eau et de sève de bouleau. |
+| `TRUDVANG.Content.Item.WoundBalm.Preparation` | Crush and boil the antler with dried juniper, filter it, then mix it with birch sap. | Concasser les bois, les faire bouillir avec du genévrier séché, filtrer puis mélanger à la sève de bouleau. |
+| `TRUDVANG.Content.Item.WoundBalm.Usage` | Once cool, apply to wounds before bandaging. | Une fois refroidi, s’applique sur les blessures avant bandage. |
+| `TRUDVANG.Content.Item.WoundBalm.Effect` | Accelerates natural healing but causes severe dizziness. | Accélère la guérison naturelle, mais provoque d’importants vertiges. |
+| `TRUDVANG.Content.Item.WoundBalm.Mild` | No effect. | Aucun effet. |
+| `TRUDVANG.Content.Item.WoundBalm.Moderate` | +1 Body Point per day; −2 to actions requiring movement. | +1 point de santé par jour ; −2 aux actions nécessitant du mouvement. |
+| `TRUDVANG.Content.Item.WoundBalm.Strong` | +2 Body Points per day; −5 to actions requiring movement. | +2 points de santé par jour ; −5 aux actions nécessitant du mouvement. |
+| `TRUDVANG.Content.Item.WoundBalm.Total` | +3 Body Points per day; −10 to actions requiring movement. | +3 points de santé par jour ; −10 aux actions nécessitant du mouvement. |
 
 ## `TRUDVANG.Content.Item.Manetter`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Manetter.Name` | Mandrake | Mandrape |
-| `TRUDVANG.Content.Item.Manetter.Description` | A dangerous poison that slowly strangles its victim and ignores armor and natural protection. | Un poison dangereux qui étrangle lentement sa victime et ignore les armures et la protection naturelle. |
-| `TRUDVANG.Content.Item.Manetter.Effect` | Roll 1d20 + 2 - Constitution and consult the Extract Effect table. Damage is removed directly from Body Points. | Lancez 1d20 + 2 - Constitution et consultez la table des effets des extraits. Les dégâts sont retirés directement aux points de santé. |
+| `TRUDVANG.Content.Item.Manetter.Description` | A toxic sludge that slowly suffocates its victim and ignores protection. | Une boue toxique qui asphyxie lentement sa victime et ignore les protections. |
+| `TRUDVANG.Content.Item.Manetter.Appearance` | Green-black greasy sludge made from blot mushroom, gnyffel root, and water. | Boue grasse vert-noir faite de blot, de racine de gnyffel et d’eau. |
+| `TRUDVANG.Content.Item.Manetter.Preparation` | Crush and boil the blot, press it, then mix the liquid with ground gnyffel root. | Écraser le blot, le faire bouillir, presser la pâte puis mélanger le liquide à la racine de gnyffel moulue. |
+| `TRUDVANG.Content.Item.Manetter.Usage` | Mix into food or drink, or smear on one blade or three arrows. | Se mélange à la nourriture ou à une boisson, ou s’étale sur une lame ou trois flèches. |
+| `TRUDVANG.Content.Item.Manetter.Effect` | Suffocating poison; all damage is removed directly from Body Points. | Poison asphyxiant : tous les dégâts sont retirés directement des points de santé. |
+| `TRUDVANG.Content.Item.Manetter.Mild` | 1 damage every eight hours. | 1 dégât toutes les huit heures. |
+| `TRUDVANG.Content.Item.Manetter.Moderate` | 1 damage every four hours. | 1 dégât toutes les quatre heures. |
+| `TRUDVANG.Content.Item.Manetter.Strong` | 5% chance of death within an hour, then 1 damage every two hours. | 5 % de mort dans l’heure, puis 1 dégât toutes les deux heures. |
+| `TRUDVANG.Content.Item.Manetter.Total` | 10% chance of death within an hour, then 1 damage every hour. | 10 % de mort dans l’heure, puis 1 dégât toutes les heures. |
 
 ## `TRUDVANG.Content.Item.Klubb`
 
@@ -1914,56 +1979,120 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Argmurkla.Name` | Argmurkla | Argmurkla |
-| `TRUDVANG.Content.Item.Argmurkla.Effect` | Causes berserker rage and progressively strengthens attacks and Strength. | Déclenche une rage de berserker et renforce progressivement les attaques et la Force. |
+| `TRUDVANG.Content.Item.Argmurkla.Description` | An evil morel that triggers berserker rage. | Une morille maligne qui déclenche une rage de berserker. |
+| `TRUDVANG.Content.Item.Argmurkla.Appearance` | A grey, purple-marbled mushroom the size of a small fist, found in dark forests and on stone trolls. | Champignon gris marbré de pourpre, gros comme un petit poing ; il pousse dans les forêts très sombres et sur les trolls de pierre. |
+| `TRUDVANG.Content.Item.Argmurkla.Preparation` | None. | Aucune. |
+| `TRUDVANG.Content.Item.Argmurkla.Usage` | Eat it. | Se mange. |
+| `TRUDVANG.Content.Item.Argmurkla.Effect` | Immediately triggers berserker rage. | Déclenche immédiatement une rage de berserker. |
+| `TRUDVANG.Content.Item.Argmurkla.Mild` | +1 to all attacks. | +1 à toutes les attaques. |
+| `TRUDVANG.Content.Item.Argmurkla.Moderate` | Strength +1, +1 to all attacks, −1 to all parries. | Force +1, +1 à toutes les attaques et −1 à toutes les parades. |
+| `TRUDVANG.Content.Item.Argmurkla.Strong` | Strength +2, +1 to all attacks, −1 to all parries. | Force +2, +1 à toutes les attaques et −1 à toutes les parades. |
+| `TRUDVANG.Content.Item.Argmurkla.Total` | Strength +4, +2 to all attacks, −2 to all parries. | Force +4, +2 à toutes les attaques et −2 à toutes les parades. |
 
 ## `TRUDVANG.Content.Item.Gaveblom`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Gaveblom.Name` | Gaveblom | Gaveblom |
-| `TRUDVANG.Content.Item.Gaveblom.Effect` | Accelerates natural healing at an increasing rate. | Accélère la guérison naturelle à un rythme croissant. |
+| `TRUDVANG.Content.Item.Gaveblom.Description` | A rare flower whose decoction accelerates healing. | Une fleur rare dont la décoction accélère la guérison. |
+| `TRUDVANG.Content.Item.Gaveblom.Appearance` | A long-stemmed blue flower with narrow basal leaves. | Longue tige, fleurs bleues et feuilles étroites à la racine ; elle pousse sur les pentes rocheuses du Vastermark et du Mittland. |
+| `TRUDVANG.Content.Item.Gaveblom.Preparation` | Finely chop three stems and boil them in water to make an oily, bitter drink. | Hacher finement trois tiges et les faire bouillir dans l’eau pour obtenir une boisson huileuse et amère. |
+| `TRUDVANG.Content.Item.Gaveblom.Usage` | Drink it. | Se boit. |
+| `TRUDVANG.Content.Item.Gaveblom.Effect` | A powerful healing extract. | Puissant extrait de soin. |
+| `TRUDVANG.Content.Item.Gaveblom.Mild` | Heals 1d3 damage every eight hours. | Soigne 1d3 dégâts toutes les huit heures. |
+| `TRUDVANG.Content.Item.Gaveblom.Moderate` | Heals 1d3 damage every four hours. | Soigne 1d3 dégâts toutes les quatre heures. |
+| `TRUDVANG.Content.Item.Gaveblom.Strong` | Heals 1d3 damage every two hours. | Soigne 1d3 dégâts toutes les deux heures. |
+| `TRUDVANG.Content.Item.Gaveblom.Total` | Heals 1d3 damage every hour. | Soigne 1d3 dégâts toutes les heures. |
 
 ## `TRUDVANG.Content.Item.Grindblom`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Grindblom.Name` | Grindblom | Grindblom |
-| `TRUDVANG.Content.Item.Grindblom.Effect` | Lets the user pass into the mists to cross obstacles, at the risk of becoming lost. | Fait passer son consommateur dans les brumes, pour traverser les obstacles au risque de s’y perdre. |
+| `TRUDVANG.Content.Item.Grindblom.Description` | A portal flower that lets its user enter the mists between Trudvang and Dimhall. | Une fleur des portails qui permet de passer dans les brumes entre Trudvang et Dimhall. |
+| `TRUDVANG.Content.Item.Grindblom.Appearance` | A small brown four-leaf clover growing near old portals. | Petit trèfle brun à quatre feuilles poussant près des lieux où un portail a autrefois été ouvert. |
+| `TRUDVANG.Content.Item.Grindblom.Preparation` | None; one clover is one dose. | Aucune ; un trèfle constitue une dose. |
+| `TRUDVANG.Content.Item.Grindblom.Usage` | Chew it. | Se mâche. |
+| `TRUDVANG.Content.Item.Grindblom.Effect` | The user becomes immaterial in the mists and can cross obstacles, risking becoming lost. | Le consommateur devient immatériel dans les brumes et peut traverser les obstacles, au risque de se perdre. |
+| `TRUDVANG.Content.Item.Grindblom.Mild` | +3 to the test not to become lost; −5 to be detected from Trudvang. | +3 au test pour ne pas se perdre ; −5 pour être détecté depuis Trudvang. |
+| `TRUDVANG.Content.Item.Grindblom.Moderate` | No test modifier; −10 to be detected. | Aucun modificateur au test ; −10 pour être détecté. |
+| `TRUDVANG.Content.Item.Grindblom.Strong` | −2 to the test not to become lost; undetectable from Trudvang. | −2 au test pour ne pas se perdre ; indétectable depuis Trudvang. |
+| `TRUDVANG.Content.Item.Grindblom.Total` | −5 to the test not to become lost; undetectable from Trudvang. | −5 au test pour ne pas se perdre ; indétectable depuis Trudvang. |
 
 ## `TRUDVANG.Content.Item.Pustartobak`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Pustartobak.Name` | Pustartobak | Pustartobak |
-| `TRUDVANG.Content.Item.Pustartobak.Effect` | Inhaled spores obstruct breathing and inflict increasingly serious harm. | Les spores inhalées obstruent les voies respiratoires et infligent des dégâts croissants. |
+| `TRUDVANG.Content.Item.Pustartobak.Description` | Poisoned tobacco whose spores consume tissue and obstruct the airways. | Un tabac empoisonné dont les spores dévorent les tissus et obstruent les voies aériennes. |
+| `TRUDVANG.Content.Item.Pustartobak.Appearance` | Pipe tobacco mixed with pustarswampen spores. | Tabac à pipe ordinaire mélangé à des spores de pustarswampen. |
+| `TRUDVANG.Content.Item.Pustartobak.Preparation` | Mix tobacco with the mushroom gills; spores remain dormant until smoke releases them. | Mélanger le tabac aux lamelles du champignon, dont les spores restent latentes jusqu’à la fumée. |
+| `TRUDVANG.Content.Item.Pustartobak.Usage` | Smoke it or inhale it passively. | Se fume ou s’inhale passivement. |
+| `TRUDVANG.Content.Item.Pustartobak.Effect` | Smoke-borne spores affect all who inhale them; armor and natural protection do not help. | Les spores de la fumée affectent tous ceux qui les inhalent avant leur mort ; ni armure ni protection naturelle ne les arrêtent. |
+| `TRUDVANG.Content.Item.Pustartobak.Mild` | 1 damage. | 1 point de dégâts. |
+| `TRUDVANG.Content.Item.Pustartobak.Moderate` | 1 damage per minute. | 1 point de dégâts par minute. |
+| `TRUDVANG.Content.Item.Pustartobak.Strong` | 2 damage per minute. | 2 points de dégâts par minute. |
+| `TRUDVANG.Content.Item.Pustartobak.Total` | 3 damage per minute. | 3 points de dégâts par minute. |
 
 ## `TRUDVANG.Content.Item.Svartljunghed`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Svartljunghed.Name` | Svartljunghed | Svartljunghed |
-| `TRUDVANG.Content.Item.Svartljunghed.Effect` | Numbs pain, eases fear, and can put the user to sleep. | Engourdit la douleur, apaise la peur et peut endormir le consommateur. |
+| `TRUDVANG.Content.Item.Svartljunghed.Description` | A black heather chewed to numb pain and fear, but capable of causing sleep. | Une bruyère noire à mâcher qui apaise douleur et peur, mais peut endormir. |
+| `TRUDVANG.Content.Item.Svartljunghed.Appearance` | A black-flowered heath shrub from the Stormlands. | Taillis à fleurs noires poussant l’été sur la lande et les rochers des Stormländer. |
+| `TRUDVANG.Content.Item.Svartljunghed.Preparation` | Pull or cut the flowers to free the thorns. | Arracher ou couper les fleurs pour dégager les épines. |
+| `TRUDVANG.Content.Item.Svartljunghed.Usage` | Chew the thorns. | Les épines se mâchent. |
+| `TRUDVANG.Content.Item.Svartljunghed.Effect` | A mildly toxic and addictive poison that numbs the body and induces bliss. | Poison légèrement toxique, addictif, qui engourdit le corps et procure la béatitude. |
+| `TRUDVANG.Content.Item.Svartljunghed.Mild` | The user becomes happy. | Le consommateur devient heureux. |
+| `TRUDVANG.Content.Item.Svartljunghed.Moderate` | Numbed: −2 Initiative and Knowledge, −4 Fear. | Engourdi : −2 initiative et Connaissances, −4 peur. |
+| `TRUDVANG.Content.Item.Svartljunghed.Strong` | No pain: −4 Initiative and Knowledge, −8 Fear. | Insensible à la douleur : −4 initiative et Connaissances, −8 peur. |
+| `TRUDVANG.Content.Item.Svartljunghed.Total` | The user sleeps for 1d6 hours, waking thirsty and nauseated. | Le consommateur s’endort 1d6 heures, avec soif et nausée au réveil. |
 
 ## `TRUDVANG.Content.Item.Tornrot`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Tornrot.Name` | Tornrot | Tornrot |
-| `TRUDVANG.Content.Item.Tornrot.Effect` | Suppresses pain and fatigue, reduces fear, and strengthens damage at the cost of weaker parries. | Supprime douleur et fatigue, réduit la peur puis renforce les dégâts, au prix de parades plus faibles. |
+| `TRUDVANG.Content.Item.Tornrot.Description` | A prickly root that suppresses pain and fatigue but makes the user fierce and addicted. | Une racine piquante qui supprime douleur et fatigue mais rend féroce et accro à son usage. |
+| `TRUDVANG.Content.Item.Tornrot.Appearance` | A small, knobbly pale-yellow root from cold, dark places. | Petit légume-racine rond, noueux, jaune clair, poussant dans les lieux froids et sombres. |
+| `TRUDVANG.Content.Item.Tornrot.Preparation` | None. | Aucune. |
+| `TRUDVANG.Content.Item.Tornrot.Usage` | Eat it. | Se mange. |
+| `TRUDVANG.Content.Item.Tornrot.Effect` | Makes the user cruel and bloodthirsty; it is strongly addictive. | Rend le consommateur cruel et assoiffé de sang ; l’extrait est fortement addictif. |
+| `TRUDVANG.Content.Item.Tornrot.Mild` | Ignores pain, weariness, and exhaustion. | Ignore douleur, lassitude et épuisement. |
+| `TRUDVANG.Content.Item.Tornrot.Moderate` | As mild; receives half Fear points. | Comme léger ; moitié des points de peur. |
+| `TRUDVANG.Content.Item.Tornrot.Strong` | As mild; no Fear, +1 melee or thrown damage, −1 parry. | Comme léger ; aucun point de peur, +1 dégâts au contact ou au lancer, −1 parade. |
+| `TRUDVANG.Content.Item.Tornrot.Total` | As mild; no Fear, +2 melee or thrown damage, −2 parry. | Comme léger ; aucun point de peur, +2 dégâts au contact ou au lancer, −2 parade. |
 
 ## `TRUDVANG.Content.Item.Trollilles`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Trollilles.Name` | Trollilles | Trollilles |
-| `TRUDVANG.Content.Item.Trollilles.Effect` | Temporarily rejuvenates the user and increasingly protects against disease and poison. | Rajeunit temporairement et protège progressivement contre maladies et poisons. |
+| `TRUDVANG.Content.Item.Trollilles.Description` | Sweet berries that temporarily rejuvenate and protect against disease and poison. | Des baies sucrées qui rajeunissent temporairement et protègent des maladies et poisons. |
+| `TRUDVANG.Content.Item.Trollilles.Appearance` | Round yellowish, juicy, sweet berries with a seed to spit out. | Petites baies rondes jaunâtres, juteuses et sucrées, contenant une graine à recracher. |
+| `TRUDVANG.Content.Item.Trollilles.Preparation` | None; pick directly from the trollilles shrub. | Aucune ; elles se cueillent sur l’arbuste à trollilles. |
+| `TRUDVANG.Content.Item.Trollilles.Usage` | Eat them. | Se mangent. |
+| `TRUDVANG.Content.Item.Trollilles.Effect` | Makes the user look younger and more resistant to disease and poison; repeated use changes appearance. | Rajeunit l’apparence et augmente la résistance aux maladies et poisons ; l’usage régulier altère l’apparence. |
+| `TRUDVANG.Content.Item.Trollilles.Mild` | The user looks healthy. | Le consommateur semble en bonne santé. |
+| `TRUDVANG.Content.Item.Trollilles.Moderate` | Looks younger; disease and poison effects are reduced by 25%. | Paraît plus jeune ; maladies et poisons réduits de 25 %. |
+| `TRUDVANG.Content.Item.Trollilles.Strong` | Looks much younger; disease and poison effects are reduced by 50%. | Paraît nettement plus jeune ; maladies et poisons réduits de 50 %. |
+| `TRUDVANG.Content.Item.Trollilles.Total` | Looks far younger; immune to disease and poison. | Paraît beaucoup plus jeune ; immunisé contre maladies et poisons. |
 
 ## `TRUDVANG.Content.Item.Tungelin`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.Tungelin.Name` | Tungelin | Tungelin |
-| `TRUDVANG.Content.Item.Tungelin.Effect` | Progressively reduces the need for sleep. | Réduit progressivement le besoin de sommeil. |
+| `TRUDVANG.Content.Item.Tungelin.Description` | A small thistle whose leaves greatly reduce the need for sleep. | Un petit chardon dont les feuilles réduisent fortement le besoin de sommeil. |
+| `TRUDVANG.Content.Item.Tungelin.Appearance` | A small red-brown thistle with 1d6 leaves. | Petit chardon rouge-brun, chaque plante portant 1d6 feuilles. |
+| `TRUDVANG.Content.Item.Tungelin.Preparation` | None. | Aucune. |
+| `TRUDVANG.Content.Item.Tungelin.Usage` | Eat it. | Se mange. |
+| `TRUDVANG.Content.Item.Tungelin.Effect` | Increases alertness; repeated use marks the eyes and encourages ignoring sounds. | Augmente la vigilance ; un usage répété marque les yeux et favorise l’habitude d’ignorer les sons. |
+| `TRUDVANG.Content.Item.Tungelin.Mild` | Only six hours of sleep are needed. | Six heures de sommeil suffisent. |
+| `TRUDVANG.Content.Item.Tungelin.Moderate` | Only four hours of sleep are needed. | Quatre heures de sommeil suffisent. |
+| `TRUDVANG.Content.Item.Tungelin.Strong` | Only two hours of sleep are needed. | Deux heures de sommeil suffisent. |
+| `TRUDVANG.Content.Item.Tungelin.Total` | No sleep is needed for the duration. | Aucun sommeil n’est nécessaire pendant la durée. |
 
 ## `TRUDVANG.Content.Item.AnimalVitner`
 

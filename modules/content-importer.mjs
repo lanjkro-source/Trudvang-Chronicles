@@ -4,9 +4,86 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 22;
+const CONTENT_VERSION = 23;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
+const REMOVED_STARTER_ITEM_KEYS = new Set([
+  "TRUDVANG.Content.Item.ThrowingAxe",
+  "TRUDVANG.Content.Item.Rope",
+  "TRUDVANG.Content.Item.Torch"
+]);
+
+function destinationFolder(entry) {
+  if (entry.type === "weapon") return {
+    oneHandedLight: "weaponsLight",
+    oneHandedHeavy: "weaponsHeavy",
+    twoHanded: "weaponsTwoHanded",
+    ranged: "weaponsRanged"
+  }[entry.system?.category] ?? entry.folder;
+  if (entry.type === "gear" && (entry.nameKey.includes("Kit") || entry.nameKey.endsWith("AdventureKit.Name"))) return "packages";
+  return entry.folder;
+}
+
+const STARTER_IMAGES = {
+  Seax: "icons/weapons/thrown/dagger-simple.webp", HringSeax: "icons/weapons/thrown/dagger-ringed-steel.webp", Glaaf: "icons/weapons/swords/shortsword-guard.webp", Klubb: "icons/weapons/maces/mace-spiked-simple.webp", KrumSwerd: "icons/weapons/swords/scimitar-guard-brown.webp", LillSpjot: "icons/weapons/polearms/javelin-simple.webp", NagliKlubb: "icons/weapons/maces/mace-spiked-cube-wood.webp", SplitAxi: "icons/weapons/axes/axe-battle-simple.webp", Stafur: "icons/weapons/polearms/spear-simple-engraved.webp",
+  BattleAxe: "icons/weapons/axes/axe-battle-blackened.webp", BeardedAxe: "icons/weapons/axes/axe-crooked-blackened.webp", BardaFaldir: "icons/weapons/maces/flail-cube-grey.webp", BardaHammri: "icons/weapons/hammers/hammer-war-rounding.webp", BardaKlot: "icons/weapons/maces/flail-ball-grey.webp", BardaMakir: "icons/weapons/maces/mace-flanged-steel-grey.webp", BardaSwerd: "icons/weapons/swords/sword-broad-worn.webp", BastjurKedja: "icons/weapons/maces/flail-spiked-grey.webp", Broadsword: "icons/weapons/swords/sword-broad-worn.webp", DropiAxi: "icons/weapons/axes/axe-battle-broad-nooks.webp", Hakk: "icons/weapons/thrown/throwing-pick.webp", Miekka: "icons/weapons/swords/sword-runed-glowing.webp", StaafSpjot: "icons/weapons/polearms/spear-flared-steel.webp", StakkSwerd: "icons/weapons/swords/sword-guard-worn.webp", StjornMakir: "icons/weapons/maces/flail-morning-star.webp",
+  BreidSpjot: "icons/weapons/polearms/glaive-simple.webp", LongSpear: "icons/weapons/polearms/pike-flared-brown.webp", TwoHandedAxe: "icons/weapons/axes/axe-double-simple-brown.webp", TveiFaldir: "icons/weapons/maces/flail-spiked.webp", TveiHakk: "icons/weapons/polearms/halberd-crescent-steel.webp", TveiHammri: "icons/weapons/hammers/hammer-war-rounding.webp", TveiKlubb: "icons/weapons/maces/mace-spiked-steel-wood.webp", TwoHandedSword: "icons/weapons/swords/greatsword-guard.webp",
+  HuntingBow: "icons/weapons/bows/shortbow-recurve.webp", Longbow: "icons/weapons/bows/longbow-recurve-brown.webp", TveBogi: "icons/weapons/bows/bow-ornamental-carved-brown.webp", Slingu: "icons/weapons/thrown/throwing-stone.webp", StafurSlingu: "icons/weapons/thrown/throwing-rock.webp", Crossbow: "icons/weapons/crossbows/crossbow-heavy.webp", VolkKrossbogur: "icons/weapons/crossbows/crossbow-simple-brown.webp", TunkurKrossbogur: "icons/weapons/crossbows/crossbow-heavy-black.webp",
+  SmallShield: "icons/equipment/shield/buckler-wooden-boss-brown.webp", MediumShield: "icons/equipment/shield/round-wooden-boss-steel-brown.webp", LargeShield: "icons/equipment/shield/kite-wooden-boss-steel-brown.webp", SmallFurShield: "icons/equipment/shield/buckler-boss-iron-wood-brown.webp", MediumFurShield: "icons/equipment/shield/round-wooden-reinforced-boss-steel.webp", LargeFurShield: "icons/equipment/shield/kite-wooden-boss-steel-red.webp", SmallMetalShield: "icons/equipment/shield/buckler-iron-cross-gray.webp", MediumMetalShield: "icons/equipment/shield/heater-steel-gray.webp", LargeMetalShield: "icons/equipment/shield/scutum-steel-worn.webp",
+  Argmurkla: "icons/consumables/potions/conical-mushroom-poison-red.webp", Gaveblom: "icons/consumables/plants/leaf-herb-green.webp", FrostboarFat: "icons/consumables/potions/bottle-bulb-corked-green.webp", Grindblom: "icons/consumables/plants/leaf-hastate-white-green.webp", Manetter: "icons/consumables/potions/bottle-conical-corked-labeled-skull-poison-green.webp", Pustartobak: "icons/consumables/plants/dried-herb-bundle-brown.webp", DragonBlood: "icons/consumables/potions/bottle-round-corked-red.webp", Svartljunghed: "icons/consumables/plants/grass-bundle-green.webp", Tornrot: "icons/consumables/plants/dried-stem-vine-root-bramble-brown.webp", Trollilles: "icons/consumables/plants/leaf-maple-green-purple.webp", Tungelin: "icons/consumables/plants/leaf-serrated-pink.webp"
+};
+
+const PACKAGE_IMAGES = {
+  Armament: "icons/containers/bags/case-simple-leather-brown.webp", Craft: "icons/containers/bags/pack-leather-brown.webp", Burglary: "icons/containers/bags/pack-leather-black-brown.webp", Camping: "icons/containers/bags/pack-simple-leather-fur-tan.webp", Hunting: "icons/containers/bags/pack-leather-strapped-tan.webp", Writing: "icons/containers/bags/case-scroll-leather-tan.webp", Music: "icons/containers/bags/pack-engraved-leather-tan.webp", Fishing: "icons/containers/bags/duffel-simple-leather.webp", Healing: "icons/containers/bags/case-embossed-leather-tan.webp"
+};
+
+function starterImage(entry) {
+  const key = entry.nameKey.split(".").at(-2);
+  if (STARTER_IMAGES[key]) return STARTER_IMAGES[key];
+  const packageType = Object.keys(PACKAGE_IMAGES).find(type => key.startsWith(type));
+  if (packageType) return PACKAGE_IMAGES[packageType];
+  if (entry.type === "armor") return entry.system?.heft <= 3
+    ? "icons/equipment/chest/breastplate-collared-leather-brown.webp"
+    : entry.system?.heft <= 8
+      ? "icons/equipment/chest/breastplate-banded-steel-grey.webp"
+      : "icons/equipment/chest/breastplate-cuirass-steel-grey.webp";
+  return entry.img;
+}
+
+function starterSourceKey(entry) {
+  if (entry.type === "weapon") return {
+    oneHandedLight: "TRUDVANG.Content.Source.Rulebook111",
+    oneHandedHeavy: "TRUDVANG.Content.Source.Rulebook112",
+    twoHanded: "TRUDVANG.Content.Source.Rulebook114",
+    ranged: "TRUDVANG.Content.Source.Rulebook116"
+  }[entry.system?.category];
+  if (entry.type === "shield") return "TRUDVANG.Content.Source.Rulebook118";
+  if (entry.type === "armor") return "TRUDVANG.Content.Source.Rulebook119";
+  const key = entry.nameKey.split(".").at(-2);
+  if (["SlaveClothes", "PoorClothes", "AverageClothes", "RichClothes", "RoyalAttire"].includes(key)) return "TRUDVANG.Content.Source.Rulebook126";
+  if (key.includes("Kit") || key === "AdventureKit") return "TRUDVANG.Content.Source.Rulebook127";
+  return entry.system?.sourceKey;
+}
+
+function localizedField(itemKey, field) {
+  const key = `TRUDVANG.Content.Item.${itemKey}.${field}`;
+  const value = game.i18n.localize(key);
+  return value === key ? undefined : value;
+}
+
+function fallbackDescription(entry) {
+  const itemKey = entry.nameKey.split(".").at(-2);
+  const direct = game.i18n.localize(`TRUDVANG.Content.ItemDescription.${itemKey}`);
+  if (direct !== `TRUDVANG.Content.ItemDescription.${itemKey}`) return direct;
+  const key = entry.type === "weapon" ? `Weapon.${entry.system?.category}`
+    : entry.type === "shield" ? "Shield"
+      : entry.type === "armor" ? "Armor"
+        : entry.type === "potion" ? "Extract"
+          : itemKey.includes("Kit") || itemKey === "AdventureKit" ? `Package.${itemKey.replace(/(Small|Ordinary|Large|Basic|Standard|Complete|AdventureKit).*$/, "")}`
+            : "Gear";
+  const localized = game.i18n.localize(`TRUDVANG.Content.GenericDescription.${key}`);
+  return localized === `TRUDVANG.Content.GenericDescription.${key}` ? "" : localized;
+}
 
 function localizeTree(value) {
   if (Array.isArray(value)) return value.map(localizeTree);
@@ -79,18 +156,18 @@ async function loadTranslations(keys) {
 
 const renamedOrCustom = (document, translations) => !translations.has(document.name);
 
-async function upsertFolder(slug, config, translations) {
+async function upsertFolder(slug, config, translations, parent) {
   const localized = game.i18n.localize(config.nameKey);
   const legacySlugs = {equipment: ["gear"]};
   const existing = game.folders.find(folder => folder.type === config.type && flagOf(folder, "starterId") === slug)
     ?? game.folders.find(folder => folder.type === config.type && legacySlugs[slug]?.includes(flagOf(folder, "starterId")))
     ?? game.folders.find(folder => folder.type === config.type && !flagOf(folder, "starterId") && translations.has(folder.name));
   if (existing) {
-    const update = {[`flags.${SYSTEM_ID}.starterId`]: slug};
+    const update = {[`flags.${SYSTEM_ID}.starterId`]: slug, folder: parent?.id ?? null};
     if (existing.name !== localized) update.name = localized;
     await existing.update(update);
   }
-  const canonical = existing ?? await Folder.create({name: localized, type: config.type, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}});
+  const canonical = existing ?? await Folder.create({name: localized, type: config.type, folder: parent?.id ?? null, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}});
 
   // Previous imports could leave empty duplicates named in another language — fold them into the canonical folder.
   const duplicates = game.folders.filter(folder => folder.id !== canonical.id
@@ -120,12 +197,33 @@ function presentationUpdate(payload, key) {
 async function upsertBaseItems(source, folders, translationsByKey) {
   const skippedTypes = ["tablet", "spell", "divineFeat"];
   const byKey = new Map(game.items.filter(item => flagOf(item)).map(item => [flagOf(item), item]));
+  const obsolete = [...byKey.values()].filter(item => REMOVED_STARTER_ITEM_KEYS.has(flagOf(item)));
+  if (obsolete.length) await Item.deleteDocuments(obsolete.map(item => item.id));
   let updated = 0;
   let created = 0;
-  for (const entry of source.items.filter(entry => !skippedTypes.includes(entry.type))) {
+  for (const entry of source.items.filter(entry => !skippedTypes.includes(entry.type) && !REMOVED_STARTER_ITEM_KEYS.has(starterKey(entry.nameKey)))) {
     const key = starterKey(entry.nameKey);
     const payload = localizeTree(entry);
-    payload.folder = folders[entry.folder]?.id;
+    payload.img = starterImage(entry);
+    payload.folder = folders[destinationFolder(entry)]?.id;
+    const descriptionKey = entry.nameKey?.replace(/\.Name$/, ".Description");
+    const description = descriptionKey ? game.i18n.localize(descriptionKey) : "";
+    if (!payload.system?.description && description && description !== descriptionKey) payload.system.description = description;
+    if (!payload.system?.description) payload.system.description = fallbackDescription(entry);
+    const keyName = entry.nameKey.split(".").at(-2);
+    const sourceKey = starterSourceKey(entry);
+    if (sourceKey) payload.system.source = game.i18n.localize(sourceKey);
+    if (entry.type === "potion") {
+      for (const field of ["appearance", "preparation", "usage", "effect"]) {
+        const value = localizedField(keyName, field[0].toUpperCase() + field.slice(1));
+        if (value) payload.system[field] = value;
+      }
+      payload.system.efficacy ??= {};
+      for (const [field, suffix] of Object.entries({mild: "Mild", moderate: "Moderate", strong: "Strong", total: "Total"})) {
+        const value = localizedField(keyName, suffix);
+        if (value) payload.system.efficacy[field] = value;
+      }
+    }
     const translations = translationsByKey.get(entry.nameKey);
     let existing = byKey.get(key)
       // Adopt documents imported before imports were tracked by stable ids.
@@ -432,7 +530,7 @@ export async function importStarterContent({force = false} = {}) {
     const translationsByKey = await loadTranslations([...folderKeys, ...docKeys]);
 
     const folders = {};
-    for (const [slug, config] of Object.entries(source.folders)) folders[slug] = await upsertFolder(slug, config, translationsByKey.get(config.nameKey));
+    for (const [slug, config] of Object.entries(source.folders)) folders[slug] = await upsertFolder(slug, config, translationsByKey.get(config.nameKey), config.parent ? folders[config.parent] : undefined);
 
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
 

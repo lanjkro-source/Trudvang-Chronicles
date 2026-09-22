@@ -1,8 +1,13 @@
 {
   "folders": {
     "weapons": {"nameKey": "TRUDVANG.Content.Folder.Weapons", "type": "Item"},
+    "weaponsLight": {"nameKey": "TRUDVANG.Content.Folder.WeaponsLight", "type": "Item", "parent": "weapons"},
+    "weaponsHeavy": {"nameKey": "TRUDVANG.Content.Folder.WeaponsHeavy", "type": "Item", "parent": "weapons"},
+    "weaponsTwoHanded": {"nameKey": "TRUDVANG.Content.Folder.WeaponsTwoHanded", "type": "Item", "parent": "weapons"},
+    "weaponsRanged": {"nameKey": "TRUDVANG.Content.Folder.WeaponsRanged", "type": "Item", "parent": "weapons"},
     "armor": {"nameKey": "TRUDVANG.Content.Folder.Armor", "type": "Item"},
     "equipment": {"nameKey": "TRUDVANG.Content.Folder.Equipment", "type": "Item"},
+    "packages": {"nameKey": "TRUDVANG.Content.Folder.Packages", "type": "Item", "parent": "equipment"},
     "extracts": {"nameKey": "TRUDVANG.Content.Folder.Extracts", "type": "Item"},
     "tables": {"nameKey": "TRUDVANG.Content.Folder.Tables", "type": "RollTable"},
     "creatures": {"nameKey": "TRUDVANG.Content.Folder.Creatures", "type": "Actor"}
