@@ -231,8 +231,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.MovementModifier` | MM: MOVEMENT MODIFIER | MM : MOD. MOUVEMENT |
 | `TRUDVANG.Field.Strength` | Extract Strength | Force de l'extrait |
 | `TRUDVANG.Field.Application` | Application | Application |
+| `TRUDVANG.Field.PotionType` | Type | Type |
 | `TRUDVANG.Field.Duration` | Duration | Durée |
 | `TRUDVANG.Field.Effect` | Effect | Effet |
+| `TRUDVANG.Field.Appearance` | Appearance | Apparence |
+| `TRUDVANG.Field.Preparation` | Preparation | Préparation |
+| `TRUDVANG.Field.Usage` | Use | Utilisation |
+| `TRUDVANG.Field.Efficacy` | Effect tiers | Stades d'efficacité |
 | `TRUDVANG.Field.Level` | Level | Niveau |
 | `TRUDVANG.Field.Cost` | Cost | Coût |
 | `TRUDVANG.Field.Modifier` | Skill Modifier | Modificateur de compétence |
@@ -265,6 +270,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Hand` | Used hand | Main utilisée |
 | `TRUDVANG.Field.CombatActionModifier` | Combat action modifier | Modificateur d’action de combat |
 | `TRUDVANG.Field.NaturalArmor` | Natural armor | Armure naturelle |
+
+## `TRUDVANG.Efficacy`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Efficacy.Mild` | Mild | Léger |
+| `TRUDVANG.Efficacy.Moderate` | Moderate | Modéré |
+| `TRUDVANG.Efficacy.Strong` | Strong | Fort |
+| `TRUDVANG.Efficacy.Total` | Total | Total |
 
 ## `TRUDVANG.Resource`
 

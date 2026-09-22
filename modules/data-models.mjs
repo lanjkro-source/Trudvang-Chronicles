@@ -365,7 +365,16 @@ export class PotionData extends BaseItemData {
       strength: integer(0),
       application: string("Drink"),
       duration: string(),
-      effect: html()
+      effect: html(),
+      appearance: string(),
+      preparation: string(),
+      usage: string(),
+      efficacy: schema({
+        mild: string(),
+        moderate: string(),
+        strong: string(),
+        total: string()
+      })
     };
   }
 }

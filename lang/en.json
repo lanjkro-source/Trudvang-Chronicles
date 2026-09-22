@@ -197,8 +197,13 @@
       "MovementModifier": "MM: MOVEMENT MODIFIER",
       "Strength": "Extract Strength",
       "Application": "Application",
+      "PotionType": "Type",
       "Duration": "Duration",
       "Effect": "Effect",
+      "Appearance": "Appearance",
+      "Preparation": "Preparation",
+      "Usage": "Use",
+      "Efficacy": "Effect tiers",
       "Level": "Level",
       "Cost": "Cost",
       "Modifier": "Skill Modifier",
@@ -231,6 +236,12 @@
       "Hand": "Used hand",
       "CombatActionModifier": "Combat action modifier",
       "NaturalArmor": "Natural armor"
+    },
+    "Efficacy": {
+      "Mild": "Mild",
+      "Moderate": "Moderate",
+      "Strong": "Strong",
+      "Total": "Total"
     },
     "Resource": {
       "Body": "Body Points",

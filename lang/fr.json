@@ -195,8 +195,13 @@
       "MovementModifier": "MM : MOD. MOUVEMENT",
       "Strength": "Force de l'extrait",
       "Application": "Application",
+      "PotionType": "Type",
       "Duration": "Durée",
       "Effect": "Effet",
+      "Appearance": "Apparence",
+      "Preparation": "Préparation",
+      "Usage": "Utilisation",
+      "Efficacy": "Stades d'efficacité",
       "Level": "Niveau",
       "Cost": "Coût",
       "Modifier": "Modificateur de compétence",
@@ -229,6 +234,12 @@
       "Hand": "Main utilisée",
       "CombatActionModifier": "Modificateur d’action de combat",
       "NaturalArmor": "Armure naturelle"
+    },
+    "Efficacy": {
+      "Mild": "Léger",
+      "Moderate": "Modéré",
+      "Strong": "Fort",
+      "Total": "Total"
     },
     "Resource": {
       "Body": "Points de santé (PS)",
