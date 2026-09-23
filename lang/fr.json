@@ -971,9 +971,9 @@
         }
       },
       "PackageAvailability": {
-        "Small": "<a class=\"package-availability-roll\" data-package-sv=\"5\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</a>",
-        "Ordinary": "<a class=\"package-availability-roll\" data-package-sv=\"10\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</a>",
-        "Large": "<a class=\"package-availability-roll\" data-package-sv=\"15\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</a>"
+        "Small": "<span class=\"package-availability-roll\" data-package-sv=\"5\" role=\"button\" tabindex=\"0\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</span>",
+        "Ordinary": "<span class=\"package-availability-roll\" data-package-sv=\"10\" role=\"button\" tabindex=\"0\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</span>",
+        "Large": "<span class=\"package-availability-roll\" data-package-sv=\"15\" role=\"button\" tabindex=\"0\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</span>"
       },
       "PackagePenalty": {
         "Small": "L’utiliser impose un malus de −7 à la SV.",

@@ -1159,9 +1159,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.PackageAvailability.Small` | <a class="package-availability-roll" data-package-sv="5" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 5.</a> | <a class="package-availability-roll" data-package-sv="5" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</a> |
-| `TRUDVANG.Content.PackageAvailability.Ordinary` | <a class="package-availability-roll" data-package-sv="10" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 10.</a> | <a class="package-availability-roll" data-package-sv="10" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</a> |
-| `TRUDVANG.Content.PackageAvailability.Large` | <a class="package-availability-roll" data-package-sv="15" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 15.</a> | <a class="package-availability-roll" data-package-sv="15" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</a> |
+| `TRUDVANG.Content.PackageAvailability.Small` | <span class="package-availability-roll" data-package-sv="5" role="button" tabindex="0">To find an appropriate item in it, succeed on a Situation roll against SV 5.</span> | <span class="package-availability-roll" data-package-sv="5" role="button" tabindex="0">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</span> |
+| `TRUDVANG.Content.PackageAvailability.Ordinary` | <span class="package-availability-roll" data-package-sv="10" role="button" tabindex="0">To find an appropriate item in it, succeed on a Situation roll against SV 10.</span> | <span class="package-availability-roll" data-package-sv="10" role="button" tabindex="0">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</span> |
+| `TRUDVANG.Content.PackageAvailability.Large` | <span class="package-availability-roll" data-package-sv="15" role="button" tabindex="0">To find an appropriate item in it, succeed on a Situation roll against SV 15.</span> | <span class="package-availability-roll" data-package-sv="15" role="button" tabindex="0">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</span> |
 
 ## `TRUDVANG.Content.PackagePenalty`
 

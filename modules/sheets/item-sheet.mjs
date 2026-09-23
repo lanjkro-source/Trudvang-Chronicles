@@ -110,11 +110,16 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       resize();
       textarea.addEventListener("input", resize);
     });
-    root.querySelectorAll(".package-availability-roll").forEach(link => {
-      link.addEventListener("click", async event => {
+    root.querySelectorAll(".package-availability-roll").forEach(control => {
+      const rollAvailability = async event => {
         event.preventDefault();
-        const situationValue = Number(link.dataset.packageSv ?? link.textContent.match(/\bSV\s+(\d+)/i)?.[1]);
+        event.stopPropagation();
+        const situationValue = Number(control.dataset.packageSv ?? control.textContent.match(/\bSV\s+(\d+)/i)?.[1]);
         await this.#rollPackageAvailability(situationValue);
+      };
+      control.addEventListener("click", rollAvailability);
+      control.addEventListener("keydown", event => {
+        if (["Enter", " "].includes(event.key)) rollAvailability(event);
       });
     });
     this._activateTabs(root);
@@ -124,8 +129,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     if (!Number.isFinite(situationValue)) return;
     const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
     const modifier = await DialogClass.wait({
-      window: {title: game.i18n.format("TRUDVANG.PackageRoll.Title", {item: this.item.name})},
-      content: `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.PackageRoll.Prompt", {sv: situationValue}))}</p><div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationalModifier"))}</label><input name="situational" type="number" value="0"></div></div>`,
+      window: {title: game.i18n.format("TRUDVANG.Content.PackageRoll.Title", {item: this.item.name})},
+      content: `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.Content.PackageRoll.Prompt", {sv: situationValue}))}</p><div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationalModifier"))}</label><input name="situational" type="number" value="0"></div></div>`,
       buttons: [
         {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => Number((button.form ?? dialog.element).querySelector("[name=situational]")?.value || 0)},
         {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}

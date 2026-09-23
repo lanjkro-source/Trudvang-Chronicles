@@ -587,6 +587,8 @@
 .trudvang-sheet.item-sheet .panel textarea { width: 100%; box-sizing: border-box; resize: none; max-height: 200px; overflow-y: auto; }
 .trudvang-sheet.item-sheet .panel.summary-panel textarea { resize: none; }
 .trudvang-sheet.item-sheet .editor-container { min-height: 150px; flex: 1; }
+.trudvang-sheet.item-sheet .package-availability-roll { color: var(--trudvang-accent); cursor: pointer; text-decoration: underline; }
+.trudvang-sheet.item-sheet .package-availability-roll:focus-visible { outline: 2px solid var(--trudvang-accent); outline-offset: 2px; }
 .detail-dialog { max-height: 60vh; overflow-y: auto; }
 .trudvang-sheet .item-type { margin: 6px 4px; color: var(--trudvang-on-header-muted); font: .75rem Georgia, serif; text-transform: uppercase; }
 

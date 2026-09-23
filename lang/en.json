@@ -971,9 +971,9 @@
         }
       },
       "PackageAvailability": {
-        "Small": "<a class=\"package-availability-roll\" data-package-sv=\"5\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 5.</a>",
-        "Ordinary": "<a class=\"package-availability-roll\" data-package-sv=\"10\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 10.</a>",
-        "Large": "<a class=\"package-availability-roll\" data-package-sv=\"15\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 15.</a>"
+        "Small": "<span class=\"package-availability-roll\" data-package-sv=\"5\" role=\"button\" tabindex=\"0\">To find an appropriate item in it, succeed on a Situation roll against SV 5.</span>",
+        "Ordinary": "<span class=\"package-availability-roll\" data-package-sv=\"10\" role=\"button\" tabindex=\"0\">To find an appropriate item in it, succeed on a Situation roll against SV 10.</span>",
+        "Large": "<span class=\"package-availability-roll\" data-package-sv=\"15\" role=\"button\" tabindex=\"0\">To find an appropriate item in it, succeed on a Situation roll against SV 15.</span>"
       },
       "PackagePenalty": {
         "Small": "Using it imposes an SV −7 penalty.",
