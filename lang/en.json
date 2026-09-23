@@ -667,7 +667,12 @@
       "EffectModifier": "Effects",
       "TotalSituationValue": "Total Situation Value",
       "OpenRollBonus": "Bonus",
-      "OpenRollBreakdown": "Total modifier"
+      "OpenRollBreakdown": "Total modifier",
+      "GenericSituationTitle": "Generic situation roll",
+      "SituationLabel": "Label"
+    },
+    "Macro": {
+      "SituationRoll": "Generic situation roll"
     },
     "Roll": {
       "Success": "Success",

@@ -503,3 +503,98 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     rejectClose: false
   });
 }
+
+/**
+ * Ask for a Situation Value (SV) without requiring any actor: the dialog used by
+ * the generic situation-roll macro and by `game.trudvang.rollGenericSituation()`.
+ */
+export async function genericSituationDialog({defaultTarget = 10} = {}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const content = `
+    <div class="trudvang roll-dialog">
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationValue"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+    </div>`;
+  return DialogClass.wait({
+    window: {title: game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")},
+    content,
+    buttons: [
+      {
+        action: "roll",
+        icon: "fas fa-dice-d20",
+        label: game.i18n.localize("TRUDVANG.Action.Roll"),
+        default: true,
+        callback: (event, button, dialog) => {
+          const root = button.form ?? dialog.element;
+          return {
+            target: Number(root.querySelector("[name=target]")?.value || 0),
+            label: String(root.querySelector("[name=label]")?.value || ""),
+            modifier: Number(root.querySelector("[name=modifier]")?.value || 0)
+          };
+        }
+      },
+      {
+        action: "cancel",
+        label: game.i18n.localize("TRUDVANG.Action.Cancel"),
+        callback: () => false
+      }
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
+/**
+ * Roll a generic 1d20 roll-under situation check with no actor required. Called
+ * with no arguments, the SV dialog opens first (cancel/X resolves null and posts
+ * nothing); called with explicit arguments it rolls straight to chat. Speaker
+ * resolution: selected token actor, then the user's character, then a fallback
+ * on the current user. Natural 1 always succeeds, natural 20 always fails.
+ */
+export async function rollGenericSituation({target, label, modifier} = {}) {
+  let situationTarget = target;
+  let situationLabel = label;
+  let situationModifier = modifier;
+  if (situationTarget === undefined && situationLabel === undefined && situationModifier === undefined) {
+    const answered = await genericSituationDialog({});
+    if (!answered) return null;
+    ({target: situationTarget, label: situationLabel, modifier: situationModifier} = answered);
+  }
+  const finalTarget = Number(situationTarget ?? 10) + Number(situationModifier || 0);
+  const resolvedLabel = String(situationLabel || game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
+  const actor = canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
+  const actorName = actor?.name ?? game.user?.name ?? "";
+  const actorImg = actor?.img ?? "icons/svg/d20.svg";
+  const actorUuid = actor?.uuid ?? "";
+  const roll = await evaluate("1d20");
+  const result = Number(roll.total);
+  const critical = result === 20 ? "failure" : result <= 1 ? "success" : "";
+  const success = critical === "success" || (result !== 20 && result <= finalTarget);
+  const margin = success ? Math.max(0, finalTarget - result) : null;
+  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
+    actorName,
+    actorImg,
+    label: resolvedLabel,
+    result,
+    target: finalTarget,
+    modifier: Number(situationModifier || 0),
+    success,
+    margin,
+    critical,
+    kind: "situation",
+    flavor: "",
+    itemUuid: "",
+    naturalDamage: false,
+    actorUuid,
+    usage: "",
+    longRange: false,
+    feint: 0
+  });
+  await ChatMessage.create({
+    speaker: actor ? ChatMessage.getSpeaker({actor}) : ChatMessage.getSpeaker(),
+    content,
+    rolls: [roll]
+  });
+  return {roll, result, target: finalTarget, success, critical, margin};
+}

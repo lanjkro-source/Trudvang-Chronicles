@@ -1,5 +1,5 @@
 {
-  "name": "Milice du roi",
+  "name": "Milice royale",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,7 +12,7 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
-    "description": "Milice du roi est un pouvoir de Héritage de Majne ; sa description de règles complète sera ajoutée ultérieurement.",
+    "description": "Milice royale est un pouvoir de Héritage de Majne ; sa description de règles complète sera ajoutée ultérieurement.",
     "source": "Livre des règles, p. 236",
     "level": 2,
     "cost": 4,

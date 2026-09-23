@@ -136,6 +136,61 @@ for (const {code, packName, label, tabletType} of TABLET_PACKS) {
   await processPack({packName, label, documents: [...folders, ...items].map(sanitize), summary: `${tablets} tablets, ${powers} powers, ${folders.length} folders`});
 }
 
+// Bilingual macro-pack choice: macros-en/macros-fr mirrors the skills-en/skills-fr,
+// vitner-en/vitner-fr and religion-en/religion-fr convention (every shipped compendium
+// is a per-language pair, so macro display names stay localized). Unlike the generated
+// knowledge packs above, these sources are hand-written static Macro documents — the
+// build only compiles them and runs the same round-trip verification (without the
+// Item-specific `effects: []` normalization).
+const MACRO_PACKS = [
+  {packName: "macros-en", label: "Macros (en)"},
+  {packName: "macros-fr", label: "Macros (fr)"}
+];
+
+async function processStaticPack({packName, label}) {
+  const sourceDir = join(root, "packs", "_source", packName);
+  const documents = [];
+  for (const filename of readdirRecursive(sourceDir)) {
+    if (!filename.endsWith(".json")) continue;
+    documents.push(JSON.parse(readFileSync(filename, "utf8")));
+  }
+  const packDir = join(root, "packs", packName);
+  rmSync(packDir, {recursive: true, force: true});
+  await compilePack(sourceDir, packDir, {log: false, recursive: true});
+
+  const verifyDir = join(tmpdir(), "trudvang-pack-verify", packName);
+  rmSync(verifyDir, {recursive: true, force: true});
+  await extractPack(packDir, verifyDir, {log: false});
+  const extracted = new Map();
+  for (const filename of readdirRecursive(verifyDir)) {
+    const document = JSON.parse(readFileSync(filename, "utf8"));
+    extracted.set(document._key ?? document._id, document);
+  }
+  let failures = 0;
+  for (const document of documents) {
+    const actual = extracted.get(document._key);
+    if (!actual) {
+      console.error(`  ${packName}: missing ${document._key} after round-trip`);
+      failures += 1;
+      continue;
+    }
+    const expectation = structuredClone(sanitize(structuredClone(document)));
+    delete expectation._key;
+    delete actual._key;
+    if (stableStringify(actual) !== stableStringify(expectation)) {
+      console.error(`  ${packName}: content drift on ${document._key} (${document.name})`);
+      failures += 1;
+    }
+  }
+  if (extracted.size !== documents.length || failures) {
+    console.error(`Build verification failed for ${packName}: ${failures} drifted, ${extracted.size}/${documents.length} extracted.`);
+    process.exit(1);
+  }
+  console.log(`${packName} (${label}): ${documents.length} documents — compiled and verified.`);
+}
+
+for (const pack of MACRO_PACKS) await processStaticPack(pack);
+
 function readdirRecursive(directory) {
   const files = [];
   for (const entry of readdirSync(directory, {withFileTypes: true})) {

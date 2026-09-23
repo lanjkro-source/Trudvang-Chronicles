@@ -12,6 +12,7 @@ import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
+import { rollGenericSituation } from "./modules/dice.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
@@ -129,6 +130,10 @@ Hooks.once("init", () => {
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
 
   registerHandlebarsHelpers();
+
+  // Public macro API: the generic situation-roll macro calls
+  // `game.trudvang.rollGenericSituation()` (no actor required).
+  game.trudvang = {rollGenericSituation};
 
   const { HandlebarsApplicationMixin, ApplicationV2 } = foundry.applications.api;
 
