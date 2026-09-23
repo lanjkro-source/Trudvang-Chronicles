@@ -1,4 +1,5 @@
 import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-application.mjs";
+import { rollPackageAvailability } from "./package-roll.mjs";
 
 export function registerChatListeners() {
   // renderChatMessageHTML exists since V13 and receives a native HTMLElement; the legacy
@@ -44,6 +45,19 @@ function attachListeners(message, html) {
       event.preventDefault();
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
       if (item?.isOwner) await item.applyEffects();
+    });
+  });
+  html.querySelectorAll(".package-availability-roll").forEach(control => {
+    const rollAvailability = async event => {
+      event.preventDefault();
+      event.stopPropagation();
+      const item = await foundry.utils.fromUuid(control.closest("[data-item-uuid]")?.dataset.itemUuid);
+      const situationValue = Number(control.dataset.packageSv ?? control.textContent.match(/\bSV\s+(\d+)/i)?.[1]);
+      await rollPackageAvailability(item, situationValue);
+    };
+    control.addEventListener("click", rollAvailability);
+    control.addEventListener("keydown", event => {
+      if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
   html.querySelectorAll("[data-action='apply-damage']").forEach(button => {

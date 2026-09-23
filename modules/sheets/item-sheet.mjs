@@ -3,7 +3,7 @@ import { EFFECT_ITEM_TYPES, effectChangeSummary } from "../effects.mjs";
 import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipment-inspection.mjs";
 import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
-import { escapeHtml, renderTemplate } from "../helpers.mjs";
+import { rollPackageAvailability } from "../package-roll.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -115,7 +115,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         event.preventDefault();
         event.stopPropagation();
         const situationValue = Number(control.dataset.packageSv ?? control.textContent.match(/\bSV\s+(\d+)/i)?.[1]);
-        await this.#rollPackageAvailability(situationValue);
+        await rollPackageAvailability(this.item, situationValue);
       };
       control.addEventListener("click", rollAvailability);
       control.addEventListener("keydown", event => {
@@ -123,35 +123,6 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       });
     });
     this._activateTabs(root);
-  }
-
-  async #rollPackageAvailability(situationValue) {
-    if (!Number.isFinite(situationValue)) return;
-    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-    const modifier = await DialogClass.wait({
-      window: {title: game.i18n.format("TRUDVANG.Content.PackageRoll.Title", {item: this.item.name})},
-      content: `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.Content.PackageRoll.Prompt", {sv: situationValue}))}</p><div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationalModifier"))}</label><input name="situational" type="number" value="0"></div></div>`,
-      buttons: [
-        {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => Number((button.form ?? dialog.element).querySelector("[name=situational]")?.value || 0)},
-        {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
-      ],
-      modal: false,
-      rejectClose: false
-    });
-    if (modifier === false || modifier === null || modifier === undefined) return;
-    const target = situationValue + (Number(modifier) || 0);
-    const roll = await new Roll("1d20").evaluate();
-    const result = Number(roll.total);
-    const success = result === 1 || (result !== 20 && result <= target);
-    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/package-roll-card.hbs", {
-      itemName: this.item.name,
-      itemImg: this.item.img,
-      result,
-      target,
-      modifier: Number(modifier) || 0,
-      success
-    });
-    await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this.item.parent}), content, rolls: [roll]});
   }
 
   _activateTabs(root) {
