@@ -669,6 +669,8 @@
       "OpenRollBonus": "Bonus",
       "OpenRollBreakdown": "Modificateur total",
       "GenericSituationTitle": "Jet de situation générique",
+      "GenericSituationSV": "SV",
+      "GenericSituationModifier": "Modificateur",
       "SituationLabel": "Intitulé"
     },
     "Macro": {

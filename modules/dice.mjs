@@ -512,9 +512,9 @@ export async function genericSituationDialog({defaultTarget = 10} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
     <div class="trudvang roll-dialog">
-      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationValue"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
-      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationSV"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationModifier"))}</label><input name="modifier" type="number" value="0"></div>
     </div>`;
   return DialogClass.wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")},

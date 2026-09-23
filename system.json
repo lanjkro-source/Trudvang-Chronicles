@@ -2,10 +2,10 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.34.0",
+  "version": "0.34.1",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
-  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.34.0/trudvang-chronicles.zip",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.34.1/trudvang-chronicles.zip",
   "packs": [
     {
       "name": "skills-en",
@@ -47,20 +47,6 @@
       "label": "Religion (fr)",
       "path": "packs/religion-fr",
       "type": "Item",
-      "system": "trudvang-chronicles"
-    },
-    {
-      "name": "macros-en",
-      "label": "Macros (en)",
-      "path": "packs/macros-en",
-      "type": "Macro",
-      "system": "trudvang-chronicles"
-    },
-    {
-      "name": "macros-fr",
-      "label": "Macros (fr)",
-      "path": "packs/macros-fr",
-      "type": "Macro",
       "system": "trudvang-chronicles"
     }
   ],

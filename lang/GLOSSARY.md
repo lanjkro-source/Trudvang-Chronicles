@@ -792,6 +792,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.OpenRollBonus` | Bonus | Bonus |
 | `TRUDVANG.Dialog.OpenRollBreakdown` | Total modifier | Modificateur total |
 | `TRUDVANG.Dialog.GenericSituationTitle` | Generic situation roll | Jet de situation générique |
+| `TRUDVANG.Dialog.GenericSituationSV` | SV | SV |
+| `TRUDVANG.Dialog.GenericSituationModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
 
 ## `TRUDVANG.Macro`

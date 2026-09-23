@@ -669,6 +669,8 @@
       "OpenRollBonus": "Bonus",
       "OpenRollBreakdown": "Total modifier",
       "GenericSituationTitle": "Generic situation roll",
+      "GenericSituationSV": "SV",
+      "GenericSituationModifier": "Modifier",
       "SituationLabel": "Label"
     },
     "Macro": {

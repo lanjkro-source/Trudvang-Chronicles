@@ -568,6 +568,51 @@ export async function syncImportedKnowledgeItems({force = false} = {}) {
   }
 }
 
+// Global script Macro opening the generic situation-roll dialog (`game.trudvang.
+// rollGenericSituation()`). It lives directly in the world — no compendium — so
+// players can drag it to their hotbar. Lookup is by stable flag, so repeated runs
+// never duplicate it; a macro the GM deleted is recreated on the next GM entry.
+const GENERIC_SITUATION_MACRO_FLAG = "generic-situation";
+const GENERIC_SITUATION_COMMAND = "await game.trudvang.rollGenericSituation();";
+
+export async function ensureGenericSituationMacro() {
+  try {
+    const flagged = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === GENERIC_SITUATION_MACRO_FLAG);
+    if (flagged) return flagged;
+    const name = game.i18n.localize("TRUDVANG.Macro.SituationRoll");
+    const translations = await loadTranslations(["TRUDVANG.Macro.SituationRoll"]);
+    const knownNames = translations.get("TRUDVANG.Macro.SituationRoll") ?? new Set([name]);
+    // Adopt an untracked copy (e.g. dragged from the former v0.34.0 compendium
+    // packs) instead of creating a duplicate, mirroring the starter-content
+    // adoption of legacy documents by their localized names.
+    const adopted = game.macros.find(macro => macro.type === "script"
+      && !macro.getFlag(SYSTEM_ID, "macro")
+      && knownNames.has(macro.name));
+    if (adopted) {
+      const update = {
+        command: GENERIC_SITUATION_COMMAND,
+        img: "icons/svg/d20.svg",
+        [`flags.${SYSTEM_ID}.macro`]: GENERIC_SITUATION_MACRO_FLAG
+      };
+      if (adopted.name !== name) update.name = name;
+      await adopted.update(update);
+      return adopted;
+    }
+    const [created] = await Macro.createDocuments([{
+      name,
+      type: "script",
+      scope: "global",
+      command: GENERIC_SITUATION_COMMAND,
+      img: "icons/svg/d20.svg",
+      flags: {[SYSTEM_ID]: {macro: GENERIC_SITUATION_MACRO_FLAG}}
+    }]);
+    return created;
+  } catch (error) {
+    console.error("Trudvang Chronicles | Generic situation macro creation failed", error);
+    return null;
+  }
+}
+
 export async function importStarterContent({force = false} = {}) {
   try {
     const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
@@ -604,6 +649,7 @@ export async function importStarterContent({force = false} = {}) {
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
     await upsertJournals();
+    await ensureGenericSituationMacro();
 
     // TEMPORARY WORLD MIGRATION: before v0.23.0, purpose-built throwing weapons
     // were stored as the throwing specialty itself. Restore their melee profile

@@ -6,7 +6,7 @@ import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor
 import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
-import { importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
+import { ensureGenericSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
@@ -226,6 +226,11 @@ Hooks.once("ready", async () => {
       await importStarterContent();
     } catch (error) {
       console.error("Trudvang Chronicles | Starter content import crashed outside its own guard", error);
+    }
+    try {
+      await ensureGenericSituationMacro();
+    } catch (error) {
+      console.error("Trudvang Chronicles | Generic situation macro crashed outside its own guard", error);
     }
     try {
       await syncImportedKnowledgeItems();
