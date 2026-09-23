@@ -1,0 +1,6 @@
+<article class="trudvang chat-card package-roll {{#if success}}success{{else}}failure{{/if}}">
+  <header><img src="{{itemImg}}" alt=""><div><strong>{{itemName}}</strong><h3>{{localize "TRUDVANG.PackageRoll.ChatTitle"}}</h3></div></header>
+  <div class="roll-result"><span class="die">{{result}}</span><span class="versus">≤</span><span class="target">{{target}}</span></div>
+  <p class="outcome">{{#if success}}{{localize "TRUDVANG.PackageRoll.Present"}}{{else}}{{localize "TRUDVANG.PackageRoll.Absent"}}{{/if}}</p>
+  <p class="card-flavor">{{localize "TRUDVANG.PackageRoll.Reminder"}}</p>
+</article>

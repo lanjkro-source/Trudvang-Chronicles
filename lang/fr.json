@@ -971,9 +971,22 @@
         }
       },
       "PackageAvailability": {
-        "Small": "Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.",
-        "Ordinary": "Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.",
-        "Large": "Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15."
+        "Small": "<a class=\"package-availability-roll\" data-package-sv=\"5\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</a>",
+        "Ordinary": "<a class=\"package-availability-roll\" data-package-sv=\"10\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</a>",
+        "Large": "<a class=\"package-availability-roll\" data-package-sv=\"15\" href=\"#\">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</a>"
+      },
+      "PackagePenalty": {
+        "Small": "L’utiliser impose un malus de −7 à la SV.",
+        "Ordinary": "L’utiliser impose un malus de −5 à la SV.",
+        "Large": "L’utiliser impose un malus de −3 à la SV."
+      },
+      "PackageRoll": {
+        "Title": "Vérifier le paquetage : {item}",
+        "Prompt": "Jet de situation contre une SV de {sv}.",
+        "ChatTitle": "Vérification du paquetage",
+        "Present": "Objet présent dans le paquetage.",
+        "Absent": "Objet absent du paquetage.",
+        "Reminder": "Conseil : notez ce résultat dans la description du paquetage."
       },
       "ItemDescription": {
         "Glaaf": "Un glaaf est légèrement plus long qu’un hring seax et comporte généralement deux tranchants. Le skalm en est une variante dotée d’un seul tranchant particulièrement aiguisé. Le glaaf est très courant dans les régions situées à l’est de Trudvang ; c’était l’arme préférée de l’ancien peuple des Brots.",

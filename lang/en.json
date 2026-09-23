@@ -971,9 +971,22 @@
         }
       },
       "PackageAvailability": {
-        "Small": "To find an appropriate item in it, succeed on a Situation roll against SV 5.",
-        "Ordinary": "To find an appropriate item in it, succeed on a Situation roll against SV 10.",
-        "Large": "To find an appropriate item in it, succeed on a Situation roll against SV 15."
+        "Small": "<a class=\"package-availability-roll\" data-package-sv=\"5\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 5.</a>",
+        "Ordinary": "<a class=\"package-availability-roll\" data-package-sv=\"10\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 10.</a>",
+        "Large": "<a class=\"package-availability-roll\" data-package-sv=\"15\" href=\"#\">To find an appropriate item in it, succeed on a Situation roll against SV 15.</a>"
+      },
+      "PackagePenalty": {
+        "Small": "Using it imposes an SV −7 penalty.",
+        "Ordinary": "Using it imposes an SV −5 penalty.",
+        "Large": "Using it imposes an SV −3 penalty."
+      },
+      "PackageRoll": {
+        "Title": "Check package: {item}",
+        "Prompt": "Situation roll against SV {sv}.",
+        "ChatTitle": "Package check",
+        "Present": "Item present in the package.",
+        "Absent": "Item absent from the package.",
+        "Reminder": "Tip: record this result in the package description."
       },
       "ItemDescription": {
         "Glaaf": "A glaaf is slightly longer than the hring seax and usually has two edges. The skalm is a variant with only one sharp edge. The glaaf is most common in the eastern parts of Trudvang and it was the weapon of choice of the ancient Brots.",

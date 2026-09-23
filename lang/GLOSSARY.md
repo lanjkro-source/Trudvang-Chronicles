@@ -1159,9 +1159,28 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.PackageAvailability.Small` | To find an appropriate item in it, succeed on a Situation roll against SV 5. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5. |
-| `TRUDVANG.Content.PackageAvailability.Ordinary` | To find an appropriate item in it, succeed on a Situation roll against SV 10. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10. |
-| `TRUDVANG.Content.PackageAvailability.Large` | To find an appropriate item in it, succeed on a Situation roll against SV 15. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15. |
+| `TRUDVANG.Content.PackageAvailability.Small` | <a class="package-availability-roll" data-package-sv="5" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 5.</a> | <a class="package-availability-roll" data-package-sv="5" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5.</a> |
+| `TRUDVANG.Content.PackageAvailability.Ordinary` | <a class="package-availability-roll" data-package-sv="10" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 10.</a> | <a class="package-availability-roll" data-package-sv="10" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10.</a> |
+| `TRUDVANG.Content.PackageAvailability.Large` | <a class="package-availability-roll" data-package-sv="15" href="#">To find an appropriate item in it, succeed on a Situation roll against SV 15.</a> | <a class="package-availability-roll" data-package-sv="15" href="#">Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15.</a> |
+
+## `TRUDVANG.Content.PackagePenalty`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.PackagePenalty.Small` | Using it imposes an SV −7 penalty. | L’utiliser impose un malus de −7 à la SV. |
+| `TRUDVANG.Content.PackagePenalty.Ordinary` | Using it imposes an SV −5 penalty. | L’utiliser impose un malus de −5 à la SV. |
+| `TRUDVANG.Content.PackagePenalty.Large` | Using it imposes an SV −3 penalty. | L’utiliser impose un malus de −3 à la SV. |
+
+## `TRUDVANG.Content.PackageRoll`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.PackageRoll.Title` | Check package: {item} | Vérifier le paquetage : {item} |
+| `TRUDVANG.Content.PackageRoll.Prompt` | Situation roll against SV {sv}. | Jet de situation contre une SV de {sv}. |
+| `TRUDVANG.Content.PackageRoll.ChatTitle` | Package check | Vérification du paquetage |
+| `TRUDVANG.Content.PackageRoll.Present` | Item present in the package. | Objet présent dans le paquetage. |
+| `TRUDVANG.Content.PackageRoll.Absent` | Item absent from the package. | Objet absent du paquetage. |
+| `TRUDVANG.Content.PackageRoll.Reminder` | Tip: record this result in the package description. | Conseil : notez ce résultat dans la description du paquetage. |
 
 ## `TRUDVANG.Content.ItemDescription`
 

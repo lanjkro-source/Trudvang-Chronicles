@@ -4,7 +4,7 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 26;
+const CONTENT_VERSION = 27;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -101,9 +101,15 @@ function documentedDescription(entry) {
   if (description === path) return undefined;
   const size = itemKey.match(/(Small|Ordinary|Large)$/)?.[1];
   if (!size) return description;
+  const penaltyPath = `TRUDVANG.Content.PackagePenalty.${size}`;
+  const penalty = game.i18n.localize(penaltyPath);
   const availabilityPath = `TRUDVANG.Content.PackageAvailability.${size}`;
   const availability = game.i18n.localize(availabilityPath);
-  return availability === availabilityPath ? description : `${description}\n\n${availability}`;
+  const additions = [
+    penalty === penaltyPath ? "" : penalty,
+    availability === availabilityPath ? "" : availability
+  ].filter(Boolean);
+  return additions.length ? `${description}\n\n${additions.join("\n\n")}` : description;
 }
 
 function localizeTree(value) {
