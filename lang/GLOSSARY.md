@@ -1045,24 +1045,24 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Folder.Weapons` | Trudvang - Weapons | Trudvang - Armes |
+| `TRUDVANG.Content.Folder.Weapons` | Weapons | Armes |
 | `TRUDVANG.Content.Folder.WeaponsLight` | Light weapons | Armes légères |
 | `TRUDVANG.Content.Folder.WeaponsHeavy` | Heavy weapons | Armes lourdes |
 | `TRUDVANG.Content.Folder.WeaponsTwoHanded` | Two-handed weapons | Armes à deux mains |
 | `TRUDVANG.Content.Folder.WeaponsRanged` | Ranged weapons | Armes à distance |
-| `TRUDVANG.Content.Folder.Protections` | Trudvang - Protections | Trudvang - Protections |
+| `TRUDVANG.Content.Folder.Protections` | Protections | Protections |
 | `TRUDVANG.Content.Folder.Armor` | Armor | Armures |
 | `TRUDVANG.Content.Folder.Shields` | Shields | Boucliers |
-| `TRUDVANG.Content.Folder.Gear` | Trudvang - Gear & Extracts | Trudvang - Équipements & Extraits |
-| `TRUDVANG.Content.Folder.Equipment` | Trudvang - Equipment | Trudvang - Équipements |
+| `TRUDVANG.Content.Folder.Gear` | Gear & Extracts | Équipements & Extraits |
+| `TRUDVANG.Content.Folder.Equipment` | Equipment | Équipements |
 | `TRUDVANG.Content.Folder.Packages` | Packages | Paquetages |
-| `TRUDVANG.Content.Folder.Extracts` | Trudvang - Extracts | Trudvang - Extraits |
+| `TRUDVANG.Content.Folder.Extracts` | Extracts | Extraits |
 | `TRUDVANG.Content.Folder.Races` | Races | Races |
 | `TRUDVANG.Content.Folder.Archetypes` | Archetypes | Archétypes |
-| `TRUDVANG.Content.Folder.Magic` | Trudvang - Tablets & Magic | Trudvang - Tables & Magie |
-| `TRUDVANG.Content.Folder.Abilities` | Trudvang - Disciplines & Specialties | Trudvang - Disciplines & Spécialités |
+| `TRUDVANG.Content.Folder.Magic` | Tablets & Magic | Tables & Magie |
+| `TRUDVANG.Content.Folder.Abilities` | Disciplines & Specialties | Disciplines & Spécialités |
 | `TRUDVANG.Content.Folder.Tables` | Magic | Magie |
-| `TRUDVANG.Content.Folder.Creatures` | Trudvang - Creatures | Trudvang - Créatures |
+| `TRUDVANG.Content.Folder.Creatures` | Creatures | Créatures |
 
 ## `TRUDVANG.Content.Source`
 

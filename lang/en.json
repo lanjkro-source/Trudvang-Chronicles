@@ -878,24 +878,24 @@
     },
     "Content": {
       "Folder": {
-        "Weapons": "Trudvang - Weapons",
+        "Weapons": "Weapons",
         "WeaponsLight": "Light weapons",
         "WeaponsHeavy": "Heavy weapons",
         "WeaponsTwoHanded": "Two-handed weapons",
         "WeaponsRanged": "Ranged weapons",
-        "Protections": "Trudvang - Protections",
+        "Protections": "Protections",
         "Armor": "Armor",
         "Shields": "Shields",
-        "Gear": "Trudvang - Gear & Extracts",
-        "Equipment": "Trudvang - Equipment",
+        "Gear": "Gear & Extracts",
+        "Equipment": "Equipment",
         "Packages": "Packages",
-        "Extracts": "Trudvang - Extracts",
+        "Extracts": "Extracts",
         "Races": "Races",
         "Archetypes": "Archetypes",
-        "Magic": "Trudvang - Tablets & Magic",
-        "Abilities": "Trudvang - Disciplines & Specialties",
+        "Magic": "Tablets & Magic",
+        "Abilities": "Disciplines & Specialties",
         "Tables": "Magic",
-        "Creatures": "Trudvang - Creatures"
+        "Creatures": "Creatures"
       },
       "Source": {
         "GMG69": "Game Master's Guide, p. 69",
