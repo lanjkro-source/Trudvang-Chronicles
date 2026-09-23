@@ -4,7 +4,7 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 23;
+const CONTENT_VERSION = 24;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -14,6 +14,7 @@ const REMOVED_STARTER_ITEM_KEYS = new Set([
 ]);
 
 function destinationFolder(entry) {
+  if (entry.folderOverride) return entry.folderOverride;
   if (entry.type === "weapon") return {
     oneHandedLight: "weaponsLight",
     oneHandedHeavy: "weaponsHeavy",
@@ -38,7 +39,7 @@ const PACKAGE_IMAGES = {
 };
 
 function starterImage(entry) {
-  const key = entry.nameKey.split(".").at(-2);
+  const key = entry.nameKey.split(".").at(-2).replace(/Thrown$/, "");
   if (STARTER_IMAGES[key]) return STARTER_IMAGES[key];
   const packageType = Object.keys(PACKAGE_IMAGES).find(type => key.startsWith(type));
   if (packageType) return PACKAGE_IMAGES[packageType];
@@ -83,6 +84,18 @@ function fallbackDescription(entry) {
             : "Gear";
   const localized = game.i18n.localize(`TRUDVANG.Content.GenericDescription.${key}`);
   return localized === `TRUDVANG.Content.GenericDescription.${key}` ? "" : localized;
+}
+
+/**
+ * Return the book paragraph recorded for a starter item, when one exists.
+ * Throwing copies deliberately share the source paragraph of their base weapon.
+ */
+function documentedDescription(entry) {
+  const itemKey = entry.nameKey?.split(".").at(-2)?.replace(/Thrown$/, "");
+  if (!itemKey) return undefined;
+  const path = `TRUDVANG.Content.ItemDescription.${itemKey}`;
+  const description = game.i18n.localize(path);
+  return description === path ? undefined : description;
 }
 
 function localizeTree(value) {
@@ -204,11 +217,14 @@ async function upsertBaseItems(source, folders, translationsByKey) {
   for (const entry of source.items.filter(entry => !skippedTypes.includes(entry.type) && !REMOVED_STARTER_ITEM_KEYS.has(starterKey(entry.nameKey)))) {
     const key = starterKey(entry.nameKey);
     const payload = localizeTree(entry);
+    delete payload.folderOverride;
     payload.img = starterImage(entry);
     payload.folder = folders[destinationFolder(entry)]?.id;
+    const bookDescription = documentedDescription(entry);
     const descriptionKey = entry.nameKey?.replace(/\.Name$/, ".Description");
     const description = descriptionKey ? game.i18n.localize(descriptionKey) : "";
-    if (!payload.system?.description && description && description !== descriptionKey) payload.system.description = description;
+    if (bookDescription) payload.system.description = bookDescription;
+    else if (!payload.system?.description && description && description !== descriptionKey) payload.system.description = description;
     if (!payload.system?.description) payload.system.description = fallbackDescription(entry);
     const keyName = entry.nameKey.split(".").at(-2);
     const sourceKey = starterSourceKey(entry);

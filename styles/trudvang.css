@@ -513,16 +513,16 @@
 .trudvang-sheet.item-sheet .item-fields label { display: flex; flex-direction: column; color: var(--trudvang-muted); font-size: .7rem; text-transform: uppercase; }
 .trudvang-sheet.item-sheet .item-fields input, .trudvang-sheet.item-sheet .item-fields select { height: 25px; color: var(--trudvang-ink); font-size: .85rem; text-transform: none; }
 .trudvang-sheet.item-sheet .item-fields .wide { grid-column: 1 / -1; }
-.trudvang-sheet.item-sheet .item-fields textarea { min-height: 58px; resize: vertical; }
+.trudvang-sheet.item-sheet .item-fields textarea { min-height: 0; resize: vertical; }
 .trudvang-sheet.item-sheet .item-fields .checkbox { flex-direction: row; align-items: center; gap: 4px; }
 .trudvang-sheet.item-sheet .item-fields .checkbox input { width: auto; }
 .trudvang-sheet.item-sheet .potion-text-panel, .trudvang-sheet.item-sheet .potion-efficacy-panel { margin: 10px; }
-.trudvang-sheet.item-sheet .potion-text-panel textarea { width: 100%; min-height: 76px; resize: vertical; }
+.trudvang-sheet.item-sheet .potion-text-panel textarea { width: 100%; min-height: 0; resize: none; overflow-y: auto; }
 .trudvang-sheet.item-sheet .potion-efficacy-table { width: 100%; border-collapse: collapse; }
 .trudvang-sheet.item-sheet .potion-efficacy-table th, .trudvang-sheet.item-sheet .potion-efficacy-table td { padding: 5px; border: 1px solid var(--trudvang-line); vertical-align: top; }
 .trudvang-sheet.item-sheet .potion-efficacy-table thead th { color: var(--trudvang-muted); font-size: .7rem; text-transform: uppercase; }
 .trudvang-sheet.item-sheet .potion-efficacy-table tbody th { width: 130px; text-align: left; }
-.trudvang-sheet.item-sheet .potion-efficacy-table textarea { width: 100%; min-height: 52px; resize: vertical; }
+.trudvang-sheet.item-sheet .potion-efficacy-table textarea { width: 100%; min-height: 0; resize: none; overflow-y: auto; }
 .trudvang-sheet.item-sheet .equipment-effective-panel, .trudvang-sheet.item-sheet .wearer-impact-panel { margin: 10px; }
 .trudvang-sheet.item-sheet .equipment-effective-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 .trudvang-sheet.item-sheet .equipment-effective-stat { min-height: 42px; display: grid; grid-template-columns: minmax(0, 1fr) auto 16px; gap: 5px; align-items: center; padding: 5px 7px; border: 1px solid var(--trudvang-line); border-radius: 3px; background: color-mix(in srgb, var(--trudvang-paper-light) 48%, transparent); text-align: left; }

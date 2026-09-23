@@ -99,6 +99,16 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
         root.querySelector(`[name='${name}']`)?.setAttribute("disabled", "disabled");
       }
     }
+    root.querySelectorAll("textarea.potion-auto-size").forEach(textarea => {
+      const resize = () => {
+        const maximum = Number(textarea.dataset.maxHeight || 76);
+        textarea.style.height = "auto";
+        textarea.style.height = `${Math.min(textarea.scrollHeight, maximum)}px`;
+        textarea.style.overflowY = textarea.scrollHeight > maximum ? "auto" : "hidden";
+      };
+      resize();
+      textarea.addEventListener("input", resize);
+    });
     this._activateTabs(root);
   }
 
