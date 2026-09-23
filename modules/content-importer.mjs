@@ -4,13 +4,14 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 24;
+const CONTENT_VERSION = 25;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
   "TRUDVANG.Content.Item.ThrowingAxe",
   "TRUDVANG.Content.Item.Rope",
-  "TRUDVANG.Content.Item.Torch"
+  "TRUDVANG.Content.Item.Torch",
+  "TRUDVANG.Content.Item.AdventureKit"
 ]);
 
 function destinationFolder(entry) {
@@ -21,6 +22,7 @@ function destinationFolder(entry) {
     twoHanded: "weaponsTwoHanded",
     ranged: "weaponsRanged"
   }[entry.system?.category] ?? entry.folder;
+  if (entry.type === "shield") return "shields";
   if (entry.type === "gear" && (entry.nameKey.includes("Kit") || entry.nameKey.endsWith("AdventureKit.Name"))) return "packages";
   return entry.folder;
 }
@@ -93,9 +95,15 @@ function fallbackDescription(entry) {
 function documentedDescription(entry) {
   const itemKey = entry.nameKey?.split(".").at(-2)?.replace(/Thrown$/, "");
   if (!itemKey) return undefined;
-  const path = `TRUDVANG.Content.ItemDescription.${itemKey}`;
+  const baseKey = itemKey.replace(/(Small|Ordinary|Large)$/, "");
+  const path = `TRUDVANG.Content.ItemDescription.${baseKey}`;
   const description = game.i18n.localize(path);
-  return description === path ? undefined : description;
+  if (description === path) return undefined;
+  const size = itemKey.match(/(Small|Ordinary|Large)$/)?.[1];
+  if (!size) return description;
+  const availabilityPath = `TRUDVANG.Content.PackageAvailability.${size}`;
+  const availability = game.i18n.localize(availabilityPath);
+  return availability === availabilityPath ? description : `${description}\n\n${availability}`;
 }
 
 function localizeTree(value) {
@@ -171,7 +179,7 @@ const renamedOrCustom = (document, translations) => !translations.has(document.n
 
 async function upsertFolder(slug, config, translations, parent) {
   const localized = game.i18n.localize(config.nameKey);
-  const legacySlugs = {equipment: ["gear"]};
+  const legacySlugs = {equipment: ["gear"], protections: ["armor"]};
   const existing = game.folders.find(folder => folder.type === config.type && flagOf(folder, "starterId") === slug)
     ?? game.folders.find(folder => folder.type === config.type && legacySlugs[slug]?.includes(flagOf(folder, "starterId")))
     ?? game.folders.find(folder => folder.type === config.type && !flagOf(folder, "starterId") && translations.has(folder.name));

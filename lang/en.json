@@ -180,8 +180,6 @@
       "WeaponType": "Type",
       "MeleeWeaponType": "Melee type",
       "ThrowingWeapon": "Throwing weapon",
-      "MeleeWeaponType": "Melee type",
-      "ThrowingWeapon": "Throwing weapon",
       "Damage": "Damages",
       "OpenRoll": "Open Roll Threshold (0 = none)",
       "WeaponActions": "WA: WEAPON ACTIONS",
@@ -885,7 +883,9 @@
         "WeaponsHeavy": "Heavy weapons",
         "WeaponsTwoHanded": "Two-handed weapons",
         "WeaponsRanged": "Ranged weapons",
-        "Armor": "Trudvang - Armor & Shields",
+        "Protections": "Trudvang - Protections",
+        "Armor": "Armor",
+        "Shields": "Shields",
         "Gear": "Trudvang - Gear & Extracts",
         "Equipment": "Trudvang - Equipment",
         "Packages": "Packages",
@@ -931,10 +931,126 @@
         "PHB92": "Player's Handbook, p. 92",
         "PHB201": "Player's Handbook, p. 201"
       },
-      "ExtractType": {"Alteration":"Alteration","Healing":"Healing","Poison":"Poison"},
-      "Duration": {"OneDay":"1 day","TwoHours":"2 hours","TwentyFourHours":"24 hours","OneD6Rounds":"1d6 rounds","EightHours":"8 hours","OneD6Minutes":"1d6 minutes","FourMinutes":"4 minutes","OneHour":"1 hour","SixHours":"6 hours"},
-      "GenericDescription": {"Weapon":{"oneHandedLight":"A light one-handed weapon, quick to wield in close combat.","oneHandedHeavy":"A heavy one-handed weapon designed for powerful blows.","twoHanded":"A powerful two-handed weapon that demands both hands.","ranged":"A ranged weapon for striking targets beyond reach."},"Shield":"A shield used to parry melee attacks and absorb damage for its bearer.","Armor":"Protective armor whose Encumbrance determines movement and initiative penalties.","Extract":"An extract prepared from rare substances, whose result depends on its Strength.","Gear":"Useful equipment for travel and everyday activities.","Package":{"ArmamentKit":"A package for maintaining weapons and combat equipment.","CraftKit":"A package of tools for one specific craft, without fixed installations.","BurglaryKit":"A burglary package with tools and clothing for discreet intrusion.","CampingKit":"A package for setting camp and surviving in the wilderness.","HuntingKit":"A package for hunting and preparing game in the wilderness.","WritingKit":"A package for writing, note-taking, and preserving documents.","MusicKit":"A bard’s package containing instruments, songs, and stage accessories.","FishingKit":"A package for fishing and preparing catches.","HealingKit":"A healing package with bandages, herbs, and medical equipment."}},
-      "ItemDescription": {"Glaaf":"A glaaf is slightly longer than the hring seax and usually has two edges. The skalm is a variant with only one sharp edge. The glaaf is most common in the eastern parts of Trudvang and it was the weapon of choice of the ancient Brots.","HringSeax":"The hring seax or ring knife is perhaps most common in Mittland. Its singleedged blade is usuall y slightly inward curving and there is a ring at the end of the handle, sometimes used to tie the weapon to the wielder’s wrist. The shape of the hring seax in Mittland bears strong influences from elven weapons. In Mittland, the hring seax shows that the wielder is faithful to the Eald Tradition. A hring seax is seldom used for household activities, it is instead a weapon mainly conceived for combat.","Klubb":"A klubb is one of the most common weapons among those who cannot support themselves as warriors. The klubb is cheap and easy to fight with. Primitive klubbs consist of a truncated tree branch. One-Handed Heavy Weapons ✦ Damage: 1d10 (OR 9-10)","KrumSwerd":"The krum sword is a shorter sword with a curved edge. It’s used exclusively by different types of W ildfolk, like the Bults, Wildbrons, and Arks. The Wildbrons revere the curved sword especially because they were once defeated by a people who used this weapon, so they believe it is better than their own. It also goes under the name curved sword and cleaving saber.","LillSpjot":"The lill spjót is cheap and easy to use for an inexperienced warrior. It can also be used for hunting if the hunter is brave enough to stand close to his prey.","NagliKlubb":"A more developed variant of the klubb is the nagli klubb. Often made from wood, this club has spikes at the top to inflict more damage.","Seax":"The seax is both a weapon and a tool that’s carried by most of Trudvang’s inhabitants . Seax exist in many varieties adapted for throwing, thrusting, and cutting. Some are made for hunting, fishing, and household use: these blades are usually single-edged knives. Other varieties are double-edged daggers with sharp points, fit for piercing attacks. In the Stormlands, the Bjorn paw or bear paw is a favored weapon, and the short, broadbladed seax carries much symbolism for Gerbanis. A knife is used for ritual blood gifting, and many warriors wear one on their belts as a last resort when all other weapons are lost or too heavy to lift.","SplitAxi":"Like the seax, the split axi is partly carried as a utility tool, and partly as a weapon if need be.","Stafur":"The stafur works both as a walking stick and as a weapon. Staves made for fighting need to be metal reinforced and balanced. Besides the damage modifier increase (which is a measure of the minimum and maximum damage that the creature can deal), the area of the attack is larger; therefore, the damage often consists of more than one damage die. Melee WeApons There are many different types of melee weapons, which vary in design and material. Instead of listing all of them here in one long table, we present a selection of basic weapons used in Trudvang. One-Handed Light Weapons ✦ Damage: 1d10 (OR 10)","BattleAxe":"The barda axi is a refined and larger version of the regular split axi whose shape has been refined to be used in combat.","BardaFaldir":"The barda faldir is predominantly used by the warriors of the Tenet of Nid. It’s a combat version of the flails that are used for farming. The barda faldir often has a wooden shaft, a chain, and an oblong head with spikes.","BardaHammri":"The barda hammri is developed from a regular blacksmith hammer, though it sometimes can be hard to tell them apart. The barda hammri often has a wooden handle and a big iron head. Some barda hammris have studs or nails on one side of the head.","BardaKlot":"The barda klót consists of a short handle made from iron or wood, a chain, and a heavy iron ball. Some balls are outfitted with studs or long spik es. Fighting with this weapon is cumbersome and demands great skill, but its force is good against shields and in spaces where the ball has the potential to hit with full power.","BardaMakir":"The barda makir is prevalent among the warriors of the Tenet of Nid. It’s like a stjorn makir but instead of spikes, the battle mace has sharp flanges.","BardaSwerd":"The swerd is significantly bigger and heavier than a breid swerd. This weapon is used foremost in combat and seldom for hunting or smaller skirmishes. The swerd is common among warriors from the Stormlands. 68 | chapter 6. equipment with the long spear. It is an effective and relatively cheap weapon to use on foot or while mounted. This weapon is at its best when used in packed formations of well-trained spearmen, trying to keep enemies at bay , exploiting the reach of this spear. The shaft is usually made of wood while the blade can be either made of steel, or just of iron in the cheaper examples.","BastjurKedja":"A Bastjur kedjá is a bigger version of the barda klót that can also be thrown. Some balls have studs or long spikes. Fighting with this weapon is tough and requires much skill, but its force is good against shields and in spaces where the ball has the potential to hit with full power.","Broadsword":"The breid swerd is shorter than the barda swerd and has a more robust blade than the seax. It is used mainly as a cutting weapon, and warriors often wield two of these swords, one in each hand. The breid swerd, like the hring seax, is common in Mittland.","DropiAxi":"The dropi axi is used by the holy warriors of the Tenet of Nid and to some degree by knights in Westmark. The axe head is reverse-teardrop-shaped and, together with the shaft, the weapon looks like a pendulum (dropi), hence the name.","Hakk":"Different types of picks have been developed for combat. They are often unwieldy and hard to use, but when they hit, they leave nasty wounds and often inflict much damage.","Miekka":"The typical elf sword is called a Miekka. The blade is made of a strong type of wood. A Miekka can be used as a throwing spear.","StaafSpjot":"The staaf spjót is a bit longer than the lill spjót, but has a slimmer tip. Some hunting spears also have a crossbar on the shaft so struck prey won’t be able to come too close to the hunter. These spears tend to have an iron ring at the end that can be fastened to the wielder’s belt.","StakkSwerd":"The stakk swerd has a long, double-edged blade. Often the blade is narrow and relativ ely thin, making it a weapon capable of being used in one hand. The chapter 6. equipment | 69","StjornMakir":"The stjorn makir is an advanced version of the nagli klubb, often with a shaft made of iron (cheaper alternatives use wood) and a metal head. The head is covered in long, nasty spikes. The stjorn makir is common in Westmark.","BeardedAxe":"The blade of this axe is L-shaped in order to widen the cutting surface without augmenting the weight. The villtur axi is the battle axe that the Stormlanders prefer, notably the rangers. It is also used sparingly by the Viranns, but not that often by the Mittlanders, who think it to be too unwieldy. With its long shaft, the villtur axi is sometimes longer than the barda axi but smaller than the tvei axi. A strong and big wielder may be able to learn to use it with one hand. Two-Handed Weapons ✦ Damage: 1d10 (OR 8-10)","BreidSpjot":"The breid spjót, or hoggvaspear (hewing spear) or pole blade, as it also is called, is most common in Mittland. It consists of a long wooden shaft and a tip that resembles a seax, or even a short sword. There are variants with a curved edge, but those are most common among the Arks. The length varies between that of a lill spjót and a spjót but is seldom longer than 7 feet. The main advantage of this weapon is long reach combined with the possibility of making not just piercing but also slashing and chopping attacks.","LongSpear":"There are many weapon masters in Mittland that have specialized to fight","TwoHandedAxe":"The tvei axi is a mighty weapon carried by many warriors around Trudvang. A fine tvei axi has both a shaft and an axe head made of iron. Less adequate versions have a wooden shaft and an axe head made of iron. In some cases, a tvei axi with double heads can be found; these are called double axes.","TveiFaldir":"The tvei feldir resembles the regular barda faldir except that it has a significantly longer shaft and striking head.","TveiHakk":"The tvei hakk is a heavier and more dangerous version of the hakk. Like the tvei swerd, the tvei hakk is carried by those that want to inflict great damage in combat.","TveiHammri":"This large hammer-like weapon has more in common with the two-handed club than with the one-handed barda hammri. The tvei hammri is a more developed and durable variant of the tvei klubb.","TveiKlubb":"Tvei klubbs are cumbersome and heavy , but they deal great damage and demand little care or upkeep. That may be a reason this weapon is favored by troll folk and other fiends that live in the dark forests of Trudvang.","TwoHandedSword":"The tvei swerd is a far bigger version of the barda swerd and is used with two hands. It’s hefty and bulky , but has great power and causes fear in battle. stakk swerd is most common among those who travel the lands but don’t have war as their primary profession. It’s a good w eapon for protection, and the small tip is good for working into cracks in the enemy’s armor. Using the crossguard as an improvised battle hammer is common.","Longbow":"The lang bogi is built with different materials to have an enhancing effect. It’s heavier than the veidi bogi, but also has a longer range. When Stormlanders use bows in combat, they usually choose lang bogis.","TveBogi":"The tve bogi consists of two parts instead of one. The parts are fastened in a handle in the middle. Because it’s a composite, the bow can be pulled further and therefore has a longer range. The tvegi bogi is common among the Mittlanders and all the horse riders that live in Mittland.","HuntingBow":"The veidi bogi is often simple and suited for relatively short distances. The arrows are short and somewhat thicker than arrows intended for combat.","Slingu":"Like the club and hunting spear, the slingu is a cheap and simple weapon. However, it is much harder to use than other ranged weapons. The slingu often consists of two leather straps and a leather pouch in the middle.","StafurSlingu":"The stafur slingu is a long-distance version of the regular slingu. By lev eraging the power of a staff, you can throw a sling stone much farther and harder.","Crossbow":"The good range and power of the bolts mean that the krossbogur is often used for defense of castles and cities. However, the long loading times mean that many warriors prefer to rely on a bow or enter melee.","TunkurKrossbogur":"The tunkur krossbogur is a bigger version of the regular krossbogur. The loading times are considerably longer; however, it has better range.","VolkKrossbogur":"The volk krossbogur is used primarily as a secondary weapon. It’s also popular for hunting since it’s easier to use than a regular veidi bogi.","ThickFabric":"Thick fabric, also called gambeson, is the simplest type of armor. It consists of two or three layers of fabric sewn together and stuffed with thick wadding. This armor tends to break often and hence needs to be repaired often. Armor made from thick fabric that is used in combat should be repaired between each confrontation to keep its protective quality.","FurLeather":"Fur or soft leather armor is the most primitive kind, worn mostly by warriors belonging to Wildfolk and troll peoples. It is also used by humans from colder climates like the Stormlands. It consists of pieces of tanned fur or soft leather sewn together. This gives it a lined and soft feel that is warm and protects well. One benefit is that it’s very easy to move in. Another advantage is that it is very quiet compared to creaky hardened leather or clattering metal armor.","HardenedLeather":"Hardened leather armor is made from the skins of animals like cows, horses, or sheep. The leather is cooked in oil and","MetalReinforcedLeather":"This armor is made from thick leather, but because it isn’t cooked and cured, it is still soft. Metal plates are systematically riveted onto the leather to increase the protection. This type of armor is particularly popular with hirdmen from the Stormlands.","ChainMail":"Chain mail armor, more commonly known just as mail or maille, consists of thousands of interlink ed metal rings. Most of them are riveted together, but a cheaper version made from butted rings exists (which offers less protection since the rings are not stuck together as well). This armor is worn over a gambeson, sturdy fabric, or soft leather to avoid blisters. Despite its weight, it is easy to move in. Mail has its origin in Throneland and is common in the Mittlands.","ScaleReinforcedChainMail":"Scale-reinforced chain mail armor is a combination of a mail and scale plating. Most of the armor is made from mail, and at strategic places metal plates are scarfed in. This offers higher protection in vital areas such as the abdomen. As with chain mail, it is worn over a gambeson, sturdy fabric, or soft leather.","ScalePlating":"This armor is made from soft leather covered by a layer of metal plates, like the scales on a fish or dragon. It tends to clatter when moving but gives great protection while being easy to mov e in. It is common in the Mittlands, where they have a special version made to be worn on horseback. This mounted scale armor has a foot-length skirt that is slatted in the front and back to allow full protection when in the saddle.","DoubleChainMail":"This armor is made from regular chain mail with another suit of mail worn over it. The rings of the outer mail are often thinner and placed in strategic areas to offer higher protection. The outer rings are often made from a different type of metal to form a visually pleasing armor. The thinner rings offer great defense since they help spread the impact of a weapon over a larger area.","BandedArmor":"Banded armor is made from ov erlapping laminated metal bands. The bands are roughly 10 centimeters wide and fastened on chain mail. Banded means that several bands are hammered together to form a thick plate, which is then formed and put together. Banded armor is used mainly by dwarves. When other races use banded armor, the plates are often laminated in a way that allows the individual bands to move without restricting mobility.","PlateArmor":"Plate armor consists of several wellformed and customized metal plates that overlap each other. Padding is a must. The perfectly formed metal pieces are specially made to deflect arrows and cuts. Plate armor is always uniquely formed for each wearer. This is a rare armor that is used only by rich warriors, mostly from Westmark.","SlaveClothes":"Slave clothes are mostly worn by slaves in Trudvang and are the simplest clothes. They may be made of colorless hemp, jute, or junk. A slave’s outfit can range from clothes that cover the hips and chest to simple sandals or tunics with ropes around the waist and coat. Among Wildfolk, it is common that the slaves wear no clothes at all. There is not much difference between the clothing of men and women. Jewelry , scarves, and other details are never used.","PoorClothes":"Poor people wear simple, natural-colored clothing without patterns or embroidery. The clothes are mostly made of wool or linen. Reinforcements of fur from hares, foxes, and goats can be used, for example, on elbows, knees, and crotches. The men often wear sleeved tunics with sweat gaps or sleeveless tunics with a simple belt, pants, or socks. On their feet they wear either sandals or shoes, which are laced up to their knees. On their head, the most common item is a hood, cap, or slouch hat. Women are dressed in short-sleeved tunics or aprons over a chemise. On their feet, they wear sandals or shoes just like the men, laced up to their knees. The most common item to wear on their head is a kerchief. Wildfolk use birch bark for shoes and patches of worn leather clothing with pieces of bone. Jewelry is very unusual, but a bronze brooch or a leather strap with a fine stone is more common. chapter 6. equipment | 81 uncommon. When it gets cold, people wear an extra coat made of sheepskin, wolf hide, or pigskin. In the Stormlands the Hirdmen ma y have a simple coat and the female warriors sometimes wear colored and have a patterned ribbon. Around the waist men may wear a belt made of leather, and across the shoulders they may wear fur. Jackets, heavy boots, mittens, and hats made of fur are not","AverageClothes":"Those who belong to an average good family basically wear the same kind of clothes that the poor wear, but the difference is that these clothes are often 82 | chapter 6. equipment","RichClothes":"Rich people always wear colored and patterned fabrics with decorated ribbons and embroidery. Some also dress in unusual material, like velvet from Westmark or silk from Soj. The mantle is often a sign of how rich you are, and therefore the fur is decorated or attached with silver dents. On hot days, men usually wear linen clothing and women wear linen dresses; on colder days, they tend to wear fine furs to cover their bodies. Gloves are also common. The women have very different dresses with or without trains, corsets, puff sleeves, and necklines. Dresses have a very high waist in Westmark, while in the Stormlands they have a very low waist. Rich Wildfolk usually wear furs from rare beasts with claws and teeth, and a skull as headgear. The more warriororiented Wildf olk wear chain mail and shoulder plates made of bones. Dwarves’ clothes differ very little from those usually worn by most humans. The only thing that sets them apart is that the clothes are usually tougher, more practical, and better crafted.","RoyalAttire":"These outfits are for those who were born in the richest families: princes, jarls, and others with royal blood in their veins. They look for clothes that stand out as the most magnificent and expensive. The colors are strong and bright and the material is of the finest quality , like velvet or silk. On cooler days, wealthy people wear clothing of wool. Their long mantles are decorated with fur from exotic beasts or leather. Half of the outfit consists of makeup and jewelry. Powders, scented oils, and lip color exist, but are commonly used only among people in Westmark and Mittland. The Stormlands have jarls and powerful families with rough skin and the smell of rotten eggs and fish guts. Normally their jewelry is made of gold or other rare material and takes the form of heavy crowns, tiaras, and necklaces that cover the entire chest. The price of such attire includes people who can apply makeup and carry the robes and trains, but are completely useless at everything else. leather battle skirts (the latter is more common in Mittland). Among men in Westmark, it is also popular to wear pants, with a gap in the front or the back. Just like the men, women can wear fur on their shoulders and mantles. They also wear pleated chemises, aprons with patterned ribbons, and fur skirts on top. On fancy occasions, women wear colored dresses in linen with a decorated waistband, which hangs down to their feet. Hair nets or hair bands are common headwear. Wildfolk are dressed in fur and details made of bone. Holy men (especially among the followers of the Tenet of Nid) may wear a simple wrap on top of a colored coat or chemise. Jewelry is common, especially items made in bronze and sometimes silver, such as bracelets, brooches, pins, necklaces, and so on. It is not uncommon to wrap copper and silver bands around the wrists, both as decoration and as a way to pay for products or services.","AdventureKit":"When you are out traveling, normally you bring all sorts of bits and pieces, but to avoid filling out the character sheet with small items that will constantly change, the rules use an adventure kit. A kit is a collection of items used for a specific purpose (for example, a camp kit is used when you need to spend a night in the wilderness, and a hunting kit is used for hunting). Each time a person needs something from their adventure kit, they make a Situation roll (with a Situation value outlined below) to see if the kit has that item. These rolls are normally made when there is a question over whether the item should be included in the kit. For example, you may roll to see if you have an extra blanket or an extra tent in your camp kit. Something that was rolled in the past obviously does not have to be repeated unless the player and game master have forgotten whether it was present. The chance to have an item in a kit also depends on how big the kit is. A kit has three sizes: small (only the essentials), ordinar y , and large (almost everything you need). To see if a kit contains an item, the player makes a Situation roll with Situation v alue 5 for a small kit, Situation value 10 for an ordinary kit, and Situation value 15 for a large kit. Sometimes the GM will modify the Situation value depending on the circumstances. The most common kits are described below. The game master can also make up new kits that might be useful (such as a climbing kit, an animal training kit, and so on).","ArmamentKit":"A weapon kit includes all the necessary accessories for taking care of one or more weapons. It may have scabbards, whetstones, weapon grease, and a weapon belt. It may also include quivers, arrows, and additional bowstrings for a ranged weapon.","CraftKit":"The craft kit is a general term for a lot of different kits for each specific craft. A person buying a craft kit must specify what type of craft the kit is designed for. The kit includes most of what is used to perform the craft, but it does not include large stationary items. A blacksmith, for example, cannot bring a whole forge.","BurglaryKit":"A thief kit is necessary equipment for a burglar. The kit includes a knife, a lockpick, a reflective metal plate, soft shoes, a dark jacket with a hood, rope, a grappling hook, a rope ladder, pebbles, a sack, and other things associated with thieving activities.","CampingKit":"The wanderer’s most important kit is the camp kit. It is used to pitch a good camp in order to survive in the wilderness. The kit includes things like backpacks, blankets, sleeping pelt, leather tent, knife, flint and steel, string, rope, cooking equipment, eating utensils, water skins, torches, an axe, and dry wood.","HuntingKit":"A hunting kit is needed to hunt and take care of prey in the wild. The kit includes snares, string, rope, a knife, a dagger,","WritingKit":"This kit is for writers, scholars, magicians , and others who need to write things down. The kit includes a quill, ink, charcoal, calfskin, clay , crayons, skins to protect writing, ribbon to tie leather together, and other things needed for writing.","MusicKit":"A folk musician kit is the most necessary equipment for a poet or a bard. The kit includes things like calfskin with songs written on it, larger instruments (such as a drum, timpani, harp, or horn), smaller instruments (mouth harp, flute, castanets, tambourine), a quill or piece of charcoal, extra leather pieces for songwriting, stage clothes, and much more.","FishingKit":"A fishing kit is just like a hunting kit, except it’s used for fishing and taking care of the catch. The kit includes a fishing rod, fishing line and hooks, bait, fishing nets, a fish basket, and much more.","HealingKit":"The healing kit is used for treatment of wounds and injuries. It contains water skins, bandages, simple herbs, chewing tree, intoxicants, blankets, splints, flint and steel, a small boiling pot, a kettle stand, a mug, and anything else that can be used for health care.","SmallShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","MediumShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","LargeShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","SmallFurShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","MediumFurShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","LargeFurShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","SmallMetalShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","MediumMetalShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.","LargeMetalShield":"Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal."},
+      "ExtractType": {
+        "Alteration": "Alteration",
+        "Healing": "Healing",
+        "Poison": "Poison"
+      },
+      "Duration": {
+        "OneDay": "1 day",
+        "TwoHours": "2 hours",
+        "TwentyFourHours": "24 hours",
+        "OneD6Rounds": "1d6 rounds",
+        "EightHours": "8 hours",
+        "OneD6Minutes": "1d6 minutes",
+        "FourMinutes": "4 minutes",
+        "OneHour": "1 hour",
+        "SixHours": "6 hours"
+      },
+      "GenericDescription": {
+        "Weapon": {
+          "oneHandedLight": "A light one-handed weapon, quick to wield in close combat.",
+          "oneHandedHeavy": "A heavy one-handed weapon designed for powerful blows.",
+          "twoHanded": "A powerful two-handed weapon that demands both hands.",
+          "ranged": "A ranged weapon for striking targets beyond reach."
+        },
+        "Shield": "A shield used to parry melee attacks and absorb damage for its bearer.",
+        "Armor": "Protective armor whose Encumbrance determines movement and initiative penalties.",
+        "Extract": "An extract prepared from rare substances, whose result depends on its Strength.",
+        "Gear": "Useful equipment for travel and everyday activities.",
+        "Package": {
+          "ArmamentKit": "A package for maintaining weapons and combat equipment.",
+          "CraftKit": "A package of tools for one specific craft, without fixed installations.",
+          "BurglaryKit": "A burglary package with tools and clothing for discreet intrusion.",
+          "CampingKit": "A package for setting camp and surviving in the wilderness.",
+          "HuntingKit": "A package for hunting and preparing game in the wilderness.",
+          "WritingKit": "A package for writing, note-taking, and preserving documents.",
+          "MusicKit": "A bard’s package containing instruments, songs, and stage accessories.",
+          "FishingKit": "A package for fishing and preparing catches.",
+          "HealingKit": "A healing package with bandages, herbs, and medical equipment."
+        }
+      },
+      "PackageAvailability": {
+        "Small": "To find an appropriate item in it, succeed on a Situation roll against SV 5.",
+        "Ordinary": "To find an appropriate item in it, succeed on a Situation roll against SV 10.",
+        "Large": "To find an appropriate item in it, succeed on a Situation roll against SV 15."
+      },
+      "ItemDescription": {
+        "Glaaf": "A glaaf is slightly longer than the hring seax and usually has two edges. The skalm is a variant with only one sharp edge. The glaaf is most common in the eastern parts of Trudvang and it was the weapon of choice of the ancient Brots.",
+        "HringSeax": "The hring seax or ring knife is perhaps most common in Mittland. Its singleedged blade is usuall y slightly inward curving and there is a ring at the end of the handle, sometimes used to tie the weapon to the wielder’s wrist. The shape of the hring seax in Mittland bears strong influences from elven weapons. In Mittland, the hring seax shows that the wielder is faithful to the Eald Tradition. A hring seax is seldom used for household activities, it is instead a weapon mainly conceived for combat.",
+        "Klubb": "A klubb is one of the most common weapons among those who cannot support themselves as warriors. The klubb is cheap and easy to fight with. Primitive klubbs consist of a truncated tree branch. One-Handed Heavy Weapons ✦ Damage: 1d10 (OR 9-10)",
+        "KrumSwerd": "The krum sword is a shorter sword with a curved edge. It’s used exclusively by different types of W ildfolk, like the Bults, Wildbrons, and Arks. The Wildbrons revere the curved sword especially because they were once defeated by a people who used this weapon, so they believe it is better than their own. It also goes under the name curved sword and cleaving saber.",
+        "LillSpjot": "The lill spjót is cheap and easy to use for an inexperienced warrior. It can also be used for hunting if the hunter is brave enough to stand close to his prey.",
+        "NagliKlubb": "A more developed variant of the klubb is the nagli klubb. Often made from wood, this club has spikes at the top to inflict more damage.",
+        "Seax": "The seax is both a weapon and a tool that’s carried by most of Trudvang’s inhabitants . Seax exist in many varieties adapted for throwing, thrusting, and cutting. Some are made for hunting, fishing, and household use: these blades are usually single-edged knives. Other varieties are double-edged daggers with sharp points, fit for piercing attacks. In the Stormlands, the Bjorn paw or bear paw is a favored weapon, and the short, broadbladed seax carries much symbolism for Gerbanis. A knife is used for ritual blood gifting, and many warriors wear one on their belts as a last resort when all other weapons are lost or too heavy to lift.",
+        "SplitAxi": "Like the seax, the split axi is partly carried as a utility tool, and partly as a weapon if need be.",
+        "Stafur": "The stafur works both as a walking stick and as a weapon. Staves made for fighting need to be metal reinforced and balanced. Besides the damage modifier increase (which is a measure of the minimum and maximum damage that the creature can deal), the area of the attack is larger; therefore, the damage often consists of more than one damage die. Melee WeApons There are many different types of melee weapons, which vary in design and material. Instead of listing all of them here in one long table, we present a selection of basic weapons used in Trudvang. One-Handed Light Weapons ✦ Damage: 1d10 (OR 10)",
+        "BattleAxe": "The barda axi is a refined and larger version of the regular split axi whose shape has been refined to be used in combat.",
+        "BardaFaldir": "The barda faldir is predominantly used by the warriors of the Tenet of Nid. It’s a combat version of the flails that are used for farming. The barda faldir often has a wooden shaft, a chain, and an oblong head with spikes.",
+        "BardaHammri": "The barda hammri is developed from a regular blacksmith hammer, though it sometimes can be hard to tell them apart. The barda hammri often has a wooden handle and a big iron head. Some barda hammris have studs or nails on one side of the head.",
+        "BardaKlot": "The barda klót consists of a short handle made from iron or wood, a chain, and a heavy iron ball. Some balls are outfitted with studs or long spik es. Fighting with this weapon is cumbersome and demands great skill, but its force is good against shields and in spaces where the ball has the potential to hit with full power.",
+        "BardaMakir": "The barda makir is prevalent among the warriors of the Tenet of Nid. It’s like a stjorn makir but instead of spikes, the battle mace has sharp flanges.",
+        "BardaSwerd": "The swerd is significantly bigger and heavier than a breid swerd. This weapon is used foremost in combat and seldom for hunting or smaller skirmishes. The swerd is common among warriors from the Stormlands. 68 | chapter 6. equipment with the long spear. It is an effective and relatively cheap weapon to use on foot or while mounted. This weapon is at its best when used in packed formations of well-trained spearmen, trying to keep enemies at bay , exploiting the reach of this spear. The shaft is usually made of wood while the blade can be either made of steel, or just of iron in the cheaper examples.",
+        "BastjurKedja": "A Bastjur kedjá is a bigger version of the barda klót that can also be thrown. Some balls have studs or long spikes. Fighting with this weapon is tough and requires much skill, but its force is good against shields and in spaces where the ball has the potential to hit with full power.",
+        "Broadsword": "The breid swerd is shorter than the barda swerd and has a more robust blade than the seax. It is used mainly as a cutting weapon, and warriors often wield two of these swords, one in each hand. The breid swerd, like the hring seax, is common in Mittland.",
+        "DropiAxi": "The dropi axi is used by the holy warriors of the Tenet of Nid and to some degree by knights in Westmark. The axe head is reverse-teardrop-shaped and, together with the shaft, the weapon looks like a pendulum (dropi), hence the name.",
+        "Hakk": "Different types of picks have been developed for combat. They are often unwieldy and hard to use, but when they hit, they leave nasty wounds and often inflict much damage.",
+        "Miekka": "The typical elf sword is called a Miekka. The blade is made of a strong type of wood. A Miekka can be used as a throwing spear.",
+        "StaafSpjot": "The staaf spjót is a bit longer than the lill spjót, but has a slimmer tip. Some hunting spears also have a crossbar on the shaft so struck prey won’t be able to come too close to the hunter. These spears tend to have an iron ring at the end that can be fastened to the wielder’s belt.",
+        "StakkSwerd": "The stakk swerd has a long, double-edged blade. Often the blade is narrow and relativ ely thin, making it a weapon capable of being used in one hand. The chapter 6. equipment | 69",
+        "StjornMakir": "The stjorn makir is an advanced version of the nagli klubb, often with a shaft made of iron (cheaper alternatives use wood) and a metal head. The head is covered in long, nasty spikes. The stjorn makir is common in Westmark.",
+        "BeardedAxe": "The blade of this axe is L-shaped in order to widen the cutting surface without augmenting the weight. The villtur axi is the battle axe that the Stormlanders prefer, notably the rangers. It is also used sparingly by the Viranns, but not that often by the Mittlanders, who think it to be too unwieldy. With its long shaft, the villtur axi is sometimes longer than the barda axi but smaller than the tvei axi. A strong and big wielder may be able to learn to use it with one hand. Two-Handed Weapons ✦ Damage: 1d10 (OR 8-10)",
+        "BreidSpjot": "The breid spjót, or hoggvaspear (hewing spear) or pole blade, as it also is called, is most common in Mittland. It consists of a long wooden shaft and a tip that resembles a seax, or even a short sword. There are variants with a curved edge, but those are most common among the Arks. The length varies between that of a lill spjót and a spjót but is seldom longer than 7 feet. The main advantage of this weapon is long reach combined with the possibility of making not just piercing but also slashing and chopping attacks.",
+        "LongSpear": "There are many weapon masters in Mittland that have specialized to fight",
+        "TwoHandedAxe": "The tvei axi is a mighty weapon carried by many warriors around Trudvang. A fine tvei axi has both a shaft and an axe head made of iron. Less adequate versions have a wooden shaft and an axe head made of iron. In some cases, a tvei axi with double heads can be found; these are called double axes.",
+        "TveiFaldir": "The tvei feldir resembles the regular barda faldir except that it has a significantly longer shaft and striking head.",
+        "TveiHakk": "The tvei hakk is a heavier and more dangerous version of the hakk. Like the tvei swerd, the tvei hakk is carried by those that want to inflict great damage in combat.",
+        "TveiHammri": "This large hammer-like weapon has more in common with the two-handed club than with the one-handed barda hammri. The tvei hammri is a more developed and durable variant of the tvei klubb.",
+        "TveiKlubb": "Tvei klubbs are cumbersome and heavy , but they deal great damage and demand little care or upkeep. That may be a reason this weapon is favored by troll folk and other fiends that live in the dark forests of Trudvang.",
+        "TwoHandedSword": "The tvei swerd is a far bigger version of the barda swerd and is used with two hands. It’s hefty and bulky , but has great power and causes fear in battle. stakk swerd is most common among those who travel the lands but don’t have war as their primary profession. It’s a good w eapon for protection, and the small tip is good for working into cracks in the enemy’s armor. Using the crossguard as an improvised battle hammer is common.",
+        "Longbow": "The lang bogi is built with different materials to have an enhancing effect. It’s heavier than the veidi bogi, but also has a longer range. When Stormlanders use bows in combat, they usually choose lang bogis.",
+        "TveBogi": "The tve bogi consists of two parts instead of one. The parts are fastened in a handle in the middle. Because it’s a composite, the bow can be pulled further and therefore has a longer range. The tvegi bogi is common among the Mittlanders and all the horse riders that live in Mittland.",
+        "HuntingBow": "The veidi bogi is often simple and suited for relatively short distances. The arrows are short and somewhat thicker than arrows intended for combat.",
+        "Slingu": "Like the club and hunting spear, the slingu is a cheap and simple weapon. However, it is much harder to use than other ranged weapons. The slingu often consists of two leather straps and a leather pouch in the middle.",
+        "StafurSlingu": "The stafur slingu is a long-distance version of the regular slingu. By lev eraging the power of a staff, you can throw a sling stone much farther and harder.",
+        "Crossbow": "The good range and power of the bolts mean that the krossbogur is often used for defense of castles and cities. However, the long loading times mean that many warriors prefer to rely on a bow or enter melee.",
+        "TunkurKrossbogur": "The tunkur krossbogur is a bigger version of the regular krossbogur. The loading times are considerably longer; however, it has better range.",
+        "VolkKrossbogur": "The volk krossbogur is used primarily as a secondary weapon. It’s also popular for hunting since it’s easier to use than a regular veidi bogi.",
+        "ThickFabric": "Thick fabric, also called gambeson, is the simplest type of armor. It consists of two or three layers of fabric sewn together and stuffed with thick wadding. This armor tends to break often and hence needs to be repaired often. Armor made from thick fabric that is used in combat should be repaired between each confrontation to keep its protective quality.",
+        "FurLeather": "Fur or soft leather armor is the most primitive kind, worn mostly by warriors belonging to Wildfolk and troll peoples. It is also used by humans from colder climates like the Stormlands. It consists of pieces of tanned fur or soft leather sewn together. This gives it a lined and soft feel that is warm and protects well. One benefit is that it’s very easy to move in. Another advantage is that it is very quiet compared to creaky hardened leather or clattering metal armor.",
+        "HardenedLeather": "Hardened leather armor is made from the skins of animals like cows, horses, or sheep. The leather is cooked in oil and",
+        "MetalReinforcedLeather": "This armor is made from thick leather, but because it isn’t cooked and cured, it is still soft. Metal plates are systematically riveted onto the leather to increase the protection. This type of armor is particularly popular with hirdmen from the Stormlands.",
+        "ChainMail": "Chain mail armor, more commonly known just as mail or maille, consists of thousands of interlink ed metal rings. Most of them are riveted together, but a cheaper version made from butted rings exists (which offers less protection since the rings are not stuck together as well). This armor is worn over a gambeson, sturdy fabric, or soft leather to avoid blisters. Despite its weight, it is easy to move in. Mail has its origin in Throneland and is common in the Mittlands.",
+        "ScaleReinforcedChainMail": "Scale-reinforced chain mail armor is a combination of a mail and scale plating. Most of the armor is made from mail, and at strategic places metal plates are scarfed in. This offers higher protection in vital areas such as the abdomen. As with chain mail, it is worn over a gambeson, sturdy fabric, or soft leather.",
+        "ScalePlating": "This armor is made from soft leather covered by a layer of metal plates, like the scales on a fish or dragon. It tends to clatter when moving but gives great protection while being easy to mov e in. It is common in the Mittlands, where they have a special version made to be worn on horseback. This mounted scale armor has a foot-length skirt that is slatted in the front and back to allow full protection when in the saddle.",
+        "DoubleChainMail": "This armor is made from regular chain mail with another suit of mail worn over it. The rings of the outer mail are often thinner and placed in strategic areas to offer higher protection. The outer rings are often made from a different type of metal to form a visually pleasing armor. The thinner rings offer great defense since they help spread the impact of a weapon over a larger area.",
+        "BandedArmor": "Banded armor is made from ov erlapping laminated metal bands. The bands are roughly 10 centimeters wide and fastened on chain mail. Banded means that several bands are hammered together to form a thick plate, which is then formed and put together. Banded armor is used mainly by dwarves. When other races use banded armor, the plates are often laminated in a way that allows the individual bands to move without restricting mobility.",
+        "PlateArmor": "Plate armor consists of several wellformed and customized metal plates that overlap each other. Padding is a must. The perfectly formed metal pieces are specially made to deflect arrows and cuts. Plate armor is always uniquely formed for each wearer. This is a rare armor that is used only by rich warriors, mostly from Westmark.",
+        "SlaveClothes": "Slave clothes are mostly worn by slaves in Trudvang and are the simplest clothes. They may be made of colorless hemp, jute, or junk. A slave’s outfit can range from clothes that cover the hips and chest to simple sandals or tunics with ropes around the waist and coat. Among Wildfolk, it is common that the slaves wear no clothes at all. There is not much difference between the clothing of men and women. Jewelry , scarves, and other details are never used.",
+        "PoorClothes": "Poor people wear simple, natural-colored clothing without patterns or embroidery. The clothes are mostly made of wool or linen. Reinforcements of fur from hares, foxes, and goats can be used, for example, on elbows, knees, and crotches. The men often wear sleeved tunics with sweat gaps or sleeveless tunics with a simple belt, pants, or socks. On their feet they wear either sandals or shoes, which are laced up to their knees. On their head, the most common item is a hood, cap, or slouch hat. Women are dressed in short-sleeved tunics or aprons over a chemise. On their feet, they wear sandals or shoes just like the men, laced up to their knees. The most common item to wear on their head is a kerchief. Wildfolk use birch bark for shoes and patches of worn leather clothing with pieces of bone. Jewelry is very unusual, but a bronze brooch or a leather strap with a fine stone is more common. chapter 6. equipment | 81 uncommon. When it gets cold, people wear an extra coat made of sheepskin, wolf hide, or pigskin. In the Stormlands the Hirdmen ma y have a simple coat and the female warriors sometimes wear colored and have a patterned ribbon. Around the waist men may wear a belt made of leather, and across the shoulders they may wear fur. Jackets, heavy boots, mittens, and hats made of fur are not",
+        "AverageClothes": "Those who belong to an average good family basically wear the same kind of clothes that the poor wear, but the difference is that these clothes are often 82 | chapter 6. equipment",
+        "RichClothes": "Rich people always wear colored and patterned fabrics with decorated ribbons and embroidery. Some also dress in unusual material, like velvet from Westmark or silk from Soj. The mantle is often a sign of how rich you are, and therefore the fur is decorated or attached with silver dents. On hot days, men usually wear linen clothing and women wear linen dresses; on colder days, they tend to wear fine furs to cover their bodies. Gloves are also common. The women have very different dresses with or without trains, corsets, puff sleeves, and necklines. Dresses have a very high waist in Westmark, while in the Stormlands they have a very low waist. Rich Wildfolk usually wear furs from rare beasts with claws and teeth, and a skull as headgear. The more warriororiented Wildf olk wear chain mail and shoulder plates made of bones. Dwarves’ clothes differ very little from those usually worn by most humans. The only thing that sets them apart is that the clothes are usually tougher, more practical, and better crafted.",
+        "RoyalAttire": "These outfits are for those who were born in the richest families: princes, jarls, and others with royal blood in their veins. They look for clothes that stand out as the most magnificent and expensive. The colors are strong and bright and the material is of the finest quality , like velvet or silk. On cooler days, wealthy people wear clothing of wool. Their long mantles are decorated with fur from exotic beasts or leather. Half of the outfit consists of makeup and jewelry. Powders, scented oils, and lip color exist, but are commonly used only among people in Westmark and Mittland. The Stormlands have jarls and powerful families with rough skin and the smell of rotten eggs and fish guts. Normally their jewelry is made of gold or other rare material and takes the form of heavy crowns, tiaras, and necklaces that cover the entire chest. The price of such attire includes people who can apply makeup and carry the robes and trains, but are completely useless at everything else. leather battle skirts (the latter is more common in Mittland). Among men in Westmark, it is also popular to wear pants, with a gap in the front or the back. Just like the men, women can wear fur on their shoulders and mantles. They also wear pleated chemises, aprons with patterned ribbons, and fur skirts on top. On fancy occasions, women wear colored dresses in linen with a decorated waistband, which hangs down to their feet. Hair nets or hair bands are common headwear. Wildfolk are dressed in fur and details made of bone. Holy men (especially among the followers of the Tenet of Nid) may wear a simple wrap on top of a colored coat or chemise. Jewelry is common, especially items made in bronze and sometimes silver, such as bracelets, brooches, pins, necklaces, and so on. It is not uncommon to wrap copper and silver bands around the wrists, both as decoration and as a way to pay for products or services.",
+        "AdventureKit": "When you are out traveling, normally you bring all sorts of bits and pieces, but to avoid filling out the character sheet with small items that will constantly change, the rules use an adventure kit. A kit is a collection of items used for a specific purpose (for example, a camp kit is used when you need to spend a night in the wilderness, and a hunting kit is used for hunting). Each time a person needs something from their adventure kit, they make a Situation roll (with a Situation value outlined below) to see if the kit has that item. These rolls are normally made when there is a question over whether the item should be included in the kit. For example, you may roll to see if you have an extra blanket or an extra tent in your camp kit. Something that was rolled in the past obviously does not have to be repeated unless the player and game master have forgotten whether it was present. The chance to have an item in a kit also depends on how big the kit is. A kit has three sizes: small (only the essentials), ordinar y , and large (almost everything you need). To see if a kit contains an item, the player makes a Situation roll with Situation v alue 5 for a small kit, Situation value 10 for an ordinary kit, and Situation value 15 for a large kit. Sometimes the GM will modify the Situation value depending on the circumstances. The most common kits are described below. The game master can also make up new kits that might be useful (such as a climbing kit, an animal training kit, and so on).",
+        "ArmamentKit": "A weapon kit includes all the necessary accessories for taking care of one or more weapons. It may have scabbards, whetstones, weapon grease, and a weapon belt. It may also include quivers, arrows, and additional bowstrings for a ranged weapon.",
+        "CraftKit": "The craft kit is a general term for a lot of different kits for each specific craft. A person buying a craft kit must specify what type of craft the kit is designed for. The kit includes most of what is used to perform the craft, but it does not include large stationary items. A blacksmith, for example, cannot bring a whole forge.",
+        "BurglaryKit": "A thief kit is necessary equipment for a burglar. The kit includes a knife, a lockpick, a reflective metal plate, soft shoes, a dark jacket with a hood, rope, a grappling hook, a rope ladder, pebbles, a sack, and other things associated with thieving activities.",
+        "CampingKit": "The wanderer’s most important kit is the camp kit. It is used to pitch a good camp in order to survive in the wilderness. The kit includes things like backpacks, blankets, sleeping pelt, leather tent, knife, flint and steel, string, rope, cooking equipment, eating utensils, water skins, torches, an axe, and dry wood.",
+        "HuntingKit": "A hunting kit is needed to hunt and take care of prey in the wild. The kit includes snares, string, rope, a knife, a dagger,",
+        "WritingKit": "This kit is for writers, scholars, magicians , and others who need to write things down. The kit includes a quill, ink, charcoal, calfskin, clay , crayons, skins to protect writing, ribbon to tie leather together, and other things needed for writing.",
+        "MusicKit": "A folk musician kit is the most necessary equipment for a poet or a bard. The kit includes things like calfskin with songs written on it, larger instruments (such as a drum, timpani, harp, or horn), smaller instruments (mouth harp, flute, castanets, tambourine), a quill or piece of charcoal, extra leather pieces for songwriting, stage clothes, and much more.",
+        "FishingKit": "A fishing kit is just like a hunting kit, except it’s used for fishing and taking care of the catch. The kit includes a fishing rod, fishing line and hooks, bait, fishing nets, a fish basket, and much more.",
+        "HealingKit": "The healing kit is used for treatment of wounds and injuries. It contains water skins, bandages, simple herbs, chewing tree, intoxicants, blankets, splints, flint and steel, a small boiling pot, a kettle stand, a mug, and anything else that can be used for health care.",
+        "SmallShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "MediumShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "LargeShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "SmallFurShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "MediumFurShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "LargeFurShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "SmallMetalShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "MediumMetalShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal.",
+        "LargeMetalShield": "Shields are items which are specifically designed for parrying attacks. They are particularly useful since, unlike weapons, if one has just the first level of the “Shield Bearer” specialty of Fighting, he can ignore the -15 for using the shield hand, albeit only with shields. Attacks made with any shield deal only 1d10 damage and the “Shield Bearer” specialty does not add bonuses to the attack. Basic shields are simple, wooden, and cannot withstand more damage than some weapons. This means that wellprepared war riors bring more than one shield along when they are expecting to see ba ttle. Shields made out of different materials (see below) have the same weight because they are thinner if they are made out of metal."
+      },
       "Item": {
         "Seax": {
           "Name": "Seax (Dagger or Knife)",
@@ -1030,39 +1146,460 @@
         },
         "DragonBlood": {
           "Name": "Dragon Blood",
-          "Description": "Black blood from a slain dragon that grants temporary natural protection.", "Appearance":"Black blood taken from a dragon that has been killed.", "Preparation":"None; one dragon yields one dose.", "Usage":"Drink it or pour it over the body.", "Effect":"Grants natural Protection Value for one day.", "Mild":"+2 natural Protection Value.", "Moderate":"+4 natural Protection Value.", "Strong":"+8 natural Protection Value.", "Total":"+12 natural Protection Value."
+          "Description": "Black blood from a slain dragon that grants temporary natural protection.",
+          "Appearance": "Black blood taken from a dragon that has been killed.",
+          "Preparation": "None; one dragon yields one dose.",
+          "Usage": "Drink it or pour it over the body.",
+          "Effect": "Grants natural Protection Value for one day.",
+          "Mild": "+2 natural Protection Value.",
+          "Moderate": "+4 natural Protection Value.",
+          "Strong": "+8 natural Protection Value.",
+          "Total": "+12 natural Protection Value."
         },
         "FrostboarFat": {
           "Name": "Frostboar's Fat",
-          "Description":"A foul-smelling fat that protects against extreme temperatures.", "Appearance":"Thick brown fat with an incredibly bad smell.", "Preparation":"Cut the brown fatty tissue from a frostboar’s neck; use immediately.", "Usage":"Apply to the body.", "Effect":"Protects from cold and heat for two hours.", "Mild":"Protects from −20 °C to +30 °C.", "Moderate":"Protects from −40 °C to +50 °C, including magical temperatures.", "Strong":"As moderate; reduces harmful fire and cold effects by 25%.", "Total":"As moderate; reduces harmful fire and cold effects by 50%."
+          "Description": "A foul-smelling fat that protects against extreme temperatures.",
+          "Appearance": "Thick brown fat with an incredibly bad smell.",
+          "Preparation": "Cut the brown fatty tissue from a frostboar’s neck; use immediately.",
+          "Usage": "Apply to the body.",
+          "Effect": "Protects from cold and heat for two hours.",
+          "Mild": "Protects from −20 °C to +30 °C.",
+          "Moderate": "Protects from −40 °C to +50 °C, including magical temperatures.",
+          "Strong": "As moderate; reduces harmful fire and cold effects by 25%.",
+          "Total": "As moderate; reduces harmful fire and cold effects by 50%."
         },
         "WoundBalm": {
           "Name": "Wound-Balm",
-          "Description":"A yellow ointment that accelerates natural healing at the cost of dizziness and thirst.", "Appearance":"A yellow ointment of royal elk antler, juniper, water, and birch sap.", "Preparation":"Crush and boil the antler with dried juniper, filter it, then mix it with birch sap.", "Usage":"Once cool, apply to wounds before bandaging.", "Effect":"Accelerates natural healing but causes severe dizziness.", "Mild":"No effect.", "Moderate":"+1 Body Point per day; −2 to actions requiring movement.", "Strong":"+2 Body Points per day; −5 to actions requiring movement.", "Total":"+3 Body Points per day; −10 to actions requiring movement."
+          "Description": "A yellow ointment that accelerates natural healing at the cost of dizziness and thirst.",
+          "Appearance": "A yellow ointment of royal elk antler, juniper, water, and birch sap.",
+          "Preparation": "Crush and boil the antler with dried juniper, filter it, then mix it with birch sap.",
+          "Usage": "Once cool, apply to wounds before bandaging.",
+          "Effect": "Accelerates natural healing but causes severe dizziness.",
+          "Mild": "No effect.",
+          "Moderate": "+1 Body Point per day; −2 to actions requiring movement.",
+          "Strong": "+2 Body Points per day; −5 to actions requiring movement.",
+          "Total": "+3 Body Points per day; −10 to actions requiring movement."
         },
         "Manetter": {
           "Name": "Mandrake",
-          "Description":"A toxic sludge that slowly suffocates its victim and ignores protection.", "Appearance":"Green-black greasy sludge made from blot mushroom, gnyffel root, and water.", "Preparation":"Crush and boil the blot, press it, then mix the liquid with ground gnyffel root.", "Usage":"Mix into food or drink, or smear on one blade or three arrows.", "Effect":"Suffocating poison; all damage is removed directly from Body Points.", "Mild":"1 damage every eight hours.", "Moderate":"1 damage every four hours.", "Strong":"5% chance of death within an hour, then 1 damage every two hours.", "Total":"10% chance of death within an hour, then 1 damage every hour."
+          "Description": "A toxic sludge that slowly suffocates its victim and ignores protection.",
+          "Appearance": "Green-black greasy sludge made from blot mushroom, gnyffel root, and water.",
+          "Preparation": "Crush and boil the blot, press it, then mix the liquid with ground gnyffel root.",
+          "Usage": "Mix into food or drink, or smear on one blade or three arrows.",
+          "Effect": "Suffocating poison; all damage is removed directly from Body Points.",
+          "Mild": "1 damage every eight hours.",
+          "Moderate": "1 damage every four hours.",
+          "Strong": "5% chance of death within an hour, then 1 damage every two hours.",
+          "Total": "10% chance of death within an hour, then 1 damage every hour."
         },
-        "Klubb":{"Name":"Klubb (club)"}, "KrumSwerd":{"Name":"Krum swerd (scimitar)"}, "LillSpjot":{"Name":"Lill spjót (short spear)"}, "NagliKlubb":{"Name":"Nagli klubb (spiked club)"}, "SplitAxi":{"Name":"Split axi (hand axe)"}, "Stafur":{"Name":"Stafur (staff)"},
-        "BardaFaldir":{"Name":"Barda faldir (battle flail)"}, "BardaHammri":{"Name":"Barda hammri (battle hammer)"}, "BardaKlot":{"Name":"Barda klót (battle chain)"}, "BardaMakir":{"Name":"Barda makir (battle mace)"}, "BardaSwerd":{"Name":"Barda swerd (battle sword)"}, "BastjurKedja":{"Name":"Bastjur kedjá (troll chain)"}, "DropiAxi":{"Name":"Dropi axi (pendulum axe)"}, "Hakk":{"Name":"Hakk (war pick)"}, "Miekka":{"Name":"Miekka"}, "StaafSpjot":{"Name":"Staaf spjót (hunting spear)"}, "StakkSwerd":{"Name":"Stakk swerd (arming sword)"}, "StjornMakir":{"Name":"Stjorn makir (morning star)"},
-        "BreidSpjot":{"Name":"Breid spjót (broad spear)"}, "TveiFaldir":{"Name":"Tvei faldir (two-handed flail)"}, "TveiHakk":{"Name":"Tvei hakk (two-handed pick)"}, "TveiHammri":{"Name":"Tvei hammri (two-handed hammer)"}, "TveiKlubb":{"Name":"Tvei klubb (two-handed club)"},
-        "TveBogi":{"Name":"Tve bogi (composite bow)"}, "Slingu":{"Name":"Slingu (sling)"}, "StafurSlingu":{"Name":"Stafur slingu (staff sling)"}, "VolkKrossbogur":{"Name":"Volk krossbogur (light crossbow)"}, "TunkurKrossbogur":{"Name":"Tunkur krossbogur (heavy crossbow)"},
-        "LillSpjotThrown":{"Name":"Lill spjót (throwing)"}, "SplitAxiThrown":{"Name":"Split axi (throwing)"}, "MiekkaThrown":{"Name":"Miekka (throwing)"}, "StaafSpjotThrown":{"Name":"Staaf spjót (throwing)"},
-        "ThickFabric":{"Name":"Thick fabric armor"}, "MetalReinforcedLeather":{"Name":"Metal-reinforced leather armor"}, "ScaleReinforcedChainMail":{"Name":"Scale-reinforced chain mail"}, "ScalePlating":{"Name":"Scale armor"}, "DoubleChainMail":{"Name":"Double chain mail"}, "BandedArmor":{"Name":"Banded armor"},
-        "SmallFurShield":{"Name":"Small fur-reinforced shield"}, "MediumFurShield":{"Name":"Medium fur-reinforced shield"}, "LargeFurShield":{"Name":"Large fur-reinforced shield"}, "SmallMetalShield":{"Name":"Small metal-reinforced shield"}, "MediumMetalShield":{"Name":"Medium metal-reinforced shield"}, "LargeMetalShield":{"Name":"Large metal-reinforced shield"},
-        "SlaveClothes":{"Name":"Slave clothes"}, "PoorClothes":{"Name":"Poor clothes"}, "AverageClothes":{"Name":"Common clothes"}, "RichClothes":{"Name":"Rich clothes"}, "RoyalClothes":{"Name":"Royal clothes"},
-        "RoyalAttire":{"Name":"Royal attire"},
-        "ArmamentKitSmall":{"Name":"Small armament kit"}, "ArmamentKitOrdinary":{"Name":"Ordinary armament kit"}, "ArmamentKitLarge":{"Name":"Large armament kit"}, "CraftKitSmall":{"Name":"Small craft kit"}, "CraftKitOrdinary":{"Name":"Ordinary craft kit"}, "CraftKitLarge":{"Name":"Large craft kit"}, "BurglaryKitSmall":{"Name":"Small burglary kit"}, "BurglaryKitOrdinary":{"Name":"Ordinary burglary kit"}, "BurglaryKitLarge":{"Name":"Large burglary kit"}, "CampingKitSmall":{"Name":"Small camping kit"}, "CampingKitOrdinary":{"Name":"Ordinary camping kit"}, "CampingKitLarge":{"Name":"Large camping kit"}, "HuntingKitSmall":{"Name":"Small hunting kit"}, "HuntingKitOrdinary":{"Name":"Ordinary hunting kit"}, "HuntingKitLarge":{"Name":"Large hunting kit"}, "WritingKitSmall":{"Name":"Small writing kit"}, "WritingKitOrdinary":{"Name":"Ordinary writing kit"}, "WritingKitLarge":{"Name":"Large writing kit"}, "MusicKitSmall":{"Name":"Small music kit"}, "MusicKitOrdinary":{"Name":"Ordinary music kit"}, "MusicKitLarge":{"Name":"Large music kit"}, "FishingKitSmall":{"Name":"Small fishing kit"}, "FishingKitOrdinary":{"Name":"Ordinary fishing kit"}, "FishingKitLarge":{"Name":"Large fishing kit"}, "HealingKitSmall":{"Name":"Small healing kit"}, "HealingKitOrdinary":{"Name":"Ordinary healing kit"}, "HealingKitLarge":{"Name":"Large healing kit"},
-        "ArmamentKitBasic":{"Name":"Basic armament kit"}, "ArmamentKitStandard":{"Name":"Standard armament kit"}, "ArmamentKitComplete":{"Name":"Complete armament kit"}, "CraftKitBasic":{"Name":"Basic craft kit"}, "CraftKitStandard":{"Name":"Standard craft kit"}, "CraftKitComplete":{"Name":"Complete craft kit"}, "BurglaryKitBasic":{"Name":"Basic burglary kit"}, "BurglaryKitStandard":{"Name":"Standard burglary kit"}, "BurglaryKitComplete":{"Name":"Complete burglary kit"}, "CampingKitBasic":{"Name":"Basic camping kit"}, "CampingKitStandard":{"Name":"Standard camping kit"}, "CampingKitComplete":{"Name":"Complete camping kit"}, "HuntingKitBasic":{"Name":"Basic hunting kit"}, "HuntingKitStandard":{"Name":"Standard hunting kit"}, "HuntingKitComplete":{"Name":"Complete hunting kit"}, "WritingKitBasic":{"Name":"Basic writing kit"}, "WritingKitStandard":{"Name":"Standard writing kit"}, "WritingKitComplete":{"Name":"Complete writing kit"}, "MusicKitBasic":{"Name":"Basic music kit"}, "MusicKitStandard":{"Name":"Standard music kit"}, "MusicKitComplete":{"Name":"Complete music kit"}, "FishingKitBasic":{"Name":"Basic fishing kit"}, "FishingKitStandard":{"Name":"Standard fishing kit"}, "FishingKitComplete":{"Name":"Complete fishing kit"}, "HealingKitBasic":{"Name":"Basic healing kit"}, "HealingKitStandard":{"Name":"Standard healing kit"}, "HealingKitComplete":{"Name":"Complete healing kit"},
-        "Argmurkla":{"Name":"Argmurkla","Description":"An evil morel that triggers berserker rage.","Appearance":"A grey, purple-marbled mushroom the size of a small fist, found in dark forests and on stone trolls.","Preparation":"None.","Usage":"Eat it.","Effect":"Immediately triggers berserker rage.","Mild":"+1 to all attacks.","Moderate":"Strength +1, +1 to all attacks, −1 to all parries.","Strong":"Strength +2, +1 to all attacks, −1 to all parries.","Total":"Strength +4, +2 to all attacks, −2 to all parries."},
-        "Gaveblom":{"Name":"Gaveblom","Description":"A rare flower whose decoction accelerates healing.","Appearance":"A long-stemmed blue flower with narrow basal leaves.","Preparation":"Finely chop three stems and boil them in water to make an oily, bitter drink.","Usage":"Drink it.","Effect":"A powerful healing extract.","Mild":"Heals 1d3 damage every eight hours.","Moderate":"Heals 1d3 damage every four hours.","Strong":"Heals 1d3 damage every two hours.","Total":"Heals 1d3 damage every hour."},
-        "Grindblom":{"Name":"Grindblom","Description":"A portal flower that lets its user enter the mists between Trudvang and Dimhall.","Appearance":"A small brown four-leaf clover growing near old portals.","Preparation":"None; one clover is one dose.","Usage":"Chew it.","Effect":"The user becomes immaterial in the mists and can cross obstacles, risking becoming lost.","Mild":"+3 to the test not to become lost; −5 to be detected from Trudvang.","Moderate":"No test modifier; −10 to be detected.","Strong":"−2 to the test not to become lost; undetectable from Trudvang.","Total":"−5 to the test not to become lost; undetectable from Trudvang."},
-        "Pustartobak":{"Name":"Pustartobak","Description":"Poisoned tobacco whose spores consume tissue and obstruct the airways.","Appearance":"Pipe tobacco mixed with pustarswampen spores.","Preparation":"Mix tobacco with the mushroom gills; spores remain dormant until smoke releases them.","Usage":"Smoke it or inhale it passively.","Effect":"Smoke-borne spores affect all who inhale them; armor and natural protection do not help.","Mild":"1 damage.","Moderate":"1 damage per minute.","Strong":"2 damage per minute.","Total":"3 damage per minute."},
-        "Svartljunghed":{"Name":"Svartljunghed","Description":"A black heather chewed to numb pain and fear, but capable of causing sleep.","Appearance":"A black-flowered heath shrub from the Stormlands.","Preparation":"Pull or cut the flowers to free the thorns.","Usage":"Chew the thorns.","Effect":"A mildly toxic and addictive poison that numbs the body and induces bliss.","Mild":"The user becomes happy.","Moderate":"Numbed: −2 Initiative and Knowledge, −4 Fear.","Strong":"No pain: −4 Initiative and Knowledge, −8 Fear.","Total":"The user sleeps for 1d6 hours, waking thirsty and nauseated."},
-        "Tornrot":{"Name":"Tornrot","Description":"A prickly root that suppresses pain and fatigue but makes the user fierce and addicted.","Appearance":"A small, knobbly pale-yellow root from cold, dark places.","Preparation":"None.","Usage":"Eat it.","Effect":"Makes the user cruel and bloodthirsty; it is strongly addictive.","Mild":"Ignores pain, weariness, and exhaustion.","Moderate":"As mild; receives half Fear points.","Strong":"As mild; no Fear, +1 melee or thrown damage, −1 parry.","Total":"As mild; no Fear, +2 melee or thrown damage, −2 parry."},
-        "Trollilles":{"Name":"Trollilles","Description":"Sweet berries that temporarily rejuvenate and protect against disease and poison.","Appearance":"Round yellowish, juicy, sweet berries with a seed to spit out.","Preparation":"None; pick directly from the trollilles shrub.","Usage":"Eat them.","Effect":"Makes the user look younger and more resistant to disease and poison; repeated use changes appearance.","Mild":"The user looks healthy.","Moderate":"Looks younger; disease and poison effects are reduced by 25%.","Strong":"Looks much younger; disease and poison effects are reduced by 50%.","Total":"Looks far younger; immune to disease and poison."},
-        "Tungelin":{"Name":"Tungelin","Description":"A small thistle whose leaves greatly reduce the need for sleep.","Appearance":"A small red-brown thistle with 1d6 leaves.","Preparation":"None.","Usage":"Eat it.","Effect":"Increases alertness; repeated use marks the eyes and encourages ignoring sounds.","Mild":"Only six hours of sleep are needed.","Moderate":"Only four hours of sleep are needed.","Strong":"Only two hours of sleep are needed.","Total":"No sleep is needed for the duration."},
+        "Klubb": {
+          "Name": "Klubb (club)"
+        },
+        "KrumSwerd": {
+          "Name": "Krum swerd (scimitar)"
+        },
+        "LillSpjot": {
+          "Name": "Lill spjót (short spear)"
+        },
+        "NagliKlubb": {
+          "Name": "Nagli klubb (spiked club)"
+        },
+        "SplitAxi": {
+          "Name": "Split axi (hand axe)"
+        },
+        "Stafur": {
+          "Name": "Stafur (staff)"
+        },
+        "BardaFaldir": {
+          "Name": "Barda faldir (battle flail)"
+        },
+        "BardaHammri": {
+          "Name": "Barda hammri (battle hammer)"
+        },
+        "BardaKlot": {
+          "Name": "Barda klót (battle chain)"
+        },
+        "BardaMakir": {
+          "Name": "Barda makir (battle mace)"
+        },
+        "BardaSwerd": {
+          "Name": "Barda swerd (battle sword)"
+        },
+        "BastjurKedja": {
+          "Name": "Bastjur kedjá (troll chain)"
+        },
+        "DropiAxi": {
+          "Name": "Dropi axi (pendulum axe)"
+        },
+        "Hakk": {
+          "Name": "Hakk (war pick)"
+        },
+        "Miekka": {
+          "Name": "Miekka"
+        },
+        "StaafSpjot": {
+          "Name": "Staaf spjót (hunting spear)"
+        },
+        "StakkSwerd": {
+          "Name": "Stakk swerd (arming sword)"
+        },
+        "StjornMakir": {
+          "Name": "Stjorn makir (morning star)"
+        },
+        "BreidSpjot": {
+          "Name": "Breid spjót (broad spear)"
+        },
+        "TveiFaldir": {
+          "Name": "Tvei faldir (two-handed flail)"
+        },
+        "TveiHakk": {
+          "Name": "Tvei hakk (two-handed pick)"
+        },
+        "TveiHammri": {
+          "Name": "Tvei hammri (two-handed hammer)"
+        },
+        "TveiKlubb": {
+          "Name": "Tvei klubb (two-handed club)"
+        },
+        "TveBogi": {
+          "Name": "Tve bogi (composite bow)"
+        },
+        "Slingu": {
+          "Name": "Slingu (sling)"
+        },
+        "StafurSlingu": {
+          "Name": "Stafur slingu (staff sling)"
+        },
+        "VolkKrossbogur": {
+          "Name": "Volk krossbogur (light crossbow)"
+        },
+        "TunkurKrossbogur": {
+          "Name": "Tunkur krossbogur (heavy crossbow)"
+        },
+        "LillSpjotThrown": {
+          "Name": "Lill spjót (throwing)"
+        },
+        "SplitAxiThrown": {
+          "Name": "Split axi (throwing)"
+        },
+        "MiekkaThrown": {
+          "Name": "Miekka (throwing)"
+        },
+        "StaafSpjotThrown": {
+          "Name": "Staaf spjót (throwing)"
+        },
+        "ThickFabric": {
+          "Name": "Thick fabric armor"
+        },
+        "MetalReinforcedLeather": {
+          "Name": "Metal-reinforced leather armor"
+        },
+        "ScaleReinforcedChainMail": {
+          "Name": "Scale-reinforced chain mail"
+        },
+        "ScalePlating": {
+          "Name": "Scale armor"
+        },
+        "DoubleChainMail": {
+          "Name": "Double chain mail"
+        },
+        "BandedArmor": {
+          "Name": "Banded armor"
+        },
+        "SmallFurShield": {
+          "Name": "Small fur-reinforced shield"
+        },
+        "MediumFurShield": {
+          "Name": "Medium fur-reinforced shield"
+        },
+        "LargeFurShield": {
+          "Name": "Large fur-reinforced shield"
+        },
+        "SmallMetalShield": {
+          "Name": "Small metal-reinforced shield"
+        },
+        "MediumMetalShield": {
+          "Name": "Medium metal-reinforced shield"
+        },
+        "LargeMetalShield": {
+          "Name": "Large metal-reinforced shield"
+        },
+        "SlaveClothes": {
+          "Name": "Slave clothes"
+        },
+        "PoorClothes": {
+          "Name": "Poor clothes"
+        },
+        "AverageClothes": {
+          "Name": "Common clothes"
+        },
+        "RichClothes": {
+          "Name": "Rich clothes"
+        },
+        "RoyalClothes": {
+          "Name": "Royal clothes"
+        },
+        "RoyalAttire": {
+          "Name": "Royal attire"
+        },
+        "ArmamentKitSmall": {
+          "Name": "Small armament kit"
+        },
+        "ArmamentKitOrdinary": {
+          "Name": "Ordinary armament kit"
+        },
+        "ArmamentKitLarge": {
+          "Name": "Large armament kit"
+        },
+        "CraftKitSmall": {
+          "Name": "Small craft kit"
+        },
+        "CraftKitOrdinary": {
+          "Name": "Ordinary craft kit"
+        },
+        "CraftKitLarge": {
+          "Name": "Large craft kit"
+        },
+        "BurglaryKitSmall": {
+          "Name": "Small burglary kit"
+        },
+        "BurglaryKitOrdinary": {
+          "Name": "Ordinary burglary kit"
+        },
+        "BurglaryKitLarge": {
+          "Name": "Large burglary kit"
+        },
+        "CampingKitSmall": {
+          "Name": "Small camping kit"
+        },
+        "CampingKitOrdinary": {
+          "Name": "Ordinary camping kit"
+        },
+        "CampingKitLarge": {
+          "Name": "Large camping kit"
+        },
+        "HuntingKitSmall": {
+          "Name": "Small hunting kit"
+        },
+        "HuntingKitOrdinary": {
+          "Name": "Ordinary hunting kit"
+        },
+        "HuntingKitLarge": {
+          "Name": "Large hunting kit"
+        },
+        "WritingKitSmall": {
+          "Name": "Small writing kit"
+        },
+        "WritingKitOrdinary": {
+          "Name": "Ordinary writing kit"
+        },
+        "WritingKitLarge": {
+          "Name": "Large writing kit"
+        },
+        "MusicKitSmall": {
+          "Name": "Small music kit"
+        },
+        "MusicKitOrdinary": {
+          "Name": "Ordinary music kit"
+        },
+        "MusicKitLarge": {
+          "Name": "Large music kit"
+        },
+        "FishingKitSmall": {
+          "Name": "Small fishing kit"
+        },
+        "FishingKitOrdinary": {
+          "Name": "Ordinary fishing kit"
+        },
+        "FishingKitLarge": {
+          "Name": "Large fishing kit"
+        },
+        "HealingKitSmall": {
+          "Name": "Small healing kit"
+        },
+        "HealingKitOrdinary": {
+          "Name": "Ordinary healing kit"
+        },
+        "HealingKitLarge": {
+          "Name": "Large healing kit"
+        },
+        "ArmamentKitBasic": {
+          "Name": "Basic armament kit"
+        },
+        "ArmamentKitStandard": {
+          "Name": "Standard armament kit"
+        },
+        "ArmamentKitComplete": {
+          "Name": "Complete armament kit"
+        },
+        "CraftKitBasic": {
+          "Name": "Basic craft kit"
+        },
+        "CraftKitStandard": {
+          "Name": "Standard craft kit"
+        },
+        "CraftKitComplete": {
+          "Name": "Complete craft kit"
+        },
+        "BurglaryKitBasic": {
+          "Name": "Basic burglary kit"
+        },
+        "BurglaryKitStandard": {
+          "Name": "Standard burglary kit"
+        },
+        "BurglaryKitComplete": {
+          "Name": "Complete burglary kit"
+        },
+        "CampingKitBasic": {
+          "Name": "Basic camping kit"
+        },
+        "CampingKitStandard": {
+          "Name": "Standard camping kit"
+        },
+        "CampingKitComplete": {
+          "Name": "Complete camping kit"
+        },
+        "HuntingKitBasic": {
+          "Name": "Basic hunting kit"
+        },
+        "HuntingKitStandard": {
+          "Name": "Standard hunting kit"
+        },
+        "HuntingKitComplete": {
+          "Name": "Complete hunting kit"
+        },
+        "WritingKitBasic": {
+          "Name": "Basic writing kit"
+        },
+        "WritingKitStandard": {
+          "Name": "Standard writing kit"
+        },
+        "WritingKitComplete": {
+          "Name": "Complete writing kit"
+        },
+        "MusicKitBasic": {
+          "Name": "Basic music kit"
+        },
+        "MusicKitStandard": {
+          "Name": "Standard music kit"
+        },
+        "MusicKitComplete": {
+          "Name": "Complete music kit"
+        },
+        "FishingKitBasic": {
+          "Name": "Basic fishing kit"
+        },
+        "FishingKitStandard": {
+          "Name": "Standard fishing kit"
+        },
+        "FishingKitComplete": {
+          "Name": "Complete fishing kit"
+        },
+        "HealingKitBasic": {
+          "Name": "Basic healing kit"
+        },
+        "HealingKitStandard": {
+          "Name": "Standard healing kit"
+        },
+        "HealingKitComplete": {
+          "Name": "Complete healing kit"
+        },
+        "Argmurkla": {
+          "Name": "Argmurkla",
+          "Description": "An evil morel that triggers berserker rage.",
+          "Appearance": "A grey, purple-marbled mushroom the size of a small fist, found in dark forests and on stone trolls.",
+          "Preparation": "None.",
+          "Usage": "Eat it.",
+          "Effect": "Immediately triggers berserker rage.",
+          "Mild": "+1 to all attacks.",
+          "Moderate": "Strength +1, +1 to all attacks, −1 to all parries.",
+          "Strong": "Strength +2, +1 to all attacks, −1 to all parries.",
+          "Total": "Strength +4, +2 to all attacks, −2 to all parries."
+        },
+        "Gaveblom": {
+          "Name": "Gaveblom",
+          "Description": "A rare flower whose decoction accelerates healing.",
+          "Appearance": "A long-stemmed blue flower with narrow basal leaves.",
+          "Preparation": "Finely chop three stems and boil them in water to make an oily, bitter drink.",
+          "Usage": "Drink it.",
+          "Effect": "A powerful healing extract.",
+          "Mild": "Heals 1d3 damage every eight hours.",
+          "Moderate": "Heals 1d3 damage every four hours.",
+          "Strong": "Heals 1d3 damage every two hours.",
+          "Total": "Heals 1d3 damage every hour."
+        },
+        "Grindblom": {
+          "Name": "Grindblom",
+          "Description": "A portal flower that lets its user enter the mists between Trudvang and Dimhall.",
+          "Appearance": "A small brown four-leaf clover growing near old portals.",
+          "Preparation": "None; one clover is one dose.",
+          "Usage": "Chew it.",
+          "Effect": "The user becomes immaterial in the mists and can cross obstacles, risking becoming lost.",
+          "Mild": "+3 to the test not to become lost; −5 to be detected from Trudvang.",
+          "Moderate": "No test modifier; −10 to be detected.",
+          "Strong": "−2 to the test not to become lost; undetectable from Trudvang.",
+          "Total": "−5 to the test not to become lost; undetectable from Trudvang."
+        },
+        "Pustartobak": {
+          "Name": "Pustartobak",
+          "Description": "Poisoned tobacco whose spores consume tissue and obstruct the airways.",
+          "Appearance": "Pipe tobacco mixed with pustarswampen spores.",
+          "Preparation": "Mix tobacco with the mushroom gills; spores remain dormant until smoke releases them.",
+          "Usage": "Smoke it or inhale it passively.",
+          "Effect": "Smoke-borne spores affect all who inhale them; armor and natural protection do not help.",
+          "Mild": "1 damage.",
+          "Moderate": "1 damage per minute.",
+          "Strong": "2 damage per minute.",
+          "Total": "3 damage per minute."
+        },
+        "Svartljunghed": {
+          "Name": "Svartljunghed",
+          "Description": "A black heather chewed to numb pain and fear, but capable of causing sleep.",
+          "Appearance": "A black-flowered heath shrub from the Stormlands.",
+          "Preparation": "Pull or cut the flowers to free the thorns.",
+          "Usage": "Chew the thorns.",
+          "Effect": "A mildly toxic and addictive poison that numbs the body and induces bliss.",
+          "Mild": "The user becomes happy.",
+          "Moderate": "Numbed: −2 Initiative and Knowledge, −4 Fear.",
+          "Strong": "No pain: −4 Initiative and Knowledge, −8 Fear.",
+          "Total": "The user sleeps for 1d6 hours, waking thirsty and nauseated."
+        },
+        "Tornrot": {
+          "Name": "Tornrot",
+          "Description": "A prickly root that suppresses pain and fatigue but makes the user fierce and addicted.",
+          "Appearance": "A small, knobbly pale-yellow root from cold, dark places.",
+          "Preparation": "None.",
+          "Usage": "Eat it.",
+          "Effect": "Makes the user cruel and bloodthirsty; it is strongly addictive.",
+          "Mild": "Ignores pain, weariness, and exhaustion.",
+          "Moderate": "As mild; receives half Fear points.",
+          "Strong": "As mild; no Fear, +1 melee or thrown damage, −1 parry.",
+          "Total": "As mild; no Fear, +2 melee or thrown damage, −2 parry."
+        },
+        "Trollilles": {
+          "Name": "Trollilles",
+          "Description": "Sweet berries that temporarily rejuvenate and protect against disease and poison.",
+          "Appearance": "Round yellowish, juicy, sweet berries with a seed to spit out.",
+          "Preparation": "None; pick directly from the trollilles shrub.",
+          "Usage": "Eat them.",
+          "Effect": "Makes the user look younger and more resistant to disease and poison; repeated use changes appearance.",
+          "Mild": "The user looks healthy.",
+          "Moderate": "Looks younger; disease and poison effects are reduced by 25%.",
+          "Strong": "Looks much younger; disease and poison effects are reduced by 50%.",
+          "Total": "Looks far younger; immune to disease and poison."
+        },
+        "Tungelin": {
+          "Name": "Tungelin",
+          "Description": "A small thistle whose leaves greatly reduce the need for sleep.",
+          "Appearance": "A small red-brown thistle with 1d6 leaves.",
+          "Preparation": "None.",
+          "Usage": "Eat it.",
+          "Effect": "Increases alertness; repeated use marks the eyes and encourages ignoring sounds.",
+          "Mild": "Only six hours of sleep are needed.",
+          "Moderate": "Only four hours of sleep are needed.",
+          "Strong": "Only two hours of sleep are needed.",
+          "Total": "No sleep is needed for the duration."
+        },
         "AnimalVitner": {
           "Name": "Animal Vitner Tablet",
           "Description": "A Vitner Tablet concerned with speaking to, calling, controlling, possessing, and sending messages through animals."
@@ -3746,7 +4283,10 @@
           "Name": "Armour Encumbrance",
           "Content": "<p>This house table applies a more gradual progression of initiative and movement modifiers according to the armour's effective Encumbrance.</p><table><thead><tr><th>Effective Encumbrance</th><th>IM</th><th>MM</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0 m</td></tr><tr><td>1</td><td>0</td><td>0 m</td></tr><tr><td>2</td><td>−1</td><td>0 m</td></tr><tr><td>3</td><td>−1</td><td>−1 m</td></tr><tr><td>4</td><td>−1</td><td>−1 m</td></tr><tr><td>5</td><td>−2</td><td>−1 m</td></tr><tr><td>6</td><td>−2</td><td>−2 m</td></tr><tr><td>7</td><td>−3</td><td>−2 m</td></tr><tr><td>8</td><td>−3</td><td>−3 m</td></tr><tr><td>9</td><td>−4</td><td>−3 m</td></tr><tr><td>10</td><td>−5</td><td>−4 m</td></tr></tbody></table>"
         },
-        "purchasePrices": {"Name":"Purchase prices","Content":"<p>Prices are in silver coins (sc), unless stated otherwise. Source: Rulebook, pp. 126–127.</p><h2>Goods</h2><table><thead><tr><th>Goods</th><th>Price</th></tr></thead><tbody><tr><td>Copper / bronze / iron</td><td>1 / 1.6 / 2.5 sc/kg</td></tr><tr><td>Silver / gold</td><td>100 / 1,000 sc/kg</td></tr><tr><td>Stone / wood</td><td>0.1 / 0.05 sc/kg</td></tr><tr><td>Wool and linen</td><td>1 sc/kg</td></tr><tr><td>Hare pelt / goat fur / cowhide</td><td>1 / 1.5 / 2.5 sc</td></tr><tr><td>Sheep hide / pig fur / boar hide</td><td>3 / 2 / 2 sc</td></tr><tr><td>Wolf pelt / bear pelt / mastomant fur</td><td>6 / 10 / 50 sc</td></tr></tbody></table><h2>Animals</h2><table><thead><tr><th>Animal</th><th>Price</th></tr></thead><tbody><tr><td>Hen / goat / pig</td><td>1 / 5 / 20 sc</td></tr><tr><td>Dairy cow / bull / ox</td><td>30 / 36 / 30 sc</td></tr><tr><td>Mule / horse / sled dog</td><td>25 / 50 / 8 sc</td></tr></tbody></table><h2>Food</h2><table><thead><tr><th>Food</th><th>Price</th></tr></thead><tbody><tr><td>Grain / bread / milk</td><td>0.2 sc/kg / 0.1 sc/kg / 0.1 sc/l</td></tr><tr><td>Dried meat / fish / fruit / turnips</td><td>0.5 / 0.4 / 0.3 / 0.1 sc/kg</td></tr><tr><td>Mead or beer / soured milk</td><td>0.2 / 0.15 sc/l</td></tr><tr><td>Fodder</td><td>0.1 sc/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Vehicle</th><th>Price</th></tr></thead><tbody><tr><td>Sledge / sled (2 / 4 seats)</td><td>2 / 6 / 10 sc</td></tr><tr><td>Two-wheeled cart (2 / 4 seats)</td><td>6 / 10 sc</td></tr><tr><td>Four-wheeled wagon (2+2 / 2+4 / 2+8 seats)</td><td>18 / 22 / 26 sc</td></tr><tr><td>War wagon (2 seats)</td><td>100 sc</td></tr><tr><td>Punt / skin canoe / wooden canoe</td><td>2 / 4 / 10 sc</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 sc</td></tr></tbody></table><h2>Lodging & meals</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Farmhouse / dormitory / princely rooms</td><td>0.2 / 1 / 20 sc</td></tr><tr><td>Poor / ordinary / princely meal</td><td>0.2 / 0.5 / 20 sc</td></tr></tbody></table><h2>Other services</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Craftsperson: apprentice / journeyman / artisan / master / legend (hour)</td><td>0.2 / 0.5 / 1 / 3 / 5 sc</td></tr><tr><td>Errand boy / farm labourer (day)</td><td>0.1 / 1 sc</td></tr><tr><td>Scholar: copy per page / poem / chronicle per day</td><td>1 / 1.5 / 3–5 sc</td></tr><tr><td>Mercenary: novice / professional / hero / master (day)</td><td>1 / 2 / 4 / 8 sc</td></tr><tr><td>Shadowing, by target</td><td>2–2,000 sc</td></tr><tr><td>Boat travel (day)</td><td>1 sc</td></tr></tbody></table>"},
+        "purchasePrices": {
+          "Name": "Purchase prices",
+          "Content": "<p>Prices are in silver coins (sc), unless stated otherwise. Source: Rulebook, pp. 126–127.</p><h2>Goods</h2><table><thead><tr><th>Goods</th><th>Price</th></tr></thead><tbody><tr><td>Copper / bronze / iron</td><td>1 / 1.6 / 2.5 sc/kg</td></tr><tr><td>Silver / gold</td><td>100 / 1,000 sc/kg</td></tr><tr><td>Stone / wood</td><td>0.1 / 0.05 sc/kg</td></tr><tr><td>Wool and linen</td><td>1 sc/kg</td></tr><tr><td>Hare pelt / goat fur / cowhide</td><td>1 / 1.5 / 2.5 sc</td></tr><tr><td>Sheep hide / pig fur / boar hide</td><td>3 / 2 / 2 sc</td></tr><tr><td>Wolf pelt / bear pelt / mastomant fur</td><td>6 / 10 / 50 sc</td></tr></tbody></table><h2>Animals</h2><table><thead><tr><th>Animal</th><th>Price</th></tr></thead><tbody><tr><td>Hen / goat / pig</td><td>1 / 5 / 20 sc</td></tr><tr><td>Dairy cow / bull / ox</td><td>30 / 36 / 30 sc</td></tr><tr><td>Mule / horse / sled dog</td><td>25 / 50 / 8 sc</td></tr></tbody></table><h2>Food</h2><table><thead><tr><th>Food</th><th>Price</th></tr></thead><tbody><tr><td>Grain / bread / milk</td><td>0.2 sc/kg / 0.1 sc/kg / 0.1 sc/l</td></tr><tr><td>Dried meat / fish / fruit / turnips</td><td>0.5 / 0.4 / 0.3 / 0.1 sc/kg</td></tr><tr><td>Mead or beer / soured milk</td><td>0.2 / 0.15 sc/l</td></tr><tr><td>Fodder</td><td>0.1 sc/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Vehicle</th><th>Price</th></tr></thead><tbody><tr><td>Sledge / sled (2 / 4 seats)</td><td>2 / 6 / 10 sc</td></tr><tr><td>Two-wheeled cart (2 / 4 seats)</td><td>6 / 10 sc</td></tr><tr><td>Four-wheeled wagon (2+2 / 2+4 / 2+8 seats)</td><td>18 / 22 / 26 sc</td></tr><tr><td>War wagon (2 seats)</td><td>100 sc</td></tr><tr><td>Punt / skin canoe / wooden canoe</td><td>2 / 4 / 10 sc</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 sc</td></tr></tbody></table><h2>Lodging & meals</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Farmhouse / dormitory / princely rooms</td><td>0.2 / 1 / 20 sc</td></tr><tr><td>Poor / ordinary / princely meal</td><td>0.2 / 0.5 / 20 sc</td></tr></tbody></table><h2>Other services</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Craftsperson: apprentice / journeyman / artisan / master / legend (hour)</td><td>0.2 / 0.5 / 1 / 3 / 5 sc</td></tr><tr><td>Errand boy / farm labourer (day)</td><td>0.1 / 1 sc</td></tr><tr><td>Scholar: copy per page / poem / chronicle per day</td><td>1 / 1.5 / 3–5 sc</td></tr><tr><td>Mercenary: novice / professional / hero / master (day)</td><td>1 / 2 / 4 / 8 sc</td></tr><tr><td>Shadowing, by target</td><td>2–2,000 sc</td></tr><tr><td>Boat travel (day)</td><td>1 sc</td></tr></tbody></table>"
+        },
         "Statistics": "Statistics",
         "Culture": "Culture or mixed breed",
         "BodyPoints": "Body Points",

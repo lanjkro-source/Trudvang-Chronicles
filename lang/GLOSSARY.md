@@ -1050,7 +1050,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.WeaponsHeavy` | Heavy weapons | Armes lourdes |
 | `TRUDVANG.Content.Folder.WeaponsTwoHanded` | Two-handed weapons | Armes à deux mains |
 | `TRUDVANG.Content.Folder.WeaponsRanged` | Ranged weapons | Armes à distance |
-| `TRUDVANG.Content.Folder.Armor` | Trudvang - Armor & Shields | Trudvang - Armures & Boucliers |
+| `TRUDVANG.Content.Folder.Protections` | Trudvang - Protections | Trudvang - Protections |
+| `TRUDVANG.Content.Folder.Armor` | Armor | Armures |
+| `TRUDVANG.Content.Folder.Shields` | Shields | Boucliers |
 | `TRUDVANG.Content.Folder.Gear` | Trudvang - Gear & Extracts | Trudvang - Équipements & Extraits |
 | `TRUDVANG.Content.Folder.Equipment` | Trudvang - Equipment | Trudvang - Équipements |
 | `TRUDVANG.Content.Folder.Packages` | Packages | Paquetages |
@@ -1152,6 +1154,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.GenericDescription.Package.MusicKit` | A bard’s package containing instruments, songs, and stage accessories. | Un paquetage de barde comprenant instruments, paroles et accessoires de scène. |
 | `TRUDVANG.Content.GenericDescription.Package.FishingKit` | A package for fishing and preparing catches. | Un paquetage pour pêcher et préparer les prises. |
 | `TRUDVANG.Content.GenericDescription.Package.HealingKit` | A healing package with bandages, herbs, and medical equipment. | Un paquetage de soins contenant bandages, simples et matériel médical. |
+
+## `TRUDVANG.Content.PackageAvailability`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.PackageAvailability.Small` | To find an appropriate item in it, succeed on a Situation roll against SV 5. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 5. |
+| `TRUDVANG.Content.PackageAvailability.Ordinary` | To find an appropriate item in it, succeed on a Situation roll against SV 10. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 10. |
+| `TRUDVANG.Content.PackageAvailability.Large` | To find an appropriate item in it, succeed on a Situation roll against SV 15. | Pour y trouver un objet approprié, réussissez un jet de situation contre une SV de 15. |
 
 ## `TRUDVANG.Content.ItemDescription`
 
