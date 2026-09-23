@@ -874,12 +874,14 @@ export class TrudvangActor extends BaseActor {
     if (!methods.length || disciplineLevel < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MagicMethodRequired"));
     const defaultCost = Number(item.system.cost || TRUDVANG.spellCosts[item.system.level] || 0);
     const strenuousMax = isDivine ? 0 : Number(this.findKnowledgeItem("strenuous")?.system.level || 0);
+    const activeSpellCount = isDivine ? 0 : this.items.filter(candidate => candidate.type === "spell" && candidate.system.active).length;
     const options = await magicDialog({
       title: item.name,
       methods,
       spellModifier: Number(item.system.modifier || 0),
       defaultCost,
       strenuousMax,
+      activeSpellCount,
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
     });
     if (!options) return null;
@@ -889,7 +891,8 @@ export class TrudvangActor extends BaseActor {
     const vitnerType = this.selectedVitnerType;
     const perfectSuccessMax = isDivine ? 1 : (vitnerType?.perfectSuccessMax ?? 1);
     const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format("TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
-    const flavor = `${options.method.breakdown}${strenuousFlavor}`;
+    const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
+    const flavor = `${options.method.breakdown}${activeSpellsFlavor}${strenuousFlavor}`;
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`, target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell", flavor, item, perfectSuccessMax});
     const spent = isDivine && !result.success ? defaultCost : options.cost;
     if (this.isOwner) {
