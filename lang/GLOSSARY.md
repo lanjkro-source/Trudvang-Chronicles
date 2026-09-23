@@ -134,6 +134,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Section.Description` | Description | Description |
 | `TRUDVANG.Section.Affinities` | Magical & Religious Affinities | Affinités magiques & religieuses |
 | `TRUDVANG.Section.Effects` | Active Effects | Effets actifs |
+| `TRUDVANG.Section.ActiveSpells` | Active Spells | Sorts actifs |
 
 ## `TRUDVANG.Action`
 
@@ -250,8 +251,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ParentDiscipline` | Parent Discipline | Discipline parente |
 | `TRUDVANG.Field.RollBonus` | Bonus per Level | Bonus par niveau |
 | `TRUDVANG.Field.Source` | Source | Source |
-| `TRUDVANG.Field.ActiveSpell` | Currently maintained spell | Sortilège actuellement maintenu |
+| `TRUDVANG.Field.ActiveSpell` | Active / maintained | Actif / maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
+| `TRUDVANG.Field.ActiveSpellsCount` | {current} / {max} | {current} / {max} |
 | `TRUDVANG.Field.Summary` | Summary | Résumé |
 | `TRUDVANG.Field.PassiveProtection` | PP: PASSIVE PROTECTION | PP : PROTECTION PASSIVE |
 | `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
@@ -985,6 +987,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Empty.Weapons` | Equip a weapon to place it among the quick actions. | Equipez une arme pour l'ajouter aux actions rapides. |
 | `TRUDVANG.Empty.Effects` | No active effect. | Aucun effet actif. |
+| `TRUDVANG.Empty.ActiveSpells` | No active spells. | Aucun sort actif. |
 
 ## `TRUDVANG.Effect`
 

@@ -103,7 +103,8 @@
       "Notes": "Notes",
       "Description": "Description",
       "Affinities": "Affinités magiques & religieuses",
-      "Effects": "Effets actifs"
+      "Effects": "Effets actifs",
+      "ActiveSpells": "Sorts actifs"
     },
     "Action": {
       "Roll": "Jet de dé",
@@ -214,8 +215,9 @@
       "ParentDiscipline": "Discipline parente",
       "RollBonus": "Bonus par niveau",
       "Source": "Source",
-      "ActiveSpell": "Sortilège actuellement maintenu",
+      "ActiveSpell": "Actif / maintenu",
       "ActiveCost": "Coût en vitner lors de l'activation",
+      "ActiveSpellsCount": "{current} / {max}",
       "Summary": "Résumé",
       "PassiveProtection": "PP : PROTECTION PASSIVE",
       "BreachCurrent": "Valeur d'intégrité (actuelle)",
@@ -825,7 +827,8 @@
     },
     "Empty": {
       "Weapons": "Equipez une arme pour l'ajouter aux actions rapides.",
-      "Effects": "Aucun effet actif."
+      "Effects": "Aucun effet actif.",
+      "ActiveSpells": "Aucun sort actif."
     },
     "Effect": {
       "Permanent": "Permanent",

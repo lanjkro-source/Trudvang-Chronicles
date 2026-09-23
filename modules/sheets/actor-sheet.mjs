@@ -313,6 +313,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
+    context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
+    context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;
+    context.activeSpells = context.hasActiveSpellTracker
+      ? powers.filter(item => item.type === "spell" && item.system.active)
+      : [];
     context.magicTree = tablets.map(item => {
       const level = Number(item.system.level || 1);
       const tabletId = item.system.catalogId || item.getFlag("trudvang-chronicles", "catalogId");

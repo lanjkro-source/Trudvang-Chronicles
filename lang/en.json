@@ -103,7 +103,8 @@
       "Notes": "Notes",
       "Description": "Description",
       "Affinities": "Magical & Religious Affinities",
-      "Effects": "Active Effects"
+      "Effects": "Active Effects",
+      "ActiveSpells": "Active Spells"
     },
     "Action": {
       "Roll": "Roll",
@@ -214,8 +215,9 @@
       "ParentDiscipline": "Parent Discipline",
       "RollBonus": "Bonus per Level",
       "Source": "Source",
-      "ActiveSpell": "Currently maintained spell",
+      "ActiveSpell": "Active / maintained",
       "ActiveCost": "Vitner cost when activated",
+      "ActiveSpellsCount": "{current} / {max}",
       "Summary": "Summary",
       "PassiveProtection": "PP: PASSIVE PROTECTION",
       "BreachCurrent": "Breach Value (current)",
@@ -825,7 +827,8 @@
     },
     "Empty": {
       "Weapons": "Equip a weapon to place it among the quick actions.",
-      "Effects": "No active effect."
+      "Effects": "No active effect.",
+      "ActiveSpells": "No active spells."
     },
     "Effect": {
       "Permanent": "Permanent",
