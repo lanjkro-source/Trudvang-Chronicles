@@ -184,7 +184,7 @@
       "OpenRoll": "Seuil de jet ouvert (0 = aucun)",
       "WeaponActions": "AA : ACTIONS D'ARME",
       "InitiativeModifier": "MI : MOD. INITIATIVE",
-      "VitnerType": "Type d'enchanteur",
+      "VitnerType": "Vitner",
       "PerfectSuccess": "Réussite parfaite sur",
       "NoPerfectSuccess": "Aucune réussite parfaite",
       "FatalDie": "Dé de magie funeste",

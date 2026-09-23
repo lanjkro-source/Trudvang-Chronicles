@@ -184,7 +184,7 @@
       "OpenRoll": "Open Roll Threshold (0 = none)",
       "WeaponActions": "WA: WEAPON ACTIONS",
       "InitiativeModifier": "IM: INITIATIVE MODIFIER",
-      "VitnerType": "Vitner Type",
+      "VitnerType": "Vitner",
       "PerfectSuccess": "Perfect Success on",
       "NoPerfectSuccess": "No perfect success",
       "FatalDie": "Fatal Effect Die",
