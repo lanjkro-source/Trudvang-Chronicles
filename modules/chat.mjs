@@ -1,4 +1,5 @@
 import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-application.mjs";
+import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 
 export function registerChatListeners() {
@@ -45,6 +46,22 @@ function attachListeners(message, html) {
       event.preventDefault();
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
       if (item?.isOwner) await item.applyEffects();
+    });
+  });
+  html.querySelectorAll("[data-action='open-item-sheet']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const item = await foundry.utils.fromUuid(button.closest("[data-item-uuid]")?.dataset.itemUuid);
+      item?.sheet.render({force: true});
+    });
+  });
+  html.querySelectorAll("[data-action='use-extract']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
+      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
+      const item = await foundry.utils.fromUuid(button.closest("[data-item-uuid]")?.dataset.itemUuid);
+      await useExtract(item, actor);
     });
   });
   html.querySelectorAll(".package-availability-roll").forEach(control => {

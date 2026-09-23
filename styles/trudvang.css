@@ -599,6 +599,8 @@
 .trudvang.chat-card header img { width: 36px; height: 36px; border: 1px solid var(--trudvang-gold); object-fit: cover; }
 .trudvang.chat-card header h3, .trudvang.chat-card header strong { margin: 0; color: var(--trudvang-on-header); font-family: Georgia, "Times New Roman", serif; }
 .trudvang.chat-card header h3 { font-size: 1.05em; line-height: 1.15; }
+.trudvang.chat-card .card-title { margin: 0; padding: 0; color: var(--trudvang-on-header); border: 0; background: transparent; font: 700 1.05em/1.15 Georgia, "Times New Roman", serif; cursor: pointer; }
+.trudvang.chat-card .card-title:hover, .trudvang.chat-card .card-title:focus-visible { color: var(--trudvang-gold); }
 .trudvang.chat-card .roll-result { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
 .trudvang.chat-card .die, .trudvang.chat-card .target, .trudvang.chat-card .damage-result { min-width: 54px; text-align: center; font: 700 2rem Georgia, serif; }
 .trudvang.chat-card .roll-detail-toggle { color: var(--trudvang-ink); border: 0; background: transparent; cursor: pointer; }

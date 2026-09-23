@@ -682,10 +682,20 @@
       "FeintParry": "Feinte → Parade -{points}",
       "OpenTraitFormula": "1d10 (jet ouvert sur 10) + trait + bonus + effets"
     },
+    "Extract": {
+      "UseTitle": "Utiliser {item} sur {actor}",
+      "UsePrompt": "L’effet est déterminé par 1d20 + force de l’extrait − modificateur du trait adapté. Force : {strength}.",
+      "Trait": "Trait adapté",
+      "RollFormula": "1d20 ({die}) + force {strength} − {trait} ({modifier}) = {result}",
+      "DurationUntil": "{duration} avant de passer au stade {stage}",
+      "DurationEnds": "pendant {duration}, puis l’effet prend fin",
+      "UnknownDuration": "durée non précisée"
+    },
     "Warning": {
       "CannotApplyDamage": "Vous ne pouvez pas appliquer ces dégâts à cette cible.",
       "InvalidFearFactor": "Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10).",
       "NoControlledFearCharacters": "Contrôlez au moins un personnage auquel appliquer la peur.",
+      "NoControlledActor": "Contrôlez un personnage ou un PNJ avant d’utiliser un extrait.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",

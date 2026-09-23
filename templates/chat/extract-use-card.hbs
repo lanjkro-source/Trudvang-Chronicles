@@ -1,0 +1,6 @@
+<article class="trudvang chat-card extract-use">
+  <header><img src="{{itemImg}}" alt=""><div><strong>{{actorName}}</strong><h3>{{itemName}}</h3></div></header>
+  <div class="roll-result"><span class="die">{{result}}</span></div>
+  <p class="card-flavor">{{localize "TRUDVANG.Extract.RollFormula" die=die strength=strength trait=traitName modifier=traitModifier result=result}}</p>
+  <p class="outcome"><strong>{{stageLabel}}</strong> ({{#if ends}}{{localize "TRUDVANG.Extract.DurationEnds" duration=duration}}{{else}}{{localize "TRUDVANG.Extract.DurationUntil" duration=duration stage=nextStageLabel}}{{/if}}) : {{stageEffect}}</p>
+</article>

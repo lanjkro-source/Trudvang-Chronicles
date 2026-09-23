@@ -811,6 +811,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Roll.Critical.success` | Perfect success | Réussite parfaite |
 | `TRUDVANG.Roll.Critical.failure` | Automatic failure | Échec automatique |
 
+## `TRUDVANG.Extract`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Extract.UseTitle` | Use {item} on {actor} | Utiliser {item} sur {actor} |
+| `TRUDVANG.Extract.UsePrompt` | The effect is determined by 1d20 + extract Strength − the relevant trait modifier. Strength: {strength}. | L’effet est déterminé par 1d20 + force de l’extrait − modificateur du trait adapté. Force : {strength}. |
+| `TRUDVANG.Extract.Trait` | Relevant trait | Trait adapté |
+| `TRUDVANG.Extract.RollFormula` | 1d20 ({die}) + Strength {strength} − {trait} ({modifier}) = {result} | 1d20 ({die}) + force {strength} − {trait} ({modifier}) = {result} |
+| `TRUDVANG.Extract.DurationUntil` | {duration} before moving to the {stage} stage | {duration} avant de passer au stade {stage} |
+| `TRUDVANG.Extract.DurationEnds` | for {duration}, then the effect ends | pendant {duration}, puis l’effet prend fin |
+| `TRUDVANG.Extract.UnknownDuration` | unspecified duration | durée non précisée |
+
 ## `TRUDVANG.Warning`
 
 | Clé | English | Français |
@@ -818,6 +830,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.CannotApplyDamage` | You cannot apply this damage to that target. | Vous ne pouvez pas appliquer ces dégâts à cette cible. |
 | `TRUDVANG.Warning.InvalidFearFactor` | The fear factor must use the form 1d10 or 1d10 (OR 8-10). | Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10). |
 | `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
+| `TRUDVANG.Warning.NoControlledActor` | Control a character or NPC before using an extract. | Contrôlez un personnage ou un PNJ avant d’utiliser un extrait. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |

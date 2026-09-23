@@ -13,6 +13,7 @@ export class TrudvangItem extends BaseItem {
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/item-card.hbs", {
       item: this,
       system: this.system,
+      canUseExtract: this.type === "potion",
       canApplyEffects: EFFECT_ITEM_TYPES.has(this.type) && this.effects.some(effect => !effect.transfer && !effect.disabled),
       description: await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true})
     });
