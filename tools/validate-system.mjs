@@ -109,6 +109,18 @@ for (const key of collectKeyFields(content)) {
   if (!frenchLocalization.has(key)) failures.push(`Missing French localization key: ${key}`);
 }
 
+// Every extract field is displayed on the sheet or in the use result, including old inventory copies.
+for (const extract of (content.items || []).filter(item => item.type === "potion")) {
+  const id = extract.nameKey.split(".").at(-2);
+  for (const field of ["Description", "Appearance", "Preparation", "Usage", "Effect", "Mild", "Moderate", "Strong", "Total"]) {
+    const englishText = language.TRUDVANG?.Content?.Item?.[id]?.[field];
+    const frenchText = french.TRUDVANG?.Content?.Item?.[id]?.[field];
+    if (!englishText || !frenchText) failures.push(`Missing bilingual ${field} for extract ${id}.`);
+    else if (englishText === frenchText) failures.push(`Untranslated ${field} for extract ${id}.`);
+    if (englishText?.length > 5000 || frenchText?.length > 5000) failures.push(`Suspiciously long ${field} for extract ${id}.`);
+  }
+}
+
 for (const key of localization) if (!frenchLocalization.has(key)) failures.push(`Missing French localization key: ${key}`);
 for (const key of frenchLocalization) if (!localization.has(key)) failures.push(`Missing English localization key: ${key}`);
 

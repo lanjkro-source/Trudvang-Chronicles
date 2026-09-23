@@ -683,11 +683,12 @@
       "OpenTraitFormula": "1d10 (open on 10) + trait + bonus + effects"
     },
     "Extract": {
+      "Stage": "Stage: {stage}",
       "UseTitle": "Use {item} on {actor}",
       "UsePrompt": "The effect is determined by 1d20 + extract Strength − the relevant trait modifier. Strength: {strength}.",
       "Trait": "Relevant trait",
       "RollFormula": "1d20 ({die}) + Strength {strength} − {trait} ({modifier}) = {result}",
-      "DurationUntil": "{duration} before moving to the {stage} stage",
+      "DurationUntil": "{duration} before the {stage} stage",
       "DurationEnds": "for {duration}, then the effect ends",
       "UnknownDuration": "unspecified duration"
     },

@@ -4,7 +4,7 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 27;
+const CONTENT_VERSION = 28;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -215,7 +215,7 @@ function presentationUpdate(payload, key) {
     img: payload.img,
     [`flags.${SYSTEM_ID}.starterId`]: key
   };
-  for (const field of ["description", "source", "summary", "effect", "appearance", "preparation", "usage", "efficacy"]) {
+  for (const field of ["description", "source", "summary", "effect", "appearance", "preparation", "usage", "efficacy", "application", "duration"]) {
     if (payload.system?.[field] !== undefined) update[`system.${field}`] = payload.system[field];
   }
   return update;
@@ -272,6 +272,35 @@ async function upsertBaseItems(source, folders, translationsByKey) {
     }
   }
   return {updated, created};
+}
+
+// Keep recognized extract copies in character and NPC inventories in the selected language.
+// Their rules and quantities remain individual to each inventory.
+async function syncActorExtracts(source, translationsByKey) {
+  const extracts = source.items.filter(entry => entry.type === "potion");
+  const byKey = new Map(extracts.map(entry => [starterKey(entry.nameKey), entry]));
+  const byName = new Map(extracts.flatMap(entry => [...(translationsByKey.get(entry.nameKey) ?? [])].map(name => [name, entry])));
+  const byUuid = new Map(game.items.filter(item => item.type === "potion" && byKey.has(flagOf(item))).map(item => [item.uuid, byKey.get(flagOf(item))]));
+  for (const actor of game.actors) {
+    const updates = actor.items.filter(item => item.type === "potion").map(item => {
+      const sourceUuid = item.getFlag("core", "sourceId") || item._stats?.compendiumSource;
+      const entry = byKey.get(flagOf(item)) ?? byUuid.get(sourceUuid) ?? byName.get(item.name);
+      if (!entry) return null;
+      const canonical = game.items.find(candidate => candidate.type === "potion" && flagOf(candidate) === starterKey(entry.nameKey));
+      if (!canonical) return null;
+      const changes = {_id: item.id};
+      const translations = translationsByKey.get(entry.nameKey);
+      if (translations?.has(item.name) && item.name !== canonical.name) changes.name = canonical.name;
+      for (const field of ["description", "source", "effect", "appearance", "preparation", "usage", "application", "duration"]) {
+        if (canonical.system[field] !== item.system[field]) changes[`system.${field}`] = canonical.system[field];
+      }
+      for (const stage of ["mild", "moderate", "strong", "total"]) {
+        if (canonical.system.efficacy?.[stage] !== item.system.efficacy?.[stage]) changes[`system.efficacy.${stage}`] = canonical.system.efficacy?.[stage] ?? "";
+      }
+      return Object.keys(changes).length > 1 ? changes : null;
+    }).filter(Boolean);
+    if (updates.length) await actor.updateEmbeddedDocuments("Item", updates);
+  }
 }
 
 async function rebuildTables(source, folders, translationsByKey) {
@@ -563,6 +592,7 @@ export async function importStarterContent({force = false} = {}) {
     for (const [slug, config] of Object.entries(source.folders)) folders[slug] = await upsertFolder(slug, config, translationsByKey.get(config.nameKey), config.parent ? folders[config.parent] : undefined);
 
     const {created, updated} = await upsertBaseItems(source, folders, translationsByKey);
+    await syncActorExtracts(source, translationsByKey);
 
     // TEMPORARY WORLD MIGRATION — documented in docs/development-world-migrations.md.
     // Tablettes and their powers are now supplied by the Vitner/Religion compendiums;

@@ -47,8 +47,8 @@ export async function useExtract(item, actor) {
   const result = Number(dieRoll.total) + strength - modifier;
   const stage = stageFor(result);
   const duration = await resolveDuration(item.system.duration);
-  const stageLabel = game.i18n.localize(`TRUDVANG.Efficacy.${stage.id[0].toUpperCase()}${stage.id.slice(1)}`);
-  const nextStageLabel = stage.next ? game.i18n.localize(`TRUDVANG.Efficacy.${stage.next[0].toUpperCase()}${stage.next.slice(1)}`) : "";
+  const stageLabel = game.i18n.localize(`TRUDVANG.Efficacy.${stage.id[0].toUpperCase()}${stage.id.slice(1)}`).toLocaleLowerCase(game.i18n.lang);
+  const nextStageLabel = stage.next ? game.i18n.localize(`TRUDVANG.Efficacy.${stage.next[0].toUpperCase()}${stage.next.slice(1)}`).toLocaleLowerCase(game.i18n.lang) : "";
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-use-card.hbs", {
     itemName: item.name,
     itemImg: item.img,
