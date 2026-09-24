@@ -29,6 +29,14 @@ export const tabletName = tablet => localized(`TRUDVANG.Content.Tablet.${tablet.
 export const tabletSummary = tablet => localized(`TRUDVANG.Content.Tablet.${tablet.id}.Summary`, "");
 export const powerName = power => localized(`TRUDVANG.Content.Power.${power.id}.Name`, power.name);
 
+export function sortTabletPowers(powers, tabletId = "") {
+  const catalogOrder = new Map((TABLET_BY_ID.get(tabletId)?.powers ?? []).map((power, index) => [power.id, index]));
+  const level = power => Number(power.system?.level) || 1;
+  return [...powers].sort((a, b) => level(a) - level(b)
+    || (catalogOrder.get(a.system?.catalogId) ?? Number.MAX_SAFE_INTEGER) - (catalogOrder.get(b.system?.catalogId) ?? Number.MAX_SAFE_INTEGER)
+    || a.name.localeCompare(b.name));
+}
+
 // The compact source below mirrors the master tablet lists in the rulebooks. Pages are
 // printed book pages verified against each edition's own table of contents and running
 // folios (August 2026): `page` cites the English Player's Handbook, `pageFr` the official

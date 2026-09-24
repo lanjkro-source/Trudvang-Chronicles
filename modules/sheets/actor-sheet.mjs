@@ -1,6 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
-import { TABLET_BY_ID, tabletName, tabletSummary } from "../tablet-catalog.mjs";
+import { TABLET_BY_ID, sortTabletPowers, tabletName, tabletSummary } from "../tablet-catalog.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
@@ -326,7 +326,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
     context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;
     context.activeSpells = context.hasActiveSpellTracker
-      ? powers.filter(item => item.type === "spell" && item.system.active)
+      ? sortTabletPowers(powers.filter(item => item.type === "spell" && item.system.active))
       : [];
     context.magicTree = tablets.map(item => {
       const level = Number(item.system.level || 1);
@@ -335,7 +335,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         item,
         refundCost: this.actor.getKnowledgeLevelCost(item, level),
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
-        children: powers.filter(power => power.system.tabletId === tabletId || normalized(power.system.tablet) === normalized(item.name)).map(power => ({item: power, inactive: Number(power.system.level || 1) > level})),
+        children: sortTabletPowers(powers.filter(power => power.system.tabletId === tabletId || normalized(power.system.tablet) === normalized(item.name)), tabletId)
+          .map(power => ({item: power, inactive: Number(power.system.level || 1) > level})),
         decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: this.actor.getKnowledgeLevelCost(item, level)}),
         increaseTitle: game.i18n.format("TRUDVANG.Cost.Increase", {cost: this.actor.getKnowledgeLevelCost(item, level + 1)}),
         canDecrease: level > 1,
@@ -343,7 +344,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       };
     });
     const linkedPowers = new Set(context.magicTree.flatMap(node => node.children.map(child => child.item.id)));
-    context.unassignedMagic = powers.filter(item => !linkedPowers.has(item.id));
+    context.unassignedMagic = sortTabletPowers(powers.filter(item => !linkedPowers.has(item.id)));
     context.compatibleTabletCount = this.actor.compatibleTablets.length;
     return context;
   }
