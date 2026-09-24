@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-wind-craft",
-    "description": "Magie de l'air purifiant l'air, créant brume et vent, accordant portance ou protection, invoquant les tempêtes.",
+    "description": "L’enchanteur a appris à contrôler l’air. Il peut créer des vents quand il n’y en a pas et accroître l’humidité ambiante afin de créer du brouillard. Il peut aussi filtrer les substances délétères dans l’air, flotter et se déplacer dans le vent, et comprimer l’air afin de créer un bouclier, une armure ou une arme. L’enchanteur a également appris à manipuler le vitner afin qu’il s’exprime sous forme de vents, et créer ainsi des rafales de vent plus ou moins puissantes dans l’environnement immédiat, ou bien réduire ou augmenter à loisir la puissance du vent.",
+    "summary": "Permet de créer et diriger le vent, l’air et les phénomènes météorologiques.",
+    "swedishName": "Loftirkraftla",
+    "negation": "Quand l’enchanteur crée de l’air, la négation qui s’ensuit fait naturellement disparaître de l’air quelque part ailleurs. Si l’enchanteur crée une armure, un bouclier ou une arme à partir d’air compressé, une quantité significative d’air disparaît dans les environs. Par exemple, une grande caverne pourrait se voir vidée de tout l’air qu’elle contient, ou l’atmosphère pourrait simplement contenir moins d’oxygène dans de vastes régions du monde, où les êtres vivants auront beaucoup plus de mal à respirer, comme si elles se trouvaient à une altitude très élevée. Les négations générées par la création, l’augmentation ou la diminution du vent prennent toujours une forme opposée aux effets du sort choisi. Si l’enchanteur crée du vent à un endroit, le vent mourra à un autre endroit. Si sa force augmente quelque part, elle diminuera ailleurs, et vice versa. Si l’enchanteur conjure du brouillard à un endroit, le brouillard se dissipera rapidement à un autre endroit.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": -1,
+      "morkvitner": -1
+    },
     "source": "Livre des règles, p. 169",
     "level": 1,
     "tabletType": "vitner",

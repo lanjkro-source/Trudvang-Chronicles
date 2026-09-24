@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-warmth-of-sunvei",
-    "description": "Pouvoirs solaires de guérison, de chaleur, de lumière, d'été, de chasse et de restauration.",
+    "description": "Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 216",
     "level": 1,
     "tabletType": "holy",

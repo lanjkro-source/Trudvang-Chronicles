@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-dimvitner",
-    "description": "Magie de la mort permettant de parler aux morts-vivants, de les invoquer, les contrôler, les renvoyer ou drainer les pouvoirs de Dimhall.",
+    "description": "L’enchanteur a appris à contrôler le lien funeste entre les royaumes de Trudvang et Dimhall, le royaume des morts. En manipulant la puissance de ce lien invisible, il peut forcer des âmes à revenir en Trudvang et les transformer en êtres morts-vivants. L’enchanteur peut voler le vitner et la force vitale des vivants et utiliser le lien funeste pour parler avec les âmes mortes qui séjournent à Dimhall, pour y exiler les êtres morts-vivants, ou pour prendre le contrôle d’un mort-vivant et lui dicter sa conduite. En insufflant du vitner dans le lien funeste, l’enchanteur peut projeter de puissantes vagues d’énergie vers la cible de son choix. Cette énergie funeste prend alors la forme de bancs de brume sombre et humide que le tisseur peut utiliser de diverses manières pour blesser ses victimes.",
+    "summary": "Permet d’animer, blesser ou contrôler les morts et leurs esprits.",
+    "swedishName": "Sálhelevitna",
+    "negation": "L’opposé du Dimvitner est la vie et sa création ; ses négations reposent donc sur la force vitale. Chaque fois qu’un enchanteur conjure quelque chose par le biais de cette Tablette de vitner, la négation génère de la force vitale quelque part ailleurs, comme une naissance réussie contre toute attente, un invalide recouvrant miraculeusement l’usage de ses membres, une personne blessée recouvrant la santé, et bien d’autres effets bénéfiques. Mais quand un enchanteur choisit de conjurer des êtres morts-vivants, la négation prend une forme bien plus sinistre. Comme l’enchanteur crée plus ou moins de la vie, la négation arrache sa force vitale à un autre sujet. Cela peut alors prendre la forme d’animaux mourant brutalement, d’enfants mort-nés, de créatures tombant soudain malades, ou quelque autre événement tragique. Quand un enchanteur tente de contacter un esprit dans le royaume des morts, la négation permet à un ou plusieurs esprits de contacter un être vivant en Trudvang. Si l’enchanteur désire repousser un être mortvivant dans le royaume des morts, une ou plusieurs âmes mortes-vivantes peuvent s’en échapper pour gagner Trudvang. Et si l’enchanteur désire prendre le contrôle d’un être mort-vivant, la négation permet à des âmes mortes de prendre momentanément le contrôle d’êtres vivants.",
+    "affinity": {
+      "hvitavitner": 2,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Livre des règles, p. 155",
     "level": 1,
     "tabletType": "vitner",

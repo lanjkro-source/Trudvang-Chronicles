@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-vitner-craft",
-    "description": "Metamagic for channeling, enchanting, sealing, tracing, dispelling, and blocking vitner.",
+    "description": "The enchanter has learned to use the purest form of vitner, which grants the power to influence how the vitner itself flows and shapes its surroundings. The enchanter has learned to manipulate the vitner in two ways: by injecting it and by diffusing it. Vitner Craft makes it possible to enchant objects and beings, create a link between characters to channel vitner through, create a pocket of vitner where physical objects can be stored, or create a physical sigil on an object that binds another spell to be triggered in various ways. The enchanter has also learned to control the vitner in ways that dispel existing spells or increase an enchanted character’s ability to resist them. They can also trace the particular vitner of spells and negations back to the mage that has woven them. The enchanter even learns to erect a barrier against vitner so it is difficult if not impossible to use it in a designated area.",
+    "summary": "Manipulates, protects, dispels, or channels vitner directly.",
+    "swedishName": "Vitnakraftla",
+    "negation": "The negations that occur when weaving a spell remain the direct opposite of what the spell invokes. If one being receives a beneficial enchantment, one or several other beings experience bad luck and horror for a while. When an enchanter creates a sigil, no negation occurs when the spell is bound to it, but an extremely large negation occurs when the spell is used. The reason for this amplified negation is that the vitner is formed and woven for a much longer period, during which the pressure builds up as it tries to return to its original shape. When an enchanter protects against a vitner attack, the negation that occurs is the effect of the spell that was blocked, woven somewhere else in the world. The effect may not be as strong as the original, as it can occur with less potency in several places at the same time. When the enchanter takes vitner from a living being and places it in an object, nothing else happens, since the negation is the drawing out of vitner from the being. When the enchanter dispels vitner and returns it to its original shape, the resulting negation is various small spells that affect several places around Trudvang as the vitner twists back to its original form. If the enchanter creates a pocket with the vitner, nothing happens until an object is placed in the bag, at which time a similar object temporarily appears in another place. The negation for the vitner wall is far less noticeable than other spells’ negations. Instead of something blatant, the negation makes it subtly easier to weave spells or be affected by them wherever the negation occurs.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": 0,
+      "morkvitner": 2
+    },
     "source": "Player's Handbook, p. 129",
     "level": 1,
     "tabletType": "vitner",

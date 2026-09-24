@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-animal-vitner",
-    "description": "Magic for communicating with, summoning, controlling, possessing, and carrying messages through animals.",
+    "description": "The pattern that the mage weaves the vitner in is specifically connected with animals and their spirits. For example, the mage can summon animal spirits to frighten or shock someone, or use them to send messages to people far away. With the help of vitner, the mage can call upon wildlife nearby and compel them to obey, even against their will if they are not friendly. With the power of the mind, the mage can communicate with animals or even shift his own consciousness into the creature’s body and control it as if it were his own.",
+    "summary": "Communicates with animals, calls them, and influences their behavior.",
+    "swedishName": "Besturvitna",
+    "negation": "When a mage directs and manipulates the vitner toward animals or their spirits, a negation happens somewhere else in the vicinity. If the mage wants to control an animal, another creature elsewhere (possibly even a domesticated one) suddenly becomes unruly and acts out in a manner completely unexpected or disobedient. If the mage wants to summon an animal, another runs away; if the mage wants to shift his mind into an animal, another person might suddenly be possessed by the mind of an animal and act as if she were an animal for a while. When the mage tries to send a message, another creature somewhere fails to deliver its own message or delivers the wrong one.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Player's Handbook, p. 92",
     "level": 1,
     "tabletType": "vitner",

@@ -1,3 +1,5 @@
+import { tabletAffinity } from "./rules/tablet-affinity.mjs";
+
 const slug = value => String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 const isFrench = () => globalThis.game?.i18n?.lang === "fr";
@@ -24,13 +26,14 @@ const tabletPage = (tablet, resolvers) => ((resolvers?.isFrench ?? isFrench)() &
 export const getPowerSummary = power => localized(`TRUDVANG.Content.Power.${power.id}.Summary`, "");
 
 export const tabletName = tablet => localized(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
+export const tabletSummary = tablet => localized(`TRUDVANG.Content.Tablet.${tablet.id}.Summary`, "");
 export const powerName = power => localized(`TRUDVANG.Content.Power.${power.id}.Name`, power.name);
 
 // The compact source below mirrors the master tablet lists in the rulebooks. Pages are
 // printed book pages verified against each edition's own table of contents and running
 // folios (August 2026): `page` cites the English Player's Handbook, `pageFr` the official
 // French « Livre des règles », whose pagination — and even tablet ordering — differs.
-// A power is encoded as level:name; all rules-heavy effect text can be filled in later.
+// A power is encoded as level:name; localized tablet and power text lives in lang/.
 const DEFINITIONS = [
   ["Animal Vitner","vitner","",92,187,"1:Messenger;1:Speak to Animals;2:Call on Animals;2:Conjure Ravens;3:Control Animals;3:Mind of the Wolf;4:Possess Animals;4:Create Messenger;5:Send Message"],
   ["Body Vitner","vitner","",96,192,"1:Grip;1:Tipping;2:Hearing/Deafness;2:Sense of Smell;2:Vision/Blindness;3:Leather Skin;3:Immobilize;3:Appearance Change;4:Strengthen;4:Hasten;5:Imprison;5:Change Creature"],
@@ -98,7 +101,8 @@ export function tabletItemData(tablet, resolvers = {}) {
   const runeSummary = tablet.religion === "thuuldom" && tablet.powers[0] ? localize(`TRUDVANG.Content.Power.${tablet.powers[0].id}.Summary`) : "";
   const name = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
   const theme = localize(`TRUDVANG.Content.Theme.${tablet.id}`);
-  const description = theme
+  const description = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Description`)
+    || theme
     || (runeSummary ? format("TRUDVANG.Content.ThuulRunePrefix", {summary: runeSummary.charAt(0).toLowerCase() + runeSummary.slice(1)}) : "")
     || format("TRUDVANG.Description.TabletSummary", {name});
   return {
@@ -109,6 +113,10 @@ export function tabletItemData(tablet, resolvers = {}) {
     system: {
       catalogId: tablet.id,
       description,
+      summary: localize(`TRUDVANG.Content.Tablet.${tablet.id}.Summary`) || theme,
+      swedishName: localize(`TRUDVANG.Content.Tablet.${tablet.id}.SwedishName`),
+      negation: localize(`TRUDVANG.Content.Tablet.${tablet.id}.Negation`),
+      affinity: tablet.tabletType === "vitner" ? tabletAffinity(tablet.id) : tabletAffinity(""),
       source: format("TRUDVANG.Description.SourcePage", {page: tabletPage(tablet, resolvers)}),
       level: 1, tabletType: tablet.tabletType, religion: tablet.religion
     }

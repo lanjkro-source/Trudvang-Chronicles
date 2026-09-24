@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger",
-    "description": "Pouvoirs sacrés de sang, de pierre, de martyre, d'éclairs destructeurs, d'explosions et de purge divine.",
+    "description": "Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 250",
     "level": 1,
     "tabletType": "holy",

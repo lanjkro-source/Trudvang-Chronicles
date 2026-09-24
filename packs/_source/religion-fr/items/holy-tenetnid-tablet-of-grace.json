@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-grace",
-    "description": "Pouvoirs miséricordieux qui soignent, rendent la vie et la mémoire, rappellent les alliés et les préservent de la mort.",
+    "description": "Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 253",
     "level": 1,
     "tabletType": "holy",

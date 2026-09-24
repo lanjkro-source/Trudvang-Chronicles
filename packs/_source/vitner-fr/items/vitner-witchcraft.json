@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-witchcraft",
-    "description": "Malédictions et maladies apportant fièvre, amnésie, peste, mauvaises récoltes et arbres hostiles.",
+    "description": "L’enchanteur a appris l’art de la sorcellerie, dont on dit qu’elle est la fondation de toute magie, mais aussi qu’elle serait à l’origine du schisme entre la magie et les enchanteurs d’une part, et les dieux et la religion des Stormlander d’autre part. Grâce à cette Tablette de vitner, l’enchanteur a appris à maudire les objets et les êtres vivants, mais aussi à tourmenter les gens avec des maux illusoires, des fièvres ou des crises d’amnésie. L’enchanteur sait également déraciner les arbres massifs et autres gros objets, flétrir les récoltes et transformer les gens en arbres.",
+    "summary": "Permet de maudire, effrayer et transformer des êtres, objets ou végétaux.",
+    "swedishName": "Hagzkraftla",
+    "negation": "L’opposé de la sorcellerie est l’enchantement et la bénédiction. Chaque fois qu’un enchanteur maudit un objet ou une créature, un autre sujet se retrouve enchanté. Quand un enchanteur tisse un sort de mal imaginaire, quelqu’un affecté par une maladie ailleurs sur Trudvang profite d’une guérison miraculeuse. Quand une personne est touchée par la fièvre, une autre personne souffrant déjà de la fièvre recouvre la santé. Si un personnage voit ses souvenirs effacés par la sorcellerie, quelqu’un d’autre recouvre soudain la mémoire. La négation d’un arbre déraciné érigera souvent quelque chose ailleurs, une mauvaise récolte provoque une bonne récolte dans une autre région, et la négation d’une malédiction de l’arbre transforme ailleurs un arbre en une créature fantastique.",
+    "affinity": {
+      "hvitavitner": 2,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Livre des règles, p. 184",
     "level": 1,
     "tabletType": "vitner",

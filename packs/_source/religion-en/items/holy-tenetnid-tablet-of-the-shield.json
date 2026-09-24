@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield",
-    "description": "Protective powers that create sanctuaries, barriers, resistance, banishment, and safe passage.",
+    "description": "This tablet gathers powers associated with Tablet of the Shield, including Snares of the Holy Ground, Sheltering, Thornwall.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 201",
     "level": 1,
     "tabletType": "holy",

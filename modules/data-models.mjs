@@ -400,7 +400,15 @@ export class TabletData extends BaseItemData {
       level: integer(1, {min: 1, max: 5}),
       tabletType: string("vitner"),
       religion: string(),
-      costTrait: string()
+      costTrait: string(),
+      summary: string(),
+      swedishName: string(),
+      negation: string(),
+      affinity: schema({
+        hvitavitner: integer(0, {min: -1, max: 2}),
+        vaagrivitner: integer(0, {min: -1, max: 2}),
+        morkvitner: integer(0, {min: -1, max: 2})
+      })
     };
   }
 }

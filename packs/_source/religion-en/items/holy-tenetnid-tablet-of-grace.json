@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-grace",
-    "description": "Merciful powers that heal, restore life and memory, recall allies, and preserve them from death.",
+    "description": "This tablet gathers powers associated with Tablet of Grace, including Hand of Mercy, Holy Mending, Life Spirit.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 197",
     "level": 1,
     "tabletType": "holy",

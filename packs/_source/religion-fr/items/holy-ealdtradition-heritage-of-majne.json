@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-heritage-of-majne",
-    "description": "Breuvages héroïques et bénédictions royales pour abattre trolls, géants et dragons et rallier les guerriers.",
+    "description": "Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 236",
     "level": 1,
     "tabletType": "holy",

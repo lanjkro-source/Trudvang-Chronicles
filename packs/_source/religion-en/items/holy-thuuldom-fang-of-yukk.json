@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-fang-of-yukk",
-    "description": "A sacred Thuul rune that empowers an inscribed weapon with the deadly bite of Yukk.",
+    "description": "This tablet gathers powers associated with Fang of Yukk, including Fang of Yukk.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 230",
     "level": 1,
     "tabletType": "holy",

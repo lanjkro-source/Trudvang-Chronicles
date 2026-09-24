@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-water-craft",
-    "description": "Magie de l'eau pour trouver, purifier, créer, façonner, solidifier et marcher sur l'eau ou les vagues.",
+    "description": "L’enchanteur a appris à contrôler le vitner qui coule à travers l’eau. En tissant ce vitner d’une certaine façon, il peut localiser de l’eau située à proximité, créer de l’eau dans des régions extrêmement arides, et purifier l’eau provenant de sources ou de substances contaminées. L’enchanteur a également appris à contrôler l’eau elle-même et peut l’écarter afin de créer un passage à sec, marcher sur l’eau comme s’il s’agissait de la terre ferme, ou plonger dans l’eau sans être mouillé et s’y déplacer avec une grande aisance.",
+    "summary": "Permet de trouver, purifier, créer et contrôler l’eau.",
+    "swedishName": "Vannkraftla",
+    "negation": "Quand un enchanteur tente de créer de l’eau, la négation qui s’ensuit aura naturellement pour effet de faire disparaître de l’eau à un autre endroit. Quand un enchanteur trouve une source et l’assèche, une autre se remplit ou voit son débit augmenter au point de déborder. Quand l’enchanteur purifie la moisissure qui frappe une substance ou une source contaminée, une autre source quelque part ailleurs devient impure. Si l’enchanteur contrôle de l’eau, ailleurs, à un endroit où l’eau a été maîtrisée (un barrage, un réceptacle ou des canaux, par exemple) les équipements qui la retiennent se rompent : il peut aussi bien s’agir d’une légère fuite que d’un énorme trou dans la paroi d’un réservoir.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Livre des règles, p. 163",
     "level": 1,
     "tabletType": "vitner",

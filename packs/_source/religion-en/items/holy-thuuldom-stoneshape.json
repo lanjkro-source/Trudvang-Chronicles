@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stoneshape",
-    "description": "A sacred Thuul rune that the Thuul and his gear seem to melt into the mountain when the rune is activated.",
+    "description": "This tablet gathers powers associated with Stoneshape, including Stoneshape.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken",
-    "description": "Pouvoirs accordant courage, volonté, vision de l'âme, vision nocturne et armures de tempête de plus en plus puissantes.",
+    "description": "Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 224",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-sun",
-    "description": "Signes solaires et radiance sacrée protégeant foyers et bosquets, révélant les présages et illuminant les ténèbres.",
+    "description": "Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 262",
     "level": 1,
     "tabletType": "holy",

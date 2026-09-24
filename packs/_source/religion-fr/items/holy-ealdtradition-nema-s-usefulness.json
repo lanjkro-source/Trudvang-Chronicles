@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-nema-s-usefulness",
-    "description": "Pouvoirs aiguisant les sens animaliers, révélant les pistes, levant les entraves et accélérant les voyages.",
+    "description": "Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 244",
     "level": 1,
     "tabletType": "holy",

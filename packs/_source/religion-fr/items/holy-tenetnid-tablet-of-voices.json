@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-voices",
-    "description": "Pouvoirs de parole, d'ouïe, de communion, de lucidité, de faveur divine et de pactes sacrés contraignants.",
+    "description": "Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 255",
     "level": 1,
     "tabletType": "holy",

@@ -4,9 +4,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 30 reinstalls the two starter tables
-// with a true JO 9 formula and visible die roll in existing development worlds.
-const CONTENT_VERSION = 30;
+// TEMPORARY WORLD MIGRATION — version 31 refreshes actor-owned tablet copies
+// with the new descriptions, summaries, Swedish names, negations and affinities.
+const CONTENT_VERSION = 31;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -740,6 +740,17 @@ export async function importStarterContent({force = false} = {}) {
           const changes = {_id: item.id};
           if (match.system.description !== item.system.description) changes["system.description"] = match.system.description;
           if (match.system.source !== item.system.source) changes["system.source"] = match.system.source;
+          if (item.type === "tablet" && match.type === "tablet") {
+            // TEMPORARY WORLD MIGRATION — existing actor tablets predate these fields.
+            for (const field of ["summary", "swedishName", "negation"]) {
+              if (match.system[field] !== item.system[field]) changes[`system.${field}`] = match.system[field];
+            }
+            for (const type of ["hvitavitner", "vaagrivitner", "morkvitner"]) {
+              if (Number(match.system.affinity[type]) !== Number(item.system.affinity?.[type])) {
+                changes[`system.affinity.${type}`] = match.system.affinity[type];
+              }
+            }
+          }
           return Object.keys(changes).length > 1 ? changes : null;
         }
         if (item.type !== "ability") return null;

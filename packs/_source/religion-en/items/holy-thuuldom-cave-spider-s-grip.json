@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-cave-spider-s-grip",
-    "description": "A sacred Thuul rune that the rune makes it possible for the Thuul to climb vertical walls.",
+    "description": "This tablet gathers powers associated with Cave Spider's Grip, including Cave Spider's Grip.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",

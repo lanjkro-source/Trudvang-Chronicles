@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-wisdom-of-windinna",
-    "description": "Pouvoirs d'inspiration, de vérité, de créativité, de résolution mentale, de protection et de clairvoyance de Windinna.",
+    "description": "Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 226",
     "level": 1,
     "tabletType": "holy",

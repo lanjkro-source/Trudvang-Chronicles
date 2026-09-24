@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-halawen-s-offering",
-    "description": "Protections ancestrales contre la peur, les Blotfangs, le vitner hostile et les assauts surnaturels.",
+    "description": "Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 239",
     "level": 1,
     "tabletType": "holy",

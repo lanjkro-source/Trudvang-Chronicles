@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-witchcraft",
-    "description": "Curses and maladies that bring fever, amnesia, plague, blighted harvests, and hostile trees.",
+    "description": "The mage has learned the art of witchcraft, which is said to be the foundation for all magic and the cause of the separation of magic and mages from the gods and religion of the Stormlands. With this Vitner Tablet, the mage has learned to curse both objects and beings, and torment people with phantom plagues, fever chills, or amnesia. The mage has also learned to uproot massive trees and other large objects, cause the failure of crops, and turn people into trees.",
+    "summary": "Curses, frightens, and transforms beings, objects, or plants.",
+    "swedishName": "Hagzkraftla",
+    "negation": "The opposite of witchcraft is enchantment and blessing. Whenever the mage curses an object or creature, another object or creature becomes enchanted. If the phantom plague spell is woven, someone afflicted by disease elsewhere in Trudvang is miraculously cured. When someone is afflicted by fever, someone else who already has a fever becomes healthy. If someone is afflicted by the witchcraft’s forgetfulness, someone else’s memory is suddenly restored. The negation of an uprooted tree is likely to build something in another place, a bad harvest creates good harvests elsewhere, and the negation of a tree curse turns a tree somewhere into a fantastic creature.",
+    "affinity": {
+      "hvitavitner": 2,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Player's Handbook, p. 143",
     "level": 1,
     "tabletType": "vitner",

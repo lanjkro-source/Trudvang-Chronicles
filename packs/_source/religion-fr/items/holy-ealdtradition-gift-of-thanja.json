@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja",
-    "description": "Pouvoirs de nature pour parler aux animaux et prendre leur forme, se dissimiler dans les terres sauvages et communier avec les êtres de la forêt.",
+    "description": "Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 234",
     "level": 1,
     "tabletType": "holy",

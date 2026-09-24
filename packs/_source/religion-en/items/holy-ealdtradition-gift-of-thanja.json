@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-gift-of-thanja",
-    "description": "Nature powers for animal speech and shapes, concealment in the wild, and communion with forest beings.",
+    "description": "This tablet gathers powers associated with Gift of Thanja, including Behind Tree and Pine, Animal Speech, Stagshape.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 176",
     "level": 1,
     "tabletType": "holy",

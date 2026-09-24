@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-toikalokke-master-of-elements",
-    "description": "Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires.",
+    "description": "L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 297",
     "level": 1,
     "tabletType": "holy",

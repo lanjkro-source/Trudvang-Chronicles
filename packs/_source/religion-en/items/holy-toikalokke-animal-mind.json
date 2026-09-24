@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-toikalokke-animal-mind",
-    "description": "Powers for befriending, tracking, speaking with, mastering, and assuming the forms of animals.",
+    "description": "This tablet gathers powers associated with Animal Mind, including Animal Friend, Animal Tracks, Invisible to Animals.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 237",
     "level": 1,
     "tabletType": "holy",

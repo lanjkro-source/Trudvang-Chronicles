@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stone-to-clay",
-    "description": "Une rune thuul sacrée qui elle expire, la pierre reprend sa forme d’origine.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Transformation de pierre en argile, dont Transformation de pierre en argile.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",

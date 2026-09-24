@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-mark-of-brokk",
-    "description": "A sacred Thuul rune that when the Thuul activates the rune-inscribed object, it is able to miraculously repair broken or damaged items.",
+    "description": "This tablet gathers powers associated with Mark of Brokk, including Mark of Brokk.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",

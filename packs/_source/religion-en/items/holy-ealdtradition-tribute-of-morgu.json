@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu",
-    "description": "Blood-fueled battle powers that provoke rage and unleash volleys, fire, and murderous fury.",
+    "description": "This tablet gathers powers associated with Tribute of Morgu, including Battle Arrow, Simmering Blood, Boiling Blood.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 187",
     "level": 1,
     "tabletType": "holy",

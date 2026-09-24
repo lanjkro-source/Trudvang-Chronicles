@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast",
-    "description": "Bestial powers granting predator instincts, tusks, claws, fur, endurance, and animal transformation.",
+    "description": "This tablet gathers powers associated with Power of the Beast, including Resilience, Mind of the Predator, Mastomant's Tusks.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 212",
     "level": 1,
     "tabletType": "holy",

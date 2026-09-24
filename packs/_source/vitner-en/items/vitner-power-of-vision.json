@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-power-of-vision",
-    "description": "Sight magic for tracking, remote observation, astral travel, reading vitner, and seeing truth.",
+    "description": "The enchanter has learned to master the astral consciousness possessed by every living being. Objects also have a form of astral consciousness, but it is considerably less advanced than that of a living being. By slipping into a trance during the spell’s weaving time, the enchanter can perform various spells related to the unseen astral plane. Methods of visiting the astral plane can be quite different, as everyone has different ways of focusing. Some enchanters stare into flame or a bed of hot coals, others use a large trunk, and a few more use the sun or moon. Players can decide how their enchanters perform the ritual. Since everything physical is mirrored on the astral plane, the enchanted is able to see how things really look. The mage can see the vitner’s flow that surrounds everyone, follow the tracks of a creature as easily as following light in the darkness, see far into the distance, and know things for what they really are.",
+    "summary": "Tracks creatures and observes things from afar or beyond appearances.",
+    "swedishName": "Skönjakraftla",
+    "negation": "Whenever the enchanter weaves an astral projection of any kind, the s urrounding environment might be exposed to unusual images from the beyond. Blurred images of strange objects or otherworldly creatures become visible in the real world for a moment or two. For many, this can be a terrifying experience. The game master determines whether an image becomes visible or not, what bizarre thing is shown, where it manifests, and the resulting consequences. The negation is rather straightforward since when vitner causes one person to see things more clearly, other things fade or blur. Tracks disappear and people’s eyesight grows blurry and weak, and what normally would be obvious suddenly becomes very difficult to note.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": 0,
+      "morkvitner": 2
+    },
     "source": "Player's Handbook, p. 120",
     "level": 1,
     "tabletType": "vitner",

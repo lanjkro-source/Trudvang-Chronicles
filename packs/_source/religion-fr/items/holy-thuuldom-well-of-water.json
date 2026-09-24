@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-well-of-water",
-    "description": "Une rune thuul sacrée qui le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-labyrinth-blood",
-    "description": "A sacred Thuul rune that grants an instinctive supernatural sense for navigating tunnels and labyrinths.",
+    "description": "This tablet gathers powers associated with Labyrinth Blood, including Labyrinth Blood.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",

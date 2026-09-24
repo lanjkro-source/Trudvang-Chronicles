@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-delusion-vitner",
-    "description": "Illusions manipulant sons, apparence, dissimulation, paysages, silence et invisibilité.",
+    "description": "L’enchanteur a appris à utiliser le vitner pour manipuler son environnement et créer des illusions et des images parfaitement crédibles. L’enchanteur a le contrôle complet de l’apparence des illusions qu’il crée, et peut même décider si elles seront animées ou non. L’enchanteur peut créer l’illusion d’objets et de créatures de petite taille, mais aussi des illusions paysagères donnant vie à des cités, montagnes et autres forêts (du moins tant que les témoins de l’illusion continuent de croire à ce qu’ils voient). L’enchanteur a également appris à manipuler l’air afin d’imiter les sons et les vibrations. En façonnant le vitner, l’enchanteur peut augmenter ou réduire le volume sonore autour de lui, ce qui lui permet de produire des roulements de tonnerre assourdissant ou de subtils sifflements si aigus qu’ils échappent aux oreilles humaines. Qui plus est, l’enchanteur a appris à utiliser cette faculté d’imitation pour évoluer à l’insu de tous en dissimulant ses traces, en générant des camouflages, voire même en se soustrayant directement à la vue d’autrui.",
+    "summary": "Permet de créer des illusions sonores ou visuelles et de dissimuler des choses.",
+    "swedishName": "Skenvitna",
+    "negation": "Quand un enchanteur crée une illusion, la négation correspondante n’est pas forcément néfaste. Elle peut se traduire par une autre illusion apparaissant soudain à un tout autre endroit, par exemple, ou bien par une créature ou un objet qui devient invisible ou dont l’aspect se trouble pendant quelques instants. Cela dit, quand l’enchanteur manipule les sons sous leurs différentes formes, la négation prendra toujours une forme opposée. S’il diminue le volume sonore à un endroit, la négation l’augmentera ailleurs. S’il crée un coup de tonnerre, un autre bruit d’intensité équivalente sera complètement étouffé à un autre endroit (comme un éclair ou des vagues déferlantes qui ne font aucun bruit). Si l’enchanteur crée le bruit de quelqu’un marchant sur un sentier de graviers, le même son disparaîtra quelque part ailleurs. S’il génère le son d’une personne frappant à la porte, une autre personne faisant la même chose ailleurs ne produira pas le moindre bruit. Et si l’enchanteur supprime un son particulier à un endroit, ce même son se répercutera inexplicablement ailleurs.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Livre des règles, p. 197",
     "level": 1,
     "tabletType": "vitner",

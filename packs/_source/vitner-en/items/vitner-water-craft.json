@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-water-craft",
-    "description": "Water magic for finding, purifying, creating, shaping, solidifying, and walking upon water or waves.",
+    "description": "The enchanter has learned to control the vitner that flows through water. By weaving the vitner in a certain way, they can locate water that might be nearby, create water in extremely dry places, and purify water gathered from foul substances or sources. The enchanter has also learned to control the water itself and can separate it so as to allow dry passage, walk on water as if it were made of solid ground, or dive into water without getting wet and travel through the element.",
+    "summary": "Finds, purifies, creates, and controls water.",
+    "swedishName": "Vannkraftla",
+    "negation": "When an enchanter attempts to create water, the negation will naturally be that water disappears from somewhere else. When an enchanter finds a source of water and dries it out, another is filled or increased to overflowing; when the enchanter purifies the moisture f r o m a f o u l s u b s t a n c e o r s o u rc e , s o m e w h er e e l s e a c l e a n s o ur c e be c o m e s i m p u r e . If t h e e n c h an t e r c o n t r o ls w a te r , s om e w h e r e e l s e w h e r e w a t er h a s been controlled (such as dams, vessels, or channels) the implements that contained it will break. This can be anything from a small leak to a massive hole in a reservoir wall.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Player's Handbook, p. 135",
     "level": 1,
     "tabletType": "vitner",

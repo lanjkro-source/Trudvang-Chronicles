@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-wind-craft",
-    "description": "Air magic that purifies air, creates fog and wind, grants lift or protection, and summons storms.",
+    "description": "The enchanter has learned to control air. They can create wind where no wind exists and increase the humidity in an area so as to create fog. They can also filter the air from dangerous substances, float and move with the wind, and compress the air to form a hard shield, armor, or weapon. The enchanter has also learned to m anipulate vitner so it expresses itself in various forms of winds, creating both small and large gusts of wind in the i mmediate s urroundings, or d iminishing and a mplifying the wind’s intensity as desired.",
+    "summary": "Creates and directs wind, air, and weather effects.",
+    "swedishName": "Loftirkraftla",
+    "negation": "When the enchanter creates air, the negation is that air will naturally disappear from another location. If the enchanter creates armor, a shield, or a blast from compressed air, a significant amount of air will go missing somewhere in the surrounding areas. For example, a large cave can be entirely emptied of air, or the atmosphere might simply contain less oxygen in wide areas around the world, making it harder for creatures to breathe as if they were at an incredibly high altitude. Negations from creating, decreasing, or increasing wind are always the opposite of the spell’s designated effects. If wind is created in one place, it will die down in another. As it increases in one place, it decreases in another, and vice versa. If the enchanter conjures fog in one area, fog rapidly dissipates somewhere else.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": -1,
+      "morkvitner": -1
+    },
     "source": "Player's Handbook, p. 139",
     "level": 1,
     "tabletType": "vitner",

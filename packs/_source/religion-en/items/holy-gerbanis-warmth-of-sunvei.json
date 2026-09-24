@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-warmth-of-sunvei",
-    "description": "Solar powers of healing, warmth, light, summer, hunting, and restoration.",
+    "description": "This tablet gathers powers associated with Warmth of Sunvei, including Sunray, Healing, Summer Place.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 166",
     "level": 1,
     "tabletType": "holy",

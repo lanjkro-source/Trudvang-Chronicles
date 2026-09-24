@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-magh-s-gift",
-    "description": "Chants et liens aidant voyages, cavaliers, récoltes, héros et le changement des saisons.",
+    "description": "Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 232",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi",
-    "description": "Bénédictions de combat accordant force géante, voix commandement, gardes divins et guerriers héroïques.",
+    "description": "Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 218",
     "level": 1,
     "tabletType": "holy",

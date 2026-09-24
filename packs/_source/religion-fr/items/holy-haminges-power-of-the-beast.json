@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-beast",
-    "description": "Pouvoirs bestiaux accordant instinct de prédateur, défenses, griffes, fourrure, endurance et transformation animale.",
+    "description": "Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 268",
     "level": 1,
     "tabletType": "holy",

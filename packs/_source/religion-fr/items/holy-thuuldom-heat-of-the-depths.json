@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-heat-of-the-depths",
-    "description": "Une rune thuul sacrée qui le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Chaleur des profondeurs, dont Chaleur des profondeurs.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 285",
     "level": 1,
     "tabletType": "holy",

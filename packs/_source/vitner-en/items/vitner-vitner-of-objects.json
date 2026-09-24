@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-vitner-of-objects",
-    "description": "Magic that identifies, protects, binds, alters, creates, locks, or destroys objects.",
+    "description": "By examining the vitner within and around an object, the enchanter can sense the object’s structure as well as direct and control its functions. The enchanter can accomplish tasks such as securing and opening locks, or merging two similar objects so that they become one, and are now inseparable. The enchanter can also change the composition of an object’s vitner in order to change the object itself. This may involve giving the object a protective layer against moisture, reducing or enlarging an object, or altering its appearance and characteristics. The enchanter can also create an alarm out of a standard object by giving it a supplement of vitner that will be unleashed when a designated event occurs in its environment.",
+    "summary": "Analyzes, alters, protects, or creates objects.",
+    "swedishName": "Efnatingvitna",
+    "negation": "When an enchanter changes an object’s characteristics or appearance, the resulting negation means that one or more items elsewhere are also altered for a short period of time. Impermeable objects suddenly start to leak whenever the enchanter waterproofs an object, an object grows significantly whenever the enchanter reduces another and vice versa, and the appearances of one or more objects shift whenever the enchanter manipulates an object’s appearance. When an enchanter alarms an object, the negation doesn’t occur until the alarm has been activated. When the alarm does go off, the negation varies; perhaps a bell, jingle, or clock is muted, or something else that makes sounds to designate the time, such as a rooster or crickets, goes silent. When the enchanter uses the vitner to pick a lock, another lock freezes shut; if two objects are merged, two others fall apart; and so on.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 132",
     "level": 1,
     "tabletType": "vitner",

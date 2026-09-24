@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-men",
-    "description": "Mortal and dwarven arts of mastery, weapon skill, healing draughts, smithing, and legendary achievement.",
+    "description": "This tablet gathers powers associated with Power of Men, including Sight of the Dwarves, Accomplished, Mastery.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 216",
     "level": 1,
     "tabletType": "holy",

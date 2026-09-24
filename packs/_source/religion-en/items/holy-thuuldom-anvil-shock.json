@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock",
-    "description": "A sacred Thuul rune that makes a blunt weapon release an earth-shattering shock when it strikes.",
+    "description": "alaWen s fferIng The Bruid has turned to his ancestor Halawen Longlife for power, and the erstwhile hero bestows the ability to evoke the great heroes’ spears, courage, and protection against vitner.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",

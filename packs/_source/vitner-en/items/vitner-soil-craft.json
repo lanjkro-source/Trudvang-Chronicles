@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-soil-craft",
-    "description": "Earth magic that moves or shapes soil and stone, creates tremors and quagmires, and petrifies creatures.",
+    "description": "The enchanter has learned to control the vitner that flows within and around the rich ground of Trudvang. By concentrating on a single place, they can get soil and stone to sink or quake. The enchanter can also shape the land according to their wishes, making it take new shape or curl away as if paving a path. It’s also possible weavers of vitner | 123 to enchant a fistful of clay and hurl it toward an adversary, causing devastating damage when the clay grows significantly in size and increases the speed of its lethal course. With this craft, the enchanter can even go so far as to transform a living creature to stone.",
+    "summary": "Shapes earth and stone or turns them against targets.",
+    "swedishName": "Jördkraftla",
+    "negation": "When an enchanter weaves a spell, the negation is usually the opposite. A seeming exception is that when an enchanter causes a quake, the negation is also a quake that happens elsewhere, shifting land in one place causes land to shift in opposite ways somewhere else, and both result in a quake. If the enchanter creates a quagmire, a marsh already present will dry up for a moment. If they shape soil and stone in a desired way, elsewhere another creation of such material returns to its origins, such as a mound sinking back into the ground, or an excavated pathway shattering. If the enchanter hurls a vitner-woven rock against an opponent, stone in another location disappears as the vitner filches it to amplify what was thrown (which can be devastating if the stone that disappears has an important place in a building or structure).",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Player's Handbook, p. 123",
     "level": 1,
     "tabletType": "vitner",

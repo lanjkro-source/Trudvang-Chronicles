@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-knight",
-    "description": "Knightly blessings that empower armor, spears, authority, sacred weapons, and holy battle forms.",
+    "description": "Blessed Armor Blessed Spear Holy Authority Rowthguard Cuirass Majestic Revelation Rowthguard’s Battle Scourge Belo Seoth’s White Armor Belo Seoth’s Axe Guise of Gave Tablet of Voices Holy Consideration Sirowerd’s Ear Blood Brothers Sirowerd’s Tongue Kindred’s Bond Grace of Gave Sanity of Gave Favorites of Gave Divine Pact value of 12 (Psyche modifiers apply). If the Situation roll is unsuccessful, the victim must deduct -1 from every Skill roll and Situation roll for the next 1d6 hours.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 199",
     "level": 1,
     "tabletType": "holy",

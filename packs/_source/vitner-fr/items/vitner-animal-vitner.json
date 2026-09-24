@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-animal-vitner",
-    "description": "Magie de communication avec les animaux, d'invocation, de contrôle, de possession et de transport de messages.",
+    "description": "Le motif que l’enchanteur tisse à l’aide du vitner est en relation directe avec les animaux et leur esprit. Par exemple, l’enchanteur peut convoquer des esprits animaux pour effrayer ou choquer un adversaire, ou leur demander de transmettre un message à une personne éloignée. Grâce au vitner, l’enchanteur peut appeler les animaux sauvages des environs et les forcer à obéir, même contre leur gré s’ils se montrent hostiles. Par la puissance de la pensée, l’enchanteur peut communiquer avec des animaux, voire transférer sa conscience dans l’enveloppe corporelle de la créature et la contrôler comme si c’était la sienne.",
+    "summary": "Permet de communiquer avec les animaux, de les appeler et d’influencer leur comportement.",
+    "swedishName": "Besturvitna",
+    "negation": "Quand un enchanteur dirige ou manipule le vitner en direction des animaux ou de leur esprit, une négation se produit autre part dans les environs. Si l’enchanteur cherche à contrôler un animal, une autre créature (qui peut même être un animal domestique) s’agite soudain et agit de manière totalement inattendue ou fait preuve de désobéissance. Si l’enchanteur souhaite convoquer un animal, un autre s’enfuit. Si l’enchanteur peut projeter sa conscience dans un animal, une autre personne pourrait soudain se retrouver possédée par l’esprit d’un animal et se comporter pendant un certain temps comme cet animal. Quand l’enchanteur tente de transmettre un message, une autre créature des environs ne parvient pas à transmettre son propre message ou le transmet de manière erronée.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Livre des règles, p. 187",
     "level": 1,
     "tabletType": "vitner",

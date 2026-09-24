@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-vitner-of-objects",
-    "description": "Magie identifiant, protégeant, liant, altérant, créant, verrouillant ou détruisant des objets.",
+    "description": "En examinant le vitner à l’intérieur et autour d’un objet, l’enchanteur peut percevoir sa structure, mais aussi influencer et contrôler ses fonctions. L’enchanteur peut ainsi entreprendre des tâches telles que fermer et ouvrir des serrures, ou fusionner deux objets pour qu’ils n’en forment plus qu’un seul et soient inséparables. L’enchanteur peut également modifier la composition du vitner d’un objet afin de le transformer. Il peut s’agir de doter l’objet d’une couche protectrice contre la moisissure, d’augmenter ou de réduire sa taille, ou d’altérer son apparence ou ses caractéristiques. L’enchanteur peut également créer une alarme à partir d’un objet standard en lui insufflant un supplément de vitner qui sera libéré lorsqu’un événement particulier se produira dans son environnement.",
+    "summary": "Permet d’analyser, modifier, protéger ou fabriquer des objets.",
+    "swedishName": "Efnatingvitna",
+    "negation": "objets Quand un enchanteur modifie l’apparence ou les caractéristiques d’un objet, la négation qui s’ensuit a pour effet d’altérer temporairement un ou plusieurs autres objets situés ailleurs. Les objets imperméables se mettent soudain à fuir chaque fois que l’enchanteur rend un objet résistant à l’eau, un objet voit sa taille augmenter considérablement lorsque l’enchanteur en rétrécit un autre et vice versa, et l’apparence d’un ou plusieurs objets change chaque fois que l’enchanteur manipule l’aspect d’un objet. Quand un enchanteur dote un objet d’une alarme, la négation ne se produit qu’à l’activation de l’alarme. Quand l’alarme se déclenche, la négation peut varier : peut-être qu’une cloche ou une horloge devient muette, ou bien d’autres choses ou animaux émettant un bruit indiquant l’heure, comme les coqs ou les grillons, se taisent soudain. Quand l’enchanteur utilise le vitner pour crocheter une serrure, une autre serrure se verrouille. Si deux objets sont fusionnés, deux autres s’effondrent, etc.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 200",
     "level": 1,
     "tabletType": "vitner",

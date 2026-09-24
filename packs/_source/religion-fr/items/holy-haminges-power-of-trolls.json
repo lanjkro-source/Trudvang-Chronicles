@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-trolls",
-    "description": "Pouvoirs des trolls de maladie, illusion, persuasion, intrépidité, ruse et enchantement de la montagne.",
+    "description": "Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 274",
     "level": 1,
     "tabletType": "holy",

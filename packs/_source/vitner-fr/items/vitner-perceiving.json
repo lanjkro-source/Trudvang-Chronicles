@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-perceiving",
-    "description": "Divinations pour trouver lieux, êtres, objets, morts-vivants, routes et terrain environnant.",
+    "description": "L’enchanteur a appris à se servir du vitner pour chercher et détecter les objets, les êtres vivants et même les morts-vivants. Il peut aussi établir un lien mental avec son environnement immédiat. À l’aide du vitner, l’enchanteur peut se faire une image exacte de tout ce qui existe autour de lui. Il sait précisément comment retrouver son chemin jusqu’à un endroit qu’il a déjà visité et peut suivre ses propres traces aussi aisément que des chandelles dans le noir.",
+    "summary": "Permet de repérer des lieux, des êtres ou des objets et d’en révéler les traces.",
+    "swedishName": "Alldskonja",
+    "negation": "Quand l’enchanteur utilise le vitner pour déceler un objet, une créature vivante ou un mort-vivant, quelque part ailleurs quelque chose est perdu. Les endroits dans lesquels une personne s’est déjà rendue lui paraissent étrangers ou inconnus. Les directions changent et l’est devient l’ouest, et les repères géographiques familiers comme cette colline particulière après le prochain tournant n’est plus rien qu’un trou dans le sol. Certains s’avèrent incapables de rentrer chez eux, ou même de revenir sur leurs pas. Des informations sont oubliées, ou des objets déplacés.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": 0,
+      "morkvitner": 1
+    },
     "source": "Livre des règles, p. 173",
     "level": 1,
     "tabletType": "vitner",

@@ -474,6 +474,42 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Tablet.vitner` | Vitner Tablet | Tablette de vitner |
 | `TRUDVANG.Tablet.holy` | Holy Tablet | Tablette sacrée |
+| `TRUDVANG.Tablet.ThuulRune` | Thuul rune | Rune thuul |
+| `TRUDVANG.Tablet.CatalogEntry` | Catalogue entry — learned level shown on the character | Entrée du catalogue — niveau acquis sur le personnage |
+| `TRUDVANG.Tablet.SwedishName` | Swedish name | Nom suédois |
+| `TRUDVANG.Tablet.Religion` | Religion | Religion |
+| `TRUDVANG.Tablet.Affinity` | Vitner affinity | Affinité avec le vitner |
+| `TRUDVANG.Tablet.Negation` | Negation | Négation |
+| `TRUDVANG.Tablet.ReadNegation` | Read the negation | Lire la négation |
+| `TRUDVANG.Tablet.Powers` | Spells and powers | Sorts et pouvoirs |
+| `TRUDVANG.Tablet.LevelGroup` | Level {level} | Niveau {level} |
+| `TRUDVANG.Tablet.Accessible` | available | accessible |
+| `TRUDVANG.Tablet.Locked` | not learned | non acquis |
+
+## `TRUDVANG.Tablet.AffinityShort`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Tablet.AffinityShort.hvitavitner` | Hwit | Hwit |
+| `TRUDVANG.Tablet.AffinityShort.vaagrivitner` | Vaagri | Vaagri |
+| `TRUDVANG.Tablet.AffinityShort.morkvitner` | Mork | Mork |
+
+## `TRUDVANG.Tablet.AffinityName`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Tablet.AffinityName.hvitavitner` | Hvitavitner | Hvitavitner |
+| `TRUDVANG.Tablet.AffinityName.vaagrivitner` | Vaagrivitner | Vaagrivitner |
+| `TRUDVANG.Tablet.AffinityName.morkvitner` | Morkvitner | Morkvitner |
+
+## `TRUDVANG.Tablet.AffinityEffect`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Tablet.AffinityEffect.favorable` | Each power-level cost decreases by 1, to a minimum of 1. | Le coût de chaque niveau de puissance baisse de 1, sans descendre sous 1. |
+| `TRUDVANG.Tablet.AffinityEffect.neutral` | No change to power-level costs. | Aucun changement au coût des niveaux de puissance. |
+| `TRUDVANG.Tablet.AffinityEffect.unfavorable` | Each power-level cost increases by 1. | Le coût de chaque niveau de puissance augmente de 1. |
+| `TRUDVANG.Tablet.AffinityEffect.doubled` | Power-level costs are doubled. | Le coût des niveaux de puissance est doublé. |
 
 ## `TRUDVANG.AbilityKind`
 
@@ -876,6 +912,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.ReligionExclusive` | Only one religious path can grant divine powers. | Une seule voie religieuse peut accorder des pouvoirs divins. |
 | `TRUDVANG.Warning.ReligionIncompatible` | This religious path is not compatible with the character's race. | Cette voie religieuse n'est pas compatible avec la race du personnage. |
 | `TRUDVANG.Warning.FatalTableMissing` | The required fatal-effects table is not installed. | La table de magie funeste requise n'est pas installée. |
+| `TRUDVANG.Warning.TabletPowerMissing` | This spell or power cannot be found in the compendiums. | Ce sort ou pouvoir est introuvable dans les compendiums. |
 | `TRUDVANG.Warning.UnknownTablet` | This item is not a tablet from the system catalogue. | Cet objet n'est pas une tablette du catalogue du système. |
 | `TRUDVANG.Warning.TabletAlreadyKnown` | This tablet is already known. | Cette tablette est déjà connue. |
 | `TRUDVANG.Warning.TabletSkillRequirement` | Faith or Vitner Craft must have a Skill Value of at least 4. | Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4. |
@@ -2731,348 +2768,434 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-animal-vitner.Name` | Animal Vitner | Vitner animal |
+| `TRUDVANG.Content.Tablet.vitner-animal-vitner.Description` | The pattern that the mage weaves the vitner in is specifically connected with animals and their spirits. For example, the mage can summon animal spirits to frighten or shock someone, or use them to send messages to people far away. With the help of vitner, the mage can call upon wildlife nearby and compel them to obey, even against their will if they are not friendly. With the power of the mind, the mage can communicate with animals or even shift his own consciousness into the creature’s body and control it as if it were his own. | Le motif que l’enchanteur tisse à l’aide du vitner est en relation directe avec les animaux et leur esprit. Par exemple, l’enchanteur peut convoquer des esprits animaux pour effrayer ou choquer un adversaire, ou leur demander de transmettre un message à une personne éloignée. Grâce au vitner, l’enchanteur peut appeler les animaux sauvages des environs et les forcer à obéir, même contre leur gré s’ils se montrent hostiles. Par la puissance de la pensée, l’enchanteur peut communiquer avec des animaux, voire transférer sa conscience dans l’enveloppe corporelle de la créature et la contrôler comme si c’était la sienne. |
+| `TRUDVANG.Content.Tablet.vitner-animal-vitner.SwedishName` | Besturvitna | Besturvitna |
+| `TRUDVANG.Content.Tablet.vitner-animal-vitner.Negation` | When a mage directs and manipulates the vitner toward animals or their spirits, a negation happens somewhere else in the vicinity. If the mage wants to control an animal, another creature elsewhere (possibly even a domesticated one) suddenly becomes unruly and acts out in a manner completely unexpected or disobedient. If the mage wants to summon an animal, another runs away; if the mage wants to shift his mind into an animal, another person might suddenly be possessed by the mind of an animal and act as if she were an animal for a while. When the mage tries to send a message, another creature somewhere fails to deliver its own message or delivers the wrong one. | Quand un enchanteur dirige ou manipule le vitner en direction des animaux ou de leur esprit, une négation se produit autre part dans les environs. Si l’enchanteur cherche à contrôler un animal, une autre créature (qui peut même être un animal domestique) s’agite soudain et agit de manière totalement inattendue ou fait preuve de désobéissance. Si l’enchanteur souhaite convoquer un animal, un autre s’enfuit. Si l’enchanteur peut projeter sa conscience dans un animal, une autre personne pourrait soudain se retrouver possédée par l’esprit d’un animal et se comporter pendant un certain temps comme cet animal. Quand l’enchanteur tente de transmettre un message, une autre créature des environs ne parvient pas à transmettre son propre message ou le transmet de manière erronée. |
 
 ## `TRUDVANG.Content.Tablet.vitner-body-vitner`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-body-vitner.Name` | Body Vitner | Vitner corporel |
+| `TRUDVANG.Content.Tablet.vitner-body-vitner.Description` | Spells in this tablet change the vitner that flows in and around a creature’s physical body. Through weavers of vitner small modifications to the vitner flow, the enchanter can transform a creature completely, not only in physical characteristics and appearance, but also in senses like hearing, sight, and smell. Through manipulation of the vitner, the enchanter can also hinder or stop a creature in different ways. This may involve simple tricks such as causing the creature to stumble or locking up its muscles. But it can also be much more complex, taking the form of a seemingly invisible prison that the victim is unable to escape. | Les sorts de cette tablette modifient le vitner qui s’écoule à l’intérieur et autour du corps physique d’une créature. Par de petites altérations du flux du vitner, l’enchanteur peut complètement transformer une créature. Il peut non seulement affecter ses caractéristiques physiques et son apparence, mais aussi ses sens comme l’ouïe, la vision et l’odorat. En manipulant le vitner, l’enchanteur peut également entraver ou immobiliser une créature de diverses façons. Il peut s’agir de simples tours permettant de faire trébucher la créature ou de froisser ses muscles, mais cela peut aussi prendre des formes plus complexes, comme une prison invisible dont la victime est incapable de s’échapper. |
+| `TRUDVANG.Content.Tablet.vitner-body-vitner.SwedishName` | Skopjatenvitna | Skopjatenvitna |
+| `TRUDVANG.Content.Tablet.vitner-body-vitner.Negation` | The negations that occur when an enchanter alters characteristics are always in contrast to the one evoked. If the enchanter decides to make a creature stronger, one or more creatures become weaker, and vice versa. When an enchanter tries to get a creature to stumble, the negation aids another creature somewhere else that normally would have fallen. When the enchanter chooses to immobilize a target, someone else immediately receives mobility beyond what they’ve ever experienced, legs that were once limp or seized up suddenly move again, the perpetually clumsy suddenly becomes graceful, and so on. When an enchanter imprisons a target, somewhere else someone is set free (literally or metaphorically), suddenly the gate opens to a prison, someone who has fallen victim to a dangerous spell sees an opportunity to get out, or someone who is trapped in a cave sees stones fall from a wall, opening a passage to freedom. | Les négations qui se produisent quand un enchanteur altère les caractéristiques d’une cible sont toujours à l’opposé de l’effet évoqué. Si l’enchanteur décide de rendre une créature plus forte, une ou plusieurs autres créatures deviennent plus faibles, et vice versa. Quand un enchanteur tente de faire trébucher une créature, la négation aide une autre créature ailleurs qui aurait normalement dû tomber. Quand l’enchanteur choisit d’immobiliser une cible, une autre créature devient soudain beaucoup plus mobile qu’elle l’a jamais été, une créature boiteuse ou paralysée recouvre soudain sa faculté de mouvement, un personnage connu pour sa maladresse devient gracieux, et ainsi de suite. Quand un enchanteur emprisonne une cible, quelque part ailleurs une autre personne est libérée (littéralement ou métaphoriquement) : la porte d’une prison s’ouvre soudain, la victime d’un sort dangereux a l’occasion de s’en débarrasser, ou une personne piégée dans une grotte voit des pierres tomber d’un mur et ouvrir un passage vers la liberté. |
 
 ## `TRUDVANG.Content.Tablet.vitner-delusion-vitner`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-delusion-vitner.Name` | Delusion Vitner | Vitner illusoire |
+| `TRUDVANG.Content.Tablet.vitner-delusion-vitner.Description` | The enchanter has learned to use the vitner to manipulate the environment and create illusions and images that appear to be convincingly true. The enchanter has full control over what they want the vitner to illustrate, as well as whether or not it should move. In addition to creating the illusions of small creatures and objects, the enchanter can also generate vast l andscape illusions where whole cities, forests, and mountains are swept into reality (at least, as long as observers continue to believe what they see). The enchanter has also learned to manipulate the air in ways that mimic sound and vibrations of motion. By molding the vitner, the enchanter can raise or lower the volume of the s urroundings, producing deafening storms or subtle pitches that are so high that a human cannot hear them. What’s more, the enchanter has learned to use this mimicry to remain undetected by hiding tracks, producing camouflage, or even removing themselves from sight altogether. | L’enchanteur a appris à utiliser le vitner pour manipuler son environnement et créer des illusions et des images parfaitement crédibles. L’enchanteur a le contrôle complet de l’apparence des illusions qu’il crée, et peut même décider si elles seront animées ou non. L’enchanteur peut créer l’illusion d’objets et de créatures de petite taille, mais aussi des illusions paysagères donnant vie à des cités, montagnes et autres forêts (du moins tant que les témoins de l’illusion continuent de croire à ce qu’ils voient). L’enchanteur a également appris à manipuler l’air afin d’imiter les sons et les vibrations. En façonnant le vitner, l’enchanteur peut augmenter ou réduire le volume sonore autour de lui, ce qui lui permet de produire des roulements de tonnerre assourdissant ou de subtils sifflements si aigus qu’ils échappent aux oreilles humaines. Qui plus est, l’enchanteur a appris à utiliser cette faculté d’imitation pour évoluer à l’insu de tous en dissimulant ses traces, en générant des camouflages, voire même en se soustrayant directement à la vue d’autrui. |
+| `TRUDVANG.Content.Tablet.vitner-delusion-vitner.SwedishName` | Skenvitna | Skenvitna |
+| `TRUDVANG.Content.Tablet.vitner-delusion-vitner.Negation` | When an enchanter creates an illusion, the negation need not always be negative. It may mean that another illusion suddenly shows up in a completely d ifferent place, or that some creature, object, or l andscape suddenly vanishes from sight or flickers for a little while. When the enchanter manipulates sounds of various kinds, however, the negation will always be the opposite. If they reduce the volume in one place, it will be increased in another; if they create a thunderous burst of sound, a s imilarly great noise elsewhere will be entirely muted (such as l ightning or crashing waves that happen without a sound). If the enchanter creates the sound of someone walking across a gravel path, somewhere else that precise sound disappears. If they create a knock on a door, nothing is heard when another person somewhere else does precisely that. And if the enchanter removes a particular sound in one place, that exact sound will inexplicably echo somewhere else. | Quand un enchanteur crée une illusion, la négation correspondante n’est pas forcément néfaste. Elle peut se traduire par une autre illusion apparaissant soudain à un tout autre endroit, par exemple, ou bien par une créature ou un objet qui devient invisible ou dont l’aspect se trouble pendant quelques instants. Cela dit, quand l’enchanteur manipule les sons sous leurs différentes formes, la négation prendra toujours une forme opposée. S’il diminue le volume sonore à un endroit, la négation l’augmentera ailleurs. S’il crée un coup de tonnerre, un autre bruit d’intensité équivalente sera complètement étouffé à un autre endroit (comme un éclair ou des vagues déferlantes qui ne font aucun bruit). Si l’enchanteur crée le bruit de quelqu’un marchant sur un sentier de graviers, le même son disparaîtra quelque part ailleurs. S’il génère le son d’une personne frappant à la porte, une autre personne faisant la même chose ailleurs ne produira pas le moindre bruit. Et si l’enchanteur supprime un son particulier à un endroit, ce même son se répercutera inexplicablement ailleurs. |
 
 ## `TRUDVANG.Content.Tablet.vitner-dimvitner`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-dimvitner.Name` | Dimvitner | Dimvitner |
+| `TRUDVANG.Content.Tablet.vitner-dimvitner.Description` | The enchanter has learned to control death’s bond between the realms of Trudvang and Dimhall, the realm of death. By manipulating the power of this invisible bond, they can force souls to Trudvang and transform them into undead beings. The enchanter can steal vitn and use the bond of death to speak with dead souls in Dimhall, drive undead beings back to Dimhall, and take control of an undead and dictate what it should do. By adding vitner to the bond of death, they can send waves of powerful energy toward the chosen victim. This energy of death then takes the form of dark, humid streaks of fog that the weaver can use in various ways to hurt their victims. | L’enchanteur a appris à contrôler le lien funeste entre les royaumes de Trudvang et Dimhall, le royaume des morts. En manipulant la puissance de ce lien invisible, il peut forcer des âmes à revenir en Trudvang et les transformer en êtres morts-vivants. L’enchanteur peut voler le vitner et la force vitale des vivants et utiliser le lien funeste pour parler avec les âmes mortes qui séjournent à Dimhall, pour y exiler les êtres morts-vivants, ou pour prendre le contrôle d’un mort-vivant et lui dicter sa conduite. En insufflant du vitner dans le lien funeste, l’enchanteur peut projeter de puissantes vagues d’énergie vers la cible de son choix. Cette énergie funeste prend alors la forme de bancs de brume sombre et humide que le tisseur peut utiliser de diverses manières pour blesser ses victimes. |
+| `TRUDVANG.Content.Tablet.vitner-dimvitner.SwedishName` | Sálhelevitna | Sálhelevitna |
+| `TRUDVANG.Content.Tablet.vitner-dimvitner.Negation` | The opposite of dimvitner is life and the creation of it, and the negations of the dimvitner therefore revolve around life force. Whenever an enchanter conjures something with this Vitner Tablet, the negation is that life force is bestowed somewhere else, like a birth succeeding against all odds, an invalid miraculously becoming healthy, an injured person being healed, and many other beneficial effects. But when an enchanter chooses to conjure undead beings, the negation becomes er and life force from the significantly worse. Since the mage is more or less creating life, the negation robs weavers of vitner something else of its life. It could be animals that suddenly die, children that are stillborn, creatures that suddenly fall ill, or other tragic happenings. When an enchanter tries to contact a spirit in the realm of the dead, the negation is that one or more spirits can contact a living being in Trudvang. If the mage wants to drive an undead being back to the realms of death, one or more undead souls can slip out into Trudvang. And if the mage wants to control an undead being, the negation is that one or more living beings are temporarily controlled by dead souls. | L’opposé du Dimvitner est la vie et sa création ; ses négations reposent donc sur la force vitale. Chaque fois qu’un enchanteur conjure quelque chose par le biais de cette Tablette de vitner, la négation génère de la force vitale quelque part ailleurs, comme une naissance réussie contre toute attente, un invalide recouvrant miraculeusement l’usage de ses membres, une personne blessée recouvrant la santé, et bien d’autres effets bénéfiques. Mais quand un enchanteur choisit de conjurer des êtres morts-vivants, la négation prend une forme bien plus sinistre. Comme l’enchanteur crée plus ou moins de la vie, la négation arrache sa force vitale à un autre sujet. Cela peut alors prendre la forme d’animaux mourant brutalement, d’enfants mort-nés, de créatures tombant soudain malades, ou quelque autre événement tragique. Quand un enchanteur tente de contacter un esprit dans le royaume des morts, la négation permet à un ou plusieurs esprits de contacter un être vivant en Trudvang. Si l’enchanteur désire repousser un être mortvivant dans le royaume des morts, une ou plusieurs âmes mortes-vivantes peuvent s’en échapper pour gagner Trudvang. Et si l’enchanteur désire prendre le contrôle d’un être mort-vivant, la négation permet à des âmes mortes de prendre momentanément le contrôle d’êtres vivants. |
 
 ## `TRUDVANG.Content.Tablet.vitner-flame-craft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-flame-craft.Name` | Flame Craft | Maîtrise des flammes |
+| `TRUDVANG.Content.Tablet.vitner-flame-craft.Description` | The vitner the mage weaves increases, decreases, or stabilizes the flow of vitner in surrounding environments and objects. By increasing the flow in an explosive manner, the mage can heat objects to a point where they suddenly catch on fire. If the mage is a little more careful with the supply, they can gradually increase the heat in a place to a comfortable level of generous warmth and joviality. Or by cutting off the supply of vitner, the mage can do the opposite and suffocate fires or suddenly drop surrounding temperatures. They can also grant protection from fire and heat by making the vitner stand completely still in a protective layer that the turbulent and hot energy of flame is unable to affect. | Le vitner que tisse L’enchanteur augmente, réduit ou stabilise le flux du vitner dans son environnement et les objets qui l’entourent. En augmentant le flux de manière explosive, l’enchanteur peut réchauffer un objet au point de provoquer sa combustion soudaine. Si l’enchanteur se montre un peu plus précautionneux, il peut augmenter régulièrement la température d’un lieu jusqu’à atteindre une chaleur agréable et réconfortante. À l’inverse, en interrompant le flux du vitner, l’enchanteur peut étouffer les flammes ou faire chuter brutalement les températures. Il peut également conférer à un sujet une protection contre la chaleur et le feu, en immobilisant complètement le vitner en une couche protectrice que l’énergie brûlante et turbulente de la flamme est incapable d’affecter. |
+| `TRUDVANG.Content.Tablet.vitner-flame-craft.SwedishName` | Loganojd | Loganojd |
+| `TRUDVANG.Content.Tablet.vitner-flame-craft.Negation` | When a mage creates fire or decides to heat an area, it causes a significant change in the intensity of the vitner. This added vitner is taken from somewhere else in the greater area where the temperature change occurs, which suddenly turns very cold. Frost may appear on bushes and trees, but also on creatures that weavers of vitner \| 109 unexpectedly sense their t emperature dropping and their s urroundings beginning to chill. Water freezes to ice and hot food instantly turns cold. Or if the mage chooses to remove the heat, there must be a place nearby for it to go. If a mage wants to control fire, the opposite occurs e lsewhere: fire that burns calmly in a hearth suddenly leaps from its confines and spreads with the potential to cause great damage. Candles and torches burn with such intensity that something in their vicinity might catch on fire. | Quand un enchanteur crée des flammes ou réchauffe une zone, il provoque un important changement dans l’intensité du vitner. Cet afflux de vitner provient d’un autre endroit des environs où la température chute brutalement en conséquence. Du givre peut apparaître sur les buissons et les arbres, mais également sur les créatures, qui sentent leur température corporelle et celle de leur environnement chuter de manière inexplicable. L’eau se change en glace et la nourriture chaude refroidit instantanément. Ou bien, si l’enchanteur choisit de réduire la chaleur, cette dernière doit avoir un endroit où aller. Si un enchanteur désire contrôler le feu, l’inverse se produit ailleurs : un feu brûlant calmement dans une cheminée bondit soudainement hors de l’âtre et se répand au risque de provoquer de sérieux dégâts. Les chandelles et torches brûlent si intensément qu’elles pourraient mettre le feu aux objets. |
 
 ## `TRUDVANG.Content.Tablet.vitner-perceiving`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-perceiving.Name` | Perceiving | Perception |
+| `TRUDVANG.Content.Tablet.vitner-perceiving.Description` | The enchanter has learned how to search out and detect objects, living creatures, and even undead with the help of vitner. The enchanter can also establish a mental bond with the immediate surroundings. With the help of vitner, the enchanter can gather an accurate picture of anything that exists in their surroundings. They know precisely how to return to a place they have previously been and can follow their own tracks as if they shone like candles in the dark. | L’enchanteur a appris à se servir du vitner pour chercher et détecter les objets, les êtres vivants et même les morts-vivants. Il peut aussi établir un lien mental avec son environnement immédiat. À l’aide du vitner, l’enchanteur peut se faire une image exacte de tout ce qui existe autour de lui. Il sait précisément comment retrouver son chemin jusqu’à un endroit qu’il a déjà visité et peut suivre ses propres traces aussi aisément que des chandelles dans le noir. |
+| `TRUDVANG.Content.Tablet.vitner-perceiving.SwedishName` | Alldskonja | Alldskonja |
+| `TRUDVANG.Content.Tablet.vitner-perceiving.Negation` | When the enchanter uses vitner to seek out an object, living creature, or undead, somewhere else something will be lost. Places that a person has been to before suddenly seem foreign or unknown to them. Directions change as east becomes west, and familiar landmarks such as the distinct hill beyond the next turn is now nothing but a hole in the ground. Finding the way home becomes near impossible for some, even by retracing their steps. Information might be forgotten, or physical objects might shift or be misplaced. | Quand l’enchanteur utilise le vitner pour déceler un objet, une créature vivante ou un mort-vivant, quelque part ailleurs quelque chose est perdu. Les endroits dans lesquels une personne s’est déjà rendue lui paraissent étrangers ou inconnus. Les directions changent et l’est devient l’ouest, et les repères géographiques familiers comme cette colline particulière après le prochain tournant n’est plus rien qu’un trou dans le sol. Certains s’avèrent incapables de rentrer chez eux, ou même de revenir sur leurs pas. Des informations sont oubliées, ou des objets déplacés. |
 
 ## `TRUDVANG.Content.Tablet.vitner-power-of-thought`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-power-of-thought.Name` | Power of Thought | Pouvoir de la pensée |
+| `TRUDVANG.Content.Tablet.vitner-power-of-thought.Description` | The enchanter has learned to m anipulate the vitner within creatures’ minds. By directing the vitner, the enchanter can cause a victim to suddenly be inspired by something strange and then act upon it as if it were their own brilliant idea. By subtly using the force of this vitner, the enchanter can take over a creature’s ability to think for itself, and designate from afar what it should do. The enchanter can even transfer their own consciousness into the weavers of vitner mind of the creature and act as if it were their own body. Since the vitner being manipulated dwells in the center of creatures’ minds, the mage is able to cause the victim to suddenly forget something significant or remember something long lost. They can also get the creature to see things that are not there or experience all manner of different emotions. These could be uplifting emotions such as awe or joy, but also sharper ones such as fear, doubt, or courage. The enchanter can also create a mental bond with selected creature(s) that the two can use to communicate with each other via the power of thought. By enchanting oneself, a mage can talk to animals and creatures, or decipher text written in a language that the enchanter normally would not understand. | Cette tablette rassemble des pouvoirs liés à Pouvoir de la pensée, dont Compréhension des écrits, Compréhension orale, Courage. |
+| `TRUDVANG.Content.Tablet.vitner-power-of-thought.SwedishName` | Húgkraftla | Húgkraftla |
+| `TRUDVANG.Content.Tablet.vitner-power-of-thought.Negation` | When an enchanter tries to control a creature’s mind or consciousness in some way, the negation is often a bit subtler than other negations. When the enchanter tries to plant an idea in a victim, the negation may be that elsewhere someone experiences an overwhelming sense of déjà vu, causing distraction for a moment. If the enchanter tries to control or take over a creature, the negation means that the creature’s consciousness must go elsewhere, often trading places with something/someone else. However, this usually occurs for only a brief moment, and once a creature returns to its own body, it may be rather confused about what just happened. In very rare cases, minds that have changed places have remained that way permanently. Whenever an enchanter affects the consciousness of another being, the negation always manifests as the opposite for one or more other creatures. If the enchanter causes amnesia, someone else suddenly remembers something long forgotten, and vice versa. If the enchanter evokes a certain emotion within a creature, one or more other creatures suddenly experience the overwhelming emotion of the opposite type. If the enchanter creates a mental bond with another, other creatures likely experience mental voices and personalities outside of their own, and visits in their sleep as others occupy their dreams. If the enchanter uses vitner to decipher something, the negation means that elsewhere in Trudvang someone is rendered incapable of understanding whatever they hear or read for a while, even though they normally speak the language or would be able to read the text that now baffles them. | Quand un enchanteur tente de contrôler l’esprit ou la conscience d’une autre créature, la négation générée est souvent plus subtile que les autres négations. Lorsqu’un enchanteur tente d’implanter une idée dans l’esprit d’une victime, la négation peut être que, ailleurs, une personne ressent une impression envahissante de déjà vu, ce qui la distrait un moment. Si l’enchanteur tente de prendre le contrôle d’une créature, la négation implique que la conscience de la victime doit aller ailleurs, en échangeant sa place avec quelque chose ou quelqu’un. Cependant, cela ne dure le plus souvent qu’un bref instant, et une fois qu’une créature retrouve son enveloppe corporelle, elle est assez perturbée par ce qui s’est passé. Il est très rare que deux esprits échangent leurs places de façon permanente. Chaque fois qu’un enchanteur affecte la conscience d’une autre créature, la négation prend toujours la forme d’un effet inverse chez une ou plusieurs créatures. Si l’enchanteur provoque une amnésie, quelqu’un d’autre recouvre soudain la mémoire, et vice versa. Si l’enchanteur évoque une émotion particulière chez une créature, une ou plusieurs créatures se retrouvent soudain submergées par l’émotion inverse. Si l’enchanteur crée un lien mental avec une autre personne, d’autres créatures font l’expérience de voix désincarnées et de personnalités autres que la leur, mais aussi de visites dans leur sommeil tandis que d’autres personnes envahissent leurs rêves. Si l’enchanteur utilise le vitner pour déchiffrer quelque chose, la négation signifie qu’ailleurs sur Trudvang, quelqu’un se retrouve pendant un moment incapable de comprendre ce qu’il lit, même s’il connaît normalement cette langue et devrait être en mesure de lire le texte dont le sens lui échappe à présent. |
 
 ## `TRUDVANG.Content.Tablet.vitner-power-of-vision`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-power-of-vision.Name` | Power of Vision | Pouvoir de la vision |
+| `TRUDVANG.Content.Tablet.vitner-power-of-vision.Description` | The enchanter has learned to master the astral consciousness possessed by every living being. Objects also have a form of astral consciousness, but it is considerably less advanced than that of a living being. By slipping into a trance during the spell’s weaving time, the enchanter can perform various spells related to the unseen astral plane. Methods of visiting the astral plane can be quite different, as everyone has different ways of focusing. Some enchanters stare into flame or a bed of hot coals, others use a large trunk, and a few more use the sun or moon. Players can decide how their enchanters perform the ritual. Since everything physical is mirrored on the astral plane, the enchanted is able to see how things really look. The mage can see the vitner’s flow that surrounds everyone, follow the tracks of a creature as easily as following light in the darkness, see far into the distance, and know things for what they really are. | L’enchanteur a appris à maîtriser la conscience astrale que possèdent tous les êtres vivants. Les objets aussi possèdent une forme de conscience astrale, mais elle est considérablement moins développée que celle d’un être vivant. En entrant en transe pendant le temps de tissage, l’enchanteur peut exécuter différents sorts liés au plan astral invisible. Les méthodes permettant de visiter le plan astral peuvent varier considérablement, étant donné que chacun possède sa propre façon de se concentrer. Certains enchanteurs fixent leur regard sur une flamme ou un lit de charbons ardents, d’autres utilisent un grand tronc, d’autres encore se focalisent sur le soleil ou la lune. Étant donné que tout ce qui est physique se reflète dans le plan astral, la personne enchantée est en mesure de voir la véritable apparence des choses. L’enchanteur peut voir le flux du vitner qui entoure toute chose, suivre les traces d’une créature aussi aisément que des chandelles dans l’obscurité, voir à une distance considérable, et connaître la véritable nature des choses. |
+| `TRUDVANG.Content.Tablet.vitner-power-of-vision.SwedishName` | Skönjakraftla | Skönjakraftla |
+| `TRUDVANG.Content.Tablet.vitner-power-of-vision.Negation` | Whenever the enchanter weaves an astral projection of any kind, the s urrounding environment might be exposed to unusual images from the beyond. Blurred images of strange objects or otherworldly creatures become visible in the real world for a moment or two. For many, this can be a terrifying experience. The game master determines whether an image becomes visible or not, what bizarre thing is shown, where it manifests, and the resulting consequences. The negation is rather straightforward since when vitner causes one person to see things more clearly, other things fade or blur. Tracks disappear and people’s eyesight grows blurry and weak, and what normally would be obvious suddenly becomes very difficult to note. | Chaque fois que l’enchanteur tisse une quelconque projection astrale, l’environnement immédiat peut être le théâtre d’images de l’au-delà. Des images brouillées d’objets étranges ou de créatures surnaturelles deviennent visibles pendant quelques instants dans le monde réel. Pour bien des gens, cela peut être une expérience terrifiante. C’est au maître de jeu de déterminer si une image se manifeste ou non, les choses bizarres qu’elle peut dévoiler, et les conséquences que cela peut avoir. La négation est assez directe : quand le vitner permet à une personne de voir les choses plus clairement, d’autres choses deviennent floues ou se brouillent. Les traces disparaissent et la vision des gens se trouble, et ce qui devrait normalement être évident devient difficile à remarquer. |
 
 ## `TRUDVANG.Content.Tablet.vitner-soil-craft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-soil-craft.Name` | Soil Craft | Maîtrise de la terre |
+| `TRUDVANG.Content.Tablet.vitner-soil-craft.Description` | The enchanter has learned to control the vitner that flows within and around the rich ground of Trudvang. By concentrating on a single place, they can get soil and stone to sink or quake. The enchanter can also shape the land according to their wishes, making it take new shape or curl away as if paving a path. It’s also possible weavers of vitner \| 123 to enchant a fistful of clay and hurl it toward an adversary, causing devastating damage when the clay grows significantly in size and increases the speed of its lethal course. With this craft, the enchanter can even go so far as to transform a living creature to stone. | Cette tablette rassemble des pouvoirs liés à Maîtrise de la terre, dont Façonnage de la terre, Jet de pierre, Bourbier. |
+| `TRUDVANG.Content.Tablet.vitner-soil-craft.SwedishName` | Jördkraftla | Jördkraftla |
+| `TRUDVANG.Content.Tablet.vitner-soil-craft.Negation` | When an enchanter weaves a spell, the negation is usually the opposite. A seeming exception is that when an enchanter causes a quake, the negation is also a quake that happens elsewhere, shifting land in one place causes land to shift in opposite ways somewhere else, and both result in a quake. If the enchanter creates a quagmire, a marsh already present will dry up for a moment. If they shape soil and stone in a desired way, elsewhere another creation of such material returns to its origins, such as a mound sinking back into the ground, or an excavated pathway shattering. If the enchanter hurls a vitner-woven rock against an opponent, stone in another location disappears as the vitner filches it to amplify what was thrown (which can be devastating if the stone that disappears has an important place in a building or structure). | Quand un enchanteur tisse un sort, la négation qui en résulte est généralement à l’opposé du sort d’origine. Il existe apparemment une exception : quand un enchanteur provoque un séisme, la négation prend également la forme d’un séisme quelque part ailleurs, car déplacer la terre à un endroit amène la terre à se déplacer de façon opposée à un autre endroit, ce qui provoque dans les deux cas un séisme. Si l’enchanteur crée un bourbier, un marais existant s’assèchera pendant un moment. S’il façonne la terre et la pierre d’une certaine façon, une autre création de la même matière reprendra sa forme originelle : un monticule s’affaissera, ou un chemin creusé dans la pierre s’effondrera par exemple. Si l’enchanteur lance une pierre entrelacée de vitner sur un adversaire, une certaine quantité de pierre disparaîtra à un autre endroit, dérobée par le vitner pour faire grossir le projectile (ce qui peut avoir des conséquences dévastatrices si la pierre qui disparaît occupe une place importante dans un bâtiment ou une structure). |
 
 ## `TRUDVANG.Content.Tablet.vitner-vitner-craft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-vitner-craft.Name` | Vitner Craft | Art du vitner |
+| `TRUDVANG.Content.Tablet.vitner-vitner-craft.Description` | The enchanter has learned to use the purest form of vitner, which grants the power to influence how the vitner itself flows and shapes its surroundings. The enchanter has learned to manipulate the vitner in two ways: by injecting it and by diffusing it. Vitner Craft makes it possible to enchant objects and beings, create a link between characters to channel vitner through, create a pocket of vitner where physical objects can be stored, or create a physical sigil on an object that binds another spell to be triggered in various ways. The enchanter has also learned to control the vitner in ways that dispel existing spells or increase an enchanted character’s ability to resist them. They can also trace the particular vitner of spells and negations back to the mage that has woven them. The enchanter even learns to erect a barrier against vitner so it is difficult if not impossible to use it in a designated area. | L’enchanteur a appris à utiliser la forme de vitner la plus pure, ce qui lui confère le pouvoir d’influencer le flux même du vitner et la façon dont il façonne tout ce qui l’entoure. L’enchanteur a appris à manipuler le vitner de deux façons : en l’injectant et en le dispersant. L’Art du vitner permet d’enchanter des objets et des êtres vivants, de créer un lien entre des personnages afin d’y faire circuler du vitner, de créer une poche de vitner capable de stocker des objets physiques, ou encore de créer un sceau physique sur un objet qui y lie un autre sort qui pourra être déclenché de diverses façons. L’enchanteur a également appris à contrôler le vitner de façon à dissiper d’autres sorts ou à améliorer la faculté d’un personnage enchanté à y résister. Il peut aussi se servir du vitner propre aux sorts ou négations afin de remonter jusqu’aux enchanteurs qui les ont tissés. Il apprend même à ériger une barrière contre le vitner, de sorte qu’il devient difficile, voire impossible de l’utiliser dans une certaine zone. |
+| `TRUDVANG.Content.Tablet.vitner-vitner-craft.SwedishName` | Vitnakraftla | Vitnakraftla |
+| `TRUDVANG.Content.Tablet.vitner-vitner-craft.Negation` | The negations that occur when weaving a spell remain the direct opposite of what the spell invokes. If one being receives a beneficial enchantment, one or several other beings experience bad luck and horror for a while. When an enchanter creates a sigil, no negation occurs when the spell is bound to it, but an extremely large negation occurs when the spell is used. The reason for this amplified negation is that the vitner is formed and woven for a much longer period, during which the pressure builds up as it tries to return to its original shape. When an enchanter protects against a vitner attack, the negation that occurs is the effect of the spell that was blocked, woven somewhere else in the world. The effect may not be as strong as the original, as it can occur with less potency in several places at the same time. When the enchanter takes vitner from a living being and places it in an object, nothing else happens, since the negation is the drawing out of vitner from the being. When the enchanter dispels vitner and returns it to its original shape, the resulting negation is various small spells that affect several places around Trudvang as the vitner twists back to its original form. If the enchanter creates a pocket with the vitner, nothing happens until an object is placed in the bag, at which time a similar object temporarily appears in another place. The negation for the vitner wall is far less noticeable than other spells’ negations. Instead of something blatant, the negation makes it subtly easier to weave spells or be affected by them wherever the negation occurs. | Les négations qui se produisent quand on tisse un sort provenant de cette Tablette restent l’exact opposé du sort conjuré. Quand une créature reçoit un enchantement bénéfique, une ou plusieurs autres créatures sont victimes de malchance pendant un certain temps. Quand un enchanteur crée un sceau, aucune négation ne se produit quand un sort y est associé, mais une négation extrêmement importante se produit quand ce sort est utilisé. La raison de cette négation amplifiée est que le vitner est formé et tissé pendant une période bien plus longue, durant laquelle la pression s’accumule tandis que le vitner tente de reprendre sa forme d’origine. Quand un enchanteur se protège contre une attaque de vitner, la négation qui se produit prend la forme de l’effet du sort bloqué, qui est tissé quelque part ailleurs dans le monde. L’effet n’est pas forcément aussi intense que l’original, étant donné qu’il peut se produire à un moindre degré à plusieurs endroits à la fois. Quand un enchanteur prend du vitner chez un être vivant et le place dans un objet, rien d’autre ne se produit, étant donné que le vol de vitner constitue déjà une négation. Quand l’enchanteur dissipe du vitner et lui rend sa forme d’origine, la négation qui s’ensuit peut se manifester sous la forme de différents petits sorts affectant divers endroits de Trudvang, tandis que le vitner se débat pour retrouver sa forme originelle. Si l’enchanteur utilise le vitner pour créer une poche, rien ne se produit jusqu’à ce qu’un objet y soit placé, auquel cas un objet similaire apparaît temporairement à un autre endroit. La négation d’un mur de vitner est bien moins évidente que les négations des autres sorts. Au lieu d’un phénomène flagrant, la négation rend les sorts plus faciles à tisser ou leurs cibles plus sensibles à leurs effets partout où la négation se produit. |
 
 ## `TRUDVANG.Content.Tablet.vitner-vitner-of-objects`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-vitner-of-objects.Name` | Vitner of Objects | Vitner des objets |
+| `TRUDVANG.Content.Tablet.vitner-vitner-of-objects.Description` | By examining the vitner within and around an object, the enchanter can sense the object’s structure as well as direct and control its functions. The enchanter can accomplish tasks such as securing and opening locks, or merging two similar objects so that they become one, and are now inseparable. The enchanter can also change the composition of an object’s vitner in order to change the object itself. This may involve giving the object a protective layer against moisture, reducing or enlarging an object, or altering its appearance and characteristics. The enchanter can also create an alarm out of a standard object by giving it a supplement of vitner that will be unleashed when a designated event occurs in its environment. | En examinant le vitner à l’intérieur et autour d’un objet, l’enchanteur peut percevoir sa structure, mais aussi influencer et contrôler ses fonctions. L’enchanteur peut ainsi entreprendre des tâches telles que fermer et ouvrir des serrures, ou fusionner deux objets pour qu’ils n’en forment plus qu’un seul et soient inséparables. L’enchanteur peut également modifier la composition du vitner d’un objet afin de le transformer. Il peut s’agir de doter l’objet d’une couche protectrice contre la moisissure, d’augmenter ou de réduire sa taille, ou d’altérer son apparence ou ses caractéristiques. L’enchanteur peut également créer une alarme à partir d’un objet standard en lui insufflant un supplément de vitner qui sera libéré lorsqu’un événement particulier se produira dans son environnement. |
+| `TRUDVANG.Content.Tablet.vitner-vitner-of-objects.SwedishName` | Efnatingvitna | Efnatingvitna |
+| `TRUDVANG.Content.Tablet.vitner-vitner-of-objects.Negation` | When an enchanter changes an object’s characteristics or appearance, the resulting negation means that one or more items elsewhere are also altered for a short period of time. Impermeable objects suddenly start to leak whenever the enchanter waterproofs an object, an object grows significantly whenever the enchanter reduces another and vice versa, and the appearances of one or more objects shift whenever the enchanter manipulates an object’s appearance. When an enchanter alarms an object, the negation doesn’t occur until the alarm has been activated. When the alarm does go off, the negation varies; perhaps a bell, jingle, or clock is muted, or something else that makes sounds to designate the time, such as a rooster or crickets, goes silent. When the enchanter uses the vitner to pick a lock, another lock freezes shut; if two objects are merged, two others fall apart; and so on. | objets Quand un enchanteur modifie l’apparence ou les caractéristiques d’un objet, la négation qui s’ensuit a pour effet d’altérer temporairement un ou plusieurs autres objets situés ailleurs. Les objets imperméables se mettent soudain à fuir chaque fois que l’enchanteur rend un objet résistant à l’eau, un objet voit sa taille augmenter considérablement lorsque l’enchanteur en rétrécit un autre et vice versa, et l’apparence d’un ou plusieurs objets change chaque fois que l’enchanteur manipule l’aspect d’un objet. Quand un enchanteur dote un objet d’une alarme, la négation ne se produit qu’à l’activation de l’alarme. Quand l’alarme se déclenche, la négation peut varier : peut-être qu’une cloche ou une horloge devient muette, ou bien d’autres choses ou animaux émettant un bruit indiquant l’heure, comme les coqs ou les grillons, se taisent soudain. Quand l’enchanteur utilise le vitner pour crocheter une serrure, une autre serrure se verrouille. Si deux objets sont fusionnés, deux autres s’effondrent, etc. |
 
 ## `TRUDVANG.Content.Tablet.vitner-water-craft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-water-craft.Name` | Water Craft | Maîtrise de l'eau |
+| `TRUDVANG.Content.Tablet.vitner-water-craft.Description` | The enchanter has learned to control the vitner that flows through water. By weaving the vitner in a certain way, they can locate water that might be nearby, create water in extremely dry places, and purify water gathered from foul substances or sources. The enchanter has also learned to control the water itself and can separate it so as to allow dry passage, walk on water as if it were made of solid ground, or dive into water without getting wet and travel through the element. | L’enchanteur a appris à contrôler le vitner qui coule à travers l’eau. En tissant ce vitner d’une certaine façon, il peut localiser de l’eau située à proximité, créer de l’eau dans des régions extrêmement arides, et purifier l’eau provenant de sources ou de substances contaminées. L’enchanteur a également appris à contrôler l’eau elle-même et peut l’écarter afin de créer un passage à sec, marcher sur l’eau comme s’il s’agissait de la terre ferme, ou plonger dans l’eau sans être mouillé et s’y déplacer avec une grande aisance. |
+| `TRUDVANG.Content.Tablet.vitner-water-craft.SwedishName` | Vannkraftla | Vannkraftla |
+| `TRUDVANG.Content.Tablet.vitner-water-craft.Negation` | When an enchanter attempts to create water, the negation will naturally be that water disappears from somewhere else. When an enchanter finds a source of water and dries it out, another is filled or increased to overflowing; when the enchanter purifies the moisture f r o m a f o u l s u b s t a n c e o r s o u rc e , s o m e w h er e e l s e a c l e a n s o ur c e be c o m e s i m p u r e . If t h e e n c h an t e r c o n t r o ls w a te r , s om e w h e r e e l s e w h e r e w a t er h a s been controlled (such as dams, vessels, or channels) the implements that contained it will break. This can be anything from a small leak to a massive hole in a reservoir wall. | Quand un enchanteur tente de créer de l’eau, la négation qui s’ensuit aura naturellement pour effet de faire disparaître de l’eau à un autre endroit. Quand un enchanteur trouve une source et l’assèche, une autre se remplit ou voit son débit augmenter au point de déborder. Quand l’enchanteur purifie la moisissure qui frappe une substance ou une source contaminée, une autre source quelque part ailleurs devient impure. Si l’enchanteur contrôle de l’eau, ailleurs, à un endroit où l’eau a été maîtrisée (un barrage, un réceptacle ou des canaux, par exemple) les équipements qui la retiennent se rompent : il peut aussi bien s’agir d’une légère fuite que d’un énorme trou dans la paroi d’un réservoir. |
 
 ## `TRUDVANG.Content.Tablet.vitner-wind-craft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-wind-craft.Name` | Wind Craft | Maîtrise du vent |
+| `TRUDVANG.Content.Tablet.vitner-wind-craft.Description` | The enchanter has learned to control air. They can create wind where no wind exists and increase the humidity in an area so as to create fog. They can also filter the air from dangerous substances, float and move with the wind, and compress the air to form a hard shield, armor, or weapon. The enchanter has also learned to m anipulate vitner so it expresses itself in various forms of winds, creating both small and large gusts of wind in the i mmediate s urroundings, or d iminishing and a mplifying the wind’s intensity as desired. | L’enchanteur a appris à contrôler l’air. Il peut créer des vents quand il n’y en a pas et accroître l’humidité ambiante afin de créer du brouillard. Il peut aussi filtrer les substances délétères dans l’air, flotter et se déplacer dans le vent, et comprimer l’air afin de créer un bouclier, une armure ou une arme. L’enchanteur a également appris à manipuler le vitner afin qu’il s’exprime sous forme de vents, et créer ainsi des rafales de vent plus ou moins puissantes dans l’environnement immédiat, ou bien réduire ou augmenter à loisir la puissance du vent. |
+| `TRUDVANG.Content.Tablet.vitner-wind-craft.SwedishName` | Loftirkraftla | Loftirkraftla |
+| `TRUDVANG.Content.Tablet.vitner-wind-craft.Negation` | When the enchanter creates air, the negation is that air will naturally disappear from another location. If the enchanter creates armor, a shield, or a blast from compressed air, a significant amount of air will go missing somewhere in the surrounding areas. For example, a large cave can be entirely emptied of air, or the atmosphere might simply contain less oxygen in wide areas around the world, making it harder for creatures to breathe as if they were at an incredibly high altitude. Negations from creating, decreasing, or increasing wind are always the opposite of the spell’s designated effects. If wind is created in one place, it will die down in another. As it increases in one place, it decreases in another, and vice versa. If the enchanter conjures fog in one area, fog rapidly dissipates somewhere else. | Quand l’enchanteur crée de l’air, la négation qui s’ensuit fait naturellement disparaître de l’air quelque part ailleurs. Si l’enchanteur crée une armure, un bouclier ou une arme à partir d’air compressé, une quantité significative d’air disparaît dans les environs. Par exemple, une grande caverne pourrait se voir vidée de tout l’air qu’elle contient, ou l’atmosphère pourrait simplement contenir moins d’oxygène dans de vastes régions du monde, où les êtres vivants auront beaucoup plus de mal à respirer, comme si elles se trouvaient à une altitude très élevée. Les négations générées par la création, l’augmentation ou la diminution du vent prennent toujours une forme opposée aux effets du sort choisi. Si l’enchanteur crée du vent à un endroit, le vent mourra à un autre endroit. Si sa force augmente quelque part, elle diminuera ailleurs, et vice versa. Si l’enchanteur conjure du brouillard à un endroit, le brouillard se dissipera rapidement à un autre endroit. |
 
 ## `TRUDVANG.Content.Tablet.vitner-witchcraft`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.vitner-witchcraft.Name` | Witchcraft | Sorcellerie |
+| `TRUDVANG.Content.Tablet.vitner-witchcraft.Description` | The mage has learned the art of witchcraft, which is said to be the foundation for all magic and the cause of the separation of magic and mages from the gods and religion of the Stormlands. With this Vitner Tablet, the mage has learned to curse both objects and beings, and torment people with phantom plagues, fever chills, or amnesia. The mage has also learned to uproot massive trees and other large objects, cause the failure of crops, and turn people into trees. | L’enchanteur a appris l’art de la sorcellerie, dont on dit qu’elle est la fondation de toute magie, mais aussi qu’elle serait à l’origine du schisme entre la magie et les enchanteurs d’une part, et les dieux et la religion des Stormlander d’autre part. Grâce à cette Tablette de vitner, l’enchanteur a appris à maudire les objets et les êtres vivants, mais aussi à tourmenter les gens avec des maux illusoires, des fièvres ou des crises d’amnésie. L’enchanteur sait également déraciner les arbres massifs et autres gros objets, flétrir les récoltes et transformer les gens en arbres. |
+| `TRUDVANG.Content.Tablet.vitner-witchcraft.SwedishName` | Hagzkraftla | Hagzkraftla |
+| `TRUDVANG.Content.Tablet.vitner-witchcraft.Negation` | The opposite of witchcraft is enchantment and blessing. Whenever the mage curses an object or creature, another object or creature becomes enchanted. If the phantom plague spell is woven, someone afflicted by disease elsewhere in Trudvang is miraculously cured. When someone is afflicted by fever, someone else who already has a fever becomes healthy. If someone is afflicted by the witchcraft’s forgetfulness, someone else’s memory is suddenly restored. The negation of an uprooted tree is likely to build something in another place, a bad harvest creates good harvests elsewhere, and the negation of a tree curse turns a tree somewhere into a fantastic creature. | L’opposé de la sorcellerie est l’enchantement et la bénédiction. Chaque fois qu’un enchanteur maudit un objet ou une créature, un autre sujet se retrouve enchanté. Quand un enchanteur tisse un sort de mal imaginaire, quelqu’un affecté par une maladie ailleurs sur Trudvang profite d’une guérison miraculeuse. Quand une personne est touchée par la fièvre, une autre personne souffrant déjà de la fièvre recouvre la santé. Si un personnage voit ses souvenirs effacés par la sorcellerie, quelqu’un d’autre recouvre soudain la mémoire. La négation d’un arbre déraciné érigera souvent quelque chose ailleurs, une mauvaise récolte provoque une bonne récolte dans une autre région, et la négation d’une malédiction de l’arbre transforme ailleurs un arbre en une créature fantastique. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn.Name` | Influence of Jorn | Influence de Jorn |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn.Description` | This tablet gathers powers associated with Influence of Jorn, including Wall of Dusk, Death Gust, Falfax. | Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken.Name` | Power of Enken | Pouvoir d'Enken |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken.Description` | This tablet gathers powers associated with Power of Enken, including Night Vision, Willpower, Wind Shield. | Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi.Name` | Strength of Stormi | Force de Storme |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi.Description` | This tablet gathers powers associated with Strength of Stormi, including Troll Strength, Voice of Command, Hinji Strength. | Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei.Name` | Warmth of Sunvei | Chaleur de Solvei |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei.Description` | This tablet gathers powers associated with Warmth of Sunvei, including Sunray, Healing, Summer Place. | Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna.Name` | Wisdom of Windinna | Sagesse de Windinna |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna.Description` | This tablet gathers powers associated with Wisdom of Windinna, including Inspiration, Sixth Sense, Steel Mind. | Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration. |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd.Name` | Wrath of Tyrd | Fureur de Tyrd |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd.Description` | This tablet gathers powers associated with Wrath of Tyrd, including Battle Cry, Fire Iron, Wolf Tongue. | Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja.Name` | Gift of Thanja | Don de Thanja |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja.Description` | This tablet gathers powers associated with Gift of Thanja, including Behind Tree and Pine, Animal Speech, Stagshape. | Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering.Name` | Halawen's Offering | Offrande de Halawen |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering.Description` | This tablet gathers powers associated with Halawen's Offering, including Willpower of the Ancestors, Vitner Shield, Boldness of the Ancestors. | Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne.Name` | Heritage of Majne | Héritage de Majne |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne.Description` | This tablet gathers powers associated with Heritage of Majne, including Strong Beer, Trollslayer, King's Militia. | Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift.Name` | Magh's Gift | Don de Magh |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift.Description` | This tablet gathers powers associated with Magh's Gift, including Journey Wind, Rider's Melody, Magh's Tether. | Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness.Name` | Nema's Usefulness | Utilité de Nema |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness.Description` | This tablet gathers powers associated with Nema's Usefulness, including Horse Ears, Gust of Release, Owl Hearing. | Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition. |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu.Name` | Tribute of Morgu | Tribut de Morgu |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu.Description` | This tablet gathers powers associated with Tribute of Morgu, including Battle Arrow, Simmering Blood, Boiling Blood. | Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger.Name` | Tablet of Anger | Tablette de la colère |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger.Description` | This tablet gathers powers associated with Tablet of Anger, including Power of Blood, Holy Bolt, Stone Senses. | Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace.Name` | Tablet of Grace | Tablette de la grâce |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace.Description` | This tablet gathers powers associated with Tablet of Grace, including Hand of Mercy, Holy Mending, Life Spirit. | Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight.Name` | Tablet of the Knight | Tablette du chevalier |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight.Description` | Blessed Armor Blessed Spear Holy Authority Rowthguard Cuirass Majestic Revelation Rowthguard’s Battle Scourge Belo Seoth’s White Armor Belo Seoth’s Axe Guise of Gave Tablet of Voices Holy Consideration Sirowerd’s Ear Blood Brothers Sirowerd’s Tongue Kindred’s Bond Grace of Gave Sanity of Gave Favorites of Gave Divine Pact value of 12 (Psyche modifiers apply). If the Situation roll is unsuccessful, the victim must deduct -1 from every Skill roll and Situation roll for the next 1d6 hours. | Cette tablette rassemble des pouvoirs liés à Tablette du chevalier, dont Armure bénie, Lance bénie, Cuirasse des gardiens du Rortan. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield.Name` | Tablet of the Shield | Tablette du bouclier |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield.Description` | This tablet gathers powers associated with Tablet of the Shield, including Snares of the Holy Ground, Sheltering, Thornwall. | Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun.Name` | Tablet of the Sun | Tablette du soleil |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun.Description` | This tablet gathers powers associated with Tablet of the Sun, including Dawn Shine, Protective Ground, Augury. | Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi. |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices.Name` | Tablet of Voices | Tablette des voix |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices.Description` | Holy Consideration Sirowerd’s Ear Blood Brothers Sirowerd’s Tongue Kindred’s Bond Grace of Gave Sanity of Gave Favorites of Gave Divine Pact value of 12 (Psyche modifiers apply). If the Situation roll is unsuccessful, the victim must deduct -1 from every Skill roll and Situation roll for the next 1d6 hours. | Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast.Name` | Power of the Beast | Pouvoir de la bête |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast.Description` | This tablet gathers powers associated with Power of the Beast, including Resilience, Mind of the Predator, Mastomant's Tusks. | Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon.Name` | Power of the Dragon | Puissance du dragon |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon.Description` | This tablet gathers powers associated with Power of the Dragon, including Constriction, Rampage of the Huvfurwurm, Flame Hardened. | Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-men`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-men.Name` | Power of Men | Puissance des hommes |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-men.Description` | This tablet gathers powers associated with Power of Men, including Sight of the Dwarves, Accomplished, Mastery. | Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale.Name` | Power of the Scale | Puissance de l'écaille |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale.Description` | This tablet gathers powers associated with Power of the Scale, including Dreadful Screech, Shattered Mind, Terrifying Howl. | Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Name` | Power of Thurses | Puissance des tursirs |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Description` | This tablet gathers powers associated with Power of the Thurses, including Troll Strength, Skin of the Hrim Troll, Strength of the Stone Hinji. | Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll. |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls.Name` | Power of Trolls | Puissance des trolls |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls.Description` | This tablet gathers powers associated with Power of Trolls, including Disease Carrier, Willpower, Illusion Tricks. | Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Name` | Anvil Shock | Choc de l'enclume |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Description` | alaWen s fferIng The Bruid has turned to his ancestor Halawen Longlife for power, and the erstwhile hero bestows the ability to evoke the great heroes’ spears, courage, and protection against vitner. | Cette tablette rassemble des pouvoirs liés à Choc de l'enclume, dont Choc de l'enclume. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Name` | Borjorn's Hand | Main de Borjorn |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Description` | This tablet gathers powers associated with Borjorn's Hand, including Borjorn's Hand. | Cette tablette rassemble des pouvoirs liés à Main de Borjorn, dont Main de Borjorn. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Name` | Cave Spider's Grip | Prise de l'araignée des cavernes |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Description` | This tablet gathers powers associated with Cave Spider's Grip, including Cave Spider's Grip. | Cette tablette rassemble des pouvoirs liés à Prise de l'araignée des cavernes, dont Prise de l’araignée des cavernes. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Name` | Earthquake | Tremblement de terre |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Description` | This tablet gathers powers associated with Earthquake, including Earthquake. | Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Name` | Fang of Yukk | Croc de Yukk |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Description` | This tablet gathers powers associated with Fang of Yukk, including Fang of Yukk. | Cette tablette rassemble des pouvoirs liés à Croc de Yukk, dont Croc de Yukk. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Name` | Gills of the Blackfish | Branchies du brochet |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Description` | This tablet gathers powers associated with Gills of the Blackfish, including Gills of the Blackfish. | Cette tablette rassemble des pouvoirs liés à Branchies du brochet, dont Branchies du brochet. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Name` | Hammer Fists | Poings d'acier |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | Cette tablette rassemble des pouvoirs liés à Poings d'acier, dont Poings d’acier. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Name` | Healing Rune | Rune de guérison |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Description` | This tablet gathers powers associated with Healing Rune, including Healing Rune. | Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Name` | Heat of the Depths | Chaleur des profondeurs |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Description` | This tablet gathers powers associated with Heat of the Depths, including Heat of the Depths. | Cette tablette rassemble des pouvoirs liés à Chaleur des profondeurs, dont Chaleur des profondeurs. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Name` | Labyrinth Blood | Sang du labyrinthe |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Description` | This tablet gathers powers associated with Labyrinth Blood, including Labyrinth Blood. | Cette tablette rassemble des pouvoirs liés à Sang du labyrinthe, dont Sang du labyrinthe. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Name` | Mark of Brokk | Marque de Brokk |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Description` | This tablet gathers powers associated with Mark of Brokk, including Mark of Brokk. | Cette tablette rassemble des pouvoirs liés à Marque de Brokk, dont Marque de Brokk. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Name` | Power of Repair | Pouvoir de réparation |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Description` | This tablet gathers powers associated with Power of Repair, including Power of Repair. | Cette tablette rassemble des pouvoirs liés à Pouvoir de réparation, dont Pouvoir de réparation. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-scales`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Name` | Scales | Écailles |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Description` | This tablet gathers powers associated with Scales, including Scales. | Cette tablette rassemble des pouvoirs liés à Écailles, dont Écailles. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Name` | Stoneling | Enfant de la pierre |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Description` | This tablet gathers powers associated with Stoneling, including Stoneling. | Cette tablette rassemble des pouvoirs liés à Enfant de la pierre, dont Enfant de la pierre. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Name` | Stone to Clay | Transformation de pierre en argile |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Description` | This tablet gathers powers associated with Stone to Clay, including Stone to Clay. | Cette tablette rassemble des pouvoirs liés à Transformation de pierre en argile, dont Transformation de pierre en argile. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Name` | Stoneshape | Aspect de la pierre |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Description` | This tablet gathers powers associated with Stoneshape, including Stoneshape. | Cette tablette rassemble des pouvoirs liés à Aspect de la pierre, dont Aspect de la pierre. |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Name` | Well of Water | Source d'eau |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Description` | This tablet gathers powers associated with Well of Water, including Well of Water. | Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau. |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind.Name` | Animal Mind | Esprit animal |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind.Description` | This tablet gathers powers associated with Animal Mind, including Animal Friend, Animal Tracks, Invisible to Animals. | Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit. |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power.Name` | Lynx Power | Agilité du lynx |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power.Description` | This tablet gathers powers associated with Lynx Power, including Tree Walk, Orientation, Feline Leap. | L’ihana a la faculté de se déplacer dans les bois avec la prouesse et l’agilité d’un lynx. |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Name` | Master of Elements | Maître des éléments |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments. |
 
 ## `TRUDVANG.Content.Power.vitner-animal-vitner:messenger:0`
 

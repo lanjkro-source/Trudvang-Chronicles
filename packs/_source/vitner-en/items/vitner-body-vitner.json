@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-body-vitner",
-    "description": "Magic that alters bodies and senses, restrains creatures, and enhances speed, strength, or resilience.",
+    "description": "Spells in this tablet change the vitner that flows in and around a creature’s physical body. Through weavers of vitner small modifications to the vitner flow, the enchanter can transform a creature completely, not only in physical characteristics and appearance, but also in senses like hearing, sight, and smell. Through manipulation of the vitner, the enchanter can also hinder or stop a creature in different ways. This may involve simple tricks such as causing the creature to stumble or locking up its muscles. But it can also be much more complex, taking the form of a seemingly invisible prison that the victim is unable to escape.",
+    "summary": "Strengthens, alters, or restrains a target’s physical abilities.",
+    "swedishName": "Skopjatenvitna",
+    "negation": "The negations that occur when an enchanter alters characteristics are always in contrast to the one evoked. If the enchanter decides to make a creature stronger, one or more creatures become weaker, and vice versa. When an enchanter tries to get a creature to stumble, the negation aids another creature somewhere else that normally would have fallen. When the enchanter chooses to immobilize a target, someone else immediately receives mobility beyond what they’ve ever experienced, legs that were once limp or seized up suddenly move again, the perpetually clumsy suddenly becomes graceful, and so on. When an enchanter imprisons a target, somewhere else someone is set free (literally or metaphorically), suddenly the gate opens to a prison, someone who has fallen victim to a dangerous spell sees an opportunity to get out, or someone who is trapped in a cave sees stones fall from a wall, opening a passage to freedom.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 96",
     "level": 1,
     "tabletType": "vitner",

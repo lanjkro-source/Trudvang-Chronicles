@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-flame-craft",
-    "description": "Fire magic that creates heat and flame, protects against fire, and controls conflagrations.",
+    "description": "The vitner the mage weaves increases, decreases, or stabilizes the flow of vitner in surrounding environments and objects. By increasing the flow in an explosive manner, the mage can heat objects to a point where they suddenly catch on fire. If the mage is a little more careful with the supply, they can gradually increase the heat in a place to a comfortable level of generous warmth and joviality. Or by cutting off the supply of vitner, the mage can do the opposite and suffocate fires or suddenly drop surrounding temperatures. They can also grant protection from fire and heat by making the vitner stand completely still in a protective layer that the turbulent and hot energy of flame is unable to affect.",
+    "summary": "Creates, controls, or wards off fire and heat.",
+    "swedishName": "Loganojd",
+    "negation": "When a mage creates fire or decides to heat an area, it causes a significant change in the intensity of the vitner. This added vitner is taken from somewhere else in the greater area where the temperature change occurs, which suddenly turns very cold. Frost may appear on bushes and trees, but also on creatures that weavers of vitner | 109 unexpectedly sense their t emperature dropping and their s urroundings beginning to chill. Water freezes to ice and hot food instantly turns cold. Or if the mage chooses to remove the heat, there must be a place nearby for it to go. If a mage wants to control fire, the opposite occurs e lsewhere: fire that burns calmly in a hearth suddenly leaps from its confines and spreads with the potential to cause great damage. Candles and torches burn with such intensity that something in their vicinity might catch on fire.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": -1,
+      "morkvitner": -1
+    },
     "source": "Player's Handbook, p. 109",
     "level": 1,
     "tabletType": "vitner",

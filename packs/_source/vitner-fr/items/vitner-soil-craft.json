@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-soil-craft",
-    "description": "Magie de la terre déplaçant ou modelant sol et pierre, créant tremblements et bourbiers, pétrifiant les créatures.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Maîtrise de la terre, dont Façonnage de la terre, Jet de pierre, Bourbier.",
+    "summary": "Permet de modeler la terre et la pierre, ou de les employer contre des cibles.",
+    "swedishName": "Jördkraftla",
+    "negation": "Quand un enchanteur tisse un sort, la négation qui en résulte est généralement à l’opposé du sort d’origine. Il existe apparemment une exception : quand un enchanteur provoque un séisme, la négation prend également la forme d’un séisme quelque part ailleurs, car déplacer la terre à un endroit amène la terre à se déplacer de façon opposée à un autre endroit, ce qui provoque dans les deux cas un séisme. Si l’enchanteur crée un bourbier, un marais existant s’assèchera pendant un moment. S’il façonne la terre et la pierre d’une certaine façon, une autre création de la même matière reprendra sa forme originelle : un monticule s’affaissera, ou un chemin creusé dans la pierre s’effondrera par exemple. Si l’enchanteur lance une pierre entrelacée de vitner sur un adversaire, une certaine quantité de pierre disparaîtra à un autre endroit, dérobée par le vitner pour faire grossir le projectile (ce qui peut avoir des conséquences dévastatrices si la pierre qui disparaît occupe une place importante dans un bâtiment ou une structure).",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": -1,
+      "morkvitner": 1
+    },
     "source": "Livre des règles, p. 158",
     "level": 1,
     "tabletType": "vitner",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale",
-    "description": "Pouvoirs de lindwurm de terreur, régénération, membres de pierre, pétrification et résilience monstrueuse.",
+    "description": "Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 270",
     "level": 1,
     "tabletType": "holy",

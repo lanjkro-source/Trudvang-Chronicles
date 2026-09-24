@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-scales",
-    "description": "A sacred Thuul rune that the power from the rune stretches like a snakeskin of metal over the Thuul’s body.",
+    "description": "This tablet gathers powers associated with Scales, including Scales.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",

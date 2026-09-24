@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-body-vitner",
-    "description": "Magie modifiant les corps et les sens, retenant les créatures et renforçant la vitesse, la force ou la résilience.",
+    "description": "Les sorts de cette tablette modifient le vitner qui s’écoule à l’intérieur et autour du corps physique d’une créature. Par de petites altérations du flux du vitner, l’enchanteur peut complètement transformer une créature. Il peut non seulement affecter ses caractéristiques physiques et son apparence, mais aussi ses sens comme l’ouïe, la vision et l’odorat. En manipulant le vitner, l’enchanteur peut également entraver ou immobiliser une créature de diverses façons. Il peut s’agir de simples tours permettant de faire trébucher la créature ou de froisser ses muscles, mais cela peut aussi prendre des formes plus complexes, comme une prison invisible dont la victime est incapable de s’échapper.",
+    "summary": "Permet de renforcer, altérer ou entraver les capacités physiques d’une cible.",
+    "swedishName": "Skopjatenvitna",
+    "negation": "Les négations qui se produisent quand un enchanteur altère les caractéristiques d’une cible sont toujours à l’opposé de l’effet évoqué. Si l’enchanteur décide de rendre une créature plus forte, une ou plusieurs autres créatures deviennent plus faibles, et vice versa. Quand un enchanteur tente de faire trébucher une créature, la négation aide une autre créature ailleurs qui aurait normalement dû tomber. Quand l’enchanteur choisit d’immobiliser une cible, une autre créature devient soudain beaucoup plus mobile qu’elle l’a jamais été, une créature boiteuse ou paralysée recouvre soudain sa faculté de mouvement, un personnage connu pour sa maladresse devient gracieux, et ainsi de suite. Quand un enchanteur emprisonne une cible, quelque part ailleurs une autre personne est libérée (littéralement ou métaphoriquement) : la porte d’une prison s’ouvre soudain, la victime d’un sort dangereux a l’occasion de s’en débarrasser, ou une personne piégée dans une grotte voit des pierres tomber d’un mur et ouvrir un passage vers la liberté.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 192",
     "level": 1,
     "tabletType": "vitner",

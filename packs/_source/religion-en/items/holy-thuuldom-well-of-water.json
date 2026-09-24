@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-well-of-water",
-    "description": "A sacred Thuul rune that the Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location.",
+    "description": "This tablet gathers powers associated with Well of Water, including Well of Water.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 232",
     "level": 1,
     "tabletType": "holy",

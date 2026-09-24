@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-thurses",
-    "description": "Pouvoirs de trolls et de tursirs accordant peaux de glace, force immense, souffles destructeurs et rage dévastatrice.",
+    "description": "Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 275",
     "level": 1,
     "tabletType": "holy",

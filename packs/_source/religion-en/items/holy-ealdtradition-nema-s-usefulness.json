@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-nema-s-usefulness",
-    "description": "Powers that sharpen animal senses, reveal trails, remove restraints, and hasten journeys.",
+    "description": "This tablet gathers powers associated with Nema's Usefulness, including Horse Ears, Gust of Release, Owl Hearing.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 185",
     "level": 1,
     "tabletType": "holy",

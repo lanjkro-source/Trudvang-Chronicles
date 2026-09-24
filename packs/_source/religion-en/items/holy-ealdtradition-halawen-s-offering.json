@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-halawen-s-offering",
-    "description": "Ancestral protections against fear, bloodfangs, hostile vitner, and supernatural assault.",
+    "description": "This tablet gathers powers associated with Halawen's Offering, including Willpower of the Ancestors, Vitner Shield, Boldness of the Ancestors.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 178",
     "level": 1,
     "tabletType": "holy",

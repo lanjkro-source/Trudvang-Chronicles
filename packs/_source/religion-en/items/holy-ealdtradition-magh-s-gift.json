@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-magh-s-gift",
-    "description": "Songs and bonds that aid travel, riders, harvests, heroes, and the changing seasons.",
+    "description": "This tablet gathers powers associated with Magh's Gift, including Journey Wind, Rider's Melody, Magh's Tether.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 183",
     "level": 1,
     "tabletType": "holy",

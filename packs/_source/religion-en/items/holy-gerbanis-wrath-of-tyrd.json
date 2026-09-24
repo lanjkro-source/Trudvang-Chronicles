@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-wrath-of-tyrd",
-    "description": "War powers of fiery weapons, terrifying cries, battle fury, firestorms, and victory.",
+    "description": "This tablet gathers powers associated with Wrath of Tyrd, including Battle Cry, Fire Iron, Wolf Tongue.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 171",
     "level": 1,
     "tabletType": "holy",

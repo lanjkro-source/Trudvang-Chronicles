@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-borjorn-s-hand",
-    "description": "A sacred Thuul rune that when the Thuul activates the rune, he receives guidance from the mountain that will aid him in the next action he undertakes.",
+    "description": "This tablet gathers powers associated with Borjorn's Hand, including Borjorn's Hand.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "tabletType": "holy",

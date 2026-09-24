@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-power-of-enken",
-    "description": "Powers granting courage, will, soul sight, night vision, and increasingly mighty storm armor.",
+    "description": "This tablet gathers powers associated with Power of Enken, including Night Vision, Willpower, Wind Shield.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 162",
     "level": 1,
     "tabletType": "holy",

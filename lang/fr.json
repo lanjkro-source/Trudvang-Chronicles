@@ -392,7 +392,26 @@
     },
     "Tablet": {
       "vitner": "Tablette de vitner",
-      "holy": "Tablette sacrée"
+      "holy": "Tablette sacrée",
+      "ThuulRune": "Rune thuul",
+      "CatalogEntry": "Entrée du catalogue — niveau acquis sur le personnage",
+      "SwedishName": "Nom suédois",
+      "Religion": "Religion",
+      "Affinity": "Affinité avec le vitner",
+      "Negation": "Négation",
+      "ReadNegation": "Lire la négation",
+      "Powers": "Sorts et pouvoirs",
+      "LevelGroup": "Niveau {level}",
+      "Accessible": "accessible",
+      "Locked": "non acquis",
+      "AffinityShort": {"hvitavitner": "Hwit", "vaagrivitner": "Vaagri", "morkvitner": "Mork"},
+      "AffinityName": {"hvitavitner": "Hvitavitner", "vaagrivitner": "Vaagrivitner", "morkvitner": "Morkvitner"},
+      "AffinityEffect": {
+        "favorable": "Le coût de chaque niveau de puissance baisse de 1, sans descendre sous 1.",
+        "neutral": "Aucun changement au coût des niveaux de puissance.",
+        "unfavorable": "Le coût de chaque niveau de puissance augmente de 1.",
+        "doubled": "Le coût des niveaux de puissance est doublé."
+      }
     },
     "AbilityKind": {
       "discipline": "Discipline",
@@ -738,6 +757,7 @@
       "ReligionExclusive": "Une seule voie religieuse peut accorder des pouvoirs divins.",
       "ReligionIncompatible": "Cette voie religieuse n'est pas compatible avec la race du personnage.",
       "FatalTableMissing": "La table de magie funeste requise n'est pas installée.",
+      "TabletPowerMissing": "Ce sort ou pouvoir est introuvable dans les compendiums.",
       "UnknownTablet": "Cet objet n'est pas une tablette du catalogue du système.",
       "TabletAlreadyKnown": "Cette tablette est déjà connue.",
       "TabletSkillRequirement": "Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4.",
@@ -1944,178 +1964,322 @@
       },
       "Tablet": {
         "vitner-animal-vitner": {
-          "Name": "Vitner animal"
+          "Name": "Vitner animal",
+          "Summary": "Permet de communiquer avec les animaux, de les appeler et d’influencer leur comportement.",
+          "Description": "Le motif que l’enchanteur tisse à l’aide du vitner est en relation directe avec les animaux et leur esprit. Par exemple, l’enchanteur peut convoquer des esprits animaux pour effrayer ou choquer un adversaire, ou leur demander de transmettre un message à une personne éloignée. Grâce au vitner, l’enchanteur peut appeler les animaux sauvages des environs et les forcer à obéir, même contre leur gré s’ils se montrent hostiles. Par la puissance de la pensée, l’enchanteur peut communiquer avec des animaux, voire transférer sa conscience dans l’enveloppe corporelle de la créature et la contrôler comme si c’était la sienne.",
+          "SwedishName": "Besturvitna",
+          "Negation": "Quand un enchanteur dirige ou manipule le vitner en direction des animaux ou de leur esprit, une négation se produit autre part dans les environs. Si l’enchanteur cherche à contrôler un animal, une autre créature (qui peut même être un animal domestique) s’agite soudain et agit de manière totalement inattendue ou fait preuve de désobéissance. Si l’enchanteur souhaite convoquer un animal, un autre s’enfuit. Si l’enchanteur peut projeter sa conscience dans un animal, une autre personne pourrait soudain se retrouver possédée par l’esprit d’un animal et se comporter pendant un certain temps comme cet animal. Quand l’enchanteur tente de transmettre un message, une autre créature des environs ne parvient pas à transmettre son propre message ou le transmet de manière erronée."
         },
         "vitner-body-vitner": {
-          "Name": "Vitner corporel"
+          "Name": "Vitner corporel",
+          "Summary": "Permet de renforcer, altérer ou entraver les capacités physiques d’une cible.",
+          "Description": "Les sorts de cette tablette modifient le vitner qui s’écoule à l’intérieur et autour du corps physique d’une créature. Par de petites altérations du flux du vitner, l’enchanteur peut complètement transformer une créature. Il peut non seulement affecter ses caractéristiques physiques et son apparence, mais aussi ses sens comme l’ouïe, la vision et l’odorat. En manipulant le vitner, l’enchanteur peut également entraver ou immobiliser une créature de diverses façons. Il peut s’agir de simples tours permettant de faire trébucher la créature ou de froisser ses muscles, mais cela peut aussi prendre des formes plus complexes, comme une prison invisible dont la victime est incapable de s’échapper.",
+          "SwedishName": "Skopjatenvitna",
+          "Negation": "Les négations qui se produisent quand un enchanteur altère les caractéristiques d’une cible sont toujours à l’opposé de l’effet évoqué. Si l’enchanteur décide de rendre une créature plus forte, une ou plusieurs autres créatures deviennent plus faibles, et vice versa. Quand un enchanteur tente de faire trébucher une créature, la négation aide une autre créature ailleurs qui aurait normalement dû tomber. Quand l’enchanteur choisit d’immobiliser une cible, une autre créature devient soudain beaucoup plus mobile qu’elle l’a jamais été, une créature boiteuse ou paralysée recouvre soudain sa faculté de mouvement, un personnage connu pour sa maladresse devient gracieux, et ainsi de suite. Quand un enchanteur emprisonne une cible, quelque part ailleurs une autre personne est libérée (littéralement ou métaphoriquement) : la porte d’une prison s’ouvre soudain, la victime d’un sort dangereux a l’occasion de s’en débarrasser, ou une personne piégée dans une grotte voit des pierres tomber d’un mur et ouvrir un passage vers la liberté."
         },
         "vitner-delusion-vitner": {
-          "Name": "Vitner illusoire"
+          "Name": "Vitner illusoire",
+          "Summary": "Permet de créer des illusions sonores ou visuelles et de dissimuler des choses.",
+          "Description": "L’enchanteur a appris à utiliser le vitner pour manipuler son environnement et créer des illusions et des images parfaitement crédibles. L’enchanteur a le contrôle complet de l’apparence des illusions qu’il crée, et peut même décider si elles seront animées ou non. L’enchanteur peut créer l’illusion d’objets et de créatures de petite taille, mais aussi des illusions paysagères donnant vie à des cités, montagnes et autres forêts (du moins tant que les témoins de l’illusion continuent de croire à ce qu’ils voient). L’enchanteur a également appris à manipuler l’air afin d’imiter les sons et les vibrations. En façonnant le vitner, l’enchanteur peut augmenter ou réduire le volume sonore autour de lui, ce qui lui permet de produire des roulements de tonnerre assourdissant ou de subtils sifflements si aigus qu’ils échappent aux oreilles humaines. Qui plus est, l’enchanteur a appris à utiliser cette faculté d’imitation pour évoluer à l’insu de tous en dissimulant ses traces, en générant des camouflages, voire même en se soustrayant directement à la vue d’autrui.",
+          "SwedishName": "Skenvitna",
+          "Negation": "Quand un enchanteur crée une illusion, la négation correspondante n’est pas forcément néfaste. Elle peut se traduire par une autre illusion apparaissant soudain à un tout autre endroit, par exemple, ou bien par une créature ou un objet qui devient invisible ou dont l’aspect se trouble pendant quelques instants. Cela dit, quand l’enchanteur manipule les sons sous leurs différentes formes, la négation prendra toujours une forme opposée. S’il diminue le volume sonore à un endroit, la négation l’augmentera ailleurs. S’il crée un coup de tonnerre, un autre bruit d’intensité équivalente sera complètement étouffé à un autre endroit (comme un éclair ou des vagues déferlantes qui ne font aucun bruit). Si l’enchanteur crée le bruit de quelqu’un marchant sur un sentier de graviers, le même son disparaîtra quelque part ailleurs. S’il génère le son d’une personne frappant à la porte, une autre personne faisant la même chose ailleurs ne produira pas le moindre bruit. Et si l’enchanteur supprime un son particulier à un endroit, ce même son se répercutera inexplicablement ailleurs."
         },
         "vitner-dimvitner": {
-          "Name": "Dimvitner"
+          "Name": "Dimvitner",
+          "Summary": "Permet d’animer, blesser ou contrôler les morts et leurs esprits.",
+          "Description": "L’enchanteur a appris à contrôler le lien funeste entre les royaumes de Trudvang et Dimhall, le royaume des morts. En manipulant la puissance de ce lien invisible, il peut forcer des âmes à revenir en Trudvang et les transformer en êtres morts-vivants. L’enchanteur peut voler le vitner et la force vitale des vivants et utiliser le lien funeste pour parler avec les âmes mortes qui séjournent à Dimhall, pour y exiler les êtres morts-vivants, ou pour prendre le contrôle d’un mort-vivant et lui dicter sa conduite. En insufflant du vitner dans le lien funeste, l’enchanteur peut projeter de puissantes vagues d’énergie vers la cible de son choix. Cette énergie funeste prend alors la forme de bancs de brume sombre et humide que le tisseur peut utiliser de diverses manières pour blesser ses victimes.",
+          "SwedishName": "Sálhelevitna",
+          "Negation": "L’opposé du Dimvitner est la vie et sa création ; ses négations reposent donc sur la force vitale. Chaque fois qu’un enchanteur conjure quelque chose par le biais de cette Tablette de vitner, la négation génère de la force vitale quelque part ailleurs, comme une naissance réussie contre toute attente, un invalide recouvrant miraculeusement l’usage de ses membres, une personne blessée recouvrant la santé, et bien d’autres effets bénéfiques. Mais quand un enchanteur choisit de conjurer des êtres morts-vivants, la négation prend une forme bien plus sinistre. Comme l’enchanteur crée plus ou moins de la vie, la négation arrache sa force vitale à un autre sujet. Cela peut alors prendre la forme d’animaux mourant brutalement, d’enfants mort-nés, de créatures tombant soudain malades, ou quelque autre événement tragique. Quand un enchanteur tente de contacter un esprit dans le royaume des morts, la négation permet à un ou plusieurs esprits de contacter un être vivant en Trudvang. Si l’enchanteur désire repousser un être mortvivant dans le royaume des morts, une ou plusieurs âmes mortes-vivantes peuvent s’en échapper pour gagner Trudvang. Et si l’enchanteur désire prendre le contrôle d’un être mort-vivant, la négation permet à des âmes mortes de prendre momentanément le contrôle d’êtres vivants."
         },
         "vitner-flame-craft": {
-          "Name": "Maîtrise des flammes"
+          "Name": "Maîtrise des flammes",
+          "Summary": "Permet de produire, maîtriser ou repousser le feu et la chaleur.",
+          "Description": "Le vitner que tisse L’enchanteur augmente, réduit ou stabilise le flux du vitner dans son environnement et les objets qui l’entourent. En augmentant le flux de manière explosive, l’enchanteur peut réchauffer un objet au point de provoquer sa combustion soudaine. Si l’enchanteur se montre un peu plus précautionneux, il peut augmenter régulièrement la température d’un lieu jusqu’à atteindre une chaleur agréable et réconfortante. À l’inverse, en interrompant le flux du vitner, l’enchanteur peut étouffer les flammes ou faire chuter brutalement les températures. Il peut également conférer à un sujet une protection contre la chaleur et le feu, en immobilisant complètement le vitner en une couche protectrice que l’énergie brûlante et turbulente de la flamme est incapable d’affecter.",
+          "SwedishName": "Loganojd",
+          "Negation": "Quand un enchanteur crée des flammes ou réchauffe une zone, il provoque un important changement dans l’intensité du vitner. Cet afflux de vitner provient d’un autre endroit des environs où la température chute brutalement en conséquence. Du givre peut apparaître sur les buissons et les arbres, mais également sur les créatures, qui sentent leur température corporelle et celle de leur environnement chuter de manière inexplicable. L’eau se change en glace et la nourriture chaude refroidit instantanément. Ou bien, si l’enchanteur choisit de réduire la chaleur, cette dernière doit avoir un endroit où aller. Si un enchanteur désire contrôler le feu, l’inverse se produit ailleurs : un feu brûlant calmement dans une cheminée bondit soudainement hors de l’âtre et se répand au risque de provoquer de sérieux dégâts. Les chandelles et torches brûlent si intensément qu’elles pourraient mettre le feu aux objets."
         },
         "vitner-perceiving": {
-          "Name": "Perception"
+          "Name": "Perception",
+          "Summary": "Permet de repérer des lieux, des êtres ou des objets et d’en révéler les traces.",
+          "Description": "L’enchanteur a appris à se servir du vitner pour chercher et détecter les objets, les êtres vivants et même les morts-vivants. Il peut aussi établir un lien mental avec son environnement immédiat. À l’aide du vitner, l’enchanteur peut se faire une image exacte de tout ce qui existe autour de lui. Il sait précisément comment retrouver son chemin jusqu’à un endroit qu’il a déjà visité et peut suivre ses propres traces aussi aisément que des chandelles dans le noir.",
+          "SwedishName": "Alldskonja",
+          "Negation": "Quand l’enchanteur utilise le vitner pour déceler un objet, une créature vivante ou un mort-vivant, quelque part ailleurs quelque chose est perdu. Les endroits dans lesquels une personne s’est déjà rendue lui paraissent étrangers ou inconnus. Les directions changent et l’est devient l’ouest, et les repères géographiques familiers comme cette colline particulière après le prochain tournant n’est plus rien qu’un trou dans le sol. Certains s’avèrent incapables de rentrer chez eux, ou même de revenir sur leurs pas. Des informations sont oubliées, ou des objets déplacés."
         },
         "vitner-power-of-thought": {
-          "Name": "Pouvoir de la pensée"
+          "Name": "Pouvoir de la pensée",
+          "Summary": "Permet de comprendre, influencer ou contrôler pensées, souvenirs et perceptions.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de la pensée, dont Compréhension des écrits, Compréhension orale, Courage.",
+          "SwedishName": "Húgkraftla",
+          "Negation": "Quand un enchanteur tente de contrôler l’esprit ou la conscience d’une autre créature, la négation générée est souvent plus subtile que les autres négations. Lorsqu’un enchanteur tente d’implanter une idée dans l’esprit d’une victime, la négation peut être que, ailleurs, une personne ressent une impression envahissante de déjà vu, ce qui la distrait un moment. Si l’enchanteur tente de prendre le contrôle d’une créature, la négation implique que la conscience de la victime doit aller ailleurs, en échangeant sa place avec quelque chose ou quelqu’un. Cependant, cela ne dure le plus souvent qu’un bref instant, et une fois qu’une créature retrouve son enveloppe corporelle, elle est assez perturbée par ce qui s’est passé. Il est très rare que deux esprits échangent leurs places de façon permanente. Chaque fois qu’un enchanteur affecte la conscience d’une autre créature, la négation prend toujours la forme d’un effet inverse chez une ou plusieurs créatures. Si l’enchanteur provoque une amnésie, quelqu’un d’autre recouvre soudain la mémoire, et vice versa. Si l’enchanteur évoque une émotion particulière chez une créature, une ou plusieurs créatures se retrouvent soudain submergées par l’émotion inverse. Si l’enchanteur crée un lien mental avec une autre personne, d’autres créatures font l’expérience de voix désincarnées et de personnalités autres que la leur, mais aussi de visites dans leur sommeil tandis que d’autres personnes envahissent leurs rêves. Si l’enchanteur utilise le vitner pour déchiffrer quelque chose, la négation signifie qu’ailleurs sur Trudvang, quelqu’un se retrouve pendant un moment incapable de comprendre ce qu’il lit, même s’il connaît normalement cette langue et devrait être en mesure de lire le texte dont le sens lui échappe à présent."
         },
         "vitner-power-of-vision": {
-          "Name": "Pouvoir de la vision"
+          "Name": "Pouvoir de la vision",
+          "Summary": "Permet de suivre des traces et d’observer à distance ou au-delà des apparences.",
+          "Description": "L’enchanteur a appris à maîtriser la conscience astrale que possèdent tous les êtres vivants. Les objets aussi possèdent une forme de conscience astrale, mais elle est considérablement moins développée que celle d’un être vivant. En entrant en transe pendant le temps de tissage, l’enchanteur peut exécuter différents sorts liés au plan astral invisible. Les méthodes permettant de visiter le plan astral peuvent varier considérablement, étant donné que chacun possède sa propre façon de se concentrer. Certains enchanteurs fixent leur regard sur une flamme ou un lit de charbons ardents, d’autres utilisent un grand tronc, d’autres encore se focalisent sur le soleil ou la lune. Étant donné que tout ce qui est physique se reflète dans le plan astral, la personne enchantée est en mesure de voir la véritable apparence des choses. L’enchanteur peut voir le flux du vitner qui entoure toute chose, suivre les traces d’une créature aussi aisément que des chandelles dans l’obscurité, voir à une distance considérable, et connaître la véritable nature des choses.",
+          "SwedishName": "Skönjakraftla",
+          "Negation": "Chaque fois que l’enchanteur tisse une quelconque projection astrale, l’environnement immédiat peut être le théâtre d’images de l’au-delà. Des images brouillées d’objets étranges ou de créatures surnaturelles deviennent visibles pendant quelques instants dans le monde réel. Pour bien des gens, cela peut être une expérience terrifiante. C’est au maître de jeu de déterminer si une image se manifeste ou non, les choses bizarres qu’elle peut dévoiler, et les conséquences que cela peut avoir. La négation est assez directe : quand le vitner permet à une personne de voir les choses plus clairement, d’autres choses deviennent floues ou se brouillent. Les traces disparaissent et la vision des gens se trouble, et ce qui devrait normalement être évident devient difficile à remarquer."
         },
         "vitner-soil-craft": {
-          "Name": "Maîtrise de la terre"
+          "Name": "Maîtrise de la terre",
+          "Summary": "Permet de modeler la terre et la pierre, ou de les employer contre des cibles.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Maîtrise de la terre, dont Façonnage de la terre, Jet de pierre, Bourbier.",
+          "SwedishName": "Jördkraftla",
+          "Negation": "Quand un enchanteur tisse un sort, la négation qui en résulte est généralement à l’opposé du sort d’origine. Il existe apparemment une exception : quand un enchanteur provoque un séisme, la négation prend également la forme d’un séisme quelque part ailleurs, car déplacer la terre à un endroit amène la terre à se déplacer de façon opposée à un autre endroit, ce qui provoque dans les deux cas un séisme. Si l’enchanteur crée un bourbier, un marais existant s’assèchera pendant un moment. S’il façonne la terre et la pierre d’une certaine façon, une autre création de la même matière reprendra sa forme originelle : un monticule s’affaissera, ou un chemin creusé dans la pierre s’effondrera par exemple. Si l’enchanteur lance une pierre entrelacée de vitner sur un adversaire, une certaine quantité de pierre disparaîtra à un autre endroit, dérobée par le vitner pour faire grossir le projectile (ce qui peut avoir des conséquences dévastatrices si la pierre qui disparaît occupe une place importante dans un bâtiment ou une structure)."
         },
         "vitner-vitner-craft": {
-          "Name": "Art du vitner"
+          "Name": "Art du vitner",
+          "Summary": "Permet de manipuler, protéger, dissiper ou canaliser directement le vitner.",
+          "Description": "L’enchanteur a appris à utiliser la forme de vitner la plus pure, ce qui lui confère le pouvoir d’influencer le flux même du vitner et la façon dont il façonne tout ce qui l’entoure. L’enchanteur a appris à manipuler le vitner de deux façons : en l’injectant et en le dispersant. L’Art du vitner permet d’enchanter des objets et des êtres vivants, de créer un lien entre des personnages afin d’y faire circuler du vitner, de créer une poche de vitner capable de stocker des objets physiques, ou encore de créer un sceau physique sur un objet qui y lie un autre sort qui pourra être déclenché de diverses façons. L’enchanteur a également appris à contrôler le vitner de façon à dissiper d’autres sorts ou à améliorer la faculté d’un personnage enchanté à y résister. Il peut aussi se servir du vitner propre aux sorts ou négations afin de remonter jusqu’aux enchanteurs qui les ont tissés. Il apprend même à ériger une barrière contre le vitner, de sorte qu’il devient difficile, voire impossible de l’utiliser dans une certaine zone.",
+          "SwedishName": "Vitnakraftla",
+          "Negation": "Les négations qui se produisent quand on tisse un sort provenant de cette Tablette restent l’exact opposé du sort conjuré. Quand une créature reçoit un enchantement bénéfique, une ou plusieurs autres créatures sont victimes de malchance pendant un certain temps. Quand un enchanteur crée un sceau, aucune négation ne se produit quand un sort y est associé, mais une négation extrêmement importante se produit quand ce sort est utilisé. La raison de cette négation amplifiée est que le vitner est formé et tissé pendant une période bien plus longue, durant laquelle la pression s’accumule tandis que le vitner tente de reprendre sa forme d’origine. Quand un enchanteur se protège contre une attaque de vitner, la négation qui se produit prend la forme de l’effet du sort bloqué, qui est tissé quelque part ailleurs dans le monde. L’effet n’est pas forcément aussi intense que l’original, étant donné qu’il peut se produire à un moindre degré à plusieurs endroits à la fois. Quand un enchanteur prend du vitner chez un être vivant et le place dans un objet, rien d’autre ne se produit, étant donné que le vol de vitner constitue déjà une négation. Quand l’enchanteur dissipe du vitner et lui rend sa forme d’origine, la négation qui s’ensuit peut se manifester sous la forme de différents petits sorts affectant divers endroits de Trudvang, tandis que le vitner se débat pour retrouver sa forme originelle. Si l’enchanteur utilise le vitner pour créer une poche, rien ne se produit jusqu’à ce qu’un objet y soit placé, auquel cas un objet similaire apparaît temporairement à un autre endroit. La négation d’un mur de vitner est bien moins évidente que les négations des autres sorts. Au lieu d’un phénomène flagrant, la négation rend les sorts plus faciles à tisser ou leurs cibles plus sensibles à leurs effets partout où la négation se produit."
         },
         "vitner-vitner-of-objects": {
-          "Name": "Vitner des objets"
+          "Name": "Vitner des objets",
+          "Summary": "Permet d’analyser, modifier, protéger ou fabriquer des objets.",
+          "Description": "En examinant le vitner à l’intérieur et autour d’un objet, l’enchanteur peut percevoir sa structure, mais aussi influencer et contrôler ses fonctions. L’enchanteur peut ainsi entreprendre des tâches telles que fermer et ouvrir des serrures, ou fusionner deux objets pour qu’ils n’en forment plus qu’un seul et soient inséparables. L’enchanteur peut également modifier la composition du vitner d’un objet afin de le transformer. Il peut s’agir de doter l’objet d’une couche protectrice contre la moisissure, d’augmenter ou de réduire sa taille, ou d’altérer son apparence ou ses caractéristiques. L’enchanteur peut également créer une alarme à partir d’un objet standard en lui insufflant un supplément de vitner qui sera libéré lorsqu’un événement particulier se produira dans son environnement.",
+          "SwedishName": "Efnatingvitna",
+          "Negation": "objets Quand un enchanteur modifie l’apparence ou les caractéristiques d’un objet, la négation qui s’ensuit a pour effet d’altérer temporairement un ou plusieurs autres objets situés ailleurs. Les objets imperméables se mettent soudain à fuir chaque fois que l’enchanteur rend un objet résistant à l’eau, un objet voit sa taille augmenter considérablement lorsque l’enchanteur en rétrécit un autre et vice versa, et l’apparence d’un ou plusieurs objets change chaque fois que l’enchanteur manipule l’aspect d’un objet. Quand un enchanteur dote un objet d’une alarme, la négation ne se produit qu’à l’activation de l’alarme. Quand l’alarme se déclenche, la négation peut varier : peut-être qu’une cloche ou une horloge devient muette, ou bien d’autres choses ou animaux émettant un bruit indiquant l’heure, comme les coqs ou les grillons, se taisent soudain. Quand l’enchanteur utilise le vitner pour crocheter une serrure, une autre serrure se verrouille. Si deux objets sont fusionnés, deux autres s’effondrent, etc."
         },
         "vitner-water-craft": {
-          "Name": "Maîtrise de l'eau"
+          "Name": "Maîtrise de l'eau",
+          "Summary": "Permet de trouver, purifier, créer et contrôler l’eau.",
+          "Description": "L’enchanteur a appris à contrôler le vitner qui coule à travers l’eau. En tissant ce vitner d’une certaine façon, il peut localiser de l’eau située à proximité, créer de l’eau dans des régions extrêmement arides, et purifier l’eau provenant de sources ou de substances contaminées. L’enchanteur a également appris à contrôler l’eau elle-même et peut l’écarter afin de créer un passage à sec, marcher sur l’eau comme s’il s’agissait de la terre ferme, ou plonger dans l’eau sans être mouillé et s’y déplacer avec une grande aisance.",
+          "SwedishName": "Vannkraftla",
+          "Negation": "Quand un enchanteur tente de créer de l’eau, la négation qui s’ensuit aura naturellement pour effet de faire disparaître de l’eau à un autre endroit. Quand un enchanteur trouve une source et l’assèche, une autre se remplit ou voit son débit augmenter au point de déborder. Quand l’enchanteur purifie la moisissure qui frappe une substance ou une source contaminée, une autre source quelque part ailleurs devient impure. Si l’enchanteur contrôle de l’eau, ailleurs, à un endroit où l’eau a été maîtrisée (un barrage, un réceptacle ou des canaux, par exemple) les équipements qui la retiennent se rompent : il peut aussi bien s’agir d’une légère fuite que d’un énorme trou dans la paroi d’un réservoir."
         },
         "vitner-wind-craft": {
-          "Name": "Maîtrise du vent"
+          "Name": "Maîtrise du vent",
+          "Summary": "Permet de créer et diriger le vent, l’air et les phénomènes météorologiques.",
+          "Description": "L’enchanteur a appris à contrôler l’air. Il peut créer des vents quand il n’y en a pas et accroître l’humidité ambiante afin de créer du brouillard. Il peut aussi filtrer les substances délétères dans l’air, flotter et se déplacer dans le vent, et comprimer l’air afin de créer un bouclier, une armure ou une arme. L’enchanteur a également appris à manipuler le vitner afin qu’il s’exprime sous forme de vents, et créer ainsi des rafales de vent plus ou moins puissantes dans l’environnement immédiat, ou bien réduire ou augmenter à loisir la puissance du vent.",
+          "SwedishName": "Loftirkraftla",
+          "Negation": "Quand l’enchanteur crée de l’air, la négation qui s’ensuit fait naturellement disparaître de l’air quelque part ailleurs. Si l’enchanteur crée une armure, un bouclier ou une arme à partir d’air compressé, une quantité significative d’air disparaît dans les environs. Par exemple, une grande caverne pourrait se voir vidée de tout l’air qu’elle contient, ou l’atmosphère pourrait simplement contenir moins d’oxygène dans de vastes régions du monde, où les êtres vivants auront beaucoup plus de mal à respirer, comme si elles se trouvaient à une altitude très élevée. Les négations générées par la création, l’augmentation ou la diminution du vent prennent toujours une forme opposée aux effets du sort choisi. Si l’enchanteur crée du vent à un endroit, le vent mourra à un autre endroit. Si sa force augmente quelque part, elle diminuera ailleurs, et vice versa. Si l’enchanteur conjure du brouillard à un endroit, le brouillard se dissipera rapidement à un autre endroit."
         },
         "vitner-witchcraft": {
-          "Name": "Sorcellerie"
+          "Name": "Sorcellerie",
+          "Summary": "Permet de maudire, effrayer et transformer des êtres, objets ou végétaux.",
+          "Description": "L’enchanteur a appris l’art de la sorcellerie, dont on dit qu’elle est la fondation de toute magie, mais aussi qu’elle serait à l’origine du schisme entre la magie et les enchanteurs d’une part, et les dieux et la religion des Stormlander d’autre part. Grâce à cette Tablette de vitner, l’enchanteur a appris à maudire les objets et les êtres vivants, mais aussi à tourmenter les gens avec des maux illusoires, des fièvres ou des crises d’amnésie. L’enchanteur sait également déraciner les arbres massifs et autres gros objets, flétrir les récoltes et transformer les gens en arbres.",
+          "SwedishName": "Hagzkraftla",
+          "Negation": "L’opposé de la sorcellerie est l’enchantement et la bénédiction. Chaque fois qu’un enchanteur maudit un objet ou une créature, un autre sujet se retrouve enchanté. Quand un enchanteur tisse un sort de mal imaginaire, quelqu’un affecté par une maladie ailleurs sur Trudvang profite d’une guérison miraculeuse. Quand une personne est touchée par la fièvre, une autre personne souffrant déjà de la fièvre recouvre la santé. Si un personnage voit ses souvenirs effacés par la sorcellerie, quelqu’un d’autre recouvre soudain la mémoire. La négation d’un arbre déraciné érigera souvent quelque chose ailleurs, une mauvaise récolte provoque une bonne récolte dans une autre région, et la négation d’une malédiction de l’arbre transforme ailleurs un arbre en une créature fantastique."
         },
         "holy-gerbanis-influence-of-jorn": {
-          "Name": "Influence de Jorn"
+          "Name": "Influence de Jorn",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit."
         },
         "holy-gerbanis-power-of-enken": {
-          "Name": "Pouvoir d'Enken"
+          "Name": "Pouvoir d'Enken",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk."
         },
         "holy-gerbanis-strength-of-stormi": {
-          "Name": "Force de Storme"
+          "Name": "Force de Storme",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance."
         },
         "holy-gerbanis-warmth-of-sunvei": {
-          "Name": "Chaleur de Solvei"
+          "Name": "Chaleur de Solvei",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été."
         },
         "holy-gerbanis-wisdom-of-windinna": {
-          "Name": "Sagesse de Windinna"
+          "Name": "Sagesse de Windinna",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration."
         },
         "holy-gerbanis-wrath-of-tyrd": {
-          "Name": "Fureur de Tyrd"
+          "Name": "Fureur de Tyrd",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat."
         },
         "holy-ealdtradition-gift-of-thanja": {
-          "Name": "Don de Thanja"
+          "Name": "Don de Thanja",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature."
         },
         "holy-ealdtradition-halawen-s-offering": {
-          "Name": "Offrande de Halawen"
+          "Name": "Offrande de Halawen",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner."
         },
         "holy-ealdtradition-heritage-of-majne": {
-          "Name": "Héritage de Majne"
+          "Name": "Héritage de Majne",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes."
         },
         "holy-ealdtradition-magh-s-gift": {
-          "Name": "Don de Magh"
+          "Name": "Don de Magh",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait."
         },
         "holy-ealdtradition-nema-s-usefulness": {
-          "Name": "Utilité de Nema"
+          "Name": "Utilité de Nema",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition."
         },
         "holy-ealdtradition-tribute-of-morgu": {
-          "Name": "Tribut de Morgu"
+          "Name": "Tribut de Morgu",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière."
         },
         "holy-tenetnid-tablet-of-anger": {
-          "Name": "Tablette de la colère"
+          "Name": "Tablette de la colère",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis."
         },
         "holy-tenetnid-tablet-of-grace": {
-          "Name": "Tablette de la grâce"
+          "Name": "Tablette de la grâce",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts."
         },
         "holy-tenetnid-tablet-of-the-knight": {
-          "Name": "Tablette du chevalier"
+          "Name": "Tablette du chevalier",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Tablette du chevalier, dont Armure bénie, Lance bénie, Cuirasse des gardiens du Rortan."
         },
         "holy-tenetnid-tablet-of-the-shield": {
-          "Name": "Tablette du bouclier"
+          "Name": "Tablette du bouclier",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons."
         },
         "holy-tenetnid-tablet-of-the-sun": {
-          "Name": "Tablette du soleil"
+          "Name": "Tablette du soleil",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi."
         },
         "holy-tenetnid-tablet-of-voices": {
-          "Name": "Tablette des voix"
+          "Name": "Tablette des voix",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu."
         },
         "holy-haminges-power-of-the-beast": {
-          "Name": "Pouvoir de la bête"
+          "Name": "Pouvoir de la bête",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes."
         },
         "holy-haminges-power-of-the-dragon": {
-          "Name": "Puissance du dragon"
+          "Name": "Puissance du dragon",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm."
         },
         "holy-haminges-power-of-men": {
-          "Name": "Puissance des hommes"
+          "Name": "Puissance des hommes",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe."
         },
         "holy-haminges-power-of-the-scale": {
-          "Name": "Puissance de l'écaille"
+          "Name": "Puissance de l'écaille",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm."
         },
         "holy-haminges-power-of-the-thurses": {
-          "Name": "Puissance des tursirs"
+          "Name": "Puissance des tursirs",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll."
         },
         "holy-haminges-power-of-trolls": {
-          "Name": "Puissance des trolls"
+          "Name": "Puissance des trolls",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts."
         },
         "holy-thuuldom-anvil-shock": {
-          "Name": "Choc de l'enclume"
+          "Name": "Choc de l'enclume",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Choc de l'enclume, dont Choc de l'enclume."
         },
         "holy-thuuldom-borjorn-s-hand": {
-          "Name": "Main de Borjorn"
+          "Name": "Main de Borjorn",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Main de Borjorn, dont Main de Borjorn."
         },
         "holy-thuuldom-cave-spider-s-grip": {
-          "Name": "Prise de l'araignée des cavernes"
+          "Name": "Prise de l'araignée des cavernes",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Prise de l'araignée des cavernes, dont Prise de l’araignée des cavernes."
         },
         "holy-thuuldom-earthquake": {
-          "Name": "Tremblement de terre"
+          "Name": "Tremblement de terre",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre."
         },
         "holy-thuuldom-fang-of-yukk": {
-          "Name": "Croc de Yukk"
+          "Name": "Croc de Yukk",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Croc de Yukk, dont Croc de Yukk."
         },
         "holy-thuuldom-gills-of-the-blackfish": {
-          "Name": "Branchies du brochet"
+          "Name": "Branchies du brochet",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Branchies du brochet, dont Branchies du brochet."
         },
         "holy-thuuldom-hammer-fists": {
-          "Name": "Poings d'acier"
+          "Name": "Poings d'acier",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Poings d'acier, dont Poings d’acier."
         },
         "holy-thuuldom-healing-rune": {
-          "Name": "Rune de guérison"
+          "Name": "Rune de guérison",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison."
         },
         "holy-thuuldom-heat-of-the-depths": {
-          "Name": "Chaleur des profondeurs"
+          "Name": "Chaleur des profondeurs",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Chaleur des profondeurs, dont Chaleur des profondeurs."
         },
         "holy-thuuldom-labyrinth-blood": {
-          "Name": "Sang du labyrinthe"
+          "Name": "Sang du labyrinthe",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Sang du labyrinthe, dont Sang du labyrinthe."
         },
         "holy-thuuldom-mark-of-brokk": {
-          "Name": "Marque de Brokk"
+          "Name": "Marque de Brokk",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Marque de Brokk, dont Marque de Brokk."
         },
         "holy-thuuldom-power-of-repair": {
-          "Name": "Pouvoir de réparation"
+          "Name": "Pouvoir de réparation",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de réparation, dont Pouvoir de réparation."
         },
         "holy-thuuldom-scales": {
-          "Name": "Écailles"
+          "Name": "Écailles",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Écailles, dont Écailles."
         },
         "holy-thuuldom-stoneling": {
-          "Name": "Enfant de la pierre"
+          "Name": "Enfant de la pierre",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Enfant de la pierre, dont Enfant de la pierre."
         },
         "holy-thuuldom-stone-to-clay": {
-          "Name": "Transformation de pierre en argile"
+          "Name": "Transformation de pierre en argile",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Transformation de pierre en argile, dont Transformation de pierre en argile."
         },
         "holy-thuuldom-stoneshape": {
-          "Name": "Aspect de la pierre"
+          "Name": "Aspect de la pierre",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Aspect de la pierre, dont Aspect de la pierre."
         },
         "holy-thuuldom-well-of-water": {
-          "Name": "Source d'eau"
+          "Name": "Source d'eau",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau."
         },
         "holy-toikalokke-animal-mind": {
-          "Name": "Esprit animal"
+          "Name": "Esprit animal",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit."
         },
         "holy-toikalokke-lynx-power": {
-          "Name": "Agilité du lynx"
+          "Name": "Agilité du lynx",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "L’ihana a la faculté de se déplacer dans les bois avec la prouesse et l’agilité d’un lynx."
         },
         "holy-toikalokke-master-of-elements": {
-          "Name": "Maître des éléments"
+          "Name": "Maître des éléments",
+          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+          "Description": "L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments."
         }
       },
       "Power": {

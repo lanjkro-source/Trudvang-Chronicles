@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-shield",
-    "description": "Pouvoirs protecteurs créant sanctuaires, barrières, résistances, bannissements et passages sûrs.",
+    "description": "Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 257",
     "level": 1,
     "tabletType": "holy",

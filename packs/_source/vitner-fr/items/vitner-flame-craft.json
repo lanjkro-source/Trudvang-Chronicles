@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-flame-craft",
-    "description": "Magie du feu créant chaleur et flammes, protégeant du feu et contrôlant les incendies.",
+    "description": "Le vitner que tisse L’enchanteur augmente, réduit ou stabilise le flux du vitner dans son environnement et les objets qui l’entourent. En augmentant le flux de manière explosive, l’enchanteur peut réchauffer un objet au point de provoquer sa combustion soudaine. Si l’enchanteur se montre un peu plus précautionneux, il peut augmenter régulièrement la température d’un lieu jusqu’à atteindre une chaleur agréable et réconfortante. À l’inverse, en interrompant le flux du vitner, l’enchanteur peut étouffer les flammes ou faire chuter brutalement les températures. Il peut également conférer à un sujet une protection contre la chaleur et le feu, en immobilisant complètement le vitner en une couche protectrice que l’énergie brûlante et turbulente de la flamme est incapable d’affecter.",
+    "summary": "Permet de produire, maîtriser ou repousser le feu et la chaleur.",
+    "swedishName": "Loganojd",
+    "negation": "Quand un enchanteur crée des flammes ou réchauffe une zone, il provoque un important changement dans l’intensité du vitner. Cet afflux de vitner provient d’un autre endroit des environs où la température chute brutalement en conséquence. Du givre peut apparaître sur les buissons et les arbres, mais également sur les créatures, qui sentent leur température corporelle et celle de leur environnement chuter de manière inexplicable. L’eau se change en glace et la nourriture chaude refroidit instantanément. Ou bien, si l’enchanteur choisit de réduire la chaleur, cette dernière doit avoir un endroit où aller. Si un enchanteur désire contrôler le feu, l’inverse se produit ailleurs : un feu brûlant calmement dans une cheminée bondit soudainement hors de l’âtre et se répand au risque de provoquer de sérieux dégâts. Les chandelles et torches brûlent si intensément qu’elles pourraient mettre le feu aux objets.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": -1,
+      "morkvitner": -1
+    },
     "source": "Livre des règles, p. 166",
     "level": 1,
     "tabletType": "vitner",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-hammer-fists",
-    "description": "A sacred Thuul rune that hardens the Thuul's fists into crushing weapons like smithing hammers.",
+    "description": "aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",

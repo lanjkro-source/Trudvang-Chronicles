@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-men",
-    "description": "Arts mortels et nains de maîtrise, d'adresse aux armes, de breuvages curatifs, de forge et d'exploits légendaires.",
+    "description": "Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 272",
     "level": 1,
     "tabletType": "holy",

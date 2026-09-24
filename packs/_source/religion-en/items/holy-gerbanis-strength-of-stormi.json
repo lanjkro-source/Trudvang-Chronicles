@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-strength-of-stormi",
-    "description": "Battle blessings that grant giant strength, commanding voices, divine guards, and heroic warriors.",
+    "description": "This tablet gathers powers associated with Strength of Stormi, including Troll Strength, Voice of Command, Hinji Strength.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 164",
     "level": 1,
     "tabletType": "holy",

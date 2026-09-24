@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon",
-    "description": "Draconic powers granting constriction, flame resistance, paralyzing sight, scales, and serpent forms.",
+    "description": "This tablet gathers powers associated with Power of the Dragon, including Constriction, Rampage of the Huvfurwurm, Flame Hardened.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 214",
     "level": 1,
     "tabletType": "holy",

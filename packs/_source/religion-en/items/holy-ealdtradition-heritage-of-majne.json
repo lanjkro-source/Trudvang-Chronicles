@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-heritage-of-majne",
-    "description": "Heroic draughts and royal blessings for slaying trolls, giants, and dragons and rallying warriors.",
+    "description": "This tablet gathers powers associated with Heritage of Majne, including Strong Beer, Trollslayer, King's Militia.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 181",
     "level": 1,
     "tabletType": "holy",

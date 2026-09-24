@@ -4,6 +4,8 @@ import { prepareEquipmentInspection, showEquipmentStatDetail } from "../equipmen
 import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandConflicts, weaponType, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
 import { rollPackageAvailability } from "../package-roll.mjs";
+import { TABLET_BY_ID, getPowerSummary, powerName } from "../tablet-catalog.mjs";
+import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -43,7 +45,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "effect-toggle": TrudvangItemSheet.#onEffectToggle,
       "effect-delete": TrudvangItemSheet.#onEffectDelete,
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
-      "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat
+      "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
+      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen
     }
   };
 
@@ -78,7 +81,33 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.equipmentInspection = this.item.parent?.documentName === "Actor" ? prepareEquipmentInspection(this.item) : null;
     context.hasModifiers = Boolean(context.equipmentInspection);
-    context.hasItemTabs = context.supportsEffects || context.hasModifiers;
+    context.isEmbeddedTablet = this.item.type === "tablet" && this.item.parent?.documentName === "Actor";
+    context.isThuulRune = this.item.type === "tablet" && this.item.system.religion === "thuuldom";
+    context.tabletReligion = this.item.type === "tablet" && this.item.system.religion
+      ? game.i18n.localize(TRUDVANG.religions[this.item.system.religion]?.label ?? `TRUDVANG.Religion.${this.item.system.religion}`) : "";
+    context.tabletReligionOptions = this.item.type === "tablet" ? Object.entries(TRUDVANG.religions).map(([id, religion]) => ({
+      id, label: game.i18n.localize(religion.label), selected: id === this.item.system.religion
+    })) : [];
+    context.tabletAffinities = this.item.type === "tablet" && this.item.system.tabletType === "vitner"
+      ? VITNER_AFFINITY_TYPES.map(type => {
+        const value = Number(this.item.system.affinity?.[type] ?? 0);
+        const state = affinityState(value);
+        return {type, value, state, short: game.i18n.localize(`TRUDVANG.Tablet.AffinityShort.${type}`),
+          label: game.i18n.localize(`TRUDVANG.Tablet.AffinityName.${type}`),
+          detail: game.i18n.localize(`TRUDVANG.Tablet.AffinityEffect.${state}`),
+          options: [-1, 0, 1, 2].map(option => ({value: option,
+            label: ({"-1": "−1", "0": "=", "1": "+1", "2": "×2"})[option], selected: option === value}))};
+      }) : [];
+    const tabletId = this.item.system.catalogId || this.item.getFlag("trudvang-chronicles", "catalogId");
+    const catalogTablet = this.item.type === "tablet" ? TABLET_BY_ID.get(tabletId) : null;
+    context.tabletPowerGroups = catalogTablet ? Array.from({length: context.isThuulRune ? 1 : 5}, (_, index) => ({
+      level: index + 1,
+      accessible: !context.isEmbeddedTablet || Number(this.item.system.level || 0) >= index + 1,
+      powers: catalogTablet.powers.filter(power => power.level === index + 1).map(power => ({
+        catalogId: power.id, name: powerName(power), summary: getPowerSummary(power)
+      }))
+    })).filter(group => group.powers.length) : [];
+    context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.tabletPowerGroups.length > 0;
     context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
     return context;
   }
@@ -181,6 +210,23 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static async #onRoll(event, target) {
     event.preventDefault();
     await this.item.roll();
+  }
+
+  static async #onTabletPowerOpen(event, target) {
+    event.preventDefault();
+    const catalogId = target.dataset.catalogId;
+    if (!catalogId) return;
+    let power = this.item.parent?.documentName === "Actor"
+      ? this.item.parent.items.find(item => item.system.catalogId === catalogId)
+      : game.items.find(item => item.system.catalogId === catalogId);
+    if (!power) {
+      const lang = game.i18n.lang === "fr" ? "fr" : "en";
+      const packName = this.item.system.tabletType === "vitner" ? `vitner-${lang}` : `religion-${lang}`;
+      const pack = game.packs.get(`trudvang-chronicles.${packName}`);
+      power = (await pack?.getDocuments())?.find(item => item.system.catalogId === catalogId);
+    }
+    if (power) return power.sheet.render({force: true});
+    return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
   }
 
   static async #onDeleteItem(event, target) {

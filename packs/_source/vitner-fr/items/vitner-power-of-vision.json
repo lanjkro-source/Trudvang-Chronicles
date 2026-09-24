@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-power-of-vision",
-    "description": "Magie de la vue pour le pistage, l'observation à distance, le voyage astral, la lecture du vitner et la vision de la vérité.",
+    "description": "L’enchanteur a appris à maîtriser la conscience astrale que possèdent tous les êtres vivants. Les objets aussi possèdent une forme de conscience astrale, mais elle est considérablement moins développée que celle d’un être vivant. En entrant en transe pendant le temps de tissage, l’enchanteur peut exécuter différents sorts liés au plan astral invisible. Les méthodes permettant de visiter le plan astral peuvent varier considérablement, étant donné que chacun possède sa propre façon de se concentrer. Certains enchanteurs fixent leur regard sur une flamme ou un lit de charbons ardents, d’autres utilisent un grand tronc, d’autres encore se focalisent sur le soleil ou la lune. Étant donné que tout ce qui est physique se reflète dans le plan astral, la personne enchantée est en mesure de voir la véritable apparence des choses. L’enchanteur peut voir le flux du vitner qui entoure toute chose, suivre les traces d’une créature aussi aisément que des chandelles dans l’obscurité, voir à une distance considérable, et connaître la véritable nature des choses.",
+    "summary": "Permet de suivre des traces et d’observer à distance ou au-delà des apparences.",
+    "swedishName": "Skönjakraftla",
+    "negation": "Chaque fois que l’enchanteur tisse une quelconque projection astrale, l’environnement immédiat peut être le théâtre d’images de l’au-delà. Des images brouillées d’objets étranges ou de créatures surnaturelles deviennent visibles pendant quelques instants dans le monde réel. Pour bien des gens, cela peut être une expérience terrifiante. C’est au maître de jeu de déterminer si une image se manifeste ou non, les choses bizarres qu’elle peut dévoiler, et les conséquences que cela peut avoir. La négation est assez directe : quand le vitner permet à une personne de voir les choses plus clairement, d’autres choses deviennent floues ou se brouillent. Les traces disparaissent et la vision des gens se trouble, et ce qui devrait normalement être évident devient difficile à remarquer.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": 0,
+      "morkvitner": 2
+    },
     "source": "Livre des règles, p. 180",
     "level": 1,
     "tabletType": "vitner",

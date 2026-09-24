@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-wisdom-of-windinna",
-    "description": "Powers of inspiration, truth, creativity, mental resolve, protection, and Windinna's insight.",
+    "description": "This tablet gathers powers associated with Wisdom of Windinna, including Inspiration, Sixth Sense, Steel Mind.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 168",
     "level": 1,
     "tabletType": "holy",

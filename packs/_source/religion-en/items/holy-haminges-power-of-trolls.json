@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-trolls",
-    "description": "Troll powers of disease, illusion, persuasion, fearlessness, cunning, and mountain enchantment.",
+    "description": "This tablet gathers powers associated with Power of Trolls, including Disease Carrier, Willpower, Illusion Tricks.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 223",
     "level": 1,
     "tabletType": "holy",

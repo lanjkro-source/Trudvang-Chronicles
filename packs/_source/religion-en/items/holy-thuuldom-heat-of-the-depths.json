@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-heat-of-the-depths",
-    "description": "A sacred Thuul rune that the Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths.",
+    "description": "This tablet gathers powers associated with Heat of the Depths, including Heat of the Depths.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 231",
     "level": 1,
     "tabletType": "holy",

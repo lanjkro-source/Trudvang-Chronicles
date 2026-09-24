@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-wrath-of-tyrd",
-    "description": "Pouvoirs de guerre aux armes enflammées, cris terrifiants, fureur belliqueuse, tempêtes de feu et victoire.",
+    "description": "Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 220",
     "level": 1,
     "tabletType": "holy",

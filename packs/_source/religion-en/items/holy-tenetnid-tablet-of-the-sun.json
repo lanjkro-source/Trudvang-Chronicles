@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-the-sun",
-    "description": "Solar signs and sacred radiance that protect homes and groves, reveal omens, and illuminate darkness.",
+    "description": "This tablet gathers powers associated with Tablet of the Sun, including Dawn Shine, Protective Ground, Augury.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 203",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-ealdtradition-tribute-of-morgu",
-    "description": "Pouvoirs de combat nourris par le sang, provoquant la rage et déchaînant volées, feu et fureur meurtrière.",
+    "description": "Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 241",
     "level": 1,
     "tabletType": "holy",

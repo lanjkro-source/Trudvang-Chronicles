@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-labyrinth-blood",
-    "description": "Une rune thuul sacrée qui cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Sang du labyrinthe, dont Sang du labyrinthe.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",

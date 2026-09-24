@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-dragon",
-    "description": "Pouvoirs draconiques accordant constriction, résistance au feu, regard paralysant, écailles et formes serpentesques.",
+    "description": "Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 277",
     "level": 1,
     "tabletType": "holy",

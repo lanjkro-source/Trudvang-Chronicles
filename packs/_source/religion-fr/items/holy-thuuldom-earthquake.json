@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-earthquake",
-    "description": "Une rune thuul sacrée qui le thuul enfonce l’objet sacré dans le sol et invoque un puissant tremblement de terre qui secoue le sol et tout ce qui se trouve autour de lui.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 288",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-toikalokke-animal-mind",
-    "description": "Pouvoirs pour se lier d'amitié avec les animaux, les pister, leur parler, les maîtriser et prendre leur forme.",
+    "description": "Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 295",
     "level": 1,
     "tabletType": "holy",

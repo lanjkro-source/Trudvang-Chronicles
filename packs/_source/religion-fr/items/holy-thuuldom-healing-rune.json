@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-healing-rune",
-    "description": "Une rune thuul sacrée qui le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 287",
     "level": 1,
     "tabletType": "holy",

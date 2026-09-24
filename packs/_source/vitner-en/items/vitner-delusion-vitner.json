@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-delusion-vitner",
-    "description": "Illusions that manipulate sound, appearance, concealment, landscapes, silence, and invisibility.",
+    "description": "The enchanter has learned to use the vitner to manipulate the environment and create illusions and images that appear to be convincingly true. The enchanter has full control over what they want the vitner to illustrate, as well as whether or not it should move. In addition to creating the illusions of small creatures and objects, the enchanter can also generate vast l andscape illusions where whole cities, forests, and mountains are swept into reality (at least, as long as observers continue to believe what they see). The enchanter has also learned to manipulate the air in ways that mimic sound and vibrations of motion. By molding the vitner, the enchanter can raise or lower the volume of the s urroundings, producing deafening storms or subtle pitches that are so high that a human cannot hear them. What’s more, the enchanter has learned to use this mimicry to remain undetected by hiding tracks, producing camouflage, or even removing themselves from sight altogether.",
+    "summary": "Creates sound and visual illusions and conceals things.",
+    "swedishName": "Skenvitna",
+    "negation": "When an enchanter creates an illusion, the negation need not always be negative. It may mean that another illusion suddenly shows up in a completely d ifferent place, or that some creature, object, or l andscape suddenly vanishes from sight or flickers for a little while. When the enchanter manipulates sounds of various kinds, however, the negation will always be the opposite. If they reduce the volume in one place, it will be increased in another; if they create a thunderous burst of sound, a s imilarly great noise elsewhere will be entirely muted (such as l ightning or crashing waves that happen without a sound). If the enchanter creates the sound of someone walking across a gravel path, somewhere else that precise sound disappears. If they create a knock on a door, nothing is heard when another person somewhere else does precisely that. And if the enchanter removes a particular sound in one place, that exact sound will inexplicably echo somewhere else.",
+    "affinity": {
+      "hvitavitner": 1,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Player's Handbook, p. 101",
     "level": 1,
     "tabletType": "vitner",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-haminges-power-of-the-scale",
-    "description": "Lindwurm powers of terror, regeneration, stone limbs, petrification, and monstrous resilience.",
+    "description": "This tablet gathers powers associated with Power of the Scale, including Dreadful Screech, Shattered Mind, Terrifying Howl.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 218",
     "level": 1,
     "tabletType": "holy",

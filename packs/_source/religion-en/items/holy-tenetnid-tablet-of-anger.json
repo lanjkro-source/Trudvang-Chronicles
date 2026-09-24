@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-tenetnid-tablet-of-anger",
-    "description": "Sacred powers of blood, stone, martyrdom, destructive bolts, bursts, and divine purging.",
+    "description": "This tablet gathers powers associated with Tablet of Anger, including Power of Blood, Holy Bolt, Stone Senses.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 194",
     "level": 1,
     "tabletType": "holy",

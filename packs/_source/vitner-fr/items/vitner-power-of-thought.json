@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-power-of-thought",
-    "description": "Magie mentale affectant le langage, le courage, la peur, la mémoire, la télépathie, le contrôle, la possession et la lecture des pensées.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de la pensée, dont Compréhension des écrits, Compréhension orale, Courage.",
+    "summary": "Permet de comprendre, influencer ou contrôler pensées, souvenirs et perceptions.",
+    "swedishName": "Húgkraftla",
+    "negation": "Quand un enchanteur tente de contrôler l’esprit ou la conscience d’une autre créature, la négation générée est souvent plus subtile que les autres négations. Lorsqu’un enchanteur tente d’implanter une idée dans l’esprit d’une victime, la négation peut être que, ailleurs, une personne ressent une impression envahissante de déjà vu, ce qui la distrait un moment. Si l’enchanteur tente de prendre le contrôle d’une créature, la négation implique que la conscience de la victime doit aller ailleurs, en échangeant sa place avec quelque chose ou quelqu’un. Cependant, cela ne dure le plus souvent qu’un bref instant, et une fois qu’une créature retrouve son enveloppe corporelle, elle est assez perturbée par ce qui s’est passé. Il est très rare que deux esprits échangent leurs places de façon permanente. Chaque fois qu’un enchanteur affecte la conscience d’une autre créature, la négation prend toujours la forme d’un effet inverse chez une ou plusieurs créatures. Si l’enchanteur provoque une amnésie, quelqu’un d’autre recouvre soudain la mémoire, et vice versa. Si l’enchanteur évoque une émotion particulière chez une créature, une ou plusieurs créatures se retrouvent soudain submergées par l’émotion inverse. Si l’enchanteur crée un lien mental avec une autre personne, d’autres créatures font l’expérience de voix désincarnées et de personnalités autres que la leur, mais aussi de visites dans leur sommeil tandis que d’autres personnes envahissent leurs rêves. Si l’enchanteur utilise le vitner pour déchiffrer quelque chose, la négation signifie qu’ailleurs sur Trudvang, quelqu’un se retrouve pendant un moment incapable de comprendre ce qu’il lit, même s’il connaît normalement cette langue et devrait être en mesure de lire le texte dont le sens lui échappe à présent.",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 176",
     "level": 1,
     "tabletType": "vitner",

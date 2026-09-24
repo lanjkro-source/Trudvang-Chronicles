@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-influence-of-jorn",
-    "description": "Pouvoirs de ténèbres, vents mortels, destriers nés de la tempête, protection et influence surnaturelle de Jorn.",
+    "description": "Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 222",
     "level": 1,
     "tabletType": "holy",

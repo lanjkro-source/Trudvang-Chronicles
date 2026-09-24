@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-gerbanis-influence-of-jorn",
-    "description": "Powers of darkness, deathly winds, storm-born steeds, protection, and Jorn's supernatural influence.",
+    "description": "This tablet gathers powers associated with Influence of Jorn, including Wall of Dusk, Death Gust, Falfax.",
+    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Player's Handbook, p. 160",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-stoneling",
-    "description": "Une rune thuul sacrée qui le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing.",
+    "description": "Cette tablette rassemble des pouvoirs liés à Enfant de la pierre, dont Enfant de la pierre.",
+    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
     "source": "Livre des règles, p. 286",
     "level": 1,
     "tabletType": "holy",

@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-perceiving",
-    "description": "Divinations for finding places, beings, objects, undead, routes, and the surrounding terrain.",
+    "description": "The enchanter has learned how to search out and detect objects, living creatures, and even undead with the help of vitner. The enchanter can also establish a mental bond with the immediate surroundings. With the help of vitner, the enchanter can gather an accurate picture of anything that exists in their surroundings. They know precisely how to return to a place they have previously been and can follow their own tracks as if they shone like candles in the dark.",
+    "summary": "Finds places, beings, or objects and reveals their traces.",
+    "swedishName": "Alldskonja",
+    "negation": "When the enchanter uses vitner to seek out an object, living creature, or undead, somewhere else something will be lost. Places that a person has been to before suddenly seem foreign or unknown to them. Directions change as east becomes west, and familiar landmarks such as the distinct hill beyond the next turn is now nothing but a hole in the ground. Finding the way home becomes near impossible for some, even by retracing their steps. Information might be forgotten, or physical objects might shift or be misplaced.",
+    "affinity": {
+      "hvitavitner": -1,
+      "vaagrivitner": 0,
+      "morkvitner": 1
+    },
     "source": "Player's Handbook, p. 112",
     "level": 1,
     "tabletType": "vitner",

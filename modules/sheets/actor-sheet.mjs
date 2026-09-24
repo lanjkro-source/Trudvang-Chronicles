@@ -1,6 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { escapeHtml, localizeConfig } from "../helpers.mjs";
-import { TABLET_BY_ID, tabletName } from "../tablet-catalog.mjs";
+import { TABLET_BY_ID, tabletName, tabletSummary } from "../tablet-catalog.mjs";
 import { effectChangeSummary } from "../effects.mjs";
 import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionDialog } from "../equipment-inspection.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
@@ -775,14 +775,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const tablets = this.actor.compatibleTablets;
     if (!tablets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCompatibleTablets"));
     const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-    const options = tablets.map(tablet => `<option value="${tablet.id}">${escapeHtml(tabletName(tablet))}</option>`).join("");
+    const options = tablets.map((tablet, index) => {
+      const summary = tabletSummary(tablet);
+      return `<label class="tablet-picker-option" title="${escapeHtml(summary)}"><input type="radio" name="tabletId" value="${escapeHtml(tablet.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(tabletName(tablet))}</strong>${summary ? `<small>${escapeHtml(summary)}</small>` : ""}</span></label>`;
+    }).join("");
     return DialogClass.prompt({
       window: {title: game.i18n.localize("TRUDVANG.Dialog.AddTablet")},
-      content: `<div class="form-group"><label>${game.i18n.localize("TYPES.Item.tablet")}</label><select name="tabletId">${options}</select></div>`,
+      content: `<div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TYPES.Item.tablet"))}">${options}</div>`,
       ok: {
         icon: "fas fa-plus",
         label: game.i18n.localize("TRUDVANG.Action.Add"),
-        callback: (event, button, dialog) => this.actor.addTabletFromCatalog(button.form?.elements.tabletId?.value)
+        callback: (event, button, dialog) => this.actor.addTabletFromCatalog((button.form ?? dialog.element)?.querySelector('[name="tabletId"]:checked')?.value)
       },
       cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
       modal: false,

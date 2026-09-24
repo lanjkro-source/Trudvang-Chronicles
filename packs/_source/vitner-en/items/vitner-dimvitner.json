@@ -9,7 +9,15 @@
   },
   "system": {
     "catalogId": "vitner-dimvitner",
-    "description": "Death magic that speaks with, summons, controls, dismisses, or drains the undead and the powers of Dimhall.",
+    "description": "The enchanter has learned to control death’s bond between the realms of Trudvang and Dimhall, the realm of death. By manipulating the power of this invisible bond, they can force souls to Trudvang and transform them into undead beings. The enchanter can steal vitn and use the bond of death to speak with dead souls in Dimhall, drive undead beings back to Dimhall, and take control of an undead and dictate what it should do. By adding vitner to the bond of death, they can send waves of powerful energy toward the chosen victim. This energy of death then takes the form of dark, humid streaks of fog that the weaver can use in various ways to hurt their victims.",
+    "summary": "Animates, harms, or controls the dead and their spirits.",
+    "swedishName": "Sálhelevitna",
+    "negation": "The opposite of dimvitner is life and the creation of it, and the negations of the dimvitner therefore revolve around life force. Whenever an enchanter conjures something with this Vitner Tablet, the negation is that life force is bestowed somewhere else, like a birth succeeding against all odds, an invalid miraculously becoming healthy, an injured person being healed, and many other beneficial effects. But when an enchanter chooses to conjure undead beings, the negation becomes er and life force from the significantly worse. Since the mage is more or less creating life, the negation robs weavers of vitner something else of its life. It could be animals that suddenly die, children that are stillborn, creatures that suddenly fall ill, or other tragic happenings. When an enchanter tries to contact a spirit in the realm of the dead, the negation is that one or more spirits can contact a living being in Trudvang. If the mage wants to drive an undead being back to the realms of death, one or more undead souls can slip out into Trudvang. And if the mage wants to control an undead being, the negation is that one or more living beings are temporarily controlled by dead souls.",
+    "affinity": {
+      "hvitavitner": 2,
+      "vaagrivitner": 0,
+      "morkvitner": -1
+    },
     "source": "Player's Handbook, p. 105",
     "level": 1,
     "tabletType": "vitner",
