@@ -1958,7 +1958,8 @@
       "nameKey": "TRUDVANG.Content.Table.FatalMagic.Name",
       "img": "icons/svg/explosion.svg",
       "folder": "tables",
-      "formula": "1d10x9",
+      "formula": "1d10x>=9",
+      "displayRoll": true,
       "replacement": true,
       "flags": {
         "trudvang-chronicles": {
@@ -2204,7 +2205,8 @@
       "nameKey": "TRUDVANG.Content.Table.FatalFailure.Name",
       "img": "icons/svg/holy-shield.svg",
       "folder": "tables",
-      "formula": "1d10x9",
+      "formula": "1d10x>=9",
+      "displayRoll": true,
       "replacement": true,
       "flags": {
         "trudvang-chronicles": {

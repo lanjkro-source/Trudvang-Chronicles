@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
+import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
@@ -914,19 +915,22 @@ export class TrudvangActor extends BaseActor {
     const isDivine = kind === "faith";
     const vitnerType = this.selectedVitnerType;
     const threshold = isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9);
+    const modifier = this.fatalEffectModifier(kind, cost, failedItem);
+    const tableId = isDivine ? "fatal-failure-effects" : "fatal-magic-effects";
+    const table = game.tables.find(candidate => fatalTableId(candidate) === tableId);
+    if (!table) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.FatalTableMissing"));
+    const roll = new Roll(fatalRollFormula(threshold, modifier));
+    await roll.evaluate();
+    return table.draw({roll, displayChat: true});
+  }
+
+  fatalEffectModifier(kind, cost = 0, failedItem = null) {
+    const isDivine = kind === "faith";
     const mitigation = isDivine
       ? Number(this.findKnowledgeItem("godFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("composed")?.system.level || 0))
       : Number(this.findKnowledgeItem("vitnerFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0));
     const activeCost = isDivine ? 0 : this.items.filter(item => item.type === "spell" && item.id !== failedItem?.id && item.system.active).reduce((sum, item) => sum + Number(item.system.activeCost || item.system.cost || 0), 0);
-    const result = await openD10({threshold, modifier: Number(cost || 0) + activeCost - mitigation});
-    const tableId = isDivine ? "fatal-failure-effects" : "fatal-magic-effects";
-    const table = game.tables.find(candidate => candidate.getFlag("trudvang-chronicles", "starterId") === tableId);
-    if (!table) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.FatalTableMissing"));
-    // A mitigated total of zero has the same harmless effect as 1; Foundry's
-    // RollTable range check cannot use a result whose lower bound is zero.
-    const roll = new Roll(String(Math.max(1, result.total)));
-    await roll.evaluate();
-    return table.draw({roll, displayChat: true});
+    return Number(cost || 0) + activeCost - mitigation;
   }
 
   async resetCombatPoints() {

@@ -781,6 +781,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.TargetInMelee` | Target in melee (SV -5) | Cible en mêlée (VC -5) |
 | `TRUDVANG.Dialog.TargetMoving` | Moving target (SV -10) | Cible en mouvement (VC -10) |
 | `TRUDVANG.Dialog.FearFactorBase` | Fear factor: {factor} | Facteur de peur : {factor} |
+| `TRUDVANG.Dialog.FatalActor` | Selected actor: {actor} | Acteur sélectionné : {actor} |
+| `TRUDVANG.Dialog.FatalNoActor` | No actor selected: choose the Open Roll threshold. | Aucun acteur sélectionné : choisissez le JO du jet. |
+| `TRUDVANG.Dialog.FatalJO` | Open Roll threshold | Jet ouvert (JO) |
+| `TRUDVANG.Dialog.FatalCost` | Action cost | Coût de l'action |
+| `TRUDVANG.Dialog.FatalSituational` | Situational modifier | Modificateur situationnel |
+| `TRUDVANG.Dialog.FatalActorModifier` | Actor modifier (active spells and mitigation): {modifier} | Modificateur de l'acteur (sorts actifs et atténuation) : {modifier} |
 | `TRUDVANG.Dialog.AcclimatizationModifier` | Acclimatization | Acclimatation |
 | `TRUDVANG.Dialog.SituationalModifier` | Situational modifier | Modificateur situationnel |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
