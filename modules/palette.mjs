@@ -97,7 +97,7 @@ export const PALETTES = {
     paperLight: "#FDF8ED",
     line: "rgba(43,43,43,0.38)",
     accent: "#9B405E",
-    warning: "#607250",
+    warning: "#916348",
     header: "#354230",
     headerAlt: "#4c5d3f",
     onHeader: "#FDF8ED",
