@@ -4247,13 +4247,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2.Name` | Joy of Creating | Esprit d'acier |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2.Name` | Joy of Creating | Joie de la création |
 
 ## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3.Name` | Steel Mind | Joie de la création |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3.Name` | Steel Mind | Esprit d'acier |
 
 ## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4`
 
@@ -4409,13 +4409,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2.Name` | Bloodfangsbane | Courage des ancêtres |
+| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2.Name` | Bloodfangsbane | Fléau de Blotfang |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3.Name` | Boldness of the Ancestors | Fléau de Blotfang |
+| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3.Name` | Boldness of the Ancestors | Courage des ancêtres |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:bolgemek:4`
 
@@ -4571,13 +4571,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2.Name` | Gloomy Trail | Ouïe du hibou |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2.Name` | Gloomy Trail | Piste des brumes |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3.Name` | Owl Hearing | Piste des brumes |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3.Name` | Owl Hearing | Ouïe du hibou |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:freeing-breeze:4`
 
@@ -4595,13 +4595,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6.Name` | Liberating Wind | Sens du griffon |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6.Name` | Liberating Wind | Vent libérateur |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7.Name` | Griffon's Sense | Vent libérateur |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7.Name` | Griffon's Sense | Sens du griffon |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8`
 
@@ -4637,13 +4637,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4.Name` | Shower of Arrows | Folie |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4.Name` | Shower of Arrows | Pluie de flèches |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5.Name` | Madness | Pluie de flèches |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5.Name` | Madness | Folie |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:bloodfire:6`
 
@@ -4655,13 +4655,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:riastarthae:7.Name` | Riastarthae | Cieux obscurcis |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:riastarthae:7.Name` | Riastarthae | Riastarthae |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8.Name` | Blacken the Sky | Riastarthae |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8.Name` | Blacken the Sky | Cieux obscurcis |
 
 ## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:power-of-blood:0`
 
@@ -4757,13 +4757,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6.Name` | Breath of Gave | Main de Gave |
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6.Name` | Breath of Gave | Souffle de Gave |
 
 ## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7.Name` | Hand of Gave | Souffle de Gave |
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7.Name` | Hand of Gave | Main de Gave |
 
 ## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:wind-of-immortality:8`
 
@@ -5069,13 +5069,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4.Name` | Dragon Skin | Attaque du huvfurwurm |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4.Name` | Dragon Skin | Peau du dragon |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5.Name` | Attack of the Huvfurwurm | Peau du dragon |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5.Name` | Attack of the Huvfurwurm | Attaque du huvfurwurm |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6`
 
@@ -5429,13 +5429,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2.Name` | Talk to Animals | Invisibilité aux animaux |
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2.Name` | Talk to Animals | Parler avec les animaux |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3.Name` | Invisible to Animals | Parler avec les animaux |
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3.Name` | Invisible to Animals | Invisibilité aux animaux |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-spirit:4`
 

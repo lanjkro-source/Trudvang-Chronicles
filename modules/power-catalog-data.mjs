@@ -15,7 +15,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:messenger:0:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -80,7 +80,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:call-on-animals:2:1",
-        "cost": 1,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -90,7 +90,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:call-on-animals:2:3",
-        "cost": 6,
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -125,17 +125,17 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:1",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:conjure-ravens:3:2",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -180,27 +180,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:control-animals:4:1",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-animal-vitner:control-animals:4:2",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-animal-vitner:control-animals:4:3",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-animal-vitner:control-animals:4:4",
+        "id": "vitner-animal-vitner:control-animals:4:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-animal-vitner:control-animals:4:5",
+        "id": "vitner-animal-vitner:control-animals:4:3",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:4",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:5",
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -255,22 +255,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:mind-of-the-wolf:5:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-animal-vitner:mind-of-the-wolf:5:3",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-animal-vitner:mind-of-the-wolf:5:4",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-animal-vitner:mind-of-the-wolf:5:5",
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:4",
         "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:5",
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -320,22 +320,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:possess-animals:6:1",
-        "cost": 1,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:possess-animals:6:2",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:possess-animals:6:3",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:possess-animals:6:4",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -390,22 +390,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-animal-vitner:create-messenger:7:1",
-        "cost": 1,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:create-messenger:7:2",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:create-messenger:7:3",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-animal-vitner:create-messenger:7:4",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -510,22 +510,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:grip:0:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:grip:0:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:grip:0:3",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:grip:0:4",
+        "id": "vitner-body-vitner:grip:0:2",
         "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:grip:0:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:grip:0:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -610,32 +610,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:hearing-deafness:2:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hearing-deafness:2:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:hearing-deafness:2:3",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:hearing-deafness:2:4",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:hearing-deafness:2:5",
         "cost": 8,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:hearing-deafness:2:6",
+        "id": "vitner-body-vitner:hearing-deafness:2:3",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:4",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:5",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:6",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -690,37 +690,37 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:2",
-        "cost": 1,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:3",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:4",
-        "cost": 3,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:5",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:sense-of-smell:3:6",
         "cost": 4,
         "maxCount": null
       },
       {
+        "id": "vitner-body-vitner:sense-of-smell:3:6",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
         "id": "vitner-body-vitner:sense-of-smell:3:7",
-        "cost": 8,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -870,17 +870,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:leather-skin:5:1",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:leather-skin:5:2",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:leather-skin:5:3",
+        "id": "vitner-body-vitner:leather-skin:5:2",
         "cost": 12,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:3",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -920,32 +920,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:immobilize:6:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:immobilize:6:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:immobilize:6:3",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:immobilize:6:4",
-        "cost": 5,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:immobilize:6:5",
+        "id": "vitner-body-vitner:immobilize:6:2",
         "cost": 8,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:immobilize:6:6",
+        "id": "vitner-body-vitner:immobilize:6:3",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:immobilize:6:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:immobilize:6:5",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:immobilize:6:6",
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -1000,17 +1000,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:appearance-change:7:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:appearance-change:7:2",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:appearance-change:7:3",
+        "id": "vitner-body-vitner:appearance-change:7:2",
         "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:appearance-change:7:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1050,32 +1050,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:strengthen:8:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:strengthen:8:2",
-        "cost": 2,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:strengthen:8:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:strengthen:8:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:strengthen:8:5",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:strengthen:8:6",
-        "cost": 8,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -1130,32 +1130,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:hasten:9:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hasten:9:2",
-        "cost": 2,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hasten:9:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hasten:9:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hasten:9:5",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:hasten:9:6",
-        "cost": 8,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -1215,12 +1215,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:imprison:10:2",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:imprison:10:3",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -1270,42 +1270,42 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:change-creature:11:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:2",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:change-creature:11:4",
-        "cost": 5,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:5",
-        "cost": 8,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:6",
+        "id": "vitner-body-vitner:change-creature:11:2",
         "cost": 10,
         "maxCount": null
       },
       {
+        "id": "vitner-body-vitner:change-creature:11:3",
+        "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:5",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:6",
+        "cost": 5,
+        "maxCount": null
+      },
+      {
         "id": "vitner-body-vitner:change-creature:11:7",
-        "cost": 14,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:change-creature:11:8",
-        "cost": 20,
+        "cost": 14,
         "maxCount": null
       },
       {
@@ -1510,17 +1510,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:increase-sounds:3:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:increase-sounds:3:2",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-delusion-vitner:increase-sounds:3:3",
+        "id": "vitner-delusion-vitner:increase-sounds:3:2",
         "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:increase-sounds:3:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1560,22 +1560,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:traceless:4:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:traceless:4:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:traceless:4:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-delusion-vitner:traceless:4:4",
+        "id": "vitner-delusion-vitner:traceless:4:2",
         "cost": 12,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1620,17 +1620,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:ghost-voice:5:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:ghost-voice:5:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-delusion-vitner:ghost-voice:5:3",
+        "id": "vitner-delusion-vitner:ghost-voice:5:2",
         "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:ghost-voice:5:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1675,12 +1675,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:depict:6:2",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-delusion-vitner:depict:6:3",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
@@ -1740,12 +1740,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:camouflage:7:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-delusion-vitner:camouflage:7:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -1755,7 +1755,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:camouflage:7:4",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1870,22 +1870,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:silence:9:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:silence:9:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-delusion-vitner:silence:9:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-delusion-vitner:silence:9:4",
+        "id": "vitner-delusion-vitner:silence:9:2",
         "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -1930,7 +1930,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:1",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -1940,7 +1940,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:3",
-        "cost": 2,
+        "cost": 5,
         "maxCount": 2
       },
       {
@@ -2000,22 +2000,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-delusion-vitner:invisibility:11:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-delusion-vitner:invisibility:11:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-delusion-vitner:invisibility:11:3",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-delusion-vitner:invisibility:11:4",
-        "cost": 5,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -2065,17 +2065,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:2",
-        "cost": 4,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:3",
-        "cost": 4,
+        "cost": 14,
         "maxCount": null
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:4",
-        "cost": 4,
+        "cost": 30,
         "maxCount": null
       },
       {
@@ -2085,17 +2085,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:6",
-        "cost": 6,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:7",
-        "cost": 14,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:8",
-        "cost": 30,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -2395,27 +2395,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "vitner-dimvitner:control-undead:7:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-dimvitner:control-undead:7:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-dimvitner:control-undead:7:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-dimvitner:control-undead:7:3",
         "cost": 5,
         "maxCount": null
       },
       {
-        "id": "vitner-dimvitner:control-undead:7:4",
+        "id": "vitner-dimvitner:control-undead:7:2",
         "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:4",
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -2550,22 +2550,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:spark:1:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:spark:1:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:spark:1:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 1
       },
       {
         "id": "vitner-flame-craft:spark:1:4",
-        "cost": 10,
+        "cost": 2,
         "maxCount": 1
       }
     ],
@@ -2700,27 +2700,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:protection-from-fire:4:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:protection-from-fire:4:2",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-flame-craft:protection-from-fire:4:3",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-flame-craft:protection-from-fire:4:4",
         "cost": 6,
         "maxCount": null
       },
       {
+        "id": "vitner-flame-craft:protection-from-fire:4:3",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-flame-craft:protection-from-fire:4:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
         "id": "vitner-flame-craft:protection-from-fire:4:5",
-        "cost": 15,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -2780,12 +2780,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:flame-control:5:3",
-        "cost": 4,
+        "cost": 9,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:flame-control:5:4",
-        "cost": 9,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -2840,17 +2840,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:warmth:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:warmth:6:2",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-flame-craft:warmth:6:3",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -2860,7 +2860,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:warmth:6:5",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -2925,12 +2925,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-flame-craft:sea-of-fire:7:2",
-        "cost": 1,
+        "cost": 5,
         "maxCount": 4
       },
       {
         "id": "vitner-flame-craft:sea-of-fire:7:3",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       }
     ],
@@ -2970,7 +2970,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:find-home:0:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -2985,7 +2985,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:find-home:0:4",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3030,7 +3030,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:retrace-tracks:1:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -3040,7 +3040,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:retrace-tracks:1:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3090,17 +3090,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:detect-object:2:3",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-perceiving:detect-object:2:4",
         "cost": 5,
         "maxCount": null
       },
       {
-        "id": "vitner-perceiving:detect-object:2:5",
+        "id": "vitner-perceiving:detect-object:2:4",
         "cost": 12,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:5",
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -3210,12 +3210,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:detect-being:4:3",
-        "cost": 4,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-perceiving:detect-being:4:4",
-        "cost": 5,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -3270,17 +3270,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:detect-undead:5:3",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-perceiving:detect-undead:5:4",
         "cost": 5,
         "maxCount": null
       },
       {
-        "id": "vitner-perceiving:detect-undead:5:5",
+        "id": "vitner-perceiving:detect-undead:5:4",
         "cost": 12,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:5",
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -3330,12 +3330,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:surrounding:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-perceiving:surrounding:6:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -3380,12 +3380,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-perceiving:map:7:1",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-perceiving:map:7:2",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
@@ -3460,12 +3460,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:understanding-speech:1:1",
-        "cost": 3,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-thought:understanding-speech:1:2",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -3610,17 +3610,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:3",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -3630,12 +3630,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:5",
-        "cost": 6,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:6",
-        "cost": 8,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3690,7 +3690,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:ecstasy:5:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -3705,7 +3705,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:ecstasy:5:4",
-        "cost": 6,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3750,7 +3750,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:imagining:6:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -3760,7 +3760,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:imagining:6:3",
-        "cost": 6,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3860,17 +3860,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:creature-control:8:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-thought:creature-control:8:2",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-power-of-thought:creature-control:8:3",
+        "id": "vitner-power-of-thought:creature-control:8:2",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-power-of-thought:creature-control:8:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3910,17 +3910,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:aura-of-power:9:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-thought:aura-of-power:9:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-power-of-thought:aura-of-power:9:3",
+        "id": "vitner-power-of-thought:aura-of-power:9:2",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-power-of-thought:aura-of-power:9:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -3960,27 +3960,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:possess-creature:10:1",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-thought:possess-creature:10:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-thought:possess-creature:10:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-power-of-thought:possess-creature:10:4",
+        "id": "vitner-power-of-thought:possess-creature:10:2",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:3",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-power-of-thought:possess-creature:10:5",
+        "id": "vitner-power-of-thought:possess-creature:10:4",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:5",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -4030,7 +4030,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:mind-reading:11:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -4040,7 +4040,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-thought:mind-reading:11:3",
-        "cost": 4,
+        "cost": 8,
         "maxCount": null
       },
       {
@@ -4090,12 +4090,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:tracking:0:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:tracking:0:2",
-        "cost": 6,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -4160,37 +4160,37 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:far-sight:2:1",
-        "cost": 1,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:far-sight:2:2",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:far-sight:2:3",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-vision:far-sight:2:4",
         "cost": 3,
         "maxCount": null
       },
       {
+        "id": "vitner-power-of-vision:far-sight:2:4",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
         "id": "vitner-power-of-vision:far-sight:2:5",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:far-sight:2:6",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:far-sight:2:7",
-        "cost": 10,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -4255,12 +4255,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:seeing:3:2",
-        "cost": 4,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:seeing:3:3",
-        "cost": 6,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -4300,7 +4300,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:espionage:4:1",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -4340,17 +4340,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:astral-voyage:5:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-vision:astral-voyage:5:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-power-of-vision:astral-voyage:5:3",
+        "id": "vitner-power-of-vision:astral-voyage:5:2",
         "cost": 18,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -4420,12 +4420,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -4435,22 +4435,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:5",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-power-of-vision:true-sight:7:6",
         "cost": 5,
         "maxCount": null
       },
       {
+        "id": "vitner-power-of-vision:true-sight:7:6",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
         "id": "vitner-power-of-vision:true-sight:7:7",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -4780,7 +4780,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-soil-craft:soil-walk:5:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -4790,12 +4790,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-soil-craft:soil-walk:5:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 1
       },
       {
         "id": "vitner-soil-craft:soil-walk:5:4",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -4895,17 +4895,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:4",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -4950,27 +4950,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-soil-craft:petrify-remove-petrification:8:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
         "cost": 5,
         "maxCount": null
       },
       {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -5020,17 +5020,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:channeling:0:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:channeling:0:2",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:channeling:0:3",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -5090,17 +5090,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:2",
-        "cost": 2,
+        "cost": 12,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:3",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -5110,7 +5110,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:5",
-        "cost": 12,
+        "cost": 15,
         "maxCount": null
       }
     ],
@@ -5160,32 +5160,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:enchant-object:2:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:enchant-object:2:2",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-object:2:3",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-object:2:4",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-object:2:5",
         "cost": 8,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-craft:enchant-object:2:6",
+        "id": "vitner-vitner-craft:enchant-object:2:3",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:5",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:6",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -5240,27 +5240,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:anti-magic:3:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:anti-magic:3:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:anti-magic:3:3",
         "cost": 4,
         "maxCount": null
       },
       {
+        "id": "vitner-vitner-craft:anti-magic:3:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
         "id": "vitner-vitner-craft:anti-magic:3:4",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:anti-magic:3:5",
-        "cost": 10,
+        "cost": 5,
         "maxCount": 1
       }
     ],
@@ -5310,27 +5310,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:enchant-being:4:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:2",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:3",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:4",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-craft:enchant-being:4:5",
+        "id": "vitner-vitner-craft:enchant-being:4:2",
         "cost": 12,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:4",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:5",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -5450,17 +5450,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:3",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -5470,7 +5470,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:5",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -5525,27 +5525,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:2",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:3",
-        "cost": 3,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:5",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-craft:wall-of-vitner:8:6",
-        "cost": 8,
+        "cost": 10,
         "maxCount": null
       }
     ],
@@ -5600,17 +5600,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:detect-composition:0:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:detect-composition:0:2",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-of-objects:detect-composition:0:3",
+        "id": "vitner-vitner-of-objects:detect-composition:0:2",
         "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:detect-composition:0:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -5650,22 +5650,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:waterproof:1:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:waterproof:1:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:waterproof:1:3",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-of-objects:waterproof:1:4",
+        "id": "vitner-vitner-of-objects:waterproof:1:2",
         "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:4",
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -5720,22 +5720,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:bind:2:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:bind:2:2",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-of-objects:bind:2:3",
+        "id": "vitner-vitner-of-objects:bind:2:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-of-objects:bind:2:4",
+        "id": "vitner-vitner-of-objects:bind:2:3",
         "cost": 15,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:bind:2:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -5780,22 +5780,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:rust:3:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:rust:3:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:rust:3:3",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-vitner-of-objects:rust:3:4",
+        "id": "vitner-vitner-of-objects:rust:3:2",
         "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -5840,17 +5840,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:1",
-        "cost": 1,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:2",
-        "cost": 4,
+        "cost": 12,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:3",
-        "cost": 4,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -5860,12 +5860,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:5",
-        "cost": 12,
+        "cost": 16,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:6",
-        "cost": 16,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -5950,32 +5950,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:1",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:3",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:4",
         "cost": 4,
         "maxCount": null
       },
       {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:4",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
         "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:5",
-        "cost": 8,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:6",
-        "cost": 10,
+        "cost": 8,
         "maxCount": null
       }
     ],
@@ -6030,17 +6030,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:3",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -6050,17 +6050,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:5",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:6",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-vitner-of-objects:alter-object:7:7",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -6260,22 +6260,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:find-water:0:1",
-        "cost": 1,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:find-water:0:2",
-        "cost": 4,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:find-water:0:3",
-        "cost": 4,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:find-water:0:4",
-        "cost": 10,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -6380,22 +6380,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:breathe:2:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:breathe:2:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:breathe:2:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-water-craft:breathe:2:4",
+        "id": "vitner-water-craft:breathe:2:2",
         "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:4",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -6445,12 +6445,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:form-water:3:2",
-        "cost": 4,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:form-water:3:3",
-        "cost": 6,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -6500,17 +6500,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:create-water:4:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:create-water:4:2",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-water-craft:create-water:4:3",
+        "id": "vitner-water-craft:create-water:4:2",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -6550,32 +6550,32 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:solid-water:5:1",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:2",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:3",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:4",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:5",
         "cost": 3,
         "maxCount": null
       },
       {
-        "id": "vitner-water-craft:solid-water:5:6",
+        "id": "vitner-water-craft:solid-water:5:2",
         "cost": 5,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:3",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:4",
+        "cost": 5,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:5",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:6",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -6625,32 +6625,32 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "vitner-water-craft:control-precipitation:6:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:control-precipitation:6:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:control-precipitation:6:2",
-        "cost": 2,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:control-precipitation:6:3",
-        "cost": 3,
+        "cost": 20,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:control-precipitation:6:4",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:control-precipitation:6:5",
-        "cost": 4,
+        "cost": 3,
         "maxCount": 1
       }
     ],
@@ -6700,12 +6700,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:water-walk:7:1",
-        "cost": 1,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:water-walk:7:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -6715,7 +6715,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:water-walk:7:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -6725,17 +6725,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:water-walk:7:6",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:water-walk:7:7",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:water-walk:7:8",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -6810,7 +6810,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:wave-master:8:1",
-        "cost": 1,
+        "cost": 6,
         "maxCount": null
       },
       {
@@ -6820,27 +6820,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-water-craft:wave-master:8:3",
-        "cost": 3,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:wave-master:8:4",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:wave-master:8:5",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:wave-master:8:6",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-water-craft:wave-master:8:7",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -6900,7 +6900,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:purify-air:0:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -6910,7 +6910,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:purify-air:0:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -7080,7 +7080,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:air-armor:4:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
@@ -7095,7 +7095,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:air-armor:4:4",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -7140,47 +7140,47 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:lift:5:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:3",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:4",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:5",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:6",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:7",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 7
       },
       {
         "id": "vitner-wind-craft:lift:5:8",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:lift:5:9",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -7250,27 +7250,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:air-shield:6:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:air-shield:6:2",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:air-shield:6:3",
-        "cost": 3,
+        "cost": 1,
         "maxCount": 29
       },
       {
         "id": "vitner-wind-craft:air-shield:6:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:air-shield:6:5",
-        "cost": 10,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -7360,27 +7360,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:storm:8:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:storm:8:2",
-        "cost": 20,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:storm:8:3",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:storm:8:4",
-        "cost": 1,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:storm:8:5",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -7430,27 +7430,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:2",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:3",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:4",
-        "cost": 3,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:5",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -7460,12 +7460,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:7",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-wind-craft:wind-catcher:9:8",
-        "cost": 5,
+        "cost": 3,
         "maxCount": 1
       }
     ],
@@ -7585,7 +7585,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:phantom-plague:1:2",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -7620,27 +7620,27 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:fever:2:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-witchcraft:fever:2:2",
         "cost": 3,
         "maxCount": null
       },
       {
+        "id": "vitner-witchcraft:fever:2:2",
+        "cost": 8,
+        "maxCount": null
+      },
+      {
         "id": "vitner-witchcraft:fever:2:3",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:fever:2:4",
-        "cost": 5,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:fever:2:5",
-        "cost": 8,
+        "cost": 5,
         "maxCount": 4
       }
     ],
@@ -7690,17 +7690,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:curse-object:3:1",
-        "cost": 2,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:curse-object:3:2",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:curse-object:3:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -7750,12 +7750,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:amnesia:4:1",
-        "cost": 2,
+        "cost": 8,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:amnesia:4:2",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -7790,22 +7790,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:curse-creature:5:1",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-witchcraft:curse-creature:5:2",
         "cost": 6,
         "maxCount": null
       },
       {
-        "id": "vitner-witchcraft:curse-creature:5:3",
+        "id": "vitner-witchcraft:curse-creature:5:2",
         "cost": 10,
         "maxCount": null
       },
       {
-        "id": "vitner-witchcraft:curse-creature:5:4",
+        "id": "vitner-witchcraft:curse-creature:5:3",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-witchcraft:curse-creature:5:4",
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -7850,17 +7850,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:bad-harvest:6:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:bad-harvest:6:2",
-        "cost": 5,
+        "cost": 20,
         "maxCount": null
       },
       {
         "id": "vitner-witchcraft:bad-harvest:6:3",
-        "cost": 6,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -7870,7 +7870,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:bad-harvest:6:5",
-        "cost": 20,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -7925,22 +7925,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-witchcraft:tree-curse:7:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-witchcraft:tree-curse:7:3",
         "cost": 4,
         "maxCount": null
       },
       {
-        "id": "vitner-witchcraft:tree-curse:7:4",
+        "id": "vitner-witchcraft:tree-curse:7:3",
         "cost": 8,
         "maxCount": null
       },
       {
-        "id": "vitner-witchcraft:tree-curse:7:5",
+        "id": "vitner-witchcraft:tree-curse:7:4",
         "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:5",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -8020,17 +8020,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:3",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -8090,22 +8090,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:1",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:2",
-        "cost": 3,
-        "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:3",
         "cost": 5,
         "maxCount": null
       },
       {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
         "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:4",
-        "cost": 15,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -8310,6 +8310,11 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:night-vision:0:1",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:night-vision:0:2",
         "cost": 3,
         "maxCount": null
       }
@@ -8347,11 +8352,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-gerbanis-power-of-enken:willpower:1:1",
         "cost": 10,
         "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-power-of-enken:willpower:1:2",
-        "cost": 1,
-        "maxCount": null
       }
     ],
     "fr": [
@@ -8375,7 +8375,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-gerbanis-power-of-enken:bold:2:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -8410,7 +8410,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:wind-shield:3:1",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -8420,7 +8420,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:wind-shield:3:3",
-        "cost": 5,
+        "cost": 3,
         "maxCount": 4
       }
     ],
@@ -8500,7 +8500,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:storm-armor:5:1",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -8515,7 +8515,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:storm-armor:5:4",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -8560,7 +8560,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:1",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -8570,12 +8570,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:3",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
-        "cost": 10,
+        "cost": 6,
         "maxCount": null
       }
     ],
@@ -8620,12 +8620,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -8635,7 +8635,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
-        "cost": 5,
+        "cost": 3,
         "maxCount": 12
       }
     ],
@@ -8722,11 +8722,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:1",
         "cost": 10,
         "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:2",
-        "cost": 1,
-        "maxCount": null
       }
     ],
     "fr": [
@@ -8755,6 +8750,11 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:2",
         "cost": 2,
         "maxCount": null
       }
@@ -8890,12 +8890,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:shield-disir:5:1",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:shield-disir:5:2",
-        "cost": 10,
+        "cost": 5,
         "maxCount": 2
       }
     ],
@@ -8930,22 +8930,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:1",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:2",
-        "cost": 5,
+        "cost": 3,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:3",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4",
-        "cost": 10,
+        "cost": 6,
         "maxCount": null
       }
     ],
@@ -9040,12 +9040,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:einharjar:8:1",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-gerbanis-strength-of-stormi:einharjar:8:2",
-        "cost": 10,
+        "cost": 5,
         "maxCount": 5
       }
     ],
@@ -9075,8 +9075,13 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-gerbanis-warmth-of-sunvei:healing:0:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
+      },
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:healing:0:1",
+        "cost": 3,
+        "maxCount": 3
       }
     ],
     "fr": [
@@ -9102,11 +9107,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:0",
         "cost": 1,
         "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:1",
-        "cost": 2,
-        "maxCount": 3
       }
     ],
     "fr": [
@@ -9384,11 +9384,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:1",
         "cost": 2,
         "maxCount": null
-      },
-      {
-        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:2",
-        "cost": 3,
-        "maxCount": null
       }
     ],
     "spellType": "lasting",
@@ -9423,6 +9418,11 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:1",
         "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:2",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -9495,7 +9495,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-gerbanis-wisdom-of-windinna:swine-rush:6:0",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -10210,17 +10210,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:1",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:2",
         "cost": 10,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:3",
-        "cost": 3,
         "maxCount": null
       }
     ],
@@ -10250,6 +10240,16 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:1",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:3",
         "cost": 3,
         "maxCount": null
       }
@@ -10285,7 +10285,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -10350,22 +10350,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:1",
-        "cost": 5,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:2",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:3",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:4",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       }
     ],
@@ -10395,7 +10380,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:1",
+        "cost": 5,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:2",
         "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:4",
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -10500,22 +10500,22 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1",
-        "cost": 1,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:2",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:4",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -10670,12 +10670,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:1",
-        "cost": 3,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:2",
-        "cost": 10,
+        "cost": 3,
         "maxCount": 1
       }
     ],
@@ -10730,12 +10730,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:1",
-        "cost": 4,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:2",
-        "cost": 10,
+        "cost": 3,
         "maxCount": 3
       }
     ],
@@ -10820,12 +10820,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8:1",
-        "cost": 6,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-heritage-of-majne:the-nine-kings:8:2",
-        "cost": 10,
+        "cost": 6,
         "maxCount": 8
       }
     ],
@@ -11141,16 +11141,11 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:0",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:1",
         "cost": 2,
         "maxCount": null
       },
       {
-        "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:2",
+        "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:1",
         "cost": 2,
         "maxCount": null
       }
@@ -11181,11 +11176,16 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:2",
         "cost": 2,
         "maxCount": null
       }
@@ -11271,16 +11271,11 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:0",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1",
         "cost": 2,
         "maxCount": null
       },
       {
-        "id": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:2",
+        "id": "holy-ealdtradition-nema-s-usefulness:liberating-wind:6:1",
         "cost": 2,
         "maxCount": null
       }
@@ -11311,11 +11306,16 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:2",
         "cost": 2,
         "maxCount": null
       }
@@ -11411,6 +11411,11 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2:0",
         "cost": 1,
         "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2:1",
+        "cost": 2,
+        "maxCount": null
       }
     ],
     "fr": [
@@ -11434,11 +11439,6 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-ealdtradition-tribute-of-morgu:rage:3:0",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-tribute-of-morgu:rage:3:1",
         "cost": 1,
         "maxCount": null
       }
@@ -11473,6 +11473,11 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4:0",
         "cost": 1,
         "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4:1",
+        "cost": 2,
+        "maxCount": 4
       }
     ],
     "spellType": "instant",
@@ -11493,11 +11498,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-ealdtradition-tribute-of-morgu:madness:5:0",
         "cost": 1,
         "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-tribute-of-morgu:madness:5:1",
-        "cost": 2,
-        "maxCount": 4
       }
     ],
     "spellType": "lasting",
@@ -11548,11 +11548,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:0",
         "cost": 1,
         "maxCount": null
-      },
-      {
-        "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:1",
-        "cost": 2,
-        "maxCount": null
       }
     ],
     "spellType": "lasting",
@@ -11578,6 +11573,11 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:0",
         "cost": 1,
         "maxCount": null
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:1",
+        "cost": 2,
+        "maxCount": null
       }
     ],
     "spellType": "instant",
@@ -11590,10 +11590,15 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
         "cost": 1,
-        "maxCount": null
+        "maxCount": 6
       },
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
+        "cost": 2,
+        "maxCount": 4
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:2",
         "cost": 2,
         "maxCount": null
       }
@@ -11625,16 +11630,11 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:0",
         "cost": 2,
-        "maxCount": 6
+        "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:1",
         "cost": 3,
-        "maxCount": 4
-      },
-      {
-        "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:2",
-        "cost": 1,
         "maxCount": null
       }
     ],
@@ -11979,7 +11979,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-tenetnid-tablet-of-grace:holy-mending:1:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -12126,7 +12126,7 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-tenetnid-tablet-of-grace:breath-of-gave:6:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12146,7 +12146,7 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       }
     ],
@@ -12214,7 +12214,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12224,7 +12224,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:blessed-armor:0:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12264,7 +12264,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12274,7 +12274,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:blessed-spear:1:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12364,7 +12364,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12374,7 +12374,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12474,7 +12474,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12484,7 +12484,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12524,7 +12524,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12534,7 +12534,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -12574,7 +12574,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -12584,7 +12584,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -13044,12 +13044,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:2",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -13154,17 +13154,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:3",
-        "cost": 10,
+        "cost": 3,
         "maxCount": 2
       }
     ],
@@ -13229,7 +13229,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:2",
-        "cost": 1,
+        "cost": 2,
         "maxCount": 3
       },
       {
@@ -13275,10 +13275,15 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:1",
         "cost": 2,
-        "maxCount": 2
+        "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:2",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:3",
         "cost": 2,
         "maxCount": null
       }
@@ -13320,16 +13325,11 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:1",
         "cost": 2,
-        "maxCount": null
+        "maxCount": 2
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "holy-tenetnid-tablet-of-the-sun:holy-radiance:7:3",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -13384,12 +13384,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 3
       }
     ],
@@ -13494,12 +13494,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 5
       }
     ],
@@ -13604,7 +13604,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:3",
-        "cost": 2,
+        "cost": 3,
         "maxCount": 6
       }
     ],
@@ -13644,12 +13644,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 8
       }
     ],
@@ -13784,13 +13784,8 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:resilience:0:1",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-the-beast:resilience:0:2",
-        "cost": 2,
-        "maxCount": 4
       }
     ],
     "fr": [
@@ -13819,8 +13814,13 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:2",
+        "cost": 2,
+        "maxCount": 4
       }
     ],
     "fr": [
@@ -13854,12 +13854,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:1",
-        "cost": 3,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:2",
-        "cost": 6,
+        "cost": 2,
         "maxCount": 4
       }
     ],
@@ -13954,12 +13954,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:1",
-        "cost": 3,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 4
       }
     ],
@@ -13994,7 +13994,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:1",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -14024,17 +14024,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:1",
-        "cost": 5,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:2",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:3",
-        "cost": 214,
+        "cost": 10,
         "maxCount": null
       }
     ],
@@ -14074,17 +14074,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomantshape:8:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomantshape:8:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 8
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomantshape:8:3",
-        "cost": 10,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -14246,8 +14246,18 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:1",
+        "cost": 2,
+        "maxCount": 2
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:2",
+        "cost": 2,
+        "maxCount": 2
       }
     ],
     "spellType": "lasting",
@@ -14266,18 +14276,8 @@ export const POWER_DETAILS_BY_ID = {
     "fr": [
       {
         "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:1",
-        "cost": 2,
-        "maxCount": 2
-      },
-      {
-        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:2",
-        "cost": 2,
-        "maxCount": 2
       }
     ],
     "spellType": "lasting",
@@ -14294,12 +14294,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:1",
-        "cost": 3,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:2",
-        "cost": 4,
+        "cost": 3,
         "maxCount": 3
       }
     ],
@@ -14374,7 +14374,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -14384,12 +14384,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 1
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:4",
-        "cost": 10,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -14434,13 +14434,8 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:1",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:2",
-        "cost": 2,
-        "maxCount": 2
       }
     ],
     "fr": [
@@ -14469,8 +14464,13 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-men:accomplished:1:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-men:accomplished:1:2",
+        "cost": 2,
+        "maxCount": 2
       }
     ],
     "fr": [
@@ -14534,12 +14534,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-men:mastery:3:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-men:mastery:3:2",
-        "cost": 6,
+        "cost": 2,
         "maxCount": 3
       }
     ],
@@ -14569,7 +14569,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-men:remedial-potion:4:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -14829,21 +14829,6 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:0",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:1",
-        "cost": 5,
-        "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:2",
-        "cost": 2,
-        "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:3",
         "cost": 2,
         "maxCount": null
       }
@@ -14865,6 +14850,21 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:0",
         "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:1",
+        "cost": 5,
+        "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:2",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:3",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -14899,7 +14899,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
@@ -15174,7 +15174,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -15184,12 +15184,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 2
       },
       {
         "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:4",
-        "cost": 10,
+        "cost": 3,
         "maxCount": 2
       }
     ],
@@ -15309,7 +15309,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:0",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null
       },
       {
@@ -15319,12 +15319,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 2
       },
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:3",
-        "cost": 5,
+        "cost": 3,
         "maxCount": 3
       }
     ],
@@ -15429,17 +15429,17 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-trolls:illusion-tricks:2:0",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:1",
         "cost": 2,
         "maxCount": null
       },
       {
-        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:2",
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:1",
         "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:2",
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -15469,17 +15469,17 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:1",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null
       },
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:2",
-        "cost": 10,
+        "cost": 5,
         "maxCount": null
       }
     ],
@@ -15554,7 +15554,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -15564,7 +15564,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:3",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -15674,7 +15674,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null
       },
       {
@@ -15684,7 +15684,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null
       }
     ],
@@ -15719,27 +15719,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -15779,27 +15779,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -15959,27 +15959,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -16027,27 +16027,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-hammer-fists:hammer-fists:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-hammer-fists:hammer-fists:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-hammer-fists:hammer-fists:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-hammer-fists:hammer-fists:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-hammer-fists:hammer-fists:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -16087,27 +16087,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-healing-rune:healing-rune:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -16507,27 +16507,27 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:4",
-        "cost": 234,
+        "cost": 0,
         "maxCount": null
       }
     ],
@@ -16789,6 +16789,11 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-animal-mind:talk-to-animals:2:1",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:talk-to-animals:2:2",
         "cost": 10,
         "maxCount": null
       }
@@ -16819,11 +16824,6 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:1",
-        "cost": 4,
-        "maxCount": null
-      },
-      {
-        "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:2",
         "cost": 10,
         "maxCount": null
       }
@@ -17012,17 +17012,17 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-lynx-power:hearing:2:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-lynx-power:hearing:2:2",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-lynx-power:hearing:2:3",
-        "cost": 6,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -17107,7 +17107,7 @@ export const POWER_DETAILS_BY_ID = {
     "en": [
       {
         "id": "holy-toikalokke-lynx-power:aim:5:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null
       },
       {
@@ -17142,12 +17142,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-lynx-power:track:6:1",
-        "cost": 4,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-lynx-power:track:6:2",
-        "cost": 6,
+        "cost": 4,
         "maxCount": null
       }
     ],
@@ -17292,12 +17292,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:1",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null
       }
     ],
@@ -17328,6 +17328,16 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-toikalokke-master-of-elements:control-fire:1:0",
         "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:control-fire:1:1",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:control-fire:1:2",
+        "cost": 8,
         "maxCount": null
       }
     ],
@@ -17364,11 +17374,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-toikalokke-master-of-elements:purify-water:2:1",
         "cost": 2,
         "maxCount": null
-      },
-      {
-        "id": "holy-toikalokke-master-of-elements:purify-water:2:2",
-        "cost": 2,
-        "maxCount": null
       }
     ],
     "fr": [
@@ -17394,11 +17399,6 @@ export const POWER_DETAILS_BY_ID = {
         "id": "holy-toikalokke-master-of-elements:gift-of-water:3:0",
         "cost": 2,
         "maxCount": null
-      },
-      {
-        "id": "holy-toikalokke-master-of-elements:gift-of-water:3:1",
-        "cost": 2,
-        "maxCount": null
       }
     ],
     "fr": [
@@ -17422,12 +17422,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-master-of-elements:fire-tamer:4:1",
-        "cost": 3,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-master-of-elements:fire-tamer:4:2",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       },
       {
@@ -17562,7 +17562,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-master-of-elements:earthquake:7:3",
-        "cost": 4,
+        "cost": 3,
         "maxCount": null
       }
     ],
@@ -17697,12 +17697,12 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:2",
-        "cost": 3,
+        "cost": 6,
         "maxCount": null
       },
       {
         "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:3",
-        "cost": 6,
+        "cost": 3,
         "maxCount": null
       }
     ],

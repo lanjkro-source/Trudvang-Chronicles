@@ -26,7 +26,7 @@ test("all 58 tablets ship bilingual summaries and full descriptions", () => {
   }
 });
 
-test("all 394 powers ship localized descriptions, timing, and edition-specific power levels", () => {
+test("all 394 powers ship descriptions and French-authoritative power levels in both languages", () => {
   const powers = TABLET_CATALOG.flatMap(tablet => tablet.powers.map(power => ({tablet, power})));
   assert.equal(powers.length, 394);
   for (const {tablet, power} of powers) {
@@ -37,7 +37,28 @@ test("all 394 powers ship localized descriptions, timing, and edition-specific p
       assert.ok(data.powerLevels.every(level => level.effect && Number.isInteger(level.cost)), `${power.id} ${language} options`);
       assert.ok(data.spellType && typeof data.duration === "string" && typeof data.range === "string", `${power.id} ${language} fields`);
     }
+    const details = POWER_DETAILS_BY_ID[power.id];
+    assert.deepEqual(details.en, details.fr, `${power.id} improvements must not change rules with the display language`);
+    for (const language of ["en", "fr"]) {
+      const levels = lookup(language === "fr" ? french : english, `TRUDVANG.Content.Power.${power.id}.PowerLevels`);
+      assert.deepEqual(Object.keys(levels), details.fr.map((_, index) => String(index)), `${power.id} ${language} option keys`);
+    }
   }
+});
+
+test("reordered and missing English improvements use the French order and costs", () => {
+  const called = POWER_DETAILS_BY_ID["vitner-animal-vitner:call-on-animals:2"];
+  assert.deepEqual(called.en.map(level => level.cost), [1, 6, 4, 1]);
+  const vision = POWER_DETAILS_BY_ID["holy-gerbanis-power-of-enken:night-vision:0"];
+  assert.deepEqual(vision.en.map(level => level.cost), [1, 6, 3]);
+  assert.equal(english.TRUDVANG.Content.Power["holy-gerbanis-power-of-enken:night-vision:0"].PowerLevels["1"],
+    "Augmente la durée du pouvoir de : 1 jour");
+  assert.equal(english.TRUDVANG.Content.Power["vitner-animal-vitner:messenger:0"].PowerLevels["2"],
+    "Augmente la distance que le message peut parcourir de : 10 kilomètres");
+  assert.equal(french.TRUDVANG.Content.Power["holy-gerbanis-wisdom-of-windinna:steel-mind:3"].Name,
+    "Esprit d'acier");
+  assert.equal(french.TRUDVANG.Content.Power["holy-gerbanis-wisdom-of-windinna:joy-of-creating:2"].Name,
+    "Joie de la création");
 });
 
 test("Thuul rune entries do not masquerade as ordinary divine spending", () => {

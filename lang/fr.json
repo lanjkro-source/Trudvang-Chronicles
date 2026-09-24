@@ -4721,8 +4721,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-gerbanis-power-of-enken:bold:2": {
@@ -4847,8 +4846,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
@@ -4996,8 +4994,7 @@
           "CastingTime": "1 minute",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Augmente la durée du sort de : 1 heure",
-            "1": ""
+            "0": "Augmente la durée du sort de : 1 heure"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
@@ -5124,6 +5121,20 @@
           }
         },
         "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2": {
+          "Name": "Joie de la création",
+          "Summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes",
+          "Description": "Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +5 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. Le tourbillon peut aussi réparer de façon permanente un objet cassé (ce qui prend 1d10 tours de jeu).",
+          "SwedishName": "",
+          "Duration": "1 jour",
+          "Range": "10 mètres",
+          "CastingTime": "6 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Affecte une autre personne à portée",
+            "1": "Augmente la portée du pouvoir de : 5 mètres"
+          }
+        },
+        "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
           "Name": "Esprit d'acier",
           "Summary": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
           "Description": "Des flammes engloutissent la cible et purifient son corps de tout mal, transformation ou influence extérieure. Ce pouvoir chasse de la cible toute pensée étrangère aux effets négatifs invoquée par le vitner. Si le stormikjalt est le bénéficiaire de ce pouvoir, il doit réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour se concentrer suffisamment afin de pouvoir recourir à ce pouvoir.",
@@ -5136,21 +5147,6 @@
             "0": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)",
             "1": "Augmente la valeur de situation de : +1",
             "2": "Affecte une personne supplémentaire à portée (qui profite de la version de base du pouvoir)"
-          }
-        },
-        "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
-          "Name": "Joie de la création",
-          "Summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes",
-          "Description": "Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +5 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. Le tourbillon peut aussi réparer de façon permanente un objet cassé (ce qui prend 1d10 tours de jeu).",
-          "SwedishName": "",
-          "Duration": "1 jour",
-          "Range": "10 mètres",
-          "CastingTime": "6 tours de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Affecte une autre personne à portée",
-            "1": "Augmente la portée du pouvoir de : 5 mètres",
-            "2": ""
           }
         },
         "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4": {
@@ -5494,9 +5490,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": "",
-            "3": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
@@ -5516,20 +5510,6 @@
           }
         },
         "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
-          "Name": "Courage des ancêtres",
-          "Summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales.",
-          "Description": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales. La cible bénéficie d’un trait de personnage exceptionnel de +6 en Psychisme jusqu’à expiration du pouvoir.",
-          "SwedishName": "",
-          "Duration": "1 minute",
-          "Range": "contact",
-          "CastingTime": "2 tours de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure"
-          }
-        },
-        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
           "Name": "Fléau de Blotfang",
           "Summary": "F Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3 F Confère au porteur un bonus de +2 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as so",
           "Description": "Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains. À l’expiration du pouvoir, elle part en fumée. Le Fléau de Blotfang est la grande lance avec laquelle Jowja a tué Blotfang, le logiwurm blanc, à Blodt, où Bydland fut ensuite fondée.<p>Fléau de Blotfang :</p><ul><li>Type : arme à deux mains</li><li>Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3</li><li>Confère au porteur un bonus de +2 à sa valeur de protection</li><li>Confère au porteur un bonus de +2 à toutes ses valeurs de compétence associées à l’utilisation de cette arme (attaques, parades, etc.)</li></ul>",
@@ -5537,6 +5517,20 @@
           "Duration": "10 minutes",
           "Range": "personnelle",
           "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 minute",
+            "1": "Augmente la durée du pouvoir de : 1 heure"
+          }
+        },
+        "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3": {
+          "Name": "Courage des ancêtres",
+          "Summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales.",
+          "Description": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales. La cible bénéficie d’un trait de personnage exceptionnel de +6 en Psychisme jusqu’à expiration du pouvoir.",
+          "SwedishName": "",
+          "Duration": "1 minute",
+          "Range": "contact",
+          "CastingTime": "2 tours de jeu",
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
@@ -5554,10 +5548,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": "",
-            "3": "",
-            "4": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
@@ -5898,6 +5889,20 @@
           }
         },
         "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2": {
+          "Name": "Piste des brumes",
+          "Summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
+          "Description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
+          "SwedishName": "",
+          "Duration": "1 jour",
+          "Range": "10 mètres",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 jour",
+            "1": "Augmente la portée du pouvoir de : 10 mètres"
+          }
+        },
+        "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
           "Name": "Ouïe du hibou",
           "Summary": "Le bruide perçoit tous les bruits et conversations à portée.",
           "Description": "Le bruide perçoit tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du hibou, aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 12. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
@@ -5910,21 +5915,6 @@
             "0": "Augmente la durée du pouvoir de : 1 minute",
             "1": "Augmente la portée du pouvoir de : 20 mètres",
             "2": "Augmente la valeur de situation de : +1"
-          }
-        },
-        "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
-          "Name": "Piste des brumes",
-          "Summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
-          "Description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
-          "SwedishName": "",
-          "Duration": "1 jour",
-          "Range": "10 mètres",
-          "CastingTime": "1 minute",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 jour",
-            "1": "Augmente la portée du pouvoir de : 10 mètres",
-            "2": ""
           }
         },
         "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4": {
@@ -5956,6 +5946,20 @@
           }
         },
         "holy-ealdtradition-nema-s-usefulness:liberating-wind:6": {
+          "Name": "Vent libérateur",
+          "Summary": "Un vent rafraîchissant traverse la zone désignée par le bruide.",
+          "Description": "Un vent rafraîchissant traverse la zone désignée par le bruide. Il a les mêmes effets que le Souffle libérateur ou la Brise libératrice, mais il peut aussi retirer les obstacles physiques, dissiper toutes formes de vitner de contrainte ou d’emprisonnement, et ouvrir une porte des brumes présente dans le brouillard qui a été fermée et se trouve à portée de ce pouvoir. S’il y a une résistance physique (même si l’objet est également verrouillé), le bruide doit effectuer un test de situation avec une valeur de situation de 14. En cas de réussite, l’obstacle est écarté, comme indiqué dans la description du Souffle libérateur et de la Brise libératrice. Pour pouvoir libérer quelque chose d’un vitner de contrôle ou de contrainte (sorts de niveau 1 à 3), le bruide doit réussir un test de situation avec une valeur de situation de 14. Tout ce qui est emprisonné ou contrôlé par un vitner tissé avec une plus grande maîtrise (sorts de niveau 4 ou 5) nécessite de réussir un test de situation avec une valeur de situation de 6. Ce pouvoir est capable d’ouvrir une porte des brumes présente dans le brouillard mais actuellement fermée. Il ne peut pas faire apparaître une porte des brumes qui n’existe pas déjà.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "10 mètres",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 10 mètres",
+            "1": "Augmente la valeur de situation de : +1"
+          }
+        },
+        "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
           "Name": "Sens du griffon",
           "Summary": "Le bruide entend tous les bruits et conversations à portée.",
           "Description": "Le bruide entend tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du griffon aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 14. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
@@ -5968,21 +5972,6 @@
             "0": "Augmente la durée du pouvoir de : 1 minute",
             "1": "Augmente la portée du pouvoir de : 100 mètres",
             "2": "Augmente la valeur de situation de : +1"
-          }
-        },
-        "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
-          "Name": "Vent libérateur",
-          "Summary": "Un vent rafraîchissant traverse la zone désignée par le bruide.",
-          "Description": "Un vent rafraîchissant traverse la zone désignée par le bruide. Il a les mêmes effets que le Souffle libérateur ou la Brise libératrice, mais il peut aussi retirer les obstacles physiques, dissiper toutes formes de vitner de contrainte ou d’emprisonnement, et ouvrir une porte des brumes présente dans le brouillard qui a été fermée et se trouve à portée de ce pouvoir. S’il y a une résistance physique (même si l’objet est également verrouillé), le bruide doit effectuer un test de situation avec une valeur de situation de 14. En cas de réussite, l’obstacle est écarté, comme indiqué dans la description du Souffle libérateur et de la Brise libératrice. Pour pouvoir libérer quelque chose d’un vitner de contrôle ou de contrainte (sorts de niveau 1 à 3), le bruide doit réussir un test de situation avec une valeur de situation de 14. Tout ce qui est emprisonné ou contrôlé par un vitner tissé avec une plus grande maîtrise (sorts de niveau 4 ou 5) nécessite de réussir un test de situation avec une valeur de situation de 6. Ce pouvoir est capable d’ouvrir une porte des brumes présente dans le brouillard mais actuellement fermée. Il ne peut pas faire apparaître une porte des brumes qui n’existe pas déjà.",
-          "SwedishName": "",
-          "Duration": "",
-          "Range": "10 mètres",
-          "CastingTime": "1 tour de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la portée du pouvoir de : 10 mètres",
-            "1": "Augmente la valeur de situation de : +1",
-            "2": ""
           }
         },
         "holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8": {
@@ -6050,25 +6039,10 @@
           "CastingTime": "1 tour de jeu",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
-            "1": ""
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
-          "Name": "Folie",
-          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la Folie :</p><ul><li>Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)</li><li>Le bruide a un facteur de peur de 1d10 (JO 10)</li><li>+10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+4 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+2 à la VC de toutes les attaques</li><li>Le bruide ne peut ni parer ni esquiver les attaques</li><li>Le bruide ignore tous les effets de la peur</li><li>Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort</li></ul>",
-          "SwedishName": "",
-          "Duration": "5 tours de jeu",
-          "Range": "personnelle",
-          "CastingTime": "1 tour de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
-            "1": ""
-          }
-        },
-        "holy-ealdtradition-tribute-of-morgu:madness:5": {
           "Name": "Pluie de flèches",
           "Summary": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
           "Description": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. Le bruide vise un groupe d’ennemis situé à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère deux flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
@@ -6080,6 +6054,19 @@
           "PowerLevels": {
             "0": "Augmente la portée du pouvoir de : 10 mètres",
             "1": "Augmente le nombre de flèches de : 1"
+          }
+        },
+        "holy-ealdtradition-tribute-of-morgu:madness:5": {
+          "Name": "Folie",
+          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl",
+          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la Folie :</p><ul><li>Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)</li><li>Le bruide a un facteur de peur de 1d10 (JO 10)</li><li>+10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+4 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+2 à la VC de toutes les attaques</li><li>Le bruide ne peut ni parer ni esquiver les attaques</li><li>Le bruide ignore tous les effets de la peur</li><li>Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort</li></ul>",
+          "SwedishName": "",
+          "Duration": "5 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
@@ -6097,6 +6084,19 @@
           }
         },
         "holy-ealdtradition-tribute-of-morgu:riastarthae:7": {
+          "Name": "Riastarthae",
+          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl",
+          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la riastarthae :</p><ul><li>Le bruide grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)</li><li>Le bruide a un facteur de peur de 1d10 (JO 9-10)</li><li>+15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+6 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+3 à la VC de toutes les attaques</li><li>Le bruide ne peut ni parer ni esquiver les attaques</li><li>Le bruide ignore tous les effets de la peur</li><li>Le bruide ignore les effets des blessures graves</li><li>Le bruide peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort</li></ul>",
+          "SwedishName": "",
+          "Duration": "7 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
+          }
+        },
+        "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
           "Name": "Cieux obscurcis",
           "Summary": "F Type : instantané F Portée : 30 mètres F Temps d’invocation : 2 tours de jeu Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
           "Description": "Le bruide en appelle à la puissance de Morgu, qui libère une volée de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. Le bruide vise un groupe d’ennemis situés à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère quatre flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
@@ -6108,20 +6108,6 @@
           "PowerLevels": {
             "0": "Augmente la portée du pouvoir de : 10 mètres",
             "1": "Augmente la quantité de flèches de : +1"
-          }
-        },
-        "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
-          "Name": "Riastarthae",
-          "Summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl",
-          "Description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la riastarthae :</p><ul><li>Le bruide grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)</li><li>Le bruide a un facteur de peur de 1d10 (JO 9-10)</li><li>+15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+6 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+3 à la VC de toutes les attaques</li><li>Le bruide ne peut ni parer ni esquiver les attaques</li><li>Le bruide ignore tous les effets de la peur</li><li>Le bruide ignore les effets des blessures graves</li><li>Le bruide peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort</li></ul>",
-          "SwedishName": "",
-          "Duration": "7 tours de jeu",
-          "Range": "personnelle",
-          "CastingTime": "1 tour de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
-            "1": ""
           }
         },
         "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
@@ -6150,8 +6136,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la portée du pouvoir de : 5 mètres",
-            "1": "Augmente les dégâts infligés de : +3",
-            "2": ""
+            "1": "Augmente les dégâts infligés de : +3"
           }
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2": {
@@ -6344,19 +6329,6 @@
           }
         },
         "holy-tenetnid-tablet-of-grace:breath-of-gave:6": {
-          "Name": "Main de Gave",
-          "Summary": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante.",
-          "Description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante. Il peut ainsi soigner les maladies surnaturelles comme la lycanthropie et la peste d’ulm, reconstruire les organes ou membres perdus, et rompre les malédictions. Ce pouvoir constitue également le seul moyen de guérir la folie chez une personne (Cf. le paragraphe Niveau de peur au chapitre Dégâts et peur). Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
-          "SwedishName": "",
-          "Duration": "",
-          "Range": "contact",
-          "CastingTime": "1 minute",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la valeur de situation de : +1"
-          }
-        },
-        "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
           "Name": "Souffle de Gave",
           "Summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée.",
           "Description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée. Ce pouvoir soigne 6 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
@@ -6367,6 +6339,19 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute"
+          }
+        },
+        "holy-tenetnid-tablet-of-grace:hand-of-gave:7": {
+          "Name": "Main de Gave",
+          "Summary": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante.",
+          "Description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante. Il peut ainsi soigner les maladies surnaturelles comme la lycanthropie et la peste d’ulm, reconstruire les organes ou membres perdus, et rompre les malédictions. Ce pouvoir constitue également le seul moyen de guérir la folie chez une personne (Cf. le paragraphe Niveau de peur au chapitre Dégâts et peur). Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la valeur de situation de : +1"
           }
         },
         "holy-tenetnid-tablet-of-grace:wind-of-immortality:8": {
@@ -6783,8 +6768,7 @@
           "PowerLevels": {
             "0": "Augmente la portée du pouvoir de : 1 mètre",
             "1": "Augmente le bonus aux valeurs de compétence et de situation de : +1",
-            "2": "Augmente la durée du pouvoir de : 1 heure",
-            "3": ""
+            "2": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:portent:8": {
@@ -6950,8 +6934,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
@@ -7129,21 +7112,6 @@
           }
         },
         "holy-haminges-power-of-the-dragon:dragon-skin:4": {
-          "Name": "Attaque du huvfurwurm",
-          "Summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
-          "Description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu. Ces points sont liés à ces actions d’arme supplémentaires, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer plusieurs bras supplémentaires, qui brandissent chacune une arme.",
-          "SwedishName": "",
-          "Duration": "3 tours de jeu",
-          "Range": "personnelle",
-          "CastingTime": "1 tour de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
-            "1": "",
-            "2": ""
-          }
-        },
-        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
           "Name": "Peau du dragon",
           "Summary": "Le conjurateur est envahi par la puis sance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.",
           "Description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.<p>La Peau du dragon confère les traits suivants :</p><ul><li>Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.</li><li>Le conjurateur n’est pas blessé par les flammes non magiques.</li><li>Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).</li><li>Le conjurateur bénéficie d’une valeur de protection naturelle de +4.</li><li>Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.</li></ul>",
@@ -7156,6 +7124,19 @@
             "0": "Augmente la durée du pouvoir de : 1 minute",
             "1": "Augmente la valeur de protection de : +1",
             "2": "Augmente les dégâts de toutes les armes de corps à corps et des armes de jet de : +1"
+          }
+        },
+        "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5": {
+          "Name": "Attaque du huvfurwurm",
+          "Summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
+          "Description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu. Ces points sont liés à ces actions d’arme supplémentaires, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer plusieurs bras supplémentaires, qui brandissent chacune une arme.",
+          "SwedishName": "",
+          "Duration": "3 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
           }
         },
         "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
@@ -7216,8 +7197,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-haminges-power-of-men:accomplished:1": {
@@ -7399,10 +7379,7 @@
           "CastingTime": "1 tour de jeu",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Augmente de : 1 minute la durée du pouvoir",
-            "1": "",
-            "2": "",
-            "3": ""
+            "0": "Augmente de : 1 minute la durée du pouvoir"
           }
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5": {
@@ -8048,21 +8025,6 @@
           }
         },
         "holy-toikalokke-animal-mind:talk-to-animals:2": {
-          "Name": "Invisibilité aux animaux",
-          "Summary": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux.",
-          "Description": "L’élu peut, quand il le désire, devenir complètement invisible aux animaux d’intelligence inférieure. Ceux-ci ne peuvent ni voir ni entendre l’ihana.",
-          "SwedishName": "",
-          "Duration": "5 minutes",
-          "Range": "personnelle",
-          "CastingTime": "6 tours de jeu",
-          "DailyActivation": "",
-          "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 10 minutes",
-            "1": "Augmente la durée du pouvoir de : 1 heure",
-            "2": ""
-          }
-        },
-        "holy-toikalokke-animal-mind:invisible-to-animals:3": {
           "Name": "Parler avec les animaux",
           "Summary": "L’ihana peut communiquer avec les animaux.",
           "Description": "L’ihana peut communiquer avec les animaux. Gardez à l’esprit que la plupart des animaux sont assez peu intelligents et ne fourniront probablement pas les réponses les plus utiles. Comparé au sort de vitner correspondant (Cf. Parler aux animaux, page 188), l’ihana a bien moins de mal à comprendre et à communiquer avec l’animal, et obtient donc davantage de renseignements qu’un enchanteur pourrait en espérer. Pour communiquer avec les animaux, l’elfe peut utiliser toutes sortes de méthodes : il peut par exemple intimider l’animal par des grognements ou des pépiements, recourir à des expressions faciales ou corporelles, ou même jouer d’un instrument.",
@@ -8075,6 +8037,20 @@
             "0": "Augmente la durée du pouvoir de : 10 minutes",
             "1": "Augmente la durée du pouvoir de : 30 minutes",
             "2": "Augmente la durée du pouvoir de : 12 heures"
+          }
+        },
+        "holy-toikalokke-animal-mind:invisible-to-animals:3": {
+          "Name": "Invisibilité aux animaux",
+          "Summary": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux.",
+          "Description": "L’élu peut, quand il le désire, devenir complètement invisible aux animaux d’intelligence inférieure. Ceux-ci ne peuvent ni voir ni entendre l’ihana.",
+          "SwedishName": "",
+          "Duration": "5 minutes",
+          "Range": "personnelle",
+          "CastingTime": "6 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 10 minutes",
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-toikalokke-animal-mind:animal-spirit:4": {
@@ -8306,8 +8282,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Affecte 1 litre d’eau supplémentaire",
-            "1": "Applique un modificateur de : +1 au jet de situation",
-            "2": ""
+            "1": "Applique un modificateur de : +1 au jet de situation"
           }
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3": {
@@ -8320,8 +8295,7 @@
           "CastingTime": "4 tours de jeu",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Augmente la durée du pouvoir de : 1 heure",
-            "1": ""
+            "0": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-toikalokke-master-of-elements:fire-tamer:4": {

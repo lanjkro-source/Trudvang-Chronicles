@@ -2324,9 +2324,9 @@
           "CastingTime": "5 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the duration by 1 hour"
+            "0": "Augmente le nombre de créatures qui perçoivent le chant de : +1",
+            "1": "Augmente le nombre de mots que le message peut contenir de : +1",
+            "2": "Augmente la distance que le message peut parcourir de : 10 kilomètres"
           }
         },
         "vitner-animal-vitner:speak-to-animals:1": {
@@ -2354,9 +2354,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the limit on how many Body Points the mage can call by +5",
+            "1": "Increase the duration by 1 hour",
             "2": "Increase the range by 1 kilometer",
-            "3": "Increase the duration by 1 hour"
+            "3": "Increase the limit on how many Body Points the mage can call by +5"
           }
         },
         "vitner-animal-vitner:conjure-ravens:3": {
@@ -2369,10 +2369,10 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "1": "Increase the duration by 1 action round",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the ravens’ tenacity so the"
+            "0": "Increase the duration by 1 action round",
+            "1": "Augmente la portée de : 5 mètres 2 Applique un malus de : -1 aux chances qu’a la victime de réussir son test de situation",
+            "2": "Augmente la ténacité des corbeaux de sorte que la victime subit un malus supplémentaire de : -1 à toutes les actions qu’elle entreprend pendant la durée du sort",
+            "3": "Crée un autre vol de corbeau qui perturbe une autre cible"
           }
         },
         "vitner-animal-vitner:control-animals:4": {
@@ -2386,11 +2386,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the amount of affected Body Points by +5",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the duration by 10 minutes",
-            "4": "Increase the duration by 1 hour",
-            "5": "Increase the duration by 1 day"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the duration by 1 day",
+            "4": "Increase the range by 5 meters",
+            "5": "Increase the amount of affected Body Points by +5"
           }
         },
         "vitner-animal-vitner:mind-of-the-wolf:5": {
@@ -2404,11 +2404,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters (contact is no longer necessary)",
-            "1": "Increase the range to make out the astral reflection by 5 meters",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase power so that one more person is afflicted",
-            "4": "Increase the duration by 1 hour",
-            "5": "Increase the range to make out the"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range to make out the astral reflection by 5 meters",
+            "4": "Augmente la portée de perception du reflet astral de : 100 mètres",
+            "5": "Increase power so that one more person is afflicted"
           }
         },
         "vitner-animal-vitner:possess-animals:6": {
@@ -2422,10 +2422,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the range by 100 meters",
-            "4": "Increase the duration by 1 day",
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the range by 10 meters",
+            "4": "Increase the range by 100 meters",
             "5": "Increase the range by 1 kilometer"
           }
         },
@@ -2440,11 +2440,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the range by 100 meters",
-            "4": "Increase the duration by 1 day",
-            "5": "Increase the range by 1 kilometer"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the range by 10 meters",
+            "4": "Increase the range by 100 meters",
+            "5": "Augmente la portée de : 10 kilomètres"
           }
         },
         "vitner-animal-vitner:send-message:8": {
@@ -2459,7 +2459,7 @@
           "PowerLevels": {
             "0": "Increase the number of creatures that can hear the message by 1",
             "1": "Increase the number of words the message can contain by 1",
-            "2": "Add a mental image to the message",
+            "2": "Ajoute une image mentale au message",
             "3": "Increase the number of kilometers"
           }
         },
@@ -2474,10 +2474,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the bonus on the Agility skill by +1 when climbing",
-            "3": "Increase the duration by 1 minute",
-            "4": "Increase the duration by 10"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 10",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Increase the bonus on the Agility skill by +1 when climbing"
           }
         },
         "vitner-body-vitner:tipping:1": {
@@ -2492,7 +2492,7 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Reduces the victim’s chance of success on the Agility Skill roll by -1",
-            "2": "Affect another victim with the"
+            "2": "Une autre victime est affectée par la version de base de ce sort"
           }
         },
         "vitner-body-vitner:hearing-deafness:2": {
@@ -2505,13 +2505,13 @@
           "CastingTime": "2 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase the positive/negative modifier by ±1",
-            "3": "Affect an extra being (with the spell’s basic version)",
-            "4": "Increase the duration by 1 hour",
-            "5": "Increase the duration by 1 day",
-            "6": "Increase the duration by 1 week"
+            "0": "Increase the duration by 1 minute",
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the duration by 1 week",
+            "4": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "5": "Augmente le bonus/malus de ±1",
+            "6": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-body-vitner:sense-of-smell:3": {
@@ -2524,14 +2524,14 @@
           "CastingTime": "2 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase the range within which the enchanted can sense odors by +10 meters",
-            "3": "Increase the positive/negative modifier by ±1",
-            "4": "Affect an extra being (with the spell’s basic version)",
-            "5": "Increase the duration by 1 hour",
-            "6": "Increase the range within which the enchanted can sense odors by +100 meters",
-            "7": "Increase the duration by 1 day"
+            "0": "Increase the duration by 1 minute",
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "4": "Increase the range within which the enchanted can sense odors by +10 meters",
+            "5": "Increase the range within which the enchanted can sense odors by +100 meters",
+            "6": "Augmente le bonus/malus de ±1",
+            "7": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-body-vitner:vision-blindness:4": {
@@ -2565,9 +2565,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the Protection Value by +1",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the Protection Value by +1"
           }
         },
         "vitner-body-vitner:immobilize:6": {
@@ -2581,12 +2581,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters",
-            "2": "Increase strength and decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "3": "Increase the duration by 1 minute",
-            "4": "Affect another victim (with the spell’s basic version)",
-            "5": "Increase the duration by 1 hour",
-            "6": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the duration by 1 day",
+            "4": "Increase the range by 5 meters",
+            "5": "Increase strength and decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "6": "Affecte une autre victime (qui subit la version de base du sort)"
           }
         },
         "vitner-body-vitner:appearance-change:7": {
@@ -2600,9 +2600,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
           }
         },
         "vitner-body-vitner:strengthen:8": {
@@ -2616,12 +2616,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Raise or lower another step on the table",
-            "4": "Increase the duration by 1 minute",
-            "5": "Affect an extra being (with the spell’s basic version)",
-            "6": "Increase the duration by 10"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 10",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Fait monter ou descendre d’un degré sur la table",
+            "6": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-body-vitner:hasten:9": {
@@ -2635,12 +2635,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Raise or lower another step on the table",
-            "4": "Increase the duration by 1 minute",
-            "5": "Affect an extra being (with the spell’s basic version)",
-            "6": "Increase the duration by 10"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 10",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Raise or lower another step on the table",
+            "6": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-body-vitner:imprison:10": {
@@ -2655,8 +2655,8 @@
           "PowerLevels": {
             "0": "Increase the vitner wall’s strength and therefore decrease the victim’s chance of succeeding on the Situation roll by -1",
             "1": "Increase the maximum radius by",
-            "2": "meter",
-            "3": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 minute",
+            "3": "Augmente la durée de : 1 semaine",
             "4": "Increase the vitner wall’s damage"
           }
         },
@@ -2671,16 +2671,16 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the creature’s size by a factor of 1.5 (allows the enchanted to assume the form of a larger creature)",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the creature’s size by a factor of 2 (allows the enchanted to assume the form of a larger creature)",
-            "5": "Increase the creature’s size by a factor of 4 (allows the enchanted to assume the form of a larger creature)",
-            "6": "Increase the duration by 1 day",
-            "7": "Increase the creature’s size by a factor of 7 (allows the enchanted to assume the form of a larger creature)",
-            "8": "Increase the creature’s size by a factor of 10 (allows the enchanted to assume the form of a larger creature)",
-            "9": "Increase the duration by 1 week",
-            "10": "Increase the creature’s size by a"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the duration by 1 week",
+            "4": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "5": "Multiplie la taille de la créature (ce qui permet au bénéficiaire du sort de revêtir la forme d’une créature plus grande que lui) par : x1,5",
+            "6": "Increase the creature’s size by a factor of 2 (allows the enchanted to assume the form of a larger creature)",
+            "7": "Increase the creature’s size by a factor of 4 (allows the enchanted to assume the form of a larger creature)",
+            "8": "Increase the creature’s size by a factor of 7 (allows the enchanted to assume the form of a larger creature)",
+            "9": "Increase the creature’s size by a factor of 10 (allows the enchanted to assume the form of a larger creature)",
+            "10": "Increase the creature’s size by a factor of 1.5 (allows the enchanted to assume the form of a larger creature)"
           }
         },
         "vitner-delusion-vitner:roar:0": {
@@ -2694,8 +2694,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range from Personal to 10 meters. (The roar no longer emanates from the enchanter, but remains the same power otherwise.)",
-            "1": "Increase the radius by 10 meters.",
-            "2": "Increase the range from Personal"
+            "1": "Increase the range from Personal",
+            "2": "Increase the radius by 10 meters."
           }
         },
         "vitner-delusion-vitner:phantom-sound:1": {
@@ -2739,9 +2739,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-delusion-vitner:traceless:4": {
@@ -2755,10 +2755,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affect an extra being (with the spell’s basic version)",
-            "3": "Increase the duration by 1 day",
-            "4": "Increase the duration by 1 week"
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the duration by 1 week",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-delusion-vitner:ghost-voice:5": {
@@ -2772,9 +2772,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
           }
         },
         "vitner-delusion-vitner:depict:6": {
@@ -2789,10 +2789,10 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase the duration by 1 minute",
-            "2": "Increase the chance that the viewer fails the Skill roll by -1",
-            "3": "Increase the size of the image so it can be up to five times that of a normal human being",
-            "4": "Increase the duration by 10 minutes",
-            "5": "Increase the size of the image so"
+            "2": "Increase the duration by 10 minutes",
+            "3": "Increase the chance that the viewer fails the Skill roll by -1",
+            "4": "cinq fois celle d’un être humain normal",
+            "5": "celle d’une halle de Storme"
           }
         },
         "vitner-delusion-vitner:camouflage:7": {
@@ -2806,10 +2806,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the level of difficulty to discover the target by -1",
-            "3": "Affect an extra creature or an additional subject (with the spell’s basic version)",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente la durée de : 1 journée",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Affect an extra creature or an additional subject (with the spell’s basic version)"
           }
         },
         "vitner-delusion-vitner:landscape-illusion:8": {
@@ -2841,10 +2841,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the sphere’s radius by 1 meter",
-            "3": "Increase the duration by 1 minute",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Increase the sphere’s radius by 1 meter"
           }
         },
         "vitner-delusion-vitner:lindwurm-illusion:10": {
@@ -2858,11 +2858,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the lindwurm’s range by",
-            "1": "meters",
+            "1": "Increase the chance of the enchanter not being discovered with Shadow Arts by -1",
             "2": "Increase the chance that the observer fails Skill rolls by -1",
-            "3": "Increase the chance of the enchanter not being discovered with Shadow Arts by -1",
-            "4": "Increase resulting Fear Points by one step: 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 7-10) (max OR 7-10)",
-            "5": "Increase the damage by one step:"
+            "3": "Augmente les points de peur infligés d’un degré : 1d10JO9 > 1d10JO8 > 1d10JO7",
+            "4": "Augmente les dégâts infligés d’un degré : 2d10 > 2d10JO10 > 2d10JO9 > 2d10JO8",
+            "5": "Augmente la durée du sort de : 1 tour de jeu, et autorise une autre attaque (l’enchanteur peut choisir la même cible ou une autre située à portée)"
           }
         },
         "vitner-delusion-vitner:invisibility:11": {
@@ -2876,10 +2876,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the level of difficulty for an observer to discover the target by -1 on Skill rolls",
-            "3": "Affect an extra being (with the spell’s basic version)",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Increase the level of difficulty for an observer to discover the target by -1 on Skill rolls",
+            "4": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-dimvitner:animate-undead:0": {
@@ -2894,13 +2894,13 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase the duration by 1 day",
-            "2": "Receive another 1d10 (OR 10) skill points to distribute among the undead’s skills.",
-            "3": "Affect an extra skeleton set (with the basic version of the spell)",
-            "4": "Increase any one characteristic by one step",
-            "5": "Increase Body Points by 1d10",
-            "6": "Increase the duration by 1 week",
-            "7": "Increase the duration by 1 month",
-            "8": "Increase the duration by 1 year"
+            "2": "Increase the duration by 1 week",
+            "3": "Increase the duration by 1 month",
+            "4": "Increase the duration by 1 year",
+            "5": "Receive another 1d10 (OR 10) skill points to distribute among the undead’s skills.",
+            "6": "Affecte une autre dépouille (qui bénéficie de la version de base du sort)",
+            "7": "Augmente une caractéristique de : +1 degré",
+            "8": "Increase Body Points by 1d10"
           }
         },
         "vitner-dimvitner:hand-of-death:1": {
@@ -2916,7 +2916,7 @@
             "0": "Increase the range by 5 meters",
             "1": "Increase the duration by +1 action round",
             "2": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "3": "Conjure another hand of death that the mage can use to attack another victim (with the basic version of the spell).",
+            "3": "Invoque une autre main funeste dont l’enchanteur peut se servir pour attaquer une autre victime (qui subit la version de base du sort)",
             "4": "Increase the damage by one step:"
           }
         },
@@ -2946,7 +2946,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Modify the roll that decides the"
+            "1": "Applique un modificateur au jet sur la table de résultats de : -1"
           }
         },
         "vitner-dimvitner:tendril-of-dimhall:4": {
@@ -3003,11 +3003,11 @@
           "CastingTime": "3 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the chance to succeed on the Situation roll by +1",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the duration by 1 day"
+            "0": "Increase the duration by 1 minute",
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the range by 5 meters",
+            "4": "Increase the chance to succeed on the Situation roll by +1"
           }
         },
         "vitner-dimvitner:darkness-of-dimhall:8": {
@@ -3038,7 +3038,7 @@
             "1": "Increase the range by 5 meters (contact is no longer necessary)",
             "2": "Increase the amount of water boiled by 1 liter",
             "3": "Increase the amount of water boiled by 10 liters",
-            "4": "Increase the amount of water"
+            "4": "Augmente la quantité d’eau portée à ébullition de : 100 litres"
           }
         },
         "vitner-flame-craft:spark:1": {
@@ -3052,10 +3052,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the intensity of the flame so it equals that of a torch (the mage can decrease or increase the flame’s effect, from minimum to maximum, as desired for the duration)",
-            "2": "The mage can put the flame aside so it burns from a chosen place like a candle or torch, the tip of a staff, a rock, or any other object (the object will not catch on fire)",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the intensity of the flame so it equals that of a torch (the mage can decrease or increase the flame’s effect, from minimum to maximum, as desired for the duration)",
+            "4": "L’enchanteur peut se séparer de la flamme afin qu’elle brûle à l’endroit de son choix comme une bougie ou une torche, au bout d’un bâton, sur une pierre ou tout autre objet (l’objet en question ne s’enflammera pas)"
           }
         },
         "vitner-flame-craft:burning-hand:2": {
@@ -3069,7 +3069,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Both hands start to glow (with the basic version of the spell)",
+            "1": "La deuxième main de l’enchanteur s’embrase (et bénéficie de la version de base du sort)",
             "2": "Increase the damage by one step:"
           }
         },
@@ -3100,11 +3100,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affects an extra being (with the spell’s basic version)",
-            "3": "Increase the duration by 10 minute",
-            "4": "Increase the duration by 1 hour",
-            "5": "Increase the duration by 1 day"
+            "1": "Increase the duration by 10 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the duration by 1 day",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Affects an extra being (with the spell’s basic version)"
           }
         },
         "vitner-flame-craft:flame-control:5": {
@@ -3118,11 +3118,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the duration by 10 minutes",
-            "3": "Control an area as big as a hall",
-            "4": "Increase the range by 100 meters",
-            "5": "Control an area as big as a large"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the range by 10 meters",
+            "3": "Increase the range by 100 meters",
+            "4": "Permet de contrôler une zone aussi grande que : une halle",
+            "5": "Permet de contrôler une zone aussi grande que : une grande maison longue"
           }
         },
         "vitner-flame-craft:warmth:6": {
@@ -3136,11 +3136,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the radius of the sphere by",
-            "2": "meter",
-            "3": "Anchor the spell to an object, which makes the sphere portable with the object as its center",
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the radius of the sphere by",
+            "3": "Augmente le rayon de la sphère d’effet de : 10 mètres",
             "4": "Increase the temperature range by another +10° C",
-            "5": "Increase the duration by 1 day",
+            "5": "Anchor the spell to an object, which makes the sphere portable with the object as its center",
             "6": "Change the type of the spell to"
           }
         },
@@ -3156,8 +3156,8 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase the sea of fire’s radius by",
-            "2": "meter",
-            "3": "Increase the damage by one step:"
+            "2": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1",
+            "3": "Augmente la durée du sort de : 1 tour de jeu, de sorte que la mer de flammes continuer de brûler au tour suivant"
           }
         },
         "vitner-perceiving:find-home:0": {
@@ -3171,10 +3171,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Decrease the number of hours the enchanted must have spent at the location by 1 hour (cannot be decreased to less than 1 hour)",
-            "3": "Affect an extra being (with the spell’s basic version)",
-            "4": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Decrease the number of hours the enchanted must have spent at the location by 1 hour (cannot be decreased to less than 1 hour)",
+            "4": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-perceiving:retrace-tracks:1": {
@@ -3188,9 +3188,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affect an extra being (with the spell’s basic version)",
-            "3": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-perceiving:detect-object:2": {
@@ -3204,11 +3204,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the chance to succeed on a Situation roll by +1",
-            "1": "Increase the chance that the 1d20 roll will become more precise by deducting -1 from the result",
-            "2": "Increase the range by 1,000 meters (1 km)",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the range by 10 kilometers",
-            "5": "Increase the range by 100"
+            "1": "Augmente la précision du sort en retirant 1 au résultat du d20",
+            "2": "Augmente la portée du sort de : 1 kilomètre",
+            "3": "Increase the range by 10 kilometers",
+            "4": "Increase the range by 100",
+            "5": "Increase the duration by 1 hour"
           }
         },
         "vitner-perceiving:orientation:3": {
@@ -3238,10 +3238,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the chance to succeed on the Situation roll by +1",
-            "1": "Increase the chance that the 1d20 roll will become more precise by deducting -1 from the result",
-            "2": "Increase the range by 1,000 meters",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the range by 10 kilometers"
+            "1": "Augmente la précision du sort en retirant 1 au résultat du d20",
+            "2": "Augmente la portée du sort de : 1 kilomètre",
+            "3": "Increase the range by 10 kilometers",
+            "4": "Increase the duration by 1 hour"
           }
         },
         "vitner-perceiving:detect-undead:5": {
@@ -3255,11 +3255,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the chance to succeed on the Situation roll by +1",
-            "1": "Increase the chance that the result is more precise by deducting -1 from the roll",
-            "2": "Increase the range by 1,000 meters (1 km)",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the range by 10 kilometers",
-            "5": "Increase the range by 100"
+            "1": "Augmente la précision du sort en retirant 1 au résultat du d20",
+            "2": "Augmente la portée du sort de : 1 kilomètre",
+            "3": "Increase the range by 10 kilometers",
+            "4": "Increase the range by 100",
+            "5": "Increase the duration by 1 hour"
           }
         },
         "vitner-perceiving:surrounding:6": {
@@ -3273,8 +3273,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the radius of the sensed surroundings by 10 meters",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase the radius of the sensed surroundings by 100 meters",
+            "1": "Increase the radius of the sensed surroundings by 100 meters",
+            "2": "Increase the duration by 1 minute",
             "3": "Increase the duration by 1 hour"
           }
         },
@@ -3289,8 +3289,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 1 kilometer",
-            "2": "Increase the duration by 1 hour",
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 1 kilometer",
             "3": "Increase the range by 10 kilometers"
           }
         },
@@ -3319,8 +3319,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "The enchanter’s spoken words are also converted, so that one creature hears the enchanter’s words in that designated language.",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "The enchanter’s spoken words are also converted, so that one creature hears the enchanter’s words in that designated language."
           }
         },
         "vitner-power-of-thought:courage:2": {
@@ -3367,12 +3367,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters",
-            "2": "Affect another person or creature within range",
-            "3": "Increase the duration by 10 minutes",
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters",
             "4": "Increase the range by 100 meters",
-            "5": "Increase the duration by 1 hour",
-            "6": "Increase the range by 1 kilometer"
+            "5": "Increase the range by 1 kilometer",
+            "6": "Affect another person or creature within range"
           }
         },
         "vitner-power-of-thought:ecstasy:5": {
@@ -3386,10 +3386,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the target’s chance of succeeding on the Situation roll(s) by -1",
+            "1": "Increase the duration by 1 hour",
             "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Affect an extra being (with the spell’s basic version)",
-            "4": "Increase the duration by 1 hour"
+            "3": "Decrease the target’s chance of succeeding on the Situation roll(s) by -1",
+            "4": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-power-of-thought:imagining:6": {
@@ -3403,9 +3403,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-power-of-thought:memory:7": {
@@ -3436,9 +3436,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Decrease the target’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Decrease the target’s chance of succeeding on the Situation roll by -1"
           }
         },
         "vitner-power-of-thought:aura-of-power:9": {
@@ -3452,9 +3452,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
           }
         },
         "vitner-power-of-thought:possess-creature:10": {
@@ -3468,11 +3468,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 10 meters",
-            "1": "Increase the duration by 1 minute",
-            "2": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "3": "Increase the range by 100 meters",
-            "4": "Increase the duration by 1 hour",
-            "5": "Increase the duration by 1 day"
+            "1": "Increase the range by 100 meters",
+            "2": "Increase the duration by 1 minute",
+            "3": "Increase the duration by 1 hour",
+            "4": "Increase the duration by 1 day",
+            "5": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
           }
         },
         "vitner-power-of-thought:mind-reading:11": {
@@ -3486,10 +3486,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 2 action rounds",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Decrease the victim’s chance of suc- ceeding on the Situation roll by -1",
-            "3": "Increase the duration by 12 action rounds",
-            "4": "The bewitched is unaware of the"
+            "1": "Increase the duration by 12 action rounds",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Augmente la portée du sort (le contact physique n’est plus nécessaire) de : 50 mètres",
+            "4": "La cible ensorcelée n’a pas conscience de la présence de l’enchanteur (elle continue toutefois de dissimuler ses secrets)"
           }
         },
         "vitner-power-of-vision:tracking:0": {
@@ -3503,8 +3503,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 12 hours"
+            "1": "Increase the duration by 12 hours",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-power-of-vision:scanning:1": {
@@ -3532,13 +3532,13 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range of sight by 100 meters",
-            "2": "Increase the range of casting the spell by 5 meters (contact is no longer necessary)",
-            "3": "Affect an extra being (with the spell’s basic version)",
-            "4": "Increase the range of sight by 500 meters",
-            "5": "Increase the duration by 1 minute",
-            "6": "Increase the modifier for long- range weapons by an additional +1",
-            "7": "Increase the range of sight by 10"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the range of sight by 100 meters",
+            "3": "Increase the range of sight by 500 meters",
+            "4": "Increase the range of sight by 10",
+            "5": "Increase the range of casting the spell by 5 meters (contact is no longer necessary)",
+            "6": "Affect an extra being (with the spell’s basic version)",
+            "7": "Increase the modifier for long- range weapons by an additional +1"
           }
         },
         "vitner-power-of-vision:seeing:3": {
@@ -3553,8 +3553,8 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters (contact is no longer necessary)",
             "1": "Increase the duration by 1 hour",
-            "2": "Affect an extra being (with the spell’s basic version)",
-            "3": "Increase the duration by 1 day"
+            "2": "Increase the duration by 1 day",
+            "3": "Affecte un autre être vivant (qui bénéficie des effets du sort de base)"
           }
         },
         "vitner-power-of-vision:espionage:4": {
@@ -3583,9 +3583,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the movement speed by +1 kilometer per minute",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Increase the movement speed by +1 kilometer per minute"
           }
         },
         "vitner-power-of-vision:read-vitner:6": {
@@ -3613,13 +3613,13 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the chance to see if a spell has been put on a creature or object by +1",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
             "3": "Increase the effective range by 5 meters",
-            "4": "Affect an extra being (with the spell’s basic version)",
-            "5": "Increase the duration by 10 minutes",
-            "6": "Increase the effective range by 25 meters",
-            "7": "Increase the duration by 1 hour"
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Increase the effective range by 25 meters",
+            "6": "Increase the chance to see if a spell has been put on a creature or object by +1",
+            "7": "Affecte un autre être vivant (qui bénéficie de la version de base du sort)"
           }
         },
         "vitner-soil-craft:rock-throw:0": {
@@ -3633,7 +3633,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Create a small stone in one’s hand (no longer requiring one)",
+            "1": "Crée une petite pierre dans la main de l’enchanteur (qui n’a plus besoin d’en ramasser une)",
             "2": "Increase the damage by one step:"
           }
         },
@@ -3648,9 +3648,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the amount of affected soil by that of another stormhall, and increase the time to shape it by another 3 minutes",
-            "2": "Increase the duration by 1 hour",
-            "3": "Give the molded soil a permanent"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the amount of affected soil by that of another stormhall, and increase the time to shape it by another 3 minutes",
+            "3": "Donne à la terre une forme permanente"
           }
         },
         "vitner-soil-craft:earthquake:2": {
@@ -3666,7 +3666,7 @@
             "0": "Increase the range by 5 meters",
             "1": "Increase the diameter of the affected area by 2 meters",
             "2": "Increase the duration in which all vulnerable creatures must make another Skill roll by 1 round",
-            "3": "Increase the effect of the earthquake"
+            "3": "Augmente l’effet du tremblement de terre comme indiqué par la table EFFETS d'un degré (une colonne vers la droite)"
           }
         },
         "vitner-soil-craft:quagmire:3": {
@@ -3680,7 +3680,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the quagmire’s diameter by 1 meter",
-            "1": "Increase the depth by 10 cm",
+            "1": "Augmente la profondeur du bourbier de : 10 centimètres",
             "2": "Increase the range by 5 meters",
             "3": "Increase the duration by 1 minute",
             "4": "Increase the duration by 1 hour"
@@ -3697,8 +3697,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Create a handful of soil (no longer requiring one)",
-            "2": "Increase the shrapnel’s Penetration Value by +1",
+            "1": "Crée une poignée de terre (il n’est plus nécessaire d’en ramasser une).",
+            "2": "Augmente la valeur minimale des dégâts de : +1",
             "3": "Increase the amount of shrapnel so it can hit another target (with the spell’s basic version)",
             "4": "Increase the duration by 1 action round so the enchanter can throw another handful of soil in the next round (using the spell’s basic version)",
             "5": "Increase the damage by one step:"
@@ -3714,11 +3714,11 @@
           "CastingTime": "5 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the final movement capacity by +1 meter per action round (never higher than the creature’s normal movement capacity)",
-            "1": "Increase the duration by 1 minute",
-            "2": "Change the range from Personal to Contact",
+            "0": "Increase the duration by 1 minute",
+            "1": "Increase the duration by 10",
+            "2": "Increase the final movement capacity by +1 meter per action round (never higher than the creature’s normal movement capacity)",
             "3": "Weave the spell over a second person who can also go into the soil (only if the range is Contact)",
-            "4": "Increase the duration by 10"
+            "4": "Tisse le sort sur une deuxième cible qui peut elle aussi avancer à travers la terre (uniquement si la portée du sort a été modifiée à contact)"
           }
         },
         "vitner-soil-craft:shape-stone:6": {
@@ -3732,9 +3732,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the amount of affected stone by that of another stormhall, and increase the time to shape it by another 3 minutes",
-            "2": "Increase the duration by 1 hour",
-            "3": "Give the molded stone a permanent"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the amount of affected stone by that of another stormhall, and increase the time to shape it by another 3 minutes",
+            "3": "Donne à la roche une forme permanente"
           }
         },
         "vitner-soil-craft:stone-walk:7": {
@@ -3749,9 +3749,9 @@
           "PowerLevels": {
             "0": "Increase the final movement capacity by +1 meter per action round (never higher than the target’s normal movement capacity)",
             "1": "Increase the duration by 1 minute",
-            "2": "Change the range from Personal to Contact",
-            "3": "Weave the spell over a second person who can also go into the stone (only if the range is Contact)",
-            "4": "Increase the duration by 10"
+            "2": "Increase the duration by 10",
+            "3": "Change the range from Personal to Contact",
+            "4": "Weave the spell over a second person who can also go into the stone (only if the range is Contact)"
           }
         },
         "vitner-soil-craft:petrify-remove-petrification:8": {
@@ -3765,11 +3765,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the victim’s chance to succeed on the Situation roll during restoration by moving up one step on the table (e.g. from -35 to -25, or -4 to -2)",
-            "4": "Increase the duration by 1 month",
-            "5": "Increase the duration by 1 year"
+            "1": "Increase the duration by 1 month",
+            "2": "Increase the duration by 1 year",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "4": "Increase the range by 5 meters",
+            "5": "Increase the victim’s chance to succeed on the Situation roll during restoration by moving up one step on the table (e.g. from -35 to -25, or -4 to -2)"
           }
         },
         "vitner-vitner-craft:channeling:0": {
@@ -3783,10 +3783,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the amount of transferred Vitner Points by +1",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the amount of transferred Vitner Points by +10",
+            "1": "Increase the amount of transferred Vitner Points by +10",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Increase the duration by 1 minute",
+            "4": "Increase the duration by 1 hour",
             "5": "Increase the duration by 1 day"
           }
         },
@@ -3801,11 +3801,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the total weight that can be stored in the bag by 1 kg",
-            "1": "Increase the duration by 1 hour",
-            "2": "Lower the Situation roll for any being attempting to get out of the bag by -1",
-            "3": "Increase the total weight that can be stored in the bag by 10 kg",
+            "1": "Increase the total weight that can be stored in the bag by 10 kg",
+            "2": "Augmente le poids total que la bourse peut contenir de : 100 kg",
+            "3": "Increase the duration by 1 hour",
             "4": "Increase the duration by 1 day",
-            "5": "Increase the total weight that can"
+            "5": "Augmente la durée du sort de : 1 semaine"
           }
         },
         "vitner-vitner-craft:enchant-object:2": {
@@ -3819,12 +3819,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increases the SV modifier by +1 when using the object",
-            "3": "Increase the weapon’s damage by +1, weapon/armor’s Protection Value by +1, and Breach Value by +10",
-            "4": "Increase the duration by 1 minute",
-            "5": "Increase the duration by 1 hour",
-            "6": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the duration by 1 day",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Increases the SV modifier by +1 when using the object",
+            "6": "Augmente les dégâts de l’arme de : +1, et la valeur d’intégrité de : +10"
           }
         },
         "vitner-vitner-craft:anti-magic:3": {
@@ -3838,11 +3838,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the chance to succeed on the Situation roll by +1",
-            "3": "Increase the duration by 1 minute",
-            "4": "Change the spell type from Preserving to Lasting",
-            "5": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Increase the chance to succeed on the Situation roll by +1",
+            "5": "Change the spell type from Preserving to Lasting"
           }
         },
         "vitner-vitner-craft:enchant-being:4": {
@@ -3856,11 +3856,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affect an additional being (with the spell’s basic version)",
-            "3": "Increase the positive modifier by +1",
-            "4": "Increase the duration by 1 minute",
-            "5": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Affect an additional being (with the spell’s basic version)",
+            "5": "Augmente le bonus conféré à la créature de : +1"
           }
         },
         "vitner-vitner-craft:seal:5": {
@@ -3873,9 +3873,9 @@
           "CastingTime": "1 minute(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Add another triggering condition",
+            "0": "Ajoute une nouvelle condition de déclenchement",
             "1": "Increase the seal’s range by 5 meters",
-            "2": "Increase the spell level that can be"
+            "2": "Augmente le niveau du sort qu’on peut lier au sceau de 1"
           }
         },
         "vitner-vitner-craft:dispel-vitner:6": {
@@ -3903,11 +3903,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Extend the limit for tracing vitner that has already ended by 1 hour",
-            "1": "Increase the chance to succeed on the Situation roll by +1",
-            "2": "Increase the range by 5 meters",
-            "3": "Extend the limit for tracing vitner that has already ended by 1 day",
+            "1": "Extend the limit for tracing vitner that has already ended by 1 day",
+            "2": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 semaine",
+            "3": "Increase the range by 5 meters",
             "4": "Increase the range by 20 meters",
-            "5": "Extend the limit for tracing vitner"
+            "5": "Increase the chance to succeed on the Situation roll by +1"
           }
         },
         "vitner-vitner-craft:wall-of-vitner:8": {
@@ -3922,11 +3922,11 @@
           "PowerLevels": {
             "0": "Increase the chance to succeed on the Situation roll by +1",
             "1": "Increase the duration by 1 action round",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the wall’s diameter by 1 meter",
-            "4": "Increase the duration by 1 minute",
-            "5": "Change the spell type from Preserving to Lasting",
-            "6": "Increase the duration by 1 hour"
+            "2": "Increase the duration by 1 minute",
+            "3": "Increase the duration by 1 hour",
+            "4": "Increase the range by 5 meters",
+            "5": "Increase the wall’s diameter by 1 meter",
+            "6": "Augmente la portée du sort de : 5 mètres"
           }
         },
         "vitner-vitner-of-objects:detect-composition:0": {
@@ -3940,9 +3940,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 1 minute",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-vitner-of-objects:waterproof:1": {
@@ -3956,11 +3956,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the amount of affected material by the area of another big tent",
-            "3": "Increase the duration by 1 day",
-            "4": "Increase the duration by 1 week",
-            "5": "Increase the amount of affected"
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the duration by 1 week",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Augmente la quantité de matériel affecté de l’équivalent de : une grande tente",
+            "5": "Augmente la quantité de matériel affecté de l’équivalent de : une maison longue"
           }
         },
         "vitner-vitner-of-objects:bind:2": {
@@ -3974,10 +3974,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 10 minutes",
-            "3": "Increase the duration by 1 hour",
-            "4": "Increase the duration by 1 day"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the duration by 1 day",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-vitner-of-objects:rust:3": {
@@ -3991,10 +3991,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Lower the object’s quality level one step further",
-            "3": "Increase the duration by 1 minute",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Lower the object’s quality level one step further"
           }
         },
         "vitner-vitner-of-objects:alarm-object:4": {
@@ -4008,12 +4008,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the range by 10 meters",
-            "2": "Create another alarm on the object with another condition",
-            "3": "Increase the duration by 1 day",
+            "1": "Increase the duration by 1 day",
+            "2": "Increase the duration by 1 week",
+            "3": "Increase the range by 10 meters",
             "4": "Increase the range by 100 meters",
-            "5": "Increase the duration by 1 week",
-            "6": "Increase the range by 1,000 meters"
+            "5": "Augmente la portée du sort de : 1 kilomètre",
+            "6": "Create another alarm on the object with another condition"
           }
         },
         "vitner-vitner-of-objects:unlock-lock:5": {
@@ -4041,12 +4041,12 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the amount of affected material by 1 dm³",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the amount of affected material by 10 dm³",
-            "4": "Increase the duration by 10 minutes",
-            "5": "Increase/decrease the effect by an additional x2",
-            "6": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Augmente la quantité de matériel affecté de : 1 dm³",
+            "5": "Augmente la quantité de matériel affecté de : 10 dm³",
+            "6": "Double l’effet d’augmentation/ réduction (donc taille x4 ou /4)"
           }
         },
         "vitner-vitner-of-objects:alter-object:7": {
@@ -4060,13 +4060,13 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "I n c r e a s e t h e a ff e c t e d a m o unt by th e s i z e o f an ot h e r l a rg e bo x",
-            "2": "I n c re a s e t h e r a n g e b y 5 m e ters (c o n ta c t is n o l o n g e r n e c e s sa ry ) Increase the Protection Value by",
-            "3": "an additional +1 and the Breach Value by an additional +10",
-            "4": "Increase the duration by 10 minutes",
-            "5": "Increase the affected amount to the size of a coffin",
-            "6": "Change the object’s appearance and characteristics",
-            "7": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Augmente la taille maximale de l’objet de l’équivalent de : une grande boîte",
+            "4": "Increase the affected amount to the size of a coffin",
+            "5": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)",
+            "6": "Augmente la valeur de protection de : 1 et la valeur d’intégrité de : +10",
+            "7": "Change the object’s appearance and characteristics"
           }
         },
         "vitner-vitner-of-objects:create-object:8": {
@@ -4105,10 +4105,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 100 meters",
-            "2": "Increase the duration by 10 minutes",
-            "3": "Increase the range by 1 kilometer",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 100 meters",
+            "4": "Increase the range by 1 kilometer"
           }
         },
         "vitner-water-craft:purify-water:1": {
@@ -4125,7 +4125,7 @@
             "1": "Affect : 10 litres d’eau supplémentaires",
             "2": "Affect : 100 litres d’eau supplémentaires",
             "3": "Affect : 1000 litres d’eau supplémentaires",
-            "4": "Affect : un petit lac"
+            "4": "Affecte : un petit lac"
           }
         },
         "vitner-water-craft:breathe:2": {
@@ -4139,10 +4139,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affect an extra being (with the spell’s basic version)",
-            "3": "Increase the duration by 10 minutes",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Affecte une autre entité (qui bénéficie de la version de base du sort)"
           }
         },
         "vitner-water-craft:form-water:3": {
@@ -4157,9 +4157,9 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase the duration by 1 minute",
-            "2": "Affect an amount of water equivalent to the size of an additional stormhall",
-            "3": "Increase the duration by 10 minutes",
-            "4": "Affect an amount of water"
+            "2": "Increase the duration by 10 minutes",
+            "3": "Augmente le volume d’eau que l’enchanteur peut façonner de l’équivalent de : une halle de Storme",
+            "4": "Augmente le volume d’eau que l’enchanteur peut façonner de l’équivalent de : une maison longue"
           }
         },
         "vitner-water-craft:create-water:4": {
@@ -4173,9 +4173,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round (+10 liters)",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the duration by 1 minute (+120 liters)",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute (+120 liters)",
+            "2": "Augmente la durée du sort de : 1 heure (+7 200 litres)",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-water-craft:solid-water:5": {
@@ -4188,13 +4188,13 @@
           "CastingTime": "5 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the strength of the surface by an additional 10 kg",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase movement by +1 meter per action round (up to maximum normal movement)",
-            "3": "Increase the surface diameter by",
-            "4": "meter (makes it possible for an additional creature of normal size to stand on the surface)",
-            "5": "Increase the strength of the surface by an additional 50 kg",
-            "6": "Increase the duration by 10"
+            "0": "Augmente le poids que la zone affectée peut supporter de : 10 kg",
+            "1": "Augmente le poids que la zone affectée peut supporter de : 50 kg",
+            "2": "Augmente le poids que la zone affectée peut supporter de : 100 kg",
+            "3": "Increase the duration by 1 minute",
+            "4": "Increase the duration by 10",
+            "5": "Increase movement by +1 meter per action round (up to maximum normal movement)",
+            "6": "meter (makes it possible for an additional creature of normal size to stand on the surface)"
           }
         },
         "vitner-water-craft:control-precipitation:6": {
@@ -4207,12 +4207,12 @@
           "CastingTime": "1 hour(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the affected radius by 50 meters",
-            "1": "Increase or decrease the strength by an additional degree",
-            "2": "Increase the duration by 1 hour",
-            "3": "Enchant a moveable object so the enchanted area is moveable",
-            "4": "Increase the duration by 5 hours",
-            "5": "Increase the affected radius by 500"
+            "0": "Increase the duration by 1 hour",
+            "1": "Increase the duration by 5 hours",
+            "2": "Augmente la durée de : 1 journée",
+            "3": "Augmente la durée de : 1 semaine",
+            "4": "Increase or decrease the strength by an additional degree",
+            "5": "Enchante un objet mobile, ce qui permet de déplacer la zone affectée"
           }
         },
         "vitner-water-craft:water-walk:7": {
@@ -4226,15 +4226,15 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase movement by +1 meter per action round (up to maximum normal movement)",
-            "2": "Increase the surface diameter by",
-            "3": "meter (makes it possible for an additional creature of normal size to stand on the surface)",
-            "4": "Increase the strength of the surface so it can carry an additional 100 kg",
-            "5": "Increase the duration by 10 minutes",
-            "6": "Increase the surface diameter by 10 m (makes it possible for ten additional creatures of normal size, or one additional creature that weighs 10 times that of a normal-sized creature, to stand on the surface)",
-            "7": "Increase the strength of the surface by an additional 200 kg",
-            "8": "Increase the strength of the surface by an additional 1,000 kg",
-            "9": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 10 minutes",
+            "2": "Increase the duration by 1 hour",
+            "3": "Increase movement by +1 meter per action round (up to maximum normal movement)",
+            "4": "Increase the surface diameter by",
+            "5": "meter (makes it possible for an additional creature of normal size to stand on the surface)",
+            "6": "30 mètres (ce qui permet à une trentaine de créatures de taille humaine de s’y tenir, ou bien trois créatures dix fois plus lourdes qu’une créature de taille humaine)",
+            "7": "Augmente le poids que la zone affectée peut supporter de : 100 kg",
+            "8": "Augmente le poids que la zone affectée peut supporter de : 200 kg",
+            "9": "Augmente le poids que la zone affectée peut supporter de : 1000 kg"
           }
         },
         "vitner-water-craft:wave-master:8": {
@@ -4248,13 +4248,13 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Enchant another being with the spell’s basic version",
+            "1": "Increase the duration by 1 day",
             "2": "Increase the range by 100 meters",
-            "3": "Increase or decrease the effect by 1 additional degree of movement",
-            "4": "Enchant another object with the spell’s basic version",
-            "5": "Enchant another 10 beings in the basic version",
-            "6": "Increase the duration by 1 day",
-            "7": "Increase the range by 1 kilometer"
+            "3": "Increase the range by 1 kilometer",
+            "4": "Increase or decrease the effect by 1 additional degree of movement",
+            "5": "Enchant another being with the spell’s basic version",
+            "6": "Enchant another object with the spell’s basic version",
+            "7": "dix autres créatures (qui subissent l’effet de la version de base du sort)"
           }
         },
         "vitner-wind-craft:purify-air:0": {
@@ -4268,9 +4268,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the affected area’s radius by 1 meter",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 20 minutes"
+            "1": "Increase the duration by 20 minutes",
+            "2": "Increase the affected area’s radius by 1 meter",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "vitner-wind-craft:wind-gust:1": {
@@ -4300,7 +4300,7 @@
             "0": "Increase the duration by 5 minutes",
             "1": "Increase the range by 100 meters",
             "2": "Increase the fog’s radius by an additional 2 meters",
-            "3": "Increase the fog’s thickness, which"
+            "3": "Augmente l’épaisseur du brouillard, ce qui réduit la visibilité à un quart (distance normale / 4) et impose un malus supplémentaire de : -2 aux actions de combat"
           }
         },
         "vitner-wind-craft:control-wind:3": {
@@ -4330,10 +4330,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Affect an extra being (with the spell’s basic version)",
-            "3": "Increase the thickness of the air armor, increasing the Protection Value by +1",
-            "4": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the range by 5 meters (contact is no longer necessary)",
+            "3": "Affect an extra being (with the spell’s basic version)",
+            "4": "Increase the thickness of the air armor, increasing the Protection Value by +1"
           }
         },
         "vitner-wind-craft:lift:5": {
@@ -4347,15 +4347,15 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase affected weight by 10 kg",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Decrease the enchanted person’s chance of succeeding on the Situation roll to resist by -1",
-            "4": "Increase the speed by +1 meter per action round (maximum 10 meters per action round)",
-            "5": "Increase the duration by 1 minute",
-            "6": "Increase affected weight by 50 kg",
-            "7": "Give the enchanted person (if other than the enchanter) the ability to determine the direction of travel in the air",
-            "8": "Increase affected weight by 100 kg",
-            "9": "Increase the duration by 10"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 10",
+            "3": "Increase affected weight by 10 kg",
+            "4": "Increase affected weight by 50 kg",
+            "5": "Increase affected weight by 100 kg",
+            "6": "Increase the range by 5 meters (contact is no longer necessary)",
+            "7": "Augmente la capacité de mouvement de : 1 mètre par tour de jeu",
+            "8": "Decrease the enchanted person’s chance of succeeding on the Situation roll to resist by -1",
+            "9": "Donne à la personne enchantée (si ce n’est pas l’enchanteur lui-même) la faculté de choisir dans quelle direction elle se déplace dans les airs"
           }
         },
         "vitner-wind-craft:air-shield:6": {
@@ -4369,11 +4369,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the thickness of the air shield, increasing the Protection Value by +1 (maximum PV 30)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the size of the shield by one level",
-            "4": "Increase the duration by 1 minute",
-            "5": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 1 hour",
+            "3": "Augmente l’épaisseur du bouclier d’air, ce qui augmente la valeur de protection de : 1",
+            "4": "Increase the range by 5 meters (contact is no longer necessary)",
+            "5": "Augmente la taille du bouclier d’un niveau"
           }
         },
         "vitner-wind-craft:wind-blast:7": {
@@ -4401,11 +4401,11 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 hour",
-            "1": "Increase the radius by 1 meter 2: Thornwall ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 1 minute ✦ Range: 10 meters ✦ Invocation time: 2 action rounds The one praying invokes the force of the black oak. Within the range, thorny branches spring from the ground that fill a space of 1d10 + 10 m³, which the dimwalker may then shape to their own satisfaction. For example, if a priest has",
-            "2": "m³ at their disposal, they can shape the branches to be 20 m long x 1 m high x 1 m wide, or 10 m long x 2 m high x 1 m wide, or other dimensions. It takes 1 action round for the branches to grow to fill a space of 5 m³, meaning that branches filling 20 m³ of space would take 4 rounds. Attempting to pass through these thorny branches without cutting them down deals 1d5 points of damage for every cubic meter passed through, and requires 2 action rounds of movement per meter. Each cubic meter has a number of thorny branches equivalent to 10 Body Points, should one wish to hack through in order to push through the wall without taking any damage. LEVELS OF POWER: THORNWALL Cost Extra Levels of Power",
-            "3": "Increase the duration by 1 minute",
-            "4": "Increase quantity of branches by 1d10 m³",
+            "0": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 10 kg",
+            "1": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 50 kg",
+            "2": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 500 kg",
+            "3": "Augmente le rayon du sort de : 2 mètres",
+            "4": "Augmente le rayon du sort de : 10 mètres",
             "5": "Increase the range by 5 meters"
           }
         },
@@ -4420,14 +4420,14 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase affected weight by 10 kg",
-            "2": "Increase the range by 10 m",
-            "3": "Decrease each enchanted person’s chance of succeeding on the Situation roll to resist by -1",
-            "4": "Increase the duration by 1 minute",
-            "5": "Give the enchanted being (if other than the enchanter) the ability to determine the direction of travel in the air",
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the duration by 10",
+            "3": "Increase affected weight by 10 kg",
+            "4": "Increase affected weight by 100 kg",
+            "5": "Increase the range by 10 m",
             "6": "Increase the speed by +10 m per action round",
-            "7": "Increase affected weight by 100 kg",
-            "8": "Increase the duration by 10"
+            "7": "Decrease each enchanted person’s chance of succeeding on the Situation roll to resist by -1",
+            "8": "Donne à la personne enchantée (s’il ne s’agit pas de l’enchanteur) la faculté de choisir le sens de déplacement dans les airs"
           }
         },
         "vitner-witchcraft:uprooted-tree:0": {
@@ -4443,7 +4443,7 @@
             "0": "Increase the range by 5 meters",
             "1": "Increase the size of the uprooting so it can lift a tree of + 0.5 meters in circumference, as well as lift or tip an additional 30 kg",
             "2": "Increase the size of the uprooting so it can lift a tree of +1.5 meters in circumference, as well as lift or tip an additional 100 kg",
-            "3": "Increase the size of the uprooting"
+            "3": "+7,5 mètres de circonférence et soulever ou pousser 500 kg de plus"
           }
         },
         "vitner-witchcraft:phantom-plague:1": {
@@ -4457,8 +4457,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the effect of the phantom plague´s credibility so the target´s Situation value decreases by -1",
-            "1": "Increase the duration by 1 day",
-            "2": "Increase the phantom plague´s"
+            "1": "la valeur de compétence du guérisseur (Savoir-faire) diminue de : 1 quand il examine la victime",
+            "2": "Increase the duration by 1 day"
           }
         },
         "vitner-witchcraft:fever:2": {
@@ -4472,11 +4472,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "2": "Increase the duration by 1 hour",
-            "3": "Increase the fever effects so the victim receives another -1 to the SV of actions attempted for the duration.",
-            "4": "Increase the damage by one step: 1d10 g 1d10 (OR 10) g 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 8-10) + 1",
-            "5": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the duration by 1 day",
+            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "4": "Increase the fever effects so the victim receives another -1 to the SV of actions attempted for the duration.",
+            "5": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "vitner-witchcraft:curse-object:3": {
@@ -4490,10 +4490,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 5 meters (contact is no longer necessary)",
-            "2": "Increase the negative modifier during use by -1 (the damage and Protection Values are equal to the SV’s negative modifier divided by 2 and rounded down)",
-            "3": "Affect another victim (with the spell’s basic version)",
-            "4": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente la durée du sort de : 1 heure",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)",
+            "4": "Affecte une autre cible (qui subit la version de base du sort)"
           }
         },
         "vitner-witchcraft:amnesia:4": {
@@ -4507,8 +4507,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters (contact is no longer necessary)",
-            "1": "Decrease the victim’s starting Situation roll by -1 (no lower than",
-            "2": "in total)"
+            "1": "Augmente la portée de : 50 mètres",
+            "2": "Diminue le test de situation initial de la victime (sans pouvoir le faire descendre en dessous de : 1) de : -1"
           }
         },
         "vitner-witchcraft:curse-creature:5": {
@@ -4522,10 +4522,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the negative modifier inflicted upon the victim by -1",
-            "2": "Increase the duration by 1 week",
-            "3": "Increase the duration by 1 month",
-            "4": "Increase the duration by 1 year"
+            "1": "Increase the duration by 1 week",
+            "2": "Increase the duration by 1 month",
+            "3": "Increase the duration by 1 year",
+            "4": "Augmente le malus infligé à la victime de : +1"
           }
         },
         "vitner-witchcraft:bad-harvest:6": {
@@ -4539,11 +4539,11 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the radius by 20 meters",
-            "1": "Increase the range by 100 meters",
-            "2": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site",
-            "3": "Increase the radius by 100 meters",
-            "4": "Increase the range by 1,000 meters",
-            "5": "Increase the radius by 500 meters"
+            "1": "Increase the radius by 100 meters",
+            "2": "Increase the radius by 500 meters",
+            "3": "Increase the range by 100 meters",
+            "4": "Augmente la portée du sort de : 1 kilomètre",
+            "5": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
           }
         },
         "vitner-witchcraft:tree-curse:7": {
@@ -4558,10 +4558,10 @@
           "PowerLevels": {
             "0": "Increase affected weight by 10 kg",
             "1": "Increase the duration by 1 day",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 week",
-            "4": "Increase the duration by 1 month",
-            "5": "Increase the duration by 1 year"
+            "2": "Increase the duration by 1 week",
+            "3": "Increase the duration by 1 month",
+            "4": "Increase the duration by 1 year",
+            "5": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-gerbanis-influence-of-jorn:death-gust:0": {
@@ -4589,9 +4589,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the surface by 10 m²",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the range by 10 meters",
+            "3": "Increase the surface by 10 m²"
           }
         },
         "holy-gerbanis-influence-of-jorn:falfax:2": {
@@ -4618,10 +4618,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 10 meters",
-            "2": "Increase the surface by 10 m²",
-            "3": "Increase the duration by 1 minute",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente la durée du pouvoir de : 1 jour",
+            "3": "Increase the range by 10 meters",
+            "4": "Increase the surface by 10 m²"
           }
         },
         "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4": {
@@ -4706,8 +4706,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Change range to Contact (allowing",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 jour",
+            "2": "Fait passer la portée du pouvoir à contact (ce qui permet à l’arpenteur des brumes d’appliquer l’effet à quelqu’un d’autre)"
           }
         },
         "holy-gerbanis-power-of-enken:willpower:1": {
@@ -4721,8 +4721,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the duration by 1 hour 2: Illusion Tricks ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 1 minute ✦ Range: 5 meters ✦ Invocation time: 1 action round The spirit conjurer can perform simple and mundane illusions. Examples include causing a dish of worms and tadpoles to appear as a delectable beef stew or causing pieces of metal to appear as gold coins. These simple illusions affect only vision, and any person who perceives the illusions with other senses (for example, sniffing the beef stew or handling the gold coins) will automatically see through them. LEVELS OF POWER: ILLUSION TRICKS Cost Extra Levels of Power",
-            "2": "Increase the duration by 1 minute"
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-gerbanis-power-of-enken:bold:2": {
@@ -4750,9 +4749,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range to 5 meters (contact is no longer necessary)",
-            "2": "Increase the Protection Value by +1 (maximum 4 levels of power)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the range to 5 meters (contact is no longer necessary)",
+            "3": "Augmente la valeur de protection de : 1"
           }
         },
         "holy-gerbanis-power-of-enken:soul-sight:4": {
@@ -4767,7 +4766,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
             "1": "Increase the range by 5 meters",
-            "2": "Increase the modifier of Shadow"
+            "2": "Augmente le modificateur à la compétence Arts des ombres pour percevoir les choses cachées de : +1"
           }
         },
         "holy-gerbanis-power-of-enken:storm-armor:5": {
@@ -4781,10 +4780,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range to 5 meters (contact is no longer necessary)",
-            "2": "Increase the Protection Value by +1 (maximum 8 levels of power)",
-            "3": "Affect an additional person (with the ability’s basic version)",
-            "4": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Increase the range to 5 meters (contact is no longer necessary)",
+            "3": "Augmente la valeur de protection de : 1",
+            "4": "Affect an additional person (with the ability’s basic version)"
           }
         },
         "holy-gerbanis-power-of-enken:heart-of-enken:6": {
@@ -4798,10 +4797,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Affect an additional person within range (with the spell’s basic version)",
+            "1": "Increase the duration by 1 hour",
             "2": "Increase the range by 5 meters",
-            "3": "Increase the character trait of Psych from +4 to +6 for the Stormkelt’s allies",
-            "4": "Increase the duration by 1 hour"
+            "3": "Affect an additional person within range (with the spell’s basic version)",
+            "4": "Increase the character trait of Psych from +4 to +6 for the Stormkelt’s allies"
           }
         },
         "holy-gerbanis-power-of-enken:hurricane-armor:7": {
@@ -4815,10 +4814,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Affect an additional person within range (with the spell’s basic version)",
-            "2": "Increase the range to 5 meters",
-            "3": "Increase the Protection Value by +1 (maximum 12 levels of power)",
-            "4": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Affect an additional person within range (with the spell’s basic version)",
+            "3": "Increase the range to 5 meters",
+            "4": "Augmente la valeur de protection octroyée de : 1"
           }
         },
         "holy-gerbanis-power-of-enken:eye-of-enken:8": {
@@ -4833,7 +4832,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
             "1": "Increase the range to 50 meters",
-            "2": "Increase the modifier of Shadow"
+            "2": "Augmente le bonus à la compétence Arts des ombres pour voir les choses cachées de : +1"
           }
         },
         "holy-gerbanis-strength-of-stormi:troll-strength:0": {
@@ -4847,8 +4846,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the duration by 1 hour 2: Mountain Ogre´s Fury ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 3 action rounds ✦ Range: Personal ✦ Invocation time: 1 action round The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following: ✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear LEVELS OF POWER: MOUNTAIN OGRE’S FURY Cost Extra Levels of Power",
-            "2": "Increase the duration by 1 action"
+            "1": "Increase the duration by 1 action"
           }
         },
         "holy-gerbanis-strength-of-stormi:voice-of-command:1": {
@@ -4863,7 +4861,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
             "1": "Decrease the Situation value by -1",
-            "2": ""
+            "2": "Augmente la portée du pouvoir de : 5 mètres"
           }
         },
         "holy-gerbanis-strength-of-stormi:havar:2": {
@@ -4920,8 +4918,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Summon another spirit warrior (maximum 3)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Invoque un autre esprit guerrier"
           }
         },
         "holy-gerbanis-strength-of-stormi:jotun-strength:6": {
@@ -4935,10 +4933,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Apply the Strength +8 to one more person",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the characteristics from +4 to +6 for the Stormkelt’s allies",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Apply the Strength +8 to one more person",
+            "3": "Increase the range by 5 meters",
+            "4": "Increase the characteristics from +4 to +6 for the Stormkelt’s allies"
           }
         },
         "holy-gerbanis-strength-of-stormi:voice-of-stormi:7": {
@@ -4954,7 +4952,7 @@
             "0": "Increase the duration by 1 action round",
             "1": "Decrease the Situation value by -1",
             "2": "Increase the range by 5 meters",
-            "3": "Affect one more listener (with the"
+            "3": "Affecte une personne de plus (qui subit les effets du pouvoir de base)"
           }
         },
         "holy-gerbanis-strength-of-stormi:einharjar:8": {
@@ -4968,8 +4966,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Summon another spirit warrior (maximum 6)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Invoque un autre esprit guerrier"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:healing:0": {
@@ -4982,8 +4980,8 @@
           "CastingTime": "1 minute(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increases healing by +1 Body",
-            "1": ""
+            "0": "Augmente la durée du sort de : 1 jour",
+            "1": "Augmente la vitesse de guérison de : +1 point de santé par jour"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:sunray:1": {
@@ -4996,8 +4994,7 @@
           "CastingTime": "6 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 hour 2: Healing Glow ✦ Cost/Modifier: 4/-4 ✦ Type: Instant ✦ Range: Contact ✦ Invocation time: 1 minute The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei. The dimwalker’s hands then begin to glow with a purifying fire that the Stormkelt lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 1 Body Point and stops any bleeding. LEVELS OF POWER: HEALING GLOW Cost Extra Levels of Power",
-            "1": "Increases healing by +1 Body Point"
+            "0": "Augmente la durée du sort de : 1 heure"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:healing-glow:2": {
@@ -5036,7 +5033,7 @@
           "CastingTime": "1 minute(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increases healing by +1 Body Point"
+            "0": "Soigne de : +2 points de santé"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:healing-warmth:5": {
@@ -5050,8 +5047,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the modifier for overcoming disease by +1",
-            "2": "Increase the rate of healing by"
+            "1": "Augmente le modificateur pour surmonter la maladie de : +1",
+            "2": "Augmente la vitesse de guérison de : +2 points de santé par jour"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6": {
@@ -5079,8 +5076,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the modifier for neutralize or dispel by +1",
-            "2": "Increase the rate of healing by +1"
+            "1": "Augmente le modificateur pour neutraliser un poison ou dissiper une malédiction de : +1",
+            "2": "Augmente la vitesse de guérison de : +3 points de santé par jour"
           }
         },
         "holy-gerbanis-warmth-of-sunvei:healing-sun:8": {
@@ -5093,7 +5090,7 @@
           "CastingTime": "1 minute(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increases healing by +1 Body"
+            "0": "Soigne de : 3 points de santé"
           }
         },
         "holy-gerbanis-wisdom-of-windinna:inspiration:0": {
@@ -5134,8 +5131,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Affect a person within range",
-            "1": "Increase the range by 5 meters",
-            "2": ""
+            "1": "Increase the range by 5 meters"
           }
         },
         "holy-gerbanis-wisdom-of-windinna:steel-mind:3": {
@@ -5231,7 +5227,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increases the number of burns by +1 (maximum 6)",
+            "0": "Augmente le nombre de brûlures de : 1",
             "1": "Increase the range by 5 meters"
           }
         },
@@ -5245,7 +5241,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of people who are affected by the ability by +1 (maximum 3)",
+            "0": "Augmente le nombre de personnes affectées par ce pouvoir de : 1",
             "1": "Increase the duration by 1 action round",
             "2": "Increase the range by 5 meters",
             "3": "Increase the bonus on combat"
@@ -5275,7 +5271,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of burns by +1 (maximum 6)",
+            "0": "Augmente le nombre de brûlures de : 1",
             "1": "Increase the range by 5 meters",
             "2": "Afflict one additional target (with"
           }
@@ -5290,12 +5286,12 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of allies who are affected by the ability by +1 (maximum 6)",
-            "1": "Increase the duration by 1 action round",
-            "2": "Increase the range by 5 meters",
-            "3": "Increase the bonus on combat actions by another +1 (maximum 6)",
-            "4": "Increase the modifier for enemies by -1 (maximum -6)",
-            "5": "Increase the number of enemies"
+            "0": "Increase the duration by 1 action round",
+            "1": "Augmente le nombre d’alliés affectées par ce pouvoir de : 1",
+            "2": "Augmente le nombre d’ennemis affectés par ce pouvoir de : +1",
+            "3": "Increase the range by 5 meters",
+            "4": "Augmente le bonus aux actions de combat de : 1",
+            "5": "Augmente le malus infligé aux ennemis de : -1"
           }
         },
         "holy-gerbanis-wrath-of-tyrd:dark-visage:5": {
@@ -5340,7 +5336,7 @@
             "0": "Increase the duration by 1 action round",
             "1": "Increase the range by 5 meters",
             "2": "Increase the bonus for combat actions by another +1",
-            "3": "Increase the modifier for enemies by -1"
+            "3": "Augmente le malus infligé aux ennemis de : +1"
           }
         },
         "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8": {
@@ -5354,7 +5350,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters Increase the Fear Points by one",
-            "1": "step: 1d10 (OR 9-10) g − 1d10"
+            "1": "Augmente les points de peur infligés d’un degré : 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0": {
@@ -5494,9 +5490,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the power duration de : 1 action round(s)",
-            "1": "Increase the power duration de : 1 minute(s)",
-            "2": "Increase the power duration de : 1 hour(s)",
-            "3": "Increase the Situation Value de : +1"
+            "1": "Increase the power duration de : 1 hour(s)"
           }
         },
         "holy-ealdtradition-halawen-s-offering:vitner-shield:1": {
@@ -5510,9 +5504,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by one action round",
-            "1": "Increase Situation value by +1",
-            "2": "",
-            "3": ""
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente la durée du pouvoir de : 1 heure",
+            "3": "Increase Situation value by +1"
           }
         },
         "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2": {
@@ -5554,10 +5548,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the power duration de : 1 action round(s)",
-            "1": "Increase the power duration de : 1 minute(s)",
-            "2": "Increase range by 1 meters",
-            "3": "Increase the Situation Value de : +1",
-            "4": "Affect un autre ally à portée"
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-ealdtradition-halawen-s-offering:witch-wall:5": {
@@ -5571,10 +5562,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the range by 2 meters",
-            "2": "",
-            "3": "",
-            "4": ""
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente la portée de : 1 mètre",
+            "3": "Augmente la valeur de situation de : +1",
+            "4": "Affecte un autre allié à portée"
           }
         },
         "holy-ealdtradition-halawen-s-offering:fearless:6": {
@@ -5605,10 +5596,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 2 meters",
-            "2": "Increase the Situation value by +1",
-            "3": "Affect another ally within the range",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 2 meters",
+            "3": "Increase the Situation value by +1",
+            "4": "Affect another ally within the range"
           }
         },
         "holy-ealdtradition-halawen-s-offering:roggdrasil:8": {
@@ -5663,7 +5654,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round Increase the hit and damage",
-            "1": "bonus by +1 (maximum +4/+6"
+            "1": "Augmente les bonus à l’attaque et aux dégâts de : +1"
           }
         },
         "holy-ealdtradition-heritage-of-majne:king-s-militia:3": {
@@ -5677,8 +5668,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Summon another spirit warrior (maximum 2)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Invoque un autre esprit guerrier"
           }
         },
         "holy-ealdtradition-heritage-of-majne:hero-s-brew:4": {
@@ -5705,8 +5696,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Summon another spirit warrior (maximum 4)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Invoque un autre esprit guerrier"
           }
         },
         "holy-ealdtradition-heritage-of-majne:dragonslayer:6": {
@@ -5747,8 +5738,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Summon another spirit warrior (maximum 9)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Augmente la durée du pouvoir de : 1 jour",
+            "2": "Invoque un autre esprit guerrier"
           }
         },
         "holy-ealdtradition-magh-s-gift:journey-wind:0": {
@@ -5801,7 +5792,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the temperature by +10 degrees",
+            "1": "Augmente la température (maximum 30°C) de : +10 degrés",
             "2": "Increase the radius by 1 meter"
           }
         },
@@ -5908,8 +5899,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the range by 10 meters",
-            "2": ""
+            "1": "Increase the range by 10 meters"
           }
         },
         "holy-ealdtradition-nema-s-usefulness:owl-hearing:3": {
@@ -5966,8 +5956,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 10 meters",
-            "1": "Increase the Situation value by +1",
-            "2": ""
+            "1": "Increase the Situation value by +1"
           }
         },
         "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7": {
@@ -6037,7 +6026,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": ""
+            "1": "Augmente le nombre de points de santé gagnés de : +1"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:rage:3": {
@@ -6050,8 +6039,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 action round 3: Shower of Arrows ✦ Cost/Modifier: 6/-6 ✦ Type: Instant ✦ Range: 30 meters ✦ Invocation time: 2 action rounds The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker. The arrows count as magical projectiles, but armor grants full protection as normal. Shields also provide passive protection against the arrows as normal. The Bruid takes aim at a group of enemies within range, who are then struck by a volley of black arrows. In its basic version, this ability unleashes two arrows, which are evenly and randomly distributed among enemies within the designated group. The arrows automatically hit with a successful invocation, each causing 1d10 (OR 8-10) points of damage with Penetration Value 2. LEVELS OF POWER: SHOWER OF ARROWS Cost Extra Levels of Power",
-            "1": "Increase the range by 10 meters"
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4": {
@@ -6065,7 +6053,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 10 meters",
-            "1": "Increase the arrows’ Penetration"
+            "1": "Augmente le nombre de flèches de : 1"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:madness:5": {
@@ -6078,8 +6066,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 action",
-            "1": ""
+            "0": "Increase the duration by 1 action"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:bloodfire:6": {
@@ -6106,8 +6093,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 action",
-            "1": ""
+            "0": "Increase the duration by 1 action"
           }
         },
         "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8": {
@@ -6121,7 +6107,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 10 meters",
-            "1": "Increase the arrows’ Penetration"
+            "1": "Augmente la quantité de flèches de : +1"
           }
         },
         "holy-tenetnid-tablet-of-anger:power-of-blood:0": {
@@ -6134,9 +6120,9 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of wounds that bleed by +1 (maximum 6)",
-            "1": "Affect another enemy (maximum 4)",
-            "2": ""
+            "0": "Augmente le nombre de blessures qui saignent de : 1",
+            "1": "Affecte un autre ennemi",
+            "2": "Augmente la portée du pouvoir de : 5 mètres"
           }
         },
         "holy-tenetnid-tablet-of-anger:holy-bolt:1": {
@@ -6150,8 +6136,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Increase damage by +3 2: Stone Senses ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 3 action rounds ✦ Range: 5 meters ✦ Invocation time: 1 action round The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify. The opponent suffers a -2 initiative modifier and -1 on all combat actions for the duration of the ability. This ability can be used only on people and creatures that are close to human- sized (from half the size of a human up to 1.5 times the size of a human). LEVELS OF POWER: STONE SENSES Cost Extra Levels of Power",
-            "2": "Increase the duration by 1 action"
+            "1": "Augmente les dégâts infligés de : +3"
           }
         },
         "holy-tenetnid-tablet-of-anger:stone-senses:2": {
@@ -6166,7 +6151,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
             "1": "Increase the range by 5 meters",
-            "2": "Increase the negative modifier by"
+            "2": "Augmente le malus à l’initiative de : -2 et le malus à toutes les actions de combat de : -1"
           }
         },
         "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3": {
@@ -6179,10 +6164,10 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of wounds that bleed by +1 (maximum 6)",
-            "1": "Affect another enemy (maximum 6)",
+            "0": "Augmente le nombre de blessures qui saignent de : 1",
+            "1": "Affecte un autre ennemi",
             "2": "Increase the range by 5 meters",
-            "3": "Decrease the enemy’s Situation"
+            "3": "Réduit la valeur de situation de l’ennemi de : -1"
           }
         },
         "holy-tenetnid-tablet-of-anger:sacred-burst:4": {
@@ -6197,7 +6182,7 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase damage by +3",
-            "2": "Add another glowing projectile"
+            "2": "Ajoute un autre projectile lumineux"
           }
         },
         "holy-tenetnid-tablet-of-anger:statue:5": {
@@ -6227,7 +6212,7 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase damage by +3",
-            "2": "Add another glowing projectile"
+            "2": "Ajoute un autre projectile lumineux"
           }
         },
         "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7": {
@@ -6240,10 +6225,10 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the number of wounds that bleed by +1 (maximum 6)",
-            "1": "Affect another enemy",
+            "0": "Augmente le nombre de blessures qui saignent de : 1",
+            "1": "Affecte un autre ennemi",
             "2": "Increase the range by 5 meters",
-            "3": "Decrease the enemy’s Situation"
+            "3": "Réduit la valeur de situation de l’ennemi de : -1"
           }
         },
         "holy-tenetnid-tablet-of-anger:stone-monument:8": {
@@ -6396,9 +6381,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the Protection Value by +1 (maximum +4)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente la valeur de protection de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:blessed-spear:1": {
@@ -6412,9 +6397,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase damage bonuses by +1 (maximum +4/+5 undead/+6 demons)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente le bonus aux dégâts de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:holy-authority:2": {
@@ -6428,8 +6413,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus by an additional +1 (maximum +3)",
-            "2": "Lower resistance rolls by an additional -1 (maximum -3)",
+            "1": "Augmente le bonus conféré par ce pouvoir de : +1",
+            "2": "Augmente le malus au test de résistance de : -1",
             "3": "Increase the range by 5 meters"
           }
         },
@@ -6444,9 +6429,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the Protection Value by another +1 (maximum +7/+5)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente la valeur de protection de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4": {
@@ -6460,8 +6445,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus by an additional +1 (maximum +6)",
-            "2": "Lower resistance rolls by an additional -1 (maximum -6)",
+            "1": "Augmente le bonus conféré par ce pouvoir de : +1",
+            "2": "Augmente le malus au test de résistance de : -1",
             "3": "Lower the Situation value by -1 for those who attempt to lie or attack the priest",
             "4": "Increase the range by 5 meters"
           }
@@ -6477,9 +6462,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase damage by +1 (maximum +7/+9 undead/+11 demons)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente les dégâts infligés de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6": {
@@ -6493,9 +6478,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the Protection Value by another +1 (maximum +10/+8)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente la valeur de protection de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7": {
@@ -6509,9 +6494,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase damage by +1 (maximum +10/+13 undead/+16 demons)",
-            "2": "Increase the range by 5 meters (contact is no longer necessary)",
-            "3": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente les dégâts infligés de : +1",
+            "3": "Increase the range by 5 meters (contact is no longer necessary)"
           }
         },
         "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8": {
@@ -6525,10 +6510,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus by an additional +1 (maximum +10)",
-            "2": "Lower resistance rolls by an additional -1 (maximum -8)",
-            "3": "Lower the Situation value by -1 for those who attempt to lie, attack, or plot against the priest.",
-            "4": "Increase the range by 5 meters"
+            "1": "Increase the range by 5 meters",
+            "2": "Augmente le bonus conféré par ce pouvoir de : +1",
+            "3": "Augmente le malus au test de résistance de : -1",
+            "4": "Lower the Situation value by -1 for those who attempt to lie, attack, or plot against the priest."
           }
         },
         "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0": {
@@ -6543,7 +6528,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
             "1": "Increase the range by 5 meters",
-            "2": "Increase the modifier of the demon"
+            "2": "Augmente le malus subi par les démons de : -1"
           }
         },
         "holy-tenetnid-tablet-of-the-shield:sheltering:1": {
@@ -6587,8 +6572,8 @@
             "0": "Increase the power duration de : 1 minute(s)",
             "1": "Increase the power duration de : 1 hour(s)",
             "2": "Increase the power range de : 5 meters",
-            "3": "Increase la quantity de thorn branches de : 1d10 m",
-            "4": "Increase la quantity de thorn branches de : 1d10 m",
+            "3": "Augmente la quantité de branches épineuses de : 1d10 m",
+            "4": "Augmente la quantité de branches épineuses de : 1d10 m",
             "5": "Increase les Body Points des branches de : 5 par m",
             "6": "Increase les Body Points des branches de : 5 par m"
           }
@@ -6677,8 +6662,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 1 meter",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 1 meter"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:protective-ground:1": {
@@ -6693,7 +6678,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
             "1": "Increase the radius of the range by 1 meter",
-            "2": "Decrease the Skill Value for those who want to use abilities from other religions or spells by -1 (maximum -4)",
+            "2": "Augmente le malus aux valeurs de compétence de ceux qui désirent utiliser des pouvoirs appartenant à d’autres religions ou des sorts de : -1",
             "3": "Increase the Situation values to"
           }
         },
@@ -6721,9 +6706,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 1 meter",
-            "2": "Increase the bonus to Skill Values and Situation values by +1 (maximum +3)",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 1 meter",
+            "3": "Augmente le bonus aux valeurs de compétence et de situation de : +1"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:omen:4": {
@@ -6751,8 +6736,8 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
             "1": "Increase the radius of the range by",
-            "2": "meter",
-            "3": "Decrease the Skill Values for those"
+            "2": "Augmente le malus aux valeurs de compétence de ceux qui désirent utiliser des pouvoirs appartenant à d’autres religions ou des sorts de : -1",
+            "3": "Augmente la valeur de situation pour résister aux effets contraignants des sorts ou pouvoirs appartenant à d’autres religions de : 2"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:sacred-grove:6": {
@@ -6766,9 +6751,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the radius of the range by",
-            "2": "meters",
-            "3": ""
+            "1": "Augmente le rayon d’effet du pouvoir de : 2 mètres",
+            "2": "Augmente le malus aux valeurs de compétence de ceux qui désirent utiliser des pouvoirs appartenant à d’autres religions ou des sorts de : +1",
+            "3": "Augmente la valeur de situation pour résister aux effets contraignants des sorts ou pouvoirs appartenant à d’autres religions de : +2"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:holy-radiance:7": {
@@ -6781,10 +6766,9 @@
           "CastingTime": "spécial",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the power duration de : 1 day",
-            "1": "Increase le effect radius du power de : 2 meters",
-            "2": "Increase the penalty aux Skill Values de ceux qui désirent utiliser des powers appartenant à d’autres religions ou des spells de : +1",
-            "3": "Increase the Situation Value pour résister aux effets contraignants des spells ou powers appartenant à d’autres religions de : +2"
+            "0": "Augmente la portée du pouvoir de : 1 mètre",
+            "1": "Augmente le bonus aux valeurs de compétence et de situation de : +1",
+            "2": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-tenetnid-tablet-of-the-sun:portent:8": {
@@ -6811,8 +6795,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the blessing’s bonus by an additional +1 (maximum +3)",
-            "2": "Increase the duration by 1 day"
+            "1": "Increase the duration by 1 day",
+            "2": "Augmente le bonus conféré par la bénédiction de : +1"
           }
         },
         "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1": {
@@ -6840,7 +6824,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increases the duration by 1 action round",
-            "1": "Increases the range by 5 meters (contact is no longer necessary)",
+            "1": "Augmente la durée du pouvoir de : 1 tour de jeu",
             "2": "Lowers Situation value to resist"
           }
         },
@@ -6855,8 +6839,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus to the Knowledge skill (when understanding/speaking the language) by +1 (maximum +5)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente le bonus à la compétence Connaissances pour comprendre et parler cette langue de : +1"
           }
         },
         "holy-tenetnid-tablet-of-voices:kindred-s-bond:4": {
@@ -6887,9 +6871,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the blessing’s bonus by an additional +1 (maximum +5)",
-            "2": "Increase the range by 5 meters",
-            "3": "Bless another person (maximum 4"
+            "1": "Increase the range by 5 meters",
+            "2": "Réduit la valeur de situation pour résister à ce pouvoir de : -1",
+            "3": "Affecte un ennemi supplémentaire"
           }
         },
         "holy-tenetnid-tablet-of-voices:sanity-of-gave:6": {
@@ -6903,8 +6887,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus to the Knowledge skill (when understanding/speaking the language) by +1 (maximum +8)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente le bonus à la compétence de Connaissance (pour comprendre et parler une langue étrangère) de : +1"
           }
         },
         "holy-tenetnid-tablet-of-voices:favorites-of-gave:7": {
@@ -6918,7 +6902,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day",
-            "1": "Increase the blessing’s bonus by an additional +1 (maximum +8)",
+            "1": "Augmente la portée du pouvoir de : 5 mètres",
             "2": "Increase the range by 5 meters",
             "3": "Bless another person"
           }
@@ -6950,8 +6934,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the power duration de : 1 action round(s)",
-            "1": "Increase the power duration de : 1 minute(s)",
-            "2": "Increase the bonus en combat de : +1"
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-haminges-power-of-the-beast:mind-of-the-predator:1": {
@@ -6965,8 +6948,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the bonus in combat by",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente le bonus en combat de : +1"
           }
         },
         "holy-haminges-power-of-the-beast:mastomant-s-tusks:2": {
@@ -6980,8 +6963,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the damage by one step: 1d10 g 1d10 (OR 10) g 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 8-10) + 1",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-boar:3": {
@@ -7009,7 +6992,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Ability also protects against"
+            "1": "Le pouvoir protège également contre le froid magique"
           }
         },
         "holy-haminges-power-of-the-beast:wolf-claws:5": {
@@ -7023,8 +7006,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase the damage by one step: 1d10 (OR 10) g 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 8-10) + 1",
-            "2": "Increase the duration by 1 minute"
+            "1": "Increase the duration by 1 minute",
+            "2": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "holy-haminges-power-of-the-beast:endurance-of-the-giant:6": {
@@ -7052,9 +7035,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Call a skoll instead of a wolf",
-            "2": "Call a garm instead of a wolf",
-            "3": "| chapter 4. dimwalkers"
+            "1": "Appelle un warg à la place d’un loup",
+            "2": "Appelle un skoll à la place d’un loup",
+            "3": "Appelle un garm à la place d’un loup"
           }
         },
         "holy-haminges-power-of-the-beast:mastomantshape:8": {
@@ -7068,9 +7051,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the Protection Value by another +1 (maximum 8)",
-            "2": "Increase the Body Points by an additional +10",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente la valeur de protection de : +1",
+            "3": "Increase the Body Points by an additional +10"
           }
         },
         "holy-haminges-power-of-the-dragon:constriction:0": {
@@ -7084,7 +7067,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Reduce the opponent’s ability"
+            "1": "Augmente le malus que subit l’adversaire à sa tentative de parade de : +1"
           }
         },
         "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1": {
@@ -7139,7 +7122,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the Protection Value by another +1 (maximum 6)",
+            "1": "Augmente la valeur de protection de : +1",
             "2": "Increase damage with all melee"
           }
         },
@@ -7153,9 +7136,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 1 action round",
-            "1": "",
-            "2": ""
+            "0": "Increase the duration by 1 action round"
           }
         },
         "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6": {
@@ -7169,8 +7150,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 day Increase the probability that the",
-            "1": "fatal injury hits the head by 1 (maximum 6-10)",
-            "2": "Increase the duration by 1 week"
+            "1": "Increase the duration by 1 week",
+            "2": "Améliore le Jet Ouvert pour que la blessure fatale touche la tête de : -1"
           }
         },
         "holy-haminges-power-of-the-dragon:dragon-soul:7": {
@@ -7184,8 +7165,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the Protection Value by another +1 (maximum 10) Increase damage with all melee",
-            "2": "weapons and throwing weapons by"
+            "1": "Augmente la valeur de protection de : +1",
+            "2": "Augmente le bonus aux dégâts de toutes les armes de corps à corps et de jet de : +1"
           }
         },
         "holy-haminges-power-of-the-dragon:giant-snakeshape:8": {
@@ -7199,10 +7180,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the Protection Value by another +1 (maximum 6)",
-            "2": "Increase the fear factor to 1d10 (1d10 max)",
-            "3": "Increase Body Points by an additional +10",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente la valeur de protection de : +1",
+            "3": "Fait passer le facteur de peur à 1d10",
+            "4": "Increase Body Points by an additional +10"
           }
         },
         "holy-haminges-power-of-men:sight-of-the-dwarves:0": {
@@ -7216,8 +7197,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the power duration de : 1 minute(s)",
-            "1": "Increase the power duration de : 1 day",
-            "2": "Increase the bonus à la VC de : +1"
+            "1": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-haminges-power-of-men:accomplished:1": {
@@ -7231,8 +7211,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus to the SV by +1",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 1 jour",
+            "2": "Increase the bonus to the SV by +1"
           }
         },
         "holy-haminges-power-of-men:curative-draught:2": {
@@ -7260,8 +7240,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the bonus to the SV by +1 (maximum +6)",
-            "2": "Increase the duration by 1 hour"
+            "1": "Augmente la durée du pouvoir de : 1 jour",
+            "2": "Augmente le bonus à la VC de : +1"
           }
         },
         "holy-haminges-power-of-men:remedial-potion:4": {
@@ -7316,7 +7296,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the duration by 1 hour"
+            "1": "Augmente la durée du pouvoir de : 1 jour"
           }
         },
         "holy-haminges-power-of-men:life-elixir-of-the-devouress:8": {
@@ -7359,7 +7339,7 @@
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
             "1": "Increase the range by 5 meters",
-            "2": "Increase the negative modifier by"
+            "2": "Augmente le malus à l’initiative de : -2 et le malus aux actions de combat de : -1"
           }
         },
         "holy-haminges-power-of-the-scale:terrifying-howl:2": {
@@ -7399,10 +7379,7 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the power duration de : 1 action round(s)",
-            "1": "Increase the power duration de : 1 minute(s)",
-            "2": "Increase the power range de : 5 meters",
-            "3": "Diminue the Situation Value de : -1"
+            "0": "Increase the power duration de : 1 minute(s)"
           }
         },
         "holy-haminges-power-of-the-scale:limb-of-stone:5": {
@@ -7416,9 +7393,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action",
-            "1": "",
-            "2": "",
-            "3": ""
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente la portée du pouvoir de : 5 mètres",
+            "3": "Diminue la valeur de situation de : -1"
           }
         },
         "holy-haminges-power-of-the-scale:scream-of-the-devouress:6": {
@@ -7502,7 +7479,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase bonus Body Points by +1 (maximum +10)",
+            "1": "Augmente le bonus aux points de santé de : +1",
             "2": "Increase damage bonus by +1"
           }
         },
@@ -7531,8 +7508,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase bonus Body Points by +1 (maximum +20)",
-            "2": "Increase damage bonus by +1 (maximum +6)",
+            "1": "Augmente le bonus aux points de santé de : +1",
+            "2": "Augmente le bonus aux dégâts de : +1",
             "3": "Increase bonus SV by +1"
           }
         },
@@ -7547,10 +7524,10 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Reduce opponent’s Situation value by -1",
-            "2": "Increase the range by 1 meter (maximum 3 meters)",
-            "3": "Increase the damage by +1 per action round (maximum +3)",
-            "4": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Reduce opponent’s Situation value by -1",
+            "3": "Augmente la portée du pouvoir de : 1 mètre",
+            "4": "Augmente les dégâts subis par tour de : +1"
           }
         },
         "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6": {
@@ -7564,8 +7541,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 action round",
-            "1": "Increase bonus Body Points by +1 (maximum +30)",
-            "2": "Increase damage bonus by +1 (maximum +8)",
+            "1": "Augmente le bonus aux points de santé de : +1",
+            "2": "Augmente le bonus aux dégâts de : +1",
             "3": "Increase bonus SV by +1"
           }
         },
@@ -7593,10 +7570,10 @@
           "CastingTime": "2 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Reduce opponent’s Situation value by -1",
-            "1": "Increase the range by 1 meter (maximum 3 meters)",
-            "2": "Increase the damage by +1 per action round (maximum +4)",
-            "3": "Increase the duration by 1 hour"
+            "0": "Increase the duration by 1 hour",
+            "1": "Reduce opponent’s Situation value by -1",
+            "2": "Augmente la portée du pouvoir de : 1 mètre",
+            "3": "Augmente les dégâts subis par tour de : +1"
           }
         },
         "holy-haminges-power-of-trolls:disease-carrier:0": {
@@ -7610,8 +7587,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Decrease the Situation value by -1",
-            "2": "Increase the range by 1 meter"
+            "1": "Increase the range by 1 meter",
+            "2": "Decrease the Situation value by -1"
           }
         },
         "holy-haminges-power-of-trolls:willpower:1": {
@@ -7639,8 +7616,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 5 meters"
           }
         },
         "holy-haminges-power-of-trolls:fearless:3": {
@@ -7654,8 +7631,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the effect so the spirit conjurer can reduce fear factors by two steps",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the effect so the spirit conjurer can reduce fear factors by two steps"
           }
         },
         "holy-haminges-power-of-trolls:contagious:4": {
@@ -7684,9 +7661,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters",
-            "2": "Decrease the victim’s Situation value by -1",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 5 meters",
+            "3": "Decrease the victim’s Situation value by -1"
           }
         },
         "holy-haminges-power-of-trolls:lord-of-the-flies:6": {
@@ -7729,9 +7706,9 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 minute",
-            "1": "Increase the range by 5 meters",
-            "2": "Decrease the victim’s Situation value by -1",
-            "3": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Increase the range by 5 meters",
+            "3": "Decrease the victim’s Situation value by -1"
           }
         },
         "holy-thuuldom-anvil-shock:anvil-shock:0": {
@@ -7744,11 +7721,11 @@
           "CastingTime": "",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "The victim suffers -2 on all actions for the remainder of the current action round as well as the entire next action round.",
-            "1": "The victim suffers -4 on all actions for the remainder of the current action round as well as the entire next action round.",
-            "2": "The victim suffers -6 on all actions for the remainder of the current action round as well as the entire next action round. HOLY Hammer Fists Healing Rune Heat of the Depths Labyrinth Blood Mark of Brokk Power of Repair",
-            "3": "The victim becomes incapable of acting in any way for the remainder of the current action round as well as the entire next action round.",
-            "4": "The victim becomes incapable of"
+            "0": "Augmente le malus que subit la victime pendant 2 tours de jeu de : -2",
+            "1": "Augmente le malus que subit la victime pendant 2 tours de jeu de : -4",
+            "2": "Augmente le malus que subit la victime pendant 2 tours de jeu de : -6",
+            "3": "The victim suffers -2 on all actions for the remainder of the current action round as well as the entire next action round.",
+            "4": "La victime est incapable de la moindre action pendant 3 tours de jeu."
           }
         },
         "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0": {
@@ -7761,11 +7738,11 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "2",
           "PowerLevels": {
-            "0": "+2",
-            "1": "+3",
-            "2": "+5",
-            "3": "+10",
-            "4": "+15"
+            "0": "Augmente le bonus au test de compétence de : +1",
+            "1": "Augmente le bonus au test de compétence de : +2",
+            "2": "Augmente le bonus au test de compétence de : +3",
+            "3": "Augmente le bonus au test de compétence de : +4",
+            "4": "Augmente le bonus au test de compétence de : +5"
           }
         },
         "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0": {
@@ -7816,7 +7793,7 @@
             "1": "+2 damage",
             "2": "+2 damage and the chance of an open roll is increased by 1",
             "3": "+3 damage and the chance of an open roll is increased by 1",
-            "4": "+3 damage and the chance of an"
+            "4": "Augmente les dégâts de l’arme de : +3 et augmente les probabilités d’un jet ouvert de : +2"
           }
         },
         "holy-thuuldom-gills-of-the-blackfish:gills-of-the-blackfish:0": {
@@ -7840,11 +7817,11 @@
           "CastingTime": "",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "1d6",
-            "1": "1d6 + 2",
-            "2": "1d10 + 2",
-            "3": "1d10 (OR 10) + 2",
-            "4": "1d10 (OR 9-10) + 2"
+            "0": "Remplace les dégâts de base des mains nues par : 1d6",
+            "1": "Remplace les dégâts de base des mains nues par : 1d6 + 2",
+            "2": "Remplace les dégâts de base des mains nues par : 1d10 + 2",
+            "3": "Remplace les dégâts de base des mains nues par : 1d10JO10 + 2",
+            "4": "Remplace les dégâts de base des mains nues par : 1d10JO9 + 2"
           }
         },
         "holy-thuuldom-healing-rune:healing-rune:0": {
@@ -7979,8 +7956,8 @@
             "0": "1 hour",
             "1": "3 hours",
             "2": "6 hours",
-            "3": "12 hours Stoneshape ✦ Modifier: -2 ✦ Type: Preserving ✦ Duration: 3 minutes / level ✦ Range: Personal ✦ Activation: 2 action rounds ✦ Activations per day: 1 / level The Thuul and his gear seem to melt into the mountain when the rune is activated. The Thuul gains stone-like camouflage, with the effect that others have a modifier of -3 per level of the rune on their Skill rolls for the Shadow Arts skill when trying to find him. For instance, level 2 has a modifier of -6, and level 4 has a modifier of -12. If the Thuul moves while c amouflaged, the modifier is halved for those trying to find him. If the rune is used in environments other than stone and mountains, the modifier is also halved. Well of Water ✦ Modifier: -4 ✦ Type: Lasting ✦ Duration: 3 minutes / level ✦ Activation: 3 action rounds ✦ Activations per day: 1 The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location. The water is so pure and fresh that anyone who cleans their wounds in the water heals 1 point of damage per level of the rune. Each action round, a liter of water is produced. The healing effect disappears almost immediately, so it’s essential to clean wounds quickly. It is possible to collect water for later use, but the healing effect will have disappeared by then. chapter 4. dimwalkers | 233",
-            "4": "| chapter 4. dimwalkers"
+            "3": "La transformation dure : 9 heures",
+            "4": "La transformation dure : 12 heures"
           }
         },
         "holy-thuuldom-stoneshape:stoneshape:0": {
@@ -8043,8 +8020,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 10 action rounds",
-            "1": "Increase the duration by 1 minute",
-            "2": "Increase the duration by 10"
+            "1": "Augmente la durée du pouvoir de : 30 minutes",
+            "2": "Augmente la durée du pouvoir de : 12 heures"
           }
         },
         "holy-toikalokke-animal-mind:talk-to-animals:2": {
@@ -8073,8 +8050,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 10 minutes",
-            "1": "Increase the duration by 1 hour",
-            "2": ""
+            "1": "Increase the duration by 1 hour"
           }
         },
         "holy-toikalokke-animal-mind:animal-spirit:4": {
@@ -8145,8 +8121,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 1 hour",
-            "1": "Increase the speed to match normal movement",
-            "2": "Increase the duration by 3 hours"
+            "1": "Increase the duration by 3 hours",
+            "2": "Augmente la vitesse pour atteindre le mouvement normal"
           }
         },
         "holy-toikalokke-lynx-power:hearing:2": {
@@ -8159,10 +8135,10 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the duration by 10 minutes",
-            "1": "Increase the range (for visual point) by 10 meters",
-            "2": "Increase the affected area of hearing by 10 meters",
-            "3": "Increase the range (for visual"
+            "0": "Increase the range (for visual point) by 10 meters",
+            "1": "Augmente la portée du pouvoir (point sur lequel porte le regard) de : 100 mètres",
+            "2": "Increase the duration by 10 minutes",
+            "3": "Increase the affected area of hearing by 10 meters"
           }
         },
         "holy-toikalokke-lynx-power:feline-leap:3": {
@@ -8175,8 +8151,8 @@
           "CastingTime": "",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the leap’s distance by 50 cm (maximum total 15 meters)",
-            "1": "Increase the leap’s height by 10 cm"
+            "0": "Augmente (max 15m en tout) la distance de saut de : 0.5 mètre",
+            "1": "Augmente (max 8m en tout) la hauteur de saut de : 0.1 mètre"
           }
         },
         "holy-toikalokke-lynx-power:feline-reflexes:4": {
@@ -8202,8 +8178,8 @@
           "CastingTime": "1 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase duration by 1 action round",
-            "1": "Increase the modifier by +1"
+            "0": "Augmente la durée du pouvoir de : 2 tours de jeu",
+            "1": "Augmente le modificateur de : +1"
           }
         },
         "holy-toikalokke-lynx-power:track:6": {
@@ -8217,8 +8193,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase duration by 10 minutes",
-            "1": "Increase the modifier by +1",
-            "2": "Increase the duration by 1 hour"
+            "1": "Increase the duration by 1 hour",
+            "2": "Augmente le modificateur de : +1"
           }
         },
         "holy-toikalokke-lynx-power:concealment:7": {
@@ -8232,7 +8208,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase duration by 1 hour",
-            "1": "Increase the modifier to discover"
+            "1": "Augmente le modificateur pour découvrir l’elfe de : -1"
           }
         },
         "holy-toikalokke-lynx-power:forest-path:8": {
@@ -8275,9 +8251,9 @@
           "CastingTime": "2 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the amount of earth by",
-            "1": "m3",
-            "2": "Increase the duration by 30"
+            "0": "Augmente la quantité de terre affectée de : 1m3",
+            "1": "Increase the duration by 30",
+            "2": "Augmente la durée du pouvoir de : 3 heures"
           }
         },
         "holy-toikalokke-master-of-elements:control-fire:1": {
@@ -8291,8 +8267,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 10 action",
-            "1": "",
-            "2": ""
+            "1": "Augmente la durée du pouvoir de : 10 minutes",
+            "2": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-toikalokke-master-of-elements:purify-water:2": {
@@ -8306,8 +8282,7 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Affect 1 additional liter of water",
-            "1": "Add a +1 modifier to the Situation roll 1: Gift of Water ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 1 hour ✦ Range: Personal ✦ Invocation time: 4 action rounds The Ihana feels right at home in the water, as if it were their natural e nvironment (allowing the character to swim even without the Swim specialty). Under normal conditions, the Ihana can swim in calm water for as many hours as the duration of the ability without needing to make any Situation rolls at all. If a Skill roll for the Agility skill is required, the elf receives +2 per level to the roll. The elf has no problem reaching depths equal to three times her own length in meters. For each meter beyond that, the elf suffers a negative modifier of -2 to the Skill Value (though the Ihana still accounts for the positive modifier indicated above). The consequences of an unsuccessful Skill roll are up to the game master to decide. LEVELS OF POWER: GIFT OF WATER Cost Extra Levels of Power",
-            "2": "Increase the duration by 1 hour"
+            "1": "Applique un modificateur de : +1 au jet de situation"
           }
         },
         "holy-toikalokke-master-of-elements:gift-of-water:3": {
@@ -8320,8 +8295,7 @@
           "CastingTime": "5 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Affect 1 litre d’eau supplémentaire",
-            "1": "Applique un modificateur de : +1 au jet de situation"
+            "0": "Augmente la durée du pouvoir de : 1 heure"
           }
         },
         "holy-toikalokke-master-of-elements:fire-tamer:4": {
@@ -8335,8 +8309,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the duration by 3 action rounds",
-            "1": "Increase the affected surface by 1 m3",
-            "2": "Increase the duration by 10 action rounds",
+            "1": "Increase the duration by 10 action rounds",
+            "2": "Augmente le volume affecté de : 1m3",
             "3": "Increase the range by 10 meters"
           }
         },
@@ -8350,7 +8324,7 @@
           "CastingTime": "5 minute(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the amount of affected earth by 1 m3",
+            "0": "Augmente la quantité de terre affectée de : 1m3",
             "1": "Increase the duration by 1 hour",
             "2": "Increase the duration by 5 hours"
           }
@@ -8367,7 +8341,7 @@
           "PowerLevels": {
             "0": "Fire one extra arrow (maximum 5 total arrows)",
             "1": "Increase the range by 5 meters (affects additional arrows as well)",
-            "2": "Increase the chance of an open roll"
+            "2": "Augmente les dégâts d’un degré : 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO7 > 1d10JO7 + 1"
           }
         },
         "holy-toikalokke-master-of-elements:earthquake:7": {
@@ -8383,7 +8357,7 @@
             "0": "Increase the range by 5 meters",
             "1": "Increase the diameter of the affected area by 2 meters",
             "2": "Increase the duration in which all vulnerable creatures must make another Skill roll by 1 round",
-            "3": "Increase the effect of the earthquake"
+            "3": "Augmente l’effet du tremblement de terre selon la table ci-contre"
           }
         },
         "holy-toikalokke-master-of-elements:spring-of-water:8": {
@@ -8396,7 +8370,7 @@
           "CastingTime": "2 action round(s)",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the flow by another 1 m3 per 10 minutes",
+            "0": "Augmente le débit de : 1m3 par 10 minutes",
             "1": "Increase the duration by 1 hour",
             "2": "Increase the duration by 4 hours"
           }
@@ -8427,10 +8401,10 @@
           "CastingTime": "",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase/decrease temperature by another 3 degrees (maximum ±50 degrees)",
+            "0": "Augmente ou diminue la température (minimum -50°C, maximum 50°C) de : 3°C",
             "1": "Increase the duration by 1 hour",
-            "2": "Increase the affected area by 1 m3",
-            "3": "Increase the duration by 3 hours"
+            "2": "Increase the duration by 3 hours",
+            "3": "Augmente le rayon de la zone affectée de : 1 m3"
           }
         },
         "holy-toikalokke-master-of-elements:fire-resistant:11": {
