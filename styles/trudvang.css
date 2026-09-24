@@ -108,16 +108,14 @@
 .trudvang-sheet .tab.combat > .combat-reserves-panel { position: sticky; top: 0; z-index: 2; flex: 0 0 auto; background: var(--trudvang-paper-light); box-shadow: 0 3px 8px color-mix(in srgb, var(--trudvang-ink) 24%, transparent); }
 .trudvang-sheet .combat-pool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 28px; gap: 5px 8px; }
 .trudvang-sheet .combat-pool-progress { position: relative; display: flex; min-width: 0; align-items: center; justify-content: space-between; overflow: hidden; padding: 0 8px; border: 1px solid color-mix(in srgb, var(--trudvang-gold) 55%, transparent); border-radius: 3px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); font-size: .72rem; }
-.trudvang-sheet .combat-pool-progress.depleted, .trudvang-sheet .combat-pool-hand.depleted { background: color-mix(in srgb, var(--trudvang-negative) 72%, var(--trudvang-header-alt)); }
+.trudvang-sheet .combat-pool-progress.depleted { background: color-mix(in srgb, var(--trudvang-negative) 72%, var(--trudvang-header-alt)); }
 .trudvang-sheet .combat-pool-fill { position: absolute; inset: 0 auto 0 0; width: var(--pool-level); background: color-mix(in srgb, var(--trudvang-positive) var(--pool-level), var(--trudvang-negative)); }
 .trudvang-sheet .combat-pool-name, .trudvang-sheet .combat-pool-maximum { position: relative; z-index: 1; color: var(--trudvang-on-header); text-shadow: 0 1px 2px var(--trudvang-header); }
 .trudvang-sheet .combat-pool-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .trudvang-sheet .combat-pool-name strong { margin-left: 3px; }
 .trudvang-sheet .combat-pool-maximum { flex: 0 0 auto; margin-left: 8px; }
-.trudvang-sheet .combat-pool-free { grid-row: span 2; display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); padding: 0 33px 0 0; }
-.trudvang-sheet .combat-pool-hand { position: relative; display: flex; min-width: 0; align-items: center; overflow: hidden; padding: 0 8px; }
-.trudvang-sheet .combat-pool-hand + .combat-pool-hand { border-top: 1px solid color-mix(in srgb, var(--trudvang-on-header) 48%, transparent); }
-.trudvang-sheet .combat-pool-free .combat-pool-maximum { position: absolute; top: 50%; right: 8px; transform: translateY(-50%); margin: 0; }
+.trudvang-sheet .combat-pool-free { grid-row: span 2; display: grid; min-width: 0; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 5px; border-radius: 3px; background: color-mix(in srgb, var(--trudvang-gold) 65%, var(--trudvang-paper-light)); }
+.trudvang-sheet .combat-pool-hand { box-sizing: border-box; width: 100%; }
 .trudvang-sheet .tab.combat { display: flex; flex-direction: column; gap: 10px; }
 .trudvang.roll-dialog.combat-pool-dialog { min-width: min(520px, calc(100vw - 90px)); }
 .trudvang.roll-dialog .combat-pool-allocation { display: grid; grid-template-columns: minmax(0, 2fr) minmax(64px, 1fr) minmax(64px, 1fr); gap: 8px; align-items: center; }
