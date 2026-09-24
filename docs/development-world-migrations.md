@@ -29,6 +29,7 @@ Toute nouvelle migration de monde doit :
 | `starterWeaponPools` | Complète `combatSpecialty` sur les trois armes de départ à distance d'anciens acteurs. | Aucun acteur créé avant les pools de PC liés ne subsiste. |
 | `CONTENT_VERSION = 18` et `upsertJournals()` | Ajoutent les Journaux Équipement, Races et Archétypes aux mondes déjà créés. | Tous les mondes antérieurs ont reçu les Journaux, ou ont été supprimés. |
 | `CONTENT_VERSION = 21` et `throwingWeaponChanges()` | Convertissent les anciennes armes de lancer, autrefois enregistrées avec `combatSpecialty: throwingWeapons`, en armes de mêlée marquées `isThrowingWeapon`. | Aucun monde ne contient plus d'arme créée avant la séparation entre profil de mêlée et mode de lancer. |
+| `CONTENT_VERSION = 29` et `rebuildTables()` | Réinstallent dans les mondes existants les deux tables d'effets funestes avec une borne basse de 1, pour contourner le rejet des plages commençant à 0 par Foundry V14. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 
 ## `modules/rules/combat-pool-resolver.mjs`
 

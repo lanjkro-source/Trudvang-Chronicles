@@ -4,7 +4,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-const CONTENT_VERSION = 28;
+// TEMPORARY WORLD MIGRATION — version 29 reinstalls the two starter tables
+// with a minimum result of 1, repairing Foundry V14's rejection of 0-based ranges.
+const CONTENT_VERSION = 29;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

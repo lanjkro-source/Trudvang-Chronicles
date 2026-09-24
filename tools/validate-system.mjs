@@ -132,12 +132,13 @@ for (const table of content.tables || []) {
   if (!expectedResults) failures.push(`Unexpected starter Roll Table: ${id || table.nameKey || "unknown"}`);
   else if (table.results?.length !== expectedResults) failures.push(`${id} must contain ${expectedResults} results.`);
   const sorted = [...(table.results || [])].sort((a, b) => a.range[0] - b.range[0]);
-  let next = 0;
+  // Foundry V14's table preflight treats a zero lower bound as unset.
+  let next = 1;
   for (const result of sorted) {
     if (result.range?.[0] !== next) failures.push(`${id} has a gap or overlap before ${result.range?.[0]}.`);
     next = Number(result.range?.[1]) + 1;
   }
-  if (next !== 1000) failures.push(`${id} must cover every total from 0 through 999.`);
+  if (next !== 1000) failures.push(`${id} must cover every total from 1 through 999.`);
 }
 
 const glossary = readFileSync(join(root, "lang/GLOSSARY.md"), "utf8");

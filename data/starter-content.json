@@ -1969,7 +1969,7 @@
         {
           "type": "text",
           "range": [
-            0,
+            1,
             20
           ],
           "textKey": "TRUDVANG.Content.Table.FatalMagic.E0"
@@ -2215,7 +2215,7 @@
         {
           "type": "text",
           "range": [
-            0,
+            1,
             20
           ],
           "textKey": "TRUDVANG.Content.Table.FatalFailure.E0"

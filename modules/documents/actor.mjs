@@ -922,7 +922,9 @@ export class TrudvangActor extends BaseActor {
     const tableId = isDivine ? "fatal-failure-effects" : "fatal-magic-effects";
     const table = game.tables.find(candidate => candidate.getFlag("trudvang-chronicles", "starterId") === tableId);
     if (!table) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.FatalTableMissing"));
-    const roll = new Roll(String(Math.max(0, result.total)));
+    // A mitigated total of zero has the same harmless effect as 1; Foundry's
+    // RollTable range check cannot use a result whose lower bound is zero.
+    const roll = new Roll(String(Math.max(1, result.total)));
     await roll.evaluate();
     return table.draw({roll, displayChat: true});
   }
