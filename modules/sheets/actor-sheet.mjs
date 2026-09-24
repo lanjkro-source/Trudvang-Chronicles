@@ -169,7 +169,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         });
       const hint = pool.hintKey ? game.i18n.localize(pool.hintKey) : "";
       const isFree = pool.id === "free";
-      return {...pool, label: game.i18n.localize(pool.labelKey), displayCurrent: isFree ? `${weaponFree.current}|${offHandFree.current}` : pool.current, depleted: isFree ? !weaponFree.current && !offHandFree.current : !pool.current, sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")};
+      const percent = current => pool.max > 0 ? `${Math.max(0, Math.min(100, (Number(current) / pool.max) * 100))}%` : "0%";
+      return {
+        ...pool,
+        label: game.i18n.localize(pool.labelKey),
+        weaponCurrent: isFree ? weaponFree.current : null,
+        offHandCurrent: isFree ? offHandFree.current : null,
+        weaponPercent: isFree ? percent(weaponFree.current) : null,
+        offHandPercent: isFree ? percent(offHandFree.current) : null,
+        percent: percent(pool.current),
+        sourceTitle: [sourceTitle, hint].filter(Boolean).join("\n")
+      };
     });
     context.freeCombatPool = context.combatPools.find(pool => pool.id === "free");
     context.combatMovementHint = game.i18n.format("TRUDVANG.Combat.MovementHint", {

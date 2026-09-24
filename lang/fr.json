@@ -296,6 +296,8 @@
     },
     "CombatPool": {
       "Free": "Libres",
+      "FreeWeapon": "Libre (arme)",
+      "FreeShield": "Libre (bouclier)",
       "BattleExperience": "Expérience du combat",
       "ArmedFighting": "Combat armé",
       "UnarmedFighting": "Combat à mains nues",

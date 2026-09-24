@@ -350,6 +350,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.CombatPool.Free` | Free | Libres |
+| `TRUDVANG.CombatPool.FreeWeapon` | Free (weapon) | Libre (arme) |
+| `TRUDVANG.CombatPool.FreeShield` | Free (shield) | Libre (bouclier) |
 | `TRUDVANG.CombatPool.BattleExperience` | Battle Experience | Expérience du combat |
 | `TRUDVANG.CombatPool.ArmedFighting` | Armed Fighting | Combat armé |
 | `TRUDVANG.CombatPool.UnarmedFighting` | Unarmed Fighting | Combat à mains nues |
