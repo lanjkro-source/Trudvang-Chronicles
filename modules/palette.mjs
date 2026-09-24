@@ -130,6 +130,7 @@ export function applyPalette(paletteId) {
   const palette = PALETTES[paletteId] || PALETTES.default;
   const root = document.documentElement;
   for (const [key, value] of Object.entries(palette)) {
-    root.style.setProperty(`--trudvang-${key}`, value);
+    const cssName = key.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
+    root.style.setProperty(`--trudvang-${cssName}`, value);
   }
 }
