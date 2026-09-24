@@ -12,8 +12,48 @@
     "catalogId": "vitner-water-craft:breathe:2",
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
-    "description": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui per mettent de respirer sous l’eau aussi facilement que s’il était à l’air libre.",
-    "source": "Livre des règles, p. 163",
+    "description": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui permettent de respirer sous l’eau aussi facilement que s’il était à l’air libre.",
+    "summary": "Ce sort dote l’enchanteur de branchies qui apparaissent sur son cou et lui per mettent de respirer sous l’eau aussi facilement que s’il était à l’air libre.",
+    "swedishName": "Andir",
+    "duration": "3 minutes",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:breathe:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte une autre entité (qui bénéficie de la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 164",
     "level": 2,
     "cost": 4,
     "modifier": -4

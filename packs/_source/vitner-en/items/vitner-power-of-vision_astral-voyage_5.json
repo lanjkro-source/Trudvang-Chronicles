@@ -12,7 +12,41 @@
     "catalogId": "vitner-power-of-vision:astral-voyage:5",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
-    "description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute.",
+    "description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The enchanter’s spirit travels on the border between Trudvang and Dimhall where they can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the enchanter’s spirit has left their physical body, the body goes into hibernation. The enchanter can see and hear as normal while in spirit form. However, they are unable to interfere or communicate with their environment. The astral body is completely transparent, as it is purely composed of the enchanter’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The enchanter must be careful to return to their body before the spell runs out. If the enchanter fails to do so, their consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the enchanter undergoes extreme shock, permanently loses 1d6 in vitner capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the spell True Sight. Another enchanter who discovers the astral body can banish it back to its physical body using the spell Dispel Vitner. The banished one then experiences the same effects as if the duration of the spell ended.",
+    "summary": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute.",
+    "swedishName": "Dimvandr",
+    "duration": "5 minute(s)",
+    "range": "personalle",
+    "weavingTime": "10 minute(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the movement speed by +1 kilometer per minute"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:3",
+        "cost": 18,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 120",
     "level": 4,
     "cost": 8,

@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-trolls:lord-of-the-flies:6",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "une valeur de situation de 4 (le modificateur de Constitution s’applique).",
-    "source": "Livre des règles, p. 274",
+    "description": "Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 4 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) et développent 2d10 + 2 gros bubons. Chaque jour, 1d6 de ces bubons éclatent et infligent 2 points de dégâts chacun. Un test de situation réussi signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière. Que la victime ait réussi son test de situation ou pas, elle subit un malus de -3 à toutes ses actions de combat tant qu’elle se trouve à portée du conjurateur, à cause de l’odeur et du bourdonnement des mouches.",
+    "summary": "une valeur de situation de 4 (le modificateur de Constitution s’applique).",
+    "swedishName": "",
+    "duration": "3 heures",
+    "range": "1 mètre",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de : -1"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      }
+    ],
+    "source": "Livre des règles, p. 275",
     "level": 4,
     "cost": 8,
     "modifier": -8

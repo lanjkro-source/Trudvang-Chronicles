@@ -12,8 +12,42 @@
     "catalogId": "vitner-body-vitner:leather-skin:5",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir.",
-    "source": "Livre des règles, p. 192",
+    "description": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir. De plus, la peau revêt une couleur brunâtre qu’on pourrait aisément confondre avec du vrai cuir. Peau de cuir confère au bénéficiaire une valeur de protection naturelle de 1, qui vient s’ajouter à toute autre protection existante. Malgré l’épaisseur de sa peau, la créature enchantée peut se déplacer normalement et ne pèse pas plus lourd qu’avant le sort. Si la créature enchantée reçoit suffisamment de niveaux de puissance supplémentaires pour voir la valeur de protection dépasser 4, la peau de cuir prend un aspect plus métallique.",
+    "summary": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir.",
+    "swedishName": "Leiderhyda",
+    "duration": "6 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:leather-skin:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 194",
     "level": 3,
     "cost": 6,
     "modifier": -6

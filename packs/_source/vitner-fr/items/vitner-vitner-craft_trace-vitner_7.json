@@ -12,8 +12,54 @@
     "catalogId": "vitner-vitner-craft:trace-vitner:7",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "L’enchanteur tisse le vitner de façon à révéler l’origine d’un sort ou d’une négation.",
-    "source": "Livre des règles, p. 152",
+    "description": "L’enchanteur tisse le vitner de façon à révéler l’origine d’un sort ou d’une négation. L’effet du sort ou de la négation doit s’être manifesté à portée du sort Piste du vitner, et on ne peut remonter la piste que si l’effet est encore actif ou a été désactivé moins d’une heure auparavant. En cas de réussite, l’enchanteur découvre l’origine du sort, l’identité de celui qui l’a tissé, ainsi que l’endroit où il a été tissé. Si l’enchanteur remonte la piste d’une négation, il apprend quel sort en est à l’origine et où ce sort a pris effet. Pour remonter la piste d’un sort ou d’une négation, l’enchanteur doit réussir un test de situation, dont la valeur de situation dépend de la force du sort à pister, comme indiqué dans la table ci-dessous. VALEUR DE SITUATION:\n|Niveau du sort|Valeur de situation|\n|---|---|\n|1|12|\n|2|10|\n|3|8|\n|4|6|\n|5|4|\n",
+    "summary": "L’enchanteur tisse le vitner de façon à révéler l’origine d’un sort ou d’une négation.",
+    "swedishName": "Vitnaspor",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 semaine"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 20 mètres"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussir le test de situation de 1"
+      }
+    ],
+    "source": "Livre des règles, p. 154",
     "level": 5,
     "cost": 10,
     "modifier": -10

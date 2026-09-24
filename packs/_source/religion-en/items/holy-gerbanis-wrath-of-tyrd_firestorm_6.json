@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
-    "description": "Unleashes a violent storm of divine fire across the chosen area.",
+    "description": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward all enemies within range. The targets immediately receive two severe burns on their bodies. Every burn causes the victims 1d3+1 points of damage. The victims also receive SV -2 on all combat actions during the current action round as well as the following round because of the burns. Armor has no effect against this ability.",
+    "summary": "Unleashes a violent storm of divine fire across the chosen area.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:firestorm:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the number of burns by +1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:firestorm:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 171",
     "level": 4,
     "cost": 8,

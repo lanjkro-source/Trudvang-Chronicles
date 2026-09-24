@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "Armure de la tempête est un pouvoir de Pouvoir d'Enken ; sa description de règles complète sera ajoutée ultérieurement.",
+    "description": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance.",
+    "summary": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix.",
+    "swedishName": "",
+    "duration": "2 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Fait passer la portée à 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "cost": 3,
+        "maxCount": 8,
+        "effect": "Augmente la valeur de protection de : 1"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une personne supplémentaire (qui bénéficie de la version de base du pouvoir)"
+      }
+    ],
     "source": "Livre des règles, p. 224",
     "level": 3,
     "cost": 6,

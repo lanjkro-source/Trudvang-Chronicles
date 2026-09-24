@@ -12,8 +12,48 @@
     "catalogId": "vitner-body-vitner:imprison:10",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "Ce sort est une extension du sort Immobilisation, ce qui signifie que l’en chanteur doit d’abord réussir à immobili ser la victime par le biais de ce sort avant de pouvoir tisser Emprisonnement.",
-    "source": "Livre des règles, p. 192",
+    "description": "Ce sort est une extension du sort Immobilisation, ce qui signifie que l’enchanteur doit d’abord réussir à immobiliser la victime par le biais de ce sort avant de pouvoir tisser Emprisonnement. Une fois qu’il est parvenu à lancer le premier sort, il peut emprisonner la victime par simple contact. L’enchanteur peut modifier à volonté la taille de la prison, sa hauteur et son rayon devant être compris entre 2 et 5 mètres. Les murs et le plafond de la prison sont invisibles, mais le prisonnier les perçoit comme légèrement translucides. En réalité, cette prison n’existe que dans le corps et l’esprit du prisonnier. Chaque fois que la victime de ce sort pense toucher les parois de la prison, une décharge électrique se répand dans son système nerveux et lui inflige 1d5 points de dégâts. Ceux qui ne sont pas sous le coup du sort peuvent traverser la barrière d’énergie sans subir le moindre dégât. Une personne sous le coup de ce sort dispose de quatre moyens différents pour se libérer. La première façon est la moins violente. Elle consiste à convaincre l’enchanteur de libérer le prisonnier, ou d’attendre que le sort arrive à expiration. La deuxième façon nécessite qu’un autre enchanteur annule l’effet magique par le biais du sort Dissipation du vitner. La troisième façon consiste à forcer le passage à travers la barrière d’énergie en chargeant. Pour ce faire, la victime doit réussir un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Pyschisme). En cas d’échec, le prisonnier subit 1d10 points de dégâts et ne parvient pas à franchir la barrière. Dans le cas contraire, il ne subit que les dégâts provoqués par la décharge électrique. C’est une manœuvre particulièrement éprouvante que le prisonnier ne peut tenter que deux fois par jour. La quatrième façon de se libérer est aussi la plus violente : elle demande à ce que d’autres personnes non affectées par le sort tirent la victime à travers les murs de sa prison mentale. Il faut quatre adultes de force normale pour tirer la victime de ce sort à travers le mur de vitner, et elle subit 1d10 points de dégâts pendant la manœuvre.",
+    "summary": "Ce sort est une extension du sort Immobilisation, ce qui signifie que l’en chanteur doit d’abord réussir à immobili ser la victime par le biais de ce sort avant de pouvoir tisser Emprisonnement.",
+    "swedishName": "Fjettring",
+    "duration": "2 jours",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:imprison:10:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la force du mur de vitner, ce qui diminue les chances de la victime de réussir son test de situation de : +1"
+      },
+      {
+        "id": "vitner-body-vitner:imprison:10:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon de : 1 mètre"
+      },
+      {
+        "id": "vitner-body-vitner:imprison:10:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:imprison:10:3",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-body-vitner:imprison:10:4",
+        "cost": 5,
+        "maxCount": 5,
+        "effect": "Augmente les dégâts infligés par le mur de vitner d’un degré : 1d5 > 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO7"
+      }
+    ],
+    "source": "Livre des règles, p. 196",
     "level": 5,
     "cost": 10,
     "modifier": -10

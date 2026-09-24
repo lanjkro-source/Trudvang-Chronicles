@@ -12,7 +12,35 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
-    "description": "The Bruid hears all noises and conversations within range.",
+    "description": "The Bruid hears all noises and conversations within range. A pair of owl-like ear tufts emerges from the Bruid’s head for the duration of the ability. To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 12. It is up to the game master to increase or decrease this Situation value depending on how busy the environment surrounding the dimwalker is, such as: nature +5, settlement ±0, busy town +5, and so on.",
+    "summary": "The Bruid hears all noises and conversations within range.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "50 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 20 meters"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the Situation value by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 185",
     "level": 2,
     "cost": 4,

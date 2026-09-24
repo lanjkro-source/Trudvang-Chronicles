@@ -12,7 +12,23 @@
     "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
-    "description": "The Ihana evades an incoming ranged attack.",
+    "description": "The Ihana evades an incoming ranged attack. The ability requires that the chosen one is able to see the projectile coming and has not yet taken other actions in the current action round.",
+    "summary": "The Ihana evades an incoming ranged attack.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personalle",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:feline-reflexes:4:0",
+        "cost": 2,
+        "maxCount": 5,
+        "effect": "Avoid another ranged attack (max-"
+      }
+    ],
     "source": "Player's Handbook, p. 239",
     "level": 3,
     "cost": 6,

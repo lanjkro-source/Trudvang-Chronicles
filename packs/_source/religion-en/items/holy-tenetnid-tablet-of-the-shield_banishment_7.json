@@ -12,7 +12,29 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:banishment:7",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "The priest prays to Gave, and as a result a radiant beam of divine light pierces the sky (or the ceiling, if indoors) and engulfs all demons within range.",
+    "description": "The priest prays to Gave, and as a result a radiant beam of divine light pierces the sky (or the ceiling, if indoors) and engulfs all demons within range. The light deals 1d10 (OR 8-10) +5 points of damage to every demon caught within it. Armor and natural protection do nothing to protect against it because the injury is not physical, but divine.",
+    "summary": "The priest prays to Gave, and as a result a radiant beam of divine light pierces the sky (or the ceiling, if indoors) and engulfs all demons within range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:banishment:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:banishment:7:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase damage by an additional +5"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 5,
     "cost": 10,

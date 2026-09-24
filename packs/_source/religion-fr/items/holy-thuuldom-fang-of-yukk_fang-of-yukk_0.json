@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
     "tabletId": "holy-thuuldom-fang-of-yukk",
     "tablet": "Croc de Yukk",
-    "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
+    "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir. La table ci-après indique l’effet de la rune selon son niveau. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. NIVEAUX DE PUISSANCE:\n|Niveau|Effet|\n|---|---|\n|1|+1 point de dégâts|\n|2|+2 points de dégâts|\n|3|+2 points de dégâts et les probabilités d’un jet ouvert augmentent de 1|\n|4|+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 1|\n|5|+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 2|\n",
+    "summary": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
+    "swedishName": "",
+    "duration": "",
+    "range": "",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +1"
+      },
+      {
+        "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +2"
+      },
+      {
+        "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +2 et augmente les probabilités d’un jet ouvert de : +1"
+      },
+      {
+        "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +3 et augmente les probabilités d’un jet ouvert de : +1"
+      },
+      {
+        "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +3 et augmente les probabilités d’un jet ouvert de : +2"
+      }
+    ],
     "source": "Livre des règles, p. 286",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!YBdqtLgMhNiOjPkQ",

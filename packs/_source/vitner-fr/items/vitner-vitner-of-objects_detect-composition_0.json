@@ -12,8 +12,42 @@
     "catalogId": "vitner-vitner-of-objects:detect-composition:0",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes.",
-    "source": "Livre des règles, p. 200",
+    "description": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes. Un enchanteur qui trouve un objet, tisse ce sort et touche l’objet saura immédiatement de quelles substances il se compose et en quelles proportions. Il pourrait même deviner comment un objet est construit. Si l’enchanteur ne peut pas véritablement voir à travers l’objet, il pourrait tout de même sentir qu’il contient un autre objet en métal, ou qu’il comporte une cavité destinée à contenir autre chose, etc. L’enchanteur est incapable d’évaluer les matériaux qui composent l’objet à moins d’avoir une idée de sa valeur. Ce sort ne permet pas à l’enchanteur de percevoir les caractéristiques magiques de l’objet.",
+    "summary": "L’enchanteur peut identifier tous les matériaux non organiques, comme les métaux et les gemmes.",
+    "swedishName": "Skönja efnating",
+    "duration": "10 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:detect-composition:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-vitner-of-objects:detect-composition:0:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:detect-composition:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:detect-composition:0:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 201",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -12,7 +12,53 @@
     "catalogId": "vitner-perceiving:detect-undead:5",
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
-    "description": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range.",
+    "description": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range. To detect the undead being, a Situation roll is used with a Situation value of 10, modified according to the undead’s Body Points as shown in the table for the Detect Being/Undead Spell, below. If the enchanter is successful with the Situation roll, 1d20 is then rolled to determine how much information the enchanter receives about<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell makes it possible for the enchanter to sense the presence of an undead creature within range.</td></tr></tbody></table>the undead. The result corresponds with the table for the Detect Object spell, above. Once the enchanter has a sense of where the undead is currently located, that sense remains for the spell’s duration. Even if the undead moves, the enchanter senses it, and the direction sense is altered accordingly.",
+    "summary": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range.",
+    "swedishName": "Sálheleskonja",
+    "duration": "2 hour(s)",
+    "range": "5 kilometers",
+    "weavingTime": "5 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:detect-undead:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance that the result is more precise by deducting -1 from the roll"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 1,000 meters (1 km)"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 10 kilometers"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:5",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the range by 100"
+      }
+    ],
     "source": "Player's Handbook, p. 112",
     "level": 4,
     "cost": 8,

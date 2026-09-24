@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
-    "description": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath and skin that appears to darken slightly and grow somewhat scaly.",
+    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which m anifests through burning breath and skin that appears to darken slightly and grow somewhat scaly. ✦ Flame Hardened’s<ul><li>Flame Hardened’s Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer gains a natural Protection Value of +2. ✦ The spirit conjurer deals +1 extra damage with all melee weapons and throwing weapons.</p>",
+    "summary": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath and skin that appears to darken slightly and grow somewhat scaly.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:flame-hardened:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:flame-hardened:2:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the Protection Value by"
+      }
+    ],
     "source": "Player's Handbook, p. 214",
     "level": 2,
     "cost": 4,

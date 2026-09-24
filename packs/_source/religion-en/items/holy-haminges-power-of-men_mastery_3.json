@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-men:mastery:3",
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
-    "description": "Temporarily grants exceptional mastery of a chosen mortal craft or skill.",
+    "description": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
+    "summary": "Temporarily grants exceptional mastery of a chosen mortal craft or skill.",
+    "swedishName": "",
+    "duration": "2 minute(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the bonus to the SV by +1 (maximum +6)"
+      },
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:2",
+        "cost": 6,
+        "maxCount": 3,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 216",
     "level": 2,
     "cost": 4,

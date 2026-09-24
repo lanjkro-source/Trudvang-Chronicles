@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:giantslayer:2",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
-    "description": "The Bruid will receive the divine power to harm giantfolk (giants or jotun, turses, ogres, and ice trolls) with greater potency for the duration of the ability.",
+    "description": "The Bruid will receive the divine power to harm giantfolk (giants or jotun, turses, ogres, and ice trolls) with greater potency for the duration of the ability. The d imwalker will receive +2 to the Skill Value for every attack against such a creature, and a successful attack will cause an additional +4 damage.",
+    "summary": "The Bruid will receive the divine power to harm giantfolk (giants or jotun, turses, ogres, and ice trolls) with greater potency for the duration of the ability.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:giantslayer:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round Increase the hit and damage"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:giantslayer:2:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "bonus by +1 (maximum +4/+6"
+      }
+    ],
     "source": "Player's Handbook, p. 181",
     "level": 2,
     "cost": 4,

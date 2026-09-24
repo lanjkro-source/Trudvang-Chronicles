@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Power of Thurses",
-    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "description": "The hrimthurse’s spirit bestows strength like that of a troll upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +4 for the duration of the ability.",
+    "summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:troll-strength:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:troll-strength:1:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 221",
     "level": 1,
     "cost": 2,

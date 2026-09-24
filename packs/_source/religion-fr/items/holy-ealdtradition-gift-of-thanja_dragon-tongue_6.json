@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Don de Thanja",
-    "description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins.",
-    "source": "Livre des règles, p. 234",
+    "description": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins. Cela ne signifie pas que les dragons deviendront soudainement amicaux envers l’arpenteur des brumes ou qu’ils accepteront de répondre à ses questions, mais ils seront miraculeusement capables de comprendre ses paroles. En s’entretenant avec les dragons, le bruide peut également tenter de négocier avec eux, les intimider, les tromper ou les persuader. Gardez à l’esprit que tous les dragons ont une ouïe exceptionnelle et qu’ils sont en mesure de distinguer un bruit à plusieurs kilomètres de distance.",
+    "summary": "Le bruide peut communiquer dans la langue des dragons et de leurs cousins.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "20 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 236",
     "level": 4,
     "cost": 8,
     "modifier": -8

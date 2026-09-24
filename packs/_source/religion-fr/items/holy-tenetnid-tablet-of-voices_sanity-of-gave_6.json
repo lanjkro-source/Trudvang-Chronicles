@@ -12,8 +12,36 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
-    "description": "Le prêtre et ses alliés situés à portée développent la faculté temporaire de pouvoir comprendre et parler une langue étrangère, avec un bonus de +3 à leur valeur de compétence dans la compé tence de Connaissance correspondante.",
-    "source": "Livre des règles, p. 255",
+    "description": "Le prêtre et ses alliés situés à portée développent la faculté temporaire de pouvoir comprendre et parler une langue étrangère, avec un bonus de +3 à leur valeur de compétence dans la compétence de Connaissance correspondante. Ce pouvoir ne leur permet pas de lire ou d’écrire cette langue, mais seulement de communiquer verbalement. Le prêtre doit préciser la langue qu’il désire comprendre avant de recourir à ce pouvoir.",
+    "summary": "Le prêtre et ses alliés situés à portée développent la faculté temporaire de pouvoir comprendre et parler une langue étrangère, avec un bonus de +3 à leur valeur de compétence dans la compé tence de Connaissance correspondante.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "rayon de 5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
+        "cost": 2,
+        "maxCount": 8,
+        "effect": "Augmente le bonus à la compétence de Connaissance (pour comprendre et parler une langue étrangère) de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 257",
     "level": 4,
     "cost": 8,
     "modifier": -8

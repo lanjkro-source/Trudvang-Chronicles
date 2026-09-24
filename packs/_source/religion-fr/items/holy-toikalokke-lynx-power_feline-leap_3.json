@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-lynx-power:feline-leap:3",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
-    "description": "L’ihana a la faculté de bondir avec l’incroyable agilité et la grâce d’un félin.",
+    "description": "L’ihana a la faculté de bondir avec l’incroyable agilité et la grâce d’un félin. Dans des circonstances normales, l’élu peut franchir sans difficulté jusqu’à trois fois sa propre taille en longueur et jusqu’à deux fois en hauteur. Si l’arpenteur des brumes désire sauter plus loin, il doit réussir un jet de compétence d’Agilité, modifié en fonction de la distance supplémentaire qu’il désire franchir (au maître de jeu de déterminer le modificateur exact). L’ihana ne subit aucun dégât quand il atterrit après avoir fait un bond de la distance indiquée ci-dessus, mais il ne peut entreprendre qu’un seul bond tous les 3 tours de jeu (15 secondes) car ses muscles sont à chaque fois mis à rude épreuve.",
+    "summary": "L’ihana a la faculté de bondir avec l’incroyable agilité et la grâce d’un félin.",
+    "swedishName": "",
+    "duration": "immédiate",
+    "range": "personnelle",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:feline-leap:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente (max 15m en tout) la distance de saut de : 0.5 mètre"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:feline-leap:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente (max 8m en tout) la hauteur de saut de : 0.1 mètre"
+      }
+    ],
     "source": "Livre des règles, p. 293",
     "level": 2,
     "cost": 4,

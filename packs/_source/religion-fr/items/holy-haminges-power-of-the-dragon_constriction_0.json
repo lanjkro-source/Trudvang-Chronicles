@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-dragon:constriction:0",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire.",
+    "description": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire. S’il réussit une attaque à mains nues, le conjurateur peut s’enrouler autour de son adversaire et l’immobiliser. L’adversaire subit un malus de -5 à toute tentative pour parer l’attaque de constriction (Cf. Saisie, page 318). Chaque tour durant lequel le conjurateur maintient la victime dans son emprise, il peut la frapper à mains nues ou à l’aide d’une arme légère.",
+    "summary": "Le conjurateur développe la faculté de tourner autour d’un adversaire avec une souplesse extraordinaire.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:constriction:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:constriction:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le malus que subit l’adversaire à sa tentative de parade de : +1"
+      }
+    ],
     "source": "Livre des règles, p. 277",
     "level": 1,
     "cost": 2,

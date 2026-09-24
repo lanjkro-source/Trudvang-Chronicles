@@ -12,7 +12,41 @@
     "catalogId": "vitner-body-vitner:appearance-change:7",
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
-    "description": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+    "description": "This spell’s energy creates an imbalance in the enchanted character’s body, which results in an immediate change of their physical appearance. These changes may include hair, skin and eye color, facial features, and voice. The enchanter decides what to change and what the final appearance should look like. The changes are purely cosmetic, however, and do not affect physical ability or traits beyond appearance. A target who chooses to resist the change may do so with a successful Situation roll with a Situation value of 6 (Constitution modifiers apply). However, the victim must be aware of the spell in order to resist. If the enchanter weaves the spell upon a person who is sleeping or unaware of what’s going on, the victim does not realize that a change has taken place. The enchanter can remove the appearance change at any time. Once the change is removed, it takes 5 rounds before the enchanted resumes their original appearance.",
+    "summary": "This spell’s energy creates an imbalance in the enchanted character’s body , which results in an immediate change of their physical appearance.",
+    "swedishName": "Utlytbreijta",
+    "duration": "10 minute(s)",
+    "range": "contact",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:appearance-change:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:appearance-change:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:appearance-change:7:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-body-vitner:appearance-change:7:3",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 96",
     "level": 3,
     "cost": 6,

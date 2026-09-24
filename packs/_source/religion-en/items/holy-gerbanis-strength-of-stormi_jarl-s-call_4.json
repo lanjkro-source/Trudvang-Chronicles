@@ -12,7 +12,35 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:jarl-s-call:4",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range.",
+    "description": "The Stormkelt’s voice resounds mightily, which affects one listener of the dimwalker’s choosing within range. The target must make a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the target fails the Situation roll, they instinctively obey the Stormkelt for the duration. However, the target will never do anything that causes self-harm (such as jumping off a cliff) or that demands initiative or creativity (such as formulating a plan or i mprovising).",
+    "summary": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the Situation value by -1"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jarl-s-call:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 3,
     "cost": 6,

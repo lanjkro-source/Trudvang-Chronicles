@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:blood-brothers:2",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
-    "description": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally.",
+    "description": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally. The ability is so powerful that the friendship it evokes can turn even the most enraged opponent into a close ally of the priest, someone who will gladly assist him for the duration of the ability. Animals, beasts, demons, undead, and unintelligent creatures are not affected by this ability, but most humanoid creatures are affected, even trolls. The only way to avoid the effect is through the weaving of vitner, neutralizing divine powers, or breaking the priest’s concentration. However, the target can initially resist by making a Situation roll with a Situation value of 10 (Psyche modifiers apply). On a failure, the victim will immediately befriend the priest, considering the priest’s friends as their own friends, and the priest’s enemies as their own enemies. If the priest or one of the priest’s friends attacks the target, the effect of the ability is immediately broken.",
+    "summary": "The ability stirs new feelings in the chosen target, replacing all hostile thoughts with more considerate ones of compassion and grace, such that an adversary temporarily becomes an ally.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increases the duration by 1 action round"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increases the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:blood-brothers:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Lowers Situation value to resist"
+      }
+    ],
     "source": "Player's Handbook, p. 206",
     "level": 2,
     "cost": 4,

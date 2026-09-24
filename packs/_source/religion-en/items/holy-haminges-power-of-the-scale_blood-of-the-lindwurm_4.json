@@ -13,6 +13,40 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
     "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+    "summary": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 action round(s)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 minute(s)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the power range de : 5 meters"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue the Situation Value de : -1"
+      }
+    ],
     "source": "Player's Handbook, p. 218",
     "level": 3,
     "cost": 6,

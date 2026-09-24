@@ -46,7 +46,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "effect-delete": TrudvangItemSheet.#onEffectDelete,
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
-      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen
+      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
+      "power-level-add": TrudvangItemSheet.#onPowerLevelAdd,
+      "power-level-remove": TrudvangItemSheet.#onPowerLevelRemove
     }
   };
 
@@ -79,6 +81,11 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       summary: effectChangeSummary(effect)
     })) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
+    context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
+    context.isRunePower = context.isMagicPower && Boolean(this.item.system.isRune);
+    context.powerLevelRows = context.isMagicPower ? Array.from(this.item.system.powerLevels ?? [], (entry, index) => ({
+      ...(entry.toObject?.() ?? entry), displayLevel: index + 1
+    })) : [];
     context.equipmentInspection = this.item.parent?.documentName === "Actor" ? prepareEquipmentInspection(this.item) : null;
     context.hasModifiers = Boolean(context.equipmentInspection);
     context.isEmbeddedTablet = this.item.type === "tablet" && this.item.parent?.documentName === "Actor";
@@ -177,6 +184,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   static async #onSubmit(event, form, formData) {
     const updateData = foundry.utils.expandObject(formData.object);
+    const editedLevels = updateData.system?.powerLevels;
+    if (editedLevels && !Array.isArray(editedLevels)) {
+      updateData.system.powerLevels = Array.from(this.item.system.powerLevels ?? [], (level, index) => {
+        const values = editedLevels[index] ?? {};
+        return {...(level.toObject?.() ?? level), ...values,
+          maxCount: values.maxCount === "" ? null : (values.maxCount ?? level.maxCount)};
+      });
+    }
     if (this.item.type === "weapon") {
       const type = foundry.utils.getProperty(updateData, "system.combatSpecialty")
         ?? formData.object["system.combatSpecialty"]
@@ -227,6 +242,23 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     }
     if (power) return power.sheet.render({force: true});
     return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
+  }
+
+  static async #onPowerLevelAdd(event) {
+    event.preventDefault();
+    const powerLevels = this.item.system.powerLevels.map(level => level.toObject?.() ?? {...level});
+    if (this.item.system.isRune && powerLevels.length >= 5) return;
+    powerLevels.push({id: `${this.item.id}:custom:${crypto.randomUUID()}`, cost: this.item.system.isRune ? 0 : 1, maxCount: null, effect: ""});
+    await this.item.update({"system.powerLevels": powerLevels});
+  }
+
+  static async #onPowerLevelRemove(event, target) {
+    event.preventDefault();
+    const index = Number(target.dataset.index);
+    const powerLevels = this.item.system.powerLevels.map(level => level.toObject?.() ?? {...level});
+    if (!Number.isInteger(index) || index < 0 || index >= powerLevels.length) return;
+    powerLevels.splice(index, 1);
+    await this.item.update({"system.powerLevels": powerLevels});
   }
 
   static async #onDeleteItem(event, target) {

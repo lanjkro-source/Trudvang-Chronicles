@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
-    "description": "F Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3 F Confère au porteur un bonus de +2 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as so",
+    "description": "Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains. À l’expiration du pouvoir, elle part en fumée. Le Fléau de Blotfang est la grande lance avec laquelle Jowja a tué Blotfang, le logiwurm blanc, à Blodt, où Bydland fut ensuite fondée.<p>Fléau de Blotfang :</p><ul><li>Type : arme à deux mains</li><li>Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3</li><li>Confère au porteur un bonus de +2 à sa valeur de protection</li><li>Confère au porteur un bonus de +2 à toutes ses valeurs de compétence associées à l’utilisation de cette arme (attaques, parades, etc.)</li></ul>",
+    "summary": "F Dégâts : 1d10 (JO 8-10) + 4 ; valeur de protection : 15 ; valeur d’intégrité : 150 ; MI -4 ; AA : 3 F Confère au porteur un bonus de +2 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as so",
+    "swedishName": "",
+    "duration": "10 minutes",
+    "range": "personnelle",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 239",
     "level": 2,
     "cost": 4,

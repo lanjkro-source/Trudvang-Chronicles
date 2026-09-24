@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
-    "description": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability.",
+    "description": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability. If the spirit conjurer dies while they have the lindwurm heart, they will rise again, completely healed, in 1d6 days. This ability can be used only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic.",
+    "summary": "The spirit conjurer invokes the lindwurm’s power, and the bound spirit transforms the conjurer’s heart into the heart of a lindwurm for the duration of the ability.",
+    "swedishName": "",
+    "duration": "2 jours",
+    "range": "personalle",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 week"
+      }
+    ],
     "source": "Player's Handbook, p. 218",
     "level": 5,
     "cost": 10,

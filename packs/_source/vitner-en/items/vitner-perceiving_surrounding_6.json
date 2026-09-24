@@ -12,7 +12,41 @@
     "catalogId": "vitner-perceiving:surrounding:6",
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
-    "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
+    "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters.",
+    "summary": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
+    "swedishName": "Naerskonja",
+    "duration": "3 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:surrounding:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the radius of the sensed surroundings by 10 meters"
+      },
+      {
+        "id": "vitner-perceiving:surrounding:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-perceiving:surrounding:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the radius of the sensed surroundings by 100 meters"
+      },
+      {
+        "id": "vitner-perceiving:surrounding:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 112",
     "level": 4,
     "cost": 8,

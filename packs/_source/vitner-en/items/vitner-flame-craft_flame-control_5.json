@@ -12,7 +12,53 @@
     "catalogId": "vitner-flame-craft:flame-control:5",
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
-    "description": "armed actions in the same action round in which they conjure the spell.",
+    "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+    "summary": "armed actions in the same action round in which they conjure the spell.",
+    "swedishName": "Loganrauda",
+    "duration": "5 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:flame-control:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Control an area as big as a hall"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:4",
+        "cost": 9,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:5",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Control an area as big as a large"
+      }
+    ],
     "source": "Player's Handbook, p. 109",
     "level": 4,
     "cost": 8,

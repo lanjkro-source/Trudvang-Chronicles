@@ -12,8 +12,30 @@
     "catalogId": "vitner-dimvitner:speak-to-undead:3",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre.",
-    "source": "Livre des règles, p. 155",
+    "description": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre. Cela dit, cet esprit est libre d’accepter de converser avec l’enchanteur ou non. Étant donné qu’il est extrêmement difficile de trouver l’esprit du cadavre dans le Domaine des Brumes, l’enchanteur ne peut jamais avoir la certitude que son sort a réussi, même s’il est parvenu à créer le lien. Les enchanteurs qui ont recours à ce sort doivent être conscients des risques associés à la création d’un lien funeste. La table cicontre décrit ce qui se passe quand un enchanteur tente de contacter un esprit dans le Domaine des Brumes. Le maître de jeu doit lancer 1d20 et consulter la table lui-même afin que l’enchanteur ne sache pas s’il a réussi ou non. Pour que ce sort ait les meilleures chances de succès, le cadavre utilisé doit être mort depuis moins d’une semaine. Pour chaque journée supplémentaire, l’enchanteur subit un modificateur de +1 sur la table cicontre (ce qui réduit ses chances de succès et rend la pratique plus dangereuse). RÉSULTATS:\n|1d20|Résultat|\n|---|---|\n|1–12|L’enchanteur établit le contact avec l’esprit du cadavre et peut facilement converser avec lui pendant la durée du sort. Il revient au maître de jeu de déterminer ce que l’esprit a à dire.|\n|13–14|L’enchanteur établit le contact avec un esprit qui s’excuse platement de ne pas être celui recherché. Cet esprit peut tout de même converser avec l’enchanteur pendant la durée du sort, mais il revient au maître de jeu de déterminer ce que l’esprit a à dire.|\n|15–16|L’enchanteur ne parvient pas à établir de contact avec un esprit quel qu’il soit.|\n|17–18|L’enchanteur établit le contact avec un esprit qui prétend être celui recherché. L’enchanteur peut se rendre compte de la supercherie en réussissant un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur d’Intelligence).|\n|19|L’enchanteur établit le contact avec un esprit qui prétend être celui recherché. L’enchanteur peut se rendre compte de la supercherie en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur d’Intelligence).|\n|20+|L’enchanteur établit le contact avec un esprit qui tente immédiatement de passer par le lien funeste pour s’introduire sur Trudvang. Lancez de nouveau 1d20 : sur un résultat de 1 à 5, l’esprit parvient à posséder le cadavre (un processus qui prend 1d6 tours de jeu au total). Une fois la possession complète, le cadavre devient un mort-vivant qui passe immédiatement à l’attaque. Il revient au maître de jeu de déterminer les traits de personnage dont dispose ce mort-vivant (pour quelques idées, jetez un œil au profil technique des différentes créatures mortes-vivantes dans le Bestiaire de Jorge.|",
+    "summary": "L’enchanteur crée un lien ténu entre un cadavre et Dimhall, ce qui lui permet de parler avec l’esprit du cadavre.",
+    "swedishName": "Sálhelemal",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 heure",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:speak-to-undead:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-dimvitner:speak-to-undead:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Applique un modificateur au jet sur la table de résultats de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 156",
     "level": 2,
     "cost": 4,
     "modifier": -4

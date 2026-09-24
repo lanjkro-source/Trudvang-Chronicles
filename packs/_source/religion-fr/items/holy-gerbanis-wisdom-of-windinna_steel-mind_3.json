@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
-    "description": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes",
+    "description": "Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +5 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. Le tourbillon peut aussi réparer de façon permanente un objet cassé (ce qui prend 1d10 tours de jeu).",
+    "summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "10 mètres",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte une autre personne à portée"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 226",
     "level": 2,
     "cost": 4,

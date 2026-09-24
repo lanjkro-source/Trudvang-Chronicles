@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Power of Trolls",
-    "description": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration.",
+    "description": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration. The conjurer also ignores the effects of the first and second fear levels for the duration (whether the level was reached before invoking the ability, or was reached during the duration).",
+    "summary": "The bound spirit bestows such incredible courage upon the spirit conjurer that they are immune to gaining Fear Points during the duration.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:troll-wit:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:troll-wit:7:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 223",
     "level": 4,
     "cost": 8,

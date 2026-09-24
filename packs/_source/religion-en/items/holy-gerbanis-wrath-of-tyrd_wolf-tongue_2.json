@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
-    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability. The words are contorted into a deep voice, and around the Stormkelt gathers a dark, visible aura of divine wrath. The dimwalker’s enemies within range risk becoming frightened by the visage and suffering 1d10 fear points. The ability afflicts all beings with human intelligence (humanoid beings and trollkin).",
+    "summary": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:wolf-tongue:2:1",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Increase the fear points by one"
+      }
+    ],
     "source": "Player's Handbook, p. 171",
     "level": 2,
     "cost": 4,

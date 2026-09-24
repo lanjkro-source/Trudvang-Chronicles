@@ -12,7 +12,47 @@
     "catalogId": "vitner-wind-craft:air-armor:4",
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
-    "description": "Wraps the target in protective currents of compressed air.",
+    "description": "The enchanter controls the vitner in the air surrounding the enchanted person and forms it into an armor of compressed air with a Protection Value of 1. The air armor also protects any objects worn by the person, such as a backpack or a bag, as long as these items are worn tightly. The air armor forcefully repels everything that isn’t part of the person or held close by the person. Small, loose objects that come into contact with the air armor are blown away if the person gets too close.",
+    "summary": "Wraps the target in protective currents of compressed air.",
+    "swedishName": "Loftsdrapi",
+    "duration": "5 action round(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:air-armor:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the thickness of the air armor, increasing the Protection Value by +1"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 139",
     "level": 3,
     "cost": 6,

@@ -12,7 +12,35 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
-    "description": "The Bruid summons a spirit warrior from the great King’s militia.",
+    "description": "The Bruid summons a spirit warrior from the great King’s militia. The militiamen are simple warriors in leather armor with an ordinary short sword and an ordinary small shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again, and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A Bruid can have a maximum of two active militia warriors at<hr>one time. ✦ Militia Warrior: Body Points 20, Protection Value 2, battle points 10, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+4 battle points).",
+    "summary": "The Bruid summons a spirit warrior from the great King’s militia.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Summon another spirit warrior (maximum 2)"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:2",
+        "cost": 10,
+        "maxCount": 1,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 181",
     "level": 2,
     "cost": 4,

@@ -12,8 +12,42 @@
     "catalogId": "vitner-flame-craft:flame-burst:3",
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
-    "description": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur.",
-    "source": "Livre des règles, p. 166",
+    "description": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur. Ce feu prend la forme d’un cylindre d’environ 1 mètre de diamètre. À l’intérieur de ce cylindre, ce n’est pas seulement le feu qui inflige des dégâts, mais aussi l’air chauffé à plusieurs centaines de degrés en un clin d’œil. Ensemble, le feu et l’air infligent 1d10 points de dégâts à toute personne qui se trouve dans la zone affectée. Les armures normales n’offrent aucune protection contre cette chaleur incroyablement intense, mais les armures magiques continuent de fonctionner. Les flammes disparaissent aussi vite qu’elles sont apparues si la durée du sort n’est pas prolongée par le biais de niveaux de puissance. Les objets inflammables ne risquent donc de s’embraser que pendant l’éruption initiale. Si une victime potentielle possède la spécialité Esquive, elle peut tenter de bondir hors de portée et éviter ainsi les dégâts, pour peu qu’elle n’ait pas encore agi au cours de ce tour de jeu. Cette tentative subit un malus de -1 à la valeur de compétence pour chaque point de différence entre l’initiative du personnage et le rang d’initiative actuel. En choisissant de prolonger la durée de ce sort, l’enchanteur acquiert également la possibilité de déplacer à chaque tour de jeu l’éruption de flammes vers un nouvel endroit à portée.",
+    "summary": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur.",
+    "swedishName": "Logild",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:flame-burst:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le diamètre de l’éruption de flammes de : 1 mètre"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:2",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu, de sorte que l’éruption de flammes continue de brûler au tour suivant"
+      }
+    ],
+    "source": "Livre des règles, p. 168",
     "level": 3,
     "cost": 6,
     "modifier": -6

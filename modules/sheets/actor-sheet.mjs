@@ -336,7 +336,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         refundCost: this.actor.getKnowledgeLevelCost(item, level),
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
         children: sortTabletPowers(powers.filter(power => power.system.tabletId === tabletId || normalized(power.system.tablet) === normalized(item.name)), tabletId)
-          .map(power => ({item: power, inactive: Number(power.system.level || 1) > level})),
+          .map(power => ({item: power, displayLevel: power.system.isRune ? level : Number(power.system.level || 1), inactive: Number(power.system.level || 1) > level})),
         decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: this.actor.getKnowledgeLevelCost(item, level)}),
         increaseTitle: game.i18n.format("TRUDVANG.Cost.Increase", {cost: this.actor.getKnowledgeLevelCost(item, level + 1)}),
         canDecrease: level > 1,

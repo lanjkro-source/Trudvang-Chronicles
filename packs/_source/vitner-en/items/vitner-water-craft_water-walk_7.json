@@ -12,7 +12,77 @@
     "catalogId": "vitner-water-craft:water-walk:7",
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
-    "description": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater.",
+    "description": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater. When they want to move across the surface of the water, a hard surface is created beneath their feet consisting of compressed vitner (much like with the Solid Water spell). The affected area has a diameter of 1 meter and can hold up to 100 kg (only a creature of normal size will fit). The area moves constantly so it is always located beneath the person, who can therefore decide which direction to walk at a rate of 5 meters per action round. If the enchanted person wants to head down beneath the surface of the water, a sphere of vitner is created around them that makes it possible for them to breathe. They move in this way by floating through the water. If they want to sink to the bottom or rise to the surface, they need only think about it and the sphere begins to move in the desired direction.",
+    "summary": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater.",
+    "swedishName": "",
+    "duration": "2 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:water-walk:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase movement by +1 meter per action round (up to maximum normal movement)"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the surface diameter by"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "meter (makes it possible for an additional creature of normal size to stand on the surface)"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the strength of the surface so it can carry an additional 100 kg"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:6",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the surface diameter by 10 m (makes it possible for ten additional creatures of normal size, or one additional creature that weighs 10 times that of a normal-sized creature, to stand on the surface)"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:7",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the strength of the surface by an additional 200 kg"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:8",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the strength of the surface by an additional 1,000 kg"
+      },
+      {
+        "id": "vitner-water-craft:water-walk:7:9",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 135",
     "level": 4,
     "cost": 8,

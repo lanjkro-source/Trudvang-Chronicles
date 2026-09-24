@@ -125,6 +125,14 @@
 .trudvang.roll-dialog .initiative-equipment { display: grid; gap: 4px; margin: 8px 0; padding: 7px 9px; border: 1px solid var(--trudvang-gold); }
 .trudvang.roll-dialog .initiative-equipment legend { padding: 0 5px; font-weight: 700; }
 .trudvang.roll-dialog .initiative-equipment .checkbox { display: flex; gap: 6px; align-items: center; }
+.trudvang.magic-roll-dialog { min-width: min(560px, calc(100vw - 90px)); color: var(--trudvang-on-header); }
+.trudvang.magic-roll-dialog .magic-power-options { max-height: 285px; overflow-y: auto; margin: 7px 0; border: 1px solid var(--trudvang-gold); }
+.trudvang.magic-roll-dialog .magic-power-option { display: grid; grid-template-columns: minmax(0, 1fr) 66px; gap: 9px; align-items: center; padding: 7px 9px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); }
+.trudvang.magic-roll-dialog .magic-power-option + .magic-power-option { border-top: 1px solid color-mix(in srgb, var(--trudvang-gold) 42%, transparent); }
+.trudvang.magic-roll-dialog .magic-power-option label { display: grid; gap: 3px; min-width: 0; color: inherit; white-space: normal; }
+.trudvang.magic-roll-dialog .magic-power-option small { color: var(--trudvang-on-header-muted); }
+.trudvang.magic-roll-dialog .magic-power-option input { width: 100%; color: var(--trudvang-on-header); background: var(--trudvang-header); border: 1px solid var(--trudvang-gold); text-align: center; }
+.trudvang.magic-roll-dialog .magic-affinity-note { padding: 5px 8px; color: var(--trudvang-on-header-muted); background: var(--trudvang-header-alt); border-left: 2px solid var(--trudvang-warning); font-size: .8rem; }
 
 .trudvang-sheet .sheet-tabs { min-height: 38px; display: flex; justify-content: center; gap: 2px; padding: 5px 8px 0; background: color-mix(in srgb, var(--trudvang-paper) 92%, transparent); border-bottom: 1px solid var(--trudvang-line); }
 .trudvang-sheet .sheet-tabs .item { flex: 1; padding: 6px 4px; color: var(--trudvang-muted); border: 1px solid transparent; border-bottom: 0; text-align: center; font-size: .75rem; }
@@ -603,6 +611,16 @@
 .trudvang-sheet.item-sheet .tablet-negation-panel textarea { min-height: 52px; padding: 6px; color: var(--trudvang-ink); background: var(--trudvang-paper-light); border: 1px solid var(--trudvang-line); }
 .trudvang-sheet.item-sheet .tablet-negation-panel textarea { min-height: 130px; resize: vertical; }
 .trudvang-sheet.item-sheet .item-source { margin-top: 10px; border-top: 1px solid var(--trudvang-line); border-bottom: 0; }
+.trudvang-sheet.item-sheet .power-levels-panel { margin-top: 10px; }
+.trudvang-sheet.item-sheet .power-levels-panel .section-heading { margin-bottom: 6px; }
+.trudvang-sheet.item-sheet .power-level-row { padding: 7px 0; border-top: 1px dotted var(--trudvang-line); }
+.trudvang-sheet.item-sheet .power-level-controls { display: flex; align-items: end; gap: 8px; margin-bottom: 5px; }
+.trudvang-sheet.item-sheet .power-level-controls label { display: flex; flex-direction: column; gap: 2px; color: var(--trudvang-muted); font-size: .68rem; }
+.trudvang-sheet.item-sheet .power-level-controls input { width: 75px; height: 25px; color: var(--trudvang-ink); }
+.trudvang-sheet.item-sheet .power-level-controls strong { flex: 1; color: var(--trudvang-accent); }
+.trudvang-sheet.item-sheet .power-level-controls button { margin-left: auto; }
+.trudvang-sheet.item-sheet .power-level-row textarea { min-height: 44px; padding: 6px; color: var(--trudvang-ink); background: var(--trudvang-paper-light); border: 1px solid var(--trudvang-line); resize: vertical; }
+.trudvang-sheet.item-sheet .rune-preview-note { margin: 4px 0 9px; color: var(--trudvang-muted); font-size: .78rem; }
 .trudvang-sheet.item-sheet .tablet-affinity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 5px 8px; border: 1px solid currentColor; border-radius: 4px; font-size: .78rem; font-weight: 700; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip.favorable { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }

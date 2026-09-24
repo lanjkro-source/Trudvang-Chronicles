@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Warmth of Sunvei",
-    "description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them.",
+    "description": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the Stormkelt and an area surrounding them with a radius determined by their Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the Stormkelt moves away.",
+    "summary": "Sunvei sees to the dimwalker’s wish and lets the sun’s rays shine down on them.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "contact",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour 2: Healing Glow ✦ Cost/Modifier: 4/-4 ✦ Type: Instant ✦ Range: Contact ✦ Invocation time: 1 minute The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei. The dimwalker’s hands then begin to glow with a purifying fire that the Stormkelt lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 1 Body Point and stops any bleeding. LEVELS OF POWER: HEALING GLOW Cost Extra Levels of Power"
+      },
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:1",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Increases healing by +1 Body Point"
+      }
+    ],
     "source": "Player's Handbook, p. 166",
     "level": 1,
     "cost": 2,

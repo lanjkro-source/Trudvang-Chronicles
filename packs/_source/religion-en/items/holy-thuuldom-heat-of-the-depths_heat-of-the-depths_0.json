@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
     "tabletId": "holy-thuuldom-heat-of-the-depths",
     "tablet": "Heat of the Depths",
-    "description": "The Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths.",
+    "description": "✦ Modifier: -2 The Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths. This heat fills the ground and surrounding area, covering 1 m2 for each level of the rune. The rune level also determines the range of temperature that the Thuul can control, allowing him to increase or decrease it by ±10 degrees per level. The Thuul can allow the affected area to remain at any chosen temperature within that range. Labyrinth Blood The rune, which is typically worn as jewelry, allows the Thuul to recall exactly how far and in which direction he has traveled for the duration. Even if the Thuul’s eyes were covered while traveling, he has a chance of sensing the way supernaturally. A S ituation roll is made with a Situation value of 9 (+1/level of the rune) to determine the distance and directions covered. If the Thuul was moved while unconscious or in a similar condition, the rune might still direct him, but the Situation value is lowered to 4 (+1/level of the rune). If the Thuul fails the Situation roll, he will no longer remember how he has traveled. This rune is always active but must still have the requisite number of Divinity Points linked to it. Mark of Brokk The rune allows the Thuul to heal 1 extra Body Point per level of the rune after a normal night’s sleep, as long as he has the rune-inscribed object against his skin. This rune is always active but must still have the requisite number of Divinity Points linked to it. Power of Repair ✦ Modifier: -2 When the Thuul activates the rune-inscribed object, it is able to miraculously repair broken or damaged items. Such an item receives 10 Breach Value per level of the rune. Scales ✦ Modifier: -4 The power from the rune stretches like a snakeskin of metal over the Thuul’s body. In less than 1 action round, the Thuul’s whole body is covered with protective scales, which grant an additional Protection Value of +1 per rune level for the duration. The armor counts as natural protection and also protects against magical weapons and vitner. Stoneling ✦ Modifier: -4 The Thuul connects a minor mountain spirit to a single stone the size of a fist. The spirit is not particularly powerful, but it is quite affectionate. The spirit can be sent to locate things and alert the Thuul of danger. It makes a rattling rock sound when it wants to get someone’s attention. Since the spirit is rather slow of mind, the Thuul must decide what it should fetch or warn him about. For example, it can be sent to fetch a set of keys lying on a table or give warning if someone is coming down the corridor. ✦ The Stoneling spirit has the following traits ✦ See in the dark as if it were day for up to 5 meters per rune level, and as if there were a faint source of light for an additional 5 meters per rune level ✦ Carry half a kg per rune level ✦ Move at the speed of 1 meter per rune level, per action round ✦ Remain bound to the stone for 1 hour per rune level Stone to Clay ✦ Modifier: -2 By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level). The clay can be shaped like any other mud. Once the Thuul is satisfied with the clay’s new form (after at least three minutes per level of the rune), the clay becomes hard as a rock again. When this occurs, the duration begins (listed below). When the full duration ends, the stone shifts back to its original form.",
+    "summary": "The Thuul can place the rune-inscribed object on the ground and channel the heat of the mountain depths.",
+    "swedishName": "",
+    "duration": "3 hour(s)/niveau",
+    "range": "1 m²/niveau",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "2",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase l'controlled temperature range par le power de : ±10 degrees"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase l'controlled temperature range par le power de : ±20 degrees"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase l'controlled temperature range par le power de : ±30 degrees"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase l'controlled temperature range par le power de : ±40 degrees"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase l'controlled temperature range par le power de : ±50 degrees"
+      }
+    ],
     "source": "Player's Handbook, p. 231",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!iO9FJD8D9EaGbHcI",

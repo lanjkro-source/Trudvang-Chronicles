@@ -12,7 +12,59 @@
     "catalogId": "vitner-body-vitner:hearing-deafness:2",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts.",
+    "description": "Ce sort peut augmenter l’acuité auditive de la personne enchantée pour toute la durée du sort. Il peut également faire office de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts. Le bénéficiaire du sort profite d’un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’acuité auditive constitue un important facteur de réussite. Ce sort peut également évoquer un effet négatif et diminuer l’acuité auditive du sujet, qui subit alors un malus de -3 à tous ses tests de situation et de compétence reposant sur le sens de l’ouïe. Toute créature sous le coup d’un sort disposant de suffisamment de niveaux de puissance pour lui infliger un malus de -10 est considérée comme sourde et ne peut rien entendre pendant toute la durée du sort. La créature victime de cet effet négatif peut y résister en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution).",
+    "summary": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts.",
+    "swedishName": "Heirkraftla",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 journée"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:3",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le bonus/malus de ±1"
+      },
+      {
+        "id": "vitner-body-vitner:hearing-deafness:2:6",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une entité supplémentaire (avec la version de base du sort)"
+      }
+    ],
     "source": "Livre des règles, p. 192",
     "level": 2,
     "cost": 4,

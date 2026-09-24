@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
-    "description": "Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints.",
+    "description": "OF POWER ✦ Master of the Elements Earth Wall Control Fire Purify Water Gift of Water Fire Tamer Shape Earth Elemental Arrow Earthquake Spring of Water Control Wind Hot and Cold Fire Resistant Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints. The tracks are no different from normal animal prints and are permanent (meaning that this is not an illusion that fades, though the tracks can be covered or washed away). The duration of the ability determines how long the elf produces these animal tracks. It is important to remember, however, that this does not cause the elf to lose their scent.",
+    "summary": "Whenever the Ihana chooses, they can leave the tracks of an animal when treading instead of their own prints.",
+    "swedishName": "",
+    "duration": "10 action round(s)",
+    "range": "personalle",
+    "weavingTime": "4 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 action rounds"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      }
+    ],
     "source": "Player's Handbook, p. 237",
     "level": 1,
     "cost": 2,

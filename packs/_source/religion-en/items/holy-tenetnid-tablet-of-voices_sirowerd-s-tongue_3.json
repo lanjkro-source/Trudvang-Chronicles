@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
-    "description": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill.",
+    "description": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill. The ability does not allow the priest to read or write the language, but only communicate vocally. The priest must specify which language they wish to understand before the ability is p erformed.",
+    "summary": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the bonus to the Knowledge skill (when understanding/speaking the language) by +1 (maximum +5)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2",
+        "cost": 5,
+        "maxCount": 5,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 206",
     "level": 2,
     "cost": 4,

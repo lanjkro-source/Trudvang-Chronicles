@@ -12,8 +12,54 @@
     "catalogId": "vitner-delusion-vitner:landscape-illusion:8",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
-    "description": "Ce sort crée une immense sphère d’il lusion autour de l’enchanteur qui imite le paysage de son choix.",
-    "source": "Livre des règles, p. 197",
+    "description": "Ce sort crée une immense sphère d’illusion autour de l’enchanteur qui imite le paysage de son choix. Cette sphère centrée sur l’enchanteur a un rayon de 300 mètres et peut représenter un paysage comme une grande colline, une forêt, ou même une cité (l’enchanteur choisit la taille de l’illusion). L’illusion peut également ne rien représenter et servir à dissimuler le véritable paysage. L’enchanteur n’a pas la possibilité de simuler le mouvement, l’illusion doit donc représenter quelque chose de statique. Pour pouvoir se rendre compte de loin que ce paysage est une immense illusion, un observateur doit réussir un test de compétence d’Arts des ombres, en prenant en compte la distance qui le sépare de l’illusion (Cf. la table ci-contre). L’observateur a droit à un nouveau test de compétence à chaque fois qu’il se rapproche de l’illusion d’un palier sur cette table. MODIFICATEURS:\n|Distance|Modificateur|\n|---|---|\n|<50 m|L’illusion est découverte|\n|50 à 100 m|+5|\n|101 à 200 m|+2|\n|201 à 400 m|+0|\n|401 à 600 m|-2|\n|601 à 1000 m|-5|\n|> 1000 m|-10|\n L’illusion reste à l’endroit où elle a été tissée jusqu’à expiration du sort, même si l’enchanteur s’en va. Si un observateur s’aventure dans l’illusion, elle disparaît complètement de son champ de vision et il découvre le véritable paysage autour de lui, mais les autres observateurs à l’extérieur du royaume enchanté continuent d’être affectés par l’illusion.",
+    "summary": "Ce sort crée une immense sphère d’il lusion autour de l’enchanteur qui imite le paysage de son choix.",
+    "swedishName": "Augvilland",
+    "duration": "2 heures",
+    "range": "personnelle",
+    "weavingTime": "10 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée à 100 mètres (l’illusion n’est plus forcément centrée sur l’enchanteur)"
+      },
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances d’un observateur de réussir son test de compétence de : -1"
+      },
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le rayon de l’illusion de : 100 mètres"
+      },
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:4",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 journée"
+      },
+      {
+        "id": "vitner-delusion-vitner:landscape-illusion:8:5",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      }
+    ],
+    "source": "Livre des règles, p. 199",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -12,7 +12,29 @@
     "catalogId": "vitner-vitner-craft:dispel-vitner:6",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.",
+    "description": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being. However, Dispel Vitner can only neutralize magic that was woven with a limited duration, as vitner woven for a permanent effect cannot be dispelled (unless noted in the spell’s d escription). The spell to be neutralized could use white vitner, vaagrivitner, or dark vitner. If the enchanter attempting to dispel it uses the same type of vitner, they receive a positive modifier of +2 to the Situation value for the attempt. To succeed with Dispel Vitner, the enchanter must succeed on a Situation roll. The Situation value for<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.</td></tr></tbody></table>this depends on the strength of the spell to be neutralized, as shown in the table below. If the roll succeeds, the spell’s vitner is neutralized and dispersed. DISPEL VITNER’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+    "summary": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.",
+    "swedishName": "Brotja vitner",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:dispel-vitner:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-vitner-craft:dispel-vitner:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 4,
     "cost": 8,

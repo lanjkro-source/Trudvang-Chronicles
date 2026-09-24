@@ -12,8 +12,54 @@
     "catalogId": "vitner-water-craft:control-precipitation:6",
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
-    "description": "Ce sort permet de modifier l’impor tance des précipitations.",
-    "source": "Livre des règles, p. 163",
+    "description": "Ce sort permet de modifier l’importance des précipitations. La zone qui peut être affectée de la sorte est un cercle de 50 mètres de rayon autour du point où l’enchanteur a tissé le sort. Ce dernier peut augmenter ou réduire d’un degré les précipitations actuelles, comme indiqué par la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un objet statique ou un lieu, mais en ajoutant un niveau de puissance il est possible d’enchanter un objet mobile, ce qui signifie que la zone affectée peut alors être déplacée. Un enchanteur ne peut pas faire tomber la neige ou la pluie d’un ciel bleu sans nuages sans utiliser de niveaux de puissance supplémentaires. DEGRÉS DES PRÉCIPITATIONS:\n|Degré|Précipitation|\n|---|---|\n|0|Ciel bleu sans nuage.|\n|1|Nuageux. Aucune précipitation.|\n|2|Pluies éparses ou quelques flocons de neige.|\n|3|Pluie ou légère chute de neige.|\n|4|Pluie ou neige persistante.|\n|5|Pluie battante ou tempête de neige.|\n",
+    "summary": "Ce sort permet de modifier l’impor tance des précipitations.",
+    "swedishName": "Reignkraftla",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 heure",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:control-precipitation:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 5 heures"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 journée"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:3",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente ou réduit la force des précipitations d’un degré supplémentaire"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:5",
+        "cost": 3,
+        "maxCount": 1,
+        "effect": "Enchante un objet mobile, ce qui permet de déplacer la zone affectée"
+      }
+    ],
+    "source": "Livre des règles, p. 165",
     "level": 4,
     "cost": 8,
     "modifier": -8

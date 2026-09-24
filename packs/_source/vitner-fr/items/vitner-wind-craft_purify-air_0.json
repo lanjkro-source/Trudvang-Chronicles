@@ -12,8 +12,42 @@
     "catalogId": "vitner-wind-craft:purify-air:0",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’en chanteur, ce qui lui permet de respirer en toute sécurité.",
-    "source": "Livre des règles, p. 169",
+    "description": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’enchanteur, ce qui lui permet de respirer en toute sécurité. On peut également tisser ce sort sur une personne, ce qui crée un filtre autour de sa bouche et de son nez afin de purifier l’air qu’elle respire. De cette façon, elle peut respirer dans n’importe quel environnement contenant suffisamment d’air pour lui permettre de survivre, et ce, quels que soient les gaz, spores et autres particules dangereuses que l’air peut contenir.",
+    "summary": "Ce sort filtre toutes les substances dangereuses et toxiques présentes dans l’air dans un rayon de 1 mètre autour de l’en chanteur, ce qui lui permet de respirer en toute sécurité.",
+    "swedishName": "Reina loftir",
+    "duration": "3 minutes",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:purify-air:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 20 minutes"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de : 1 mètre"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 170",
     "level": 1,
     "cost": 2,
     "modifier": -2

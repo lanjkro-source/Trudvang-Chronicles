@@ -12,8 +12,42 @@
     "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
-    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
-    "source": "Livre des règles, p. 275",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.<p>Rage du destructeur confère les traits suivants :</p><ul><li>Le conjurateur reçoit un facteur de peur de 1d10 (JO 10)</li><li>+10 points de santé (les dégâts affectent ces points de santé en priorité)</li><li>+5 aux dégâts des armes de corps à corps ou de lancer</li><li>+2 à la VC de toutes les attaques</li><li>Le conjurateur ne peut ni parer, ni esquiver les attaques</li><li>Le conjurateur ignore tous les effets de la peur</li></ul>",
+    "summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "swedishName": "",
+    "duration": "7 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:1",
+        "cost": 1,
+        "maxCount": 20,
+        "effect": "Augmente le bonus aux points de santé de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:2",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Augmente le bonus aux dégâts de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6:3",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "Augmente le bonus à la VC de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 277",
     "level": 4,
     "cost": 8,
     "modifier": -8

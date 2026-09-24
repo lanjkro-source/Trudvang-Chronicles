@@ -12,8 +12,54 @@
     "catalogId": "vitner-witchcraft:fever:2",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corpo relle interne.",
-    "source": "Livre des règles, p. 184",
+    "description": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corporelle interne. La victime a l’impression que son sang se met à bouillir, ce qui lui fait perdre à la fois son énergie et sa vitalité. Cette fièvre dure une heure et s’avère incurable, et tant qu’elle dure, elle inflige à la victime un malus de -1d3 à la VC de toutes ses actions. De plus, la victime doit effectuer un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution), faute de quoi la fièvre brûlante lui inflige également 1d10 points de dégâts.",
+    "summary": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corpo relle interne.",
+    "swedishName": "Muspelblot",
+    "duration": "1 heure",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:fever:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente les effets de la fièvre de sorte que la victime subit un malus supplémentaire de : -1 à la VC (ou VS) de toutes les actions qu’elle entreprend jusqu’à expiration du sort"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:5",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 185",
     "level": 2,
     "cost": 4,
     "modifier": -4

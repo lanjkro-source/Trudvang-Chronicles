@@ -12,7 +12,59 @@
     "catalogId": "vitner-vitner-craft:enchant-object:2",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+    "description": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties. The vitner is woven together as a beneficial energy surrounding the object. The enhancing energy grants any person a positive modifier of +2 to all Skill Values and Situation values whenever the object is used. The enchantment also increases the damage of weapons by +1, the Protection Value of armor or weapons by +1, and the Breach Value by +10.",
+    "summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+    "swedishName": "Kraftlatrolja eftnating",
+    "duration": "6 action round(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increases the SV modifier by +1 when using the object"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the weapon’s damage by +1, weapon/armor’s Protection Value by +1, and Breach Value by +10"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:5",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:6",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 2,
     "cost": 4,

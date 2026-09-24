@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur est envahi par la puis sance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.",
-    "source": "Livre des règles, p. 277",
+    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.<p>La Peau du dragon confère les traits suivants :</p><ul><li>Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.</li><li>Le conjurateur n’est pas blessé par les flammes non magiques.</li><li>Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).</li><li>Le conjurateur bénéficie d’une valeur de protection naturelle de +4.</li><li>Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.</li></ul>",
+    "summary": "Le conjurateur est envahi par la puis sance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.",
+    "swedishName": "",
+    "duration": "2 minutes",
+    "range": "personnelle",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente les dégâts de toutes les armes de corps à corps et des armes de jet de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 279",
     "level": 3,
     "cost": 6,
     "modifier": -6

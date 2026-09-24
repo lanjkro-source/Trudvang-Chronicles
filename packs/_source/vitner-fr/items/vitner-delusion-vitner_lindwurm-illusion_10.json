@@ -12,8 +12,54 @@
     "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
-    "description": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête).",
-    "source": "Livre des règles, p. 197",
+    "description": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête). Tous les ennemis de l’enchanteur (au choix de ce dernier) voient un lindwurm jaillir du sol à grande vitesse et dévorer l’enchanteur. Toutes les victimes du sort doivent immédiatement réussir un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Psychisme) ou subir 1d10 (JO 9-10) points de peur. Une victime qui réussit ce test ne subit que 1d5 points de peur. Cela se produit dès le premier tour de jeu du sort. Au deuxième tour de jeu, la bête semble chercher un nouveau repas. Au troisième tour, l’enchanteur (qui se tient toujours au même endroit, dissimulé à l’intérieur du corps de la créature) peut pousser la bête à attaquer (VC 10) la victime de son choix située à portée. Si l’enchanteur réussit, la bête déchire la cible à l’aide de ses mâchoires. La victime encourt 2d10 points de dégâts tandis que l’illusion prend une forme solide pendant un instant avant de se dissiper complètement. La victime peut tenter de parer la morsure afin d’éviter ces dégâts (ou l’éviter en recourant à la spécialité Esquive). Le lindwurm peut se déplacer jusqu’à 20 mètres de l’enchanteur, mais ce dernier doit conserver en permanence la bête dans son champ de vision. L’enchanteur demeure caché même si le lindwurm s’éloigne de son point de départ. Cela dit, les autres créatures peuvent alors détecter l’enchanteur en réussissant un test de compétence d’Arts des ombres.",
+    "summary": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête).",
+    "swedishName": "Ormaskepn",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du lindwurm de : 10 mètres"
+      },
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances de l’observateur de réussir son test de compétence de : -1"
+      },
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente les chances de l’enchanteur d’échapper à la détection par la compétence Arts des ombres de : +1"
+      },
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:3",
+        "cost": 5,
+        "maxCount": 2,
+        "effect": "Augmente les points de peur infligés d’un degré : 1d10JO9 > 1d10JO8 > 1d10JO7"
+      },
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:4",
+        "cost": 5,
+        "maxCount": 3,
+        "effect": "Augmente les dégâts infligés d’un degré : 2d10 > 2d10JO10 > 2d10JO9 > 2d10JO8"
+      },
+      {
+        "id": "vitner-delusion-vitner:lindwurm-illusion:10:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu, et autorise une autre attaque (l’enchanteur peut choisir la même cible ou une autre située à portée)"
+      }
+    ],
+    "source": "Livre des règles, p. 200",
     "level": 5,
     "cost": 10,
     "modifier": -10

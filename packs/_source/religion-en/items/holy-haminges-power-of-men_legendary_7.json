@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-men:legendary:7",
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
-    "description": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
+    "description": "The spirit conjurer automatically succeeds on an optional Skill roll (an intentional attempt, not a Skill roll made in reaction or consequence) within the ability’s duration.",
+    "summary": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
+    "swedishName": "",
+    "duration": "3 minute(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:legendary:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-men:legendary:7:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 216",
     "level": 4,
     "cost": 8,

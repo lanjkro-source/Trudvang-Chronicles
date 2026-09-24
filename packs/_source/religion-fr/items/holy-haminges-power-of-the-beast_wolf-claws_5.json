@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
-    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
-    "source": "Livre des règles, p. 268",
+    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie. De puissantes griffes apparaissent au bout de ses doigts, et il peut s’en servir en combat à mains nues pour infliger 1d10 (JO 10) points de dégâts.",
+    "summary": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 269",
     "level": 3,
     "cost": 6,
     "modifier": -6

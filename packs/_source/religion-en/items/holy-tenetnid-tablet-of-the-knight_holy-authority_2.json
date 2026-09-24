@@ -12,7 +12,41 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:holy-authority:2",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
-    "description": "The prayer invokes Gave’s presence and holiness.",
+    "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. In this way the priest can quiet a crowd and receives a bonus modifier of +1 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -1 to their Situation value to do so.",
+    "summary": "The prayer invokes Gave’s presence and holiness.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:1",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Increase the bonus by an additional +1 (maximum +3)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:2",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Lower resistance rolls by an additional -1 (maximum -3)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:holy-authority:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 199",
     "level": 2,
     "cost": 4,

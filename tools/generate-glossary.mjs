@@ -12,7 +12,9 @@ function collect(object, prefix = "", output = []) {
   for (const [key, value] of Object.entries(object || {})) {
     const path = prefix ? `${prefix}.${key}` : key;
     if (value && typeof value === "object" && !Array.isArray(value)) collect(value, path, output);
-    else if (!path.startsWith("TRUDVANG.Content.") || !path.endsWith(".Summary")) output.push(path);
+    else if (!path.startsWith("TRUDVANG.Content.Power.") || path.endsWith(".Name")) {
+      if (!path.startsWith("TRUDVANG.Content.") || !path.endsWith(".Summary")) output.push(path);
+    }
   }
   return output;
 }
@@ -35,7 +37,7 @@ for (const key of keys) {
 const lines = [
   "# Glossaire bilingue anglais–français",
   "",
-  "Ce glossaire constitue la référence terminologique pour les traductions du système Trudvang. Il est régénéré à partir de `lang/en.json` et `lang/fr.json`, y compris la section `TRUDVANG.Content` (bibliothèque de démarrage et catalogue de tablettes), désormais traduite. Les résumés longs des pouvoirs (`*.Summary`) sont exclus : ce sont des citations de règles, pas des termes de vocabulaire.",
+  "Ce glossaire constitue la référence terminologique pour les traductions du système Trudvang. Il est régénéré à partir de `lang/en.json` et `lang/fr.json`, y compris la section `TRUDVANG.Content` (bibliothèque de démarrage et catalogue de tablettes). Pour les pouvoirs, seuls les noms sont inclus : descriptions, niveaux de puissance et autres textes de règles ne sont pas des termes de vocabulaire.",
   "",
   "La terminologie française s'appuie sur l'édition officielle Black Book Éditions (« Livre des règles », miroir texte dans `game doc/markdown-fr/`). Avant d'ajouter ou de modifier une entrée dans les fichiers de langue, rechercher ici les termes apparentés et conserver les choix terminologiques existants. Toute nouvelle terminologie validée doit être répercutée dans ce document.",
   ""

@@ -12,7 +12,53 @@
     "catalogId": "vitner-witchcraft:fever:2",
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
-    "description": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically.",
+    "description": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically. The victim begins to feel their blood almost boiling, which causes them to lose both power and stamina. The fever, which lasts for one hour, cannot be cured, and during this time the victim suffers -1d3 to the SV of all actions. The victim must also make a Situation roll with a Situation value of 8 (Constitution modifiers apply) to avoid taking damage from the fever as well. Failure means the victim takes 1d10 points of damage from the burning fever.",
+    "summary": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically.",
+    "swedishName": "Muspelblot",
+    "duration": "1 hour(s)",
+    "range": "10 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:fever:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the fever effects so the victim receives another -1 to the SV of actions attempted for the duration."
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the damage by one step: 1d10 g 1d10 (OR 10) g 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 8-10) + 1"
+      },
+      {
+        "id": "vitner-witchcraft:fever:2:5",
+        "cost": 8,
+        "maxCount": 4,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 143",
     "level": 2,
     "cost": 4,

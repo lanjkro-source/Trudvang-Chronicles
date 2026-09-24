@@ -12,8 +12,30 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
-    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
-    "source": "Livre des règles, p. 226",
+    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur peut alors lire les pensées du sujet tant que ce pouvoir est actif. La cible peut tenter de résister en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique).",
+    "summary": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "contact visuel",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 228",
     "level": 4,
     "cost": 8,
     "modifier": -8

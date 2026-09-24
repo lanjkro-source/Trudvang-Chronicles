@@ -12,8 +12,30 @@
     "catalogId": "holy-toikalokke-lynx-power:concealment:7",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
-    "description": "L’ihana est capable de se fondre dans le décor jusqu’à expiration de ce pouvoir.",
-    "source": "Livre des règles, p. 293",
+    "description": "L’ihana est capable de se fondre dans le décor jusqu’à expiration de ce pouvoir. Quiconque recherche l’arpenteur des brumes subit un malus de -5 à son jet de compétence dans la discipline Arts des ombres. Même si l’elfe est en mouvement, il faut réussir un jet de compétence avec un malus de -1 pour repérer l’ihana. L’ihana peut se déplacer sans que cela interrompe l’effet, mais il peut également choisir de redevenir temporairement visible puis réactiver ce pouvoir comme il le désire, tant que ce dernier n’est pas arrivé à expiration.",
+    "summary": "L’ihana est capable de se fondre dans le décor jusqu’à expiration de ce pouvoir.",
+    "swedishName": "",
+    "duration": "3 heures",
+    "range": "personnelle",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:concealment:7:0",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:concealment:7:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le modificateur pour découvrir l’elfe de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 294",
     "level": 4,
     "cost": 8,
     "modifier": -8

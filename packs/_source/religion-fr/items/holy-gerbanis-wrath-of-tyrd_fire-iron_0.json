@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:fire-iron:0",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
-    "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée.",
+    "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée. La cible subit immédiatement une blessure grave sur son corps. Chaque brûlure inflige 1 point de dégât à la victime. Les armures ne protègent pas contre ce pouvoir.",
+    "summary": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction d’un ennemi situé à portée.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:fire-iron:0:0",
+        "cost": 1,
+        "maxCount": 5,
+        "effect": "Augmente le nombre de brûlures de : 1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:fire-iron:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 220",
     "level": 1,
     "cost": 2,

@@ -12,7 +12,41 @@
     "catalogId": "vitner-flame-craft:sea-of-fire:7",
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
-    "description": "The mage points to an area within range, and it suddenly explodes in a sea of flame.",
+    "description": "The mage points to an area within range, and it suddenly explodes in a sea of flame. The fire engulfs a circular area within a radius of 2 meters from the mage’s chosen point. All who are caught in the affected area receive 1d10 points of damage. Regular armor gives no protection. Magical armor protects as usual. The sea of fire disappears as quickly as it came if the duration is not extended. Therefore, any easy-to-ignite objects within that area risk combustion only during the initial burst. Victims who are standing inside the area or at its perimeter receive damage. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. Anyone who takes actions while within the sea of fire or who tries to attack someone within that area suffers -5 to the SV since it is so hard to see in the burning inferno.",
+    "summary": "The mage points to an area within range, and it suddenly explodes in a sea of flame.",
+    "swedishName": "Muspelhaf",
+    "duration": "",
+    "range": "20 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:sea-of-fire:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-flame-craft:sea-of-fire:7:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the sea of fire’s radius by"
+      },
+      {
+        "id": "vitner-flame-craft:sea-of-fire:7:2",
+        "cost": 1,
+        "maxCount": 4,
+        "effect": "meter"
+      },
+      {
+        "id": "vitner-flame-craft:sea-of-fire:7:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the damage by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 109",
     "level": 5,
     "cost": 10,

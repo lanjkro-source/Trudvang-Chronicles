@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
-    "description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cin quantaine de centimètres surgissent de sa mâchoire.",
-    "source": "Livre des règles, p. 268",
+    "description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cinquantaine de centimètres surgissent de sa mâchoire. L’arpenteur des brumes peut utiliser ces défenses qui infligent 1d10 points de dégâts en combat à mains nues. Une attaque de défenses compte comme une attaque bonus, mais le personnage doit tout de même dépenser des points de combat comme pour une attaque standard afin de déterminer la valeur de situation (compétence Combat, discipline Combat à mains nues, spécialité Bagarre). Le conjurateur ne peut tenter qu’une seule attaque de défenses par tour de jeu.",
+    "summary": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cin quantaine de centimètres surgissent de sa mâchoire.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 269",
     "level": 2,
     "cost": 4,
     "modifier": -4

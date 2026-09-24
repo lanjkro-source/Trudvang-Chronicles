@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:sunray:1",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
-    "description": "Solvei répond au souhait de l’arpen teur des brumes et fait briller les rayons du soleil sur lui.",
+    "description": "Solvei répond au souhait de l’arpenteur des brumes et fait briller les rayons du soleil sur lui. Pendant la durée du pouvoir, le soleil brille sur le stormikjalt et dans une zone qui l’entoure dont le rayon dépend de sa valeur de compétence en Foi. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Cela dit, ce pouvoir ne fonctionne qu’à l’extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. La zone affectée est déterminée au moment où le stormikjalt active ce pouvoir, et elle ne se déplace pas si ce dernier s’éloigne.",
+    "summary": "Solvei répond au souhait de l’arpen teur des brumes et fait briller les rayons du soleil sur lui.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "rayon de VC mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:sunray:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 216",
     "level": 1,
     "cost": 2,

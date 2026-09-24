@@ -12,8 +12,54 @@
     "catalogId": "vitner-vitner-of-objects:waterproof:1",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires.",
-    "source": "Livre des règles, p. 200",
+    "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau.",
+    "summary": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires.",
+    "swedishName": "Vanngegna",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 semaine"
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la quantité de matériel affecté de l’équivalent de : une grande tente"
+      },
+      {
+        "id": "vitner-vitner-of-objects:waterproof:1:5",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la quantité de matériel affecté de l’équivalent de : une maison longue"
+      }
+    ],
+    "source": "Livre des règles, p. 201",
     "level": 1,
     "cost": 2,
     "modifier": -2

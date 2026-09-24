@@ -12,7 +12,47 @@
     "catalogId": "vitner-perceiving:find-home:0",
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
-    "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours.",
+    "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction.",
+    "summary": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours.",
+    "swedishName": "Heimfundr",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:find-home:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the number of hours the enchanted must have spent at the location by 1 hour (cannot be decreased to less than 1 hour)"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 112",
     "level": 1,
     "cost": 2,

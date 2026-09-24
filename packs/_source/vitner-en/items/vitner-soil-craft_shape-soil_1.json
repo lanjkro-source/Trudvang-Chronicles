@@ -12,7 +12,41 @@
     "catalogId": "vitner-soil-craft:shape-soil:1",
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
-    "description": "Softens and reshapes nearby earth and soil according to the mage's will.",
+    "description": "The spell transforms all forms of local ground and soil, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to its original consistency, in the new shape the enchanter has given it. If an area of land is flat and low, it can almost seem as if new soil is created out of thin air as the enchanter uses the vitner to mold upward. However, it only appears to create new land because the spell draws from such a wide area around the enchanter that the minor drop in elevation is hardly noticeable (though it is up to the game master to decide if an area has enough soil). Likewise, if the enchanter chooses to level a clay structure or giant landmark, the subtle rise in elevation would hardly be noticed as the stone and soil spreads beneath one’s feet. The duration for the spell is 5 minutes, which indicates how long the molded land is able to maintain the new shape. As soon as the spell expires, the soil immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted soil at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning mass of land; someone on a molded staircase is likely to have their legs stuck in mud and soil once it shifts back to its original form.",
+    "summary": "Softens and reshapes nearby earth and soil according to the mage's will.",
+    "swedishName": "Jördforma",
+    "duration": "5 minute(s)",
+    "range": "5 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:shape-soil:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the amount of affected soil by that of another stormhall, and increase the time to shape it by another 3 minutes"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:3",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Give the molded soil a permanent"
+      }
+    ],
     "source": "Player's Handbook, p. 123",
     "level": 1,
     "cost": 2,

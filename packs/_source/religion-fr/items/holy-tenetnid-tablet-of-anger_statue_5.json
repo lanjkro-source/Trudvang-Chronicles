@@ -12,8 +12,36 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:statue:5",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
-    "description": "Le prêtre dirige son regard puissant vers un adversaire.",
-    "source": "Livre des règles, p. 250",
+    "description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique), elle est changée en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud en activant ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
+    "summary": "Le prêtre dirige son regard puissant vers un adversaire.",
+    "swedishName": "",
+    "duration": "5 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:statue:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:statue:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:statue:5:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Réduit la valeur de situation de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 252",
     "level": 3,
     "cost": 6,
     "modifier": -6

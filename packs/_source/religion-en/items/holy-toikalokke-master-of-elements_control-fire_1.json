@@ -12,7 +12,23 @@
     "catalogId": "holy-toikalokke-master-of-elements:control-fire:1",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
-    "description": "The elf can control fire to a limited extent.",
+    "description": "The elf can control fire to a limited extent. Each action round, the Ihana can make 1 cubic meter of fire move up to 2 meters. The elf cannot directly create or extinguish fire in this way (by increasing or decreasing its size), but they can set other things ablaze as the flame passes near those items or kill the flame by moving it to a location where there is nothing to sustain it.",
+    "summary": "The elf can control fire to a limited extent.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "4 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:control-fire:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 action"
+      }
+    ],
     "source": "Player's Handbook, p. 241",
     "level": 1,
     "cost": 2,

@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-master-of-elements:purify-water:2",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
-    "description": "The spell filters water and removes all dangerous and unhealthy substances from up to 10 liters of liquid.",
+    "description": "The Ihana can purify up to 1 liter of water. To purify a drink that has been poisoned or has magical attributes, the chosen one must succeed on a Situation roll with a Situation value of 15, with a negative modifier based on the strength of the poison or spell level.",
+    "summary": "The spell filters water and removes all dangerous and unhealthy substances from up to 10 liters of liquid.",
+    "swedishName": "",
+    "duration": "30 minute(s)",
+    "range": "2 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:purify-water:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect 1 additional liter of water"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:purify-water:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Add a +1 modifier to the Situation roll 1: Gift of Water ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 1 hour ✦ Range: Personal ✦ Invocation time: 4 action rounds The Ihana feels right at home in the water, as if it were their natural e nvironment (allowing the character to swim even without the Swim specialty). Under normal conditions, the Ihana can swim in calm water for as many hours as the duration of the ability without needing to make any Situation rolls at all. If a Skill roll for the Agility skill is required, the elf receives +2 per level to the roll. The elf has no problem reaching depths equal to three times her own length in meters. For each meter beyond that, the elf suffers a negative modifier of -2 to the Skill Value (though the Ihana still accounts for the positive modifier indicated above). The consequences of an unsuccessful Skill roll are up to the game master to decide. LEVELS OF POWER: GIFT OF WATER Cost Extra Levels of Power"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:purify-water:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 241",
     "level": 1,
     "cost": 2,

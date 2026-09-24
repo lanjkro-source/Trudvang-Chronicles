@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
-    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+    "description": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi. Once the ritual is completed, a soft whirlwind appears with the dimwalker at its center. The wind has a creative effect, granting inspiration to the dimwalker or an ally within range. On the target’s next Skill roll involving the creation of objects, they receive +5 to the Skill Value, provided that the work begins within a day. The whirlwind can also permanently fix any one object that is broken (which takes 1d10 action rounds).",
+    "summary": "With grand gestures and high calls, the Stormkelt begs Windinna to come forth with her power and bless all those present who are devoted to Stormi.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "10 meters",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect a person within range"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 168",
     "level": 2,
     "cost": 4,

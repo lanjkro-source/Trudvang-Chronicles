@@ -12,8 +12,54 @@
     "catalogId": "vitner-power-of-thought:possess-creature:10",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente. Pour ce faire, la cible doit se trouver à portée du sort et dans le champ de vision de l’enchanteur. Il est impossible de posséder une créature qu’on ne peut pas voir pour quelque raison que ce soit. La victime peut tenter de résister à cette intrusion dans sa conscience par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). Si le sort réussit, la conscience de l’enchanteur est transférée dans l’enveloppe physique de la victime, qui perd le contrôle de son corps. Dès lors, l’enchanteur peut utiliser les caractéristiques de la créature comme la parole ou les aptitudes particulières sans qu’elle puisse s’y opposer. Quand l’enchanteur quitte son propre corps pour prendre contrôle de celui de la victime, il abandonne son enveloppe physique dans un profond sommeil. Une fois à l’intérieur de la victime, l’enchanteur peut s’éloigner autant qu’il le souhaite de son propre corps sans devoir rester dans la portée du sort. Cela dit, l’enchanteur doit prendre soin de revenir à portée avant l’expiration du sort. Si la victime est tuée ou si la durée du sort expire avant que l’enchanteur ne revienne à portée, la conscience de l’enchanteur est violemment extirpée du corps de la victime et renvoyée dans son propre corps. C’est une expérience si traumatisante que l’enchanteur subit une diminution permanente de sa réserve de vitner de 1d6 points et qu’il sombre dans un profond sommeil pendant 1d6 jours.",
+    "summary": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente.",
+    "swedishName": "Eiga skopjaten",
+    "duration": "10 minutes",
+    "range": "100 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:4",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 180",
     "level": 5,
     "cost": 10,
     "modifier": -10

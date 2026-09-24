@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-stoneshape:stoneshape:0",
     "tabletId": "holy-thuuldom-stoneshape",
     "tablet": "Aspect de la pierre",
-    "description": "À l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne.",
+    "description": "À l'activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne. Le thuul développe un camouflage de pierre : toute personne tentant de le localiser par un test de compétence d'Arts des Ombres subit un malus de -3 par niveau de rune. Par exemple, une rune de niveau 2 impose un malus de -6, tandis qu'une rune de niveau 4 donne un malus de -12. Si le thuul se déplace alors qu'il est camouflé, le malus est réduit de moitié. S'il utilise cette rune dans un environnement autre que la montagne et la pierre, le malus est là aussi réduit de moitié.",
+    "summary": "À l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne.",
+    "swedishName": "",
+    "duration": "3 minutes/niveau",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "1/niveau",
+    "spellType": "sustained",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le malus au test d'Arts des Ombres pour localiser le thuul de : -3"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le malus au test d'Arts des Ombres pour localiser le thuul de : -6"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le malus au test d'Arts des Ombres pour localiser le thuul de : -9"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le malus au test d'Arts des Ombres pour localiser le thuul de : -12"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le malus au test d'Arts des Ombres pour localiser le thuul de : -15"
+      }
+    ],
     "source": "Livre des règles, p. 285",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!mJxFrrSnToUpVqWr",

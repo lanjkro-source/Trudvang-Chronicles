@@ -12,8 +12,54 @@
     "catalogId": "vitner-witchcraft:bad-harvest:6",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation.",
-    "source": "Livre des règles, p. 184",
+    "description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du sort. Les plantes touchées par ce sort ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.",
+    "summary": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation.",
+    "swedishName": "Nidskord",
+    "duration": "",
+    "range": "100 mètres",
+    "weavingTime": "4 heures",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon d’action du sort de : 20 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente le rayon d’action du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:2",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente le rayon d’action du sort de : 500 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Il faut deux saisons de plus (6 mois) avant qu’on puisse planter ou semer quoi que ce soit sur le site maudit"
+      }
+    ],
+    "source": "Livre des règles, p. 187",
     "level": 4,
     "cost": 8,
     "modifier": -8

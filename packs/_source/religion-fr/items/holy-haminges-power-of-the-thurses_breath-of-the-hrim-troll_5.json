@@ -12,8 +12,48 @@
     "catalogId": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
-    "description": "test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance.",
-    "source": "Livre des règles, p. 275",
+    "description": "Le conjurateur est investi d’une partie de l’essence du troll des glaces, qui se manifeste par un corps de glace qui gèle toute personne située à portée du pouvoir. Quiconque se trouve à portée de ce pouvoir doit réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance. L’aura de givre inflige 1 point de dégâts par tour à toute personne située à portée. Des vêtements d’hiver permettent de diminuer ces dégâts de moitié (arrondir à l’entier supérieur), et des vêtements en peau de mastomant protègent complètement de ces dégâts. En revanche, les armures n’offrent aucune protection contre ce froid.",
+    "summary": "test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "1 mètre",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit la valeur de situation de : -1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:3",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5:4",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "Augmente les dégâts subis par tour de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 276",
     "level": 3,
     "cost": 6,
     "modifier": -6

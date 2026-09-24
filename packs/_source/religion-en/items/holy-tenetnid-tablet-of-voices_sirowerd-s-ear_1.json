@@ -12,7 +12,29 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
-    "description": "The priest is gifted with a temporary understanding of a foreign language when it is spoken.",
+    "description": "The priest is gifted with a temporary understanding of a foreign language when it is spoken. However, the priest is still unable to read, write, or speak the language. The priest must specify which language they wish to understand before the ability is p erformed.",
+    "summary": "The priest is gifted with a temporary understanding of a foreign language when it is spoken.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 206",
     "level": 1,
     "cost": 2,

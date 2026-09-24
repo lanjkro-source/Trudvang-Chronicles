@@ -12,7 +12,53 @@
     "catalogId": "vitner-vitner-craft:anti-magic:3",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The spell creates a film of protective vitner around the target.",
+    "description": "The spell creates a film of protective vitner around the target. This film protects the target against all forms of magic and can be woven over beings or objects. Any magic directed toward the target must penetrate the film in order to be able to affect it. To prevent a spell from penetrating the film, the initial enchanter (the one maintaining the Anti Magic spell) needs<table><thead><tr><th colspan=\"1\">ANTI MAGIC’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>to succeed on a Situation roll with a Situation value based on the attacking enchanter’s spell level, as shown in the table below. ANTI MAGIC’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 If the incoming spell has extra levels of power that lower the target’s chance to succeed on a Situation roll, the enchanter attempting to stop the spell also receives the same negative modifier. If the enchanter succeeds on the roll, the vitner is neutralized and the prevented spell has no effect.",
+    "summary": "The spell creates a film of protective vitner around the target.",
+    "swedishName": "Motravitn",
+    "duration": "2 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Change the spell type from Preserving to Lasting"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:5",
+        "cost": 10,
+        "maxCount": 1,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 3,
     "cost": 6,

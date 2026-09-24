@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
-    "source": "Livre des règles, p. 277",
+    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.<p>L’Âme du dragon confère les traits suivants :</p><ul><li>Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.</li><li>Le conjurateur n’est pas blessé par les flammes non magiques.</li><li>Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)</li><li>Le conjurateur bénéficie d’une valeur de protection naturelle de +6</li><li>Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.</li></ul>",
+    "summary": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "swedishName": "",
+    "duration": "3 minutes",
+    "range": "personnelle",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente le bonus aux dégâts de toutes les armes de corps à corps et de jet de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 279",
     "level": 5,
     "cost": 10,
     "modifier": -10

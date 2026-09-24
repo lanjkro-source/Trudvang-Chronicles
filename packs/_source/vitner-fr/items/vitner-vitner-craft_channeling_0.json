@@ -12,7 +12,53 @@
     "catalogId": "vitner-vitner-craft:channeling:0",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort.",
+    "description": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort. Le ou les assistants doivent être volontaires pour participer. S’il réussit ce sort, l’enchanteur reçoit 5 points de vitner de ses assistants. Étant donné que le vitner est la vie, chaque point de vitner ainsi absorbé inflige 1 point de dégâts à l’assistant qui l’a perdu. Si l’enchanteur s’est entouré de plusieurs assistants, le transfert de vitner et les dégâts qui s’ensuivent sont répartis équitablement. Les armures n’offrent aucune protection contre ce type de dégâts, mais les blessures guériront normalement. Un assistant ne peut pas offrir plus de points de vitner qu’il ne lui reste de points de santé. L’enchanteur peut se servir des points de vitner ainsi canalisés comme d’un bonus à usage unique à sa réserve de vitner. Si l’enchanteur n’utilise pas les points de vitner transférés avant l’expiration du sort, les points non utilisés disparaissent.",
+    "summary": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort.",
+    "swedishName": "Vitnasammel",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "15 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:channeling:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le nombre de points de vitner transférés de : 1"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le nombre de points de vitner transférés de : 10"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:5",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      }
+    ],
     "source": "Livre des règles, p. 152",
     "level": 1,
     "cost": 2,

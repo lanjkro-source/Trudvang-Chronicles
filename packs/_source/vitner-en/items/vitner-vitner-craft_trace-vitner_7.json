@@ -12,7 +12,53 @@
     "catalogId": "vitner-vitner-craft:trace-vitner:7",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation.",
+    "description": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation. The effect of the spell or negation must have taken place within Trace Vitner’s listed range, and can be traced only if the effect is still active or was deactivated less than an hour ago. If Trace Vitner is successful, the enchanter learns the origin of the spell, which enchanter wove it, and where it was woven. If it is a negation that is being traced, the enchanter learns which specific spell caused the negation and where that spell took place. To trace a spell or negation, the enchanter<table><thead><tr><th colspan=\"1\">TRACE VITNER SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>must make a successful Situation roll. The Situation value for this roll depends on the strength of the spell to be traced, as shown in the table below. TRACE VITNER SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+    "summary": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation.",
+    "swedishName": "Vitnaspor",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Extend the limit for tracing vitner that has already ended by 1 hour"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Extend the limit for tracing vitner that has already ended by 1 day"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 20 meters"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:5",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Extend the limit for tracing vitner"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 5,
     "cost": 10,

@@ -12,7 +12,35 @@
     "catalogId": "vitner-vitner-craft:seal:5",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The magic in the Seal spell binds another spell within it, which is later added to an object.",
+    "description": "The magic in the Seal spell binds another spell within it, which is later added to an object. The enchanter first needs to weave the Seal spell and then weave whichever spell they wish to bind within it. After this is successful, the enchanter connects the bound spell to an object of their choosing. That spell becomes sealed in the object and remains latent until activated. If the seal is dispelled with the Dispel Vitner spell, the bound spell is activated rather than dispelled (unless the bound spell is dispelled first, before the seal is dispelled). The magical seal is placed on the object as soon as the enchanter signs the seal’s pattern on it with their fingers and establishes the trigger that breaks the seal and unleashes the magic bound within. Examples of triggers include whenever someone touches the object, whenever the object changes possession, or whenever someone attempts to dispel the seal. It is up to the enchanter to decide the conditions, as approved by the game master. The enchanter can also add a time delay, causing the spell to be triggered after a designated amount of time instead of by a specific trigger. The amount of time cannot be longer than one year. The seal’s magic is triggered immediately once its activation requirements are fulfilled. The area that can be affected by the unleashed spell is 3 meters around the seal. If desired, the enchanter can designate a way to break the seal and harmlessly disperse the vitner within without activating the bound spell (but still losing it). For example, this could be done by pushing the center of the object with three fingers, or by whistling a specific note or sequence. It is impossible to see the seal by normal eyesight (unless the enchanter chose to make the seal visible). However, the seal can be observed with the use of spells such as True Sight or Read Vitner. Only spells of the Lasting or Instant types can be bound within the seal, and the basic version of a seal can contain only first-level spells. An enchanter can have multiple spells bound in seals at the same time. The number is equal to the enchanter’s maximum vitner capacity.",
+    "summary": "The magic in the Seal spell binds another spell within it, which is later added to an object.",
+    "swedishName": "Bindjakraftla",
+    "duration": "jusqu’à activation",
+    "range": "3 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:seal:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Add another triggering condition"
+      },
+      {
+        "id": "vitner-vitner-craft:seal:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the seal’s range by 5 meters"
+      },
+      {
+        "id": "vitner-vitner-craft:seal:5:2",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Increase the spell level that can be"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 4,
     "cost": 8,

@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-the-beast:resilience:0",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
-    "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury.",
+    "description": "HOLY Power of the Dragon 1: Constriction 1: 1: Rampage of the Huvfurwurm 1:",
+    "summary": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:resilience:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 action round(s)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:resilience:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 minute(s)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:resilience:0:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the bonus en combat de : +1"
+      }
+    ],
     "source": "Player's Handbook, p. 212",
     "level": 1,
     "cost": 2,

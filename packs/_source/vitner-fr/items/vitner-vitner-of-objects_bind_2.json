@@ -12,8 +12,48 @@
     "catalogId": "vitner-vitner-of-objects:bind:2",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante.",
-    "source": "Livre des règles, p. 200",
+    "description": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante. Les objets doivent aller bien ensemble, ne pas être en mouvement, et ne pas se composer de matière vivante. Par exemple, il est impossible de lier une embrasure de porte à une personne qui la traverse malencontreusement. Il est par contre tout à fait envisageable de lier un chambranle et une porte, un couvercle et une boîte, une épée et un fourreau, un rocher et l’entrée d’une caverne, un tiroir et une commode, ou un bouchon et une bouteille. Les deux objets n’en forment plus qu’un seul jusqu’à expiration du sort et il est impossible de les séparer par des moyens conventionnels. On peut recourir à la force contre ces objets, par exemple en défonçant une porte liée à son chambranle, mais les objets ne se sépareront pas de façon nette. En revanche, l’enchanteur peut séparer les deux objets quand bon lui semble.",
+    "summary": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante.",
+    "swedishName": "Sigla",
+    "duration": "3 minutes",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:bind:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:bind:2:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-vitner-of-objects:bind:2:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:bind:2:3",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-of-objects:bind:2:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 201",
     "level": 2,
     "cost": 4,
     "modifier": -4

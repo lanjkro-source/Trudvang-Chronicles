@@ -147,7 +147,8 @@ function collectGlossaryKeys(object, prefix = "") {
   for (const [key, value] of Object.entries(object || {})) {
     const path = prefix ? `${prefix}.${key}` : key;
     if (value && typeof value === "object" && !Array.isArray(value)) output.push(...collectGlossaryKeys(value, path));
-    else if (!(path.startsWith("TRUDVANG.Content.") && path.endsWith(".Summary"))) output.push(path);
+    else if ((!path.startsWith("TRUDVANG.Content.Power.") || path.endsWith(".Name"))
+      && !(path.startsWith("TRUDVANG.Content.") && path.endsWith(".Summary"))) output.push(path);
   }
   return output;
 }

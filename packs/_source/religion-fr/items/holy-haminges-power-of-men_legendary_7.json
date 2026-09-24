@@ -12,8 +12,30 @@
     "catalogId": "holy-haminges-power-of-men:legendary:7",
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
-    "description": "Le conjurateur réussit automatique ment un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
-    "source": "Livre des règles, p. 272",
+    "description": "Le conjurateur réussit automatiquement un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
+    "summary": "Le conjurateur réussit automatique ment un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
+    "swedishName": "",
+    "duration": "3 minutes",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:legendary:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-men:legendary:7:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      }
+    ],
+    "source": "Livre des règles, p. 273",
     "level": 4,
     "cost": 8,
     "modifier": -8

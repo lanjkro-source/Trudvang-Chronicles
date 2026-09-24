@@ -12,7 +12,41 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:vitner-shield:1",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
-    "description": "F Durée : 10 minutes F Portée : personnelle F Temps d’invocation : 1 minute Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains.",
+    "description": "Le bruide demande à ses ancêtres de veiller sur lui et reçoit une protection divine contre le vitner. Chaque fois que l’arpenteur des brumes est la cible d’un sort, quelle que soit sa nature, il doit effectuer un test de situation dont la valeur de situation dépend du niveau du sort, comme le montre la table ci-après (le modificateur de Psychisme s’applique). En cas de réussite, les effets du sort sont neutralisés. VALEUR DE SITUATION:\n|Niveau du sort|Valeur de situation|\n|---|---|\n|1|10|\n|2|8|\n|3|6|\n|4|4|\n|5|2|\n",
+    "summary": "F Durée : 10 minutes F Portée : personnelle F Temps d’invocation : 1 minute Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains.",
+    "swedishName": "",
+    "duration": "4 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:vitner-shield:1:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      }
+    ],
     "source": "Livre des règles, p. 239",
     "level": 1,
     "cost": 2,

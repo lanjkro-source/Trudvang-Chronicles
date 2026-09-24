@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
-    "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
+    "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual. The person who is granted this power receives the exceptional trait of Psyche +8 for the ability’s duration. Even the dimwalker (if the Stormkelt offered the power to someone else) and up to two friends within range also receive a lesser exceptional trait of Psyche +4 for the ability’s duration.",
+    "summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "5 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect an additional person within range (with the spell’s basic version)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the character trait of Psych from +4 to +6 for the Stormkelt’s allies"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 162",
     "level": 4,
     "cost": 8,

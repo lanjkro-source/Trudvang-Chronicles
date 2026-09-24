@@ -4,9 +4,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 31 refreshes actor-owned tablet copies
-// with the new descriptions, summaries, Swedish names, negations and affinities.
-const CONTENT_VERSION = 31;
+// TEMPORARY WORLD MIGRATION — version 32 refreshes actor-owned spells, divine
+// powers and runes with the expanded bilingual catalogue and power levels.
+const CONTENT_VERSION = 32;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -750,6 +750,13 @@ export async function importStarterContent({force = false} = {}) {
                 changes[`system.affinity.${type}`] = match.system.affinity[type];
               }
             }
+          }
+          if (["spell", "divineFeat"].includes(item.type) && item.type === match.type) {
+            // TEMPORARY WORLD MIGRATION — copies learned before catalogue v32 lack these fields.
+            for (const field of ["summary", "swedishName", "duration", "range", "weavingTime", "dailyActivation", "spellType", "isRune", "powerLevels"]) {
+              if (JSON.stringify(match.system[field]) !== JSON.stringify(item.system[field])) changes[`system.${field}`] = match.system[field];
+            }
+            if (match.system.isRune && Number(item.system.cost) !== 0) changes["system.cost"] = 0;
           }
           return Object.keys(changes).length > 1 ? changes : null;
         }

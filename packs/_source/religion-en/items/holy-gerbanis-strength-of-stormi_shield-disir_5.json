@@ -12,7 +12,35 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:shield-disir:5",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "The Stormkelt begs Stormi for protection.",
+    "description": "The Stormkelt begs Stormi for protection. In return, Stormi sends holy warriors from the Stormvakk to protect his subject. The spirits appear as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warriors disappear into it and leave the dimwalker. If a warrior dies, she settles back into fog and disappears. The spirit warriors will step up to guard or protect the dimwalker during battle or any situation where he is in immediate danger. The warriors never move farther than 10 meters from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warriors do not communicate; they only perform their task. A Stormkelt can have a maximum of three Shield Dísir active at one time. The Shield Dísir are impressive female warriors armored in fortified leather, with long manes of blond hair and faces painted with blue spiraled patterns. They usually carry battle swords and fortified great round shields. ✦ Shield<hr>Dísir: Strength +2, Body Points 30, Protection Value 3, Combat Points 20, initiative 1d10 (OR 10) + 2, Shield Bearer specialty (+8 Combat Points).",
+    "summary": "The Stormkelt begs Stormi for protection.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:shield-disir:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:shield-disir:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Summon another spirit warrior (maximum 3)"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:shield-disir:5:2",
+        "cost": 10,
+        "maxCount": 2,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 3,
     "cost": 6,

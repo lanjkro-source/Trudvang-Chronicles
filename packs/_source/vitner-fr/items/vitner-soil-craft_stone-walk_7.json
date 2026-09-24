@@ -12,8 +12,48 @@
     "catalogId": "vitner-soil-craft:stone-walk:7",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle.",
-    "source": "Livre des règles, p. 158",
+    "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de métaux ou de pierre. À chaque tour de jeu, le bénéficiaire du sort peut avancer à travers ces matériaux d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la pierre et le métal statiques et immobiles. Il ne permet pas de traverser les armes en métal ou en pierre étant donné qu’elles sont en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans la pierre à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours dans la pierre, il se retrouve emprisonné par la roche qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve dans la roche au moment où le sort prend fin, il commence également à suffoquer.",
+    "summary": "Ce sort entoure la cible d’une pellicule de vitner qui repousse toute pierre ou tout métal situé à proximité d’elle.",
+    "swedishName": "Malmavandr",
+    "duration": "2 minutes",
+    "range": "personnelle",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:stone-walk:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la capacité de mouvement finale du bénéficiaire de : +1 mètre par tour de jeu (sans jamais pouvoir dépasser la capacité de mouvement normale de la créature)"
+      },
+      {
+        "id": "vitner-soil-craft:stone-walk:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute."
+      },
+      {
+        "id": "vitner-soil-craft:stone-walk:7:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-soil-craft:stone-walk:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Fait passer la portée de personnelle à contact"
+      },
+      {
+        "id": "vitner-soil-craft:stone-walk:7:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Tisse le sort sur une deuxième cible qui peut elle aussi avancer à travers la pierre (uniquement si la portée du sort a été modifiée à contact)"
+      }
+    ],
+    "source": "Livre des règles, p. 162",
     "level": 4,
     "cost": 8,
     "modifier": -8

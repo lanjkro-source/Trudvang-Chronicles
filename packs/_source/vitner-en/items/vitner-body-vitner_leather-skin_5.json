@@ -12,7 +12,41 @@
     "catalogId": "vitner-body-vitner:leather-skin:5",
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
-    "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+    "description": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather. In addition, the skin takes on a brownish color as to be easily confused with actual leather. The leather skin grants the enchanted a natural Protection Value of 1, which is added to any other protection that already exists. Despite the tough skin, the enchanted creature can move normally and weighs no more than they did before the spell. If the beneficiary of the spell gains enough levels of power to increase the protective value above 4, the leathercolored skin takes on a more metallic shade.",
+    "summary": "This spell alters a creature’s skin, which thickens to the hardness and durability of leather.",
+    "swedishName": "Leiderhyda",
+    "duration": "6 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:leather-skin:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the Protection Value by +1"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:leather-skin:5:3",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 96",
     "level": 3,
     "cost": 6,

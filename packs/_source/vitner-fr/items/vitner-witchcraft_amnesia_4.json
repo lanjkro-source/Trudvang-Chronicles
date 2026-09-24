@@ -12,8 +12,36 @@
     "catalogId": "vitner-witchcraft:amnesia:4",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "Ce sort génère une énergie perturba trice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs.",
-    "source": "Livre des règles, p. 184",
+    "description": "Ce sort génère une énergie perturbatrice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs. La victime peut résister en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, elle oublie immédiatement son identité et son passé. Chaque jour, la victime peut faire un nouveau test de situation avec une valeur de situation de 6. En cas de réussite, elle se rappelle un détail important de sa vie passée : au choix du maître de jeu, il peut s’agir d’un souvenir de famille, d’une compétence importante ou de quelque autre attribut. Le jour suivant, la victime peut faire un nouveau test pour récupérer davantage de souvenirs. Chaque test de situation réussi augmente de +2 les chances de se remémorer quelque chose les jours suivants. Ce bonus ne disparaît pas si la victime rate un test de situation : bien qu’elle ne regagne aucun souvenir ce jour-là, la victime a droit à un nouveau test de situation avec la même valeur de situation et le même bonus le jour suivant. La victime conserve au fond d’elle ses compétences et ses attributs, et c’est au maître de jeu de déterminer quand ces réflexes peuvent intervenir. Par exemple, un personnage fuyant à travers un village pourra sauter instinctivement sur un cheval et s’enfuir au grand galop (la compétence Agilité avec la spécialité Équitation) ; ou bien une personne face à face avec la brute du village voyant l’énorme poing voler vers son visage avec une puissance inquiétante pourra soudain esquiver l’attaque et répondre par un coup bien placé sur le nez déjà cassé de la brute pour lui faire mordre le sol crasseux de la taverne (la compétence Combat et la spécialité Bagarre). Plus la personne possède une valeur élevée dans une compétence, plus elle a de chances de l’utiliser de manière instinctive. Dès l’instant où la victime réussit le test de situation avec une valeur de situation de 20, elle se rappelle tout ce qu’elle avait oublié.",
+    "summary": "Ce sort génère une énergie perturba trice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs.",
+    "swedishName": "Húgvilsa",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:amnesia:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-witchcraft:amnesia:4:1",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 50 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:amnesia:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue le test de situation initial de la victime (sans pouvoir le faire descendre en dessous de : 1) de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 185",
     "level": 3,
     "cost": 6,
     "modifier": -6

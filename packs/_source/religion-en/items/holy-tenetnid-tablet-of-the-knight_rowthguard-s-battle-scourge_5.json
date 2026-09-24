@@ -12,7 +12,41 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
-    "description": "Conjures or empowers a sacred battle scourge fit for a Rowthguard.",
+    "description": "Scourge A holy aura is created around the selected weapon. The weapon deals an additional +3 points of damage (+5 against undead and +7 against demons). The blessed weapon takes on a lighter shade and begins to shine faintly.",
+    "summary": "Conjures or empowers a sacred battle scourge fit for a Rowthguard.",
+    "swedishName": "",
+    "duration": "4 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase damage by +1 (maximum +7/+9 undead/+11 demons)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 199",
     "level": 3,
     "cost": 6,

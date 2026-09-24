@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
-    "description": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly.",
+    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
+    "summary": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly.",
+    "swedishName": "",
+    "duration": "2 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the Protection Value by another +1 (maximum 6)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase damage with all melee"
+      }
+    ],
     "source": "Player's Handbook, p. 214",
     "level": 3,
     "cost": 6,

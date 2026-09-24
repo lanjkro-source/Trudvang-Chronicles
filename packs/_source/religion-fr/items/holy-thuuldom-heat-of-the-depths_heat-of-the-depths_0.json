@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0",
     "tabletId": "holy-thuuldom-heat-of-the-depths",
     "tablet": "Chaleur des profondeurs",
-    "description": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "description": "Le thuul peut placer l'objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne. Cette chaleur imprègne le sol alentour et affecte un espace de 1 m² par niveau de la rune. Le niveau de la rune indique également l'amplitude thermique que le thuul peut contrôler : chaque niveau lui permet de modifier la température de ±10 degrés. Le thuul peut choisir que la zone affectée atteigne la température choisie dans les limites de cette amplitude thermique.",
+    "summary": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "swedishName": "",
+    "duration": "3 heures/niveau",
+    "range": "1 m²/niveau",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "2",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente l'amplitude thermique contrôlée par le pouvoir de : ±10 degrés"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente l'amplitude thermique contrôlée par le pouvoir de : ±20 degrés"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente l'amplitude thermique contrôlée par le pouvoir de : ±30 degrés"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente l'amplitude thermique contrôlée par le pouvoir de : ±40 degrés"
+      },
+      {
+        "id": "holy-thuuldom-heat-of-the-depths:heat-of-the-depths:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente l'amplitude thermique contrôlée par le pouvoir de : ±50 degrés"
+      }
+    ],
     "source": "Livre des règles, p. 285",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!iO9FJD8D9EaGbHcI",

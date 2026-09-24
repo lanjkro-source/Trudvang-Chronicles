@@ -12,7 +12,41 @@
     "catalogId": "vitner-wind-craft:purify-air:0",
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
-    "description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely.",
+    "description": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely. The spell can also be woven over a person, which creates a filter around their mouth and nose to purify the air they breathe. In this way, they can breathe in all environments that have enough air to keep them alive, no matter which gases, spores, or dangerous p articles are present.",
+    "summary": "The spell filters all dangerous and unhealthy substances from the air around the enchanter in a 1-meter radius, making it possible to breathe safely.",
+    "swedishName": "Reina loftir",
+    "duration": "3 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:purify-air:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the affected area’s radius by 1 meter"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-wind-craft:purify-air:0:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 20 minutes"
+      }
+    ],
     "source": "Player's Handbook, p. 139",
     "level": 1,
     "cost": 2,

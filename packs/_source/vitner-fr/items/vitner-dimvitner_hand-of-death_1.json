@@ -12,8 +12,48 @@
     "catalogId": "vitner-dimvitner:hand-of-death:1",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts.",
-    "source": "Livre des règles, p. 155",
+    "description": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts. Ce lien siphonne la force vitale du cœur de la victime, qui cesse de battre pendant toute la durée du sort. Cela inflige à la victime 1d10 points de dégâts par tour de jeu. La plupart des armures n’offrent aucune protection contre ces dégâts, à l’exception des armures en grindsilver. La victime peut résister aux dégâts en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution). En cas de réussite, la victime évite tous les dégâts normalement infligés par le sort pendant le tour de jeu en cours.",
+    "summary": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts.",
+    "swedishName": "Rifhjarta",
+    "duration": "1 tour de jeu",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:hand-of-death:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-dimvitner:hand-of-death:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-dimvitner:hand-of-death:1:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-dimvitner:hand-of-death:1:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Invoque une autre main funeste dont l’enchanteur peut se servir pour attaquer une autre victime (qui subit la version de base du sort)"
+      },
+      {
+        "id": "vitner-dimvitner:hand-of-death:1:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le jet ouvert des dégâts de : +1 degré"
+      }
+    ],
+    "source": "Livre des règles, p. 156",
     "level": 1,
     "cost": 2,
     "modifier": -2

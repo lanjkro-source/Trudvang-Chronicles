@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:havar:2",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "The Stormkelt begs Stormi for protection.",
+    "description": "The Stormkelt begs Stormi for protection. In return, Stormi sends a “Havar, a holy warrior from the Stormvakk to protect his subject. The spirit appears as a sudden fog that gathers around the Stormkelt, and then takes on physical form. After the duration, the fog appears again and the warrior disappears into it and leaves the dimwalker. If the warrior dies, he settles back into fog and disappears. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where he is in immediate danger. The warrior never moves farther than 10 meters away from the Stormkelt and cannot perform any other tasks besides personal protection for the Stormkelt or fighting those who attack him. The spirit warrior does not communicate; it only performs its task. A Stormkelt can have only one Havar active at one time through this ability. Havar is a tall warrior equipped in leather, and his face is hidden by a leather coif with a nose protector. He carries a normal round shield and a regular battle axe. ✦ Havar: Strength +1, Body Points 25, Protection Value 2, Combat Points 16, initiative 1d10 (OR 10) + 4, Shield Bearer specialty (+4 Combat Points).",
+    "summary": "The Stormkelt begs Stormi for protection.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:havar:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:havar:2:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 2,
     "cost": 4,

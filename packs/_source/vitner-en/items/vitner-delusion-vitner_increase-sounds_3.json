@@ -12,7 +12,41 @@
     "catalogId": "vitner-delusion-vitner:increase-sounds:3",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
-    "description": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes.",
+    "description": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes. The spell is woven around the target’s body or the target’s head. If the spell is woven around the body, all sounds caused by movements, such as steps, branches breaking under feet, the rustle of clothing, and so on, are amplified. If the spell is woven around the head, it seems to drown out any other sounds within the area because anything the creature says is heard with perfect clarity, even if it is whispered quietly. If it is woven over someone involuntarily, the target might get into a lot of trouble depending on the situation, because everyone else in the immediate vicinity will believe that the target is screaming.",
+    "summary": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes.",
+    "swedishName": "",
+    "duration": "5 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:increase-sounds:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-delusion-vitner:increase-sounds:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-delusion-vitner:increase-sounds:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-delusion-vitner:increase-sounds:3:3",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 101",
     "level": 1,
     "cost": 2,

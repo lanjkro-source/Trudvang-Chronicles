@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
-    "description": "Un vent rafraîchissant traverse la zone désignée par le bruide.",
-    "source": "Livre des règles, p. 244",
+    "description": "Un vent rafraîchissant traverse la zone désignée par le bruide. Il a les mêmes effets que le Souffle libérateur ou la Brise libératrice, mais il peut aussi retirer les obstacles physiques, dissiper toutes formes de vitner de contrainte ou d’emprisonnement, et ouvrir une porte des brumes présente dans le brouillard qui a été fermée et se trouve à portée de ce pouvoir. S’il y a une résistance physique (même si l’objet est également verrouillé), le bruide doit effectuer un test de situation avec une valeur de situation de 14. En cas de réussite, l’obstacle est écarté, comme indiqué dans la description du Souffle libérateur et de la Brise libératrice. Pour pouvoir libérer quelque chose d’un vitner de contrôle ou de contrainte (sorts de niveau 1 à 3), le bruide doit réussir un test de situation avec une valeur de situation de 14. Tout ce qui est emprisonné ou contrôlé par un vitner tissé avec une plus grande maîtrise (sorts de niveau 4 ou 5) nécessite de réussir un test de situation avec une valeur de situation de 6. Ce pouvoir est capable d’ouvrir une porte des brumes présente dans le brouillard mais actuellement fermée. Il ne peut pas faire apparaître une porte des brumes qui n’existe pas déjà.",
+    "summary": "Un vent rafraîchissant traverse la zone désignée par le bruide.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 246",
     "level": 4,
     "cost": 8,
     "modifier": -8

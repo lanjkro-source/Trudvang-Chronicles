@@ -12,8 +12,30 @@
     "catalogId": "vitner-vitner-craft:dispel-vitner:6",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "forme permanente ne peut pas être dissipé (sauf précision contraire dans la descrip tion du sort).",
-    "source": "Livre des règles, p. 152",
+    "description": "Dissipation du vitner permet de neutraliser un sort qui a été tissé sur un objet ou une créature. Toutefois, ce sort ne peut neutraliser que les magies tissées pour une durée limitée, car le vitner tissé sous une forme permanente ne peut pas être dissipé (sauf précision contraire dans la description du sort). Le sort ciblé peut aussi bien utiliser le hvitavitner que le vaagrivitner ou le morkvitner. Si l’enchanteur qui tente de le dissiper utiliser le même type de vitner, il reçoit un bonus de +2 à son test de situation. Pour parvenir à dissiper un sort, l’enchanteur doit effectuer un test de situation. La valeur de situation dépend de la force du sort à neutraliser, comme indiqué par la table ci-après. En cas de réussite, le vitner du sort visé est neutralisé et dispersé. VALEUR DE SITUATION:\n|Niveau du sort|Valeur de situation|\n|---|---|\n|1|10|\n|2|8|\n|3|6|\n|4|4|\n|5|2|",
+    "summary": "forme permanente ne peut pas être dissipé (sauf précision contraire dans la descrip tion du sort).",
+    "swedishName": "Brotja vitner",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:dispel-vitner:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussir le test de situation de : +1"
+      },
+      {
+        "id": "vitner-vitner-craft:dispel-vitner:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 153",
     "level": 4,
     "cost": 8,
     "modifier": -8

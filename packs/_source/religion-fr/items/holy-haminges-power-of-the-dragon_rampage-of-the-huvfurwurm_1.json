@@ -12,7 +12,23 @@
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu.",
+    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu. Ces points sont liés à cette action d’arme supplémentaire, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer une deuxième paire de bras, qui brandissent une arme supplémentaire.",
+    "summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie d’une action d’arme supplémentaire par tour de jeu, ainsi qu’un bonus de +5 points de combat par tour de jeu.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      }
+    ],
     "source": "Livre des règles, p. 277",
     "level": 1,
     "cost": 2,

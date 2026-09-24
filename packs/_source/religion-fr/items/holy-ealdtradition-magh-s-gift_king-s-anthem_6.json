@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-magh-s-gift:king-s-anthem:6",
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Don de Magh",
-    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir.",
-    "source": "Livre des règles, p. 232",
+    "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 4 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 20 points de santé par personne et par jour",
+    "summary": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir.",
+    "swedishName": "",
+    "duration": "3 minutes",
+    "range": "rayon de 10 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-magh-s-gift:king-s-anthem:6:0",
+        "cost": 1,
+        "maxCount": 2,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-magh-s-gift:king-s-anthem:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 234",
     "level": 4,
     "cost": 8,
     "modifier": -8

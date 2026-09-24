@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-master-of-elements:shape-earth:5",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
-    "description": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will.",
+    "description": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will. Once reshaped, the mud is immediately transformed into solid earth and maintains the new form for the duration of the ability.",
+    "summary": "The Ihana can transform 1 cubic meter of earth into mud and then shape it according to their will.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "5 meters",
+    "weavingTime": "5 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:shape-earth:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the amount of affected earth by 1 m3"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:shape-earth:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:shape-earth:5:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 5 hours"
+      }
+    ],
     "source": "Player's Handbook, p. 241",
     "level": 2,
     "cost": 4,

@@ -12,7 +12,23 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
-    "description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+    "description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care. In this way the priest can heal natural diseases, lost minds, and impotence/infertility, and neutralize all poisons. In order for the condition to disappear completely (beyond temporary relief), the character receiving the healing grace has to succeed on a Situation roll with a Situation value of 8 (Constitution m odifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
+    "summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase Situation value by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 197",
     "level": 2,
     "cost": 4,

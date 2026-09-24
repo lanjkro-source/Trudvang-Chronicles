@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence of Jorn",
-    "description": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
+    "description": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range. The divine energy deals 1d10 points of damage. Normal armor gives no protection.",
+    "summary": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:1",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Increase the damage by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 160",
     "level": 4,
     "cost": 8,

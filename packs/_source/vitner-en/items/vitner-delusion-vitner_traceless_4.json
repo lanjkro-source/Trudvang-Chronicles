@@ -12,7 +12,47 @@
     "catalogId": "vitner-delusion-vitner:traceless:4",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
-    "description": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by.",
+    "description": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away, leaving the land as it was before they passed by. Not even their scents remain.",
+    "summary": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by.",
+    "swedishName": "Sporvaska",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:traceless:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:4",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 week"
+      }
+    ],
     "source": "Player's Handbook, p. 101",
     "level": 2,
     "cost": 4,

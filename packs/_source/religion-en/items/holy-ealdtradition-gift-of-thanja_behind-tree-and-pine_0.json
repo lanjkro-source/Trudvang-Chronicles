@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "description": "TRADITION’S HOLY Halawen’s Offering 1: Willpower of the Ancestors 1: 1: Vitner Shield 1:",
+    "summary": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 1,
     "cost": 2,

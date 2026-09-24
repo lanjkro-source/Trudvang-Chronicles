@@ -12,8 +12,54 @@
     "catalogId": "vitner-animal-vitner:control-animals:4",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
-    "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents.",
-    "source": "Livre des règles, p. 187",
+    "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelligents. Il peut contrôler un seul animal ayant au maximum 10 points de santé, ou un certain nombre d’animaux plus petits dont le total des points de santé cumulés ne dépasse pas 10 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux, p. 189). Ce sort est tissé sous la forme d’une chanson douce et apaisante accompagnée de gestes lents afin de ne pas effrayer les animaux. Le contrôle que l’enchanteur exerce sur les animaux est complet, même en combat, mais il ne peut rien faire d’autre que se concentrer sur le sort. Le contrôle est immédiatement brisé si une créature s’éloigne au-delà de la portée du sort, subit au moins la moitié de ses points de santé en dégâts, ou si l’enchanteur est déconcentré.",
+    "summary": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents.",
+    "swedishName": "Rauda bestura",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:control-animals:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:3",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:5",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la quantité de points de santé affectés de : +5"
+      }
+    ],
+    "source": "Livre des règles, p. 190",
     "level": 3,
     "cost": 6,
     "modifier": -6

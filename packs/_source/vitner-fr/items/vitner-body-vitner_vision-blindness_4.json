@@ -12,8 +12,66 @@
     "catalogId": "vitner-body-vitner:vision-blindness:4",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "La vision de la personne enchantée est améliorée pendant toute la durée du sort.",
-    "source": "Livre des règles, p. 192",
+    "description": "La vision de la personne enchantée est améliorée pendant toute la durée du sort. Le bénéficiaire voit soudain tout avec bien plus de clarté et de précision. Les petits détails subtils qu’il aurait pu avoir du mal à remarquer auparavant lui paraissent évidents. La personne enchantée bénéficie d’un bonus de +3 à tous les tests de situation et de compétence pour lesquels la vision est un facteur de réussite important. Ce sort peut également évoquer un effet négatif en dégradant le sens de la vision de la cible. La victime subit un malus de -3 à tous les tests de situation et de compétence reposant sur la vue. Toute créature sous le coup d’un sort disposant de suffisamment de niveaux de puissance pour lui infliger un malus de -10 est considérée comme aveugle et ne peut rien voir pendant toute la durée du sort. La créature victime de cet effet négatif peut y résister en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution).",
+    "summary": "La vision de la personne enchantée est améliorée pendant toute la durée du sort.",
+    "swedishName": "Skönja",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 journée"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:3",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:5",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le bonus/malus de ±1"
+      },
+      {
+        "id": "vitner-body-vitner:vision-blindness:4:7",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une entité supplémentaire (avec la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 193",
     "level": 2,
     "cost": 4,
     "modifier": -4

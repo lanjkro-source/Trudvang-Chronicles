@@ -13,7 +13,47 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort crée une barrière d’énergie qui accompagne la personne enchantée en faisant disparaître les traces, indices et même odeurs qu’elle sème derrière elle et laisse le terrain dans l’état précédent son passage.",
-    "source": "Livre des règles, p. 197",
+    "summary": "Ce sort crée une barrière d’énergie qui accompagne la personne enchantée en faisant disparaître les traces, indices et même odeurs qu’elle sème derrière elle et laisse le terrain dans l’état précédent son passage.",
+    "swedishName": "Sporvaska",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:traceless:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 jour"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Ajoute une cible supplémentaire (qui profite de la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 198",
     "level": 2,
     "cost": 4,
     "modifier": -4

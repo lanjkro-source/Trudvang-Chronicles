@@ -12,7 +12,35 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
-    "description": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range.",
+    "description": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range. The target immediately receives two severe burns on their body. Every burn causes the victim 1d3 points of damage. The victim also receives SV -1 on all combat actions during the current action round as well as the following round because of the burns. Armor has no effect against this ability.",
+    "summary": "The Stormkelt calls on the wrath of Tyrd and channels that anger toward an enemy within range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
+        "cost": 1,
+        "maxCount": 6,
+        "effect": "Increase the number of burns by +1 (maximum 6)"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Afflict one additional target (with"
+      }
+    ],
     "source": "Player's Handbook, p. 171",
     "level": 2,
     "cost": 4,

@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
-    "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons).",
-    "source": "Livre des règles, p. 259",
+    "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons). L’arme bénie prend une teinte plus claire et se met à luire faiblement.",
+    "summary": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 3 points de dégâts supplémentaires (+5 contre les morts-vivants et +7 contre les démons).",
+    "swedishName": "",
+    "duration": "4 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts infligés de : +1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      }
+    ],
+    "source": "Livre des règles, p. 261",
     "level": 3,
     "cost": 6,
     "modifier": -6

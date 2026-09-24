@@ -12,8 +12,60 @@
     "catalogId": "vitner-vitner-craft:enchant-object:2",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée.",
-    "source": "Livre des règles, p. 152",
+    "description": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée. L’objet se retrouve imprégné de vitner qui améliore ses propriétés. Le vitner ainsi tissé forme une barrière d’énergie bénéfique autour de l’objet, qui confère à son utilisateur un bonus de +2 à toutes les valeurs de compétence et de situation. Cet enchantement augmente également de +1 les dégâts des armes, de +1 la valeur de protection des armes et armures, et de +10 la valeur d’intégrité des objets.",
+    "summary": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée.",
+    "swedishName": "Kraftlatrolja eftnating",
+    "duration": "6 tours de jeu",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:3",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le modificateur de VC associé à l’objet enchanté de : +1"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-object:2:6",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente les dégâts de l’arme de : +1, et la valeur d’intégrité de : +10"
+      }
+    ],
+    "source": "Livre des règles, p. 153",
     "level": 2,
     "cost": 4,
     "modifier": -4

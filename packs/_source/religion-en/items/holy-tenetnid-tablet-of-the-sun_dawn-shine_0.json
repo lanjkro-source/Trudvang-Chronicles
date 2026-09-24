@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablet of the Sun",
-    "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+    "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. Within its range, the light counts as daylight for all intents and purposes.",
+    "summary": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "rayon de 1 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 1 meter"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 203",
     "level": 1,
     "cost": 2,

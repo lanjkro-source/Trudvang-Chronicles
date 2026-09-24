@@ -12,8 +12,42 @@
     "catalogId": "vitner-perceiving:orientation:3",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "Ce sort permet à son bénéficiaire de conserver son sens de l’orienta tion pendant toute la durée du sort.",
-    "source": "Livre des règles, p. 173",
+    "description": "Ce sort permet à son bénéficiaire de conserver son sens de l’orientation pendant toute la durée du sort. La personne enchantée perçoit clairement les points cardinaux sur une boussole, ainsi que la hauteur ou la profondeur à laquelle elle se trouve.",
+    "summary": "Ce sort permet à son bénéficiaire de conserver son sens de l’orienta tion pendant toute la durée du sort.",
+    "swedishName": "Veigfundr",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:orientation:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-perceiving:orientation:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-perceiving:orientation:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-perceiving:orientation:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte un sujet supplémentaire (qui bénéficie de la version de base sur sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 174",
     "level": 2,
     "cost": 4,
     "modifier": -4

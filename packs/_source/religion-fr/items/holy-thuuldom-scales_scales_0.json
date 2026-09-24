@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-scales:scales:0",
     "tabletId": "holy-thuuldom-scales",
     "tablet": "Écailles",
-    "description": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul.",
+    "description": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul. En moins d’un tour de jeu, l’ensemble du corps du thuul se couvre d’écailles protectrices, qui lui confèrent un bonus de +1 à la valeur de protection par niveau de la rune, et ce jusqu’à expiration du pouvoir. Cette armure compte comme une protection naturelle et protège également contre les armes magiques et le vitner.",
+    "summary": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul.",
+    "swedishName": "",
+    "duration": "3 tours de jeu/niveau",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "2",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-scales:scales:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +2"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +3"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +4"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : +5"
+      }
+    ],
     "source": "Livre des règles, p. 286",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!Wero4z4z5A6B7C8D",

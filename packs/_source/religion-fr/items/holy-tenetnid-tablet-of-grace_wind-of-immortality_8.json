@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
-    "description": "Le prêtre peut ranimer une créature (intelligente ou non) qui a perdu la vie.",
-    "source": "Livre des règles, p. 253",
+    "description": "Le prêtre peut ranimer une créature (intelligente ou non) qui a perdu la vie. La durée de ce pouvoir indique le temps maximum qui a pu s’écouler entre la mort de la créature et l’utilisation de cette faculté pour la ressusciter. Ce pouvoir est extrêmement exigeant pour le prêtre, qui subit une perte définitive de 1 point de santé et une petite blessure qui ne guérira jamais complètement. Le choc provoqué par la mort suivie de la résurrection s’avère également assez traumatisant pour le miraculé, qui développe un niveau de peur de base permanent de 1 (son niveau de peur ne peut jamais descendre en dessous de 1). Ce pouvoir permet au prêtre de ranimer plusieurs fois la même créature, mais pour chaque nouvelle résurrection dont bénéficie la cible, son niveau de peur de base augmente à nouveau. L’individu ressuscité développe également l’un des traits de personnalité du prêtre (comme un accent curieux, un tic de langage, un comportement typique, ou un goût particulier) au choix du maître du jeu. Pour que ce pouvoir fonctionne, son bénéficiaire doit souhaiter revenir à la vie.",
+    "summary": "Le prêtre peut ranimer une créature (intelligente ou non) qui a perdu la vie.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 semaine"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 mois"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:wind-of-immortality:8:3",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 année"
+      }
+    ],
+    "source": "Livre des règles, p. 255",
     "level": 5,
     "cost": 10,
     "modifier": -10

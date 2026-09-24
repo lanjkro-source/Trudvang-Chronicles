@@ -12,8 +12,42 @@
     "catalogId": "vitner-soil-craft:earthquake:2",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "Ce sort génère un violent tremblement de terre dans une zone située à portée.",
-    "source": "Livre des règles, p. 158",
+    "description": "Ce sort génère un violent tremblement de terre dans une zone située à portée. La zone affectée est un cercle de 4 mètres de diamètre, et tous les objets qui s’y trouvent et qui ne sont pas solidement attachés tombent ou s’effondrent. Les objets fermement ancrés comme les arbres et les bâtiments ne sont en aucune façon affectés par le tremblement de terre (hormis la chute de fruits ou de quelques éclats, par exemple), mais l’ajout de niveaux de puissance pourrait permettre d’affecter ces éléments (à la discrétion du maître de jeu).<br> Toute créature prise dans le tremblement de terre doit réussir un test de compétence d’Agilité modifié en fonction de sa taille, comme indiqué par la table ci-­ dessous, pour ne pas tomber à la renverse (Cf. Tailles des créatures dans le Bestiaire de Jorge , page 7, pour de plus amples informations sur les tailles). Une créature jetée à terre par ce sort subit également 1d6 points de dégâts. Toutes les créatures présentes dans la zone affectée (même celles qui n’ont pas été renversées) subissent un malus de -3 à leurs valeurs de compétence et de situation pour la durée du pouvoir. TAILLES DES CRÉATURES ET MODIFICATEURS:\n|Taille|Modificateur|\n|---|---|\n|<1/3|-5|\n|≥1/3 – 1/2|-2|\n|≥1/2 – 1,5|0|\n|≥1,5 – 3|+3|\n|≥3 – 5|+5|\n|≥5 – 10|+7|\n|≥10|+10|\n Quand un enchanteur utilise ce sort sous terre, il y a 20 % de chance (1 à 4 sur 1d20) que cela provoque un glissement de terrain ou un éboulement. Au maître de jeu de déterminer précisément les conséquences d’un tel événement. EFFETS SELON NIVEAUX DE PUISSANCE:\n|Taille|0|+1|+2|+3|+4|+5|\n|---|---|---|---|---|---|---|\n|<1/3|-5|-7|-9|-11|-13|-15|\n|≥1/3–1/2|-2|-4|-6|-8|-10|-12|\n|≥1/2–1,5|0|-2|-4|-6|-8|-10|\n|≥1,5–3|+3|+1|-1|-3|-5|-7|\n|≥3–5|+5|+3|+1|-1|-3|-5|\n|≥5–10|+7|+5|+3|+1|-1|-3|\n|≥10|+10|+8|+6|+4|+2|0|\n|Risque d’éboulement|20%|30%|40%|50%|60%|70%|\n|Dégâts|1d6|1d6+1|1d6+2|1d6+3|1d6+4|1d6+5|\n",
+    "summary": "Ce sort génère un violent tremblement de terre dans une zone située à portée.",
+    "swedishName": "Jördabavur",
+    "duration": "1 tour de jeu",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:earthquake:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le diamètre de la zone affectée de : 2 mètres"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la période durant laquelle toutes les créatures vulnérables doivent effectuer un autre test de compétence de : +1 tour"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente l’effet du tremblement de terre comme indiqué par la table EFFETS d'un degré (une colonne vers la droite)"
+      }
+    ],
+    "source": "Livre des règles, p. 160",
     "level": 2,
     "cost": 4,
     "modifier": -4

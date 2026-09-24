@@ -12,7 +12,29 @@
     "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
-    "description": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.",
+    "description": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items. By simply touching the locked object and enchanting it, the enchanter can attempt to either unlock or lock it with a Situation roll (Situation value determined<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.</td></tr></tbody></table>by the type of lock, as shown on the table below). The spell cannot unlock or lock magical locks. UNLOCK/LOCK SITUATION VALUES Type of Lock Situation Value Grapple 14 Hook 12 Wedge 10 Door bar 8 Simple padlock 6 Advanced lock 4 Dwarvish lock 2",
+    "summary": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.",
+    "swedishName": "Vidvanga",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:unlock-lock:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-vitner-of-objects:unlock-lock:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 132",
     "level": 3,
     "cost": 6,

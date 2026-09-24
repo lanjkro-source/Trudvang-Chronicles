@@ -12,7 +12,41 @@
     "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
-    "description": "The Stormkelt summons a shield of small storm flurries, which provide a Protection Value of 1 against melee weapons and a Protection Value of 3 against ranged",
+    "description": "The Stormkelt summons a shield of small storm flurries, which provide a Protection Value of 1 against melee weapons and a Protection Value of 3 against ranged weapons. However, the wind shield does not protect against magical weapons.",
+    "summary": "The Stormkelt summons a shield of small storm flurries, which provide a Protection Value of 1 against melee weapons and a Protection Value of 3 against ranged",
+    "swedishName": "",
+    "duration": "1 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the range to 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the Protection Value by +1 (maximum 4 levels of power)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 162",
     "level": 2,
     "cost": 4,

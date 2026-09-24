@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-trolls:contagious:4",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "une valeur de situation de 6 (le modificateur de Constitution s’applique).",
+    "description": "Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 6 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) par un rhume sévère et contractent une fièvre qui durent 1d6 jours, durant lesquels elles subissent un malus de -4 à toutes leurs actions. Un test de situation réussit signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière.",
+    "summary": "une valeur de situation de 6 (le modificateur de Constitution s’applique).",
+    "swedishName": "",
+    "duration": "2 heures",
+    "range": "1 mètre",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de : -1"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      }
+    ],
     "source": "Livre des règles, p. 274",
     "level": 3,
     "cost": 6,

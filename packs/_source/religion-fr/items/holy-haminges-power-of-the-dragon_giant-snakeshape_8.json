@@ -12,8 +12,48 @@
     "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expira tion de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits.",
-    "source": "Livre des règles, p. 277",
+    "description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expiration de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits. Cela dit, le conjurateur peut voir certaines de ses capacités limitées par sa nouvelle forme (par exemple, un serpent géant ne peut pas manier d’armes en combat ni invoquer des pouvoirs divins au-delà de ceux mentionnés ci-dessous).<p>L’Aspect du serpent géant confère les traits suivants :</p><ul><li>Aussi long que la hauteur d’un sanctuaire (Taille 4), et d’un poids pouvant aller de 500 kg à 8 tonnes</li><li>+20 points de santé (ces points sont utilisés avant les points de santé naturels du conjurateur)</li><li>Valeur de protection naturelle de 2</li><li>Pouvoir de Regard paralysant (Cf. le pouvoir de niveau 2 page précédente)</li><li>Pouvoir de Constriction (Cf. le pouvoir de niveau 1 page précédente)</li><li>Trait de personnage de +6 en Force, qui confère un bonus de +6 aux dégâts</li><li>Arme naturelle : morsure, 2d10 (JO 9-10) points de dégâts</li><li>Arme naturelle : écrasement (uniquement après une utilisation réussie de la Constriction), 2d10 points de dégâts (contre lesquelles l’armure ne protège pas)</li><li>Facteur de peur : 1d5</li></ul>",
+    "summary": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expira tion de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:3",
+        "cost": 2,
+        "maxCount": 1,
+        "effect": "Fait passer le facteur de peur à 1d10"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente les points de santé de : +10"
+      }
+    ],
+    "source": "Livre des règles, p. 280",
     "level": 5,
     "cost": 10,
     "modifier": -10

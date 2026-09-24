@@ -12,8 +12,72 @@
     "catalogId": "vitner-dimvitner:animate-undead:0",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes.",
-    "source": "Livre des règles, p. 155",
+    "description": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes. La dépouille doit être raisonnablement complète et il ne doit lui manquer aucune partie importante (les petites parties comme les doigts, quelques côtes ou même les mains ne sont pas indispensables). L’enchanteur qui a créé ce mort-vivant contrôle tous ses faits et gestes. Il ne peut lui donner des ordres que si le mort-vivant se trouve à portée du sort. Si le mort-vivant est plus loin, ou s’il ne reçoit pas d’ordre, il continue d’exécuter la dernière consigne que l’enchanteur lui a donnée. Une fois qu’il a reçu un ordre, le mort-vivant s’y soumet jusqu’à ce qu’on lui en donne un autre. Le mort-vivant possède 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir entre les compétences, les disciplines et les spécialités. Le mort-vivant reçoit les traits de personnage exceptionnels suivants : -4 en Dextérité et -4 en Intelligence. En plus des compétences achetées à l’aide des points de compétence mentionnés plus haut, le mort-vivant reçoit également la faculté de percevoir les êtres vivants dans les alentours immédiats. S’il réussit un test de situation contre une valeur de situation de 8, le mort-vivant peut remarquer les êtres vivants situés à moins de 10 mètres de lui, et ce même s’ils sont invisibles ou camouflés (le mort-vivant ne peut pas se servir de ce pouvoir pour repérer des êtres qui utilisent de la grindblom ou qui évoluent dans le Domaine des Brumes). Il est impossible d’utiliser des compétences pour améliorer cette aptitude, qui n’est pas non plus affectée par les circonstances qui pourraient perturber les sens. L’enchanteur doit attendre que ce sort arrive à expiration pour pouvoir le lancer à nouveau.",
+    "summary": "Ce rituel crée un lien entre Dimhall et un cadavre ou un squelette, ce qui permet à l’enchanteur de conjurer un esclave mort-vivant à partir de ces restes.",
+    "swedishName": "Sálhelekallja",
+    "duration": "3 jours",
+    "range": "10 mètres",
+    "weavingTime": "3 heures",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:animate-undead:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 journée"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 semaine"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:3",
+        "cost": 14,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 mois"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:4",
+        "cost": 30,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 année"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Confère 1d10 (JO 10) points de compétences à distribuer entre les compétences du mort-vivant"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:6",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affecte une autre dépouille (qui bénéficie de la version de base du sort)"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:7",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente une caractéristique de : +1 degré"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:8",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente les points de santé de : +1D10"
+      }
+    ],
+    "source": "Livre des règles, p. 156",
     "level": 1,
     "cost": 2,
     "modifier": -2

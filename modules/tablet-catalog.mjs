@@ -1,4 +1,5 @@
 import { tabletAffinity } from "./rules/tablet-affinity.mjs";
+import { POWER_DETAILS_BY_ID } from "./power-catalog-data.mjs";
 
 const slug = value => String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
@@ -134,8 +135,13 @@ export function tabletItemData(tablet, resolvers = {}) {
 export function powerItemData(power, tablet, resolvers = {}) {
   const localize = resolvers.localize ?? defaultLocalize;
   const format = resolvers.format ?? defaultFormat;
+  const language = (resolvers.isFrench ?? isFrench)() ? "fr" : "en";
+  const details = POWER_DETAILS_BY_ID[power.id];
   const name = localize(`TRUDVANG.Content.Power.${power.id}.Name`, power.name);
   const tabletLabel = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
+  const powerLevels = (details?.[language] ?? []).map((entry, index) => ({
+    ...entry, effect: localize(`TRUDVANG.Content.Power.${power.id}.PowerLevels.${index}`)
+  }));
   return {
     name,
     type: power.type,
@@ -143,9 +149,18 @@ export function powerItemData(power, tablet, resolvers = {}) {
     flags: {"trudvang-chronicles": {catalogId: power.id, tabletId: tablet.id}},
     system: {
       catalogId: power.id, tabletId: tablet.id, tablet: tabletLabel,
-      description: localize(`TRUDVANG.Content.Power.${power.id}.Summary`) || format("TRUDVANG.Description.PowerSummary", {name, tablet: tabletLabel}),
-      source: format("TRUDVANG.Description.SourcePage", {page: tabletPage(tablet, resolvers)}),
-      level: power.level, cost: power.cost, modifier: power.modifier
+      description: localize(`TRUDVANG.Content.Power.${power.id}.Description`) || localize(`TRUDVANG.Content.Power.${power.id}.Summary`) || format("TRUDVANG.Description.PowerSummary", {name, tablet: tabletLabel}),
+      summary: localize(`TRUDVANG.Content.Power.${power.id}.Summary`),
+      swedishName: localize(`TRUDVANG.Content.Power.${power.id}.SwedishName`),
+      duration: localize(`TRUDVANG.Content.Power.${power.id}.Duration`),
+      range: localize(`TRUDVANG.Content.Power.${power.id}.Range`),
+      weavingTime: localize(`TRUDVANG.Content.Power.${power.id}.CastingTime`),
+      dailyActivation: localize(`TRUDVANG.Content.Power.${power.id}.DailyActivation`),
+      spellType: details?.spellType ?? "instant",
+      isRune: details?.isRune ?? false,
+      powerLevels,
+      source: format("TRUDVANG.Description.SourcePage", {page: (language === "fr" ? details?.pageFr : details?.page) ?? tabletPage(tablet, resolvers)}),
+      level: power.level, cost: details?.isRune ? 0 : power.cost, modifier: power.modifier
     }
   };
 }

@@ -12,8 +12,30 @@
     "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall.",
-    "source": "Livre des règles, p. 155",
+    "description": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall. La zone affectée a un rayon de 2 mètres et forme un cercle autour du point que l’enchanteur a désigné. Ce point est fixe dans l’espace et ne peut pas être lié à un objet. Toute créature dans la zone affectée subit immédiatement 1d10 (JO 9-10) points de dégâts. Les armures normales n’offrent aucune protection contre ces dégâts, contrairement aux armures magiques et aux armures en grindsilver.",
+    "summary": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall.",
+    "swedishName": "Salhelehögg",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de 5 mètres"
+      },
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de 1 mètre"
+      }
+    ],
+    "source": "Livre des règles, p. 158",
     "level": 5,
     "cost": 10,
     "modifier": -10

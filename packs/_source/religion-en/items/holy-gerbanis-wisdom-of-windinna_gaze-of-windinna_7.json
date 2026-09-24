@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
-    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker can then read that person’s mind for the duration of the ability. The target can attempt to resist the effect by succeeding on a Situation roll with a Situation value of 4 (Psyche modifiers apply).",
+    "summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "contact visuel",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the Situation value by -1"
+      }
+    ],
     "source": "Player's Handbook, p. 168",
     "level": 4,
     "cost": 8,

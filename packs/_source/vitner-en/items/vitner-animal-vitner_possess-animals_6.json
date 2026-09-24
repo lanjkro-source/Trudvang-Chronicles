@@ -12,7 +12,53 @@
     "catalogId": "vitner-animal-vitner:possess-animals:6",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body.",
+    "description": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body. To accomplish this, the mage has to be within the spell’s range of the creature, as well as have it in sight. You cannot possess an animal that you cannot see. If the spell is successful, the enchanter’s consciousness is shifted to the intended creature, which loses all direct control over its body. The mage can, without any difficulty, embrace all of the animal’s traits as their own. The mage keeps their own intelligence but cannot use Vitner Craft or Speak, as well as any other skills that would not be physically possible for that creature’s form. On the other hand, the mage receives a bonus for the Agility and Shadow Arts skills when in animal form (the size of the bonus is up to the game master). The mage is also able to attempt communication by using body movements. While in animal form, the mage cannot understand or communicate with other animals, not even those of the same species. When the mage possess the animal, their own body falls into deep slumber. Once inside the animal, the mage can move as far as desired from their own body, but they must be careful to return within the spell’s range before its duration is over. If the animal is killed while possessed by the mage, or if the duration runs out before the mage returns within the spell’s range, the mage’s consciousness returns to their body automatically, but with complications. The experience is so t raumatic that they undergo extreme shock. The incredible stress on the mind is so powerful that the mage loses 1d6 in vitner capacity permanently, and falls into a deep slumber that lasts for 1d6 days.",
+    "summary": "This spell enables a mage to transfer their consciousness into an intelligent vertebrate’s body.",
+    "swedishName": "Eiga bestur",
+    "duration": "10 minute(s)",
+    "range": "100 meters",
+    "weavingTime": "4 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:4",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-animal-vitner:possess-animals:6:5",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the range by 1 kilometer"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 4,
     "cost": 8,

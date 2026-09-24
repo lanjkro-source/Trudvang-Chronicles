@@ -12,7 +12,29 @@
     "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall.",
+    "description": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall. The afflicted area has a radius of 2 meters, which forms a circle centered on whichever point the mage has e stablished. This point is fixed on that space and not a specific object, so moving the object will not cause the darkness to move. Everyone within the area immediately suffers 1d10 (OR 9-10) points of damage. Regular armor gives no protection. However, magical armor and armor of gatesilver give full protection.",
+    "summary": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall.",
+    "swedishName": "Salhelehögg",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the radius by 1 meter"
+      }
+    ],
     "source": "Player's Handbook, p. 105",
     "level": 5,
     "cost": 10,

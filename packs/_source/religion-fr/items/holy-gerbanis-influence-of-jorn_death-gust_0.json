@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
-    "description": "Le stormikjalt frappe dans ses mains, ce qui génère une vague de pression to nitruante qui endommage une créature morte-vivante située à portée.",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui génère une vague de pression tonitruante qui endommage une créature morte-vivante située à portée. L’énergie divine inflige 1d5 points de dégâts, contre lesquels les armures normales n’offrent aucune protection.",
+    "summary": "Le stormikjalt frappe dans ses mains, ce qui génère une vague de pression to nitruante qui endommage une créature morte-vivante située à portée.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:death-gust:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:death-gust:0:1",
+        "cost": 5,
+        "maxCount": 5,
+        "effect": "Augmente les dégâts d’un degré : 1d5 > 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
     "source": "Livre des règles, p. 222",
     "level": 1,
     "cost": 2,

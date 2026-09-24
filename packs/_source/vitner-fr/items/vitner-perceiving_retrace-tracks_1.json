@@ -12,7 +12,41 @@
     "catalogId": "vitner-perceiving:retrace-tracks:1",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur PUISSANCE DE LA TEMPÊTE Poids de la victime Valeur de situation Distance de projection Modificateur aux actions 3 fois le",
+    "description": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur rougeâtre qu’elle seule peut voir. Si le bénéficiaire a traversé une quelconque masse d’eau ou s’est déplacé d’une manière qui ne laisse pas de trace (par exemple en sautant par-dessus une ravine, en nageant ou en chevauchant une monture), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer la direction.",
+    "summary": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur PUISSANCE DE LA TEMPÊTE Poids de la victime Valeur de situation Distance de projection Modificateur aux actions 3 fois le",
+    "swedishName": "Veigvisu",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:retrace-tracks:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-perceiving:retrace-tracks:1:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-perceiving:retrace-tracks:1:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-perceiving:retrace-tracks:1:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte un sujet supplémentaire (qui bénéficie de la version de base sur sort)"
+      }
+    ],
     "source": "Livre des règles, p. 173",
     "level": 1,
     "cost": 2,

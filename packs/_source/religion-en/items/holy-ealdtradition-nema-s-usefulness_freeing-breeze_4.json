@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
-    "description": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person.",
+    "description": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person. If there is any resistance, a Situation roll is required with the following Situation values: 14 if the object being released is covered by the Gust of Release ability, or 8 if the object is something locked or bolted. If the roll is successful, the cause of the resistance is overcome (for example, someone holding the door, sitting on the chest, and so on). In order to free something from imprisoning or controlling vitner (spells levels 1-3), a successful Situation roll with a Situation value of 6 is required. Anything that is imprisoned or controlled with vitner woven with greater skill (spell levels 4-5) cannot be affected by the Freeing Breeze.",
+    "summary": "A refreshing breeze glides through the area designated by the Bruid and opens a door, unlocks a tricky lock, opens a prison cell, or dispels imprisoning/ controlling vitner from another person.",
+    "swedishName": "",
+    "duration": "",
+    "range": "4 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 1 meter"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase Situation value by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 185",
     "level": 3,
     "cost": 6,

@@ -12,7 +12,35 @@
     "catalogId": "vitner-dimvitner:tendril-of-dimhall:4",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "Channels a tendril of Dimhall's deathly energy through the mage's hands.",
+    "description": "The mage gathers deathly power around their body and channels the humid energy out through their hands and the spirit of the corpse and can easily converse What the spirit has to say is up to the game a spirit who kindly apologizes for not being the converse with the mage for the duration, though master to decide. with any spirits. a spirit that claims to be the one sought, though succeeding on a Situation roll with a Situation apply). a spirit that claims to be the one sought, though succeeding on a Situation roll with a Situation apply). a spirit, which immediately tries to break into Roll 1d20 again and on a result of 1-5, the spirit process that takes 1d6 action rounds to complete). the corpse becomes an undead that immediately what traits the undead has (for tips, see the stats for Master’s Guide or in Jorgi’s Bestiary). fingers. A number of dark tendrils of fog reach out from the mage’s hands and assault the targeted victim. The tendril does 1d10 (OR 10) points of damage. Regular armor gives no protection, but magical armor and armor of gatesilver gives full protection. The tendrils of fog seek out their victim, so it is impossible to avoid getting hit.",
+    "summary": "Channels a tendril of Dimhall's deathly energy through the mage's hands.",
+    "swedishName": "Rifurkraftla",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:tendril-of-dimhall:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-dimvitner:tendril-of-dimhall:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the number of tendrils, which results in another person falling victim to the basic version of the spell."
+      },
+      {
+        "id": "vitner-dimvitner:tendril-of-dimhall:4:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the damage by one step: 1d10"
+      }
+    ],
     "source": "Player's Handbook, p. 105",
     "level": 3,
     "cost": 6,

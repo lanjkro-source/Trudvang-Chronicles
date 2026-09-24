@@ -12,8 +12,42 @@
     "catalogId": "holy-haminges-power-of-trolls:persuade:5",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire.",
-    "source": "Livre des règles, p. 274",
+    "description": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire. Il peut assigner une tâche à une personne située à portée, qui doit effectuer un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si la cible rate son test de situation, elle doit obéir. Cela dit, la cible ne fera jamais rien qui puisse lui faire du mal (comme sauter d’une falaise) ou nuire à un être cher (physiquement ou émotionnellement), ou encore qui nécessite de l’esprit d’initiative ou de la créativité (comme improviser).",
+    "summary": "Le conjurateur peut se montrer extrêmement persuasif avec un adversaire.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:persuade:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:persuade:5:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:persuade:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:persuade:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit la valeur de situation de la victime de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 275",
     "level": 3,
     "cost": 6,
     "modifier": -6

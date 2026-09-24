@@ -12,7 +12,35 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
-    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
+    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, transformation ou influence extérieure. Ce pouvoir chasse de la cible toute pensée étrangère aux effets négatifs invoquée par le vitner. Si le stormikjalt est le bénéficiaire de ce pouvoir, il doit réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour se concentrer suffisamment afin de pouvoir recourir à ce pouvoir.",
+    "summary": "Des flammes engloutissent la cible et purifient son corps de tout mal, trans formation ou influence extérieure.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:joy-of-creating:2:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une personne supplémentaire à portée (qui profite de la version de base du pouvoir)"
+      }
+    ],
     "source": "Livre des règles, p. 226",
     "level": 2,
     "cost": 4,

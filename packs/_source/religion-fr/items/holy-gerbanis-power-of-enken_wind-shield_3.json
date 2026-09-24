@@ -12,7 +12,41 @@
     "catalogId": "holy-gerbanis-power-of-enken:wind-shield:3",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance.",
+    "description": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance. En revanche, le bouclier de vent ne protège pas contre les armes magiques.",
+    "summary": "Le stormikjalt invoque un bouclier fait de petits tourbillons qui lui confère une valeur de protection de 1 contre les armes de corps à corps et de 3 contre les armes à distance.",
+    "swedishName": "",
+    "duration": "1 tour de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Fait passer la portée à 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:wind-shield:3:3",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Augmente la valeur de protection de : 1"
+      }
+    ],
     "source": "Livre des règles, p. 224",
     "level": 2,
     "cost": 4,

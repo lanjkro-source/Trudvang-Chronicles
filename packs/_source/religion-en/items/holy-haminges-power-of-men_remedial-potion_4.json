@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-men:remedial-potion:4",
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
-    "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit.",
+    "description": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit. The brew requires a pinch of grass, earth, water, and a drop of blood or other bodily fluid. The brew must be mixed over a flame. This brew has a divine healing effect but lasts for a limited amount of time. After the duration has expired, the brew is nothing more than a vile liquid. The potion heals 1d10 + 1 Body Points if ingested within the duration. The spirit conjurer can have a maximum of two brews at one time.",
+    "summary": "With this relic, the spirit conjurer can create a healing potion through the power of the bound spirit.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:remedial-potion:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-haminges-power-of-men:remedial-potion:4:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the maximum number"
+      }
+    ],
     "source": "Player's Handbook, p. 216",
     "level": 3,
     "cost": 6,

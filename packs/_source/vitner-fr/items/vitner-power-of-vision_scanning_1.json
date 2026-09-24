@@ -12,8 +12,30 @@
     "catalogId": "vitner-power-of-vision:scanning:1",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
-    "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral.",
-    "source": "Livre des règles, p. 180",
+    "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
+    "summary": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral.",
+    "swedishName": "Tingspyrja",
+    "duration": "9 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:scanning:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la période sur laquelle l’enchanteur peut remonter dans l’histoire de l’objet de : 1 année"
+      },
+      {
+        "id": "vitner-power-of-vision:scanning:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 3 tours de jeu"
+      }
+    ],
+    "source": "Livre des règles, p. 182",
     "level": 2,
     "cost": 4,
     "modifier": -4

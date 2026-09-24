@@ -12,7 +12,53 @@
     "catalogId": "vitner-witchcraft:bad-harvest:6",
     "tabletId": "vitner-witchcraft",
     "tablet": "Witchcraft",
-    "description": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation.",
+    "description": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the spell’s basic version. Plants that have been harmed by this spell cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.",
+    "summary": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation.",
+    "swedishName": "Nidskord",
+    "duration": "",
+    "range": "100 meters",
+    "weavingTime": "4 hour(s)",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius by 20 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the radius by 100 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the range by 1,000 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:5",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Increase the radius by 500 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 143",
     "level": 4,
     "cost": 8,

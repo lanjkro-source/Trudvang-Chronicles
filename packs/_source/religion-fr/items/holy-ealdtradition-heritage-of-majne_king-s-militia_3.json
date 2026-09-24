@@ -12,8 +12,36 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-militia:3",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
-    "description": "Milice royale est un pouvoir de Héritage de Majne ; sa description de règles complète sera ajoutée ultérieurement.",
-    "source": "Livre des règles, p. 236",
+    "description": "Le bruide invoque un esprit guerrier venant de la grande milice du roi. Ce milicien est un guerrier simple qui porte une armure en cuir et manie une épée courte et un petit bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide serait en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de deux miliciens en même temps.<hr>Milicien : points de santé 20, valeur de protection 2, points de combat 10, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+4 points de combat)",
+    "summary": "Le bruide invoque un esprit guerrier venant de la grande milice du roi.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-militia:3:2",
+        "cost": 3,
+        "maxCount": 1,
+        "effect": "Invoque un autre esprit guerrier"
+      }
+    ],
+    "source": "Livre des règles, p. 237",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -12,8 +12,36 @@
     "catalogId": "vitner-wind-craft:wind-blast:7",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
-    "source": "Livre des règles, p. 169",
+    "description": "Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles. La rafale se compose d’un espace d’un mètre carré rempli d’air comprimé qui fonce en avant et inflige des dégâts lors de l’impact. Cette rafale est si puissante que tout ce qui se trouve à moins d’un mètre de la cible sur la trajectoire de la décharge subit 1d10 (JO 10) points de dégâts, contre lesquels les armures protègent normalement. Il est impossible de parer cette rafale, mais la protection passive d’un bouclier peut être prise en compte. Pour peu que la cible du sort n’ait pas encore agi à ce tour de jeu, si elle possède la spécialité Esquive, elle peut tenter de s’écarter de l’attaque et éviter d’être blessée, avec un malus de -1 à sa valeur de compétence pour chaque point de différence entre son rang d’initiative et l’initiative actuelle. La rafale de vent peut également servir à abattre des portes ou à projeter des objets à terre. Une porte de taille normale compte comme une entité de taille normale. Une porte en bois de taille normale dispose d’une valeur d’intégrité de 10 à 100 selon sa qualité et son épaisseur. Toute créature frappée par la rafale doit effectuer un test de compétence d’Agilité avec un malus égal aux dégâts infligés par la décharge (prendre en compte le modificateur de Force). Ainsi, un personnage ayant une VC de 14 en Agilité et qui subit 6 points de dégâts devra effectuer un test avec une VC modifiée de 8 (14 – 6). En cas de réussite, le personnage parvient à rester debout face à la rafale de vent, mais dans le cas contraire, il perd l’équilibre et se voit projeté en arrière sur une distance indiquée par la table ci-après. Les objets non attachés ne font pas de test pour résister à la rafale : ils sont automatiquement projetés sur la distance mentionnée par la table. PUISSANCE DE LA RAFALE DE VENT Taille Projection sur… <1/3 3d10 (JO 10) mètres ≥1/3 – 1/2 2d10 (JO 10) mètres ≥1/2 – 1,5 1d10 (JO 10) mètres ≥1,5 – 3 1d10 mètres ≥3 – 5 1d6 mètres ≥5 – 10 1d3 mètres ≥10 1 mètre",
+    "summary": "Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
+    "swedishName": "Kremjevauga",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:wind-blast:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:wind-blast:7:1",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Double la taille de la zone affectée : 1×1 m > 2×2 m > 4×4 m > 8×8 m > 16×16 m"
+      },
+      {
+        "id": "vitner-wind-craft:wind-blast:7:2",
+        "cost": 5,
+        "maxCount": 3,
+        "effect": "Augmente d’un degré les dégâts infligés : 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 172",
     "level": 4,
     "cost": 8,
     "modifier": -8

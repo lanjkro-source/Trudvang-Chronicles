@@ -12,8 +12,42 @@
     "catalogId": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "Le conjurateur peut suggérer une tâche à toute personne située à portée.",
-    "source": "Livre des règles, p. 274",
+    "description": "Le conjurateur peut suggérer une tâche à toute personne située à portée. La cible perçoit le murmure comme si quelqu’un chuchotait à son oreille, et ce même si le conjurateur est loin d’elle. Ce murmure est extrêmement persuasif, et la personne doit accomplir la tâche suggérée à moins de réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si la tâche implique de prendre la vie de quelqu’un (qu’il s’agisse de celle de la cible elle-même ou d’une autre personne), la cible a droit à une autre chance de rompre le charme juste avant l’acte irréparable. Si elle réussit le test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique), elle parvient à recouvrer ses esprits et pourra s’arrêter juste à temps. La cible ne peut rien faire qui exige de la créativité ou de l’esprit d’initiative.",
+    "summary": "Le conjurateur peut suggérer une tâche à toute personne située à portée.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de la victime de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 275",
     "level": 5,
     "cost": 10,
     "modifier": -10

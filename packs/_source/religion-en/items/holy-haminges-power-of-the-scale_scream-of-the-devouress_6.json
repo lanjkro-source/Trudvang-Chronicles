@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
-    "description": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment.",
+    "description": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment. The scream has a fear factor of 1d10 (OR 10), affecting all who hear it (except the conjurer).",
+    "summary": "The spirit conjurer unleashes a horrific wail that causes plants to wither and the sky to darken for a moment.",
+    "swedishName": "",
+    "duration": "",
+    "range": "20 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:1",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Increase the fear factor by one"
+      }
+    ],
     "source": "Player's Handbook, p. 218",
     "level": 4,
     "cost": 8,

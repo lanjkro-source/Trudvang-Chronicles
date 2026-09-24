@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-power-of-enken:storm-armor:5",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
-    "description": "The Stormkelt summons an armor of storm flurries around himself or a chosen character.",
+    "description": "The Stormkelt summons an armor of storm flurries around himself or a chosen character. The armor provides a Protection Value of 2 against melee weapons and a Protection Value of 4 against ranged weapons. Against magical weapons, the Protection Value is 1 against melee weapons and 3 against ranged weapons.",
+    "summary": "The Stormkelt summons an armor of storm flurries around himself or a chosen character.",
+    "swedishName": "",
+    "duration": "2 action round(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the range to 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the Protection Value by +1 (maximum 8 levels of power)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:3",
+        "cost": 3,
+        "maxCount": 8,
+        "effect": "Affect an additional person (with the ability’s basic version)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:storm-armor:5:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 162",
     "level": 3,
     "cost": 6,

@@ -12,7 +12,23 @@
     "catalogId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
-    "description": "Imbues the recipient with the destructive momentum of a rampaging huvfurwurm.",
+    "description": "wurm The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +1 weapon action per action round, as well as +5 Combat Points per action round. These points are locked into the additional weapon action, meaning that to take advantage of the extra points, the spirit conjurer must use all their ordinary weapon actions first. When the spirit conjurer uses this ability, it appears as if they gain a second pair of limbs, which wield an extra weapon.",
+    "summary": "Imbues the recipient with the destructive momentum of a rampaging huvfurwurm.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action"
+      }
+    ],
     "source": "Player's Handbook, p. 214",
     "level": 1,
     "cost": 2,

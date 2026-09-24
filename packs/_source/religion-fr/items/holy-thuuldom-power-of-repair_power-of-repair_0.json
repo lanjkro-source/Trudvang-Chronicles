@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-power-of-repair:power-of-repair:0",
     "tabletId": "holy-thuuldom-power-of-repair",
     "tablet": "Pouvoir de réparation",
-    "description": "La rune permet au thuul d’escala der des surfaces verticales.",
+    "description": "Quand le thuul active l’objet runique, ce dernier peut réparer miraculeusement les objets brisés ou endommagés. Un tel objet récupère 10 points de valeur d’intégrité par niveau de la rune.",
+    "summary": "La rune permet au thuul d’escala der des surfaces verticales.",
+    "swedishName": "",
+    "duration": "",
+    "range": "",
+    "weavingTime": "",
+    "dailyActivation": "1/niveau",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-power-of-repair:power-of-repair:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Répare un objet : +10 points d'intégrité"
+      },
+      {
+        "id": "holy-thuuldom-power-of-repair:power-of-repair:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Répare un objet : +20 points d'intégrité"
+      },
+      {
+        "id": "holy-thuuldom-power-of-repair:power-of-repair:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Répare un objet : +30 points d'intégrité"
+      },
+      {
+        "id": "holy-thuuldom-power-of-repair:power-of-repair:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Répare un objet : +40 points d'intégrité"
+      },
+      {
+        "id": "holy-thuuldom-power-of-repair:power-of-repair:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Répare un objet : +50 points d'intégrité"
+      }
+    ],
     "source": "Livre des règles, p. 287",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!cItpRB4z5A6B7C8D",

@@ -12,8 +12,60 @@
     "catalogId": "vitner-power-of-thought:telepathy:4",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée. Cette liaison leur permet de communiquer mentalement, c’est-à-dire de se parler l’un à l’autre simplement par la pensée. Une fois le sort lancé, les deux sujets peuvent s’éloigner autant qu’ils le souhaitent sans que cela n’affecte leur faculté à se parler dans le plus grand secret. La liaison ne transmet que les pensées qu’une personne veut partager, ses autres pensées demeurant protégées. Ainsi, l’enchanteur ne peut pas se servir de ce sort pour lire les pensées d’autrui. Tous les personnages liés par une version améliorée de ce sort peuvent communiquer les unes avec les autres à travers cette liaison télépathique, et pas seulement avec l’enchanteur.",
+    "summary": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée.",
+    "swedishName": "Húgtengja",
+    "duration": "10 minutes",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:telepathy:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:5",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte une autre personne ou créature située à portée, qui bénéficie de la version de base du sort"
+      }
+    ],
+    "source": "Livre des règles, p. 178",
     "level": 2,
     "cost": 4,
     "modifier": -4

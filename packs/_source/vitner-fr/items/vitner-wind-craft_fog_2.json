@@ -12,8 +12,42 @@
     "catalogId": "vitner-wind-craft:fog:2",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne.",
-    "source": "Livre des règles, p. 169",
+    "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
+    "summary": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne.",
+    "swedishName": "Mistur",
+    "duration": "5 minutes",
+    "range": "100 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:fog:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 5 minutes"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon du brouillard de : 2 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente l’épaisseur du brouillard, ce qui réduit la visibilité à un quart (distance normale / 4) et impose un malus supplémentaire de : -2 aux actions de combat"
+      }
+    ],
+    "source": "Livre des règles, p. 170",
     "level": 2,
     "cost": 4,
     "modifier": -4

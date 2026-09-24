@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
-    "description": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales.",
+    "description": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales. La cible profite d’un trait de personnage exceptionnel de +4 en Psychisme jusqu’à expiration du pouvoir.",
+    "summary": "Les ancêtres répondent à la prière du bruide et remplissent de courage le cœur de la cible (qui peut être le bruide lui-même ou une autre personne de son choix) afin qu’il puisse résister à la peur et aux influences mentales.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 239",
     "level": 1,
     "cost": 2,

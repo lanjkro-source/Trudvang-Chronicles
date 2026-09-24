@@ -12,7 +12,59 @@
     "catalogId": "vitner-body-vitner:strengthen:8",
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
-    "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power.",
+    "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+    "summary": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power.",
+    "swedishName": "Jotnastyrkja",
+    "duration": "5 action round(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:strengthen:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Raise or lower another step on the table"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:6",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      }
+    ],
     "source": "Player's Handbook, p. 96",
     "level": 4,
     "cost": 8,

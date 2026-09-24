@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
-    "description": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir.",
-    "source": "Livre des règles, p. 250",
+    "description": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir. Les victimes de cette prière voient immédiatement des plaies ouvertes apparaître sur leurs mains et leurs pieds et se mettre à saigner, ce qui a des effets plus psychologiques que physiques. Les armures et protections naturelles ne sont donc d’aucune utilité. Le prêtre désigne cinq ennemis et leur impose trois blessures chacun. Chaque blessure inflige à la victime 2 points de dégâts (soit un total de 6 points de dégâts par victime). Pour résister à la douleur psychologique (mais pas aux dégâts), chaque victime doit effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). Si elle réussit, la victime subit également un malus de -3 à tous ses tests de compétence et ses tests de situation pendant 1d6 heures. Mais en cas d’échec, la victime subit ce malus jusqu’à la fin de la journée et sombre dans l’inconscience pendant 1d6 minutes.",
+    "summary": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:0",
+        "cost": 1,
+        "maxCount": 6,
+        "effect": "Augmente le nombre de blessures qui saignent de : 1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte un autre ennemi"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit la valeur de situation de l’ennemi de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 252",
     "level": 5,
     "cost": 10,
     "modifier": -10

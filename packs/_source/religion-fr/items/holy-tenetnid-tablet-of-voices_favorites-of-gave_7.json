@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
-    "description": "Le gavlien peut bénir quelqu’un et ses futurs agissements.",
-    "source": "Livre des règles, p. 255",
+    "description": "Le gavlien peut bénir quelqu’un et ses futurs agissements. Le sujet doit être un croyant et un fidèle de la Doctrine de Nid, et doit consentir à la bénédiction. Il doit se rapprocher du prêtre et lui expliquer l’acte qui mérite la bénédiction. Si le prêtre juge cet acte digne, il peut bénir la personne. Un acte digne d’une bénédiction impliquera probablement plusieurs tests de compétence différents, qui peuvent tous bénéficier de la bénédiction. Un tel haut fait pourrait être par exemple de trouver le trésor perdu de l’église. Le bénéficiaire d’une telle bénédiction profitera de l’effet de ce pouvoir lors d’un jet de dés particulier en rapport direct ou indirect avec la recherche de ce trésor. Mais cette bénédiction a une durée limitée : il est donc important d’accomplir sa tâche avant expiration de l’effet. Dans la version de base de ce pouvoir, le prêtre peut bénir jusqu’à quatre personnes qui profitent d’un bonus de +5 à la valeur de compétence de toutes les actions qui visent à atteindre l’objectif choisi (ou qui en est une conséquence directe). Une personne ne peut pas profiter de plusieurs bénédictions à la fois. Le prêtre est incapable d’utiliser ce pouvoir sur lui-même.",
+    "summary": "Le gavlien peut bénir quelqu’un et ses futurs agissements.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:favorites-of-gave:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Bénit une personne supplémentaire"
+      }
+    ],
+    "source": "Livre des règles, p. 257",
     "level": 5,
     "cost": 10,
     "modifier": -10

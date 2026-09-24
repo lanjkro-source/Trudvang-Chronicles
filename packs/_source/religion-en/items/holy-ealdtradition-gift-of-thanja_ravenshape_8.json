@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "This ability grants the Bruid the power to transform into a raven.",
+    "description": "<p>This ability grants the Bruid the power to transform into a raven. In the animal shape, the dimwalker receives a number of traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard raven without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Reavenshape Traits ✦ A Bruid transformed with<ul><li>Reavenshape Traits</li><li>A Bruid transformed with Ravenshape</li></ul>Ravenshape has the following traits: ✦ Communicate with ravens and undead beings ✦ Movement on land is halved (the character’s movement /2) ✦ Movement in air (flying) is quadrupled (the character’s movement x 4) ✦ Exceptional character trait for Dexterity +4 ✦ Exceptional character trait for Constitution +4 ✦ Night vision. ✦ Sees all invisible and intangible beings ✦ Has a beak as a natural weapon, 1d10 (OR 10) points of damage ✦ Harder to hit due to its small size, and all who attack the raven in flight will receive -5 to the SV of the attack. This deduction also affects ranged attacks, in addition to any other modifiers for attacking a moving target.</p>",
+    "summary": "This ability grants the Bruid the power to transform into a raven.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:ravenshape:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:ravenshape:8:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 5,
     "cost": 10,

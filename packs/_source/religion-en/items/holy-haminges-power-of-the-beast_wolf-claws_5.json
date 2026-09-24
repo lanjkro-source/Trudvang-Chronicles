@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-the-beast:wolf-claws:5",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
-    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey.",
+    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey. The dimwalker calls upon the spirit and their hands grow powerful claws. The spirit conjurer can use these claws in unarmed combat, dealing 1d10 (OR 10) points of damage.",
+    "summary": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the damage by one step: 1d10 (OR 10) g 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 8-10) + 1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:wolf-claws:5:2",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 212",
     "level": 3,
     "cost": 6,

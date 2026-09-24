@@ -13,7 +13,41 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
     "description": "En concentrant son regard sur un point situé à portée de ce pouvoir, l’ihana est capable d’entendre tout ce qui se passe dans un rayon de 10 mètres autour de ce point.",
-    "source": "Livre des règles, p. 293",
+    "summary": "En concentrant son regard sur un point situé à portée de ce pouvoir, l’ihana est capable d’entendre tout ce qui se passe dans un rayon de 10 mètres autour de ce point.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "50 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:hearing:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir (point sur lequel porte le regard) de : 10 mètres"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:hearing:2:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir (point sur lequel porte le regard) de : 100 mètres"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:hearing:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:hearing:2:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de : 10 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 294",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -12,8 +12,42 @@
     "catalogId": "vitner-animal-vitner:conjure-ravens:3",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
-    "description": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible.",
-    "source": "Livre des règles, p. 187",
+    "description": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible. Il sert essentiellement à perturber d’autres enchanteurs en train de conjurer, mais on peut également s’en servir pour effrayer ou gêner d’autres personnes ou créatures. Les victimes de ce sort subissent un malus de -3 à toutes les actions qu’elles entreprennent tant que le sort demeure actif. Cela dit, une victime qui réussit un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) ne subit qu’un malus de -1 aux actions qu’elle entreprend pendant le tour de jeu actuel.",
+    "summary": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible.",
+    "swedishName": "Rafnkallja",
+    "duration": "3 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres 2 Applique un malus de : -1 aux chances qu’a la victime de réussir son test de situation"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la ténacité des corbeaux de sorte que la victime subit un malus supplémentaire de : -1 à toutes les actions qu’elle entreprend pendant la durée du sort"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Crée un autre vol de corbeau qui perturbe une autre cible"
+      }
+    ],
+    "source": "Livre des règles, p. 189",
     "level": 2,
     "cost": 4,
     "modifier": -4

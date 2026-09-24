@@ -12,7 +12,53 @@
     "catalogId": "vitner-vitner-craft:vitner-pouch:1",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "L’enchanteur tisse le vitner de façon à créer une bourse astrale.",
+    "description": "L’enchanteur tisse le vitner de façon à créer une bourse astrale. Ce sac n’est pas visible dans le monde physique, et seul l’enchanteur et ceux qui comprennent le vitner sont capables de le percevoir. En outre, seuls ceux qui sont en mesure de voir la bourse peuvent la porter. Ce sac peut contenir tous les objets ou créatures dont le poids total n’excède pas 2 kg. Tout ce qu’on place dans la bourse ne représente aucun poids supplémentaire pour celui qui la porte. Une créature qui se retrouve piégée contre son gré dans la bourse peut se libérer en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). Si la durée du sort expire alors que la bourse contient encore des objets, ces derniers tombent tous à côté du personnage. Il faut 1 tour de jeu pour extraire un objet de la bourse.",
+    "summary": "L’enchanteur tisse le vitner de façon à créer une bourse astrale.",
+    "swedishName": "Vitnasakje",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le poids total que la bourse peut contenir de : 1 kg"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente le poids total que la bourse peut contenir de : 10 kg"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente le poids total que la bourse peut contenir de : 100 kg"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:5",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 semaine"
+      }
+    ],
     "source": "Livre des règles, p. 152",
     "level": 1,
     "cost": 2,

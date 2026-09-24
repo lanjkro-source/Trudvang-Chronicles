@@ -13,6 +13,22 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Power of Thurses",
     "description": "The spirit conjurer is filled with a portion of the ice troll’s essence and is unaffected by non-magical cold.",
+    "summary": "The spirit conjurer is filled with a portion of the ice troll’s essence and is unaffected by non-magical cold.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 221",
     "level": 1,
     "cost": 2,

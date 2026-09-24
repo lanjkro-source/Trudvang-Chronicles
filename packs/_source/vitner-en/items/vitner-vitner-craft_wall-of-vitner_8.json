@@ -12,7 +12,59 @@
     "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Vitner Craft",
-    "description": "The enchanter forms a circular wall of vitner with a diameter of 2 meters.",
+    "description": "The enchanter forms a circular wall of vitner with a diameter of 2 meters. This wall protects against any spells that try to affect something on the other side of the wall. If a spell is centered outside the wall but has an area of effect that reaches beyond the wall, the spell needs to get past the vitner wall’s defense in order to have any effect. To protect against spells attempting to breach the vitner wall, the enchanter must succeed on a Situation roll every time a spell tries to break through. The Situation value depends on the level of the incoming magic,<table><thead><tr><th colspan=\"1\">WALL OF VITNER’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>as shown in the table below. If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall. WALL OF VITNER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+    "summary": "The enchanter forms a circular wall of vitner with a diameter of 2 meters.",
+    "swedishName": "Vitnahinner",
+    "duration": "5 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the wall’s diameter by 1 meter"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Change the spell type from Preserving to Lasting"
+      },
+      {
+        "id": "vitner-vitner-craft:wall-of-vitner:8:6",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 129",
     "level": 5,
     "cost": 10,

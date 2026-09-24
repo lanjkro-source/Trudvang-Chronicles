@@ -12,8 +12,66 @@
     "catalogId": "vitner-power-of-vision:far-sight:2",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
-    "description": "Le sort Vision lointaine confère un bonus de +1 à la valeur de compé tence pour toucher à l’aide d’une arme à distance.",
-    "source": "Livre des règles, p. 180",
+    "description": "L’enchanteur se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que l’enchanteur regarde à travers ce tunnel, le vitner fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La personne enchantée peut se concentrer sur n’importe quel endroit à portée du sort avec la même précision. Le sort Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+    "summary": "Le sort Vision lointaine confère un bonus de +1 à la valeur de compé tence pour toucher à l’aide d’une arme à distance.",
+    "swedishName": "Fjarrskönja",
+    "duration": "2 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:far-sight:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la distance de vision de : 100 mètres"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la distance de vision de : 500 mètres"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:4",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la distance de vision de : 10 kilomètres"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte une cible supplémentaire (qui profite des effets du sort de base)"
+      },
+      {
+        "id": "vitner-power-of-vision:far-sight:2:7",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Confère un bonus supplémentaire de : +1 à l’utilisation des armes à distance"
+      }
+    ],
+    "source": "Livre des règles, p. 182",
     "level": 2,
     "cost": 4,
     "modifier": -4

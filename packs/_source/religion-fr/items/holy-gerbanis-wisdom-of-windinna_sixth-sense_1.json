@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
-    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
+    "description": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne. Ce pouvoir sert souvent lors d’interrogatoires ou de disputes juridiques. L’arpenteur dirige ce pouvoir vers une personne située à portée et peut s’en servir pour déterminer si cette personne est hostile ou amicale envers lui.",
+    "summary": "Le stormikjalt demande à Windinna de le doter de la faculté de lire dans l’esprit et dans le cœur d’une personne.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      }
+    ],
     "source": "Livre des règles, p. 226",
     "level": 1,
     "cost": 2,

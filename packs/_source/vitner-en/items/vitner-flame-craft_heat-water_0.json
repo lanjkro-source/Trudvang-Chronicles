@@ -12,7 +12,47 @@
     "catalogId": "vitner-flame-craft:heat-water:0",
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
-    "description": "By touching water, the mage can bring up to 5 liters to a boil in that location.",
+    "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+    "summary": "By touching water, the mage can bring up to 5 liters to a boil in that location.",
+    "swedishName": "Vannhetja",
+    "duration": "5 minute(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:heat-water:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the amount of water boiled by 1 liter"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the amount of water boiled by 10 liters"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:4",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the amount of water"
+      }
+    ],
     "source": "Player's Handbook, p. 109",
     "level": 1,
     "cost": 2,

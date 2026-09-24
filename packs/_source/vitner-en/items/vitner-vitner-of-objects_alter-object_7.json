@@ -12,7 +12,65 @@
     "catalogId": "vitner-vitner-of-objects:alter-object:7",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
-    "description": "The spell affects any object with a size equal to or smaller than a large box.",
+    "description": "The spell affects any object with a size equal to or smaller than a large box. The enchanter may choose one of the f ollowing alterations when enchanting the object: Alter Appearance: The enchanter can change the object’s appearance to any shape desired. The object is shaped entirely by the enchanter’s thoughts and maintains this position for five minutes, according to the basic version of the spell. Alter Characteristics: The enchanter can change the object’s characteristics, such as hard surfaces becoming soft and vice versa. In this case, an object that was soft and flexible would t hereafter become impossible to bend or move, even though it looks the same as it did before. By strengthening an object, one can increase its Protection Value by +1 and Breach Value by +10. Other than using the changed object, the only way for anyone to recognize that it no longer has its proper shape or characteristics is through the use of the True Sight or Read Vitner spells. Once the spell ends, the object regains its original shape. The enchanter can use levels of power to alter objects into more valuable items, though size parameters still apply (the size of a large box in its basic version). The new item can then be sold for far more than it is worth, and later it will turn back into the original object. This might begin long adventures in which the enchanter gains bitter enemies.",
+    "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+    "swedishName": "Tingbreijtja",
+    "duration": "5 minute(s)",
+    "range": "contact",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "I n c r e a s e t h e a ff e c t e d a m o unt by th e s i z e o f an ot h e r l a rg e bo x"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "I n c re a s e t h e r a n g e b y 5 m e ters (c o n ta c t is n o l o n g e r n e c e s sa ry ) Increase the Protection Value by"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "an additional +1 and the Breach Value by an additional +10"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the affected amount to the size of a coffin"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:6",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Change the object’s appearance and characteristics"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:7",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 132",
     "level": 4,
     "cost": 8,

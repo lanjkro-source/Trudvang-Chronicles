@@ -12,7 +12,23 @@
     "catalogId": "holy-ealdtradition-magh-s-gift:harvest-year:8",
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Magh's Gift",
-    "description": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility , and unnaturally pleasant weather.",
+    "description": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility, and unnaturally pleasant weather. The risk of diseases and infant mortality is minimal.",
+    "summary": "The hero calls for a year of great harvest, and for the next year, that area will be abundantly blessed with bountiful harvest, miraculous fertility , and unnaturally pleasant weather.",
+    "swedishName": "",
+    "duration": "1 année",
+    "range": "rayon de 1 kilometers",
+    "weavingTime": "1 jour",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-magh-s-gift:harvest-year:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius by 1 kilometer"
+      }
+    ],
     "source": "Player's Handbook, p. 183",
     "level": 5,
     "cost": 10,

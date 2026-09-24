@@ -12,8 +12,30 @@
     "catalogId": "vitner-power-of-thought:understanding-script:0",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort permet à l’enchanteur de dé chiffrer un texte qu’il serait normalement incapable de lire.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort permet à l’enchanteur de déchiffrer un texte qu’il serait normalement incapable de lire. Tous les symboles et caractères qui composent ce texte sont convertis sous les yeux de l’enchanteur en un langage qu’il est capable de comprendre en utilisant la spécialité Lecture et écriture (compétence Connaissances, discipline Langage). Si l’enchanteur est incapable de lire ou d’écrire quelque langue que ce soit, il ne peut rien tirer de ce sort.",
+    "summary": "Ce sort permet à l’enchanteur de dé chiffrer un texte qu’il serait normalement incapable de lire.",
+    "swedishName": "Tecknkraftla",
+    "duration": "10 minutes",
+    "range": "personnelle",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:understanding-script:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:understanding-script:0:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 177",
     "level": 1,
     "cost": 2,
     "modifier": -2

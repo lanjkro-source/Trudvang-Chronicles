@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-animal-mind:animal-friend:0",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
-    "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+    "description": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away. However, they are still just TABLETS Lynx Power",
+    "summary": "Forest animals that are not sick or under magical control never willfully attack the chosen one, but instead respectfully walk away.",
+    "swedishName": "",
+    "duration": "30 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:animal-friend:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-friend:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-friend:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 8 hours"
+      }
+    ],
     "source": "Player's Handbook, p. 237",
     "level": 1,
     "cost": 2,

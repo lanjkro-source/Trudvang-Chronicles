@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur est capable de survivre à une décapitation.",
-    "source": "Livre des règles, p. 277",
+    "description": "Le conjurateur est capable de survivre à une décapitation. Quand le conjurateur subit une attaque qui devrait le tuer, lancez 1d10. Sur un résultat de 9 ou 10, sa tête est tranchée. Le conjurateur semble mort mais en réalité, il tombe immédiatement en hibernation, et au bout d’un mois une nouvelle tête a poussé et le conjurateur sort de son long sommeil. Ce pouvoir ne fonctionne qu’une seule fois, après quoi la relique associée à la Tablette sacrée se fend et devient inutilisable. Pour pouvoir utiliser de nouveau ce pouvoir, le conjurateur doit créer une nouvelle relique. Un conjurateur qui a recouru à ce pouvoir semble avoir un cou légèrement plus long que la normale qui pousse sa tête un peu en avant à la manière d’un appendice.",
+    "summary": "Le conjurateur est capable de survivre à une décapitation.",
+    "swedishName": "",
+    "duration": "2 jours",
+    "range": "personnelle",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 semaine"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6:2",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Améliore le Jet Ouvert pour que la blessure fatale touche la tête de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 279",
     "level": 4,
     "cost": 8,
     "modifier": -8

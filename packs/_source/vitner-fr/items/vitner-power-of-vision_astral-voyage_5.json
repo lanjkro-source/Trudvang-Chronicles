@@ -12,8 +12,42 @@
     "catalogId": "vitner-power-of-vision:astral-voyage:5",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
-    "description": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute.",
-    "source": "Livre des règles, p. 180",
+    "description": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de l’enchanteur se déplace à la frontière entre Trudvang et Dimhall. Là, il peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la personne enchantée quitte son enveloppe charnelle, cette dernière entre en hibernation. L’enchanteur entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de l’enchanteur. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. L’enchanteur doit prendre soin de se rapprocher de son corps avant l’expiration du corps. S’il ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que l’enchanteur subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de vitner, et qui le plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au sort Vision véritable. Un autre enchanteur qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le sort Dissipation du vitner. Le personnage ainsi banni subit alors les mêmes effets que si le sort avait expiré.",
+    "summary": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute.",
+    "swedishName": "Dimvandr",
+    "duration": "5 minutes",
+    "range": "personnelle",
+    "weavingTime": "10 minutes",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:2",
+        "cost": 18,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-power-of-vision:astral-voyage:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la capacité de mouvement de : 1 kilomètre par minute"
+      }
+    ],
+    "source": "Livre des règles, p. 183",
     "level": 4,
     "cost": 8,
     "modifier": -8

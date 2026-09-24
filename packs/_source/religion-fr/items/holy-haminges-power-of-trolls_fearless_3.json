@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-trolls:fearless:3",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur.",
+    "description": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur. Le conjurateur est rarement effrayé et réduit donc d’un degré les facteurs de peur dont il est victime (par exemple, 1d10 (JO 10) devient 1d10, et 1d5 devient 0) jusqu’à expiration du pouvoir. Celui-ci n’a d’effet que sur le conjurateur. Ce dernier ignore également les effets du premier niveau de peur (que ce niveau ait été atteint avant que le conjurateur ne fasse appel à ce pouvoir, ou pendant que ce pouvoir est actif).",
+    "summary": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:fearless:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:fearless:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:fearless:3:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Permet au conjurateur de réduire les facteurs de peur de deux degrés"
+      }
+    ],
     "source": "Livre des règles, p. 274",
     "level": 2,
     "cost": 4,

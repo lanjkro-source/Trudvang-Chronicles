@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
-    "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze.",
+    "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze. First the spirit conjurer must gain the opponent’s attention so they meet the gaze. Once eye contact is made, the opponent must make a successful Situation roll with a S ituation value of 8 (Psyche modifiers apply) or become paralyzed for 1 round. A paralyzed opponent cannot do anything until the effect wears off. If the target has not yet acted in the current action round, the paralyzing effect costs them this round of action; otherwise the effect commences in the next action round. Either way, the opponent loses 1 round of action (current or next) in the ability’s basic version.",
+    "summary": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze.",
+    "swedishName": "",
+    "duration": "1 action round(s)",
+    "range": "vision",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Reduce opponent’s Situation value"
+      }
+    ],
     "source": "Player's Handbook, p. 214",
     "level": 2,
     "cost": 4,

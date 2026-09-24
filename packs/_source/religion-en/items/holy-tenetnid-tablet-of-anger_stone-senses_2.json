@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-senses:2",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablet of Anger",
-    "description": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify.",
+    "description": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify. The opponent suffers a -2 initiative modifier and -1 on all combat actions for the duration of the ability. This ability can be used only on people and creatures that are close to humansized (from half the size of a human up to 1.5 times the size of a human).",
+    "summary": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the negative modifier by"
+      }
+    ],
     "source": "Player's Handbook, p. 194",
     "level": 2,
     "cost": 4,

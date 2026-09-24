@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-lynx-power:concealment:7",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
-    "description": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability.",
+    "description": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability. Anyone who searches for the dimwalker suffers a negative modifier of -5 to their Skill roll for the Shadow Arts skill. Even if the elf is in motion, a successful Skill roll with a negative modifier of -1 is required to find the Ihana. The Ihana can move without breaking the effect, but the elf can also choose to become temporarily visible and then reactivate the ability as desired, as long as the duration has not expired.",
+    "summary": "The Ihana is able to blend in and become one with the background as desired for the duration of the ability.",
+    "swedishName": "",
+    "duration": "3 hour(s)",
+    "range": "personalle",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:concealment:7:0",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:concealment:7:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the modifier to discover"
+      }
+    ],
     "source": "Player's Handbook, p. 239",
     "level": 4,
     "cost": 8,

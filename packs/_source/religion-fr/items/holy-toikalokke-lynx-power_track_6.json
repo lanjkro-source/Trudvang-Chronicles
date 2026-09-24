@@ -12,8 +12,36 @@
     "catalogId": "holy-toikalokke-lynx-power:track:6",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
-    "description": "L’ihana obtient une image visible d’une personne ou d’une créature qui parcourt le sentier sur lequel il se trouve en exa minant ses traces, ce qui lui permet de la pister facilement.",
-    "source": "Livre des règles, p. 293",
+    "description": "L’ihana obtient une image visible d’une personne ou d’une créature qui parcourt le sentier sur lequel il se trouve en examinant ses traces, ce qui lui permet de la pister facilement. Cela confère à l’ihana un bonus de +3 lorsqu’il tente de pister cette créature jusqu’à expiration de ce pouvoir.",
+    "summary": "L’ihana obtient une image visible d’une personne ou d’une créature qui parcourt le sentier sur lequel il se trouve en exa minant ses traces, ce qui lui permet de la pister facilement.",
+    "swedishName": "",
+    "duration": "10 minutes",
+    "range": "personnelle",
+    "weavingTime": "4 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:track:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:track:6:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:track:6:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente le modificateur de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 294",
     "level": 3,
     "cost": 6,
     "modifier": -6

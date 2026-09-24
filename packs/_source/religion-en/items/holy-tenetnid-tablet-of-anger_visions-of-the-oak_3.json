@@ -12,7 +12,41 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablet of Anger",
-    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
+    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak. The victims of this prayer immediately begin bleeding from open wounds in their hands and feet, which inflict more mental anguish than physical. Armor or natural protection therefore have no effect. The priest causes two enemies to bleed profusely from two wounds each. Every wound causes the victim 2 points of damage (for a total of 4 points of damage dealt to each person). To resist the psychological pain (but not the damage), they must successfully make a Situation roll with a Situation value of 8 (Psyche modifiers apply). On a failure, the victim must also deduct -3 from every Skill roll and Situation roll for the rest of the day.",
+    "summary": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:0",
+        "cost": 1,
+        "maxCount": 6,
+        "effect": "Increase the number of wounds that bleed by +1 (maximum 6)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:1",
+        "cost": 2,
+        "maxCount": 6,
+        "effect": "Affect another enemy (maximum 6)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:visions-of-the-oak:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the enemy’s Situation"
+      }
+    ],
     "source": "Player's Handbook, p. 194",
     "level": 2,
     "cost": 4,

@@ -12,7 +12,41 @@
     "catalogId": "vitner-soil-craft:earthquake:2",
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
-    "description": "The spell causes an area within the range to rumble with a single, heavy tremor.",
+    "description": "The Ihana causes a tremor that shakes the ground all around them, knocking every creature within the range except for the Ihana to the ground. Any objects within the range that are not EARTHQUAKE: SIZE MODIFIERS, RISK OF Extra Power Levels Size ±0 +1 &lt;1/3 -5 -7 ≥1/3 – 1/2 -2 -4 ≥1/2 – 1.5 ±0 -2 ≥1.5 – 3t +3 +1 ≥3 – 5t +5 +3 ≥5 – 10t +7 +5 ≥10t +10 +8 Risk of<br>landslide 20% 30% Damage 1d6 1d6 + 1 firmly secured will also fall or collapse. Firmly anchored objects such as trees and buildings are not affected to any great extent by the quake (aside from falling fruit, icicles, and so on), but they might be affected at higher power levels (up to the game master to decide). Any creature caught in the tremor have to make an Agility Skill roll modified depending<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell causes an area within the range to rumble with a single, heavy tremor.</td></tr></tbody></table>on their size, as shown in the table below, to avoid falling over. (See Creature Size in Game Master’s Guide for more on size values.) A creature knocked to the ground by this ability also takes 1d6 points of damage. For all creatures within the affected area (even if they do not fall over), their Skill Values and Situation values are reduced by -3 for the duration. If the ability is used underground, there is a 20% chance<table><tbody><tr><td>The spell causes an area within the range to rumble with a single, heavy tremor.</td></tr></tbody></table>(1-4 on 1d20) that a landslide or cave-in occurs. The effects of this landslide are up to the game master to decide. For every additional level of power that is added (Cost 3), it increases the risk of a landslide, modifiers to the Skill roll depending on the creature’s size, and damage taken by fallen creatures (as indicated on the table below). LANDSLIDE, AND POWER LEVELS to Increase the Effect (Cost 4) +2 +3 +4 +5 -9 -11 -13 -15 -6 -8 -10 -12 -4 -6 -8 -10 -1 -3 -5 -7 +1 -1 -3 -5 +3 +1 -1 -3 +6 +4 +2 ±0 40% 50% 60% 70% 1d6 + 2 1d6 + 3 1d6 + 4 1d6 + 5 EARTHQUAKE: CREATURE SIZES AND MODIFIERS Size Modifier &lt;1/3 -5 ≥1/3 – 1/2 -2 ≥1/2 – 1.5t ±0 ≥1.5 – 3t +3 ≥3 – 5t +5 ≥5 – 10t +7 ≥10t +10",
+    "summary": "The spell causes an area within the range to rumble with a single, heavy tremor.",
+    "swedishName": "Jördabavur",
+    "duration": "1 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:earthquake:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the diameter of the affected area by 2 meters"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration in which all vulnerable creatures must make another Skill roll by 1 round"
+      },
+      {
+        "id": "vitner-soil-craft:earthquake:2:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the effect of the earthquake"
+      }
+    ],
     "source": "Player's Handbook, p. 123",
     "level": 2,
     "cost": 4,

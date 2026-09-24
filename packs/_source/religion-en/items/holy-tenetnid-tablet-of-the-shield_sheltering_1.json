@@ -12,7 +12,29 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions.",
+    "description": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions. This aura is fixed to the site where the prayer is made and cannot be moved. The temperature of the sanctuary is increased or decreased by up to 20°C as the dimwalker wishes to create a milder climate.",
+    "summary": "The priest creates a sacred aura around himself, which protects against lighter rain, snow, and wind, but not against magical weather conditions.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "rayon de 3 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:sheltering:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:sheltering:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius by 1 meter"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 1,
     "cost": 2,

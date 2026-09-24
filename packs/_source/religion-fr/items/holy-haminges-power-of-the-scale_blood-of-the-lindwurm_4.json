@@ -12,8 +12,24 @@
     "catalogId": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
-    "description": "F Type : instantané F Portée : 20 mètres F Temps d’invocation : 1 tour de jeu Le conjurateur émet une horrible plainte qui flétrit les plantes et noircit le ciel pendant un instant.",
-    "source": "Livre des règles, p. 270",
+    "description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par tour de jeu jusqu’à expiration du pouvoir.",
+    "summary": "F Type : instantané F Portée : 20 mètres F Temps d’invocation : 1 tour de jeu Le conjurateur émet une horrible plainte qui flétrit les plantes et noircit le ciel pendant un instant.",
+    "swedishName": "",
+    "duration": "5 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente de : 1 minute la durée du pouvoir"
+      }
+    ],
+    "source": "Livre des règles, p. 271",
     "level": 3,
     "cost": 6,
     "modifier": -6

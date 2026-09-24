@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
-    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
+    "description": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie. Le conjurateur reçoit un bonus de +1 à la VC de toutes ses actions de combat tant qu’il affronte des bêtes et des animaux.",
+    "summary": "Grâce à l’esprit du loup, le conjurateur libère le chasseur qui est en lui et peut arpenter les profondeurs enténébrées de la nature sauvage tel un prédateur plutôt qu’une proie.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente le bonus en combat de : +1"
+      }
+    ],
     "source": "Livre des règles, p. 268",
     "level": 1,
     "cost": 2,

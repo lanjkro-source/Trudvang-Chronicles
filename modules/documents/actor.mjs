@@ -1,6 +1,7 @@
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
+import { spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
@@ -859,6 +860,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollSpell(item) {
+    if (item.system.isRune) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.RuneObjectNeeded"));
     if (!this.canPerformAction()) return this.warnCannotAct();
     const isDivine = item.type === "divineFeat";
     const resource = isDivine ? "divinity" : "vitner";
@@ -873,14 +875,27 @@ export class TrudvangActor extends BaseActor {
       return {id: entry.id, label: entry.item.name, target, breakdown: game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: skillValue, discipline: disciplineLevel, specialty: specialtyBonus, total: target})};
     });
     if (!methods.length || disciplineLevel < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MagicMethodRequired"));
-    const defaultCost = Number(item.system.cost || TRUDVANG.spellCosts[item.system.level] || 0);
+    const defaultCost = Number(item.system.cost ?? TRUDVANG.spellCosts[item.system.level] ?? 0);
     const strenuousMax = isDivine ? 0 : Number(this.findKnowledgeItem("strenuous")?.system.level || 0);
     const activeSpellCount = isDivine ? 0 : this.items.filter(candidate => candidate.type === "spell" && candidate.system.active).length;
+    const vitnerType = this.selectedVitnerType;
+    const affinityType = {hwitalja: "hvitavitner", darkhwitalja: "morkvitner", vaagritalja: "vaagrivitner"}[vitnerType?.id];
+    const tablet = this.items.find(candidate => candidate.type === "tablet" && candidate.system.catalogId === item.system.tabletId);
+    const affinity = isDivine ? 0 : Number(tablet?.system.affinity?.[affinityType] ?? 0);
+    const affinityState = {"-1": "favorable", 0: "neutral", 1: "unfavorable", 2: "doubled"}[affinity] ?? "neutral";
+    const affinityDescription = tablet && affinityType ? game.i18n.format("TRUDVANG.Power.AffinitySource", {
+      type: game.i18n.localize(vitnerType.label), tablet: tablet.name,
+      effect: game.i18n.localize(`TRUDVANG.Tablet.AffinityEffect.${affinityState}`)
+    }) : "";
+    const powerLevels = Array.from(item.system.powerLevels ?? []);
     const options = await magicDialog({
       title: item.name,
       methods,
       spellModifier: Number(item.system.modifier || 0),
       defaultCost,
+      powerLevels,
+      affinity,
+      affinityDescription,
       strenuousMax,
       activeSpellCount,
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
@@ -889,13 +904,14 @@ export class TrudvangActor extends BaseActor {
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
-    const vitnerType = this.selectedVitnerType;
     const perfectSuccessMax = isDivine ? 1 : (vitnerType?.perfectSuccessMax ?? 1);
     const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format("TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
-    const flavor = `${options.method.breakdown}${activeSpellsFlavor}${strenuousFlavor}`;
+    const selectedLevelsFlavor = options.costBreakdown.entries.filter(entry => entry.count).map(entry => `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.SelectedLevel", {count: entry.count, effect: entry.effect, total: entry.total, unit: entry.unitCost}))}${entry.unitCost !== entry.baseUnitCost ? ` — ${escapeHtml(game.i18n.format("TRUDVANG.Power.AffinityCost", {base: entry.baseUnitCost, adjusted: entry.unitCost}))}` : ""}`).join("");
+    const costFlavor = `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}${selectedLevelsFlavor}<br>${escapeHtml(game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"))} : ${options.cost}`;
+    const flavor = `${options.method.breakdown}${activeSpellsFlavor}${strenuousFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`, target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell", flavor, item, perfectSuccessMax});
-    const spent = isDivine && !result.success ? defaultCost : options.cost;
+    const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
     if (this.isOwner) {
       const stored = Number(this._source.system.resources[resource].value || 0);
       if (isDivine) {
@@ -908,6 +924,11 @@ export class TrudvangActor extends BaseActor {
       } else await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
     if (result?.result === 20) await this.rollFatalEffect(isDivine ? "faith" : "vitner", options.cost, item);
+    if (!isDivine && result?.critical === "success") {
+      const bonusRoll = new Roll("1d10+1");
+      await bonusRoll.evaluate();
+      await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content: `<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus", {points: bonusRoll.total}))}</p>`, rolls: [bonusRoll]});
+    }
     return result;
   }
 

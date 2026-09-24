@@ -12,8 +12,36 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:stone-senses:2",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
-    "description": "Le prêtre dirige son regard puissant vers un adversaire qui sent soudain son esprit commencer à se pétrifier.",
-    "source": "Livre des règles, p. 250",
+    "description": "Le prêtre dirige son regard puissant vers un adversaire qui sent soudain son esprit commencer à se pétrifier. La victime subit un malus de -2 à l’initiative et de -1 à toutes ses actions de combat jusqu’à expiration du pouvoir. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ).",
+    "summary": "Le prêtre dirige son regard puissant vers un adversaire qui sent soudain son esprit commencer à se pétrifier.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 action"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente le malus à l’initiative de : -2 et le malus à toutes les actions de combat de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 251",
     "level": 2,
     "cost": 4,
     "modifier": -4

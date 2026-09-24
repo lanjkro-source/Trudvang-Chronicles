@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-scale:dreadful-screech:0",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
-    "description": "Le conjurateur profère un son terri fiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’en tendre (à l’exception du conjurateur lui-même).",
+    "description": "Le conjurateur profère un son terrifiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même).",
+    "summary": "Le conjurateur profère un son terri fiant qui a un facteur de peur de 1d5 et affecte tous ceux qui peuvent l’en tendre (à l’exception du conjurateur lui-même).",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:dreadful-screech:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:dreadful-screech:0:1",
+        "cost": 3,
+        "maxCount": 5,
+        "effect": "Augmente le facteur de peur d’un degré : 1d5 > 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
     "source": "Livre des règles, p. 270",
     "level": 1,
     "cost": 2,

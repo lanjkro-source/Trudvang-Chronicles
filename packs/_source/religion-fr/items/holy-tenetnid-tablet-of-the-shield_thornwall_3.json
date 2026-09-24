@@ -12,8 +12,60 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:thornwall:3",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "Par cette prière, le prêtre invoque la force du chêne noir.",
-    "source": "Livre des règles, p. 257",
+    "description": "Par cette prière, le prêtre invoque la force du chêne noir. Dans le rayon d’effet autour du prêtre, des branches épineuses jaillissent du sol pour remplir un volume de 1d10 + 10 m3, auquel l’arpenteur des brumes peut donner la forme de son choix. Par exemple, si le prêtre a un volume de 20 m3 à sa disposition, il peut donner aux branches la forme d’un mur de 20 m de long sur 1 m de haut et 1 m de large. Il faut 1 tour de jeu aux branches pour remplir un espace de 5 m3, ce qui signifie que des branches occupant un volume de 20 m3 mettront 4 tours de jeu pour se mettre en place. Toute personne tentant de traverser les branches épineuses sans les couper subit 1d5 points de dégâts pour chaque mètre cube traversé, et cela lui prend 2 tours de jeu par mètre à traverser. Chaque mètre cube contient des branches épineuses ayant l’équivalent de 10 points de santé, si quelqu’un désire se tailler un chemin à travers le mur sans subir de dégâts.",
+    "summary": "Par cette prière, le prêtre invoque la force du chêne noir.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la quantité de branches épineuses de : 1d10 m"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la quantité de branches épineuses de : 1d10 m"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente les points de santé des branches de : 5 par m"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:thornwall:3:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente les points de santé des branches de : 5 par m"
+      }
+    ],
+    "source": "Livre des règles, p. 258",
     "level": 2,
     "cost": 4,
     "modifier": -4

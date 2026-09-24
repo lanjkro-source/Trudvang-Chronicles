@@ -12,7 +12,35 @@
     "catalogId": "vitner-body-vitner:tipping:1",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre.",
+    "description": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre. La victime de ce sort doit immédiatement effectuer un test de compétence en Agilité. En cas d’échec, la victime trébuche et tombe à terre. Dans le cas contraire, la victime ne remarque pas ce qui vient de se passer et peut continuer d’agir normalement.",
+    "summary": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre.",
+    "swedishName": "Hrasfalja",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:tipping:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-body-vitner:tipping:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Diminue les chances du personnage de réussir son jet d’Agilité de : -1"
+      },
+      {
+        "id": "vitner-body-vitner:tipping:1:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Une autre victime est affectée par la version de base de ce sort"
+      }
+    ],
     "source": "Livre des règles, p. 192",
     "level": 1,
     "cost": 2,

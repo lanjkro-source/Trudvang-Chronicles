@@ -12,7 +12,35 @@
     "catalogId": "vitner-animal-vitner:messenger:0",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+    "description": "By singing a special song, the mage can use creatures nearby to pass on a message. It does not matter what type of creatures hear the mage, as all within range are affected and will pass on the message. The animals will not change their current behavior or itinerary to deliver the message, but will simply pass it on to others they encounter on the way. This means that there is no way to predict how long it will take for the message to be delivered. If the mage is lucky, it will take only a short time; if unlucky, it might take forever. The animal can also pass the message on to intelligent beings, who hear the words of the original mage, but the recipients must decide for themselves whether or not to pass the message on further. It is up to the game master to decide how long it takes for a certain person or being within range to receive the message. In the spell’s basic version, the mage can command one creature within hearing distance of the song. The message can contain a maximum of three words and can travel 10 kilometers. LEVEL OF POWER: MESSENGER Cost Extra Level of Power 1 Increase the number of creatures who hear the song by 1 1 Increase the number of words the message can contain by 1 2 Increase the range the message can travel by 10 kilometers",
+    "summary": "By singing a special song, the mage can use creatures nearby to pass on a message.",
+    "swedishName": "Hvindbaud",
+    "duration": "spéciale",
+    "range": "100 meters",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:messenger:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:messenger:0:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:messenger:0:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 1,
     "cost": 2,

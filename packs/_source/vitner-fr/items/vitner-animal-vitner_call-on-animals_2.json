@@ -12,8 +12,42 @@
     "catalogId": "vitner-animal-vitner:call-on-animals:2",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
-    "description": "L’enchanteur peut appeler un ou plusieurs animaux non intelligents.",
-    "source": "Livre des règles, p. 187",
+    "description": "L’enchanteur peut appeler un ou plusieurs animaux non intelligents. Il peut convoquer un seul animal ayant au maximum 15 points de santé, ou un certain nombre d’animaux plus petits dont le total de points de santé cumulés ne dépasse pas 15 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux page suivante). L’enchanteur peut préciser le type d’espèce qu’il désire appeler s’il le souhaite, ou bien appeler les animaux les plus proches. Quoi qu’il en soit, les animaux se montrent prudents envers l’enchanteur. Tout mouvement rapide ou agressif de sa part ou de toute autre personne se trouvant à proximité risque d’effaroucher les animaux et de les pousser à fuir. Si quelqu’un tente de s’approcher d’un animal, on peut généralement considérer cela comme un mouvement agressif. Lorsque le sort prend fin, les animaux continuent de faire preuve de prudence et finiront par s’éloigner puisqu’ils n’ont plus l’obligation de rester.",
+    "summary": "L’enchanteur peut appeler un ou plusieurs animaux non intelligents.",
+    "swedishName": "Bestkallja",
+    "duration": "10 minutes",
+    "range": "1 kilomètre",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le nombre total de points de santé que l’enchanteur peut convoquer de : +5"
+      }
+    ],
+    "source": "Livre des règles, p. 188",
     "level": 2,
     "cost": 4,
     "modifier": -4

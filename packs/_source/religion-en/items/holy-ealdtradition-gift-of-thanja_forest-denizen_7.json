@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:forest-denizen:7",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "description": "The Bruid alters their appearance so as to blend in with the surrounding environment. The dimwalker must sit completely still in order to keep from breaking the effect. Anyone searching for the Bruid must succeed on a difficult (-10 to SV) Skill roll with the Shadow Arts skill in order to detect them.",
+    "summary": "The Bruid alters their appearance so as to blend in with the surrounding environment.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "20 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:forest-denizen:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:forest-denizen:7:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 4,
     "cost": 8,

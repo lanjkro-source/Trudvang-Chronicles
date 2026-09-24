@@ -13,6 +13,28 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Power of Men",
     "description": "The spirit conjurer calls upon the dwarves’ superior knowledge of craftsmanship and gains +6 in any single specialty under the handicraft discipline (Care skill) for the duration of the ability.",
+    "summary": "The spirit conjurer calls upon the dwarves’ superior knowledge of craftsmanship and gains +6 in any single specialty under the handicraft discipline (Care skill) for the duration of the ability.",
+    "swedishName": "",
+    "duration": "2 hour(s)",
+    "range": "personalle",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:dwarven-smith:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-men:dwarven-smith:6:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 216",
     "level": 4,
     "cost": 8,

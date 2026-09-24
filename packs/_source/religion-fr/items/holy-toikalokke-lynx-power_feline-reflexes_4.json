@@ -12,8 +12,24 @@
     "catalogId": "holy-toikalokke-lynx-power:feline-reflexes:4",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
-    "description": "L’ihana esquive une attaque à distance qui le vise.",
-    "source": "Livre des règles, p. 293",
+    "description": "L’ihana esquive une attaque à distance qui le vise. Ce pouvoir exige que l’élu soit en mesure de voir le projectile arriver et qu’il n’ait pas encore agi au cours du tour de jeu en cours.",
+    "summary": "L’ihana esquive une attaque à distance qui le vise.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personnelle",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:feline-reflexes:4:0",
+        "cost": 2,
+        "maxCount": 5,
+        "effect": "Évite une attaque à distance supplémentaire"
+      }
+    ],
+    "source": "Livre des règles, p. 294",
     "level": 3,
     "cost": 6,
     "modifier": -6

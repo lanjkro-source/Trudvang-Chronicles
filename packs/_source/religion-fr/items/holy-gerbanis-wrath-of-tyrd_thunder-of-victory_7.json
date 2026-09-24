@@ -12,8 +12,42 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
-    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
-    "source": "Livre des règles, p. 220",
+    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire et à tous ses alliés situés à portée un bonus de +4 à toutes les actions de combat jusqu’à expiration du pouvoir. En outre, tous les ennemis de l’arpenteur des brumes situés à portée subissent un malus de -4 à toutes leurs actions de combat tant que le pouvoir est actif.",
+    "summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
+    "swedishName": "",
+    "duration": "5 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le bonus aux actions de combat de : +1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le malus infligé aux ennemis de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 221",
     "level": 4,
     "cost": 8,
     "modifier": -8

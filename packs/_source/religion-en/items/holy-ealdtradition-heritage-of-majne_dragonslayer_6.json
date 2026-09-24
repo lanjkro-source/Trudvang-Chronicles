@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:dragonslayer:6",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
-    "description": "The Bruid will receive the divine power to harm dragons and dragonkin with greater potency for the duration of the ability.",
+    "description": "The Bruid will receive the divine power to harm dragons and dragonkin with greater potency for the duration of the ability. The dimwalker will receive +3 to the Skill Value for every attack against such a creature, and a successful attack will cause an additional +6 damage.",
+    "summary": "The Bruid will receive the divine power to harm dragons and dragonkin with greater potency for the duration of the ability.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:dragonslayer:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:dragonslayer:6:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the hit and damage"
+      }
+    ],
     "source": "Player's Handbook, p. 181",
     "level": 4,
     "cost": 8,

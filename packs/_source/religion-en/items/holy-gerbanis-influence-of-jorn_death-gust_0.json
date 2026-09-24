@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:death-gust:0",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence of Jorn",
-    "description": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
+    "description": "HOLY Power of Enken 1: Night Vision 1: 1: Willpower 1: 2: Bold 2:",
+    "summary": "The Stormkelt claps their hands, which hurls a booming wave of pressure and force that damages an undead being within range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:death-gust:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:death-gust:0:1",
+        "cost": 5,
+        "maxCount": 5,
+        "effect": "Increase the damage by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 160",
     "level": 1,
     "cost": 2,

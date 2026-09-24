@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablet of the Sun",
-    "description": "The prayer acts as protection against vitner and other religions’ feats.",
+    "description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage) and then collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the designated sanctuary suffers -5 to the Skill Value needed to succeed. In addition, everyone located within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +10).",
+    "summary": "The prayer acts as protection against vitner and other religions’ feats.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "rayon de 3 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the radius of the range by"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "meters"
+      }
+    ],
     "source": "Player's Handbook, p. 203",
     "level": 4,
     "cost": 8,

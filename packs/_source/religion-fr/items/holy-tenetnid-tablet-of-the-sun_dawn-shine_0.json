@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
-    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui.",
+    "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
+    "summary": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "rayon de 1 mètre",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:dawn-shine:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      }
+    ],
     "source": "Livre des règles, p. 262",
     "level": 1,
     "cost": 2,

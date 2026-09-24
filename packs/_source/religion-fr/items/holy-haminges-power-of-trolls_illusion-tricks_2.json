@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-trolls:illusion-tricks:2",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "Le conjurateur peut générer des il lusions simples.",
+    "description": "Le conjurateur peut générer des illusions simples. Il peut par exemple faire passer une assiette d’asticots et de têtards pour un délicieux ragoût de bœuf, ou bien donner à des morceaux de métal l’aspect de pièces d’or. Ces illusions simples n’affectent que la vue, et toute personne analysant les illusions avec d’autres sens (en reniflant par exemple le ragoût de bœuf ou en touchant les pièces d’or) se rendra automatiquement compte de la supercherie.",
+    "summary": "Le conjurateur peut générer des il lusions simples.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 274",
     "level": 2,
     "cost": 4,

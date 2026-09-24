@@ -12,7 +12,41 @@
     "catalogId": "vitner-animal-vitner:conjure-ravens:3",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target.",
+    "description": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target. The spell is primarily used to disrupt other mages during their conjuring, but it can also be used to frighten or disturb other people or creatures. Those who are afflicted by this spell receive -3 on everything they attempt to do while the spell is active. However, by succeeding on a Situation roll with a Situation value of 8 (Psyche modifiers apply), they suffer only -1 on actions during the current action round.",
+    "summary": "This spell conjures a murder of ravens that flaps, swirls, and caws around the target.",
+    "swedishName": "Rafnkallja",
+    "duration": "3 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:conjure-ravens:3:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the ravens’ tenacity so the"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 2,
     "cost": 4,

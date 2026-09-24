@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-animal-mind:invisible-to-animals:3",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
-    "description": "The chosen one can, when desired, become completely invisible to unintelligent animals.",
+    "description": "The chosen one can, when desired, become completely invisible to unintelligent animals. The animals can neither see nor smell the Ihana.",
+    "summary": "The chosen one can, when desired, become completely invisible to unintelligent animals.",
+    "swedishName": "",
+    "duration": "5 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 237",
     "level": 2,
     "cost": 4,

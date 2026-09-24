@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
-    "description": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence infé rieure (comme les oiseaux, les serpents et les cerfs).",
+    "description": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence inférieure (comme les oiseaux, les serpents et les cerfs). La durée de ce pouvoir indique le temps maximum qui a pu s’écouler entre la mort de l’animal et l’utilisation de cette faculté pour le ressusciter. Un animal ne peut être ramené qu’une seule fois à la vie par le biais de cette prière, et pour qu’elle fonctionne, l’animal doit souhaiter revenir à la vie.",
+    "summary": "Le prêtre peut ramener à la vie toutes sortes d’animaux d’intelligence infé rieure (comme les oiseaux, les serpents et les cerfs).",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 semaine"
+      }
+    ],
     "source": "Livre des règles, p. 253",
     "level": 2,
     "cost": 4,

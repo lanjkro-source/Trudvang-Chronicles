@@ -12,8 +12,36 @@
     "catalogId": "vitner-power-of-vision:espionage:4",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
-    "description": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour.",
-    "source": "Livre des règles, p. 180",
+    "description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
+    "summary": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour.",
+    "swedishName": "Hlustspyrja",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu/5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:espionage:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-vision:espionage:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-power-of-vision:espionage:4:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 semaine"
+      }
+    ],
+    "source": "Livre des règles, p. 182",
     "level": 3,
     "cost": 6,
     "modifier": -6

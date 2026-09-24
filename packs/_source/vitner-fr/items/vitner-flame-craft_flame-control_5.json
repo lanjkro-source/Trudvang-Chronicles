@@ -12,8 +12,54 @@
     "catalogId": "vitner-flame-craft:flame-control:5",
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
-    "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques.",
-    "source": "Livre des règles, p. 166",
+    "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
+    "summary": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques.",
+    "swedishName": "Loganrauda",
+    "duration": "5 minutes",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:flame-control:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 mètres"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:3",
+        "cost": 9,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Permet de contrôler une zone aussi grande que : une halle"
+      },
+      {
+        "id": "vitner-flame-craft:flame-control:5:5",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Permet de contrôler une zone aussi grande que : une grande maison longue"
+      }
+    ],
+    "source": "Livre des règles, p. 169",
     "level": 4,
     "cost": 8,
     "modifier": -8

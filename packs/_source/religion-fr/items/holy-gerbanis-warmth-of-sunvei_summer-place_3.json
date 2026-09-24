@@ -12,8 +12,24 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:summer-place:3",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
-    "description": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
-    "source": "Livre des règles, p. 216",
+    "description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée (qui dépend de la valeur de compétence en Foi de l’arpenteur des brumes). Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Si la durée du pouvoir se prolonge après le crépuscule, une chaude soirée d’été se poursuit dans la zone bénie jusqu’à expiration du pouvoir. Tant que ce pouvoir perdure, les terrains de chasse situés à proximité du stormikjalt (VC × 100 mètres) deviennent également plus giboyeux (+3 en compétence Nature pour chasser).",
+    "summary": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
+    "swedishName": "",
+    "duration": "3 heures",
+    "range": "rayon de VC x 100 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:summer-place:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 217",
     "level": 2,
     "cost": 4,
     "modifier": -4

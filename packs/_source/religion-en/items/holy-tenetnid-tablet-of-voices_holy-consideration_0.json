@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:holy-consideration:0",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
-    "description": "Grants divine clarity when considering words, intentions, and difficult choices.",
+    "description": "The Gavlian can bless someone and their future circumstances. The person must be a believer and follower of the Tenet of Nid, and willing to accept the blessing. The person must come to the priest and explain the intended act that deserves the blessing. If the priest deems the act worthy, they can bless the person. An act worthy of blessing will likely involve several different Skill rolls, any of which might benefit from the blessing. An example of such a deed would be to find the lost treasure of the church. If someone is blessed for this pursuit, they would benefit from the ability’s effect on a single roll that is a direct or indirect consequence of the search for that treasure. But the blessing lasts for a limited amount of time, so it is important to finish the act before the effect ends. A person cannot possess more than one blessing at a time. The priest is unable to use the ability on herself. In the basic version of the ability, the blessed person adds +1 to any Skill Value of an action that is in pursuit of (or a consequence of) the specified act.",
+    "summary": "Grants divine clarity when considering words, intentions, and difficult choices.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the blessing’s bonus by an additional +1 (maximum +3)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:holy-consideration:0:2",
+        "cost": 5,
+        "maxCount": 3,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 206",
     "level": 1,
     "cost": 2,

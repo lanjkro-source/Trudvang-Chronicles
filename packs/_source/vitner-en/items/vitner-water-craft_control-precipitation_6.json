@@ -12,7 +12,53 @@
     "catalogId": "vitner-water-craft:control-precipitation:6",
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
-    "description": "The spell can change the amount of precipitation that falls to the ground.",
+    "description": "The spell can change the amount of precipitation that falls to the ground. The area that the enchanter can affect in this manner has a radius of 50 meters from the point where the enchanter wove the spell. The enchanter can increase or decrease the amount of precipitation one degree from the current amount, as outlined in the table below. In the spell’s basic version, the center of the enchanted area is a static object or location, but by adding a power level it is possible to enchant a movable object,<table><thead><tr><th colspan=\"1\">DEGREES</th></tr><tr><th>Degree Precipitation</th></tr></thead><tbody><tr><td>0 Clear blue sky</td></tr><tr><td>1 Cloudy. No precipitation</td></tr><tr><td>2 Light rain or very light</td></tr></tbody></table>which means that the affected area can then be moved. An enchanter cannot, without extra levels of power, create rain and snow from a clear blue sky. CONTROL PRECIPITATION DEGREES Degree Precipitation 0 Clear blue sky 1 Cloudy. No precipitation 2 Light rain or very light snowfall 3 Rain or light snowfall 4 Persistent rain or snowfall 5 Pouring rain or snowstorm",
+    "summary": "The spell can change the amount of precipitation that falls to the ground.",
+    "swedishName": "Reignkraftla",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "1 hour(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:control-precipitation:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the affected radius by 50 meters"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase or decrease the strength by an additional degree"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Enchant a moveable object so the enchanted area is moveable"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 5 hours"
+      },
+      {
+        "id": "vitner-water-craft:control-precipitation:6:5",
+        "cost": 4,
+        "maxCount": 1,
+        "effect": "Increase the affected radius by 500"
+      }
+    ],
     "source": "Player's Handbook, p. 135",
     "level": 4,
     "cost": 8,

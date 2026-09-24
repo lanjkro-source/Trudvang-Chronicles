@@ -12,7 +12,41 @@
     "catalogId": "vitner-witchcraft:uprooted-tree:0",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "Ce sort déracine un arbre et provoque son effondrement.",
+    "description": "Ce sort déracine un arbre et provoque son effondrement. L’enchanteur insuffle le vitner dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le sort a été tissé, le vitner commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du sort, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le vitner n’aura pas la force de le soulever. L’enchanteur, qui doit se concentrer constamment sur ce sort, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du sort pour quelque raison que ce soit, le vitner continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de l’enchanteur doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce sort et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce sort peut soulever ou renverser environ 100 kg.",
+    "summary": "Ce sort déracine un arbre et provoque son effondrement.",
+    "swedishName": "Rotveltja",
+    "duration": "5 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:uprooted-tree:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-witchcraft:uprooted-tree:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "+0,5 mètre de circonférence et soulever ou pousser 30 kg de plus"
+      },
+      {
+        "id": "vitner-witchcraft:uprooted-tree:0:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "+1,5 mètre de circonférence et soulever ou pousser 100 kg de plus"
+      },
+      {
+        "id": "vitner-witchcraft:uprooted-tree:0:3",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "+7,5 mètres de circonférence et soulever ou pousser 500 kg de plus"
+      }
+    ],
     "source": "Livre des règles, p. 184",
     "level": 1,
     "cost": 2,

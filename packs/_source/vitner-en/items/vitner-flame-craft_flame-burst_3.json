@@ -12,7 +12,41 @@
     "catalogId": "vitner-flame-craft:flame-burst:3",
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
-    "description": "The spell creates a sudden fire that ignites within 10 meters of the enchanter.",
+    "description": "The spell creates a sudden fire that ignites within 10 meters of the enchanter. The fire takes the form of a cylinder with an approximate diameter of 1 meter. Within this cylinder, it is not only the fire that causes harm, but also the air that is heated to several hundred degrees in the blink of an eye. The fire and air together cause 1d10 points of damage to everyone within the area of effect. Regular armor offers no protection against this u nimaginably intense fire and heat. Magical armors, however, protect as usual. The flame disappears as quickly as it came if the duration is not prolonged with levels of power. Therefore, any easy-to-ignite objects within the area risk combustion only during the initial burst. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. By choosing to extend the duration, the mage can also move the fire burst to a new area within range.",
+    "summary": "The spell creates a sudden fire that ignites within 10 meters of the enchanter.",
+    "swedishName": "Logild",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:flame-burst:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase range by 5 meters"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase le diameter de l’éruption de flammes de : 1 meters"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:2",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Increase les damage d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      },
+      {
+        "id": "vitner-flame-craft:flame-burst:3:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase duration by 1 action round(s), de spelle que l’éruption de flammes continue de brûler au tour suivant"
+      }
+    ],
     "source": "Player's Handbook, p. 109",
     "level": 3,
     "cost": 6,

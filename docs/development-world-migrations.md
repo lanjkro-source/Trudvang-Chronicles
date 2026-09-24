@@ -32,6 +32,7 @@ Toute nouvelle migration de monde doit :
 | `CONTENT_VERSION = 29` et `rebuildTables()` | Réinstallent dans les mondes existants les deux tables d'effets funestes avec une borne basse de 1, pour contourner le rejet des plages commençant à 0 par Foundry V14. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 | `CONTENT_VERSION = 30` et `rebuildTables()` | Réinstallent les deux tables d'effets funestes avec une formule JO 9 correcte et l'affichage du vrai jet de dé. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 | `CONTENT_VERSION = 31` et la mise à jour des tablettes intégrées dans `importStarterContent()` | Complètent les tablettes déjà apprises par les PJ/PNJ avec les résumés, noms suédois, négations et affinités du catalogue enrichi. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
+| `CONTENT_VERSION = 32` et la mise à jour des sorts/pouvoirs intégrés dans `importStarterContent()` | Complètent les copies déjà apprises avec les descriptions intégrales, caractéristiques, niveaux de puissance et métadonnées des runes. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 
 ## `modules/rules/combat-pool-resolver.mjs`
 

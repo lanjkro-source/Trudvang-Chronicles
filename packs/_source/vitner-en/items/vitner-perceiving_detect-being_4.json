@@ -12,7 +12,47 @@
     "catalogId": "vitner-perceiving:detect-being:4",
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
-    "description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range.",
+    "description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range. However, they need to know the name of the target being sought and must possess an object that belonged to that individual to use for the ritual. The less time that has elapsed since the target had the object, the easier it is to find them. The game master must first determine the object’s value to the target (which is subjective according to the target’s point of view, but also corresponds to how long the individual had the object) and assign it an appropriate value between 1 and 100. Unlike with the Detect Object spell, 1 indicates something valuable and recently used, such as an heirloom weapon that the target had just a few hours ago, while 100 indicates something like an old sock that was last worn several years ago. If the enchanter is successful on the Situation roll, they roll 1d20 to determine how much information they DETECT BEING/UNDEAD MODIFIER Value Body Points Modifier 1-10 1-10 +8 11-20 11-20 +4 21-25 21-25 +2 26-35 26-35 ±0 36-45 36-45 -2 46-55 46-55 -4 56-65 56-65 -8 66-75 66-75 -10 76-85 76-85 -12 86-90 86-90 -16 91-95 91-95 -20 96-100 &gt; 95 -30 learn about the target’s location. The result corresponds with the Detect Object table listed above (under the Detect Object spell). Once the enchanter has a sense of where a target is currently located, that feeling remains for the spell’s duration. If the target moves, the enchanter senses it, and the direction sense is altered accordingly.",
+    "summary": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range.",
+    "swedishName": "Skopjatenskonja",
+    "duration": "1 hour(s)",
+    "range": "5 kilometers",
+    "weavingTime": "5 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:detect-being:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance that the 1d20 roll will become more precise by deducting -1 from the result"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 1,000 meters"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 10 kilometers"
+      }
+    ],
     "source": "Player's Handbook, p. 112",
     "level": 3,
     "cost": 6,

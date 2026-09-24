@@ -12,7 +12,47 @@
     "catalogId": "vitner-delusion-vitner:silence:9",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
-    "description": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location.",
+    "description": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location. The spell is woven over an object or a person and has a radius of 3 meters. If the enchanted point is moved, the sphere moves with it. All sounds generated within the spell’s range are immediately absorbed by the sphere, and are t herefore muted from anything outside the enchanted area. Within the spell’s range, however, everything sounds as it should. Because of this, the spell works well for anyone who wishes to sneak around, as no sound is able to reach beyond the sphere’s protective covering. The enchanter can also reduce the size of the sphere. By reducing the radius to just a few inches, the enchanter can weave the spell over a person or creature whose voice and noises would then completely disappear, because a listener would have to be within the sphere to hear anything they said. The spell does not hinder anything besides sound. Observers can still see through the protective sphere as if it weren’t there, even if they cannot hear any sounds from within.",
+    "summary": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location.",
+    "swedishName": "Knystdyldja",
+    "duration": "10 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:silence:9:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the sphere’s radius by 1 meter"
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-delusion-vitner:silence:9:4",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 101",
     "level": 4,
     "cost": 8,

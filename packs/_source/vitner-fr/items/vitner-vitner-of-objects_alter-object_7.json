@@ -12,8 +12,66 @@
     "catalogId": "vitner-vitner-of-objects:alter-object:7",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte.",
-    "source": "Livre des règles, p. 200",
+    "description": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte. L’enchanteur peut choisir l’une des altérations suivantes quand il enchante l’objet : Altérer l’apparence : l’enchanteur peut modifier l’apparence de l’objet et lui donner la forme de son choix, que l’objet conserve pendant cinq minutes dans la version de base du sort. Altérer les caractéristiques : l’enchanteur peut modifier les caractéristiques de l’objet, par exemple en ramollissant des surfaces dures, ou l’inverse. Dans ce cas, un objet habituellement flexible et mou deviendrait impossible à tordre ou à déplacer, même s’il conserve son aspect d’origine. En renforçant un objet, on peut augmenter sa valeur de protection de 1 et sa valeur d’intégrité de 10. À moins d’utiliser l’objet enchanté, le seul moyen de découvrir qu’il n’a plus sa forme ou ses caractéristiques d’origine consiste à recourir aux sorts Vision véritable ou Lecture du vitner. Une fois la durée du sort arrivée à échéance, l’objet reprend sa forme d’origine. L’enchanteur peut utiliser des niveaux de puissance pour augmenter la valeur de l’objet transformé, même si les paramètres de taille continuent de s’appliquer (la taille d’une grande boîte dans la version de base du sort). Le nouvel objet peut être vendu pour bien plus que sa valeur réelle, et il reprendra plus tard sa forme et sa valeur d’origine. Cela pourrait être le point de départ de longues aventures durant lesquelles l’enchanteur risque de se faire des ennemis pleins de rancune.",
+    "summary": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte.",
+    "swedishName": "Tingbreijtja",
+    "duration": "5 minutes",
+    "range": "contact",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la taille maximale de l’objet de l’équivalent de : une grande boîte"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la taille maximale de l’objet de l’équivalent de : un cercueil"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de : 1 et la valeur d’intégrité de : +10"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alter-object:7:7",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Permet de modifier l’apparence et les caractéristiques de l’objet"
+      }
+    ],
+    "source": "Livre des règles, p. 203",
     "level": 4,
     "cost": 8,
     "modifier": -8

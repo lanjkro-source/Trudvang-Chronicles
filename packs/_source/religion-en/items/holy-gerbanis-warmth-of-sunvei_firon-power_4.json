@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:firon-power:4",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Warmth of Sunvei",
-    "description": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei.",
+    "description": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei. The dimwalker’s hands then begin to glow with a purifying fire that the S tormkelt lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 3 Body Points and stops any bleeding.",
+    "summary": "The Stormkelt reaches out with their arms stretched toward the sky and calls upon Sunvei.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increases healing by +1 Body Point"
+      }
+    ],
     "source": "Player's Handbook, p. 166",
     "level": 3,
     "cost": 6,

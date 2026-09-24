@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-animal-mind:talk-to-animals:2",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
-    "description": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux.",
+    "description": "L’élu peut, quand il le désire, devenir complètement invisible aux animaux d’intelligence inférieure. Ceux-ci ne peuvent ni voir ni entendre l’ihana.",
+    "summary": "F Type : persistant F Durée : 10 tours de jeu F Portée : portée de vue et de voix F Temps d’invocation : 6 tours de jeu L’ihana peut communiquer avec les animaux.",
+    "swedishName": "",
+    "duration": "5 minutes",
+    "range": "personnelle",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:talk-to-animals:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:talk-to-animals:2:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 295",
     "level": 2,
     "cost": 4,

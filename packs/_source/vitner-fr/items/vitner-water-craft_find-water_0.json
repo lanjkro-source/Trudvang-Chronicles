@@ -12,7 +12,47 @@
     "catalogId": "vitner-water-craft:find-water:0",
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
-    "description": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchan teur peut localiser toutes les sources et Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "description": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchanteur peut localiser toutes les sources et masses d’eau situées à portée. Une fois que l’enchanteur a perçu l’odeur d’une source, il reste conscient de la direction dans laquelle elle se trouve pendant toute la durée du sort. Cependant, il peut à tout moment annuler le vitner qui le conduit vers une source spécifique afin de suivre une nouvelle source découverte pendant le tissage du sort. L’eau qu’il trouve par ce biais peut très bien être contaminée, stagnante ou située loin sous terre. Ce sort ne fonctionne pas très bien sous la pluie : les gouttes d’eau déconcentrent l’enchanteur. Ce dernier doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur ­d’Intelligence) pour ne pas être distrait ou désorienté par la pluie.",
+    "summary": "En se concentrant sur la façon dont le vitner s’écoule autour de lui, l’enchan teur peut localiser toutes les sources et Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "swedishName": "Vannfundr",
+    "duration": "10 minutes",
+    "range": "100 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:find-water:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      }
+    ],
     "source": "Livre des règles, p. 163",
     "level": 1,
     "cost": 2,

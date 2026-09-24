@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-lynx-power:orientation:0",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
-    "description": "The spell makes it possible for the enchanter to find designated objects within the range.",
+    "description": "The Ihana always knows the direction (north, south, and so on) they are facing or traveling when in the woods, regardless of debilitating conditions of sight such as darkness or fog.",
+    "summary": "The spell makes it possible for the enchanter to find designated objects within the range.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:orientation:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Expand the ability to include another landscape (mountains, swampland, etc.)"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:orientation:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:orientation:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 3 hours"
+      }
+    ],
     "source": "Player's Handbook, p. 239",
     "level": 1,
     "cost": 2,

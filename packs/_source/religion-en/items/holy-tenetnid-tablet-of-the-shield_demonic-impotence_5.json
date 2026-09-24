@@ -12,7 +12,29 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold.",
+    "description": "The priest prays to Gave, and as a result their hands begin to glow. For the next 10 action rounds, the priest gains the ability to rip one feat from a demon simply by touching the demon with their glowing hands (a successful unarmed attack). If the priest successfully purges a demon of one of its abilities, the demon cannot use it for the duration listed above. A priest can rip only one ability away from any demon. If the priest spends a raud when successfully ripping an ability from a demon, the demon loses the purged ability permanently.",
+    "summary": "The priest creates a sacred aura around herself, which protects against rain, snow, wind, and natural heat or cold.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 3,
     "cost": 6,

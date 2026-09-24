@@ -273,6 +273,17 @@ function magicSchema() {
     level: integer(1, {min: 1, max: 5}),
     cost: integer(2, {min: 0}),
     modifier: integer(-2),
+    summary: string(),
+    swedishName: string(),
+    powerLevels: new fields.ArrayField(schema({
+      id: string(),
+      cost: integer(0, {min: 0}),
+      maxCount: new fields.NumberField({required: false, nullable: true, integer: true, min: 1, initial: null}),
+      effect: string()
+    }), {required: true, initial: []}),
+    isRune: boolean(false),
+    dailyActivation: string(),
+    spellType: string("instant"),
     duration: string("Instant"),
     range: string("Personal"),
     weavingTime: string("1 action round"),
@@ -386,8 +397,7 @@ export class SpellData extends BaseItemData {
       ...magicSchema(),
       catalogId: string(),
       tabletId: string(),
-      tablet: string(),
-      spellType: string("instant")
+      tablet: string()
     };
   }
 }

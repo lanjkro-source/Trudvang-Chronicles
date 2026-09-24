@@ -12,8 +12,24 @@
     "catalogId": "holy-haminges-power-of-men:weapon-prowess:5",
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
-    "description": "Le conjurateur fait appel aux redou tables techniques de combat des nains et devient plus efficace dans le maniement des armes au combat.",
-    "source": "Livre des règles, p. 272",
+    "description": "Le conjurateur fait appel aux redoutables techniques de combat des nains et devient plus efficace dans le maniement des armes au combat. Il bénéficie d’un bonus de +5 points de combat par tour de jeu jusqu’à expiration du pouvoir.",
+    "summary": "Le conjurateur fait appel aux redou tables techniques de combat des nains et devient plus efficace dans le maniement des armes au combat.",
+    "swedishName": "",
+    "duration": "4 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:weapon-prowess:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      }
+    ],
+    "source": "Livre des règles, p. 273",
     "level": 3,
     "cost": 6,
     "modifier": -6

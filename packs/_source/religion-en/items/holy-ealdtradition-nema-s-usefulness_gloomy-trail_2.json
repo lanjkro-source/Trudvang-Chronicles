@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
-    "description": "The Bruid summons a blanket of fog that spreads out before them and their allies.",
+    "description": "The Bruid summons a blanket of fog that spreads out before them and their allies. When the Bruid and their companions travel through this mist, they will be able to cover far more ground than normal. Any journey or travel they take through the fog will effectively double the distance normally covered, so a full day of travel through the fog will cover an amount of distance in Trudvang equal to a two-day march. The fog is rumored to come from Othwa, a reflection of the Bruid’s kingdom where the dead dwell. It takes 1d10 action rounds for the fog to fully materialize, and it is far too sparse for anyone to hide in it. However, anyone near the Bruid and their allies who attempts to pursue them through the fog will quickly be left far behind. Furthermore, if one of the dimwalker’s allies trails outside of the ability’s range, they begin to lose the others in the fog as that character now travels at normal pace.",
+    "summary": "The Bruid summons a blanket of fog that spreads out before them and their allies.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "10 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gloomy-trail:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 185",
     "level": 2,
     "cost": 4,

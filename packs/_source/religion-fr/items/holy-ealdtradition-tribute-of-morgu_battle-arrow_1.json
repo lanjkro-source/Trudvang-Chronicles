@@ -12,7 +12,23 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
-    "description": "noire. Cette flèche touche automatique ment si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+    "description": "Le bruide en appelle à la puissance de Morgu, qui décoche une flèche dans la bataille afin de venir en aide à l’arpenteur des brumes. Cette flèche est considérée comme un projectile magique, mais les armures conservent toute leur protection contre elle. Les boucliers confèrent également une protection passive contre cette flèche selon les règles habituelles. Le bruide vise un ennemi situé à portée, qui est alors frappé par une flèche noire. Cette flèche touche automatiquement si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+    "summary": "noire. Cette flèche touche automatique ment si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+    "swedishName": "",
+    "duration": "",
+    "range": "20 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 241",
     "level": 1,
     "cost": 2,

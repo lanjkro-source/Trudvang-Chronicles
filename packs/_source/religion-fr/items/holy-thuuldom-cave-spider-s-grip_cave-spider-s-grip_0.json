@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
     "tabletId": "holy-thuuldom-cave-spider-s-grip",
     "tablet": "Prise de l'araignée des cavernes",
-    "description": "La rune permet au thuul d’escala der des surfaces verticales.",
+    "description": "La rune permet au thuul d’escalader des surfaces verticales. La capacité de mouvement du thuul est réduite de moitié, mais il reçoit un bonus de +1 mètre par niveau de rune. Le thuul doit utiliser à la fois ses mains et ses pieds pour se déplacer à pleine vitesse sur les surfaces verticales ou au plafond. Cela dit, le thuul peut porter le même poids que lorsqu’il se déplace au sol. Si le thuul est toujours en hauteur quand le pouvoir arrive à expiration, il chute immédiatement.<p>Prise de l’araignée des cavernes confère les traits suivants :</p><ul><li>Mouvement/2, +1 par niveau</li><li>Au niveau 4, le thuul devient capable de marcher au plafond</li></ul>",
+    "summary": "La rune permet au thuul d’escala der des surfaces verticales.",
+    "swedishName": "",
+    "duration": "2 minutes/niveau",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "1",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +1 mètre"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +2 mètres"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +3 mètres"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Peut marcher au plafond et remplace la vitesse de déplacement par : Mouvement/2, +4 mètres"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Peut marcher au plafond et remplace la vitesse de déplacement par : Mouvement/2, +5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 287",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!8FNcPKdJeKfLgMhN",

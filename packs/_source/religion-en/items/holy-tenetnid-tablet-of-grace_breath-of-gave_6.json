@@ -12,7 +12,23 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
-    "description": "Restores life and strength through Gave's merciful breath.",
+    "description": "The priest is embodied in part with the healing power of Gave, and places their hands over the wound of an injured person in their care. This ability heals the injured person of 6 Body Points per minute for the duration of the ability. Broken bones, internal injuries, and exposed wounds heal so completely that not even scars remain. The priest may also apply this prayer to himself.",
+    "summary": "Restores life and strength through Gave's merciful breath.",
+    "swedishName": "",
+    "duration": "3 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:breath-of-gave:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 197",
     "level": 4,
     "cost": 8,

@@ -12,7 +12,35 @@
     "catalogId": "vitner-soil-craft:rock-throw:0",
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
-    "description": "The enchanter picks up a small rock and throws it at a target within range.",
+    "description": "The enchanter picks up a small rock and throws it at a target within range. The vitner evoked by this spell causes the rock to grow to a normal-sized barrow stone as it hurls toward its target, inflicting 1d10 (OR 10) points of damage. Armor protects normally. The enchanter does not need to throw the rock to enlarge it in this way. If they simply desire a huge stone for some reason, this spell works in the same manner as long as the enchanter has a small stone to begin with. A target who carries a shield may be lucky and use it to block the gigantic stone, benefitting from its passive protection. If the intended target has the Evade specialty, they can attempt to jump away from the attack and avoid injury as long as they have not yet acted during the action round, modifying the Skill Value by -1 for every point between their initiative and the current initiative.",
+    "summary": "The enchanter picks up a small rock and throws it at a target within range.",
+    "swedishName": "Steinflegja",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:rock-throw:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-soil-craft:rock-throw:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Create a small stone in one’s hand (no longer requiring one)"
+      },
+      {
+        "id": "vitner-soil-craft:rock-throw:0:2",
+        "cost": 5,
+        "maxCount": 3,
+        "effect": "Increase the damage by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 123",
     "level": 1,
     "cost": 2,

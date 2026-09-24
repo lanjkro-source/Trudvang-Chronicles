@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-power-of-enken:hurricane-armor:7",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
-    "description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character.",
+    "description": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character. The armor provides a Protection Value of 4 against melee weapons and a Protection Value of 6 against ranged weapons. Against magical weapons, the Protection Value is 3 against melee weapons and 5 against ranged weapons.",
+    "summary": "The Stormkelt summons an armor of massive storm flurries that swirl around the dimwalker or a chosen character.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an additional person within range (with the spell’s basic version)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the range to 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the Protection Value by +1 (maximum 12 levels of power)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:hurricane-armor:7:4",
+        "cost": 5,
+        "maxCount": 12,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 162",
     "level": 4,
     "cost": 8,

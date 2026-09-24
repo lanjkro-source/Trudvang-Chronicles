@@ -12,7 +12,59 @@
     "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner of Objects",
-    "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³).",
+    "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length).",
+    "summary": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³).",
+    "swedishName": "Tingvidge/tingknyttje",
+    "duration": "4 minute(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the amount of affected material by 1 dm³"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the amount of affected material by 10 dm³"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:5",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase/decrease the effect by an additional x2"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:6",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 132",
     "level": 4,
     "cost": 8,

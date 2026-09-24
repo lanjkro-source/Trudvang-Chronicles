@@ -12,8 +12,48 @@
     "catalogId": "vitner-dimvitner:control-undead:7",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons.",
-    "source": "Livre des règles, p. 155",
+    "description": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons. En prenant le contrôle du lien entre les morts-vivants et leur royaume, l’enchanteur peut asseoir son pouvoir sur les âmes des morts-vivants. Pour ce faire, toutefois, l’enchanteur doit commencer par réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Psychisme), modifiée en fonction du nombre maximal de points de santé du mort-vivant, comme l’indique la table cidessous. Si l’enchanteur parvient à prendre le contrôle d’un mort-vivant, ce dernier obéit à tous ses ordres. Ce contrôle est immédiatement rompu si l’enchanteur perd conscience. L’enchanteur peut contrôler autant de morts-vivants situés à portée du sort qu’il le désire, mais on calcule alors la somme des points de santé de tous les morts-vivants ciblés pour calculer la difficulté du test de situation. MODIFICATEUR:\n|Points de santé|Modificateur|\n|---|---|\n|1–10|+8|\n|11–15|+4|\n|16–19|+2|\n|20–25|+0|\n|26–30|-2|\n|31–35|-4|\n|36–45|-6|\n|46–55|-8|\n|56–65|-10|\n|66–75|-12|\n|76 et plus|-4|\n",
+    "summary": "Ce sort permet à l’enchanteur de contrôler l’âme d’une ou plusieurs créatures mortes-vivantes, comme les squelettes, les disers (ou fantômes), les spectres et les draugrs, mais pas les démons.",
+    "swedishName": "Rauda sálhele",
+    "duration": "5 minutes",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:control-undead:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de l’enchanteur de réussir son test de situation de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 157",
     "level": 5,
     "cost": 10,
     "modifier": -10

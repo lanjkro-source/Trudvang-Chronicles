@@ -12,7 +12,41 @@
     "catalogId": "vitner-animal-vitner:call-on-animals:2",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "Calls nearby animals of a chosen kind to gather around the mage.",
+    "description": "TYPES OF ANIMALS FOR CALL ON Type of Animal Small bird, rat Cat, bird, hen, small dog, fox Large bird, dog, roe deer, wolf Large dog, deer, drauglo Donkey [1.5x] Horse, frostboar [2x] Cave boar, bear, ox Mastomant Dragon The mage can call on one or more unintelligent animals. In total they can call on one animal with a maximum amount of 15 Body Points, or a number of smaller animals that together total up to 15 Body Points, see table below for direction. The mage can specify what type of species to call, if desired, or call the ANIMALS AND CONTROL ANIMALS Size BP [&lt;1/3] Size of a piglet 1-2 [1/3] Size of a lamb 3-9 [1/2] Size of a foal 10-16 [1x] Size of a calf 17-30 Size of the largest tame swine 31-41 Size of the largest tame sow 42-52 [4x] Size of an ox 53-84 [7x] Size of a mastomant 85-199 [&gt; 10x] Size of a dragon 200+ closest animals. Regardless, the animals are cautious with the mage. Any fast or aggressive movements from the mage or anyone else in the vicinity might startle the animals and cause them to flee. If someone tries to get close to an animal, this is normally regarded as an aggressive move. Once the spell’s duration ends, the animals continue to be watchful and eventually move away from the place as the compulsion to stay is lifted.",
+    "summary": "Calls nearby animals of a chosen kind to gather around the mage.",
+    "swedishName": "Bestkallja",
+    "duration": "10 minute(s)",
+    "range": "1 kilometers",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the limit on how many Body Points the mage can call by +5"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the range by 1 kilometer"
+      },
+      {
+        "id": "vitner-animal-vitner:call-on-animals:2:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 2,
     "cost": 4,

@@ -12,8 +12,30 @@
     "catalogId": "holy-haminges-power-of-trolls:troll-wit:7",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir.",
-    "source": "Livre des règles, p. 274",
+    "description": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir. Le conjurateur ignore également les effets du premier et du second niveau de peur jusqu’à expiration du pouvoir (que ce niveau ait été atteint avant qu’il invoque ce pouvoir, ou pendant qu’il est actif).",
+    "summary": "L’esprit lié confère un tel courage au conjurateur qu’il ne peut plus gagner de points de peur jusqu’à expiration du pouvoir.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:troll-wit:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:troll-wit:7:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 275",
     "level": 4,
     "cost": 8,
     "modifier": -8

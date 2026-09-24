@@ -12,8 +12,42 @@
     "catalogId": "vitner-wind-craft:control-wind:3",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon.",
-    "source": "Livre des règles, p. 169",
+    "description": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon. L’enchanteur peut augmenter ou réduire d’un degré la force actuelle du vent dans cette sphère, comme l’indique la table ci-dessous. Dans la version de base du sort, le centre de la zone enchantée est un lieu ou un objet statique, mais en ajoutant des niveaux de puissance au sort, il est possible d’enchanter un objet mobile, que la zone affectée suivra dans ses déplacements. DEGRÉS ET VENT:\n|Degré|Force du vent|\n|---|---|\n|1|Calme|\n|2|Brise|\n|3|Vent (-1)|\n|4|Tempête (-2)|\n|5|Ouragan (-4)|\n|6|Ouragan titanesque (-6)|\n Les termes utilisés dans cette table ne sont qu’une indication des forces qui peuvent se produire. C’est au maître de jeu de déterminer ce qui se produit exactement en fonction de la situation actuelle. La table mentionne également des valeurs entre parenthèses : elles indiquent les modificateurs normaux appliqués aux tests de situation de toute action de mouvement, de concentration ou de précision entreprise sous ces conditions.",
+    "summary": "Ce sort permet de contrôler la force du vent à l’intérieur d’une sphère de 10 mètres de rayon.",
+    "swedishName": "Rauda vindr",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:control-wind:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-wind-craft:control-wind:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de : 10 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:control-wind:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Enchante un objet mobile de manière à pouvoir déplacer la sphère enchantée"
+      },
+      {
+        "id": "vitner-wind-craft:control-wind:3:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente ou réduit la force du vent d’un degré"
+      }
+    ],
+    "source": "Livre des règles, p. 170",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-lynx-power:tree-walk:1",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
-    "description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mou vement normale.",
+    "description": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mouvement normale. Si les arbres sont si proches les uns des autres que l’élu peut tendre les bras et toucher les branches de deux arbres en même temps, il peut également grimper et se déplacer d’arbre en arbre à travers la canopée (au maître de jeu de décider). Dans les zones plus difficiles à traverser, l’ihana peut tout de même tenter de progresser à l’aide d’un jet de situation avec une valeur de situation laissée à l’appréciation du maître de jeu (le modificateur de Dextérité s’applique) ou un test de compétence d’Agilité.",
+    "summary": "L’ihana peut se déplacer parmi les arbres à la moitié de sa capacité de mou vement normale.",
+    "swedishName": "",
+    "duration": "10 minutes",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 heures"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:2",
+        "cost": 4,
+        "maxCount": 1,
+        "effect": "Augmente la vitesse pour atteindre le mouvement normal"
+      }
+    ],
     "source": "Livre des règles, p. 293",
     "level": 1,
     "cost": 2,

@@ -12,8 +12,24 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
-    "description": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix.",
-    "source": "Livre des règles, p. 262",
+    "description": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix. Cette prière peut être délicate à utiliser car les visions reçues ouvrent toujours la porte à différentes interprétations. C’est au maître de jeu de déterminer le degré de précision de la vision de l’avenir proche. La vision ne révélera jamais l’issue finale d’une situation, mais elle peut révéler quels événements vont se produire. Par exemple, ce pouvoir pourrait révéler que le prêtre devra affronter un dragon dans un avenir proche, mais pas comment cette rencontre va se terminer. Le prêtre ferme les yeux et place ses mains autour de la personne de son choix, ou bien frappe dans ses mains s’il désire connaître son propre avenir. Le bénéficiaire du pouvoir reçoit une vision d’un événement qui va l’affecter dans la semaine qui suit. Il devrait s’agir d’un événement crucial dans la vie du sujet, mais si ce n’est pas possible, un événement important fera l’affaire.",
+    "summary": "Le prêtre demande à son dieu de lui révéler l’avenir, et Gave répond en envoyant une vision à l’arpenteur des brumes ou à la personne de son choix.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:portent:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le temps qui peut s’écouler entre la vision et l’événement qu’elle traduit de : 1 semaine"
+      }
+    ],
+    "source": "Livre des règles, p. 264",
     "level": 5,
     "cost": 10,
     "modifier": -10

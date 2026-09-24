@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-master-of-elements:purify-water:2",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
-    "description": "L’ihana peut purifier jusqu’à 1 litre d’eau.",
+    "description": "L’ihana peut purifier jusqu’à 1 litre d’eau. Pour purifier une boisson empoisonnée ou dotée de propriétés magiques, l’élu doit réussir un test de situation avec une valeur de situation de 15 et un malus qui dépend de la force du poison ou du niveau du sort.",
+    "summary": "L’ihana peut purifier jusqu’à 1 litre d’eau.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:purify-water:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte 1 litre d’eau supplémentaire"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:purify-water:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Applique un modificateur de : +1 au jet de situation"
+      }
+    ],
     "source": "Livre des règles, p. 297",
     "level": 1,
     "cost": 2,

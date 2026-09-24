@@ -12,7 +12,41 @@
     "catalogId": "vitner-power-of-vision:seeing:3",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
-    "description": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+    "description": "The spell enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the spell, the enchanted character’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or spells that impair vision. However, the enchanted character cannot detect things that they would not be able to see under normal c onditions. The Seeing spell can also be used to cancel the effects of spells that impair vision (effective for the spell’s duration), such as Vision/Blindness.",
+    "summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+    "swedishName": "Edliauga",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:seeing:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-power-of-vision:seeing:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-vision:seeing:3:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-power-of-vision:seeing:3:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 120",
     "level": 3,
     "cost": 6,

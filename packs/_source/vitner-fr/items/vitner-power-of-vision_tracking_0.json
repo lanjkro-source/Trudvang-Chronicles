@@ -12,8 +12,36 @@
     "catalogId": "vitner-power-of-vision:tracking:0",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
-    "description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les em preintes d’une autre créature sur le sol.",
-    "source": "Livre des règles, p. 180",
+    "description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la personne enchantée peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. L’enchanteur peut également suivre les traces d’une créature ayant bénéficié du sort Sans trace. Pour pouvoir utiliser le vitner en vue de pister une créature, l’enchanteur doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le tissage du sort réussi : l’enchanteur ne peut donc pas répéter le même sort à moins de se procurer un autre échantillon de la créature visée.",
+    "summary": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les em preintes d’une autre créature sur le sol.",
+    "swedishName": "Sporskönja",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:tracking:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-vision:tracking:0:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 12 heures"
+      },
+      {
+        "id": "vitner-power-of-vision:tracking:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      }
+    ],
+    "source": "Livre des règles, p. 181",
     "level": 1,
     "cost": 2,
     "modifier": -2

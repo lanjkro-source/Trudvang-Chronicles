@@ -12,8 +12,30 @@
     "catalogId": "vitner-animal-vitner:speak-to-animals:1",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
-    "description": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres.",
-    "source": "Livre des règles, p. 187",
+    "description": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres. Ce lien permet à l’enchanteur de communiquer avec l’animal, qui tentera de répondre aux questions de l’enchanteur au mieux de ses facultés. Ayez à l’esprit que la plupart des animaux sont dénués d’intelligence et seront la plupart du temps incapables de donner des réponses précises. Ainsi, les informations que l’enchanteur peut recueillir de cette façon sont souvent peu fiables. Cela dit, ce n’est jamais intentionnel de la part des animaux, qui essaient toujours de faire de leur mieux. L’enchanteur doit se contenter de questions basiques, qui appellent des réponses encore plus basiques. Vous trouverez ci-dessous quelques exemples de questions et leurs réponses possibles.",
+    "summary": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres.",
+    "swedishName": "Bestamal",
+    "duration": "1 minute",
+    "range": "50 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:speak-to-animals:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 10 mètres"
+      },
+      {
+        "id": "vitner-animal-vitner:speak-to-animals:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      }
+    ],
+    "source": "Livre des règles, p. 188",
     "level": 1,
     "cost": 2,
     "modifier": -2

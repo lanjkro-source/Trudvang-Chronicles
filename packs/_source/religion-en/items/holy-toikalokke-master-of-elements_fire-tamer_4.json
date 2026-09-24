@@ -13,6 +13,40 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
     "description": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range.",
+    "summary": "The Ihana can create or extinguish up to 1 cubic meter of fire per action round, within the designated range.",
+    "swedishName": "",
+    "duration": "1 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 3 action rounds"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the affected surface by 1 m3"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 action rounds"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 241",
     "level": 2,
     "cost": 4,

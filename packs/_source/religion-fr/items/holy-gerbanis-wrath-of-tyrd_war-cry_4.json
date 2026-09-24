@@ -12,8 +12,54 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:war-cry:4",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
-    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
-    "source": "Livre des règles, p. 220",
+    "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
+    "summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:1",
+        "cost": 1,
+        "maxCount": 6,
+        "effect": "Augmente le nombre d’alliés affectées par ce pouvoir de : 1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le nombre d’ennemis affectés par ce pouvoir de : +1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:4",
+        "cost": 2,
+        "maxCount": 6,
+        "effect": "Augmente le bonus aux actions de combat de : 1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:war-cry:4:5",
+        "cost": 2,
+        "maxCount": 6,
+        "effect": "Augmente le malus infligé aux ennemis de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 221",
     "level": 3,
     "cost": 6,
     "modifier": -6

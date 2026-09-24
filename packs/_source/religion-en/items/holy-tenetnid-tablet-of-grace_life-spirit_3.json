@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:life-spirit:3",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
-    "description": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death.",
+    "description": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death. The ability’s duration indicates the maximum amount of time that an animal can lie dead and still be resurrected by the priest. An animal can be revived only once with this ability, and to be revived, the creature must desire to come back to life.",
+    "summary": "The priest can revive any of a variety of unintelligent animals (such as birds, snakes, and deer) from the brink of death.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-grace:life-spirit:3:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 week"
+      }
+    ],
     "source": "Player's Handbook, p. 197",
     "level": 2,
     "cost": 4,

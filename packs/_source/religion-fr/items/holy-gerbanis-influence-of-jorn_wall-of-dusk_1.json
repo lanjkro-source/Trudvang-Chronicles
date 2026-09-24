@@ -12,7 +12,41 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
-    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui.",
+    "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui. Le stormikjalt dispose d’une surface de 20 mètres carrés sur laquelle il peut façonner les fondations de son mur comme bon lui semble. Un arpenteur des brumes peut ainsi utiliser ces 20 m² pour créer un mur de 1 m d’épaisseur et 20 m de long, ou de 5 m d’épaisseur sur 4 m de long, etc. Ce mur s’étend aussi haut que le regard peut porter. Si un stormikjalt lève un mur de ténèbres à un endroit déjà occupé par une créature, cette dernière est immédiatement affectée par les ténèbres et reçoit les modificateurs adéquats. Le stormikjalt fait appel à Jorn, qui lui offre un morceau du crépuscule aussi noir et épais que la nuit. Ces ténèbres, auxquelles l’arpenteur des brumes peut donner la forme de son choix, confèrent un malus de -3 à toutes les actions de combat entreprises à l’intérieur des ténèbres ou qui visent une cible qui s’y trouve, comme en pleine nuit. Toute personne bénéficiant d’une vision de nuit, d’une vision dans le noir ou d’une vision véritable n’est pas affectée par ces ténèbres.",
+    "summary": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 10 mètres de lui.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la surface affectée de : 10 m²"
+      }
+    ],
     "source": "Livre des règles, p. 222",
     "level": 1,
     "cost": 2,

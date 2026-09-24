@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-power-of-enken:night-vision:0",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Power of Enken",
-    "description": "The Stormkelt is granted night vision for one minute.",
+    "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
+    "summary": "The Stormkelt is granted night vision for one minute.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:night-vision:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:night-vision:0:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Change range to Contact (allowing"
+      }
+    ],
     "source": "Player's Handbook, p. 162",
     "level": 1,
     "cost": 2,

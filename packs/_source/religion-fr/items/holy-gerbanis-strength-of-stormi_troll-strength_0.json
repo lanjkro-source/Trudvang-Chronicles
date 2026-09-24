@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
-    "description": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix).",
+    "description": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix). Cette force se traduit par un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+    "summary": "Storme exauce le vœu du stormikjalt et confère au bénéficiaire une force hors du commun (il peut s’agir du stormikjalt lui-même ou de la personne de son choix).",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 218",
     "level": 1,
     "cost": 2,

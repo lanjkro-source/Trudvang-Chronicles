@@ -12,8 +12,36 @@
     "catalogId": "vitner-vitner-craft:seal:5",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’inté grer ensuite à un objet.",
-    "source": "Livre des règles, p. 152",
+    "description": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’intégrer ensuite à un objet. L’enchanteur doit d’abord tisser le Sceau avant de tisser le sort qu’il désire y associer. Une fois qu’il y est parvenu, l’enchanteur relie ce sort à l’objet de son choix. Le sort se retrouve scellé dans l’objet et y reste jusqu’à ce qu’on l’active. Si le sceau est détruit par le biais du sort Dissipation du vitner, le sort lié est activé au lieu d’être dissipé – à moins que le sort lié ne soit dissipé en premier, avant le sceau. Ce sceau magique apparaît dès que l’enchanteur trace du bout des doigts le motif du sceau sur l’objet et choisit l’événement déclencheur qui brisera le sceau et libérera la magie qu’il contient. Le sort peut être déclenché lorsqu’une personne touche l’objet, ou bien lorsque l’objet change de propriétaire, ou encore si quelqu’un tente de dissiper le sceau. C’est à l’enchanteur de choisir les conditions précises, avec l’accord du maître de jeu. L’enchanteur peut également décider d’un délai, ce qui fait que le sort se déclenchera au bout de la durée choisie, plutôt qu’en fonction d’un événement déclencheur. Ce délai ne peut pas dépasser une année. La magie du sceau se déclenche dès que ses conditions d’activation sont remplies, et le sort libéré peut affecter une zone de 3 mètres de rayon autour du sceau. S’il le souhaite, l’enchanteur peut préciser un moyen de briser le sceau en dispersant le vitner qu’il contient sans activer le sort associé (ce dernier est tout de même perdu). Il peut s’agir par exemple d’appuyer au centre de l’objet à l’aide de trois doigts, ou de siffler une note ou une mélodie particulière. La vision normale ne permet pas de percevoir le sceau (à moins que l’enchanteur n’ait choisi de rendre le sceau visible). En revanche, certains sorts tels que Vision véritable ou Lecture du vitner permettent d’observer le sceau. Seuls les sorts de type persistant ou instantané peuvent être associés au sceau, et la version de base du sceau ne peut accueillir que des sorts du premier niveau. Le nombre maximum de sceaux chargés d’un sort qu’un enchanteur peut maintenir en même temps est égal à sa valeur maximale de réserve de vitner.",
+    "summary": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’inté grer ensuite à un objet.",
+    "swedishName": "Bindjakraftla",
+    "duration": "jusqu’à activation",
+    "range": "3 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:seal:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Ajoute une nouvelle condition de déclenchement"
+      },
+      {
+        "id": "vitner-vitner-craft:seal:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sceau de 5 mètres"
+      },
+      {
+        "id": "vitner-vitner-craft:seal:5:2",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Augmente le niveau du sort qu’on peut lier au sceau de 1"
+      }
+    ],
+    "source": "Livre des règles, p. 154",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -12,7 +12,53 @@
     "catalogId": "vitner-power-of-thought:possess-creature:10",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body.",
+    "description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body. To accomplish this, the enchanter must have the victim within the spell’s range and line of sight. It is not possible to possess a creature who, for some reason, cannot be seen. The victim can resist this intrusion by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the spell is successful, the e nchanter’s consciousness transfers to the victim, who loses all control over its body. From this point, the enchanter can embrace the creature’s characteristics such as speech and abilities as if their own, without any resistance. When the enchanter leaves their own body to take control of the victim, their body is left behind in a deep slumber. Once inside the victim, the enchanter can move as far as desired from their own body without having to maintain spell range. However, the enchanter must be careful to return within range before the spell ends. If the victim is killed or the spell’s duration expires before the enchanter returns within range, the e nchanter’s consciousness is ripped v iolently back to their body. The e xperience is so traumatic that the enchanter undergoes extreme shock, p ermanently loses 1d6 of their vitner capacity, and falls into a deep slumber for 1d6 days.",
+    "summary": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body.",
+    "swedishName": "Eiga skopjaten",
+    "duration": "10 minute(s)",
+    "range": "100 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-thought:possess-creature:10:5",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 116",
     "level": 5,
     "cost": 10,

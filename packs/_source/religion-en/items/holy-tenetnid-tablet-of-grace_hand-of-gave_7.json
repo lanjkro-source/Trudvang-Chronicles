@@ -12,7 +12,23 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablet of Grace",
-    "description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+    "description": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care. In this way the priest can heal unnatural diseases such as lycanthropy and Ulm plague, reconstruct lost organs or body parts, and break curses. This ability is also the only way to cure a character of madness (see Fear Level in the Game Master Guide book). In order for the c ondition to disappear c ompletely (beyond t emporary relief), the c haracter receiving the healing grace has to succeed on a Situation roll with a S ituation value of 8 (Constitution modifiers apply). All modifiers and negative effects caused by the healed malady or illness are permanently removed from the healed individual through a successful Situation roll.",
+    "summary": "The priest invokes Gave and lays glowing hands upon a severely ailing person in their care.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase Situation value by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 197",
     "level": 4,
     "cost": 8,

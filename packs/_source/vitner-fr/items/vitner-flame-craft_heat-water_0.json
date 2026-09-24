@@ -12,8 +12,48 @@
     "catalogId": "vitner-flame-craft:heat-water:0",
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
-    "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition.",
-    "source": "Livre des règles, p. 166",
+    "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante.",
+    "summary": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition.",
+    "swedishName": "Vannhetja",
+    "duration": "5 minutes",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:heat-water:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la quantité d’eau portée à ébullition de : 1 litre"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la quantité d’eau portée à ébullition de : 10 litres"
+      },
+      {
+        "id": "vitner-flame-craft:heat-water:0:4",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Augmente la quantité d’eau portée à ébullition de : 100 litres"
+      }
+    ],
+    "source": "Livre des règles, p. 167",
     "level": 1,
     "cost": 2,
     "modifier": -2

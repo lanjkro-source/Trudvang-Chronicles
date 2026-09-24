@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range.",
+    "description": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range. Everything the dimwalker says sounds believable, and the afflicted character must succeed on a Situation roll with a Situation value of 8 (Intelligence modifiers apply) to avoid complete acceptance of whatever the Stormkelt says.",
+    "summary": "The Stormkelt’s voice resounds with might and truth, affecting one chosen person within range.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the Situation value by -1"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 1,
     "cost": 2,

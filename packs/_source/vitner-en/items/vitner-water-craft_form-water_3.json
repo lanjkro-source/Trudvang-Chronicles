@@ -12,7 +12,47 @@
     "catalogId": "vitner-water-craft:form-water:3",
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
-    "description": "By controlling the vitner that flows through a source of water within range, the enchanter can form and shape the water as desired.",
+    "description": "By controlling the vitner that flows through a source of water within range, the enchanter can form and shape the water as desired. Just as a bowl keeps water in a specific shape, the vitner keeps the water in whatever shape the enchanter designates. The enchanter can shape an amount of water equivalent to the amount that would fill a stormhall. It takes three minutes for the water to fully take the desired shape, and it maintains that shape for five minutes. Once the duration for the spell expires, the water immediately returns to its original shape and place.",
+    "summary": "By controlling the vitner that flows through a source of water within range, the enchanter can form and shape the water as desired.",
+    "swedishName": "Vannforma",
+    "duration": "3 (+5) minute(s)",
+    "range": "5 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:form-water:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-water-craft:form-water:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-water-craft:form-water:3:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect an amount of water equivalent to the size of an additional stormhall"
+      },
+      {
+        "id": "vitner-water-craft:form-water:3:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-water-craft:form-water:3:4",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Affect an amount of water"
+      }
+    ],
     "source": "Player's Handbook, p. 135",
     "level": 2,
     "cost": 4,

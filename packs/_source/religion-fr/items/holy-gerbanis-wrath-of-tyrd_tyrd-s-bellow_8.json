@@ -12,8 +12,30 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
-    "description": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
-    "source": "Livre des règles, p. 220",
+    "description": "Le stormikjalt prend un air sinistre et prononce les mots déclencheurs de ce pouvoir. Ses paroles prennent une intonation profonde et une aura sombre de fureur divine se rassemble autour de lui. Les ennemis du stormikjalt situés à portée sont effrayés par son air sinistre et subissent 1d10 (JO 9-10) points de peur. Ce pouvoir affecte tous les êtres dotés d’intelligence (les êtres humanoïdes et les trolls). Les animaux et autres créatures dotées d’une intelligence inférieure sont si apeurés qu’ils fuient et n’osent revenir sur leur pas qu’au bout d’une semaine.",
+    "summary": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:1",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "Augmente les points de peur infligés d’un degré : 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 221",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -12,7 +12,41 @@
     "catalogId": "vitner-power-of-thought:aura-of-power:9",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority , and glory.",
+    "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority, and glory. Anyone who looks at the enchanter must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately believes that the enchanter is excessively i mpressive and powerful, and will obey their commands. (A person who is known for loyalty to rulers is more likely to obey than someone who commonly defies authority). A successful Situation roll means that the victim sees through the aura and observes the enchanter as they really appear. Once the duration of the spell ends, all who have been bewitched also see the enchanter for who they really are. If the enchanter asks for anything out of the ordinary, the victim has a new opportunity to make a Situation roll to see through the aura. Being captivated by the Aura of Power does not mean that a victim blindly follows orders, but that the enchanter’s words hold significant gravity. To disagree with or oppose the enchanter feels very uncomfortable and maybe even dangerous.",
+    "summary": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority , and glory.",
+    "swedishName": "Kraftlahinja",
+    "duration": "5 minute(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:aura-of-power:9:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:aura-of-power:9:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-power-of-thought:aura-of-power:9:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-thought:aura-of-power:9:3",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 116",
     "level": 4,
     "cost": 8,

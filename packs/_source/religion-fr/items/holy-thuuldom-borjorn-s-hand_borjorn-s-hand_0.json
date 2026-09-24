@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0",
     "tabletId": "holy-thuuldom-borjorn-s-hand",
     "tablet": "Main de Borjorn",
-    "description": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre.",
+    "description": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre. La table ci-dessous montre l’importance de l’aide que reçoit le thuul (sous la forme d’un bonus au test de compétence).",
+    "summary": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "2",
+    "spellType": "permanent",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le bonus au test de compétence de : +1"
+      },
+      {
+        "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le bonus au test de compétence de : +2"
+      },
+      {
+        "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le bonus au test de compétence de : +3"
+      },
+      {
+        "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le bonus au test de compétence de : +4"
+      },
+      {
+        "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Augmente le bonus au test de compétence de : +5"
+      }
+    ],
     "source": "Livre des règles, p. 287",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!sBWkh2u0v1w2x3y4",

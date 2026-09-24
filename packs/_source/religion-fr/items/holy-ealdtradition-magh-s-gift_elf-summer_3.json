@@ -12,8 +12,36 @@
     "catalogId": "holy-ealdtradition-magh-s-gift:elf-summer:3",
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Don de Magh",
-    "description": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée.",
-    "source": "Livre des règles, p. 232",
+    "description": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée. Ce pouvoir peut faire monter la température d’un maximum de 40 degrés. Cependant, la température ne peut pas dépasser 30 degrés (par exemple, si la température est de -30 degrés, le bruide peut la faire monter jusqu’à 10 degrés).",
+    "summary": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "rayon de 3 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la température (maximum 30°C) de : +10 degrés"
+      },
+      {
+        "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de : 1 mètre"
+      }
+    ],
+    "source": "Livre des règles, p. 233",
     "level": 2,
     "cost": 4,
     "modifier": -4

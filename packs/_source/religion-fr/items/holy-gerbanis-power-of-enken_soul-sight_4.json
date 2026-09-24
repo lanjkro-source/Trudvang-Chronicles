@@ -12,8 +12,36 @@
     "catalogId": "holy-gerbanis-power-of-enken:soul-sight:4",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui.",
-    "source": "Livre des règles, p. 224",
+    "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges.",
+    "summary": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:soul-sight:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:soul-sight:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:soul-sight:4:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le modificateur à la compétence Arts des ombres pour percevoir les choses cachées de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 225",
     "level": 3,
     "cost": 6,
     "modifier": -6

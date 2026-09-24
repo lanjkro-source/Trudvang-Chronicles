@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
-    "description": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-des sus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre.",
+    "description": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-dessus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre. S’il y a une résistance, le bruide doit faire un test de situation avec une valeur de situation de 8. En cas de réussite, la brise surmonte la cause de la résistance (par exemple quelqu’un qui empêche un objet de tomber d’un rebord, qui serre le nœud, qui retient l’attache, etc.). Les réceptacles fermés, les portes verrouillées ou les objets protégés par le vitner ne sont pas affectés par le Souffle libérateur.",
+    "summary": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-des sus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre.",
+    "swedishName": "",
+    "duration": "",
+    "range": "2 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      }
+    ],
     "source": "Livre des règles, p. 244",
     "level": 1,
     "cost": 2,

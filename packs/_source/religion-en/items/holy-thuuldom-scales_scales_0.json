@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-scales:scales:0",
     "tabletId": "holy-thuuldom-scales",
     "tablet": "Scales",
-    "description": "The power from the rune stretches like a snakeskin of metal over the Thuul’s body.",
+    "description": "✦ Modifier: -4 The power from the rune stretches like a snakeskin of metal over the Thuul’s body. In less than 1 action round, the Thuul’s whole body is covered with protective scales, which grant an additional Protection Value of +1 per rune level for the duration. The armor counts as natural protection and also protects against magical weapons and vitner. Stoneling ✦ Modifier: -4 The Thuul connects a minor mountain spirit to a single stone the size of a fist. The spirit is not particularly powerful, but it is quite affectionate. The spirit can be sent to locate things and alert the Thuul of danger. It makes a rattling rock sound when it wants to get someone’s attention. Since the spirit is rather slow of mind, the Thuul must decide what it should fetch or warn him about. For example, it can be sent to fetch a set of keys lying on a table or give warning if someone is coming down the corridor. ✦ The Stoneling spirit has the following traits ✦ See in the dark as if it were day for up to 5 meters per rune level, and as if there were a faint source of light for an additional 5 meters per rune level ✦ Carry half a kg per rune level ✦ Move at the speed of 1 meter per rune level, per action round ✦ Remain bound to the stone for 1 hour per rune level Stone to Clay ✦ Modifier: -2 By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level). The clay can be shaped like any other mud. Once the Thuul is satisfied with the clay’s new form (after at least three minutes per level of the rune), the clay becomes hard as a rock again. When this occurs, the duration begins (listed below). When the full duration ends, the stone shifts back to its original form.",
+    "summary": "The power from the rune stretches like a snakeskin of metal over the Thuul’s body.",
+    "swedishName": "",
+    "duration": "3 action round(s)/niveau",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "2",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-scales:scales:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase la Protection Value de : +1"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase la Protection Value de : +2"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase la Protection Value de : +3"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase la Protection Value de : +4"
+      },
+      {
+        "id": "holy-thuuldom-scales:scales:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase la Protection Value de : +5"
+      }
+    ],
     "source": "Player's Handbook, p. 232",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!Wero4z4z5A6B7C8D",

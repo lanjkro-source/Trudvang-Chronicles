@@ -12,8 +12,42 @@
     "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
-    "description": "Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent.",
-    "source": "Livre des règles, p. 270",
+    "description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+    "summary": "Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de : -1"
+      }
+    ],
+    "source": "Livre des règles, p. 271",
     "level": 3,
     "cost": 6,
     "modifier": -6

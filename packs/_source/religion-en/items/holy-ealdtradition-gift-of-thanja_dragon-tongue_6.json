@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "The Bruid can communicate in the language of dragons and their kin.",
+    "description": "The Bruid can communicate in the language of dragons and their kin. This does not mean that dragons will suddenly become friendly with the dimwalker or wish to answer his questions, but they will miraculously be able to comprehend his words. By speaking with dragons, the Bruid can also bargain with, intimidate, deceive, or persuade them. Bear in mind that all dragons have extremely good hearing and can distinguish sounds from several kilometers away.",
+    "summary": "The Bruid can communicate in the language of dragons and their kin.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:dragon-tongue:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 4,
     "cost": 8,

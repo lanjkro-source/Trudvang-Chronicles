@@ -12,8 +12,24 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:snarfari:8",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
-    "description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme.",
-    "source": "Livre des règles, p. 222",
+    "description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un snarfari, l’un des destriers noirs que Jorn a volés à Storme. Un snarfari est un très grand étalon doté de six pattes et de deux têtes. On le considère comme un destrier de maître. Un snarfari cavale toujours avec le vent dans le dos, et il peut faire un voyage de cinq jours en une journée seulement. Les naseaux d’un snarfari crachent de la brume (ce qui impose un malus d’imprécision de -3 à toute personne tentant de l’attaquer) et il récupère 1 point de santé par tour de jeu. Un stormikjalt ne peut pas appeler plus d’un snarfari à la fois. Ce n’est qu’une fois que le premier snarfari a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Snarfari : Force +6, points de santé 90, valeur de protection 6, Mouvement de combat 24 mètres par tour de jeu, dressage magistral, facteur de peur 1d5.",
+    "summary": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme.",
+    "swedishName": "",
+    "duration": "30 minutes",
+    "range": "personnelle",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:snarfari:8:0",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 224",
     "level": 5,
     "cost": 10,
     "modifier": -10

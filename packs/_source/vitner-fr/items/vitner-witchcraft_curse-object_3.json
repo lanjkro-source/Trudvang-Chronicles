@@ -12,8 +12,48 @@
     "catalogId": "vitner-witchcraft:curse-object:3",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative.",
-    "source": "Livre des règles, p. 184",
+    "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative. Le vitner conjuré s’accroche à l’objet comme une force délétère et malsaine. Toute personne qui tente d’utiliser l’objet en question subit un malus de -2 à tous les tests de compétence et de situation reposant sur cet objet. S’il s’agit d’une arme, ses dégâts subissent aussi un malus de -1, et dans le cas d’une armure, sa valeur de protection diminue de 1.",
+    "summary": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative.",
+    "swedishName": "Nidtrölja eftnating",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:curse-object:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une autre cible (qui subit la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 185",
     "level": 2,
     "cost": 4,
     "modifier": -4

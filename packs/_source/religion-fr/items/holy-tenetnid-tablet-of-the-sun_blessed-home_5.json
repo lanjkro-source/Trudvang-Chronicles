@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:blessed-home:5",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
-    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
-    "source": "Livre des règles, p. 262",
+    "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée du pouvoir détermine le rayon de la zone protégée que la lumière du soleil recouvre. Pour créer ce site, le prêtre doit s’entailler le front (1 point de dégât) puis recueillir le sang de la blessure et le laisser couler le long du périmètre du site tout en chantant. Il faut 3 tours par mètre de rayon pour terminer cette prière. Par exemple, si le pouvoir affecte une zone de 8 mètres de rayon, l’invocation de ce pouvoir prendra 24 tours (soit 2 minutes). Quiconque tente d’activer un pouvoir dépendant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire subit un malus de -3 à la valeur de compétence nécessaire pour réussir. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +6).",
+    "summary": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "rayon de 4 mètres",
+    "weavingTime": "spécial",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon d’effet du pouvoir de : 1 mètre"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:2",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Augmente le malus aux valeurs de compétence de ceux qui désirent utiliser des pouvoirs appartenant à d’autres religions ou des sorts de : -1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:blessed-home:5:3",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la valeur de situation pour résister aux effets contraignants des sorts ou pouvoirs appartenant à d’autres religions de : 2"
+      }
+    ],
+    "source": "Livre des règles, p. 263",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -12,7 +12,35 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-command:1",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
-    "description": "La voix du stormikjalt résonne de puissance et de sincérité et affecte la personne de son choix située à portée.",
+    "description": "La voix du stormikjalt résonne de puissance et de sincérité et affecte la personne de son choix située à portée. Tout ce que dit le stormikjalt semble crédible à la victime, qui doit réussir un jet de situation avec une valeur de situation de 8 (en prenant en compte son modificateur d’Intelligence) pour ne pas accepter sans condition tout ce que dit le stormikjalt.",
+    "summary": "La voix du stormikjalt résonne de puissance et de sincérité et affecte la personne de son choix située à portée.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue la valeur de situation de : -1"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-command:1:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 218",
     "level": 1,
     "cost": 2,

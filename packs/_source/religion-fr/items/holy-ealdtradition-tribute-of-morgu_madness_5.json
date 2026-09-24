@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:madness:5",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
-    "description": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
-    "source": "Livre des règles, p. 241",
+    "description": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. Le bruide vise un groupe d’ennemis situé à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère deux flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+    "summary": "Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
+    "swedishName": "",
+    "duration": "",
+    "range": "30 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:madness:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:madness:5:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente le nombre de flèches de : 1"
+      }
+    ],
+    "source": "Livre des règles, p. 243",
     "level": 3,
     "cost": 6,
     "modifier": -6

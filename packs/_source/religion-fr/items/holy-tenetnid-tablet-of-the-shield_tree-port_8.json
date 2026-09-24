@@ -12,8 +12,36 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "Le gavlien invoque la force du chêne noir, ce qui lui confère la faculté de se transformer en un grand chêne noir pendant une journée.",
-    "source": "Livre des règles, p. 257",
+    "description": "Le gavlien invoque la force du chêne noir, ce qui lui confère la faculté de se transformer en un grand chêne noir pendant une journée. La transformation prend 60 tours de jeu (5 minutes) et nécessite assez de terre pour les racines et d’espace pour les branches du chêne. Pour chaque heure que le prêtre passe dans cet état, il récupère 1 point de santé. Sous sa forme d’arbre, le prêtre se nourrit également de l’eau dans le sol et de la lumière du soleil, et il n’a donc pas besoin de consommer autre chose. En outre, le prêtre peut quotidiennement faire un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) afin de tenter de supprimer une malédiction ou une infection démoniaque qui le frappe. Lorsqu’il se trouve dans le refuge arboricole, le prêtre est immunisé contre toutes les attaques et facultés des démons. Le prêtre peut reprendre sa véritable forme à tout moment. Quelle que soit la créature qui l’attaque en dehors des démons, l’arbre a une valeur de protection de 8, et seul un cinquième des dégâts qui traversent cette protection blesse le prêtre. S’il est tué en étant dans son refuge arboricole, il demeurera un chêne noir.",
+    "summary": "Le gavlien invoque la force du chêne noir, ce qui lui confère la faculté de se transformer en un grand chêne noir pendant une journée.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "personnelle",
+    "weavingTime": "5 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la valeur de protection de l’arbre de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 259",
     "level": 5,
     "cost": 10,
     "modifier": -10

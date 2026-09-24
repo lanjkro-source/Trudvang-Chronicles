@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-power-of-enken:willpower:1",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
+    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +4 en Psychisme pendant la durée du pouvoir.",
+    "summary": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:willpower:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:willpower:1:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 224",
     "level": 1,
     "cost": 2,

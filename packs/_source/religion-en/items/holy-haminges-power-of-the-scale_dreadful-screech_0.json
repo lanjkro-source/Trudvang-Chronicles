@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-scale:dreadful-screech:0",
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
-    "description": "Releases a dreadful supernatural screech that terrifies nearby creatures.",
+    "description": "The spirit conjurer utters a terrifying sound. The screech has a fear factor of 1d5, affecting all who hear it (except the conjurer).",
+    "summary": "Releases a dreadful supernatural screech that terrifies nearby creatures.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:dreadful-screech:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:dreadful-screech:0:1",
+        "cost": 3,
+        "maxCount": 5,
+        "effect": "Increase the fear factor by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 218",
     "level": 1,
     "cost": 2,

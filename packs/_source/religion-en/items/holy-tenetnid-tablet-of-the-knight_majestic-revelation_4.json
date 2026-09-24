@@ -12,7 +12,47 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
-    "description": "The prayer invokes Gave’s presence and holiness.",
+    "description": "The prayer invokes Gave’s presence and holiness. The priest raises their hands, loudly recites the prayer, and then lowers their hands slowly. The air grows thick as the god’s increased presence is tangibly felt. People around the priest fall silent and prefer to flee rather than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +3 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -3 to their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a S ituation value of 6 (Psyche modifiers apply).",
+    "summary": "The prayer invokes Gave’s presence and holiness.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:1",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Increase the bonus by an additional +1 (maximum +6)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:2",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Lower resistance rolls by an additional -1 (maximum -6)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Lower the Situation value by -1 for those who attempt to lie or attack the priest"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:majestic-revelation:4:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 199",
     "level": 3,
     "cost": 6,

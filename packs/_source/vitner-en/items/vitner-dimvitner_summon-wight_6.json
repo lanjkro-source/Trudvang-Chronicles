@@ -12,7 +12,29 @@
     "catalogId": "vitner-dimvitner:summon-wight:6",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight.",
+    "description": "The spell creates a thick bond between Trudvang and the realm of death, Dimhall, which makes it possible for the mage to beckon a dead person’s spirit and soul. The ritual can be performed only at night, since that is when the bond between the two worlds is at its strongest. Once the ritual is complete, it still takes until the following night before the wight awakens from its slumber. Only human souls and spirits can be awakened in this manner to become wights. If the soul is willing to once again dwell in the realm of the living, it is doomed to forever wander the lands of Trudvang. But if the soul resists the calling, it immediately returns to the realm of death. Nothing binds the wight to the mage, and it is under no c ompulsion to obey or preserve the one who summoned it. However, it is s usceptible to the spell Control Undead if the mage wishes to try to establish control over it. The summoned wight receives 1d10 (OR 9-10) +15 Body Points, as well as 1d10 (OR 9-10) +70 skill points to distribute among its skills and d isciplines (or specialties). See the stats for the unded in Game Master’s Guide or the barrow wight in Jorgi’s Bestiary.",
+    "summary": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight.",
+    "swedishName": "Gastlakallja",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "10 hour(s)",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:summon-wight:6:0",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Distribute extra 1d10 (OR 9-10) skill points among the wight’s skills and disciplines"
+      },
+      {
+        "id": "vitner-dimvitner:summon-wight:6:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase Body Points by 1d10"
+      }
+    ],
     "source": "Player's Handbook, p. 105",
     "level": 4,
     "cost": 8,

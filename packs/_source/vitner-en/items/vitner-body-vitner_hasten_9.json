@@ -12,7 +12,59 @@
     "catalogId": "vitner-body-vitner:hasten:9",
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
-    "description": "This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.",
+    "description": "✦ Cost (Modifier): 8 (-8 This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile. The enchanted character’s increased agility leads to enhanced movement (movement capacity), quicker speed (Initiative), and a higher chance of success on Situation rolls and Skill rolls that involve dexterity. Suddenly the enchanted person moves faster and is far more precise with everything<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.</td></tr></tbody></table>related to movement (typical skills: Agility and Fighting). The enchanted rises one step in the Dexterity character trait according to the following table. HASTEN’S MODIFIERS Situation Dexterity SV Bonus Rolls/Move Drauglo +8 +5 dexterity Elastic +6 +4 Gracious +4 +3 Agile +2 +2 Lithe +1 +1 Average ±0 ±0 Stiff -1 -1 Awkward -2 -2 Immobile -4 -3 Inflexible -6 -4 Lapidified -8 -5 The spell can also be woven for the reverse effect, causing the victim’s body to become more stiff and unwieldy. The enchanted character’s dexterity decreases immediately, which leads to hindered mobility (Move), reduced speed (Initiative), and a lower chance of success on Situation rolls concerning dexterity (typical skills: Agility and Fighting). The enchanted character drops one step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 ( Constitution m odifiers apply).",
+    "summary": "This spell alters the enchanted character’s flexibility and reflexes, which immediately become nimbler and more agile.",
+    "swedishName": "Lokraftla",
+    "duration": "5 action round(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:hasten:9:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Raise or lower another step on the table"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:6",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      }
+    ],
     "source": "Player's Handbook, p. 96",
     "level": 4,
     "cost": 8,

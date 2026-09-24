@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
-    "description": "F Type : instantané F Portée : 30 mètres F Temps d’invocation : 2 tours de jeu Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
-    "source": "Livre des règles, p. 241",
+    "description": "Le bruide en appelle à la puissance de Morgu, qui libère une volée de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. Le bruide vise un groupe d’ennemis situés à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère quatre flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+    "summary": "F Type : instantané F Portée : 30 mètres F Temps d’invocation : 2 tours de jeu Le bruide en appelle à la puissance de Morgu, qui libère une pluie de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la quantité de flèches de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 243",
     "level": 5,
     "cost": 10,
     "modifier": -10

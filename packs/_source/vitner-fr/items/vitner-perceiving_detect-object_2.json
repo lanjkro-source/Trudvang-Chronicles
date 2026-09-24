@@ -12,8 +12,54 @@
     "catalogId": "vitner-perceiving:detect-object:2",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "préciser l’objet qu’il recherche.",
-    "source": "Livre des règles, p. 173",
+    "description": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée. L’enchanteur doit commencer par préciser l’objet qu’il recherche. Le maître de jeu en détermine ensuite la valeur (qui est subjective et dépend du point de vue de l’enchanteur, mais correspond également à la valeur matérielle de l’objet) sur une échelle de 1 à 100. Une valeur de 1 indique un objet aussi commun qu’une cuillère en bois, et 100 correspond davantage à la couronne magique d’un roi. Pour percevoir l’objet, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table ci-contre. MODIFICATEURS:\n|Valeur|Modificateur|\n|---|---|\n|1-10|+8|\n|11-20|+4|\n|21-25|+2|\n|26-35|+0|\n|36-45|-2|\n|46-55|-4|\n|56-65|-8|\n|66-75|-10|\n|76-85|-12|\n|86-90|-16|\n|91-95|-20|\n|96-100|-30|\n Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table de résultat (Cf. ci-dessous) pour déterminer la quantité d’informations qu’il reçoit au sujet de l’emplacement de l’objet. Une fois que l’enchanteur s’est fait une idée de l’emplacement de l’objet, cette sensation persiste jusqu’à expiration du sort. Si l’objet est déplacé, l’enchanteur le perçoit, et le sort l’informe de la nouvelle position de l’objet. RÉSULTAT:\n|1d20|Résultat|\n|---|---|\n|1-3|L’enchanteur connaît la position exacte de l’objet.|\n|4-8|L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 100 mètres près.|\n|9-11|L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 500 mètres près.|\n|12-13|L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 1 kilomètre près.|\n|14-15|L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet.|\n|16-17|L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 10 degrés près sur une boussole)|\n|18-20|L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 30 degrés près sur une boussole)|\n",
+    "summary": "préciser l’objet qu’il recherche.",
+    "swedishName": "Tingskonja",
+    "duration": "1 heure",
+    "range": "5 kilomètres",
+    "weavingTime": "5 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:detect-object:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussite du test de situation de : +1"
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 kilomètres"
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:4",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 kilomètres"
+      },
+      {
+        "id": "vitner-perceiving:detect-object:2:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 174",
     "level": 2,
     "cost": 4,
     "modifier": -4

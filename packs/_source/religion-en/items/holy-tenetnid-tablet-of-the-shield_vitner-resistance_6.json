@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+    "description": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability, but also protects against magical attacks, both physical and mental. The aura acts as a barrier around the designated area and in order to penetrate it with magic, the weaver must make a successful Situation roll with a Situation value of 10. If the spell is able to penetrate the Vitner Resistance aura, the spell works as usual and the sacred aura disappears.",
+    "summary": "The priest creates a sacred aura that protects in the same manner as the Storm Protection ability , but also protects against magical attacks, both physical and mental.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "rayon de 5 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius by 1 meter"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:vitner-resistance:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Lower the Situation value for spells"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 4,
     "cost": 8,

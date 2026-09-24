@@ -13,6 +13,22 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Power of the Scale",
     "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+    "summary": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per minute for the duration.",
+    "swedishName": "",
+    "duration": "3 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:regenerative-blood:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 218",
     "level": 2,
     "cost": 4,

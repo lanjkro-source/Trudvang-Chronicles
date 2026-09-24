@@ -12,7 +12,41 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "The Stormkelt’s voice resounds mightily , which affects three listeners of the dimwalker’s choosing within range.",
+    "description": "The Stormkelt’s voice resounds mightily, which affects three listeners of the dimwalker’s choosing within range. The chosen characters must make a Situation roll with a Situation value of 6 (Psyche modifiers apply). If any target fails the Situation roll, they instinctively obey the Stormkelt for the duration. However, the target will never do anything that causes self-harm (such as jumping off a cliff) or that demands initiative and creativity (such as formulating a plan or improvising).",
+    "summary": "The Stormkelt’s voice resounds mightily , which affects three listeners of the dimwalker’s choosing within range.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the Situation value by -1"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:voice-of-stormi:7:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect one more listener (with the"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 4,
     "cost": 8,

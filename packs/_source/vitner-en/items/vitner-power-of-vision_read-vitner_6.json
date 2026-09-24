@@ -12,7 +12,29 @@
     "catalogId": "vitner-power-of-vision:read-vitner:6",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
-    "description": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it.",
+    "description": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it. These observable spells were woven using one of the three types of vitner (white vitner, vaagrivitner, or dark vitner), and it is helpful if the enchanter weaving Read Vitner uses the same type. If an enchanter uses the same type of vitner, they receive a positive modifier of +2 on the subsequent Situation roll. When the enchanter starts e xamining an object or creature, the least advanced (lowest level) spell is observed first. The enchanter must then succeed on a Situation roll to reveal the spell’s secrets. If the object or creature is enchanted with more than one spell, the enchanter sees<table><thead><tr><th colspan=\"1\">READ VITNER SITUATION VALUES</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>the spells in order of their complexity. The table below shows the Situation values needed to reveal a spell. READ VITNER SITUATION VALUES Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 A successful Situation roll means that the enchanter has managed to identify a spell woven over the object or creature, and also knows how to activate that magic in things such as magical items. If the enchanter fails to discern a spell, they cannot proceed to reading the next spell. A failure still makes it apparent to the enchanter that there are one or more spells woven over the object, but not which ones. Read Vitner can also be used to discover if a creature has one or more magical abilities, but not what they are.",
+    "summary": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it.",
+    "swedishName": "Vitnaskönja",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 hour(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:read-vitner:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "on a Situation roll by +1 (the enchanter can add this effect prior to each new roll)"
+      },
+      {
+        "id": "vitner-power-of-vision:read-vitner:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 120",
     "level": 4,
     "cost": 8,

@@ -12,8 +12,30 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:sheltering:1",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique.",
-    "source": "Livre des règles, p. 257",
+    "description": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique. Cette aura est liée au site où la prière a été faite et ne peut pas être déplacée. Si l’arpenteur des brumes désire générer un climat tempéré, il peut modifier la température de 20°C au maximum.",
+    "summary": "Le prêtre génère une aura sacrée autour de lui qui protège contre la pluie légère, la neige et le vent, mais pas contre les conditions météorologiques d’origine magique.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "rayon de 3 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:sheltering:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:sheltering:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon d’effet du pouvoir de : 1 mètre"
+      }
+    ],
+    "source": "Livre des règles, p. 258",
     "level": 1,
     "cost": 2,
     "modifier": -2

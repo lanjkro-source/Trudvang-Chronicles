@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Don de Thanja",
-    "description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon.",
-    "source": "Livre des règles, p. 234",
+    "description": "Ce pouvoir confère au bruide la faculté de se transformer en saumon. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un saumon ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.<hr>Traits de l’Aspect du saumon<p>Un bruide transformé par l’Aspect du saumon profite des traits suivants :</p><ul><li>Peut communiquer avec les saumons</li><li>Respiration aquatique</li><li>Équipement protégé contre l’eau</li><li>Mouvement dans l’eau doublé (capacité de mouvement du personnage × 2)</li><li>Respiration possible sur terre, mais pas le déplacement</li><li>Excellente vision aquatique.</li><li>Trait de personnage exceptionnel de +4 en Dextérité</li><li>Un bruide ayant adopté l’Aspect du saumon possède également des traits guérisseurs : toute personne qui touche les écailles du saumon récupère 1 point de santé (1 fois par personne et par jour) ; quelqu’un qui embrasse le saumon peut récupérer 1d3 points de santé (1 fois par personne et par jour), et quelqu’un qui mord dans la chair du saumon (ce qui inflige 1d5 points de dégâts au bruide) peut recouvrer 1d6 + 1 points de santé.</li></ul>",
+    "summary": "Ce pouvoir confère au bruide la faculté de se transformer en saumon.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:salmonshape:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:salmonshape:4:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 235",
     "level": 3,
     "cost": 6,
     "modifier": -6

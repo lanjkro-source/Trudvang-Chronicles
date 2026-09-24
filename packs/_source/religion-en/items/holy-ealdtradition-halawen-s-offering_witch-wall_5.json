@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:witch-wall:5",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
-    "description": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.",
+    "description": "<p>The Bruid lets their ancestors watch over them and one ally, and both receive a divine protection against vitner. Anytime the dimwalker or their ally is attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche<ul><li>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.</li></ul>modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If both characters are hit with a spell, both must succeed individually to avoid the effect. If the spell affects a whole area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. WITCH WALL SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4</p>",
+    "summary": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.",
+    "swedishName": "",
+    "duration": "10 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:witch-wall:5:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 2 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 178",
     "level": 3,
     "cost": 6,

@@ -13,7 +13,35 @@
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Agilité du lynx",
     "description": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
-    "source": "Livre des règles, p. 293",
+    "summary": "L’ihana peut traverser la forêt au double de sa capacité de mouvement normale.",
+    "swedishName": "",
+    "duration": "3 heures",
+    "range": "personnelle",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:forest-path:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Permet au pouvoir d’affecter un paysage supplémentaire (montagnes, marécages, etc.)"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:forest-path:8:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:forest-path:8:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 heures"
+      }
+    ],
+    "source": "Livre des règles, p. 294",
     "level": 4,
     "cost": 8,
     "modifier": -8

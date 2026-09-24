@@ -12,7 +12,29 @@
     "catalogId": "vitner-dimvitner:speak-to-undead:3",
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
-    "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.",
+    "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse. However, the spirit can choose whether to converse with the mage or not. Because it is an incredibly hard task to find the spirit of the corpse in Dimhall, the enchanter is not always certain that the spell has succeeded, even if the bond is created. Mages who use this spell have to be wary of the risks that are associated with creating a bond of death. RESULTS OF SPEAK TO UNDEAD 1d20 Results 1–12 The mage establishes contact with with it for the duration of the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.</td></tr></tbody></table>spell. master to decide. 13-14 The mage establishes contact with one sought. This spirit may still what it has to say is up to the game 15-16 The mage cannot establish contact 17-18 The mage establishes contact with the mage can see through its lie by value of 10 (Intelligence modifiers 19 The mage establishes contact with the mage can see through its lie by value of 6 (Intelligence modifiers 20+ The mage establishes contact with Trudvang through the bond of death. succeeds in possessing the corpse (a Once the possession is complete, attacks. The game master decides various undead creatures in Game The table above describes what happens when a mage tries to contact a spirit in Dimhall. The game master should roll 1d20 and reference the table so that the mage does not know whether they succeeded. For this spell to work best, the corpse being sought cannot have been dead for longer than a week. For every day beyond a week that the corpse has been dead, the mage gets a modifier of +1 on the roll on the table below (making success less likely, and the endeavor more dangerous).",
+    "summary": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.",
+    "swedishName": "Sálhelemal",
+    "duration": "1 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 hour(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-dimvitner:speak-to-undead:3:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-dimvitner:speak-to-undead:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Modify the roll that decides the"
+      }
+    ],
     "source": "Player's Handbook, p. 105",
     "level": 2,
     "cost": 4,

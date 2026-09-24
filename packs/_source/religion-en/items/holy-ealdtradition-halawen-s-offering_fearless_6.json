@@ -12,7 +12,47 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:fearless:6",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
-    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "description": "The bound spirit bestows courage upon the conjurer, bolstering them in the face of horrific things that would cause fear in a less courageous being. The spirit conjurer rarely becomes frightened and therefore reduces any fear factor roll by one step (example: 1d10 (OR 10) to 1d10, or 1d5 to 0) for the duration of the ability. This affects the fear factor only as it applies to the dimwalker. The spirit conjurer also ignores the effects of the first fear level for the duration (whether the level was reached before invoking the ability, or was reached during the duration).",
+    "summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "5 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:fearless:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 minute(s)"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:fearless:6:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 hour(s)"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:fearless:6:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect un autre personnage (qui bénéficie des effets de base du power)"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:fearless:6:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the power range de : 5 meters"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:fearless:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Change the bonus dont bénéficie l’ally de : +4 à +6"
+      }
+    ],
     "source": "Player's Handbook, p. 178",
     "level": 4,
     "cost": 8,

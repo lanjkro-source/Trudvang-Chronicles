@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "This ability grants the Bruid the power to transform into a stag.",
+    "description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
+    "summary": "This ability grants the Bruid the power to transform into a stag.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:stagshape:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:stagshape:2:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 2,
     "cost": 4,

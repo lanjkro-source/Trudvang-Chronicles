@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Nema's Usefulness",
-    "description": "A modest but refreshing breeze flits through the area designated by the Bruid, freeing something as it passes, pushing something over a ledge, unlatching a hook, solving a knot, or something similar.",
+    "description": "A modest but refreshing breeze flits through the area designated by the Bruid, freeing something as it passes, pushing something over a ledge, u nlatching a hook, solving a knot, or something similar. If there is any resistance, a S ituation roll must be made with a S ituation value of 8. If the roll is successful, the cause of the resistance is overcome (for example, someone trying to contain the object beside the ledge, pulling the knot, securing the hook, and so on). Locked containers, bolted doors, or items secured with vitner are not affected by the Gust of Release.",
+    "summary": "A modest but refreshing breeze flits through the area designated by the Bruid, freeing something as it passes, pushing something over a ledge, unlatching a hook, solving a knot, or something similar.",
+    "swedishName": "",
+    "duration": "",
+    "range": "2 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 1 meter"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:gust-of-release:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the Situation value by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 185",
     "level": 1,
     "cost": 2,

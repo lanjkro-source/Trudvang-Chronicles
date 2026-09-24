@@ -12,7 +12,29 @@
     "catalogId": "vitner-wind-craft:wind-gust:1",
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
-    "description": "The spell creates a small wind gust that the enchanter can use to blow away insects, small animals, or small objects (less than 1 kg).",
+    "description": "The spell creates a small wind gust that the enchanter can use to blow away insects, small animals, or small objects (less than 1 kg). It can also extinguish small flames such as candles, torches, or fireplaces.",
+    "summary": "The spell creates a small wind gust that the enchanter can use to blow away insects, small animals, or small objects (less than 1 kg).",
+    "swedishName": "Loftpysi",
+    "duration": "1 action round(s)",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:wind-gust:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the force of the wind gust so that slightly larger animals and objects can be blown away (+1 kg per level of power)"
+      },
+      {
+        "id": "vitner-wind-craft:wind-gust:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 139",
     "level": 1,
     "cost": 2,

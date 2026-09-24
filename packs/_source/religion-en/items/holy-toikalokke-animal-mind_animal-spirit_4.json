@@ -12,7 +12,29 @@
     "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Animal Mind",
-    "description": "The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits.",
+    "description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+    "summary": "The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits.",
+    "swedishName": "",
+    "duration": "10 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:animal-spirit:4:0",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-spirit:4:1",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 237",
     "level": 3,
     "cost": 6,

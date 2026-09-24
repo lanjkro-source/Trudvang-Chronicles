@@ -12,7 +12,41 @@
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Power of Thurses",
-    "description": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead.",
+    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+    "summary": "The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead.",
+    "swedishName": "",
+    "duration": "5 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:1",
+        "cost": 1,
+        "maxCount": 14,
+        "effect": "Increase bonus Body Points by +1 (maximum +20)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:2",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Increase damage bonus by +1 (maximum +6)"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4:3",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "Increase bonus SV by +1"
+      }
+    ],
     "source": "Player's Handbook, p. 221",
     "level": 3,
     "cost": 6,

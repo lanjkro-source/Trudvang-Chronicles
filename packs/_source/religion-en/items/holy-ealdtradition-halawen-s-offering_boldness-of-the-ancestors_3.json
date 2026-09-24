@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
-    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
+    "summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 minute(s)"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:boldness-of-the-ancestors:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the power duration de : 1 hour(s)"
+      }
+    ],
     "source": "Player's Handbook, p. 178",
     "level": 2,
     "cost": 4,

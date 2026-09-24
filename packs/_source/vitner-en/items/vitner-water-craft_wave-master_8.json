@@ -12,7 +12,65 @@
     "catalogId": "vitner-water-craft:wave-master:8",
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
-    "description": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.",
+    "description": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it. The enchanter can change the waves’ movement and strength, therefore allowing boats to move faster without a sail, or much slower even with the aid of a sail. Beings who are affected by the spell can either swim faster through the water or swim much slower, depending on which effect the enchanter desires. The enchanter can choose one being or one object (such as a ship) within 100 m, which becomes the center of the spell. With extra levels of power, additional beings or objects can also be selected. An object or a being that is affected in a positive manner by this spell is aided by the water, and its movement rate is 1 degree higher (see the table below). If it is affected in a negative manner, the movement rate is 1 degree lower instead. An unaffected<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.</td></tr></tbody></table>object or being has average movement (degree 0). All beings on an enchanted object (such as a ship) move on the water with the movement rate of the object. WAVE MASTER MOVEMENT DEGREES Degree Movement -3 No movement at all -2 Maximum 1 meter per action round -1 Half movement 0 Normal movement 1 Double movement 2 Triple movement 3 Quadruple movement",
+    "summary": "The spell affects the water on a river, a lake, or an ocean so it becomes either a boon or a hazard for the ships and beings that traverse it.",
+    "swedishName": "Vannkongr",
+    "duration": "1 hour(s)",
+    "range": "100 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:wave-master:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Enchant another being with the spell’s basic version"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase or decrease the effect by 1 additional degree of movement"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Enchant another object with the spell’s basic version"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Enchant another 10 beings in the basic version"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:6",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-water-craft:wave-master:8:7",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the range by 1 kilometer"
+      }
+    ],
     "source": "Player's Handbook, p. 135",
     "level": 5,
     "cost": 10,

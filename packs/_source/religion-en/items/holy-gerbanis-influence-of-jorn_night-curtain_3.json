@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:night-curtain:3",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence of Jorn",
-    "description": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 20 meters.",
+    "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 20 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 40 m², which works in the same manner as the Wall of Dusk ability. If a Night Curtain is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -8 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -3 on combat actions, while those with dark vision or true vision are unaffected by the darkness.",
+    "summary": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 20 meters.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "20 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the surface by 10 m²"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:night-curtain:3:4",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 160",
     "level": 2,
     "cost": 4,

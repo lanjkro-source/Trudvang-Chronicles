@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
-    "description": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 5.",
-    "source": "Livre des règles, p. 259",
+    "description": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 5. Cette aura protège contre les armes magiques ou les sorts qui ignorent les armures normales, mais dans ce cas, le bonus à la valeur de protection n’est que de +3. Ce pouvoir ne permet pas de créer une armure : il ne fait que bénir une pièce d’armure existante sur laquelle l’arpenteur des brumes concentre sa prière. L’armure bénie prend une teinte plus claire et se met à luire faiblement.",
+    "summary": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 5.",
+    "swedishName": "",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:2",
+        "cost": 2,
+        "maxCount": 5,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      }
+    ],
+    "source": "Livre des règles, p. 261",
     "level": 4,
     "cost": 8,
     "modifier": -8

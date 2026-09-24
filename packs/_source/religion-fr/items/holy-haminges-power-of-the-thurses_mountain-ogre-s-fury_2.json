@@ -12,8 +12,36 @@
     "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
-    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
-    "source": "Livre des règles, p. 275",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.<p>Fureur de l’ogre des montagnes confère les traits suivants :</p><ul><li>+3 points de santé (les dégâts affectent ces points de santé en priorité)</li><li>+1 aux dégâts des armes de corps à corps ou de lancer</li><li>Le conjurateur ne peut ni parer, ni esquiver les attaques</li><li>Le conjurateur ignore tous les effets de la peur</li></ul>",
+    "summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:1",
+        "cost": 1,
+        "maxCount": 7,
+        "effect": "Augmente le bonus aux points de santé de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2:2",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "Augmente le bonus aux dégâts de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 276",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -12,8 +12,42 @@
     "catalogId": "vitner-water-craft:create-water:4",
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
-    "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi.",
-    "source": "Livre des règles, p. 163",
+    "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi. Au total, cette source magique produit 30 litres d’eau (à raison de 10 litres par tour de jeu). L’eau est aussi pure que celle d’un torrent, et pour peu que l’enchanteur dispose d’un réceptacle pour la recueillir, il ne souffrira jamais de la soif.",
+    "summary": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi.",
+    "swedishName": "Vannstraula",
+    "duration": "3 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:create-water:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu (+10 litres)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute (+120 litres)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:2",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure (+7 200 litres)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 164",
     "level": 3,
     "cost": 6,
     "modifier": -6

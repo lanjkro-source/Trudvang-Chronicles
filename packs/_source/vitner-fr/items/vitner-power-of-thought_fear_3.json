@@ -12,8 +12,42 @@
     "catalogId": "vitner-power-of-thought:fear:3",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions. La victime croit se retrouver face à la créature la plus terrifiante qu’elle peut imaginer, ce qui signifie que plusieurs personnes exposées au même sort ne verront probablement pas la même chose. La victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) pour résister à la peur et éviter de subir des points de peur. Quiconque rate ce test de situation reçoit immédiatement 1d10 points de peur avec toutes les conséquences que cela implique.",
+    "summary": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions.",
+    "swedishName": "Skreikur",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:fear:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Affecte une autre créature située à portée, qui bénéficie de la version de base du sort"
+      },
+      {
+        "id": "vitner-power-of-thought:fear:3:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-power-of-thought:fear:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-power-of-thought:fear:3:3",
+        "cost": 4,
+        "maxCount": 4,
+        "effect": "Augmente le nombre de points de peur infligés d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 177",
     "level": 2,
     "cost": 4,
     "modifier": -4

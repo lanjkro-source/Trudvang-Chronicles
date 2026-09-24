@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
-    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll.",
+    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+    "summary": "L’esprit du hrimtursir confère au conjurateur la force d’un troll.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:troll-strength:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:troll-strength:1:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 275",
     "level": 1,
     "cost": 2,

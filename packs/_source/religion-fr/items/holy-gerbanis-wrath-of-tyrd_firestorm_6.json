@@ -12,8 +12,30 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:firestorm:6",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
-    "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction de tous ses ennemis situés à portée.",
-    "source": "Livre des règles, p. 220",
+    "description": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction de tous ses ennemis situés à portée. Les cibles reçoivent immédiatement deux brûlures graves sur leur corps. Chaque blessure leur inflige 1d3 + 1 points de dégâts. Les victimes subissent également un malus de -2 à la VC de toutes leurs actions de combat pendant le tour de jeu en cours ainsi que le suivant à cause de ces brûlures. L’armure n’a aucun effet contre ce pouvoir.",
+    "summary": "Le stormikjalt fait appel à la fureur de Tyrd et la canalise en direction de tous ses ennemis situés à portée.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:firestorm:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le nombre de brûlures de : +1"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:firestorm:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 221",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -12,8 +12,36 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
-    "description": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains.",
-    "source": "Livre des règles, p. 216",
+    "description": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains. La vitesse de guérison de la personne bénéficiant de l’imposition des mains augmente de +5 points de santé par jour tant que le sujet continue à se reposer. Si le personnage blessé fait quoi que ce soit d’autre que se reposer, le pouvoir est rompu et le sujet retrouve sa vitesse de guérison normale. L’arpenteur des brumes peut également tenter de neutraliser les empoisonnements ou dissiper les malédictions en conférant à la personne affectée un bonus de +10 à un jet de situation pour neutraliser un poison ou dissiper une malédiction.",
+    "summary": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains.",
+    "swedishName": "",
+    "duration": "3 jours",
+    "range": "contact",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le modificateur pour neutraliser un poison ou dissiper une malédiction de : +1"
+      },
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:2",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Augmente la vitesse de guérison de : +3 points de santé par jour"
+      }
+    ],
+    "source": "Livre des règles, p. 218",
     "level": 4,
     "cost": 8,
     "modifier": -8

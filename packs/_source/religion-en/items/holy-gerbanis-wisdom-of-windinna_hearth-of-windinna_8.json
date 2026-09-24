@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
-    "description": "A fire encompasses the afflicted and purifies their body of any evil, transformation, and outside influence.",
+    "description": "A fire encompasses the afflicted and purifies their body of any evil, transformation, and outside influence. The prayer drives away a demon that possesses a worldly body (physical) or has settled down inside a being, sending it back to the world whence it came.",
+    "summary": "A fire encompasses the afflicted and purifies their body of any evil, transformation, and outside influence.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 168",
     "level": 5,
     "cost": 10,

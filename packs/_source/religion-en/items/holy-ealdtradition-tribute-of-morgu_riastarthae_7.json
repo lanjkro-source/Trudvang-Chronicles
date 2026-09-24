@@ -12,7 +12,23 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribute of Morgu",
-    "description": "Transforms the invoker into a terrifying battle-frenzied champion.",
+    "description": "<p>Normally, it’s not in the Mittlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Morgu can evoke an overwhelming influence that causes them to fly into a rage in particularly hard battles. This effect can be so overpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the Bruid will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The Bruid’s body also needs to be cooled down from its boiling state following the battle craze; otherwise they will suffer damage from the extreme temperature. As soon as the duration ends, the Bruid will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless sufficiently cooled. Simply lying down in water (or being thrown into it)<ul><li>Effects of the Riastarthae:</li><li>Bruid grows 1.5 m taller and gains</li></ul>is enough to prevent this damage. ✦ Effects of the Riastarthae: ✦ Bruid grows 1.5 m taller and gains 100 kg in muscles (calculated as twice the size of a normal human) ✦ Bruid receives their own fear factor of 1d10 (OR 9-10) ✦ +15 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +6 in damage with melee weapons or thrown weapons ✦ +3 on SV of all attacks ✦ Bruid is unable to parry or avoid attacks ✦ Bruid ignores all effects from fear ✦ Bruid ignores the effect of severe damage or injury ✦ Bruid can continue to fight for 1d6 + 1 action rounds after dying</p>",
+    "summary": "Transforms the invoker into a terrifying battle-frenzied champion.",
+    "swedishName": "",
+    "duration": "7 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:riastarthae:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action"
+      }
+    ],
     "source": "Player's Handbook, p. 187",
     "level": 5,
     "cost": 10,

@@ -12,8 +12,36 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "Le gavlien invoque la force du chêne noir.",
-    "source": "Livre des règles, p. 257",
+    "description": "Le gavlien invoque la force du chêne noir. Le bénéficiaire de ce pouvoir (qui peut être le prêtre lui-même ou la personne de son choix) voit sa peau se recouvrir de l’écorce sombre du chêne de fer, ce qui lui confère 10 points de santé supplémentaire, à utiliser en priorité après avoir soustrait la valeur de protection des dégâts reçus. Ces points de santé sont temporaires, et s’il en reste au prêtre à expiration du pouvoir, ils sont perdus. Si les 10 points de santé octroyés par ce pouvoir sont utilisés avant son expiration, l’effet cesse immédiatement.",
+    "summary": "Le gavlien invoque la force du chêne noir.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les points de santé conférés par la peau d’écorce de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 258",
     "level": 3,
     "cost": 6,
     "modifier": -6

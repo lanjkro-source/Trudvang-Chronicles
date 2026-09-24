@@ -12,8 +12,54 @@
     "catalogId": "vitner-soil-craft:soil-blast:4",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée.",
-    "source": "Livre des règles, p. 158",
+    "description": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée. En chemin, la terre voit sa vitesse et sa masse augmenter considérablement. Après avoir franchi 2 mètres seulement, la terre a rassemblé toute sa force et peut frapper sa cible à pleine puissance et lui infliger 1d10 (JO 9-10) points de dégâts. Les armures confèrent leur protection normale contre cette attaque, mais les dégâts ne peuvent être réduits à moins de 1. Une cible qui porte un bouclier peut avoir de la chance et bloquer la projection de terre, ce qui lui permet de bénéficier de la protection passive du bouclier. Si la cible visée possède la spécialité Esquive, elle peut tenter de s’écarter de la trajectoire de la terre et éviter d’être blessée tant qu’elle n’a pas encore agi à ce tour de jeu, mais sa valeur de compétence subit alors un malus de -1 pour chaque point d’écart entre son initiative personnelle et le rang d’initiative actuel.",
+    "summary": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée.",
+    "swedishName": "Jördfleigja",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:soil-blast:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-soil-craft:soil-blast:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Crée une poignée de terre (il n’est plus nécessaire d’en ramasser une)."
+      },
+      {
+        "id": "vitner-soil-craft:soil-blast:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur minimale des dégâts de : +1"
+      },
+      {
+        "id": "vitner-soil-craft:soil-blast:4:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le volume de terre projetée afin de pouvoir frapper une autre cible (qui subit la version de base du sort)"
+      },
+      {
+        "id": "vitner-soil-craft:soil-blast:4:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu, de sorte que l’enchanteur peut lancer une autre poignée de terre au tour suivant (en utilisant la version de base du sort)"
+      },
+      {
+        "id": "vitner-soil-craft:soil-blast:4:5",
+        "cost": 5,
+        "maxCount": 2,
+        "effect": "Augmente les dégâts infligés d’un degré: 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 161",
     "level": 3,
     "cost": 6,
     "modifier": -6

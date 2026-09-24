@@ -12,7 +12,35 @@
     "catalogId": "vitner-wind-craft:wind-blast:7",
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
-    "description": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
+    "description": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets. The blast consists of a square meter of space filled with compressed air that shoots forward, inflicting damage on impact. The blast is so large that anyone who is within 1 meter of the target along the blast’s course takes 1d10 (OR 10) points of damage. Armor protects as usual. It is not possible to parry the blast, but a shield’s passive protection helps. If the intended target has the Evade specialty, they can attempt to jump away from the attack and avoid injury as long as they have not yet acted during the action round, modifying the Skill Value by -1 for every point between their initiative and the current initiative. The blast also works well for breaking down doors or knocking things to the ground. A normal-sized door counts as a normal-sized being. A normal-sized door of wood has a Breach Value of 10-100, depending on its quality and thickness. Any creatures who are hit by the blast must make an Agility Skill roll, which is negatively modified by the amount of rolled damage taken from the blast (Strength modifiers apply). So a character with an SV of 14 in Agility who takes 6 points of damage from the blast will have to succeed on a modified SV of 8 (14 - 6). With a successful roll, the character manages to stand firm against the powerful blast, but with a failed roll, they lose their balance and are tossed tumbling away, as far as the table below indicates. Loose objects do not roll to resist the blast, but are automatically thrown as far as the table indicates. WIND BLAST’S POWER Size Thrown away &lt;1/3 3d10 (OR 10) meters ≥1/3 – 1/2 2d10 (OR 10) meters ≥1/2 – 1.5t 1d10 (OR 10) meters ≥1.5 – 3t 1d10 meters ≥3 – 5t 1d6 meters ≥5 – 10t 1d3 meters ≥10t 1 meter",
+    "summary": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
+    "swedishName": "Kremjevauga",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:wind-blast:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-wind-craft:wind-blast:7:1",
+        "cost": 5,
+        "maxCount": 4,
+        "effect": "Double the size of the blast area: 1×1 m g 2×2 m g 4×4 m g 8×8 m g 16×16 m"
+      },
+      {
+        "id": "vitner-wind-craft:wind-blast:7:2",
+        "cost": 5,
+        "maxCount": 3,
+        "effect": "Increase the damage by one step:"
+      }
+    ],
     "source": "Player's Handbook, p. 139",
     "level": 4,
     "cost": 8,

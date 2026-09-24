@@ -12,8 +12,42 @@
     "catalogId": "vitner-soil-craft:shape-soil:1",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "Ce sort transforme toute la terre alentour en une glaise épaisse, lisse et malléable.",
-    "source": "Livre des règles, p. 158",
+    "description": "Ce sort transforme toute la terre alentour en une glaise épaisse, lisse et malléable. L’enchanteur peut alors utiliser le vitner pour modeler cette glaise enchantée et lui donner la forme de son choix, sans pouvoir dépasser la taille d’une halle de Storme. Il dispose de trois minutes pour façonner la glaise, après quoi la glaise reprend sa consistance d’origine tout en conservant la forme que l’enchanteur lui a donnée. Si l’enchanteur se trouve dans une région plate, on pourrait presque croire qu’il crée de la terre à partir de rien tandis qu’il utilise le vitner pour sculpter le sol et le faire monter vers lui. Cela dit, ce n’est qu’une illusion d’optique : le sort attire de la terre depuis une zone si large que la dépression ainsi créée est à peine perceptible (le maître de jeu doit tout de même déterminer si la zone affectée présente assez de terre). De même, si l’enchanteur choisit de niveler une structure en glaise ou un élément topographique, la légère augmentation du niveau du sol sera difficile à remarquer étant donné que la terre et la pierre se répandent sous les pieds des témoins. La durée de ce sort est de 5 minutes, ce qui indique le temps durant lequel la terre façonnée est capable de conserver sa nouvelle forme. Dès que le sort expire, la terre reprend immédiatement sa forme et son emplacement d’origine. S’il reste des créatures ou des objets dans ou sur la terre façonnée à ce moment-là, c’est au maître de jeu de déterminer ce qui leur arrive. Une personne dans un trou ou un passage créé dans la terre se retrouvera piégé par le retour de la terre et de la roche, tandis qu’un personnage qui se tient sur un escalier créé par le biais de ce sort se retrouvera probablement les jambes piégées dans la boue et la terre une fois que l’escalier aura retrouvé sa forme originelle.",
+    "summary": "Ce sort transforme toute la terre alentour en une glaise épaisse, lisse et malléable.",
+    "swedishName": "Jördforma",
+    "duration": "5 minutes",
+    "range": "5 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:shape-soil:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la quantité de la terre affectée de l’équivalent d’une halle de Storme supplémentaire, et augmente le temps dont dispose l’enchanteur pour la façonner de : 3 minutes"
+      },
+      {
+        "id": "vitner-soil-craft:shape-soil:1:3",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Donne à la terre une forme permanente"
+      }
+    ],
+    "source": "Livre des règles, p. 159",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -12,8 +12,60 @@
     "catalogId": "vitner-flame-craft:warmth:6",
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
-    "description": "d’une plaine venteuse la durée de ce sort sera réduite de moitié.",
-    "source": "Livre des règles, p. 166",
+    "description": "L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. TEMPÉRATURE ET DÉGÂTS:\n|Température|Dégâts|\n|---|---|\n|50°C|1d6 + 1 PS par jour|\n|60°C|1 PS par heure|\n|70°C|1d6 + 1 PS par heure|\n|80°C|1 PS par minute|\n|90°C|1 PS par tour de jeu|\n|100°C et plus|1d6 PS par tour de jeu|\n",
+    "summary": "d’une plaine venteuse la durée de ce sort sera réduite de moitié.",
+    "swedishName": "Vjerma",
+    "duration": "5 heures",
+    "range": "3 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:warmth:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la sphère d’effet de : 1 mètre"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la sphère d’effet de : 10 mètres"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la température de : +10° C"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Attache le sort à un objet, ce qui permet de déplacer le sort en même temps que l’objet qui est son point d’origine"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:6",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Change le type de sort en persistant"
+      }
+    ],
+    "source": "Livre des règles, p. 168",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -12,8 +12,42 @@
     "catalogId": "holy-toikalokke-master-of-elements:hot-and-cold:10",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
-    "description": "L’ihana peut augmenter ou réduire la température de 10°C maximum dans un espace de 2m ³ autour de lui pendant six heures.",
-    "source": "Livre des règles, p. 297",
+    "description": "L’ihana peut augmenter ou réduire la température de 10°C maximum dans un espace de 2m3 autour de lui pendant six heures. Cette aptitude ne fonctionne pas sur les températures déjà sous le coup d’une influence magique ou divine.",
+    "summary": "L’ihana peut augmenter ou réduire la température de 10°C maximum dans un espace de 2m ³ autour de lui pendant six heures.",
+    "swedishName": "",
+    "duration": "3 heures",
+    "range": "personnelle",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente ou diminue la température (minimum -50°C, maximum 50°C) de : 3°C"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 heures"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le rayon de la zone affectée de : 1 m3"
+      }
+    ],
+    "source": "Livre des règles, p. 299",
     "level": 4,
     "cost": 8,
     "modifier": -8

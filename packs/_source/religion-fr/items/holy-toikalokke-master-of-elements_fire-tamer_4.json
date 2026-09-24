@@ -13,7 +13,41 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
-    "source": "Livre des règles, p. 297",
+    "summary": "L’ihana peut créer ou étouffer jusqu’à 1 mètre cube de flammes situées à portée par tour de jeu.",
+    "swedishName": "",
+    "duration": "1 tour de jeu",
+    "range": "10 mètres",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 tours de jeu"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 tours de jeu"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le volume affecté de : 1m3"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:fire-tamer:4:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 298",
     "level": 2,
     "cost": 4,
     "modifier": -4

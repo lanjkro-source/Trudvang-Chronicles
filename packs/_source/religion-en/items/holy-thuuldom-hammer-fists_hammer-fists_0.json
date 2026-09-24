@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "tabletId": "holy-thuuldom-hammer-fists",
     "tablet": "Hammer Fists",
-    "description": "Hardens the Thuul's fists into crushing weapons like smithing hammers.",
+    "description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
+    "summary": "Hardens the Thuul's fists into crushing weapons like smithing hammers.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personalle",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-hammer-fists:hammer-fists:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "1d6"
+      },
+      {
+        "id": "holy-thuuldom-hammer-fists:hammer-fists:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "1d6 + 2"
+      },
+      {
+        "id": "holy-thuuldom-hammer-fists:hammer-fists:0:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "1d10 + 2"
+      },
+      {
+        "id": "holy-thuuldom-hammer-fists:hammer-fists:0:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "1d10 (OR 10) + 2"
+      },
+      {
+        "id": "holy-thuuldom-hammer-fists:hammer-fists:0:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "1d10 (OR 9-10) + 2"
+      }
+    ],
     "source": "Player's Handbook, p. 231",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!GcXifqToUpVqWrXs",

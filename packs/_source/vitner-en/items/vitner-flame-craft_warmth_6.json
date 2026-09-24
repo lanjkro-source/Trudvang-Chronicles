@@ -12,7 +12,59 @@
     "catalogId": "vitner-flame-craft:warmth:6",
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
-    "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
+    "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+    "summary": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
+    "swedishName": "Vjerma",
+    "duration": "5 hour(s)",
+    "range": "3 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-flame-craft:warmth:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius of the sphere by"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "meter"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Anchor the spell to an object, which makes the sphere portable with the object as its center"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the temperature range by another +10° C"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-flame-craft:warmth:6:6",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Change the type of the spell to"
+      }
+    ],
     "source": "Player's Handbook, p. 109",
     "level": 4,
     "cost": 8,

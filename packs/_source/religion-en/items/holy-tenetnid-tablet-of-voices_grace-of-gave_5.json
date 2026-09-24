@@ -12,7 +12,41 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:grace-of-gave:5",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablet of Voices",
-    "description": "The Gavlian can bless someone and their future circumstances.",
+    "description": "The Gavlian can bless someone and their future circumstances. The person must be a believer and follower of the Tenet of Nid, and willing to accept the blessing. The person must come to the priest and explain the intended act that deserves the blessing. If the priest deems the act worthy, they can bless the person. An act worthy of blessing will likely involve several different Skill rolls, any of which might benefit from the blessing. An example of such a deed would be to find the lost treasure of the church. If someone is blessed for this pursuit, they would benefit from the ability’s effect on two rolls that are direct or indirect consequences of the search for that treasure. But the blessing lasts for a limited amount of time, so it is important to finish the act before the effect ends. In the basic version of the ability, the priest blesses two people who add +3 to any Skill Values of actions that are in pursuit of (or a consequence of) the specified act. A person cannot possess more than one blessing at a time. The priest is unable to use the ability on herself.",
+    "summary": "The Gavlian can bless someone and their future circumstances.",
+    "swedishName": "",
+    "duration": "4 action round(s)",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the blessing’s bonus by an additional +1 (maximum +5)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:grace-of-gave:5:3",
+        "cost": 2,
+        "maxCount": 6,
+        "effect": "Bless another person (maximum 4"
+      }
+    ],
     "source": "Player's Handbook, p. 206",
     "level": 3,
     "cost": 6,

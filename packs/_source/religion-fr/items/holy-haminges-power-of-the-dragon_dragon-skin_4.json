@@ -12,8 +12,24 @@
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
-    "source": "Livre des règles, p. 277",
+    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu. Ces points sont liés à ces actions d’arme supplémentaires, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer plusieurs bras supplémentaires, qui brandissent chacune une arme.",
+    "summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
+    "swedishName": "",
+    "duration": "3 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      }
+    ],
+    "source": "Livre des règles, p. 279",
     "level": 3,
     "cost": 6,
     "modifier": -6

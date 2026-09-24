@@ -12,8 +12,36 @@
     "catalogId": "vitner-power-of-thought:understanding-speech:1",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Une fois qu’il s’est enchanté lui-même, l’enchanteur est capable de comprendre tout ce qui se dit dans une langue qu’il ne parle pas normalement.",
-    "source": "Livre des règles, p. 176",
+    "description": "Une fois qu’il s’est enchanté lui-même, l’enchanteur est capable de comprendre tout ce qui se dit dans une langue qu’il ne parle pas normalement. L’enchanteur comprend cette langue aussi finement que s’il s’agissait de sa langue maternelle. Avec quelques niveaux de puissance supplémentaires, l’enchanteur est même capable de s’exprimer dans cette langue.",
+    "summary": "Une fois qu’il s’est enchanté lui-même, l’enchanteur est capable de comprendre tout ce qui se dit dans une langue qu’il ne parle pas normalement.",
+    "swedishName": "Skopjatenmal",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:understanding-speech:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:understanding-speech:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-power-of-thought:understanding-speech:1:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Le sort convertit également les propos de l’enchanteur, de sorte qu’une créature entend ce que dit l’enchanteur dans la langue choisie"
+      }
+    ],
+    "source": "Livre des règles, p. 177",
     "level": 1,
     "cost": 2,
     "modifier": -2

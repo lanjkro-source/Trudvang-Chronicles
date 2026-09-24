@@ -12,7 +12,23 @@
     "catalogId": "holy-tenetnid-tablet-of-the-sun:portent:8",
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablet of the Sun",
-    "description": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing.",
+    "description": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing. This prayer can be difficult to manage because the visions the priest receives can be interpreted in a variety of different ways. It is up to the game master to determine how extensively or vaguely the near future will be described. The revelation will never tell the final outcome of events, but may reveal what events will occur. For example, the ability might indicate that the priest will face a dragon in the near future, but not how the encounter with the dragon will end. The priest closes their eyes and wraps their hands around those of the chosen one, or the priest clasps their own hands if determining their own future. The priest then receives a vision of an event that will affect the person within one week. The event should primarily be life-changing, but if it isn’t, a meaningful event is sufficient.",
+    "summary": "The priest asks his god to reveal the future, and Gave responds by giving a vision to the dimwalker or a person of the priest’s choosing.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:portent:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increases time by +1 week from"
+      }
+    ],
     "source": "Player's Handbook, p. 203",
     "level": 5,
     "cost": 10,

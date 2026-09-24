@@ -12,8 +12,24 @@
     "catalogId": "holy-gerbanis-warmth-of-sunvei:healing-sun:8",
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
-    "description": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei.",
-    "source": "Livre des règles, p. 216",
+    "description": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei. Les mains de l’arpenteur des brumes se mettent alors à luire d’un feu purificateur que le stormikjalt dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 10 points de santé et met fin à tous les saignements.",
+    "summary": "Le stormikjalt tend les bras vers le ciel et en appelle à Solvei.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-warmth-of-sunvei:healing-sun:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Soigne de : 3 points de santé"
+      }
+    ],
+    "source": "Livre des règles, p. 218",
     "level": 5,
     "cost": 10,
     "modifier": -10

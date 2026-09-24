@@ -12,8 +12,48 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
-    "description": "FORCE DU JOTUN :",
-    "source": "Livre des règles, p. 218",
+    "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
+    "summary": "FORCE DU JOTUN :",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "5 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Applique le bonus de : +8 en Force à une personne de plus"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Fait passer le trait de : +4 à +6 pour les alliés du stormikjalt"
+      }
+    ],
+    "source": "Livre des règles, p. 219",
     "level": 4,
     "cost": 8,
     "modifier": -8

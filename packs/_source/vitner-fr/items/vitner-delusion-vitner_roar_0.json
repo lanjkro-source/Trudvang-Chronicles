@@ -12,7 +12,35 @@
     "catalogId": "vitner-delusion-vitner:roar:0",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
-    "description": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre.",
+    "description": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre. L’enchanteur n’entend pas ce bruit luimême, mais toutes les autres personnes situées à proximité, voire celles qui sont loin de lui, peuvent entendre cette déflagration. Quiconque se trouve à moins de 10 mètres de l’enchanteur éprouve soudain une douleur lancinante dans les oreilles qui se mettent à bourdonner, ce qui se traduit par un malus de -4 à toutes les valeurs de compétence et de situation associées à l’audition. L’effet se dissipe au bout de 1d6 minutes.",
+    "summary": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:roar:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Fait passer la portée de personnelle à* : 10 mètres"
+      },
+      {
+        "id": "vitner-delusion-vitner:roar:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Fait passer la portée de personnelle à* : 100 mètres"
+      },
+      {
+        "id": "vitner-delusion-vitner:roar:0:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le rayon de : 10 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 197",
     "level": 1,
     "cost": 2,

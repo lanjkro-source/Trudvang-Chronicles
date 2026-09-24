@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0",
     "tabletId": "holy-thuuldom-labyrinth-blood",
     "tablet": "Sang du labyrinthe",
-    "description": "Cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir.",
+    "description": "Cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir. Même si les yeux du thuul étaient recouverts pendant son voyage, il a une chance de percevoir son cheminement de façon surnaturelle. Il effectue un test de situation avec une valeur de situation de 9 (+1/niveau de la rune) pour deviner la distance et la direction. Si le thuul a été déplacé alors qu’il était inconscient ou dans un état semblable, la rune peut quand même le lui indiquer, mais sa valeur de situation tombe à 4 (+1/niveau de la rune). Si le thuul rate son test de situation, il ne peut pas se souvenir des détails de son voyage. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne.",
+    "summary": "Cette rune, qu’on porte le plus souvent sur un bijou, permet au thuul de se rappeler avec précision la distance qu’il a parcourue et la direction qu’il a empruntée pendant la durée du pouvoir.",
+    "swedishName": "",
+    "duration": "1 heure/niveau",
+    "range": "",
+    "weavingTime": "",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Test de situation pour se souvenir à SV : 10"
+      },
+      {
+        "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Test de situation pour se souvenir à SV : 11"
+      },
+      {
+        "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Test de situation pour se souvenir à SV : 12"
+      },
+      {
+        "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Test de situation pour se souvenir à SV : 13"
+      },
+      {
+        "id": "holy-thuuldom-labyrinth-blood:labyrinth-blood:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Test de situation pour se souvenir à SV : 14"
+      }
+    ],
     "source": "Livre des règles, p. 288",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!ejBpkfIdJeKfLgMh",

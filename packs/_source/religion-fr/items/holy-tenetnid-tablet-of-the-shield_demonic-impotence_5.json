@@ -12,8 +12,30 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
-    "description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire.",
-    "source": "Livre des règles, p. 257",
+    "description": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire. Pendant les 10 tours de jeu suivants, il obtient la faculté d’arracher une capacité à un démon simplement en le touchant à l’aide de ses mains luisantes (ce qui exige de réussir une attaque à mains nues). Si le prêtre parvient à voler l’un de ses pouvoirs au démon, ce dernier ne peut plus l’utiliser jusqu’à expiration de ce pouvoir. Un prêtre ne peut voler qu’une seule capacité à un démon. Si le prêtre dépense un point de raud quand il parvient à arracher une capacité à un démon, ce dernier la perd de façon définitive.",
+    "summary": "Le prêtre adresse une prière à Gave, et ses mains se mettent à luire.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:demonic-impotence:5:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      }
+    ],
+    "source": "Livre des règles, p. 258",
     "level": 3,
     "cost": 6,
     "modifier": -6

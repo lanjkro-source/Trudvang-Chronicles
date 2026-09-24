@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-master-of-elements:earth-wall:0",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
-    "description": "L’ihana se protège en faisant surgir un mur de terre devant lui.",
+    "description": "L’ihana se protège en faisant surgir un mur de terre devant lui. Le volume total de ce mur est de 1 mètre cube, que l’elfe peut façonner à sa convenance. Une fois la durée du pouvoir expirée (ou quand le mur est détruit), le mur de terre s’effondre et disparaît. Chaque mètre cube de terre peut encaisser 30 points de dégâts avant de s’écrouler.",
+    "summary": "L’ihana se protège en faisant surgir un mur de terre devant lui.",
+    "swedishName": "",
+    "duration": "30 minutes",
+    "range": "2 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:earth-wall:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la quantité de terre affectée de : 1m3"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:earth-wall:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 30 minutes"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:earth-wall:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 heures"
+      }
+    ],
     "source": "Livre des règles, p. 297",
     "level": 1,
     "cost": 2,

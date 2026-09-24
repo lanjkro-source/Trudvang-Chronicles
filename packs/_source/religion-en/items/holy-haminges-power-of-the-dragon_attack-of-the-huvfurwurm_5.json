@@ -12,7 +12,23 @@
     "catalogId": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Power of the Dragon",
-    "description": "The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +2 weapon actions per action round, as well as +10 Combat Points per action round.",
+    "description": "The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +2 weapon actions per action round, as well as +10 Combat Points per action round. These points are locked into the additional weapon actions, meaning that to take advantage of the extra points, the spirit conjurer must use all their ordinary weapon actions first. When the spirit conjurer uses this ability, it appears as if they gain a few extra limbs, which wield extra weapons.",
+    "summary": "The spirit conjurer gathers strength from the huvfurwurm’s spirit and gains an additional +2 weapon actions per action round, as well as +10 Combat Points per action round.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      }
+    ],
     "source": "Player's Handbook, p. 214",
     "level": 3,
     "cost": 6,

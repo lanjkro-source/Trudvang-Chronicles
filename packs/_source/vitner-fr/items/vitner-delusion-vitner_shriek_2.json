@@ -12,7 +12,35 @@
     "catalogId": "vitner-delusion-vitner:shriek:2",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
-    "description": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort).",
+    "description": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort). Le son est si aigu que la plupart des humanoïdes le remarqueront à peine et ne percevront qu’un faible sifflement. Le bruit provient d’un point choisi par l’enchanteur dans la limite de la portée du sort, et il affecte tous les objets situés dans un rayon de 10 mètres et tous les animaux dans un rayon de 100 mètres. Les chiens, chats, rats et autres animaux du même genre sont contraints de gagner la zone dont provient le bruit, et une fois qu’ils s’y trouvent, ils tentent de reproduire le même cri strident. Ils sont incapables de faire quoi que ce soit d’utile pendant la durée du sort. Ce sort est instantané dans sa version de base, mais des niveaux de puissance supplémentaires permettent de le rendre persistant.",
+    "summary": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort).",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:shriek:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres"
+      },
+      {
+        "id": "vitner-delusion-vitner:shriek:2:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-delusion-vitner:shriek:2:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 197",
     "level": 1,
     "cost": 2,

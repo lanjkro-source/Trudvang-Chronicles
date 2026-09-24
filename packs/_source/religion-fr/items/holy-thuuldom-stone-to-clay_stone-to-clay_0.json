@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-stone-to-clay:stone-to-clay:0",
     "tabletId": "holy-thuuldom-stone-to-clay",
     "tablet": "Transformation de pierre en argile",
-    "description": "elle expire, la pierre reprend sa forme d’origine.",
+    "description": "En plaçant l’objet runique sur une pierre, le thuul peut transformer cette dernière en glaise souple (dans la limite de 1 mètre cube de pierre par niveau de rune). On peut façonner cette glaise comme n’importe quelle autre terre molle. Une fois le thuul satisfait de la nouvelle forme de la glaise (après au moins trois minutes de travail par niveau de la rune), la glaise retrouve la dureté de la pierre. Quand cela se produit, la durée indiquée plus haut débute. Quand elle expire, la pierre reprend sa forme d’origine.",
+    "summary": "elle expire, la pierre reprend sa forme d’origine.",
+    "swedishName": "",
+    "duration": "spéciale",
+    "range": "1 mètre cube/niveau",
+    "weavingTime": "3 minutes/niveau",
+    "dailyActivation": "1",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "La transformation dure : 1 heure"
+      },
+      {
+        "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "La transformation dure : 3 heures"
+      },
+      {
+        "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "La transformation dure : 6 heures"
+      },
+      {
+        "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "La transformation dure : 9 heures"
+      },
+      {
+        "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "La transformation dure : 12 heures"
+      }
+    ],
     "source": "Livre des règles, p. 288",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!cYG1LXrXsYtZu0v1",

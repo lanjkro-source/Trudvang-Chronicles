@@ -12,7 +12,41 @@
     "catalogId": "holy-toikalokke-master-of-elements:control-wind:9",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Master of Elements",
-    "description": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
+    "description": "The Ihana controls the force of the wind within a sphere that is 10 meters in radius. The chosen one can increase or decrease the power of the wind by one degree within that sphere. In the ability’s basic version, the affected area is a<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.</td></tr></tbody></table>static object or place that cannot be moved, but by adding a level of power, it is possible to move the area. CONTROL WIND, DEGREES Degree Wind Power 1 Calm 2 Breeze 3 Windy (-1) 4 Storm (-2) 5 Hurricane (-4) 6 Godly hurricane (-6) The wind conditions in the table are only the names of forces that can occur. It is up to the game master to decide what happens in each condition according to the situation. The table also lists values in parentheses, which indicate the normal modifiers applied to the Situation value of anything attempted within that condition that requires movement, precision, or focus.",
+    "summary": "The spell creates a blast of compressed air that rushes with incredible speed at one or more targets.",
+    "swedishName": "",
+    "duration": "2 hour(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:control-wind:9:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:control-wind:9:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the affected radius by 10 meters"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:control-wind:9:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect a moveable object so the sphere is moveable"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:control-wind:9:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase or decrease the strength"
+      }
+    ],
     "source": "Player's Handbook, p. 241",
     "level": 4,
     "cost": 8,

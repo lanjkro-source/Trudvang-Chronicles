@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day.",
+    "description": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day. The transformation takes 60 action rounds (5 minutes) and requires enough soil and space for the oak’s roots and branches, respectively. For each hour the priest spends in this state, they heal 1 Body Point. As a tree, the priest also receives nutrients from the water in the soil and the sun’s light, so there is no need to consume any food or water. Additionally, the priest can make a Situation roll once every day with a Situation value of 6 (Psyche modifiers apply) to try to remove an existing curse or demon infection from himself. In the tree port, the priest is immune to all demon attacks and a bilities. The priest can turn back to their true shape whenever they wish within the duration. If anyone (besides a demon) attacks the tree, it has a natural Protection Value of 8, and only one-fifth of the damage that penetrates this protection hurts the priest. If the priest is slain while in the tree port, they will remain a black oak.",
+    "summary": "The Gavlian invokes the force of the black oak, granting the priest the ability to transform into a large black oak for one day.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "personalle",
+    "weavingTime": "5 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the Situation value by +1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:tree-port:8:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the tree’s Protection"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 5,
     "cost": 10,

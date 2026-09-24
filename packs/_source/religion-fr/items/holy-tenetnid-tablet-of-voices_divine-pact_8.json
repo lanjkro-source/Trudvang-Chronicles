@@ -12,8 +12,42 @@
     "catalogId": "holy-tenetnid-tablet-of-voices:divine-pact:8",
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
-    "description": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sentiments de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié.",
-    "source": "Livre des règles, p. 255",
+    "description": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sentiments de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié. Ce pouvoir est si puissant que l’amitié qu’il évoque peut même changer l’adversaire le plus furieux en un ami proche du prêtre, au point que le sujet apportera volontiers son aide à l’arpenteur des brumes jusqu’à expiration de ce pouvoir. Les animaux, les bêtes, les démons, les morts-vivants et les créatures d’intelligence inférieure ne sont pas affectés par ce pouvoir, mais la plupart des créatures humanoïdes y sont sensibles (même les trolls). La seule façon d’échapper à ce pouvoir est de recourir au vitner ou à des pouvoirs divins, ou bien de briser la concentration du prêtre. Le prêtre peut affecter jusqu’à quatre ennemis situés à portée jusqu’à expiration de ce pouvoir. Chaque cible a le droit de tenter de résister en effectuant un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). En cas d’échec, la victime devient immédiatement amicale envers le prêtre et considère les amis et les ennemis du prêtre comme les siens. Si le prêtre ou l’un de ses amis attaque la victime de ce pouvoir, l’effet de ce dernier prend immédiatement fin.",
+    "summary": "Ce pouvoir fait naître de nouveaux sentiments chez la cible et remplace toutes les pensées hostiles par des sentiments de compassion et de grâce, de sorte qu’un adversaire devient temporairement un allié.",
+    "swedishName": "",
+    "duration": "5 tours de jeu",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-voices:divine-pact:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:divine-pact:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:divine-pact:8:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit la valeur de situation pour résister à ce pouvoir de : -1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-voices:divine-pact:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte un ennemi supplémentaire"
+      }
+    ],
+    "source": "Livre des règles, p. 257",
     "level": 5,
     "cost": 10,
     "modifier": -10

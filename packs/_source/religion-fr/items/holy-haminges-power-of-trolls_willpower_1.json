@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-trolls:willpower:1",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
-    "description": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur.",
+    "description": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur. Le conjurateur est rarement effrayé et réduit donc de 4 les points de peur qu’il subit à chaque jet de facteur de peur, et ce jusqu’à expiration du pouvoir.",
+    "summary": "L’esprit lié octroie du courage au conjurateur, ce qui lui permet de tenir face aux choses horribles qui plongeraient quelqu’un de moins courageux dans la terreur.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:willpower:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:willpower:1:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 274",
     "level": 1,
     "cost": 2,

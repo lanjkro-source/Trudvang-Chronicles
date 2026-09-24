@@ -12,8 +12,60 @@
     "catalogId": "vitner-body-vitner:strengthen:8",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "Ce sort renforce les muscles du béné ficiaire, qui gagnent instantanément en taille et en puissance.",
-    "source": "Livre des règles, p. 192",
+    "description": "Ce sort renforce les muscles du bénéficiaire, qui gagnent instantanément en taille et en puissance. La force du personnage enchanté augmente, ce qui améliore son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. MODIFICATEURS/DÉGÂTS:\n|Force|Modificateur au test de situation/Modificateur aux dégâts|\n|---|---|\n|Puissance de géant|+8|\n|Force de stenhinje|+6|\n|Force de troll|+4|\n|Puissant|+2|\n|Fort|+1|\n|Moyen|+0|\n|Faible|-1|\n|Frêle|-2|\n|Chétif|-4|\n|Mou|-6|\n|Invalide|-8|\n Le personnage enchanté peut soudain brandir d’énormes troncs comme s’il s’agissait de simples branches, ou lancer des rochers aussi facilement que des galets. Le personnage enchanté voit sa Force augmenter d’un degré sur la table ci-dessous, jusqu’à un maximum de +8. Il est également possible de tisser ce sort dans le but inverse de provoquer le flétrissement et l’atrophie des muscles de la victime. La Force de cette dernière décline immédiatement, ce qui diminue son modificateur de dégâts et ses chances de réussir un test de situation associé à la Force. Le personnage enchanté voit sa Force diminuer d’un degré sur la table ci-dessous. La victime peut résister à l’effet de ce sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte les modificateurs de Constitution).",
+    "summary": "Ce sort renforce les muscles du béné ficiaire, qui gagnent instantanément en taille et en puissance.",
+    "swedishName": "Jotnastyrkja",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:strengthen:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 10 minutes"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Fait monter ou descendre d’un degré sur la table"
+      },
+      {
+        "id": "vitner-body-vitner:strengthen:8:6",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affecte une cible supplémentaire (avec la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 195",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:holy-bolt:1",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablet of Anger",
-    "description": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range.",
+    "description": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range. Undead struck by this energy receive damage without any chance of avoiding it. Armor does not protect against this ability. Only undead creatures can be harmed by it. The priest directs the energy in the form of a glowing projectile toward a single undead creature within range. The bolt deals 1d10 (OR 8-10) points of damage.",
+    "summary": "When the force of Gave is called upon, sacred energy erupts from the priest and pierces an undead creature within the ability’s range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:0",
+        "cost": 2,
+        "maxCount": 6,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:1",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Increase damage by +3 2: Stone Senses ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 3 action rounds ✦ Range: 5 meters ✦ Invocation time: 1 action round The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify. The opponent suffers a -2 initiative modifier and -1 on all combat actions for the duration of the ability. This ability can be used only on people and creatures that are close to human- sized (from half the size of a human up to 1.5 times the size of a human). LEVELS OF POWER: STONE SENSES Cost Extra Levels of Power"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action"
+      }
+    ],
     "source": "Player's Handbook, p. 194",
     "level": 1,
     "cost": 2,

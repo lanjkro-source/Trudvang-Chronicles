@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-lynx-power:tree-walk:1",
     "tabletId": "holy-toikalokke-lynx-power",
     "tablet": "Lynx Power",
-    "description": "The Ihana can move among the trees at half their normal movement rate.",
+    "description": "The Ihana can move among the trees at half their normal movement rate. If the trees stand so close to each other that the chosen one can reach from one tree’s branches to another’s, they can also climb from tree to tree through the canopy (up to the game master to decide). In areas that are more difficult to traverse, the Ihana can still attempt such an act by making a Situation roll with a Situation value determined by the game master (Dexterity traits apply) or a Skill roll for the Agility skill.",
+    "summary": "The Ihana can move among the trees at half their normal movement rate.",
+    "swedishName": "",
+    "duration": "10 minute(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the speed to match normal movement"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:tree-walk:1:2",
+        "cost": 4,
+        "maxCount": 1,
+        "effect": "Increase the duration by 3 hours"
+      }
+    ],
     "source": "Player's Handbook, p. 239",
     "level": 1,
     "cost": 2,

@@ -13,6 +13,28 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
     "description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
+    "summary": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomant-s-fur:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomant-s-fur:4:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Ability also protects against"
+      }
+    ],
     "source": "Player's Handbook, p. 212",
     "level": 3,
     "cost": 6,

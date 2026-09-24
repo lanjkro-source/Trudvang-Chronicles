@@ -12,8 +12,60 @@
     "catalogId": "vitner-vitner-of-objects:alarm-object:4",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange.",
-    "source": "Livre des règles, p. 200",
+    "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc.",
+    "summary": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange.",
+    "swedishName": "Vakefnating",
+    "duration": "5 heures",
+    "range": "10 mètres",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 semaine"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 mètres"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 mètres"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:5",
+        "cost": 16,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:6",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Crée une autre alarme sur le même objet avec une autre condition de déclenchement"
+      }
+    ],
+    "source": "Livre des règles, p. 202",
     "level": 3,
     "cost": 6,
     "modifier": -6

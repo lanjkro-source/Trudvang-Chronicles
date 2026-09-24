@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
-    "description": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir.",
-    "source": "Livre des règles, p. 241",
+    "description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+    "summary": "Par ce pouvoir, Morgu renforce l’es sence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le nombre de points de santé gagnés de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 243",
     "level": 4,
     "cost": 8,
     "modifier": -8

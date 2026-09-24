@@ -12,8 +12,54 @@
     "catalogId": "vitner-witchcraft:tree-curse:7",
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
-    "description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine.",
-    "source": "Livre des règles, p. 184",
+    "description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine. Ce sort ne peut être tissé que sur une créature dont le poids n’excède pas 60 kg et qui se tient sur un sol suffisamment épais et fertile pour qu’un arbre puisse s’y enraciner et pousser. La victime peut tenter de résister à cette transformation en effectuant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). En cas de réussite, seule la peau de la victime se transforme en écorce, ce qui n’a d’autre effet que de modifier son apparence et de réduire son Agilité : toutes ses valeurs de compétence et de situation associées à l’Agilité subissent un malus de -3 jusqu’à expiration du sort. Si la cible est trop lourde pour être complètement transformée, seules certaines parties de la victime se verront altérées (au maître de jeu de déterminer lesquelles), tandis que le reste du corps de la victime voit seulement sa peau se changer en écorce, avec les mêmes effets que ci-dessus. Dans ce cas, un test de situation réussi signifie que la victime ne subit qu’un malus de -1 (au lieu de -3). Si la cible rate son test de situation et que son poids ne dépasse pas 60 kg, elle prend immédiatement racine et se retrouve incapable de bouger. Dès lors, au cours de l’heure qui suit, la victime se change en un arbre d’une essence choisie par l’enchanteur (il doit cependant s’agir d’une espèce capable de survivre dans la région, même si elle n’y est pas courante). L’arbre conserve la taille et les points de santé que la victime possédait sous sa forme normale. Il conserve également son apparence faciale, incrustée dans son écorce, et des membres ressemblant à des bras et des jambes. Tant que la créature est sous cette forme, elle conserve les mêmes facultés sensorielles qu’elle possédait au moment où la malédiction l’a frappée. La créature voit tout ce qui est visible de son point de vue (selon l’orientation de son visage) et entend les sons, perçoit les odeurs, et ressent les contacts normalement. La créature conserve tous les dégâts qu’elle subit sous cette forme quand elle recouvre sa forme naturelle. Les possessions telles que les vêtements et l’équipement sont intégrées à l’arbre (pour peu que leur poids n’excède pas la limite imposée par le sort). Sous forme d’arbre, la victime profite d’une valeur de protection de 4. Elle n’a pas besoin de boire ou de manger pour survivre, mais il lui arrivera de s’endormir. Si quelqu’un grave l’écorce de l’arbre ou tente de l’abattre (ce qui inflige des dégâts à la victime), l’arbre se met à saigner. Si cela ne dissuade pas l’assaillant, la victime meurt si elle encaisse suffisamment de dégâts. L’enchanteur peut à tout moment mettre un terme à cette malédiction et rendre à sa victime sa forme d’origine. Une créature qui subit la malédiction de l’arbre pendant toute la durée du sort demeure très raide même après avoir retrouvé sa forme d’origine, et pendant les trois jours qui suivent, ses tests de compétence et de situation associés à l’Agilité et au mouvement sont diminués de moitié.",
+    "summary": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine.",
+    "swedishName": "Nidtreid",
+    "duration": "2d6 jours",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-witchcraft:tree-curse:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le poids affecté de : 10 kg"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 semaine"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:3",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 mois"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:4",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 année"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 187",
     "level": 5,
     "cost": 10,
     "modifier": -10

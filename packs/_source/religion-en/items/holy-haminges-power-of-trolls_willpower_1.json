@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-trolls:willpower:1",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Power of Trolls",
-    "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
+    "description": "The bound spirit bestows courage upon the conjurer, which bolsters them in the face of horrific things that would cause fear in a less courageous being. The spirit conjurer rarely becomes frightened and therefore reduces any Fear Points gained by -4 from each fear factor roll, which lasts for the duration of the ability.",
+    "summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:willpower:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:willpower:1:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 223",
     "level": 1,
     "cost": 2,

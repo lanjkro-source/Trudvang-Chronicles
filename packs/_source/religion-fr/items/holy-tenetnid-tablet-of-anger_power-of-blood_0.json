@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
-    "description": "Puissance du sang est un pouvoir de Tablette de la colère ; sa description de règles complète sera ajoutée ultérieurement.",
+    "description": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir. Les victimes de cette prière voient immédiatement des plaies ouvertes apparaître sur leurs mains et leurs pieds et se mettre à saigner, ce qui a des effets plus psychologiques que physiques. Les armures et protections naturelles ne sont donc d’aucune utilité. Le prêtre impose une blessure qui saigne abondamment à un ennemi. Chaque blessure lui inflige 1 point de dégâts. Pour résister à la douleur psychologique (mais pas aux dégâts physiques), la victime doit réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique). En cas d’échec, la victime subit un malus de -1 à tous ses tests de compétence et de situation pendant les prochaines 1d6 heures.",
+    "summary": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir.",
+    "swedishName": "",
+    "duration": "",
+    "range": "5 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
+        "cost": 1,
+        "maxCount": 6,
+        "effect": "Augmente le nombre de blessures qui saignent de : 1"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Affecte un autre ennemi"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      }
+    ],
     "source": "Livre des règles, p. 250",
     "level": 1,
     "cost": 2,

@@ -13,7 +13,29 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur pousse un hurlement à glacer le sang qui possède un facteur de peur de 1d10 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même).",
-    "source": "Livre des règles, p. 270",
+    "summary": "Le conjurateur pousse un hurlement à glacer le sang qui possède un facteur de peur de 1d10 et affecte tous ceux qui peuvent l’entendre (à l’exception du conjurateur lui-même).",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-scale:terrifying-howl:2:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:terrifying-howl:2:1",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Augmente le facteur de peur d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 271",
     "level": 2,
     "cost": 4,
     "modifier": -4

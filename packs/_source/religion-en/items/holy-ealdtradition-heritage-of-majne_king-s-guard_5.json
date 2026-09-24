@@ -12,7 +12,35 @@
     "catalogId": "holy-ealdtradition-heritage-of-majne:king-s-guard:5",
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Heritage of Majne",
-    "description": "The Bruid summons a spirit warrior from the great King’s guard.",
+    "description": "The Bruid summons a spirit warrior from the great King’s guard. The guard is a disciplined warrior who wears leather armor and is armed with a broad sword and a shield. The spirit warrior appears as a sudden fog that gathers around the Bruid and then takes on physical form. After the duration, the fog appears again and the warrior will disappear into it and leave the dimwalker. If the warrior dies, they settle back into fog and disappear. The spirit warrior will step up to guard or protect the dimwalker in battle or any situation where the dimwalker is in immediate danger. The warrior never moves farther than 10 meters from the Bruid and cannot perform any tasks other than personal protection for the Bruid or fighting those who attack the Bruid. The spirit warrior does not communicate; it only performs its task. A hero can have a maximum of four active guard warriors at one<hr>time. ✦ Guard Warrior: Strength +1, Body Points 25, Protection Value 3, battle points 15, initiative 1d10 (OR 10) + 5, the Shield Bearer specialty (+8 battle points).",
+    "summary": "The Bruid summons a spirit warrior from the great King’s guard.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Summon another spirit warrior (maximum 4)"
+      },
+      {
+        "id": "holy-ealdtradition-heritage-of-majne:king-s-guard:5:2",
+        "cost": 10,
+        "maxCount": 3,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 181",
     "level": 3,
     "cost": 6,

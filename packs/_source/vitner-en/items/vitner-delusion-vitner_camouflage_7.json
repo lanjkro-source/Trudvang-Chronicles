@@ -12,7 +12,47 @@
     "catalogId": "vitner-delusion-vitner:camouflage:7",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
-    "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+    "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings. Anyone searching for the target needs to succeed on a d ifficult (-3 to SV) Skill roll for the Shadow Arts skill in order to discover them. Depending on the environment, the camouflage will differ from place to place. For example, if the target stands next to a wall, they could appear to be a shrub or part of the wall itself; if they stand in a forest clearing, they could appear as a tree, a rock, or a bush. Their physical appearance does not change; it is the vitner that surrounds them that adopts the appearance of the intended camouflage. The target must stand completely still for the spell to work. It is broken if they make any significant movements or noises, or if someone touches them. However, the spell will be restored as soon as the target stops moving or causing the noise that is breaking the illusion. The spell can also be used on an object instead of a living being. The object must be something that is not attached to or carried by a creature. Beings that are not actively looking for hidden things do not get to make Skill rolls to discover the camouflaged object, unless it is a trap or an assault.",
+    "summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+    "swedishName": "Aldyldja",
+    "duration": "5 minute(s)",
+    "range": "contact",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:camouflage:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-delusion-vitner:camouflage:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-delusion-vitner:camouflage:7:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the level of difficulty to discover the target by -1"
+      },
+      {
+        "id": "vitner-delusion-vitner:camouflage:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra creature or an additional subject (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-delusion-vitner:camouflage:7:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 101",
     "level": 3,
     "cost": 6,

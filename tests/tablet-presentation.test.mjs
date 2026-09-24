@@ -1,8 +1,9 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
-import {TABLET_CATALOG, sortTabletPowers, tabletItemData} from "../modules/tablet-catalog.mjs";
+import {TABLET_CATALOG, powerItemData, sortTabletPowers, tabletItemData} from "../modules/tablet-catalog.mjs";
 import {affinityState, tabletAffinity, VITNER_TABLET_AFFINITIES} from "../modules/rules/tablet-affinity.mjs";
+import {POWER_DETAILS_BY_ID} from "../modules/power-catalog-data.mjs";
 
 const english = JSON.parse(readFileSync(new URL("../lang/en.json", import.meta.url), "utf8"));
 const french = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
@@ -23,6 +24,28 @@ test("all 58 tablets ship bilingual summaries and full descriptions", () => {
       assert.ok(data.system.description?.length > 10, `${tablet.id} ${language} description`);
     }
   }
+});
+
+test("all 394 powers ship localized descriptions, timing, and edition-specific power levels", () => {
+  const powers = TABLET_CATALOG.flatMap(tablet => tablet.powers.map(power => ({tablet, power})));
+  assert.equal(powers.length, 394);
+  for (const {tablet, power} of powers) {
+    for (const language of ["en", "fr"]) {
+      const data = powerItemData(power, tablet, resolvers(language)).system;
+      assert.ok(data.description && data.summary, `${power.id} ${language} description and summary`);
+      assert.equal(data.powerLevels.length, POWER_DETAILS_BY_ID[power.id][language].length);
+      assert.ok(data.powerLevels.every(level => level.effect && Number.isInteger(level.cost)), `${power.id} ${language} options`);
+      assert.ok(data.spellType && typeof data.duration === "string" && typeof data.range === "string", `${power.id} ${language} fields`);
+    }
+  }
+});
+
+test("Thuul rune entries do not masquerade as ordinary divine spending", () => {
+  const tablet = TABLET_CATALOG.find(entry => entry.id === "holy-thuuldom-healing-rune");
+  const rune = powerItemData(tablet.powers[0], tablet, resolvers("fr")).system;
+  assert.equal(rune.isRune, true);
+  assert.equal(rune.cost, 0);
+  assert.ok(rune.dailyActivation);
 });
 
 test("character magic lists follow power levels and canonical order within a level", () => {

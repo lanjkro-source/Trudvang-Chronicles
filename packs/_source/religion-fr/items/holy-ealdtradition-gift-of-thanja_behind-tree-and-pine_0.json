@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Don de Thanja",
-    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque le recherche doit réussir un test de compétence difficile (-3 à la VC) en Arts des ombres pour pouvoir le repérer.",
+    "summary": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
     "source": "Livre des règles, p. 234",
     "level": 1,
     "cost": 2,

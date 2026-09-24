@@ -12,7 +12,47 @@
     "catalogId": "vitner-perceiving:find-home:0",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures.",
+    "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact.",
+    "summary": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures.",
+    "swedishName": "Heimfundr",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:find-home:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue le nombre d’heures que le bénéficiaire doit avoir passées dans le lieu qu’il désire retrouver de : 1 (jusqu’à un minimum de : 1 heure)"
+      },
+      {
+        "id": "vitner-perceiving:find-home:0:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte une créature supplémentaire (qui bénéficie du sort de base)"
+      }
+    ],
     "source": "Livre des règles, p. 173",
     "level": 1,
     "cost": 2,

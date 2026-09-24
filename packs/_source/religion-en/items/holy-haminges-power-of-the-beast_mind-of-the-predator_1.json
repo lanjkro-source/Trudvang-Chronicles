@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-beast:mind-of-the-predator:1",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
-    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey.",
+    "description": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey. The spirit conjurer receives +1 on the SV of all combat actions when battling beasts and animals.",
+    "summary": "With the spirit of the wolf, the spirit conjurer unleashes the hunter within and can stalk the dark depths of the wild as a predator rather than prey.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mind-of-the-predator:1:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the bonus in combat by"
+      }
+    ],
     "source": "Player's Handbook, p. 212",
     "level": 1,
     "cost": 2,

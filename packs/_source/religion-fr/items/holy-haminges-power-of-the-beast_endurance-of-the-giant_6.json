@@ -12,8 +12,30 @@
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
-    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures.",
-    "source": "Livre des règles, p. 268",
+    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
+    "summary": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’op position et d’encaisser les blessures.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "personnelle",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 269",
     "level": 4,
     "cost": 8,
     "modifier": -8

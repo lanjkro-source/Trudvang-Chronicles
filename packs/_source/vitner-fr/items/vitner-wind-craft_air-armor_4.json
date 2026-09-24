@@ -12,8 +12,48 @@
     "catalogId": "vitner-wind-craft:air-armor:4",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de pro tection de 1.",
-    "source": "Livre des règles, p. 169",
+    "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de protection de 1. L’armure d’air protège également les objets que porte le bénéficiaire, comme son sac à dos ou ses sacoches, tant qu’il les porte près du corps. L’armure d’air repousse avec violence tout ce que la personne enchantée ne tient pas contre elle ou qui ne fait pas partie d’elle. Les petits objets non attachés qui entrent en contact avec l’armure d’air sont repoussés si la personne s’en approche trop.",
+    "summary": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de pro tection de 1.",
+    "swedishName": "Loftsdrapi",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:air-armor:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affecte un être supplémentaire (qui bénéficie de la version de base du sort)"
+      },
+      {
+        "id": "vitner-wind-craft:air-armor:4:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente l’épaisseur de l’armure d’air, ce qui augmente la valeur de protection de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 171",
     "level": 3,
     "cost": 6,
     "modifier": -6

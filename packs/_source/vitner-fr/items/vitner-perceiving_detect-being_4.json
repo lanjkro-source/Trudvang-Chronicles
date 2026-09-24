@@ -12,8 +12,48 @@
     "catalogId": "vitner-perceiving:detect-being:4",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée.",
-    "source": "Livre des règles, p. 173",
+    "description": "Ce sort permet à l’enchanteur de percevoir une personne ou une créature située à portée. Pour pouvoir pratiquer ce rituel, il doit toutefois connaître le nom de la cible et posséder un objet lui ayant appartenu. Moins il s’est écoulé de temps depuis que la cible s’est séparée de cet objet, plus il sera facile de la retrouver. Le maître de jeu doit commencer par déterminer la valeur de l’objet aux yeux de la cible (ce qui est subjectif, mais correspond également au temps que l’objet a passé entre les mains de la cible) et lui attribuer la valeur appropriée sur une échelle de 1 à 100. Contrairement au sort Détection d’objet, une valeur de 1 indique un objet de valeur et utilisé récemment, comme une arme de famille portée quelques heures plus tôt seulement, tandis que 100 indique quelque chose comme une vieille chaussette portée pour la dernière fois il y a plusieurs années. Pour percevoir un être vivant, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table p. 174 (Cf. le sort Détection d’objet). Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table ci-dessous pour déterminer la quantité d’informations qu’il reçoit au sujet de la position de la cible, en consultant la table Détection d’objet/des êtres vivants : résultat, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur s’est fait une idée de l’emplacement de la cible, cette sensation persiste jusqu’à expiration du sort. Si la cible se déplace, l’enchanteur le perçoit, et le sort l’informe de sa nouvelle position.",
+    "summary": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée.",
+    "swedishName": "Skopjatenskonja",
+    "duration": "1 heure",
+    "range": "5 kilomètres",
+    "weavingTime": "5 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:detect-being:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussite du test de situation de : +1"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 kilomètres"
+      },
+      {
+        "id": "vitner-perceiving:detect-being:4:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 174",
     "level": 3,
     "cost": 6,
     "modifier": -6

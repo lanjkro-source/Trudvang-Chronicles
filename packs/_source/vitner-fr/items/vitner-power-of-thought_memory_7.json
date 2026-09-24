@@ -12,8 +12,48 @@
     "catalogId": "vitner-power-of-thought:memory:7",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée. Il peut se rappeler dans les moindres détails un événement précis par tour de jeu (cet événement ne doit pas avoir duré plus d’une heure). Ce sort corrige également les pertes de mémoire survenues au cours de la semaine écoulée. En revanche, le sort n’affecte en rien les facultés d’apprentissage du personnage enchanté. Une fois la durée du sort expirée, la personne conserve les souvenirs restaurés mais pas au même degré de détails.",
+    "summary": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée.",
+    "swedishName": "Húgstyrkja",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:memory:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-power-of-thought:memory:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la période dont la personne enchantée se souvient de : 1 semaine"
+      },
+      {
+        "id": "vitner-power-of-thought:memory:7:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la période dont la personne enchantée se souvient de : 1 mois"
+      },
+      {
+        "id": "vitner-power-of-thought:memory:7:3",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la période dont la personne enchantée se souvient de : 1 an"
+      },
+      {
+        "id": "vitner-power-of-thought:memory:7:4",
+        "cost": 30,
+        "maxCount": 1,
+        "effect": "Augmente la période dont la personne enchantée se souvient à sa vie entière"
+      }
+    ],
+    "source": "Livre des règles, p. 179",
     "level": 3,
     "cost": 6,
     "modifier": -6

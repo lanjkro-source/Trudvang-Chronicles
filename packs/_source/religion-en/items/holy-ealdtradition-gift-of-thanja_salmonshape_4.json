@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Gift of Thanja",
-    "description": "This ability grants the Bruid the power to transform into a salmon.",
+    "description": "<p>This ability grants the Bruid the power to transform into a salmon. In the animal shape, the dimwalker receives a number of traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard salmon without any such equipment visible. Once the Bruid returns to their normal appearance,<hr>all armor, weapons, and equipment will take on their normal appearance as well. ✦ Salmonshape<ul><li>Salmonshape Traits</li><li>A Bruid transformed with</li></ul>Traits ✦ A Bruid transformed with Salmonshape has the following traits: ✦ Communicate with salmon ✦ Breathe underwater ✦ Equipment is protected from water ✦ Movement in water is doubled (the character’s movement x 2) ✦ Breathe but not move when on land. ✦ Excellent vision underwater ✦ Exceptional character trait for D exterity +4 ✦ A Bruid in Salmonshape form also has healing traits: someone touching the salmon’s scales can heal 1 Body Point (one time per person per day), someone kissing the salmon can heal 1d3 Body Points (one time per person per day), and someone taking a bite from the salmon (Bruid suffers 1d5 points of damage) heals 1d6 + 1 Body Points.</p>",
+    "summary": "This ability grants the Bruid the power to transform into a salmon.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "6 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:salmonshape:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-ealdtradition-gift-of-thanja:salmonshape:4:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 176",
     "level": 3,
     "cost": 6,

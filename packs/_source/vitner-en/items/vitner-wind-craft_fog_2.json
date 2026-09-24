@@ -12,7 +12,41 @@
     "catalogId": "vitner-wind-craft:fog:2",
     "tabletId": "vitner-wind-craft",
     "tablet": "Wind Craft",
-    "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range.",
+    "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
+    "summary": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range.",
+    "swedishName": "Mistur",
+    "duration": "5 minute(s)",
+    "range": "100 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:fog:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 5 minutes"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the fog’s radius by an additional 2 meters"
+      },
+      {
+        "id": "vitner-wind-craft:fog:2:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the fog’s thickness, which"
+      }
+    ],
     "source": "Player's Handbook, p. 139",
     "level": 2,
     "cost": 4,

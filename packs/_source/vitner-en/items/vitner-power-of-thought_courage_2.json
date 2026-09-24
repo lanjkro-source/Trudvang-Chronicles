@@ -12,7 +12,47 @@
     "catalogId": "vitner-power-of-thought:courage:2",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage.",
+    "description": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage. The spell abolishes doubts, fears, and other moods that might affect the person negatively, which lowers their Fear Points by 1d10. Any Fear Points that are received by the enchanted character during the duration of this spell are decreased by -4.",
+    "summary": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage.",
+    "swedishName": "Kjarkku",
+    "duration": "5 minute(s)",
+    "range": "5 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:courage:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Affect another person or creature within range"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Reduce any Fear Points gained by an additional -1"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:4",
+        "cost": 4,
+        "maxCount": 4,
+        "effect": "Increase the number of current"
+      }
+    ],
     "source": "Player's Handbook, p. 116",
     "level": 2,
     "cost": 4,

@@ -12,7 +12,35 @@
     "catalogId": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0",
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablet of the Shield",
-    "description": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions.",
+    "description": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions. The demons suffer -1 on all their Skill Values and Situation values for any actions that involves movement.",
+    "summary": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions.",
+    "swedishName": "",
+    "duration": "3 action round(s)",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the modifier of the demon"
+      }
+    ],
     "source": "Player's Handbook, p. 201",
     "level": 1,
     "cost": 2,

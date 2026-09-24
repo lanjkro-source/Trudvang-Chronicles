@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribute of Morgu",
-    "description": "Through this ability , Morgu bestows more life essence upon the Bruid.",
+    "description": "Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +3d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+    "summary": "Through this ability , Morgu bestows more life essence upon the Bruid.",
+    "swedishName": "",
+    "duration": "1 hour(s)",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:bloodfire:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the number of Body"
+      }
+    ],
     "source": "Player's Handbook, p. 187",
     "level": 4,
     "cost": 8,

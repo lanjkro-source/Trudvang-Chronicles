@@ -12,8 +12,30 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
-    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
-    "source": "Livre des règles, p. 222",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée. L’énergie divine inflige 1d10 points de dégâts, contre lesquels les armures normales n’offrent aucune protection.",
+    "summary": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 100 mètres"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:will-of-bodvildur:7:1",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts du pouvoir d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 223",
     "level": 4,
     "cost": 8,
     "modifier": -8

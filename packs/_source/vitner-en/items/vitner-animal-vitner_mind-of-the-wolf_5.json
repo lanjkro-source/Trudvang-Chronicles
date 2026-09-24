@@ -12,7 +12,53 @@
     "catalogId": "vitner-animal-vitner:mind-of-the-wolf:5",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "The one affected by the spell gains something that resembles a wolf ’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety , and strength.",
+    "description": "The one affected by the spell gains something that resembles a wolf’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety, and strength. By studying a group or individual’s astral reflection(s) (within 10 meters), the affected can, for example, tell the strong from the weak, friend from foe, or if someone is unusually anxious or cowardly and has a will that can be influenced. But the affected can never be sure of who the leader of a group is, since the strongest individual is not always the leader. The spell also gives the target a distinct wolf-like appearance for the duration.",
+    "summary": "The one affected by the spell gains something that resembles a wolf ’s ability to tell subtle differences in smells, such as fear, aggressiveness, anxiety , and strength.",
+    "swedishName": "Húgulva",
+    "duration": "3 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range to make out the astral reflection by 5 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase power so that one more person is afflicted"
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-animal-vitner:mind-of-the-wolf:5:5",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the range to make out the"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 3,
     "cost": 6,

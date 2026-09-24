@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-stoneshape:stoneshape:0",
     "tabletId": "holy-thuuldom-stoneshape",
     "tablet": "Stoneshape",
-    "description": "The Thuul and his gear seem to melt into the mountain when the rune is activated.",
+    "description": "✦ Modifier: -2 The Thuul and his gear seem to melt into the mountain when the rune is activated. The Thuul gains stone-like camouflage, with the effect that others have a modifier of -3 per level of the rune on their Skill rolls for the Shadow Arts skill when trying to find him. For instance, level 2 has a modifier of -6, and level 4 has a modifier of -12. If the Thuul moves while c amouflaged, the modifier is halved for those trying to find him. If the rune is used in environments other than stone and mountains, the modifier is also halved. Well of Water ✦ Modifier: -4 The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location. The water is so pure and fresh that anyone who cleans their wounds in the water heals 1 point of damage per level of the rune. Each action round, a liter of water is produced. The healing effect disappears almost immediately, so it’s essential to clean wounds quickly. It is possible to collect water for later use, but the healing effect will have disappeared by then. ✦ Toikalokke is the name for the divine practice learned by elven stargazers and priests (though the elves call them the “high gifts,” after the “high gods”). Those who master these gifts are called Ihana. s h tar arp ✦ Toikalokke’s prerequisite for Holy Tablets) The star harp is the elven priest’s most valuable possession, and with the help of that object the priest is able to decipher the stars and make contact with the gods which give the knowledge of Holy Tablets. All star harps are different. Some are as small as the palm of a hand, while others may be as big as a house, but all of them appear as a wicker tree without leaves. A star harp is created from the unusual alfarka wood and is powerfully connected to the priest who owns it (as every priest needs to possess their own star harp). From the branches of the harp, the priest hangs different prisms and lenses, and by studying how the starlight breaks against the prisms, the priest can make contact with the gods. If the priest’s star harp breaks or disappears, the priest must get a new one, otherwise no stargazing will be possible, although normal Divinity Points can be used. Another Ihana’s star harp may not be used as a replacement, even temporarily. Stargazing and Extra Divinity Points Elven priests can obtain extra Divinity Points in much the same way that Gerbanis priests perform blood sacrifice TOIKALOKKE ✦ or Gavlians of Westmark pray, though the method obviously differs. By studying stars and astral bodies with a star harp, they acquire their extra Divinity Points. To decipher the signs of the gods, two things are required: it must be a starry night (in this way, the elves are influenced more by the unpredictable nature of weather than are the priests of Gerbanis or the Tenet of Nid), and the elf must have their star harp ready for use. A dimwalker can decipher the stars only on singular occasions and must wait until all the Divinity Points from the last stargazing have disappeared before doing so again. To succeed in studying the stars, the stargazer must make a successful Skill roll for the Ihana specialty. Stargazing is the well of power from which an Ihana priest draws strength. The amount of time spent stargazing and the predominant weather conditions during the process are quite important, as is the location, since the worthier a place is and the longer the time spent there, the more power the priest will gain to use in divine abilities. Without stargazing with a star harp the Ihana has only a limited amount of Divinity Points to spend on abilities. Stargazing allows the Ihana the opportunity to obtain extra points when needed. ✦ Divinity points obtained through stargazing are fleeting and disappear at a rate of 1 point per day. Time Spent Stargazing and External Conditions Both the time that the Ihana spends stargazing and the conditions in which the ritual is performed garner different amounts of Divinity Points. During the time that an Ihana spends stargazing, they must remain undisturbed. Each time the priest’s peace and meditation is disturbed, they must succeed on an appropriate Situation roll to maintain concentration. If the priest loses concentration, that stargazing attempt has failed and no Divinity Points are obtained. TIME SPENT STARGAZING Time spent Divinity Points 1 hour 1 4 hours 3 12 hours 6 1 day 12 3 days 24 1 week 32 Based on the stargazing conditions, a multiplier is applied to the Divinity Points gained over time. An Ihana is unable to stargaze at all if the sky is completely covered in clouds or if the location is one where the stars are not visible, such as underground or beneath a thick canopy of trees. The table below indicates the multiplier for different conditions. CONDITIONS OF STARGAZING Sight Divinity Points Partially starry x1 Starry x2 Partially starry and x3 full moon Starry and full moon x4 Summer solstice x5 Strong storm /2 ✦ TOIKALOKKE’S Animal Mind",
+    "summary": "The Thuul and his gear seem to melt into the mountain when the rune is activated.",
+    "swedishName": "",
+    "duration": "3 minute(s)/niveau",
+    "range": "personalle",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "1/level",
+    "spellType": "sustained",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty au test d'Shadow Arts pour localiser le Thuul de : -3"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty au test d'Shadow Arts pour localiser le Thuul de : -6"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty au test d'Shadow Arts pour localiser le Thuul de : -9"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty au test d'Shadow Arts pour localiser le Thuul de : -12"
+      },
+      {
+        "id": "holy-thuuldom-stoneshape:stoneshape:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty au test d'Shadow Arts pour localiser le Thuul de : -15"
+      }
+    ],
     "source": "Player's Handbook, p. 232",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!mJxFrrSnToUpVqWr",

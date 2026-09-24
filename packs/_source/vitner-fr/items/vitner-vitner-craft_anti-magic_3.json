@@ -12,8 +12,54 @@
     "catalogId": "vitner-vitner-craft:anti-magic:3",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant.",
-    "source": "Livre des règles, p. 152",
+    "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant. Cette pellicule protège la cible contre toutes les formes de magie. Pour empêcher un sort de pénétrer cette protection, l’enchanteur initial (celui qui maintient le sort Antimagie) doit réussir un test de situation avec une valeur de situation qui dépend du niveau du sort de l’agresseur, comme indiqué par la table ci-dessous. VALEUR DE SITUATION:\n|Niveau du sort|Valeur de situation|\n|---|---|\n|1|10|\n|2|8|\n|3|6|\n|4|4|\n|5|2|\nSi le sort adverse profite de niveaux de puissance supplémentaires qui réduisent les chances de sa cible de réussir un test de situation, l’enchanteur qui tente de contrer ce sort subit le même malus. Si l’enchanteur réussit son test, le vitner est neutralisé et le sort est interrompu et n’a aucun effet.",
+    "summary": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant.",
+    "swedishName": "Motravitn",
+    "duration": "2 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussir le test de situation de : +1"
+      },
+      {
+        "id": "vitner-vitner-craft:anti-magic:3:5",
+        "cost": 5,
+        "maxCount": 1,
+        "effect": "Fait passer le type du sort de soutenu à persistant"
+      }
+    ],
+    "source": "Livre des règles, p. 153",
     "level": 3,
     "cost": 6,
     "modifier": -6

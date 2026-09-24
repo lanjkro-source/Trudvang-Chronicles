@@ -12,7 +12,29 @@
     "catalogId": "vitner-power-of-thought:understanding-script:0",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read.",
+    "description": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read. All the scripture’s symbols and characters are converted before the enchanter’s eyes to a language that they can decipher using the Reading and Writing specialty (Knowledge skill and Language discipline). If the enchanter is unable to read or write any languages at all, they cannot make worthwhile use of this spell.",
+    "summary": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read.",
+    "swedishName": "Tecknkraftla",
+    "duration": "10 minute(s)",
+    "range": "personalle",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:understanding-script:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:understanding-script:0:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 116",
     "level": 1,
     "cost": 2,

@@ -1,6 +1,6 @@
 # Glossaire bilingue anglais–français
 
-Ce glossaire constitue la référence terminologique pour les traductions du système Trudvang. Il est régénéré à partir de `lang/en.json` et `lang/fr.json`, y compris la section `TRUDVANG.Content` (bibliothèque de démarrage et catalogue de tablettes), désormais traduite. Les résumés longs des pouvoirs (`*.Summary`) sont exclus : ce sont des citations de règles, pas des termes de vocabulaire.
+Ce glossaire constitue la référence terminologique pour les traductions du système Trudvang. Il est régénéré à partir de `lang/en.json` et `lang/fr.json`, y compris la section `TRUDVANG.Content` (bibliothèque de démarrage et catalogue de tablettes). Pour les pouvoirs, seuls les noms sont inclus : descriptions, niveaux de puissance et autres textes de règles ne sont pas des termes de vocabulaire.
 
 La terminologie française s'appuie sur l'édition officielle Black Book Éditions (« Livre des règles », miroir texte dans `game doc/markdown-fr/`). Avant d'ajouter ou de modifier une entrée dans les fichiers de langue, rechercher ici les termes apparentés et conserver les choix terminologiques existants. Toute nouvelle terminologie validée doit être répercutée dans ce document.
 
@@ -510,6 +510,32 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tablet.AffinityEffect.neutral` | No change to power-level costs. | Aucun changement au coût des niveaux de puissance. |
 | `TRUDVANG.Tablet.AffinityEffect.unfavorable` | Each power-level cost increases by 1. | Le coût de chaque niveau de puissance augmente de 1. |
 | `TRUDVANG.Tablet.AffinityEffect.doubled` | Power-level costs are doubled. | Le coût des niveaux de puissance est doublé. |
+
+## `TRUDVANG.Power`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Power.Type` | Effect type | Type d'effet |
+| `TRUDVANG.Power.Levels` | Power levels | Niveaux de puissance |
+| `TRUDVANG.Power.RuneLevels` | Effects by rune level | Effets par niveau de rune |
+| `TRUDVANG.Power.Level` | Level {level} | Niveau {level} |
+| `TRUDVANG.Power.CostPerLevel` | Cost per level: {cost} | Coût par niveau : {cost} |
+| `TRUDVANG.Power.Maximum` | Maximum: {max} | Maximum : {max} |
+| `TRUDVANG.Power.MaxCount` | Limit | Limite |
+| `TRUDVANG.Power.InvalidSelection` | The selected number of power levels exceeds its allowed limit. | Le nombre de niveaux de puissance choisi dépasse la limite autorisée. |
+| `TRUDVANG.Power.BaseCost` | Base cost: {cost} | Coût de base : {cost} |
+| `TRUDVANG.Power.SelectedLevel` | {count} × {effect}: {total} points ({unit} per level) | {count} × {effect} : {total} points ({unit} par niveau) |
+| `TRUDVANG.Power.AffinityCost` | Cost adjusted by affinity: {base} → {adjusted} per level | Coût ajusté par l'affinité : {base} → {adjusted} par niveau |
+| `TRUDVANG.Power.AffinitySource` | {type} affinity of {tablet}: {effect} | Affinité {type} de {tablet} : {effect} |
+| `TRUDVANG.Power.PerfectBonus` | Perfect success: {points} free Vitner points to enhance the spell (allocate manually). | Réussite parfaite : {points} points de vitner gratuits pour renforcer le sort (à répartir manuellement). |
+| `TRUDVANG.Power.Unlimited` | Unlimited | Sans limite |
+| `TRUDVANG.Power.DailyActivation` | Daily activations | Activations quotidiennes |
+| `TRUDVANG.Power.RuneObjectNeeded` | Full activation requires a rune bound to a sacred item and its own divinity reserve. | L'activation complète nécessite une rune liée à un objet sacré et sa propre réserve de divinité. |
+| `TRUDVANG.Power.RunePreview` | Rune level preview; item-bound activation will be added later. | Présentation des niveaux de rune ; l'activation liée à l'objet sera ajoutée ultérieurement. |
+| `TRUDVANG.Power.TypeInstant` | Instant | Instantané |
+| `TRUDVANG.Power.TypeLasting` | Lasting | Persistant |
+| `TRUDVANG.Power.TypeSustained` | Sustained | Soutenu |
+| `TRUDVANG.Power.TypePermanent` | Permanent | Permanent |
 
 ## `TRUDVANG.AbilityKind`
 

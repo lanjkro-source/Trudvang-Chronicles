@@ -12,7 +12,35 @@
     "catalogId": "holy-toikalokke-animal-mind:animal-tracks:1",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
-    "description": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace.",
+    "description": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace. Ces traces ne diffèrent pas de celle d’un animal normal et sont permanentes (ce qui veut dire qu’il ne s’agit pas d’une illusion qui finit par se dissiper, même si les traces peuvent être recouvertes ou effacées). La durée de ce pouvoir détermine la période durant laquelle l’elfe peut laisser des traces animales. Gardez toutefois à l’esprit que cette aptitude ne modifie pas l’odeur de l’elfe.",
+    "summary": "À chaque fois qu’il le souhaite, l’ihana peut laisser derrière lui les traces d’un animal au lieu des siennes lorsqu’il se déplace.",
+    "swedishName": "",
+    "duration": "10 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "4 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 minutes"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 30 minutes"
+      },
+      {
+        "id": "holy-toikalokke-animal-mind:animal-tracks:1:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 12 heures"
+      }
+    ],
     "source": "Livre des règles, p. 295",
     "level": 1,
     "cost": 2,

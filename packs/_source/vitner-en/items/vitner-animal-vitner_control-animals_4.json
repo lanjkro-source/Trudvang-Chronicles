@@ -12,7 +12,53 @@
     "catalogId": "vitner-animal-vitner:control-animals:4",
     "tabletId": "vitner-animal-vitner",
     "tablet": "Animal Vitner",
-    "description": "The mage can control and direct one or more unintelligent animals.",
+    "description": "The mage can control and direct one or more unintelligent animals. In total they can control one animal with a maximum amount of 10 Body Points, or a number of smaller animals that together total up to 10 Body Points (see table on previous page for direction) Resuluts,. The spell is woven in the form of a soothing song and slow, soft movements so as not to scare the animals away. The mage can control and direct the animals completely, even in battle, but cannot do anything other than concentrate on the spell. The control is broken immediately if a creature gets outside of the spell’s range, if the animal suffers half of its Body Points in damage, or if the mage loses concentration.",
+    "summary": "The mage can control and direct one or more unintelligent animals.",
+    "swedishName": "Rauda bestura",
+    "duration": "1 minute(s)",
+    "range": "10 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-animal-vitner:control-animals:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the amount of affected Body Points by +5"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-animal-vitner:control-animals:4:5",
+        "cost": 15,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      }
+    ],
     "source": "Player's Handbook, p. 92",
     "level": 3,
     "cost": 6,

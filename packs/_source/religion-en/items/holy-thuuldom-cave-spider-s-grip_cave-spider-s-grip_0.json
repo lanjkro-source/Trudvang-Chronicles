@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0",
     "tabletId": "holy-thuuldom-cave-spider-s-grip",
     "tablet": "Cave Spider's Grip",
-    "description": "The rune makes it possible for the Thuul to climb vertical walls.",
+    "description": "<p>✦ Modifier: -4 The rune makes it possible for the Thuul to climb vertical walls. The Thuul’s movement value is halved, but he gains +1 meter per rune level. The Thuul needs to use both hands and feet to climb at full movement on vertical walls or a ceiling. However, the Thuul can carry the same amount as he normally would when walking on the ground. If the Thuul is still off the ground when the duration expires, he will immediately fall. ✦ Borjorn’s Hand has the following traits: ✦ Movement/2, +1 per level ✦ At level 4, the Thuul gains the ability to walk on the ceiling Earthquake The Thuul drives the sacred object into the ground and calls for a heavy earthquake, which shakes the ground and everything around him. The earthquake has a radius of 2 meters per level of the rune, centered on the Thuul. Depending on the size of the creature affected, there is a risk of that creature losing its balance and being unable to act for the remainder of the action round. For each level of the rune beyond 1, the Thuul can shift the epicenter of the earthquake by 3 meters. This means that with a level 2 Earthquake rune, the Thuul can center the quake up to 3 meters away, and with a level 4 rune he can center it up to 9 meters away. Through a successful Situation roll with a Situation value as shown on the table below, creatures can avoid being stunned by the earthquake (Dexterity modifiers apply). An unsuccessful Situation roll results in that creature losing its ability to act for the rest of the current action round as well as the next action round while it tries to regain its balance. The Thuul is unaffected by the earthquake and continues to stand firmly anchored to the ground. AVOIDING BEING STUNNED Size Situation Value &lt;1/3 8 (-1 per rune level) ≥1/3 – 2/3 10 (-1 per rune level) ≥2/3 – 1.5t 12 (-1 per rune level) ≥1.5 – 3t 14 (-1 per rune level) ≥3 – 5t 16 (-1 per rune level) ≥5 – 10t 20 (-1 per rune level) ≥10t Immune Fang of Yukk The Fang of Yukk rune is inscribed<ul><li>Modifier: -4</li></ul>upon the Thuul’s weapon (only an edged weapon made of metal), filling it with power. The table below indicates the effect of the rune at different levels. This rune is always active but must still have the requisite number of Divinity Points linked to it. Increasing the chance of an open roll by 1 works in the following way: OR 10 becomes OR 9-10, OR 9-10 becomes OR 8-10, and OR 8-9 becomes OR 7-10.</p>",
+    "summary": "The rune makes it possible for the Thuul to climb vertical walls.",
+    "swedishName": "",
+    "duration": "2 minute(s)/niveau",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "1",
+    "spellType": "lasting",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:0",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +1 meters"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +2 meters"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Remplace la vitesse de déplacement par : Mouvement/2, +3 meters"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:3",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Peut marcher au plafond et remplace la vitesse de déplacement par : Mouvement/2, +4 meters"
+      },
+      {
+        "id": "holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0:4",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Peut marcher au plafond et remplace la vitesse de déplacement par : Mouvement/2, +5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 229",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!8FNcPKdJeKfLgMhN",

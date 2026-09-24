@@ -12,8 +12,48 @@
     "catalogId": "vitner-soil-craft:quagmire:3",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "Ce sort crée un épais marécage circu laire de 3 mètres de diamètre et de 10 centimètres de profondeur.",
-    "source": "Livre des règles, p. 158",
+    "description": "Ce sort crée un épais marécage circulaire de 3 mètres de diamètre et de 10 centimètres de profondeur. De l’eau se met soudain à sourdre du sol et change la terre en une boue infranchissable. La capacité de mouvement de toute personne qui traverse la zone affectée subit un malus de -1 par tranche de 10 centimètres de profondeur du bourbier. Si quelqu’un voit son mouvement réduit à 0 de cette manière, il est piégé dans le bourbier et ne peut s’en échapper seul : il doit attendre l’expiration du sort ou qu’on lui vienne en aide. Si quelqu’un lance une corde (ou quelque autre objet similaire) au personnage piégé et que la victime réussit un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Force), il est en mesure de franchir 1 mètre par tour de jeu jusqu’à sortir du bourbier.",
+    "summary": "Ce sort crée un épais marécage circu laire de 3 mètres de diamètre et de 10 centimètres de profondeur.",
+    "swedishName": "Tröljörd",
+    "duration": "1 minute",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:quagmire:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le diamètre du bourbier de : 1 mètre"
+      },
+      {
+        "id": "vitner-soil-craft:quagmire:3:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la profondeur du bourbier de : 10 centimètres"
+      },
+      {
+        "id": "vitner-soil-craft:quagmire:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-soil-craft:quagmire:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-soil-craft:quagmire:3:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 159",
     "level": 2,
     "cost": 4,
     "modifier": -4

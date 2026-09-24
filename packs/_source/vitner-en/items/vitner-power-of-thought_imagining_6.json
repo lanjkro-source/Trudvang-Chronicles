@@ -12,7 +12,41 @@
     "catalogId": "vitner-power-of-thought:imagining:6",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind.",
+    "description": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind. The target believes that it conceived of the idea itself and does not reflect further, instead taking action as if the thought were perfectly acceptable. How exactly the target reacts to this new thought is decided by the game master. The target can unconsciously resist this spell, however, through a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the Situation roll fails, the thought is implanted in the target’s mind and gnaws at their consciousness until the duration of the spell expires. An implanted thought is usually unable to overcome common sense. ECSTASY’S TRAITS Feelings Characteristic Happy The target becomes extremely their surroundings. Tired The target must make another (Psyche modifiers apply) to keep Lovesick The target looks around for the who they fall in love with). Aggressive The target gets annoyed instantly by out a fight with an individual or group Melancholic The target slips into a depressed they feel or how much they miss Mischievous The target is inspired by all sorts of someone who is about to sit down, or weaving elaborate lies are common PatronizThe target speaks condescendingly ing else is as significant as they are. Boastful The target boastfully talks about have done) and liberally exaggerates Truthful The target opens their heart and friends. The target must succeed value of 10 (Psyche modifiers incredibly incriminating secrets a secret is revealed or not). Insecure The target feels worthless in they attempt will succeed. The with a Situation value of 10 (Psyche on all Skill Values and Situation is successful, the target suffers only For example, if the thought was “I’d like to jump off this cliff,” it likely wouldn’t work unless the creature was incredibly stupid or impulsive. Any reasonably intelligent creature would probably push aside such a thought as a crazy whim and ignore it, no matter how nagging or natural it appears. However, thoughts like “I wonder if my best friend is trying to fool me; I probably should be suspicious of him,” or “Maybe I should give my money to this poor beggar with the funny hat, since he seems to need it more than I do,” or “This looks a good group; of course I’ll let them in,” should work just fine. Other examples of what might work are “I have to run away from here because it isn’t safe,” or “That guy by the fireplace frustrates me; now he’s getting it,” or “How tired I have become! I need to sit down and rest for a while.” happy, singing, joking, and romping around Situation roll with a Situation value of 10 from falling asleep within the next 5 minutes. person they love (up to the target to decide everything and everyone. The target will seek as soon as an occasion or reason is given. state, and only wants to talk about how sad their friends. mischievous antics. Pulling the chair out from tinkering with someone’s personal possessions, pranks the target thinks are fun. to anyone they meet, claiming that no one everything they have done (or would like to the details. shares secrets and hidden desires to nearby on another Situation roll with a Situation apply) to keep from sharing significant or (up to the game master to determine whether everything they do and believes that nothing target must succeed on another Situation roll modifiers apply) to keep from suffering -3 values for the duration of the spell. If the roll a -1 modifier.",
+    "summary": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind.",
+    "swedishName": "Skenhuga",
+    "duration": "5 minute(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:imagining:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:imagining:6:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-power-of-thought:imagining:6:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-power-of-thought:imagining:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 116",
     "level": 3,
     "cost": 6,

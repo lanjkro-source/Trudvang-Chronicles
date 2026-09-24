@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
+    "summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "contact",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:hinji-strength:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:hinji-strength:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 2,
     "cost": 4,

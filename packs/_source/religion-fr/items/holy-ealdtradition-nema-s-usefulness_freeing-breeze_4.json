@@ -12,8 +12,30 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
-    "description": "Une brise rafraîchissante traverse la zone désignée par le bruide et ouvre une porte, déverrouille une serrure difficile, ouvre une cellule de prison ou dissipe un vitner de contrôle ou de contrainte touchant une autre personne.",
-    "source": "Livre des règles, p. 244",
+    "description": "Une brise rafraîchissante traverse la zone désignée par le bruide et ouvre une porte, déverrouille une serrure difficile, ouvre une cellule de prison ou dissipe un vitner de contrôle ou de contrainte touchant une autre personne. S’il y a une résistance, le bruide doit faire un test de situation avec la valeur de situation suivante : 14 si l’objet à libérer est sous l’effet du Souffle libérateur, ou 8 si l’objet est verrouillé ou bloqué. En cas de réussite, le bruide surmonte la cause de la résistance (par exemple quelqu’un qui empêche un objet de tomber d’un rebord, qui serre le nœud, qui retient l’attache, etc.) Pour pouvoir libérer quelque chose d’un vitner de contrôle ou de contrainte (les sorts de niveau 1 à 3), le bruide doit réussir un test de situation avec une valeur de situation de 6. Tout ce qui est emprisonné ou contrôlé par un vitner tissé avec une plus grande maîtrise (sorts de niveau 4 ou 5) ne peut pas bénéficier des effets de la Brise libératrice.",
+    "summary": "Une brise rafraîchissante traverse la zone désignée par le bruide et ouvre une porte, déverrouille une serrure difficile, ouvre une cellule de prison ou dissipe un vitner de contrôle ou de contrainte touchant une autre personne.",
+    "swedishName": "",
+    "duration": "",
+    "range": "4 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 1 mètre"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:freeing-breeze:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 245",
     "level": 3,
     "cost": 6,
     "modifier": -6

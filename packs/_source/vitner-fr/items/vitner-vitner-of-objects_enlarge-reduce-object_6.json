@@ -12,8 +12,60 @@
     "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³).",
-    "source": "Livre des règles, p. 200",
+    "description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2000 cm³ ou 2 dm³). L’enchanteur peut doubler la taille de l’objet, ou la réduire de moitié. Dans un cas comme dans l’autre, le poids de l’objet demeure identique. L’enchanteur peut également modifier légèrement les proportions de l’objet de sorte que, par exemple, il s’allonge sans devenir plus large, comme une corde qui s’allonge sans pour autant devenir plus épaisse. Une corde de 5 mètres de long (2 cm × 2 cm × 500 cm) qu’on agrandit peut atteindre 10 mètres de long (sa longueur est doublée). Si on la réduit, la corde peut descendre à 2,5 mètres de long (sa longueur diminue de moitié).",
+    "summary": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³).",
+    "swedishName": "Tingvidge/tingknyttje",
+    "duration": "4 minutes",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la quantité de matériel affecté de : 1 dm³"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la quantité de matériel affecté de : 10 dm³"
+      },
+      {
+        "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:6",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Double l’effet d’augmentation/ réduction (donc taille x4 ou /4)"
+      }
+    ],
+    "source": "Livre des règles, p. 202",
     "level": 4,
     "cost": 8,
     "modifier": -8

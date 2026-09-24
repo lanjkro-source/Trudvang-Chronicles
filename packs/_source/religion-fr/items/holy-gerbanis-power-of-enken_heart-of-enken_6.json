@@ -12,8 +12,48 @@
     "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
-    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
-    "source": "Livre des règles, p. 224",
+    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +8 en Psychisme pendant la durée du pouvoir. Même s’il a offert ce pouvoir à quelqu’un d’autre, le stormikjalt et jusqu’à deux amis à portée reçoivent également un trait exceptionnel mineur de +4 au Psychisme pour la durée du pouvoir.",
+    "summary": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’indi vidu de son choix.",
+    "swedishName": "",
+    "duration": "1 minute",
+    "range": "5 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une personne supplémentaire à portée (qui bénéficie des effets du sort de base)"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Fait passer le trait de Psychisme de : +4 à +6 pour les alliés du stormikjalt"
+      }
+    ],
+    "source": "Livre des règles, p. 225",
     "level": 4,
     "cost": 8,
     "modifier": -8

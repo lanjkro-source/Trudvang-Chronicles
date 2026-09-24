@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Power of Thurses",
-    "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer.",
+    "description": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +8 for the duration of the ability.",
+    "summary": "The hrimthurse’s spirit bestows its full strength upon the spirit conjurer.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:thurse-strength:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-thurses:thurse-strength:7:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 221",
     "level": 4,
     "cost": 8,

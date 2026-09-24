@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
-    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker directs the ability toward a person within range and can use it to judge if the person is lying or telling the truth. The ability lasts for one minute.",
+    "summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "ouïe",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:wave-of-truth:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 168",
     "level": 3,
     "cost": 6,

@@ -12,8 +12,60 @@
     "catalogId": "vitner-body-vitner:hasten:9",
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
-    "description": "Ce sort crée une énergie restrictive qui immobilise la victime choisie.",
-    "source": "Livre des règles, p. 192",
+    "description": "Ce sort améliore la souplesse et les réflexes de la personne enchantée, qui devient immédiatement plus rapide et plus agile. Cette agilité accrue augmente la foulée du bénéficiaire (capacité de mouvement), mais aussi sa vitesse (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité. Soudain, la personne enchantée se déplace plus vite et fait preuve d’une bien plus grande précision dans toutes les actions associées au mouvement (et notamment les compétences Agilité et Combat). Le bénéficiaire du sort gagne un degré en Dextérité selon la table ci-dessous. MODIFICATEURS:\n|Dextérité|Tests de situation/capacité de mouvement|Bonus à la VC|\n|---|---|---|\n|Dextérité d’un drauglo|+8|+5|\n|Souple|+6|+4|\n|Gracieux|+4|+3|\n|Vif|+2|+2|\n|Agile|+1|+1|\n|Moyen|+0|+0|\n|Raide|-1|-1|\n|Maladroit|-2|-2|\n|Gauche|-4|-3|\n|Impotent|-6|-4|\n|Pétrifié|-8|-5|\nIl est également possible de tisser ce sort dans le but inverse de rendre le corps de la victime raide et maladroit. La Dextérité du personnage enchanté décline immédiatement, ce qui diminue sa mobilité (capacité de mouvement), sa réactivité (Initiative) et ses chances de réussir ses tests de situation et de compétence reposant sur la Dextérité (et notamment les compétences Agilité et Combat). Le personnage enchanté baisse d’un degré sur la table ci-contre. La victime peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution).",
+    "summary": "Ce sort crée une énergie restrictive qui immobilise la victime choisie.",
+    "swedishName": "Lokraftla",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:hasten:9:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 1 minute"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée de : 10 minutes"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Fait monter ou descendre d’un degré supplémentaire sur la table"
+      },
+      {
+        "id": "vitner-body-vitner:hasten:9:6",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affecte une cible supplémentaire (avec la version de base du sort)"
+      }
+    ],
+    "source": "Livre des règles, p. 194",
     "level": 4,
     "cost": 8,
     "modifier": -8

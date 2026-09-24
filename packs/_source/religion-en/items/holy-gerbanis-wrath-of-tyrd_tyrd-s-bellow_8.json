@@ -12,7 +12,29 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
-    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "description": "The Stormkelt makes a sinister face and speaks the triggering words of the ability. The words are contorted into a deep voice, and around the Stormkelt gathers a dark, visible aura of divine wrath. All of the dimwalker’s enemies within range risk becoming frightened by the visage and suffering 1d10 (OR 9-10) Fear Points. The ability afflicts all beings with human intelligence (humanoid beings and trollkin). Animals and other beings with lower intelligence are so frightened that they flee and do not dare to come back before one week has passed.",
+    "summary": "The Stormkelt makes a sinister face and speaks the triggering words of the ability.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters Increase the Fear Points by one"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:1",
+        "cost": 3,
+        "maxCount": 2,
+        "effect": "step: 1d10 (OR 9-10) g − 1d10"
+      }
+    ],
     "source": "Player's Handbook, p. 171",
     "level": 5,
     "cost": 10,

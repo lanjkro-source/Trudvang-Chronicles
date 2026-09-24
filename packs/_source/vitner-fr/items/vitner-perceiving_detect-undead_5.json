@@ -12,8 +12,54 @@
     "catalogId": "vitner-perceiving:detect-undead:5",
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
-    "description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vi vante à portée.",
-    "source": "Livre des règles, p. 173",
+    "description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vivante à portée. Pour ce faire, il doit effectuer un test de situation avec une valeur de situation de 10, modifiée en fonction du nombre de points de santé du mort-vivant, comme indiqué sur la table Détection des morts-vivants : modificateurs, ci-dessous. Si l’enchanteur réussit son test de situation, le maître de jeu lance alors 1d20 pour déterminer la quantité d’informations que l’enchanteur reçoit au sujet du mort-vivant, en consultant la table Détection d’objet : résultats, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur a déterminé où se trouve actuellement le mort-vivant, cette perception perdure pour toute la durée du sort, et ce, même si le mort-vivant se déplace. MODIFICATEURS:\n|Points de Santé|Modificateur|\n|---|---|\n|1-10|+8|\n|11-20|+4|\n|21-25|+2|\n|26-35|+0|\n|36-45|-2|\n|46-55|-4|\n|56-65|-8|\n|66-75|-10|\n|76-85|-12|\n|86-90|-16|\n|91-95|-20|\n|>95|-30|\n",
+    "summary": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vi vante à portée.",
+    "swedishName": "Sálheleskonja",
+    "duration": "2 heures",
+    "range": "5 kilomètres",
+    "weavingTime": "5 minutes",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-perceiving:detect-undead:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussite du test de situation de : +1"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 1 kilomètre"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 10 kilomètres"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:4",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 100 kilomètres"
+      },
+      {
+        "id": "vitner-perceiving:detect-undead:5:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 175",
     "level": 4,
     "cost": 8,
     "modifier": -8

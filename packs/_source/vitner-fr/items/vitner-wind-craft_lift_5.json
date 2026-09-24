@@ -12,8 +12,78 @@
     "catalogId": "vitner-wind-craft:lift:5",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "F Temps de tissage : 1 tour de jeu Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
-    "source": "Livre des règles, p. 169",
+    "description": "Ce sort génère des vents dirigés autour de la personne enchantée, qu’ils soulèvent du sol. Pour que le vent porteur puisse fonctionner, la personne visée ne doit pas faire plus de 60 kg. Les vents conjurés soulèvent la personne et la font flotter lentement dans la direction choisie par l’enchanteur à une vitesse de 3 mètres par tour de jeu. Toute personne touchée par ce sort contre son gré peut tenter d’y résister par un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Force). Si l’enchanteur subit des dégâts ou est déconcentré pendant qu’il maintient ce sort actif, il doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) ou perdre temporairement le contrôle des vents : la personne enchantée commence alors à tomber. Toutefois, à chaque nouveau tour, l’enchanteur peut tenter de reprendre le contrôle des vents en effectuant un test de situation (avec la même valeur de situation), tant que le sort n’a pas expiré. Une personne enchantée qui tombe le fait à une vitesse de 10 mètres lors du tour où l’enchanteur perd le contrôle des vents, puis de 100 mètres par tour de jeu tant que l’enchanteur ne reprend pas le contrôle de son sort. Si la personne percute le sol, elle subit les dégâts habituels correspondant à sa distance de chute.",
+    "summary": "F Temps de tissage : 1 tour de jeu Ce sort génère une rafale d’air comprimé qui s’abat à une vitesse incroyable sur une ou plusieurs cibles.",
+    "swedishName": "Hefja",
+    "duration": "6 tours de jeu",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:lift:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le poids affecté de : 10 kg"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le poids affecté de : 50 kg"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le poids affecté de : 100 kg"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:7",
+        "cost": 2,
+        "maxCount": 7,
+        "effect": "Augmente la capacité de mouvement de : 1 mètre par tour de jeu"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:8",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances de la personne enchantée de réussir son test de situation de : 1"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:9",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Donne à la personne enchantée (si ce n’est pas l’enchanteur lui-même) la faculté de choisir dans quelle direction elle se déplace dans les airs"
+      }
+    ],
+    "source": "Livre des règles, p. 171",
     "level": 3,
     "cost": 6,
     "modifier": -6

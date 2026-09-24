@@ -12,7 +12,35 @@
     "catalogId": "vitner-delusion-vitner:roar:0",
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Delusion Vitner",
-    "description": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap.",
+    "description": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap. The enchanter is not able to hear the sound personally, but everyone in the area and even those who are far away hear the thunderous blast. Anyone within a radius of 10 meters of the enchanter immediately experiences severe pain and ringing in their ears, causing them to suffer -4 on all Skill Values and Situation values related to hearing. The effect expires after 1d6 minutes.",
+    "summary": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap.",
+    "swedishName": "",
+    "duration": "",
+    "range": "personalle",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-delusion-vitner:roar:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range from Personal to 10 meters. (The roar no longer emanates from the enchanter, but remains the same power otherwise.)"
+      },
+      {
+        "id": "vitner-delusion-vitner:roar:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the radius by 10 meters."
+      },
+      {
+        "id": "vitner-delusion-vitner:roar:0:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range from Personal"
+      }
+    ],
     "source": "Player's Handbook, p. 101",
     "level": 1,
     "cost": 2,

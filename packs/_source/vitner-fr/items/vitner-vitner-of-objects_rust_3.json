@@ -12,8 +12,48 @@
     "catalogId": "vitner-vitner-of-objects:rust:3",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc.",
-    "source": "Livre des règles, p. 200",
+    "description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc. Du point de vue technique, l’effet de ce sort est de réduire d’un degré la qualité de l’objet visé (par exemple de normal à médiocre) jusqu’à expiration du sort. (Cf. la table Qualité au chapitre Équipement, page 121 pour de plus amples informations sur les niveaux de qualité). Ce sort n’a aucun effet sur les objets magiques. Il est possible de rendre l’effet permanent en ajoutant un niveau de puissance. Même dans ce cas, le sort Dissipation du vitner peut tout de même annuler le sort Rouille.",
+    "summary": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc.",
+    "swedishName": "Röste efnating",
+    "duration": "5 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-of-objects:rust:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit le niveau de qualité de l’objet d’un degré supplémentaire"
+      }
+    ],
+    "source": "Livre des règles, p. 201",
     "level": 2,
     "cost": 4,
     "modifier": -4

@@ -12,7 +12,41 @@
     "catalogId": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3",
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablet of the Knight",
-    "description": "Surrounds the recipient with the sacred protection of a Rowthguard cuirass.",
+    "description": "An aura of holy protection is created around the selected armor, increasing the Protection Value by +3. The aura also protects against magical weapons and spell effects that ignore normal armor, with Protection Value +1. This does not create armor, but blesses a suit that the dimwalker prays over, which takes on a lighter shade and begins to shine faintly. There must be existing armor or a shield for the ability to have any effect.",
+    "summary": "Surrounds the recipient with the sacred protection of a Rowthguard cuirass.",
+    "swedishName": "",
+    "duration": "4 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the Protection Value by another +1 (maximum +7/+5)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:2",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3:3",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      }
+    ],
     "source": "Player's Handbook, p. 199",
     "level": 2,
     "cost": 4,

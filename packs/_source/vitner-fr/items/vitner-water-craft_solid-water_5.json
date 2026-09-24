@@ -12,8 +12,60 @@
     "catalogId": "vitner-water-craft:solid-water:5",
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
-    "description": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse",
-    "source": "Livre des règles, p. 163",
+    "description": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse de 5 mètres par tour de jeu. La zone affectée fait 1 mètre de diamètre et peut soutenir jusqu’à 70 kg (une seule créature de taille humaine pourra s’y tenir). La zone affectée se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix.",
+    "summary": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse",
+    "swedishName": "Vannfast",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:solid-water:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le poids que la zone affectée peut supporter de : 10 kg"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le poids que la zone affectée peut supporter de : 50 kg"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le poids que la zone affectée peut supporter de : 100 kg"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 10 minutes"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:5",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la capacité de mouvement (dans la limite du déplacement normal du bénéficiaire du sort) de : 1 mètre par tour de jeu"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le diamètre de la zone affectée de : 1 mètre (ce qui permet à une autre créature de taille humaine de s’y tenir)"
+      }
+    ],
+    "source": "Livre des règles, p. 165",
     "level": 3,
     "cost": 6,
     "modifier": -6

@@ -12,7 +12,29 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribute of Morgu",
-    "description": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker.",
+    "description": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker. The arrows count as magical projectiles, but armor grants full protection as normal. Shields also provide passive protection against the arrows as normal. The Bruid takes aim at a group of enemies within range, who are then struck by a volley of black arrows. In its basic version, this ability unleashes two arrows, which are evenly and randomly distributed among enemies within the designated group. The arrows automatically hit with a successful invocation, each causing 1d10 (OR 8-10) points of damage with Penetration Value 3.",
+    "summary": "The Bruid calls on the power of Morgu, who unleashes a shower of arrows into the battle to aid the dimwalker.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 meters",
+    "weavingTime": "2 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the arrows’ Penetration"
+      }
+    ],
     "source": "Player's Handbook, p. 187",
     "level": 5,
     "cost": 10,

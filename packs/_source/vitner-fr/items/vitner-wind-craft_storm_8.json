@@ -12,8 +12,54 @@
     "catalogId": "vitner-wind-craft:storm:8",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur.",
-    "source": "Livre des règles, p. 169",
+    "description": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur. Pour résister à la tempête, une créature doit réussir un test de situation avec la valeur de situation indiquée par la table cicontre (prendre en compte le modificateur de Force). Cette table montre également la distance à laquelle un objet ou un personnage d’un certain poids est projeté en cas d’échec au test de situation. Si la victime est projetée contre un mur, on calcule les dégâts comme pour une chute d’une distance équivalente à celle sur laquelle la victime a été balayée. Si une victime se trouve toujours dans le rayon d’action de la tempête après avoir été projetée, elle peut se relever mais doit faire un nouveau test pour pouvoir se déplacer dans la zone sans être de nouveau balayée (même VC que plus haut). Toute créature qui tient tête à la tempête et parvient à ne pas être balayée peut continuer d’agir normalement dans la zone affectée, mais toutes ses actions subissent le malus indiqué par la table ci-contre.",
+    "summary": "Ce sort crée un vent tourbillonnant qui fait voler tous les détritus, insectes, objets et créatures de moins de 50 kg qui se trouvent dans un rayon de 20 mètres autour de l’enchanteur.",
+    "swedishName": "Loftkraftla",
+    "duration": "2 tours de jeu",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-wind-craft:storm:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 10 kg"
+      },
+      {
+        "id": "vitner-wind-craft:storm:8:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 50 kg"
+      },
+      {
+        "id": "vitner-wind-craft:storm:8:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Augmente l’intensité de la tempête de sorte que le poids affecté augmente de : 500 kg"
+      },
+      {
+        "id": "vitner-wind-craft:storm:8:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le rayon du sort de : 2 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:storm:8:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente le rayon du sort de : 10 mètres"
+      },
+      {
+        "id": "vitner-wind-craft:storm:8:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Fait passer la portée de personnelle à 5 mètres (le sort étant centré sur n’importe quel point situé à portée)"
+      }
+    ],
+    "source": "Livre des règles, p. 173",
     "level": 5,
     "cost": 10,
     "modifier": -10

@@ -12,8 +12,24 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:hand-of-gave:7",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
-    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée.",
-    "source": "Livre des règles, p. 253",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée. Ce pouvoir soigne 6 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+    "summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée.",
+    "swedishName": "",
+    "duration": "3 minutes",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-tenetnid-tablet-of-grace:hand-of-gave:7:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      }
+    ],
+    "source": "Livre des règles, p. 255",
     "level": 4,
     "cost": 8,
     "modifier": -8

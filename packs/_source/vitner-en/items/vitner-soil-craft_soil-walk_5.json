@@ -12,7 +12,47 @@
     "catalogId": "vitner-soil-craft:soil-walk:5",
     "tabletId": "vitner-soil-craft",
     "tablet": "Soil Craft",
-    "description": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them.",
+    "description": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them. In this way, the vitner permits the target to move through all types of soil uninhibited. Each action round, they can move through soil at a number of meters equal to their movement capacity divided by 4. The vitner only repels soil that is static and unmoving. This spell cannot be used to avoid landslides or soil attacks unless the target were to travel below the soil that is moving. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to their body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the ground at a speed of 1 meter per action round. If the spell’s duration expires while the target is still in the soil, it compacts tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in soil when the spell runs out, they begin to suffocate as well.",
+    "summary": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them.",
+    "swedishName": "Jördvandr",
+    "duration": "2 minute(s)",
+    "range": "personalle",
+    "weavingTime": "5 action round(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:soil-walk:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the final movement capacity by +1 meter per action round (never higher than the creature’s normal movement capacity)"
+      },
+      {
+        "id": "vitner-soil-craft:soil-walk:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-soil-craft:soil-walk:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Change the range from Personal to Contact"
+      },
+      {
+        "id": "vitner-soil-craft:soil-walk:5:3",
+        "cost": 3,
+        "maxCount": 1,
+        "effect": "Weave the spell over a second person who can also go into the soil (only if the range is Contact)"
+      },
+      {
+        "id": "vitner-soil-craft:soil-walk:5:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      }
+    ],
     "source": "Player's Handbook, p. 123",
     "level": 3,
     "cost": 6,

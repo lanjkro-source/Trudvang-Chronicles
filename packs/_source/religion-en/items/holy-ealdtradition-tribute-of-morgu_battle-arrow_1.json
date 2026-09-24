@@ -12,7 +12,23 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribute of Morgu",
-    "description": "To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14.",
+    "description": "The Bruid calls on the power of Morgu, who unleashes an arrow into the battle to aid the dimwalker. The arrow counts as a magical projectile, but armor grants full protection as normal. Shields also provide passive protection against the arrow as normal. The Bruid takes aim at an enemy within range, who is then struck by a black arrow. The arrow automatically hits with a successful invocation and inflicts 1d10 (OR 8-10) points of damage with Penetration Value 1.",
+    "summary": "To be able to fully listen to a certain noise or conversation, the Bruid needs to succeed on a Situation roll with a Situation value of 14.",
+    "swedishName": "",
+    "duration": "",
+    "range": "20 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:battle-arrow:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 187",
     "level": 1,
     "cost": 2,

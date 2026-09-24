@@ -12,7 +12,23 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Wisdom of Windinna",
-    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "description": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person. This ability is often used in interrogations and legal matters. The dimwalker directs the ability toward a person within range and can use it to judge if the person is hostile or friendly toward the dimwalker.",
+    "summary": "The Stormkelt asks Windinna for the ability to see into the mind and heart of a person.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:sixth-sense:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      }
+    ],
     "source": "Player's Handbook, p. 168",
     "level": 1,
     "cost": 2,

@@ -12,8 +12,24 @@
     "catalogId": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0",
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
-    "description": "F Durée : 1 minute F Portée : personnelle F Temps d’invocation : 2 tours de jeu L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje.",
-    "source": "Livre des règles, p. 275",
+    "description": "Le conjurateur est investi d’une partie de l’essence du troll des glaces et n’est pas affecté par le froid non magique.",
+    "summary": "F Durée : 1 minute F Portée : personnelle F Temps d’invocation : 2 tours de jeu L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "personnelle",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      }
+    ],
+    "source": "Livre des règles, p. 276",
     "level": 1,
     "cost": 2,
     "modifier": -2

@@ -12,10 +12,50 @@
     "catalogId": "holy-thuuldom-healing-rune:healing-rune:0",
     "tabletId": "holy-thuuldom-healing-rune",
     "tablet": "Healing Rune",
-    "description": "The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound.",
+    "description": "✦ Modifier: -2 The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound. The sacred item immediately begins glowing as the healing takes effect. Depending on the level of the rune, the Thuul can spread a single use over multiple people as well as heal different amounts according to the table below. At level 2 or higher, the Thuul can assign each of the listed d6s of healing to different characters, thereby spreading out the healing capability. For example, a Thuul that has received level 5 of the rune can heal five people with 1d6 each, two people with 2d6 and 3d6 respectively, and so on, instead of simply healing one person for 5d6 (which is always an option).",
+    "summary": "The Thuul can heal himself or any other chosen person by placing the runeinscribed item on the wound.",
+    "swedishName": "",
+    "duration": "2 action round(s)",
+    "range": "contact",
+    "weavingTime": "",
+    "dailyActivation": "2",
+    "spellType": "sustained",
+    "isRune": true,
+    "powerLevels": [
+      {
+        "id": "holy-thuuldom-healing-rune:healing-rune:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Heals 1d6 points of damage"
+      },
+      {
+        "id": "holy-thuuldom-healing-rune:healing-rune:0:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Heals 2d6 points of damage"
+      },
+      {
+        "id": "holy-thuuldom-healing-rune:healing-rune:0:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Heals 3d6 points of damage"
+      },
+      {
+        "id": "holy-thuuldom-healing-rune:healing-rune:0:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Heals 4d6 points of damage"
+      },
+      {
+        "id": "holy-thuuldom-healing-rune:healing-rune:0:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Heals 5d6 points of damage"
+      }
+    ],
     "source": "Player's Handbook, p. 231",
     "level": 1,
-    "cost": 2,
+    "cost": 0,
     "modifier": -2
   },
   "_key": "!items!UjK6h0rXsYtZu0v1",

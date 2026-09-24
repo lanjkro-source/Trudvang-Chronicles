@@ -12,7 +12,47 @@
     "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Strength of Stormi",
-    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
+    "summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "5 meters",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Apply the Strength +8 to one more person"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:3",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the characteristics from +4 to +6 for the Stormkelt’s allies"
+      },
+      {
+        "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 164",
     "level": 4,
     "cost": 8,

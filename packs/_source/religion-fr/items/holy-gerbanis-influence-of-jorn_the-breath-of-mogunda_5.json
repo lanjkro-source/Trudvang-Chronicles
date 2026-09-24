@@ -12,8 +12,30 @@
     "catalogId": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5",
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
-    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
-    "source": "Livre des règles, p. 222",
+    "description": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée. L’énergie divine inflige 1d10 points de dégâts contre lesquels les armures normales n’offrent aucune protection.",
+    "summary": "Le stormikjalt frappe dans ses mains, ce qui projette une vague de pression tonitruante qui endommage une créature morte-vivante située à portée.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:1",
+        "cost": 4,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 223",
     "level": 3,
     "cost": 6,
     "modifier": -6

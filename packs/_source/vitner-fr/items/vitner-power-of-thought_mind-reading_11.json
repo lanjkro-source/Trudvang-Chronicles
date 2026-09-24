@@ -12,8 +12,48 @@
     "catalogId": "vitner-power-of-thought:mind-reading:11",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "L’enchanteur peut lire les souvenirs de la créature qu’il touche.",
-    "source": "Livre des règles, p. 176",
+    "description": "L’enchanteur peut lire les souvenirs de la créature qu’il touche. Il contemple une suite d’images qui explique dans les grandes lignes l’histoire de la créature au cours de l’année écoulée. Pour chaque tranche de 2 tours de jeu que dure ce sort, l’enchanteur peut tenter de découvrir un grand secret que la créature tente de dissimuler. La créature enchantée perçoit immédiatement que quelqu’un tente de pénétrer son esprit et de fouiller sa mémoire (à longue distance, la créature ne peut pas savoir qui tente de lire ses souvenirs). Elle peut dissimuler un secret en particulier aux yeux de l’enchanteur en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, l’enchanteur doit tisser un nouveau sort de Lecture des pensées s’il veut essayer de découvrir l’information camouflée. Mais même si l’enchanteur se voit interdire l’accès à ce secret en particulier, il peut continuer de chercher d’autres secrets jusqu’à expiration du sort.",
+    "summary": "L’enchanteur peut lire les souvenirs de la créature qu’il touche.",
+    "swedishName": "Húgfreska",
+    "duration": "6 tours de jeu",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 2 tours de jeu"
+      },
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 12 tours de jeu"
+      },
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort (le contact physique n’est plus nécessaire) de : 5 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:3",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort (le contact physique n’est plus nécessaire) de : 50 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "La cible ensorcelée n’a pas conscience de la présence de l’enchanteur (elle continue toutefois de dissimuler ses secrets)"
+      }
+    ],
+    "source": "Livre des règles, p. 180",
     "level": 5,
     "cost": 10,
     "modifier": -10

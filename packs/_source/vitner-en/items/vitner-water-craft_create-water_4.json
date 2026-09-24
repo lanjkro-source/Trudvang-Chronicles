@@ -12,7 +12,41 @@
     "catalogId": "vitner-water-craft:create-water:4",
     "tabletId": "vitner-water-craft",
     "tablet": "Water Craft",
-    "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+    "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground. In total, 30 liters of water flow out from the magical source (10 liters per action round). The water is as clean as spring water, and as long as the enchanter has something to collect it in, they never need to be thirsty.",
+    "summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
+    "swedishName": "Vannstraula",
+    "duration": "3 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-water-craft:create-water:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round (+10 liters)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute (+120 liters)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:3",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 135",
     "level": 3,
     "cost": 6,

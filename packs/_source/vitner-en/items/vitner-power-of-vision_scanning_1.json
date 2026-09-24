@@ -12,7 +12,29 @@
     "catalogId": "vitner-power-of-vision:scanning:1",
     "tabletId": "vitner-power-of-vision",
     "tablet": "Power of Vision",
-    "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane.",
+    "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine.",
+    "summary": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane.",
+    "swedishName": "Tingspyrja",
+    "duration": "9 action round(s)",
+    "range": "contact",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-vision:scanning:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range of history that the enchanter can perceive events from by 1 year"
+      },
+      {
+        "id": "vitner-power-of-vision:scanning:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 3 action"
+      }
+    ],
     "source": "Player's Handbook, p. 120",
     "level": 2,
     "cost": 4,

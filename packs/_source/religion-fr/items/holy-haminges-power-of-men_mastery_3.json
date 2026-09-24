@@ -13,6 +13,34 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
     "description": "Le conjurateur bénéficie d’un bonus de +3 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir.",
+    "summary": "Le conjurateur bénéficie d’un bonus de +3 à la VC d’un test de compétence qu’il effectue avant expiration du pouvoir.",
+    "swedishName": "",
+    "duration": "2 minutes",
+    "range": "personnelle",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-haminges-power-of-men:mastery:3:2",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Augmente le bonus à la VC de : +1"
+      }
+    ],
     "source": "Livre des règles, p. 272",
     "level": 2,
     "cost": 4,

@@ -12,7 +12,41 @@
     "catalogId": "holy-gerbanis-wrath-of-tyrd:battle-cry:1",
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Wrath of Tyrd",
-    "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale.",
+    "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale. The battle cry grants the target within range +1 on all combat actions for the duration.",
+    "summary": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale.",
+    "swedishName": "",
+    "duration": "2 action round(s)",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:0",
+        "cost": 1,
+        "maxCount": 3,
+        "effect": "Increase the number of people who are affected by the ability by +1 (maximum 3)"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:3",
+        "cost": 2,
+        "maxCount": 3,
+        "effect": "Increase the bonus on combat"
+      }
+    ],
     "source": "Player's Handbook, p. 171",
     "level": 1,
     "cost": 2,

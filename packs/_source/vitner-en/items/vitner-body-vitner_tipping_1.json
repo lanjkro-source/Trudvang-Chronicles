@@ -12,7 +12,35 @@
     "catalogId": "vitner-body-vitner:tipping:1",
     "tabletId": "vitner-body-vitner",
     "tablet": "Body Vitner",
-    "description": "Unbalances a creature so that it falls to the ground.",
+    "description": "The enchanter makes a creature stumble and lose its balance. The victim of the spell must immediately make a Skill roll for Agility. Failure means the victim tumbles to the ground. Success means the victim takes no notice of what has happened and is able to continue as normal.",
+    "summary": "Unbalances a creature so that it falls to the ground.",
+    "swedishName": "Hrasfalja",
+    "duration": "",
+    "range": "5 meters",
+    "weavingTime": "1 action round(s)",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-body-vitner:tipping:1:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-body-vitner:tipping:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Reduces the victim’s chance of success on the Agility Skill roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:tipping:1:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect another victim with the"
+      }
+    ],
     "source": "Player's Handbook, p. 96",
     "level": 1,
     "cost": 2,

@@ -12,8 +12,54 @@
     "catalogId": "vitner-soil-craft:petrify-remove-petrification:8",
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
-    "description": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre.",
-    "source": "Livre des règles, p. 158",
+    "description": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre. Les vêtements et l’équipement de la victime sont eux aussi transformés en pierre, mais pas ses objets magiques (ils peuvent cependant se retrouver coincés dans un poing ou un sac en pierre). La victime peut tenter de résister à la transformation par un test de situation avec une valeur de situation qui dépend de sa taille, comme l’indique la table ci-dessous (prendre en compte le modificateur de Psychisme).<br> TAILLE ET VALEURS DE SITUATION:\n|Taille|Valeur de situation|\n|---|---|\n|<1/3|4|\n|≥1/3 – 1/2|6|\n|≥1/2 – 1,5|8|\n|≥1,5 – 3|10|\n|≥3 – 5|12|\n|≥5 – 10|15|\n|≥10|19|\n Si la victime rate ce test de situation, elle se transforme en pierre en même temps que tout l’équipement qu’elle tient ou qu’elle porte.<br> C’est une roche extrêmement dure, quasiment indestructible. La victime pétrifiée bénéficie d’une valeur de protection de 10 et d’une valeur d’intégrité de 100. Une fois la valeur d’intégrité réduite à 0, la victime encaisse les dégâts selon les règles habituelles, et si elle en subit un nombre équivalent au double de ses points de santé, la roche qui la compose se brise et la victime meurt.<br> Une victime changée en pierre est complètement hébétée et n’a pas conscience de son environnement ou du temps qui passe. De fait, elle n’est plus en mesure d’interagir avec le monde qui l’entoure de quelque façon que ce soit. Lorsque le sort qui l’affecte arrive à expiration, la victime retrouve sa forme d’origine. Il est possible de libérer une créature pétrifiée en utilisant le sort Annuler une pétrification ou bien le sort Dissipation du vitner.<br> Une créature pétrifiée n’est en aucun cas fixée au sol et n’est retenue que par la gravité, ce qui signifie qu’une personne suffisamment forte peut la déplacer. La statue pèse environ dix fois le poids d’origine de la victime.<br> L’enchanteur peut également utiliser une version alternative de ce sort, Annuler une pétrification. En manipulant le vitner utilisé pour pétrifier une cible, l’enchanteur peut rendre à une créature en pierre sa forme d’origine. Utilisé de cette façon, ce sort redonne également sa forme d’origine à l’équipement transformé, pour peu qu’il n’ait pas été endommagé. Lorsqu’un enchanteur tente de rendre sa forme originelle à une cible pétrifiée, cette dernière doit réussir un test de situation avec une valeur de situation de 12 (prendre en compte le modificateur de Constitution), modifiée en fonction du temps que la victime a passé sous forme de statue (voir la table ci-dessous). MODIFICATEURS:\n|Temps|Modificateur|\n|---|---|\n|< 1 journée|+8|\n|1 à 3 jours|+4|\n|4 à 7 jours|+2|2 semaines|+0|\n|3 semaines|-2|\n|4 semaines|-4|\n|2 mois|-6|\n|3 mois|-10|\n|6 mois|-14|\n|1 an|-18|\n|10 ans|-25|\n|100 ans|-35|\n|> 100 ans|-50|\n Si l’enchanteur parvient à restaurer une victime pétrifiée, elle s’éveille au bout de 1 tour de jeu. Elle n’a pas la moindre idée de ce qui s’est produit, et ne réalise pas qu’il s’est écoulé un certain temps depuis qu’elle a été pétrifiée. Elle n’a aucun souvenir des événements qui se sont déroulés entre-temps. Pendant les trois premiers jours, la victime se sent particulièrement raide, ce qui réduit de moitié sa capacité de mouvement ainsi que ses valeurs de compétence pour tous les tests de compétence ou de situation reposant sur la Dextérité). Pendant les trois jours suivants, sa capacité de mouvement et ses valeurs de compétence passent aux deux tiers de leur valeur normale. Au bout de six jours, la victime recouvre toutes ses facultés. Le maître de jeu est libre de modifier ce temps de récupération en fonction du temps que la victime a passé sous forme de statue.",
+    "summary": "L’énergie de ce sort est si puissante qu’elle peut changer le corps d’une victime en pierre.",
+    "swedishName": "Braskeltrölja/braskelbrotja",
+    "duration": "1d6 + 2 jours",
+    "range": "10 mètres",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 journée"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 mois"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 année"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente les chances de la victime de réussir son test de situation quand l’enchanteur tente de lui rendre sa forme d’origine d’un degré (une ligne supérieure) sur la table MODIFICATEURS (par exemple de : -35 à -25, ou de : -4 à -2)"
+      }
+    ],
+    "source": "Livre des règles, p. 162",
     "level": 5,
     "cost": 10,
     "modifier": -10

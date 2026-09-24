@@ -12,8 +12,48 @@
     "catalogId": "vitner-power-of-thought:courage:2",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
-    "description": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage.",
-    "source": "Livre des règles, p. 176",
+    "description": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage. Ce sort dissipe les doutes, les peurs et autres humeurs qui pourraient affecter de manière négative la personne, dont les points de peur diminuent de 1d10. Tous les points de peur que le personnage enchanté reçoit pendant la durée du sort sont réduits de 4.",
+    "summary": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage.",
+    "swedishName": "Kjarkku",
+    "duration": "5 minutes",
+    "range": "5 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-power-of-thought:courage:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Affecte une autre personne ou créature située à portée, qui bénéficie de la version de base du sort"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Diminue les points de peur reçus de : 1 point supplémentaire"
+      },
+      {
+        "id": "vitner-power-of-thought:courage:2:4",
+        "cost": 4,
+        "maxCount": 4,
+        "effect": "Augmente le nombre de points de peur actuels dissipés d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 177",
     "level": 2,
     "cost": 4,
     "modifier": -4

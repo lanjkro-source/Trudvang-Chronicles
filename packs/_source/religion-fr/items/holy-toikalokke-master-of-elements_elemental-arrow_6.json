@@ -12,8 +12,36 @@
     "catalogId": "holy-toikalokke-master-of-elements:elemental-arrow:6",
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
-    "description": "L’ihana comprime la chaleur environ nante pour former une flèche qui s’en flamme.",
-    "source": "Livre des règles, p. 297",
+    "description": "L’ihana comprime la chaleur environnante pour former une flèche qui s’enflamme. L’elfe peut alors propulser le projectile sur une cible située à portée et lui infliger 1d10 (JO 10) points de dégâts.",
+    "summary": "L’ihana comprime la chaleur environ nante pour former une flèche qui s’en flamme.",
+    "swedishName": "",
+    "duration": "",
+    "range": "10 mètres",
+    "weavingTime": "immédiat",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-toikalokke-master-of-elements:elemental-arrow:6:0",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Tire une flèche supplémentaire"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:elemental-arrow:6:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 5 mètres (ce qui affecte aussi les flèches supplémentaires)"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:elemental-arrow:6:2",
+        "cost": 3,
+        "maxCount": 4,
+        "effect": "Augmente les dégâts d’un degré : 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO7 > 1d10JO7 + 1"
+      }
+    ],
+    "source": "Livre des règles, p. 298",
     "level": 2,
     "cost": 4,
     "modifier": -4

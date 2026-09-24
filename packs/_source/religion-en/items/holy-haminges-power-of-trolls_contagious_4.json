@@ -12,7 +12,35 @@
     "catalogId": "holy-haminges-power-of-trolls:contagious:4",
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Power of Trolls",
-    "description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces.",
+    "description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes. Anyone who comes within range must make a Situation roll with a Situation value of 6 (Constitution modifiers apply). Victims who fail the roll become infected (after 1d6 minutes) with an illness that causes severe itching and vomiting that lasts for 1d6 days, suffering -4 on everything they do during this time. A successful Situation roll resists the disease, and makes that character immune to this ability for one day.",
+    "summary": "The spirit conjurer begins to stink of troll, grease, sweat, and feces.",
+    "swedishName": "",
+    "duration": "2 hour(s)",
+    "range": "1 meters",
+    "weavingTime": "1 minute(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the Situation value by -1"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:contagious:4:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Increase the range by 1 meter"
+      }
+    ],
     "source": "Player's Handbook, p. 223",
     "level": 3,
     "cost": 6,

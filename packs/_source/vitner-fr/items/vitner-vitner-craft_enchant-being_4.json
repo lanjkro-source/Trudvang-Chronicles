@@ -12,8 +12,54 @@
     "catalogId": "vitner-vitner-craft:enchant-being:4",
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
-    "description": "Ce sort tisse une couche de vitner bé néfique autour d’une cible située à portée.",
-    "source": "Livre des règles, p. 152",
+    "description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
+    "summary": "Ce sort tisse une couche de vitner bé néfique autour d’une cible située à portée.",
+    "swedishName": "Kraftlatrolja skopjaten",
+    "duration": "4 tours de jeu",
+    "range": "contact",
+    "weavingTime": "3 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 tour de jeu"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 minute"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée du sort de : 1 heure"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une cible supplémentaire (qui bénéficie des effets du sort de base)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente le bonus conféré à la créature de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 153",
     "level": 3,
     "cost": 6,
     "modifier": -6

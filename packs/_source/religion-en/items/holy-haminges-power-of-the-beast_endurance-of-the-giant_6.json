@@ -12,7 +12,29 @@
     "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Power of the Beast",
-    "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury.",
+    "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +8 for the duration of the ability. The spirit conjurer also becomes immune to all poison and disease for the duration.",
+    "summary": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury.",
+    "swedishName": "",
+    "duration": "1 minute(s)",
+    "range": "personalle",
+    "weavingTime": "3 action round(s)",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
     "source": "Player's Handbook, p. 212",
     "level": 4,
     "cost": 8,
