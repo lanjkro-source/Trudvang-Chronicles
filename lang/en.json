@@ -433,6 +433,7 @@
       "Levels": "Power levels",
       "RuneLevels": "Effects by rune level",
       "Level": "Level {level}",
+      "Max": "Max",
       "CostPerLevel": "Cost per level: {cost}",
       "Maximum": "Maximum: {max}",
       "MaxCount": "Limit",

@@ -48,9 +48,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "effect-delete": TrudvangItemSheet.#onEffectDelete,
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
-      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
-      "power-level-add": TrudvangItemSheet.#onPowerLevelAdd,
-      "power-level-remove": TrudvangItemSheet.#onPowerLevelRemove
+      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen
     }
   };
 
@@ -92,9 +90,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       activeCosts.length === 1 ? "TRUDVANG.Field.ActiveSpellCostsOne" : "TRUDVANG.Field.ActiveSpellCostsMany",
       {count: activeCosts.length, costs: activeCosts.map(cost => `${cost} ${game.i18n.localize("TRUDVANG.Unit.VitnerPointsShort")}`).join(", ")}
     ) : "";
-    context.powerLevelRows = context.isMagicPower ? Array.from(this.item.system.powerLevels ?? [], (entry, index) => ({
-      ...(entry.toObject?.() ?? entry), displayLevel: index + 1
-    })) : [];
+    context.powerLevelRows = context.isMagicPower ? Array.from(this.item.system.powerLevels ?? [], (entry, index) => {
+      const level = entry.toObject?.() ?? entry;
+      return {
+        ...level,
+        displayLevel: index + 1,
+        maxCountDisplay: level.maxCount == null ? "-" : level.maxCount
+      };
+    }) : [];
     context.equipmentInspection = this.item.parent?.documentName === "Actor" ? prepareEquipmentInspection(this.item) : null;
     context.hasModifiers = Boolean(context.equipmentInspection);
     context.isEmbeddedTablet = this.item.type === "tablet" && this.item.parent?.documentName === "Actor";
@@ -244,23 +247,6 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       packs: game.packs, worldItems: game.items, language: game.i18n.lang});
     if (power) return power.sheet.render({force: true});
     return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
-  }
-
-  static async #onPowerLevelAdd(event) {
-    event.preventDefault();
-    const powerLevels = this.item.system.powerLevels.map(level => level.toObject?.() ?? {...level});
-    if (this.item.system.isRune && powerLevels.length >= 5) return;
-    powerLevels.push({id: `${this.item.id}:custom:${crypto.randomUUID()}`, cost: this.item.system.isRune ? 0 : 1, maxCount: null, effect: ""});
-    await this.item.update({"system.powerLevels": powerLevels});
-  }
-
-  static async #onPowerLevelRemove(event, target) {
-    event.preventDefault();
-    const index = Number(target.dataset.index);
-    const powerLevels = this.item.system.powerLevels.map(level => level.toObject?.() ?? {...level});
-    if (!Number.isInteger(index) || index < 0 || index >= powerLevels.length) return;
-    powerLevels.splice(index, 1);
-    await this.item.update({"system.powerLevels": powerLevels});
   }
 
   static async #onDeleteItem(event, target) {

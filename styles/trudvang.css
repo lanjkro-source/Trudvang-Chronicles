@@ -613,15 +613,15 @@
 .trudvang-sheet.item-sheet .tablet-negation-panel textarea { min-height: 130px; resize: vertical; }
 .trudvang-sheet.item-sheet .item-source { margin-top: 10px; border-top: 1px solid var(--trudvang-line); border-bottom: 0; }
 .trudvang-sheet.item-sheet .power-levels-panel { margin-top: 10px; }
-.trudvang-sheet.item-sheet .power-levels-panel .section-heading { margin-bottom: 6px; }
-.trudvang-sheet.item-sheet .power-level-row { padding: 7px 0; border-top: 1px dotted var(--trudvang-line); }
-.trudvang-sheet.item-sheet .power-level-controls { display: flex; align-items: end; gap: 8px; margin-bottom: 5px; }
-.trudvang-sheet.item-sheet .power-level-controls label { display: flex; flex-direction: column; gap: 2px; color: var(--trudvang-muted); font-size: .68rem; }
-.trudvang-sheet.item-sheet .power-level-controls input { width: 75px; height: 25px; color: var(--trudvang-ink); }
-.trudvang-sheet.item-sheet .power-level-controls strong { flex: 1; color: var(--trudvang-accent); }
-.trudvang-sheet.item-sheet .power-level-controls button { margin-left: auto; }
-.trudvang-sheet.item-sheet .power-level-row textarea { min-height: 44px; padding: 6px; color: var(--trudvang-ink); background: var(--trudvang-paper-light); border: 1px solid var(--trudvang-line); resize: vertical; }
-.trudvang-sheet.item-sheet .rune-preview-note { margin: 4px 0 9px; color: var(--trudvang-muted); font-size: .78rem; }
+.trudvang-sheet.item-sheet .power-level-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.trudvang-sheet.item-sheet .power-level-table th,
+.trudvang-sheet.item-sheet .power-level-table td { padding: 4px 7px; border-bottom: 1px solid var(--trudvang-line); text-align: left; vertical-align: top; }
+.trudvang-sheet.item-sheet .power-level-table th { color: var(--trudvang-on-header); background: var(--trudvang-header); font-size: .75rem; font-weight: 700; }
+.trudvang-sheet.item-sheet .power-level-table th:nth-child(1),
+.trudvang-sheet.item-sheet .power-level-table th:nth-child(2),
+.trudvang-sheet.item-sheet .power-level-table td:nth-child(1),
+.trudvang-sheet.item-sheet .power-level-table td:nth-child(2) { width: 54px; white-space: nowrap; }
+.trudvang-sheet.item-sheet .power-level-table td { color: var(--trudvang-ink); font-size: .8rem; line-height: 1.25; }
 .trudvang-sheet.item-sheet .tablet-affinity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 5px 8px; border: 1px solid currentColor; border-radius: 4px; font-size: .78rem; font-weight: 700; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip.favorable { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }

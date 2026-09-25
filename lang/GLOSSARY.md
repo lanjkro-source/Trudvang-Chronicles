@@ -526,6 +526,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Power.Levels` | Power levels | Niveaux de puissance |
 | `TRUDVANG.Power.RuneLevels` | Effects by rune level | Effets par niveau de rune |
 | `TRUDVANG.Power.Level` | Level {level} | Niveau {level} |
+| `TRUDVANG.Power.Max` | Max | Max |
 | `TRUDVANG.Power.CostPerLevel` | Cost per level: {cost} | Coût par niveau : {cost} |
 | `TRUDVANG.Power.Maximum` | Maximum: {max} | Maximum : {max} |
 | `TRUDVANG.Power.MaxCount` | Limit | Limite |
