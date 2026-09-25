@@ -164,6 +164,15 @@ function actorCommonSchema() {
       vitner: resource(0, 0),
       divinity: resource(0, 0, {temporary: true})
     }),
+    activeSpellCastingsMigrated: boolean(false),
+    activeSpellCastings: new fields.ArrayField(schema({
+      id: string(),
+      itemId: string(),
+      cost: integer(0, {min: 0}),
+      startedAt: number(0),
+      duration: string(),
+      powerLevelCounts: new fields.ArrayField(new fields.NumberField({required: true, integer: true, min: 0}), {required: true, initial: []})
+    }), {required: true, initial: []}),
     combatPools: combatPoolsSchema(),
     initiative: schema({base: integer(0), current: integer(0)}),
     movement: schema({base: integer(10), current: integer(10)}),
@@ -287,6 +296,7 @@ function magicSchema() {
     duration: string("Instant"),
     range: string("Personal"),
     weavingTime: string("1 action round"),
+    // TEMPORARY WORLD MIGRATION: v0.41 stored activity and costs on each spell item.
     active: boolean(false),
     activeCost: integer(0, {min: 0}),
     activeCastCosts: new fields.ArrayField(new fields.NumberField({required: true, integer: true, min: 0}), {required: true, initial: []})

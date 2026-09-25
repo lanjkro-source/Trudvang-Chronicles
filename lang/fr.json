@@ -219,6 +219,8 @@
       "ActiveSpell": "Actif / maintenu",
       "ActiveCost": "Coût en vitner lors de l'activation",
       "ActiveSpellsCount": "{current} / {max}",
+      "ActiveSpellCostsOne": "1 sort actif : {costs}",
+      "ActiveSpellCostsMany": "{count} sorts actifs : {costs}",
       "Summary": "Résumé",
       "PassiveProtection": "PP : PROTECTION PASSIVE",
       "BreachCurrent": "Valeur d'intégrité (actuelle)",
@@ -451,7 +453,8 @@
       "feat": "Talent de créature"
     },
     "Unit": {
-      "Days": "jours"
+      "Days": "jours",
+      "VitnerPointsShort": "PV"
     },
     "Culture": {
       "Stormlander": "Stormlander",

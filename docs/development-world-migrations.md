@@ -47,7 +47,8 @@ Toute nouvelle migration de monde doit :
 
 | Code | Rôle transitoire | Suppression possible lorsque |
 |---|---|---|
-| Repli de `activeSpellCosts()` vers `system.active` / `system.activeCost` | Représente comme un lancement actif unique les sorts persistants activés avant le suivi par instance et coût individuel. | Les mondes de développement antérieurs ont été effacés ou leurs sorts actifs ont été terminés. |
+| `legacyActiveSpellCastings()` et les champs d'objet `active`, `activeCost`, `activeCastCosts` | Adoptent les coûts individuels enregistrés sur les sorts avant que chaque lancement soit porté par l'acteur. Un ancien coût agrégé n'est repris qu'en dernier recours ; un booléen `active` sans coût ne suffit jamais. | Les mondes de développement antérieurs à la version 0.42 ont été effacés ou leurs sorts actifs ont été terminés. |
+| `activeSpellCastingsMigrated` | Empêche la réapparition des anciennes activations stockées sur les objets après la fin du dernier lancement porté par l'acteur. | Aucun monde ne contient plus d'anciens sorts actifs sur les objets. |
 
 ## Hors périmètre
 

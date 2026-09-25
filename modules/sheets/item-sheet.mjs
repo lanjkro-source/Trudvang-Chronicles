@@ -86,8 +86,12 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
     context.isRunePower = context.isMagicPower && Boolean(this.item.system.isRune);
     context.isPersistentSpell = this.item.type === "spell" && this.item.system.spellType === "lasting";
-    context.activeSpellCount = context.isPersistentSpell ? activeSpellCosts(this.item).length : 0;
-    context.activeSpellTotalCost = context.isPersistentSpell ? activeSpellCosts(this.item).reduce((sum, cost) => sum + cost, 0) : 0;
+    const activeCosts = context.isPersistentSpell && this.item.parent?.documentName === "Actor"
+      ? activeSpellCosts(this.item.parent, this.item) : [];
+    context.activeSpellSummary = activeCosts.length ? game.i18n.format(
+      activeCosts.length === 1 ? "TRUDVANG.Field.ActiveSpellCostsOne" : "TRUDVANG.Field.ActiveSpellCostsMany",
+      {count: activeCosts.length, costs: activeCosts.map(cost => `${cost} ${game.i18n.localize("TRUDVANG.Unit.VitnerPointsShort")}`).join(", ")}
+    ) : "";
     context.powerLevelRows = context.isMagicPower ? Array.from(this.item.system.powerLevels ?? [], (entry, index) => ({
       ...(entry.toObject?.() ?? entry), displayLevel: index + 1
     })) : [];

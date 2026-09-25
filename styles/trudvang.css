@@ -524,6 +524,7 @@
 .trudvang-sheet.item-sheet .item-fields-title { margin: -2px 0 8px; }
 .trudvang-sheet.item-sheet .item-field-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 10px; align-items: end; }
 .trudvang-sheet.item-sheet .item-field-row + .item-field-row { margin-top: 7px; }
+.trudvang-sheet.item-sheet .active-spell-summary { margin: 8px 0 0; color: var(--trudvang-ink); font-size: .84rem; }
 .trudvang-sheet.item-sheet .item-fields label { display: flex; flex-direction: column; color: var(--trudvang-muted); font-size: .7rem; text-transform: uppercase; }
 .trudvang-sheet.item-sheet .item-fields input, .trudvang-sheet.item-sheet .item-fields select { height: 25px; color: var(--trudvang-ink); font-size: .85rem; text-transform: none; }
 .trudvang-sheet.item-sheet .item-fields .wide { grid-column: 1 / -1; }

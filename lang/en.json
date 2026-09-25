@@ -219,6 +219,8 @@
       "ActiveSpell": "Active / maintained",
       "ActiveCost": "Vitner cost when activated",
       "ActiveSpellsCount": "{current} / {max}",
+      "ActiveSpellCostsOne": "1 active spell: {costs}",
+      "ActiveSpellCostsMany": "{count} active spells: {costs}",
       "Summary": "Summary",
       "PassiveProtection": "PP: PASSIVE PROTECTION",
       "BreachCurrent": "Breach Value (current)",
@@ -451,7 +453,8 @@
       "feat": "Creature Feat"
     },
     "Unit": {
-      "Days": "days"
+      "Days": "days",
+      "VitnerPointsShort": "VP"
     },
     "Culture": {
       "Stormlander": "Stormlander",

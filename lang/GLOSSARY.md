@@ -255,6 +255,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ActiveSpell` | Active / maintained | Actif / maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
 | `TRUDVANG.Field.ActiveSpellsCount` | {current} / {max} | {current} / {max} |
+| `TRUDVANG.Field.ActiveSpellCostsOne` | 1 active spell: {costs} | 1 sort actif : {costs} |
+| `TRUDVANG.Field.ActiveSpellCostsMany` | {count} active spells: {costs} | {count} sorts actifs : {costs} |
 | `TRUDVANG.Field.Summary` | Summary | Résumé |
 | `TRUDVANG.Field.PassiveProtection` | PP: PASSIVE PROTECTION | PP : PROTECTION PASSIVE |
 | `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
@@ -551,6 +553,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Unit.Days` | days | jours |
+| `TRUDVANG.Unit.VitnerPointsShort` | VP | PV |
 
 ## `TRUDVANG.Culture`
 
