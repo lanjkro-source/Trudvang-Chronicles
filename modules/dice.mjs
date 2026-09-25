@@ -113,7 +113,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   });
 }
 
-export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = ""}) {
+export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = ""}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
   const options = methods.map(method => {
@@ -122,7 +122,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   }).join("");
   const formatModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value)}`;
   const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty;
-  const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} VC (+${bonus * 2} ${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Vitner"))})</option>`).join("");
+  const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} VC (+${bonus * 2} ${escapeHtml(game.i18n.localize(strenuousResource))})</option>`).join("");
   const levelRows = powerLevels.map((level, index) => {
     const unit = powerLevelUnitCost(level.cost, affinity);
     const limit = level.maxCount == null ? "" : ` max="${Number(level.maxCount)}"`;
@@ -145,7 +145,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${affinityDescription ? `<p class="magic-affinity-note">${escapeHtml(affinityDescription)}</p>` : ""}
     ${levelRows ? `<div class="magic-power-options">${levelRows}</div>` : ""}
     ${levelRows ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Power.LevelsInvested"))} : <strong data-level-cost>0</strong></p>` : ""}
-    ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Strenuous"))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
+    ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize(strenuousLabel))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     <p>${escapeHtml(resourceLabel)} : <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
@@ -203,6 +203,60 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         try { cost = costFrom(root, strenuousBonus); }
         catch { ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidSelection")); return false; }
         return {method, strenuousBonus, activeSpellPenalty, target: finalTargetFrom(root, method, strenuousBonus), situationalModifier, cost: cost.total, costBreakdown: cost};
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
+export async function concentrationDialog({title, psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const tracks = {
+    spell: {discipline: "TRUDVANG.Knowledge.vitnerFocus", specialty: "TRUDVANG.Knowledge.safeWeaving", disciplineLevel: Number(spellDisciplineLevel) || 0, specialtyLevel: Number(spellSpecialtyLevel) || 0},
+    divine: {discipline: "TRUDVANG.Knowledge.godFocus", specialty: "TRUDVANG.Knowledge.composed", disciplineLevel: Number(divineDisciplineLevel) || 0, specialtyLevel: Number(divineSpecialtyLevel) || 0}
+  };
+  const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
+  const localize = key => escapeHtml(game.i18n.localize(key));
+  const content = `<div class="trudvang roll-dialog concentration-roll-dialog">
+    <div class="form-group"><label>${localize("TRUDVANG.Dialog.ConcentrationType")}</label><select name="concentration-type"><option value="spell">${localize("TRUDVANG.Dialog.ConcentrationSpell")}</option><option value="divine">${localize("TRUDVANG.Dialog.ConcentrationDivine")}</option></select></div>
+    <div class="form-group"><label>${localize("TRUDVANG.Dialog.ConcentrationBase")}</label><input name="concentration-base" type="number" value="6"></div>
+    <dl class="concentration-breakdown">
+      <dt>${localize("TRUDVANG.Dialog.ConcentrationTrait")}</dt><dd>${signed(psycheModifier)}</dd>
+      <dt data-concentration-discipline-name></dt><dd data-concentration-discipline-value></dd>
+      <dt data-concentration-specialty-name></dt><dd data-concentration-specialty-value></dd>
+      ${effectModifier ? `<dt>${localize("TRUDVANG.Dialog.EffectModifier")}</dt><dd>${signed(effectModifier)}</dd>` : ""}
+    </dl>
+    <p>${localize("TRUDVANG.Dialog.ConcentrationTotal")}: <strong data-concentration-total></strong></p>
+  </div>`;
+  class ConcentrationDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const track = tracks[root.querySelector("[name=concentration-type]")?.value] || tracks.spell;
+        const disciplineBonus = track.disciplineLevel;
+        const specialtyBonus = 2 * track.specialtyLevel;
+        const base = Number(root.querySelector("[name=concentration-base]")?.value || 0);
+        root.querySelector("[data-concentration-discipline-name]").textContent = `${game.i18n.localize(track.discipline)} (${track.disciplineLevel})`;
+        root.querySelector("[data-concentration-discipline-value]").textContent = signed(disciplineBonus);
+        root.querySelector("[data-concentration-specialty-name]").textContent = `${game.i18n.localize(track.specialty)} (${track.specialtyLevel})`;
+        root.querySelector("[data-concentration-specialty-value]").textContent = signed(specialtyBonus);
+        root.querySelector("[data-concentration-total]").textContent = base + Number(psycheModifier) + Number(effectModifier) + disciplineBonus + specialtyBonus;
+      };
+      root.querySelector("[name=concentration-type]")?.addEventListener("change", refresh);
+      root.querySelector("[name=concentration-base]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return ConcentrationDialog.wait({
+    window: {title},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-wand-sparkles", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {type: root.querySelector("[name=concentration-type]")?.value || "spell", base: Number(root.querySelector("[name=concentration-base]")?.value || 0)};
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

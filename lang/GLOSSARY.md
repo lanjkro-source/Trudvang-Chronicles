@@ -843,6 +843,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.PowerModifier` | Power modifier | Modificateur du pouvoir |
+| `TRUDVANG.Dialog.ConcentrationRoll` | Concentration roll | Jet de concentration |
+| `TRUDVANG.Dialog.ConcentrationType` | Concentration type | Type de concentration |
+| `TRUDVANG.Dialog.ConcentrationSpell` | Spell | Sortilège |
+| `TRUDVANG.Dialog.ConcentrationDivine` | Divine power or rune | Pouvoir divin ou rune |
+| `TRUDVANG.Dialog.ConcentrationBase` | Base SV | SV de base |
+| `TRUDVANG.Dialog.ConcentrationTrait` | Psyche | Psychisme |
+| `TRUDVANG.Dialog.ConcentrationTotal` | Total | Total |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
 | `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
@@ -1004,6 +1011,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
+| `TRUDVANG.Calculation.Rigorous` | Rigorous: +{bonus} SV for {cost} additional Divinity Points | Rigoureux : +{bonus} VC pour {cost} points de divinité supplémentaires |
 | `TRUDVANG.Calculation.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
 | `TRUDVANG.Calculation.FeintCost` | Feint: -{points} SV ({points} CP). | Feinte : -{points} VC ({points} PC). |

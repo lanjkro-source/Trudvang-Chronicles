@@ -55,6 +55,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "confirm-advancement": TrudvangActorSheet.#onAction,
       "cancel-advancement": TrudvangActorSheet.#onAction,
       "roll-initiative": TrudvangActorSheet.#onAction,
+      "roll-concentration": TrudvangActorSheet.#onAction,
       "rest-for-night": TrudvangActorSheet.#onAction,
       "calm-fear": TrudvangActorSheet.#onAction,
       "roll-survival-rounds": TrudvangActorSheet.#onAction,
@@ -423,6 +424,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "confirm-advancement": return this.actor.confirmAdvancements();
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
+      case "roll-concentration": return this.actor.rollConcentration();
       case "rest-for-night": return this.actor.restForNight();
       case "calm-fear": return this.actor.calmFear();
       case "roll-survival-rounds": return this.actor.rollSurvivalRounds();

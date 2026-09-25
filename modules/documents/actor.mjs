@@ -1,5 +1,5 @@
 import { TRUDVANG } from "../config.mjs";
-import { combatPointDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatPointDialog, concentrationDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
@@ -877,7 +877,8 @@ export class TrudvangActor extends BaseActor {
     });
     if (!methods.length || disciplineLevel < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MagicMethodRequired"));
     const defaultCost = Number(item.system.cost ?? TRUDVANG.spellCosts[item.system.level] ?? 0);
-    const strenuousMax = isDivine ? 0 : Number(this.findKnowledgeItem("strenuous")?.system.level || 0);
+    const strenuousId = isDivine ? "rigorous" : "strenuous";
+    const strenuousMax = Number(this.findKnowledgeItem(strenuousId)?.system.level || 0);
     const activeSpellCount = isDivine ? 0 : activeSpellInstances(this).length;
     const persistent = item.system.spellType === "lasting";
     const trackedPersistent = persistent && !isDivine;
@@ -902,6 +903,8 @@ export class TrudvangActor extends BaseActor {
       affinity,
       affinityDescription,
       strenuousMax,
+      strenuousLabel: isDivine ? "TRUDVANG.Knowledge.rigorous" : "TRUDVANG.Dialog.Strenuous",
+      strenuousResource: isDivine ? "TRUDVANG.Resource.Divinity" : "TRUDVANG.Resource.Vitner",
       activeSpellCount,
       persistent,
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
@@ -912,7 +915,7 @@ export class TrudvangActor extends BaseActor {
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
     const perfectSuccessMax = isDivine ? 0 : (vitnerType?.perfectSuccessMax ?? 1);
-    const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format("TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
+    const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format(isDivine ? "TRUDVANG.Calculation.Rigorous" : "TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
     const selectedLevelsFlavor = options.costBreakdown.entries.filter(entry => entry.count).map(entry => `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.SelectedLevel", {count: entry.count, effect: entry.effect, total: entry.total, unit: entry.unitCost}))}${entry.unitCost !== entry.baseUnitCost ? ` — ${escapeHtml(game.i18n.format("TRUDVANG.Power.AffinityCost", {base: entry.baseUnitCost, adjusted: entry.unitCost}))}` : ""}`).join("");
     const costFlavor = `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}${selectedLevelsFlavor}<br>${escapeHtml(game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"))} : ${options.cost}`;
@@ -950,6 +953,47 @@ export class TrudvangActor extends BaseActor {
       await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content: `<p class="trudvang magic-perfect-bonus">${escapeHtml(game.i18n.format("TRUDVANG.Power.PerfectBonus", {points: bonusRoll.total}))}</p>`, rolls: [bonusRoll]});
     }
     return result;
+  }
+
+  async rollConcentration() {
+    if (!this.canPerformAction()) return this.warnCannotAct();
+    const psycheModifier = this.getTraitValue("psyche");
+    const effectModifier = this.getRollModifier({kind: "situation", traitKey: "psyche"});
+    const spellDisciplineLevel = Number(this.findKnowledgeItem("vitnerFocus")?.system.level || 0);
+    const spellSpecialtyLevel = Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0);
+    const divineDisciplineLevel = Number(this.findKnowledgeItem("godFocus")?.system.level || 0);
+    const divineSpecialtyLevel = Number(this.findKnowledgeItem("composed")?.system.level || 0);
+    const options = await concentrationDialog({
+      title: game.i18n.localize("TRUDVANG.Dialog.ConcentrationRoll"),
+      psycheModifier,
+      effectModifier,
+      spellDisciplineLevel,
+      spellSpecialtyLevel,
+      divineDisciplineLevel,
+      divineSpecialtyLevel
+    });
+    if (!options) return null;
+    const isDivine = options.type === "divine";
+    const disciplineLevel = isDivine ? divineDisciplineLevel : spellDisciplineLevel;
+    const specialtyLevel = isDivine ? divineSpecialtyLevel : spellSpecialtyLevel;
+    const disciplineKey = isDivine ? "TRUDVANG.Knowledge.godFocus" : "TRUDVANG.Knowledge.vitnerFocus";
+    const specialtyKey = isDivine ? "TRUDVANG.Knowledge.composed" : "TRUDVANG.Knowledge.safeWeaving";
+    const modifier = psycheModifier + effectModifier + disciplineLevel + (2 * specialtyLevel);
+    const flavor = [
+      `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationBase")}: ${options.base}`,
+      `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationTrait")} : ${signed(psycheModifier)}`,
+      `${game.i18n.localize(disciplineKey)} (${disciplineLevel}) : ${signed(disciplineLevel)}`,
+      `${game.i18n.localize(specialtyKey)} (${specialtyLevel}) : ${signed(2 * specialtyLevel)}`,
+      ...(effectModifier ? [`${game.i18n.localize("TRUDVANG.Dialog.EffectModifier")} : ${signed(effectModifier)}`] : [])
+    ].map(escapeHtml).join("<br>");
+    return rollUnder({
+      actor: this,
+      label: `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationRoll")} — ${game.i18n.localize(isDivine ? "TRUDVANG.Dialog.ConcentrationDivine" : "TRUDVANG.Dialog.ConcentrationSpell")}`,
+      target: options.base,
+      modifier,
+      kind: "situation",
+      flavor
+    });
   }
 
   async rollFatalEffect(kind, {threshold, modifier} = {}) {
