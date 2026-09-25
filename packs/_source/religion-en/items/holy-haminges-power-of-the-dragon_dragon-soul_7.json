@@ -15,9 +15,9 @@
     "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that often ignites, and skin that significantly darkens and grows scaly. ✦ Dragon Soul<ul><li>Dragon Soul Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer is not harmed by magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +6. ✦ The spirit conjurer deals +4 extra damage with all melee weapons and throwing weapons.</p>",
     "summary": "The spirit conjurer calls upon the dwarves’ feared fighting techniques and becomes more proficient at handling weapons in combat.",
     "swedishName": "",
-    "duration": "3 minute(s)",
-    "range": "personalle",
-    "weavingTime": "3 action round(s)",
+    "duration": "3 minutes",
+    "range": "personal",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:1",
         "cost": 2,
         "maxCount": 4,
-        "effect": "Increase the Protection Value by another +1 (maximum 10) Increase damage with all melee"
+        "effect": "Increase Protection Value by +1"
       },
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-soul:7:2",
         "cost": 2,
         "maxCount": 2,
-        "effect": "weapons and throwing weapons by"
+        "effect": "Increase the damage bonus of all melee and thrown weapons by +1"
       }
     ],
     "source": "Player's Handbook, p. 214",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique.",
-    "summary": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie.",
+    "summary": "Fait apparaître une flamme inoffensive pour l’enchanteur, capable d’éclairer ou d’allumer un combustible.",
     "swedishName": "Gnistlogir",
     "duration": "1 minute",
     "range": "personnelle",

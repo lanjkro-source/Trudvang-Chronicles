@@ -1,5 +1,5 @@
 {
-  "name": "Verrouillage/déverrouillage",
+  "name": "Verrouillage/ déverrouillage",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -12,8 +12,8 @@
     "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
-    "description": "Ce sort fonctionne comme une clé universelle capable d’ouvrir n’importe quelle serrure de porte, de tiroir, de coffre et d’autres objets similaires. Il suffit à l’enchanteur de toucher l’objet doté d’une serrure pour tenter de le verrouiller ou au contraire de le déverrouiller en réussissant un test de situation (la valeur de situation dépend du type de serrure, comme indiqué par la table ci-dessous). Ce sort ne fonctionne pas sur les serrures magiques. VALEURS DE SITUATION:\n|Type de fermeture|Valeur de situation|\n|---|---|\n|Grappin|14|\n|Crochet|12|\n|Cale|10|\n|Barre de porte|8|\n|Cadenas simple|6|\n|Serrure sophistiquée|4|\n|Serrure naine|2|\n",
-    "summary": "Ce sort fonctionne comme une clé uni verselle capable d’ouvrir n’importe quelle serrure de porte, de tiroir, de coffre et d’autres objets similaires.",
+    "description": "Ce sort fonctionne comme une clé universelle capable d’ouvrir n’importe quelle serrure de porte, de tiroir, de coffre et d’autres objets similaires. Il suffit à l’enchanteur de toucher l’objet doté d’une serrure pour tenter de le verrouiller ou au contraire de le déverrouiller en réussissant un test de situation (la valeur de situation dépend du type de serrure, comme indiqué par la table ci-dessous). Ce sort ne fonctionne pas sur les serrures magiques. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Type de fermeture</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>Grappin</td><td>14</td></tr><tr><td>Crochet</td><td>12</td></tr><tr><td>Cale</td><td>10</td></tr><tr><td>Barre de porte</td><td>8</td></tr><tr><td>Cadenas simple</td><td>6</td></tr><tr><td>Serrure sophistiquée</td><td>4</td></tr><tr><td>Serrure naine</td><td>2</td></tr></tbody></table>",
+    "summary": "Verrouille ou déverrouille mécaniquement une fermeture non magique.",
     "swedishName": "Vidvanga",
     "duration": "",
     "range": "contact",

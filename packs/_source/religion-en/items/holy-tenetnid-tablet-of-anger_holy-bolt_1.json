@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -25,20 +25,14 @@
       {
         "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:0",
         "cost": 2,
-        "maxCount": 6,
+        "maxCount": null,
         "effect": "Increase the range by 5 meters"
       },
       {
         "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:1",
         "cost": 3,
-        "maxCount": 4,
-        "effect": "Increase damage by +3 2: Stone Senses ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 3 action rounds ✦ Range: 5 meters ✦ Invocation time: 1 action round The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify. The opponent suffers a -2 initiative modifier and -1 on all combat actions for the duration of the ability. This ability can be used only on people and creatures that are close to human- sized (from half the size of a human up to 1.5 times the size of a human). LEVELS OF POWER: STONE SENSES Cost Extra Levels of Power"
-      },
-      {
-        "id": "holy-tenetnid-tablet-of-anger:holy-bolt:1:2",
-        "cost": 1,
         "maxCount": null,
-        "effect": "Increase the duration by 1 action"
+        "effect": "Increase damage inflicted by +3"
       }
     ],
     "source": "Player's Handbook, p. 194",

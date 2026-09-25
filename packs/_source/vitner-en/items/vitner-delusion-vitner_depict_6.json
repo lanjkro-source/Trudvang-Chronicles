@@ -15,9 +15,9 @@
     "description": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it. To create a perfect likeness, the enchanter must be in contact with the original during the evocation of the spell. An enchanter who is not in contact with the original can evoke a less-perfect likeness from their memory or even their imagination (which is necessary if the item doesn’t exist). These less-perfect images have a kind of fuzziness or faint distortion around them, making it easier for people to recognize them for what they are. The duplicated image cannot be larger than a normal-sized human in its basic version. The enchanter can create the image anywhere within the spell’s range. However, they must maintain a line of sight with the image all the times; if the whole image (not just a part of it) is removed or blocked from the enchanter’s field of vision, it dissolves. The enchanter also has full control over the image portrayed, down to subtle expressions and reactions. Thus, the enchanter cannot only cause an illusory creature to walk or run, but also have it use body language to express any number of emotions such as anger, rage, love, aggression, and more. The enchanter can cause the object to move or fly around at a speed of 6 meters per action round. If anything gets in its way (whether the image is perfect or not), the image will slide straight through the obstacle. So it is critical for the enchanter to carefully direct the creation to react appropriately to its surroundings. In order to resist the deception of a perfect image, an observer must make a successful Skill roll for the Shadow Arts skill with a negative SV modifier of -3. It is much easier to see through a less-perfect image (a copy of anything the enchanter was not in contact with upon creation). Anyone observing a lessperfect image can resist by succeeding on a simple (+5 SV) Skill roll for the Shadow Arts skill. An image woven through this spell cannot make a noise or emit a smell, which means that it is much easier to uncover the true nature of an illusion depicting something that normally makes loud sounds or has a strong odor. In such a situation, the Skill rolls for resisting the deception should be modified with a positive modifier between +1 and +10, depending on how obvious the ruse is. It is up to the game master to determine how big the modifier will be.",
     "summary": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it.",
     "swedishName": "Skenbildra",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -36,27 +36,27 @@
       },
       {
         "id": "vitner-delusion-vitner:depict:6:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the chance that the viewer fails the Skill roll by -1"
-      },
-      {
-        "id": "vitner-delusion-vitner:depict:6:3",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the size of the image so it can be up to five times that of a normal human being"
-      },
-      {
-        "id": "vitner-delusion-vitner:depict:6:4",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase the duration by 10 minutes"
       },
       {
+        "id": "vitner-delusion-vitner:depict:6:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the chance that the viewer fails the Skill roll by -1"
+      },
+      {
+        "id": "vitner-delusion-vitner:depict:6:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Five times the size of a normal human"
+      },
+      {
         "id": "vitner-delusion-vitner:depict:6:5",
         "cost": 8,
         "maxCount": null,
-        "effect": "Increase the size of the image so"
+        "effect": "The size of a Stormi hall"
       }
     ],
     "source": "Player's Handbook, p. 101",

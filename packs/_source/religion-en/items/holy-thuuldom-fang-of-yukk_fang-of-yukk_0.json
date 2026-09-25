@@ -24,39 +24,39 @@
     "powerLevels": [
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null,
         "effect": "+1 damage"
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null,
         "effect": "+2 damage"
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null,
         "effect": "+2 damage and the chance of an open roll is increased by 1"
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null,
         "effect": "+3 damage and the chance of an open roll is increased by 1"
       },
       {
         "id": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+3 damage and the chance of an"
+        "effect": "Increase the weapon's damage by +3 and the chance of an Open Roll by +2"
       }
     ],
     "source": "Player's Handbook, p. 230",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!YBdqtLgMhNiOjPkQ",
   "_id": "YBdqtLgMhNiOjPkQ",

@@ -17,7 +17,7 @@
     "swedishName": "Húgvilsa",
     "duration": "",
     "range": "contact",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "permanent",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "vitner-witchcraft:amnesia:4:1",
-        "cost": 2,
+        "cost": 8,
         "maxCount": null,
-        "effect": "Decrease the victim’s starting Situation roll by -1 (no lower than"
+        "effect": "Increase the range by 50 meters"
       },
       {
         "id": "vitner-witchcraft:amnesia:4:2",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
-        "effect": "in total)"
+        "effect": "Reduce the victim's initial Situation roll by 1 (to a minimum of 1)"
       }
     ],
     "source": "Player's Handbook, p. 143",

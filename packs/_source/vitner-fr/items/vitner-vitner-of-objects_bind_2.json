@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante. Les objets doivent aller bien ensemble, ne pas être en mouvement, et ne pas se composer de matière vivante. Par exemple, il est impossible de lier une embrasure de porte à une personne qui la traverse malencontreusement. Il est par contre tout à fait envisageable de lier un chambranle et une porte, un couvercle et une boîte, une épée et un fourreau, un rocher et l’entrée d’une caverne, un tiroir et une commode, ou un bouchon et une bouteille. Les deux objets n’en forment plus qu’un seul jusqu’à expiration du sort et il est impossible de les séparer par des moyens conventionnels. On peut recourir à la force contre ces objets, par exemple en défonçant une porte liée à son chambranle, mais les objets ne se sépareront pas de façon nette. En revanche, l’enchanteur peut séparer les deux objets quand bon lui semble.",
-    "summary": "Ce sort tisse ensemble le vitner de deux objets, ce qui les unit avec autant de force qu’une colle incroyablement puissante.",
+    "summary": "Lie deux objets afin qu’ils restent fixés l’un à l’autre jusqu’à la fin de l’effet.",
     "swedishName": "Sigla",
     "duration": "3 minutes",
     "range": "contact",

@@ -17,7 +17,7 @@
     "swedishName": "Vitnaspor",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the chance to succeed on the Situation roll by +1"
-      },
-      {
-        "id": "vitner-vitner-craft:trace-vitner:7:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
-      },
-      {
-        "id": "vitner-vitner-craft:trace-vitner:7:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Extend the limit for tracing vitner that has already ended by 1 day"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase by 1 week the time that may have passed since the tracked spell expired"
+      },
+      {
+        "id": "vitner-vitner-craft:trace-vitner:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:4",
@@ -54,9 +54,9 @@
       },
       {
         "id": "vitner-vitner-craft:trace-vitner:7:5",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Extend the limit for tracing vitner"
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
       }
     ],
     "source": "Player's Handbook, p. 129",

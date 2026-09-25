@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "contact",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "holy-gerbanis-warmth-of-sunvei:firon-power:4:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increases healing by +1 Body Point"
+        "effect": "Heal +2 Body Points"
       }
     ],
     "source": "Player's Handbook, p. 166",

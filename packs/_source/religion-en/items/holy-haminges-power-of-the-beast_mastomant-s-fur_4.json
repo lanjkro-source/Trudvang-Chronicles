@@ -15,9 +15,9 @@
     "description": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
     "summary": "The spirit conjurer calls upon the power of the mastomant spirit, which grants the dimwalker immunity to damage from non-magical cold for the duration of the ability.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "1 hour",
+    "range": "personal",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-haminges-power-of-the-beast:mastomant-s-fur:4:1",
         "cost": 10,
         "maxCount": null,
-        "effect": "Ability also protects against"
+        "effect": "The power also protects against magical cold"
       }
     ],
     "source": "Player's Handbook, p. 212",

@@ -1,5 +1,5 @@
 {
-  "name": "Riastarthae",
+  "name": "Cieux obscurcis",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,12 +12,12 @@
     "catalogId": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8",
     "tabletId": "holy-ealdtradition-tribute-of-morgu",
     "tablet": "Tribut de Morgu",
-    "description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la riastarthae :</p><ul><li>Le bruide grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)</li><li>Le bruide a un facteur de peur de 1d10 (JO 9-10)</li><li>+15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+6 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+3 à la VC de toutes les attaques</li><li>Le bruide ne peut ni parer ni esquiver les attaques</li><li>Le bruide ignore tous les effets de la peur</li><li>Le bruide ignore les effets des blessures graves</li><li>Le bruide peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort</li></ul>",
-    "summary": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’infl",
+    "description": "Le bruide en appelle à la puissance de Morgu, qui libère une volée de flèches dans la bataille afin de venir en aide à l’arpenteur des brumes. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. Le bruide vise un groupe d’ennemis situés à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère quatre flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+    "summary": "Crée une pluie de projectiles qui assombrit le ciel et frappe les ennemis.",
     "swedishName": "",
-    "duration": "7 tours de jeu",
-    "range": "personnelle",
-    "weavingTime": "1 tour de jeu",
+    "duration": "",
+    "range": "50 mètres",
+    "weavingTime": "2 tours de jeu",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,10 +26,16 @@
         "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la quantité de flèches de : +1"
       }
     ],
-    "source": "Livre des règles, p. 244",
+    "source": "Livre des règles, p. 243",
     "level": 5,
     "cost": 10,
     "modifier": -10

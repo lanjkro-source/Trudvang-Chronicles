@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.<p>Rage du destructeur confère les traits suivants :</p><ul><li>Le conjurateur reçoit un facteur de peur de 1d10 (JO 10)</li><li>+10 points de santé (les dégâts affectent ces points de santé en priorité)</li><li>+5 aux dégâts des armes de corps à corps ou de lancer</li><li>+2 à la VC de toutes les attaques</li><li>Le conjurateur ne peut ni parer, ni esquiver les attaques</li><li>Le conjurateur ignore tous les effets de la peur</li></ul>",
-    "summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "summary": "Déchaîne une rage destructrice qui augmente la violence des attaques.",
     "swedishName": "",
     "duration": "7 tours de jeu",
     "range": "personnelle",

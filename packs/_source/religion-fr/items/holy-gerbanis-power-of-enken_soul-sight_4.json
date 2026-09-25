@@ -1,5 +1,5 @@
 {
-  "name": "Regard de l'âme",
+  "name": "Regard de l’âme",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui. Pendant une minute, l’arpenteur des brumes est capable de voir tout ce qui n’est pas dissimulé ou altéré par magie dans un rayon de 10 mètres autour de lui. Quand le stormikjalt rouvre les yeux, ces derniers ressemblent à ceux d’un ours des glaces, et tant qu’il maintient sa concentration, l’arpenteur des brumes est capable de voir tout ce qui se déroule à portée. Les objets tels que les murs sont incapables de bloquer la vision du stormikjalt. Cela dit, aucun de ses autres sens n’est affecté par ce pouvoir. L’arpenteur des brumes profite d’un bonus de +5 à sa valeur de compétence d’Arts des ombres quand il tente de trouver des portes secrètes ou des pièges.",
-    "summary": "Le stormikjalt ferme les yeux et se concentre sur son environnement, en laissant les sens aiguisés d’Enken prendre possession de lui.",
+    "summary": "Aiguise les sens pour détecter ce qui se cache autour du prêtre.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "10 mètres",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle. Ainsi, le vitner permet à la cible de traverser sans encombre tous les types de sol. À chaque tour de jeu, le bénéficiaire du sort peut avancer dans la terre d’un nombre de mètres égal à sa capacité de mouvement divisée par 4. Le vitner ne repousse que la terre statique et immobile. Il ne protège pas le bénéficiaire des glissements de terrain et autres attaques à base de terre, à moins qu’il ne se déplace sous la terre en mouvement. Comme la pellicule de vitner entoure le corps du bénéficiaire, ce dernier ne peut porter que l’équipement et les objets plaqués contre son corps (ce qui exclut les gros sacs à dos). À chaque tour de jeu, le bénéficiaire peut choisir la direction dans laquelle il veut avancer en se concentrant sur ce chemin. S’il est déconcentré pour quelque raison que ce soit, il commence à s’enfoncer lentement dans le sol à une vitesse de 1 mètre par tour de jeu. Si le sort arrive à expiration alors que le bénéficiaire est toujours sous terre, il se retrouve emprisonné par le sol qui se tasse autour de lui. Le personnage piégé est incapable de se libérer seul. Si son visage se trouve sous terre au moment où le sort prend fin, il commence également à suffoquer.",
-    "summary": "Ce sort entoure la cible d’une pellicule de vitner qui repousse la terre située à proximité d’elle.",
+    "summary": "Permet de traverser le sol et la terre comme s’ils étaient immatériels.",
     "swedishName": "Jördvandr",
     "duration": "2 minutes",
     "range": "personnelle",

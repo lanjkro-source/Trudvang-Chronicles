@@ -17,7 +17,7 @@
     "swedishName": "Steinflegja",
     "duration": "",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "vitner-soil-craft:rock-throw:0:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Create a small stone in one’s hand (no longer requiring one)"
+        "effect": "Create a small stone in the enchanter's hand (so one need not be picked up)"
       },
       {
         "id": "vitner-soil-craft:rock-throw:0:2",

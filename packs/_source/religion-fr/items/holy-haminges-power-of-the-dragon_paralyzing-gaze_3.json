@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
     "description": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de paralyser ses adversaires avec son puissant regard. Le conjurateur doit d’abord attirer l’attention de son adversaire afin de croiser son regard. Une fois le contact visuel établi, l’adversaire doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ou être paralysé pendant 1 tour. Un adversaire paralysé ne peut rien faire jusqu’à ce que l’effet se dissipe. Si la cible n’a pas encore agi au cours du tour de jeu en cours, l’effet paralysant lui coûte ce tour de jeu ; autrement l’effet commence au prochain tour de jeu. Dans l’un ou l’autre cas, l’adversaire perd 1 tour de jeu dans la version de base du pouvoir.",
-    "summary": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de pa ralyser ses adversaires avec son puissant regard.",
+    "summary": "Paralyse une victime par un regard reptilien.",
     "swedishName": "",
     "duration": "1 tour de jeu",
     "range": "vision",

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Cette prière invoque la présence sacrée de Gave. Le prêtre lève les mains, récite la prière à voix haute, puis baisse lentement les mains. L’air s’épaissit tandis que la présence divine se fait de plus en plus tangible. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +1 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, quiconque tente de s’opposer aux propos du prêtre subit un malus de -1 à sa valeur de situation.",
-    "summary": "Cette prière invoque la présence sacrée de Gave.",
+    "summary": "Donne au prêtre une autorité sacrée qui impose respect et obéissance.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "10 mètres",

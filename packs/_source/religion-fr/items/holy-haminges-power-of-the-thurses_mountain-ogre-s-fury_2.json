@@ -1,5 +1,5 @@
 {
-  "name": "Fureur de l'ogre des montagnes",
+  "name": "Fureur de l’ogre des montagnes",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.<p>Fureur de l’ogre des montagnes confère les traits suivants :</p><ul><li>+3 points de santé (les dégâts affectent ces points de santé en priorité)</li><li>+1 aux dégâts des armes de corps à corps ou de lancer</li><li>Le conjurateur ne peut ni parer, ni esquiver les attaques</li><li>Le conjurateur ignore tous les effets de la peur</li></ul>",
-    "summary": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.",
+    "summary": "Plonge le conjurateur dans une rage qui augmente sa puissance physique.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "personnelle",

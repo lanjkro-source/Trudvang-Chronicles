@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort permet à la personne enchantée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent. Le bénéficiaire peut également modifier sa voix comme bon lui semble et la rendre effrayante, puissante, agressive ou solennelle, ou au contraire douce, aimable, séduisante, enfantine ou encore amusante. Si l’enchanteur tisse ce sort autour d’une cible non consentante, il peut altérer la voix de cette dernière selon son bon vouloir. La victime peut tenter de résister à cet effet par un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). En cas de réussite, la voix ne subit aucune altération. Dans le cas contraire, la victime perd le contrôle de ses intonations, qui se modifient au gré de l’enchanteur.",
-    "summary": "Ce sort permet à la personne enchan tée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent.",
+    "summary": "Modifie la voix et les intonations d’une créature pour tromper les auditeurs.",
     "swedishName": "Draugastemma",
     "duration": "1 minute",
     "range": "10 mètres",

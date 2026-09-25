@@ -1,5 +1,5 @@
 {
-  "name": "Source d'eau",
+  "name": "Source d’eau",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-well-of-water",
     "tablet": "Source d'eau",
     "description": "Le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi. L’eau est si fraîche et pure que toute personne qui y lave ses plaies récupère 1 point de santé par niveau de la rune. La source produit un litre d’eau par tour de jeu. L’effet guérisseur disparaît presque instantanément, et il est donc essentiel d’y soigner rapidement ses plaies. Il est possible de recueillir cette eau pour s’en servir plus tard, mais l’effet guérisseur aura alors disparu.",
-    "summary": "Le thuul place l’objet runique sur la pierre et crée une source temporaire d’eau de montagne à l’endroit choisi.",
+    "summary": "Fait sourdre une source d’eau fraîche et pure depuis le sol.",
     "swedishName": "",
     "duration": "3 minutes/niveau",
     "range": "",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 298",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": -4
   },
   "_key": "!items!yk2Mj9A6B7C8D9Ea",
   "_id": "yk2Mj9A6B7C8D9Ea",

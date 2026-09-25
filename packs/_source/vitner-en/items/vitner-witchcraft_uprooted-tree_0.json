@@ -15,9 +15,9 @@
     "description": "The spell causes a tree to uproot and collapse. The vitner is laid in the ground directly beneath a tree and there forms a small uproot. As soon as the spell has been woven, the vitner begins to swell up like a bloated cow’s stomach. Soon the vitner expands so much that the tree above it is wrenched from the soil and tipped over. An observer can see that something is happening because the soil suddenly starts to shift and rise. In the fourth action round of the spell, the uproot grows so large that it bursts out of the ground, and in the fifth action round it finally tips the tree over and then disappears. For a tree to be toppled in this manner, it cannot have a trunk with a circumference larger than 1.5 meters at ground level. If the trunk is larger, the vitner will not have enough strength to tip it over. The mage, who must c oncentrate on the uprooting at all times, can choose which way the tree will fall. If they lose concentration or lose control over the uproot for any reason, it will still continue to swell until the tree falls, but the game master will determine the direction. Everyone who observes this occurrence and was unaware of the mage’s actions must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply) to avoid receiving 1d10 Fear Points when the uproot breaks out of the ground. On a success, an observer receives no Fear Points. The uproot could just as easily be placed under a large rock, open ground, or even a house. The final results of such an action and how much of the object collapses or is tipped over is up to the game master to decide. The uproot in the spell’s basic version can lift or tip approximately 100 kg.",
     "summary": "The spell causes a tree to uproot and collapse.",
     "swedishName": "Rotveltja",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -44,7 +44,7 @@
         "id": "vitner-witchcraft:uprooted-tree:0:3",
         "cost": 10,
         "maxCount": null,
-        "effect": "Increase the size of the uprooting"
+        "effect": "Add 7.5 meters to the circumference and lift or push an additional 500 kg"
       }
     ],
     "source": "Player's Handbook, p. 143",

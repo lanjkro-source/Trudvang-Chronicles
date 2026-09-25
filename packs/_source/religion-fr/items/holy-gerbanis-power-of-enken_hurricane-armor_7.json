@@ -1,5 +1,5 @@
 {
-  "name": "Armure de l'ouragan",
+  "name": "Armure de l’ouragan",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 4 contre les armes de corps à corps et de 6 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 3 pour les armes de corps à corps et à 5 pour les armes à distance.",
-    "summary": "Le stormikjalt invoque une armure faite de bourrasques de vent tourbillon nant autour de lui ou du personnage de son choix.",
+    "summary": "Crée une protection de vents violents autour du bénéficiaire.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "contact",

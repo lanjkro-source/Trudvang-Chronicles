@@ -1,5 +1,5 @@
 {
-  "name": "Amplification des sons",
+  "name": "Amplification des sons “Slammerakraftla”",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "L’enchanteur tisse le vitner autour d’une personne ou d’une créature afin d’amplifier tous les sons qu’elle produit. Le sort est tissé autour de la tête ou du corps de la cible. Dans ce dernier cas, tous les sons produits par les mouvements (comme les bruits de pas, les branches craquant sous les pieds ou encore le bruissement des vêtements) sont amplifiés. Si le sort est tissé autour de la tête du sujet, il semble étouffer tous les autres bruits ambiants en rendant parfaitement audible tout ce que dit le sujet, même si ce dernier ne fait que murmurer. Si le sort a été jeté à l’insu du sujet, il pourrait causer pas mal d’ennuis à ce dernier en fonction de la situation, car tout le monde autour du sujet pensera que ce dernier crie.",
-    "summary": "L’enchanteur tisse le vitner autour d’une personne ou d’une créature afin d’amplifier tous les sons qu’elle produit.",
+    "summary": "Amplifie les sons produits par une cible pour la rendre plus facile à entendre ou à repérer.",
     "swedishName": "",
     "duration": "5 tours de jeu",
     "range": "contact",

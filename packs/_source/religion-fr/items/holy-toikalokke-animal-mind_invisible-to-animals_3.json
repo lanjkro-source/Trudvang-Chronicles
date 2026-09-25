@@ -1,5 +1,5 @@
 {
-  "name": "Parler avec les animaux",
+  "name": "Invisibilité aux animaux",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,11 +12,11 @@
     "catalogId": "holy-toikalokke-animal-mind:invisible-to-animals:3",
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
-    "description": "L’ihana peut communiquer avec les animaux. Gardez à l’esprit que la plupart des animaux sont assez peu intelligents et ne fourniront probablement pas les réponses les plus utiles. Comparé au sort de vitner correspondant (Cf. Parler aux animaux, page 188), l’ihana a bien moins de mal à comprendre et à communiquer avec l’animal, et obtient donc davantage de renseignements qu’un enchanteur pourrait en espérer. Pour communiquer avec les animaux, l’elfe peut utiliser toutes sortes de méthodes : il peut par exemple intimider l’animal par des grognements ou des pépiements, recourir à des expressions faciales ou corporelles, ou même jouer d’un instrument.",
-    "summary": "L’ihana peut communiquer avec les animaux.",
+    "description": "L’élu peut, quand il le désire, devenir complètement invisible aux animaux d’intelligence inférieure. Ceux-ci ne peuvent ni voir ni entendre l’ihana.",
+    "summary": "Rend le bénéficiaire invisible et inaudible aux animaux peu intelligents.",
     "swedishName": "",
-    "duration": "10 tours de jeu",
-    "range": "portée de vue et de voix",
+    "duration": "5 minutes",
+    "range": "personnelle",
     "weavingTime": "6 tours de jeu",
     "dailyActivation": "",
     "spellType": "lasting",
@@ -30,15 +30,9 @@
       },
       {
         "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:1",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Augmente la durée du pouvoir de : 30 minutes"
-      },
-      {
-        "id": "holy-toikalokke-animal-mind:invisible-to-animals:3:2",
         "cost": 10,
         "maxCount": null,
-        "effect": "Augmente la durée du pouvoir de : 12 heures"
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
       }
     ],
     "source": "Livre des règles, p. 295",

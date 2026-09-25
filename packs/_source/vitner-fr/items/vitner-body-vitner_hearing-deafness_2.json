@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort peut augmenter l’acuité auditive de la personne enchantée pour toute la durée du sort. Il peut également faire office de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts. Le bénéficiaire du sort profite d’un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’acuité auditive constitue un important facteur de réussite. Ce sort peut également évoquer un effet négatif et diminuer l’acuité auditive du sujet, qui subit alors un malus de -3 à tous ses tests de situation et de compétence reposant sur le sens de l’ouïe. Toute créature sous le coup d’un sort disposant de suffisamment de niveaux de puissance pour lui infliger un malus de -10 est considérée comme sourde et ne peut rien entendre pendant toute la durée du sort. La créature victime de cet effet négatif peut y résister en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution).",
-    "summary": "de filtre pour protéger les oreilles contre les bruits non désirés et atténuer les sons aigus et violents qui pourraient autrement provoquer des dégâts.",
+    "summary": "Aiguise l’ouïe d’un bénéficiaire ou prive une victime de son audition.",
     "swedishName": "Heirkraftla",
     "duration": "1 minute",
     "range": "contact",

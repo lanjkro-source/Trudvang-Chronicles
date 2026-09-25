@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre.",
-    "summary": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats.",
+    "summary": "Cartographie les alentours explorés par l’esprit de l’enchanteur.",
     "swedishName": "Ortaskonja",
     "duration": "5 minutes",
     "range": "1 kilomètre",

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
     "description": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions. La portée du pouvoir détermine le rayon de la zone protégée que la lumière du soleil recouvre. Pour créer ce site, le prêtre doit s’entailler le front (1 point de dégât) puis recueillir le sang de la blessure et le laisser couler le long du périmètre du site tout en chantant. Il faut 3 tours par mètre de rayon pour terminer cette prière. Par exemple, si le pouvoir affecte une zone de 8 mètres de rayon, l’invocation de ce pouvoir prendra 24 tours (soit 2 minutes). Quiconque tente d’activer un pouvoir dépendant d’une religion autre que la Doctrine de Nid ou qui tente de tisser un sort prenant effet dans le sanctuaire subit un malus de -5 à la valeur de compétence nécessaire pour réussir. En outre, quiconque se tient dans les limites du sanctuaire résiste plus facilement aux effets de restriction ou de manipulation des pouvoirs qui ne relèvent pas de la Doctrine de Nid ou de sorts (sa valeur de situation pour résister reçoit un bonus de +10).",
-    "summary": "Cette prière fait office de protection contre le vitner et les pouvoirs des autres religions.",
+    "summary": "Consacre un bosquet pour protéger ceux qui s’y trouvent contre la magie hostile.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "rayon de 8 mètres",

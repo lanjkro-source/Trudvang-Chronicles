@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
     "description": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme. Une fois la durée du pouvoir expirée, le brouillard se lève à nouveau et le cheval y disparaît en laissant le stormikjalt derrière lui. Si le cheval vient à mourir, il se change en brume et disparaît. Le cheval ne se laisse monter que par le stormikjalt (ou par une autre personne ayant la permission explicite du stormikjalt). Il faut 1d10 tours de jeu pour que le cheval apparaisse une fois ce pouvoir activé avec succès. L’arpenteur des brumes appelle un svartasi, l’un des destriers noirs d’Einharjar, qui devient sa monture pendant la durée du pouvoir. Il prend la forme d’un cheval de guerre de taille moyenne équipé d’une cotte de mailles qui protège l’ensemble de son corps et de sa tête. Il est dressé à obéir mais ne possède pas de capacité particulière par rapport à un destrier classique. Un stormikjalt ne peut pas appeler plus d’un svartasi à la fois. Ce n’est qu’une fois que le svartasi a disparu que le stormikjalt peut de nouveau l’invoquer.<hr>Svartasi : Force +5, points de santé 75, valeur de protection 3, Mouvement de combat 20 mètres par tour de jeu, dressage Excellent.",
-    "summary": "Le stormikjalt implore l’aide de Jorn et invoque un cheval qui surgit d’un soudain banc de brouillard venu du pays de Storme.",
+    "summary": "Invoque une monture spirituelle issue du royaume de Jorn.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "personnelle",

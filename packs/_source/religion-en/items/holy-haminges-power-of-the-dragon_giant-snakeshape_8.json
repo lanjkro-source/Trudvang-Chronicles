@@ -15,9 +15,9 @@
     "description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
     "summary": "The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "6 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "6 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null,
-        "effect": "Increase the Protection Value by another +1 (maximum 6)"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:2",
         "cost": 2,
         "maxCount": 4,
-        "effect": "Increase the fear factor to 1d10 (1d10 max)"
+        "effect": "Increase Protection Value by +1"
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:3",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 1,
-        "effect": "Increase Body Points by an additional +10"
+        "effect": "Change the Fear Factor to 1d10"
       },
       {
         "id": "holy-haminges-power-of-the-dragon:giant-snakeshape:8:4",
-        "cost": 10,
+        "cost": 3,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase Body Points by an additional +10"
       }
     ],
     "source": "Player's Handbook, p. 214",

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre invoque Gave et place ses mains sur une personne souffrante. Il peut ainsi soigner les coups de froid, les maladies bénignes, les rhumatismes, les pertes de cheveux, les douleurs, les difformités et les handicaps causés par d’anciennes blessures. Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
-    "summary": "Le prêtre invoque Gave et place ses mains sur une personne souffrante.",
+    "summary": "Soigne les blessures d’une créature touchée.",
     "swedishName": "",
     "duration": "",
     "range": "contact",

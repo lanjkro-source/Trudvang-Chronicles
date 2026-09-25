@@ -3223,1121 +3223,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Name` | Master of Elements | Maître des éléments |
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments. |
 
-## `TRUDVANG.Content.Power.vitner-animal-vitner:messenger:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:messenger:0.Name` | Messenger | Messager |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:speak-to-animals:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:speak-to-animals:1.Name` | Speak to Animals | Parler aux animaux |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:call-on-animals:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:call-on-animals:2.Name` | Call on Animals | Appel des animaux |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:conjure-ravens:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:conjure-ravens:3.Name` | Conjure Ravens | Conjuration de corbeaux |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:control-animals:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:control-animals:4.Name` | Control Animals | Contrôle des animaux |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:mind-of-the-wolf:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:mind-of-the-wolf:5.Name` | Mind of the Wolf | Esprit du loup |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:possess-animals:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:possess-animals:6.Name` | Possess Animals | Possession animale |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:create-messenger:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:create-messenger:7.Name` | Create Messenger | Création de messager |
-
-## `TRUDVANG.Content.Power.vitner-animal-vitner:send-message:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-animal-vitner:send-message:8.Name` | Send Message | Messager magique |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:grip:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:grip:0.Name` | Grip | Adhérence |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:tipping:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:tipping:1.Name` | Tipping | Croche-pied |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:hearing-deafness:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:hearing-deafness:2.Name` | Hearing/Deafness | Acuité auditive/surdité |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3.Name` | Sense of Smell | Sens de l'odorat |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:vision-blindness:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:vision-blindness:4.Name` | Vision/Blindness | Vision/cécité |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:leather-skin:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:leather-skin:5.Name` | Leather Skin | Peau de cuir |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:immobilize:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:immobilize:6.Name` | Immobilize | Immobilisation |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:appearance-change:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:appearance-change:7.Name` | Appearance Change | Modification d'apparence |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:strengthen:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:strengthen:8.Name` | Strengthen | Vigueur |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:hasten:9`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:hasten:9.Name` | Hasten | Hâte |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:imprison:10`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:imprison:10.Name` | Imprison | Emprisonnement |
-
-## `TRUDVANG.Content.Power.vitner-body-vitner:change-creature:11`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:change-creature:11.Name` | Change Creature | Transformation |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0.Name` | Roar | Grondement |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:phantom-sound:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:phantom-sound:1.Name` | Phantom Sound | Son illusoire |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2.Name` | Shriek | Son aigu |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3.Name` | Increase Sounds | Amplification des sons |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:traceless:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:traceless:4.Name` | Traceless | Sans trace |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:ghost-voice:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:ghost-voice:5.Name` | Ghost Voice | Voix illusoire |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:depict:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:depict:6.Name` | Depict | Image |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:camouflage:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:camouflage:7.Name` | Camouflage | Camouflage |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:landscape-illusion:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:landscape-illusion:8.Name` | Landscape Illusion | Paysage illusoire |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:silence:9`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:silence:9.Name` | Silence | Silence |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:lindwurm-illusion:10`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:lindwurm-illusion:10.Name` | Lindwurm Illusion | Lindwurm illusoire |
-
-## `TRUDVANG.Content.Power.vitner-delusion-vitner:invisibility:11`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:invisibility:11.Name` | Invisibility | Invisibilité |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:animate-undead:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:animate-undead:0.Name` | Animate Undead | Animation des morts-vivants |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:hand-of-death:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:hand-of-death:1.Name` | Hand of Death | Main funeste |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:dismiss-undead:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:dismiss-undead:2.Name` | Dismiss Undead | Renvoi des morts-vivants |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:speak-to-undead:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:speak-to-undead:3.Name` | Speak to Undead | Conversation de l'au-delà |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:tendril-of-dimhall:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:tendril-of-dimhall:4.Name` | Tendril of Dimhall | Vrille de Dimhall |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:vitner-theft:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:vitner-theft:5.Name` | Vitner Theft | Vol de vitner |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:summon-wight:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:summon-wight:6.Name` | Summon Wight | Invocation d'un revenant |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:control-undead:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:control-undead:7.Name` | Control Undead | Contrôle des morts-vivants |
-
-## `TRUDVANG.Content.Power.vitner-dimvitner:darkness-of-dimhall:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-dimvitner:darkness-of-dimhall:8.Name` | Darkness of Dimhall | Ténèbres de Dimhall |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:heat-water:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:heat-water:0.Name` | Heat Water | Ébullition |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:spark:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:spark:1.Name` | Spark | Flammèche |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:burning-hand:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:burning-hand:2.Name` | Burning Hand | Main brûlante |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:flame-burst:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:flame-burst:3.Name` | Flame Burst | Éruption de flammes |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:protection-from-fire:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:protection-from-fire:4.Name` | Protection from Fire | Protection contre le feu |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:flame-control:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:flame-control:5.Name` | Flame Control | Contrôle des flammes |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:warmth:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:warmth:6.Name` | Warmth | Chaleur |
-
-## `TRUDVANG.Content.Power.vitner-flame-craft:sea-of-fire:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-flame-craft:sea-of-fire:7.Name` | Sea of Fire | Mer de flammes |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:find-home:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:find-home:0.Name` | Find Home | Chemin du retour |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:retrace-tracks:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:retrace-tracks:1.Name` | Retrace Tracks | Traces |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:detect-object:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:detect-object:2.Name` | Detect Object | Détection d'objet |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:orientation:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:orientation:3.Name` | Orientation | Orientation |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:detect-being:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:detect-being:4.Name` | Detect Being | Détection des êtres vivants |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:detect-undead:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:detect-undead:5.Name` | Detect Undead | Détection des morts-vivants |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:surrounding:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:surrounding:6.Name` | Surrounding | Environnement |
-
-## `TRUDVANG.Content.Power.vitner-perceiving:map:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-perceiving:map:7.Name` | Map | Cartographie |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-script:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-script:0.Name` | Understanding Script | Compréhension des écrits |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-speech:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-speech:1.Name` | Understanding Speech | Compréhension orale |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:courage:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:courage:2.Name` | Courage | Courage |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:fear:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:fear:3.Name` | Fear | Peur |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:telepathy:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:telepathy:4.Name` | Telepathy | Télépathie |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:ecstasy:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:ecstasy:5.Name` | Ecstasy | Extase |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:imagining:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:imagining:6.Name` | Imagining | Influence |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:memory:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:memory:7.Name` | Memory | Mémoire |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:creature-control:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:creature-control:8.Name` | Creature Control | Contrôle des créatures |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:aura-of-power:9`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:aura-of-power:9.Name` | Aura of Power | Aura de puissance |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:possess-creature:10`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:possess-creature:10.Name` | Possess Creature | Possession de créature |
-
-## `TRUDVANG.Content.Power.vitner-power-of-thought:mind-reading:11`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-thought:mind-reading:11.Name` | Mind Reading | Lecture des pensées |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:tracking:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:tracking:0.Name` | Tracking | Pistage |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:scanning:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:scanning:1.Name` | Scanning | Examen d'objet |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:far-sight:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:far-sight:2.Name` | Far Sight | Vision lointaine |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:seeing:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:seeing:3.Name` | Seeing | Vision parfaite |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:espionage:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:espionage:4.Name` | Espionage | Espionnage |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:astral-voyage:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:astral-voyage:5.Name` | Astral Voyage | Voyage astral |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:read-vitner:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:read-vitner:6.Name` | Read Vitner | Lecture du vitner |
-
-## `TRUDVANG.Content.Power.vitner-power-of-vision:true-sight:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-power-of-vision:true-sight:7.Name` | True Sight | Vision véritable |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:rock-throw:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:rock-throw:0.Name` | Rock Throw | Jet de pierre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:shape-soil:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:shape-soil:1.Name` | Shape Soil | Façonnage de la terre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:earthquake:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:earthquake:2.Name` | Earthquake | Tremblement de terre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:quagmire:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:quagmire:3.Name` | Quagmire | Bourbier |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:soil-blast:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:soil-blast:4.Name` | Soil Blast | Projection de terre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:soil-walk:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:soil-walk:5.Name` | Soil Walk | Marche dans la terre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:shape-stone:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:shape-stone:6.Name` | Shape Stone | Façonnage de la pierre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:stone-walk:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:stone-walk:7.Name` | Stone Walk | Marche dans la pierre |
-
-## `TRUDVANG.Content.Power.vitner-soil-craft:petrify-remove-petrification:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-soil-craft:petrify-remove-petrification:8.Name` | Petrify/Remove Petrification | Pétrification/Annuler une pétrification |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:channeling:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:channeling:0.Name` | Channeling | Canalisation |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:vitner-pouch:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:vitner-pouch:1.Name` | Vitner Pouch | Bourse de vitner |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-object:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-object:2.Name` | Enchant Object | Enchantement d'objet |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:anti-magic:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:anti-magic:3.Name` | Anti Magic | Antimagie |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-being:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-being:4.Name` | Enchant Being | Enchantement de créature |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:seal:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:seal:5.Name` | Seal | Sceau |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:dispel-vitner:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:dispel-vitner:6.Name` | Dispel Vitner | Dissipation du vitner |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:trace-vitner:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:trace-vitner:7.Name` | Trace Vitner | Piste du vitner |
-
-## `TRUDVANG.Content.Power.vitner-vitner-craft:wall-of-vitner:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-craft:wall-of-vitner:8.Name` | Wall of Vitner | Mur de vitner |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:detect-composition:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:detect-composition:0.Name` | Detect Composition | Analyse de la composition |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:waterproof:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:waterproof:1.Name` | Waterproof | Résistance à l'eau |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:bind:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:bind:2.Name` | Bind | Lien |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:rust:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:rust:3.Name` | Rust | Rouille |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:alarm-object:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:alarm-object:4.Name` | Alarm Object | Objet d'alarme |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:unlock-lock:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:unlock-lock:5.Name` | Unlock/Lock | Verrouillage/déverrouillage |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:enlarge-reduce-object:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:enlarge-reduce-object:6.Name` | Enlarge/Reduce Object | Agrandissement/rapetissement d'objet |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:alter-object:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:alter-object:7.Name` | Alter Object | Altération d'objet |
-
-## `TRUDVANG.Content.Power.vitner-vitner-of-objects:create-object:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-vitner-of-objects:create-object:8.Name` | Create Object | Création d'objet |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:find-water:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:find-water:0.Name` | Find Water | Sourcier |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:purify-water:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:purify-water:1.Name` | Purify Water | Purification de l'eau |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:breathe:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:breathe:2.Name` | Breathe | Respiration aquatique |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:form-water:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:form-water:3.Name` | Form Water | Façonnage de l'eau |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:create-water:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:create-water:4.Name` | Create Water | Création d'eau |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:solid-water:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:solid-water:5.Name` | Solid Water | Eau solide |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:control-precipitation:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:control-precipitation:6.Name` | Control Precipitation | Contrôle des précipitations |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7.Name` | Water Walk | Marche sur l'eau |
-
-## `TRUDVANG.Content.Power.vitner-water-craft:wave-master:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:wave-master:8.Name` | Wave Master | Maître des flots |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:purify-air:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:purify-air:0.Name` | Purify Air | Purification de l'air |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:wind-gust:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:wind-gust:1.Name` | Wind Gust | Coup de vent |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:fog:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:fog:2.Name` | Fog | Brouillard |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:control-wind:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:control-wind:3.Name` | Control Wind | Contrôle du vent |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:air-armor:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:air-armor:4.Name` | Air Armor | Armure d'air |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:lift:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:lift:5.Name` | Lift | Vent porteur |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:air-shield:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:air-shield:6.Name` | Air Shield | Bouclier d'air |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:wind-blast:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:wind-blast:7.Name` | Wind Blast | Rafale de vent |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:storm:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:storm:8.Name` | Storm | Tempête |
-
-## `TRUDVANG.Content.Power.vitner-wind-craft:wind-catcher:9`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-wind-craft:wind-catcher:9.Name` | Wind Catcher | Seigneur des vents |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:uprooted-tree:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:uprooted-tree:0.Name` | Uprooted Tree | Déracinement |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:phantom-plague:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:phantom-plague:1.Name` | Phantom Plague | Mal imaginaire |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:fever:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:fever:2.Name` | Fever | Fièvre |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:curse-object:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:curse-object:3.Name` | Curse Object | Malédiction d'objet |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:amnesia:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:amnesia:4.Name` | Amnesia | Amnésie |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:curse-creature:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:curse-creature:5.Name` | Curse Creature | Malédiction de créature |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:bad-harvest:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:bad-harvest:6.Name` | Bad Harvest | Mauvaise récolte |
-
-## `TRUDVANG.Content.Power.vitner-witchcraft:tree-curse:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.vitner-witchcraft:tree-curse:7.Name` | Tree Curse | Malédiction de l'arbre |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:death-gust:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:death-gust:0.Name` | Death Gust | Souffle de mort |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:wall-of-dusk:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:wall-of-dusk:1.Name` | Wall of Dusk | Mur du crépuscule |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:falfax:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:falfax:2.Name` | Falfax | Falfax |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:night-curtain:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:night-curtain:3.Name` | Night Curtain | Rideau de la nuit |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4.Name` | The Coat of Jorn | Manteau de Jorn |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5.Name` | The Breath of Mogunda | Souffle de Mogunda |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:asiblack:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:asiblack:6.Name` | Asiblack | Svartasi |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:will-of-bodvildur:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:will-of-bodvildur:7.Name` | Will of Bodvildur | Volonté de Bodvilur |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:snarfari:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:snarfari:8.Name` | Snarfari | Snarfari |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:night-vision:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:night-vision:0.Name` | Night Vision | Vision nocturne |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:willpower:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:willpower:1.Name` | Willpower | Force d'âme |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:bold:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:bold:2.Name` | Bold | Témérité |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:wind-shield:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:wind-shield:3.Name` | Wind Shield | Bouclier de vent |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:soul-sight:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:soul-sight:4.Name` | Soul Sight | Regard de l'âme |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:storm-armor:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:storm-armor:5.Name` | Storm Armor | Armure de la tempête |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:heart-of-enken:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:heart-of-enken:6.Name` | Heart of Enken | Cœur d'Enken |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:hurricane-armor:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:hurricane-armor:7.Name` | Hurricane Armor | Armure de l'ouragan |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:eye-of-enken:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:eye-of-enken:8.Name` | Eye of Enken | Œil d'Enken |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:troll-strength:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:troll-strength:0.Name` | Troll Strength | Force du troll |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-command:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-command:1.Name` | Voice of Command | Autorité |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:havar:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:havar:2.Name` | Havar | Havar |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:hinji-strength:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:hinji-strength:3.Name` | Hinji Strength | Force de hinje |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jarl-s-call:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jarl-s-call:4.Name` | Jarl's Call | Appel du Jarl |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:shield-disir:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:shield-disir:5.Name` | Shield Dísir | Skölddíser |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jotun-strength:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jotun-strength:6.Name` | Jotun Strength | Force du jotun |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-stormi:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-stormi:7.Name` | Voice of Stormi | Voix de Storme |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:einharjar:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:einharjar:8.Name` | Einharjar | Einharjar |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing:0.Name` | Healing | Guérison |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:sunray:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:sunray:1.Name` | Sunray | Rayons du soleil |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-glow:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-glow:2.Name` | Healing Glow | Lumière guérisseuse |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:summer-place:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:summer-place:3.Name` | Summer Place | Cœur de l'été |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:firon-power:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:firon-power:4.Name` | Firon Power | Pouvoir de Firon |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-warmth:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-warmth:5.Name` | Healing Warmth | Chaleur guérisseuse |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6.Name` | Time of the Hunt | Heure de la chasse |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7.Name` | Breath of Sunvei | Souffle de Solvei |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-sun:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-sun:8.Name` | Healing Sun | Soleil guérisseur |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:inspiration:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:inspiration:0.Name` | Inspiration | Inspiration |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:sixth-sense:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:sixth-sense:1.Name` | Sixth Sense | Sixième sens |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2.Name` | Joy of Creating | Joie de la création |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3.Name` | Steel Mind | Esprit d'acier |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4.Name` | Wave of Truth | Vague de vérité |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:vitner-protection:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:vitner-protection:5.Name` | Vitner Protection | Protection contre le vitner |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:swine-rush:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:swine-rush:6.Name` | Swine Rush | Ruée du porc |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7.Name` | Gaze of Windinna | Regard de Windinna |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8.Name` | Hearth of Windinna | Âtre de Windinna |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:fire-iron:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:fire-iron:0.Name` | Fire Iron | Tisonnier |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:battle-cry:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:battle-cry:1.Name` | Battle Cry | Cri de bataille |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:wolf-tongue:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:wolf-tongue:2.Name` | Wolf Tongue | Langue du loup |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:pyre-mark:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:pyre-mark:3.Name` | Pyre Mark | Marque du brasier |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:war-cry:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:war-cry:4.Name` | War Cry | Cri de guerre |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:dark-visage:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:dark-visage:5.Name` | Dark Visage | Figure sinistre |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:firestorm:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:firestorm:6.Name` | Firestorm | Tempête de feu |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7.Name` | Thunder of Victory | Tonnerre victorieux |
-
-## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8.Name` | Tyrd's Bellow | Grondement de Tyrd |
+| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1.Name` | Animal Speech | Langue animale |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0`
 
@@ -4345,35 +3235,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:behind-tree-and-pine:0.Name` | Behind Tree and Pine | Derrière le frêne et le pin |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1`
+## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1.Name` | Animal Speech | Langue animale |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:stagshape:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:stagshape:2.Name` | Stagshape | Aspect du cerf |
+| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5.Name` | Beneath Root and Rock | Sous la roche et l’écorce |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:bestial-tongue:3`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:bestial-tongue:3.Name` | Bestial Tongue | Langage des bêtes |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:salmonshape:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:salmonshape:4.Name` | Salmonshape | Aspect du saumon |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:beneath-root-and-rock:5.Name` | Beneath Root and Rock | Sous la roche et l'écorce |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:dragon-tongue:6`
 
@@ -4393,17 +3265,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:ravenshape:8.Name` | Ravenshape | Aspect du corbeau |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:salmonshape:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0.Name` | Willpower of the Ancestors | Volonté des ancêtres |
+| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:salmonshape:4.Name` | Salmonshape | Aspect du saumon |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:vitner-shield:1`
+## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:stagshape:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:vitner-shield:1.Name` | Vitner Shield | Bouclier contre le vitner |
+| `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:stagshape:2.Name` | Stagshape | Aspect du cerf |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:bloodfangsbane:2`
 
@@ -4423,12 +3295,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:bolgemek:4.Name` | Bolgemek | Bolgomek |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:witch-wall:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:witch-wall:5.Name` | Witch Wall | Mur contre la sorcellerie |
-
 ## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:fearless:6`
 
 | Clé | English | Français |
@@ -4447,41 +3313,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:roggdrasil:8.Name` | Roggdrasil | Roggdrasil |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:strong-beer:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:vitner-shield:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:strong-beer:0.Name` | Strong Beer | Bière forte |
+| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:vitner-shield:1.Name` | Vitner Shield | Bouclier contre le vitner |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:trollslayer:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:trollslayer:1.Name` | Trollslayer | Tueur de trolls |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:giantslayer:2`
+## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:giantslayer:2.Name` | Giantslayer | Tueur de géants |
+| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:willpower-of-the-ancestors:0.Name` | Willpower of the Ancestors | Volonté des ancêtres |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3.Name` | King's Militia | Milice royale |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:hero-s-brew:4`
+## `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:witch-wall:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:hero-s-brew:4.Name` | Hero's Brew | Bière du héros |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-guard:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-guard:5.Name` | King's Guard | Garde royale |
+| `TRUDVANG.Content.Power.holy-ealdtradition-halawen-s-offering:witch-wall:5.Name` | Witch Wall | Mur contre la sorcellerie |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:dragonslayer:6`
 
@@ -4489,11 +3337,41 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:dragonslayer:6.Name` | Dragonslayer | Tueur de dragons |
 
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:giantslayer:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:giantslayer:2.Name` | Giantslayer | Tueur de géants |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:hero-s-brew:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:hero-s-brew:4.Name` | Hero's Brew | Bière du héros |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-ale:7`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-ale:7.Name` | King's Ale | Bière royale |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-guard:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-guard:5.Name` | King's Guard | Garde royale |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:king-s-militia:3.Name` | King's Militia | Milice royale |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:strong-beer:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:strong-beer:0.Name` | Strong Beer | Bière forte |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:the-nine-kings:8`
 
@@ -4501,23 +3379,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:the-nine-kings:8.Name` | The Nine Kings | Les neuf rois |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:journey-wind:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:trollslayer:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:journey-wind:0.Name` | Journey Wind | Brise du voyage |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:rider-s-melody:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:rider-s-melody:1.Name` | Rider's Melody | Mélodie du cavalier |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-tether:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-tether:2.Name` | Magh's Tether | Entrave de Magh |
+| `TRUDVANG.Content.Power.holy-ealdtradition-heritage-of-majne:trollslayer:1.Name` | Trollslayer | Tueur de trolls |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:elf-summer:3`
 
@@ -4525,17 +3391,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:elf-summer:3.Name` | Elf Summer | Été elfique |
 
+## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:harvest-year:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:harvest-year:8.Name` | Harvest Year | Année de récolte |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:hero-s-song:4`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:hero-s-song:4.Name` | Hero's Song | Chant du héros |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-chain:5`
+## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:journey-wind:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-chain:5.Name` | Magh's Chain | Chaîne de Magh |
+| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:journey-wind:0.Name` | Journey Wind | Brise du voyage |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:king-s-anthem:6`
 
@@ -4543,41 +3415,29 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:king-s-anthem:6.Name` | King's Anthem | Hymne royal |
 
+## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-chain:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-chain:5.Name` | Magh's Chain | Chaîne de Magh |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-hawser:7`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-hawser:7.Name` | Magh's Hawser | Joug de Magh |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:harvest-year:8`
+## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-tether:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:harvest-year:8.Name` | Harvest Year | Année de récolte |
+| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:magh-s-tether:2.Name` | Magh's Tether | Entrave de Magh |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:horse-ears:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:horse-ears:0.Name` | Horse Ears | Oreilles de cheval |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gust-of-release:1`
+## `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:rider-s-melody:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gust-of-release:1.Name` | Gust of Release | Souffle libérateur |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2.Name` | Gloomy Trail | Piste des brumes |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3.Name` | Owl Hearing | Ouïe du hibou |
+| `TRUDVANG.Content.Power.holy-ealdtradition-magh-s-gift:rider-s-melody:1.Name` | Rider's Melody | Mélodie du cavalier |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:freeing-breeze:4`
 
@@ -4585,17 +3445,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:freeing-breeze:4.Name` | Freeing Breeze | Brise libératrice |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5`
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5.Name` | Meall's Trail | Piste de Meall |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6.Name` | Liberating Wind | Vent libérateur |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gloomy-trail:2.Name` | Gloomy Trail | Piste des brumes |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7`
 
@@ -4603,17 +3457,41 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7.Name` | Griffon's Sense | Sens du griffon |
 
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gust-of-release:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:gust-of-release:1.Name` | Gust of Release | Souffle libérateur |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:horse-ears:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:horse-ears:0.Name` | Horse Ears | Oreilles de cheval |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:liberating-wind:6.Name` | Liberating Wind | Vent libérateur |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:meall-s-trail:5.Name` | Meall's Trail | Piste de Meall |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:mongfind-s-travel:8.Name` | Mongfind's Travel | Voyage de Mongfind |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:simmering-blood:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:simmering-blood:0.Name` | Simmering Blood | Sang brûlant |
+| `TRUDVANG.Content.Power.holy-ealdtradition-nema-s-usefulness:owl-hearing:3.Name` | Owl Hearing | Ouïe du hibou |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:battle-arrow:1`
 
@@ -4621,29 +3499,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:battle-arrow:1.Name` | Battle Arrow | Flèche de bataille |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:boiling-blood:2`
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:boiling-blood:2.Name` | Boiling Blood | Sang bouillant |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:rage:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:rage:3.Name` | Rage | Rage |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4.Name` | Shower of Arrows | Pluie de flèches |
-
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5.Name` | Madness | Folie |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8.Name` | Blacken the Sky | Cieux obscurcis |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:bloodfire:6`
 
@@ -4651,455 +3511,365 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:bloodfire:6.Name` | Bloodfire | Embrasement du sang |
 
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:boiling-blood:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:boiling-blood:2.Name` | Boiling Blood | Sang bouillant |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:madness:5.Name` | Madness | Folie |
+
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:rage:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:rage:3.Name` | Rage | Rage |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:riastarthae:7`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:riastarthae:7.Name` | Riastarthae | Riastarthae |
 
-## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8`
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8.Name` | Blacken the Sky | Cieux obscurcis |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:shower-of-arrows:4.Name` | Shower of Arrows | Pluie de flèches |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:power-of-blood:0`
+## `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:simmering-blood:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:power-of-blood:0.Name` | Power of Blood | Puissance du sang |
+| `TRUDVANG.Content.Power.holy-ealdtradition-tribute-of-morgu:simmering-blood:0.Name` | Simmering Blood | Sang brûlant |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:holy-bolt:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:asiblack:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:holy-bolt:1.Name` | Holy Bolt | Éclair sacré |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:asiblack:6.Name` | Asiblack | Svartasi |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-senses:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:death-gust:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-senses:2.Name` | Stone Senses | Sens pétrifiés |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:death-gust:0.Name` | Death Gust | Souffle de mort |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:falfax:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3.Name` | Visions of the Oak | Visions du chêne |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:falfax:2.Name` | Falfax | Falfax |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:sacred-burst:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:night-curtain:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:sacred-burst:4.Name` | Sacred Burst | Explosion sacrée |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:night-curtain:3.Name` | Night Curtain | Rideau de la nuit |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:statue:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:snarfari:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:statue:5.Name` | Statue | Statue |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:snarfari:8.Name` | Snarfari | Snarfari |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:divine-purge:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:divine-purge:6.Name` | Divine Purge | Purification divine |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5.Name` | The Breath of Mogunda | Souffle de Mogunda |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7.Name` | Memory of a Martyr | Souvenir du martyr |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4.Name` | The Coat of Jorn | Manteau de Jorn |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-monument:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:wall-of-dusk:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-monument:8.Name` | Stone Monument | Monument en pierre |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:wall-of-dusk:1.Name` | Wall of Dusk | Mur du crépuscule |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-mercy:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:will-of-bodvildur:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-mercy:0.Name` | Hand of Mercy | Main de la miséricorde |
+| `TRUDVANG.Content.Power.holy-gerbanis-influence-of-jorn:will-of-bodvildur:7.Name` | Will of Bodvildur | Volonté de Bodvilur |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:holy-mending:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:bold:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:holy-mending:1.Name` | Holy Mending | Soins sacrés |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:bold:2.Name` | Bold | Témérité |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:eye-of-enken:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2.Name` | Will of Bete Wiemdas | Volonté de Bete Wiemdas |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:eye-of-enken:8.Name` | Eye of Enken | Œil d’Enken |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:life-spirit:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:heart-of-enken:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:life-spirit:3.Name` | Life Spirit | Esprit de la vie |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:heart-of-enken:6.Name` | Heart of Enken | Cœur d’Enken |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:hurricane-armor:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4.Name` | Chalk of Bete Wiemdas | Craie de Bete Wiemdas |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:hurricane-armor:7.Name` | Hurricane Armor | Armure de l’ouragan |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:recall:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:night-vision:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:recall:5.Name` | Recall | Rappel |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:night-vision:0.Name` | Night Vision | Vision nocturne |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:soul-sight:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6.Name` | Breath of Gave | Souffle de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:soul-sight:4.Name` | Soul Sight | Regard de l’âme |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:storm-armor:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7.Name` | Hand of Gave | Main de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:storm-armor:5.Name` | Storm Armor | Armure de la tempête |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:wind-of-immortality:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:willpower:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:wind-of-immortality:8.Name` | Wind of Immortality | Vent d'immortalité |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:willpower:1.Name` | Willpower | Force d’âme |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-armor:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:wind-shield:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-armor:0.Name` | Blessed Armor | Armure bénie |
+| `TRUDVANG.Content.Power.holy-gerbanis-power-of-enken:wind-shield:3.Name` | Wind Shield | Bouclier de vent |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-spear:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:einharjar:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-spear:1.Name` | Blessed Spear | Lance bénie |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:einharjar:8.Name` | Einharjar | Einharjar |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:holy-authority:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:havar:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:holy-authority:2.Name` | Holy Authority | Sainte autorité |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:havar:2.Name` | Havar | Havar |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:hinji-strength:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3.Name` | Rowthguard Cuirass | Cuirasse des gardiens du Rortan |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:hinji-strength:3.Name` | Hinji Strength | Force de hinje |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jarl-s-call:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4.Name` | Majestic Revelation | Révélation majestueuse |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jarl-s-call:4.Name` | Jarl's Call | Appel du jarl |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jotun-strength:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5.Name` | Rowthguard's Battle Scourge | Chaîne de bataille des gardiens du Rortan |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:jotun-strength:6.Name` | Jotun Strength | Force du jotun |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:shield-disir:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6.Name` | Belo Seoth's White Armor | Armure blanche de Belo Seoth |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:shield-disir:5.Name` | Shield Dísir | Skölddíser |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:troll-strength:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7.Name` | Belo Seoth's Axe | Hache de Belo Seoth |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:troll-strength:0.Name` | Troll Strength | Force du troll |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-command:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8.Name` | Guise of Gave | Aura de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-command:1.Name` | Voice of Command | Autorité |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-stormi:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0.Name` | Snares of the Holy Ground | Entraves de la terre consacrée |
+| `TRUDVANG.Content.Power.holy-gerbanis-strength-of-stormi:voice-of-stormi:7.Name` | Voice of Stormi | Voix de Storme |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:sheltering:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:sheltering:1.Name` | Sheltering | Refuge |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7.Name` | Breath of Sunvei | Souffle de Solvei |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:storm-protection:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:firon-power:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:storm-protection:2.Name` | Storm Protection | Protection contre les éléments |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:firon-power:4.Name` | Firon Power | Pouvoir de Firon |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:thornwall:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-glow:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:thornwall:3.Name` | Thornwall | Mur d'épines |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-glow:2.Name` | Healing Glow | Lumière guérisseuse |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:bark-skin:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-sun:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:bark-skin:4.Name` | Bark Skin | Peau d'écorce |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-sun:8.Name` | Healing Sun | Soleil guérisseur |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-warmth:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5.Name` | Demonic Impotence | Impuissance des démons |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing-warmth:5.Name` | Healing Warmth | Chaleur guérisseuse |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:vitner-resistance:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:vitner-resistance:6.Name` | Vitner Resistance | Résistance au vitner |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:healing:0.Name` | Healing | Guérison |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:banishment:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:summer-place:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:banishment:7.Name` | Banishment | Bannissement |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:summer-place:3.Name` | Summer Place | Cœur de l’été |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:tree-port:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:sunray:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:tree-port:8.Name` | Tree Port | Refuge arboricole |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:sunray:1.Name` | Sunray | Rayons du soleil |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:dawn-shine:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:dawn-shine:0.Name` | Dawn Shine | Lueur de l'aube |
+| `TRUDVANG.Content.Power.holy-gerbanis-warmth-of-sunvei:time-of-the-hunt:6.Name` | Time of the Hunt | Heure de la chasse |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:protective-ground:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:protective-ground:1.Name` | Protective Ground | Sol protecteur |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:gaze-of-windinna:7.Name` | Gaze of Windinna | Regard de Windinna |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:augury:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:augury:2.Name` | Augury | Augure |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:hearth-of-windinna:8.Name` | Hearth of Windinna | Âtre de Windinna |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:thermal-light:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:inspiration:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:thermal-light:3.Name` | Thermal Light | Lumière rassurante |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:inspiration:0.Name` | Inspiration | Inspiration |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:omen:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:omen:4.Name` | Omen | Présage |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:joy-of-creating:2.Name` | Joy of Creating | Joie de la création |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:blessed-home:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:sixth-sense:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:blessed-home:5.Name` | Blessed Home | Foyer béni |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:sixth-sense:1.Name` | Sixth Sense | Sixième sens |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:sacred-grove:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:sacred-grove:6.Name` | Sacred Grove | Bosquet sacré |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:steel-mind:3.Name` | Steel Mind | Esprit d’acier |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:holy-radiance:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:swine-rush:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:holy-radiance:7.Name` | Holy Radiance | Radiance sacrée |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:swine-rush:6.Name` | Swine Rush | Ruée du porc |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:portent:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:vitner-protection:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:portent:8.Name` | Portent | Oracle |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:vitner-protection:5.Name` | Vitner Protection | Protection contre le vitner |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:holy-consideration:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:holy-consideration:0.Name` | Holy Consideration | Considération sacrée |
+| `TRUDVANG.Content.Power.holy-gerbanis-wisdom-of-windinna:wave-of-truth:4.Name` | Wave of Truth | Vague de vérité |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:battle-cry:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1.Name` | Sirowerd's Ear | Oreille de Siro Werte |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:battle-cry:1.Name` | Battle Cry | Cri de bataille |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:blood-brothers:2`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:dark-visage:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:blood-brothers:2.Name` | Blood Brothers | Frères de sang |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:dark-visage:5.Name` | Dark Visage | Figure sinistre |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:fire-iron:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3.Name` | Sirowerd's Tongue | Langue de Siro Werte |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:fire-iron:0.Name` | Fire Iron | Tisonnier |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:kindred-s-bond:4`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:firestorm:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:kindred-s-bond:4.Name` | Kindred's Bond | Grâce de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:firestorm:6.Name` | Firestorm | Tempête de feu |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:grace-of-gave:5`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:pyre-mark:3`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:grace-of-gave:5.Name` | Grace of Gave | Liens fraternels |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:pyre-mark:3.Name` | Pyre Mark | Marque du brasier |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sanity-of-gave:6`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sanity-of-gave:6.Name` | Sanity of Gave | Sagesse de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:thunder-of-victory:7.Name` | Thunder of Victory | Tonnerre victorieux |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:favorites-of-gave:7`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:favorites-of-gave:7.Name` | Favorites of Gave | Faveurs de Gave |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8.Name` | Tyrd's Bellow | Grondement de Tyrd |
 
-## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:divine-pact:8`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:war-cry:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:divine-pact:8.Name` | Divine Pact | Pacte divin |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:war-cry:4.Name` | War Cry | Cri de guerre |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:resilience:0`
+## `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:wolf-tongue:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:resilience:0.Name` | Resilience | Résilience |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mind-of-the-predator:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mind-of-the-predator:1.Name` | Mind of the Predator | Instinct du prédateur |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-tusks:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-tusks:2.Name` | Mastomant's Tusks | Défenses du mastomant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-boar:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-boar:3.Name` | Endurance of the Boar | Endurance du sanglier |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-fur:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-fur:4.Name` | Mastomant's Fur | Fourrure du mastomant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:wolf-claws:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:wolf-claws:5.Name` | Wolf Claws | Griffes du loup |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-giant:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-giant:6.Name` | Endurance of the Giant | Endurance du géant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:master-of-wolfkin:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:master-of-wolfkin:7.Name` | Master of Wolfkin | Maître des loups |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomantshape:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomantshape:8.Name` | Mastomantshape | Aspect du mastomant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:constriction:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:constriction:0.Name` | Constriction | Constriction |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1.Name` | Rampage of the Huvfurwurm | Ravage du huvfurwurm |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:flame-hardened:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:flame-hardened:2.Name` | Flame Hardened | Fils des flammes |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:paralyzing-gaze:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:paralyzing-gaze:3.Name` | Paralyzing Gaze | Regard paralysant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4.Name` | Dragon Skin | Peau du dragon |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5.Name` | Attack of the Huvfurwurm | Attaque du huvfurwurm |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6.Name` | Head of the Huvfurwurm | Tête du huvfurwurm |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-soul:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-soul:7.Name` | Dragon Soul | Âme du dragon |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:giant-snakeshape:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:giant-snakeshape:8.Name` | Giant Snakeshape | Aspect du serpent géant |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-men:sight-of-the-dwarves:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-men:sight-of-the-dwarves:0.Name` | Sight of the Dwarves | Vision des nains |
+| `TRUDVANG.Content.Power.holy-gerbanis-wrath-of-tyrd:wolf-tongue:2.Name` | Wolf Tongue | Langue du loup |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-men:accomplished:1`
 
@@ -5112,24 +3882,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-men:curative-draught:2.Name` | Curative Draught | Mixture curative |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-men:mastery:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-men:mastery:3.Name` | Mastery | Maître |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-men:remedial-potion:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-men:remedial-potion:4.Name` | Remedial Potion | Potion de guérison |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-men:weapon-prowess:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-men:weapon-prowess:5.Name` | Weapon Prowess | Prouesse martiale |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-men:dwarven-smith:6`
 
@@ -5149,11 +3901,179 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-men:life-elixir-of-the-devouress:8.Name` | Life Elixir of the Devouress | Élixir de vie de la dévoreuse |
 
+## `TRUDVANG.Content.Power.holy-haminges-power-of-men:mastery:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-men:mastery:3.Name` | Mastery | Maître |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-men:remedial-potion:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-men:remedial-potion:4.Name` | Remedial Potion | Potion de guérison |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-men:sight-of-the-dwarves:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-men:sight-of-the-dwarves:0.Name` | Sight of the Dwarves | Vision des nains |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-men:weapon-prowess:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-men:weapon-prowess:5.Name` | Weapon Prowess | Prouesse martiale |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-boar:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-boar:3.Name` | Endurance of the Boar | Endurance du sanglier |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-giant:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:endurance-of-the-giant:6.Name` | Endurance of the Giant | Endurance du géant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:master-of-wolfkin:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:master-of-wolfkin:7.Name` | Master of Wolfkin | Maître des loups |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-fur:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-fur:4.Name` | Mastomant's Fur | Fourrure du mastomant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-tusks:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomant-s-tusks:2.Name` | Mastomant's Tusks | Défenses du mastomant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomantshape:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mastomantshape:8.Name` | Mastomantshape | Aspect du mastomant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mind-of-the-predator:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:mind-of-the-predator:1.Name` | Mind of the Predator | Instinct du prédateur |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:resilience:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:resilience:0.Name` | Resilience | Résilience |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:wolf-claws:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-beast:wolf-claws:5.Name` | Wolf Claws | Griffes du loup |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:attack-of-the-huvfurwurm:5.Name` | Attack of the Huvfurwurm | Attaque du huvfurwurm |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:constriction:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:constriction:0.Name` | Constriction | Constriction |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-skin:4.Name` | Dragon Skin | Peau du dragon |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-soul:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:dragon-soul:7.Name` | Dragon Soul | Âme du dragon |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:flame-hardened:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:flame-hardened:2.Name` | Flame Hardened | Fils des flammes |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:giant-snakeshape:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:giant-snakeshape:8.Name` | Giant Snakeshape | Aspect du serpent géant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6.Name` | Head of the Huvfurwurm | Tête du huvfurwurm |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:paralyzing-gaze:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:paralyzing-gaze:3.Name` | Paralyzing Gaze | Regard paralysant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1.Name` | Rampage of the Huvfurwurm | Ravage du huvfurwurm |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4.Name` | Blood of the Lindwurm | Sang du lindwurm |
+
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:dreadful-screech:0`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:dreadful-screech:0.Name` | Dreadful Screech | Cri effrayant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8.Name` | Heart of the Lindwurm | Cœur du lindwurm |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:limb-of-stone:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:limb-of-stone:5.Name` | Limb of Stone | Membre de pierre |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:petrify:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:petrify:7.Name` | Petrify | Pétrification |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:regenerative-blood:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:regenerative-blood:3.Name` | Regenerative Blood | Sang régénérant |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:scream-of-the-devouress:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:scream-of-the-devouress:6.Name` | Scream of the Devouress | Clameur de la dévoreuse |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:shattered-mind:1`
 
@@ -5167,41 +4087,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:terrifying-howl:2.Name` | Terrifying Howl | Hurlement terrifiant |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:regenerative-blood:3`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:regenerative-blood:3.Name` | Regenerative Blood | Sang régénérant |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5.Name` | Breath of the Hrim Troll | Souffle du hrimtroll |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:blood-of-the-lindwurm:4.Name` | Blood of the Lindwurm | Sang du lindwurm |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:limb-of-stone:5`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:limb-of-stone:5.Name` | Limb of Stone | Membre de pierre |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2.Name` | Mountain Ogre's Fury | Fureur de l’ogre des montagnes |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:scream-of-the-devouress:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:scream-of-the-devouress:6.Name` | Scream of the Devouress | Clameur de la dévoreuse |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:petrify:7`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:petrify:7.Name` | Petrify | Pétrification |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8.Name` | Heart of the Lindwurm | Cœur du lindwurm |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4.Name` | Mountain Ogre's Madness | Folie de l’ogre des montagnes |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0`
 
@@ -5209,35 +4111,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:skin-of-the-hrim-troll:0.Name` | Skin of the Hrim Troll | Peau du hrimtroll |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:troll-strength:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:troll-strength:1.Name` | Troll Strength | Force du troll |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2.Name` | Mountain Ogre's Fury | Fureur de l'ogre des montagnes |
-
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3.Name` | Strength of the Stone Hinji | Force du stenhinje |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4.Name` | Mountain Ogre's Madness | Folie de l'ogre des montagnes |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:breath-of-the-hrim-troll:5.Name` | Breath of the Hrim Troll | Souffle du hrimtroll |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6`
 
@@ -5245,41 +4123,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6.Name` | The Destroyer's Rage | Rage du destructeur |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:thurse-strength:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:thurse-strength:7.Name` | Thurse Strength | Force du tursir |
-
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8.Name` | The Hrim Troll's Rime Body | Corps de glace du hrimtroll |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:disease-carrier:0`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:thurse-strength:7`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:disease-carrier:0.Name` | Disease Carrier | Infection |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:thurse-strength:7.Name` | Thurse Strength | Force du tursir |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:willpower:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:willpower:1.Name` | Willpower | Volonté |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:illusion-tricks:2`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:troll-strength:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:illusion-tricks:2.Name` | Illusion Tricks | Tours illusoires |
-
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:fearless:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:fearless:3.Name` | Fearless | Sans peur |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-the-thurses:troll-strength:1.Name` | Troll Strength | Force du troll |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:contagious:4`
 
@@ -5287,11 +4147,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:contagious:4.Name` | Contagious | Contagion |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:persuade:5`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:disease-carrier:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:persuade:5.Name` | Persuade | Persuasion |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:disease-carrier:0.Name` | Disease Carrier | Infection |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:fearless:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:fearless:3.Name` | Fearless | Sans peur |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:illusion-tricks:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:illusion-tricks:2.Name` | Illusion Tricks | Tours illusoires |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:lord-of-the-flies:6`
 
@@ -5299,17 +4171,353 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:lord-of-the-flies:6.Name` | Lord of the Flies | Seigneur des mouches |
 
-## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:troll-wit:7`
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:persuade:5`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:troll-wit:7.Name` | Troll Wit | Hardiesse des trolls |
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:persuade:5.Name` | Persuade | Persuasion |
 
 ## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:taken-by-the-mountain:8`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:taken-by-the-mountain:8.Name` | Taken by the Mountain | Charme de la montagne |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:troll-wit:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:troll-wit:7.Name` | Troll Wit | Hardiesse des trolls |
+
+## `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:willpower:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:willpower:1.Name` | Willpower | Volonté |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:divine-purge:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:divine-purge:6.Name` | Divine Purge | Purification divine |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:holy-bolt:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:holy-bolt:1.Name` | Holy Bolt | Éclair sacré |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:memory-of-a-martyr:7.Name` | Memory of a Martyr | Souvenir du martyr |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:power-of-blood:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:power-of-blood:0.Name` | Power of Blood | Puissance du sang |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:sacred-burst:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:sacred-burst:4.Name` | Sacred Burst | Explosion sacrée |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:statue:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:statue:5.Name` | Statue | Statue |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-monument:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-monument:8.Name` | Stone Monument | Monument en pierre |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-senses:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:stone-senses:2.Name` | Stone Senses | Sens pétrifiés |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:visions-of-the-oak:3.Name` | Visions of the Oak | Visions du chêne |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:breath-of-gave:6.Name` | Breath of Gave | Souffle de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:chalk-of-bete-wiemdas:4.Name` | Chalk of Bete Wiemdas | Craie de Bete Wiemdas |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-gave:7.Name` | Hand of Gave | Main de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-mercy:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:hand-of-mercy:0.Name` | Hand of Mercy | Main de la miséricorde |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:holy-mending:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:holy-mending:1.Name` | Holy Mending | Soins sacrés |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:life-spirit:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:life-spirit:3.Name` | Life Spirit | Esprit de la vie |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:recall:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:recall:5.Name` | Recall | Rappel |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:will-of-bete-wiemdas:2.Name` | Will of Bete Wiemdas | Volonté de Bete Wiemdas |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:wind-of-immortality:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-grace:wind-of-immortality:8.Name` | Wind of Immortality | Vent d’immortalité |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7.Name` | Belo Seoth's Axe | Hache de Belo Seoth |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6.Name` | Belo Seoth's White Armor | Armure blanche de Belo Seoth |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-armor:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-armor:0.Name` | Blessed Armor | Armure bénie |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-spear:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:blessed-spear:1.Name` | Blessed Spear | Lance bénie |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:guise-of-gave:8.Name` | Guise of Gave | Aura de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:holy-authority:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:holy-authority:2.Name` | Holy Authority | Sainte autorité |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:majestic-revelation:4.Name` | Majestic Revelation | Révélation majestueuse |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-cuirass:3.Name` | Rowthguard Cuirass | Cuirasse des gardiens du Rortan |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-knight:rowthguard-s-battle-scourge:5.Name` | Rowthguard's Battle Scourge | Chaîne de bataille des gardiens du Rortan |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:banishment:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:banishment:7.Name` | Banishment | Bannissement |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:bark-skin:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:bark-skin:4.Name` | Bark Skin | Peau d’écorce |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:demonic-impotence:5.Name` | Demonic Impotence | Impuissance des démons |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:sheltering:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:sheltering:1.Name` | Sheltering | Refuge |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0.Name` | Snares of the Holy Ground | Entraves de la terre consacrée |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:storm-protection:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:storm-protection:2.Name` | Storm Protection | Protection contre les éléments |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:thornwall:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:thornwall:3.Name` | Thornwall | Mur d’épines |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:tree-port:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:tree-port:8.Name` | Tree Port | Refuge arboricole |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:vitner-resistance:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-shield:vitner-resistance:6.Name` | Vitner Resistance | Résistance au vitner |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:augury:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:augury:2.Name` | Augury | Augure |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:blessed-home:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:blessed-home:5.Name` | Blessed Home | Foyer béni |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:dawn-shine:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:dawn-shine:0.Name` | Dawn Shine | Lueur de l’aube |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:holy-radiance:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:holy-radiance:7.Name` | Holy Radiance | Radiance sacrée |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:omen:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:omen:4.Name` | Omen | Présage |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:portent:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:portent:8.Name` | Portent | Oracle |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:protective-ground:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:protective-ground:1.Name` | Protective Ground | Sol protecteur |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:sacred-grove:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:sacred-grove:6.Name` | Sacred Grove | Bosquet sacré |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:thermal-light:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-the-sun:thermal-light:3.Name` | Thermal Light | Lumière rassurante |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:blood-brothers:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:blood-brothers:2.Name` | Blood Brothers | Frères de sang |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:divine-pact:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:divine-pact:8.Name` | Divine Pact | Pacte divin |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:favorites-of-gave:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:favorites-of-gave:7.Name` | Favorites of Gave | Faveurs de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:grace-of-gave:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:grace-of-gave:5.Name` | Grace of Gave | Liens fraternels |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:holy-consideration:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:holy-consideration:0.Name` | Holy Consideration | Considération sacrée |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:kindred-s-bond:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:kindred-s-bond:4.Name` | Kindred's Bond | Grâce de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sanity-of-gave:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sanity-of-gave:6.Name` | Sanity of Gave | Sagesse de Gave |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-ear:1.Name` | Sirowerd's Ear | Oreille de Siro Werte |
+
+## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3.Name` | Sirowerd's Tongue | Langue de Siro Werte |
 
 ## `TRUDVANG.Content.Power.holy-thuuldom-anvil-shock:anvil-shock:0`
 
@@ -5327,7 +4535,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0.Name` | Cave Spider's Grip | Prise de l'araignée des cavernes |
+| `TRUDVANG.Content.Power.holy-thuuldom-cave-spider-s-grip:cave-spider-s-grip:0.Name` | Cave Spider's Grip | Prise de l’araignée des cavernes |
 
 ## `TRUDVANG.Content.Power.holy-thuuldom-earthquake:earthquake:0`
 
@@ -5351,7 +4559,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-thuuldom-hammer-fists:hammer-fists:0.Name` | Hammer Fists | Poings d'acier |
+| `TRUDVANG.Content.Power.holy-thuuldom-hammer-fists:hammer-fists:0.Name` | Hammer Fists | Poings d’acier |
 
 ## `TRUDVANG.Content.Power.holy-thuuldom-healing-rune:healing-rune:0`
 
@@ -5389,17 +4597,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-thuuldom-scales:scales:0.Name` | Scales | Écailles |
 
-## `TRUDVANG.Content.Power.holy-thuuldom-stoneling:stoneling:0`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-thuuldom-stoneling:stoneling:0.Name` | Stoneling | Enfant de la pierre |
-
 ## `TRUDVANG.Content.Power.holy-thuuldom-stone-to-clay:stone-to-clay:0`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-thuuldom-stone-to-clay:stone-to-clay:0.Name` | Stone to Clay | Transformation de pierre en argile |
+
+## `TRUDVANG.Content.Power.holy-thuuldom-stoneling:stoneling:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-thuuldom-stoneling:stoneling:0.Name` | Stoneling | Enfant de la pierre |
 
 ## `TRUDVANG.Content.Power.holy-thuuldom-stoneshape:stoneshape:0`
 
@@ -5411,37 +4619,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-thuuldom-well-of-water:well-of-water:0.Name` | Well of Water | Source d'eau |
+| `TRUDVANG.Content.Power.holy-thuuldom-well-of-water:well-of-water:0.Name` | Well of Water | Source d’eau |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-friend:0`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-friend:0.Name` | Animal Friend | Ami des animaux |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-tracks:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-tracks:1.Name` | Animal Tracks | Traces animales |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2.Name` | Talk to Animals | Parler avec les animaux |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3.Name` | Invisible to Animals | Invisibilité aux animaux |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-spirit:4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-spirit:4.Name` | Animal Spirit | Esprit de la bête |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-master:5`
 
@@ -5455,23 +4639,41 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-shape:6.Name` | Animal Shape | Aspect animal |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:orientation:0`
+## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-spirit:4`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:orientation:0.Name` | Orientation | Orientation |
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-spirit:4.Name` | Animal Spirit | Esprit de la bête |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:tree-walk:1`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:tree-walk:1.Name` | Tree Walk | Chemin forestier |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:hearing:2`
+## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-tracks:1`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:hearing:2.Name` | Hearing | Ouïe fine |
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:animal-tracks:1.Name` | Animal Tracks | Traces animales |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:invisible-to-animals:3.Name` | Invisible to Animals | Invisibilité aux animaux |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-animal-mind:talk-to-animals:2.Name` | Talk to Animals | Parler avec les animaux |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:aim:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:aim:5.Name` | Aim | Visée |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:concealment:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:concealment:7.Name` | Concealment | Camouflage |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:feline-leap:3`
 
@@ -5485,29 +4687,23 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:feline-reflexes:4.Name` | Feline Reflexes | Réflexes de félin |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:aim:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:aim:5.Name` | Aim | Visée |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:track:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:track:6.Name` | Track | Pistage |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:concealment:7`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:concealment:7.Name` | Concealment | Camouflage |
-
 ## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:forest-path:8`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:forest-path:8.Name` | Forest Path | Sentier forestier |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:hearing:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:hearing:2.Name` | Hearing | Ouïe fine |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:orientation:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:orientation:0.Name` | Orientation | Orientation |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:pathfinder:9`
 
@@ -5515,11 +4711,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:pathfinder:9.Name` | Pathfinder | Éclaireur |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earth-wall:0`
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:track:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earth-wall:0.Name` | Earth Wall | Mur de terre |
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:track:6.Name` | Track | Pistage |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:tree-walk:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-lynx-power:tree-walk:1.Name` | Tree Walk | Chemin forestier |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-fire:1`
 
@@ -5527,35 +4729,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-fire:1.Name` | Control Fire | Contrôle du feu |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:purify-water:2`
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-wind:9`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:purify-water:2.Name` | Purify Water | Purification de l'eau |
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-wind:9.Name` | Control Wind | Contrôle des vents |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:gift-of-water:3`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:gift-of-water:3.Name` | Gift of Water | Don de l'eau |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-tamer:4`
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earth-wall:0`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-tamer:4.Name` | Fire Tamer | Dompteur du feu |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:shape-earth:5`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:shape-earth:5.Name` | Shape Earth | Façonnage de la terre |
-
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:elemental-arrow:6`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:elemental-arrow:6.Name` | Elemental Arrow | Flèche élémentaire |
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earth-wall:0.Name` | Earth Wall | Mur de terre |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earthquake:7`
 
@@ -5563,17 +4747,29 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:earthquake:7.Name` | Earthquake | Tremblement de terre |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:spring-of-water:8`
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:elemental-arrow:6`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:spring-of-water:8.Name` | Spring of Water | Source d'eau |
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:elemental-arrow:6.Name` | Elemental Arrow | Flèche élémentaire |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-wind:9`
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-resistant:11`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:control-wind:9.Name` | Control Wind | Contrôle des vents |
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-resistant:11.Name` | Fire Resistant | Résistance au feu |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-tamer:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-tamer:4.Name` | Fire Tamer | Dompteur du feu |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:gift-of-water:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:gift-of-water:3.Name` | Gift of Water | Don de l’eau |
 
 ## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:hot-and-cold:10`
 
@@ -5581,11 +4777,815 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:hot-and-cold:10.Name` | Hot and Cold | Chaud et froid |
 
-## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-resistant:11`
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:purify-water:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:fire-resistant:11.Name` | Fire Resistant | Résistance au feu |
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:purify-water:2.Name` | Purify Water | Purification de l’eau |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:shape-earth:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:shape-earth:5.Name` | Shape Earth | Façonnage de la terre |
+
+## `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:spring-of-water:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-toikalokke-master-of-elements:spring-of-water:8.Name` | Spring of Water | Source d’eau |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:call-on-animals:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:call-on-animals:2.Name` | Call on Animals | Appel des animaux |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:conjure-ravens:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:conjure-ravens:3.Name` | Conjure Ravens | Conjuration de corbeaux |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:control-animals:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:control-animals:4.Name` | Control Animals | Contrôle des animaux |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:create-messenger:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:create-messenger:7.Name` | Create Messenger | Création de messager |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:messenger:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:messenger:0.Name` | Messenger | Messager |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:mind-of-the-wolf:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:mind-of-the-wolf:5.Name` | Mind of the Wolf | Esprit du loup |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:possess-animals:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:possess-animals:6.Name` | Possess Animals | Possession animale |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:send-message:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:send-message:8.Name` | Send Message | Messager magique |
+
+## `TRUDVANG.Content.Power.vitner-animal-vitner:speak-to-animals:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-animal-vitner:speak-to-animals:1.Name` | Speak to Animals | Parler aux animaux |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:appearance-change:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:appearance-change:7.Name` | Appearance Change | Modification d’apparence |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:change-creature:11`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:change-creature:11.Name` | Change Creature | Transformation |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:grip:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:grip:0.Name` | Grip | Adhérence |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:hasten:9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:hasten:9.Name` | Hasten | Hâte |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:hearing-deafness:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:hearing-deafness:2.Name` | Hearing/Deafness | Acuité auditive/surdité |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:immobilize:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:immobilize:6.Name` | Immobilize | Immobilisation |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:imprison:10`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:imprison:10.Name` | Imprison | Emprisonnement |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:leather-skin:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:leather-skin:5.Name` | Leather Skin | Peau de cuir |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3.Name` | Sense of Smell | Sens de l’odorat “Ulvakon” |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:strengthen:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:strengthen:8.Name` | Strengthen | Vigueur |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:tipping:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:tipping:1.Name` | Tipping | Croche-pied |
+
+## `TRUDVANG.Content.Power.vitner-body-vitner:vision-blindness:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-body-vitner:vision-blindness:4.Name` | Vision/Blindness | Vision/cécité |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:camouflage:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:camouflage:7.Name` | Camouflage | Camouflage |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:depict:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:depict:6.Name` | Depict | Image |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:ghost-voice:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:ghost-voice:5.Name` | Ghost Voice | Voix illusoire |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3.Name` | Increase Sounds | Amplification des sons “Slammerakraftla” |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:invisibility:11`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:invisibility:11.Name` | Invisibility | Invisibilité |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:landscape-illusion:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:landscape-illusion:8.Name` | Landscape Illusion | Paysage illusoire |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:lindwurm-illusion:10`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:lindwurm-illusion:10.Name` | Lindwurm Illusion | Lindwurm illusoire |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:phantom-sound:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:phantom-sound:1.Name` | Phantom Sound | Son illusoire |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0.Name` | Roar | Grondement “Slammera” |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2.Name` | Shriek | Son aigu “Rifla” |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:silence:9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:silence:9.Name` | Silence | Silence |
+
+## `TRUDVANG.Content.Power.vitner-delusion-vitner:traceless:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:traceless:4.Name` | Traceless | Sans trace |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:animate-undead:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:animate-undead:0.Name` | Animate Undead | Animation des morts-vivants |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:control-undead:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:control-undead:7.Name` | Control Undead | Contrôle des morts-vivants |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:darkness-of-dimhall:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:darkness-of-dimhall:8.Name` | Darkness of Dimhall | Ténèbres de Dimhall |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:dismiss-undead:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:dismiss-undead:2.Name` | Dismiss Undead | Renvoi des morts-vivants |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:hand-of-death:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:hand-of-death:1.Name` | Hand of Death | Main funeste |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:speak-to-undead:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:speak-to-undead:3.Name` | Speak to Undead | Conversation de l’au-delà |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:summon-wight:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:summon-wight:6.Name` | Summon Wight | Invocation d’un revenant |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:tendril-of-dimhall:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:tendril-of-dimhall:4.Name` | Tendril of Dimhall | Vrille de Dimhall |
+
+## `TRUDVANG.Content.Power.vitner-dimvitner:vitner-theft:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-dimvitner:vitner-theft:5.Name` | Vitner Theft | Vol de vitner |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:burning-hand:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:burning-hand:2.Name` | Burning Hand | Main brûlante |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:flame-burst:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:flame-burst:3.Name` | Flame Burst | Éruption de flammes |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:flame-control:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:flame-control:5.Name` | Flame Control | Contrôle des flammes |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:heat-water:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:heat-water:0.Name` | Heat Water | Ébullition |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:protection-from-fire:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:protection-from-fire:4.Name` | Protection from Fire | Protection contre le feu |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:sea-of-fire:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:sea-of-fire:7.Name` | Sea of Fire | Mer de flammes |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:spark:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:spark:1.Name` | Spark | Flammèche |
+
+## `TRUDVANG.Content.Power.vitner-flame-craft:warmth:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-flame-craft:warmth:6.Name` | Warmth | Chaleur |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:detect-being:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:detect-being:4.Name` | Detect Being | Détection des êtres vivants |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:detect-object:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:detect-object:2.Name` | Detect Object | Détection d’objet |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:detect-undead:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:detect-undead:5.Name` | Detect Undead | Détection des morts-vivants |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:find-home:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:find-home:0.Name` | Find Home | Chemin du retour |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:map:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:map:7.Name` | Map | Cartographie |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:orientation:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:orientation:3.Name` | Orientation | Orientation |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:retrace-tracks:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:retrace-tracks:1.Name` | Retrace Tracks | Traces |
+
+## `TRUDVANG.Content.Power.vitner-perceiving:surrounding:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-perceiving:surrounding:6.Name` | Surrounding | Environnement |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:aura-of-power:9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:aura-of-power:9.Name` | Aura of Power | Aura de puissance |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:courage:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:courage:2.Name` | Courage | Courage |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:creature-control:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:creature-control:8.Name` | Creature Control | Contrôle des créatures |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:ecstasy:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:ecstasy:5.Name` | Ecstasy | Extase |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:fear:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:fear:3.Name` | Fear | Peur |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:imagining:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:imagining:6.Name` | Imagining | Influence |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:memory:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:memory:7.Name` | Memory | Mémoire |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:mind-reading:11`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:mind-reading:11.Name` | Mind Reading | Lecture des pensées |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:possess-creature:10`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:possess-creature:10.Name` | Possess Creature | Possession de créature |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:telepathy:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:telepathy:4.Name` | Telepathy | Télépathie |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-script:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-script:0.Name` | Understanding Script | Compréhension des écrits |
+
+## `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-speech:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-thought:understanding-speech:1.Name` | Understanding Speech | Compréhension orale |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:astral-voyage:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:astral-voyage:5.Name` | Astral Voyage | Voyage astral |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:espionage:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:espionage:4.Name` | Espionage | Espionnage |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:far-sight:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:far-sight:2.Name` | Far Sight | Vision lointaine |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:read-vitner:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:read-vitner:6.Name` | Read Vitner | Lecture du vitner |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:scanning:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:scanning:1.Name` | Scanning | Examen d’objet |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:seeing:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:seeing:3.Name` | Seeing | Vision parfaite |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:tracking:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:tracking:0.Name` | Tracking | Pistage |
+
+## `TRUDVANG.Content.Power.vitner-power-of-vision:true-sight:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-power-of-vision:true-sight:7.Name` | True Sight | Vision véritable |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:earthquake:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:earthquake:2.Name` | Earthquake | Tremblement de terre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:petrify-remove-petrification:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:petrify-remove-petrification:8.Name` | Petrify/Remove Petrification | Pétrification/Annuler une pétrification |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:quagmire:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:quagmire:3.Name` | Quagmire | Bourbier |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:rock-throw:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:rock-throw:0.Name` | Rock Throw | Jet de pierre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:shape-soil:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:shape-soil:1.Name` | Shape Soil | Façonnage de la terre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:shape-stone:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:shape-stone:6.Name` | Shape Stone | Façonnage de la pierre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:soil-blast:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:soil-blast:4.Name` | Soil Blast | Projection de terre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:soil-walk:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:soil-walk:5.Name` | Soil Walk | Marche dans la terre |
+
+## `TRUDVANG.Content.Power.vitner-soil-craft:stone-walk:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-soil-craft:stone-walk:7.Name` | Stone Walk | Marche dans la pierre |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:anti-magic:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:anti-magic:3.Name` | Anti Magic | Antimagie |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:channeling:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:channeling:0.Name` | Channeling | Canalisation |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:dispel-vitner:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:dispel-vitner:6.Name` | Dispel Vitner | Dissipation du vitner |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-being:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-being:4.Name` | Enchant Being | Enchantement de créature |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-object:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:enchant-object:2.Name` | Enchant Object | Enchantement d’objet |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:seal:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:seal:5.Name` | Seal | Sceau |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:trace-vitner:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:trace-vitner:7.Name` | Trace Vitner | Piste du vitner |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:vitner-pouch:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:vitner-pouch:1.Name` | Vitner Pouch | Bourse de vitner |
+
+## `TRUDVANG.Content.Power.vitner-vitner-craft:wall-of-vitner:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-craft:wall-of-vitner:8.Name` | Wall of Vitner | Mur de vitner |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:alarm-object:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:alarm-object:4.Name` | Alarm Object | Objet d’alarme |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:alter-object:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:alter-object:7.Name` | Alter Object | Altération d’objet |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:bind:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:bind:2.Name` | Bind | Lien |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:create-object:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:create-object:8.Name` | Create Object | Création d’objet |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:detect-composition:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:detect-composition:0.Name` | Detect Composition | Analyse de la composition |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:enlarge-reduce-object:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:enlarge-reduce-object:6.Name` | Enlarge/Reduce Object | Agrandissement/ rapetissement d’objet |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:rust:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:rust:3.Name` | Rust | Rouille |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:unlock-lock:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:unlock-lock:5.Name` | Unlock/Lock | Verrouillage/ déverrouillage |
+
+## `TRUDVANG.Content.Power.vitner-vitner-of-objects:waterproof:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-vitner-of-objects:waterproof:1.Name` | Waterproof | Résistance à l’eau |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:breathe:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:breathe:2.Name` | Breathe | Respiration aquatique |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:control-precipitation:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:control-precipitation:6.Name` | Control Precipitation | Contrôle des précipitations |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:create-water:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:create-water:4.Name` | Create Water | Création d’eau |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:find-water:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:find-water:0.Name` | Find Water | Sourcier |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:form-water:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:form-water:3.Name` | Form Water | Façonnage de l’eau |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:purify-water:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:purify-water:1.Name` | Purify Water | Purification de l’eau |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:solid-water:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:solid-water:5.Name` | Solid Water | Eau solide |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7.Name` | Water Walk | Marche sur l’eau “Vannvandr” |
+
+## `TRUDVANG.Content.Power.vitner-water-craft:wave-master:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-water-craft:wave-master:8.Name` | Wave Master | Maître des flots |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:air-armor:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:air-armor:4.Name` | Air Armor | Armure d’air |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:air-shield:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:air-shield:6.Name` | Air Shield | Bouclier d’air |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:control-wind:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:control-wind:3.Name` | Control Wind | Contrôle du vent |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:fog:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:fog:2.Name` | Fog | Brouillard |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:lift:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:lift:5.Name` | Lift | Vent porteur |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:purify-air:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:purify-air:0.Name` | Purify Air | Purification de l’air |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:storm:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:storm:8.Name` | Storm | Tempête |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:wind-blast:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:wind-blast:7.Name` | Wind Blast | Rafale de vent |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:wind-catcher:9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:wind-catcher:9.Name` | Wind Catcher | Seigneur des vents |
+
+## `TRUDVANG.Content.Power.vitner-wind-craft:wind-gust:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-wind-craft:wind-gust:1.Name` | Wind Gust | Coup de vent |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:amnesia:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:amnesia:4.Name` | Amnesia | Amnésie |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:bad-harvest:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:bad-harvest:6.Name` | Bad Harvest | Mauvaise récolte |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:curse-creature:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:curse-creature:5.Name` | Curse Creature | Malédiction de créature |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:curse-object:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:curse-object:3.Name` | Curse Object | Malédiction d’objet |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:fever:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:fever:2.Name` | Fever | Fièvre |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:phantom-plague:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:phantom-plague:1.Name` | Phantom Plague | Mal imaginaire |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:tree-curse:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:tree-curse:7.Name` | Tree Curse | Malédiction de l’arbre |
+
+## `TRUDVANG.Content.Power.vitner-witchcraft:uprooted-tree:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.vitner-witchcraft:uprooted-tree:0.Name` | Uprooted Tree | Déracinement |
 
 ## `TRUDVANG.Content.Theme`
 

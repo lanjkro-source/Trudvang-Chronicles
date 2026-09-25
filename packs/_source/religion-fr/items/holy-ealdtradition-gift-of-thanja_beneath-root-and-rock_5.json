@@ -1,5 +1,5 @@
 {
-  "name": "Sous la roche et l'écorce",
+  "name": "Sous la roche et l’écorce",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Don de Thanja",
     "description": "Le bruide modifie son apparence afin de se fondre dans son environnement. L’arpenteur des brumes doit rester parfaitement immobile pour ne pas rompre l’effet. Quiconque recherche le bruide doit réussir un test de compétence difficile (-5 à la VC) en Arts des ombres pour pouvoir le repérer.",
-    "summary": "Le bruide modifie son apparence afin de se fondre dans son environnement.",
+    "summary": "Dissimule le bruide dans la roche ou l’écorce pour le rendre très difficile à trouver.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

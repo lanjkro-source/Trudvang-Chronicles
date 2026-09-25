@@ -12,12 +12,12 @@
     "catalogId": "holy-ealdtradition-halawen-s-offering:bolgemek:4",
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Halawen's Offering",
-    "description": "3: Witch Wall 3: 4: Fearless 4: 5: Mistur Barrier 4: 5: Roggdrasil 5: Nema’s Usefulness 1: Horse Ears 1: 1: Gust of Release 1: 2: Gloomy<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Calls upon ancestral protection to resist hostile supernatural forces.</td></tr></tbody></table>Trail 2: 2: Owl Hearing 2: 3: Freeing Breeze 3:",
-    "summary": "Calls upon ancestral protection to resist hostile supernatural forces.",
+    "description": "When the Bruid speaks the power's trigger word, Bolgemek, the ancient sacred spear of Adarik the Conqueror, appears in their hands. It vanishes in smoke when the power ends. This two-handed heavy spear deals 1d10 (OR 7-10) + 6 damage, has Protection Value 20, Integrity 200, Initiative Modifier -4, and 3 weapon actions. It grants its bearer +4 Protection Value, +2 SV for attacks and parries with the spear, and a further +2 SV to parry when outnumbered.",
+    "summary": "Summons Bolgemek, the sacred two-handed spear of Adarik the Conqueror.",
     "swedishName": "",
-    "duration": "6 action round(s)",
-    "range": "2 meters",
-    "weavingTime": "1 action round(s)",
+    "duration": "10 minutes",
+    "range": "personal",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,31 +26,13 @@
         "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 action round(s)"
+        "effect": "Increase the power's duration by 1 action round"
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:1",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 minute(s)"
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:2",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase range by 1 meters"
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:3",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the Situation Value de : +1"
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:bolgemek:4:4",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Affect un autre ally à portée"
+        "effect": "Increase the power's duration by 1 hour"
       }
     ],
     "source": "Player's Handbook, p. 178",

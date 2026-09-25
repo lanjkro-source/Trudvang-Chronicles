@@ -1,5 +1,5 @@
 {
-  "name": "Prise de l'araignée des cavernes",
+  "name": "Prise de l’araignée des cavernes",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-cave-spider-s-grip",
     "tablet": "Prise de l'araignée des cavernes",
     "description": "La rune permet au thuul d’escalader des surfaces verticales. La capacité de mouvement du thuul est réduite de moitié, mais il reçoit un bonus de +1 mètre par niveau de rune. Le thuul doit utiliser à la fois ses mains et ses pieds pour se déplacer à pleine vitesse sur les surfaces verticales ou au plafond. Cela dit, le thuul peut porter le même poids que lorsqu’il se déplace au sol. Si le thuul est toujours en hauteur quand le pouvoir arrive à expiration, il chute immédiatement.<p>Prise de l’araignée des cavernes confère les traits suivants :</p><ul><li>Mouvement/2, +1 par niveau</li><li>Au niveau 4, le thuul devient capable de marcher au plafond</li></ul>",
-    "summary": "La rune permet au thuul d’escala der des surfaces verticales.",
+    "summary": "Permet d’escalader murs et plafonds comme une araignée.",
     "swedishName": "",
     "duration": "2 minutes/niveau",
     "range": "personnelle",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": -4
   },
   "_key": "!items!8FNcPKdJeKfLgMhN",
   "_id": "8FNcPKdJeKfLgMhN",

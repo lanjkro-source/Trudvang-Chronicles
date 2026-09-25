@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-gift-of-thanja",
     "tablet": "Don de Thanja",
     "description": "Ce pouvoir confère au bruide la faculté de se transformer en cerf. Sous cette forme animale, l’arpenteur des brumes profite d’un certain nombre de traits en plus des siens. Si les traits propres au bruide sont supérieurs à ceux indiqués ci-dessous, il conserve ses traits d’origine ; dans le cas contraire, il adopte ces nouveaux traits. Le bruide conserve tous ses effets personnels pendant la transformation, et l’apparence de ces objets est modifiée pour correspondre à la nouvelle forme. Un bruide qui porte une armure, plusieurs armes et divers autres équipements prendra tout de même l’apparence d’un cerf ordinaire sans que cet équipement soit visible sur lui. Quand le bruide reprend son apparence d’origine, tout son équipement retrouve également son apparence normale.<hr>Traits de l’Aspect du cerf<p>Un bruide transformé par l’Aspect du cerf profite des traits suivants :</p><ul><li>Peut communiquer avec les cerfs</li><li>Mouvement terrestre doublé</li><li>Vision de nuit</li><li>Trait de personnage exceptionnel de +1 en Force</li><li>Trait de personnage exceptionnel de +4 en Constitution</li><li>Peut servir de monture à une personne</li><li>Peut se nourrir en mangeant de l’herbe</li><li>A des cornes comme armes naturelles, 1d10 (JO 9-10) points de dégâts</li></ul>",
-    "summary": "Ce pouvoir confère au bruide la faculté de se transformer en cerf.",
+    "summary": "Transforme le bruide en cerf et lui confère ses capacités.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

@@ -1,5 +1,5 @@
 {
-  "name": "Main de Gave",
+  "name": "Souffle de Gave",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,24 +12,24 @@
     "catalogId": "holy-tenetnid-tablet-of-grace:breath-of-gave:6",
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
-    "description": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante. Il peut ainsi soigner les maladies surnaturelles comme la lycanthropie et la peste d’ulm, reconstruire les organes ou membres perdus, et rompre les malédictions. Ce pouvoir constitue également le seul moyen de guérir la folie chez une personne (Cf. le paragraphe Niveau de peur au chapitre Dégâts et peur). Pour que l’affliction disparaisse complètement et que le soulagement ne soit pas seulement temporaire, le personnage qui bénéficie des soins miraculeux doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Constitution s’applique). Tous les malus et effets négatifs imposés par l’affliction soignée disparaissent complètement si le sujet réussit son test de situation.",
-    "summary": "Le prêtre invoque Gave et place ses mains nimbées de lumière sur une personne souffrante.",
+    "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave et place ses mains sur une personne blessée. Ce pouvoir soigne 6 points de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
+    "summary": "Restaure progressivement les points de santé d’une créature.",
     "swedishName": "",
-    "duration": "",
+    "duration": "3 minutes",
     "range": "contact",
-    "weavingTime": "1 minute",
+    "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-tenetnid-tablet-of-grace:breath-of-gave:6:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Augmente la valeur de situation de : +1"
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
       }
     ],
-    "source": "Livre des règles, p. 254",
+    "source": "Livre des règles, p. 255",
     "level": 4,
     "cost": 8,
     "modifier": -8

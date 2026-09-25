@@ -16,47 +16,47 @@
     "summary": "When the Thuul activates the rune, he receives guidance from the mountain that will aid him in the next action he undertakes.",
     "swedishName": "",
     "duration": "",
-    "range": "personalle",
-    "weavingTime": "1 action round(s)",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "2",
     "spellType": "permanent",
     "isRune": true,
     "powerLevels": [
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+2"
+        "effect": "Increase the bonus to the Skill roll by +1"
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+3"
+        "effect": "Increase the bonus to the Skill roll by +2"
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+5"
+        "effect": "Increase the bonus to the Skill roll by +3"
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+10"
+        "effect": "Increase the bonus to the Skill roll by +4"
       },
       {
         "id": "holy-thuuldom-borjorn-s-hand:borjorn-s-hand:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null,
-        "effect": "+15"
+        "effect": "Increase the bonus to the Skill roll by +5"
       }
     ],
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!sBWkh2u0v1w2x3y4",
   "_id": "sBWkh2u0v1w2x3y4",

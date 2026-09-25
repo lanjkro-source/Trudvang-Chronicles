@@ -15,9 +15,9 @@
     "description": "The Ihana can communicate with animals. Keep in mind that most animals are quite unintelligent and are not likely to provide the best of answers. In contrast to the corresponding vitner spell (see Speak to Animals in Weavers of Magic), the Ihana finds it much easier to u nderstand and communicate with the animal, thereby gaining more information than an enchanter would. To communicate with animals, the elf can use a variety of different methods such as imitating the animal’s grunts or chirps, using body motions and facial expressions, or even playing an instrument.",
     "summary": "The Ihana can communicate with animals.",
     "swedishName": "",
-    "duration": "10 action round(s)",
-    "range": "portée de vue et de voix",
-    "weavingTime": "6 action round(s)",
+    "duration": "10 action rounds",
+    "range": "sight and voice range",
+    "weavingTime": "6 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,19 +26,19 @@
         "id": "holy-toikalokke-animal-mind:talk-to-animals:2:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the power duration de : 10 minute(s)"
+        "effect": "Increase the power's duration by 10 minutes"
       },
       {
         "id": "holy-toikalokke-animal-mind:talk-to-animals:2:1",
         "cost": 4,
         "maxCount": null,
-        "effect": "Increase the power duration de : 30 minute(s)"
+        "effect": "Increase the power's duration by 30 minutes"
       },
       {
         "id": "holy-toikalokke-animal-mind:talk-to-animals:2:2",
         "cost": 10,
         "maxCount": null,
-        "effect": "Increase the power duration de : 12 hour(s)"
+        "effect": "Increase the power's duration by 12 hours"
       }
     ],
     "source": "Player's Handbook, p. 237",

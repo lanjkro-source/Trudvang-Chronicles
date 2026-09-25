@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
     "description": "Le prêtre génère une aura sacrée qui offre la même protection que le pouvoir Protection contre les éléments, mais qui protège également contre les attaques magiques, qu’elles soient physiques ou mentales. L’aura fonctionne comme une barrière autour de la zone désignée par le prêtre, et pour pouvoir la pénétrer à l’aide de la magie, le tisseur doit réussir un test de situation avec une valeur de situation de 10. Si le sort est en mesure de pénétrer l’aura de Résistance au vitner, il fonctionne normalement et l’aura sacrée se dissipe.",
-    "summary": "Le prêtre génère une aura sacrée qui offre la même protection que le pouvoir Protection contre les éléments, mais qui protège également contre les attaques magiques, qu’elles soient physiques ou mentales.",
+    "summary": "Protège une cible contre un sort de vitner et peut le dissiper.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "rayon de 5 mètres",

@@ -15,9 +15,9 @@
     "description": "This spell can temporarily increase the enchanted person’s sense of smell. The enchanted receives +3 to all Situation rolls and Skill rolls in which the olfactory ability is a significant factor for success. For example, they can use their sense of smell to determine whether anyone is hiding in the room or even around the corner. The enchanted can detect smells within a range of 50 meters. The spell can also evoke a negative effect, diminishing the sense of smell. The victim receives -3 on all Situation rolls and Skill rolls that require a sense of smell. Any creature enchanted with enough extra levels of power to receive -10 is considered to be completely scent-blind and unable to smell anything for the spell’s duration. The creature exposed to the negative effects of this spell can resist it by succeeding on a Situation roll with a Situation value of 8 (Constitution modifiers apply).",
     "summary": "This spell can temporarily increase the enchanted person’s sense of smell.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,49 +26,49 @@
         "id": "vitner-body-vitner:sense-of-smell:3:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
-      },
-      {
-        "id": "vitner-body-vitner:sense-of-smell:3:1",
-        "cost": 1,
-        "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-body-vitner:sense-of-smell:3:2",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the range within which the enchanted can sense odors by +10 meters"
-      },
-      {
-        "id": "vitner-body-vitner:sense-of-smell:3:3",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the positive/negative modifier by ±1"
-      },
-      {
-        "id": "vitner-body-vitner:sense-of-smell:3:4",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Affect an extra being (with the spell’s basic version)"
-      },
-      {
-        "id": "vitner-body-vitner:sense-of-smell:3:5",
+        "id": "vitner-body-vitner:sense-of-smell:3:1",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
       },
       {
-        "id": "vitner-body-vitner:sense-of-smell:3:6",
+        "id": "vitner-body-vitner:sense-of-smell:3:2",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range within which the enchanted can sense odors by +10 meters"
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:5",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the range within which the enchanted can sense odors by +100 meters"
       },
       {
-        "id": "vitner-body-vitner:sense-of-smell:3:7",
-        "cost": 8,
+        "id": "vitner-body-vitner:sense-of-smell:3:6",
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 day"
+        "effect": "Increase the bonus or penalty by ±1"
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:7",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
       }
     ],
     "source": "Player's Handbook, p. 96",

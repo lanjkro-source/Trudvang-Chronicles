@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node --test",
     "check": "npm test && node tools/validate-system.mjs",
+    "generate:catalog": "node tools/generate-power-catalog.mjs",
     "build:packs": "node tools/build-packs.mjs",
     "build:packs:sources": "node tools/build-packs.mjs --sources-only",
     "package": "node tools/build-packs.mjs && node tools/package-system.mjs",

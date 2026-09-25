@@ -30,7 +30,14 @@ Run the local validation suite with:
 npm run check
 ```
 
-The bilingual Skills compendium packs under `packs/` are build artifacts compiled from reviewable JSON sources (`packs/_source/`) generated out of `lang/*.json` and the knowledge tree in `modules/config.mjs`. The repository has exactly one build step, powered by the `@foundryvtt/foundryvtt-cli` dev dependency; rebuild the packs after any rules-text or catalogue change:
+The 394 power entries have two reviewed source files in the separate private `game doc/` repository: `fr/trudvang-powers-fr.json` is authoritative for rules and order, while `en/trudvang-powers-en.json` provides English prose with the same mechanics. Edit those JSON files first; never edit the derived `TRUDVANG.Content.Power.*` language keys, `modules/power-catalog-data.mjs`, or power pack sources directly. Regenerate and audit with:
+
+```powershell
+npm run generate:catalog
+npm run check
+```
+
+The bilingual compendium packs under `packs/` are build artifacts compiled from reviewable JSON sources (`packs/_source/`) generated out of `lang/*.json`, the power catalogue, and the knowledge tree in `modules/config.mjs`. Rebuild the packs after any rules-text or catalogue change:
 
 ```powershell
 npm install

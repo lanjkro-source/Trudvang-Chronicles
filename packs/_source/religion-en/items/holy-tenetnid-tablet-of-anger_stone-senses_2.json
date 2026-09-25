@@ -15,9 +15,9 @@
     "description": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify. The opponent suffers a -2 initiative modifier and -1 on all combat actions for the duration of the ability. This ability can be used only on people and creatures that are close to humansized (from half the size of a human up to 1.5 times the size of a human).",
     "summary": "The priest directs his powerful gaze at an opponent who suddenly feels their mind begin to petrify.",
     "swedishName": "",
-    "duration": "3 action round(s)",
+    "duration": "3 action rounds",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -38,7 +38,7 @@
         "id": "holy-tenetnid-tablet-of-anger:stone-senses:2:2",
         "cost": 2,
         "maxCount": 2,
-        "effect": "Increase the negative modifier by"
+        "effect": "Increase the initiative penalty by -2 and the penalty to all combat actions by -1"
       }
     ],
     "source": "Player's Handbook, p. 194",

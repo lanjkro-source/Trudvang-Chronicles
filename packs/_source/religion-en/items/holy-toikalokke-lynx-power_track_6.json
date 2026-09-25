@@ -15,9 +15,9 @@
     "description": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem. This grants the Ihana a modifier of +3 when trying to track that creature for the duration of the ability.",
     "summary": "The Ihana obtains a visible picture of the person or creature that trod the current path by examining its tracks, and can then follow those tracks without a problem.",
     "swedishName": "",
-    "duration": "10 minute(s)",
-    "range": "personalle",
-    "weavingTime": "4 action round(s)",
+    "duration": "10 minutes",
+    "range": "personal",
+    "weavingTime": "4 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "holy-toikalokke-lynx-power:track:6:1",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase the modifier by +1"
-      },
-      {
-        "id": "holy-toikalokke-lynx-power:track:6:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-toikalokke-lynx-power:track:6:2",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the modifier by +1"
       }
     ],
     "source": "Player's Handbook, p. 239",

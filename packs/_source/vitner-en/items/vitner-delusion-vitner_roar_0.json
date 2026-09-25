@@ -16,8 +16,8 @@
     "summary": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap.",
     "swedishName": "",
     "duration": "",
-    "range": "personalle",
-    "weavingTime": "1 action round(s)",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "vitner-delusion-vitner:roar:0:1",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the radius by 10 meters."
+        "effect": "Increase the range from Personal"
       },
       {
         "id": "vitner-delusion-vitner:roar:0:2",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the range from Personal"
+        "effect": "Increase the radius by 10 meters."
       }
     ],
     "source": "Player's Handbook, p. 101",

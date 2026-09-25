@@ -26,31 +26,31 @@
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:0",
         "cost": 0,
         "maxCount": null,
-        "effect": "Répare un object : +10 points d'intégrité"
+        "effect": "Repair an object by +10 Integrity Points"
       },
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:1",
         "cost": 0,
         "maxCount": null,
-        "effect": "Répare un object : +20 points d'intégrité"
+        "effect": "Repair an object by +20 Integrity Points"
       },
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:2",
         "cost": 0,
         "maxCount": null,
-        "effect": "Répare un object : +30 points d'intégrité"
+        "effect": "Repair an object by +30 Integrity Points"
       },
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:3",
         "cost": 0,
         "maxCount": null,
-        "effect": "Répare un object : +40 points d'intégrité"
+        "effect": "Repair an object by +40 Integrity Points"
       },
       {
         "id": "holy-thuuldom-power-of-repair:power-of-repair:0:4",
         "cost": 0,
         "maxCount": null,
-        "effect": "Répare un object : +50 points d'intégrité"
+        "effect": "Repair an object by +50 Integrity Points"
       }
     ],
     "source": "Player's Handbook, p. 231",

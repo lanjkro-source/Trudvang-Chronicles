@@ -12,8 +12,8 @@
     "catalogId": "holy-thuuldom-fang-of-yukk:fang-of-yukk:0",
     "tabletId": "holy-thuuldom-fang-of-yukk",
     "tablet": "Croc de Yukk",
-    "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir. La table ci-après indique l’effet de la rune selon son niveau. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. NIVEAUX DE PUISSANCE:\n|Niveau|Effet|\n|---|---|\n|1|+1 point de dégâts|\n|2|+2 points de dégâts|\n|3|+2 points de dégâts et les probabilités d’un jet ouvert augmentent de 1|\n|4|+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 1|\n|5|+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 2|\n",
-    "summary": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir.",
+    "description": "Le thuul inscrit la rune du Croc de Yukk sur son arme (qui doit être une arme tranchante en métal) et l’imprègne ainsi de pouvoir. La table ci-après indique l’effet de la rune selon son niveau. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne. <table><thead><tr><th colspan=\"2\">NIVEAUX DE PUISSANCE</th></tr><tr><th>Niveau</th><th>Effet</th></tr></thead><tbody><tr><td>1</td><td>+1 point de dégâts</td></tr><tr><td>2</td><td>+2 points de dégâts</td></tr><tr><td>3</td><td>+2 points de dégâts et les probabilités d’un jet ouvert augmentent de 1</td></tr><tr><td>4</td><td>+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 1</td></tr><tr><td>5</td><td>+3 points de dégâts et les probabilités d’un jet ouvert augmentent de 2</td></tr></tbody></table>",
+    "summary": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
     "swedishName": "",
     "duration": "",
     "range": "",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!YBdqtLgMhNiOjPkQ",
   "_id": "YBdqtLgMhNiOjPkQ",

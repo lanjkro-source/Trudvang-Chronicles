@@ -15,9 +15,9 @@
     "description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage) and collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the designated sanctuary suffers -1 to the Skill Value needed to succeed. In addition, everyone located within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +2).",
     "summary": "The prayer acts as protection against vitner and other religions’ feats.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "rayon de 2 meters",
-    "weavingTime": "spécial",
+    "duration": "1 hour",
+    "range": "radius of 2 meters",
+    "weavingTime": "special",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -38,7 +38,7 @@
         "id": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:2",
         "cost": 2,
         "maxCount": 3,
-        "effect": "Decrease the Skill Value for those who want to use abilities from other religions or spells by -1 (maximum -4)"
+        "effect": "Increase by -1 the penalty to Skill Values of those attempting to use powers of other religions or spells"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:protective-ground:1:3",

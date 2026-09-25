@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stoneshape",
     "tablet": "Aspect de la pierre",
     "description": "À l'activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne. Le thuul développe un camouflage de pierre : toute personne tentant de le localiser par un test de compétence d'Arts des Ombres subit un malus de -3 par niveau de rune. Par exemple, une rune de niveau 2 impose un malus de -6, tandis qu'une rune de niveau 4 donne un malus de -12. Si le thuul se déplace alors qu'il est camouflé, le malus est réduit de moitié. S'il utilise cette rune dans un environnement autre que la montagne et la pierre, le malus est là aussi réduit de moitié.",
-    "summary": "À l’activation de cette rune, le thuul et son équipement semblent se fondre dans la montagne.",
+    "summary": "Camoufle le thuul et son équipement dans la pierre ou la montagne.",
     "swedishName": "",
     "duration": "3 minutes/niveau",
     "range": "personnelle",

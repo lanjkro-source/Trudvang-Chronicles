@@ -15,9 +15,9 @@
     "description": "The Ihana causes a wall of earth to shoot up from the ground for protection. The total volume of the wall is 1 cubic meter, which is shaped however the elf desires. Once the duration expires (or the wall is destroyed), the earth wall sinks back down into the soil and disappears. Each cubic meter of earth can endure 30 points of damage before crumbling.",
     "summary": "The Ihana causes a wall of earth to shoot up from the ground for protection.",
     "swedishName": "",
-    "duration": "10 action round(s)",
-    "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "duration": "30 minutes",
+    "range": "2 meters",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,19 +26,19 @@
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the amount of earth by"
+        "effect": "Increase the amount of earth affected by 1 m³"
       },
       {
         "id": "holy-toikalokke-master-of-elements:earth-wall:0:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "m3"
-      },
-      {
-        "id": "holy-toikalokke-master-of-elements:earth-wall:0:2",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the duration by 30"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:earth-wall:0:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 3 hours"
       }
     ],
     "source": "Player's Handbook, p. 241",

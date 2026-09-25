@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-healing-rune",
     "tablet": "Rune de guérison",
     "description": "Le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure. L’objet sacré se met alors à luire et l’effet guérisseur prend place. Selon le niveau de la rune, le thuul peut diviser un seul usage entre plusieurs personnes pour soigner plusieurs blessures comme indiqué par la table ci-dessous. À partir du niveau 2, le thuul peut assigner chacun des d6 indiqués à différents patients. Par exemple, un thuul qui a reçu le niveau 5 de cette rune peut rendre 1d6 points de santé à cinq personnes différentes, ou soigner deux personnes de 2d6 et 3d6 points de santé respectivement, et ainsi de suite, plutôt que d’utiliser les 5d6 sur une seule personne (ce qui demeure possible).",
-    "summary": "Le thuul peut se soigner lui-même ou une autre personne de son choix en plaçant l’objet runique sur la blessure.",
+    "summary": "Soigne les blessures des créatures au contact de la rune active.",
     "swedishName": "",
     "duration": "2 tours de jeu",
     "range": "contact",

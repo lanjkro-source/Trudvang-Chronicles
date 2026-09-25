@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-beast",
     "tablet": "Pouvoir de la bête",
     "description": "En poussant un hurlement, le conjurateur peut appeler un loup situé à proximité. L’arpenteur des brumes doit se trouver à l’extérieur, et il faut 1d10 tours de jeu au loup pour apparaître. Le loup se montre amical envers le conjurateur, neutre envers ses alliés et hostile envers ses ennemis. Dans sa forme de base, ce pouvoir appelle un loup standard, mais le conjurateur peut convoquer un loup de taille supérieure en y consacrant des niveaux de puissance supplémentaires. Une fois la durée du pouvoir expirée, le loup quitte son maître temporaire et retourne là où il se trouvait au moment de la convocation. Si le loup subit des dégâts qui dépassent deux tiers de son total de points de santé alors qu’il se trouve au service de l’arpenteur des brumes, il tente de s’enfuir et ne revient pas avant l’expiration du pouvoir.",
-    "summary": "En poussant un hurlement, le conju rateur peut appeler un loup situé à proximité.",
+    "summary": "Invoque un loup pour servir et combattre aux côtés du conjurateur.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "personnelle",

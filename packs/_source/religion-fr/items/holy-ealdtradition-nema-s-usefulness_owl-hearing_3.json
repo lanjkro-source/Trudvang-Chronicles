@@ -1,5 +1,5 @@
 {
-  "name": "Piste des brumes",
+  "name": "Ouïe du hibou",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,30 +12,36 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
-    "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est doublée, et une journée de voyage leur permettra de couvrir une distance égale à deux jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
-    "summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
+    "description": "Le bruide perçoit tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du hibou, aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 12. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+    "summary": "Transforme l’ouïe du bruide pour lui permettre d’entendre très finement.",
     "swedishName": "",
-    "duration": "1 jour",
-    "range": "10 mètres",
-    "weavingTime": "1 minute",
+    "duration": "1 minute",
+    "range": "50 mètres",
+    "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null,
-        "effect": "Augmente la durée du pouvoir de : 1 jour"
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
       },
       {
         "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+        "effect": "Augmente la portée du pouvoir de : 20 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la valeur de situation de : +1"
       }
     ],
-    "source": "Livre des règles, p. 245",
+    "source": "Livre des règles, p. 244",
     "level": 2,
     "cost": 4,
     "modifier": -4

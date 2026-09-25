@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé). En combat, l’enchanteur doit réussir une attaque pour pouvoir toucher un ennemi. Les dégâts causés par la Main brûlante viennent s’ajouter aux dégâts normaux infligés par le coup de poing en cas d’attaque réussie (1d5). Pour éviter l’attaque de l’enchanteur, la cible utilise les mêmes règles que pour un combat classique, ce qui signifie qu’elle peut tenter de parer ou d’esquiver le coup. En plus des dégâts directs qu’elle provoque, la Main brûlante a une petite chance d’embraser les objets inflammables qu’elle touche, à la discrétion du maître de jeu. Les armures absorbent les dégâts selon les règles habituelles, mais elles peuvent prendre feu si elles se composent de matériaux inflammables. L’enchanteur ne peut utiliser aucune arme au cours du tour où il évoque ce sort.",
-    "summary": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé).",
+    "summary": "Projette une flamme depuis la main pour infliger des dégâts de feu à une cible.",
     "swedishName": "Loghönd",
     "duration": "4 tours de jeu",
     "range": "personnelle",

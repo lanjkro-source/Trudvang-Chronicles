@@ -15,9 +15,9 @@
     "description": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature.",
     "summary": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground.",
     "swedishName": "Sporskönja",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "vitner-power-of-vision:tracking:0:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-power-of-vision:tracking:0:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 12 hours"
+      },
+      {
+        "id": "vitner-power-of-vision:tracking:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       }
     ],
     "source": "Player's Handbook, p. 120",

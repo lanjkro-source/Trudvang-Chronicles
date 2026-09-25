@@ -1,5 +1,5 @@
 {
-  "name": "Modification d'apparence",
+  "name": "Modification d’apparence",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "L’énergie de ce sort crée un déséquilibre dans le corps de la personne enchantée, ce qui a pour conséquence de modifier immédiatement son apparence physique. Ces changements peuvent affecter les cheveux, la couleur de la peau et des yeux, les traits du visage ainsi que la voix. C’est l’enchanteur qui décide de la nature précise des changements et de l’apparence finale du sujet. Cela dit, ces modifications sont purement cosmétiques et n’affectent en rien les aptitudes physiques ou les traits du bénéficiaire en dehors de son apparence. Une cible qui choisit de résister à ces modifications peut le faire en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution). Toutefois, la victime doit être consciente du sort pour pouvoir y résister. Si l’enchanteur tisse ce sort sur une personne endormie ou qui n’a pas conscience de ce qui se passe, la victime ne réalise pas les changements qui l’affectent. L’enchanteur peut à tout moment annuler la modification d’apparence. Une fois les changements annulés, il faut cinq tours de jeu à la personne enchantée pour recouvrer son apparence d’origine.",
-    "summary": "L’énergie de ce sort crée un déséqui libre dans le corps de la personne en chantée, ce qui a pour conséquence de modifier immédiatement son apparence physique.",
+    "summary": "Modifie l’apparence physique d’une créature pour la déguiser ou la déformer.",
     "swedishName": "Utlytbreijta",
     "duration": "10 minutes",
     "range": "contact",

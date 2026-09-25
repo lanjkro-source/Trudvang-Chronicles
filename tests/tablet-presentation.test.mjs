@@ -33,32 +33,41 @@ test("all 394 powers ship descriptions and French-authoritative power levels in 
     for (const language of ["en", "fr"]) {
       const data = powerItemData(power, tablet, resolvers(language)).system;
       assert.ok(data.description && data.summary, `${power.id} ${language} description and summary`);
-      assert.equal(data.powerLevels.length, POWER_DETAILS_BY_ID[power.id][language].length);
+      assert.equal(data.powerLevels.length, POWER_DETAILS_BY_ID[power.id].powerLevels.length);
       assert.ok(data.powerLevels.every(level => level.effect && Number.isInteger(level.cost)), `${power.id} ${language} options`);
       assert.ok(data.spellType && typeof data.duration === "string" && typeof data.range === "string", `${power.id} ${language} fields`);
     }
     const details = POWER_DETAILS_BY_ID[power.id];
-    assert.deepEqual(details.en, details.fr, `${power.id} improvements must not change rules with the display language`);
     for (const language of ["en", "fr"]) {
       const levels = lookup(language === "fr" ? french : english, `TRUDVANG.Content.Power.${power.id}.PowerLevels`);
-      assert.deepEqual(Object.keys(levels), details.fr.map((_, index) => String(index)), `${power.id} ${language} option keys`);
+      assert.deepEqual(Object.keys(levels), details.powerLevels.map((_, index) => String(index)), `${power.id} ${language} option keys`);
     }
   }
 });
 
 test("reordered and missing English improvements use the French order and costs", () => {
   const called = POWER_DETAILS_BY_ID["vitner-animal-vitner:call-on-animals:2"];
-  assert.deepEqual(called.en.map(level => level.cost), [1, 6, 4, 1]);
+  assert.deepEqual(called.powerLevels.map(level => level.cost), [1, 6, 4, 1]);
   const vision = POWER_DETAILS_BY_ID["holy-gerbanis-power-of-enken:night-vision:0"];
-  assert.deepEqual(vision.en.map(level => level.cost), [1, 6, 3]);
+  assert.deepEqual(vision.powerLevels.map(level => level.cost), [1, 6, 3]);
   assert.equal(english.TRUDVANG.Content.Power["holy-gerbanis-power-of-enken:night-vision:0"].PowerLevels["1"],
-    "Augmente la durée du pouvoir de : 1 jour");
+    "Increase the power's duration by 1 day");
   assert.equal(english.TRUDVANG.Content.Power["vitner-animal-vitner:messenger:0"].PowerLevels["2"],
-    "Augmente la distance que le message peut parcourir de : 10 kilomètres");
+    "Increase the distance the message can travel by 10 kilometers");
   assert.equal(french.TRUDVANG.Content.Power["holy-gerbanis-wisdom-of-windinna:steel-mind:3"].Name,
-    "Esprit d'acier");
+    "Esprit d’acier");
   assert.equal(french.TRUDVANG.Content.Power["holy-gerbanis-wisdom-of-windinna:joy-of-creating:2"].Name,
     "Joie de la création");
+});
+
+test("repaired English entries describe their own power, not a neighboring power or contents page", () => {
+  const entries = english.TRUDVANG.Content.Power;
+  assert.match(entries["vitner-wind-craft:storm:8"].Description, /violent storm/i);
+  assert.doesNotMatch(entries["vitner-wind-craft:storm:8"].Description, /sacred aura/i);
+  assert.match(entries["vitner-perceiving:orientation:3"].Description, /cardinal directions/i);
+  assert.match(entries["vitner-power-of-thought:fear:3"].Description, /Fear Points/i);
+  assert.match(entries["holy-ealdtradition-halawen-s-offering:bolgemek:4"].Description, /sacred spear/i);
+  assert.doesNotMatch(entries["holy-ealdtradition-halawen-s-offering:bolgemek:4"].Description, /3: Witch Wall/i);
 });
 
 test("Thuul rune entries do not masquerade as ordinary divine spending", () => {

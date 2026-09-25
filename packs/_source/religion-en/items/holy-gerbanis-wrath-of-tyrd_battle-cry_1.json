@@ -15,9 +15,9 @@
     "description": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale. The battle cry grants the target within range +1 on all combat actions for the duration.",
     "summary": "The Stormkelt screams out a summons, and Tyrd answers with a booming thunderclap that spurs the dimwalker or one of their allies to greater battle morale.",
     "swedishName": "",
-    "duration": "2 action round(s)",
+    "duration": "2 action rounds",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:0",
         "cost": 1,
         "maxCount": 3,
-        "effect": "Increase the number of people who are affected by the ability by +1 (maximum 3)"
+        "effect": "Increase the number of people affected by this power by 1"
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:battle-cry:1:1",

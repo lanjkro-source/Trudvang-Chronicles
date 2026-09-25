@@ -15,9 +15,9 @@
     "description": "The vitner that the spell brings forth is powerful enough to turn a living creature into the form of an entirely different one. The spell transforms the enchanted creature, whose weight must be less than or equal to 60 kg, into any other desired creature’s shape. The new size cannot exceed that of the original creature, nor can it be more than five times smaller than the original creature’s size. (See Creature Size in the Bestiary for more information about sizes.) The enchanted takes on the new creature’s shape as well as its physical characteristics, such as size, appearance, Strength, Agility, and senses, along with any relevant modifiers, such as for damage and natural attacks (non-magical). The enchanted keeps its original Intelligence, Constitution, and Psyche. Because the change is only physical, the enchanted does not adopt the new creature’s magical abilities or powers, nor does it adopt the creature’s Body Points, which are unchanged by the initial transformation or by the eventual transformation back after the spell ends. For example, a person who turns into a Skoll has all its physical character traits (not Body Points), but not its Intelligence, Constitution, or Psyche. If the person turns into a fjoll troll, they will look like one but not be able to use troll magic. The enchanted can speak only if the new form has the ability to speak. A character who has been transformed voluntarily can turn back to their natural shape when they wish, but a creature enchanted against its will cannot. Once the spell’s duration expires, it takes 5 action rounds for the enchanted to fully resume their original form. The victim can resist the transformation on a successful Situation roll with a Situation value of 4 (Constitution modifiers apply). Exceptionally large creatures and monsters can also be affected by the spell, but for every increase in size equivalent to that of a human, the Situation value increases by +2 to resist the spell. So a creature that is three times the size of a normal human would receive a bonus of +4, which results in a total Situation value of 8 to resist the spell.",
     "summary": "The vitner that the spell brings forth is powerful enough to turn a living creature into the form of an entirely different one.",
     "swedishName": "Skopjatenbreijtja",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "contact",
-    "weavingTime": "10 action round(s)",
+    "weavingTime": "10 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,63 +30,63 @@
       },
       {
         "id": "vitner-body-vitner:change-creature:11:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the creature’s size by a factor of 1.5 (allows the enchanted to assume the form of a larger creature)"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
       },
       {
-        "id": "vitner-body-vitner:change-creature:11:4",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the creature’s size by a factor of 2 (allows the enchanted to assume the form of a larger creature)"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:5",
-        "cost": 8,
-        "maxCount": null,
-        "effect": "Increase the creature’s size by a factor of 4 (allows the enchanted to assume the form of a larger creature)"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:6",
+        "id": "vitner-body-vitner:change-creature:11:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
       },
       {
-        "id": "vitner-body-vitner:change-creature:11:7",
-        "cost": 14,
-        "maxCount": null,
-        "effect": "Increase the creature’s size by a factor of 7 (allows the enchanted to assume the form of a larger creature)"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:8",
-        "cost": 20,
-        "maxCount": null,
-        "effect": "Increase the creature’s size by a factor of 10 (allows the enchanted to assume the form of a larger creature)"
-      },
-      {
-        "id": "vitner-body-vitner:change-creature:11:9",
+        "id": "vitner-body-vitner:change-creature:11:3",
         "cost": 20,
         "maxCount": null,
         "effect": "Increase the duration by 1 week"
       },
       {
+        "id": "vitner-body-vitner:change-creature:11:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Multiply the creature's size by 1.5 (allowing the beneficiary to take the form of a larger creature)"
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:6",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the creature’s size by a factor of 2 (allows the enchanted to assume the form of a larger creature)"
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:7",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the creature’s size by a factor of 4 (allows the enchanted to assume the form of a larger creature)"
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:8",
+        "cost": 14,
+        "maxCount": null,
+        "effect": "Increase the creature’s size by a factor of 7 (allows the enchanted to assume the form of a larger creature)"
+      },
+      {
+        "id": "vitner-body-vitner:change-creature:11:9",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Increase the creature’s size by a factor of 10 (allows the enchanted to assume the form of a larger creature)"
+      },
+      {
         "id": "vitner-body-vitner:change-creature:11:10",
         "cost": 30,
         "maxCount": null,
-        "effect": "Increase the creature’s size by a"
+        "effect": "Increase the creature’s size by a factor of 1.5 (allows the enchanted to assume the form of a larger creature)"
       }
     ],
     "source": "Player's Handbook, p. 96",

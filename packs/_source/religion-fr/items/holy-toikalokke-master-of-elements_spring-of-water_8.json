@@ -1,5 +1,5 @@
 {
-  "name": "Source d'eau",
+  "name": "Source d’eau",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir). La source coule à un débit de 1m3 par tranche de 10 minutes, mais elle s’assèche dès que la durée du pouvoir expire ou que l’elfe choisit d’y mettre fin.",
-    "summary": "L’ihanna peut faire sourdre du sol une source d’eau fraîche et pure (le maître de jeu peut décider que les conditions sont trop extrêmes pour permettre le recours à ce pouvoir).",
+    "summary": "Fait sourdre une source d’eau fraîche et pure.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "10 mètres",

@@ -15,9 +15,9 @@
     "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
     "summary": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters.",
     "swedishName": "Tröljörd",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "vitner-soil-craft:quagmire:3:1",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the depth by 10 cm"
+        "effect": "Increase the quagmire's depth by 10 centimeters"
       },
       {
         "id": "vitner-soil-craft:quagmire:3:2",

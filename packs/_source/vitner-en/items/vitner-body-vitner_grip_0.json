@@ -15,9 +15,9 @@
     "description": "This spell changes the vitner flowing through the enchanted character’s hands and feet so their skin becomes more coarse and adhesive. The enchanted has full control of this adhesion and can decide when to let go of things and when they should remain attached. The enchanted can maintain incredible grip with their hands and feet, even on vertical walls, ceilings, and craggy cliff faces. However, they must not have anything that covers their hands or feet, as it is the skin that becomes adhesive. Gravity still works and loose-fitting items can easily fall free if the enchanted is upside down on a ceiling. Any grip that is maintained in this way is locked in place and cannot be disturbed unless the enchanted person wishes it. Someone else can break the grip only by amputating the enchanted person’s hand or foot or convincing them to let go. ✦ The enchanted moves at half of their movement capacity when climbing on walls or ceilings. ✦ The spell gives +5 SV on the Agility skill when the enchanted tries to climb.",
     "summary": "This spell changes the vitner flowing through the enchanted character’s hands and feet so their skin becomes more coarse and adhesive.",
     "swedishName": "Festja",
-    "duration": "10 action round(s)",
+    "duration": "10 action rounds",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-body-vitner:grip:0:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-body-vitner:grip:0:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the bonus on the Agility skill by +1 when climbing"
-      },
-      {
-        "id": "vitner-body-vitner:grip:0:3",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-body-vitner:grip:0:4",
+        "id": "vitner-body-vitner:grip:0:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 10"
+      },
+      {
+        "id": "vitner-body-vitner:grip:0:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-body-vitner:grip:0:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the bonus on the Agility skill by +1 when climbing"
       }
     ],
     "source": "Player's Handbook, p. 96",

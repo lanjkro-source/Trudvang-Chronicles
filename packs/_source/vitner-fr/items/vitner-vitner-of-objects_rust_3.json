@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc. Du point de vue technique, l’effet de ce sort est de réduire d’un degré la qualité de l’objet visé (par exemple de normal à médiocre) jusqu’à expiration du sort. (Cf. la table Qualité au chapitre Équipement, page 121 pour de plus amples informations sur les niveaux de qualité). Ce sort n’a aucun effet sur les objets magiques. Il est possible de rendre l’effet permanent en ajoutant un niveau de puissance. Même dans ce cas, le sort Dissipation du vitner peut tout de même annuler le sort Rouille.",
-    "summary": "L’enchanteur touche un objet, qui se met immédiatement à rouiller s’il est en métal, à s’effriter s’il est en pierre, à pourrir et à s’effilocher s’il est en tissu, etc.",
+    "summary": "Corrode rapidement un objet métallique et réduit sa solidité.",
     "swedishName": "Röste efnating",
     "duration": "5 tours de jeu",
     "range": "contact",

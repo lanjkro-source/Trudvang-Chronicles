@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
     "description": "Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains. À l’expiration du pouvoir, cette lance part en fumée. Bolgomek est la mère de toutes les lances : c’est la lance lourde dont Adarik le Conquérant se servit pour protéger son peuple contre les Bults et le guider à travers Drakskogen, où il fonda la jeune nation d’Arje.<p>Bolgomek :</p><ul><li>Type : arme à deux mains</li><li>Dégâts : 1d10 (JO 7-10) + 6 ; valeur de protection : 20 ; valeur d’intégrité : 200 ; MI : -4 ; AA : 3</li><li>Confère au porteur un bonus de +4 à sa valeur de protection</li><li>Confère au porteur un bonus de +2 à toutes ses valeurs de compétence associées à l’utilisation de cette arme (attaques, parades, etc.)</li><li>Confère au porteur un bonus supplémentaire de +2 à sa valeur de compétence en Parade quand il se retrouve en infériorité numérique</li></ul>",
-    "summary": "F Dégâts : 1d10 (JO 7-10) + 6 ; valeur de protection : 20 ; valeur d’intégrité : 200 ; MI : -4 ; AA : 3 F Confère au porteur un bonus de +4 à sa valeur de protection F Confère au porteur un bonus de +2 à toutes ses valeurs de compétence as ",
+    "summary": "Invoque une lance sacrée puissante entre les mains du prêtre.",
     "swedishName": "",
     "duration": "10 minutes",
     "range": "personnelle",

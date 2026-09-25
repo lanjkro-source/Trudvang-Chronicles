@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,13 +26,13 @@
         "id": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the power range de : 5 meters"
+        "effect": "Increase the power's range by 5 meters"
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:the-breath-of-mogunda:5:1",
         "cost": 4,
         "maxCount": 4,
-        "effect": "Increase les damage d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+        "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 160",

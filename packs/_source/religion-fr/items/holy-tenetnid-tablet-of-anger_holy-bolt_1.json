@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
     "description": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque. Les armures ne protègent pas contre ce pouvoir, qui ne peut toutefois blesser que les créatures mortes-vivantes. Le prêtre projette l’énergie sous la forme d’un projectile brillant et prend pour cible une créature morte-vivante située à portée. L’éclair inflige 1d10 (JO 8-10) points de dégâts.",
-    "summary": "Quand le prêtre fait appel à la force de Gave, de l’énergie sacrée jaillit de sa main et transperce une créature morte-vivante située à portée, qui subit des dégâts sans la moindre chance de pouvoir éviter l’attaque.",
+    "summary": "Projette un éclair sacré qui frappe les morts-vivants et leur inflige des dégâts.",
     "swedishName": "",
     "duration": "",
     "range": "5 mètres",

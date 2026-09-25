@@ -15,9 +15,9 @@
     "description": "The spell gives the enchanted gills on their neck, which allow them to breathe underwater just as easily as if they were in air.",
     "summary": "The spell gives the enchanted gills on their neck, which allow them to breathe underwater just as easily as if they were in air.",
     "swedishName": "Andir",
-    "duration": "3 minute(s)",
+    "duration": "3 minutes",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-water-craft:breathe:2:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-water-craft:breathe:2:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Affect an extra being (with the spell’s basic version)"
-      },
-      {
-        "id": "vitner-water-craft:breathe:2:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 10 minutes"
       },
       {
-        "id": "vitner-water-craft:breathe:2:4",
+        "id": "vitner-water-craft:breathe:2:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-water-craft:breathe:2:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect another being (which receives the spell's basic effect)"
       }
     ],
     "source": "Player's Handbook, p. 135",

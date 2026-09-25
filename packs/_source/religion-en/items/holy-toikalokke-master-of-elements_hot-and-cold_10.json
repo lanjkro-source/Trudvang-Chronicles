@@ -15,8 +15,8 @@
     "description": "The Ihana can control the temperature. The elf can increase or decrease the temperature in an area 2 m3 around them by up to 10°C for six hours. This ability does not work on temperatures that are magically or divinely affected.",
     "summary": "The Ihana can control the temperature.",
     "swedishName": "",
-    "duration": "3 hour(s)",
-    "range": "personalle",
+    "duration": "3 hours",
+    "range": "personal",
     "weavingTime": "",
     "dailyActivation": "",
     "spellType": "lasting",
@@ -26,7 +26,7 @@
         "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase/decrease temperature by another 3 degrees (maximum ±50 degrees)"
+        "effect": "Increase or decrease the temperature by 3°C (minimum -50°C, maximum 50°C)"
       },
       {
         "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:1",
@@ -36,15 +36,15 @@
       },
       {
         "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the affected area by 1 m3"
-      },
-      {
-        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:3",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 3 hours"
+      },
+      {
+        "id": "holy-toikalokke-master-of-elements:hot-and-cold:10:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the radius of the affected area by 1 m³"
       }
     ],
     "source": "Player's Handbook, p. 241",

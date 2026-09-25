@@ -17,7 +17,7 @@
     "swedishName": "Muspelhaf",
     "duration": "",
     "range": "20 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -36,15 +36,15 @@
       },
       {
         "id": "vitner-flame-craft:sea-of-fire:7:2",
-        "cost": 1,
+        "cost": 5,
         "maxCount": 4,
-        "effect": "meter"
+        "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       },
       {
         "id": "vitner-flame-craft:sea-of-fire:7:3",
-        "cost": 5,
+        "cost": 10,
         "maxCount": null,
-        "effect": "Increase the damage by one step:"
+        "effect": "Increase the spell's duration by 1 action round, so that the sea of fire keeps burning during the next round"
       }
     ],
     "source": "Player's Handbook, p. 109",

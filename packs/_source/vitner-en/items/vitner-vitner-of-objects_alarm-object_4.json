@@ -15,9 +15,9 @@
     "description": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on.",
     "summary": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed.",
     "swedishName": "Vakefnating",
-    "duration": "5 hour(s)",
+    "duration": "5 hours",
     "range": "10 meters",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the range by 10 meters"
-      },
-      {
-        "id": "vitner-vitner-of-objects:alarm-object:4:2",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Create another alarm on the object with another condition"
-      },
-      {
-        "id": "vitner-vitner-of-objects:alarm-object:4:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 week"
+      },
+      {
+        "id": "vitner-vitner-of-objects:alarm-object:4:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:4",
@@ -54,15 +54,15 @@
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:5",
-        "cost": 12,
+        "cost": 16,
         "maxCount": null,
-        "effect": "Increase the duration by 1 week"
+        "effect": "Increase the spell's range by 1 kilometer"
       },
       {
         "id": "vitner-vitner-of-objects:alarm-object:4:6",
-        "cost": 16,
+        "cost": 4,
         "maxCount": null,
-        "effect": "Increase the range by 1,000 meters"
+        "effect": "Create another alarm on the object with another condition"
       }
     ],
     "source": "Player's Handbook, p. 132",

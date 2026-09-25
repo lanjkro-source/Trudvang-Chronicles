@@ -1,5 +1,5 @@
 {
-  "name": "Purification de l'eau",
+  "name": "Purification de l’eau",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort filtre jusqu’à 10 litres d’eau et en retire toutes les substances dangereuses ou toxiques. Ce sort peut également servir à extraire l’eau de la boue : après avoir rempli un réceptacle de boue, l’enchanteur peut tisser ce sort et extraire la terre et les sédiments du réceptacle tout en conservant l’eau pure.",
-    "summary": "Ce sort filtre jusqu’à 10 litres d’eau et en retire toutes les substances dange reuses ou toxiques.",
+    "summary": "Purifie de l’eau en retirant poisons, impuretés et substances dangereuses.",
     "swedishName": "Vannreina",
     "duration": "",
     "range": "contact",

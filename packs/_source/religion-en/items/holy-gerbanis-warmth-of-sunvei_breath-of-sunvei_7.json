@@ -15,9 +15,9 @@
     "description": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms. The healing rate of the person receiving the healing touch increases by +1 Body Point per day, as long as the person continues to rest. If the injured character does anything other than rest, the ability’s power will be broken and healing will return to its normal rate. The dimwalker can also try to neutralize poisons or dispel curses placed on the injured character by granting them +10 on Situation rolls to neutralize or dispel.",
     "summary": "The Stormkelt places their hands on the wounded body parts of an injured person, and a faint, warming light begins to spread from their palms.",
     "swedishName": "",
-    "duration": "3 jours",
+    "duration": "3 days",
     "range": "contact",
-    "weavingTime": "6 action round(s)",
+    "weavingTime": "6 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the modifier for neutralize or dispel by +1"
+        "effect": "Increase the modifier to neutralize a poison or dispel a curse by +1"
       },
       {
         "id": "holy-gerbanis-warmth-of-sunvei:breath-of-sunvei:7:2",
         "cost": 3,
         "maxCount": 3,
-        "effect": "Increase the rate of healing by +1"
+        "effect": "Increase healing rate by +3 Body Points per day"
       }
     ],
     "source": "Player's Handbook, p. 166",

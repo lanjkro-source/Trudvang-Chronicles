@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puissance, d’autorité et de gloire. Quiconque le regarde doit immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la victime prend l’enchanteur pour quelqu’un d’extrêmement puissant et impressionnant, et se soumet à son autorité (Une personne connue pour sa loyauté envers les dirigeants obéira plus facilement que quelqu’un qui défie régulièrement l’autorité). Si la victime réussit son test de situation, elle voit à travers l’aura et perçoit l’enchanteur tel qu’il est en réalité. Une fois la durée du sort expirée, tous ceux qui se sont fait ensorceler perçoivent eux aussi l’enchanteur sous ses véritables traits. Si l’enchanteur demande quelque chose sortant de l’ordinaire, la victime a l’occasion de faire un nouveau test de situation afin de voir à travers l’aura. Une personne victime de l’Aura de puissance n’obéit pas pour autant aveuglément aux ordres : elle accorde simplement beaucoup d’importance aux paroles de l’enchanteur. Une cible qui désobéit ou s’oppose à l’enchanteur ressentira un certain malaise, voire une sensation de danger.",
-    "summary": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puis sance, d’autorité et de gloire.",
+    "summary": "Donne à l’enchanteur une présence surnaturelle qui impressionne et intimide les observateurs.",
     "swedishName": "Kraftlahinja",
     "duration": "5 minutes",
     "range": "personnelle",

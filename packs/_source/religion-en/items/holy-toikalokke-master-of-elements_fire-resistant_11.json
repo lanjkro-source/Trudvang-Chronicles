@@ -15,9 +15,9 @@
     "description": "The Ihana takes no damage from natural fire, and half damage from magical fire and dragon fire. However, the equipment and clothes worn by the elf do not share the same resistance.",
     "summary": "Protects the recipient from heat, flame, and supernatural fire.",
     "swedishName": "",
-    "duration": "10 action round(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "10 action rounds",
+    "range": "personal",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,25 +26,25 @@
         "id": "holy-toikalokke-master-of-elements:fire-resistant:11:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 minute(s)"
+        "effect": "Increase the power's duration by 1 minute"
       },
       {
         "id": "holy-toikalokke-master-of-elements:fire-resistant:11:1",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the power duration de : 10 minute(s)"
+        "effect": "Increase the power's duration by 10 minutes"
       },
       {
         "id": "holy-toikalokke-master-of-elements:fire-resistant:11:2",
         "cost": 6,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 hour(s)"
+        "effect": "Increase the power's duration by 1 hour"
       },
       {
         "id": "holy-toikalokke-master-of-elements:fire-resistant:11:3",
         "cost": 8,
         "maxCount": null,
-        "effect": "Chapitre"
+        "effect": "Chapter"
       }
     ],
     "source": "Player's Handbook, p. 241",

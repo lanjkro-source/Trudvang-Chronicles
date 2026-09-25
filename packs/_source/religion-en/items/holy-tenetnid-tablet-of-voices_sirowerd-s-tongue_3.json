@@ -15,9 +15,9 @@
     "description": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill. The ability does not allow the priest to read or write the language, but only communicate vocally. The priest must specify which language they wish to understand before the ability is p erformed.",
     "summary": "The priest is gifted with a temporary capacity to speak and understand a foreign language, with +2 to their Skill Value in the Knowledge skill.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "1 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Increase the bonus to the Knowledge skill (when understanding/speaking the language) by +1 (maximum +5)"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sirowerd-s-tongue:3:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 5,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the Knowledge skill bonus for understanding and speaking this language by +1"
       }
     ],
     "source": "Player's Handbook, p. 206",

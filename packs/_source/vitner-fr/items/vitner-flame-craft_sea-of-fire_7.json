@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "L’enchanteur désigne une zone située à portée, qui est soudain envahie par les flammes. Le feu submerge une zone circulaire de 2 mètres de rayon, et tous ceux qui s’y trouvent subissent 1d10 points de dégâts, contre lesquels les armures normales n’offrent aucune protection, à l’inverse des armures magiques. La mer de flammes disparaît aussi vite qu’elle est apparue si la durée du sort n’est pas prolongée. De ce fait, les objets inflammables ne risquent de s’embraser que pendant l’éruption initiale. Toutes les victimes qui se tiennent à l’intérieur de la zone ou à sa périphérie subissent des dégâts. Si une victime potentielle possède la spécialité Esquive, elle peut tenter de bondir hors de portée et éviter ainsi les dégâts, pour peu qu’elle n’ait pas encore agi au cours de ce tour de jeu. Cette tentative subit un malus de -1 à la valeur de compétence pour chaque point de différence entre l’initiative du personnage et le rang d’initiative actuel. Toute personne entreprenant une action à l’intérieur de la mer de flammes ou tentant d’attaquer une personne qui s’y trouve subit un malus de -5 à la VC en raison de la difficulté de voir à travers la fournaise.",
-    "summary": "L’enchanteur désigne une zone située à portée, qui est soudain envahie par les flammes.",
+    "summary": "Embrase une zone et rend les actions à l’intérieur dangereuses et difficiles.",
     "swedishName": "Muspelhaf",
     "duration": "",
     "range": "20 mètres",

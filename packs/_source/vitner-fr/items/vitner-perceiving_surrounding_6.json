@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres.",
-    "summary": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats.",
+    "summary": "Projette la conscience de l’enchanteur pour lui montrer précisément les environs immédiats.",
     "swedishName": "Naerskonja",
     "duration": "3 minutes",
     "range": "10 mètres",

@@ -15,9 +15,9 @@
     "description": "The Petrify spell’s energy is so powerful that it can turn a victim’s body to stone. The victim’s clothes and equipment are also turned to stone; however, magic items are spared (though they may be caught in a stone grip or stone pack). The victim can attempt to resist the transformation by making a s uccessful Situation roll with a Situation value determined<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>by their size, according to the table below (Psyche modifiers apply). SIZE AND SITUATION VALUES Size Situation Value &lt;1/3 4 ≥1/3 – 1/2 6 ≥1/2 – 1.5t 8 ≥1.5 – 3t 10 ≥3 – 5t 12 ≥5 – 10t 15 ≥10t 19 If the victim fails the Situation roll, they are turned into solid stone, along with any equipment that is held, worn, or carried. The stone is extremely hard and almost indestructible.<br>The petrified victim has a Protection Value of 10 and a Break Value of 100. Once the Break Value is depleted, the victim takes damage as normal, and if they take double their Body Points in damage, the stone shatters and they die. A victim who is turned to stone is in<br>a complete daze and unable to perceive their surroundings or the passage of time. Therefore, they are no longer able to affect anything that happens around them. Once the spell’s duration expires, the victim returns to their original form. It is possible to liberate a p etrified creature using the spells Remove Petrification<br>or Dispel Vitner. A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The<br>statue weighs around ten times the victim’s original weight. The enchanter can also use the Remove Petrification version of this spell. By turning the vitner used to petrify a target, the enchanter can restore a stone creature to its original form. Using the spell in this manner also restores any attached and unbroken equipment that was p etrified. To successfully restore a petrified creature, the target must first succeed on a Situation roll with a Situation value of 12 (C onstitution<table><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>modifiers apply), modified depending on how long they have been a statue, according to the table below. With a successful restoration, the victim awakens in the space of 1 action round. They have no realization of what happened, believing it is the moment immediately after they first were petrified, and they have no memory of the events that occurred or the time that elapsed. For the first three days, the victim feels very stiff, which halves their movement capacity and Skill Values for any Skill rolls or Situation rolls involving Dexterity. For the next three days following that, movement capacity and Skill Values increase to twoPETRIFY/REMOVE PETRIFICATION MODIFIERS Time Modifier &lt; 1 day +8 1-3 days +4 4-7 days +2 2 weeks ±0 3 weeks -2 4 weeks -4 2 months -6 3 months -10 6 months -14 1 year -18 10 years -25 100 years -35 &gt; 100 years -50 thirds their normal capacity. After six days, the victim completely recovers from the ordeal. The game master can alter this timeline depending on how long the victim was petrified.",
     "summary": "Turns a creature to stone or restores a petrified creature to flesh.",
     "swedishName": "Braskeltrölja/braskelbrotja",
-    "duration": "1d6 + 2 jours",
+    "duration": "1d6 + 2 days",
     "range": "10 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,33 +30,33 @@
       },
       {
         "id": "vitner-soil-craft:petrify-remove-petrification:8:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase the victim’s chance to succeed on the Situation roll during restoration by moving up one step on the table (e.g. from -35 to -25, or -4 to -2)"
-      },
-      {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase the duration by 1 month"
       },
       {
-        "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
         "cost": 20,
         "maxCount": null,
         "effect": "Increase the duration by 1 year"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the victim’s chance to succeed on the Situation roll during restoration by moving up one step on the table (e.g. from -35 to -25, or -4 to -2)"
       }
     ],
     "source": "Player's Handbook, p. 123",

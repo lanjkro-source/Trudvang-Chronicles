@@ -15,9 +15,9 @@
     "description": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects. The target is immediately able to see through all illusions, camouflage, and magical images. The spell also grants the target the ability to see any objects and beings who might be invisible (whether by their very nature or through an ability). Objects or creatures that are invisible or camouflaged through spells appear to the target as if they are not enchanted at all. The effective range of this true sight is 25 meters in the basic version. The enchanter can also use the spell to determine if an object or creature has been enchanted and had its vitner manipulated in other ways beyond that of illusions. To achieve this, a successful Situation roll is required with a Situation value based on the spell woven over the object or creature (see the table below). The roll may be modified according to the game master’s wishes, and should always be rolled in secret by the GM, if the player is asked to roll, they will realize that there is something to be<table><thead><tr><th colspan=\"1\">TRUE SIGHT SITUATION VALUES</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>found in the object. However, the enchanter has no way of identifying what spell the creature or object has been enchanted with without also using the spell Read Vitner. TRUE SIGHT SITUATION VALUES Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
     "summary": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects.",
     "swedishName": "Sannskönja",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:1",
-        "cost": 1,
+        "cost": 3,
         "maxCount": null,
-        "effect": "Increase the chance to see if a spell has been put on a creature or object by +1"
+        "effect": "Increase the duration by 10 minutes"
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:2",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:3",
@@ -48,27 +48,27 @@
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:4",
-        "cost": 3,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Affect an extra being (with the spell’s basic version)"
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       },
       {
         "id": "vitner-power-of-vision:true-sight:7:5",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the duration by 10 minutes"
-      },
-      {
-        "id": "vitner-power-of-vision:true-sight:7:6",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase the effective range by 25 meters"
       },
       {
-        "id": "vitner-power-of-vision:true-sight:7:7",
-        "cost": 6,
+        "id": "vitner-power-of-vision:true-sight:7:6",
+        "cost": 1,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the chance to see if a spell has been put on a creature or object by +1"
+      },
+      {
+        "id": "vitner-power-of-vision:true-sight:7:7",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect another living being (which receives the spell's basic effect)"
       }
     ],
     "source": "Player's Handbook, p. 120",

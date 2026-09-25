@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corporelle interne. La victime a l’impression que son sang se met à bouillir, ce qui lui fait perdre à la fois son énergie et sa vitalité. Cette fièvre dure une heure et s’avère incurable, et tant qu’elle dure, elle inflige à la victime un malus de -1d3 à la VC de toutes ses actions. De plus, la victime doit effectuer un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution), faute de quoi la fièvre brûlante lui inflige également 1d10 points de dégâts.",
-    "summary": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corpo relle interne.",
+    "summary": "Inflige une fièvre surnaturelle qui affaiblit les actions de la victime.",
     "swedishName": "Muspelblot",
     "duration": "1 heure",
     "range": "10 mètres",

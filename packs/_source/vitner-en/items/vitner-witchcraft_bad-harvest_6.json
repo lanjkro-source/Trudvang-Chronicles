@@ -17,7 +17,7 @@
     "swedishName": "Nidskord",
     "duration": "",
     "range": "100 meters",
-    "weavingTime": "4 hour(s)",
+    "weavingTime": "4 hours",
     "dailyActivation": "",
     "spellType": "permanent",
     "isRune": false,
@@ -30,33 +30,33 @@
       },
       {
         "id": "vitner-witchcraft:bad-harvest:6:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 100 meters"
-      },
-      {
-        "id": "vitner-witchcraft:bad-harvest:6:2",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
-      },
-      {
-        "id": "vitner-witchcraft:bad-harvest:6:3",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the radius by 100 meters"
       },
       {
-        "id": "vitner-witchcraft:bad-harvest:6:4",
-        "cost": 6,
-        "maxCount": null,
-        "effect": "Increase the range by 1,000 meters"
-      },
-      {
-        "id": "vitner-witchcraft:bad-harvest:6:5",
+        "id": "vitner-witchcraft:bad-harvest:6:2",
         "cost": 20,
         "maxCount": null,
         "effect": "Increase the radius by 500 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the spell's range by 1 kilometer"
+      },
+      {
+        "id": "vitner-witchcraft:bad-harvest:6:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
       }
     ],
     "source": "Player's Handbook, p. 143",

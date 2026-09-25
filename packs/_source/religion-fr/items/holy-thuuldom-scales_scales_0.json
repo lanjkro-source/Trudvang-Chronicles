@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-scales",
     "tablet": "Écailles",
     "description": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul. En moins d’un tour de jeu, l’ensemble du corps du thuul se couvre d’écailles protectrices, qui lui confèrent un bonus de +1 à la valeur de protection par niveau de la rune, et ce jusqu’à expiration du pouvoir. Cette armure compte comme une protection naturelle et protège également contre les armes magiques et le vitner.",
-    "summary": "Le pouvoir de la rune s’étend comme une peau de serpent métallique sur le corps du thuul.",
+    "summary": "Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire.",
     "swedishName": "",
     "duration": "3 tours de jeu/niveau",
     "range": "personnelle",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": -4
   },
   "_key": "!items!Wero4z4z5A6B7C8D",
   "_id": "Wero4z4z5A6B7C8D",

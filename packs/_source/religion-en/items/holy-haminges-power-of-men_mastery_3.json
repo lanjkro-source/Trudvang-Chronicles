@@ -15,9 +15,9 @@
     "description": "The spirit conjurer can add +3 to the Skill Value of any single Skill roll attempted within the ability’s duration.",
     "summary": "Temporarily grants exceptional mastery of a chosen mortal craft or skill.",
     "swedishName": "",
-    "duration": "2 minute(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "2 minutes",
+    "range": "personal",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "holy-haminges-power-of-men:mastery:3:1",
-        "cost": 2,
+        "cost": 6,
         "maxCount": null,
-        "effect": "Increase the bonus to the SV by +1 (maximum +6)"
+        "effect": "Increase the power's duration by 1 day"
       },
       {
         "id": "holy-haminges-power-of-men:mastery:3:2",
-        "cost": 6,
+        "cost": 2,
         "maxCount": 3,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the Combat Value bonus by +1"
       }
     ],
     "source": "Player's Handbook, p. 216",

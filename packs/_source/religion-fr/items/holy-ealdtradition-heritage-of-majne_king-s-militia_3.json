@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
     "description": "Le bruide invoque un esprit guerrier venant de la grande milice du roi. Ce milicien est un guerrier simple qui porte une armure en cuir et manie une épée courte et un petit bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide serait en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de deux miliciens en même temps.<hr>Milicien : points de santé 20, valeur de protection 2, points de combat 10, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+4 points de combat)",
-    "summary": "Le bruide invoque un esprit guerrier venant de la grande milice du roi.",
+    "summary": "Invoque un esprit guerrier de la milice royale pour aider au combat.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

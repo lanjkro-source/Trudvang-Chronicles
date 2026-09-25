@@ -15,9 +15,9 @@
     "description": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains. The mage must have access to a reasonably complete skeleton that is not missing any significant parts; small things such as fingers, a few ribs, or even hands are not necessary. The mage who creates the undead controls all of its activities. Orders can be given only when the undead is within the range of the spell. If it is outside of that range, or not being directly commanded, it will carry out its most recent order. Once an order is given, the undead will continue to pursue that end until it is ordered to do something new. The undead has 1d10 (OR 10) +5 Body Points and 1d10 (OR 10) +20 skill points to distribute on eventual skills and disciplines (or specialties). The undead receives the following exceptional character traits: Dexterity -4 and Intelligence -4. Beyond the skills purchased with skill points mentioned above, the undead also gains the ability to sense living beings in its immediate surroundings. By succeeding on a Situation roll against a Situation value of 8, the undead can notice living creatures within 10 meters, regardless of whether they are invisible or hidden in some way (the undead cannot use this to discover living beings that are using gateblom clover or moving through Dimhall). This skill cannot be improved with skill levels and is not modified by troubling circumstances. The mage cannot conjure this spell multiple times during the same duration.",
     "summary": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains.",
     "swedishName": "Sálhelekallja",
-    "duration": "3 jours",
+    "duration": "3 days",
     "range": "10 meters",
-    "weavingTime": "3 hour(s)",
+    "weavingTime": "3 hours",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -36,45 +36,45 @@
       },
       {
         "id": "vitner-dimvitner:animate-undead:0:2",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Receive another 1d10 (OR 10) skill points to distribute among the undead’s skills."
-      },
-      {
-        "id": "vitner-dimvitner:animate-undead:0:3",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Affect an extra skeleton set (with the basic version of the spell)"
-      },
-      {
-        "id": "vitner-dimvitner:animate-undead:0:4",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase any one characteristic by one step"
-      },
-      {
-        "id": "vitner-dimvitner:animate-undead:0:5",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase Body Points by 1d10"
-      },
-      {
-        "id": "vitner-dimvitner:animate-undead:0:6",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 1 week"
       },
       {
-        "id": "vitner-dimvitner:animate-undead:0:7",
+        "id": "vitner-dimvitner:animate-undead:0:3",
         "cost": 14,
         "maxCount": null,
         "effect": "Increase the duration by 1 month"
       },
       {
-        "id": "vitner-dimvitner:animate-undead:0:8",
+        "id": "vitner-dimvitner:animate-undead:0:4",
         "cost": 30,
         "maxCount": null,
         "effect": "Increase the duration by 1 year"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:5",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Receive another 1d10 (OR 10) skill points to distribute among the undead’s skills."
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:6",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affect another corpse (which receives the spell's basic effect)"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:7",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase one trait by +1 step"
+      },
+      {
+        "id": "vitner-dimvitner:animate-undead:0:8",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase Body Points by 1d10"
       }
     ],
     "source": "Player's Handbook, p. 105",

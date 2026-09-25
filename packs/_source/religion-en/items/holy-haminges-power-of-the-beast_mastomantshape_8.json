@@ -15,9 +15,9 @@
     "description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
     "summary": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "6 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "6 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-haminges-power-of-the-beast:mastomantshape:8:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the Protection Value by another +1 (maximum 8)"
-      },
-      {
-        "id": "holy-haminges-power-of-the-beast:mastomantshape:8:2",
-        "cost": 3,
-        "maxCount": 8,
-        "effect": "Increase the Body Points by an additional +10"
-      },
-      {
-        "id": "holy-haminges-power-of-the-beast:mastomantshape:8:3",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomantshape:8:2",
+        "cost": 2,
+        "maxCount": 8,
+        "effect": "Increase Protection Value by +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:mastomantshape:8:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the Body Points by an additional +10"
       }
     ],
     "source": "Player's Handbook, p. 212",

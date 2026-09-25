@@ -15,9 +15,9 @@
     "description": "The priest and their allies within range are gifted with a temporary capacity to speak and understand a foreign language, with a bonus of +3 to each individual’s Skill Value in the Knowledge skill for speaking/understanding. The ability does not allow them to read or write the language, but only communicate vocally. The priest must specify which language they wish to understand before the ability is performed.",
     "summary": "The priest and their allies within range are gifted with a temporary capacity to speak and understand a foreign language, with a bonus of +3 to each individual’s Skill Value in the Knowledge skill for speaking/understanding.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "rayon de 5 meters",
-    "weavingTime": "1 action round(s)",
+    "duration": "1 minute",
+    "range": "radius of 5 meters",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Increase the bonus to the Knowledge skill (when understanding/speaking the language) by +1 (maximum +8)"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-tenetnid-tablet-of-voices:sanity-of-gave:6:2",
-        "cost": 5,
+        "cost": 2,
         "maxCount": 8,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the Knowledge skill bonus for understanding and speaking a foreign language by +1"
       }
     ],
     "source": "Player's Handbook, p. 206",

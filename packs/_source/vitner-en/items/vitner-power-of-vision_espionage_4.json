@@ -15,9 +15,9 @@
     "description": "action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories.",
     "summary": "temporarily shifting their consciousness into the object.",
     "swedishName": "Hlustspyrja",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "contact",
-    "weavingTime": "1 action round(s)/5 action round(s)",
+    "weavingTime": "1 action round/5 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,7 +30,7 @@
       },
       {
         "id": "vitner-power-of-vision:espionage:4:1",
-        "cost": 4,
+        "cost": 2,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
       },

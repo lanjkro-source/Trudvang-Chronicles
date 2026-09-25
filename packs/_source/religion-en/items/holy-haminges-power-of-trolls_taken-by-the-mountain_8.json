@@ -15,9 +15,9 @@
     "description": "The spirit conjurer can whisper a task to any person within range. The target perceives the whisper as if someone is whispering right next to their ear even if the spirit conjurer is far away. The whisper is powerfully enticing, and the target must perform the task if he fails a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the task involves taking s omeone’s life (whether that of the target or someone else), the target receives another chance to break the compulsion just before the final action leading to death. A successful Situation roll with a Situation value of 12 (Psyche modifiers apply) means that the target breaks the ability and should be able to stop just in time. The target cannot do anything that requires creativity or initiative.",
     "summary": "The spirit conjurer can whisper a task to any person within range.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null,
-        "effect": "Increase the range by 5 meters"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Decrease the victim’s Situation value by -1"
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8:3",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Decrease the victim’s Situation value by -1"
       }
     ],
     "source": "Player's Handbook, p. 223",

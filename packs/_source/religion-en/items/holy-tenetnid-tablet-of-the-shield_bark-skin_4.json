@@ -15,9 +15,9 @@
     "description": "The Gavlian invokes the force of the black oak. Either the priest or one person of their choosing grows a bark-like skin of dark iron-oak. The skin provides 10 additional Body Points for the blessed character, which are used up before they receive any damage, and after any armor’s Protection Value has been deducted from the damage. These Body Points are t emporary, and any r emaining are lost when the duration ends. If the ability’s 10 Body Points are used up before the duration ends, the effect stops.",
     "summary": "The Gavlian invokes the force of the black oak.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,19 +26,19 @@
         "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 minute(s)"
+        "effect": "Increase the power's duration by 1 minute"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:1",
         "cost": 6,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 hour(s)"
+        "effect": "Increase the power's duration by 1 hour"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-shield:bark-skin:4:2",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase les Body Points granted par la bark skin de : +1"
+        "effect": "Increase the Body Points granted by bark skin by +1"
       }
     ],
     "source": "Player's Handbook, p. 201",

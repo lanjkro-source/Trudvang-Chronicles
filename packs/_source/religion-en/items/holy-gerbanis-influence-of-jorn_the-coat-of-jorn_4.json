@@ -15,9 +15,9 @@
     "description": "With this ability, the Stormkelt can conjure a wall of darkness anywhere within 50 meters. The Stormkelt calls on Jorn, who lets in a piece of dusk that’s as dark and thick as night. This space is filled with darkness up to a volume of 100 m², which works in the same manner as the Wall of Dusk ability. If the Coat of Jorn is raised in an area already occupied by a creature, that creature is immediately affected by the darkness. This darkness, shaped by the dimwalker, gives a negative modifier of -15 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision suffers only -8 on combat actions, anyone with dark vision only suffers only -3, and those with true vision are unaffected by the darkness.",
     "summary": "With this ability , the Stormkelt can conjure a wall of darkness anywhere within 50 meters.",
     "swedishName": "",
-    "duration": "3 action round(s)",
+    "duration": "3 action rounds",
     "range": "50 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,31 +26,31 @@
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 action round(s)"
+        "effect": "Increase the power's duration by 1 action round"
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:1",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 minute(s)"
+        "effect": "Increase the power's duration by 1 minute"
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:2",
         "cost": 15,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 hour(s)"
+        "effect": "Increase the power's duration by 1 hour"
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:3",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the power range de : 20 meters"
+        "effect": "Increase the power's range by 20 meters"
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:the-coat-of-jorn:4:4",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase la affected area de : 50 m²"
+        "effect": "Increase the affected area by 50 m²"
       }
     ],
     "source": "Player's Handbook, p. 160",

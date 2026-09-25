@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelligents. Il peut contrôler un seul animal ayant au maximum 10 points de santé, ou un certain nombre d’animaux plus petits dont le total des points de santé cumulés ne dépasse pas 10 (Cf. les indications dans la table Appel des animaux/Contrôle des animaux : types d’animaux, p. 189). Ce sort est tissé sous la forme d’une chanson douce et apaisante accompagnée de gestes lents afin de ne pas effrayer les animaux. Le contrôle que l’enchanteur exerce sur les animaux est complet, même en combat, mais il ne peut rien faire d’autre que se concentrer sur le sort. Le contrôle est immédiatement brisé si une créature s’éloigne au-delà de la portée du sort, subit au moins la moitié de ses points de santé en dégâts, ou si l’enchanteur est déconcentré.",
-    "summary": "L’enchanteur peut contrôler et diriger un ou plusieurs animaux non intelli gents.",
+    "summary": "Prend le contrôle d’animaux non intelligents et leur donne des ordres.",
     "swedishName": "Rauda bestura",
     "duration": "1 minute",
     "range": "10 mètres",

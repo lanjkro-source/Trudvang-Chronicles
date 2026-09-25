@@ -15,9 +15,9 @@
     "description": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area. This ability can increase the temperature by up to 40 degrees. However, the t emperature cannot be raised higher than 30 degrees. (For example, if the temperature is -30 degrees, the Bruid can raise it to a maximum of +10 degrees.)",
     "summary": "The Bruid calls for the comfort of summer weather, and no matter what time of year it is, the sun will emerge and lend its warmth to the area.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "rayon de 3 meters",
-    "weavingTime": "1 minute(s)",
+    "duration": "1 hour",
+    "range": "radius of 3 meters",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:1",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the temperature by +10 degrees"
+        "effect": "Increase the temperature by +10 degrees (maximum 30°C)"
       },
       {
         "id": "holy-ealdtradition-magh-s-gift:elf-summer:3:2",

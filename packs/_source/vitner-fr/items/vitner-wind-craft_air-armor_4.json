@@ -1,5 +1,5 @@
 {
-  "name": "Armure d'air",
+  "name": "Armure d’air",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de protection de 1. L’armure d’air protège également les objets que porte le bénéficiaire, comme son sac à dos ou ses sacoches, tant qu’il les porte près du corps. L’armure d’air repousse avec violence tout ce que la personne enchantée ne tient pas contre elle ou qui ne fait pas partie d’elle. Les petits objets non attachés qui entrent en contact avec l’armure d’air sont repoussés si la personne s’en approche trop.",
-    "summary": "L’enchanteur manipule le vitner dans l’air autour de la personne enchantée afin de lui donner la forme d’une armure en air comprimé dotée d’une valeur de pro tection de 1.",
+    "summary": "Entoure une créature d’air comprimé pour la protéger des attaques.",
     "swedishName": "Loftsdrapi",
     "duration": "5 tours de jeu",
     "range": "contact",

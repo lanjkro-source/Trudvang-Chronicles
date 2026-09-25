@@ -15,9 +15,9 @@
     "description": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters. The Stormkelt is given 20 square meters of darkness to shape to their liking. A dimwalker who has 20 m² can thus make a wall that is 1 m wide and 20 m long, a wall 5 m wide and 4 m long, and so on. The height of this area extends as far as the eye can see. If a wall of darkness is raised in an area already occupied by a creature, that creature is immediately affected by the darkness and is given modifiers accordingly. The Stormkelt calls on Jorn, who grants a piece of the dusk that’s as dark and thick as night. This darkness, shaped by the dimwalker, gives a negative modifier of -3 on all combat actions that are carried out within the darkness or that target someone within it, just as if in the dark of night. Anyone who has night vision, dark vision, or true vision is unaffected by the darkness.",
     "summary": "With this ability the Stormkelt can conjure a wall of darkness anywhere within 10 meters.",
     "swedishName": "",
-    "duration": "3 action round(s)",
+    "duration": "3 action rounds",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:2",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 10 meters"
       },
       {
-        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:2",
+        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:3",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the surface by 10 m²"
-      },
-      {
-        "id": "holy-gerbanis-influence-of-jorn:wall-of-dusk:1:3",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 minute"
       }
     ],
     "source": "Player's Handbook, p. 160",

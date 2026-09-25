@@ -15,9 +15,9 @@
     "description": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root. The spell can only be woven over a living creature who weighs less than 60 kg and is standing over ground of sufficient thickness and fertility for a tree to take root and grow. The victim can resist the full transformation by succeeding on a Situation roll with a Situation value of 4 (Constitution modifiers apply). On a success, only the victim’s skin transforms to birch or bark, which has no effects beyond appearance and restricted Agility; all Skill Values and Situation values related to Agility suffer a negative modifier of -3 for the duration. If the target weighs too much to be entirely transformed, only parts of the victim will be altered (how much and what parts are up to the game master to decide), and the rest of the victim’s skin turns to birch and bark with the same effects as above. A successful Situation roll in this case means the victim suffers a negative modifier of -1 (instead of -3). If the target fails the Situation roll and weighs less than the spell’s effect limit, the victim immediately takes root and is unable to move. At this point, over the course of about an hour, the victim transforms into a tree of whichever species the mage designates (though the tree must be able to survive in the area, even if it is not commonly found there). The tree has the same size and Body Points that the victim had in their normal form. It also retains facial features twisted within the bark, and limbs that resemble arms and legs. While the creature is in tree form, it maintains the same senses of perception that it had before the curse took effect. The creature sees everything visible within view (depending on which direction the face is pointing) and hears sounds, detects scents, and feels contact as normal. Any damage the tree creature suffers remains once it returns to its natural form. Possessions such as clothing and equipment also become parts of the tree (assuming their added weight is within the spell’s limit). In tree form, the victim has a natural Protection Value of 4. The victim does not need to eat or drink to survive, but will occasionally fall asleep. If someone carves or tries to cut down the tree (inflicting damage upon the victim), the tree begins to bleed. If this does not deter the attacker, the victim dies after suffering enough damage. The mage can end this curse and return the creature to its original shape at any time. A creature that endures tree form for the full duration of the spell is very stiff once restored, and for the first three days afterward, all Skill rolls and Situation rolls related to Agility and movement are halved.",
     "summary": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root.",
     "swedishName": "Nidtreid",
-    "duration": "2d6 jours",
+    "duration": "2d6 days",
     "range": "contact",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -36,27 +36,27 @@
       },
       {
         "id": "vitner-witchcraft:tree-curse:7:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-witchcraft:tree-curse:7:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 week"
       },
       {
-        "id": "vitner-witchcraft:tree-curse:7:4",
+        "id": "vitner-witchcraft:tree-curse:7:3",
         "cost": 8,
         "maxCount": null,
         "effect": "Increase the duration by 1 month"
       },
       {
-        "id": "vitner-witchcraft:tree-curse:7:5",
+        "id": "vitner-witchcraft:tree-curse:7:4",
         "cost": 20,
         "maxCount": null,
         "effect": "Increase the duration by 1 year"
+      },
+      {
+        "id": "vitner-witchcraft:tree-curse:7:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       }
     ],
     "source": "Player's Handbook, p. 143",

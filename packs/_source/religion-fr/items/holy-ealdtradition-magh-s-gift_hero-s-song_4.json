@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Don de Magh",
     "description": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir. Ce chant a un effet guérisseur sur le bruide et tous les alliés qui se trouvent à portée et écoutent la chanson. Ils récupèrent 2 points de santé par minute jusqu’à expiration du pouvoir. Ce chant peut soigner jusqu’à 10 points de santé par personne et par jour.",
-    "summary": "Le bruide entonne une belle chanson évoquant des actions héroïques et de magnifiques destinées dans l’avenir.",
+    "summary": "Soigne et soutient les alliés qui entendent le chant.",
     "swedishName": "",
     "duration": "2 minutes",
     "range": "rayon de 10 mètres",

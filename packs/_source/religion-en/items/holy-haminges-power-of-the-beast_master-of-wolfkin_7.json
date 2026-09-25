@@ -15,9 +15,9 @@
     "description": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby. The dimwalker must be outside, and it will take 1d10 action rounds before the wolfkin appears. The wolfkin is friendly to the spirit conjurer, neutral to the conjurer’s allies, and hostile to the conjurer’s enemies. In its basic form, the ability calls a standard wolf, but the spirit conjurer can call upon much larger wolfkin with extra levels of power. Once the duration has ended, the wolfkin leaves its temporary master and returns to its previous area and task. If the wolfkin receives damage that exceeds two-thirds of its total Body Points while serving the dimwalker, it will attempt to escape and will not return for the rest of the duration.",
     "summary": "By howling, the spirit conjurer can summon a wolfkin from somewhere nearby.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "personalle",
-    "weavingTime": "1 minute(s)",
+    "duration": "1 hour",
+    "range": "personal",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Call a warg instead of a wolf"
+      },
+      {
+        "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:2",
         "cost": 5,
         "maxCount": null,
         "effect": "Call a skoll instead of a wolf"
       },
       {
-        "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:2",
+        "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:3",
         "cost": 10,
         "maxCount": null,
         "effect": "Call a garm instead of a wolf"
-      },
-      {
-        "id": "holy-haminges-power-of-the-beast:master-of-wolfkin:7:3",
-        "cost": 214,
-        "maxCount": null,
-        "effect": "| chapter 4. dimwalkers"
       }
     ],
     "source": "Player's Handbook, p. 212",

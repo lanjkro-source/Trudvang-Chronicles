@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre peut ranimer une créature humanoïde intelligente qui a perdu la vie. La durée de ce pouvoir indique le temps maximum qui a pu s’écouler entre la mort de l’individu et l’utilisation de cette faculté pour le ressusciter. Ce pouvoir est extrêmement exigeant pour le prêtre, qui subit une perte définitive de 1 point de santé et une petite blessure qui ne guérira jamais complètement. Le choc provoqué par la mort suivie de la résurrection s’avère également assez traumatisant pour le miraculé, qui développe un niveau de peur de base permanent de 1 (son niveau de peur ne peut jamais descendre en dessous de 1). Un individu ne peut être ramené qu’une seule fois à la vie par le biais de cette prière, et pour qu’elle fonctionne, l’individu doit souhaiter revenir à la vie. Ce pouvoir ne fonctionne pas sur les elfes, dont l’âme ne quitte pas le corps de la même façon que les autres créatures.",
-    "summary": "Le prêtre peut ranimer une créature humanoïde intelligente qui a perdu la vie.",
+    "summary": "Ramène à la vie une créature humanoïde intelligente récemment morte.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "contact",

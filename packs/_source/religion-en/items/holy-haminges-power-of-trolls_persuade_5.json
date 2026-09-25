@@ -15,9 +15,9 @@
     "description": "The spirit conjurer can have an incredibly persuasive effect on an opponent. The conjurer can assign a task to any person within range who must then make a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the target fails the Situation roll, he must obediently carry out the task. However, the target will never do anything that causes self-harm (like jumping off a cliff), hurts a loved one (physically or emotionally), or requires self-initiative or creativity (such as improvising).",
     "summary": "The spirit conjurer can have an incredibly persuasive effect on an opponent.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:1",
-        "cost": 2,
+        "cost": 10,
         "maxCount": null,
-        "effect": "Increase the range by 5 meters"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Decrease the victim’s Situation value by -1"
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "holy-haminges-power-of-trolls:persuade:5:3",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Decrease the victim’s Situation value by -1"
       }
     ],
     "source": "Player's Handbook, p. 223",

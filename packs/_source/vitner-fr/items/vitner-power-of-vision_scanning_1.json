@@ -1,5 +1,5 @@
 {
-  "name": "Examen d'objet",
+  "name": "Examen d’objet",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
-    "summary": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explo rer les souvenirs de cet objet à travers le plan astral.",
+    "summary": "Révèle l’histoire et les souvenirs marquants d’un objet touché.",
     "swedishName": "Tingspyrja",
     "duration": "9 tours de jeu",
     "range": "contact",

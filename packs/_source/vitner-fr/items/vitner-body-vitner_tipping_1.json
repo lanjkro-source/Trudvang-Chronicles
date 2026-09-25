@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre. La victime de ce sort doit immédiatement effectuer un test de compétence en Agilité. En cas d’échec, la victime trébuche et tombe à terre. Dans le cas contraire, la victime ne remarque pas ce qui vient de se passer et peut continuer d’agir normalement.",
-    "summary": "L’enchanteur fait trébucher une créature et lui fait perdre l’équilibre.",
+    "summary": "Fait perdre l’équilibre à une créature et la fait chuter.",
     "swedishName": "Hrasfalja",
     "duration": "",
     "range": "5 mètres",

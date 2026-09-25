@@ -15,9 +15,9 @@
     "description": "The mage creates a bond between a creature in range and the realm of death. As soon as the bond is opened, life force is immediately sucked from the victim’s heart, which stops beating for the duration of the spell. This causes 1d10 points of damage to the victim per action round. Most armor gives no protection, but armor of gatesilver gives full protection. The victim can resist the damage by succeeding on a Situation roll with a Situation value of 6 (Constitution modifiers apply). Success means the victim avoids all damage from the spell in that action round.",
     "summary": "The mage sucks life force out of a living creature, dealing damages.",
     "swedishName": "Rifhjarta",
-    "duration": "1 action round(s)",
+    "duration": "1 action round",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -44,7 +44,7 @@
         "id": "vitner-dimvitner:hand-of-death:1:3",
         "cost": 2,
         "maxCount": null,
-        "effect": "Conjure another hand of death that the mage can use to attack another victim (with the basic version of the spell)."
+        "effect": "Summon another Hand of Death that the enchanter can use to attack another victim (who suffers the basic effect of the spell)"
       },
       {
         "id": "vitner-dimvitner:hand-of-death:1:4",

@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-wrath-of-tyrd",
     "tablet": "Fureur de Tyrd",
     "description": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claquement de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis. Le cri de guerre confère au bénéficiaire situé à portée un bonus de +3 à toutes ses actions de combat jusqu’à expiration du pouvoir. En outre, l’un des ennemis de l’arpenteur des brumes situé à portée subit un malus de -3 à toutes ses actions de combat tant que le pouvoir est actif.",
-    "summary": "Le stormikjalt lance une invocation à laquelle Tyrd répond par un claque ment de tonnerre tonitruant qui renforce le courage guerrier de l’arpenteur des brumes ou de l’un de ses alliés et sape le moral de leurs ennemis.",
+    "summary": "Renforce les alliés proches et les prépare au combat.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "10 mètres",

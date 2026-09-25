@@ -15,9 +15,9 @@
     "description": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand. The enchanter comprehends the language as naturally as if it were their own mother tongue. With extra levels of power, the enchanter is even able to speak the language.",
     "summary": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand.",
     "swedishName": "Skopjatenmal",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "3 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,15 +30,15 @@
       },
       {
         "id": "vitner-power-of-thought:understanding-speech:1:1",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "The enchanter’s spoken words are also converted, so that one creature hears the enchanter’s words in that designated language."
-      },
-      {
-        "id": "vitner-power-of-thought:understanding-speech:1:2",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-thought:understanding-speech:1:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "The enchanter’s spoken words are also converted, so that one creature hears the enchanter’s words in that designated language."
       }
     ],
     "source": "Player's Handbook, p. 116",

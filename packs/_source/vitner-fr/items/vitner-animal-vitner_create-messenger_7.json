@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur crée un messager de chair et de sang, qui peut délivrer un message en un lieu prédéfini. Le messager est un animal et possède 2 points de santé. Le plus souvent, les enchanteurs créent des oiseaux, des rats ou des poissons. Le messager voyage de la même façon que toute autre créature de son espèce, bien qu’il n’ait pas besoin de s’arrêter pour se reposer ou pour manger. Il est capable de transmettre le message dans n’importe quelle langue au choix de l’enchanteur. Le messager a les mêmes caractéristiques et attributs qu’un animal typique de son espèce, et il court les mêmes risques au cours de son voyage qu’un animal normal. Le message qu’il transmet peut être aussi long que l’enchanteur le désire, mais il ne peut se composer que de mots. En outre, le messager ne peut franchir qu’un maximum de 10 kilomètres avant que le vitner qui le compose ne se dissolve. Dans la version de base du sort, l’enchanteur peut envoyer des messages vers n’importe quel lieu qu’il a déjà visité.",
-    "summary": "L’enchanteur crée un messager de chair et de sang, qui peut délivrer un message en un lieu prédéfini.",
+    "summary": "Crée un messager vivant chargé de délivrer un message.",
     "swedishName": "Besturbaud",
     "duration": "spéciale",
     "range": "spéciale",

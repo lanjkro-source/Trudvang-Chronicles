@@ -15,9 +15,9 @@
     "description": "The spirit conjurer begins to reek of troll, grease, sweat, and feces. Everyone who comes within range must make a Situation roll with a Situation value of 8 (Constitution modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with a severe cold and fever that lasts for 1d6 days, suffering -2 on everything they do during this time. A successful Situation roll resists the disease and makes that character immune to this ability for one day.",
     "summary": "The spirit conjurer begins to reek of troll, grease, sweat, and feces.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "1 meters",
-    "weavingTime": "1 minute(s)",
+    "duration": "1 hour",
+    "range": "1 meter",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "holy-haminges-power-of-trolls:disease-carrier:0:1",
         "cost": 2,
         "maxCount": 2,
-        "effect": "Decrease the Situation value by -1"
+        "effect": "Increase the range by 1 meter"
       },
       {
         "id": "holy-haminges-power-of-trolls:disease-carrier:0:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the range by 1 meter"
+        "effect": "Decrease the Situation value by -1"
       }
     ],
     "source": "Player's Handbook, p. 223",

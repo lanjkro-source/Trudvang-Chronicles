@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu. Toute personne en présence du prêtre se tait et préférerait fuir ou s’agenouiller en signe de soumission plutôt que de s’opposer à lui. Cela permet au prêtre de calmer une foule et de recevoir jusqu’à expiration du pouvoir un bonus de +6 à tous ses tests de compétence ou de situation pour persuader les gens. De plus, toute personne qui tente de s’opposer à ce que dit le prêtre subit un malus de -5 à sa valeur de situation. Quiconque tente d’attaquer le prêtre ou de proférer des mensonges en sa présence doit commencer par réussir un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Même ceux qui veulent intriguer contre le prêtre et se trouvent à proximité de lui (à portée du sort) doivent réussir ce test de situation.",
-    "summary": "Le prêtre irradie véritablement de puissance divine tandis que l’air autour de lui est saturé de la présence tangible de son dieu.",
+    "summary": "Émet une aura pacifiante qui calme une foule et renforce l’autorité du prêtre.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "20 mètres",

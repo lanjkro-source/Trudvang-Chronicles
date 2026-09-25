@@ -1,5 +1,5 @@
 {
-  "name": "Altération d'objet",
+  "name": "Altération d’objet",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte. L’enchanteur peut choisir l’une des altérations suivantes quand il enchante l’objet : Altérer l’apparence : l’enchanteur peut modifier l’apparence de l’objet et lui donner la forme de son choix, que l’objet conserve pendant cinq minutes dans la version de base du sort. Altérer les caractéristiques : l’enchanteur peut modifier les caractéristiques de l’objet, par exemple en ramollissant des surfaces dures, ou l’inverse. Dans ce cas, un objet habituellement flexible et mou deviendrait impossible à tordre ou à déplacer, même s’il conserve son aspect d’origine. En renforçant un objet, on peut augmenter sa valeur de protection de 1 et sa valeur d’intégrité de 10. À moins d’utiliser l’objet enchanté, le seul moyen de découvrir qu’il n’a plus sa forme ou ses caractéristiques d’origine consiste à recourir aux sorts Vision véritable ou Lecture du vitner. Une fois la durée du sort arrivée à échéance, l’objet reprend sa forme d’origine. L’enchanteur peut utiliser des niveaux de puissance pour augmenter la valeur de l’objet transformé, même si les paramètres de taille continuent de s’appliquer (la taille d’une grande boîte dans la version de base du sort). Le nouvel objet peut être vendu pour bien plus que sa valeur réelle, et il reprendra plus tard sa forme et sa valeur d’origine. Cela pourrait être le point de départ de longues aventures durant lesquelles l’enchanteur risque de se faire des ennemis pleins de rancune.",
-    "summary": "Ce sort peut affecter n’importe quel objet d’une taille inférieure ou égale à celle d’une grosse boîte.",
+    "summary": "Modifie l’apparence ou une propriété physique d’un objet.",
     "swedishName": "Tingbreijtja",
     "duration": "5 minutes",
     "range": "contact",

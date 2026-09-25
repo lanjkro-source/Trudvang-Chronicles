@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort génère une sphère d’énergie qui empêche de percevoir les sons provenant du site enchanté. Il peut se tisser autour d’un objet ou d’une personne et il a un rayon de 3 mètres. Si le point enchanté se déplace, la sphère l’accompagne. Tous les sons générés à l’intérieur du rayon du sort sont immédiatement absorbés par la sphère et sont donc inaudibles pour quiconque se trouve à l’extérieur de la zone enchantée. À l’intérieur cependant, tout s’entend normalement. De ce fait, le sort fonctionne bien pour quelqu’un souhaitant se déplacer de manière furtive, étant donné qu’aucun bruit ne peut émaner de la zone protectrice. L’enchanteur peut également diminuer la taille de la sphère. En diminuant son rayon de quelques centimètres seulement, l’enchanteur peut tisser le sort sur une personne ou une créature dont la voix et les bruits disparaîtront complètement, puisqu’il faut se trouver à l’intérieur de la sphère pour entendre ce que dit le bénéficiaire du sort. Ce sort n’affecte rien d’autre que les sons. Un observateur peut quand même voir à travers la sphère protectrice comme si elle n’existait pas, même s’il ne peut pas entendre les bruits qui en proviennent.",
-    "summary": "Ce sort génère une sphère d’énergie qui empêche de percevoir les sons provenant du site enchanté.",
+    "summary": "Crée une zone où les sons produits ne peuvent pas être entendus de l’extérieur.",
     "swedishName": "Knystdyldja",
     "duration": "10 tours de jeu",
     "range": "contact",

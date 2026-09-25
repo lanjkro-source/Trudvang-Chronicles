@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 6 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) par un rhume sévère et contractent une fièvre qui durent 1d6 jours, durant lesquels elles subissent un malus de -4 à toutes leurs actions. Un test de situation réussit signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière.",
-    "summary": "une valeur de situation de 6 (le modificateur de Constitution s’applique).",
+    "summary": "Propage une maladie d’une victime aux créatures proches.",
     "swedishName": "",
     "duration": "2 heures",
     "range": "1 mètre",

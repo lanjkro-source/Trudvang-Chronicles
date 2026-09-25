@@ -15,9 +15,9 @@
     "description": "A holy aura is created around the selected weapon. The weapon deals an additional +5 points of damage (+8 against undead and +11 against demons). The blessed weapon takes on a lighter shade and begins to shine faintly.",
     "summary": "A holy aura is created around the selected weapon.",
     "swedishName": "",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Increase damage by +1 (maximum +10/+13 undead/+16 demons)"
+        "effect": "Increase the duration by 1 minute"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:2",
         "cost": 2,
         "maxCount": 5,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+        "effect": "Increase damage inflicted by +1"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-axe:7:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 minute"
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       }
     ],
     "source": "Player's Handbook, p. 199",

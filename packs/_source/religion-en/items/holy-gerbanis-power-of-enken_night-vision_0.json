@@ -15,9 +15,9 @@
     "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
     "summary": "The Stormkelt is granted night vision for one minute.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,9 +30,15 @@
       },
       {
         "id": "holy-gerbanis-power-of-enken:night-vision:0:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 day"
+      },
+      {
+        "id": "holy-gerbanis-power-of-enken:night-vision:0:2",
         "cost": 3,
         "maxCount": null,
-        "effect": "Change range to Contact (allowing"
+        "effect": "Change the power's range to touch (allowing the Mist Wanderer to apply the effect to someone else)"
       }
     ],
     "source": "Player's Handbook, p. 162",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible. Il sert essentiellement à perturber d’autres enchanteurs en train de conjurer, mais on peut également s’en servir pour effrayer ou gêner d’autres personnes ou créatures. Les victimes de ce sort subissent un malus de -3 à toutes les actions qu’elles entreprennent tant que le sort demeure actif. Cela dit, une victime qui réussit un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) ne subit qu’un malus de -1 aux actions qu’elle entreprend pendant le tour de jeu actuel.",
-    "summary": "Ce sort conjure un vol de corbeaux qui battent des ailes, tourbillonnent et croassent autour de la cible.",
+    "summary": "Invoque un vol de corbeaux pour harceler, gêner et désorienter une cible.",
     "swedishName": "Rafnkallja",
     "duration": "3 tours de jeu",
     "range": "10 mètres",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "L’enchanteur se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que l’enchanteur regarde à travers ce tunnel, le vitner fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La personne enchantée peut se concentrer sur n’importe quel endroit à portée du sort avec la même précision. Le sort Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
-    "summary": "Le sort Vision lointaine confère un bonus de +1 à la valeur de compé tence pour toucher à l’aide d’une arme à distance.",
+    "summary": "Améliore la vision à grande distance et facilite les attaques lointaines.",
     "swedishName": "Fjarrskönja",
     "duration": "2 tours de jeu",
     "range": "contact",

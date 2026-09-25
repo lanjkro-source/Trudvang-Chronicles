@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
-    "summary": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir.",
+    "summary": "Confère une résistance et une régénération exceptionnelles au conjurateur.",
     "swedishName": "",
     "duration": "2 jours",
     "range": "personnelle",

@@ -15,9 +15,9 @@
     "description": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground. In order for the lift to work, the person must weigh no more than 60 kg. The conjured winds cause the person to lift off the ground and float slowly in whichever direction the enchanter chooses, with a speed of 3 meters per action round. Any character targeted by the spell who does not wish to take to the air can attempt to resist it by making a successful Situation roll with a Situation value of 8 (Strength modifiers apply). If the enchanter takes damage or is surprised while maintaining the spell, they must make a Situation roll with a Situation value of 8 (Psyche m odifiers apply). If the roll fails, the enchanter temporarily loses control over the winds, and the enchanted person begins to fall to the ground. However, in every new round, the enchanter can try to regain control over the winds by making a S ituation roll (with the same Situation value), as long as the spell duration c ontinues. An enchanted person who falls to the ground does so at a speed of 10 meters during the first action round in which the enchanter loses control, and 100 meters per action round in every following round in which the enchanter is unable to regain control. If the person hits the ground, they take the usual fall damage for the total distance fallen.",
     "summary": "The spell creates controlled winds around the enchanted person, causing them to lift off the ground.",
     "swedishName": "Hefja",
-    "duration": "6 action round(s)",
+    "duration": "6 action rounds",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -30,57 +30,57 @@
       },
       {
         "id": "vitner-wind-craft:lift:5:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase affected weight by 10 kg"
-      },
-      {
-        "id": "vitner-wind-craft:lift:5:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-wind-craft:lift:5:3",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Decrease the enchanted person’s chance of succeeding on the Situation roll to resist by -1"
-      },
-      {
-        "id": "vitner-wind-craft:lift:5:4",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the speed by +1 meter per action round (maximum 10 meters per action round)"
-      },
-      {
-        "id": "vitner-wind-craft:lift:5:5",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-wind-craft:lift:5:6",
+        "id": "vitner-wind-craft:lift:5:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase affected weight by 10 kg"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:4",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase affected weight by 50 kg"
       },
       {
-        "id": "vitner-wind-craft:lift:5:7",
-        "cost": 5,
-        "maxCount": 7,
-        "effect": "Give the enchanted person (if other than the enchanter) the ability to determine the direction of travel in the air"
-      },
-      {
-        "id": "vitner-wind-craft:lift:5:8",
+        "id": "vitner-wind-craft:lift:5:5",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase affected weight by 100 kg"
       },
       {
-        "id": "vitner-wind-craft:lift:5:9",
-        "cost": 10,
+        "id": "vitner-wind-craft:lift:5:6",
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 10"
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:7",
+        "cost": 2,
+        "maxCount": 7,
+        "effect": "Increase movement capability by 1 meter per action round"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:8",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the enchanted person’s chance of succeeding on the Situation roll to resist by -1"
+      },
+      {
+        "id": "vitner-wind-craft:lift:5:9",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Allow the enchanted person (if not the enchanter) to choose the direction in which they move through the air"
       }
     ],
     "source": "Player's Handbook, p. 139",

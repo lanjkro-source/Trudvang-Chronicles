@@ -15,9 +15,9 @@
     "description": "The spirit conjurer begins to stink of troll, grease, sweat, and feces. Flies gather around the conjurer and nest in their body and clothes, though the conjurer is not disturbed by this. Anyone who comes within range must make a Situation roll with a Situation value of 4 (Psyche modifiers apply). Victims who fail the Situation roll become infected (after 1d6 minutes) with 2d10 + 2 large boils. Every day, 1d6 of the boils burst, causing 2 points of damage per boil. A successful Situation roll makes that character immune to this ability for one day. Regardless of whether the victim succeeds on the Situation roll, they suffer a -3 on all combat actions when within range of the conjurer because of the stench and all the buzzing flies.",
     "summary": "Surrounds the invoker with diseased flies that torment and infect nearby creatures.",
     "swedishName": "",
-    "duration": "3 hour(s)",
-    "range": "1 meters",
-    "weavingTime": "1 minute(s)",
+    "duration": "3 hours",
+    "range": "1 meter",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,19 +26,19 @@
         "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 hour(s)"
+        "effect": "Increase the power's duration by 1 hour"
       },
       {
         "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Diminue the Situation Value de : -1"
+        "effect": "Reduce the Situation Value by -1"
       },
       {
         "id": "holy-haminges-power-of-trolls:lord-of-the-flies:6:2",
         "cost": 2,
         "maxCount": 2,
-        "effect": "Increase the power range de : 1 meters"
+        "effect": "Increase the power's range by 1 meter"
       }
     ],
     "source": "Player's Handbook, p. 223",

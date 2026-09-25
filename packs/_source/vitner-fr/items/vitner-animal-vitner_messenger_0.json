@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "En entonnant un chant particulier, l’enchanteur peut se servir des créatures des environs pour transmettre un message. Peu importe le type de créatures qui entendent l’enchanteur, car toutes celles qui se trouvent à portée sont affectées et feront passer le message. Les animaux ne modifieront pas leur comportement ou leur destination pour délivrer le message, et se contenteront de le transmettre aux autres créatures qu’elles croiseront en chemin. Cela signifie qu’il est impossible de prévoir le temps que va prendre la livraison du message. Si l’enchanteur a de la chance, cela pourrait ne prendre que quelques instants ; dans le cas contraire, cela pourrait être extrêmement long. L’animal peut également faire passer le message à des êtres intelligents, qui entendent les paroles de l’enchanteur ayant lancé le sort d’origine, mais dans ce cas les réceptionnaires peuvent choisir de transmettre ou non le message à leur tour. C’est au maître de jeu de déterminer combien de temps il faut à une personne ou une créature pour recevoir le message. Dans la version de base du sort, l’enchanteur peut donner le message à une créature située à une distance suffisante pour l’entendre. Le message peut contenir un maximum de 3 mots et être porté à une distance de 10 kilomètres.",
-    "summary": "En entonnant un chant particulier, l’enchanteur peut se servir des créatures des environs pour transmettre un message.",
+    "summary": "Envoie un animal porter un message vers une destination choisie.",
     "swedishName": "Hvindbaud",
     "duration": "spéciale",
     "range": "100 mètres",

@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-voices",
     "tablet": "Tablette des voix",
     "description": "Le prêtre développe pour un temps la faculté de comprendre une langue étrangère. Il ne peut cependant ni la lire, ni l’écrire, ni la parler. Le prêtre doit préciser le langage qu’il désire comprendre avant d’activer ce pouvoir.",
-    "summary": "Le prêtre développe pour un temps la faculté de comprendre une langue étrangère.",
+    "summary": "Permet de comprendre une langue étrangère entendue.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

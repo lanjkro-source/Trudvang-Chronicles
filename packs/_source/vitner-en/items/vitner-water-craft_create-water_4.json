@@ -15,9 +15,9 @@
     "description": "The enchanter creates a fountain of water that spurts from a desired place in the ground. In total, 30 liters of water flow out from the magical source (10 liters per action round). The water is as clean as spring water, and as long as the enchanter has something to collect it in, they never need to be thirsty.",
     "summary": "The enchanter creates a fountain of water that spurts from a desired place in the ground.",
     "swedishName": "Vannstraula",
-    "duration": "3 action round(s)",
+    "duration": "3 action rounds",
     "range": "contact",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-water-craft:create-water:4:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-water-craft:create-water:4:2",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute (+120 liters)"
       },
       {
-        "id": "vitner-water-craft:create-water:4:3",
+        "id": "vitner-water-craft:create-water:4:2",
         "cost": 20,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the spell's duration by 1 hour (+7,200 liters)"
+      },
+      {
+        "id": "vitner-water-craft:create-water:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       }
     ],
     "source": "Player's Handbook, p. 135",

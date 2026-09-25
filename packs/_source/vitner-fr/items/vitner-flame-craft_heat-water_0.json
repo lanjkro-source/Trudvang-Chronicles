@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante.",
-    "summary": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition.",
+    "summary": "Porte rapidement une masse d’eau à ébullition pour brûler, cuisiner ou créer un danger.",
     "swedishName": "Vannhetja",
     "duration": "5 minutes",
     "range": "contact",

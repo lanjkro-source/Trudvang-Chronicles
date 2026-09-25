@@ -15,16 +15,16 @@
     "description": "<p>As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact. When the duration ends, the spear goes up in smoke. Bloodfangsbane is the great spear with which Jowja killed the white logirwurm, Bloodfang,<ul><li>Bloodfangsbane:</li><li>Damage: 1d10 (OR 8-10) + 4;</li></ul>at Blodt, where Bydland was later founded. ✦ Bloodfangsbane: ✦ Damage: 1d10 (OR 8-10) + 4; protection value: 15; breach value: 150; IM -4; WA: 3 ✦ Gives the wielder +2 in Protection Value ✦ Gives the wielder +2 on all Skill Values using this weapon (attacks, parries, etc.)</p>",
     "summary": "As the triggering command of this divine ability is spoken, a spear materializes in the Bruid’s hand, an ancient and holy artifact.",
     "swedishName": "",
-    "duration": "10 minute(s)",
-    "range": "personalle",
-    "weavingTime": "1 minute(s)",
+    "duration": "10 minutes",
+    "range": "personal",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-ealdtradition-halawen-s-offering:bloodfangsbane:2:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },

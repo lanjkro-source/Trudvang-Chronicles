@@ -1,5 +1,5 @@
 {
-  "name": "Résistance à l'eau",
+  "name": "Résistance à l’eau",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires. La surface enchantée devient totalement imperméable, mais ses autres caractéristiques demeurent inchangées. L’enchanteur peut appliquer Résistance à l’eau à une surface ne dépassant pas la taille d’une grande tente. Il lui faut pour cela toucher le matériau.",
-    "summary": "Ce sort crée un sceau étanche autour des matériaux organiques tels que le tissu ou le cuir, et scelle les fentes entre les planches d’une structure et autres constructions similaires.",
+    "summary": "Rend un objet ou une surface imperméable à l’eau.",
     "swedishName": "Vanngegna",
     "duration": "1 heure",
     "range": "contact",

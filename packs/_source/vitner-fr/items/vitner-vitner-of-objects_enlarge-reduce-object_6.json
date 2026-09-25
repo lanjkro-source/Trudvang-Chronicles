@@ -1,5 +1,5 @@
 {
-  "name": "Agrandissement/rapetissement d'objet",
+  "name": "Agrandissement/ rapetissement d’objet",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2000 cm³ ou 2 dm³). L’enchanteur peut doubler la taille de l’objet, ou la réduire de moitié. Dans un cas comme dans l’autre, le poids de l’objet demeure identique. L’enchanteur peut également modifier légèrement les proportions de l’objet de sorte que, par exemple, il s’allonge sans devenir plus large, comme une corde qui s’allonge sans pour autant devenir plus épaisse. Une corde de 5 mètres de long (2 cm × 2 cm × 500 cm) qu’on agrandit peut atteindre 10 mètres de long (sa longueur est doublée). Si on la réduit, la corde peut descendre à 2,5 mètres de long (sa longueur diminue de moitié).",
-    "summary": "Ce sort permet à l’enchanteur d’augmenter ou de diminuer la taille d’un objet de son choix dont le volume n’excède pas 2 dm³ (l’objet peut faire 1 cm d’épaisseur, 40 cm de large et 50 cm de long, ce qui correspond à 2 000 cm³ ou 2 dm³).",
+    "summary": "Agrandit ou rapetisse un objet choisi.",
     "swedishName": "Tingvidge/tingknyttje",
     "duration": "4 minutes",
     "range": "contact",

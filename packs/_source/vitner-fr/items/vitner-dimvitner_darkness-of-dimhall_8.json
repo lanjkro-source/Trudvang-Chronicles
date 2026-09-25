@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall. La zone affectée a un rayon de 2 mètres et forme un cercle autour du point que l’enchanteur a désigné. Ce point est fixe dans l’espace et ne peut pas être lié à un objet. Toute créature dans la zone affectée subit immédiatement 1d10 (JO 9-10) points de dégâts. Les armures normales n’offrent aucune protection contre ces dégâts, contrairement aux armures magiques et aux armures en grindsilver.",
-    "summary": "L’enchanteur désigne une zone située à portée du sort, qui est alors envahie par les ténèbres humides et tenaces provenant de Dimhall.",
+    "summary": "Plonge une zone dans des ténèbres surnaturelles et glaciales qui gênent les créatures qui s’y trouvent.",
     "swedishName": "Salhelehögg",
     "duration": "",
     "range": "5 mètres",

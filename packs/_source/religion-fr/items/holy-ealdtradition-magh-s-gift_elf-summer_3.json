@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-magh-s-gift",
     "tablet": "Don de Magh",
     "description": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée. Ce pouvoir peut faire monter la température d’un maximum de 40 degrés. Cependant, la température ne peut pas dépasser 30 degrés (par exemple, si la température est de -30 degrés, le bruide peut la faire monter jusqu’à 10 degrés).",
-    "summary": "Le bruide invoque la clémence d’une météo estivale ; quelle que soit l’époque de l’année, le soleil apparaît et accorde sa chaleur à la zone affectée.",
+    "summary": "Installe temporairement un climat estival dans une zone.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "rayon de 3 mètres",

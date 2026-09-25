@@ -15,9 +15,9 @@
     "description": "The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well.",
     "summary": "The spell creates a coating of vitner around the target that pushes away",
     "swedishName": "Malmavandr",
-    "duration": "2 minute(s)",
-    "range": "personalle",
-    "weavingTime": "5 action round(s)",
+    "duration": "2 minutes",
+    "range": "personal",
+    "weavingTime": "5 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -36,21 +36,21 @@
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      },
+      {
+        "id": "vitner-soil-craft:stone-walk:7:3",
         "cost": 2,
         "maxCount": null,
         "effect": "Change the range from Personal to Contact"
       },
       {
-        "id": "vitner-soil-craft:stone-walk:7:3",
+        "id": "vitner-soil-craft:stone-walk:7:4",
         "cost": 3,
         "maxCount": null,
         "effect": "Weave the spell over a second person who can also go into the stone (only if the range is Contact)"
-      },
-      {
-        "id": "vitner-soil-craft:stone-walk:7:4",
-        "cost": 6,
-        "maxCount": null,
-        "effect": "Increase the duration by 10"
       }
     ],
     "source": "Player's Handbook, p. 123",

@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’attaqueront jamais volontairement le bénéficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement. Cela dit, ils peuvent très bien s’en prendre à ses compagnons. Ils peuvent également attaquer le bénéficiaire pour se défendre ou protéger leur maison ou leurs petits. De plus, les animaux de monte se plient à la volonté du bénéficiaire, ce qui confère à l’ihana un bonus de +1 par niveau dans cette tablette à la VC de tous ses tests de compétence dans la discipline Maîtrise équestre.",
-    "summary": "Les animaux de la forêt qui ne sont ni malades, ni sous influence magique n’at taqueront jamais volontairement le bé néficiaire de ce pouvoir, et préfèreront s’en éloigner respectueusement.",
+    "summary": "Empêche les animaux de la forêt d’attaquer volontairement le bénéficiaire.",
     "swedishName": "",
     "duration": "30 minutes",
     "range": "10 mètres",

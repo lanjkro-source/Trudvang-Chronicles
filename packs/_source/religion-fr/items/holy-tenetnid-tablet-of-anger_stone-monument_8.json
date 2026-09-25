@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
     "description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique), elle se change en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud au moment où il active ce pouvoir, la pétrification devient permanente si la cible rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
-    "summary": "Le prêtre dirige son regard puissant vers un adversaire.",
+    "summary": "Transforme une créature ou un objet en monument de pierre.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "10 mètres",

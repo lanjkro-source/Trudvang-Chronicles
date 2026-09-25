@@ -17,7 +17,7 @@
     "swedishName": "Jördfleigja",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "vitner-soil-craft:soil-blast:4:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Create a handful of soil (no longer requiring one)"
+        "effect": "Create a handful of soil (none needs to be picked up)"
       },
       {
         "id": "vitner-soil-craft:soil-blast:4:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the shrapnel’s Penetration Value by +1"
+        "effect": "Increase minimum damage by +1"
       },
       {
         "id": "vitner-soil-craft:soil-blast:4:3",

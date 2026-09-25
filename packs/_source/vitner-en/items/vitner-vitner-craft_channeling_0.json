@@ -15,9 +15,9 @@
     "description": "The enchanter can benefit from the help of others while weaving a spell. Any helper(s) must participate voluntarily. By succeeding with this spell, the enchanter gains 5 Vitner Points from the individual(s) helping. Because vitner is life, each Vitner Point drawn out this way also deals 1 point of damage to the assistant that it is drawn from. If there are several helpers, the vitner drawn and damage dealt is shared equally. Armor offers no protection against this damage, and the injury will heal normally. A helper cannot give more Vitner Points than the number of Body Points they have left. The channeled Vitner Points can be used as a one-time bonus to the enchanter’s vitner capacity. If the enchanter has not used all of the transferred Vitner Points by the time the spell expires, those that remain unused disappear.",
     "summary": "The enchanter can benefit from the help of others while weaving a spell.",
     "swedishName": "Vitnasammel",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "15 minute(s)",
+    "weavingTime": "15 minutes",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-vitner-craft:channeling:0:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the amount of transferred Vitner Points by +10"
+      },
+      {
+        "id": "vitner-vitner-craft:channeling:0:2",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       },
       {
-        "id": "vitner-vitner-craft:channeling:0:2",
+        "id": "vitner-vitner-craft:channeling:0:3",
         "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-vitner-craft:channeling:0:3",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
-      },
-      {
         "id": "vitner-vitner-craft:channeling:0:4",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the amount of transferred Vitner Points by +10"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "vitner-vitner-craft:channeling:0:5",

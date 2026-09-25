@@ -15,9 +15,9 @@
     "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
     "summary": "The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly.",
     "swedishName": "",
-    "duration": "2 minute(s)",
-    "range": "personalle",
-    "weavingTime": "3 action round(s)",
+    "duration": "2 minutes",
+    "range": "personal",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:1",
         "cost": 2,
         "maxCount": 2,
-        "effect": "Increase the Protection Value by another +1 (maximum 6)"
+        "effect": "Increase Protection Value by +1"
       },
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:2",

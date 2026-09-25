@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-thurses",
     "tablet": "Puissance des tursirs",
     "description": "Le conjurateur est investi d’une partie de l’essence du troll des glaces, qui se manifeste par un corps de glace qui gèle toute personne située à portée du pouvoir. Quiconque se trouve à portée de ce pouvoir doit réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance. L’aura de givre inflige 1 point de dégâts par tour à toute personne située à portée. Des vêtements d’hiver permettent de diminuer ces dégâts de moitié (arrondir à l’entier supérieur), et des vêtements en peau de mastomant protègent complètement de ces dégâts. En revanche, les armures n’offrent aucune protection contre ce froid.",
-    "summary": "test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le froid et se tenir à distance.",
+    "summary": "Exhale un souffle glacé qui blesse et engourdit les ennemis proches.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "1 mètre",

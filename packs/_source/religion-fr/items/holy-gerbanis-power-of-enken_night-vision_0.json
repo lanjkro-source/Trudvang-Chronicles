@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt est doté d’une vision nocturne pendant une minute, ce qui lui permet de voir dans l’obscurité totale, mais pas aussi bien qu’en plein jour. L’arpenteur des brumes voit clairement à une distance de 20 mètres ; au-delà, sa perception des détails est amoindrie, et il ne distingue plus rien au-delà de 60 mètres.",
-    "summary": "Le stormikjalt est doté d’une vision nocturne pendant une minute, ce qui lui permet de voir dans l’obscurité totale, mais pas aussi bien qu’en plein jour.",
+    "summary": "Permet de voir dans l’obscurité totale.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

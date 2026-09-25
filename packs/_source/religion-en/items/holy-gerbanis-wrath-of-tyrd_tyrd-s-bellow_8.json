@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-gerbanis-wrath-of-tyrd:tyrd-s-bellow:8:1",
         "cost": 3,
         "maxCount": 2,
-        "effect": "step: 1d10 (OR 9-10) g − 1d10"
+        "effect": "Increase Fear Points inflicted by one step: 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 171",

@@ -1,9 +1,16 @@
-import {readFileSync, readdirSync, statSync} from "node:fs";
+import {existsSync, readFileSync, readdirSync, statSync} from "node:fs";
 import {join, relative} from "node:path";
 import {spawnSync} from "node:child_process";
 
 const root = process.cwd();
 const failures = [];
+const powerSources = ["game doc/fr/trudvang-powers-fr.json", "game doc/en/trudvang-powers-en.json"];
+const availablePowerSources = powerSources.filter(path => existsSync(join(root, path)));
+if (availablePowerSources.length === 1) failures.push("Both FR and EN power source JSON files are required for a local catalogue audit.");
+else if (availablePowerSources.length === 2) {
+  const result = spawnSync(process.execPath, ["tools/generate-power-catalog.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (result.status !== 0) failures.push(`Power source audit failed: ${result.stderr || result.stdout}`);
+}
 
 function readJson(path) {
   try {

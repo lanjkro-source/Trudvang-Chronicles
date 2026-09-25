@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
     "description": "Le stormikjalt implore la protection de Storme, qui lui envoie les einharjars, des guerriers sacrés venus de Stormvakk pour le protéger. Les esprits apparaissent sous la forme d’une brume soudaine qui se rassemble autour du stormikjalt avant de prendre forme physique. Une fois la durée du pouvoir écoulée, la brume réapparaît et les guerriers abandonnent le stormikjalt et disparaissent à l’intérieur. Si un guerrier meurt, il se change en brume et disparaît. Les esprits guerriers s’interposent ou protègent l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le stormikjalt se trouve en danger immédiat. Les einharjars ne s’éloignent jamais à plus de 10 mètres du stormikjalt et ne peuvent rien faire d’autre que le protéger ou combattre ceux qui l’attaquent. Les esprits guerriers ne communiquent pas : ils ne font qu’accomplir leur mission. Un stormikjalt ne peut avoir plus de six einharjars actifs à un moment donné. Les einharjars sont des berserkers solidement bâtis aux longs cheveux fins, au visage couvert de sang sacrificiel, et au torse nu couvert de symboles tracés à la suie. Ils brandissent le plus souvent des épées à deux mains.<hr>Einharjar : Force +4, points de santé 35, valeur de protection 5, points de combat 30, initiative 1d10 (JO 10) + 4, discipline Combat armé et spécialité Porteur de bouclier (+13 points de combat)",
-    "summary": "apparaît et les guerriers abandonnent le stormikjalt et disparaissent à l’intérieur.",
+    "summary": "Invoque des esprits de guerriers morts pour combattre aux côtés du prêtre.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

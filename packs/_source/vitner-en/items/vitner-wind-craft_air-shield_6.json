@@ -15,9 +15,9 @@
     "description": "The spell creates a large shield (half the size of a human; see the Creature Size section on page 95 of Game Master Guide) of compressed air, which lowers all damage of ranged attacks by -1 (P rotection Value 1). The spell is woven over a place touched by the enchanter, from which the shield rises straight up. The shield is static and cannot be moved. Any ranged weapons with Penetration Value apply the value to this shield as well. If the shield of compressed air is made so large that it covers a whole being, it might prevent anyone from charging through it. For a being of a certain size and strength to successfully push through the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates controlled flurries of wind around one or several characters, causing each of them to lift off the ground.</td></tr></tbody></table>shield, a successful Situation roll is required, modified by the shield Protection Value (PV) as shown in the table below (Strength modifiers apply). AIR SHIELD SITUATION VALUE Creature Size Situation Value &lt;1/3 4 - PV ≥1/3 – 1/2 6 - PV ≥1/2 – 1.5t 10 - PV ≥1.5 – 3t 14 - PV ≥3 – 5t 18 - PV ≥5 – 10t 22 - PV ≥10t 26 - PV",
     "summary": "The spell creates controlled flurries of wind around one or several characters, causing each of them to lift off the ground.",
     "swedishName": "Loftskiold",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,33 +30,33 @@
       },
       {
         "id": "vitner-wind-craft:air-shield:6:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the thickness of the air shield, increasing the Protection Value by +1 (maximum PV 30)"
-      },
-      {
-        "id": "vitner-wind-craft:air-shield:6:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-wind-craft:air-shield:6:3",
-        "cost": 3,
-        "maxCount": 29,
-        "effect": "Increase the size of the shield by one level"
-      },
-      {
-        "id": "vitner-wind-craft:air-shield:6:4",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-wind-craft:air-shield:6:5",
+        "id": "vitner-wind-craft:air-shield:6:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-wind-craft:air-shield:6:3",
+        "cost": 1,
+        "maxCount": 29,
+        "effect": "Increase the air shield's thickness, raising its Protection Value by 1"
+      },
+      {
+        "id": "vitner-wind-craft:air-shield:6:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-wind-craft:air-shield:6:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the shield's size by one level"
       }
     ],
     "source": "Player's Handbook, p. 139",

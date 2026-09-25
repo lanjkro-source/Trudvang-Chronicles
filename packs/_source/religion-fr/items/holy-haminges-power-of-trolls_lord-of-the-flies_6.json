@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "Le conjurateur se met à empester une odeur de troll, de graisse, de sueur et de matières fécales. Quiconque se trouve à portée doit faire un test de situation avec une valeur de situation de 4 (le modificateur de Constitution s’applique). Les victimes qui ratent leur test de situation sont infectées (au bout de 1d6 minutes) et développent 2d10 + 2 gros bubons. Chaque jour, 1d6 de ces bubons éclatent et infligent 2 points de dégâts chacun. Un test de situation réussi signifie que la victime résiste à la maladie et développe une immunité contre ce pouvoir pendant une journée entière. Que la victime ait réussi son test de situation ou pas, elle subit un malus de -3 à toutes ses actions de combat tant qu’elle se trouve à portée du conjurateur, à cause de l’odeur et du bourdonnement des mouches.",
-    "summary": "une valeur de situation de 4 (le modificateur de Constitution s’applique).",
+    "summary": "Couvre une victime de bubons et de mouches qui l’affaiblissent et la blessent.",
     "swedishName": "",
     "duration": "3 heures",
     "range": "1 mètre",

@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur dirige son puissant regard vers un adversaire qui sent soudain son esprit se pétrifier. L’adversaire touché subit un malus de -2 à l’initiative et de -1 à toutes ses actions de combat jusqu’à expiration du pouvoir. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
-    "summary": "Le conjurateur dirige son puissant regard vers un adversaire qui sent soudain son esprit se pétrifier.",
+    "summary": "Brise le moral d’une cible et lui impose un malus durable.",
     "swedishName": "",
     "duration": "2 tours de jeu",
     "range": "5 mètres",

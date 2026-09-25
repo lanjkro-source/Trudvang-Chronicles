@@ -15,30 +15,30 @@
     "description": "The spirit conjurer can perform simple and mundane illusions. Examples include causing a dish of worms and tadpoles to appear as a delectable beef stew or causing pieces of metal to appear as gold coins. These simple illusions affect only vision, and any person who perceives the illusions with other senses (for example, sniffing the beef stew or handling the gold coins) will automatically see through them.",
     "summary": "The spirit conjurer can perform simple and mundane illusions.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "1 minute",
+    "range": "5 meters",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:illusion-tricks:2:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
         "id": "holy-haminges-power-of-trolls:illusion-tricks:2:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
-      },
-      {
-        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:illusion-tricks:2:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
       }
     ],
     "source": "Player's Handbook, p. 223",

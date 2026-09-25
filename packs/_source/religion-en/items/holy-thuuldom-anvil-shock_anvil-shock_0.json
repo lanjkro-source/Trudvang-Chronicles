@@ -24,39 +24,39 @@
     "powerLevels": [
       {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:0",
-        "cost": 1,
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty suffered by the victim for 2 action rounds by -2"
+      },
+      {
+        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:1",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty suffered by the victim for 2 action rounds by -4"
+      },
+      {
+        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:2",
+        "cost": 0,
+        "maxCount": null,
+        "effect": "Increase the penalty suffered by the victim for 2 action rounds by -6"
+      },
+      {
+        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:3",
+        "cost": 0,
         "maxCount": null,
         "effect": "The victim suffers -2 on all actions for the remainder of the current action round as well as the entire next action round."
       },
       {
-        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "The victim suffers -4 on all actions for the remainder of the current action round as well as the entire next action round."
-      },
-      {
-        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "The victim suffers -6 on all actions for the remainder of the current action round as well as the entire next action round. HOLY Hammer Fists Healing Rune Heat of the Depths Labyrinth Blood Mark of Brokk Power of Repair"
-      },
-      {
-        "id": "holy-thuuldom-anvil-shock:anvil-shock:0:3",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "The victim becomes incapable of acting in any way for the remainder of the current action round as well as the entire next action round."
-      },
-      {
         "id": "holy-thuuldom-anvil-shock:anvil-shock:0:4",
-        "cost": 5,
+        "cost": 0,
         "maxCount": null,
-        "effect": "The victim becomes incapable of"
+        "effect": "The victim cannot take any action for 3 action rounds"
       }
     ],
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!O8VfiZtZu0v1w2x3",
   "_id": "O8VfiZtZu0v1w2x3",

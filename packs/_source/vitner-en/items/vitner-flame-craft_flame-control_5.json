@@ -13,11 +13,11 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Flame Craft",
     "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
-    "summary": "armed actions in the same action round in which they conjure the spell.",
+    "summary": "The mage controls an existing flame by increasing or cutting off its supply of air.",
     "swedishName": "Loganrauda",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,31 +32,31 @@
         "id": "vitner-flame-craft:flame-control:5:1",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the range by 10 meters"
+        "effect": "Increase the duration by 10 minutes"
       },
       {
         "id": "vitner-flame-craft:flame-control:5:2",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the duration by 10 minutes"
+        "effect": "Increase the range by 10 meters"
       },
       {
         "id": "vitner-flame-craft:flame-control:5:3",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Control an area as big as a hall"
-      },
-      {
-        "id": "vitner-flame-craft:flame-control:5:4",
         "cost": 9,
         "maxCount": null,
         "effect": "Increase the range by 100 meters"
       },
       {
+        "id": "vitner-flame-craft:flame-control:5:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Allow control of an area as large as a hall"
+      },
+      {
         "id": "vitner-flame-craft:flame-control:5:5",
         "cost": 12,
         "maxCount": null,
-        "effect": "Control an area as big as a large"
+        "effect": "Allow control of an area as large as a large longhouse"
       }
     ],
     "source": "Player's Handbook, p. 109",

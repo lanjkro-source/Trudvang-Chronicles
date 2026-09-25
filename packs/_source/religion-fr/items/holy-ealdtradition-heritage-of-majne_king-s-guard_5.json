@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
     "description": "Le bruide invoque un esprit guerrier venant de la grande garde royale. Ce soldat est un guerrier discipliné qui porte une armure en cuir et manie une épée large et un bouclier. L’esprit guerrier apparaît sous la forme d’une brume soudaine qui se rassemble autour du bruide avant d’adopter une forme physique. Dès que la durée de ce pouvoir expire, le brouillard reparaît et le guerrier y disparaît en abandonnant l’arpenteur des brumes. L’esprit guerrier s’interpose pour protéger l’arpenteur des brumes au combat ou dans toute autre situation dans laquelle le bruide est en danger immédiat. Le guerrier ne s’éloigne jamais à plus de 10 mètres du bruide et ne peut entreprendre aucune autre tâche que protéger le bruide ou combattre ceux qui l’attaquent. L’esprit guerrier ne communique pas : il se contente d’exécuter sa tâche. Un bruide ne peut activer plus de quatre gardes en même temps.<hr>Garde : Force +1, points de santé 25, valeur de protection 3, points de combat 15, initiative 1d10 (JO 10) + 5, spécialité Porteur de bouclier (+8 points de combat).",
-    "summary": "Le bruide invoque un esprit guerrier venant de la grande garde royale.",
+    "summary": "Invoque un esprit de la garde royale pour protéger et combattre.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "personnelle",

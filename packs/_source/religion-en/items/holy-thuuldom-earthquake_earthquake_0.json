@@ -16,7 +16,7 @@
     "summary": "The spell causes an area within the range to rumble with a single, heavy tremor.",
     "swedishName": "",
     "duration": "",
-    "range": "spéciale",
+    "range": "special",
     "weavingTime": "",
     "dailyActivation": "3",
     "spellType": "instant",
@@ -26,37 +26,37 @@
         "id": "holy-thuuldom-earthquake:earthquake:0:0",
         "cost": 0,
         "maxCount": null,
-        "effect": "Provoque un séisme dans une zone de 2 meters de rayon centrée sur le Thuul. Diminue the Situation Value pour éviter d’être déséquilibré de : -1"
+        "effect": "Cause an earthquake in a 2-meter radius centered on the Thuul; reduce the Situation Value to avoid being knocked off balance by -1"
       },
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:1",
         "cost": 0,
         "maxCount": null,
-        "effect": "Provoque un séisme dans une zone de 4 meters de rayon centrée jusqu’à : 3 meters et diminue the Situation Value pour éviter d’être déséquilibré de : -2"
+        "effect": "Cause an earthquake in a 4-meter radius centered up to 3 meters away; reduce the Situation Value to avoid being knocked off balance by -2"
       },
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:2",
         "cost": 0,
         "maxCount": null,
-        "effect": "Provoque un séisme dans une zone de 6 meters de rayon centrée jusqu’à : 6 meters et diminue the Situation Value pour éviter d’être déséquilibré de : -3"
+        "effect": "Cause an earthquake in a 6-meter radius centered up to 6 meters away; reduce the Situation Value to avoid being knocked off balance by -3"
       },
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:3",
         "cost": 0,
         "maxCount": null,
-        "effect": "Provoque un séisme dans une zone de 8 meters de rayon centrée jusqu’à : 9 meters et diminue the Situation Value pour éviter d’être déséquilibré de : -4"
+        "effect": "Cause an earthquake in a 8-meter radius centered up to 9 meters away; reduce the Situation Value to avoid being knocked off balance by -4"
       },
       {
         "id": "holy-thuuldom-earthquake:earthquake:0:4",
         "cost": 0,
         "maxCount": null,
-        "effect": "Provoque un séisme dans une zone de 10 meters de rayon centrée jusqu’à : 12 meters et diminue the Situation Value pour éviter d’être déséquilibré de : -5"
+        "effect": "Cause an earthquake in a 10-meter radius centered up to 12 meters away; reduce the Situation Value to avoid being knocked off balance by -5"
       }
     ],
     "source": "Player's Handbook, p. 229",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!Qk1ohYsYtZu0v1w2",
   "_id": "Qk1ohYsYtZu0v1w2",

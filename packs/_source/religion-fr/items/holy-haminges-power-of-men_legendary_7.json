@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-men",
     "tablet": "Puissance des hommes",
     "description": "Le conjurateur réussit automatiquement un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
-    "summary": "Le conjurateur réussit automatique ment un test de compétence de son choix (il doit s’agir d’un test volontaire et non d’un test effectué en réaction) avant expiration du pouvoir.",
+    "summary": "Permet de réussir automatiquement une action de compétence choisie.",
     "swedishName": "",
     "duration": "3 minutes",
     "range": "personnelle",

@@ -1,5 +1,5 @@
 {
-  "name": "Objet d'alarme",
+  "name": "Objet d’alarme",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-of-objects",
     "tablet": "Vitner des objets",
     "description": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange. L’enchanteur précise une condition au moment où il tisse le sort sur l’objet choisi. Cette condition doit être définie avec précision et reposer sur des événements physiques qui doivent se produire à moins de 10 mètres de l’objet. Une fois cette condition remplie, l’enchanteur est immédiatement averti, quelle que soit la distance qui le sépare de l’objet. L’enchanteur peut également choisir que l’objet émette un bruit tonitruant infligeant à toutes les personnes situées à portée un malus de -3 aux valeurs de compétence et de situation associées à l’audition pendant les 1d3 jours suivants. Pour éviter ce malus, chaque victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). Sinon, l’enchanteur peut décider que ceux qui déclenchent l’alarme n’en aient pas conscience. Quelques exemples de conditions acceptables : une créature d’une espèce particulière approche à portée, quelque chose de vivant approche à portée, quelque chose entre en contact avec l’objet ou le déplace, etc.",
-    "summary": "L’enchanteur tisse une délicate trame de vitner autour d’un objet, qui déclenche l’alarme qu’il contient au moment où on le dérange.",
+    "summary": "Enchante un objet pour alerter l’enchanteur lorsqu’une condition choisie se produit.",
     "swedishName": "Vakefnating",
     "duration": "5 heures",
     "range": "10 mètres",

@@ -15,9 +15,9 @@
     "description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target with a wave<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.</td></tr></tbody></table>of emotions. The enchanter must choose what emotions the target will feel (see the table below for examples) before weaving the spell. The enchanted character can resist the effect of the spell by making a successful Situation roll with a Situation value of 10 (Psyche modifiers apply). Some further effects that emerge from emotions listed below can also be avoided with a separate Situation roll.",
     "summary": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.",
     "swedishName": "Vitnarus",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,9 +30,9 @@
       },
       {
         "id": "vitner-power-of-thought:ecstasy:5:1",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null,
-        "effect": "Decrease the target’s chance of succeeding on the Situation roll(s) by -1"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "vitner-power-of-thought:ecstasy:5:2",
@@ -44,13 +44,13 @@
         "id": "vitner-power-of-thought:ecstasy:5:3",
         "cost": 2,
         "maxCount": null,
-        "effect": "Affect an extra being (with the spell’s basic version)"
+        "effect": "Decrease the target’s chance of succeeding on the Situation roll(s) by -1"
       },
       {
         "id": "vitner-power-of-thought:ecstasy:5:4",
-        "cost": 6,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Affect an extra being (with the spell’s basic version)"
       }
     ],
     "source": "Player's Handbook, p. 116",

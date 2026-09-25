@@ -15,30 +15,30 @@
     "description": "The bound spirit bestows courage upon the conjurer, bolstering them in the face of horrific things that would cause fear in a less courageous being. The spirit conjurer rarely becomes frightened and therefore reduces any fear factor roll by one step (example: 1d10 (OR 10) to 1d10, or 1d5 to 0) for the duration of the ability. This affects the fear factor only as it applies to the dimwalker. The spirit conjurer also ignores the effects of the first fear level for the duration (whether the level was reached before invoking the ability, or was reached during the duration).",
     "summary": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
         "id": "holy-haminges-power-of-trolls:fearless:3:1",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the effect so the spirit conjurer can reduce fear factors by two steps"
-      },
-      {
-        "id": "holy-haminges-power-of-trolls:fearless:3:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-haminges-power-of-trolls:fearless:3:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the effect so the spirit conjurer can reduce fear factors by two steps"
       }
     ],
     "source": "Player's Handbook, p. 223",

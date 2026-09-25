@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-heat-of-the-depths",
     "tablet": "Chaleur des profondeurs",
     "description": "Le thuul peut placer l'objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne. Cette chaleur imprègne le sol alentour et affecte un espace de 1 m² par niveau de la rune. Le niveau de la rune indique également l'amplitude thermique que le thuul peut contrôler : chaque niveau lui permet de modifier la température de ±10 degrés. Le thuul peut choisir que la zone affectée atteigne la température choisie dans les limites de cette amplitude thermique.",
-    "summary": "Le thuul peut placer l’objet runique au sol et canaliser la chaleur provenant des entrailles de la montagne.",
+    "summary": "Réchauffe ou refroidit durablement le sol autour d’un objet runique.",
     "swedishName": "",
     "duration": "3 heures/niveau",
     "range": "1 m²/niveau",

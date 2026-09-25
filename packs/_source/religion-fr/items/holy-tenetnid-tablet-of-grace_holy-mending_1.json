@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-grace",
     "tablet": "Tablette de la grâce",
     "description": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée. Ce pouvoir soigne 1 point de santé par minute chez la personne affectée jusqu’à expiration du pouvoir. Les fractures, blessures internes et plaies ouvertes guérissent totalement sans laisser la moindre cicatrice. Le prêtre peut utiliser cette prière sur lui-même.",
-    "summary": "Le prêtre est imprégné d’une partie de la puissance de guérison de Gave, et il place ses mains sur une personne blessée.",
+    "summary": "Restaure progressivement les points de santé d’une créature.",
     "swedishName": "",
     "duration": "3 minutes",
     "range": "contact",

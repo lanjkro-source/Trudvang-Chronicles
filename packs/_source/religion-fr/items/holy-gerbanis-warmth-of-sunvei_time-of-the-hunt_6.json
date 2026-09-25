@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
     "description": "Solvei répond aux souhaits de l’arpenteur des brumes et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour du stormikjalt deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
-    "summary": "Solvei répond aux souhaits de l’ar penteur des brumes et fait apparaître les rayons du soleil.",
+    "summary": "Fait apparaître une lumière solaire favorable à la chasse et aux déplacements.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "rayon de 10 km",

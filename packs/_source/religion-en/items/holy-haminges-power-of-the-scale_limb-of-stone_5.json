@@ -15,9 +15,9 @@
     "description": "The spirit conjurer directs their petrifying gaze toward an opponent’s limb, such as an arm or a leg. That body part is turned to stone for the duration of the ability, along with any armor or garment that covers it. A petrified limb becomes quite heavy and unwieldy, and cannot be used for anything. If a petrified limb is ever struck by a powerful force, there is a risk that it might be shattered or fall off. This is u ltimately up to the game master to decide, depending on the force of the strike. The target can attempt to resist petrification by making a Situation roll with a Situation value of 6 (Psyche modifiers apply). A successful roll avoids petrification entirely. This ability can be used only on people and creatures that are close to humansized (from half the size of a human up to 1.5 times the size of a human).",
     "summary": "The spirit conjurer directs their petrifying gaze toward an opponent’s limb, such as an arm or a leg.",
     "swedishName": "",
-    "duration": "5 action round(s)",
-    "range": "personalle",
-    "weavingTime": "1 action round(s)",
+    "duration": "3 action rounds",
+    "range": "10 meters",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -27,6 +27,24 @@
         "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 action"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the power's range by 5 meters"
+      },
+      {
+        "id": "holy-haminges-power-of-the-scale:limb-of-stone:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Reduce Situation Value by -1"
       }
     ],
     "source": "Player's Handbook, p. 218",

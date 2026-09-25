@@ -15,9 +15,9 @@
     "description": "The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch.",
     "summary": "The enchanter weaves vitner together to create an astral pouch.",
     "swedishName": "Vitnasakje",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "contact",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
-      },
-      {
-        "id": "vitner-vitner-craft:vitner-pouch:1:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Lower the Situation roll for any being attempting to get out of the bag by -1"
-      },
-      {
-        "id": "vitner-vitner-craft:vitner-pouch:1:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the total weight that can be stored in the bag by 10 kg"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the total weight the pouch can hold by 100 kg"
+      },
+      {
+        "id": "vitner-vitner-craft:vitner-pouch:1:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:4",
@@ -54,9 +54,9 @@
       },
       {
         "id": "vitner-vitner-craft:vitner-pouch:1:5",
-        "cost": 12,
+        "cost": 15,
         "maxCount": null,
-        "effect": "Increase the total weight that can"
+        "effect": "Increase the spell's duration by 1 week"
       }
     ],
     "source": "Player's Handbook, p. 129",

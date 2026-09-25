@@ -12,12 +12,12 @@
     "catalogId": "vitner-power-of-thought:memory:7",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak. The victims of this prayer immediately begin bleeding from open wounds in their hands and feet, which inflict more mental anguish than physical. Armor or natural protection therefore have no effect. The priest causes five enemies to bleed profusely from three wounds each. Every wound causes the victim 2 points of damage (for a total of 6 points of damage dealt to each person). To resist the psychological pain (but not the damage), they must successfully make a Situation roll with a Situation value of 8 (Psyche modifiers apply). Even if the Situation roll is successful, the victim must deduct -3 from every Skill roll and Situation roll for the next 1d6 hours. But if the Situation roll fails, the victim will suffer the above modifier for the rest of the day and fall to the ground unconscious for 1d6 minutes.",
-    "summary": "Allows the enchanted creature to recall past events with supernatural clarity.",
+    "description": "The enchanted character remembers everything that happened to them during the preceding week with supernatural clarity. They can recall the details of a particular event in each action round.",
+    "summary": "The enchanted character recalls the preceding week's events in extraordinary detail.",
     "swedishName": "Húgstyrkja",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "1 minute(s)",
+    "weavingTime": "1 minute",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,31 +26,31 @@
         "id": "vitner-power-of-thought:memory:7:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase duration by 1 action round(s)"
+        "effect": "Increase duration by 1 action round"
       },
       {
         "id": "vitner-power-of-thought:memory:7:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase la période dont la enchanted person se souvient de : 1 week"
+        "effect": "Increase the period the enchanted person remembers by 1 week"
       },
       {
         "id": "vitner-power-of-thought:memory:7:2",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase la période dont la enchanted person se souvient de : 1 month"
+        "effect": "Increase the period the enchanted person remembers by 1 month"
       },
       {
         "id": "vitner-power-of-thought:memory:7:3",
         "cost": 10,
         "maxCount": null,
-        "effect": "Increase la période dont la enchanted person se souvient de : 1 year"
+        "effect": "Increase the period the enchanted person remembers by 1 year"
       },
       {
         "id": "vitner-power-of-thought:memory:7:4",
         "cost": 30,
         "maxCount": 1,
-        "effect": "Increase la période dont la enchanted person se souvient à sa vie entière"
+        "effect": "Increase the period the enchanted person remembers to their entire lifetime"
       }
     ],
     "source": "Player's Handbook, p. 116",

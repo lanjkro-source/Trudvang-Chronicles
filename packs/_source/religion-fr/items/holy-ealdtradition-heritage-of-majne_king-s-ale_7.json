@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-heritage-of-majne",
     "tablet": "Héritage de Majne",
     "description": "En brassant la bière légère de Majne, le bruide peut boire avec des amis et renforcer les liens qui les unissent avant de se lancer dans une nouvelle aventure. Il faut une journée complète pour brasser cette boisson, mais il y en aura assez pour tous les alliés de l’arpenteur des brumes. Ceux qui boivent ne conservent le bonus que leur confère la bière que si tous partagent la même aventure. Si un ou plusieurs compagnons choisissent de quitter le groupe, tous les alliés perdent le bénéfice de la bière. Aucun test n’est requis pour brasser l’alcool, mais c’est au moment où le groupe se rassemble pour le consommer et festoyer que l’arpenteur des brumes doit en appeler à Majne et réussir à activer ce pouvoir pour bénéficier de ses effets. Un personnage ne peut bénéficier des effets que d’une seule bière à la fois. En boire plusieurs n’en augmentera pas les effets. Tous ceux qui trinquent et partagent une chope de la boisson brassée par le bruide bénéficient des avantages suivants pendant la durée du pouvoir lorsqu’ils accomplissent tous quelque chose ensemble :<ul><li>+3 à la valeur de protection</li><li>+3 à toutes les actions de combat</li></ul>",
-    "summary": "En brassant la bière légère de Majne, le bruide peut boire avec des amis et renforcer les liens qui les unissent avant de se lancer dans une nouvelle aventure.",
+    "summary": "Crée une bière bénie qui renforce durablement les compagnons.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "",

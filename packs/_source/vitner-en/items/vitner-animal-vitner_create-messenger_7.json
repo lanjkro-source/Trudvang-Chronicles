@@ -15,9 +15,9 @@
     "description": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination. The m essenger is an animal and has 2 Body Points. The most commonly created animals are birds, rats, or fish. The messenger travels in the same way that any other creature of its type would, though it does not need to stop to eat or rest. It is able to deliver the message in any chosen language. The messenger has the same values and attributes as a generic animal of its type, and it is susceptible to the same dangers on its journey as a normal animal. The message it carries can be as long as the mage desires, but can consist only of words. Furthermore, the messenger can travel only 10 kilometers before the vitner it consists of is dissolved. In the spell’s basic version, the mage can send messages only to a place they have already visited.",
     "summary": "The mage creates a messenger of flesh and blood, which can deliver its message to a predetermined destination.",
     "swedishName": "Besturbaud",
-    "duration": "spéciale",
-    "range": "spéciale",
-    "weavingTime": "3 action round(s)",
+    "duration": "special",
+    "range": "special",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,33 +30,33 @@
       },
       {
         "id": "vitner-animal-vitner:create-messenger:7:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the range by 10 meters"
-      },
-      {
-        "id": "vitner-animal-vitner:create-messenger:7:2",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
       },
       {
-        "id": "vitner-animal-vitner:create-messenger:7:3",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the range by 100 meters"
-      },
-      {
-        "id": "vitner-animal-vitner:create-messenger:7:4",
+        "id": "vitner-animal-vitner:create-messenger:7:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
       },
       {
+        "id": "vitner-animal-vitner:create-messenger:7:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "vitner-animal-vitner:create-messenger:7:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
         "id": "vitner-animal-vitner:create-messenger:7:5",
         "cost": 10,
         "maxCount": null,
-        "effect": "Increase the range by 1 kilometer"
+        "effect": "Increase the range by 10 kilometers"
       }
     ],
     "source": "Player's Handbook, p. 92",

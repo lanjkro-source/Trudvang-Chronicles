@@ -1,5 +1,5 @@
 {
-  "name": "Joie de la création",
+  "name": "Esprit d’acier",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,12 +12,12 @@
     "catalogId": "holy-gerbanis-wisdom-of-windinna:steel-mind:3",
     "tabletId": "holy-gerbanis-wisdom-of-windinna",
     "tablet": "Sagesse de Windinna",
-    "description": "Par de grands gestes et des incantations, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes les personnes présentes qui sont dévouées à Storme. Une fois le rituel accompli, un léger tourbillon de vent apparaît autour de l’arpenteur des brumes. Le vent a un effet inspirant et procure un élan de créativité à l’arpenteur des brumes ou à un allié situé à portée. La prochaine fois que le bénéficiaire effectue un jet de compétence pour créer un objet, il reçoit un bonus de +5 à sa valeur de compétence, pour peu qu’il commence à travailler dans la journée qui suit. Le tourbillon peut aussi réparer de façon permanente un objet cassé (ce qui prend 1d10 tours de jeu).",
-    "summary": "Par de grands gestes et des incanta tions, le stormikjalt supplie Windinna de manifester son pouvoir et de bénir toutes",
+    "description": "Des flammes engloutissent la cible et purifient son corps de tout mal, transformation ou influence extérieure. Ce pouvoir chasse de la cible toute pensée étrangère aux effets négatifs invoquée par le vitner. Si le stormikjalt est le bénéficiaire de ce pouvoir, il doit réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour se concentrer suffisamment afin de pouvoir recourir à ce pouvoir.",
+    "summary": "Protège l’esprit d’une cible contre les influences, transformations et manipulations.",
     "swedishName": "",
-    "duration": "1 jour",
-    "range": "10 mètres",
-    "weavingTime": "6 tours de jeu",
+    "duration": "",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,13 +26,19 @@
         "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Affecte une autre personne à portée"
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
       },
       {
         "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Augmente la portée du pouvoir de : 5 mètres"
+        "effect": "Augmente la valeur de situation de : +1"
+      },
+      {
+        "id": "holy-gerbanis-wisdom-of-windinna:steel-mind:3:2",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte une personne supplémentaire à portée (qui profite de la version de base du pouvoir)"
       }
     ],
     "source": "Livre des règles, p. 226",

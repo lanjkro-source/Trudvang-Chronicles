@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-mark-of-brokk",
     "tablet": "Marque de Brokk",
     "description": "Cette rune permet au thuul de récupérer 1 point de santé supplémentaire par niveau de rune après une nuit de repos tant qu’il tient l’objet runique contre sa peau pendant qu’il dort. Cette rune est active en permanence mais on doit tout de même lui associer le nombre adéquat de points de divinité pour qu’elle fonctionne.",
-    "summary": "Quand on inscrit cette rune sur une paire de gants, de bracelets ou de bras sards (une rune sur chacun), elle confère au porteur une force supplémentaire en combat à mains nues.",
+    "summary": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
     "swedishName": "",
     "duration": "",
     "range": "personnelle",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!C8XJjcHcIdJeKfLg",
   "_id": "C8XJjcHcIdJeKfLg",

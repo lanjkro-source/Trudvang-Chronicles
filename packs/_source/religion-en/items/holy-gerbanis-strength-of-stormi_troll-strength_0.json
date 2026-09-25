@@ -15,9 +15,9 @@
     "description": "The hrimthurse’s spirit bestows strength like that of a troll upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +4 for the duration of the ability.",
     "summary": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -31,12 +31,6 @@
       {
         "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:1",
         "cost": 10,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour 2: Mountain Ogre´s Fury ✦ Cost/Modifier: 4/-4 ✦ Type: Lasting ✦ Duration: 3 action rounds ✦ Range: Personal ✦ Invocation time: 1 action round The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following: ✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear LEVELS OF POWER: MOUNTAIN OGRE’S FURY Cost Extra Levels of Power"
-      },
-      {
-        "id": "holy-gerbanis-strength-of-stormi:troll-strength:0:2",
-        "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 action"
       }

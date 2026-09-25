@@ -17,14 +17,14 @@
     "swedishName": "",
     "duration": "",
     "range": "20 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-scale:scream-of-the-devouress:6:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 5 meters"
       },

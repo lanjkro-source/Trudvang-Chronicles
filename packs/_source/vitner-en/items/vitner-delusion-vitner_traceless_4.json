@@ -15,9 +15,9 @@
     "description": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away, leaving the land as it was before they passed by. Not even their scents remain.",
     "summary": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by.",
     "swedishName": "Sporvaska",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-delusion-vitner:traceless:4:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-delusion-vitner:traceless:4:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Affect an extra being (with the spell’s basic version)"
-      },
-      {
-        "id": "vitner-delusion-vitner:traceless:4:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
       },
       {
-        "id": "vitner-delusion-vitner:traceless:4:4",
+        "id": "vitner-delusion-vitner:traceless:4:2",
         "cost": 12,
         "maxCount": null,
         "effect": "Increase the duration by 1 week"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-delusion-vitner:traceless:4:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the spell’s basic version)"
       }
     ],
     "source": "Player's Handbook, p. 101",

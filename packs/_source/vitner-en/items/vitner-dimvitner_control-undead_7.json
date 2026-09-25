@@ -15,48 +15,48 @@
     "description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons. By taking control of the bond between the undead and their realm, the mage succeeds in controlling the souls of the undead as well. In order to do so, however, the mage has to succeed on a Situation roll with a S ituation value of 12 (Psyche modifiers apply), modified depending on the undead’s full Body Points according to the table below (even if the undead is injured, modifiers are determined as though it were uninjured). If the mage succeeds in controlling<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.</td></tr></tbody></table>an undead, it will obey everything the mage commands it to do. This control is immediately lost if the mage loses consciousness. The mage can control any number of undead within the spell’s range, but the Body Points for all of the targeted undead are totaled to determine how difficult the Situation roll will be.",
     "summary": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.",
     "swedishName": "Rauda sálhele",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "10 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
     "powerLevels": [
       {
         "id": "vitner-dimvitner:control-undead:7:0",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the chance to succeed on the Situation roll by +1"
-      },
-      {
-        "id": "vitner-dimvitner:control-undead:7:1",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-dimvitner:control-undead:7:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
-      },
-      {
-        "id": "vitner-dimvitner:control-undead:7:3",
+        "id": "vitner-dimvitner:control-undead:7:1",
         "cost": 5,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
       },
       {
-        "id": "vitner-dimvitner:control-undead:7:4",
+        "id": "vitner-dimvitner:control-undead:7:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
+      },
+      {
+        "id": "vitner-dimvitner:control-undead:7:4",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the chance to succeed on the Situation roll by +1"
       }
     ],
     "source": "Player's Handbook, p. 105",
-    "level": 5,
-    "cost": 10,
-    "modifier": -10
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
   },
   "_key": "!items!h1kohNfLgMhNiOjP",
   "_id": "h1kohNfLgMhNiOjP",

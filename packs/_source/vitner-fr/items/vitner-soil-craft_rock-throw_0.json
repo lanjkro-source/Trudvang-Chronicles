@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "L’enchanteur ramasse une petite pierre et la lance sur une cible à portée. Le vitner évoqué par ce sort fait grossir la pierre jusqu’à atteindre la taille d’une dalle de tumulus. Lorsqu’elle percute la cible, elle lui inflige 1d10 (JO 10) points de dégâts. L’armure fonctionne normalement contre ces dégâts. L’enchanteur n’a pas besoin de lancer la pierre pour qu’elle grandisse. S’il veut simplement obtenir un gros rocher, ce sort fonctionne de la même manière pour peu que l’enchanteur dispose au départ d’une petite pierre. Une cible qui porte un bouclier peut avoir de la chance et bloquer l’énorme projectile grâce à lui, bénéficiant ainsi de sa protection passive. Si la cible visée possède la spécialité Esquive, elle peut tenter de s’écarter de la trajectoire de la pierre et éviter d’être blessée tant qu’elle n’a pas encore agi à ce tour de jeu, mais sa valeur de compétence subit alors un malus de -1 pour chaque point d’écart entre son initiative personnelle et le rang d’initiative actuel.",
-    "summary": "L’enchanteur ramasse une petite pierre et la lance sur une cible à portée.",
+    "summary": "Propulse une pierre contre une cible pour lui infliger des dégâts.",
     "swedishName": "Steinflegja",
     "duration": "",
     "range": "5 mètres",

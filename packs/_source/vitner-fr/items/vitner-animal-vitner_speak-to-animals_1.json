@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres. Ce lien permet à l’enchanteur de communiquer avec l’animal, qui tentera de répondre aux questions de l’enchanteur au mieux de ses facultés. Ayez à l’esprit que la plupart des animaux sont dénués d’intelligence et seront la plupart du temps incapables de donner des réponses précises. Ainsi, les informations que l’enchanteur peut recueillir de cette façon sont souvent peu fiables. Cela dit, ce n’est jamais intentionnel de la part des animaux, qui essaient toujours de faire de leur mieux. L’enchanteur doit se contenter de questions basiques, qui appellent des réponses encore plus basiques. Vous trouverez ci-dessous quelques exemples de questions et leurs réponses possibles.",
-    "summary": "Ce sort établit un lien spirituel entre l’enchanteur et l’animal de son choix situé à moins de 50 mètres.",
+    "summary": "Permet de communiquer avec un animal et de lui poser des questions.",
     "swedishName": "Bestamal",
     "duration": "1 minute",
     "range": "50 mètres",

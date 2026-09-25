@@ -15,9 +15,9 @@
     "description": "The priest asks his god for heat and light, and in reply daylight slowly begins to spread and illuminate the area around her. If the priest moves, so does the lit area. The priest can disable the ability or decrease the range at any time. The prayer creates a sacred source of light that spreads out around the priest. The light brings safety and tranquility to all within its reach. Any negative modifiers from fear levels disappear, and the priest and all allies gain +1 to their Skill Values and Situation values as long as they remain within range. Within its range, the light counts as daylight for all intents and purposes.",
     "summary": "The prayer acts as protection against vitner and other religions’ feats.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "rayon de 2 meters",
-    "weavingTime": "3 action round(s)",
+    "duration": "1 minute",
+    "range": "radius of 2 meters",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:1",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:2",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 1 meter"
       },
       {
-        "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the bonus to Skill Values and Situation values by +1 (maximum +3)"
-      },
-      {
         "id": "holy-tenetnid-tablet-of-the-sun:thermal-light:3:3",
-        "cost": 10,
+        "cost": 3,
         "maxCount": 2,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the bonus to Skill Values and Situation Values by +1"
       }
     ],
     "source": "Player's Handbook, p. 203",

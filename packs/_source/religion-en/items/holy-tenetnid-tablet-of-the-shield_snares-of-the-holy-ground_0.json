@@ -15,9 +15,9 @@
     "description": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions. The demons suffer -1 on all their Skill Values and Situation values for any actions that involves movement.",
     "summary": "As the priest prays to Gave, up from the ground root-like snares begin to sprout, which grasp and bind demons and hinder their physical actions.",
     "swedishName": "",
-    "duration": "3 action round(s)",
+    "duration": "3 action rounds",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -38,7 +38,7 @@
         "id": "holy-tenetnid-tablet-of-the-shield:snares-of-the-holy-ground:0:2",
         "cost": 2,
         "maxCount": 4,
-        "effect": "Increase the modifier of the demon"
+        "effect": "Increase the penalty suffered by demons by -1"
       }
     ],
     "source": "Player's Handbook, p. 201",

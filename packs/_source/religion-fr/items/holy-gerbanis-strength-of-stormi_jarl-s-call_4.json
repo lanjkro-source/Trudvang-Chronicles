@@ -1,5 +1,5 @@
 {
-  "name": "Appel du Jarl",
+  "name": "Appel du jarl",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
     "description": "La voix du stormikjalt résonne avec puissance et affecte une personne située à portée au choix de l’arpenteur des brumes. La cible doit effectuer un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si la cible échoue, elle obéit instinctivement au stormikjalt pendant toute la durée du pouvoir. Cependant, elle ne fera rien qui puisse lui causer physiquement du tort (comme sauter du haut d’une falaise) ou qui exige de l’esprit d’initiative ou de la créativité (comme élaborer un plan ou improviser).",
-    "summary": "La voix du stormikjalt résonne avec puissance et affecte une personne située à portée au choix de l’arpenteur des brumes.",
+    "summary": "Rallie les alliés et améliore leur efficacité au combat.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "10 mètres",

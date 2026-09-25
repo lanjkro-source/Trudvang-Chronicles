@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-power-of-enken",
     "tablet": "Pouvoir d'Enken",
     "description": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix. Cette armure confère au bénéficiaire une valeur de protection de 2 contre les armes de corps à corps et de 4 contre les armes à distance. S’il s’agit d’armes magiques, cette valeur de protection tombe à 1 pour les armes de corps à corps et à 3 pour les armes à distance.",
-    "summary": "Le stormikjalt invoque une armure faite de vents tourbillonnant autour de lui ou du personnage de son choix.",
+    "summary": "Entoure le bénéficiaire de vents tourbillonnants qui le protègent.",
     "swedishName": "",
     "duration": "2 tours de jeu",
     "range": "contact",

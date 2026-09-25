@@ -13,7 +13,7 @@
     "tabletId": "vitner-perceiving",
     "tablet": "Perception",
     "description": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur rougeâtre qu’elle seule peut voir. Si le bénéficiaire a traversé une quelconque masse d’eau ou s’est déplacé d’une manière qui ne laisse pas de trace (par exemple en sautant par-dessus une ravine, en nageant ou en chevauchant une monture), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer la direction.",
-    "summary": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur PUISSANCE DE LA TEMPÊTE Poids de la victime Valeur de situation Distance de projection Modificateur aux actions 3 fois le",
+    "summary": "Fait apparaître les propres traces du bénéficiaire afin qu’il puisse les suivre.",
     "swedishName": "Veigvisu",
     "duration": "1 heure",
     "range": "contact",

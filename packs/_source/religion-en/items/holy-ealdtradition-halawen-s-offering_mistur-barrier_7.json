@@ -15,9 +15,9 @@
     "description": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner. Anytime the dimwalker or their allies are attacked by a spell, regardless of the power, the targeted character must make a Situation roll with a Situation value based on the level of the spell, according to table below (Psyche modifiers apply). If the roll succeeds, the spell’s effects are neutralized. If several characters are hit with a spell, each of them must succeed individually to avoid the effect. If the spell affects a whole<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.</td></tr></tbody></table>area, rather than individual targets, it will have an impact on all who failed the Situation roll or are unprotected by this ability. MISTUR BARRIER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
     "summary": "The Bruid lets their ancestors watch over them and three allies, all of which receive a divine protection against vitner.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "4 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:2",
         "cost": 1,
         "maxCount": null,
         "effect": "Increase the range by 2 meters"
       },
       {
-        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:2",
+        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the Situation value by +1"
       },
       {
-        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:3",
+        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:4",
         "cost": 3,
         "maxCount": null,
         "effect": "Affect another ally within the range"
-      },
-      {
-        "id": "holy-ealdtradition-halawen-s-offering:mistur-barrier:7:4",
-        "cost": 6,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
       }
     ],
     "source": "Player's Handbook, p. 178",

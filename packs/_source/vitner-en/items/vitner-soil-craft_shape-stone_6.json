@@ -15,9 +15,9 @@
     "description": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to the stone’s original c onsistency, in the new shape the enchanter has given it. If there doesn’t appear to be much stone in an area where the spell is woven, it can almost seem as if the stone is created out of thin air as the enchanter begins gathering and molding. However, it only appears to create new stone because it is drawing every bit of rocky sediment from the ground and amassing it in a single spot. It is up to the game master to decide if the area has enough stone. The duration for the spell is 5 minutes, which indicates how long the stone is able to maintain the new shape. As soon as the spell expires, the stone immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted rock at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning stone; someone on a molded staircase is likely to have their legs stuck in rock once it shifts back to its original form.",
     "summary": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay.",
     "swedishName": "Steinforma",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "5 meters",
-    "weavingTime": "5 action round(s)",
+    "weavingTime": "5 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,19 +32,19 @@
         "id": "vitner-soil-craft:shape-stone:6:1",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the amount of affected stone by that of another stormhall, and increase the time to shape it by another 3 minutes"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "vitner-soil-craft:shape-stone:6:2",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase the amount of affected stone by that of another stormhall, and increase the time to shape it by another 3 minutes"
       },
       {
         "id": "vitner-soil-craft:shape-stone:6:3",
         "cost": 20,
         "maxCount": 1,
-        "effect": "Give the molded stone a permanent"
+        "effect": "Give the rock a permanent shape"
       }
     ],
     "source": "Player's Handbook, p. 123",

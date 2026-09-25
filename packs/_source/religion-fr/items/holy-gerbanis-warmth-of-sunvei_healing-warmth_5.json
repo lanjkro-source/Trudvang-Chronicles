@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
     "description": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains. La vitesse de guérison de la personne bénéficiant de l’imposition des mains augmente de +3 points de santé par jour, tant que le sujet continue à se reposer. Si le personnage blessé fait quoi que ce soit d’autre que se reposer, le pouvoir est rompu et le sujet retrouve sa vitesse de guérison normale. L’arpenteur des brumes peut également tenter de guérir n’importe quelle maladie en conférant à la personne malade un bonus de +3 à un jet de situation pour vaincre la maladie.",
-    "summary": "Le stormikjalt place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains.",
+    "summary": "Accélère la récupération d’une créature au repos.",
     "swedishName": "",
     "duration": "2 jours",
     "range": "contact",

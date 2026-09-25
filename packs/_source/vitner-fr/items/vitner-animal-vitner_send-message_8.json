@@ -13,7 +13,7 @@
     "tabletId": "vitner-animal-vitner",
     "tablet": "Vitner animal",
     "description": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’enchanteur. Dans la version de base du sort, le message est limité à dix mots, et peut être destiné à un maximum de cinq créatures dans un rayon de 10 kilomètres. L’être de vitner est incroyablement rapide et peut franchir 1 kilomètre par tour de jeu. Le message doit être émis dans une langue que l’enchanteur maîtrise.",
-    "summary": "L’enchanteur crée un être de vitner qui n’a qu’un objectif : délivrer un message à une créature intelligente choisie par l’en chanteur.",
+    "summary": "Crée un messager de vitner capable de transmettre un message à une créature choisie.",
     "swedishName": "Dimbaud",
     "duration": "10 minutes",
     "range": "100 mètres",

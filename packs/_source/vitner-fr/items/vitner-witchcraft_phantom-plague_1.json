@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "L’enchanteur peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute. Ce sort ne fait apparaître que les symptômes de la maladie, et la victime ne fait qu’imaginer ressentir la fièvre, les frissons ou les douleurs. La santé véritable de la victime n’est en rien affectée, même si la victime est convaincue du contraire. Les symptômes sont si réalistes qu’il faut avoir de bonnes connaissances médicales (à travers la compétence Savoirfaire et la discipline Soins et remèdes) pour découvrir la vérité. La victime peut également découvrir le subterfuge en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). À chaque nouvelle journée que dure le sort, la victime a droit à un nouveau test de situation pour essayer de découvrir la vérité. Une personne souffrant d’un mal imaginaire subit un malus de -5 à tous les tests reposant sur les interactions sociales, car tous ses interlocuteurs voient les symptômes de la maladie.",
-    "summary": "L’enchanteur peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute.",
+    "summary": "Fait croire à une victime qu’elle souffre d’une maladie et lui en impose les symptômes apparents.",
     "swedishName": "Skenplauga",
     "duration": "3 jours",
     "range": "contact",

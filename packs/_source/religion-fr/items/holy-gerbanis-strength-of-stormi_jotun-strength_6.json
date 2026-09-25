@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-strength-of-stormi",
     "tablet": "Force de Storme",
     "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
-    "summary": "FORCE DU JOTUN :",
+    "summary": "Confère une force gigantesque au bénéficiaire.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "5 mètres",

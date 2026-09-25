@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -43,8 +43,8 @@
     ],
     "source": "Player's Handbook, p. 194",
     "level": 3,
-    "cost": 6,
-    "modifier": -6
+    "cost": 4,
+    "modifier": -4
   },
   "_key": "!items!q8SF3bGbHcIdJeKf",
   "_id": "q8SF3bGbHcIdJeKf",

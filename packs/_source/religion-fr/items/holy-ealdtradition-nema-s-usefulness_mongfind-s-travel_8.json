@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
     "description": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui. Quand le bruide et ses compagnons traversent cette brume, leur vitesse de déplacement s’en voit considérablement accélérée. Tant qu’ils restent dans le brouillard, leur vitesse de déplacement est multipliée par sept, et une journée de voyage leur permettra de couvrir une distance égale à sept jours de marche. La rumeur affirme que le brouillard vient d’Othwa, un reflet du royaume du bruide où résident les morts. Le brouillard a besoin de 1d10 tours de jeu pour se matérialiser complètement, et il est bien trop fin pour qu’on puisse s’y dissimuler convenablement. Cela dit, toute personne proche du bruide et de ses alliés qui tente de les suivre à travers le brouillard se retrouvera rapidement distancée. En outre, si l’un des alliés de l’arpenteur des brumes sort du rayon d’action de ce pouvoir, il commence à perdre ses compagnons et se déplace désormais à vitesse normale.",
-    "summary": "Le bruide invoque un banc de brume qui s’étend devant ses alliés et lui.",
+    "summary": "Emporte les compagnons dans une brume qui facilite leur voyage.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "10 mètres",

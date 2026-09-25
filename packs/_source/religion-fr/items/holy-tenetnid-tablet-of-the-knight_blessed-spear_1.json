@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 1 point de dégâts supplémentaire (+2 contre les morts-vivants et +3 contre les démons). L’arme bénie prend une teinte plus claire et se met à luire faiblement.",
-    "summary": "Une aura sacrée apparaît autour de l’arme choisie, qui inflige 1 point de dégâts supplémentaire (+2 contre les morts-vivants et +3 contre les démons).",
+    "summary": "Bénit une arme pour la rendre plus efficace au combat.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "contact",

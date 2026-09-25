@@ -15,9 +15,9 @@
     "description": "Vitner Points This rare and powerful spell creates objects out of thin air. It is one of the most closely guarded magical songs of the mighty misturelves. With the basic spell, the enchanter can only conjure objects that are tiny, extremely common,<br>and useless. By adding extra levels of power, however, the object can be improved in terms of size, rarity, and quality according to the tables below. The time it takes to conjure the object is a number of hours equal to half its total cost in Vitner Points. Thus, an object that costs 20 Vitner Points would take ten hours to conjure. Creating 1 kg of gold with normal quality that lasts one day (duration levels of power are listed below) would cost 44 Vitner Points (normal quality 6 + extremely rare 18 + normal size 6 + one day of duration 4 + cost of spell 10 = 44)<table><thead><tr><th colspan=\"1\">OBJECT</th></tr><tr><th>Cost Extra Levels of Power</th></tr></thead><tbody><tr><td>1 Increase the duration by 1 hour</td></tr><tr><td>2 Increase the range by 10 meters</td></tr></tbody></table>and would take 22 hours to conjure. LEVEL OF POWER FOR CREATE OBJECT Cost Extra Levels of Power 1 Increase the duration by 1 hour 2 Increase the range by 10 meters I n c r ea s e t h e s i z e by o ne step (for 3 e x a m p l e, t in y t o s m a ll ) I n c r ea s e th e qu a l i ty b y o n e s tep 3 (f o r e x a m p le , w o r t h le s s t o p o o r ) Increase the rarity by one step (for 3 example, extremely ordinary to very ordinary) 4 Increase the duration by 1 day CREATE OBJECT SIZE, RARITY AND Size Rarity Building Extremely (up to 10 tons, House/Tower) (Gold) Huge Very (up to 1 ton, Ship/Low wall) (Darkblood Massive Rare (up to 100 kg, Throne/Wagon) (Silver) Large Unusual (up to 10 kg, Bench) (Iron) Normal Ordinary (up to 1 kg, Arm’s length) (Copper) Small Very (up to 1 hg, Jewelry) (Stone Tiny Extremely (up to 10 grams, Coin) (Soil/Grass) W C ater raft The enchanter has learned to control the vitner that flows through water. By weaving the vitner in a certain way, they can locate water that might be nearby, create water in extremely dry places, and purify water gathered from foul substances or sources. The enchanter has also learned to control the water itself and can separate it so as to allow dry passage, walk on water as if it were made of solid ground, or dive into water without getting wet and travel through the element. Negations for Water Craft When an enchanter attempts to create water, the negation will naturally be that water disappears from somewhere else. When an enchanter finds a source of water and dries it out, another is filled or increased to overflowing; when the enchanter purifies the moisture f r o m a f o u l s u b s t a n c e o r s o u rc e , s o m e w h er e e l s e a c l e a n s o ur c e be c o m e s i m p u r e . If t h e e n c h an t e r c o n t r o ls w a te r , s om e w h e r e e l s e w h e r e w a t er h a s been controlled (such as dams, vessels, or channels) the implements that contained it will break. This can be anything from a small leak to a massive hole in a reservoir wall. QUALITY Quality Cost rare Enchanted 18 or divine rare Legendary 15 iron) Masterful 12 Capital 9 Normal 6 ordinary Poor 3 /Wood) ordinary Worthless - Vitner Type Effects for Water Craft ✦ White Vitner: Levels of power cost -1, but no less than 1 per level. ✦ Vaagrivitner: Levels of power cost -1, but no less than 1 per level. ✦ Dark Vitner: Levels of power cost +1. Water Craft is by nature balanced, but also includes the act of creation. Water is the source of all life, and though it can be easily manipulated, it is dangerous if not controlled.",
     "summary": "Vitner Points This rare and powerful spell creates objects out of thin air.",
     "swedishName": "Efnatingkallja",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "10 meters",
-    "weavingTime": "1 hour(s) par tranche de 2 points de vitner",
+    "weavingTime": "1 hour per 2 Vitner Points",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "vitner-vitner-of-objects:create-object:8:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase duration by 1 hour(s)"
+        "effect": "Increase duration by 1 hour"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:1",
@@ -44,61 +44,61 @@
         "id": "vitner-vitner-of-objects:create-object:8:3",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase la size de l’object d’un degré (Ex : de très petit à petit)"
+        "effect": "Increase the object's size by one step (for example, from very small to small)"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:4",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase la quality de l’object d’un degré (Ex : de sans valeur à médiocre)"
+        "effect": "Increase the object's quality by one step (for example, from worthless to poor)"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:5",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase la rarity de l’object d’un degré (Ex : d’extrêmement ordinaire à très ordinaire)"
+        "effect": "Increase the object's rarity by one step (for example, from extremely common to very common)"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:6",
         "cost": 18,
         "maxCount": null,
-        "effect": "Enchantée"
+        "effect": "Enchanted"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:7",
         "cost": 15,
         "maxCount": null,
-        "effect": "Légendaire"
+        "effect": "Legendary"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:8",
         "cost": 12,
         "maxCount": null,
-        "effect": "Magistrale"
+        "effect": "Masterful"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:9",
         "cost": 9,
         "maxCount": null,
-        "effect": "Bonne"
+        "effect": "Good"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:10",
         "cost": 6,
         "maxCount": null,
-        "effect": "Normale"
+        "effect": "Normal"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:11",
         "cost": 3,
         "maxCount": null,
-        "effect": "Médiocre"
+        "effect": "Poor"
       },
       {
         "id": "vitner-vitner-of-objects:create-object:8:12",
         "cost": 7,
         "maxCount": null,
-        "effect": "Chapitre"
+        "effect": "Chapter"
       }
     ],
     "source": "Player's Handbook, p. 132",

@@ -1,5 +1,5 @@
 {
-  "name": "Malédiction d'objet",
+  "name": "Malédiction d’objet",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative. Le vitner conjuré s’accroche à l’objet comme une force délétère et malsaine. Toute personne qui tente d’utiliser l’objet en question subit un malus de -2 à tous les tests de compétence et de situation reposant sur cet objet. S’il s’agit d’une arme, ses dégâts subissent aussi un malus de -1, et dans le cas d’une armure, sa valeur de protection diminue de 1.",
-    "summary": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative.",
+    "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
     "swedishName": "Nidtrölja eftnating",
     "duration": "5 tours de jeu",
     "range": "contact",

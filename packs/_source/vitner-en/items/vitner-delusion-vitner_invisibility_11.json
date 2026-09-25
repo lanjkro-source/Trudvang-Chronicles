@@ -15,9 +15,9 @@
     "description": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective. The vitner gives the target, and their clothing and equipment, the look of whatever the observer would normally see if the target were not present. The target becomes virtually er and life force from the livinginvisible in this way. An observer must succeed on an extremely difficult (-10) Skill roll for the Shadow Arts skill in order to detect a target who stands still, or on a d ifficult (-3) Skill roll when the target moves slowly. If the target makes any sudden or extreme er and life force from the er and life force from the livinglivingmovements, such as running or fighting, the vitner can no longer c amouflage them as well, and anyone viewing them receives +5 on their Skill rolls to see the target; this lasts until the target slows down their movements. Any person trying to attack the invisible target or parry their attacks must succeed on a Skill roll for Agility in order to avoid modifiers. A person who fails this Skill roll suffers -10 in all attacks against the invisible target as well as any attempts to parry the unseen’s attacks.",
     "summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective.",
     "swedishName": "Oseidir",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "contact",
-    "weavingTime": "5 action round(s)",
+    "weavingTime": "5 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-delusion-vitner:invisibility:11:1",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-delusion-vitner:invisibility:11:2",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       },
       {
-        "id": "vitner-delusion-vitner:invisibility:11:2",
+        "id": "vitner-delusion-vitner:invisibility:11:3",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the level of difficulty for an observer to discover the target by -1 on Skill rolls"
       },
       {
-        "id": "vitner-delusion-vitner:invisibility:11:3",
+        "id": "vitner-delusion-vitner:invisibility:11:4",
         "cost": 4,
         "maxCount": null,
         "effect": "Affect an extra being (with the spell’s basic version)"
-      },
-      {
-        "id": "vitner-delusion-vitner:invisibility:11:4",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
       }
     ],
     "source": "Player's Handbook, p. 101",

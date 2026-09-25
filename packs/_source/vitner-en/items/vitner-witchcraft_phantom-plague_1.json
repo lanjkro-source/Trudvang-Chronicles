@@ -15,9 +15,9 @@
     "description": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear. The spell brings forth only the appearance of the disease, and the victim only imagines that they feel the fever, chills, or ache. The actual health of the victim is not affected, even though the victim is convinced otherwise. The symptoms are so real that it takes someone skilled in medicine with the Care skill (Healing and Drugs discipline) to reveal the truth. It is also possible for the victim to see through this phantom affliction by succeeding on a Situation roll with a Situation value of 8 (Psyche modifiers apply). Each new day of the spell’s duration, the victim is permitted a new Situation roll to attempt to see through the deception. A person suffering from a phantom plague receives -5 on all rolls that include social interaction because everyone can see the symptoms of the illness.",
     "summary": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear.",
     "swedishName": "Skenplauga",
-    "duration": "3 jours",
+    "duration": "3 days",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,13 +32,13 @@
         "id": "vitner-witchcraft:phantom-plague:1:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 day"
+        "effect": "Reduce the healer's Skill Value (Crafting) by 1 when examining the victim"
       },
       {
         "id": "vitner-witchcraft:phantom-plague:1:2",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null,
-        "effect": "Increase the phantom plague´s"
+        "effect": "Increase the duration by 1 day"
       }
     ],
     "source": "Player's Handbook, p. 143",

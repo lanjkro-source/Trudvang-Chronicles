@@ -15,9 +15,9 @@
     "description": "<p>✦ Modifier: -4 The Thuul connects a minor mountain spirit to a single stone the size of a fist. The spirit is not particularly powerful, but it is quite affectionate. The spirit can be sent to locate things and alert the Thuul of danger. It makes a rattling rock sound when it wants to get someone’s attention. Since the spirit is rather slow of mind, the Thuul must decide what it should fetch or warn him about. For example, it can be sent to fetch a set of keys lying on a table or give warning if someone is coming down the corridor. ✦ The Stoneling spirit has the following traits ✦ See in the dark as if it were day for up to 5 meters per rune level, and as if there were a faint source of light for an additional 5 meters per rune level ✦ Carry half a kg per rune level ✦ Move at the speed of 1 meter per rune level, per action round ✦ Remain bound to the stone for 1 hour per rune level<ul><li>Modifier: -4</li></ul>Stone to Clay ✦ Modifier: -2 By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level). The clay can be shaped like any other mud. Once the Thuul is satisfied with the clay’s new form (after at least three minutes per level of the rune), the clay becomes hard as a rock again. When this occurs, the duration begins (listed below). When the full duration ends, the stone shifts back to its original form.</p>",
     "summary": "The Thuul connects a minor mountain spirit to a single stone the size of a fist.",
     "swedishName": "",
-    "duration": "1 hour(s)/niveau",
-    "range": "5 meters/niveau",
-    "weavingTime": "5 action round(s)",
+    "duration": "1 hour/level",
+    "range": "5 meters/level",
+    "weavingTime": "5 action rounds",
     "dailyActivation": "2",
     "spellType": "lasting",
     "isRune": true,
@@ -26,37 +26,37 @@
         "id": "holy-thuuldom-stoneling:stoneling:0:0",
         "cost": 0,
         "maxCount": null,
-        "effect": "Donne vision dans le noir de : 5 m, vision nocturne de : 5 m, capacité de transport de : 0.5 kg et mouvement de l’esprit de : 1 m par action round(s)"
+        "effect": "Grant darkvision 5 m, night vision 5 m, carrying capacity 0.5 kg, and spirit movement 1 m per action round"
       },
       {
         "id": "holy-thuuldom-stoneling:stoneling:0:1",
         "cost": 0,
         "maxCount": null,
-        "effect": "Donne vision dans le noir de : 10 m, vision nocturne de : 10 m, capacité de transport de : 1 kg et mouvement de l’esprit de : 2 m par action round(s)"
+        "effect": "Grant darkvision 10 m, night vision 10 m, carrying capacity 1 kg, and spirit movement 2 m per action round"
       },
       {
         "id": "holy-thuuldom-stoneling:stoneling:0:2",
         "cost": 0,
         "maxCount": null,
-        "effect": "Donne vision dans le noir de : 15 m, vision nocturne de : 15 m, capacité de transport de : 1.5 kg et mouvement de l’esprit de : 3 m par action round(s)"
+        "effect": "Grant darkvision 15 m, night vision 15 m, carrying capacity 1.5 kg, and spirit movement 3 m per action round"
       },
       {
         "id": "holy-thuuldom-stoneling:stoneling:0:3",
         "cost": 0,
         "maxCount": null,
-        "effect": "Donne vision dans le noir de : 20 m, vision nocturne de : 20 m, capacité de transport de : 2 kg et mouvement de l’esprit de : 4 m par action round(s)"
+        "effect": "Grant darkvision 20 m, night vision 20 m, carrying capacity 2 kg, and spirit movement 4 m per action round"
       },
       {
         "id": "holy-thuuldom-stoneling:stoneling:0:4",
         "cost": 0,
         "maxCount": null,
-        "effect": "Donne vision dans le noir de : 25 m, vision nocturne de : 25 m, capacité de transport de : 2.5 kg et mouvement de l’esprit de : 5 m par action round(s)"
+        "effect": "Grant darkvision 25 m, night vision 25 m, carrying capacity 2.5 kg, and spirit movement 5 m per action round"
       }
     ],
     "source": "Player's Handbook, p. 232",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": -4
   },
   "_key": "!items!6I6XtZsYtZu0v1w2",
   "_id": "6I6XtZsYtZu0v1w2",

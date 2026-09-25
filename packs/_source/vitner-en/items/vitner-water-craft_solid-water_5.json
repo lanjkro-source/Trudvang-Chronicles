@@ -15,9 +15,9 @@
     "description": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet. The enchanted person can then walk on water as if it were solid ground and move up to 5 meters per round in this manner. The affected area has a diameter of 1 meter and can hold up to 70 kg (only a creature of normal size will fit). The affected area moves constantly so it is always located beneath the individual the spell was woven over, who can direct the area by simply turning the way they want to go and walking on.",
     "summary": "The enchanter controls the vitner in the water so that it forms a hard surface beneath the enchanted character’s feet.",
     "swedishName": "Vannfast",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "5 action round(s)",
+    "weavingTime": "5 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,43 +26,43 @@
         "id": "vitner-water-craft:solid-water:5:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the strength of the surface by an additional 10 kg"
+        "effect": "Increase the weight the affected area can support by 10 kg"
       },
       {
         "id": "vitner-water-craft:solid-water:5:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the weight the affected area can support by 50 kg"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:2",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the weight the affected area can support by 100 kg"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:3",
         "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-water-craft:solid-water:5:2",
+        "id": "vitner-water-craft:solid-water:5:4",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Increase the duration by 10"
+      },
+      {
+        "id": "vitner-water-craft:solid-water:5:5",
         "cost": 1,
         "maxCount": null,
         "effect": "Increase movement by +1 meter per action round (up to maximum normal movement)"
       },
       {
-        "id": "vitner-water-craft:solid-water:5:3",
+        "id": "vitner-water-craft:solid-water:5:6",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the surface diameter by"
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:4",
-        "cost": 1,
-        "maxCount": null,
         "effect": "meter (makes it possible for an additional creature of normal size to stand on the surface)"
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:5",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the strength of the surface by an additional 50 kg"
-      },
-      {
-        "id": "vitner-water-craft:solid-water:5:6",
-        "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the duration by 10"
       }
     ],
     "source": "Player's Handbook, p. 135",

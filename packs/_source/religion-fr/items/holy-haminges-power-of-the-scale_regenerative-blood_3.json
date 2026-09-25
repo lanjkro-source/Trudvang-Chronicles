@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-scale",
     "tablet": "Puissance de l'écaille",
     "description": "Le conjurateur fait appel au pouvoir du lindwurm et gagne la faculté de récupérer 1 point de santé par minute jusqu’à expiration du pouvoir.",
-    "summary": "F Type : persistant F Durée : 3 tours de jeu F Portée : 10 mètres F Temps d’invocation : 1 tour de jeu Le conjurateur dirige son regard pé trificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusq",
+    "summary": "Régénère progressivement les blessures du conjurateur.",
     "swedishName": "",
     "duration": "3 minutes",
     "range": "personnelle",

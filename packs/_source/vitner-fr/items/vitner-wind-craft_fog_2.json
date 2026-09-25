@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne. Ce brouillard a un rayon de 2 mètres et remplit complètement la zone affectée en 3 tours de jeu. L’enchanteur peut également déplacer le brouillard comme bon lui semble à la vitesse de 5 mètres par tour de jeu. Le brouillard réduit considérablement la visibilité, diminuant de moitié la vision des créatures affectées (la portée de toutes les armes à distance est réduite de moitié). Toutes les actions de combat effectuées dans le brouillard subissent un malus de -2 à la VC.",
-    "summary": "L’enchanteur génère un banc de brouillard épais qui s’élève du sol ou de l’eau à un endroit situé à portée qu’il désigne.",
+    "summary": "Crée un épais brouillard qui masque les déplacements et réduit la visibilité.",
     "swedishName": "Mistur",
     "duration": "5 minutes",
     "range": "100 mètres",

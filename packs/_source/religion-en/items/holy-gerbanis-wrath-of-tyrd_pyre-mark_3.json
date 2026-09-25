@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:0",
         "cost": 1,
         "maxCount": 6,
-        "effect": "Increase the number of burns by +1 (maximum 6)"
+        "effect": "Increase the number of burns by 1"
       },
       {
         "id": "holy-gerbanis-wrath-of-tyrd:pyre-mark:3:1",

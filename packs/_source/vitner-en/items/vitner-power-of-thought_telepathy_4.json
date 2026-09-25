@@ -15,9 +15,9 @@
     "description": "The spell creates a mental link between the enchanter and a chosen person within range. The link allows for telepathic communication between the two, who can speak to each other simply by thinking. The two can move as far out of range of each other as they please and still be able to communicate with ease and secrecy. Only the thoughts that a person wants to send are transmitted through the link, while other thoughts remain secure with the thinker. Therefore, the enchanter cannot use this spell to read someone else’s mind. All characters linked to the enchanter through the spell’s increased power can talk to each other through the telepathic link, rather than solely with the enchanter.",
     "summary": "The spell creates a mental link between the enchanter and a chosen person within range.",
     "swedishName": "Húgtengja",
-    "duration": "10 minute(s)",
+    "duration": "10 minutes",
     "range": "10 meters",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
-      },
-      {
-        "id": "vitner-power-of-thought:telepathy:4:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Affect another person or creature within range"
-      },
-      {
-        "id": "vitner-power-of-thought:telepathy:4:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 10 minutes"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:4",
@@ -54,15 +54,15 @@
       },
       {
         "id": "vitner-power-of-thought:telepathy:4:5",
-        "cost": 6,
-        "maxCount": null,
-        "effect": "Increase the duration by 1 hour"
-      },
-      {
-        "id": "vitner-power-of-thought:telepathy:4:6",
         "cost": 8,
         "maxCount": null,
         "effect": "Increase the range by 1 kilometer"
+      },
+      {
+        "id": "vitner-power-of-thought:telepathy:4:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect another person or creature within range"
       }
     ],
     "source": "Player's Handbook, p. 116",

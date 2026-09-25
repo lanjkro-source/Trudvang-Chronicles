@@ -1,5 +1,5 @@
 {
-  "name": "Sens de l'odorat",
+  "name": "Sens de l’odorat “Ulvakon”",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort peut améliorer temporairement l’odorat de la personne enchantée, qui reçoit un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’odorat est un facteur de réussite important. Par exemple, le bénéficiaire peut utiliser son odorat pour déterminer si quelqu’un se cache dans la pièce ou même au coin de la rue. La personne enchantée peut percevoir les odeurs à une distance de 50 mètres. Ce sort peut également évoquer un effet négatif en dégradant l’odorat de la cible. La victime subit un malus de -3 à tous les tests de situation et de compétence reposant sur le sens de l’odorat. Toute créature sous le coup d’un sort disposant de suffisamment de niveaux de puissance pour lui infliger un malus de -10 est considérée comme privée d’odorat et ne peut rien sentir pendant toute la durée du sort. La créature victime de cet effet négatif peut y résister en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution).",
-    "summary": "Ce sort peut améliorer temporairement l’odorat de la personne enchantée, qui reçoit un bonus de +3 à tous les tests de situation et de compétence pour lesquels l’odorat est un facteur de réussite important.",
+    "summary": "Aiguise l’odorat pour détecter, suivre ou identifier des créatures.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "contact",

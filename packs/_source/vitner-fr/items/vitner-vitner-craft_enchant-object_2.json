@@ -1,5 +1,5 @@
 {
-  "name": "Enchantement d'objet",
+  "name": "Enchantement d’objet",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée. L’objet se retrouve imprégné de vitner qui améliore ses propriétés. Le vitner ainsi tissé forme une barrière d’énergie bénéfique autour de l’objet, qui confère à son utilisateur un bonus de +2 à toutes les valeurs de compétence et de situation. Cet enchantement augmente également de +1 les dégâts des armes, de +1 la valeur de protection des armes et armures, et de +10 la valeur d’intégrité des objets.",
-    "summary": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée.",
+    "summary": "Imprègne un objet d’énergie bénéfique pour améliorer les actions de son porteur, ses dégâts ou sa protection.",
     "swedishName": "Kraftlatrolja eftnating",
     "duration": "6 tours de jeu",
     "range": "contact",

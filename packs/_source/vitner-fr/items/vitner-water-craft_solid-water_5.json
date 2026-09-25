@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse de 5 mètres par tour de jeu. La zone affectée fait 1 mètre de diamètre et peut soutenir jusqu’à 70 kg (une seule créature de taille humaine pourra s’y tenir). La zone affectée se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix.",
-    "summary": "L’enchanteur manipule le vitner présent dans l’eau de façon à créer une surface solide sous les pieds de la personne enchantée, qui peut alors marcher sur l’eau avec autant d’aisance que sur la terre ferme et se déplacer ainsi à une vitesse",
+    "summary": "Solidifie l’eau autour d’une cible pour former une masse protectrice ou entravante.",
     "swedishName": "Vannfast",
     "duration": "1 minute",
     "range": "contact",

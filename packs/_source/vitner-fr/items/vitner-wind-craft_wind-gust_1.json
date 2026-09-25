@@ -13,7 +13,7 @@
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
     "description": "Ce sort crée un vent léger dont l’enchanteur peut se servir pour chasser des insectes, de petits animaux ou de petits objets (moins de 1 kg). Il permet également d’éteindre de petites flammes comme celles des bougies, des torches ou des cheminées.",
-    "summary": "Ce sort crée un vent léger dont l’en chanteur peut se servir pour chasser des insectes, de petits animaux ou de petits objets (moins de 1 kg).",
+    "summary": "Crée un vent dirigé pour repousser de petits objets, des animaux ou éteindre des flammes.",
     "swedishName": "Loftpysi",
     "duration": "1 tour de jeu",
     "range": "10 mètres",

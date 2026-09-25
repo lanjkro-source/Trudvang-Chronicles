@@ -1,5 +1,5 @@
 {
-  "name": "Façonnage de l'eau",
+  "name": "Façonnage de l’eau",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "En contrôlant le vitner qui s’écoule dans une source d’eau située à proximité, l’enchanteur peut diriger et modeler l’eau comme bon lui semble. De la même façon qu’un bol donne à l’eau une forme spécifique, le vitner façonne l’eau selon les désirs de l’enchanteur. Ce dernier peut façonner une quantité d’eau équivalante à celle qui remplirait une halle de Storme. Il faut trois minutes à l’eau pour adopter complètement la forme choisie, et elle la conserve pendant cinq minutes. Une fois la durée du sort expirée, l’eau reprend immédiatement sa forme et sa place d’origine.",
-    "summary": "En contrôlant le vitner qui s’écoule dans une source d’eau située à proximité, l’enchanteur peut diriger et modeler l’eau comme bon lui semble.",
+    "summary": "Déplace et modèle l’eau pour lui donner la forme ou la direction voulue.",
     "swedishName": "Vannforma",
     "duration": "3 (+5) minutes",
     "range": "5 mètres",

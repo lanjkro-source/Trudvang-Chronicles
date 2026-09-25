@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts. Ce lien siphonne la force vitale du cœur de la victime, qui cesse de battre pendant toute la durée du sort. Cela inflige à la victime 1d10 points de dégâts par tour de jeu. La plupart des armures n’offrent aucune protection contre ces dégâts, à l’exception des armures en grindsilver. La victime peut résister aux dégâts en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Constitution). En cas de réussite, la victime évite tous les dégâts normalement infligés par le sort pendant le tour de jeu en cours.",
-    "summary": "L’enchanteur crée un lien entre une créature située à portée et le royaume des morts.",
+    "summary": "Arrête temporairement le cœur d’une victime et lui inflige des dégâts continus qui ignorent la plupart des armures.",
     "swedishName": "Rifhjarta",
     "duration": "1 tour de jeu",
     "range": "5 mètres",

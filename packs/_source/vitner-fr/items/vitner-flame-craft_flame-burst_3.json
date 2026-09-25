@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur. Ce feu prend la forme d’un cylindre d’environ 1 mètre de diamètre. À l’intérieur de ce cylindre, ce n’est pas seulement le feu qui inflige des dégâts, mais aussi l’air chauffé à plusieurs centaines de degrés en un clin d’œil. Ensemble, le feu et l’air infligent 1d10 points de dégâts à toute personne qui se trouve dans la zone affectée. Les armures normales n’offrent aucune protection contre cette chaleur incroyablement intense, mais les armures magiques continuent de fonctionner. Les flammes disparaissent aussi vite qu’elles sont apparues si la durée du sort n’est pas prolongée par le biais de niveaux de puissance. Les objets inflammables ne risquent donc de s’embraser que pendant l’éruption initiale. Si une victime potentielle possède la spécialité Esquive, elle peut tenter de bondir hors de portée et éviter ainsi les dégâts, pour peu qu’elle n’ait pas encore agi au cours de ce tour de jeu. Cette tentative subit un malus de -1 à la valeur de compétence pour chaque point de différence entre l’initiative du personnage et le rang d’initiative actuel. En choisissant de prolonger la durée de ce sort, l’enchanteur acquiert également la possibilité de déplacer à chaque tour de jeu l’éruption de flammes vers un nouvel endroit à portée.",
-    "summary": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur.",
+    "summary": "Fait jaillir une explosion de flammes qui brûle toutes les créatures dans la zone.",
     "swedishName": "Logild",
     "duration": "",
     "range": "10 mètres",

@@ -15,16 +15,16 @@
     "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
     "summary": "The Stormkelt prays to Enken and is granted courage for herself or bestows courage upon a chosen individual.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-gerbanis-power-of-enken:bold:2:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },

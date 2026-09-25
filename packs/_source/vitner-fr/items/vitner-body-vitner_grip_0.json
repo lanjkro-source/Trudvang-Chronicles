@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort change le vitner qui s’écoule à travers les mains et les pieds du personnage enchanté et rend la peau qui les recouvre plus rugueuse et adhésive. Le personnage enchanté contrôle complètement cette adhérence et peut décider de laisser échapper des choses qui devraient normalement adhérer à ses membres. Le personnage enchanté peut faire preuve d’une adhérence incroyable, même sur les surfaces verticales, les plafonds et les falaises. Cela dit, cette adhérence ne fonctionne que si rien ne vient recouvrir les mains et les pieds du bénéficiaire, étant donné que c’est sa peau qui devient adhésive. Il demeure soumis à la gravité et il peut facilement perdre les objets qui ne sont pas solidement attachés quand il évolue au plafond. Rien ne peut venir perturber cette adhérence si la personne enchantée ne le veut pas. La seule façon de rompre cette adhérence consiste à amputer la main ou le pied de la personne enchantée, ou de la convaincre de relâcher son emprise. La personne enchantée se déplace à la moitié de sa capacité de mouvement quand il escalade des murs ou des plafonds. Ce sort confère un bonus de +5 à la valeur de compétence d’Agilité de la personne enchantée quand cette dernière tente de grimper ou d’escalader.",
-    "summary": "Ce sort change le vitner qui s’écoule à travers les mains et les pieds du per sonnage enchanté et rend la peau qui les recouvre plus rugueuse et adhésive.",
+    "summary": "Permet d’adhérer aux surfaces et de grimper murs ou plafonds.",
     "swedishName": "Festja",
     "duration": "10 tours de jeu",
     "range": "contact",

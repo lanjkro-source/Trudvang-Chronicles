@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stoneling",
     "tablet": "Enfant de la pierre",
     "description": "Le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing. Cet esprit n’est pas particulièrement puissant, mais il se montre plutôt affectueux. Le thuul peut envoyer l’esprit localiser des choses et lui demander de l’alerter de tout danger. Il fait un bruit de pierres qui s’entrechoquent quand il désire attirer l’attention de quelqu’un. Comme cet esprit est plutôt lent d’esprit, le thuul doit indiquer précisément ce qu’il doit lui rapporter ou surveiller. Par exemple, il peut l’envoyer chercher un trousseau de clés posé sur une table ou lui demander de le prévenir si quelqu’un arrive dans le couloir.<p>Enfant de la pierre a les traits suivants :</p><ul><li>Voit dans le noir comme en plein jour à une distance de 5 mètres par niveau de rune, et au-delà comme avec une faible source d’éclairage à 5 mètres par niveau de rune</li><li>Peut porter 500 grammes par niveau de rune</li><li>Se déplace à une vitesse de 1 mètre par tour de jeu et par niveau de rune</li><li>Reste lié à la pierre pendant 1 heure par niveau de rune</li></ul>",
-    "summary": "Le thuul lie un esprit mineur de la montagne à une pierre de la taille d’un poing.",
+    "summary": "Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur.",
     "swedishName": "",
     "duration": "1 heure/niveau",
     "range": "5 mètres/niveau",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 286",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": -4
   },
   "_key": "!items!6I6XtZsYtZu0v1w2",
   "_id": "6I6XtZsYtZu0v1w2",

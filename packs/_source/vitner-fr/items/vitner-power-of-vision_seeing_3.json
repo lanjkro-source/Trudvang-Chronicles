@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du sort, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des sorts gênant la vision. Ce sort ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce sort peut également servir à annuler les effets des sorts qui gênent la vision (du moins pendant la durée du sort) comme par exemple le sort Vision/cécité.",
-    "summary": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus dif ficiles.",
+    "summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
     "swedishName": "Edliauga",
     "duration": "1 heure",
     "range": "contact",

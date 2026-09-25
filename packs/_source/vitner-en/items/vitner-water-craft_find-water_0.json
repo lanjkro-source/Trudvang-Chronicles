@@ -15,9 +15,9 @@
     "description": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range. Once the enchanter picks up the scent of a water source, they maintain this sense of direction for the duration of the spell. However, at any time, they can cancel the vitner that is leading toward a specific source and instead pursue a new one discovered through the weaving. Water that is found this way could be foul, stagnant, or located deep underground. The spell does not work as easily when it is raining, because the raindrops disturb the enchanter’s attempt. To find a water source in the rain, a Situation roll is needed with a Situation value of 10 (Intelligence modifiers apply) to keep from being distracted or misled by the rain.",
     "summary": "By concentrating on the flow of all vitner, the enchanter can locate all water sources and bodies of water within range.",
     "swedishName": "Vannfundr",
-    "duration": "10 minute(s)",
+    "duration": "10 minutes",
     "range": "100 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-water-craft:find-water:0:1",
-        "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the range by 100 meters"
-      },
-      {
-        "id": "vitner-water-craft:find-water:0:2",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 10 minutes"
       },
       {
-        "id": "vitner-water-craft:find-water:0:3",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase the range by 1 kilometer"
-      },
-      {
-        "id": "vitner-water-craft:find-water:0:4",
+        "id": "vitner-water-craft:find-water:0:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:3",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "vitner-water-craft:find-water:0:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the range by 1 kilometer"
       }
     ],
     "source": "Player's Handbook, p. 135",

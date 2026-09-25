@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort permet à l’enchanteur de déchiffrer un texte qu’il serait normalement incapable de lire. Tous les symboles et caractères qui composent ce texte sont convertis sous les yeux de l’enchanteur en un langage qu’il est capable de comprendre en utilisant la spécialité Lecture et écriture (compétence Connaissances, discipline Langage). Si l’enchanteur est incapable de lire ou d’écrire quelque langue que ce soit, il ne peut rien tirer de ce sort.",
-    "summary": "Ce sort permet à l’enchanteur de dé chiffrer un texte qu’il serait normalement incapable de lire.",
+    "summary": "Permet de lire et comprendre un texte dans une langue normalement inconnue.",
     "swedishName": "Tecknkraftla",
     "duration": "10 minutes",
     "range": "personnelle",

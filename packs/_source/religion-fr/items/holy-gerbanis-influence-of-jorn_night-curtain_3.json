@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-influence-of-jorn",
     "tablet": "Influence de Jorn",
     "description": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui. Le stormikjalt en appelle à Jorn, qui fait apparaître un morceau de crépuscule aussi noir et épais que la nuit. Le pouvoir fonctionne de manière similaire à Mur du crépuscule, mais les ténèbres ont une surface de base de 40m2. Quand on dresse un Rideau de la nuit dans un espace contenant déjà une créature, cette dernière est immédiatement affectée par les ténèbres. L’arpenteur des brumes leur donne la forme de son choix, et elles infligent un malus de -8 à toutes les actions de combat entreprises en leur sein ou visant une cible qui s’y trouve, comme dans la nuit la plus noire. Une créature dotée de vision de nuit ne subit qu’un malus de -3 à ses actions de combat, tandis que celles dotées de vision dans le noir ou de vision véritable ne sont pas affectées par ces ténèbres.",
-    "summary": "Ce pouvoir permet au stormikjalt d’invoquer un mur de ténèbres à l’endroit de son choix à moins de 20 mètres de lui.",
+    "summary": "Crée un rideau de ténèbres qui masque une zone.",
     "swedishName": "",
     "duration": "3 tours de jeu",
     "range": "20 mètres",

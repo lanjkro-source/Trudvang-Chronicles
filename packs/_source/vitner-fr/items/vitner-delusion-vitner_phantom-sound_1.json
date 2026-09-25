@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit.",
-    "summary": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée.",
+    "summary": "Crée des sons illusoires à l’endroit choisi pour distraire ou tromper.",
     "swedishName": "Hlidklapp",
     "duration": "10 tours de jeu",
     "range": "10 mètres",

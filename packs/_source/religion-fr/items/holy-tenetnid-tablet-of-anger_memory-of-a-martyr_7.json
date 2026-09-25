@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablette de la colère",
     "description": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir. Les victimes de cette prière voient immédiatement des plaies ouvertes apparaître sur leurs mains et leurs pieds et se mettre à saigner, ce qui a des effets plus psychologiques que physiques. Les armures et protections naturelles ne sont donc d’aucune utilité. Le prêtre désigne cinq ennemis et leur impose trois blessures chacun. Chaque blessure inflige à la victime 2 points de dégâts (soit un total de 6 points de dégâts par victime). Pour résister à la douleur psychologique (mais pas aux dégâts), chaque victime doit effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). Si elle réussit, la victime subit également un malus de -3 à tous ses tests de compétence et ses tests de situation pendant 1d6 heures. Mais en cas d’échec, la victime subit ce malus jusqu’à la fin de la journée et sombre dans l’inconscience pendant 1d6 minutes.",
-    "summary": "Le prêtre implore Gave de montrer à ses ennemis combien le dieu a souffert sur le chêne noir.",
+    "summary": "Fait ressentir à une victime les souffrances d’un martyr et lui inflige des dégâts.",
     "swedishName": "",
     "duration": "",
     "range": "10 mètres",

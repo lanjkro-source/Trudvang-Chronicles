@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-borjorn-s-hand",
     "tablet": "Main de Borjorn",
     "description": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre. La table ci-dessous montre l’importance de l’aide que reçoit le thuul (sous la forme d’un bonus au test de compétence).",
-    "summary": "Quand le thuul active la rune, il reçoit les conseils de la montagne qui vont l’aider dans la prochaine action qu’il va entreprendre.",
+    "summary": "Accorde au thuul les conseils de la montagne pour réussir sa prochaine action.",
     "swedishName": "",
     "duration": "",
     "range": "personnelle",
@@ -56,7 +56,7 @@
     "source": "Livre des règles, p. 287",
     "level": 1,
     "cost": 0,
-    "modifier": -2
+    "modifier": 0
   },
   "_key": "!items!sBWkh2u0v1w2x3y4",
   "_id": "sBWkh2u0v1w2x3y4",

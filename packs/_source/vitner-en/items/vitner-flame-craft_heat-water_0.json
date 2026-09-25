@@ -15,9 +15,9 @@
     "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
     "summary": "By touching water, the mage can bring up to 5 liters to a boil in that location.",
     "swedishName": "Vannhetja",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -50,7 +50,7 @@
         "id": "vitner-flame-craft:heat-water:0:4",
         "cost": 15,
         "maxCount": null,
-        "effect": "Increase the amount of water"
+        "effect": "Increase the amount of water brought to a boil by 100 liters"
       }
     ],
     "source": "Player's Handbook, p. 109",

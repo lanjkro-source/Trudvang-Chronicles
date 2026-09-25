@@ -15,9 +15,9 @@
     "description": "An aura of holy protection is created around the selected armor, increasing the Protection Value by +5. The aura also protects against magical weapons and spell effects that ignore normal armor, with Protection Value +3. This does not create armor, but blesses a suit that the dimwalker prays over, which takes on a lighter shade and begins to shine faintly. There must be existing armor or a shield for the ability to have any effect.",
     "summary": "Clothes the recipient in Belo Seoth's radiant supernatural armor.",
     "swedishName": "",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:1",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Increase the Protection Value by another +1 (maximum +10/+8)"
+        "effect": "Increase the duration by 1 minute"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:2",
         "cost": 2,
         "maxCount": 5,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+        "effect": "Increase Protection Value by +1"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:belo-seoth-s-white-armor:6:3",
-        "cost": 5,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Increase the duration by 1 minute"
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       }
     ],
     "source": "Player's Handbook, p. 199",

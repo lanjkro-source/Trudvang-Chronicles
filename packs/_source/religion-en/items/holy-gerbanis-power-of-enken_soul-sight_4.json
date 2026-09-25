@@ -15,9 +15,9 @@
     "description": "The Stormkelt closes their eyes and concentrates on the surroundings, letting the highly attuned senses of Enken flow through them. For one minute, the dimwalker will be able to see everything that is not hidden or altered by magic within a 10-meter range. When the Stormkelt opens their eyes, the eyes resemble those of a frost bear, and as long as the dimwalker maintains concentration, they can view e verything that is happening within range. This means that objects such as walls are unable to block the vision of the S tormkelt. However, no other sense is affected by the ability beyond sight. The dimwalker may add +5 as a modifier to the Skill Value in the Shadow Arts skill when attempting to find hidden doors or traps.",
     "summary": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -38,7 +38,7 @@
         "id": "holy-gerbanis-power-of-enken:soul-sight:4:2",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the modifier of Shadow"
+        "effect": "Increase the Shadow Arts skill modifier for perceiving hidden things by +1"
       }
     ],
     "source": "Player's Handbook, p. 162",

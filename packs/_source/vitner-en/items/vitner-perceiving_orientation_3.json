@@ -12,12 +12,12 @@
     "catalogId": "vitner-perceiving:orientation:3",
     "tabletId": "vitner-perceiving",
     "tablet": "Perceiving",
-    "description": "The Ihana always knows the direction (north, south, and so on) they are facing or traveling when in the woods, regardless of debilitating conditions of sight such as darkness or fog.",
-    "summary": "The spell makes it possible for the enchanter to find designated objects within the range.",
+    "description": "For the spell's duration, the enchanted character retains their sense of direction. They can identify the cardinal directions even when darkness, fog, or unfamiliar surroundings would normally make orientation difficult.",
+    "summary": "The enchanted character retains an unfailing sense of direction for the spell's duration.",
     "swedishName": "Veigfundr",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "vitner-perceiving:orientation:3:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase duration by 1 hour(s)"
+        "effect": "Increase duration by 1 hour"
       },
       {
         "id": "vitner-perceiving:orientation:3:1",
@@ -38,13 +38,13 @@
         "id": "vitner-perceiving:orientation:3:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase range by 5 meters (le contact physique n’est plus nécessaire)"
+        "effect": "Increase range by 5 meters (physical contact is no longer necessary)"
       },
       {
         "id": "vitner-perceiving:orientation:3:3",
         "cost": 2,
         "maxCount": null,
-        "effect": "Affect un sujet supplémentaire (qui bénéficie de la version de base sur spell)"
+        "effect": "Affect one additional subject (who receives the spell's basic effect)"
       }
     ],
     "source": "Player's Handbook, p. 112",

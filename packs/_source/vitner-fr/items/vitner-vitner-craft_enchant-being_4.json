@@ -13,7 +13,7 @@
     "tabletId": "vitner-vitner-craft",
     "tablet": "Art du vitner",
     "description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
-    "summary": "Ce sort tisse une couche de vitner bé néfique autour d’une cible située à portée.",
+    "summary": "Confère à une créature un bonus temporaire à ses valeurs de compétence et de situation.",
     "swedishName": "Kraftlatrolja skopjaten",
     "duration": "4 tours de jeu",
     "range": "contact",

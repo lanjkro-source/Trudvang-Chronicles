@@ -15,9 +15,9 @@
     "description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
     "summary": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on.",
     "swedishName": "Röste efnating",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-vitner-of-objects:rust:3:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-vitner-of-objects:rust:3:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Lower the object’s quality level one step further"
-      },
-      {
-        "id": "vitner-vitner-of-objects:rust:3:3",
         "cost": 3,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-vitner-of-objects:rust:3:4",
+        "id": "vitner-vitner-of-objects:rust:3:2",
         "cost": 8,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-vitner-of-objects:rust:3:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Lower the object’s quality level one step further"
       }
     ],
     "source": "Player's Handbook, p. 132",

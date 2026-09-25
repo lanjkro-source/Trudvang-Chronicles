@@ -15,9 +15,9 @@
     "description": "The priest positively radiates with divine power while the surrounding air is saturated with the god’s tangible presence. Anyone in the priest’s presence falls quiet and would rather flee or kneel in submission than oppose them. In this way the priest can quiet a crowd and receives a bonus modifier of +6 to any Skill or Situation rolls for persuading people for the ability’s duration. Furthermore, anyone who tries to oppose what the priest says will suffer -5 to the their Situation value to do so. Anyone who tries to attack the priest or speak lies in their presence must first succeed on a Situation roll with a Situation value of 4 (Psyche modifiers apply). Even those who wish to plot against the priest while in their vicinity (within range) need to succeed on the aforementioned Situation roll.",
     "summary": "The priest positively radiates with divine power while the surrounding air is saturated with the god’s tangible presence.",
     "swedishName": "",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "20 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,25 +32,25 @@
         "id": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the bonus by an additional +1 (maximum +10)"
+        "effect": "Increase the range by 5 meters"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:2",
         "cost": 2,
         "maxCount": 4,
-        "effect": "Lower resistance rolls by an additional -1 (maximum -8)"
+        "effect": "Increase the bonus granted by this power by +1"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:3",
         "cost": 2,
         "maxCount": 3,
-        "effect": "Lower the Situation value by -1 for those who attempt to lie, attack, or plot against the priest."
+        "effect": "Increase the penalty on the resistance roll by -1"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-knight:guise-of-gave:8:4",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the range by 5 meters"
+        "effect": "Lower the Situation value by -1 for those who attempt to lie, attack, or plot against the priest."
       }
     ],
     "source": "Player's Handbook, p. 199",

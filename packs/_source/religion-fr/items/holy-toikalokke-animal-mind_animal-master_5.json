@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-animal-mind",
     "tablet": "Esprit animal",
     "description": "L’ihana peut domestiquer un animal sauvage ou une bête, qui se comporte alors comme un chat de ferme domestique. La créature ne bénéficie d’aucun dressage particulier et n’obéit pas aux ordres, mais elle considère l’arpenteur des brumes comme un maître ou un membre de sa meute. Le warg le plus féroce se couche pour que l’elfe le gratte derrière les oreilles, et il adore se frotter contre ses jambes. Ce pouvoir demande que la créature possède une certaine forme d’intelligence, et ne fonctionnera pas sur les créatures moins intelligentes qu’un rat. De fait, les créatures telles que les bœufs de chêne et les poissons ne réagissent pas à ce pouvoir, contrairement aux blaireaux et aux corbeaux. Ce pouvoir ne fonctionne pas sur les créatures dont la taille dépasse celle d’un mastomant, ou celles qui ont une intelligence proche de celle d’un humain.",
-    "summary": "L’ihana peut domestiquer un animal sauvage ou une bête, qui se comporte alors comme un chat de ferme domes tique.",
+    "summary": "Permet de contrôler et commander des animaux.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "personnelle",

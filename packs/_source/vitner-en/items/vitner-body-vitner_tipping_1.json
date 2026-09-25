@@ -17,7 +17,7 @@
     "swedishName": "Hrasfalja",
     "duration": "",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -38,7 +38,7 @@
         "id": "vitner-body-vitner:tipping:1:2",
         "cost": 4,
         "maxCount": null,
-        "effect": "Affect another victim with the"
+        "effect": "Another victim is affected by the basic version of this spell"
       }
     ],
     "source": "Player's Handbook, p. 96",

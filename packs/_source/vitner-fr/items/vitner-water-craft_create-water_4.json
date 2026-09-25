@@ -1,5 +1,5 @@
 {
-  "name": "Création d'eau",
+  "name": "Création d’eau",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi. Au total, cette source magique produit 30 litres d’eau (à raison de 10 litres par tour de jeu). L’eau est aussi pure que celle d’un torrent, et pour peu que l’enchanteur dispose d’un réceptacle pour la recueillir, il ne souffrira jamais de la soif.",
-    "summary": "L’enchanteur crée une fontaine d’eau qui jaillit du sol à l’endroit qu’il a choisi.",
+    "summary": "Fait jaillir une source d’eau à l’endroit choisi.",
     "swedishName": "Vannstraula",
     "duration": "3 tours de jeu",
     "range": "contact",

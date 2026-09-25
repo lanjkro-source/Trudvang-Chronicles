@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
-    "summary": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxy gène, ou au contraire en lui en procu rant, ce qui lui permet de la diriger vers des zones spécifiques.",
+    "summary": "Dirige, attise ou étouffe une flamme existante.",
     "swedishName": "Loganrauda",
     "duration": "5 minutes",
     "range": "10 mètres",

@@ -15,9 +15,9 @@
     "description": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way. By succeeding with an unarmed fighting attack, the spirit conjurer can slither around their opponent and restrain the victim. The opponent suffers a -5 modifier on any attempt to parry the constricting attack (see Grapple in the Game Master Guide book). Each round in which the spirit conjurer has a victim in their constricting grip, the dimwalker can attack the victim with an unarmed attack or an armed attack with light weapons.",
     "summary": "The spirit conjurer is granted the ability to wind around an opponent in an unusually flexible way.",
     "swedishName": "",
-    "duration": "3 action round(s)",
-    "range": "personalle",
-    "weavingTime": "1 action round(s)",
+    "duration": "3 action rounds",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-haminges-power-of-the-dragon:constriction:0:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Reduce the opponent’s ability"
+        "effect": "Increase the opponent's penalty on a parry attempt by +1"
       }
     ],
     "source": "Player's Handbook, p. 214",

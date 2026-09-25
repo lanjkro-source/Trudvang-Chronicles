@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage. Ce sort dissipe les doutes, les peurs et autres humeurs qui pourraient affecter de manière négative la personne, dont les points de peur diminuent de 1d10. Tous les points de peur que le personnage enchanté reçoit pendant la durée du sort sont réduits de 4.",
-    "summary": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage.",
+    "summary": "Dissipe la peur et renforce le courage du bénéficiaire.",
     "swedishName": "Kjarkku",
     "duration": "5 minutes",
     "range": "5 mètres",

@@ -12,12 +12,12 @@
     "catalogId": "holy-tenetnid-tablet-of-anger:power-of-blood:0",
     "tabletId": "holy-tenetnid-tablet-of-anger",
     "tablet": "Tablet of Anger",
-    "description": "OF NID’S HOLY Tablet of Grace 1: Hand of Mercy 1: 1: Holy Mending 1: 2: Will of Bete Wiemdas 2:",
+    "description": "The priest invokes Gave's suffering, making an enemy within range bleed from open wounds. Each wound causes 1 damage that armor and natural protection cannot prevent. The victim must make a Situation roll of 12, modified by Psyche, to resist the psychological pain; on failure, they suffer -1 on Skill and Situation rolls for 1d6 hours.",
     "summary": "The priest prays that Gave will show the dimwalker’s enemies just how much the god suffered on that black oak.",
     "swedishName": "",
     "duration": "",
     "range": "5 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -25,14 +25,20 @@
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:0",
         "cost": 1,
-        "maxCount": null,
-        "effect": "Increase the number of wounds that bleed by +1 (maximum 6)"
+        "maxCount": 6,
+        "effect": "Increase the number of bleeding wounds by 1"
       },
       {
         "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:1",
         "cost": 2,
+        "maxCount": 4,
+        "effect": "Affect another enemy"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-anger:power-of-blood:0:2",
+        "cost": 2,
         "maxCount": null,
-        "effect": "Affect another enemy (maximum 4)"
+        "effect": "Increase the power's range by 5 meters"
       }
     ],
     "source": "Player's Handbook, p. 194",

@@ -15,8 +15,8 @@
     "description": "The Ihana has the ability to leap with the incredible agility and grace of a feline. Under normal circumstances, the chosen one can jump up to three times their own length in distance and twice their own length in height without a problem. If the dimwalker wants to jump farther, a s uccessful Skill roll is required with the Agility skill, modified by the extra desired distance or height (up to the game master to decide). The Ihana takes no damage from landing or falling within the distances noted above, but can perform only one leap every 3 action rounds (15 seconds) due to the great strain on the character’s strength.",
     "summary": "The Ihana has the ability to leap with the incredible agility and grace of a feline.",
     "swedishName": "",
-    "duration": "immédiate",
-    "range": "personalle",
+    "duration": "immediate",
+    "range": "personal",
     "weavingTime": "",
     "dailyActivation": "",
     "spellType": "lasting",
@@ -26,13 +26,13 @@
         "id": "holy-toikalokke-lynx-power:feline-leap:3:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the leap’s distance by 50 cm (maximum total 15 meters)"
+        "effect": "Increase jump distance by 0.5 meter (maximum 15 meters total)"
       },
       {
         "id": "holy-toikalokke-lynx-power:feline-leap:3:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the leap’s height by 10 cm"
+        "effect": "Increase jump height by 0.1 meter (maximum 8 meters total)"
       }
     ],
     "source": "Player's Handbook, p. 239",

@@ -1,5 +1,5 @@
 {
-  "name": "Don de l'eau",
+  "name": "Don de l’eau",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-toikalokke-master-of-elements",
     "tablet": "Maître des éléments",
     "description": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation). Dans des conditions normales, il peut nager dans des eaux calmes aussi longtemps que dure ce pouvoir sans avoir besoin de faire le moindre jet de situation. Si un jet de compétence d’Agilité s’avère nécessaire, l’elfe reçoit un bonus à ce jet de +2 par niveau. L’elfe n’a aucun problème pour atteindre des profondeurs égales à trois fois sa propre taille. Pour chaque mètre de profondeur supplémentaire, l’elfe subit un malus de -2 à sa valeur de compétence (mais il continue de profiter du bonus mentionné plus haut). Les conséquences d’un jet de compétence raté sont laissées à l’appréciation du maître de jeu.",
-    "summary": "L’ihana se sent dans l’eau comme si c’était son environnement naturel (ce qui lui permet de nager même sans la spécialité Natation).",
+    "summary": "Permet de nager et de se déplacer aisément dans l’eau.",
     "swedishName": "",
     "duration": "1 heure",
     "range": "personnelle",

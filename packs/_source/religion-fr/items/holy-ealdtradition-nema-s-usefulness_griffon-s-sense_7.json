@@ -1,5 +1,5 @@
 {
-  "name": "Vent libérateur",
+  "name": "Sens du griffon",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,11 +12,11 @@
     "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
-    "description": "Un vent rafraîchissant traverse la zone désignée par le bruide. Il a les mêmes effets que le Souffle libérateur ou la Brise libératrice, mais il peut aussi retirer les obstacles physiques, dissiper toutes formes de vitner de contrainte ou d’emprisonnement, et ouvrir une porte des brumes présente dans le brouillard qui a été fermée et se trouve à portée de ce pouvoir. S’il y a une résistance physique (même si l’objet est également verrouillé), le bruide doit effectuer un test de situation avec une valeur de situation de 14. En cas de réussite, l’obstacle est écarté, comme indiqué dans la description du Souffle libérateur et de la Brise libératrice. Pour pouvoir libérer quelque chose d’un vitner de contrôle ou de contrainte (sorts de niveau 1 à 3), le bruide doit réussir un test de situation avec une valeur de situation de 14. Tout ce qui est emprisonné ou contrôlé par un vitner tissé avec une plus grande maîtrise (sorts de niveau 4 ou 5) nécessite de réussir un test de situation avec une valeur de situation de 6. Ce pouvoir est capable d’ouvrir une porte des brumes présente dans le brouillard mais actuellement fermée. Il ne peut pas faire apparaître une porte des brumes qui n’existe pas déjà.",
-    "summary": "Un vent rafraîchissant traverse la zone désignée par le bruide.",
+    "description": "Le bruide entend tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du griffon aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 14. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+    "summary": "Aiguise les sens du bruide à la manière d’un griffon.",
     "swedishName": "",
-    "duration": "",
-    "range": "10 mètres",
+    "duration": "1 minute",
+    "range": "200 mètres",
     "weavingTime": "1 tour de jeu",
     "dailyActivation": "",
     "spellType": "lasting",
@@ -24,18 +24,24 @@
     "powerLevels": [
       {
         "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:0",
-        "cost": 2,
+        "cost": 1,
         "maxCount": null,
-        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
       },
       {
         "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:1",
         "cost": 2,
         "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 100 mètres"
+      },
+      {
+        "id": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7:2",
+        "cost": 2,
+        "maxCount": null,
         "effect": "Augmente la valeur de situation de : +1"
       }
     ],
-    "source": "Livre des règles, p. 246",
+    "source": "Livre des règles, p. 245",
     "level": 4,
     "cost": 8,
     "modifier": -8

@@ -1,5 +1,5 @@
 {
-  "name": "Lueur de l'aube",
+  "name": "Lueur de l’aube",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-sun",
     "tablet": "Tablette du soleil",
     "description": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui. Si le prêtre se déplace, la zone d’effet le suit. Il peut à tout instant mettre fin à ce pouvoir ou en réduire la portée. Le prêtre crée une source sacrée de lumière qui s’étend autour de lui. Dans la zone affectée, la lumière est considérée comme de la lumière du jour à tous points de vue.",
-    "summary": "Le prêtre demande à son dieu de la chaleur et de la lumière et en réponse, la lumière du jour commence à lentement se répandre et à éclairer la zone autour de lui.",
+    "summary": "Crée une lumière sacrée qui éclaire et rassure les créatures proches.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "rayon de 1 mètre",

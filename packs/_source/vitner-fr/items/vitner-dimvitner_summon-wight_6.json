@@ -1,5 +1,5 @@
 {
-  "name": "Invocation d'un revenant",
+  "name": "Invocation d’un revenant",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "Ce sort crée un lien entre Trudvang et Dimhall, le royaume des morts, qui permet à l’enchanteur d’appeler l’esprit et l’âme d’une personne décédée. Ce rituel ne peut se pratiquer que de nuit, car c’est à ce moment-là que le lien entre les deux mondes est le plus fort. Une fois le rituel accompli, il faut encore attendre la nuit suivante pour que le revenant s’éveille de son long sommeil. Seuls les esprits et les âmes des humains peuvent être éveillés ainsi pour devenir des revenants. Si l’âme consent à résider une fois de plus dans le royaume des vivants, elle est condamnée à parcourir à jamais les terres de Trudvang. Mais si l’âme résiste à l’appel, elle retourne immédiatement dans le royaume des morts. Rien ne lie le revenant à l’enchanteur, et il n’a aucune obligation d’obéir à celui qui l’a conjuré ou de le protéger. Cela dit, si l’enchanteur désire asseoir son emprise sur le revenant, il peut recourir au sort Contrôle des morts-vivants. Le revenant ainsi conjuré reçoit 1d10 (JO 9-10) + 15 points de santé, ainsi que 1d10 (JO 9-10) + 70 points de compétence à répartir entre ses compétences, ses disciplines et ses spécialités. Consultez la fiche du revenant des tumulus dans le Bestiaire de Jorge pour plus d’informations.",
-    "summary": "Ce sort crée un lien entre Trudvang et Dimhall, le royaume des morts, qui permet à l’enchanteur d’appeler l’esprit et l’âme d’une personne décédée.",
+    "summary": "Appelle l’esprit d’un défunt pour lui parler ou obtenir des informations, sans garantie qu’il soit coopératif.",
     "swedishName": "Gastlakallja",
     "duration": "",
     "range": "10 mètres",

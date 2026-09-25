@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "La vision de la personne enchantée est améliorée pendant toute la durée du sort. Le bénéficiaire voit soudain tout avec bien plus de clarté et de précision. Les petits détails subtils qu’il aurait pu avoir du mal à remarquer auparavant lui paraissent évidents. La personne enchantée bénéficie d’un bonus de +3 à tous les tests de situation et de compétence pour lesquels la vision est un facteur de réussite important. Ce sort peut également évoquer un effet négatif en dégradant le sens de la vision de la cible. La victime subit un malus de -3 à tous les tests de situation et de compétence reposant sur la vue. Toute créature sous le coup d’un sort disposant de suffisamment de niveaux de puissance pour lui infliger un malus de -10 est considérée comme aveugle et ne peut rien voir pendant toute la durée du sort. La créature victime de cet effet négatif peut y résister en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution).",
-    "summary": "La vision de la personne enchantée est améliorée pendant toute la durée du sort.",
+    "summary": "Améliore la vue d’un bénéficiaire ou aveugle une victime.",
     "swedishName": "Skönja",
     "duration": "1 minute",
     "range": "contact",

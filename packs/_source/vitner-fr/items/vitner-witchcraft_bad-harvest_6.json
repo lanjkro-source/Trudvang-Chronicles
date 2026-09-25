@@ -13,7 +13,7 @@
     "tabletId": "vitner-witchcraft",
     "tablet": "Sorcellerie",
     "description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du sort. Les plantes touchées par ce sort ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.",
-    "summary": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation.",
+    "summary": "Flétrit la végétation d’une zone et compromet une récolte.",
     "swedishName": "Nidskord",
     "duration": "",
     "range": "100 mètres",

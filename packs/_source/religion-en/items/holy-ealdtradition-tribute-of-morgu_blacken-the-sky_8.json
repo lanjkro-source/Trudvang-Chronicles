@@ -17,7 +17,7 @@
     "swedishName": "",
     "duration": "",
     "range": "50 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -32,7 +32,7 @@
         "id": "holy-ealdtradition-tribute-of-morgu:blacken-the-sky:8:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the arrows’ Penetration"
+        "effect": "Increase the number of arrows by +1"
       }
     ],
     "source": "Player's Handbook, p. 187",

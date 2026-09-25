@@ -15,42 +15,42 @@
     "description": "✦ Modifier: -2 By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level). The clay can be shaped like any other mud. Once the Thuul is satisfied with the clay’s new form (after at least three minutes per level of the rune), the clay becomes hard as a rock again. When this occurs, the duration begins (listed below). When the full duration ends, the stone shifts back to its original form.",
     "summary": "By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level).",
     "swedishName": "",
-    "duration": "spéciale",
-    "range": "1 meters cube/niveau",
-    "weavingTime": "3 minute(s)/niveau",
+    "duration": "special",
+    "range": "1 cubic meter/level",
+    "weavingTime": "3 minutes/level",
     "dailyActivation": "1",
     "spellType": "lasting",
     "isRune": true,
     "powerLevels": [
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:0",
-        "cost": 1,
+        "cost": 0,
         "maxCount": null,
         "effect": "1 hour"
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:1",
-        "cost": 2,
+        "cost": 0,
         "maxCount": null,
         "effect": "3 hours"
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:2",
-        "cost": 3,
+        "cost": 0,
         "maxCount": null,
         "effect": "6 hours"
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:3",
-        "cost": 4,
+        "cost": 0,
         "maxCount": null,
-        "effect": "12 hours Stoneshape ✦ Modifier: -2 ✦ Type: Preserving ✦ Duration: 3 minutes / level ✦ Range: Personal ✦ Activation: 2 action rounds ✦ Activations per day: 1 / level The Thuul and his gear seem to melt into the mountain when the rune is activated. The Thuul gains stone-like camouflage, with the effect that others have a modifier of -3 per level of the rune on their Skill rolls for the Shadow Arts skill when trying to find him. For instance, level 2 has a modifier of -6, and level 4 has a modifier of -12. If the Thuul moves while c amouflaged, the modifier is halved for those trying to find him. If the rune is used in environments other than stone and mountains, the modifier is also halved. Well of Water ✦ Modifier: -4 ✦ Type: Lasting ✦ Duration: 3 minutes / level ✦ Activation: 3 action rounds ✦ Activations per day: 1 The Thuul places the rune-inscribed object on the stone and creates a temporary source of mountain water in that location. The water is so pure and fresh that anyone who cleans their wounds in the water heals 1 point of damage per level of the rune. Each action round, a liter of water is produced. The healing effect disappears almost immediately, so it’s essential to clean wounds quickly. It is possible to collect water for later use, but the healing effect will have disappeared by then. chapter 4. dimwalkers | 233"
+        "effect": "The transformation lasts 9 hours"
       },
       {
         "id": "holy-thuuldom-stone-to-clay:stone-to-clay:0:4",
-        "cost": 234,
+        "cost": 0,
         "maxCount": null,
-        "effect": "| chapter 4. dimwalkers"
+        "effect": "The transformation lasts 12 hours"
       }
     ],
     "source": "Player's Handbook, p. 232",

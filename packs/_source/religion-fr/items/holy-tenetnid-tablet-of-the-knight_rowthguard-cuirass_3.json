@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-knight",
     "tablet": "Tablette du chevalier",
     "description": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 3. Cette aura protège également contre les armes magiques ou les sorts qui ignorent les armures normales, mais dans ce cas, le bonus à la valeur de protection n’est que de +1. Ce pouvoir ne permet pas de créer une armure : il ne fait que bénir une pièce d’armure existante sur laquelle l’arpenteur des brumes concentre sa prière. L’armure bénie prend une teinte plus claire et se met à luire faiblement.",
-    "summary": "Une aura de protection sacrée apparaît autour de l’armure choisie, ce qui augmente sa valeur de protection de 3.",
+    "summary": "Renforce une armure par une protection sacrée.",
     "swedishName": "",
     "duration": "4 tours de jeu",
     "range": "contact",

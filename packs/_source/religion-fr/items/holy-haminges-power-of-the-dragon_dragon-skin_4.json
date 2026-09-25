@@ -1,5 +1,5 @@
 {
-  "name": "Attaque du huvfurwurm",
+  "name": "Peau du dragon",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -12,21 +12,33 @@
     "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
-    "description": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu. Ces points sont liés à ces actions d’arme supplémentaires, ce qui signifie que pour tirer parti de ces points, le conjurateur doit commencer par utiliser toutes ses actions d’arme ordinaires. Quand le conjurateur utilise ce pouvoir, il semble développer plusieurs bras supplémentaires, qui brandissent chacune une arme.",
-    "summary": "Le conjurateur reçoit la force de l’esprit du huvfurwurm et bénéficie de deux actions d’arme supplémentaires par tour de jeu, ainsi qu’un bonus de +10 points de combat par tour de jeu.",
+    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.<p>La Peau du dragon confère les traits suivants :</p><ul><li>Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.</li><li>Le conjurateur n’est pas blessé par les flammes non magiques.</li><li>Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).</li><li>Le conjurateur bénéficie d’une valeur de protection naturelle de +4.</li><li>Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.</li></ul>",
+    "summary": "Confère une peau et des capacités draconiques protectrices.",
     "swedishName": "",
-    "duration": "3 tours de jeu",
+    "duration": "2 minutes",
     "range": "personnelle",
-    "weavingTime": "1 tour de jeu",
+    "weavingTime": "3 tours de jeu",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:0",
-        "cost": 1,
+        "cost": 2,
         "maxCount": null,
-        "effect": "Augmente la durée du pouvoir de : 1 tour de jeu"
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:1",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente la valeur de protection de : +1"
+      },
+      {
+        "id": "holy-haminges-power-of-the-dragon:dragon-skin:4:2",
+        "cost": 2,
+        "maxCount": 2,
+        "effect": "Augmente les dégâts de toutes les armes de corps à corps et des armes de jet de : +1"
       }
     ],
     "source": "Livre des règles, p. 279",

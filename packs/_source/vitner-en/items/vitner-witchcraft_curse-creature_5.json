@@ -15,9 +15,9 @@
     "description": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being). With this spell, the mage twists the composition of energies around the target. This subtle change cannot be perceived through normal senses, but is picked up on intuitively. It is a disharmony that is hard to describe in words, as if a high, cutting, relentless, and unnerving sound is constantly emanating from the target, a sound that is constantly rising and gnawing at the limit of our consciousness. All living creatures that encounter the target are struck by this uncomfortable feeling, an intense aversion, a powerful sense of something both supernatural and wrong. All living beings instinctively shun and avoid the target as much as possible. Additionally, intelligent beings are filled with fear and often believe that anything the target carries or comes into contact with might be contagious as well. Even the target’s friends often feel a powerful aversion and cannot stand being in their presence, no matter how dearly they would like to. Merchants and traders cancel transactions with the target, mothers pull their children away and shield them from view, people leave wide chasms of space around the target on the streets and in inns, and adventuring colleagues cannot sleep in their presence and never wake up feeling rested. In short, people avoid the cursed character as if they were a leper. The most tragic thing about the curse is that the target is unaware of it, and initially has no idea why others have these reactions. If the target has no knowledge about magic and spells, it’s possible they might never understand. Against the cursed victims will, they become increasingly more isolated and shunned, filled with doubt and trepidation. Given enough time, the cursed victim risks becoming insane. The twisted vitner surrounding the target does more than make life unbearable for the afflicted. All Skill Values and Situation values have a negative modifier of -1 for the duration of the curse. If the mage that caused the curse dies, it is immediately broken.",
     "summary": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being).",
     "swedishName": "Nidtrölja skopjaten",
-    "duration": "10 jours",
+    "duration": "10 days",
     "range": "10 kilometers",
-    "weavingTime": "3 hour(s)",
+    "weavingTime": "3 hours",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-witchcraft:curse-creature:5:1",
-        "cost": 4,
-        "maxCount": null,
-        "effect": "Increase the negative modifier inflicted upon the victim by -1"
-      },
-      {
-        "id": "vitner-witchcraft:curse-creature:5:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 1 week"
       },
       {
-        "id": "vitner-witchcraft:curse-creature:5:3",
+        "id": "vitner-witchcraft:curse-creature:5:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 month"
       },
       {
-        "id": "vitner-witchcraft:curse-creature:5:4",
+        "id": "vitner-witchcraft:curse-creature:5:3",
         "cost": 20,
         "maxCount": null,
         "effect": "Increase the duration by 1 year"
+      },
+      {
+        "id": "vitner-witchcraft:curse-creature:5:4",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the penalty imposed on the victim by +1"
       }
     ],
     "source": "Player's Handbook, p. 143",

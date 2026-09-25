@@ -15,9 +15,9 @@
     "description": "The curse is put on a single object within range, which then significantly decreases its traits when in use. The conjured vitner sticks to the object like a foul and degenerate force. Any person attempting to use the object suffers a negative modifier of -2 on all Skill rolls and Situation rolls in which the object is used. If the object is a weapon, damage is also decreased by -1, and if the object is armor, Protection Value is also decreased by -1.",
     "summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
     "swedishName": "Nidtrölja eftnating",
-    "duration": "5 action round(s)",
+    "duration": "5 action rounds",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-witchcraft:curse-object:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the spell's duration by 1 hour"
+      },
+      {
+        "id": "vitner-witchcraft:curse-object:3:3",
         "cost": 2,
         "maxCount": null,
         "effect": "Increase the range by 5 meters (contact is no longer necessary)"
       },
       {
-        "id": "vitner-witchcraft:curse-object:3:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the negative modifier during use by -1 (the damage and Protection Values are equal to the SV’s negative modifier divided by 2 and rounded down)"
-      },
-      {
-        "id": "vitner-witchcraft:curse-object:3:3",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Affect another victim (with the spell’s basic version)"
-      },
-      {
         "id": "vitner-witchcraft:curse-object:3:4",
         "cost": 3,
         "maxCount": null,
-        "effect": "Increase the duration by 1 minute"
+        "effect": "Affect another target (which suffers the spell's basic effect)"
       }
     ],
     "source": "Player's Handbook, p. 143",

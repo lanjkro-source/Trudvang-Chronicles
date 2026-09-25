@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort crée une énergie restrictive qui immobilise la victime choisie. Le vitner empêche la victime de bouger, quels que soient les efforts qu’elle déploie. Le sort n’est brisé que si l’enchanteur choisit de libérer la victime, si la victime subit des violences et encaisse au moins 1 point de dégâts, quand la durée du sort arrive à expiration, ou quand quelqu’un a recours au sort Dissipation du vitner pour briser l’enchantement. La victime peut résister à l’enchantement en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). Il est possible d’imposer ce sort à des créatures exceptionnellement grandes ainsi qu’à des monstres, et pour chaque augmentation de taille correspondant à celle d’un humain, la valeur de situation pour résister au sort augmente de +2. Ainsi, une créature trois fois plus grande qu’un humain normal recevra un bonus de +4, et bénéficiera donc d’une valeur de situation de 10 pour résister au sort.",
-    "summary": "Ce sort crée une énergie restrictive qui immobilise la victime choisie.",
+    "summary": "Immobilise une créature en l’enserrant dans une énergie restrictive.",
     "swedishName": "Eistirra",
     "duration": "5 tours de jeu",
     "range": "10 mètres",

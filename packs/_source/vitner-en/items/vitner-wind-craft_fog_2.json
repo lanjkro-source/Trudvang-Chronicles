@@ -15,9 +15,9 @@
     "description": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range. The fog has a radius of 2 meters, and takes 3 action rounds to fully fill the area. The enchanter can also move the fog as desired at a speed of 5 meters per action round. The fog significantly hinders visibility, reducing a being’s vision by half (all distance weapons halve effective distances). All combat actions in the fog have their SV reduced by -2.",
     "summary": "The enchanter creates a thick blanket of fog that rises from the ground or water at a designated location within range.",
     "swedishName": "Mistur",
-    "duration": "5 minute(s)",
+    "duration": "5 minutes",
     "range": "100 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -44,7 +44,7 @@
         "id": "vitner-wind-craft:fog:2:3",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the fog’s thickness, which"
+        "effect": "Make the fog thicker, reducing visibility to one quarter of normal distance and imposing an additional -2 penalty on combat actions"
       }
     ],
     "source": "Player's Handbook, p. 139",

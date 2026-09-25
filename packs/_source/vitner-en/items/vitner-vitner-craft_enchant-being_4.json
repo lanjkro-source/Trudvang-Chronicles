@@ -15,9 +15,9 @@
     "description": "The spell weaves together a layer of beneficial vitner around a target within range. The energy grants the target an additional positive modifier of +1 on all Skill Values and Situation values for the duration of the spell.",
     "summary": "The spell weaves together a layer of beneficial vitner around a target within range.",
     "swedishName": "Kraftlatrolja skopjaten",
-    "duration": "4 action round(s)",
+    "duration": "4 action rounds",
     "range": "contact",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,33 +30,33 @@
       },
       {
         "id": "vitner-vitner-craft:enchant-being:4:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:2",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Affect an additional being (with the spell’s basic version)"
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:3",
-        "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the positive modifier by +1"
-      },
-      {
-        "id": "vitner-vitner-craft:enchant-being:4:4",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 1 minute"
       },
       {
-        "id": "vitner-vitner-craft:enchant-being:4:5",
+        "id": "vitner-vitner-craft:enchant-being:4:2",
         "cost": 12,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect an additional being (with the spell’s basic version)"
+      },
+      {
+        "id": "vitner-vitner-craft:enchant-being:4:5",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the bonus granted to the creature by +1"
       }
     ],
     "source": "Player's Handbook, p. 129",

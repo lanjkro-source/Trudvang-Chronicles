@@ -15,9 +15,9 @@
     "description": "The spirit conjurer calls upon the vision of the dwarven spirit, gaining night vision for the duration of the ability.",
     "summary": "The spirit conjurer calls upon the vision of the dwarven spirit, gaining night vision for the duration of the ability.",
     "swedishName": "",
-    "duration": "1 minute(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "1 minute",
+    "range": "personal",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,19 +26,13 @@
         "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 minute(s)"
+        "effect": "Increase the power's duration by 1 minute"
       },
       {
         "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:1",
-        "cost": 6,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Increase the power duration de : 1 day"
-      },
-      {
-        "id": "holy-haminges-power-of-men:sight-of-the-dwarves:0:2",
-        "cost": 2,
-        "maxCount": 2,
-        "effect": "Increase the bonus à la VC de : +1"
+        "effect": "Increase the power's duration by 1 hour"
       }
     ],
     "source": "Player's Handbook, p. 216",

@@ -1,5 +1,5 @@
 {
-  "name": "Peau d'écorce",
+  "name": "Peau d’écorce",
   "type": "divineFeat",
   "img": "icons/svg/angel.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "holy-tenetnid-tablet-of-the-shield",
     "tablet": "Tablette du bouclier",
     "description": "Le gavlien invoque la force du chêne noir. Le bénéficiaire de ce pouvoir (qui peut être le prêtre lui-même ou la personne de son choix) voit sa peau se recouvrir de l’écorce sombre du chêne de fer, ce qui lui confère 10 points de santé supplémentaire, à utiliser en priorité après avoir soustrait la valeur de protection des dégâts reçus. Ces points de santé sont temporaires, et s’il en reste au prêtre à expiration du pouvoir, ils sont perdus. Si les 10 points de santé octroyés par ce pouvoir sont utilisés avant son expiration, l’effet cesse immédiatement.",
-    "summary": "Le gavlien invoque la force du chêne noir.",
+    "summary": "Donne au bénéficiaire une écorce protectrice qui augmente sa résistance.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "contact",

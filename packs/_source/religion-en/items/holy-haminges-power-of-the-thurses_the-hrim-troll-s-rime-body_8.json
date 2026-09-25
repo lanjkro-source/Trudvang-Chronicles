@@ -15,36 +15,36 @@
     "description": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach. Anyone within range of the effect needs to succeed on a Situation roll with a Situation value of 8 (Psyche modifiers apply) to keep from fleeing the extreme cold and stay within range. The rime frost aura inflicts 1 point of damage to everyone within range each round. Those who are dressed in winter clothes receive half of the damage (rounded up), and those who are dressed in mastomant clothes take no damage at all. Armor offers no protection.",
     "summary": "The spirit conjurer is filled with a portion of the ice troll’s essence, manifesting in a body of rime frost that chills everyone within the ability’s reach.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "1 meters",
-    "weavingTime": "2 action round(s)",
+    "duration": "1 hour",
+    "range": "1 meter",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
     "powerLevels": [
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:0",
-        "cost": 2,
+        "cost": 5,
         "maxCount": null,
-        "effect": "Reduce opponent’s Situation value by -1"
+        "effect": "Increase the duration by 1 hour"
       },
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:1",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the range by 1 meter (maximum 3 meters)"
+        "effect": "Reduce opponent’s Situation value by -1"
       },
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:2",
-        "cost": 3,
+        "cost": 2,
         "maxCount": 2,
-        "effect": "Increase the damage by +1 per action round (maximum +4)"
+        "effect": "Increase the power's range by 1 meter"
       },
       {
         "id": "holy-haminges-power-of-the-thurses:the-hrim-troll-s-rime-body:8:3",
-        "cost": 5,
+        "cost": 3,
         "maxCount": 3,
-        "effect": "Increase the duration by 1 hour"
+        "effect": "Increase damage suffered each turn by +1"
       }
     ],
     "source": "Player's Handbook, p. 221",

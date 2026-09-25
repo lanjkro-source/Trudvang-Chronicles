@@ -13,7 +13,7 @@
     "tabletId": "vitner-flame-craft",
     "tablet": "Maîtrise des flammes",
     "description": "Ce sort génère une couche protectrice de vitner autour de l’enchanteur ou de la créature ciblée. Ce vitner protège le bénéficiaire du sort et tout son équipement contre les effets du feu. Cela dit, la protection ne fonctionne que contre les flammes normales : elle n’a aucun effet contre le feu des dragons ou toute autre flamme magique.",
-    "summary": "Ce sort génère une couche protectrice de vitner autour de l’enchanteur ou de la créature ciblée.",
+    "summary": "Protège une créature et son équipement contre les flammes et la chaleur.",
     "swedishName": "Muspelskjold",
     "duration": "5 minutes",
     "range": "contact",

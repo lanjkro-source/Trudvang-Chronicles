@@ -13,7 +13,7 @@
     "tabletId": "holy-gerbanis-warmth-of-sunvei",
     "tablet": "Chaleur de Solvei",
     "description": "Le stormikjalt place ses mains sur les membres blessés d’une personne, et ses paumes commencent à émettre une faible lumière chaude. La vitesse de guérison de la personne qui bénéficie de ce toucher guérisseur augmente de 1 point de santé par jour tant qu’elle continue de se reposer. Si le blessé fait quoi que ce soit d’autre que se reposer, l’effet de ce pouvoir est rompu et le blessé retrouve sa vitesse de guérison normale.",
-    "summary": "Le stormikjalt place ses mains sur les membres blessés d’une personne, et ses paumes commencent à émettre une faible lumière chaude.",
+    "summary": "Accélère la guérison naturelle des blessures d’une créature touchée.",
     "swedishName": "",
     "duration": "1 jour",
     "range": "contact",

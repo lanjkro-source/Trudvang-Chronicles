@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-nema-s-usefulness",
     "tablet": "Utilité de Nema",
     "description": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-dessus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre. S’il y a une résistance, le bruide doit faire un test de situation avec une valeur de situation de 8. En cas de réussite, la brise surmonte la cause de la résistance (par exemple quelqu’un qui empêche un objet de tomber d’un rebord, qui serre le nœud, qui retient l’attache, etc.). Les réceptacles fermés, les portes verrouillées ou les objets protégés par le vitner ne sont pas affectés par le Souffle libérateur.",
-    "summary": "Une brise légère mais rafraîchissante traverse la zone désignée par le bruide, libérant quelque chose sur son passage : elle peut pousser quelque chose par-des sus un rebord, mais aussi décrocher une attache, défaire un nœud ou quelque chose du même genre.",
+    "summary": "Envoie une brise qui libère de petites attaches, nœuds ou fermetures simples.",
     "swedishName": "",
     "duration": "",
     "range": "2 mètres",

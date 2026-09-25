@@ -15,9 +15,9 @@
     "description": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range. The enchanter or the enchanted can also change the voice entirely to their liking, causing it to sound spooky, strong, violent, or severe; but it may also sound gentle, kind, alluring, childish, or amusing. If the spell is woven over an unwilling target, the enchanter can distort the victim’s voice as desired. The victim can try to resist the effect with a successful Situation roll with a Situation value of 8 ( Constitution modifiers apply). On a success, the voice is not distorted at all. On a failure, the victim no longer has any control over how their voice sounds, instead having a voice that reflects whatever the enchanter decides.",
     "summary": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range.",
     "swedishName": "Draugastemma",
-    "duration": "1 minute(s)",
+    "duration": "1 minute",
     "range": "10 meters",
-    "weavingTime": "1 action round(s)",
+    "weavingTime": "1 action round",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -30,21 +30,21 @@
       },
       {
         "id": "vitner-delusion-vitner:ghost-voice:5:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
-      },
-      {
-        "id": "vitner-delusion-vitner:ghost-voice:5:2",
         "cost": 6,
         "maxCount": null,
         "effect": "Increase the duration by 1 hour"
       },
       {
-        "id": "vitner-delusion-vitner:ghost-voice:5:3",
+        "id": "vitner-delusion-vitner:ghost-voice:5:2",
         "cost": 10,
         "maxCount": null,
         "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "vitner-delusion-vitner:ghost-voice:5:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
       }
     ],
     "source": "Player's Handbook, p. 101",

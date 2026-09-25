@@ -13,7 +13,7 @@
     "tabletId": "vitner-body-vitner",
     "tablet": "Vitner corporel",
     "description": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir. De plus, la peau revêt une couleur brunâtre qu’on pourrait aisément confondre avec du vrai cuir. Peau de cuir confère au bénéficiaire une valeur de protection naturelle de 1, qui vient s’ajouter à toute autre protection existante. Malgré l’épaisseur de sa peau, la créature enchantée peut se déplacer normalement et ne pèse pas plus lourd qu’avant le sort. Si la créature enchantée reçoit suffisamment de niveaux de puissance supplémentaires pour voir la valeur de protection dépasser 4, la peau de cuir prend un aspect plus métallique.",
-    "summary": "Ce sort altère la peau d’une créature, qui devient plus épaisse et adopte la solidité et la résistance du cuir.",
+    "summary": "Durcit la peau du bénéficiaire et augmente sa protection naturelle.",
     "swedishName": "Leiderhyda",
     "duration": "6 tours de jeu",
     "range": "contact",

@@ -15,9 +15,9 @@
     "description": "The enchanter can read a creature’s memories simply by touching it. The enchanter observes a sequence of images that broadly explains the creature’s history, ranging up to one year back in time. For every 2 action rounds that pass during the spell, the enchanter can try to learn one big secret that the creature is trying to hide. The enchanted creature immediately senses that someone else is in their mind and searching the scattered memories (at increased ranges, the creature cannot know who is reading their memories). The creature can hide a particular secret from the enchanter with a Situation roll with a Situation value of 6 (Psyche m odifiers apply). On a success, the enchanter has to weave a new Mind Reading spell over the creature to try to discover the withheld information. But even if the enchanter is blocked from learning that secret, they can continue to look for other secrets until the duration of the spell is up.",
     "summary": "The enchanter can read a creature’s memories simply by touching it.",
     "swedishName": "Húgfreska",
-    "duration": "6 action round(s)",
+    "duration": "6 action rounds",
     "range": "contact",
-    "weavingTime": "3 action round(s)",
+    "weavingTime": "3 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -30,27 +30,27 @@
       },
       {
         "id": "vitner-power-of-thought:mind-reading:11:1",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
-      },
-      {
-        "id": "vitner-power-of-thought:mind-reading:11:2",
-        "cost": 2,
-        "maxCount": null,
-        "effect": "Decrease the victim’s chance of suc- ceeding on the Situation roll by -1"
-      },
-      {
-        "id": "vitner-power-of-thought:mind-reading:11:3",
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the duration by 12 action rounds"
       },
       {
+        "id": "vitner-power-of-thought:mind-reading:11:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "vitner-power-of-thought:mind-reading:11:3",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the spell's range by 50 meters (physical contact is no longer needed)"
+      },
+      {
         "id": "vitner-power-of-thought:mind-reading:11:4",
         "cost": 5,
         "maxCount": null,
-        "effect": "The bewitched is unaware of the"
+        "effect": "The enchanted target is unaware of the enchanter's presence (but still keeps their secrets hidden)"
       }
     ],
     "source": "Player's Handbook, p. 116",

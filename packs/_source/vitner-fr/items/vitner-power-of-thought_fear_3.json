@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions. La victime croit se retrouver face à la créature la plus terrifiante qu’elle peut imaginer, ce qui signifie que plusieurs personnes exposées au même sort ne verront probablement pas la même chose. La victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) pour résister à la peur et éviter de subir des points de peur. Quiconque rate ce test de situation reçoit immédiatement 1d10 points de peur avec toutes les conséquences que cela implique.",
-    "summary": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions.",
+    "summary": "Envahit l’esprit d’une victime de visions terrifiantes et la rend plus craintive.",
     "swedishName": "Skreikur",
     "duration": "",
     "range": "contact",

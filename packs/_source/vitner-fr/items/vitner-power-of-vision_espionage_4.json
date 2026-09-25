@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-vision",
     "tablet": "Pouvoir de la vision",
     "description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
-    "summary": "jeu/5 tours de jeu L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour.",
+    "summary": "Transforme un objet en point d’observation pour voir et entendre ce qui l’entoure à distance.",
     "swedishName": "Hlustspyrja",
     "duration": "1 heure",
     "range": "contact",

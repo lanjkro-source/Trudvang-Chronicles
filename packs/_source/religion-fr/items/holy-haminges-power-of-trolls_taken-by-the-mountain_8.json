@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-trolls",
     "tablet": "Puissance des trolls",
     "description": "Le conjurateur peut suggérer une tâche à toute personne située à portée. La cible perçoit le murmure comme si quelqu’un chuchotait à son oreille, et ce même si le conjurateur est loin d’elle. Ce murmure est extrêmement persuasif, et la personne doit accomplir la tâche suggérée à moins de réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si la tâche implique de prendre la vie de quelqu’un (qu’il s’agisse de celle de la cible elle-même ou d’une autre personne), la cible a droit à une autre chance de rompre le charme juste avant l’acte irréparable. Si elle réussit le test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique), elle parvient à recouvrer ses esprits et pourra s’arrêter juste à temps. La cible ne peut rien faire qui exige de la créativité ou de l’esprit d’initiative.",
-    "summary": "Le conjurateur peut suggérer une tâche à toute personne située à portée.",
+    "summary": "Implante une suggestion qui pousse une personne à accomplir une tâche.",
     "swedishName": "",
     "duration": "1 minute",
     "range": "10 mètres",

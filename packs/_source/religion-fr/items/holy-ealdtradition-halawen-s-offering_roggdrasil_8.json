@@ -13,7 +13,7 @@
     "tabletId": "holy-ealdtradition-halawen-s-offering",
     "tablet": "Offrande de Halawen",
     "description": "Quand le bruide prononce le mot déclencheur de ce pouvoir, une lance, artefact ancien et sacré, se matérialise dans ses mains. À l’expiration du pouvoir, cette lance part en fumée. Roggdrasil est la lance lourde portée par Halawen Longue-Vie lui-même, lorsqu’il a conduit les Tronlanders vers l’est et fondé l’Ancien peuple et l’Ancienne tradition.<p>Roggdrasil :</p><ul><li>Type : arme à deux mains</li><li>Dégâts : 1d10 (JO 7-10) + 8 ; valeur de protection : 30 ; valeur d’intégrité : 300 ; MI : -2 ; AA : 4</li><li>Confère au porteur un bonus de +6 à sa valeur de protection</li><li>Confère au porteur un bonus de +4 à toutes ses valeurs de compétence associées à l’utilisation de cette arme (attaques, parades, etc.)</li><li>La lame aiguisée de Roggdrasil pénètre toutes les protections et diminue de 3 la valeur de protection de tous ses adversaires.</li><li>Le porteur peut également tenter de parer les sorts qui le prennent pour cible en utilisant l’action de combat de Parade.</li><li>On dit que Roggdrasil change les traits négatifs de son porteur en leur opposé (une personne veule devient brave, une personne faible devient forte, etc.).</li></ul>",
-    "summary": "F Dégâts : 1d10 (JO 7-10) + 8 ; valeur de protection : 30 ; valeur d’intégrité : 300 ; MI : -2 ; AA : 4 F Confère au porteur un bonus de +6 à sa valeur de protection F Confère au porteur un bonus de +4 à toutes ses valeurs de compétence as ",
+    "summary": "Fait apparaître une lance sacrée ancestrale pour combattre.",
     "swedishName": "",
     "duration": "10 minutes",
     "range": "personnelle",

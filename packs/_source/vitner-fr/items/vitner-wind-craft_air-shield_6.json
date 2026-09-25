@@ -1,5 +1,5 @@
 {
-  "name": "Bouclier d'air",
+  "name": "Bouclier d’air",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -12,8 +12,8 @@
     "catalogId": "vitner-wind-craft:air-shield:6",
     "tabletId": "vitner-wind-craft",
     "tablet": "Maîtrise du vent",
-    "description": "Ce sort permet de créer un grand bouclier (la moitié de la taille d’un humain, cf. la section Taille des créatures page 7 du Bestiaire de Jorge ) en air comprimé, qui diminue de 1 les dégâts de toutes les attaques à distance (valeur de protection de 1). L’enchanteur tisse ce sort sur un point qu’il touche, à partir duquel se dresse alors le bouclier. Ce dernier est statique et ne peut pas être déplacé. Si l’enchanteur rend le bouclier d’air comprimé assez grand pour recouvrir une créature tout entière, le bouclier pourrait être en mesure d’empêcher quiconque de le traverser en chargeant. Pour qu’une entité d’une certaine taille et d’une certaine force puisse passer à travers le bouclier, il lui faut réussir un test de situation modifié par la valeur de protection (VP) du bouclier, comme indiqué par la table ci-dessous (prendre en compte le modificateur de Force). VALEUR DE SITUATION:\n|Taille de la créature|Valeur de situation|\n|---|---|\n|<1/3|4 - VP|\n|≥1/3 – 1/2|6 - VP|\n|≥1/2 – 1,5|10 - VP|\n|≥1,5 – 3|14 - VP|\n|≥3 – 5|18 - VP|\n|≥5 – 10|22 - VP|\n|≥10|26 - VP|\n",
-    "summary": "Ce sort permet de créer un grand bouclier (la moitié de la taille d’un humain, cf.",
+    "description": "Ce sort permet de créer un grand bouclier (la moitié de la taille d’un humain, cf. la section Taille des créatures page 7 du Bestiaire de Jorge ) en air comprimé, qui diminue de 1 les dégâts de toutes les attaques à distance (valeur de protection de 1). L’enchanteur tisse ce sort sur un point qu’il touche, à partir duquel se dresse alors le bouclier. Ce dernier est statique et ne peut pas être déplacé. Si l’enchanteur rend le bouclier d’air comprimé assez grand pour recouvrir une créature tout entière, le bouclier pourrait être en mesure d’empêcher quiconque de le traverser en chargeant. Pour qu’une entité d’une certaine taille et d’une certaine force puisse passer à travers le bouclier, il lui faut réussir un test de situation modifié par la valeur de protection (VP) du bouclier, comme indiqué par la table ci-dessous (prendre en compte le modificateur de Force). <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Taille de la créature</th><th>Valeur de situation</th></tr></thead><tbody><tr><td><1/3</td><td>4 - VP</td></tr><tr><td>≥1/3 – 1/2</td><td>6 - VP</td></tr><tr><td>≥1/2 – 1,5</td><td>10 - VP</td></tr><tr><td>≥1,5 – 3</td><td>14 - VP</td></tr><tr><td>≥3 – 5</td><td>18 - VP</td></tr><tr><td>≥5 – 10</td><td>22 - VP</td></tr><tr><td>≥10</td><td>26 - VP</td></tr></tbody></table>",
+    "summary": "Crée un bouclier d’air comprimé qui amortit les attaques et peut repousser les assaillants.",
     "swedishName": "Loftskiold",
     "duration": "5 tours de jeu",
     "range": "contact",

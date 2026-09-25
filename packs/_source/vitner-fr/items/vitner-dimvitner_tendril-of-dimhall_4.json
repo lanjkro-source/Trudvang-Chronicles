@@ -13,7 +13,7 @@
     "tabletId": "vitner-dimvitner",
     "tablet": "Dimvitner",
     "description": "L’enchanteur concentre autour de lui la puissance de la mort et canalise cette énergie humide à travers ses mains et ses doigts. Plusieurs vrilles de brume sombre en jaillissent alors pour attaquer sa cible. Les vrilles infligent 1d10 (JO 10) points de dégâts. Les armures normales n’offrent aucune protection, contrairement aux armures magiques et aux armures en grindsilver. Les vrilles de brume traquent leur victime, qui n’a aucune chance de leur échapper.",
-    "summary": "L’enchanteur concentre autour de lui la puissance de la mort et canalise cette énergie humide à travers ses mains et ses doigts.",
+    "summary": "Projette des vrilles de brume funeste qui frappent une cible et lui infligent des dégâts difficiles à protéger.",
     "swedishName": "Rifurkraftla",
     "duration": "",
     "range": "5 mètres",

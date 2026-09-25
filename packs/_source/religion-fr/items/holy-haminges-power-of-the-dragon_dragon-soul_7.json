@@ -13,7 +13,7 @@
     "tabletId": "holy-haminges-power-of-the-dragon",
     "tablet": "Puissance du dragon",
     "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.<p>L’Âme du dragon confère les traits suivants :</p><ul><li>Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.</li><li>Le conjurateur n’est pas blessé par les flammes non magiques.</li><li>Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)</li><li>Le conjurateur bénéficie d’une valeur de protection naturelle de +6</li><li>Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.</li></ul>",
-    "summary": "Yoann PELTIER yoannpeltier@gmail.com 202411/271854/716582",
+    "summary": "Confère une essence draconique, avec souffle de feu et résistance surnaturelle.",
     "swedishName": "",
     "duration": "3 minutes",
     "range": "personnelle",

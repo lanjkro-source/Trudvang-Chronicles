@@ -1,5 +1,5 @@
 {
-  "name": "Marche sur l'eau",
+  "name": "Marche sur l’eau “Vannvandr”",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -13,7 +13,7 @@
     "tabletId": "vitner-water-craft",
     "tablet": "Maîtrise de l'eau",
     "description": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau. Si le bénéficiaire désire se déplacer à la surface de l’eau, le sort crée une surface rigide sous ses pieds composée de vitner comprimé (à la manière du sort Eau solide). La zone affectée fait 1 mètre de diamètre et peut supporter 100 kg (une seule créature de taille humaine pourra s’y tenir). Cette zone se déplace en même temps que l’individu qui bénéficie de ce sort, qui a juste besoin d’avancer dans la direction de son choix, et peut se déplacer à une vitesse de 5 mètres par tour de jeu. Si la personne enchantée veut évoluer sous la surface de l’eau, le sort crée une sphère de vitner autour d’elle afin de lui permettre de continuer à respirer. Elle peut se déplacer ainsi en flottant à travers l’eau. Si le bénéficiaire désire plonger au fond ou remonter à la surface, il lui suffit d’y penser et la sphère se déplacera dans la direction désirée.",
-    "summary": "Ce sort permet à la personne enchantée de marcher sur l’eau aussi facilement que sur la terre ferme, ou même de marcher sous l’eau.",
+    "summary": "Permet de marcher à la surface de l’eau ou sous l’eau sans nager.",
     "swedishName": "",
     "duration": "2 minutes",
     "range": "contact",

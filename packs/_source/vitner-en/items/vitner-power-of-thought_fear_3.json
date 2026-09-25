@@ -12,12 +12,12 @@
     "catalogId": "vitner-power-of-thought:fear:3",
     "tabletId": "vitner-power-of-thought",
     "tablet": "Power of Thought",
-    "description": "The bound spirit bestows courage upon the conjurer, bolstering them in the face of horrific things that would cause fear in a less courageous being. The spirit conjurer rarely becomes frightened and therefore reduces any fear factor roll by one step (example: 1d10 (OR 10) to 1d10, or 1d5 to 0) for the duration of the ability. This affects the fear factor only as it applies to the dimwalker. The spirit conjurer also ignores the effects of the first fear level for the duration (whether the level was reached before invoking the ability, or was reached during the duration).",
+    "description": "The spell fills the victim's mind with terrifying visions of the creature they fear most. They can resist with a Situation roll of 8, modified by Psyche. Failure immediately inflicts 1d10 Fear Points and their consequences.",
     "summary": "The spell sends a wave of manipulative energy through a chosen victim, overwhelming its thoughts with horrific visions.",
     "swedishName": "Skreikur",
     "duration": "",
     "range": "contact",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "instant",
     "isRune": false,
@@ -26,25 +26,25 @@
         "id": "vitner-power-of-thought:fear:3:0",
         "cost": 1,
         "maxCount": null,
-        "effect": "Affect une autre créature située à portée, qui bénéficie de la version de base du spell"
+        "effect": "Affect another creature within range, which receives the spell's basic effect"
       },
       {
         "id": "vitner-power-of-thought:fear:3:1",
         "cost": 1,
         "maxCount": null,
-        "effect": "Reduce les chances de la victime de réussir son test de situation de : -1"
+        "effect": "Reduce the victim's chance to succeed on the Situation roll by -1"
       },
       {
         "id": "vitner-power-of-thought:fear:3:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase range by 5 meters (le contact physique n’est plus nécessaire)"
+        "effect": "Increase range by 5 meters (physical contact is no longer necessary)"
       },
       {
         "id": "vitner-power-of-thought:fear:3:3",
         "cost": 4,
         "maxCount": 4,
-        "effect": "Increase le number of Fear points inflicted d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+        "effect": "Increase Fear Points inflicted by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 116",

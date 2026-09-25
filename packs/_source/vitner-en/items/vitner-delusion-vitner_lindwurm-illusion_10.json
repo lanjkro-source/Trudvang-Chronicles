@@ -15,9 +15,9 @@
     "description": "The spell creates the illusion of a vast lindwurm (or a different beast). Any enemies of the enchanter (designated by the enchanter) watch as a lindwurm erupts from the ground at high speed and devours the enchanter. All victims of the spell must immediately make a Situation roll with a Situation value of 4 (Psyche modifiers apply) to avoid taking 1d10 (OR 9-10) Fear Points. A victim who succeeds on the roll takes only 1d5 Fear Points. This happens immediately in the first action round of the spell. In the second round, it appears as if the beast is looking around for its next meal. In the third round, the enchanter (who still stands in their original location, hidden by the beast’s body) can cause the beast to attack (Skill Value of 10) a chosen victim within range. If the enchanter succeeds, the beast rips into the victim with its jaws. The victim risks 2d10 points of damage from the illusion as it takes on solid form for a moment before dissolving completely. The victim can attempt to parry the bite to avoid the damage (or avoid it with the Evade specialty). The lindwurm can move up to 20 meters away from the enchanter, but the enchanter must always maintain line of sight with the beast. The enchanter remains hidden even if the lindwurm moves away from the area. However, creatures can detect the enchanter with a successful Skill roll for Shadow Arts.",
     "summary": "The spell creates the illusion of a vast lindwurm (or a different beast).",
     "swedishName": "Ormaskepn",
-    "duration": "3 action round(s)",
-    "range": "personalle",
-    "weavingTime": "2 action round(s)",
+    "duration": "3 action rounds",
+    "range": "personal",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "sustained",
     "isRune": false,
@@ -30,9 +30,9 @@
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:1",
-        "cost": 10,
+        "cost": 2,
         "maxCount": null,
-        "effect": "meters"
+        "effect": "Increase the chance of the enchanter not being discovered with Shadow Arts by -1"
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:2",
@@ -42,21 +42,21 @@
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:3",
-        "cost": 2,
+        "cost": 5,
         "maxCount": 2,
-        "effect": "Increase the chance of the enchanter not being discovered with Shadow Arts by -1"
+        "effect": "Increase Fear Points inflicted by one step: 1d10JO9 > 1d10JO8 > 1d10JO7"
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:4",
         "cost": 5,
         "maxCount": 3,
-        "effect": "Increase resulting Fear Points by one step: 1d10 (OR 9-10) g 1d10 (OR 8-10) g 1d10 (OR 7-10) (max OR 7-10)"
+        "effect": "Increase damage inflicted by one step: 2d10 > 2d10JO10 > 2d10JO9 > 2d10JO8"
       },
       {
         "id": "vitner-delusion-vitner:lindwurm-illusion:10:5",
         "cost": 5,
         "maxCount": null,
-        "effect": "Increase the damage by one step:"
+        "effect": "Increase the spell's duration by 1 action round and allow another attack (against the same target or another target within range)"
       }
     ],
     "source": "Player's Handbook, p. 101",

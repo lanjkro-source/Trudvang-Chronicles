@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stone-to-clay",
     "tablet": "Transformation de pierre en argile",
     "description": "En plaçant l’objet runique sur une pierre, le thuul peut transformer cette dernière en glaise souple (dans la limite de 1 mètre cube de pierre par niveau de rune). On peut façonner cette glaise comme n’importe quelle autre terre molle. Une fois le thuul satisfait de la nouvelle forme de la glaise (après au moins trois minutes de travail par niveau de la rune), la glaise retrouve la dureté de la pierre. Quand cela se produit, la durée indiquée plus haut débute. Quand elle expire, la pierre reprend sa forme d’origine.",
-    "summary": "elle expire, la pierre reprend sa forme d’origine.",
+    "summary": "Ramollit temporairement la pierre pour la modeler comme de l’argile.",
     "swedishName": "",
     "duration": "spéciale",
     "range": "1 mètre cube/niveau",

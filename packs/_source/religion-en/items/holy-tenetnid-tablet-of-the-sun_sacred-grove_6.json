@@ -15,9 +15,9 @@
     "description": "The prayer acts as protection against vitner and other religions’ feats. The ability’s range designates the radius for the protected area that the sunlight covers. To create this site, the priest must cut a wound in their forehead (1 point of damage) and then collect blood from the wound, allowing it to drip along the site’s perimeter while chanting. The prayer takes 3 rounds per meter (radius) of the range to perform. For example, if the range covers an 8-meter radius, this feat takes 24 rounds (2 minutes) to invoke. Anyone who tries to activate an ability that belongs to a religion other than the Tenet of Nid or who tries to weave a spell that takes effect within the designated sanctuary suffers -5 to the Skill Value needed to succeed. In addition, everyone located within the area finds it easier to resist any constraining or manipulating effects of abilities that do not belong to the Tenet of Nid or spells (their Situation values to resist increase by +10).",
     "summary": "The prayer acts as protection against vitner and other religions’ feats.",
     "swedishName": "",
-    "duration": "1 hour(s)",
-    "range": "rayon de 3 meters",
-    "weavingTime": "3 action round(s)",
+    "duration": "1 day",
+    "range": "radius of 8 meters",
+    "weavingTime": "special",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -31,14 +31,20 @@
       {
         "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:1",
         "cost": 2,
-        "maxCount": 2,
-        "effect": "Increase the radius of the range by"
+        "maxCount": null,
+        "effect": "Increase the power's effect radius by 2 meters"
       },
       {
         "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:2",
         "cost": 2,
         "maxCount": null,
-        "effect": "meters"
+        "effect": "Increase by +1 the penalty to Skill Values of those attempting to use powers of other religions or spells"
+      },
+      {
+        "id": "holy-tenetnid-tablet-of-the-sun:sacred-grove:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase by +2 the Situation Value for resisting binding effects from spells or powers of other religions"
       }
     ],
     "source": "Player's Handbook, p. 203",

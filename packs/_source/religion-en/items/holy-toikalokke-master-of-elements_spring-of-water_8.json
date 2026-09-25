@@ -15,9 +15,9 @@
     "description": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this). This spring flows at a rate of up to 1 m3 per 10 minutes, but it runs dry as soon as the duration expires or the elf chooses to end it.",
     "summary": "The Ihana can cause a spring of cold, fresh water to emerge from the ground (the game master decides whether the conditions are too extreme to allow this).",
     "swedishName": "",
-    "duration": "1 hour(s)",
+    "duration": "1 hour",
     "range": "10 meters",
-    "weavingTime": "2 action round(s)",
+    "weavingTime": "2 action rounds",
     "dailyActivation": "",
     "spellType": "lasting",
     "isRune": false,
@@ -26,7 +26,7 @@
         "id": "holy-toikalokke-master-of-elements:spring-of-water:8:0",
         "cost": 2,
         "maxCount": null,
-        "effect": "Increase the flow by another 1 m3 per 10 minutes"
+        "effect": "Increase the flow rate by 1 m³ per 10 minutes"
       },
       {
         "id": "holy-toikalokke-master-of-elements:spring-of-water:8:1",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-power-of-thought",
     "tablet": "Pouvoir de la pensée",
     "description": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée. Cette liaison leur permet de communiquer mentalement, c’est-à-dire de se parler l’un à l’autre simplement par la pensée. Une fois le sort lancé, les deux sujets peuvent s’éloigner autant qu’ils le souhaitent sans que cela n’affecte leur faculté à se parler dans le plus grand secret. La liaison ne transmet que les pensées qu’une personne veut partager, ses autres pensées demeurant protégées. Ainsi, l’enchanteur ne peut pas se servir de ce sort pour lire les pensées d’autrui. Tous les personnages liés par une version améliorée de ce sort peuvent communiquer les unes avec les autres à travers cette liaison télépathique, et pas seulement avec l’enchanteur.",
-    "summary": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée.",
+    "summary": "Établit une communication mentale entre l’enchanteur et une autre créature.",
     "swedishName": "Húgtengja",
     "duration": "10 minutes",
     "range": "10 mètres",

@@ -13,7 +13,7 @@
     "tabletId": "vitner-soil-craft",
     "tablet": "Maîtrise de la terre",
     "description": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée. En chemin, la terre voit sa vitesse et sa masse augmenter considérablement. Après avoir franchi 2 mètres seulement, la terre a rassemblé toute sa force et peut frapper sa cible à pleine puissance et lui infliger 1d10 (JO 9-10) points de dégâts. Les armures confèrent leur protection normale contre cette attaque, mais les dégâts ne peuvent être réduits à moins de 1. Une cible qui porte un bouclier peut avoir de la chance et bloquer la projection de terre, ce qui lui permet de bénéficier de la protection passive du bouclier. Si la cible visée possède la spécialité Esquive, elle peut tenter de s’écarter de la trajectoire de la terre et éviter d’être blessée tant qu’elle n’a pas encore agi à ce tour de jeu, mais sa valeur de compétence subit alors un malus de -1 pour chaque point d’écart entre son initiative personnelle et le rang d’initiative actuel.",
-    "summary": "L’enchanteur prend une poignée de terre au sol (ou dans une poche) et la lance sur une cible à portée.",
+    "summary": "Projette une masse de terre contre une cible pour la frapper ou la déstabiliser.",
     "swedishName": "Jördfleigja",
     "duration": "",
     "range": "10 mètres",

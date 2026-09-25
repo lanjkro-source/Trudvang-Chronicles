@@ -13,7 +13,7 @@
     "tabletId": "vitner-delusion-vitner",
     "tablet": "Vitner illusoire",
     "description": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur. Le vitner donne au bénéficiaire, ainsi qu’à ses vêtements et à tout son équipement, l’aspect de ce que l’observateur verrait normalement si le bénéficiaire n’était pas là. Ainsi, le bénéficiaire du sort devient virtuellement invisible. Un témoin doit réussir un test de compétence d’Arts des ombres extrêmement difficile (-10) pour déceler un sujet qui se tient immobile, ou un test difficile (-3) si le sujet se déplace lentement. Si le sujet fait un geste brusque (par exemple s’il court ou s’il attaque), le vitner ne peut plus le camoufler et tous les témoins reçoivent un bonus de +5 à leur test de compétence pour le percevoir ; cela dure jusqu’à ce que le bénéficiaire du sort ralentisse ses mouvements. Toute personne qui tente d’attaquer la cible invisible ou de parer ses attaques doit réussir un test de compétence d’Agilité ou subir un malus de -10 à toutes ses attaques et parades contre le personnage invisible.",
-    "summary": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur.",
+    "summary": "Rend une créature très difficile à voir en adaptant son apparence à chaque observateur.",
     "swedishName": "Oseidir",
     "duration": "5 minutes",
     "range": "contact",
