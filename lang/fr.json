@@ -212,6 +212,8 @@
       "Tablet": "Tablette",
       "Range": "Portée",
       "WeavingTime": "Temps de tissage",
+      "InvocationTime": "Temps d’invocation",
+      "ActivationTime": "Temps d’activation",
       "TabletType": "Type de tablette",
       "AbilityKind": "Type de connaissance",
       "ParentSkill": "Compétence parente",

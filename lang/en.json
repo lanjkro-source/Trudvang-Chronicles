@@ -212,6 +212,8 @@
       "Tablet": "Tablet",
       "Range": "Range",
       "WeavingTime": "Weaving Time",
+      "InvocationTime": "Invocation Time",
+      "ActivationTime": "Activation Time",
       "TabletType": "Tablet Type",
       "AbilityKind": "Knowledge Type",
       "ParentSkill": "Parent Skill",

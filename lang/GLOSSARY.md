@@ -248,6 +248,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.Tablet` | Tablet | Tablette |
 | `TRUDVANG.Field.Range` | Range | Portée |
 | `TRUDVANG.Field.WeavingTime` | Weaving Time | Temps de tissage |
+| `TRUDVANG.Field.InvocationTime` | Invocation Time | Temps d’invocation |
+| `TRUDVANG.Field.ActivationTime` | Activation Time | Temps d’activation |
 | `TRUDVANG.Field.TabletType` | Tablet Type | Type de tablette |
 | `TRUDVANG.Field.AbilityKind` | Knowledge Type | Type de connaissance |
 | `TRUDVANG.Field.ParentSkill` | Parent Skill | Compétence parente |
