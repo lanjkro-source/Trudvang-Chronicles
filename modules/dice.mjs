@@ -117,32 +117,38 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
   const options = methods.map(method => {
-    const target = Number(method.target || 0) + Number(spellModifier || 0) + activeSpellPenalty;
+    const target = Number(method.target || 0);
     return `<option value="${escapeHtml(method.id)}">${escapeHtml(method.label)} — VC ${target}</option>`;
   }).join("");
+  const formatModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value)}`;
   const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty;
-  const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} SV (+${bonus * 2} ${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Vitner"))})</option>`).join("");
+  const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} VC (+${bonus * 2} ${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Vitner"))})</option>`).join("");
   const levelRows = powerLevels.map((level, index) => {
     const unit = powerLevelUnitCost(level.cost, affinity);
     const limit = level.maxCount == null ? "" : ` max="${Number(level.maxCount)}"`;
     const costText = game.i18n.format("TRUDVANG.Power.CostPerLevel", {cost: unit});
     const maxText = level.maxCount == null ? "" : game.i18n.format("TRUDVANG.Power.Maximum", {max: level.maxCount});
-    return `<div class="magic-power-option"><label><span>${escapeHtml(level.effect || "")}</span><small>${escapeHtml(costText)}${maxText ? ` · ${escapeHtml(maxText)}` : ""}</small></label><input type="number" data-power-index="${index}" min="0"${limit} value="0" aria-label="${escapeHtml(level.effect || "")}"></div>`;
+    const maxCount = level.maxCount == null ? "" : ` data-max-count="${Number(level.maxCount)}"`;
+    return `<div class="magic-power-option" data-power-row="${index}"><label><span>${escapeHtml(level.effect || "")}</span><small>${escapeHtml(costText)}${maxText ? ` · ${escapeHtml(maxText)}` : ""}</small></label><div class="magic-power-counter"><button type="button" data-power-decrease="${index}" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Power.DecreaseLevel"))}">−</button><span data-power-count="${index}"${maxCount}>0</span><button type="button" data-power-increase="${index}" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Power.IncreaseLevel"))}">+</button></div></div>`;
   }).join("");
-  const countsFrom = root => powerLevels.map((_, index) => Number(root.querySelector(`[data-power-index="${index}"]`)?.value || 0));
+  const countsFrom = root => powerLevels.map((_, index) => Number(root.querySelector(`[data-power-count="${index}"]`)?.textContent || 0));
   const costFrom = (root, strenuousBonus) => resolvePowerLevelCost({baseCost: defaultCost, powerLevels, counts: countsFrom(root), affinity, strenuousBonus});
+  const finalTargetFrom = (root, method, strenuousBonus) => Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty
+    + strenuousBonus + Number(root.querySelector("[name=modifier]")?.value || 0);
   const content = `<div class="trudvang roll-dialog magic-roll-dialog">
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MagicMethod"))}</label><select name="method">${options}</select></div>
     <p class="magic-breakdown">${escapeHtml(methods[0]?.breakdown || "")}</p>
+    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PowerModifier"))} : <strong>${escapeHtml(formatModifier(spellModifier))}</strong></p>
     ${activeSpellCount ? `<p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.ActiveSpellsPenalty", {count: activeSpellCount, penalty: activeSpellPenalty}))}</p>` : ""}
     ${persistent ? `<p class="magic-affinity-note">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PersistentSpellNotice"))}</p>` : ""}
-    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
     <p>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}</p>
     ${affinityDescription ? `<p class="magic-affinity-note">${escapeHtml(affinityDescription)}</p>` : ""}
     ${levelRows ? `<div class="magic-power-options">${levelRows}</div>` : ""}
+    ${levelRows ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Power.LevelsInvested"))} : <strong data-level-cost>0</strong></p>` : ""}
     ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Strenuous"))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     <p>${escapeHtml(resourceLabel)} : <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
   </div>`;
   // Local subclass so the live breakdown refresh (FinalTarget / FinalVitnerCost) survives the
   // AppV1 -> AppV2 migration: DialogV2 exposes the old `render` hook through `_onRender`.
@@ -154,10 +160,15 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
         const output = root.querySelector("[data-final-target]");
-        if (output) output.textContent = Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + strenuousBonus;
+        if (output) output.textContent = finalTargetFrom(root, method, strenuousBonus);
         const finalCost = root.querySelector("[data-final-cost]");
+        const levelCost = root.querySelector("[data-level-cost]");
         if (finalCost) {
-          try { finalCost.textContent = costFrom(root, strenuousBonus).total; }
+          try {
+            const costs = costFrom(root, strenuousBonus);
+            finalCost.textContent = costs.total;
+            if (levelCost) levelCost.textContent = costs.extra;
+          }
           catch { finalCost.textContent = "—"; }
         }
         const breakdown = root.querySelector(".magic-breakdown");
@@ -165,7 +176,18 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
       };
       root.querySelector("[name=method]")?.addEventListener("change", refresh);
       root.querySelector("[name=strenuous]")?.addEventListener("change", refresh);
-      root.querySelectorAll("[data-power-index]").forEach(input => input.addEventListener("input", refresh));
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      root.querySelectorAll("[data-power-increase], [data-power-decrease]").forEach(button => button.addEventListener("click", () => {
+        const index = Number(button.dataset.powerIncrease ?? button.dataset.powerDecrease);
+        const counter = root.querySelector(`[data-power-count="${index}"]`);
+        if (!counter) return;
+        const current = Number(counter.textContent || 0);
+        const maxCount = powerLevels[index]?.maxCount == null ? null : Number(powerLevels[index].maxCount);
+        const next = button.dataset.powerIncrease !== undefined ? current + 1 : current - 1;
+        counter.textContent = Math.max(0, maxCount == null ? next : Math.min(maxCount, next));
+        refresh();
+      }));
+      refresh();
     }
   }
   return MagicRollDialog.wait({
@@ -176,10 +198,11 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         const root = button.form ?? dialog.element;
         const method = methods.find(entry => entry.id === root.querySelector("[name=method]")?.value) || methods[0];
         const strenuousBonus = Number(root.querySelector("[name=strenuous]")?.value || 0);
+        const situationalModifier = Number(root.querySelector("[name=modifier]")?.value || 0);
         let cost;
         try { cost = costFrom(root, strenuousBonus); }
         catch { ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidSelection")); return false; }
-        return {method, strenuousBonus, activeSpellPenalty, target: Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + strenuousBonus, cost: cost.total, costBreakdown: cost, modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+        return {method, strenuousBonus, activeSpellPenalty, target: finalTargetFrom(root, method, strenuousBonus), situationalModifier, cost: cost.total, costBreakdown: cost};
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

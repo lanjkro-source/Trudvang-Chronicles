@@ -916,7 +916,9 @@ export class TrudvangActor extends BaseActor {
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
     const selectedLevelsFlavor = options.costBreakdown.entries.filter(entry => entry.count).map(entry => `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.SelectedLevel", {count: entry.count, effect: entry.effect, total: entry.total, unit: entry.unitCost}))}${entry.unitCost !== entry.baseUnitCost ? ` — ${escapeHtml(game.i18n.format("TRUDVANG.Power.AffinityCost", {base: entry.baseUnitCost, adjusted: entry.unitCost}))}` : ""}`).join("");
     const costFlavor = `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}${selectedLevelsFlavor}<br>${escapeHtml(game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"))} : ${options.cost}`;
-    const flavor = `${options.method.breakdown}${activeSpellsFlavor}${strenuousFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
+    const powerModifierFlavor = item.system.modifier ? `<br>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PowerModifier"))} : ${Number(item.system.modifier) > 0 ? "+" : ""}${Number(item.system.modifier)}` : "";
+    const situationalFlavor = options.situationalModifier ? `<br>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))} : ${options.situationalModifier > 0 ? "+" : ""}${options.situationalModifier}` : "";
+    const flavor = `${options.method.breakdown}${powerModifierFlavor}${activeSpellsFlavor}${strenuousFlavor}${situationalFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
     const fatalKind = isDivine ? "faith" : "vitner";
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",

@@ -530,6 +530,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Power.CostPerLevel` | Cost per level: {cost} | Coût par niveau : {cost} |
 | `TRUDVANG.Power.Maximum` | Maximum: {max} | Maximum : {max} |
 | `TRUDVANG.Power.MaxCount` | Limit | Limite |
+| `TRUDVANG.Power.LevelsInvested` | Total invested in power levels | Total investi dans les niveaux de puissance |
+| `TRUDVANG.Power.IncreaseLevel` | Add a power level | Ajouter un niveau de puissance |
+| `TRUDVANG.Power.DecreaseLevel` | Remove a power level | Retirer un niveau de puissance |
 | `TRUDVANG.Power.InvalidSelection` | The selected number of power levels exceeds its allowed limit. | Le nombre de niveaux de puissance choisi dépasse la limite autorisée. |
 | `TRUDVANG.Power.BaseCost` | Base cost: {cost} | Coût de base : {cost} |
 | `TRUDVANG.Power.SelectedLevel` | {count} × {effect}: {total} points ({unit} per level) | {count} × {effect} : {total} points ({unit} par niveau) |
@@ -839,6 +842,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.InitiativeMagic` | Spell or divine action | Sortilège ou pouvoir divin |
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
+| `TRUDVANG.Dialog.PowerModifier` | Power modifier | Modificateur du pouvoir |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
 | `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
@@ -998,7 +1002,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Calculation.Discipline` | Skill SV {skill} + Discipline {discipline} = SV {total} | VC de la compétence {skill} + discipline {discipline} = VC {total} |
 | `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
-| `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
+| `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
 | `TRUDVANG.Calculation.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
