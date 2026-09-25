@@ -7,6 +7,7 @@ import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
+import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 
@@ -982,8 +983,13 @@ export class TrudvangActor extends BaseActor {
     const spellSpecialtyLevel = Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0);
     const divineDisciplineLevel = Number(this.findKnowledgeItem("godFocus")?.system.level || 0);
     const divineSpecialtyLevel = Number(this.findKnowledgeItem("composed")?.system.level || 0);
+    const defaultType = defaultConcentrationType({
+      vitnerMax: this.system.resources?.vitner?.max,
+      divinityMax: this.system.resources?.divinity?.max
+    });
     const options = await concentrationDialog({
       title: game.i18n.localize("TRUDVANG.Dialog.ConcentrationRoll"),
+      defaultType,
       psycheModifier,
       effectModifier,
       spellDisciplineLevel,
@@ -1011,7 +1017,8 @@ export class TrudvangActor extends BaseActor {
       target: options.base,
       modifier,
       kind: "situation",
-      flavor
+      flavor,
+      animateWithDiceSoNice: true
     });
   }
 

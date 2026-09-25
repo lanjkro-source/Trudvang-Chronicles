@@ -34,7 +34,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -59,11 +59,22 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     usage,
     longRange: Boolean(longRange)
   });
-  await ChatMessage.create({
+  const useDiceSoNice = animateWithDiceSoNice
+    && game.modules?.get("dice-so-nice")?.active
+    && typeof game.dice3d?.showForRoll === "function";
+  const message = await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({actor}),
     content,
-    rolls: [roll]
+    rolls: [roll],
+    ...(useDiceSoNice ? {flags: {"dice-so-nice": {skip: true}}} : {})
   });
+  if (useDiceSoNice) {
+    try {
+      await game.dice3d.showForRoll(roll, game.user, true, message.whisper ?? [], Boolean(message.blind), message.id, message.speaker);
+    } catch (error) {
+      console.error("Trudvang | Dice So Nice could not animate a concentration roll", error);
+    }
+  }
   return {roll, result, target: finalTarget, success, critical, margin};
 }
 
@@ -211,7 +222,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   });
 }
 
-export async function concentrationDialog({title, psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0}) {
+export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const tracks = {
     spell: {discipline: "TRUDVANG.Knowledge.vitnerFocus", specialty: "TRUDVANG.Knowledge.safeWeaving", disciplineLevel: Number(spellDisciplineLevel) || 0, specialtyLevel: Number(spellSpecialtyLevel) || 0},
@@ -220,7 +231,7 @@ export async function concentrationDialog({title, psycheModifier = 0, effectModi
   const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
   const localize = key => escapeHtml(game.i18n.localize(key));
   const content = `<div class="trudvang roll-dialog concentration-roll-dialog">
-    <div class="form-group"><label>${localize("TRUDVANG.Dialog.ConcentrationType")}</label><select name="concentration-type"><option value="spell">${localize("TRUDVANG.Dialog.ConcentrationSpell")}</option><option value="divine">${localize("TRUDVANG.Dialog.ConcentrationDivine")}</option></select></div>
+    <div class="form-group"><label>${localize("TRUDVANG.Dialog.ConcentrationType")}</label><select name="concentration-type"><option value="spell" ${defaultType === "spell" ? "selected" : ""}>${localize("TRUDVANG.Dialog.ConcentrationSpell")}</option><option value="divine" ${defaultType === "divine" ? "selected" : ""}>${localize("TRUDVANG.Dialog.ConcentrationDivine")}</option></select></div>
     <div class="form-group"><label>${localize("TRUDVANG.Dialog.ConcentrationBase")}</label><input name="concentration-base" type="number" value="6"></div>
     <dl class="concentration-breakdown">
       <dt>${localize("TRUDVANG.Dialog.ConcentrationTrait")}</dt><dd>${signed(psycheModifier)}</dd>
@@ -254,7 +265,7 @@ export async function concentrationDialog({title, psycheModifier = 0, effectModi
     window: {title},
     content,
     buttons: [
-      {action: "roll", icon: "fas fa-wand-sparkles", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
         return {type: root.querySelector("[name=concentration-type]")?.value || "spell", base: Number(root.querySelector("[name=concentration-base]")?.value || 0)};
       }},
