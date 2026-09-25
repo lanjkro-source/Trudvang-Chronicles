@@ -818,7 +818,7 @@
       "TabletSkillRequirement": "Faith or Vitner Craft must have a Skill Value of at least 4.",
       "TabletKnowledgeRequired": "Learn Vitner Shaping or the Invoke specialty of the chosen religion before adding one of its tablets.",
       "VitnerRequired": "Choose a Vitner tradition before adding a Vitner Tablet.",
-      "ReligionRequired": "Choose a compatible religious path before adding a Holy Tablet.",
+      "ReligionRequired": "Choose a compatible religious path before learning an invocation specialty or adding a Holy Tablet.",
       "TabletReligionMismatch": "This Holy Tablet does not belong to the character's compatible chosen religion.",
       "NoCompatibleTablets": "No additional tablet is currently compatible with this character.",
       "MagicMethodRequired": "Learn the required discipline and at least one applicable invocation or weaving specialty.",

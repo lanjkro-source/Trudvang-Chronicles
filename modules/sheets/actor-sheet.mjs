@@ -565,6 +565,14 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.UnknownTablet"));
     }
+    if (this.actor.type === "character" && this.actor.system.experience?.creationMode) {
+      for (const entry of entries) {
+        if (entry.type !== "ability" || Math.max(Number(entry.system?.level || 0), Number(entry.system?.offHandLevel || 0)) <= 0) continue;
+        const catalogId = entry.system?.catalogId || entry.flags?.["trudvang-chronicles"]?.catalogId;
+        const restriction = catalogId ? this.actor.catalogKnowledgeRestriction(catalogId) : null;
+        if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
+      }
+    }
     const prepared = entries.map(data => {
       const copy = foundry.utils.deepClone(data);
       if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;

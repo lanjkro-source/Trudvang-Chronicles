@@ -818,7 +818,7 @@
       "TabletSkillRequirement": "Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4.",
       "TabletKnowledgeRequired": "Apprenez Modelage du vitner ou la spécialité d'Invocation de la religion choisie avant d'ajouter l'une de ses tablettes.",
       "VitnerRequired": "Choisissez une tradition du vitner avant d'ajouter une tablette de vitner.",
-      "ReligionRequired": "Choisissez une voie religieuse compatible avant d'ajouter une tablette sacrée.",
+      "ReligionRequired": "Choisissez une voie religieuse compatible avant d'apprendre une spécialité d'invocation ou d'ajouter une tablette sacrée.",
       "TabletReligionMismatch": "Cette tablette sacrée n'appartient pas à la religion compatible choisie par le personnage.",
       "NoCompatibleTablets": "Aucune tablette supplémentaire n'est actuellement compatible avec ce personnage.",
       "MagicMethodRequired": "Apprenez la discipline requise et au moins une spécialité d'invocation ou de tissage applicable.",

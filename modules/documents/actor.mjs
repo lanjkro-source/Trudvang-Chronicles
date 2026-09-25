@@ -206,8 +206,23 @@ export class TrudvangActor extends BaseActor {
     const religion = this.getReligionForSpecialty(catalogId);
     if (!religion) return true;
     if (!this.allowedReligionIds.includes(religion.id)) return false;
-    const selected = this.selectedReligion;
-    return !selected || selected.id === religion.id;
+    const selectedReligion = this.selectedReligion;
+    return Boolean(selectedReligion) && selectedReligion.id === religion.id;
+  }
+
+  catalogKnowledgeRestriction(catalogId) {
+    if (TRUDVANG.vitnerTypes[catalogId]) {
+      const selected = this.selectedVitnerType;
+      return selected && selected.id !== catalogId ? "TRUDVANG.Warning.VitnerExclusive" : null;
+    }
+    const religion = this.getReligionForSpecialty(catalogId);
+    if (!religion) return null;
+    if (!this.allowedReligionIds.includes(religion.id)) return "TRUDVANG.Warning.ReligionIncompatible";
+    const selectedReligion = this.selectedReligion;
+    if (!selectedReligion) return "TRUDVANG.Warning.ReligionRequired";
+    if (!this.allowedReligionIds.includes(selectedReligion.id)) return "TRUDVANG.Warning.ReligionIncompatible";
+    if (selectedReligion.id !== religion.id) return "TRUDVANG.Warning.ReligionExclusive";
+    return null;
   }
 
   get equippedItems() {
@@ -471,6 +486,8 @@ export class TrudvangActor extends BaseActor {
     const minimum = Number(item.system.freeLevels || 0);
     if (next < Math.max(1, minimum) || next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
     if (direction > 0) {
+      const restriction = item.system.catalogId ? this.catalogKnowledgeRestriction(item.system.catalogId) : null;
+      if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
       const skillKey = this.getKnowledgeSkillKey(item);
       const requirement = this.getRequiredSkillValue(next);
       if (Number(this.system.skills?.[skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
@@ -503,9 +520,9 @@ export class TrudvangActor extends BaseActor {
       return item.update({[`system.${levelField}`]: current - 1});
     }
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
-    if (direction > 0 && !this.canChooseCatalogKnowledge(catalogId)) {
-      const key = TRUDVANG.vitnerTypes[catalogId] ? "TRUDVANG.Warning.VitnerExclusive" : (this.allowedReligionIds.includes(this.getReligionForSpecialty(catalogId)?.id) ? "TRUDVANG.Warning.ReligionExclusive" : "TRUDVANG.Warning.ReligionIncompatible");
-      return ui.notifications.warn(game.i18n.localize(key));
+    if (direction > 0) {
+      const restriction = this.catalogKnowledgeRestriction(catalogId);
+      if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
     }
     const next = current + 1;
     const requirement = this.getRequiredSkillValue(next);
@@ -542,6 +559,8 @@ export class TrudvangActor extends BaseActor {
       const current = Number(item.system[levelField] || 0);
       const next = current + 1;
       if (next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
+      const restriction = item.system.catalogId ? this.catalogKnowledgeRestriction(item.system.catalogId) : null;
+      if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
       const requirement = this.getRequiredSkillValue(next);
       const skillKey = this.getKnowledgeSkillKey(item);
       if (Number(this.system.skills?.[skillKey]?.value || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
@@ -1202,6 +1221,8 @@ export class TrudvangActor extends BaseActor {
     if (!["ability", "tablet"].includes(item.type)) return;
     const current = Number(item.system[levelField] || 0);
     if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
+    const restriction = item.system.catalogId ? this.catalogKnowledgeRestriction(item.system.catalogId) : null;
+    if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
     const next = current + 1;
     const requirement = this.getRequiredSkillValue(next);
     const skillKey = this.getKnowledgeSkillKey(item);
