@@ -7,6 +7,7 @@ import { rollPackageAvailability } from "../package-roll.mjs";
 import { TABLET_BY_ID, getPowerSummary, powerName } from "../tablet-catalog.mjs";
 import { findTabletPower } from "../tablet-power-links.mjs";
 import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.mjs";
+import {activeSpellCosts} from "../rules/active-spell-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -84,6 +85,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
     context.isRunePower = context.isMagicPower && Boolean(this.item.system.isRune);
+    context.isPersistentSpell = this.item.type === "spell" && this.item.system.spellType === "lasting";
+    context.activeSpellCount = context.isPersistentSpell ? activeSpellCosts(this.item).length : 0;
+    context.activeSpellTotalCost = context.isPersistentSpell ? activeSpellCosts(this.item).reduce((sum, cost) => sum + cost, 0) : 0;
     context.powerLevelRows = context.isMagicPower ? Array.from(this.item.system.powerLevels ?? [], (entry, index) => ({
       ...(entry.toObject?.() ?? entry), displayLevel: index + 1
     })) : [];

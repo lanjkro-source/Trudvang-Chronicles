@@ -37,8 +37,8 @@
       {
         "id": "vitner-dimvitner:tendril-of-dimhall:4:2",
         "cost": 5,
-        "maxCount": null,
-        "effect": "Augmente le jet ouvert des dégâts de : +1 degré"
+        "maxCount": 3,
+        "effect": "Augmente le jet ouvert des dégâts d'un degré : 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       }
     ],
     "source": "Livre des règles, p. 157",

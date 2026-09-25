@@ -113,7 +113,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   });
 }
 
-export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, activeSpellCount = 0, powerLevels = [], affinity = 0, affinityDescription = ""}) {
+export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = ""}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
   const options = methods.map(method => {
@@ -135,6 +135,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MagicMethod"))}</label><select name="method">${options}</select></div>
     <p class="magic-breakdown">${escapeHtml(methods[0]?.breakdown || "")}</p>
     ${activeSpellCount ? `<p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.ActiveSpellsPenalty", {count: activeSpellCount, penalty: activeSpellPenalty}))}</p>` : ""}
+    ${persistent ? `<p class="magic-affinity-note">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PersistentSpellNotice"))}</p>` : ""}
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
     <p>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}</p>
     ${affinityDescription ? `<p class="magic-affinity-note">${escapeHtml(affinityDescription)}</p>` : ""}

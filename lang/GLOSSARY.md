@@ -171,6 +171,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Add` | Add | Ajouter |
 | `TRUDVANG.Action.Close` | Close | Fermer |
 | `TRUDVANG.Action.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
+| `TRUDVANG.Action.EndActiveSpell` | End this casting of the spell | Mettre fin à ce lancement du sort |
 | `TRUDVANG.Action.ToggleTree` | Expand or collapse | Déplier ou replier |
 | `TRUDVANG.Action.HideUnlearned` | Hide level-0 knowledge | Masquer les compétences à 0 |
 | `TRUDVANG.Action.ShowUnlearned` | Show level-0 knowledge | Afficher les compétences à 0 |
@@ -832,6 +833,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
 | `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sorts actifs ({count}) : {penalty} VC |
+| `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
 | `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
 | `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
 | `TRUDVANG.Dialog.MeleeAttack` | Melee attack | Attaque en mêlée |
@@ -913,6 +915,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NoControlledActor` | Control a character or NPC before using an extract. | Contrôlez un personnage ou un PNJ avant d’utiliser un extrait. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
+| `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sorts actifs est atteinte ; terminez-en un avant de lancer ce sort. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
 | `TRUDVANG.Warning.NotEnoughExperience` | The next level costs {cost} Adventure Points. | Le niveau suivant coûte {cost} PA. |

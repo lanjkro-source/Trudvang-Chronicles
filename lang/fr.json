@@ -138,6 +138,7 @@
       "Add": "Ajouter",
       "Close": "Fermer",
       "AddTablet": "Ajouter une tablette compatible",
+      "EndActiveSpell": "Mettre fin à ce lancement du sort",
       "ToggleTree": "Déplier ou replier",
       "HideUnlearned": "Masquer les compétences à 0",
       "ShowUnlearned": "Afficher les compétences à 0",
@@ -697,6 +698,7 @@
       "MagicMethod": "Méthode et spécialité",
       "FinalTarget": "Valeur de compétence finale",
       "ActiveSpellsPenalty": "Sorts actifs ({count}) : {penalty} VC",
+      "PersistentSpellNotice": "Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée.",
       "Feint": "Feinte (max. {max} PC)",
       "ThrowWeapon": "Lancer l’arme",
       "MeleeAttack": "Attaque en mêlée",
@@ -763,6 +765,7 @@
       "NoControlledFearCharacters": "Contrôlez au moins un personnage auquel appliquer la peur.",
       "NoControlledActor": "Contrôlez un personnage ou un PNJ avant d’utiliser un extrait.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
+      "ActiveSpellLimit": "La limite de sorts actifs est atteinte ; terminez-en un avant de lancer ce sort.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
       "NotEnoughExperience": "Le niveau suivant coûte {cost} PA.",
@@ -6791,7 +6794,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Augmente la portée du sort de 5 mètres",
-            "1": "Augmente le rayon de la zone affectée de 1 mètre"
+            "1": "Augmente le rayon de la zone affectée de 1 mètre",
+            "2": "Augmente le jet ouvert des dégâts d'un degré : 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "vitner-dimvitner:dismiss-undead:2": {
@@ -6866,7 +6870,7 @@
           "PowerLevels": {
             "0": "Augmente la portée de : 5 mètres",
             "1": "Ajoute une vrille, ce qui permet d'attaquer une cible supplémentaire (qui subit la version de base du sort)",
-            "2": "Augmente le jet ouvert des dégâts de : +1 degré"
+            "2": "Augmente le jet ouvert des dégâts d'un degré : 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
           }
         },
         "vitner-dimvitner:vitner-theft:5": {
@@ -7485,7 +7489,7 @@
         "vitner-soil-craft:earthquake:2": {
           "Name": "Tremblement de terre",
           "Summary": "Secoue violemment le terrain, fait tomber les créatures et endommage les constructions fragiles.",
-          "Description": "Ce sort génère un violent tremblement de terre dans une zone située à portée. La zone affectée est un cercle de 4 mètres de diamètre, et tous les objets qui s’y trouvent et qui ne sont pas solidement attachés tombent ou s’effondrent. Les objets fermement ancrés comme les arbres et les bâtiments ne sont en aucune façon affectés par le tremblement de terre (hormis la chute de fruits ou de quelques éclats, par exemple), mais l’ajout de niveaux de puissance pourrait permettre d’affecter ces éléments (à la discrétion du maître de jeu).<br> Toute créature prise dans le tremblement de terre doit réussir un test de compétence d’Agilité modifié en fonction de sa taille, comme indiqué par la table ci-­ dessous, pour ne pas tomber à la renverse (Cf. Tailles des créatures dans le Bestiaire de Jorge , page 7, pour de plus amples informations sur les tailles). Une créature jetée à terre par ce sort subit également 1d6 points de dégâts. Toutes les créatures présentes dans la zone affectée (même celles qui n’ont pas été renversées) subissent un malus de -3 à leurs valeurs de compétence et de situation pour la durée du pouvoir. <table><thead><tr><th colspan=\"2\">TAILLES DES CRÉATURES ET MODIFICATEURS</th></tr><tr><th>Taille</th><th>Modificateur</th></tr></thead><tbody><tr><td><1/3</td><td>-5</td></tr><tr><td>≥1/3 – 1/2</td><td>-2</td></tr><tr><td>≥1/2 – 1,5</td><td>0</td></tr><tr><td>≥1,5 – 3</td><td>+3</td></tr><tr><td>≥3 – 5</td><td>+5</td></tr><tr><td>≥5 – 10</td><td>+7</td></tr><tr><td>≥10</td><td>+10</td></tr></tbody></table>Quand un enchanteur utilise ce sort sous terre, il y a 20 % de chance (1 à 4 sur 1d20) que cela provoque un glissement de terrain ou un éboulement. Au maître de jeu de déterminer précisément les conséquences d’un tel événement. <table><thead><tr><th colspan=\"7\">EFFETS SELON NIVEAUX DE PUISSANCE</th></tr><tr><th>Taille</th><th>0</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr></thead><tbody><tr><td><1/3</td><td>-5</td><td>-7</td><td>-9</td><td>-11</td><td>-13</td><td>-15</td></tr><tr><td>≥1/3–1/2</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td><td>-12</td></tr><tr><td>≥1/2–1,5</td><td>0</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td></tr><tr><td>≥1,5–3</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td><td>-7</td></tr><tr><td>≥3–5</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td></tr><tr><td>≥5–10</td><td>+7</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td></tr><tr><td>≥10</td><td>+10</td><td>+8</td><td>+6</td><td>+4</td><td>+2</td><td>0</td></tr><tr><td>Risque d’éboulement</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td>70%</td></tr><tr><td>Dégâts</td><td>1d6</td><td>1d6+1</td><td>1d6+2</td><td>1d6+3</td><td>1d6+4</td><td>1d6+5</td></tr></tbody></table>",
+          "Description": "Ce sort génère un violent tremblement de terre dans une zone située à portée. La zone affectée est un cercle de 4 mètres de diamètre, et tous les objets qui s’y trouvent et qui ne sont pas solidement attachés tombent ou s’effondrent. Les objets fermement ancrés comme les arbres et les bâtiments ne sont en aucune façon affectés par le tremblement de terre (hormis la chute de fruits ou de quelques éclats, par exemple), mais l’ajout de niveaux de puissance pourrait permettre d’affecter ces éléments (à la discrétion du maître de jeu).<br> Toute créature prise dans le tremblement de terre doit réussir un test de compétence d’Agilité modifié en fonction de sa taille, comme indiqué par la table ci-­ dessous, pour ne pas tomber à la renverse. Une créature jetée à terre par ce sort subit également 1d6 points de dégâts. Toutes les créatures présentes dans la zone affectée (même celles qui n’ont pas été renversées) subissent un malus de -3 à leurs valeurs de compétence et de situation pour la durée du pouvoir. Quand un enchanteur utilise ce sort sous terre, il y a 20 % de chance (1 à 4 sur 1d20) que cela provoque un glissement de terrain ou un éboulement. Au maître de jeu de déterminer précisément les conséquences d’un tel événement. <table><thead><tr><th colspan=\"7\">EFFETS SELON NIVEAUX DE PUISSANCE</th></tr><tr><th>Taille</th><th>0</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr></thead><tbody><tr><td><1/3</td><td>-5</td><td>-7</td><td>-9</td><td>-11</td><td>-13</td><td>-15</td></tr><tr><td>≥1/3–1/2</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td><td>-12</td></tr><tr><td>≥1/2–1,5</td><td>0</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td></tr><tr><td>≥1,5–3</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td><td>-7</td></tr><tr><td>≥3–5</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td></tr><tr><td>≥5–10</td><td>+7</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td></tr><tr><td>≥10</td><td>+10</td><td>+8</td><td>+6</td><td>+4</td><td>+2</td><td>0</td></tr><tr><td>Risque d’éboulement</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td>70%</td></tr><tr><td>Dégâts</td><td>1d6</td><td>1d6+1</td><td>1d6+2</td><td>1d6+3</td><td>1d6+4</td><td>1d6+5</td></tr></tbody></table>",
           "SwedishName": "Jördabavur",
           "Duration": "1 tour de jeu",
           "Range": "10 mètres",

@@ -6,6 +6,7 @@ import { prepareActorStatInspection, prepareEquipmentInspection, showInspectionD
 import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolveEquipment } from "../rules/equipment-resolver.mjs";
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
+import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -65,6 +66,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "item-damage": TrudvangActorSheet.#onAction,
       "item-advance": TrudvangActorSheet.#onAction,
       "item-edit": TrudvangActorSheet.#onAction,
+      "end-active-spell": TrudvangActorSheet.#onAction,
       "item-delete": TrudvangActorSheet.#onAction,
       "item-equip": TrudvangActorSheet.#onAction,
       "item-ready": TrudvangActorSheet.#onAction,
@@ -326,7 +328,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
     context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;
     context.activeSpells = context.hasActiveSpellTracker
-      ? sortTabletPowers(powers.filter(item => item.type === "spell" && item.system.active))
+      ? activeSpellInstances(sortTabletPowers(powers.filter(item => item.type === "spell")))
+        .map(({item, index, cost}) => ({id: item.id, name: item.name, img: item.img, index, cost}))
       : [];
     context.magicTree = tablets.map(item => {
       const level = Number(item.system.level || 1);
@@ -432,6 +435,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "item-damage": return this.actor.rollDamage(item);
       case "item-advance": return item ? this.actor.advanceItem(item) : null;
       case "item-edit": return item?.sheet.render({force: true});
+      case "end-active-spell": return item ? this.actor.endActiveSpell(item, Number(target.dataset.castIndex)) : null;
       case "inspect-item": return item ? showInspectionDialog(prepareEquipmentInspection(item, this.actor)) : null;
       case "item-delete": return this._deleteItem(item);
       case "item-equip": return item?.update({"system.equipped": !item.system.equipped});

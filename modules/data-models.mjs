@@ -288,7 +288,8 @@ function magicSchema() {
     range: string("Personal"),
     weavingTime: string("1 action round"),
     active: boolean(false),
-    activeCost: integer(0, {min: 0})
+    activeCost: integer(0, {min: 0}),
+    activeCastCosts: new fields.ArrayField(new fields.NumberField({required: true, integer: true, min: 0}), {required: true, initial: []})
   };
 }
 

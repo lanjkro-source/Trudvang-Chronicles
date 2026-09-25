@@ -6910,6 +6910,11 @@ export const POWER_DETAILS_BY_ID = {
         "id": "vitner-dimvitner:darkness-of-dimhall:8:1",
         "cost": 4,
         "maxCount": null
+      },
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:2",
+        "cost": 5,
+        "maxCount": 2
       }
     ],
     "spellType": "instant",
@@ -7024,7 +7029,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-dimvitner:tendril-of-dimhall:4:2",
         "cost": 5,
-        "maxCount": null
+        "maxCount": 3
       }
     ],
     "spellType": "instant",
@@ -8193,7 +8198,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-soil-craft:earthquake:2:3",
         "cost": 4,
-        "maxCount": null
+        "maxCount": 5
       }
     ],
     "spellType": "instant",

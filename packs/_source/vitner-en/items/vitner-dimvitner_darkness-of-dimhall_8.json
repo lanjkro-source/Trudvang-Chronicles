@@ -33,6 +33,12 @@
         "cost": 4,
         "maxCount": null,
         "effect": "Increase the radius by 1 meter"
+      },
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:2",
+        "cost": 5,
+        "maxCount": 2,
+        "effect": "Increase the damage's open roll by one step: 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 105",

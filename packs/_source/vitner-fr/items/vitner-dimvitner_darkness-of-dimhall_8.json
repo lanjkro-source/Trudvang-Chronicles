@@ -33,6 +33,12 @@
         "cost": 4,
         "maxCount": null,
         "effect": "Augmente le rayon de la zone affectée de 1 mètre"
+      },
+      {
+        "id": "vitner-dimvitner:darkness-of-dimhall:8:2",
+        "cost": 5,
+        "maxCount": 2,
+        "effect": "Augmente le jet ouvert des dégâts d'un degré : 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
       }
     ],
     "source": "Livre des règles, p. 158",

@@ -43,6 +43,12 @@ Toute nouvelle migration de monde doit :
 | `categoryForWeaponType()` et sa synchronisation | Continue d'écrire la catégorie historique pour les anciens mondes/modules. | Les consommateurs de `system.category` ont été supprimés ou migrés. |
 | Repli NPC de `poolState()` vers `resources.combat.value` | Traduit l'ancienne réserve de combat unique en pool libre. | Tous les PNJ ont `system.combatPools`. |
 
+## `modules/rules/active-spell-resolver.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| Repli de `activeSpellCosts()` vers `system.active` / `system.activeCost` | Représente comme un lancement actif unique les sorts persistants activés avant le suivi par instance et coût individuel. | Les mondes de développement antérieurs ont été effacés ou leurs sorts actifs ont été terminés. |
+
 ## Hors périmètre
 
 Les fallbacks d'API Foundry V14/V16, la compatibilité de données avec des modules tiers et les outils de réparation explicitement destinés aux compendiums distribués ne sont pas automatiquement temporaires. Ils ne doivent donc être retirés qu'après une décision distincte.

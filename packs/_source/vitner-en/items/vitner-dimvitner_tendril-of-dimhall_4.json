@@ -37,8 +37,8 @@
       {
         "id": "vitner-dimvitner:tendril-of-dimhall:4:2",
         "cost": 5,
-        "maxCount": null,
-        "effect": "Increase the damage by one step: 1d10"
+        "maxCount": 3,
+        "effect": "Increase the damage's open roll by one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
       }
     ],
     "source": "Player's Handbook, p. 105",

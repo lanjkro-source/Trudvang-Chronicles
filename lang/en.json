@@ -138,6 +138,7 @@
       "Add": "Add",
       "Close": "Close",
       "AddTablet": "Add a compatible tablet",
+      "EndActiveSpell": "End this casting of the spell",
       "ToggleTree": "Expand or collapse",
       "HideUnlearned": "Hide level-0 knowledge",
       "ShowUnlearned": "Show level-0 knowledge",
@@ -697,6 +698,7 @@
       "MagicMethod": "Method and specialty",
       "FinalTarget": "Final Skill Value",
       "ActiveSpellsPenalty": "Active spells ({count}): {penalty} SV",
+      "PersistentSpellNotice": "This power is lasting: if successful, it will remain active for its duration.",
       "Feint": "Feint (max. {max} CP)",
       "ThrowWeapon": "Throw the weapon",
       "MeleeAttack": "Melee attack",
@@ -763,6 +765,7 @@
       "NoControlledFearCharacters": "Control at least one character to apply Fear to.",
       "NoControlledActor": "Control a character or NPC before using an extract.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
+      "ActiveSpellLimit": "The active-spell limit has been reached; end one before casting this spell.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
       "NotEnoughExperience": "The next level costs {cost} Adventure Points.",
@@ -6791,7 +6794,8 @@
           "DailyActivation": "",
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
-            "1": "Increase the radius by 1 meter"
+            "1": "Increase the radius by 1 meter",
+            "2": "Increase the damage's open roll by one step: 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
           }
         },
         "vitner-dimvitner:dismiss-undead:2": {
@@ -6866,7 +6870,7 @@
           "PowerLevels": {
             "0": "Increase the range by 5 meters",
             "1": "Increase the number of tendrils, which results in another person falling victim to the basic version of the spell.",
-            "2": "Increase the damage by one step: 1d10"
+            "2": "Increase the damage's open roll by one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
           }
         },
         "vitner-dimvitner:vitner-theft:5": {
@@ -7485,7 +7489,7 @@
         "vitner-soil-craft:earthquake:2": {
           "Name": "Earthquake",
           "Summary": "The spell causes an area within the range to rumble with a single, heavy tremor.",
-          "Description": "The Ihana causes a tremor that shakes the ground all around them, knocking every creature within the range except for the Ihana to the ground. Any objects within the range that are not EARTHQUAKE: SIZE MODIFIERS, RISK OF Extra Power Levels Size ±0 +1 &lt;1/3 -5 -7 ≥1/3 – 1/2 -2 -4 ≥1/2 – 1.5 ±0 -2 ≥1.5 – 3t +3 +1 ≥3 – 5t +5 +3 ≥5 – 10t +7 +5 ≥10t +10 +8 Risk of<br>landslide 20% 30% Damage 1d6 1d6 + 1 firmly secured will also fall or collapse. Firmly anchored objects such as trees and buildings are not affected to any great extent by the quake (aside from falling fruit, icicles, and so on), but they might be affected at higher power levels (up to the game master to decide). Any creature caught in the tremor have to make an Agility Skill roll modified depending<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell causes an area within the range to rumble with a single, heavy tremor.</td></tr></tbody></table>on their size, as shown in the table below, to avoid falling over. (See Creature Size in Game Master’s Guide for more on size values.) A creature knocked to the ground by this ability also takes 1d6 points of damage. For all creatures within the affected area (even if they do not fall over), their Skill Values and Situation values are reduced by -3 for the duration. If the ability is used underground, there is a 20% chance<table><tbody><tr><td>The spell causes an area within the range to rumble with a single, heavy tremor.</td></tr></tbody></table>(1-4 on 1d20) that a landslide or cave-in occurs. The effects of this landslide are up to the game master to decide. For every additional level of power that is added (Cost 3), it increases the risk of a landslide, modifiers to the Skill roll depending on the creature’s size, and damage taken by fallen creatures (as indicated on the table below). LANDSLIDE, AND POWER LEVELS to Increase the Effect (Cost 4) +2 +3 +4 +5 -9 -11 -13 -15 -6 -8 -10 -12 -4 -6 -8 -10 -1 -3 -5 -7 +1 -1 -3 -5 +3 +1 -1 -3 +6 +4 +2 ±0 40% 50% 60% 70% 1d6 + 2 1d6 + 3 1d6 + 4 1d6 + 5 EARTHQUAKE: CREATURE SIZES AND MODIFIERS Size Modifier &lt;1/3 -5 ≥1/3 – 1/2 -2 ≥1/2 – 1.5t ±0 ≥1.5 – 3t +3 ≥3 – 5t +5 ≥5 – 10t +7 ≥10t +10",
+          "Description": "This spell causes a violent earthquake in an area within range. The affected area is a circle 4 meters in diameter. Unsecured objects inside it fall or collapse. Firmly anchored objects such as trees and buildings are not otherwise affected, though additional power levels may affect them at the game master's discretion.<br>Every creature caught in the earthquake must succeed on an Agility Skill roll modified by its size to avoid falling. A creature knocked down also suffers 1d6 damage. All creatures in the area, including those not knocked down, suffer -3 to their Skill Values and Situation Values for the spell's duration. If the spell is cast underground, there is a 20% chance (1-4 on 1d20) of a landslide or cave-in; the game master determines its consequences.<table><thead><tr><th colspan=\"7\">EFFECTS BY POWER LEVEL</th></tr><tr><th>Size</th><th>0</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>-5</td><td>-7</td><td>-9</td><td>-11</td><td>-13</td><td>-15</td></tr><tr><td>≥1/3–1/2</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td><td>-12</td></tr><tr><td>≥1/2–1.5</td><td>0</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td></tr><tr><td>≥1.5–3</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td><td>-7</td></tr><tr><td>≥3–5</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td></tr><tr><td>≥5–10</td><td>+7</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td></tr><tr><td>≥10</td><td>+10</td><td>+8</td><td>+6</td><td>+4</td><td>+2</td><td>0</td></tr><tr><td>Landslide risk</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td>70%</td></tr><tr><td>Damage</td><td>1d6</td><td>1d6+1</td><td>1d6+2</td><td>1d6+3</td><td>1d6+4</td><td>1d6+5</td></tr></tbody></table>",
           "SwedishName": "Jördabavur",
           "Duration": "1 action round",
           "Range": "10 meters",

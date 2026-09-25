@@ -2,6 +2,7 @@ import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollUnder, traitRollDialog } from "../dice.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { spentMagicPoints } from "../rules/magic-power-resolver.mjs";
+import {activeSpellCosts, activeSpellInstances, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
@@ -877,7 +878,11 @@ export class TrudvangActor extends BaseActor {
     if (!methods.length || disciplineLevel < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MagicMethodRequired"));
     const defaultCost = Number(item.system.cost ?? TRUDVANG.spellCosts[item.system.level] ?? 0);
     const strenuousMax = isDivine ? 0 : Number(this.findKnowledgeItem("strenuous")?.system.level || 0);
-    const activeSpellCount = isDivine ? 0 : this.items.filter(candidate => candidate.type === "spell" && candidate.system.active).length;
+    const activeSpellCount = isDivine ? 0 : activeSpellInstances(this.items).length;
+    const persistent = item.system.spellType === "lasting";
+    const trackedPersistent = persistent && !isDivine;
+    const activeSpellLimit = Number(this.selectedVitnerType?.level || 0);
+    if (trackedPersistent && activeSpellCount >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const vitnerType = this.selectedVitnerType;
     const affinityType = {hwitalja: "hvitavitner", darkhwitalja: "morkvitner", vaagritalja: "vaagrivitner"}[vitnerType?.id];
     const tablet = this.items.find(candidate => candidate.type === "tablet" && candidate.system.catalogId === item.system.tabletId);
@@ -898,9 +903,11 @@ export class TrudvangActor extends BaseActor {
       affinityDescription,
       strenuousMax,
       activeSpellCount,
+      persistent,
       resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
     });
     if (!options) return null;
+    if (trackedPersistent && activeSpellInstances(this.items).length >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
@@ -924,6 +931,10 @@ export class TrudvangActor extends BaseActor {
       } else await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
     if (result?.result === 20) await this.rollFatalEffect(isDivine ? "faith" : "vitner", options.cost, item);
+    if (trackedPersistent && result?.success && this.isOwner) {
+      const costs = activeSpellCosts(item);
+      await item.update({"system.activeCastCosts": [...costs, options.cost], "system.active": true, "system.activeCost": costs.reduce((sum, value) => sum + value, 0) + options.cost});
+    }
     if (!isDivine && result?.critical === "success") {
       const bonusRoll = new Roll("1d10+1");
       await bonusRoll.evaluate();
@@ -950,8 +961,17 @@ export class TrudvangActor extends BaseActor {
     const mitigation = isDivine
       ? Number(this.findKnowledgeItem("godFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("composed")?.system.level || 0))
       : Number(this.findKnowledgeItem("vitnerFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0));
-    const activeCost = isDivine ? 0 : this.items.filter(item => item.type === "spell" && item.id !== failedItem?.id && item.system.active).reduce((sum, item) => sum + Number(item.system.activeCost || item.system.cost || 0), 0);
+    const activeCost = isDivine ? 0 : fatalActiveSpellCost(this.items);
     return Number(cost || 0) + activeCost - mitigation;
+  }
+
+  async endActiveSpell(item, index) {
+    if (!this.isOwner || item?.parent !== this || item.type !== "spell") return;
+    const costs = activeSpellCosts(item);
+    if (!Number.isInteger(index) || index < 0 || index >= costs.length) return;
+    costs.splice(index, 1);
+    await item.update({"system.activeCastCosts": costs, "system.active": costs.length > 0,
+      "system.activeCost": costs.reduce((sum, value) => sum + value, 0)});
   }
 
   async resetCombatPoints() {
