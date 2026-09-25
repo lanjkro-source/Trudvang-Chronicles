@@ -8,10 +8,9 @@ import { deterministicId } from "./skill-pack-data.mjs";
 // identical documents. This module must stay free of any Foundry or browser global.
 //
 // Pack layout mirrors the books:
-// - Vitner packs: the list of vitner tablets at the root, then one folder per tablet
-//   containing the spells inscribed on that tablet.
-// - Religion packs: one folder per religion, containing that religion's holy tablets
-//   plus a subfolder per tablet holding its divine powers.
+// - Vitner packs: one folder per tablet, containing the tablet followed by its spells.
+// - Religion packs: one folder per religion and a subfolder per tablet; that
+//   subfolder contains the tablet followed by its divine powers.
 
 export const TABLET_PACKS = [
   {code: "en", packName: "vitner-en", label: "Vitner (en)", tabletType: "vitner"},
@@ -65,10 +64,6 @@ export function buildTabletPackDocuments({localize, format, isFrench, tabletType
   const holyTabletFolderId = tablet => deterministicId(`folder:holy-tablet:${tablet.id}`);
 
   if (tabletType === "vitner") {
-    // Root level: the full tablet list, then one spell folder per tablet.
-    for (const tablet of tablets) {
-      items.push(packItem(tabletItemData(tablet, resolvers), {id: tabletItemId(tablet), sort: nextSort()}));
-    }
     for (const tablet of tablets) {
       const name = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
       if (!name) {
@@ -77,6 +72,7 @@ export function buildTabletPackDocuments({localize, format, isFrench, tabletType
       }
       const folderId = vitnerFolderId(tablet);
       folders.push(folderDocument({id: folderId, name, sort: nextSort()}));
+      items.push(packItem(tabletItemData(tablet, resolvers), {id: tabletItemId(tablet), folder: folderId, sort: nextSort()}));
       for (const power of tablet.powers) {
         items.push(packItem(powerItemData(power, tablet, resolvers), {id: powerItemId(power), folder: folderId, sort: nextSort()}));
       }
@@ -84,8 +80,8 @@ export function buildTabletPackDocuments({localize, format, isFrench, tabletType
     return {folders, items};
   }
 
-  // Holy tablets: one folder per religion; inside it the religion's tablets plus a
-  // subfolder per tablet holding its divine powers.
+  // Holy tablets: one folder per religion, then one subfolder containing each
+  // tablet alongside the divine powers it grants.
   const religions = [...new Set(tablets.map(tablet => tablet.religion).filter(Boolean))];
   for (const religion of religions) {
     const labelKey = TRUDVANG.religions[religion]?.label ?? `TRUDVANG.Religion.${religion}`;
@@ -95,7 +91,6 @@ export function buildTabletPackDocuments({localize, format, isFrench, tabletType
     const religionFolder = deterministicId(`folder:religion:${religion}`);
     folders.push(folderDocument({id: religionFolder, name: religionName, sort: nextSort()}));
     for (const tablet of tablets.filter(candidate => candidate.religion === religion)) {
-      items.push(packItem(tabletItemData(tablet, resolvers), {id: tabletItemId(tablet), folder: religionFolder, sort: nextSort()}));
       const name = localize(`TRUDVANG.Content.Tablet.${tablet.id}.Name`, tablet.name);
       if (!name) {
         if (strict) throw new Error(`Missing Name text for tablet "${tablet.id}"`);
@@ -103,6 +98,7 @@ export function buildTabletPackDocuments({localize, format, isFrench, tabletType
       }
       const folderId = holyTabletFolderId(tablet);
       folders.push(folderDocument({id: folderId, name, parent: religionFolder, sort: nextSort()}));
+      items.push(packItem(tabletItemData(tablet, resolvers), {id: tabletItemId(tablet), folder: folderId, sort: nextSort()}));
       for (const power of tablet.powers) {
         items.push(packItem(powerItemData(power, tablet, resolvers), {id: powerItemId(power), folder: folderId, sort: nextSort()}));
       }

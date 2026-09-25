@@ -29,3 +29,20 @@ test("system window CSS uses palette roles rather than fixed colors", () => {
   assert.deepEqual([...roles].filter(role => !defaults.includes(`${role}:`)), []);
   assert.doesNotMatch(css.slice(css.indexOf("}") + 1), /#[\da-f]{3,8}\b|rgba?\s*\(/i);
 });
+
+test("power-description tables use readable palette colors in every theme", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.item-description table :is\(th, td, p, span\)\s*\{\s*color:\s*var\(--trudvang-on-header\)/);
+  const luminance = hex => {
+    const [red, green, blue] = [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16) / 255)
+      .map(value => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
+    return red * 0.2126 + green * 0.7152 + blue * 0.0722;
+  };
+  for (const [name, palette] of Object.entries(PALETTES)) {
+    for (const background of [palette.header, palette.headerAlt]) {
+      const light = luminance(palette.onHeader), dark = luminance(background);
+      assert.ok((Math.max(light, dark) + 0.05) / (Math.min(light, dark) + 0.05) >= 4.5,
+        `${name} table contrast is too low`);
+    }
+  }
+});

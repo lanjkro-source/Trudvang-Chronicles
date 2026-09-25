@@ -5,6 +5,7 @@ import { canThrowWeapon, categoryForWeaponType, isThrowingWeapon, readiedHandCon
 import { resolveThrowingRange } from "../rules/equipment-resolver.mjs";
 import { rollPackageAvailability } from "../package-roll.mjs";
 import { TABLET_BY_ID, getPowerSummary, powerName } from "../tablet-catalog.mjs";
+import { findTabletPower } from "../tablet-power-links.mjs";
 import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -231,15 +232,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     event.preventDefault();
     const catalogId = target.dataset.catalogId;
     if (!catalogId) return;
-    let power = this.item.parent?.documentName === "Actor"
-      ? this.item.parent.items.find(item => item.system.catalogId === catalogId)
-      : game.items.find(item => item.system.catalogId === catalogId);
-    if (!power) {
-      const lang = game.i18n.lang === "fr" ? "fr" : "en";
-      const packName = this.item.system.tabletType === "vitner" ? `vitner-${lang}` : `religion-${lang}`;
-      const pack = game.packs.get(`trudvang-chronicles.${packName}`);
-      power = (await pack?.getDocuments())?.find(item => item.system.catalogId === catalogId);
-    }
+    const power = await findTabletPower({tablet: this.item, catalogId,
+      packs: game.packs, worldItems: game.items, language: game.i18n.lang});
     if (power) return power.sheet.render({force: true});
     return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TabletPowerMissing"));
   }

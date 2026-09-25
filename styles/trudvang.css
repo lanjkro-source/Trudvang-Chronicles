@@ -647,6 +647,9 @@
 .trudvang-tablet-picker .tablet-picker-option small { display: block; margin-top: 2px; color: var(--trudvang-muted); }
 .trudvang-sheet.item-sheet .panel.summary-panel textarea { resize: none; }
 .trudvang-sheet.item-sheet .editor-container { min-height: 150px; flex: 1; }
+.trudvang-sheet.item-sheet .item-description table { width: 100%; border-collapse: collapse; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); --table-background-color: var(--trudvang-header-alt); --table-row-color-odd: var(--trudvang-header-alt); --table-row-color-even: color-mix(in srgb, var(--trudvang-header) 55%, var(--trudvang-header-alt)); --table-header-bg-color: var(--trudvang-header); --table-header-border-color: var(--trudvang-gold); --table-header-text-color: var(--trudvang-on-header); }
+.trudvang-sheet.item-sheet .item-description table :is(th, td, p, span) { color: var(--trudvang-on-header); }
+.trudvang-sheet.item-sheet .item-description table :is(th, td) { border: 1px solid color-mix(in srgb, var(--trudvang-gold) 45%, var(--trudvang-header-alt)); padding: 5px 8px; }
 .trudvang-sheet.item-sheet .package-availability-roll, .trudvang.chat-card .package-availability-roll { color: var(--trudvang-accent); cursor: pointer; text-decoration: underline; }
 .trudvang-sheet.item-sheet .package-availability-roll:focus-visible, .trudvang.chat-card .package-availability-roll:focus-visible { outline: 2px solid var(--trudvang-accent); outline-offset: 2px; }
 .detail-dialog { max-height: 60vh; overflow-y: auto; }

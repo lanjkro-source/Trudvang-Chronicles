@@ -61,9 +61,9 @@
       "ReimportHint": "Runs the starter library import again in the current display language: names, descriptions, and images of previously installed items, tables, and NPCs are refreshed instead of duplicated.",
       "ReimportTitle": "Reinstall starter content",
       "ReimportConfirm": "Reinstall",
-      "RebuildPacksName": "Rebuild the Skills compendiums",
-      "RebuildPacksHint": "Wipes and rebuilds the two Skills compendium packs from the system data, repairing any corrupted compendium content. Items already imported into this world are not touched.",
-      "RebuildPacksTitle": "Rebuild the Skills compendiums",
+      "RebuildPacksName": "Rebuild the knowledge compendiums",
+      "RebuildPacksHint": "Wipes and rebuilds all six Skills, Vitner, and Religion compendiums from the system data. Items already imported into this world are not touched.",
+      "RebuildPacksTitle": "Rebuild the knowledge compendiums",
       "RebuildPacksConfirm": "Rebuild",
       "PaletteName": "Color palette",
       "PaletteHint": "Selects the color palette applied to the Trudvang theme.",
@@ -955,8 +955,9 @@
       "Started": "Installing the Trudvang starter library...",
       "Complete": "Trudvang starter library installed: {items} items, {tables} tables, and {actors} NPCs.",
       "Failed": "The Trudvang starter library could not be installed. See the console for details.",
-      "PacksRebuildStarted": "Rebuilding the Skills compendiums...",
-      "PacksRebuilt": "Skills compendiums rebuilt ({packs} packs)."
+      "PacksRebuildStarted": "Rebuilding the knowledge compendiums...",
+      "PacksRebuilt": "Knowledge compendiums rebuilt ({packs} packs).",
+      "PacksRebuildFailed": "Compendium rebuild failed. Check the console; no further packs will be changed."
     },
     "Content": {
       "Folder": {

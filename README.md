@@ -39,6 +39,8 @@ npm run check
 
 The bilingual compendium packs under `packs/` are build artifacts compiled from reviewable JSON sources (`packs/_source/`) generated out of `lang/*.json`, the power catalogue, and the knowledge tree in `modules/config.mjs`. Rebuild the packs after any rules-text or catalogue change:
 
+In the Vitner and Religion packs, each tablet now sits in the same folder as its powers (under its religion for holy tablets); stable document IDs keep links valid across rebuilds. The GM's “Rebuild knowledge compendiums” setting repairs all six packs, not just Skills.
+
 ```powershell
 npm install
 npm run build:packs

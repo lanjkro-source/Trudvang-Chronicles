@@ -383,34 +383,63 @@ async function upsertJournals() {
   }
 }
 
-// Repairs a bilingual Skills compendium by rebuilding it from the shared blueprints in
+// TEMPORARY WORLD MIGRATION — repairs a bilingual Skills compendium from
+// development-world pack state by rebuilding it from the shared blueprints in
 // modules/skill-pack-data.mjs, healing any stale LevelDB state left behind by earlier
 // NEDB migrations or interrupted system updates. Not part of the normal startup path:
 // shipped packs already contain this data, so this is a GM-triggered repair only.
-// Shared wipe-and-recreate core for blueprint-driven compendium repairs. Folders and
-// items are rebuilt from scratch on every repair: legacy NEDB migrations can strand
-// documents (including misplaced Folder copies) inside the primary sublevel, which no
-// API surface cleans up. Blueprints carry stable deterministic ids, so repairs never
-// invalidate compendium links from previously imported copies.
-async function rebuildCompendiumFromBlueprints(pack, blueprints) {
+// TEMPORARY WORLD MIGRATION — repair packs damaged by earlier development builds.
+// Keep the blueprint ids when recreating both folders and items. Without keepId,
+// newly generated folder ids leave every item's folder reference dangling.
+export async function rebuildCompendiumFromBlueprints(pack, blueprints) {
   const FolderClass = foundry.utils.getDocumentClass("Folder");
   const ItemClass = foundry.utils.getDocumentClass("Item");
-  for (const folder of [...pack.folders.values()]) {
-    await folder.delete().catch((error) => console.warn(`Trudvang Chronicles | Could not delete pack folder "${folder.name}"`, error));
+  const expectedFolders = new Map(blueprints.folders.map(folder => [folder._id, folder]));
+  const expectedItems = new Map(blueprints.items.map(item => [item._id, item]));
+  if (expectedFolders.size !== blueprints.folders.length || expectedItems.size !== blueprints.items.length
+    || blueprints.folders.some(folder => folder.folder && !expectedFolders.has(folder.folder))
+    || blueprints.items.some(item => item.folder && !expectedFolders.has(item.folder))) {
+    throw new Error(`Compendium ${pack.collection}: invalid blueprint ids or folder references`);
   }
   const existing = await pack.getDocuments();
   if (existing.length) {
     try {
       await ItemClass.deleteDocuments(existing.map(document => document.id), {pack: pack.collection});
     } catch (error) {
-      console.warn("Trudvang Chronicles | Bulk pack wipe failed, falling back per document", error);
-      for (const document of existing) {
-        await document?.delete().catch(() => {});
-      }
+      console.warn(`Trudvang Chronicles | Bulk item deletion failed in ${pack.collection}; retrying individually`, error);
+      for (const document of await pack.getDocuments()) await document.delete();
     }
   }
-  await FolderClass.createDocuments(blueprints.folders.map(toCreateData), {pack: pack.collection});
-  await ItemClass.createDocuments(blueprints.items.map(toCreateData), {pack: pack.collection});
+  const folders = [...pack.folders.values()];
+  if (folders.length) {
+    try {
+      await FolderClass.deleteDocuments(folders.map(folder => folder.id), {pack: pack.collection});
+    } catch (error) {
+      console.warn(`Trudvang Chronicles | Bulk folder deletion failed in ${pack.collection}; retrying individually`, error);
+      for (const folder of [...pack.folders.values()]) await folder.delete();
+    }
+  }
+  if ((await pack.getDocuments()).length || pack.folders.size) {
+    throw new Error(`Compendium ${pack.collection}: old documents remain after deletion`);
+  }
+  const remainingFolders = new Map(expectedFolders);
+  while (remainingFolders.size) {
+    const ready = [...remainingFolders.values()].filter(folder => !folder.folder || pack.folders.has(folder.folder));
+    if (!ready.length) throw new Error(`Compendium ${pack.collection}: circular folder hierarchy`);
+    await FolderClass.createDocuments(ready.map(toCreateData), {pack: pack.collection, keepId: true});
+    for (const folder of ready) remainingFolders.delete(folder._id);
+  }
+  await ItemClass.createDocuments(blueprints.items.map(toCreateData), {pack: pack.collection, keepId: true});
+  const actualFolders = [...pack.folders.values()];
+  const actualItems = await pack.getDocuments();
+  const folderId = document => document.folder?.id ?? document.folder ?? null;
+  if (actualFolders.length !== expectedFolders.size || actualItems.length !== expectedItems.size
+    || actualFolders.some(folder => !expectedFolders.has(folder.id)
+      || folderId(folder) !== (expectedFolders.get(folder.id)?.folder ?? null))
+    || actualItems.some(item => !expectedItems.has(item.id)
+      || folderId(item) !== (expectedItems.get(item.id)?.folder ?? null))) {
+    throw new Error(`Compendium ${pack.collection}: rebuilt documents or folder assignments do not match the blueprints`);
+  }
 }
 
 // Language text resolvers built from the fetched translation JSONs — not game.i18n,
@@ -444,37 +473,44 @@ async function unlockPackWhile(pack, work) {
 
 export async function syncSkillPack(packId, language) {
   const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
-  if (!pack) return;
+  if (!pack) throw new Error(`Missing compendium ${SYSTEM_ID}.${packId}`);
   await unlockPackWhile(pack, async () => {
     const {localize} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"));
-    await rebuildCompendiumFromBlueprints(pack, buildSkillPackDocuments({localize}));
+    await rebuildCompendiumFromBlueprints(pack, buildSkillPackDocuments({localize, strict: true}));
   });
 }
 
-// Repairs one bilingual Vitner or Religion compendium from the shared blueprints in
+// TEMPORARY WORLD MIGRATION — repairs one bilingual Vitner or Religion compendium
+// from the shared blueprints in
 // modules/tablet-pack-data.mjs. Not part of the normal startup path: shipped packs
 // already contain this data, so this is a GM-triggered repair only.
 export async function syncTabletPack(packId, language, tabletType) {
   const pack = game.packs.get(`${SYSTEM_ID}.${packId}`);
-  if (!pack) return;
+  if (!pack) throw new Error(`Missing compendium ${SYSTEM_ID}.${packId}`);
   await unlockPackWhile(pack, async () => {
     const {localize, format, isFrench} = langResolvers(await fetchLangPack(language), await fetchLangPack("en"), {isFrench: () => language === "fr"});
-    await rebuildCompendiumFromBlueprints(pack, buildTabletPackDocuments({localize, format, isFrench, tabletType}));
+    await rebuildCompendiumFromBlueprints(pack, buildTabletPackDocuments({localize, format, isFrench, tabletType, strict: true}));
   });
 }
 
-// Manual GM repair entry point: rebuilds every knowledge compendium (Skills, Vitner,
+// TEMPORARY WORLD MIGRATION — manual GM repair entry point: rebuilds every knowledge compendium (Skills, Vitner,
 // Religion) from the shared blueprints.
 export async function repairKnowledgePacks() {
   ui.notifications.info(game.i18n.localize("TRUDVANG.Import.PacksRebuildStarted"));
   let rebuilt = 0;
-  for (const {code, packName} of SKILL_PACKS) {
-    await syncSkillPack(packName, code);
-    rebuilt += 1;
-  }
-  for (const {code, packName, tabletType} of TABLET_PACKS) {
-    await syncTabletPack(packName, code, tabletType);
-    rebuilt += 1;
+  try {
+    for (const {code, packName} of SKILL_PACKS) {
+      await syncSkillPack(packName, code);
+      rebuilt += 1;
+    }
+    for (const {code, packName, tabletType} of TABLET_PACKS) {
+      await syncTabletPack(packName, code, tabletType);
+      rebuilt += 1;
+    }
+  } catch (error) {
+    console.error("Trudvang Chronicles | Knowledge compendium rebuild failed", error);
+    ui.notifications.error(game.i18n.localize("TRUDVANG.Import.PacksRebuildFailed"));
+    throw error;
   }
   ui.notifications.info(game.i18n.format("TRUDVANG.Import.PacksRebuilt", {packs: rebuilt}));
 }
