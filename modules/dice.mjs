@@ -2,6 +2,7 @@ import { escapeHtml, renderTemplate } from "./helpers.mjs";
 import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
+import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -33,13 +34,11 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, feint = 0, usage = "", longRange = false}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
-  const critical = result === 20 ? "failure" : (perfectSuccessMax > 0 && result <= perfectSuccessMax) ? "success" : "";
-  const success = critical === "success" || (result !== 20 && result <= finalTarget);
-  const margin = success ? Math.max(0, finalTarget - result) : null;
+  const {critical, success, margin} = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
     actorName: actor.name,
     actorImg: actor.img,
@@ -50,6 +49,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     success,
     margin,
     critical,
+    fatalEffect: critical === "failure" ? fatalEffect : null,
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor,

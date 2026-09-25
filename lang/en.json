@@ -78,7 +78,7 @@
       "Combat": "Combat",
       "Skills": "Skills",
       "Equipment": "Equipment",
-      "Magic": "Magic & Faith",
+      "Magic": "Vitner & Faith",
       "Effects": "Effects",
       "Notes": "Notes",
       "Actions": "Actions",
@@ -116,6 +116,8 @@
       "Damage": "Damage",
       "Parry": "Parry",
       "RollDamage": "Roll Damage",
+      "RollFatalMagic": "Roll on the Fatal Magic table",
+      "RollFatalFailure": "Roll on the Critical Failure table",
       "RollFearFactor": "Roll Fear Factor",
       "ShowDetails": "Show details",
       "RollInitiative": "Roll Initiative",
@@ -746,6 +748,7 @@
         "success": "Perfect success",
         "failure": "Automatic failure"
       },
+      "FatalFailure": "Critical failure",
       "OpenRoll": "Open roll on",
       "OpenInitiative": "Initiative uses 1d10 with an open roll on 10.",
       "Margin": "Success margin",
@@ -768,6 +771,7 @@
       "NoControlledFearCharacters": "Control at least one character to apply Fear to.",
       "NoControlledActor": "Control a character or NPC before using an extract.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
+      "CannotRollForActor": "You cannot roll for this actor.",
       "ActiveSpellLimit": "The active-spell limit has been reached; end one before casting this spell.",
       "CombatantAdditionLocked": "A combatant can only be added at the start of a round, while initiatives are being rolled.",
       "SkillMaximum": "A general Skill Value cannot exceed 10.",
@@ -6488,11 +6492,12 @@
             "0": "Increase the duration by 1 minute",
             "1": "Increase the duration by 1 hour",
             "2": "Increase the duration by 1 day",
-            "3": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
-            "4": "Increase the range within which the enchanted can sense odors by +10 meters",
-            "5": "Increase the range within which the enchanted can sense odors by +100 meters",
-            "6": "Increase the bonus or penalty by ±1",
-            "7": "Affect an extra being (with the spell’s basic version)"
+            "3": "Increase the duration by 1 week",
+            "4": "Decrease the victim’s chance of succeeding on the Situation roll by -1",
+            "5": "Increase the range within which the enchanted can sense odors by +10 meters",
+            "6": "Increase the range within which the enchanted can sense odors by +100 meters",
+            "7": "Increase the bonus or penalty by ±1",
+            "8": "Affect an extra being (with the spell’s basic version)"
           }
         },
         "vitner-body-vitner:strengthen:8": {
@@ -6544,9 +6549,8 @@
             "2": "Increase duration by 1 day",
             "3": "Increase duration by 1 week",
             "4": "Reduce the victim's chance to succeed on the Situation roll by -1",
-            "5": "Increase the range at which the beneficiary can perceive scents by 10 meters",
-            "6": "Increase the bonus or penalty by ±1",
-            "7": "Affect one additional being (with the spell's basic effect)"
+            "5": "Increase the bonus or penalty by ±1",
+            "6": "Affect one additional being (with the spell's basic effect)"
           }
         },
         "vitner-delusion-vitner:camouflage:7": {

@@ -6299,7 +6299,7 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:3",
-        "cost": 1,
+        "cost": 20,
         "maxCount": null
       },
       {
@@ -6309,16 +6309,21 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:5",
-        "cost": 4,
+        "cost": 1,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:6",
-        "cost": 2,
+        "cost": 4,
         "maxCount": null
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:7",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:8",
         "cost": 3,
         "maxCount": null
       }
@@ -6423,16 +6428,11 @@ export const POWER_DETAILS_BY_ID = {
       },
       {
         "id": "vitner-body-vitner:vision-blindness:4:5",
-        "cost": 1,
-        "maxCount": null
-      },
-      {
-        "id": "vitner-body-vitner:vision-blindness:4:6",
         "cost": 2,
         "maxCount": null
       },
       {
-        "id": "vitner-body-vitner:vision-blindness:4:7",
+        "id": "vitner-body-vitner:vision-blindness:4:6",
         "cost": 3,
         "maxCount": null
       }

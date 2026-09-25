@@ -911,13 +911,18 @@ export class TrudvangActor extends BaseActor {
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
     if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
-    const perfectSuccessMax = isDivine ? 1 : (vitnerType?.perfectSuccessMax ?? 1);
+    const perfectSuccessMax = isDivine ? 0 : (vitnerType?.perfectSuccessMax ?? 1);
     const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format("TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
     const selectedLevelsFlavor = options.costBreakdown.entries.filter(entry => entry.count).map(entry => `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.SelectedLevel", {count: entry.count, effect: entry.effect, total: entry.total, unit: entry.unitCost}))}${entry.unitCost !== entry.baseUnitCost ? ` — ${escapeHtml(game.i18n.format("TRUDVANG.Power.AffinityCost", {base: entry.baseUnitCost, adjusted: entry.unitCost}))}` : ""}`).join("");
     const costFlavor = `<br>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}${selectedLevelsFlavor}<br>${escapeHtml(game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"))} : ${options.cost}`;
     const flavor = `${options.method.breakdown}${activeSpellsFlavor}${strenuousFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
-    const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`, target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell", flavor, item, perfectSuccessMax});
+    const fatalKind = isDivine ? "faith" : "vitner";
+    const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
+      target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
+      flavor, item, perfectSuccessMax, automaticSuccessMax: isDivine ? 1 : 0,
+      fatalEffect: {kind: fatalKind, threshold: isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9),
+        modifier: this.fatalEffectModifier(fatalKind, options.cost)}});
     const spent = spentMagicPoints({isDivine, success: result.success, critical: result.critical, baseCost: defaultCost, totalCost: options.cost});
     if (this.isOwner) {
       const stored = Number(this._source.system.resources[resource].value || 0);
@@ -930,7 +935,6 @@ export class TrudvangActor extends BaseActor {
         });
       } else await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
-    if (result?.result === 20) await this.rollFatalEffect(isDivine ? "faith" : "vitner", options.cost, item);
     if (trackedPersistent && result?.success && this.isOwner) {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
         id: foundry.utils.randomID(), itemId: item.id, cost: options.cost,
@@ -946,20 +950,24 @@ export class TrudvangActor extends BaseActor {
     return result;
   }
 
-  async rollFatalEffect(kind, cost, failedItem = null) {
+  async rollFatalEffect(kind, {threshold, modifier} = {}) {
     const isDivine = kind === "faith";
     const vitnerType = this.selectedVitnerType;
-    const threshold = isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9);
-    const modifier = this.fatalEffectModifier(kind, cost, failedItem);
+    const fatalThreshold = threshold ?? (isDivine ? 9 : (vitnerType?.fatalThreshold ?? 9));
+    const fatalModifier = modifier ?? this.fatalEffectModifier(kind);
     const tableId = isDivine ? "fatal-failure-effects" : "fatal-magic-effects";
     const table = game.tables.find(candidate => fatalTableId(candidate) === tableId);
     if (!table) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.FatalTableMissing"));
-    const roll = new Roll(fatalRollFormula(threshold, modifier));
+    const roll = new Roll(fatalRollFormula(fatalThreshold, fatalModifier));
     await roll.evaluate();
-    return table.draw({roll, displayChat: true});
+    const draw = await table.draw({roll, displayChat: false});
+    if (draw.results.length) await table.toMessage(draw.results, {
+      roll: draw.roll, messageData: {speaker: ChatMessage.getSpeaker({actor: this})}
+    });
+    return draw;
   }
 
-  fatalEffectModifier(kind, cost = 0, failedItem = null) {
+  fatalEffectModifier(kind, cost = 0) {
     const isDivine = kind === "faith";
     const mitigation = isDivine
       ? Number(this.findKnowledgeItem("godFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("composed")?.system.level || 0))

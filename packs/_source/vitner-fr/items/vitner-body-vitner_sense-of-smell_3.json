@@ -42,30 +42,36 @@
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:3",
-        "cost": 1,
+        "cost": 20,
         "maxCount": null,
-        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+        "effect": "Augmente la durée de : 1 semaine"
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:4",
         "cost": 1,
         "maxCount": null,
-        "effect": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres"
+        "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
       },
       {
         "id": "vitner-body-vitner:sense-of-smell:3:5",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres"
+      },
+      {
+        "id": "vitner-body-vitner:sense-of-smell:3:6",
         "cost": 4,
         "maxCount": null,
         "effect": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 100 mètres"
       },
       {
-        "id": "vitner-body-vitner:sense-of-smell:3:6",
+        "id": "vitner-body-vitner:sense-of-smell:3:7",
         "cost": 2,
         "maxCount": null,
         "effect": "Augmente le bonus/malus de ±1"
       },
       {
-        "id": "vitner-body-vitner:sense-of-smell:3:7",
+        "id": "vitner-body-vitner:sense-of-smell:3:8",
         "cost": 3,
         "maxCount": null,
         "effect": "Affecte une entité supplémentaire (avec la version de base du sort)"

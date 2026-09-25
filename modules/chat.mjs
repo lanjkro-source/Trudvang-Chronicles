@@ -41,6 +41,26 @@ function attachListeners(message, html) {
       if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true"});
     });
   });
+  html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const kind = button.dataset.fatalKind;
+      const threshold = Number(button.dataset.fatalThreshold);
+      const modifier = Number(button.dataset.fatalModifier);
+      if (!["faith", "vitner"].includes(kind) || !Number.isInteger(threshold) || !Number.isInteger(modifier)) return;
+      const actor = await foundry.utils.fromUuid(button.dataset.actorUuid);
+      if (!actor?.isOwner) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotRollForActor"));
+      button.disabled = true;
+      try {
+        const draw = await actor.rollFatalEffect(kind, {threshold, modifier});
+        if (!draw?.results?.length) button.disabled = false;
+      } catch (error) {
+        button.disabled = false;
+        throw error;
+      }
+    });
+  });
   html.querySelectorAll("[data-action='apply-effects']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();

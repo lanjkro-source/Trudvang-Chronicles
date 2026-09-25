@@ -105,7 +105,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Tab.Combat` | Combat | Combat |
 | `TRUDVANG.Tab.Skills` | Skills | Compétences |
 | `TRUDVANG.Tab.Equipment` | Equipment | Équipement |
-| `TRUDVANG.Tab.Magic` | Magic & Faith | Magie & Foi |
+| `TRUDVANG.Tab.Magic` | Vitner & Faith | Vitner & Foi |
 | `TRUDVANG.Tab.Effects` | Effects | Effets |
 | `TRUDVANG.Tab.Notes` | Notes | Notes |
 | `TRUDVANG.Tab.Actions` | Actions | Actions |
@@ -134,7 +134,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Section.Description` | Description | Description |
 | `TRUDVANG.Section.Affinities` | Magical & Religious Affinities | Affinités magiques & religieuses |
 | `TRUDVANG.Section.Effects` | Active Effects | Effets actifs |
-| `TRUDVANG.Section.ActiveSpells` | Active Spells | Sorts actifs |
+| `TRUDVANG.Section.ActiveSpells` | Active Spells | Sortilèges actifs |
 
 ## `TRUDVANG.Action`
 
@@ -149,6 +149,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.Damage` | Damage | Dégâts |
 | `TRUDVANG.Action.Parry` | Parry | Parer |
 | `TRUDVANG.Action.RollDamage` | Roll Damage | Jet de Dégâts |
+| `TRUDVANG.Action.RollFatalMagic` | Roll on the Fatal Magic table | Lancer sur la table de magie funeste |
+| `TRUDVANG.Action.RollFatalFailure` | Roll on the Critical Failure table | Lancer sur la table d'échec critique |
 | `TRUDVANG.Action.RollFearFactor` | Roll Fear Factor | Lancer le facteur de peur |
 | `TRUDVANG.Action.ShowDetails` | Show details | Afficher le détail |
 | `TRUDVANG.Action.RollInitiative` | Roll Initiative | Jet d'initiative |
@@ -255,8 +257,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ActiveSpell` | Active / maintained | Actif / maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
 | `TRUDVANG.Field.ActiveSpellsCount` | {current} / {max} | {current} / {max} |
-| `TRUDVANG.Field.ActiveSpellCostsOne` | 1 active spell: {costs} | 1 sort actif : {costs} |
-| `TRUDVANG.Field.ActiveSpellCostsMany` | {count} active spells: {costs} | {count} sorts actifs : {costs} |
+| `TRUDVANG.Field.ActiveSpellCostsOne` | 1 active spell: {costs} | 1 sortilège actif : {costs} |
+| `TRUDVANG.Field.ActiveSpellCostsMany` | {count} active spells: {costs} | {count} sortilèges actifs : {costs} |
 | `TRUDVANG.Field.Summary` | Summary | Résumé |
 | `TRUDVANG.Field.PassiveProtection` | PP: PASSIVE PROTECTION | PP : PROTECTION PASSIVE |
 | `TRUDVANG.Field.BreachCurrent` | Breach Value (current) | Valeur d'intégrité (actuelle) |
@@ -835,7 +837,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.AddTablet` | Add a compatible tablet | Ajouter une tablette compatible |
 | `TRUDVANG.Dialog.MagicMethod` | Method and specialty | Méthode et spécialité |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
-| `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sorts actifs ({count}) : {penalty} VC |
+| `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
 | `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
 | `TRUDVANG.Dialog.ThrowWeapon` | Throw the weapon | Lancer l’arme |
@@ -853,7 +855,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.FatalJO` | Open Roll threshold | Jet ouvert (JO) |
 | `TRUDVANG.Dialog.FatalCost` | Action cost | Coût de l'action |
 | `TRUDVANG.Dialog.FatalSituational` | Situational modifier | Modificateur situationnel |
-| `TRUDVANG.Dialog.FatalActorModifier` | Actor modifier (active spells and mitigation): {modifier} | Modificateur de l'acteur (sorts actifs et atténuation) : {modifier} |
+| `TRUDVANG.Dialog.FatalActorModifier` | Actor modifier (active spells and mitigation): {modifier} | Modificateur de l'acteur (sortilèges actifs et atténuation) : {modifier} |
 | `TRUDVANG.Dialog.AcclimatizationModifier` | Acclimatization | Acclimatation |
 | `TRUDVANG.Dialog.SituationalModifier` | Situational modifier | Modificateur situationnel |
 | `TRUDVANG.Dialog.Strenuous` | Strenuous effort | Renforcement |
@@ -883,6 +885,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Roll.Success` | Success | Succès |
 | `TRUDVANG.Roll.Failure` | Failure | Échec |
+| `TRUDVANG.Roll.FatalFailure` | Critical failure | Échec critique |
 | `TRUDVANG.Roll.OpenRoll` | Open roll on | Jet ouvert sur |
 | `TRUDVANG.Roll.OpenInitiative` | Initiative uses 1d10 with an open roll on 10. | L'initiative utilise 1d10 avec un jet ouvert sur 10. |
 | `TRUDVANG.Roll.Margin` | Success margin | Marge de réussite |
@@ -918,7 +921,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NoControlledActor` | Control a character or NPC before using an extract. | Contrôlez un personnage ou un PNJ avant d’utiliser un extrait. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
-| `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sorts actifs est atteinte ; terminez-en un avant de lancer ce sort. |
+| `TRUDVANG.Warning.CannotRollForActor` | You cannot roll for this actor. | Vous ne pouvez pas lancer le jet de cet acteur. |
+| `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort. |
 | `TRUDVANG.Warning.CombatantAdditionLocked` | A combatant can only be added at the start of a round, while initiatives are being rolled. | Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative. |
 | `TRUDVANG.Warning.SkillMaximum` | A general Skill Value cannot exceed 10. | La valeur d'une compétence ne peut pas dépasser 10. |
 | `TRUDVANG.Warning.NotEnoughExperience` | The next level costs {cost} Adventure Points. | Le niveau suivant coûte {cost} PA. |
@@ -993,7 +997,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} before the power modifier | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
-| `TRUDVANG.Calculation.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sorts actifs ({count}) : {penalty} VC |
+| `TRUDVANG.Calculation.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
 | `TRUDVANG.Calculation.FeintCost` | Feint: -{points} SV ({points} CP). | Feinte : -{points} VC ({points} PC). |
 | `TRUDVANG.Calculation.EquipmentCombatPointBonus` | Equipment CP bonus: {amount}. | Bonus de PC de l’équipement : {amount}. |
@@ -1090,7 +1094,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Empty.Weapons` | Equip a weapon to place it among the quick actions. | Equipez une arme pour l'ajouter aux actions rapides. |
 | `TRUDVANG.Empty.Effects` | No active effect. | Aucun effet actif. |
-| `TRUDVANG.Empty.ActiveSpells` | No active spells. | Aucun sort actif. |
+| `TRUDVANG.Empty.ActiveSpells` | No active spells. | Aucun sortilège actif. |
 
 ## `TRUDVANG.Effect`
 

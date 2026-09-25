@@ -78,7 +78,7 @@
       "Combat": "Combat",
       "Skills": "Compétences",
       "Equipment": "Équipement",
-      "Magic": "Magie & Foi",
+      "Magic": "Vitner & Foi",
       "Effects": "Effets",
       "Notes": "Notes",
       "Actions": "Actions",
@@ -104,7 +104,7 @@
       "Description": "Description",
       "Affinities": "Affinités magiques & religieuses",
       "Effects": "Effets actifs",
-      "ActiveSpells": "Sorts actifs"
+      "ActiveSpells": "Sortilèges actifs"
     },
     "Action": {
       "Roll": "Jet de dé",
@@ -116,6 +116,8 @@
       "Damage": "Dégâts",
       "Parry": "Parer",
       "RollDamage": "Jet de Dégâts",
+      "RollFatalMagic": "Lancer sur la table de magie funeste",
+      "RollFatalFailure": "Lancer sur la table d'échec critique",
       "RollFearFactor": "Lancer le facteur de peur",
       "ShowDetails": "Afficher le détail",
       "RollInitiative": "Jet d'initiative",
@@ -219,8 +221,8 @@
       "ActiveSpell": "Actif / maintenu",
       "ActiveCost": "Coût en vitner lors de l'activation",
       "ActiveSpellsCount": "{current} / {max}",
-      "ActiveSpellCostsOne": "1 sort actif : {costs}",
-      "ActiveSpellCostsMany": "{count} sorts actifs : {costs}",
+      "ActiveSpellCostsOne": "1 sortilège actif : {costs}",
+      "ActiveSpellCostsMany": "{count} sortilèges actifs : {costs}",
       "Summary": "Résumé",
       "PassiveProtection": "PP : PROTECTION PASSIVE",
       "BreachCurrent": "Valeur d'intégrité (actuelle)",
@@ -700,7 +702,7 @@
       "AddTablet": "Ajouter une tablette compatible",
       "MagicMethod": "Méthode et spécialité",
       "FinalTarget": "Valeur de compétence finale",
-      "ActiveSpellsPenalty": "Sorts actifs ({count}) : {penalty} VC",
+      "ActiveSpellsPenalty": "Sortilèges actifs ({count}) : {penalty} VC",
       "PersistentSpellNotice": "Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée.",
       "Feint": "Feinte (max. {max} PC)",
       "ThrowWeapon": "Lancer l’arme",
@@ -718,7 +720,7 @@
       "FatalJO": "Jet ouvert (JO)",
       "FatalCost": "Coût de l'action",
       "FatalSituational": "Modificateur situationnel",
-      "FatalActorModifier": "Modificateur de l'acteur (sorts actifs et atténuation) : {modifier}",
+      "FatalActorModifier": "Modificateur de l'acteur (sortilèges actifs et atténuation) : {modifier}",
       "AcclimatizationModifier": "Acclimatation",
       "SituationalModifier": "Modificateur situationnel",
       "Strenuous": "Renforcement",
@@ -746,6 +748,7 @@
         "success": "Réussite parfaite",
         "failure": "Échec automatique"
       },
+      "FatalFailure": "Échec critique",
       "OpenRoll": "Jet ouvert sur",
       "OpenInitiative": "L'initiative utilise 1d10 avec un jet ouvert sur 10.",
       "Margin": "Marge de réussite",
@@ -768,7 +771,8 @@
       "NoControlledFearCharacters": "Contrôlez au moins un personnage auquel appliquer la peur.",
       "NoControlledActor": "Contrôlez un personnage ou un PNJ avant d’utiliser un extrait.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
-      "ActiveSpellLimit": "La limite de sorts actifs est atteinte ; terminez-en un avant de lancer ce sort.",
+      "ActiveSpellLimit": "La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort.",
+      "CannotRollForActor": "Vous ne pouvez pas lancer le jet de cet acteur.",
       "CombatantAdditionLocked": "Un protagoniste ne peut être ajouté qu’au début d’un round, pendant les jets d’initiative.",
       "SkillMaximum": "La valeur d'une compétence ne peut pas dépasser 10.",
       "NotEnoughExperience": "Le niveau suivant coûte {cost} PA.",
@@ -834,7 +838,7 @@
       "Specialty": "VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total}",
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} avant le modificateur du pouvoir",
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
-      "ActiveSpellsPenalty": "Sorts actifs ({count}) : {penalty} VC",
+      "ActiveSpellsPenalty": "Sortilèges actifs ({count}) : {penalty} VC",
       "CombatPoolSpent": "{amount} PC dépensé(s) depuis la réserve {pool}.",
       "FeintCost": "Feinte : -{points} VC ({points} PC).",
       "EquipmentCombatPointBonus": "Bonus de PC de l’équipement : {amount}.",
@@ -913,7 +917,7 @@
     "Empty": {
       "Weapons": "Equipez une arme pour l'ajouter aux actions rapides.",
       "Effects": "Aucun effet actif.",
-      "ActiveSpells": "Aucun sort actif."
+      "ActiveSpells": "Aucun sortilège actif."
     },
     "Effect": {
       "Permanent": "Permanent",
@@ -6488,11 +6492,12 @@
             "0": "Augmente la durée de : 1 minute",
             "1": "Augmente la durée de : 1 heure",
             "2": "Augmente la durée de : 1 journée",
-            "3": "Réduit les chances de la victime de réussir son test de situation de : -1",
-            "4": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres",
-            "5": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 100 mètres",
-            "6": "Augmente le bonus/malus de ±1",
-            "7": "Affecte une entité supplémentaire (avec la version de base du sort)"
+            "3": "Augmente la durée de : 1 semaine",
+            "4": "Réduit les chances de la victime de réussir son test de situation de : -1",
+            "5": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres",
+            "6": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 100 mètres",
+            "7": "Augmente le bonus/malus de ±1",
+            "8": "Affecte une entité supplémentaire (avec la version de base du sort)"
           }
         },
         "vitner-body-vitner:strengthen:8": {
@@ -6544,9 +6549,8 @@
             "2": "Augmente la durée de : 1 journée",
             "3": "Augmente la durée de : 1 semaine",
             "4": "Réduit les chances de la victime de réussir son test de situation de : -1",
-            "5": "Augmente la portée à laquelle le bénéficiaire peut percevoir les odeurs de : 10 mètres",
-            "6": "Augmente le bonus/malus de ±1",
-            "7": "Affecte une entité supplémentaire (avec la version de base du sort)"
+            "5": "Augmente le bonus/malus de ±1",
+            "6": "Affecte une entité supplémentaire (avec la version de base du sort)"
           }
         },
         "vitner-delusion-vitner:camouflage:7": {
