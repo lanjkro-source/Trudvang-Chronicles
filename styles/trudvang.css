@@ -613,15 +613,18 @@
 .trudvang-sheet.item-sheet .tablet-negation-panel textarea { min-height: 130px; resize: vertical; }
 .trudvang-sheet.item-sheet .item-source { margin-top: 10px; border-top: 1px solid var(--trudvang-line); border-bottom: 0; }
 .trudvang-sheet.item-sheet .power-levels-panel { margin-top: 10px; }
-.trudvang-sheet.item-sheet .power-level-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+.trudvang-sheet.item-sheet .power-level-table { width: 100%; border-collapse: collapse; table-layout: fixed; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); --table-background-color: var(--trudvang-header-alt); --table-row-color-odd: var(--trudvang-header-alt); --table-row-color-even: color-mix(in srgb, var(--trudvang-header) 55%, var(--trudvang-header-alt)); --table-header-bg-color: var(--trudvang-header); --table-header-border-color: var(--trudvang-gold); --table-header-text-color: var(--trudvang-on-header); }
 .trudvang-sheet.item-sheet .power-level-table th,
-.trudvang-sheet.item-sheet .power-level-table td { padding: 4px 7px; border-bottom: 1px solid var(--trudvang-line); text-align: left; vertical-align: top; }
+.trudvang-sheet.item-sheet .power-level-table td { padding: 4px 7px; border: 1px solid color-mix(in srgb, var(--trudvang-gold) 45%, var(--trudvang-header-alt)); text-align: left; vertical-align: top; }
 .trudvang-sheet.item-sheet .power-level-table th { color: var(--trudvang-on-header); background: var(--trudvang-header); font-size: .75rem; font-weight: 700; }
+.trudvang-sheet.item-sheet .power-level-table td { color: var(--trudvang-on-header); }
+.trudvang-sheet.item-sheet .power-level-table tbody tr:nth-child(odd) td { background: var(--trudvang-header-alt); }
+.trudvang-sheet.item-sheet .power-level-table tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--trudvang-header) 55%, var(--trudvang-header-alt)); }
 .trudvang-sheet.item-sheet .power-level-table th:nth-child(1),
 .trudvang-sheet.item-sheet .power-level-table th:nth-child(2),
 .trudvang-sheet.item-sheet .power-level-table td:nth-child(1),
 .trudvang-sheet.item-sheet .power-level-table td:nth-child(2) { width: 54px; white-space: nowrap; }
-.trudvang-sheet.item-sheet .power-level-table td { color: var(--trudvang-ink); font-size: .8rem; line-height: 1.25; }
+.trudvang-sheet.item-sheet .power-level-table td { font-size: .8rem; line-height: 1.25; }
 .trudvang-sheet.item-sheet .tablet-affinity-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 5px 8px; border: 1px solid currentColor; border-radius: 4px; font-size: .78rem; font-weight: 700; }
 .trudvang-sheet.item-sheet .tablet-affinity-chip.favorable { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
