@@ -654,22 +654,36 @@ export async function ensureGenericSituationMacro() {
 const DEFAULT_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/carte.webp";
 const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accueil.webp";
 
+function backgroundTile(src, width, height) {
+  return {
+    texture: {src},
+    width,
+    height,
+    x: 0,
+    y: 0,
+    tileRatio: 2
+  };
+}
+
 async function upsertDefaultScene() {
   const name = game.i18n.localize("TRUDVANG.Content.Scene.WorldMap");
   const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "world-map")
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
-    if (existing.background !== DEFAULT_SCENE_BACKGROUND) {
-      await existing.update({background: DEFAULT_SCENE_BACKGROUND});
+    const bgTile = existing.tiles.find(t => t.tileRatio === 2);
+    if (!bgTile || bgTile.texture.src !== DEFAULT_SCENE_BACKGROUND) {
+      const tiles = existing.tiles.filter(t => t.tileRatio !== 2);
+      tiles.push(backgroundTile(DEFAULT_SCENE_BACKGROUND, 2514, 1629));
+      await existing.update({tiles});
     }
     return existing;
   }
   const [created] = await Scene.createDocuments([{
     name,
-    background: DEFAULT_SCENE_BACKGROUND,
     width: 2514,
     height: 1629,
     grid: {distance: 1, units: "m"},
+    tiles: [backgroundTile(DEFAULT_SCENE_BACKGROUND, 2514, 1629)],
     flags: {[SYSTEM_ID]: {starterId: "world-map"}}
   }]);
   return created;
@@ -681,7 +695,12 @@ async function upsertWelcomeScene() {
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
     const updates = {};
-    if (existing.background !== WELCOME_SCENE_BACKGROUND) updates.background = WELCOME_SCENE_BACKGROUND;
+    const bgTile = existing.tiles.find(t => t.tileRatio === 2);
+    if (!bgTile || bgTile.texture.src !== WELCOME_SCENE_BACKGROUND) {
+      const tiles = existing.tiles.filter(t => t.tileRatio !== 2);
+      tiles.push(backgroundTile(WELCOME_SCENE_BACKGROUND, 4096, 2272));
+      updates.tiles = tiles;
+    }
     if (!existing.navigation) updates.navigation = true;
     if (existing.navOrder !== 0) updates.navOrder = 0;
     if (Object.keys(updates).length) await existing.update(updates);
@@ -690,12 +709,12 @@ async function upsertWelcomeScene() {
   }
   const [created] = await Scene.createDocuments([{
     name,
-    background: WELCOME_SCENE_BACKGROUND,
     width: 4096,
     height: 2272,
     navigation: true,
     navOrder: 0,
     grid: {distance: 1, units: "m"},
+    tiles: [backgroundTile(WELCOME_SCENE_BACKGROUND, 4096, 2272)],
     flags: {[SYSTEM_ID]: {starterId: "welcome"}}
   }]);
   await created.activate();
