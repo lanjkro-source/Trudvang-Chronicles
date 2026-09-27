@@ -659,14 +659,14 @@ async function upsertDefaultScene() {
   const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "world-map")
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
-    if (existing.background.src !== DEFAULT_SCENE_BACKGROUND) {
-      await existing.update({background: {src: DEFAULT_SCENE_BACKGROUND}});
+    if (existing.background !== DEFAULT_SCENE_BACKGROUND) {
+      await existing.update({background: DEFAULT_SCENE_BACKGROUND});
     }
     return existing;
   }
   const [created] = await Scene.createDocuments([{
     name,
-    background: {src: DEFAULT_SCENE_BACKGROUND},
+    background: DEFAULT_SCENE_BACKGROUND,
     width: 2514,
     height: 1629,
     grid: {distance: 1, units: "m"},
@@ -681,15 +681,16 @@ async function upsertWelcomeScene() {
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
     const updates = {};
-    if (existing.background.src !== WELCOME_SCENE_BACKGROUND) updates.background = {src: WELCOME_SCENE_BACKGROUND};
+    if (existing.background !== WELCOME_SCENE_BACKGROUND) updates.background = WELCOME_SCENE_BACKGROUND;
     if (!existing.navigation) updates.navigation = true;
     if (existing.navOrder !== 0) updates.navOrder = 0;
     if (Object.keys(updates).length) await existing.update(updates);
+    await existing.activate();
     return existing;
   }
   const [created] = await Scene.createDocuments([{
     name,
-    background: {src: WELCOME_SCENE_BACKGROUND},
+    background: WELCOME_SCENE_BACKGROUND,
     width: 4096,
     height: 2272,
     navigation: true,
@@ -697,6 +698,7 @@ async function upsertWelcomeScene() {
     grid: {distance: 1, units: "m"},
     flags: {[SYSTEM_ID]: {starterId: "welcome"}}
   }]);
+  await created.activate();
   return created;
 }
 
