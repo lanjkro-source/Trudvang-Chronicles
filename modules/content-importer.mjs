@@ -654,15 +654,14 @@ export async function ensureGenericSituationMacro() {
 const DEFAULT_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/carte.webp";
 const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accueil.webp";
 
-function backgroundTile(src, width, height) {
-  return {
-    texture: {src},
-    width,
-    height,
-    x: 0,
-    y: 0,
-    tileRatio: 2
-  };
+function setSceneBackground(scene, src) {
+  const levels = scene.levels.map(level => level.toObject());
+  if (levels.length === 0) {
+    levels.push({name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src, tint: "#ffffff", alphaThreshold: 0.75}});
+  } else {
+    levels[0].background = {...levels[0].background, src};
+  }
+  return {levels};
 }
 
 async function upsertDefaultScene() {
@@ -670,11 +669,9 @@ async function upsertDefaultScene() {
   const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "world-map")
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
-    const bgTile = existing.tiles.find(t => t.tileRatio === 2);
-    if (!bgTile || bgTile.texture.src !== DEFAULT_SCENE_BACKGROUND) {
-      const tiles = existing.tiles.filter(t => t.tileRatio !== 2);
-      tiles.push(backgroundTile(DEFAULT_SCENE_BACKGROUND, 2514, 1629));
-      await existing.update({tiles});
+    const bgSrc = existing.levels[0]?.background?.src;
+    if (bgSrc !== DEFAULT_SCENE_BACKGROUND) {
+      await existing.update(setSceneBackground(existing, DEFAULT_SCENE_BACKGROUND));
     }
     return existing;
   }
@@ -683,7 +680,7 @@ async function upsertDefaultScene() {
     width: 2514,
     height: 1629,
     grid: {distance: 1, units: "m"},
-    tiles: [backgroundTile(DEFAULT_SCENE_BACKGROUND, 2514, 1629)],
+    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: DEFAULT_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
     flags: {[SYSTEM_ID]: {starterId: "world-map"}}
   }]);
   return created;
@@ -695,11 +692,9 @@ async function upsertWelcomeScene() {
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
     const updates = {};
-    const bgTile = existing.tiles.find(t => t.tileRatio === 2);
-    if (!bgTile || bgTile.texture.src !== WELCOME_SCENE_BACKGROUND) {
-      const tiles = existing.tiles.filter(t => t.tileRatio !== 2);
-      tiles.push(backgroundTile(WELCOME_SCENE_BACKGROUND, 4096, 2272));
-      updates.tiles = tiles;
+    const bgSrc = existing.levels[0]?.background?.src;
+    if (bgSrc !== WELCOME_SCENE_BACKGROUND) {
+      Object.assign(updates, setSceneBackground(existing, WELCOME_SCENE_BACKGROUND));
     }
     if (!existing.navigation) updates.navigation = true;
     if (existing.navOrder !== 0) updates.navOrder = 0;
@@ -714,7 +709,7 @@ async function upsertWelcomeScene() {
     navigation: true,
     navOrder: 0,
     grid: {distance: 1, units: "m"},
-    tiles: [backgroundTile(WELCOME_SCENE_BACKGROUND, 4096, 2272)],
+    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: WELCOME_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
     flags: {[SYSTEM_ID]: {starterId: "welcome"}}
   }]);
   await created.activate();
