@@ -892,6 +892,21 @@ export async function importStarterContent({force = false} = {}) {
     // The Skills compendiums ship as compiled packs with the system and update with it;
     // they are no longer rebuilt at runtime (see syncSkillPack / repairKnowledgePacks).
 
+    // TEMPORARY WORLD MIGRATION — repair range.short/long on items where they are
+    // stored as empty strings or null instead of numbers (pre-0.46.0 data shape).
+    for (const item of game.items) {
+      const range = item.system?.range;
+      if (!range) continue;
+      const short = Number(range.short);
+      const long = Number(range.long);
+      if (Number.isNaN(short) || Number.isNaN(long)) {
+        await item.update({
+          "system.range.short": 0,
+          "system.range.long": 0
+        });
+      }
+    }
+
     // Persist the version only after every repair step succeeded, so a partial
     // failure re-runs the whole pass on the next world entry.
     await game.settings.set(SYSTEM_ID, "starterContentVersion", CONTENT_VERSION);
