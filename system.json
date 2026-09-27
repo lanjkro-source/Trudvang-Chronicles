@@ -2,52 +2,58 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.42.8",
+  "version": "0.43.0",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
-  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.42.8/trudvang-chronicles.zip",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.43.0/trudvang-chronicles.zip",
   "packs": [
     {
       "name": "skills-en",
       "label": "Skills (en)",
       "path": "packs/skills-en",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/skills-en.webp"
     },
     {
       "name": "skills-fr",
       "label": "Compétences (fr)",
       "path": "packs/skills-fr",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/skills-fr.webp"
     },
     {
       "name": "vitner-en",
       "label": "Vitner (en)",
       "path": "packs/vitner-en",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/vitner-en.webp"
     },
     {
       "name": "vitner-fr",
       "label": "Vitner (fr)",
       "path": "packs/vitner-fr",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/vitner-fr.webp"
     },
     {
       "name": "religion-en",
       "label": "Religion (en)",
       "path": "packs/religion-en",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/religion-en.webp"
     },
     {
       "name": "religion-fr",
       "label": "Religion (fr)",
       "path": "packs/religion-fr",
       "type": "Item",
-      "system": "trudvang-chronicles"
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/religion-fr.webp"
     }
   ],
   "compatibility": {
@@ -153,7 +159,7 @@
   "secondaryTokenAttribute": "resources.combat",
   "initiative": "1d10x10 + @initiative.current",
   "socket": false,
-  "background": "systems/trudvang-chronicles/assets/art/character-sheet-header.webp",
+  "background": "systems/trudvang-chronicles/assets/art/system-background.webp",
   "flags": {
     "hotReload": {
       "extensions": [
