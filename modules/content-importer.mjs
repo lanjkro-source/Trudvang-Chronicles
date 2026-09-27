@@ -651,6 +651,55 @@ export async function ensureGenericSituationMacro() {
   }
 }
 
+const DEFAULT_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/carte.webp";
+const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accueil.webp";
+
+async function upsertDefaultScene() {
+  const name = game.i18n.localize("TRUDVANG.Content.Scene.WorldMap");
+  const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "world-map")
+    ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
+  if (existing) {
+    if (existing.background.src !== DEFAULT_SCENE_BACKGROUND) {
+      await existing.update({background: {src: DEFAULT_SCENE_BACKGROUND}});
+    }
+    return existing;
+  }
+  const [created] = await Scene.createDocuments([{
+    name,
+    background: {src: DEFAULT_SCENE_BACKGROUND},
+    width: 2514,
+    height: 1629,
+    grid: {distance: 1, units: "m"},
+    flags: {[SYSTEM_ID]: {starterId: "world-map"}}
+  }]);
+  return created;
+}
+
+async function upsertWelcomeScene() {
+  const name = game.i18n.localize("TRUDVANG.Content.Scene.Welcome");
+  const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "welcome")
+    ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
+  if (existing) {
+    const updates = {};
+    if (existing.background.src !== WELCOME_SCENE_BACKGROUND) updates.background = {src: WELCOME_SCENE_BACKGROUND};
+    if (!existing.navigation) updates.navigation = true;
+    if (existing.navOrder !== 0) updates.navOrder = 0;
+    if (Object.keys(updates).length) await existing.update(updates);
+    return existing;
+  }
+  const [created] = await Scene.createDocuments([{
+    name,
+    background: {src: WELCOME_SCENE_BACKGROUND},
+    width: 4096,
+    height: 2272,
+    navigation: true,
+    navOrder: 0,
+    grid: {distance: 1, units: "m"},
+    flags: {[SYSTEM_ID]: {starterId: "welcome"}}
+  }]);
+  return created;
+}
+
 export async function importStarterContent({force = false} = {}) {
   try {
     const installed = Number(game.settings.get(SYSTEM_ID, "starterContentVersion") || 0);
@@ -687,6 +736,8 @@ export async function importStarterContent({force = false} = {}) {
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
     await upsertJournals();
+    await upsertDefaultScene();
+    await upsertWelcomeScene();
     await ensureGenericSituationMacro();
 
     // TEMPORARY WORLD MIGRATION: before v0.23.0, purpose-built throwing weapons

@@ -1005,6 +1005,10 @@
         "Tables": "Magic",
         "Creatures": "Creatures"
       },
+      "Scene": {
+        "WorldMap": "World Map",
+        "Welcome": "Welcome"
+      },
       "Source": {
         "GMG69": "Game Master's Guide, p. 69",
         "GMG70": "Game Master's Guide, p. 70",

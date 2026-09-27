@@ -1190,6 +1190,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Tables` | Magic | Magie |
 | `TRUDVANG.Content.Folder.Creatures` | Creatures | Créatures |
 
+## `TRUDVANG.Content.Scene`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Scene.WorldMap` | World Map | Carte du monde |
+| `TRUDVANG.Content.Scene.Welcome` | Welcome | Accueil |
+
 ## `TRUDVANG.Content.Source`
 
 | Clé | English | Français |
