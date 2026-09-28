@@ -5,6 +5,7 @@ import {defaultConcentrationType} from "../modules/rules/concentration-resolver.
 const chatMessages = [];
 const diceSoNiceCalls = [];
 let dialogConfig;
+let dialogResult = null;
 
 globalThis.document = {
   createElement: () => {
@@ -15,10 +16,14 @@ globalThis.document = {
 class MockDialogV2 {
   static async wait(config) {
     dialogConfig = config;
-    return null;
+    return dialogResult;
   }
 }
-globalThis.foundry = {applications: {api: {DialogV2: MockDialogV2}, handlebars: {renderTemplate: async (_template, data) => JSON.stringify(data)}}};
+globalThis.foundry = {
+  applications: {api: {DialogV2: MockDialogV2}, handlebars: {renderTemplate: async (_template, data) => JSON.stringify(data)}},
+  documents: {Actor: class {}, ActiveEffect: class {}},
+  data: {fields: {}, ActiveEffectTypeDataModel: class {}}
+};
 globalThis.game = {
   user: {id: "roller"},
   i18n: {localize: key => key},
@@ -38,6 +43,7 @@ globalThis.ChatMessage = {
 };
 
 const {concentrationDialog, rollUnder} = await import("../modules/dice.mjs");
+const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 
 test("concentration defaults to the track with the larger maximum reserve; ties favor divine", () => {
   assert.equal(defaultConcentrationType({vitnerMax: 20, divinityMax: 10}), "spell");
@@ -73,4 +79,25 @@ test("a concentration roll still posts to chat when Dice So Nice is not active",
   assert.equal(message.rolls[0], result.roll);
   assert.equal(message.flags, undefined);
   assert.equal(diceSoNiceCalls.length, callsBefore);
+});
+
+test("the actor concentration action rolls, posts to chat, and animates after dialog confirmation", async () => {
+  dialogResult = {type: "spell", base: 6};
+  game.modules.set("dice-so-nice", {active: true});
+  const actor = {
+    name: "Test", img: "actor.webp", uuid: "Actor.actor-id",
+    system: {resources: {vitner: {max: 20}, divinity: {max: 5}}},
+    canPerformAction: () => true,
+    getTraitValue: () => 2,
+    getRollModifier: () => -1,
+    findKnowledgeItem: key => ({system: {level: {vitnerFocus: 1, safeWeaving: 2}[key] || 0}})
+  };
+  const messagesBefore = chatMessages.length;
+  const animationsBefore = diceSoNiceCalls.length;
+  const result = await TrudvangActor.prototype.rollConcentration.call(actor);
+  assert.equal(result.target, 12);
+  assert.equal(chatMessages.length, messagesBefore + 1);
+  assert.equal(chatMessages.at(-1).rolls[0], result.roll);
+  assert.equal(diceSoNiceCalls.length, animationsBefore + 1);
+  assert.equal(diceSoNiceCalls.at(-1)[0], result.roll);
 });

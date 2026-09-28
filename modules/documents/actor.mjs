@@ -1004,6 +1004,7 @@ export class TrudvangActor extends BaseActor {
     const disciplineKey = isDivine ? "TRUDVANG.Knowledge.godFocus" : "TRUDVANG.Knowledge.vitnerFocus";
     const specialtyKey = isDivine ? "TRUDVANG.Knowledge.composed" : "TRUDVANG.Knowledge.safeWeaving";
     const modifier = psycheModifier + effectModifier + disciplineLevel + (2 * specialtyLevel);
+    const signed = value => Number(value) > 0 ? `+${value}` : String(value);
     const flavor = [
       `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationBase")}: ${options.base}`,
       `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationTrait")} : ${signed(psycheModifier)}`,
