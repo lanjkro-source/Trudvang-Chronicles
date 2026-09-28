@@ -41,6 +41,23 @@
 }
 .trudvang-starter-journal > figure img { display: block; max-width: 100%; height: auto; margin: 0 auto; }
 
+.trudvang-religion-journal h2 { margin: 1.2em 0 .35em; }
+.trudvang-religion-journal p { margin: .55em 0; line-height: 1.48; }
+.trudvang-religion-journal ul { margin: .5em 0 1em; padding-left: 1.5em; }
+.trudvang-religion-journal li { margin: .35em 0; line-height: 1.45; }
+.trudvang-religion-journal .trudvang-religion-example {
+  margin: 1.1em 0; padding: .8em 1em;
+  border: 1px solid var(--trudvang-accent);
+  background: var(--trudvang-paper-light); color: var(--trudvang-ink);
+}
+.trudvang-religion-journal .trudvang-religion-example h3 { margin: 0 0 .5em; color: var(--trudvang-accent); }
+.trudvang-religion-journal .trudvang-religion-table { margin: 1em 0 1.25em; overflow-x: auto; }
+.trudvang-religion-journal .trudvang-religion-table h3 { margin: 0 0 .35em; }
+.trudvang-religion-journal table { width: 100%; border-collapse: collapse; color: var(--trudvang-ink); background: var(--trudvang-paper-light); }
+.trudvang-religion-journal th, .trudvang-religion-journal td { border: 1px solid var(--trudvang-line); padding: .35em .5em; text-align: left; vertical-align: top; }
+.trudvang-religion-journal th { background: var(--trudvang-paper); color: var(--trudvang-ink); }
+.trudvang-religion-journal tbody tr:nth-child(even) { background: var(--trudvang-paper); }
+
 .trudvang-sheet { height: 100%; display: flex; flex-direction: column; gap: 0; overflow: hidden; }
 .trudvang-sheet button { color: var(--trudvang-ink); border: 0; background: transparent; line-height: 1.2; }
 .trudvang-sheet button:hover, .trudvang-sheet .rollable:hover { color: var(--trudvang-accent); text-shadow: 0 0 8px color-mix(in srgb, var(--trudvang-gold) 55%, transparent); }

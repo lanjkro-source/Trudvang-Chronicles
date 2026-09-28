@@ -3,7 +3,8 @@ const SYSTEM_ID = "trudvang-chronicles";
 export const JOURNAL_FOLDERS = {
   equipment: {nameKey: "TRUDVANG.Content.Folder.Equipment", type: "JournalEntry"},
   races: {nameKey: "TRUDVANG.Content.Folder.Races", type: "JournalEntry"},
-  archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry"}
+  archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry"},
+  religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry"}
 };
 
 const raceStats = {
@@ -24,7 +25,13 @@ const journals = [
   {id: "ranger", folder: "archetypes", key: "ranger", image: "assets/art/journals/ranger.png"},
   {id: "vitnerWeaver", folder: "archetypes", key: "vitnerWeaver", image: "assets/art/journals/vitner-weaver.png"},
   {id: "armorEncumbrance", folder: "equipment", key: "armorEncumbrance"},
-  {id: "purchasePrices", folder: "equipment", key: "purchasePrices"}
+  {id: "purchasePrices", folder: "equipment", key: "purchasePrices"},
+  {id: "gerbanis", folder: "religions", key: "gerbanis"},
+  {id: "ealdTradition", folder: "religions", key: "ealdTradition"},
+  {id: "tenetNid", folder: "religions", key: "tenetNid"},
+  {id: "haminges", folder: "religions", key: "haminges"},
+  {id: "thuuldom", folder: "religions", key: "thuuldom"},
+  {id: "toikalokke", folder: "religions", key: "toikalokke"}
 ];
 
 const l = key => game.i18n.localize(key);

@@ -1,5 +1,6 @@
 /* Generates localized starter Journal text from the private rulebook mirrors. */
 import fs from "node:fs";
+import {religionJournalEntries} from "./religion-journal-content.mjs";
 
 const roots = {
   fr: "game doc/markdown-fr/Trudvang - 01 - Livre des Regles.md",
@@ -69,6 +70,7 @@ for (const lang of ["fr", "en"]) {
   Object.entries(pages[lang]).forEach(([id, page]) => {
     locale.TRUDVANG.Content.Journal[id] = {Name: names[lang][id], Content: html(pageText(source, page), headings[lang][id])};
   });
+  Object.assign(locale.TRUDVANG.Content.Journal, religionJournalEntries(lang, source));
   Object.assign(locale.TRUDVANG.Content.Journal, lang === "fr"
     ? {Statistics: "Caractéristiques", Culture: "Culture ou métissage", BodyPoints: "Points de santé", Movement: "Mouvement"}
     : {Statistics: "Statistics", Culture: "Culture or mixed breed", BodyPoints: "Body Points", Movement: "Movement"});
