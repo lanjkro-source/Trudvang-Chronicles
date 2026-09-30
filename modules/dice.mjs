@@ -1,4 +1,5 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
+import { TRUDVANG } from "./config.mjs";
 import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
