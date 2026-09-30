@@ -1,5 +1,6 @@
 # Trudvang project instructions
 
+- Do not control the user's interface or access the Foundry installation (even read-only) without the user's explicit prior permission for that action. Work and test inside this repository using isolated previews; touching the installed application is a last resort for a stubborn bug, never a routine verification step.
 - Before implementing or reviewing any game-rule behavior, search `game doc/markdown/` (English books) and `game doc/markdown-fr/` (official French edition; the « Livre des règles » combines the Player's Handbook and Game Masters Guide) for the relevant rule and page references. The French edition is the terminology authority.
 - When text extraction is ambiguous, a diagram or table controls the interpretation, or an exact visual structure matters, inspect the corresponding source PDF with the PDF skill.
 - Treat `game doc/markdown/` and `game doc/markdown-fr/` as generated reference material. Regenerate them with `tools/extract_pdf_rules.py` after any source PDF changes.

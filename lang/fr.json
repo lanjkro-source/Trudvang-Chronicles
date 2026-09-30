@@ -107,6 +107,7 @@
       "ActiveSpells": "Sortilèges actifs"
     },
     "Action": {
+      "Edit": "Modifier",
       "Roll": "Jet de dé",
       "Cancel": "Annuler",
       "Use": "Utiliser",
@@ -650,6 +651,18 @@
       "critical": "Mortellement blessé",
       "dying": "Mourant",
       "dead": "Mort"
+    },
+    "Npc": {
+      "Initial": "Initiale",
+      "Current": "Actuelle",
+      "EditInitialTraits": "Modifier les traits initiaux",
+      "EditSkills": "Régler les compétences",
+      "NoLearnedSkills": "Aucune compétence au-delà du niveau 1, discipline ou spécialité apprise.",
+      "NaturalProtection": "(dont {value} VP naturels)",
+      "IntegrityHint": "Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI.",
+      "DurableMechanic": "Tenace : ignore les malus de blessures",
+      "DurableHint": "À un niveau supérieur à 0, cette capacité annule les malus liés aux blessures. Les pertes de PS et l’état mourant restent applicables.",
+      "DurableConsequence": "Tenace : aucun malus de blessures"
     },
     "Fear": {
       "ApplyToTargets": "Appliquer aux personnages contrôlés"

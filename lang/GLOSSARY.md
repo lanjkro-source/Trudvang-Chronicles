@@ -140,6 +140,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Action.Edit` | Edit | Modifier |
 | `TRUDVANG.Action.Roll` | Roll | Jet de dé |
 | `TRUDVANG.Action.Cancel` | Cancel | Annuler |
 | `TRUDVANG.Action.Use` | Use | Utiliser |
@@ -767,6 +768,21 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Damage.critical` | Critically Injured | Mortellement blessé |
 | `TRUDVANG.Damage.dying` | Dying | Mourant |
 | `TRUDVANG.Damage.dead` | Dead | Mort |
+
+## `TRUDVANG.Npc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Npc.Initial` | Initial | Initiale |
+| `TRUDVANG.Npc.Current` | Current | Actuelle |
+| `TRUDVANG.Npc.EditInitialTraits` | Edit initial traits | Modifier les traits initiaux |
+| `TRUDVANG.Npc.EditSkills` | Configure skills | Régler les compétences |
+| `TRUDVANG.Npc.NoLearnedSkills` | No skill above level 1, learned discipline or specialty. | Aucune compétence au-delà du niveau 1, discipline ou spécialité apprise. |
+| `TRUDVANG.Npc.NaturalProtection` | (including {value} natural PV) | (dont {value} VP naturels) |
+| `TRUDVANG.Npc.IntegrityHint` | Only worn armor has integrity. Natural armor has no BV. | Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI. |
+| `TRUDVANG.Npc.DurableMechanic` | Durable: ignore wound penalties | Tenace : ignore les malus de blessures |
+| `TRUDVANG.Npc.DurableHint` | At a level above 0, this feat cancels wound penalties. Body Point losses and the dying state still apply. | À un niveau supérieur à 0, cette capacité annule les malus liés aux blessures. Les pertes de PS et l’état mourant restent applicables. |
+| `TRUDVANG.Npc.DurableConsequence` | Durable: no wound penalties | Tenace : aucun malus de blessures |
 
 ## `TRUDVANG.Fear`
 

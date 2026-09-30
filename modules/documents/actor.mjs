@@ -10,6 +10,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, res
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
+import {ignoresWoundPenalties} from "../rules/npc-summary.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -126,6 +127,7 @@ export class TrudvangActor extends BaseActor {
     }
 
     system.damage = getDamageStatus(system.resources.body.max, system.resources.body.current);
+    if (ignoresWoundPenalties(this)) system.damage.penalty = 0;
     system.healthRecovery = getHealthRecovery(this.getTraitValue("constitution"));
     const fear = Number(system.resources.fear.current || 0);
     const fearStatus = resolveFearStatus({fear, insane: system.fearInsane});

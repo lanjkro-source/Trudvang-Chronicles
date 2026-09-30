@@ -1,4 +1,5 @@
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
+import {npcCurrentTrait} from "./rules/npc-summary.mjs";
 
 const fields = foundry.data.fields;
 
@@ -193,7 +194,7 @@ function actorCommonSchema() {
 
 function prepareEffectiveActorData(model) {
   for (const key of Object.keys(model.effective.traits)) {
-    model.effective.traits[key] = Number(model.traits?.[key] || 0);
+    model.effective.traits[key] = model.traitCurrent ? npcCurrentTrait(model, key) : Number(model.traits?.[key] || 0);
   }
   for (const key of Object.keys(model.effective.skills)) {
     const skill = model.skills?.[key];
@@ -240,6 +241,8 @@ export class NpcData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
       ...actorCommonSchema(),
+      traitCurrent: schema(Object.fromEntries(["charisma", "constitution", "dexterity", "intelligence", "perception", "psyche", "strength"]
+        .map(key => [key, new fields.NumberField({required: true, nullable: true, integer: true, initial: null})]))),
       details: schema({
         creatureType: string("humanoid"),
         size: string("1t"),
@@ -450,6 +453,8 @@ export class AbilityData extends BaseItemData {
       costTrait: string(),
       catalogId: string(),
       summary: string(),
+      // Tenace / Durable: still loses BP, but ignores the wound-level penalties.
+      ignoreWoundPenalties: boolean(false),
       freeLevels: integer(0, {min: 0, max: 5}),
       level: integer(1, {min: 0, max: 5}),
       offHandLevel: integer(0, {min: 0, max: 5}),

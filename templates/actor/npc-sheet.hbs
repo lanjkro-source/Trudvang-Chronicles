@@ -1,14 +1,68 @@
 ﻿<div class="trudvang-sheet npc-sheet">
   <header class="sheet-header compact">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
-    <div class="identity"><input class="actor-name" name="name" value="{{actor.name}}"><div class="identity-grid"><label>{{localize "TRUDVANG.Field.CreatureType"}}<input name="system.details.creatureType" value="{{system.details.creatureType}}"></label><label>{{localize "TRUDVANG.Field.Size"}}<input name="system.details.size" value="{{system.details.size}}"></label><label>{{localize "TRUDVANG.Field.FearFactor"}}<span class="fear-factor-parts"><button type="button" class="roll-icon fear-factor-roll" data-action="roll-fear-factor" title="{{localize 'TRUDVANG.Action.RollFearFactor'}}"><i class="fas fa-dice-d10"></i></button><input name="trudvang.fearFactorDice" value="{{fearFactor.dice}}d{{fearFactor.faces}}" placeholder="1d10"><span class="fear-open">O</span><input name="trudvang.fearFactorThreshold" type="number" min="0" max="10" value="{{fearFactor.threshold}}" title="{{localize 'TRUDVANG.Field.OpenRoll'}}"></span></label><label>{{localize "TRUDVANG.Resource.Protection"}}<input name="system.details.naturalArmor" type="number" value="{{system.details.naturalArmor}}"></label></div></div>
+    <div class="identity"><input class="actor-name" name="name" value="{{actor.name}}"><div class="identity-grid"><label>{{localize "TRUDVANG.Field.CreatureType"}}<input name="system.details.creatureType" value="{{system.details.creatureType}}"></label><label>{{localize "TRUDVANG.Field.Size"}}<input name="system.details.size" value="{{system.details.size}}"></label><label>{{localize "TRUDVANG.Field.FearFactor"}}<span class="fear-factor-parts"><button type="button" class="roll-icon fear-factor-roll" data-action="roll-fear-factor" title="{{localize 'TRUDVANG.Action.RollFearFactor'}}"><i class="fas fa-dice-d10"></i></button><input name="trudvang.fearFactorDice" value="{{fearFactor.dice}}d{{fearFactor.faces}}" placeholder="1d10"><span class="fear-open">O</span><input name="trudvang.fearFactorThreshold" type="number" min="0" max="10" value="{{fearFactor.threshold}}" title="{{localize 'TRUDVANG.Field.OpenRoll'}}"></span></label><label>{{localize "TRUDVANG.Field.NaturalArmor"}}<input name="system.details.naturalArmor" type="number" value="{{system.details.naturalArmor}}"></label></div></div>
     <button type="button" class="initiative-button" data-action="roll-initiative"><i class="fas fa-bolt"></i><strong>{{system.initiative.current}}</strong><span>{{localize "TRUDVANG.Resource.Initiative"}}</span></button>
   </header>
   <section class="resource-bar compact"><label class="resource body"><span>{{localize "TRUDVANG.Resource.Body"}}</span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}"> / <input name="system.resources.body.max" type="number" value="{{system.resources.body.max}}"></span></label><label class="resource"><span>{{localize "TRUDVANG.Resource.Combat"}}</span><span><output>{{system.resources.combat.current}}</output> / {{system.resources.combat.max}}</span><button type="button" data-action="reset-combat"><i class="fas fa-rotate"></i></button></label><label class="resource"><span>{{localize "TRUDVANG.Resource.Movement"}}</span><span><input name="system.movement.base" type="number" value="{{system.movement.base}}"> → {{system.movement.current}}</span></label><label class="resource"><span>{{localize "TRUDVANG.Resource.Protection"}}</span><output>{{system.protection}}</output></label></section>
   <nav class="sheet-tabs tabs" data-group="primary"><a class="item" data-tab="summary">{{localize "TRUDVANG.Tab.Summary"}}</a><a class="item" data-tab="actions">{{localize "TRUDVANG.Tab.Actions"}}</a><a class="item" data-tab="effects">{{localize "TRUDVANG.Tab.Effects"}}</a><a class="item" data-tab="notes">{{localize "TRUDVANG.Tab.Notes"}}</a></nav>
   <section class="sheet-body">
     <div class="tab summary" data-group="primary" data-tab="summary">
-      <div class="npc-stats-grid"><section class="panel"><h2>{{localize "TRUDVANG.Section.Traits"}}</h2>{{#each config.traits as |label key|}}<div class="mini-stat"><button type="button" data-action="roll-trait" data-trait="{{key}}">{{label}}</button><input name="system.traits.{{key}}" type="number" value="{{lookup ../system.traits key}}"><output class="effective-value">{{lookup ../system.effective.traits key}}</output></div>{{/each}}</section><section class="panel"><h2>{{localize "TRUDVANG.Section.Skills"}}</h2>{{#each config.skills as |label key|}}{{#with (lookup ../system.skills key) as |skill|}}<div class="mini-stat"><button type="button" class="roll-icon" data-action="roll-skill" data-skill="{{key}}"><i class="fas fa-dice-d20"></i></button><button type="button" data-action="show-skill-detail" data-skill="{{key}}">{{label}}</button><input name="system.skills.{{key}}.value" type="number" value="{{skill.value}}"><output class="effective-value">{{lookup ../../system.effective.skills key}}</output></div>{{/with}}{{/each}}</section></div>
+      <section class="panel npc-health-panel">
+        <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
+        <div class="status-vitals">
+          <div class="status-protection">
+            <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="protection">{{armorStatus.protection}} VP <i class="fas fa-circle-info"></i></button>{{#if armorStatus.naturalProtection}}<small>{{localize "TRUDVANG.Npc.NaturalProtection" value=armorStatus.naturalProtection}}</small>{{/if}}</span>
+            <span title="{{localize 'TRUDVANG.Npc.IntegrityHint'}}"><strong>{{localize "TRUDVANG.Resource.Integrity"}} :</strong> {{#if armorStatus.hasIntegrity}}{{armorStatus.integrityCurrent}} / {{armorStatus.integrityMax}} VI{{else}}—{{/if}}</span>
+          </div>
+          <div class="status-vital health-vital">
+            <div class="status-vital-header"><strong>{{localize "TRUDVANG.Resource.Body"}}</strong><span class="status-vital-value">{{healthStatus.current}} / {{healthStatus.max}}</span><span class="status-recovery">{{healthStatus.recovery}}</span></div>
+            <div class="vital-meter" role="meter" aria-label="{{localize 'TRUDVANG.Resource.Body'}}" aria-valuemin="0" aria-valuemax="{{healthStatus.max}}" aria-valuenow="{{healthStatus.meterValue}}"><span class="vital-meter-fill" style="width: {{healthStatus.percent}}%"></span>{{#each healthStatus.marks as |mark|}}<i class="vital-meter-mark" style="left: {{mark}}%"></i>{{/each}}</div>
+            <p class="status-consequence">{{#if healthStatus.survivalExpired}}<strong class="status-dead"><i class="fas fa-skull-crossbones"></i> {{localize "TRUDVANG.Damage.dead"}}</strong>{{else}}<strong>{{localize (concat "TRUDVANG.Damage." healthStatus.level)}}</strong>{{#if (eq healthStatus.level "dying")}}{{#if healthStatus.survivalStarted}}<span>{{localize "TRUDVANG.Status.LifeSparkCountdown" rounds=healthStatus.survivalRounds}}</span>{{else}}<button type="button" class="status-action" data-action="roll-survival-rounds"><i class="fas fa-hourglass-half"></i> {{localize "TRUDVANG.Action.RollSurvivalRounds"}}</button>{{/if}}{{else}}{{#unless healthStatus.ignoresWounds}}<span>{{healthStatus.consequence}}</span>{{/unless}}{{/if}}{{#if healthStatus.ignoresWounds}}<span>{{localize "TRUDVANG.Npc.DurableConsequence"}}</span>{{/if}}{{/if}}</p>
+          </div>
+        </div>
+      </section>
+      <div class="npc-stats-grid">
+        <section class="panel">
+          <h2>{{localize "TRUDVANG.Section.Traits"}}</h2>
+          <div class="npc-trait-grid">
+            {{#each traitRows as |trait|}}
+            <div class="npc-trait-card {{#if trait.modified}}modified{{/if}}">
+              <button type="button" data-action="roll-trait" data-trait="{{trait.key}}" title="{{trait.tooltip}}">{{trait.label}}</button>
+              <div class="npc-trait-values">
+                <span><small>{{localize "TRUDVANG.Npc.Initial"}}</small><output>{{trait.baseValue}}</output></span>
+                <label><small>{{localize "TRUDVANG.Npc.Current"}}</small><input name="system.traitCurrent.{{trait.key}}" type="number" step="1" value="{{trait.value}}" aria-label="{{trait.label}} — {{localize 'TRUDVANG.Npc.Current'}}"></label>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          <details class="npc-reference-editor"><summary>{{localize "TRUDVANG.Npc.EditInitialTraits"}}</summary><div class="npc-reference-fields">{{#each traitRows as |trait|}}<label>{{trait.label}}<input name="system.traits.{{trait.key}}" type="number" step="1" value="{{trait.baseValue}}"></label>{{/each}}</div></details>
+        </section>
+        <section class="panel npc-skills-panel">
+          <h2>{{localize "TRUDVANG.Section.Skills"}}</h2>
+          <ul class="npc-knowledge-tree">
+            {{#each npcSkillTrees as |tree|}}
+            <li title="{{tree.label}}">
+              {{#if tree.visible}}<div class="npc-knowledge-row npc-skill-root"><button type="button" data-action="roll-skill" data-skill="{{tree.key}}" title="{{tree.description}}">{{tree.label}}</button><output>{{tree.level}}</output></div>{{/if}}
+              {{#if tree.disciplines.length}}<ul class="npc-skill-branches">
+                {{#each tree.disciplines as |discipline|}}
+                <li>
+                  {{#if discipline.visible}}<div class="npc-knowledge-row" data-item-id="{{discipline.item.id}}"><button type="button" data-action="item-roll" title="{{discipline.calculation}}">{{discipline.item.name}}</button><output>{{discipline.level}}{{#if discipline.separateHands}} | {{discipline.offHandLevel}}{{/if}}</output><button type="button" class="npc-knowledge-edit" data-action="item-edit" title="{{localize 'TRUDVANG.Action.Edit'}}"><i class="fas fa-pen"></i></button></div>{{/if}}
+                  {{#if discipline.specialties.length}}<ul class="npc-skill-branches">
+                    {{#each discipline.specialties as |specialty|}}
+                    <li><div class="npc-knowledge-row" data-item-id="{{specialty.item.id}}"><button type="button" data-action="item-roll" title="{{specialty.calculation}}">{{specialty.item.name}}</button><output>{{specialty.level}}{{#if specialty.separateHands}} | {{specialty.offHandLevel}}{{/if}}</output><button type="button" class="npc-knowledge-edit" data-action="item-edit" title="{{localize 'TRUDVANG.Action.Edit'}}"><i class="fas fa-pen"></i></button></div></li>
+                    {{/each}}
+                  </ul>{{/if}}
+                </li>
+                {{/each}}
+              </ul>{{/if}}
+              {{#each tree.unassigned as |node|}}<div class="npc-knowledge-row" data-item-id="{{node.item.id}}"><button type="button" data-action="item-roll" title="{{node.calculation}}">{{node.item.name}}</button><output>{{node.level}}</output><button type="button" class="npc-knowledge-edit" data-action="item-edit" title="{{localize 'TRUDVANG.Action.Edit'}}"><i class="fas fa-pen"></i></button></div>{{/each}}
+            </li>
+            {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoLearnedSkills"}}</li>{{/each}}
+          </ul>
+          <details class="npc-reference-editor"><summary>{{localize "TRUDVANG.Npc.EditSkills"}}</summary><div class="npc-reference-fields">{{#each config.skills as |label key|}}<label>{{label}}<input name="system.skills.{{key}}.value" type="number" min="0" step="1" value="{{lookup (lookup ../system.skills key) 'value'}}"></label>{{/each}}</div></details>
+        </section>
+      </div>
     </div>
     <div class="tab actions" data-group="primary" data-tab="actions">
       <section class="panel"><div class="section-heading"><h2>{{localize "TRUDVANG.Tab.Actions"}}</h2><span><button type="button" data-action="item-create" data-type="weapon"><i class="fas fa-plus"></i></button><button type="button" data-action="item-create" data-type="ability"><i class="fas fa-star"></i></button></span></div><ol class="item-list">{{#each actor.items as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}"><button type="button" class="roll-icon" data-action="item-roll"><i class="fas fa-dice-d20"></i></button><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span>{{#if item.system.damage}}{{item.system.damage}}{{/if}}{{#if item.system.rollBonus}}VC +{{item.system.rollBonus}}{{/if}}</span>{{#if item.system.damage}}<button type="button" data-action="item-damage"><i class="fas fa-burst"></i></button>{{/if}}<button type="button" data-action="item-delete"><i class="fas fa-trash"></i></button></li>{{/each}}</ol></section>

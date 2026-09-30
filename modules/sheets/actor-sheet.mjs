@@ -7,6 +7,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolv
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
+import {ignoresWoundPenalties, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -107,18 +108,22 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const equippedArmor = this.actor.items.filter(item => item.type === "armor" && item.system.equipped);
     context.armorStatus = {
       protection: Number(this.actor.system.protection || 0),
+      naturalProtection: Number(this.actor.system.details?.naturalArmor || 0),
+      hasIntegrity: equippedArmor.length > 0,
       integrityCurrent: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.value || 0), 0),
       integrityMax: equippedArmor.reduce((total, item) => total + Number(item.system.breach?.max || 0), 0)
     };
     context.freeCombatMovement = Math.min(5, Number(this.actor.findKnowledgeItem("combatMovement")?.system.level || 0));
     context.healthStatus = {
       current: Number(body.current || 0),
+      meterValue: Math.max(0, Math.min(Number(body.max || 0), Number(body.current || 0))),
       max: Number(body.max || 0),
       percent: percent(body.current, body.max),
       marks: healthThresholdMarks(body.max),
       recovery: game.i18n.format(recovery.days === 1 ? "TRUDVANG.Status.RecoveryDaily" : "TRUDVANG.Status.RecoveryEveryDays", recovery),
       level: this.actor.system.damage.level,
       consequence: game.i18n.localize(`TRUDVANG.Status.DamageConsequence.${this.actor.system.damage.level}`),
+      ignoresWounds: ignoresWoundPenalties(this.actor),
       survivalRounds: Number(this.actor.system.survivalRounds ?? -1),
       survivalStarted: Number(this.actor.system.survivalRounds ?? -1) >= 0,
       survivalExpired: Number(body.current || 0) <= 0 && Number(this.actor.system.survivalRounds ?? -1) === 0
@@ -235,7 +240,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.creationOverBudget = context.creationRemaining < 0;
     context.creationCosts = this.actor.calculateCreationCosts();
     context.traitRows = Object.entries(context.config.traits).map(([key, label]) => {
-      const baseValue = Number(this.actor.system.traits?.[key] || 0);
+      const baseValue = Number((this.actor.type === "npc" ? this.actor._source.system.traits : this.actor.system.traits)?.[key] || 0);
       const value = this.actor.getTraitValue(key);
       const choices = TRUDVANG.traitChoices;
       const index = choices.indexOf(baseValue);
@@ -325,6 +330,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       };
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
+    if (this.actor.type === "npc") context.npcSkillTrees = npcSkillTrees(context.skillTrees);
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
     context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
     context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;
@@ -474,6 +480,15 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   static async #onSubmit(event, form, formData) {
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
+    if (this.actor.type === "npc") {
+      for (const key of Object.keys(TRUDVANG.traits)) {
+        const path = `system.traitCurrent.${key}`;
+        if (!foundry.utils.hasProperty(changes, path)) continue;
+        foundry.utils.setProperty(changes, path, editedPath === path
+          ? npcTraitEdit(this.actor, key, foundry.utils.getProperty(changes, path))
+          : this.actor._source.system.traitCurrent?.[key] ?? null);
+      }
+    }
     const fearDice = formData.object["trudvang.fearFactorDice"];
     const fearThreshold = formData.object["trudvang.fearFactorThreshold"];
     if (fearDice !== undefined || fearThreshold !== undefined) {
@@ -871,7 +886,7 @@ export class TrudvangNpcSheet extends TrudvangActorSheet {
   };
 
   static DEFAULT_OPTIONS = {
-    position: {width: 580, height: 650},
+    position: {width: 760, height: 740},
     classes: ["npc-sheet"]
   };
 }

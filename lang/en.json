@@ -107,6 +107,7 @@
       "ActiveSpells": "Active Spells"
     },
     "Action": {
+      "Edit": "Edit",
       "Roll": "Roll",
       "Cancel": "Cancel",
       "Use": "Use",
@@ -650,6 +651,18 @@
       "critical": "Critically Injured",
       "dying": "Dying",
       "dead": "Dead"
+    },
+    "Npc": {
+      "Initial": "Initial",
+      "Current": "Current",
+      "EditInitialTraits": "Edit initial traits",
+      "EditSkills": "Configure skills",
+      "NoLearnedSkills": "No skill above level 1, learned discipline or specialty.",
+      "NaturalProtection": "(including {value} natural PV)",
+      "IntegrityHint": "Only worn armor has integrity. Natural armor has no BV.",
+      "DurableMechanic": "Durable: ignore wound penalties",
+      "DurableHint": "At a level above 0, this feat cancels wound penalties. Body Point losses and the dying state still apply.",
+      "DurableConsequence": "Durable: no wound penalties"
     },
     "Fear": {
       "ApplyToTargets": "Apply to controlled characters"

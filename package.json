@@ -13,6 +13,7 @@
     "release": "node tools/release.mjs"
   },
   "devDependencies": {
-    "@foundryvtt/foundryvtt-cli": "^3.0.4"
+    "@foundryvtt/foundryvtt-cli": "^3.0.4",
+    "handlebars": "^4.7.9"
   }
 }
