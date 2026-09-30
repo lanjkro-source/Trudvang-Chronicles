@@ -151,7 +151,8 @@
       "Delete": "Delete",
       "AddEffect": "Add effect",
       "ToggleEffect": "Enable or disable effect",
-      "ApplyEffects": "Apply effects to selected targets"
+      "ApplyEffects": "Apply effects to selected targets",
+      "ShowInChat": "Show in chat"
     },
     "Field": {
       "Name": "Name",
@@ -753,11 +754,11 @@
       "SituationLabel": "Label",
       "TraitSituationTitle": "Trait situation roll",
       "TraitSituationTrait": "Trait",
-      "TraitSituationSV": "Base Situation Value",
+      "TraitSituationSV": "SV",
       "TraitSituationHint": "Click to roll with your controlled character.",
       "TraitSituationButton": "Roll {trait} SV {sv}",
       "TraitSituationPlayerTitle": "{trait} situation roll",
-      "TraitSituationPlayerSV": "Situation Value",
+      "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modifier",
       "TraitSituationPlayerFinal": "Final SV"
     },

@@ -151,7 +151,8 @@
       "Delete": "Supprimer",
       "AddEffect": "Ajouter un effet",
       "ToggleEffect": "Activer ou désactiver l'effet",
-      "ApplyEffects": "Appliquer les effets aux cibles sélectionnées"
+      "ApplyEffects": "Appliquer les effets aux cibles sélectionnées",
+      "ShowInChat": "Afficher dans le chat"
     },
     "Field": {
       "Name": "Nom",
@@ -753,11 +754,11 @@
       "SituationLabel": "Intitulé",
       "TraitSituationTitle": "Jet de situation de trait",
       "TraitSituationTrait": "Trait",
-      "TraitSituationSV": "Valeur de situation de base",
+      "TraitSituationSV": "SV",
       "TraitSituationHint": "Cliquez pour jeter avec votre personnage contrôlé.",
       "TraitSituationButton": "Jet de {trait} SV {sv}",
       "TraitSituationPlayerTitle": "Jet de situation {trait}",
-      "TraitSituationPlayerSV": "Valeur de situation",
+      "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modificateur",
       "TraitSituationPlayerFinal": "SV final"
     },

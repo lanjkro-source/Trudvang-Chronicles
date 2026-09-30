@@ -185,6 +185,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.AddEffect` | Add effect | Ajouter un effet |
 | `TRUDVANG.Action.ToggleEffect` | Enable or disable effect | Activer ou désactiver l'effet |
 | `TRUDVANG.Action.ApplyEffects` | Apply effects to selected targets | Appliquer les effets aux cibles sélectionnées |
+| `TRUDVANG.Action.ShowInChat` | Show in chat | Afficher dans le chat |
 
 ## `TRUDVANG.Field`
 
@@ -888,11 +889,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
 | `TRUDVANG.Dialog.TraitSituationTitle` | Trait situation roll | Jet de situation de trait |
 | `TRUDVANG.Dialog.TraitSituationTrait` | Trait | Trait |
-| `TRUDVANG.Dialog.TraitSituationSV` | Base Situation Value | Valeur de situation de base |
+| `TRUDVANG.Dialog.TraitSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationHint` | Click to roll with your controlled character. | Cliquez pour jeter avec votre personnage contrôlé. |
 | `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} SV {sv} | Jet de {trait} SV {sv} |
 | `TRUDVANG.Dialog.TraitSituationPlayerTitle` | {trait} situation roll | Jet de situation {trait} |
-| `TRUDVANG.Dialog.TraitSituationPlayerSV` | Situation Value | Valeur de situation |
+| `TRUDVANG.Dialog.TraitSituationPlayerSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationPlayerModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.TraitSituationPlayerFinal` | Final SV | SV final |
 

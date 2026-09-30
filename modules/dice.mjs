@@ -5,6 +5,8 @@ import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 
+const SYSTEM_ID = "trudvang-chronicles";
+
 async function evaluate(formula) {
   const roll = new Roll(formula);
   await roll.evaluate();

@@ -20,7 +20,8 @@ class MockDialogV2 {
   }
 }
 globalThis.foundry = {
-  applications: {api: {DialogV2: MockDialogV2},   handlebars: {renderTemplate: async (_template, data) => `<article><button data-action="roll-trait-situation" data-trait="${data.traitKey}" data-sv="${data.sv}">${data.buttonLabel}</button></article>`}},
+  applications: {api: {DialogV2: MockDialogV2},   handlebars: {renderTemplate: async (_template, data) => `<article><button data-action="roll-trait-situation" data-trait="${data.traitKey}" data-sv="${data.sv}">${data.buttonLabel}</button></article>`},
+  getFlag: () => undefined},
   documents: {Actor: class {}, ActiveEffect: class {}},
   data: {fields: {}, ActiveEffectTypeDataModel: class {}}
 };
