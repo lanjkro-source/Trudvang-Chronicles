@@ -1015,6 +1015,7 @@
         "Races": "Races",
         "Archetypes": "Archetypes",
         "Religions": "Religions",
+        "Rules": "Rules",
         "Magic": "Tablets & Magic",
         "Abilities": "Disciplines & Specialties",
         "Tables": "Magic",
@@ -9104,6 +9105,124 @@
         "purchasePrices": {
           "Name": "Purchase prices",
           "Content": "<p>Prices are in silver coins (sc), unless stated otherwise. Source: Rulebook, pp. 126–127.</p><h2>Goods</h2><table><thead><tr><th>Goods</th><th>Price</th></tr></thead><tbody><tr><td>Copper / bronze / iron</td><td>1 / 1.6 / 2.5 sc/kg</td></tr><tr><td>Silver / gold</td><td>100 / 1,000 sc/kg</td></tr><tr><td>Stone / wood</td><td>0.1 / 0.05 sc/kg</td></tr><tr><td>Wool and linen</td><td>1 sc/kg</td></tr><tr><td>Hare pelt / goat fur / cowhide</td><td>1 / 1.5 / 2.5 sc</td></tr><tr><td>Sheep hide / pig fur / boar hide</td><td>3 / 2 / 2 sc</td></tr><tr><td>Wolf pelt / bear pelt / mastomant fur</td><td>6 / 10 / 50 sc</td></tr></tbody></table><h2>Animals</h2><table><thead><tr><th>Animal</th><th>Price</th></tr></thead><tbody><tr><td>Hen / goat / pig</td><td>1 / 5 / 20 sc</td></tr><tr><td>Dairy cow / bull / ox</td><td>30 / 36 / 30 sc</td></tr><tr><td>Mule / horse / sled dog</td><td>25 / 50 / 8 sc</td></tr></tbody></table><h2>Food</h2><table><thead><tr><th>Food</th><th>Price</th></tr></thead><tbody><tr><td>Grain / bread / milk</td><td>0.2 sc/kg / 0.1 sc/kg / 0.1 sc/l</td></tr><tr><td>Dried meat / fish / fruit / turnips</td><td>0.5 / 0.4 / 0.3 / 0.1 sc/kg</td></tr><tr><td>Mead or beer / soured milk</td><td>0.2 / 0.15 sc/l</td></tr><tr><td>Fodder</td><td>0.1 sc/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Vehicle</th><th>Price</th></tr></thead><tbody><tr><td>Sledge / sled (2 / 4 seats)</td><td>2 / 6 / 10 sc</td></tr><tr><td>Two-wheeled cart (2 / 4 seats)</td><td>6 / 10 sc</td></tr><tr><td>Four-wheeled wagon (2+2 / 2+4 / 2+8 seats)</td><td>18 / 22 / 26 sc</td></tr><tr><td>War wagon (2 seats)</td><td>100 sc</td></tr><tr><td>Punt / skin canoe / wooden canoe</td><td>2 / 4 / 10 sc</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 sc</td></tr></tbody></table><h2>Lodging & meals</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Farmhouse / dormitory / princely rooms</td><td>0.2 / 1 / 20 sc</td></tr><tr><td>Poor / ordinary / princely meal</td><td>0.2 / 0.5 / 20 sc</td></tr></tbody></table><h2>Other services</h2><table><thead><tr><th>Service</th><th>Price</th></tr></thead><tbody><tr><td>Craftsperson: apprentice / journeyman / artisan / master / legend (hour)</td><td>0.2 / 0.5 / 1 / 3 / 5 sc</td></tr><tr><td>Errand boy / farm labourer (day)</td><td>0.1 / 1 sc</td></tr><tr><td>Scholar: copy per page / poem / chronicle per day</td><td>1 / 1.5 / 3–5 sc</td></tr><tr><td>Mercenary: novice / professional / hero / master (day)</td><td>1 / 2 / 4 / 8 sc</td></tr><tr><td>Shadowing, by target</td><td>2–2,000 sc</td></tr><tr><td>Boat travel (day)</td><td>1 sc</td></tr></tbody></table>"
+        },
+        "creatureSize": {
+          "Name": "Creature Size",
+          "Source": "Source: Jorgi’s Bestiary, French edition, pages 9 and 10.",
+          "Metre": "m",
+          "OpenRoll": "OR",
+          "Sizes": [
+            "<1/3",
+            "1/3",
+            "1/2",
+            "1",
+            "1.5",
+            "2",
+            "3",
+            "5",
+            "10+"
+          ],
+          "OverTen": ">10",
+          "Tables": {
+            "Attack": "ATTACK MODIFIERS AGAINST TARGETS OF DIFFERENT SIZES",
+            "Movement": "Movement per movement action",
+            "Humanoids": "SIZES OF HUMANOID CREATURES",
+            "Quadrupeds": "SIZES OF FOUR-FOOTED CREATURES",
+            "Huge": "SIZES OF EXTREMELY LARGE CREATURES",
+            "Rounds": "NUMBER OF ROUNDS USED TO SPREAD COMBAT POINTS",
+            "Unarmed": "UNARMED DAMAGE OF CREATURES BY SIZE",
+            "Armed": "WEAPON DAMAGE OF CREATURES BY SIZE"
+          },
+          "Columns": {
+            "Size": "Size",
+            "TargetSize": "Target size",
+            "AttackerSize": "Attacker size",
+            "LandHumanoid": "Land (humanoid)",
+            "LandQuadruped": "Land (quadruped)",
+            "Flight": "Flight",
+            "SwimLand": "Swimming (land creature)",
+            "SwimAquatic": "Swimming (aquatic creature)",
+            "Normal": "Normal",
+            "Fast": "Fast",
+            "FastHumanoid": "Fast *",
+            "Humanoids": "Humanoid height",
+            "Quadrupeds": "Four-footed animal size",
+            "Equivalent": "Corresponds to",
+            "SizeCoefficient": "Size (coefficient)",
+            "ExtremeSize": "Extreme size",
+            "Rounds": "Action rounds",
+            "Unarmed": "Unarmed",
+            "Bite": "Bite",
+            "Claw": "Claw",
+            "LightWeapon": "One-handed light weapon",
+            "HeavyWeapon": "One-handed heavy weapon",
+            "TwoHandedWeapon": "Two-handed weapon"
+          },
+          "Notes": {
+            "Attack": "Values modify Combat Points for each attack: a positive number grants CP usable only for that attack; a negative number increases its CP cost; a dash means no modifier. For an intermediate size, use the nearest size in the table (7 becomes 5; 8 becomes 10).",
+            "Movement": "Each cell gives the distance moved in combat for a movement action costing 2 CP. All creatures smaller than Size 1 count as Size 1 for this calculation.",
+            "HumanoidFast": "* Land (humanoid), Fast: doubling normal movement is an extrapolation adopted for this table. Page 9 explicitly defines Fast for quadrupeds and flight, but not for humanoids.",
+            "LargeMovement": "The 10+ row gives minimum distances for Size 10. For larger creatures, use their exact size coefficient: Size in metres for normal humanoids and aquatic swimming; 2 × Size for fast humanoids, normal quadrupeds or normal flight; 4 × Size for fast quadrupeds or fast flight; Size ÷ 2 for land-creature swimming.",
+            "MaximumMovement": "The maximum movement in the creature’s statistics still applies. Terrain and weather can increase the CP cost.",
+            "Rounds": "Human-sized creatures spread and regain their CP over one round. Large creatures spread their CP over the listed number of rounds, then regain them. They can still perform actions costing no CP when their pool is exhausted.",
+            "Strength": "Add exceptional Strength bonuses to the listed damage. OR means open roll."
+          },
+          "Humanoids": [
+            "Calf height",
+            "Knee height",
+            "Waist height",
+            "Human height",
+            "Main part of an oar",
+            "Tall as a ship’s mast",
+            "Tall as a shrine",
+            "Tall as a fir tree",
+            "Tall as a mountain peak"
+          ],
+          "Quadrupeds": [
+            "Size of a piglet",
+            "Size of a lamb",
+            "Size of a foal",
+            "Size of a calf",
+            "Size of the largest domesticated pig",
+            "Size of the largest domesticated sow",
+            "Big as an ox",
+            "Big as a mastomant",
+            "Big as a small dragon"
+          ],
+          "Equivalents": [
+            "One sixth of a human",
+            "One third of a human",
+            "Half of a human",
+            "Human",
+            "One and a half times as big as a human",
+            "Twice as big as a human",
+            "Three times as big as a human",
+            "Five times as big as a human",
+            "More than ten times as big as a human"
+          ],
+          "Huge": [
+            "Size of a rowboat",
+            "Big as a stormhall",
+            "Big as a longhouse",
+            "Big as a Wildfylking"
+          ],
+          "HugeEquivalents": [
+            "Three times as big as a human",
+            "Five times as big as a human",
+            "Ten times as big as a human",
+            "Fifteen times as big as a human"
+          ],
+          "RoundSizes": [
+            ">2 to 5",
+            ">5 to 10",
+            ">10"
+          ],
+          "RoundCounts": [
+            "2 rounds",
+            "3 rounds",
+            "4 rounds"
+          ],
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><section class=\"trudvang-rules-table\"><h2>ATTACK MODIFIERS AGAINST TARGETS OF DIFFERENT SIZES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th></th><th colspan=\"9\">Target size</th></tr><tr><th scope=\"col\">Attacker size</th><th scope=\"col\">&lt;1/3</th><th scope=\"col\">1/3</th><th scope=\"col\">1/2</th><th scope=\"col\">1</th><th scope=\"col\">1.5</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">5</th><th scope=\"col\">10</th></tr></thead><tbody><tr><th scope=\"row\">&lt;1/3</th><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td><td>+7</td></tr><tr><th scope=\"row\">1/3</th><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td></tr><tr><th scope=\"row\">1/2</th><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr><tr><th scope=\"row\">1</th><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td></tr><tr><th scope=\"row\">1.5</th><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td></tr><tr><th scope=\"row\">2</th><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td></tr><tr><th scope=\"row\">3</th><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td></tr><tr><th scope=\"row\">5</th><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td></tr><tr><th scope=\"row\">10</th><td>-7</td><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td></tr></tbody></table></div><p>Values modify Combat Points for each attack: a positive number grants CP usable only for that attack; a negative number increases its CP cost; a dash means no modifier. For an intermediate size, use the nearest size in the table (7 becomes 5; 8 becomes 10).</p></section><section class=\"trudvang-rules-table\"><h2>Movement per movement action</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric trudvang-rules-movement\"><thead><tr><th rowspan=\"2\" scope=\"col\">Size</th><th colspan=\"2\" scope=\"colgroup\">Land (humanoid)</th><th colspan=\"2\" scope=\"colgroup\">Land (quadruped)</th><th colspan=\"2\" scope=\"colgroup\">Flight</th><th rowspan=\"2\" scope=\"col\">Swimming (land creature)</th><th rowspan=\"2\" scope=\"col\">Swimming (aquatic creature)</th></tr><tr><th scope=\"col\">Normal</th><th scope=\"col\">Fast *</th><th scope=\"col\">Normal</th><th scope=\"col\">Fast</th><th scope=\"col\">Normal</th><th scope=\"col\">Fast</th></tr></thead><tbody><tr><th scope=\"row\">&lt;1/3</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0.5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1/3</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0.5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1/2</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0.5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0.5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1.5</th><td>1.5 m</td><td>3 m</td><td>3 m</td><td>6 m</td><td>3 m</td><td>6 m</td><td>0.75 m</td><td>1.5 m</td></tr><tr><th scope=\"row\">2</th><td>2 m</td><td>4 m</td><td>4 m</td><td>8 m</td><td>4 m</td><td>8 m</td><td>1 m</td><td>2 m</td></tr><tr><th scope=\"row\">3</th><td>3 m</td><td>6 m</td><td>6 m</td><td>12 m</td><td>6 m</td><td>12 m</td><td>1.5 m</td><td>3 m</td></tr><tr><th scope=\"row\">5</th><td>5 m</td><td>10 m</td><td>10 m</td><td>20 m</td><td>10 m</td><td>20 m</td><td>2.5 m</td><td>5 m</td></tr><tr><th scope=\"row\">10+</th><td>≥ 10 m</td><td>≥ 20 m</td><td>≥ 20 m</td><td>≥ 40 m</td><td>≥ 20 m</td><td>≥ 40 m</td><td>≥ 5 m</td><td>≥ 10 m</td></tr></tbody></table></div></section><ul><li>Each cell gives the distance moved in combat for a movement action costing 2 CP. All creatures smaller than Size 1 count as Size 1 for this calculation.</li><li>* Land (humanoid), Fast: doubling normal movement is an extrapolation adopted for this table. Page 9 explicitly defines Fast for quadrupeds and flight, but not for humanoids.</li><li>The 10+ row gives minimum distances for Size 10. For larger creatures, use their exact size coefficient: Size in metres for normal humanoids and aquatic swimming; 2 × Size for fast humanoids, normal quadrupeds or normal flight; 4 × Size for fast quadrupeds or fast flight; Size ÷ 2 for land-creature swimming.</li><li>The maximum movement in the creature’s statistics still applies. Terrain and weather can increase the CP cost.</li></ul><section class=\"trudvang-rules-table\"><h2>SIZES OF HUMANOID CREATURES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Humanoid height</th><th scope=\"col\">Corresponds to</th><th scope=\"col\">Size (coefficient)</th></tr></thead><tbody><tr><td>Calf height</td><td>One sixth of a human</td><td>&lt;1/3</td></tr><tr><td>Knee height</td><td>One third of a human</td><td>1/3</td></tr><tr><td>Waist height</td><td>Half of a human</td><td>1/2</td></tr><tr><td>Human height</td><td>Human</td><td>1</td></tr><tr><td>Main part of an oar</td><td>One and a half times as big as a human</td><td>1.5</td></tr><tr><td>Tall as a ship’s mast</td><td>Twice as big as a human</td><td>2</td></tr><tr><td>Tall as a shrine</td><td>Three times as big as a human</td><td>3</td></tr><tr><td>Tall as a fir tree</td><td>Five times as big as a human</td><td>5</td></tr><tr><td>Tall as a mountain peak</td><td>More than ten times as big as a human</td><td>&gt;10</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>SIZES OF FOUR-FOOTED CREATURES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Four-footed animal size</th><th scope=\"col\">Corresponds to</th><th scope=\"col\">Size (coefficient)</th></tr></thead><tbody><tr><td>Size of a piglet</td><td>One sixth of a human</td><td>&lt;1/3</td></tr><tr><td>Size of a lamb</td><td>One third of a human</td><td>1/3</td></tr><tr><td>Size of a foal</td><td>Half of a human</td><td>1/2</td></tr><tr><td>Size of a calf</td><td>Human</td><td>1</td></tr><tr><td>Size of the largest domesticated pig</td><td>One and a half times as big as a human</td><td>1.5</td></tr><tr><td>Size of the largest domesticated sow</td><td>Twice as big as a human</td><td>2</td></tr><tr><td>Big as an ox</td><td>Three times as big as a human</td><td>3</td></tr><tr><td>Big as a mastomant</td><td>Five times as big as a human</td><td>5</td></tr><tr><td>Big as a small dragon</td><td>More than ten times as big as a human</td><td>&gt;10</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>SIZES OF EXTREMELY LARGE CREATURES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Extreme size</th><th scope=\"col\">Corresponds to</th></tr></thead><tbody><tr><td>Size of a rowboat</td><td>Three times as big as a human</td></tr><tr><td>Big as a stormhall</td><td>Five times as big as a human</td></tr><tr><td>Big as a longhouse</td><td>Ten times as big as a human</td></tr><tr><td>Big as a Wildfylking</td><td>Fifteen times as big as a human</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>NUMBER OF ROUNDS USED TO SPREAD COMBAT POINTS</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Action rounds</th></tr></thead><tbody><tr><td>&gt;2 to 5</td><td>2 rounds</td></tr><tr><td>&gt;5 to 10</td><td>3 rounds</td></tr><tr><td>&gt;10</td><td>4 rounds</td></tr></tbody></table></div><p>Human-sized creatures spread and regain their CP over one round. Large creatures spread their CP over the listed number of rounds, then regain them. They can still perform actions costing no CP when their pool is exhausted.</p></section><section class=\"trudvang-rules-table\"><h2>UNARMED DAMAGE OF CREATURES BY SIZE</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Unarmed</th><th scope=\"col\">Bite</th><th scope=\"col\">Claw</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>-</td><td>1D2</td><td>1</td></tr><tr><td>1/3</td><td>1D2</td><td>1D5</td><td>1D3</td></tr><tr><td>1/2</td><td>1D3</td><td>1D10</td><td>1D5</td></tr><tr><td>1</td><td>1D5</td><td>1D10 (OR 10)</td><td>1D10</td></tr><tr><td>1.5</td><td>1D10</td><td>1D10 (OR 9-10)</td><td>1D10 (OR 10)</td></tr><tr><td>2</td><td>1D10 (OR 10)</td><td>2D10 (OR 9-10)</td><td>2D10 (OR 10)</td></tr><tr><td>3</td><td>2D10 (OR 9-10)</td><td>2D10 (OR 8-10)</td><td>2D10 (OR 9-10)</td></tr><tr><td>5</td><td>2D10 (OR 8-10)</td><td>3D10 (OR 8-10)</td><td>3D10 (OR 9-10)</td></tr><tr><td>10+</td><td>2D10 (OR 8-10)</td><td>3D10 (OR 8-10)</td><td>3D10 (OR 9-10)</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>WEAPON DAMAGE OF CREATURES BY SIZE</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">One-handed light weapon</th><th scope=\"col\">One-handed heavy weapon</th><th scope=\"col\">Two-handed weapon</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>1D2</td><td>1D3</td><td>1D5</td></tr><tr><td>1/3</td><td>1D5</td><td>1D5</td><td>1D10 (OR 10)</td></tr><tr><td>1/2</td><td>1D10</td><td>1D10 (OR 10)</td><td>1D10 (OR 9-10)</td></tr><tr><td>1</td><td>1D10 (OR 10)</td><td>1D10 (OR 9-10)</td><td>1D10 (OR 8-10)</td></tr><tr><td>1.5</td><td>1D10 (OR 9-10)</td><td>2D10 (OR 9-10)</td><td>2D10 (OR 8-10)</td></tr><tr><td>2</td><td>2D10 (OR 9-10)</td><td>2D10 (OR 8-10)</td><td>2D10 (OR 7-10)</td></tr><tr><td>3</td><td>3D10 (OR 8-10)</td><td>3D10 (OR 8-10)</td><td>3D10 (OR 7-10)</td></tr><tr><td>5</td><td>3D10 (OR 7-10)</td><td>3D10 (OR 7-10)</td><td>4D10 (OR 7-10)</td></tr><tr><td>10+</td><td>3D10 (OR 7-10)</td><td>4D10 (OR 7-10)</td><td>4D10 (OR 7-10)</td></tr></tbody></table></div></section><p>Add exceptional Strength bonuses to the listed damage. OR means open roll.</p><p><em>Source: Jorgi’s Bestiary, French edition, pages 9 and 10.</em></p></article>"
         },
         "Statistics": "Statistics",
         "Culture": "Culture or mixed breed",

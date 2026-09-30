@@ -76,3 +76,4 @@ for (const lang of ["fr", "en"]) {
     : {Statistics: "Statistics", Culture: "Culture or mixed breed", BodyPoints: "Body Points", Movement: "Movement"});
   fs.writeFileSync(localePath, `${JSON.stringify(locale, null, 2)}\n`);
 }
+await import("./generate-creature-size-journal.mjs");

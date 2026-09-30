@@ -58,6 +58,17 @@
 .trudvang-religion-journal th { background: var(--trudvang-paper); color: var(--trudvang-ink); }
 .trudvang-religion-journal tbody tr:nth-child(even) { background: var(--trudvang-paper); }
 
+.trudvang-rules-journal .trudvang-rules-table { margin: 1.25em 0; }
+.trudvang-rules-journal .trudvang-rules-table h2 { font-size: 1rem; }
+.trudvang-rules-journal .trudvang-rules-table-scroll { overflow-x: auto; }
+.trudvang-rules-journal table { font-size: .85rem; }
+.trudvang-rules-journal thead th { text-align: center; vertical-align: middle; }
+.trudvang-rules-journal .trudvang-rules-numeric :is(th, td) { text-align: center; white-space: nowrap; }
+.trudvang-rules-journal .trudvang-rules-movement { min-width: 660px; }
+.trudvang-rules-journal .trudvang-rules-movement th { white-space: normal; }
+.trudvang-rules-journal .trudvang-rules-movement tbody th,
+.trudvang-rules-journal .trudvang-rules-movement td { white-space: nowrap; }
+
 .trudvang-sheet { height: 100%; display: flex; flex-direction: column; gap: 0; overflow: hidden; }
 .trudvang-sheet button { color: var(--trudvang-ink); border: 0; background: transparent; line-height: 1.2; }
 .trudvang-sheet button:hover, .trudvang-sheet .rollable:hover { color: var(--trudvang-accent); text-shadow: 0 0 8px color-mix(in srgb, var(--trudvang-gold) 55%, transparent); }

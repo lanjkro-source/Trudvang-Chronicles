@@ -4,9 +4,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 33 adds the six Religion journals to
+// TEMPORARY WORLD MIGRATION — version 34 adds the Rules / Creature Size journal to
 // existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 33;
+const CONTENT_VERSION = 34;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

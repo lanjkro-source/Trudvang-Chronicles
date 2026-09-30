@@ -34,6 +34,7 @@ Toute nouvelle migration de monde doit :
 | `CONTENT_VERSION = 31` et la mise à jour des tablettes intégrées dans `importStarterContent()` | Complètent les tablettes déjà apprises par les PJ/PNJ avec les résumés, noms suédois, négations et affinités du catalogue enrichi. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 | `CONTENT_VERSION = 32` et la mise à jour des sorts/pouvoirs intégrés dans `importStarterContent()` | Complètent les copies déjà apprises avec les descriptions intégrales, caractéristiques, niveaux de puissance et métadonnées des runes. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 | `CONTENT_VERSION = 33` et `upsertJournals()` | Ajoutent les six Journaux Religions aux mondes de développement déjà installés. | Tous les mondes antérieurs ont reçu ces Journaux, ou ont été supprimés. |
+| `CONTENT_VERSION = 34` et `upsertJournals()` | Ajoutent le dossier Règles et le Journal Taille des créatures, avec les sept tableaux des pages 9-10 du Bestiaire français et le tableau de déplacement dérivé. | En attente dans les mondes existants ; appliquée au prochain démarrage avec cette version du système. |
 
 ## `modules/rules/combat-pool-resolver.mjs`
 

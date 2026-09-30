@@ -1015,6 +1015,7 @@
         "Races": "Races",
         "Archetypes": "Archétypes",
         "Religions": "Religions",
+        "Rules": "Règles",
         "Magic": "Tables & Magie",
         "Abilities": "Disciplines & Spécialités",
         "Tables": "Magie",
@@ -9104,6 +9105,124 @@
         "purchasePrices": {
           "Name": "Prix d’achat",
           "Content": "<p>Prix en pièces d’argent (pa), sauf mention contraire. Source : Livre des règles, pp. 126–127.</p><h2>Marchandises</h2><table><thead><tr><th>Marchandise</th><th>Prix</th></tr></thead><tbody><tr><td>Cuivre / bronze / fer</td><td>1 / 1,6 / 2,5 pa/kg</td></tr><tr><td>Argent / or</td><td>100 / 1 000 pa/kg</td></tr><tr><td>Pierre / bois</td><td>0,1 / 0,05 pa/kg</td></tr><tr><td>Laine et lin</td><td>1 pa/kg</td></tr><tr><td>Peau de lièvre / fourrure de chèvre / peau de vache</td><td>1 / 1,5 / 2,5 pa</td></tr><tr><td>Peau de mouton / fourrure de cochon / peau de sanglier</td><td>3 / 2 / 2 pa</td></tr><tr><td>Peau de loup / peau d’ours / fourrure de mastomant</td><td>6 / 10 / 50 pa</td></tr></tbody></table><h2>Animaux</h2><table><thead><tr><th>Animal</th><th>Prix</th></tr></thead><tbody><tr><td>Poule / chèvre / cochon</td><td>1 / 5 / 20 pa</td></tr><tr><td>Vache à lait / taureau / bœuf</td><td>30 / 36 / 30 pa</td></tr><tr><td>Mule / cheval / chien de traîneau</td><td>25 / 50 / 8 pa</td></tr></tbody></table><h2>Nourriture</h2><table><thead><tr><th>Produit</th><th>Prix</th></tr></thead><tbody><tr><td>Céréales / pain / lait</td><td>0,2 pa/kg / 0,1 pa/kg / 0,1 pa/l</td></tr><tr><td>Viande séchée / poisson / fruits / navets</td><td>0,5 / 0,4 / 0,3 / 0,1 pa/kg</td></tr><tr><td>Hydromel ou bière / lait fermenté</td><td>0,2 / 0,15 pa/l</td></tr><tr><td>Fourrage</td><td>0,1 pa/kg</td></tr></tbody></table><h2>Transport</h2><table><thead><tr><th>Véhicule</th><th>Prix</th></tr></thead><tbody><tr><td>Luge / traîneau (2 / 4 places)</td><td>2 / 6 / 10 pa</td></tr><tr><td>Chariot à 2 roues (2 / 4 places)</td><td>6 / 10 pa</td></tr><tr><td>Chariot à 4 roues (2+2 / 2+4 / 2+8 places)</td><td>18 / 22 / 26 pa</td></tr><tr><td>Chariot de guerre (2 places)</td><td>100 pa</td></tr><tr><td>Barque / canoë de peau / canoë en bois</td><td>2 / 4 / 10 pa</td></tr><tr><td>Karve (1 t) / knarr (3 t)</td><td>250 / 500 pa</td></tr></tbody></table><h2>Logement & repas</h2><table><thead><tr><th>Prestation</th><th>Prix</th></tr></thead><tbody><tr><td>Ferme / dortoir / appartements princiers</td><td>0,2 / 1 / 20 pa</td></tr><tr><td>Repas pauvre / moyen / princier</td><td>0,2 / 0,5 / 20 pa</td></tr></tbody></table><h2>Autres services</h2><table><thead><tr><th>Service</th><th>Prix</th></tr></thead><tbody><tr><td>Artisan : apprenti / compagnon / artisan / maître / légende (heure)</td><td>0,2 / 0,5 / 1 / 3 / 5 pa</td></tr><tr><td>Garçon de course / ouvrier agricole (jour)</td><td>0,1 / 1 pa</td></tr><tr><td>Érudit : copie par page / poème / chronique par jour</td><td>1 / 1,5 / 3–5 pa</td></tr><tr><td>Mercenaire : novice / professionnel / héros / maître (jour)</td><td>1 / 2 / 4 / 8 pa</td></tr><tr><td>Filature selon la cible</td><td>2–2 000 pa</td></tr><tr><td>Voyage en bateau (jour)</td><td>1 pa</td></tr></tbody></table>"
+        },
+        "creatureSize": {
+          "Name": "Taille des créatures",
+          "Source": "Source : Bestiaire de Jorge, édition française, pages 9 et 10.",
+          "Metre": "m",
+          "OpenRoll": "JO",
+          "Sizes": [
+            "<1/3",
+            "1/3",
+            "1/2",
+            "1",
+            "1,5",
+            "2",
+            "3",
+            "5",
+            "10+"
+          ],
+          "OverTen": ">10",
+          "Tables": {
+            "Attack": "MODIFICATEURS D’ATTAQUE CONTRE DES CIBLES DE TAILLES DIFFÉRENTES",
+            "Movement": "Déplacement par action de mouvement",
+            "Humanoids": "TAILLES DES CRÉATURES HUMANOÏDES",
+            "Quadrupeds": "TAILLES DES CRÉATURES QUADRUPÈDES",
+            "Huge": "TAILLES DES CRÉATURES GIGANTESQUES",
+            "Rounds": "NOMBRES DE TOURS REQUIS POUR RÉPARTIR LES PC",
+            "Unarmed": "DÉGÂTS DES CRÉATURES SANS ARMES SELON LEUR TAILLE",
+            "Armed": "DÉGÂTS DES CRÉATURES ARMÉES SELON LEUR TAILLE"
+          },
+          "Columns": {
+            "Size": "Taille",
+            "TargetSize": "Taille de la cible",
+            "AttackerSize": "Taille de l’attaquant",
+            "LandHumanoid": "Terrestre (humanoïde)",
+            "LandQuadruped": "Terrestre (quadrupède)",
+            "Flight": "Vol",
+            "SwimLand": "Nage (terrestre)",
+            "SwimAquatic": "Nage (aquatique)",
+            "Normal": "Normal",
+            "Fast": "Rapide",
+            "FastHumanoid": "Rapide *",
+            "Humanoids": "Taille de l’humanoïde",
+            "Quadrupeds": "Taille du quadrupède",
+            "Equivalent": "Équivalence",
+            "SizeCoefficient": "Taille (coefficient)",
+            "ExtremeSize": "Taille extrême",
+            "Rounds": "Tours de jeu",
+            "Unarmed": "Sans arme",
+            "Bite": "Morsure",
+            "Claw": "Griffe",
+            "LightWeapon": "Arme légère à une main",
+            "HeavyWeapon": "Arme lourde à une main",
+            "TwoHandedWeapon": "Arme à deux mains"
+          },
+          "Notes": {
+            "Attack": "Les valeurs sont des modificateurs de points de combat par attaque : un nombre positif accorde des PC utilisables uniquement pour cette attaque ; un nombre négatif augmente son coût en PC ; un tiret indique aucun modificateur. Pour une taille intermédiaire, utilisez la taille la plus proche dans le tableau (7 devient 5 ; 8 devient 10).",
+            "Movement": "Chaque case indique la distance parcourue en combat pour une action de mouvement coûtant 2 PC. Toutes les créatures de Taille inférieure à 1 sont traitées comme des créatures de Taille 1 pour ce calcul.",
+            "HumanoidFast": "* Terrestre (humanoïde), Rapide : le doublement du déplacement normal est une extrapolation retenue pour ce tableau. La page 9 définit explicitement Rapide pour les quadrupèdes et le vol, mais pas pour les humanoïdes.",
+            "LargeMovement": "La ligne 10+ indique les distances minimales pour une Taille de 10. Au-delà, calculez avec le coefficient exact : Taille en mètres pour un humanoïde normal et la nage aquatique ; 2 × Taille pour un humanoïde rapide, un quadrupède normal ou le vol normal ; 4 × Taille pour un quadrupède rapide ou le vol rapide ; Taille ÷ 2 pour la nage d’une créature terrestre.",
+            "MaximumMovement": "Le mouvement maximum indiqué dans la fiche de la créature reste applicable. Le terrain et les conditions météorologiques peuvent augmenter le coût en PC.",
+            "Rounds": "Les créatures de taille humaine répartissent et récupèrent leurs PC sur un tour. Les grandes créatures les répartissent sur le nombre de tours indiqué, puis les récupèrent. Elles peuvent encore effectuer des actions ne coûtant aucun PC lorsque leur réserve est épuisée.",
+            "Strength": "Ajoutez les bonus de Force exceptionnelle aux dégâts indiqués. JO signifie jet ouvert."
+          },
+          "Humanoids": [
+            "Hauteur de mollet",
+            "Hauteur de genou",
+            "Hauteur de taille",
+            "Taille humaine",
+            "Manche d’une rame",
+            "Hauteur de mât",
+            "Hauteur de sanctuaire",
+            "Hauteur de sapin",
+            "Hauteur d’une montagne"
+          ],
+          "Quadrupeds": [
+            "Taille d’un porcelet",
+            "Taille d’un agneau",
+            "Taille d’un poulain",
+            "Taille d’un veau",
+            "Taille du plus massif des cochons domestiques",
+            "Taille de la plus massive des truies domestiques",
+            "Grand comme un bœuf",
+            "Grand comme un mastomant",
+            "Grand comme un petit dragon"
+          ],
+          "Equivalents": [
+            "Un sixième d’humain",
+            "Un tiers d’humain",
+            "La moitié d’un humain",
+            "Humain",
+            "Une fois et demie la taille d’un humain",
+            "Deux fois la taille d’un humain",
+            "Trois fois la taille d’un humain",
+            "Cinq fois la taille d’un humain",
+            "Plus de dix fois la taille d’un humain"
+          ],
+          "Huge": [
+            "Taille d’un canot",
+            "Grand comme une halle de Storme",
+            "Grand comme une maison longue",
+            "Grand comme une vildfylking"
+          ],
+          "HugeEquivalents": [
+            "Trois fois la taille d’un humain",
+            "Cinq fois la taille d’un humain",
+            "Dix fois la taille d’un humain",
+            "Quinze fois la taille d’un humain"
+          ],
+          "RoundSizes": [
+            ">2 à 5",
+            ">5 à 10",
+            ">10"
+          ],
+          "RoundCounts": [
+            "2 tours",
+            "3 tours",
+            "4 tours"
+          ],
+          "Content": "<article class=\"trudvang-religion-journal trudvang-rules-journal\"><section class=\"trudvang-rules-table\"><h2>MODIFICATEURS D’ATTAQUE CONTRE DES CIBLES DE TAILLES DIFFÉRENTES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th></th><th colspan=\"9\">Taille de la cible</th></tr><tr><th scope=\"col\">Taille de l’attaquant</th><th scope=\"col\">&lt;1/3</th><th scope=\"col\">1/3</th><th scope=\"col\">1/2</th><th scope=\"col\">1</th><th scope=\"col\">1,5</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">5</th><th scope=\"col\">10</th></tr></thead><tbody><tr><th scope=\"row\">&lt;1/3</th><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td><td>+7</td></tr><tr><th scope=\"row\">1/3</th><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td></tr><tr><th scope=\"row\">1/2</th><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td></tr><tr><th scope=\"row\">1</th><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td></tr><tr><th scope=\"row\">1,5</th><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td><td>+3</td></tr><tr><th scope=\"row\">2</th><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td><td>+2</td></tr><tr><th scope=\"row\">3</th><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td><td>+1</td></tr><tr><th scope=\"row\">5</th><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td><td>-</td></tr><tr><th scope=\"row\">10</th><td>-7</td><td>-6</td><td>-5</td><td>-4</td><td>-3</td><td>-2</td><td>-1</td><td>-</td><td>-</td></tr></tbody></table></div><p>Les valeurs sont des modificateurs de points de combat par attaque : un nombre positif accorde des PC utilisables uniquement pour cette attaque ; un nombre négatif augmente son coût en PC ; un tiret indique aucun modificateur. Pour une taille intermédiaire, utilisez la taille la plus proche dans le tableau (7 devient 5 ; 8 devient 10).</p></section><section class=\"trudvang-rules-table\"><h2>Déplacement par action de mouvement</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric trudvang-rules-movement\"><thead><tr><th rowspan=\"2\" scope=\"col\">Taille</th><th colspan=\"2\" scope=\"colgroup\">Terrestre (humanoïde)</th><th colspan=\"2\" scope=\"colgroup\">Terrestre (quadrupède)</th><th colspan=\"2\" scope=\"colgroup\">Vol</th><th rowspan=\"2\" scope=\"col\">Nage (terrestre)</th><th rowspan=\"2\" scope=\"col\">Nage (aquatique)</th></tr><tr><th scope=\"col\">Normal</th><th scope=\"col\">Rapide *</th><th scope=\"col\">Normal</th><th scope=\"col\">Rapide</th><th scope=\"col\">Normal</th><th scope=\"col\">Rapide</th></tr></thead><tbody><tr><th scope=\"row\">&lt;1/3</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0,5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1/3</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0,5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1/2</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0,5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1</th><td>1 m</td><td>2 m</td><td>2 m</td><td>4 m</td><td>2 m</td><td>4 m</td><td>0,5 m</td><td>1 m</td></tr><tr><th scope=\"row\">1,5</th><td>1,5 m</td><td>3 m</td><td>3 m</td><td>6 m</td><td>3 m</td><td>6 m</td><td>0,75 m</td><td>1,5 m</td></tr><tr><th scope=\"row\">2</th><td>2 m</td><td>4 m</td><td>4 m</td><td>8 m</td><td>4 m</td><td>8 m</td><td>1 m</td><td>2 m</td></tr><tr><th scope=\"row\">3</th><td>3 m</td><td>6 m</td><td>6 m</td><td>12 m</td><td>6 m</td><td>12 m</td><td>1,5 m</td><td>3 m</td></tr><tr><th scope=\"row\">5</th><td>5 m</td><td>10 m</td><td>10 m</td><td>20 m</td><td>10 m</td><td>20 m</td><td>2,5 m</td><td>5 m</td></tr><tr><th scope=\"row\">10+</th><td>≥ 10 m</td><td>≥ 20 m</td><td>≥ 20 m</td><td>≥ 40 m</td><td>≥ 20 m</td><td>≥ 40 m</td><td>≥ 5 m</td><td>≥ 10 m</td></tr></tbody></table></div></section><ul><li>Chaque case indique la distance parcourue en combat pour une action de mouvement coûtant 2 PC. Toutes les créatures de Taille inférieure à 1 sont traitées comme des créatures de Taille 1 pour ce calcul.</li><li>* Terrestre (humanoïde), Rapide : le doublement du déplacement normal est une extrapolation retenue pour ce tableau. La page 9 définit explicitement Rapide pour les quadrupèdes et le vol, mais pas pour les humanoïdes.</li><li>La ligne 10+ indique les distances minimales pour une Taille de 10. Au-delà, calculez avec le coefficient exact : Taille en mètres pour un humanoïde normal et la nage aquatique ; 2 × Taille pour un humanoïde rapide, un quadrupède normal ou le vol normal ; 4 × Taille pour un quadrupède rapide ou le vol rapide ; Taille ÷ 2 pour la nage d’une créature terrestre.</li><li>Le mouvement maximum indiqué dans la fiche de la créature reste applicable. Le terrain et les conditions météorologiques peuvent augmenter le coût en PC.</li></ul><section class=\"trudvang-rules-table\"><h2>TAILLES DES CRÉATURES HUMANOÏDES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Taille de l’humanoïde</th><th scope=\"col\">Équivalence</th><th scope=\"col\">Taille (coefficient)</th></tr></thead><tbody><tr><td>Hauteur de mollet</td><td>Un sixième d’humain</td><td>&lt;1/3</td></tr><tr><td>Hauteur de genou</td><td>Un tiers d’humain</td><td>1/3</td></tr><tr><td>Hauteur de taille</td><td>La moitié d’un humain</td><td>1/2</td></tr><tr><td>Taille humaine</td><td>Humain</td><td>1</td></tr><tr><td>Manche d’une rame</td><td>Une fois et demie la taille d’un humain</td><td>1,5</td></tr><tr><td>Hauteur de mât</td><td>Deux fois la taille d’un humain</td><td>2</td></tr><tr><td>Hauteur de sanctuaire</td><td>Trois fois la taille d’un humain</td><td>3</td></tr><tr><td>Hauteur de sapin</td><td>Cinq fois la taille d’un humain</td><td>5</td></tr><tr><td>Hauteur d’une montagne</td><td>Plus de dix fois la taille d’un humain</td><td>&gt;10</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>TAILLES DES CRÉATURES QUADRUPÈDES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Taille du quadrupède</th><th scope=\"col\">Équivalence</th><th scope=\"col\">Taille (coefficient)</th></tr></thead><tbody><tr><td>Taille d’un porcelet</td><td>Un sixième d’humain</td><td>&lt;1/3</td></tr><tr><td>Taille d’un agneau</td><td>Un tiers d’humain</td><td>1/3</td></tr><tr><td>Taille d’un poulain</td><td>La moitié d’un humain</td><td>1/2</td></tr><tr><td>Taille d’un veau</td><td>Humain</td><td>1</td></tr><tr><td>Taille du plus massif des cochons domestiques</td><td>Une fois et demie la taille d’un humain</td><td>1,5</td></tr><tr><td>Taille de la plus massive des truies domestiques</td><td>Deux fois la taille d’un humain</td><td>2</td></tr><tr><td>Grand comme un bœuf</td><td>Trois fois la taille d’un humain</td><td>3</td></tr><tr><td>Grand comme un mastomant</td><td>Cinq fois la taille d’un humain</td><td>5</td></tr><tr><td>Grand comme un petit dragon</td><td>Plus de dix fois la taille d’un humain</td><td>&gt;10</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>TAILLES DES CRÉATURES GIGANTESQUES</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Taille extrême</th><th scope=\"col\">Équivalence</th></tr></thead><tbody><tr><td>Taille d’un canot</td><td>Trois fois la taille d’un humain</td></tr><tr><td>Grand comme une halle de Storme</td><td>Cinq fois la taille d’un humain</td></tr><tr><td>Grand comme une maison longue</td><td>Dix fois la taille d’un humain</td></tr><tr><td>Grand comme une vildfylking</td><td>Quinze fois la taille d’un humain</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>NOMBRES DE TOURS REQUIS POUR RÉPARTIR LES PC</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"\"><thead><tr><th scope=\"col\">Taille</th><th scope=\"col\">Tours de jeu</th></tr></thead><tbody><tr><td>&gt;2 à 5</td><td>2 tours</td></tr><tr><td>&gt;5 à 10</td><td>3 tours</td></tr><tr><td>&gt;10</td><td>4 tours</td></tr></tbody></table></div><p>Les créatures de taille humaine répartissent et récupèrent leurs PC sur un tour. Les grandes créatures les répartissent sur le nombre de tours indiqué, puis les récupèrent. Elles peuvent encore effectuer des actions ne coûtant aucun PC lorsque leur réserve est épuisée.</p></section><section class=\"trudvang-rules-table\"><h2>DÉGÂTS DES CRÉATURES SANS ARMES SELON LEUR TAILLE</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th scope=\"col\">Taille</th><th scope=\"col\">Sans arme</th><th scope=\"col\">Morsure</th><th scope=\"col\">Griffe</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>-</td><td>1D2</td><td>1</td></tr><tr><td>1/3</td><td>1D2</td><td>1D5</td><td>1D3</td></tr><tr><td>1/2</td><td>1D3</td><td>1D10</td><td>1D5</td></tr><tr><td>1</td><td>1D5</td><td>1D10 (JO 10)</td><td>1D10</td></tr><tr><td>1,5</td><td>1D10</td><td>1D10 (JO 9-10)</td><td>1D10 (JO 10)</td></tr><tr><td>2</td><td>1D10 (JO 10)</td><td>2D10 (JO 9-10)</td><td>2D10 (JO 10)</td></tr><tr><td>3</td><td>2D10 (JO 9-10)</td><td>2D10 (JO 8-10)</td><td>2D10 (JO 9-10)</td></tr><tr><td>5</td><td>2D10 (JO 8-10)</td><td>3D10 (JO 8-10)</td><td>3D10 (JO 9-10)</td></tr><tr><td>10+</td><td>2D10 (JO 8-10)</td><td>3D10 (JO 8-10)</td><td>3D10 (JO 9-10)</td></tr></tbody></table></div></section><section class=\"trudvang-rules-table\"><h2>DÉGÂTS DES CRÉATURES ARMÉES SELON LEUR TAILLE</h2><div class=\"trudvang-rules-table-scroll\"><table class=\"trudvang-rules-numeric\"><thead><tr><th scope=\"col\">Taille</th><th scope=\"col\">Arme légère à une main</th><th scope=\"col\">Arme lourde à une main</th><th scope=\"col\">Arme à deux mains</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>1D2</td><td>1D3</td><td>1D5</td></tr><tr><td>1/3</td><td>1D5</td><td>1D5</td><td>1D10 (JO 10)</td></tr><tr><td>1/2</td><td>1D10</td><td>1D10 (JO 10)</td><td>1D10 (JO 9-10)</td></tr><tr><td>1</td><td>1D10 (JO 10)</td><td>1D10 (JO 9-10)</td><td>1D10 (JO 8-10)</td></tr><tr><td>1,5</td><td>1D10 (JO 9-10)</td><td>2D10 (JO 9-10)</td><td>2D10 (JO 8-10)</td></tr><tr><td>2</td><td>2D10 (JO 9-10)</td><td>2D10 (JO 8-10)</td><td>2D10 (JO 7-10)</td></tr><tr><td>3</td><td>3D10 (JO 8-10)</td><td>3D10 (JO 8-10)</td><td>3D10 (JO 7-10)</td></tr><tr><td>5</td><td>3D10 (JO 7-10)</td><td>3D10 (JO 7-10)</td><td>4D10 (JO 7-10)</td></tr><tr><td>10+</td><td>3D10 (JO 7-10)</td><td>4D10 (JO 7-10)</td><td>4D10 (JO 7-10)</td></tr></tbody></table></div></section><p>Ajoutez les bonus de Force exceptionnelle aux dégâts indiqués. JO signifie jet ouvert.</p><p><em>Source : Bestiaire de Jorge, édition française, pages 9 et 10.</em></p></article>"
         },
         "Statistics": "Caractéristiques",
         "Culture": "Culture ou métissage",

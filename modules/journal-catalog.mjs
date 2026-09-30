@@ -4,7 +4,8 @@ export const JOURNAL_FOLDERS = {
   equipment: {nameKey: "TRUDVANG.Content.Folder.Equipment", type: "JournalEntry"},
   races: {nameKey: "TRUDVANG.Content.Folder.Races", type: "JournalEntry"},
   archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry"},
-  religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry"}
+  religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry"},
+  rules: {nameKey: "TRUDVANG.Content.Folder.Rules", type: "JournalEntry"}
 };
 
 const raceStats = {
@@ -31,7 +32,8 @@ const journals = [
   {id: "tenetNid", folder: "religions", key: "tenetNid"},
   {id: "haminges", folder: "religions", key: "haminges"},
   {id: "thuuldom", folder: "religions", key: "thuuldom"},
-  {id: "toikalokke", folder: "religions", key: "toikalokke"}
+  {id: "toikalokke", folder: "religions", key: "toikalokke"},
+  {id: "creatureSize", folder: "rules", key: "creatureSize"}
 ];
 
 const l = key => game.i18n.localize(key);
