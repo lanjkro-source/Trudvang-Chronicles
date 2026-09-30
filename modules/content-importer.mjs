@@ -1,4 +1,5 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
+import { creatureDataForStarter, featEffectPayload } from "./creature-feats.mjs";
 import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
@@ -6,7 +7,7 @@ import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 34 adds the Rules / Creature Size journal to
 // existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 34;
+const CONTENT_VERSION = 35;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -324,12 +325,74 @@ async function rebuildTables(source, folders, translationsByKey) {
   await RollTable.createDocuments(tables);
 }
 
+/**
+ * Creature feats are SIMPLE capacities: embedded ActiveEffects carrying just the feat
+ * name + the French rule summary as description, no mechanics (empty changes, no
+ * transfer). Attacks are DATA ONLY on system.attacks (lines of {attack, value} pairs).
+ * Neither ever creates Items. Baked source: modules/creature-feats.mjs.
+ */
+function missingFeatPayloads(existingEffects, featNames) {
+  const flagged = new Set(existingEffects.map(effect => effect.getFlag?.(SYSTEM_ID, "feat")).filter(Boolean));
+  const named = new Set(existingEffects.map(effect => effect.name));
+  return (featNames ?? [])
+    .map(featEffectPayload)
+    .filter(payload => payload
+      && !flagged.has(payload.flags[SYSTEM_ID].feat)
+      && !named.has(payload.name));
+}
+
+// Authoritative creature stats on the create payload; starter-content.json mirrors the
+// same values so new worlds are correct even before this runs. Explicit JSON wins on
+// conflicts so hand-tuned starters are never clobbered.
+function applyBakedCreatureStats(payload, key) {
+  const baked = creatureDataForStarter(key);
+  if (!baked || payload.type !== "npc") return;
+  payload.system ??= {};
+  if (baked.traits && Object.keys(baked.traits).length) {
+    payload.system.traits = {...baked.traits, ...(payload.system.traits ?? {})};
+  }
+  if (baked.skills && Object.keys(baked.skills).length) {
+    const skills = {...(payload.system.skills ?? {})};
+    for (const [skill, value] of Object.entries(baked.skills)) {
+      skills[skill] = {value, ...(skills[skill] ?? {})};
+    }
+    payload.system.skills = skills;
+  }
+  payload.system.resources ??= {};
+  for (const [pool, amount] of [["body", baked.body], ["combat", baked.combat]]) {
+    if (Number.isFinite(amount)) {
+      payload.system.resources[pool] = {value: amount, max: amount, ...(payload.system.resources[pool] ?? {})};
+    }
+  }
+  payload.system.details ??= {};
+  if (Number.isFinite(baked.naturalArmor)) payload.system.details.naturalArmor ??= baked.naturalArmor;
+  if (baked.fearFactor) payload.system.details.fearFactor ??= baked.fearFactor;
+  if (baked.attacks?.length && !(payload.system.attacks ?? []).length) {
+    payload.system.attacks = foundry.utils.deepClone(baked.attacks);
+  }
+  payload.effects ??= [];
+  for (const effect of missingFeatPayloads(payload.effects, baked.feats)) payload.effects.push(effect);
+}
+
+// Additive refresh for existing world NPCs: missing attacks lines and feat effects are
+// added, never duplicated and never overwriting tuned stats. Re-running is idempotent.
+async function syncNpcCreatureData(actor, key) {
+  const baked = creatureDataForStarter(key);
+  if (!baked || actor.type !== "npc") return;
+  if (baked.attacks?.length && !(actor.system?.attacks ?? []).length) {
+    await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
+  }
+  const missing = missingFeatPayloads([...actor.effects], baked.feats);
+  if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);
+}
+
 async function upsertActors(source, folders, translationsByKey) {
   let updated = 0;
   for (const entry of source.actors) {
     const key = starterKey(entry.nameKey);
     const payload = localizeTree(entry);
     payload.folder = folders[entry.folder]?.id;
+    applyBakedCreatureStats(payload, key);
     const translations = translationsByKey.get(entry.nameKey);
     // Raw children carry the stable nameKeys; localizeTree strips them, so pair both lists by index.
     const rawChildren = entry.items ?? [];
@@ -346,6 +409,7 @@ async function upsertActors(source, folders, translationsByKey) {
     const update = {img: payload.img, folder: payload.folder, [`flags.${SYSTEM_ID}.starterId`]: key};
     if (!renamedOrCustom(actor, translations)) update.name = payload.name;
     await actor.update(update);
+    await syncNpcCreatureData(actor, key);
 
     for (const [index, childPayload] of (payload.items ?? []).entries()) {
       const rawChild = rawChildren[index];

@@ -35,6 +35,7 @@ Toute nouvelle migration de monde doit :
 | `CONTENT_VERSION = 32` et la mise à jour des sorts/pouvoirs intégrés dans `importStarterContent()` | Complètent les copies déjà apprises avec les descriptions intégrales, caractéristiques, niveaux de puissance et métadonnées des runes. | Les mondes de développement antérieurs à cette correction ont été supprimés. |
 | `CONTENT_VERSION = 33` et `upsertJournals()` | Ajoutent les six Journaux Religions aux mondes de développement déjà installés. | Tous les mondes antérieurs ont reçu ces Journaux, ou ont été supprimés. |
 | `CONTENT_VERSION = 34` et `upsertJournals()` | Ajoutent le dossier Règles et le Journal Taille des créatures, avec les sept tableaux des pages 9-10 du Bestiaire français et le tableau de déplacement dérivé. | En attente dans les mondes existants ; appliquée au prochain démarrage avec cette version du système. |
+| `CONTENT_VERSION = 35` et `syncNpcCreatureData()` dans `upsertActors()` | Ajoutent aux PNJ de départ existants les lignes d'attaques (`system.attacks`) et les effets de capacités manquants, sans doublons ni écrasement des stats. | Tous les PNJ historiques ont reçu ces ajouts, ou ont été supprimés. |
 | `ensureTraitSituationMacro()` et les anciens noms bilingues | Renomment la macro de résistance déjà créée, remplacent son icône et reconnaissent les copies sans flag portant l'ancien nom. | Toutes les macros existantes ont été reconnues ou les anciens mondes ont été supprimés. |
 
 ## `modules/rules/combat-pool-resolver.mjs`

@@ -251,6 +251,15 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         naturalArmor: integer(0, {min: 0})
       }),
       skills: skillsSchema(),
+      // Creature attack lines: each line lists {attack name, value} pairs, exactly the
+      // `attacks` shape of the bestiary source ([[{attack, value}, ...], ...]). A nested
+      // ArrayField is safe here: the data is only stored and read (no sheet form editing
+      // yet), and Foundry cleans/validates nested arrays recursively. Empty default, so
+      // existing worlds validate without any migration.
+      attacks: new fields.ArrayField(new fields.ArrayField(schema({
+        attack: string(),
+        value: integer(0)
+      }), {required: true, initial: []}), {required: true, initial: []}),
       description: html()
     };
   }
