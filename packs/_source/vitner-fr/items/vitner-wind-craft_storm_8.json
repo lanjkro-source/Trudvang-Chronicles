@@ -55,7 +55,7 @@
       {
         "id": "vitner-wind-craft:storm:8:5",
         "cost": 3,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Fait passer la portée de personnelle à 5 mètres (le sort étant centré sur n’importe quel point situé à portée)"
       }
     ],

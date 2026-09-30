@@ -38,12 +38,12 @@
         "id": "vitner-soil-craft:stone-walk:7:2",
         "cost": 6,
         "maxCount": null,
-        "effect": "Increase the duration by 10"
+        "effect": "Increase the duration by 10 minutes"
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:3",
         "cost": 2,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Change the range from Personal to Contact"
       },
       {

@@ -4949,7 +4949,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3.Name` | Sense of Smell | Sens de l’odorat “Ulvakon” |
+| `TRUDVANG.Content.Power.vitner-body-vitner:sense-of-smell:3.Name` | Sense of Smell | Sens de l’odorat |
 
 ## `TRUDVANG.Content.Power.vitner-body-vitner:strengthen:8`
 
@@ -4991,7 +4991,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3.Name` | Increase Sounds | Amplification des sons “Slammerakraftla” |
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:increase-sounds:3.Name` | Increase Sounds | Amplification des sons |
 
 ## `TRUDVANG.Content.Power.vitner-delusion-vitner:invisibility:11`
 
@@ -5021,13 +5021,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0.Name` | Roar | Grondement “Slammera” |
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:roar:0.Name` | Roar | Grondement |
 
 ## `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2.Name` | Shriek | Son aigu “Rifla” |
+| `TRUDVANG.Content.Power.vitner-delusion-vitner:shriek:2.Name` | Shriek | Son aigu |
 
 ## `TRUDVANG.Content.Power.vitner-delusion-vitner:silence:9`
 
@@ -5519,7 +5519,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7.Name` | Water Walk | Marche sur l’eau “Vannvandr” |
+| `TRUDVANG.Content.Power.vitner-water-craft:water-walk:7.Name` | Water Walk | Marche sur l’eau |
 
 ## `TRUDVANG.Content.Power.vitner-water-craft:wave-master:8`
 

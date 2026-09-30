@@ -14,7 +14,7 @@
     "tablet": "Body Vitner",
     "description": "This spell can temporarily increase the enchanted person’s sense of smell. The enchanted receives +3 to all Situation rolls and Skill rolls in which the olfactory ability is a significant factor for success. For example, they can use their sense of smell to determine whether anyone is hiding in the room or even around the corner. The enchanted can detect smells within a range of 50 meters. The spell can also evoke a negative effect, diminishing the sense of smell. The victim receives -3 on all Situation rolls and Skill rolls that require a sense of smell. Any creature enchanted with enough extra levels of power to receive -10 is considered to be completely scent-blind and unable to smell anything for the spell’s duration. The creature exposed to the negative effects of this spell can resist it by succeeding on a Situation roll with a Situation value of 8 (Constitution modifiers apply).",
     "summary": "This spell can temporarily increase the enchanted person’s sense of smell.",
-    "swedishName": "",
+    "swedishName": "Ulvakon",
     "duration": "1 minute",
     "range": "contact",
     "weavingTime": "2 action rounds",

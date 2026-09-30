@@ -49,7 +49,7 @@
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4",
         "cost": 6,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Increase the characteristics from +4 to +6 for the Stormkelt’s allies"
       }
     ],

@@ -49,7 +49,7 @@
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
         "cost": 6,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Increase the character trait of Psych from +4 to +6 for the Stormkelt’s allies"
       }
     ],

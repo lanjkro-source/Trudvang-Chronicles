@@ -49,7 +49,7 @@
       {
         "id": "holy-ealdtradition-halawen-s-offering:fearless:6:4",
         "cost": 6,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Change the bonus granted to the ally from +4 to +6"
       }
     ],

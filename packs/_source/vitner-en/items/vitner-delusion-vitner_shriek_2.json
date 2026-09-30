@@ -14,7 +14,7 @@
     "tablet": "Delusion Vitner",
     "description": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell). The sound is so high-pitched that most humanoids hardly even notice it, hearing little more than a faint beeping. The noise emits from a designated point within range of the spell and affects all objects within a radius of 10 meters and all animals within a radius of 100 meters. Dogs, cats, rats, and similar animals find themselves compelled to run toward the area where the noise is coming from, and once there they frantically make noises of their own in attempts to make the s creeching stop. They are unable to do anything productive during the spell’s duration. The spell is Instant in its basic version, but with levels of power the effect can be Lasting.",
     "summary": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell).",
-    "swedishName": "",
+    "swedishName": "Rifla",
     "duration": "",
     "range": "5 meters",
     "weavingTime": "1 action round",

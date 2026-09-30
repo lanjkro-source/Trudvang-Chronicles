@@ -55,8 +55,8 @@
       {
         "id": "vitner-wind-craft:storm:8:5",
         "cost": 3,
-        "maxCount": null,
-        "effect": "Increase the range by 5 meters"
+        "maxCount": 1,
+        "effect": "Change the range from personal to 5 meters (the spell is centered on any point within range)"
       }
     ],
     "source": "Player's Handbook, p. 139",

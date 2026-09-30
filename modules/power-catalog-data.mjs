@@ -243,7 +243,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-ealdtradition-halawen-s-offering:fearless:6:4",
         "cost": 6,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "lasting",
@@ -1244,7 +1244,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
         "cost": 6,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "lasting",
@@ -1300,7 +1300,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-power-of-enken:night-vision:0:2",
         "cost": 3,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "lasting",
@@ -1346,7 +1346,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-power-of-enken:storm-armor:5:2",
         "cost": 3,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "holy-gerbanis-power-of-enken:storm-armor:5:3",
@@ -1397,7 +1397,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-power-of-enken:wind-shield:3:2",
         "cost": 3,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "holy-gerbanis-power-of-enken:wind-shield:3:3",
@@ -1517,7 +1517,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "holy-gerbanis-strength-of-stormi:jotun-strength:6:4",
         "cost": 6,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "lasting",
@@ -6706,12 +6706,12 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-delusion-vitner:roar:0:0",
         "cost": 1,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "vitner-delusion-vitner:roar:0:1",
         "cost": 5,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "vitner-delusion-vitner:roar:0:2",
@@ -8447,7 +8447,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-soil-craft:stone-walk:7:3",
         "cost": 2,
-        "maxCount": null
+        "maxCount": 1
       },
       {
         "id": "vitner-soil-craft:stone-walk:7:4",
@@ -9724,7 +9724,7 @@ export const POWER_DETAILS_BY_ID = {
       {
         "id": "vitner-wind-craft:storm:8:5",
         "cost": 3,
-        "maxCount": null
+        "maxCount": 1
       }
     ],
     "spellType": "sustained",

@@ -1,5 +1,5 @@
 {
-  "name": "Grondement “Slammera”",
+  "name": "Grondement",
   "type": "spell",
   "img": "icons/svg/daze.svg",
   "flags": {
@@ -14,7 +14,7 @@
     "tablet": "Vitner illusoire",
     "description": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre. L’enchanteur n’entend pas ce bruit luimême, mais toutes les autres personnes situées à proximité, voire celles qui sont loin de lui, peuvent entendre cette déflagration. Quiconque se trouve à moins de 10 mètres de l’enchanteur éprouve soudain une douleur lancinante dans les oreilles qui se mettent à bourdonner, ce qui se traduit par un malus de -4 à toutes les valeurs de compétence et de situation associées à l’audition. L’effet se dissipe au bout de 1d6 minutes.",
     "summary": "Produit un grondement assourdissant qui effraie et perturbe les créatures proches.",
-    "swedishName": "",
+    "swedishName": "Slammera",
     "duration": "",
     "range": "personnelle",
     "weavingTime": "1 tour de jeu",
@@ -25,14 +25,14 @@
       {
         "id": "vitner-delusion-vitner:roar:0:0",
         "cost": 1,
-        "maxCount": null,
-        "effect": "Fait passer la portée de personnelle à* : 10 mètres"
+        "maxCount": 1,
+        "effect": "Fait passer la portée de personnelle à : 10 mètres"
       },
       {
         "id": "vitner-delusion-vitner:roar:0:1",
         "cost": 5,
-        "maxCount": null,
-        "effect": "Fait passer la portée de personnelle à* : 100 mètres"
+        "maxCount": 1,
+        "effect": "Fait passer la portée de personnelle à : 100 mètres"
       },
       {
         "id": "vitner-delusion-vitner:roar:0:2",

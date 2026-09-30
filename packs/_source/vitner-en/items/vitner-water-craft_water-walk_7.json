@@ -14,7 +14,7 @@
     "tablet": "Water Craft",
     "description": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater. When they want to move across the surface of the water, a hard surface is created beneath their feet consisting of compressed vitner (much like with the Solid Water spell). The affected area has a diameter of 1 meter and can hold up to 100 kg (only a creature of normal size will fit). The area moves constantly so it is always located beneath the person, who can therefore decide which direction to walk at a rate of 5 meters per action round. If the enchanted person wants to head down beneath the surface of the water, a sphere of vitner is created around them that makes it possible for them to breathe. They move in this way by floating through the water. If they want to sink to the bottom or rise to the surface, they need only think about it and the sphere begins to move in the desired direction.",
     "summary": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater.",
-    "swedishName": "",
+    "swedishName": "Vannvandr",
     "duration": "2 minutes",
     "range": "contact",
     "weavingTime": "1 minute",

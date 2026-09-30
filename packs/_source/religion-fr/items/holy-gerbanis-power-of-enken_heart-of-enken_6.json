@@ -49,7 +49,7 @@
       {
         "id": "holy-gerbanis-power-of-enken:heart-of-enken:6:4",
         "cost": 6,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Fait passer le trait de Psychisme de : +4 à +6 pour les alliés du stormikjalt"
       }
     ],

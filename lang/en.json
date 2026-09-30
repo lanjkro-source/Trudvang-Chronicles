@@ -6517,7 +6517,7 @@
           "Name": "Sense of Smell",
           "Summary": "This spell can temporarily increase the enchanted person’s sense of smell.",
           "Description": "This spell can temporarily increase the enchanted person’s sense of smell. The enchanted receives +3 to all Situation rolls and Skill rolls in which the olfactory ability is a significant factor for success. For example, they can use their sense of smell to determine whether anyone is hiding in the room or even around the corner. The enchanted can detect smells within a range of 50 meters. The spell can also evoke a negative effect, diminishing the sense of smell. The victim receives -3 on all Situation rolls and Skill rolls that require a sense of smell. Any creature enchanted with enough extra levels of power to receive -10 is considered to be completely scent-blind and unable to smell anything for the spell’s duration. The creature exposed to the negative effects of this spell can resist it by succeeding on a Situation roll with a Situation value of 8 (Constitution modifiers apply).",
-          "SwedishName": "",
+          "SwedishName": "Ulvakon",
           "Duration": "1 minute",
           "Range": "contact",
           "CastingTime": "2 action rounds",
@@ -6642,7 +6642,7 @@
           "Name": "Increase Sounds",
           "Summary": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes.",
           "Description": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes. The spell is woven around the target’s body or the target’s head. If the spell is woven around the body, all sounds caused by movements, such as steps, branches breaking under feet, the rustle of clothing, and so on, are amplified. If the spell is woven around the head, it seems to drown out any other sounds within the area because anything the creature says is heard with perfect clarity, even if it is whispered quietly. If it is woven over someone involuntarily, the target might get into a lot of trouble depending on the situation, because everyone else in the immediate vicinity will believe that the target is screaming.",
-          "SwedishName": "",
+          "SwedishName": "Slammerakraftla",
           "Duration": "5 action rounds",
           "Range": "contact",
           "CastingTime": "1 action round",
@@ -6726,14 +6726,14 @@
           "Name": "Roar",
           "Summary": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap.",
           "Description": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap. The enchanter is not able to hear the sound personally, but everyone in the area and even those who are far away hear the thunderous blast. Anyone within a radius of 10 meters of the enchanter immediately experiences severe pain and ringing in their ears, causing them to suffer -4 on all Skill Values and Situation values related to hearing. The effect expires after 1d6 minutes.",
-          "SwedishName": "",
+          "SwedishName": "Slammera",
           "Duration": "",
           "Range": "personal",
           "CastingTime": "1 action round",
           "DailyActivation": "",
           "PowerLevels": {
-            "0": "Increase the range from Personal to 10 meters. (The roar no longer emanates from the enchanter, but remains the same power otherwise.)",
-            "1": "Increase the range from Personal",
+            "0": "Change the range from personal to 10 meters",
+            "1": "Change the range from personal to 100 meters",
             "2": "Increase the radius by 10 meters."
           }
         },
@@ -6741,7 +6741,7 @@
           "Name": "Shriek",
           "Summary": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell).",
           "Description": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell). The sound is so high-pitched that most humanoids hardly even notice it, hearing little more than a faint beeping. The noise emits from a designated point within range of the spell and affects all objects within a radius of 10 meters and all animals within a radius of 100 meters. Dogs, cats, rats, and similar animals find themselves compelled to run toward the area where the noise is coming from, and once there they frantically make noises of their own in attempts to make the s creeching stop. They are unable to do anything productive during the spell’s duration. The spell is Instant in its basic version, but with levels of power the effect can be Lasting.",
-          "SwedishName": "",
+          "SwedishName": "Rifla",
           "Duration": "",
           "Range": "5 meters",
           "CastingTime": "1 action round",
@@ -7672,7 +7672,7 @@
           "PowerLevels": {
             "0": "Increase the final movement capacity by +1 meter per action round (never higher than the target’s normal movement capacity)",
             "1": "Increase the duration by 1 minute",
-            "2": "Increase the duration by 10",
+            "2": "Increase the duration by 10 minutes",
             "3": "Change the range from Personal to Contact",
             "4": "Weave the spell over a second person who can also go into the stone (only if the range is Contact)"
           }
@@ -8124,7 +8124,7 @@
           "Name": "Water Walk",
           "Summary": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater.",
           "Description": "The spell makes it possible for the enchanted person to walk on water as if it were solid ground, or walk through it underwater. When they want to move across the surface of the water, a hard surface is created beneath their feet consisting of compressed vitner (much like with the Solid Water spell). The affected area has a diameter of 1 meter and can hold up to 100 kg (only a creature of normal size will fit). The area moves constantly so it is always located beneath the person, who can therefore decide which direction to walk at a rate of 5 meters per action round. If the enchanted person wants to head down beneath the surface of the water, a sphere of vitner is created around them that makes it possible for them to breathe. They move in this way by floating through the water. If they want to sink to the bottom or rise to the surface, they need only think about it and the sphere begins to move in the desired direction.",
-          "SwedishName": "",
+          "SwedishName": "Vannvandr",
           "Duration": "2 minutes",
           "Range": "contact",
           "CastingTime": "1 minute",
@@ -8282,7 +8282,7 @@
             "2": "Increase the storm's intensity so that the affected weight increases by 500 kg",
             "3": "Increase the spell's radius by 2 meters",
             "4": "Increase the spell's radius by 10 meters",
-            "5": "Increase the range by 5 meters"
+            "5": "Change the range from personal to 5 meters (the spell is centered on any point within range)"
           }
         },
         "vitner-wind-craft:wind-blast:7": {

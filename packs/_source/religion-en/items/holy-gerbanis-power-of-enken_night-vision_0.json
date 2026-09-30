@@ -37,7 +37,7 @@
       {
         "id": "holy-gerbanis-power-of-enken:night-vision:0:2",
         "cost": 3,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Change the power's range to touch (allowing the Mist Wanderer to apply the effect to someone else)"
       }
     ],

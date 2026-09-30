@@ -43,7 +43,7 @@
       {
         "id": "vitner-soil-craft:stone-walk:7:3",
         "cost": 2,
-        "maxCount": null,
+        "maxCount": 1,
         "effect": "Fait passer la portée de personnelle à contact"
       },
       {
