@@ -174,7 +174,7 @@ test("NPC catalogue ability levels stay editable independently of character adva
   assert.equal(sheet.advancementLocked, true);
 });
 
-for (const name of ["eq", "and", "or", "not", "concat", "checked", "editor", "selectOptions", "localize"]) {
+for (const name of ["eq", "and", "or", "not", "concat", "checked", "editor", "selectOptions", "localize", "signed"]) {
   Handlebars.registerHelper(name, (...args) => {
     const options = args.pop();
     if (name === "eq") return args[0] === args[1];
@@ -184,6 +184,7 @@ for (const name of ["eq", "and", "or", "not", "concat", "checked", "editor", "se
     if (name === "concat") return args.join("");
     if (name === "checked") return args[0] ? "checked" : "";
     if (name === "localize") return game.i18n.format(args[0], options.hash);
+    if (name === "signed") return Number(args[0]) > 0 ? `+${Number(args[0])}` : `${Number(args[0])}`;
     return "";
   });
 }
@@ -203,7 +204,7 @@ test("the real NPC sheet context and template render natural armor without integ
   assert.match(html, /Intégrité.*—/);
   assert.match(html, /Tenace : aucun malus de blessures/);
   assert.doesNotMatch(html, /−3 aux VC/);
-  assert.equal((html.match(/name="system\.traitCurrent\./g) || []).length, 7);
+  assert.equal((html.match(/name="system\.traitCurrent\./g) || []).length, 0, "trait values are static, not editable");
   assert.ok(html.indexOf("npc-health-panel") < html.indexOf("npc-stats-grid"));
   assert.doesNotMatch(html, /TRUDVANG\./, "every visible label must be translated");
 });

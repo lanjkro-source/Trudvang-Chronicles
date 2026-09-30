@@ -29,7 +29,7 @@
             {{#each traitRows as |trait|}}
             <div class="npc-trait-row {{#if trait.modified}}modified{{/if}}" title="{{trait.tooltip}}">
               <button type="button" data-action="roll-trait" data-trait="{{trait.key}}">{{trait.label}}</button>
-              <span class="npc-trait-values"><input name="system.traitCurrent.{{trait.key}}" type="number" step="1" value="{{trait.value}}" aria-label="{{trait.label}} — {{localize 'TRUDVANG.Npc.Current'}}"><output title="{{localize 'TRUDVANG.Npc.Initial'}}">{{trait.baseValue}}</output></span>
+              <span class="npc-trait-values"><strong class="{{#if trait.modified}}modified-value{{/if}}">{{signed trait.value}}</strong>{{#if trait.modified}}<small class="base-value" title="{{localize 'TRUDVANG.Effect.BaseValue'}}">{{signed trait.baseValue}}</small>{{/if}}</span>
             </div>
             {{/each}}
           </div>

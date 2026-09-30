@@ -401,6 +401,7 @@ function applyBakedCreatureStats(payload, key) {
 async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
   const baked = creatureDataForStarter(key);
   if (!baked || actor.type !== "npc") return;
+  console.info(`Trudvang Chronicles | NPC sync: "${actor.name}" key=${key} bakedTree=${baked.skillTree?.length ?? 0} currentTree=${(actor.system?.skillTree ?? []).length}`);
   const updates = {};
   const details = actor.system?.details ?? {};
   if (baked.type && !details.type) updates["system.details.type"] = baked.type;

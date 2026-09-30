@@ -556,8 +556,10 @@
 .trudvang-sheet.npc-sheet .npc-traits-heading { justify-content: flex-start; }
 .trudvang-sheet.npc-sheet .npc-trait-row { display: grid; row-gap: 0; align-items: center; line-height: 1.1; }
 .trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 1px 2px; text-align: left; font-weight: 600; font-size: .75rem; line-height: 1.1; }
-.trudvang-sheet.npc-sheet .npc-trait-values { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
-.trudvang-sheet.npc-sheet .npc-trait-values :is(input, output) { width: 100%; height: 19px; text-align: center; color: var(--trudvang-ink); font-size: .78rem; line-height: 19px; }
+.trudvang-sheet.npc-sheet .npc-trait-values { display: flex; align-items: baseline; justify-content: center; gap: 5px; min-height: 19px; }
+.trudvang-sheet.npc-sheet .npc-trait-values strong { font-size: .85rem; }
+.trudvang-sheet.npc-sheet .npc-trait-values .modified-value { color: var(--trudvang-positive); font-weight: 700; }
+.trudvang-sheet.npc-sheet .npc-trait-values .base-value { color: var(--trudvang-muted); font-size: .62rem; text-decoration: line-through; }
 .trudvang-sheet.npc-sheet .npc-trait-row.modified { background: var(--trudvang-paper-light); }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree, .trudvang-sheet.npc-sheet .npc-skill-branches { list-style: none; margin: 0; padding: 0; }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree > li + li { margin-top: 7px; }
