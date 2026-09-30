@@ -13,7 +13,7 @@ import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
-import { rollGenericSituation } from "./modules/dice.mjs";
+import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
