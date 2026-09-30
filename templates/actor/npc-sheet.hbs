@@ -24,19 +24,16 @@
       </section>
       <div class="npc-stats-grid">
         <section class="panel">
-          <h2>{{localize "TRUDVANG.Section.Traits"}}</h2>
+          <div class="section-heading npc-traits-heading"><button type="button" data-action="reset-traits" title="{{localize 'TRUDVANG.Action.ResetTraits'}}"><i class="fas fa-recycle"></i></button><h2>{{localize "TRUDVANG.Section.CreatureTraits"}}</h2></div>
           <div class="npc-trait-grid">
             {{#each traitRows as |trait|}}
-            <div class="npc-trait-card {{#if trait.modified}}modified{{/if}}">
-              <button type="button" data-action="roll-trait" data-trait="{{trait.key}}" title="{{trait.tooltip}}">{{trait.label}}</button>
-              <div class="npc-trait-values">
-                <span><small>{{localize "TRUDVANG.Npc.Initial"}}</small><output>{{trait.baseValue}}</output></span>
-                <label><small>{{localize "TRUDVANG.Npc.Current"}}</small><input name="system.traitCurrent.{{trait.key}}" type="number" step="1" value="{{trait.value}}" aria-label="{{trait.label}} — {{localize 'TRUDVANG.Npc.Current'}}"></label>
-              </div>
+            <div class="npc-trait-row {{#if trait.modified}}modified{{/if}}" title="{{trait.tooltip}}">
+              <button type="button" data-action="roll-trait" data-trait="{{trait.key}}">{{trait.label}}</button>
+              <input name="system.traitCurrent.{{trait.key}}" type="number" step="1" value="{{trait.value}}" aria-label="{{trait.label}} — {{localize 'TRUDVANG.Npc.Current'}}">
+              <output>{{trait.baseValue}}</output>
             </div>
             {{/each}}
           </div>
-          <details class="npc-reference-editor"><summary>{{localize "TRUDVANG.Npc.EditInitialTraits"}}</summary><div class="npc-reference-fields">{{#each traitRows as |trait|}}<label>{{trait.label}}<input name="system.traits.{{trait.key}}" type="number" step="1" value="{{trait.baseValue}}"></label>{{/each}}</div></details>
         </section>
         <section class="panel npc-skills-panel">
           <h2>{{localize "TRUDVANG.Section.Skills"}}</h2>
@@ -60,7 +57,6 @@
             </li>
             {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoLearnedSkills"}}</li>{{/each}}
           </ul>
-          <details class="npc-reference-editor"><summary>{{localize "TRUDVANG.Npc.EditSkills"}}</summary><div class="npc-reference-fields">{{#each config.skills as |label key|}}<label>{{label}}<input name="system.skills.{{key}}.value" type="number" min="0" step="1" value="{{lookup (lookup ../system.skills key) 'value'}}"></label>{{/each}}</div></details>
         </section>
       </div>
     </div>

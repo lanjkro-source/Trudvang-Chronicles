@@ -1070,6 +1070,13 @@ export class TrudvangActor extends BaseActor {
     return this;
   }
 
+  async resetNpcTraits() {
+    if (this.type !== "npc") return null;
+    const updates = Object.fromEntries(Object.keys(TRUDVANG.traits).map(key => [`system.traitCurrent.${key}`, null]));
+    await this.update(updates);
+    return this;
+  }
+
   async calmFear() {
     if (!this.isOwner) return;
     const before = Number(this.system.resources.fear.current || 0);

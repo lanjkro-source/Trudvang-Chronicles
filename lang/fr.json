@@ -87,6 +87,7 @@
     },
     "Section": {
       "Traits": "Traits de personnage",
+      "CreatureTraits": "Traits de créature",
       "Status": "État",
       "Experience": "Création & Expérience",
       "QuickActions": "Actions Rapides",
@@ -126,6 +127,7 @@
       "RollSurvivalRounds": "Rounds de survie",
       "CalmFear": "Se rasséréner",
       "ResetCombat": "Réinitialiser les points de combat",
+      "ResetTraits": "Remettre les traits à zéro",
       "SpendCombat": "Dépenser des PC",
       "Draw": "Dégainer (10 PC)",
       "DoNothingElse": "Ne rien faire d’autre",

@@ -117,6 +117,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Section.Traits` | Character Traits | Traits de personnage |
+| `TRUDVANG.Section.CreatureTraits` | Creature traits | Traits de créature |
 | `TRUDVANG.Section.Status` | Status | État |
 | `TRUDVANG.Section.Experience` | Creation & Experience | Création & Expérience |
 | `TRUDVANG.Section.QuickActions` | Quick Actions | Actions Rapides |
@@ -159,6 +160,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.RollSurvivalRounds` | Survival rounds | Rounds de survie |
 | `TRUDVANG.Action.CalmFear` | Calm down | Se rasséréner |
 | `TRUDVANG.Action.ResetCombat` | Reset Combat Points | Réinitialiser les points de combat |
+| `TRUDVANG.Action.ResetTraits` | Reset traits to initial values | Remettre les traits à zéro |
 | `TRUDVANG.Action.SpendCombat` | Spend CP | Dépenser des PC |
 | `TRUDVANG.Action.Draw` | Draw (10 CP) | Dégainer (10 PC) |
 | `TRUDVANG.Action.DoNothingElse` | Do nothing else | Ne rien faire d’autre |

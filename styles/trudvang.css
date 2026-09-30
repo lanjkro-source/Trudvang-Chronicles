@@ -553,13 +553,11 @@
 .trudvang-sheet.npc-sheet .status-protection small { margin-left: 5px; }
 .trudvang-sheet.npc-sheet .npc-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 .trudvang-sheet.npc-sheet .npc-trait-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
-.trudvang-sheet.npc-sheet .npc-trait-card { padding: 5px; border: 1px solid var(--trudvang-line); border-radius: 3px; }
-.trudvang-sheet.npc-sheet .npc-trait-card > button { width: 100%; min-height: 22px; font-size: .78rem; text-align: left; font-weight: bold; }
-.trudvang-sheet.npc-sheet .npc-trait-values { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; text-align: center; }
-.trudvang-sheet.npc-sheet .npc-trait-values :is(span, label) { display: grid; gap: 2px; }
-.trudvang-sheet.npc-sheet .npc-trait-values small { color: var(--trudvang-muted); font-size: .65rem; }
-.trudvang-sheet.npc-sheet .npc-trait-values :is(input, output) { width: 100%; height: 25px; text-align: center; color: var(--trudvang-ink); font-size: .85rem; line-height: 25px; }
-.trudvang-sheet.npc-sheet .npc-trait-card.modified { background: var(--trudvang-paper-light); }
+.trudvang-sheet.npc-sheet .npc-traits-heading { justify-content: flex-start; }
+.trudvang-sheet.npc-sheet .npc-trait-row { display: grid; row-gap: 2px; align-items: center; }
+.trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 2px; text-align: left; font-weight: 600; font-size: .78rem; }
+.trudvang-sheet.npc-sheet .npc-trait-row :is(input, output) { width: 100%; height: 25px; text-align: center; color: var(--trudvang-ink); font-size: .85rem; line-height: 25px; }
+.trudvang-sheet.npc-sheet .npc-trait-row.modified { background: var(--trudvang-paper-light); }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree, .trudvang-sheet.npc-sheet .npc-skill-branches { list-style: none; margin: 0; padding: 0; }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree > li + li { margin-top: 7px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches { margin-left: 6px; padding-left: 12px; }
@@ -570,11 +568,6 @@
 .trudvang-sheet.npc-sheet .npc-knowledge-row output { font-size: .78rem; white-space: nowrap; }
 .trudvang-sheet.npc-sheet .npc-skill-root { grid-template-columns: minmax(0, 1fr) auto; font-weight: bold; }
 .trudvang-sheet.npc-sheet .npc-knowledge-edit { padding: 2px; font-size: .65rem; }
-.trudvang-sheet.npc-sheet .npc-reference-editor { margin-top: 10px; padding-top: 6px; border-top: 1px solid var(--trudvang-line); }
-.trudvang-sheet.npc-sheet .npc-reference-editor > summary { cursor: pointer; font-size: .72rem; color: var(--trudvang-muted); }
-.trudvang-sheet.npc-sheet .npc-reference-fields { display: grid; gap: 4px; margin-top: 6px; }
-.trudvang-sheet.npc-sheet .npc-reference-fields label { display: grid; grid-template-columns: minmax(0, 1fr) 45px; align-items: center; gap: 5px; font-size: .75rem; }
-.trudvang-sheet.npc-sheet .npc-reference-fields input { width: 100%; text-align: center; }
 
 .trudvang-sheet.item-sheet .item-fields { display: block; padding: 10px; background: color-mix(in srgb, var(--trudvang-paper) 92%, transparent); border-bottom: 1px solid var(--trudvang-line); }
 .trudvang-sheet.item-sheet .item-fields-title { margin: -2px 0 8px; }

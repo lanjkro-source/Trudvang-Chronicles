@@ -87,6 +87,7 @@
     },
     "Section": {
       "Traits": "Character Traits",
+      "CreatureTraits": "Creature traits",
       "Status": "Status",
       "Experience": "Creation & Experience",
       "QuickActions": "Quick Actions",
@@ -126,6 +127,7 @@
       "RollSurvivalRounds": "Survival rounds",
       "CalmFear": "Calm down",
       "ResetCombat": "Reset Combat Points",
+      "ResetTraits": "Reset traits to initial values",
       "SpendCombat": "Spend CP",
       "Draw": "Draw (10 CP)",
       "DoNothingElse": "Do nothing else",

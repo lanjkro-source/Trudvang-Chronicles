@@ -62,6 +62,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "roll-survival-rounds": TrudvangActorSheet.#onAction,
       "roll-fear-factor": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
+      "reset-traits": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
       "item-parry": TrudvangActorSheet.#onAction,
@@ -408,7 +409,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
-      "item-equip", "item-ready", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete"
+      "item-equip", "item-ready", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
+      "reset-traits"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = target.closest("[data-item-id]")?.dataset.itemId;
@@ -437,6 +439,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-fear-factor": return this.actor.rollFearFactor();
       case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();
+      case "reset-traits": return this.actor.resetNpcTraits();
       case "movement-action": return this.actor.rollCombatMovement();
       case "item-roll": return item?.roll();
       case "item-parry": return item ? this.actor.rollWeaponParry(item) : null;
