@@ -844,7 +844,8 @@
       "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide.",
       "GMOnly": "Seul le maître de jeu peut utiliser cette macro.",
-      "InvalidTraitSituation": "Trait ou valeur de situation invalide."
+      "InvalidTraitSituation": "Trait ou valeur de situation invalide.",
+      "NoControlledActorForTraitRoll": "Contrôlez un personnage ou un PNJ avant de lancer un jet de situation de trait."
     },
     "Description": {
       "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",

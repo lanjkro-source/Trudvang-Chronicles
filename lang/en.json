@@ -844,7 +844,8 @@
       "InvalidCombatMovementCost": "Combat movement costs exactly 2 CP per metre; allocate a positive, even number of CP.",
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",
-      "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON."
+      "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON.",
+      "NoControlledActorForTraitRoll": "Control a character or NPC before rolling a trait situation."
     },
     "Description": {
       "SkillSummary": "{name} is a general skill used as the base value for its related actions and knowledge.",

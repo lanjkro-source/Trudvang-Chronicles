@@ -135,7 +135,7 @@ function attachListeners(message, html) {
       if (!traitKey || !Number.isInteger(sv)) return;
       const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean)
         ?? game.user.character;
-      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
+      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
       const trait = actor.getTraitValue(traitKey);
       const effect = actor.getRollModifier({kind: "trait", traitKey});
       const traitLabel = game.i18n.localize(CONFIG.traits?.[traitKey] ?? traitKey);

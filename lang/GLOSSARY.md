@@ -995,6 +995,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
 | `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
+| `TRUDVANG.Warning.NoControlledActorForTraitRoll` | Control a character or NPC before rolling a trait situation. | Contrôlez un personnage ou un PNJ avant de lancer un jet de situation de trait. |
 
 ## `TRUDVANG.Description`
 
