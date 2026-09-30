@@ -1,5 +1,5 @@
 import { powerItemData, TABLET_CATALOG, tabletItemData } from "./tablet-catalog.mjs";
-import { creatureDataForStarter, featEffectPayload } from "./creature-feats.mjs";
+import { CREATURE_NPC_DATA, creatureDataForStarter, featEffectPayload } from "./creature-feats.mjs";
 import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
@@ -398,6 +398,13 @@ function applyBakedCreatureStats(payload, key) {
 // rows and feat effects are added, never duplicated and never overwriting tuned stats. The extended bestiary fields
 // (details.type/move/bodyMin/armor, initiative.base, description résumé) heal the same
 // way: filled only when empty/absent, so GM-tuned values survive. Re-running is idempotent.
+// Pollution repair: a non-empty tree that exactly matches a DIFFERENT starter's book
+// tree (e.g. actors duplicated from another creature) is overwritten with the own
+// book tree — a GM tune never matches a book tree exactly, so tuned values survive.
+const samePairList = (a, b) => (a ?? []).length === (b ?? []).length
+  && (a ?? []).every((row, i) => row.name === b[i].name && Number(row.value) === Number(b[i].value) && (row.kind ?? null) === (b[i].kind ?? null));
+const sameComboList = (a, b) => (a ?? []).length === (b ?? []).length
+  && (a ?? []).every((combo, i) => samePairList(combo.map(pair => ({...pair, kind: null})), b[i].map(pair => ({...pair, kind: null}))));
 async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
   const baked = creatureDataForStarter(key);
   if (!baked || actor.type !== "npc") return;
@@ -435,6 +442,14 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
   if (baked.skillTree?.length && !(actor.system?.skillTree ?? []).length) {
     await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
   }
+  const currentAttacks = actor.system?.attacks ?? [];
+  const currentTree = actor.system?.skillTree ?? [];
+  const foreignTree = currentTree.length && baked.skillTree?.length && !samePairList(currentTree, baked.skillTree)
+    && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && samePairList(currentTree, other.skillTree));
+  const foreignAttacks = currentAttacks.length && baked.attacks?.length && !sameComboList(currentAttacks, baked.attacks)
+    && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && sameComboList(currentAttacks, other.attacks));
+  if (foreignTree) await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
+  if (foreignAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   const missing = missingFeatPayloads([...actor.effects], baked.feats);
   if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);
 }
