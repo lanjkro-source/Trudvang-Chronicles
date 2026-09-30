@@ -1,19 +1,32 @@
 import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-application.mjs";
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
-import { playerTraitSituationDialog, rollUnder } from "./dice.mjs";
+import {playerTraitSituationDialog} from "./dice.mjs";
+import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse} from "./trait-situation-request.mjs";
+
+const indicatedTraitTokens = new Map();
+
+function clearIndicatedTraitToken(messageId) {
+  const token = indicatedTraitTokens.get(messageId);
+  if (token) token.setTarget(false);
+  indicatedTraitTokens.delete(messageId);
+}
 
 export function registerChatListeners() {
   // renderChatMessageHTML exists since V13 and receives a native HTMLElement; the legacy
   // renderChatMessage (jQuery) variant is deprecated and removed in V16, so only the HTML
   // hook is registered.
   Hooks.on("renderChatMessageHTML", attachListeners);
+  Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
+  Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
+  registerTraitSituationSocket();
 }
 
 function attachListeners(message, html) {
   if (!(html instanceof HTMLElement)) return;
   if (html.dataset.trudvangBound === "true") return;
   html.dataset.trudvangBound = "true";
+  clearIndicatedTraitToken(message.id);
   html.querySelectorAll("[data-action='toggle-roll-details']").forEach(button => {
     const details = button.closest(".chat-card")?.querySelector("[data-roll-details]");
     if (details) {
@@ -130,27 +143,52 @@ function attachListeners(message, html) {
     button.addEventListener("click", async event => {
       event.preventDefault();
       if (button.disabled) return;
-      const traitKey = button.dataset.trait;
-      const sv = Number(button.dataset.sv);
+      const request = message.getFlag("trudvang-chronicles", "traitSituation");
+      const traitKey = request?.traitKey;
+      const sv = Number(request?.sv);
       if (!traitKey || !Number.isInteger(sv)) return;
-      const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean)
-        ?? game.user.character;
+      const controlled = Array.from(canvas.tokens?.controlled || []).find(token =>
+        ["character", "npc"].includes(token.actor?.type) && token.actor.isOwner);
+      const actor = controlled?.actor ?? game.user.character;
       if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActorForTraitRoll"));
+      if (hasTraitSituationResponse(message, actor.uuid)) {
+        return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TraitSituationAlreadyRolled"));
+      }
+      const token = controlled ?? canvas.tokens?.placeables?.find(entry => entry.actor?.uuid === actor.uuid);
       const trait = actor.getTraitValue(traitKey);
       const effect = actor.getRollModifier({kind: "trait", traitKey});
-      const traitLabel = game.i18n.localize(CONFIG.traits?.[traitKey] ?? traitKey);
+      const traitLabel = game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey);
       const title = game.i18n.format("TRUDVANG.Dialog.TraitSituationPlayerTitle", {trait: traitLabel});
-      const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv});
-      if (!options) return;
-      const target = sv + trait + effect + options.modifier;
       button.disabled = true;
       try {
-        await rollUnder({actor, label: traitLabel, target, modifier: options.modifier, kind: "situation", animateWithDiceSoNice: true});
-      } catch (error) {
+        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv});
+        if (!options) return;
+        const status = await requestTraitSituationResponse({message, actor, token, modifier: options.modifier});
+        if (status !== "recorded") ui.notifications.warn(game.i18n.localize(
+          status === "alreadyRolled" ? "TRUDVANG.Warning.TraitSituationAlreadyRolled" : "TRUDVANG.Warning.TraitSituationUnavailable"));
+      } finally {
         button.disabled = false;
-        throw error;
       }
-      button.disabled = false;
+    });
+  });
+  html.querySelectorAll("[data-action='locate-trait-situation-token']").forEach(control => {
+    const resolveToken = () => canvas.tokens?.placeables?.find(token => token.document?.uuid === control.dataset.tokenUuid);
+    const indicate = () => {
+      const token = resolveToken();
+      if (!token || token.isTargeted) return;
+      clearIndicatedTraitToken(message.id);
+      token.setTarget(true, {releaseOthers: false});
+      indicatedTraitTokens.set(message.id, token);
+    };
+    const clear = () => clearIndicatedTraitToken(message.id);
+    control.addEventListener("mouseenter", indicate);
+    control.addEventListener("mouseleave", clear);
+    control.addEventListener("focus", indicate);
+    control.addEventListener("blur", clear);
+    control.addEventListener("click", async event => {
+      event.preventDefault();
+      const token = resolveToken();
+      if (token) await canvas.animatePan({x: token.center.x, y: token.center.y});
     });
   });
 }

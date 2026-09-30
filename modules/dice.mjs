@@ -725,7 +725,7 @@ export async function gmTraitSituationDialog() {
     window: {title: game.i18n.localize("TRUDVANG.Dialog.TraitSituationTitle")},
     content,
     buttons: [
-      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.ShowInChat"), default: true, callback: (event, button, dialog) => {
+      {action: "roll", icon: "fas fa-shield-halved", label: game.i18n.localize("TRUDVANG.Action.ShowInChat"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
         return {
           traitKey: root.querySelector("[name=trait]")?.value,
@@ -766,13 +766,14 @@ export async function requestTraitSituationRoll({traitKey, situationValue} = {})
     label,
     buttonLabel: label,
     traitKey,
-    sv
+    sv,
+    responses: []
   });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
     style: CONST.CHAT_MESSAGE_STYLES.OTHER,
-    flags: {[SYSTEM_ID]: {traitSituation: {traitKey, sv}}}
+    flags: {[SYSTEM_ID]: {traitSituation: {traitKey, sv, responses: []}}}
   });
   return {traitKey, sv};
 }

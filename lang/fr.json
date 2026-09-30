@@ -752,19 +752,28 @@
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modificateur",
       "SituationLabel": "Intitulé",
-      "TraitSituationTitle": "Jet de situation de trait",
+      "TraitSituationTitle": "Provoquer un jet de résistance",
       "TraitSituationTrait": "Trait",
       "TraitSituationSV": "SV",
-      "TraitSituationHint": "Cliquez pour jeter avec votre personnage contrôlé.",
+      "TraitSituationHint": "Sélectionnez votre PJ ou PNJ, puis lancez son jet de résistance.",
       "TraitSituationButton": "Jet de {trait}",
       "TraitSituationPlayerTitle": "Jet de situation {trait}",
       "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modificateur",
-      "TraitSituationPlayerFinal": "SV final"
+      "TraitSituationPlayerFinal": "SV final",
+      "TraitSituationResults": "Résultats des jets de résistance",
+      "TraitSituationTokenHint": "Survolez pour repérer le token ; cliquez pour centrer la vue.",
+      "TraitSituationResult": {
+        "success": "succès",
+        "perfectSuccess": "!succès!",
+        "failure": "échec",
+        "perfectFailure": "!échec!"
+      }
     },
     "Macro": {
       "SituationRoll": "Jet de situation générique",
-      "TraitSituationRoll": "Jet de situation de trait"
+      "TraitSituationRoll": "Provoquer un jet de résistance",
+      "LegacyTraitSituationRoll": "Jet de situation de trait"
     },
     "Roll": {
       "Success": "Succès",
@@ -845,7 +854,9 @@
       "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide.",
       "GMOnly": "Seul le maître de jeu peut utiliser cette macro.",
       "InvalidTraitSituation": "Trait ou valeur de situation invalide.",
-      "NoControlledActorForTraitRoll": "Contrôlez un personnage ou un PNJ avant de lancer un jet de situation de trait."
+      "NoControlledActorForTraitRoll": "Sélectionnez un PJ ou un PNJ avant de lancer un jet de résistance.",
+      "TraitSituationAlreadyRolled": "Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte.",
+      "TraitSituationUnavailable": "Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté."
     },
     "Description": {
       "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",

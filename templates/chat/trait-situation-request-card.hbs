@@ -8,6 +8,21 @@
   </header>
   <p class="card-flavor">{{localize "TRUDVANG.Dialog.TraitSituationHint"}}</p>
   <button type="button" data-action="roll-trait-situation" data-trait="{{traitKey}}" data-sv="{{sv}}">
-    <i class="fas fa-dice-d20"></i> {{buttonLabel}}
+    <i class="fas fa-shield-halved" aria-hidden="true"></i> {{buttonLabel}}
   </button>
+  {{#if responses.length}}
+  <ul class="trait-situation-results" aria-label="{{localize "TRUDVANG.Dialog.TraitSituationResults"}}">
+    {{#each responses}}
+    <li class="trait-situation-result trait-situation-result--{{outcome}}">
+      {{#if tokenUuid}}
+      <button type="button" class="trait-situation-token" data-action="locate-trait-situation-token" data-token-uuid="{{tokenUuid}}" title="{{localize "TRUDVANG.Dialog.TraitSituationTokenHint"}}">{{name}}</button>
+      {{else}}
+      <span class="trait-situation-token-name">{{name}}</span>
+      {{/if}}
+      <strong class="trait-situation-die">{{result}}</strong>
+      <strong class="trait-situation-outcome">{{outcomeLabel}}</strong>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
 </article>

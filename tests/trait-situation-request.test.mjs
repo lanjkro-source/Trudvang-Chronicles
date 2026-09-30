@@ -90,6 +90,7 @@ test("requestTraitSituationRoll posts card with button data", async () => {
   assert.ok(msg.content.includes("data-sv=\"15\""));
   assert.equal(msg.flags["trudvang-chronicles"].traitSituation.traitKey, "strength");
   assert.equal(msg.flags["trudvang-chronicles"].traitSituation.sv, 15);
+  assert.deepEqual(msg.flags["trudvang-chronicles"].traitSituation.responses, []);
 });
 
 test("requestTraitSituationRoll with no args opens GM dialog", async () => {

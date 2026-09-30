@@ -614,6 +614,7 @@ const GENERIC_SITUATION_MACRO_FLAG = "generic-situation";
 const GENERIC_SITUATION_COMMAND = "await game.trudvang.rollGenericSituation();";
 const TRAIT_SITUATION_MACRO_FLAG = "trait-situation";
 const TRAIT_SITUATION_COMMAND = "await game.trudvang.requestTraitSituationRoll();";
+const TRAIT_SITUATION_IMAGE = "systems/trudvang-chronicles/assets/icons/shield-halved.svg";
 
 export async function ensureGenericSituationMacro() {
   try {
@@ -655,18 +656,30 @@ export async function ensureGenericSituationMacro() {
 
 export async function ensureTraitSituationMacro() {
   try {
-    const flagged = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === TRAIT_SITUATION_MACRO_FLAG);
-    if (flagged) return flagged;
     const name = game.i18n.localize("TRUDVANG.Macro.TraitSituationRoll");
-    const translations = await loadTranslations(["TRUDVANG.Macro.TraitSituationRoll"]);
-    const knownNames = translations.get("TRUDVANG.Macro.TraitSituationRoll") ?? new Set([name]);
+    // TEMPORARY WORLD MIGRATION — rename existing resistance macros and adopt
+    // unflagged copies still carrying the old bilingual trait-roll name.
+    const translations = await loadTranslations(["TRUDVANG.Macro.TraitSituationRoll", "TRUDVANG.Macro.LegacyTraitSituationRoll"]);
+    const knownNames = new Set([
+      name,
+      ...(translations.get("TRUDVANG.Macro.TraitSituationRoll") ?? []),
+      ...(translations.get("TRUDVANG.Macro.LegacyTraitSituationRoll") ?? [])
+    ]);
+    const flagged = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === TRAIT_SITUATION_MACRO_FLAG);
+    if (flagged) {
+      const update = {};
+      if (knownNames.has(flagged.name) && flagged.name !== name) update.name = name;
+      if (flagged.img !== TRAIT_SITUATION_IMAGE) update.img = TRAIT_SITUATION_IMAGE;
+      if (Object.keys(update).length) await flagged.update(update);
+      return flagged;
+    }
     const adopted = game.macros.find(macro => macro.type === "script"
       && !macro.getFlag(SYSTEM_ID, "macro")
       && knownNames.has(macro.name));
     if (adopted) {
       const update = {
         command: TRAIT_SITUATION_COMMAND,
-        img: "icons/svg/d20.svg",
+        img: TRAIT_SITUATION_IMAGE,
         [`flags.${SYSTEM_ID}.macro`]: TRAIT_SITUATION_MACRO_FLAG
       };
       if (adopted.name !== name) update.name = name;
@@ -678,7 +691,7 @@ export async function ensureTraitSituationMacro() {
       type: "script",
       scope: "global",
       command: TRAIT_SITUATION_COMMAND,
-      img: "icons/svg/d20.svg",
+      img: TRAIT_SITUATION_IMAGE,
       flags: {[SYSTEM_ID]: {macro: TRAIT_SITUATION_MACRO_FLAG}}
     }]);
     return created;

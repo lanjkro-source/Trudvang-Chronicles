@@ -752,19 +752,28 @@
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modifier",
       "SituationLabel": "Label",
-      "TraitSituationTitle": "Trait situation roll",
+      "TraitSituationTitle": "Request a resistance roll",
       "TraitSituationTrait": "Trait",
       "TraitSituationSV": "SV",
-      "TraitSituationHint": "Click to roll with your controlled character.",
+      "TraitSituationHint": "Select your PC or NPC, then make its resistance roll.",
       "TraitSituationButton": "Roll {trait}",
       "TraitSituationPlayerTitle": "{trait} situation roll",
       "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modifier",
-      "TraitSituationPlayerFinal": "Final SV"
+      "TraitSituationPlayerFinal": "Final SV",
+      "TraitSituationResults": "Resistance roll results",
+      "TraitSituationTokenHint": "Hover to indicate the token; click to center the view.",
+      "TraitSituationResult": {
+        "success": "success",
+        "perfectSuccess": "!success!",
+        "failure": "failure",
+        "perfectFailure": "!failure!"
+      }
     },
     "Macro": {
       "SituationRoll": "Generic situation roll",
-      "TraitSituationRoll": "Trait situation roll"
+      "TraitSituationRoll": "Request a resistance roll",
+      "LegacyTraitSituationRoll": "Trait situation roll"
     },
     "Roll": {
       "Success": "Success",
@@ -845,7 +854,9 @@
       "ExactCombatCost": "This action requires an exact allocation of {cost} CP.",
       "HandsOccupied": "Cannot ready {item}: {conflicts} already occupies one or more required hands.",
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON.",
-      "NoControlledActorForTraitRoll": "Control a character or NPC before rolling a trait situation."
+      "NoControlledActorForTraitRoll": "Select a PC or NPC before making a resistance roll.",
+      "TraitSituationAlreadyRolled": "This PC or NPC has already made its resistance roll on this card.",
+      "TraitSituationUnavailable": "The resistance roll could not be recorded. Check that a GM is connected."
     },
     "Description": {
       "SkillSummary": "{name} is a general skill used as the base value for its related actions and knowledge.",

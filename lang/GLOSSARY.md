@@ -887,22 +887,34 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.GenericSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.GenericSituationModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
-| `TRUDVANG.Dialog.TraitSituationTitle` | Trait situation roll | Jet de situation de trait |
+| `TRUDVANG.Dialog.TraitSituationTitle` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Dialog.TraitSituationTrait` | Trait | Trait |
 | `TRUDVANG.Dialog.TraitSituationSV` | SV | SV |
-| `TRUDVANG.Dialog.TraitSituationHint` | Click to roll with your controlled character. | Cliquez pour jeter avec votre personnage contrôlé. |
+| `TRUDVANG.Dialog.TraitSituationHint` | Select your PC or NPC, then make its resistance roll. | Sélectionnez votre PJ ou PNJ, puis lancez son jet de résistance. |
 | `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} | Jet de {trait} |
 | `TRUDVANG.Dialog.TraitSituationPlayerTitle` | {trait} situation roll | Jet de situation {trait} |
 | `TRUDVANG.Dialog.TraitSituationPlayerSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationPlayerModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.TraitSituationPlayerFinal` | Final SV | SV final |
+| `TRUDVANG.Dialog.TraitSituationResults` | Resistance roll results | Résultats des jets de résistance |
+| `TRUDVANG.Dialog.TraitSituationTokenHint` | Hover to indicate the token; click to center the view. | Survolez pour repérer le token ; cliquez pour centrer la vue. |
+
+## `TRUDVANG.Dialog.TraitSituationResult`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Dialog.TraitSituationResult.success` | success | succès |
+| `TRUDVANG.Dialog.TraitSituationResult.perfectSuccess` | !success! | !succès! |
+| `TRUDVANG.Dialog.TraitSituationResult.failure` | failure | échec |
+| `TRUDVANG.Dialog.TraitSituationResult.perfectFailure` | !failure! | !échec! |
 
 ## `TRUDVANG.Macro`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Macro.SituationRoll` | Generic situation roll | Jet de situation générique |
-| `TRUDVANG.Macro.TraitSituationRoll` | Trait situation roll | Jet de situation de trait |
+| `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
+| `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 
 ## `TRUDVANG.Roll`
 
@@ -995,7 +1007,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
 | `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |
-| `TRUDVANG.Warning.NoControlledActorForTraitRoll` | Control a character or NPC before rolling a trait situation. | Contrôlez un personnage ou un PNJ avant de lancer un jet de situation de trait. |
+| `TRUDVANG.Warning.NoControlledActorForTraitRoll` | Select a PC or NPC before making a resistance roll. | Sélectionnez un PJ ou un PNJ avant de lancer un jet de résistance. |
+| `TRUDVANG.Warning.TraitSituationAlreadyRolled` | This PC or NPC has already made its resistance roll on this card. | Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte. |
+| `TRUDVANG.Warning.TraitSituationUnavailable` | The resistance roll could not be recorded. Check that a GM is connected. | Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté. |
 
 ## `TRUDVANG.Description`
 
