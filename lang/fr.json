@@ -750,10 +750,20 @@
       "GenericSituationTitle": "Jet de situation générique",
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modificateur",
-      "SituationLabel": "Intitulé"
+      "SituationLabel": "Intitulé",
+      "TraitSituationTitle": "Jet de situation de trait",
+      "TraitSituationTrait": "Trait",
+      "TraitSituationSV": "Valeur de situation de base",
+      "TraitSituationHint": "Cliquez pour jeter avec votre personnage contrôlé.",
+      "TraitSituationButton": "Jet de {trait} SV {sv}",
+      "TraitSituationPlayerTitle": "Jet de situation {trait}",
+      "TraitSituationPlayerSV": "Valeur de situation",
+      "TraitSituationPlayerModifier": "Modificateur",
+      "TraitSituationPlayerFinal": "SV final"
     },
     "Macro": {
-      "SituationRoll": "Jet de situation générique"
+      "SituationRoll": "Jet de situation générique",
+      "TraitSituationRoll": "Jet de situation de trait"
     },
     "Roll": {
       "Success": "Succès",
@@ -831,7 +841,9 @@
       "InvalidCombatMovementCost": "Le mouvement de combat coûte exactement 2 PC par mètre ; allouez un nombre positif et pair de PC.",
       "ExactCombatCost": "Cette action exige une allocation exacte de {cost} PC.",
       "HandsOccupied": "Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises.",
-      "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide."
+      "InvalidStageChanges": "Les modifications du palier d'effet {stage} ne constituent pas un JSON valide.",
+      "GMOnly": "Seul le maître de jeu peut utiliser cette macro.",
+      "InvalidTraitSituation": "Trait ou valeur de situation invalide."
     },
     "Description": {
       "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",

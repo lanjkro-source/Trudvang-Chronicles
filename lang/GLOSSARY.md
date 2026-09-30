@@ -886,12 +886,22 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.GenericSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.GenericSituationModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
+| `TRUDVANG.Dialog.TraitSituationTitle` | Trait situation roll | Jet de situation de trait |
+| `TRUDVANG.Dialog.TraitSituationTrait` | Trait | Trait |
+| `TRUDVANG.Dialog.TraitSituationSV` | Base Situation Value | Valeur de situation de base |
+| `TRUDVANG.Dialog.TraitSituationHint` | Click to roll with your controlled character. | Cliquez pour jeter avec votre personnage contrôlé. |
+| `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} SV {sv} | Jet de {trait} SV {sv} |
+| `TRUDVANG.Dialog.TraitSituationPlayerTitle` | {trait} situation roll | Jet de situation {trait} |
+| `TRUDVANG.Dialog.TraitSituationPlayerSV` | Situation Value | Valeur de situation |
+| `TRUDVANG.Dialog.TraitSituationPlayerModifier` | Modifier | Modificateur |
+| `TRUDVANG.Dialog.TraitSituationPlayerFinal` | Final SV | SV final |
 
 ## `TRUDVANG.Macro`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Macro.SituationRoll` | Generic situation roll | Jet de situation générique |
+| `TRUDVANG.Macro.TraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 
 ## `TRUDVANG.Roll`
 
@@ -934,6 +944,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.InvalidFearFactor` | The fear factor must use the form 1d10 or 1d10 (OR 8-10). | Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10). |
 | `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NoControlledActor` | Control a character or NPC before using an extract. | Contrôlez un personnage ou un PNJ avant d’utiliser un extrait. |
+| `TRUDVANG.Warning.GMOnly` | Only the Game Master can use this macro. | Seul le maître de jeu peut utiliser cette macro. |
+| `TRUDVANG.Warning.InvalidTraitSituation` | Invalid trait or situation value. | Trait ou valeur de situation invalide. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |
 | `TRUDVANG.Warning.CannotRollForActor` | You cannot roll for this actor. | Vous ne pouvez pas lancer le jet de cet acteur. |
 | `TRUDVANG.Warning.ActiveSpellLimit` | The active-spell limit has been reached; end one before casting this spell. | La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort. |

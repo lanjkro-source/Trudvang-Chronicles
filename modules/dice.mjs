@@ -705,3 +705,116 @@ export async function rollGenericSituation({target, label, modifier} = {}) {
   });
   return {roll, result, target: finalTarget, success, critical, margin};
 }
+
+/**
+ * GM dialog: pick a trait and a base Situation Value, then post a request card
+ * with a button players click to roll with their controlled character.
+ */
+export async function gmTraitSituationDialog() {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const traits = Object.entries(TRUDVANG.traits).map(([id, label]) => ({id, label: game.i18n.localize(label)}));
+  const traitOptions = traits.map(trait => `<option value="${escapeHtml(trait.id)}">${escapeHtml(trait.label)}</option>`).join("");
+  const content = `<div class="trudvang roll-dialog">
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait"))}</label><select name="trait">${traitOptions}</select></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSV"))}</label><input name="sv" type="number" value="10"></div>
+  </div>`;
+  return DialogClass.wait({
+    window: {title: game.i18n.localize("TRUDVANG.Dialog.TraitSituationTitle")},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {
+          traitKey: root.querySelector("[name=trait]")?.value,
+          situationValue: Number(root.querySelector("[name=sv]")?.value || 0)
+        };
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
+/**
+ * Post a trait situation request card. Called by the GM macro after the dialog,
+ * or directly with explicit arguments. No `rolls` field — Dice So Nice stays silent.
+ */
+export async function requestTraitSituationRoll({traitKey, situationValue} = {}) {
+  if (!game.user.isGM) {
+    ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.GMOnly"));
+    return null;
+  }
+  if (traitKey === undefined && situationValue === undefined) {
+    const answered = await gmTraitSituationDialog();
+    if (!answered) return null;
+    ({traitKey, situationValue} = answered);
+  }
+  if (!TRUDVANG.traits[traitKey] || !Number.isInteger(Number(situationValue))) {
+    ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidTraitSituation"));
+    return null;
+  }
+  const sv = Number(situationValue);
+  const traitLabel = game.i18n.localize(TRUDVANG.traits[traitKey]);
+  const label = game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel, sv});
+  const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/trait-situation-request-card.hbs", {
+    gmName: game.user.name,
+    gmImg: game.user.avatar || "icons/svg/d20.svg",
+    label,
+    buttonLabel: label,
+    traitKey,
+    sv
+  });
+  await ChatMessage.create({
+    speaker: ChatMessage.getSpeaker(),
+    content,
+    style: CONST.CHAT_MESSAGE_STYLES.OTHER,
+    flags: {[SYSTEM_ID]: {traitSituation: {traitKey, sv}}}
+  });
+  return {traitKey, sv};
+}
+
+/**
+ * Player dialog: SV is fixed (chosen by GM), only the modifier is editable.
+ * Shows a live summary of the final SV.
+ */
+export async function playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const trait = Number(traitValue) || 0;
+  const effectModifier = Number(effect) || 0;
+  const base = Number(sv) || 0;
+  const content = `<div class="trudvang roll-dialog trait-roll-dialog">
+    <div class="trait-roll-values">
+      <div class="form-group"><label>${escapeHtml(traitLabel)}</label><input name="trait" type="number" value="${trait}" readonly></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
+    </div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerSV"))}</label><input name="sv" type="number" value="${base}" readonly></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
+    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${base + trait + effectModifier}</strong></p>
+  </div>`;
+  class PlayerTraitDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const target = root.querySelector("[data-final-target]");
+        if (target) target.textContent = base + trait + effectModifier + Number(root.querySelector("[name=modifier]")?.value || 0);
+      };
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return PlayerTraitDialog.wait({
+    window: {title},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+      }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}

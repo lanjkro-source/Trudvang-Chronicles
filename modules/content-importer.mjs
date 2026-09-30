@@ -612,6 +612,8 @@ export async function syncImportedKnowledgeItems({force = false} = {}) {
 // never duplicate it; a macro the GM deleted is recreated on the next GM entry.
 const GENERIC_SITUATION_MACRO_FLAG = "generic-situation";
 const GENERIC_SITUATION_COMMAND = "await game.trudvang.rollGenericSituation();";
+const TRAIT_SITUATION_MACRO_FLAG = "trait-situation";
+const TRAIT_SITUATION_COMMAND = "await game.trudvang.requestTraitSituationRoll();";
 
 export async function ensureGenericSituationMacro() {
   try {
@@ -647,6 +649,41 @@ export async function ensureGenericSituationMacro() {
     return created;
   } catch (error) {
     console.error("Trudvang Chronicles | Generic situation macro creation failed", error);
+    return null;
+  }
+}
+
+export async function ensureTraitSituationMacro() {
+  try {
+    const flagged = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === TRAIT_SITUATION_MACRO_FLAG);
+    if (flagged) return flagged;
+    const name = game.i18n.localize("TRUDVANG.Macro.TraitSituationRoll");
+    const translations = await loadTranslations(["TRUDVANG.Macro.TraitSituationRoll"]);
+    const knownNames = translations.get("TRUDVANG.Macro.TraitSituationRoll") ?? new Set([name]);
+    const adopted = game.macros.find(macro => macro.type === "script"
+      && !macro.getFlag(SYSTEM_ID, "macro")
+      && knownNames.has(macro.name));
+    if (adopted) {
+      const update = {
+        command: TRAIT_SITUATION_COMMAND,
+        img: "icons/svg/d20.svg",
+        [`flags.${SYSTEM_ID}.macro`]: TRAIT_SITUATION_MACRO_FLAG
+      };
+      if (adopted.name !== name) update.name = name;
+      await adopted.update(update);
+      return adopted;
+    }
+    const [created] = await Macro.createDocuments([{
+      name,
+      type: "script",
+      scope: "global",
+      command: TRAIT_SITUATION_COMMAND,
+      img: "icons/svg/d20.svg",
+      flags: {[SYSTEM_ID]: {macro: TRAIT_SITUATION_MACRO_FLAG}}
+    }]);
+    return created;
+  } catch (error) {
+    console.error("Trudvang Chronicles | Trait situation macro creation failed", error);
     return null;
   }
 }

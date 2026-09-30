@@ -1,6 +1,7 @@
 import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-application.mjs";
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
+import { playerTraitSituationDialog, rollUnder } from "./dice.mjs";
 
 export function registerChatListeners() {
   // renderChatMessageHTML exists since V13 and receives a native HTMLElement; the legacy
@@ -123,6 +124,33 @@ function attachListeners(message, html) {
       const result = await applyDamageToDefenseItem({item, damage: button.dataset.damage});
       if (!result) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotApplyDamage"));
       ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DefenseDamageApplied", {item: item.name, damage: result.integrityLoss}));
+    });
+  });
+  html.querySelectorAll("[data-action='roll-trait-situation']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const traitKey = button.dataset.trait;
+      const sv = Number(button.dataset.sv);
+      if (!traitKey || !Number.isInteger(sv)) return;
+      const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean)
+        ?? game.user.character;
+      if (!actor) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
+      const trait = actor.getTraitValue(traitKey);
+      const effect = actor.getRollModifier({kind: "trait", traitKey});
+      const traitLabel = game.i18n.localize(CONFIG.traits?.[traitKey] ?? traitKey);
+      const title = game.i18n.format("TRUDVANG.Dialog.TraitSituationPlayerTitle", {trait: traitLabel});
+      const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv});
+      if (!options) return;
+      const target = sv + trait + effect + options.modifier;
+      button.disabled = true;
+      try {
+        await rollUnder({actor, label: traitLabel, target, modifier: options.modifier, kind: "situation", animateWithDiceSoNice: true});
+      } catch (error) {
+        button.disabled = false;
+        throw error;
+      }
+      button.disabled = false;
     });
   });
 }

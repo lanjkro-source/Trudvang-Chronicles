@@ -750,10 +750,20 @@
       "GenericSituationTitle": "Generic situation roll",
       "GenericSituationSV": "SV",
       "GenericSituationModifier": "Modifier",
-      "SituationLabel": "Label"
+      "SituationLabel": "Label",
+      "TraitSituationTitle": "Trait situation roll",
+      "TraitSituationTrait": "Trait",
+      "TraitSituationSV": "Base Situation Value",
+      "TraitSituationHint": "Click to roll with your controlled character.",
+      "TraitSituationButton": "Roll {trait} SV {sv}",
+      "TraitSituationPlayerTitle": "{trait} situation roll",
+      "TraitSituationPlayerSV": "Situation Value",
+      "TraitSituationPlayerModifier": "Modifier",
+      "TraitSituationPlayerFinal": "Final SV"
     },
     "Macro": {
-      "SituationRoll": "Generic situation roll"
+      "SituationRoll": "Generic situation roll",
+      "TraitSituationRoll": "Trait situation roll"
     },
     "Roll": {
       "Success": "Success",
@@ -784,6 +794,8 @@
       "InvalidFearFactor": "The fear factor must use the form 1d10 or 1d10 (OR 8-10).",
       "NoControlledFearCharacters": "Control at least one character to apply Fear to.",
       "NoControlledActor": "Control a character or NPC before using an extract.",
+      "GMOnly": "Only the Game Master can use this macro.",
+      "InvalidTraitSituation": "Invalid trait or situation value.",
       "NotEnoughPower": "There are not enough points in this power reserve.",
       "CannotRollForActor": "You cannot roll for this actor.",
       "ActiveSpellLimit": "The active-spell limit has been reached; end one before casting this spell.",
