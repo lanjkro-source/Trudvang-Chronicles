@@ -725,7 +725,7 @@ export async function gmTraitSituationDialog() {
     window: {title: game.i18n.localize("TRUDVANG.Dialog.TraitSituationTitle")},
     content,
     buttons: [
-      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.ShowInChat"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
         return {
           traitKey: root.querySelector("[name=trait]")?.value,
