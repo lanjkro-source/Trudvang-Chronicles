@@ -756,7 +756,7 @@
       "TraitSituationTrait": "Trait",
       "TraitSituationSV": "SV",
       "TraitSituationHint": "Cliquez pour jeter avec votre personnage contrôlé.",
-      "TraitSituationButton": "Jet de {trait} SV {sv}",
+      "TraitSituationButton": "Jet de {trait}",
       "TraitSituationPlayerTitle": "Jet de situation {trait}",
       "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modificateur",

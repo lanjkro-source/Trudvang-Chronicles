@@ -891,7 +891,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.TraitSituationTrait` | Trait | Trait |
 | `TRUDVANG.Dialog.TraitSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationHint` | Click to roll with your controlled character. | Cliquez pour jeter avec votre personnage contrôlé. |
-| `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} SV {sv} | Jet de {trait} SV {sv} |
+| `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} | Jet de {trait} |
 | `TRUDVANG.Dialog.TraitSituationPlayerTitle` | {trait} situation roll | Jet de situation {trait} |
 | `TRUDVANG.Dialog.TraitSituationPlayerSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationPlayerModifier` | Modifier | Modificateur |

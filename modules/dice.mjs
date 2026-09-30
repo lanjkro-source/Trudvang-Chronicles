@@ -759,7 +759,7 @@ export async function requestTraitSituationRoll({traitKey, situationValue} = {})
   }
   const sv = Number(situationValue);
   const traitLabel = game.i18n.localize(TRUDVANG.traits[traitKey]);
-  const label = game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel, sv});
+  const label = game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/trait-situation-request-card.hbs", {
     gmName: game.user.name,
     gmImg: game.user.avatar || "icons/svg/d20.svg",

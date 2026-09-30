@@ -756,7 +756,7 @@
       "TraitSituationTrait": "Trait",
       "TraitSituationSV": "SV",
       "TraitSituationHint": "Click to roll with your controlled character.",
-      "TraitSituationButton": "Roll {trait} SV {sv}",
+      "TraitSituationButton": "Roll {trait}",
       "TraitSituationPlayerTitle": "{trait} situation roll",
       "TraitSituationPlayerSV": "SV",
       "TraitSituationPlayerModifier": "Modifier",
