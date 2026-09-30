@@ -7,7 +7,7 @@ import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 34 adds the Rules / Creature Size journal to
 // existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 35;
+const CONTENT_VERSION = 36;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -367,6 +367,23 @@ function applyBakedCreatureStats(payload, key) {
   payload.system.details ??= {};
   if (Number.isFinite(baked.naturalArmor)) payload.system.details.naturalArmor ??= baked.naturalArmor;
   if (baked.fearFactor) payload.system.details.fearFactor ??= baked.fearFactor;
+  if (baked.type && !payload.system.details.type) payload.system.details.type = baked.type;
+  if (baked.move?.length && !(payload.system.details.move ?? []).length) {
+    payload.system.details.move = foundry.utils.deepClone(baked.move);
+  }
+  payload.system.initiative ??= {};
+  if (Number.isFinite(baked.initiativeBase) && !Number.isFinite(payload.system.initiative.base)) {
+    payload.system.initiative.base = baked.initiativeBase;
+  }
+  if (Number.isFinite(baked.bodyMin) && !Number.isFinite(payload.system.details.bodyMin)) {
+    payload.system.details.bodyMin = baked.bodyMin;
+  }
+  if (baked.armor !== undefined && !(payload.system.details.armor ?? []).length) {
+    payload.system.details.armor = foundry.utils.deepClone(baked.armor);
+  }
+  // The baked résumé wins on create so new actors open with the book text even
+  // though starter-content.json still carries the legacy descriptionKey text.
+  if (baked.description) payload.system.description = baked.description;
   if (baked.attacks?.length && !(payload.system.attacks ?? []).length) {
     payload.system.attacks = foundry.utils.deepClone(baked.attacks);
   }
@@ -375,10 +392,37 @@ function applyBakedCreatureStats(payload, key) {
 }
 
 // Additive refresh for existing world NPCs: missing attacks lines and feat effects are
-// added, never duplicated and never overwriting tuned stats. Re-running is idempotent.
-async function syncNpcCreatureData(actor, key) {
+// added, never duplicated and never overwriting tuned stats. The extended bestiary fields
+// (details.type/move/bodyMin/armor, initiative.base, description résumé) heal the same
+// way: filled only when empty/absent, so GM-tuned values survive. Re-running is idempotent.
+async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
   const baked = creatureDataForStarter(key);
   if (!baked || actor.type !== "npc") return;
+  const updates = {};
+  const details = actor.system?.details ?? {};
+  if (baked.type && !details.type) updates["system.details.type"] = baked.type;
+  if (baked.move?.length && !(details.move ?? []).length) {
+    updates["system.details.move"] = foundry.utils.deepClone(baked.move);
+  }
+  if (Number.isFinite(baked.initiativeBase) && !Number.isFinite(actor.system?.initiative?.base)) {
+    updates["system.initiative.base"] = baked.initiativeBase;
+  }
+  // details.bodyMin defaults to 0 in the schema, which no book range uses: 0 still
+  // means "never filled", so only a positive tuned value is preserved.
+  if (Number.isFinite(baked.bodyMin) && !(Number(details.bodyMin) > 0)) {
+    updates["system.details.bodyMin"] = baked.bodyMin;
+  }
+  if (baked.armor?.length && !(details.armor ?? []).length) {
+    updates["system.details.armor"] = foundry.utils.deepClone(baked.armor);
+  }
+  // Description heals only untouched actors: empty or still carrying the legacy starter
+  // text in any shipped language. GM-rewritten résumés are never clobbered.
+  const currentDescription = String(actor.system?.description ?? "");
+  if (baked.description && (!currentDescription.trim()
+    || legacyDescriptions.has(currentDescription) || legacyDescriptions.has(currentDescription.trim()))) {
+    updates["system.description"] = baked.description;
+  }
+  if (Object.keys(updates).length) await actor.update(updates);
   if (baked.attacks?.length && !(actor.system?.attacks ?? []).length) {
     await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   }
@@ -409,7 +453,10 @@ async function upsertActors(source, folders, translationsByKey) {
     const update = {img: payload.img, folder: payload.folder, [`flags.${SYSTEM_ID}.starterId`]: key};
     if (!renamedOrCustom(actor, translations)) update.name = payload.name;
     await actor.update(update);
-    await syncNpcCreatureData(actor, key);
+    // Legacy starter texts in every shipped language: only actors still carrying one
+    // (or nothing) receive the baked résumé; GM-rewritten descriptions are preserved.
+    const legacyDescriptions = translationsByKey.get(entry.system?.descriptionKey) ?? new Set();
+    await syncNpcCreatureData(actor, key, {legacyDescriptions});
 
     for (const [index, childPayload] of (payload.items ?? []).entries()) {
       const rawChild = rawChildren[index];
@@ -846,7 +893,9 @@ export async function importStarterContent({force = false} = {}) {
     const docKeys = [
       ...source.items.filter(entry => !["tablet", "spell", "divineFeat"].includes(entry.type)).map(entry => entry.nameKey),
       ...source.tables.map(entry => entry.nameKey),
-      ...source.actors.flatMap(entry => [entry.nameKey, ...(entry.items ?? []).map(child => child.nameKey)])
+      ...source.actors.flatMap(entry => [entry.nameKey, ...(entry.items ?? []).map(child => child.nameKey)]),
+      // Legacy actor starter texts, used to recognise untouched NPC descriptions during sync.
+      ...source.actors.map(entry => entry.system?.descriptionKey).filter(Boolean)
     ];
     const translationsByKey = await loadTranslations([...folderKeys, ...docKeys]);
 

@@ -13,7 +13,9 @@
 // TrollHeart renders "Cœur de minokks"), Warg->Warg.
 //
 // Body values are the long-standing starter values, verified inside each creature's [min,max]
-// range; combat values likewise predate this file (no single source field). Feat descriptions
+// range; combat values likewise predate this file (no single source field). The extended
+// bestiary fields (type, move, initiativeBase, bodyMin, armor, description résumé) are
+// copied byte-identically from the same JSON. Feat descriptions
 // are French rule quotations as-is: intentionally NOT routed through lang/*.json, so they stay
 // out of lang/GLOSSARY.md (same exclusion as TRUDVANG.Content.Power.*.Summary).
 //
@@ -48,6 +50,24 @@ export const CREATURE_FEAT_SUMMARIES = {
 export const CREATURE_NPC_DATA = {
   "TRUDVANG.Content.Actor.Galtir": {
     "creature": "Galtir",
+    "type": "humanoid",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "1 m",
+        "max": "8 m"
+      }
+    ],
+    "initiativeBase": -1,
+    "bodyMin": 21,
+    "armor": [
+      {
+        "name": "Cuir",
+        "protection": 2,
+        "initiative": -1
+      }
+    ],
+    "description": "C'est un humanoïde un peu plus petit qu'un nain. Son corps trapu et puissant ressemble à un croisement étrange entre un petit troll et un sanglier. Sa tête porcine est armée d'une morsure et de défenses saillantes. Ses membres courts et résilients portent une musculature prompte à la violence. Sa peau dure s'accompagne d'un cuir porté en armure. Son allure obstinée de guerrier des bois le rend immédiatement reconnaissable.",
     "traits": {
       "dexterity": -1,
       "intelligence": -4,
@@ -89,6 +109,23 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.GiantSnake": {
     "creature": "Serpent géant",
+    "type": "other",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "3 m",
+        "max": "24 m"
+      },
+      {
+        "mode": "nage",
+        "distance": "3 m",
+        "max": "24 m"
+      }
+    ],
+    "initiativeBase": -4,
+    "bodyMin": 84,
+    "armor": [],
+    "description": "C'est un serpent colossal au corps allongé qui serpente entre les arbres, les rochers et les eaux. Sa grande tête se relève très au-dessus du sol et son odorat est excellent. Sa peau varie selon la variété : jaune clair presque albinos pour le serpent des forêts, écailles noires aux yeux couleur d'ambre luisante pour le serpent des cavernes, écailles vert foncé tachées de brun comme celles des poissons pour le serpent lacustre. Excellent grimpeur et, pour certaines variétés, excellent nageur, il laisse dépasser son nez de la surface pour respirer. Sa gueule puissante complète son corps constricteur.",
     "traits": {},
     "skills": {
       "fighting": 7
@@ -117,6 +154,18 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.GiantSpider": {
     "creature": "Araignée tisseuse",
+    "type": "other",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "10 m",
+        "max": "50 m"
+      }
+    ],
+    "initiativeBase": -4,
+    "bodyMin": 84,
+    "armor": [],
+    "description": "C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos.",
     "traits": {},
     "skills": {
       "fighting": 8
@@ -149,6 +198,23 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.Gryphon": {
     "creature": "Griffon",
+    "type": "winged quadruped",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "6 m",
+        "max": "18 m"
+      },
+      {
+        "mode": "vol",
+        "distance": "6 m",
+        "max": "36 m"
+      }
+    ],
+    "initiativeBase": -2,
+    "bodyMin": 78,
+    "armor": [],
+    "description": "C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure.",
     "traits": {},
     "skills": {
       "fighting": 6
@@ -180,6 +246,23 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.NightUlm": {
     "creature": "Nattulm",
+    "type": "winged humanoid",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "1 m",
+        "max": "10 m"
+      },
+      {
+        "mode": "vol",
+        "distance": "2 m",
+        "max": "20 m"
+      }
+    ],
+    "initiativeBase": 2,
+    "bodyMin": 22,
+    "armor": [],
+    "description": "C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité.",
     "traits": {},
     "skills": {
       "fighting": 8
@@ -213,6 +296,23 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.ThornBeast": {
     "creature": "Bête épineuse",
+    "type": "winged quadruped",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "6 m",
+        "max": "18 m"
+      },
+      {
+        "mode": "vol",
+        "distance": "12 m",
+        "max": "36 m"
+      }
+    ],
+    "initiativeBase": 4,
+    "bodyMin": 153,
+    "armor": [],
+    "description": "C'est un gigantesque lézard ailé né d'une petite chauve-souris devenue monstrueuse. Son corps ailé de grande envergure culmine à environ deux mètres et demi de haut. Sa gueule est garnie de crocs longs et solides. Ses yeux vides reflètent pendant la nuit une pâle lueur de mort. Son corps pourrit continuellement de l'intérieur et traîne une âcre pestilence de chair morte et de décomposition. Ses pattes griffues et sa morsure puissante complètent sa silhouette de prédateur volant.",
     "traits": {},
     "skills": {
       "fighting": 7
@@ -245,6 +345,24 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.TrollBull": {
     "creature": "Minokks",
+    "type": "humanoid",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "2 m",
+        "max": "16 m"
+      }
+    ],
+    "initiativeBase": 0,
+    "bodyMin": 52,
+    "armor": [
+      {
+        "name": "Armure de fourrure",
+        "protection": 2,
+        "initiative": -1
+      }
+    ],
+    "description": "C'est un grand humanoïde à la musculature très développée. Son corps imposant est couvert d'une fourrure épaisse, plus épaisse au nord. Son torse massif abrite quatre petits estomacs. Son impressionnante tête de taureau est affublée de longues cornes, plus longues à Soj, dont il se sert au combat. Ses bras puissants manient d'imposantes massues de fer. Sa stature de taureau dressé sur deux jambes domine les plaines.",
     "traits": {
       "constitution": 4,
       "strength": 4
@@ -328,6 +446,18 @@ export const CREATURE_NPC_DATA = {
   },
   "TRUDVANG.Content.Actor.Warg": {
     "creature": "Warg",
+    "type": "quadruped",
+    "move": [
+      {
+        "mode": "terrestre",
+        "distance": "4 m",
+        "max": "24 m"
+      }
+    ],
+    "initiativeBase": 2,
+    "bodyMin": 16,
+    "armor": [],
+    "description": "C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes.",
     "traits": {},
     "skills": {
       "fighting": 8

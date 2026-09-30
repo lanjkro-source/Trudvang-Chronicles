@@ -2324,12 +2324,29 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Galtir.Description",
+        "description": "C'est un humanoïde un peu plus petit qu'un nain. Son corps trapu et puissant ressemble à un croisement étrange entre un petit troll et un sanglier. Sa tête porcine est armée d'une morsure et de défenses saillantes. Ses membres courts et résilients portent une musculature prompte à la violence. Sa peau dure s'accompagne d'un cuir porté en armure. Son allure obstinée de guerrier des bois le rend immédiatement reconnaissable.",
         "details": {
           "creatureType": "Humanoid",
           "size": "1/2",
           "age": "15, max 35",
           "fearFactor": "1d5",
-          "naturalArmor": 0
+          "naturalArmor": 0,
+          "type": "humanoid",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "1 m",
+              "max": "8 m"
+            }
+          ],
+          "bodyMin": 21,
+          "armor": [
+            {
+              "name": "Cuir",
+              "protection": 2,
+              "initiative": -1
+            }
+          ]
         },
         "traits": {
           "dexterity": -1,
@@ -2436,12 +2453,28 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.GiantSnake.Description",
+        "description": "C'est un serpent colossal au corps allongé qui serpente entre les arbres, les rochers et les eaux. Sa grande tête se relève très au-dessus du sol et son odorat est excellent. Sa peau varie selon la variété : jaune clair presque albinos pour le serpent des forêts, écailles noires aux yeux couleur d'ambre luisante pour le serpent des cavernes, écailles vert foncé tachées de brun comme celles des poissons pour le serpent lacustre. Excellent grimpeur et, pour certaines variétés, excellent nageur, il laisse dépasser son nez de la surface pour respirer. Sa gueule puissante complète son corps constricteur.",
         "details": {
           "creatureType": "Other",
           "size": "3t",
           "age": "30, max 60",
           "fearFactor": "1d10 (JO 10)",
-          "naturalArmor": 2
+          "naturalArmor": 2,
+          "type": "other",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "3 m",
+              "max": "24 m"
+            },
+            {
+              "mode": "nage",
+              "distance": "3 m",
+              "max": "24 m"
+            }
+          ],
+          "bodyMin": 84,
+          "armor": []
         },
         "resources": {
           "body": {
@@ -2539,12 +2572,23 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.GiantSpider.Description",
+        "description": "C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos.",
         "details": {
           "creatureType": "Other",
           "size": "5t",
           "age": "3,500, max 5,000",
           "fearFactor": "1d10 (JO 8-10)",
-          "naturalArmor": 2
+          "naturalArmor": 2,
+          "type": "other",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "10 m",
+              "max": "50 m"
+            }
+          ],
+          "bodyMin": 84,
+          "armor": []
         },
         "resources": {
           "body": {
@@ -2646,12 +2690,28 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Gryphon.Description",
+        "description": "C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure.",
         "details": {
           "creatureType": "Winged quadruped",
           "size": "3t",
           "age": "25, max 40",
           "fearFactor": "1d10 (JO 10)",
-          "naturalArmor": 1
+          "naturalArmor": 1,
+          "type": "winged quadruped",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "6 m",
+              "max": "18 m"
+            },
+            {
+              "mode": "vol",
+              "distance": "6 m",
+              "max": "36 m"
+            }
+          ],
+          "bodyMin": 78,
+          "armor": []
         },
         "resources": {
           "body": {
@@ -2738,12 +2798,28 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.NightUlm.Description",
+        "description": "C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité.",
         "details": {
           "creatureType": "Winged humanoid",
           "size": "1/2",
           "age": "15, max 25",
           "fearFactor": "1d10 (JO 10)",
-          "naturalArmor": 0
+          "naturalArmor": 0,
+          "type": "winged humanoid",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "1 m",
+              "max": "10 m"
+            },
+            {
+              "mode": "vol",
+              "distance": "2 m",
+              "max": "20 m"
+            }
+          ],
+          "bodyMin": 22,
+          "armor": []
         },
         "resources": {
           "body": {
@@ -2858,12 +2934,28 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.ThornBeast.Description",
+        "description": "C'est un gigantesque lézard ailé né d'une petite chauve-souris devenue monstrueuse. Son corps ailé de grande envergure culmine à environ deux mètres et demi de haut. Sa gueule est garnie de crocs longs et solides. Ses yeux vides reflètent pendant la nuit une pâle lueur de mort. Son corps pourrit continuellement de l'intérieur et traîne une âcre pestilence de chair morte et de décomposition. Ses pattes griffues et sa morsure puissante complètent sa silhouette de prédateur volant.",
         "details": {
           "creatureType": "Winged creature",
           "size": "6t",
           "age": "70, max 150",
           "fearFactor": "1d10 (JO 7-10)",
-          "naturalArmor": 3
+          "naturalArmor": 3,
+          "type": "winged quadruped",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "6 m",
+              "max": "18 m"
+            },
+            {
+              "mode": "vol",
+              "distance": "12 m",
+              "max": "36 m"
+            }
+          ],
+          "bodyMin": 153,
+          "armor": []
         },
         "resources": {
           "body": {
@@ -2965,12 +3057,29 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.TrollBull.Description",
+        "description": "C'est un grand humanoïde à la musculature très développée. Son corps imposant est couvert d'une fourrure épaisse, plus épaisse au nord. Son torse massif abrite quatre petits estomacs. Son impressionnante tête de taureau est affublée de longues cornes, plus longues à Soj, dont il se sert au combat. Ses bras puissants manient d'imposantes massues de fer. Sa stature de taureau dressé sur deux jambes domine les plaines.",
         "details": {
           "creatureType": "Humanoid",
           "size": "2t",
           "age": "40, max 75",
           "fearFactor": "1d10 (JO 10)",
-          "naturalArmor": 2
+          "naturalArmor": 2,
+          "type": "humanoid",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "2 m",
+              "max": "16 m"
+            }
+          ],
+          "bodyMin": 52,
+          "armor": [
+            {
+              "name": "Armure de fourrure",
+              "protection": 2,
+              "initiative": -1
+            }
+          ]
         },
         "traits": {
           "constitution": 4,
@@ -3123,12 +3232,23 @@
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Warg.Description",
+        "description": "C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes.",
         "details": {
           "creatureType": "Quadruped",
           "size": "1/2",
           "age": "8, max 18",
           "fearFactor": "1d10",
-          "naturalArmor": 0
+          "naturalArmor": 0,
+          "type": "quadruped",
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "4 m",
+              "max": "24 m"
+            }
+          ],
+          "bodyMin": 16,
+          "armor": []
         },
         "resources": {
           "body": {

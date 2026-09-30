@@ -248,7 +248,25 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         size: string("1t"),
         age: string(),
         fearFactor: string(),
-        naturalArmor: integer(0, {min: 0})
+        naturalArmor: integer(0, {min: 0}),
+        // Bestiary morphology (humanoid/winged humanoid/quadruped/winged quadruped/bird/entity/other).
+        type: string(),
+        // Bestiary movement lines: {mode, cost, distance, max}. Cost is kept for
+        // forward compatibility (current book lines only carry mode/distance/max).
+        move: new fields.ArrayField(schema({
+          mode: string(),
+          cost: string(),
+          distance: string(),
+          max: string()
+        }), {required: true, initial: []}),
+        // Book body-point range minimum; the played value lives in resources.body.
+        bodyMin: integer(0, {min: 0}),
+        // Book armor list: {name, protection, initiative modifier}.
+        armor: new fields.ArrayField(schema({
+          name: string(),
+          protection: integer(0),
+          initiative: integer(0)
+        }), {required: true, initial: []})
       }),
       skills: skillsSchema(),
       // Creature attack lines: each line lists {attack name, value} pairs, exactly the
