@@ -36,6 +36,7 @@
         </section>
         <section class="panel npc-skills-panel">
           <h2>{{localize "TRUDVANG.Section.Skills"}}</h2>
+          {{#if npcBookSkills.length}}<div class="npc-book-skills">{{#each npcBookSkills as |skill|}}<div class="npc-knowledge-row npc-book-skill kind-{{skill.kind}}"><span>{{skill.name}}</span><output>{{skill.value}}</output></div>{{/each}}</div>{{/if}}
           <ul class="npc-knowledge-tree">
             {{#each npcSkillTrees as |tree|}}
             <li title="{{tree.label}}">
@@ -54,7 +55,7 @@
               </ul>{{/if}}
               {{#each tree.unassigned as |node|}}<div class="npc-knowledge-row" data-item-id="{{node.item.id}}"><button type="button" data-action="item-roll" title="{{node.calculation}}">{{node.item.name}}</button><output>{{node.level}}</output><button type="button" class="npc-knowledge-edit" data-action="item-edit" title="{{localize 'TRUDVANG.Action.Edit'}}"><i class="fas fa-pen"></i></button></div>{{/each}}
             </li>
-            {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoLearnedSkills"}}</li>{{/each}}
+            {{else}}{{#unless npcBookSkills.length}}<li class="empty">{{localize "TRUDVANG.Npc.NoLearnedSkills"}}</li>{{/unless}}{{/each}}
           </ul>
         </section>
       </div>

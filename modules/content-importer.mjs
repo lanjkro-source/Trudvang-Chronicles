@@ -7,7 +7,7 @@ import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 34 adds the Rules / Creature Size journal to
 // existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 36;
+const CONTENT_VERSION = 37;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -387,12 +387,15 @@ function applyBakedCreatureStats(payload, key) {
   if (baked.attacks?.length && !(payload.system.attacks ?? []).length) {
     payload.system.attacks = foundry.utils.deepClone(baked.attacks);
   }
+  if (baked.skillTree?.length && !(payload.system.skillTree ?? []).length) {
+    payload.system.skillTree = foundry.utils.deepClone(baked.skillTree);
+  }
   payload.effects ??= [];
   for (const effect of missingFeatPayloads(payload.effects, baked.feats)) payload.effects.push(effect);
 }
 
-// Additive refresh for existing world NPCs: missing attacks lines and feat effects are
-// added, never duplicated and never overwriting tuned stats. The extended bestiary fields
+// Additive refresh for existing world NPCs: missing attacks lines, book skill-tree
+// rows and feat effects are added, never duplicated and never overwriting tuned stats. The extended bestiary fields
 // (details.type/move/bodyMin/armor, initiative.base, description résumé) heal the same
 // way: filled only when empty/absent, so GM-tuned values survive. Re-running is idempotent.
 async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
@@ -425,6 +428,11 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
   if (Object.keys(updates).length) await actor.update(updates);
   if (baked.attacks?.length && !(actor.system?.attacks ?? []).length) {
     await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
+  }
+  // Book skill tree heals the same additive way: filled only when empty, so a
+  // GM-tuned tree is never clobbered. Re-running is idempotent.
+  if (baked.skillTree?.length && !(actor.system?.skillTree ?? []).length) {
+    await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
   }
   const missing = missingFeatPayloads([...actor.effects], baked.feats);
   if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);

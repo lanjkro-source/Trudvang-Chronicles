@@ -2403,6 +2403,63 @@
               "value": 7
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Savoir-faire",
+            "value": 5,
+            "kind": "skill"
+          },
+          {
+            "name": "Divertissement",
+            "value": 3,
+            "kind": "skill"
+          },
+          {
+            "name": "Combat",
+            "value": 4,
+            "kind": "skill"
+          },
+          {
+            "name": "Combat armé",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Armes légères à une main",
+            "value": 1,
+            "kind": "specialty"
+          },
+          {
+            "name": "Connaissances",
+            "value": 3,
+            "kind": "skill"
+          },
+          {
+            "name": "Langage",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Langue maternelle (bastjumal)",
+            "value": 1,
+            "kind": "specialty"
+          },
+          {
+            "name": "Arts des ombres",
+            "value": 7,
+            "kind": "skill"
+          },
+          {
+            "name": "Discrétion",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Camouflage et dissimulation",
+            "value": 3,
+            "kind": "specialty"
+          }
         ]
       },
       "items": [],
@@ -2509,6 +2566,13 @@
               "value": 8
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 7,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],
@@ -2627,6 +2691,13 @@
               "value": 8
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 8,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],
@@ -2750,6 +2821,13 @@
               "value": 8
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 6,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],
@@ -2858,6 +2936,13 @@
               "value": 8
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 8,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],
@@ -2994,6 +3079,13 @@
               "value": 7
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 7,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],
@@ -3184,6 +3276,118 @@
               "value": 7
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Agilité",
+            "value": 9,
+            "kind": "skill"
+          },
+          {
+            "name": "Divertissement",
+            "value": 2,
+            "kind": "skill"
+          },
+          {
+            "name": "Foi",
+            "value": 5,
+            "kind": "skill"
+          },
+          {
+            "name": "Arts des ombres",
+            "value": 6,
+            "kind": "skill"
+          },
+          {
+            "name": "Nature",
+            "value": 8,
+            "kind": "skill"
+          },
+          {
+            "name": "Savoir-faire",
+            "value": 7,
+            "kind": "skill"
+          },
+          {
+            "name": "Artisanat",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Matériaux durs",
+            "value": 2,
+            "kind": "specialty"
+          },
+          {
+            "name": "Matériaux souples",
+            "value": 2,
+            "kind": "specialty"
+          },
+          {
+            "name": "Combat",
+            "value": 10,
+            "kind": "skill"
+          },
+          {
+            "name": "Combat armé",
+            "value": 3,
+            "kind": "discipline"
+          },
+          {
+            "name": "Armes lourdes à une main",
+            "value": 4,
+            "kind": "specialty"
+          },
+          {
+            "name": "Porteur de bouclier",
+            "value": 2,
+            "kind": "specialty"
+          },
+          {
+            "name": "Armes à deux mains",
+            "value": 3,
+            "kind": "specialty"
+          },
+          {
+            "name": "Expérience du combat",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Porteur d'armure",
+            "value": 1,
+            "kind": "specialty"
+          },
+          {
+            "name": "Combattant",
+            "value": 2,
+            "kind": "specialty"
+          },
+          {
+            "name": "Combat à mains nues",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Bagarre",
+            "value": 3,
+            "kind": "specialty"
+          },
+          {
+            "name": "Connaissances",
+            "value": 5,
+            "kind": "skill"
+          },
+          {
+            "name": "Langage",
+            "value": 1,
+            "kind": "discipline"
+          },
+          {
+            "name": "Langue maternelle (bastjumal)",
+            "value": 3,
+            "kind": "specialty"
+          }
         ]
       },
       "items": [],
@@ -3297,6 +3501,13 @@
               "value": 10
             }
           ]
+        ],
+        "skillTree": [
+          {
+            "name": "Combat",
+            "value": 8,
+            "kind": "skill"
+          }
         ]
       },
       "items": [],

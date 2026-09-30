@@ -14,7 +14,8 @@
 //
 // Body values are the long-standing starter values, verified inside each creature's [min,max]
 // range; combat values likewise predate this file (no single source field). The extended
-// bestiary fields (type, move, initiativeBase, bodyMin, armor, description résumé) are
+// bestiary fields (type, move, initiativeBase, bodyMin, armor, description résumé) and the
+// book skill trees (skillTree: flat name/value/kind rows in book order) are
 // copied byte-identically from the same JSON. Feat descriptions
 // are French rule quotations as-is: intentionally NOT routed through lang/*.json, so they stay
 // out of lang/GLOSSARY.md (same exclusion as TRUDVANG.Content.Power.*.Summary).
@@ -80,6 +81,19 @@ export const CREATURE_NPC_DATA = {
       "knowledge": 3,
       "shadowArts": 7
     },
+    "skillTree": [
+        {"name": "Savoir-faire", "value": 5, "kind": "skill"},
+        {"name": "Divertissement", "value": 3, "kind": "skill"},
+        {"name": "Combat", "value": 4, "kind": "skill"},
+        {"name": "Combat armé", "value": 1, "kind": "discipline"},
+        {"name": "Armes légères à une main", "value": 1, "kind": "specialty"},
+        {"name": "Connaissances", "value": 3, "kind": "skill"},
+        {"name": "Langage", "value": 1, "kind": "discipline"},
+        {"name": "Langue maternelle (bastjumal)", "value": 1, "kind": "specialty"},
+        {"name": "Arts des ombres", "value": 7, "kind": "skill"},
+        {"name": "Discrétion", "value": 1, "kind": "discipline"},
+        {"name": "Camouflage et dissimulation", "value": 3, "kind": "specialty"}
+      ],
     "body": 23,
     "combat": 10,
     "naturalArmor": 0,
@@ -130,6 +144,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 7
     },
+    "skillTree": [
+        {"name": "Combat", "value": 7, "kind": "skill"}
+      ],
     "body": 95,
     "combat": 18,
     "naturalArmor": 2,
@@ -170,6 +187,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 8
     },
+    "skillTree": [
+        {"name": "Combat", "value": 8, "kind": "skill"}
+      ],
     "body": 95,
     "combat": 26,
     "naturalArmor": 2,
@@ -219,6 +239,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 6
     },
+    "skillTree": [
+        {"name": "Combat", "value": 6, "kind": "skill"}
+      ],
     "body": 87,
     "combat": 20,
     "naturalArmor": 1,
@@ -267,6 +290,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 8
     },
+    "skillTree": [
+        {"name": "Combat", "value": 8, "kind": "skill"}
+      ],
     "body": 25,
     "combat": 19,
     "naturalArmor": 0,
@@ -317,6 +343,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 7
     },
+    "skillTree": [
+        {"name": "Combat", "value": 7, "kind": "skill"}
+      ],
     "body": 171,
     "combat": 27,
     "naturalArmor": 3,
@@ -377,6 +406,30 @@ export const CREATURE_NPC_DATA = {
       "fighting": 10,
       "knowledge": 5
     },
+    "skillTree": [
+        {"name": "Agilité", "value": 9, "kind": "skill"},
+        {"name": "Divertissement", "value": 2, "kind": "skill"},
+        {"name": "Foi", "value": 5, "kind": "skill"},
+        {"name": "Arts des ombres", "value": 6, "kind": "skill"},
+        {"name": "Nature", "value": 8, "kind": "skill"},
+        {"name": "Savoir-faire", "value": 7, "kind": "skill"},
+        {"name": "Artisanat", "value": 1, "kind": "discipline"},
+        {"name": "Matériaux durs", "value": 2, "kind": "specialty"},
+        {"name": "Matériaux souples", "value": 2, "kind": "specialty"},
+        {"name": "Combat", "value": 10, "kind": "skill"},
+        {"name": "Combat armé", "value": 3, "kind": "discipline"},
+        {"name": "Armes lourdes à une main", "value": 4, "kind": "specialty"},
+        {"name": "Porteur de bouclier", "value": 2, "kind": "specialty"},
+        {"name": "Armes à deux mains", "value": 3, "kind": "specialty"},
+        {"name": "Expérience du combat", "value": 1, "kind": "discipline"},
+        {"name": "Porteur d'armure", "value": 1, "kind": "specialty"},
+        {"name": "Combattant", "value": 2, "kind": "specialty"},
+        {"name": "Combat à mains nues", "value": 1, "kind": "discipline"},
+        {"name": "Bagarre", "value": 3, "kind": "specialty"},
+        {"name": "Connaissances", "value": 5, "kind": "skill"},
+        {"name": "Langage", "value": 1, "kind": "discipline"},
+        {"name": "Langue maternelle (bastjumal)", "value": 3, "kind": "specialty"}
+      ],
     "body": 58,
     "combat": 24,
     "naturalArmor": 2,
@@ -462,6 +515,9 @@ export const CREATURE_NPC_DATA = {
     "skills": {
       "fighting": 8
     },
+    "skillTree": [
+        {"name": "Combat", "value": 8, "kind": "skill"}
+      ],
     "body": 18,
     "combat": 20,
     "naturalArmor": 0,

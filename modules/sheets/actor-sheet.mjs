@@ -331,7 +331,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       };
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
-    if (this.actor.type === "npc") context.npcSkillTrees = npcSkillTrees(context.skillTrees);
+    if (this.actor.type === "npc") {
+      context.npcSkillTrees = npcSkillTrees(context.skillTrees);
+      // Book skill tree: display-only rows (no items, no rolls), in book order.
+      context.npcBookSkills = (this.actor.system.skillTree ?? []).map(entry => ({name: entry.name, value: Number(entry.value || 0), kind: entry.kind}));
+    }
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
     context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
     context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;

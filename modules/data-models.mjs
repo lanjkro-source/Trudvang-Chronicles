@@ -269,6 +269,14 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         }), {required: true, initial: []})
       }),
       skills: skillsSchema(),
+      // Book skill tree (flat, tree-ordered): display-only rows on the NPC sheet for
+      // creatures whose book skills are not embedded ability items. Empty default, so
+      // existing worlds validate without any migration.
+      skillTree: new fields.ArrayField(schema({
+        name: string(),
+        value: integer(0),
+        kind: new fields.StringField({required: true, nullable: false, initial: "skill", choices: ["skill", "discipline", "specialty"]})
+      }), {required: true, initial: []}),
       // Creature attack lines: each line lists {attack name, value} pairs, exactly the
       // `attacks` shape of the bestiary source ([[{attack, value}, ...], ...]). A nested
       // ArrayField is safe here: the data is only stored and read (no sheet form editing
