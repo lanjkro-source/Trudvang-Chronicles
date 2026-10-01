@@ -14,7 +14,7 @@
 //
 // Body values are the long-standing starter values, verified inside each creature's [min,max]
 // range; combat values likewise predate this file (no single source field). The extended
-// bestiary fields (type, move, initiativeBase, bodyMin, armor, description résumé) and the
+// bestiary fields (type, move, initiativeBase, bodyMin/bodyMax, armor, description résumé) and the
 // book skill trees (skillTree: flat name/value/kind rows in book order) are
 // copied byte-identically from the same JSON. Feat descriptions
 // are French rule quotations as-is: intentionally NOT routed through lang/*.json, so they stay
@@ -61,6 +61,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": -1,
     "bodyMin": 21,
+    "bodyMax": 26,
     "armor": [
       {
         "name": "Cuir",
@@ -138,6 +139,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": -4,
     "bodyMin": 84,
+    "bodyMax": 105,
     "armor": [],
     "description": "C'est un serpent colossal au corps allongé qui serpente entre les arbres, les rochers et les eaux. Sa grande tête se relève très au-dessus du sol et son odorat est excellent. Sa peau varie selon la variété : jaune clair presque albinos pour le serpent des forêts, écailles noires aux yeux couleur d'ambre luisante pour le serpent des cavernes, écailles vert foncé tachées de brun comme celles des poissons pour le serpent lacustre. Excellent grimpeur et, pour certaines variétés, excellent nageur, il laisse dépasser son nez de la surface pour respirer. Sa gueule puissante complète son corps constricteur.",
     "traits": {},
@@ -181,6 +183,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": -4,
     "bodyMin": 84,
+    "bodyMax": 105,
     "armor": [],
     "description": "C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos.",
     "traits": {},
@@ -233,6 +236,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": -2,
     "bodyMin": 78,
+    "bodyMax": 96,
     "armor": [],
     "description": "C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure.",
     "traits": {},
@@ -284,6 +288,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": 2,
     "bodyMin": 22,
+    "bodyMax": 27,
     "armor": [],
     "description": "C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité.",
     "traits": {},
@@ -337,6 +342,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": 4,
     "bodyMin": 153,
+    "bodyMax": 188,
     "armor": [],
     "description": "C'est un gigantesque lézard ailé né d'une petite chauve-souris devenue monstrueuse. Son corps ailé de grande envergure culmine à environ deux mètres et demi de haut. Sa gueule est garnie de crocs longs et solides. Ses yeux vides reflètent pendant la nuit une pâle lueur de mort. Son corps pourrit continuellement de l'intérieur et traîne une âcre pestilence de chair morte et de décomposition. Ses pattes griffues et sa morsure puissante complètent sa silhouette de prédateur volant.",
     "traits": {},
@@ -384,6 +390,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": 0,
     "bodyMin": 52,
+    "bodyMax": 64,
     "armor": [
       {
         "name": "Armure de fourrure",
@@ -509,6 +516,7 @@ export const CREATURE_NPC_DATA = {
     ],
     "initiativeBase": 2,
     "bodyMin": 16,
+    "bodyMax": 20,
     "armor": [],
     "description": "C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes.",
     "traits": {},

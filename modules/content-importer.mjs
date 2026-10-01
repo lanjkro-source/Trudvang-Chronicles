@@ -5,9 +5,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 38 normalizes weapon range.short/long to
-// finite integers on existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 38;
+// TEMPORARY WORLD MIGRATION — version 39 adds the bestiary's upper Body Point
+// bound to existing starter NPCs, without changing their current or played maximum PS.
+const CONTENT_VERSION = 39;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -378,6 +378,9 @@ function applyBakedCreatureStats(payload, key) {
   if (Number.isFinite(baked.bodyMin) && !Number.isFinite(payload.system.details.bodyMin)) {
     payload.system.details.bodyMin = baked.bodyMin;
   }
+  if (Number.isFinite(baked.bodyMax) && !Number.isFinite(payload.system.details.bodyMax)) {
+    payload.system.details.bodyMax = baked.bodyMax;
+  }
   if (baked.armor !== undefined && !(payload.system.details.armor ?? []).length) {
     payload.system.details.armor = foundry.utils.deepClone(baked.armor);
   }
@@ -422,6 +425,11 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
   // means "never filled", so only a positive tuned value is preserved.
   if (Number.isFinite(baked.bodyMin) && !(Number(details.bodyMin) > 0)) {
     updates["system.details.bodyMin"] = baked.bodyMin;
+  }
+  // TEMPORARY WORLD MIGRATION — pre-39 NPCs have no bestiary upper bound.
+  // Preserve positive custom bounds and never overwrite resources.body.max.
+  if (Number.isFinite(baked.bodyMax) && !(Number(details.bodyMax) > 0)) {
+    updates["system.details.bodyMax"] = baked.bodyMax;
   }
   if (baked.armor?.length && !(details.armor ?? []).length) {
     updates["system.details.armor"] = foundry.utils.deepClone(baked.armor);

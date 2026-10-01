@@ -10,7 +10,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, res
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
-import {ignoresWoundPenalties} from "../rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcHealthRange} from "../rules/npc-summary.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -1128,6 +1128,29 @@ export class TrudvangActor extends BaseActor {
   }
 
   /** Roll the final life-spark duration for a dying character. */
+  async rollNpcHealth() {
+    if (this.type !== "npc" || !this.isOwner) return null;
+    const {min, max, valid} = npcHealthRange(this);
+    if (!valid) return null;
+    const roll = new Roll(max === min ? `${min}` : `1d${max - min + 1} + ${min - 1}`);
+    await roll.evaluate();
+    const health = Number(roll.total);
+    const effectiveMax = Math.max(1, health + Number(this.system.modifiers?.bodyMax || 0));
+    await this.update({
+      "system.details.bodyMin": min,
+      "system.details.bodyMax": max,
+      "system.resources.body.max": health,
+      "system.resources.body.value": effectiveMax - Number(this.system.modifiers?.bodyValue || 0),
+      "system.survivalRounds": -1
+    });
+    await ChatMessage.create({
+      speaker: ChatMessage.getSpeaker({actor: this}),
+      content: `<p class="trudvang">${escapeHtml(game.i18n.format("TRUDVANG.Npc.HealthRolled", {actor: this.name, health, min, max}))}</p>`,
+      rolls: [roll]
+    });
+    return {roll, health};
+  }
+
   async rollSurvivalRounds() {
     if (!this.isOwner || Number(this.system.resources.body.current || 0) > 0) return null;
     const roll = new Roll(`1d6 + ${this.getTraitValue("constitution")}`);

@@ -2340,6 +2340,7 @@
             }
           ],
           "bodyMin": 21,
+          "bodyMax": 26,
           "armor": [
             {
               "name": "Cuir",
@@ -2531,6 +2532,7 @@
             }
           ],
           "bodyMin": 84,
+          "bodyMax": 105,
           "armor": []
         },
         "resources": {
@@ -2652,6 +2654,7 @@
             }
           ],
           "bodyMin": 84,
+          "bodyMax": 105,
           "armor": []
         },
         "resources": {
@@ -2782,6 +2785,7 @@
             }
           ],
           "bodyMin": 78,
+          "bodyMax": 96,
           "armor": []
         },
         "resources": {
@@ -2897,6 +2901,7 @@
             }
           ],
           "bodyMin": 22,
+          "bodyMax": 27,
           "armor": []
         },
         "resources": {
@@ -3040,6 +3045,7 @@
             }
           ],
           "bodyMin": 153,
+          "bodyMax": 188,
           "armor": []
         },
         "resources": {
@@ -3165,6 +3171,7 @@
             }
           ],
           "bodyMin": 52,
+          "bodyMax": 64,
           "armor": [
             {
               "name": "Armure de fourrure",
@@ -3452,6 +3459,7 @@
             }
           ],
           "bodyMin": 16,
+          "bodyMax": 20,
           "armor": []
         },
         "resources": {

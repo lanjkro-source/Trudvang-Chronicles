@@ -9,6 +9,29 @@ export function npcTraitEdit(actor, key, shown) {
   return Number(shown) - effect;
 }
 
+/** Keep the bestiary range separate from the maximum rolled for this individual. */
+export function npcHealthRange(actor) {
+  const details = actor.system.details ?? {};
+  const playedMax = Number(actor._source?.system.resources?.body?.max ?? actor.system.resources?.body?.max ?? 1);
+  const min = Number(details.bodyMin) > 0 ? Number(details.bodyMin) : playedMax;
+  const max = Number(details.bodyMax) > 0 ? Number(details.bodyMax) : playedMax;
+  return {min, max, valid: Number.isInteger(min) && Number.isInteger(max) && min > 0 && max >= min};
+}
+
+/** Present book distances as recorded, without inventing missing movement rates. */
+export function npcMovementRows(system, {localize}) {
+  const modes = {terrestre: "land", land: "land", walking: "land", vol: "flight", flight: "flight", flying: "flight",
+    nage: "swimming", swimming: "swimming", spécial: "special", special: "special"};
+  const rows = system.details?.move ?? [];
+  if (!rows.length) return [{mode: localize("TRUDVANG.Npc.MovementModes.land"), distance: "—",
+    max: `${Number(system.movement?.current || 0)} m`}];
+  return Array.from(rows, row => {
+    const modeKey = modes[String(row.mode || "").trim().toLocaleLowerCase()];
+    return {mode: modeKey ? localize(`TRUDVANG.Npc.MovementModes.${modeKey}`) : row.mode,
+      distance: row.distance || "—", max: row.max || "—"};
+  });
+}
+
 /** Creature feats use explicit mechanics, never their translated display name. */
 export function ignoresWoundPenalties(actor) {
   return Array.from(actor.items ?? []).some(item => item.type === "ability"

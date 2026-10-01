@@ -669,7 +669,16 @@
       "IntegrityHint": "Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI.",
       "DurableMechanic": "Tenace : ignore les malus de blessures",
       "DurableHint": "À un niveau supérieur à 0, cette capacité annule les malus liés aux blessures. Les pertes de PS et l’état mourant restent applicables.",
-      "DurableConsequence": "Tenace : aucun malus de blessures"
+      "DurableConsequence": "Tenace : aucun malus de blessures",
+      "RollHealth": "Tirer les points de santé entre {min} et {max} (fixe les PS actuels et maximum)",
+      "HealthRolled": "{actor} : {health} PS (fourchette : {min}–{max}).",
+      "MovementValues": "par 2 PC / max",
+      "MovementModes": {
+        "land": "Terrestre",
+        "flight": "Vol",
+        "swimming": "Nage",
+        "special": "Spécial"
+      }
     },
     "Fear": {
       "ApplyToTargets": "Appliquer aux personnages contrôlés"

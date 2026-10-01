@@ -669,7 +669,16 @@
       "IntegrityHint": "Only worn armor has integrity. Natural armor has no BV.",
       "DurableMechanic": "Durable: ignore wound penalties",
       "DurableHint": "At a level above 0, this feat cancels wound penalties. Body Point losses and the dying state still apply.",
-      "DurableConsequence": "Durable: no wound penalties"
+      "DurableConsequence": "Durable: no wound penalties",
+      "RollHealth": "Roll Body Points between {min} and {max} (sets current and maximum BP)",
+      "HealthRolled": "{actor}: {health} BP (range: {min}–{max}).",
+      "MovementValues": "per 2 CP / max",
+      "MovementModes": {
+        "land": "Land",
+        "flight": "Flight",
+        "swimming": "Swimming",
+        "special": "Special"
+      }
     },
     "Fear": {
       "ApplyToTargets": "Apply to controlled characters"

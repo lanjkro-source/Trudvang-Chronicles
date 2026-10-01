@@ -7,7 +7,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolv
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
-import {ignoresWoundPenalties, npcBookSkillRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 
@@ -66,6 +66,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "calm-fear": TrudvangActorSheet.#onAction,
       "roll-survival-rounds": TrudvangActorSheet.#onAction,
       "roll-fear-factor": TrudvangActorSheet.#onAction,
+      "roll-npc-health": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
       "reset-traits": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
@@ -337,6 +338,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
     if (this.actor.type === "npc") {
+      context.npcHealthRange = npcHealthRange(this.actor);
+      context.npcMovement = npcMovementRows(this.actor.system, {localize: key => game.i18n.localize(key)});
       context.npcSkillTrees = npcSkillTrees(context.skillTrees);
       context.npcBookSkills = this._npcBookSkillRows();
       context.npcAbilities = Array.from(this.actor.effects ?? []).filter(isCreatureAbility).map(effect => ({
@@ -439,6 +442,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         const {openCreatureAbilitySheet} = await import("./creature-ability-sheet.mjs");
         return openCreatureAbilitySheet(effect);
       }
+      case "roll-npc-health": return this.actor.rollNpcHealth();
       case "roll-trait": return this.actor.rollTrait(target.dataset.trait);
       case "advance-skill": return this.actor.advanceSkill(target.dataset.skill);
       case "adjust-trait": return this.actor.adjustTrait(target.dataset.trait, Number(target.dataset.direction));

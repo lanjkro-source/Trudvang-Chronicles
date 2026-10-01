@@ -790,6 +790,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.DurableMechanic` | Durable: ignore wound penalties | Tenace : ignore les malus de blessures |
 | `TRUDVANG.Npc.DurableHint` | At a level above 0, this feat cancels wound penalties. Body Point losses and the dying state still apply. | À un niveau supérieur à 0, cette capacité annule les malus liés aux blessures. Les pertes de PS et l’état mourant restent applicables. |
 | `TRUDVANG.Npc.DurableConsequence` | Durable: no wound penalties | Tenace : aucun malus de blessures |
+| `TRUDVANG.Npc.RollHealth` | Roll Body Points between {min} and {max} (sets current and maximum BP) | Tirer les points de santé entre {min} et {max} (fixe les PS actuels et maximum) |
+| `TRUDVANG.Npc.HealthRolled` | {actor}: {health} BP (range: {min}–{max}). | {actor} : {health} PS (fourchette : {min}–{max}). |
+| `TRUDVANG.Npc.MovementValues` | per 2 CP / max | par 2 PC / max |
+
+## `TRUDVANG.Npc.MovementModes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Npc.MovementModes.land` | Land | Terrestre |
+| `TRUDVANG.Npc.MovementModes.flight` | Flight | Vol |
+| `TRUDVANG.Npc.MovementModes.swimming` | Swimming | Nage |
+| `TRUDVANG.Npc.MovementModes.special` | Special | Spécial |
 
 ## `TRUDVANG.Fear`
 

@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
 import Handlebars from "handlebars";
-import {ignoresWoundPenalties, npcCurrentTrait, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
+import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
 import {COMBAT_POOL_IDS} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
@@ -94,6 +95,91 @@ test("the NPC schema preserves intrinsic traits and prepares current traits befo
   assert.equal(model.traits.strength, 4);
   assert.equal(CharacterData.defineSchema().traitCurrent, undefined);
   assert.equal(AbilityData.defineSchema().ignoreWoundPenalties.options.initial, false);
+  assert.equal(schema.details.fields.bodyMin.options.initial, 0);
+  assert.equal(schema.details.fields.bodyMax.options.initial, 0);
+});
+
+test("NPC health bounds do not shrink when the played maximum changes", () => {
+  const npc = actor();
+  npc.system.details.bodyMin = 21;
+  npc.system.details.bodyMax = 26;
+  npc._source.system.resources.body.max = 23;
+  assert.deepEqual(npcHealthRange(npc), {min: 21, max: 26, valid: true});
+  npc._source.system.resources.body.max = 21;
+  assert.deepEqual(npcHealthRange(npc), {min: 21, max: 26, valid: true});
+  npc.system.details.bodyMax = 19;
+  assert.equal(npcHealthRange(npc).valid, false);
+  npc.system.details = {};
+  assert.deepEqual(npcHealthRange(npc), {min: 21, max: 21, valid: true});
+});
+
+test("all starter NPCs retain both book bounds independently of their initial BP", () => {
+  const content = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
+  for (const entry of content.actors) {
+    const reference = CREATURE_NPC_DATA[entry.nameKey.replace(/\.Name$/, "")];
+    assert.equal(entry.system.details.bodyMin, reference.bodyMin);
+    assert.equal(entry.system.details.bodyMax, reference.bodyMax);
+    assert.ok(entry.system.resources.body.max >= reference.bodyMin);
+    assert.ok(entry.system.resources.body.max <= reference.bodyMax);
+  }
+});
+
+test("NPC movement displays every recorded mode, including fractional or conditional distances", () => {
+  const rows = npcMovementRows({details: {move: [
+    {mode: "terrestre", distance: "1,5 m", max: "15 m ou 13 m avec armure"},
+    {mode: "vol", distance: "3 m", max: "30 m"},
+    {mode: "nage", distance: "0,75 m", max: "8 m"}
+  ]}}, {localize: game.i18n.localize});
+  assert.deepEqual(rows, [
+    {mode: "Terrestre", distance: "1,5 m", max: "15 m ou 13 m avec armure"},
+    {mode: "Vol", distance: "3 m", max: "30 m"},
+    {mode: "Nage", distance: "0,75 m", max: "8 m"}
+  ]);
+  assert.deepEqual(npcMovementRows({details: {}, movement: {current: 12}}, {localize: game.i18n.localize}),
+    [{mode: "Terrestre", distance: "—", max: "12 m"}]);
+});
+
+test("the health dice action rolls inclusive bounds, fills health and preserves the reference range", async t => {
+  const previous = {document: globalThis.document, Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage};
+  t.after(() => Object.assign(globalThis, previous));
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  const totals = [21, 26];
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = totals.shift(); }
+  };
+  const messages = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: async data => messages.push(data)};
+  const npc = actor(); npc.isOwner = true;
+  npc.system.details.bodyMin = 21;
+  npc.system.details.bodyMax = 26;
+  npc.system.modifiers.bodyMax = 3;
+  npc.system.modifiers.bodyValue = 1;
+  const updates = [];
+  npc.update = async data => {
+    updates.push(data);
+    for (const [path, value] of Object.entries(data)) set(npc._source, path, value);
+  };
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc;
+  const action = TrudvangActorSheet.DEFAULT_OPTIONS.actions["roll-npc-health"];
+  for (const health of [21, 26]) {
+    const result = await action.call(sheet, {preventDefault() {}, stopPropagation() {}},
+      {dataset: {action: "roll-npc-health"}, closest: () => null});
+    assert.equal(result.roll.formula, "1d6 + 20");
+    assert.equal(result.health, health);
+    assert.equal(updates.at(-1)["system.resources.body.max"], health);
+    assert.equal(updates.at(-1)["system.resources.body.value"], health + 2, "prepared current PS equals prepared maximum after effects");
+    assert.equal(updates.at(-1)["system.details.bodyMax"], 26);
+    assert.equal(updates.at(-1)["system.survivalRounds"], -1);
+  }
+  assert.equal(messages.length, 2);
+  assert.ok(messages[0].content.includes("21 PS"));
+  assert.equal(messages[0].rolls[0].formula, "1d6 + 20");
+  npc.isOwner = false;
+  assert.equal(await npc.rollNpcHealth(), null);
+  npc.isOwner = true; npc.type = "character";
+  assert.equal(await npc.rollNpcHealth(), null);
+  assert.equal(updates.length, 2);
 });
 
 test("editing an effective trait removes its temporary effect without changing the reference", () => {
@@ -211,9 +297,24 @@ test("the real NPC sheet context and template render natural armor without integ
   assert.match(html, /Intégrité.*—/);
   assert.match(html, /Tenace : aucun malus de blessures/);
   assert.doesNotMatch(html, /−3 aux VC/);
-  assert.equal((html.match(/name="system\.traitCurrent\./g) || []).length, 0, "trait values are static, not editable");
+  assert.equal((html.match(/name="system\.traitCurrent\./g) || []).length, 7, "each current trait has its compact input");
   assert.ok(html.indexOf("npc-health-panel") < html.indexOf("npc-stats-grid"));
   assert.doesNotMatch(html, /TRUDVANG\./, "every visible label must be translated");
+});
+
+test("the NPC header has only health and read-only movement, and compact traits can be edited", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet.actor.system.details.move = [{mode: "terrestre", distance: "3 m", max: "24 m"}, {mode: "nage", distance: "3 m", max: "24 m"}];
+  const html = render(await sheet._prepareContext({}));
+  const header = html.split('<nav class="sheet-tabs')[0];
+  assert.doesNotMatch(header, /resources\.combat|reset-combat|Resource\.Protection|name="system\.movement/);
+  assert.match(header, /data-action="roll-npc-health"/);
+  assert.match(header, /Terrestre/);
+  assert.match(header, /Nage/);
+  assert.equal((header.match(/3 m \/ 24 m/g) || []).length, 2);
+  const fields = html.match(/<input class="npc-trait-current[^>]+>/g);
+  assert.equal(fields.length, 7);
+  for (const field of fields) assert.doesNotMatch(field, /readonly|min=|max=/);
 });
 
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {

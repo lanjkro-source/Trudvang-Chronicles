@@ -279,8 +279,9 @@ export class NpcData extends foundry.abstract.TypeDataModel {
           distance: string(),
           max: string()
         }), {required: true, initial: []}),
-        // Book body-point range minimum; the played value lives in resources.body.
+        // Book body-point bounds; the played maximum lives in resources.body.
         bodyMin: integer(0, {min: 0}),
+        bodyMax: integer(0, {min: 0}),
         // Book armor list: {name, protection, initiative modifier}.
         armor: new fields.ArrayField(schema({
           name: string(),
