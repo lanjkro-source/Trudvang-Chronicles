@@ -554,25 +554,28 @@
 .trudvang-sheet.npc-sheet .status-protection small { margin-left: 5px; }
 .trudvang-sheet.npc-sheet .npc-stats-grid { grid-template-columns: minmax(0, 1fr); align-items: start; }
 .trudvang-sheet.npc-sheet .npc-trait-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px 7px; }
-.trudvang-sheet.npc-sheet .npc-trait-row { display: grid; row-gap: 0; align-items: center; line-height: 1.1; }
-.trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 0 2px; text-align: center; font-weight: 600; font-size: .78rem; line-height: 1.1; }
-.trudvang-sheet.npc-sheet .npc-trait-values { display: flex; align-items: baseline; justify-content: center; gap: 5px; min-height: 19px; }
-.trudvang-sheet.npc-sheet .npc-trait-values strong { font-size: .85rem; }
+.trudvang-sheet.npc-sheet .npc-trait-row { display: grid; row-gap: 0; align-items: center; font-size: .85rem; line-height: 1.1; }
+.trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 0 2px; text-align: center; font-weight: 600; font-size: inherit; line-height: 1.1; }
+.trudvang-sheet.npc-sheet .npc-trait-values { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; min-height: 23px; text-align: center; }
+.trudvang-sheet.npc-sheet .npc-trait-values strong { font-size: inherit; }
 .trudvang-sheet.npc-sheet .npc-trait-values .modified-value { color: var(--trudvang-positive); font-weight: 700; }
-.trudvang-sheet.npc-sheet .npc-trait-values .base-value { color: var(--trudvang-muted); font-size: .62rem; text-decoration: line-through; }
+.trudvang-sheet.npc-sheet .npc-trait-initial { border-left: 1px solid var(--trudvang-line); color: var(--trudvang-ink); font-weight: normal; }
 .trudvang-sheet.npc-sheet .npc-trait-row.modified { background: var(--trudvang-paper-light); }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree, .trudvang-sheet.npc-sheet .npc-skill-branches { list-style: none; margin: 0; padding: 0; }
 .trudvang-sheet.npc-sheet .npc-knowledge-tree > li + li { margin-top: 7px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches { margin-left: 6px; padding-left: 12px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches > li { position: relative; border-left: 1px solid var(--trudvang-line); padding-left: 10px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches > li::before { content: ""; position: absolute; top: 13px; left: 0; width: 8px; border-top: 1px solid var(--trudvang-line); }
-.trudvang-sheet.npc-sheet .npc-knowledge-row { min-height: 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto 18px; gap: 3px; align-items: center; }
-.trudvang-sheet.npc-sheet .npc-knowledge-row > button:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; font-size: .78rem; padding: 2px 0; }
-.trudvang-sheet.npc-sheet .npc-knowledge-row output { font-size: .78rem; white-space: nowrap; }
+.trudvang-sheet.npc-sheet .npc-knowledge-row { min-height: 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto 18px; gap: 3px; align-items: center; padding: 2px 5px; border-radius: 2px; color: var(--trudvang-ink); font-size: .85rem; }
+.trudvang-sheet.npc-sheet .npc-knowledge-row.kind-skill { background: color-mix(in srgb, var(--trudvang-accent) 10%, var(--trudvang-paper-light)); }
+.trudvang-sheet.npc-sheet .npc-knowledge-row.kind-discipline { background: color-mix(in srgb, var(--trudvang-gold) 14%, var(--trudvang-paper-light)); }
+.trudvang-sheet.npc-sheet .npc-knowledge-row.kind-specialty { background: color-mix(in srgb, var(--trudvang-green) 10%, var(--trudvang-paper-light)); }
+.trudvang-sheet.npc-sheet .npc-knowledge-row > button:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; font-size: inherit; padding: 2px 0; }
+.trudvang-sheet.npc-sheet .npc-knowledge-row output { font-size: inherit; white-space: nowrap; }
 .trudvang-sheet.npc-sheet .npc-skill-root { grid-template-columns: minmax(0, 1fr) auto; font-weight: bold; }
 .trudvang-sheet.npc-sheet .npc-book-skills { margin-bottom: 4px; }
 .trudvang-sheet.npc-sheet .npc-book-skill { grid-template-columns: minmax(0, 1fr) auto; min-height: 20px; }
-.trudvang-sheet.npc-sheet .npc-book-skill > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: .78rem; }
+.trudvang-sheet.npc-sheet .npc-book-skill > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: inherit; }
 .trudvang-sheet.npc-sheet .npc-book-skill.kind-skill > span { font-weight: bold; }
 .trudvang-sheet.npc-sheet .npc-book-skill.kind-discipline { margin-left: 12px; }
 .trudvang-sheet.npc-sheet .npc-book-skill.kind-specialty { margin-left: 24px; }
