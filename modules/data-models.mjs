@@ -20,6 +20,26 @@ const number = (initial = 0, options = {}) => new fields.NumberField({
 });
 const boolean = (initial = false) => new fields.BooleanField({required: true, nullable: false, initial});
 const schema = definition => new fields.SchemaField(definition);
+// Legacy worlds may hold weapon ranges as strings (the sheet wrote raw text before
+// type="number" inputs). Foundry runs field clean() during DataModel construction,
+// so coercing here heals those documents at load time — otherwise they fail
+// validation and are dropped from the collection entirely (invisible to migrations).
+class CoercedIntegerField extends fields.NumberField {
+  clean(value, options) {
+    if (typeof value === "string") {
+      const match = value.trim().match(/-?\d+/);
+      value = match ? Number.parseInt(match[0], 10) : 0;
+    }
+    return super.clean(value, options);
+  }
+}
+const coercedInteger = (initial = 0, options = {}) => new CoercedIntegerField({
+  required: true,
+  nullable: false,
+  integer: true,
+  initial,
+  ...options
+});
 
 function traitSchema() {
   return schema({
@@ -371,7 +391,7 @@ export class WeaponData extends BaseItemData {
       combatPointBonusUsed: boolean(false),
       damageBonus: integer(0),
       rangeSelection: string("short"),
-      range: schema({short: integer(0), long: integer(0)})
+      range: schema({short: coercedInteger(0), long: coercedInteger(0)})
     };
   }
 }
