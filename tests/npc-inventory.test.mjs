@@ -3,6 +3,7 @@ import {existsSync, readFileSync} from "node:fs";
 import test from "node:test";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "../modules/npc-inventory.mjs";
 import {withNpcInventories} from "../tools/generate-npc-inventories.mjs";
+import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
 
 const content = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
 const french = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
@@ -48,6 +49,12 @@ test("NPC inventories are reproducibly generated from the French reference witho
   const creatures = JSON.parse(readFileSync(new URL("../game doc/fr/trudvang-creatures-fr.json", import.meta.url), "utf8"));
   const before = structuredClone(creatures);
   assert.deepEqual(withNpcInventories(content, creatures, french), content);
+  for (const baked of Object.values(CREATURE_NPC_DATA)) {
+    assert.deepEqual(baked.attacks, creatures.find(creature => creature.name === baked.creature)?.attacks);
+  }
+  for (const [name, rounds] of [["Boeuf/taureau", 2], ["Jarnwurm", 3], ["Hrimtursir", 3]]) {
+    assert.equal(creatures.find(creature => creature.name === name)?.actionRounds, rounds);
+  }
   assert.deepEqual(creatures, before);
 });
 

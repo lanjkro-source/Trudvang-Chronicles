@@ -247,6 +247,17 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
     context.npcCombatItems = context.combatItems.filter(row => isNpcEquipment(row.item));
     context.npcNaturalWeapons = context.combatItems.filter(row => row.item.type === "weapon" && !isNpcEquipment(row.item));
+    const npcAttackNames = new Set((this.actor.system.attacks ?? []).flat().map(row => String(row.attack || "")
+      .normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase().trim()));
+    const hasGripFeat = Array.from(this.actor.effects ?? []).some(effect => !effect.disabled
+      && String(effect.flags?.["trudvang-chronicles"]?.feat ?? effect.name ?? "")
+        .normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase().trim() === "saisie");
+    const knowsWrestling = Number(this.actor.findKnowledgeItem("wrestling")?.system.level || 0) > 0
+      || (this.actor.system.skillTree ?? []).some(row => row.catalogId === "wrestling" && Number(row.value) > 0);
+    context.npcWrestling = {
+      grapple: knowsWrestling || hasGripFeat || npcAttackNames.has("lutte") || npcAttackNames.has("saisie"),
+      glima: knowsWrestling || npcAttackNames.has("lutte") || npcAttackNames.has("glima")
+    };
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
       appearance: await TextEditorImpl.enrichHTML(this.actor.system.appearance || "", {async: true, secrets: this.actor.isOwner}),

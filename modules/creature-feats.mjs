@@ -112,7 +112,7 @@ export const CREATURE_NPC_DATA = {
       ],
       [
         {
-          "attack": "Arme",
+          "attack": "Arme légère",
           "value": 7
         }
       ]
@@ -454,21 +454,21 @@ export const CREATURE_NPC_DATA = {
       ],
       [
         {
-          "attack": "Armes à deux mains",
+          "attack": "Arme à deux mains",
           "value": 15
         },
         {
-          "attack": "Armes à deux mains",
+          "attack": "Arme à deux mains",
           "value": 9
         }
       ],
       [
         {
-          "attack": "Armes à une main",
+          "attack": "Arme lourde",
           "value": 12
         },
         {
-          "attack": "Armes à une main",
+          "attack": "Arme lourde",
           "value": 11
         },
         {
@@ -478,15 +478,15 @@ export const CREATURE_NPC_DATA = {
       ],
       [
         {
-          "attack": "Armes à une main",
+          "attack": "Arme lourde",
           "value": 15
         },
         {
-          "attack": "Armes à une main",
+          "attack": "Arme lourde",
           "value": 8
         },
         {
-          "attack": "Armes à une main",
+          "attack": "Arme lourde",
           "value": 6
         },
         {

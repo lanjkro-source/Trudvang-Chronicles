@@ -1,3 +1,5 @@
+import {npcCombatActionRounds} from "./rules/npc-summary.mjs";
+
 /** Whether Foundry advanced to a combatant's turn rather than rewinding the tracker. */
 export function isCombatTurnStart(previous = {}, current = {}) {
   if (!current.combatantId) return false;
@@ -26,6 +28,14 @@ export function combatInitiativesAreReady(combat) {
     && combatant.initiative !== undefined && Number.isFinite(Number(combatant.initiative)));
 }
 
+/** PCs and weapon actions of a large NPC last for its entire size-based cycle. */
+export function combatResourcesRefreshIsDue(actor, round) {
+  if (actor?.type !== "npc") return true;
+  const cycle = npcCombatActionRounds(actor.system?.details?.size);
+  const currentRound = Number(round);
+  return !Number.isInteger(currentRound) || currentRound < 1 || (currentRound - 1) % cycle === 0;
+}
+
 /** Activate the highest-initiative combatant once every participant has rolled. */
 export async function activateHighestInitiativeCombatant(combat, {isActiveGM = game.user.isActiveGM} = {}) {
   if (!isActiveGM || !combat?.started || !combatInitiativesAreReady(combat)) return false;
@@ -37,7 +47,9 @@ export async function activateHighestInitiativeCombatant(combat, {isActiveGM = g
   combat.setupTurns?.();
   const turn = Array.from(combat.turns ?? []).findIndex(candidate => candidate.id === combatant.id);
   if (combat.current?.combatantId !== combatant.id) await combat.update({turn: turn >= 0 ? turn : 0});
-  await combatant.actor.resetCombatPoints();
+  if (combatResourcesRefreshIsDue(combatant.actor, combat.round ?? combat.current?.round)) {
+    await combatant.actor.resetCombatPoints();
+  }
   return true;
 }
 
@@ -55,6 +67,7 @@ export async function resetCurrentCombatantResources(combat, current, {isActiveG
   const combatant = combat.combatants?.get?.(current.combatantId)
     ?? Array.from(combat.combatants?.values?.() ?? combat.combatants ?? []).find(candidate => candidate.id === current.combatantId);
   if (typeof combatant?.actor?.resetCombatPoints !== "function") return false;
+  if (!combatResourcesRefreshIsDue(combatant.actor, current.round ?? combat.round)) return false;
   await combatant.actor.resetCombatPoints();
   return true;
 }

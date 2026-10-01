@@ -576,6 +576,25 @@ test("NPC actions show sticky reserve data, material weapons, natural profiles, 
   assert.match(spareRow, /data-action="item-parry"[^>]+disabled/);
 });
 
+test("NPC wrestling actions appear only when the creature can use them", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  let context = await sheet._prepareContext({});
+  assert.equal(context.npcWrestling.grapple, false);
+  assert.equal(context.npcWrestling.glima, false);
+  sheet.actor.system.attacks = [[{attack: "Lutte", value: 10}]];
+  context = await sheet._prepareContext({});
+  const actions = render(context).split('<div class="tab actions"')[1].split('<div class="tab effects"')[0];
+  assert.equal(context.npcWrestling.grapple, true);
+  assert.equal(context.npcWrestling.glima, true);
+  assert.match(actions, /data-action="wrestling-action" data-kind="grapple"/);
+  assert.match(actions, /data-action="wrestling-action" data-kind="glima"/);
+  sheet.actor.system.attacks = [];
+  sheet.actor.effects = [{name: "Saisie", disabled: false, flags: {"trudvang-chronicles": {feat: "Saisie"}}}];
+  context = await sheet._prepareContext({});
+  assert.equal(context.npcWrestling.grapple, true, "a creature's Saisie capability also grants the action");
+  assert.equal(context.npcWrestling.glima, false);
+});
+
 test("a natural attack dialog spends its reserve and both Free hands, rolls a D20 and posts its result", async t => {
   const previous = {combat: game.combat, document: globalThis.document, Roll: globalThis.Roll,
     ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2};

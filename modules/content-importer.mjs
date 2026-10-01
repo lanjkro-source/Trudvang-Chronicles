@@ -6,9 +6,9 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 41 adds natural combat profiles and stable
-// book knowledge identifiers to starter NPCs, preserving their tuned skill levels.
-const CONTENT_VERSION = 41;
+// TEMPORARY WORLD MIGRATION — version 42 refreshes unchanged starter NPC attack
+// labels after the French creature reference distinguished weapon categories.
+const CONTENT_VERSION = 42;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -457,8 +457,16 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
     && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && samePairList(currentTree, other.skillTree));
   const foreignAttacks = currentAttacks.length && baked.attacks?.length && !sameComboList(currentAttacks, baked.attacks)
     && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && sameComboList(currentAttacks, other.attacks));
+  // TEMPORARY WORLD MIGRATION — rename only the exact old Galtir/Minokks
+  // combinations; never replace a GM-edited attack allocation.
+  const legacyLabels = baked.creature === "Galtir" ? {"Arme légère": "Arme"}
+    : baked.creature === "Minokks" ? {"Arme lourde": "Armes à une main", "Arme à deux mains": "Armes à deux mains"} : null;
+  const legacyAttacks = legacyLabels && baked.attacks.map(combo => combo.map(pair => ({
+    ...pair, attack: legacyLabels[pair.attack] ?? pair.attack
+  })));
+  const obsoleteAttacks = currentAttacks.length && legacyAttacks && sameComboList(currentAttacks, legacyAttacks);
   if (foreignTree) await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
-  if (foreignAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
+  if (foreignAttacks || obsoleteAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   const missing = missingFeatPayloads([...actor.effects], baked.feats);
   if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);
 }

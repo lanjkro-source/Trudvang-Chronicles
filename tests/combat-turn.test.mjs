@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { activateHighestInitiativeCombatant, combatInitiativesAreReady, decrementSurvivalRounds, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
+import { activateHighestInitiativeCombatant, combatInitiativesAreReady, combatResourcesRefreshIsDue, decrementSurvivalRounds, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
+import {npcCombatActionRounds} from "../modules/rules/npc-summary.mjs";
 
 test("combat resource resets occur only when the tracker advances to a turn", () => {
   assert.equal(isCombatTurnStart({round: 0, turn: null, combatantId: null}, {round: 1, turn: 0, combatantId: "combatant-id"}), true);
@@ -60,6 +61,22 @@ test("the active GM resets the resources of the combatant whose turn begins", as
   const result = await resetCurrentCombatantResources(combat, {combatantId: "combatant-id"}, {isActiveGM: true});
   assert.equal(result, true);
   assert.equal(resets, 1);
+});
+
+test("large NPCs retain spent PC and AA across their size-based combat cycles", async () => {
+  assert.equal(npcCombatActionRounds("3t"), 2);
+  assert.equal(npcCombatActionRounds("8t"), 3);
+  assert.equal(npcCombatActionRounds("10t"), 3);
+  assert.equal(npcCombatActionRounds("12t"), 4);
+  assert.equal(npcCombatActionRounds("1/2"), 1);
+  let resets = 0;
+  const actor = {type: "npc", system: {details: {size: "10t"}}, resetCombatPoints: async () => { resets += 1; }};
+  const combat = {started: true, combatants: new Map([["large", {id: "large", actor}]])};
+  for (const round of [1, 2, 3, 4]) {
+    await resetCurrentCombatantResources(combat, {combatantId: "large", round}, {isActiveGM: true});
+  }
+  assert.equal(resets, 2, "a size-10 NPC refreshes only on rounds 1 and 4");
+  assert.equal(combatResourcesRefreshIsDue({...actor, type: "character"}, 2), true);
 });
 
 test("turn resource resets ignore inactive combats, missing combatants, and non-GMs", async () => {

@@ -18,6 +18,16 @@ export function npcHealthRange(actor) {
   return {min, max, valid: Number.isInteger(min) && Number.isInteger(max) && min > 0 && max >= min};
 }
 
+/** Large creatures distribute one set of Combat Points over several rounds (FR Bestiary, p. 9). */
+export function npcCombatActionRounds(size) {
+  const raw = String(size ?? "").trim().replace(",", ".");
+  if (raw.startsWith(">10") || raw.startsWith("10+")) return 4;
+  const fraction = raw.match(/^(\d+)\s*\/\s*(\d+)/);
+  const value = fraction ? Number(fraction[1]) / Number(fraction[2]) : Number.parseFloat(raw);
+  if (!Number.isFinite(value)) return 1;
+  return value > 10 ? 4 : value > 5 ? 3 : value > 2 ? 2 : 1;
+}
+
 /** Present book distances as recorded, without inventing missing movement rates. */
 export function npcMovementRows(system, {localize}) {
   const modes = {terrestre: "land", land: "land", walking: "land", vol: "flight", flight: "flight", flying: "flight",
