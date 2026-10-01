@@ -48,14 +48,18 @@ export class TrudvangActor extends BaseActor {
     if (allowed === false) return false;
     if (this.type !== "npc") return;
     const dimensions = creatureTokenDimensions(this.system.details?.size);
-    if (dimensions) this.updateSource({"prototypeToken.width": dimensions.width, "prototypeToken.height": dimensions.height});
+    this.updateSource({"prototypeToken.actorLink": data.prototypeToken?.actorLink ?? false,
+      ...(dimensions ? {"prototypeToken.width": dimensions.width, "prototypeToken.height": dimensions.height} : {})});
   }
 
   /** Size newly generated creature tokens without changing already placed tokens. */
   getTokenDocument(data = {}, options = {}) {
     const dimensions = this.type === "npc" ? creatureTokenDimensions(this.system.details?.size) : null;
     // Explicit dimensions supplied by a caller take precedence over auto-sizing.
-    return super.getTokenDocument(dimensions ? {...dimensions, ...data} : data, options);
+    // Unlinked NPC tokens inherit the model's embedded inventory; Foundry's
+    // ActorDelta stores each token's subsequent item edits independently.
+    // Explicit linking and any per-token delta supplied by a caller are respected.
+    return super.getTokenDocument(this.type === "npc" ? {actorLink: false, ...dimensions, ...data} : data, options);
   }
 
   get isInActiveCombat() {

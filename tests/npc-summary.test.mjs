@@ -36,7 +36,7 @@ globalThis.foundry = {
         async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
         render(options) { this.renderOptions = options; return this; }
       }},
-    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } }, ItemSheetV2: class {}},
+    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} }, ItemSheetV2: class {}},
     ux: {TextEditor: {implementation: {enrichHTML: async value => value}}},
     handlebars: {renderTemplate: async () => ""}
   },
@@ -90,15 +90,17 @@ test("NPC creation initializes its prototype dimensions and generated tokens fol
   const updates = [];
   npc.updateSource = data => updates.push(data);
   await npc._preCreate({}, {}, {id: "gm"});
-  assert.deepEqual(updates, [{"prototypeToken.width": 4, "prototypeToken.height": 4}]);
+  assert.deepEqual(updates, [{"prototypeToken.actorLink": false, "prototypeToken.width": 4, "prototypeToken.height": 4}]);
   const options = {parent: {id: "isolated-scene"}};
   const data = {x: 20, y: 40, actorLink: false, texture: {src: "token.webp"}};
   assert.deepEqual(await npc.getTokenDocument(data, options), {data: {...data, width: 4, height: 4}, options});
   assert.deepEqual(data, {x: 20, y: 40, actorLink: false, texture: {src: "token.webp"}}, "caller data is not mutated");
   npc.system.details.size = "1/2";
-  assert.deepEqual((await npc.getTokenDocument()).data, {width: 1, height: 1});
-  assert.deepEqual((await npc.getTokenDocument({width: 2, height: 1})).data, {width: 2, height: 1}, "explicit sizing overrides the automatic default");
-  assert.deepEqual(updates, [{"prototypeToken.width": 4, "prototypeToken.height": 4}], "generating a token never rewrites the actor or existing scene tokens");
+  assert.deepEqual((await npc.getTokenDocument()).data, {actorLink: false, width: 1, height: 1});
+  assert.deepEqual((await npc.getTokenDocument({width: 2, height: 1})).data, {actorLink: false, width: 2, height: 1}, "explicit sizing overrides the automatic default");
+  assert.deepEqual(updates, [{"prototypeToken.actorLink": false, "prototypeToken.width": 4, "prototypeToken.height": 4}], "generating a token never rewrites the actor or existing scene tokens");
+  const delta = {items: [{_id: "axe", system: {quantity: 2}}]};
+  assert.deepEqual((await npc.getTokenDocument({actorLink: true, delta})).data, {actorLink: true, width: 1, height: 1, delta}, "explicit linking and per-token inventory overrides remain available");
 });
 
 test("token auto-sizing leaves PCs, unknown sizes and cancelled actor creations alone", async () => {
@@ -111,10 +113,10 @@ test("token auto-sizing leaves PCs, unknown sizes and cancelled actor creations 
   assert.deepEqual((await instance.getTokenDocument({x: 12})).data, {x: 12});
   instance.type = "npc"; instance.system.details.size = "unknown";
   await instance._preCreate({}, {}, {});
-  assert.deepEqual((await instance.getTokenDocument({width: 2})).data, {width: 2});
+  assert.deepEqual((await instance.getTokenDocument({width: 2})).data, {actorLink: false, width: 2});
   instance.system.details.size = "10+"; instance.creationAllowed = false;
   assert.equal(await instance._preCreate({}, {}, {}), false);
-  assert.deepEqual(updates, []);
+  assert.deepEqual(updates, [{"prototypeToken.actorLink": false}]);
 });
 
 test("the NPC schema preserves intrinsic traits and prepares current traits before effects", () => {
@@ -363,6 +365,102 @@ test("a single NPC movement mode has no separator and keeps its conditional dist
   const html = render(await sheet._prepareContext({})).split('<nav class="sheet-tabs')[0];
   assert.match(html, /Vol : <strong>4 m \/ 24 m ou 18 m avec armure<\/strong>/);
   assert.doesNotMatch(html, /npc-movement-separator/);
+});
+
+function inventoryItem(type, id, extra = {}) {
+  return {type, id, name: id, uuid: `Actor.npc.Item.${id}`, img: "icons/svg/sword.svg",
+    system: {quantity: 1, weight: 1, equipped: false, damage: "1d10", openRoll: 10, combatSpecialty: "oneHandedLightWeapons",
+      breach: {value: 20, max: 20}, heft: 2, ...extra}};
+}
+
+test("the NPC equipment tab displays only material equipment and its editable controls", async () => {
+  const items = [inventoryItem("weapon", "Axe"), inventoryItem("armor", "Leather"), inventoryItem("shield", "Shield"),
+    {id: "rope", name: "Rope", type: "gear", system: {}}, inventoryItem("weapon", "Bite", {combatSpecialty: "natural"}), feat()];
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(items); sheet.isEditable = true;
+  const context = await sheet._prepareContext({});
+  const inventory = render(context).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  for (const name of ["Axe", "Leather", "Shield"]) assert.match(inventory, new RegExp(`data-item-id="${name}"`));
+  assert.doesNotMatch(inventory, /Rope|Bite|Tenace|item-roll|item-parry|item-damage/);
+  assert.equal((inventory.match(/data-item-field="quantity"/g) || []).length, 3);
+  assert.equal((inventory.match(/data-action="item-ready"/g) || []).length, 2);
+  assert.equal((inventory.match(/data-action="item-equip"/g) || []).length, 1);
+  assert.equal((inventory.match(/data-action="inspect-item"/g) || []).length, 3);
+  assert.match(inventory, /Inventaire par défaut/);
+  assert.ok(context.npcActionItems.every(item => item.type !== "armor"));
+  assert.doesNotMatch(inventory, /TRUDVANG\./);
+});
+
+test("NPC token inventories have a local hint and no mutable controls for read-only viewers", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([inventoryItem("weapon", "Axe")]); sheet.actor.isToken = true; sheet.isEditable = false;
+  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  assert.match(inventory, /Inventaire de cet exemplaire/);
+  assert.doesNotMatch(inventory, /data-action="item-create"/);
+  for (const tag of inventory.match(/<(?:input|button)[^>]+(?:data-item-field="quantity"|data-action="item-(?:delete|ready|equip)")[^>]*>/g)) assert.match(tag, /disabled/);
+  assert.match(inventory, /data-action="item-edit"/);
+  assert.match(inventory, /data-action="inspect-item"/);
+});
+
+test("empty creature inventories are usable and show two properly localized empty states", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  assert.match(inventory, /Aucune arme dans l’inventaire/);
+  assert.match(inventory, /Aucune armure ni aucun bouclier/);
+  assert.equal((inventory.match(/data-action="item-create"/g) || []).length, 3);
+});
+
+test("inventory drops clone external equipment with fresh IDs and reject other item types", async t => {
+  const previous = {ui: globalThis.ui, deepClone: foundry.utils.deepClone};
+  t.after(() => { globalThis.ui = previous.ui; foundry.utils.deepClone = previous.deepClone; });
+  foundry.utils.deepClone = structuredClone;
+  const warnings = []; globalThis.ui = {notifications: {warn: text => warnings.push(text)}};
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor();
+  const created = []; sheet.actor.createEmbeddedDocuments = async (type, data) => { assert.equal(type, "Item"); created.push(...data); return data; };
+  const source = {_id: "external", ...inventoryItem("weapon", "External axe")};
+  await sheet._handleDrop(source, {equipmentOnly: true});
+  assert.equal(created[0]._id, undefined);
+  created[0].system.quantity = 4;
+  assert.equal(source.system.quantity, 1);
+  assert.equal(source._id, "external");
+  await sheet._handleDrop({type: "gear", system: {}}, {equipmentOnly: true});
+  assert.equal(created.length, 1);
+  assert.match(warnings[0], /uniquement les armes/);
+  await sheet._handleDrop({type: "ability", system: {level: 2}});
+  assert.equal(created.length, 2, "abilities can still be added elsewhere on the NPC sheet");
+});
+
+test("an item with the same ID from another token is copied, not mistaken for an internal sort", async t => {
+  const previous = foundry.utils.deepClone; t.after(() => { foundry.utils.deepClone = previous; }); foundry.utils.deepClone = structuredClone;
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.actor.uuid = "Scene.test.Token.first.Actor.npc"; sheet._activeTab = "equipment";
+  sheet.actor.items.has = () => true;
+  sheet._onSortItem = async () => { throw new Error("Must not sort a different token's item"); };
+  const created = []; sheet.actor.createEmbeddedDocuments = async (type, data) => created.push(...data);
+  const data = {_id: "sameId", ...inventoryItem("weapon", "Axe")};
+  const external = {documentName: "Item", id: "sameId", parent: {uuid: "Scene.test.Token.second.Actor.npc"}, toObject: () => data};
+  await sheet._onDropItem({}, external);
+  assert.equal(created.length, 1);
+  let sorted = false; sheet._onSortItem = async () => { sorted = true; };
+  await sheet._onDropItem({}, {...external, parent: sheet.actor});
+  assert.equal(sorted, true);
+  assert.equal(created.length, 1);
+});
+
+test("equipment quantity and equip actions update only the actor on the token sheet", async () => {
+  const prototypeItem = inventoryItem("armor", "Leather");
+  const localItem = structuredClone(prototypeItem);
+  localItem.update = async changes => { for (const [key, value] of Object.entries(changes)) set(localItem, key, value); };
+  const npc = actor([localItem]); npc.isToken = true; npc.items.get = id => npc.items.find(item => item.id === id);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc;
+  const input = {value: "3", dataset: {itemField: "quantity"}, closest: () => ({dataset: {itemId: "Leather"}}), addEventListener(type, listener) { this.listener = listener; }};
+  sheet.element = {querySelectorAll: selector => selector === "input[data-item-field]" ? [input] : []};
+  sheet._activateTabs = () => {}; sheet._restoreViewState = () => {}; sheet._captureViewState = () => {};
+  await sheet._onRender({}, {});
+  await input.listener({currentTarget: input});
+  const target = {dataset: {action: "item-equip"}, closest: selector => selector === "[data-item-id]" ? {dataset: {itemId: "Leather"}} : null};
+  await TrudvangActorSheet.DEFAULT_OPTIONS.actions["item-equip"].call(sheet, {preventDefault() {}, stopPropagation() {}}, target);
+  assert.equal(localItem.system.quantity, 3);
+  assert.equal(localItem.system.equipped, true);
+  assert.equal(prototypeItem.system.quantity, 1);
+  assert.equal(prototypeItem.system.equipped, false);
 });
 
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {

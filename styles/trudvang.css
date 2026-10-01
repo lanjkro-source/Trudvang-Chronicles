@@ -143,6 +143,10 @@
 .trudvang-sheet.npc-sheet .npc-movement-mode { max-width: 100%; }
 .trudvang-sheet.npc-sheet .npc-movement-mode strong { white-space: nowrap; }
 .trudvang-sheet.npc-sheet .npc-movement-separator { margin-right: 6px; color: var(--trudvang-on-header-muted); }
+.trudvang-sheet.npc-sheet .npc-inventory-hint { margin: 0 0 10px; color: var(--trudvang-ink); font-size: .8rem; line-height: 1.4; }
+.trudvang-sheet.npc-sheet .npc-inventory-list .item { grid-template-columns: 28px 26px 10px minmax(0, 1.2fr) minmax(0, 1fr) repeat(3, 24px); }
+.trudvang-sheet.npc-sheet .npc-inventory-list .item button:not(.item-name) { width: 24px; }
+.trudvang-sheet.npc-sheet .npc-inventory-list .item .item-detail, .trudvang-sheet.npc-sheet .npc-inventory-list .qty-sep { color: var(--trudvang-ink); }
 .trudvang-sheet .tab.combat > .combat-reserves-panel { position: sticky; top: 0; z-index: 2; flex: 0 0 auto; background: var(--trudvang-paper-light); box-shadow: 0 3px 8px color-mix(in srgb, var(--trudvang-ink) 24%, transparent); }
 .trudvang-sheet .combat-pool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 28px; gap: 5px 8px; }
 .trudvang-sheet .combat-pool-progress { position: relative; display: flex; min-width: 0; align-items: center; justify-content: space-between; overflow: hidden; padding: 0 8px; border: 1px solid color-mix(in srgb, var(--trudvang-gold) 55%, transparent); border-radius: 3px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); font-size: .72rem; }

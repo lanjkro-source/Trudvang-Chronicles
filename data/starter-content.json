@@ -2322,7 +2322,8 @@
         "displayBars": 20,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Galtir.Description",
@@ -2465,7 +2466,53 @@
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.SplitAxi.Name",
+          "type": "weapon",
+          "img": "icons/weapons/axes/axe-battle-blackened.webp",
+          "system": {
+            "sourceKey": "TRUDVANG.Content.Source.Rulebook111",
+            "category": "oneHandedLight",
+            "combatSpecialty": "oneHandedLightWeapons",
+            "isThrowingWeapon": false,
+            "damage": "1d10",
+            "openRoll": 10,
+            "weaponActions": 4,
+            "initiativeModifier": -3,
+            "breach": {
+              "value": 60,
+              "max": 60
+            },
+            "weight": 1.2,
+            "value": 6,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Item.FurLeather.Name",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 2,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Mugissement profond",
@@ -2509,7 +2556,8 @@
         "height": 3,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.GiantSnake.Description",
@@ -2636,7 +2684,8 @@
         "height": 4,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.GiantSpider.Description",
@@ -2762,7 +2811,8 @@
         "height": 3,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Gryphon.Description",
@@ -2880,7 +2930,8 @@
         "height": 1,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.NightUlm.Description",
@@ -3024,7 +3075,8 @@
         "height": 4,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.ThornBeast.Description",
@@ -3155,7 +3207,8 @@
         "height": 2,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.TrollBull.Description",
@@ -3401,7 +3454,98 @@
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Item.BardaMakir.Name",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "sourceKey": "TRUDVANG.Content.Source.Rulebook112",
+            "category": "oneHandedHeavy",
+            "combatSpecialty": "oneHandedHeavyWeapons",
+            "damage": "1d10",
+            "openRoll": 8,
+            "weaponActions": 3,
+            "initiativeModifier": -5,
+            "breach": {
+              "value": 100,
+              "max": 100
+            },
+            "weight": 3.5,
+            "value": 14,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Item.LargeShield.Name",
+          "type": "shield",
+          "img": "icons/svg/shield.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.LargeShield.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG76",
+            "protection": 7,
+            "breach": {
+              "value": 70,
+              "max": 70
+            },
+            "passiveProtection": 6,
+            "weaponActions": 1,
+            "initiativeModifier": -3,
+            "weight": 6,
+            "value": 3,
+            "quantity": 1,
+            "damage": "1d10",
+            "openRoll": 10,
+            "equipped": true
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Item.TveiKlubb.Name",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "sourceKey": "TRUDVANG.Content.Source.Rulebook114",
+            "category": "twoHanded",
+            "combatSpecialty": "twoHandedWeapons",
+            "damage": "2d10",
+            "openRoll": 7,
+            "weaponActions": 2,
+            "initiativeModifier": -5,
+            "breach": {
+              "value": 60,
+              "max": 60
+            },
+            "weight": 3,
+            "value": 0.4,
+            "quantity": 1,
+            "equipped": false,
+            "hand": "weapon"
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Item.FurLeather.Name",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 2,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Charge",
@@ -3445,7 +3589,8 @@
         "height": 1,
         "bar1": {
           "attribute": "resources.body"
-        }
+        },
+        "actorLink": false
       },
       "system": {
         "descriptionKey": "TRUDVANG.Content.Actor.Warg.Description",

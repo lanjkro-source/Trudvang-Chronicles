@@ -4,6 +4,10 @@ import {spawnSync} from "node:child_process";
 
 const root = process.cwd();
 const failures = [];
+if (existsSync(join(root, "game doc/fr/trudvang-creatures-fr.json"))) {
+  const result = spawnSync(process.execPath, ["tools/generate-npc-inventories.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (result.status !== 0) failures.push(`NPC inventory source audit failed: ${result.stderr || result.stdout}`);
+}
 const powerSources = ["game doc/fr/trudvang-powers-fr.json", "game doc/en/trudvang-powers-en.json"];
 const availablePowerSources = powerSources.filter(path => existsSync(join(root, path)));
 if (availablePowerSources.length === 1) failures.push("Both FR and EN power source JSON files are required for a local catalogue audit.");

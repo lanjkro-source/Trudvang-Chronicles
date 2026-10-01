@@ -10,6 +10,7 @@ import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
+import {isNpcEquipment} from "../npc-inventory.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -104,6 +105,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.actor = this.actor;
+    context.isToken = this.actor.isToken;
     context.system = this.actor.system;
     context.editable = this.isEditable;
     context.owner = this.actor.isOwner;
@@ -222,6 +224,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     for (const [group, types] of Object.entries(TRUDVANG.actorItemGroups)) {
       context.itemsByGroup[group] = this.actor.items.filter(item => types.includes(item.type)).sort((a, b) => a.name.localeCompare(b.name));
     }
+    context.npcEquipment = {
+      weapons: context.itemsByGroup.weapons.filter(isNpcEquipment),
+      protection: context.itemsByGroup.protection
+    };
+    context.npcActionItems = this.actor.items.filter(item => item.type !== "armor");
     for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
       item._hoverTitle = this._getItemHoverTitle(item);
       item._damageText = this._getItemDamageText(item);
@@ -585,7 +592,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       }
     }
     // Tri interne si l'item appartient déjà à cet acteur
-    if (this.actor.items.has(itemDoc.id)) {
+    if ((itemDoc.actor ?? itemDoc.parent)?.uuid === this.actor.uuid && this.actor.uuid && this.actor.items.has(itemDoc.id)) {
       try {
         return await this._onSortItem(event, itemDoc);
       } catch (err) {
@@ -595,12 +602,15 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       }
     }
     const itemData = itemDoc.toObject();
-    return this._handleDrop(itemData);
+    return this._handleDrop(itemData, {equipmentOnly: this.actor.type === "npc" && this._activeTab === "equipment"});
   }
 
   /** Tablettes : via catalogue ; sinon création standard avec reset niveau ability hors création. */
-  async _handleDrop(itemData) {
+  async _handleDrop(itemData, {equipmentOnly = false} = {}) {
     const entries = Array.isArray(itemData) ? itemData : [itemData];
+    if (equipmentOnly && entries.some(entry => !isNpcEquipment(entry))) {
+      return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.EquipmentOnly"));
+    }
     if (entries.length === 1 && entries[0].type === "tablet") {
       const catalogId = entries[0].system?.catalogId || entries[0].flags?.["trudvang-chronicles"]?.catalogId;
       if (TABLET_BY_ID.has(catalogId)) return this.actor.addTabletFromCatalog(catalogId);
@@ -616,6 +626,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
     const prepared = entries.map(data => {
       const copy = foundry.utils.deepClone(data);
+      delete copy._id;
       if (this.actor.type === "character" && copy.type === "ability" && !this.actor.system.experience?.creationMode) copy.system.level = 0;
       return copy;
     });

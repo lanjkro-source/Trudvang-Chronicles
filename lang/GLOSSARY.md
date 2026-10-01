@@ -784,6 +784,11 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.EditSkills` | Configure skills | Régler les compétences |
 | `TRUDVANG.Npc.NoLearnedSkills` | No skill above level 1, learned discipline or specialty. | Aucune compétence au-delà du niveau 1, discipline ou spécialité apprise. |
 | `TRUDVANG.Npc.NoCapacities` | No abilities. | Aucune capacité. |
+| `TRUDVANG.Npc.NoWeapons` | No weapons in the inventory. | Aucune arme dans l’inventaire. |
+| `TRUDVANG.Npc.NoProtection` | No armor or shields in the inventory. | Aucune armure ni aucun bouclier dans l’inventaire. |
+| `TRUDVANG.Npc.DefaultInventoryHint` | The creature’s default inventory is inherited by each new unlinked token. Changes made on a token do not change this model. | Inventaire par défaut de la créature, transmis à chaque nouveau token non lié. Les modifications faites sur un token ne modifient pas ce modèle. |
+| `TRUDVANG.Npc.TokenInventoryHint` | This individual’s inventory: changes only affect this token. | Inventaire de cet exemplaire : les modifications ne concernent que ce token. |
+| `TRUDVANG.Npc.EquipmentOnly` | This inventory only accepts weapons, armor and shields. | Cet inventaire accepte uniquement les armes, les armures et les boucliers. |
 | `TRUDVANG.Npc.BookSkillValue` | Value: {value} | Valeur : {value} |
 | `TRUDVANG.Npc.NaturalProtection` | (including {value} natural PV) | (dont {value} VP naturels) |
 | `TRUDVANG.Npc.IntegrityHint` | Only worn armor has integrity. Natural armor has no BV. | Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI. |

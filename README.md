@@ -56,6 +56,7 @@ npm run build:packs
 - Click a weapon name to attack, the shield icon to parry, or the burst icon to roll damage. The attack/parry dialog chooses how many Combat Points to spend.
 - Click a spell or divine feat to roll and spend Vitner or Divinity Points. The cost can be raised for levels of power.
 - Drag world Items into an Actor sheet, or duplicate any starter NPC and edit the copy.
+- NPCs have an Equipment tab for weapons, armor and shields. Edit the creature model’s inventory to equip future tokens; new NPC tokens are unlinked by default, so editing their inventory affects only that individual. Animals keep an empty material inventory: natural attacks and natural armor are not loot. Starter inventories are generated from `game doc/fr/trudvang-creatures-fr.json` and the base equipment with `npm run generate:npc-inventories`; the local validator audits that source when present.
 - Use the Effects tab to create a temporary modifier. Item effects can transfer while equipped/active, or be applied to selected tokens from the Item sheet or chat card.
 - In an effect's Trudvang tab, choose its stacking policy and optional timed stages. The supported data paths are listed directly in the editor.
 

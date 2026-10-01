@@ -4,10 +4,11 @@ import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
+import {initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 39 adds the bestiary's upper Body Point
-// bound to existing starter NPCs, without changing their current or played maximum PS.
-const CONTENT_VERSION = 39;
+// TEMPORARY WORLD MIGRATION — version 40 seeds previously empty starter NPC
+// inventories once; personalized inventories and existing token loot are preserved.
+const CONTENT_VERSION = 40;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -479,7 +480,7 @@ async function upsertActors(source, folders, translationsByKey) {
         ...(payload.items?.[index] ?? localizeTree(rawChild)),
         flags: {[SYSTEM_ID]: {starterId: starterKey(rawChild.nameKey)}}
       }));
-      await Actor.createDocuments([{...payload, items: children, flags: {[SYSTEM_ID]: {starterId: key}}}]);
+      await Actor.createDocuments([{...payload, items: children, flags: {[SYSTEM_ID]: {starterId: key, inventoryInitialized: true}}}]);
       continue;
     }
     const update = {img: payload.img, folder: payload.folder, [`flags.${SYSTEM_ID}.starterId`]: key};
@@ -490,9 +491,16 @@ async function upsertActors(source, folders, translationsByKey) {
     const legacyDescriptions = translationsByKey.get(entry.system?.descriptionKey) ?? new Set();
     await syncNpcCreatureData(actor, key, {legacyDescriptions});
 
+    // TEMPORARY WORLD MIGRATION — initialize only the creature model, not its
+    // already placed tokens. Reimports never restore removed default equipment.
+    await initializeNpcInventory(actor, (payload.items ?? []).map((child, index) => ({...child,
+      flags: {...child.flags, [SYSTEM_ID]: {...child.flags?.[SYSTEM_ID], starterId: starterKey(rawChildren[index].nameKey)}}
+    })));
+
     for (const [index, childPayload] of (payload.items ?? []).entries()) {
       const rawChild = rawChildren[index];
       if (!rawChild) break;
+      if (actor.type === "npc" && isNpcEquipment(rawChild)) continue;
       const childKey = starterKey(rawChild.nameKey);
       const childTranslations = translationsByKey.get(rawChild.nameKey);
       const embedded = actor.items.find(item => flagOf(item, "starterId") === childKey)
