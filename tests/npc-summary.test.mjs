@@ -53,11 +53,11 @@ const knowledge = (kind, level, name, extra = {}) => ({level, item: {id: name, n
   system: {kind, level, ...extra}}, specialties: []});
 const tree = (level, disciplines = [], unassigned = []) => ({key: "fighting", level, disciplines, unassigned});
 
-function actor(items = []) {
+function actor(items = [], {fighting = 8} = {}) {
   const traits = Object.fromEntries(Object.keys(TRUDVANG.traits).map(key => [key, 0]));
   traits.constitution = 2;
   const skills = Object.fromEntries(Object.keys(TRUDVANG.skills).map(key => [key, {value: 1, bonus: 0}]));
-  skills.fighting.value = 8;
+  skills.fighting.value = fighting;
   const instance = new TrudvangActor();
   Object.assign(instance, {type: "npc", name: "Test creature", id: "npc", img: "", items, statuses: new Set(),
     system: {traits, traitCurrent: {constitution: null}, skills,
@@ -441,7 +441,7 @@ test("book skill D20 buttons use the PJ roll dialog and the correct discipline/s
   const previousDocument = globalThis.document;
   globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
   t.after(() => { globalThis.document = previousDocument; });
-  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()], {fighting: 1});
   sheet.actor.system.skillTree = [
     {name: "Combat", value: 8, kind: "skill"},
     {name: "Combat armé", value: 2, kind: "discipline"},
@@ -477,7 +477,7 @@ test("validating a book specialty roll evaluates a D20 and creates a chat messag
   globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}),
     create: async data => { messages.push(data); return data; }};
   foundry.applications.api.DialogV2 = {wait: async () => ({modifier: -2})};
-  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()], {fighting: 1});
   sheet.actor.system.skillTree = [
     {name: "Combat", value: 8, kind: "skill"},
     {name: "Combat armé", value: 2, kind: "discipline"},
@@ -492,6 +492,45 @@ test("validating a book specialty roll evaluates a D20 and creates a chat messag
   assert.equal(messages.length, 1);
   assert.deepEqual(messages[0].speaker, {actor: "npc"});
   assert.equal(messages[0].rolls[0].formula, "1d20", "chat roll uses the normal Dice So Nice-compatible pipeline");
+});
+
+test("book skill rolls keep bonuses and effects without adding the actor base twice", async t => {
+  const previous = {document: globalThis.document, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { globalThis.document = previous.document; foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  const dialogs = [];
+  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  for (const base of [1, 8]) {
+    const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()], {fighting: base});
+    sheet.actor.system.skills.fighting.bonus = 2;
+    sheet.actor.system.effective.skills.fighting = base + 2 + 3;
+    sheet.actor.system.modifiers.rolls.skills = {fighting: -2};
+    sheet.actor.system.skillTree = [
+      {name: "Combat", value: 8, kind: "skill"},
+      {name: "Combat armé", value: 2, kind: "discipline"},
+      {name: "Armes légères à une main", value: 3, kind: "specialty"}
+    ];
+    dialogs.length = 0;
+    for (const index of [0, 1, 2]) await sheet._rollNpcBookSkill(index);
+    for (const [index, target] of [11, 13, 19].entries()) assert.match(dialogs[index].content, new RegExp(`Cible de base: ${target}\\b`));
+    assert.equal(sheet.actor.system.skills.fighting.value, base, "rolling never rewrites the actor's base skill");
+  }
+});
+
+test("unmatched book skill names still use their own parent values", async t => {
+  const previous = {document: globalThis.document, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { globalThis.document = previous.document; foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  const dialogs = [];
+  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  sheet.actor.system.skillTree = [
+    {name: "Compétence personnalisée", value: 7, kind: "skill"},
+    {name: "Discipline personnalisée", value: 2, kind: "discipline"},
+    {name: "Spécialité personnalisée", value: 1, kind: "specialty"}
+  ];
+  for (const index of [0, 1, 2]) await sheet._rollNpcBookSkill(index);
+  for (const [index, target] of [7, 9, 11].entries()) assert.match(dialogs[index].content, new RegExp(`Cible de base: ${target}\\b`));
 });
 
 test("negative health and death remain visible with a bounded gauge", async () => {

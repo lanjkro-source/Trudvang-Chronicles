@@ -816,15 +816,20 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   _rollNpcBookSkill(index) {
     const row = this._npcBookSkillRows()[index];
     if (!row) return;
+    // Book rows own their base skill level. The parallel actor field may still
+    // be 1; only its prepared bonus/effect delta carries over into this roll.
+    const preparedSkill = this.actor.getSkillValue(row.skillKey);
+    const skillBonus = row.skillKey ? preparedSkill - Number(this.actor.system.skills?.[row.skillKey]?.value || 0) : 0;
+    const skillValue = row.skillValue + skillBonus;
     if (row.kind === "skill") return this.actor.rollSkill(row.skillKey, {
-      label: row.name, bonus: row.skillKey ? 0 : row.value - this.actor.getSkillValue(row.skillKey)
+      label: row.name, bonus: skillValue - preparedSkill
     });
     const item = {name: row.name, img: "icons/svg/book.svg", type: "ability", system: {
       kind: row.kind, catalogId: row.catalogId, parentSkill: row.skillKey,
       level: row.value, rollBonus: row.kind === "specialty" ? 2 : 1
     }};
     return this.actor.rollAbility(item, {
-      disciplineLevel: row.disciplineValue, skillValue: row.skillKey ? null : row.skillValue
+      disciplineLevel: row.disciplineValue, skillValue
     });
   }
 
