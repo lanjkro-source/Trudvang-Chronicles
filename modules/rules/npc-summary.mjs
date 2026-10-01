@@ -24,23 +24,29 @@ const referenceName = name => normalize(name).replace(/\s*\([^)]*\)/g, "").norma
 export function npcBookSkillRows(rows, {skills, knowledgeTree, localize}) {
   let skillKey = "";
   let disciplineId = "";
+  let skillValue = 0;
+  let disciplineValue = 0;
   const matches = (name, entry) => [localize(entry.label), entry.name].some(label => referenceName(label) === referenceName(name));
   return Array.from(rows ?? [], (row, index) => {
     let catalogId = "";
     if (row.kind === "skill") {
       skillKey = Object.keys(skills).find(key => referenceName(localize(skills[key])) === referenceName(row.name)) ?? "";
       disciplineId = "";
+      skillValue = Number(row.value || 0);
+      disciplineValue = 0;
     } else {
       const disciplines = skillKey ? knowledgeTree[skillKey] ?? [] : Object.values(knowledgeTree).flat();
       if (row.kind === "discipline") {
         disciplineId = disciplines.find(entry => matches(row.name, entry))?.id ?? "";
         catalogId = disciplineId;
+        disciplineValue = Number(row.value || 0);
       } else {
         const parents = disciplineId ? disciplines.filter(entry => entry.id === disciplineId) : disciplines;
         catalogId = parents.flatMap(entry => entry.specialties).find(entry => matches(row.name, entry))?.id ?? "";
       }
     }
-    return {name: row.name, value: Number(row.value || 0), kind: row.kind, index, skillKey, catalogId};
+    return {name: row.name, value: Number(row.value || 0), kind: row.kind, index, skillKey, catalogId,
+      skillValue, disciplineValue: row.kind === "specialty" ? disciplineValue : 0};
   });
 }
 

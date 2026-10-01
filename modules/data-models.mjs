@@ -289,7 +289,7 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         }), {required: true, initial: []})
       }),
       skills: skillsSchema(),
-      // Book skill tree (flat, tree-ordered): display-only rows on the NPC sheet for
+      // Book skill tree (flat, tree-ordered): reference and roll rows on the NPC sheet for
       // creatures whose book skills are not embedded ability items. Empty default, so
       // existing worlds validate without any migration.
       skillTree: new fields.ArrayField(schema({

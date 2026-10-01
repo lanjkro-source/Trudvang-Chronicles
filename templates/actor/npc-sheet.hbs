@@ -35,24 +35,24 @@
         </section>
         <section class="panel npc-skills-panel">
           <h2>{{localize "TRUDVANG.Section.Skills"}}</h2>
-          {{#if npcBookSkills.length}}<div class="npc-book-skills">{{#each npcBookSkills as |skill|}}<button type="button" class="npc-knowledge-row npc-book-skill kind-{{skill.kind}}" data-action="show-npc-book-skill" data-index="{{skill.index}}" title="{{skill.name}}"><span>{{skill.name}}</span><span>{{skill.value}}</span></button>{{/each}}</div>{{/if}}
+          {{#if npcBookSkills.length}}<div class="npc-book-skills">{{#each npcBookSkills as |skill|}}<div class="npc-knowledge-row npc-book-skill kind-{{skill.kind}}"><button type="button" class="npc-knowledge-name" data-action="show-npc-book-skill" data-index="{{skill.index}}" title="{{skill.name}}">{{skill.name}}</button><button type="button" class="npc-knowledge-roll" data-action="roll-npc-book-skill" data-index="{{skill.index}}" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><span>{{skill.value}}</span></div>{{/each}}</div>{{/if}}
           <ul class="npc-knowledge-tree">
             {{#each npcSkillTrees as |tree|}}
             <li title="{{tree.label}}">
-              {{#if tree.visible}}<button type="button" class="npc-knowledge-row npc-skill-root kind-skill" data-action="show-skill-detail" data-skill="{{tree.key}}" title="{{tree.description}}"><span>{{tree.label}}</span><span>{{tree.level}}</span></button>{{/if}}
+              {{#if tree.visible}}<div class="npc-knowledge-row npc-skill-root kind-skill"><button type="button" class="npc-knowledge-name" data-action="show-skill-detail" data-skill="{{tree.key}}" title="{{tree.description}}">{{tree.label}}</button><button type="button" class="npc-knowledge-roll" data-action="roll-skill" data-skill="{{tree.key}}" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><span>{{tree.level}}</span></div>{{/if}}
               {{#if tree.disciplines.length}}<ul class="npc-skill-branches">
                 {{#each tree.disciplines as |discipline|}}
                 <li>
-                  {{#if discipline.visible}}<button type="button" class="npc-knowledge-row kind-discipline" data-item-id="{{discipline.item.id}}" data-action="item-edit" title="{{discipline.calculation}}"><span>{{discipline.item.name}}</span><span>{{discipline.level}}{{#if discipline.separateHands}} | {{discipline.offHandLevel}}{{/if}}</span></button>{{/if}}
+                  {{#if discipline.visible}}<div class="npc-knowledge-row kind-discipline" data-item-id="{{discipline.item.id}}"><button type="button" class="npc-knowledge-name" data-action="item-edit" title="{{discipline.calculation}}">{{discipline.item.name}}</button><button type="button" class="npc-knowledge-roll" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><span>{{discipline.level}}{{#if discipline.separateHands}} | {{discipline.offHandLevel}}{{/if}}</span></div>{{/if}}
                   {{#if discipline.specialties.length}}<ul class="npc-skill-branches">
                     {{#each discipline.specialties as |specialty|}}
-                    <li><button type="button" class="npc-knowledge-row kind-specialty" data-item-id="{{specialty.item.id}}" data-action="item-edit" title="{{specialty.calculation}}"><span>{{specialty.item.name}}</span><span>{{specialty.level}}{{#if specialty.separateHands}} | {{specialty.offHandLevel}}{{/if}}</span></button></li>
+                    <li><div class="npc-knowledge-row kind-specialty" data-item-id="{{specialty.item.id}}"><button type="button" class="npc-knowledge-name" data-action="item-edit" title="{{specialty.calculation}}">{{specialty.item.name}}</button><button type="button" class="npc-knowledge-roll" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><span>{{specialty.level}}{{#if specialty.separateHands}} | {{specialty.offHandLevel}}{{/if}}</span></div></li>
                     {{/each}}
                   </ul>{{/if}}
                 </li>
                 {{/each}}
               </ul>{{/if}}
-              {{#each tree.unassigned as |node|}}<button type="button" class="npc-knowledge-row kind-{{node.item.system.kind}}" data-item-id="{{node.item.id}}" data-action="item-edit" title="{{node.calculation}}"><span>{{node.item.name}}</span><span>{{node.level}}</span></button>{{/each}}
+              {{#each tree.unassigned as |node|}}<div class="npc-knowledge-row kind-{{node.item.system.kind}}" data-item-id="{{node.item.id}}"><button type="button" class="npc-knowledge-name" data-action="item-edit" title="{{node.calculation}}">{{node.item.name}}</button><button type="button" class="npc-knowledge-roll" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Roll'}}"><i class="fas fa-dice-d20"></i></button><span>{{node.level}}</span></div>{{/each}}
             </li>
             {{else}}{{#unless npcBookSkills.length}}<li class="empty">{{localize "TRUDVANG.Npc.NoLearnedSkills"}}</li>{{/unless}}{{/each}}
           </ul>
@@ -61,7 +61,7 @@
           <h2>{{localize "TRUDVANG.Section.Capacities"}}</h2>
           <ol class="npc-ability-list">
             {{#each npcAbilities as |ability|}}
-            <li><button type="button" class="npc-ability-row {{#if ability.disabled}}inactive{{/if}}" data-action="effect-edit" data-effect-uuid="{{ability.effectUuid}}" title="{{ability.summary}}"><img src="{{ability.img}}" alt=""><span>{{ability.name}}</span></button></li>
+            <li><button type="button" class="npc-ability-row" data-action="capacity-edit" data-effect-uuid="{{ability.effectUuid}}" title="{{ability.summary}}"><img src="{{ability.img}}" alt=""><span>{{ability.name}}</span></button></li>
             {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoCapacities"}}</li>{{/each}}
           </ol>
         </section>

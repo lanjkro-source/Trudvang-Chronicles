@@ -261,6 +261,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Field.ParentDiscipline` | Parent Discipline | Discipline parente |
 | `TRUDVANG.Field.RollBonus` | Bonus per Level | Bonus par niveau |
 | `TRUDVANG.Field.Source` | Source | Source |
+| `TRUDVANG.Field.SourceBook` | Book | Livre |
+| `TRUDVANG.Field.SourcePage` | Page | Page |
 | `TRUDVANG.Field.ActiveSpell` | Active / maintained | Actif / maintenu |
 | `TRUDVANG.Field.ActiveCost` | Vitner cost when activated | Coût en vitner lors de l'activation |
 | `TRUDVANG.Field.ActiveSpellsCount` | {current} / {max} | {current} / {max} |
@@ -6739,3 +6741,129 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Journal.toikalokke.Name` | Toikalokke | Toikalokke |
 | `TRUDVANG.Content.Journal.toikalokke.Content` | <article class="trudvang-religion-journal"><p>Toikalokke is the name for the divine practice learned by elven stargazers and priests (though the elves call them the “high gifts,” after the “high gods”). Those who master these gifts are called Ihana.</p><h2>Star Harp</h2><ul><li>Toikalokke’s prerequisite for Holy Tablets)</li></ul><p>The star harp is the elven priest’s most valuable possession, and with the help of that object the priest is able to decipher the stars and make contact with the gods which give the knowledge of Holy Tablets. All star harps are different. Some are as small as the palm of a hand, while others may be as big as a house, but all of them appear as a wicker tree without leaves. A star harp is created from the unusual alfarka wood and is powerfully connected to the priest who owns it (as every priest needs to possess their own star harp). From the branches of the harp, the priest hangs different prisms and lenses, and by studying how the starlight breaks against the prisms, the priest can make contact with the gods.</p><p>If the priest’s star harp breaks or disappears, the priest must get a new one, otherwise no stargazing will be possible, although normal Divinity Points can be used. Another Ihana’s star harp may not be used as a replacement, even temporarily.</p><h2>Stargazing and Extra Divinity Points</h2><p>Elven priests can obtain extra Divinity Points in much the same way that Gerbanis priests perform blood sacrifice or Gavlians of Westmark pray , though the method obviously differs. By studying stars and astral bodies with a star harp, they acquire their extra Divinity Points.</p><p>To decipher the signs of the gods, two things are required: it must be a starry night (in this way , the elves are influenced more by the unpredictable nature of weather than are the priests of Gerbanis or the Tenet of Nid), and the elf must have their star harp ready for use.</p><p>A dimwalker can decipher the stars only on singular occasions and must wait until all the Divinity Points from the last stargazing have disappeared before doing so again.</p><ul><li>Divinity points obtained through stargazing are fleeting and disappear at a rate of 1 point per day.</li></ul><h2>Time Spent Stargazing and External Conditions</h2><p>Both the time that the Ihana spends stargazing and the conditions in which the ritual is performed garner different amounts of Divinity Points.</p><p>During the time that an Ihana spends stargazing, they must remain undisturbed. Each time the priest’s peace and meditation is disturbed, they must succeed on an appropriate Situation roll to maintain concentration.</p><p>If the priest loses concentration, that stargazing attempt has failed and no Divinity Points are obtained.</p><section class="trudvang-religion-table"><h3>Time Spent Stargazing</h3><table><thead><tr><th>Time spent</th><th>Divinity Points</th></tr></thead><tbody><tr><td>1 hour</td><td>1</td></tr><tr><td>4 hours</td><td>3</td></tr><tr><td>8 hours</td><td>6</td></tr><tr><td>2 × 8 hours (2 nights)</td><td>12</td></tr><tr><td>3 × 8 hours (3 nights)</td><td>24</td></tr><tr><td>7 × 8 hours (7 nights)</td><td>32</td></tr></tbody></table></section><p>Based on the stargazing conditions, a multiplier is applied to the Divinity Points gained over time. An Ihana is unable to stargaze at all if the sky is completely covered in clouds or if the location is one where the stars are not visible, such as underground or beneath a thick canopy of trees.</p><p>The table below indicates the multiplier for different conditions.</p><section class="trudvang-religion-table"><h3>Stargazing Conditions</h3><table><thead><tr><th>Visibility</th><th>Divinity Points</th></tr></thead><tbody><tr><td>Partially starry</td><td>×1</td></tr><tr><td>Starry</td><td>×2</td></tr><tr><td>Partially starry and full moon</td><td>×3</td></tr><tr><td>Starry and full moon</td><td>×4</td></tr><tr><td>Summer solstice</td><td>×5</td></tr><tr><td>Storm</td><td>/2</td></tr></tbody></table></section><p>To succeed in studying the stars, the stargazer must make a successful Skill roll for the Ihana specialty.</p><p>Stargazing is the well of power from which an Ihana priest draws strength. The amount of time spent stargazing and the predominant weather conditions during the process are quite important, as is the location, since the worthier a place is and the longer the time spent there, the more power the priest will gain to use in divine abilities. Without stargazing with a star harp the Ihana has only a limited amount of Divinity Points to spend on abilities. Stargazing allows the Ihana the opportunity to obtain extra points when needed.</p></article> | <article class="trudvang-religion-journal"><p>Toikalokke est le nom donné à la pratique divine enseignée par les prêtres et astrologues elfes (Ces derniers l’appellent « hauts dons », d’après les « hauts dieux »). Ceux qui maîtrisent ces dons sont appelés ihanas.</p><h2>La harpe des étoiles</h2><ul><li>Prérequis du Toikalokke pour l’apprentissage des Tablettes sacrées.</li></ul><p>La harpe des étoiles est l’objet le plus précieux que peut posséder un prêtre elfe, car il lui permet de déchiffrer les étoiles et d’entrer en contact avec les dieux qui lui confèrent la connaissance des tablettes sacrées. Toutes les harpes des étoiles sont différentes. Certaines sont aussi petites que la paume de la main, tandis que d’autres sont aussi grandes qu’une maison, mais toutes ressemblent à un saule sans feuille.</p><p>Les harpes des étoiles sont fabriquées à partir du bois d’alfarka, qui est assez rare, et elles sont fortement liées à leur propriétaire (chaque prêtre doit posséder sa propre harpe). Le prêtre accroche divers prismes et lentilles aux branches de la harpe, et en étudiant la façon dont ils décomposent la lumière des étoiles, il peut entrer en contact avec les dieux.</p><p>Si le prêtre brise sa harpe ou la perd, il doit en obtenir une nouvelle, sans quoi il ne pourra plus interpréter les étoiles, même s’il demeure capable d’utiliser normalement ses points de divinité. Il lui est impossible de la remplacer par la harpe d’un autre prêtre, même de façon temporaire.</p><h2>Astrologie et points de divinité supplémentaires</h2><p>Les prêtres elfes peuvent obtenir des points de divinité supplémentaires de façon similaire aux prêtres de Gerbanis qui font des sacrifices de sang ou aux gavliens du Vastermark qui prient, mais leur méthode est évidemment différente. C’est en étudiant les étoiles et les corps célestes à travers leurs harpes des étoiles qu’ils se procurent leurs points de divinité supplémentaires.</p><p>Pour déchiffrer les signes des dieux, l’ihana a besoin de deux choses : une nuit étoilée (en cela, les elfes subissent davantage l’influence de la nature imprévisible des éléments que les prêtres de Gerbanis ou de la Doctrine de Nid), et sa harpe des étoiles à portée de main.</p><p>Un arpenteur des brumes ne peut déchiffrer les étoiles qu’en des occasions particulières et il doit attendre que tous les points de divinité qu’il a reçus lors de sa précédente observation des étoiles aient disparu avant de pouvoir recommencer.</p><p>Pour parvenir à étudier les étoiles, l’arpenteur des brumes doit réussir un test de compétence avec la spécialité Ihana.</p><p>L’astrologie est le puits de pouvoir dans lequel les prêtres ihanas puisent leur force. Le temps passé à observer les étoiles et les conditions météorologiques qui accompagnent cette pratique sont plutôt importants, de même que l’endroit où l’ihana s’installe : plus le lieu est significatif et plus il y passe du temps, plus la quantité de pouvoir que recevra le prêtre pour utiliser ses talents divins sera importante. S’il n’observe pas les étoiles à l’aide d’une harpe des étoiles, l’ihana ne dispose que d’une quantité limitée de points de divinité à dépenser pour utiliser ses pouvoirs. L’astrologie donne à l’ihana l’occasion d’obtenir des points supplémentaires quand le besoin s’en fait sentir.</p><ul><li>Les points de divinité obtenus par le biais de l’astrologie sont volatiles et disparaissent au rythme de 1 point par jour.</li></ul><h2>Temps passé à observer les étoiles, conditions externes</h2><p>Le temps que passe l’ihana à observer les étoiles et les conditions dans lesquelles il accomplit ce rituel influent largement sur le nombre de points de divinité que l’arpenteur des brumes peut recueillir.</p><p>Pendant tout le temps qu’il observe les étoiles, l’ihana ne doit subir aucune distraction. Chaque fois que la tranquillité du prêtre est menacée, il doit réussir un test de situation adéquat pour conserver sa concentration. Si le prêtre est déconcentré, son rituel échoue et il n’en retire aucun point de divinité.</p><section class="trudvang-religion-table"><h3>Temps passé à observer les étoiles</h3><table><thead><tr><th>Temps passé</th><th>Points de divinité</th></tr></thead><tbody><tr><td>1 heure</td><td>1</td></tr><tr><td>4 heures</td><td>3</td></tr><tr><td>8 heures</td><td>6</td></tr><tr><td>2 × 8 heures (2 nuits)</td><td>12</td></tr><tr><td>3 × 8 heures (3 nuits)</td><td>24</td></tr><tr><td>7 × 8 heures (7 nuits)</td><td>32</td></tr></tbody></table></section><p>En fonction des conditions dans lesquelles l’ihana observe les étoiles, on applique un multiplicateur au nombre de points de divinité qu’il obtient au fil du temps. Un ihana est dans l’impossibilité d’observer les étoiles si le ciel est complètement voilé par les nuages ou s’il se trouve à un endroit où les étoiles ne sont pas visibles (en sous-sol ou sous la canopée d’une épaisse forêt, par exemple). Si l’ihana observe les étoiles plus de 8 heures, alors il doit passer la journée à dormir et effectue des calculs astronomiques le soir avant de reprendre l’observation.</p><p>La table ci-dessous précise le multiplicateur selon les conditions.</p><section class="trudvang-religion-table"><h3>Conditions externes</h3><table><thead><tr><th>Visibilité</th><th>Points de divinité</th></tr></thead><tbody><tr><td>Partiellement étoilé</td><td>×1</td></tr><tr><td>Étoilé</td><td>×2</td></tr><tr><td>Partiellement étoilé et pleine lune</td><td>×3</td></tr><tr><td>Étoilé et pleine lune</td><td>×4</td></tr><tr><td>Solstice d’été</td><td>×5</td></tr><tr><td>Orage</td><td>/2</td></tr></tbody></table></section></article> |
+
+## `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |

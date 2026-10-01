@@ -9,6 +9,7 @@ import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/f
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
+import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -46,6 +47,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "roll-skill": TrudvangActorSheet.#onAction,
       "show-skill-detail": TrudvangActorSheet.#onAction,
       "show-npc-book-skill": TrudvangActorSheet.#onAction,
+      "roll-npc-book-skill": TrudvangActorSheet.#onAction,
+      "capacity-edit": TrudvangActorSheet.#onAction,
       "roll-trait": TrudvangActorSheet.#onAction,
       "advance-skill": TrudvangActorSheet.#onAction,
       "adjust-trait": TrudvangActorSheet.#onAction,
@@ -201,7 +204,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (context.vitnerProfile) context.vitnerProfile.fatalRange = context.vitnerProfile.fatalThreshold === 10 ? "10" : `${context.vitnerProfile.fatalThreshold}-10`;
     context.religionProfile = this.actor.selectedReligion;
     context.religionEditable = context.creationMode && !Object.values(TRUDVANG.religions).some(religion => Number(this.actor.findKnowledgeItem(religion.specialty)?.system.level || 0) > 0);
-    context.effects = Array.from(this.actor.allApplicableEffects()).map(effect => ({
+    context.effects = Array.from(this.actor.allApplicableEffects()).filter(effect => !isCreatureAbility(effect)).map(effect => ({
       uuid: effect.uuid,
       name: effect.name,
       img: effect.img,
@@ -336,10 +339,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (this.actor.type === "npc") {
       context.npcSkillTrees = npcSkillTrees(context.skillTrees);
       context.npcBookSkills = this._npcBookSkillRows();
-      const featEffects = Array.from(this.actor.effects ?? []).filter(effect => effect.getFlag?.("trudvang-chronicles", "feat") || effect.flags?.["trudvang-chronicles"]?.feat);
-      context.npcAbilities = featEffects.map(effect => ({
-        name: effect.name, img: effect.img, effectUuid: effect.uuid, disabled: effect.disabled,
-        summary: String(effect.description || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+      context.npcAbilities = Array.from(this.actor.effects ?? []).filter(isCreatureAbility).map(effect => ({
+        ...creatureAbilityDetails(effect, {language: game.i18n.lang, localize: key => game.i18n.localize(key)}),
+        effectUuid: effect.uuid
       }));
     }
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
@@ -431,6 +433,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-skill": return this.actor.rollSkill(target.dataset.skill);
       case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[target.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[target.dataset.skill]));
       case "show-npc-book-skill": return this._openNpcBookSkill(Number(target.dataset.index));
+      case "roll-npc-book-skill": return this._rollNpcBookSkill(Number(target.dataset.index));
+      case "capacity-edit": {
+        if (!effect || !isCreatureAbility(effect)) return null;
+        const {openCreatureAbilitySheet} = await import("./creature-ability-sheet.mjs");
+        return openCreatureAbilitySheet(effect);
+      }
       case "roll-trait": return this.actor.rollTrait(target.dataset.trait);
       case "advance-skill": return this.actor.advanceSkill(target.dataset.skill);
       case "adjust-trait": return this.actor.adjustTrait(target.dataset.trait, Number(target.dataset.direction));
@@ -799,6 +807,21 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       return this._showCatalogDetail(row.catalogId);
     }
     return this._showDetail(row.name, game.i18n.format("TRUDVANG.Npc.BookSkillValue", {value: row.value}));
+  }
+
+  _rollNpcBookSkill(index) {
+    const row = this._npcBookSkillRows()[index];
+    if (!row) return;
+    if (row.kind === "skill") return this.actor.rollSkill(row.skillKey, {
+      label: row.name, bonus: row.skillKey ? 0 : row.value - this.actor.getSkillValue(row.skillKey)
+    });
+    const item = {name: row.name, img: "icons/svg/book.svg", type: "ability", system: {
+      kind: row.kind, catalogId: row.catalogId, parentSkill: row.skillKey,
+      level: row.value, rollBonus: row.kind === "specialty" ? 2 : 1
+    }};
+    return this.actor.rollAbility(item, {
+      disciplineLevel: row.disciplineValue, skillValue: row.skillKey ? null : row.skillValue
+    });
   }
 
   _showCatalogDetail(catalogId) {

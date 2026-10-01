@@ -568,24 +568,37 @@
 .trudvang-sheet.npc-sheet .npc-skill-branches { margin-left: 6px; padding-left: 12px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches > li { position: relative; border-left: 1px solid var(--trudvang-line); padding-left: 10px; }
 .trudvang-sheet.npc-sheet .npc-skill-branches > li::before { content: ""; position: absolute; top: 13px; left: 0; width: 8px; border-top: 1px solid var(--trudvang-line); }
-.trudvang-sheet.npc-sheet .npc-knowledge-row { width: 100%; margin: 0; min-height: 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px; align-items: center; padding: 2px 5px; border: 0; border-radius: 2px; color: var(--trudvang-ink); font-size: .85rem; text-align: left; }
+.trudvang-sheet.npc-sheet .npc-knowledge-row { width: 100%; margin: 0; min-height: 26px; display: grid; grid-template-columns: minmax(0, 1fr) 22px auto; gap: 3px; align-items: center; padding: 2px 5px; border: 0; border-radius: 2px; color: var(--trudvang-ink); font-size: .85rem; text-align: left; }
 .trudvang-sheet.npc-sheet .npc-knowledge-row.kind-skill { background: color-mix(in srgb, var(--trudvang-accent) 10%, var(--trudvang-paper-light)); }
 .trudvang-sheet.npc-sheet .npc-knowledge-row.kind-discipline { background: color-mix(in srgb, var(--trudvang-gold) 14%, var(--trudvang-paper-light)); }
 .trudvang-sheet.npc-sheet .npc-knowledge-row.kind-specialty { background: color-mix(in srgb, var(--trudvang-green) 10%, var(--trudvang-paper-light)); }
-.trudvang-sheet.npc-sheet .npc-knowledge-row > span:first-child { min-width: 0; white-space: normal; line-height: 1.25; }
+.trudvang-sheet.npc-sheet .npc-knowledge-name { min-width: 0; height: auto; min-height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: inherit; text-align: left; font-size: inherit; font-weight: inherit; white-space: normal; line-height: 1.25; }
+.trudvang-sheet.npc-sheet .npc-knowledge-roll { width: 22px; height: 22px; min-height: 22px; margin: 0; padding: 0; border: 0; background: transparent; color: var(--trudvang-accent); font-size: .8rem; }
 .trudvang-sheet.npc-sheet .npc-knowledge-row > span:last-child { white-space: nowrap; }
-.trudvang-sheet.npc-sheet .npc-skill-root { grid-template-columns: minmax(0, 1fr) auto; font-weight: bold; }
+.trudvang-sheet.npc-sheet .npc-skill-root { font-weight: bold; }
 .trudvang-sheet.npc-sheet .npc-book-skills { margin-bottom: 4px; }
-.trudvang-sheet.npc-sheet .npc-book-skill { grid-template-columns: minmax(0, 1fr) auto; min-height: 20px; }
+.trudvang-sheet.npc-sheet .npc-book-skill { min-height: 20px; }
 .trudvang-sheet.npc-sheet .npc-book-skill { font-size: .85rem; }
-.trudvang-sheet.npc-sheet .npc-book-skill.kind-skill > span { font-weight: bold; }
+.trudvang-sheet.npc-sheet .npc-book-skill.kind-skill .npc-knowledge-name { font-weight: bold; }
 .trudvang-sheet.npc-sheet .npc-book-skill.kind-discipline { margin-left: 12px; width: calc(100% - 12px); }
 .trudvang-sheet.npc-sheet .npc-book-skill.kind-specialty { margin-left: 24px; width: calc(100% - 24px); }
 .trudvang-sheet.npc-sheet .npc-ability-list { list-style: none; margin: 0; padding: 0; }
 .trudvang-sheet.npc-sheet .npc-ability-row { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 6px; align-items: center; width: 100%; margin: 0; padding: 4px 0; border: 0; border-bottom: 1px dotted var(--trudvang-line); background: transparent; color: var(--trudvang-ink); text-align: left; font-size: .85rem; line-height: 1.25; }
 .trudvang-sheet.npc-sheet .npc-ability-row img { width: 28px; height: 28px; object-fit: cover; border: 1px solid var(--trudvang-line); background: var(--trudvang-paper); }
-.trudvang-sheet.npc-sheet .npc-ability-row.inactive { color: var(--trudvang-muted); }
 .trudvang-sheet.npc-sheet .npc-knowledge-row:hover, .trudvang-sheet.npc-sheet .npc-ability-row:hover { outline: 1px solid var(--trudvang-accent); outline-offset: -1px; box-shadow: none; }
+
+.trudvang.creature-ability-sheet .window-content { overflow-y: auto; }
+.trudvang-sheet.creature-ability-content { height: auto; min-height: 100%; gap: 12px; padding: 12px; }
+.trudvang-sheet .capacity-header { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px; align-items: center; padding: 8px; color: var(--trudvang-on-header); background: var(--trudvang-header); }
+.trudvang-sheet .capacity-header img { width: 44px; height: 44px; object-fit: cover; border: 1px solid var(--trudvang-gold); background: var(--trudvang-header-alt); }
+.trudvang-sheet .capacity-header input { width: 100%; height: 36px; font-size: 1.15rem; color: var(--trudvang-on-header); background: transparent; border: 0; border-bottom: 1px solid var(--trudvang-gold); }
+.trudvang-sheet .capacity-summary label, .trudvang-sheet .capacity-source label { display: grid; gap: 4px; font-size: .85rem; color: var(--trudvang-muted); }
+.trudvang-sheet .capacity-summary textarea { width: 100%; resize: vertical; }
+.trudvang-sheet .capacity-description { min-height: 180px; flex: 1; }
+.trudvang-sheet .capacity-description prose-mirror { display: block; min-height: 160px; color: var(--trudvang-ink); }
+.trudvang-sheet .capacity-source { margin-top: auto; }
+.trudvang-sheet .capacity-source > div { display: grid; grid-template-columns: minmax(0, 1fr) 80px; gap: 10px; }
+.trudvang-sheet .capacity-source input { width: 100%; }
 
 .trudvang-sheet.item-sheet .item-fields { display: block; padding: 10px; background: color-mix(in srgb, var(--trudvang-paper) 92%, transparent); border-bottom: 1px solid var(--trudvang-line); }
 .trudvang-sheet.item-sheet .item-fields-title { margin: -2px 0 8px; }

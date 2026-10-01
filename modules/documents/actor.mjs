@@ -348,14 +348,15 @@ export class TrudvangActor extends BaseActor {
     return text === key ? "" : text;
   }
 
-  getAbilityBreakdown(item, {hand = "weapon"} = {}) {
-    const skill = this.getSkillValue(item.system.parentSkill);
+  getAbilityBreakdown(item, {hand = "weapon", skillValue = null, disciplineLevel = null} = {}) {
+    const skill = skillValue == null ? this.getSkillValue(item.system.parentSkill) : Number(skillValue);
     const level = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(item.system.catalogId)
       ? Number(item.system.offHandLevel || 0)
       : Number(item.system.level || 0);
     const own = level * Number(item.system.rollBonus || (item.system.kind === "specialty" ? 2 : 1));
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
-    const discipline = parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
+    const discipline = item.system.kind === "specialty" && disciplineLevel != null ? Number(disciplineLevel)
+      : parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
     const modifier = this.getRollModifier({kind: "ability", skillKey: item.system.parentSkill});
     let total = skill + discipline + own + modifier;
     if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
@@ -613,10 +614,10 @@ export class TrudvangActor extends BaseActor {
     return openRoll;
   }
 
-  async rollAbility(item) {
+  async rollAbility(item, context = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
     const key = item.system.parentSkill;
-    const target = this.getAbilityBreakdown(item).total;
+    const target = this.getAbilityBreakdown(item, context).total;
     const options = await modifierDialog({title: item.name, target});
     if (!options) return null;
     return rollUnder({actor: this, label: item.name, target, modifier: options.modifier, kind: "ability", item});

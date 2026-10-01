@@ -12,6 +12,14 @@ else if (availablePowerSources.length === 2) {
   if (result.status !== 0) failures.push(`Power source audit failed: ${result.stderr || result.stdout}`);
 }
 
+const abilitySources = ["game doc/fr/trudvang-feats-fr.json", "game doc/en/trudvang-feats-en.json"];
+const availableAbilitySources = abilitySources.filter(path => existsSync(join(root, path)));
+if (availableAbilitySources.length === 1) failures.push("Both FR and EN creature ability sources are required for a local reference audit.");
+else if (availableAbilitySources.length === 2) {
+  const result = spawnSync(process.execPath, ["tools/generate-creature-ability-data.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (result.status !== 0) failures.push(`Creature ability source audit failed: ${result.stderr || result.stdout}`);
+}
+
 function readJson(path) {
   try {
     return JSON.parse(readFileSync(join(root, path), "utf8"));

@@ -225,6 +225,8 @@
       "ParentDiscipline": "Discipline parente",
       "RollBonus": "Bonus par niveau",
       "Source": "Source",
+      "SourceBook": "Livre",
+      "SourcePage": "Page",
       "ActiveSpell": "Actif / maintenu",
       "ActiveCost": "Coût en vitner lors de l'activation",
       "ActiveSpellsCount": "{current} / {max}",
@@ -9280,6 +9282,92 @@
         "toikalokke": {
           "Name": "Toikalokke",
           "Content": "<article class=\"trudvang-religion-journal\"><p>Toikalokke est le nom donné à la pratique divine enseignée par les prêtres et astrologues elfes (Ces derniers l’appellent « hauts dons », d’après les « hauts dieux »). Ceux qui maîtrisent ces dons sont appelés ihanas.</p><h2>La harpe des étoiles</h2><ul><li>Prérequis du Toikalokke pour l’apprentissage des Tablettes sacrées.</li></ul><p>La harpe des étoiles est l’objet le plus précieux que peut posséder un prêtre elfe, car il lui permet de déchiffrer les étoiles et d’entrer en contact avec les dieux qui lui confèrent la connaissance des tablettes sacrées. Toutes les harpes des étoiles sont différentes. Certaines sont aussi petites que la paume de la main, tandis que d’autres sont aussi grandes qu’une maison, mais toutes ressemblent à un saule sans feuille.</p><p>Les harpes des étoiles sont fabriquées à partir du bois d’alfarka, qui est assez rare, et elles sont fortement liées à leur propriétaire (chaque prêtre doit posséder sa propre harpe). Le prêtre accroche divers prismes et lentilles aux branches de la harpe, et en étudiant la façon dont ils décomposent la lumière des étoiles, il peut entrer en contact avec les dieux.</p><p>Si le prêtre brise sa harpe ou la perd, il doit en obtenir une nouvelle, sans quoi il ne pourra plus interpréter les étoiles, même s’il demeure capable d’utiliser normalement ses points de divinité. Il lui est impossible de la remplacer par la harpe d’un autre prêtre, même de façon temporaire.</p><h2>Astrologie et points de divinité supplémentaires</h2><p>Les prêtres elfes peuvent obtenir des points de divinité supplémentaires de façon similaire aux prêtres de Gerbanis qui font des sacrifices de sang ou aux gavliens du Vastermark qui prient, mais leur méthode est évidemment différente. C’est en étudiant les étoiles et les corps célestes à travers leurs harpes des étoiles qu’ils se procurent leurs points de divinité supplémentaires.</p><p>Pour déchiffrer les signes des dieux, l’ihana a besoin de deux choses : une nuit étoilée (en cela, les elfes subissent davantage l’influence de la nature imprévisible des éléments que les prêtres de Gerbanis ou de la Doctrine de Nid), et sa harpe des étoiles à portée de main.</p><p>Un arpenteur des brumes ne peut déchiffrer les étoiles qu’en des occasions particulières et il doit attendre que tous les points de divinité qu’il a reçus lors de sa précédente observation des étoiles aient disparu avant de pouvoir recommencer.</p><p>Pour parvenir à étudier les étoiles, l’arpenteur des brumes doit réussir un test de compétence avec la spécialité Ihana.</p><p>L’astrologie est le puits de pouvoir dans lequel les prêtres ihanas puisent leur force. Le temps passé à observer les étoiles et les conditions météorologiques qui accompagnent cette pratique sont plutôt importants, de même que l’endroit où l’ihana s’installe : plus le lieu est significatif et plus il y passe du temps, plus la quantité de pouvoir que recevra le prêtre pour utiliser ses talents divins sera importante. S’il n’observe pas les étoiles à l’aide d’une harpe des étoiles, l’ihana ne dispose que d’une quantité limitée de points de divinité à dépenser pour utiliser ses pouvoirs. L’astrologie donne à l’ihana l’occasion d’obtenir des points supplémentaires quand le besoin s’en fait sentir.</p><ul><li>Les points de divinité obtenus par le biais de l’astrologie sont volatiles et disparaissent au rythme de 1 point par jour.</li></ul><h2>Temps passé à observer les étoiles, conditions externes</h2><p>Le temps que passe l’ihana à observer les étoiles et les conditions dans lesquelles il accomplit ce rituel influent largement sur le nombre de points de divinité que l’arpenteur des brumes peut recueillir.</p><p>Pendant tout le temps qu’il observe les étoiles, l’ihana ne doit subir aucune distraction. Chaque fois que la tranquillité du prêtre est menacée, il doit réussir un test de situation adéquat pour conserver sa concentration. Si le prêtre est déconcentré, son rituel échoue et il n’en retire aucun point de divinité.</p><section class=\"trudvang-religion-table\"><h3>Temps passé à observer les étoiles</h3><table><thead><tr><th>Temps passé</th><th>Points de divinité</th></tr></thead><tbody><tr><td>1 heure</td><td>1</td></tr><tr><td>4 heures</td><td>3</td></tr><tr><td>8 heures</td><td>6</td></tr><tr><td>2 × 8 heures (2 nuits)</td><td>12</td></tr><tr><td>3 × 8 heures (3 nuits)</td><td>24</td></tr><tr><td>7 × 8 heures (7 nuits)</td><td>32</td></tr></tbody></table></section><p>En fonction des conditions dans lesquelles l’ihana observe les étoiles, on applique un multiplicateur au nombre de points de divinité qu’il obtient au fil du temps. Un ihana est dans l’impossibilité d’observer les étoiles si le ciel est complètement voilé par les nuages ou s’il se trouve à un endroit où les étoiles ne sont pas visibles (en sous-sol ou sous la canopée d’une épaisse forêt, par exemple). Si l’ihana observe les étoiles plus de 8 heures, alors il doit passer la journée à dormir et effectue des calculs astronomiques le soir avant de reprendre l’observation.</p><p>La table ci-dessous précise le multiplicateur selon les conditions.</p><section class=\"trudvang-religion-table\"><h3>Conditions externes</h3><table><thead><tr><th>Visibilité</th><th>Points de divinité</th></tr></thead><tbody><tr><td>Partiellement étoilé</td><td>×1</td></tr><tr><td>Étoilé</td><td>×2</td></tr><tr><td>Partiellement étoilé et pleine lune</td><td>×3</td></tr><tr><td>Étoilé et pleine lune</td><td>×4</td></tr><tr><td>Solstice d’été</td><td>×5</td></tr><tr><td>Orage</td><td>/2</td></tr></tbody></table></section></article>"
+        }
+      },
+      "CreatureAbility": {
+        "YZuZVRjPkQlRmSnT": {
+          "Summary": "Lorsqu'il déclenche un combat, le warg saute sur sa proie et l'attaque de sa morsure et de ses griffes, gagnant une attaque de Griffes supplémentaire sans dépenser de points de combat supplémentaires pendant ce tour.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "XNbb4nRmSnToUpVq": {
+          "Summary": "Piqué à VC 8 : morsure 2d10 (JO 7-10) +6 et griffes 2d10 (JO 8-10) +6 ; réutilisable tous les 6 tours.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "TBZzpE9EaGbHcIdJ": {
+          "Summary": "Piqué à VC 8 : griffes 2d10 (JO 9-10) +4 ; réutilisable tous les 4 tours.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "zLdTbC6B7C8D9EaG": {
+          "Summary": "Charge du minokks : 2d10 (JO 9-10) dégâts, PC de mouvement et d’attaque ; Agilité -5 pour ne pas être renversé.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "EdVMy2u0v1w2x3y4": {
+          "Summary": "Cocon créé en 1d10+10 tours ; se libérer exige trois réussites, dans l’ordre VS 3, 7 et 11 (Force).",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "nWYlTTnToUpVqWrX": {
+          "Summary": "Enserrement à VC 10 modifiée par la Dextérité de la cible ; dégâts égaux au bonus de dégâts du serpent par tour ; libération VS 10 (Force).",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "lHbj4E6B7C8D9EaG": {
+          "Summary": "Manger le cœur retire 1d10 (JO 10) peur, mais peut provoquer une charge pour défendre ses amis : résistance VS 10 (Psychisme).",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "a3RzraE9EaGbHcId": {
+          "Summary": "Changement de couleur : Arts des ombres -10 pour le repérer immobile, -5 s’il bouge.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "NcOgKSkQlRmSnToU": {
+          "Summary": "La morsure du nattulm transforme sa victime en rugtanne suceur de sang.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "1Kx1hlMhNiOjPkQl": {
+          "Summary": "Ne ressent aucune peur et n’effectue aucun test de peur.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "i4Zci8A6B7C8D9Ea": {
+          "Summary": "La morsure transmet la maladie des wargs sur 1-2 au d20 (Constitution), avec un risque de transformation en warg garou.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "eYf1GqSnToUpVqWr": {
+          "Summary": "Le mugissement du galtir, inaudible pour les humains, appelle sa tribu à la rescousse.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "GbEsz3v1w2x3y4z5": {
+          "Summary": "La pestilence de la bête épineuse sème la peur autour d'elle.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "41hqc1sYtZu0v1w2": {
+          "Summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "igFmlnRmSnToUpVq": {
+          "Summary": "Après contact visuel, résistance VS 6 (Psychisme) ; paralysie 1d3 tours et constriction automatique.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "nP6pix2x3y4z5A6B": {
+          "Summary": "Après 2d6 tours, la morsure ne se remarque qu’avec un test VS 8 (Perception).",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "gwfvoJdJeKfLgMhN": {
+          "Summary": "Sur une victime endormie, 1d3 dégâts puis 1d6 par tour pendant quatre tours ; réveil possible à VS 8 (Perception).",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "ka2CP6A6B7C8D9Ea": {
+          "Summary": "L'araignée tisseuse projette sa toile collante (test VC 9, trois fois par jour) ; chaque personnage dans une zone d'environ 8 mètres sur 3 est pris dans la toile et doit réussir un test de situation (VS 7, Force) pour s'en libérer.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "yCooPeIdJeKfLgMh": {
+          "Summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "zcDFK9A6B7C8D9Ea": {
+          "Summary": "Vision dans le noir total normale jusqu’à 10 m, puis décroissante jusqu’à environ 60 m.",
+          "SourceBook": "Bestiaire de Jorge"
+        },
+        "jrI2efIdJeKfLgMh": {
+          "Summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+          "SourceBook": "Bestiaire de Jorge"
         }
       }
     }

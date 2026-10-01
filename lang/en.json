@@ -225,6 +225,8 @@
       "ParentDiscipline": "Parent Discipline",
       "RollBonus": "Bonus per Level",
       "Source": "Source",
+      "SourceBook": "Book",
+      "SourcePage": "Page",
       "ActiveSpell": "Active / maintained",
       "ActiveCost": "Vitner cost when activated",
       "ActiveSpellsCount": "{current} / {max}",
@@ -9280,6 +9282,92 @@
         "toikalokke": {
           "Name": "Toikalokke",
           "Content": "<article class=\"trudvang-religion-journal\"><p>Toikalokke is the name for the divine practice learned by elven stargazers and priests (though the elves call them the “high gifts,” after the “high gods”). Those who master these gifts are called Ihana.</p><h2>Star Harp</h2><ul><li>Toikalokke’s prerequisite for Holy Tablets)</li></ul><p>The star harp is the elven priest’s most valuable possession, and with the help of that object the priest is able to decipher the stars and make contact with the gods which give the knowledge of Holy Tablets. All star harps are different. Some are as small as the palm of a hand, while others may be as big as a house, but all of them appear as a wicker tree without leaves. A star harp is created from the unusual alfarka wood and is powerfully connected to the priest who owns it (as every priest needs to possess their own star harp). From the branches of the harp, the priest hangs different prisms and lenses, and by studying how the starlight breaks against the prisms, the priest can make contact with the gods.</p><p>If the priest’s star harp breaks or disappears, the priest must get a new one, otherwise no stargazing will be possible, although normal Divinity Points can be used. Another Ihana’s star harp may not be used as a replacement, even temporarily.</p><h2>Stargazing and Extra Divinity Points</h2><p>Elven priests can obtain extra Divinity Points in much the same way that Gerbanis priests perform blood sacrifice or Gavlians of Westmark pray , though the method obviously differs. By studying stars and astral bodies with a star harp, they acquire their extra Divinity Points.</p><p>To decipher the signs of the gods, two things are required: it must be a starry night (in this way , the elves are influenced more by the unpredictable nature of weather than are the priests of Gerbanis or the Tenet of Nid), and the elf must have their star harp ready for use.</p><p>A dimwalker can decipher the stars only on singular occasions and must wait until all the Divinity Points from the last stargazing have disappeared before doing so again.</p><ul><li>Divinity points obtained through stargazing are fleeting and disappear at a rate of 1 point per day.</li></ul><h2>Time Spent Stargazing and External Conditions</h2><p>Both the time that the Ihana spends stargazing and the conditions in which the ritual is performed garner different amounts of Divinity Points.</p><p>During the time that an Ihana spends stargazing, they must remain undisturbed. Each time the priest’s peace and meditation is disturbed, they must succeed on an appropriate Situation roll to maintain concentration.</p><p>If the priest loses concentration, that stargazing attempt has failed and no Divinity Points are obtained.</p><section class=\"trudvang-religion-table\"><h3>Time Spent Stargazing</h3><table><thead><tr><th>Time spent</th><th>Divinity Points</th></tr></thead><tbody><tr><td>1 hour</td><td>1</td></tr><tr><td>4 hours</td><td>3</td></tr><tr><td>8 hours</td><td>6</td></tr><tr><td>2 × 8 hours (2 nights)</td><td>12</td></tr><tr><td>3 × 8 hours (3 nights)</td><td>24</td></tr><tr><td>7 × 8 hours (7 nights)</td><td>32</td></tr></tbody></table></section><p>Based on the stargazing conditions, a multiplier is applied to the Divinity Points gained over time. An Ihana is unable to stargaze at all if the sky is completely covered in clouds or if the location is one where the stars are not visible, such as underground or beneath a thick canopy of trees.</p><p>The table below indicates the multiplier for different conditions.</p><section class=\"trudvang-religion-table\"><h3>Stargazing Conditions</h3><table><thead><tr><th>Visibility</th><th>Divinity Points</th></tr></thead><tbody><tr><td>Partially starry</td><td>×1</td></tr><tr><td>Starry</td><td>×2</td></tr><tr><td>Partially starry and full moon</td><td>×3</td></tr><tr><td>Starry and full moon</td><td>×4</td></tr><tr><td>Summer solstice</td><td>×5</td></tr><tr><td>Storm</td><td>/2</td></tr></tbody></table></section><p>To succeed in studying the stars, the stargazer must make a successful Skill roll for the Ihana specialty.</p><p>Stargazing is the well of power from which an Ihana priest draws strength. The amount of time spent stargazing and the predominant weather conditions during the process are quite important, as is the location, since the worthier a place is and the longer the time spent there, the more power the priest will gain to use in divine abilities. Without stargazing with a star harp the Ihana has only a limited amount of Divinity Points to spend on abilities. Stargazing allows the Ihana the opportunity to obtain extra points when needed.</p></article>"
+        }
+      },
+      "CreatureAbility": {
+        "YZuZVRjPkQlRmSnT": {
+          "Summary": "When initiating combat, the warg leaps onto its prey with bite and claws, gaining an additional Claws attack without spending further CP that round.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "XNbb4nRmSnToUpVq": {
+          "Summary": "Dive at SV 8: bite 2d10 (OR 7-10) +6 and claws 2d10 (OR 8-10) +6; usable every 6 rounds.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "TBZzpE9EaGbHcIdJ": {
+          "Summary": "Dive at SV 8: claws 2d10 (OR 9-10) +4; usable every 4 rounds.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "zLdTbC6B7C8D9EaG": {
+          "Summary": "Troll bull charge: 2d10 (OR 9-10) damage, movement and attack CP; Agility -5 to avoid being knocked down.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "EdVMy2u0v1w2x3y4": {
+          "Summary": "Cocoon formed in 1d10+10 rounds; escaping requires three successes, in order, at situation values 3, 7 and 11 (Strength).",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "nWYlTTnToUpVqWrX": {
+          "Summary": "Grip at SV 10 modified by the target’s Dexterity; damage equal to the snake’s damage bonus each round; escape at situation value 10 (Strength).",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "lHbj4E6B7C8D9EaG": {
+          "Summary": "Eating the heart removes 1d10 (OR 10) Fear Points, but may compel a charge to defend friends: resist at situation value 10 (Psyche).",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "a3RzraE9EaGbHcId": {
+          "Summary": "Changes color: Shadow Arts -10 to notice it while still, -5 when moving.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "NcOgKSkQlRmSnToU": {
+          "Summary": "The night ulm’s bite transforms its victim into a bloodsucking rugtanne.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "1Kx1hlMhNiOjPkQl": {
+          "Summary": "Feels no fear and never makes fear rolls.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "i4Zci8A6B7C8D9Ea": {
+          "Summary": "The bite transmits warg sickness on 1-2 on a d20 (Constitution), risking transformation into a werewarg.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "eYf1GqSnToUpVqWr": {
+          "Summary": "The galtir’s bellow, inaudible to humans, calls its tribe to the rescue.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "GbEsz3v1w2x3y4z5": {
+          "Summary": "The thorn beast’s foul smell spreads fear nearby.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "41hqc1sYtZu0v1w2": {
+          "Summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "igFmlnRmSnToUpVq": {
+          "Summary": "After eye contact, resist at situation value 6 (Psyche); paralysis for 1d3 rounds and automatic constriction.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "nP6pix2x3y4z5A6B": {
+          "Summary": "After 2d6 rounds, noticing the bite requires situation value 8 (Perception).",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "gwfvoJdJeKfLgMhN": {
+          "Summary": "On a sleeping victim, 1d3 damage then 1d6 per round for four rounds; waking possible at situation value 8 (Perception).",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "ka2CP6A6B7C8D9Ea": {
+          "Summary": "The net spider projects a sticky web to trap prey.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "yCooPeIdJeKfLgMh": {
+          "Summary": "Sees without any light as in daylight; this ability sets no particular range.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "zcDFK9A6B7C8D9Ea": {
+          "Summary": "Normal sight in total darkness up to 10 m, fading until approximately 60 m.",
+          "SourceBook": "Jorgi's Bestiary"
+        },
+        "jrI2efIdJeKfLgMh": {
+          "Summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+          "SourceBook": "Jorgi's Bestiary"
         }
       }
     }

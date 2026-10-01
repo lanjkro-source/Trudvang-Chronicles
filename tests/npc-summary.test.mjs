@@ -6,6 +6,7 @@ import {ignoresWoundPenalties, npcCurrentTrait, npcSkillTrees, npcTraitEdit} fro
 import {COMBAT_POOL_IDS} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
+import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -23,7 +24,12 @@ globalThis.foundry = {
   }},
   documents: {Actor: class { prepareDerivedData() {} getFlag() { return null; } }, ActiveEffect: class {}},
   applications: {
-    api: {HandlebarsApplicationMixin: Base => Base},
+    api: {HandlebarsApplicationMixin: Base => Base,
+      DocumentSheetV2: class {
+        constructor({document}) { this.document = document; this.isEditable = document.isOwner; }
+        async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
+        render(options) { this.renderOptions = options; return this; }
+      }},
     sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } }, ItemSheetV2: class {}},
     ux: {TextEditor: {implementation: {enrichHTML: async value => value}}},
     handlebars: {renderTemplate: async () => ""}
@@ -271,30 +277,120 @@ test("book knowledge opens its reference without creating an ability on the NPC"
   } finally { delete game.packs; }
 });
 
-test("NPC capacities list only imported feats, and opens their effect sheet", async () => {
+test("NPC capacities open a dedicated sheet and never appear among actual effects", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
   sheet.actor.effects = [
-    {uuid: "Actor.npc.ActiveEffect.vision", name: "Vision nocturne", img: "icons/svg/eye.svg", description: "<p>Vision en faible lumière.</p>", flags: {"trudvang-chronicles": {feat: "Vision nocturne"}}},
-    {uuid: "Actor.npc.ActiveEffect.manual", name: "Charge", img: "icons/svg/aura.svg", description: "Un véritable effet ajouté à la main.", flags: {}}
+    {uuid: "Actor.npc.ActiveEffect.vision", name: "Vision nocturne", isOwner: true, img: "icons/svg/eye.svg", description: "<p>Vision en faible lumière.</p>", flags: {"trudvang-chronicles": {feat: "Vision nocturne"}}, sheet: {render() { throw new Error("Must not open the effect sheet"); }}},
+    {uuid: "Actor.npc.ActiveEffect.manual", name: "Charge", img: "icons/svg/aura.svg", description: "Un véritable effet ajouté à la main.", flags: {}, system: {changes: []}, canUserModify: () => true}
   ];
+  sheet.actor.allApplicableEffects = () => sheet.actor.effects;
   const context = await sheet._prepareContext({});
   assert.deepEqual(context.npcAbilities.map(entry => entry.name), ["Vision nocturne"]);
+  assert.deepEqual(context.effects.map(entry => entry.name), ["Charge"]);
   const html = render(context).split('<div class="tab actions"')[0];
-  assert.match(html, /data-action="effect-edit" data-effect-uuid="Actor.npc.ActiveEffect.vision"/);
-  assert.match(html, /Vision en faible lumière\./);
+  assert.match(html, /data-action="capacity-edit" data-effect-uuid="Actor.npc.ActiveEffect.vision"/);
+  assert.equal(context.npcAbilities[0].summary, creatureAbilityDetails(sheet.actor.effects[0], {localize: key => game.i18n.localize(key)}).summary);
   assert.doesNotMatch(html, /data-effect-uuid="Actor.npc.ActiveEffect.manual"/);
-  let opened = false;
   const resolveUuid = foundry.utils.fromUuidSync;
   foundry.utils.fromUuidSync = uuid => {
     assert.equal(uuid, "Actor.npc.ActiveEffect.vision");
-    return {sheet: {render: options => { assert.equal(options.force, true); opened = true; }}};
+    return sheet.actor.effects[0];
   };
   try {
-    await TrudvangActorSheet.DEFAULT_OPTIONS.actions["effect-edit"].call(sheet,
+    const opened = await TrudvangActorSheet.DEFAULT_OPTIONS.actions["capacity-edit"].call(sheet,
       {preventDefault() {}, stopPropagation() {}},
-      {dataset: {action: "effect-edit", effectUuid: context.npcAbilities[0].effectUuid}, closest: () => null});
-    assert.equal(opened, true);
+      {dataset: {action: "capacity-edit", effectUuid: context.npcAbilities[0].effectUuid}, closest: () => null});
+    assert.equal(opened.constructor.name, "TrudvangCreatureAbilitySheet");
+    assert.deepEqual(opened.renderOptions, {force: true});
+    const capacity = await opened._prepareContext({});
+    assert.equal(capacity.ability.source.book, "Bestiaire de Jorge");
+    assert.equal(typeof capacity.ability.source.page, "number");
+    assert.equal(capacity.enrichedDescription, "<p>Vision en faible lumière.</p>");
+    const template = Handlebars.compile(readFileSync(new URL("../templates/item/creature-ability-sheet.hbs", import.meta.url), "utf8"));
+    assert.match(template(capacity), /<prose-mirror name="description"/);
+    assert.doesNotMatch(template(capacity), /name="(duration|system.changes|disabled|transfer)/);
   } finally { foundry.utils.fromUuidSync = resolveUuid; }
+});
+
+test("capacity fields save independently of effect changes and preserve custom values", async () => {
+  const {TrudvangCreatureAbilitySheet} = await import("../modules/sheets/creature-ability-sheet.mjs");
+  let update;
+  const document = {isOwner: true, name: "Vision nocturne", description: "<p>Description personnalisée.</p>",
+    flags: {"trudvang-chronicles": {feat: "Vision nocturne", capacitySummary: "Résumé personnalisé", capacitySource: {book: "Livre personnel", page: 8}}},
+    update: async value => { update = value; }};
+  const sheet = new TrudvangCreatureAbilitySheet({document});
+  const context = await sheet._prepareContext({});
+  assert.equal(context.ability.summary, "Résumé personnalisé");
+  assert.deepEqual(context.ability.source, {book: "Livre personnel", page: 8});
+  const fields = {name: "Vision modifiée", description: "<p>Nouvelle description.</p>",
+    "flags.trudvang-chronicles.capacitySummary": "Nouveau résumé", "flags.trudvang-chronicles.capacitySource.book": "Nouveau livre",
+    "flags.trudvang-chronicles.capacitySource.page": "12", "system.changes": [{key: "bad"}], disabled: true};
+  await TrudvangCreatureAbilitySheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: fields});
+  assert.equal(update["flags.trudvang-chronicles.capacitySource.page"], 12);
+  assert.equal(update.description, "<p>Nouvelle description.</p>");
+  assert.equal(update["system.changes"], undefined);
+  assert.equal(update.disabled, undefined);
+  update = null;
+  sheet.isEditable = false;
+  await TrudvangCreatureAbilitySheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: fields});
+  assert.equal(update, null);
+});
+
+test("book skill D20 buttons use the PJ roll dialog and the correct discipline/specialty levels", async t => {
+  const previousDocument = globalThis.document;
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  t.after(() => { globalThis.document = previousDocument; });
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  sheet.actor.system.skillTree = [
+    {name: "Combat", value: 8, kind: "skill"},
+    {name: "Combat armé", value: 2, kind: "discipline"},
+    {name: "Armes légères à une main", value: 3, kind: "specialty"}
+  ];
+  const dialogs = [];
+  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  try {
+    for (const index of [0, 1, 2]) await sheet._rollNpcBookSkill(index);
+    assert.deepEqual(dialogs.map(dialog => dialog.window.title), ["Combat", "Combat armé", "Armes légères à une main"]);
+    for (const [index, target] of [8, 10, 16].entries()) assert.match(dialogs[index].content, new RegExp(`\\b${target}\\b`));
+    const html = render(await sheet._prepareContext({}));
+    assert.match(html, /data-action="roll-npc-book-skill" data-index="2"/);
+    assert.equal(sheet.actor.items.length, 1, "rolling book knowledge creates no embedded item");
+  } finally { delete foundry.applications.api.DialogV2; }
+});
+
+test("validating a book specialty roll evaluates a D20 and creates a chat message", async t => {
+  const previous = {document: globalThis.document, Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage,
+    dialog: foundry.applications.api.DialogV2};
+  t.after(() => {
+    globalThis.document = previous.document;
+    globalThis.Roll = previous.Roll;
+    globalThis.ChatMessage = previous.ChatMessage;
+    foundry.applications.api.DialogV2 = previous.dialog;
+  });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  globalThis.Roll = class {
+    constructor(formula) { this.formula = formula; }
+    async evaluate() { this.total = 7; }
+  };
+  const messages = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}),
+    create: async data => { messages.push(data); return data; }};
+  foundry.applications.api.DialogV2 = {wait: async () => ({modifier: -2})};
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  sheet.actor.system.skillTree = [
+    {name: "Combat", value: 8, kind: "skill"},
+    {name: "Combat armé", value: 2, kind: "discipline"},
+    {name: "Armes légères à une main", value: 3, kind: "specialty"}
+  ];
+  const result = await TrudvangActorSheet.DEFAULT_OPTIONS.actions["roll-npc-book-skill"].call(sheet,
+    {preventDefault() {}, stopPropagation() {}},
+    {dataset: {action: "roll-npc-book-skill", index: "2"}, closest: () => null});
+  assert.equal(result.target, 14);
+  assert.equal(result.result, 7);
+  assert.equal(result.success, true);
+  assert.equal(messages.length, 1);
+  assert.deepEqual(messages[0].speaker, {actor: "npc"});
+  assert.equal(messages[0].rolls[0].formula, "1d20", "chat roll uses the normal Dice So Nice-compatible pipeline");
 });
 
 test("negative health and death remain visible with a bounded gauge", async () => {
