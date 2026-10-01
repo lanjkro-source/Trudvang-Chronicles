@@ -553,9 +553,8 @@
 .trudvang-sheet.npc-sheet .status-protection small { margin-left: 5px; }
 .trudvang-sheet.npc-sheet .npc-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 .trudvang-sheet.npc-sheet .npc-trait-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 7px; }
-.trudvang-sheet.npc-sheet .npc-traits-heading { justify-content: flex-start; }
 .trudvang-sheet.npc-sheet .npc-trait-row { display: grid; row-gap: 0; align-items: center; line-height: 1.1; }
-.trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 1px 2px; text-align: left; font-weight: 600; font-size: .75rem; line-height: 1.1; }
+.trudvang-sheet.npc-sheet .npc-trait-row > button { margin: 0; padding: 0 2px; text-align: left; font-weight: 600; font-size: .78rem; line-height: 1.1; }
 .trudvang-sheet.npc-sheet .npc-trait-values { display: flex; align-items: baseline; justify-content: center; gap: 5px; min-height: 19px; }
 .trudvang-sheet.npc-sheet .npc-trait-values strong { font-size: .85rem; }
 .trudvang-sheet.npc-sheet .npc-trait-values .modified-value { color: var(--trudvang-positive); font-weight: 700; }

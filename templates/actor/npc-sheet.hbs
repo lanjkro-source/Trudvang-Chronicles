@@ -24,7 +24,7 @@
       </section>
       <div class="npc-stats-grid">
         <section class="panel">
-          <div class="section-heading npc-traits-heading"><button type="button" data-action="reset-traits" title="{{localize 'TRUDVANG.Action.ResetTraits'}}"><i class="fas fa-recycle"></i></button><h2>{{localize "TRUDVANG.Section.CreatureTraits"}}</h2></div>
+          <div class="section-heading npc-traits-heading"><h2>{{localize "TRUDVANG.Section.CreatureTraits"}}</h2><button type="button" data-action="reset-traits" title="{{localize 'TRUDVANG.Action.ResetTraits'}}"><i class="fas fa-recycle"></i></button></div>
           <div class="npc-trait-grid">
             {{#each traitRows as |trait|}}
             <div class="npc-trait-row {{#if trait.modified}}modified{{/if}}" title="{{trait.tooltip}}">
