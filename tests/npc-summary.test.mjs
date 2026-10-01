@@ -23,7 +23,12 @@ globalThis.foundry = {
     NumberField: Field, StringField: Field, HTMLField: Field, BooleanField: Field, ArrayField: Field,
     SchemaField: class { constructor(fields) { this.fields = fields; } }
   }},
-  documents: {Actor: class { prepareDerivedData() {} getFlag() { return null; } }, ActiveEffect: class {}},
+  documents: {Actor: class {
+    prepareDerivedData() {}
+    getFlag() { return null; }
+    async _preCreate() { return this.creationAllowed; }
+    async getTokenDocument(data, options) { return {data, options}; }
+  }, ActiveEffect: class {}},
   applications: {
     api: {HandlebarsApplicationMixin: Base => Base,
       DocumentSheetV2: class {
@@ -78,6 +83,38 @@ test("NPC current traits follow intrinsic traits by default, but accept zero and
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: null}}, "strength"), 4);
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: 0}}, "strength"), 0);
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: -8}}, "strength"), -8);
+});
+
+test("NPC creation initializes its prototype dimensions and generated tokens follow the current size", async () => {
+  const npc = actor(); npc.system.details.size = "5t";
+  const updates = [];
+  npc.updateSource = data => updates.push(data);
+  await npc._preCreate({}, {}, {id: "gm"});
+  assert.deepEqual(updates, [{"prototypeToken.width": 4, "prototypeToken.height": 4}]);
+  const options = {parent: {id: "isolated-scene"}};
+  const data = {x: 20, y: 40, actorLink: false, texture: {src: "token.webp"}};
+  assert.deepEqual(await npc.getTokenDocument(data, options), {data: {...data, width: 4, height: 4}, options});
+  assert.deepEqual(data, {x: 20, y: 40, actorLink: false, texture: {src: "token.webp"}}, "caller data is not mutated");
+  npc.system.details.size = "1/2";
+  assert.deepEqual((await npc.getTokenDocument()).data, {width: 1, height: 1});
+  assert.deepEqual((await npc.getTokenDocument({width: 2, height: 1})).data, {width: 2, height: 1}, "explicit sizing overrides the automatic default");
+  assert.deepEqual(updates, [{"prototypeToken.width": 4, "prototypeToken.height": 4}], "generating a token never rewrites the actor or existing scene tokens");
+});
+
+test("token auto-sizing leaves PCs, unknown sizes and cancelled actor creations alone", async () => {
+  const instance = actor();
+  const updates = [];
+  instance.updateSource = data => updates.push(data);
+  instance.system.details.size = "3t";
+  instance.type = "character";
+  await instance._preCreate({}, {}, {});
+  assert.deepEqual((await instance.getTokenDocument({x: 12})).data, {x: 12});
+  instance.type = "npc"; instance.system.details.size = "unknown";
+  await instance._preCreate({}, {}, {});
+  assert.deepEqual((await instance.getTokenDocument({width: 2})).data, {width: 2});
+  instance.system.details.size = "10+"; instance.creationAllowed = false;
+  assert.equal(await instance._preCreate({}, {}, {}), false);
+  assert.deepEqual(updates, []);
 });
 
 test("the NPC schema preserves intrinsic traits and prepares current traits before effects", () => {

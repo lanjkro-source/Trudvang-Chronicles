@@ -11,6 +11,7 @@ import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcHealthRange} from "../rules/npc-summary.mjs";
+import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -42,6 +43,21 @@ function getHealthRecovery(constitution) {
 }
 
 export class TrudvangActor extends BaseActor {
+  async _preCreate(data, options, user) {
+    const allowed = await super._preCreate(data, options, user);
+    if (allowed === false) return false;
+    if (this.type !== "npc") return;
+    const dimensions = creatureTokenDimensions(this.system.details?.size);
+    if (dimensions) this.updateSource({"prototypeToken.width": dimensions.width, "prototypeToken.height": dimensions.height});
+  }
+
+  /** Size newly generated creature tokens without changing already placed tokens. */
+  getTokenDocument(data = {}, options = {}) {
+    const dimensions = this.type === "npc" ? creatureTokenDimensions(this.system.details?.size) : null;
+    // Explicit dimensions supplied by a caller take precedence over auto-sizing.
+    return super.getTokenDocument(dimensions ? {...dimensions, ...data} : data, options);
+  }
+
   get isInActiveCombat() {
     return actorParticipatesInCombat(this, game.combat);
   }

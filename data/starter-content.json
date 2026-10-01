@@ -2316,6 +2316,8 @@
           "src": "systems/trudvang-chronicles/assets/tokens/galtir.webp"
         },
         "nameKey": "TRUDVANG.Content.Actor.Galtir.Name",
+        "width": 1,
+        "height": 1,
         "displayName": 20,
         "displayBars": 20,
         "bar1": {
@@ -2630,8 +2632,8 @@
           "src": "systems/trudvang-chronicles/assets/tokens/giant-spider.webp"
         },
         "nameKey": "TRUDVANG.Content.Actor.GiantSpider.Name",
-        "width": 5,
-        "height": 5,
+        "width": 4,
+        "height": 4,
         "bar1": {
           "attribute": "resources.body"
         }
@@ -2874,6 +2876,8 @@
           "src": "systems/trudvang-chronicles/assets/tokens/night-ulm.webp"
         },
         "nameKey": "TRUDVANG.Content.Actor.NightUlm.Name",
+        "width": 1,
+        "height": 1,
         "bar1": {
           "attribute": "resources.body"
         }
@@ -3016,8 +3020,8 @@
           "src": "systems/trudvang-chronicles/assets/tokens/thorn-beast.webp"
         },
         "nameKey": "TRUDVANG.Content.Actor.ThornBeast.Name",
-        "width": 6,
-        "height": 6,
+        "width": 4,
+        "height": 4,
         "bar1": {
           "attribute": "resources.body"
         }
@@ -3437,6 +3441,8 @@
           "src": "systems/trudvang-chronicles/assets/tokens/warg-beast.webp"
         },
         "nameKey": "TRUDVANG.Content.Actor.Warg.Name",
+        "width": 1,
+        "height": 1,
         "bar1": {
           "attribute": "resources.body"
         }
