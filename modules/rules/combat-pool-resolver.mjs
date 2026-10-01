@@ -69,6 +69,7 @@ function finite(value, fallback = 0) {
 
 function knowledge(actor, catalogId) {
   if (!actor || !catalogId) return null;
+  if (typeof actor.findRuleKnowledge === "function") return actor.findRuleKnowledge(catalogId) ?? null;
   if (typeof actor.findKnowledgeItem === "function") return actor.findKnowledgeItem(catalogId) ?? null;
   return Array.from(actor.items || []).find(item => item?.system?.catalogId === catalogId) ?? null;
 }
@@ -196,16 +197,11 @@ export function readiedHandConflicts(items, candidate) {
 }
 
 function poolMaximum(actor, id) {
-  const character = actor?.type === "character";
   if (id === "free") {
-    if (character) {
-      const fighting = finite(actor.getSkillValue?.("fighting") ?? actor.system?.effective?.skills?.fighting ?? actor.system?.skills?.fighting?.value, 1);
-      const battleExperience = finite(knowledge(actor, "battleExperience")?.system?.level, 0);
-      return Math.max(0, Math.trunc(fighting + battleExperience + finite(actor.system?.modifiers?.combatMax, 0)));
-    }
-    return Math.max(0, Math.trunc(finite(actor?._source?.system?.resources?.combat?.max ?? actor?.system?.resources?.combat?.max, 1)));
+    const fighting = finite(actor?.getSkillValue?.("fighting") ?? actor?.system?.effective?.skills?.fighting ?? actor?.system?.skills?.fighting?.value, 1);
+    const battleExperience = finite(knowledge(actor, "battleExperience")?.system?.level, 0);
+    return Math.max(0, Math.trunc(fighting + battleExperience + finite(actor?.system?.modifiers?.combatMax, 0)));
   }
-  if (!character) return 0;
   const definition = DEFINITIONS[id];
   const levelField = definition.levelField || "level";
   return Math.max(0, Math.trunc(finite(knowledge(actor, definition.catalogId)?.system?.[levelField], 0) * definition.multiplier));
@@ -242,9 +238,11 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
     const max = poolMaximum(actor, id);
     const storedSpent = finite(sourcePoolData(actor, id).spent, -1);
     let spent = context.ignoreSpent ? 0 : Math.max(0, storedSpent);
-    if (!context.ignoreSpent && id === "free" && actor?.type !== "character" && storedSpent < 0) {
-      const legacyValue = finite(actor?._source?.system?.resources?.combat?.value ?? actor?.system?.resources?.combat?.value, max);
-      spent = Math.max(0, max - legacyValue);
+    // TEMPORARY WORLD MIGRATION — retain expenditure from the former single NPC
+    // reserve, using its original maximum rather than the new skill-derived one.
+    if (!context.ignoreSpent && id === "free" && actor?.type === "npc" && storedSpent < 0) {
+      const legacy = actor?._source?.system?.resources?.combat;
+      spent = Math.max(0, finite(legacy?.max, max) - finite(legacy?.value, max));
     }
     const currentModifier = id === "free" ? finite(actor?.system?.modifiers?.combatValue, 0) : 0;
     const freeData = sourcePoolData(actor, "free");
@@ -284,6 +282,26 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
       rule: {book: "coreRules", printedPage: 315, englishBook: "gameMastersGuide", englishPrintedPage: 41}
     };
   });
+  // A reserve may be shared by several natural profiles (e.g. horns and fists).
+  // Its expenditure is mirrored on those items, never duplicated in the total.
+  if (actor?.type === "npc") {
+    const groups = new Map();
+    for (const weapon of Array.from(actor.items ?? []).filter(entry => weaponType(entry) === "natural" && entry.type === "weapon")) {
+      const id = `natural:${weapon.system.naturalCombatPool || weapon.id}`;
+      if (!groups.has(id)) groups.set(id, []);
+      groups.get(id).push(weapon);
+    }
+    for (const [id, weapons] of groups) {
+      const max = Math.max(0, ...weapons.map(weapon => Math.trunc(finite(weapon.system.naturalCombatPoints))));
+      const spent = context.ignoreSpent ? 0 : Math.max(0, ...weapons.map(weapon => finite(weapon.system.naturalCombatPointsSpent)));
+      const common = weapons.length > 1 || weapons[0].system.naturalCombatPool === "natural";
+      pools.push({id, labelKey: common ? "TRUDVANG.Npc.NaturalWeapons" : "", label: common ? "" : weapons[0].name,
+        max, spent, current: Math.max(0, max - spent), priority: 100, hintKey: "",
+        eligible: !context.action || (["attack", "parry"].includes(context.action)
+          && weaponType(item) === "natural" && weapons.some(weapon => weapon.id === item?.id)),
+        source: {kind: "natural", id, uuid: weapons[0].uuid || "", name: weapons.map(weapon => weapon.name).join(", "), level: max}});
+    }
+  }
   const free = pools.find(pool => pool.id === "free");
   // A compact tracker can show only one number for Free CP. When resolving a
   // legacy shared action, use the lower remaining hand value: either hand must

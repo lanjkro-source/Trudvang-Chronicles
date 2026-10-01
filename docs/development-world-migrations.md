@@ -43,6 +43,8 @@ Toute nouvelle migration de monde doit :
 | `CONTENT_VERSION = 40`, `initializeNpcInventory()` dans `modules/npc-inventory.mjs` et le flag `inventoryInitialized` | Ajoutent une fois les armes, armures et boucliers matériels aux PNJ de départ dont l’inventaire est encore vide. Tout inventaire personnalisé est préservé en entier. Le flag empêche une réinstallation de recréer les objets supprimés ; la boucle historique de réimport ignore désormais ces équipements. Les copies locales déjà modifiées des tokens ne sont jamais écrasées directement. | Tous les anciens PNJ de départ ont été initialisés, ou ont été supprimés. Retirer la fonction, ses appels, le flag sur les créations et l’exclusion dans la boucle historique avec cette migration. |
 | `ensureTraitSituationMacro()` et les anciens noms bilingues | Renomment la macro de résistance déjà créée, remplacent son icône et reconnaissent les copies sans flag portant l'ancien nom. | Toutes les macros existantes ont été reconnues ou les anciens mondes ont été supprimés. |
 
+La version de contenu 41 ajoute les profils d’armes naturelles de départ par la boucle historique de réimport et appelle `initializeNpcCombatKnowledge()` (`modules/npc-inventory.mjs`) pour compléter uniquement les identifiants `skillId/catalogId` manquants des anciennes lignes du bestiaire. Les niveaux, noms, lignes personnalisées et inventaires matériels restent inchangés. Cette adoption d’identifiants et son appel sont supprimables après effacement des anciens mondes. Le garde-fou d’inventaire de la version 40 inclut désormais aussi les objets, extraits et potions.
+
 ## `modules/rules/combat-pool-resolver.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |
@@ -50,7 +52,7 @@ Toute nouvelle migration de monde doit :
 | Entrée `battleExperience` à capacité nulle | Lit l'ancien pool persistant afin qu'il n'invalide pas les données d'un personnage. | Tous les acteurs utilisent les pools actuels. |
 | Repli de `weaponType()` vers `system.category` | Lit la catégorie d'arme historique, avant `system.combatSpecialty`. | Toutes les armes ont leur type moderne. |
 | `categoryForWeaponType()` et sa synchronisation | Continue d'écrire la catégorie historique pour les anciens mondes/modules. | Les consommateurs de `system.category` ont été supprimés ou migrés. |
-| Repli NPC de `poolState()` vers `resources.combat.value` | Traduit l'ancienne réserve de combat unique en pool libre. | Tous les PNJ ont `system.combatPools`. |
+| Repli PNJ de `resolveCombatPools()` vers `resources.combat.max/value` quand `free.spent < 0` | Conserve la dépense historique `ancien max − ancienne valeur` dans la nouvelle réserve libre calculée depuis Combat et Expérience du combat ; ne confond plus l’ancien maximum unique avec le maximum des compétences. | Tous les PNJ ont un compteur explicite `system.combatPools.free.spent >= 0`. |
 
 ## `modules/rules/active-spell-resolver.mjs`
 

@@ -4,7 +4,7 @@ import test from "node:test";
 import Handlebars from "handlebars";
 import {ignoresWoundPenalties, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
 import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
-import {COMBAT_POOL_IDS} from "../modules/rules/combat-pool-resolver.mjs";
+import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
@@ -379,14 +379,14 @@ test("the NPC equipment tab displays only material equipment and its editable co
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(items); sheet.isEditable = true;
   const context = await sheet._prepareContext({});
   const inventory = render(context).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
-  for (const name of ["Axe", "Leather", "Shield"]) assert.match(inventory, new RegExp(`data-item-id="${name}"`));
-  assert.doesNotMatch(inventory, /Rope|Bite|Tenace|item-roll|item-parry|item-damage/);
-  assert.equal((inventory.match(/data-item-field="quantity"/g) || []).length, 3);
+  for (const name of ["Axe", "Leather", "Shield", "rope"]) assert.match(inventory, new RegExp(`data-item-id="${name}"`));
+  assert.doesNotMatch(inventory, /Bite|Tenace|item-parry|item-damage/);
+  assert.equal((inventory.match(/data-item-field="quantity"/g) || []).length, 4);
   assert.equal((inventory.match(/data-action="item-ready"/g) || []).length, 2);
-  assert.equal((inventory.match(/data-action="item-equip"/g) || []).length, 1);
-  assert.equal((inventory.match(/data-action="inspect-item"/g) || []).length, 3);
+  assert.equal((inventory.match(/data-action="item-equip"/g) || []).length, 2);
+  assert.equal((inventory.match(/data-action="inspect-item"/g) || []).length, 4);
   assert.match(inventory, /Inventaire par défaut/);
-  assert.ok(context.npcActionItems.every(item => item.type !== "armor"));
+  assert.ok(context.npcCombatItems.every(row => ["weapon", "shield"].includes(row.item.type)));
   assert.doesNotMatch(inventory, /TRUDVANG\./);
 });
 
@@ -400,12 +400,13 @@ test("NPC token inventories have a local hint and no mutable controls for read-o
   assert.match(inventory, /data-action="inspect-item"/);
 });
 
-test("empty creature inventories are usable and show two properly localized empty states", async () => {
+test("empty creature inventories are usable and show three properly localized empty states", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
   const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
   assert.match(inventory, /Aucune arme dans l’inventaire/);
   assert.match(inventory, /Aucune armure ni aucun bouclier/);
-  assert.equal((inventory.match(/data-action="item-create"/g) || []).length, 3);
+  assert.match(inventory, /Aucun autre équipement/);
+  assert.equal((inventory.match(/data-action="item-create"/g) || []).length, 5);
 });
 
 test("inventory drops clone external equipment with fresh IDs and reject other item types", async t => {
@@ -422,10 +423,12 @@ test("inventory drops clone external equipment with fresh IDs and reject other i
   assert.equal(source.system.quantity, 1);
   assert.equal(source._id, "external");
   await sheet._handleDrop({type: "gear", system: {}}, {equipmentOnly: true});
-  assert.equal(created.length, 1);
-  assert.match(warnings[0], /uniquement les armes/);
+  await sheet._handleDrop({type: "potion", system: {}}, {equipmentOnly: true});
+  assert.equal(created.length, 3);
+  await sheet._handleDrop({type: "ability", system: {}}, {equipmentOnly: true});
+  assert.match(warnings[0], /équipement/);
   await sheet._handleDrop({type: "ability", system: {level: 2}});
-  assert.equal(created.length, 2, "abilities can still be added elsewhere on the NPC sheet");
+  assert.equal(created.length, 4, "abilities can still be added elsewhere on the NPC sheet");
 });
 
 test("an item with the same ID from another token is copied, not mistaken for an internal sort", async t => {
@@ -461,6 +464,143 @@ test("equipment quantity and equip actions update only the actor on the token sh
   assert.equal(localItem.system.equipped, true);
   assert.equal(prototypeItem.system.quantity, 1);
   assert.equal(prototypeItem.system.equipped, false);
+});
+
+test("NPC pools are calculated from book levels, effects and embedded overrides rather than a preset maximum", () => {
+  const npc = actor([], {fighting: 1});
+  npc.system.skillTree = [{name: "Combat", kind: "skill", value: 10},
+    {name: "Combat armé", kind: "discipline", value: 3},
+    {name: "Armes lourdes à une main", kind: "specialty", value: 4},
+    {name: "Expérience du combat", kind: "discipline", value: 1},
+    {name: "Combattant", kind: "specialty", value: 2}];
+  npc.system.effective.skills.fighting = 3; // +2 effect on the stored skill of 1.
+  npc.system.modifiers.combatMax = 2;
+  let pools = Object.fromEntries(resolveCombatPools({actor: npc}).pools.map(pool => [pool.id, pool]));
+  assert.equal(pools.free.max, 15); // Book 10, effect 2, experience 1, CP modifier 2.
+  assert.equal(pools.armedFighting.max, 3);
+  assert.equal(pools.oneHandedHeavyWeapons.max, 8);
+  assert.equal(pools.attacksParries.max, 4);
+  assert.equal(pools.oneHandedHeavyWeaponsOffHand.max, 0);
+  npc.items.push({type: "ability", name: "Modified expertise", system: {catalogId: "armedFighting", level: 5}});
+  pools = Object.fromEntries(resolveCombatPools({actor: npc}).pools.map(pool => [pool.id, pool]));
+  assert.equal(pools.armedFighting.max, 5, "an actual embedded item takes precedence over a book row");
+  assert.equal(npc.items.length, 1, "rule resolution never creates ability items");
+});
+
+test("book knowledge identifiers work independently of translated row names", () => {
+  const npc = actor([], {fighting: 1});
+  npc.system.skillTree = [{name: "Fighting", kind: "skill", value: 9, skillId: "fighting"},
+    {name: "Armed Fighting", kind: "discipline", value: 2, catalogId: "armedFighting"},
+    {name: "Two-handed Weapons", kind: "specialty", value: 3, catalogId: "twoHandedWeapons"}];
+  const pools = Object.fromEntries(resolveCombatPools({actor: npc}).pools.map(pool => [pool.id, pool]));
+  assert.equal(pools.free.max, 9); assert.equal(pools.armedFighting.max, 2); assert.equal(pools.twoHandedWeapons.max, 6);
+  const item = inventoryItem("weapon", "Club", {combatSpecialty: "twoHandedWeapons", weaponActions: 2});
+  assert.equal(npc.getWeaponActionState(item).max, 3, "book specialty also modifies the weapon's AA");
+});
+
+function naturalItem(id, pool, max) {
+  return inventoryItem("weapon", id, {combatSpecialty: "natural", category: "natural", equipped: true,
+    weaponActions: 4, naturalCombatPool: pool, naturalCombatPoints: max, naturalCombatPointsSpent: 0});
+}
+
+function spendableNpc(items) {
+  const npc = actor(items); npc.isOwner = true; npc.uuid = "Actor.test";
+  npc._source.system.combatPools.free = {spent: 0, weaponSpent: 4, offHandSpent: 0};
+  npc.system.combatPools.free = {...npc._source.system.combatPools.free};
+  npc.prepareDerivedData();
+  npc.update = async changes => {
+    for (const [key, value] of Object.entries(changes)) { set(npc, key, value); set(npc._source, key, value); }
+  };
+  npc.updateEmbeddedDocuments = async (type, updates) => {
+    assert.equal(type, "Item");
+    for (const {_id, ...changes} of updates) for (const [key, value] of Object.entries(changes)) set(npc.items.find(item => item.id === _id), key, value);
+  };
+  return npc;
+}
+
+test("natural pools are contextual, shared once, and use the lower remaining Free CP hand", async t => {
+  const before = game.combat; t.after(() => { game.combat = before; });
+  const horns = naturalItem("Horns", "natural", 8), fists = naturalItem("Fists", "natural", 8), bite = naturalItem("Bite", "bite", 6);
+  const npc = spendableNpc([horns, fists, bite]); game.combat = {started: true, combatants: [{actor: npc}]};
+  const resolution = resolveCombatPools({actor: npc, item: horns, context: {action: "attack"}});
+  assert.equal(resolution.totalMax, 22); // 8 Free, one shared 8, separate bite 6.
+  assert.equal(resolution.freeScope, "both");
+  assert.equal(resolution.eligibleCurrent, 12); // min(4,8) + shared natural 8.
+  assert.equal(resolution.eligible.some(pool => pool.id === "natural:bite"), false);
+  assert.equal(resolveCombatPools({actor: npc, context: {action: "other"}}).eligibleCurrent, 4);
+  assert.equal(resolveCombatPools({actor: npc, context: {action: "movement"}}).eligibleCurrent, 4);
+  const suggested = suggestCombatAllocation(resolution.eligible, 10);
+  assert.deepEqual(suggested, {"natural:natural": 8, free: 2});
+  assert.deepEqual(normalizeCombatAllocation(resolution.eligible, suggested).allocation, normalizeCombatAllocation(resolution.eligible, {free: 2, "natural:natural": 8}).allocation);
+  await npc.spendCombatPoints(suggested, {freeScope: resolution.freeScope});
+  assert.equal(horns.system.naturalCombatPointsSpent, 8); assert.equal(fists.system.naturalCombatPointsSpent, 8);
+  assert.equal(bite.system.naturalCombatPointsSpent, 0);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 2);
+  assert.equal(resolveCombatPools({actor: npc, item: fists, context: {action: "parry"}}).eligibleCurrent, 2);
+  await npc.resetCombatPoints();
+  assert.equal(horns.system.naturalCombatPointsSpent, 0); assert.equal(fists.system.naturalCombatPointsSpent, 0);
+  assert.equal(resolveCombatPools({actor: npc, item: horns, context: {action: "attack"}}).eligibleCurrent, 16);
+});
+
+test("NPC weapon spends only its hand, generic actions spend both, and outside combat nothing is spent", async t => {
+  const before = game.combat; t.after(() => { game.combat = before; });
+  const axe = inventoryItem("weapon", "Axe", {combatSpecialty: "oneHandedLightWeapons", hand: "offHand"});
+  const npc = spendableNpc([axe]); game.combat = {started: true, combatants: [{actor: npc}]};
+  const scope = resolveCombatPools({actor: npc, item: axe, context: {action: "attack"}}).freeScope;
+  await npc.spendCombatPoints({free: 3}, {freeScope: scope});
+  assert.equal(npc.system.combatPools.free.weaponSpent, 4); assert.equal(npc.system.combatPools.free.offHandSpent, 3);
+  await npc.spendCombatPoints({free: 2});
+  assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 5);
+  game.combat = null;
+  await npc.spendCombatPoints({free: 2});
+  assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 5);
+});
+
+test("NPC actions show sticky reserve data, material weapons, natural profiles, then Other without inventory clutter", async t => {
+  const before = game.combat; t.after(() => { game.combat = before; });
+  const axe = inventoryItem("weapon", "Axe", {combatSpecialty: "oneHandedLightWeapons", weaponActions: 2, equipped: true});
+  const spare = inventoryItem("weapon", "Spare", {combatSpecialty: "twoHandedWeapons", weaponActions: 0, equipped: false});
+  const bite = naturalItem("Bite", "bite", 6);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = spendableNpc([axe, spare, bite, inventoryItem("gear", "Rope"), feat()]); sheet.isEditable = true;
+  game.combat = {started: true, combatants: [{actor: sheet.actor}]};
+  const context = await sheet._prepareContext({});
+  const actions = render(context).split('<div class="tab actions"')[1].split('<div class="tab effects"')[0];
+  assert.ok(actions.indexOf("combat-reserves-panel") < actions.indexOf('data-item-id="Axe"'));
+  assert.ok(actions.indexOf('data-item-id="Spare"') < actions.indexOf('data-item-id="Bite"'));
+  assert.ok(actions.indexOf('data-item-id="Bite"') < actions.indexOf('data-action="generic-combat-action"'));
+  assert.match(actions, /aria-valuenow="4" aria-valuemax="8"/);
+  assert.match(actions, /aria-valuenow="6" aria-valuemax="6"/);
+  assert.doesNotMatch(actions, /Rope|Tenace|item-delete|TRUDVANG\./);
+  const spareRow = actions.split('data-item-id="Spare"')[1].split('</li>')[0];
+  assert.match(spareRow, /data-action="item-roll"[^>]+disabled/);
+  assert.match(spareRow, /data-action="item-parry"[^>]+disabled/);
+});
+
+test("a natural attack dialog spends its reserve and both Free hands, rolls a D20 and posts its result", async t => {
+  const previous = {combat: game.combat, document: globalThis.document, Roll: globalThis.Roll,
+    ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { game.combat = previous.combat; globalThis.document = previous.document; globalThis.Roll = previous.Roll;
+    globalThis.ChatMessage = previous.ChatMessage; foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  globalThis.Roll = class { constructor(formula) { this.formula = formula; } async evaluate() { this.total = 1; } };
+  const messages = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: async data => { messages.push(data); return data; }};
+  const dialogs = [];
+  foundry.applications.api.DialogV2 = class { static async wait(options) {
+    dialogs.push(options);
+    return {modifier: 0, feint: 0, allocation: {"natural:bite": 6, free: 2}};
+  }};
+  const bite = naturalItem("Bite", "bite", 6);
+  bite.update = async changes => { for (const [key, value] of Object.entries(changes)) set(bite, key, value); };
+  const npc = spendableNpc([bite]); game.combat = {started: true, combatants: [{actor: npc}]};
+  const result = await npc.rollWeaponAction(bite, "attack");
+  assert.match(dialogs[0].content, /data-pool-id="natural:bite"/);
+  assert.match(dialogs[0].content, /Bite/);
+  assert.equal(result.roll.formula, "1d20"); assert.equal(result.result, 1);
+  assert.equal(messages.length, 1); assert.equal(messages[0].rolls[0], result.roll);
+  assert.equal(bite.system.naturalCombatPointsSpent, 6);
+  assert.equal(bite.system.weaponActionsSpent, 1);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 2);
 });
 
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {

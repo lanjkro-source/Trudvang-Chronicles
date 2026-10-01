@@ -668,7 +668,12 @@
       "NoProtection": "No armor or shields in the inventory.",
       "DefaultInventoryHint": "The creature’s default inventory is inherited by each new unlinked token. Changes made on a token do not change this model.",
       "TokenInventoryHint": "This individual’s inventory: changes only affect this token.",
-      "EquipmentOnly": "This inventory only accepts weapons, armor and shields.",
+      "EquipmentOnly": "Drop equipment here: a weapon, protection, gear, extract or potion.",
+      "NoGear": "No other equipment in the inventory.",
+      "NaturalWeapons": "Natural weapons",
+      "NaturalReserve": "Natural CP reserve",
+      "NoNaturalWeapons": "No natural weapon recorded.",
+      "NaturalPoolSource": "Natural reserve of {max} CP: {source}.",
       "BookSkillValue": "Value: {value}",
       "NaturalProtection": "(including {value} natural PV)",
       "IntegrityHint": "Only worn armor has integrity. Natural armor has no BV.",
@@ -1044,6 +1049,26 @@
       "PacksRebuildFailed": "Compendium rebuild failed. Check the console; no further packs will be changed."
     },
     "Content": {
+      "NaturalWeapon": {
+        "Bite": {
+          "Name": "Bite"
+        },
+        "Tusks": {
+          "Name": "Tusks"
+        },
+        "Claws": {
+          "Name": "Claws"
+        },
+        "Horns": {
+          "Name": "Horns"
+        },
+        "Unarmed": {
+          "Name": "Unarmed"
+        },
+        "ImpalingLeg": {
+          "Name": "Impaling leg"
+        }
+      },
       "Folder": {
         "Weapons": "Weapons",
         "WeaponsLight": "Light weapons",

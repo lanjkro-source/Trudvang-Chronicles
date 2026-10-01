@@ -237,7 +237,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
     title = localized("TRUDVANG.Resource.CombatPools");
     const pools = resolveCombatPools({actor, context: {ignoreSpent: !actor.isInActiveCombat}});
     for (const pool of pools.active) {
-      permanent.push(row(localized(pool.labelKey), `${pool.current}/${pool.max}`, {
+      permanent.push(row(pool.label || localized(pool.labelKey), `${pool.current}/${pool.max}`, {
         source: pool.hintKey ? localized(pool.hintKey) : ""
       }));
     }

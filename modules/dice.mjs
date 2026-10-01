@@ -469,7 +469,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     const modeMaximumFeint = Math.max(0, Math.floor(Number(mode.feintMax ?? maximumFeint)));
     const rows = modePools.map(pool => {
       const amount = Number(allocation[pool.id] || 0);
-      const label = escapeHtml(game.i18n.localize(pool.labelKey));
+      const label = escapeHtml(pool.label || game.i18n.localize(pool.labelKey));
       return `<div class="form-group combat-pool-allocation"><label>${label}</label><span class="combat-pool-current">${pool.current}/${pool.max}</span><input data-pool-id="${escapeHtml(pool.id)}" aria-label="${label}" type="number" min="0" max="${pool.current}" step="1" value="${amount}"></div>`;
     }).join("");
     const rangeSelection = mode.ranged && mode.range ? `<section class="combat-range-selector"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Field.Range"))}</span><div class="combat-range-cells" role="radiogroup">

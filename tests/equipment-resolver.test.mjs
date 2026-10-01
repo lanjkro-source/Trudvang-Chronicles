@@ -546,15 +546,15 @@ test("an explicit ranged specialty distinguishes crossbows from bows", () => {
   assert.equal(weaponCombatSpecialty(item), "crossbow");
 });
 
-test("legacy NPC Combat Points remain a single free pool with their current spending", () => {
+test("NPC Combat Points use Fighting while retaining expenditure from the old single reserve", () => {
   const actor = {
     type: "npc",
-    system: {resources: {combat: {value: 7, max: 20}}, modifiers: {}},
+    system: {skills: {fighting: {value: 18}}, resources: {combat: {value: 7, max: 20}}, modifiers: {}},
     _source: {system: {resources: {combat: {value: 7, max: 20}}}}
   };
   const result = resolveCombatPools({actor});
-  assert.equal(result.totalMax, 20);
-  assert.equal(result.totalCurrent, 7);
+  assert.equal(result.totalMax, 18);
+  assert.equal(result.totalCurrent, 5);
   assert.deepEqual(result.active.map(pool => pool.id), ["free"]);
 });
 

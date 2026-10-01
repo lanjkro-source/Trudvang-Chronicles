@@ -2412,57 +2412,79 @@
           {
             "name": "Savoir-faire",
             "value": 5,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "care",
+            "catalogId": ""
           },
           {
             "name": "Divertissement",
             "value": 3,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "entertainment",
+            "catalogId": ""
           },
           {
             "name": "Combat",
             "value": 4,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           },
           {
             "name": "Combat armé",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "fighting",
+            "catalogId": "armedFighting"
           },
           {
             "name": "Armes légères à une main",
             "value": 1,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "oneHandedLightWeapons"
           },
           {
             "name": "Connaissances",
             "value": 3,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "knowledge",
+            "catalogId": ""
           },
           {
             "name": "Langage",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "knowledge",
+            "catalogId": "language"
           },
           {
             "name": "Langue maternelle (bastjumal)",
             "value": 1,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "knowledge",
+            "catalogId": "motherTongue"
           },
           {
             "name": "Arts des ombres",
             "value": 7,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "shadowArts",
+            "catalogId": ""
           },
           {
             "name": "Discrétion",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "shadowArts",
+            "catalogId": "shadowing"
           },
           {
             "name": "Camouflage et dissimulation",
             "value": 3,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "shadowArts",
+            "catalogId": ""
           }
         ]
       },
@@ -2510,6 +2532,40 @@
             "value": 8.6,
             "quantity": 1,
             "equipped": true
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 0,
+            "initiativeModifier": -1,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 4
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Tusks.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 0,
+            "initiativeModifier": -1,
+            "naturalCombatPool": "Tusks",
+            "naturalCombatPoints": 6
           }
         }
       ],
@@ -2623,11 +2679,31 @@
           {
             "name": "Combat",
             "value": 7,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 9,
+            "initiativeModifier": 6,
+            "naturalCombatPool": "natural",
+            "naturalCombatPoints": 11
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Constriction (serpent géant)",
@@ -2750,11 +2826,48 @@
           {
             "name": "Combat",
             "value": 8,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 9,
+            "initiativeModifier": 6,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 6
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.ImpalingLeg.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 7,
+            "initiativeModifier": 6,
+            "naturalCombatPool": "ImpalingLeg",
+            "naturalCombatPoints": 12
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Toile d’attaque",
@@ -2882,11 +2995,48 @@
           {
             "name": "Combat",
             "value": 6,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 9,
+            "initiativeModifier": 4,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 6
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Claws.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 10,
+            "initiativeModifier": 4,
+            "naturalCombatPool": "Claws",
+            "naturalCombatPoints": 14
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Attaque des hauteurs (griffon)",
@@ -3001,11 +3151,48 @@
           {
             "name": "Combat",
             "value": 8,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 0,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 5
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Claws.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d5",
+            "openRoll": 0,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "Claws",
+            "naturalCombatPoints": 11
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Infection des rugtannes",
@@ -3146,11 +3333,48 @@
           {
             "name": "Combat",
             "value": 7,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 8,
+            "initiativeModifier": 6,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 6
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Claws.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 9,
+            "initiativeModifier": 6,
+            "naturalCombatPool": "Claws",
+            "naturalCombatPoints": 14
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Puanteur terrifiante",
@@ -3345,112 +3569,156 @@
           {
             "name": "Agilité",
             "value": 9,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "agility",
+            "catalogId": ""
           },
           {
             "name": "Divertissement",
             "value": 2,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "entertainment",
+            "catalogId": ""
           },
           {
             "name": "Foi",
             "value": 5,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "faith",
+            "catalogId": ""
           },
           {
             "name": "Arts des ombres",
             "value": 6,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "shadowArts",
+            "catalogId": ""
           },
           {
             "name": "Nature",
             "value": 8,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "wilderness",
+            "catalogId": ""
           },
           {
             "name": "Savoir-faire",
             "value": 7,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "care",
+            "catalogId": ""
           },
           {
             "name": "Artisanat",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "care",
+            "catalogId": "handicraft"
           },
           {
             "name": "Matériaux durs",
             "value": 2,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "care",
+            "catalogId": "hardMaterials"
           },
           {
             "name": "Matériaux souples",
             "value": 2,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "care",
+            "catalogId": "softMaterials"
           },
           {
             "name": "Combat",
             "value": 10,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           },
           {
             "name": "Combat armé",
             "value": 3,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "fighting",
+            "catalogId": "armedFighting"
           },
           {
             "name": "Armes lourdes à une main",
             "value": 4,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "oneHandedHeavyWeapons"
           },
           {
             "name": "Porteur de bouclier",
             "value": 2,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "shieldBearer"
           },
           {
             "name": "Armes à deux mains",
             "value": 3,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "twoHandedWeapons"
           },
           {
             "name": "Expérience du combat",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "fighting",
+            "catalogId": "battleExperience"
           },
           {
             "name": "Porteur d'armure",
             "value": 1,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "armorBearer"
           },
           {
             "name": "Combattant",
             "value": 2,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "fighter"
           },
           {
             "name": "Combat à mains nues",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "fighting",
+            "catalogId": "unarmedFighting"
           },
           {
             "name": "Bagarre",
             "value": 3,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "fighting",
+            "catalogId": "brawling"
           },
           {
             "name": "Connaissances",
             "value": 5,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "knowledge",
+            "catalogId": ""
           },
           {
             "name": "Langage",
             "value": 1,
-            "kind": "discipline"
+            "kind": "discipline",
+            "skillId": "knowledge",
+            "catalogId": "language"
           },
           {
             "name": "Langue maternelle (bastjumal)",
             "value": 3,
-            "kind": "specialty"
+            "kind": "specialty",
+            "skillId": "knowledge",
+            "catalogId": "motherTongue"
           }
         ]
       },
@@ -3543,6 +3811,40 @@
             "value": 8.6,
             "quantity": 1,
             "equipped": true
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Horns.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "2d10",
+            "openRoll": 10,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "natural",
+            "naturalCombatPoints": 8
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Unarmed.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 10,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "natural",
+            "naturalCombatPoints": 8
           }
         }
       ],
@@ -3665,11 +3967,48 @@
           {
             "name": "Combat",
             "value": 8,
-            "kind": "skill"
+            "kind": "skill",
+            "skillId": "fighting",
+            "catalogId": ""
           }
         ]
       },
-      "items": [],
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Bite.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 0,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "Bite",
+            "naturalCombatPoints": 10
+          }
+        },
+        {
+          "nameKey": "TRUDVANG.Content.NaturalWeapon.Claws.Name",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d5",
+            "openRoll": 0,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "Claws",
+            "naturalCombatPoints": 10
+          }
+        }
+      ],
       "effects": [
         {
           "name": "Rapide",

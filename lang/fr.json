@@ -668,7 +668,12 @@
       "NoProtection": "Aucune armure ni aucun bouclier dans l’inventaire.",
       "DefaultInventoryHint": "Inventaire par défaut de la créature, transmis à chaque nouveau token non lié. Les modifications faites sur un token ne modifient pas ce modèle.",
       "TokenInventoryHint": "Inventaire de cet exemplaire : les modifications ne concernent que ce token.",
-      "EquipmentOnly": "Cet inventaire accepte uniquement les armes, les armures et les boucliers.",
+      "EquipmentOnly": "Déposez ici un équipement : arme, protection, objet, extrait ou potion.",
+      "NoGear": "Aucun autre équipement dans l’inventaire.",
+      "NaturalWeapons": "Armes naturelles",
+      "NaturalReserve": "Réserve de PC naturels",
+      "NoNaturalWeapons": "Aucune arme naturelle renseignée.",
+      "NaturalPoolSource": "Réserve naturelle de {max} PC : {source}.",
       "BookSkillValue": "Valeur : {value}",
       "NaturalProtection": "(dont {value} VP naturels)",
       "IntegrityHint": "Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI.",
@@ -1044,6 +1049,26 @@
       "PacksRebuildFailed": "La reconstruction des compendiums a échoué. Consultez la console ; aucun pack supplémentaire ne sera modifié."
     },
     "Content": {
+      "NaturalWeapon": {
+        "Bite": {
+          "Name": "Morsure"
+        },
+        "Tusks": {
+          "Name": "Défenses"
+        },
+        "Claws": {
+          "Name": "Griffes"
+        },
+        "Horns": {
+          "Name": "Cornes"
+        },
+        "Unarmed": {
+          "Name": "Mains nues"
+        },
+        "ImpalingLeg": {
+          "Name": "Patte empaleuse"
+        }
+      },
       "Folder": {
         "Weapons": "Armes",
         "WeaponsLight": "Armes légères",

@@ -10,7 +10,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, res
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
-import {ignoresWoundPenalties, npcHealthRange} from "../rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -123,6 +123,7 @@ export class TrudvangActor extends BaseActor {
 
     const combatPools = resolveCombatPools({actor: this});
     for (const pool of combatPools.pools) {
+      if (!system.combatPools[pool.id]) continue; // Natural reserves live on their weapon profiles.
       system.combatPools[pool.id].spent = pool.spent;
       system.combatPools[pool.id].max = pool.max;
       system.combatPools[pool.id].current = pool.current;
@@ -168,6 +169,11 @@ export class TrudvangActor extends BaseActor {
 
   getSkillValue(skillKey) {
     const prepared = this.system.effective?.skills?.[skillKey];
+    if (this.type === "npc" && this.system.skillTree?.length) {
+      const row = npcBookSkillRows(this.system.skillTree, {skills: TRUDVANG.skills, knowledgeTree: TRUDVANG.knowledgeTree,
+        localize: key => game.i18n.localize(key)}).find(row => row.kind === "skill" && row.skillKey === skillKey);
+      if (row) return row.value + (prepared !== undefined ? Number(prepared) - Number(this.system.skills?.[skillKey]?.value || 0) : Number(this.system.skills?.[skillKey]?.bonus || 0));
+    }
     if (prepared !== undefined) return Number(prepared || 0);
     const skill = this.system.skills?.[skillKey];
     return Number(skill?.value || 0) + Number(skill?.bonus || 0);
@@ -360,6 +366,17 @@ export class TrudvangActor extends BaseActor {
     const entry = this.getCatalogEntry(catalogId);
     return this.items.find(item => item.type === "ability" && (item.system.catalogId === catalogId
       || (entry && item.system.parentSkill === entry.skillKey && item.system.kind === entry.kind && String(item.name).trim().toLocaleLowerCase() === entry.name.toLocaleLowerCase())));
+  }
+
+  /** Book knowledge participates in rules without inventing embedded ability items. */
+  findRuleKnowledge(catalogId) {
+    const embedded = this.findKnowledgeItem(catalogId);
+    if (embedded || this.type !== "npc") return embedded;
+    const row = npcBookSkillRows(this.system.skillTree, {skills: TRUDVANG.skills, knowledgeTree: TRUDVANG.knowledgeTree,
+      localize: key => game.i18n.localize(key)}).find(row => row.catalogId === catalogId);
+    if (!row) return null;
+    return {name: row.name, uuid: "", type: "ability", system: {catalogId, kind: row.kind,
+      parentSkill: row.skillKey, level: row.value, offHandLevel: 0}};
   }
 
   catalogText(catalogId, suffix) {
@@ -878,7 +895,7 @@ export class TrudvangActor extends BaseActor {
       .filter(([, amount]) => amount > 0)
       .map(([id, amount]) => game.i18n.format("TRUDVANG.Calculation.CombatPoolSpent", {
         amount,
-        pool: game.i18n.localize(poolById[id].labelKey)
+        pool: poolById[id].label || game.i18n.localize(poolById[id].labelKey)
       })) : [];
     const flavor = [
       ...spendingFlavor,
@@ -1087,7 +1104,8 @@ export class TrudvangActor extends BaseActor {
     ]);
     await this.update(Object.fromEntries(updates));
     const combatEquipment = this.items.filter(item => ["weapon", "shield"].includes(item.type));
-    if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0})));
+    if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0,
+      ...(weaponType(item) === "natural" ? {"system.naturalCombatPointsSpent": 0} : {})})));
     return this;
   }
 
@@ -1258,7 +1276,12 @@ export class TrudvangActor extends BaseActor {
   async spendCombatPoints(allocation = {}, {freeScope = "both"} = {}) {
     if (!this.isInActiveCombat) return this;
     const updates = combatPointSpendingUpdates(this.system.combatPools, allocation, {freeScope});
-    if (Object.keys(updates).length) return this.update(updates);
+    const naturalUpdates = resolveCombatPools({actor: this}).pools.filter(pool => pool.id.startsWith("natural:") && Number(allocation[pool.id]) > 0)
+      .flatMap(pool => this.items.filter(item => weaponType(item) === "natural"
+        && `natural:${item.system.naturalCombatPool || item.id}` === pool.id)
+        .map(item => ({_id: item.id, "system.naturalCombatPointsSpent": pool.spent + Math.min(pool.current, Math.max(0, Math.trunc(Number(allocation[pool.id]))))})));
+    if (Object.keys(updates).length) await this.update(updates);
+    if (naturalUpdates.length) await this.updateEmbeddedDocuments("Item", naturalUpdates);
     return this;
   }
 

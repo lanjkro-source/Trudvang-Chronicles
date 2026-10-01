@@ -1,16 +1,16 @@
 import assert from "node:assert/strict";
 import {existsSync, readFileSync} from "node:fs";
 import test from "node:test";
-import {initializeNpcInventory, isNpcEquipment} from "../modules/npc-inventory.mjs";
+import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "../modules/npc-inventory.mjs";
 import {withNpcInventories} from "../tools/generate-npc-inventories.mjs";
 
 const content = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
 const french = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
 const byName = id => content.actors.find(actor => actor.nameKey === `TRUDVANG.Content.Actor.${id}.Name`);
 
-test("NPC material inventories accept weapons, armor and shields, not feats or other items", () => {
-  for (const type of ["weapon", "armor", "shield"]) assert.equal(isNpcEquipment({type}), true);
-  for (const type of ["ability", "spell", "divineFeat", "tablet", "gear", "potion"]) assert.equal(isNpcEquipment({type}), false);
+test("NPC material inventories accept all equipment, not knowledge or natural profiles", () => {
+  for (const type of ["weapon", "armor", "shield", "gear", "potion"]) assert.equal(isNpcEquipment({type}), true);
+  for (const type of ["ability", "spell", "divineFeat", "tablet"]) assert.equal(isNpcEquipment({type}), false);
   assert.equal(isNpcEquipment(null), false);
   assert.equal(isNpcEquipment({type: "weapon", system: {combatSpecialty: "natural"}}), false);
   assert.equal(isNpcEquipment({type: "weapon", system: {category: "natural"}}), false);
@@ -20,11 +20,11 @@ test("all starter creatures have an inventory and independent tokens, while natu
   for (const actor of content.actors) {
     assert.ok(Array.isArray(actor.items));
     assert.equal(actor.prototypeToken.actorLink, false);
-    assert.ok(actor.items.every(isNpcEquipment));
+    assert.ok(actor.items.every(item => isNpcEquipment(item) || item.system.combatSpecialty === "natural"));
   }
-  assert.equal(byName("Galtir").items.length, 2);
-  assert.equal(byName("TrollBull").items.length, 4);
-  for (const id of ["GiantSnake", "GiantSpider", "Gryphon", "NightUlm", "ThornBeast", "Warg"]) assert.deepEqual(byName(id).items, []);
+  assert.equal(byName("Galtir").items.filter(isNpcEquipment).length, 2);
+  assert.equal(byName("TrollBull").items.filter(isNpcEquipment).length, 4);
+  for (const id of ["GiantSnake", "GiantSpider", "Gryphon", "NightUlm", "ThornBeast", "Warg"]) assert.deepEqual(byName(id).items.filter(isNpcEquipment), []);
 });
 
 test("starter weapons keep creature-specific damage and only a valid hand configuration is readied", () => {
@@ -90,4 +90,24 @@ test("failed inventory initialization can be retried instead of marking it compl
   npc.createEmbeddedDocuments = async () => { throw new Error("Permission denied"); };
   await assert.rejects(initializeNpcInventory(npc, byName("Galtir").items), /Permission denied/);
   assert.equal(npc.getFlag("trudvang-chronicles", "inventoryInitialized"), undefined);
+});
+
+test("book knowledge adoption is idempotent and preserves tuned names, levels and custom rows", async () => {
+  const rows = [{name: "Combat", kind: "skill", value: 12}, {name: "Combat armé", kind: "discipline", value: 5}, {name: "Custom", kind: "specialty", value: 3}];
+  const npc = {type: "npc", system: {skillTree: rows}, async update(changes) { this.system.skillTree = changes["system.skillTree"]; }};
+  const reference = byName("TrollBull").system.skillTree;
+  assert.equal(await initializeNpcCombatKnowledge(npc, reference), true);
+  assert.equal(npc.system.skillTree[0].skillId, "fighting");
+  assert.equal(npc.system.skillTree[1].catalogId, "armedFighting");
+  assert.equal(npc.system.skillTree[1].value, 5);
+  assert.deepEqual(npc.system.skillTree[2], rows[2]);
+  assert.equal(await initializeNpcCombatKnowledge(npc, reference), false);
+});
+
+test("natural profiles preserve source damage and independent or shared reserves", () => {
+  const natural = id => byName(id).items.filter(item => item.system.combatSpecialty === "natural");
+  assert.deepEqual(natural("Galtir").map(item => item.system.naturalCombatPoints), [4, 6]);
+  assert.deepEqual(natural("GiantSpider").map(item => [item.system.damage, item.system.openRoll, item.system.naturalCombatPoints]), [["2d10", 9, 6], ["1d10", 7, 12]]);
+  assert.equal(natural("TrollBull").length, 2);
+  assert.ok(natural("TrollBull").every(item => item.system.naturalCombatPool === "natural" && item.system.naturalCombatPoints === 8));
 });

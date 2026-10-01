@@ -295,6 +295,8 @@ export class NpcData extends foundry.abstract.TypeDataModel {
       // existing worlds validate without any migration.
       skillTree: new fields.ArrayField(schema({
         name: string(),
+        skillId: string(),
+        catalogId: string(),
         value: integer(0),
         kind: new fields.StringField({required: true, nullable: false, initial: "skill", choices: ["skill", "discipline", "specialty"]})
       }), {required: true, initial: []}),
@@ -390,6 +392,10 @@ export class WeaponData extends BaseItemData {
       weaponActionsSpent: integer(0, {min: 0}),
       combatPointBonus: integer(0),
       combatPointBonusUsed: boolean(false),
+      // Creature-specific reserves, optionally shared by several natural profiles.
+      naturalCombatPool: string(),
+      naturalCombatPoints: integer(0, {min: 0}),
+      naturalCombatPointsSpent: integer(0, {min: 0}),
       damageBonus: integer(0),
       rangeSelection: string("short"),
       range: schema({short: coercedInteger(0), long: coercedInteger(0)})

@@ -4,11 +4,11 @@ import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
-import {initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
+import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 40 seeds previously empty starter NPC
-// inventories once; personalized inventories and existing token loot are preserved.
-const CONTENT_VERSION = 40;
+// TEMPORARY WORLD MIGRATION — version 41 adds natural combat profiles and stable
+// book knowledge identifiers to starter NPCs, preserving their tuned skill levels.
+const CONTENT_VERSION = 41;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -490,6 +490,8 @@ async function upsertActors(source, folders, translationsByKey) {
     // (or nothing) receive the baked résumé; GM-rewritten descriptions are preserved.
     const legacyDescriptions = translationsByKey.get(entry.system?.descriptionKey) ?? new Set();
     await syncNpcCreatureData(actor, key, {legacyDescriptions});
+    // TEMPORARY WORLD MIGRATION — existing rows may still have FR names in an EN world.
+    await initializeNpcCombatKnowledge(actor, payload.system.skillTree);
 
     // TEMPORARY WORLD MIGRATION — initialize only the creature model, not its
     // already placed tokens. Reimports never restore removed default equipment.

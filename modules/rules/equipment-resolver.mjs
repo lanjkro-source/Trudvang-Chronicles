@@ -41,6 +41,7 @@ function finiteNumber(value, fallback = 0) {
 
 function specialtyItem(actor, catalogId) {
   if (!actor || !catalogId) return null;
+  if (typeof actor.findRuleKnowledge === "function") return actor.findRuleKnowledge(catalogId) ?? null;
   if (typeof actor.findKnowledgeItem === "function") return actor.findKnowledgeItem(catalogId) ?? null;
   return Array.from(actor.items || []).find(item => item?.system?.catalogId === catalogId) ?? null;
 }

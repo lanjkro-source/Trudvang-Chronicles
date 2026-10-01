@@ -176,7 +176,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const weaponFree = resolveCombatPools({actor: this.actor, item: {type: "weapon", system: {combatSpecialty: "oneHandedLightWeapons", hand: "weapon"}}, context: {...poolContext, action: "attack"}}).pools.find(pool => pool.id === "free");
     const offHandFree = resolveCombatPools({actor: this.actor, item: {type: "shield", system: {}}, context: {...poolContext, action: "parry"}}).pools.find(pool => pool.id === "free");
     context.combatPools = resolveCombatPools({actor: this.actor, context: poolContext}).active.map(pool => {
-      const sourceTitle = pool.source.name
+      const sourceTitle = pool.source.kind === "natural"
+        ? game.i18n.format("TRUDVANG.Npc.NaturalPoolSource", {source: pool.source.name, max: pool.max})
+        : pool.source.name
         ? game.i18n.format("TRUDVANG.Calculation.CombatPoolSource", {source: pool.source.name, level: pool.source.level, max: pool.max})
         : game.i18n.format("TRUDVANG.Calculation.FreeCombatPoolSource", {
           skill: pool.source.level,
@@ -189,7 +191,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const percent = current => pool.max > 0 ? `${Math.max(0, Math.min(100, (Number(current) / pool.max) * 100))}%` : "0%";
       return {
         ...pool,
-        label: game.i18n.localize(pool.labelKey),
+        label: pool.label || game.i18n.localize(pool.labelKey),
         weaponCurrent: isFree ? weaponFree.current : null,
         offHandCurrent: isFree ? offHandFree.current : null,
         weaponPercent: isFree ? percent(weaponFree.current) : null,
@@ -226,9 +228,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     }
     context.npcEquipment = {
       weapons: context.itemsByGroup.weapons.filter(isNpcEquipment),
-      protection: context.itemsByGroup.protection
+      protection: context.itemsByGroup.protection,
+      equipment: context.itemsByGroup.equipment
     };
-    context.npcActionItems = this.actor.items.filter(item => item.type !== "armor");
     for (const item of [...(context.itemsByGroup.weapons ?? []), ...(context.itemsByGroup.protection ?? []), ...(context.itemsByGroup.equipment ?? [])]) {
       item._hoverTitle = this._getItemHoverTitle(item);
       item._damageText = this._getItemDamageText(item);
@@ -243,6 +245,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return {item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
       });
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
+    context.npcCombatItems = context.combatItems.filter(row => isNpcEquipment(row.item));
+    context.npcNaturalWeapons = context.combatItems.filter(row => row.item.type === "weapon" && !isNpcEquipment(row.item));
     context.enriched = {
       notes: await TextEditorImpl.enrichHTML(this.actor.system.notes || "", {async: true, secrets: this.actor.isOwner}),
       appearance: await TextEditorImpl.enrichHTML(this.actor.system.appearance || "", {async: true, secrets: this.actor.isOwner}),
@@ -347,8 +351,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (this.actor.type === "npc") {
       context.npcHealthRange = npcHealthRange(this.actor);
       context.npcMovement = npcMovementRows(this.actor.system, {localize: key => game.i18n.localize(key)});
-      context.npcSkillTrees = npcSkillTrees(context.skillTrees);
       context.npcBookSkills = this._npcBookSkillRows();
+      context.npcSkillTrees = npcSkillTrees(context.skillTrees).map(tree => ({...tree,
+        visible: tree.visible && !context.npcBookSkills.some(row => row.kind === "skill" && row.skillKey === tree.key)
+      })).filter(tree => tree.visible || tree.disciplines.length || tree.unassigned.length);
       context.npcAbilities = Array.from(this.actor.effects ?? []).filter(isCreatureAbility).map(effect => ({
         ...creatureAbilityDetails(effect, {language: game.i18n.lang, localize: key => game.i18n.localize(key)}),
         effectUuid: effect.uuid
@@ -487,7 +493,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "dodge-action": return this.actor.rollDodge();
       case "wrestling-action": return this.actor.rollWrestlingAction(target.dataset.kind || "grapple");
       case "generic-combat-action": return this.actor.spendGenericCombatAction();
-      case "item-create": return this._createItem(target.dataset.type);
+      case "item-create": return this._createItem(target.dataset.type, {natural: target.dataset.natural === "true"});
       case "add-tablet": return this._openTabletPicker();
       case "toggle-tree": {
         const details = target.closest("details");
@@ -830,7 +836,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     // Book rows own their base skill level. The parallel actor field may still
     // be 1; only its prepared bonus/effect delta carries over into this roll.
     const preparedSkill = this.actor.getSkillValue(row.skillKey);
-    const skillBonus = row.skillKey ? preparedSkill - Number(this.actor.system.skills?.[row.skillKey]?.value || 0) : 0;
+    const skillBonus = row.skillKey ? preparedSkill - row.skillValue : 0;
     const skillValue = row.skillValue + skillBonus;
     if (row.kind === "skill") return this.actor.rollSkill(row.skillKey, {
       label: row.name, bonus: skillValue - preparedSkill
@@ -910,7 +916,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     });
   }
 
-  async _createItem(type) {
+  async _createItem(type, {natural = false} = {}) {
     if (!TRUDVANG.itemTypes.includes(type)) return;
     if (this.actor.type === "character" && type === "tablet" && !this.actor.system.experience?.creationMode) {
       return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CreationModeRequired"));
@@ -918,7 +924,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const item = await this.actor.createEmbeddedDocuments("Item", [{
       name: game.i18n.format("TRUDVANG.New.Item", {type: game.i18n.localize(`TYPES.Item.${type}`)}),
       type,
-      system: type === "ability" ? {level: 0} : type === "weapon" ? {isThrowingWeapon: false} : {}
+      system: type === "ability" ? {level: 0} : type === "weapon" ? {isThrowingWeapon: false,
+        ...(natural ? {category: "natural", combatSpecialty: "natural", equipped: true} : {})} : {}
     }]);
     item[0]?.sheet.render({force: true});
   }

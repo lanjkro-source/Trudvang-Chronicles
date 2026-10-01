@@ -3,11 +3,19 @@ import {readFileSync, writeFileSync} from "node:fs";
 import {pathToFileURL} from "node:url";
 import {creatureDataForStarter} from "../modules/creature-feats.mjs";
 import {isNpcEquipment} from "../modules/npc-inventory.mjs";
+import {npcBookSkillRows} from "../modules/rules/npc-summary.mjs";
+import {TRUDVANG} from "../modules/config.mjs";
 
 const normalize = text => String(text).normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]/g, "");
 const naturalWeapons = new Set(["Morsure", "Morsure/défenses", "Griffes", "Cornes", "Mains nues", "Patte empaleuse"].map(normalize));
 const armorAliases = {cuir: "FurLeather", armuredefourrure: "FurLeather"};
 const weaponAliases = {splitaxi: "SplitAxi", bardamakir: "BardaMakir", tveiklubb: "TveiKlubb", grandbouclierenbois: "LargeShield"};
+const naturalIds = {morsure: "Bite", defense: "Tusks", griffes: "Claws", cornes: "Horns", mainsnues: "Unarmed", patteempaleuse: "ImpalingLeg"};
+const parseDamage = text => {
+  const match = text.match(/^(\d+d\d+)(?:\s*\((?:JO|OR)\s+(\d+)(?:[-–]\d+)?\))?$/i);
+  if (!match) throw new Error(`Unsupported weapon damage: ${text}`);
+  return {damage: match[1].toLowerCase(), openRoll: Number(match[2] ?? 0)};
+};
 
 export function withNpcInventories(content, creatures, french) {
   const output = structuredClone(content);
@@ -18,10 +26,25 @@ export function withNpcInventories(content, creatures, french) {
     const creature = creatures.find(entry => entry.name === creatureDataForStarter(starterId)?.creature);
     if (!creature) throw new Error(`No creature reference for ${starterId}`);
     const inventory = [];
+    const natural = [];
     let weaponHand = false;
     let shieldHand = false;
     for (const entry of [...(creature.weapons ?? []), ...(creature.armor ?? [])]) {
-      if (naturalWeapons.has(normalize(entry.name))) continue;
+      if (naturalWeapons.has(normalize(entry.name))) {
+        const names = normalize(entry.name) === "morsuredefenses" ? ["Morsure", "Défense"] : [entry.name];
+        for (const name of names) {
+          const id = naturalIds[normalize(name)];
+          if (!id) throw new Error(`Unknown natural weapon: ${name}`);
+          const reserve = (creature.combatReserves ?? []).find(pool => normalize(pool.name) === normalize(name))
+            ?? (creature.combatReserves ?? []).find(pool => normalize(pool.name) === "armesnaturelles");
+          natural.push({nameKey: `TRUDVANG.Content.NaturalWeapon.${id}.Name`, type: "weapon", img: "icons/svg/combat.svg",
+            system: {category: "natural", combatSpecialty: "natural", equipped: true, quantity: 1, strengthApplies: true,
+              ...parseDamage(entry.damage), initiativeModifier: Number(entry.initiative),
+              naturalCombatPool: reserve && normalize(reserve.name) === "armesnaturelles" ? "natural" : id,
+              naturalCombatPoints: Number(reserve?.reserve ?? 0)}});
+        }
+        continue;
+      }
       const armor = (creature.armor ?? []).includes(entry);
       const alias = (armor ? armorAliases : weaponAliases)[normalize(entry.name)];
       const base = equipment.find(item => alias ? item.nameKey === `TRUDVANG.Content.Item.${alias}.Name`
@@ -35,10 +58,7 @@ export function withNpcInventories(content, creatures, french) {
         if (item.system.protection !== entry.protection) throw new Error(`Armor protection mismatch: ${creature.name} / ${entry.name}`);
         item.system.equipped = true;
       } else {
-        const damage = entry.damage.match(/^(\d+d\d+)(?:\s*\((?:JO|OR)\s+(\d+)(?:[-–]\d+)?\))?$/i);
-        if (!damage) throw new Error(`Unsupported weapon damage: ${entry.damage}`);
-        item.system.damage = damage[1].toLowerCase();
-        item.system.openRoll = Number(damage[2] ?? 0);
+        Object.assign(item.system, parseDamage(entry.damage));
         item.system.initiativeModifier = Number(entry.initiative);
         const twoHands = item.system.combatSpecialty === "twoHandedWeapons";
         item.system.equipped = item.type === "shield" ? !shieldHand : !weaponHand && (!twoHands || !shieldHand);
@@ -50,7 +70,10 @@ export function withNpcInventories(content, creatures, french) {
       }
       inventory.push(item);
     }
-    actor.items = [...(actor.items ?? []).filter(item => !isNpcEquipment(item)), ...inventory];
+    // Preserve ordinary gear; replace only the source-generated combat profiles.
+    actor.items = [...(actor.items ?? []).filter(item => !["weapon", "armor", "shield"].includes(item.type)), ...inventory, ...natural];
+    actor.system.skillTree = npcBookSkillRows(creature.skills, {skills: TRUDVANG.skills, knowledgeTree: TRUDVANG.knowledgeTree, localize})
+      .map(({name, value, kind, skillKey, catalogId}) => ({name, value, kind, skillId: skillKey, catalogId}));
     actor.prototypeToken = {...actor.prototypeToken, actorLink: false};
   }
   return output;

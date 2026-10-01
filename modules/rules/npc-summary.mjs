@@ -53,19 +53,19 @@ export function npcBookSkillRows(rows, {skills, knowledgeTree, localize}) {
   return Array.from(rows ?? [], (row, index) => {
     let catalogId = "";
     if (row.kind === "skill") {
-      skillKey = Object.keys(skills).find(key => referenceName(localize(skills[key])) === referenceName(row.name)) ?? "";
+      skillKey = row.skillId || Object.keys(skills).find(key => referenceName(localize(skills[key])) === referenceName(row.name)) || "";
       disciplineId = "";
       skillValue = Number(row.value || 0);
       disciplineValue = 0;
     } else {
       const disciplines = skillKey ? knowledgeTree[skillKey] ?? [] : Object.values(knowledgeTree).flat();
       if (row.kind === "discipline") {
-        disciplineId = disciplines.find(entry => matches(row.name, entry))?.id ?? "";
+        disciplineId = row.catalogId || disciplines.find(entry => matches(row.name, entry))?.id || "";
         catalogId = disciplineId;
         disciplineValue = Number(row.value || 0);
       } else {
         const parents = disciplineId ? disciplines.filter(entry => entry.id === disciplineId) : disciplines;
-        catalogId = parents.flatMap(entry => entry.specialties).find(entry => matches(row.name, entry))?.id ?? "";
+        catalogId = row.catalogId || parents.flatMap(entry => entry.specialties).find(entry => matches(row.name, entry))?.id || "";
       }
     }
     return {name: row.name, value: Number(row.value || 0), kind: row.kind, index, skillKey, catalogId,

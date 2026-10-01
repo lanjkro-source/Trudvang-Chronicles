@@ -788,7 +788,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.NoProtection` | No armor or shields in the inventory. | Aucune armure ni aucun bouclier dans l’inventaire. |
 | `TRUDVANG.Npc.DefaultInventoryHint` | The creature’s default inventory is inherited by each new unlinked token. Changes made on a token do not change this model. | Inventaire par défaut de la créature, transmis à chaque nouveau token non lié. Les modifications faites sur un token ne modifient pas ce modèle. |
 | `TRUDVANG.Npc.TokenInventoryHint` | This individual’s inventory: changes only affect this token. | Inventaire de cet exemplaire : les modifications ne concernent que ce token. |
-| `TRUDVANG.Npc.EquipmentOnly` | This inventory only accepts weapons, armor and shields. | Cet inventaire accepte uniquement les armes, les armures et les boucliers. |
+| `TRUDVANG.Npc.EquipmentOnly` | Drop equipment here: a weapon, protection, gear, extract or potion. | Déposez ici un équipement : arme, protection, objet, extrait ou potion. |
+| `TRUDVANG.Npc.NoGear` | No other equipment in the inventory. | Aucun autre équipement dans l’inventaire. |
+| `TRUDVANG.Npc.NaturalWeapons` | Natural weapons | Armes naturelles |
+| `TRUDVANG.Npc.NaturalReserve` | Natural CP reserve | Réserve de PC naturels |
+| `TRUDVANG.Npc.NoNaturalWeapons` | No natural weapon recorded. | Aucune arme naturelle renseignée. |
+| `TRUDVANG.Npc.NaturalPoolSource` | Natural reserve of {max} CP: {source}. | Réserve naturelle de {max} PC : {source}. |
 | `TRUDVANG.Npc.BookSkillValue` | Value: {value} | Valeur : {value} |
 | `TRUDVANG.Npc.NaturalProtection` | (including {value} natural PV) | (dont {value} VP naturels) |
 | `TRUDVANG.Npc.IntegrityHint` | Only worn armor has integrity. Natural armor has no BV. | Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI. |
@@ -1234,6 +1239,42 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Import.PacksRebuildStarted` | Rebuilding the knowledge compendiums... | Reconstruction des compendiums de connaissances... |
 | `TRUDVANG.Import.PacksRebuilt` | Knowledge compendiums rebuilt ({packs} packs). | Compendiums de connaissances reconstruits ({packs} packs). |
 | `TRUDVANG.Import.PacksRebuildFailed` | Compendium rebuild failed. Check the console; no further packs will be changed. | La reconstruction des compendiums a échoué. Consultez la console ; aucun pack supplémentaire ne sera modifié. |
+
+## `TRUDVANG.Content.NaturalWeapon.Bite`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.Bite.Name` | Bite | Morsure |
+
+## `TRUDVANG.Content.NaturalWeapon.Tusks`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.Tusks.Name` | Tusks | Défenses |
+
+## `TRUDVANG.Content.NaturalWeapon.Claws`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.Claws.Name` | Claws | Griffes |
+
+## `TRUDVANG.Content.NaturalWeapon.Horns`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.Horns.Name` | Horns | Cornes |
+
+## `TRUDVANG.Content.NaturalWeapon.Unarmed`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.Unarmed.Name` | Unarmed | Mains nues |
+
+## `TRUDVANG.Content.NaturalWeapon.ImpalingLeg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.NaturalWeapon.ImpalingLeg.Name` | Impaling leg | Patte empaleuse |
 
 ## `TRUDVANG.Content.Folder`
 
