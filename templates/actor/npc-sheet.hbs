@@ -8,8 +8,7 @@
   <nav class="sheet-tabs tabs" data-group="primary"><a class="item" data-tab="summary">{{localize "TRUDVANG.Tab.Summary"}}</a><a class="item" data-tab="actions">{{localize "TRUDVANG.Tab.Actions"}}</a><a class="item" data-tab="effects">{{localize "TRUDVANG.Tab.Effects"}}</a><a class="item" data-tab="notes">{{localize "TRUDVANG.Tab.Notes"}}</a></nav>
   <section class="sheet-body">
     <div class="tab summary" data-group="primary" data-tab="summary">
-      <section class="panel npc-health-panel">
-        <h2>{{localize "TRUDVANG.Section.Status"}}</h2>
+      <section class="panel npc-health-panel" aria-label="{{localize 'TRUDVANG.Section.Status'}}">
         <div class="status-vitals">
           <div class="status-protection">
             <span><strong>{{localize "TRUDVANG.Resource.Protection"}} :</strong> <button type="button" class="inspectable-stat" data-action="inspect-global-stat" data-stat="protection">{{armorStatus.protection}} VP <i class="fas fa-circle-info"></i></button>{{#if armorStatus.naturalProtection}}<small>{{localize "TRUDVANG.Npc.NaturalProtection" value=armorStatus.naturalProtection}}</small>{{/if}}</span>
