@@ -124,6 +124,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Section.CombatActions` | Attacks, parries & readied weapons | Attaques, parades & armes préparées |
 | `TRUDVANG.Section.UnarmedCombat` | Unarmed combat & wrestling | Combat à mains nues & lutte |
 | `TRUDVANG.Section.Skills` | Skills | Compétences |
+| `TRUDVANG.Section.Capacities` | Abilities | Capacités |
 | `TRUDVANG.Section.Disciplines` | Disciplines & Specialties | Disciplines & Spécialités |
 | `TRUDVANG.Section.Weapons` | Weapons | Armes |
 | `TRUDVANG.Section.Protection` | Armor & Shields | Armure & Boucliers |
@@ -780,6 +781,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.EditInitialTraits` | Edit initial traits | Modifier les traits initiaux |
 | `TRUDVANG.Npc.EditSkills` | Configure skills | Régler les compétences |
 | `TRUDVANG.Npc.NoLearnedSkills` | No skill above level 1, learned discipline or specialty. | Aucune compétence au-delà du niveau 1, discipline ou spécialité apprise. |
+| `TRUDVANG.Npc.NoCapacities` | No abilities. | Aucune capacité. |
+| `TRUDVANG.Npc.BookSkillValue` | Value: {value} | Valeur : {value} |
 | `TRUDVANG.Npc.NaturalProtection` | (including {value} natural PV) | (dont {value} VP naturels) |
 | `TRUDVANG.Npc.IntegrityHint` | Only worn armor has integrity. Natural armor has no BV. | Seules les armures portées ont une intégrité. L’armure naturelle n’a pas de VI. |
 | `TRUDVANG.Npc.DurableMechanic` | Durable: ignore wound penalties | Tenace : ignore les malus de blessures |

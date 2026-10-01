@@ -18,6 +18,32 @@ export function ignoresWoundPenalties(actor) {
 
 const learned = node => Number(node.level || 0) > 0 || Number(node.offHandLevel ?? node.item.system.offHandLevel ?? 0) > 0;
 const normalize = name => String(name || "").trim().toLocaleLowerCase();
+const referenceName = name => normalize(name).replace(/\s*\([^)]*\)/g, "").normalize("NFD").replace(/\p{Diacritic}/gu, "");
+
+/** Link book rows to their reference, respecting the book's skill/discipline hierarchy. */
+export function npcBookSkillRows(rows, {skills, knowledgeTree, localize}) {
+  let skillKey = "";
+  let disciplineId = "";
+  const matches = (name, entry) => [localize(entry.label), entry.name].some(label => referenceName(label) === referenceName(name));
+  return Array.from(rows ?? [], (row, index) => {
+    let catalogId = "";
+    if (row.kind === "skill") {
+      skillKey = Object.keys(skills).find(key => referenceName(localize(skills[key])) === referenceName(row.name)) ?? "";
+      disciplineId = "";
+    } else {
+      const disciplines = skillKey ? knowledgeTree[skillKey] ?? [] : Object.values(knowledgeTree).flat();
+      if (row.kind === "discipline") {
+        disciplineId = disciplines.find(entry => matches(row.name, entry))?.id ?? "";
+        catalogId = disciplineId;
+      } else {
+        const parents = disciplineId ? disciplines.filter(entry => entry.id === disciplineId) : disciplines;
+        catalogId = parents.flatMap(entry => entry.specialties).find(entry => matches(row.name, entry))?.id ?? "";
+      }
+    }
+    return {name: row.name, value: Number(row.value || 0), kind: row.kind, index, skillKey, catalogId};
+  });
+}
+
 const decorate = node => ({...node,
   offHandLevel: Number(node.offHandLevel ?? node.item.system.offHandLevel ?? 0),
   separateHands: node.separateHands || Number(node.item.system.offHandLevel || 0) > 0

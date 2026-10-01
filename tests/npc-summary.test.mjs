@@ -5,6 +5,7 @@ import Handlebars from "handlebars";
 import {ignoresWoundPenalties, npcCurrentTrait, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
 import {COMBAT_POOL_IDS} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
+import {deterministicId} from "../modules/skill-pack-data.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -236,6 +237,64 @@ test("catalogue disciplines and specialties render on separate linked rows, not 
   assert.equal((html.match(/data-item-id="parent"/g) || []).length, 1);
   assert.equal((html.match(/data-item-id="child"/g) || []).length, 1);
   assert.match(html, /3 \| 2/);
+});
+
+test("book knowledge opens its reference without creating an ability on the NPC", async () => {
+  const sheet = new TrudvangNpcSheet();
+  sheet.actor = actor();
+  sheet.actor.system.skillTree = [
+    {name: "Combat", value: 8, kind: "skill"},
+    {name: "Combat armé", value: 2, kind: "discipline"},
+    {name: "Armes légères à une main", value: 3, kind: "specialty"},
+    {name: "Connaissances", value: 5, kind: "skill"},
+    {name: "Langage", value: 1, kind: "discipline"},
+    {name: "Langue maternelle (bastjumal)", value: 2, kind: "specialty"}
+  ];
+  const rows = sheet._npcBookSkillRows();
+  assert.equal(rows[0].skillKey, "fighting");
+  assert.equal(rows[1].catalogId, "armedFighting");
+  assert.equal(rows[2].catalogId, "oneHandedLightWeapons");
+  assert.equal(rows[5].catalogId, "motherTongue");
+  const opened = [];
+  game.packs = new Map([["trudvang-chronicles.skills-fr", {
+    getDocument: async id => {
+      assert.equal(id, deterministicId("ability:oneHandedLightWeapons"));
+      return {sheet: {render: options => opened.push(options)}};
+    }
+  }]]);
+  try {
+    await sheet._openNpcBookSkill(2);
+    assert.deepEqual(opened, [{force: true}]);
+    assert.equal(sheet.actor.items.length, 0);
+    const html = render(await sheet._prepareContext({}));
+    assert.match(html, /data-action="show-npc-book-skill" data-index="2"/);
+  } finally { delete game.packs; }
+});
+
+test("NPC capacities list only imported feats, and opens their effect sheet", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
+  sheet.actor.effects = [
+    {uuid: "Actor.npc.ActiveEffect.vision", name: "Vision nocturne", img: "icons/svg/eye.svg", description: "<p>Vision en faible lumière.</p>", flags: {"trudvang-chronicles": {feat: "Vision nocturne"}}},
+    {uuid: "Actor.npc.ActiveEffect.manual", name: "Charge", img: "icons/svg/aura.svg", description: "Un véritable effet ajouté à la main.", flags: {}}
+  ];
+  const context = await sheet._prepareContext({});
+  assert.deepEqual(context.npcAbilities.map(entry => entry.name), ["Vision nocturne"]);
+  const html = render(context).split('<div class="tab actions"')[0];
+  assert.match(html, /data-action="effect-edit" data-effect-uuid="Actor.npc.ActiveEffect.vision"/);
+  assert.match(html, /Vision en faible lumière\./);
+  assert.doesNotMatch(html, /data-effect-uuid="Actor.npc.ActiveEffect.manual"/);
+  let opened = false;
+  const resolveUuid = foundry.utils.fromUuidSync;
+  foundry.utils.fromUuidSync = uuid => {
+    assert.equal(uuid, "Actor.npc.ActiveEffect.vision");
+    return {sheet: {render: options => { assert.equal(options.force, true); opened = true; }}};
+  };
+  try {
+    await TrudvangActorSheet.DEFAULT_OPTIONS.actions["effect-edit"].call(sheet,
+      {preventDefault() {}, stopPropagation() {}},
+      {dataset: {action: "effect-edit", effectUuid: context.npcAbilities[0].effectUuid}, closest: () => null});
+    assert.equal(opened, true);
+  } finally { foundry.utils.fromUuidSync = resolveUuid; }
 });
 
 test("negative health and death remain visible with a bounded gauge", async () => {

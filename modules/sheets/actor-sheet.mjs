@@ -7,7 +7,8 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolv
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
-import {ignoresWoundPenalties, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcBookSkillRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
+import {deterministicId} from "../skill-pack-data.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -44,6 +45,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     actions: {
       "roll-skill": TrudvangActorSheet.#onAction,
       "show-skill-detail": TrudvangActorSheet.#onAction,
+      "show-npc-book-skill": TrudvangActorSheet.#onAction,
       "roll-trait": TrudvangActorSheet.#onAction,
       "advance-skill": TrudvangActorSheet.#onAction,
       "adjust-trait": TrudvangActorSheet.#onAction,
@@ -333,8 +335,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const tablets = this.actor.items.filter(item => item.type === "tablet");
     if (this.actor.type === "npc") {
       context.npcSkillTrees = npcSkillTrees(context.skillTrees);
-      // Book skill tree: display-only rows (no items, no rolls), in book order.
-      context.npcBookSkills = (this.actor.system.skillTree ?? []).map(entry => ({name: entry.name, value: Number(entry.value || 0), kind: entry.kind}));
+      context.npcBookSkills = this._npcBookSkillRows();
+      const featEffects = Array.from(this.actor.effects ?? []).filter(effect => effect.getFlag?.("trudvang-chronicles", "feat") || effect.flags?.["trudvang-chronicles"]?.feat);
+      context.npcAbilities = featEffects.map(effect => ({
+        name: effect.name, img: effect.img, effectUuid: effect.uuid, disabled: effect.disabled,
+        summary: String(effect.description || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()
+      }));
     }
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
     context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
@@ -424,6 +430,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     switch (action) {
       case "roll-skill": return this.actor.rollSkill(target.dataset.skill);
       case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[target.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[target.dataset.skill]));
+      case "show-npc-book-skill": return this._openNpcBookSkill(Number(target.dataset.index));
       case "roll-trait": return this.actor.rollTrait(target.dataset.trait);
       case "advance-skill": return this.actor.advanceSkill(target.dataset.skill);
       case "adjust-trait": return this.actor.adjustTrait(target.dataset.trait, Number(target.dataset.direction));
@@ -773,6 +780,27 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     return text === key ? "" : text;
   }
 
+  _npcBookSkillRows() {
+    return npcBookSkillRows(this.actor.system.skillTree, {...TRUDVANG, localize: key => game.i18n.localize(key)});
+  }
+
+  async _openNpcBookSkill(index) {
+    const row = this._npcBookSkillRows()[index];
+    if (!row) return;
+    if (row.kind === "skill" && row.skillKey) {
+      return this._showDetail(row.name, game.i18n.localize(TRUDVANG.skillDescriptions[row.skillKey]));
+    }
+    if (row.catalogId) {
+      const existing = this.actor.findKnowledgeItem(row.catalogId);
+      if (existing) return existing.sheet.render({force: true});
+      const pack = game.packs?.get(`trudvang-chronicles.skills-${game.i18n.lang === "fr" ? "fr" : "en"}`);
+      const document = await pack?.getDocument(deterministicId(`ability:${row.catalogId}`));
+      if (document) return document.sheet.render({force: true});
+      return this._showCatalogDetail(row.catalogId);
+    }
+    return this._showDetail(row.name, game.i18n.format("TRUDVANG.Npc.BookSkillValue", {value: row.value}));
+  }
+
   _showCatalogDetail(catalogId) {
     const entry = this.actor.getCatalogEntry(catalogId);
     if (!entry) return;
@@ -893,7 +921,7 @@ export class TrudvangNpcSheet extends TrudvangActorSheet {
   };
 
   static DEFAULT_OPTIONS = {
-    position: {width: 760, height: 740},
+    position: {width: 600, height: 740},
     classes: ["npc-sheet"]
   };
 }
