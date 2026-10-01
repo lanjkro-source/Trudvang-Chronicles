@@ -5,9 +5,9 @@ import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 34 adds the Rules / Creature Size journal to
-// existing development worlds through the normal starter-content upsert.
-const CONTENT_VERSION = 37;
+// TEMPORARY WORLD MIGRATION — version 38 normalizes weapon range.short/long to
+// finite integers on existing development worlds through the normal starter-content upsert.
+const CONTENT_VERSION = 38;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -1074,20 +1074,84 @@ export async function importStarterContent({force = false} = {}) {
     // The Skills compendiums ship as compiled packs with the system and update with it;
     // they are no longer rebuilt at runtime (see syncSkillPack / repairKnowledgePacks).
 
-    // TEMPORARY WORLD MIGRATION — repair range.short/long on items where they are
-    // stored as empty strings or null instead of numbers (pre-0.46.0 data shape).
-    for (const item of game.items) {
-      const range = item.system?.range;
-      if (!range) continue;
-      const short = Number(range.short);
-      const long = Number(range.long);
-      if (Number.isNaN(short) || Number.isNaN(long)) {
-        await item.update({
-          "system.range.short": 0,
-          "system.range.long": 0
-        });
+    // TEMPORARY WORLD MIGRATION — normalize every weapon Item's
+    // system.range.short/long to finite integers (schema requires non-nullable
+    // integers). Numeric strings ("50"→50, trim whitespace, accept "50m"/"50 m"→50),
+    // leading-number parse ("10/20"→10), anything else ("" / null / undefined /
+    // NaN / junk → 0), clamp min 0. Covers world Items (game.items) AND
+    // actor-embedded weapons. Idempotent, GM-only (runs inside the GM-gated
+    // importStarterContent startup path), per-document try/catch so one bad doc
+    // can't abort the run. Update ONLY when a change is needed.
+    const normalizeWeaponRangeValue = (value) => {
+      if (typeof value === "number") {
+        if (!Number.isFinite(value)) return 0;
+        return Math.max(0, Math.trunc(value));
       }
-    }
+      if (typeof value === "string") {
+        const match = value.trim().match(/-?\d+/);
+        if (!match) return 0;
+        const parsed = Number.parseInt(match[0], 10);
+        if (!Number.isFinite(parsed)) return 0;
+        return Math.max(0, parsed);
+      }
+      return 0;
+    };
+    const normalizeWeaponRanges = async () => {
+      let repaired = 0;
+      let scanned = 0;
+      const normalizeOne = async (item, persist) => {
+        if (item?.type !== "weapon") return;
+        const range = item.system?.range;
+        if (!range) return;
+        scanned++;
+        try {
+          const short = normalizeWeaponRangeValue(range.short);
+          const long = normalizeWeaponRangeValue(range.long);
+          const shortNeeds = !Number.isInteger(range.short) || range.short !== short;
+          const longNeeds = !Number.isInteger(range.long) || range.long !== long;
+          if (!shortNeeds && !longNeeds) return;
+          const changes = {};
+          if (shortNeeds) changes["system.range.short"] = short;
+          if (longNeeds) changes["system.range.long"] = long;
+          await persist(changes);
+          repaired++;
+        } catch (error) {
+          console.warn(`Trudvang Chronicles | Weapon range repair failed for "${item?.name ?? item?.id}"`, error);
+        }
+      };
+      for (const item of game.items) {
+        await normalizeOne(item, (changes) => item.update(changes));
+      }
+      for (const actor of game.actors) {
+        const updates = [];
+        for (const item of actor.items) {
+          if (item?.type !== "weapon") continue;
+          const range = item.system?.range;
+          if (!range) continue;
+          scanned++;
+          try {
+            const short = normalizeWeaponRangeValue(range.short);
+            const long = normalizeWeaponRangeValue(range.long);
+            const changes = {_id: item.id};
+            if (!Number.isInteger(range.short) || range.short !== short) changes["system.range.short"] = short;
+            if (!Number.isInteger(range.long) || range.long !== long) changes["system.range.long"] = long;
+            if (Object.keys(changes).length > 1) updates.push(changes);
+          } catch (error) {
+            console.warn(`Trudvang Chronicles | Weapon range repair failed for "${item?.name ?? item?.id}" on actor "${actor?.name ?? actor?.id}"`, error);
+          }
+        }
+        if (updates.length) {
+          try {
+            await actor.updateEmbeddedDocuments("Item", updates);
+            repaired += updates.length;
+          } catch (error) {
+            console.warn(`Trudvang Chronicles | Weapon range repair failed for actor "${actor?.name ?? actor?.id}"`, error);
+          }
+        }
+      }
+      console.info(`Trudvang Chronicles | Weapon ranges normalized: ${repaired} repaired of ${scanned} scanned`);
+    };
+    await normalizeWeaponRanges();
 
     // Persist the version only after every repair step succeeded, so a partial
     // failure re-runs the whole pass on the next world entry.
