@@ -349,9 +349,20 @@ test("the NPC header has only health and read-only movement, and compact traits 
   assert.match(header, /Terrestre/);
   assert.match(header, /Nage/);
   assert.equal((header.match(/3 m \/ 24 m/g) || []).length, 2);
+  assert.match(header, /Terrestre : <strong>3 m \/ 24 m<\/strong>/);
+  assert.match(header, /Nage : <strong>3 m \/ 24 m<\/strong>/);
+  assert.equal((header.match(/class="npc-movement-separator"/g) || []).length, 1);
   const fields = html.match(/<input class="npc-trait-current[^>]+>/g);
   assert.equal(fields.length, 7);
   for (const field of fields) assert.doesNotMatch(field, /readonly|min=|max=/);
+});
+
+test("a single NPC movement mode has no separator and keeps its conditional distances", async () => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet.actor.system.details.move = [{mode: "vol", distance: "4 m", max: "24 m ou 18 m avec armure"}];
+  const html = render(await sheet._prepareContext({})).split('<nav class="sheet-tabs')[0];
+  assert.match(html, /Vol : <strong>4 m \/ 24 m ou 18 m avec armure<\/strong>/);
+  assert.doesNotMatch(html, /npc-movement-separator/);
 });
 
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {
