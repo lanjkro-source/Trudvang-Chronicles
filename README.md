@@ -48,6 +48,7 @@ npm run build:packs
 
 ## Playing
 
+- Scene backgrounds are available in the file picker under `systems/trudvang-chronicles/assets/maps/`, including `embuscade.webp` and `foret.webp`. These WebP maps keep their original resolution; regenerate them from the private map sources with `python tools/convert-map-assets.py` (requires Pillow).
 - Click a trait for a Situation roll (base 10 plus the trait modifier).
 - Click a skill for a Skill roll. The dialog accepts the situational modifier before rolling.
 - Click a discipline or specialty to include its level bonus in its parent Skill Value.
