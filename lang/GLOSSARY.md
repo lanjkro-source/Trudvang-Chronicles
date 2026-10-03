@@ -961,6 +961,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Macro.TraitSituationRoll` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Macro.LegacyTraitSituationRoll` | Trait situation roll | Jet de situation de trait |
 
+## `TRUDVANG.Portrait`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Portrait.ShareMenu` | Share portrait | Partager le portrait |
+| `TRUDVANG.Portrait.DialogTitle` | Share the portrait of {actor} | Partager le portrait de {actor} |
+| `TRUDVANG.Portrait.ForceAll` | Force large display for all players | Forcer l'affichage en grand chez tous les joueurs |
+| `TRUDVANG.Portrait.Send` | Share | Partager |
+| `TRUDVANG.Portrait.CardTitle` | Portrait | Portrait |
+
 ## `TRUDVANG.Roll`
 
 | Clé | English | Français |

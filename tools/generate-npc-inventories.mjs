@@ -7,7 +7,7 @@ import {npcBookSkillRows} from "../modules/rules/npc-summary.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 
 const normalize = text => String(text).normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]/g, "");
-const naturalWeapons = new Set(["Morsure", "Morsure/défenses", "Griffes", "Cornes", "Mains nues", "Patte empaleuse"].map(normalize));
+const naturalWeapons = new Set(["Morsure", "Morsure/défenses", "Défenses", "Griffes", "Cornes", "Mains nues", "Patte empaleuse"].map(normalize));
 const armorAliases = {cuir: "FurLeather", armuredefourrure: "FurLeather"};
 const weaponAliases = {splitaxi: "SplitAxi", bardamakir: "BardaMakir", tveiklubb: "TveiKlubb", grandbouclierenbois: "LargeShield"};
 const naturalIds = {morsure: "Bite", defense: "Tusks", griffes: "Claws", cornes: "Horns", mainsnues: "Unarmed", patteempaleuse: "ImpalingLeg"};
@@ -31,7 +31,8 @@ export function withNpcInventories(content, creatures, french) {
     let shieldHand = false;
     for (const entry of [...(creature.weapons ?? []), ...(creature.armor ?? [])]) {
       if (naturalWeapons.has(normalize(entry.name))) {
-        const names = normalize(entry.name) === "morsuredefenses" ? ["Morsure", "Défense"] : [entry.name];
+        const normName = normalize(entry.name);
+        const names = normName === "morsuredefenses" ? ["Morsure", "Défense"] : normName === "defenses" ? ["Défense"] : [entry.name];
         for (const name of names) {
           const id = naturalIds[normalize(name)];
           if (!id) throw new Error(`Unknown natural weapon: ${name}`);

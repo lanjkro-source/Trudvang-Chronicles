@@ -2,6 +2,7 @@ import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-applicati
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
+import {openPortraitPopout} from "./portrait.mjs";
 import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse} from "./trait-situation-request.mjs";
 
 const indicatedTraitTokens = new Map();
@@ -169,6 +170,16 @@ function attachListeners(message, html) {
       } finally {
         button.disabled = false;
       }
+    });
+  });
+  html.querySelectorAll("[data-action='show-portrait']").forEach(control => {
+    control.addEventListener("click", event => {
+      event.preventDefault();
+      openPortraitPopout({
+        src: control.dataset.src || control.querySelector("img")?.src || "",
+        title: control.dataset.title || "",
+        uuid: control.dataset.uuid || ""
+      });
     });
   });
   html.querySelectorAll("[data-action='locate-trait-situation-token']").forEach(control => {

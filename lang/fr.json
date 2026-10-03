@@ -814,6 +814,13 @@
       "TraitSituationRoll": "Provoquer un jet de résistance",
       "LegacyTraitSituationRoll": "Jet de situation de trait"
     },
+    "Portrait": {
+      "ShareMenu": "Partager le portrait",
+      "DialogTitle": "Partager le portrait de {actor}",
+      "ForceAll": "Forcer l'affichage en grand chez tous les joueurs",
+      "Send": "Partager",
+      "CardTitle": "Portrait"
+    },
     "Roll": {
       "Success": "Succès",
       "Failure": "Échec",

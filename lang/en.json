@@ -814,6 +814,13 @@
       "TraitSituationRoll": "Request a resistance roll",
       "LegacyTraitSituationRoll": "Trait situation roll"
     },
+    "Portrait": {
+      "ShareMenu": "Share portrait",
+      "DialogTitle": "Share the portrait of {actor}",
+      "ForceAll": "Force large display for all players",
+      "Send": "Share",
+      "CardTitle": "Portrait"
+    },
     "Roll": {
       "Success": "Success",
       "Failure": "Failure",

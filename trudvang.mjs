@@ -9,6 +9,7 @@ import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
+import { registerPortraitHooks } from "./modules/portrait.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
@@ -213,6 +214,7 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
   registerChatListeners();
+  registerPortraitHooks();
   if (game.user.isGM) {
     const traitKeys = Object.keys(TRUDVANG.traits);
     const affected = game.actors.filter(actor => actor.type === "character"

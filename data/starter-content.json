@@ -2698,7 +2698,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 9,
-            "initiativeModifier": 6,
+            "initiativeModifier": 0,
             "naturalCombatPool": "natural",
             "naturalCombatPoints": 11
           }
@@ -2845,7 +2845,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 9,
-            "initiativeModifier": 6,
+            "initiativeModifier": 0,
             "naturalCombatPool": "Bite",
             "naturalCombatPoints": 6
           }
@@ -2862,7 +2862,7 @@
             "strengthApplies": true,
             "damage": "1d10",
             "openRoll": 7,
-            "initiativeModifier": 6,
+            "initiativeModifier": 0,
             "naturalCombatPool": "ImpalingLeg",
             "naturalCombatPoints": 12
           }
@@ -3014,7 +3014,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 9,
-            "initiativeModifier": 4,
+            "initiativeModifier": 0,
             "naturalCombatPool": "Bite",
             "naturalCombatPoints": 6
           }
@@ -3031,7 +3031,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 10,
-            "initiativeModifier": 4,
+            "initiativeModifier": 0,
             "naturalCombatPool": "Claws",
             "naturalCombatPoints": 14
           }
@@ -3352,7 +3352,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 8,
-            "initiativeModifier": 6,
+            "initiativeModifier": 0,
             "naturalCombatPool": "Bite",
             "naturalCombatPoints": 6
           }
@@ -3369,7 +3369,7 @@
             "strengthApplies": true,
             "damage": "2d10",
             "openRoll": 9,
-            "initiativeModifier": 6,
+            "initiativeModifier": 0,
             "naturalCombatPool": "Claws",
             "naturalCombatPoints": 14
           }
