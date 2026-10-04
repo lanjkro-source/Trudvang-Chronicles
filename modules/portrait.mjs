@@ -84,22 +84,20 @@ export async function showActorPortraitDialog(actor) {
   return showActorPortrait(actor, answered);
 }
 
-function actorFromDirectoryEntry(li) {
-  const element = li instanceof HTMLElement ? li : li?.[0] ?? li;
-  const id = element?.dataset?.documentId
-    ?? (typeof li?.data === "function" ? li.data("documentId") : undefined);
+function actorFromDirectoryEntry(element) {
+  const id = element?.dataset?.documentId ?? element?.dataset?.entryId;
   return id ? game.actors?.get(id) : null;
 }
 
 export function registerPortraitDirectoryHook() {
-  Hooks.on("getActorDirectoryEntryContext", (html, options) => {
-    if (!Array.isArray(options)) return;
-    options.push({
-      name: game.i18n.localize("TRUDVANG.Portrait.ShareMenu"),
+  Hooks.on("getActorContextOptions", (application, menuItems) => {
+    if (!Array.isArray(menuItems)) return;
+    menuItems.push({
+      label: game.i18n.localize("TRUDVANG.Portrait.ShareMenu"),
       icon: '<i class="fas fa-image" aria-hidden="true"></i>',
-      condition: li => Boolean(actorFromDirectoryEntry(li)),
-      callback: async li => {
-        const actor = actorFromDirectoryEntry(li);
+      visible: element => Boolean(actorFromDirectoryEntry(element)),
+      onClick: async element => {
+        const actor = actorFromDirectoryEntry(element);
         if (actor) await showActorPortraitDialog(actor);
       }
     });
