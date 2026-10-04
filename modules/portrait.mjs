@@ -100,15 +100,20 @@ function actorFromDirectoryEntry(...args) {
 }
 
 export function registerPortraitDirectoryHook() {
-  // V13+: per-document directory hooks were replaced by the single
-  // getDocumentContextOptions hook (verified present in the V14 client
-  // source; neither getActorDirectoryEntryContext nor getActorContextOptions
-  // exists there). Filter to the Actors directory; per-entry visibility still
-  // resolves the target in game.actors, so other directories stay unaffected.
-  Hooks.on("getDocumentContextOptions", (application, menuItems) => {
+  // V13+ dispatches per-document hooks built by template literal:
+  // Hooks.callAll(`get${documentName}ContextOptions`, application, menuItems).
+  // For the Actors tab that is getActorContextOptions — the generic
+  // getDocumentContextOptions name is never dispatched (it only appears in
+  // JSDoc), and the V12 getActorDirectoryEntryContext no longer fires either.
+  //
+  // V14 also renamed the ContextMenuEntry fields — {name, condition, callback}
+  // became {label, visible, onClick}, with `label` now required. Entries still
+  // using the old names fail silently here, so keep the shapes below.
+  //
+  // Register at init (see trudvang.mjs), never in ready: these menus are built
+  // once at first render, so a late listener never runs.
+  Hooks.on("getActorContextOptions", (application, menuItems) => {
     if (!Array.isArray(menuItems)) return;
-    const docName = application?.documentName ?? application?.collection?.documentName;
-    if (docName && docName !== "Actor") return;
     menuItems.push({
       label: game.i18n.localize("TRUDVANG.Portrait.ShareMenu"),
       icon: '<i class="fas fa-image" aria-hidden="true"></i>',
