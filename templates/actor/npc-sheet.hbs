@@ -113,9 +113,10 @@
             <input class="qty-input" type="number" min="0" step="1" value="{{item.system.quantity}}" data-item-field="quantity" aria-label="{{localize 'TRUDVANG.Field.Quantity'}}" {{#unless @root.editable}}disabled{{/unless}}><span class="qty-sep">×</span>
             <button type="button" class="item-name" data-action="item-edit" title="{{item.name}} — {{item._shortTitle}}">{{item.name}}</button>
             <span class="item-detail" title="{{item._hoverTitle}}">{{item._compactDetail}}</span>
-            {{#if (eq item.type "gear")}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" title="{{localize 'TRUDVANG.Action.Equip'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-suitcase"></i></button>{{else}}<button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-flask"></i></button>{{/if}}
+            {{#if (eq item.type "gear")}}<button type="button" class="equip {{#if item.system.equipped}}active{{/if}}" data-action="item-equip" title="{{localize 'TRUDVANG.Action.Equip'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-suitcase"></i></button>{{/if}}
             <button type="button" data-action="inspect-item" title="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button>
             <button type="button" data-action="item-delete" title="{{localize 'TRUDVANG.Action.Delete'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-trash"></i></button>
+            {{#unless (eq item.type "gear")}}<button type="button" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-flask" aria-hidden="true"></i></button>{{/unless}}
           </li>
           {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoGear"}}</li>{{/each}}
         </ol>

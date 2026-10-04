@@ -115,3 +115,37 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     });
   }
 }
+
+const EXTRACT_STAGE_ICON_CLASS = "trudvang-extract-stage-icon";
+
+/**
+ * Show a flask icon instead of the d20 thumbnail on the extract-stage
+ * RollTable directory row, so players recognise the potion table. Only
+ * that table is touched: the row is located by document id resolved from
+ * the starterId/tableKey flags, never by localized display name. The hook
+ * re-fires on every directory render; patched rows carry a marker class
+ * and are skipped, and the handler exits fast when the table is absent
+ * (fresh world pre-install). Roll and dialog flows are untouched.
+ */
+export function registerExtractStageDirectoryIcon() {
+  Hooks.on("renderRollTableDirectory", (app, html) => {
+    const root = html instanceof HTMLElement ? html
+      : html?.[0] instanceof HTMLElement ? html[0]
+      : app?.element instanceof HTMLElement ? app.element
+      : app?.element?.[0] instanceof HTMLElement ? app.element[0]
+      : null;
+    if (!root?.querySelectorAll) return;
+    const target = game.tables?.find(table => extractStageTableId(table));
+    if (!target) return;
+    const row = Array.from(root.querySelectorAll("li[data-document-id], li[data-entry-id]"))
+      .find(entry => (entry.dataset?.documentId ?? entry.dataset?.entryId) === target.id);
+    if (!row) return;
+    if (row.querySelector(`i.${EXTRACT_STAGE_ICON_CLASS}`)) return;
+    const thumbnail = row.querySelector("img");
+    if (!thumbnail) return;
+    const icon = document.createElement("i");
+    icon.className = `fas fa-flask ${EXTRACT_STAGE_ICON_CLASS}`;
+    icon.setAttribute("aria-hidden", "true");
+    thumbnail.replaceWith(icon);
+  });
+}
