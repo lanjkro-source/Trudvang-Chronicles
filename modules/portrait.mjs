@@ -7,17 +7,17 @@ let socketRegistered = false;
 /**
  * Open an actor portrait in a large popout window.
  *
- * V14 form: `new foundry.applications.apps.ImagePopout(src, {title, uuid})`
- * with a `globalThis.ImagePopout` fallback kept in a dead branch for older
- * clients. `render({force: true})` forces the render on both the AppV1 and
- * ApplicationV2 stacks (AppV1 treats the truthy object as `force`).
+ * V14 form is a single options object: `new ImagePopout({src, uuid,
+ * window: {title}})` — the old positional `(src, {...})` form is deprecated
+ * since V13 and removed in V15. The `globalThis.ImagePopout` fallback is kept
+ * in a dead branch for older clients.
  */
 export function openPortraitPopout({ src, title = "", uuid = "" } = {}) {
   if (!src) return null;
   const NamespacedPopout = foundry.applications?.apps?.ImagePopout;
   const popout = NamespacedPopout
-    ? new NamespacedPopout(src, { title, uuid })
-    : new globalThis.ImagePopout({ src, title, uuid });
+    ? new NamespacedPopout({ src, uuid, window: { title } })
+    : new globalThis.ImagePopout(src, { title, uuid });
   popout.render({ force: true });
   return popout;
 }
@@ -43,6 +43,7 @@ export async function showActorPortrait(actor, { forceAll = false } = {}) {
   });
   if (forceAll && game.user?.isGM) {
     openPortraitPopout({ src, title, uuid });
+    console.info(`Trudvang Chronicles | Sharing portrait "${title}" with all connected players.`);
     game.socket?.emit(SOCKET_CHANNEL, { src, title, uuid });
   }
   return message;
@@ -131,6 +132,7 @@ export function registerPortraitSocket() {
   socketRegistered = true;
   game.socket.on(SOCKET_CHANNEL, payload => {
     if (!payload?.src) return;
+    console.info(`Trudvang Chronicles | Received shared portrait "${payload.title ?? ""}".`);
     try {
       openPortraitPopout({ src: payload.src, title: payload.title ?? "", uuid: payload.uuid ?? "" });
     } catch (error) {
