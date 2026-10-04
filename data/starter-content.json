@@ -55,6 +55,11 @@
       "nameKey": "TRUDVANG.Content.Folder.Tables",
       "type": "RollTable"
     },
+    "divers": {
+      "nameKey": "TRUDVANG.Content.Folder.Divers",
+      "type": "RollTable",
+      "parent": "tables"
+    },
     "creatures": {
       "nameKey": "TRUDVANG.Content.Folder.Creatures",
       "type": "Actor"
@@ -2301,6 +2306,53 @@
             999
           ],
           "textKey": "TRUDVANG.Content.Table.FatalFailure.E60"
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.ExtractStage.Name",
+      "img": "icons/svg/d10.svg",
+      "folder": "divers",
+      "formula": "1d20",
+      "displayRoll": true,
+      "replacement": true,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "extract-stage"
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            5
+          ],
+          "textKey": "TRUDVANG.Content.Table.ExtractStage.Mild"
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            10
+          ],
+          "textKey": "TRUDVANG.Content.Table.ExtractStage.Moderate"
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            15
+          ],
+          "textKey": "TRUDVANG.Content.Table.ExtractStage.Strong"
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            999
+          ],
+          "textKey": "TRUDVANG.Content.Table.ExtractStage.Total"
         }
       ]
     }

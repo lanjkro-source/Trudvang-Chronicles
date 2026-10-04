@@ -837,6 +837,7 @@
     },
     "Extract": {
       "Stage": "Stade : {stage}",
+      "StageTitle": "Déterminer le stade de l'extrait",
       "UseTitle": "Utiliser {item} sur {actor}",
       "UsePrompt": "L’effet est déterminé par 1d20 + force de l’extrait − modificateur du trait adapté. Force : {strength}.",
       "Trait": "Trait adapté",
@@ -1096,6 +1097,7 @@
         "Magic": "Tables & Magie",
         "Abilities": "Disciplines & Spécialités",
         "Tables": "Magie",
+        "Divers": "Divers",
         "Creatures": "Créatures"
       },
       "Scene": {
@@ -1928,6 +1930,13 @@
           "Moderate": "Effet modéré (6-10), suivi de l'effet léger",
           "Substantial": "Effet substantiel (11-15), suivi des effets modéré et léger",
           "Complete": "Effet complet (16-20), suivi de chaque effet inférieur"
+        },
+        "ExtractStage": {
+          "Name": "Détermination du stade des extraits",
+          "Mild": "Léger",
+          "Moderate": "Modéré",
+          "Strong": "Fort",
+          "Total": "Total"
         },
         "FearLevel": {
           "Name": "Niveaux de peur",

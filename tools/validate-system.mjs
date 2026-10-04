@@ -143,7 +143,7 @@ for (const extract of (content.items || []).filter(item => item.type === "potion
 for (const key of localization) if (!frenchLocalization.has(key)) failures.push(`Missing French localization key: ${key}`);
 for (const key of frenchLocalization) if (!localization.has(key)) failures.push(`Missing English localization key: ${key}`);
 
-const requiredTables = new Map([["fatal-magic-effects", 29], ["fatal-failure-effects", 11]]);
+const requiredTables = new Map([["fatal-magic-effects", 29], ["fatal-failure-effects", 11], ["extract-stage", 4]]);
 if (content.tables?.length !== requiredTables.size) failures.push(`Starter content must contain exactly ${requiredTables.size} rule tables.`);
 for (const table of content.tables || []) {
   const id = table.flags?.["trudvang-chronicles"]?.starterId;

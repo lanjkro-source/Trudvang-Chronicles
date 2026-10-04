@@ -8,11 +8,15 @@ const STAGES = [
   {id: "total", maximum: Infinity, next: "strong"}
 ];
 
-function stageFor(result) {
+export function stageLabelFor(stage) {
+  return game.i18n.localize(`TRUDVANG.Efficacy.${stage.id[0].toUpperCase()}${stage.id.slice(1)}`).toLocaleLowerCase(game.i18n.lang);
+}
+
+export function stageFor(result) {
   return STAGES.find(stage => result <= stage.maximum) ?? STAGES.at(-1);
 }
 
-function traitValue(actor, traitKey) {
+export function traitValue(actor, traitKey) {
   return Number(actor.getTraitValue?.(traitKey) ?? actor.system?.effective?.traits?.[traitKey] ?? actor.system?.traits?.[traitKey] ?? 0);
 }
 
@@ -24,31 +28,65 @@ async function resolveDuration(duration) {
   return {label: text.replace(formula, String(roll.total)), roll};
 }
 
-/** Resolve the effect level of an extract for an actor. */
-export async function useExtract(item, actor) {
-  if (!item || item.type !== "potion" || !actor) return;
+/**
+ * Shared drink-style prompt: trait select (+ editable extract-strength input
+ * for the Divers table path). Returns `{traitKey, strength}` or `null` when
+ * the user cancels/closes. Missing `TRUDVANG.Extract.StrengthLabel` falls back
+ * to the closest existing key (`TRUDVANG.Field.Strength`) — reported by the
+ * caller, never invented inline.
+ */
+export async function promptExtractStageRoll({actor = null, strength = 0, strengthEditable = false, title, prompt} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const traits = Object.entries(TRUDVANG.traits).map(([id, label]) => ({id, label: game.i18n.localize(label)}));
-  const traitOptions = traits.map(trait => `<option value="${escapeHtml(trait.id)}" ${trait.id === "constitution" ? "selected" : ""}>${escapeHtml(trait.label)} (${traitValue(actor, trait.id) >= 0 ? "+" : ""}${traitValue(actor, trait.id)})</option>`).join("");
-  const traitKey = await DialogClass.wait({
-    window: {title: game.i18n.format("TRUDVANG.Extract.UseTitle", {item: item.name, actor: actor.name})},
-    content: `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.Extract.UsePrompt", {strength: Number(item.system.strength || 0)}))}</p><div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Extract.Trait"))}</label><select name="trait">${traitOptions}</select></div></div>`,
+  const modifierOf = trait => actor ? traitValue(actor, trait.id) : 0;
+  const traitOptions = traits.map(trait => `<option value="${escapeHtml(trait.id)}" ${trait.id === "constitution" ? "selected" : ""}>${escapeHtml(trait.label)} (${modifierOf(trait) >= 0 ? "+" : ""}${modifierOf(trait)})</option>`).join("");
+  const strengthLabel = game.i18n.has?.("TRUDVANG.Extract.StrengthLabel")
+    ? game.i18n.localize("TRUDVANG.Extract.StrengthLabel")
+    : game.i18n.localize("TRUDVANG.Field.Strength");
+  const strengthRow = strengthEditable
+    ? `<div class="form-group"><label>${escapeHtml(strengthLabel)}</label><input name="strength" type="number" value="${Number(strength) || 0}"></div>`
+    : "";
+  const promptRow = prompt ? `<p>${escapeHtml(prompt)}</p>` : "";
+  const choice = await DialogClass.wait({
+    window: {title},
+    content: `<div class="trudvang roll-dialog">${promptRow}${strengthRow}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Extract.Trait"))}</label><select name="trait">${traitOptions}</select></div></div>`,
     buttons: [
-      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => (button.form ?? dialog.element).querySelector("[name=trait]")?.value || "constitution"},
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
+        const root = button.form ?? dialog.element;
+        return {
+          traitKey: root.querySelector("[name=trait]")?.value || "constitution",
+          strength: strengthEditable ? Number(root.querySelector("[name=strength]")?.value || 0) : Number(strength || 0)
+        };
+      }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],
     modal: false,
     rejectClose: false
   });
-  if (traitKey === false || traitKey === null || traitKey === undefined) return;
-  const dieRoll = await new Roll("1d20").evaluate();
+  if (choice === false || choice === null || choice === undefined) return null;
+  return choice;
+}
+
+/** Resolve the effect level of an extract for an actor. */
+export async function useExtract(item, actor) {
+  if (!item || item.type !== "potion" || !actor) return;
   const strength = Number(item.system.strength || 0);
+  const choice = await promptExtractStageRoll({
+    actor,
+    strength,
+    strengthEditable: false,
+    title: game.i18n.format("TRUDVANG.Extract.UseTitle", {item: item.name, actor: actor.name}),
+    prompt: game.i18n.format("TRUDVANG.Extract.UsePrompt", {strength})
+  });
+  if (!choice) return;
+  const traitKey = choice.traitKey;
+  const dieRoll = await new Roll("1d20").evaluate();
   const modifier = traitValue(actor, traitKey);
   const result = Number(dieRoll.total) + strength - modifier;
   const stage = stageFor(result);
   const duration = await resolveDuration(item.system.duration);
-  const stageLabel = game.i18n.localize(`TRUDVANG.Efficacy.${stage.id[0].toUpperCase()}${stage.id.slice(1)}`).toLocaleLowerCase(game.i18n.lang);
-  const nextStageLabel = stage.next ? game.i18n.localize(`TRUDVANG.Efficacy.${stage.next[0].toUpperCase()}${stage.next.slice(1)}`).toLocaleLowerCase(game.i18n.lang) : "";
+  const stageLabel = stageLabelFor(stage);
+  const nextStageLabel = stage.next ? stageLabelFor(STAGES.find(entry => entry.id === stage.next) ?? stage) : "";
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-use-card.hbs", {
     itemName: item.name,
     itemImg: item.img,

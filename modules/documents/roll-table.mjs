@@ -1,13 +1,27 @@
-import { escapeHtml } from "../helpers.mjs";
+import { escapeHtml, renderTemplate } from "../helpers.mjs";
+import { TRUDVANG } from "../config.mjs";
+import { promptExtractStageRoll, stageFor, stageLabelFor, traitValue } from "../extract-roll.mjs";
 import { fatalTableId, fatalRollFormula } from "../rules/fatal-table.mjs";
 
-/** Special handling is confined to the two supplied fatal-effect tables. */
+const EXTRACT_STAGE_IDS = new Map([
+  ["extract-stage", "extract-stage"],
+  ["TRUDVANG.Content.Table.ExtractStage", "extract-stage"]
+]);
+
+function extractStageTableId(table) {
+  const starterId = table.getFlag("trudvang-chronicles", "starterId");
+  const tableKey = table.getFlag("trudvang-chronicles", "tableKey");
+  return EXTRACT_STAGE_IDS.get(starterId) ?? EXTRACT_STAGE_IDS.get(tableKey) ?? null;
+}
+
+/** Special handling is confined to the two supplied fatal-effect tables and the extract-stage table. */
 export class TrudvangRollTable extends foundry.documents.RollTable {
   get fatalTableId() {
     return fatalTableId(this);
   }
 
   async roll(options = {}) {
+    if (extractStageTableId(this)) return super.roll(options);
     if (!this.fatalTableId) return super.roll(options);
     let {roll} = options;
     if (!roll) {
@@ -18,6 +32,43 @@ export class TrudvangRollTable extends foundry.documents.RollTable {
     }
     if (!roll._evaluated) await roll.evaluate();
     return {roll, results: this.getResultsForRoll(roll.total)};
+  }
+
+  async draw({displayChat = true, ...options} = {}) {
+    if (!extractStageTableId(this)) return super.draw({displayChat, ...options});
+    const actor = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).find(Boolean);
+    if (!actor) {
+      ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledActor"));
+      return {roll: {total: NaN}, results: []};
+    }
+    const title = game.i18n.has?.("TRUDVANG.Extract.StageTitle")
+      ? game.i18n.localize("TRUDVANG.Extract.StageTitle")
+      : this.name;
+    const choice = await promptExtractStageRoll({actor, strength: 0, strengthEditable: true, title});
+    // The core table sheet reads roll.total even after a cancelled draw.
+    if (!choice) return {roll: {total: NaN}, results: []};
+    const dieRoll = await new Roll("1d20").evaluate();
+    const strength = Number(choice.strength || 0);
+    const modifier = traitValue(actor, choice.traitKey);
+    const result = Number(dieRoll.total) + strength - modifier;
+    const stage = stageFor(result);
+    const tableName = game.i18n.has?.("TRUDVANG.Content.Table.ExtractStage.Name")
+      ? game.i18n.localize("TRUDVANG.Content.Table.ExtractStage.Name")
+      : this.name;
+    const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/extract-stage-card.hbs", {
+      actorName: actor.name,
+      tableName,
+      die: Number(dieRoll.total),
+      strength,
+      traitName: game.i18n.localize(TRUDVANG.traits[choice.traitKey]),
+      traitModifier: modifier,
+      result,
+      stageLabel: stageLabelFor(stage)
+    });
+    const message = displayChat
+      ? await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls: [dieRoll]})
+      : null;
+    return {roll: dieRoll, results: [], message};
   }
 
   getResultsForRoll(value) {

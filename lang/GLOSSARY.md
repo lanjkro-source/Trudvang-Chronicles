@@ -996,6 +996,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Extract.Stage` | Stage: {stage} | Stade : {stage} |
+| `TRUDVANG.Extract.StageTitle` | Determine the extract stage | Déterminer le stade de l'extrait |
 | `TRUDVANG.Extract.UseTitle` | Use {item} on {actor} | Utiliser {item} sur {actor} |
 | `TRUDVANG.Extract.UsePrompt` | The effect is determined by 1d20 + extract Strength − the relevant trait modifier. Strength: {strength}. | L’effet est déterminé par 1d20 + force de l’extrait − modificateur du trait adapté. Force : {strength}. |
 | `TRUDVANG.Extract.Trait` | Relevant trait | Trait adapté |
@@ -1309,6 +1310,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Magic` | Tablets & Magic | Tables & Magie |
 | `TRUDVANG.Content.Folder.Abilities` | Disciplines & Specialties | Disciplines & Spécialités |
 | `TRUDVANG.Content.Folder.Tables` | Magic | Magie |
+| `TRUDVANG.Content.Folder.Divers` | Miscellaneous | Divers |
 | `TRUDVANG.Content.Folder.Creatures` | Creatures | Créatures |
 
 ## `TRUDVANG.Content.Scene`
@@ -2663,6 +2665,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Table.ExtractEffect.Moderate` | Moderate effect (6-10), followed by mild | Effet modéré (6-10), suivi de l'effet léger |
 | `TRUDVANG.Content.Table.ExtractEffect.Substantial` | Substantial effect (11-15), followed by moderate and mild | Effet substantiel (11-15), suivi des effets modéré et léger |
 | `TRUDVANG.Content.Table.ExtractEffect.Complete` | Complete effect (16-20), followed by each lower effect | Effet complet (16-20), suivi de chaque effet inférieur |
+
+## `TRUDVANG.Content.Table.ExtractStage`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Table.ExtractStage.Name` | Extract stage determination | Détermination du stade des extraits |
+| `TRUDVANG.Content.Table.ExtractStage.Mild` | Mild | Léger |
+| `TRUDVANG.Content.Table.ExtractStage.Moderate` | Moderate | Modéré |
+| `TRUDVANG.Content.Table.ExtractStage.Strong` | Strong | Fort |
+| `TRUDVANG.Content.Table.ExtractStage.Total` | Total | Total |
 
 ## `TRUDVANG.Content.Table.FearLevel`
 

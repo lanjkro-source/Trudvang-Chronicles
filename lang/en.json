@@ -837,6 +837,7 @@
     },
     "Extract": {
       "Stage": "Stage: {stage}",
+      "StageTitle": "Determine the extract stage",
       "UseTitle": "Use {item} on {actor}",
       "UsePrompt": "The effect is determined by 1d20 + extract Strength − the relevant trait modifier. Strength: {strength}.",
       "Trait": "Relevant trait",
@@ -1096,6 +1097,7 @@
         "Magic": "Tablets & Magic",
         "Abilities": "Disciplines & Specialties",
         "Tables": "Magic",
+        "Divers": "Miscellaneous",
         "Creatures": "Creatures"
       },
       "Scene": {
@@ -1928,6 +1930,13 @@
           "Moderate": "Moderate effect (6-10), followed by mild",
           "Substantial": "Substantial effect (11-15), followed by moderate and mild",
           "Complete": "Complete effect (16-20), followed by each lower effect"
+        },
+        "ExtractStage": {
+          "Name": "Extract stage determination",
+          "Mild": "Mild",
+          "Moderate": "Moderate",
+          "Strong": "Strong",
+          "Total": "Total"
         },
         "FearLevel": {
           "Name": "Fear Levels",
