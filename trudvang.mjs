@@ -9,7 +9,7 @@ import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
-import { registerPortraitHooks } from "./modules/portrait.mjs";
+import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules/portrait.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
@@ -22,6 +22,10 @@ Hooks.once("init", () => {
   configureEffects();
   registerEffectHooks();
   registerCombatHooks();
+  // Directory context menus are built once at sidebar first render (before
+  // ready), so this must be registered at init — a ready-time Hooks.on would
+  // never fire. Socket setup stays in ready (needs game.socket).
+  registerPortraitDirectoryHook();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);
   Object.assign(CONFIG.Item.dataModels, ITEM_DATA_MODELS);
   CONFIG.Actor.trackableAttributes = {
@@ -214,7 +218,7 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
   registerChatListeners();
-  registerPortraitHooks();
+  registerPortraitSocket();
   if (game.user.isGM) {
     const traitKeys = Object.keys(TRUDVANG.traits);
     const affected = game.actors.filter(actor => actor.type === "character"

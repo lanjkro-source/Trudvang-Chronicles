@@ -123,8 +123,3 @@ export function registerPortraitSocket() {
     }
   });
 }
-
-export function registerPortraitHooks() {
-  registerPortraitDirectoryHook();
-  registerPortraitSocket();
-}
