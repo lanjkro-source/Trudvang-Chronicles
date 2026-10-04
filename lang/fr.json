@@ -1932,7 +1932,7 @@
           "Complete": "Effet complet (16-20), suivi de chaque effet inférieur"
         },
         "ExtractStage": {
-          "Name": "Détermination du stade des extraits",
+          "Name": "Effets des potions",
           "Mild": "Léger",
           "Moderate": "Modéré",
           "Strong": "Fort",

@@ -26,6 +26,7 @@ Hooks.once("init", () => {
   // ready), so this must be registered at init — a ready-time Hooks.on would
   // never fire. Socket setup stays in ready (needs game.socket).
   registerPortraitDirectoryHook();
+  registerExtractStageDirectoryIcon();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);
   Object.assign(CONFIG.Item.dataModels, ITEM_DATA_MODELS);
   CONFIG.Actor.trackableAttributes = {
@@ -218,7 +219,6 @@ Hooks.once("init", () => {
 Hooks.once("ready", async () => {
   applyPalette(game.settings.get("trudvang-chronicles", "colorPalette"));
   registerChatListeners();
-  registerExtractStageDirectoryIcon();
   registerPortraitSocket();
   if (game.user.isGM) {
     const traitKeys = Object.keys(TRUDVANG.traits);

@@ -214,8 +214,8 @@
               class="qty-input" type="number" min="0" max="99" value="{{item.system.quantity}}" data-item-field="quantity"
               data-tooltip="{{localize 'TRUDVANG.Field.Quantity'}}"><span class="qty-sep">x</span><button type="button"
               class="item-name" data-action="item-edit" data-tooltip="{{item._shortTitle}}">{{item.name}}{{#if item._inspectionModified}} <span class="inspection-badge">Δ</span>{{/if}}</button><span
-              class="item-detail">{{item._inspection.shortTitle}}</span><button type="button" data-action="inspect-item" data-tooltip="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button>{{#if (eq item.type "potion")}}<button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i
-                class="fas fa-trash"></i></button><button type="button" class="roll-icon" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}" aria-label="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-flask" aria-hidden="true"></i></button>{{else}}<span
+              class="item-detail">{{item._inspection.shortTitle}}</span>{{#if (eq item.type "potion")}}<button type="button" class="roll-icon" data-action="item-roll" title="{{localize 'TRUDVANG.Action.Use'}}" aria-label="{{localize 'TRUDVANG.Action.Use'}}"><i class="fas fa-flask" aria-hidden="true"></i></button>{{/if}}<button type="button" data-action="inspect-item" data-tooltip="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-magnifying-glass"></i></button>{{#if (eq item.type "potion")}}<button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i
+                class="fas fa-trash"></i></button>{{else}}<span
               class="icon-placeholder"></span><button type="button" data-action="item-delete" data-tooltip="{{localize 'TRUDVANG.Action.Delete'}}"><i
                 class="fas fa-trash"></i></button>{{/if}}</li>{{/each}}</ol>
       </section>

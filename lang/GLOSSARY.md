@@ -2670,7 +2670,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Table.ExtractStage.Name` | Extract stage determination | Détermination du stade des extraits |
+| `TRUDVANG.Content.Table.ExtractStage.Name` | Potion effects | Effets des potions |
 | `TRUDVANG.Content.Table.ExtractStage.Mild` | Mild | Léger |
 | `TRUDVANG.Content.Table.ExtractStage.Moderate` | Moderate | Modéré |
 | `TRUDVANG.Content.Table.ExtractStage.Strong` | Strong | Fort |
