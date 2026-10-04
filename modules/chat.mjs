@@ -23,11 +23,38 @@ export function registerChatListeners() {
   registerTraitSituationSocket();
 }
 
+/**
+ * Fallback for forced portraits: clients that missed the live socket emit
+ * (stale code, late join) open the popout once when the flagged chat card
+ * renders. Guarded to skip the author (already shown live), already-seen
+ * messages (session), and old scrollback (2-minute freshness).
+ */
+function autoShowForcedPortrait(message, html) {
+  if (!message.getFlag("trudvang-chronicles", "forceShowPortrait")) return;
+  const seenKey = `trudvang-portrait-seen-${message.id}`;
+  try {
+    if (sessionStorage.getItem(seenKey)) return;
+    sessionStorage.setItem(seenKey, "1");
+  } catch (error) {
+    return;
+  }
+  if (message.author?.id === game.user?.id) return;
+  if (Date.now() - Number(message.timestamp ?? 0) > 120000) return;
+  const control = html.querySelector("[data-action='show-portrait']");
+  if (!control) return;
+  openPortraitPopout({
+    src: control.dataset.src || control.querySelector("img")?.src || "",
+    title: control.dataset.title || "",
+    uuid: control.dataset.uuid || ""
+  });
+}
+
 function attachListeners(message, html) {
   if (!(html instanceof HTMLElement)) return;
   if (html.dataset.trudvangBound === "true") return;
   html.dataset.trudvangBound = "true";
   clearIndicatedTraitToken(message.id);
+  autoShowForcedPortrait(message, html);
   html.querySelectorAll("[data-action='toggle-roll-details']").forEach(button => {
     const details = button.closest(".chat-card")?.querySelector("[data-roll-details]");
     if (details) {

@@ -37,9 +37,13 @@ export async function showActorPortrait(actor, { forceAll = false } = {}) {
     actorImg: src,
     actorUuid: uuid
   });
+  // The flag doubles as a persistent fallback: clients that miss the live
+  // socket emit (stale code, late join) still open the popout once when the
+  // chat card renders (see attachListeners in chat.mjs).
   const message = await ChatMessage.create({
     speaker: ChatMessage.getSpeaker({ actor }),
-    content
+    content,
+    flags: { [SYSTEM_ID]: { forceShowPortrait: forceAll } }
   });
   if (forceAll && game.user?.isGM) {
     openPortraitPopout({ src, title, uuid });
