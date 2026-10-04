@@ -84,9 +84,19 @@ export async function showActorPortraitDialog(actor) {
   return showActorPortrait(actor, answered);
 }
 
-function actorFromDirectoryEntry(element) {
-  const id = element?.dataset?.documentId ?? element?.dataset?.entryId;
-  return id ? game.actors?.get(id) : null;
+function actorFromDirectoryEntry(...args) {
+  // V14 calls visible(li) but onClick(event, li): scan every argument for a
+  // usable directory row instead of assuming a fixed position.
+  for (const arg of args) {
+    const element = arg instanceof HTMLElement ? arg
+      : arg?.target instanceof HTMLElement
+        ? arg.target.closest("[data-entry-id], [data-document-id]") ?? arg.currentTarget ?? null
+        : null;
+    const id = element?.dataset?.documentId ?? element?.dataset?.entryId;
+    const actor = id ? game.actors?.get(id) : null;
+    if (actor) return actor;
+  }
+  return null;
 }
 
 export function registerPortraitDirectoryHook() {
@@ -102,9 +112,9 @@ export function registerPortraitDirectoryHook() {
     menuItems.push({
       label: game.i18n.localize("TRUDVANG.Portrait.ShareMenu"),
       icon: '<i class="fas fa-image" aria-hidden="true"></i>',
-      visible: element => Boolean(actorFromDirectoryEntry(element)),
-      onClick: async element => {
-        const actor = actorFromDirectoryEntry(element);
+      visible: (...args) => Boolean(actorFromDirectoryEntry(...args)),
+      onClick: async (...args) => {
+        const actor = actorFromDirectoryEntry(...args);
         if (actor) await showActorPortraitDialog(actor);
       }
     });
