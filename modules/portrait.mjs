@@ -90,8 +90,15 @@ function actorFromDirectoryEntry(element) {
 }
 
 export function registerPortraitDirectoryHook() {
-  Hooks.on("getActorContextOptions", (application, menuItems) => {
+  // V13+: per-document directory hooks were replaced by the single
+  // getDocumentContextOptions hook (verified present in the V14 client
+  // source; neither getActorDirectoryEntryContext nor getActorContextOptions
+  // exists there). Filter to the Actors directory; per-entry visibility still
+  // resolves the target in game.actors, so other directories stay unaffected.
+  Hooks.on("getDocumentContextOptions", (application, menuItems) => {
     if (!Array.isArray(menuItems)) return;
+    const docName = application?.documentName ?? application?.collection?.documentName;
+    if (docName && docName !== "Actor") return;
     menuItems.push({
       label: game.i18n.localize("TRUDVANG.Portrait.ShareMenu"),
       icon: '<i class="fas fa-image" aria-hidden="true"></i>',
