@@ -6,9 +6,9 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 45 renames the extract-stage table to
-// Effets des potions in existing worlds.
-const CONTENT_VERSION = 45;
+// TEMPORARY WORLD MIGRATION — version 46 also updates intact Galtir/Minokks
+// attack labels in existing worlds; version 45 renamed the potion table.
+const CONTENT_VERSION = 46;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -457,14 +457,18 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
     && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && samePairList(currentTree, other.skillTree));
   const foreignAttacks = currentAttacks.length && baked.attacks?.length && !sameComboList(currentAttacks, baked.attacks)
     && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && sameComboList(currentAttacks, other.attacks));
-  // TEMPORARY WORLD MIGRATION — rename only the exact old Galtir/Minokks
-  // combinations; never replace a GM-edited attack allocation.
-  const legacyLabels = baked.creature === "Galtir" ? {"Arme légère": "Arme"}
-    : baked.creature === "Minokks" ? {"Arme lourde": "Armes à une main", "Arme à deux mains": "Armes à deux mains"} : null;
-  const legacyAttacks = legacyLabels && baked.attacks.map(combo => combo.map(pair => ({
-    ...pair, attack: legacyLabels[pair.attack] ?? pair.attack
-  })));
-  const obsoleteAttacks = currentAttacks.length && legacyAttacks && sameComboList(currentAttacks, legacyAttacks);
+  // TEMPORARY WORLD MIGRATION — rename only intact historical Galtir/Minokks
+  // combinations. Earlier worlds used broad weapon categories, while current
+  // data identifies the actual weapon; never replace a GM-edited allocation.
+  const legacyLabelVariants = baked.creature === "Galtir" ? [
+    {"Split axi (hache à une main)": "Arme légère"},
+    {"Split axi (hache à une main)": "Arme"}
+  ] : baked.creature === "Minokks" ? [
+    {"Barda makir (masse de bataille)": "Arme lourde", "Tvei klubb (massue à deux mains)": "Arme à deux mains", "Grand bouclier en bois": "Bouclier"},
+    {"Barda makir (masse de bataille)": "Armes à une main", "Tvei klubb (massue à deux mains)": "Armes à deux mains", "Grand bouclier en bois": "Bouclier"}
+  ] : [];
+  const obsoleteAttacks = currentAttacks.length && legacyLabelVariants.some(labels => sameComboList(currentAttacks,
+    baked.attacks.map(combo => combo.map(pair => ({...pair, attack: labels[pair.attack] ?? pair.attack})))));
   if (foreignTree) await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
   if (foreignAttacks || obsoleteAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   const missing = missingFeatPayloads([...actor.effects], baked.feats);

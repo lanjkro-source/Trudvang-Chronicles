@@ -112,7 +112,7 @@ export const CREATURE_NPC_DATA = {
       ],
       [
         {
-          "attack": "Arme légère",
+          "attack": "Split axi (hache à une main)",
           "value": 7
         }
       ]
@@ -454,47 +454,47 @@ export const CREATURE_NPC_DATA = {
       ],
       [
         {
-          "attack": "Arme à deux mains",
+          "attack": "Tvei klubb (massue à deux mains)",
           "value": 15
         },
         {
-          "attack": "Arme à deux mains",
+          "attack": "Tvei klubb (massue à deux mains)",
           "value": 9
         }
       ],
       [
         {
-          "attack": "Arme lourde",
+          "attack": "Barda makir (masse de bataille)",
           "value": 12
         },
         {
-          "attack": "Arme lourde",
+          "attack": "Barda makir (masse de bataille)",
           "value": 11
         },
         {
-          "attack": "Bouclier",
+          "attack": "Grand bouclier en bois",
           "value": 15
         }
       ],
       [
         {
-          "attack": "Arme lourde",
+          "attack": "Barda makir (masse de bataille)",
           "value": 15
         },
         {
-          "attack": "Arme lourde",
+          "attack": "Barda makir (masse de bataille)",
           "value": 8
         },
         {
-          "attack": "Arme lourde",
+          "attack": "Barda makir (masse de bataille)",
           "value": 6
         },
         {
-          "attack": "Bouclier",
+          "attack": "Grand bouclier en bois",
           "value": 8
         },
         {
-          "attack": "Bouclier",
+          "attack": "Grand bouclier en bois",
           "value": 7
         }
       ]

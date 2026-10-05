@@ -7,6 +7,8 @@ const failures = [];
 if (existsSync(join(root, "game doc/fr/trudvang-creatures-fr.json"))) {
   const result = spawnSync(process.execPath, ["tools/generate-npc-inventories.mjs", "--check"], {cwd: root, encoding: "utf8"});
   if (result.status !== 0) failures.push(`NPC inventory source audit failed: ${result.stderr || result.stdout}`);
+  const attackResult = spawnSync(process.execPath, ["game doc/tools/normalize-prepared-attacks.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (attackResult.status !== 0) failures.push(`Prepared attack names still use broad categories: ${attackResult.stderr || attackResult.stdout}`);
 }
 const powerSources = ["game doc/fr/trudvang-powers-fr.json", "game doc/en/trudvang-powers-en.json"];
 const availablePowerSources = powerSources.filter(path => existsSync(join(root, path)));
@@ -76,6 +78,20 @@ const system = readJson("system.json");
 const language = readJson("lang/en.json");
 const french = readJson("lang/fr.json");
 const content = readJson("data/starter-content.json");
+if (existsSync(join(root, "game doc/fr/trudvang-creatures-fr.json"))) {
+  const creatures = readJson("game doc/fr/trudvang-creatures-fr.json");
+  const {CREATURE_NPC_DATA} = await import("../modules/creature-feats.mjs");
+  for (const actor of content.actors.filter(entry => entry.type === "npc")) {
+    const key = actor.nameKey.replace(/\.Name$/, "");
+    const baked = CREATURE_NPC_DATA[key];
+    if (!baked) continue;
+    const source = creatures.find(creature => creature.name === baked.creature);
+    if (!source || JSON.stringify(baked.attacks) !== JSON.stringify(source.attacks)
+      || JSON.stringify(actor.system.attacks) !== JSON.stringify(source.attacks)) {
+      failures.push(`${key}: prepared attacks differ between FR source, baked NPC data, and starter actor`);
+    }
+  }
+}
 const localization = flatten(language);
 const frenchLocalization = flatten(french);
 
