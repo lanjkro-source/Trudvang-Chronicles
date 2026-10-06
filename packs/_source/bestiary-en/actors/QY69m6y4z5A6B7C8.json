@@ -1,0 +1,237 @@
+{
+  "name": "Stonehinje",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg",
+  "items": [
+    {
+      "_id": "EWWSpRiOjPkQlRmS",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.EWWSpRiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Stjorn makir (morning star)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 3,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "F0NaAI9EaGbHcIdJ",
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.F0NaAI9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "_id": "UgB46VpVqWrXsYtZ",
+      "name": "Immune to Fire and Cold",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "UgB46VpVqWrXsYtZ",
+        "summary": "Fire and cold cannot harm the creature.",
+        "description": "<p>A stonehinje is completely immune to fire and cold.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 99
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.UgB46VpVqWrXsYtZ"
+    },
+    {
+      "_id": "K2WXpMgMhNiOjPkQ",
+      "name": "Metamorph (stonehinje)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "K2WXpMgMhNiOjPkQ",
+        "summary": "Transforms into a simple object of its own mass; normally undetectable without appropriate vitner.",
+        "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 99
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.K2WXpMgMhNiOjPkQ"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "QY69m6y4z5A6B7C8",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 5,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 11
+        },
+        {
+          "attack": "Unarmed",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Stjorn makir (morning star)",
+          "value": 14
+        },
+        {
+          "attack": "Stjorn makir (morning star)",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "The stonehinje is a giant made entirely of stone, with an immense rough body. Its heart is gold, as large as a man's fist and always warm. Its stomach is as hollow as a cave. Some grow as large as mountains, others only as large as ogres. Roughly sculpted, it walks on two legs and can change its mass into a door, wall, chest, or floor.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "humanoid",
+      "size": "3",
+      "age": "variable, max variable",
+      "naturalArmor": 5,
+      "fearFactor": "1d10",
+      "bodyMin": 80,
+      "bodyMax": 100,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "18 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Stone giant with a warm golden heart, sleeping in the mountains.",
+      "environment": "Mountains, where stone stays strong beneath its feet, and stone nests built by those that leave",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 98
+      }
+    }
+  },
+  "_id": "QY69m6y4z5A6B7C8",
+  "_key": "!actors!QY69m6y4z5A6B7C8",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

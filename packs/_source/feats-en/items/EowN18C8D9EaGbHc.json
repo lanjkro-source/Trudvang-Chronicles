@@ -1,0 +1,19 @@
+{
+  "_id": "EowN18C8D9EaGbHc",
+  "name": "Extra Body Parts",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EowN18C8D9EaGbHc",
+    "summary": "The demon has additional body parts, such as extra attacking arms, granting bonus Combat Points.",
+    "description": "<p>The demon has one or several body parts apart from their original ones. This can mean that the demons has extra Combat Points for attacks with these arms.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EowN18C8D9EaGbHc",
+  "folder": null
+}

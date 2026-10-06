@@ -10,6 +10,7 @@ import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
+import {CREATURE_ABILITY_REFERENCES} from "../creature-ability-data.mjs";
 import {isNpcEquipment} from "../npc-inventory.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -249,9 +250,12 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.npcNaturalWeapons = context.combatItems.filter(row => row.item.type === "weapon" && !isNpcEquipment(row.item));
     const npcAttackNames = new Set((this.actor.system.attacks ?? []).flat().map(row => String(row.attack || "")
       .normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase().trim()));
-    const hasGripFeat = Array.from(this.actor.effects ?? []).some(effect => !effect.disabled
-      && String(effect.flags?.["trudvang-chronicles"]?.feat ?? effect.name ?? "")
-        .normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase().trim() === "saisie");
+    const hasGripFeat = Array.from(this.actor.items ?? []).some(item => item.type === "creatureAbility"
+      && item.system.catalogId === CREATURE_ABILITY_REFERENCES.Saisie.id)
+      // TEMPORARY WORLD MIGRATION — recognize the historical ActiveEffect capacity.
+      || Array.from(this.actor.effects ?? []).some(effect => !effect.disabled
+        && String(effect.flags?.["trudvang-chronicles"]?.feat ?? effect.name ?? "")
+          .normalize("NFD").replace(/\p{Diacritic}/gu, "").toLocaleLowerCase().trim() === "saisie");
     const knowsWrestling = Number(this.actor.findKnowledgeItem("wrestling")?.system.level || 0) > 0
       || (this.actor.system.skillTree ?? []).some(row => row.catalogId === "wrestling" && Number(row.value) > 0);
     context.npcWrestling = {
@@ -367,7 +371,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       context.npcSkillTrees = npcSkillTrees(context.skillTrees).map(tree => ({...tree,
         visible: tree.visible && !context.npcBookSkills.some(row => row.kind === "skill" && row.skillKey === tree.key)
       })).filter(tree => tree.visible || tree.disciplines.length || tree.unassigned.length);
-      context.npcAbilities = Array.from(this.actor.effects ?? []).filter(isCreatureAbility).map(effect => ({
+      context.npcAbilities = [...Array.from(this.actor.items ?? []), ...Array.from(this.actor.effects ?? [])].filter(isCreatureAbility).map(effect => ({
         ...creatureAbilityDetails(effect, {language: game.i18n.lang, localize: key => game.i18n.localize(key)}),
         effectUuid: effect.uuid
       }));

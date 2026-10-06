@@ -1,0 +1,19 @@
+{
+  "_id": "fM9m2B3y4z5A6B7C",
+  "name": "Frayeur",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "fM9m2B3y4z5A6B7C",
+    "summary": "Visions effroyables ; peur et VS de résistance (Psychisme) déterminées par le MJ selon la puissance du diser.",
+    "description": "<p>Le regard perçant d’un diser peut exposer une victime à d’effroyables visions. La victime peut résister partiellement ou complètement en réussissant un test de situation avec une valeur de situation que le maître de jeu décide selon la puissance du diser (le modificateur de Psychisme s’applique).</p><p>Les visions perçues par la victime diffèrent selon les cas et infligeront un nombre de points de peur variable. C’est le maître de jeu qui détermine le nombre de points de peur qui lui semble approprié et si la réussite du test de situation permet d’annuler complètement la peur (ce qui annule, par conséquent, l’acquisition de points de peur).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!fM9m2B3y4z5A6B7C",
+  "folder": null
+}

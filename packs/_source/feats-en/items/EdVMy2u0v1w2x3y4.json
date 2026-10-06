@@ -1,0 +1,19 @@
+{
+  "_id": "EdVMy2u0v1w2x3y4",
+  "name": "Spin Cocoon",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EdVMy2u0v1w2x3y4",
+    "summary": "Cocoon formed in 1d10+10 rounds; escaping requires three successes, in order, at situation values 3, 7 and 11 (Strength).",
+    "description": "<p>Both the eye spider and the net spider have the ability to wrap their victim in cocoons of web and hang them upside down in the forest. As soon as the giant spider has either paralyzed its victim or trapped it in a net, it will begin to encapsulate its prey in a cocoon, assuming that nothing else is calling for its attention.</p><p>The cocoon takes 1d10 + 10 action rounds to create, and a trapped victim who wants to break free must make three situation rolls with the situation values of 3, 7, and 11 (Strength modifiers apply) to break free. The successful rolls do not need to be in a row. One or more failures can separate them. But the three successes must be in the order of SV 3, SV 7, and SV 11.</p><p>If the victim fails to break free, it remains in the deadly cocoon and might soon die of starvation or being eaten by the giant spider.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EdVMy2u0v1w2x3y4",
+  "folder": null
+}

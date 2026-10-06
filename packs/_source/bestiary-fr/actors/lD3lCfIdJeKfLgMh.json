@@ -1,0 +1,123 @@
+{
+  "name": "Wulter",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg",
+  "items": [
+    {
+      "_id": "yGi379D9EaGbHcId",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!lD3lCfIdJeKfLgMh.yGi379D9EaGbHcId",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "lD3lCfIdJeKfLgMh",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 12,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 12,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 13
+        },
+        {
+          "attack": "Morsure",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 180,
+        "max": 180
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "C'est un monstre marin titanesque au corps allongé et serpentiforme, couvert d'une peau épaisse, ardoisée et luisante comme huilée. Sa tête énorme et aplatie porte une gueule béante hérissée de rangées de dents coniques, des yeux globuleux luisant sous l'eau et des évents sifflants. Des nageoires latérales puissantes et une queue massive en forme de rame le propulsent dans les flots déchaînés. Des crêtes d'épines ou de fanons rugueux hérissent son dos et sa nuque. Des cicatrices pâles et des balanes incrustées marbrent son cuir ancien.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "other",
+      "size": "7",
+      "age": "null",
+      "naturalArmor": 4,
+      "fearFactor": "1d10",
+      "bodyMin": 180,
+      "bodyMax": 180,
+      "move": [
+        {
+          "mode": "nage",
+          "distance": "7 m",
+          "max": "42 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Léviathan écailleux des mers glacées.",
+      "environment": "Mers glacées, fjords profonds et brisants battus par les tempêtes autour de Trudvang.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "lD3lCfIdJeKfLgMh",
+  "_key": "!actors!lD3lCfIdJeKfLgMh",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

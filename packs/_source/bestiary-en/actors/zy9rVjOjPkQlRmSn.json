@@ -1,0 +1,233 @@
+{
+  "name": "Warg",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg",
+  "items": [
+    {
+      "_id": "o0gAh1tZu0v1w2x3",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.o0gAh1tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "vGrQZcIdJeKfLgMh",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.vGrQZcIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.41hqc1sYtZu0v1w2"
+    },
+    {
+      "_id": "YZuZVRjPkQlRmSnT",
+      "name": "Jump Attack",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "YZuZVRjPkQlRmSnT",
+        "summary": "When initiating combat, the warg leaps onto its prey with bite and claws, gaining an additional Claws attack without spending further CP that round.",
+        "description": "<p>When a warg beast initiates a combat, it will jump at the prey and attack both with its bite and with its claws. The jump attack means that the beast gains an extra attack with its hind legs and claws in this action round (SV 10 claws) without spending further CP. This is valid only for the round when the jump attack happens.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.YZuZVRjPkQlRmSnT"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "i4Zci8A6B7C8D9Ea",
+      "name": "Warg Sickness (warg)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "i4Zci8A6B7C8D9Ea",
+        "summary": "The bite transmits warg sickness on 1-2 on a d20 (Constitution), risking transformation into a werewarg.",
+        "description": "<p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-2 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.i4Zci8A6B7C8D9Ea"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zy9rVjOjPkQlRmSn",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 16
+        },
+        {
+          "attack": "Claws",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Bite",
+          "value": 10
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 18,
+        "max": 18
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "This terrible canine predator is as bulky as a wolf but more strongly built. Its four-legged body is covered in thick fur. Its head is larger than its wolf cousin's. Its jaws carry fangs and its feet claws. Its stocky, fast-moving figure makes it a prized mount among trolls and wild folk. Packs of these formidable wolf-like beasts prowl around farms.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "quadruped",
+      "size": "0.5",
+      "age": "8, max. 18",
+      "naturalArmor": 0,
+      "fearFactor": "1d10",
+      "bodyMin": 16,
+      "bodyMax": 20,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Massive stocky wolf with a large head, a troll mount and a danger to farms.",
+      "environment": "Wilderness around villages and farms, particularly in Stormlands",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 30
+      }
+    }
+  },
+  "_id": "zy9rVjOjPkQlRmSn",
+  "_key": "!actors!zy9rVjOjPkQlRmSn",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

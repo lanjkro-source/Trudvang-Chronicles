@@ -1,0 +1,19 @@
+{
+  "_id": "f8tUzXrXsYtZu0v1",
+  "name": "Craft Stone of Knowledge",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "f8tUzXrXsYtZu0v1",
+    "summary": "The yggwurm can craft a stone filled with knowledge.",
+    "description": "<p>Since the dragon does not have the skill to write, it uses magic to carve its knowledge into rocks. These stones are inlaid with insights, knowledge, and powers of all kinds. They are a way for one yggwurm to measure the enlightenment of another, and the dragons proudly show these stones to each other. The ultimate goal of a yggwurm’s relentless hunt for knowledge is to fill a mountain with the most mighty insight: the stone of knowledge concerning everything.</p><p>When a yggwurm has bound together two or more sets of knowledge, it might throw the smaller stones away down the mountainside because the combined knowledge will be bound together in a greater stone. Explorers who find such a stone of knowledge can unlock its power by activating its key. This can be done only with the Read Vitner spell. When the spell is woven on a stone of knowledge there is no requirement for making a SV roll for learning the power (as per normal Read Vitner rules) but the spell has only the effect of activating the stone. After the normal weaving time of the Read Vitner spell has passed (1 hour) the stone is activated but it will disappear in 6 rounds. The knowledge will be given to the first creature to touch the stone before it disappears. If no one takes the stone in 6 rounds, it will disappear without transferring the knowledge.</p><p>The person who is holding the stone when it is activated receives its teachings. If multiple people hold the stone, the recipient is selected at random. But know this: it can be dangerous to receive the contents of a stone, since it can contain powers that no living person can handle. The effects of the knowledge are totally up to the GM.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 127
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!f8tUzXrXsYtZu0v1",
+  "folder": null
+}

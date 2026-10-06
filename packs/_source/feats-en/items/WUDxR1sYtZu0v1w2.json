@@ -1,0 +1,19 @@
+{
+  "_id": "WUDxR1sYtZu0v1w2",
+  "name": "Enchanting Song",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WUDxR1sYtZu0v1w2",
+    "summary": "The nymph’s song enchants those who hear it.",
+    "description": "<p>Anyone who hears the nymph’s song sees the woman of their dreams and feels a great desire for her. The victim must make a situation roll with a situation value of 5 to 10 depending on how strong the nymph is (Psyche modifiers apply). On a success, the victim sees past the illusion and sees the natural form of the nymph (which is that of a beautiful girl, albeit not the woman of the victim’s dreams). On a failure, the victim is enchanted, and additional rolls will decide the effect of the spell.</p><p>In the following action round (after the failed resistance roll), the victim must make a new situation roll with the same situation value and modifiers as before. On a success, the nymph will still appear as their dream woman, but the victim can think rationally (this is called the first state of bewitchment). If this roll should also fail, the victim’s desire grows so strong that they will never use violence against the nymph for anything other than self-defense (this is called the second state of bewitchment). In the next action round, a victim who failed must make yet another situation roll with the same situation value and modifiers as before. On a success, the victim remains in the second state of bewitchment. On a failure, the bewitchment is complete, and not even attacks from the nymph would make the victim use violence against the nymph. The victim is prepared to die from the nymph’s killing bite.</p><p>If several people are bewitched at the same time, they all see their own vision of their dream woman. When a whole pack of nymphs attacks, the victims only need to face the leader of the pack. The nymphs always wait three action rounds for the spell to take effect before they attack with their bites.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 93
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WUDxR1sYtZu0v1w2",
+  "folder": null
+}

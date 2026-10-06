@@ -1,0 +1,19 @@
+{
+  "_id": "YuqOeTkQlRmSnToU",
+  "name": "Détection des réseaux souterrains",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "YuqOeTkQlRmSnToU",
+    "summary": "Détecte les cavités et passages souterrains jusqu’à 50 m.",
+    "description": "<p>Au fil des années passées à chercher, les mospeljotuns ont développé un pouvoir qui les aide à trouver des grottes et des passages souterrains. Les géants peuvent percevoir les anfractuosités jusqu’à une distance de 50 mètres. S’ils détectent une anfractuosité dans la montagne qu’ils ne peuvent atteindre par des moyens ordinaires, ils se mettent immédiatement à creuser à mains nues dans sa direction.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 139
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!YuqOeTkQlRmSnToU",
+  "folder": null
+}

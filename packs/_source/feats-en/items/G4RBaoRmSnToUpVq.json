@@ -1,0 +1,19 @@
+{
+  "_id": "G4RBaoRmSnToUpVq",
+  "name": "Drown Victim (myling)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "G4RBaoRmSnToUpVq",
+    "summary": "When standing: situation value 14, -1 per myling; in deep water, Swimming -1 per myling.",
+    "description": "<p>When a myling hears people nearby, it might pretend to be a child that is about to drown. (It usually does this only if other mylings are nearby.) The myling will mimic a human child, splash in the water, and ask the travelers for their names. If they do not get true names or if someone jumps in the water to help the apparent child, the mylings then attack if they are the greater force in numbers.</p><p>A victim that is exposed to the mylings must succeed in getting to land so that he won’t risk being drowned. If the victim can touch the bottom of the water source with their feet, he must make a situation roll with a situation value of 14 (Strength and Dexterity modifiers apply). For each myling that tries to pull down the victim, the situation value is modified by -1. If the water is so deep that the victim must swim to stay above the surface an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -1 for each myling that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 63
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!G4RBaoRmSnToUpVq",
+  "folder": null
+}

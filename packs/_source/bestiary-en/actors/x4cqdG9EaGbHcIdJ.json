@@ -1,0 +1,137 @@
+{
+  "name": "Deer/Elk",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/x4cqdG9EaGbHcIdJ.jpg",
+  "items": [
+    {
+      "_id": "KPUT6dFaGbHcIdJe",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!x4cqdG9EaGbHcIdJ.KPUT6dFaGbHcIdJe",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!x4cqdG9EaGbHcIdJ.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "x4cqdG9EaGbHcIdJ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/x4cqdG9EaGbHcIdJ.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Horns",
+          "value": 14
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 26,
+        "max": 26
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "This slender deer has long fine legs and a graceful body covered in reddish-brown summer fur and gray-brown winter fur. Its long neck carries a fine dark-muzzled head, crowned in males by branching antlers shed and regrown each year. Large mobile ears turn at the slightest sound, and its black eyes are gentle and watchful. Narrow cloven hooves clatter on hard ground and sink little into peat bogs. Its short white-bottomed tail rises in alarm.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "1",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 26,
+      "bodyMax": 26,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Graceful and swift, crowned with great branching antlers.",
+      "environment": "Clearings, mixed forests, and marshes throughout Trudvang, from Mittland woods to the taiga fringes.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "x4cqdG9EaGbHcIdJ",
+  "_key": "!actors!x4cqdG9EaGbHcIdJ",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

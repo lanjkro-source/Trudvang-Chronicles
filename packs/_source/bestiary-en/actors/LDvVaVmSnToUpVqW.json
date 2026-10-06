@@ -1,0 +1,219 @@
+{
+  "name": "Braskelwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg",
+  "items": [
+    {
+      "_id": "6Hq24sYtZu0v1w2x",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 22,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.6Hq24sYtZu0v1w2x",
+      "effects": []
+    },
+    {
+      "_id": "bPXPF0u0v1w2x3y4",
+      "name": "Regenerating Heart (braskelwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "bPXPF0u0v1w2x3y4",
+        "summary": "The heart creates a new braskelwurm after one to two years; it has no healing use for other creatures.",
+        "description": "<p>The braskelwurm cannot breed; rather, it multiplies due to its regenerating heart that creates a new braskelwurm when the old one has died. It can take between one and two years before a new one is born. Sometimes, the heart will split and two identical twins will be created. The difference with the lindwurm, which also has a regenerating heart, is that no one but the braskelwurm has any use for its heart.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 107
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.bPXPF0u0v1w2x3y4"
+    },
+    {
+      "_id": "Da0VLPjPkQlRmSnT",
+      "name": "Sunlight Intolerance",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Da0VLPjPkQlRmSnT",
+        "summary": "Scales catch fire after 1d6+2 rounds of direct sunlight.",
+        "description": "<p>A braskelwurm that stays in a place where the sun directly shines on its scales will catch fire within mere moments (1d6 + 2 action rounds). First the scales will start to smoke lightly, and then they will be set aflame. The braskelwurm will survive longer in places where the rays of the sun do not directly hit its scales. It is very rare that braskelwurms will come out of their dark den during daytime, but one can sometimes spot a braskelwurm departing at dusk.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 107
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.Da0VLPjPkQlRmSnT"
+    },
+    {
+      "_id": "WLqQEeGbHcIdJeKf",
+      "name": "Petrify (braskelwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "WLqQEeGbHcIdJeKf",
+        "summary": "Clucking: situation value 14, -6 for the target; resist petrification at situation value 6 (Psyche), statue PV 10 / BV 100.",
+        "description": "<p>When the braskelwurm attacks with its eyes, it tries to force the victim to face its gaze. It does this by clucking seductively and pointing its glowing eyes toward its chosen victim. Even if the clucking is neither beautiful nor seductive, it is hard not to turn one’s attention toward this sound and then fall into the deep eyes of the reptile.</p><p>Everyone who hears the clucking noise must make a situation roll with a situation value of 14 (Psyche modifiers apply) to avoid looking into the beast’s eyes. The one whom the braskelwurm has chosen to be its victim has a negative modifier of -6 (situation value 8). Depending on the age of the braskelwurm, the situation value may be modified. A young braskelwurm is much more dangerous than an old one, and the most dangerous are the ones that were just born. It is up to the game master to give modifiers based on the age of the braskelwurm.</p><p>Victims of the gaze can withstand the incoming spell by making a situation roll with a situation value of 6 (Psyche modifiers apply). If the roll fails, the victim is instantly turned to nearly unbreakable stone. This means that the petrified victim gains a Protection Value of 10 and a Break Value of 100. When the Break Value is lowered to 0, the victim starts to take damage like normal, and if the victim takes as much damage as double its Body Points, the stone statue will break and the victim will die.</p><p>A petrified creature is in a constant state of sleep and cannot comprehend the passage of time or what happens around them. The victim cannot affect anything in its surroundings. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja). When the petrification runs out, the victim returns to its original form.</p><p>A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The statue weighs around ten times the victim’s original weight.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 106
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.WLqQEeGbHcIdJeKf"
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "LDvVaVmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "perception": 2
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 11
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Bite",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "attack": "Bite",
+          "value": 15
+        },
+        {
+          "attack": "Bite",
+          "value": 9
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 14,
+        "max": 14
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "This small four-legged creature is wolf-sized and rarely reaches above the knee. It has a large head with clear glowing eyes. It resembles both a rock cock and a lindwurm. Its body is covered with thin white, almost transparent scales. These scales can turn green and gray like those of the breijtja lizard, allowing it to hide easily.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "quadruped",
+      "size": "0.33",
+      "age": "100, max 250",
+      "naturalArmor": 0,
+      "fearFactor": "1d10",
+      "bodyMin": 13,
+      "bodyMax": 16,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Tiny white cock-dragon with glowing eyes that petrifies with its gaze.",
+      "environment": "Deepest forests or darkest caves, in a dark lair sheltered from sunlight",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 106
+      }
+    }
+  },
+  "_id": "LDvVaVmSnToUpVqW",
+  "_key": "!actors!LDvVaVmSnToUpVqW",
+  "folder": "hHkEitXsYtZu0v1w"
+}

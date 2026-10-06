@@ -1,0 +1,137 @@
+{
+  "name": "Horse (small)",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg",
+  "items": [
+    {
+      "_id": "0f8lD8C8D9EaGbHc",
+      "name": "Kick",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!sEpoCSnToUpVqWrX.0f8lD8C8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!sEpoCSnToUpVqWrX.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "sEpoCSnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Kick",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 62,
+        "max": 62
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "This small sturdy horse has a compact body, round belly, and short strong legs. Its thick shaggy winter coat, often bay, brown, or piebald, protects it from cold. A rather heavy head bears an abundant forelock, small hairy ears, and gentle eyes. Its dense mane and very full tail are almost never trimmed. Its small but extremely hard hooves handle stony terrain easily.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 62,
+      "bodyMax": 62,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Small, shaggy, and tireless.",
+      "environment": "Windy hills, peat bogs, and poor farms on Trudvang's fringes, and mountain trails.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "sEpoCSnToUpVqWrX",
+  "_key": "!actors!sEpoCSnToUpVqWrX",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

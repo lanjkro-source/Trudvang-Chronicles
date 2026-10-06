@@ -1,0 +1,19 @@
+{
+  "_id": "GDLIzz3y4z5A6B7C",
+  "name": "Puanteur du bein",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GDLIzz3y4z5A6B7C",
+    "summary": "Contamination à moins de 5 m : puanteur persistante, portée 10 m, perte de deux niveaux de Charisme.",
+    "description": "<p>Quiconque s’approche à moins de 5 mètres d’un beinbaiter subit les effets de la puanteur du bein. Plus une personne reste exposée longtemps à cette puanteur, plus celle-ci persiste. La puanteur est impossible à dissiper et est si horrible et puissante que tous ceux situés à moins de 10 mètres de la victime s’arrêtent instantanément. Une victime qui souhaite réduire l’intensité de la puanteur doit brûler tous ses vêtements imprégnés puis se recouvrir de cendres. Tant que son corps est recouvert de cendre, la portée de la puanteur est réduite de 5 mètres.</p><p>Le Charisme de la victime est réduit de 2 niveaux pendant toute la durée de la puanteur. La table suivante indique la durée pendant laquelle une victime subit la puanteur en fonction du nombre de tours de jeu pendant lesquels elle est restée en contact avec la créature.</p><table><thead><tr><th>Contact</th><th>Durée</th></tr></thead><tbody><tr><td>1 à 2 tours</td><td>1d3 jours</td></tr><tr><td>3 à 10 tours</td><td>2d3 jours</td></tr><tr><td>11 à 20 tours</td><td>2d6 jours</td></tr><tr><td>Plus de 20 tours</td><td>4d6 jours</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 36
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GDLIzz3y4z5A6B7C",
+  "folder": null
+}

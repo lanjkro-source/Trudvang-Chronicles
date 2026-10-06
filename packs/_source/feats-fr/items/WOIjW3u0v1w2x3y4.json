@@ -1,0 +1,19 @@
+{
+  "_id": "WOIjW3u0v1w2x3y4",
+  "name": "Frénésie (hrimtursir)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WOIjW3u0v1w2x3y4",
+    "summary": "À la moitié des PS perdue, +4 aux attaques et aucune parade.",
+    "description": "<p>Quand un hrimtursir a subi des dégâts à hauteur de la moitié de ses points de santé, il combat encore plus frénétiquement. Dans cet état, le géant bénéficie d’un bonus de +4 à toutes ses attaques et ne prend plus la peine de parer.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 134
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WOIjW3u0v1w2x3y4",
+  "folder": null
+}

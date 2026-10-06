@@ -1,0 +1,19 @@
+{
+  "_id": "WOIjW3u0v1w2x3y4",
+  "name": "Frenzy (hrimtursir)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WOIjW3u0v1w2x3y4",
+    "summary": "After losing half its BP, +4 to attacks and no parries.",
+    "description": "<p>When a hrimtursir has taken half its Body Points in damage, it fights with a greater frenzy. In this state, it has +4 on all attacks. This also means that the giant will not parry.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 132
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WOIjW3u0v1w2x3y4",
+  "folder": null
+}

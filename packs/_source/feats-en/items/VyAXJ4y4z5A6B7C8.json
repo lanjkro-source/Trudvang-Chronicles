@@ -1,0 +1,19 @@
+{
+  "_id": "VyAXJ4y4z5A6B7C8",
+  "name": "Fire Weakness",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VyAXJ4y4z5A6B7C8",
+    "summary": "The hrimtursir takes double damage from fire.",
+    "description": "<p>Hrimtursirs take double damage from any sort of fire.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 132
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VyAXJ4y4z5A6B7C8",
+  "folder": null
+}

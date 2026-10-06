@@ -1,0 +1,119 @@
+{
+  "name": "Vache",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg",
+  "items": [
+    {
+      "_id": "hWPkJB5A6B7C8D9E",
+      "name": "Cornes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!NmxSC7A6B7C8D9Ea.hWPkJB5A6B7C8D9E",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "NmxSC7A6B7C8D9Ea",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Cornes",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 74,
+        "max": 74
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 9
+    },
+    "description": "C'est un bovidé paisible au corps plein, au ventre large et au dos droit, couvert d'un pelage court et doux, brun, noir, blanc ou pie. Sa tête allongée porte un large mufle rose ou noir, de grands yeux bordés de longs cils et des oreilles latérales mobiles. De petites cornes courbes ou une simple absence de cornes selon les individus ornent son front. Ses pattes robustes se terminent par des sabots fendus bien adaptés aux pâtures humides. Sa mamelle pleine et sa queue longue chassant les mouches marquent sa silhouette familière.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 74,
+      "bodyMax": 74,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "9 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Paisible et massive, au regard doux.",
+      "environment": "Prairies grasses, étables et enclos des fermes de Mittland et des vallées abritées de Trudvang.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "NmxSC7A6B7C8D9Ea",
+  "_key": "!actors!NmxSC7A6B7C8D9Ea",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

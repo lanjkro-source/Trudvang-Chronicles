@@ -1,0 +1,19 @@
+{
+  "_id": "Orm9QLfLgMhNiOjP",
+  "name": "Life Sap",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Orm9QLfLgMhNiOjP",
+    "summary": "Fresh sap: 1d10 (OR 6-10) BP; hardened: 1d10 (OR 8-10) BP; carried amber: +1 BP/day healing.",
+    "description": "<p>The vidrjotuns are very close to Trudvang and filled with the life force of the land. Instead of having blood in their veins like many other creatures in the world, the vidrjotuns have sap like that which is found in trees. The sap is full of life and can be used to heal all living things.</p><p>When a vidrjotun is hurt and its sap touches the ground, beautiful flowers and fresh grass sprout. The sap can replenish dead plants and make the most blighted place become fruitful and covered in rich plant life once more. The sap can even cleanse dark magic from things it touches. A wounded creature that drinks a mouthful of the sap will instantly heal 1d10 (OR 6-10) points of damage.</p><p>When the sap hardens, it becomes a chewy, sticky rubbery substance that has healing attributes. A piece of hardened sap the size of an acorn will restore 1d10 (OR 8-10) Body Points to anyone who eats it. After the sap has been allowed to harden for several hundred years, it becomes amber, which also has healing powers. Anyone who carries a piece of this amber increases their natural healing by +1 point of damage per day.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 142
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Orm9QLfLgMhNiOjP",
+  "folder": null
+}

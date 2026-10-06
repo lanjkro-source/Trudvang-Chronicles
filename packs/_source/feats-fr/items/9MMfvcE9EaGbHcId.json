@@ -1,0 +1,19 @@
+{
+  "_id": "9MMfvcE9EaGbHcId",
+  "name": "Corps de feu (démon tangible)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "9MMfvcE9EaGbHcId",
+    "summary": "Aura de feu : dégâts à chaque tour selon la distance, de 1d10 (JO 7-10) à moins de 1 m jusqu’à 1d10 entre 5 et 10 m.",
+    "description": "<p>Le démon est en feu. En fonction de la distance qui les sépare du démon, les créatures peuvent subir un nombre de points de dégâts différent à chacun de leurs tours de jeu, comme indiqué dans la table suivante :</p><table><thead><tr><th>Distance</th><th>Dégâts par tour</th></tr></thead><tbody><tr><td>Moins de 1 m</td><td>1d10 (JO 7-10)</td></tr><tr><td>1 à 2 m</td><td>1d10 (JO 8-10)</td></tr><tr><td>2 à 3 m</td><td>1d10 (JO 9-10)</td></tr><tr><td>3 à 5 m</td><td>1d10 (JO 10)</td></tr><tr><td>5 à 10 m</td><td>1d10</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 39
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!9MMfvcE9EaGbHcId",
+  "folder": null
+}

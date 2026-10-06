@@ -1,0 +1,19 @@
+{
+  "_id": "NNBuQnQlRmSnToUp",
+  "name": "Body Transformation",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NNBuQnQlRmSnToUp",
+    "summary": "The demon can transform into a creature of its choice.",
+    "description": "<p>The demon can transform into a creature of its choice.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NNBuQnQlRmSnToUp",
+  "folder": null
+}

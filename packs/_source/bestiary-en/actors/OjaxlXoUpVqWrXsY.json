@@ -1,0 +1,151 @@
+{
+  "name": "Wolverine",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/OjaxlXoUpVqWrXsY.jpg",
+  "items": [
+    {
+      "_id": "tXvSLNhNiOjPkQlR",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!OjaxlXoUpVqWrXsY.tXvSLNhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "_id": "s5sa1B5A6B7C8D9E",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!OjaxlXoUpVqWrXsY.s5sa1B5A6B7C8D9E",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "OjaxlXoUpVqWrXsY",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/OjaxlXoUpVqWrXsY.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Claws",
+          "value": 10
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 58,
+        "max": 58
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "This stocky, short-legged mustelid has an elongated body and a plantigrade gait like a small bear's. Its long dense coarse fur is dark brown, with tawny side stripes running from shoulders to tail. Its broad short-muzzled head bears small rounded ears and powerful jaws with crushing teeth. Short legs carry long curved claws ideal for digging and climbing. Its bushy, relatively short tail balances its compact form.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "1d5",
+      "bodyMin": 58,
+      "bodyMax": 58,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Stocky and clawed, with dark fur striped tawny.",
+      "environment": "Deep conifer forests, taiga, and snowy tundra in northern Trudvang.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "OjaxlXoUpVqWrXsY",
+  "_key": "!actors!OjaxlXoUpVqWrXsY",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

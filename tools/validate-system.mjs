@@ -9,6 +9,8 @@ if (existsSync(join(root, "game doc/fr/trudvang-creatures-fr.json"))) {
   if (result.status !== 0) failures.push(`NPC inventory source audit failed: ${result.stderr || result.stdout}`);
   const attackResult = spawnSync(process.execPath, ["game doc/tools/normalize-prepared-attacks.mjs", "--check"], {cwd: root, encoding: "utf8"});
   if (attackResult.status !== 0) failures.push(`Prepared attack names still use broad categories: ${attackResult.stderr || attackResult.stdout}`);
+  const bestiaryResult = spawnSync(process.execPath, ["tools/generate-bestiary-data.mjs", "--check"], {cwd: root, encoding: "utf8"});
+  if (bestiaryResult.status !== 0) failures.push(`Bestiary source audit failed: ${bestiaryResult.stderr || bestiaryResult.stdout}`);
 }
 const powerSources = ["game doc/fr/trudvang-powers-fr.json", "game doc/en/trudvang-powers-en.json"];
 const availablePowerSources = powerSources.filter(path => existsSync(join(root, path)));

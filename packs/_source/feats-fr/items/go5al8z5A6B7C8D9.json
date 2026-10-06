@@ -1,0 +1,19 @@
+{
+  "_id": "go5al8z5A6B7C8D9",
+  "name": "Souffle de feu",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "go5al8z5A6B7C8D9",
+    "summary": "Le logewurm peut attaquer avec son souffle jusqu'à trois fois par jour (test VC 12, sans points de combat ; portée 1d10 (JO 9-10) +20 mètres en cône de 6 mètres).",
+    "description": "<p>Comme les autres dragons, les logewurms peuvent attaquer avec leur souffle (sans dépenser le moindre point de combat mais en effectuant un test de VC 12). On l’appelle le Souffle de feu. Le logewurm peut effectuer cette attaque de souffle jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du logewurm indique 3d10 (JO 7-10) points de dégâts pour le souffle de feu.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 124
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!go5al8z5A6B7C8D9",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "U35mINhNiOjPkQlR",
+  "name": "Speak (Relevant Language)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "U35mINhNiOjPkQlR",
+    "summary": "The GM gives a speaking diser proficiency in Knowledge / Language / Foreign Tongue.",
+    "description": "<p>Not every wraith has the ability to speak to the living. Weaker spirits, such as the Lost and the Helpful, have trouble communicating with the living. The Wicked often choose not to speak since their hate for the living is so great that they prefer not to communicate.</p><p>The disers that have the ability to speak in one or several languages gain a skill value in the Knowledge skill (Language discipline and Foreign Tongue [relevant language]) specialty). How good the wraith is in its chosen tongue is up to the game master to decide.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 54
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!U35mINhNiOjPkQlR",
+  "folder": null
+}

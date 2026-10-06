@@ -1,0 +1,19 @@
+{
+  "_id": "D3rbkjKfLgMhNiOj",
+  "name": "Chance du byse",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "D3rbkjKfLgMhNiOj",
+    "summary": "Le byse juge une offrande corporelle et accorde chance ou malchance ; effets et durée décidés par le MJ.",
+    "description": "<p>Certaines personnes espèrent avoir de la chance en sacrifiant une partie de leur corps (en donnant, par exemple, une grande quantité de leur sang, en se tranchant un doigt ou en se rasant la barbe ou les cheveux) et en la déposant dans un bol à l’intention d’un byse. Si celui-ci estime que l’offrande est trop petite ou indigne, les personnes concernées sont affublées à la place d’une terrible malchance. C’est le byse qui décide de la durée de l’enchantement. Le maître de jeu détermine les effets de la chance ou de la malchance.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 70
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!D3rbkjKfLgMhNiOj",
+  "folder": null
+}

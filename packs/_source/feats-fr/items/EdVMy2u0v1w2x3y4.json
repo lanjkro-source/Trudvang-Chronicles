@@ -1,0 +1,19 @@
+{
+  "_id": "EdVMy2u0v1w2x3y4",
+  "name": "Cocon de soie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EdVMy2u0v1w2x3y4",
+    "summary": "Cocon créé en 1d10+10 tours ; se libérer exige trois réussites, dans l’ordre VS 3, 7 et 11 (Force).",
+    "description": "<p>L’araignée hypnotique comme l’araignée tisseuse ont la capacité d’envelopper leurs victimes dans des cocons de toile et de les suspendre par les pieds dans la forêt. Dès que l’araignée géante réussit à paralyser sa victime ou à la piéger dans sa toile, elle commence à l’envelopper dans un cocon, à condition qu’aucun autre élément n’attire son attention.</p><p>La création du cocon dure 1d10 + 10 tours de jeu. Une victime piégée qui cherche à se libérer doit faire trois tests de situation avec des valeurs de situation de 3, 7 et 11 (en appliquant le modificateur de Force) pour y parvenir. Il n’est pas nécessaire de réussir les tests de manière consécutive. Ceux-ci peuvent être séparés par des échecs. Cependant, les réussites doivent se produire dans l’ordre de valeurs de situation 3, 7 et 11.</p><p>Si la victime ne parvient pas à s’échapper, elle reste dans le cocon et risque de mourir de faim rapidement si elle n’est pas d’abord dévorée par l’araignée géante.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 16
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EdVMy2u0v1w2x3y4",
+  "folder": null
+}

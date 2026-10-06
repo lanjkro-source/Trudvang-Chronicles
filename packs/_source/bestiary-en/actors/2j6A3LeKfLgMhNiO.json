@@ -1,0 +1,146 @@
+{
+  "name": "Hulder",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
+  "items": [
+    {
+      "_id": "Tz48vNhNiOjPkQlR",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2j6A3LeKfLgMhNiO.Tz48vNhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "_id": "NkQ3WdFaGbHcIdJe",
+      "name": "Bewitch",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NkQ3WdFaGbHcIdJe",
+        "summary": "The hulder subjugates her victims’ wills with enchantment.",
+        "description": "<p>The hulder has a special ability that allows her to bewitch those she meets, and victims can be at her mercy for the rest of their lives. When she makes eye contact with a target, she simply utters the dreaded words that will bewitch the weak. The victim must then make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid looking into her eyes. A character who says he steels himself not to look into the hulder’s eyes will increase the situation value by +5.</p><p>On a failure, roll 1d20 and consult the table below for the effect. A character with a positive Psyche trait can deduct that number from the roll result, and one with a negative Psyche trait can add that number to the result before consulting the table.</p><table><thead><tr><th>d20 modified by Psyche</th><th>Effect</th></tr></thead><tbody><tr><td>0-8</td><td>The victim is dizzy and suffers -2 to all skill and situation values for 24 hours.</td></tr><tr><td>9-14</td><td>Obeys minor orders for 24 hours: lie down, run, talk, shout, walk, open doors, etc. The effect ends more than 100 m from the hulder.</td></tr><tr><td>15-16</td><td>Considers all orders sensible and obeys for 1d3 days, except orders that endanger the victim. The effect ends beyond 500 m.</td></tr><tr><td>17-18</td><td>Complete submission, including dangerous orders; unlimited range, duration 1d10 (OR 7-10) days. The hulder's death does not end the last orders during the remaining duration.</td></tr><tr><td>19 and above</td><td>A slave for life, obeying blindly; only the hulder's death breaks the enchantment.</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 80
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2j6A3LeKfLgMhNiO.NkQ3WdFaGbHcIdJe"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "2j6A3LeKfLgMhNiO",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": 4,
+      "dexterity": 2,
+      "strength": -2
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 65,
+        "max": 65
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "Seen from the front, a hulder is very pretty and seductive. It generally wears no clothes. Its beauty hides its true nature. Only two features betray it. It has a cow's tail. Its back sometimes resembles a large rotten, hollow tree branch.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "75, max 120",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 59,
+      "bodyMax": 71,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "12 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "1 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Naked beauty from the front, with a cow's tail and rotten bark back.",
+      "environment": "Deepest forests near a stream or waterfall, away from oaks; territory near a small waterfall far into the woods, sometimes a lair beneath a rock",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 80
+      }
+    }
+  },
+  "_id": "2j6A3LeKfLgMhNiO",
+  "_key": "!actors!2j6A3LeKfLgMhNiO",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "NZdeU9D9EaGbHcId",
+  "name": "Vitner",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NZdeU9D9EaGbHcId",
+    "summary": "Le byse sait canaliser le vitner.",
+    "description": "<p>Un byse peut utiliser le vitner et a appris des niveaux de sorts de certaines Tablettes de vitner (tels que Maîtrise des flammes, Vitner des objets et Maîtrise de la terre). Il utilise ces sorts pour aider ou détruire, en fonction de son humeur du moment.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 70
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NZdeU9D9EaGbHcId",
+  "folder": null
+}

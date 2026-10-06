@@ -1,0 +1,19 @@
+{
+  "_id": "OymWMpSnToUpVqWr",
+  "name": "Yeux enchanteurs",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "OymWMpSnToUpVqWr",
+    "summary": "Les yeux embrumés du lyktgubbe égarent les voyageurs.",
+    "description": "<p>Le pouvoir le plus important du lyktgubbe réside dans sa capacité à projeter de la brume avec ses grands yeux jusqu’à une distance de plusieurs centaines de mètres sur des voyageurs qui n’ont pas conscience de la présence du mort-vivant. La brume émet un halo paralysant et enchanteur qui réduit les capacités de perception de ses victimes. L’enchantement fait souvent perdre aux victimes toute notion de temps et d’espace et les oblige à continuer de marcher. Lorsque les victimes s’éveillent de ce charme, elles ne savent souvent plus où elles se trouvent ni comment elles sont arrivées là où elles sont.</p><p>Une personne qui voit la brume luisante doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ignorer l’enchantement. S’il échoue au test, le personnage est perdu, comme indiqué dans la table suivante :</p><p>Une victime de l’enchantement peut être libérée de deux façons : grâce à une prière prononcée par un prêtre ou grâce au vitner. Bien entendu, il existe d’autres moyens pour qu’une victime s’arrête de marcher mais ils ne dissiperont pas l’enchantement.</p><p>Une victime qui marche dans la tourbière ou le marais s’éveillera de l’enchantement lorsque le lyktgubbe sera à une distance de 15 mètres (le maître de jeu décide de l’endroit où se trouve le mort-vivant dans la zone). Pour pouvoir attaquer par surprise, le lyktgubbe se déplace sous l’eau à une vitesse de 5 mètres par tour de jeu. Seul un test de compétence d’Arts des ombres avec un modificateur négatif de -5 permettra à la victime de repérer le lyktgubbe. Une fois qu’il est près de sa cible, le lyktgubbe tentera de l’agripper pour la tirer vers le fond et la noyer, en appliquant les règles décrites au paragraphe Noyade. Si plusieurs lyktgubbes sont présents, ils tenteront de s’entraider pour noyer la victime.</p><table><thead><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1 à 5</td><td>Erre pendant 1d6 heures dans une direction déterminée au hasard.</td></tr><tr><td>6 à 10</td><td>Erre pendant 2d6 heures dans une direction déterminée au hasard.</td></tr><tr><td>11 à 20</td><td>Se déplace tout droit vers la tourbière où l’attend le lyktgubbe.</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 52
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!OymWMpSnToUpVqWr",
+  "folder": null
+}

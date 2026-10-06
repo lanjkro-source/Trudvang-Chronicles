@@ -1,0 +1,19 @@
+{
+  "_id": "xqhnZRmSnToUpVqW",
+  "name": "Contrôle de l’eau",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "xqhnZRmSnToUpVqW",
+    "summary": "Le logrjotun commande l'eau et les flots.",
+    "description": "<p>Un logrjotun peut contrôler l’eau dans laquelle il évolue. Ce contrôle n’est pas la conséquence d’une utilisation du vitner mais plutôt des mouvements du géant. Le géant peut par exemple créer des vagues monstrueuses qu’il dirige sur une menace. Il peut aussi créer d’énormes maelstroms capables d’aspirer des bateaux dans les profondeurs, ou des courants d’eau qui forcent les navires à emprunter un itinéraire différent, quelle que soit la direction du vent.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 135
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!xqhnZRmSnToUpVqW",
+  "folder": null
+}

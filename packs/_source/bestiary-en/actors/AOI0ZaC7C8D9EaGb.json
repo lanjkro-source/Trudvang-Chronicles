@@ -1,0 +1,202 @@
+{
+  "name": "Lindwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg",
+  "items": [
+    {
+      "_id": "WzK83cIdJeKfLgMh",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 20,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.WzK83cIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "oRxJE6A6B7C8D9Ea",
+      "name": "Regenerating Heart (lindwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "oRxJE6A6B7C8D9Ea",
+        "summary": "The heart creates a lindwurm after 1d10 weeks; eating it heals completely but risks transforming the eater into a lindwurm.",
+        "description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 120
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.oRxJE6A6B7C8D9Ea"
+    },
+    {
+      "_id": "JBOXObHcIdJeKfLg",
+      "name": "Constricting (lindwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "JBOXObHcIdJeKfLg",
+        "summary": "Grip at SV 8 without CP; 2d6 damage per round; escape at situation value 12 (Strength).",
+        "description": "<p>A lindwurm can try to slither around a victim making a SV 8 roll without spending CP. If it is successful, it wraps the victim in its powerful grip. The victim takes 2d6 points of damage each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 12 (Strength modifiers apply). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 9). For each person that tries to help the victim, the situation roll is modified by +1. If the helping characters have exceptional Strength, the bonus from their Strength is added to the skill roll.</p><p>Each action round that the lindwurm spends strangling its victim, the wurm cannot do anything else. The lindwurm can try to bite another opponent instead of continuing to strangle its victim. When this happens, the victim remains in the grip of the lindwurm but takes no damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 118
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.JBOXObHcIdJeKfLg"
+    },
+    {
+      "_id": "9uVrYHcIdJeKfLgM",
+      "name": "Catch",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "9uVrYHcIdJeKfLgM",
+        "summary": "After a bite, holds in its jaws at SV 10 opposed by Strength; rolls each round to maintain it and deals 1d10 (OR 9-10) damage/round.",
+        "description": "<p>After a successful Bite attack a lindwurm can try to catch a victim with its mouth. If the lindwurm is successful, it can try to keep the victim in its jaws. By succeeding on a roll with the Catch ability (skill value 10), the creature keeps the victim in its mouth (if the victim has exceptional Strength, this is used as a negative modifier on the skill value). If the lindwurm succeeds in catching its prey, it usually slithers back to its home.</p><p>The lindwurm must succeed on a new Catch skill roll in each new action round in order to maintain its grip on the victim. Each round in which the lindwurm keeps the victim in its mouth, the victim takes 1d10 (OR 9-10) points of damage.</p><p>The game master determines whether the lindwurm loses its grip if it is attacked or damaged by an enemy. For example, a situation roll with a situation value of 15 can be rolled each time the wurm takes more than 15 points of damage to see if it loses its grip. For each damage point above 15, the situation value is lowered by -1. Damage of 20 therefore translates into a situation roll with a situation value of 10 (15 - 5).</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 118
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.9uVrYHcIdJeKfLgM"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "AOI0ZaC7C8D9EaGb",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 14
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 145,
+        "max": 145
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -3
+    },
+    "movement": {
+      "base": 40
+    },
+    "description": "The lindwurm resembles a snake much more than other dragon creatures. Its massive body can reach sixty meters long. It is as thick as the greatest oak on the Viranne plains. This immense serpentine creature crawls and coils around its victims. Its jaws can swallow a goat in two bites and seize prey to carry away as it crawls. Its skin can be old and broad enough for followers to wrap themselves in during blood oaths.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "other",
+      "size": "5",
+      "age": "100, max 175",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 130,
+      "bodyMax": 160,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "10 m",
+          "max": "40 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Sixty-meter serpent-dragon, oak-thick, ravenous, and constricting.",
+      "environment": "Great underground lairs, preferably near the forest edge",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 118
+      }
+    }
+  },
+  "_id": "AOI0ZaC7C8D9EaGb",
+  "_key": "!actors!AOI0ZaC7C8D9EaGb",
+  "folder": "hHkEitXsYtZu0v1w"
+}

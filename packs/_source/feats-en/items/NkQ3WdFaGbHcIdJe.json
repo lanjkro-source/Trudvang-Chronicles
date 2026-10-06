@@ -1,0 +1,19 @@
+{
+  "_id": "NkQ3WdFaGbHcIdJe",
+  "name": "Bewitch",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NkQ3WdFaGbHcIdJe",
+    "summary": "The hulder subjugates her victims’ wills with enchantment.",
+    "description": "<p>The hulder has a special ability that allows her to bewitch those she meets, and victims can be at her mercy for the rest of their lives. When she makes eye contact with a target, she simply utters the dreaded words that will bewitch the weak. The victim must then make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid looking into her eyes. A character who says he steels himself not to look into the hulder’s eyes will increase the situation value by +5.</p><p>On a failure, roll 1d20 and consult the table below for the effect. A character with a positive Psyche trait can deduct that number from the roll result, and one with a negative Psyche trait can add that number to the result before consulting the table.</p><table><thead><tr><th>d20 modified by Psyche</th><th>Effect</th></tr></thead><tbody><tr><td>0-8</td><td>The victim is dizzy and suffers -2 to all skill and situation values for 24 hours.</td></tr><tr><td>9-14</td><td>Obeys minor orders for 24 hours: lie down, run, talk, shout, walk, open doors, etc. The effect ends more than 100 m from the hulder.</td></tr><tr><td>15-16</td><td>Considers all orders sensible and obeys for 1d3 days, except orders that endanger the victim. The effect ends beyond 500 m.</td></tr><tr><td>17-18</td><td>Complete submission, including dangerous orders; unlimited range, duration 1d10 (OR 7-10) days. The hulder's death does not end the last orders during the remaining duration.</td></tr><tr><td>19 and above</td><td>A slave for life, obeying blindly; only the hulder's death breaks the enchantment.</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 80
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NkQ3WdFaGbHcIdJe",
+  "folder": null
+}

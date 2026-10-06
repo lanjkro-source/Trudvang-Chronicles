@@ -1,0 +1,19 @@
+{
+  "_id": "yCooPeIdJeKfLgMh",
+  "name": "Darkvision",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "yCooPeIdJeKfLgMh",
+    "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+    "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!yCooPeIdJeKfLgMh",
+  "folder": null
+}

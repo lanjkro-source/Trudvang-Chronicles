@@ -1,0 +1,19 @@
+{
+  "_id": "gCMi4MhNiOjPkQlR",
+  "name": "Fairy Dance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gCMi4MhNiOjPkQlR",
+    "summary": "Ten fairies dancing in a circle restore the energy of a meal or the benefits of eight hours of sleep.",
+    "description": "<p>If a creature suffers from dehydration, hunger, or physical or psychic exhaustion, a group of ten fairies can dance in a ring around the one in need and provide both strength and power. A creature that is hungry or thirsty gains new energy, which represents one meal of food. A creature that is exhausted is refreshed as if having slept for one full night, and gains the normal effects of eight hours of sleep.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 72
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gCMi4MhNiOjPkQlR",
+  "folder": null
+}

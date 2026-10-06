@@ -1,0 +1,19 @@
+{
+  "_id": "lHbj4E6B7C8D9EaG",
+  "name": "Troll Bull Heart",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "lHbj4E6B7C8D9EaG",
+    "summary": "Eating the heart removes 1d10 (OR 10) Fear Points, but may compel a charge to defend friends: resist at situation value 10 (Psyche).",
+    "description": "<p>If someone eats from the heart of a troll bull, they are filled with courage and inner strength. They instantly lose 1d10 (OR 10) of gained Fear Points and they feel more alive and protective of their friends. If an enemy threatens one of those friends, there is a risk that the devourer will instantly charge that enemy and attack. The devourer must make a situation roll with a situation value of 10 (Psyche modifiers apply) to avoid being compelled to charge the enemy.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 28
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!lHbj4E6B7C8D9EaG",
+  "folder": null
+}

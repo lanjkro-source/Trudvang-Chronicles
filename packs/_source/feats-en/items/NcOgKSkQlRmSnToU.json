@@ -1,0 +1,19 @@
+{
+  "_id": "NcOgKSkQlRmSnToU",
+  "name": "Rugtanne Infection",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NcOgKSkQlRmSnToU",
+    "summary": "The night ulm’s bite transforms its victim into a bloodsucking rugtanne.",
+    "description": "<p>Every other action round in which a night ulm sucks blood from a victim, there is a chance that the victim will develop a rare disease. After two action rounds, the chance is 1 in 20 (the roll of 20 on 1d20). After four action rounds, the chance is 2 in 20 (the roll of 19-20 on 1d20). For some inexplicable reason, only humans can be infected by the disease.</p><p>A victim who is infected by the disease will transform into a rugtanne (a strange mix between a human and a night ulm) within 2d3 days. A rugtanne can live only during the night. If exposed to sunlight, it dies instantly from the shock when it is hit by the rays of the sun. Every fifth night, they must feed on blood from another warm-bodied creature. The bite and the bloodsucking works the same way for the rugtanne as it does for the night ulm.</p><p>A rugtanne can live up to four times as long a human, which means that it has much more time for learning things. According to some myths, a rugtanne can have great magical capabilities and powers, such as being able to transform into a bat or a great black stallion. These are nothing but superstitions. However, if mighty wizards are transformed into rugtannes, they still can wield their magic, creating horrid bloodsuckers with powers that few men hold.</p><p>When a player character becomes a rugtanne, Constitution, Psyche, Strength, and Dexterity increase by two levels (for example, -2 becomes 0, or +1 becomes +4). If already at the highest level, add +4 to that trait modifier, making it +8. Natural skin protection gives PV 1. The rugtanne gains Darkvision: normal vision in total darkness up to 10 m, fading until it vanishes at about 60 m. It still takes damage and remains mortal as before, but recalculate its Body Points using its new traits.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 24
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NcOgKSkQlRmSnToU",
+  "folder": null
+}

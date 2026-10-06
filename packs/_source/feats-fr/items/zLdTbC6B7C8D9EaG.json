@@ -1,0 +1,19 @@
+{
+  "_id": "zLdTbC6B7C8D9EaG",
+  "name": "Charge",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "zLdTbC6B7C8D9EaG",
+    "summary": "Charge du minokks : 2d10 (JO 9-10) dégâts, PC de mouvement et d’attaque ; Agilité -5 pour ne pas être renversé.",
+    "description": "<p>Les minokks commencent leurs attaques par une charge. Ils baissent la tête et se précipitent droit sur leur victime pour lui infliger des dégâts et la renverser. En raison du poids du minokks, de sa grande vitesse et de ses cornes pointues, la charge inflige 2d10 (JO 9-10) points de dégâts. Une charge se résout en dépensant des PC pour le mouvement en plus de ceux destinés à l’attaque à l’arme naturelle (cornes).</p><p>La cible touchée par l’attaque doit réussir un test d’Agilité avec un malus de -5 pour garder l’équilibre. Une victime renversée par la charge doit faire un jet de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Dextérité) pour éviter de lâcher les éventuels objets qu’elle tient en main.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 24
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!zLdTbC6B7C8D9EaG",
+  "folder": null
+}

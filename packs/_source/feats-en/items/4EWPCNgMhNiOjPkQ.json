@@ -1,0 +1,19 @@
+{
+  "_id": "4EWPCNgMhNiOjPkQ",
+  "name": "Stone Skin",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "4EWPCNgMhNiOjPkQ",
+    "summary": "PV 4; cutting weapons below excellent quality risk losing 1d10 (OR 8-10) BV on a 1 on a d10.",
+    "description": "<p>The petrified outer skin of the giant gives it an almost impenetrable defense (Protection value 4). Edge weapons with a quality lower than excellent run the risk of breaking when they strike the surface of the giant. Each time such a weapon successfuly hits the giant, the game master makes a luck roll with 1d10. If the outcome of the roll is 1, the edge weapon takes 1d10 (OR 8-10) points of damage and lowers its Breach Value by the same amount.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 140
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!4EWPCNgMhNiOjPkQ",
+  "folder": null
+}

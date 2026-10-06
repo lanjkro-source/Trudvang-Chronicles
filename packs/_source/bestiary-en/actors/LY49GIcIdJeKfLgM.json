@@ -1,0 +1,185 @@
+{
+  "name": "Huvfurwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
+  "items": [
+    {
+      "_id": "HOJDJOjPkQlRmSnT",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 20,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!LY49GIcIdJeKfLgM.HOJDJOjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "_id": "2hwy57A6B7C8D9Ea",
+      "name": "Regenerate Head",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "2hwy57A6B7C8D9Ea",
+        "summary": "Severed wurm heads regrow.",
+        "description": "<p>When a huvfurwurm takes great damage (20+ points of damage) or if a head is cut off, a new head is created from one of the many growths and lumps that cover the dragon’s body (the game master decides how often this happens). The greater the damage, the more dangerous the head. A few have their own abilities and can be used in battle. The GM can create other heads with special traits and powers. Below are examples of heads and their traits.</p><p>In order to remain functional a head cannot be severed and regenerated more than three times. This is due to the fact that every time a new head grows it is mutated, both in shape and property. The first three times the GM rolls 1d20 on the table below while the fourth time the head is so mutated that it can not cause any injury anymore or even work normally. Should such a mutated head also be cut off, it does not grow a new one to replace it. You will notice that some head regeneration can result in two or more extra heads. Regarding the number of regenerations, the extra heads will not be considered anew, but they will keep the same regeneration status (first, second, etc..) that they should have had, if they were singular heads.</p><table><thead><tr><th>2d10 (printed table heading)</th><th>Result</th></tr></thead><tbody><tr><td>2-4</td><td>Two normal heads regenerate instead of one.</td></tr><tr><td>5</td><td>Thin neck: halve the BP that must be reduced to 0 to sever it.</td></tr><tr><td>6</td><td>Thick neck: double the BP that must be reduced to 0 to sever it.</td></tr><tr><td>7</td><td>Hypnotic eyes without a CP cost: resist at situation value 8 (Psyche). Paralysis for 2d6 rounds or until taking at least 1 damage.</td></tr><tr><td>8</td><td>Poor vision: -3 to this head's attack SV.</td></tr><tr><td>9</td><td>Long tusks: increase the chance of an open roll by 1.</td></tr><tr><td>10</td><td>An insane head that attacks the other heads.</td></tr><tr><td>11</td><td>Large grabbing mouth: a successful attack deals half damage. Resist at situation value 12 (Strength); on failure the victim is trapped. The other heads gain +2 to attacks against the victim until a new successful situation roll frees them.</td></tr><tr><td>12</td><td>Short neck: -4 m reach.</td></tr><tr><td>13</td><td>Very long neck: +4 m reach.</td></tr><tr><td>14</td><td>Fragile scales: PV 0 for this head.</td></tr><tr><td>15</td><td>Thick scales: +3 PV for this head.</td></tr><tr><td>16</td><td>Mutated giant head: +3 to its attack SV and increase the chance of an open roll by 2.</td></tr><tr><td>17</td><td>Acid: range 7 m, cone 4 m in diameter at its end, 1d10 (OR 8-10) damage, twice per day without CP.</td></tr><tr><td>18</td><td>Fire: range 10 m, cone 4 m in diameter at its end, 1d10 (OR 7-10) damage, twice per day without CP.</td></tr><tr><td>19</td><td>Two additional heads; roll twice to determine their nature.</td></tr><tr><td>20</td><td>Three additional heads; roll three times to determine their nature.</td></tr></tbody></table><p>The prose specifies 1d20 for the first three regenerations, whereas the printed table is headed 2d10 and starts at 2. This discrepancy is preserved for the GM to choose. The huvfurwurm dies when its body reaches 0 BP or when it has no functional heads left.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 111
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LY49GIcIdJeKfLgM.2hwy57A6B7C8D9Ea"
+    },
+    {
+      "_id": "UDncGbGbHcIdJeKf",
+      "name": "Number of Heads",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "UDncGbGbHcIdJeKf",
+        "summary": "The huvfurwurm has many heads, each with its own characteristics.",
+        "description": "<p>There is no exact amount of heads for a huvfurwurm. It is up to the game master to determine how many heads a dragon has and how many times each of them have been regenerated. To decide randomly, the GM can roll 3d6 +2 to determine the number of heads. Treat each head as an individual creature. Each head has a neck that can withstand about 25 (±5) points of damage before it is removed. The heads do not suffer penalties from damage levels linked with their own BP but only those coming from the body BP. The GM can allow aiming hits at specific heads but suffering penalties which are totally up to the GM’s judgement. Remember that the huvfurwurm is a 7t sized creature, therefore its Combat Points should be spent across 3 rounds and only after that time will the CP regenerate. All heads share the same pool of Combat Points and do not have separate CP.</p><p>Consider that the number of heads can both increase and decrease during combat and wounds, especially decapitations, could trigger the creation of more heads, according to GM’s judgement and the rules above described .</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 110
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LY49GIcIdJeKfLgM.UDncGbGbHcIdJeKf"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LY49GIcIdJeKfLgM.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "LY49GIcIdJeKfLgM",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -4,
+      "perception": 2,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Bite",
+          "value": 10
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 170,
+        "max": 170
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 28
+    },
+    "description": "The huvfurwurm closely resembles the lindwurm and braskelwurm. It is born with a single head and then resembles other wurms. Its neck and body bear great knobs and growths that distinguish it from its cousins. Hundreds, perhaps thousands, of these growths generate new heads as it ages or suffers. Every new head is unique and can become more powerful and dangerous. It may grow more than a hundred heads, until it can no longer move and collapses beneath their number.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "quadruped",
+      "size": "7",
+      "age": "200, max 375",
+      "naturalArmor": 5,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 153,
+      "bodyMax": 187,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "14 m",
+          "max": "28 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Hundred-headed dragon that regenerates heads from growths on its neck and body.",
+      "environment": "Damp places such as marshlands and peat bogs, in deep caves",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 108
+      }
+    }
+  },
+  "_id": "LY49GIcIdJeKfLgM",
+  "_key": "!actors!LY49GIcIdJeKfLgM",
+  "folder": "hHkEitXsYtZu0v1w"
+}

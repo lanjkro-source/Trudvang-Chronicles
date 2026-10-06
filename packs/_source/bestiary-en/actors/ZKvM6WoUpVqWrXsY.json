@@ -1,0 +1,270 @@
+{
+  "name": "Dark Dweller",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
+  "items": [
+    {
+      "_id": "0ISxU4z5A6B7C8D9",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.0ISxU4z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "_id": "5lKuVUlRmSnToUpV",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.5lKuVUlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "name": "Barda klót (battle chain)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 12,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "KjZF4aC7C8D9EaGb",
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.KjZF4aC7C8D9EaGb",
+      "effects": []
+    },
+    {
+      "_id": "IChFs8B7C8D9EaGb",
+      "name": "Blood Taste",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "IChFs8B7C8D9EaGb",
+        "summary": "Each attack dealing more than 5 damage gives +1 SV to an attack in sequence until combat ends.",
+        "description": "<p>The dark dweller becomes more dangerous the more blood it tastes. Each time it attacks and does more than 5 points of damage, the SV for an attack is increased by +1 for the rest of the battle. The first time this happens, the SV is increased for its first attack; the second time it happens, the SV is increased for its second attack; and the third time this happens, the SV is increased for its third attack. When all attacks have been increased once, the SV for the first attack is increased by another +1, and so on.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 45
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.IChFs8B7C8D9EaGb"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Durable",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+        "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 39
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "ZKvM6WoUpVqWrXsY",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 1,
+      "intelligence": -4,
+      "strength": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 5,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 4,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Unarmed",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Barda klót (battle chain)",
+          "value": 12
+        },
+        {
+          "attack": "Barda klót (battle chain)",
+          "value": 11
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 33
+    },
+    "description": "The dark dweller is a large, horrible creature made of old bones, roots, branches, and earth soaked in spilled blood. It forms from whatever lay in the soil at the sacrifice, sometimes including decomposing corpses and sacrificial stumps. Its most common body resembles a human or animal with one or more human or animal heads. Pieces of human or animal bodies cover it as protection and armor. Chance determines its form: two, three, four, five, or six legs, and variable numbers of arms and heads.",
+    "details": {
+      "creatureType": "Mist creatures",
+      "type": "humanoid",
+      "size": "3",
+      "age": "variable, max variable",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 80,
+      "bodyMax": 100,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "33 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Mass of branches, earth, bones, and corpses soaked with sacrificial blood.",
+      "environment": "Sacrificial sites where blood has been poured abundantly onto the ground",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 42
+      }
+    }
+  },
+  "_id": "ZKvM6WoUpVqWrXsY",
+  "_key": "!actors!ZKvM6WoUpVqWrXsY",
+  "folder": "nhZGosWrXsYtZu0v"
+}

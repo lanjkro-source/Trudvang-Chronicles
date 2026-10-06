@@ -1,0 +1,19 @@
+{
+  "_id": "uM9vugLgMhNiOjPk",
+  "name": "Lancer de rocher",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "uM9vugLgMhNiOjPk",
+    "summary": "Le géant arrache et lance d'énormes rochers sur ses ennemis.",
+    "description": "<p>Grâce à leur force incroyable, les firdtursirs peuvent arracher de grands rochers des flancs des montagnes et les lancer sur leurs ennemis pour les écraser. Ces rochers sont si gros et si lourds qu’il est impossible de les bouger lorsqu’ils retombent sur le sol. Dans tous les lieux de Trudvang où sont passés des firdtursirs, on peut voir ces rochers communément appelés « jets de géant ». Un rocher lancé qui retombe sur un personnage joueur provoquera à coup sûr sa mort et, en tant que maître de jeu, vous devriez plutôt utiliser ce pouvoir pour effrayer les personnages et, pourquoi pas, pour détruire des bâtiments ou des choses similaires.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!uM9vugLgMhNiOjPk",
+  "folder": null
+}

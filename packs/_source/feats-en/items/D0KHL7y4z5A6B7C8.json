@@ -1,0 +1,19 @@
+{
+  "_id": "D0KHL7y4z5A6B7C8",
+  "name": "Summon Fog",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "D0KHL7y4z5A6B7C8",
+    "summary": "Fog with a radius of 100-10,000 m; situation value 10 (Psyche) to avoid sleepwalking toward the barrow wight.",
+    "description": "<p>Barrow wights have a special ability that allows them to fill great areas with fog. Often the fog will lie thick around each place the wight has visited, since the ability is dormant and can activate sometimes without the wight being aware of it. The fog is thick, cold, and sometimes moist, and anyone who stands within it must immediately make a situation roll with a situation value of 10 (Psyche modifiers apply). If the roll fails, the victim becomes woozy and barely aware of what he’s doing. The victim will then be pulled toward the core of the area, which most often is the site where the barrow wight is buried. A victim who takes damage will be awoken immediately from the slumber that the fog creates. Depending on how strong the barrow wight is, the fog can cover an area with a radius of 100 to 10,000 meters, according to the GM’s judgement. The barrow wight can remove the fog at any time, at which point it completely disappears within a few minutes.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 39
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!D0KHL7y4z5A6B7C8",
+  "folder": null
+}

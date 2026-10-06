@@ -1,0 +1,207 @@
+{
+  "name": "Araignée tisseuse",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg",
+  "items": [
+    {
+      "_id": "1X3jmC6B7C8D9EaG",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.1X3jmC6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "_id": "UhT3DqSnToUpVqWr",
+      "name": "Patte empaleuse",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 7,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "impalingleg",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.UhT3DqSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "_id": "ka2CP6A6B7C8D9Ea",
+      "name": "Toile d’attaque",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ka2CP6A6B7C8D9Ea",
+        "summary": "L'araignée tisseuse projette sa toile collante (test VC 9, trois fois par jour) ; chaque personnage dans une zone d'environ 8 mètres sur 3 est pris dans la toile et doit réussir un test de situation (VS 7, Force) pour s'en libérer.",
+        "description": "<p>En plus de sa morsure, l’araignée tisseuse attaque avec sa toile collante en faisant un test avec une VC 9. Si l’araignée réussit son attaque, chaque personnage situé dans une zone d’approximativement 8 mètres de long sur 3 mètres de large sera pris dans la toile. Les victimes doivent faire un test de situation avec une valeur de situation de 7 (le modificateur de Force s’applique) pour se libérer de la toile. Les araignées tisseuses peuvent utiliser cette attaque trois fois par jour.</p><p>La toile possède des aptitudes légendaires. Il est possible de fabriquer des cordes tressées ou des cordes d’arc en soie à partir de cette toile. Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge. Une corde d’arc de la même matière augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1.</p><p>Tresser une corde peut prendre plus d’un mois. Confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires. On dit que certains des arcs elfiques les plus connus de Trudvang, comme Verisias, le dragon d’argent, comportent une corde fabriquée à partir de la toile d’attaque d’une araignée tisseuse géante.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.ka2CP6A6B7C8D9Ea"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.yCooPeIdJeKfLgMh"
+    },
+    {
+      "_id": "EdVMy2u0v1w2x3y4",
+      "name": "Cocon de soie",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "EdVMy2u0v1w2x3y4",
+        "summary": "Cocon créé en 1d10+10 tours ; se libérer exige trois réussites, dans l’ordre VS 3, 7 et 11 (Force).",
+        "description": "<p>L’araignée hypnotique comme l’araignée tisseuse ont la capacité d’envelopper leurs victimes dans des cocons de toile et de les suspendre par les pieds dans la forêt. Dès que l’araignée géante réussit à paralyser sa victime ou à la piéger dans sa toile, elle commence à l’envelopper dans un cocon, à condition qu’aucun autre élément n’attire son attention.</p><p>La création du cocon dure 1d10 + 10 tours de jeu. Une victime piégée qui cherche à se libérer doit faire trois tests de situation avec des valeurs de situation de 3, 7 et 11 (en appliquant le modificateur de Force) pour y parvenir. Il n’est pas nécessaire de réussir les tests de manière consécutive. Ceux-ci peuvent être séparés par des échecs. Cependant, les réussites doivent se produire dans l’ordre de valeurs de situation 3, 7 et 11.</p><p>Si la victime ne parvient pas à s’échapper, elle reste dans le cocon et risque de mourir de faim rapidement si elle n’est pas d’abord dévorée par l’araignée géante.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.EdVMy2u0v1w2x3y4"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Dy2cOUlRmSnToUpV",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Patte empaleuse",
+          "value": 10
+        },
+        {
+          "attack": "Patte empaleuse",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 94,
+        "max": 94
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 50
+    },
+    "description": "C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos.",
+    "details": {
+      "creatureType": "Bêtes",
+      "type": "other",
+      "size": "5",
+      "age": "3 500, max. 5 000",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 84,
+      "bodyMax": 105,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "10 m",
+          "max": "50 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Tisseuse de la canopée qui projette un lourd filet de toile collante noire.",
+      "environment": "Forêts sombres, nids construits dans les hautes branches et les frondaisons",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 14
+      }
+    }
+  },
+  "_id": "Dy2cOUlRmSnToUpV",
+  "_key": "!actors!Dy2cOUlRmSnToUpV",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

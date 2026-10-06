@@ -1,0 +1,202 @@
+{
+  "name": "Lindwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg",
+  "items": [
+    {
+      "_id": "WzK83cIdJeKfLgMh",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 20,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.WzK83cIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "oRxJE6A6B7C8D9Ea",
+      "name": "Cœur régénérant (lindwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "oRxJE6A6B7C8D9Ea",
+        "summary": "Le cœur crée un lindwurm après 1d10 semaines ; le manger guérit entièrement, mais risque de transformer le consommateur en lindwurm.",
+        "description": "<p>Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guérit de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective.</p><p>Il est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 118
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.oRxJE6A6B7C8D9Ea"
+    },
+    {
+      "_id": "JBOXObHcIdJeKfLg",
+      "name": "Constriction (lindwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "JBOXObHcIdJeKfLg",
+        "summary": "Enserrement à VC 8 sans PC ; 2d6 dégâts par tour ; libération VS 12 (Force).",
+        "description": "<p>Un lindwurm peut tenter d’enserrer une victime dans ses anneaux en effectuant un test de VC 8 sans dépenser de PC. En cas de réussite, il serre la victime fermement en l’entourant de son corps. La victime subit 2d6 points de dégâts à chaque tour, en prenant en compte la protection éventuelle de son armure.</p><p>Elle ne peut se libérer que si elle réussit un test de situation avec une valeur de situation de 12 (le modificateur de Force s’applique). Si la victime rate son test de situation, elle peut à nouveau tenter de se libérer une fois par tour de jeu, mais à chaque nouveau tour, un modificateur cumulatif de -1 est appliqué (ainsi, après trois tours de jeu, la valeur de situation pour se libérer s’élève à 9). Pour chaque individu qui tente d’aider la victime, le test de situation bénéficie d’un modificateur de +1. Si les personnages qui aident bénéficient d’une Force exceptionnelle, leur modificateur de Force est ajouté au test de compétence.</p><p>Durant chaque tour de jeu pendant lequel le lindwurm comprime sa victime, le wurm ne peut rien faire d’autre. Il peut tenter de mordre un autre adversaire au lieu de continuer à comprimer sa victime. Le cas échéant, la victime reste saisie par le lindwurm mais elle ne subit aucun dégât.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 118
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.JBOXObHcIdJeKfLg"
+    },
+    {
+      "_id": "9uVrYHcIdJeKfLgM",
+      "name": "Saisie",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "9uVrYHcIdJeKfLgM",
+        "summary": "Après une morsure, prise en gueule à VC 10 opposée à la Force ; maintien testé à chaque tour et 1d10 (JO 9-10) dégâts/tour.",
+        "description": "<p>Après avoir réussi une attaque de Morsure, un lindwurm peut tenter de saisir une victime dans sa gueule. S’il y parvient, il peut tenter de maintenir la victime entre ses mâchoires. En réussissant un test de Saisie (valeur de compétence 10), le lindwurm garde la victime dans sa gueule (si la victime a une Force exceptionnelle, on déduit son modificateur de la valeur de compétence). Un lindwurm retourne le plus souvent à son antre en rampant dès qu’il réussit à saisir une proie.</p><p>Le lindwurm doit réussir un test de compétence de Saisie à chaque nouveau tour de jeu afin de maintenir sa prise sur la victime. À chaque tour pendant lequel le lindwurm maintient la victime dans sa gueule, celle-ci subit 1d10 (JO 9-10) points de dégâts.</p><p>Le maître de jeu décide si le lindwurm lâche sa prise lorsqu’il est attaqué ou blessé par un ennemi. Par exemple, un test de situation avec une valeur de situation de 15 peut être effectué chaque fois que le wurm subit plus de 15 points de dégâts pour savoir s’il lâche sa prise. Pour chaque point de dégâts au-dessus de 15, la valeur de situation est réduite de 1. Ainsi, Si le lindwurm subit 20 points de dégâts, il doit effectuer un test de situation avec une valeur de situation de 10 (15-5).</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 120
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.9uVrYHcIdJeKfLgM"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AOI0ZaC7C8D9EaGb.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "AOI0ZaC7C8D9EaGb",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 14
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 145,
+        "max": 145
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -3
+    },
+    "movement": {
+      "base": 40
+    },
+    "description": "Le lindwurm ressemble beaucoup plus à un serpent que les autres créatures draconiques. Son corps massif peut atteindre une longueur de 60 mètres. Il est aussi épais que le plus imposant des chênes des plaines de Viranne. C'est une massive créature serpentine qui se déplace en rampant et enserre ses victimes dans ses anneaux. Sa gueule peut engloutir une chèvre en deux bouchées et saisir une proie pour l'emporter en rampant. Sa peau est assez vieille et grande pour que les fidèles s'en enveloppent lors des serments de sang.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "other",
+      "size": "5",
+      "age": "100, max 175",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 130,
+      "bodyMax": 160,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "10 m",
+          "max": "40 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Serpent-dragon de 60 mètres, épais comme un chêne, vorace et constricteur",
+      "environment": "Grands antres souterrains, de préférence en bordure de forêt",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 118
+      }
+    }
+  },
+  "_id": "AOI0ZaC7C8D9EaGb",
+  "_key": "!actors!AOI0ZaC7C8D9EaGb",
+  "folder": "hHkEitXsYtZu0v1w"
+}

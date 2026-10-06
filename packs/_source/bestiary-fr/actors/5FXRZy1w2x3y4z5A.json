@@ -1,0 +1,123 @@
+{
+  "name": "Boeuf/taureau",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg",
+  "items": [
+    {
+      "_id": "hE7gyE6B7C8D9EaG",
+      "name": "Cornes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 16,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!5FXRZy1w2x3y4z5A.hE7gyE6B7C8D9EaG",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "5FXRZy1w2x3y4z5A",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Cornes",
+          "value": 14
+        },
+        {
+          "attack": "Cornes",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 86,
+        "max": 86
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "C'est une bête massive au poitrail profond et à l'encolure épaisse surmontée d'une bosse musculaire. Sa tête large porte un mufle humide et naseaux dilatés, ainsi que deux cornes épaisses, courbes et pointues. Son pelage rude et dense, brun-noir ou bringé, s'épaissit en hiver autour du cou et des épaules. Ses pattes colonnaires se terminent par de larges sabots fendus capables de piétiner la neige. Sa longue queue touffue à l'extrémité chasse les insectes d'un mouvement nerveux.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "3",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "1d6",
+      "bodyMin": 86,
+      "bodyMax": 86,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "8 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colosse musculeux aux cornes redoutables.",
+      "environment": "Pâturages, vallées herbeuses et fermes des basses terres de Mittland et d'Ovanga.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "5FXRZy1w2x3y4z5A",
+  "_key": "!actors!5FXRZy1w2x3y4z5A",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

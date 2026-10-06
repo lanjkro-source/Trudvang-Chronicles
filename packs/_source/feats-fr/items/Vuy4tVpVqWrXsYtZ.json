@@ -1,0 +1,19 @@
+{
+  "_id": "Vuy4tVpVqWrXsYtZ",
+  "name": "Pattes d’araignée",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Vuy4tVpVqWrXsYtZ",
+    "summary": "Marche sur les murs à la moitié du mouvement et sur les plafonds au tiers.",
+    "description": "<p>Les gobelins peuvent se déplacer sur les parois et le plafond des grottes. Un gobelin se déplace à la moitié de sa capacité de mouvement sur les murs et au tiers sur les plafonds.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 149
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Vuy4tVpVqWrXsYtZ",
+  "folder": null
+}

@@ -1,0 +1,571 @@
+{
+  "name": "Gråtroll",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
+  "items": [
+    {
+      "_id": "4lYnNMgMhNiOjPkQ",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.4lYnNMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Krum swerd (cimeterre)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1.3,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "rUYrqNfLgMhNiOjP",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.rUYrqNfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Barda makir (masse de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "aVGWgH9EaGbHcIdJ",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.aVGWgH9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "name": "Tvei faldir (fléau à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 3,
+        "value": 10,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "VLjjwVnToUpVqWrX",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.VLjjwVnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Petit bouclier renforcé de fourrure",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "source": "Livre des règles, p. 118",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "passiveProtection": 2,
+        "weight": 2,
+        "value": 2,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "EdrdMeHcIdJeKfLg",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.EdrdMeHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "cuir renforcé de métal",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "source": "Livre des règles, p. 119",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "heft": 4,
+        "weight": 13,
+        "value": 30,
+        "initiativeModifier": -1,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "zNwN57z5A6B7C8D9",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.zNwN57z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "_id": "OG4PmMfLgMhNiOjP",
+      "name": "Vecteur de maladies",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "OG4PmMfLgMhNiOjP",
+        "summary": "À moins de 2 m d’un troll malade, VS 7 (Constitution) ; réussite : immunité un mois, échec : effet de maladie au d20.",
+        "description": "<p>Les trolls mènent une vie primitive et crasseuse, et sont donc souvent les vecteurs de nombreuses maladies. Les créatures situées à moins de 2 mètres d’un troll malade doivent effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Constitution s’applique). Si le test est réussi, la créature est immunisée aux maladies des trolls pendant un mois. En cas d’échec, déterminez l’effet qui touche la victime en consultant la table page 153.</p><table><thead><tr><th>1d20</th><th>Effet</th></tr></thead><tbody><tr><td>1 à 5</td><td>La puanteur du troll imprègne les vêtements et la victime sent très mauvais.</td></tr><tr><td>6 à 9</td><td>Vertiges : -1 aux valeurs de compétence et de situation pendant une heure.</td></tr><tr><td>10 à 13</td><td>Gros rhume : -1 aux valeurs de compétence et de situation pendant une journée.</td></tr><tr><td>14 à 16</td><td>Très gros rhume et fièvre pendant 1d6 jours : -2 aux valeurs de compétence et de situation, mouvement réduit aux 2/3.</td></tr><tr><td>17 à 18</td><td>Rougeurs importantes pendant 1d6 jours : -3 aux valeurs de compétence et de situation. À la fin, test VS 7 (Constitution) ; en cas d’échec, le même effet perdure 1d3 jours supplémentaires.</td></tr><tr><td>19 à 20</td><td>1d10+5 gros furoncles apparaissent. Chaque jour, 1d3 éclatent jusqu’à disparition complète ; chaque furoncle inflige 1d3 dégâts quand il éclate.</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 151
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.OG4PmMfLgMhNiOjP"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "pAbCZpRmSnToUpVq",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 1,
+      "intelligence": -2,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 6,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 2,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 5,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 7,
+        "bonus": 0
+      },
+      "care": {
+        "value": 5,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Divertissement",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 2,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes légères à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Foi",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Invocation",
+        "skillId": "faith",
+        "catalogId": "invoke",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Noaj",
+        "skillId": "faith",
+        "catalogId": "noaj",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Tablette sacrée : …",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Nature",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Connaissance de la nature",
+        "skillId": "wilderness",
+        "catalogId": "natureKnowledge",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Géographie",
+        "skillId": "wilderness",
+        "catalogId": "geography",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Survie",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Savoir-faire",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Artisanat",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Matériaux durs",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Matériaux souples",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 8
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 7
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 7
+        },
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 6
+        },
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 5
+        },
+        {
+          "attack": "Petit bouclier renforcé de fourrure",
+          "value": 9
+        },
+        {
+          "attack": "Petit bouclier renforcé de fourrure",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 11
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 9
+        },
+        {
+          "attack": "Petit bouclier renforcé de fourrure",
+          "value": 7
+        },
+        {
+          "attack": "Petit bouclier renforcé de fourrure",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Tvei faldir (fléau à deux mains)",
+          "value": 12
+        },
+        {
+          "attack": "Tvei faldir (fléau à deux mains)",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 47,
+        "max": 47
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 1
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "Le corps de la plupart des trolls gris est légèrement plus imposant que celui des humains. Il est orné d'une tête plutôt épaisse avec un gros nez protubérant. Ils ont des bras musclés, des petites jambes arquées et de trop grands pieds. Comme les kungstrolls, les gråtrolls ont une longue queue semblable à celle des vaches. Leur odorat est réputé très poussé.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "1.5",
+      "age": "25, max 60",
+      "naturalArmor": 1,
+      "fearFactor": "1d10",
+      "bodyMin": 41,
+      "bodyMax": 53,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,50 m",
+          "max": "15 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Trapu à grosse tête et gros nez protubérant, bras musclés, jambes arquées, grands pieds et queue de vache.",
+      "environment": "Bois et camps forestiers, antres souterrains et habitats humains abandonnés",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 151
+      }
+    }
+  },
+  "_id": "pAbCZpRmSnToUpVq",
+  "_key": "!actors!pAbCZpRmSnToUpVq",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

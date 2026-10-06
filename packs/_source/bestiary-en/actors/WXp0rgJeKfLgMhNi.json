@@ -1,0 +1,507 @@
+{
+  "name": "Sálhele",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
+  "items": [
+    {
+      "_id": "crxGEHcIdJeKfLgM",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.crxGEHcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "name": "Glaaf (Short Sword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "A short sword, usually double-edged, common in eastern Trudvang and associated with the ancient Brots.",
+        "source": "Game Master's Guide, p. 69",
+        "category": "oneHandedLight",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1,
+        "value": 9,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedLightWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "fD4ZfaE9EaGbHcId",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.fD4ZfaE9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Barda swerd (battle sword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 2.5,
+        "value": 18,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "0tHmvoSnToUpVqWr",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.0tHmvoSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "name": "Tvei Swerd (Two-Handed Sword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "A huge, heavy sword that sacrifices speed for reach, power, and terror on the battlefield.",
+        "source": "Game Master's Guide, p. 72",
+        "category": "twoHanded",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 10,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 4,
+        "value": 28,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "LkkJKC6B7C8D9EaG",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.LkkJKC6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "name": "Small Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A quick shield allowing three weapon actions per round. Shields are used primarily to parry successful melee attacks.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "wbX5ZQkQlRmSnToU",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.wbX5ZQkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "Hardened Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Leather boiled in oil and formed to the wearer. It is quieter than metal armor and offers moderate protection.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 30,
+          "max": 30
+        },
+        "heft": 3,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 10.5,
+        "value": 15,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "N08HOIcIdJeKfLgM",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.N08HOIcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "_id": "T8HavqRmSnToUpVq",
+      "name": "Control Animals",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "T8HavqRmSnToUpVq",
+        "summary": "The sálhele can control animals.",
+        "description": "<p>Since a sálhele has a difficult time walking, it is not uncommon for them to control animals to use as mounts. These can be anything from horses to big hounds or swine. The sálhele rides the animal until it collapses from exhaustion, at which point the skeleton will leave the beast behind to find a new riding companion.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 66
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.T8HavqRmSnToUpVq"
+    },
+    {
+      "_id": "jqzjOTlRmSnToUpV",
+      "name": "Sense Living",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jqzjOTlRmSnToUpV",
+        "summary": "Detects all living creatures within 100 m, regardless of concealment.",
+        "description": "<p>Sálheles can sense living creatures within 100 meters. This means that they can find living creatures no matter how well the targets have hidden themselves.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 67
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.jqzjOTlRmSnToUpV"
+    },
+    {
+      "_id": "Wz4aZJeKfLgMhNiO",
+      "name": "Resilient",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Wz4aZJeKfLgMhNiO",
+        "summary": "The sálhele ignores lost limbs; immune to piercing weapons, half cutting damage, normal crushing damage.",
+        "description": "<p>Since a sálhele is an undead creature, it takes no notice of damage. A skeleton that loses an arm or a leg keeps on fighting with the same ferocity. The only vital body part that the skeleton cannot lose is the head. If the skull is chopped off, the skeleton will fall into a bone pile and its spirit will depart for Misthal.</p><p>Since a skeleton consists mainly of empty space between bones, it takes different damage depending on the type of weapon used in the attack. Skeletons take no damage from arrows, piercing weapons (daggers), or thrust weapons (spears), and they take half damage from cutting weapons (swords). Crushing weapons (clubs and maces) deal normal damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 67
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.Wz4aZJeKfLgMhNiO"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Durable",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+        "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 39
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "WXp0rgJeKfLgMhNi",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": -4,
+      "constitution": -4,
+      "dexterity": -4,
+      "intelligence": -6
+    },
+    "skills": {
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "agility": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Horsemanship",
+        "skillId": "agility",
+        "catalogId": "horsemanship",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Riding",
+        "skillId": "agility",
+        "catalogId": "riding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "1H Light Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shield Bearer",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 10
+        },
+        {
+          "attack": "Unarmed",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Barda swerd (battle sword)",
+          "value": 10
+        },
+        {
+          "attack": "Barda swerd (battle sword)",
+          "value": 7
+        },
+        {
+          "attack": "Small Wooden Shield",
+          "value": 12
+        },
+        {
+          "attack": "Small Wooden Shield",
+          "value": 9
+        }
+      ],
+      [
+        {
+          "attack": "Glaaf (Short Sword)",
+          "value": 12
+        },
+        {
+          "attack": "Glaaf (Short Sword)",
+          "value": 11
+        },
+        {
+          "attack": "Small Wooden Shield",
+          "value": 8
+        },
+        {
+          "attack": "Small Wooden Shield",
+          "value": 7
+        }
+      ],
+      [
+        {
+          "attack": "Tvei Swerd (Two-Handed Sword)",
+          "value": 12
+        },
+        {
+          "attack": "Tvei Swerd (Two-Handed Sword)",
+          "value": 11
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 38,
+        "max": 38
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "The sálhele is a skeleton that stares at its victims from empty eye sockets. It opens its jaws and closes them again, clattering its teeth together. It points a skeletal finger at its prey and sometimes stoops over a skeletal horse's back. It wields old rusty weapons to cut down its enemies. Wide gaps separate its bones, and only the head is vital: removing the skull reduces it to a heap of bones.",
+    "details": {
+      "creatureType": "Mist creatures",
+      "type": "humanoid",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 32,
+      "bodyMax": 45,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Skeleton with clattering jaws like a macabre orchestra.",
+      "environment": "Not specified",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 64
+      }
+    }
+  },
+  "_id": "WXp0rgJeKfLgMhNi",
+  "_key": "!actors!WXp0rgJeKfLgMhNi",
+  "folder": "nhZGosWrXsYtZu0v"
+}

@@ -1,0 +1,270 @@
+{
+  "name": "Sombre horreur",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
+  "items": [
+    {
+      "_id": "0ISxU4z5A6B7C8D9",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.0ISxU4z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "_id": "5lKuVUlRmSnToUpV",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.5lKuVUlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "name": "Barda klót (chaîne de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 12,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "KjZF4aC7C8D9EaGb",
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.KjZF4aC7C8D9EaGb",
+      "effects": []
+    },
+    {
+      "_id": "IChFs8B7C8D9EaGb",
+      "name": "Envie de sang",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "IChFs8B7C8D9EaGb",
+        "summary": "Chaque attaque infligeant plus de 5 dégâts donne +1 VC à une attaque, successivement, jusqu’à la fin du combat.",
+        "description": "<p>Plus une sombre horreur se gorge de sang, plus elle devient dangereuse. Chaque fois qu’elle attaque et inflige plus de 5 points de dégâts, la VC d’une de ses attaques est augmentée de +1 jusqu’à la fin du combat. La première fois que cela arrive, la VC de sa première attaque est augmentée ; la deuxième fois, c’est la VC de sa deuxième attaque qui est augmentée ; et la troisième fois, c’est celle de sa troisième attaque. Quand chacune des attaques a été augmentée une fois de la sorte, la VC de la première attaque est à nouveau augmentée de +1, et ainsi de suite.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 67
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.IChFs8B7C8D9EaGb"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Tenace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+        "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 40
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ZKvM6WoUpVqWrXsY.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "ZKvM6WoUpVqWrXsY",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 1,
+      "intelligence": -4,
+      "strength": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 5,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 4,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 12
+        },
+        {
+          "attack": "Mains nues",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 12
+        },
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 11
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 33
+    },
+    "description": "La sombre horreur est une grande et horrible créature composée de vieux os, de racines, de branches et de terre trempés de sang répandu. Elle est formée de tout ce qui se trouvait dans la terre au moment du sacrifice, parfois de cadavres en décomposition et de souches sacrificielles. Son corps le plus courant est semblable à celui d'un humain ou d'un animal, avec une ou plusieurs têtes humaines ou animales. Elle porte sur elle des bouts de corps humains ou d'animaux qui lui servent de protection et d'armure. Sa forme est livrée au hasard : deux, trois, quatre, cinq ou six jambes, bras et têtes en nombre variable.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "3",
+      "age": "variable, max variable",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 80,
+      "bodyMax": 100,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "33 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Masse de branches, terre, os et cadavres gorgée de sang sacrificiel.",
+      "environment": "Sites de sacrifices où le sang a été déversé en abondance sur le sol",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 64
+      }
+    }
+  },
+  "_id": "ZKvM6WoUpVqWrXsY",
+  "_key": "!actors!ZKvM6WoUpVqWrXsY",
+  "folder": "nhZGosWrXsYtZu0v"
+}

@@ -2,10 +2,10 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.64.0",
+  "version": "0.65.0",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
-  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.64.0/trudvang-chronicles.zip",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.65.0/trudvang-chronicles.zip",
   "packs": [
     {
       "name": "skills-en",
@@ -54,6 +54,34 @@
       "type": "Item",
       "system": "trudvang-chronicles",
       "banner": "systems/trudvang-chronicles/assets/banners/religion-fr.webp"
+    },
+    {
+      "name": "bestiary-fr",
+      "label": "Bestiaire (fr)",
+      "path": "packs/bestiary-fr",
+      "type": "Actor",
+      "system": "trudvang-chronicles"
+    },
+    {
+      "name": "bestiary-en",
+      "label": "Bestiary (en)",
+      "path": "packs/bestiary-en",
+      "type": "Actor",
+      "system": "trudvang-chronicles"
+    },
+    {
+      "name": "feats-fr",
+      "label": "Capacités (fr)",
+      "path": "packs/feats-fr",
+      "type": "Item",
+      "system": "trudvang-chronicles"
+    },
+    {
+      "name": "feats-en",
+      "label": "Feats (en)",
+      "path": "packs/feats-en",
+      "type": "Item",
+      "system": "trudvang-chronicles"
     }
   ],
   "compatibility": {
@@ -148,6 +176,9 @@
         "htmlFields": [
           "description"
         ]
+      },
+      "creatureAbility": {
+        "htmlFields": ["description"]
       }
     }
   },

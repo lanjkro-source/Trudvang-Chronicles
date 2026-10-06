@@ -1,0 +1,19 @@
+{
+  "_id": "15ITDLfLgMhNiOjP",
+  "name": "Hurlement sauvage",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "15ITDLfLgMhNiOjP",
+    "summary": "Cri de la happja : résistance VS 8 (Psychisme), +5 si elle est vue avant ; échec : 1d10 (JO 10) peur.",
+    "description": "<p>Au début d’un combat, la happja pousse un abominable cri qui peut plonger dans l’horreur tous ceux qui l’entendent. Si la happja surprend ses victimes grâce à ce cri, celles-ci doivent effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). En cas d’échec, elles subissent 1d10 (JO 10) points de peur. Ceux qui voient la happja avant qu’elle ne crie ne sont pas surpris et bénéficient alors d’un bonus de +5 sur le test (valeur de situation 13).</p><p>Si le résultat du test de situation est un 20 naturel, la victime lâche les armes qu’elle tient en main et ne peut plus agir pendant 1d3 tours de jeu.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 77
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!15ITDLfLgMhNiOjP",
+  "folder": null
+}

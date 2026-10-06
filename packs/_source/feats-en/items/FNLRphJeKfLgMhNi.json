@@ -1,0 +1,19 @@
+{
+  "_id": "FNLRphJeKfLgMhNi",
+  "name": "Sap Defense",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FNLRphJeKfLgMhNi",
+    "summary": "A weapon wounding the vidrjotun sticks on 1-4 on a d10; extraction at situation value 12 (Strength), -1 each subsequent round.",
+    "description": "<p>The sap that runs through the body of the giant instead of blood is very sticky. When a vidrjotun is wounded by a weapon that causes the sap to run out, there is a chance that the weapon might be caught in the sap.</p><p>A luck roll is made each time a weapon deals damage to the giant. The result of 1-4 on 1d10 means that the weapon is caught in the sap so severely that to remove it, the character must make a situation roll with a situation value of 12 (Strength modifiers apply). On a failure, the weapon is stuck and a new situation roll can be attempted the following round. For each action round that passes, the situation value is reduced by -1.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 143
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FNLRphJeKfLgMhNi",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "MxUgKE5A6B7C8D9E",
+  "name": "Pétrification (démon tangible)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MxUgKE5A6B7C8D9E",
+    "summary": "VC 14 à 30 m, 1d3 fois/jour, résistance VS 6 (Psychisme), durée 1d10 (JO 7-10) jours, statue VP 20 / VI 200.",
+    "description": "<p>Le démon peut pétrifier une victime située à 30 mètres ou moins de lui (VC 14) sans dépenser le moindre point de combat. Ce pouvoir peut être utilisé 1d3 fois par jour et la pétrification dure 1d10 (JO 7-10) jours. L’armure et les vêtements de la victime sont eux aussi pétrifiés, ce qui n’est pas le cas de ses objets magiques.</p><p>La victime peut résister à la pétrification en réussissant un test de situation avec une valeur de situation de 6 (le trait Psychisme modifie ce test). En cas d’échec, la victime se transforme en statue de pierre. Cette pierre est très solide et pratiquement incassable. En pratique, cela signifie que la créature pétrifiée obtient une valeur de protection de 20 et une valeur d’intégrité de 200. Quand la valeur d’intégrité est réduite à 0, la créature commence à subir des dégâts comme à l’accoutumée et, si la créature pétrifiée subit un montant de dégâts égal au double de ses points de santé, la statue de pierre est fracassée et la victime meurt.</p><p>Une créature pétrifiée est dans un état de sommeil permanent, elle ne perçoit plus l’écoulement du temps ni ce qui se passe autour d’elle. Elle ne peut plus agir sur quoi que ce soit dans son environnement. Quand la durée de la pétrification touche à sa fin, la victime retrouve sa forme d’origine. Il est possible de libérer une créature pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja).</p><p>Une créature pétrifiée n’est pas inamovible et une créature suffisamment forte peut donc la soulever et la déplacer. La créature pétrifiée pèse à peu près dix fois son poids d’origine.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MxUgKE5A6B7C8D9E",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "wK1g6A3y4z5A6B7C",
+  "name": "Paralyzing Stare (eye spider)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "wK1g6A3y4z5A6B7C",
+    "summary": "Resist at situation value 7 (Psyche); paralysis for 1d3+2 rounds modified by Psyche, broken if the spider disappears or dies.",
+    "description": "<p>The eye spider likes to use the paralyzing power of its eyes. Each action round, the spider can try to hypnotize a victim. The victim must make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid being paralyzed. If the roll fails, the victim will be paralyzed for 1d3 + 2 action rounds (Psyche modifiers apply to the duration). A paralyzed victim cannot do anything else but stand and stare at the spider. If the spider disappears or dies, the spell is broken.</p><p>During the round in which the spider use the paralyzing stare attack, it cannot do other things. The spider will lose only 1 round: if its stare is successful, it can act during the later rounds of paralysis of the victim.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!wK1g6A3y4z5A6B7C",
+  "folder": null
+}

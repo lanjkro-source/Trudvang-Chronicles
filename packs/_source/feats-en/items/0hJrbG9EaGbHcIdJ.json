@@ -1,0 +1,19 @@
+{
+  "_id": "0hJrbG9EaGbHcIdJ",
+  "name": "Fear of Magic",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "0hJrbG9EaGbHcIdJ",
+    "summary": "Successive rolls against magic: situation values 8 then 12; failures: -3 to actions and flee for 1d6 rounds.",
+    "description": "<p>When hrim trolls come into contact with a source of magic, they must make a situation roll with a situation value of 8. If the roll is failed, they have a modifier of -3 on everything they attempt and must also attempt a new situation roll with a situation value of 12. A new failure means the hrim troll flees from the source of magic for 1d6 rounds before attempting to approach it again. When the hrim troll dares to approach again, it must repeat the situation roll, this time with a modifier of -2, which equates to a situation value of 10. Upon failure, this process is repeated until the situation value reaches 0, at which point the troll does not dare to approach the source of magic ever again.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 159
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!0hJrbG9EaGbHcIdJ",
+  "folder": null
+}

@@ -1,0 +1,327 @@
+{
+  "name": "Diser",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
+  "items": [
+    {
+      "_id": "5SL1RE8D9EaGbHcI",
+      "name": "Exhaust Life",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5SL1RE8D9EaGbHcI",
+        "summary": "Capture at SV 13 opposed by Psyche; every 3 points of damage absorbed restore 1 BP to the diser or increase its power.",
+        "description": "<p>A diser can ensnare a victim with a successful skill roll at SV 13. Subtract the victim's Psyche modifier from this SV: a modifier of +2 gives SV 11, while -2 gives SV 15. Each subsequent successful skill roll, likewise modified by the victim's Psyche, allows the diser to exhaust the victim's life force.</p><p>An ensnared victim can escape only by succeeding on a situation roll whose value the GM chooses according to the diser's power; the victim's Psyche modifier applies. An exceptionally powerful diser might allow situation value 1, and a very weak one 20. Repeat this roll each new action round. The GM may also vary the diser's skill values for capturing victims and absorbing their life force.</p><p>Stolen life force is expressed as damage to the victim. For every 3 points of damage inflicted, the diser gains +1 Body Point, first regenerating any BP it has lost. Once all its damage has healed, the diser instead grows stronger; the GM adjusts its characteristics as this happens.</p><p>The GM also decides the damage inflicted by each absorption. Examples are 1 point, 1d3 points, 1d5 points, 1d10 points, or 1d10 (OR 10) points.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.5SL1RE8D9EaGbHcI"
+    },
+    {
+      "_id": "G8S7IUlRmSnToUpV",
+      "name": "Appearance",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "G8S7IUlRmSnToUpV",
+        "summary": "Intangible body, immune to ordinary weapons; at 0 BP the diser is banished to Misthal.",
+        "description": "<p>There is nothing that says how a diser should look. Sometimes they seem colorless and almost transparent, and sometimes they can be as real as any person on the street, with the only difference being that they lack a physical body. But no matter how real they may seem, there is always one thing by which you can identify a diser: its eyes. These ghosts have a very difficult time recreating eyes. Their eyes are almost always milky and faintly glowing. If one looks very closely, which one should of course avoid, one can actually see the very fog of Misthal move in them.</p><p>The Body Points of a diser are a measure of how strong it is and how much damage it can absorb. Even if the diser is not a physical creature, it has a Body Point value. When the Body Points fall to zero, the wraith is banished to the realm of the dead. The diser takes no damage from normal weapons. Only holy or highly magical weapons can harm it (up to the game master to decide). Banishing a diser back to the realm of the dead can be done in a wide range of ways. Below is a short list of things that in some way harm a diser or banish it to the realm of the dead.</p><ul><li>Spells: Dismiss Undead, Control Undead, and Detect Undead.</li><li>Gerbanis prayers: Death Gust, Breath of Mogunda, and Will of Bodvildur.</li><li>Tenet of Nid prayers: Blessed Spear, Rowthguard’s Battle Scourge, Belo Seoth’s Axe, Holy Bolt, Sacred Burst, and Divine Purge.</li><li>Complete a task the wraith wishes to finish.</li><li>Say aloud the name the wraith had in life.</li><li>Persuade a victim to forgive the wraith for what it did while alive.</li></ul><p>Even if something is represented in the list above, it is up to the game master to decide whether the diser is affected by it or immune to it, just as there can be other things not on the list that affect the diser.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 52
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.G8S7IUlRmSnToUpV"
+    },
+    {
+      "_id": "FeLJJ1tZu0v1w2x3",
+      "name": "Mist Walk",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "FeLJJ1tZu0v1w2x3",
+        "summary": "Disappears in 1 round, reappears in 2; moves at up to triple normal movement, with doubled vulnerability during transitions.",
+        "description": "<p>The diser can disappear into thin air only to suddenly reappear in another place a short distance away. When a diser uses Mist Walk in this way, it moves at up to three times its normal movement rate. However, it takes 1 round of combat for the diser to disappear entirely, after which it can move through Mist Walk for as long as it wishes. It takes 2 rounds of combat for the diser to reappear.</p><p>When disappearing and reappearing, the diser is in its most vulnerable state. In this state, all harmful acts against the diser have double effect. For spells or prayers of power used against the diser whose effects depend on the diser’s Body Points, count only two thirds of the diser’s normal full Body Points (with no wounds or damage).</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.FeLJJ1tZu0v1w2x3"
+    },
+    {
+      "_id": "fM9m2B3y4z5A6B7C",
+      "name": "Frighten",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "fM9m2B3y4z5A6B7C",
+        "summary": "Terrible visions; Fear Points and resistance situation value (Psyche) are set by the GM according to the diser’s power.",
+        "description": "<p>The piercing gaze of a diser can expose a victim to terrible visions. The victim can completely or partially resist by succeeding on a situation roll with a situation value that is decided by the game master, taking into consideration the strength of the diser (Psyche modifiers apply).</p><p>What visions the victim sees will differ from case to case and will yield different amounts of Fear Points. It is up to the game master to decide how many Fear Points are appropriate and whether a successful situation roll completely frees the victim from any fear (and therefore nullifies the Fear Points).</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.fM9m2B3y4z5A6B7C"
+    },
+    {
+      "_id": "rPiP9lRmSnToUpVq",
+      "name": "Cold of Misthal",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "rPiP9lRmSnToUpVq",
+        "summary": "Passes through a creature at SV 12 to inflict cold damage; may also cause fear if the victim does not see it coming.",
+        "description": "<p>When a diser moves through a living being, it can produce strong cold through a successful roll (SV 12). The victim of the assault is filled with great cold. A strong diser that moves through living beings can make them feel as if they stood completely naked in the great ice plains. Here are a few examples of damage that a victim can be exposed to:</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (OR 10) points</li></ul><p>If the victim does not see the diser coming, the sudden feeling of cold can also lead to a high number of Fear Points being produced, according to GM’s Judgement.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.rPiP9lRmSnToUpVq"
+    },
+    {
+      "_id": "DaPcOQlRmSnToUpV",
+      "name": "Shriek of Death",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "DaPcOQlRmSnToUpV",
+        "summary": "Diser’s shriek: resistance at situation value 9 (Psyche), partial or full fear according to the result, repeated while the shriek lasts.",
+        "description": "<p>When the diser lets forth its horrid shriek, one would do best to let go of everything and cover one’s ears. Everyone who hears the shriek must truly be brave to avoid becoming paralyzed. How long this inability to act lasts depends on the victim’s Psyche and the strength of the diser. A person who hears the shriek can go unscathed, receive half the Fear Points, or receive all of the Fear Points. The victim makes a situation roll against the shriek’s SV 9 (the Psyche trait is used for the roll). The chart below illustrates the effect.</p><p>It is up to the game master to decide the fear factor of a shriek of death. A weak diser produces 1d10 (OR 10), while a strong diser can produce 1d10 (OR 6-10).</p><p>Depending on how far away a victim is from the diser when the wraith lets out its shriek of death, the victim can gain a positive modifier to the situation roll. For example, the modifier might be +1 in the middle of the range and +6 at the far edge of it.</p><p>How long a shriek lasts depends on the strength of the wraith. The truly strong spirits can shriek for up to 5 action rounds in a row, while the weaker ones will let out a short shriek (3 segments of an action round). A failed situation roll means that the character receives new Fear Points for each action round in which the shriek is sounding.</p><p>Usually, a diser can let forth a shriek of death once per day. However, some can do this several times a day, while others must wait for several days before they can shriek again.</p><table><thead><tr><th>Roll result</th><th>Effect</th></tr></thead><tbody><tr><td>Less than SV/2</td><td>No effect</td></tr><tr><td>Between SV/2 and SV</td><td>Half the Fear Points</td></tr><tr><td>Greater than or equal to SV</td><td>All the Fear Points</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.DaPcOQlRmSnToUpV"
+    },
+    {
+      "_id": "f8HxFiMhNiOjPkQl",
+      "name": "Vitner Manipulation",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "f8HxFiMhNiOjPkQl",
+        "summary": "The diser can manipulate flows of vitner.",
+        "description": "<p>Many spells that a diser possesses bear similarities to different vitner spells. It is up to the game master to decide if a diser has one or more abilities whose traits and functions can be compared to a spell.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 54
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.f8HxFiMhNiOjPkQl"
+    },
+    {
+      "_id": "dPcuOKeKfLgMhNiO",
+      "name": "Fog",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "dPcuOKeKfLgMhNiO",
+        "summary": "The diser surrounds itself with fog.",
+        "description": "<p>The diser has the ability to summon a fog that spreads out from the wraith at a speed of 1-5 meters per action round. How far the fog can spread, how high above the ground it stretches, and how long it lasts is all up to the game master to decide. Most disers have this ability.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.dPcuOKeKfLgMhNiO"
+    },
+    {
+      "_id": "U35mINhNiOjPkQlR",
+      "name": "Speak (Relevant Language)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "U35mINhNiOjPkQlR",
+        "summary": "The GM gives a speaking diser proficiency in Knowledge / Language / Foreign Tongue.",
+        "description": "<p>Not every wraith has the ability to speak to the living. Weaker spirits, such as the Lost and the Helpful, have trouble communicating with the living. The Wicked often choose not to speak since their hate for the living is so great that they prefer not to communicate.</p><p>The disers that have the ability to speak in one or several languages gain a skill value in the Knowledge skill (Language discipline and Foreign Tongue [relevant language]) specialty). How good the wraith is in its chosen tongue is up to the game master to decide.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 54
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.U35mINhNiOjPkQlR"
+    },
+    {
+      "_id": "s2C1vcGbHcIdJeKf",
+      "name": "Sense Life",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "s2C1vcGbHcIdJeKf",
+        "summary": "Detects living creatures within range and identifies the mentally weakest with skill rolls; spells and divine powers can counter it.",
+        "description": "<p>A diser has the ability to sense where a living creature is within the range of the ability. Each action round, the diser can make a successful skill roll to sense who among the living within range is the weakest mentally (Psyche is used). Two successful skill rolls give the diser knowledge of the two targets that are most mentally weak within range. However, targets can hide from the diser with the help of prayers of power or spells.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.s2C1vcGbHcIdJeKf"
+    },
+    {
+      "_id": "T3YqIZu0v1w2x3y4",
+      "name": "Lift",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "T3YqIZu0v1w2x3y4",
+        "summary": "The diser moves objects by thought alone.",
+        "description": "<p>The diser can lift an object and move it through the air. The size and weight of the object is up to the game master to decide. A creature that is exposed to the lift can resist it by making a situation roll with a situation value that is up to the game master, taking into consideration the weight of the victim and the strength of the diser.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 53
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.T3YqIZu0v1w2x3y4"
+    },
+    {
+      "_id": "WsKYW9B7C8D9EaGb",
+      "name": "Telepathy",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "WsKYW9B7C8D9EaGb",
+        "summary": "The diser can read minds and whisper into them.",
+        "description": "<p>The diser has the ability to speak to one or several people mentally. The addressed will hear voices as if someone is speaking to them, with the only difference being that they are the only ones hearing what the wraith is saying.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 54
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.WsKYW9B7C8D9EaGb"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.yCooPeIdJeKfLgMh"
+    },
+    {
+      "_id": "fbai7XrXsYtZu0v1",
+      "name": "Sight",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "fbai7XrXsYtZu0v1",
+        "summary": "Normal daylight range in clear conditions, even in darkness; up to 100 m in fog, smoke or magical patterns.",
+        "description": "<p>Under clear weather conditions (including natural darkness), a diser sees as far as a human can see in daylight. During other conditions such as thick fog, smoke, or magical patterns, a diser can see up to 100 meters ahead.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 54
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5ouPJD6B7C8D9EaG.fbai7XrXsYtZu0v1"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "5ouPJD6B7C8D9EaG",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 57,
+        "max": 57
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A diser is a spirit without a physical body, often impossible to see or hear. Its immaterial form may be dull and almost transparent, or as real as any passerby in the street. Its distinctive feature is its eyes, almost always milky and glowing. On close inspection, the mist of Misthal can be seen moving within them. Rare black disers can take physical form, often that of a skeleton.",
+    "details": {
+      "creatureType": "Mist creatures",
+      "type": "entity",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 52,
+      "bodyMax": 63,
+      "move": [
+        {
+          "mode": "spécial",
+          "distance": "2 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Immaterial ghost with milky eyes in which the mist of Misthal rolls.",
+      "environment": "Haunted places near where it died or places it frequented in life",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 50
+      }
+    }
+  },
+  "_id": "5ouPJD6B7C8D9EaG",
+  "_key": "!actors!5ouPJD6B7C8D9EaG",
+  "folder": "nhZGosWrXsYtZu0v"
+}

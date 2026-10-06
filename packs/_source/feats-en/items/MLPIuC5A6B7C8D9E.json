@@ -1,0 +1,19 @@
+{
+  "_id": "MLPIuC5A6B7C8D9E",
+  "name": "Change Self (logiwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MLPIuC5A6B7C8D9E",
+    "summary": "One transformation per year with unlimited duration, losing the dragon’s physical attributes.",
+    "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 124
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MLPIuC5A6B7C8D9E",
+  "folder": null
+}

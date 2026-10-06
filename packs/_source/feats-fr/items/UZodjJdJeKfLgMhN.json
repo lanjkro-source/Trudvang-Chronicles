@@ -1,0 +1,19 @@
+{
+  "_id": "UZodjJdJeKfLgMhN",
+  "name": "Sang de morkvitner",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UZodjJdJeKfLgMhN",
+    "summary": "Protection naturelle élevée et immunité aux sorts de vitner et aux talents divins.",
+    "description": "<p>Le sang du grendel semble saturé de morkvitner. C’est également le cas de sa peau couleur de boue qui le protège efficacement (cette protection est déjà prise en compte dans la valeur très élevée de son armure naturelle).</p><p>Le sang de morkvitner confère également au grendel une immunité aux sorts de vitner et aux talents divins.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 75
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UZodjJdJeKfLgMhN",
+  "folder": null
+}

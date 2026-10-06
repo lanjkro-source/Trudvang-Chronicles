@@ -1,0 +1,19 @@
+{
+  "_id": "LTLHNqSnToUpVqWr",
+  "name": "Yeux de lune",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LTLHNqSnToUpVqWr",
+    "summary": "Lueur nocturne attirante : VS 8 (Psychisme) pour ne pas naviguer involontairement vers le logrjotun.",
+    "description": "<p>Les grands yeux des logrjotuns diffusent une lumière semblable à celle de la pleine lune après la tombée de la nuit. Cette lueur est impossible à voir lorsqu’il fait jour mais, une fois la nuit tombée, un marin peut voir les yeux d’un logrjotun qui ressemblent à deux petites lunes rondes dans le lointain.</p><p>Même si ce n’est pas dans l’intention du géant, la lumière émise par ses yeux peut être dangereusement attirante. Les marins doivent réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas naviguer de manière inconsciente en direction de la lumière.</p><p>Bien que les logrjotuns soient des créatures paisibles, ils peuvent s’énerver contre des embarcations qui s’approcheraient trop près d’eux ou qui les percuteraient.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 136
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LTLHNqSnToUpVqWr",
+  "folder": null
+}

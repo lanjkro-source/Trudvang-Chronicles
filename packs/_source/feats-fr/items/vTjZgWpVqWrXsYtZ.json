@@ -1,0 +1,19 @@
+{
+  "_id": "vTjZgWpVqWrXsYtZ",
+  "name": "Baiser de la hantise",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "vTjZgWpVqWrXsYtZ",
+    "summary": "Endort la victime, puis absorbe sa vie : 1d5 dégâts par tour pendant 1d10 (JO 10) tours, avec des tests pour se réveiller.",
+    "description": "<p>Quand une hantise a faim, elle s’introduit dans la maison d’une victime pendant la nuit et lui donne un baiser de la hantise. En approchant sans bruit de sa victime assoupie et en posant délicatement ses mains sur sa poitrine, elle peut la plonger dans un profond sommeil. La victime doit effectuer un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique). En cas de réussite, elle se réveille, trempée de sueur froide, après avoir fait un horrible cauchemar et peut effectuer un autre test de situation avec une valeur de situation de 6 (le modificateur de Perception s’applique) pour tenter d’apercevoir la hantise avant sa fuite. Encore faut-il savoir si la victime sait que c’est une hantise ou si elle pense que c’est une hallucination provoquée par son cauchemar.</p><p>Si le premier test de situation est raté, la victime est plongée dans un sommeil profond, après quoi la hantise monte sur sa poitrine pour lui donner le baiser de la hantise (en prenant soin de ne pas faire de bruit pour ne pas réveiller les autres occupants de la maison). Pendant les 1d10 (JO 10) prochains tours de jeu, la hantise absorbe la force vitale de la victime en lui infligeant 1d5 points de dégât par tour de jeu. À chaque tour, la victime peut effectuer un test de situation avec une valeur de situation de 5 (le modificateur de Psychisme s’applique) pour voir si elle se réveille. Les résultats en cas d’échec ou de réussite sont les mêmes que lorsque la hantise tente de plonger sa victime dans un sommeil profond (Cf. ci-dessus).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 88
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!vTjZgWpVqWrXsYtZ",
+  "folder": null
+}

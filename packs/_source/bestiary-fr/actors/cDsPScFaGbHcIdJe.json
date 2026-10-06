@@ -1,0 +1,248 @@
+{
+  "name": "Myling",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg",
+  "items": [
+    {
+      "_id": "q9jJWrToUpVqWrXs",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.q9jJWrToUpVqWrXs",
+      "effects": []
+    },
+    {
+      "_id": "xhy2SRlRmSnToUpV",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d3",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 5,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.xhy2SRlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "_id": "Z8nwIJdJeKfLgMhN",
+      "name": "Imitation",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Z8nwIJdJeKfLgMhN",
+        "summary": "Imite la voix de sa victime : VS 12 (Psychisme) pour s’éloigner, -1 par myling supplémentaire.",
+        "description": "<p>Les mylings sont très talentueux pour imiter d’autres créatures et utilisent cette tactique pour gagner du temps jusqu’à ce que d’autres mylings les rejoignent. Un myling prononcera souvent la phrase « Donne-moi ton nom ».</p><p>Quiconque entend un myling imiter sa voix doit effectuer un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de s’éloigner de l’étrange créature.</p><p>Pour chaque myling qui se joint à l’imitation, la valeur de situation est réduite de -1.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 55
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.Z8nwIJdJeKfLgMhN"
+    },
+    {
+      "_id": "dihK2uYtZu0v1w2x",
+      "name": "Nom de l’âme",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "dihK2uYtZu0v1w2x",
+        "summary": "Le vrai nom permet de lier et voler l’âme : perte d’un niveau de Psychisme ; seule la victime peut récupérer son âme en tuant le myling sans aide.",
+        "description": "<p>Un myling qui obtient le véritable nom d’une personne peut lier l’âme de cette personne à la sienne afin d’augmenter sa puissance. Il le fait en effectuant un sacrifice en l’honneur de sa déesse. Ce rite sacrificiel prend du temps et l’endroit où il doit être réalisé peut être distant. Le myling doit donc faire vite pour ne pas que la victime réalise ce qui est en train de se passer.</p><p>Quand une victime révèle son vrai nom, elle doit effectuer un test de situation avec une valeur de situation de 6 (le modificateur d’Intelligence s’applique) pour comprendre que le myling trame quelque chose. Si le test est réussi, la victime se sent mal à l’aise et sait qu’elle doit immédiatement mettre un terme aux agissements du myling. Un myling qui parvient à lier son âme à celle d’une créature bénéficie d’un statut élevé parmi ses semblables. Une victime qui a perdu son âme parce qu’elle est liée à un myling se sentira vidée, sans but ni raison d’être, jusqu’à la fin de sa vie. Le trait Psychisme de la victime est réduit d’un niveau. La seule façon de récupérer son âme perdue consiste à tuer le myling qui l’a dérobée sans l’aide de personne. Si le myling meurt de la main de quelqu’un d’autre, l’âme est définitivement perdue.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 55
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.dihK2uYtZu0v1w2x"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Tenace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+        "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 40
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "G4RBaoRmSnToUpVq",
+      "name": "Noyade (myling)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "G4RBaoRmSnToUpVq",
+        "summary": "Résister à pied : VS 14, -1 par myling ; en eau profonde, Natation -1 par myling.",
+        "description": "<p>Quand un myling entend des gens approcher, il peut se faire passer pour un enfant sur le point de se noyer (il se comporte généralement de la sorte uniquement s’il y a d’autres mylings à proximité). Le myling se comporte comme un enfant humain, barbote dans l’eau et demande aux voyageurs leurs noms. S’il n’obtient pas les vrais noms des voyageurs ou si quelqu’un saute dans l’eau pour venir en aide à ce qui lui semble être un enfant, le myling passe à l’attaque, mais seulement s’il est soutenu par un groupe de myling plus important que les voyageurs.</p><p>Une victime menacée par les mylings doit parvenir à retrouver la terre ferme pour ne pas risquer la noyade. Si la victime a pied dans un lac ou une autre étendue d’eau, elle doit réussir un test de situation avec une valeur de situation de 14 (les modificateurs de Force ou de Dextérité s’appliquent). Pour chaque myling qui tente de tirer la victime vers le fond, la valeur de situation est réduite de -1. Si l’eau est trop profonde et nécessite que la victime nage pour garder la tête hors de l’eau, un test de compétence d’Agilité avec la spécialité Natation est effectué à la place du test de situation. La valeur de compétence d’Agilité est réduite de -1 pour chaque myling qui tente de noyer la victime. Si la victime ne maîtrise pas la spécialité Natation, aucun test n’est effectué et la victime se noie automatiquement.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 55
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.G4RBaoRmSnToUpVq"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!cDsPScFaGbHcIdJe.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "cDsPScFaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": 1
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Morsure",
+          "value": 6
+        },
+        {
+          "attack": "Mains nues",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 15,
+        "max": 15
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 1
+    },
+    "movement": {
+      "base": 7
+    },
+    "description": "Le myling a la même corpulence qu'un enfant et une petite taille enfantine. Son apparence enfantine trompeuse lui sert à attirer les voyageurs dans des pièges. Il sait se faire passer pour un enfant humain qui barbote dans l'eau sur le point de se noyer. Sa voix imite les sons humains et répète sans cesse : Donne-moi ton nom. Vu de loin dans la pénombre, il ressemble à un enfant qui épie depuis la lisière de la forêt.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "0.5",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 13,
+      "bodyMax": 17,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "7 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "1 m",
+          "max": "7 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Faux enfant des marais qui réclame : Donne-moi ton nom.",
+      "environment": "Forêts profondes près d'une source d'eau, étendue d'eau ou marais, vivant sur la terre ferme",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 53
+      }
+    }
+  },
+  "_id": "cDsPScFaGbHcIdJe",
+  "_key": "!actors!cDsPScFaGbHcIdJe",
+  "folder": "nhZGosWrXsYtZu0v"
+}

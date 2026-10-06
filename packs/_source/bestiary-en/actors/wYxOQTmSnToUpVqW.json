@@ -1,0 +1,147 @@
+{
+  "name": "Mastomant",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/wYxOQTmSnToUpVqW.jpg",
+  "items": [
+    {
+      "_id": "PvQLddE9EaGbHcId",
+      "name": "Sweep",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "sweep",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!wYxOQTmSnToUpVqW.PvQLddE9EaGbHcId",
+      "effects": []
+    },
+    {
+      "_id": "ywb0LSjPkQlRmSnT",
+      "name": "Tusks",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "tusks",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!wYxOQTmSnToUpVqW.ywb0LSjPkQlRmSnT",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "wYxOQTmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/wYxOQTmSnToUpVqW.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Sweep",
+          "value": 14
+        },
+        {
+          "attack": "Tusks",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 180,
+        "max": 180
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 14
+    },
+    "description": "This colossal barrel-bodied beast is covered in incredibly thick long brown fur over a woolly undercoat. Its massive head bears small hairy ears, tiny sunken eyes, and a muscular trunk hanging to its knees. Two immense curved ivory tusks rise from its upper jaw and turn toward the sky. Trunk-like pillar legs end in broad padded feet with thick nails. Its short rope-like tail beats against its shaggy flanks.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "7",
+      "age": "null",
+      "naturalArmor": 3,
+      "fearFactor": "1d10",
+      "bodyMin": 180,
+      "bodyMax": 180,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "14 m",
+          "max": "14 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Shaggy titan with immense curving tusks.",
+      "environment": "Frozen steppes, tundra, and wind-scoured valleys in Trudvang's far north.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "wYxOQTmSnToUpVqW",
+  "_key": "!actors!wYxOQTmSnToUpVqW",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

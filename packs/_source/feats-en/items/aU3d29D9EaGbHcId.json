@@ -1,0 +1,19 @@
+{
+  "_id": "aU3d29D9EaGbHcId",
+  "name": "Abilities",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "aU3d29D9EaGbHcId",
+    "summary": "The skjuld has various supernatural abilities.",
+    "description": "<p>It is not unusual for a skjuld to have learned spells or elven abilities.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 96
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!aU3d29D9EaGbHcId",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "LSLD0OjPkQlRmSnT",
+  "name": "Hrim Body (hrim troll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LSLD0OjPkQlRmSnT",
+    "summary": "Cold sphere 10 m in diameter, resist at situation value 8 (Psyche), increasing d3 damage.",
+    "description": "<p>The hrimtroll has lived in the cold for such an extensive amount of time that its body has absorbed the cold. An ever-present frost pulsates in a sphere around the troll. The sphere is 10 meters in diameter. All who stand within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) in order to not flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves. A character with a full set of winter clothing that is made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d3</td></tr><tr><td>3</td><td>2d3</td></tr><tr><td>Each additional round</td><td>+1d3</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 159
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LSLD0OjPkQlRmSnT",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "Z8nwIJdJeKfLgMhN",
+  "name": "Mimic Creature",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Z8nwIJdJeKfLgMhN",
+    "summary": "Mimics a victim’s voice: situation value 12 (Psyche) to move away, -1 per additional myling.",
+    "description": "<p>A myling is very skilled in mimicking other creatures as a stalling tactic until other mylings can arrive. The myling will often say the sentence “Give me thy name.”</p><p>Anyone who hears the myling mimic his voice must make a situation roll with a situation value of 12 (Psyche modifiers apply) in order to move away from the strange creature.</p><p>For each myling that joins in mimicking, the situation value is modified by -1.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 63
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Z8nwIJdJeKfLgMhN",
+  "folder": null
+}

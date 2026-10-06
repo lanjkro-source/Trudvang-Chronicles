@@ -1,0 +1,19 @@
+{
+  "_id": "gCMi4MhNiOjPkQlR",
+  "name": "Danse féerique",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gCMi4MhNiOjPkQlR",
+    "summary": "Dix fées en ronde rendent la vigueur d’un repas ou les bénéfices de huit heures de sommeil.",
+    "description": "<p>Si une créature souffre de déshydratation, de faim, ou si elle est épuisée physiquement ou psychologiquement, dix fées peuvent danser ensemble en formant une ronde autour d’elle pour lui octroyer force et énergie. Une créature affamée ou assoiffée retrouve sa vigueur comme si elle avait pris un repas. Une créature épuisée est revigorée comme si elle avait dormi une nuit complète et bénéficie des effets normalement prodigués par huit heures de sommeil.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 73
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gCMi4MhNiOjPkQlR",
+  "folder": null
+}

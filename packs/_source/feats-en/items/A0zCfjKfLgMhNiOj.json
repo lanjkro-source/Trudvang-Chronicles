@@ -1,0 +1,19 @@
+{
+  "_id": "A0zCfjKfLgMhNiOj",
+  "name": "Form Trees",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "A0zCfjKfLgMhNiOj",
+    "summary": "The vidrjotun reshapes trees and forests at will.",
+    "description": "<p>The vidrjotuns have gained the ability to reshape trees to their liking. They can reshape anything from great living forests to individual trunks.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 141
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!A0zCfjKfLgMhNiOj",
+  "folder": null
+}

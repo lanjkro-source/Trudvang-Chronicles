@@ -1,0 +1,188 @@
+{
+  "name": "Kelpie",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg",
+  "items": [
+    {
+      "_id": "aldpxB6B7C8D9EaG",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.aldpxB6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "_id": "VbQLMPkQlRmSnToU",
+      "name": "Sabots",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "hooves",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.VbQLMPkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "_id": "8h85YWrXsYtZu0v1",
+      "name": "Puanteur envoûtante",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "8h85YWrXsYtZu0v1",
+        "summary": "VS 10 (Psychisme) pour résister à l’attraction ; le charme cesse après au moins 3 dégâts ou au début d’une noyade.",
+        "description": "<p>Le pouvoir le plus important de la kelpie est sa capacité à attirer les voyageurs imprudents sur une distance de plusieurs centaines de mètres. Même si la puanteur qu’elle sécrète est particulièrement horrible, elle véhicule un pouvoir envoûteur qui fausse la compréhension de ceux qui la respirent. L’envoûtement fait perdre à sa victime toute notion du temps et de l’espace et l’oblige à continuer de marcher sans s’arrêter. Lorsqu’elles s’éveillent de cet état, les victimes ne savent pas où elles se trouvent ni comment elles sont arrivées là.</p><p>Une personne qui sent la puanteur envoûtante d’une kelpie doit effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour surmonter l’envoûtement. Un test raté signifie que la victime continue de se déplacer en direction de la kelpie.</p><p>L’envoûtement est rompu si la victime subit au moins 3 points de dégâts ou si elle est sur le point de se noyer. Une fois la kelpie suffisamment proche, elle tente de tirer sa victime par le fond afin de la noyer.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 82
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.8h85YWrXsYtZu0v1"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "2xYo22w2x3y4z5A6",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 10
+        },
+        {
+          "attack": "Sabots",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 120,
+        "max": 120
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 36
+    },
+    "description": "La kelpie a l'allure d'un cheval, décrite dans les contes comme un beau cheval. L'animal observé était noir et malveillant. C'est une grande créature massive aux sabots et à la gueule pour mordre. Elle possède une crinière épaisse et des dents remarquables. Elle sécrète une puanteur horrible, pire qu'un tas de cadavres.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "quadruped",
+      "size": "4",
+      "age": "10, max 20",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 108,
+      "bodyMax": 132,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "36 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Cheval noir malveillant à la puanteur cadavérique envoûtante",
+      "environment": "Étangs et tourbières, lacs profonds et marécages, comme en Visentia et dans le Ghoowland",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 82
+      }
+    }
+  },
+  "_id": "2xYo22w2x3y4z5A6",
+  "_key": "!actors!2xYo22w2x3y4z5A6",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

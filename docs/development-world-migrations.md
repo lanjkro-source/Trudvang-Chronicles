@@ -69,4 +69,6 @@ La version de contenu 41 ajoute les profils d’armes naturelles de départ par 
 
 ## Hors périmètre
 
+Depuis la version 0.65, les huit PNJ de départ et leur dossier ne figurent plus dans `data/starter-content.json` : les créatures sont distribuées dans les compendiums Bestiaire. La réinstallation ne recrée ni ne supprime les anciens exemplaires mondiaux. Les anciens helpers `upsertActors()`, `applyBakedCreatureStats()`, `syncNpcCreatureData()` et les données de `modules/creature-feats.mjs` restent des reliquats temporaires, sans nouvelles entrées à importer ; ils pourront être retirés avec les autres migrations de développement. Les fiches de capacités reconnaissent encore les capacités historiques stockées en ActiveEffect via `flags.trudvang-chronicles.feat` (`creature-ability.mjs` et `TrudvangCreatureAbilitySheet`), tandis que les nouveaux compendiums utilisent le type Item `creatureAbility` : ce chemin historique est également supprimable après effacement des anciens mondes.
+
 Les fallbacks d'API Foundry V14/V16, la compatibilité de données avec des modules tiers et les outils de réparation explicitement destinés aux compendiums distribués ne sont pas automatiquement temporaires. Ils ne doivent donc être retirés qu'après une décision distincte.

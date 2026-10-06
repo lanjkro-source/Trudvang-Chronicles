@@ -1,0 +1,19 @@
+{
+  "_id": "eYf1GqSnToUpVqWr",
+  "name": "Deep Bellow",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "eYf1GqSnToUpVqWr",
+    "summary": "The galtir’s bellow, inaudible to humans, calls its tribe to the rescue.",
+    "description": "<p>Galtirs in the thick of combat will often roar for as long as they can, a so-called deep bellow. To humans, it will not sound too strange, but during the bellowing, there is a deep sound that humans and similar creatures cannot hear. This deep bellowing can be heard by galtirs far and wide. The more galtirs that perform the deep bellowing together, the easier it is for the sound to spread. Galtirs belonging to the same tribe, and sometimes other tribes, will hurry to the rescue as they answer with their own deep bellowing. When many galtirs perform the deep bellow together, they can form a great herd that will attack anything that comes close to them.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 14
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!eYf1GqSnToUpVqWr",
+  "folder": null
+}

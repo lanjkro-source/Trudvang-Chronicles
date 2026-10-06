@@ -1,3 +1,6 @@
+// TEMPORARY WORLD MIGRATION — historical starter NPC reference, no longer imported
+// into new worlds. The complete bilingual content now lives in bestiary-catalog-data.mjs
+// and creature-ability-data.mjs; preserve this legacy subset only for old-world helpers.
 // Baked creature reference for NPC imports (tracked runtime source; game doc/ is NOT shipped).
 //
 // Sources (read-only, private nested repo): "game doc/fr/trudvang-creatures-fr.json" (75 creatures)

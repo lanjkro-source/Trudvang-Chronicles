@@ -1,0 +1,277 @@
+{
+  "name": "Logiwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0.jpg",
+  "items": [
+    {
+      "_id": "SqQRYC5A6B7C8D9E",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.SqQRYC5A6B7C8D9E",
+      "effects": []
+    },
+    {
+      "_id": "TrOjRXqWrXsYtZu0",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 17,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.TrOjRXqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "_id": "STtcfE5A6B7C8D9E",
+      "name": "Fire breath",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": -4,
+        "naturalCombatPool": "firebreath",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.STtcfE5A6B7C8D9E",
+      "effects": []
+    },
+    {
+      "_id": "MLPIuC5A6B7C8D9E",
+      "name": "Change Self (logiwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "MLPIuC5A6B7C8D9E",
+        "summary": "One transformation per year with unlimited duration, losing the dragon’s physical attributes.",
+        "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 124
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.MLPIuC5A6B7C8D9E"
+    },
+    {
+      "_id": "go5al8z5A6B7C8D9",
+      "name": "Fire Breath",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "go5al8z5A6B7C8D9",
+        "summary": "The logiwurm breathes up to three times/day (SV 12, no CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide).",
+        "description": "<p>Like other dragons, the logiwurm has a breath weapon (not by spending any Combat Point, but by making a SV12 roll). This one is called Fire breath. The logiwurm can make up to three breath attacks per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The logiwurm’s profile specifies 3d10 (OR 7-10) damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 124
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.go5al8z5A6B7C8D9"
+    },
+    {
+      "_id": "NrD7FaGbHcIdJeKf",
+      "name": "Overheat",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NrD7FaGbHcIdJeKf",
+        "summary": "The logiwurm’s body heats up lethally to anyone nearby.",
+        "description": "<p>Without spending CP, the logiwurm can change its blood circulation to overheat its body. This costs one daily use of its breath attack. Overheating takes 3 action rounds to activate, during which the dragon can act normally, and lasts for another 3 rounds, during which it cannot perform any other action. All creatures within 10 meters take 2d10 (OR 9-10) damage per action round. Those 11-20 meters away take 2d10 damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 124
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.NrD7FaGbHcIdJeKf"
+    },
+    {
+      "_id": "qkzJr2tZu0v1w2x3",
+      "name": "Darkvision (100-300 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "qkzJr2tZu0v1w2x3",
+        "summary": "Normal sight in total darkness up to 100 m, fading until approximately 300 m.",
+        "description": "<p>The dragon can see up to 100 meters in pitch darkness as if it were daylight. Beyond that, visibility decreases and disappears completely at about 300 meters.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.qkzJr2tZu0v1w2x3"
+    },
+    {
+      "_id": "XJLfjcHcIdJeKfLg",
+      "name": "Thermal Sight",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "XJLfjcHcIdJeKfLg",
+        "summary": "Detects heat, size and distance up to 300 m; can be suppressed and is not stunned by sudden heat sources.",
+        "description": "<p>The creature detects heat sources up to 300 meters away. This allows it to estimate their magnitude and distance. The dragon can suppress its thermal sight when necessary and cannot be stunned by the sudden appearance of a heat source.</p><p>This ability works identically for the hrimwurm, jarnwurm, and logiwurm; it is distinct from their darkvision.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!CjkhIYqWrXsYtZu0.XJLfjcHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "CjkhIYqWrXsYtZu0",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": 4,
+      "strength": 10
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 14
+        },
+        {
+          "attack": "Claws",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 376,
+        "max": 376
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 52
+    },
+    "description": "This is the largest and most feared of all dragon creatures, of extraordinary size and red skin. Particularly thick, almost impenetrable scales cover it. Its skeleton is naturally black and as hot as a roaring fire, with a huge skull almost as large as wulter fishers' boats. Its fangs are broadsword-long and its claws as sharp as two-handed swords. Its only weakness lies on its belly, where the hide is thinner and the scales part as it breathes. Black external veins can then be seen, cooling after the blood has passed through the flames of its four lungs.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "winged quadruped",
+      "size": "13",
+      "age": "1 000, max 5 000",
+      "naturalArmor": 4,
+      "fearFactor": "1d10 (JO 6-10)",
+      "bodyMin": 339,
+      "bodyMax": 414,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "26 m",
+          "max": "52 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "26 m",
+          "max": "104 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Greatest red dragon, with a black skeleton and broadsword fangs.",
+      "environment": "Varied places, from abandoned castles to vast cave networks",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 122
+      }
+    }
+  },
+  "_id": "CjkhIYqWrXsYtZu0",
+  "_key": "!actors!CjkhIYqWrXsYtZu0",
+  "folder": "hHkEitXsYtZu0v1w"
+}

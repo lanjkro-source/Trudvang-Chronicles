@@ -1,0 +1,19 @@
+{
+  "_id": "UgB46VpVqWrXsYtZ",
+  "name": "Immune to Fire and Cold",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UgB46VpVqWrXsYtZ",
+    "summary": "Fire and cold cannot harm the creature.",
+    "description": "<p>A stonehinje is completely immune to fire and cold.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 99
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UgB46VpVqWrXsYtZ",
+  "folder": null
+}

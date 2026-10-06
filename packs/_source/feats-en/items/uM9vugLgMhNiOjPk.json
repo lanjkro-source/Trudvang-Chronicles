@@ -1,0 +1,19 @@
+{
+  "_id": "uM9vugLgMhNiOjPk",
+  "name": "Stone Throw",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "uM9vugLgMhNiOjPk",
+    "summary": "The giant tears out and throws enormous rocks at enemies.",
+    "description": "<p>With the help of its amazing strength, the firdtursir can rip great blocks of stone from the mountainside and throw them to crush its enemies. The blocks are so large and heavy that it is not possible to move them after they have been firmly placed on the ground. All over Trudvang where firdtursirs have passed through, one can find these blocks, commonly known as a “giant’s throw.” A thrown block landing on a player character would surely have only one outcome, and as a game master, you should use this ability mostly to frighten the characters and perhaps lay waste to buildings and such.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!uM9vugLgMhNiOjPk",
+  "folder": null
+}

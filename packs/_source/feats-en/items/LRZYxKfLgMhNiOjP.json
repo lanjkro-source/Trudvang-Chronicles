@@ -1,0 +1,19 @@
+{
+  "_id": "LRZYxKfLgMhNiOjP",
+  "name": "Illusion Trick",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LRZYxKfLgMhNiOjP",
+    "summary": "The king troll creates illusions to deceive its victims.",
+    "description": "<p>All king trolls can use very simple illusions to trick and fool. For example, the illusions can be used to make a plate of food seem like it’s full of maggots or frogs.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 165
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LRZYxKfLgMhNiOjP",
+  "folder": null
+}

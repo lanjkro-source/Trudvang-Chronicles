@@ -1,0 +1,209 @@
+{
+  "name": "Grendel",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg",
+  "items": [
+    {
+      "_id": "0oSkq8A6B7C8D9Ea",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.0oSkq8A6B7C8D9Ea",
+      "effects": []
+    },
+    {
+      "_id": "hox6RsVqWrXsYtZu",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.hox6RsVqWrXsYtZu",
+      "effects": []
+    },
+    {
+      "_id": "AAWA3VqWrXsYtZu0",
+      "name": "Terrifying Stare",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "AAWA3VqWrXsYtZu0",
+        "summary": "The grendel’s gaze makes even experienced warriors flee.",
+        "description": "<p>A grendel is truly a horrible foe to face. Even the most experienced warriors flee at the sight of it, mainly due to its terrifying stare. When a victim meets the grendel’s gaze, the victim must make a situation roll with a situation value of 8 (Psyche modifiers apply). A successful roll means that the victim is unscathed by the ordeal. A failed roll means that the victim gains 1d10 (OR 9-10) Fear Points and a negative modifier of -4 on everything they do while in the presence of the grendel. This last modifier is in addition to normal modifiers from the Fear Level reached. The situation roll must be made the first time a specific Grendel is seen and whenever the GM thinks to be the case.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 77
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.AAWA3VqWrXsYtZu0"
+    },
+    {
+      "_id": "UZodjJdJeKfLgMhN",
+      "name": "Blood of Dark Vitner",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "UZodjJdJeKfLgMhN",
+        "summary": "High natural protection and immunity to vitner spells and divine powers.",
+        "description": "<p>The blood of the grendel seems to be full of dark vitner. Its mud-colored skin is also infused with dark vitner, which provides it with good protection (already counted in its very good natural armor).</p><p>The dark vitner blood also has the effect of making the grendel immune to both vitner spells and divine powers.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 77
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.UZodjJdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zUKXHbFaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 6,
+      "dexterity": -2,
+      "strength": 3
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 13
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 79,
+        "max": 79
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 27
+    },
+    "description": "The grendel is a monstrous giant of the marshes. It shows its foul face only after nightfall. Its terrifying gaze makes even seasoned warriors flee. Its mud-colored skin protects it effectively. It has a neck, arms, and legs, as well as biting jaws and claws. Its blood seems saturated with dark vitner.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "humanoid",
+      "size": "3",
+      "age": "25, max 60",
+      "naturalArmor": 4,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 71,
+      "bodyMax": 87,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "27 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Mud-skinned marsh giant with a foul face and terrifying gaze.",
+      "environment": "Marshes and muddy ponds deep in the forests, especially in Soj, Mittland, and Stormlands",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 76
+      }
+    }
+  },
+  "_id": "zUKXHbFaGbHcIdJe",
+  "_key": "!actors!zUKXHbFaGbHcIdJe",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

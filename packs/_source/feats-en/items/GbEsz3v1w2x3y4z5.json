@@ -1,0 +1,19 @@
+{
+  "_id": "GbEsz3v1w2x3y4z5",
+  "name": "Terrifying Stench",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GbEsz3v1w2x3y4z5",
+    "summary": "The thorn beast’s foul smell spreads fear nearby.",
+    "description": "<p>The inner organs of a thorn beast are in a constant process of rot due to the unpleasant effects of the thornroot. This means that the great winged lizard carries a horrid and pungent stench of dead flesh and decay. A human being with a normal sense of smell can detect the stench at a distance of 50 meters. Anyone who approaches the beast closer than 5 meters gains 1d10 (OR 9-10) Fear Points due to the stench. This does not apply to tamers and expert riders which usually get used to the stench due to the long time spent with the beast.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 26
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GbEsz3v1w2x3y4z5",
+  "folder": null
+}

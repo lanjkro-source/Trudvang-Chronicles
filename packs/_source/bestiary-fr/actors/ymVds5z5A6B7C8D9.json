@@ -1,0 +1,199 @@
+{
+  "name": "Logrjotun",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg",
+  "items": [
+    {
+      "_id": "M1tGyxZu0v1w2x3y",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.M1tGyxZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "_id": "xqhnZRmSnToUpVqW",
+      "name": "Contrôle de l’eau",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "xqhnZRmSnToUpVqW",
+        "summary": "Le logrjotun commande l'eau et les flots.",
+        "description": "<p>Un logrjotun peut contrôler l’eau dans laquelle il évolue. Ce contrôle n’est pas la conséquence d’une utilisation du vitner mais plutôt des mouvements du géant. Le géant peut par exemple créer des vagues monstrueuses qu’il dirige sur une menace. Il peut aussi créer d’énormes maelstroms capables d’aspirer des bateaux dans les profondeurs, ou des courants d’eau qui forcent les navires à emprunter un itinéraire différent, quelle que soit la direction du vent.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 135
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.xqhnZRmSnToUpVqW"
+    },
+    {
+      "_id": "iTN16SlRmSnToUpV",
+      "name": "Empoignement (logrjotun)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "iTN16SlRmSnToUpV",
+        "summary": "Saisie sans PC supplémentaires après une attaque à mains nues ; écrasement selon la taille ou projection infligeant de 1d10 (JO 10) à 1d10 (JO 4-10).",
+        "description": "<p>Quand le géant réussit un jet d’attaque à mains nues, il peut tenter d’empoigner une victime sans dépenser de points de combat supplémentaires, mais en effectuant un test de compétence. La créature doit avoir une Taille comprise entre 1/2 et 3, et la VC dépend de la taille de la victime, comme indiqué dans la table ci-contre.</p><p>La victime d’un empoignement peut tenter d’éviter l’attaque grâce à la compétence Agilité, de préférence avec la spécialité Esquive. À chaque tour de jeu, le géant peut décider d’écraser la victime ou de la projeter. L’écrasement inflige à la victime entre 1d10 et 1d10 (JO 9-10) points de dégâts par tour de jeu (les dégâts infligés dépendent de la taille de la victime), tandis que la chute inflige entre 1d10 (JO 10) et 1d10 (JO 4-10) points de dégâts, en fonction de la gravité de la chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 135
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.iTN16SlRmSnToUpV"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "LTLHNqSnToUpVqWr",
+      "name": "Yeux de lune",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LTLHNqSnToUpVqWr",
+        "summary": "Lueur nocturne attirante : VS 8 (Psychisme) pour ne pas naviguer involontairement vers le logrjotun.",
+        "description": "<p>Les grands yeux des logrjotuns diffusent une lumière semblable à celle de la pleine lune après la tombée de la nuit. Cette lueur est impossible à voir lorsqu’il fait jour mais, une fois la nuit tombée, un marin peut voir les yeux d’un logrjotun qui ressemblent à deux petites lunes rondes dans le lointain.</p><p>Même si ce n’est pas dans l’intention du géant, la lumière émise par ses yeux peut être dangereusement attirante. Les marins doivent réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas naviguer de manière inconsciente en direction de la lumière.</p><p>Bien que les logrjotuns soient des créatures paisibles, ils peuvent s’énerver contre des embarcations qui s’approcheraient trop près d’eux ou qui les percuteraient.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 136
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.LTLHNqSnToUpVqWr"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "ymVds5z5A6B7C8D9",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -4,
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 404,
+        "max": 404
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 60
+    },
+    "description": "Le logrjotun est le plus grand des géants, à la silhouette imposante et à la taille impressionnante. Sa peau verte et bleue est recouverte de crustacés, d'algues et de varech. Sa grande tête sert d'abri aux oiseaux marins qui volent en cercle autour et y cherchent un endroit où nicher. Ses grands yeux lumineux diffusent après la tombée de la nuit une lueur semblable à celle de la pleine lune. Vus de loin la nuit, ses yeux ressemblent à deux petites lunes rondes dans le lointain. Assis immobile dans la mer pendant des dizaines d'années, il peut être confondu avec une petite île.",
+    "details": {
+      "creatureType": "Jotuns et thurses",
+      "type": "humanoid",
+      "size": "15",
+      "age": "1 000, max variable",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 364,
+      "bodyMax": 445,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "15 m",
+          "max": "60 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "15 m",
+          "max": "60 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Géant marin à la peau verte et bleue incrustée de coquillages, aux yeux-lunes.",
+      "environment": "Océans infinis et fond des mers ; remonte s'asseoir dans la mer houleuse, comme au large de Dalheim",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 135
+      }
+    }
+  },
+  "_id": "ymVds5z5A6B7C8D9",
+  "_key": "!actors!ymVds5z5A6B7C8D9",
+  "folder": "f5hlljKfLgMhNiOj"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "D3rbkjKfLgMhNiOj",
+  "name": "Byse’s Luck",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "D3rbkjKfLgMhNiOj",
+    "summary": "The byse judges a bodily offering and grants luck or misfortune; effects and duration are decided by the GM.",
+    "description": "<p>A person that sacrifices something from their body, for example, giving a large amount of blood, cutting off a finger, or shaving their hair or beard, and puts it in a bowl for a byse might be rewarded with great luck. If the byse thinks that the gift was too small or unworthy, the person will instead become terribly unlucky. How long the enchantment lasts is up to the byse. The game master decides the effects of being lucky or unlucky.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 70
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!D3rbkjKfLgMhNiOj",
+  "folder": null
+}

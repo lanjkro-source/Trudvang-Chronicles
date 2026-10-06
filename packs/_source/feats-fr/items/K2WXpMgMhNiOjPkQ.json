@@ -1,0 +1,19 @@
+{
+  "_id": "K2WXpMgMhNiOjPkQ",
+  "name": "Métamorphose (stenhinje)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "K2WXpMgMhNiOjPkQ",
+    "summary": "Transformation en objet simple avec sa propre masse ; normalement indétectable sans vitner approprié.",
+    "description": "<p>En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.</p><p>Il est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 97
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!K2WXpMgMhNiOjPkQ",
+  "folder": null
+}

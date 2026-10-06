@@ -1,0 +1,123 @@
+{
+  "name": "Snow Boar",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/8Yv3GSkQlRmSnToU.jpg",
+  "items": [
+    {
+      "_id": "HVwPDnSnToUpVqWr",
+      "name": "Tusks",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "tusks",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!8Yv3GSkQlRmSnToU.HVwPDnSnToUpVqWr",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "8Yv3GSkQlRmSnToU",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/8Yv3GSkQlRmSnToU.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Tusks",
+          "value": 12
+        },
+        {
+          "attack": "Tusks",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 48,
+        "max": 48
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "This stocky wild pig has a wedge-shaped body, taller in front than behind, covered in long rough whitish bristles over dense underfur. Its massive wedge-shaped head bears a broad mobile snout, small sunken eyes, and pointed hair-fringed ears. Two yellowish upward-curving tusks protrude from its jaws and sharpen against each other. Short muscular legs end in dark hooves that scrape snow. Its thin tuft-ended tail flicks nervously when it charges.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "1d5",
+      "bodyMin": 48,
+      "bodyMax": 48,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Whitish bristling boar with curved tusks.",
+      "environment": "Snowy forests, taiga, and frozen Trudvang plains, rooting beneath the snow in clearings.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "8Yv3GSkQlRmSnToU",
+  "_key": "!actors!8Yv3GSkQlRmSnToU",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

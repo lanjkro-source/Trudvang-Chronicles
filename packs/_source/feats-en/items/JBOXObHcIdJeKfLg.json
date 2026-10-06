@@ -1,0 +1,19 @@
+{
+  "_id": "JBOXObHcIdJeKfLg",
+  "name": "Constricting (lindwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "JBOXObHcIdJeKfLg",
+    "summary": "Grip at SV 8 without CP; 2d6 damage per round; escape at situation value 12 (Strength).",
+    "description": "<p>A lindwurm can try to slither around a victim making a SV 8 roll without spending CP. If it is successful, it wraps the victim in its powerful grip. The victim takes 2d6 points of damage each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 12 (Strength modifiers apply). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 9). For each person that tries to help the victim, the situation roll is modified by +1. If the helping characters have exceptional Strength, the bonus from their Strength is added to the skill roll.</p><p>Each action round that the lindwurm spends strangling its victim, the wurm cannot do anything else. The lindwurm can try to bite another opponent instead of continuing to strangle its victim. When this happens, the victim remains in the grip of the lindwurm but takes no damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 118
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!JBOXObHcIdJeKfLg",
+  "folder": null
+}

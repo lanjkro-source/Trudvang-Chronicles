@@ -1,0 +1,19 @@
+{
+  "_id": "UZodjJdJeKfLgMhN",
+  "name": "Blood of Dark Vitner",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UZodjJdJeKfLgMhN",
+    "summary": "High natural protection and immunity to vitner spells and divine powers.",
+    "description": "<p>The blood of the grendel seems to be full of dark vitner. Its mud-colored skin is also infused with dark vitner, which provides it with good protection (already counted in its very good natural armor).</p><p>The dark vitner blood also has the effect of making the grendel immune to both vitner spells and divine powers.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 77
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UZodjJdJeKfLgMhN",
+  "folder": null
+}

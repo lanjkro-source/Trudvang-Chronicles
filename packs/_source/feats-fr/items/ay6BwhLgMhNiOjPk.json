@@ -1,0 +1,19 @@
+{
+  "_id": "ay6BwhLgMhNiOjPk",
+  "name": "Souffle de glace",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "ay6BwhLgMhNiOjPk",
+    "summary": "Le souffle du hrimwurm transforme en glace tout ce qu'il touche (test VC 13, sans points de combat) ; la victime subit les dégâts du souffle et doit réussir un test de situation (VS 7, Psychisme) sous peine d'engelures (-3 à toutes ses actions pendant 1d10 tours) ou de rigidité totale.",
+    "description": "<p>Comme les autres dragons, le hrimwurm peut attaquer avec son souffle. Le sien se nomme le souffle de glace et transforme tout ce qu’il touche en glace. L’utilisation du Souffle de glace ne nécessite la dépense d’aucun point de combat mais le dragon doit effectuer un test de VC 13. Une personne exposée au souffle de glace subit les dégâts infligés par le souffle et doit également effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique).</p><p>En cas de réussite, la victime subit des engelures et applique un modificateur de -3 à toutes ses actions pendant 1d10 tours de jeu.</p><p>En cas d’échec, la victime est tellement frigorifiée qu’elle ne peut plus rien faire pendant 1d10 (JO 7-10) tours de jeu. La victime devient si rigide et incapable de bouger qu’elle ne peut qu’espérer se recroqueviller et tenir bon en tremblant contre le froid.</p><p>Si une victime qui rate le test de situation est exposée à un autre souffle de glace et rate une deuxième fois le test de situation qui lui est associé, elle s’enfonce dans le sommeil de glace pendant 1d10 (JO 7-10) heures.</p><p>Une victime qui porte une tenue complète taillée dans de la fourrure de mastomant ne subit que la moitié des dégâts et un modificateur de +5 est ajouté au test de situation ; la valeur de situation est donc égale à 12 au lieu de 7.</p><p>Le dragon peut utiliser son souffle de glace jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du hrimwurm indique 2d10 (JO 8-10) points de dégâts pour le souffle de glace.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!ay6BwhLgMhNiOjPk",
+  "folder": null
+}

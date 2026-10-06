@@ -1,0 +1,416 @@
+{
+  "name": "Ogre",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
+  "items": [
+    {
+      "_id": "sq8iNRmSnToUpVqW",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.sq8iNRmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Barda makir (masse de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "f5bvQ2u0v1w2x3y4",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.f5bvQ2u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (massue à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "Y5TZGWoUpVqWrXsY",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.Y5TZGWoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "name": "cuir renforcé de métal",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "source": "Livre des règles, p. 119",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "heft": 4,
+        "weight": 13,
+        "value": 30,
+        "initiativeModifier": -1,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "5jSAHVoUpVqWrXsY",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.5jSAHVoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "_id": "BA5mccHcIdJeKfLg",
+      "name": "Humeur",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BA5mccHcIdJeKfLg",
+        "summary": "L'humeur changeante de l'ogre le rend imprévisible.",
+        "description": "<p>Le travail d’équipe n’est pas un concept qui correspond aux ogres, surtout parce qu’il est très rare que deux ogres soient de bonne humeur suffisamment longtemps pour que leur relation produise quelque chose de valable.</p><p>Pour déterminer l’humeur d’un ogre à un moment donné, un test de chance est effectué en jetant 1d10. Sur un résultat de 1 à 5, l’ogre se comporte normalement et calmement, mais sur un résultat de 6 à 10, il est furieux. L’ogre sera de cette humeur pendant 1d6 heures à moins qu’un événement ne la change. L’humeur de l’ogre peut passer de gentil à meurtrier à cause d’une infime contrariété ou s’il y a la moindre petite chose à proximité que la créature n’apprécie pas.</p><p>Quand un ogre est enragé, il attaque tout autour de lui, objets comme créatures. S’il n’y a aucune créature vivante à proximité, il déchaînera sa violence sur l’objet le plus proche situé à sa portée car sa rage le pousse à détruire n’importe quoi. En combat, un ogre ne réfléchit jamais aux dégâts qu’il subit mais uniquement à ceux qu’il inflige. C’est pour cette raison qu’un ogre n’effectue jamais aucune parade.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 163
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.BA5mccHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "lfC0p0tZu0v1w2x3",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 2,
+      "dexterity": -2,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 7,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 3,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 4,
+        "bonus": 0
+      },
+      "care": {
+        "value": 4,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Divertissement",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Foi",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Savoir-faire",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Lutte",
+        "skillId": "fighting",
+        "catalogId": "wrestling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Nature",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Expérience de la chasse",
+        "skillId": "wilderness",
+        "catalogId": "huntingExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Chasser et pêcher",
+        "skillId": "wilderness",
+        "catalogId": "huntingFishing",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Survie",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 1,
+        "kind": "discipline"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 8
+        },
+        {
+          "attack": "Mains nues",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 10
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 58,
+        "max": 58
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -1
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "L'ogre est le plus petit des membres de la famille des géants et des trolls. L'ogre commun contemporain a hérité de la taille des ogres des montagnes. Il a hérité des grandes dents des ogres des forêts. Il a hérité de la peau verdâtre des ogres des rivières. Sa tenue est extrêmement primitive, tout comme les armes et les outils qu'il porte.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "2",
+      "age": "30, max 70",
+      "naturalArmor": 1,
+      "fearFactor": "1d10",
+      "bodyMin": 52,
+      "bodyMax": 65,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Petit géant trapu à la peau verdâtre et aux grandes dents, en tenue primitive.",
+      "environment": "Forêts les plus épaisses, grottes et huttes forestières, souvent d'anciens antres de trolls abandonnés",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 163
+      }
+    }
+  },
+  "_id": "lfC0p0tZu0v1w2x3",
+  "_key": "!actors!lfC0p0tZu0v1w2x3",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

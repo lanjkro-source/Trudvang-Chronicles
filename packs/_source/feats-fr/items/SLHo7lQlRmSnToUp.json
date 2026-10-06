@@ -1,0 +1,19 @@
+{
+  "_id": "SLHo7lQlRmSnToUp",
+  "name": "Camouflage (gobelin)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "SLHo7lQlRmSnToUp",
+    "summary": "La peau grise camoufle le gobelin dans les grottes : -4 pour le détecter immobile, -8 s’il se déplace discrètement.",
+    "description": "<p>La peau grise des gobelins leur permet de se fondre dans leur environnement. Ceux qui se tiennent immobiles contre la paroi d’une grotte sont incroyablement difficiles à repérer (-4 aux tests de compétence pour les détecter) et ceux qui se déplacent tout en essayant d’être discrets sont toujours très difficiles à repérer (-8). Les gobelins qui traversent une grotte sans essayer d’être discrets sont également difficiles à repérer et il faut réussir un test avec la compétence d’Arts des ombres pour les repérer.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 149
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!SLHo7lQlRmSnToUp",
+  "folder": null
+}

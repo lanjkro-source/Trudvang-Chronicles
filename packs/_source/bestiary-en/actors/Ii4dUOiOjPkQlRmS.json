@@ -1,0 +1,141 @@
+{
+  "name": "Dog (medium)",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Ii4dUOiOjPkQlRmS.jpg",
+  "items": [
+    {
+      "_id": "rI0Fiy3y4z5A6B7C",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Ii4dUOiOjPkQlRmS.rI0Fiy3y4z5A6B7C",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Ii4dUOiOjPkQlRmS.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Ii4dUOiOjPkQlRmS",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Ii4dUOiOjPkQlRmS.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Bite",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 10,
+        "max": 10
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "This medium-sized dog has an athletic, well-proportioned body and deep chest. Its double gray, sandy, or black-and-white coat is thicker around neck and tail. Its wedge-shaped head bears a long black-nosed muzzle, upright or partly drooping ears, and intelligent eyes. Agile feet end in thick pads and nonretractile claws. Its plumed tail, held high when active, constantly expresses its attention.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "0.33",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 10,
+      "bodyMax": 10,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Loyal and lively, with a fine muzzle and intelligent eyes.",
+      "environment": "Trudvang villages, farms, and hunting camps, following people into forests and mountains.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "Ii4dUOiOjPkQlRmS",
+  "_key": "!actors!Ii4dUOiOjPkQlRmS",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

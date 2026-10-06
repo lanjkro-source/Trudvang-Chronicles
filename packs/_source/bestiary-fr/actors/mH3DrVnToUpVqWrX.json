@@ -1,0 +1,544 @@
+{
+  "name": "Vieux hrimtroll",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg",
+  "items": [
+    {
+      "_id": "nEO9lz0v1w2x3y4z",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.nEO9lz0v1w2x3y4z",
+      "effects": []
+    },
+    {
+      "name": "Barda hammri (marteau de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "3d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "KagEscHcIdJeKfLg",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.KagEscHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Tvei axi (hache à deux mains)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "description": "Une puissante hache à deux mains. Les plus beaux exemplaires utilisent le fer pour le manche comme pour la tête.",
+        "source": "Guide du maître, p. 72",
+        "category": "twoHanded",
+        "damage": "3d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 9,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 4,
+        "value": 24,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "19x9BiNiOjPkQlRm",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.19x9BiNiOjPkQlRm",
+      "effects": []
+    },
+    {
+      "name": "fourrure",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord.",
+        "source": "Guide du maître, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "kiKFtTnToUpVqWrX",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.kiKFtTnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "_id": "LSLD0OjPkQlRmSnT",
+      "name": "Corps de glace (hrimtroll)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LSLD0OjPkQlRmSnT",
+        "summary": "Sphère froide de 10 m de diamètre, résistance VS 8 (Psychisme), dégâts croissants en d3.",
+        "description": "<p>Le hrimtroll vit dans le froid depuis si longtemps que son corps l’a intégré pour le relâcher en permanence sous la forme d’une sphère autour de lui. La sphère fait 10 mètres de diamètre. Toutes les créatures situées dans la sphère doivent chacune réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas fuir le plus loin possible de ce phénomène. À chaque tour de jeu, le froid dans la sphère inflige des dégâts à chaque créature encore à l’intérieur comme indiqué dans la table ci-dessous.</p><p>Le port de vêtements d’hiver permet de réduire les dégâts de moitié lors des trois premiers tours. Sont considérés comme vêtements d’hiver : pantalon épais, manteau de fourrure, chapeau de fourrure, chaussures en fourrure et gants épais. Un personnage vêtu d’une tenue d’hiver complète en fourrure de mastomant ne subit aucun dégât.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d3</td></tr><tr><td>3</td><td>2d3</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d3</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 156
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.LSLD0OjPkQlRmSnT"
+    },
+    {
+      "_id": "it3GE4w2x3y4z5A6",
+      "name": "Frénésie (hrimtroll)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "it3GE4w2x3y4z5A6",
+        "summary": "Pendant les 1d6 premiers tours de combat : +2 aux attaques et -2 aux parades.",
+        "description": "<p>Habituellement paisible, le hrimtroll devient une tout autre créature quand il engage le combat. Pendant les 1d6 premiers tours de jeu, il combat dans un état de frénésie décuplée en bénéficiant d’un modificateur de +2 à ses attaques mais aussi un modificateur de -2 à ses parades. Pendant ces tours de jeu, le troll paraît très menaçant. Il rugit comme un animal de manière incompréhensible et menace sauvagement ses adversaires de ses impressionnantes défenses. Le hrimtroll se comporte de la sorte pour intimider ses ennemis afin de les paralyser de peur ou de les forcer à fuir.</p><p>Les hrimtrolls engagent souvent le combat en utilisant une grande épée de combat ou une grosse massue bardée de fer.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 156
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.it3GE4w2x3y4z5A6"
+    },
+    {
+      "_id": "0hJrbG9EaGbHcIdJ",
+      "name": "Peur de la magie",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "0hJrbG9EaGbHcIdJ",
+        "summary": "Tests successifs contre la magie : VS 8 puis VS 12 ; échecs : -3 aux actions et fuite pendant 1d6 tours.",
+        "description": "<p>Quand les hrimtrolls entrent en contact avec une source de magie, chacun doit effectuer un test de situation avec une valeur de situation de 8. En cas d’échec, un troll subit un modificateur de -3 à tout ce qu’il tente, et doit également effectuer un nouveau test de situation avec une valeur de situation de 12. Un deuxième échec signifie que le hrimtroll fuit la source de magie pendant 1d6 tours de jeu avant de pouvoir tenter de s’en rapprocher de nouveau. Quand le hrimtroll tente de se rapprocher à nouveau, il doit effectuer un autre test de situation, cette fois-ci avec un modificateur de -2, ce qui aboutit à une valeur de situation de 10. En cas d’échec, ce processus est répété jusqu’à ce que la valeur de situation soit réduite à 0, auquel cas le troll n’ose plus jamais se rapprocher de la source de magie.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 156
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.0hJrbG9EaGbHcIdJ"
+    },
+    {
+      "_id": "NEu59F7C8D9EaGbH",
+      "name": "Projection à coup de défenses",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NEu59F7C8D9EaGbH",
+        "summary": "Le hrimtroll frappe de ses grandes défenses pour projeter ses ennemis dans les airs ; le coup lui-même n'inflige généralement pas de dégâts, mais la chute qui s'ensuit inflige d'importants dégâts de chute (esquive possible avec Agilité, de préférence Esquive).",
+        "description": "<p>Le hrimtroll utilise ses grandes défenses lorsqu’il combat. Il donne de grands et larges coups pour frapper le plus d’ennemis possible, qu’il projette ensuite dans les airs d’un grand coup sec vers le haut. Le coup de défenses en lui-même n’inflige généralement pas de dégât, mais la chute qui s’ensuit inflige d’importants dégâts de chute.</p><p>Une victime de la Projection à coup de défenses peut tenter d’esquiver l’attaque avec la compétence Agilité, de préférence avec la spécialité Esquive.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 156
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.NEu59F7C8D9EaGbH"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "mH3DrVnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "dexterity": -4,
+      "strength": 8
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 8,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 4,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 7,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 10,
+        "bonus": 0
+      },
+      "care": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Divertissement",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Foi",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Invocation",
+        "skillId": "faith",
+        "catalogId": "invoke",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Tablette sacrée : …",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Noaj",
+        "skillId": "faith",
+        "catalogId": "noaj",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Nature",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Connaissance de la nature",
+        "skillId": "wilderness",
+        "catalogId": "natureKnowledge",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Géographie",
+        "skillId": "wilderness",
+        "catalogId": "geography",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Orientation",
+        "skillId": "wilderness",
+        "catalogId": "orienteeringCartography",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Survie",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Savoir-faire",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Artisanat",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Matériaux durs",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Matériaux souples",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Projection à coup de défenses",
+          "value": 11
+        }
+      ],
+      [
+        {
+          "attack": "Mains nues",
+          "value": 15
+        },
+        {
+          "attack": "Mains nues",
+          "value": 7
+        }
+      ],
+      [
+        {
+          "attack": "Barda hammri (marteau de bataille)",
+          "value": 14
+        },
+        {
+          "attack": "Barda hammri (marteau de bataille)",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Tvei axi (hache à deux mains)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei axi (hache à deux mains)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei axi (hache à deux mains)",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 112,
+        "max": 112
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -3
+    },
+    "movement": {
+      "base": 30
+    },
+    "description": "Le vieux hrimtroll est devenu gigantesque et bestial avec l'âge, au fur et à mesure que ses défenses ont poussé et se sont alourdies. Ses défenses sont devenues si épaisses et si lourdes qu'elles l'empêchent de se tenir en position debout. Il grossit et marche de manière de plus en plus bestiale, projetant ses ennemis d'un coup de défenses vers le haut. Il possède une tignasse épaisse sur le crâne prolongée en crinière le long du dos, ainsi qu'une barbe. Son corps a intégré le froid et le relâche en permanence sous la forme d'une sphère autour de lui.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "6",
+      "age": "90, max 140",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 100,
+      "bodyMax": 125,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "30 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colosse de glace voûté et bestial, aux défenses massives si lourdes qu'il ne peut plus se tenir debout.",
+      "environment": "Régions froides et glacées, fosses profondes sous terre, petits clans de six à dix individus",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 154
+      }
+    }
+  },
+  "_id": "mH3DrVnToUpVqWrX",
+  "_key": "!actors!mH3DrVnToUpVqWrX",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

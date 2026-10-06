@@ -1,0 +1,19 @@
+{
+  "_id": "Xouc0rUpVqWrXsYt",
+  "name": "Ventre d’or",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Xouc0rUpVqWrXsYt",
+    "summary": "Or rare, dur et léger ; les armes forgées dans cet or gagnent +1 VP / 10 PS.",
+    "description": "<p>Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Xouc0rUpVqWrXsYt",
+  "folder": null
+}

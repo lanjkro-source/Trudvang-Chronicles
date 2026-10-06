@@ -1,0 +1,173 @@
+{
+  "name": "Fairy",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/yhighfHcIdJeKfLg.jpg",
+  "items": [
+    {
+      "_id": "MaYXAbD8D9EaGbHc",
+      "name": "Song of Guidance",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "MaYXAbD8D9EaGbHc",
+        "summary": "Guides or misleads travelers; resisting requires situation value 8 (Psyche), -1 per five additional fairies.",
+        "description": "<p>A fairy can use her song to guide people who are lost in the forest, leading them to an exit or closer to a path. The ability can also be used to lead enemies astray. Enemies that hear the song must make a situation roll with a situation value of 8 (Psyche modifiers apply) or they will be led astray. The more fairies that sing the song, the harder it is to resist the effects. applying a -1 modifier to the SV roll per 5 fairies singing in addition to the first one.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 73
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yhighfHcIdJeKfLg.MaYXAbD8D9EaGbHc"
+    },
+    {
+      "_id": "P9RgBRkQlRmSnToU",
+      "name": "Healing Dance",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "P9RgBRkQlRmSnToU",
+        "summary": "Each fairy dancing above a wounded creature heals 1d3 damage.",
+        "description": "<p>A fairy that performs this dance above a wounded person heals the person of 1d3 points of damage. The more fairies dancing, the greater the healing.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 73
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yhighfHcIdJeKfLg.P9RgBRkQlRmSnToU"
+    },
+    {
+      "_id": "gCMi4MhNiOjPkQlR",
+      "name": "Fairy Dance",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "gCMi4MhNiOjPkQlR",
+        "summary": "Ten fairies dancing in a circle restore the energy of a meal or the benefits of eight hours of sleep.",
+        "description": "<p>If a creature suffers from dehydration, hunger, or physical or psychic exhaustion, a group of ten fairies can dance in a ring around the one in need and provide both strength and power. A creature that is hungry or thirsty gains new energy, which represents one meal of food. A creature that is exhausted is refreshed as if having slept for one full night, and gains the normal effects of eight hours of sleep.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 72
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yhighfHcIdJeKfLg.gCMi4MhNiOjPkQlR"
+    },
+    {
+      "_id": "F1bQ4eGbHcIdJeKf",
+      "name": "Fairy Dust",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "F1bQ4eGbHcIdJeKf",
+        "summary": "One dose gives +1d3+1 to all skill values for 1d5 hours; seven doses grant a wish judged moral by the GM.",
+        "description": "<p>Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 73
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yhighfHcIdJeKfLg.F1bQ4eGbHcIdJeKf"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yhighfHcIdJeKfLg.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "yhighfHcIdJeKfLg",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/yhighfHcIdJeKfLg.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": 4,
+      "intelligence": 2
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 4,
+        "max": 4
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 3
+    },
+    "description": "A fairy is a pretty, slender creature of very small size. It stands about ten centimeters tall. It has small delicate wings with which it dances after nightfall. Its hair is blond or red. All fairies look like women, but they are actually sexless. At night they emit a pleasant light like that of fireflies.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "winged humanoid",
+      "size": "0.33",
+      "age": "150, max. 350",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 3,
+      "bodyMax": 5,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "3 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "2 m",
+          "max": "10 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Tiny luminous winged dancer with blond or red hair.",
+      "environment": "Mittland forests with drinking water, edible mushrooms, and moss beds, often near elves and yggdras",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 72
+      }
+    }
+  },
+  "_id": "yhighfHcIdJeKfLg",
+  "_key": "!actors!yhighfHcIdJeKfLg",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

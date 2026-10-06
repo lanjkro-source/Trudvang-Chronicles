@@ -1,0 +1,19 @@
+{
+  "_id": "eYf1GqSnToUpVqWr",
+  "name": "Mugissement profond",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "eYf1GqSnToUpVqWr",
+    "summary": "Le mugissement du galtir, inaudible pour les humains, appelle sa tribu à la rescousse.",
+    "description": "<p>Au cœur du combat, les galtirs émettent souvent un cri aussi longtemps qu’ils le peuvent, le mugissement profond. Pour les humains, celui-ci n’aura rien de particulier, mais il contient un son très grave que ni eux ni les créatures similaires ne peuvent entendre. Ce mugissement est audible par les autres galtirs dans un très vaste périmètre. Plus les galtirs sont nombreux à émettre le mugissement de concert, plus le son porte. Les galtirs de la même tribu, et parfois d’autres tribus, se précipiteront à la rescousse en répondant de leur propre mugissement. Lorsque de nombreux galtirs émettent ce mugissement ensemble, ils peuvent former une horde imposante qui attaquera tout ce qui passe trop près d’eux.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!eYf1GqSnToUpVqWr",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "F1bQ4eGbHcIdJeKf",
+  "name": "Fairy Dust",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "F1bQ4eGbHcIdJeKf",
+    "summary": "One dose gives +1d3+1 to all skill values for 1d5 hours; seven doses grant a wish judged moral by the GM.",
+    "description": "<p>Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 73
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!F1bQ4eGbHcIdJeKf",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "BA5mccHcIdJeKfLg",
+  "name": "Mood",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "BA5mccHcIdJeKfLg",
+    "summary": "The ogre’s changing mood makes it unpredictable.",
+    "description": "<p>Teamwork is a term that has never been used in regard to ogres, especially since it is very rare that two ogres are in a good mood long enough for their brotherhood to lead to anything of value.</p><p>To decide the mood of an ogre on any given occasion, a luck roll is made with 1d10. If the result is 1-5, the ogre is normal and somewhat calm, but should the result be 6-10, it is furious. The ogre will be in this mood for 1d6 hours unless something happens to shift its mood. The mood can switch from kind to murderous just by the slightest ordeal or if there is something around them that they don’t like in the slightest.</p><p>When an ogre is in its crazed state of mood, it will attack everything and everyone. If there is no living thing close enough, it will go wild on the nearest thing in range due to its need to destroy something. An ogre in battle never thinks about taking damage but only of inflicting damage. This means that ogres will not parry in battle.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 166
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!BA5mccHcIdJeKfLg",
+  "folder": null
+}

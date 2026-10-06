@@ -1,0 +1,131 @@
+{
+  "name": "Huvfurwurm Head",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc.jpg",
+  "items": [
+    {
+      "_id": "y0yAQIdJeKfLgMhN",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 2,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!D4E2o9C8D9EaGbHc.y0yAQIdJeKfLgMhN",
+      "effects": []
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Durable",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+        "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 39
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!D4E2o9C8D9EaGbHc.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "gkcwjKdJeKfLgMhN",
+      "name": "Huvfurwurm Head",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "gkcwjKdJeKfLgMhN",
+        "summary": "Each huvfurwurm head grants +2 CP for bites.",
+        "description": "<p>Each huvfurwurm head adds its Bite combat point reserve to the body reserve and uses the body reserve for attacks.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 111
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!D4E2o9C8D9EaGbHc.gkcwjKdJeKfLgMhN"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "D4E2o9C8D9EaGbHc",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 25,
+        "max": 25
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "One head of a huvfurwurm.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "other",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 5,
+      "fearFactor": "",
+      "bodyMin": 20,
+      "bodyMax": 30,
+      "move": [],
+      "armor": [],
+      "summary": "Regenerated from growths on the neck and body.",
+      "environment": "Damp places such as marshlands and peat bogs, in deep caves",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 111
+      }
+    }
+  },
+  "_id": "D4E2o9C8D9EaGbHc",
+  "_key": "!actors!D4E2o9C8D9EaGbHc",
+  "folder": "hHkEitXsYtZu0v1w"
+}

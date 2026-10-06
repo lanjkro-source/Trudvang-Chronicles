@@ -1,0 +1,19 @@
+{
+  "_id": "U35mINhNiOjPkQlR",
+  "name": "Parole (langue appropriée)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "U35mINhNiOjPkQlR",
+    "summary": "Le MJ attribue au diser capable de parler une maîtrise de Connaissances / Langage / Langue étrangère.",
+    "description": "<p>Tous les fantômes ne sont pas capables de parler aux vivants. Les esprits faibles, comme les égarés ou les serviables, éprouvent des difficultés à communiquer avec les vivants. Les malfaisants décident souvent de ne pas parler car leur haine envers les vivants est si grande qu’ils préfèrent ne pas communiquer.</p><p>Les disers capables de parler une ou plusieurs langues obtiennent une valeur de compétence en Connaissances (discipline Langage et spécialité Langue étrangère [langue appropriée]). C’est le maître de jeu qui décide du niveau de maîtrise du fantôme dans la langue choisie.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!U35mINhNiOjPkQlR",
+  "folder": null
+}

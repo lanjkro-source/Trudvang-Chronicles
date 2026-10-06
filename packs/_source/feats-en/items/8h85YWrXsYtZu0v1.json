@@ -1,0 +1,19 @@
+{
+  "_id": "8h85YWrXsYtZu0v1",
+  "name": "Luring Stench",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "8h85YWrXsYtZu0v1",
+    "summary": "Situation value 10 (Psyche) to resist the lure; ends after at least 3 damage or when drowning starts.",
+    "description": "<p>The most prominent ability of the kelpie is that it can lure unknowing travelers from a range of several hundred meters. Even if the stench that is released is horrible, it carries an enchanting power that can twist the comprehension of those who smell it. The enchantment makes the person lose all concept of time and space and forces them to keep on walking. Victims that later wake up from this state don’t know where they are or how they got there.</p><p>A person who can smell the luring stench from the kelpie must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order to overcome the enchantment. A failed roll means the victim keeps moving toward the kelpie.</p><p>The spell is broken if the victim suffers at least 3 points of damage or is about to drown. Once the kelpie is close, it will try to drag the victim underneath the water to drown.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 84
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!8h85YWrXsYtZu0v1",
+  "folder": null
+}

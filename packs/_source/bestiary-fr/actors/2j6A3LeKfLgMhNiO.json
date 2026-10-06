@@ -1,0 +1,146 @@
+{
+  "name": "Hulder",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
+  "items": [
+    {
+      "_id": "Tz48vNhNiOjPkQlR",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2j6A3LeKfLgMhNiO.Tz48vNhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "_id": "NkQ3WdFaGbHcIdJe",
+      "name": "Envoûtement",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NkQ3WdFaGbHcIdJe",
+        "summary": "La hulder soumet les volontés à son charme et s'attache ses victimes.",
+        "description": "<p>La hulder maîtrise un pouvoir spécial qui lui permet d’envoûter les créatures qu’elle rencontre pour les soumettre à sa volonté tout le reste de leur vie. Lorsqu’elle croise le regard d’une cible, elle murmure simplement les effroyables paroles qui envoûtent les faibles. La victime doit ensuite effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) pour éviter de la regarder dans les yeux. Un personnage qui précise qu’il fait tout pour ne pas regarder la hulder dans les yeux augmente la valeur de situation de +5.</p><p>En cas d’échec, lancez un d20 et consultez la table ci-dessous pour déterminer l’effet. Un personnage avec un trait de Psychisme exceptionnel soustrait sa valeur du résultat obtenu (un trait positif réduit donc le résultat, tandis qu'un trait négatif l'augmente).</p><table><thead><tr><th>d20 modifié par le Psychisme</th><th>Effet</th></tr></thead><tbody><tr><td>0 à 8</td><td>La victime a la tête qui tourne et subit -2 à toutes ses valeurs de compétence et de situation pendant 24 heures.</td></tr><tr><td>9 à 14</td><td>Obéit aux ordres mineurs pendant 24 heures : s’allonger, courir, parler, crier, marcher, ouvrir des portes, etc. L’effet disparaît à plus de 100 m de la hulder.</td></tr><tr><td>15 à 16</td><td>Considère tous les ordres comme sensés et obéit pendant 1d3 jours, sauf aux ordres qui la mettent en danger. L’effet disparaît à plus de 500 m.</td></tr><tr><td>17 à 18</td><td>Soumission complète, y compris aux ordres dangereux ; portée illimitée, durée 1d10 (JO 7-10) jours. La mort de la hulder ne met pas fin aux derniers ordres pendant la durée restante.</td></tr><tr><td>19 et plus</td><td>Esclave pour toute sa vie, obéit aveuglément ; seule la mort de la hulder rompt l’envoûtement.</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 78
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2j6A3LeKfLgMhNiO.NkQ3WdFaGbHcIdJe"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "2j6A3LeKfLgMhNiO",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": 4,
+      "dexterity": 2,
+      "strength": -2
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 65,
+        "max": 65
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "La hulder est très jolie et séduisante vue de face. Elle ne porte généralement pas de vêtements. Sa beauté dissimule sa véritable nature. Seuls deux détails trahissent cette nature. Elle possède une queue de vache. Son dos a parfois l'aspect d'une grosse branche d'arbre vermoulue et creuse.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "humanoid",
+      "size": "1",
+      "age": "75, max 120",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 59,
+      "bodyMax": 71,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "12 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "1 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Beauté nue de face, queue de vache et dos d'écorce vermoulue",
+      "environment": "Forêts les plus épaisses, près d'un ruisseau ou d'une chute d'eau à l'écart des chênes, territoire près d'une petite chute loin dans la forêt, parfois tanière sous un rocher",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 78
+      }
+    }
+  },
+  "_id": "2j6A3LeKfLgMhNiO",
+  "_key": "!actors!2j6A3LeKfLgMhNiO",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

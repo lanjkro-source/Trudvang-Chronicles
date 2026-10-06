@@ -1,0 +1,19 @@
+{
+  "_id": "WLqQEeGbHcIdJeKf",
+  "name": "Pétrification (braskelwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WLqQEeGbHcIdJeKf",
+    "summary": "Caquètement : VS 14, -6 pour la cible ; résistance à la pétrification VS 6 (Psychisme), statue VP 10 / VI 100.",
+    "description": "<p>Quand le braskelwurm attaque avec son regard, il tente de forcer sa victime à le regarder droit dans les yeux. Pour ce faire, il produit un caquètement séduisant et tourne ses yeux luisants vers la victime choisie. Même si le caquètement n’est ni séduisant ni particulièrement plaisant, il est difficile de ne pas prêter attention à ce son puis de croiser le regard pénétrant du reptile.</p><p>Quiconque entend le caquètement doit réussir un test de situation avec une valeur de situation de 14 (le modificateur de Psychisme s’applique) pour éviter de croiser le regard de la créature. La victime choisie par le braskelwurm subit un modificateur de -6 (et effectue donc le test avec une valeur de situation de 8). La valeur de situation peut être ajustée en fonction de l’âge du braskelwurm. Un jeune braskelwurm est bien plus dangereux qu’un vieux, les plus dangereux étant ceux qui viennent de naître. C’est au maître de jeu de déterminer les modificateurs en se basant sur l’âge du braskelwurm.</p><p>Les victimes du regard peuvent résister au sort imminent qui les attend en effectuant chacune un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si elle échoue, la victime est instantanément transformée en statue de pierre pratiquement incassable. Ceci signifie que la victime pétrifiée obtient une valeur de protection de 10 et une valeur d’intégrité de 100. Lorsque la valeur d’intégrité est réduite à 0, la victime subit ensuite les dégâts normalement et si elle reçoit un nombre de points de dégâts au moins égal au double de ses points de santé, la statue de pierre se brise et la victime meurt.</p><p>Une créature pétrifiée se trouve dans un état de sommeil permanent. Elle ne perçoit plus l’écoulement du temps ni son environnement. La victime ne peut rien affecter autour d’elle. On peut libérer une personne pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja). Une fois la pétrification dissipée, la victime retrouve sa forme d’origine.</p><p>Une créature pétrifiée n’est pas fixée au sol, même si la pesanteur continue d’agir normalement sur elle. Une créature suffisamment forte peut donc la déplacer. La statue pèse environ dix fois le poids normal de la victime.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 106
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WLqQEeGbHcIdJeKf",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "HngWDToUpVqWrXsY",
+  "name": "Shriek",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "HngWDToUpVqWrXsY",
+    "summary": "Once per day, the barrow wight inflicts 2d10 (OR 9-10) Fear Points on anyone who hears its shriek.",
+    "description": "<p>A barrow wight can let out a horrid shriek once per day, and everyone who hears it is filled with horror. The victim takes 2d10 (OR 9-10) Fear Points.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 39
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!HngWDToUpVqWrXsY",
+  "folder": null
+}

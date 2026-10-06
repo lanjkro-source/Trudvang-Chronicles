@@ -1,0 +1,19 @@
+{
+  "_id": "1Kx1hlMhNiOjPkQl",
+  "name": "Intrépide",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1Kx1hlMhNiOjPkQl",
+    "summary": "Ne ressent aucune peur et n’effectue aucun test de peur.",
+    "description": "<p>Les galtirs et les skogstrolls ne ressentent aucune peur. Les skogstrolls n’effectuent jamais de test de peur, que le phénomène qui devrait la provoquer soit naturel ou non.</p><p>Cette absence de peur les rend particulièrement obstinés au combat : les galtirs, une fois engagés, combattent jusqu’à leur mort ou celle de leur ennemi. Les skogstrolls attaquent la victime qu’ils ont choisie jusqu’à ce qu’elle meure, puis essaient de dépouiller son cadavre avant de choisir un autre adversaire. Leur comportement reste lié à leur espèce, mais leur immunité à la peur est techniquement identique.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1Kx1hlMhNiOjPkQl",
+  "folder": null
+}

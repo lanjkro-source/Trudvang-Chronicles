@@ -1,0 +1,19 @@
+{
+  "_id": "scVIa3u0v1w2x3y4",
+  "name": "Vision nocturne ou Vision dans le noir (démon)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "scVIa3u0v1w2x3y4",
+    "summary": "Le MJ choisit entre vision sous faible lumière et vision sans aucune lumière.",
+    "description": "<p>Le MJ détermine le type de vision du démon. Certains démons voient comme en plein jour dans les environnements faiblement éclairés (étoiles, lune, torche) : c’est la Vision nocturne. D’autres voient dans le noir total, sans aucune lumière : c’est la Vision dans le noir. Ce sont deux possibilités distinctes et non deux pouvoirs automatiquement cumulés. Aucune portée particulière n’est fixée dans cette description.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 41
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!scVIa3u0v1w2x3y4",
+  "folder": null
+}

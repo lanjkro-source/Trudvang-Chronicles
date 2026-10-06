@@ -1,0 +1,19 @@
+{
+  "_id": "nWYlTTnToUpVqWrX",
+  "name": "Constricting (giant snake)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nWYlTTnToUpVqWrX",
+    "summary": "Grip at SV 10 modified by the target’s Dexterity; damage equal to the snake’s damage bonus each round; escape at situation value 10 (Strength).",
+    "description": "<p>If the snake manages to slither around its victim (skill value 10, victim’s Dexterity modifiers apply), it wraps the victim in its great grip. The victim takes damage equal to the snake’s damage modifier (which is 6 in the stats below) each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 10 (± possible modifiers from the Strength trait). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 7). For each person that tries to help the victim, the situation roll is also modified by +1. If the ones helping have exceptional strength, the bonus from their strength is added to the skill roll.</p><p>Each round of combat that the snake spends constricting its victim, the snake can do nothing else. The snake can choose to try to bite another opponent instead of continuing to hug its victim. When this happens, the victim remains in the grip of the snake but takes no damage for that round.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 17
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nWYlTTnToUpVqWrX",
+  "folder": null
+}

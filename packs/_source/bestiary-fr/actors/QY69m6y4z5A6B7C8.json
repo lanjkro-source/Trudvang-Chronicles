@@ -1,0 +1,237 @@
+{
+  "name": "Stenhinje",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg",
+  "items": [
+    {
+      "_id": "EWWSpRiOjPkQlRmS",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.EWWSpRiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Stjorn makir (étoile du matin)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 3,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "F0NaAI9EaGbHcIdJ",
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.F0NaAI9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "_id": "UgB46VpVqWrXsYtZ",
+      "name": "Immunité au feu et au froid",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "UgB46VpVqWrXsYtZ",
+        "summary": "Le feu et le froid n'ont aucune prise sur la créature.",
+        "description": "<p>Un stenhinje est complètement immunisé au feu et au froid.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 97
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.UgB46VpVqWrXsYtZ"
+    },
+    {
+      "_id": "K2WXpMgMhNiOjPkQ",
+      "name": "Métamorphose (stenhinje)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "K2WXpMgMhNiOjPkQ",
+        "summary": "Transformation en objet simple avec sa propre masse ; normalement indétectable sans vitner approprié.",
+        "description": "<p>En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.</p><p>Il est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 97
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.K2WXpMgMhNiOjPkQ"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!QY69m6y4z5A6B7C8.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "QY69m6y4z5A6B7C8",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 5,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 11
+        },
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Stjorn makir (étoile du matin)",
+          "value": 14
+        },
+        {
+          "attack": "Stjorn makir (étoile du matin)",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "Le stenhinje est un géant entièrement fait de pierre, au corps immense et rugueux. Son cœur est composé d'or, gros comme le poing d'un homme et toujours chaud. Son estomac est aussi creux qu'une grotte. Certains deviennent aussi grands que les montagnes, d'autres aussi gros que des ogres. Grossièrement sculpté, il marche sur deux jambes et peut transformer sa masse en porte, mur, coffre ou sol.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "humanoid",
+      "size": "3",
+      "age": "variable, max variable",
+      "naturalArmor": 5,
+      "fearFactor": "1d10",
+      "bodyMin": 80,
+      "bodyMax": 100,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "18 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Géant de pierre au cœur d'or chaud, dormant dans la montagne",
+      "environment": "Montagnes, où la pierre reste forte sous ses pieds, puis nids de pierre construits par ceux qui les quittent",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 96
+      }
+    }
+  },
+  "_id": "QY69m6y4z5A6B7C8",
+  "_key": "!actors!QY69m6y4z5A6B7C8",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

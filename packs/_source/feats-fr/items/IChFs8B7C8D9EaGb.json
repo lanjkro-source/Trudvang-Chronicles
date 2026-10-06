@@ -1,0 +1,19 @@
+{
+  "_id": "IChFs8B7C8D9EaGb",
+  "name": "Envie de sang",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "IChFs8B7C8D9EaGb",
+    "summary": "Chaque attaque infligeant plus de 5 dégâts donne +1 VC à une attaque, successivement, jusqu’à la fin du combat.",
+    "description": "<p>Plus une sombre horreur se gorge de sang, plus elle devient dangereuse. Chaque fois qu’elle attaque et inflige plus de 5 points de dégâts, la VC d’une de ses attaques est augmentée de +1 jusqu’à la fin du combat. La première fois que cela arrive, la VC de sa première attaque est augmentée ; la deuxième fois, c’est la VC de sa deuxième attaque qui est augmentée ; et la troisième fois, c’est celle de sa troisième attaque. Quand chacune des attaques a été augmentée une fois de la sorte, la VC de la première attaque est à nouveau augmentée de +1, et ainsi de suite.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 67
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!IChFs8B7C8D9EaGb",
+  "folder": null
+}

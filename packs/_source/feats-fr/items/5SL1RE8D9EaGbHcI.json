@@ -1,0 +1,19 @@
+{
+  "_id": "5SL1RE8D9EaGbHcI",
+  "name": "Absorption de vie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5SL1RE8D9EaGbHcI",
+    "summary": "Capture à VC 13 opposée au Psychisme ; chaque tranche de 3 dégâts absorbés rend 1 PS au diser ou augmente sa puissance.",
+    "description": "<p>Le diser peut capturer une victime en réussissant un test de compétence avec une VC 13 (le modificateur de Psychisme de la victime s’applique négativement à la VC ; ainsi, si la victime à un modificateur de +2, la VC sera de 11, alors qu’elle sera de 15 si le modificateur est de -2). Ensuite, à chaque fois qu’il réussit un nouveau test de compétence modifié par le trait Psychisme de la victime, le diser peut absorber sa force vitale.</p><p>Une victime piégée ne peut se libérer que si elle réussit un test de situation avec une valeur de situation que le maître de jeu décide selon la puissance du diser (le modificateur de Psychisme de la victime s’applique). Ainsi, un diser extrêmement puissant aura une valeur de situation de 1, tandis qu’un diser très faible aura une valeur de situation de 20. Le test de situation est de nouveau effectué à chaque tour de jeu. La valeur de compétence du diser pour capturer sa victime et absorber sa force vitale peut varier d’un diser à l’autre, à l’appréciation du maître de jeu.</p><p>La force vitale absorbée est exprimée par un nombre de points de dégâts infligés à la victime. Pour chaque tranche de 3 points de dégâts que le diser inflige, celui-ci gagne +1 point de santé. Si le diser subit des dégâts et perd ainsi des points de santé, ceux-ci sont régénérés lorsque le fantôme absorbe la vie de sa victime. S’il n’a perdu aucun point de santé ou s’il a déjà soigné tous les dégâts qu’il a subis, le diser gagne de la force à la place. C’est au maître de jeu de modifier les caractéristiques du diser au fur et à mesure qu’il gagne en puissance.</p><p>Le nombre de points de dégâts que la victime subit chaque fois que le diser absorbe sa force vitale est également laissé à l’appréciation du maître de jeu. Voici quelques exemples :</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (JO 10) points</li></ul>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 44
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!5SL1RE8D9EaGbHcI",
+  "folder": null
+}

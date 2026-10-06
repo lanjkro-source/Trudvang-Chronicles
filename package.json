@@ -8,6 +8,7 @@
     "check": "npm test && node tools/validate-system.mjs",
     "generate:catalog": "node tools/generate-power-catalog.mjs",
     "generate:creature-abilities": "node tools/generate-creature-ability-data.mjs",
+    "generate:bestiary": "node tools/generate-creature-ability-data.mjs && node tools/generate-bestiary-data.mjs && node tools/build-packs.mjs --sources-only && node tools/generate-glossary.mjs --write",
     "generate:npc-inventories": "node tools/generate-npc-inventories.mjs",
     "build:packs": "node tools/build-packs.mjs",
     "build:packs:sources": "node tools/build-packs.mjs --sources-only",

@@ -1,0 +1,19 @@
+{
+  "_id": "EVhUocGbHcIdJeKf",
+  "name": "Winged",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EVhUocGbHcIdJeKf",
+    "summary": "The demon has wings that allow it to fly.",
+    "description": "<p>The demon has wings that allow it to fly. Movement is decided by the GM.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 49
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EVhUocGbHcIdJeKf",
+  "folder": null
+}

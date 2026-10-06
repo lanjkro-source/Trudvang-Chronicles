@@ -1,0 +1,19 @@
+{
+  "_id": "dPcuOKeKfLgMhNiO",
+  "name": "Nappe de brume",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "dPcuOKeKfLgMhNiO",
+    "summary": "Le diser s'enveloppe d'une nappe de brume.",
+    "description": "<p>Le diser a le pouvoir de créer une nappe de brume qui s’étend depuis le fantôme à une vitesse de 1 à 5 mètres par tour de jeu. C’est le maître de jeu qui détermine sur quelle distance la nappe de brume s’étend, son épaisseur et sa durée. La plupart des disers maîtrisent ce pouvoir.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!dPcuOKeKfLgMhNiO",
+  "folder": null
+}

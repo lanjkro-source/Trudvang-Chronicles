@@ -1,0 +1,19 @@
+{
+  "_id": "VNxdD4z5A6B7C8D9",
+  "name": "Mock Guidance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VNxdD4z5A6B7C8D9",
+    "summary": "The king troll misleads victims with false advice.",
+    "description": "<p>A king troll can hide in bushes and rocks to follow someone and whisper about the loveliness of the forest or mountain through which they are traveling. Often the troll will try to lure someone into a trap or its den where the unlucky one will be slain or enslaved. The victim must succeed on a situation roll with a situation value of 7 (Psyche modifiers apply) in order to ignore the whispers. A failed roll means that the victim follows the whispered suggestions without even being aware of the whispers. A successful roll means that the mock guidance is broken. Every time the troll wishes to lead the victim along a new path or in a new direction, the victim must make a new situation roll.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 165
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VNxdD4z5A6B7C8D9",
+  "folder": null
+}

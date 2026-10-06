@@ -1,0 +1,19 @@
+{
+  "_id": "rPiP9lRmSnToUpVq",
+  "name": "Cold of Misthal",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "rPiP9lRmSnToUpVq",
+    "summary": "Passes through a creature at SV 12 to inflict cold damage; may also cause fear if the victim does not see it coming.",
+    "description": "<p>When a diser moves through a living being, it can produce strong cold through a successful roll (SV 12). The victim of the assault is filled with great cold. A strong diser that moves through living beings can make them feel as if they stood completely naked in the great ice plains. Here are a few examples of damage that a victim can be exposed to:</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (OR 10) points</li></ul><p>If the victim does not see the diser coming, the sudden feeling of cold can also lead to a high number of Fear Points being produced, according to GM’s Judgement.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!rPiP9lRmSnToUpVq",
+  "folder": null
+}

@@ -53,8 +53,8 @@ export function npcCombatMovementModes(system) {
 
 /** Creature feats use explicit mechanics, never their translated display name. */
 export function ignoresWoundPenalties(actor) {
-  return Array.from(actor.items ?? []).some(item => item.type === "ability"
-    && item.system.kind === "feat" && Number(item.system.level ?? 1) > 0
+  return Array.from(actor.items ?? []).some(item => (item.type === "creatureAbility" || (item.type === "ability"
+    && item.system.kind === "feat" && Number(item.system.level ?? 1) > 0))
     && item.system.ignoreWoundPenalties === true);
 }
 

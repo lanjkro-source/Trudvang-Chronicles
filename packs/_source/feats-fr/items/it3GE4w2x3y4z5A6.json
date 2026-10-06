@@ -1,0 +1,19 @@
+{
+  "_id": "it3GE4w2x3y4z5A6",
+  "name": "Frénésie (hrimtroll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "it3GE4w2x3y4z5A6",
+    "summary": "Pendant les 1d6 premiers tours de combat : +2 aux attaques et -2 aux parades.",
+    "description": "<p>Habituellement paisible, le hrimtroll devient une tout autre créature quand il engage le combat. Pendant les 1d6 premiers tours de jeu, il combat dans un état de frénésie décuplée en bénéficiant d’un modificateur de +2 à ses attaques mais aussi un modificateur de -2 à ses parades. Pendant ces tours de jeu, le troll paraît très menaçant. Il rugit comme un animal de manière incompréhensible et menace sauvagement ses adversaires de ses impressionnantes défenses. Le hrimtroll se comporte de la sorte pour intimider ses ennemis afin de les paralyser de peur ou de les forcer à fuir.</p><p>Les hrimtrolls engagent souvent le combat en utilisant une grande épée de combat ou une grosse massue bardée de fer.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 156
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!it3GE4w2x3y4z5A6",
+  "folder": null
+}

@@ -1,0 +1,228 @@
+{
+  "name": "Nattulm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg",
+  "items": [
+    {
+      "_id": "j1xPF7y4z5A6B7C8",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 5,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.j1xPF7y4z5A6B7C8",
+      "effects": []
+    },
+    {
+      "_id": "i0znNMdJeKfLgMhN",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 11,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.i0znNMdJeKfLgMhN",
+      "effects": []
+    },
+    {
+      "_id": "NcOgKSkQlRmSnToU",
+      "name": "Infection des rugtannes",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NcOgKSkQlRmSnToU",
+        "summary": "La morsure du nattulm transforme sa victime en rugtanne suceur de sang.",
+        "description": "<p>À chaque tour pendant lequel un ulm nocturne boit le sang d’une victime, il y a un risque que celle-ci contracte une maladie rare. Après deux tours de jeu, le risque s’élève à 1 sur 20 (obtention d’un 20 sur 1d20). Après quatre tours de jeu, le risque s’élève à 2 sur 20 (obtention de 19 ou 20 sur 1d20). Pour une raison inexpliquée, la maladie affecte uniquement les humains.</p><p>Une victime infectée par la maladie se transformera en rugtanne (un étrange mélange d’humain et de nattulm) dans un délai de 2d3 jours. Les rugtannes vivent uniquement la nuit. En cas d’exposition à la lumière du jour, ils succombent instantanément au choc des rayons solaires. Toutes les cinq nuits, ils doivent se nourrir du sang d’une autre créature au sang chaud. La morsure et le vampirisme fonctionnent de la même manière pour le rugtanne que pour le nattulm.</p><p>Un rugtanne peut vivre jusqu’à quatre fois plus longtemps qu’un humain, ce qui lui donne bien plus de temps pour apprendre de nouvelles facultés. D’après certains mythes, un rugtanne est capable d’acquérir de formidables pouvoirs et aptitudes magiques, comme la transformation en chauve-souris ou en étalon noir. Tout ceci n’est que superstition. Cependant, lorsque de puissants magiciens sont transformés en rugtannes, ils sont toujours en mesure d’utiliser leur magie et deviennent ainsi d’horribles suceurs de sang dotés de pouvoirs rarement égalés.</p><p>Lorsqu’un personnage joueur devient un rugtanne, les caractéristiques suivantes sont modifiées :</p><ul><li>Les traits Constitution, Psychisme, Force et Dextérité augmentent de deux niveaux (de -2 à 0 ou de +1 à +4 par exemple). Si le personnage est déjà au niveau maximum dans un ou plusieurs de ces traits, le modificateur bénéficie d’un bonus de +4 (le Trait passe donc à +8).</li><li>Le rugtanne obtient une valeur de protection de 1 du fait d’une protection naturelle (sa peau).</li><li>Le rugtanne gagne la capacité Vision dans le noir et peut voir dans le noir complet comme en plein jour jusqu’à 10 mètres, après quoi la vision diminue graduellement avant de s’estomper complètement à 60 mètres environ.</li><li>Le rugtanne subit les dégâts de la même manière qu’avant sa transformation, et reste donc mortel comme lorsqu’il était humain, mais ses points de santé sont modifiés en fonction de ses nouveaux traits.</li></ul>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 27
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.NcOgKSkQlRmSnToU"
+    },
+    {
+      "_id": "nP6pix2x3y4z5A6B",
+      "name": "Salive anesthésiante",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "nP6pix2x3y4z5A6B",
+        "summary": "Après 2d6 tours, la morsure ne se remarque qu’avec un test VS 8 (Perception).",
+        "description": "<p>Un nattulm attaque rarement des créatures complètement lucides et préfère qu’elles soient endormies ou tellement étourdies qu’elles n’ont pas conscience de subir une attaque. Grâce à sa dextérité élevée, l’ulm nocturne se déplace furtivement vers une victime endormie et crache sa salive sur le cou de sa cible. Après 2d6 tours de jeu, la peau devient si insensible que la victime devra faire un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception) pour se rendre compte qu’elle se fait mordre (ce test est celui décrit dans la section « Suceur de sang », page précédente). Dans d’autres situations, il revient au MJ de décider de la valeur de situation ou du fait que la victime perçoit la salive ou l’attaque.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.nP6pix2x3y4z5A6B"
+    },
+    {
+      "_id": "gwfvoJdJeKfLgMhN",
+      "name": "Suceur de sang",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "gwfvoJdJeKfLgMhN",
+        "summary": "Sur une victime endormie, 1d3 dégâts puis 1d6 par tour pendant quatre tours ; réveil possible à VS 8 (Perception).",
+        "description": "<p>Un nattulm peut approcher une victime endormie et tenter d’aspirer son sang. Cette capacité s’utilise en dehors des combats.</p><p>La créature prend 5 tours de jeu pour boire du sang. Au premier tour, la victime subit 1d3 points de dégâts de morsure. Au cours des 4 tours suivants, elle subit 1d6 points de dégâts par tour en raison de la perte de sang. À chaque tour de jeu, la victime a la possibilité de se réveiller et de surprendre l’ulm nocturne en réussissant un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception). Si elle découvre le nattulm, celui-ci prend immédiatement la fuite. Un nattulm combat uniquement s’il est acculé. Dans ce cas, il utilise sa morsure et ses griffes.</p><p>Parfois, plusieurs ulms nocturnes boivent le sang d’une même créature. Si la victime ne se réveille pas au cours des 5 tours de jeu décrits ci-dessus, elle subit un malus de -2 au prochain test de situation correspondant au suceur de sang suivant.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.gwfvoJdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "xs7CT0sYtZu0v1w2",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Griffes",
+          "value": 8
+        },
+        {
+          "attack": "Griffes",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 24,
+        "max": 24
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 10
+    },
+    "description": "C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité.",
+    "details": {
+      "creatureType": "Bêtes",
+      "type": "winged humanoid",
+      "size": "0.5",
+      "age": "15, max. 25",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 22,
+      "bodyMax": 27,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "10 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "2 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Suceur de sang nocturne aux ailes de chauve-souris et aux longues griffes.",
+      "environment": "Cœur des forêts les plus denses et cime des pins, nids en grand nombre dans des cavernes souterraines profondes",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 26
+      }
+    }
+  },
+  "_id": "xs7CT0sYtZu0v1w2",
+  "_key": "!actors!xs7CT0sYtZu0v1w2",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

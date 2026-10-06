@@ -1,0 +1,571 @@
+{
+  "name": "Gray Troll",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
+  "items": [
+    {
+      "_id": "4lYnNMgMhNiOjPkQ",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.4lYnNMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Krum swerd (scimitar)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1.3,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "rUYrqNfLgMhNiOjP",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.rUYrqNfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Barda makir (battle mace)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "aVGWgH9EaGbHcIdJ",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.aVGWgH9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "name": "Tvei faldir (two-handed flail)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 3,
+        "value": 10,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "VLjjwVnToUpVqWrX",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.VLjjwVnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Small fur-reinforced shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "source": "Rulebook, p. 118",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "passiveProtection": 2,
+        "weight": 2,
+        "value": 2,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "EdrdMeHcIdJeKfLg",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.EdrdMeHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Metal-reinforced leather armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "source": "Rulebook, p. 119",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "heft": 4,
+        "weight": 13,
+        "value": 30,
+        "initiativeModifier": -1,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "zNwN57z5A6B7C8D9",
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.zNwN57z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "_id": "OG4PmMfLgMhNiOjP",
+      "name": "Plaguebearer",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "OG4PmMfLgMhNiOjP",
+        "summary": "The gray troll spreads diseases to those nearby.",
+        "description": "<p>Trolls live a primitive and filthy life, which means that they may carry many diseases. Anyone who gets within 2 meters of a troll that carries a plague must make a situation roll with a situation value of 7 (Constitution modifiers apply). If the roll succeeds, the person is immune for a month to plagues carried by trolls. If the roll fails, the person is afflicted with one of the following effects. Roll on the table below.</p><table><thead><tr><th>1d20</th><th>Effect</th></tr></thead><tbody><tr><td>1-5</td><td>The troll's stench permeates the victim's clothes, making the victim smell terrible.</td></tr><tr><td>6-9</td><td>Dizziness: -1 to skill and situation values for one hour.</td></tr><tr><td>10-13</td><td>A bad cold: -1 to skill and situation values for one day.</td></tr><tr><td>14-16</td><td>A very bad cold and fever for 1d6 days: -2 to skill and situation values, movement reduced to 2/3.</td></tr><tr><td>17-18</td><td>Severe redness for 1d6 days: -3 to skill and situation values. At the end, roll against situation value 7 (Constitution); on failure, the same effect lasts for an additional 1d3 days.</td></tr><tr><td>19-20</td><td>1d10+5 large boils appear. Each day 1d3 burst until all are gone; each boil deals 1d3 damage when it bursts.</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 154
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.OG4PmMfLgMhNiOjP"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pAbCZpRmSnToUpVq.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "pAbCZpRmSnToUpVq",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 1,
+      "intelligence": -2,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 6,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 2,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 5,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 7,
+        "bonus": 0
+      },
+      "care": {
+        "value": 5,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 2,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Light Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shield Bearer",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Faith",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Invoke",
+        "skillId": "faith",
+        "catalogId": "invoke",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Noaj",
+        "skillId": "faith",
+        "catalogId": "noaj",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Holy Tablet : …",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Nature Knowledge",
+        "skillId": "wilderness",
+        "catalogId": "natureKnowledge",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Geography",
+        "skillId": "wilderness",
+        "catalogId": "geography",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Survival",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Handicraft",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Hard Materials",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Soft Materials",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 8
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 7
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Krum swerd (scimitar)",
+          "value": 7
+        },
+        {
+          "attack": "Krum swerd (scimitar)",
+          "value": 6
+        },
+        {
+          "attack": "Krum swerd (scimitar)",
+          "value": 5
+        },
+        {
+          "attack": "Small fur-reinforced shield",
+          "value": 9
+        },
+        {
+          "attack": "Small fur-reinforced shield",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 11
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 9
+        },
+        {
+          "attack": "Small fur-reinforced shield",
+          "value": 7
+        },
+        {
+          "attack": "Small fur-reinforced shield",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Tvei faldir (two-handed flail)",
+          "value": 12
+        },
+        {
+          "attack": "Tvei faldir (two-handed flail)",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 47,
+        "max": 47
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 1
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "Most gray trolls have bodies slightly larger than humans'. A thick head with a large projecting nose crowns the body. They have muscular arms, short bowed legs, and oversized feet. Like king trolls, gray trolls have long cow-like tails. Their sense of smell is reputed to be very keen.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "1.5",
+      "age": "25, max 60",
+      "naturalArmor": 1,
+      "fearFactor": "1d10",
+      "bodyMin": 41,
+      "bodyMax": 53,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,50 m",
+          "max": "15 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Stocky troll with a thick head, large nose, muscular arms, bowed legs, great feet, and cow's tail.",
+      "environment": "Woods and forest camps, underground lairs, and abandoned human homes",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 154
+      }
+    }
+  },
+  "_id": "pAbCZpRmSnToUpVq",
+  "_key": "!actors!pAbCZpRmSnToUpVq",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

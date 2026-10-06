@@ -5,6 +5,8 @@
 //      - skills-en/skills-fr: knowledge tree abilities (modules/skill-pack-data.mjs)
 //      - vitner-en/vitner-fr: vitner tablets and their spells (modules/tablet-pack-data.mjs)
 //      - religion-en/religion-fr: holy tablets by religion and their powers
+//      - bestiary-en/bestiary-fr: creatures and their embedded inventory and capacities
+//      - feats-en/feats-fr: individual creature capacities
 // 2. Compiles them into Foundry LevelDB pack directories with @foundryvtt/foundryvtt-cli.
 // 3. Verifies every compiled pack by extracting it back and comparing against the sources,
 //    so a corrupted build fails loudly instead of shipping silently broken data.
@@ -16,6 +18,7 @@ import {compilePack, extractPack} from "@foundryvtt/foundryvtt-cli";
 import {tmpdir} from "node:os";
 import {SKILL_PACKS, buildSkillPackDocuments} from "../modules/skill-pack-data.mjs";
 import {TABLET_PACKS, buildTabletPackDocuments} from "../modules/tablet-pack-data.mjs";
+import {BESTIARY_PACKS, CREATURE_ABILITY_PACKS, buildBestiaryPackDocuments, buildCreatureAbilityPackDocuments} from "../modules/bestiary-pack-data.mjs";
 
 const root = process.cwd();
 const sourcesOnly = process.argv.includes("--sources-only");
@@ -66,7 +69,15 @@ function stableStringify(value) {
 function expectedDocument(sourceDocument) {
   const expectation = structuredClone(sanitize(structuredClone(sourceDocument)));
   if (expectation.effects === undefined && !expectation._key.startsWith("!folders")) expectation.effects = [];
-  delete expectation._key;
+  const stripKeys = value => {
+    if (!value || typeof value !== "object") return;
+    delete value._key;
+    for (const child of Object.values(value)) {
+      if (Array.isArray(child)) child.forEach(stripKeys);
+      else stripKeys(child);
+    }
+  };
+  stripKeys(expectation);
   return expectation;
 }
 
@@ -78,6 +89,7 @@ async function processPack({packName, label, documents, summary}) {
   for (const document of documents) {
     const filename = document._key.startsWith("!folders")
       ? `folders/${document._id}.json`
+      : document._key.startsWith("!actors") ? `actors/${document._id}.json`
       : `items/${String(document.system.catalogId).replace(/[^A-Za-z0-9._-]/g, "_")}.json`;
     const target = join(sourceDir, filename);
     mkdirSync(join(target, ".."), {recursive: true});
@@ -109,8 +121,8 @@ async function processPack({packName, label, documents, summary}) {
       continue;
     }
     const expectation = expectedDocument(document);
-    delete actual._key;
-    if (stableStringify(actual) !== stableStringify(expectation)) {
+    const normalizedActual = expectedDocument(actual);
+    if (stableStringify(normalizedActual) !== stableStringify(expectation)) {
       console.error(`  ${packName}: content drift on ${document._key} (${document.name})`);
       failures += 1;
     }
@@ -134,6 +146,15 @@ for (const {code, packName, label, tabletType} of TABLET_PACKS) {
   const tablets = items.filter(item => item.type === "tablet").length;
   const powers = items.length - tablets;
   await processPack({packName, label, documents: [...folders, ...items].map(sanitize), summary: `${tablets} tablets, ${powers} powers, ${folders.length} folders`});
+}
+
+for (const {code, packName, label} of CREATURE_ABILITY_PACKS) {
+  const {items} = buildCreatureAbilityPackDocuments({code, ...resolversFor(code), strict: true});
+  await processPack({packName, label, documents: items.map(sanitize), summary: `${items.length} capacities`});
+}
+for (const {code, packName, label} of BESTIARY_PACKS) {
+  const {folders, actors} = buildBestiaryPackDocuments({code, ...resolversFor(code), strict: true});
+  await processPack({packName, label, documents: [...folders, ...actors].map(sanitize), summary: `${actors.length} creatures, ${folders.length} folders`});
 }
 
 function readdirRecursive(directory) {

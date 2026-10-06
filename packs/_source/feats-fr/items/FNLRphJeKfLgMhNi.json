@@ -1,0 +1,19 @@
+{
+  "_id": "FNLRphJeKfLgMhNi",
+  "name": "Sève protectrice",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FNLRphJeKfLgMhNi",
+    "summary": "Une arme ayant blessé le vidrjotun reste collée sur 1-4 au d10 ; extraction VS 12 (Force), -1 par tour suivant.",
+    "description": "<p>La sève qui coule dans les veines de ce géant à la place du sang est très collante. Quand un vidrjotun est blessé par une arme qui provoque l’écoulement de sa sève, il y a une probabilité que l’arme reste collée dans cette substance.</p><p>Un test de chance est effectué à chaque fois qu’une arme inflige des dégâts au géant. Un résultat de 1 à 4 sur 1d10 signifie que l’arme reste collée dans la sève et que le personnage qui souhaite la décoller doit réussir un test de situation avec une valeur de situation de 12 (le modificateur de Force s’applique). En cas d’échec, l’arme reste collée, mais un nouveau test de situation peut être tenté au tour suivant. La valeur de situation diminue de 1 pour chaque tour de jeu écoulé par la suite.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 143
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FNLRphJeKfLgMhNi",
+  "folder": null
+}

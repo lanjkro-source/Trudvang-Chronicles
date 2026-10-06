@@ -1,0 +1,19 @@
+{
+  "_id": "bPXPF0u0v1w2x3y4",
+  "name": "Regenerating Heart (braskelwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "bPXPF0u0v1w2x3y4",
+    "summary": "The heart creates a new braskelwurm after one to two years; it has no healing use for other creatures.",
+    "description": "<p>The braskelwurm cannot breed; rather, it multiplies due to its regenerating heart that creates a new braskelwurm when the old one has died. It can take between one and two years before a new one is born. Sometimes, the heart will split and two identical twins will be created. The difference with the lindwurm, which also has a regenerating heart, is that no one but the braskelwurm has any use for its heart.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 107
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!bPXPF0u0v1w2x3y4",
+  "folder": null
+}

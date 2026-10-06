@@ -1,0 +1,19 @@
+{
+  "_id": "Wz4aZJeKfLgMhNiO",
+  "name": "Résistant",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Wz4aZJeKfLgMhNiO",
+    "summary": "Le sálhele ignore les atteintes à ses membres ; immunité aux armes perforantes, demi-dégâts tranchants, dégâts contondants normaux.",
+    "description": "<p>Le sálhele est un mort-vivant et ne prête donc pas attention aux dégâts qu’il subit. Un squelette qui perd un bras ou une jambe continue de combattre avec la même férocité. La seule partie vitale du corps que le squelette ne peut pas se permettre de perdre est sa tête. Si le crâne est arraché du reste du corps, le squelette se disloque en un tas d’os et son esprit rejoint Dimhall.</p><p>Étant donné qu’il y a beaucoup d’espaces vides entre les os d’un squelette, celui-ci subit des dégâts différents en fonction du type d’arme utilisé pour l’attaquer. Les squelettes ne subissent aucun dégât des flèches, des armes perforantes (les dagues) ou des armes d’estoc (les lances), et ils subissent la moitié seulement des dégâts infligés par les armes tranchantes (les épées). Les armes contondantes (les gourdins et les masses) leur infligent des dégâts normaux.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 62
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Wz4aZJeKfLgMhNiO",
+  "folder": null
+}

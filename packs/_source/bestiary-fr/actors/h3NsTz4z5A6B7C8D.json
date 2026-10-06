@@ -1,0 +1,151 @@
+{
+  "name": "Ours",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/h3NsTz4z5A6B7C8D.jpg",
+  "items": [
+    {
+      "_id": "7rmIXLfLgMhNiOjP",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!h3NsTz4z5A6B7C8D.7rmIXLfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "_id": "YLXi5IcIdJeKfLgM",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!h3NsTz4z5A6B7C8D.YLXi5IcIdJeKfLgM",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "h3NsTz4z5A6B7C8D",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/h3NsTz4z5A6B7C8D.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 15
+        },
+        {
+          "attack": "Griffes",
+          "value": 10
+        },
+        {
+          "attack": "Griffes",
+          "value": 9
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 76,
+        "max": 76
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "C'est un plantigrade massif au corps en tonneau, aux épaules bossues et à la tête large et ronde. Sa fourrure épaisse et hirsute, brune à noire, forme une collerette autour du cou et s'éclaircit parfois en pointe argentée sur le dos. Son museau allongé porte une truffe noire et humide, de petits yeux sombres et de courtes oreilles arrondies. Ses pattes puissantes sont armées de longues griffes non rétractiles qui labourent le sol. Sa queue minuscule disparaît presque sous les poils de sa croupe.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "3",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "1d10",
+      "bodyMin": 76,
+      "bodyMax": 76,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "18 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Massif hirsute aux griffes redoutables.",
+      "environment": "Forêts profondes, cavernes et pentes à baies de tout Trudvang, des bois de Mittland aux montagnes.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "h3NsTz4z5A6B7C8D",
+  "_key": "!actors!h3NsTz4z5A6B7C8D",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

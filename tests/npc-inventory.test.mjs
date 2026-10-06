@@ -4,10 +4,14 @@ import test from "node:test";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "../modules/npc-inventory.mjs";
 import {withNpcInventories} from "../tools/generate-npc-inventories.mjs";
 import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
+import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
 
 const content = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
 const french = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
-const byName = id => content.actors.find(actor => actor.nameKey === `TRUDVANG.Content.Actor.${id}.Name`);
+const localize = key => key.split(".").reduce((value, part) => value?.[part], french);
+const {actors: bestiary} = buildBestiaryPackDocuments({code: "fr", localize, format: (key, data) => Object.entries(data).reduce((s, [k,v]) => s.replaceAll(`{${k}}`, v), localize(key)), isFrench: () => true});
+const names = {GiantSnake: "Serpent géant", GiantSpider: "Araignée tisseuse", Gryphon: "Griffon", NightUlm: "Nattulm", ThornBeast: "Bête épineuse", TrollBull: "Minokks", Galtir: "Galtir", Warg: "Warg"};
+const byName = id => bestiary.find(actor => actor.name === names[id]);
 
 test("NPC material inventories accept all equipment, not knowledge or natural profiles", () => {
   for (const type of ["weapon", "armor", "shield", "gear", "potion"]) assert.equal(isNpcEquipment({type}), true);
@@ -17,11 +21,13 @@ test("NPC material inventories accept all equipment, not knowledge or natural pr
   assert.equal(isNpcEquipment({type: "weapon", system: {category: "natural"}}), false);
 });
 
-test("all starter creatures have an inventory and independent tokens, while natural weapons are not loot", () => {
-  for (const actor of content.actors) {
+test("bestiary creatures replace the eight starters and have independent token inventories", () => {
+  assert.deepEqual(content.actors, []);
+  assert.equal(content.folders.creatures, undefined);
+  for (const actor of bestiary) {
     assert.ok(Array.isArray(actor.items));
     assert.equal(actor.prototypeToken.actorLink, false);
-    assert.ok(actor.items.every(item => isNpcEquipment(item) || item.system.combatSpecialty === "natural"));
+    assert.ok(actor.items.every(item => isNpcEquipment(item) || item.system.combatSpecialty === "natural" || ["creatureAbility", "tablet", "spell", "divineFeat"].includes(item.type)));
   }
   assert.equal(byName("Galtir").items.filter(isNpcEquipment).length, 2);
   assert.equal(byName("TrollBull").items.filter(isNpcEquipment).length, 4);
@@ -30,15 +36,15 @@ test("all starter creatures have an inventory and independent tokens, while natu
 
 test("starter weapons keep creature-specific damage and only a valid hand configuration is readied", () => {
   const items = byName("TrollBull").items;
-  const mace = items.find(item => item.nameKey.includes("BardaMakir"));
-  const club = items.find(item => item.nameKey.includes("TveiKlubb"));
+  const mace = items.find(item => item.name.includes("Barda makir"));
+  const club = items.find(item => item.name.includes("Tvei klubb"));
   const shield = items.find(item => item.type === "shield");
   assert.equal(mace.system.damage, "1d10"); assert.equal(mace.system.openRoll, 8);
   assert.equal(club.system.damage, "2d10"); assert.equal(club.system.openRoll, 7);
   assert.equal(mace.system.equipped, true); assert.equal(shield.system.equipped, true);
   assert.equal(club.system.equipped, false);
   assert.equal(shield.system.openRoll, 10);
-  for (const actor of content.actors) for (const item of actor.items) {
+  for (const actor of bestiary) for (const item of actor.items.filter(item => isNpcEquipment(item) || item.system.combatSpecialty === "natural")) {
     assert.equal(item.system.quantity, 1);
     assert.equal(item.folder, undefined);
     if (item.type === "armor") assert.equal(item.system.equipped, true);
@@ -117,5 +123,5 @@ test("natural profiles preserve source damage and independent or shared reserves
   assert.deepEqual(natural("GiantSpider").map(item => [item.system.damage, item.system.openRoll, item.system.naturalCombatPoints]), [["2d10", 9, 6], ["1d10", 7, 12]]);
   assert.equal(natural("TrollBull").length, 2);
   assert.deepEqual(natural("TrollBull").map(item => [item.system.isUnarmed, item.system.naturalCombatPool, item.system.naturalCombatPoints]),
-    [[false, "natural", 8], [true, "Unarmed", 0]]);
+    [[false, "natural", 8], [true, "unarmed", 0]]);
 });

@@ -1,0 +1,19 @@
+{
+  "_id": "oRxJE6A6B7C8D9Ea",
+  "name": "Cœur régénérant (lindwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "oRxJE6A6B7C8D9Ea",
+    "summary": "Le cœur crée un lindwurm après 1d10 semaines ; le manger guérit entièrement, mais risque de transformer le consommateur en lindwurm.",
+    "description": "<p>Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guérit de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective.</p><p>Il est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 118
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!oRxJE6A6B7C8D9Ea",
+  "folder": null
+}

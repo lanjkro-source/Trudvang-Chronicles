@@ -1,0 +1,207 @@
+{
+  "name": "Eye Spider",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/mlmpT0u0v1w2x3y4.jpg",
+  "items": [
+    {
+      "_id": "CVpRL3y4z5A6B7C8",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!mlmpT0u0v1w2x3y4.CVpRL3y4z5A6B7C8",
+      "effects": []
+    },
+    {
+      "_id": "HHcyU2tZu0v1w2x3",
+      "name": "Impaling leg",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 7,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "impalingleg",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!mlmpT0u0v1w2x3y4.HHcyU2tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "wK1g6A3y4z5A6B7C",
+      "name": "Paralyzing Stare (eye spider)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "wK1g6A3y4z5A6B7C",
+        "summary": "Resist at situation value 7 (Psyche); paralysis for 1d3+2 rounds modified by Psyche, broken if the spider disappears or dies.",
+        "description": "<p>The eye spider likes to use the paralyzing power of its eyes. Each action round, the spider can try to hypnotize a victim. The victim must make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid being paralyzed. If the roll fails, the victim will be paralyzed for 1d3 + 2 action rounds (Psyche modifiers apply to the duration). A paralyzed victim cannot do anything else but stand and stare at the spider. If the spider disappears or dies, the spell is broken.</p><p>During the round in which the spider use the paralyzing stare attack, it cannot do other things. The spider will lose only 1 round: if its stare is successful, it can act during the later rounds of paralysis of the victim.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mlmpT0u0v1w2x3y4.wK1g6A3y4z5A6B7C"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mlmpT0u0v1w2x3y4.yCooPeIdJeKfLgMh"
+    },
+    {
+      "_id": "EdVMy2u0v1w2x3y4",
+      "name": "Spin Cocoon",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "EdVMy2u0v1w2x3y4",
+        "summary": "Cocoon formed in 1d10+10 rounds; escaping requires three successes, in order, at situation values 3, 7 and 11 (Strength).",
+        "description": "<p>Both the eye spider and the net spider have the ability to wrap their victim in cocoons of web and hang them upside down in the forest. As soon as the giant spider has either paralyzed its victim or trapped it in a net, it will begin to encapsulate its prey in a cocoon, assuming that nothing else is calling for its attention.</p><p>The cocoon takes 1d10 + 10 action rounds to create, and a trapped victim who wants to break free must make three situation rolls with the situation values of 3, 7, and 11 (Strength modifiers apply) to break free. The successful rolls do not need to be in a row. One or more failures can separate them. But the three successes must be in the order of SV 3, SV 7, and SV 11.</p><p>If the victim fails to break free, it remains in the deadly cocoon and might soon die of starvation or being eaten by the giant spider.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mlmpT0u0v1w2x3y4.EdVMy2u0v1w2x3y4"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "mlmpT0u0v1w2x3y4",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/mlmpT0u0v1w2x3y4.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Impaling leg",
+          "value": 10
+        },
+        {
+          "attack": "Impaling leg",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 94,
+        "max": 94
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 50
+    },
+    "description": "This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes with a paralyzing power, and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "other",
+      "size": "5",
+      "age": "3 500, max. 5 000",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 84,
+      "bodyMax": 105,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "10 m",
+          "max": "50 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Burrowing spider whose paralyzing stare freezes its prey in place.",
+      "environment": "Dark forests, burrows dug into the cool ground",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 18
+      }
+    }
+  },
+  "_id": "mlmpT0u0v1w2x3y4",
+  "_key": "!actors!mlmpT0u0v1w2x3y4",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

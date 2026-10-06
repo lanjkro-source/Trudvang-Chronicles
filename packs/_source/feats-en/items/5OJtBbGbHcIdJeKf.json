@@ -1,0 +1,19 @@
+{
+  "_id": "5OJtBbGbHcIdJeKf",
+  "name": "Speak With Animals",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5OJtBbGbHcIdJeKf",
+    "summary": "The yggdras understands animals and can communicate with them.",
+    "description": "<p>Throughout the years, the yggdras have learned to speak with animals. This has led to the animals in the forest protecting the yggdras from evil intruders.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 103
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!5OJtBbGbHcIdJeKf",
+  "folder": null
+}

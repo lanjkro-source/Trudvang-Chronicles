@@ -1,0 +1,228 @@
+{
+  "name": "Night Ulm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg",
+  "items": [
+    {
+      "_id": "j1xPF7y4z5A6B7C8",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 5,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.j1xPF7y4z5A6B7C8",
+      "effects": []
+    },
+    {
+      "_id": "i0znNMdJeKfLgMhN",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 11,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.i0znNMdJeKfLgMhN",
+      "effects": []
+    },
+    {
+      "_id": "NcOgKSkQlRmSnToU",
+      "name": "Rugtanne Infection",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NcOgKSkQlRmSnToU",
+        "summary": "The night ulm’s bite transforms its victim into a bloodsucking rugtanne.",
+        "description": "<p>Every other action round in which a night ulm sucks blood from a victim, there is a chance that the victim will develop a rare disease. After two action rounds, the chance is 1 in 20 (the roll of 20 on 1d20). After four action rounds, the chance is 2 in 20 (the roll of 19-20 on 1d20). For some inexplicable reason, only humans can be infected by the disease.</p><p>A victim who is infected by the disease will transform into a rugtanne (a strange mix between a human and a night ulm) within 2d3 days. A rugtanne can live only during the night. If exposed to sunlight, it dies instantly from the shock when it is hit by the rays of the sun. Every fifth night, they must feed on blood from another warm-bodied creature. The bite and the bloodsucking works the same way for the rugtanne as it does for the night ulm.</p><p>A rugtanne can live up to four times as long a human, which means that it has much more time for learning things. According to some myths, a rugtanne can have great magical capabilities and powers, such as being able to transform into a bat or a great black stallion. These are nothing but superstitions. However, if mighty wizards are transformed into rugtannes, they still can wield their magic, creating horrid bloodsuckers with powers that few men hold.</p><p>When a player character becomes a rugtanne, Constitution, Psyche, Strength, and Dexterity increase by two levels (for example, -2 becomes 0, or +1 becomes +4). If already at the highest level, add +4 to that trait modifier, making it +8. Natural skin protection gives PV 1. The rugtanne gains Darkvision: normal vision in total darkness up to 10 m, fading until it vanishes at about 60 m. It still takes damage and remains mortal as before, but recalculate its Body Points using its new traits.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 24
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.NcOgKSkQlRmSnToU"
+    },
+    {
+      "_id": "nP6pix2x3y4z5A6B",
+      "name": "Numbing Saliva",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "nP6pix2x3y4z5A6B",
+        "summary": "After 2d6 rounds, noticing the bite requires situation value 8 (Perception).",
+        "description": "<p>A night ulm seldom attacks creatures that are fully alert but prefers those who are sleeping or so woozy that they will not notice that they are being attacked. Thanks to its great dexterity, the night ulm moves undetected toward a sleeping victim and spits saliva on the victim’s neck. After 2d6 action rounds, the skin is so numb that it will require a situation roll with a situation value of 8 (Perception modifiers apply) for a sleeping victim to discover that they are being bitten (this roll is already considered in the “Bloodsucker” rules above). In other situations, it is up to the game master to decide the situation value or whether the victim notices the saliva or the attack.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 23
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.nP6pix2x3y4z5A6B"
+    },
+    {
+      "_id": "gwfvoJdJeKfLgMhN",
+      "name": "Bloodsucker",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "gwfvoJdJeKfLgMhN",
+        "summary": "On a sleeping victim, 1d3 damage then 1d6 per round for four rounds; waking possible at situation value 8 (Perception).",
+        "description": "<p>A night ulm can approach a sleeping victim and try to suck the victim’s blood. This ability is used outside of combat.</p><p>A night ulm will suck blood over 5 action rounds. In the first round, the victim will take 1d3 points of damage from the bite. During the next 4 rounds, the victim will take 1d6 points of damage per round due to loss of blood. In each action round, there is a possibility that the victim will awaken and discover the night ulm by succeeding on a situation roll with a situation value of 8 (Perception modifiers apply). If the victim discovers the night ulm, it will instantly flee. A night ulm will fight only if it is forced into a corner. Then it will use its bite and claws.</p><p>Sometimes several night ulms suck the blood from the same creature. If the victim does not awaken during the first 5 action rounds that are described above, the victim has -2 on the situation roll that follows for the next bloodsucker.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 23
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.gwfvoJdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!xs7CT0sYtZu0v1w2.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "xs7CT0sYtZu0v1w2",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 24,
+        "max": 24
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 10
+    },
+    "description": "This elusive creature has bat wings and glides from tree to tree. Its dark body is adapted to the night and loathes sunlight. Its mouth delivers a very dangerous bloodsucking bite. Its prized long claws are sharp, and its clawed feet let it sleep hanging from cave ceilings. Its nocturnal silhouette moves deftly through the pine crowns.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "winged humanoid",
+      "size": "0.5",
+      "age": "15, max. 25",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 22,
+      "bodyMax": 27,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "10 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "2 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Nocturnal bloodsucker with bat wings and long claws.",
+      "environment": "Deepest forests and pine crowns, nesting in large numbers in deep underground caves",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 23
+      }
+    }
+  },
+  "_id": "xs7CT0sYtZu0v1w2",
+  "_key": "!actors!xs7CT0sYtZu0v1w2",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

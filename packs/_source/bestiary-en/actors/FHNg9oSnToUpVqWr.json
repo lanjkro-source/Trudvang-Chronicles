@@ -1,0 +1,209 @@
+{
+  "name": "Lyktgubbe",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg",
+  "items": [
+    {
+      "_id": "732maeGbHcIdJeKf",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 5,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!FHNg9oSnToUpVqWr.732maeGbHcIdJeKf",
+      "effects": []
+    },
+    {
+      "_id": "6b0Ep2tZu0v1w2x3",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 9,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!FHNg9oSnToUpVqWr.6b0Ep2tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Durable",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+        "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 39
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!FHNg9oSnToUpVqWr.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "HeVWKE5A6B7C8D9E",
+      "name": "Drown Victim (lyktgubbe)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "HeVWKE5A6B7C8D9E",
+        "summary": "When standing: situation value 12, -2 per lyktgubbe; in deep water, Swimming -2 per lyktgubbe.",
+        "description": "<p>A victim that has been exposed to a lyktgubbe must succeed in getting onto land so that he won’t be drowned. If the victim can touch the bottom of the lake or water source with his feet, he must succeed on a situation roll with a situation value of 12 (Strength or Dexterity modifiers apply). For each lyktgubbe that tries to drag the victim down to drown, the situation value is decreased by -2. If the water is so deep that the victim must swim to stay afloat, an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -2 for each lyktgubbe that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 60
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!FHNg9oSnToUpVqWr.HeVWKE5A6B7C8D9E"
+    },
+    {
+      "_id": "OymWMpSnToUpVqWr",
+      "name": "Lykt Eyes",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "OymWMpSnToUpVqWr",
+        "summary": "Glowing fog charms travelers: situation value 8 (Psyche), then a d20 determines how they wander.",
+        "description": "<p>The greatest ability of the lyktgubbe is its power to send the fog in its large eyes against unknowing travelers across a distance of several hundred meters. The fog will glow with a paralyzing and enchanting force that impairs the victim’s powers of perception. The enchantment often makes the victim lose all sense of time and space and feel forced to keep on walking. The victims often wake up in a state of not knowing where they are or how they got there.</p><p>A person that sees the self-illuminating fog must succeed on a situation roll with a situation value of 8 (Psyche modifiers apply) to overcome the enchantment. If the roll fails, the character is lost as noted on the chart below.</p><p>Enchanted victims can be freed in two ways: through a priest’s prayer or through vitner. Of course, there are other ways to make a victim stop walking, but they won’t break the enchantment.</p><p>A victim who walks into the bog or marsh will awaken from the enchantment when the lyktgubbe is at a distance of 15 meters (the game master will decide which terms apply for the area). The lyktgubbe moves at a speed of 5 meters per action round below the water so it can attack unnoticed. Only a skill roll with the Shadow Arts skill with a negative modifier of -5 will allow the victim to detect the lyktgubbe. Once it has reached its victim, the lyktgubbe will try to wrestle the victim below the surface to drown it, according to the described rules above. If there are several lyktgubbes, they will help each other to submerge the victim.</p><table><thead><tr><th>1d20</th><th>Result</th></tr></thead><tbody><tr><td>1-5</td><td>Wanders for 1d6 hours in a randomly determined direction.</td></tr><tr><td>6-10</td><td>Wanders for 2d6 hours in a randomly determined direction.</td></tr><tr><td>11-20</td><td>Moves straight toward the bog where the lyktgubbe waits.</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 60
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!FHNg9oSnToUpVqWr.OymWMpSnToUpVqWr"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "FHNg9oSnToUpVqWr",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": -2,
+      "strength": 1
+    },
+    "skills": {
+      "fighting": {
+        "value": 4,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 57,
+        "max": 57
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "The lyktgubbe is undead, its decomposing body covered with dried mud. This crust camouflages it and holds its body together. Its characteristic feature is its large mist-filled eyes. They shine like a milky moon and cast a mist with a paralyzing halo. A close look reveals that the mist within them never stops moving.",
+    "details": {
+      "creatureType": "Mist creatures",
+      "type": "humanoid",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 52,
+      "bodyMax": 63,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "8 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "1 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Marsh will-o'-the-wisp with milky moon eyes.",
+      "environment": "Marshes and peat bogs, such as the Visentia marshes",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 59
+      }
+    }
+  },
+  "_id": "FHNg9oSnToUpVqWr",
+  "_key": "!actors!FHNg9oSnToUpVqWr",
+  "folder": "nhZGosWrXsYtZu0v"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "dihK2uYtZu0v1w2x",
+  "name": "Soul Name",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "dihK2uYtZu0v1w2x",
+    "summary": "The true name allows the soul to be bound and stolen: lose one Psyche level; only the victim can recover it by killing the myling without help.",
+    "description": "<p>A myling that receives the true name of a person can bind the soul of the victim to itself to gain more power. It does this by sacrificing to its goddess. This sacrificial ritual takes time and the place can lie far off, which requires the myling to be swift before the victim can realize what is about to happen.</p><p>When a victim gives his true name, he must make a situation roll with a situation value of 6 (Intelligence modifiers apply) to understand that something is afoot. If the roll is successful, the victim will feel uneasy and realize that he must stop the creature at once. A myling that succeeds in binding another’s soul to it gains high status among its kin. A victim who has lost his soul to a myling will feel empty, without goals or purpose, for the rest of his life. The victim loses one level of the Psyche trait. The only way to regain the lost soul is to single-handedly slay the myling that stole it. If the myling dies by someone else’s hand, the soul is lost forever.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 63
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!dihK2uYtZu0v1w2x",
+  "folder": null
+}

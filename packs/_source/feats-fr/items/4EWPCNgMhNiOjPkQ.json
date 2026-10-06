@@ -1,0 +1,19 @@
+{
+  "_id": "4EWPCNgMhNiOjPkQ",
+  "name": "Peau de pierre",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "4EWPCNgMhNiOjPkQ",
+    "summary": "VP 4 ; les armes tranchantes de qualité inférieure à excellente risquent de perdre 1d10 (JO 8-10) VI sur un 1 au d10.",
+    "description": "<p>La surface extérieure de la peau pétrifiée du géant offre une protection pratiquement impénétrable (valeur de protection de 4). Les armes tranchantes dont la qualité est inférieure à excellente risquent de casser si elles sont utilisées pour frapper la surface du géant. Chaque fois qu’une arme de ce type frappe avec succès le géant, le maître de jeu effectue un test de chance avec un d10. Sur un résultat de 1, l’arme tranchante subit 1d10 (JO 8-10) points de dégâts qui réduisent sa valeur d’intégrité.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 140
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!4EWPCNgMhNiOjPkQ",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "iTN16SlRmSnToUpV",
+  "name": "Grip (logrjotun)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "iTN16SlRmSnToUpV",
+    "summary": "Grips without further CP after an unarmed attack; crush damage depends on size, or a throw deals 1d10 (OR 10) to 1d10 (OR 4-10).",
+    "description": "<p>When the giant succeeds in an unarmed attack roll he can try to grab hold of a victim, without spending further Combat Points, but making a SV roll. The creature must be between 1/2t and 3t in size and the value of the SV depends on the size of the victim, according to the table below.</p><p>A victim of the grip can try to avoid the attack with the Agility skill, preferably with the Evade specialty. Each round, the giant can choose to crush or throw the victim. A crush causes the victim to take between 1d10 and 1d10 (OR 9–10) points of damage per action round (the damage depends on the size of the victim), while a fall can deal anything from 1d10 (OR 10) to 1d10 (OR 4–10) points of damage, depending on the severity of the fall.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 135
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!iTN16SlRmSnToUpV",
+  "folder": null
+}

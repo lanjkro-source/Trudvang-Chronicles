@@ -1,0 +1,2381 @@
+{
+  "name": "Skjuld",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
+  "items": [
+    {
+      "_id": "vjRMuH8D9EaGbHcI",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vjRMuH8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "_id": "AxqiZLeKfLgMhNiO",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.AxqiZLeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "_id": "aU3d29D9EaGbHcId",
+      "name": "Pouvoirs",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "aU3d29D9EaGbHcId",
+        "summary": "Le skjuld dispose de pouvoirs surnaturels variés.",
+        "description": "<p>Il n’est pas rare qu’un skjuld ait appris des sorts ou des pouvoirs elfiques.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 94
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.aU3d29D9EaGbHcId"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.jrI2efIdJeKfLgMh"
+    },
+    {
+      "name": "Vitner illusoire",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner",
+        "description": "L’enchanteur a appris à utiliser le vitner pour manipuler son environnement et créer des illusions et des images parfaitement crédibles. L’enchanteur a le contrôle complet de l’apparence des illusions qu’il crée, et peut même décider si elles seront animées ou non. L’enchanteur peut créer l’illusion d’objets et de créatures de petite taille, mais aussi des illusions paysagères donnant vie à des cités, montagnes et autres forêts (du moins tant que les témoins de l’illusion continuent de croire à ce qu’ils voient). L’enchanteur a également appris à manipuler l’air afin d’imiter les sons et les vibrations. En façonnant le vitner, l’enchanteur peut augmenter ou réduire le volume sonore autour de lui, ce qui lui permet de produire des roulements de tonnerre assourdissant ou de subtils sifflements si aigus qu’ils échappent aux oreilles humaines. Qui plus est, l’enchanteur a appris à utiliser cette faculté d’imitation pour évoluer à l’insu de tous en dissimulant ses traces, en générant des camouflages, voire même en se soustrayant directement à la vue d’autrui.",
+        "summary": "Permet de créer des illusions sonores ou visuelles et de dissimuler des choses.",
+        "swedishName": "Skenvitna",
+        "negation": "Quand un enchanteur crée une illusion, la négation correspondante n’est pas forcément néfaste. Elle peut se traduire par une autre illusion apparaissant soudain à un tout autre endroit, par exemple, ou bien par une créature ou un objet qui devient invisible ou dont l’aspect se trouble pendant quelques instants. Cela dit, quand l’enchanteur manipule les sons sous leurs différentes formes, la négation prendra toujours une forme opposée. S’il diminue le volume sonore à un endroit, la négation l’augmentera ailleurs. S’il crée un coup de tonnerre, un autre bruit d’intensité équivalente sera complètement étouffé à un autre endroit (comme un éclair ou des vagues déferlantes qui ne font aucun bruit). Si l’enchanteur crée le bruit de quelqu’un marchant sur un sentier de graviers, le même son disparaîtra quelque part ailleurs. S’il génère le son d’une personne frappant à la porte, une autre personne faisant la même chose ailleurs ne produira pas le moindre bruit. Et si l’enchanteur supprime un son particulier à un endroit, ce même son se répercutera inexplicablement ailleurs.",
+        "affinity": {
+          "hvitavitner": 1,
+          "vaagrivitner": 0,
+          "morkvitner": -1
+        },
+        "source": "Livre des règles, p. 197",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "QuGPdlPkQlRmSnTo",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.QuGPdlPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Grondement",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:roar:0",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:roar:0",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "L’enchanteur peut utiliser le vitner pour créer un terrible grondement aussi tonitruant qu’un coup de tonnerre. L’enchanteur n’entend pas ce bruit luimême, mais toutes les autres personnes situées à proximité, voire celles qui sont loin de lui, peuvent entendre cette déflagration. Quiconque se trouve à moins de 10 mètres de l’enchanteur éprouve soudain une douleur lancinante dans les oreilles qui se mettent à bourdonner, ce qui se traduit par un malus de -4 à toutes les valeurs de compétence et de situation associées à l’audition. L’effet se dissipe au bout de 1d6 minutes.",
+        "summary": "Produit un grondement assourdissant qui effraie et perturbe les créatures proches.",
+        "swedishName": "Slammera",
+        "duration": "",
+        "range": "personnelle",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:roar:0:0",
+            "cost": 1,
+            "maxCount": 1,
+            "effect": "Fait passer la portée de personnelle à : 10 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:roar:0:1",
+            "cost": 5,
+            "maxCount": 1,
+            "effect": "Fait passer la portée de personnelle à : 100 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:roar:0:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente le rayon de : 10 mètres"
+          }
+        ],
+        "source": "Livre des règles, p. 197",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "1fDJX4y4z5A6B7C8",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.1fDJX4y4z5A6B7C8",
+      "effects": []
+    },
+    {
+      "name": "Son illusoire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:phantom-sound:1",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:phantom-sound:1",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort génère soudain un ou plusieurs bruits à la portée indiquée. Le ou les sons constituent des illusions auditives correspondant à l’environnement et à la situation actuels. Il peut s’agir de bruits de pas qui approchent, d’une brindille qui craque, d’un grognement, d’une série de murmures, de coups sur une porte ou de tout autre bruit.",
+        "summary": "Crée des sons illusoires à l’endroit choisi pour distraire ou tromper.",
+        "swedishName": "Hlidklapp",
+        "duration": "10 tours de jeu",
+        "range": "10 mètres",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 tour"
+          },
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 10 mètres"
+          }
+        ],
+        "source": "Livre des règles, p. 198",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "hsCs7vZu0v1w2x3y",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.hsCs7vZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Son aigu",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:shriek:2",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:shriek:2",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort génère un bruit strident qui brise instantanément tout ce qui est en verre, en terre cuite ou en porcelaine (les objets magiques ne sont pas affectés par ce sort). Le son est si aigu que la plupart des humanoïdes le remarqueront à peine et ne percevront qu’un faible sifflement. Le bruit provient d’un point choisi par l’enchanteur dans la limite de la portée du sort, et il affecte tous les objets situés dans un rayon de 10 mètres et tous les animaux dans un rayon de 100 mètres. Les chiens, chats, rats et autres animaux du même genre sont contraints de gagner la zone dont provient le bruit, et une fois qu’ils s’y trouvent, ils tentent de reproduire le même cri strident. Ils sont incapables de faire quoi que ce soit d’utile pendant la durée du sort. Ce sort est instantané dans sa version de base, mais des niveaux de puissance supplémentaires permettent de le rendre persistant.",
+        "summary": "Émet un son aigu qui gêne, assourdit ou blesse les créatures qui l’entendent.",
+        "swedishName": "Rifla",
+        "duration": "",
+        "range": "5 mètres",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:shriek:2:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:shriek:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:shriek:2:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 197",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "vUIe5YrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vUIe5YrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Amplification des sons",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "L’enchanteur tisse le vitner autour d’une personne ou d’une créature afin d’amplifier tous les sons qu’elle produit. Le sort est tissé autour de la tête ou du corps de la cible. Dans ce dernier cas, tous les sons produits par les mouvements (comme les bruits de pas, les branches craquant sous les pieds ou encore le bruissement des vêtements) sont amplifiés. Si le sort est tissé autour de la tête du sujet, il semble étouffer tous les autres bruits ambiants en rendant parfaitement audible tout ce que dit le sujet, même si ce dernier ne fait que murmurer. Si le sort a été jeté à l’insu du sujet, il pourrait causer pas mal d’ennuis à ce dernier en fonction de la situation, car tout le monde autour du sujet pensera que ce dernier crie.",
+        "summary": "Amplifie les sons produits par une cible pour la rendre plus facile à entendre ou à repérer.",
+        "swedishName": "Slammerakraftla",
+        "duration": "5 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (il n’est plus nécessaire d’établir un contact)"
+          }
+        ],
+        "source": "Livre des règles, p. 197",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "bVOJpnQlRmSnToUp",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.bVOJpnQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "name": "Sans trace",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:traceless:4",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:traceless:4",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort crée une barrière d’énergie qui accompagne la personne enchantée en faisant disparaître les traces, indices et même odeurs qu’elle sème derrière elle et laisse le terrain dans l’état précédent son passage.",
+        "summary": "Efface les traces, indices et odeurs laissés par le bénéficiaire.",
+        "swedishName": "Sporvaska",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:traceless:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 jour"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 semaine"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Ajoute une cible supplémentaire (qui profite de la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 198",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "XfSmjQhNiOjPkQlR",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.XfSmjQhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "name": "Voix illusoire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort permet à la personne enchantée de projeter sa voix afin de faire croire qu’elle provient d’un endroit situé à portée mais complètement différent. Le bénéficiaire peut également modifier sa voix comme bon lui semble et la rendre effrayante, puissante, agressive ou solennelle, ou au contraire douce, aimable, séduisante, enfantine ou encore amusante. Si l’enchanteur tisse ce sort autour d’une cible non consentante, il peut altérer la voix de cette dernière selon son bon vouloir. La victime peut tenter de résister à cet effet par un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution). En cas de réussite, la voix ne subit aucune altération. Dans le cas contraire, la victime perd le contrôle de ses intonations, qui se modifient au gré de l’enchanteur.",
+        "summary": "Modifie la voix et les intonations d’une créature pour tromper les auditeurs.",
+        "swedishName": "Draugastemma",
+        "duration": "1 minute",
+        "range": "10 mètres",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 journée"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la cible de réussir son test de situation de : -1"
+          }
+        ],
+        "source": "Livre des règles, p. 198",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Y09LhnSnToUpVqWr",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.Y09LhnSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "name": "Image",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:depict:6",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:depict:6",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "En se concentrant sur un objet, une créature ou une personne, l’enchanteur peut en évoquer une réplique exacte. Pour que l’illusion soit parfaite, l’enchanteur doit être en contact physique avec l’original pendant l’évocation du sort. Dans le cas contraire, l’enchanteur peut évoquer une image imparfaite en se basant sur ses souvenirs ou même sur son imagination (ce qui est forcément le cas si l’objet n’existe pas). Ces images imparfaites dégagent une sorte d’aura floue ou distordue autour d’elles, ce qui permet aux observateurs de repérer plus facilement la supercherie. L’image dupliquée ne peut pas être plus grande qu’un humain de taille normale dans la version de base du sort. L’enchanteur peut créer l’image n’importe où dans la limite de la portée du sort. Cela dit, il doit maintenir à tout moment l’image en ligne de mire. Si l’image sort entièrement (et pas seulement en partie) du champ de vision de l’enchanteur, elle se dissipe. De plus, l’enchanteur contrôle complètement l’image dans ses moindres aspects, et notamment ses expressions et réactions. De fait, l’enchanteur peut non seulement faire marcher ou courir une créature illusoire, mais il peut également lui faire utiliser le langage corporel pour exprimer toutes sortes d’émotions telles que la colère, la fureur, l’amour ou encore l’agressivité. L’enchanteur peut faire bouger ou voler l’objet à une vitesse de 6 mètres par tour de jeu. Si un obstacle lui barre la route, l’image le traversera directement (qu’il s’agisse d’une image parfaite ou non). Il est donc essentiel pour l’enchanteur de diriger l’illusion avec précaution afin qu’elle réagisse de façon logique à son environnement. Pour résister à la supercherie, un observateur doit réussir un test de compétence d’Arts des ombres avec un malus de -3 à sa valeur de compétence. Il est bien plus facile de percer à jour une illusion imparfaite (le simulacre d’un sujet avec lequel l’enchanteur n’était pas en contact physique au moment de son évocation). Toute personne observant une image imparfaite peut y résister en réussissant un test de compétence d’Arts des Ombres simple (VC + 5). Une illusion tissée grâce à ce sort ne peut émettre aucun bruit ni aucune odeur, ce qui veut dire qu’il est bien plus facile de découvrir la véritable nature d’une illusion si elle est censée faire du bruit ou dégager une forte odeur. Dans un tel cas de figure, le test de compétence permettant de résister à la tromperie devrait recevoir un bonus de +1 à +10, selon que la ruse est plus ou moins évidente, à la discrétion du maître de jeu.",
+        "summary": "Crée une image illusoire contrôlée par l’enchanteur.",
+        "swedishName": "Skenbildra",
+        "duration": "1 minute",
+        "range": "10 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:depict:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 10 minutes"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Réduit les chances que l’observateur réussisse son test de compétence de : -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "cinq fois celle d’un être humain normal"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:5",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "celle d’une halle de Storme"
+          }
+        ],
+        "source": "Livre des règles, p. 199",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "4rhjsOfLgMhNiOjP",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.4rhjsOfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Camouflage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:camouflage:7",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:camouflage:7",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort permet au bénéficiaire (y compris ses vêtements et son équipement) de se fondre complètement dans son environnement. Toute personne à la recherche du sujet doit réussir un test de compétence d’Arts des ombres difficile (VC -3) afin de le déceler. En fonction de l’environnement, le camouflage pourra varier d’un endroit à l’autre. Par exemple, si le sujet se trouve devant un mur, il pourra prendre l’aspect d’un arbuste ou même du mur luimême. S’il se trouve dans une clairière forestière, il pourra se faire passer pour un arbre, un rocher ou un buisson. Son apparence physique ne change pas réellement : c’est le vitner qui l’entoure qui prend l’apparence du camouflage désiré. La cible doit rester complètement immobile pour que l’effet magique fonctionne. Le sort est brisé si le bénéficiaire bouge ou fait du bruit, ou si quelqu’un le touche. Cela dit, le sort est rétabli dès que le sujet cesse de bouger ou de faire du bruit. On peut également utiliser ce sort sur un objet au lieu d’un être vivant, mais cet objet ne peut pas être tenu ou porté par une créature. Les êtres qui ne cherchent pas activement des objets dissimulés n’ont droit à aucun test pour découvrir l’objet camouflé, à moins qu’il ne s’agisse d’un piège ou d’une attaque.",
+        "summary": "Fond le bénéficiaire dans son environnement afin de le rendre difficile à repérer.",
+        "swedishName": "Aldyldja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 journée"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte un sujet supplémentaire (qui profite de la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 198",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "k3aEMuZu0v1w2x3y",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.k3aEMuZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Paysage illusoire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:landscape-illusion:8",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:landscape-illusion:8",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort crée une immense sphère d’illusion autour de l’enchanteur qui imite le paysage de son choix. Cette sphère centrée sur l’enchanteur a un rayon de 300 mètres et peut représenter un paysage comme une grande colline, une forêt, ou même une cité (l’enchanteur choisit la taille de l’illusion). L’illusion peut également ne rien représenter et servir à dissimuler le véritable paysage. L’enchanteur n’a pas la possibilité de simuler le mouvement, l’illusion doit donc représenter quelque chose de statique. Pour pouvoir se rendre compte de loin que ce paysage est une immense illusion, un observateur doit réussir un test de compétence d’Arts des ombres, en prenant en compte la distance qui le sépare de l’illusion (Cf. la table ci-contre). L’observateur a droit à un nouveau test de compétence à chaque fois qu’il se rapproche de l’illusion d’un palier sur cette table. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Distance</th><th>Modificateur</th></tr></thead><tbody><tr><td><50 m</td><td>L’illusion est découverte</td></tr><tr><td>50 à 100 m</td><td>+5</td></tr><tr><td>101 à 200 m</td><td>+2</td></tr><tr><td>201 à 400 m</td><td>+0</td></tr><tr><td>401 à 600 m</td><td>-2</td></tr><tr><td>601 à 1000 m</td><td>-5</td></tr><tr><td>> 1000 m</td><td>-10</td></tr></tbody></table> L’illusion reste à l’endroit où elle a été tissée jusqu’à expiration du sort, même si l’enchanteur s’en va. Si un observateur s’aventure dans l’illusion, elle disparaît complètement de son champ de vision et il découvre le véritable paysage autour de lui, mais les autres observateurs à l’extérieur du royaume enchanté continuent d’être affectés par l’illusion.",
+        "summary": "Dissimule une zone sous l’illusion d’un autre paysage.",
+        "swedishName": "Augvilland",
+        "duration": "2 heures",
+        "range": "personnelle",
+        "weavingTime": "10 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée à 100 mètres (l’illusion n’est plus forcément centrée sur l’enchanteur)"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances d’un observateur de réussir son test de compétence de : -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente le rayon de l’illusion de : 100 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:4",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 journée"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:5",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 semaine"
+          }
+        ],
+        "source": "Livre des règles, p. 199",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "u57Hh5z5A6B7C8D9",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.u57Hh5z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Silence",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:silence:9",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:silence:9",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort génère une sphère d’énergie qui empêche de percevoir les sons provenant du site enchanté. Il peut se tisser autour d’un objet ou d’une personne et il a un rayon de 3 mètres. Si le point enchanté se déplace, la sphère l’accompagne. Tous les sons générés à l’intérieur du rayon du sort sont immédiatement absorbés par la sphère et sont donc inaudibles pour quiconque se trouve à l’extérieur de la zone enchantée. À l’intérieur cependant, tout s’entend normalement. De ce fait, le sort fonctionne bien pour quelqu’un souhaitant se déplacer de manière furtive, étant donné qu’aucun bruit ne peut émaner de la zone protectrice. L’enchanteur peut également diminuer la taille de la sphère. En diminuant son rayon de quelques centimètres seulement, l’enchanteur peut tisser le sort sur une personne ou une créature dont la voix et les bruits disparaîtront complètement, puisqu’il faut se trouver à l’intérieur de la sphère pour entendre ce que dit le bénéficiaire du sort. Ce sort n’affecte rien d’autre que les sons. Un observateur peut quand même voir à travers la sphère protectrice comme si elle n’existait pas, même s’il ne peut pas entendre les bruits qui en proviennent.",
+        "summary": "Crée une zone où les sons produits ne peuvent pas être entendus de l’extérieur.",
+        "swedishName": "Knystdyldja",
+        "duration": "10 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:silence:9:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente le rayon de la sphère de : 1 mètre"
+          }
+        ],
+        "source": "Livre des règles, p. 199",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "jGGH4YrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.jGGH4YrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Lindwurm illusoire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort génère l’illusion d’un immense lindwurm (ou d’une autre bête). Tous les ennemis de l’enchanteur (au choix de ce dernier) voient un lindwurm jaillir du sol à grande vitesse et dévorer l’enchanteur. Toutes les victimes du sort doivent immédiatement réussir un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Psychisme) ou subir 1d10 (JO 9-10) points de peur. Une victime qui réussit ce test ne subit que 1d5 points de peur. Cela se produit dès le premier tour de jeu du sort. Au deuxième tour de jeu, la bête semble chercher un nouveau repas. Au troisième tour, l’enchanteur (qui se tient toujours au même endroit, dissimulé à l’intérieur du corps de la créature) peut pousser la bête à attaquer (VC 10) la victime de son choix située à portée. Si l’enchanteur réussit, la bête déchire la cible à l’aide de ses mâchoires. La victime encourt 2d10 points de dégâts tandis que l’illusion prend une forme solide pendant un instant avant de se dissiper complètement. La victime peut tenter de parer la morsure afin d’éviter ces dégâts (ou l’éviter en recourant à la spécialité Esquive). Le lindwurm peut se déplacer jusqu’à 20 mètres de l’enchanteur, mais ce dernier doit conserver en permanence la bête dans son champ de vision. L’enchanteur demeure caché même si le lindwurm s’éloigne de son point de départ. Cela dit, les autres créatures peuvent alors détecter l’enchanteur en réussissant un test de compétence d’Arts des ombres.",
+        "summary": "Crée l’illusion terrifiante d’un lindwurm pour effrayer et disperser les ennemis.",
+        "swedishName": "Ormaskepn",
+        "duration": "3 tours de jeu",
+        "range": "personnelle",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du lindwurm de : 10 mètres"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de l’observateur de réussir son test de compétence de : -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente les chances de l’enchanteur d’échapper à la détection par la compétence Arts des ombres de : +1"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:3",
+            "cost": 5,
+            "maxCount": 2,
+            "effect": "Augmente les points de peur infligés d’un degré : 1d10JO9 > 1d10JO8 > 1d10JO7"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:4",
+            "cost": 5,
+            "maxCount": 3,
+            "effect": "Augmente les dégâts infligés d’un degré : 2d10 > 2d10JO10 > 2d10JO9 > 2d10JO8"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu, et autorise une autre attaque (l’enchanteur peut choisir la même cible ou une autre située à portée)"
+          }
+        ],
+        "source": "Livre des règles, p. 200",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "kKbL9kQlRmSnToUp",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.kKbL9kQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "name": "Invisibilité",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:invisibility:11",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:invisibility:11",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Vitner illusoire",
+        "description": "Ce sort crée un puissant camouflage qui change constamment d’apparence selon le point de vue de l’observateur. Le vitner donne au bénéficiaire, ainsi qu’à ses vêtements et à tout son équipement, l’aspect de ce que l’observateur verrait normalement si le bénéficiaire n’était pas là. Ainsi, le bénéficiaire du sort devient virtuellement invisible. Un témoin doit réussir un test de compétence d’Arts des ombres extrêmement difficile (-10) pour déceler un sujet qui se tient immobile, ou un test difficile (-3) si le sujet se déplace lentement. Si le sujet fait un geste brusque (par exemple s’il court ou s’il attaque), le vitner ne peut plus le camoufler et tous les témoins reçoivent un bonus de +5 à leur test de compétence pour le percevoir ; cela dure jusqu’à ce que le bénéficiaire du sort ralentisse ses mouvements. Toute personne qui tente d’attaquer la cible invisible ou de parer ses attaques doit réussir un test de compétence d’Agilité ou subir un malus de -10 à toutes ses attaques et parades contre le personnage invisible.",
+        "summary": "Rend une créature très difficile à voir en adaptant son apparence à chaque observateur.",
+        "swedishName": "Oseidir",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "5 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée de : 1 heure"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Réduit les chances d’un observateur de détecter la cible par un test de compétence de : -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Affecte une cible supplémentaire (qui bénéficie de la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 200",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "SBWUZ8B7C8D9EaGb",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.SBWUZ8B7C8D9EaGb",
+      "effects": []
+    },
+    {
+      "name": "Perception",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving",
+        "description": "L’enchanteur a appris à se servir du vitner pour chercher et détecter les objets, les êtres vivants et même les morts-vivants. Il peut aussi établir un lien mental avec son environnement immédiat. À l’aide du vitner, l’enchanteur peut se faire une image exacte de tout ce qui existe autour de lui. Il sait précisément comment retrouver son chemin jusqu’à un endroit qu’il a déjà visité et peut suivre ses propres traces aussi aisément que des chandelles dans le noir.",
+        "summary": "Permet de repérer des lieux, des êtres ou des objets et d’en révéler les traces.",
+        "swedishName": "Alldskonja",
+        "negation": "Quand l’enchanteur utilise le vitner pour déceler un objet, une créature vivante ou un mort-vivant, quelque part ailleurs quelque chose est perdu. Les endroits dans lesquels une personne s’est déjà rendue lui paraissent étrangers ou inconnus. Les directions changent et l’est devient l’ouest, et les repères géographiques familiers comme cette colline particulière après le prochain tournant n’est plus rien qu’un trou dans le sol. Certains s’avèrent incapables de rentrer chez eux, ou même de revenir sur leurs pas. Des informations sont oubliées, ou des objets déplacés.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 1
+        },
+        "source": "Livre des règles, p. 173",
+        "level": 1,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "gsLHISmSnToUpVqW",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.gsLHISmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Chemin du retour",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:find-home:0",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:find-home:0",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort crée un lien spirituel entre le bénéficiaire du sort et un lieu où il a passé au moins six heures. La personne enchantée peut choisir n’importe quel lieu, pour peu qu’elle y ait passé suffisamment de temps. Elle sait précisément quelle direction prendre afin de gagner le lieu choisi, sans toutefois connaître le chemin exact.",
+        "summary": "Crée un lien avec un lieu connu pour guider le bénéficiaire et lui permettre d’y revenir.",
+        "swedishName": "Heimfundr",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:find-home:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Diminue le nombre d’heures que le bénéficiaire doit avoir passées dans le lieu qu’il désire retrouver de : 1 (jusqu’à un minimum de : 1 heure)"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte une créature supplémentaire (qui bénéficie du sort de base)"
+          }
+        ],
+        "source": "Livre des règles, p. 173",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "28C0LcHcIdJeKfLg",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.28C0LcHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Traces",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:retrace-tracks:1",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:retrace-tracks:1",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à la personne enchantée de voir aisément ses propres empreintes sur le sol, qui s’éclairent d’une lueur rougeâtre qu’elle seule peut voir. Si le bénéficiaire a traversé une quelconque masse d’eau ou s’est déplacé d’une manière qui ne laisse pas de trace (par exemple en sautant par-dessus une ravine, en nageant ou en chevauchant une monture), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer la direction.",
+        "summary": "Fait apparaître les propres traces du bénéficiaire afin qu’il puisse les suivre.",
+        "swedishName": "Veigvisu",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte un sujet supplémentaire (qui bénéficie de la version de base sur sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 173",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "1GpwgkPkQlRmSnTo",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.1GpwgkPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Détection d’objet",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-object:2",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-object:2",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à l’enchanteur de trouver des objets s’ils se trouvent à portée. L’enchanteur doit commencer par préciser l’objet qu’il recherche. Le maître de jeu en détermine ensuite la valeur (qui est subjective et dépend du point de vue de l’enchanteur, mais correspond également à la valeur matérielle de l’objet) sur une échelle de 1 à 100. Une valeur de 1 indique un objet aussi commun qu’une cuillère en bois, et 100 correspond davantage à la couronne magique d’un roi. Pour percevoir l’objet, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table ci-contre. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Valeur</th><th>Modificateur</th></tr></thead><tbody><tr><td>1-10</td><td>+8</td></tr><tr><td>11-20</td><td>+4</td></tr><tr><td>21-25</td><td>+2</td></tr><tr><td>26-35</td><td>+0</td></tr><tr><td>36-45</td><td>-2</td></tr><tr><td>46-55</td><td>-4</td></tr><tr><td>56-65</td><td>-8</td></tr><tr><td>66-75</td><td>-10</td></tr><tr><td>76-85</td><td>-12</td></tr><tr><td>86-90</td><td>-16</td></tr><tr><td>91-95</td><td>-20</td></tr><tr><td>96-100</td><td>-30</td></tr></tbody></table> Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table de résultat (Cf. ci-dessous) pour déterminer la quantité d’informations qu’il reçoit au sujet de l’emplacement de l’objet. Une fois que l’enchanteur s’est fait une idée de l’emplacement de l’objet, cette sensation persiste jusqu’à expiration du sort. Si l’objet est déplacé, l’enchanteur le perçoit, et le sort l’informe de la nouvelle position de l’objet. <table><thead><tr><th colspan=\"2\">RÉSULTAT</th></tr><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1-3</td><td>L’enchanteur connaît la position exacte de l’objet.</td></tr><tr><td>4-8</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 100 mètres près.</td></tr><tr><td>9-11</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 500 mètres près.</td></tr><tr><td>12-13</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet, ainsi que la distance qui les sépare, à 1 kilomètre près.</td></tr><tr><td>14-15</td><td>L’enchanteur connaît avec précision la direction dans laquelle se trouve l’objet.</td></tr><tr><td>16-17</td><td>L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 10 degrés près sur une boussole)</td></tr><tr><td>18-20</td><td>L’enchanteur a une bonne idée de la direction générale dans laquelle se trouve l’objet (à 30 degrés près sur une boussole)</td></tr></tbody></table>",
+        "summary": "Localise un objet et continue d’indiquer sa position s’il est déplacé.",
+        "swedishName": "Tingskonja",
+        "duration": "1 heure",
+        "range": "5 kilomètres",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-object:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussite du test de situation de : +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 kilomètres"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:4",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 kilomètres"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 174",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "2FiI3XoUpVqWrXsY",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.2FiI3XoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "name": "Orientation",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:orientation:3",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:orientation:3",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à son bénéficiaire de conserver son sens de l’orientation pendant toute la durée du sort. La personne enchantée perçoit clairement les points cardinaux sur une boussole, ainsi que la hauteur ou la profondeur à laquelle elle se trouve.",
+        "summary": "Donne un sens parfait de l’orientation, des points cardinaux et de la profondeur.",
+        "swedishName": "Veigfundr",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:orientation:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte un sujet supplémentaire (qui bénéficie de la version de base sur sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 174",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "KFm0NWnToUpVqWrX",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.KFm0NWnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Détection des êtres vivants",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-being:4",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-being:4",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à l’enchanteur de percevoir une personne ou une créature située à portée. Pour pouvoir pratiquer ce rituel, il doit toutefois connaître le nom de la cible et posséder un objet lui ayant appartenu. Moins il s’est écoulé de temps depuis que la cible s’est séparée de cet objet, plus il sera facile de la retrouver. Le maître de jeu doit commencer par déterminer la valeur de l’objet aux yeux de la cible (ce qui est subjectif, mais correspond également au temps que l’objet a passé entre les mains de la cible) et lui attribuer la valeur appropriée sur une échelle de 1 à 100. Contrairement au sort Détection d’objet, une valeur de 1 indique un objet de valeur et utilisé récemment, comme une arme de famille portée quelques heures plus tôt seulement, tandis que 100 indique quelque chose comme une vieille chaussette portée pour la dernière fois il y a plusieurs années. Pour percevoir un être vivant, l’enchanteur effectue un test de situation avec une valeur de situation de 10 modifiée en fonction de la valeur de l’objet, comme l’indique la table p. 174 (Cf. le sort Détection d’objet). Si l’enchanteur réussit son test de situation, il jette 1d20 sur la table ci-dessous pour déterminer la quantité d’informations qu’il reçoit au sujet de la position de la cible, en consultant la table Détection d’objet/des êtres vivants : résultat, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur s’est fait une idée de l’emplacement de la cible, cette sensation persiste jusqu’à expiration du sort. Si la cible se déplace, l’enchanteur le perçoit, et le sort l’informe de sa nouvelle position.",
+        "summary": "Détecte et localise une créature vivante, même lorsqu’elle se déplace.",
+        "swedishName": "Skopjatenskonja",
+        "duration": "1 heure",
+        "range": "5 kilomètres",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-being:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussite du test de situation de : +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 kilomètres"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 174",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "mmnbXVmSnToUpVqW",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.mmnbXVmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Détection des morts-vivants",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-undead:5",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-undead:5",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à l’enchanteur de percevoir la présence d’une créature morte-vivante à portée. Pour ce faire, il doit effectuer un test de situation avec une valeur de situation de 10, modifiée en fonction du nombre de points de santé du mort-vivant, comme indiqué sur la table Détection des morts-vivants : modificateurs, ci-dessous. Si l’enchanteur réussit son test de situation, le maître de jeu lance alors 1d20 pour déterminer la quantité d’informations que l’enchanteur reçoit au sujet du mort-vivant, en consultant la table Détection d’objet : résultats, p. 174 (Cf. le sort Détection d’objet). Une fois que l’enchanteur a déterminé où se trouve actuellement le mort-vivant, cette perception perdure pour toute la durée du sort, et ce, même si le mort-vivant se déplace. <table><thead><tr><th colspan=\"2\">MODIFICATEURS</th></tr><tr><th>Points de Santé</th><th>Modificateur</th></tr></thead><tbody><tr><td>1-10</td><td>+8</td></tr><tr><td>11-20</td><td>+4</td></tr><tr><td>21-25</td><td>+2</td></tr><tr><td>26-35</td><td>+0</td></tr><tr><td>36-45</td><td>-2</td></tr><tr><td>46-55</td><td>-4</td></tr><tr><td>56-65</td><td>-8</td></tr><tr><td>66-75</td><td>-10</td></tr><tr><td>76-85</td><td>-12</td></tr><tr><td>86-90</td><td>-16</td></tr><tr><td>91-95</td><td>-20</td></tr><tr><td>>95</td><td>-30</td></tr></tbody></table>",
+        "summary": "Détecte et localise les morts-vivants proches.",
+        "swedishName": "Sálheleskonja",
+        "duration": "2 heures",
+        "range": "5 kilomètres",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-undead:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussite du test de situation de : +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la précision du sort en retirant 1 au résultat du d20"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 kilomètres"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:4",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 kilomètres"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 175",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "9slxDWqWrXsYtZu0",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.9slxDWqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Environnement",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:surrounding:6",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:surrounding:6",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "Ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte des environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 10 mètres.",
+        "summary": "Projette la conscience de l’enchanteur pour lui montrer précisément les environs immédiats.",
+        "swedishName": "Naerskonja",
+        "duration": "3 minutes",
+        "range": "10 mètres",
+        "weavingTime": "6 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:surrounding:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente le rayon de perception de : 10 mètres"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente le rayon de perception de : 100 mètres"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 176",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "n34bQVnToUpVqWrX",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.n34bQVnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Cartographie",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:map:7",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:map:7",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perception",
+        "description": "À la manière du sort Environnement, ce sort permet à l’enchanteur de projeter sa conscience et d’obtenir une image générale mais néanmoins exacte de ses environs immédiats. Ce sort n’offre pas à l’enchanteur d’image précise, mais une sensation intense de la configuration du terrain. Il ne peut pas voir les petits détails tels que les inscriptions et les objets minuscules, mais il peut percevoir des éléments tels qu’un ruisseau, un lac, un passage, une zone dégagée, un village, des espaces vides, des pièces meublées, de grandes plantes ou des forêts. En outre, l’enchanteur se fait une idée générale du nombre de personnes, des animaux et des autres créatures présentes dans les environs, ainsi que leur position, mais pas leur identité (puisque l’enchanteur ne perçoit pas les détails tels que les particularités faciales ou les signes distinctifs). Dans la version de base du sort, l’enchanteur peut étendre sa conscience dans un rayon de 1 kilomètre.",
+        "summary": "Cartographie les alentours explorés par l’esprit de l’enchanteur.",
+        "swedishName": "Ortaskonja",
+        "duration": "5 minutes",
+        "range": "1 kilomètre",
+        "weavingTime": "7 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:map:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-perceiving:map:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-perceiving:map:7:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-perceiving:map:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 kilomètres"
+          }
+        ],
+        "source": "Livre des règles, p. 176",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "8VKJK5z5A6B7C8D9",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.8VKJK5z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Pouvoir de la pensée",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought",
+        "description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de la pensée, dont Compréhension des écrits, Compréhension orale, Courage.",
+        "summary": "Permet de comprendre, influencer ou contrôler pensées, souvenirs et perceptions.",
+        "swedishName": "Húgkraftla",
+        "negation": "Quand un enchanteur tente de contrôler l’esprit ou la conscience d’une autre créature, la négation générée est souvent plus subtile que les autres négations. Lorsqu’un enchanteur tente d’implanter une idée dans l’esprit d’une victime, la négation peut être que, ailleurs, une personne ressent une impression envahissante de déjà vu, ce qui la distrait un moment. Si l’enchanteur tente de prendre le contrôle d’une créature, la négation implique que la conscience de la victime doit aller ailleurs, en échangeant sa place avec quelque chose ou quelqu’un. Cependant, cela ne dure le plus souvent qu’un bref instant, et une fois qu’une créature retrouve son enveloppe corporelle, elle est assez perturbée par ce qui s’est passé. Il est très rare que deux esprits échangent leurs places de façon permanente. Chaque fois qu’un enchanteur affecte la conscience d’une autre créature, la négation prend toujours la forme d’un effet inverse chez une ou plusieurs créatures. Si l’enchanteur provoque une amnésie, quelqu’un d’autre recouvre soudain la mémoire, et vice versa. Si l’enchanteur évoque une émotion particulière chez une créature, une ou plusieurs créatures se retrouvent soudain submergées par l’émotion inverse. Si l’enchanteur crée un lien mental avec une autre personne, d’autres créatures font l’expérience de voix désincarnées et de personnalités autres que la leur, mais aussi de visites dans leur sommeil tandis que d’autres personnes envahissent leurs rêves. Si l’enchanteur utilise le vitner pour déchiffrer quelque chose, la négation signifie qu’ailleurs sur Trudvang, quelqu’un se retrouve pendant un moment incapable de comprendre ce qu’il lit, même s’il connaît normalement cette langue et devrait être en mesure de lire le texte dont le sens lui échappe à présent.",
+        "affinity": {
+          "hvitavitner": 0,
+          "vaagrivitner": 0,
+          "morkvitner": 0
+        },
+        "source": "Livre des règles, p. 176",
+        "level": 1,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "LHwJOTlRmSnToUpV",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.LHwJOTlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "name": "Compréhension des écrits",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:understanding-script:0",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:understanding-script:0",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort permet à l’enchanteur de déchiffrer un texte qu’il serait normalement incapable de lire. Tous les symboles et caractères qui composent ce texte sont convertis sous les yeux de l’enchanteur en un langage qu’il est capable de comprendre en utilisant la spécialité Lecture et écriture (compétence Connaissances, discipline Langage). Si l’enchanteur est incapable de lire ou d’écrire quelque langue que ce soit, il ne peut rien tirer de ce sort.",
+        "summary": "Permet de lire et comprendre un texte dans une langue normalement inconnue.",
+        "swedishName": "Tecknkraftla",
+        "duration": "10 minutes",
+        "range": "personnelle",
+        "weavingTime": "5 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:understanding-script:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-script:0:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          }
+        ],
+        "source": "Livre des règles, p. 177",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "g7iC4KeKfLgMhNiO",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.g7iC4KeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "name": "Compréhension orale",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:understanding-speech:1",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:understanding-speech:1",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Une fois qu’il s’est enchanté lui-même, l’enchanteur est capable de comprendre tout ce qui se dit dans une langue qu’il ne parle pas normalement. L’enchanteur comprend cette langue aussi finement que s’il s’agissait de sa langue maternelle. Avec quelques niveaux de puissance supplémentaires, l’enchanteur est même capable de s’exprimer dans cette langue.",
+        "summary": "Permet de comprendre une langue parlée comme si elle était maternelle.",
+        "swedishName": "Skopjatenmal",
+        "duration": "1 minute",
+        "range": "personnelle",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Le sort convertit également les propos de l’enchanteur, de sorte qu’une créature entend ce que dit l’enchanteur dans la langue choisie"
+          }
+        ],
+        "source": "Livre des règles, p. 177",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "EMkbw8C8D9EaGbHc",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.EMkbw8C8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "name": "Courage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:courage:2",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:courage:2",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort projette une vague de vitner manipulateur à travers le personnage enchanté, qui se sent instantanément submergé par un sentiment d’espoir et de courage. Ce sort dissipe les doutes, les peurs et autres humeurs qui pourraient affecter de manière négative la personne, dont les points de peur diminuent de 1d10. Tous les points de peur que le personnage enchanté reçoit pendant la durée du sort sont réduits de 4.",
+        "summary": "Dissipe la peur et renforce le courage du bénéficiaire.",
+        "swedishName": "Kjarkku",
+        "duration": "5 minutes",
+        "range": "5 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:courage:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Affecte une autre personne ou créature située à portée, qui bénéficie de la version de base du sort"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Diminue les points de peur reçus de : 1 point supplémentaire"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:4",
+            "cost": 4,
+            "maxCount": 4,
+            "effect": "Augmente le nombre de points de peur actuels dissipés d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Livre des règles, p. 177",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Q8BtZdJeKfLgMhNi",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.Q8BtZdJeKfLgMhNi",
+      "effects": []
+    },
+    {
+      "name": "Peur",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:fear:3",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:fear:3",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort projette une vague d’énergie manipulatrice vers la victime sélectionnée, dont les pensées sont envahies par d’horribles visions. La victime croit se retrouver face à la créature la plus terrifiante qu’elle peut imaginer, ce qui signifie que plusieurs personnes exposées au même sort ne verront probablement pas la même chose. La victime doit réussir un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme) pour résister à la peur et éviter de subir des points de peur. Quiconque rate ce test de situation reçoit immédiatement 1d10 points de peur avec toutes les conséquences que cela implique.",
+        "summary": "Envahit l’esprit d’une victime de visions terrifiantes et la rend plus craintive.",
+        "swedishName": "Skreikur",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:fear:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Affecte une autre créature située à portée, qui bénéficie de la version de base du sort"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:3",
+            "cost": 4,
+            "maxCount": 4,
+            "effect": "Augmente le nombre de points de peur infligés d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Livre des règles, p. 177",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "nHH1k2v1w2x3y4z5",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.nHH1k2v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Télépathie",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:telepathy:4",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:telepathy:4",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort crée une liaison mentale entre l’enchanteur et la personne de son choix située à portée. Cette liaison leur permet de communiquer mentalement, c’est-à-dire de se parler l’un à l’autre simplement par la pensée. Une fois le sort lancé, les deux sujets peuvent s’éloigner autant qu’ils le souhaitent sans que cela n’affecte leur faculté à se parler dans le plus grand secret. La liaison ne transmet que les pensées qu’une personne veut partager, ses autres pensées demeurant protégées. Ainsi, l’enchanteur ne peut pas se servir de ce sort pour lire les pensées d’autrui. Tous les personnages liés par une version améliorée de ce sort peuvent communiquer les unes avec les autres à travers cette liaison télépathique, et pas seulement avec l’enchanteur.",
+        "summary": "Établit une communication mentale entre l’enchanteur et une autre créature.",
+        "swedishName": "Húgtengja",
+        "duration": "10 minutes",
+        "range": "10 mètres",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:telepathy:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 10 minutes"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:5",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:6",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte une autre personne ou créature située à portée, qui bénéficie de la version de base du sort"
+          }
+        ],
+        "source": "Livre des règles, p. 178",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "CxBahQjPkQlRmSnT",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.CxBahQjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "name": "Extase",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:ecstasy:5",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:ecstasy:5",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "L’enchanteur projette son énergie manipulatrice vers la personne de son choix, qui se sent immédiatement submergée par une vague d’émotions. L’enchanteur choisit le genre d’émotion que la cible va ressentir (Cf. la table ci-dessous pour quelques exemples) avant de lancer le sort. Le personnage enchanté peut résister aux effets du sort en réussissant un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur de Psychisme). Quelques effets secondaires qui peuvent émaner des émotions indiquées ci-dessous peuvent eux aussi être évités par un autre test de situation. <table><thead><tr><th colspan=\"2\">TRAITS</th></tr><tr><th>Sentiments</th><th>Caractéristiques</th></tr></thead><tbody><tr><td>Joyeux</td><td>La cible devient extrêmement joyeuse : elle chante, plaisante et batifole.</td></tr><tr><td>Fatigué</td><td>La cible doit réussir un test de situation avec une valeur de situation de 10 (prendre en compte le modificateur de Psychisme) pour ne pas s’endormir au cours des 5 prochaines minutes.</td></tr><tr><td>Amoureux</td><td>La cible part à la recherche de la personne qu’elle aime (à elle de décider de qui elle tombe amoureuse).</td></tr><tr><td>Agressif</td><td>La cible se sent irritée par tout et n’importe quoi. Elle cherche la bagarre avec un individu ou un groupe dès qu’elle en a l’occasion.</td></tr><tr><td>Mélancolique</td><td>La cible sombre dans un état de dépression, et rien ne l’intéresse à part raconter combien elle se sent triste et combien ses amis lui manquent.</td></tr><tr><td>Malicieux</td><td>La cible a envie de faire toutes sortes de plaisanteries malicieuses : retirer la chaise de quelqu’un sur le point de s’asseoir, farfouiller dans les effets personnels de quelqu’un, ou tisser des mensonges sophistiqués sont quelques-unes des blagues courantes que le personnage trouve amusantes.</td></tr><tr><td>Condescendant</td><td>La cible s’adresse de manière condescendante à toutes les personnes qu’elle croise, et affirme que personne n’est aussi important qu’elle.</td></tr><tr><td>Vantard</td><td>La cible parle de tout ce qu’elle a fait (ou ce qu’elle aimerait avoir fait) et exagère délibérément les détails.</td></tr><tr><td>Sincère</td><td>La cible ouvre son cœur et partage des secrets et des désirs inavoués avec ses amis proches. Elle doit réussir un nouveau test de situation avec une valeur de situation de 10 (en prenant en compte son modificateur de Psychisme) pour s’empêcher de partager des secrets importants ou particulièrement incriminants (c’est au maître de jeu de déterminer si un secret est révélé ou non).</td></tr><tr><td>Inquiet</td></tr></tbody></table>",
+        "summary": "Plonge une créature dans une extase qui la rend vulnérable et détachée de son environnement.",
+        "swedishName": "Vitnarus",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte une créature supplémentaire (qui subit la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 178",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "nAtSLeJeKfLgMhNi",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.nAtSLeJeKfLgMhNi",
+      "effects": []
+    },
+    {
+      "name": "Influence",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:imagining:6",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:imagining:6",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "L’enchanteur se sert du vitner pour créer une pensée et l’implanter dans l’esprit d’un autre être intelligent. La cible est persuadée que cette idée est la sienne et ne se pose pas plus de questions : elle agit donc comme si cette pensée était parfaitement acceptable. C’est au maître de jeu de déterminer comment la cible réagit exactement à cette nouvelle pensée. Cependant, la cible peut résister inconsciemment au sort en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). En cas d’échec à ce test, la pensée est implantée dans l’esprit de la cible et s’insinue dans sa conscience jusqu’à ce que le sort expire. Une pensée implantée ne peut généralement pas effacer le bon sens de la victime. Par exemple, si la pensée était « J’aimerais sauter du haut de cette falaise », elle ne pourrait fonctionner que sur une créature incroyablement stupide ou impulsive. Toute créature raisonnablement intelligente chasserait probablement cette pensée folle, aussi insistante et naturelle qu’elle puisse paraître. Cela dit, des pensées comme « Je me demande si mon meilleur ami essaie de me tromper ; je devrais probablement me méfier de lui » ou « Peut-être devrais-je donner mon argent à ce pauvre mendiant au drôle de chapeau, puisqu’il a l’air d’en avoir plus besoin que moi » ou encore « Ces gens ont une bonne tête ; je vais les laisser passer » devraient marcher sans problème. Quelques autres exemples de pensées qui pourraient fonctionner : « Je dois m’enfuir d’ici car l’endroit n’est pas sûr », « Ce type près de la cheminée m’agace ; je vais m’occuper de lui » ou encore « Qu’est-ce que je suis fatigué ! Je devrais m’asseoir et me reposer un moment. »",
+        "summary": "Implante une pensée ou une suggestion dans l’esprit d’une créature intelligente.",
+        "swedishName": "Skenhuga",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:imagining:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          }
+        ],
+        "source": "Livre des règles, p. 179",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "hmcnceFaGbHcIdJe",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.hmcnceFaGbHcIdJe",
+      "effects": []
+    },
+    {
+      "name": "Mémoire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:memory:7",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:memory:7",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort permet au personnage enchanté de se souvenir de tout ce qui lui est arrivé au cours de la semaine passée. Il peut se rappeler dans les moindres détails un événement précis par tour de jeu (cet événement ne doit pas avoir duré plus d’une heure). Ce sort corrige également les pertes de mémoire survenues au cours de la semaine écoulée. En revanche, le sort n’affecte en rien les facultés d’apprentissage du personnage enchanté. Une fois la durée du sort expirée, la personne conserve les souvenirs restaurés mais pas au même degré de détails.",
+        "summary": "Permet au bénéficiaire de se souvenir parfaitement d’événements récents.",
+        "swedishName": "Húgstyrkja",
+        "duration": "5 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:memory:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la période dont la personne enchantée se souvient de : 1 semaine"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la période dont la personne enchantée se souvient de : 1 mois"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la période dont la personne enchantée se souvient de : 1 an"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:4",
+            "cost": 30,
+            "maxCount": 1,
+            "effect": "Augmente la période dont la personne enchantée se souvient à sa vie entière"
+          }
+        ],
+        "source": "Livre des règles, p. 179",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "AW7jKE9EaGbHcIdJ",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.AW7jKE9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "name": "Contrôle des créatures",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:creature-control:8",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:creature-control:8",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "L’enchanteur peut contrôler une créature intelligente (pas un animal) se trouvant à portée du sort et dans son champ de vision. La cible peut tenter de résister à ce sort par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la cible obéit aveuglément à tous les ordres que l’enchanteur lui donne. Ce faisant, la cible peut exécuter toute action qu’elle serait normalement en mesure d’accomplir. Toutefois, l’enchanteur ne peut pas obliger la créature à commettre des actes en totale opposition à ce qu’elle ferait normalement. Par exemple, l’enchanteur ne peut pas ordonner à la cible d’assassiner une personne innocente, à moins que la cible en soit normalement capable. L’enchanteur ne pourrait pas non plus pousser une cible à se blesser volontairement elle-même. Enfin, il est impossible d’ordonner à la cible d’entreprendre des actions autonomes qui lui demandent de réfléchir par elle-même, ce qui impliquerait de relâcher le contrôle. La portée indiquée ne s’applique qu’au temps de tissage : une fois le sort tissé, l’enchanteur peut envoyer la cible bien plus loin tout en en conservant le contrôle. L’effet de ce sort est rompu si l’enchanteur est déconcentré de quelque façon que ce soit, si la cible quitte le champ de vision de l’enchanteur, ou si la cible subit au moins 1 point de dégâts.",
+        "summary": "Prend le contrôle mental d’une créature intelligente pour lui imposer des actions.",
+        "swedishName": "Rauda skopjaten",
+        "duration": "3 minutes",
+        "range": "10 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:creature-control:8:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:2",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          }
+        ],
+        "source": "Livre des règles, p. 179",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "NplFQjNiOjPkQlRm",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.NplFQjNiOjPkQlRm",
+      "effects": []
+    },
+    {
+      "name": "Aura de puissance",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:aura-of-power:9",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:aura-of-power:9",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort crée une aura de vitner autour de l’enchanteur qui rayonne de puissance, d’autorité et de gloire. Quiconque le regarde doit immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, la victime prend l’enchanteur pour quelqu’un d’extrêmement puissant et impressionnant, et se soumet à son autorité (Une personne connue pour sa loyauté envers les dirigeants obéira plus facilement que quelqu’un qui défie régulièrement l’autorité). Si la victime réussit son test de situation, elle voit à travers l’aura et perçoit l’enchanteur tel qu’il est en réalité. Une fois la durée du sort expirée, tous ceux qui se sont fait ensorceler perçoivent eux aussi l’enchanteur sous ses véritables traits. Si l’enchanteur demande quelque chose sortant de l’ordinaire, la victime a l’occasion de faire un nouveau test de situation afin de voir à travers l’aura. Une personne victime de l’Aura de puissance n’obéit pas pour autant aveuglément aux ordres : elle accorde simplement beaucoup d’importance aux paroles de l’enchanteur. Une cible qui désobéit ou s’oppose à l’enchanteur ressentira un certain malaise, voire une sensation de danger.",
+        "summary": "Donne à l’enchanteur une présence surnaturelle qui impressionne et intimide les observateurs.",
+        "swedishName": "Kraftlahinja",
+        "duration": "5 minutes",
+        "range": "personnelle",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:2",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          }
+        ],
+        "source": "Livre des règles, p. 179",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "YyhibYpVqWrXsYtZ",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.YyhibYpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Possession de créature",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:possess-creature:10",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:possess-creature:10",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "Ce sort permet à un enchanteur de transférer sa conscience dans le corps d’une créature intelligente. Pour ce faire, la cible doit se trouver à portée du sort et dans le champ de vision de l’enchanteur. Il est impossible de posséder une créature qu’on ne peut pas voir pour quelque raison que ce soit. La victime peut tenter de résister à cette intrusion dans sa conscience par un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). Si le sort réussit, la conscience de l’enchanteur est transférée dans l’enveloppe physique de la victime, qui perd le contrôle de son corps. Dès lors, l’enchanteur peut utiliser les caractéristiques de la créature comme la parole ou les aptitudes particulières sans qu’elle puisse s’y opposer. Quand l’enchanteur quitte son propre corps pour prendre contrôle de celui de la victime, il abandonne son enveloppe physique dans un profond sommeil. Une fois à l’intérieur de la victime, l’enchanteur peut s’éloigner autant qu’il le souhaite de son propre corps sans devoir rester dans la portée du sort. Cela dit, l’enchanteur doit prendre soin de revenir à portée avant l’expiration du sort. Si la victime est tuée ou si la durée du sort expire avant que l’enchanteur ne revienne à portée, la conscience de l’enchanteur est violemment extirpée du corps de la victime et renvoyée dans son propre corps. C’est une expérience si traumatisante que l’enchanteur subit une diminution permanente de sa réserve de vitner de 1d6 points et qu’il sombre dans un profond sommeil pendant 1d6 jours.",
+        "summary": "Transfère la conscience de l’enchanteur dans le corps d’une créature et prive celle-ci du contrôle de son corps.",
+        "swedishName": "Eiga skopjaten",
+        "duration": "10 minutes",
+        "range": "100 mètres",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:4",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Réduit les chances de la victime de réussir son test de situation de : -1"
+          }
+        ],
+        "source": "Livre des règles, p. 180",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "T2GrTZrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.T2GrTZrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Lecture des pensées",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:mind-reading:11",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:mind-reading:11",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Pouvoir de la pensée",
+        "description": "L’enchanteur peut lire les souvenirs de la créature qu’il touche. Il contemple une suite d’images qui explique dans les grandes lignes l’histoire de la créature au cours de l’année écoulée. Pour chaque tranche de 2 tours de jeu que dure ce sort, l’enchanteur peut tenter de découvrir un grand secret que la créature tente de dissimuler. La créature enchantée perçoit immédiatement que quelqu’un tente de pénétrer son esprit et de fouiller sa mémoire (à longue distance, la créature ne peut pas savoir qui tente de lire ses souvenirs). Elle peut dissimuler un secret en particulier aux yeux de l’enchanteur en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas de réussite, l’enchanteur doit tisser un nouveau sort de Lecture des pensées s’il veut essayer de découvrir l’information camouflée. Mais même si l’enchanteur se voit interdire l’accès à ce secret en particulier, il peut continuer de chercher d’autres secrets jusqu’à expiration du sort.",
+        "summary": "Lit les souvenirs et pensées d’une créature touchée.",
+        "swedishName": "Húgfreska",
+        "duration": "6 tours de jeu",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 2 tours de jeu"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 12 tours de jeu"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort (le contact physique n’est plus nécessaire) de : 5 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort (le contact physique n’est plus nécessaire) de : 50 mètres"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "La cible ensorcelée n’a pas conscience de la présence de l’enchanteur (elle continue toutefois de dissimuler ses secrets)"
+          }
+        ],
+        "source": "Livre des règles, p. 180",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "vcRI4ToUpVqWrXsY",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vcRI4ToUpVqWrXsY",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "j0kFYcGbHcIdJeKf",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": 4,
+      "intelligence": 2
+    },
+    "skills": {
+      "agility": {
+        "value": 10,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 10,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 10,
+        "bonus": 0
+      },
+      "vitnerCraft": {
+        "value": 8,
+        "bonus": 0
+      },
+      "care": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Nature",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle : …",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Maîtrise du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Appel du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "callVitner",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Vaagritalja",
+        "skillId": "vitnerCraft",
+        "catalogId": "vaagritalja",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Modelage du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "vitnerShaping",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Galda",
+        "skillId": "vitnerCraft",
+        "catalogId": "galding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Savoir-faire",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Soins et remèdes",
+        "skillId": "care",
+        "catalogId": "healingDrugs",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Extraits et potions",
+        "skillId": "care",
+        "catalogId": "extractsPotions",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Premiers secours et soins",
+        "skillId": "care",
+        "catalogId": "firstAidNursing",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 10
+        },
+        {
+          "attack": "Griffes",
+          "value": 11
+        },
+        {
+          "attack": "Griffes",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 45,
+        "max": 45
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "Le skjuld possède des ailes et le corps d'un troll. Il a les pattes d'un chat et de longues oreilles pointues. Sa gueule porte des défenses semblables à celles d'un phacochère. Son épaisse tignasse noire corbeau pousse comme une crinière le long de son dos. Il ne parle qu'en charades et se camoufle dans l'infinie canopée des bois.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "winged humanoid",
+      "size": "1.5",
+      "age": "5 000, max immortel",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 40,
+      "bodyMax": 50,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,5 m",
+          "max": "15 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "3 m",
+          "max": "30 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Gardien ailé à pattes de chat, oreilles pointues et défenses de phacochère",
+      "environment": "Obscurité de la forêt et canopée, forêts près des sites abandonnés par les elfes, jardins de tressage",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 94
+      }
+    }
+  },
+  "_id": "j0kFYcGbHcIdJeKf",
+  "_key": "!actors!j0kFYcGbHcIdJeKf",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

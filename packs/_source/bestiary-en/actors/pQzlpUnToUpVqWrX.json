@@ -1,0 +1,180 @@
+{
+  "name": "Log Troll",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg",
+  "items": [
+    {
+      "_id": "VbvKesWrXsYtZu0v",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.VbvKesWrXsYtZu0v",
+      "effects": []
+    },
+    {
+      "_id": "ljOGPhKfLgMhNiOj",
+      "name": "Hylja (log troll)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ljOGPhKfLgMhNiOj",
+        "summary": "Blends into the forest: -10 to notice it while fully concentrating, -5 while also using Roots.",
+        "description": "<p>The log troll has the ability to blend in and almost become one with the forest. If a log troll completely concentrates on this ability, anyone seeking it has a modifier of -10. If the log troll activates the Roots ability at the same time, the modifier is lessened to -5.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 86
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.ljOGPhKfLgMhNiOj"
+    },
+    {
+      "_id": "mGIwBIdJeKfLgMhN",
+      "name": "Roots",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "mGIwBIdJeKfLgMhN",
+        "summary": "Roots grow 3 m/round, attack at SV 8; hold, crush or pierce, with damage and number of victims determined by size.",
+        "description": "<p>A log troll can sprout snake-like roots that slither through the earth toward a chosen victim. The root fingers grow 3 meters per action round and usually become no more than 2d10 (OR 8-10) meters long, but this is up to the game master to decide.</p><p>A log troll that attacks with his roots cannot do anything else in the same round. This is why it always tries to remain hidden when it performs this attack so it will inflict as much damage as possible before it is discovered.</p><p>Firstly the log troll will try to hug its victim with its roots (SV 8). The number of victims which can be attacked at the same time depends of their size, according to the chart below. Each different victim requires a different SV roll.</p><p>Once a check is successful the log troll can choose to simply hold the victim immobile, crush the victim, or pierce the victim. Both the crushing and the piercing deal between 1d10 and 1d10 (OR 8-10) points of damage, depending on how big the log troll is in comparison to its victim. Use the following table for guidance.</p><table><thead><tr><th>Victim's size</th><th>Damage</th><th>Number of victims</th></tr></thead><tbody><tr><td>1 or less</td><td>1d10 (OR 8-10)</td><td>4</td></tr><tr><td>2</td><td>1d10 (OR 9-10)</td><td>3</td></tr><tr><td>3</td><td>1d10 (OR 10)</td><td>2</td></tr><tr><td>4 or more</td><td>1d10</td><td>1</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 86
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.mGIwBIdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "pQzlpUnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -4,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 12
+        },
+        {
+          "attack": "Unarmed",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 72,
+        "max": 72
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "The log troll is assembled from pine cones, branches, leaves, and stones. Metal objects, skeletal pieces, and decorative carvings are also mixed in. Its maker usually carves a face on the creation. A star-pine seed germinates within it to bring it to life. Its serpentine roots writhe through the earth toward its victims, and it almost merges with the forest.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "4",
+      "age": "2, max variable",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 60,
+      "bodyMax": 85,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Plant colossus with a carved face and strangling serpentine roots.",
+      "environment": "Forests, where elven ihanas create it in a filled-in hole",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 86
+      }
+    }
+  },
+  "_id": "pQzlpUnToUpVqWrX",
+  "_key": "!actors!pQzlpUnToUpVqWrX",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

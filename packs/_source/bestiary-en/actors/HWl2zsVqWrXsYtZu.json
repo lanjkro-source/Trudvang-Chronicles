@@ -1,0 +1,273 @@
+{
+  "name": "Hrimwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg",
+  "items": [
+    {
+      "_id": "2nlEv2w2x3y4z5A6",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.2nlEv2w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "_id": "3XTGYXsYtZu0v1w2",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.3XTGYXsYtZu0v1w2",
+      "effects": []
+    },
+    {
+      "_id": "2QYYL3w2x3y4z5A6",
+      "name": "Ice breath",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": -4,
+        "naturalCombatPool": "icebreath",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.2QYYL3w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "_id": "LD02zaFaGbHcIdJe",
+      "name": "Hidden (hrimwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LD02zaFaGbHcIdJe",
+        "summary": "Concealed in snow: Shadow Arts -10 at a distance; when moving, situation value 8 (15 up close) or skill -3.",
+        "description": "<p>In order to spot a hrimwurm that lies in the snow at a distance, a successful roll of the Shadow Arts skill with a modifier of -10 is required; on a failure, the dragon is mistaken for a large pile of snow. If the dragon is in motion, a situation roll with a situation value of 8 (Perception modifiers apply) is required to discover it or, alternatively, a skill roll with a modifier of -3. At a smaller distance, a situation roll with a situation value of 15 (Perception modifiers apply) is enough. It is up to the game master to apply his own modifiers depending on the environment.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.LD02zaFaGbHcIdJe"
+    },
+    {
+      "_id": "txzkedE9EaGbHcId",
+      "name": "Hrim Body (hrimwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "txzkedE9EaGbHcId",
+        "summary": "Cold sphere 15 m in diameter without CP, resist at situation value 10 (Psyche), increasing d6 damage.",
+        "description": "<p>The hrimwurm has lived in the cold for such an extensive amount of time that its body has absorbed the cold, constantly releasing it in a phenomenon called “Hrim Body” which does not require the expense of any CP. An ever-present frost pulsates in a sphere around the dragon. The sphere is 15 meters in diameter. All who stand within the sphere must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order not to flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves.</p><p>A character with a full set of winter clothing made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.txzkedE9EaGbHcId"
+    },
+    {
+      "_id": "ay6BwhLgMhNiOjPk",
+      "name": "Hrim Breath",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ay6BwhLgMhNiOjPk",
+        "summary": "Freezes everything it hits (SV 13, no CP); deals breath damage and requires situation value 7 (Psyche), causing frostbite (-3 for 1d10 rounds) or total stiffness.",
+        "description": "<p>Like other dragons, the hrimwurm has a breath weapon. This one is called Hrim breath, and it turns everything in its path to ice. To perform a Breath Weapon no Combat Points are spent and a SV13 roll must be made. A person that is exposed to the hrim breath suffers the damage dealt by the breath, and must also make a situation roll with a situation value of 7 (Psyche modifiers apply).</p><p>On a success, the victim gets frostbite and has a modifier of -3 on everything they do for 1d10 action rounds.</p><p>On a failure, the victim is chilled so thoroughly that they cannot bear to do anything for 1d10 (OR 7-10) action rounds. The victim becomes so stiff and unable to move that he can only hope to curl up and hold himself while trembling from the cold.</p><p>If a victim who fails the situation roll is exposed to another hrim breath and fails that situation roll as well, they fall into a hrim sleep for 1d10 (OR 7-10) hours. A victim wearing a full outfit made from the fur of a mastomant takes only half the damage, and a modifier of +5 is added to the situation roll, which means that the roll equates to 12 instead of 7.</p><p>The dragon can use its hrim breath up to three times per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The hrimwurm’s profile specifies 2d10 (OR 8-10) damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.ay6BwhLgMhNiOjPk"
+    },
+    {
+      "_id": "qkzJr2tZu0v1w2x3",
+      "name": "Darkvision (100-300 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "qkzJr2tZu0v1w2x3",
+        "summary": "Normal sight in total darkness up to 100 m, fading until approximately 300 m.",
+        "description": "<p>The dragon can see up to 100 meters in pitch darkness as if it were daylight. Beyond that, visibility decreases and disappears completely at about 300 meters.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.qkzJr2tZu0v1w2x3"
+    },
+    {
+      "_id": "XJLfjcHcIdJeKfLg",
+      "name": "Thermal Sight",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "XJLfjcHcIdJeKfLg",
+        "summary": "Detects heat, size and distance up to 300 m; can be suppressed and is not stunned by sudden heat sources.",
+        "description": "<p>The creature detects heat sources up to 300 meters away. This allows it to estimate their magnitude and distance. The dragon can suppress its thermal sight when necessary and cannot be stunned by the sudden appearance of a heat source.</p><p>This ability works identically for the hrimwurm, jarnwurm, and logiwurm; it is distinct from their darkvision.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.XJLfjcHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "HWl2zsVqWrXsYtZu",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "perception": 2,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 9
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 203,
+        "max": 203
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 28
+    },
+    "description": "This is a chalk-white dragon. Thick white scales protect its body. They let it hide in snowy surroundings, where from afar it may be mistaken for a great heap of snow. They nevertheless provide less effective protection than other dragons' scales. It has wings that it spreads to dive and take flight.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "winged quadruped",
+      "size": "7",
+      "age": "350, max 500",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 183,
+      "bodyMax": 224,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "14 m",
+          "max": "28 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "14 m",
+          "max": "42 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Immense frost-white dragon mistaken for a heap of snow.",
+      "environment": "Northernmost regions or mountain summits where the cold is most intense, in deep ice caves",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 112
+      }
+    }
+  },
+  "_id": "HWl2zsVqWrXsYtZu",
+  "_key": "!actors!HWl2zsVqWrXsYtZu",
+  "folder": "hHkEitXsYtZu0v1w"
+}

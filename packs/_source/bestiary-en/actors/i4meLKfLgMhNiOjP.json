@@ -1,0 +1,184 @@
+{
+  "name": "Giant Snake",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/i4meLKfLgMhNiOjP.jpg",
+  "items": [
+    {
+      "_id": "tssRXnToUpVqWrXs",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 11,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!i4meLKfLgMhNiOjP.tssRXnToUpVqWrXs",
+      "effects": []
+    },
+    {
+      "_id": "nWYlTTnToUpVqWrX",
+      "name": "Constricting (giant snake)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "nWYlTTnToUpVqWrX",
+        "summary": "Grip at SV 10 modified by the target’s Dexterity; damage equal to the snake’s damage bonus each round; escape at situation value 10 (Strength).",
+        "description": "<p>If the snake manages to slither around its victim (skill value 10, victim’s Dexterity modifiers apply), it wraps the victim in its great grip. The victim takes damage equal to the snake’s damage modifier (which is 6 in the stats below) each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 10 (± possible modifiers from the Strength trait). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 7). For each person that tries to help the victim, the situation roll is also modified by +1. If the ones helping have exceptional strength, the bonus from their strength is added to the skill roll.</p><p>Each round of combat that the snake spends constricting its victim, the snake can do nothing else. The snake can choose to try to bite another opponent instead of continuing to hug its victim. When this happens, the victim remains in the grip of the snake but takes no damage for that round.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 17
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!i4meLKfLgMhNiOjP.nWYlTTnToUpVqWrX"
+    },
+    {
+      "_id": "a3RzraE9EaGbHcId",
+      "name": "Hylja (giant snake)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "a3RzraE9EaGbHcId",
+        "summary": "Changes color: Shadow Arts -10 to notice it while still, -5 when moving.",
+        "description": "<p>Some snakes (mostly the lake serpent) have the ability to change color to mimic the environment. The snake will adapt to the background to such a degree that a skill roll on the Shadow Arts skill with a modifier of -10 is required to discover the snake, if it lies still. If the snake is in motion, the modifier becomes -5 instead.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 17
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!i4meLKfLgMhNiOjP.a3RzraE9EaGbHcId"
+    },
+    {
+      "_id": "igFmlnRmSnToUpVq",
+      "name": "Paralyzing Stare (giant snake)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "igFmlnRmSnToUpVq",
+        "summary": "After eye contact, resist at situation value 6 (Psyche); paralysis for 1d3 rounds and automatic constriction.",
+        "description": "<p>Some snakes (mostly the forest snake) have the ability to paralyze their victims with their gaze.</p><p>First the snake must get the attention of its victim so that it meets the gaze of the snake. If the snake succeeds, the victim must make a situation roll with a situation value of 6 (Psyche modifiers apply) to avoid being paralyzed for 1d3 action rounds, during which he can do nothing at all.</p><p>During the round in which the snake uses the paralyzing stare attack, it cannot do other things and constricted victims will remain in the grip, albeit they will suffer no damage. The snake will lose only 1 round: if its stare is successful, it can act during the later rounds of paralysis of the victim.</p><p>If the snake tries to constrict a paralyzed victim, it will automatically succeed and the victim cannot try to get free when paralyzed.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 17
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!i4meLKfLgMhNiOjP.igFmlnRmSnToUpVq"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "i4meLKfLgMhNiOjP",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/i4meLKfLgMhNiOjP.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 10
+        },
+        {
+          "attack": "Bite",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 94,
+        "max": 94
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "This colossal serpent winds its elongated body among trees, rocks, and waters. Its great head rises far above the ground, and its sense of smell is excellent. Its skin varies by kind: pale yellow, almost albino, in forest snakes; black scales and gleaming amber eyes in cave snakes; dark green scales with brown, fish-like spots in lake snakes. An excellent climber, and in some varieties an excellent swimmer, it raises its nose above the surface to breathe. Powerful jaws complete its constricting body.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "other",
+      "size": "3",
+      "age": "30, max. 60",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 84,
+      "bodyMax": 105,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "24 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "3 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colossal varied serpent, constricting and camouflaged, sometimes with a paralyzing stare.",
+      "environment": "Great seas, lakes and ponds, high forest canopies, and underground tunnels and caves, depending on the variety",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 16
+      }
+    }
+  },
+  "_id": "i4meLKfLgMhNiOjP",
+  "_key": "!actors!i4meLKfLgMhNiOjP",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

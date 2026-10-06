@@ -1,0 +1,19 @@
+{
+  "_id": "Vuy4tVpVqWrXsYtZ",
+  "name": "Spiderlegs",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Vuy4tVpVqWrXsYtZ",
+    "summary": "Moves on walls at half its movement and on ceilings at one third.",
+    "description": "<p>Goblins have the ability to move along the walls and ceiling of a cave. A goblin moves at half their movement rate on walls and a third on ceilings.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 152
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Vuy4tVpVqWrXsYtZ",
+  "folder": null
+}

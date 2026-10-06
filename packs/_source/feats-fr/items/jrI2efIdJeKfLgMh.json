@@ -1,0 +1,19 @@
+{
+  "_id": "jrI2efIdJeKfLgMh",
+  "name": "Vision nocturne",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "jrI2efIdJeKfLgMh",
+    "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+    "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 18
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!jrI2efIdJeKfLgMh",
+  "folder": null
+}

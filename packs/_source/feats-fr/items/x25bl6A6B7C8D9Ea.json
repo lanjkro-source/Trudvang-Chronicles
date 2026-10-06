@@ -1,0 +1,19 @@
+{
+  "_id": "x25bl6A6B7C8D9Ea",
+  "name": "Superstitieux",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "x25bl6A6B7C8D9Ea",
+    "summary": "Devant un phénomène inexpliqué, le gobelin doit réussir VS 8 ou fuir.",
+    "description": "<p>Les gobelins sont très superstitieux et ont peur de l’inconnu, surtout du vitner et autres sorcelleries des trolls. Quand un gobelin voit quelque chose qui, d’après lui, ne peut s’expliquer de manière plausible (ceci est laissé à l’appréciation du maître de jeu), il doit effectuer un test de situation avec une valeur de situation de 8 et fuir en cas d’échec.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 149
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!x25bl6A6B7C8D9Ea",
+  "folder": null
+}

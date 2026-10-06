@@ -1,0 +1,19 @@
+{
+  "_id": "NkQ3WdFaGbHcIdJe",
+  "name": "Envoûtement",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NkQ3WdFaGbHcIdJe",
+    "summary": "La hulder soumet les volontés à son charme et s'attache ses victimes.",
+    "description": "<p>La hulder maîtrise un pouvoir spécial qui lui permet d’envoûter les créatures qu’elle rencontre pour les soumettre à sa volonté tout le reste de leur vie. Lorsqu’elle croise le regard d’une cible, elle murmure simplement les effroyables paroles qui envoûtent les faibles. La victime doit ensuite effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) pour éviter de la regarder dans les yeux. Un personnage qui précise qu’il fait tout pour ne pas regarder la hulder dans les yeux augmente la valeur de situation de +5.</p><p>En cas d’échec, lancez un d20 et consultez la table ci-dessous pour déterminer l’effet. Un personnage avec un trait de Psychisme exceptionnel soustrait sa valeur du résultat obtenu (un trait positif réduit donc le résultat, tandis qu'un trait négatif l'augmente).</p><table><thead><tr><th>d20 modifié par le Psychisme</th><th>Effet</th></tr></thead><tbody><tr><td>0 à 8</td><td>La victime a la tête qui tourne et subit -2 à toutes ses valeurs de compétence et de situation pendant 24 heures.</td></tr><tr><td>9 à 14</td><td>Obéit aux ordres mineurs pendant 24 heures : s’allonger, courir, parler, crier, marcher, ouvrir des portes, etc. L’effet disparaît à plus de 100 m de la hulder.</td></tr><tr><td>15 à 16</td><td>Considère tous les ordres comme sensés et obéit pendant 1d3 jours, sauf aux ordres qui la mettent en danger. L’effet disparaît à plus de 500 m.</td></tr><tr><td>17 à 18</td><td>Soumission complète, y compris aux ordres dangereux ; portée illimitée, durée 1d10 (JO 7-10) jours. La mort de la hulder ne met pas fin aux derniers ordres pendant la durée restante.</td></tr><tr><td>19 et plus</td><td>Esclave pour toute sa vie, obéit aveuglément ; seule la mort de la hulder rompt l’envoûtement.</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 78
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NkQ3WdFaGbHcIdJe",
+  "folder": null
+}

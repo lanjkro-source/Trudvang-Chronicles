@@ -1,0 +1,143 @@
+{
+  "name": "Eagle",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg",
+  "items": [
+    {
+      "_id": "FdN3u1u0v1w2x3y4",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!gX0tuiKfLgMhNiOj.FdN3u1u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gX0tuiKfLgMhNiOj.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "gX0tuiKfLgMhNiOj",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 14,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 14,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "action": "movement",
+          "mode": "flight",
+          "distance": 20,
+          "value": 10
+        },
+        {
+          "attack": "Claws",
+          "value": 16
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 18,
+        "max": 18
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "This large bird of prey has a massive body and broad chest, covered in dark brown plumage with golden highlights on its nape. Its powerful head bears a sharp hooked beak, yellow at the base and black at the tip, above piercing amber eyes. Broad rectangular wings with long fingered flight feathers give it an impressive span. Its strong legs, feathered down to the talons, end in formidable curved black claws. Its short wedge-shaped tail, lighter in older birds, beats the air strongly on takeoff.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "bird",
+      "size": "0.5",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 18,
+      "bodyMax": 18,
+      "move": [
+        {
+          "mode": "vol",
+          "distance": "4 m",
+          "max": "28 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Majestic brown-and-gold raptor with piercing eyes.",
+      "environment": "Cliffs and high Trudvang mountain peaks overlooking forests and open valleys.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "gX0tuiKfLgMhNiOj",
+  "_key": "!actors!gX0tuiKfLgMhNiOj",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

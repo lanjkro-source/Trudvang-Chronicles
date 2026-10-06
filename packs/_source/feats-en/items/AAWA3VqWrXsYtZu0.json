@@ -1,0 +1,19 @@
+{
+  "_id": "AAWA3VqWrXsYtZu0",
+  "name": "Terrifying Stare",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "AAWA3VqWrXsYtZu0",
+    "summary": "The grendel’s gaze makes even experienced warriors flee.",
+    "description": "<p>A grendel is truly a horrible foe to face. Even the most experienced warriors flee at the sight of it, mainly due to its terrifying stare. When a victim meets the grendel’s gaze, the victim must make a situation roll with a situation value of 8 (Psyche modifiers apply). A successful roll means that the victim is unscathed by the ordeal. A failed roll means that the victim gains 1d10 (OR 9-10) Fear Points and a negative modifier of -4 on everything they do while in the presence of the grendel. This last modifier is in addition to normal modifiers from the Fear Level reached. The situation roll must be made the first time a specific Grendel is seen and whenever the GM thinks to be the case.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 77
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!AAWA3VqWrXsYtZu0",
+  "folder": null
+}

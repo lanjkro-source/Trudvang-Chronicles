@@ -1,0 +1,3699 @@
+{
+  "name": "Physical Demon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/vRp0IPgMhNiOjPkQ.jpg",
+  "items": [
+    {
+      "_id": "8tTxMYtZu0v1w2x3",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.8tTxMYtZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "TkwU1cIdJeKfLgMh",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.TkwU1cIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "rtMsoaD8D9EaGbHc",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.rtMsoaD8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "_id": "qVrlMQhNiOjPkQlR",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.qVrlMQhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "name": "Dropi axi (pendulum axe)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 80,
+          "max": 80
+        },
+        "weight": 2,
+        "value": 30,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "5Jw8hbGbHcIdJeKf",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.5Jw8hbGbHcIdJeKf",
+      "effects": []
+    },
+    {
+      "name": "Tvei faldir (two-handed flail)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 3,
+        "value": 10,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "MlJa99EaGbHcIdJe",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.MlJa99EaGbHcIdJe",
+      "effects": []
+    },
+    {
+      "name": "Medium Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A balanced shield allowing two weapon actions per round. On a successful parry, damage is applied to the shield.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "passiveProtection": 4,
+        "weaponActions": 2,
+        "initiativeModifier": -2,
+        "weight": 4,
+        "value": 2,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "xDLWNNiOjPkQlRmS",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.xDLWNNiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Chain Mail",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+      "system": {
+        "description": "Thousands of interlinked metal rings worn over padding. Mail is heavy but comparatively flexible.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "heft": 5,
+        "movementModifier": -2,
+        "initiativeModifier": -2,
+        "weight": 21,
+        "value": 70,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "tCIRqz4z5A6B7C8D",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.tCIRqz4z5A6B7C8D",
+      "effects": []
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Durable",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+        "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 39
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "scVIa3u0v1w2x3y4",
+      "name": "Low-Light Vision or Darkvision (demon)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "scVIa3u0v1w2x3y4",
+        "summary": "Depending on the demon: either low-light vision or sight in total darkness, as chosen by the GM.",
+        "description": "<p>The demon's exact nature is decided by the GM. Some demons see by weak light as if it were daylight; others see in total darkness.</p><p>Choose Low-Light Vision or Darkvision as appropriate to that demon. The two possibilities are not automatically cumulative, and this entry does not give every demon both types of vision.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.scVIa3u0v1w2x3y4"
+    },
+    {
+      "_id": "EVhUocGbHcIdJeKf",
+      "name": "Winged",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "EVhUocGbHcIdJeKf",
+        "summary": "The demon has wings that allow it to fly.",
+        "description": "<p>The demon has wings that allow it to fly. Movement is decided by the GM.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 49
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.EVhUocGbHcIdJeKf"
+    },
+    {
+      "_id": "9MMfvcE9EaGbHcId",
+      "name": "Fire Body (physical demon)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "9MMfvcE9EaGbHcId",
+        "summary": "Fire aura: damage each round according to distance, from 1d10 (OR 7-10) within 1 m to 1d10 at 5-10 m.",
+        "description": "<p>The demon is on fire. Depending on how close someone stands to the demon, they obtain different amounts of damage points each action round according to the chart.</p><table><thead><tr><th>Distance</th><th>Damage per round</th></tr></thead><tbody><tr><td>Less than 1 m</td><td>1d10 (OR 7-10)</td></tr><tr><td>1-2 m</td><td>1d10 (OR 8-10)</td></tr><tr><td>2-3 m</td><td>1d10 (OR 9-10)</td></tr><tr><td>3-5 m</td><td>1d10 (OR 10)</td></tr><tr><td>5-10 m</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.9MMfvcE9EaGbHcId"
+    },
+    {
+      "_id": "MXNXW2x3y4z5A6B7",
+      "name": "Explosive Body",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "MXNXW2x3y4z5A6B7",
+        "summary": "The demon explodes upon death, dealing 1d10 (OR 7-10) damage within a 10-meter radius.",
+        "description": "<p>When the demon dies the body explodes. Everyone within a radius of 10 meters obtain 1d10 (OR 7-10) damage points.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.MXNXW2x3y4z5A6B7"
+    },
+    {
+      "_id": "1ItoEXoUpVqWrXsY",
+      "name": "Spiked Body",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "1ItoEXoUpVqWrXsY",
+        "summary": "The demon can launch its 2d20 spikes without CP: SV 12, range 14 m, 1d10 (OR 9-10) damage each.",
+        "description": "<p>The body is covered in spikes which the demon can thrust at its victim without spending Combat Points. In total the body has 2d20 spikes that can be thrown with a SV 12 roll. They have range 14 meters and inflict 1d10 (OR 9-10). The demon usually does not throw more than 1 spike per round, unless the GM decides otherwise.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.1ItoEXoUpVqWrXsY"
+    },
+    {
+      "_id": "EowN18C8D9EaGbHc",
+      "name": "Extra Body Parts",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "EowN18C8D9EaGbHc",
+        "summary": "The demon has additional body parts, such as extra attacking arms, granting bonus Combat Points.",
+        "description": "<p>The demon has one or several body parts apart from their original ones. This can mean that the demons has extra Combat Points for attacks with these arms.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.EowN18C8D9EaGbHc"
+    },
+    {
+      "_id": "pjrisUmSnToUpVqW",
+      "name": "Immune",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "pjrisUmSnToUpVqW",
+        "summary": "The demon is immune to poisons, spells or prayers, and may be immune to ordinary weapons so that only magical weapons can harm it.",
+        "description": "<p>The demon is immune to poison, spells or prayers. It can also be immune to normal weapons and can only be damaged by magical weapons.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.pjrisUmSnToUpVqW"
+    },
+    {
+      "_id": "MxUgKE5A6B7C8D9E",
+      "name": "Petrify (physical demon)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "MxUgKE5A6B7C8D9E",
+        "summary": "SV 14 within 30 m, 1d3 times/day, resist at situation value 6 (Psyche), duration 1d10 (OR 7-10) days, statue PV 20 / BV 200.",
+        "description": "<p>The demon can petrify a victim that stands within 30 meters of the demon (SV 14) without spending Combat Points. The ability can be used 1d3 times per day and the duration of the petrification is 1d10 (OR 7-10) days. The armor of the victim and their clothes are also petrified; however, no magical object is affected.</p><p>The victim can try to resist the petrification by succeeding with a situational roll with a situation value of 6 (the trait Psyche modifies the roll). If the roll fails the victim is turned into stone. The stone that the victim is petrified into is very hard and close to unbreakable. In practice this means that the petrified person gains a protection value of 20 and a Break Value of 200. When the Break Value is lowered to 0 the person starts to take damage like normal and if the petrified person takes as much damage as double its Body Points this stone statue will be broken and the victim will die.</p><p>A creature that is petrified is in a constant state of sleep and cannot comprehend time that passes or what happens around him or her. The victim cannot affect anything that happens in its surroundings. When the duration has run out the victim returns to its original form. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja).</p><p>A petrified creature is not stuck in the ground in any way, but it can be moved by someone strong enough to do so. The petrified creature weighs around ten times the victim’s original weight.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.MxUgKE5A6B7C8D9E"
+    },
+    {
+      "_id": "X4skapToUpVqWrXs",
+      "name": "Armored Body",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "X4skapToUpVqWrXs",
+        "summary": "Strong iron scales give the demon natural Protection Value 5-15, at the GM’s discretion.",
+        "description": "<p>The body of the demon is covered in powerful iron scales which give the demon a very high armor value, between armor value 5 and 15 in natural protection, according to GM’s judgement.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.X4skapToUpVqWrXs"
+    },
+    {
+      "_id": "YoZXmLgMhNiOjPkQ",
+      "name": "Regenerate",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "YoZXmLgMhNiOjPkQ",
+        "summary": "The demon automatically regenerates 1d10 (OR 10) BP per round without spending CP.",
+        "description": "<p>The demon regenerates 1d10 (OR 10) Body Points per action round. This ability is automatic and does not need any activation or Combat Point expense.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.YoZXmLgMhNiOjPkQ"
+    },
+    {
+      "_id": "7Aa9AMfLgMhNiOjP",
+      "name": "Tough",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "7Aa9AMfLgMhNiOjP",
+        "summary": "The demon has twice as many BP because its tolerance of pain is higher than other demons’.",
+        "description": "<p>The demon’s tolerance of pain is higher than that of normal demons, therefore this demon has double Body Points.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.7Aa9AMfLgMhNiOjP"
+    },
+    {
+      "_id": "0kcBOcE9EaGbHcId",
+      "name": "Acid Blood",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "0kcBOcE9EaGbHcId",
+        "summary": "Wounding the demon in close combat risks a splash (1-3 on 1d10, avoidable with Agility), dealing 1d6 damage and reducing exposed weapon and armor BV by 1d6.",
+        "description": "<p>The demon’s blood functions like acid. People who, in close combat, create a wound on the demon can have the acid blood spew onto them (roll a luck roll with 1d10 where 1-3 means that the person gets acid blood on them). The person can avoid this by succeeding with a skill roll for the skill Agility, preferably with the Evade specialty. Should the roll fail the character takes 1d6 damage points (armor protects). The acid blood lessens the BV on the weapon that caused the damage by 1d6, the same goes for armor that is exposed to the acid blood.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 46
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.0kcBOcE9EaGbHcId"
+    },
+    {
+      "_id": "FKo6KYqWrXsYtZu0",
+      "name": "Breath Weapon",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "FKo6KYqWrXsYtZu0",
+        "summary": "Fire, acid, ice or lava: 1d3 attacks/day without CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide, 3d10 (OR 8-10) damage.",
+        "description": "<p>The demon can breathe fire, acid, ice or even stone lava against its enemies. The demon can perform 1d3 breath attacks per day, after which it must wait until the next day before it can perform the attacks again. This breath weapon does not cost Combat Points. The range for the breath weapons is 1d10 (OR 9-10) +20 meters and forms a giant cone that in its largest reach has a diameter of 6 meters. All creatures within the range obtain 3d10 (OR 8-10) in damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.FKo6KYqWrXsYtZu0"
+    },
+    {
+      "_id": "NbSmJfIdJeKfLgMh",
+      "name": "Damage Shift",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NbSmJfIdJeKfLgMh",
+        "summary": "The demon can transfer damage suffered in combat to another creature within sight.",
+        "description": "<p>The demon has the ability to choose if someone else is damaged instead of it when it is damaged in battle. The victim must be within sight of the demon. Sometimes an evil burn will show on the person that is chosen to receive the damage.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.NbSmJfIdJeKfLgMh"
+    },
+    {
+      "_id": "NNBuQnQlRmSnToUp",
+      "name": "Body Transformation",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NNBuQnQlRmSnToUp",
+        "summary": "The demon can transform into a creature of its choice.",
+        "description": "<p>The demon can transform into a creature of its choice.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 48
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.NNBuQnQlRmSnToUp"
+    },
+    {
+      "_id": "QqkRW8C8D9EaGbHc",
+      "name": "Speed",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "QqkRW8C8D9EaGbHc",
+        "summary": "The demon is always first to attack during an action round.",
+        "description": "<p>The demon moves very fast. The demon always attacks first during an action round.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 49
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.QqkRW8C8D9EaGbHc"
+    },
+    {
+      "name": "Dimvitner",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner",
+        "description": "The enchanter has learned to control death’s bond between the realms of Trudvang and Dimhall, the realm of death. By manipulating the power of this invisible bond, they can force souls to Trudvang and transform them into undead beings. The enchanter can steal vitn and use the bond of death to speak with dead souls in Dimhall, drive undead beings back to Dimhall, and take control of an undead and dictate what it should do. By adding vitner to the bond of death, they can send waves of powerful energy toward the chosen victim. This energy of death then takes the form of dark, humid streaks of fog that the weaver can use in various ways to hurt their victims.",
+        "summary": "Animates, harms, or controls the dead and their spirits.",
+        "swedishName": "Sálhelevitna",
+        "negation": "The opposite of dimvitner is life and the creation of it, and the negations of the dimvitner therefore revolve around life force. Whenever an enchanter conjures something with this Vitner Tablet, the negation is that life force is bestowed somewhere else, like a birth succeeding against all odds, an invalid miraculously becoming healthy, an injured person being healed, and many other beneficial effects. But when an enchanter chooses to conjure undead beings, the negation becomes er and life force from the significantly worse. Since the mage is more or less creating life, the negation robs weavers of vitner something else of its life. It could be animals that suddenly die, children that are stillborn, creatures that suddenly fall ill, or other tragic happenings. When an enchanter tries to contact a spirit in the realm of the dead, the negation is that one or more spirits can contact a living being in Trudvang. If the mage wants to drive an undead being back to the realms of death, one or more undead souls can slip out into Trudvang. And if the mage wants to control an undead being, the negation is that one or more living beings are temporarily controlled by dead souls.",
+        "affinity": {
+          "hvitavitner": 2,
+          "vaagrivitner": 0,
+          "morkvitner": -1
+        },
+        "source": "Player's Handbook, p. 105",
+        "level": 5,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "qej56KfLgMhNiOjP",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.qej56KfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Animate Undead",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:animate-undead:0",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:animate-undead:0",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains. The mage must have access to a reasonably complete skeleton that is not missing any significant parts; small things such as fingers, a few ribs, or even hands are not necessary. The mage who creates the undead controls all of its activities. Orders can be given only when the undead is within the range of the spell. If it is outside of that range, or not being directly commanded, it will carry out its most recent order. Once an order is given, the undead will continue to pursue that end until it is ordered to do something new. The undead has 1d10 (OR 10) +5 Body Points and 1d10 (OR 10) +20 skill points to distribute on eventual skills and disciplines (or specialties). The undead receives the following exceptional character traits: Dexterity -4 and Intelligence -4. Beyond the skills purchased with skill points mentioned above, the undead also gains the ability to sense living beings in its immediate surroundings. By succeeding on a Situation roll against a Situation value of 8, the undead can notice living creatures within 10 meters, regardless of whether they are invisible or hidden in some way (the undead cannot use this to discover living beings that are using gateblom clover or moving through Dimhall). This skill cannot be improved with skill levels and is not modified by troubling circumstances. The mage cannot conjure this spell multiple times during the same duration.",
+        "summary": "This ritual creates a bond between Dimhall and a dead body or a skeleton, which results in the mage conjuring an undead slave from those remains.",
+        "swedishName": "Sálhelekallja",
+        "duration": "3 days",
+        "range": "10 meters",
+        "weavingTime": "3 hours",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:animate-undead:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:3",
+            "cost": 14,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 month"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:4",
+            "cost": 30,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 year"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Receive another 1d10 (OR 10) skill points to distribute among the undead’s skills."
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:6",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Affect another corpse (which receives the spell's basic effect)"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:7",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase one trait by +1 step"
+          },
+          {
+            "id": "vitner-dimvitner:animate-undead:0:8",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase Body Points by 1d10"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "Sl55PYpVqWrXsYtZ",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.Sl55PYpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Hand of Death",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:hand-of-death:1",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:hand-of-death:1",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The mage creates a bond between a creature in range and the realm of death. As soon as the bond is opened, life force is immediately sucked from the victim’s heart, which stops beating for the duration of the spell. This causes 1d10 points of damage to the victim per action round. Most armor gives no protection, but armor of gatesilver gives full protection. The victim can resist the damage by succeeding on a Situation roll with a Situation value of 6 (Constitution modifiers apply). Success means the victim avoids all damage from the spell in that action round.",
+        "summary": "The mage sucks life force out of a living creature, dealing damages.",
+        "swedishName": "Rifhjarta",
+        "duration": "1 action round",
+        "range": "5 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:hand-of-death:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:hand-of-death:1:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by +1 action round"
+          },
+          {
+            "id": "vitner-dimvitner:hand-of-death:1:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-dimvitner:hand-of-death:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Summon another Hand of Death that the enchanter can use to attack another victim (who suffers the basic effect of the spell)"
+          },
+          {
+            "id": "vitner-dimvitner:hand-of-death:1:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the damage by one step:"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "ONfRGeHcIdJeKfLg",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.ONfRGeHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Dismiss Undead",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:dismiss-undead:2",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:dismiss-undead:2",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "By severing the bond between the undead and the realm of death, the mage manages to banish one or more undead creatures’ souls back to Dimhall. The spell affects creatures such as skeletons, disers (ghosts), and draugr, but not demons. To sever the bonds of death and banish the soul of the undead, the mage has to succeed on a Situation roll with a Situation value of 10 (Psyche modifiers apply), modified depending<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Drives undead creatures away from the mage with repelling deathly power.</td></tr></tbody></table>on the undead’s full Body Points in accordance with the table below (even if the undead is injured, modifiers are determined as though it were uninjured). ADDITIONAL MODIFIERS TO DISMISS UNDEAD Undead’s Body Points Modifier 1-10 +4 11-15 +2 16-19 ±0 20-25 -2 26-30 -4 31-35 -6 36-45 -8 46-55 -10 56-65 -12 66-75 -16 For every additional Additional -4 range +10 The mage can drive away any number of undead within the spell’s range, but the Body Points for all targeted undead are totaled to see how difficult the Situation roll will be.",
+        "summary": "Drives undead creatures away from the mage with repelling deathly power.",
+        "swedishName": "Brotja sálhele",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:dismiss-undead:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-dimvitner:dismiss-undead:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:dismiss-undead:2:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "hi89iy1w2x3y4z5A",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.hi89iy1w2x3y4z5A",
+      "effects": []
+    },
+    {
+      "name": "Speak to Undead",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:speak-to-undead:3",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:speak-to-undead:3",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse. However, the spirit can choose whether to converse with the mage or not. Because it is an incredibly hard task to find the spirit of the corpse in Dimhall, the enchanter is not always certain that the spell has succeeded, even if the bond is created. Mages who use this spell have to be wary of the risks that are associated with creating a bond of death. RESULTS OF SPEAK TO UNDEAD 1d20 Results 1–12 The mage establishes contact with with it for the duration of the<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.</td></tr></tbody></table>spell. master to decide. 13-14 The mage establishes contact with one sought. This spirit may still what it has to say is up to the game 15-16 The mage cannot establish contact 17-18 The mage establishes contact with the mage can see through its lie by value of 10 (Intelligence modifiers 19 The mage establishes contact with the mage can see through its lie by value of 6 (Intelligence modifiers 20+ The mage establishes contact with Trudvang through the bond of death. succeeds in possessing the corpse (a Once the possession is complete, attacks. The game master decides various undead creatures in Game The table above describes what happens when a mage tries to contact a spirit in Dimhall. The game master should roll 1d20 and reference the table so that the mage does not know whether they succeeded. For this spell to work best, the corpse being sought cannot have been dead for longer than a week. For every day beyond a week that the corpse has been dead, the mage gets a modifier of +1 on the roll on the table below (making success less likely, and the endeavor more dangerous).",
+        "summary": "The mage creates a thin bond of death between a corpse and Dimhall that permits the mage to speak with the spirit of the corpse.",
+        "swedishName": "Sálhelemal",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "1 hour",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:speak-to-undead:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-dimvitner:speak-to-undead:3:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Apply a -1 modifier to the roll on the results table"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "ETSuKYqWrXsYtZu0",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.ETSuKYqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Tendril of Dimhall",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:tendril-of-dimhall:4",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:tendril-of-dimhall:4",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The mage gathers deathly power around their body and channels the humid energy out through their hands and the spirit of the corpse and can easily converse What the spirit has to say is up to the game a spirit who kindly apologizes for not being the converse with the mage for the duration, though master to decide. with any spirits. a spirit that claims to be the one sought, though succeeding on a Situation roll with a Situation apply). a spirit that claims to be the one sought, though succeeding on a Situation roll with a Situation apply). a spirit, which immediately tries to break into Roll 1d20 again and on a result of 1-5, the spirit process that takes 1d6 action rounds to complete). the corpse becomes an undead that immediately what traits the undead has (for tips, see the stats for Master’s Guide or in Jorgi’s Bestiary). fingers. A number of dark tendrils of fog reach out from the mage’s hands and assault the targeted victim. The tendril does 1d10 (OR 10) points of damage. Regular armor gives no protection, but magical armor and armor of gatesilver gives full protection. The tendrils of fog seek out their victim, so it is impossible to avoid getting hit.",
+        "summary": "Channels a tendril of Dimhall's deathly energy through the mage's hands.",
+        "swedishName": "Rifurkraftla",
+        "duration": "",
+        "range": "5 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:tendril-of-dimhall:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:tendril-of-dimhall:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the number of tendrils, which results in another person falling victim to the basic version of the spell."
+          },
+          {
+            "id": "vitner-dimvitner:tendril-of-dimhall:4:2",
+            "cost": 5,
+            "maxCount": 3,
+            "effect": "Increase the damage's open roll by one step: 1d10 OR 10 > 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "NXVWLRmSnToUpVqW",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.NXVWLRmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Vitner Theft",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:vitner-theft:5",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:vitner-theft:5",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The spell creates a spiritual bond between the mage and a chosen victim. Through this bond, the mage can suck 1d6 of the victim’s vitner per action round. The casting mage adds the vitner to their own capacity, while the victim loses the same amount. Because vitner is life, a victim who is not an enchanter (and has no vitner capacity) suffers the resulting number of damage to Body Points. Armor gives no protection. A mage can replenish Vitner Points through this spell only up to their full vitner capacity. These points remain until they are used, just as if the mage had gathered the vitner naturally. The mage can stop the spell at any time. The victim can try to resist the vitner theft once per action round by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the roll is successful, the theft is avoided in that action round. However, if the victim fails, the casting mage continues to receive 1d6 Vitner Points each round that the spell is maintained, and the victim loses the same amount from their own Vitner Points (or Body Points if vitner is unavailable). The victim is allowed to attempt the Situation roll before every new action round for as long as the spell lasts.",
+        "summary": "Steals vitner energy from another creature and transfers it to the mage.",
+        "swedishName": "Vitnasjúg",
+        "duration": "2 action rounds",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:vitner-theft:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-dimvitner:vitner-theft:5:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:vitner-theft:5:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "CR1gbsUpVqWrXsYt",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.CR1gbsUpVqWrXsYt",
+      "effects": []
+    },
+    {
+      "name": "Summon Wight",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:summon-wight:6",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:summon-wight:6",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The spell creates a thick bond between Trudvang and the realm of death, Dimhall, which makes it possible for the mage to beckon a dead person’s spirit and soul. The ritual can be performed only at night, since that is when the bond between the two worlds is at its strongest. Once the ritual is complete, it still takes until the following night before the wight awakens from its slumber. Only human souls and spirits can be awakened in this manner to become wights. If the soul is willing to once again dwell in the realm of the living, it is doomed to forever wander the lands of Trudvang. But if the soul resists the calling, it immediately returns to the realm of death. Nothing binds the wight to the mage, and it is under no c ompulsion to obey or preserve the one who summoned it. However, it is s usceptible to the spell Control Undead if the mage wishes to try to establish control over it. The summoned wight receives 1d10 (OR 9-10) +15 Body Points, as well as 1d10 (OR 9-10) +70 skill points to distribute among its skills and d isciplines (or specialties). See the stats for the unded in Game Master’s Guide or the barrow wight in Jorgi’s Bestiary.",
+        "summary": "This ritual summons a dead person’s spirit and soul to haunt the living as a wight.",
+        "swedishName": "Gastlakallja",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "10 hours",
+        "dailyActivation": "",
+        "spellType": "permanent",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:summon-wight:6:0",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Distribute extra 1d10 (OR 9-10) skill points among the wight’s skills and disciplines"
+          },
+          {
+            "id": "vitner-dimvitner:summon-wight:6:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase Body Points by 1d10"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "6lGDfnQlRmSnToUp",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.6lGDfnQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "name": "Control Undead",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:control-undead:7",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:control-undead:7",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons. By taking control of the bond between the undead and their realm, the mage succeeds in controlling the souls of the undead as well. In order to do so, however, the mage has to succeed on a Situation roll with a S ituation value of 12 (Psyche modifiers apply), modified depending on the undead’s full Body Points according to the table below (even if the undead is injured, modifiers are determined as though it were uninjured). If the mage succeeds in controlling<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.</td></tr></tbody></table>an undead, it will obey everything the mage commands it to do. This control is immediately lost if the mage loses consciousness. The mage can control any number of undead within the spell’s range, but the Body Points for all of the targeted undead are totaled to determine how difficult the Situation roll will be.",
+        "summary": "The spell allows the mage to control the souls of one or more undead creatures, such as skeletons, disers (ghosts), wights, and draugr, but not demons.",
+        "swedishName": "Rauda sálhele",
+        "duration": "5 minutes",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:control-undead:7:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-dimvitner:control-undead:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-dimvitner:control-undead:7:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-dimvitner:control-undead:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:control-undead:7:4",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "h1kohNfLgMhNiOjP",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.h1kohNfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Darkness of Dimhall",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
+          "tabletId": "vitner-dimvitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-dimvitner:darkness-of-dimhall:8",
+        "tabletId": "vitner-dimvitner",
+        "tablet": "Dimvitner",
+        "description": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall. The afflicted area has a radius of 2 meters, which forms a circle centered on whichever point the mage has e stablished. This point is fixed on that space and not a specific object, so moving the object will not cause the darkness to move. Everyone within the area immediately suffers 1d10 (OR 9-10) points of damage. Regular armor gives no protection. However, magical armor and armor of gatesilver give full protection.",
+        "summary": "The mage points at an area within range, which is then engulfed in the humid and clinging darkness of Dimhall.",
+        "swedishName": "Salhelehögg",
+        "duration": "",
+        "range": "5 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-dimvitner:darkness-of-dimhall:8:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-dimvitner:darkness-of-dimhall:8:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the radius by 1 meter"
+          },
+          {
+            "id": "vitner-dimvitner:darkness-of-dimhall:8:2",
+            "cost": 5,
+            "maxCount": 2,
+            "effect": "Increase the damage's open roll by one step: 1d10 OR 9 > 1d10 OR 8 > 1d10 OR 8 + 1"
+          }
+        ],
+        "source": "Player's Handbook, p. 105",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "qqG16XqWrXsYtZu0",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.qqG16XqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Flame Craft",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft",
+        "description": "The vitner the mage weaves increases, decreases, or stabilizes the flow of vitner in surrounding environments and objects. By increasing the flow in an explosive manner, the mage can heat objects to a point where they suddenly catch on fire. If the mage is a little more careful with the supply, they can gradually increase the heat in a place to a comfortable level of generous warmth and joviality. Or by cutting off the supply of vitner, the mage can do the opposite and suffocate fires or suddenly drop surrounding temperatures. They can also grant protection from fire and heat by making the vitner stand completely still in a protective layer that the turbulent and hot energy of flame is unable to affect.",
+        "summary": "Creates, controls, or wards off fire and heat.",
+        "swedishName": "Loganojd",
+        "negation": "When a mage creates fire or decides to heat an area, it causes a significant change in the intensity of the vitner. This added vitner is taken from somewhere else in the greater area where the temperature change occurs, which suddenly turns very cold. Frost may appear on bushes and trees, but also on creatures that weavers of vitner | 109 unexpectedly sense their t emperature dropping and their s urroundings beginning to chill. Water freezes to ice and hot food instantly turns cold. Or if the mage chooses to remove the heat, there must be a place nearby for it to go. If a mage wants to control fire, the opposite occurs e lsewhere: fire that burns calmly in a hearth suddenly leaps from its confines and spreads with the potential to cause great damage. Candles and torches burn with such intensity that something in their vicinity might catch on fire.",
+        "affinity": {
+          "hvitavitner": 1,
+          "vaagrivitner": -1,
+          "morkvitner": -1
+        },
+        "source": "Player's Handbook, p. 109",
+        "level": 5,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "Gp1uJ3v1w2x3y4z5",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.Gp1uJ3v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Heat Water",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:heat-water:0",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:heat-water:0",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+        "summary": "By touching water, the mage can bring up to 5 liters to a boil in that location.",
+        "swedishName": "Vannhetja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:heat-water:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the amount of water boiled by 1 liter"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the amount of water boiled by 10 liters"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:4",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the amount of water brought to a boil by 100 liters"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "teHsqJaGbHcIdJeK",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.teHsqJaGbHcIdJeK",
+      "effects": []
+    },
+    {
+      "name": "Spark",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:spark:1",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:spark:1",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame.",
+        "summary": "Vitner Type Effects for Flame Craft",
+        "swedishName": "Gnistlogir",
+        "duration": "1 minute",
+        "range": "personal",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:spark:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:3",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "Increase the intensity of the flame so it equals that of a torch (the mage can decrease or increase the flame’s effect, from minimum to maximum, as desired for the duration)"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:4",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "The enchanter can release the flame so that it burns wherever desired, like a candle or torch, on a stick, a stone, or another object (the object itself does not catch fire)"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "5aaMOmPkQlRmSnTo",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.5aaMOmPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Burning Hand",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:burning-hand:2",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:burning-hand:2",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune). In battle, a successful hit is still needed to touch an enemy. The damage caused by Burning Hand is addition to the normal damage a fist does with a successful attack (1d5). To avoid the mage’s attack, the same rules apply as for typical combat, which means that the target can attempt to parry or evade the attack. Aside from causing damage, there is a small chance that the burning hand ignites fl ammable objects that it touches, which is up to the game master to determine. Armor absorbs damage in the normal fashion, but it may ignite if it is made from fl ammable materials. The mage cannot take any armed actions in the same action round in which they conjure the spell.",
+        "summary": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune).",
+        "swedishName": "Loghönd",
+        "duration": "4 action rounds",
+        "range": "personal",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:burning-hand:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "The enchanter's other hand catches fire (and gains the spell's basic effect)"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase the damage by one step:"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "2qZ8N4v1w2x3y4z5",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.2qZ8N4v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Flame Burst",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-burst:3",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-burst:3",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The spell creates a sudden fire that ignites within 10 meters of the enchanter. The fire takes the form of a cylinder with an approximate diameter of 1 meter. Within this cylinder, it is not only the fire that causes harm, but also the air that is heated to several hundred degrees in the blink of an eye. The fire and air together cause 1d10 points of damage to everyone within the area of effect. Regular armor offers no protection against this u nimaginably intense fire and heat. Magical armors, however, protect as usual. The flame disappears as quickly as it came if the duration is not prolonged with levels of power. Therefore, any easy-to-ignite objects within the area risk combustion only during the initial burst. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. By choosing to extend the duration, the mage can also move the fire burst to a new area within range.",
+        "summary": "The spell creates a sudden fire that ignites within 10 meters of the enchanter.",
+        "swedishName": "Logild",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-burst:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase range by 5 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the diameter of the flame burst by 1 meter"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase duration by 1 action round, so the flame burst continues burning in the next round"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "sseR1oToUpVqWrXs",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.sseR1oToUpVqWrXs",
+      "effects": []
+    },
+    {
+      "name": "Protection from Fire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:protection-from-fire:4",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:protection-from-fire:4",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The spell creates a film of protective vitner around the body of the enchanter or a selected creature. The vitner prevents the enchanted and all of their equipment from the effects of fire. However, the protective effect applies only to natural fire, dragon’s fire or any other magical flames are not covered by the spell’s effect.",
+        "summary": "The spell creates a film of protective vitner around the body of the enchanter or a selected creature.",
+        "swedishName": "Muspelskjold",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minute"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affects an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "G2xeh0u0v1w2x3y4",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.G2xeh0u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Flame Control",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-control:5",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-control:5",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+        "summary": "The mage controls an existing flame by increasing or cutting off its supply of air.",
+        "swedishName": "Loganrauda",
+        "duration": "5 minutes",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-control:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:3",
+            "cost": 9,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Allow control of an area as large as a hall"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:5",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Allow control of an area as large as a large longhouse"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "xUD5kXpVqWrXsYtZ",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.xUD5kXpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Warmth",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:warmth:6",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:warmth:6",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+        "summary": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
+        "swedishName": "Vjerma",
+        "duration": "5 hours",
+        "range": "3 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:warmth:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the radius of the sphere by"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the radius of the sphere of effect by 10 meters"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the temperature range by another +10° C"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Anchor the spell to an object, which makes the sphere portable with the object as its center"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:6",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Change the type of the spell to"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "SzbcryZu0v1w2x3y",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.SzbcryZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Sea of Fire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:sea-of-fire:7",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:sea-of-fire:7",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage points to an area within range, and it suddenly explodes in a sea of flame. The fire engulfs a circular area within a radius of 2 meters from the mage’s chosen point. All who are caught in the affected area receive 1d10 points of damage. Regular armor gives no protection. Magical armor protects as usual. The sea of fire disappears as quickly as it came if the duration is not extended. Therefore, any easy-to-ignite objects within that area risk combustion only during the initial burst. Victims who are standing inside the area or at its perimeter receive damage. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. Anyone who takes actions while within the sea of fire or who tries to attack someone within that area suffers -5 to the SV since it is so hard to see in the burning inferno.",
+        "summary": "The mage points to an area within range, and it suddenly explodes in a sea of flame.",
+        "swedishName": "Muspelhaf",
+        "duration": "",
+        "range": "20 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the sea of fire’s radius by"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the spell's duration by 1 action round, so that the sea of fire keeps burning during the next round"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "0ixzDD7C8D9EaGbH",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.0ixzDD7C8D9EaGbH",
+      "effects": []
+    },
+    {
+      "name": "Power of Vision",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision",
+        "description": "The enchanter has learned to master the astral consciousness possessed by every living being. Objects also have a form of astral consciousness, but it is considerably less advanced than that of a living being. By slipping into a trance during the spell’s weaving time, the enchanter can perform various spells related to the unseen astral plane. Methods of visiting the astral plane can be quite different, as everyone has different ways of focusing. Some enchanters stare into flame or a bed of hot coals, others use a large trunk, and a few more use the sun or moon. Players can decide how their enchanters perform the ritual. Since everything physical is mirrored on the astral plane, the enchanted is able to see how things really look. The mage can see the vitner’s flow that surrounds everyone, follow the tracks of a creature as easily as following light in the darkness, see far into the distance, and know things for what they really are.",
+        "summary": "Tracks creatures and observes things from afar or beyond appearances.",
+        "swedishName": "Skönjakraftla",
+        "negation": "Whenever the enchanter weaves an astral projection of any kind, the s urrounding environment might be exposed to unusual images from the beyond. Blurred images of strange objects or otherworldly creatures become visible in the real world for a moment or two. For many, this can be a terrifying experience. The game master determines whether an image becomes visible or not, what bizarre thing is shown, where it manifests, and the resulting consequences. The negation is rather straightforward since when vitner causes one person to see things more clearly, other things fade or blur. Tracks disappear and people’s eyesight grows blurry and weak, and what normally would be obvious suddenly becomes very difficult to note.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 2
+        },
+        "source": "Player's Handbook, p. 120",
+        "level": 5,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "kx7J04z5A6B7C8D9",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.kx7J04z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Tracking",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:tracking:0",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:tracking:0",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction. The enchanter can also follow tracks of a creature that has been enchanted with the Traceless spell. In order to use the vitner to track a creature, the enchanter must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the enchanter successfully weaves the spell, so the spell cannot be repeated unless the enchanter finds another item from the creature.",
+        "summary": "The spell allows the enchanted character to easily see and track another creature’s footprints on the ground.",
+        "swedishName": "Sporskönja",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:tracking:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-vision:tracking:0:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 12 hours"
+          },
+          {
+            "id": "vitner-power-of-vision:tracking:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "QUMULNiOjPkQlRmS",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.QUMULNiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Scanning",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:scanning:1",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:scanning:1",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane. The enchanter receives a sequence of images that broadly describe the object’s history but can only perceive events ranging up to one year back in time. For every 3 action rounds that the enchanter spends under the spell, they recall a significant event from the object’s history. They can also ask specific questions of the object, such as who was the last person to hold it. The answer to each question also takes 3 action rounds to complete. What the enchanter sees or learns is always up to the game master to determine.",
+        "summary": "By touching an object and slipping into a trance, the enchanter can explore its memories through the astral plane.",
+        "swedishName": "Tingspyrja",
+        "duration": "9 action rounds",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:scanning:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range of history that the enchanter can perceive events from by 1 year"
+          },
+          {
+            "id": "vitner-power-of-vision:scanning:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 3 action"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Xe6H32v1w2x3y4z5",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.Xe6H32v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Far Sight",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:far-sight:2",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:far-sight:2",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "The mage concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the enchanted character looks through the tunnel, the vitner works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between them. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+        "summary": "The mage concentrates on a space, and the swirling energies there form a single hair, a drop of blood, a fingernail, or something similar from the one being pursued.",
+        "swedishName": "Fjarrskönja",
+        "duration": "2 action rounds",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:far-sight:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range of sight by 100 meters"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range of sight by 500 meters"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:4",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the range of sight by 10"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range of casting the spell by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:6",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:7",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the modifier for long- range weapons by an additional +1"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "u0ZNcHbHcIdJeKfL",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.u0ZNcHbHcIdJeKfL",
+      "effects": []
+    },
+    {
+      "name": "Seeing",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:seeing:3",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:seeing:3",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "The spell enables the enchanted to see as clearly as if it were day, even in the most prohibitive circumstances. For the duration of the spell, the enchanted character’s eyesight is unrestricted, regardless of darkness, fog, smoke, brightness, or spells that impair vision. However, the enchanted character cannot detect things that they would not be able to see under normal c onditions. The Seeing spell can also be used to cancel the effects of spells that impair vision (effective for the spell’s duration), such as Vision/Blindness.",
+        "summary": "The spell enables the enchanted to see as clearly as if it were day , even in the most prohibitive circumstances.",
+        "swedishName": "Edliauga",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:seeing:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:3",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Affect another living being (which receives the base spell's effects)"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "3zQe6gKfLgMhNiOj",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.3zQe6gKfLgMhNiOj",
+      "effects": []
+    },
+    {
+      "name": "Espionage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:espionage:4",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:espionage:4",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "action rounds The mage can enchant an object in their possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the spell, the enchanter can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting their consciousness into the object. Once the enchanter has put the spell on the object, the distance between them no longer matters. Right before the spell expires, the enchanter can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the enchanter’s own memories.",
+        "summary": "temporarily shifting their consciousness into the object.",
+        "swedishName": "Hlustspyrja",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "1 action round/5 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:espionage:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-vision:espionage:4:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-power-of-vision:espionage:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "eSlt7y2x3y4z5A6B",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.eSlt7y2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "name": "Astral Voyage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:astral-voyage:5",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:astral-voyage:5",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute. The enchanter’s spirit travels on the border between Trudvang and Dimhall where they can still perceive things in Trudvang, but everything appears gray, misty, and fading. After the enchanter’s spirit has left their physical body, the body goes into hibernation. The enchanter can see and hear as normal while in spirit form. However, they are unable to interfere or communicate with their environment. The astral body is completely transparent, as it is purely composed of the enchanter’s consciousness. The astral body is immune to physical attacks and immediately knows if the physical body is hurt in any way. The enchanter must be careful to return to their body before the spell runs out. If the enchanter fails to do so, their consciousness is ripped through the astral plane back to the physical body where it belongs. The experience is so horrible and painful that the enchanter undergoes extreme shock, permanently loses 1d6 in vitner capacity, and falls into a deep slumber that lasts for 1d6 days. The physical body suffers 1d10 (OR 10) points of damage from the ripping effect. The astral body can be detected only through use of the spell True Sight. Another enchanter who discovers the astral body can banish it back to its physical body using the spell Dispel Vitner. The banished one then experiences the same effects as if the duration of the spell ended.",
+        "summary": "By leaving the material plane of existence, the enchanter allows their spirit to move freely through the environment at an incredible rate of 1 kilometer per minute.",
+        "swedishName": "Dimvandr",
+        "duration": "5 minutes",
+        "range": "personal",
+        "weavingTime": "10 minutes",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:2",
+            "cost": 18,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the movement speed by +1 kilometer per minute"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "TmmgO2v1w2x3y4z5",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.TmmgO2v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Read Vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:read-vitner:6",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:read-vitner:6",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it. These observable spells were woven using one of the three types of vitner (white vitner, vaagrivitner, or dark vitner), and it is helpful if the enchanter weaving Read Vitner uses the same type. If an enchanter uses the same type of vitner, they receive a positive modifier of +2 on the subsequent Situation roll. When the enchanter starts e xamining an object or creature, the least advanced (lowest level) spell is observed first. The enchanter must then succeed on a Situation roll to reveal the spell’s secrets. If the object or creature is enchanted with more than one spell, the enchanter sees<table><thead><tr><th colspan=\"1\">READ VITNER SITUATION VALUES</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>the spells in order of their complexity. The table below shows the Situation values needed to reveal a spell. READ VITNER SITUATION VALUES Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 A successful Situation roll means that the enchanter has managed to identify a spell woven over the object or creature, and also knows how to activate that magic in things such as magical items. If the enchanter fails to discern a spell, they cannot proceed to reading the next spell. A failure still makes it apparent to the enchanter that there are one or more spells woven over the object, but not which ones. Read Vitner can also be used to discover if a creature has one or more magical abilities, but not what they are.",
+        "summary": "The spell gives the enchanter the ability to carefully observe the vitner patterns that surround an object or creature and discern any spells that have been woven over it.",
+        "swedishName": "Vitnaskönja",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "1 hour",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:read-vitner:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "on a Situation roll by +1 (the enchanter can add this effect prior to each new roll)"
+          },
+          {
+            "id": "vitner-power-of-vision:read-vitner:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "UVfOw7A6B7C8D9Ea",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.UVfOw7A6B7C8D9Ea",
+      "effects": []
+    },
+    {
+      "name": "True Sight",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:true-sight:7",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:true-sight:7",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Power of Vision",
+        "description": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects. The target is immediately able to see through all illusions, camouflage, and magical images. The spell also grants the target the ability to see any objects and beings who might be invisible (whether by their very nature or through an ability). Objects or creatures that are invisible or camouflaged through spells appear to the target as if they are not enchanted at all. The effective range of this true sight is 25 meters in the basic version. The enchanter can also use the spell to determine if an object or creature has been enchanted and had its vitner manipulated in other ways beyond that of illusions. To achieve this, a successful Situation roll is required with a Situation value based on the spell woven over the object or creature (see the table below). The roll may be modified according to the game master’s wishes, and should always be rolled in secret by the GM, if the player is asked to roll, they will realize that there is something to be<table><thead><tr><th colspan=\"1\">TRUE SIGHT SITUATION VALUES</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>found in the object. However, the enchanter has no way of identifying what spell the creature or object has been enchanted with without also using the spell Read Vitner. TRUE SIGHT SITUATION VALUES Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+        "summary": "This spell allows a humanoid or creature’s eyes to be enchanted such that they recognize the vitner patterns of illusion that surround beings and objects.",
+        "swedishName": "Sannskönja",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:true-sight:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the effective range by 5 meters"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the effective range by 25 meters"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:6",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to see if a spell has been put on a creature or object by +1"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:7",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affect another living being (which receives the spell's basic effect)"
+          }
+        ],
+        "source": "Player's Handbook, p. 120",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "4TkbmE8D9EaGbHcI",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.4TkbmE8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "name": "Vitner Craft",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft",
+        "description": "The enchanter has learned to use the purest form of vitner, which grants the power to influence how the vitner itself flows and shapes its surroundings. The enchanter has learned to manipulate the vitner in two ways: by injecting it and by diffusing it. Vitner Craft makes it possible to enchant objects and beings, create a link between characters to channel vitner through, create a pocket of vitner where physical objects can be stored, or create a physical sigil on an object that binds another spell to be triggered in various ways. The enchanter has also learned to control the vitner in ways that dispel existing spells or increase an enchanted character’s ability to resist them. They can also trace the particular vitner of spells and negations back to the mage that has woven them. The enchanter even learns to erect a barrier against vitner so it is difficult if not impossible to use it in a designated area.",
+        "summary": "Manipulates, protects, dispels, or channels vitner directly.",
+        "swedishName": "Vitnakraftla",
+        "negation": "The negations that occur when weaving a spell remain the direct opposite of what the spell invokes. If one being receives a beneficial enchantment, one or several other beings experience bad luck and horror for a while. When an enchanter creates a sigil, no negation occurs when the spell is bound to it, but an extremely large negation occurs when the spell is used. The reason for this amplified negation is that the vitner is formed and woven for a much longer period, during which the pressure builds up as it tries to return to its original shape. When an enchanter protects against a vitner attack, the negation that occurs is the effect of the spell that was blocked, woven somewhere else in the world. The effect may not be as strong as the original, as it can occur with less potency in several places at the same time. When the enchanter takes vitner from a living being and places it in an object, nothing else happens, since the negation is the drawing out of vitner from the being. When the enchanter dispels vitner and returns it to its original shape, the resulting negation is various small spells that affect several places around Trudvang as the vitner twists back to its original form. If the enchanter creates a pocket with the vitner, nothing happens until an object is placed in the bag, at which time a similar object temporarily appears in another place. The negation for the vitner wall is far less noticeable than other spells’ negations. Instead of something blatant, the negation makes it subtly easier to weave spells or be affected by them wherever the negation occurs.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 2
+        },
+        "source": "Player's Handbook, p. 129",
+        "level": 4,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "5ZVrcvWrXsYtZu0v",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.5ZVrcvWrXsYtZu0v",
+      "effects": []
+    },
+    {
+      "name": "Channeling",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:channeling:0",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:channeling:0",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The enchanter can benefit from the help of others while weaving a spell. Any helper(s) must participate voluntarily. By succeeding with this spell, the enchanter gains 5 Vitner Points from the individual(s) helping. Because vitner is life, each Vitner Point drawn out this way also deals 1 point of damage to the assistant that it is drawn from. If there are several helpers, the vitner drawn and damage dealt is shared equally. Armor offers no protection against this damage, and the injury will heal normally. A helper cannot give more Vitner Points than the number of Body Points they have left. The channeled Vitner Points can be used as a one-time bonus to the enchanter’s vitner capacity. If the enchanter has not used all of the transferred Vitner Points by the time the spell expires, those that remain unused disappear.",
+        "summary": "The enchanter can benefit from the help of others while weaving a spell.",
+        "swedishName": "Vitnasammel",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "15 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:channeling:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the amount of transferred Vitner Points by +1"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the amount of transferred Vitner Points by +10"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:3",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:5",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "t0gvE8D9EaGbHcId",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.t0gvE8D9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Vitner Pouch",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The enchanter weaves vitner together to create an astral pouch. This bag is not visible in the physical world, and only the enchanter or those who understand vitner are able to perceive it. Furthermore, only those who can see the pouch can carry it. The bag can hold any objects or beings with a combined weight of up to 2 kg. Anything kept in the pouch adds no extra weight for the carrier. A creature who unwittingly gets caught in the pouch can attempt to free itself by making a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the spell’s duration expires and there are still objects in the pouch, all of them fall out next to the enchanter. It takes 1 action round to take an object out of the pouch.",
+        "summary": "The enchanter weaves vitner together to create an astral pouch.",
+        "swedishName": "Vitnasakje",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the total weight that can be stored in the bag by 1 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the total weight that can be stored in the bag by 10 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the total weight the pouch can hold by 100 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:4",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:5",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the spell's duration by 1 week"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "xdeIRHcIdJeKfLgM",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.xdeIRHcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "name": "Enchant Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:enchant-object:2",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:enchant-object:2",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties. The vitner is woven together as a beneficial energy surrounding the object. The enhancing energy grants any person a positive modifier of +2 to all Skill Values and Situation values whenever the object is used. The enchantment also increases the damage of weapons by +1, the Protection Value of armor or weapons by +1, and the Breach Value by +10.",
+        "summary": "The spell is woven over a designated object within range, which is then imbued with vitner that enhances its properties.",
+        "swedishName": "Kraftlatrolja eftnating",
+        "duration": "6 action rounds",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:3",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increases the SV modifier by +1 when using the object"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:6",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the weapon's damage by +1 and its Integrity Value by +10"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "vqgJhTkQlRmSnToU",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.vqgJhTkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "Anti Magic",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:anti-magic:3",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:anti-magic:3",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The spell creates a film of protective vitner around the target. This film protects the target against all forms of magic and can be woven over beings or objects. Any magic directed toward the target must penetrate the film in order to be able to affect it. To prevent a spell from penetrating the film, the initial enchanter (the one maintaining the Anti Magic spell) needs<table><thead><tr><th colspan=\"1\">ANTI MAGIC’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>to succeed on a Situation roll with a Situation value based on the attacking enchanter’s spell level, as shown in the table below. ANTI MAGIC’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2 If the incoming spell has extra levels of power that lower the target’s chance to succeed on a Situation roll, the enchanter attempting to stop the spell also receives the same negative modifier. If the enchanter succeeds on the roll, the vitner is neutralized and the prevented spell has no effect.",
+        "summary": "The spell creates a film of protective vitner around the target.",
+        "swedishName": "Motravitn",
+        "duration": "2 action rounds",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:5",
+            "cost": 5,
+            "maxCount": 1,
+            "effect": "Change the spell type from Preserving to Lasting"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "xkWdPF8D9EaGbHcI",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.xkWdPF8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "name": "Enchant Being",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:enchant-being:4",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:enchant-being:4",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The spell weaves together a layer of beneficial vitner around a target within range. The energy grants the target an additional positive modifier of +1 on all Skill Values and Situation values for the duration of the spell.",
+        "summary": "The spell weaves together a layer of beneficial vitner around a target within range.",
+        "swedishName": "Kraftlatrolja skopjaten",
+        "duration": "4 action rounds",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affect an additional being (with the spell’s basic version)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the bonus granted to the creature by +1"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "Zwk6G8z5A6B7C8D9",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.Zwk6G8z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Seal",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:seal:5",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:seal:5",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The magic in the Seal spell binds another spell within it, which is later added to an object. The enchanter first needs to weave the Seal spell and then weave whichever spell they wish to bind within it. After this is successful, the enchanter connects the bound spell to an object of their choosing. That spell becomes sealed in the object and remains latent until activated. If the seal is dispelled with the Dispel Vitner spell, the bound spell is activated rather than dispelled (unless the bound spell is dispelled first, before the seal is dispelled). The magical seal is placed on the object as soon as the enchanter signs the seal’s pattern on it with their fingers and establishes the trigger that breaks the seal and unleashes the magic bound within. Examples of triggers include whenever someone touches the object, whenever the object changes possession, or whenever someone attempts to dispel the seal. It is up to the enchanter to decide the conditions, as approved by the game master. The enchanter can also add a time delay, causing the spell to be triggered after a designated amount of time instead of by a specific trigger. The amount of time cannot be longer than one year. The seal’s magic is triggered immediately once its activation requirements are fulfilled. The area that can be affected by the unleashed spell is 3 meters around the seal. If desired, the enchanter can designate a way to break the seal and harmlessly disperse the vitner within without activating the bound spell (but still losing it). For example, this could be done by pushing the center of the object with three fingers, or by whistling a specific note or sequence. It is impossible to see the seal by normal eyesight (unless the enchanter chose to make the seal visible). However, the seal can be observed with the use of spells such as True Sight or Read Vitner. Only spells of the Lasting or Instant types can be bound within the seal, and the basic version of a seal can contain only first-level spells. An enchanter can have multiple spells bound in seals at the same time. The number is equal to the enchanter’s maximum vitner capacity.",
+        "summary": "The magic in the Seal spell binds another spell within it, which is later added to an object.",
+        "swedishName": "Bindjakraftla",
+        "duration": "until activation",
+        "range": "3 meters",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:seal:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Add a new triggering condition"
+          },
+          {
+            "id": "vitner-vitner-craft:seal:5:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the seal’s range by 5 meters"
+          },
+          {
+            "id": "vitner-vitner-craft:seal:5:2",
+            "cost": 3,
+            "maxCount": 4,
+            "effect": "Increase by 1 the level of the spell that can be bound to the seal"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "kW0JwB4z5A6B7C8D",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.kW0JwB4z5A6B7C8D",
+      "effects": []
+    },
+    {
+      "name": "Dispel Vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being. However, Dispel Vitner can only neutralize magic that was woven with a limited duration, as vitner woven for a permanent effect cannot be dispelled (unless noted in the spell’s d escription). The spell to be neutralized could use white vitner, vaagrivitner, or dark vitner. If the enchanter attempting to dispel it uses the same type of vitner, they receive a positive modifier of +2 to the Situation value for the attempt. To succeed with Dispel Vitner, the enchanter must succeed on a Situation roll. The Situation value for<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.</td></tr></tbody></table>this depends on the strength of the spell to be neutralized, as shown in the table below. If the roll succeeds, the spell’s vitner is neutralized and dispersed. DISPEL VITNER’S SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+        "summary": "The magic of the Dispel Vitner spell neutralizes a designated spell that has been woven over an object or being.",
+        "swedishName": "Brotja vitner",
+        "duration": "",
+        "range": "5 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:dispel-vitner:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-vitner-craft:dispel-vitner:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "s1GSKKbHcIdJeKfL",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.s1GSKKbHcIdJeKfL",
+      "effects": []
+    },
+    {
+      "name": "Trace Vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:trace-vitner:7",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:trace-vitner:7",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation. The effect of the spell or negation must have taken place within Trace Vitner’s listed range, and can be traced only if the effect is still active or was deactivated less than an hour ago. If Trace Vitner is successful, the enchanter learns the origin of the spell, which enchanter wove it, and where it was woven. If it is a negation that is being traced, the enchanter learns which specific spell caused the negation and where that spell took place. To trace a spell or negation, the enchanter<table><thead><tr><th colspan=\"1\">TRACE VITNER SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 10</td></tr><tr><td>2 8</td></tr><tr><td>3 6</td></tr><tr><td>4 4</td></tr><tr><td>5 2</td></tr></tbody></table>must make a successful Situation roll. The Situation value for this roll depends on the strength of the spell to be traced, as shown in the table below. TRACE VITNER SITUATION VALUE Spell Level Situation Value 1 10 2 8 3 6 4 4 5 2",
+        "summary": "The enchanter weaves the vitner in a way that reveals the origin of a spell or negation.",
+        "swedishName": "Vitnaspor",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Extend the limit for tracing vitner that has already ended by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Extend the limit for tracing vitner that has already ended by 1 day"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase by 1 week the time that may have passed since the tracked spell expired"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the range by 20 meters"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "HfGpw9D9EaGbHcId",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.HfGpw9D9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Wall of Vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Vitner Craft",
+        "description": "The enchanter forms a circular wall of vitner with a diameter of 2 meters. This wall protects against any spells that try to affect something on the other side of the wall. If a spell is centered outside the wall but has an area of effect that reaches beyond the wall, the spell needs to get past the vitner wall’s defense in order to have any effect. To protect against spells attempting to breach the vitner wall, the enchanter must succeed on a Situation roll every time a spell tries to break through. The Situation value depends on the level of the incoming magic,<table><thead><tr><th colspan=\"1\">WALL OF VITNER’S SITUATION VALUE</th></tr><tr><th>Spell Level Situation Value</th></tr></thead><tbody><tr><td>1 12</td></tr><tr><td>2 10</td></tr><tr><td>3 8</td></tr><tr><td>4 6</td></tr><tr><td>5 4</td></tr></tbody></table>as shown in the table below. If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall. WALL OF VITNER’S SITUATION VALUE Spell Level Situation Value 1 12 2 10 3 8 4 6 5 4",
+        "summary": "The enchanter forms a circular wall of vitner with a diameter of 2 meters.",
+        "swedishName": "Vitnahinner",
+        "duration": "5 action rounds",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the wall’s diameter by 1 meter"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:6",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 5 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 129",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "Bdk403u0v1w2x3y4",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.Bdk403u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Witchcraft",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft",
+        "description": "The mage has learned the art of witchcraft, which is said to be the foundation for all magic and the cause of the separation of magic and mages from the gods and religion of the Stormlands. With this Vitner Tablet, the mage has learned to curse both objects and beings, and torment people with phantom plagues, fever chills, or amnesia. The mage has also learned to uproot massive trees and other large objects, cause the failure of crops, and turn people into trees.",
+        "summary": "Curses, frightens, and transforms beings, objects, or plants.",
+        "swedishName": "Hagzkraftla",
+        "negation": "The opposite of witchcraft is enchantment and blessing. Whenever the mage curses an object or creature, another object or creature becomes enchanted. If the phantom plague spell is woven, someone afflicted by disease elsewhere in Trudvang is miraculously cured. When someone is afflicted by fever, someone else who already has a fever becomes healthy. If someone is afflicted by the witchcraft’s forgetfulness, someone else’s memory is suddenly restored. The negation of an uprooted tree is likely to build something in another place, a bad harvest creates good harvests elsewhere, and the negation of a tree curse turns a tree somewhere into a fantastic creature.",
+        "affinity": {
+          "hvitavitner": 2,
+          "vaagrivitner": 0,
+          "morkvitner": -1
+        },
+        "source": "Player's Handbook, p. 143",
+        "level": 4,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "v1RNuE6B7C8D9EaG",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.v1RNuE6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "name": "Uprooted Tree",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:uprooted-tree:0",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:uprooted-tree:0",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The spell causes a tree to uproot and collapse. The vitner is laid in the ground directly beneath a tree and there forms a small uproot. As soon as the spell has been woven, the vitner begins to swell up like a bloated cow’s stomach. Soon the vitner expands so much that the tree above it is wrenched from the soil and tipped over. An observer can see that something is happening because the soil suddenly starts to shift and rise. In the fourth action round of the spell, the uproot grows so large that it bursts out of the ground, and in the fifth action round it finally tips the tree over and then disappears. For a tree to be toppled in this manner, it cannot have a trunk with a circumference larger than 1.5 meters at ground level. If the trunk is larger, the vitner will not have enough strength to tip it over. The mage, who must c oncentrate on the uprooting at all times, can choose which way the tree will fall. If they lose concentration or lose control over the uproot for any reason, it will still continue to swell until the tree falls, but the game master will determine the direction. Everyone who observes this occurrence and was unaware of the mage’s actions must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply) to avoid receiving 1d10 Fear Points when the uproot breaks out of the ground. On a success, an observer receives no Fear Points. The uproot could just as easily be placed under a large rock, open ground, or even a house. The final results of such an action and how much of the object collapses or is tipped over is up to the game master to decide. The uproot in the spell’s basic version can lift or tip approximately 100 kg.",
+        "summary": "The spell causes a tree to uproot and collapse.",
+        "swedishName": "Rotveltja",
+        "duration": "5 action rounds",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the size of the uprooting so it can lift a tree of + 0.5 meters in circumference, as well as lift or tip an additional 30 kg"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:2",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the size of the uprooting so it can lift a tree of +1.5 meters in circumference, as well as lift or tip an additional 100 kg"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Add 7.5 meters to the circumference and lift or push an additional 500 kg"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "phZm0cHcIdJeKfLg",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.phZm0cHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Phantom Plague",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:phantom-plague:1",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:phantom-plague:1",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear. The spell brings forth only the appearance of the disease, and the victim only imagines that they feel the fever, chills, or ache. The actual health of the victim is not affected, even though the victim is convinced otherwise. The symptoms are so real that it takes someone skilled in medicine with the Care skill (Healing and Drugs discipline) to reveal the truth. It is also possible for the victim to see through this phantom affliction by succeeding on a Situation roll with a Situation value of 8 (Psyche modifiers apply). Each new day of the spell’s duration, the victim is permitted a new Situation roll to attempt to see through the deception. A person suffering from a phantom plague receives -5 on all rolls that include social interaction because everyone can see the symptoms of the illness.",
+        "summary": "The mage can bewitch a victim so they begin to manifest all potential symptoms of a disease they fear.",
+        "swedishName": "Skenplauga",
+        "duration": "3 days",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the effect of the phantom plague´s credibility so the target´s Situation value decreases by -1"
+          },
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Reduce the healer's Skill Value (Crafting) by 1 when examining the victim"
+          },
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "BXqIpKeKfLgMhNiO",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.BXqIpKeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "name": "Fever",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:fever:2",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:fever:2",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically. The victim begins to feel their blood almost boiling, which causes them to lose both power and stamina. The fever, which lasts for one hour, cannot be cured, and during this time the victim suffers -1d3 to the SV of all actions. The victim must also make a Situation roll with a Situation value of 8 (Constitution modifiers apply) to avoid taking damage from the fever as well. Failure means the victim takes 1d10 points of damage from the burning fever.",
+        "summary": "By simply pointing a finger at a victim within range, the mage can raise their internal body temperature dramatically.",
+        "swedishName": "Muspelblot",
+        "duration": "1 hour",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:fever:2:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the fever effects so the victim receives another -1 to the SV of actions attempted for the duration."
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:5",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "qgYCI1tZu0v1w2x3",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.qgYCI1tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "name": "Curse Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:curse-object:3",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:curse-object:3",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The curse is put on a single object within range, which then significantly decreases its traits when in use. The conjured vitner sticks to the object like a foul and degenerate force. Any person attempting to use the object suffers a negative modifier of -2 on all Skill rolls and Situation rolls in which the object is used. If the object is a weapon, damage is also decreased by -1, and if the object is armor, Protection Value is also decreased by -1.",
+        "summary": "The curse is put on a single object within range, which then significantly decreases its traits when in use.",
+        "swedishName": "Nidtrölja eftnating",
+        "duration": "5 action rounds",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:curse-object:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the spell's duration by 1 hour"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affect another target (which suffers the spell's basic effect)"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "xOTqeTkQlRmSnToU",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.xOTqeTkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "Amnesia",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:amnesia:4",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:amnesia:4",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The spell creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory. The victim can avoid this loss by s ucceeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately forgets their identity and past. Each day, the victim can make a new Situation roll with a Situation value of 6. On a success, the victim regains an important detail of their previous life as determined by the game master, perhaps a family memory, an i mportant skill, or some other a ttribute. The next day the victim can make another S ituation roll to remember more. Every successful Situation roll increases the chance of remembering something on the f ollowing days by +2. This bonus is not lost if the victim fails a Situation roll, though they would not recover any memories that day. The victim gets to make a new Situation roll the next day with the same Situation value and bonus. Skills and other attributes still exist within the victim, and it is up to the game master to decide when these reflexes kick in. Examples include a person fleeing through a village and by reflex jumping up on a horse and riding off at full speed (the Agility skill with the Riding k nowledge), or a person standing eye to eye with the village brute, watching that enormous fist plummet toward his face with worrisome force, then suddenly avoiding the attack and delivering a well-aimed blow to the brute’s already broken nose, knocking him to the dirty tavern floor (the Fighting skill and the W restling knowledge). The higher value a person has in a skill, the more likely it is for these reflex actions to instinctively come forth. Once the victim eventually makes a Situation roll with a Situation value of 20, they remember everything that was forgotten.",
+        "summary": "The spell creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory.",
+        "swedishName": "Húgvilsa",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "permanent",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:amnesia:4:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-witchcraft:amnesia:4:1",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the range by 50 meters"
+          },
+          {
+            "id": "vitner-witchcraft:amnesia:4:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Reduce the victim's initial Situation roll by 1 (to a minimum of 1)"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "EyBYbhLgMhNiOjPk",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.EyBYbhLgMhNiOjPk",
+      "effects": []
+    },
+    {
+      "name": "Curse Creature",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:curse-creature:5",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:curse-creature:5",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being). With this spell, the mage twists the composition of energies around the target. This subtle change cannot be perceived through normal senses, but is picked up on intuitively. It is a disharmony that is hard to describe in words, as if a high, cutting, relentless, and unnerving sound is constantly emanating from the target, a sound that is constantly rising and gnawing at the limit of our consciousness. All living creatures that encounter the target are struck by this uncomfortable feeling, an intense aversion, a powerful sense of something both supernatural and wrong. All living beings instinctively shun and avoid the target as much as possible. Additionally, intelligent beings are filled with fear and often believe that anything the target carries or comes into contact with might be contagious as well. Even the target’s friends often feel a powerful aversion and cannot stand being in their presence, no matter how dearly they would like to. Merchants and traders cancel transactions with the target, mothers pull their children away and shield them from view, people leave wide chasms of space around the target on the streets and in inns, and adventuring colleagues cannot sleep in their presence and never wake up feeling rested. In short, people avoid the cursed character as if they were a leper. The most tragic thing about the curse is that the target is unaware of it, and initially has no idea why others have these reactions. If the target has no knowledge about magic and spells, it’s possible they might never understand. Against the cursed victims will, they become increasingly more isolated and shunned, filled with doubt and trepidation. Given enough time, the cursed victim risks becoming insane. The twisted vitner surrounding the target does more than make life unbearable for the afflicted. All Skill Values and Situation values have a negative modifier of -1 for the duration of the curse. If the mage that caused the curse dies, it is immediately broken.",
+        "summary": "To curse a creature, the mage has to know the target’s real name and perceive it through any sense (sight, sound, smell, or through spells such as Detect Being).",
+        "swedishName": "Nidtrölja skopjaten",
+        "duration": "10 days",
+        "range": "10 kilometers",
+        "weavingTime": "3 hours",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:curse-creature:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 month"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:3",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 year"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the penalty imposed on the victim by +1"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "3PUQzvXsYtZu0v1w",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.3PUQzvXsYtZu0v1w",
+      "effects": []
+    },
+    {
+      "name": "Bad Harvest",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:bad-harvest:6",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:bad-harvest:6",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the spell’s basic version. Plants that have been harmed by this spell cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.",
+        "summary": "The spell places a mist of vitner over a cornfield, forest, or any other area of vegetation.",
+        "swedishName": "Nidskord",
+        "duration": "",
+        "range": "100 meters",
+        "weavingTime": "4 hours",
+        "dailyActivation": "",
+        "spellType": "permanent",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the radius by 20 meters"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the radius by 100 meters"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:2",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Increase the radius by 500 meters"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:4",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 1 kilometer"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "rcQskvYtZu0v1w2x",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.rcQskvYtZu0v1w2x",
+      "effects": []
+    },
+    {
+      "name": "Tree Curse",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:tree-curse:7",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:tree-curse:7",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Witchcraft",
+        "description": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root. The spell can only be woven over a living creature who weighs less than 60 kg and is standing over ground of sufficient thickness and fertility for a tree to take root and grow. The victim can resist the full transformation by succeeding on a Situation roll with a Situation value of 4 (Constitution modifiers apply). On a success, only the victim’s skin transforms to birch or bark, which has no effects beyond appearance and restricted Agility; all Skill Values and Situation values related to Agility suffer a negative modifier of -3 for the duration. If the target weighs too much to be entirely transformed, only parts of the victim will be altered (how much and what parts are up to the game master to decide), and the rest of the victim’s skin turns to birch and bark with the same effects as above. A successful Situation roll in this case means the victim suffers a negative modifier of -1 (instead of -3). If the target fails the Situation roll and weighs less than the spell’s effect limit, the victim immediately takes root and is unable to move. At this point, over the course of about an hour, the victim transforms into a tree of whichever species the mage designates (though the tree must be able to survive in the area, even if it is not commonly found there). The tree has the same size and Body Points that the victim had in their normal form. It also retains facial features twisted within the bark, and limbs that resemble arms and legs. While the creature is in tree form, it maintains the same senses of perception that it had before the curse took effect. The creature sees everything visible within view (depending on which direction the face is pointing) and hears sounds, detects scents, and feels contact as normal. Any damage the tree creature suffers remains once it returns to its natural form. Possessions such as clothing and equipment also become parts of the tree (assuming their added weight is within the spell’s limit). In tree form, the victim has a natural Protection Value of 4. The victim does not need to eat or drink to survive, but will occasionally fall asleep. If someone carves or tries to cut down the tree (inflicting damage upon the victim), the tree begins to bleed. If this does not deter the attacker, the victim dies after suffering enough damage. The mage can end this curse and return the creature to its original shape at any time. A creature that endures tree form for the full duration of the spell is very stiff once restored, and for the first three days afterward, all Skill rolls and Situation rolls related to Agility and movement are halved.",
+        "summary": "The spell changes the balance in the body of a chosen victim so drastically that they slowly begin turning into a tree and taking root.",
+        "swedishName": "Nidtreid",
+        "duration": "2d6 days",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:tree-curse:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase affected weight by 10 kg"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:2",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 month"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:4",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 year"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 143",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "QeocGD6B7C8D9EaG",
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.QeocGD6B7C8D9EaG",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "vRp0IPgMhNiOjPkQ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/vRp0IPgMhNiOjPkQ.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 6,
+      "intelligence": -4,
+      "strength": 5,
+      "psyche": 6
+    },
+    "skills": {
+      "agility": {
+        "value": 10,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 10,
+        "bonus": 0
+      },
+      "care": {
+        "value": 10,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 10,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 10,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 10,
+        "bonus": 0
+      },
+      "vitnerCraft": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadowing",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage & Hiding",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wrestling",
+        "skillId": "fighting",
+        "catalogId": "wrestling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shield Bearer",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Culture Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "cultureKnowledge",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Lore & Legends",
+        "skillId": "knowledge",
+        "catalogId": "loreLegends",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Religion",
+        "skillId": "knowledge",
+        "catalogId": "religion",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Foreign Tongue",
+        "skillId": "knowledge",
+        "catalogId": "foreignTongue",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Silvertongue",
+        "skillId": "knowledge",
+        "catalogId": "silvertongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Learning",
+        "skillId": "knowledge",
+        "catalogId": "learning",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Insight",
+        "skillId": "knowledge",
+        "catalogId": "insight",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Craft",
+        "skillId": "vitnerCraft",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Call of Vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "callVitner",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Darkhwitalja",
+        "skillId": "vitnerCraft",
+        "catalogId": "darkhwitalja",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Shaping",
+        "skillId": "vitnerCraft",
+        "catalogId": "vitnerShaping",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Galding",
+        "skillId": "vitnerCraft",
+        "catalogId": "galding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Sejding",
+        "skillId": "vitnerCraft",
+        "catalogId": "sejding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vyrding",
+        "skillId": "vitnerCraft",
+        "catalogId": "vyrding",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Horns",
+          "value": 16
+        }
+      ],
+      [
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 17
+        },
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 16
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Tvei faldir (two-handed flail)",
+          "value": 16
+        },
+        {
+          "attack": "Tvei faldir (two-handed flail)",
+          "value": 15
+        }
+      ],
+      [
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 15
+        },
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 10
+        },
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 8
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 13
+        },
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 10
+        },
+        {
+          "attack": "Dropi axi (pendulum axe)",
+          "value": 10
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        },
+        {
+          "attack": "Medium Wooden Shield",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 181,
+        "max": 181
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 45
+    },
+    "description": "A physical demon is an entity of pure malice born from darkness so compact that it formed a body. Its physical manifestation is the condensation of all the darkness it has accumulated, and its body has become truly flesh. It fights with claws, horns, and fangs. Some have wings that let them fly. Others have launchable spikes, strong iron scales, extra arms, or bodies of fire.",
+    "details": {
+      "creatureType": "Mist creatures",
+      "type": "humanoid",
+      "size": "3",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 6-10)",
+      "bodyMin": 162,
+      "bodyMax": 201,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "45 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Embodied darkness armed with claws, horns, and fangs.",
+      "environment": "Cracks in time, crossing from Blotheim to Trudvang only through portals or powerful rituals",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 46
+      }
+    }
+  },
+  "_id": "vRp0IPgMhNiOjPkQ",
+  "_key": "!actors!vRp0IPgMhNiOjPkQ",
+  "folder": "nhZGosWrXsYtZu0v"
+}

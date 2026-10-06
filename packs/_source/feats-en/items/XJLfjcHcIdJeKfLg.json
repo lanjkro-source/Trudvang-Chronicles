@@ -1,0 +1,19 @@
+{
+  "_id": "XJLfjcHcIdJeKfLg",
+  "name": "Thermal Sight",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "XJLfjcHcIdJeKfLg",
+    "summary": "Detects heat, size and distance up to 300 m; can be suppressed and is not stunned by sudden heat sources.",
+    "description": "<p>The creature detects heat sources up to 300 meters away. This allows it to estimate their magnitude and distance. The dragon can suppress its thermal sight when necessary and cannot be stunned by the sudden appearance of a heat source.</p><p>This ability works identically for the hrimwurm, jarnwurm, and logiwurm; it is distinct from their darkvision.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!XJLfjcHcIdJeKfLg",
+  "folder": null
+}

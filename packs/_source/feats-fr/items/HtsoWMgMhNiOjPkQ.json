@@ -1,0 +1,19 @@
+{
+  "_id": "HtsoWMgMhNiOjPkQ",
+  "name": "Perception de l’hostilité",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "HtsoWMgMhNiOjPkQ",
+    "summary": "Perçoit les créatures intelligentes et leurs intentions hostiles dans un rayon de 200 m.",
+    "description": "<p>Un yggdras peut percevoir la présence de créatures intelligentes dans un rayon de 200 mètres et sait si ces créatures sont hostiles ou non.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 103
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!HtsoWMgMhNiOjPkQ",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "AFwyjwYtZu0v1w2x",
+  "name": "Misthal’s Dream",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "AFwyjwYtZu0v1w2x",
+    "summary": "Contact and resistance at situation value 9 (Psyche); failure causes nightmares with lasting effects determined on a d20.",
+    "description": "<p>The mare lives off of people’s dark dreams. She consumes life force through dreams, and anyone who encounters the mare will wrestle with their worst thoughts and phobias. In order to enter someone’s dreams and change them into nightmares, the mare needs only to come in bodily contact with the victim, who must instantly make a situation roll with a situation value of 9 (Psyche modifiers apply). On a success, the victim has nightmares the following night, with no lasting impact. On a failure, the victim rolls 1d20 and consults the chart below.</p><p>When you as a game master describe the dreams, you should do so as vividly as possible. The afflicted character should wake up from a dream thinking it was real life. A nightmare can be a whole new adventure. It does not need to be a battle for life and death.</p><table><thead><tr><th>1d20</th><th>Result</th></tr></thead><tbody><tr><td>1-5</td><td>Nightmares for 1d5 nights; -1 to all actions during the following days.</td></tr><tr><td>6-11</td><td>Nightmares for 1d10 nights; -2 to all actions during the following days.</td></tr><tr><td>12-15</td><td>Nightmares for 1d10 (OR 10) nights; -3 to all actions during the following days.</td></tr><tr><td>16-19</td><td>Insomnia after the nightmares; -2 to all actions until a blessing. The victim wakes with a nosebleed.</td></tr><tr><td>20</td><td>Nightmares for 1d10 (OR 9-10) nights; -3 to all actions during the following days. On the first night make a situation roll at SV 12 (Psyche). On failure lose one Psyche level until a blessing; if already at the lowest level, apply an additional -2 to the modifier. The victim wakes with a nosebleed.</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 91
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!AFwyjwYtZu0v1w2x",
+  "folder": null
+}

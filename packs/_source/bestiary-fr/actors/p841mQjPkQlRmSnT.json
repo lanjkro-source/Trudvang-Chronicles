@@ -1,0 +1,119 @@
+{
+  "name": "Mule/âne",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg",
+  "items": [
+    {
+      "_id": "CND8c6x3y4z5A6B7",
+      "name": "Ruade",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!p841mQjPkQlRmSnT.CND8c6x3y4z5A6B7",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "p841mQjPkQlRmSnT",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Ruade",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 54,
+        "max": 54
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "C'est un équidé robuste au corps compact, à l'échine saillante et au dos droit et dur. Son pelage rude et court, gris, brun ou vineux, est plus clair autour du museau et du ventre. Sa tête longue porte de très grandes oreilles mobiles, des yeux doux et un museau étroit à la bouche dure. Ses jambes fines mais étonnamment solides se terminent par des sabots étroits et très résistants. Sa queue fine terminée par un toupet sombre et sa crinière rase et dressée complètent son aspect frugal.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "2",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 54,
+      "bodyMax": 54,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Sobre, têtu, aux longues oreilles.",
+      "environment": "Sentiers de montagne, cols pierreux et fermes isolées de Trudvang, bête de somme des caravanes.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "p841mQjPkQlRmSnT",
+  "_key": "!actors!p841mQjPkQlRmSnT",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

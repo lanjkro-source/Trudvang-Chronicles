@@ -1,0 +1,19 @@
+{
+  "_id": "s2C1vcGbHcIdJeKf",
+  "name": "Sense Life",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "s2C1vcGbHcIdJeKf",
+    "summary": "Detects living creatures within range and identifies the mentally weakest with skill rolls; spells and divine powers can counter it.",
+    "description": "<p>A diser has the ability to sense where a living creature is within the range of the ability. Each action round, the diser can make a successful skill roll to sense who among the living within range is the weakest mentally (Psyche is used). Two successful skill rolls give the diser knowledge of the two targets that are most mentally weak within range. However, targets can hide from the diser with the help of prayers of power or spells.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!s2C1vcGbHcIdJeKf",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "go5al8z5A6B7C8D9",
+  "name": "Fire Breath",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "go5al8z5A6B7C8D9",
+    "summary": "The logiwurm breathes up to three times/day (SV 12, no CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide).",
+    "description": "<p>Like other dragons, the logiwurm has a breath weapon (not by spending any Combat Point, but by making a SV12 roll). This one is called Fire breath. The logiwurm can make up to three breath attacks per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The logiwurm’s profile specifies 3d10 (OR 7-10) damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 124
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!go5al8z5A6B7C8D9",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "OG4PmMfLgMhNiOjP",
+  "name": "Plaguebearer",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "OG4PmMfLgMhNiOjP",
+    "summary": "The gray troll spreads diseases to those nearby.",
+    "description": "<p>Trolls live a primitive and filthy life, which means that they may carry many diseases. Anyone who gets within 2 meters of a troll that carries a plague must make a situation roll with a situation value of 7 (Constitution modifiers apply). If the roll succeeds, the person is immune for a month to plagues carried by trolls. If the roll fails, the person is afflicted with one of the following effects. Roll on the table below.</p><table><thead><tr><th>1d20</th><th>Effect</th></tr></thead><tbody><tr><td>1-5</td><td>The troll's stench permeates the victim's clothes, making the victim smell terrible.</td></tr><tr><td>6-9</td><td>Dizziness: -1 to skill and situation values for one hour.</td></tr><tr><td>10-13</td><td>A bad cold: -1 to skill and situation values for one day.</td></tr><tr><td>14-16</td><td>A very bad cold and fever for 1d6 days: -2 to skill and situation values, movement reduced to 2/3.</td></tr><tr><td>17-18</td><td>Severe redness for 1d6 days: -3 to skill and situation values. At the end, roll against situation value 7 (Constitution); on failure, the same effect lasts for an additional 1d3 days.</td></tr><tr><td>19-20</td><td>1d10+5 large boils appear. Each day 1d3 burst until all are gone; each boil deals 1d3 damage when it bursts.</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 154
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!OG4PmMfLgMhNiOjP",
+  "folder": null
+}

@@ -6,6 +6,7 @@ import { TrudvangRollTable, registerExtractStageDirectoryIcon } from "./modules/
 import { TrudvangCharacterSheet, TrudvangNpcSheet } from "./modules/sheets/actor-sheet.mjs";
 import { TrudvangItemSheet } from "./modules/sheets/item-sheet.mjs";
 import { TrudvangEffectSheet } from "./modules/sheets/effect-sheet.mjs";
+import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-ability-sheet.mjs";
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
@@ -82,8 +83,12 @@ Hooks.once("init", () => {
   // Item sheet — ApplicationV2
   if (DocumentSheetConfig) {
     DocumentSheetConfig.registerSheet(foundry.documents.Item, "trudvang-chronicles", TrudvangItemSheet, {
+      types: Object.keys(ITEM_DATA_MODELS).filter(type => type !== "creatureAbility"),
       makeDefault: true,
       label: "TRUDVANG.Sheets.Item"
+    });
+    DocumentSheetConfig.registerSheet(foundry.documents.Item, "trudvang-chronicles", TrudvangCreatureAbilityItemSheet, {
+      types: ["creatureAbility"], makeDefault: true, label: "TRUDVANG.Sheets.CreatureAbility"
     });
   } else {
     // Fallback for V14 compatibility

@@ -1,0 +1,19 @@
+{
+  "_id": "7Aa9AMfLgMhNiOjP",
+  "name": "Robuste",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "7Aa9AMfLgMhNiOjP",
+    "summary": "Le démon possède deux fois plus de points de santé, sa résistance à la douleur étant plus élevée que celle des autres démons.",
+    "description": "<p>La résistance du démon à la douleur est plus élevée que celle des autres démons. Il possède, par conséquent, deux fois plus de points de santé.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!7Aa9AMfLgMhNiOjP",
+  "folder": null
+}

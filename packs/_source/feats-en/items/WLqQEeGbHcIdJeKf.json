@@ -1,0 +1,19 @@
+{
+  "_id": "WLqQEeGbHcIdJeKf",
+  "name": "Petrify (braskelwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WLqQEeGbHcIdJeKf",
+    "summary": "Clucking: situation value 14, -6 for the target; resist petrification at situation value 6 (Psyche), statue PV 10 / BV 100.",
+    "description": "<p>When the braskelwurm attacks with its eyes, it tries to force the victim to face its gaze. It does this by clucking seductively and pointing its glowing eyes toward its chosen victim. Even if the clucking is neither beautiful nor seductive, it is hard not to turn one’s attention toward this sound and then fall into the deep eyes of the reptile.</p><p>Everyone who hears the clucking noise must make a situation roll with a situation value of 14 (Psyche modifiers apply) to avoid looking into the beast’s eyes. The one whom the braskelwurm has chosen to be its victim has a negative modifier of -6 (situation value 8). Depending on the age of the braskelwurm, the situation value may be modified. A young braskelwurm is much more dangerous than an old one, and the most dangerous are the ones that were just born. It is up to the game master to give modifiers based on the age of the braskelwurm.</p><p>Victims of the gaze can withstand the incoming spell by making a situation roll with a situation value of 6 (Psyche modifiers apply). If the roll fails, the victim is instantly turned to nearly unbreakable stone. This means that the petrified victim gains a Protection Value of 10 and a Break Value of 100. When the Break Value is lowered to 0, the victim starts to take damage like normal, and if the victim takes as much damage as double its Body Points, the stone statue will break and the victim will die.</p><p>A petrified creature is in a constant state of sleep and cannot comprehend the passage of time or what happens around them. The victim cannot affect anything in its surroundings. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja). When the petrification runs out, the victim returns to its original form.</p><p>A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The statue weighs around ten times the victim’s original weight.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 106
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WLqQEeGbHcIdJeKf",
+  "folder": null
+}

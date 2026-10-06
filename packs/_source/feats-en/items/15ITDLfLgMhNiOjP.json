@@ -1,0 +1,19 @@
+{
+  "_id": "15ITDLfLgMhNiOjP",
+  "name": "Wild Shriek",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "15ITDLfLgMhNiOjP",
+    "summary": "Happja’s shriek: resist at situation value 8 (Psyche), +5 if seen beforehand; failure inflicts 1d10 (OR 10) Fear Points.",
+    "description": "<p>At the beginning of a combat the happja lets forth a vile shriek that instills horror in all who hear it. If the happja surprises her victims with the shriek, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) or gain 1d10 (OR 10) Fear Points. Anyone who sees the happja before she shrieks is not surprised and gains +5 on the roll instead (situation value 13).</p><p>If the situation roll results in a natural 20, the victim drops their weapons and becomes unable to act for 1d3 action rounds.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 79
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!15ITDLfLgMhNiOjP",
+  "folder": null
+}

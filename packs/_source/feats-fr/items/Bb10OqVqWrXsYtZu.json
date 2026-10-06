@@ -1,0 +1,19 @@
+{
+  "_id": "Bb10OqVqWrXsYtZu",
+  "name": "Camouflage de boue",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Bb10OqVqWrXsYtZu",
+    "summary": "La boue bleue camoufle le skogstroll dans les bois au clair de lune : -4 pour le détecter, -8 s’il se déplace discrètement.",
+    "description": "<p>Lorsque les rayons de la lune éclairent la boue bleue, elle paraît verte et ne fait plus qu’un avec les couleurs nocturnes de la forêt. Cette particularité a poussé les trolls à peindre leur corps avec cette boue, également appelée boue de cochon, et celle-ci leur permet de se camoufler lorsqu’ils partent dans la forêt une fois la nuit tombée. Les trolls deviennent très difficiles à détecter (-4 aux tests de compétence effectués pour découvrir la présence des skogstrolls) et ceux qui se déplacent discrètement sont encore plus difficiles à repérer (-8). Les trolls des forêts qui traversent les bois sans essayer de rester cachés sont également plus difficiles à repérer et il faut ainsi réussir un test avec la compétence d’Arts des ombres pour les repérer.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 165
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Bb10OqVqWrXsYtZu",
+  "folder": null
+}

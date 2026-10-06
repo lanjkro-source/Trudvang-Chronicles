@@ -1,0 +1,513 @@
+{
+  "name": "Troll Bull",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg",
+  "items": [
+    {
+      "name": "Barda makir (battle mace)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "3PFDQRjPkQlRmSnT",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.3PFDQRjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "name": "Large Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A slow but highly protective shield allowing one weapon action per round.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "passiveProtection": 6,
+        "weaponActions": 1,
+        "initiativeModifier": -3,
+        "weight": 6,
+        "value": 3,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "iZ2gBD5A6B7C8D9E",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.iZ2gBD5A6B7C8D9E",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (two-handed club)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "zxVmlkMhNiOjPkQl",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.zxVmlkMhNiOjPkQl",
+      "effects": []
+    },
+    {
+      "_id": "KFs4J6x3y4z5A6B7",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.KFs4J6x3y4z5A6B7",
+      "effects": []
+    },
+    {
+      "_id": "pLk4DMgMhNiOjPkQ",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.pLk4DMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "CpKzanOjPkQlRmSn",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.CpKzanOjPkQlRmSn",
+      "effects": []
+    },
+    {
+      "_id": "zLdTbC6B7C8D9EaG",
+      "name": "Charge",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "zLdTbC6B7C8D9EaG",
+        "summary": "Troll bull charge: 2d10 (OR 9-10) damage, movement and attack CP; Agility -5 to avoid being knocked down.",
+        "description": "<p>Troll bulls will begin their attacks with a charge. They lower their heads and charge straight into victims to deal damage and knock them off balance. Due to the bull’s weight, high speed, and sharp horns, the charge will deal 2d10 (OR 9-10) points of damage. A charge is resolved spending CP for movement plus CP for an attack with natural weapons (Horn).</p><p>Anyone hit by the attack must succeed on a skill roll for the Agility skill modified by -5 to avoid falling over. A victim who falls over from the charge must make a situation roll with a situation value of 10 (Dexterity modifiers apply) to avoid dropping whatever items they are holding.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 28
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.zLdTbC6B7C8D9EaG"
+    },
+    {
+      "_id": "lHbj4E6B7C8D9EaG",
+      "name": "Troll Bull Heart",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "lHbj4E6B7C8D9EaG",
+        "summary": "Eating the heart removes 1d10 (OR 10) Fear Points, but may compel a charge to defend friends: resist at situation value 10 (Psyche).",
+        "description": "<p>If someone eats from the heart of a troll bull, they are filled with courage and inner strength. They instantly lose 1d10 (OR 10) of gained Fear Points and they feel more alive and protective of their friends. If an enemy threatens one of those friends, there is a risk that the devourer will instantly charge that enemy and attack. The devourer must make a situation roll with a situation value of 10 (Psyche modifiers apply) to avoid being compelled to charge the enemy.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 28
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.lHbj4E6B7C8D9EaG"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "yIVEN4x3y4z5A6B7",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 2,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 5,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 6,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 8,
+        "bonus": 0
+      },
+      "care": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 2,
+        "kind": "skill"
+      },
+      {
+        "name": "Faith",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Handicraft",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Hard Materials",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Soft Materials",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shield Bearer",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Horns",
+          "value": 13
+        },
+        {
+          "attack": "Horns",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Tvei klubb (two-handed club)",
+          "value": 15
+        },
+        {
+          "attack": "Tvei klubb (two-handed club)",
+          "value": 9
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 14
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 12
+        },
+        {
+          "attack": "Large Wooden Shield",
+          "value": 15
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 12
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 8
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 6
+        },
+        {
+          "attack": "Large Wooden Shield",
+          "value": 8
+        },
+        {
+          "attack": "Large Wooden Shield",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 58,
+        "max": 58
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "This large humanoid has immensely developed muscles. Its imposing body is covered in thick fur, thicker in the north. Its massive torso houses four small stomachs. Its impressive bull's head bears long horns, longer in Soj, which it uses in battle. Its powerful arms wield great iron clubs. Its figure, like a bull standing on two legs, towers over the plains.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "humanoid",
+      "size": "2",
+      "age": "40, max. 75",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 52,
+      "bodyMax": 64,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colossal shaggy bull humanoid with long fighting horns.",
+      "environment": "Throughout Trudvang, especially the great plains of the western lands",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 28
+      }
+    }
+  },
+  "_id": "yIVEN4x3y4z5A6B7",
+  "_key": "!actors!yIVEN4x3y4z5A6B7",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

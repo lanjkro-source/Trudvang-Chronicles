@@ -1,0 +1,19 @@
+{
+  "_id": "AFwyjwYtZu0v1w2x",
+  "name": "Rêve de Dimhall",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "AFwyjwYtZu0v1w2x",
+    "summary": "Contact et résistance VS 9 (Psychisme) ; l’échec déclenche des cauchemars avec effets durables déterminés au d20.",
+    "description": "<p>Une hantise vit des sombres rêves que font les gens. Elle consomme la force vitale par le biais des rêves et quiconque rencontre une hantise devra lutter contre ses pires pensées et phobies. Afin d’entrer dans les rêves d’une personne pour les transformer en cauchemars, la hantise a simplement besoin d’établir un contact physique avec sa victime qui doit aussitôt effectuer un test de situation avec une valeur de situation de 9 (le modificateur de Psychisme s’applique). En cas de réussite, la victime fait des cauchemars la nuit suivante, mais sans conséquence durable. En cas d’échec, elle lance 1d20 et consulte la table page suivante.</p><p>Quand le maître de jeu décrit les rêves, il devrait le faire de la façon la plus réaliste possible. Le personnage affecté devrait se réveiller d’un rêve en croyant qu’il était tout à fait réel. Un cauchemar peut être l’occasion d’une nouvelle aventure à part entière, sans mettre nécessairement la vie du personnage en jeu.</p><table><thead><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1 à 5</td><td>Cauchemars pendant 1d5 nuits ; -1 à toutes les actions les jours suivants.</td></tr><tr><td>6 à 11</td><td>Cauchemars pendant 1d10 nuits ; -2 à toutes les actions les jours suivants.</td></tr><tr><td>12 à 15</td><td>Cauchemars pendant 1d10 (JO 10) nuits ; -3 à toutes les actions les jours suivants.</td></tr><tr><td>16 à 19</td><td>Insomnie après les cauchemars ; -2 à toutes les actions jusqu’à une bénédiction. La victime se réveille avec le nez qui saigne.</td></tr><tr><td>20</td><td>Cauchemars pendant 1d10 (JO 9-10) nuits ; -3 à toutes les actions les jours suivants. Lors de la première nuit, test de situation VS 12 (Psychisme). En cas d’échec, perte d’un niveau de Psychisme jusqu’à une bénédiction ; si le trait est déjà au niveau le plus bas, -2 supplémentaires au modificateur. La victime se réveille avec le nez qui saigne.</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 89
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!AFwyjwYtZu0v1w2x",
+  "folder": null
+}

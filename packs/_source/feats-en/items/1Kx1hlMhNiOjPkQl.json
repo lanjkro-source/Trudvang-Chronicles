@@ -1,0 +1,19 @@
+{
+  "_id": "1Kx1hlMhNiOjPkQl",
+  "name": "Fearless",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1Kx1hlMhNiOjPkQl",
+    "summary": "Feels no fear and never makes fear rolls.",
+    "description": "<p>Just like forest trolls, a galtir does not have the ability to feel fear. Once they engage in combat, they remain there until they die or strike down their foe.</p><p>Forest trolls likewise feel no fear and never need to make fear rolls.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 14
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1Kx1hlMhNiOjPkQl",
+  "folder": null
+}

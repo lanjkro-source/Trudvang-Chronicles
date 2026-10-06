@@ -1,0 +1,19 @@
+{
+  "_id": "n85BQGaGbHcIdJeK",
+  "name": "Fire Body (logi)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "n85BQGaGbHcIdJeK",
+    "summary": "Burning sphere 10 m in diameter, resist at situation value 8 (Psyche); damage increases with exposure.",
+    "description": "<p>Since the logi is made of fire, it is perhaps not so strange that its body is surrounded by extreme heat. A constant heat pulsates out in a sphere around the logi. The sphere is 10 meters in diameter. Everyone that stands within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) to avoid fleeing from the sphere. The heat in the sphere deals the following damage per action round to anyone within it:</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 88
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!n85BQGaGbHcIdJeK",
+  "folder": null
+}

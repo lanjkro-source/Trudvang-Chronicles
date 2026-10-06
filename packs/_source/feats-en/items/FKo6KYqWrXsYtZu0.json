@@ -1,0 +1,19 @@
+{
+  "_id": "FKo6KYqWrXsYtZu0",
+  "name": "Breath Weapon",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FKo6KYqWrXsYtZu0",
+    "summary": "Fire, acid, ice or lava: 1d3 attacks/day without CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide, 3d10 (OR 8-10) damage.",
+    "description": "<p>The demon can breathe fire, acid, ice or even stone lava against its enemies. The demon can perform 1d3 breath attacks per day, after which it must wait until the next day before it can perform the attacks again. This breath weapon does not cost Combat Points. The range for the breath weapons is 1d10 (OR 9-10) +20 meters and forms a giant cone that in its largest reach has a diameter of 6 meters. All creatures within the range obtain 3d10 (OR 8-10) in damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FKo6KYqWrXsYtZu0",
+  "folder": null
+}

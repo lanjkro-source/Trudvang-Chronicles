@@ -1,0 +1,19 @@
+{
+  "_id": "MXNXW2x3y4z5A6B7",
+  "name": "Corps explosif",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MXNXW2x3y4z5A6B7",
+    "summary": "Le corps du démon explose à sa mort, infligeant 1d10 (JO 7-10) points de dégâts aux créatures dans un rayon de 10 mètres.",
+    "description": "<p>Le corps du démon explose lorsque celui-ci meurt. Les créatures situées dans un rayon de 10 mètres autour du cadavre subissent 1d10 (JO 7-10) points de dégâts.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MXNXW2x3y4z5A6B7",
+  "folder": null
+}

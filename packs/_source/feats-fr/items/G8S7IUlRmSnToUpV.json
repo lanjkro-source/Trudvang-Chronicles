@@ -1,0 +1,19 @@
+{
+  "_id": "G8S7IUlRmSnToUpV",
+  "name": "Apparence",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "G8S7IUlRmSnToUpV",
+    "summary": "Corps immatériel, immunisé aux armes ordinaires ; réduit à 0 PS, le diser est banni vers Dimhall.",
+    "description": "<p>L’apparence d’un diser n’est pas définie. Ils semblent parfois ternes et presque transparents, d’autres fois aussi réels que n’importe quel passant dans la rue, à la seule différence que leur corps est immatériel. Mais quel que soit leur semblant de réalité plus ou moins prononcé, une chose vous permettra toujours d’identifier un diser : ses yeux. Ces fantômes éprouvent beaucoup de difficultés à se recréer des yeux. Les leurs sont presque toujours laiteux et luisants. Et si on parvient à les examiner de très près, ce qu’il faut bien sûr éviter, on peut effectivement voir la brume de Dimhall bouger à l’intérieur.</p><p>Les points de santé d’un diser indiquent sa force et la quantité de dégâts qu’il peut encaisser. Même si le diser n’est pas une créature tangible, il a un certain nombre de points de santé. Quand ce nombre de points de santé est réduit à zéro, le fantôme est banni vers le royaume des morts. Les armes ordinaires n’infligent aucun dégât aux disers. Seules les armes sacrées ou extrêmement magiques peuvent les blesser (à l’appréciation du maître de jeu). Il existe de nombreuses méthodes pour bannir un diser et l’obliger à retourner vers le royaume des morts. Vous trouverez ci-dessous une courte liste des choses susceptibles de blesser un diser ou de le bannir vers le royaume des morts.</p><ul><li>Sorts : Renvoi des morts-vivants, Contrôle des morts-vivants et Détection des morts-vivants</li><li>Prières de Gerbanis : Souffle de mort, Souffle de Mogunda et Volonté de Bodvildur</li><li>Prières de la Doctrine de Nid : Lance bénie, Chaîne de bataille des gardiens du Rortan, Hache de Belo Seoth, Éclair sacré, Explosion sacrée, Purification divine.</li><li>Accomplir une tâche que le fantôme souhaite achever</li><li>Prononcer à voix haute le nom que le fantôme portait de son vivant</li><li>Persuader une victime de pardonner le fantôme pour ce qu’il a fait lorsqu’il était encore vivant</li></ul><p>Même si l’un des moyens qui apparaissent dans la liste ci-dessus est utilisé, c’est au maître de jeu de décider si le diser est affecté ou s’il est immunisé contre ce moyen. C’est également à lui de décider si d’autres moyens qui n’apparaissent pas dans cette liste peuvent affecter un diser.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!G8S7IUlRmSnToUpV",
+  "folder": null
+}

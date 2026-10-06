@@ -1,0 +1,19 @@
+{
+  "_id": "DaPcOQlRmSnToUpV",
+  "name": "Hurlement funeste",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "DaPcOQlRmSnToUpV",
+    "summary": "Cri du diser : résistance VS 9 (Psychisme), peur partielle ou totale selon le résultat, répétée tant que le cri dure.",
+    "description": "<p>Quand le diser pousse son horrible cri, il vaut mieux lâcher tout ce que l’on tient et se plaquer les mains sur les oreilles. Quiconque entend le cri doit rassembler tout son courage pour éviter de se retrouver paralysé. La durée de cette incapacité à agir dépend du Psychisme de la victime et de la puissance du diser (que le maître de jeu doit déterminer). Une personne qui entend le cri peut s’en tirer indemne, subir la moitié des points de peur ou subir la totalité des points de peur. La victime effectue un test de situation avec une valeur de situation de 9 du cri (le modificateur de Psychisme s’applique). La table ci-dessous indique l’effet produit en fonction du résultat du test.</p><p>C’est le maître de jeu qui détermine le facteur de peur d’un cri funeste. Un diser faible produit 1d10 (JO 10), tandis qu’un diser puissant peut produire 1d10 (JO 6-10).</p><p>En fonction de la distance qui sépare une victime du diser quand celui-ci pousse son cri funeste, la victime peut bénéficier d’un modificateur positif au test de situation. Par exemple, le modificateur pourrait être de +1 si la victime se situe à une distance égale à la moitié de la portée du cri et de +6 si elle se situe à l’extrémité de la portée.</p><p>La durée d’un cri dépend de la puissance du diser. Les esprits véritablement forts peuvent hurler pendant un maximum de 5 tours de jeu d’affilée, tandis que les esprits faibles pousseront un cri bref (3 segments d’un tour de jeu). Un test de situation raté signifie que le personnage reçoit de nouveau des points de peur à chaque nouveau tour de jeu pendant lequel le cri résonne.</p><p>En temps normal, un diser ne peut pousser un cri funeste qu’une fois par jour. Certains peuvent cependant l’utiliser plusieurs fois lors d’une même journée, alors que d’autres doivent patienter plusieurs jours avant de pouvoir crier à nouveau.</p><table><thead><tr><th>Résultat du test</th><th>Effet</th></tr></thead><tbody><tr><td>Inférieur à VS/2</td><td>Aucun effet</td></tr><tr><td>Compris entre VS/2 et VS</td><td>Moitié des points de peur</td></tr><tr><td>Supérieur ou égal à VS</td><td>Tous les points de peur</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!DaPcOQlRmSnToUpV",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "0kcBOcE9EaGbHcId",
+  "name": "Sang acide",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "0kcBOcE9EaGbHcId",
+    "summary": "Le sang du démon a les propriétés de l'acide : blesser le démon au combat rapproché expose à une aspersion (1 à 3 sur 1d10, esquivable avec Agilité), infligeant 1d6 points de dégâts et réduisant de 1d6 la VI de l'arme et de l'armure exposées.",
+    "description": "<p>Le sang du démon a les mêmes propriétés que l’acide. En combat rapproché, les individus qui infligent une blessure au démon peuvent se retrouver aspergés de sang acide (faites un jet de chance avec 1d10 : un résultat de 1 à 3 signifie que l’individu est aspergé de sang acide). L’individu peut éviter l’aspersion en réussissant un jet de compétence d’Agilité, de préférence avec la spécialité Esquive. Si le test échoue, il subit 1d6 points de dégâts (la valeur de protection de l’armure s’applique). Le sang acide diminue de 1d6 la VI de l’arme qui a infligé la blessure ; il en va de même pour l’armure exposée au sang acide.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!0kcBOcE9EaGbHcId",
+  "folder": null
+}

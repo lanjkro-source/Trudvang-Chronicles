@@ -1,0 +1,416 @@
+{
+  "name": "Ogre",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
+  "items": [
+    {
+      "_id": "sq8iNRmSnToUpVqW",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.sq8iNRmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Barda makir (battle mace)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "2d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "f5bvQ2u0v1w2x3y4",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.f5bvQ2u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (two-handed club)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "Y5TZGWoUpVqWrXsY",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.Y5TZGWoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "name": "Metal-reinforced leather armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "source": "Rulebook, p. 119",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "heft": 4,
+        "weight": 13,
+        "value": 30,
+        "initiativeModifier": -1,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "5jSAHVoUpVqWrXsY",
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.5jSAHVoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "_id": "BA5mccHcIdJeKfLg",
+      "name": "Mood",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BA5mccHcIdJeKfLg",
+        "summary": "The ogre’s changing mood makes it unpredictable.",
+        "description": "<p>Teamwork is a term that has never been used in regard to ogres, especially since it is very rare that two ogres are in a good mood long enough for their brotherhood to lead to anything of value.</p><p>To decide the mood of an ogre on any given occasion, a luck roll is made with 1d10. If the result is 1-5, the ogre is normal and somewhat calm, but should the result be 6-10, it is furious. The ogre will be in this mood for 1d6 hours unless something happens to shift its mood. The mood can switch from kind to murderous just by the slightest ordeal or if there is something around them that they don’t like in the slightest.</p><p>When an ogre is in its crazed state of mood, it will attack everything and everyone. If there is no living thing close enough, it will go wild on the nearest thing in range due to its need to destroy something. An ogre in battle never thinks about taking damage but only of inflicting damage. This means that ogres will not parry in battle.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 166
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!lfC0p0tZu0v1w2x3.BA5mccHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "lfC0p0tZu0v1w2x3",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 2,
+      "dexterity": -2,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 7,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 3,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 4,
+        "bonus": 0
+      },
+      "care": {
+        "value": 4,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Faith",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wrestling",
+        "skillId": "fighting",
+        "catalogId": "wrestling",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Hunting Experience",
+        "skillId": "wilderness",
+        "catalogId": "huntingExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Hunting & Fishing",
+        "skillId": "wilderness",
+        "catalogId": "huntingFishing",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Survival",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 1,
+        "kind": "discipline"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 8
+        },
+        {
+          "attack": "Unarmed",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 10
+        },
+        {
+          "attack": "Barda makir (battle mace)",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Tvei klubb (two-handed club)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei klubb (two-handed club)",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 58,
+        "max": 58
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -1
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "The ogre is the smallest member of the giant and troll family. The contemporary common ogre inherited the size of mountain ogres. It inherited the great teeth of forest ogres. It inherited the greenish skin of river ogres. Its clothing is extremely primitive, as are the weapons and tools it carries.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "2",
+      "age": "30, max 70",
+      "naturalArmor": 1,
+      "fearFactor": "1d10",
+      "bodyMin": 52,
+      "bodyMax": 65,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Small stocky giant with greenish skin, large teeth, and primitive clothing.",
+      "environment": "Deepest forests, caves and woodland huts, often old abandoned troll lairs",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 166
+      }
+    }
+  },
+  "_id": "lfC0p0tZu0v1w2x3",
+  "_key": "!actors!lfC0p0tZu0v1w2x3",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

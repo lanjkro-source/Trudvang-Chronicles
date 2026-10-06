@@ -1,0 +1,19 @@
+{
+  "_id": "NrD7FaGbHcIdJeKf",
+  "name": "Surchauffe",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NrD7FaGbHcIdJeKf",
+    "summary": "Le corps du logewurm chauffe jusqu'à devenir mortel pour qui s'en approche.",
+    "description": "<p>Sans dépenser le moindre PC, le logewurm peut changer la façon dont son sang circule dans son corps pour le surchauffer. Il peut faire ceci au prix d’une utilisation quotidienne de son attaque de souffle. La surchauffe met 3 tours de jeu pour s’activer (pendant lesquels le dragon peut agir normalement) et elle dure 3 tours par la suite (pendant lesquels le dragon ne peut accomplir aucune autre action). Toutes les créatures situées à 10 mètres ou moins du dragon subissent 2d10 (JO 9-10) points de dégâts par tour de jeu. Celles situées entre 11 et 20 mètres du dragon subissent 2d10 points de dégâts.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 124
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NrD7FaGbHcIdJeKf",
+  "folder": null
+}

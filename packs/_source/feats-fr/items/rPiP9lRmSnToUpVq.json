@@ -1,0 +1,19 @@
+{
+  "_id": "rPiP9lRmSnToUpVq",
+  "name": "Froid de Dimhall",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "rPiP9lRmSnToUpVq",
+    "summary": "Traverse une créature à VC 12 pour lui infliger des dégâts de froid ; peut également infliger de la peur si elle ne le voit pas venir.",
+    "description": "<p>Quand un diser traverse un être vivant, il peut produire un froid intense en réussissant un test (VC 12). La victime de cet assaut ressent un froid glacial. Un diser fort qui traverse des êtres vivants peut leur donner l’impression qu’ils se trouvent complètement nus au milieu de l’Isvidda, la grande étendue de glace. Voici quelques exemples du nombre de points de dégâts qu'une victime peut subir :</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (JO 10) points</li></ul><p>Si la victime ne voit pas le diser approcher, la brusque sensation de froid peut également infliger une grande quantité de points de peur, à l’appréciation du MJ.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!rPiP9lRmSnToUpVq",
+  "folder": null
+}

@@ -1,0 +1,2381 @@
+{
+  "name": "Skjuld",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
+  "items": [
+    {
+      "_id": "vjRMuH8D9EaGbHcI",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vjRMuH8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "_id": "AxqiZLeKfLgMhNiO",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.AxqiZLeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "_id": "aU3d29D9EaGbHcId",
+      "name": "Abilities",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "aU3d29D9EaGbHcId",
+        "summary": "The skjuld has various supernatural abilities.",
+        "description": "<p>It is not unusual for a skjuld to have learned spells or elven abilities.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 96
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.aU3d29D9EaGbHcId"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.jrI2efIdJeKfLgMh"
+    },
+    {
+      "name": "Delusion Vitner",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner",
+        "description": "The enchanter has learned to use the vitner to manipulate the environment and create illusions and images that appear to be convincingly true. The enchanter has full control over what they want the vitner to illustrate, as well as whether or not it should move. In addition to creating the illusions of small creatures and objects, the enchanter can also generate vast l andscape illusions where whole cities, forests, and mountains are swept into reality (at least, as long as observers continue to believe what they see). The enchanter has also learned to manipulate the air in ways that mimic sound and vibrations of motion. By molding the vitner, the enchanter can raise or lower the volume of the s urroundings, producing deafening storms or subtle pitches that are so high that a human cannot hear them. What’s more, the enchanter has learned to use this mimicry to remain undetected by hiding tracks, producing camouflage, or even removing themselves from sight altogether.",
+        "summary": "Creates sound and visual illusions and conceals things.",
+        "swedishName": "Skenvitna",
+        "negation": "When an enchanter creates an illusion, the negation need not always be negative. It may mean that another illusion suddenly shows up in a completely d ifferent place, or that some creature, object, or l andscape suddenly vanishes from sight or flickers for a little while. When the enchanter manipulates sounds of various kinds, however, the negation will always be the opposite. If they reduce the volume in one place, it will be increased in another; if they create a thunderous burst of sound, a s imilarly great noise elsewhere will be entirely muted (such as l ightning or crashing waves that happen without a sound). If the enchanter creates the sound of someone walking across a gravel path, somewhere else that precise sound disappears. If they create a knock on a door, nothing is heard when another person somewhere else does precisely that. And if the enchanter removes a particular sound in one place, that exact sound will inexplicably echo somewhere else.",
+        "affinity": {
+          "hvitavitner": 1,
+          "vaagrivitner": 0,
+          "morkvitner": -1
+        },
+        "source": "Player's Handbook, p. 101",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "QuGPdlPkQlRmSnTo",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.QuGPdlPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Roar",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:roar:0",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:roar:0",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap. The enchanter is not able to hear the sound personally, but everyone in the area and even those who are far away hear the thunderous blast. Anyone within a radius of 10 meters of the enchanter immediately experiences severe pain and ringing in their ears, causing them to suffer -4 on all Skill Values and Situation values related to hearing. The effect expires after 1d6 minutes.",
+        "summary": "By controlling the vitner, the enchanter can create a tremendous roar like a deafening thunderclap.",
+        "swedishName": "Slammera",
+        "duration": "",
+        "range": "personal",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:roar:0:0",
+            "cost": 1,
+            "maxCount": 1,
+            "effect": "Change the range from personal to 10 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:roar:0:1",
+            "cost": 5,
+            "maxCount": 1,
+            "effect": "Change the range from personal to 100 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:roar:0:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the radius by 10 meters."
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "1fDJX4y4z5A6B7C8",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.1fDJX4y4z5A6B7C8",
+      "effects": []
+    },
+    {
+      "name": "Phantom Sound",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:phantom-sound:1",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:phantom-sound:1",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell suddenly generates one or more noises within the designated range. The sound or sounds consist of audible illusions that fit the current environment and situation. They may be steps approaching, a twig breaking, a growl, a collection of whispers, a knock on the door, or any other noise.",
+        "summary": "The spell suddenly generates one or more noises within the designated range.",
+        "swedishName": "Hlidklapp",
+        "duration": "10 action rounds",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:phantom-sound:1:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "hsCs7vZu0v1w2x3y",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.hsCs7vZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Shriek",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:shriek:2",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:shriek:2",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell). The sound is so high-pitched that most humanoids hardly even notice it, hearing little more than a faint beeping. The noise emits from a designated point within range of the spell and affects all objects within a radius of 10 meters and all animals within a radius of 100 meters. Dogs, cats, rats, and similar animals find themselves compelled to run toward the area where the noise is coming from, and once there they frantically make noises of their own in attempts to make the s creeching stop. They are unable to do anything productive during the spell’s duration. The spell is Instant in its basic version, but with levels of power the effect can be Lasting.",
+        "summary": "The spell creates a high-pitched screeching noise that instantly shatters anything nearby made of glass, earthenware, or porcelain (magic items are not affected by the spell).",
+        "swedishName": "Rifla",
+        "duration": "",
+        "range": "5 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:shriek:2:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:shriek:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:shriek:2:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "vUIe5YrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vUIe5YrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Increase Sounds",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:increase-sounds:3",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes. The spell is woven around the target’s body or the target’s head. If the spell is woven around the body, all sounds caused by movements, such as steps, branches breaking under feet, the rustle of clothing, and so on, are amplified. If the spell is woven around the head, it seems to drown out any other sounds within the area because anything the creature says is heard with perfect clarity, even if it is whispered quietly. If it is woven over someone involuntarily, the target might get into a lot of trouble depending on the situation, because everyone else in the immediate vicinity will believe that the target is screaming.",
+        "summary": "The vitner is woven around a person or creature and begins to amplify every sound that the target makes.",
+        "swedishName": "Slammerakraftla",
+        "duration": "5 action rounds",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:increase-sounds:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "bVOJpnQlRmSnToUp",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.bVOJpnQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "name": "Traceless",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:traceless:4",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:traceless:4",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away, leaving the land as it was before they passed by. Not even their scents remain.",
+        "summary": "The spell creates an energy that follows the enchanted person around, causing tracks or evidence they leave behind to fade and be swept away , leaving the land as it was before they passed by.",
+        "swedishName": "Sporvaska",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:traceless:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-delusion-vitner:traceless:4:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "XfSmjQhNiOjPkQlR",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.XfSmjQhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "name": "Ghost Voice",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:ghost-voice:5",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range. The enchanter or the enchanted can also change the voice entirely to their liking, causing it to sound spooky, strong, violent, or severe; but it may also sound gentle, kind, alluring, childish, or amusing. If the spell is woven over an unwilling target, the enchanter can distort the victim’s voice as desired. The victim can try to resist the effect with a successful Situation roll with a Situation value of 8 ( Constitution modifiers apply). On a success, the voice is not distorted at all. On a failure, the victim no longer has any control over how their voice sounds, instead having a voice that reflects whatever the enchanter decides.",
+        "summary": "The spell enables the enchanted character to throw their voice so it seems to come from a completely different place within range.",
+        "swedishName": "Draugastemma",
+        "duration": "1 minute",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-delusion-vitner:ghost-voice:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Y09LhnSnToUpVqWr",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.Y09LhnSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "name": "Depict",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:depict:6",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:depict:6",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it. To create a perfect likeness, the enchanter must be in contact with the original during the evocation of the spell. An enchanter who is not in contact with the original can evoke a less-perfect likeness from their memory or even their imagination (which is necessary if the item doesn’t exist). These less-perfect images have a kind of fuzziness or faint distortion around them, making it easier for people to recognize them for what they are. The duplicated image cannot be larger than a normal-sized human in its basic version. The enchanter can create the image anywhere within the spell’s range. However, they must maintain a line of sight with the image all the times; if the whole image (not just a part of it) is removed or blocked from the enchanter’s field of vision, it dissolves. The enchanter also has full control over the image portrayed, down to subtle expressions and reactions. Thus, the enchanter cannot only cause an illusory creature to walk or run, but also have it use body language to express any number of emotions such as anger, rage, love, aggression, and more. The enchanter can cause the object to move or fly around at a speed of 6 meters per action round. If anything gets in its way (whether the image is perfect or not), the image will slide straight through the obstacle. So it is critical for the enchanter to carefully direct the creation to react appropriately to its surroundings. In order to resist the deception of a perfect image, an observer must make a successful Skill roll for the Shadow Arts skill with a negative SV modifier of -3. It is much easier to see through a less-perfect image (a copy of anything the enchanter was not in contact with upon creation). Anyone observing a lessperfect image can resist by succeeding on a simple (+5 SV) Skill roll for the Shadow Arts skill. An image woven through this spell cannot make a noise or emit a smell, which means that it is much easier to uncover the true nature of an illusion depicting something that normally makes loud sounds or has a strong odor. In such a situation, the Skill rolls for resisting the deception should be modified with a positive modifier between +1 and +10, depending on how obvious the ruse is. It is up to the game master to determine how big the modifier will be.",
+        "summary": "By concentrating on an object, a being, or a person, the enchanter can evoke an exact duplicate of it.",
+        "swedishName": "Skenbildra",
+        "duration": "1 minute",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:depict:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the chance that the viewer fails the Skill roll by -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Five times the size of a normal human"
+          },
+          {
+            "id": "vitner-delusion-vitner:depict:6:5",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "The size of a Stormi hall"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "4rhjsOfLgMhNiOjP",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.4rhjsOfLgMhNiOjP",
+      "effects": []
+    },
+    {
+      "name": "Camouflage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:camouflage:7",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:camouflage:7",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings. Anyone searching for the target needs to succeed on a d ifficult (-3 to SV) Skill roll for the Shadow Arts skill in order to discover them. Depending on the environment, the camouflage will differ from place to place. For example, if the target stands next to a wall, they could appear to be a shrub or part of the wall itself; if they stand in a forest clearing, they could appear as a tree, a rock, or a bush. Their physical appearance does not change; it is the vitner that surrounds them that adopts the appearance of the intended camouflage. The target must stand completely still for the spell to work. It is broken if they make any significant movements or noises, or if someone touches them. However, the spell will be restored as soon as the target stops moving or causing the noise that is breaking the illusion. The spell can also be used on an object instead of a living being. The object must be something that is not attached to or carried by a creature. Beings that are not actively looking for hidden things do not get to make Skill rolls to discover the camouflaged object, unless it is a trap or an assault.",
+        "summary": "The spell causes the target, as well as their clothing and equipment, to completely blend into the surroundings.",
+        "swedishName": "Aldyldja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-delusion-vitner:camouflage:7:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra creature or an additional subject (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "k3aEMuZu0v1w2x3y",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.k3aEMuZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Landscape Illusion",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:landscape-illusion:8",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:landscape-illusion:8",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape. The sphere has a radius of up to 300 meters around the enchanter and can depict things like a great hill, a forest, or even a city (the enchanter chooses the size of the illusion). It might also be an illusion of nothing at all, used to mask whatever landscape is really there. The enchanter cannot create an illusion of movement, so the illusion must depict something that remains static. In order to recognize from a distance that the landscape is an enormous illusion, the observer must succeed on a Skill roll for the Shadow Arts skill, modified according to the distance between the observer and the illusion. These<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.</td></tr></tbody></table>modifiers are outlined in the table below. The observer gets to make a new Skill roll for each new distance range they reach when approaching the illusion. LANDSCAPE ILLUSION MODIFIERS Distance Modifier &lt;50 Illusion is discovered 50-100 m +5 101-200 m +2 201-400 m ±0 401-600 m -2 601-1,000 m -5 &gt; 1,000 m -10 The illusion remains in the location where it was woven until the spell expires, even if the enchanter moves away. If an observer ventures into the illusion, it disappears completely from their field of vision, and they see the area as it really appears, though other observers who are outside the enchanted realm still see the illusion.",
+        "summary": "The spell creates a massive sphere of illusion around the enchanter that mimics a desired landscape.",
+        "swedishName": "Augvilland",
+        "duration": "2 hours",
+        "range": "personal",
+        "weavingTime": "10 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range to 100 meters (the center of the illusion no longer needs to come from the enchanter)"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance that the observer fails Skill rolls to discover the illusion by -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the radius of the illusion by 100 meters"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:4",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-delusion-vitner:landscape-illusion:8:5",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "u57Hh5z5A6B7C8D9",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.u57Hh5z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Silence",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:silence:9",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:silence:9",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location. The spell is woven over an object or a person and has a radius of 3 meters. If the enchanted point is moved, the sphere moves with it. All sounds generated within the spell’s range are immediately absorbed by the sphere, and are t herefore muted from anything outside the enchanted area. Within the spell’s range, however, everything sounds as it should. Because of this, the spell works well for anyone who wishes to sneak around, as no sound is able to reach beyond the sphere’s protective covering. The enchanter can also reduce the size of the sphere. By reducing the radius to just a few inches, the enchanter can weave the spell over a person or creature whose voice and noises would then completely disappear, because a listener would have to be within the sphere to hear anything they said. The spell does not hinder anything besides sound. Observers can still see through the protective sphere as if it weren’t there, even if they cannot hear any sounds from within.",
+        "summary": "The spell creates a sphere of energy that prevents listeners from perceiving sounds made within the enchanted location.",
+        "swedishName": "Knystdyldja",
+        "duration": "10 action rounds",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:silence:9:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-delusion-vitner:silence:9:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the sphere’s radius by 1 meter"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "jGGH4YrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.jGGH4YrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Lindwurm Illusion",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:lindwurm-illusion:10",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates the illusion of a vast lindwurm (or a different beast). Any enemies of the enchanter (designated by the enchanter) watch as a lindwurm erupts from the ground at high speed and devours the enchanter. All victims of the spell must immediately make a Situation roll with a Situation value of 4 (Psyche modifiers apply) to avoid taking 1d10 (OR 9-10) Fear Points. A victim who succeeds on the roll takes only 1d5 Fear Points. This happens immediately in the first action round of the spell. In the second round, it appears as if the beast is looking around for its next meal. In the third round, the enchanter (who still stands in their original location, hidden by the beast’s body) can cause the beast to attack (Skill Value of 10) a chosen victim within range. If the enchanter succeeds, the beast rips into the victim with its jaws. The victim risks 2d10 points of damage from the illusion as it takes on solid form for a moment before dissolving completely. The victim can attempt to parry the bite to avoid the damage (or avoid it with the Evade specialty). The lindwurm can move up to 20 meters away from the enchanter, but the enchanter must always maintain line of sight with the beast. The enchanter remains hidden even if the lindwurm moves away from the area. However, creatures can detect the enchanter with a successful Skill roll for Shadow Arts.",
+        "summary": "The spell creates the illusion of a vast lindwurm (or a different beast).",
+        "swedishName": "Ormaskepn",
+        "duration": "3 action rounds",
+        "range": "personal",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the lindwurm’s range by"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance of the enchanter not being discovered with Shadow Arts by -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the chance that the observer fails Skill rolls by -1"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:3",
+            "cost": 5,
+            "maxCount": 2,
+            "effect": "Increase Fear Points inflicted by one step: 1d10JO9 > 1d10JO8 > 1d10JO7"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:4",
+            "cost": 5,
+            "maxCount": 3,
+            "effect": "Increase damage inflicted by one step: 2d10 > 2d10JO10 > 2d10JO9 > 2d10JO8"
+          },
+          {
+            "id": "vitner-delusion-vitner:lindwurm-illusion:10:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the spell's duration by 1 action round and allow another attack (against the same target or another target within range)"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "kKbL9kQlRmSnToUp",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.kKbL9kQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "name": "Invisibility",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-delusion-vitner:invisibility:11",
+          "tabletId": "vitner-delusion-vitner"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-delusion-vitner:invisibility:11",
+        "tabletId": "vitner-delusion-vitner",
+        "tablet": "Delusion Vitner",
+        "description": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective. The vitner gives the target, and their clothing and equipment, the look of whatever the observer would normally see if the target were not present. The target becomes virtually er and life force from the livinginvisible in this way. An observer must succeed on an extremely difficult (-10) Skill roll for the Shadow Arts skill in order to detect a target who stands still, or on a d ifficult (-3) Skill roll when the target moves slowly. If the target makes any sudden or extreme er and life force from the er and life force from the livinglivingmovements, such as running or fighting, the vitner can no longer c amouflage them as well, and anyone viewing them receives +5 on their Skill rolls to see the target; this lasts until the target slows down their movements. Any person trying to attack the invisible target or parry their attacks must succeed on a Skill roll for Agility in order to avoid modifiers. A person who fails this Skill roll suffers -10 in all attacks against the invisible target as well as any attempts to parry the unseen’s attacks.",
+        "summary": "The spell creates powerful camouflage that constantly changes its appearance based on the observer’s perspective.",
+        "swedishName": "Oseidir",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the level of difficulty for an observer to discover the target by -1 on Skill rolls"
+          },
+          {
+            "id": "vitner-delusion-vitner:invisibility:11:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 101",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "SBWUZ8B7C8D9EaGb",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.SBWUZ8B7C8D9EaGb",
+      "effects": []
+    },
+    {
+      "name": "Perceiving",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving",
+        "description": "The enchanter has learned how to search out and detect objects, living creatures, and even undead with the help of vitner. The enchanter can also establish a mental bond with the immediate surroundings. With the help of vitner, the enchanter can gather an accurate picture of anything that exists in their surroundings. They know precisely how to return to a place they have previously been and can follow their own tracks as if they shone like candles in the dark.",
+        "summary": "Finds places, beings, or objects and reveals their traces.",
+        "swedishName": "Alldskonja",
+        "negation": "When the enchanter uses vitner to seek out an object, living creature, or undead, somewhere else something will be lost. Places that a person has been to before suddenly seem foreign or unknown to them. Directions change as east becomes west, and familiar landmarks such as the distinct hill beyond the next turn is now nothing but a hole in the ground. Finding the way home becomes near impossible for some, even by retracing their steps. Information might be forgotten, or physical objects might shift or be misplaced.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 1
+        },
+        "source": "Player's Handbook, p. 112",
+        "level": 1,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "gsLHISmSnToUpVqW",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.gsLHISmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Find Home",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:find-home:0",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:find-home:0",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours. The enchanted person can choose any place they wish, as long they have spent sufficient time there. The enchanted person knows exactly which direction to go in order to reach the designated place. However, they do not know the exact route, only a powerful sense of direction.",
+        "summary": "The spell creates a spiritual bond between the enchanted and a location they have been to for at least six hours.",
+        "swedishName": "Heimfundr",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:find-home:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the number of hours the enchanted must have spent at the location by 1 hour (cannot be decreased to less than 1 hour)"
+          },
+          {
+            "id": "vitner-perceiving:find-home:0:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "28C0LcHcIdJeKfLg",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.28C0LcHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Retrace Tracks",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:retrace-tracks:1",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:retrace-tracks:1",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "The spell allows the enchanted person to easily see their own footprints on the ground. The tracks light up with a reddish glow that only the enchanted person can see. If they crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of vitner light will collect on the water or in the air to indicate the direction.",
+        "summary": "The spell allows the enchanted person to easily see their own footprints on the ground.",
+        "swedishName": "Veigvisu",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-perceiving:retrace-tracks:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "1GpwgkPkQlRmSnTo",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.1GpwgkPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Detect Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-object:2",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-object:2",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "The spell makes it possible for the enchanter to find designated objects within the range. The enchanter first must specify the object sought by determining its value (which is subjective according to the enchanter’s point of view, but also corresponds to the object’s material value) and assigning it the appropriate value between 1 and 100. A value of 1 indicates something as common as a wooden spoon, and 100 is more on par with the magical crown of a king. In order to perceive<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell makes it possible for the enchanter to find designated objects within the range.</td></tr></tbody></table>the object, the enchanter makes a Situation roll with a Situation value of 10 that is modified according to the object’s value, as shown on the table below. DETECT OBJECT MODIFIER Value Modifier 1-10 +8 11-20 +4 21-25 +2 26-35 ±0 36-45 -2 46-55 -4 56-65 -8 66-75 -10 76-85 -12 86-90 -16 91-95 -20 96-100 -30 If the enchanter is successful on the Situation roll, they roll 1d20 to determine how much information they learn regarding the object’s location. Check the result on the table below. Once the enchanter has a sense of where an object is located, that feeling remains for the spell’s duration. If the object is moved, the enchanter senses it, and the direction sense is altered accordingly. RESULTS, DETECT<table><tbody><tr><td>The spell makes it possible for the enchanter to find designated objects within the range.</td></tr></tbody></table>OBJECT 1d20 Result 1-3 The enchanter knows the exact location of the object. 4-8 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 100 m. 9-11 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 500 m. 12-13 The enchanter knows the exact compass point toward the location of the object as well as the distance to it, with accuracy ± 1,000 m. 14-15 The enchanter knows the exact compass point toward the location of the object. 16-17 The enchanter has a good sense of the compass point toward the location of the object, with accuracy ± 10 degrees. 18-20 The enchanter has a good sense of the compass point toward the location of the object, with accuracy ± 30 degrees.",
+        "summary": "The spell makes it possible for the enchanter to find designated objects within the range.",
+        "swedishName": "Tingskonja",
+        "duration": "1 hour",
+        "range": "5 kilometers",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-object:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on a Situation roll by +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the spell's accuracy by subtracting 1 from the d20 result"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 1 kilometer"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the range by 10 kilometers"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:4",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the range by 100"
+          },
+          {
+            "id": "vitner-perceiving:detect-object:2:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "2FiI3XoUpVqWrXsY",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.2FiI3XoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "name": "Orientation",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:orientation:3",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:orientation:3",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "For the spell's duration, the enchanted character retains their sense of direction. They can identify the cardinal directions even when darkness, fog, or unfamiliar surroundings would normally make orientation difficult.",
+        "summary": "The enchanted character retains an unfailing sense of direction for the spell's duration.",
+        "swedishName": "Veigfundr",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:orientation:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase duration by 1 hour"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase duration by 1 day"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase range by 5 meters (physical contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-perceiving:orientation:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect one additional subject (who receives the spell's basic effect)"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "KFm0NWnToUpVqWrX",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.KFm0NWnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Detect Being",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-being:4",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-being:4",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range. However, they need to know the name of the target being sought and must possess an object that belonged to that individual to use for the ritual. The less time that has elapsed since the target had the object, the easier it is to find them. The game master must first determine the object’s value to the target (which is subjective according to the target’s point of view, but also corresponds to how long the individual had the object) and assign it an appropriate value between 1 and 100. Unlike with the Detect Object spell, 1 indicates something valuable and recently used, such as an heirloom weapon that the target had just a few hours ago, while 100 indicates something like an old sock that was last worn several years ago. If the enchanter is successful on the Situation roll, they roll 1d20 to determine how much information they DETECT BEING/UNDEAD MODIFIER Value Body Points Modifier 1-10 1-10 +8 11-20 11-20 +4 21-25 21-25 +2 26-35 26-35 ±0 36-45 36-45 -2 46-55 46-55 -4 56-65 56-65 -8 66-75 66-75 -10 76-85 76-85 -12 86-90 86-90 -16 91-95 91-95 -20 96-100 &gt; 95 -30 learn about the target’s location. The result corresponds with the Detect Object table listed above (under the Detect Object spell). Once the enchanter has a sense of where a target is currently located, that feeling remains for the spell’s duration. If the target moves, the enchanter senses it, and the direction sense is altered accordingly.",
+        "summary": "This spell makes it possible for the enchanter to sense where a person or creature is located within the range.",
+        "swedishName": "Skopjatenskonja",
+        "duration": "1 hour",
+        "range": "5 kilometers",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-being:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the spell's accuracy by subtracting 1 from the d20 result"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 1 kilometer"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the range by 10 kilometers"
+          },
+          {
+            "id": "vitner-perceiving:detect-being:4:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "mmnbXVmSnToUpVqW",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.mmnbXVmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Detect Undead",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:detect-undead:5",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:detect-undead:5",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range. To detect the undead being, a Situation roll is used with a Situation value of 10, modified according to the undead’s Body Points as shown in the table for the Detect Being/Undead Spell, below. If the enchanter is successful with the Situation roll, 1d20 is then rolled to determine how much information the enchanter receives about<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell makes it possible for the enchanter to sense the presence of an undead creature within range.</td></tr></tbody></table>the undead. The result corresponds with the table for the Detect Object spell, above. Once the enchanter has a sense of where the undead is currently located, that sense remains for the spell’s duration. Even if the undead moves, the enchanter senses it, and the direction sense is altered accordingly.",
+        "summary": "The spell makes it possible for the enchanter to sense the presence of an undead creature within range.",
+        "swedishName": "Sálheleskonja",
+        "duration": "2 hours",
+        "range": "5 kilometers",
+        "weavingTime": "5 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:detect-undead:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the spell's accuracy by subtracting 1 from the d20 result"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 1 kilometer"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the range by 10 kilometers"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:4",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the range by 100"
+          },
+          {
+            "id": "vitner-perceiving:detect-undead:5:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "9slxDWqWrXsYtZu0",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.9slxDWqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Surrounding",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:surrounding:6",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:surrounding:6",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or m iniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In the basic version, the enchanter can reach out with their mind up to a radius of 10 meters.",
+        "summary": "The spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
+        "swedishName": "Naerskonja",
+        "duration": "3 minutes",
+        "range": "10 meters",
+        "weavingTime": "6 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:surrounding:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the radius of the sensed surroundings by 10 meters"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the radius of the sensed surroundings by 100 meters"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-perceiving:surrounding:6:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "n34bQVnToUpVqWrX",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.n34bQVnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Map",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-perceiving:map:7",
+          "tabletId": "vitner-perceiving"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-perceiving:map:7",
+        "tabletId": "vitner-perceiving",
+        "tablet": "Perceiving",
+        "description": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings. The spell will not offer the enchanter clear pictures, but a strong sense of the major features and layout. They cannot see small details like writing or miniscule items, but they do receive different senses that detail things like a stream, a lake, a passage, an open area, a settlement, gaps, rooms with furniture, large plants and shrubbery, or forests. In addition, the enchanter gets an idea of how many people, animals, and other beings are present in the surrounding area, as well as where they are, but not their identity, since the mage cannot make out details such as facial features or distinguishing marks. In the basic version, the enchanter can reach out with their mind up to a radius of 1 kilometer.",
+        "summary": "Like the Surrounding spell, this spell makes it possible for the enchanter to reach out with their mind and immediately acquire a general but accurate picture of the near surroundings.",
+        "swedishName": "Ortaskonja",
+        "duration": "5 minutes",
+        "range": "1 kilometer",
+        "weavingTime": "7 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-perceiving:map:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-perceiving:map:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-perceiving:map:7:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range by 1 kilometer"
+          },
+          {
+            "id": "vitner-perceiving:map:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the range by 10 kilometers"
+          }
+        ],
+        "source": "Player's Handbook, p. 112",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "8VKJK5z5A6B7C8D9",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.8VKJK5z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Power of Thought",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought",
+        "description": "The enchanter has learned to m anipulate the vitner within creatures’ minds. By directing the vitner, the enchanter can cause a victim to suddenly be inspired by something strange and then act upon it as if it were their own brilliant idea. By subtly using the force of this vitner, the enchanter can take over a creature’s ability to think for itself, and designate from afar what it should do. The enchanter can even transfer their own consciousness into the weavers of vitner mind of the creature and act as if it were their own body. Since the vitner being manipulated dwells in the center of creatures’ minds, the mage is able to cause the victim to suddenly forget something significant or remember something long lost. They can also get the creature to see things that are not there or experience all manner of different emotions. These could be uplifting emotions such as awe or joy, but also sharper ones such as fear, doubt, or courage. The enchanter can also create a mental bond with selected creature(s) that the two can use to communicate with each other via the power of thought. By enchanting oneself, a mage can talk to animals and creatures, or decipher text written in a language that the enchanter normally would not understand.",
+        "summary": "Understands, influences, or controls thoughts, memories, and perceptions.",
+        "swedishName": "Húgkraftla",
+        "negation": "When an enchanter tries to control a creature’s mind or consciousness in some way, the negation is often a bit subtler than other negations. When the enchanter tries to plant an idea in a victim, the negation may be that elsewhere someone experiences an overwhelming sense of déjà vu, causing distraction for a moment. If the enchanter tries to control or take over a creature, the negation means that the creature’s consciousness must go elsewhere, often trading places with something/someone else. However, this usually occurs for only a brief moment, and once a creature returns to its own body, it may be rather confused about what just happened. In very rare cases, minds that have changed places have remained that way permanently. Whenever an enchanter affects the consciousness of another being, the negation always manifests as the opposite for one or more other creatures. If the enchanter causes amnesia, someone else suddenly remembers something long forgotten, and vice versa. If the enchanter evokes a certain emotion within a creature, one or more other creatures suddenly experience the overwhelming emotion of the opposite type. If the enchanter creates a mental bond with another, other creatures likely experience mental voices and personalities outside of their own, and visits in their sleep as others occupy their dreams. If the enchanter uses vitner to decipher something, the negation means that elsewhere in Trudvang someone is rendered incapable of understanding whatever they hear or read for a while, even though they normally speak the language or would be able to read the text that now baffles them.",
+        "affinity": {
+          "hvitavitner": 0,
+          "vaagrivitner": 0,
+          "morkvitner": 0
+        },
+        "source": "Player's Handbook, p. 116",
+        "level": 1,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "LHwJOTlRmSnToUpV",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.LHwJOTlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "name": "Understanding Script",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:understanding-script:0",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:understanding-script:0",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read. All the scripture’s symbols and characters are converted before the enchanter’s eyes to a language that they can decipher using the Reading and Writing specialty (Knowledge skill and Language discipline). If the enchanter is unable to read or write any languages at all, they cannot make worthwhile use of this spell.",
+        "summary": "The spell allows the enchanter to decipher a piece of scripture that they normally are unable to read.",
+        "swedishName": "Tecknkraftla",
+        "duration": "10 minutes",
+        "range": "personal",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:understanding-script:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-script:0:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "g7iC4KeKfLgMhNiO",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.g7iC4KeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "name": "Understanding Speech",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:understanding-speech:1",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:understanding-speech:1",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand. The enchanter comprehends the language as naturally as if it were their own mother tongue. With extra levels of power, the enchanter is even able to speak the language.",
+        "summary": "By enchanting oneself, the enchanter is able to understand everything that is spoken in a designated language that they normally don’t speak or understand.",
+        "swedishName": "Skopjatenmal",
+        "duration": "1 minute",
+        "range": "personal",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:understanding-speech:1:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "The enchanter’s spoken words are also converted, so that one creature hears the enchanter’s words in that designated language."
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "EMkbw8C8D9EaGbHc",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.EMkbw8C8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "name": "Courage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:courage:2",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:courage:2",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage. The spell abolishes doubts, fears, and other moods that might affect the person negatively, which lowers their Fear Points by 1d10. Any Fear Points that are received by the enchanted character during the duration of this spell are decreased by -4.",
+        "summary": "The spell sends a wave of manipulative vitner through the enchanted character, who is immediately filled with an overwhelming sense of hope and courage.",
+        "swedishName": "Kjarkku",
+        "duration": "5 minutes",
+        "range": "5 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:courage:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Affect another person or creature within range"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Reduce any Fear Points gained by an additional -1"
+          },
+          {
+            "id": "vitner-power-of-thought:courage:2:4",
+            "cost": 4,
+            "maxCount": 4,
+            "effect": "Increase the number of current"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Q8BtZdJeKfLgMhNi",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.Q8BtZdJeKfLgMhNi",
+      "effects": []
+    },
+    {
+      "name": "Fear",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:fear:3",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:fear:3",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell fills the victim's mind with terrifying visions of the creature they fear most. They can resist with a Situation roll of 8, modified by Psyche. Failure immediately inflicts 1d10 Fear Points and their consequences.",
+        "summary": "The spell sends a wave of manipulative energy through a chosen victim, overwhelming its thoughts with horrific visions.",
+        "swedishName": "Skreikur",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:fear:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Affect another creature within range, which receives the spell's basic effect"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Reduce the victim's chance to succeed on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase range by 5 meters (physical contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-thought:fear:3:3",
+            "cost": 4,
+            "maxCount": 4,
+            "effect": "Increase Fear Points inflicted by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "nHH1k2v1w2x3y4z5",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.nHH1k2v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Telepathy",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:telepathy:4",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:telepathy:4",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell creates a mental link between the enchanter and a chosen person within range. The link allows for telepathic communication between the two, who can speak to each other simply by thinking. The two can move as far out of range of each other as they please and still be able to communicate with ease and secrecy. Only the thoughts that a person wants to send are transmitted through the link, while other thoughts remain secure with the thinker. Therefore, the enchanter cannot use this spell to read someone else’s mind. All characters linked to the enchanter through the spell’s increased power can talk to each other through the telepathic link, rather than solely with the enchanter.",
+        "summary": "The spell creates a mental link between the enchanter and a chosen person within range.",
+        "swedishName": "Húgtengja",
+        "duration": "10 minutes",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:telepathy:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:5",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the range by 1 kilometer"
+          },
+          {
+            "id": "vitner-power-of-thought:telepathy:4:6",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect another person or creature within range"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "CxBahQjPkQlRmSnT",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.CxBahQjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "name": "Ecstasy",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:ecstasy:5",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:ecstasy:5",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target with a wave<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.</td></tr></tbody></table>of emotions. The enchanter must choose what emotions the target will feel (see the table below for examples) before weaving the spell. The enchanted character can resist the effect of the spell by making a successful Situation roll with a Situation value of 10 (Psyche modifiers apply). Some further effects that emerge from emotions listed below can also be avoided with a separate Situation roll.",
+        "summary": "The enchanter sends a wave of manipulative vitner through a chosen person, immediately filling the target character during the duration of this spell are decreased by -4.",
+        "swedishName": "Vitnarus",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the target’s chance of succeeding on the Situation roll(s) by -1"
+          },
+          {
+            "id": "vitner-power-of-thought:ecstasy:5:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affect an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "nAtSLeJeKfLgMhNi",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.nAtSLeJeKfLgMhNi",
+      "effects": []
+    },
+    {
+      "name": "Imagining",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:imagining:6",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:imagining:6",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind. The target believes that it conceived of the idea itself and does not reflect further, instead taking action as if the thought were perfectly acceptable. How exactly the target reacts to this new thought is decided by the game master. The target can unconsciously resist this spell, however, through a successful Situation roll with a Situation value of 8 (Psyche modifiers apply). If the Situation roll fails, the thought is implanted in the target’s mind and gnaws at their consciousness until the duration of the spell expires. An implanted thought is usually unable to overcome common sense. ECSTASY’S TRAITS Feelings Characteristic Happy The target becomes extremely their surroundings. Tired The target must make another (Psyche modifiers apply) to keep Lovesick The target looks around for the who they fall in love with). Aggressive The target gets annoyed instantly by out a fight with an individual or group Melancholic The target slips into a depressed they feel or how much they miss Mischievous The target is inspired by all sorts of someone who is about to sit down, or weaving elaborate lies are common PatronizThe target speaks condescendingly ing else is as significant as they are. Boastful The target boastfully talks about have done) and liberally exaggerates Truthful The target opens their heart and friends. The target must succeed value of 10 (Psyche modifiers incredibly incriminating secrets a secret is revealed or not). Insecure The target feels worthless in they attempt will succeed. The with a Situation value of 10 (Psyche on all Skill Values and Situation is successful, the target suffers only For example, if the thought was “I’d like to jump off this cliff,” it likely wouldn’t work unless the creature was incredibly stupid or impulsive. Any reasonably intelligent creature would probably push aside such a thought as a crazy whim and ignore it, no matter how nagging or natural it appears. However, thoughts like “I wonder if my best friend is trying to fool me; I probably should be suspicious of him,” or “Maybe I should give my money to this poor beggar with the funny hat, since he seems to need it more than I do,” or “This looks a good group; of course I’ll let them in,” should work just fine. Other examples of what might work are “I have to run away from here because it isn’t safe,” or “That guy by the fireplace frustrates me; now he’s getting it,” or “How tired I have become! I need to sit down and rest for a while.” happy, singing, joking, and romping around Situation roll with a Situation value of 10 from falling asleep within the next 5 minutes. person they love (up to the target to decide everything and everyone. The target will seek as soon as an occasion or reason is given. state, and only wants to talk about how sad their friends. mischievous antics. Pulling the chair out from tinkering with someone’s personal possessions, pranks the target thinks are fun. to anyone they meet, claiming that no one everything they have done (or would like to the details. shares secrets and hidden desires to nearby on another Situation roll with a Situation apply) to keep from sharing significant or (up to the game master to determine whether everything they do and believes that nothing target must succeed on another Situation roll modifiers apply) to keep from suffering -3 values for the duration of the spell. If the roll a -1 modifier.",
+        "summary": "The enchanter uses the vitner to create a thought and plant it in another intelligent being’s mind.",
+        "swedishName": "Skenhuga",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:imagining:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-power-of-thought:imagining:6:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "hmcnceFaGbHcIdJe",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.hmcnceFaGbHcIdJe",
+      "effects": []
+    },
+    {
+      "name": "Memory",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:memory:7",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:memory:7",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The enchanted character remembers everything that happened to them during the preceding week with supernatural clarity. They can recall the details of a particular event in each action round.",
+        "summary": "The enchanted character recalls the preceding week's events in extraordinary detail.",
+        "swedishName": "Húgstyrkja",
+        "duration": "5 action rounds",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:memory:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase duration by 1 action round"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the period the enchanted person remembers by 1 week"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:2",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the period the enchanted person remembers by 1 month"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the period the enchanted person remembers by 1 year"
+          },
+          {
+            "id": "vitner-power-of-thought:memory:7:4",
+            "cost": 30,
+            "maxCount": 1,
+            "effect": "Increase the period the enchanted person remembers to their entire lifetime"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "AW7jKE9EaGbHcIdJ",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.AW7jKE9EaGbHcIdJ",
+      "effects": []
+    },
+    {
+      "name": "Creature Control",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:creature-control:8",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:creature-control:8",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The enchanter can control and direct an intelligent creature (not an animal) that is within range and line of sight. The target can attempt to resist the spell by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the roll fails, the target blindly obeys everything the enchanter commands it to do. In doing so, the target can perform any action that would normally be possible. However, the enchanter cannot command the target to commit acts that are extremely different from what it would normally be willing to do. For example, the enchanter cannot command a target to murder an innocent person unless the target is otherwise inclined to do just that. Nor could the enchanter command a target to willfully harm itself. Finally, it is not possible to command a target to perform autonomous actions that require the creature to think for itself, as doing so would break the control. The listed range applies only to the weaving time, which means that after the spell has been woven, the enchanter can send the target far beyond the range and still maintain control. The effect of the spell is broken if the enchanter loses concentration for any reason, if the target disappears out of sight from the enchanter, or if the target takes 1 or more points of damage.",
+        "summary": "The enchanter can control and direct an intelligent creature (not an animal) that is within range and line of sight.",
+        "swedishName": "Rauda skopjaten",
+        "duration": "3 minutes",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:creature-control:8:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:2",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:creature-control:8:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the target’s chance of succeeding on the Situation roll by -1"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "NplFQjNiOjPkQlRm",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.NplFQjNiOjPkQlRm",
+      "effects": []
+    },
+    {
+      "name": "Aura of Power",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:aura-of-power:9",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:aura-of-power:9",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority, and glory. Anyone who looks at the enchanter must immediately make a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately believes that the enchanter is excessively i mpressive and powerful, and will obey their commands. (A person who is known for loyalty to rulers is more likely to obey than someone who commonly defies authority). A successful Situation roll means that the victim sees through the aura and observes the enchanter as they really appear. Once the duration of the spell ends, all who have been bewitched also see the enchanter for who they really are. If the enchanter asks for anything out of the ordinary, the victim has a new opportunity to make a Situation roll to see through the aura. Being captivated by the Aura of Power does not mean that a victim blindly follows orders, but that the enchanter’s words hold significant gravity. To disagree with or oppose the enchanter feels very uncomfortable and maybe even dangerous.",
+        "summary": "The spell creates an aura of vitner around the enchanter that exudes incredible power, authority , and glory.",
+        "swedishName": "Kraftlahinja",
+        "duration": "5 minutes",
+        "range": "personal",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:2",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-power-of-thought:aura-of-power:9:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "YyhibYpVqWrXsYtZ",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.YyhibYpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Possess Creature",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:possess-creature:10",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:possess-creature:10",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body. To accomplish this, the enchanter must have the victim within the spell’s range and line of sight. It is not possible to possess a creature who, for some reason, cannot be seen. The victim can resist this intrusion by succeeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). If the spell is successful, the e nchanter’s consciousness transfers to the victim, who loses all control over its body. From this point, the enchanter can embrace the creature’s characteristics such as speech and abilities as if their own, without any resistance. When the enchanter leaves their own body to take control of the victim, their body is left behind in a deep slumber. Once inside the victim, the enchanter can move as far as desired from their own body without having to maintain spell range. However, the enchanter must be careful to return within range before the spell ends. If the victim is killed or the spell’s duration expires before the enchanter returns within range, the e nchanter’s consciousness is ripped v iolently back to their body. The e xperience is so traumatic that the enchanter undergoes extreme shock, p ermanently loses 1d6 of their vitner capacity, and falls into a deep slumber for 1d6 days.",
+        "summary": "The spell enables an enchanter to transfer their consciousness into an intelligent being’s body.",
+        "swedishName": "Eiga skopjaten",
+        "duration": "10 minutes",
+        "range": "100 meters",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:4",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-power-of-thought:possess-creature:10:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "T2GrTZrXsYtZu0v1",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.T2GrTZrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Mind Reading",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-thought:mind-reading:11",
+          "tabletId": "vitner-power-of-thought"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-thought:mind-reading:11",
+        "tabletId": "vitner-power-of-thought",
+        "tablet": "Power of Thought",
+        "description": "The enchanter can read a creature’s memories simply by touching it. The enchanter observes a sequence of images that broadly explains the creature’s history, ranging up to one year back in time. For every 2 action rounds that pass during the spell, the enchanter can try to learn one big secret that the creature is trying to hide. The enchanted creature immediately senses that someone else is in their mind and searching the scattered memories (at increased ranges, the creature cannot know who is reading their memories). The creature can hide a particular secret from the enchanter with a Situation roll with a Situation value of 6 (Psyche m odifiers apply). On a success, the enchanter has to weave a new Mind Reading spell over the creature to try to discover the withheld information. But even if the enchanter is blocked from learning that secret, they can continue to look for other secrets until the duration of the spell is up.",
+        "summary": "The enchanter can read a creature’s memories simply by touching it.",
+        "swedishName": "Húgfreska",
+        "duration": "6 action rounds",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 2 action rounds"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 12 action rounds"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 50 meters (physical contact is no longer needed)"
+          },
+          {
+            "id": "vitner-power-of-thought:mind-reading:11:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "The enchanted target is unaware of the enchanter's presence (but still keeps their secrets hidden)"
+          }
+        ],
+        "source": "Player's Handbook, p. 116",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "vcRI4ToUpVqWrXsY",
+      "_key": "!actors.items!j0kFYcGbHcIdJeKf.vcRI4ToUpVqWrXsY",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "j0kFYcGbHcIdJeKf",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": 4,
+      "intelligence": 2
+    },
+    "skills": {
+      "agility": {
+        "value": 10,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 10,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 10,
+        "bonus": 0
+      },
+      "vitnerCraft": {
+        "value": 8,
+        "bonus": 0
+      },
+      "care": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Craft",
+        "skillId": "vitnerCraft",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Call of Vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "callVitner",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Vaagritalja",
+        "skillId": "vitnerCraft",
+        "catalogId": "vaagritalja",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Shaping",
+        "skillId": "vitnerCraft",
+        "catalogId": "vitnerShaping",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Galding",
+        "skillId": "vitnerCraft",
+        "catalogId": "galding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Healing & Drugs",
+        "skillId": "care",
+        "catalogId": "healingDrugs",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Extracts & Potions",
+        "skillId": "care",
+        "catalogId": "extractsPotions",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "First Aid & Nursing",
+        "skillId": "care",
+        "catalogId": "firstAidNursing",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 10
+        },
+        {
+          "attack": "Claws",
+          "value": 11
+        },
+        {
+          "attack": "Claws",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 45,
+        "max": 45
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "The skjuld has wings and a troll's body. It has a cat's feet and long pointed ears. Its jaws bear tusks like a warthog's. Its thick raven-black hair grows as a mane down its back. It speaks only in riddles and hides in the endless woodland canopy.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "winged humanoid",
+      "size": "1.5",
+      "age": "5 000, max immortal",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 40,
+      "bodyMax": 50,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,5 m",
+          "max": "15 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "3 m",
+          "max": "30 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Winged guardian with cat's feet, pointed ears, and warthog tusks.",
+      "environment": "Forest darkness and canopy, forests near sites abandoned by elves, weaving gardens",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 96
+      }
+    }
+  },
+  "_id": "j0kFYcGbHcIdJeKf",
+  "_key": "!actors!j0kFYcGbHcIdJeKf",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

@@ -1,0 +1,196 @@
+{
+  "name": "Happja",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
+  "items": [
+    {
+      "_id": "5X4PoSkQlRmSnToU",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.5X4PoSkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "_id": "WDQ1WfIdJeKfLgMh",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.WDQ1WfIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "8nD540sYtZu0v1w2",
+      "name": "Attack From Above (happja)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "8nD540sYtZu0v1w2",
+        "summary": "Dive at SV 8: claws 1d10 (OR 7-10); usable every 4 rounds.",
+        "description": "<p>For a happja to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power of the happja’s speed is used, which increases the damage of the claw attack to 1d10 (OR 7-10).</p><p>The happja can perform one attack from above every fourth action round, since it must circle around for at least 3 rounds without attacking.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 78
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.8nD540sYtZu0v1w2"
+    },
+    {
+      "_id": "15ITDLfLgMhNiOjP",
+      "name": "Wild Shriek",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "15ITDLfLgMhNiOjP",
+        "summary": "Happja’s shriek: resist at situation value 8 (Psyche), +5 if seen beforehand; failure inflicts 1d10 (OR 10) Fear Points.",
+        "description": "<p>At the beginning of a combat the happja lets forth a vile shriek that instills horror in all who hear it. If the happja surprises her victims with the shriek, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) or gain 1d10 (OR 10) Fear Points. Anyone who sees the happja before she shrieks is not surprised and gains +5 on the roll instead (situation value 13).</p><p>If the situation roll results in a natural 20, the victim drops their weapons and becomes unable to act for 1d3 action rounds.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 79
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.15ITDLfLgMhNiOjP"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Mv94QSmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": -2,
+      "dexterity": 2,
+      "perception": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Claws",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 6
+        },
+        {
+          "attack": "Bite",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 29,
+        "max": 29
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "The happja resembles a filthy old woman with a naked body. Its eyes are white and glow at night. Powerful wings lift its naked body when it takes flight. At rest, it folds its wings around itself and buries its head in its feathers. It may be a hybrid of woman and owl. Its claws leave great scratches across the face.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "winged humanoid",
+      "size": "1",
+      "age": "15, max 35",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 26,
+      "bodyMax": 32,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "15 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "2 m",
+          "max": "15 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Naked old owl-woman with glowing white eyes and powerful wings.",
+      "environment": "High tree canopies, with large nests on the highest branches",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 78
+      }
+    }
+  },
+  "_id": "Mv94QSmSnToUpVqW",
+  "_key": "!actors!Mv94QSmSnToUpVqW",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

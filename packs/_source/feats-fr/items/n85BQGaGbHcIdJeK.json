@@ -1,0 +1,19 @@
+{
+  "_id": "n85BQGaGbHcIdJeK",
+  "name": "Corps de feu (loge)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "n85BQGaGbHcIdJeK",
+    "summary": "Sphère brûlante de 10 m de diamètre, résistance VS 8 (Psychisme) ; dégâts croissants avec la durée d’exposition.",
+    "description": "<p>Étant donné que le loge se compose de feu, il n’est sans doute pas si étrange que son corps produise une chaleur extrême. Une chaleur constante pulse sous la forme d’une sphère autour du loge. Cette sphère fait 10 mètres de diamètre. Toutes les créatures se trouvant à l’intérieur doivent réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas être obligées de sortir de la sphère. La chaleur inflige les dégâts suivants aux créatures situées à l’intérieur de la sphère :</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 86
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!n85BQGaGbHcIdJeK",
+  "folder": null
+}

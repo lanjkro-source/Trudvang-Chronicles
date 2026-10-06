@@ -1,0 +1,19 @@
+{
+  "_id": "jqzjOTlRmSnToUpV",
+  "name": "Sense Living",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "jqzjOTlRmSnToUpV",
+    "summary": "Detects all living creatures within 100 m, regardless of concealment.",
+    "description": "<p>Sálheles can sense living creatures within 100 meters. This means that they can find living creatures no matter how well the targets have hidden themselves.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 67
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!jqzjOTlRmSnToUpV",
+  "folder": null
+}

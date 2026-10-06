@@ -1,0 +1,19 @@
+{
+  "_id": "bPXPF0u0v1w2x3y4",
+  "name": "Cœur régénérant (braskelwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "bPXPF0u0v1w2x3y4",
+    "summary": "Le cœur crée un nouveau braskelwurm après un à deux ans ; il n’a aucun usage curatif pour les autres créatures.",
+    "description": "<p>Le braskelwurm est incapable de se reproduire. Au lieu de cela, il se renouvelle grâce à son cœur régénérant qui créé un nouveau braskelwurm lorsque l’ancien meurt. Il faut attendre un à deux ans avant que naisse un nouveau braskelwurm. Parfois, le cœur se divise, ce qui aboutit à la création de deux braskelwurms jumeaux et identiques. Le cœur régénérant du braskelwurm est différent de celui du lindwurm car personne, à part le braskelwurm, ne peut l’utiliser d’une façon ou d’une autre.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 106
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!bPXPF0u0v1w2x3y4",
+  "folder": null
+}

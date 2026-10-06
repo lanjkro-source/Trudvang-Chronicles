@@ -1,0 +1,19 @@
+{
+  "_id": "MxUgKE5A6B7C8D9E",
+  "name": "Petrify (physical demon)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MxUgKE5A6B7C8D9E",
+    "summary": "SV 14 within 30 m, 1d3 times/day, resist at situation value 6 (Psyche), duration 1d10 (OR 7-10) days, statue PV 20 / BV 200.",
+    "description": "<p>The demon can petrify a victim that stands within 30 meters of the demon (SV 14) without spending Combat Points. The ability can be used 1d3 times per day and the duration of the petrification is 1d10 (OR 7-10) days. The armor of the victim and their clothes are also petrified; however, no magical object is affected.</p><p>The victim can try to resist the petrification by succeeding with a situational roll with a situation value of 6 (the trait Psyche modifies the roll). If the roll fails the victim is turned into stone. The stone that the victim is petrified into is very hard and close to unbreakable. In practice this means that the petrified person gains a protection value of 20 and a Break Value of 200. When the Break Value is lowered to 0 the person starts to take damage like normal and if the petrified person takes as much damage as double its Body Points this stone statue will be broken and the victim will die.</p><p>A creature that is petrified is in a constant state of sleep and cannot comprehend time that passes or what happens around him or her. The victim cannot affect anything that happens in its surroundings. When the duration has run out the victim returns to its original form. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja).</p><p>A petrified creature is not stuck in the ground in any way, but it can be moved by someone strong enough to do so. The petrified creature weighs around ten times the victim’s original weight.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MxUgKE5A6B7C8D9E",
+  "folder": null
+}

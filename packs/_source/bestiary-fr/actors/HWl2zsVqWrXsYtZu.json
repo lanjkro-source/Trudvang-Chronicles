@@ -1,0 +1,273 @@
+{
+  "name": "Hrimwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg",
+  "items": [
+    {
+      "_id": "2nlEv2w2x3y4z5A6",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.2nlEv2w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "_id": "3XTGYXsYtZu0v1w2",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.3XTGYXsYtZu0v1w2",
+      "effects": []
+    },
+    {
+      "_id": "2QYYL3w2x3y4z5A6",
+      "name": "Souffle de glace",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": -4,
+        "naturalCombatPool": "icebreath",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.2QYYL3w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "_id": "LD02zaFaGbHcIdJe",
+      "name": "Camouflé (hrimwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LD02zaFaGbHcIdJe",
+        "summary": "Dissimulé dans la neige : Arts des ombres -10 à distance ; s’il bouge, VS 8 (15 à courte distance) ou compétence -3.",
+        "description": "<p>Pour repérer au loin un hrimwurm tapi dans la neige, il faut réussir un test d’Arts des ombres avec un modificateur de -10. En cas d’échec, l’observateur confond le dragon avec un gros tas de neige. Si le dragon bouge, la réussite d’un test de situation avec une valeur de situation de 8 (ou de 15 à courte distance ; le modificateur de Perception s’applique) est nécessaire pour le repérer. Il est également possible de faire un test de compétence avec un modificateur de -3. Selon l’environnement, le maître de jeu peut appliquer ses propres modificateurs.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.LD02zaFaGbHcIdJe"
+    },
+    {
+      "_id": "txzkedE9EaGbHcId",
+      "name": "Corps de glace (hrimwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "txzkedE9EaGbHcId",
+        "summary": "Sphère froide de 15 m de diamètre sans PC, résistance VS 10 (Psychisme), dégâts croissants en d6.",
+        "description": "<p>Le hrimwurm vit dans le froid depuis si longtemps que son corps l’a intégré pour le relâcher en permanence sous une forme appelée « corps de glace » qui ne nécessite la dépense d’aucun PC. Un froid perpétuel pulse dans une sphère autour du dragon. La sphère fait 15 mètres de diamètre. Toutes les créatures se trouvant dans la sphère doivent chacune réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le plus loin possible de ce phénomène. À chaque tour de jeu, le froid dans la sphère inflige des dégâts à chaque créature encore à l’intérieur comme indiqué dans la table ci-dessous.</p><p>Le port de vêtements d’hiver permet de réduire les dégâts de moitié lors des trois premiers tours. Sont considérés comme vêtements d’hiver : pantalon épais, manteau de fourrure, chapeau de fourrure, chaussures en fourrure et gants épais.</p><p>Un personnage vêtu d’une tenue d’hiver complète en fourrure de mastomant ne subit aucun dégât.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.txzkedE9EaGbHcId"
+    },
+    {
+      "_id": "ay6BwhLgMhNiOjPk",
+      "name": "Souffle de glace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ay6BwhLgMhNiOjPk",
+        "summary": "Le souffle du hrimwurm transforme en glace tout ce qu'il touche (test VC 13, sans points de combat) ; la victime subit les dégâts du souffle et doit réussir un test de situation (VS 7, Psychisme) sous peine d'engelures (-3 à toutes ses actions pendant 1d10 tours) ou de rigidité totale.",
+        "description": "<p>Comme les autres dragons, le hrimwurm peut attaquer avec son souffle. Le sien se nomme le souffle de glace et transforme tout ce qu’il touche en glace. L’utilisation du Souffle de glace ne nécessite la dépense d’aucun point de combat mais le dragon doit effectuer un test de VC 13. Une personne exposée au souffle de glace subit les dégâts infligés par le souffle et doit également effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique).</p><p>En cas de réussite, la victime subit des engelures et applique un modificateur de -3 à toutes ses actions pendant 1d10 tours de jeu.</p><p>En cas d’échec, la victime est tellement frigorifiée qu’elle ne peut plus rien faire pendant 1d10 (JO 7-10) tours de jeu. La victime devient si rigide et incapable de bouger qu’elle ne peut qu’espérer se recroqueviller et tenir bon en tremblant contre le froid.</p><p>Si une victime qui rate le test de situation est exposée à un autre souffle de glace et rate une deuxième fois le test de situation qui lui est associé, elle s’enfonce dans le sommeil de glace pendant 1d10 (JO 7-10) heures.</p><p>Une victime qui porte une tenue complète taillée dans de la fourrure de mastomant ne subit que la moitié des dégâts et un modificateur de +5 est ajouté au test de situation ; la valeur de situation est donc égale à 12 au lieu de 7.</p><p>Le dragon peut utiliser son souffle de glace jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du hrimwurm indique 2d10 (JO 8-10) points de dégâts pour le souffle de glace.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.ay6BwhLgMhNiOjPk"
+    },
+    {
+      "_id": "qkzJr2tZu0v1w2x3",
+      "name": "Vision dans le noir (100 à 300 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "qkzJr2tZu0v1w2x3",
+        "summary": "Vision dans le noir total normale jusqu’à 100 m, puis décroissante jusqu’à 300 m.",
+        "description": "<p>Le dragon voit jusqu’à 100 mètres dans le noir le plus total comme en plein jour. Au-delà de cette distance, sa visibilité diminue et il ne voit plus rien au-delà de 300 mètres.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.qkzJr2tZu0v1w2x3"
+    },
+    {
+      "_id": "XJLfjcHcIdJeKfLg",
+      "name": "Vision thermique",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "XJLfjcHcIdJeKfLg",
+        "summary": "Perçoit la chaleur et sa distance jusqu’à 300 m ; peut désactiver cette vision et n’est pas étourdi par une chaleur soudaine.",
+        "description": "<p>La créature perçoit les sources de chaleur jusqu’à 300 mètres. Cette perception lui permet d’évaluer leur importance et la distance qui l’en sépare. Le dragon peut réprimer sa vision thermique si nécessaire et ne peut pas être étourdi par l’apparition brutale d’une source de chaleur.</p><p>Ce pouvoir fonctionne de la même façon chez le hrimwurm, le jarnwurm et le logewurm ; il est distinct de leur vision dans le noir.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!HWl2zsVqWrXsYtZu.XJLfjcHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "HWl2zsVqWrXsYtZu",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "perception": 2,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 12
+        },
+        {
+          "attack": "Griffes",
+          "value": 12
+        },
+        {
+          "attack": "Griffes",
+          "value": 9
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 203,
+        "max": 203
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 28
+    },
+    "description": "C'est un dragon blanc à la blancheur de craie. Son corps est protégé par d'épaisses écailles blanches. Ces écailles lui permettent de se camoufler dans les environnements neigeux, où on le confond de loin avec un gros tas de neige. Elles offrent toutefois une protection moins viable que celles des autres types de dragons. Il est doté d'ailes qu'il déploie pour plonger en piqué et prendre son envol.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "winged quadruped",
+      "size": "7",
+      "age": "350, max 500",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 183,
+      "bodyMax": 224,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "14 m",
+          "max": "28 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "14 m",
+          "max": "42 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Immense dragon blanc de givre confondu avec un tas de neige",
+      "environment": "Régions les plus septentrionales ou sommet des pics montagneux où le froid est le plus intense, dans des grottes de glace profondes",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 112
+      }
+    }
+  },
+  "_id": "HWl2zsVqWrXsYtZu",
+  "_key": "!actors!HWl2zsVqWrXsYtZu",
+  "folder": "hHkEitXsYtZu0v1w"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "NbSmJfIdJeKfLgMh",
+  "name": "Transfert des dégâts",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NbSmJfIdJeKfLgMh",
+    "summary": "Quand il devrait subir des dégâts en combat, le démon peut les transférer sur une autre créature à portée de vue, qui les subit à sa place.",
+    "description": "<p>Lorsqu’il devrait normalement subir des dégâts au cours d’un combat, le démon peut décider de les transférer sur une autre créature qui les subira à sa place. La victime doit se trouver à portée de vue du démon. Parfois, une brûlure malsaine apparait sur la victime choisie pour le transfert de dégâts.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NbSmJfIdJeKfLgMh",
+  "folder": null
+}

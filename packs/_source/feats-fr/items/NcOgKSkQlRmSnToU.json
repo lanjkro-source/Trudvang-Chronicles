@@ -1,0 +1,19 @@
+{
+  "_id": "NcOgKSkQlRmSnToU",
+  "name": "Infection des rugtannes",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NcOgKSkQlRmSnToU",
+    "summary": "La morsure du nattulm transforme sa victime en rugtanne suceur de sang.",
+    "description": "<p>À chaque tour pendant lequel un ulm nocturne boit le sang d’une victime, il y a un risque que celle-ci contracte une maladie rare. Après deux tours de jeu, le risque s’élève à 1 sur 20 (obtention d’un 20 sur 1d20). Après quatre tours de jeu, le risque s’élève à 2 sur 20 (obtention de 19 ou 20 sur 1d20). Pour une raison inexpliquée, la maladie affecte uniquement les humains.</p><p>Une victime infectée par la maladie se transformera en rugtanne (un étrange mélange d’humain et de nattulm) dans un délai de 2d3 jours. Les rugtannes vivent uniquement la nuit. En cas d’exposition à la lumière du jour, ils succombent instantanément au choc des rayons solaires. Toutes les cinq nuits, ils doivent se nourrir du sang d’une autre créature au sang chaud. La morsure et le vampirisme fonctionnent de la même manière pour le rugtanne que pour le nattulm.</p><p>Un rugtanne peut vivre jusqu’à quatre fois plus longtemps qu’un humain, ce qui lui donne bien plus de temps pour apprendre de nouvelles facultés. D’après certains mythes, un rugtanne est capable d’acquérir de formidables pouvoirs et aptitudes magiques, comme la transformation en chauve-souris ou en étalon noir. Tout ceci n’est que superstition. Cependant, lorsque de puissants magiciens sont transformés en rugtannes, ils sont toujours en mesure d’utiliser leur magie et deviennent ainsi d’horribles suceurs de sang dotés de pouvoirs rarement égalés.</p><p>Lorsqu’un personnage joueur devient un rugtanne, les caractéristiques suivantes sont modifiées :</p><ul><li>Les traits Constitution, Psychisme, Force et Dextérité augmentent de deux niveaux (de -2 à 0 ou de +1 à +4 par exemple). Si le personnage est déjà au niveau maximum dans un ou plusieurs de ces traits, le modificateur bénéficie d’un bonus de +4 (le Trait passe donc à +8).</li><li>Le rugtanne obtient une valeur de protection de 1 du fait d’une protection naturelle (sa peau).</li><li>Le rugtanne gagne la capacité Vision dans le noir et peut voir dans le noir complet comme en plein jour jusqu’à 10 mètres, après quoi la vision diminue graduellement avant de s’estomper complètement à 60 mètres environ.</li><li>Le rugtanne subit les dégâts de la même manière qu’avant sa transformation, et reste donc mortel comme lorsqu’il était humain, mais ses points de santé sont modifiés en fonction de ses nouveaux traits.</li></ul>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 27
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NcOgKSkQlRmSnToU",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "Da0VLPjPkQlRmSnT",
+  "name": "Sunlight Intolerance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Da0VLPjPkQlRmSnT",
+    "summary": "Scales catch fire after 1d6+2 rounds of direct sunlight.",
+    "description": "<p>A braskelwurm that stays in a place where the sun directly shines on its scales will catch fire within mere moments (1d6 + 2 action rounds). First the scales will start to smoke lightly, and then they will be set aflame. The braskelwurm will survive longer in places where the rays of the sun do not directly hit its scales. It is very rare that braskelwurms will come out of their dark den during daytime, but one can sometimes spot a braskelwurm departing at dusk.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 107
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Da0VLPjPkQlRmSnT",
+  "folder": null
+}

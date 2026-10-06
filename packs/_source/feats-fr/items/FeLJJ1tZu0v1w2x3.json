@@ -1,0 +1,19 @@
+{
+  "_id": "FeLJJ1tZu0v1w2x3",
+  "name": "Déplacement dans la brume",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FeLJJ1tZu0v1w2x3",
+    "summary": "Disparition en 1 tour, réapparition en 2 ; déplacement jusqu’au triple du mouvement normal, vulnérabilité doublée pendant les transitions.",
+    "description": "<p>Le diser peut disparaître complètement pour réapparaître brusquement à un endroit relativement proche. Quand un diser utilise le Déplacement dans la brume de cette façon, il se déplace d’une distance inférieure ou égale à trois fois son mouvement normal. Le diser met tout de même 1 tour de combat pour disparaître complètement, après quoi il peut se déplacer dans la brume aussi longtemps qu’il le souhaite. Le diser met 2 tours de combat pour réapparaître.</p><p>C’est quand il disparaît et réapparaît que le diser est le plus vulnérable. Lors de ces phases de disparition ou de réapparition, toutes les actions destinées à nuire au diser voient leurs effets doublés. Pour les sorts et les talents divins utilisés contre le diser et dont les effets dépendent du nombre de ses points de santé, prenez en compte les deux tiers seulement de son total de points de santé (sans prendre en compte les blessures ou les dégâts qu’il a subis).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FeLJJ1tZu0v1w2x3",
+  "folder": null
+}

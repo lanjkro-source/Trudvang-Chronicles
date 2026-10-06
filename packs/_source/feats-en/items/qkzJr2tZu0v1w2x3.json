@@ -1,0 +1,19 @@
+{
+  "_id": "qkzJr2tZu0v1w2x3",
+  "name": "Darkvision (100-300 m)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "qkzJr2tZu0v1w2x3",
+    "summary": "Normal sight in total darkness up to 100 m, fading until approximately 300 m.",
+    "description": "<p>The dragon can see up to 100 meters in pitch darkness as if it were daylight. Beyond that, visibility decreases and disappears completely at about 300 meters.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!qkzJr2tZu0v1w2x3",
+  "folder": null
+}

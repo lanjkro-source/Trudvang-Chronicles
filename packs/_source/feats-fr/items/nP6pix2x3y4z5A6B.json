@@ -1,0 +1,19 @@
+{
+  "_id": "nP6pix2x3y4z5A6B",
+  "name": "Salive anesthésiante",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nP6pix2x3y4z5A6B",
+    "summary": "Après 2d6 tours, la morsure ne se remarque qu’avec un test VS 8 (Perception).",
+    "description": "<p>Un nattulm attaque rarement des créatures complètement lucides et préfère qu’elles soient endormies ou tellement étourdies qu’elles n’ont pas conscience de subir une attaque. Grâce à sa dextérité élevée, l’ulm nocturne se déplace furtivement vers une victime endormie et crache sa salive sur le cou de sa cible. Après 2d6 tours de jeu, la peau devient si insensible que la victime devra faire un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception) pour se rendre compte qu’elle se fait mordre (ce test est celui décrit dans la section « Suceur de sang », page précédente). Dans d’autres situations, il revient au MJ de décider de la valeur de situation ou du fait que la victime perçoit la salive ou l’attaque.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 26
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nP6pix2x3y4z5A6B",
+  "folder": null
+}

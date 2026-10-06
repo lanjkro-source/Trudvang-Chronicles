@@ -1,0 +1,19 @@
+{
+  "_id": "HeVWKE5A6B7C8D9E",
+  "name": "Noyade (lyktgubbe)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "HeVWKE5A6B7C8D9E",
+    "summary": "Résister à pied : VS 12, -2 par lyktgubbe ; en eau profonde, Natation -2 par lyktgubbe.",
+    "description": "<p>Une victime menacée par un lyktgubbe doit parvenir à retrouver la terre ferme pour ne pas se noyer. Si la victime a pied dans un lac ou une autre étendue d’eau, elle doit réussir un test de situation avec une valeur de situation de 12 (les modificateurs de Force ou de Dextérité s’appliquent). Pour chaque lyktgubbe qui tente de tirer la victime vers le fond pour la noyer, la valeur de situation est réduite de -2. Si l’eau est trop profonde et nécessite que la victime nage pour garder la tête hors de l’eau, un test de compétence d’Agilité avec la spécialité Natation est effectué à la place du test de situation. La valeur de compétence d’Agilité est réduite de -2 pour chaque lyktgubbe qui tente de noyer la victime. Si la victime ne maîtrise pas la spécialité Natation, aucun test n’est effectué et la victime se noie automatiquement.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 52
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!HeVWKE5A6B7C8D9E",
+  "folder": null
+}

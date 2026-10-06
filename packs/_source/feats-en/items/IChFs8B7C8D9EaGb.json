@@ -1,0 +1,19 @@
+{
+  "_id": "IChFs8B7C8D9EaGb",
+  "name": "Blood Taste",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "IChFs8B7C8D9EaGb",
+    "summary": "Each attack dealing more than 5 damage gives +1 SV to an attack in sequence until combat ends.",
+    "description": "<p>The dark dweller becomes more dangerous the more blood it tastes. Each time it attacks and does more than 5 points of damage, the SV for an attack is increased by +1 for the rest of the battle. The first time this happens, the SV is increased for its first attack; the second time it happens, the SV is increased for its second attack; and the third time this happens, the SV is increased for its third attack. When all attacks have been increased once, the SV for the first attack is increased by another +1, and so on.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 45
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!IChFs8B7C8D9EaGb",
+  "folder": null
+}

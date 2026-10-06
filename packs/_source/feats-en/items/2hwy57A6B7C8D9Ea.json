@@ -1,0 +1,19 @@
+{
+  "_id": "2hwy57A6B7C8D9Ea",
+  "name": "Regenerate Head",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "2hwy57A6B7C8D9Ea",
+    "summary": "Severed wurm heads regrow.",
+    "description": "<p>When a huvfurwurm takes great damage (20+ points of damage) or if a head is cut off, a new head is created from one of the many growths and lumps that cover the dragon’s body (the game master decides how often this happens). The greater the damage, the more dangerous the head. A few have their own abilities and can be used in battle. The GM can create other heads with special traits and powers. Below are examples of heads and their traits.</p><p>In order to remain functional a head cannot be severed and regenerated more than three times. This is due to the fact that every time a new head grows it is mutated, both in shape and property. The first three times the GM rolls 1d20 on the table below while the fourth time the head is so mutated that it can not cause any injury anymore or even work normally. Should such a mutated head also be cut off, it does not grow a new one to replace it. You will notice that some head regeneration can result in two or more extra heads. Regarding the number of regenerations, the extra heads will not be considered anew, but they will keep the same regeneration status (first, second, etc..) that they should have had, if they were singular heads.</p><table><thead><tr><th>2d10 (printed table heading)</th><th>Result</th></tr></thead><tbody><tr><td>2-4</td><td>Two normal heads regenerate instead of one.</td></tr><tr><td>5</td><td>Thin neck: halve the BP that must be reduced to 0 to sever it.</td></tr><tr><td>6</td><td>Thick neck: double the BP that must be reduced to 0 to sever it.</td></tr><tr><td>7</td><td>Hypnotic eyes without a CP cost: resist at situation value 8 (Psyche). Paralysis for 2d6 rounds or until taking at least 1 damage.</td></tr><tr><td>8</td><td>Poor vision: -3 to this head's attack SV.</td></tr><tr><td>9</td><td>Long tusks: increase the chance of an open roll by 1.</td></tr><tr><td>10</td><td>An insane head that attacks the other heads.</td></tr><tr><td>11</td><td>Large grabbing mouth: a successful attack deals half damage. Resist at situation value 12 (Strength); on failure the victim is trapped. The other heads gain +2 to attacks against the victim until a new successful situation roll frees them.</td></tr><tr><td>12</td><td>Short neck: -4 m reach.</td></tr><tr><td>13</td><td>Very long neck: +4 m reach.</td></tr><tr><td>14</td><td>Fragile scales: PV 0 for this head.</td></tr><tr><td>15</td><td>Thick scales: +3 PV for this head.</td></tr><tr><td>16</td><td>Mutated giant head: +3 to its attack SV and increase the chance of an open roll by 2.</td></tr><tr><td>17</td><td>Acid: range 7 m, cone 4 m in diameter at its end, 1d10 (OR 8-10) damage, twice per day without CP.</td></tr><tr><td>18</td><td>Fire: range 10 m, cone 4 m in diameter at its end, 1d10 (OR 7-10) damage, twice per day without CP.</td></tr><tr><td>19</td><td>Two additional heads; roll twice to determine their nature.</td></tr><tr><td>20</td><td>Three additional heads; roll three times to determine their nature.</td></tr></tbody></table><p>The prose specifies 1d20 for the first three regenerations, whereas the printed table is headed 2d10 and starts at 2. This discrepancy is preserved for the GM to choose. The huvfurwurm dies when its body reaches 0 BP or when it has no functional heads left.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 111
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!2hwy57A6B7C8D9Ea",
+  "folder": null
+}

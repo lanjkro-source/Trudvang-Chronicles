@@ -1,0 +1,19 @@
+{
+  "_id": "lHbj4E6B7C8D9EaG",
+  "name": "Cœur de minokks",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "lHbj4E6B7C8D9EaG",
+    "summary": "Manger le cœur retire 1d10 (JO 10) peur, mais peut provoquer une charge pour défendre ses amis : résistance VS 10 (Psychisme).",
+    "description": "<p>Manger le cœur d’un taureau troll emplit de courage et de force intérieure. Le personnage qui en bénéficie perd 1d10 (JO 10) points de peur, se sent plus vivace et devient plus protecteur envers ses amis. Si un ennemi menace l’un d’entre eux, il existe un risque que le consommateur du cœur le charge et l’attaque. Ce dernier doit alors faire un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Psychisme) pour éviter de céder à la pulsion de charger l’ennemi.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 24
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!lHbj4E6B7C8D9EaG",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "f8HxFiMhNiOjPkQl",
+  "name": "Vitner Manipulation",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "f8HxFiMhNiOjPkQl",
+    "summary": "The diser can manipulate flows of vitner.",
+    "description": "<p>Many spells that a diser possesses bear similarities to different vitner spells. It is up to the game master to decide if a diser has one or more abilities whose traits and functions can be compared to a spell.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 54
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!f8HxFiMhNiOjPkQl",
+  "folder": null
+}

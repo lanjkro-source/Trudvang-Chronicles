@@ -1,0 +1,19 @@
+{
+  "_id": "QqkRW8C8D9EaGbHc",
+  "name": "Speed",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "QqkRW8C8D9EaGbHc",
+    "summary": "The demon is always first to attack during an action round.",
+    "description": "<p>The demon moves very fast. The demon always attacks first during an action round.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 49
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!QqkRW8C8D9EaGbHc",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "1ASxnvZu0v1w2x3y",
+  "name": "Coup de cornes",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1ASxnvZu0v1w2x3y",
+    "summary": "Coup de cornes jusqu’à 1d10 dégâts puis projection ; les dégâts de chute dépendent de la hauteur.",
+    "description": "<p>Le hrimtursir utilise ses grandes cornes lorsqu’il combat. Il donne de grands et larges coups pour frapper le plus d’ennemis possible, qu’il projette ensuite dans les airs d’un grand coup sec vers le haut. Le coup de cornes en lui-même inflige rarement plus de 1d10 points de dégâts, mais la chute qui s’ensuit inflige beaucoup de dégâts de chute. C’est le maître de jeu qui détermine le nombre de points de dégâts en fonction de la hauteur de la chute (Cf. les règles sur les chutes dans le Livre des règles).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 134
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1ASxnvZu0v1w2x3y",
+  "folder": null
+}

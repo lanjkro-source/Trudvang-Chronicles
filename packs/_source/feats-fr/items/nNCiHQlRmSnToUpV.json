@@ -1,0 +1,19 @@
+{
+  "_id": "nNCiHQlRmSnToUpV",
+  "name": "Main du feu",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nNCiHQlRmSnToUpV",
+    "summary": "Une attaque réussie asperge de feu : 1d6 dégâts/tour pendant 1d3 tours ; seules les armures non conductrices protègent.",
+    "description": "<p>Le loge est une pure manifestation du feu. Le simple fait d’être en sa présence fait encourir le risque de subir des dégâts de brûlure. Combattre un loge n’est pas une tâche aisée et quiconque envisage un tel affrontement sans protection appropriée regrettera bien vite sa décision. Quand un loge réussit une attaque contre une créature en combat rapproché, il l’asperge en même temps d’une substance brûlante. Cette substance s’éteint au bout de 1d3 tours de jeu. Pendant ce temps, la victime subit 1d6 points de dégâts par tour infligés par la chaleur (seules les armures non conductrices de chaleur protègent leur porteur). Après cela, il est possible que les vêtements de la victime prennent feu, à l’appréciation du maître de jeu.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 86
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nNCiHQlRmSnToUpV",
+  "folder": null
+}

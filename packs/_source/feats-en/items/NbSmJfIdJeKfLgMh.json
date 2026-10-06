@@ -1,0 +1,19 @@
+{
+  "_id": "NbSmJfIdJeKfLgMh",
+  "name": "Damage Shift",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NbSmJfIdJeKfLgMh",
+    "summary": "The demon can transfer damage suffered in combat to another creature within sight.",
+    "description": "<p>The demon has the ability to choose if someone else is damaged instead of it when it is damaged in battle. The victim must be within sight of the demon. Sometimes an evil burn will show on the person that is chosen to receive the damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NbSmJfIdJeKfLgMh",
+  "folder": null
+}

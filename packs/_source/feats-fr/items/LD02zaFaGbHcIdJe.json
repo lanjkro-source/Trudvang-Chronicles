@@ -1,0 +1,19 @@
+{
+  "_id": "LD02zaFaGbHcIdJe",
+  "name": "Camouflé (hrimwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LD02zaFaGbHcIdJe",
+    "summary": "Dissimulé dans la neige : Arts des ombres -10 à distance ; s’il bouge, VS 8 (15 à courte distance) ou compétence -3.",
+    "description": "<p>Pour repérer au loin un hrimwurm tapi dans la neige, il faut réussir un test d’Arts des ombres avec un modificateur de -10. En cas d’échec, l’observateur confond le dragon avec un gros tas de neige. Si le dragon bouge, la réussite d’un test de situation avec une valeur de situation de 8 (ou de 15 à courte distance ; le modificateur de Perception s’applique) est nécessaire pour le repérer. Il est également possible de faire un test de compétence avec un modificateur de -3. Selon l’environnement, le maître de jeu peut appliquer ses propres modificateurs.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LD02zaFaGbHcIdJe",
+  "folder": null
+}

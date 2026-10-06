@@ -1,0 +1,19 @@
+{
+  "_id": "BlV2voQlRmSnToUp",
+  "name": "Grip",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "BlV2voQlRmSnToUp",
+    "summary": "After a successful unarmed attack, grips without further CP; crush damage depends on size, or a throw deals 1d10 (OR 10) per 3 m fallen.",
+    "description": "<p>After a successful unarmed attack, a giant can attempt to grip a victim of Size 1/2 to 3 without spending additional CP. Make a skill roll whose SV depends on the victim's size. The victim can avoid the grip with Agility, preferably the Evade specialty.</p><p>Each round the giant can crush or throw the victim. Crushing damage depends on the victim's size. A throw deals 1d10 (OR 10) damage for every 3 meters fallen; use the actual fall height. A firdtursir is usually 20-22 m tall, giving 6d10-7d10 (OR 10); a hrimtursir 14-15 m, giving 4d10-5d10 (OR 10); a muspeljotun 25-27 m, giving 8d10-9d10 (OR 10). A vidrjotun is also 25-27 m tall, but its lower body is often half buried: the GM determines the actual height and falling damage.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!BlV2voQlRmSnToUp",
+  "folder": null
+}

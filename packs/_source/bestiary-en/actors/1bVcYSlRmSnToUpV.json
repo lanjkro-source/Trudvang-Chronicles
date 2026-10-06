@@ -1,0 +1,137 @@
+{
+  "name": "Horse (normal)",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/1bVcYSlRmSnToUpV.jpg",
+  "items": [
+    {
+      "_id": "JAZMlmQlRmSnToUp",
+      "name": "Kick",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!1bVcYSlRmSnToUpV.JAZMlmQlRmSnToUp",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!1bVcYSlRmSnToUpV.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "1bVcYSlRmSnToUpV",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/1bVcYSlRmSnToUpV.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Kick",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 66,
+        "max": 66
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "This medium-sized horse has a balanced silhouette, both sturdy and agile. Its short smooth bay, chestnut, or dapple-gray coat covers a straight back and rounded rump. Its medium-length neck bears a hanging mane and a proportionate broad-browed head. Fine but sinewy legs end in hard medium-sized hooves. A long silky tail and upright attentive ears give it an alert appearance.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "2",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 66,
+      "bodyMax": 66,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "8 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Balanced, spirited, and enduring.",
+      "environment": "Grassy valleys, forest roads, and farms throughout Trudvang; a common travelers' mount.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "1bVcYSlRmSnToUpV",
+  "_key": "!actors!1bVcYSlRmSnToUpV",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "x25bl6A6B7C8D9Ea",
+  "name": "Superstitious",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "x25bl6A6B7C8D9Ea",
+    "summary": "Faced with an unexplained phenomenon, the goblin must succeed at situation value 8 or flee.",
+    "description": "<p>The goblins are very superstitious and afraid of the unknown, especially vitner and other trollcraft. When a goblin bears witness to something that in their eyes has no natural explanation (game master’s discretion), they must make a situation roll with a situation value of 8, and on a failed roll they will flee.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 153
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!x25bl6A6B7C8D9Ea",
+  "folder": null
+}

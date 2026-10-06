@@ -1,0 +1,19 @@
+{
+  "_id": "Bb10OqVqWrXsYtZu",
+  "name": "Mud Camouflage",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Bb10OqVqWrXsYtZu",
+    "summary": "Blue mud conceals the forest troll in moonlit woods: -4 to detect it, -8 while moving stealthily.",
+    "description": "<p>When the blue mud is struck by the rays of the moon, it seems green and its color becomes one with the night colors of the forest. This trait has led to trolls painting themselves with this mud, also known as pig’s mud, which means that they are camouflaged when they are out in the forest during nighttime. The trolls become very hard to detect (-4 on all skill rolls to discover the forest trolls), and trolls that are sneaking become even harder to see (-8). The forest trolls that move through the woods without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 149
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Bb10OqVqWrXsYtZu",
+  "folder": null
+}

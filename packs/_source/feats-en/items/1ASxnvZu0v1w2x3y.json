@@ -1,0 +1,19 @@
+{
+  "_id": "1ASxnvZu0v1w2x3y",
+  "name": "Horn Throw",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1ASxnvZu0v1w2x3y",
+    "summary": "Horn sweep for up to 1d10 damage followed by a throw; falling damage depends on height.",
+    "description": "<p>The hrimtursir uses its great horns in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the giant then throws those enemies high into the air. The sweep itself seldom causes more than 1d10 points of damage, but the fall that comes after having been thrown so high causes severe fall damage to be established by the GM according to how far one falls (check the falling rules in the Game Master Guide book).</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 134
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1ASxnvZu0v1w2x3y",
+  "folder": null
+}

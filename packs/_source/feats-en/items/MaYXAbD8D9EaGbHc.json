@@ -1,0 +1,19 @@
+{
+  "_id": "MaYXAbD8D9EaGbHc",
+  "name": "Song of Guidance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MaYXAbD8D9EaGbHc",
+    "summary": "Guides or misleads travelers; resisting requires situation value 8 (Psyche), -1 per five additional fairies.",
+    "description": "<p>A fairy can use her song to guide people who are lost in the forest, leading them to an exit or closer to a path. The ability can also be used to lead enemies astray. Enemies that hear the song must make a situation roll with a situation value of 8 (Psyche modifiers apply) or they will be led astray. The more fairies that sing the song, the harder it is to resist the effects. applying a -1 modifier to the SV roll per 5 fairies singing in addition to the first one.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 73
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MaYXAbD8D9EaGbHc",
+  "folder": null
+}

@@ -1,0 +1,93 @@
+{
+  "name": "Firbloodrisk",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg",
+  "items": [
+    {
+      "_id": "Z7dB9gIdJeKfLgMh",
+      "name": "Spores",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Z7dB9gIdJeKfLgMh",
+        "summary": "Contamination on a d20; the fungus reaches the brain after 20 minus the result days, kills the victim and controls the corpse.",
+        "description": "<p>The firbloodrisk does not attack in the normal way but a cloud of spores is constantly emitted, influencing all those who are near to the mushroom. When the firbloodrisk possesses a skeleton, the mushroom also does not make attacks with the skeleton’s weapons but just keeps on emitting spores every round. Anyone who is affected by the mushroom will roll 1d20, which represents how much of the body is hit by the spores (1 is a small effect and 20 is a total effect). The result must be subtracted from “20” in order to see the number of days it takes for the mushroom to reach the brain. When that happens, the victim will “die” and the mushroom will take control of the body. For example, a creature that is inflicted with the spores and rolls 12 on 1d20 has 8 (20-12) days to be rid of the mushroom before it is too late.</p><p>The only way to be rid of the mushroom is to burn it away from the body, which means victims who survive the possession often bear great scars and burn marks. The burning causes damage equal to 5 + the rolled value that shows how many spores the victim is inflicted with.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 74
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!KJZYs0u0v1w2x3y4.Z7dB9gIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "KJZYs0u0v1w2x3y4",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "The firbloodrisk begins as a reddish parasitic flower growing on fir bark. Its flowers are barely visible against the bark. It opens when it senses ground vibrations and releases its spores. The fungus roots itself in living flesh and decomposes it until it reaches the brain. Once the host dies, it forms a symbiosis with the skeleton and moves it as an extension of its consciousness.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "other",
+      "size": "0.33",
+      "age": "3, max. 20",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": null,
+      "bodyMax": null,
+      "move": [
+        {
+          "mode": "spécial",
+          "distance": "1 m",
+          "max": "1 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Reddish blood-drinking flower-fungus that puppets skeletons.",
+      "environment": "Conifer forests in southern Svartliden, the dark forest, growing on fir bark",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 74
+      }
+    }
+  },
+  "_id": "KJZYs0u0v1w2x3y4",
+  "_key": "!actors!KJZYs0u0v1w2x3y4",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

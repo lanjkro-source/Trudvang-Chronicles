@@ -1,0 +1,19 @@
+{
+  "_id": "YoZXmLgMhNiOjPkQ",
+  "name": "Regenerate",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "YoZXmLgMhNiOjPkQ",
+    "summary": "The demon automatically regenerates 1d10 (OR 10) BP per round without spending CP.",
+    "description": "<p>The demon regenerates 1d10 (OR 10) Body Points per action round. This ability is automatic and does not need any activation or Combat Point expense.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!YoZXmLgMhNiOjPkQ",
+  "folder": null
+}

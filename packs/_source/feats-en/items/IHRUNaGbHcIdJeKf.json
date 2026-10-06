@@ -1,0 +1,19 @@
+{
+  "_id": "IHRUNaGbHcIdJeKf",
+  "name": "Persuade",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "IHRUNaGbHcIdJeKf",
+    "summary": "Resisting the king troll’s words requires situation value 12 (Psyche).",
+    "description": "<p>Instead of capturing its prey with force, the king troll likes to use vitner or its power of persuasion. Victims who hear what the king troll has to say must make a situation roll with a situation value of 12 (Psyche modifiers apply) in order to not be persuaded by the troll.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 165
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!IHRUNaGbHcIdJeKf",
+  "folder": null
+}

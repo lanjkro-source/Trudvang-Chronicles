@@ -1,0 +1,19 @@
+{
+  "_id": "XJLfjcHcIdJeKfLg",
+  "name": "Vision thermique",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "XJLfjcHcIdJeKfLg",
+    "summary": "Perçoit la chaleur et sa distance jusqu’à 300 m ; peut désactiver cette vision et n’est pas étourdi par une chaleur soudaine.",
+    "description": "<p>La créature perçoit les sources de chaleur jusqu’à 300 mètres. Cette perception lui permet d’évaluer leur importance et la distance qui l’en sépare. Le dragon peut réprimer sa vision thermique si nécessaire et ne peut pas être étourdi par l’apparition brutale d’une source de chaleur.</p><p>Ce pouvoir fonctionne de la même façon chez le hrimwurm, le jarnwurm et le logewurm ; il est distinct de leur vision dans le noir.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!XJLfjcHcIdJeKfLg",
+  "folder": null
+}

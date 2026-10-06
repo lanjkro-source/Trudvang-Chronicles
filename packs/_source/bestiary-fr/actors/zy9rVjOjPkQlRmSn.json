@@ -1,0 +1,233 @@
+{
+  "name": "Warg",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg",
+  "items": [
+    {
+      "_id": "o0gAh1tZu0v1w2x3",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.o0gAh1tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "vGrQZcIdJeKfLgMh",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.vGrQZcIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Rapide",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+        "description": "<p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.41hqc1sYtZu0v1w2"
+    },
+    {
+      "_id": "YZuZVRjPkQlRmSnT",
+      "name": "Attaque de saut",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "YZuZVRjPkQlRmSnT",
+        "summary": "Lorsqu'il déclenche un combat, le warg saute sur sa proie et l'attaque de sa morsure et de ses griffes, gagnant une attaque de Griffes supplémentaire sans dépenser de points de combat supplémentaires pendant ce tour.",
+        "description": "<p>Lorsqu’un warg déclenche un combat, il saute sur sa proie et l’attaque en même temps avec sa morsure et ses griffes. L’attaque de saut implique que la bête bénéficie d’une attaque supplémentaire avec ses pattes et griffes arrière pendant ce tour de jeu (Griffes VC 10) sans dépenser de PC supplémentaire. Ceci vaut seulement pour le tour pendant lequel a lieu l’Attaque de saut.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.YZuZVRjPkQlRmSnT"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "i4Zci8A6B7C8D9Ea",
+      "name": "Maladie du warg (warg)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "i4Zci8A6B7C8D9Ea",
+        "summary": "La morsure transmet la maladie des wargs sur 1-2 au d20 (Constitution), avec un risque de transformation en warg garou.",
+        "description": "<p>Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.</p><p>La maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.</p><p>Risque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.</p><p>Lorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.</p><p>Chaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.</p><p>Si la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.</p><p>Transformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.</p><p>Les traits des wargs garous sont modifiés comme suit :</p><ul><li>Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)</li><li>Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)</li><li>Psychisme -2 aux tests de situation</li><li>Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)</li><li>Intelligence -4 aux tests de situation (pour un total maximum de -6)</li></ul><p>Autres aptitudes :</p><ul><li>Protection naturelle : VC 2 (peau)</li><li>Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1</li><li>Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2</li><li>VC (Combat, Bagarre) +2</li><li>Compétences :</li><li>Agilité : Contrôle corporel (Saut, escalade et équilibre) +6</li><li>Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6</li><li>Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.</li></ul><table><thead><tr><th>Type de warg</th><th>Résultat du d20 infectieux</th></tr></thead><tbody><tr><td>Loup</td><td>Aucun</td></tr><tr><td>Warg</td><td>1 à 2</td></tr><tr><td>Skoll</td><td>1 à 3</td></tr><tr><td>Garm</td><td>1 à 5</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zy9rVjOjPkQlRmSn.i4Zci8A6B7C8D9Ea"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zy9rVjOjPkQlRmSn",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 16
+        },
+        {
+          "attack": "Griffes",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Morsure",
+          "value": 10
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Griffes",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 18,
+        "max": 18
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes.",
+    "details": {
+      "creatureType": "Bêtes",
+      "type": "quadruped",
+      "size": "0.5",
+      "age": "8, max. 18",
+      "naturalArmor": 0,
+      "fearFactor": "1d10",
+      "bodyMin": 16,
+      "bodyMax": 20,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Loup massif et trapu à grosse tête, monture des trolls et danger des fermes.",
+      "environment": "Étendues sauvages, autour des villages et fermes, en particulier dans les Stormländer",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 30
+      }
+    }
+  },
+  "_id": "zy9rVjOjPkQlRmSn",
+  "_key": "!actors!zy9rVjOjPkQlRmSn",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

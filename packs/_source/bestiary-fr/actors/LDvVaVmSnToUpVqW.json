@@ -1,0 +1,219 @@
+{
+  "name": "Braskelwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg",
+  "items": [
+    {
+      "_id": "6Hq24sYtZu0v1w2x",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 22,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.6Hq24sYtZu0v1w2x",
+      "effects": []
+    },
+    {
+      "_id": "bPXPF0u0v1w2x3y4",
+      "name": "Cœur régénérant (braskelwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "bPXPF0u0v1w2x3y4",
+        "summary": "Le cœur crée un nouveau braskelwurm après un à deux ans ; il n’a aucun usage curatif pour les autres créatures.",
+        "description": "<p>Le braskelwurm est incapable de se reproduire. Au lieu de cela, il se renouvelle grâce à son cœur régénérant qui créé un nouveau braskelwurm lorsque l’ancien meurt. Il faut attendre un à deux ans avant que naisse un nouveau braskelwurm. Parfois, le cœur se divise, ce qui aboutit à la création de deux braskelwurms jumeaux et identiques. Le cœur régénérant du braskelwurm est différent de celui du lindwurm car personne, à part le braskelwurm, ne peut l’utiliser d’une façon ou d’une autre.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 106
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.bPXPF0u0v1w2x3y4"
+    },
+    {
+      "_id": "Da0VLPjPkQlRmSnT",
+      "name": "Intolérant à la lumière du soleil",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Da0VLPjPkQlRmSnT",
+        "summary": "Les écailles prennent feu après 1d6+2 tours d’exposition directe au soleil.",
+        "description": "<p>Un braskelwurm qui reste dans un endroit où ses écailles sont directement exposées à la lumière du soleil prend feu en peu de temps (1d6+2 tours de jeu). Les écailles, dans un premier temps, commencent à fumer légèrement pour finalement prendre feu. Le braskelwurm peut survivre plus longtemps dans des endroits où ses écailles ne sont pas directement exposées aux rayons du soleil. Il est très rare que les braskelwurms décident de sortir de leur antre obscur pendant la journée, mais on peut parfois en apercevoir un lorsqu’arrive le crépuscule.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 106
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.Da0VLPjPkQlRmSnT"
+    },
+    {
+      "_id": "WLqQEeGbHcIdJeKf",
+      "name": "Pétrification (braskelwurm)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "WLqQEeGbHcIdJeKf",
+        "summary": "Caquètement : VS 14, -6 pour la cible ; résistance à la pétrification VS 6 (Psychisme), statue VP 10 / VI 100.",
+        "description": "<p>Quand le braskelwurm attaque avec son regard, il tente de forcer sa victime à le regarder droit dans les yeux. Pour ce faire, il produit un caquètement séduisant et tourne ses yeux luisants vers la victime choisie. Même si le caquètement n’est ni séduisant ni particulièrement plaisant, il est difficile de ne pas prêter attention à ce son puis de croiser le regard pénétrant du reptile.</p><p>Quiconque entend le caquètement doit réussir un test de situation avec une valeur de situation de 14 (le modificateur de Psychisme s’applique) pour éviter de croiser le regard de la créature. La victime choisie par le braskelwurm subit un modificateur de -6 (et effectue donc le test avec une valeur de situation de 8). La valeur de situation peut être ajustée en fonction de l’âge du braskelwurm. Un jeune braskelwurm est bien plus dangereux qu’un vieux, les plus dangereux étant ceux qui viennent de naître. C’est au maître de jeu de déterminer les modificateurs en se basant sur l’âge du braskelwurm.</p><p>Les victimes du regard peuvent résister au sort imminent qui les attend en effectuant chacune un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si elle échoue, la victime est instantanément transformée en statue de pierre pratiquement incassable. Ceci signifie que la victime pétrifiée obtient une valeur de protection de 10 et une valeur d’intégrité de 100. Lorsque la valeur d’intégrité est réduite à 0, la victime subit ensuite les dégâts normalement et si elle reçoit un nombre de points de dégâts au moins égal au double de ses points de santé, la statue de pierre se brise et la victime meurt.</p><p>Une créature pétrifiée se trouve dans un état de sommeil permanent. Elle ne perçoit plus l’écoulement du temps ni son environnement. La victime ne peut rien affecter autour d’elle. On peut libérer une personne pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja). Une fois la pétrification dissipée, la victime retrouve sa forme d’origine.</p><p>Une créature pétrifiée n’est pas fixée au sol, même si la pesanteur continue d’agir normalement sur elle. Une créature suffisamment forte peut donc la déplacer. La statue pèse environ dix fois le poids normal de la victime.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 106
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.WLqQEeGbHcIdJeKf"
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Rapide",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+        "description": "<p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!LDvVaVmSnToUpVqW.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "LDvVaVmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "perception": 2
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 11
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Morsure",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "attack": "Morsure",
+          "value": 15
+        },
+        {
+          "attack": "Morsure",
+          "value": 9
+        },
+        {
+          "attack": "Morsure",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 14,
+        "max": 14
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "C'est une petite créature de la taille d'un loup marchant sur quatre pattes, qui dépasse rarement le genou. Elle possède une grosse tête dotée d'yeux clairs et luisants. Elle ressemble à la fois à un coq des roches et à un lindwurm. Son corps est couvert de fines écailles blanches, presque transparentes. Ces écailles peuvent prendre une teinte verte et grise comme celles du lézard breijtja, ce qui lui permet de se camoufler facilement.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "quadruped",
+      "size": "0.33",
+      "age": "100, max 250",
+      "naturalArmor": 0,
+      "fearFactor": "1d10",
+      "bodyMin": 13,
+      "bodyMax": 16,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Minuscule dragon-coq blanc aux yeux luisants qui pétrifie d'un regard",
+      "environment": "Forêts les plus épaisses ou grottes les plus sombres, dans un antre obscur à l'abri de la lumière du soleil",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 106
+      }
+    }
+  },
+  "_id": "LDvVaVmSnToUpVqW",
+  "_key": "!actors!LDvVaVmSnToUpVqW",
+  "folder": "hHkEitXsYtZu0v1w"
+}

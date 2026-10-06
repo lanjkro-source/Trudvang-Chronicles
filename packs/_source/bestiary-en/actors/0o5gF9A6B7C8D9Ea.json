@@ -1,0 +1,119 @@
+{
+  "name": "Horse (large)",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/0o5gF9A6B7C8D9Ea.jpg",
+  "items": [
+    {
+      "_id": "dCNDfdFaGbHcIdJe",
+      "name": "Kick",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!0o5gF9A6B7C8D9Ea.dCNDfdFaGbHcIdJe",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "0o5gF9A6B7C8D9Ea",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/0o5gF9A6B7C8D9Ea.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Kick",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 76,
+        "max": 76
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "This imposing warhorse stands tall, with a deep chest and powerful shoulders. Its arched neck carries a thick, often braided mane matching its bay, black, or gray coat. Its long straight-profiled head has broad nostrils and lively wide-set eyes. Long muscular limbs with lean tendons end in broad strong hooves. Its full tail and prominent thigh muscles emphasize its strength for pulling and charging.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "3",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 76,
+      "bodyMax": 76,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "18 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Imposing muscular warhorse with a thick mane.",
+      "environment": "Plains and estates of Trudvang's riding clans, stables, and battlefields.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "0o5gF9A6B7C8D9Ea",
+  "_key": "!actors!0o5gF9A6B7C8D9Ea",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

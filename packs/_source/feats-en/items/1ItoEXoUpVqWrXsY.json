@@ -1,0 +1,19 @@
+{
+  "_id": "1ItoEXoUpVqWrXsY",
+  "name": "Spiked Body",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1ItoEXoUpVqWrXsY",
+    "summary": "The demon can launch its 2d20 spikes without CP: SV 12, range 14 m, 1d10 (OR 9-10) damage each.",
+    "description": "<p>The body is covered in spikes which the demon can thrust at its victim without spending Combat Points. In total the body has 2d20 spikes that can be thrown with a SV 12 roll. They have range 14 meters and inflict 1d10 (OR 9-10). The demon usually does not throw more than 1 spike per round, unless the GM decides otherwise.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1ItoEXoUpVqWrXsY",
+  "folder": null
+}

@@ -1,0 +1,507 @@
+{
+  "name": "Sálhele",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
+  "items": [
+    {
+      "_id": "crxGEHcIdJeKfLgM",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.crxGEHcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "name": "Glaaf (épée courte)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "Une épée courte généralement à double tranchant, courante dans l'est de Trudvang et associée aux anciens Brots.",
+        "source": "Guide du maître, p. 69",
+        "category": "oneHandedLight",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1,
+        "value": 9,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedLightWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "fD4ZfaE9EaGbHcId",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.fD4ZfaE9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Barda swerd (épée de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 2.5,
+        "value": 18,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "0tHmvoSnToUpVqWr",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.0tHmvoSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "name": "Tvei swerd (épée à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "Une épée immense et lourde qui sacrifie la vitesse à la portée, à la puissance et à la terreur sur le champ de bataille.",
+        "source": "Guide du maître, p. 72",
+        "category": "twoHanded",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 10,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 4,
+        "value": 28,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "LkkJKC6B7C8D9EaG",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.LkkJKC6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "name": "Petit bouclier en bois",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier rapide permettant trois actions d'arme par tour. Les boucliers servent avant tout à parer les attaques au contact réussies.",
+        "source": "Guide du maître, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "wbX5ZQkQlRmSnToU",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.wbX5ZQkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "armure de cuir",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Du cuir bouilli dans l'huile puis moulé sur son porteur. Plus silencieux que les armures métalliques, il offre une protection modérée.",
+        "source": "Guide du maître, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 30,
+          "max": 30
+        },
+        "heft": 3,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 10.5,
+        "value": 15,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "N08HOIcIdJeKfLgM",
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.N08HOIcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "_id": "T8HavqRmSnToUpVq",
+      "name": "Contrôle des animaux",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "T8HavqRmSnToUpVq",
+        "summary": "Le sálhele peut commander les animaux.",
+        "description": "<p>Étant donné que les sálheles éprouvent des difficultés à marcher, il n’est pas rare qu’ils contrôlent des animaux pour en faire des montures. Ils peuvent ainsi tout aussi bien contrôler des chevaux, des chiens de chasse ou des pourceaux. Un sálhele chevauche l’animal jusqu’à ce qu’il tombe de fatigue, auquel cas le squelette abandonne la bête pour se trouver une nouvelle monture.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 62
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.T8HavqRmSnToUpVq"
+    },
+    {
+      "_id": "jqzjOTlRmSnToUpV",
+      "name": "Perception des êtres vivants",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jqzjOTlRmSnToUpV",
+        "summary": "Détecte tous les êtres vivants à moins de 100 m, quels que soient leurs moyens de dissimulation.",
+        "description": "<p>Les sálheles peuvent percevoir la présence de créatures vivantes situées à moins de 100 mètres. Par conséquent, ils peuvent débusquer des créatures vivantes, quels que soient les moyens qu’elles utilisent pour se cacher.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 62
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.jqzjOTlRmSnToUpV"
+    },
+    {
+      "_id": "Wz4aZJeKfLgMhNiO",
+      "name": "Résistant",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Wz4aZJeKfLgMhNiO",
+        "summary": "Le sálhele ignore les atteintes à ses membres ; immunité aux armes perforantes, demi-dégâts tranchants, dégâts contondants normaux.",
+        "description": "<p>Le sálhele est un mort-vivant et ne prête donc pas attention aux dégâts qu’il subit. Un squelette qui perd un bras ou une jambe continue de combattre avec la même férocité. La seule partie vitale du corps que le squelette ne peut pas se permettre de perdre est sa tête. Si le crâne est arraché du reste du corps, le squelette se disloque en un tas d’os et son esprit rejoint Dimhall.</p><p>Étant donné qu’il y a beaucoup d’espaces vides entre les os d’un squelette, celui-ci subit des dégâts différents en fonction du type d’arme utilisé pour l’attaquer. Les squelettes ne subissent aucun dégât des flèches, des armes perforantes (les dagues) ou des armes d’estoc (les lances), et ils subissent la moitié seulement des dégâts infligés par les armes tranchantes (les épées). Les armes contondantes (les gourdins et les masses) leur infligent des dégâts normaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 62
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.Wz4aZJeKfLgMhNiO"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Tenace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+        "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 40
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!WXp0rgJeKfLgMhNi.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "WXp0rgJeKfLgMhNi",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": -4,
+      "constitution": -4,
+      "dexterity": -4,
+      "intelligence": -6
+    },
+    "skills": {
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "agility": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Maîtrise équestre",
+        "skillId": "agility",
+        "catalogId": "horsemanship",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Équitation",
+        "skillId": "agility",
+        "catalogId": "riding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes légères à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 10
+        },
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Barda swerd (épée de bataille)",
+          "value": 10
+        },
+        {
+          "attack": "Barda swerd (épée de bataille)",
+          "value": 7
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 12
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 9
+        }
+      ],
+      [
+        {
+          "attack": "Glaaf (épée courte)",
+          "value": 12
+        },
+        {
+          "attack": "Glaaf (épée courte)",
+          "value": 11
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 8
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 7
+        }
+      ],
+      [
+        {
+          "attack": "Tvei swerd (épée à deux mains)",
+          "value": 12
+        },
+        {
+          "attack": "Tvei swerd (épée à deux mains)",
+          "value": 11
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 38,
+        "max": 38
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "Le sálhele est un squelette aux orbites vides qui fixe ses victimes. Il ouvre ses mâchoires puis les referme en faisant claquer ses dents les unes contre les autres. Il désigne ses proies d'un doigt squelettique et se tient parfois voûté au dos d'un cheval squelette. Il manie de vieilles armes rouillées pour tailler ses ennemis. De grands espaces vides séparent ses os, et seule sa tête est vitale : arraché, le crâne le réduit en tas d'os.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 32,
+      "bodyMax": 45,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Squelette aux mâchoires claquantes comme un macabre orchestre.",
+      "environment": "Non précisé",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 60
+      }
+    }
+  },
+  "_id": "WXp0rgJeKfLgMhNi",
+  "_key": "!actors!WXp0rgJeKfLgMhNi",
+  "folder": "nhZGosWrXsYtZu0v"
+}

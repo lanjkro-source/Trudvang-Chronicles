@@ -1,0 +1,19 @@
+{
+  "_id": "f8tUzXrXsYtZu0v1",
+  "name": "Création d’une pierre de savoir",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "f8tUzXrXsYtZu0v1",
+    "summary": "L'yggwurm peut façonner une pierre chargée de savoir.",
+    "description": "<p>Étant donné que l’yggwurm ne sait pas écrire, il utilise la magie pour graver ses connaissances sur des pierres. Ces pierres contiennent des idées, des connaissances et des pouvoirs de toutes sortes. Elles sont un moyen pour les yggwurms d’évaluer le savoir de leurs congénères, et les dragons les exhibent avec fierté. L’objectif ultime de la quête perpétuelle de savoir menée par un yggwurm consiste à remplir une montagne avec la plus importante des connaissances : la pierre contenant tous les savoirs.</p><p>Quand un yggwurm relie deux types de connaissances ou plus, il peut jeter sur le versant des montagnes les petites pierres sur lesquelles chacun était gravé, une fois le savoir combiné gravé sur une unique pierre plus grosse. Les explorateurs qui ramassent une pierre de ce genre peuvent apprendre le savoir qu’elle contient en l’activant grâce au sort de Lecture du vitner. Quand ce sort est tissé sur une pierre de savoir, aucun test de VC n’est nécessaire (comme l’exigent normalement les règles normales de Lecture du vitner) pour apprendre le pouvoir qu’elle contient, mais le sort permet seulement d’activer la pierre. Une fois le temps normal de tissage du sort de Lecture du vitner écoulé (une heure), la pierre est activée mais disparaît au bout de 6 tours de jeu. Si personne ne s’empare de la pierre avant les 6 tours, celle-ci disparaît sans transmettre le savoir qu’elle contient.</p><p>La personne qui tient en main la pierre lorsque celle-ci est activée bénéficie de ses enseignements. Si plusieurs personnes touchent la pierre, le bénéficiaire est déterminé au hasard. Mais sachez ceci : apprendre le contenu d’une pierre peut s’avérer dangereux car elle peut contenir des pouvoirs qu’aucune personne vivante n’est capable de maîtriser. Les effets du savoir sont laissés à l’entière appréciation du MJ.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 127
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!f8tUzXrXsYtZu0v1",
+  "folder": null
+}

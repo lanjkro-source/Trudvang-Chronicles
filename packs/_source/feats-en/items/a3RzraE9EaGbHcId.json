@@ -1,0 +1,19 @@
+{
+  "_id": "a3RzraE9EaGbHcId",
+  "name": "Hylja (giant snake)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "a3RzraE9EaGbHcId",
+    "summary": "Changes color: Shadow Arts -10 to notice it while still, -5 when moving.",
+    "description": "<p>Some snakes (mostly the lake serpent) have the ability to change color to mimic the environment. The snake will adapt to the background to such a degree that a skill roll on the Shadow Arts skill with a modifier of -10 is required to discover the snake, if it lies still. If the snake is in motion, the modifier becomes -5 instead.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 17
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!a3RzraE9EaGbHcId",
+  "folder": null
+}

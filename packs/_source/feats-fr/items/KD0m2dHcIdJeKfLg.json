@@ -1,0 +1,19 @@
+{
+  "_id": "KD0m2dHcIdJeKfLg",
+  "name": "Morkvitner (réserve de vitner +10)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "KD0m2dHcIdJeKfLg",
+    "summary": "Le revenant utilise le morkvitner ; tablettes, compétence et réserve sont déterminées par le MJ (+10 dans le profil proposé).",
+    "description": "<p>Un revenant des tumulus a accès au morkvitner et sait manipuler son pouvoir. Le nombre de Tablettes de vitner, la compétence Modelage du vitner et la Réserve de vitner sont différents pour chaque revenant. Ces caractéristiques sont toutes laissées à l’appréciation du MJ.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 59
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!KD0m2dHcIdJeKfLg",
+  "folder": null
+}

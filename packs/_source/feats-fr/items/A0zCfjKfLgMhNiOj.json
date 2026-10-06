@@ -1,0 +1,19 @@
+{
+  "_id": "A0zCfjKfLgMhNiOj",
+  "name": "Façonnage des arbres",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "A0zCfjKfLgMhNiOj",
+    "summary": "Le vidrjotun modèle les arbres et les bois à sa guise.",
+    "description": "<p>Les vidrjotuns ont développé le pouvoir de refaçonner les arbres comme ils le souhaitent. Ils peuvent réorganiser de grandes forêts entières ou refaçonner des troncs pris individuellement.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 142
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!A0zCfjKfLgMhNiOj",
+  "folder": null
+}

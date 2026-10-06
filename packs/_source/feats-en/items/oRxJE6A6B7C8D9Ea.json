@@ -1,0 +1,19 @@
+{
+  "_id": "oRxJE6A6B7C8D9Ea",
+  "name": "Regenerating Heart (lindwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "oRxJE6A6B7C8D9Ea",
+    "summary": "The heart creates a lindwurm after 1d10 weeks; eating it heals completely but risks transforming the eater into a lindwurm.",
+    "description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 120
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!oRxJE6A6B7C8D9Ea",
+  "folder": null
+}

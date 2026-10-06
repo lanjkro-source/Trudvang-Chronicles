@@ -1,0 +1,19 @@
+{
+  "_id": "Z8nwIJdJeKfLgMhN",
+  "name": "Imitation",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Z8nwIJdJeKfLgMhN",
+    "summary": "Imite la voix de sa victime : VS 12 (Psychisme) pour s’éloigner, -1 par myling supplémentaire.",
+    "description": "<p>Les mylings sont très talentueux pour imiter d’autres créatures et utilisent cette tactique pour gagner du temps jusqu’à ce que d’autres mylings les rejoignent. Un myling prononcera souvent la phrase « Donne-moi ton nom ».</p><p>Quiconque entend un myling imiter sa voix doit effectuer un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de s’éloigner de l’étrange créature.</p><p>Pour chaque myling qui se joint à l’imitation, la valeur de situation est réduite de -1.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 55
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Z8nwIJdJeKfLgMhN",
+  "folder": null
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Cow",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg",
+  "items": [
+    {
+      "_id": "hWPkJB5A6B7C8D9E",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!NmxSC7A6B7C8D9Ea.hWPkJB5A6B7C8D9E",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "NmxSC7A6B7C8D9Ea",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Horns",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 74,
+        "max": 74
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 9
+    },
+    "description": "This peaceful bovine has a full body, broad belly, and straight back covered in short soft brown, black, white, or piebald fur. Its long head bears a broad pink or black muzzle, great long-lashed eyes, and mobile side-facing ears. Small curved horns, or no horns depending on the individual, adorn its forehead. Strong legs end in cloven hooves suited to wet pasture. Its full udder and long fly-swatting tail mark its familiar silhouette.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 74,
+      "bodyMax": 74,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "9 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Peaceful and massive, with gentle eyes.",
+      "environment": "Lush meadows, cowsheds, and farm enclosures in Mittland and sheltered Trudvang valleys.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "NmxSC7A6B7C8D9Ea",
+  "_key": "!actors!NmxSC7A6B7C8D9Ea",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

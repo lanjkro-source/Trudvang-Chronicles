@@ -1,0 +1,246 @@
+{
+  "name": "Firdtursir",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
+  "items": [
+    {
+      "_id": "uWTZ84v1w2x3y4z5",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.uWTZ84v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (two-handed club)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "4d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -2,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "XGJs0x2x3y4z5A6B",
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.XGJs0x2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "_id": "BlV2voQlRmSnToUp",
+      "name": "Grip",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BlV2voQlRmSnToUp",
+        "summary": "After a successful unarmed attack, grips without further CP; crush damage depends on size, or a throw deals 1d10 (OR 10) per 3 m fallen.",
+        "description": "<p>After a successful unarmed attack, a giant can attempt to grip a victim of Size 1/2 to 3 without spending additional CP. Make a skill roll whose SV depends on the victim's size. The victim can avoid the grip with Agility, preferably the Evade specialty.</p><p>Each round the giant can crush or throw the victim. Crushing damage depends on the victim's size. A throw deals 1d10 (OR 10) damage for every 3 meters fallen; use the actual fall height. A firdtursir is usually 20-22 m tall, giving 6d10-7d10 (OR 10); a hrimtursir 14-15 m, giving 4d10-5d10 (OR 10); a muspeljotun 25-27 m, giving 8d10-9d10 (OR 10). A vidrjotun is also 25-27 m tall, but its lower body is often half buried: the GM determines the actual height and falling damage.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.BlV2voQlRmSnToUp"
+    },
+    {
+      "_id": "uM9vugLgMhNiOjPk",
+      "name": "Stone Throw",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "uM9vugLgMhNiOjPk",
+        "summary": "The giant tears out and throws enormous rocks at enemies.",
+        "description": "<p>With the help of its amazing strength, the firdtursir can rip great blocks of stone from the mountainside and throw them to crush its enemies. The blocks are so large and heavy that it is not possible to move them after they have been firmly placed on the ground. All over Trudvang where firdtursirs have passed through, one can find these blocks, commonly known as a “giant’s throw.” A thrown block landing on a player character would surely have only one outcome, and as a game master, you should use this ability mostly to frighten the characters and perhaps lay waste to buildings and such.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.uM9vugLgMhNiOjPk"
+    },
+    {
+      "_id": "Xouc0rUpVqWrXsYt",
+      "name": "Belly of Gold",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Xouc0rUpVqWrXsYt",
+        "summary": "The firdtursir’s belly contains a unique gold making light, sharp weapons: +1 PV / +10 BV.",
+        "description": "<p>The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1PV/10BV).</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.Xouc0rUpVqWrXsYt"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "AQLKcKdJeKfLgMhN",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "psyche": 2,
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 3,
+        "kind": "discipline"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Tvei klubb (two-handed club)",
+          "value": 15
+        },
+        {
+          "attack": "Unarmed",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 347,
+        "max": 347
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 48
+    },
+    "description": "The firdtursir is a colossal giant usually twenty to twenty-two meters tall. Born from stone, its massive body seems to merge with the mountains as it sleeps, becoming part of nature. Its powerful frame lets it tear great rocks from mountainsides. Its belly truly holds gold, of a special kind that becomes harder and lighter when refined and worked. Adapted to the mountains, it withstands cold almost as well as a hrimtursir. Sleeping, it blends into the rock of slopes and cliffs.",
+    "details": {
+      "creatureType": "Jotuns and thurses",
+      "type": "humanoid",
+      "size": "12",
+      "age": "400, max 800",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 313,
+      "bodyMax": 382,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "12 m",
+          "max": "48 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Stone colossus with a golden belly that merges with the mountain.",
+      "environment": "Jarngand mountain slopes and cliffs, in gigantic stone halls",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 130
+      }
+    }
+  },
+  "_id": "AQLKcKdJeKfLgMhN",
+  "_key": "!actors!AQLKcKdJeKfLgMhN",
+  "folder": "f5hlljKfLgMhNiOj"
+}

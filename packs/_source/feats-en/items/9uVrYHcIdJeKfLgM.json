@@ -1,0 +1,19 @@
+{
+  "_id": "9uVrYHcIdJeKfLgM",
+  "name": "Catch",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "9uVrYHcIdJeKfLgM",
+    "summary": "After a bite, holds in its jaws at SV 10 opposed by Strength; rolls each round to maintain it and deals 1d10 (OR 9-10) damage/round.",
+    "description": "<p>After a successful Bite attack a lindwurm can try to catch a victim with its mouth. If the lindwurm is successful, it can try to keep the victim in its jaws. By succeeding on a roll with the Catch ability (skill value 10), the creature keeps the victim in its mouth (if the victim has exceptional Strength, this is used as a negative modifier on the skill value). If the lindwurm succeeds in catching its prey, it usually slithers back to its home.</p><p>The lindwurm must succeed on a new Catch skill roll in each new action round in order to maintain its grip on the victim. Each round in which the lindwurm keeps the victim in its mouth, the victim takes 1d10 (OR 9-10) points of damage.</p><p>The game master determines whether the lindwurm loses its grip if it is attacked or damaged by an enemy. For example, a situation roll with a situation value of 15 can be rolled each time the wurm takes more than 15 points of damage to see if it loses its grip. For each damage point above 15, the situation value is lowered by -1. Damage of 20 therefore translates into a situation roll with a situation value of 10 (15 - 5).</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 118
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!9uVrYHcIdJeKfLgM",
+  "folder": null
+}

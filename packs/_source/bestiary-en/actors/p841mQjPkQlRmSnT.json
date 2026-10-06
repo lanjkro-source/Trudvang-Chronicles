@@ -1,0 +1,119 @@
+{
+  "name": "Mule/Donkey",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg",
+  "items": [
+    {
+      "_id": "CND8c6x3y4z5A6B7",
+      "name": "Kick",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!p841mQjPkQlRmSnT.CND8c6x3y4z5A6B7",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "p841mQjPkQlRmSnT",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Kick",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 54,
+        "max": 54
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "This sturdy equine has a compact body, prominent spine, and straight hard back. Its coarse short gray, brown, or reddish coat is lighter around muzzle and belly. Its long head bears very large mobile ears, gentle eyes, and a narrow tough-mouthed muzzle. Fine but surprisingly strong legs end in narrow very durable hooves. A thin tail with a dark tuft and a short upright mane complete its frugal appearance.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "2",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 54,
+      "bodyMax": 54,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Frugal, stubborn, and long-eared.",
+      "environment": "Mountain trails, stony passes, and isolated Trudvang farms; a caravan pack animal.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "p841mQjPkQlRmSnT",
+  "_key": "!actors!p841mQjPkQlRmSnT",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

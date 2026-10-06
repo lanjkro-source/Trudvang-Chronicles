@@ -1,0 +1,19 @@
+{
+  "_id": "Xouc0rUpVqWrXsYt",
+  "name": "Belly of Gold",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Xouc0rUpVqWrXsYt",
+    "summary": "The firdtursir’s belly contains a unique gold making light, sharp weapons: +1 PV / +10 BV.",
+    "description": "<p>The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1PV/10BV).</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Xouc0rUpVqWrXsYt",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "ay6BwhLgMhNiOjPk",
+  "name": "Hrim Breath",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "ay6BwhLgMhNiOjPk",
+    "summary": "Freezes everything it hits (SV 13, no CP); deals breath damage and requires situation value 7 (Psyche), causing frostbite (-3 for 1d10 rounds) or total stiffness.",
+    "description": "<p>Like other dragons, the hrimwurm has a breath weapon. This one is called Hrim breath, and it turns everything in its path to ice. To perform a Breath Weapon no Combat Points are spent and a SV13 roll must be made. A person that is exposed to the hrim breath suffers the damage dealt by the breath, and must also make a situation roll with a situation value of 7 (Psyche modifiers apply).</p><p>On a success, the victim gets frostbite and has a modifier of -3 on everything they do for 1d10 action rounds.</p><p>On a failure, the victim is chilled so thoroughly that they cannot bear to do anything for 1d10 (OR 7-10) action rounds. The victim becomes so stiff and unable to move that he can only hope to curl up and hold himself while trembling from the cold.</p><p>If a victim who fails the situation roll is exposed to another hrim breath and fails that situation roll as well, they fall into a hrim sleep for 1d10 (OR 7-10) hours. A victim wearing a full outfit made from the fur of a mastomant takes only half the damage, and a modifier of +5 is added to the situation roll, which means that the roll equates to 12 instead of 7.</p><p>The dragon can use its hrim breath up to three times per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The hrimwurm’s profile specifies 2d10 (OR 8-10) damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!ay6BwhLgMhNiOjPk",
+  "folder": null
+}

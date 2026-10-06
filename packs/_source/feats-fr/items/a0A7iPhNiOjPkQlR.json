@@ -1,0 +1,19 @@
+{
+  "_id": "a0A7iPhNiOjPkQlR",
+  "name": "Contrôle des tempêtes",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "a0A7iPhNiOjPkQlR",
+    "summary": "L'yggwurm maîtrise les vents et les tempêtes.",
+    "description": "<p>Le dragon peut lever une tempête soudaine qui tourbillonne et emporte tout ce qui pèse moins de 75 kilogrammes dans un rayon de 50 mètres autour du dragon. C’est également cette tempête, bien que dans une version moins intense, que le dragon utilise pour soutenir ses ailes lors des très rares moments où il doit battre des ailes pour gagner en vitesse. Pour résister à la tempête, une créature exposée à sa violence doit effectuer un test de situation (modifié par la moyenne des modificateurs de Force et de Dextérité) en se basant sur son poids, comme indiqué dans la table ci-contre. Celle-ci indique également la distance sur laquelle les créatures sont emportées en cas d’échec au test. Si une victime est projetée contre un mur, elle subit les mêmes dégâts que si elle chutait d’une hauteur équivalente.</p><p>Si une créature projetée à terre se trouve toujours à l’intérieur du rayon d’action de la tempête, elle peut se relever mais doit effectuer un nouveau test de situation pour réussir à se déplacer à l’intérieur de la zone sans être de nouveau emportée. Les victimes qui ne sont pas emportées peuvent agir normalement à l’intérieur de la zone affectée mais elles appliquent un modificateur négatif sur toutes leurs actions, comme indiqué dans la table.</p><table><thead><tr><th>Poids de la victime</th><th>VS</th><th>Emportée sur</th><th>Modificateur sur les actions</th></tr></thead><tbody><tr><td>3 fois le poids affecté</td><td>18</td><td>Aucune distance</td><td>Aucun</td></tr><tr><td>2 fois le poids affecté</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1,5 fois le poids affecté</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Poids affecté (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Moitié du poids affecté</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>Un tiers du poids affecté</td><td>Aucun test</td><td>2d10 m</td><td>-10</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 127
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!a0A7iPhNiOjPkQlR",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "F1bQ4eGbHcIdJeKf",
+  "name": "Poudre de fée",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "F1bQ4eGbHcIdJeKf",
+    "summary": "Une dose donne +1d3+1 à toutes les VC pendant 1d5 heures ; sept doses permettent un vœu jugé moral par le MJ.",
+    "description": "<p>Les fées portent toujours sur elles une petite bourse contenant de la poussière de fée. Elles peuvent la donner à une personne qui a grandement aidé la forêt ou dont la personnalité et les actions sont aussi nobles que les leurs. Elles offriront jusqu’à deux bourses aux individus véritablement méritants.</p><p>Une bourse de poussière contient 1d3+1 doses. Une personne qui jette cette poussière en l’air autour d’elle augmente de 1d3+1 la valeur de compétence de toutes ses actions pendant 1d5 heures. Si quelqu’un parvient à rassembler sept doses de poussière de fée et les jette toutes en l’air d’un coup, il peut faire un vœu. Si le vœu est de bonne moralité (du point de vue du maître de jeu), il sera exaucé. Le personnage ne peut faire qu’un seul vœu, et si le maître de jeu estime que sa moralité n’est pas appropriée, la poudre féerique sera gâchée sans produire d’effet.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 73
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!F1bQ4eGbHcIdJeKf",
+  "folder": null
+}

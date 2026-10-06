@@ -1,0 +1,19 @@
+{
+  "_id": "gwfvoJdJeKfLgMhN",
+  "name": "Bloodsucker",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gwfvoJdJeKfLgMhN",
+    "summary": "On a sleeping victim, 1d3 damage then 1d6 per round for four rounds; waking possible at situation value 8 (Perception).",
+    "description": "<p>A night ulm can approach a sleeping victim and try to suck the victim’s blood. This ability is used outside of combat.</p><p>A night ulm will suck blood over 5 action rounds. In the first round, the victim will take 1d3 points of damage from the bite. During the next 4 rounds, the victim will take 1d6 points of damage per round due to loss of blood. In each action round, there is a possibility that the victim will awaken and discover the night ulm by succeeding on a situation roll with a situation value of 8 (Perception modifiers apply). If the victim discovers the night ulm, it will instantly flee. A night ulm will fight only if it is forced into a corner. Then it will use its bite and claws.</p><p>Sometimes several night ulms suck the blood from the same creature. If the victim does not awaken during the first 5 action rounds that are described above, the victim has -2 on the situation roll that follows for the next bloodsucker.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 23
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gwfvoJdJeKfLgMhN",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "EVhUocGbHcIdJeKf",
+  "name": "Ailé",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EVhUocGbHcIdJeKf",
+    "summary": "Le démon est doté d'ailes qui lui permettent de voler.",
+    "description": "<p>Le démon est doté d’ailes qui lui permettent de voler (c’est au maître de jeu de décider de la distance qu’il peut parcourir de cette façon).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 39
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EVhUocGbHcIdJeKf",
+  "folder": null
+}

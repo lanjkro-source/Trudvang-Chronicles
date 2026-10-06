@@ -1,0 +1,2704 @@
+{
+  "name": "Revenant des tumulus",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
+  "items": [
+    {
+      "_id": "xkqFHWqWrXsYtZu0",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.xkqFHWqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Stakk swerd (épée d’armes)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 1.2,
+        "value": 12,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "45fRzKeKfLgMhNiO",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.45fRzKeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "name": "Bouclier moyen en bois",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier équilibré permettant deux actions d'arme par tour. En cas de parade réussie, les dégâts s'appliquent au bouclier.",
+        "source": "Guide du maître, p. 76",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "passiveProtection": 4,
+        "weaponActions": 2,
+        "initiativeModifier": -2,
+        "weight": 4,
+        "value": 2,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "lE8WjrVqWrXsYtZu",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.lE8WjrVqWrXsYtZu",
+      "effects": []
+    },
+    {
+      "name": "cotte de mailles",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+      "system": {
+        "description": "Des milliers d'anneaux métalliques entrelacés portés sur un rembourrage. Lourde mais comparativement souple.",
+        "source": "Guide du maître, p. 77",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "heft": 5,
+        "movementModifier": -2,
+        "initiativeModifier": -2,
+        "weight": 21,
+        "value": 70,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "e8ziJuXsYtZu0v1w",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.e8ziJuXsYtZu0v1w",
+      "effects": []
+    },
+    {
+      "_id": "HngWDToUpVqWrXsY",
+      "name": "Hurlement",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "HngWDToUpVqWrXsY",
+        "summary": "Une fois par jour, le revenant inflige 2d10 (JO 9-10) peur à quiconque entend son hurlement.",
+        "description": "<p>Une fois par jour, un revenant des tumulus peut pousser un effroyable hurlement qui terrorise quiconque l’entend. La victime accumule 2d10 (JO 9-10) points de peur.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 59
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.HngWDToUpVqWrXsY"
+    },
+    {
+      "_id": "D0KHL7y4z5A6B7C8",
+      "name": "Levée de brouillard",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "D0KHL7y4z5A6B7C8",
+        "summary": "Brouillard de 100 à 10 000 m de rayon ; VS 10 (Psychisme) pour ne pas se diriger en somnolant vers le revenant.",
+        "description": "<p>Le revenant des tumulus maîtrise un pouvoir spécial qui lui permet de créer de grandes nappes de brouillard. Ce brouillard épais persiste dans tous les endroits visités par le revenant car ce pouvoir de nature passive peut parfois se déclencher sans même que le revenant en ait conscience. Le brouillard est épais, froid et parfois humide, et quiconque se trouve à l’intérieur doit immédiatement effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique). Si le test est raté, la victime tombe dans une sorte de sommeil éveillé et a à peine conscience de ce qu’elle fait. Elle se rendra ensuite inexorablement vers le centre de la zone où se trouve le plus souvent le site funéraire du revenant des tumulus. Une victime qui subit des dégâts sortira immédiatement de sa somnolence créée par le brouillard. Le brouillard peut couvrir une zone d’un rayon de 100 à 10 000 mètres, en fonction de la puissance du revenant des tumulus et de l’appréciation du MJ. Le revenant des tumulus peut dissiper le brouillard dès qu’il le souhaite, auquel cas il disparaît complètement en quelques minutes.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 59
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.D0KHL7y4z5A6B7C8"
+    },
+    {
+      "_id": "KD0m2dHcIdJeKfLg",
+      "name": "Morkvitner (réserve de vitner +10)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "KD0m2dHcIdJeKfLg",
+        "summary": "Le revenant utilise le morkvitner ; tablettes, compétence et réserve sont déterminées par le MJ (+10 dans le profil proposé).",
+        "description": "<p>Un revenant des tumulus a accès au morkvitner et sait manipuler son pouvoir. Le nombre de Tablettes de vitner, la compétence Modelage du vitner et la Réserve de vitner sont différents pour chaque revenant. Ces caractéristiques sont toutes laissées à l’appréciation du MJ.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 59
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.KD0m2dHcIdJeKfLg"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Tenace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+        "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 40
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.yCooPeIdJeKfLgMh"
+    },
+    {
+      "name": "Maîtrise des flammes",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft",
+        "description": "Le vitner que tisse L’enchanteur augmente, réduit ou stabilise le flux du vitner dans son environnement et les objets qui l’entourent. En augmentant le flux de manière explosive, l’enchanteur peut réchauffer un objet au point de provoquer sa combustion soudaine. Si l’enchanteur se montre un peu plus précautionneux, il peut augmenter régulièrement la température d’un lieu jusqu’à atteindre une chaleur agréable et réconfortante. À l’inverse, en interrompant le flux du vitner, l’enchanteur peut étouffer les flammes ou faire chuter brutalement les températures. Il peut également conférer à un sujet une protection contre la chaleur et le feu, en immobilisant complètement le vitner en une couche protectrice que l’énergie brûlante et turbulente de la flamme est incapable d’affecter.",
+        "summary": "Permet de produire, maîtriser ou repousser le feu et la chaleur.",
+        "swedishName": "Loganojd",
+        "negation": "Quand un enchanteur crée des flammes ou réchauffe une zone, il provoque un important changement dans l’intensité du vitner. Cet afflux de vitner provient d’un autre endroit des environs où la température chute brutalement en conséquence. Du givre peut apparaître sur les buissons et les arbres, mais également sur les créatures, qui sentent leur température corporelle et celle de leur environnement chuter de manière inexplicable. L’eau se change en glace et la nourriture chaude refroidit instantanément. Ou bien, si l’enchanteur choisit de réduire la chaleur, cette dernière doit avoir un endroit où aller. Si un enchanteur désire contrôler le feu, l’inverse se produit ailleurs : un feu brûlant calmement dans une cheminée bondit soudainement hors de l’âtre et se répand au risque de provoquer de sérieux dégâts. Les chandelles et torches brûlent si intensément qu’elles pourraient mettre le feu aux objets.",
+        "affinity": {
+          "hvitavitner": 1,
+          "vaagrivitner": -1,
+          "morkvitner": -1
+        },
+        "source": "Livre des règles, p. 166",
+        "level": 3,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "Gp1uJ3v1w2x3y4z5",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.Gp1uJ3v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Ébullition",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:heat-water:0",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:heat-water:0",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "En touchant de l’eau, l’enchanteur peut en porter 5 litres à ébullition. L’eau bout pendant 5 minutes, après quoi elle refroidit normalement. Ce sort ne permet toutefois pas de créer d’eau supplémentaire, ce qui signifie que si l’enchanteur ne dispose que de 2 litres d’eau, il n’obtiendra pas davantage d’eau bouillante. L’enchanteur ne peut pas déplacer l’eau bouillante à travers une masse d’eau plus importante. Ce sort ne peut pas blesser directement des êtres vivants, mais l’eau bouillante qu’il génère le peut : elle inflige 1d6 points de dégâts pour chaque tour de jeu qu’une personne ou une créature passe en contact avec elle. Les armures métalliques ne confèrent aucune protection, puisqu’elles conduisent la chaleur. D’autres types d’armures apportent une protection pendant un nombre de tours égal à leur valeur de protection. Une personne immergée totalement ou en partie peut échapper aux dégâts en sortant de l’eau bouillante.",
+        "summary": "Porte rapidement une masse d’eau à ébullition pour brûler, cuisiner ou créer un danger.",
+        "swedishName": "Vannhetja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:heat-water:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la quantité d’eau portée à ébullition de : 1 litre"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la quantité d’eau portée à ébullition de : 10 litres"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:4",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la quantité d’eau portée à ébullition de : 100 litres"
+          }
+        ],
+        "source": "Livre des règles, p. 167",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "teHsqJaGbHcIdJeK",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.teHsqJaGbHcIdJeK",
+      "effects": []
+    },
+    {
+      "name": "Flammèche",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:spark:1",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:spark:1",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "L’enchanteur fait jaillir une petite flamme dans sa main, d’une intensité égale à celle d’une grosse bougie. Cette flamme lui permet d’embraser les matériaux inflammables, comme toute flamme normale, mais elle ne blesse pas l’enchanteur. À tout instant, l’enchanteur peut choisir d’éteindre cette flamme magique.",
+        "summary": "Fait apparaître une flamme inoffensive pour l’enchanteur, capable d’éclairer ou d’allumer un combustible.",
+        "swedishName": "Gnistlogir",
+        "duration": "1 minute",
+        "range": "personnelle",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:spark:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:3",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "Augmente l’intensité de la flamme jusqu’à celle d’une torche (l’enchanteur peut faire varier l’intensité de la flamme comme bon lui semble pendant la durée du sort)"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:4",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "L’enchanteur peut se séparer de la flamme afin qu’elle brûle à l’endroit de son choix comme une bougie ou une torche, au bout d’un bâton, sur une pierre ou tout autre objet (l’objet en question ne s’enflammera pas)"
+          }
+        ],
+        "source": "Livre des règles, p. 167",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "5aaMOmPkQlRmSnTo",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.5aaMOmPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Main brûlante",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:burning-hand:2",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:burning-hand:2",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "Le vitner réchauffe l’une des mains de l’enchanteur au point qu’elle se met à luire et que son simple contact provoque 1d10 points de dégâts (contre lesquels l’enchanteur est immunisé). En combat, l’enchanteur doit réussir une attaque pour pouvoir toucher un ennemi. Les dégâts causés par la Main brûlante viennent s’ajouter aux dégâts normaux infligés par le coup de poing en cas d’attaque réussie (1d5). Pour éviter l’attaque de l’enchanteur, la cible utilise les mêmes règles que pour un combat classique, ce qui signifie qu’elle peut tenter de parer ou d’esquiver le coup. En plus des dégâts directs qu’elle provoque, la Main brûlante a une petite chance d’embraser les objets inflammables qu’elle touche, à la discrétion du maître de jeu. Les armures absorbent les dégâts selon les règles habituelles, mais elles peuvent prendre feu si elles se composent de matériaux inflammables. L’enchanteur ne peut utiliser aucune arme au cours du tour où il évoque ce sort.",
+        "summary": "Projette une flamme depuis la main pour infliger des dégâts de feu à une cible.",
+        "swedishName": "Loghönd",
+        "duration": "4 tours de jeu",
+        "range": "personnelle",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:burning-hand:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "La deuxième main de l’enchanteur s’embrase (et bénéficie de la version de base du sort)"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Livre des règles, p. 168",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "2qZ8N4v1w2x3y4z5",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.2qZ8N4v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Éruption de flammes",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-burst:3",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-burst:3",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "Ce sort fait jaillir une flamme à 10 mètres ou moins de l’enchanteur. Ce feu prend la forme d’un cylindre d’environ 1 mètre de diamètre. À l’intérieur de ce cylindre, ce n’est pas seulement le feu qui inflige des dégâts, mais aussi l’air chauffé à plusieurs centaines de degrés en un clin d’œil. Ensemble, le feu et l’air infligent 1d10 points de dégâts à toute personne qui se trouve dans la zone affectée. Les armures normales n’offrent aucune protection contre cette chaleur incroyablement intense, mais les armures magiques continuent de fonctionner. Les flammes disparaissent aussi vite qu’elles sont apparues si la durée du sort n’est pas prolongée par le biais de niveaux de puissance. Les objets inflammables ne risquent donc de s’embraser que pendant l’éruption initiale. Si une victime potentielle possède la spécialité Esquive, elle peut tenter de bondir hors de portée et éviter ainsi les dégâts, pour peu qu’elle n’ait pas encore agi au cours de ce tour de jeu. Cette tentative subit un malus de -1 à la valeur de compétence pour chaque point de différence entre l’initiative du personnage et le rang d’initiative actuel. En choisissant de prolonger la durée de ce sort, l’enchanteur acquiert également la possibilité de déplacer à chaque tour de jeu l’éruption de flammes vers un nouvel endroit à portée.",
+        "summary": "Fait jaillir une explosion de flammes qui brûle toutes les créatures dans la zone.",
+        "swedishName": "Logild",
+        "duration": "",
+        "range": "10 mètres",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-burst:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente le diamètre de l’éruption de flammes de : 1 mètre"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu, de sorte que l’éruption de flammes continue de brûler au tour suivant"
+          }
+        ],
+        "source": "Livre des règles, p. 168",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "sseR1oToUpVqWrXs",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.sseR1oToUpVqWrXs",
+      "effects": []
+    },
+    {
+      "name": "Protection contre le feu",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:protection-from-fire:4",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:protection-from-fire:4",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "Ce sort génère une couche protectrice de vitner autour de l’enchanteur ou de la créature ciblée. Ce vitner protège le bénéficiaire du sort et tout son équipement contre les effets du feu. Cela dit, la protection ne fonctionne que contre les flammes normales : elle n’a aucun effet contre le feu des dragons ou toute autre flamme magique.",
+        "summary": "Protège une créature et son équipement contre les flammes et la chaleur.",
+        "swedishName": "Muspelskjold",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 10 minutes"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affecte une entité supplémentaire (qui bénéficie de la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 168",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "G2xeh0u0v1w2x3y4",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.G2xeh0u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Contrôle des flammes",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-control:5",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-control:5",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "L’enchanteur peut contrôler une flamme existante en privant le feu d’oxygène, ou au contraire en lui en procurant, ce qui lui permet de la diriger vers des zones spécifiques. Par exemple, l’enchanteur peut ouvrir un passage exempt de flammes au beau milieu d’un incendie, pousser un feu à se répandre et à atteindre des zones jusqu’alors épargnées, ou même étouffer complètement une fournaise. La zone de flammes que l’enchanteur peut contrôler peut être aussi grande qu’une petite pièce.",
+        "summary": "Dirige, attise ou étouffe une flamme existante.",
+        "swedishName": "Loganrauda",
+        "duration": "5 minutes",
+        "range": "10 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-control:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 10 minutes"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 10 mètres"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:3",
+            "cost": 9,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 mètres"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Permet de contrôler une zone aussi grande que : une halle"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:5",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Permet de contrôler une zone aussi grande que : une grande maison longue"
+          }
+        ],
+        "source": "Livre des règles, p. 169",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "xUD5kXpVqWrXsYtZ",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.xUD5kXpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Chaleur",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:warmth:6",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:warmth:6",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "L’enchanteur provoque une augmentation immédiate de la température de 10°C maximum dans une sphère de 3 mètres de rayon autour du point qu’il désigne en évoquant ce sort. Selon l’endroit où le sort est jeté, la durée peut varier. Par exemple, si on l’évoque dans une pièce fermée et relativement bien isolée, la durée est doublée, tandis qu’au beau milieu d’une plaine venteuse la durée de ce sort sera réduite de moitié. Un enchanteur qui utilise ce sort pour générer des températures extrêmes court le risque de nuire aux créatures et aux objets qui se trouvent dans la zone affectée. <table><thead><tr><th colspan=\"2\">TEMPÉRATURE ET DÉGÂTS</th></tr><tr><th>Température</th><th>Dégâts</th></tr></thead><tbody><tr><td>50°C</td><td>1d6 + 1 PS par jour</td></tr><tr><td>60°C</td><td>1 PS par heure</td></tr><tr><td>70°C</td><td>1d6 + 1 PS par heure</td></tr><tr><td>80°C</td><td>1 PS par minute</td></tr><tr><td>90°C</td><td>1 PS par tour de jeu</td></tr><tr><td>100°C et plus</td><td>1d6 PS par tour de jeu</td></tr></tbody></table>",
+        "summary": "Réchauffe une zone ou un objet et peut brûler les créatures exposées.",
+        "swedishName": "Vjerma",
+        "duration": "5 heures",
+        "range": "3 mètres",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:warmth:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente le rayon de la sphère d’effet de : 1 mètre"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente le rayon de la sphère d’effet de : 10 mètres"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la température de : +10° C"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Attache le sort à un objet, ce qui permet de déplacer le sort en même temps que l’objet qui est son point d’origine"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:6",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Change le type de sort en persistant"
+          }
+        ],
+        "source": "Livre des règles, p. 168",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "SzbcryZu0v1w2x3y",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.SzbcryZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Mer de flammes",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:sea-of-fire:7",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:sea-of-fire:7",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Maîtrise des flammes",
+        "description": "L’enchanteur désigne une zone située à portée, qui est soudain envahie par les flammes. Le feu submerge une zone circulaire de 2 mètres de rayon, et tous ceux qui s’y trouvent subissent 1d10 points de dégâts, contre lesquels les armures normales n’offrent aucune protection, à l’inverse des armures magiques. La mer de flammes disparaît aussi vite qu’elle est apparue si la durée du sort n’est pas prolongée. De ce fait, les objets inflammables ne risquent de s’embraser que pendant l’éruption initiale. Toutes les victimes qui se tiennent à l’intérieur de la zone ou à sa périphérie subissent des dégâts. Si une victime potentielle possède la spécialité Esquive, elle peut tenter de bondir hors de portée et éviter ainsi les dégâts, pour peu qu’elle n’ait pas encore agi au cours de ce tour de jeu. Cette tentative subit un malus de -1 à la valeur de compétence pour chaque point de différence entre l’initiative du personnage et le rang d’initiative actuel. Toute personne entreprenant une action à l’intérieur de la mer de flammes ou tentant d’attaquer une personne qui s’y trouve subit un malus de -5 à la VC en raison de la difficulté de voir à travers la fournaise.",
+        "summary": "Embrase une zone et rend les actions à l’intérieur dangereuses et difficiles.",
+        "swedishName": "Muspelhaf",
+        "duration": "",
+        "range": "20 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente le rayon de la mer de flammes de : 1 mètre"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu, de sorte que la mer de flammes continuer de brûler au tour suivant"
+          }
+        ],
+        "source": "Livre des règles, p. 169",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "0ixzDD7C8D9EaGbH",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.0ixzDD7C8D9EaGbH",
+      "effects": []
+    },
+    {
+      "name": "Pouvoir de la vision",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision",
+        "description": "L’enchanteur a appris à maîtriser la conscience astrale que possèdent tous les êtres vivants. Les objets aussi possèdent une forme de conscience astrale, mais elle est considérablement moins développée que celle d’un être vivant. En entrant en transe pendant le temps de tissage, l’enchanteur peut exécuter différents sorts liés au plan astral invisible. Les méthodes permettant de visiter le plan astral peuvent varier considérablement, étant donné que chacun possède sa propre façon de se concentrer. Certains enchanteurs fixent leur regard sur une flamme ou un lit de charbons ardents, d’autres utilisent un grand tronc, d’autres encore se focalisent sur le soleil ou la lune. Étant donné que tout ce qui est physique se reflète dans le plan astral, la personne enchantée est en mesure de voir la véritable apparence des choses. L’enchanteur peut voir le flux du vitner qui entoure toute chose, suivre les traces d’une créature aussi aisément que des chandelles dans l’obscurité, voir à une distance considérable, et connaître la véritable nature des choses.",
+        "summary": "Permet de suivre des traces et d’observer à distance ou au-delà des apparences.",
+        "swedishName": "Skönjakraftla",
+        "negation": "Chaque fois que l’enchanteur tisse une quelconque projection astrale, l’environnement immédiat peut être le théâtre d’images de l’au-delà. Des images brouillées d’objets étranges ou de créatures surnaturelles deviennent visibles pendant quelques instants dans le monde réel. Pour bien des gens, cela peut être une expérience terrifiante. C’est au maître de jeu de déterminer si une image se manifeste ou non, les choses bizarres qu’elle peut dévoiler, et les conséquences que cela peut avoir. La négation est assez directe : quand le vitner permet à une personne de voir les choses plus clairement, d’autres choses deviennent floues ou se brouillent. Les traces disparaissent et la vision des gens se trouble, et ce qui devrait normalement être évident devient difficile à remarquer.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 2
+        },
+        "source": "Livre des règles, p. 180",
+        "level": 3,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "kx7J04z5A6B7C8D9",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.kx7J04z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Pistage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:tracking:0",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:tracking:0",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "Ce sort permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la personne enchantée peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de vitner lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. L’enchanteur peut également suivre les traces d’une créature ayant bénéficié du sort Sans trace. Pour pouvoir utiliser le vitner en vue de pister une créature, l’enchanteur doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le tissage du sort réussi : l’enchanteur ne peut donc pas répéter le même sort à moins de se procurer un autre échantillon de la créature visée.",
+        "summary": "Révèle et aide à suivre les traces laissées par une créature.",
+        "swedishName": "Sporskönja",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:tracking:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-vision:tracking:0:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 12 heures"
+          },
+          {
+            "id": "vitner-power-of-vision:tracking:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+          }
+        ],
+        "source": "Livre des règles, p. 181",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "QUMULNiOjPkQlRmS",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.QUMULNiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Examen d’objet",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:scanning:1",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:scanning:1",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "L’enchanteur touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. L’enchanteur perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais il ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que l’enchanteur passe concentré sur ce sort, il peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que l’enchanteur perçoit ou apprend précisément.",
+        "summary": "Révèle l’histoire et les souvenirs marquants d’un objet touché.",
+        "swedishName": "Tingspyrja",
+        "duration": "9 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:scanning:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la période sur laquelle l’enchanteur peut remonter dans l’histoire de l’objet de : 1 année"
+          },
+          {
+            "id": "vitner-power-of-vision:scanning:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 3 tours de jeu"
+          }
+        ],
+        "source": "Livre des règles, p. 182",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "Xe6H32v1w2x3y4z5",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.Xe6H32v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Vision lointaine",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:far-sight:2",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:far-sight:2",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "L’enchanteur se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que l’enchanteur regarde à travers ce tunnel, le vitner fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La personne enchantée peut se concentrer sur n’importe quel endroit à portée du sort avec la même précision. Le sort Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+        "summary": "Améliore la vision à grande distance et facilite les attaques lointaines.",
+        "swedishName": "Fjarrskönja",
+        "duration": "2 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:far-sight:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la distance de vision de : 100 mètres"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la distance de vision de : 500 mètres"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:4",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la distance de vision de : 10 kilomètres"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:6",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Affecte une cible supplémentaire (qui profite des effets du sort de base)"
+          },
+          {
+            "id": "vitner-power-of-vision:far-sight:2:7",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Confère un bonus supplémentaire de : +1 à l’utilisation des armes à distance"
+          }
+        ],
+        "source": "Livre des règles, p. 182",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "u0ZNcHbHcIdJeKfL",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.u0ZNcHbHcIdJeKfL",
+      "effects": []
+    },
+    {
+      "name": "Vision parfaite",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:seeing:3",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:seeing:3",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "Ce sort permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du sort, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des sorts gênant la vision. Ce sort ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce sort peut également servir à annuler les effets des sorts qui gênent la vision (du moins pendant la durée du sort) comme par exemple le sort Vision/cécité.",
+        "summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+        "swedishName": "Edliauga",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:seeing:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-power-of-vision:seeing:3:3",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Affecte un autre être vivant (qui bénéficie des effets du sort de base)"
+          }
+        ],
+        "source": "Livre des règles, p. 182",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "3zQe6gKfLgMhNiOj",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.3zQe6gKfLgMhNiOj",
+      "effects": []
+    },
+    {
+      "name": "Espionnage",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:espionage:4",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:espionage:4",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "L’enchanteur peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du sort, l’enchanteur peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps de tissage de 5 tours de jeu, le sort devient soutenu tant que l’enchanteur est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que l’enchanteur a lancé ce sort sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du sort, l’enchanteur peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le sort était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de l’enchanteur.",
+        "summary": "Transforme un objet en point d’observation pour voir et entendre ce qui l’entoure à distance.",
+        "swedishName": "Hlustspyrja",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu/5 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:espionage:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-vision:espionage:4:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-power-of-vision:espionage:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 semaine"
+          }
+        ],
+        "source": "Livre des règles, p. 182",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "eSlt7y2x3y4z5A6B",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.eSlt7y2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "name": "Voyage astral",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:astral-voyage:5",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:astral-voyage:5",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "En quittant le plan matériel, l’enchanteur permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de l’enchanteur se déplace à la frontière entre Trudvang et Dimhall. Là, il peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la personne enchantée quitte son enveloppe charnelle, cette dernière entre en hibernation. L’enchanteur entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de l’enchanteur. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. L’enchanteur doit prendre soin de se rapprocher de son corps avant l’expiration du corps. S’il ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que l’enchanteur subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de vitner, et qui le plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au sort Vision véritable. Un autre enchanteur qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le sort Dissipation du vitner. Le personnage ainsi banni subit alors les mêmes effets que si le sort avait expiré.",
+        "summary": "Envoie l’esprit hors du corps pour explorer à distance sans subir les attaques physiques.",
+        "swedishName": "Dimvandr",
+        "duration": "5 minutes",
+        "range": "personnelle",
+        "weavingTime": "10 minutes",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:2",
+            "cost": 18,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-power-of-vision:astral-voyage:5:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la capacité de mouvement de : 1 kilomètre par minute"
+          }
+        ],
+        "source": "Livre des règles, p. 183",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "TmmgO2v1w2x3y4z5",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.TmmgO2v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Lecture du vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:read-vitner:6",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:read-vitner:6",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "Ce sort confère à l’enchanteur la faculté d’observer avec attention les motifs de vitner qui entourent une créature ou un objet et de discerner les éventuels sorts qui y ont été tissés. Les sorts qu’on peut ainsi observer ont été tissés en utilisant l’un des trois types de vitner (le hvitavitner, le vaagrivitner ou le morkvitner) ; si l’enchanteur qui tisse le sort Lecture du vitner utilise le même type de vitner, son observation en sera facilitée, ce qui se traduit par un bonus de +2 au test de situation associé à ce sort. Quand l’enchanteur commence à examiner une créature ou un objet, il observe d’abord le sort le moins évolué (celui dont le niveau est le plus faible). L’enchanteur doit ensuite réussir un test de situation pour découvrir les secrets de ce sort. Si le sujet observé est sous le coup de plusieurs sorts, l’enchanteur les découvre dans l’ordre de leur complexité. La table ci-dessous indique la valeur de situation en fonction de la complexité d’un sort. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Un test de situation réussi signifie que l’enchanteur est parvenu à identifier un sort tissé sur l’objet ou la créature, et il sait également comment activer cette magie dans les objets magiques et autres choses similaires. Si l’enchanteur ne parvient pas à discerner un sort, il ne peut pas non plus lire les suivants. Même en cas d’échec, l’enchanteur est conscient que le sujet est sous le coup d’un ou plusieurs sorts, sans pour autant savoir lesquels. Le sort Lecture du vitner peut également servir à découvrir si une créature possède une ou plusieurs aptitudes magiques, mais pas leur nature précise.",
+        "summary": "Révèle les traces de vitner et les sorts tissés autour d’une créature ou d’un objet.",
+        "swedishName": "Vitnaskönja",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "1 heure",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:read-vitner:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussir le test de situation de : 1 (l’enchanteur peut intégrer cet effet avant chaque nouveau test)"
+          },
+          {
+            "id": "vitner-power-of-vision:read-vitner:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          }
+        ],
+        "source": "Livre des règles, p. 182",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "UVfOw7A6B7C8D9Ea",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.UVfOw7A6B7C8D9Ea",
+      "effects": []
+    },
+    {
+      "name": "Vision véritable",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-power-of-vision:true-sight:7",
+          "tabletId": "vitner-power-of-vision"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-power-of-vision:true-sight:7",
+        "tabletId": "vitner-power-of-vision",
+        "tablet": "Pouvoir de la vision",
+        "description": "Ce sort permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de vitner illusoire qui entourent les êtres et les objets. Le bénéficiaire du sort est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce sort lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de sorts comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce sort, la portée effective de la Vision véritable est de 25 mètres. L’enchanteur peut également se servir de ce sort pour déterminer si un objet ou une créature ont été enchantés et si leur vitner a été manipulé autrement que par des illusions. Pour ce faire, il doit réussir un test de situation avec une valeur de situation qui dépend du sort tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, l’enchanteur n’a aucun moyen de deviner la véritable nature du sort découvert sans recourir également au sort Lecture du vitner. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+        "summary": "Permet de voir à travers les illusions, l’invisibilité et les camouflages magiques.",
+        "swedishName": "Sannskönja",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-power-of-vision:true-sight:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 10 minutes"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée effective de : 5 mètres"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la portée effective de : 25 mètres"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:6",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de découvrir si le sujet est sous le coup d’un sort de : +1"
+          },
+          {
+            "id": "vitner-power-of-vision:true-sight:7:7",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affecte un autre être vivant (qui bénéficie de la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 183",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "4TkbmE8D9EaGbHcI",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.4TkbmE8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "name": "Art du vitner",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft",
+        "description": "L’enchanteur a appris à utiliser la forme de vitner la plus pure, ce qui lui confère le pouvoir d’influencer le flux même du vitner et la façon dont il façonne tout ce qui l’entoure. L’enchanteur a appris à manipuler le vitner de deux façons : en l’injectant et en le dispersant. L’Art du vitner permet d’enchanter des objets et des êtres vivants, de créer un lien entre des personnages afin d’y faire circuler du vitner, de créer une poche de vitner capable de stocker des objets physiques, ou encore de créer un sceau physique sur un objet qui y lie un autre sort qui pourra être déclenché de diverses façons. L’enchanteur a également appris à contrôler le vitner de façon à dissiper d’autres sorts ou à améliorer la faculté d’un personnage enchanté à y résister. Il peut aussi se servir du vitner propre aux sorts ou négations afin de remonter jusqu’aux enchanteurs qui les ont tissés. Il apprend même à ériger une barrière contre le vitner, de sorte qu’il devient difficile, voire impossible de l’utiliser dans une certaine zone.",
+        "summary": "Permet de manipuler, protéger, dissiper ou canaliser directement le vitner.",
+        "swedishName": "Vitnakraftla",
+        "negation": "Les négations qui se produisent quand on tisse un sort provenant de cette Tablette restent l’exact opposé du sort conjuré. Quand une créature reçoit un enchantement bénéfique, une ou plusieurs autres créatures sont victimes de malchance pendant un certain temps. Quand un enchanteur crée un sceau, aucune négation ne se produit quand un sort y est associé, mais une négation extrêmement importante se produit quand ce sort est utilisé. La raison de cette négation amplifiée est que le vitner est formé et tissé pendant une période bien plus longue, durant laquelle la pression s’accumule tandis que le vitner tente de reprendre sa forme d’origine. Quand un enchanteur se protège contre une attaque de vitner, la négation qui se produit prend la forme de l’effet du sort bloqué, qui est tissé quelque part ailleurs dans le monde. L’effet n’est pas forcément aussi intense que l’original, étant donné qu’il peut se produire à un moindre degré à plusieurs endroits à la fois. Quand un enchanteur prend du vitner chez un être vivant et le place dans un objet, rien d’autre ne se produit, étant donné que le vol de vitner constitue déjà une négation. Quand l’enchanteur dissipe du vitner et lui rend sa forme d’origine, la négation qui s’ensuit peut se manifester sous la forme de différents petits sorts affectant divers endroits de Trudvang, tandis que le vitner se débat pour retrouver sa forme originelle. Si l’enchanteur utilise le vitner pour créer une poche, rien ne se produit jusqu’à ce qu’un objet y soit placé, auquel cas un objet similaire apparaît temporairement à un autre endroit. La négation d’un mur de vitner est bien moins évidente que les négations des autres sorts. Au lieu d’un phénomène flagrant, la négation rend les sorts plus faciles à tisser ou leurs cibles plus sensibles à leurs effets partout où la négation se produit.",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": 0,
+          "morkvitner": 2
+        },
+        "source": "Livre des règles, p. 152",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "5ZVrcvWrXsYtZu0v",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.5ZVrcvWrXsYtZu0v",
+      "effects": []
+    },
+    {
+      "name": "Canalisation",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:channeling:0",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:channeling:0",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "L’enchanteur peut profiter de l’aide d’autres personnes quand il tisse un sort. Le ou les assistants doivent être volontaires pour participer. S’il réussit ce sort, l’enchanteur reçoit 5 points de vitner de ses assistants. Étant donné que le vitner est la vie, chaque point de vitner ainsi absorbé inflige 1 point de dégâts à l’assistant qui l’a perdu. Si l’enchanteur s’est entouré de plusieurs assistants, le transfert de vitner et les dégâts qui s’ensuivent sont répartis équitablement. Les armures n’offrent aucune protection contre ce type de dégâts, mais les blessures guériront normalement. Un assistant ne peut pas offrir plus de points de vitner qu’il ne lui reste de points de santé. L’enchanteur peut se servir des points de vitner ainsi canalisés comme d’un bonus à usage unique à sa réserve de vitner. Si l’enchanteur n’utilise pas les points de vitner transférés avant l’expiration du sort, les points non utilisés disparaissent.",
+        "summary": "Transfère le vitner d’assistants volontaires vers l’enchanteur, au prix de leur vigueur.",
+        "swedishName": "Vitnasammel",
+        "duration": "1 minute",
+        "range": "contact",
+        "weavingTime": "15 minutes",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:channeling:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente le nombre de points de vitner transférés de : 1"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente le nombre de points de vitner transférés de : 10"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:3",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:channeling:0:5",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          }
+        ],
+        "source": "Livre des règles, p. 152",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "t0gvE8D9EaGbHcId",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.t0gvE8D9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Bourse de vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:vitner-pouch:1",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "L’enchanteur tisse le vitner de façon à créer une bourse astrale. Ce sac n’est pas visible dans le monde physique, et seul l’enchanteur et ceux qui comprennent le vitner sont capables de le percevoir. En outre, seuls ceux qui sont en mesure de voir la bourse peuvent la porter. Ce sac peut contenir tous les objets ou créatures dont le poids total n’excède pas 2 kg. Tout ce qu’on place dans la bourse ne représente aucun poids supplémentaire pour celui qui la porte. Une créature qui se retrouve piégée contre son gré dans la bourse peut se libérer en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). Si la durée du sort expire alors que la bourse contient encore des objets, ces derniers tombent tous à côté du personnage. Il faut 1 tour de jeu pour extraire un objet de la bourse.",
+        "summary": "Crée un sac astral invisible qui transporte son contenu sans en imposer le poids au porteur.",
+        "swedishName": "Vitnasakje",
+        "duration": "1 heure",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente le poids total que la bourse peut contenir de : 1 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente le poids total que la bourse peut contenir de : 10 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente le poids total que la bourse peut contenir de : 100 kg"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:4",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-vitner-craft:vitner-pouch:1:5",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 semaine"
+          }
+        ],
+        "source": "Livre des règles, p. 152",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "xdeIRHcIdJeKfLgM",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.xdeIRHcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "name": "Enchantement d’objet",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:enchant-object:2",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:enchant-object:2",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "L’enchanteur peut lancer ce sort sur l’objet de son choix situé à portée. L’objet se retrouve imprégné de vitner qui améliore ses propriétés. Le vitner ainsi tissé forme une barrière d’énergie bénéfique autour de l’objet, qui confère à son utilisateur un bonus de +2 à toutes les valeurs de compétence et de situation. Cet enchantement augmente également de +1 les dégâts des armes, de +1 la valeur de protection des armes et armures, et de +10 la valeur d’intégrité des objets.",
+        "summary": "Imprègne un objet d’énergie bénéfique pour améliorer les actions de son porteur, ses dégâts ou sa protection.",
+        "swedishName": "Kraftlatrolja eftnating",
+        "duration": "6 tours de jeu",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:3",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente le modificateur de VC associé à l’objet enchanté de : +1"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-object:2:6",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente les dégâts de l’arme de : +1, et la valeur d’intégrité de : +10"
+          }
+        ],
+        "source": "Livre des règles, p. 153",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "vqgJhTkQlRmSnToU",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.vqgJhTkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "Antimagie",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:anti-magic:3",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:anti-magic:3",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "Ce sort génère une pellicule de vitner protecteur autour de la cible, qu’il s’agisse d’un objet ou d’un être vivant. Cette pellicule protège la cible contre toutes les formes de magie. Pour empêcher un sort de pénétrer cette protection, l’enchanteur initial (celui qui maintient le sort Antimagie) doit réussir un test de situation avec une valeur de situation qui dépend du niveau du sort de l’agresseur, comme indiqué par la table ci-dessous. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Si le sort adverse profite de niveaux de puissance supplémentaires qui réduisent les chances de sa cible de réussir un test de situation, l’enchanteur qui tente de contrer ce sort subit le même malus. Si l’enchanteur réussit son test, le vitner est neutralisé et le sort est interrompu et n’a aucun effet.",
+        "summary": "Protège une créature ou un objet contre les sorts en les neutralisant avant qu’ils ne l’atteignent.",
+        "swedishName": "Motravitn",
+        "duration": "2 tours de jeu",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussir le test de situation de : +1"
+          },
+          {
+            "id": "vitner-vitner-craft:anti-magic:3:5",
+            "cost": 5,
+            "maxCount": 1,
+            "effect": "Fait passer le type du sort de soutenu à persistant"
+          }
+        ],
+        "source": "Livre des règles, p. 153",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "xkWdPF8D9EaGbHcI",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.xkWdPF8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "name": "Enchantement de créature",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:enchant-being:4",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:enchant-being:4",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "Ce sort tisse une couche de vitner bénéfique autour d’une cible située à portée. Cette énergie confère à la cible un bonus supplémentaire de +1 à toutes ses valeurs de compétence et de situation jusqu’à expiration du sort.",
+        "summary": "Confère à une créature un bonus temporaire à ses valeurs de compétence et de situation.",
+        "swedishName": "Kraftlatrolja skopjaten",
+        "duration": "4 tours de jeu",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affecte une cible supplémentaire (qui bénéficie des effets du sort de base)"
+          },
+          {
+            "id": "vitner-vitner-craft:enchant-being:4:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente le bonus conféré à la créature de : +1"
+          }
+        ],
+        "source": "Livre des règles, p. 153",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "Zwk6G8z5A6B7C8D9",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.Zwk6G8z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "Sceau",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:seal:5",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:seal:5",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "La magie de ce sort associe un autre sort au Sceau, ce qui permet de l’intégrer ensuite à un objet. L’enchanteur doit d’abord tisser le Sceau avant de tisser le sort qu’il désire y associer. Une fois qu’il y est parvenu, l’enchanteur relie ce sort à l’objet de son choix. Le sort se retrouve scellé dans l’objet et y reste jusqu’à ce qu’on l’active. Si le sceau est détruit par le biais du sort Dissipation du vitner, le sort lié est activé au lieu d’être dissipé – à moins que le sort lié ne soit dissipé en premier, avant le sceau. Ce sceau magique apparaît dès que l’enchanteur trace du bout des doigts le motif du sceau sur l’objet et choisit l’événement déclencheur qui brisera le sceau et libérera la magie qu’il contient. Le sort peut être déclenché lorsqu’une personne touche l’objet, ou bien lorsque l’objet change de propriétaire, ou encore si quelqu’un tente de dissiper le sceau. C’est à l’enchanteur de choisir les conditions précises, avec l’accord du maître de jeu. L’enchanteur peut également décider d’un délai, ce qui fait que le sort se déclenchera au bout de la durée choisie, plutôt qu’en fonction d’un événement déclencheur. Ce délai ne peut pas dépasser une année. La magie du sceau se déclenche dès que ses conditions d’activation sont remplies, et le sort libéré peut affecter une zone de 3 mètres de rayon autour du sceau. S’il le souhaite, l’enchanteur peut préciser un moyen de briser le sceau en dispersant le vitner qu’il contient sans activer le sort associé (ce dernier est tout de même perdu). Il peut s’agir par exemple d’appuyer au centre de l’objet à l’aide de trois doigts, ou de siffler une note ou une mélodie particulière. La vision normale ne permet pas de percevoir le sceau (à moins que l’enchanteur n’ait choisi de rendre le sceau visible). En revanche, certains sorts tels que Vision véritable ou Lecture du vitner permettent d’observer le sceau. Seuls les sorts de type persistant ou instantané peuvent être associés au sceau, et la version de base du sceau ne peut accueillir que des sorts du premier niveau. Le nombre maximum de sceaux chargés d’un sort qu’un enchanteur peut maintenir en même temps est égal à sa valeur maximale de réserve de vitner.",
+        "summary": "Enferme un sort dans un objet et le libère lorsque la condition choisie se produit.",
+        "swedishName": "Bindjakraftla",
+        "duration": "jusqu’à activation",
+        "range": "3 mètres",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:seal:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Ajoute une nouvelle condition de déclenchement"
+          },
+          {
+            "id": "vitner-vitner-craft:seal:5:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sceau de 5 mètres"
+          },
+          {
+            "id": "vitner-vitner-craft:seal:5:2",
+            "cost": 3,
+            "maxCount": 4,
+            "effect": "Augmente le niveau du sort qu’on peut lier au sceau de 1"
+          }
+        ],
+        "source": "Livre des règles, p. 154",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "kW0JwB4z5A6B7C8D",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.kW0JwB4z5A6B7C8D",
+      "effects": []
+    },
+    {
+      "name": "Dissipation du vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:dispel-vitner:6",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "Dissipation du vitner permet de neutraliser un sort qui a été tissé sur un objet ou une créature. Toutefois, ce sort ne peut neutraliser que les magies tissées pour une durée limitée, car le vitner tissé sous une forme permanente ne peut pas être dissipé (sauf précision contraire dans la description du sort). Le sort ciblé peut aussi bien utiliser le hvitavitner que le vaagrivitner ou le morkvitner. Si l’enchanteur qui tente de le dissiper utiliser le même type de vitner, il reçoit un bonus de +2 à son test de situation. Pour parvenir à dissiper un sort, l’enchanteur doit effectuer un test de situation. La valeur de situation dépend de la force du sort à neutraliser, comme indiqué par la table ci-après. En cas de réussite, le vitner du sort visé est neutralisé et dispersé. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table>",
+        "summary": "Met fin à un effet magique temporaire qui affecte une créature ou un objet.",
+        "swedishName": "Brotja vitner",
+        "duration": "",
+        "range": "5 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:dispel-vitner:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussir le test de situation de : +1"
+          },
+          {
+            "id": "vitner-vitner-craft:dispel-vitner:6:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          }
+        ],
+        "source": "Livre des règles, p. 153",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "s1GSKKbHcIdJeKfL",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.s1GSKKbHcIdJeKfL",
+      "effects": []
+    },
+    {
+      "name": "Piste du vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:trace-vitner:7",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:trace-vitner:7",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "L’enchanteur tisse le vitner de façon à révéler l’origine d’un sort ou d’une négation. L’effet du sort ou de la négation doit s’être manifesté à portée du sort Piste du vitner, et on ne peut remonter la piste que si l’effet est encore actif ou a été désactivé moins d’une heure auparavant. En cas de réussite, l’enchanteur découvre l’origine du sort, l’identité de celui qui l’a tissé, ainsi que l’endroit où il a été tissé. Si l’enchanteur remonte la piste d’une négation, il apprend quel sort en est à l’origine et où ce sort a pris effet. Pour remonter la piste d’un sort ou d’une négation, l’enchanteur doit réussir un test de situation, dont la valeur de situation dépend de la force du sort à pister, comme indiqué dans la table ci-dessous. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+        "summary": "Remonte la trace d’un sort ou d’une négation pour en révéler l’origine et son auteur.",
+        "swedishName": "Vitnaspor",
+        "duration": "",
+        "range": "10 mètres",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 journée"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente le temps qui a pu s’écouler depuis l’expiration du sort à pister de : 1 semaine"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 20 mètres"
+          },
+          {
+            "id": "vitner-vitner-craft:trace-vitner:7:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussir le test de situation de 1"
+          }
+        ],
+        "source": "Livre des règles, p. 154",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "HfGpw9D9EaGbHcId",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.HfGpw9D9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Mur de vitner",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+          "tabletId": "vitner-vitner-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-craft:wall-of-vitner:8",
+        "tabletId": "vitner-vitner-craft",
+        "tablet": "Art du vitner",
+        "description": "L’enchanteur forme un mur circulaire de vitner de 2 mètres de diamètre. Ce mur confère une protection contre tous les sorts qui tentent d’affecter quelque chose se trouvant de l’autre côté. Si un sort a pour centre un point situé à l’extérieur du mur mais dispose d’une aire d’effet qui franchit le mur, le sort doit passer outre les défenses du Mur de vitner pour pouvoir avoir le moindre effet. Pour que le mur de vitner accorde sa protection contre les sorts qui tentent de le traverser, l’enchanteur doit réussir un test de situation à chaque tentative. La valeur de situation dépend du niveau du sort adverse, comme indiqué par la table ci-dessous. Si le Mur de vitner parvient à protéger contre un sort, aucun des effets de ce dernier ne peut traverser le mur. <table><thead><tr><th colspan=\"2\">VALEUR DE SITUATION</th></tr><tr><th>Niveau du sort</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+        "summary": "Érige une barrière circulaire qui empêche les sorts de traverser d’un côté à l’autre.",
+        "swedishName": "Vitnahinner",
+        "duration": "5 tours de jeu",
+        "range": "10 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente les chances de réussir le test de situation de 1"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente le diamètre du mur de : 1 mètre"
+          },
+          {
+            "id": "vitner-vitner-craft:wall-of-vitner:8:6",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          }
+        ],
+        "source": "Livre des règles, p. 154",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "Bdk403u0v1w2x3y4",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.Bdk403u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Sorcellerie",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft",
+        "description": "L’enchanteur a appris l’art de la sorcellerie, dont on dit qu’elle est la fondation de toute magie, mais aussi qu’elle serait à l’origine du schisme entre la magie et les enchanteurs d’une part, et les dieux et la religion des Stormlander d’autre part. Grâce à cette Tablette de vitner, l’enchanteur a appris à maudire les objets et les êtres vivants, mais aussi à tourmenter les gens avec des maux illusoires, des fièvres ou des crises d’amnésie. L’enchanteur sait également déraciner les arbres massifs et autres gros objets, flétrir les récoltes et transformer les gens en arbres.",
+        "summary": "Permet de maudire, effrayer et transformer des êtres, objets ou végétaux.",
+        "swedishName": "Hagzkraftla",
+        "negation": "L’opposé de la sorcellerie est l’enchantement et la bénédiction. Chaque fois qu’un enchanteur maudit un objet ou une créature, un autre sujet se retrouve enchanté. Quand un enchanteur tisse un sort de mal imaginaire, quelqu’un affecté par une maladie ailleurs sur Trudvang profite d’une guérison miraculeuse. Quand une personne est touchée par la fièvre, une autre personne souffrant déjà de la fièvre recouvre la santé. Si un personnage voit ses souvenirs effacés par la sorcellerie, quelqu’un d’autre recouvre soudain la mémoire. La négation d’un arbre déraciné érigera souvent quelque chose ailleurs, une mauvaise récolte provoque une bonne récolte dans une autre région, et la négation d’une malédiction de l’arbre transforme ailleurs un arbre en une créature fantastique.",
+        "affinity": {
+          "hvitavitner": 2,
+          "vaagrivitner": 0,
+          "morkvitner": -1
+        },
+        "source": "Livre des règles, p. 184",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "v1RNuE6B7C8D9EaG",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.v1RNuE6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "name": "Déracinement",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:uprooted-tree:0",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:uprooted-tree:0",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Ce sort déracine un arbre et provoque son effondrement. L’enchanteur insuffle le vitner dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le sort a été tissé, le vitner commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du sort, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le vitner n’aura pas la force de le soulever. L’enchanteur, qui doit se concentrer constamment sur ce sort, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du sort pour quelque raison que ce soit, le vitner continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de l’enchanteur doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce sort et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce sort peut soulever ou renverser environ 100 kg.",
+        "summary": "Fait pousser et déracine un arbre pour créer un obstacle ou écraser ce qui se trouve dans sa chute.",
+        "swedishName": "Rotveltja",
+        "duration": "5 tours de jeu",
+        "range": "10 mètres",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "+0,5 mètre de circonférence et soulever ou pousser 30 kg de plus"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:2",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "+1,5 mètre de circonférence et soulever ou pousser 100 kg de plus"
+          },
+          {
+            "id": "vitner-witchcraft:uprooted-tree:0:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "+7,5 mètres de circonférence et soulever ou pousser 500 kg de plus"
+          }
+        ],
+        "source": "Livre des règles, p. 184",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "phZm0cHcIdJeKfLg",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.phZm0cHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Mal imaginaire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:phantom-plague:1",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:phantom-plague:1",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "L’enchanteur peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute. Ce sort ne fait apparaître que les symptômes de la maladie, et la victime ne fait qu’imaginer ressentir la fièvre, les frissons ou les douleurs. La santé véritable de la victime n’est en rien affectée, même si la victime est convaincue du contraire. Les symptômes sont si réalistes qu’il faut avoir de bonnes connaissances médicales (à travers la compétence Savoirfaire et la discipline Soins et remèdes) pour découvrir la vérité. La victime peut également découvrir le subterfuge en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). À chaque nouvelle journée que dure le sort, la victime a droit à un nouveau test de situation pour essayer de découvrir la vérité. Une personne souffrant d’un mal imaginaire subit un malus de -5 à tous les tests reposant sur les interactions sociales, car tous ses interlocuteurs voient les symptômes de la maladie.",
+        "summary": "Fait croire à une victime qu’elle souffre d’une maladie et lui en impose les symptômes apparents.",
+        "swedishName": "Skenplauga",
+        "duration": "3 jours",
+        "range": "contact",
+        "weavingTime": "1 tour de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "la valeur de situation de la cible diminue de : +1"
+          },
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "la valeur de compétence du guérisseur (Savoir-faire) diminue de : 1 quand il examine la victime"
+          },
+          {
+            "id": "vitner-witchcraft:phantom-plague:1:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          }
+        ],
+        "source": "Livre des règles, p. 184",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "BXqIpKeKfLgMhNiO",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.BXqIpKeKfLgMhNiO",
+      "effects": []
+    },
+    {
+      "name": "Fièvre",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:fever:2",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:fever:2",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "En pointant du doigt une victime située à portée, l’enchanteur peut faire monter considérablement sa température corporelle interne. La victime a l’impression que son sang se met à bouillir, ce qui lui fait perdre à la fois son énergie et sa vitalité. Cette fièvre dure une heure et s’avère incurable, et tant qu’elle dure, elle inflige à la victime un malus de -1d3 à la VC de toutes ses actions. De plus, la victime doit effectuer un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution), faute de quoi la fièvre brûlante lui inflige également 1d10 points de dégâts.",
+        "summary": "Inflige une fièvre surnaturelle qui affaiblit les actions de la victime.",
+        "swedishName": "Muspelblot",
+        "duration": "1 heure",
+        "range": "10 mètres",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:fever:2:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Diminue les chances de la victime de réussir son test de situation de : -1"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente les effets de la fièvre de sorte que la victime subit un malus supplémentaire de : -1 à la VC (ou VS) de toutes les actions qu’elle entreprend jusqu’à expiration du sort"
+          },
+          {
+            "id": "vitner-witchcraft:fever:2:5",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        ],
+        "source": "Livre des règles, p. 185",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "qgYCI1tZu0v1w2x3",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.qgYCI1tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "name": "Malédiction d’objet",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:curse-object:3",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:curse-object:3",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative. Le vitner conjuré s’accroche à l’objet comme une force délétère et malsaine. Toute personne qui tente d’utiliser l’objet en question subit un malus de -2 à tous les tests de compétence et de situation reposant sur cet objet. S’il s’agit d’une arme, ses dégâts subissent aussi un malus de -1, et dans le cas d’une armure, sa valeur de protection diminue de 1.",
+        "summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+        "swedishName": "Nidtrölja eftnating",
+        "duration": "5 tours de jeu",
+        "range": "contact",
+        "weavingTime": "2 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:curse-object:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 tour de jeu"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 minute"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 heure"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-witchcraft:curse-object:3:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affecte une autre cible (qui subit la version de base du sort)"
+          }
+        ],
+        "source": "Livre des règles, p. 185",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "xOTqeTkQlRmSnToU",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.xOTqeTkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "name": "Amnésie",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:amnesia:4",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:amnesia:4",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Ce sort génère une énergie perturbatrice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs. La victime peut résister en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, elle oublie immédiatement son identité et son passé. Chaque jour, la victime peut faire un nouveau test de situation avec une valeur de situation de 6. En cas de réussite, elle se rappelle un détail important de sa vie passée : au choix du maître de jeu, il peut s’agir d’un souvenir de famille, d’une compétence importante ou de quelque autre attribut. Le jour suivant, la victime peut faire un nouveau test pour récupérer davantage de souvenirs. Chaque test de situation réussi augmente de +2 les chances de se remémorer quelque chose les jours suivants. Ce bonus ne disparaît pas si la victime rate un test de situation : bien qu’elle ne regagne aucun souvenir ce jour-là, la victime a droit à un nouveau test de situation avec la même valeur de situation et le même bonus le jour suivant. La victime conserve au fond d’elle ses compétences et ses attributs, et c’est au maître de jeu de déterminer quand ces réflexes peuvent intervenir. Par exemple, un personnage fuyant à travers un village pourra sauter instinctivement sur un cheval et s’enfuir au grand galop (la compétence Agilité avec la spécialité Équitation) ; ou bien une personne face à face avec la brute du village voyant l’énorme poing voler vers son visage avec une puissance inquiétante pourra soudain esquiver l’attaque et répondre par un coup bien placé sur le nez déjà cassé de la brute pour lui faire mordre le sol crasseux de la taverne (la compétence Combat et la spécialité Bagarre). Plus la personne possède une valeur élevée dans une compétence, plus elle a de chances de l’utiliser de manière instinctive. Dès l’instant où la victime réussit le test de situation avec une valeur de situation de 20, elle se rappelle tout ce qu’elle avait oublié.",
+        "summary": "Efface une partie importante des souvenirs d’une victime.",
+        "swedishName": "Húgvilsa",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "permanent",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:amnesia:4:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)"
+          },
+          {
+            "id": "vitner-witchcraft:amnesia:4:1",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la portée de : 50 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:amnesia:4:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Diminue le test de situation initial de la victime (sans pouvoir le faire descendre en dessous de : 1) de : -1"
+          }
+        ],
+        "source": "Livre des règles, p. 185",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "EyBYbhLgMhNiOjPk",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.EyBYbhLgMhNiOjPk",
+      "effects": []
+    },
+    {
+      "name": "Malédiction de créature",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:curse-creature:5",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:curse-creature:5",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Pour maudire une créature, l’enchanteur doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de sorts tels que Détection des êtres vivants. Ce sort permet à l’enchanteur d’altérer la composition des énergies autour de la cible. Les sens conventionnels ne peuvent percevoir cette subtile modification, mais l’intuition permet de la ressentir. C’est un manque d’harmonie difficile à décrire avec des mots, un peu comme un son aigu, strident et insistant qui émanerait en permanence de la cible, un son qui ne cesse de faire écho à la limite de notre conscience. Toutes les créatures vivantes qui croisent la cible sont frappées par cette sensation étrange, une violente aversion, une puissante impression de quelque chose d’à la fois déplacé et surnaturel. L’instinct pousse tous les êtres vivants à éviter autant que possible la cible. En outre, les êtres intelligents sont remplis de peur et croient que tout ce que la cible porte ou touche pourrait également s’avérer contagieux. Même les amis de la cible ressentent souvent une puissante aversion et ne supportent pas de rester en sa présence malgré toute l’affection qu’ils lui portent. Les marchands et les négociants annulent leurs transactions avec la cible, les mères chassent leurs enfants et les maintiennent hors de leur vue, les gens gardent leurs distances dans la rue et dans les tavernes, et les compagnons d’aventure ne peuvent pas dormir en présence de la cible et leur repos n’est pas réparateur. Pour faire court, les gens évitent le personnage maudit comme s’il avait la lèpre. Le plus tragique dans cette malédiction, c’est que la cible n’en a pas conscience, et n’a au début aucune idée de ce qui pousse les autres à réagir ainsi en sa présence. Si la cible ne connaît rien à la magie et aux sorts, elle pourrait très bien ne jamais comprendre. Quoi qu’elle fasse, elle se retrouvera de plus en plus isolée et submergée par le doute et l’inquiétude. Avec le temps, la victime risque fort de sombrer dans la folie. Le vitner maléfique qui entoure la cible ne se contente pas de lui rendre la vie insupportable. Il inflige également un malus de -1 à toutes ses valeurs de compétence et de situation jusqu’à expiration de la malédiction. Si l’enchanteur à l’origine de la malédiction meurt, cette dernière est immédiatement levée.",
+        "summary": "Affaiblit une créature en lui imposant un malus à ses actions.",
+        "swedishName": "Nidtrölja skopjaten",
+        "duration": "10 jours",
+        "range": "10 kilomètres",
+        "weavingTime": "3 heures",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:curse-creature:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 semaine"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 mois"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:3",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 année"
+          },
+          {
+            "id": "vitner-witchcraft:curse-creature:5:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente le malus infligé à la victime de : +1"
+          }
+        ],
+        "source": "Livre des règles, p. 185",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "3PUQzvXsYtZu0v1w",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.3PUQzvXsYtZu0v1w",
+      "effects": []
+    },
+    {
+      "name": "Mauvaise récolte",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:bad-harvest:6",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:bad-harvest:6",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Ce sort fait apparaître une brume de vitner sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du sort. Les plantes touchées par ce sort ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.",
+        "summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+        "swedishName": "Nidskord",
+        "duration": "",
+        "range": "100 mètres",
+        "weavingTime": "4 heures",
+        "dailyActivation": "",
+        "spellType": "permanent",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente le rayon d’action du sort de : 20 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente le rayon d’action du sort de : 100 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:2",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Augmente le rayon d’action du sort de : 500 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 100 mètres"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:4",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 1 kilomètre"
+          },
+          {
+            "id": "vitner-witchcraft:bad-harvest:6:5",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Il faut deux saisons de plus (6 mois) avant qu’on puisse planter ou semer quoi que ce soit sur le site maudit"
+          }
+        ],
+        "source": "Livre des règles, p. 187",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "rcQskvYtZu0v1w2x",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.rcQskvYtZu0v1w2x",
+      "effects": []
+    },
+    {
+      "name": "Malédiction de l’arbre",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-witchcraft:tree-curse:7",
+          "tabletId": "vitner-witchcraft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-witchcraft:tree-curse:7",
+        "tabletId": "vitner-witchcraft",
+        "tablet": "Sorcellerie",
+        "description": "Ce sort modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine. Ce sort ne peut être tissé que sur une créature dont le poids n’excède pas 60 kg et qui se tient sur un sol suffisamment épais et fertile pour qu’un arbre puisse s’y enraciner et pousser. La victime peut tenter de résister à cette transformation en effectuant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). En cas de réussite, seule la peau de la victime se transforme en écorce, ce qui n’a d’autre effet que de modifier son apparence et de réduire son Agilité : toutes ses valeurs de compétence et de situation associées à l’Agilité subissent un malus de -3 jusqu’à expiration du sort. Si la cible est trop lourde pour être complètement transformée, seules certaines parties de la victime se verront altérées (au maître de jeu de déterminer lesquelles), tandis que le reste du corps de la victime voit seulement sa peau se changer en écorce, avec les mêmes effets que ci-dessus. Dans ce cas, un test de situation réussi signifie que la victime ne subit qu’un malus de -1 (au lieu de -3). Si la cible rate son test de situation et que son poids ne dépasse pas 60 kg, elle prend immédiatement racine et se retrouve incapable de bouger. Dès lors, au cours de l’heure qui suit, la victime se change en un arbre d’une essence choisie par l’enchanteur (il doit cependant s’agir d’une espèce capable de survivre dans la région, même si elle n’y est pas courante). L’arbre conserve la taille et les points de santé que la victime possédait sous sa forme normale. Il conserve également son apparence faciale, incrustée dans son écorce, et des membres ressemblant à des bras et des jambes. Tant que la créature est sous cette forme, elle conserve les mêmes facultés sensorielles qu’elle possédait au moment où la malédiction l’a frappée. La créature voit tout ce qui est visible de son point de vue (selon l’orientation de son visage) et entend les sons, perçoit les odeurs, et ressent les contacts normalement. La créature conserve tous les dégâts qu’elle subit sous cette forme quand elle recouvre sa forme naturelle. Les possessions telles que les vêtements et l’équipement sont intégrées à l’arbre (pour peu que leur poids n’excède pas la limite imposée par le sort). Sous forme d’arbre, la victime profite d’une valeur de protection de 4. Elle n’a pas besoin de boire ou de manger pour survivre, mais il lui arrivera de s’endormir. Si quelqu’un grave l’écorce de l’arbre ou tente de l’abattre (ce qui inflige des dégâts à la victime), l’arbre se met à saigner. Si cela ne dissuade pas l’assaillant, la victime meurt si elle encaisse suffisamment de dégâts. L’enchanteur peut à tout moment mettre un terme à cette malédiction et rendre à sa victime sa forme d’origine. Une créature qui subit la malédiction de l’arbre pendant toute la durée du sort demeure très raide même après avoir retrouvé sa forme d’origine, et pendant les trois jours qui suivent, ses tests de compétence et de situation associés à l’Agilité et au mouvement sont diminués de moitié.",
+        "summary": "Transforme une créature en arbre conscient, incapable de se déplacer mais encore capable de percevoir.",
+        "swedishName": "Nidtreid",
+        "duration": "2d6 jours",
+        "range": "contact",
+        "weavingTime": "3 tours de jeu",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-witchcraft:tree-curse:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente le poids affecté de : 10 kg"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 journée"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:2",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 semaine"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:3",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 mois"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:4",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Augmente la durée du sort de : 1 année"
+          },
+          {
+            "id": "vitner-witchcraft:tree-curse:7:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Augmente la portée du sort de : 5 mètres (le contact physique n’est plus nécessaire)"
+          }
+        ],
+        "source": "Livre des règles, p. 187",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "QeocGD6B7C8D9EaG",
+      "_key": "!actors.items!SCJYHSnToUpVqWrX.QeocGD6B7C8D9EaG",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "SCJYHSnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 4
+    },
+    "skills": {
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 6,
+        "bonus": 0
+      },
+      "vitnerCraft": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Discrétion",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage et dissimulation",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle : …",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Maîtrise du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Appel du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "callVitner",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Morkvitalja",
+        "skillId": "vitnerCraft",
+        "catalogId": "darkhwitalja",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Modelage du vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "vitnerShaping",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Galda",
+        "skillId": "vitnerCraft",
+        "catalogId": "galding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Sejda",
+        "skillId": "vitnerCraft",
+        "catalogId": "sejding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "skill"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "",
+        "catalogId": "fighter",
+        "value": 4,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 15
+        },
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Stakk swerd (épée d’armes)",
+          "value": 14
+        },
+        {
+          "attack": "Stakk swerd (épée d’armes)",
+          "value": 12
+        },
+        {
+          "attack": "Bouclier moyen en bois",
+          "value": 12
+        },
+        {
+          "attack": "Bouclier moyen en bois",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Stakk swerd (épée d’armes)",
+          "value": 12
+        },
+        {
+          "attack": "Stakk swerd (épée d’armes)",
+          "value": 10
+        },
+        {
+          "attack": "Stakk swerd (épée d’armes)",
+          "value": 6
+        },
+        {
+          "attack": "Bouclier moyen en bois",
+          "value": 10
+        },
+        {
+          "attack": "Bouclier moyen en bois",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 87,
+        "max": 87
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 10
+    },
+    "description": "Le revenant des tumulus ressemble beaucoup à ce qu'il était de son vivant, car il revient à la vie peu de temps après l'inhumation. Seuls les humains et les elfes peuvent le devenir. Il conserve souvent ses chairs et sa peau intactes. Dès que le soleil s'est couché, une lueur blanche comme l'os brille dans ses orbites vides. Il peut dissimuler ses yeux luisants sous une ample capuche pour se mêler à la population.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 78,
+      "bodyMax": 96,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "10 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Mort à la chair conservée dont les orbites vides luisent blanc comme l'os.",
+      "environment": "Tumulus, cairns, tombes, tertres de pierres et autres sites funéraires confinés",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 56
+      }
+    }
+  },
+  "_id": "SCJYHSnToUpVqWrX",
+  "_key": "!actors!SCJYHSnToUpVqWrX",
+  "folder": "nhZGosWrXsYtZu0v"
+}

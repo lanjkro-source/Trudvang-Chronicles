@@ -1,0 +1,19 @@
+{
+  "_id": "GDLIzz3y4z5A6B7C",
+  "name": "Bein Stench",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GDLIzz3y4z5A6B7C",
+    "summary": "Contamination within 5 m: lingering stench detectable at 10 m, losing two Charisma levels.",
+    "description": "<p>Anyone who comes within 5 meters of a beinbaiter is inflicted with the bein stench. The longer a person has been close to it, the longer the stench remains. The stench is impossible to clean away and is so terrible and sharp that all who come within 10 meters of the inflicted halt instantly. If one wishes to lessen the stench, all permeated clothes must be burned and then one should cover oneself in ash. As long as the ash remains on the body, the range of the stench is lessened by 5 meters.</p><p>The Charisma trait of the victim is lowered by 2 levels for the duration. The chart below shows how long a victim is afflicted by the stench.</p><table><thead><tr><th>Contact</th><th>Duration</th></tr></thead><tbody><tr><td>1-2 rounds</td><td>1d3 days</td></tr><tr><td>3-10 rounds</td><td>2d3 days</td></tr><tr><td>11-20 rounds</td><td>2d6 days</td></tr><tr><td>More than 20 rounds</td><td>4d6 days</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GDLIzz3y4z5A6B7C",
+  "folder": null
+}

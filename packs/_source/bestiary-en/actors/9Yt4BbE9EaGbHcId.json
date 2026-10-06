@@ -1,0 +1,194 @@
+{
+  "name": "Gryphon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg",
+  "items": [
+    {
+      "_id": "Kd40jfIdJeKfLgMh",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.Kd40jfIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "DzBvcSlRmSnToUpV",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.DzBvcSlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "_id": "TBZzpE9EaGbHcIdJ",
+      "name": "Attack From Above (gryphon)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "TBZzpE9EaGbHcIdJ",
+        "summary": "Dive at SV 8: claws 2d10 (OR 9-10) +4; usable every 4 rounds.",
+        "description": "<p>For a gryphon to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power of the gryphon’s speed is used, which increases the damage of the claw attack to 2d10 (OR 9-10) + 4. The gryphon can perform one attack from above every fourth action round, since it must circle around for at least 3 rounds.</p><p>One who wishes to attack a gryphon performing a flyby attack has a modifier of -3 on all attacks. However, it is easier to see where the gryphon will attack, which means the victim has a modifier of +2 when parrying the attacks of a gryphon.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 21
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.TBZzpE9EaGbHcIdJ"
+    },
+    {
+      "_id": "zcDFK9A6B7C8D9Ea",
+      "name": "Darkvision (10-60 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "zcDFK9A6B7C8D9Ea",
+        "summary": "Normal sight in total darkness up to 10 m, fading until approximately 60 m.",
+        "description": "<p>The creature can see for 10 meters in complete darkness as if it were daylight. This sight diminishes at longer distances and disappears completely about 60 meters away.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 22
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.zcDFK9A6B7C8D9Ea"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "9Yt4BbE9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 87,
+        "max": 87
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "This powerful beast has a fur-covered lynx's body, also described as a warg's body. Its head, forelegs, and wings are those of an eagle. Its great beak is as hard as flint. Its eyes pick out the smallest details of prey from high in the sky. Its enormous claws, like eagle talons, are sharp enough to sink deep into flesh. Beautiful feathers and fur cover its broad-spanned form.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "winged quadruped",
+      "size": "3",
+      "age": "25, max. 40",
+      "naturalArmor": 1,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 78,
+      "bodyMax": 96,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "18 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "6 m",
+          "max": "36 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Winged lynx with an eagle's head, flint beak, and gigantic talons.",
+      "environment": "Mittland plains in ground burrows; Silferspiir mountains in nests atop high cliffs",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 21
+      }
+    }
+  },
+  "_id": "9Yt4BbE9EaGbHcId",
+  "_key": "!actors!9Yt4BbE9EaGbHcId",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

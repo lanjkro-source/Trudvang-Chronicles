@@ -8,6 +8,7 @@ import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestC
 import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
+import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -36,7 +37,10 @@ globalThis.foundry = {
         async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
         render(options) { this.renderOptions = options; return this; }
       }},
-    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} }, ItemSheetV2: class {}},
+    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} }, ItemSheetV2: class {
+      constructor({document} = {}) { this.document = document; this.item = document; }
+      async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
+    }},
     ux: {TextEditor: {implementation: {enrichHTML: async value => value}}},
     handlebars: {renderTemplate: async () => ""}
   },
@@ -661,6 +665,12 @@ test("NPC wrestling actions appear only when the creature can use them", async (
   context = await sheet._prepareContext({});
   assert.equal(context.npcWrestling.grapple, true, "a creature's Saisie capability also grants the action");
   assert.equal(context.npcWrestling.glima, false);
+  sheet.actor.effects = [];
+  sheet.actor.items.push({type: "creatureAbility", name: "Catch", img: "icons/svg/aura.svg",
+    system: {catalogId: CREATURE_ABILITY_REFERENCES.Saisie.id, summary: "", description: "", source: {book: "", page: 0}}});
+  context = await sheet._prepareContext({});
+  assert.equal(context.npcWrestling.grapple, true, "the compendium Item keeps the action in either language");
+  assert.equal(context.npcWrestling.glima, false);
 });
 
 test("a natural attack dialog spends its reserve and both Free hands, rolls a D20 and posts its result", async t => {
@@ -808,6 +818,31 @@ test("capacity fields save independently of effect changes and preserve custom v
   sheet.isEditable = false;
   await TrudvangCreatureAbilitySheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: fields});
   assert.equal(update, null);
+});
+
+test("compendium capacity Items use their dedicated sheet and appear apart from active effects", async () => {
+  const {TrudvangCreatureAbilityItemSheet, openCreatureAbilitySheet} = await import("../modules/sheets/creature-ability-sheet.mjs");
+  let changes, rendered;
+  const capacity = {id: "tenace", uuid: "Actor.npc.Item.tenace", type: "creatureAbility", name: "Tenace", img: "icons/svg/aura.svg", isOwner: true,
+    system: {catalogId: "tenace", summary: "Aucun malus de blessures", description: "<p>Texte détaillé.</p>",
+      source: {book: "Bestiaire de Jorge", page: 40}, ignoreWoundPenalties: true},
+    sheet: {render: value => { rendered = value; }}, update: async value => {changes = value;}};
+  const actorSheet = new TrudvangNpcSheet(); actorSheet.actor = actor([capacity]);
+  const context = await actorSheet._prepareContext({});
+  assert.equal(context.npcAbilities.length, 1); assert.equal(context.npcAbilities[0].effectUuid, capacity.uuid);
+  assert.equal(context.effects.length, 0); assert.ok(ignoresWoundPenalties(actorSheet.actor));
+  openCreatureAbilitySheet(capacity); assert.deepEqual(rendered, {force: true});
+  const sheet = new TrudvangCreatureAbilityItemSheet({document: capacity}); sheet.isEditable = true;
+  const fields = await sheet._prepareContext({});
+  assert.equal(fields.descriptionField, "system.description"); assert.equal(fields.summaryField, "system.summary");
+  assert.equal(fields.sourceBookField, "system.source.book");
+  const template = Handlebars.compile(readFileSync(new URL("../templates/item/creature-ability-sheet.hbs", import.meta.url), "utf8"));
+  const html = template({...fields, editable: true});
+  assert.match(html, /prose-mirror name="system.description"/); assert.match(html, /name="system.source.book"/);
+  assert.doesNotMatch(html, /system\.level|system\.changes|capacitySummary/);
+  await TrudvangCreatureAbilityItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {
+    "system.summary": "Modifié", "system.source.page": "41", "system.changes": [], "system.ignoreWoundPenalties": false}});
+  assert.deepEqual(changes, {"system.summary": "Modifié", "system.source.page": 41});
 });
 
 test("book skill D20 buttons use the PJ roll dialog and the correct discipline/specialty levels", async t => {

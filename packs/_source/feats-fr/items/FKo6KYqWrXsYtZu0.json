@@ -1,0 +1,19 @@
+{
+  "_id": "FKo6KYqWrXsYtZu0",
+  "name": "Souffle",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FKo6KYqWrXsYtZu0",
+    "summary": "Le démon peut souffler du feu, de l'acide, de la glace ou de la lave (1d3 attaques par jour, sans points de combat ; portée 1d10 (JO 9-10) +20 mètres en cône de 6 mètres de large, 3d10 (JO 8-10) points de dégâts).",
+    "description": "<p>Le démon peut souffler du feu, de l’acide, de la glace ou même de la lave sur ses ennemis. Il peut effectuer 1d3 attaques de souffle par jour, après quoi il doit attendre le lendemain avant de pouvoir faire à nouveau appel à cette capacité. Ce souffle ne nécessite la dépense d’aucun point de combat. Sa portée s’élève à 1d10 (JO 9-10) +20 mètres et a la forme d’un grand cône d’une largeur de 6 mètres à son extrémité. Toutes les créatures situées à l’intérieur de ce cône subissent 3d10 (JO 8-10) points de dégâts.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FKo6KYqWrXsYtZu0",
+  "folder": null
+}

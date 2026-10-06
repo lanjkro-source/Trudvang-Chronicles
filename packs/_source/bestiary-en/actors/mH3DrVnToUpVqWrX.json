@@ -1,0 +1,544 @@
+{
+  "name": "Old Hrim Troll",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg",
+  "items": [
+    {
+      "_id": "nEO9lz0v1w2x3y4z",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.nEO9lz0v1w2x3y4z",
+      "effects": []
+    },
+    {
+      "name": "Barda hammri (battle hammer)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "3d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "KagEscHcIdJeKfLg",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.KagEscHcIdJeKfLg",
+      "effects": []
+    },
+    {
+      "name": "Tvei Axi (Two-Handed Axe)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "description": "A mighty two-handed axe. Fine examples use iron for both shaft and head.",
+        "source": "Game Master's Guide, p. 72",
+        "category": "twoHanded",
+        "damage": "3d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 9,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 4,
+        "value": 24,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "19x9BiNiOjPkQlRm",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.19x9BiNiOjPkQlRm",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "kiKFtTnToUpVqWrX",
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.kiKFtTnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "_id": "LSLD0OjPkQlRmSnT",
+      "name": "Hrim Body (hrim troll)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LSLD0OjPkQlRmSnT",
+        "summary": "Cold sphere 10 m in diameter, resist at situation value 8 (Psyche), increasing d3 damage.",
+        "description": "<p>The hrimtroll has lived in the cold for such an extensive amount of time that its body has absorbed the cold. An ever-present frost pulsates in a sphere around the troll. The sphere is 10 meters in diameter. All who stand within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) in order to not flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves. A character with a full set of winter clothing that is made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d3</td></tr><tr><td>3</td><td>2d3</td></tr><tr><td>Each additional round</td><td>+1d3</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 159
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.LSLD0OjPkQlRmSnT"
+    },
+    {
+      "_id": "it3GE4w2x3y4z5A6",
+      "name": "Frenzy (hrim troll)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "it3GE4w2x3y4z5A6",
+        "summary": "For the first 1d6 combat rounds: +2 to attacks and -2 to parries.",
+        "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 159
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.it3GE4w2x3y4z5A6"
+    },
+    {
+      "_id": "0hJrbG9EaGbHcIdJ",
+      "name": "Fear of Magic",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "0hJrbG9EaGbHcIdJ",
+        "summary": "Successive rolls against magic: situation values 8 then 12; failures: -3 to actions and flee for 1d6 rounds.",
+        "description": "<p>When hrim trolls come into contact with a source of magic, they must make a situation roll with a situation value of 8. If the roll is failed, they have a modifier of -3 on everything they attempt and must also attempt a new situation roll with a situation value of 12. A new failure means the hrim troll flees from the source of magic for 1d6 rounds before attempting to approach it again. When the hrim troll dares to approach again, it must repeat the situation roll, this time with a modifier of -2, which equates to a situation value of 10. Upon failure, this process is repeated until the situation value reaches 0, at which point the troll does not dare to approach the source of magic ever again.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 159
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.0hJrbG9EaGbHcIdJ"
+    },
+    {
+      "_id": "NEu59F7C8D9EaGbH",
+      "name": "Tusk Throw",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NEu59F7C8D9EaGbH",
+        "summary": "The hrim troll throws enemies into the air with its tusks; the sweep usually does no damage but the fall does (avoid with Agility, preferably Evade).",
+        "description": "<p>The hrim troll uses its great tusks in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the troll then throws those enemies high into the air. The sweep itself seldom causes damage, but the fall that comes after having been thrown so high causes severe fall damage.</p><p>A victim of the tusk throw can try to avoid the attack with the Agility skill, preferably with the Evade specialty.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 159
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.NEu59F7C8D9EaGbH"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!mH3DrVnToUpVqWrX.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "mH3DrVnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "dexterity": -4,
+      "strength": 8
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 8,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 4,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 7,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 10,
+        "bonus": 0
+      },
+      "care": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Heavy Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighter",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Faith",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Invoke",
+        "skillId": "faith",
+        "catalogId": "invoke",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Holy Tablet : …",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Noaj",
+        "skillId": "faith",
+        "catalogId": "noaj",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Nature Knowledge",
+        "skillId": "wilderness",
+        "catalogId": "natureKnowledge",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Geography",
+        "skillId": "wilderness",
+        "catalogId": "geography",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Orienteering & Cartography",
+        "skillId": "wilderness",
+        "catalogId": "orienteeringCartography",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Survival",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Handicraft",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Hard Materials",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Soft Materials",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Tusk Throw",
+          "value": 11
+        }
+      ],
+      [
+        {
+          "attack": "Unarmed",
+          "value": 15
+        },
+        {
+          "attack": "Unarmed",
+          "value": 7
+        }
+      ],
+      [
+        {
+          "attack": "Barda hammri (battle hammer)",
+          "value": 14
+        },
+        {
+          "attack": "Barda hammri (battle hammer)",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Tvei Axi (Two-Handed Axe)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei Axi (Two-Handed Axe)",
+          "value": 10
+        },
+        {
+          "attack": "Tvei Axi (Two-Handed Axe)",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 112,
+        "max": 112
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -3
+    },
+    "movement": {
+      "base": 30
+    },
+    "description": "With age, the old hrim troll has become gigantic and bestial as its tusks have grown heavier. They are so thick and heavy that they prevent it from standing upright. It grows larger and walks more and more like a beast, hurling enemies upward with its tusks. Thick hair on its skull continues down its back as a mane, and it also has a beard. Its body has absorbed cold and continually releases it as a sphere around itself.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "6",
+      "age": "90, max 140",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 100,
+      "bodyMax": 125,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "30 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Hunched bestial ice colossus whose massive tusks are too heavy for it to stand upright.",
+      "environment": "Cold, icy regions, deep underground pits, in small clans of six to ten",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 157
+      }
+    }
+  },
+  "_id": "mH3DrVnToUpVqWrX",
+  "_key": "!actors!mH3DrVnToUpVqWrX",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

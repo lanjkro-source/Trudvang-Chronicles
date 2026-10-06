@@ -1,0 +1,19 @@
+{
+  "_id": "8nD540sYtZu0v1w2",
+  "name": "Attack From Above (happja)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "8nD540sYtZu0v1w2",
+    "summary": "Dive at SV 8: claws 1d10 (OR 7-10); usable every 4 rounds.",
+    "description": "<p>For a happja to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power of the happja’s speed is used, which increases the damage of the claw attack to 1d10 (OR 7-10).</p><p>The happja can perform one attack from above every fourth action round, since it must circle around for at least 3 rounds without attacking.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 78
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!8nD540sYtZu0v1w2",
+  "folder": null
+}

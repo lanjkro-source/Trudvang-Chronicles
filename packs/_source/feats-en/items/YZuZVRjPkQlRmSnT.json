@@ -1,0 +1,19 @@
+{
+  "_id": "YZuZVRjPkQlRmSnT",
+  "name": "Jump Attack",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "YZuZVRjPkQlRmSnT",
+    "summary": "When initiating combat, the warg leaps onto its prey with bite and claws, gaining an additional Claws attack without spending further CP that round.",
+    "description": "<p>When a warg beast initiates a combat, it will jump at the prey and attack both with its bite and with its claws. The jump attack means that the beast gains an extra attack with its hind legs and claws in this action round (SV 10 claws) without spending further CP. This is valid only for the round when the jump attack happens.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 30
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!YZuZVRjPkQlRmSnT",
+  "folder": null
+}

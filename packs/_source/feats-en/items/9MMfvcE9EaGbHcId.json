@@ -1,0 +1,19 @@
+{
+  "_id": "9MMfvcE9EaGbHcId",
+  "name": "Fire Body (physical demon)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "9MMfvcE9EaGbHcId",
+    "summary": "Fire aura: damage each round according to distance, from 1d10 (OR 7-10) within 1 m to 1d10 at 5-10 m.",
+    "description": "<p>The demon is on fire. Depending on how close someone stands to the demon, they obtain different amounts of damage points each action round according to the chart.</p><table><thead><tr><th>Distance</th><th>Damage per round</th></tr></thead><tbody><tr><td>Less than 1 m</td><td>1d10 (OR 7-10)</td></tr><tr><td>1-2 m</td><td>1d10 (OR 8-10)</td></tr><tr><td>2-3 m</td><td>1d10 (OR 9-10)</td></tr><tr><td>3-5 m</td><td>1d10 (OR 10)</td></tr><tr><td>5-10 m</td><td>1d10</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!9MMfvcE9EaGbHcId",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "GzpMMB3y4z5A6B7C",
+  "name": "Maladie de la mort",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GzpMMB3y4z5A6B7C",
+    "summary": "Empêche toute guérison et inflige 1 dégât par semaine ; seul un prêtre peut la soigner.",
+    "description": "<p>Une victime mordue ou griffée par un beinbaiter risque de succomber à l’effroyable maladie de la mort. La victime s’affaiblit peu à peu en subissant 1 point de dégâts par semaine. La maladie empêche la guérison des blessures, que ce soit par le biais de soins, d’extraits ou par la guérison naturelle, tant que la victime est malade. La seule façon de soigner cette maladie consiste à consulter un prêtre, quelle que soit sa religion, capable de soigner les dégâts qu’elle cause.</p><p>Une personne qui meurt de la maladie de la mort se relève après un cycle lunaire, envahie par une effroyable faim de moelle.</p><p>Les risques qu’une victime contracte cette maladie dépendent du nombre de points de dégâts que le beinbaiter lui a infligés en combat. Jetez 1d10 et consultez la table suivante au regard des dégâts infligés à la victime. Si le résultat du jet correspond à celui indiqué dans la colonne « Résultat du d10 », cela signifie que l’individu contracte la maladie.</p><table><thead><tr><th>Dégâts infligés</th><th>Résultat du d10 infectieux</th></tr></thead><tbody><tr><td>1 à 5</td><td>1</td></tr><tr><td>6 à 10</td><td>1 à 3</td></tr><tr><td>11 à 20</td><td>1 à 4</td></tr><tr><td>21 à 30</td><td>1 à 5</td></tr><tr><td>Plus de 30</td><td>1 à 6</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 36
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GzpMMB3y4z5A6B7C",
+  "folder": null
+}

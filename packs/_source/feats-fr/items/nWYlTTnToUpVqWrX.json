@@ -1,0 +1,19 @@
+{
+  "_id": "nWYlTTnToUpVqWrX",
+  "name": "Constriction (serpent géant)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nWYlTTnToUpVqWrX",
+    "summary": "Enserrement à VC 10 modifiée par la Dextérité de la cible ; dégâts égaux au bonus de dégâts du serpent par tour ; libération VS 10 (Force).",
+    "description": "<p>Si le serpent parvient à enserrer sa victime (valeur de compétence 10, à laquelle il faut appliquer le modificateur de Dextérité de la cible), il la piège dans son emprise. À chaque tour, la victime subit des dégâts équivalents au modificateur de dégâts du serpent (6 dans les caractéristiques ci-dessous), dont il faut déduire la valeur d’armure.</p><p>La cible peut se libérer uniquement en réussissant un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur du trait de Force). Si le test de situation de la victime échoue, elle peut essayer de se libérer à nouveau une fois par tour de jeu. Cependant, à chaque nouveau tour s’applique un modificateur cumulatif de -1 (trois tours de jeu plus tard, la valeur de situation pour se libérer est donc de 7). Chaque personne qui tente d’aider la victime ajoute également un modificateur de +1 à la valeur de situation. Si les personnages venus en aide ont une force exceptionnelle, leur bonus de Force vient également s’ajouter au test de compétence.</p><p>Chaque tour de combat que le serpent passe à enserrer sa victime l’empêche d’effectuer une autre action. Le serpent peut choisir de mordre un autre adversaire au lieu de maintenir son emprise sur sa victime. Si c’est le cas, celle-ci reste piégée par le serpent mais ne subit pas de dégât pendant ce tour.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 29
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nWYlTTnToUpVqWrX",
+  "folder": null
+}

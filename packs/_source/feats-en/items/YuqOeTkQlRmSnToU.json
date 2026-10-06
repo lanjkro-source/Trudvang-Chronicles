@@ -1,0 +1,19 @@
+{
+  "_id": "YuqOeTkQlRmSnToU",
+  "name": "Discover Cave",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "YuqOeTkQlRmSnToU",
+    "summary": "Detects underground cavities and passages within 50 m.",
+    "description": "<p>Over years of searching, the muspeljotun has gained an ability that helps it find caves and hallways that lead underground. The giant can feel the hollowness within 50 meters. If the muspeljotun detects a hollowness in the mountain that it cannot reach through normal means, it will immediately start digging with both hands to reach it.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 139
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!YuqOeTkQlRmSnToU",
+  "folder": null
+}

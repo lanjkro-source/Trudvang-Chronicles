@@ -1,0 +1,19 @@
+{
+  "_id": "BA5mccHcIdJeKfLg",
+  "name": "Humeur",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "BA5mccHcIdJeKfLg",
+    "summary": "L'humeur changeante de l'ogre le rend imprévisible.",
+    "description": "<p>Le travail d’équipe n’est pas un concept qui correspond aux ogres, surtout parce qu’il est très rare que deux ogres soient de bonne humeur suffisamment longtemps pour que leur relation produise quelque chose de valable.</p><p>Pour déterminer l’humeur d’un ogre à un moment donné, un test de chance est effectué en jetant 1d10. Sur un résultat de 1 à 5, l’ogre se comporte normalement et calmement, mais sur un résultat de 6 à 10, il est furieux. L’ogre sera de cette humeur pendant 1d6 heures à moins qu’un événement ne la change. L’humeur de l’ogre peut passer de gentil à meurtrier à cause d’une infime contrariété ou s’il y a la moindre petite chose à proximité que la créature n’apprécie pas.</p><p>Quand un ogre est enragé, il attaque tout autour de lui, objets comme créatures. S’il n’y a aucune créature vivante à proximité, il déchaînera sa violence sur l’objet le plus proche situé à sa portée car sa rage le pousse à détruire n’importe quoi. En combat, un ogre ne réfléchit jamais aux dégâts qu’il subit mais uniquement à ceux qu’il inflige. C’est pour cette raison qu’un ogre n’effectue jamais aucune parade.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 163
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!BA5mccHcIdJeKfLg",
+  "folder": null
+}

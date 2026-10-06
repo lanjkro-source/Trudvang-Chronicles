@@ -1,0 +1,19 @@
+{
+  "_id": "nP6pix2x3y4z5A6B",
+  "name": "Numbing Saliva",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nP6pix2x3y4z5A6B",
+    "summary": "After 2d6 rounds, noticing the bite requires situation value 8 (Perception).",
+    "description": "<p>A night ulm seldom attacks creatures that are fully alert but prefers those who are sleeping or so woozy that they will not notice that they are being attacked. Thanks to its great dexterity, the night ulm moves undetected toward a sleeping victim and spits saliva on the victim’s neck. After 2d6 action rounds, the skin is so numb that it will require a situation roll with a situation value of 8 (Perception modifiers apply) for a sleeping victim to discover that they are being bitten (this roll is already considered in the “Bloodsucker” rules above). In other situations, it is up to the game master to decide the situation value or whether the victim notices the saliva or the attack.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 23
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nP6pix2x3y4z5A6B",
+  "folder": null
+}

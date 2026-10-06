@@ -1,0 +1,19 @@
+{
+  "_id": "5H4W4NhNiOjPkQlR",
+  "name": "Tenace",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5H4W4NhNiOjPkQlR",
+    "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+    "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": true
+  },
+  "effects": [],
+  "_key": "!items!5H4W4NhNiOjPkQlR",
+  "folder": null
+}

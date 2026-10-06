@@ -1,0 +1,19 @@
+{
+  "_id": "zcDFK9A6B7C8D9Ea",
+  "name": "Darkvision (10-60 m)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "zcDFK9A6B7C8D9Ea",
+    "summary": "Normal sight in total darkness up to 10 m, fading until approximately 60 m.",
+    "description": "<p>The creature can see for 10 meters in complete darkness as if it were daylight. This sight diminishes at longer distances and disappears completely about 60 meters away.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 22
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!zcDFK9A6B7C8D9Ea",
+  "folder": null
+}

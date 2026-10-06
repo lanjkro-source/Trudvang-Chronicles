@@ -1,0 +1,19 @@
+{
+  "_id": "LD02zaFaGbHcIdJe",
+  "name": "Hidden (hrimwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LD02zaFaGbHcIdJe",
+    "summary": "Concealed in snow: Shadow Arts -10 at a distance; when moving, situation value 8 (15 up close) or skill -3.",
+    "description": "<p>In order to spot a hrimwurm that lies in the snow at a distance, a successful roll of the Shadow Arts skill with a modifier of -10 is required; on a failure, the dragon is mistaken for a large pile of snow. If the dragon is in motion, a situation roll with a situation value of 8 (Perception modifiers apply) is required to discover it or, alternatively, a skill roll with a modifier of -3. At a smaller distance, a situation roll with a situation value of 15 (Perception modifiers apply) is enough. It is up to the game master to apply his own modifiers depending on the environment.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LD02zaFaGbHcIdJe",
+  "folder": null
+}

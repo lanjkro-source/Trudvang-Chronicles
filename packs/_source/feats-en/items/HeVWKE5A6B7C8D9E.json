@@ -1,0 +1,19 @@
+{
+  "_id": "HeVWKE5A6B7C8D9E",
+  "name": "Drown Victim (lyktgubbe)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "HeVWKE5A6B7C8D9E",
+    "summary": "When standing: situation value 12, -2 per lyktgubbe; in deep water, Swimming -2 per lyktgubbe.",
+    "description": "<p>A victim that has been exposed to a lyktgubbe must succeed in getting onto land so that he won’t be drowned. If the victim can touch the bottom of the lake or water source with his feet, he must succeed on a situation roll with a situation value of 12 (Strength or Dexterity modifiers apply). For each lyktgubbe that tries to drag the victim down to drown, the situation value is decreased by -2. If the water is so deep that the victim must swim to stay afloat, an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -2 for each lyktgubbe that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 60
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!HeVWKE5A6B7C8D9E",
+  "folder": null
+}

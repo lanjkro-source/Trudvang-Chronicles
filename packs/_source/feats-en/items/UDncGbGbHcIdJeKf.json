@@ -1,0 +1,19 @@
+{
+  "_id": "UDncGbGbHcIdJeKf",
+  "name": "Number of Heads",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UDncGbGbHcIdJeKf",
+    "summary": "The huvfurwurm has many heads, each with its own characteristics.",
+    "description": "<p>There is no exact amount of heads for a huvfurwurm. It is up to the game master to determine how many heads a dragon has and how many times each of them have been regenerated. To decide randomly, the GM can roll 3d6 +2 to determine the number of heads. Treat each head as an individual creature. Each head has a neck that can withstand about 25 (±5) points of damage before it is removed. The heads do not suffer penalties from damage levels linked with their own BP but only those coming from the body BP. The GM can allow aiming hits at specific heads but suffering penalties which are totally up to the GM’s judgement. Remember that the huvfurwurm is a 7t sized creature, therefore its Combat Points should be spent across 3 rounds and only after that time will the CP regenerate. All heads share the same pool of Combat Points and do not have separate CP.</p><p>Consider that the number of heads can both increase and decrease during combat and wounds, especially decapitations, could trigger the creation of more heads, according to GM’s judgement and the rules above described .</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 110
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UDncGbGbHcIdJeKf",
+  "folder": null
+}

@@ -1,0 +1,211 @@
+{
+  "name": "Muspeljotun",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
+  "items": [
+    {
+      "_id": "oqOsINhNiOjPkQlR",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.oqOsINhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "_id": "YuqOeTkQlRmSnToU",
+      "name": "Détection des réseaux souterrains",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "YuqOeTkQlRmSnToU",
+        "summary": "Détecte les cavités et passages souterrains jusqu’à 50 m.",
+        "description": "<p>Au fil des années passées à chercher, les mospeljotuns ont développé un pouvoir qui les aide à trouver des grottes et des passages souterrains. Les géants peuvent percevoir les anfractuosités jusqu’à une distance de 50 mètres. S’ils détectent une anfractuosité dans la montagne qu’ils ne peuvent atteindre par des moyens ordinaires, ils se mettent immédiatement à creuser à mains nues dans sa direction.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 139
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.YuqOeTkQlRmSnToU"
+    },
+    {
+      "_id": "BlV2voQlRmSnToUp",
+      "name": "Empoignement",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BlV2voQlRmSnToUp",
+        "summary": "Après une attaque à mains nues réussie, saisie sans PC supplémentaires ; écrasement selon la taille ou projection infligeant 1d10 (JO 10) par tranche de 3 m de chute.",
+        "description": "<p>Après une attaque à mains nues réussie, le géant peut tenter d’empoigner une victime de Taille 1/2 à 3 sans dépenser de PC supplémentaires. Il effectue un test de compétence dont la VC dépend de la taille de la victime. Celle-ci peut éviter l’empoignement grâce à Agilité, de préférence avec la spécialité Esquive.</p><p>À chaque tour, le géant peut écraser sa victime ou la projeter. Les dégâts d’écrasement dépendent de la taille de la victime. Une projection inflige 1d10 (JO 10) points de dégâts par tranche de 3 mètres de chute ; il faut utiliser la hauteur effective de la chute. Un firdtursir mesure généralement 20 à 22 m, soit 6d10 à 7d10 (JO 10) ; un hrimtursir 14 à 15 m, soit 4d10 à 5d10 (JO 10) ; un muspeljotun 25 à 27 m, soit 8d10 à 9d10 (JO 10). Un vidrjotun mesure également 25 à 27 m mais a souvent le bas du corps à moitié enfoui dans la terre : le MJ détermine donc la hauteur réelle et les dégâts de chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.BlV2voQlRmSnToUp"
+    },
+    {
+      "_id": "4EWPCNgMhNiOjPkQ",
+      "name": "Peau de pierre",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "4EWPCNgMhNiOjPkQ",
+        "summary": "VP 4 ; les armes tranchantes de qualité inférieure à excellente risquent de perdre 1d10 (JO 8-10) VI sur un 1 au d10.",
+        "description": "<p>La surface extérieure de la peau pétrifiée du géant offre une protection pratiquement impénétrable (valeur de protection de 4). Les armes tranchantes dont la qualité est inférieure à excellente risquent de casser si elles sont utilisées pour frapper la surface du géant. Chaque fois qu’une arme de ce type frappe avec succès le géant, le maître de jeu effectue un test de chance avec un d10. Sur un résultat de 1, l’arme tranchante subit 1d10 (JO 8-10) points de dégâts qui réduisent sa valeur d’intégrité.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 140
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.4EWPCNgMhNiOjPkQ"
+    },
+    {
+      "_id": "10klNtVqWrXsYtZu",
+      "name": "Sang de lave",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "10klNtVqWrXsYtZu",
+        "summary": "Chaleur à moins de 6 m, résistance VS 12 (Psychisme) ; éclaboussures sur 1-2 au d10, infligeant 1d5 dégâts.",
+        "description": "<p>Sous la peau durcie d’un muspeljotun coule de la lave brûlante. Le géant dégage une telle chaleur que les créatures situées à moins de 6 mètres doivent réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) pour y résister. À chaque tour de jeu, les créatures qui restent à proximité subissent les dégâts de chaleur indiqués ci-dessous.</p><p>Les armes qui tranchent la peau du géant provoquent des blessures d’où gicle de la lave. Un attaquant au corps à corps peut être aspergé de sang et subir les dégâts de chaleur (faites un test de chance avec 1d10 : un résultat de 1 ou 2 signifie que l’attaquant est aspergé de sang). L’attaquant peut esquiver une giclée en réussissant un test de compétence d’Agilité. S’il échoue, le personnage subit 1d5 points de dégâts (l’armure protège normalement mais peut prendre feu).</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1 à 3</td><td>Aucun</td></tr><tr><td>4</td><td>1</td></tr><tr><td>5</td><td>1d3</td></tr><tr><td>6</td><td>2d3</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d3</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 140
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.10klNtVqWrXsYtZu"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!urjmtIdJeKfLgMhN.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "urjmtIdJeKfLgMhN",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 5,
+    "height": 5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 231,
+        "max": 231
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 60
+    },
+    "description": "Le muspeljotun est un géant grand et maladroit mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut. Son corps est aussi noir que la suie, protégé par une carapace noire et dure couverte de fissures. À travers les fissures de sa peau pétrifiée, on aperçoit ses entrailles toujours ardentes où coule de la lave brûlante. Les traits de son visage donnent l'impression qu'il est heureux, alors qu'il s'agit d'une race triste. À la naissance, il ressemble aux anciens géants de feu faits de flammes, puis sa peau durcit lentement de l'extérieur vers l'intérieur. En fin de vie, totalement solidifié et incapable de bouger, il n'est guère plus qu'un gros bloc de pierre en forme de géant.",
+    "details": {
+      "creatureType": "Jotuns et thurses",
+      "type": "humanoid",
+      "size": "8",
+      "age": "1 000, max variable",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 208,
+      "bodyMax": 255,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "8 m",
+          "max": "60 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Géant noir et fissuré aux entrailles de lave, au visage faussement joyeux.",
+      "environment": "Tréfonds de la terre, sous les montagnes près des coulées de lave ; parfois égaré en forêt",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 138
+      }
+    }
+  },
+  "_id": "urjmtIdJeKfLgMhN",
+  "_key": "!actors!urjmtIdJeKfLgMhN",
+  "folder": "f5hlljKfLgMhNiOj"
+}

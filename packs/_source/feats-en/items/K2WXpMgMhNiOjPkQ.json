@@ -1,0 +1,19 @@
+{
+  "_id": "K2WXpMgMhNiOjPkQ",
+  "name": "Metamorph (stonehinje)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "K2WXpMgMhNiOjPkQ",
+    "summary": "Transforms into a simple object of its own mass; normally undetectable without appropriate vitner.",
+    "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 99
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!K2WXpMgMhNiOjPkQ",
+  "folder": null
+}

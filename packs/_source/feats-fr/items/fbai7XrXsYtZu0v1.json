@@ -1,0 +1,19 @@
+{
+  "_id": "fbai7XrXsYtZu0v1",
+  "name": "Vue",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "fbai7XrXsYtZu0v1",
+    "summary": "Le diser voit normalement sans lumière ; dans le brouillard, la fumée ou des effets magiques, sa vue porte à 100 m.",
+    "description": "<p>Par temps clair (y compris dans l’obscurité naturelle), un diser voit aussi loin qu’un humain à la lumière du jour. Dans d’autres conditions, s’il y a un brouillard épais, de la fumée ou des effets magiques à l’œuvre par exemple, un diser peut voir jusqu’à une distance de 100 mètres.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!fbai7XrXsYtZu0v1",
+  "folder": null
+}

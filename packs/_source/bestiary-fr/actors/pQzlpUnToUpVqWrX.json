@@ -1,0 +1,180 @@
+{
+  "name": "Troll de bois",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg",
+  "items": [
+    {
+      "_id": "VbvKesWrXsYtZu0v",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.VbvKesWrXsYtZu0v",
+      "effects": []
+    },
+    {
+      "_id": "ljOGPhKfLgMhNiOj",
+      "name": "Hylja (troll de bois)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ljOGPhKfLgMhNiOj",
+        "summary": "Fusion avec la forêt : -10 pour le repérer s’il se concentre entièrement, -5 s’il utilise ses Racines en même temps.",
+        "description": "<p>Le troll de bois a le pouvoir de fusionner pour ne faire plus qu’un ou presque avec la forêt. Si un troll de bois focalise toute sa concentration sur l’utilisation de ce pouvoir, les créatures qui le cherchent subissent un modificateur de -10. Si le troll de bois utilise le pouvoir de Racines en même temps, le modificateur est de -5 seulement.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 99
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.ljOGPhKfLgMhNiOj"
+    },
+    {
+      "_id": "mGIwBIdJeKfLgMhN",
+      "name": "Racines",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "mGIwBIdJeKfLgMhN",
+        "summary": "Racines de 3 m/tour, attaque VC 8 ; immobilisent, compriment ou perforent, avec dégâts et nombre de victimes selon leur taille.",
+        "description": "<p>Un troll de bois peut augmenter la taille de ses racines serpentines qui ondulent dans la terre vers une victime qu’il a choisie. Les racines poussent de 3 mètres par tour de jeu et ne dépassent généralement pas 2d10 (JO 8-10) mètres de long, mais cette longueur est laissée à l’appréciation du maître de jeu.</p><p>Un troll de bois qui attaque avec ses racines ne peut rien faire d’autre lors du même tour. Voilà pourquoi il tente toujours de rester caché quand il attaque de cette façon pour infliger le plus de dégâts possible avant d’être repéré.</p><p>Le troll de bois tente dans un premier temps d’étreindre sa victime avec ses racines (VC 8). Le nombre de victimes qu’il peut attaquer en même temps dépend de leur taille, comme indiqué dans la table page suivante. Le troll de bois doit effectuer un test distinct pour chaque victime.</p><p>Lorsqu’il réussit un test, le troll de bois peut choisir de simplement immobiliser la victime, de la comprimer ou de la perforer. La compression et la perforation infligent entre 1d10 et 1d10 (JO 8-10) points de dégâts selon la taille de la victime. Utilisez les indications de la table page suivante.</p><table><thead><tr><th>Taille de la victime</th><th>Dégâts</th><th>Nombre de victimes</th></tr></thead><tbody><tr><td>1 ou moins</td><td>1d10 (JO 8-10)</td><td>4</td></tr><tr><td>2</td><td>1d10 (JO 9-10)</td><td>3</td></tr><tr><td>3</td><td>1d10 (JO 10)</td><td>2</td></tr><tr><td>4 ou plus</td><td>1d10</td><td>1</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 99
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.mGIwBIdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!pQzlpUnToUpVqWrX.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "pQzlpUnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -4,
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 12
+        },
+        {
+          "attack": "Mains nues",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 72,
+        "max": 72
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "Le troll de bois est une créature assemblée à partir de pommes de pin, de branches, de feuilles et de pierres. On y mêle aussi des objets métalliques, des morceaux de squelettes et des sculptures ornementales. Son créateur sculpte le plus souvent un visage sur sa création. Une graine de pin étoile germe en lui pour lui donner vie. Ses racines serpentines ondulent dans la terre vers ses victimes et il fusionne presque avec la forêt.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "4",
+      "age": "2, max variable",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 60,
+      "bodyMax": 85,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colosse végétal au visage sculpté et aux racines serpentines étrangleuses",
+      "environment": "Forêts, où les ihanas elfiques le créent dans un trou rebouché",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 99
+      }
+    }
+  },
+  "_id": "pQzlpUnToUpVqWrX",
+  "_key": "!actors!pQzlpUnToUpVqWrX",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

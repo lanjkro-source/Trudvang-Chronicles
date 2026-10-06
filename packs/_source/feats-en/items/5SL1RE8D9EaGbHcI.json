@@ -1,0 +1,19 @@
+{
+  "_id": "5SL1RE8D9EaGbHcI",
+  "name": "Exhaust Life",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5SL1RE8D9EaGbHcI",
+    "summary": "Capture at SV 13 opposed by Psyche; every 3 points of damage absorbed restore 1 BP to the diser or increase its power.",
+    "description": "<p>A diser can ensnare a victim with a successful skill roll at SV 13. Subtract the victim's Psyche modifier from this SV: a modifier of +2 gives SV 11, while -2 gives SV 15. Each subsequent successful skill roll, likewise modified by the victim's Psyche, allows the diser to exhaust the victim's life force.</p><p>An ensnared victim can escape only by succeeding on a situation roll whose value the GM chooses according to the diser's power; the victim's Psyche modifier applies. An exceptionally powerful diser might allow situation value 1, and a very weak one 20. Repeat this roll each new action round. The GM may also vary the diser's skill values for capturing victims and absorbing their life force.</p><p>Stolen life force is expressed as damage to the victim. For every 3 points of damage inflicted, the diser gains +1 Body Point, first regenerating any BP it has lost. Once all its damage has healed, the diser instead grows stronger; the GM adjusts its characteristics as this happens.</p><p>The GM also decides the damage inflicted by each absorption. Examples are 1 point, 1d3 points, 1d5 points, 1d10 points, or 1d10 (OR 10) points.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!5SL1RE8D9EaGbHcI",
+  "folder": null
+}

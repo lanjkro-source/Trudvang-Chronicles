@@ -1,0 +1,19 @@
+{
+  "_id": "ljOGPhKfLgMhNiOj",
+  "name": "Hylja (troll de bois)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "ljOGPhKfLgMhNiOj",
+    "summary": "Fusion avec la forêt : -10 pour le repérer s’il se concentre entièrement, -5 s’il utilise ses Racines en même temps.",
+    "description": "<p>Le troll de bois a le pouvoir de fusionner pour ne faire plus qu’un ou presque avec la forêt. Si un troll de bois focalise toute sa concentration sur l’utilisation de ce pouvoir, les créatures qui le cherchent subissent un modificateur de -10. Si le troll de bois utilise le pouvoir de Racines en même temps, le modificateur est de -5 seulement.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 99
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!ljOGPhKfLgMhNiOj",
+  "folder": null
+}

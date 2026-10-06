@@ -1,0 +1,179 @@
+{
+  "name": "Yggdras",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg",
+  "items": [
+    {
+      "name": "Branche d’arbre",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d5",
+        "openRoll": 0,
+        "weaponActions": 3,
+        "initiativeModifier": 0,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "weight": 1,
+        "value": 0.5,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "uIbKTA2x3y4z5A6B",
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.uIbKTA2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "_id": "5OJtBbGbHcIdJeKf",
+      "name": "Communication avec les animaux",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5OJtBbGbHcIdJeKf",
+        "summary": "L'yggdras comprend les animaux et peut échanger avec eux.",
+        "description": "<p>Les yggdras ont appris à communiquer avec les animaux au fil des années. Ceci a incité les animaux de la forêt à protéger les yggdras contre les intrus malveillants.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 103
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.5OJtBbGbHcIdJeKf"
+    },
+    {
+      "_id": "HtsoWMgMhNiOjPkQ",
+      "name": "Perception de l’hostilité",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "HtsoWMgMhNiOjPkQ",
+        "summary": "Perçoit les créatures intelligentes et leurs intentions hostiles dans un rayon de 200 m.",
+        "description": "<p>Un yggdras peut percevoir la présence de créatures intelligentes dans un rayon de 200 mètres et sait si ces créatures sont hostiles ou non.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 103
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.HtsoWMgMhNiOjPkQ"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "BWRXF3w2x3y4z5A6",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": 4,
+      "perception": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Branche d’arbre",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -5
+    },
+    "movement": {
+      "base": 3
+    },
+    "description": "L'yggdras est une âme de la nature cachée dans un arbre hôte. Si l'on aperçoit un visage sur le tronc d'un arbre, c'est presque sûrement un yggdras à l'intérieur. On le trouve le plus souvent dans les vieux noyers cendrés au tronc épais et noueux. Il vit en symbiose avec son arbre, qui partage ses nutriments tandis qu'il le renforce. Tous les yggdras ne se ressemblent pas, car ils se cachent dans la nature, parfois même dans des animaux ou des fleurs.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "entity",
+      "size": "1.5",
+      "age": "variable, max variable",
+      "naturalArmor": 3,
+      "fearFactor": "1d5",
+      "bodyMin": 31,
+      "bodyMax": 39,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,5 m",
+          "max": "3 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Visage sage sur tronc noueux, âme collective de la forêt",
+      "environment": "Forêts, vieux noyers cendrés et autres arbres hôtes, en groupes d'une vingtaine prenant soin de la forêt",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 101
+      }
+    }
+  },
+  "_id": "BWRXF3w2x3y4z5A6",
+  "_key": "!actors!BWRXF3w2x3y4z5A6",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

@@ -1,0 +1,119 @@
+{
+  "name": "Ram/Goat",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/wprpkdFaGbHcIdJe.jpg",
+  "items": [
+    {
+      "_id": "2A91gZrXsYtZu0v1",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d3",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!wprpkdFaGbHcIdJe.2A91gZrXsYtZu0v1",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "wprpkdFaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/wprpkdFaGbHcIdJe.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Horns",
+          "value": 14
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 12,
+        "max": 12
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 10
+    },
+    "description": "This stocky hoofed animal has a compact body covered in thick woolly, often tangled gray or brown fleece. Its bearded head bears horizontally pupiled eyes and great ridged horns that curl into spirals in rams. Short muscular legs end in cloven hooves that grip rocks firmly. Its thick neck supports a massive skull reinforced for headbutting. A short tail and chin beard complete its rustic shape.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "0.33",
+      "age": "null",
+      "naturalArmor": 1,
+      "fearFactor": "",
+      "bodyMin": 12,
+      "bodyMax": 12,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "10 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Stocky and bearded, armed with spiral horns.",
+      "environment": "Rocky slopes, high pastures, and mountain escarpments in Trudvang, at the edges of upland forests.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "wprpkdFaGbHcIdJe",
+  "_key": "!actors!wprpkdFaGbHcIdJe",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "FeLJJ1tZu0v1w2x3",
+  "name": "Mist Walk",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "FeLJJ1tZu0v1w2x3",
+    "summary": "Disappears in 1 round, reappears in 2; moves at up to triple normal movement, with doubled vulnerability during transitions.",
+    "description": "<p>The diser can disappear into thin air only to suddenly reappear in another place a short distance away. When a diser uses Mist Walk in this way, it moves at up to three times its normal movement rate. However, it takes 1 round of combat for the diser to disappear entirely, after which it can move through Mist Walk for as long as it wishes. It takes 2 rounds of combat for the diser to reappear.</p><p>When disappearing and reappearing, the diser is in its most vulnerable state. In this state, all harmful acts against the diser have double effect. For spells or prayers of power used against the diser whose effects depend on the diser’s Body Points, count only two thirds of the diser’s normal full Body Points (with no wounds or damage).</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!FeLJJ1tZu0v1w2x3",
+  "folder": null
+}

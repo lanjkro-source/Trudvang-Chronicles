@@ -1,0 +1,19 @@
+{
+  "_id": "7UKkQbHcIdJeKfLg",
+  "name": "Magma Blood",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "7UKkQbHcIdJeKfLg",
+    "summary": "Heat within 6 m, resist at situation value 6 (Psyche); splash on 1-3 on a d10, dealing 1d6 damage.",
+    "description": "<p>Underneath the skin of the jarnwurm flows the horrid and prized magma blood. The dragon radiates such heat that anyone who comes within 6 meters must make a situation roll with a situation value of 6 (Psyche modifiers apply) in order to hold his ground. Anyone who manages to remain within the sphere of heat takes the following damage per action round.</p><p>Weapons that pierce the heavy scale armor cause magma blood to spew from the wound. An attacker at close quarters could be hit by the blood and take damage from the extreme heat (make a luck roll with 1d10, where 1-3 means that the attacker is hit by the blood). The attacker can avoid this by succeeding on an Agility skill roll. If the roll fails, they take 1d6 points of damage (armor protects normally but risks catching on fire).</p><p>The magma blood is of use not only to the jarnwurm but also to all the blacksmiths in Trudvang. If the blood is mixed with iron, a binding is formed that is both harder and more durable than the dwarves’ mitraka. The metal is colored scarlet and called ironblood iron. Weapons made out of ironblood iron increase the chance of an open roll by 2. The Protection Value, Breach Value, and weight of weapons and armors made from ironblood iron is increased by 1d3.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1</td></tr><tr><td>3</td><td>1d3</td></tr><tr><td>4</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6 per round</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 117
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!7UKkQbHcIdJeKfLg",
+  "folder": null
+}

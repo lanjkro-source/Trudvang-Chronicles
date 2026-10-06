@@ -1,0 +1,19 @@
+{
+  "_id": "LTLHNqSnToUpVqWr",
+  "name": "Mooneyes",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LTLHNqSnToUpVqWr",
+    "summary": "At night, situation value 8 (Psyche) to avoid steering a ship toward the light of the giant’s eyes.",
+    "description": "<p>The great eyes of the logrjotun radiate with light like a full moon during the night. This is not something that can be seen during the day, but when night falls, a seafarer may see the eyes of a logrjotun like small round moons at a distance.</p><p>Even if it is not the intention of the giant, their eye light can be treacherously attractive. Seafarers must make a situation roll with a situation value of 8 (Psyche modifiers apply) to not unintentionally steer their ship toward the light.</p><p>Even if the logrjotun is a peaceful creature, it can be annoyed by ships that stray too close or steer into them.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 135
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LTLHNqSnToUpVqWr",
+  "folder": null
+}

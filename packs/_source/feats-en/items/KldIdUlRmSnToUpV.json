@@ -1,0 +1,19 @@
+{
+  "_id": "KldIdUlRmSnToUpV",
+  "name": "Life Sacrifice",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "KldIdUlRmSnToUpV",
+    "summary": "Drinking blood extends the draugr’s stay: 30 days for human blood, 60 for elven blood.",
+    "description": "<p>A draugr that has drunk enough blood from humans can extend its stay in the world of the living by one lunar month (30 days and nights). Elven blood extends the stay by two lunar months, and troll blood extends it only by a week or two. Animal blood generates even less time, only a day or just hours, depending on the strength of the animal. The draugr can eat until it is full (10 Body Points) several times per day.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 58
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!KldIdUlRmSnToUpV",
+  "folder": null
+}

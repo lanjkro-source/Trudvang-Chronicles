@@ -1,0 +1,19 @@
+{
+  "_id": "dihK2uYtZu0v1w2x",
+  "name": "Nom de l’âme",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "dihK2uYtZu0v1w2x",
+    "summary": "Le vrai nom permet de lier et voler l’âme : perte d’un niveau de Psychisme ; seule la victime peut récupérer son âme en tuant le myling sans aide.",
+    "description": "<p>Un myling qui obtient le véritable nom d’une personne peut lier l’âme de cette personne à la sienne afin d’augmenter sa puissance. Il le fait en effectuant un sacrifice en l’honneur de sa déesse. Ce rite sacrificiel prend du temps et l’endroit où il doit être réalisé peut être distant. Le myling doit donc faire vite pour ne pas que la victime réalise ce qui est en train de se passer.</p><p>Quand une victime révèle son vrai nom, elle doit effectuer un test de situation avec une valeur de situation de 6 (le modificateur d’Intelligence s’applique) pour comprendre que le myling trame quelque chose. Si le test est réussi, la victime se sent mal à l’aise et sait qu’elle doit immédiatement mettre un terme aux agissements du myling. Un myling qui parvient à lier son âme à celle d’une créature bénéficie d’un statut élevé parmi ses semblables. Une victime qui a perdu son âme parce qu’elle est liée à un myling se sentira vidée, sans but ni raison d’être, jusqu’à la fin de sa vie. Le trait Psychisme de la victime est réduit d’un niveau. La seule façon de récupérer son âme perdue consiste à tuer le myling qui l’a dérobée sans l’aide de personne. Si le myling meurt de la main de quelqu’un d’autre, l’âme est définitivement perdue.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 55
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!dihK2uYtZu0v1w2x",
+  "folder": null
+}

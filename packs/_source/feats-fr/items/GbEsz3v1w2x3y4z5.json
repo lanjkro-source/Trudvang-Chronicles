@@ -1,0 +1,19 @@
+{
+  "_id": "GbEsz3v1w2x3y4z5",
+  "name": "Puanteur terrifiante",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GbEsz3v1w2x3y4z5",
+    "summary": "La pestilence de la bête épineuse sème la peur autour d'elle.",
+    "description": "<p>Les organes internes d’une bête épineuse subissent un processus constant de décomposition à cause des fâcheux effets de la tornrot. Cela signifie que ce grand lézard ailé traîne derrière lui une âcre pestilence de chair morte et de pourrissement. Un humain normal doté d’un sens de l’odorat normal peut sentir l’odeur à une distance de 50 mètres. Quiconque s’approche à moins de 5 mètres de la bête subit 1d10 (JO 9-10) points de peur à cause de l’odeur. Ceci ne s’applique pas aux dompteurs et aux cavaliers aguerris, habitués à l’odeur en raison du temps passé avec la bête.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 18
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GbEsz3v1w2x3y4z5",
+  "folder": null
+}

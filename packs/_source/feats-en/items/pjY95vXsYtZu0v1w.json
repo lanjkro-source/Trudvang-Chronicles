@@ -1,0 +1,19 @@
+{
+  "_id": "pjY95vXsYtZu0v1w",
+  "name": "Shapeshifter (draugr)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "pjY95vXsYtZu0v1w",
+    "summary": "Transforms into an animal at will; 3 defenseless rounds and a cost of 30 days and nights of its stay.",
+    "description": "<p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 58
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!pjY95vXsYtZu0v1w",
+  "folder": null
+}

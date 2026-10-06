@@ -1,0 +1,19 @@
+{
+  "_id": "vTjZgWpVqWrXsYtZ",
+  "name": "Mare’s Kiss",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "vTjZgWpVqWrXsYtZ",
+    "summary": "Puts the victim to sleep, then drains life: 1d5 damage per round for 1d10 (OR 10) rounds, with rolls to wake up.",
+    "description": "<p>When a mare becomes hungry, she breaks into the house of a victim during the night and gives them her mare’s kiss. By sneaking up to the sleeping victim and carefully placing her hands on their chest, she can plunge the victim into a deep sleep. The victim must make a situation roll with a situation value of 12 (Psyche modifiers apply). If the roll is successful, the victim will awaken in cold sweats from a horrible nightmare, and can make a new situation roll with a situation value of 6 (Perception modifiers apply) to see if they glimpse the mare before she escapes. However, whether the victim knows it is a mare or thinks it is an illusion from the nightmare is not decided.</p><p>If the first situation roll fails, the victim is plunged into a deep sleep, after which the mare steps onto the victim’s chest and performs the mare’s kiss (very carefully, so as not to waken the rest of the household). For the next 1d10 (OR 10) action rounds, the mare will suck the victim’s life force, causing 1d5 points of damage per action round. In each round, the victim can make a situation roll with a situation value of 5 (Psyche modifiers apply) to see if they wake up, with the same effect as when the mare tries to plunge the victim into sleep, as described above.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 90
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!vTjZgWpVqWrXsYtZ",
+  "folder": null
+}

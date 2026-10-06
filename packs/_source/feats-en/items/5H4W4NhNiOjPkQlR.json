@@ -1,0 +1,19 @@
+{
+  "_id": "5H4W4NhNiOjPkQlR",
+  "name": "Durable",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5H4W4NhNiOjPkQlR",
+    "summary": "Ignores all wound-level penalties, but still loses BP when damaged.",
+    "description": "<p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 39
+    },
+    "ignoreWoundPenalties": true
+  },
+  "effects": [],
+  "_key": "!items!5H4W4NhNiOjPkQlR",
+  "folder": null
+}

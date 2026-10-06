@@ -1,0 +1,19 @@
+{
+  "_id": "GzpMMB3y4z5A6B7C",
+  "name": "Death’s Sickness",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "GzpMMB3y4z5A6B7C",
+    "summary": "Prevents all healing and inflicts 1 damage per week; only a priest can cure it.",
+    "description": "<p>A victim that has been bitten or scratched by a beinbaiter runs the risk of dying from the dreadful death’s sickness. The victim slowly loses life in the form of 1 point of damage per week. The plague prevents wounds from healing, whether through mending, extracts, or natural healing, as long as the victim carries the sickness. The only way to cure the sickness is to visit a holy person of some religion who can heal the damage.</p><p>A person who dies from death’s sickness awakens after one cycle of moons with a terrible hunger for bone marrow.</p><p>A victim’s chance of contracting the sickness depends on how much damage the beinbaiter has inflicted to the victim during the combat. Compare the suffered damage with the chart below, then roll 1d10. If the die result is in the range given in the “Points 1d10” column, it means that the person has been afflicted with the sickness.</p><table><thead><tr><th>Damage inflicted</th><th>Infectious d10 result</th></tr></thead><tbody><tr><td>1-5</td><td>1</td></tr><tr><td>6-10</td><td>1-3</td></tr><tr><td>11-20</td><td>1-4</td></tr><tr><td>21-30</td><td>1-5</td></tr><tr><td>More than 30</td><td>1-6</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!GzpMMB3y4z5A6B7C",
+  "folder": null
+}

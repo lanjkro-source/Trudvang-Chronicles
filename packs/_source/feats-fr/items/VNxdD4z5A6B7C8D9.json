@@ -1,0 +1,19 @@
+{
+  "_id": "VNxdD4z5A6B7C8D9",
+  "name": "Guide trompeur",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VNxdD4z5A6B7C8D9",
+    "summary": "Le kungstroll égare ses victimes par de faux conseils.",
+    "description": "<p>Un kungstroll peut se cacher dans les fourrés et derrière les rochers pour suivre une créature en lui susurrant de charmantes paroles sur la beauté de la forêt ou de la montagne qu’elle traverse. Le troll tentera souvent d’attirer cette malheureuse créature dans un piège ou dans son antre où elle sera tuée ou asservie. La victime doit réussir un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) afin d’ignorer les paroles. Un échec signifie que la victime suit les suggestions susurrées sans même en être consciente. Un test réussi indique qu’elle résiste au pouvoir de Guide trompeur. La victime doit effectuer un nouveau test de situation à chaque fois que le troll souhaite l’inciter à suivre un autre chemin ou à prendre une autre direction.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 160
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VNxdD4z5A6B7C8D9",
+  "folder": null
+}

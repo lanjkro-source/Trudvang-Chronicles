@@ -1,0 +1,19 @@
+{
+  "_id": "NquAmWpVqWrXsYtZ",
+  "name": "Vulnérable à la lumière du soleil",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NquAmWpVqWrXsYtZ",
+    "summary": "À la lumière du soleil, -5 à tous les tests.",
+    "description": "<p>Les gobelins exposés à la lumière du soleil subissent un modificateur de -5 à leurs tests.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 150
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NquAmWpVqWrXsYtZ",
+  "folder": null
+}

@@ -1,0 +1,143 @@
+{
+  "name": "Aigle",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg",
+  "items": [
+    {
+      "_id": "FdN3u1u0v1w2x3y4",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!gX0tuiKfLgMhNiOj.FdN3u1u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Rapide",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+        "description": "<p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gX0tuiKfLgMhNiOj.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "gX0tuiKfLgMhNiOj",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 14,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 14,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "action": "movement",
+          "mode": "flight",
+          "distance": 20,
+          "value": 10
+        },
+        {
+          "attack": "Griffes",
+          "value": 16
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 18,
+        "max": 18
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "C'est un grand rapace au corps massif et à la poitrine large, couvert d'un plumage brun sombre aux reflets dorés sur la nuque. Sa tête puissante porte un bec crochu et tranchant, jaune à la base et noir à la pointe, surmontant des yeux perçants au regard ambré. Ses larges ailes rectangulaires, aux rémiges longuement digitées, lui donnent une envergure impressionnante. Ses pattes robustes et emplumées jusqu'aux serres se terminent par des griffes noires redoutablement recourbées. Sa queue courte et cunéiforme, plus claire chez les vieux individus, bat l'air avec force lors du décollage.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "bird",
+      "size": "0.5",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 18,
+      "bodyMax": 18,
+      "move": [
+        {
+          "mode": "vol",
+          "distance": "4 m",
+          "max": "28 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Majestueux rapace brun-doré au regard perçant.",
+      "environment": "Falaises et hauts sommets des monts de Trudvang, surplombant forêts et vallées ouvertes.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "gX0tuiKfLgMhNiOj",
+  "_key": "!actors!gX0tuiKfLgMhNiOj",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

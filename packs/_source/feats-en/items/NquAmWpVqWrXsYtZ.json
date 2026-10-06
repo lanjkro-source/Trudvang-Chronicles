@@ -1,0 +1,19 @@
+{
+  "_id": "NquAmWpVqWrXsYtZ",
+  "name": "Sunlight Weakness",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NquAmWpVqWrXsYtZ",
+    "summary": "In sunlight, the goblin suffers -5 to all rolls.",
+    "description": "<p>Goblins that are exposed to sunlight have a modifier of -5 to all SV-rolls.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 153
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NquAmWpVqWrXsYtZ",
+  "folder": null
+}

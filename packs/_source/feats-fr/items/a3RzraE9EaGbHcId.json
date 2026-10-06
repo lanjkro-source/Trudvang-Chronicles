@@ -1,0 +1,19 @@
+{
+  "_id": "a3RzraE9EaGbHcId",
+  "name": "Hylja (serpent géant)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "a3RzraE9EaGbHcId",
+    "summary": "Changement de couleur : Arts des ombres -10 pour le repérer immobile, -5 s’il bouge.",
+    "description": "<p>Certains serpents (surtout le serpent lacustre) ont la capacité de changer de couleur pour imiter leur environnement. Le serpent s’adapte à son milieu à tel point qu’il est nécessaire de réussir un test d’Arts des ombres avec un modificateur de -10 pour repérer le serpent s’il reste immobile. Si le serpent bouge, le modificateur passe alors à -5.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 29
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!a3RzraE9EaGbHcId",
+  "folder": null
+}

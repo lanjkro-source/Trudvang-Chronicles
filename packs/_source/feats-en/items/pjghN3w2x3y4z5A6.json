@@ -1,0 +1,19 @@
+{
+  "_id": "pjghN3w2x3y4z5A6",
+  "name": "Magma Breath",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "pjghN3w2x3y4z5A6",
+    "summary": "SV 12 without CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide. Each breath loses magma blood; more than three breaths in one day kill the dragon.",
+    "description": "<p>Like all dragons, a jarnwurm can attack with its breath without spending Combat Points, but must succeed on a skill roll at SV 12. This weapon is called magma breath, and the dragon and its opponents take the same damage. The dragon's damage is caused by the quantity of magma blood lost in the attack; if it breathes more than three times in one day, it dies from blood loss. Its magma blood recovers at the rate of one breath attack per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters and forms an enormous cone 6 meters in diameter at its farthest end.</p><p>The jarnwurm's profile specifies 3d10 (OR 8-10) damage for its magma breath.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 117
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!pjghN3w2x3y4z5A6",
+  "folder": null
+}

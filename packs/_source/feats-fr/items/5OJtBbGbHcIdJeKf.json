@@ -1,0 +1,19 @@
+{
+  "_id": "5OJtBbGbHcIdJeKf",
+  "name": "Communication avec les animaux",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "5OJtBbGbHcIdJeKf",
+    "summary": "L'yggdras comprend les animaux et peut échanger avec eux.",
+    "description": "<p>Les yggdras ont appris à communiquer avec les animaux au fil des années. Ceci a incité les animaux de la forêt à protéger les yggdras contre les intrus malveillants.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 103
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!5OJtBbGbHcIdJeKf",
+  "folder": null
+}

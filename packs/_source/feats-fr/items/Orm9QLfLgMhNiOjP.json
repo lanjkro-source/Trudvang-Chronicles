@@ -1,0 +1,19 @@
+{
+  "_id": "Orm9QLfLgMhNiOjP",
+  "name": "Sève curative",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "Orm9QLfLgMhNiOjP",
+    "summary": "Sève fraîche : 1d10 (JO 6-10) PS ; durcie : 1d10 (JO 8-10) PS ; ambre porté : +1 PS/jour de guérison.",
+    "description": "<p>Les vidrjotuns sont très proches de Trudvang et détiennent en eux la force vitale de la terre. Au lieu d’avoir, comme de nombreuses autres créatures de ce monde, du sang dans leurs veines, ils ont de la sève, comme les arbres. Cette sève est pleine de vie et peut être utilisée pour soigner tous les êtres vivants.</p><p>Quand un vidrjotun est blessé et que sa sève touche le sol, de jolies fleurs et de l’herbe verte se mettent à pousser. La sève peut redonner vigueur aux plantes mortes et faire en sorte que les étendues les plus désolées redeviennent fertiles et abritent de nouveau quantité de plantes. La sève peut même dissiper la magie noire des choses avec laquelle elle entre en contact. Une créature blessée qui boit une gorgée de sève soignera instantanément 1d10 (JO 6-10) points de dégâts.</p><p>Quand la sève se solidifie, elle prend une consistance caoutchouteuse et collante et devient une substance aux propriétés curatives. Un morceau de sève durcie de la taille d’un gland permettra à ceux qui l’avalent de récupérer 1d10 (JO 8-10) points de santé. Une sève qui a durci pendant plusieurs centaines d’années prend une teinte ambrée et possède toujours des propriétés curatives. Ceux qui portent un morceau de cet ambre augmentent leur faculté de guérison naturelle de +1 point de santé par jour.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 142
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!Orm9QLfLgMhNiOjP",
+  "folder": null
+}

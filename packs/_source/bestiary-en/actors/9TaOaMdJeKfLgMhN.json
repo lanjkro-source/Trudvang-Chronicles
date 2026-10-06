@@ -1,0 +1,381 @@
+{
+  "name": "Nymph",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
+  "items": [
+    {
+      "_id": "INS7jeIdJeKfLgMh",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!9TaOaMdJeKfLgMhN.INS7jeIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "name": "Nagli klubb (spiked club)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "weight": 1,
+        "value": 1,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "DB7i6QjPkQlRmSnT",
+      "_key": "!actors.items!9TaOaMdJeKfLgMhN.DB7i6QjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "_id": "WUDxR1sYtZu0v1w2",
+      "name": "Enchanting Song",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "WUDxR1sYtZu0v1w2",
+        "summary": "The nymph’s song enchants those who hear it.",
+        "description": "<p>Anyone who hears the nymph’s song sees the woman of their dreams and feels a great desire for her. The victim must make a situation roll with a situation value of 5 to 10 depending on how strong the nymph is (Psyche modifiers apply). On a success, the victim sees past the illusion and sees the natural form of the nymph (which is that of a beautiful girl, albeit not the woman of the victim’s dreams). On a failure, the victim is enchanted, and additional rolls will decide the effect of the spell.</p><p>In the following action round (after the failed resistance roll), the victim must make a new situation roll with the same situation value and modifiers as before. On a success, the nymph will still appear as their dream woman, but the victim can think rationally (this is called the first state of bewitchment). If this roll should also fail, the victim’s desire grows so strong that they will never use violence against the nymph for anything other than self-defense (this is called the second state of bewitchment). In the next action round, a victim who failed must make yet another situation roll with the same situation value and modifiers as before. On a success, the victim remains in the second state of bewitchment. On a failure, the bewitchment is complete, and not even attacks from the nymph would make the victim use violence against the nymph. The victim is prepared to die from the nymph’s killing bite.</p><p>If several people are bewitched at the same time, they all see their own vision of their dream woman. When a whole pack of nymphs attacks, the victims only need to face the leader of the pack. The nymphs always wait three action rounds for the spell to take effect before they attack with their bites.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 93
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9TaOaMdJeKfLgMhN.WUDxR1sYtZu0v1w2"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9TaOaMdJeKfLgMhN.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "9TaOaMdJeKfLgMhN",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": 2,
+      "intelligence": 1
+    },
+    "skills": {
+      "agility": {
+        "value": 10,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 8,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 8,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 10,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 10,
+        "bonus": 0
+      },
+      "care": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadowing",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage & Hiding",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Finding & Spotting",
+        "skillId": "shadowArts",
+        "catalogId": "findingSpotting",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Walking in Shadows",
+        "skillId": "shadowArts",
+        "catalogId": "walkingShadows",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Music & Dancing",
+        "skillId": "entertainment",
+        "catalogId": "musicDancing",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Singing & Playing Instruments",
+        "skillId": "entertainment",
+        "catalogId": "singingPlayingInstruments",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Storytelling",
+        "skillId": "entertainment",
+        "catalogId": "storytelling",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Acting",
+        "skillId": "entertainment",
+        "catalogId": "acting",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Libel",
+        "skillId": "entertainment",
+        "catalogId": "libel",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Tradesman",
+        "skillId": "care",
+        "catalogId": "tradesman",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brewer",
+        "skillId": "care",
+        "catalogId": "brewer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Cook",
+        "skillId": "care",
+        "catalogId": "cook",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Healing & Drugs",
+        "skillId": "care",
+        "catalogId": "healingDrugs",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Extracts & Potions",
+        "skillId": "care",
+        "catalogId": "extractsPotions",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "First Aid & Nursing",
+        "skillId": "care",
+        "catalogId": "firstAidNursing",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 8
+        }
+      ],
+      [
+        {
+          "attack": "Nagli klubb (spiked club)",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 29,
+        "max": 29
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "The nymph is a naked, very beautiful female creature. Some mistake it for an elf. Travelers describe a naked woman with a generous bosom. Its natural appearance is that of a pretty girl. It can change its appearance into the woman of its victim's dreams. It lives both in water and on dry land.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "60, max 120",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 26,
+      "bodyMax": 32,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "8 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "1 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Enchanting naked woman with a generous bosom, singer of the lakes.",
+      "environment": "Springs and streams in forests, lakes and dark waters, shadows and darkness throughout Trudvang",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 93
+      }
+    }
+  },
+  "_id": "9TaOaMdJeKfLgMhN",
+  "_key": "!actors!9TaOaMdJeKfLgMhN",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

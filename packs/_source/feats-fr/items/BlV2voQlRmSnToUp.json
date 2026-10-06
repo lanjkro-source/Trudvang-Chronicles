@@ -1,0 +1,19 @@
+{
+  "_id": "BlV2voQlRmSnToUp",
+  "name": "Empoignement",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "BlV2voQlRmSnToUp",
+    "summary": "Après une attaque à mains nues réussie, saisie sans PC supplémentaires ; écrasement selon la taille ou projection infligeant 1d10 (JO 10) par tranche de 3 m de chute.",
+    "description": "<p>Après une attaque à mains nues réussie, le géant peut tenter d’empoigner une victime de Taille 1/2 à 3 sans dépenser de PC supplémentaires. Il effectue un test de compétence dont la VC dépend de la taille de la victime. Celle-ci peut éviter l’empoignement grâce à Agilité, de préférence avec la spécialité Esquive.</p><p>À chaque tour, le géant peut écraser sa victime ou la projeter. Les dégâts d’écrasement dépendent de la taille de la victime. Une projection inflige 1d10 (JO 10) points de dégâts par tranche de 3 mètres de chute ; il faut utiliser la hauteur effective de la chute. Un firdtursir mesure généralement 20 à 22 m, soit 6d10 à 7d10 (JO 10) ; un hrimtursir 14 à 15 m, soit 4d10 à 5d10 (JO 10) ; un muspeljotun 25 à 27 m, soit 8d10 à 9d10 (JO 10). Un vidrjotun mesure également 25 à 27 m mais a souvent le bas du corps à moitié enfoui dans la terre : le MJ détermine donc la hauteur réelle et les dégâts de chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 130
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!BlV2voQlRmSnToUp",
+  "folder": null
+}

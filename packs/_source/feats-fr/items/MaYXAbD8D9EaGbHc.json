@@ -1,0 +1,19 @@
+{
+  "_id": "MaYXAbD8D9EaGbHc",
+  "name": "Chant du guide",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MaYXAbD8D9EaGbHc",
+    "summary": "Guide ou égare les voyageurs ; résister à l’égarement demande VS 8 (Psychisme), -1 par cinq fées supplémentaires.",
+    "description": "<p>Une fée peut chanter pour guider des gens égarés dans la forêt et les mener vers une sortie ou à proximité d’une piste. Ce pouvoir peut également être utilisé pour égarer des ennemis. Les ennemis qui entendent le chant doivent effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ; en cas d’échec, ils s’égarent. Plus les fées sont nombreuses à entonner ce chant, plus il est difficile de résister à ses effets. Appliquez un modificateur de -1 à la valeur de situation du test pour chaque groupe de cinq fées qui chantent en plus de la première.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 72
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MaYXAbD8D9EaGbHc",
+  "folder": null
+}

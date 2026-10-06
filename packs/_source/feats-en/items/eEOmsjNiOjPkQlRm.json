@@ -1,0 +1,19 @@
+{
+  "_id": "eEOmsjNiOjPkQlRm",
+  "name": "Tail Whip",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "eEOmsjNiOjPkQlRm",
+    "summary": "Sweeps all targets within a 3-meter radius (SV 6, initiative 0); damage depends on the number of creatures affected and victims are knocked prone.",
+    "description": "<p>The wurm can use his tail like a whip to hit all the targets within a radius of 3 m. The wurm must make a successful SV6 roll and cannot perform any other action. The Initiative Modifier is 0. The damage taken depends on the number of people affected according to the chart below and anyone who is hit is thrown down and remains prone until he makes a Stand Up combat action.</p><p>The only way to protect oneself from the tail whip is to avoid it with a successful Evade roll.</p><table><thead><tr><th>Number of creatures</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>2d10 (OR 8-10)</td></tr><tr><td>2</td><td>2d10 (OR 9-10)</td></tr><tr><td>3</td><td>2d10 (OR 10)</td></tr><tr><td>4</td><td>1d10 (OR 8-10)</td></tr><tr><td>More than 4</td><td>1d10 (OR 10)</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 117
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!eEOmsjNiOjPkQlRm",
+  "folder": null
+}

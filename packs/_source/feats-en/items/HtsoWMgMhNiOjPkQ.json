@@ -1,0 +1,19 @@
+{
+  "_id": "HtsoWMgMhNiOjPkQ",
+  "name": "Feel Hostility",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "HtsoWMgMhNiOjPkQ",
+    "summary": "Senses intelligent creatures and hostile intentions within 200 m.",
+    "description": "<p>An yggdras can feel the presence of intelligent creatures within 200 meters and know whether such a creature is hostile or not.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 103
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!HtsoWMgMhNiOjPkQ",
+  "folder": null
+}

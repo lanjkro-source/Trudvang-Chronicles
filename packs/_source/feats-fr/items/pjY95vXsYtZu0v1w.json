@@ -1,0 +1,19 @@
+{
+  "_id": "pjY95vXsYtZu0v1w",
+  "name": "Métamorphose (draugr)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "pjY95vXsYtZu0v1w",
+    "summary": "Transformation à volonté en animal ; 3 tours sans pouvoir se défendre, et un coût de 30 jours et nuits de séjour.",
+    "description": "<p>Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.</p><p>Le draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.</p><p>Chaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 50
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!pjY95vXsYtZu0v1w",
+  "folder": null
+}

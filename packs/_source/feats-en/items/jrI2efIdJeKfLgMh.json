@@ -1,0 +1,19 @@
+{
+  "_id": "jrI2efIdJeKfLgMh",
+  "name": "Low-Light Vision",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "jrI2efIdJeKfLgMh",
+    "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+    "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 26
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!jrI2efIdJeKfLgMh",
+  "folder": null
+}

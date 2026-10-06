@@ -1,0 +1,19 @@
+{
+  "_id": "T3YqIZu0v1w2x3y4",
+  "name": "Télékinésie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "T3YqIZu0v1w2x3y4",
+    "summary": "Le diser peut déplacer les objets par la seule pensée.",
+    "description": "<p>Le diser peut soulever un objet et le déplacer dans les airs. La taille et le poids de l’objet que le diser peut soulever de cette façon sont laissés à l’appréciation du maître de jeu. Une créature prise pour cible par ce pouvoir peut y résister en réussissant un test de situation avec une valeur de situation déterminée par le maître de jeu, en prenant en considération le poids de la créature et la force du diser.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!T3YqIZu0v1w2x3y4",
+  "folder": null
+}

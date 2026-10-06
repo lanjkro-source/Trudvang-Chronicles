@@ -1,0 +1,19 @@
+{
+  "_id": "OG4PmMfLgMhNiOjP",
+  "name": "Vecteur de maladies",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "OG4PmMfLgMhNiOjP",
+    "summary": "À moins de 2 m d’un troll malade, VS 7 (Constitution) ; réussite : immunité un mois, échec : effet de maladie au d20.",
+    "description": "<p>Les trolls mènent une vie primitive et crasseuse, et sont donc souvent les vecteurs de nombreuses maladies. Les créatures situées à moins de 2 mètres d’un troll malade doivent effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Constitution s’applique). Si le test est réussi, la créature est immunisée aux maladies des trolls pendant un mois. En cas d’échec, déterminez l’effet qui touche la victime en consultant la table page 153.</p><table><thead><tr><th>1d20</th><th>Effet</th></tr></thead><tbody><tr><td>1 à 5</td><td>La puanteur du troll imprègne les vêtements et la victime sent très mauvais.</td></tr><tr><td>6 à 9</td><td>Vertiges : -1 aux valeurs de compétence et de situation pendant une heure.</td></tr><tr><td>10 à 13</td><td>Gros rhume : -1 aux valeurs de compétence et de situation pendant une journée.</td></tr><tr><td>14 à 16</td><td>Très gros rhume et fièvre pendant 1d6 jours : -2 aux valeurs de compétence et de situation, mouvement réduit aux 2/3.</td></tr><tr><td>17 à 18</td><td>Rougeurs importantes pendant 1d6 jours : -3 aux valeurs de compétence et de situation. À la fin, test VS 7 (Constitution) ; en cas d’échec, le même effet perdure 1d3 jours supplémentaires.</td></tr><tr><td>19 à 20</td><td>1d10+5 gros furoncles apparaissent. Chaque jour, 1d3 éclatent jusqu’à disparition complète ; chaque furoncle inflige 1d3 dégâts quand il éclate.</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 151
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!OG4PmMfLgMhNiOjP",
+  "folder": null
+}

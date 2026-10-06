@@ -1,0 +1,19 @@
+{
+  "_id": "NrD7FaGbHcIdJeKf",
+  "name": "Overheat",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NrD7FaGbHcIdJeKf",
+    "summary": "The logiwurm’s body heats up lethally to anyone nearby.",
+    "description": "<p>Without spending CP, the logiwurm can change its blood circulation to overheat its body. This costs one daily use of its breath attack. Overheating takes 3 action rounds to activate, during which the dragon can act normally, and lasts for another 3 rounds, during which it cannot perform any other action. All creatures within 10 meters take 2d10 (OR 9-10) damage per action round. Those 11-20 meters away take 2d10 damage.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 124
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NrD7FaGbHcIdJeKf",
+  "folder": null
+}

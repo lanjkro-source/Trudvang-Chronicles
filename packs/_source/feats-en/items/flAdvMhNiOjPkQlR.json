@@ -1,0 +1,19 @@
+{
+  "_id": "flAdvMhNiOjPkQlR",
+  "name": "Smoke Body",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "flAdvMhNiOjPkQlR",
+    "summary": "Transformation over 3 defenseless rounds; movement 30 m/round, healing 10 BP/day in smoke form.",
+    "description": "<p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 58
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!flAdvMhNiOjPkQlR",
+  "folder": null
+}

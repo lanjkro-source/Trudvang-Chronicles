@@ -1,0 +1,19 @@
+{
+  "_id": "gkcwjKdJeKfLgMhN",
+  "name": "Huvfurwurm Head",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gkcwjKdJeKfLgMhN",
+    "summary": "Each huvfurwurm head grants +2 CP for bites.",
+    "description": "<p>Each huvfurwurm head adds its Bite combat point reserve to the body reserve and uses the body reserve for attacks.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 111
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gkcwjKdJeKfLgMhN",
+  "folder": null
+}

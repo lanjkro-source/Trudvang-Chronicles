@@ -1,0 +1,19 @@
+{
+  "_id": "10klNtVqWrXsYtZu",
+  "name": "Lava Blood",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "10klNtVqWrXsYtZu",
+    "summary": "Heat within 6 m, resist at situation value 12 (Psyche); splash on 1-2 on a d10, dealing 1d5 damage.",
+    "description": "<p>Under the stale skin of the muspeljotun, there runs hot lava. The giant radiates such heat that everyone who comes within 6 meters must make a situation roll with a situation value of 12 (Psyche modifiers apply) to see if they can withstand the heat. Anyone who remains standing takes the damage per action round noted below due to the heat.</p><p>Weapons that cut through the skin cause lava blood to spew from the wound. An attacker in close combat could be hit by the blood and take damage from the heat (make a luck roll with 1d10, where 1-2 means that the attacker is hit by the blood). The attacker can avoid this by succeeding on a Agility skill roll. If the roll fails, the character takes 1d5 points of damage (armor protects normally but can start to burn).</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1-3</td><td>None</td></tr><tr><td>4</td><td>1</td></tr><tr><td>5</td><td>1d3</td></tr><tr><td>6</td><td>2d3</td></tr><tr><td>Each additional round</td><td>+1d3</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 140
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!10klNtVqWrXsYtZu",
+  "folder": null
+}

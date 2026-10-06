@@ -1,0 +1,19 @@
+{
+  "_id": "7Aa9AMfLgMhNiOjP",
+  "name": "Tough",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "7Aa9AMfLgMhNiOjP",
+    "summary": "The demon has twice as many BP because its tolerance of pain is higher than other demons’.",
+    "description": "<p>The demon’s tolerance of pain is higher than that of normal demons, therefore this demon has double Body Points.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!7Aa9AMfLgMhNiOjP",
+  "folder": null
+}

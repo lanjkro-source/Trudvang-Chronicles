@@ -1,0 +1,188 @@
+{
+  "name": "Kelpie",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg",
+  "items": [
+    {
+      "_id": "aldpxB6B7C8D9EaG",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.aldpxB6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "_id": "VbQLMPkQlRmSnToU",
+      "name": "Hooves",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "hooves",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.VbQLMPkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "_id": "8h85YWrXsYtZu0v1",
+      "name": "Luring Stench",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "8h85YWrXsYtZu0v1",
+        "summary": "Situation value 10 (Psyche) to resist the lure; ends after at least 3 damage or when drowning starts.",
+        "description": "<p>The most prominent ability of the kelpie is that it can lure unknowing travelers from a range of several hundred meters. Even if the stench that is released is horrible, it carries an enchanting power that can twist the comprehension of those who smell it. The enchantment makes the person lose all concept of time and space and forces them to keep on walking. Victims that later wake up from this state don’t know where they are or how they got there.</p><p>A person who can smell the luring stench from the kelpie must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order to overcome the enchantment. A failed roll means the victim keeps moving toward the kelpie.</p><p>The spell is broken if the victim suffers at least 3 points of damage or is about to drown. Once the kelpie is close, it will try to drag the victim underneath the water to drown.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 84
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.8h85YWrXsYtZu0v1"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!2xYo22w2x3y4z5A6.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "2xYo22w2x3y4z5A6",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 10
+        },
+        {
+          "attack": "Hooves",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 120,
+        "max": 120
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 36
+    },
+    "description": "The kelpie looks like a horse, described in tales as beautiful. The observed animal was black and malevolent. It is a large, massive creature with hooves and biting jaws. It has a thick mane and remarkable teeth. It secretes a horrible stench, worse than a heap of corpses.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "quadruped",
+      "size": "4",
+      "age": "10, max 20",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 108,
+      "bodyMax": 132,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "36 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Malevolent black horse with an enchanting corpse-like stench.",
+      "environment": "Ponds, peat bogs, deep lakes, and swamps, such as those in Visentia and Ghoowland",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 84
+      }
+    }
+  },
+  "_id": "2xYo22w2x3y4z5A6",
+  "_key": "!actors!2xYo22w2x3y4z5A6",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

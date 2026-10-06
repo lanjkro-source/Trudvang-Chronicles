@@ -1,0 +1,19 @@
+{
+  "_id": "WsKYW9B7C8D9EaGb",
+  "name": "Télépathie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WsKYW9B7C8D9EaGb",
+    "summary": "Le diser peut lire les esprits et y murmurer.",
+    "description": "<p>Le diser est capable de parler mentalement avec une ou plusieurs personnes. Celles-ci entendent une voix comme si quelqu’un leur parlait, à la seule différence qu’elles sont les seules à entendre ce que le fantôme est en train de leur dire.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WsKYW9B7C8D9EaGb",
+  "folder": null
+}

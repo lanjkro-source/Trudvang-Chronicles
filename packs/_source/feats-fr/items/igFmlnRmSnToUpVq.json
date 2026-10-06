@@ -1,0 +1,19 @@
+{
+  "_id": "igFmlnRmSnToUpVq",
+  "name": "Regard paralysant (serpent géant)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "igFmlnRmSnToUpVq",
+    "summary": "Après contact visuel, résistance VS 6 (Psychisme) ; paralysie 1d3 tours et constriction automatique.",
+    "description": "<p>Certains serpents (surtout le serpent des forêts) ont la capacité de paralyser leurs victimes avec leur regard.</p><p>Le serpent doit tout d’abord obtenir l’attention de sa victime afin que leurs regards se croisent. Si le serpent réussit, la victime doit faire un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) pour éviter la paralysie pendant 1d3 tours, qui l’empêche de faire quoi que ce soit.</p><p>Pendant le tour au cours duquel le serpent utilise son attaque de regard paralysant, il ne peut effectuer aucune autre action. La victime de la constriction reste piégée mais ne subit aucun dégât. Le serpent ne perd qu’un seul tour ; si son regard est efficace, il peut agir au cours des tours suivants alors que sa victime est paralysée.</p><p>Si le serpent tente d’enserrer une victime paralysée, il réussit automatiquement et la victime n’a aucune chance de s’en défaire tant qu’elle est paralysée.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 29
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!igFmlnRmSnToUpVq",
+  "folder": null
+}

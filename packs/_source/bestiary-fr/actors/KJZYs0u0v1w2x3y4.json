@@ -1,0 +1,93 @@
+{
+  "name": "Lactaire sanguin",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg",
+  "items": [
+    {
+      "_id": "Z7dB9gIdJeKfLgMh",
+      "name": "Spores",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Z7dB9gIdJeKfLgMh",
+        "summary": "Contamination au d20 ; le champignon atteint le cerveau après 20 moins le résultat jours, tue la victime et contrôle le cadavre.",
+        "description": "<p>Le lactaire sanguin n’attaque pas de la même façon que les autres créatures mais produit en permanence un nuage de spores qui influence toutes les créatures situées à proximité du champignon. Quand le lactaire sanguin prend possession d’un squelette, il ne réalise pas non plus ses attaques avec les armes du squelette mais continue simplement de produire des spores à chaque tour. Les créatures affectées par le champignon lancent 1d20 pour déterminer les parties du corps touchées par les spores (un résultat de 1 produit un effet minime et un 20 produit un effet total). Le résultat doit être soustrait à 20 afin de déterminer le nombre de jours que prend le champignon pour atteindre le cerveau. Lorsqu’il atteint le cerveau, la victime décède et le champignon prend le contrôle du cadavre. Par exemple, une créature contaminée par les spores obtient un 12 sur le d20. Elle dispose donc de 8 (20-12) jours pour se débarrasser du champignon avant qu’il ne soit trop tard.</p><p>La seule façon de se débarrasser du champignon consiste à le brûler, ce qui signifie que les victimes ayant survécu à la contamination portent souvent de grandes marques de brûlures et d’importantes cicatrices. Les brûlures infligent des dégâts de 5 + la valeur obtenue pour déterminer l’importance de la contamination.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 84
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!KJZYs0u0v1w2x3y4.Z7dB9gIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "KJZYs0u0v1w2x3y4",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Le lactaire sanguin est d'abord une fleur parasite rougeâtre qui pousse sur l'écorce des sapins. Ses fleurs sont à peine visibles sur l'écorce. La fleur s'ouvre en sentant les vibrations du sol et lâche ses spores. Le champignon s'enracine dans la chair vivante et la décompose jusqu'au cerveau. Une fois son hôte mort, il forme une symbiose avec le squelette et le déplace comme une extension de sa conscience.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "other",
+      "size": "0.33",
+      "age": "3, max. 20",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": null,
+      "bodyMax": null,
+      "move": [
+        {
+          "mode": "spécial",
+          "distance": "1 m",
+          "max": "1 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Fleur-champignon rougeâtre buveuse de sang, marionnettiste de squelettes",
+      "environment": "Forêts de résineux du sud de Svartliden, la forêt ténébreuse, sur l'écorce des sapins",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 84
+      }
+    }
+  },
+  "_id": "KJZYs0u0v1w2x3y4",
+  "_key": "!actors!KJZYs0u0v1w2x3y4",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

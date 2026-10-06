@@ -1,0 +1,19 @@
+{
+  "_id": "0hJrbG9EaGbHcIdJ",
+  "name": "Peur de la magie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "0hJrbG9EaGbHcIdJ",
+    "summary": "Tests successifs contre la magie : VS 8 puis VS 12 ; échecs : -3 aux actions et fuite pendant 1d6 tours.",
+    "description": "<p>Quand les hrimtrolls entrent en contact avec une source de magie, chacun doit effectuer un test de situation avec une valeur de situation de 8. En cas d’échec, un troll subit un modificateur de -3 à tout ce qu’il tente, et doit également effectuer un nouveau test de situation avec une valeur de situation de 12. Un deuxième échec signifie que le hrimtroll fuit la source de magie pendant 1d6 tours de jeu avant de pouvoir tenter de s’en rapprocher de nouveau. Quand le hrimtroll tente de se rapprocher à nouveau, il doit effectuer un autre test de situation, cette fois-ci avec un modificateur de -2, ce qui aboutit à une valeur de situation de 10. En cas d’échec, ce processus est répété jusqu’à ce que la valeur de situation soit réduite à 0, auquel cas le troll n’ose plus jamais se rapprocher de la source de magie.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 156
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!0hJrbG9EaGbHcIdJ",
+  "folder": null
+}

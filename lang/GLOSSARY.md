@@ -65,6 +65,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TYPES.Item.tablet` | Tablet | Tablette |
 | `TYPES.Item.divineFeat` | Divine Feat | Pouvoir divin |
 | `TYPES.Item.ability` | Discipline / Specialty | Discipline / Specialité |
+| `TYPES.Item.creatureAbility` | Creature feat | Capacité |
 
 ## `TRUDVANG.Sheets`
 
@@ -74,6 +75,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Sheets.Npc` | Trudvang Compact NPC Sheet | Feuille de PNJ |
 | `TRUDVANG.Sheets.Item` | Trudvang Item Sheet | Feuille d'objet |
 | `TRUDVANG.Sheets.Effect` | Trudvang Effect Sheet | Feuille d'effet de Trudvang |
+| `TRUDVANG.Sheets.CreatureAbility` | Creature Feat Sheet | Feuille de capacité |
 
 ## `TRUDVANG.Settings`
 
@@ -812,6 +814,18 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.MovementModes.flight` | Flight | Vol |
 | `TRUDVANG.Npc.MovementModes.swimming` | Swimming | Nage |
 | `TRUDVANG.Npc.MovementModes.special` | Special | Spécial |
+
+## `TRUDVANG.Npc.CreatureTypes`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Npc.CreatureTypes.beast` | Beasts | Bêtes |
+| `TRUDVANG.Npc.CreatureTypes.mist` | Mist creatures | Créatures des brumes |
+| `TRUDVANG.Npc.CreatureTypes.nature` | Nature beings | Êtres de la nature |
+| `TRUDVANG.Npc.CreatureTypes.troll` | Trolls | Trolls |
+| `TRUDVANG.Npc.CreatureTypes.wurm` | Wurms | Wurms |
+| `TRUDVANG.Npc.CreatureTypes.jotunTursir` | Jotuns and thurses | Jotuns et thurses |
+| `TRUDVANG.Npc.CreatureTypes.animal` | Animals | Animaux |
 
 ## `TRUDVANG.Fear`
 
@@ -6823,128 +6837,2619 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Journal.toikalokke.Name` | Toikalokke | Toikalokke |
 | `TRUDVANG.Content.Journal.toikalokke.Content` | <article class="trudvang-religion-journal"><p>Toikalokke is the name for the divine practice learned by elven stargazers and priests (though the elves call them the “high gifts,” after the “high gods”). Those who master these gifts are called Ihana.</p><h2>Star Harp</h2><ul><li>Toikalokke’s prerequisite for Holy Tablets)</li></ul><p>The star harp is the elven priest’s most valuable possession, and with the help of that object the priest is able to decipher the stars and make contact with the gods which give the knowledge of Holy Tablets. All star harps are different. Some are as small as the palm of a hand, while others may be as big as a house, but all of them appear as a wicker tree without leaves. A star harp is created from the unusual alfarka wood and is powerfully connected to the priest who owns it (as every priest needs to possess their own star harp). From the branches of the harp, the priest hangs different prisms and lenses, and by studying how the starlight breaks against the prisms, the priest can make contact with the gods.</p><p>If the priest’s star harp breaks or disappears, the priest must get a new one, otherwise no stargazing will be possible, although normal Divinity Points can be used. Another Ihana’s star harp may not be used as a replacement, even temporarily.</p><h2>Stargazing and Extra Divinity Points</h2><p>Elven priests can obtain extra Divinity Points in much the same way that Gerbanis priests perform blood sacrifice or Gavlians of Westmark pray , though the method obviously differs. By studying stars and astral bodies with a star harp, they acquire their extra Divinity Points.</p><p>To decipher the signs of the gods, two things are required: it must be a starry night (in this way , the elves are influenced more by the unpredictable nature of weather than are the priests of Gerbanis or the Tenet of Nid), and the elf must have their star harp ready for use.</p><p>A dimwalker can decipher the stars only on singular occasions and must wait until all the Divinity Points from the last stargazing have disappeared before doing so again.</p><ul><li>Divinity points obtained through stargazing are fleeting and disappear at a rate of 1 point per day.</li></ul><h2>Time Spent Stargazing and External Conditions</h2><p>Both the time that the Ihana spends stargazing and the conditions in which the ritual is performed garner different amounts of Divinity Points.</p><p>During the time that an Ihana spends stargazing, they must remain undisturbed. Each time the priest’s peace and meditation is disturbed, they must succeed on an appropriate Situation roll to maintain concentration.</p><p>If the priest loses concentration, that stargazing attempt has failed and no Divinity Points are obtained.</p><section class="trudvang-religion-table"><h3>Time Spent Stargazing</h3><table><thead><tr><th>Time spent</th><th>Divinity Points</th></tr></thead><tbody><tr><td>1 hour</td><td>1</td></tr><tr><td>4 hours</td><td>3</td></tr><tr><td>8 hours</td><td>6</td></tr><tr><td>2 × 8 hours (2 nights)</td><td>12</td></tr><tr><td>3 × 8 hours (3 nights)</td><td>24</td></tr><tr><td>7 × 8 hours (7 nights)</td><td>32</td></tr></tbody></table></section><p>Based on the stargazing conditions, a multiplier is applied to the Divinity Points gained over time. An Ihana is unable to stargaze at all if the sky is completely covered in clouds or if the location is one where the stars are not visible, such as underground or beneath a thick canopy of trees.</p><p>The table below indicates the multiplier for different conditions.</p><section class="trudvang-religion-table"><h3>Stargazing Conditions</h3><table><thead><tr><th>Visibility</th><th>Divinity Points</th></tr></thead><tbody><tr><td>Partially starry</td><td>×1</td></tr><tr><td>Starry</td><td>×2</td></tr><tr><td>Partially starry and full moon</td><td>×3</td></tr><tr><td>Starry and full moon</td><td>×4</td></tr><tr><td>Summer solstice</td><td>×5</td></tr><tr><td>Storm</td><td>/2</td></tr></tbody></table></section><p>To succeed in studying the stars, the stargazer must make a successful Skill roll for the Ihana specialty.</p><p>Stargazing is the well of power from which an Ihana priest draws strength. The amount of time spent stargazing and the predominant weather conditions during the process are quite important, as is the location, since the worthier a place is and the longer the time spent there, the more power the priest will gain to use in divine abilities. Without stargazing with a star harp the Ihana has only a limited amount of Divinity Points to spend on abilities. Stargazing allows the Ihana the opportunity to obtain extra points when needed.</p></article> | <article class="trudvang-religion-journal"><p>Toikalokke est le nom donné à la pratique divine enseignée par les prêtres et astrologues elfes (Ces derniers l’appellent « hauts dons », d’après les « hauts dieux »). Ceux qui maîtrisent ces dons sont appelés ihanas.</p><h2>La harpe des étoiles</h2><ul><li>Prérequis du Toikalokke pour l’apprentissage des Tablettes sacrées.</li></ul><p>La harpe des étoiles est l’objet le plus précieux que peut posséder un prêtre elfe, car il lui permet de déchiffrer les étoiles et d’entrer en contact avec les dieux qui lui confèrent la connaissance des tablettes sacrées. Toutes les harpes des étoiles sont différentes. Certaines sont aussi petites que la paume de la main, tandis que d’autres sont aussi grandes qu’une maison, mais toutes ressemblent à un saule sans feuille.</p><p>Les harpes des étoiles sont fabriquées à partir du bois d’alfarka, qui est assez rare, et elles sont fortement liées à leur propriétaire (chaque prêtre doit posséder sa propre harpe). Le prêtre accroche divers prismes et lentilles aux branches de la harpe, et en étudiant la façon dont ils décomposent la lumière des étoiles, il peut entrer en contact avec les dieux.</p><p>Si le prêtre brise sa harpe ou la perd, il doit en obtenir une nouvelle, sans quoi il ne pourra plus interpréter les étoiles, même s’il demeure capable d’utiliser normalement ses points de divinité. Il lui est impossible de la remplacer par la harpe d’un autre prêtre, même de façon temporaire.</p><h2>Astrologie et points de divinité supplémentaires</h2><p>Les prêtres elfes peuvent obtenir des points de divinité supplémentaires de façon similaire aux prêtres de Gerbanis qui font des sacrifices de sang ou aux gavliens du Vastermark qui prient, mais leur méthode est évidemment différente. C’est en étudiant les étoiles et les corps célestes à travers leurs harpes des étoiles qu’ils se procurent leurs points de divinité supplémentaires.</p><p>Pour déchiffrer les signes des dieux, l’ihana a besoin de deux choses : une nuit étoilée (en cela, les elfes subissent davantage l’influence de la nature imprévisible des éléments que les prêtres de Gerbanis ou de la Doctrine de Nid), et sa harpe des étoiles à portée de main.</p><p>Un arpenteur des brumes ne peut déchiffrer les étoiles qu’en des occasions particulières et il doit attendre que tous les points de divinité qu’il a reçus lors de sa précédente observation des étoiles aient disparu avant de pouvoir recommencer.</p><p>Pour parvenir à étudier les étoiles, l’arpenteur des brumes doit réussir un test de compétence avec la spécialité Ihana.</p><p>L’astrologie est le puits de pouvoir dans lequel les prêtres ihanas puisent leur force. Le temps passé à observer les étoiles et les conditions météorologiques qui accompagnent cette pratique sont plutôt importants, de même que l’endroit où l’ihana s’installe : plus le lieu est significatif et plus il y passe du temps, plus la quantité de pouvoir que recevra le prêtre pour utiliser ses talents divins sera importante. S’il n’observe pas les étoiles à l’aide d’une harpe des étoiles, l’ihana ne dispose que d’une quantité limitée de points de divinité à dépenser pour utiliser ses pouvoirs. L’astrologie donne à l’ihana l’occasion d’obtenir des points supplémentaires quand le besoin s’en fait sentir.</p><ul><li>Les points de divinité obtenus par le biais de l’astrologie sont volatiles et disparaissent au rythme de 1 point par jour.</li></ul><h2>Temps passé à observer les étoiles, conditions externes</h2><p>Le temps que passe l’ihana à observer les étoiles et les conditions dans lesquelles il accomplit ce rituel influent largement sur le nombre de points de divinité que l’arpenteur des brumes peut recueillir.</p><p>Pendant tout le temps qu’il observe les étoiles, l’ihana ne doit subir aucune distraction. Chaque fois que la tranquillité du prêtre est menacée, il doit réussir un test de situation adéquat pour conserver sa concentration. Si le prêtre est déconcentré, son rituel échoue et il n’en retire aucun point de divinité.</p><section class="trudvang-religion-table"><h3>Temps passé à observer les étoiles</h3><table><thead><tr><th>Temps passé</th><th>Points de divinité</th></tr></thead><tbody><tr><td>1 heure</td><td>1</td></tr><tr><td>4 heures</td><td>3</td></tr><tr><td>8 heures</td><td>6</td></tr><tr><td>2 × 8 heures (2 nuits)</td><td>12</td></tr><tr><td>3 × 8 heures (3 nuits)</td><td>24</td></tr><tr><td>7 × 8 heures (7 nuits)</td><td>32</td></tr></tbody></table></section><p>En fonction des conditions dans lesquelles l’ihana observe les étoiles, on applique un multiplicateur au nombre de points de divinité qu’il obtient au fil du temps. Un ihana est dans l’impossibilité d’observer les étoiles si le ciel est complètement voilé par les nuages ou s’il se trouve à un endroit où les étoiles ne sont pas visibles (en sous-sol ou sous la canopée d’une épaisse forêt, par exemple). Si l’ihana observe les étoiles plus de 8 heures, alors il doit passer la journée à dormir et effectue des calculs astronomiques le soir avant de reprendre l’observation.</p><p>La table ci-dessous précise le multiplicateur selon les conditions.</p><section class="trudvang-religion-table"><h3>Conditions externes</h3><table><thead><tr><th>Visibilité</th><th>Points de divinité</th></tr></thead><tbody><tr><td>Partiellement étoilé</td><td>×1</td></tr><tr><td>Étoilé</td><td>×2</td></tr><tr><td>Partiellement étoilé et pleine lune</td><td>×3</td></tr><tr><td>Étoilé et pleine lune</td><td>×4</td></tr><tr><td>Solstice d’été</td><td>×5</td></tr><tr><td>Orage</td><td>/2</td></tr></tbody></table></section></article> |
 
+## `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI.Name` | Exhaust Life | Absorption de vie |
+| `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI.Description` | <p>A diser can ensnare a victim with a successful skill roll at SV 13. Subtract the victim's Psyche modifier from this SV: a modifier of +2 gives SV 11, while -2 gives SV 15. Each subsequent successful skill roll, likewise modified by the victim's Psyche, allows the diser to exhaust the victim's life force.</p><p>An ensnared victim can escape only by succeeding on a situation roll whose value the GM chooses according to the diser's power; the victim's Psyche modifier applies. An exceptionally powerful diser might allow situation value 1, and a very weak one 20. Repeat this roll each new action round. The GM may also vary the diser's skill values for capturing victims and absorbing their life force.</p><p>Stolen life force is expressed as damage to the victim. For every 3 points of damage inflicted, the diser gains +1 Body Point, first regenerating any BP it has lost. Once all its damage has healed, the diser instead grows stronger; the GM adjusts its characteristics as this happens.</p><p>The GM also decides the damage inflicted by each absorption. Examples are 1 point, 1d3 points, 1d5 points, 1d10 points, or 1d10 (OR 10) points.</p> | <p>Le diser peut capturer une victime en réussissant un test de compétence avec une VC 13 (le modificateur de Psychisme de la victime s’applique négativement à la VC ; ainsi, si la victime à un modificateur de +2, la VC sera de 11, alors qu’elle sera de 15 si le modificateur est de -2). Ensuite, à chaque fois qu’il réussit un nouveau test de compétence modifié par le trait Psychisme de la victime, le diser peut absorber sa force vitale.</p><p>Une victime piégée ne peut se libérer que si elle réussit un test de situation avec une valeur de situation que le maître de jeu décide selon la puissance du diser (le modificateur de Psychisme de la victime s’applique). Ainsi, un diser extrêmement puissant aura une valeur de situation de 1, tandis qu’un diser très faible aura une valeur de situation de 20. Le test de situation est de nouveau effectué à chaque tour de jeu. La valeur de compétence du diser pour capturer sa victime et absorber sa force vitale peut varier d’un diser à l’autre, à l’appréciation du maître de jeu.</p><p>La force vitale absorbée est exprimée par un nombre de points de dégâts infligés à la victime. Pour chaque tranche de 3 points de dégâts que le diser inflige, celui-ci gagne +1 point de santé. Si le diser subit des dégâts et perd ainsi des points de santé, ceux-ci sont régénérés lorsque le fantôme absorbe la vie de sa victime. S’il n’a perdu aucun point de santé ou s’il a déjà soigné tous les dégâts qu’il a subis, le diser gagne de la force à la place. C’est au maître de jeu de modifier les caractéristiques du diser au fur et à mesure qu’il gagne en puissance.</p><p>Le nombre de points de dégâts que la victime subit chaque fois que le diser absorbe sa force vitale est également laissé à l’appréciation du maître de jeu. Voici quelques exemples :</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (JO 10) points</li></ul> |
+| `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.EVhUocGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.EVhUocGbHcIdJeKf.Name` | Winged | Ailé |
+| `TRUDVANG.Content.CreatureAbility.EVhUocGbHcIdJeKf.Description` | <p>The demon has wings that allow it to fly. Movement is decided by the GM.</p> | <p>Le démon est doté d’ailes qui lui permettent de voler (c’est au maître de jeu de décider de la distance qu’il peut parcourir de cette façon).</p> |
+| `TRUDVANG.Content.CreatureAbility.EVhUocGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.G8S7IUlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.G8S7IUlRmSnToUpV.Name` | Appearance | Apparence |
+| `TRUDVANG.Content.CreatureAbility.G8S7IUlRmSnToUpV.Description` | <p>There is nothing that says how a diser should look. Sometimes they seem colorless and almost transparent, and sometimes they can be as real as any person on the street, with the only difference being that they lack a physical body. But no matter how real they may seem, there is always one thing by which you can identify a diser: its eyes. These ghosts have a very difficult time recreating eyes. Their eyes are almost always milky and faintly glowing. If one looks very closely, which one should of course avoid, one can actually see the very fog of Misthal move in them.</p><p>The Body Points of a diser are a measure of how strong it is and how much damage it can absorb. Even if the diser is not a physical creature, it has a Body Point value. When the Body Points fall to zero, the wraith is banished to the realm of the dead. The diser takes no damage from normal weapons. Only holy or highly magical weapons can harm it (up to the game master to decide). Banishing a diser back to the realm of the dead can be done in a wide range of ways. Below is a short list of things that in some way harm a diser or banish it to the realm of the dead.</p><ul><li>Spells: Dismiss Undead, Control Undead, and Detect Undead.</li><li>Gerbanis prayers: Death Gust, Breath of Mogunda, and Will of Bodvildur.</li><li>Tenet of Nid prayers: Blessed Spear, Rowthguard’s Battle Scourge, Belo Seoth’s Axe, Holy Bolt, Sacred Burst, and Divine Purge.</li><li>Complete a task the wraith wishes to finish.</li><li>Say aloud the name the wraith had in life.</li><li>Persuade a victim to forgive the wraith for what it did while alive.</li></ul><p>Even if something is represented in the list above, it is up to the game master to decide whether the diser is affected by it or immune to it, just as there can be other things not on the list that affect the diser.</p> | <p>L’apparence d’un diser n’est pas définie. Ils semblent parfois ternes et presque transparents, d’autres fois aussi réels que n’importe quel passant dans la rue, à la seule différence que leur corps est immatériel. Mais quel que soit leur semblant de réalité plus ou moins prononcé, une chose vous permettra toujours d’identifier un diser : ses yeux. Ces fantômes éprouvent beaucoup de difficultés à se recréer des yeux. Les leurs sont presque toujours laiteux et luisants. Et si on parvient à les examiner de très près, ce qu’il faut bien sûr éviter, on peut effectivement voir la brume de Dimhall bouger à l’intérieur.</p><p>Les points de santé d’un diser indiquent sa force et la quantité de dégâts qu’il peut encaisser. Même si le diser n’est pas une créature tangible, il a un certain nombre de points de santé. Quand ce nombre de points de santé est réduit à zéro, le fantôme est banni vers le royaume des morts. Les armes ordinaires n’infligent aucun dégât aux disers. Seules les armes sacrées ou extrêmement magiques peuvent les blesser (à l’appréciation du maître de jeu). Il existe de nombreuses méthodes pour bannir un diser et l’obliger à retourner vers le royaume des morts. Vous trouverez ci-dessous une courte liste des choses susceptibles de blesser un diser ou de le bannir vers le royaume des morts.</p><ul><li>Sorts : Renvoi des morts-vivants, Contrôle des morts-vivants et Détection des morts-vivants</li><li>Prières de Gerbanis : Souffle de mort, Souffle de Mogunda et Volonté de Bodvildur</li><li>Prières de la Doctrine de Nid : Lance bénie, Chaîne de bataille des gardiens du Rortan, Hache de Belo Seoth, Éclair sacré, Explosion sacrée, Purification divine.</li><li>Accomplir une tâche que le fantôme souhaite achever</li><li>Prononcer à voix haute le nom que le fantôme portait de son vivant</li><li>Persuader une victime de pardonner le fantôme pour ce qu’il a fait lorsqu’il était encore vivant</li></ul><p>Même si l’un des moyens qui apparaissent dans la liste ci-dessus est utilisé, c’est au maître de jeu de décider si le diser est affecté ou s’il est immunisé contre ce moyen. C’est également à lui de décider si d’autres moyens qui n’apparaissent pas dans cette liste peuvent affecter un diser.</p> |
+| `TRUDVANG.Content.CreatureAbility.G8S7IUlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
 ## `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT.Name` | Jump Attack | Attaque de saut |
+| `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT.Description` | <p>When a warg beast initiates a combat, it will jump at the prey and attack both with its bite and with its claws. The jump attack means that the beast gains an extra attack with its hind legs and claws in this action round (SV 10 claws) without spending further CP. This is valid only for the round when the jump attack happens.</p> | <p>Lorsqu’un warg déclenche un combat, il saute sur sa proie et l’attaque en même temps avec sa morsure et ses griffes. L’attaque de saut implique que la bête bénéficie d’une attaque supplémentaire avec ses pattes et griffes arrière pendant ce tour de jeu (Griffes VC 10) sans dépenser de PC supplémentaire. Ceci vaut seulement pour le tour pendant lequel a lieu l’Attaque de saut.</p> |
 | `TRUDVANG.Content.CreatureAbility.YZuZVRjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq.Name` | Attack From Above (thorn beast) | Attaque des hauteurs (bête épineuse) |
+| `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq.Description` | <p>For a thorn beast to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power and speed of the thorn beast is used, which increases the damage of the bite attack to 2d10 (OR 7-10) +6 and the claw attack to 2d10 (OR 8-10) + 6. The thorn beast can perform one attack from above every 6 action rounds, since it must circle around for at least 5 rounds.</p><p>One who wishes to attack a thorn beast performing a flyby attack has a modifier of -3 on all attacks. However, it is easier to see where the thorn beast will attack, which means the victim has a modifier of +2 when parrying the attacks of a thorn beast.</p> | <p>Pour effectuer avec succès une attaque des hauteurs, une bête épineuse doit réussir un test de compétence correspondant (VC 8). La force et la vitesse de la bête épineuse font partie intégrante de l’attaque et augmentent les dégâts infligés par la morsure à 2d10 (JO 7-10) +6 et les griffes à 2d10 (JO 8-10) +6. La bête épineuse peut lancer une attaque des hauteurs tous les 6 tours étant donné qu’il lui faut survoler la zone pendant au moins 5 tours.</p><p>Le joueur qui souhaite attaquer une bête épineuse en train d’effectuer une attaque aérienne subit un modificateur de -3 à toutes ses attaques. Cependant, il est plus facile de déterminer la cible de l’attaque de la bête épineuse ; la victime dispose donc d’un modificateur de +2 à la parade contre cette attaque.</p> |
 | `TRUDVANG.Content.CreatureAbility.XNbb4nRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ.Name` | Attack From Above (gryphon) | Attaque des hauteurs (griffon) |
+| `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ.Description` | <p>For a gryphon to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power of the gryphon’s speed is used, which increases the damage of the claw attack to 2d10 (OR 9-10) + 4. The gryphon can perform one attack from above every fourth action round, since it must circle around for at least 3 rounds.</p><p>One who wishes to attack a gryphon performing a flyby attack has a modifier of -3 on all attacks. However, it is easier to see where the gryphon will attack, which means the victim has a modifier of +2 when parrying the attacks of a gryphon.</p> | <p>Pour effectuer avec succès une attaque des hauteurs, un griffon doit réussir un test de compétence correspondant (VC 8). La force générée par la vitesse du griffon fait partie intégrante de l’attaque et augmente les dégâts infligés par les griffes à 2d10 (JO 9-10) +4. Le griffon peut lancer une attaque des hauteurs tous les quatre tours étant donné qu’il lui faut survoler la zone pendant au moins 3 tours.</p><p>Le joueur qui souhaite attaquer un griffon en train d’effectuer une attaque aérienne subit un modificateur de -3 à toutes ses attaques. Cependant, comme il est plus facile de déterminer la cible de l’attaque du griffon, la victime dispose d’un modificateur de +2 à la parade contre cette attaque.</p> |
 | `TRUDVANG.Content.CreatureAbility.TBZzpE9EaGbHcIdJ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.8nD540sYtZu0v1w2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.8nD540sYtZu0v1w2.Name` | Attack From Above (happja) | Attaque des hauteurs (happja) |
+| `TRUDVANG.Content.CreatureAbility.8nD540sYtZu0v1w2.Description` | <p>For a happja to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power of the happja’s speed is used, which increases the damage of the claw attack to 1d10 (OR 7-10).</p><p>The happja can perform one attack from above every fourth action round, since it must circle around for at least 3 rounds without attacking.</p> | <p>Pour parvenir à attaquer des hauteurs, une happja doit réussir un test de compétence dans le cadre de l’utilisation de ce pouvoir (VC 8). La vitesse de mouvement de la happja renforce la violence de cette attaque, ce qui augmente les dégâts de l’attaque de griffes à 1d10 (JO 7-10).</p><p>Une happja ne peut accomplir qu'une seule attaque des hauteurs tous les quatre tours de jeu, car elle doit faire un grand cercle pendant au moins trois tours sans attaquer.</p> |
+| `TRUDVANG.Content.CreatureAbility.8nD540sYtZu0v1w2.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.vTjZgWpVqWrXsYtZ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.vTjZgWpVqWrXsYtZ.Name` | Mare’s Kiss | Baiser de la hantise |
+| `TRUDVANG.Content.CreatureAbility.vTjZgWpVqWrXsYtZ.Description` | <p>When a mare becomes hungry, she breaks into the house of a victim during the night and gives them her mare’s kiss. By sneaking up to the sleeping victim and carefully placing her hands on their chest, she can plunge the victim into a deep sleep. The victim must make a situation roll with a situation value of 12 (Psyche modifiers apply). If the roll is successful, the victim will awaken in cold sweats from a horrible nightmare, and can make a new situation roll with a situation value of 6 (Perception modifiers apply) to see if they glimpse the mare before she escapes. However, whether the victim knows it is a mare or thinks it is an illusion from the nightmare is not decided.</p><p>If the first situation roll fails, the victim is plunged into a deep sleep, after which the mare steps onto the victim’s chest and performs the mare’s kiss (very carefully, so as not to waken the rest of the household). For the next 1d10 (OR 10) action rounds, the mare will suck the victim’s life force, causing 1d5 points of damage per action round. In each round, the victim can make a situation roll with a situation value of 5 (Psyche modifiers apply) to see if they wake up, with the same effect as when the mare tries to plunge the victim into sleep, as described above.</p> | <p>Quand une hantise a faim, elle s’introduit dans la maison d’une victime pendant la nuit et lui donne un baiser de la hantise. En approchant sans bruit de sa victime assoupie et en posant délicatement ses mains sur sa poitrine, elle peut la plonger dans un profond sommeil. La victime doit effectuer un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique). En cas de réussite, elle se réveille, trempée de sueur froide, après avoir fait un horrible cauchemar et peut effectuer un autre test de situation avec une valeur de situation de 6 (le modificateur de Perception s’applique) pour tenter d’apercevoir la hantise avant sa fuite. Encore faut-il savoir si la victime sait que c’est une hantise ou si elle pense que c’est une hallucination provoquée par son cauchemar.</p><p>Si le premier test de situation est raté, la victime est plongée dans un sommeil profond, après quoi la hantise monte sur sa poitrine pour lui donner le baiser de la hantise (en prenant soin de ne pas faire de bruit pour ne pas réveiller les autres occupants de la maison). Pendant les 1d10 (JO 10) prochains tours de jeu, la hantise absorbe la force vitale de la victime en lui infligeant 1d5 points de dégât par tour de jeu. À chaque tour, la victime peut effectuer un test de situation avec une valeur de situation de 5 (le modificateur de Psychisme s’applique) pour voir si elle se réveille. Les résultats en cas d’échec ou de réussite sont les mêmes que lorsque la hantise tente de plonger sa victime dans un sommeil profond (Cf. ci-dessus).</p> |
+| `TRUDVANG.Content.CreatureAbility.vTjZgWpVqWrXsYtZ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.eEOmsjNiOjPkQlRm`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.eEOmsjNiOjPkQlRm.Name` | Tail Whip | Balayage de la queue |
+| `TRUDVANG.Content.CreatureAbility.eEOmsjNiOjPkQlRm.Description` | <p>The wurm can use his tail like a whip to hit all the targets within a radius of 3 m. The wurm must make a successful SV6 roll and cannot perform any other action. The Initiative Modifier is 0. The damage taken depends on the number of people affected according to the chart below and anyone who is hit is thrown down and remains prone until he makes a Stand Up combat action.</p><p>The only way to protect oneself from the tail whip is to avoid it with a successful Evade roll.</p><table><thead><tr><th>Number of creatures</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>2d10 (OR 8-10)</td></tr><tr><td>2</td><td>2d10 (OR 9-10)</td></tr><tr><td>3</td><td>2d10 (OR 10)</td></tr><tr><td>4</td><td>1d10 (OR 8-10)</td></tr><tr><td>More than 4</td><td>1d10 (OR 10)</td></tr></tbody></table> | <p>Le wurm peut utiliser sa queue comme fouet pour frapper toutes les cibles situées dans une zone de 3 mètres de diamètre autour de lui. Il doit pour cela réussir un test avec une VC 6 et ne peut accomplir aucune autre action. Le modificateur d’initiative est de 0.</p><p>Les dégâts subis dépendent du nombre de créatures affectées, comme indiqué dans la table ci-dessous, et les créatures touchées sont projetées au sol et restent à terre jusqu’à ce qu’elles effectuent l’action de combat Se relever.</p><p>La seule façon de se protéger contre le Balayage de la queue consiste à l’esquiver en réussissant un test d’Esquive.</p><table><thead><tr><th>Nombre de créatures</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>2d10 (JO 8-10)</td></tr><tr><td>2</td><td>2d10 (JO 9-10)</td></tr><tr><td>3</td><td>2d10 (JO 10)</td></tr><tr><td>4</td><td>1d10 (JO 8-10)</td></tr><tr><td>Plus de 4</td><td>1d10 (JO 10)</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.eEOmsjNiOjPkQlRm.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.SLHo7lQlRmSnToUp`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.SLHo7lQlRmSnToUp.Name` | Camouflage (goblin) | Camouflage (gobelin) |
+| `TRUDVANG.Content.CreatureAbility.SLHo7lQlRmSnToUp.Description` | <p>The gray skin of the goblins gives them the ability to adapt to their background. Those that stand still against a cave wall are incredibly hard to detect (-4 on all skill rolls to discover the goblin), and goblins that are moving but trying to be sneaky are still very hard to spot (-8). Goblins that move through a cave without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p> | <p>La peau grise des gobelins leur permet de se fondre dans leur environnement. Ceux qui se tiennent immobiles contre la paroi d’une grotte sont incroyablement difficiles à repérer (-4 aux tests de compétence pour les détecter) et ceux qui se déplacent tout en essayant d’être discrets sont toujours très difficiles à repérer (-8). Les gobelins qui traversent une grotte sans essayer d’être discrets sont également difficiles à repérer et il faut réussir un test avec la compétence d’Arts des ombres pour les repérer.</p> |
+| `TRUDVANG.Content.CreatureAbility.SLHo7lQlRmSnToUp.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Bb10OqVqWrXsYtZu`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Bb10OqVqWrXsYtZu.Name` | Mud Camouflage | Camouflage de boue |
+| `TRUDVANG.Content.CreatureAbility.Bb10OqVqWrXsYtZu.Description` | <p>When the blue mud is struck by the rays of the moon, it seems green and its color becomes one with the night colors of the forest. This trait has led to trolls painting themselves with this mud, also known as pig’s mud, which means that they are camouflaged when they are out in the forest during nighttime. The trolls become very hard to detect (-4 on all skill rolls to discover the forest trolls), and trolls that are sneaking become even harder to see (-8). The forest trolls that move through the woods without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p> | <p>Lorsque les rayons de la lune éclairent la boue bleue, elle paraît verte et ne fait plus qu’un avec les couleurs nocturnes de la forêt. Cette particularité a poussé les trolls à peindre leur corps avec cette boue, également appelée boue de cochon, et celle-ci leur permet de se camoufler lorsqu’ils partent dans la forêt une fois la nuit tombée. Les trolls deviennent très difficiles à détecter (-4 aux tests de compétence effectués pour découvrir la présence des skogstrolls) et ceux qui se déplacent discrètement sont encore plus difficiles à repérer (-8). Les trolls des forêts qui traversent les bois sans essayer de rester cachés sont également plus difficiles à repérer et il faut ainsi réussir un test avec la compétence d’Arts des ombres pour les repérer.</p> |
+| `TRUDVANG.Content.CreatureAbility.Bb10OqVqWrXsYtZu.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.LD02zaFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.LD02zaFaGbHcIdJe.Name` | Hidden (hrimwurm) | Camouflé (hrimwurm) |
+| `TRUDVANG.Content.CreatureAbility.LD02zaFaGbHcIdJe.Description` | <p>In order to spot a hrimwurm that lies in the snow at a distance, a successful roll of the Shadow Arts skill with a modifier of -10 is required; on a failure, the dragon is mistaken for a large pile of snow. If the dragon is in motion, a situation roll with a situation value of 8 (Perception modifiers apply) is required to discover it or, alternatively, a skill roll with a modifier of -3. At a smaller distance, a situation roll with a situation value of 15 (Perception modifiers apply) is enough. It is up to the game master to apply his own modifiers depending on the environment.</p> | <p>Pour repérer au loin un hrimwurm tapi dans la neige, il faut réussir un test d’Arts des ombres avec un modificateur de -10. En cas d’échec, l’observateur confond le dragon avec un gros tas de neige. Si le dragon bouge, la réussite d’un test de situation avec une valeur de situation de 8 (ou de 15 à courte distance ; le modificateur de Perception s’applique) est nécessaire pour le repérer. Il est également possible de faire un test de compétence avec un modificateur de -3. Selon l’environnement, le maître de jeu peut appliquer ses propres modificateurs.</p> |
+| `TRUDVANG.Content.CreatureAbility.LD02zaFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.D3rbkjKfLgMhNiOj`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.D3rbkjKfLgMhNiOj.Name` | Byse’s Luck | Chance du byse |
+| `TRUDVANG.Content.CreatureAbility.D3rbkjKfLgMhNiOj.Description` | <p>A person that sacrifices something from their body, for example, giving a large amount of blood, cutting off a finger, or shaving their hair or beard, and puts it in a bowl for a byse might be rewarded with great luck. If the byse thinks that the gift was too small or unworthy, the person will instead become terribly unlucky. How long the enchantment lasts is up to the byse. The game master decides the effects of being lucky or unlucky.</p> | <p>Certaines personnes espèrent avoir de la chance en sacrifiant une partie de leur corps (en donnant, par exemple, une grande quantité de leur sang, en se tranchant un doigt ou en se rasant la barbe ou les cheveux) et en la déposant dans un bol à l’intention d’un byse. Si celui-ci estime que l’offrande est trop petite ou indigne, les personnes concernées sont affublées à la place d’une terrible malchance. C’est le byse qui décide de la durée de l’enchantement. Le maître de jeu détermine les effets de la chance ou de la malchance.</p> |
+| `TRUDVANG.Content.CreatureAbility.D3rbkjKfLgMhNiOj.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.MLPIuC5A6B7C8D9E`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.MLPIuC5A6B7C8D9E.Name` | Change Self (logiwurm) | Changement de corps (logewurm) |
+| `TRUDVANG.Content.CreatureAbility.MLPIuC5A6B7C8D9E.Description` | <p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p> | <p>Au fil des années, le logewurm a développé un pouvoir basé sur le sort Transformation qui lui permet de se transformer en n’importe quelle créature de son choix. Il utilise ce pouvoir pour s’infiltrer et approcher des personnes importantes. La durée de la transformation est illimitée et le dragon peut retrouver sa forme d’origine dès qu’il le souhaite. Cependant, le dragon ne peut utiliser ce pouvoir qu’une seule fois par an. Étant donné qu’il ne conserve aucun attribut physique de sa forme de dragon, en adoptant une autre forme, il devient vulnérable. Aussi, il n’utilise ce pouvoir que lorsque la situation l’exige.</p> |
+| `TRUDVANG.Content.CreatureAbility.MLPIuC5A6B7C8D9E.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.MKMhM5z5A6B7C8D9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.MKMhM5z5A6B7C8D9.Name` | Change Shape (fjol troll) | Changement de forme (fjoltroll) |
+| `TRUDVANG.Content.CreatureAbility.MKMhM5z5A6B7C8D9.Description` | <p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p> | <p>Dès qu’il le souhaite, un fjoltroll peut se transformer en pratiquement n’importe quoi pour ne pas se faire remarquer des voyageurs et des créatures de passage.</p> |
+| `TRUDVANG.Content.CreatureAbility.MKMhM5z5A6B7C8D9.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.MaYXAbD8D9EaGbHc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.MaYXAbD8D9EaGbHc.Name` | Song of Guidance | Chant du guide |
+| `TRUDVANG.Content.CreatureAbility.MaYXAbD8D9EaGbHc.Description` | <p>A fairy can use her song to guide people who are lost in the forest, leading them to an exit or closer to a path. The ability can also be used to lead enemies astray. Enemies that hear the song must make a situation roll with a situation value of 8 (Psyche modifiers apply) or they will be led astray. The more fairies that sing the song, the harder it is to resist the effects. applying a -1 modifier to the SV roll per 5 fairies singing in addition to the first one.</p> | <p>Une fée peut chanter pour guider des gens égarés dans la forêt et les mener vers une sortie ou à proximité d’une piste. Ce pouvoir peut également être utilisé pour égarer des ennemis. Les ennemis qui entendent le chant doivent effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ; en cas d’échec, ils s’égarent. Plus les fées sont nombreuses à entonner ce chant, plus il est difficile de résister à ses effets. Appliquez un modificateur de -1 à la valeur de situation du test pour chaque groupe de cinq fées qui chantent en plus de la première.</p> |
+| `TRUDVANG.Content.CreatureAbility.MaYXAbD8D9EaGbHc.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.WUDxR1sYtZu0v1w2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.WUDxR1sYtZu0v1w2.Name` | Enchanting Song | Chant enchanteur |
+| `TRUDVANG.Content.CreatureAbility.WUDxR1sYtZu0v1w2.Description` | <p>Anyone who hears the nymph’s song sees the woman of their dreams and feels a great desire for her. The victim must make a situation roll with a situation value of 5 to 10 depending on how strong the nymph is (Psyche modifiers apply). On a success, the victim sees past the illusion and sees the natural form of the nymph (which is that of a beautiful girl, albeit not the woman of the victim’s dreams). On a failure, the victim is enchanted, and additional rolls will decide the effect of the spell.</p><p>In the following action round (after the failed resistance roll), the victim must make a new situation roll with the same situation value and modifiers as before. On a success, the nymph will still appear as their dream woman, but the victim can think rationally (this is called the first state of bewitchment). If this roll should also fail, the victim’s desire grows so strong that they will never use violence against the nymph for anything other than self-defense (this is called the second state of bewitchment). In the next action round, a victim who failed must make yet another situation roll with the same situation value and modifiers as before. On a success, the victim remains in the second state of bewitchment. On a failure, the bewitchment is complete, and not even attacks from the nymph would make the victim use violence against the nymph. The victim is prepared to die from the nymph’s killing bite.</p><p>If several people are bewitched at the same time, they all see their own vision of their dream woman. When a whole pack of nymphs attacks, the victims only need to face the leader of the pack. The nymphs always wait three action rounds for the spell to take effect before they attack with their bites.</p> | <p>Quiconque entend le chant d’une nymphe se représente la femme de ses rêves et ressent un grand désir pour elle. La victime doit effectuer un test de situation avec une valeur de situation de 5 à 10 en fonction de la puissance de la nymphe (le modificateur de Psychisme s’applique). En cas de réussite, la victime ne se laisse pas berner par l’illusion et voit l’aspect naturel de la nymphe (qui est celui d’une jolie fille, mais pas celui de la femme des rêves de la victime). En cas d’échec, la victime est charmée et des tests supplémentaires sont nécessaires pour déterminer l’effet du charme.</p><p>Lors du tour de jeu suivant (après l’échec du test de résistance au charme), la victime doit effectuer un autre test de situation avec la même valeur de situation et les mêmes modificateurs que ceux du test précédent. En cas de réussite, la nymphe apparaît toujours comme la femme de ses rêves, mais la victime peut penser de manière rationnelle (c’est ce qu’on appelle le premier stade de l’envoûtement). Si ce test est lui aussi raté, le désir de la victime est si obsédant qu’elle n’usera pas de violence envers la nymphe, sauf s’il s’agit de se défendre (c’est le deuxième stade de l’envoûtement). Lors du tour de jeu suivant, une victime qui a raté son test doit à nouveau effectuer un test de situation avec la même valeur de situation et les mêmes modificateurs que précédemment. En cas de réussite, la victime reste au deuxième stade de l’envoûtement. En cas d’échec, l’envoûtement est total et la victime ne se défendrait pas si la nymphe l’agressait. Elle est prête à mourir pour cette dernière.</p><p>Si plusieurs personnes sont envoûtées en même temps, elles ont chacune leur propre vision de la femme de leurs rêves. Lorsqu'une attaque est menée par un groupe complet de nymphes, les victimes n'ont à affronter que la meneuse. Les nymphes attendent toujours trois tours de jeu, le temps que le charme fasse effet, avant d’attaquer en essayant de mordre.</p> |
+| `TRUDVANG.Content.CreatureAbility.WUDxR1sYtZu0v1w2.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG.Name` | Charge | Charge |
+| `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG.Description` | <p>Troll bulls will begin their attacks with a charge. They lower their heads and charge straight into victims to deal damage and knock them off balance. Due to the bull’s weight, high speed, and sharp horns, the charge will deal 2d10 (OR 9-10) points of damage. A charge is resolved spending CP for movement plus CP for an attack with natural weapons (Horn).</p><p>Anyone hit by the attack must succeed on a skill roll for the Agility skill modified by -5 to avoid falling over. A victim who falls over from the charge must make a situation roll with a situation value of 10 (Dexterity modifiers apply) to avoid dropping whatever items they are holding.</p> | <p>Les minokks commencent leurs attaques par une charge. Ils baissent la tête et se précipitent droit sur leur victime pour lui infliger des dégâts et la renverser. En raison du poids du minokks, de sa grande vitesse et de ses cornes pointues, la charge inflige 2d10 (JO 9-10) points de dégâts. Une charge se résout en dépensant des PC pour le mouvement en plus de ceux destinés à l’attaque à l’arme naturelle (cornes).</p><p>La cible touchée par l’attaque doit réussir un test d’Agilité avec un malus de -5 pour garder l’équilibre. Une victime renversée par la charge doit faire un jet de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Dextérité) pour éviter de lâcher les éventuels objets qu’elle tient en main.</p> |
 | `TRUDVANG.Content.CreatureAbility.zLdTbC6B7C8D9EaG.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4.Name` | Spin Cocoon | Cocon de soie |
+| `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4.Description` | <p>Both the eye spider and the net spider have the ability to wrap their victim in cocoons of web and hang them upside down in the forest. As soon as the giant spider has either paralyzed its victim or trapped it in a net, it will begin to encapsulate its prey in a cocoon, assuming that nothing else is calling for its attention.</p><p>The cocoon takes 1d10 + 10 action rounds to create, and a trapped victim who wants to break free must make three situation rolls with the situation values of 3, 7, and 11 (Strength modifiers apply) to break free. The successful rolls do not need to be in a row. One or more failures can separate them. But the three successes must be in the order of SV 3, SV 7, and SV 11.</p><p>If the victim fails to break free, it remains in the deadly cocoon and might soon die of starvation or being eaten by the giant spider.</p> | <p>L’araignée hypnotique comme l’araignée tisseuse ont la capacité d’envelopper leurs victimes dans des cocons de toile et de les suspendre par les pieds dans la forêt. Dès que l’araignée géante réussit à paralyser sa victime ou à la piéger dans sa toile, elle commence à l’envelopper dans un cocon, à condition qu’aucun autre élément n’attire son attention.</p><p>La création du cocon dure 1d10 + 10 tours de jeu. Une victime piégée qui cherche à se libérer doit faire trois tests de situation avec des valeurs de situation de 3, 7 et 11 (en appliquant le modificateur de Force) pour y parvenir. Il n’est pas nécessaire de réussir les tests de manière consécutive. Ceux-ci peuvent être séparés par des échecs. Cependant, les réussites doivent se produire dans l’ordre de valeurs de situation 3, 7 et 11.</p><p>Si la victime ne parvient pas à s’échapper, elle reste dans le cocon et risque de mourir de faim rapidement si elle n’est pas d’abord dévorée par l’araignée géante.</p> |
 | `TRUDVANG.Content.CreatureAbility.EdVMy2u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
-
-## `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG.Name` | Troll Bull Heart | Cœur de minokks |
+| `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG.Description` | <p>If someone eats from the heart of a troll bull, they are filled with courage and inner strength. They instantly lose 1d10 (OR 10) of gained Fear Points and they feel more alive and protective of their friends. If an enemy threatens one of those friends, there is a risk that the devourer will instantly charge that enemy and attack. The devourer must make a situation roll with a situation value of 10 (Psyche modifiers apply) to avoid being compelled to charge the enemy.</p> | <p>Manger le cœur d’un taureau troll emplit de courage et de force intérieure. Le personnage qui en bénéficie perd 1d10 (JO 10) points de peur, se sent plus vivace et devient plus protecteur envers ses amis. Si un ennemi menace l’un d’entre eux, il existe un risque que le consommateur du cœur le charge et l’attaque. Ce dernier doit alors faire un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Psychisme) pour éviter de céder à la pulsion de charger l’ennemi.</p> |
 | `TRUDVANG.Content.CreatureAbility.lHbj4E6B7C8D9EaG.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.bPXPF0u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.bPXPF0u0v1w2x3y4.Name` | Regenerating Heart (braskelwurm) | Cœur régénérant (braskelwurm) |
+| `TRUDVANG.Content.CreatureAbility.bPXPF0u0v1w2x3y4.Description` | <p>The braskelwurm cannot breed; rather, it multiplies due to its regenerating heart that creates a new braskelwurm when the old one has died. It can take between one and two years before a new one is born. Sometimes, the heart will split and two identical twins will be created. The difference with the lindwurm, which also has a regenerating heart, is that no one but the braskelwurm has any use for its heart.</p> | <p>Le braskelwurm est incapable de se reproduire. Au lieu de cela, il se renouvelle grâce à son cœur régénérant qui créé un nouveau braskelwurm lorsque l’ancien meurt. Il faut attendre un à deux ans avant que naisse un nouveau braskelwurm. Parfois, le cœur se divise, ce qui aboutit à la création de deux braskelwurms jumeaux et identiques. Le cœur régénérant du braskelwurm est différent de celui du lindwurm car personne, à part le braskelwurm, ne peut l’utiliser d’une façon ou d’une autre.</p> |
+| `TRUDVANG.Content.CreatureAbility.bPXPF0u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.oRxJE6A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.oRxJE6A6B7C8D9Ea.Name` | Regenerating Heart (lindwurm) | Cœur régénérant (lindwurm) |
+| `TRUDVANG.Content.CreatureAbility.oRxJE6A6B7C8D9Ea.Description` | <p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p> | <p>Le cœur régénérant du lindwurm est la raison pour laquelle les gens chassent cette massive créature serpentine. Quand un lindwurm meurt, son cœur en génère un nouveau au bout de 1d10 semaines. Toutefois, si quelqu’un mange le cœur d’un lindwurm, toutes ses blessures cicatrisent, il est guérit de toutes ses maladies, toutes les parties de son corps qui étaient inutilisables redeviennent complètement fonctionnelles et toutes celles qu’il n’avait plus repoussent. En fonction de la gravité des blessures ou des maladies, ces effets peuvent prendre plus ou moins de temps et c’est au maître de jeu de déterminer la durée que prend la guérison pour être effective.</p><p>Il est cependant risqué de manger le cœur d’un lindwurm. Si une créature le mange, entièrement ou partiellement, elle doit effectuer un test de situation avec une valeur de situation de 16 (le modificateur de Constitution s’applique). En cas d’échec, elle tombe dans un profond sommeil magique et se transformera en lindwurm au bout de 1d10 semaines. Un lindwurm créé de la sorte retrouve sa forme d’origine lorsqu’il meurt.</p> |
+| `TRUDVANG.Content.CreatureAbility.oRxJE6A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.5OJtBbGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.5OJtBbGbHcIdJeKf.Name` | Speak With Animals | Communication avec les animaux |
+| `TRUDVANG.Content.CreatureAbility.5OJtBbGbHcIdJeKf.Description` | <p>Throughout the years, the yggdras have learned to speak with animals. This has led to the animals in the forest protecting the yggdras from evil intruders.</p> | <p>Les yggdras ont appris à communiquer avec les animaux au fil des années. Ceci a incité les animaux de la forêt à protéger les yggdras contre les intrus malveillants.</p> |
+| `TRUDVANG.Content.CreatureAbility.5OJtBbGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.VGNAoOgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.VGNAoOgMhNiOjPkQ.Name` | Teachings of the Hidden Magics | Connaissances de la magie cachée |
+| `TRUDVANG.Content.CreatureAbility.VGNAoOgMhNiOjPkQ.Description` | <p>The teachings give fjol trolls the ability to always be in contact with the vitner in all its forms and shapes. Therefore they have no limit on how many spells they can use during one day. The fjol trolls can wield all spells known to man and many that only they know of. However, they use this power very seldom.</p><p>During great events that have been summoned by evil or good forces, the fjol trolls can, if they feel the need to be dire, stop time and space and cause the event to be undone.</p> | <p>Ces connaissances permettent aux fjoltrolls d’être toujours en contact avec le vitner sous toutes ses formes. Il n’y a donc aucune limite au nombre de sorts qu’ils peuvent utiliser lors d’une même journée. Les fjoltrolls peuvent incanter tous les sorts connus des hommes et de nombreux autres sorts qu’eux seuls connaissent. Ils n’utilisent cependant ce pouvoir que très rarement.</p><p>Lorsque de grands événements sont provoqués par les forces du mal ou du bien, les fjoltrolls peuvent arrêter le temps et l’espace et annuler ces événements s’ils considèrent qu’ils posent un véritable problème.</p> |
+| `TRUDVANG.Content.CreatureAbility.VGNAoOgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.JBOXObHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.JBOXObHcIdJeKfLg.Name` | Constricting (lindwurm) | Constriction (lindwurm) |
+| `TRUDVANG.Content.CreatureAbility.JBOXObHcIdJeKfLg.Description` | <p>A lindwurm can try to slither around a victim making a SV 8 roll without spending CP. If it is successful, it wraps the victim in its powerful grip. The victim takes 2d6 points of damage each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 12 (Strength modifiers apply). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 9). For each person that tries to help the victim, the situation roll is modified by +1. If the helping characters have exceptional Strength, the bonus from their Strength is added to the skill roll.</p><p>Each action round that the lindwurm spends strangling its victim, the wurm cannot do anything else. The lindwurm can try to bite another opponent instead of continuing to strangle its victim. When this happens, the victim remains in the grip of the lindwurm but takes no damage.</p> | <p>Un lindwurm peut tenter d’enserrer une victime dans ses anneaux en effectuant un test de VC 8 sans dépenser de PC. En cas de réussite, il serre la victime fermement en l’entourant de son corps. La victime subit 2d6 points de dégâts à chaque tour, en prenant en compte la protection éventuelle de son armure.</p><p>Elle ne peut se libérer que si elle réussit un test de situation avec une valeur de situation de 12 (le modificateur de Force s’applique). Si la victime rate son test de situation, elle peut à nouveau tenter de se libérer une fois par tour de jeu, mais à chaque nouveau tour, un modificateur cumulatif de -1 est appliqué (ainsi, après trois tours de jeu, la valeur de situation pour se libérer s’élève à 9). Pour chaque individu qui tente d’aider la victime, le test de situation bénéficie d’un modificateur de +1. Si les personnages qui aident bénéficient d’une Force exceptionnelle, leur modificateur de Force est ajouté au test de compétence.</p><p>Durant chaque tour de jeu pendant lequel le lindwurm comprime sa victime, le wurm ne peut rien faire d’autre. Il peut tenter de mordre un autre adversaire au lieu de continuer à comprimer sa victime. Le cas échéant, la victime reste saisie par le lindwurm mais elle ne subit aucun dégât.</p> |
+| `TRUDVANG.Content.CreatureAbility.JBOXObHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX.Name` | Constricting (giant snake) | Constriction (serpent géant) |
+| `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX.Description` | <p>If the snake manages to slither around its victim (skill value 10, victim’s Dexterity modifiers apply), it wraps the victim in its great grip. The victim takes damage equal to the snake’s damage modifier (which is 6 in the stats below) each round, though armor offers protection.</p><p>The victim can break free only by succeeding on a situation roll with a situation value of 10 (± possible modifiers from the Strength trait). If the victim fails his situation roll, he can then try again to loosen himself once per action round, but for each new round, a cumulative modifier of -1 is applied (three action rounds later, the situation value for getting loose is thereby 7). For each person that tries to help the victim, the situation roll is also modified by +1. If the ones helping have exceptional strength, the bonus from their strength is added to the skill roll.</p><p>Each round of combat that the snake spends constricting its victim, the snake can do nothing else. The snake can choose to try to bite another opponent instead of continuing to hug its victim. When this happens, the victim remains in the grip of the snake but takes no damage for that round.</p> | <p>Si le serpent parvient à enserrer sa victime (valeur de compétence 10, à laquelle il faut appliquer le modificateur de Dextérité de la cible), il la piège dans son emprise. À chaque tour, la victime subit des dégâts équivalents au modificateur de dégâts du serpent (6 dans les caractéristiques ci-dessous), dont il faut déduire la valeur d’armure.</p><p>La cible peut se libérer uniquement en réussissant un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur du trait de Force). Si le test de situation de la victime échoue, elle peut essayer de se libérer à nouveau une fois par tour de jeu. Cependant, à chaque nouveau tour s’applique un modificateur cumulatif de -1 (trois tours de jeu plus tard, la valeur de situation pour se libérer est donc de 7). Chaque personne qui tente d’aider la victime ajoute également un modificateur de +1 à la valeur de situation. Si les personnages venus en aide ont une force exceptionnelle, leur bonus de Force vient également s’ajouter au test de compétence.</p><p>Chaque tour de combat que le serpent passe à enserrer sa victime l’empêche d’effectuer une autre action. Le serpent peut choisir de mordre un autre adversaire au lieu de maintenir son emprise sur sa victime. Si c’est le cas, celle-ci reste piégée par le serpent mais ne subit pas de dégât pendant ce tour.</p> |
+| `TRUDVANG.Content.CreatureAbility.nWYlTTnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.xqhnZRmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.xqhnZRmSnToUpVqW.Name` | Water Control | Contrôle de l’eau |
+| `TRUDVANG.Content.CreatureAbility.xqhnZRmSnToUpVqW.Description` | <p>A logrjotun can control the water it moves through. It does not do this through the use of vitner but rather by movement. The giant can, for example, create horrid waves that it can send toward a threat. It can create huge maelstroms that suck boats down into the depths or water currents that make boats stray along a different path no matter how the wind blows.</p> | <p>Un logrjotun peut contrôler l’eau dans laquelle il évolue. Ce contrôle n’est pas la conséquence d’une utilisation du vitner mais plutôt des mouvements du géant. Le géant peut par exemple créer des vagues monstrueuses qu’il dirige sur une menace. Il peut aussi créer d’énormes maelstroms capables d’aspirer des bateaux dans les profondeurs, ou des courants d’eau qui forcent les navires à emprunter un itinéraire différent, quelle que soit la direction du vent.</p> |
+| `TRUDVANG.Content.CreatureAbility.xqhnZRmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.T8HavqRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.T8HavqRmSnToUpVq.Name` | Control Animals | Contrôle des animaux |
+| `TRUDVANG.Content.CreatureAbility.T8HavqRmSnToUpVq.Description` | <p>Since a sálhele has a difficult time walking, it is not uncommon for them to control animals to use as mounts. These can be anything from horses to big hounds or swine. The sálhele rides the animal until it collapses from exhaustion, at which point the skeleton will leave the beast behind to find a new riding companion.</p> | <p>Étant donné que les sálheles éprouvent des difficultés à marcher, il n’est pas rare qu’ils contrôlent des animaux pour en faire des montures. Ils peuvent ainsi tout aussi bien contrôler des chevaux, des chiens de chasse ou des pourceaux. Un sálhele chevauche l’animal jusqu’à ce qu’il tombe de fatigue, auquel cas le squelette abandonne la bête pour se trouver une nouvelle monture.</p> |
+| `TRUDVANG.Content.CreatureAbility.T8HavqRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.a0A7iPhNiOjPkQlR`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.a0A7iPhNiOjPkQlR.Name` | Storm Control | Contrôle des tempêtes |
+| `TRUDVANG.Content.CreatureAbility.a0A7iPhNiOjPkQlR.Description` | <p>The dragon can call forth a sudden storm that whirls and blows away everything that weighs less than 75 kg within a radius of 50 meters from the dragon. It is also this storm, if not as concentrated, that the dragon uses to lift its wings on the very rare occasions when it needs to strike out with its wings to gain speed. To withstand the directed storm, a creature that is exposed to it must make a situation roll (modified by the average of Strength and Dexterity) based on weight, according to the table below. The table also shows how far they are flung on a failed roll. If the victim is blown straight into a wall, he takes the same damage as if he had fallen that distance.</p><p>If the blown-away creature is still within the radius of the storm, it can get up but must make a new situation roll to be able to move within the area without being blown away again. The victims that are not blown away can act normally within the affected area but have a negative modifier on all actions according to the table below.</p><table><thead><tr><th>Victim's weight</th><th>Situation value</th><th>Thrown</th><th>Action modifier</th></tr></thead><tbody><tr><td>3 times the affected weight</td><td>18</td><td>No distance</td><td>None</td></tr><tr><td>2 times the affected weight</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1.5 times the affected weight</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Affected weight (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Half the affected weight</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>One third of the affected weight</td><td>No roll</td><td>2d10 m</td><td>-10</td></tr></tbody></table> | <p>Le dragon peut lever une tempête soudaine qui tourbillonne et emporte tout ce qui pèse moins de 75 kilogrammes dans un rayon de 50 mètres autour du dragon. C’est également cette tempête, bien que dans une version moins intense, que le dragon utilise pour soutenir ses ailes lors des très rares moments où il doit battre des ailes pour gagner en vitesse. Pour résister à la tempête, une créature exposée à sa violence doit effectuer un test de situation (modifié par la moyenne des modificateurs de Force et de Dextérité) en se basant sur son poids, comme indiqué dans la table ci-contre. Celle-ci indique également la distance sur laquelle les créatures sont emportées en cas d’échec au test. Si une victime est projetée contre un mur, elle subit les mêmes dégâts que si elle chutait d’une hauteur équivalente.</p><p>Si une créature projetée à terre se trouve toujours à l’intérieur du rayon d’action de la tempête, elle peut se relever mais doit effectuer un nouveau test de situation pour réussir à se déplacer à l’intérieur de la zone sans être de nouveau emportée. Les victimes qui ne sont pas emportées peuvent agir normalement à l’intérieur de la zone affectée mais elles appliquent un modificateur négatif sur toutes leurs actions, comme indiqué dans la table.</p><table><thead><tr><th>Poids de la victime</th><th>VS</th><th>Emportée sur</th><th>Modificateur sur les actions</th></tr></thead><tbody><tr><td>3 fois le poids affecté</td><td>18</td><td>Aucune distance</td><td>Aucun</td></tr><tr><td>2 fois le poids affecté</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1,5 fois le poids affecté</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Poids affecté (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Moitié du poids affecté</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>Un tiers du poids affecté</td><td>Aucun test</td><td>2d10 m</td><td>-10</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.a0A7iPhNiOjPkQlR.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.9MMfvcE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.9MMfvcE9EaGbHcId.Name` | Fire Body (physical demon) | Corps de feu (démon tangible) |
+| `TRUDVANG.Content.CreatureAbility.9MMfvcE9EaGbHcId.Description` | <p>The demon is on fire. Depending on how close someone stands to the demon, they obtain different amounts of damage points each action round according to the chart.</p><table><thead><tr><th>Distance</th><th>Damage per round</th></tr></thead><tbody><tr><td>Less than 1 m</td><td>1d10 (OR 7-10)</td></tr><tr><td>1-2 m</td><td>1d10 (OR 8-10)</td></tr><tr><td>2-3 m</td><td>1d10 (OR 9-10)</td></tr><tr><td>3-5 m</td><td>1d10 (OR 10)</td></tr><tr><td>5-10 m</td><td>1d10</td></tr></tbody></table> | <p>Le démon est en feu. En fonction de la distance qui les sépare du démon, les créatures peuvent subir un nombre de points de dégâts différent à chacun de leurs tours de jeu, comme indiqué dans la table suivante :</p><table><thead><tr><th>Distance</th><th>Dégâts par tour</th></tr></thead><tbody><tr><td>Moins de 1 m</td><td>1d10 (JO 7-10)</td></tr><tr><td>1 à 2 m</td><td>1d10 (JO 8-10)</td></tr><tr><td>2 à 3 m</td><td>1d10 (JO 9-10)</td></tr><tr><td>3 à 5 m</td><td>1d10 (JO 10)</td></tr><tr><td>5 à 10 m</td><td>1d10</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.9MMfvcE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.n85BQGaGbHcIdJeK`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.n85BQGaGbHcIdJeK.Name` | Fire Body (logi) | Corps de feu (loge) |
+| `TRUDVANG.Content.CreatureAbility.n85BQGaGbHcIdJeK.Description` | <p>Since the logi is made of fire, it is perhaps not so strange that its body is surrounded by extreme heat. A constant heat pulsates out in a sphere around the logi. The sphere is 10 meters in diameter. Everyone that stands within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) to avoid fleeing from the sphere. The heat in the sphere deals the following damage per action round to anyone within it:</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table> | <p>Étant donné que le loge se compose de feu, il n’est sans doute pas si étrange que son corps produise une chaleur extrême. Une chaleur constante pulse sous la forme d’une sphère autour du loge. Cette sphère fait 10 mètres de diamètre. Toutes les créatures se trouvant à l’intérieur doivent réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas être obligées de sortir de la sphère. La chaleur inflige les dégâts suivants aux créatures situées à l’intérieur de la sphère :</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.n85BQGaGbHcIdJeK.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.flAdvMhNiOjPkQlR`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.flAdvMhNiOjPkQlR.Name` | Smoke Body | Corps de fumée |
+| `TRUDVANG.Content.CreatureAbility.flAdvMhNiOjPkQlR.Description` | <p>A draugr can transform into smoke whenever it wants. While a draugr is smoke, it can move at a speed of 30 meters per action round, though strong winds can heavily reduce that speed. For each day the draugr remains in this form, it will heal its wounds for 10 Body Points.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation into smoke costs 50 days and nights of the draugr’s remaining stay.</p> | <p>Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.</p><p>Le draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.</p><p>La transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.</p> |
+| `TRUDVANG.Content.CreatureAbility.flAdvMhNiOjPkQlR.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.LSLD0OjPkQlRmSnT`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.LSLD0OjPkQlRmSnT.Name` | Hrim Body (hrim troll) | Corps de glace (hrimtroll) |
+| `TRUDVANG.Content.CreatureAbility.LSLD0OjPkQlRmSnT.Description` | <p>The hrimtroll has lived in the cold for such an extensive amount of time that its body has absorbed the cold. An ever-present frost pulsates in a sphere around the troll. The sphere is 10 meters in diameter. All who stand within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) in order to not flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves. A character with a full set of winter clothing that is made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d3</td></tr><tr><td>3</td><td>2d3</td></tr><tr><td>Each additional round</td><td>+1d3</td></tr></tbody></table> | <p>Le hrimtroll vit dans le froid depuis si longtemps que son corps l’a intégré pour le relâcher en permanence sous la forme d’une sphère autour de lui. La sphère fait 10 mètres de diamètre. Toutes les créatures situées dans la sphère doivent chacune réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas fuir le plus loin possible de ce phénomène. À chaque tour de jeu, le froid dans la sphère inflige des dégâts à chaque créature encore à l’intérieur comme indiqué dans la table ci-dessous.</p><p>Le port de vêtements d’hiver permet de réduire les dégâts de moitié lors des trois premiers tours. Sont considérés comme vêtements d’hiver : pantalon épais, manteau de fourrure, chapeau de fourrure, chaussures en fourrure et gants épais. Un personnage vêtu d’une tenue d’hiver complète en fourrure de mastomant ne subit aucun dégât.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d3</td></tr><tr><td>3</td><td>2d3</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d3</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.LSLD0OjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.VJdXu9D9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.VJdXu9D9EaGbHcId.Name` | Hrim Body (hrimtursir) | Corps de glace (hrimtursir) |
+| `TRUDVANG.Content.CreatureAbility.VJdXu9D9EaGbHcId.Description` | <p>The hrimtursir has lived in the cold for such an extensive amount of time that its body has absorbed the cold. An ever-present frost pulsates in a sphere around the giant. The sphere is 10 meters in diameter. All who stand within it must make a situation roll with a situation value of 6 (Psyche modifiers apply) in order to not flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves. A character with a full set of winter clothing that is made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table> | <p>Le hrimtursir vit dans le froid depuis si longtemps que son corps l’a intégré pour le relâcher en permanence sous la forme d’une sphère autour de lui. La sphère fait 10 mètres de diamètre. Chaque créature située dans la sphère doit réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) pour ne pas fuir le plus loin possible de ce phénomène. À chaque tour de jeu, le froid de la sphère inflige des dégâts à chaque créature encore à l’intérieur (Cf. page suivante).</p><p>Le port de vêtements d’hiver permet de réduire de moitié les dégâts lors des trois premiers tours. Sont considérés comme vêtements d’hiver les vêtements suivants : pantalon épais, manteau de fourrure, chapeau de fourrure, chaussures en fourrure et gants épais. Un personnage vêtu d’une tenue d’hiver complète en fourrure de mastomant ne subit aucun dégât.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.VJdXu9D9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.txzkedE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.txzkedE9EaGbHcId.Name` | Hrim Body (hrimwurm) | Corps de glace (hrimwurm) |
+| `TRUDVANG.Content.CreatureAbility.txzkedE9EaGbHcId.Description` | <p>The hrimwurm has lived in the cold for such an extensive amount of time that its body has absorbed the cold, constantly releasing it in a phenomenon called “Hrim Body” which does not require the expense of any CP. An ever-present frost pulsates in a sphere around the dragon. The sphere is 15 meters in diameter. All who stand within the sphere must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order not to flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves.</p><p>A character with a full set of winter clothing made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table> | <p>Le hrimwurm vit dans le froid depuis si longtemps que son corps l’a intégré pour le relâcher en permanence sous une forme appelée « corps de glace » qui ne nécessite la dépense d’aucun PC. Un froid perpétuel pulse dans une sphère autour du dragon. La sphère fait 15 mètres de diamètre. Toutes les créatures se trouvant dans la sphère doivent chacune réussir un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour ne pas fuir le plus loin possible de ce phénomène. À chaque tour de jeu, le froid dans la sphère inflige des dégâts à chaque créature encore à l’intérieur comme indiqué dans la table ci-dessous.</p><p>Le port de vêtements d’hiver permet de réduire les dégâts de moitié lors des trois premiers tours. Sont considérés comme vêtements d’hiver : pantalon épais, manteau de fourrure, chapeau de fourrure, chaussures en fourrure et gants épais.</p><p>Un personnage vêtu d’une tenue d’hiver complète en fourrure de mastomant ne subit aucun dégât.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.txzkedE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.MXNXW2x3y4z5A6B7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.MXNXW2x3y4z5A6B7.Name` | Explosive Body | Corps explosif |
+| `TRUDVANG.Content.CreatureAbility.MXNXW2x3y4z5A6B7.Description` | <p>When the demon dies the body explodes. Everyone within a radius of 10 meters obtain 1d10 (OR 7-10) damage points.</p> | <p>Le corps du démon explose lorsque celui-ci meurt. Les créatures situées dans un rayon de 10 mètres autour du cadavre subissent 1d10 (JO 7-10) points de dégâts.</p> |
+| `TRUDVANG.Content.CreatureAbility.MXNXW2x3y4z5A6B7.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.1ItoEXoUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.1ItoEXoUpVqWrXsY.Name` | Spiked Body | Corps hérissé |
+| `TRUDVANG.Content.CreatureAbility.1ItoEXoUpVqWrXsY.Description` | <p>The body is covered in spikes which the demon can thrust at its victim without spending Combat Points. In total the body has 2d20 spikes that can be thrown with a SV 12 roll. They have range 14 meters and inflict 1d10 (OR 9-10). The demon usually does not throw more than 1 spike per round, unless the GM decides otherwise.</p> | <p>Le corps du démon est couvert de pointes qu’il peut projeter sur ses victimes sans dépenser le moindre point de combat. Au total, le corps du démon comporte 2d20 pointes qu’il peut projeter en effectuant un test avec une VC de 12. Les pointes ont une portée de 14 mètres et infligent chacune 1d10 (JO 9-10) points de dégâts. Le démon ne lance généralement pas plus d’une pointe par tour, sauf si le maître de jeu en décide autrement.</p> |
+| `TRUDVANG.Content.CreatureAbility.1ItoEXoUpVqWrXsY.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.1ASxnvZu0v1w2x3y`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.1ASxnvZu0v1w2x3y.Name` | Horn Throw | Coup de cornes |
+| `TRUDVANG.Content.CreatureAbility.1ASxnvZu0v1w2x3y.Description` | <p>The hrimtursir uses its great horns in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the giant then throws those enemies high into the air. The sweep itself seldom causes more than 1d10 points of damage, but the fall that comes after having been thrown so high causes severe fall damage to be established by the GM according to how far one falls (check the falling rules in the Game Master Guide book).</p> | <p>Le hrimtursir utilise ses grandes cornes lorsqu’il combat. Il donne de grands et larges coups pour frapper le plus d’ennemis possible, qu’il projette ensuite dans les airs d’un grand coup sec vers le haut. Le coup de cornes en lui-même inflige rarement plus de 1d10 points de dégâts, mais la chute qui s’ensuit inflige beaucoup de dégâts de chute. C’est le maître de jeu qui détermine le nombre de points de dégâts en fonction de la hauteur de la chute (Cf. les règles sur les chutes dans le Livre des règles).</p> |
+| `TRUDVANG.Content.CreatureAbility.1ASxnvZu0v1w2x3y.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.f8tUzXrXsYtZu0v1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.f8tUzXrXsYtZu0v1.Name` | Craft Stone of Knowledge | Création d’une pierre de savoir |
+| `TRUDVANG.Content.CreatureAbility.f8tUzXrXsYtZu0v1.Description` | <p>Since the dragon does not have the skill to write, it uses magic to carve its knowledge into rocks. These stones are inlaid with insights, knowledge, and powers of all kinds. They are a way for one yggwurm to measure the enlightenment of another, and the dragons proudly show these stones to each other. The ultimate goal of a yggwurm’s relentless hunt for knowledge is to fill a mountain with the most mighty insight: the stone of knowledge concerning everything.</p><p>When a yggwurm has bound together two or more sets of knowledge, it might throw the smaller stones away down the mountainside because the combined knowledge will be bound together in a greater stone. Explorers who find such a stone of knowledge can unlock its power by activating its key. This can be done only with the Read Vitner spell. When the spell is woven on a stone of knowledge there is no requirement for making a SV roll for learning the power (as per normal Read Vitner rules) but the spell has only the effect of activating the stone. After the normal weaving time of the Read Vitner spell has passed (1 hour) the stone is activated but it will disappear in 6 rounds. The knowledge will be given to the first creature to touch the stone before it disappears. If no one takes the stone in 6 rounds, it will disappear without transferring the knowledge.</p><p>The person who is holding the stone when it is activated receives its teachings. If multiple people hold the stone, the recipient is selected at random. But know this: it can be dangerous to receive the contents of a stone, since it can contain powers that no living person can handle. The effects of the knowledge are totally up to the GM.</p> | <p>Étant donné que l’yggwurm ne sait pas écrire, il utilise la magie pour graver ses connaissances sur des pierres. Ces pierres contiennent des idées, des connaissances et des pouvoirs de toutes sortes. Elles sont un moyen pour les yggwurms d’évaluer le savoir de leurs congénères, et les dragons les exhibent avec fierté. L’objectif ultime de la quête perpétuelle de savoir menée par un yggwurm consiste à remplir une montagne avec la plus importante des connaissances : la pierre contenant tous les savoirs.</p><p>Quand un yggwurm relie deux types de connaissances ou plus, il peut jeter sur le versant des montagnes les petites pierres sur lesquelles chacun était gravé, une fois le savoir combiné gravé sur une unique pierre plus grosse. Les explorateurs qui ramassent une pierre de ce genre peuvent apprendre le savoir qu’elle contient en l’activant grâce au sort de Lecture du vitner. Quand ce sort est tissé sur une pierre de savoir, aucun test de VC n’est nécessaire (comme l’exigent normalement les règles normales de Lecture du vitner) pour apprendre le pouvoir qu’elle contient, mais le sort permet seulement d’activer la pierre. Une fois le temps normal de tissage du sort de Lecture du vitner écoulé (une heure), la pierre est activée mais disparaît au bout de 6 tours de jeu. Si personne ne s’empare de la pierre avant les 6 tours, celle-ci disparaît sans transmettre le savoir qu’elle contient.</p><p>La personne qui tient en main la pierre lorsque celle-ci est activée bénéficie de ses enseignements. Si plusieurs personnes touchent la pierre, le bénéficiaire est déterminé au hasard. Mais sachez ceci : apprendre le contenu d’une pierre peut s’avérer dangereux car elle peut contenir des pouvoirs qu’aucune personne vivante n’est capable de maîtriser. Les effets du savoir sont laissés à l’entière appréciation du MJ.</p> |
+| `TRUDVANG.Content.CreatureAbility.f8tUzXrXsYtZu0v1.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.P9RgBRkQlRmSnToU`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.P9RgBRkQlRmSnToU.Name` | Healing Dance | Danse curative |
+| `TRUDVANG.Content.CreatureAbility.P9RgBRkQlRmSnToU.Description` | <p>A fairy that performs this dance above a wounded person heals the person of 1d3 points of damage. The more fairies dancing, the greater the healing.</p> | <p>Une fée qui accomplit cette danse au-dessus d’une personne blessée la soigne de 1d3 points de dégâts. Plus les fées sont nombreuses à danser et plus les soins sont efficaces.</p> |
+| `TRUDVANG.Content.CreatureAbility.P9RgBRkQlRmSnToU.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.gCMi4MhNiOjPkQlR`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.gCMi4MhNiOjPkQlR.Name` | Fairy Dance | Danse féerique |
+| `TRUDVANG.Content.CreatureAbility.gCMi4MhNiOjPkQlR.Description` | <p>If a creature suffers from dehydration, hunger, or physical or psychic exhaustion, a group of ten fairies can dance in a ring around the one in need and provide both strength and power. A creature that is hungry or thirsty gains new energy, which represents one meal of food. A creature that is exhausted is refreshed as if having slept for one full night, and gains the normal effects of eight hours of sleep.</p> | <p>Si une créature souffre de déshydratation, de faim, ou si elle est épuisée physiquement ou psychologiquement, dix fées peuvent danser ensemble en formant une ronde autour d’elle pour lui octroyer force et énergie. Une créature affamée ou assoiffée retrouve sa vigueur comme si elle avait pris un repas. Une créature épuisée est revigorée comme si elle avait dormi une nuit complète et bénéficie des effets normalement prodigués par huit heures de sommeil.</p> |
+| `TRUDVANG.Content.CreatureAbility.gCMi4MhNiOjPkQlR.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.FeLJJ1tZu0v1w2x3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.FeLJJ1tZu0v1w2x3.Name` | Mist Walk | Déplacement dans la brume |
+| `TRUDVANG.Content.CreatureAbility.FeLJJ1tZu0v1w2x3.Description` | <p>The diser can disappear into thin air only to suddenly reappear in another place a short distance away. When a diser uses Mist Walk in this way, it moves at up to three times its normal movement rate. However, it takes 1 round of combat for the diser to disappear entirely, after which it can move through Mist Walk for as long as it wishes. It takes 2 rounds of combat for the diser to reappear.</p><p>When disappearing and reappearing, the diser is in its most vulnerable state. In this state, all harmful acts against the diser have double effect. For spells or prayers of power used against the diser whose effects depend on the diser’s Body Points, count only two thirds of the diser’s normal full Body Points (with no wounds or damage).</p> | <p>Le diser peut disparaître complètement pour réapparaître brusquement à un endroit relativement proche. Quand un diser utilise le Déplacement dans la brume de cette façon, il se déplace d’une distance inférieure ou égale à trois fois son mouvement normal. Le diser met tout de même 1 tour de combat pour disparaître complètement, après quoi il peut se déplacer dans la brume aussi longtemps qu’il le souhaite. Le diser met 2 tours de combat pour réapparaître.</p><p>C’est quand il disparaît et réapparaît que le diser est le plus vulnérable. Lors de ces phases de disparition ou de réapparition, toutes les actions destinées à nuire au diser voient leurs effets doublés. Pour les sorts et les talents divins utilisés contre le diser et dont les effets dépendent du nombre de ses points de santé, prenez en compte les deux tiers seulement de son total de points de santé (sans prendre en compte les blessures ou les dégâts qu’il a subis).</p> |
+| `TRUDVANG.Content.CreatureAbility.FeLJJ1tZu0v1w2x3.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.YuqOeTkQlRmSnToU`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.YuqOeTkQlRmSnToU.Name` | Discover Cave | Détection des réseaux souterrains |
+| `TRUDVANG.Content.CreatureAbility.YuqOeTkQlRmSnToU.Description` | <p>Over years of searching, the muspeljotun has gained an ability that helps it find caves and hallways that lead underground. The giant can feel the hollowness within 50 meters. If the muspeljotun detects a hollowness in the mountain that it cannot reach through normal means, it will immediately start digging with both hands to reach it.</p> | <p>Au fil des années passées à chercher, les mospeljotuns ont développé un pouvoir qui les aide à trouver des grottes et des passages souterrains. Les géants peuvent percevoir les anfractuosités jusqu’à une distance de 50 mètres. S’ils détectent une anfractuosité dans la montagne qu’ils ne peuvent atteindre par des moyens ordinaires, ils se mettent immédiatement à creuser à mains nues dans sa direction.</p> |
+| `TRUDVANG.Content.CreatureAbility.YuqOeTkQlRmSnToU.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.EowN18C8D9EaGbHc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.EowN18C8D9EaGbHc.Name` | Extra Body Parts | Éléments corporels supplémentaires |
+| `TRUDVANG.Content.CreatureAbility.EowN18C8D9EaGbHc.Description` | <p>The demon has one or several body parts apart from their original ones. This can mean that the demons has extra Combat Points for attacks with these arms.</p> | <p>Le démon possède un ou plusieurs éléments corporels en plus de ceux d’origine. Il est ainsi possible qu’il dispose de bras supplémentaires avec lesquels il peut attaquer, ce qui se traduit par des points de combat en bonus.</p> |
+| `TRUDVANG.Content.CreatureAbility.EowN18C8D9EaGbHc.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.BlV2voQlRmSnToUp`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.BlV2voQlRmSnToUp.Name` | Grip | Empoignement |
+| `TRUDVANG.Content.CreatureAbility.BlV2voQlRmSnToUp.Description` | <p>After a successful unarmed attack, a giant can attempt to grip a victim of Size 1/2 to 3 without spending additional CP. Make a skill roll whose SV depends on the victim's size. The victim can avoid the grip with Agility, preferably the Evade specialty.</p><p>Each round the giant can crush or throw the victim. Crushing damage depends on the victim's size. A throw deals 1d10 (OR 10) damage for every 3 meters fallen; use the actual fall height. A firdtursir is usually 20-22 m tall, giving 6d10-7d10 (OR 10); a hrimtursir 14-15 m, giving 4d10-5d10 (OR 10); a muspeljotun 25-27 m, giving 8d10-9d10 (OR 10). A vidrjotun is also 25-27 m tall, but its lower body is often half buried: the GM determines the actual height and falling damage.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table> | <p>Après une attaque à mains nues réussie, le géant peut tenter d’empoigner une victime de Taille 1/2 à 3 sans dépenser de PC supplémentaires. Il effectue un test de compétence dont la VC dépend de la taille de la victime. Celle-ci peut éviter l’empoignement grâce à Agilité, de préférence avec la spécialité Esquive.</p><p>À chaque tour, le géant peut écraser sa victime ou la projeter. Les dégâts d’écrasement dépendent de la taille de la victime. Une projection inflige 1d10 (JO 10) points de dégâts par tranche de 3 mètres de chute ; il faut utiliser la hauteur effective de la chute. Un firdtursir mesure généralement 20 à 22 m, soit 6d10 à 7d10 (JO 10) ; un hrimtursir 14 à 15 m, soit 4d10 à 5d10 (JO 10) ; un muspeljotun 25 à 27 m, soit 8d10 à 9d10 (JO 10). Un vidrjotun mesure également 25 à 27 m mais a souvent le bas du corps à moitié enfoui dans la terre : le MJ détermine donc la hauteur réelle et les dégâts de chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.BlV2voQlRmSnToUp.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.iTN16SlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.iTN16SlRmSnToUpV.Name` | Grip (logrjotun) | Empoignement (logrjotun) |
+| `TRUDVANG.Content.CreatureAbility.iTN16SlRmSnToUpV.Description` | <p>When the giant succeeds in an unarmed attack roll he can try to grab hold of a victim, without spending further Combat Points, but making a SV roll. The creature must be between 1/2t and 3t in size and the value of the SV depends on the size of the victim, according to the table below.</p><p>A victim of the grip can try to avoid the attack with the Agility skill, preferably with the Evade specialty. Each round, the giant can choose to crush or throw the victim. A crush causes the victim to take between 1d10 and 1d10 (OR 9–10) points of damage per action round (the damage depends on the size of the victim), while a fall can deal anything from 1d10 (OR 10) to 1d10 (OR 4–10) points of damage, depending on the severity of the fall.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table> | <p>Quand le géant réussit un jet d’attaque à mains nues, il peut tenter d’empoigner une victime sans dépenser de points de combat supplémentaires, mais en effectuant un test de compétence. La créature doit avoir une Taille comprise entre 1/2 et 3, et la VC dépend de la taille de la victime, comme indiqué dans la table ci-contre.</p><p>La victime d’un empoignement peut tenter d’éviter l’attaque grâce à la compétence Agilité, de préférence avec la spécialité Esquive. À chaque tour de jeu, le géant peut décider d’écraser la victime ou de la projeter. L’écrasement inflige à la victime entre 1d10 et 1d10 (JO 9-10) points de dégâts par tour de jeu (les dégâts infligés dépendent de la taille de la victime), tandis que la chute inflige entre 1d10 (JO 10) et 1d10 (JO 4-10) points de dégâts, en fonction de la gravité de la chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.iTN16SlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.IChFs8B7C8D9EaGb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.IChFs8B7C8D9EaGb.Name` | Blood Taste | Envie de sang |
+| `TRUDVANG.Content.CreatureAbility.IChFs8B7C8D9EaGb.Description` | <p>The dark dweller becomes more dangerous the more blood it tastes. Each time it attacks and does more than 5 points of damage, the SV for an attack is increased by +1 for the rest of the battle. The first time this happens, the SV is increased for its first attack; the second time it happens, the SV is increased for its second attack; and the third time this happens, the SV is increased for its third attack. When all attacks have been increased once, the SV for the first attack is increased by another +1, and so on.</p> | <p>Plus une sombre horreur se gorge de sang, plus elle devient dangereuse. Chaque fois qu’elle attaque et inflige plus de 5 points de dégâts, la VC d’une de ses attaques est augmentée de +1 jusqu’à la fin du combat. La première fois que cela arrive, la VC de sa première attaque est augmentée ; la deuxième fois, c’est la VC de sa deuxième attaque qui est augmentée ; et la troisième fois, c’est celle de sa troisième attaque. Quand chacune des attaques a été augmentée une fois de la sorte, la VC de la première attaque est à nouveau augmentée de +1, et ainsi de suite.</p> |
+| `TRUDVANG.Content.CreatureAbility.IChFs8B7C8D9EaGb.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NkQ3WdFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NkQ3WdFaGbHcIdJe.Name` | Bewitch | Envoûtement |
+| `TRUDVANG.Content.CreatureAbility.NkQ3WdFaGbHcIdJe.Description` | <p>The hulder has a special ability that allows her to bewitch those she meets, and victims can be at her mercy for the rest of their lives. When she makes eye contact with a target, she simply utters the dreaded words that will bewitch the weak. The victim must then make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid looking into her eyes. A character who says he steels himself not to look into the hulder’s eyes will increase the situation value by +5.</p><p>On a failure, roll 1d20 and consult the table below for the effect. A character with a positive Psyche trait can deduct that number from the roll result, and one with a negative Psyche trait can add that number to the result before consulting the table.</p><table><thead><tr><th>d20 modified by Psyche</th><th>Effect</th></tr></thead><tbody><tr><td>0-8</td><td>The victim is dizzy and suffers -2 to all skill and situation values for 24 hours.</td></tr><tr><td>9-14</td><td>Obeys minor orders for 24 hours: lie down, run, talk, shout, walk, open doors, etc. The effect ends more than 100 m from the hulder.</td></tr><tr><td>15-16</td><td>Considers all orders sensible and obeys for 1d3 days, except orders that endanger the victim. The effect ends beyond 500 m.</td></tr><tr><td>17-18</td><td>Complete submission, including dangerous orders; unlimited range, duration 1d10 (OR 7-10) days. The hulder's death does not end the last orders during the remaining duration.</td></tr><tr><td>19 and above</td><td>A slave for life, obeying blindly; only the hulder's death breaks the enchantment.</td></tr></tbody></table> | <p>La hulder maîtrise un pouvoir spécial qui lui permet d’envoûter les créatures qu’elle rencontre pour les soumettre à sa volonté tout le reste de leur vie. Lorsqu’elle croise le regard d’une cible, elle murmure simplement les effroyables paroles qui envoûtent les faibles. La victime doit ensuite effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) pour éviter de la regarder dans les yeux. Un personnage qui précise qu’il fait tout pour ne pas regarder la hulder dans les yeux augmente la valeur de situation de +5.</p><p>En cas d’échec, lancez un d20 et consultez la table ci-dessous pour déterminer l’effet. Un personnage avec un trait de Psychisme exceptionnel soustrait sa valeur du résultat obtenu (un trait positif réduit donc le résultat, tandis qu'un trait négatif l'augmente).</p><table><thead><tr><th>d20 modifié par le Psychisme</th><th>Effet</th></tr></thead><tbody><tr><td>0 à 8</td><td>La victime a la tête qui tourne et subit -2 à toutes ses valeurs de compétence et de situation pendant 24 heures.</td></tr><tr><td>9 à 14</td><td>Obéit aux ordres mineurs pendant 24 heures : s’allonger, courir, parler, crier, marcher, ouvrir des portes, etc. L’effet disparaît à plus de 100 m de la hulder.</td></tr><tr><td>15 à 16</td><td>Considère tous les ordres comme sensés et obéit pendant 1d3 jours, sauf aux ordres qui la mettent en danger. L’effet disparaît à plus de 500 m.</td></tr><tr><td>17 à 18</td><td>Soumission complète, y compris aux ordres dangereux ; portée illimitée, durée 1d10 (JO 7-10) jours. La mort de la hulder ne met pas fin aux derniers ordres pendant la durée restante.</td></tr><tr><td>19 et plus</td><td>Esclave pour toute sa vie, obéit aveuglément ; seule la mort de la hulder rompt l’envoûtement.</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.NkQ3WdFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.A0zCfjKfLgMhNiOj`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.A0zCfjKfLgMhNiOj.Name` | Form Trees | Façonnage des arbres |
+| `TRUDVANG.Content.CreatureAbility.A0zCfjKfLgMhNiOj.Description` | <p>The vidrjotuns have gained the ability to reshape trees to their liking. They can reshape anything from great living forests to individual trunks.</p> | <p>Les vidrjotuns ont développé le pouvoir de refaçonner les arbres comme ils le souhaitent. Ils peuvent réorganiser de grandes forêts entières ou refaçonner des troncs pris individuellement.</p> |
+| `TRUDVANG.Content.CreatureAbility.A0zCfjKfLgMhNiOj.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.fM9m2B3y4z5A6B7C`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.fM9m2B3y4z5A6B7C.Name` | Frighten | Frayeur |
+| `TRUDVANG.Content.CreatureAbility.fM9m2B3y4z5A6B7C.Description` | <p>The piercing gaze of a diser can expose a victim to terrible visions. The victim can completely or partially resist by succeeding on a situation roll with a situation value that is decided by the game master, taking into consideration the strength of the diser (Psyche modifiers apply).</p><p>What visions the victim sees will differ from case to case and will yield different amounts of Fear Points. It is up to the game master to decide how many Fear Points are appropriate and whether a successful situation roll completely frees the victim from any fear (and therefore nullifies the Fear Points).</p> | <p>Le regard perçant d’un diser peut exposer une victime à d’effroyables visions. La victime peut résister partiellement ou complètement en réussissant un test de situation avec une valeur de situation que le maître de jeu décide selon la puissance du diser (le modificateur de Psychisme s’applique).</p><p>Les visions perçues par la victime diffèrent selon les cas et infligeront un nombre de points de peur variable. C’est le maître de jeu qui détermine le nombre de points de peur qui lui semble approprié et si la réussite du test de situation permet d’annuler complètement la peur (ce qui annule, par conséquent, l’acquisition de points de peur).</p> |
+| `TRUDVANG.Content.CreatureAbility.fM9m2B3y4z5A6B7C.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.it3GE4w2x3y4z5A6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.it3GE4w2x3y4z5A6.Name` | Frenzy (hrim troll) | Frénésie (hrimtroll) |
+| `TRUDVANG.Content.CreatureAbility.it3GE4w2x3y4z5A6.Description` | <p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p> | <p>Habituellement paisible, le hrimtroll devient une tout autre créature quand il engage le combat. Pendant les 1d6 premiers tours de jeu, il combat dans un état de frénésie décuplée en bénéficiant d’un modificateur de +2 à ses attaques mais aussi un modificateur de -2 à ses parades. Pendant ces tours de jeu, le troll paraît très menaçant. Il rugit comme un animal de manière incompréhensible et menace sauvagement ses adversaires de ses impressionnantes défenses. Le hrimtroll se comporte de la sorte pour intimider ses ennemis afin de les paralyser de peur ou de les forcer à fuir.</p><p>Les hrimtrolls engagent souvent le combat en utilisant une grande épée de combat ou une grosse massue bardée de fer.</p> |
+| `TRUDVANG.Content.CreatureAbility.it3GE4w2x3y4z5A6.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.WOIjW3u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.WOIjW3u0v1w2x3y4.Name` | Frenzy (hrimtursir) | Frénésie (hrimtursir) |
+| `TRUDVANG.Content.CreatureAbility.WOIjW3u0v1w2x3y4.Description` | <p>When a hrimtursir has taken half its Body Points in damage, it fights with a greater frenzy. In this state, it has +4 on all attacks. This also means that the giant will not parry.</p> | <p>Quand un hrimtursir a subi des dégâts à hauteur de la moitié de ses points de santé, il combat encore plus frénétiquement. Dans cet état, le géant bénéficie d’un bonus de +4 à toutes ses attaques et ne prend plus la peine de parer.</p> |
+| `TRUDVANG.Content.CreatureAbility.WOIjW3u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.rPiP9lRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.rPiP9lRmSnToUpVq.Name` | Cold of Misthal | Froid de Dimhall |
+| `TRUDVANG.Content.CreatureAbility.rPiP9lRmSnToUpVq.Description` | <p>When a diser moves through a living being, it can produce strong cold through a successful roll (SV 12). The victim of the assault is filled with great cold. A strong diser that moves through living beings can make them feel as if they stood completely naked in the great ice plains. Here are a few examples of damage that a victim can be exposed to:</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (OR 10) points</li></ul><p>If the victim does not see the diser coming, the sudden feeling of cold can also lead to a high number of Fear Points being produced, according to GM’s Judgement.</p> | <p>Quand un diser traverse un être vivant, il peut produire un froid intense en réussissant un test (VC 12). La victime de cet assaut ressent un froid glacial. Un diser fort qui traverse des êtres vivants peut leur donner l’impression qu’ils se trouvent complètement nus au milieu de l’Isvidda, la grande étendue de glace. Voici quelques exemples du nombre de points de dégâts qu'une victime peut subir :</p><ul><li>1 point</li><li>1d3 points</li><li>1d5 points</li><li>1d10 points</li><li>1d10 (JO 10) points</li></ul><p>Si la victime ne voit pas le diser approcher, la brusque sensation de froid peut également infliger une grande quantité de points de peur, à l’appréciation du MJ.</p> |
+| `TRUDVANG.Content.CreatureAbility.rPiP9lRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.VNxdD4z5A6B7C8D9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.VNxdD4z5A6B7C8D9.Name` | Mock Guidance | Guide trompeur |
+| `TRUDVANG.Content.CreatureAbility.VNxdD4z5A6B7C8D9.Description` | <p>A king troll can hide in bushes and rocks to follow someone and whisper about the loveliness of the forest or mountain through which they are traveling. Often the troll will try to lure someone into a trap or its den where the unlucky one will be slain or enslaved. The victim must succeed on a situation roll with a situation value of 7 (Psyche modifiers apply) in order to ignore the whispers. A failed roll means that the victim follows the whispered suggestions without even being aware of the whispers. A successful roll means that the mock guidance is broken. Every time the troll wishes to lead the victim along a new path or in a new direction, the victim must make a new situation roll.</p> | <p>Un kungstroll peut se cacher dans les fourrés et derrière les rochers pour suivre une créature en lui susurrant de charmantes paroles sur la beauté de la forêt ou de la montagne qu’elle traverse. Le troll tentera souvent d’attirer cette malheureuse créature dans un piège ou dans son antre où elle sera tuée ou asservie. La victime doit réussir un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique) afin d’ignorer les paroles. Un échec signifie que la victime suit les suggestions susurrées sans même en être consciente. Un test réussi indique qu’elle résiste au pouvoir de Guide trompeur. La victime doit effectuer un nouveau test de situation à chaque fois que le troll souhaite l’inciter à suivre un autre chemin ou à prendre une autre direction.</p> |
+| `TRUDVANG.Content.CreatureAbility.VNxdD4z5A6B7C8D9.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.BA5mccHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.BA5mccHcIdJeKfLg.Name` | Mood | Humeur |
+| `TRUDVANG.Content.CreatureAbility.BA5mccHcIdJeKfLg.Description` | <p>Teamwork is a term that has never been used in regard to ogres, especially since it is very rare that two ogres are in a good mood long enough for their brotherhood to lead to anything of value.</p><p>To decide the mood of an ogre on any given occasion, a luck roll is made with 1d10. If the result is 1-5, the ogre is normal and somewhat calm, but should the result be 6-10, it is furious. The ogre will be in this mood for 1d6 hours unless something happens to shift its mood. The mood can switch from kind to murderous just by the slightest ordeal or if there is something around them that they don’t like in the slightest.</p><p>When an ogre is in its crazed state of mood, it will attack everything and everyone. If there is no living thing close enough, it will go wild on the nearest thing in range due to its need to destroy something. An ogre in battle never thinks about taking damage but only of inflicting damage. This means that ogres will not parry in battle.</p> | <p>Le travail d’équipe n’est pas un concept qui correspond aux ogres, surtout parce qu’il est très rare que deux ogres soient de bonne humeur suffisamment longtemps pour que leur relation produise quelque chose de valable.</p><p>Pour déterminer l’humeur d’un ogre à un moment donné, un test de chance est effectué en jetant 1d10. Sur un résultat de 1 à 5, l’ogre se comporte normalement et calmement, mais sur un résultat de 6 à 10, il est furieux. L’ogre sera de cette humeur pendant 1d6 heures à moins qu’un événement ne la change. L’humeur de l’ogre peut passer de gentil à meurtrier à cause d’une infime contrariété ou s’il y a la moindre petite chose à proximité que la créature n’apprécie pas.</p><p>Quand un ogre est enragé, il attaque tout autour de lui, objets comme créatures. S’il n’y a aucune créature vivante à proximité, il déchaînera sa violence sur l’objet le plus proche situé à sa portée car sa rage le pousse à détruire n’importe quoi. En combat, un ogre ne réfléchit jamais aux dégâts qu’il subit mais uniquement à ceux qu’il inflige. C’est pour cette raison qu’un ogre n’effectue jamais aucune parade.</p> |
+| `TRUDVANG.Content.CreatureAbility.BA5mccHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.HngWDToUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.HngWDToUpVqWrXsY.Name` | Shriek | Hurlement |
+| `TRUDVANG.Content.CreatureAbility.HngWDToUpVqWrXsY.Description` | <p>A barrow wight can let out a horrid shriek once per day, and everyone who hears it is filled with horror. The victim takes 2d10 (OR 9-10) Fear Points.</p> | <p>Une fois par jour, un revenant des tumulus peut pousser un effroyable hurlement qui terrorise quiconque l’entend. La victime accumule 2d10 (JO 9-10) points de peur.</p> |
+| `TRUDVANG.Content.CreatureAbility.HngWDToUpVqWrXsY.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.DaPcOQlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.DaPcOQlRmSnToUpV.Name` | Shriek of Death | Hurlement funeste |
+| `TRUDVANG.Content.CreatureAbility.DaPcOQlRmSnToUpV.Description` | <p>When the diser lets forth its horrid shriek, one would do best to let go of everything and cover one’s ears. Everyone who hears the shriek must truly be brave to avoid becoming paralyzed. How long this inability to act lasts depends on the victim’s Psyche and the strength of the diser. A person who hears the shriek can go unscathed, receive half the Fear Points, or receive all of the Fear Points. The victim makes a situation roll against the shriek’s SV 9 (the Psyche trait is used for the roll). The chart below illustrates the effect.</p><p>It is up to the game master to decide the fear factor of a shriek of death. A weak diser produces 1d10 (OR 10), while a strong diser can produce 1d10 (OR 6-10).</p><p>Depending on how far away a victim is from the diser when the wraith lets out its shriek of death, the victim can gain a positive modifier to the situation roll. For example, the modifier might be +1 in the middle of the range and +6 at the far edge of it.</p><p>How long a shriek lasts depends on the strength of the wraith. The truly strong spirits can shriek for up to 5 action rounds in a row, while the weaker ones will let out a short shriek (3 segments of an action round). A failed situation roll means that the character receives new Fear Points for each action round in which the shriek is sounding.</p><p>Usually, a diser can let forth a shriek of death once per day. However, some can do this several times a day, while others must wait for several days before they can shriek again.</p><table><thead><tr><th>Roll result</th><th>Effect</th></tr></thead><tbody><tr><td>Less than SV/2</td><td>No effect</td></tr><tr><td>Between SV/2 and SV</td><td>Half the Fear Points</td></tr><tr><td>Greater than or equal to SV</td><td>All the Fear Points</td></tr></tbody></table> | <p>Quand le diser pousse son horrible cri, il vaut mieux lâcher tout ce que l’on tient et se plaquer les mains sur les oreilles. Quiconque entend le cri doit rassembler tout son courage pour éviter de se retrouver paralysé. La durée de cette incapacité à agir dépend du Psychisme de la victime et de la puissance du diser (que le maître de jeu doit déterminer). Une personne qui entend le cri peut s’en tirer indemne, subir la moitié des points de peur ou subir la totalité des points de peur. La victime effectue un test de situation avec une valeur de situation de 9 du cri (le modificateur de Psychisme s’applique). La table ci-dessous indique l’effet produit en fonction du résultat du test.</p><p>C’est le maître de jeu qui détermine le facteur de peur d’un cri funeste. Un diser faible produit 1d10 (JO 10), tandis qu’un diser puissant peut produire 1d10 (JO 6-10).</p><p>En fonction de la distance qui sépare une victime du diser quand celui-ci pousse son cri funeste, la victime peut bénéficier d’un modificateur positif au test de situation. Par exemple, le modificateur pourrait être de +1 si la victime se situe à une distance égale à la moitié de la portée du cri et de +6 si elle se situe à l’extrémité de la portée.</p><p>La durée d’un cri dépend de la puissance du diser. Les esprits véritablement forts peuvent hurler pendant un maximum de 5 tours de jeu d’affilée, tandis que les esprits faibles pousseront un cri bref (3 segments d’un tour de jeu). Un test de situation raté signifie que le personnage reçoit de nouveau des points de peur à chaque nouveau tour de jeu pendant lequel le cri résonne.</p><p>En temps normal, un diser ne peut pousser un cri funeste qu’une fois par jour. Certains peuvent cependant l’utiliser plusieurs fois lors d’une même journée, alors que d’autres doivent patienter plusieurs jours avant de pouvoir crier à nouveau.</p><table><thead><tr><th>Résultat du test</th><th>Effet</th></tr></thead><tbody><tr><td>Inférieur à VS/2</td><td>Aucun effet</td></tr><tr><td>Compris entre VS/2 et VS</td><td>Moitié des points de peur</td></tr><tr><td>Supérieur ou égal à VS</td><td>Tous les points de peur</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.DaPcOQlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.15ITDLfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.15ITDLfLgMhNiOjP.Name` | Wild Shriek | Hurlement sauvage |
+| `TRUDVANG.Content.CreatureAbility.15ITDLfLgMhNiOjP.Description` | <p>At the beginning of a combat the happja lets forth a vile shriek that instills horror in all who hear it. If the happja surprises her victims with the shriek, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) or gain 1d10 (OR 10) Fear Points. Anyone who sees the happja before she shrieks is not surprised and gains +5 on the roll instead (situation value 13).</p><p>If the situation roll results in a natural 20, the victim drops their weapons and becomes unable to act for 1d3 action rounds.</p> | <p>Au début d’un combat, la happja pousse un abominable cri qui peut plonger dans l’horreur tous ceux qui l’entendent. Si la happja surprend ses victimes grâce à ce cri, celles-ci doivent effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). En cas d’échec, elles subissent 1d10 (JO 10) points de peur. Ceux qui voient la happja avant qu’elle ne crie ne sont pas surpris et bénéficient alors d’un bonus de +5 sur le test (valeur de situation 13).</p><p>Si le résultat du test de situation est un 20 naturel, la victime lâche les armes qu’elle tient en main et ne peut plus agir pendant 1d3 tours de jeu.</p> |
+| `TRUDVANG.Content.CreatureAbility.15ITDLfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId.Name` | Hylja (giant snake) | Hylja (serpent géant) |
+| `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId.Description` | <p>Some snakes (mostly the lake serpent) have the ability to change color to mimic the environment. The snake will adapt to the background to such a degree that a skill roll on the Shadow Arts skill with a modifier of -10 is required to discover the snake, if it lies still. If the snake is in motion, the modifier becomes -5 instead.</p> | <p>Certains serpents (surtout le serpent lacustre) ont la capacité de changer de couleur pour imiter leur environnement. Le serpent s’adapte à son milieu à tel point qu’il est nécessaire de réussir un test d’Arts des ombres avec un modificateur de -10 pour repérer le serpent s’il reste immobile. Si le serpent bouge, le modificateur passe alors à -5.</p> |
 | `TRUDVANG.Content.CreatureAbility.a3RzraE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.ljOGPhKfLgMhNiOj`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.ljOGPhKfLgMhNiOj.Name` | Hylja (log troll) | Hylja (troll de bois) |
+| `TRUDVANG.Content.CreatureAbility.ljOGPhKfLgMhNiOj.Description` | <p>The log troll has the ability to blend in and almost become one with the forest. If a log troll completely concentrates on this ability, anyone seeking it has a modifier of -10. If the log troll activates the Roots ability at the same time, the modifier is lessened to -5.</p> | <p>Le troll de bois a le pouvoir de fusionner pour ne faire plus qu’un ou presque avec la forêt. Si un troll de bois focalise toute sa concentration sur l’utilisation de ce pouvoir, les créatures qui le cherchent subissent un modificateur de -10. Si le troll de bois utilise le pouvoir de Racines en même temps, le modificateur est de -5 seulement.</p> |
+| `TRUDVANG.Content.CreatureAbility.ljOGPhKfLgMhNiOj.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.LRZYxKfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.LRZYxKfLgMhNiOjP.Name` | Illusion Trick | Illusions |
+| `TRUDVANG.Content.CreatureAbility.LRZYxKfLgMhNiOjP.Description` | <p>All king trolls can use very simple illusions to trick and fool. For example, the illusions can be used to make a plate of food seem like it’s full of maggots or frogs.</p> | <p>Tous les kungstrolls peuvent créer des illusions très simples pour duper ou tromper autrui. Ces illusions peuvent par exemple être utilisées pour faire croire qu’une assiette déborde de vers ou de grenouilles alors qu’elle est en réalité simplement remplie de nourriture.</p> |
+| `TRUDVANG.Content.CreatureAbility.LRZYxKfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Z8nwIJdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Z8nwIJdJeKfLgMhN.Name` | Mimic Creature | Imitation |
+| `TRUDVANG.Content.CreatureAbility.Z8nwIJdJeKfLgMhN.Description` | <p>A myling is very skilled in mimicking other creatures as a stalling tactic until other mylings can arrive. The myling will often say the sentence “Give me thy name.”</p><p>Anyone who hears the myling mimic his voice must make a situation roll with a situation value of 12 (Psyche modifiers apply) in order to move away from the strange creature.</p><p>For each myling that joins in mimicking, the situation value is modified by -1.</p> | <p>Les mylings sont très talentueux pour imiter d’autres créatures et utilisent cette tactique pour gagner du temps jusqu’à ce que d’autres mylings les rejoignent. Un myling prononcera souvent la phrase « Donne-moi ton nom ».</p><p>Quiconque entend un myling imiter sa voix doit effectuer un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de s’éloigner de l’étrange créature.</p><p>Pour chaque myling qui se joint à l’imitation, la valeur de situation est réduite de -1.</p> |
+| `TRUDVANG.Content.CreatureAbility.Z8nwIJdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.pjrisUmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.pjrisUmSnToUpVqW.Name` | Immune | Immunité |
+| `TRUDVANG.Content.CreatureAbility.pjrisUmSnToUpVqW.Description` | <p>The demon is immune to poison, spells or prayers. It can also be immune to normal weapons and can only be damaged by magical weapons.</p> | <p>Le démon est immunisé aux poisons, aux sorts ou aux prières. Il peut également être immunisé aux armes normales et, le cas échéant, seules les armes magiques peuvent donc le blesser.</p> |
+| `TRUDVANG.Content.CreatureAbility.pjrisUmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.UgB46VpVqWrXsYtZ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.UgB46VpVqWrXsYtZ.Name` | Immune to Fire and Cold | Immunité au feu et au froid |
+| `TRUDVANG.Content.CreatureAbility.UgB46VpVqWrXsYtZ.Description` | <p>A stonehinje is completely immune to fire and cold.</p> | <p>Un stenhinje est complètement immunisé au feu et au froid.</p> |
+| `TRUDVANG.Content.CreatureAbility.UgB46VpVqWrXsYtZ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU.Name` | Rugtanne Infection | Infection des rugtannes |
+| `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU.Description` | <p>Every other action round in which a night ulm sucks blood from a victim, there is a chance that the victim will develop a rare disease. After two action rounds, the chance is 1 in 20 (the roll of 20 on 1d20). After four action rounds, the chance is 2 in 20 (the roll of 19-20 on 1d20). For some inexplicable reason, only humans can be infected by the disease.</p><p>A victim who is infected by the disease will transform into a rugtanne (a strange mix between a human and a night ulm) within 2d3 days. A rugtanne can live only during the night. If exposed to sunlight, it dies instantly from the shock when it is hit by the rays of the sun. Every fifth night, they must feed on blood from another warm-bodied creature. The bite and the bloodsucking works the same way for the rugtanne as it does for the night ulm.</p><p>A rugtanne can live up to four times as long a human, which means that it has much more time for learning things. According to some myths, a rugtanne can have great magical capabilities and powers, such as being able to transform into a bat or a great black stallion. These are nothing but superstitions. However, if mighty wizards are transformed into rugtannes, they still can wield their magic, creating horrid bloodsuckers with powers that few men hold.</p><p>When a player character becomes a rugtanne, Constitution, Psyche, Strength, and Dexterity increase by two levels (for example, -2 becomes 0, or +1 becomes +4). If already at the highest level, add +4 to that trait modifier, making it +8. Natural skin protection gives PV 1. The rugtanne gains Darkvision: normal vision in total darkness up to 10 m, fading until it vanishes at about 60 m. It still takes damage and remains mortal as before, but recalculate its Body Points using its new traits.</p> | <p>À chaque tour pendant lequel un ulm nocturne boit le sang d’une victime, il y a un risque que celle-ci contracte une maladie rare. Après deux tours de jeu, le risque s’élève à 1 sur 20 (obtention d’un 20 sur 1d20). Après quatre tours de jeu, le risque s’élève à 2 sur 20 (obtention de 19 ou 20 sur 1d20). Pour une raison inexpliquée, la maladie affecte uniquement les humains.</p><p>Une victime infectée par la maladie se transformera en rugtanne (un étrange mélange d’humain et de nattulm) dans un délai de 2d3 jours. Les rugtannes vivent uniquement la nuit. En cas d’exposition à la lumière du jour, ils succombent instantanément au choc des rayons solaires. Toutes les cinq nuits, ils doivent se nourrir du sang d’une autre créature au sang chaud. La morsure et le vampirisme fonctionnent de la même manière pour le rugtanne que pour le nattulm.</p><p>Un rugtanne peut vivre jusqu’à quatre fois plus longtemps qu’un humain, ce qui lui donne bien plus de temps pour apprendre de nouvelles facultés. D’après certains mythes, un rugtanne est capable d’acquérir de formidables pouvoirs et aptitudes magiques, comme la transformation en chauve-souris ou en étalon noir. Tout ceci n’est que superstition. Cependant, lorsque de puissants magiciens sont transformés en rugtannes, ils sont toujours en mesure d’utiliser leur magie et deviennent ainsi d’horribles suceurs de sang dotés de pouvoirs rarement égalés.</p><p>Lorsqu’un personnage joueur devient un rugtanne, les caractéristiques suivantes sont modifiées :</p><ul><li>Les traits Constitution, Psychisme, Force et Dextérité augmentent de deux niveaux (de -2 à 0 ou de +1 à +4 par exemple). Si le personnage est déjà au niveau maximum dans un ou plusieurs de ces traits, le modificateur bénéficie d’un bonus de +4 (le Trait passe donc à +8).</li><li>Le rugtanne obtient une valeur de protection de 1 du fait d’une protection naturelle (sa peau).</li><li>Le rugtanne gagne la capacité Vision dans le noir et peut voir dans le noir complet comme en plein jour jusqu’à 10 mètres, après quoi la vision diminue graduellement avant de s’estomper complètement à 60 mètres environ.</li><li>Le rugtanne subit les dégâts de la même manière qu’avant sa transformation, et reste donc mortel comme lorsqu’il était humain, mais ses points de santé sont modifiés en fonction de ses nouveaux traits.</li></ul> |
 | `TRUDVANG.Content.CreatureAbility.NcOgKSkQlRmSnToU.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Da0VLPjPkQlRmSnT`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Da0VLPjPkQlRmSnT.Name` | Sunlight Intolerance | Intolérant à la lumière du soleil |
+| `TRUDVANG.Content.CreatureAbility.Da0VLPjPkQlRmSnT.Description` | <p>A braskelwurm that stays in a place where the sun directly shines on its scales will catch fire within mere moments (1d6 + 2 action rounds). First the scales will start to smoke lightly, and then they will be set aflame. The braskelwurm will survive longer in places where the rays of the sun do not directly hit its scales. It is very rare that braskelwurms will come out of their dark den during daytime, but one can sometimes spot a braskelwurm departing at dusk.</p> | <p>Un braskelwurm qui reste dans un endroit où ses écailles sont directement exposées à la lumière du soleil prend feu en peu de temps (1d6+2 tours de jeu). Les écailles, dans un premier temps, commencent à fumer légèrement pour finalement prendre feu. Le braskelwurm peut survivre plus longtemps dans des endroits où ses écailles ne sont pas directement exposées aux rayons du soleil. Il est très rare que les braskelwurms décident de sortir de leur antre obscur pendant la journée, mais on peut parfois en apercevoir un lorsqu’arrive le crépuscule.</p> |
+| `TRUDVANG.Content.CreatureAbility.Da0VLPjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl.Name` | Fearless | Intrépide |
+| `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl.Description` | <p>Just like forest trolls, a galtir does not have the ability to feel fear. Once they engage in combat, they remain there until they die or strike down their foe.</p><p>Forest trolls likewise feel no fear and never need to make fear rolls.</p> | <p>Les galtirs et les skogstrolls ne ressentent aucune peur. Les skogstrolls n’effectuent jamais de test de peur, que le phénomène qui devrait la provoquer soit naturel ou non.</p><p>Cette absence de peur les rend particulièrement obstinés au combat : les galtirs, une fois engagés, combattent jusqu’à leur mort ou celle de leur ennemi. Les skogstrolls attaquent la victime qu’ils ont choisie jusqu’à ce qu’elle meure, puis essaient de dépouiller son cadavre avant de choisir un autre adversaire. Leur comportement reste lié à leur espèce, mais leur immunité à la peur est techniquement identique.</p> |
 | `TRUDVANG.Content.CreatureAbility.1Kx1hlMhNiOjPkQl.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.uM9vugLgMhNiOjPk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.uM9vugLgMhNiOjPk.Name` | Stone Throw | Lancer de rocher |
+| `TRUDVANG.Content.CreatureAbility.uM9vugLgMhNiOjPk.Description` | <p>With the help of its amazing strength, the firdtursir can rip great blocks of stone from the mountainside and throw them to crush its enemies. The blocks are so large and heavy that it is not possible to move them after they have been firmly placed on the ground. All over Trudvang where firdtursirs have passed through, one can find these blocks, commonly known as a “giant’s throw.” A thrown block landing on a player character would surely have only one outcome, and as a game master, you should use this ability mostly to frighten the characters and perhaps lay waste to buildings and such.</p> | <p>Grâce à leur force incroyable, les firdtursirs peuvent arracher de grands rochers des flancs des montagnes et les lancer sur leurs ennemis pour les écraser. Ces rochers sont si gros et si lourds qu’il est impossible de les bouger lorsqu’ils retombent sur le sol. Dans tous les lieux de Trudvang où sont passés des firdtursirs, on peut voir ces rochers communément appelés « jets de géant ». Un rocher lancé qui retombe sur un personnage joueur provoquera à coup sûr sa mort et, en tant que maître de jeu, vous devriez plutôt utiliser ce pouvoir pour effrayer les personnages et, pourquoi pas, pour détruire des bâtiments ou des choses similaires.</p> |
+| `TRUDVANG.Content.CreatureAbility.uM9vugLgMhNiOjPk.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.D0KHL7y4z5A6B7C8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.D0KHL7y4z5A6B7C8.Name` | Summon Fog | Levée de brouillard |
+| `TRUDVANG.Content.CreatureAbility.D0KHL7y4z5A6B7C8.Description` | <p>Barrow wights have a special ability that allows them to fill great areas with fog. Often the fog will lie thick around each place the wight has visited, since the ability is dormant and can activate sometimes without the wight being aware of it. The fog is thick, cold, and sometimes moist, and anyone who stands within it must immediately make a situation roll with a situation value of 10 (Psyche modifiers apply). If the roll fails, the victim becomes woozy and barely aware of what he’s doing. The victim will then be pulled toward the core of the area, which most often is the site where the barrow wight is buried. A victim who takes damage will be awoken immediately from the slumber that the fog creates. Depending on how strong the barrow wight is, the fog can cover an area with a radius of 100 to 10,000 meters, according to the GM’s judgement. The barrow wight can remove the fog at any time, at which point it completely disappears within a few minutes.</p> | <p>Le revenant des tumulus maîtrise un pouvoir spécial qui lui permet de créer de grandes nappes de brouillard. Ce brouillard épais persiste dans tous les endroits visités par le revenant car ce pouvoir de nature passive peut parfois se déclencher sans même que le revenant en ait conscience. Le brouillard est épais, froid et parfois humide, et quiconque se trouve à l’intérieur doit immédiatement effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique). Si le test est raté, la victime tombe dans une sorte de sommeil éveillé et a à peine conscience de ce qu’elle fait. Elle se rendra ensuite inexorablement vers le centre de la zone où se trouve le plus souvent le site funéraire du revenant des tumulus. Une victime qui subit des dégâts sortira immédiatement de sa somnolence créée par le brouillard. Le brouillard peut couvrir une zone d’un rayon de 100 à 10 000 mètres, en fonction de la puissance du revenant des tumulus et de l’appréciation du MJ. Le revenant des tumulus peut dissiper le brouillard dès qu’il le souhaite, auquel cas il disparaît complètement en quelques minutes.</p> |
+| `TRUDVANG.Content.CreatureAbility.D0KHL7y4z5A6B7C8.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.nNCiHQlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.nNCiHQlRmSnToUpV.Name` | Fire’s Hand | Main du feu |
+| `TRUDVANG.Content.CreatureAbility.nNCiHQlRmSnToUpV.Description` | <p>The logi is a manifestation of fire itself. To simply be in its presence carries a risk of burning damage. To fight a logi is no easy task, and anyone who takes on such a challenge without proper protection will soon regret the decision. When the logi successfuly attacks someone in close quarters, it will leave burning oil on its victim. The oil will extinguish itself after 1d3 action rounds. During these action rounds, the victim will suffer 1d6 points of damage from the burning heat (only armor that does not conduct heat offers any protection). Afterward, it is possible for the victim’s clothes to catch fire; the game master will decide how likely this is.</p> | <p>Le loge est une pure manifestation du feu. Le simple fait d’être en sa présence fait encourir le risque de subir des dégâts de brûlure. Combattre un loge n’est pas une tâche aisée et quiconque envisage un tel affrontement sans protection appropriée regrettera bien vite sa décision. Quand un loge réussit une attaque contre une créature en combat rapproché, il l’asperge en même temps d’une substance brûlante. Cette substance s’éteint au bout de 1d3 tours de jeu. Pendant ce temps, la victime subit 1d6 points de dégâts par tour infligés par la chaleur (seules les armures non conductrices de chaleur protègent leur porteur). Après cela, il est possible que les vêtements de la victime prennent feu, à l’appréciation du maître de jeu.</p> |
+| `TRUDVANG.Content.CreatureAbility.nNCiHQlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.GzpMMB3y4z5A6B7C`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.GzpMMB3y4z5A6B7C.Name` | Death’s Sickness | Maladie de la mort |
+| `TRUDVANG.Content.CreatureAbility.GzpMMB3y4z5A6B7C.Description` | <p>A victim that has been bitten or scratched by a beinbaiter runs the risk of dying from the dreadful death’s sickness. The victim slowly loses life in the form of 1 point of damage per week. The plague prevents wounds from healing, whether through mending, extracts, or natural healing, as long as the victim carries the sickness. The only way to cure the sickness is to visit a holy person of some religion who can heal the damage.</p><p>A person who dies from death’s sickness awakens after one cycle of moons with a terrible hunger for bone marrow.</p><p>A victim’s chance of contracting the sickness depends on how much damage the beinbaiter has inflicted to the victim during the combat. Compare the suffered damage with the chart below, then roll 1d10. If the die result is in the range given in the “Points 1d10” column, it means that the person has been afflicted with the sickness.</p><table><thead><tr><th>Damage inflicted</th><th>Infectious d10 result</th></tr></thead><tbody><tr><td>1-5</td><td>1</td></tr><tr><td>6-10</td><td>1-3</td></tr><tr><td>11-20</td><td>1-4</td></tr><tr><td>21-30</td><td>1-5</td></tr><tr><td>More than 30</td><td>1-6</td></tr></tbody></table> | <p>Une victime mordue ou griffée par un beinbaiter risque de succomber à l’effroyable maladie de la mort. La victime s’affaiblit peu à peu en subissant 1 point de dégâts par semaine. La maladie empêche la guérison des blessures, que ce soit par le biais de soins, d’extraits ou par la guérison naturelle, tant que la victime est malade. La seule façon de soigner cette maladie consiste à consulter un prêtre, quelle que soit sa religion, capable de soigner les dégâts qu’elle cause.</p><p>Une personne qui meurt de la maladie de la mort se relève après un cycle lunaire, envahie par une effroyable faim de moelle.</p><p>Les risques qu’une victime contracte cette maladie dépendent du nombre de points de dégâts que le beinbaiter lui a infligés en combat. Jetez 1d10 et consultez la table suivante au regard des dégâts infligés à la victime. Si le résultat du jet correspond à celui indiqué dans la colonne « Résultat du d10 », cela signifie que l’individu contracte la maladie.</p><table><thead><tr><th>Dégâts infligés</th><th>Résultat du d10 infectieux</th></tr></thead><tbody><tr><td>1 à 5</td><td>1</td></tr><tr><td>6 à 10</td><td>1 à 3</td></tr><tr><td>11 à 20</td><td>1 à 4</td></tr><tr><td>21 à 30</td><td>1 à 5</td></tr><tr><td>Plus de 30</td><td>1 à 6</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.GzpMMB3y4z5A6B7C.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.WKMBG3v1w2x3y4z5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.WKMBG3v1w2x3y4z5.Name` | Warg Sickness (garm) | Maladie du warg (garm) |
+| `TRUDVANG.Content.CreatureAbility.WKMBG3v1w2x3y4z5.Description` | <p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-5 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table> | <p>Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.</p><p>La maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.</p><p>Risque d’infection propre à cette créature : 1-5 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.</p><p>Lorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.</p><p>Chaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.</p><p>Si la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.</p><p>Transformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.</p><p>Les traits des wargs garous sont modifiés comme suit :</p><ul><li>Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)</li><li>Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)</li><li>Psychisme -2 aux tests de situation</li><li>Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)</li><li>Intelligence -4 aux tests de situation (pour un total maximum de -6)</li></ul><p>Autres aptitudes :</p><ul><li>Protection naturelle : VC 2 (peau)</li><li>Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1</li><li>Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2</li><li>VC (Combat, Bagarre) +2</li><li>Compétences :</li><li>Agilité : Contrôle corporel (Saut, escalade et équilibre) +6</li><li>Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6</li><li>Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.</li></ul><table><thead><tr><th>Type de warg</th><th>Résultat du d20 infectieux</th></tr></thead><tbody><tr><td>Loup</td><td>Aucun</td></tr><tr><td>Warg</td><td>1 à 2</td></tr><tr><td>Skoll</td><td>1 à 3</td></tr><tr><td>Garm</td><td>1 à 5</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.WKMBG3v1w2x3y4z5.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.gXp2SRjPkQlRmSnT`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.gXp2SRjPkQlRmSnT.Name` | Warg Sickness (skoll) | Maladie du warg (skoll) |
+| `TRUDVANG.Content.CreatureAbility.gXp2SRjPkQlRmSnT.Description` | <p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-3 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table> | <p>Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.</p><p>La maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.</p><p>Risque d’infection propre à cette créature : 1-3 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.</p><p>Lorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.</p><p>Chaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.</p><p>Si la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.</p><p>Transformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.</p><p>Les traits des wargs garous sont modifiés comme suit :</p><ul><li>Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)</li><li>Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)</li><li>Psychisme -2 aux tests de situation</li><li>Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)</li><li>Intelligence -4 aux tests de situation (pour un total maximum de -6)</li></ul><p>Autres aptitudes :</p><ul><li>Protection naturelle : VC 2 (peau)</li><li>Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1</li><li>Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2</li><li>VC (Combat, Bagarre) +2</li><li>Compétences :</li><li>Agilité : Contrôle corporel (Saut, escalade et équilibre) +6</li><li>Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6</li><li>Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.</li></ul><table><thead><tr><th>Type de warg</th><th>Résultat du d20 infectieux</th></tr></thead><tbody><tr><td>Loup</td><td>Aucun</td></tr><tr><td>Warg</td><td>1 à 2</td></tr><tr><td>Skoll</td><td>1 à 3</td></tr><tr><td>Garm</td><td>1 à 5</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.gXp2SRjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea.Name` | Warg Sickness (warg) | Maladie du warg (warg) |
+| `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea.Description` | <p>Warg beasts carry a disease that is called “warg sickness.” It is spread through their bite, and victims are at risk of becoming werewargs (described below the statistics). The risk of i nfection differs depending on what breed of warg beast bites the victim. One infection roll is made for each warg beast no matter how many times it bites the same victim (Constitution modifiers apply). The bite is to be considered infectious if the roll gets a result in the ranges described in the chart below.</p><p>The sickness will lie dormant in the victim like a curse that never disappears but instead grows in strength. Most often the sickness will course through the blood without affecting the creature, but sometimes there is something that makes it sprout. Usually, the trigger is the moon’s strange pull, but sometimes great fear, unusual stress, or extreme hunger will be enough for the warg sickness to sprout in the body of the victim. It is totally up to the GM to decide when the infection will manifest, preferably during a dramatic moment will make the story memorable.</p><p>The infection risk specific to this creature is 1-2 on 1d20, modified by Constitution. Ordinary wolves do not transmit this disease.</p><p>When the warg sickness sprouts in the body of a victim who was bitten by a warg beast, they can be transformed into a cross between a human and a warg beast, which results in a horrid creature with traits from both species. Their face is covered in fur and looks like a warg’s face. Great claws grow out on their hands and feet, and long, sharp fangs grow in their mouth. Some werewargs prefer to walk on all fours, while some move like a human.</p><p>Each time the moon grows bright in the night sky (though it does not need to be visible), the sickness will break out, causing the transformation. The victim must make a situation roll with the situation value of 6 (Constitution and Psyche modifiers apply) to resist the warg sickness and avoid transforming.</p><p>If the victim sees the full moon, the situation value is reduced by 4. For people with a negative Psyche trait, there is a risk that the warg sickness will sprout during stressful situations. When a victim is in such a situation, they must make a situation roll with a situation value of 8 (Psyche modifiers apply) to resist transforming.</p><p>While transformed into werewargs, victims cannot use the abilities and traits they had before. They lose the ability to think clearly and are now slaves to bloodthirsty instinct, like a famished warg beast. Just like a warg beast, a werewarg can spread the sickness. Each humanoid creature bitten by a werewarg has a risk of contracting the disease (1-3 on 1d20; Constitution modifiers apply). In contrast to the warg beast’s bite, there is a small risk (1 on 1d20) that a victim infected by a werewarg will not be able to change back out of werewarg form after it transforms for the first time. These beasts that live constantly in the shape of a werewarg cannot spread the sickness to others, but they are dreaded nonetheless.</p><p>The werewarg’s traits change as follows:</p><ul><li>Strength +4 for situation rolls and damage (no more than +6 in total).</li><li>Dexterity +4 for situation rolls and movement (no more than +6 in total).</li><li>Psyche -2 for situation rolls.</li><li>Constitution +6 for situation rolls and Body Points (no more than +8 in total).</li><li>Intelligence -4 for situation rolls (no lower than -6 in total).</li></ul><p>Other abilities:</p><ul><li>Natural protection: PV 2 (skin).</li><li>Bite: 1d10 (OR 8-10) damage; WA 1.</li><li>Claws: 1d10 (OR 9-10) damage; WA 2.</li><li>SV (Fighting, Brawling) +2.</li><li>Agility: Body Control (Jumping, Climbing, and Balancing) +6.</li><li>Wilderness: Hunting Experience (Hunting and Fishing, Tracker) +6.</li><li>Low-Light Vision: sees by weak light (stars, moonlight, torchlight, etc.) as if it were daylight.</li></ul><table><thead><tr><th>Warg type</th><th>Infectious d20 result</th></tr></thead><tbody><tr><td>Wolf</td><td>None</td></tr><tr><td>Warg</td><td>1-2</td></tr><tr><td>Skoll</td><td>1-3</td></tr><tr><td>Garm</td><td>1-5</td></tr></tbody></table> | <p>Les wargs sont porteurs d’une maladie appelée « maladie des wargs ». Elle est véhiculée par la morsure et ses victimes courent le risque de devenir des wargs garous (décrits dans les caractéristiques ci-après). Le risque d’infection diffère en fonction de l’espèce de warg à l’origine de la morsure. Effectuez un test d’infection pour chaque warg, peu importe le nombre de morsures sur la même victime (en tenant compte du modificateur de Constitution). La morsure est considérée comme infectieuse si le résultat du test est compris dans les fourchettes indiquées dans le tableau suivant.</p><p>La maladie reste dormante dans le corps de la victime, telle une malédiction qui ne disparaît jamais, mais gagne au contraire en sévérité. La plupart du temps, elle se diffuse dans le sang sans affecter la créature, mais se déclenche parfois pour une raison précise. Habituellement, on compte parmi les déclencheurs l’étrange attraction de la lune, mais parfois, une grande peur, un stress inhabituel ou une faim extrême suffisent pour que la maladie se déclare dans le corps de la victime. Le MJ est totalement libre de décider du moment où la maladie se déclenche, de préférence pendant un moment dramatique qui rendra l’histoire mémorable.</p><p>Risque d’infection propre à cette créature : 1-2 sur 1d20, en tenant compte du modificateur de Constitution. Le loup ordinaire ne transmet pas cette maladie.</p><p>Lorsque la maladie des wargs se déclare chez une victime mordue par un warg, celle-ci peut se transformer en une créature mi-humaine, mi-warg, un hybride terrifiant qui partage les caractéristiques des deux espèces. Son visage est couvert de fourrure et ressemble à la gueule d’un warg. D’impressionnantes griffes poussent sur ses mains et ses pieds tandis que des crocs aiguisés se développent dans sa bouche. Certains wargs garous préfèrent se déplacer sur quatre pattes alors que d’autres marchent comme des humains.</p><p>Chaque fois que la lune s’illumine dans le ciel (sans nécessairement être visible), la maladie se déclare et entraîne la transformation. La victime doit alors faire un test de situation avec une valeur de situation de 6 (en tenant compte des modificateurs de Psychisme et de Constitution) pour résister à la maladie et éviter la transformation.</p><p>Si la créature affectée voit la pleine lune, la valeur de situation est réduite de 4. Les personnages affichant un Psychisme négatif courent le risque de voir la maladie se déclarer dans des situations stressantes. Lorsqu’elle se trouve dans une telle situation, la victime doit faire un test de situation avec une valeur de situation de 8 (en tenant compte du modificateur de Psychisme) pour résister à la transformation.</p><p>Transformées en wargs garous, les victimes sont incapables d’utiliser les capacités et traits dont elles disposent en temps normal. Elles perdent la faculté de raisonner et se trouvent soumises à un instinct carnassier, tels des wargs affamés. Tout comme un warg, un warg garou peut propager la maladie. Chaque créature humanoïde mordue par un warg garou présente un risque de contracter la maladie (résultat de 1 à 3 sur 1d20, en tenant compte du modificateur de Constitution). Contrairement aux effets de la morsure des wargs, il y a un faible risque (1 sur 1d20) pour que la victime infectée par un warg garou soit dans l’incapacité de revenir à sa forme d’origine après sa première transformation. Ces bêtes vivant constamment sous la forme d’un warg garou ne transmettent pas la maladie, mais ne sont pas moins craintes pour autant.</p><p>Les traits des wargs garous sont modifiés comme suit :</p><ul><li>Force +4 aux tests de situation et aux dégâts (pour un total maximum de +6)</li><li>Dextérité +4 aux tests de situation et au mouvement (pour un total maximum de +6)</li><li>Psychisme -2 aux tests de situation</li><li>Constitution +6 aux tests de situation et aux points de santé (pour un total maximum de +8)</li><li>Intelligence -4 aux tests de situation (pour un total maximum de -6)</li></ul><p>Autres aptitudes :</p><ul><li>Protection naturelle : VC 2 (peau)</li><li>Morsure : 1d10 (JO 8-10) points de dégâts ; AA : 1</li><li>Griffes : 1d10 (JO 9-10) points de dégâts ; AA : 2</li><li>VC (Combat, Bagarre) +2</li><li>Compétences :</li><li>Agilité : Contrôle corporel (Saut, escalade et équilibre) +6</li><li>Nature : Expérience de la chasse (Chasser et pêcher, Pister) +6</li><li>Vision nocturne : peut voir sous une faible luminosité (lumière des étoiles, de la lune, de torches, etc.) comme en plein jour.</li></ul><table><thead><tr><th>Type de warg</th><th>Résultat du d20 infectieux</th></tr></thead><tbody><tr><td>Loup</td><td>Aucun</td></tr><tr><td>Warg</td><td>1 à 2</td></tr><tr><td>Skoll</td><td>1 à 3</td></tr><tr><td>Garm</td><td>1 à 5</td></tr></tbody></table> |
 | `TRUDVANG.Content.CreatureAbility.i4Zci8A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.f8HxFiMhNiOjPkQl`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.f8HxFiMhNiOjPkQl.Name` | Vitner Manipulation | Manipulation du vitner |
+| `TRUDVANG.Content.CreatureAbility.f8HxFiMhNiOjPkQl.Description` | <p>Many spells that a diser possesses bear similarities to different vitner spells. It is up to the game master to decide if a diser has one or more abilities whose traits and functions can be compared to a spell.</p> | <p>Nombre de sorts maîtrisés par le diser ont des points communs avec divers sorts de vitner. C’est au maître de jeu de décider si un diser possède un ou plusieurs pouvoirs dont les caractéristiques et les fonctions sont comparables à celles d’un sort.</p> |
+| `TRUDVANG.Content.CreatureAbility.f8HxFiMhNiOjPkQl.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.pjY95vXsYtZu0v1w`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.pjY95vXsYtZu0v1w.Name` | Shapeshifter (draugr) | Métamorphose (draugr) |
+| `TRUDVANG.Content.CreatureAbility.pjY95vXsYtZu0v1w.Description` | <p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p> | <p>Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.</p><p>Le draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.</p><p>Chaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.</p> |
+| `TRUDVANG.Content.CreatureAbility.pjY95vXsYtZu0v1w.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.K2WXpMgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.K2WXpMgMhNiOjPkQ.Name` | Metamorph (stonehinje) | Métamorphose (stenhinje) |
+| `TRUDVANG.Content.CreatureAbility.K2WXpMgMhNiOjPkQ.Description` | <p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p> | <p>En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.</p><p>Il est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.</p> |
+| `TRUDVANG.Content.CreatureAbility.K2WXpMgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.KD0m2dHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.KD0m2dHcIdJeKfLg.Name` | Dark Vitner (Vitner Capacity +10) | Morkvitner (réserve de vitner +10) |
+| `TRUDVANG.Content.CreatureAbility.KD0m2dHcIdJeKfLg.Description` | <p>A barrow wight has access to dark vitner and the power to wield it. The number of Vitner Tablets, the skill at weaving the vitner and the Vitner Capacity will differ from wight to wight. These stats are totally up to the GM’s judgement.</p><p>The example barrow wight profile has a Vitner Capacity bonus of +10.</p> | <p>Un revenant des tumulus a accès au morkvitner et sait manipuler son pouvoir. Le nombre de Tablettes de vitner, la compétence Modelage du vitner et la Réserve de vitner sont différents pour chaque revenant. Ces caractéristiques sont toutes laissées à l’appréciation du MJ.</p> |
+| `TRUDVANG.Content.CreatureAbility.KD0m2dHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr.Name` | Deep Bellow | Mugissement profond |
+| `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr.Description` | <p>Galtirs in the thick of combat will often roar for as long as they can, a so-called deep bellow. To humans, it will not sound too strange, but during the bellowing, there is a deep sound that humans and similar creatures cannot hear. This deep bellowing can be heard by galtirs far and wide. The more galtirs that perform the deep bellowing together, the easier it is for the sound to spread. Galtirs belonging to the same tribe, and sometimes other tribes, will hurry to the rescue as they answer with their own deep bellowing. When many galtirs perform the deep bellow together, they can form a great herd that will attack anything that comes close to them.</p> | <p>Au cœur du combat, les galtirs émettent souvent un cri aussi longtemps qu’ils le peuvent, le mugissement profond. Pour les humains, celui-ci n’aura rien de particulier, mais il contient un son très grave que ni eux ni les créatures similaires ne peuvent entendre. Ce mugissement est audible par les autres galtirs dans un très vaste périmètre. Plus les galtirs sont nombreux à émettre le mugissement de concert, plus le son porte. Les galtirs de la même tribu, et parfois d’autres tribus, se précipiteront à la rescousse en répondant de leur propre mugissement. Lorsque de nombreux galtirs émettent ce mugissement ensemble, ils peuvent former une horde imposante qui attaquera tout ce qui passe trop près d’eux.</p> |
 | `TRUDVANG.Content.CreatureAbility.eYf1GqSnToUpVqWr.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.dPcuOKeKfLgMhNiO`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.dPcuOKeKfLgMhNiO.Name` | Fog | Nappe de brume |
+| `TRUDVANG.Content.CreatureAbility.dPcuOKeKfLgMhNiO.Description` | <p>The diser has the ability to summon a fog that spreads out from the wraith at a speed of 1-5 meters per action round. How far the fog can spread, how high above the ground it stretches, and how long it lasts is all up to the game master to decide. Most disers have this ability.</p> | <p>Le diser a le pouvoir de créer une nappe de brume qui s’étend depuis le fantôme à une vitesse de 1 à 5 mètres par tour de jeu. C’est le maître de jeu qui détermine sur quelle distance la nappe de brume s’étend, son épaisseur et sa durée. La plupart des disers maîtrisent ce pouvoir.</p> |
+| `TRUDVANG.Content.CreatureAbility.dPcuOKeKfLgMhNiO.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.dihK2uYtZu0v1w2x`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.dihK2uYtZu0v1w2x.Name` | Soul Name | Nom de l’âme |
+| `TRUDVANG.Content.CreatureAbility.dihK2uYtZu0v1w2x.Description` | <p>A myling that receives the true name of a person can bind the soul of the victim to itself to gain more power. It does this by sacrificing to its goddess. This sacrificial ritual takes time and the place can lie far off, which requires the myling to be swift before the victim can realize what is about to happen.</p><p>When a victim gives his true name, he must make a situation roll with a situation value of 6 (Intelligence modifiers apply) to understand that something is afoot. If the roll is successful, the victim will feel uneasy and realize that he must stop the creature at once. A myling that succeeds in binding another’s soul to it gains high status among its kin. A victim who has lost his soul to a myling will feel empty, without goals or purpose, for the rest of his life. The victim loses one level of the Psyche trait. The only way to regain the lost soul is to single-handedly slay the myling that stole it. If the myling dies by someone else’s hand, the soul is lost forever.</p> | <p>Un myling qui obtient le véritable nom d’une personne peut lier l’âme de cette personne à la sienne afin d’augmenter sa puissance. Il le fait en effectuant un sacrifice en l’honneur de sa déesse. Ce rite sacrificiel prend du temps et l’endroit où il doit être réalisé peut être distant. Le myling doit donc faire vite pour ne pas que la victime réalise ce qui est en train de se passer.</p><p>Quand une victime révèle son vrai nom, elle doit effectuer un test de situation avec une valeur de situation de 6 (le modificateur d’Intelligence s’applique) pour comprendre que le myling trame quelque chose. Si le test est réussi, la victime se sent mal à l’aise et sait qu’elle doit immédiatement mettre un terme aux agissements du myling. Un myling qui parvient à lier son âme à celle d’une créature bénéficie d’un statut élevé parmi ses semblables. Une victime qui a perdu son âme parce qu’elle est liée à un myling se sentira vidée, sans but ni raison d’être, jusqu’à la fin de sa vie. Le trait Psychisme de la victime est réduit d’un niveau. La seule façon de récupérer son âme perdue consiste à tuer le myling qui l’a dérobée sans l’aide de personne. Si le myling meurt de la main de quelqu’un d’autre, l’âme est définitivement perdue.</p> |
+| `TRUDVANG.Content.CreatureAbility.dihK2uYtZu0v1w2x.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.HeVWKE5A6B7C8D9E`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.HeVWKE5A6B7C8D9E.Name` | Drown Victim (lyktgubbe) | Noyade (lyktgubbe) |
+| `TRUDVANG.Content.CreatureAbility.HeVWKE5A6B7C8D9E.Description` | <p>A victim that has been exposed to a lyktgubbe must succeed in getting onto land so that he won’t be drowned. If the victim can touch the bottom of the lake or water source with his feet, he must succeed on a situation roll with a situation value of 12 (Strength or Dexterity modifiers apply). For each lyktgubbe that tries to drag the victim down to drown, the situation value is decreased by -2. If the water is so deep that the victim must swim to stay afloat, an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -2 for each lyktgubbe that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p> | <p>Une victime menacée par un lyktgubbe doit parvenir à retrouver la terre ferme pour ne pas se noyer. Si la victime a pied dans un lac ou une autre étendue d’eau, elle doit réussir un test de situation avec une valeur de situation de 12 (les modificateurs de Force ou de Dextérité s’appliquent). Pour chaque lyktgubbe qui tente de tirer la victime vers le fond pour la noyer, la valeur de situation est réduite de -2. Si l’eau est trop profonde et nécessite que la victime nage pour garder la tête hors de l’eau, un test de compétence d’Agilité avec la spécialité Natation est effectué à la place du test de situation. La valeur de compétence d’Agilité est réduite de -2 pour chaque lyktgubbe qui tente de noyer la victime. Si la victime ne maîtrise pas la spécialité Natation, aucun test n’est effectué et la victime se noie automatiquement.</p> |
+| `TRUDVANG.Content.CreatureAbility.HeVWKE5A6B7C8D9E.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.G4RBaoRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.G4RBaoRmSnToUpVq.Name` | Drown Victim (myling) | Noyade (myling) |
+| `TRUDVANG.Content.CreatureAbility.G4RBaoRmSnToUpVq.Description` | <p>When a myling hears people nearby, it might pretend to be a child that is about to drown. (It usually does this only if other mylings are nearby.) The myling will mimic a human child, splash in the water, and ask the travelers for their names. If they do not get true names or if someone jumps in the water to help the apparent child, the mylings then attack if they are the greater force in numbers.</p><p>A victim that is exposed to the mylings must succeed in getting to land so that he won’t risk being drowned. If the victim can touch the bottom of the water source with their feet, he must make a situation roll with a situation value of 14 (Strength and Dexterity modifiers apply). For each myling that tries to pull down the victim, the situation value is modified by -1. If the water is so deep that the victim must swim to stay above the surface an Agility Skill roll with the Swimming specialty is required instead of the situation roll. The Agility skill value suffers a -1 for each myling that tries to drown the victim. If the Swimming specialty is not owned by the victim no roll is required: the drowning is automatic.</p> | <p>Quand un myling entend des gens approcher, il peut se faire passer pour un enfant sur le point de se noyer (il se comporte généralement de la sorte uniquement s’il y a d’autres mylings à proximité). Le myling se comporte comme un enfant humain, barbote dans l’eau et demande aux voyageurs leurs noms. S’il n’obtient pas les vrais noms des voyageurs ou si quelqu’un saute dans l’eau pour venir en aide à ce qui lui semble être un enfant, le myling passe à l’attaque, mais seulement s’il est soutenu par un groupe de myling plus important que les voyageurs.</p><p>Une victime menacée par les mylings doit parvenir à retrouver la terre ferme pour ne pas risquer la noyade. Si la victime a pied dans un lac ou une autre étendue d’eau, elle doit réussir un test de situation avec une valeur de situation de 14 (les modificateurs de Force ou de Dextérité s’appliquent). Pour chaque myling qui tente de tirer la victime vers le fond, la valeur de situation est réduite de -1. Si l’eau est trop profonde et nécessite que la victime nage pour garder la tête hors de l’eau, un test de compétence d’Agilité avec la spécialité Natation est effectué à la place du test de situation. La valeur de compétence d’Agilité est réduite de -1 pour chaque myling qui tente de noyer la victime. Si la victime ne maîtrise pas la spécialité Natation, aucun test n’est effectué et la victime se noie automatiquement.</p> |
+| `TRUDVANG.Content.CreatureAbility.G4RBaoRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.U35mINhNiOjPkQlR`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.U35mINhNiOjPkQlR.Name` | Speak (Relevant Language) | Parole (langue appropriée) |
+| `TRUDVANG.Content.CreatureAbility.U35mINhNiOjPkQlR.Description` | <p>Not every wraith has the ability to speak to the living. Weaker spirits, such as the Lost and the Helpful, have trouble communicating with the living. The Wicked often choose not to speak since their hate for the living is so great that they prefer not to communicate.</p><p>The disers that have the ability to speak in one or several languages gain a skill value in the Knowledge skill (Language discipline and Foreign Tongue [relevant language]) specialty). How good the wraith is in its chosen tongue is up to the game master to decide.</p> | <p>Tous les fantômes ne sont pas capables de parler aux vivants. Les esprits faibles, comme les égarés ou les serviables, éprouvent des difficultés à communiquer avec les vivants. Les malfaisants décident souvent de ne pas parler car leur haine envers les vivants est si grande qu’ils préfèrent ne pas communiquer.</p><p>Les disers capables de parler une ou plusieurs langues obtiennent une valeur de compétence en Connaissances (discipline Langage et spécialité Langue étrangère [langue appropriée]). C’est le maître de jeu qui décide du niveau de maîtrise du fantôme dans la langue choisie.</p> |
+| `TRUDVANG.Content.CreatureAbility.U35mINhNiOjPkQlR.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Vuy4tVpVqWrXsYtZ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Vuy4tVpVqWrXsYtZ.Name` | Spiderlegs | Pattes d’araignée |
+| `TRUDVANG.Content.CreatureAbility.Vuy4tVpVqWrXsYtZ.Description` | <p>Goblins have the ability to move along the walls and ceiling of a cave. A goblin moves at half their movement rate on walls and a third on ceilings.</p> | <p>Les gobelins peuvent se déplacer sur les parois et le plafond des grottes. Un gobelin se déplace à la moitié de sa capacité de mouvement sur les murs et au tiers sur les plafonds.</p> |
+| `TRUDVANG.Content.CreatureAbility.Vuy4tVpVqWrXsYtZ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.4EWPCNgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.4EWPCNgMhNiOjPkQ.Name` | Stone Skin | Peau de pierre |
+| `TRUDVANG.Content.CreatureAbility.4EWPCNgMhNiOjPkQ.Description` | <p>The petrified outer skin of the giant gives it an almost impenetrable defense (Protection value 4). Edge weapons with a quality lower than excellent run the risk of breaking when they strike the surface of the giant. Each time such a weapon successfuly hits the giant, the game master makes a luck roll with 1d10. If the outcome of the roll is 1, the edge weapon takes 1d10 (OR 8-10) points of damage and lowers its Breach Value by the same amount.</p> | <p>La surface extérieure de la peau pétrifiée du géant offre une protection pratiquement impénétrable (valeur de protection de 4). Les armes tranchantes dont la qualité est inférieure à excellente risquent de casser si elles sont utilisées pour frapper la surface du géant. Chaque fois qu’une arme de ce type frappe avec succès le géant, le maître de jeu effectue un test de chance avec un d10. Sur un résultat de 1, l’arme tranchante subit 1d10 (JO 8-10) points de dégâts qui réduisent sa valeur d’intégrité.</p> |
+| `TRUDVANG.Content.CreatureAbility.4EWPCNgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.HtsoWMgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.HtsoWMgMhNiOjPkQ.Name` | Feel Hostility | Perception de l’hostilité |
+| `TRUDVANG.Content.CreatureAbility.HtsoWMgMhNiOjPkQ.Description` | <p>An yggdras can feel the presence of intelligent creatures within 200 meters and know whether such a creature is hostile or not.</p> | <p>Un yggdras peut percevoir la présence de créatures intelligentes dans un rayon de 200 mètres et sait si ces créatures sont hostiles ou non.</p> |
+| `TRUDVANG.Content.CreatureAbility.HtsoWMgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.s2C1vcGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.s2C1vcGbHcIdJeKf.Name` | Sense Life | Perception de la vie |
+| `TRUDVANG.Content.CreatureAbility.s2C1vcGbHcIdJeKf.Description` | <p>A diser has the ability to sense where a living creature is within the range of the ability. Each action round, the diser can make a successful skill roll to sense who among the living within range is the weakest mentally (Psyche is used). Two successful skill rolls give the diser knowledge of the two targets that are most mentally weak within range. However, targets can hide from the diser with the help of prayers of power or spells.</p> | <p>Un diser a le pouvoir de percevoir où se situe une créature vivante située à portée. À chaque tour de jeu, le diser peut effectuer un test de compétence pour essayer de percevoir qui parmi les créatures vivantes situées à portée est la plus faible mentalement (on compare les valeurs de Psychisme). En réussissant deux tests de compétence, le diser peut percevoir les deux cibles les plus faibles mentalement situées à portée. Cependant, les cibles peuvent se cacher du diser en faisant appel à des sorts et des talents divins.</p> |
+| `TRUDVANG.Content.CreatureAbility.s2C1vcGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.jqzjOTlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.jqzjOTlRmSnToUpV.Name` | Sense Living | Perception des êtres vivants |
+| `TRUDVANG.Content.CreatureAbility.jqzjOTlRmSnToUpV.Description` | <p>Sálheles can sense living creatures within 100 meters. This means that they can find living creatures no matter how well the targets have hidden themselves.</p> | <p>Les sálheles peuvent percevoir la présence de créatures vivantes situées à moins de 100 mètres. Par conséquent, ils peuvent débusquer des créatures vivantes, quels que soient les moyens qu’elles utilisent pour se cacher.</p> |
+| `TRUDVANG.Content.CreatureAbility.jqzjOTlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.IHRUNaGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.IHRUNaGbHcIdJeKf.Name` | Persuade | Persuasion |
+| `TRUDVANG.Content.CreatureAbility.IHRUNaGbHcIdJeKf.Description` | <p>Instead of capturing its prey with force, the king troll likes to use vitner or its power of persuasion. Victims who hear what the king troll has to say must make a situation roll with a situation value of 12 (Psyche modifiers apply) in order to not be persuaded by the troll.</p> | <p>Au lieu de capturer ses proies par la force, le kungstroll aime faire appel au vitner ou à son pouvoir de persuasion. Les victimes qui entendent ce que leur dit le troll roi doivent chacune réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de résister à son pouvoir de persuasion.</p> |
+| `TRUDVANG.Content.CreatureAbility.IHRUNaGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.WLqQEeGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.WLqQEeGbHcIdJeKf.Name` | Petrify (braskelwurm) | Pétrification (braskelwurm) |
+| `TRUDVANG.Content.CreatureAbility.WLqQEeGbHcIdJeKf.Description` | <p>When the braskelwurm attacks with its eyes, it tries to force the victim to face its gaze. It does this by clucking seductively and pointing its glowing eyes toward its chosen victim. Even if the clucking is neither beautiful nor seductive, it is hard not to turn one’s attention toward this sound and then fall into the deep eyes of the reptile.</p><p>Everyone who hears the clucking noise must make a situation roll with a situation value of 14 (Psyche modifiers apply) to avoid looking into the beast’s eyes. The one whom the braskelwurm has chosen to be its victim has a negative modifier of -6 (situation value 8). Depending on the age of the braskelwurm, the situation value may be modified. A young braskelwurm is much more dangerous than an old one, and the most dangerous are the ones that were just born. It is up to the game master to give modifiers based on the age of the braskelwurm.</p><p>Victims of the gaze can withstand the incoming spell by making a situation roll with a situation value of 6 (Psyche modifiers apply). If the roll fails, the victim is instantly turned to nearly unbreakable stone. This means that the petrified victim gains a Protection Value of 10 and a Break Value of 100. When the Break Value is lowered to 0, the victim starts to take damage like normal, and if the victim takes as much damage as double its Body Points, the stone statue will break and the victim will die.</p><p>A petrified creature is in a constant state of sleep and cannot comprehend the passage of time or what happens around them. The victim cannot affect anything in its surroundings. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja). When the petrification runs out, the victim returns to its original form.</p><p>A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The statue weighs around ten times the victim’s original weight.</p> | <p>Quand le braskelwurm attaque avec son regard, il tente de forcer sa victime à le regarder droit dans les yeux. Pour ce faire, il produit un caquètement séduisant et tourne ses yeux luisants vers la victime choisie. Même si le caquètement n’est ni séduisant ni particulièrement plaisant, il est difficile de ne pas prêter attention à ce son puis de croiser le regard pénétrant du reptile.</p><p>Quiconque entend le caquètement doit réussir un test de situation avec une valeur de situation de 14 (le modificateur de Psychisme s’applique) pour éviter de croiser le regard de la créature. La victime choisie par le braskelwurm subit un modificateur de -6 (et effectue donc le test avec une valeur de situation de 8). La valeur de situation peut être ajustée en fonction de l’âge du braskelwurm. Un jeune braskelwurm est bien plus dangereux qu’un vieux, les plus dangereux étant ceux qui viennent de naître. C’est au maître de jeu de déterminer les modificateurs en se basant sur l’âge du braskelwurm.</p><p>Les victimes du regard peuvent résister au sort imminent qui les attend en effectuant chacune un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). Si elle échoue, la victime est instantanément transformée en statue de pierre pratiquement incassable. Ceci signifie que la victime pétrifiée obtient une valeur de protection de 10 et une valeur d’intégrité de 100. Lorsque la valeur d’intégrité est réduite à 0, la victime subit ensuite les dégâts normalement et si elle reçoit un nombre de points de dégâts au moins égal au double de ses points de santé, la statue de pierre se brise et la victime meurt.</p><p>Une créature pétrifiée se trouve dans un état de sommeil permanent. Elle ne perçoit plus l’écoulement du temps ni son environnement. La victime ne peut rien affecter autour d’elle. On peut libérer une personne pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja). Une fois la pétrification dissipée, la victime retrouve sa forme d’origine.</p><p>Une créature pétrifiée n’est pas fixée au sol, même si la pesanteur continue d’agir normalement sur elle. Une créature suffisamment forte peut donc la déplacer. La statue pèse environ dix fois le poids normal de la victime.</p> |
+| `TRUDVANG.Content.CreatureAbility.WLqQEeGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.MxUgKE5A6B7C8D9E`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.MxUgKE5A6B7C8D9E.Name` | Petrify (physical demon) | Pétrification (démon tangible) |
+| `TRUDVANG.Content.CreatureAbility.MxUgKE5A6B7C8D9E.Description` | <p>The demon can petrify a victim that stands within 30 meters of the demon (SV 14) without spending Combat Points. The ability can be used 1d3 times per day and the duration of the petrification is 1d10 (OR 7-10) days. The armor of the victim and their clothes are also petrified; however, no magical object is affected.</p><p>The victim can try to resist the petrification by succeeding with a situational roll with a situation value of 6 (the trait Psyche modifies the roll). If the roll fails the victim is turned into stone. The stone that the victim is petrified into is very hard and close to unbreakable. In practice this means that the petrified person gains a protection value of 20 and a Break Value of 200. When the Break Value is lowered to 0 the person starts to take damage like normal and if the petrified person takes as much damage as double its Body Points this stone statue will be broken and the victim will die.</p><p>A creature that is petrified is in a constant state of sleep and cannot comprehend time that passes or what happens around him or her. The victim cannot affect anything that happens in its surroundings. When the duration has run out the victim returns to its original form. One can set free a petrified person with the spell Remove Petrification (Braskelbrotja).</p><p>A petrified creature is not stuck in the ground in any way, but it can be moved by someone strong enough to do so. The petrified creature weighs around ten times the victim’s original weight.</p> | <p>Le démon peut pétrifier une victime située à 30 mètres ou moins de lui (VC 14) sans dépenser le moindre point de combat. Ce pouvoir peut être utilisé 1d3 fois par jour et la pétrification dure 1d10 (JO 7-10) jours. L’armure et les vêtements de la victime sont eux aussi pétrifiés, ce qui n’est pas le cas de ses objets magiques.</p><p>La victime peut résister à la pétrification en réussissant un test de situation avec une valeur de situation de 6 (le trait Psychisme modifie ce test). En cas d’échec, la victime se transforme en statue de pierre. Cette pierre est très solide et pratiquement incassable. En pratique, cela signifie que la créature pétrifiée obtient une valeur de protection de 20 et une valeur d’intégrité de 200. Quand la valeur d’intégrité est réduite à 0, la créature commence à subir des dégâts comme à l’accoutumée et, si la créature pétrifiée subit un montant de dégâts égal au double de ses points de santé, la statue de pierre est fracassée et la victime meurt.</p><p>Une créature pétrifiée est dans un état de sommeil permanent, elle ne perçoit plus l’écoulement du temps ni ce qui se passe autour d’elle. Elle ne peut plus agir sur quoi que ce soit dans son environnement. Quand la durée de la pétrification touche à sa fin, la victime retrouve sa forme d’origine. Il est possible de libérer une créature pétrifiée grâce au sort Annuler une pétrification (Braskelbrotja).</p><p>Une créature pétrifiée n’est pas inamovible et une créature suffisamment forte peut donc la soulever et la déplacer. La créature pétrifiée pèse à peu près dix fois son poids d’origine.</p> |
+| `TRUDVANG.Content.CreatureAbility.MxUgKE5A6B7C8D9E.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.0hJrbG9EaGbHcIdJ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.0hJrbG9EaGbHcIdJ.Name` | Fear of Magic | Peur de la magie |
+| `TRUDVANG.Content.CreatureAbility.0hJrbG9EaGbHcIdJ.Description` | <p>When hrim trolls come into contact with a source of magic, they must make a situation roll with a situation value of 8. If the roll is failed, they have a modifier of -3 on everything they attempt and must also attempt a new situation roll with a situation value of 12. A new failure means the hrim troll flees from the source of magic for 1d6 rounds before attempting to approach it again. When the hrim troll dares to approach again, it must repeat the situation roll, this time with a modifier of -2, which equates to a situation value of 10. Upon failure, this process is repeated until the situation value reaches 0, at which point the troll does not dare to approach the source of magic ever again.</p> | <p>Quand les hrimtrolls entrent en contact avec une source de magie, chacun doit effectuer un test de situation avec une valeur de situation de 8. En cas d’échec, un troll subit un modificateur de -3 à tout ce qu’il tente, et doit également effectuer un nouveau test de situation avec une valeur de situation de 12. Un deuxième échec signifie que le hrimtroll fuit la source de magie pendant 1d6 tours de jeu avant de pouvoir tenter de s’en rapprocher de nouveau. Quand le hrimtroll tente de se rapprocher à nouveau, il doit effectuer un autre test de situation, cette fois-ci avec un modificateur de -2, ce qui aboutit à une valeur de situation de 10. En cas d’échec, ce processus est répété jusqu’à ce que la valeur de situation soit réduite à 0, auquel cas le troll n’ose plus jamais se rapprocher de la source de magie.</p> |
+| `TRUDVANG.Content.CreatureAbility.0hJrbG9EaGbHcIdJ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.F1bQ4eGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.F1bQ4eGbHcIdJeKf.Name` | Fairy Dust | Poudre de fée |
+| `TRUDVANG.Content.CreatureAbility.F1bQ4eGbHcIdJeKf.Description` | <p>Fairies always carry a small pouch of fairy dust. They can give the dust to a person they deem to have been of great help to the forest or whose personality and actions are as noble as their own. To truly deserving individuals, they will give at most two of these pouches. A pouch of dust contains 1d3 + 1 doses. A person who throws this dust in the air around them increases the skill value of all their actions by 1d3 + 1, and the effect lasts for 1d5 hours. If someone manages to gather seven doses of fairy dust and throws them all into the air, that person gains a wish. If the wish is of good character (determined by the game master), it will come true. The character gets only one wish, and if the game master deems it not good of character, the fairy dust will be wasted without effect.</p> | <p>Les fées portent toujours sur elles une petite bourse contenant de la poussière de fée. Elles peuvent la donner à une personne qui a grandement aidé la forêt ou dont la personnalité et les actions sont aussi nobles que les leurs. Elles offriront jusqu’à deux bourses aux individus véritablement méritants.</p><p>Une bourse de poussière contient 1d3+1 doses. Une personne qui jette cette poussière en l’air autour d’elle augmente de 1d3+1 la valeur de compétence de toutes ses actions pendant 1d5 heures. Si quelqu’un parvient à rassembler sept doses de poussière de fée et les jette toutes en l’air d’un coup, il peut faire un vœu. Si le vœu est de bonne moralité (du point de vue du maître de jeu), il sera exaucé. Le personnage ne peut faire qu’un seul vœu, et si le maître de jeu estime que sa moralité n’est pas appropriée, la poudre féerique sera gâchée sans produire d’effet.</p> |
+| `TRUDVANG.Content.CreatureAbility.F1bQ4eGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.aU3d29D9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.aU3d29D9EaGbHcId.Name` | Abilities | Pouvoirs |
+| `TRUDVANG.Content.CreatureAbility.aU3d29D9EaGbHcId.Description` | <p>It is not unusual for a skjuld to have learned spells or elven abilities.</p> | <p>Il n’est pas rare qu’un skjuld ait appris des sorts ou des pouvoirs elfiques.</p> |
+| `TRUDVANG.Content.CreatureAbility.aU3d29D9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NEu59F7C8D9EaGbH`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NEu59F7C8D9EaGbH.Name` | Tusk Throw | Projection à coup de défenses |
+| `TRUDVANG.Content.CreatureAbility.NEu59F7C8D9EaGbH.Description` | <p>The hrim troll uses its great tusks in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the troll then throws those enemies high into the air. The sweep itself seldom causes damage, but the fall that comes after having been thrown so high causes severe fall damage.</p><p>A victim of the tusk throw can try to avoid the attack with the Agility skill, preferably with the Evade specialty.</p> | <p>Le hrimtroll utilise ses grandes défenses lorsqu’il combat. Il donne de grands et larges coups pour frapper le plus d’ennemis possible, qu’il projette ensuite dans les airs d’un grand coup sec vers le haut. Le coup de défenses en lui-même n’inflige généralement pas de dégât, mais la chute qui s’ensuit inflige d’importants dégâts de chute.</p><p>Une victime de la Projection à coup de défenses peut tenter d’esquiver l’attaque avec la compétence Agilité, de préférence avec la spécialité Esquive.</p> |
+| `TRUDVANG.Content.CreatureAbility.NEu59F7C8D9EaGbH.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.X4skapToUpVqWrXs`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.X4skapToUpVqWrXs.Name` | Armored Body | Protection corporelle |
+| `TRUDVANG.Content.CreatureAbility.X4skapToUpVqWrXs.Description` | <p>The body of the demon is covered in powerful iron scales which give the demon a very high armor value, between armor value 5 and 15 in natural protection, according to GM’s judgement.</p> | <p>Le corps du démon est recouvert de solides écailles de fer qui lui procurent une très haute valeur d’armure. Sa valeur de protection naturelle est comprise entre 5 et 15, à l’appréciation du MJ.</p> |
+| `TRUDVANG.Content.CreatureAbility.X4skapToUpVqWrXs.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.GDLIzz3y4z5A6B7C`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.GDLIzz3y4z5A6B7C.Name` | Bein Stench | Puanteur du bein |
+| `TRUDVANG.Content.CreatureAbility.GDLIzz3y4z5A6B7C.Description` | <p>Anyone who comes within 5 meters of a beinbaiter is inflicted with the bein stench. The longer a person has been close to it, the longer the stench remains. The stench is impossible to clean away and is so terrible and sharp that all who come within 10 meters of the inflicted halt instantly. If one wishes to lessen the stench, all permeated clothes must be burned and then one should cover oneself in ash. As long as the ash remains on the body, the range of the stench is lessened by 5 meters.</p><p>The Charisma trait of the victim is lowered by 2 levels for the duration. The chart below shows how long a victim is afflicted by the stench.</p><table><thead><tr><th>Contact</th><th>Duration</th></tr></thead><tbody><tr><td>1-2 rounds</td><td>1d3 days</td></tr><tr><td>3-10 rounds</td><td>2d3 days</td></tr><tr><td>11-20 rounds</td><td>2d6 days</td></tr><tr><td>More than 20 rounds</td><td>4d6 days</td></tr></tbody></table> | <p>Quiconque s’approche à moins de 5 mètres d’un beinbaiter subit les effets de la puanteur du bein. Plus une personne reste exposée longtemps à cette puanteur, plus celle-ci persiste. La puanteur est impossible à dissiper et est si horrible et puissante que tous ceux situés à moins de 10 mètres de la victime s’arrêtent instantanément. Une victime qui souhaite réduire l’intensité de la puanteur doit brûler tous ses vêtements imprégnés puis se recouvrir de cendres. Tant que son corps est recouvert de cendre, la portée de la puanteur est réduite de 5 mètres.</p><p>Le Charisme de la victime est réduit de 2 niveaux pendant toute la durée de la puanteur. La table suivante indique la durée pendant laquelle une victime subit la puanteur en fonction du nombre de tours de jeu pendant lesquels elle est restée en contact avec la créature.</p><table><thead><tr><th>Contact</th><th>Durée</th></tr></thead><tbody><tr><td>1 à 2 tours</td><td>1d3 jours</td></tr><tr><td>3 à 10 tours</td><td>2d3 jours</td></tr><tr><td>11 à 20 tours</td><td>2d6 jours</td></tr><tr><td>Plus de 20 tours</td><td>4d6 jours</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.GDLIzz3y4z5A6B7C.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.8h85YWrXsYtZu0v1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.8h85YWrXsYtZu0v1.Name` | Luring Stench | Puanteur envoûtante |
+| `TRUDVANG.Content.CreatureAbility.8h85YWrXsYtZu0v1.Description` | <p>The most prominent ability of the kelpie is that it can lure unknowing travelers from a range of several hundred meters. Even if the stench that is released is horrible, it carries an enchanting power that can twist the comprehension of those who smell it. The enchantment makes the person lose all concept of time and space and forces them to keep on walking. Victims that later wake up from this state don’t know where they are or how they got there.</p><p>A person who can smell the luring stench from the kelpie must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order to overcome the enchantment. A failed roll means the victim keeps moving toward the kelpie.</p><p>The spell is broken if the victim suffers at least 3 points of damage or is about to drown. Once the kelpie is close, it will try to drag the victim underneath the water to drown.</p> | <p>Le pouvoir le plus important de la kelpie est sa capacité à attirer les voyageurs imprudents sur une distance de plusieurs centaines de mètres. Même si la puanteur qu’elle sécrète est particulièrement horrible, elle véhicule un pouvoir envoûteur qui fausse la compréhension de ceux qui la respirent. L’envoûtement fait perdre à sa victime toute notion du temps et de l’espace et l’oblige à continuer de marcher sans s’arrêter. Lorsqu’elles s’éveillent de cet état, les victimes ne savent pas où elles se trouvent ni comment elles sont arrivées là.</p><p>Une personne qui sent la puanteur envoûtante d’une kelpie doit effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique) pour surmonter l’envoûtement. Un test raté signifie que la victime continue de se déplacer en direction de la kelpie.</p><p>L’envoûtement est rompu si la victime subit au moins 3 points de dégâts ou si elle est sur le point de se noyer. Une fois la kelpie suffisamment proche, elle tente de tirer sa victime par le fond afin de la noyer.</p> |
+| `TRUDVANG.Content.CreatureAbility.8h85YWrXsYtZu0v1.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5.Name` | Terrifying Stench | Puanteur terrifiante |
+| `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5.Description` | <p>The inner organs of a thorn beast are in a constant process of rot due to the unpleasant effects of the thornroot. This means that the great winged lizard carries a horrid and pungent stench of dead flesh and decay. A human being with a normal sense of smell can detect the stench at a distance of 50 meters. Anyone who approaches the beast closer than 5 meters gains 1d10 (OR 9-10) Fear Points due to the stench. This does not apply to tamers and expert riders which usually get used to the stench due to the long time spent with the beast.</p> | <p>Les organes internes d’une bête épineuse subissent un processus constant de décomposition à cause des fâcheux effets de la tornrot. Cela signifie que ce grand lézard ailé traîne derrière lui une âcre pestilence de chair morte et de pourrissement. Un humain normal doté d’un sens de l’odorat normal peut sentir l’odeur à une distance de 50 mètres. Quiconque s’approche à moins de 5 mètres de la bête subit 1d10 (JO 9-10) points de peur à cause de l’odeur. Ceci ne s’applique pas aux dompteurs et aux cavaliers aguerris, habitués à l’odeur en raison du temps passé avec la bête.</p> |
 | `TRUDVANG.Content.CreatureAbility.GbEsz3v1w2x3y4z5.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.mGIwBIdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.mGIwBIdJeKfLgMhN.Name` | Roots | Racines |
+| `TRUDVANG.Content.CreatureAbility.mGIwBIdJeKfLgMhN.Description` | <p>A log troll can sprout snake-like roots that slither through the earth toward a chosen victim. The root fingers grow 3 meters per action round and usually become no more than 2d10 (OR 8-10) meters long, but this is up to the game master to decide.</p><p>A log troll that attacks with his roots cannot do anything else in the same round. This is why it always tries to remain hidden when it performs this attack so it will inflict as much damage as possible before it is discovered.</p><p>Firstly the log troll will try to hug its victim with its roots (SV 8). The number of victims which can be attacked at the same time depends of their size, according to the chart below. Each different victim requires a different SV roll.</p><p>Once a check is successful the log troll can choose to simply hold the victim immobile, crush the victim, or pierce the victim. Both the crushing and the piercing deal between 1d10 and 1d10 (OR 8-10) points of damage, depending on how big the log troll is in comparison to its victim. Use the following table for guidance.</p><table><thead><tr><th>Victim's size</th><th>Damage</th><th>Number of victims</th></tr></thead><tbody><tr><td>1 or less</td><td>1d10 (OR 8-10)</td><td>4</td></tr><tr><td>2</td><td>1d10 (OR 9-10)</td><td>3</td></tr><tr><td>3</td><td>1d10 (OR 10)</td><td>2</td></tr><tr><td>4 or more</td><td>1d10</td><td>1</td></tr></tbody></table> | <p>Un troll de bois peut augmenter la taille de ses racines serpentines qui ondulent dans la terre vers une victime qu’il a choisie. Les racines poussent de 3 mètres par tour de jeu et ne dépassent généralement pas 2d10 (JO 8-10) mètres de long, mais cette longueur est laissée à l’appréciation du maître de jeu.</p><p>Un troll de bois qui attaque avec ses racines ne peut rien faire d’autre lors du même tour. Voilà pourquoi il tente toujours de rester caché quand il attaque de cette façon pour infliger le plus de dégâts possible avant d’être repéré.</p><p>Le troll de bois tente dans un premier temps d’étreindre sa victime avec ses racines (VC 8). Le nombre de victimes qu’il peut attaquer en même temps dépend de leur taille, comme indiqué dans la table page suivante. Le troll de bois doit effectuer un test distinct pour chaque victime.</p><p>Lorsqu’il réussit un test, le troll de bois peut choisir de simplement immobiliser la victime, de la comprimer ou de la perforer. La compression et la perforation infligent entre 1d10 et 1d10 (JO 8-10) points de dégâts selon la taille de la victime. Utilisez les indications de la table page suivante.</p><table><thead><tr><th>Taille de la victime</th><th>Dégâts</th><th>Nombre de victimes</th></tr></thead><tbody><tr><td>1 ou moins</td><td>1d10 (JO 8-10)</td><td>4</td></tr><tr><td>2</td><td>1d10 (JO 9-10)</td><td>3</td></tr><tr><td>3</td><td>1d10 (JO 10)</td><td>2</td></tr><tr><td>4 ou plus</td><td>1d10</td><td>1</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.mGIwBIdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2.Name` | Fast | Rapide |
+| `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2.Description` | <p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p> | <p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p> |
 | `TRUDVANG.Content.CreatureAbility.41hqc1sYtZu0v1w2.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.wK1g6A3y4z5A6B7C`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.wK1g6A3y4z5A6B7C.Name` | Paralyzing Stare (eye spider) | Regard paralysant (araignée hypnotique) |
+| `TRUDVANG.Content.CreatureAbility.wK1g6A3y4z5A6B7C.Description` | <p>The eye spider likes to use the paralyzing power of its eyes. Each action round, the spider can try to hypnotize a victim. The victim must make a situation roll with a situation value of 7 (Psyche modifiers apply) to avoid being paralyzed. If the roll fails, the victim will be paralyzed for 1d3 + 2 action rounds (Psyche modifiers apply to the duration). A paralyzed victim cannot do anything else but stand and stare at the spider. If the spider disappears or dies, the spell is broken.</p><p>During the round in which the spider use the paralyzing stare attack, it cannot do other things. The spider will lose only 1 round: if its stare is successful, it can act during the later rounds of paralysis of the victim.</p> | <p>L’araignée hypnotique aime utiliser le pouvoir paralysant que lui confèrent ses yeux. À chaque tour de jeu, l’araignée peut tenter d’hypnotiser une victime. Celle-ci doit faire un test de situation avec une valeur de situation de 7 (en appliquant le modificateur de Psychisme) pour éviter la paralysie. Si le test échoue, la victime sera paralysée pendant 1d3 + 2 tours de jeu (le modificateur de Psychisme s’applique à la durée). Une victime paralysée ne peut rien faire d’autre que regarder fixement l’araignée. Si l’araignée disparaît ou meurt, le sort est rompu.</p><p>Lors du tour pendant lequel l’araignée utilise l’attaque Regard paralysant, elle ne peut effectuer aucune autre action. L’araignée ne perd qu’un seul tour ; si son regard réussit, elle peut agir au cours des tours suivants, alors que la victime est paralysée.</p> |
+| `TRUDVANG.Content.CreatureAbility.wK1g6A3y4z5A6B7C.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq.Name` | Paralyzing Stare (giant snake) | Regard paralysant (serpent géant) |
+| `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq.Description` | <p>Some snakes (mostly the forest snake) have the ability to paralyze their victims with their gaze.</p><p>First the snake must get the attention of its victim so that it meets the gaze of the snake. If the snake succeeds, the victim must make a situation roll with a situation value of 6 (Psyche modifiers apply) to avoid being paralyzed for 1d3 action rounds, during which he can do nothing at all.</p><p>During the round in which the snake uses the paralyzing stare attack, it cannot do other things and constricted victims will remain in the grip, albeit they will suffer no damage. The snake will lose only 1 round: if its stare is successful, it can act during the later rounds of paralysis of the victim.</p><p>If the snake tries to constrict a paralyzed victim, it will automatically succeed and the victim cannot try to get free when paralyzed.</p> | <p>Certains serpents (surtout le serpent des forêts) ont la capacité de paralyser leurs victimes avec leur regard.</p><p>Le serpent doit tout d’abord obtenir l’attention de sa victime afin que leurs regards se croisent. Si le serpent réussit, la victime doit faire un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) pour éviter la paralysie pendant 1d3 tours, qui l’empêche de faire quoi que ce soit.</p><p>Pendant le tour au cours duquel le serpent utilise son attaque de regard paralysant, il ne peut effectuer aucune autre action. La victime de la constriction reste piégée mais ne subit aucun dégât. Le serpent ne perd qu’un seul tour ; si son regard est efficace, il peut agir au cours des tours suivants alors que sa victime est paralysée.</p><p>Si le serpent tente d’enserrer une victime paralysée, il réussit automatiquement et la victime n’a aucune chance de s’en défaire tant qu’elle est paralysée.</p> |
 | `TRUDVANG.Content.CreatureAbility.igFmlnRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.AAWA3VqWrXsYtZu0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.AAWA3VqWrXsYtZu0.Name` | Terrifying Stare | Regard terrifiant |
+| `TRUDVANG.Content.CreatureAbility.AAWA3VqWrXsYtZu0.Description` | <p>A grendel is truly a horrible foe to face. Even the most experienced warriors flee at the sight of it, mainly due to its terrifying stare. When a victim meets the grendel’s gaze, the victim must make a situation roll with a situation value of 8 (Psyche modifiers apply). A successful roll means that the victim is unscathed by the ordeal. A failed roll means that the victim gains 1d10 (OR 9-10) Fear Points and a negative modifier of -4 on everything they do while in the presence of the grendel. This last modifier is in addition to normal modifiers from the Fear Level reached. The situation roll must be made the first time a specific Grendel is seen and whenever the GM thinks to be the case.</p> | <p>Un grendel est un ennemi vraiment horrible à contempler. Même le plus aguerri des guerriers fuit en le voyant, principalement à cause de son terrifiant regard. Quand une victime croise le regard d’un grendel, elle doit effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). Un test réussi signifie que la victime se sort indemne de cette épreuve. Un test raté signifie qu’elle obtient 1d10 (JO 9-10) points de peur et un modificateur négatif de -4 à toutes ses actions tant que le grendel est présent. Ce modificateur s’ajoute à ceux normalement appliqués par le niveau de peur atteint. Le test de situation doit être effectué lorsqu’un grendel spécifique est aperçu pour la première fois, et à chaque fois que le MJ l’exige.</p> |
+| `TRUDVANG.Content.CreatureAbility.AAWA3VqWrXsYtZu0.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.YoZXmLgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.YoZXmLgMhNiOjPkQ.Name` | Regenerate | Régénération |
+| `TRUDVANG.Content.CreatureAbility.YoZXmLgMhNiOjPkQ.Description` | <p>The demon regenerates 1d10 (OR 10) Body Points per action round. This ability is automatic and does not need any activation or Combat Point expense.</p> | <p>Le démon régénère 1d10 (JO 10) points de santé par tour de jeu. Ce pouvoir est automatique ; il ne nécessite aucune activation ni aucune dépense de points de combat.</p> |
+| `TRUDVANG.Content.CreatureAbility.YoZXmLgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.2hwy57A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.2hwy57A6B7C8D9Ea.Name` | Regenerate Head | Régénération de tête |
+| `TRUDVANG.Content.CreatureAbility.2hwy57A6B7C8D9Ea.Description` | <p>When a huvfurwurm takes great damage (20+ points of damage) or if a head is cut off, a new head is created from one of the many growths and lumps that cover the dragon’s body (the game master decides how often this happens). The greater the damage, the more dangerous the head. A few have their own abilities and can be used in battle. The GM can create other heads with special traits and powers. Below are examples of heads and their traits.</p><p>In order to remain functional a head cannot be severed and regenerated more than three times. This is due to the fact that every time a new head grows it is mutated, both in shape and property. The first three times the GM rolls 1d20 on the table below while the fourth time the head is so mutated that it can not cause any injury anymore or even work normally. Should such a mutated head also be cut off, it does not grow a new one to replace it. You will notice that some head regeneration can result in two or more extra heads. Regarding the number of regenerations, the extra heads will not be considered anew, but they will keep the same regeneration status (first, second, etc..) that they should have had, if they were singular heads.</p><table><thead><tr><th>2d10 (printed table heading)</th><th>Result</th></tr></thead><tbody><tr><td>2-4</td><td>Two normal heads regenerate instead of one.</td></tr><tr><td>5</td><td>Thin neck: halve the BP that must be reduced to 0 to sever it.</td></tr><tr><td>6</td><td>Thick neck: double the BP that must be reduced to 0 to sever it.</td></tr><tr><td>7</td><td>Hypnotic eyes without a CP cost: resist at situation value 8 (Psyche). Paralysis for 2d6 rounds or until taking at least 1 damage.</td></tr><tr><td>8</td><td>Poor vision: -3 to this head's attack SV.</td></tr><tr><td>9</td><td>Long tusks: increase the chance of an open roll by 1.</td></tr><tr><td>10</td><td>An insane head that attacks the other heads.</td></tr><tr><td>11</td><td>Large grabbing mouth: a successful attack deals half damage. Resist at situation value 12 (Strength); on failure the victim is trapped. The other heads gain +2 to attacks against the victim until a new successful situation roll frees them.</td></tr><tr><td>12</td><td>Short neck: -4 m reach.</td></tr><tr><td>13</td><td>Very long neck: +4 m reach.</td></tr><tr><td>14</td><td>Fragile scales: PV 0 for this head.</td></tr><tr><td>15</td><td>Thick scales: +3 PV for this head.</td></tr><tr><td>16</td><td>Mutated giant head: +3 to its attack SV and increase the chance of an open roll by 2.</td></tr><tr><td>17</td><td>Acid: range 7 m, cone 4 m in diameter at its end, 1d10 (OR 8-10) damage, twice per day without CP.</td></tr><tr><td>18</td><td>Fire: range 10 m, cone 4 m in diameter at its end, 1d10 (OR 7-10) damage, twice per day without CP.</td></tr><tr><td>19</td><td>Two additional heads; roll twice to determine their nature.</td></tr><tr><td>20</td><td>Three additional heads; roll three times to determine their nature.</td></tr></tbody></table><p>The prose specifies 1d20 for the first three regenerations, whereas the printed table is headed 2d10 and starts at 2. This discrepancy is preserved for the GM to choose. The huvfurwurm dies when its body reaches 0 BP or when it has no functional heads left.</p> | <p>Quand un huvfurwurm subit beaucoup de dégâts (20 points de dégâts ou +) ou si une de ses têtes est tranchée, une nouvelle tête repousse à partir de l’une des nombreuses excroissances et protubérances disséminées sur son corps (c’est le maître de jeu qui détermine la fréquence de ces régénérations). Plus les dégâts sont importants et plus la nouvelle tête est dangereuse. Quelques-unes possèdent des pouvoirs utilisables en combat. Le MJ peut créer d’autres têtes avec des caractéristiques et des pouvoirs spéciaux. Vous trouverez ci-dessous des exemples de têtes avec leurs caractéristiques.</p><p>Une tête reste fonctionnelle tant qu’elle n’a pas été tranchée puis régénérée au moins quatre fois. Ceci est dû au fait qu’une nouvelle tête repousse à chaque fois avec quelques mutilations supplémentaires, tant dans son aspect que dans ses capacités. Les trois premières fois, le MJ lance 1d20 sur la table ci-dessous. La quatrième fois, la tête est si endommagée qu’elle ne peut plus blesser personne et ne fonctionne même plus normalement. Si l’une de ces têtes mutilées est tranchée, elle ne repousse pas et n’est pas remplacée par une nouvelle. Remarquez que certaines régénérations de tête peuvent aboutir à l’apparition de deux têtes supplémentaires ou plus. Lorsqu’il s’agit de compter le nombre de régénérations, ces têtes supplémentaires ne sont pas considérées comme nouvelles et conservent le statut de régénération (première, deuxième, etc.) qu’elle devrait avoir si elles étaient considérées comme des têtes uniques.</p><table><thead><tr><th>2d10 (en-tête de la table imprimée)</th><th>Résultat</th></tr></thead><tbody><tr><td>2 à 4</td><td>Deux têtes normales sont régénérées au lieu d’une seule.</td></tr><tr><td>5</td><td>Cou fin : moitié moins de PS à réduire à 0 pour le trancher.</td></tr><tr><td>6</td><td>Cou épais : doublez les PS à réduire à 0 pour le trancher.</td></tr><tr><td>7</td><td>Yeux hypnotiques sans coût en PC : résistance VS 8 (Psychisme). Paralysie pendant 2d6 tours ou jusqu’à subir au moins 1 dégât.</td></tr><tr><td>8</td><td>Mauvaise vue : -3 à la VC des attaques de cette tête.</td></tr><tr><td>9</td><td>Longues défenses : augmentez les chances de jet ouvert de 1.</td></tr><tr><td>10</td><td>Tête démente qui attaque les autres têtes.</td></tr><tr><td>11</td><td>Grande gueule agrippeuse : une attaque réussie inflige moitié moins de dégâts. Résistance VS 12 (Force) ; en cas d’échec, la victime reste coincée. Les autres têtes ont +2 à leurs attaques contre elle jusqu’à sa libération par un nouveau test de situation.</td></tr><tr><td>12</td><td>Cou réduit : -4 m d’allonge.</td></tr><tr><td>13</td><td>Cou très long : +4 m d’allonge.</td></tr><tr><td>14</td><td>Écailles fragiles : VP 0 pour cette tête.</td></tr><tr><td>15</td><td>Écailles épaisses : +3 VP pour cette tête.</td></tr><tr><td>16</td><td>Tête géante mutée : +3 à la VC de ses attaques et augmentez les chances de jet ouvert de 2.</td></tr><tr><td>17</td><td>Acide : portée 7 m, cône de 4 m de diamètre à son extrémité, 1d10 (JO 8-10) dégâts, deux fois par jour sans PC.</td></tr><tr><td>18</td><td>Feu : portée 10 m, cône de 4 m de diamètre à son extrémité, 1d10 (JO 7-10) dégâts, deux fois par jour sans PC.</td></tr><tr><td>19</td><td>Deux têtes supplémentaires ; deux jets pour déterminer leur nature.</td></tr><tr><td>20</td><td>Trois têtes supplémentaires ; trois jets pour déterminer leur nature.</td></tr></tbody></table><p>Le texte de la capacité indique 1d20 pour les trois premières régénérations, tandis que la table imprimée est titrée 2d10 et commence à 2. Cette divergence est conservée ici pour laisser le choix au MJ. Le huvfurwurm meurt lorsque les PS de son corps atteignent 0 ou lorsqu’il ne possède plus aucune tête fonctionnelle.</p> |
+| `TRUDVANG.Content.CreatureAbility.2hwy57A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Wz4aZJeKfLgMhNiO`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Wz4aZJeKfLgMhNiO.Name` | Resilient | Résistant |
+| `TRUDVANG.Content.CreatureAbility.Wz4aZJeKfLgMhNiO.Description` | <p>Since a sálhele is an undead creature, it takes no notice of damage. A skeleton that loses an arm or a leg keeps on fighting with the same ferocity. The only vital body part that the skeleton cannot lose is the head. If the skull is chopped off, the skeleton will fall into a bone pile and its spirit will depart for Misthal.</p><p>Since a skeleton consists mainly of empty space between bones, it takes different damage depending on the type of weapon used in the attack. Skeletons take no damage from arrows, piercing weapons (daggers), or thrust weapons (spears), and they take half damage from cutting weapons (swords). Crushing weapons (clubs and maces) deal normal damage.</p> | <p>Le sálhele est un mort-vivant et ne prête donc pas attention aux dégâts qu’il subit. Un squelette qui perd un bras ou une jambe continue de combattre avec la même férocité. La seule partie vitale du corps que le squelette ne peut pas se permettre de perdre est sa tête. Si le crâne est arraché du reste du corps, le squelette se disloque en un tas d’os et son esprit rejoint Dimhall.</p><p>Étant donné qu’il y a beaucoup d’espaces vides entre les os d’un squelette, celui-ci subit des dégâts différents en fonction du type d’arme utilisé pour l’attaquer. Les squelettes ne subissent aucun dégât des flèches, des armes perforantes (les dagues) ou des armes d’estoc (les lances), et ils subissent la moitié seulement des dégâts infligés par les armes tranchantes (les épées). Les armes contondantes (les gourdins et les masses) leur infligent des dégâts normaux.</p> |
+| `TRUDVANG.Content.CreatureAbility.Wz4aZJeKfLgMhNiO.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.AFwyjwYtZu0v1w2x`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.AFwyjwYtZu0v1w2x.Name` | Misthal’s Dream | Rêve de Dimhall |
+| `TRUDVANG.Content.CreatureAbility.AFwyjwYtZu0v1w2x.Description` | <p>The mare lives off of people’s dark dreams. She consumes life force through dreams, and anyone who encounters the mare will wrestle with their worst thoughts and phobias. In order to enter someone’s dreams and change them into nightmares, the mare needs only to come in bodily contact with the victim, who must instantly make a situation roll with a situation value of 9 (Psyche modifiers apply). On a success, the victim has nightmares the following night, with no lasting impact. On a failure, the victim rolls 1d20 and consults the chart below.</p><p>When you as a game master describe the dreams, you should do so as vividly as possible. The afflicted character should wake up from a dream thinking it was real life. A nightmare can be a whole new adventure. It does not need to be a battle for life and death.</p><table><thead><tr><th>1d20</th><th>Result</th></tr></thead><tbody><tr><td>1-5</td><td>Nightmares for 1d5 nights; -1 to all actions during the following days.</td></tr><tr><td>6-11</td><td>Nightmares for 1d10 nights; -2 to all actions during the following days.</td></tr><tr><td>12-15</td><td>Nightmares for 1d10 (OR 10) nights; -3 to all actions during the following days.</td></tr><tr><td>16-19</td><td>Insomnia after the nightmares; -2 to all actions until a blessing. The victim wakes with a nosebleed.</td></tr><tr><td>20</td><td>Nightmares for 1d10 (OR 9-10) nights; -3 to all actions during the following days. On the first night make a situation roll at SV 12 (Psyche). On failure lose one Psyche level until a blessing; if already at the lowest level, apply an additional -2 to the modifier. The victim wakes with a nosebleed.</td></tr></tbody></table> | <p>Une hantise vit des sombres rêves que font les gens. Elle consomme la force vitale par le biais des rêves et quiconque rencontre une hantise devra lutter contre ses pires pensées et phobies. Afin d’entrer dans les rêves d’une personne pour les transformer en cauchemars, la hantise a simplement besoin d’établir un contact physique avec sa victime qui doit aussitôt effectuer un test de situation avec une valeur de situation de 9 (le modificateur de Psychisme s’applique). En cas de réussite, la victime fait des cauchemars la nuit suivante, mais sans conséquence durable. En cas d’échec, elle lance 1d20 et consulte la table page suivante.</p><p>Quand le maître de jeu décrit les rêves, il devrait le faire de la façon la plus réaliste possible. Le personnage affecté devrait se réveiller d’un rêve en croyant qu’il était tout à fait réel. Un cauchemar peut être l’occasion d’une nouvelle aventure à part entière, sans mettre nécessairement la vie du personnage en jeu.</p><table><thead><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1 à 5</td><td>Cauchemars pendant 1d5 nuits ; -1 à toutes les actions les jours suivants.</td></tr><tr><td>6 à 11</td><td>Cauchemars pendant 1d10 nuits ; -2 à toutes les actions les jours suivants.</td></tr><tr><td>12 à 15</td><td>Cauchemars pendant 1d10 (JO 10) nuits ; -3 à toutes les actions les jours suivants.</td></tr><tr><td>16 à 19</td><td>Insomnie après les cauchemars ; -2 à toutes les actions jusqu’à une bénédiction. La victime se réveille avec le nez qui saigne.</td></tr><tr><td>20</td><td>Cauchemars pendant 1d10 (JO 9-10) nuits ; -3 à toutes les actions les jours suivants. Lors de la première nuit, test de situation VS 12 (Psychisme). En cas d’échec, perte d’un niveau de Psychisme jusqu’à une bénédiction ; si le trait est déjà au niveau le plus bas, -2 supplémentaires au modificateur. La victime se réveille avec le nez qui saigne.</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.AFwyjwYtZu0v1w2x.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.7Aa9AMfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.7Aa9AMfLgMhNiOjP.Name` | Tough | Robuste |
+| `TRUDVANG.Content.CreatureAbility.7Aa9AMfLgMhNiOjP.Description` | <p>The demon’s tolerance of pain is higher than that of normal demons, therefore this demon has double Body Points.</p> | <p>La résistance du démon à la douleur est plus élevée que celle des autres démons. Il possède, par conséquent, deux fois plus de points de santé.</p> |
+| `TRUDVANG.Content.CreatureAbility.7Aa9AMfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.KldIdUlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.KldIdUlRmSnToUpV.Name` | Life Sacrifice | Sacrifice vital |
+| `TRUDVANG.Content.CreatureAbility.KldIdUlRmSnToUpV.Description` | <p>A draugr that has drunk enough blood from humans can extend its stay in the world of the living by one lunar month (30 days and nights). Elven blood extends the stay by two lunar months, and troll blood extends it only by a week or two. Animal blood generates even less time, only a day or just hours, depending on the strength of the animal. The draugr can eat until it is full (10 Body Points) several times per day.</p> | <p>Un draugr qui a bu du sang humain jusqu’à satiété peut prolonger son séjour dans le monde des vivants d’un mois lunaire (30 jours et 30 nuits). Le sang d’elfe lui permet de prolonger son séjour de deux mois lunaires alors que le sang de troll ne lui accorde qu’une semaine ou deux seulement. Le sang des animaux lui procure moins de temps, une journée ou quelques heures seulement, en fonction de la force de l’animal. Le draugr peut se nourrir jusqu’à être rassasié (10 points de santé) plusieurs fois par jour.</p> |
+| `TRUDVANG.Content.CreatureAbility.KldIdUlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.9uVrYHcIdJeKfLgM`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.9uVrYHcIdJeKfLgM.Name` | Catch | Saisie |
+| `TRUDVANG.Content.CreatureAbility.9uVrYHcIdJeKfLgM.Description` | <p>After a successful Bite attack a lindwurm can try to catch a victim with its mouth. If the lindwurm is successful, it can try to keep the victim in its jaws. By succeeding on a roll with the Catch ability (skill value 10), the creature keeps the victim in its mouth (if the victim has exceptional Strength, this is used as a negative modifier on the skill value). If the lindwurm succeeds in catching its prey, it usually slithers back to its home.</p><p>The lindwurm must succeed on a new Catch skill roll in each new action round in order to maintain its grip on the victim. Each round in which the lindwurm keeps the victim in its mouth, the victim takes 1d10 (OR 9-10) points of damage.</p><p>The game master determines whether the lindwurm loses its grip if it is attacked or damaged by an enemy. For example, a situation roll with a situation value of 15 can be rolled each time the wurm takes more than 15 points of damage to see if it loses its grip. For each damage point above 15, the situation value is lowered by -1. Damage of 20 therefore translates into a situation roll with a situation value of 10 (15 - 5).</p> | <p>Après avoir réussi une attaque de Morsure, un lindwurm peut tenter de saisir une victime dans sa gueule. S’il y parvient, il peut tenter de maintenir la victime entre ses mâchoires. En réussissant un test de Saisie (valeur de compétence 10), le lindwurm garde la victime dans sa gueule (si la victime a une Force exceptionnelle, on déduit son modificateur de la valeur de compétence). Un lindwurm retourne le plus souvent à son antre en rampant dès qu’il réussit à saisir une proie.</p><p>Le lindwurm doit réussir un test de compétence de Saisie à chaque nouveau tour de jeu afin de maintenir sa prise sur la victime. À chaque tour pendant lequel le lindwurm maintient la victime dans sa gueule, celle-ci subit 1d10 (JO 9-10) points de dégâts.</p><p>Le maître de jeu décide si le lindwurm lâche sa prise lorsqu’il est attaqué ou blessé par un ennemi. Par exemple, un test de situation avec une valeur de situation de 15 peut être effectué chaque fois que le wurm subit plus de 15 points de dégâts pour savoir s’il lâche sa prise. Pour chaque point de dégâts au-dessus de 15, la valeur de situation est réduite de 1. Ainsi, Si le lindwurm subit 20 points de dégâts, il doit effectuer un test de situation avec une valeur de situation de 10 (15-5).</p> |
+| `TRUDVANG.Content.CreatureAbility.9uVrYHcIdJeKfLgM.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B.Name` | Numbing Saliva | Salive anesthésiante |
+| `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B.Description` | <p>A night ulm seldom attacks creatures that are fully alert but prefers those who are sleeping or so woozy that they will not notice that they are being attacked. Thanks to its great dexterity, the night ulm moves undetected toward a sleeping victim and spits saliva on the victim’s neck. After 2d6 action rounds, the skin is so numb that it will require a situation roll with a situation value of 8 (Perception modifiers apply) for a sleeping victim to discover that they are being bitten (this roll is already considered in the “Bloodsucker” rules above). In other situations, it is up to the game master to decide the situation value or whether the victim notices the saliva or the attack.</p> | <p>Un nattulm attaque rarement des créatures complètement lucides et préfère qu’elles soient endormies ou tellement étourdies qu’elles n’ont pas conscience de subir une attaque. Grâce à sa dextérité élevée, l’ulm nocturne se déplace furtivement vers une victime endormie et crache sa salive sur le cou de sa cible. Après 2d6 tours de jeu, la peau devient si insensible que la victime devra faire un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception) pour se rendre compte qu’elle se fait mordre (ce test est celui décrit dans la section « Suceur de sang », page précédente). Dans d’autres situations, il revient au MJ de décider de la valeur de situation ou du fait que la victime perçoit la salive ou l’attaque.</p> |
 | `TRUDVANG.Content.CreatureAbility.nP6pix2x3y4z5A6B.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.0kcBOcE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.0kcBOcE9EaGbHcId.Name` | Acid Blood | Sang acide |
+| `TRUDVANG.Content.CreatureAbility.0kcBOcE9EaGbHcId.Description` | <p>The demon’s blood functions like acid. People who, in close combat, create a wound on the demon can have the acid blood spew onto them (roll a luck roll with 1d10 where 1-3 means that the person gets acid blood on them). The person can avoid this by succeeding with a skill roll for the skill Agility, preferably with the Evade specialty. Should the roll fail the character takes 1d6 damage points (armor protects). The acid blood lessens the BV on the weapon that caused the damage by 1d6, the same goes for armor that is exposed to the acid blood.</p> | <p>Le sang du démon a les mêmes propriétés que l’acide. En combat rapproché, les individus qui infligent une blessure au démon peuvent se retrouver aspergés de sang acide (faites un jet de chance avec 1d10 : un résultat de 1 à 3 signifie que l’individu est aspergé de sang acide). L’individu peut éviter l’aspersion en réussissant un jet de compétence d’Agilité, de préférence avec la spécialité Esquive. Si le test échoue, il subit 1d6 points de dégâts (la valeur de protection de l’armure s’applique). Le sang acide diminue de 1d6 la VI de l’arme qui a infligé la blessure ; il en va de même pour l’armure exposée au sang acide.</p> |
+| `TRUDVANG.Content.CreatureAbility.0kcBOcE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.10klNtVqWrXsYtZu`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.10klNtVqWrXsYtZu.Name` | Lava Blood | Sang de lave |
+| `TRUDVANG.Content.CreatureAbility.10klNtVqWrXsYtZu.Description` | <p>Under the stale skin of the muspeljotun, there runs hot lava. The giant radiates such heat that everyone who comes within 6 meters must make a situation roll with a situation value of 12 (Psyche modifiers apply) to see if they can withstand the heat. Anyone who remains standing takes the damage per action round noted below due to the heat.</p><p>Weapons that cut through the skin cause lava blood to spew from the wound. An attacker in close combat could be hit by the blood and take damage from the heat (make a luck roll with 1d10, where 1-2 means that the attacker is hit by the blood). The attacker can avoid this by succeeding on a Agility skill roll. If the roll fails, the character takes 1d5 points of damage (armor protects normally but can start to burn).</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1-3</td><td>None</td></tr><tr><td>4</td><td>1</td></tr><tr><td>5</td><td>1d3</td></tr><tr><td>6</td><td>2d3</td></tr><tr><td>Each additional round</td><td>+1d3</td></tr></tbody></table> | <p>Sous la peau durcie d’un muspeljotun coule de la lave brûlante. Le géant dégage une telle chaleur que les créatures situées à moins de 6 mètres doivent réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) pour y résister. À chaque tour de jeu, les créatures qui restent à proximité subissent les dégâts de chaleur indiqués ci-dessous.</p><p>Les armes qui tranchent la peau du géant provoquent des blessures d’où gicle de la lave. Un attaquant au corps à corps peut être aspergé de sang et subir les dégâts de chaleur (faites un test de chance avec 1d10 : un résultat de 1 ou 2 signifie que l’attaquant est aspergé de sang). L’attaquant peut esquiver une giclée en réussissant un test de compétence d’Agilité. S’il échoue, le personnage subit 1d5 points de dégâts (l’armure protège normalement mais peut prendre feu).</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1 à 3</td><td>Aucun</td></tr><tr><td>4</td><td>1</td></tr><tr><td>5</td><td>1d3</td></tr><tr><td>6</td><td>2d3</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d3</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.10klNtVqWrXsYtZu.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.UZodjJdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.UZodjJdJeKfLgMhN.Name` | Blood of Dark Vitner | Sang de morkvitner |
+| `TRUDVANG.Content.CreatureAbility.UZodjJdJeKfLgMhN.Description` | <p>The blood of the grendel seems to be full of dark vitner. Its mud-colored skin is also infused with dark vitner, which provides it with good protection (already counted in its very good natural armor).</p><p>The dark vitner blood also has the effect of making the grendel immune to both vitner spells and divine powers.</p> | <p>Le sang du grendel semble saturé de morkvitner. C’est également le cas de sa peau couleur de boue qui le protège efficacement (cette protection est déjà prise en compte dans la valeur très élevée de son armure naturelle).</p><p>Le sang de morkvitner confère également au grendel une immunité aux sorts de vitner et aux talents divins.</p> |
+| `TRUDVANG.Content.CreatureAbility.UZodjJdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.7UKkQbHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.7UKkQbHcIdJeKfLg.Name` | Magma Blood | Sang magmatique |
+| `TRUDVANG.Content.CreatureAbility.7UKkQbHcIdJeKfLg.Description` | <p>Underneath the skin of the jarnwurm flows the horrid and prized magma blood. The dragon radiates such heat that anyone who comes within 6 meters must make a situation roll with a situation value of 6 (Psyche modifiers apply) in order to hold his ground. Anyone who manages to remain within the sphere of heat takes the following damage per action round.</p><p>Weapons that pierce the heavy scale armor cause magma blood to spew from the wound. An attacker at close quarters could be hit by the blood and take damage from the extreme heat (make a luck roll with 1d10, where 1-3 means that the attacker is hit by the blood). The attacker can avoid this by succeeding on an Agility skill roll. If the roll fails, they take 1d6 points of damage (armor protects normally but risks catching on fire).</p><p>The magma blood is of use not only to the jarnwurm but also to all the blacksmiths in Trudvang. If the blood is mixed with iron, a binding is formed that is both harder and more durable than the dwarves’ mitraka. The metal is colored scarlet and called ironblood iron. Weapons made out of ironblood iron increase the chance of an open roll by 2. The Protection Value, Breach Value, and weight of weapons and armors made from ironblood iron is increased by 1d3.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1</td></tr><tr><td>3</td><td>1d3</td></tr><tr><td>4</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6 per round</td></tr></tbody></table> | <p>Sous le cuir du jarnwurm coule l’horrible et précieux sang magmatique. Du dragon émane tant de chaleur que les créatures qui approchent à moins de 6 mètres de lui doivent chacune réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) pour ne pas reculer. Les créatures qui parviennent à rester dans la sphère de chaleur subissent les dégâts suivants par tour de jeu.</p><p>En combat rapproché, lorsque l’attaquant parvient à traverser la lourde protection d’écailles et à infliger une blessure au monstre, il peut être aspergé de sang magmatique et subir les dégâts de chaleur (effectuez un test de chance avec 1d10 : un résultat de 1 à 3 signifie que du sang gicle sur l’attaquant). L’attaquant peut esquiver les giclures en réussissant un test de compétence d’Agilité. Si le test rate, il subit 1d6 points de dégâts (l’armure protège normalement mais risque de prendre feu).</p><p>Si le sang magmatique est utile aux jarnwurms, il l’est aussi pour les forgerons de Trudvang. S’il est mélangé à du minerai de fer, l’alliage qui en résulte est à la fois plus solide et plus résistant que le mitrakk des nains. Ce métal aux reflets écarlates porte le nom de fer sang-de-fer. Les armes en fer sang-de-fer augmentent les chances de réaliser un jet ouvert de 2. La valeur de protection et le poids des armes et armures en fer sang-de-fer sont augmentés de 1d3.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1</td></tr><tr><td>3</td><td>1d3</td></tr><tr><td>4</td><td>1d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6 par tour</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.7UKkQbHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Orm9QLfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Orm9QLfLgMhNiOjP.Name` | Life Sap | Sève curative |
+| `TRUDVANG.Content.CreatureAbility.Orm9QLfLgMhNiOjP.Description` | <p>The vidrjotuns are very close to Trudvang and filled with the life force of the land. Instead of having blood in their veins like many other creatures in the world, the vidrjotuns have sap like that which is found in trees. The sap is full of life and can be used to heal all living things.</p><p>When a vidrjotun is hurt and its sap touches the ground, beautiful flowers and fresh grass sprout. The sap can replenish dead plants and make the most blighted place become fruitful and covered in rich plant life once more. The sap can even cleanse dark magic from things it touches. A wounded creature that drinks a mouthful of the sap will instantly heal 1d10 (OR 6-10) points of damage.</p><p>When the sap hardens, it becomes a chewy, sticky rubbery substance that has healing attributes. A piece of hardened sap the size of an acorn will restore 1d10 (OR 8-10) Body Points to anyone who eats it. After the sap has been allowed to harden for several hundred years, it becomes amber, which also has healing powers. Anyone who carries a piece of this amber increases their natural healing by +1 point of damage per day.</p> | <p>Les vidrjotuns sont très proches de Trudvang et détiennent en eux la force vitale de la terre. Au lieu d’avoir, comme de nombreuses autres créatures de ce monde, du sang dans leurs veines, ils ont de la sève, comme les arbres. Cette sève est pleine de vie et peut être utilisée pour soigner tous les êtres vivants.</p><p>Quand un vidrjotun est blessé et que sa sève touche le sol, de jolies fleurs et de l’herbe verte se mettent à pousser. La sève peut redonner vigueur aux plantes mortes et faire en sorte que les étendues les plus désolées redeviennent fertiles et abritent de nouveau quantité de plantes. La sève peut même dissiper la magie noire des choses avec laquelle elle entre en contact. Une créature blessée qui boit une gorgée de sève soignera instantanément 1d10 (JO 6-10) points de dégâts.</p><p>Quand la sève se solidifie, elle prend une consistance caoutchouteuse et collante et devient une substance aux propriétés curatives. Un morceau de sève durcie de la taille d’un gland permettra à ceux qui l’avalent de récupérer 1d10 (JO 8-10) points de santé. Une sève qui a durci pendant plusieurs centaines d’années prend une teinte ambrée et possède toujours des propriétés curatives. Ceux qui portent un morceau de cet ambre augmentent leur faculté de guérison naturelle de +1 point de santé par jour.</p> |
+| `TRUDVANG.Content.CreatureAbility.Orm9QLfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.FNLRphJeKfLgMhNi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.FNLRphJeKfLgMhNi.Name` | Sap Defense | Sève protectrice |
+| `TRUDVANG.Content.CreatureAbility.FNLRphJeKfLgMhNi.Description` | <p>The sap that runs through the body of the giant instead of blood is very sticky. When a vidrjotun is wounded by a weapon that causes the sap to run out, there is a chance that the weapon might be caught in the sap.</p><p>A luck roll is made each time a weapon deals damage to the giant. The result of 1-4 on 1d10 means that the weapon is caught in the sap so severely that to remove it, the character must make a situation roll with a situation value of 12 (Strength modifiers apply). On a failure, the weapon is stuck and a new situation roll can be attempted the following round. For each action round that passes, the situation value is reduced by -1.</p> | <p>La sève qui coule dans les veines de ce géant à la place du sang est très collante. Quand un vidrjotun est blessé par une arme qui provoque l’écoulement de sa sève, il y a une probabilité que l’arme reste collée dans cette substance.</p><p>Un test de chance est effectué à chaque fois qu’une arme inflige des dégâts au géant. Un résultat de 1 à 4 sur 1d10 signifie que l’arme reste collée dans la sève et que le personnage qui souhaite la décoller doit réussir un test de situation avec une valeur de situation de 12 (le modificateur de Force s’applique). En cas d’échec, l’arme reste collée, mais un nouveau test de situation peut être tenté au tour suivant. La valeur de situation diminue de 1 pour chaque tour de jeu écoulé par la suite.</p> |
+| `TRUDVANG.Content.CreatureAbility.FNLRphJeKfLgMhNi.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.FKo6KYqWrXsYtZu0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.FKo6KYqWrXsYtZu0.Name` | Breath Weapon | Souffle |
+| `TRUDVANG.Content.CreatureAbility.FKo6KYqWrXsYtZu0.Description` | <p>The demon can breathe fire, acid, ice or even stone lava against its enemies. The demon can perform 1d3 breath attacks per day, after which it must wait until the next day before it can perform the attacks again. This breath weapon does not cost Combat Points. The range for the breath weapons is 1d10 (OR 9-10) +20 meters and forms a giant cone that in its largest reach has a diameter of 6 meters. All creatures within the range obtain 3d10 (OR 8-10) in damage.</p> | <p>Le démon peut souffler du feu, de l’acide, de la glace ou même de la lave sur ses ennemis. Il peut effectuer 1d3 attaques de souffle par jour, après quoi il doit attendre le lendemain avant de pouvoir faire à nouveau appel à cette capacité. Ce souffle ne nécessite la dépense d’aucun point de combat. Sa portée s’élève à 1d10 (JO 9-10) +20 mètres et a la forme d’un grand cône d’une largeur de 6 mètres à son extrémité. Toutes les créatures situées à l’intérieur de ce cône subissent 3d10 (JO 8-10) points de dégâts.</p> |
+| `TRUDVANG.Content.CreatureAbility.FKo6KYqWrXsYtZu0.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.go5al8z5A6B7C8D9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.go5al8z5A6B7C8D9.Name` | Fire Breath | Souffle de feu |
+| `TRUDVANG.Content.CreatureAbility.go5al8z5A6B7C8D9.Description` | <p>Like other dragons, the logiwurm has a breath weapon (not by spending any Combat Point, but by making a SV12 roll). This one is called Fire breath. The logiwurm can make up to three breath attacks per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The logiwurm’s profile specifies 3d10 (OR 7-10) damage.</p> | <p>Comme les autres dragons, les logewurms peuvent attaquer avec leur souffle (sans dépenser le moindre point de combat mais en effectuant un test de VC 12). On l’appelle le Souffle de feu. Le logewurm peut effectuer cette attaque de souffle jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du logewurm indique 3d10 (JO 7-10) points de dégâts pour le souffle de feu.</p> |
+| `TRUDVANG.Content.CreatureAbility.go5al8z5A6B7C8D9.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.ay6BwhLgMhNiOjPk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.ay6BwhLgMhNiOjPk.Name` | Hrim Breath | Souffle de glace |
+| `TRUDVANG.Content.CreatureAbility.ay6BwhLgMhNiOjPk.Description` | <p>Like other dragons, the hrimwurm has a breath weapon. This one is called Hrim breath, and it turns everything in its path to ice. To perform a Breath Weapon no Combat Points are spent and a SV13 roll must be made. A person that is exposed to the hrim breath suffers the damage dealt by the breath, and must also make a situation roll with a situation value of 7 (Psyche modifiers apply).</p><p>On a success, the victim gets frostbite and has a modifier of -3 on everything they do for 1d10 action rounds.</p><p>On a failure, the victim is chilled so thoroughly that they cannot bear to do anything for 1d10 (OR 7-10) action rounds. The victim becomes so stiff and unable to move that he can only hope to curl up and hold himself while trembling from the cold.</p><p>If a victim who fails the situation roll is exposed to another hrim breath and fails that situation roll as well, they fall into a hrim sleep for 1d10 (OR 7-10) hours. A victim wearing a full outfit made from the fur of a mastomant takes only half the damage, and a modifier of +5 is added to the situation roll, which means that the roll equates to 12 instead of 7.</p><p>The dragon can use its hrim breath up to three times per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters, forming a cone 6 meters in diameter at its farthest end. The hrimwurm’s profile specifies 2d10 (OR 8-10) damage.</p> | <p>Comme les autres dragons, le hrimwurm peut attaquer avec son souffle. Le sien se nomme le souffle de glace et transforme tout ce qu’il touche en glace. L’utilisation du Souffle de glace ne nécessite la dépense d’aucun point de combat mais le dragon doit effectuer un test de VC 13. Une personne exposée au souffle de glace subit les dégâts infligés par le souffle et doit également effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Psychisme s’applique).</p><p>En cas de réussite, la victime subit des engelures et applique un modificateur de -3 à toutes ses actions pendant 1d10 tours de jeu.</p><p>En cas d’échec, la victime est tellement frigorifiée qu’elle ne peut plus rien faire pendant 1d10 (JO 7-10) tours de jeu. La victime devient si rigide et incapable de bouger qu’elle ne peut qu’espérer se recroqueviller et tenir bon en tremblant contre le froid.</p><p>Si une victime qui rate le test de situation est exposée à un autre souffle de glace et rate une deuxième fois le test de situation qui lui est associé, elle s’enfonce dans le sommeil de glace pendant 1d10 (JO 7-10) heures.</p><p>Une victime qui porte une tenue complète taillée dans de la fourrure de mastomant ne subit que la moitié des dégâts et un modificateur de +5 est ajouté au test de situation ; la valeur de situation est donc égale à 12 au lieu de 7.</p><p>Le dragon peut utiliser son souffle de glace jusqu’à trois fois par jour. Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du hrimwurm indique 2d10 (JO 8-10) points de dégâts pour le souffle de glace.</p> |
+| `TRUDVANG.Content.CreatureAbility.ay6BwhLgMhNiOjPk.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.pjghN3w2x3y4z5A6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.pjghN3w2x3y4z5A6.Name` | Magma Breath | Souffle de magma |
+| `TRUDVANG.Content.CreatureAbility.pjghN3w2x3y4z5A6.Description` | <p>Like all dragons, a jarnwurm can attack with its breath without spending Combat Points, but must succeed on a skill roll at SV 12. This weapon is called magma breath, and the dragon and its opponents take the same damage. The dragon's damage is caused by the quantity of magma blood lost in the attack; if it breathes more than three times in one day, it dies from blood loss. Its magma blood recovers at the rate of one breath attack per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters and forms an enormous cone 6 meters in diameter at its farthest end.</p><p>The jarnwurm's profile specifies 3d10 (OR 8-10) damage for its magma breath.</p> | <p>Comme tous les dragons, les jarnwurms peuvent attaquer avec leur souffle. Pour ce faire, ils n’ont pas besoin de dépenser de points de combat mais doivent effectuer un test avec une VC 12. On appelle cette arme le souffle de magma, et le dragon ainsi que ses adversaires subissent tous le même nombre de dégâts. Les dégâts que le dragon subit sont infligés par l’importante quantité de sang magmatique qu’il perd en soufflant, et si le jarnwurm souffle plus de trois fois lors d’une même journée, il mourra à cause de cette perte de sang. Le sang magmatique se renouvelle au rythme d’une attaque de souffle par jour.</p><p>Le souffle a une portée de 1d10 (JO 9-10) + 20 mètres, et il forme un énorme cône de 6 mètres de diamètre à son extrémité la plus éloignée.</p><p>Le bloc de caractéristiques du jarnwurm indique 3d10 (JO 8-10) points de dégâts pour le souffle magmatique.</p> |
+| `TRUDVANG.Content.CreatureAbility.pjghN3w2x3y4z5A6.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Z7dB9gIdJeKfLgMh`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Z7dB9gIdJeKfLgMh.Name` | Spores | Spores |
+| `TRUDVANG.Content.CreatureAbility.Z7dB9gIdJeKfLgMh.Description` | <p>The firbloodrisk does not attack in the normal way but a cloud of spores is constantly emitted, influencing all those who are near to the mushroom. When the firbloodrisk possesses a skeleton, the mushroom also does not make attacks with the skeleton’s weapons but just keeps on emitting spores every round. Anyone who is affected by the mushroom will roll 1d20, which represents how much of the body is hit by the spores (1 is a small effect and 20 is a total effect). The result must be subtracted from “20” in order to see the number of days it takes for the mushroom to reach the brain. When that happens, the victim will “die” and the mushroom will take control of the body. For example, a creature that is inflicted with the spores and rolls 12 on 1d20 has 8 (20-12) days to be rid of the mushroom before it is too late.</p><p>The only way to be rid of the mushroom is to burn it away from the body, which means victims who survive the possession often bear great scars and burn marks. The burning causes damage equal to 5 + the rolled value that shows how many spores the victim is inflicted with.</p> | <p>Le lactaire sanguin n’attaque pas de la même façon que les autres créatures mais produit en permanence un nuage de spores qui influence toutes les créatures situées à proximité du champignon. Quand le lactaire sanguin prend possession d’un squelette, il ne réalise pas non plus ses attaques avec les armes du squelette mais continue simplement de produire des spores à chaque tour. Les créatures affectées par le champignon lancent 1d20 pour déterminer les parties du corps touchées par les spores (un résultat de 1 produit un effet minime et un 20 produit un effet total). Le résultat doit être soustrait à 20 afin de déterminer le nombre de jours que prend le champignon pour atteindre le cerveau. Lorsqu’il atteint le cerveau, la victime décède et le champignon prend le contrôle du cadavre. Par exemple, une créature contaminée par les spores obtient un 12 sur le d20. Elle dispose donc de 8 (20-12) jours pour se débarrasser du champignon avant qu’il ne soit trop tard.</p><p>La seule façon de se débarrasser du champignon consiste à le brûler, ce qui signifie que les victimes ayant survécu à la contamination portent souvent de grandes marques de brûlures et d’importantes cicatrices. Les brûlures infligent des dégâts de 5 + la valeur obtenue pour déterminer l’importance de la contamination.</p> |
+| `TRUDVANG.Content.CreatureAbility.Z7dB9gIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN.Name` | Bloodsucker | Suceur de sang |
+| `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN.Description` | <p>A night ulm can approach a sleeping victim and try to suck the victim’s blood. This ability is used outside of combat.</p><p>A night ulm will suck blood over 5 action rounds. In the first round, the victim will take 1d3 points of damage from the bite. During the next 4 rounds, the victim will take 1d6 points of damage per round due to loss of blood. In each action round, there is a possibility that the victim will awaken and discover the night ulm by succeeding on a situation roll with a situation value of 8 (Perception modifiers apply). If the victim discovers the night ulm, it will instantly flee. A night ulm will fight only if it is forced into a corner. Then it will use its bite and claws.</p><p>Sometimes several night ulms suck the blood from the same creature. If the victim does not awaken during the first 5 action rounds that are described above, the victim has -2 on the situation roll that follows for the next bloodsucker.</p> | <p>Un nattulm peut approcher une victime endormie et tenter d’aspirer son sang. Cette capacité s’utilise en dehors des combats.</p><p>La créature prend 5 tours de jeu pour boire du sang. Au premier tour, la victime subit 1d3 points de dégâts de morsure. Au cours des 4 tours suivants, elle subit 1d6 points de dégâts par tour en raison de la perte de sang. À chaque tour de jeu, la victime a la possibilité de se réveiller et de surprendre l’ulm nocturne en réussissant un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception). Si elle découvre le nattulm, celui-ci prend immédiatement la fuite. Un nattulm combat uniquement s’il est acculé. Dans ce cas, il utilise sa morsure et ses griffes.</p><p>Parfois, plusieurs ulms nocturnes boivent le sang d’une même créature. Si la victime ne se réveille pas au cours des 5 tours de jeu décrits ci-dessus, elle subit un malus de -2 au prochain test de situation correspondant au suceur de sang suivant.</p> |
 | `TRUDVANG.Content.CreatureAbility.gwfvoJdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.x25bl6A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.x25bl6A6B7C8D9Ea.Name` | Superstitious | Superstitieux |
+| `TRUDVANG.Content.CreatureAbility.x25bl6A6B7C8D9Ea.Description` | <p>The goblins are very superstitious and afraid of the unknown, especially vitner and other trollcraft. When a goblin bears witness to something that in their eyes has no natural explanation (game master’s discretion), they must make a situation roll with a situation value of 8, and on a failed roll they will flee.</p> | <p>Les gobelins sont très superstitieux et ont peur de l’inconnu, surtout du vitner et autres sorcelleries des trolls. Quand un gobelin voit quelque chose qui, d’après lui, ne peut s’expliquer de manière plausible (ceci est laissé à l’appréciation du maître de jeu), il doit effectuer un test de situation avec une valeur de situation de 8 et fuir en cas d’échec.</p> |
+| `TRUDVANG.Content.CreatureAbility.x25bl6A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NrD7FaGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NrD7FaGbHcIdJeKf.Name` | Overheat | Surchauffe |
+| `TRUDVANG.Content.CreatureAbility.NrD7FaGbHcIdJeKf.Description` | <p>Without spending CP, the logiwurm can change its blood circulation to overheat its body. This costs one daily use of its breath attack. Overheating takes 3 action rounds to activate, during which the dragon can act normally, and lasts for another 3 rounds, during which it cannot perform any other action. All creatures within 10 meters take 2d10 (OR 9-10) damage per action round. Those 11-20 meters away take 2d10 damage.</p> | <p>Sans dépenser le moindre PC, le logewurm peut changer la façon dont son sang circule dans son corps pour le surchauffer. Il peut faire ceci au prix d’une utilisation quotidienne de son attaque de souffle. La surchauffe met 3 tours de jeu pour s’activer (pendant lesquels le dragon peut agir normalement) et elle dure 3 tours par la suite (pendant lesquels le dragon ne peut accomplir aucune autre action). Toutes les créatures situées à 10 mètres ou moins du dragon subissent 2d10 (JO 9-10) points de dégâts par tour de jeu. Celles situées entre 11 et 20 mètres du dragon subissent 2d10 points de dégâts.</p> |
+| `TRUDVANG.Content.CreatureAbility.NrD7FaGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.T3YqIZu0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.T3YqIZu0v1w2x3y4.Name` | Lift | Télékinésie |
+| `TRUDVANG.Content.CreatureAbility.T3YqIZu0v1w2x3y4.Description` | <p>The diser can lift an object and move it through the air. The size and weight of the object is up to the game master to decide. A creature that is exposed to the lift can resist it by making a situation roll with a situation value that is up to the game master, taking into consideration the weight of the victim and the strength of the diser.</p> | <p>Le diser peut soulever un objet et le déplacer dans les airs. La taille et le poids de l’objet que le diser peut soulever de cette façon sont laissés à l’appréciation du maître de jeu. Une créature prise pour cible par ce pouvoir peut y résister en réussissant un test de situation avec une valeur de situation déterminée par le maître de jeu, en prenant en considération le poids de la créature et la force du diser.</p> |
+| `TRUDVANG.Content.CreatureAbility.T3YqIZu0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.WsKYW9B7C8D9EaGb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.WsKYW9B7C8D9EaGb.Name` | Telepathy | Télépathie |
+| `TRUDVANG.Content.CreatureAbility.WsKYW9B7C8D9EaGb.Description` | <p>The diser has the ability to speak to one or several people mentally. The addressed will hear voices as if someone is speaking to them, with the only difference being that they are the only ones hearing what the wraith is saying.</p> | <p>Le diser est capable de parler mentalement avec une ou plusieurs personnes. Celles-ci entendent une voix comme si quelqu’un leur parlait, à la seule différence qu’elles sont les seules à entendre ce que le fantôme est en train de leur dire.</p> |
+| `TRUDVANG.Content.CreatureAbility.WsKYW9B7C8D9EaGb.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.5H4W4NhNiOjPkQlR`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.5H4W4NhNiOjPkQlR.Name` | Durable | Tenace |
+| `TRUDVANG.Content.CreatureAbility.5H4W4NhNiOjPkQlR.Description` | <p>The creature is undead, its body animated by energies from the realm of the dead. It no longer experiences physical injuries like a living creature and usually has many Body Points.</p><p>It still loses BP when damaged, but suffers none of the penalties normally associated with wound levels. There is no need to record wound levels. This effect is identical for physical demons, draugrs, lyktgubbes, mylings, barrow wights, sálheles, and dark dwellers; by itself it grants neither immunity to damage nor regeneration.</p> | <p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p> |
+| `TRUDVANG.Content.CreatureAbility.5H4W4NhNiOjPkQlR.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.UDncGbGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.UDncGbGbHcIdJeKf.Name` | Number of Heads | Têtes nombreuses |
+| `TRUDVANG.Content.CreatureAbility.UDncGbGbHcIdJeKf.Description` | <p>There is no exact amount of heads for a huvfurwurm. It is up to the game master to determine how many heads a dragon has and how many times each of them have been regenerated. To decide randomly, the GM can roll 3d6 +2 to determine the number of heads. Treat each head as an individual creature. Each head has a neck that can withstand about 25 (±5) points of damage before it is removed. The heads do not suffer penalties from damage levels linked with their own BP but only those coming from the body BP. The GM can allow aiming hits at specific heads but suffering penalties which are totally up to the GM’s judgement. Remember that the huvfurwurm is a 7t sized creature, therefore its Combat Points should be spent across 3 rounds and only after that time will the CP regenerate. All heads share the same pool of Combat Points and do not have separate CP.</p><p>Consider that the number of heads can both increase and decrease during combat and wounds, especially decapitations, could trigger the creation of more heads, according to GM’s judgement and the rules above described .</p> | <p>Les huvfurwurms ne possèdent pas tous le même nombre de têtes. C’est le maître de jeu qui détermine le nombre de têtes que possède le dragon et le nombre de régénérations que chacune d’elles a déjà opérées. Pour déterminer le nombre de têtes au hasard, le MJ peut lancer 3d6+2. Considérez chaque tête comme une créature individuelle. Chacune a un cou qui peut encaisser environ 25 (+ ou – 5) points de dégâts avant d’être tranchée. Les têtes ne subissent pas les malus normalement infligés par les Niveaux de blessure associés à leurs propres PS, mais uniquement ceux associés aux PS du corps du wurm. Le MJ peut autoriser les personnages à prendre pour cible des têtes spécifiques mais les malus imposés dans ce cas sont laissés à sa totale appréciation. Rappelez-vous que le huvfurwurm est une créature de Taille 7. Ses points de combat doivent donc être dépensés en les répartissant sur 3 tours et ne seront récupérés qu’une fois ces trois tours passés. Toutes les têtes partagent la même réserve de points de combat et n’ont pas de points de combat distincts.</p><p>Considérez que le nombre de têtes peut augmenter et diminuer au fil du combat et que les blessures, et surtout les décapitations, peuvent déclencher la création de têtes supplémentaires, en fonction de l’appréciation du MJ et des règles décrites ci-contre.</p> |
+| `TRUDVANG.Content.CreatureAbility.UDncGbGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.gkcwjKdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.gkcwjKdJeKfLgMhN.Name` | Huvfurwurm Head | Tête de huvfurwurm |
+| `TRUDVANG.Content.CreatureAbility.gkcwjKdJeKfLgMhN.Description` | <p>Each huvfurwurm head adds its Bite combat point reserve to the body reserve and uses the body reserve for attacks.</p> | <p>La tête du huvfurwurm ajoute sa réserve de points de combat de Morsure à celle du corps et utilise la réserve du corps pour les attaques.</p> |
+| `TRUDVANG.Content.CreatureAbility.gkcwjKdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea.Name` | Attack Web | Toile d’attaque |
+| `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea.Description` | <p>Apart from its bite, the net spider will attack with its sticky net making a SV 9 roll. If the spider succeeds with the attack, everyone within an area that is approximately 8 meters long and 3 meters broad will be hit by the net. Victims must make a situation roll with a situation value of 7 (Strength modifiers apply) to break free from the web. The net spider can use this attack three times per day.</p><p>The net has legendary capabilities. From it, one can make silky ropes and bowstrings. A silky rope from a great net spider weighs a fourth of a normal rope’s weight and holds double the load. A bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1.</p><p>Making a rope can take more than a month’s time. Making a bowstring takes two to three months of time. The rope or bowstring is always black. Some of Trudvang’s most well-known elven bows, such as Verisias, the silver dragon, are said to have a bowstring made from the attack web of the great net spider.</p> | <p>En plus de sa morsure, l’araignée tisseuse attaque avec sa toile collante en faisant un test avec une VC 9. Si l’araignée réussit son attaque, chaque personnage situé dans une zone d’approximativement 8 mètres de long sur 3 mètres de large sera pris dans la toile. Les victimes doivent faire un test de situation avec une valeur de situation de 7 (le modificateur de Force s’applique) pour se libérer de la toile. Les araignées tisseuses peuvent utiliser cette attaque trois fois par jour.</p><p>La toile possède des aptitudes légendaires. Il est possible de fabriquer des cordes tressées ou des cordes d’arc en soie à partir de cette toile. Une corde tressée à partir de la toile d’une araignée tisseuse géante est quatre fois plus légère qu’une corde normale et supporte le double de charge. Une corde d’arc de la même matière augmente les dégâts infligés par l’arc, ce qui se traduit par l’augmentation des chances de jet ouvert de 1.</p><p>Tresser une corde peut prendre plus d’un mois. Confectionner une corde d’arc nécessite deux à trois mois de travail. Les cordes sont toujours noires. On dit que certains des arcs elfiques les plus connus de Trudvang, comme Verisias, le dragon d’argent, comportent une corde fabriquée à partir de la toile d’attaque d’une araignée tisseuse géante.</p> |
 | `TRUDVANG.Content.CreatureAbility.ka2CP6A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NbSmJfIdJeKfLgMh`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NbSmJfIdJeKfLgMh.Name` | Damage Shift | Transfert des dégâts |
+| `TRUDVANG.Content.CreatureAbility.NbSmJfIdJeKfLgMh.Description` | <p>The demon has the ability to choose if someone else is damaged instead of it when it is damaged in battle. The victim must be within sight of the demon. Sometimes an evil burn will show on the person that is chosen to receive the damage.</p> | <p>Lorsqu’il devrait normalement subir des dégâts au cours d’un combat, le démon peut décider de les transférer sur une autre créature qui les subira à sa place. La victime doit se trouver à portée de vue du démon. Parfois, une brûlure malsaine apparait sur la victime choisie pour le transfert de dégâts.</p> |
+| `TRUDVANG.Content.CreatureAbility.NbSmJfIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NNBuQnQlRmSnToUp`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NNBuQnQlRmSnToUp.Name` | Body Transformation | Transformation corporelle |
+| `TRUDVANG.Content.CreatureAbility.NNBuQnQlRmSnToUp.Description` | <p>The demon can transform into a creature of its choice.</p> | <p>Le démon peut se transformer en une créature de son choix.</p> |
+| `TRUDVANG.Content.CreatureAbility.NNBuQnQlRmSnToUp.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.OG4PmMfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.OG4PmMfLgMhNiOjP.Name` | Plaguebearer | Vecteur de maladies |
+| `TRUDVANG.Content.CreatureAbility.OG4PmMfLgMhNiOjP.Description` | <p>Trolls live a primitive and filthy life, which means that they may carry many diseases. Anyone who gets within 2 meters of a troll that carries a plague must make a situation roll with a situation value of 7 (Constitution modifiers apply). If the roll succeeds, the person is immune for a month to plagues carried by trolls. If the roll fails, the person is afflicted with one of the following effects. Roll on the table below.</p><table><thead><tr><th>1d20</th><th>Effect</th></tr></thead><tbody><tr><td>1-5</td><td>The troll's stench permeates the victim's clothes, making the victim smell terrible.</td></tr><tr><td>6-9</td><td>Dizziness: -1 to skill and situation values for one hour.</td></tr><tr><td>10-13</td><td>A bad cold: -1 to skill and situation values for one day.</td></tr><tr><td>14-16</td><td>A very bad cold and fever for 1d6 days: -2 to skill and situation values, movement reduced to 2/3.</td></tr><tr><td>17-18</td><td>Severe redness for 1d6 days: -3 to skill and situation values. At the end, roll against situation value 7 (Constitution); on failure, the same effect lasts for an additional 1d3 days.</td></tr><tr><td>19-20</td><td>1d10+5 large boils appear. Each day 1d3 burst until all are gone; each boil deals 1d3 damage when it bursts.</td></tr></tbody></table> | <p>Les trolls mènent une vie primitive et crasseuse, et sont donc souvent les vecteurs de nombreuses maladies. Les créatures situées à moins de 2 mètres d’un troll malade doivent effectuer un test de situation avec une valeur de situation de 7 (le modificateur de Constitution s’applique). Si le test est réussi, la créature est immunisée aux maladies des trolls pendant un mois. En cas d’échec, déterminez l’effet qui touche la victime en consultant la table page 153.</p><table><thead><tr><th>1d20</th><th>Effet</th></tr></thead><tbody><tr><td>1 à 5</td><td>La puanteur du troll imprègne les vêtements et la victime sent très mauvais.</td></tr><tr><td>6 à 9</td><td>Vertiges : -1 aux valeurs de compétence et de situation pendant une heure.</td></tr><tr><td>10 à 13</td><td>Gros rhume : -1 aux valeurs de compétence et de situation pendant une journée.</td></tr><tr><td>14 à 16</td><td>Très gros rhume et fièvre pendant 1d6 jours : -2 aux valeurs de compétence et de situation, mouvement réduit aux 2/3.</td></tr><tr><td>17 à 18</td><td>Rougeurs importantes pendant 1d6 jours : -3 aux valeurs de compétence et de situation. À la fin, test VS 7 (Constitution) ; en cas d’échec, le même effet perdure 1d3 jours supplémentaires.</td></tr><tr><td>19 à 20</td><td>1d10+5 gros furoncles apparaissent. Chaque jour, 1d3 éclatent jusqu’à disparition complète ; chaque furoncle inflige 1d3 dégâts quand il éclate.</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.OG4PmMfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.Xouc0rUpVqWrXsYt`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.Xouc0rUpVqWrXsYt.Name` | Belly of Gold | Ventre d’or |
+| `TRUDVANG.Content.CreatureAbility.Xouc0rUpVqWrXsYt.Description` | <p>The firdtursirs, unlike other giants, have actual gold in their bellies. In most cases, the amount is not large, but the gold is of a special kind that cannot be found elsewhere. It becomes significantly harder and lighter than normal gold once it has been worked with and refined. Weapons forged from this gold are light and very sharp, with a hardness that makes them resistant to damage (+1PV/10BV).</p> | <p>Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS).</p> |
+| `TRUDVANG.Content.CreatureAbility.Xouc0rUpVqWrXsYt.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.QqkRW8C8D9EaGbHc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.QqkRW8C8D9EaGbHc.Name` | Speed | Vif |
+| `TRUDVANG.Content.CreatureAbility.QqkRW8C8D9EaGbHc.Description` | <p>The demon moves very fast. The demon always attacks first during an action round.</p> | <p>Le démon se déplace très rapidement. Il attaque toujours en premier lors d’un tour de jeu.</p> |
+| `TRUDVANG.Content.CreatureAbility.QqkRW8C8D9EaGbHc.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh.Name` | Darkvision | Vision dans le noir |
+| `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh.Description` | <p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p> | <p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p> |
 | `TRUDVANG.Content.CreatureAbility.yCooPeIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea.Name` | Darkvision (10-60 m) | Vision dans le noir (10 à 60 m) |
+| `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea.Description` | <p>The creature can see for 10 meters in complete darkness as if it were daylight. This sight diminishes at longer distances and disappears completely about 60 meters away.</p> | <p>Un griffon voit à 10 mètres dans l’obscurité totale comme s’il était en plein jour. Cette vision diminue graduellement avec la distance et porte jusqu’à 60 mètres environ.</p> |
 | `TRUDVANG.Content.CreatureAbility.zcDFK9A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.qkzJr2tZu0v1w2x3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.qkzJr2tZu0v1w2x3.Name` | Darkvision (100-300 m) | Vision dans le noir (100 à 300 m) |
+| `TRUDVANG.Content.CreatureAbility.qkzJr2tZu0v1w2x3.Description` | <p>The dragon can see up to 100 meters in pitch darkness as if it were daylight. Beyond that, visibility decreases and disappears completely at about 300 meters.</p> | <p>Le dragon voit jusqu’à 100 mètres dans le noir le plus total comme en plein jour. Au-delà de cette distance, sa visibilité diminue et il ne voit plus rien au-delà de 300 mètres.</p> |
+| `TRUDVANG.Content.CreatureAbility.qkzJr2tZu0v1w2x3.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
 ## `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh`
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.Name` | Low-Light Vision | Vision nocturne |
+| `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.Description` | <p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p> | <p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p> |
 | `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.Name` | Low-Light Vision or Darkvision (demon) | Vision nocturne ou Vision dans le noir (démon) |
+| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.Description` | <p>The demon's exact nature is decided by the GM. Some demons see by weak light as if it were daylight; others see in total darkness.</p><p>Choose Low-Light Vision or Darkvision as appropriate to that demon. The two possibilities are not automatically cumulative, and this entry does not give every demon both types of vision.</p> | <p>Le MJ détermine le type de vision du démon. Certains démons voient comme en plein jour dans les environnements faiblement éclairés (étoiles, lune, torche) : c’est la Vision nocturne. D’autres voient dans le noir total, sans aucune lumière : c’est la Vision dans le noir. Ce sont deux possibilités distinctes et non deux pouvoirs automatiquement cumulés. Aucune portée particulière n’est fixée dans cette description.</p> |
+| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.XJLfjcHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.XJLfjcHcIdJeKfLg.Name` | Thermal Sight | Vision thermique |
+| `TRUDVANG.Content.CreatureAbility.XJLfjcHcIdJeKfLg.Description` | <p>The creature detects heat sources up to 300 meters away. This allows it to estimate their magnitude and distance. The dragon can suppress its thermal sight when necessary and cannot be stunned by the sudden appearance of a heat source.</p><p>This ability works identically for the hrimwurm, jarnwurm, and logiwurm; it is distinct from their darkvision.</p> | <p>La créature perçoit les sources de chaleur jusqu’à 300 mètres. Cette perception lui permet d’évaluer leur importance et la distance qui l’en sépare. Le dragon peut réprimer sa vision thermique si nécessaire et ne peut pas être étourdi par l’apparition brutale d’une source de chaleur.</p><p>Ce pouvoir fonctionne de la même façon chez le hrimwurm, le jarnwurm et le logewurm ; il est distinct de leur vision dans le noir.</p> |
+| `TRUDVANG.Content.CreatureAbility.XJLfjcHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NZdeU9D9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NZdeU9D9EaGbHcId.Name` | Vitner | Vitner |
+| `TRUDVANG.Content.CreatureAbility.NZdeU9D9EaGbHcId.Description` | <p>A byse can use vitner and has learned levels of spells belonging to some of the Vitner Tablets (such as Flame Craft, Vitner of Objects, and Soil Craft). It will use these spells to help or destroy, depending on its current mood.</p> | <p>Un byse peut utiliser le vitner et a appris des niveaux de sorts de certaines Tablettes de vitner (tels que Maîtrise des flammes, Vitner des objets et Maîtrise de la terre). Il utilise ces sorts pour aider ou détruire, en fonction de son humeur du moment.</p> |
+| `TRUDVANG.Content.CreatureAbility.NZdeU9D9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.fbai7XrXsYtZu0v1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.fbai7XrXsYtZu0v1.Name` | Sight | Vue |
+| `TRUDVANG.Content.CreatureAbility.fbai7XrXsYtZu0v1.Description` | <p>Under clear weather conditions (including natural darkness), a diser sees as far as a human can see in daylight. During other conditions such as thick fog, smoke, or magical patterns, a diser can see up to 100 meters ahead.</p> | <p>Par temps clair (y compris dans l’obscurité naturelle), un diser voit aussi loin qu’un humain à la lumière du jour. Dans d’autres conditions, s’il y a un brouillard épais, de la fumée ou des effets magiques à l’œuvre par exemple, un diser peut voir jusqu’à une distance de 100 mètres.</p> |
+| `TRUDVANG.Content.CreatureAbility.fbai7XrXsYtZu0v1.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.VyAXJ4y4z5A6B7C8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.VyAXJ4y4z5A6B7C8.Name` | Fire Weakness | Vulnérabilité au feu |
+| `TRUDVANG.Content.CreatureAbility.VyAXJ4y4z5A6B7C8.Description` | <p>Hrimtursirs take double damage from any sort of fire.</p> | <p>Les hrimtursirs subissent le double des dégâts lorsqu’ils subissent une attaque de feu, quel que soit son type.</p> |
+| `TRUDVANG.Content.CreatureAbility.VyAXJ4y4z5A6B7C8.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.NquAmWpVqWrXsYtZ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.NquAmWpVqWrXsYtZ.Name` | Sunlight Weakness | Vulnérable à la lumière du soleil |
+| `TRUDVANG.Content.CreatureAbility.NquAmWpVqWrXsYtZ.Description` | <p>Goblins that are exposed to sunlight have a modifier of -5 to all SV-rolls.</p> | <p>Les gobelins exposés à la lumière du soleil subissent un modificateur de -5 à leurs tests.</p> |
+| `TRUDVANG.Content.CreatureAbility.NquAmWpVqWrXsYtZ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.LTLHNqSnToUpVqWr`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.LTLHNqSnToUpVqWr.Name` | Mooneyes | Yeux de lune |
+| `TRUDVANG.Content.CreatureAbility.LTLHNqSnToUpVqWr.Description` | <p>The great eyes of the logrjotun radiate with light like a full moon during the night. This is not something that can be seen during the day, but when night falls, a seafarer may see the eyes of a logrjotun like small round moons at a distance.</p><p>Even if it is not the intention of the giant, their eye light can be treacherously attractive. Seafarers must make a situation roll with a situation value of 8 (Psyche modifiers apply) to not unintentionally steer their ship toward the light.</p><p>Even if the logrjotun is a peaceful creature, it can be annoyed by ships that stray too close or steer into them.</p> | <p>Les grands yeux des logrjotuns diffusent une lumière semblable à celle de la pleine lune après la tombée de la nuit. Cette lueur est impossible à voir lorsqu’il fait jour mais, une fois la nuit tombée, un marin peut voir les yeux d’un logrjotun qui ressemblent à deux petites lunes rondes dans le lointain.</p><p>Même si ce n’est pas dans l’intention du géant, la lumière émise par ses yeux peut être dangereusement attirante. Les marins doivent réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ne pas naviguer de manière inconsciente en direction de la lumière.</p><p>Bien que les logrjotuns soient des créatures paisibles, ils peuvent s’énerver contre des embarcations qui s’approcheraient trop près d’eux ou qui les percuteraient.</p> |
+| `TRUDVANG.Content.CreatureAbility.LTLHNqSnToUpVqWr.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.CreatureAbility.OymWMpSnToUpVqWr`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.CreatureAbility.OymWMpSnToUpVqWr.Name` | Lykt Eyes | Yeux enchanteurs |
+| `TRUDVANG.Content.CreatureAbility.OymWMpSnToUpVqWr.Description` | <p>The greatest ability of the lyktgubbe is its power to send the fog in its large eyes against unknowing travelers across a distance of several hundred meters. The fog will glow with a paralyzing and enchanting force that impairs the victim’s powers of perception. The enchantment often makes the victim lose all sense of time and space and feel forced to keep on walking. The victims often wake up in a state of not knowing where they are or how they got there.</p><p>A person that sees the self-illuminating fog must succeed on a situation roll with a situation value of 8 (Psyche modifiers apply) to overcome the enchantment. If the roll fails, the character is lost as noted on the chart below.</p><p>Enchanted victims can be freed in two ways: through a priest’s prayer or through vitner. Of course, there are other ways to make a victim stop walking, but they won’t break the enchantment.</p><p>A victim who walks into the bog or marsh will awaken from the enchantment when the lyktgubbe is at a distance of 15 meters (the game master will decide which terms apply for the area). The lyktgubbe moves at a speed of 5 meters per action round below the water so it can attack unnoticed. Only a skill roll with the Shadow Arts skill with a negative modifier of -5 will allow the victim to detect the lyktgubbe. Once it has reached its victim, the lyktgubbe will try to wrestle the victim below the surface to drown it, according to the described rules above. If there are several lyktgubbes, they will help each other to submerge the victim.</p><table><thead><tr><th>1d20</th><th>Result</th></tr></thead><tbody><tr><td>1-5</td><td>Wanders for 1d6 hours in a randomly determined direction.</td></tr><tr><td>6-10</td><td>Wanders for 2d6 hours in a randomly determined direction.</td></tr><tr><td>11-20</td><td>Moves straight toward the bog where the lyktgubbe waits.</td></tr></tbody></table> | <p>Le pouvoir le plus important du lyktgubbe réside dans sa capacité à projeter de la brume avec ses grands yeux jusqu’à une distance de plusieurs centaines de mètres sur des voyageurs qui n’ont pas conscience de la présence du mort-vivant. La brume émet un halo paralysant et enchanteur qui réduit les capacités de perception de ses victimes. L’enchantement fait souvent perdre aux victimes toute notion de temps et d’espace et les oblige à continuer de marcher. Lorsque les victimes s’éveillent de ce charme, elles ne savent souvent plus où elles se trouvent ni comment elles sont arrivées là où elles sont.</p><p>Une personne qui voit la brume luisante doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) pour ignorer l’enchantement. S’il échoue au test, le personnage est perdu, comme indiqué dans la table suivante :</p><p>Une victime de l’enchantement peut être libérée de deux façons : grâce à une prière prononcée par un prêtre ou grâce au vitner. Bien entendu, il existe d’autres moyens pour qu’une victime s’arrête de marcher mais ils ne dissiperont pas l’enchantement.</p><p>Une victime qui marche dans la tourbière ou le marais s’éveillera de l’enchantement lorsque le lyktgubbe sera à une distance de 15 mètres (le maître de jeu décide de l’endroit où se trouve le mort-vivant dans la zone). Pour pouvoir attaquer par surprise, le lyktgubbe se déplace sous l’eau à une vitesse de 5 mètres par tour de jeu. Seul un test de compétence d’Arts des ombres avec un modificateur négatif de -5 permettra à la victime de repérer le lyktgubbe. Une fois qu’il est près de sa cible, le lyktgubbe tentera de l’agripper pour la tirer vers le fond et la noyer, en appliquant les règles décrites au paragraphe Noyade. Si plusieurs lyktgubbes sont présents, ils tenteront de s’entraider pour noyer la victime.</p><table><thead><tr><th>1d20</th><th>Résultat</th></tr></thead><tbody><tr><td>1 à 5</td><td>Erre pendant 1d6 heures dans une direction déterminée au hasard.</td></tr><tr><td>6 à 10</td><td>Erre pendant 2d6 heures dans une direction déterminée au hasard.</td></tr><tr><td>11 à 20</td><td>Se déplace tout droit vers la tourbière où l’attend le lyktgubbe.</td></tr></tbody></table> |
+| `TRUDVANG.Content.CreatureAbility.OymWMpSnToUpVqWr.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon1Part0` | Impaling leg | Patte empaleuse |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Name` | Net Spider | Araignée tisseuse |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Description` | This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs. | C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos. |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Age` | 3 500, max. 5 000 | 3 500, max. 5 000 |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Environment` | Dark forests, nests in high branches and the canopy | Forêts sombres, nids construits dans les hautes branches et les frondaisons |
+| `TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon1Part0` | Impaling leg | Patte empaleuse |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Name` | Eye Spider | Araignée hypnotique |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Description` | This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes with a paralyzing power, and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs. | C'est une araignée géante solitaire au corps massif tapie dans l'ombre des forêts. Sa tête porte plus d'une paire d'yeux au pouvoir paralysant et d'énormes mandibules dont elle se sert pour attaquer. Ses longues pattes comprennent des pattes empaleuses acérées. Son corps est couvert d'une armure déjà solide qui se transforme avec l'âge en une carapace presque comme de la peau de pierre. Une masse organique sécrétée à travers des pores enduit cette carapace pour servir de défense supplémentaire. Les vieux spécimens portent souvent de la mousse et des champignons qui poussent sur leur dos. |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Age` | 3 500, max. 5 000 | 3 500, max. 5 000 |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Environment` | Dark forests, burrows dug into the cool ground | Forêts sombres, tanières creusées dans la fraîcheur du sol |
+| `TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Name` | Thorn Beast | Bête épineuse |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Description` | This gigantic winged lizard arose from a small bat that became monstrous. Its broad-winged body stands about two and a half meters high. Its jaws hold long, strong fangs. Its empty eyes reflect a pale gleam of death at night. Its body continually rots from within, trailing an acrid stench of dead flesh and decay. Clawed feet and a powerful bite complete its shape as a flying predator. | C'est un gigantesque lézard ailé né d'une petite chauve-souris devenue monstrueuse. Son corps ailé de grande envergure culmine à environ deux mètres et demi de haut. Sa gueule est garnie de crocs longs et solides. Ses yeux vides reflètent pendant la nuit une pâle lueur de mort. Son corps pourrit continuellement de l'intérieur et traîne une âcre pestilence de chair morte et de décomposition. Ses pattes griffues et sa morsure puissante complètent sa silhouette de prédateur volant. |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Age` | 70, max. 150 | 70, max. 150 |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Environment` | Not specified | Non précisé |
+| `TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill0` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill1` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill2` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill3` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill4` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill5` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill6` | Language | Langage |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill7` | Mother Tongue (bastjumal) | Langue maternelle (bastjumal) |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill8` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill9` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Skill10` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon1Part0` | Tusks | Défenses |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon2` | Split axi (hand axe) | Split axi (hache à une main) |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Name` | Galtir | Galtir |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Description` | This humanoid is slightly smaller than a dwarf. Its stocky, powerful body resembles a strange cross between a small troll and a boar. Its porcine head is armed with a bite and protruding tusks. Its short, resilient limbs carry muscles quick to violence. Its tough skin is supplemented by worn leather armor. Its stubborn appearance as a woodland warrior makes it immediately recognizable. | C'est un humanoïde un peu plus petit qu'un nain. Son corps trapu et puissant ressemble à un croisement étrange entre un petit troll et un sanglier. Sa tête porcine est armée d'une morsure et de défenses saillantes. Ses membres courts et résilients portent une musculature prompte à la violence. Sa peau dure s'accompagne d'un cuir porté en armure. Son allure obstinée de guerrier des bois le rend immédiatement reconnaissable. |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Age` | 15, max. 35 | 15, max. 35 |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Environment` | Eastern Svartliden, earthen hollows beneath great rocks in the deepest forests | Partie est de Svartliden, cavités terrestres sous de grands rochers au cœur des plus profondes forêts |
+| `TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Name` | Gryphon | Griffon |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Description` | This powerful beast has a fur-covered lynx's body, also described as a warg's body. Its head, forelegs, and wings are those of an eagle. Its great beak is as hard as flint. Its eyes pick out the smallest details of prey from high in the sky. Its enormous claws, like eagle talons, are sharp enough to sink deep into flesh. Beautiful feathers and fur cover its broad-spanned form. | C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure. |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Age` | 25, max. 40 | 25, max. 40 |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Environment` | Mittland plains in ground burrows; Silferspiir mountains in nests atop high cliffs | Plaines du Mittland en tanières creusées dans le sol, montagnes de Silferspiir en nids au sommet des hautes falaises |
+| `TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill1` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill2` | Faith | Foi |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill3` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill4` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill5` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill6` | Handicraft | Artisanat |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill7` | Hard Materials | Matériaux durs |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill8` | Soft Materials | Matériaux souples |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill9` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill10` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill11` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill12` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill13` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill14` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill15` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill16` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill17` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill18` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill19` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill20` | Language | Langage |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Skill21` | Mother Tongue (bastjumal) | Langue maternelle (bastjumal) |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0` | Barda makir (battle mace) | Barda makir (masse de bataille) |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon1` | Large Wooden Shield | Grand bouclier en bois |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon2` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon3Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon4Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Armor0` | Fur / Leather Armor | Armure de fourrure |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Name` | Troll Bull | Minokks |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Description` | This large humanoid has immensely developed muscles. Its imposing body is covered in thick fur, thicker in the north. Its massive torso houses four small stomachs. Its impressive bull's head bears long horns, longer in Soj, which it uses in battle. Its powerful arms wield great iron clubs. Its figure, like a bull standing on two legs, towers over the plains. | C'est un grand humanoïde à la musculature très développée. Son corps imposant est couvert d'une fourrure épaisse, plus épaisse au nord. Son torse massif abrite quatre petits estomacs. Son impressionnante tête de taureau est affublée de longues cornes, plus longues à Soj, dont il se sert au combat. Ses bras puissants manient d'imposantes massues de fer. Sa stature de taureau dressé sur deux jambes domine les plaines. |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Age` | 40, max. 75 | 40, max. 75 |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Environment` | Throughout Trudvang, especially the great plains of the western lands | Partout sur Trudvang, particulièrement les grandes plaines des étendues occidentales |
+| `TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Name` | Night Ulm | Nattulm |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Description` | This elusive creature has bat wings and glides from tree to tree. Its dark body is adapted to the night and loathes sunlight. Its mouth delivers a very dangerous bloodsucking bite. Its prized long claws are sharp, and its clawed feet let it sleep hanging from cave ceilings. Its nocturnal silhouette moves deftly through the pine crowns. | C'est une créature discrète aux ailes de chauve-souris qui plane d'arbre en arbre. Son corps sombre est adapté à la nuit et déteste la lumière du soleil. Sa bouche est armée d'une morsure suceuse de sang très dangereuse. Ses longues griffes recherchées sont acérées et ses pattes griffues lui permettent de dormir suspendu au plafond des cavernes. Sa silhouette nocturne hante la cime des pins avec dextérité. |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Age` | 15, max. 25 | 15, max. 25 |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Environment` | Deepest forests and pine crowns, nesting in large numbers in deep underground caves | Cœur des forêts les plus denses et cime des pins, nids en grand nombre dans des cavernes souterraines profondes |
+| `TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Name` | Giant Snake | Serpent géant |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Description` | This colossal serpent winds its elongated body among trees, rocks, and waters. Its great head rises far above the ground, and its sense of smell is excellent. Its skin varies by kind: pale yellow, almost albino, in forest snakes; black scales and gleaming amber eyes in cave snakes; dark green scales with brown, fish-like spots in lake snakes. An excellent climber, and in some varieties an excellent swimmer, it raises its nose above the surface to breathe. Powerful jaws complete its constricting body. | C'est un serpent colossal au corps allongé qui serpente entre les arbres, les rochers et les eaux. Sa grande tête se relève très au-dessus du sol et son odorat est excellent. Sa peau varie selon la variété : jaune clair presque albinos pour le serpent des forêts, écailles noires aux yeux couleur d'ambre luisante pour le serpent des cavernes, écailles vert foncé tachées de brun comme celles des poissons pour le serpent lacustre. Excellent grimpeur et, pour certaines variétés, excellent nageur, il laisse dépasser son nez de la surface pour respirer. Sa gueule puissante complète son corps constricteur. |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Age` | 30, max. 60 | 30, max. 60 |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Environment` | Great seas, lakes and ponds, high forest canopies, and underground tunnels and caves, depending on the variety | Grands océans, lacs et étangs, canopée des grandes forêts et tunnels et cavernes souterrains selon la variété |
+| `TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Name` | Warg | Warg |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Description` | This terrible canine predator is as bulky as a wolf but more strongly built. Its four-legged body is covered in thick fur. Its head is larger than its wolf cousin's. Its jaws carry fangs and its feet claws. Its stocky, fast-moving figure makes it a prized mount among trolls and wild folk. Packs of these formidable wolf-like beasts prowl around farms. | C'est un terrible prédateur canin aussi massif qu'un loup mais de stature plus solide. Son corps à quatre pattes est couvert d'une fourrure épaisse. Sa tête est plus grosse que celle de son cousin le loup. Sa gueule est armée de crocs et ses pattes de griffes. Sa silhouette trapue et rapide en fait une monture recherchée des peuples trolls et sauvages. Son allure de loup renforcé rôde en meute autour des fermes. |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Age` | 8, max. 18 | 8, max. 18 |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Environment` | Wilderness around villages and farms, particularly in Stormlands | Étendues sauvages, autour des villages et fermes, en particulier dans les Stormländer |
+| `TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Name` | Wolf | Loup |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Description` | This is the smallest of the warg lineage and a distant cousin of the warg. Its four-legged canine body is of conventional size. Its head is smaller and finer than a warg's. Fur covers an agile, fast-moving body. Its biting jaws and clawed feet serve it in pack hunting. Its familiar silhouette provides a reference against which to compare wargs, skolls, and garms. | C'est le plus petit de la lignée des wargs et le cousin éloigné du warg. Son corps canin à quatre pattes est de taille conventionnelle. Sa tête est plus petite et plus fine que celle du warg. Sa fourrure couvre un corps agile et rapide. Sa gueule mordante et ses pattes griffues servent à la chasse en meute. Sa silhouette familière est la référence face aux wargs, skolls et garms. |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Age` | 6, max. 14 | 6, max. 14 |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Environment` | Wilderness around villages and farms, particularly in Stormlands | Étendues sauvages, autour des villages et fermes, en particulier dans les Stormländer |
+| `TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Name` | Skoll | Skoll |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Description` | This four-legged canine is twice the size of a normal wolf. Its wolf-like body is larger and more powerful than a warg's or wolf's. Its massive head carries a fearsome bite. Clawed feet support a frame built for leaping and pursuit. Thick fur covers the muscles of this intermediate predator. Its silhouette dominates the packs without reaching a garm's size. | C'est un canidé à quatre pattes deux fois plus gros qu'un loup normal. Son corps lupin est plus grand et plus puissant que celui du warg et du loup. Sa tête massive est armée d'une morsure redoutable. Ses pattes griffues portent une charpente taillée pour le saut et la poursuite. Sa fourrure épaisse recouvre une musculature de prédateur intermédiaire. Sa silhouette domine les meutes sans atteindre la taille du garm. |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Age` | 10, max. 22 | 10, max. 22 |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Environment` | Wilderness around villages and farms, particularly in Stormlands | Étendues sauvages, autour des villages et fermes, en particulier dans les Stormländer |
+| `TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Name` | Garm | Garm |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Description` | This largest of wargs is trained as a mount like a horse. Its four-legged wolf-like body stands two to four meters at the shoulder. Its thick fur offers excellent protection against the cold of the great frozen plains. Its enormous head bears a massive bite, and its feet powerful claws. Its sought-after hide is as good as a mastomant's but much lighter. Its colossal figure embodies Trudvang's most terrible predator. | C'est le plus imposant des wargs, dressé comme monture comme un cheval. Son corps lupin à quatre pattes mesure de deux à quatre mètres au garrot. Son épaisse fourrure offre une excellente protection contre le froid des grandes plaines glacées. Sa tête énorme est armée d'une morsure massive et ses pattes de griffes puissantes. Sa peau très recherchée est aussi qualitative que celle d'un mastomant mais bien plus légère. Sa silhouette colossale incarne le plus terrible prédateur de Trudvang. |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Age` | 12, max. 26 | 12, max. 26 |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Environment` | Wilderness and great frozen plains, around villages and farms in Stormlands and northeastern Wildland | Étendues sauvages et grandes plaines glacées, autour des villages et fermes des Stormländer et du Vildland au nord-est |
+| `TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill2` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill3` | Finding & Spotting | Trouver et remarquer |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill4` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill5` | Walking in Shadows | Marcher dans les ombres |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Skill6` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon1Part0` | Claws | Griffure |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Name` | Beinbaiter | Beinbaiter |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Description` | The beinbaiter is a primitive creature born from the corpse of a man who died of the black plague. Its jaws bite flesh and break bones to suck out their marrow. Its feet bear sharp claws capable of tearing its victims. Its decomposing body gives off a horrible stench that cannot be dispelled. This smell lingers in clothing and differs from the smell of trolls or latrines. It betrays the creature's presence long before it can be seen. | Le beinbaiter est une créature primitive née du cadavre d'un homme atteint de la peste noire. Sa gueule est armée pour mordre la chair et briser les os afin d'en sucer la moelle. Ses pattes sont munies de griffes acérées capables de lacérer ses victimes. Son corps en décomposition exhale une horrible puanteur impossible à dissiper. Cette puanteur imprègne durablement les vêtements et diffère de celle des trolls ou des latrines. Elle trahit sa présence bien avant qu'on ne le voie. |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Environment` | Old burial grounds and human graves, such as the Silvtrunder plains beneath Silferspiir; hides in burrows and bushes by day | Vieux sites funéraires et lieux d'inhumation humaine, comme les plaines de Silvtrunder au pied des monts Silferspiir, caché dans des terriers et des buissons durant le jour |
+| `TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill1` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill2` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill3` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill4` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill5` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill6` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill7` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill8` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill9` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill10` | Wrestling | Lutte |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill11` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill12` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill13` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill14` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill15` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill16` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill17` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill18` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill19` | Culture Knowledge | Connaissances culturelles |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill20` | Lore & Legends | Contes et légendes : … |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill21` | Religion | Religion : … |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill22` | Language | Langage |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill23` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill24` | Foreign Tongue | Langue étrangère : … |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill25` | Silvertongue | Beau parleur |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill26` | Learning | Apprentissage |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill27` | Insight | Érudition : … |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill28` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill29` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill30` | Darkhwitalja | Morkvitalja |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill31` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill32` | Galding | Galda |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill33` | Sejding | Sejda |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Skill34` | Vyrding | Vyrda |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon0Part1` | Claws | griffes |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon1Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon2Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3` | Dropi axi (pendulum axe) | Dropi axi (hache pendule) |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon4` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5` | Medium Wooden Shield | Bouclier moyen en bois |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Armor0` | Chain Mail | cotte de mailles |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Attack0Step1` | Horns | Cornes/griffes |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Name` | Physical Demon | Démon tangible |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Description` | A physical demon is an entity of pure malice born from darkness so compact that it formed a body. Its physical manifestation is the condensation of all the darkness it has accumulated, and its body has become truly flesh. It fights with claws, horns, and fangs. Some have wings that let them fly. Others have launchable spikes, strong iron scales, extra arms, or bodies of fire. | Le démon tangible est une entité de pure malveillance née de ténèbres si compactes qu'elles ont donné naissance à un corps. Sa manifestation physique est la concrétion de toutes les ténèbres qu'il a accumulées, et son corps est devenu réellement charnel. Il se bat avec ses griffes, ses cornes et ses crocs. Certains sont dotés d'ailes permettant de voler. D'autres sont couverts de pointes projetables, d'écailles de fer solides ou de bras supplémentaires, ou ont un corps en feu. |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Environment` | Cracks in time, crossing from Blotheim to Trudvang only through portals or powerful rituals | Les fissures du temps, passant de Blotheim vers Trudvang uniquement par des portails ou de puissants rituels |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Name` | Diser | Diser |
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Description` | A diser is a spirit without a physical body, often impossible to see or hear. Its immaterial form may be dull and almost transparent, or as real as any passerby in the street. Its distinctive feature is its eyes, almost always milky and glowing. On close inspection, the mist of Misthal can be seen moving within them. Rare black disers can take physical form, often that of a skeleton. | Le diser est un esprit sans corps physique qu'il est souvent impossible de voir ou d'entendre. Son corps est immatériel, tantôt terne et presque transparent, tantôt aussi réel que n'importe quel passant dans la rue. Sa marque distinctive réside dans ses yeux, presque toujours laiteux et luisants. En les examinant de très près, on y voit bouger la brume de Dimhall. Les rares disers noirs peuvent endosser une forme physique, souvent celle d'un squelette. |
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.Environment` | Haunted places near where it died or places it frequented in life | Lieux hantés proches de l'endroit où il est mort ou des sites qu'il fréquentait de son vivant |
+| `TRUDVANG.Content.Creature.5ouPJD6B7C8D9EaG.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill0` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill1` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill2` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill4` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill5` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill6` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill7` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill8` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill9` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill10` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill11` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill12` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill13` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill14` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill15` | Language | Langage |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Skill16` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon1` | Krum swerd (scimitar) | Krum swerd (cimeterre) |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2` | Barda klót (battle chain) | Barda klót (chaîne de bataille) |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon3` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4` | Small Wooden Shield | Petit bouclier en bois |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Armor0` | Chain Mail | cotte de mailles |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Name` | Draugr | Draugr |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Description` | A draugr is undead and can change its appearance, size, and physical traits. Depending on how long it has been dead, its body shows varying decay, from apparently intact flesh to a skeleton with missing bones. Any remaining skin is dull gray. Its eyes have lost their color, leaving only the darkness of the pupils. Many draugrs can also turn their physical bodies into smoke. | Le draugr est un mort-vivant capable de changer d'apparence, de taille et de traits physiques. Selon le temps écoulé depuis sa mort, son corps présente un stade de décomposition variable, d'un état apparemment intact à celui de squelette aux os manquants. Sa peau, quand il en reste, est d'un gris terne. La couleur de ses yeux a disparu pour ne laisser que la noirceur des pupilles. De nombreux draugrs peuvent aussi transformer leur corps physique en fumée. |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Environment` | Barrows, cairns, and old battlefields where great battles or wars took place | Tumulus, cairns et anciens champs de bataille où se sont déroulées de grandes batailles ou des guerres |
+| `TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Name` | Lyktgubbe | Lyktgubbe |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Description` | The lyktgubbe is undead, its decomposing body covered with dried mud. This crust camouflages it and holds its body together. Its characteristic feature is its large mist-filled eyes. They shine like a milky moon and cast a mist with a paralyzing halo. A close look reveals that the mist within them never stops moving. | Le lyktgubbe est un mort-vivant dont le corps en décomposition est recouvert d'une couche de boue séchée. Cette croûte de boue le camoufle et maintient son unité physique. Son élément caractéristique réside dans ses grands yeux embrumés. Ses yeux luisent comme une lune laiteuse et projettent une brume au halo paralysant. En les regardant de près, on voit que la brume à l'intérieur ne cesse de bouger. |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Environment` | Marshes and peat bogs, such as the Visentia marshes | Marais et tourbières, comme les marais de Visentia |
+| `TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon1Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Name` | Myling | Myling |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Description` | A myling has a child's build and small stature. Its deceptive childlike appearance lures travelers into traps. It can pose as a human child splashing in the water, about to drown. Its voice mimics human sounds and endlessly repeats: Give me your name. Seen from afar in dim light, it resembles a child peering from the forest edge. | Le myling a la même corpulence qu'un enfant et une petite taille enfantine. Son apparence enfantine trompeuse lui sert à attirer les voyageurs dans des pièges. Il sait se faire passer pour un enfant humain qui barbote dans l'eau sur le point de se noyer. Sa voix imite les sons humains et répète sans cesse : Donne-moi ton nom. Vu de loin dans la pénombre, il ressemble à un enfant qui épie depuis la lisière de la forêt. |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Environment` | Deep forests near a spring, body of water, or marsh, living on dry land | Forêts profondes près d'une source d'eau, étendue d'eau ou marais, vivant sur la terre ferme |
+| `TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill0` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill1` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill2` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill4` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill5` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill6` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill7` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill8` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill9` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill10` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill11` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill12` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill13` | Language | Langage |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill14` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill15` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill16` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill17` | Darkhwitalja | Morkvitalja |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill18` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill19` | Galding | Galda |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill20` | Sejding | Sejda |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill21` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Skill22` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1` | Stakk swerd (arming sword) | Stakk swerd (épée d’armes) |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2` | Medium Wooden Shield | Bouclier moyen en bois |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Armor0` | Chain Mail | cotte de mailles |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Name` | Barrow Wight | Revenant des tumulus |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Description` | A barrow wight looks much as it did in life, since it returns shortly after burial. Only humans and elves can become one. It often keeps its flesh and skin intact. After sunset, a bone-white light shines in its empty eye sockets. It can hide these glowing eyes beneath a broad hood to mingle with the living. | Le revenant des tumulus ressemble beaucoup à ce qu'il était de son vivant, car il revient à la vie peu de temps après l'inhumation. Seuls les humains et les elfes peuvent le devenir. Il conserve souvent ses chairs et sa peau intactes. Dès que le soleil s'est couché, une lueur blanche comme l'os brille dans ses orbites vides. Il peut dissimuler ses yeux luisants sous une ample capuche pour se mêler à la population. |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Environment` | Barrows, cairns, graves, stone mounds, and other enclosed burial sites | Tumulus, cairns, tombes, tertres de pierres et autres sites funéraires confinés |
+| `TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill0` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill1` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill2` | Horsemanship | Maîtrise équestre |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill3` | Riding | Équitation |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill4` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill5` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill6` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill7` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill8` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill9` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill10` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill11` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill12` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill13` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Skill14` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon1` | Glaaf (Short Sword) | Glaaf (épée courte) |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon2` | Barda swerd (battle sword) | Barda swerd (épée de bataille) |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon3` | Tvei Swerd (Two-Handed Sword) | Tvei swerd (épée à deux mains) |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4` | Small Wooden Shield | Petit bouclier en bois |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Armor0` | Hardened Leather Armor | armure de cuir |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Name` | Sálhele | Sálhele |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Description` | The sálhele is a skeleton that stares at its victims from empty eye sockets. It opens its jaws and closes them again, clattering its teeth together. It points a skeletal finger at its prey and sometimes stoops over a skeletal horse's back. It wields old rusty weapons to cut down its enemies. Wide gaps separate its bones, and only the head is vital: removing the skull reduces it to a heap of bones. | Le sálhele est un squelette aux orbites vides qui fixe ses victimes. Il ouvre ses mâchoires puis les referme en faisant claquer ses dents les unes contre les autres. Il désigne ses proies d'un doigt squelettique et se tient parfois voûté au dos d'un cheval squelette. Il manie de vieilles armes rouillées pour tailler ses ennemis. De grands espaces vides séparent ses os, et seule sa tête est vitale : arraché, le crâne le réduit en tas d'os. |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Environment` | Not specified | Non précisé |
+| `TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill1` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill2` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill3` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Skill4` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon1Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon2` | Barda klót (battle chain) | Barda klót (chaîne de bataille) |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Name` | Dark Dweller | Sombre horreur |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Description` | The dark dweller is a large, horrible creature made of old bones, roots, branches, and earth soaked in spilled blood. It forms from whatever lay in the soil at the sacrifice, sometimes including decomposing corpses and sacrificial stumps. Its most common body resembles a human or animal with one or more human or animal heads. Pieces of human or animal bodies cover it as protection and armor. Chance determines its form: two, three, four, five, or six legs, and variable numbers of arms and heads. | La sombre horreur est une grande et horrible créature composée de vieux os, de racines, de branches et de terre trempés de sang répandu. Elle est formée de tout ce qui se trouvait dans la terre au moment du sacrifice, parfois de cadavres en décomposition et de souches sacrificielles. Son corps le plus courant est semblable à celui d'un humain ou d'un animal, avec une ou plusieurs têtes humaines ou animales. Elle porte sur elle des bouts de corps humains ou d'animaux qui lui servent de protection et d'armure. Sa forme est livrée au hasard : deux, trois, quatre, cinq ou six jambes, bras et têtes en nombre variable. |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Environment` | Sacrificial sites where blood has been poured abundantly onto the ground | Sites de sacrifices où le sang a été déversé en abondance sur le sol |
+| `TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill1` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill2` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill3` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill4` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill5` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill6` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill7` | Finding & Spotting | Trouver et remarquer |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill8` | Walking in Shadows | Marcher dans les ombres |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill9` | Thievery | Larcin |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill10` | Locks & Traps | Serrures et pièges |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill11` | Stealing | Voler |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill12` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill13` | Learning | Apprentissage |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill14` | Insight | Érudition : … |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill15` | Language | Langage |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill16` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill17` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill18` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill19` | Vaagritalja | Vaagritalja |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill20` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill21` | Vyrding | Vyrda |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill22` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill23` | Handicraft | Artisanat |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill24` | Counterfeiting | Contrefaçon |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill25` | Hard Materials | Matériaux durs |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill26` | Soft Materials | Matériaux souples |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill27` | Tradesman | Commerce |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill28` | Brewer | Brasseur |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill29` | Cook | Cuisinier |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill30` | Trader | Marchand |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill31` | Healing & Drugs | Soins et remèdes |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill32` | Extracts & Potions | Extraits et potions |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Skill33` | First Aid & Nursing | Premiers secours et soins |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Weapon1` | Seax (Dagger or Knife) | Seax (dague/couteau) |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Armor0` | Thick fabric armor | Tissu épais |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Name` | Byse | Byse |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Description` | The byse is a very small troll-like creature. People say it can grow as large as a goblin. The only specimen the author met was no larger than his hand. It was extraordinarily small, with a sullen face. Its size supposedly decreases with age, since a byse is said to shrink as it grows older. In extreme old age it would eventually disappear entirely. | Le byse est une créature proche du troll, de très petite taille. Les gens disent qu'il devient aussi gros qu'un gobelin. Le seul spécimen rencontré par l'auteur n'était pas plus grand que sa main. C'était une créature extraordinairement petite, au visage fermé. Sa taille diminuerait avec l'âge, car le byse rapetisserait en vieillissant. Très vieux, il finirait par disparaître complètement. |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Age` | 75, max. 200 | 75, max. 200 |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Environment` | Forests, and Runvjiik farms for the field byse | Forêts, et fermes du Runvjiik pour le byse des champs |
+| `TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Name` | Fairy | Fée |
+| `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Description` | A fairy is a pretty, slender creature of very small size. It stands about ten centimeters tall. It has small delicate wings with which it dances after nightfall. Its hair is blond or red. All fairies look like women, but they are actually sexless. At night they emit a pleasant light like that of fireflies. | La fée est une jolie créature élancée, de très petite taille. Elle mesure environ dix centimètres de haut. Elle possède de petites ailes délicates avec lesquelles elle danse une fois la nuit tombée. Ses cheveux sont blonds ou roux. Toutes les fées ressemblent à des femmes, mais elles ne sont en réalité pas sexuées. Pendant la nuit, elles diffusent une agréable lumière semblable à celle des lucioles. |
+| `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Age` | 150, max. 350 | 150, max. 350 |
+| `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.Environment` | Mittland forests with drinking water, edible mushrooms, and moss beds, often near elves and yggdras | Forêts du Mittland, où se trouvent eau potable, champignons comestibles et lits de mousse, souvent auprès des elfes et des yggdras |
+| `TRUDVANG.Content.Creature.yhighfHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Name` | Grendel | Grendel |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Description` | The grendel is a monstrous giant of the marshes. It shows its foul face only after nightfall. Its terrifying gaze makes even seasoned warriors flee. Its mud-colored skin protects it effectively. It has a neck, arms, and legs, as well as biting jaws and claws. Its blood seems saturated with dark vitner. | Le grendel est une créature géante et monstrueuse des marais. Il ne montre son infect visage qu'une fois la nuit tombée. Son regard est terrifiant et fait fuir même les guerriers les plus aguerris. Sa peau est couleur de boue et le protège efficacement. Il possède un cou, des bras et des jambes, ainsi qu'une gueule pour mordre et des griffes. Son sang semble saturé de morkvitner. |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Age` | 25, max 60 | 25, max 60 |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Environment` | Marshes and muddy ponds deep in the forests, especially in Soj, Mittland, and Stormlands | Marais, étangs aux eaux boueuses au plus profond des forêts, surtout en Soj, au Mittland et dans les Stormländer |
+| `TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Name` | Happja | Happja |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Description` | The happja resembles a filthy old woman with a naked body. Its eyes are white and glow at night. Powerful wings lift its naked body when it takes flight. At rest, it folds its wings around itself and buries its head in its feathers. It may be a hybrid of woman and owl. Its claws leave great scratches across the face. | La happja ressemble à une vieille femme crasseuse au corps nu. Ses yeux sont blancs et luisants dans la nuit. Elle possède des ailes robustes qui soulèvent son corps nu lorsqu'elle prend son envol. Au repos, elle replie ses ailes autour d'elle et enfouit sa tête dans ses plumes. Elle est peut-être l'hybride d'une femme et d'une chouette. Ses griffes laissent de grandes griffures au visage. |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Age` | 15, max 35 | 15, max 35 |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Environment` | High tree canopies, with large nests on the highest branches | Haute canopée des arbres, grands nids construits sur les plus hautes branches |
+| `TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Name` | Hulder | Hulder |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Description` | Seen from the front, a hulder is very pretty and seductive. It generally wears no clothes. Its beauty hides its true nature. Only two features betray it. It has a cow's tail. Its back sometimes resembles a large rotten, hollow tree branch. | La hulder est très jolie et séduisante vue de face. Elle ne porte généralement pas de vêtements. Sa beauté dissimule sa véritable nature. Seuls deux détails trahissent cette nature. Elle possède une queue de vache. Son dos a parfois l'aspect d'une grosse branche d'arbre vermoulue et creuse. |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Age` | 75, max 120 | 75, max 120 |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Environment` | Deepest forests near a stream or waterfall, away from oaks; territory near a small waterfall far into the woods, sometimes a lair beneath a rock | Forêts les plus épaisses, près d'un ruisseau ou d'une chute d'eau à l'écart des chênes, territoire près d'une petite chute loin dans la forêt, parfois tanière sous un rocher |
+| `TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Weapon0Part1` | Hooves | Sabots |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Name` | Kelpie | Kelpie |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Description` | The kelpie looks like a horse, described in tales as beautiful. The observed animal was black and malevolent. It is a large, massive creature with hooves and biting jaws. It has a thick mane and remarkable teeth. It secretes a horrible stench, worse than a heap of corpses. | La kelpie a l'allure d'un cheval, décrite dans les contes comme un beau cheval. L'animal observé était noir et malveillant. C'est une grande créature massive aux sabots et à la gueule pour mordre. Elle possède une crinière épaisse et des dents remarquables. Elle sécrète une puanteur horrible, pire qu'un tas de cadavres. |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Age` | 10, max 20 | 10, max 20 |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Environment` | Ponds, peat bogs, deep lakes, and swamps, such as those in Visentia and Ghoowland | Étangs et tourbières, lacs profonds et marécages, comme en Visentia et dans le Ghoowland |
+| `TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.Name` | Firbloodrisk | Lactaire sanguin |
+| `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.Description` | The firbloodrisk begins as a reddish parasitic flower growing on fir bark. Its flowers are barely visible against the bark. It opens when it senses ground vibrations and releases its spores. The fungus roots itself in living flesh and decomposes it until it reaches the brain. Once the host dies, it forms a symbiosis with the skeleton and moves it as an extension of its consciousness. | Le lactaire sanguin est d'abord une fleur parasite rougeâtre qui pousse sur l'écorce des sapins. Ses fleurs sont à peine visibles sur l'écorce. La fleur s'ouvre en sentant les vibrations du sol et lâche ses spores. Le champignon s'enracine dans la chair vivante et la décompose jusqu'au cerveau. Une fois son hôte mort, il forme une symbiose avec le squelette et le déplace comme une extension de sa conscience. |
+| `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.Age` | 3, max. 20 | 3, max. 20 |
+| `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.Environment` | Conifer forests in southern Svartliden, the dark forest, growing on fir bark | Forêts de résineux du sud de Svartliden, la forêt ténébreuse, sur l'écorce des sapins |
+| `TRUDVANG.Content.Creature.KJZYs0u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Weapon0Part1` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Name` | Logi | Loge |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Description` | The logi is a pure manifestation of fire, made entirely of flames. Its body gives off extreme heat pulsing in a sphere ten meters in diameter. It feeds on fire and greedily devours its heat. Away from lava flows, its body blackens and hardens. Near a heat source again, it immediately regains its fiery consistency. | Le loge est une pure manifestation du feu, entièrement composé de flammes. Son corps produit une chaleur extrême qui pulse en une sphère de dix mètres de diamètre. Il se nourrit de feu et en dévore la chaleur avec avidité. Éloigné des coulées de lave, son corps se noircit et se durcit. Revenu à proximité d'une source de chaleur, il reprend aussitôt sa consistance de feu. |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Age` | 650, max 1 500 | 650, max 1 500 |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Environment` | Great underground lava flows, close to fire and lava | Imposantes coulées de lave souterraines, à proximité du feu et de la lave |
+| `TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Name` | Mare | Hantise |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Description` | The mare physically resembles an old woman with a hunched back. Its face, however, is that of a young girl. Small horns grow on its head. Some mares use illusion magic to conceal their horns. It usually presents a kind, shy appearance and has biting jaws and claws. | La hantise ressemble d'un point de vue physique à une vieille femme au dos voûté. Son visage est en revanche celui d'une jeune fille. Elle porte de petites cornes sur la tête. Certaines hantises utilisent la magie des illusions pour camoufler leurs cornes. Elle se montre le plus souvent sous un aspect gentil et timide, et possède une gueule pour mordre et des griffes. |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Environment` | Forests or the edges of great wildernesses, preferably near human communities | Forêts ou bord des grandes étendues sauvages, de préférence à proximité des communautés humaines |
+| `TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill1` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill2` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill3` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill4` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill5` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill6` | Finding & Spotting | Trouver et remarquer |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill7` | Walking in Shadows | Marcher dans les ombres |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill8` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill9` | Language | Langage |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill10` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill11` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill12` | Music & Dancing | Musique et danse |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill13` | Singing & Playing Instruments | Chants et instruments de musique |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill14` | Storytelling | Narration |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill15` | Acting | Dramaturge |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill16` | Libel | Calomnies |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill17` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill18` | Tradesman | Commerce |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill19` | Brewer | Brasseur |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill20` | Cook | Cuisinier |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill21` | Healing & Drugs | Soins et remèdes |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill22` | Extracts & Potions | Extraits et potions |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Skill23` | First Aid & Nursing | Premiers secours et soins |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Weapon1` | Nagli klubb (spiked club) | Nagli klubb (massue à pointes) |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Name` | Nymph | Nymphe |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Description` | The nymph is a naked, very beautiful female creature. Some mistake it for an elf. Travelers describe a naked woman with a generous bosom. Its natural appearance is that of a pretty girl. It can change its appearance into the woman of its victim's dreams. It lives both in water and on dry land. | La nymphe est une créature féminine nue et très jolie. Certains la confondent avec une elfe. Les voyageurs parlent d'une femme nue à la poitrine généreuse. Son aspect naturel est celui d'une jolie fille. Elle peut modifier son apparence pour apparaître comme la femme des rêves de sa victime. Elle vit aussi bien dans l'eau que sur la terre ferme. |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Age` | 60, max 120 | 60, max 120 |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Environment` | Springs and streams in forests, lakes and dark waters, shadows and darkness throughout Trudvang | Sources ou torrents au milieu de la forêt, lacs et eaux sombres, ombre et obscurité, partout sur Trudvang |
+| `TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill2` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill3` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill4` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill5` | Language | Langage |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill6` | Mother Tongue | Langue maternelle : … |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill7` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill8` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill9` | Vaagritalja | Vaagritalja |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill10` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill11` | Galding | Galda |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill12` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill13` | Healing & Drugs | Soins et remèdes |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill14` | Extracts & Potions | Extraits et potions |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Skill15` | First Aid & Nursing | Premiers secours et soins |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Name` | Skjuld | Skjuld |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Description` | The skjuld has wings and a troll's body. It has a cat's feet and long pointed ears. Its jaws bear tusks like a warthog's. Its thick raven-black hair grows as a mane down its back. It speaks only in riddles and hides in the endless woodland canopy. | Le skjuld possède des ailes et le corps d'un troll. Il a les pattes d'un chat et de longues oreilles pointues. Sa gueule porte des défenses semblables à celles d'un phacochère. Son épaisse tignasse noire corbeau pousse comme une crinière le long de son dos. Il ne parle qu'en charades et se camoufle dans l'infinie canopée des bois. |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Age` | 5 000, max immortal | 5 000, max immortel |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Environment` | Forest darkness and canopy, forests near sites abandoned by elves, weaving gardens | Obscurité de la forêt et canopée, forêts près des sites abandonnés par les elfes, jardins de tressage |
+| `TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Skill1` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Skill2` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Skill3` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon1` | Stjorn makir (morning star) | Stjorn makir (étoile du matin) |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Name` | Stonehinje | Stenhinje |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Description` | The stonehinje is a giant made entirely of stone, with an immense rough body. Its heart is gold, as large as a man's fist and always warm. Its stomach is as hollow as a cave. Some grow as large as mountains, others only as large as ogres. Roughly sculpted, it walks on two legs and can change its mass into a door, wall, chest, or floor. | Le stenhinje est un géant entièrement fait de pierre, au corps immense et rugueux. Son cœur est composé d'or, gros comme le poing d'un homme et toujours chaud. Son estomac est aussi creux qu'une grotte. Certains deviennent aussi grands que les montagnes, d'autres aussi gros que des ogres. Grossièrement sculpté, il marche sur deux jambes et peut transformer sa masse en porte, mur, coffre ou sol. |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Environment` | Mountains, where stone stays strong beneath its feet, and stone nests built by those that leave | Montagnes, où la pierre reste forte sous ses pieds, puis nids de pierre construits par ceux qui les quittent |
+| `TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Name` | Log Troll | Troll de bois |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Description` | The log troll is assembled from pine cones, branches, leaves, and stones. Metal objects, skeletal pieces, and decorative carvings are also mixed in. Its maker usually carves a face on the creation. A star-pine seed germinates within it to bring it to life. Its serpentine roots writhe through the earth toward its victims, and it almost merges with the forest. | Le troll de bois est une créature assemblée à partir de pommes de pin, de branches, de feuilles et de pierres. On y mêle aussi des objets métalliques, des morceaux de squelettes et des sculptures ornementales. Son créateur sculpte le plus souvent un visage sur sa création. Une graine de pin étoile germe en lui pour lui donner vie. Ses racines serpentines ondulent dans la terre vers ses victimes et il fusionne presque avec la forêt. |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Age` | 2, max variable | 2, max variable |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Environment` | Forests, where elven ihanas create it in a filled-in hole | Forêts, où les ihanas elfiques le créent dans un trou rebouché |
+| `TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Weapon0` | Stafur (staff) | Branche d’arbre |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Name` | Yggdras | Yggdras |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Description` | The yggdras is a nature spirit hidden inside a host tree. If a face appears on a tree trunk, an yggdras is almost certainly within. It is most often found in old butternut trees with thick knotted trunks. It lives in symbiosis with its tree, sharing nutrients while strengthening it. Not all yggdras look alike, since they hide within nature, sometimes even in animals or flowers. | L'yggdras est une âme de la nature cachée dans un arbre hôte. Si l'on aperçoit un visage sur le tronc d'un arbre, c'est presque sûrement un yggdras à l'intérieur. On le trouve le plus souvent dans les vieux noyers cendrés au tronc épais et noueux. Il vit en symbiose avec son arbre, qui partage ses nutriments tandis qu'il le renforce. Tous les yggdras ne se ressemblent pas, car ils se cachent dans la nature, parfois même dans des animaux ou des fleurs. |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Environment` | Forests, old butternut trees and other host trees, in groups of about twenty caring for the forest | Forêts, vieux noyers cendrés et autres arbres hôtes, en groupes d'une vingtaine prenant soin de la forêt |
+| `TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Name` | Braskelwurm | Braskelwurm |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Description` | This small four-legged creature is wolf-sized and rarely reaches above the knee. It has a large head with clear glowing eyes. It resembles both a rock cock and a lindwurm. Its body is covered with thin white, almost transparent scales. These scales can turn green and gray like those of the breijtja lizard, allowing it to hide easily. | C'est une petite créature de la taille d'un loup marchant sur quatre pattes, qui dépasse rarement le genou. Elle possède une grosse tête dotée d'yeux clairs et luisants. Elle ressemble à la fois à un coq des roches et à un lindwurm. Son corps est couvert de fines écailles blanches, presque transparentes. Ces écailles peuvent prendre une teinte verte et grise comme celles du lézard breijtja, ce qui lui permet de se camoufler facilement. |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Age` | 100, max 250 | 100, max 250 |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Environment` | Deepest forests or darkest caves, in a dark lair sheltered from sunlight | Forêts les plus épaisses ou grottes les plus sombres, dans un antre obscur à l'abri de la lumière du soleil |
+| `TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Name` | Huvfurwurm | Huvfurwurm |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Description` | The huvfurwurm closely resembles the lindwurm and braskelwurm. It is born with a single head and then resembles other wurms. Its neck and body bear great knobs and growths that distinguish it from its cousins. Hundreds, perhaps thousands, of these growths generate new heads as it ages or suffers. Every new head is unique and can become more powerful and dangerous. It may grow more than a hundred heads, until it can no longer move and collapses beneath their number. | Le huvfurwurm ressemble beaucoup au lindwurm et au braskelwurm. Il naît avec une seule tête et ressemble alors à tous les autres wurms. Son cou et son corps portent de grosses protubérances et excroissances qui le différencient de ses cousins. Ces excroissances disséminées partout sur son corps, par centaines et peut-être par milliers, génèrent de nouvelles têtes au fur et à mesure qu'il vieillit ou souffre. Chaque nouvelle tête est toujours unique et peut devenir plus puissante et dangereuse. Il peut ainsi porter plus d'une centaine de têtes, au point de ne plus pouvoir se déplacer et de s'effondrer sous leur nombre. |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Age` | 200, max 375 | 200, max 375 |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Environment` | Damp places such as marshlands and peat bogs, in deep caves | Endroits humides tels que les régions marécageuses et les tourbières, dans des grottes profondes |
+| `TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Name` | Huvfurwurm Head | Tête de huvfurwurm |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Description` | One head of a huvfurwurm. | Une tête du huvfurwurm. |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Age` | variable, max variable | variable, max variable |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.Environment` | Damp places such as marshlands and peat bogs, in deep caves | Endroits humides tels que les régions marécageuses et les tourbières, dans des grottes profondes |
+| `TRUDVANG.Content.Creature.D4E2o9C8D9EaGbHc.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon2Part0` | Ice breath | Souffle de glace |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Name` | Hrimwurm | Hrimwurm |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Description` | This is a chalk-white dragon. Thick white scales protect its body. They let it hide in snowy surroundings, where from afar it may be mistaken for a great heap of snow. They nevertheless provide less effective protection than other dragons' scales. It has wings that it spreads to dive and take flight. | C'est un dragon blanc à la blancheur de craie. Son corps est protégé par d'épaisses écailles blanches. Ces écailles lui permettent de se camoufler dans les environnements neigeux, où on le confond de loin avec un gros tas de neige. Elles offrent toutefois une protection moins viable que celles des autres types de dragons. Il est doté d'ailes qu'il déploie pour plonger en piqué et prendre son envol. |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Age` | 350, max 500 | 350, max 500 |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Environment` | Northernmost regions or mountain summits where the cold is most intense, in deep ice caves | Régions les plus septentrionales ou sommet des pics montagneux où le froid est le plus intense, dans des grottes de glace profondes |
+| `TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon2Part0` | Magma breath | Souffle magmatique |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Name` | Jarnwurm | Jarnwurm |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Description` | This dragon is more compact than a logiwurm, its body covered in thousands of scales. Its iron-like hide bears black, sturdy, thick, almost impenetrable scales. Its true distinguishing feature is its thick black-and-red shell, combining dragon hide and solidified magma. Its underside is also protected by sturdy scales reinforced with a still thicker layer. Its fangs are as long as Mittland short swords, and a strongly sulfurous horn rises from its nose. A typical scale is hand-sized and thumb-thick, and its small wings cannot carry it far in flight. | C'est un dragon plus compact que le logewurm, au corps recouvert de plusieurs milliers d'écailles. Son cuir semblable au fer est recouvert d'écailles noires, robustes, épaisses et pratiquement impénétrables. Sa caractéristique véritable est son épaisse carapace noire et rouge, combinaison de cuir de dragon et de magma solidifié. Le dessous de son corps est lui aussi protégé par des écailles solides renforcées d'une couche encore plus épaisse. Ses crocs sont aussi longs que des épées courtes du Mittland et une corne sentant très fort le soufre surmonte son nez. Une écaille typique est aussi grande qu'une main et aussi épaisse qu'un pouce, et ses petites ailes ne peuvent le porter en vol sur de longues distances. |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Age` | 500, max 1 000 | 500, max 1 000 |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Environment` | Trudvang mountain ranges, in their oldest, deepest, darkest places where stone becomes almost liquid, in underground tunnels and caves | Chaînes montagneuses de Trudvang, dans les endroits les plus anciens, profonds et obscurs où la pierre devient presque liquide, tunnels et grottes souterrains |
+| `TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Name` | Lindwurm | Lindwurm |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Description` | The lindwurm resembles a snake much more than other dragon creatures. Its massive body can reach sixty meters long. It is as thick as the greatest oak on the Viranne plains. This immense serpentine creature crawls and coils around its victims. Its jaws can swallow a goat in two bites and seize prey to carry away as it crawls. Its skin can be old and broad enough for followers to wrap themselves in during blood oaths. | Le lindwurm ressemble beaucoup plus à un serpent que les autres créatures draconiques. Son corps massif peut atteindre une longueur de 60 mètres. Il est aussi épais que le plus imposant des chênes des plaines de Viranne. C'est une massive créature serpentine qui se déplace en rampant et enserre ses victimes dans ses anneaux. Sa gueule peut engloutir une chèvre en deux bouchées et saisir une proie pour l'emporter en rampant. Sa peau est assez vieille et grande pour que les fidèles s'en enveloppent lors des serments de sang. |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Age` | 100, max 175 | 100, max 175 |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Environment` | Great underground lairs, preferably near the forest edge | Grands antres souterrains, de préférence en bordure de forêt |
+| `TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon2Part0` | Fire breath | Souffle de feu |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Name` | Logiwurm | Logewurm |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Description` | This is the largest and most feared of all dragon creatures, of extraordinary size and red skin. Particularly thick, almost impenetrable scales cover it. Its skeleton is naturally black and as hot as a roaring fire, with a huge skull almost as large as wulter fishers' boats. Its fangs are broadsword-long and its claws as sharp as two-handed swords. Its only weakness lies on its belly, where the hide is thinner and the scales part as it breathes. Black external veins can then be seen, cooling after the blood has passed through the flames of its four lungs. | C'est la plus grande et la plus crainte de toutes les créatures draconiques, à la taille extraordinaire et à la peau rouge. Elle est recouverte d'une couche d'écailles particulièrement épaisses et pratiquement impénétrables. Son squelette est naturellement noir et aussi chaud qu'une belle flambée, avec un crâne très gros, presque aussi imposant que les bateaux des pêcheurs de wulters. Les crocs dans sa gueule sont aussi longs que des épées larges, et ses griffes sont aussi affûtées que des épées à deux mains. Son seul point faible se situe sur son ventre, là où le cuir est un peu moins épais et où les écailles s'écartent quand il respire. On y verrait alors des veines noires externes, qui doivent refroidir après que le sang a traversé les flammes de ses quatre poumons. |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Age` | 1 000, max 5 000 | 1 000, max 5 000 |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Environment` | Varied places, from abandoned castles to vast cave networks | Lieux divers depuis les châteaux abandonnés jusqu'aux vastes réseaux de cavernes |
+| `TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill0` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill1` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill2` | Vaagritalja | Vaagritalja |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill3` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill4` | Vyrding | Vyrda |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Skill5` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Name` | Yggwurm | Yggwurm |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Description` | This most legendary dragon has a long, sinuous body. It is so immense that its wingspan is almost twice a jarnwurm's. Its wings are so large that it can ride the waves of the wind for years without beating them. Its long, sinuous body prevents it from walking like other dragon creatures. It is not strong enough to lift its mass from the ground through wing power alone. It touches the ground only twice, at birth and when it crashes to die, living aloft on invisible air currents. | C'est le plus mythique des dragons, au corps long et sinueux. Il est si imposant que l'envergure de ses ailes est presque deux fois aussi importante que celle du jarnwurm. Ses ailes sont si grandes qu'il peut rester en lévitation sur les vagues du vent pendant des années sans jamais les agiter. À cause de son corps long et sinueux, il ne peut pas marcher comme les autres créatures draconiques. Il n'est pas assez puissant pour soulever sa masse du sol par la seule force de ses ailes. Il ne touche le sol que deux fois, à sa naissance et lorsqu'il s'écrase pour mourir, vivant en vol sur les courants d'air invisibles. |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Age` | 5 000, max 10 000 | 5 000, max 10 000 |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Environment` | Highest snowy mountain peaks, far above the clouds, living in the air without a home | Tout en haut des pics montagneux enneigés, bien au-dessus des nuages, vivant dans les airs sans demeure |
+| `TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Skill1` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Skill2` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Skill3` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon1` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Name` | Firdtursir | Firdtursir |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Description` | The firdtursir is a colossal giant usually twenty to twenty-two meters tall. Born from stone, its massive body seems to merge with the mountains as it sleeps, becoming part of nature. Its powerful frame lets it tear great rocks from mountainsides. Its belly truly holds gold, of a special kind that becomes harder and lighter when refined and worked. Adapted to the mountains, it withstands cold almost as well as a hrimtursir. Sleeping, it blends into the rock of slopes and cliffs. | Le firdtursir est un géant colossal mesurant le plus souvent entre vingt et vingt-deux mètres de haut. Issu de la pierre, son corps massif semble fusionner avec les montagnes lorsqu'il dort et devient partie intégrante de la nature. Sa carrure puissante lui permet d'arracher de grands rochers aux flancs des montagnes. Son ventre recèle véritablement de l'or, d'un type spécial qui devient plus dur et plus léger une fois raffiné et travaillé. Taillé pour la montagne, il résiste au froid presque aussi bien que les hrimtursirs. Endormi, il se confond avec la roche des versants et des falaises. |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Age` | 400, max 800 | 400, max 800 |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Environment` | Jarngand mountain slopes and cliffs, in gigantic stone halls | Versants et falaises des montagnes de Jarngand, dans de gigantesques halles de pierre |
+| `TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Skill1` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Skill2` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon1` | Breid spjót (broad spear) | Breid spjót (lance à lame large) |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Name` | Hrimtursir | Hrimtursir |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Description` | The hrimtursir is the smallest giant, usually fourteen to fifteen meters tall. It walks bent forward, and its face resembles a gray troll's. Its body has absorbed the cold and is described as an ice body that constantly releases cold around it. It bears great horns used in battle to strike and throw enemies into the air. Giants carry many skulls and objects tied to their bodies and clothing. Its belly holds white gold called hrimguld, or ice gold. | Le hrimtursir est le plus petit des géants, mesurant le plus souvent entre quatorze et quinze mètres de haut. Il marche penché vers l'avant et son visage ressemble à celui des trolls gris. Son corps a intégré le froid et est décrit comme un corps de glace qui relâche en permanence le froid autour de lui. Il porte de grandes cornes qu'il utilise au combat pour frapper et projeter ses ennemis dans les airs. Les géants portent sur le corps et les vêtements un nombre considérable de crânes et d'objets attachés. Son ventre recèle de l'or blanc, appelé hrimguld ou or de glace. |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Age` | 100, max 175 | 100, max 175 |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Environment` | Northern cold, ice, and Jarngand slopes, in ice strongholds; observed as far as Wildland | Froid du nord, glace et versants de Jarngand, fortins de glace ; observé jusque dans les Terres sauvages |
+| `TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Name` | Logrjotun | Logrjotun |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Description` | The logrjotun is the largest giant, of imposing shape and impressive height. Shellfish, algae, and seaweed cover its green-and-blue skin. Its great head shelters seabirds that circle it looking for nesting places. After nightfall its large luminous eyes give off a glow like the full moon. From afar at night, they resemble two small round moons in the distance. Sitting motionless in the sea for decades, it can be mistaken for a small island. | Le logrjotun est le plus grand des géants, à la silhouette imposante et à la taille impressionnante. Sa peau verte et bleue est recouverte de crustacés, d'algues et de varech. Sa grande tête sert d'abri aux oiseaux marins qui volent en cercle autour et y cherchent un endroit où nicher. Ses grands yeux lumineux diffusent après la tombée de la nuit une lueur semblable à celle de la pleine lune. Vus de loin la nuit, ses yeux ressemblent à deux petites lunes rondes dans le lointain. Assis immobile dans la mer pendant des dizaines d'années, il peut être confondu avec une petite île. |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Age` | 1 000, max variable | 1 000, max variable |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Environment` | Endless oceans and the seabed; rises to sit amid turbulent waters, as off Dalheim | Océans infinis et fond des mers ; remonte s'asseoir dans la mer houleuse, comme au large de Dalheim |
+| `TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Name` | Muspeljotun | Muspeljotun |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Description` | The muspeljotun is a tall, clumsy giant usually twenty-five to twenty-seven meters high. Its soot-black body is protected by a hard black shell covered with cracks. Through these fissures in its petrified skin, its ever-burning innards and flowing lava can be seen. Its facial features make it seem happy, although it is a sorrowful race. At birth it resembles ancient giants of flame, then its skin slowly hardens from outside inward. At life's end, fully solidified and unable to move, it is little more than a great giant-shaped block of stone. | Le muspeljotun est un géant grand et maladroit mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut. Son corps est aussi noir que la suie, protégé par une carapace noire et dure couverte de fissures. À travers les fissures de sa peau pétrifiée, on aperçoit ses entrailles toujours ardentes où coule de la lave brûlante. Les traits de son visage donnent l'impression qu'il est heureux, alors qu'il s'agit d'une race triste. À la naissance, il ressemble aux anciens géants de feu faits de flammes, puis sa peau durcit lentement de l'extérieur vers l'intérieur. En fin de vie, totalement solidifié et incapable de bouger, il n'est guère plus qu'un gros bloc de pierre en forme de géant. |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Age` | 1 000, max variable | 1 000, max variable |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Environment` | Deep earth beneath mountains near lava flows; sometimes lost in forests | Tréfonds de la terre, sous les montagnes près des coulées de lave ; parfois égaré en forêt |
+| `TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Skill1` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Skill2` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Skill3` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon1` | Tvei klubb (two-handed club) | Arbre déraciné ou rocher |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Name` | Vidrjotun | Vidrjotun |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Description` | The vidrjotun is a massive giant usually twenty-five to twenty-seven meters tall, its lower body often half buried in earth. Earth rather than skin forms its surface, making it resemble a great mound or grass-covered hill. Sleeping for generations, it lets trees and bushes grow on it, and every plant flourishes in its fertile soil. Its size depends on where it sleeps: small in rocky, barren ground and much larger in fertile earth. Instead of blood, tree-like sap runs through its veins, sticky and hardening in the air. It carries the seeds of countless flowers, trees, and other plants, spreading them as it wakes. | Le vidrjotun est un géant massif mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut, dont la partie inférieure du corps est souvent à moitié enfouie dans la terre. La surface de son corps se compose de terre et non de peau, ce qui le fait ressembler à un grand monticule ou à une colline tapissée d'herbe. Assoupi pendant des générations, il laisse arbres et buissons pousser sur lui et fait fleurir tout végétal sur son sol fertile. Sa taille dépend de la nature du sol où il s'est assoupi : petite dans les sols rocheux et arides, bien plus grande dans les sols fertiles. Au lieu de sang, il a de la sève dans les veines, comme les arbres, une sève collante qui durcit à l'air. Il porte en lui les semences d'innombrables fleurs, arbres et autres végétaux qu'il dissémine à son réveil. |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Age` | 350, max 600 | 350, max 600 |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Environment` | Forests, preferably near water where the soil stays fertile; sinks into the ground to sleep | Forêts, de préférence près d'un point d'eau où le sol reste fertile ; s'enfonce dans le sol pour dormir |
+| `TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill2` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill4` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill5` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill6` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill7` | Learning | Apprentissage |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill8` | Insight | Érudition : … |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill9` | Culture Knowledge | Connaissances culturelles |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill10` | Lore & Legends | Contes et légendes : … |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill11` | Religion | Religions : … |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill12` | Race Knowledge | Connaissances des créatures |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill13` | Monster Lore | Connaissance des monstres |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill14` | Spirit Lore | Connaissance des esprits |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill15` | Language | Langage |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill16` | Foreign Tongue | Langue étrangère : … |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill17` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill18` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill19` | Storytelling | Narration |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill20` | Acting | Dramaturge |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill21` | Libel | Calomnies |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill22` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill23` | Nature Knowledge | Connaissance de la nature |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill24` | Geography | Géographie |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill25` | Orienteering & Cartography | Orientation |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Skill26` | Survival | Survie |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon1` | Stafur (staff) | Stafur (bâton) |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Name` | Fjol Troll | Fjoltroll |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Description` | Fjol trolls are extremely rare creatures able to assume almost any imaginable form. In their original shape, they resemble both gray trolls and king trolls. They have grayish skin and a long nose. Their eyes are as deep as a well. Those eyes are said to reflect all the knowledge they have accumulated. | Les fjoltrolls sont des créatures extrêmement rares capables d'adopter pratiquement toutes les formes possibles et imaginables. Lorsqu'ils reprennent leur forme d'origine, ils ressemblent à la fois à un gråtroll et à un kungstroll. Ils ont une peau grisâtre et un long nez. Leurs yeux sont aussi profonds qu'un puits. Ces yeux reflèteraient, dit-on, tout le savoir qu'ils ont accumulé. |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Age` | 150, max variable | 150, max variable |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Environment` | Not specified | Non précisé |
+| `TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill0` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill1` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill2` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill3` | Body Control | Contrôle corporel |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill4` | Jumping, Climbing & Balancing | Sauts, escalade et équilibre |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill5` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill6` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill7` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill8` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill9` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill10` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill11` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill12` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill13` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill14` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill15` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill16` | Language | Langage |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill17` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill18` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill19` | Hunting Experience | Expérience de la chasse |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill20` | Hunting & Fishing | Chasser et pêcher |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill21` | Survival | Survie |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Skill22` | Terrain Experience (mountain) | Connaissance de l'environnement (montagne) |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon1` | Split axi (hand axe) | Split axi (hache à une main) |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Armor0` | Fur / Leather Armor | cuir |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Name` | Goblin | Gobelin |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Description` | Goblins are small creatures, about one meter tall, with gray skin. Almost all have a small muscular body and an elongated head and nose. Nose shape distinguishes individuals. Most have noses somewhat like pigs'. Some have noses more like those of humans or trolls. | Les gobelins sont des créatures de petite taille, mesurant environ un mètre de haut, avec la peau grise. Pratiquement tous ont un petit corps musclé, avec une tête et un nez allongés. La forme du nez permet de les différencier entre eux. La plupart ont un nez qui ressemble quelque peu à celui du cochon. Certains ont un nez qui ressemble davantage à celui des humains ou à celui des trolls. |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Age` | 15, max 30 | 15, max 30 |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Environment` | Underground mountain lairs of ten to a hundred small rooms and narrow glittering tunnels | Antres souterrains creusés dans les montagnes, composés de dix à cent petites salles et étroits tunnels scintillants |
+| `TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill2` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill4` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill5` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill6` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill7` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill8` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill9` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill10` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill11` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill12` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill13` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill14` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill15` | Language | Langage |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill16` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill17` | Faith | Foi |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill18` | Invoke | Invocation |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill19` | Noaj | Noaj |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill20` | Holy Tablet : … | Tablette sacrée : … |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill21` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill22` | Nature Knowledge | Connaissance de la nature |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill23` | Geography | Géographie |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill24` | Survival | Survie |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill25` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill26` | Handicraft | Artisanat |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill27` | Hard Materials | Matériaux durs |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Skill28` | Soft Materials | Matériaux souples |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon1` | Krum swerd (scimitar) | Krum swerd (cimeterre) |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2` | Barda makir (battle mace) | Barda makir (masse de bataille) |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon3` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4` | Small fur-reinforced shield | Petit bouclier renforcé de fourrure |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Name` | Gray Troll | Gråtroll |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Description` | Most gray trolls have bodies slightly larger than humans'. A thick head with a large projecting nose crowns the body. They have muscular arms, short bowed legs, and oversized feet. Like king trolls, gray trolls have long cow-like tails. Their sense of smell is reputed to be very keen. | Le corps de la plupart des trolls gris est légèrement plus imposant que celui des humains. Il est orné d'une tête plutôt épaisse avec un gros nez protubérant. Ils ont des bras musclés, des petites jambes arquées et de trop grands pieds. Comme les kungstrolls, les gråtrolls ont une longue queue semblable à celle des vaches. Leur odorat est réputé très poussé. |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Age` | 25, max 60 | 25, max 60 |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Environment` | Woods and forest camps, underground lairs, and abandoned human homes | Bois et camps forestiers, antres souterrains et habitats humains abandonnés |
+| `TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill2` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill4` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill5` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill6` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill7` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill8` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill9` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill10` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill11` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill12` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill13` | Language | Langage |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill14` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill15` | Faith | Foi |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill16` | Invoke | Invocation |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill17` | Holy Tablet : … | Tablette sacrée : … |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill18` | Noaj | Noaj |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill19` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill20` | Nature Knowledge | Connaissance de la nature |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill21` | Geography | Géographie |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill22` | Orienteering & Cartography | Orientation |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill23` | Survival | Survie |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill24` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill25` | Handicraft | Artisanat |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill26` | Hard Materials | Matériaux durs |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Skill27` | Soft Materials | Matériaux souples |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon1` | Staaf spjót (hunting spear) | Staaf spjót (lance de chasse) |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Name` | Young Hrim Troll | Jeune hrimtroll |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Description` | The young hrim troll is a large troll resembling a large king troll, but with small tusks. Its thick tusks protrude from its mouth, still light and short. Thick hair on its skull continues down its back as a mane, and it also has a beard. Its body has absorbed cold for so long that it constantly releases it into its surroundings. It still stands upright and walks in a less bestial fashion. | Le jeune hrimtroll est un grand troll qui ressemble à un grand kungstroll, mais avec de petites défenses. Ses épaisses défenses sortent de sa bouche et restent encore légères et courtes. Il possède une tignasse épaisse sur le crâne qui se prolonge le long du dos pour former une crinière, ainsi qu'une barbe. Son corps a intégré le froid depuis si longtemps qu'il le relâche en permanence autour de lui. Il se tient encore en position debout et marche de manière peu bestiale. |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Age` | 40, max 140 | 40, max 140 |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Environment` | Cold, icy regions, deep underground pits, in small clans of six to ten | Régions froides et glacées, fosses profondes sous terre, petits clans de six à dix individus |
+| `TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill2` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill3` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill4` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill5` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill6` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill7` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill8` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill9` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill10` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill11` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill12` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill13` | Language | Langage |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill14` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill15` | Faith | Foi |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill16` | Invoke | Invocation |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill17` | Holy Tablet : … | Tablette sacrée : … |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill18` | Noaj | Noaj |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill19` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill20` | Nature Knowledge | Connaissance de la nature |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill21` | Geography | Géographie |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill22` | Orienteering & Cartography | Orientation |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill23` | Survival | Survie |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill24` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill25` | Handicraft | Artisanat |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill26` | Hard Materials | Matériaux durs |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Skill27` | Soft Materials | Matériaux souples |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon1` | Barda hammri (battle hammer) | Barda hammri (marteau de bataille) |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon2` | Tvei Axi (Two-Handed Axe) | Tvei axi (hache à deux mains) |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Armor0` | Fur / Leather Armor | fourrure |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Attack0Step0` | Tusk Throw | Projection à coup de défenses |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Name` | Old Hrim Troll | Vieux hrimtroll |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Description` | With age, the old hrim troll has become gigantic and bestial as its tusks have grown heavier. They are so thick and heavy that they prevent it from standing upright. It grows larger and walks more and more like a beast, hurling enemies upward with its tusks. Thick hair on its skull continues down its back as a mane, and it also has a beard. Its body has absorbed cold and continually releases it as a sphere around itself. | Le vieux hrimtroll est devenu gigantesque et bestial avec l'âge, au fur et à mesure que ses défenses ont poussé et se sont alourdies. Ses défenses sont devenues si épaisses et si lourdes qu'elles l'empêchent de se tenir en position debout. Il grossit et marche de manière de plus en plus bestiale, projetant ses ennemis d'un coup de défenses vers le haut. Il possède une tignasse épaisse sur le crâne prolongée en crinière le long du dos, ainsi qu'une barbe. Son corps a intégré le froid et le relâche en permanence sous la forme d'une sphère autour de lui. |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Age` | 90, max 140 | 90, max 140 |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Environment` | Cold, icy regions, deep underground pits, in small clans of six to ten | Régions froides et glacées, fosses profondes sous terre, petits clans de six à dix individus |
+| `TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill1` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill2` | Faith | Foi |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill3` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill4` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill5` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill6` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill7` | Thievery | Larcin |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill8` | Locks & Traps | Serrures et pièges |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill9` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill10` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill11` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill12` | Wrestling | Lutte |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill13` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill14` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill15` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill16` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill17` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill18` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill19` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill20` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill21` | Language | Langage |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill22` | Foreign Tongue | Langue étrangère : … |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill23` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill24` | Vitner Craft | Maîtrise du vitner |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill25` | Call of Vitner | Appel du vitner |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill26` | Darkhwitalja | Morkvitalja |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill27` | Vitner Shaping | Modelage du vitner |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill28` | Galding | Galda |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill29` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill30` | Nature Knowledge | Connaissance de la nature |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill31` | Hunting Experience | Expérience de la chasse |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill32` | Hunting & Fishing | Chasser et pêcher |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill33` | Survival | Survie |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Skill34` | Scout | Éclaireur |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon1` | Staaf spjót (hunting spear) | Staaf spjót (lance de chasse) |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon2` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon3` | Medium metal-reinforced shield | Bouclier moyen renforcé de métal |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Armor0` | Fur / Leather Armor | fourrure |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Attack1Step0` | Wrestling | Lutte |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Name` | King Troll | Kungstroll |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Description` | The king troll has long black hair, a pointed nose and ears, and a long hairy cow's tail. As it grows, it usually becomes taller than other trolls. Its body is nevertheless finer, more muscular, and leaner than a gray troll's, for example. From dry land, it uses its long tail to fish. It likes to wear rings, bracelets, and other shining ornaments. | Le kungstroll a de longs cheveux noirs, un nez et des oreilles pointus, et une longue queue de vache poilue. En grandissant, il dépasse généralement en taille les autres trolls. Son corps est cependant plus fin, plus musculeux et plus sec que celui des gråtrolls, par exemple. Il utilise sa longue queue depuis la terre ferme pour pêcher. Il aime porter des anneaux, des bracelets et d'autres ornements brillants. |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Age` | 75, max 200 | 75, max 200 |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Environment` | Thick forests near shaded springs and woodland lakes | Forêts épaisses, près de sources d'eau ombragées et lacs de forêt |
+| `TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill0` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill1` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill2` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill3` | Faith | Foi |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill4` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill5` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill6` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill7` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill8` | Wrestling | Lutte |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill9` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill10` | 1H Heavy Weapons | Armes lourdes à une main |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill11` | Two-Handed Weapons | Armes à deux mains |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill12` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill13` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill14` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill15` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill16` | Language | Langage |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill17` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill18` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill19` | Hunting Experience | Expérience de la chasse |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill20` | Hunting & Fishing | Chasser et pêcher |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Skill21` | Survival | Survie |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon0Part0` | Unarmed | Mains nues |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon1` | Barda makir (battle mace) | Barda makir (masse de bataille) |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon2` | Tvei klubb (two-handed club) | Tvei klubb (massue à deux mains) |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Armor0` | Metal-reinforced leather armor | cuir renforcé de métal |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Name` | Ogre | Ogre |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Description` | The ogre is the smallest member of the giant and troll family. The contemporary common ogre inherited the size of mountain ogres. It inherited the great teeth of forest ogres. It inherited the greenish skin of river ogres. Its clothing is extremely primitive, as are the weapons and tools it carries. | L'ogre est le plus petit des membres de la famille des géants et des trolls. L'ogre commun contemporain a hérité de la taille des ogres des montagnes. Il a hérité des grandes dents des ogres des forêts. Il a hérité de la peau verdâtre des ogres des rivières. Sa tenue est extrêmement primitive, tout comme les armes et les outils qu'il porte. |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Age` | 30, max 70 | 30, max 70 |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Environment` | Deepest forests, caves and woodland huts, often old abandoned troll lairs | Forêts les plus épaisses, grottes et huttes forestières, souvent d'anciens antres de trolls abandonnés |
+| `TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill0` | Entertainment | Divertissement |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill1` | Faith | Foi |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill2` | Care | Savoir-faire |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill3` | Agility | Agilité |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill4` | Body Control | Contrôle corporel |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill5` | Jumping, Climbing & Balancing | Sauts, escalade et équilibre |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill6` | Battle Maneuver | Manœuvres de combat |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill7` | Evade | Esquive |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill8` | Horsemanship | Maîtrise équestre |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill9` | Riding | Équitation |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill10` | Shadow Arts | Arts des ombres |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill11` | Shadowing | Discrétion |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill12` | Camouflage & Hiding | Camouflage et dissimulation |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill13` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill14` | Unarmed Fighting | Combat à mains nues |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill15` | Brawling | Bagarre |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill16` | Wrestling | Lutte |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill17` | Armed Fighting | Combat armé |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill18` | Bows & Slings | Arcs & frondes |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill19` | 1H Light Weapons | Armes légères à une main |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill20` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill21` | Battle Experience | Expérience du combat |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill22` | Armor Bearer | Porteur d'armure |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill23` | Fighter | Combattant |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill24` | Knowledge | Connaissances |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill25` | Language | Langage |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill26` | Mother Tongue (Bastjumal) | Langue maternelle (Bastjumal) |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill27` | Wilderness | Nature |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill28` | Hunting Experience | Expérience de la chasse |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Skill29` | Hunting & Fishing | Chasser et pêcher |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon0Part1` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon1` | Veidi Bogi (Hunting Bow) | Veidi bogi (arc de chasse) |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon2` | Lill spjót (short spear) | Lill spjót (lance courte) |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon3` | Small Wooden Shield | Petit bouclier en bois |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Armor0` | Fur / Leather Armor | cuir |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Attack0Step0` | Bite/Claws | Morsure/Griffes |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Name` | Forest Troll | Skogstroll |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Description` | The forest troll has a hunched muscular body with brown, sometimes green skin. Its nose is as long as its ears. The fangs emerging from its mouth are less sturdy than those of other trolls. Its teeth are nevertheless razor-sharp. It paints its body with blue mud, also called pig mud. | Le skogstroll a un corps voûté et musclé, avec une peau marron ou parfois verte. Son nez est aussi long que ses oreilles. Les crocs qui émergent de sa bouche ne sont pas aussi solides que ceux des autres trolls. Ses dents sont toutefois aussi tranchantes que des rasoirs. Il peint son corps avec de la boue bleue, aussi appelée boue de cochon. |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Age` | 20, max 50 | 20, max 50 |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Environment` | Thick Trudvang forests, abandoned caves, and great woodlands, in nomadic groups | Forêts épaisses de Trudvang, grottes abandonnées, grandes étendues boisées en groupes nomades |
+| `TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Weapon0Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Name` | Eagle | Aigle |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Description` | This large bird of prey has a massive body and broad chest, covered in dark brown plumage with golden highlights on its nape. Its powerful head bears a sharp hooked beak, yellow at the base and black at the tip, above piercing amber eyes. Broad rectangular wings with long fingered flight feathers give it an impressive span. Its strong legs, feathered down to the talons, end in formidable curved black claws. Its short wedge-shaped tail, lighter in older birds, beats the air strongly on takeoff. | C'est un grand rapace au corps massif et à la poitrine large, couvert d'un plumage brun sombre aux reflets dorés sur la nuque. Sa tête puissante porte un bec crochu et tranchant, jaune à la base et noir à la pointe, surmontant des yeux perçants au regard ambré. Ses larges ailes rectangulaires, aux rémiges longuement digitées, lui donnent une envergure impressionnante. Ses pattes robustes et emplumées jusqu'aux serres se terminent par des griffes noires redoutablement recourbées. Sa queue courte et cunéiforme, plus claire chez les vieux individus, bat l'air avec force lors du décollage. |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Age` | null | null |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Environment` | Cliffs and high Trudvang mountain peaks overlooking forests and open valleys. | Falaises et hauts sommets des monts de Trudvang, surplombant forêts et vallées ouvertes. |
+| `TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Name` | Ram/Goat | Bélier/chèvre |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Description` | This stocky hoofed animal has a compact body covered in thick woolly, often tangled gray or brown fleece. Its bearded head bears horizontally pupiled eyes and great ridged horns that curl into spirals in rams. Short muscular legs end in cloven hooves that grip rocks firmly. Its thick neck supports a massive skull reinforced for headbutting. A short tail and chin beard complete its rustic shape. | C'est un ongulé trapu au corps compact, couvert d'une toison épaisse, laineuse et souvent emmêlée, grise ou brune. Sa tête barbue porte des yeux à pupilles horizontales et de grandes cornes striées recourbées en spirale chez le bélier. Ses pattes courtes et musclées se terminent par des sabots fendus très adhérents aux rochers. Son cou épais supporte un crâne massif renforcé pour les coups de tête. Sa queue courte et sa barbe sous le menton complètent sa silhouette rustique. |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Age` | null | null |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Environment` | Rocky slopes, high pastures, and mountain escarpments in Trudvang, at the edges of upland forests. | Pentes rocheuses, alpages et escarpements des montagnes de Trudvang, lisières des forêts d'altitude. |
+| `TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Name` | Ox/Bull | Boeuf/taureau |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Description` | This massive beast has a deep chest and thick neck crowned with a muscular hump. Its broad head bears a wet muzzle and flared nostrils, with two thick curved pointed horns. Rough dense fur, brown-black or brindled, thickens around neck and shoulders in winter. Pillar-like legs end in broad cloven hooves capable of trampling snow. Its long tuft-ended tail drives away insects with nervous flicks. | C'est une bête massive au poitrail profond et à l'encolure épaisse surmontée d'une bosse musculaire. Sa tête large porte un mufle humide et naseaux dilatés, ainsi que deux cornes épaisses, courbes et pointues. Son pelage rude et dense, brun-noir ou bringé, s'épaissit en hiver autour du cou et des épaules. Ses pattes colonnaires se terminent par de larges sabots fendus capables de piétiner la neige. Sa longue queue touffue à l'extrémité chasse les insectes d'un mouvement nerveux. |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Age` | null | null |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Environment` | Pastures, grassy valleys, and lowland farms in Mittland and Ovanga. | Pâturages, vallées herbeuses et fermes des basses terres de Mittland et d'Ovanga. |
+| `TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Name` | Wolverine | Carcajou |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Description` | This stocky, short-legged mustelid has an elongated body and a plantigrade gait like a small bear's. Its long dense coarse fur is dark brown, with tawny side stripes running from shoulders to tail. Its broad short-muzzled head bears small rounded ears and powerful jaws with crushing teeth. Short legs carry long curved claws ideal for digging and climbing. Its bushy, relatively short tail balances its compact form. | C'est un mustélidé trapu et bas sur pattes, au corps allongé et à la démarche plantigrade évoquant un petit ours. Sa fourrure longue, dense et grossière est brun sombre, marquée de bandes latérales fauves allant des épaules à la queue. Sa tête large au museau court porte de petites oreilles arrondies et une mâchoire puissante aux dents broyeuses. Ses pattes courtes sont armées de griffes longues et recourbées, idéales pour creuser et grimper. Sa queue touffue et relativement courte équilibre sa silhouette ramassée. |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Age` | null | null |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Environment` | Deep conifer forests, taiga, and snowy tundra in northern Trudvang. | Forêts profondes de conifères, taïgas et toundras enneigées du nord de Trudvang. |
+| `TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Name` | Deer/Elk | Cerf/élan |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Description` | This slender deer has long fine legs and a graceful body covered in reddish-brown summer fur and gray-brown winter fur. Its long neck carries a fine dark-muzzled head, crowned in males by branching antlers shed and regrown each year. Large mobile ears turn at the slightest sound, and its black eyes are gentle and watchful. Narrow cloven hooves clatter on hard ground and sink little into peat bogs. Its short white-bottomed tail rises in alarm. | C'est un cervidé élancé aux longues pattes fines et au corps svelte couvert d'un pelage brun-roux en été, gris-brun en hiver. Son cou allongé porte une tête fine au museau sombre, surmontée chez le mâle d'une ramure ramifiée qui tombe et repousse chaque année. Ses grandes oreilles mobiles pivotent au moindre bruit et ses yeux noirs sont doux et vigilants. Ses sabots étroits et fendus claquent sur les sols durs et s'enfoncent peu dans les tourbières. Sa courte queue blanche en dessous se relève en cas d'alerte. |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Age` | null | null |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Environment` | Clearings, mixed forests, and marshes throughout Trudvang, from Mittland woods to the taiga fringes. | Clairières, forêts mixtes et marécages de Trudvang, des bois de Mittland aux franges de la taïga. |
+| `TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Weapon0Part0` | Kick | Ruade |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Name` | Horse (large) | Cheval (grand) |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Description` | This imposing warhorse stands tall, with a deep chest and powerful shoulders. Its arched neck carries a thick, often braided mane matching its bay, black, or gray coat. Its long straight-profiled head has broad nostrils and lively wide-set eyes. Long muscular limbs with lean tendons end in broad strong hooves. Its full tail and prominent thigh muscles emphasize its strength for pulling and charging. | C'est un destrier imposant à la stature haute, à la poitrine profonde et aux épaules puissantes. Son encolure arquée porte une crinière épaisse et souvent tressée, assortie à sa robe baie, noire ou grise. Sa tête longue au profil rectiligne présente de larges naseaux et des yeux vifs bien espacés. Ses membres longs et musclés, aux tendons secs, se terminent par de larges sabots solides. Sa queue fournie et ses muscles saillants des cuisses soulignent sa force de traction et de charge. |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Age` | null | null |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Environment` | Plains and estates of Trudvang's riding clans, stables, and battlefields. | Plaines et domaines des clans cavaliers de Trudvang, écuries et champs de bataille. |
+| `TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Weapon0Part0` | Kick | Ruade |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Name` | Horse (normal) | Cheval (normal) |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Description` | This medium-sized horse has a balanced silhouette, both sturdy and agile. Its short smooth bay, chestnut, or dapple-gray coat covers a straight back and rounded rump. Its medium-length neck bears a hanging mane and a proportionate broad-browed head. Fine but sinewy legs end in hard medium-sized hooves. A long silky tail and upright attentive ears give it an alert appearance. | C'est un cheval de taille moyenne à la silhouette équilibrée, à la fois solide et agile. Son pelage court et lisse, bai, alezan ou gris pommelé, couvre un dos droit et une croupe arrondie. Son encolure de longueur moyenne porte une crinière tombante et une tête proportionnée au front large. Ses jambes fines mais nerveuses se terminent par des sabots durs de taille moyenne. Sa queue longue et soyeuse et ses oreilles droites et attentives lui donnent un air alerte. |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Age` | null | null |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Environment` | Grassy valleys, forest roads, and farms throughout Trudvang; a common travelers' mount. | Vallées herbeuses, chemins forestiers et fermes de tout Trudvang, monture courante des voyageurs. |
+| `TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Weapon0Part0` | Kick | Ruade |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Name` | Horse (small) | Cheval (petit) |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Description` | This small sturdy horse has a compact body, round belly, and short strong legs. Its thick shaggy winter coat, often bay, brown, or piebald, protects it from cold. A rather heavy head bears an abundant forelock, small hairy ears, and gentle eyes. Its dense mane and very full tail are almost never trimmed. Its small but extremely hard hooves handle stony terrain easily. | C'est un petit cheval robuste au corps compact, au ventre rond et aux jambes courtes et solides. Sa robe épaisse et hirsute en hiver, souvent baie, brune ou pie, le protège du froid. Sa tête un peu forte porte un toupet abondant, de petites oreilles poilues et des yeux doux. Sa crinière drue et sa queue très fournie ne sont presque jamais taillées. Ses sabots petits mais très durs supportent sans peine les terrains pierreux. |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Age` | null | null |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Environment` | Windy hills, peat bogs, and poor farms on Trudvang's fringes, and mountain trails. | Collines venteuses, tourbières et fermes pauvres des confins de Trudvang, sentiers de montagne. |
+| `TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Name` | Dog (medium) | Chien (moyen) |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Description` | This medium-sized dog has an athletic, well-proportioned body and deep chest. Its double gray, sandy, or black-and-white coat is thicker around neck and tail. Its wedge-shaped head bears a long black-nosed muzzle, upright or partly drooping ears, and intelligent eyes. Agile feet end in thick pads and nonretractile claws. Its plumed tail, held high when active, constantly expresses its attention. | C'est un chien de taille moyenne au corps athlétique et bien proportionné, à la poitrine descendue. Son pelage double, gris, sable ou noir marqué de blanc, est plus épais autour du cou et de la queue. Sa tête en forme de coin porte un museau allongé à la truffe noire, des oreilles dressées ou semi-tombantes et des yeux intelligents. Ses pattes agiles se terminent par des coussinets épais et des griffes non rétractiles. Sa queue en panache, portée haute en action, exprime constamment son attention. |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Age` | null | null |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Environment` | Trudvang villages, farms, and hunting camps, following people into forests and mountains. | Villages, fermes et camps de chasse de Trudvang, suivant les hommes en forêt comme en montagne. |
+| `TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Name` | Drauglo | Drauglo |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Description` | This slender predator is the size of a large wolf, its lean muscular body built for running. Shaggy ash-gray fur, striped black along the spine, rises on its nape when it threatens. Its long head carries a tapering muzzle with curled lips, slanted sickly yellow eyes, and pointed ears always upright. Long lean legs end in sharp black claws that clatter on stone. Its thin low tail, barely bushy, lashes the air as it circles prey. | C'est un prédateur élancé de la taille d'un grand loup, au corps maigre et musclé taillé pour la course. Son pelage hirsute et gris-cendré, strié de noir le long de l'échine, se hérisse sur la nuque quand il menace. Sa tête allongée porte un museau effilé aux babines retroussées, des yeux obliques d'un jaune maladif et des oreilles pointues toujours dressées. Ses longues pattes sèches se terminent par des griffes noires acérées qui claquent sur la pierre. Sa queue maigre et basse, à peine touffue, fouette l'air lorsqu'il encercle sa proie. |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Age` | null | null |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Environment` | Dark forests, misty moors, and battlefield corpse heaps in Trudvang. | Forêts sombres, landes brumeuses et charniers des champs de bataille de Trudvang. |
+| `TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Weapon0Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Name` | Falcon | Faucon |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Description` | This small slender raptor has a streamlined body and compact chest, with blue-gray plumage on its back and white below, finely barred in black. Its round head bears a short strongly hooked beak with a tomial tooth, and a dark moustache below piercing yellow-ringed eyes. Long narrow pointed sickle-shaped wings give it lightning-fast flight. Fine yellow feet end in sharp talons. Its narrow barred tail steers its dizzying dives. | C'est un petit rapace svelte au corps fuselé et à la poitrine compacte, couvert d'un plumage gris-bleuté sur le dos et blanc finement barré de noir dessous. Sa tête ronde porte un bec court et fortement crochu muni d'une dent tomiale, ainsi qu'une moustache sombre sous ses yeux perçants cerclés de jaune. Ses ailes longues, étroites et pointues en faucille lui donnent un vol fulgurant. Ses pattes jaunes et fines se terminent par des serres acérées. Sa queue étroite et barrée sert de gouvernail dans ses piqués vertigineux. |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Age` | null | null |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Environment` | Rocky coasts, cliffs, and open Trudvang skies, sometimes trained by clan falconers. | Côtes rocheuses, falaises et ciels ouverts de Trudvang, parfois dressé par les fauconniers des clans. |
+| `TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon0Part0` | Sweep | Balayage |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon1Part0` | Tusks | Défense |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Name` | Mastomant | Mastomant |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Description` | This colossal barrel-bodied beast is covered in incredibly thick long brown fur over a woolly undercoat. Its massive head bears small hairy ears, tiny sunken eyes, and a muscular trunk hanging to its knees. Two immense curved ivory tusks rise from its upper jaw and turn toward the sky. Trunk-like pillar legs end in broad padded feet with thick nails. Its short rope-like tail beats against its shaggy flanks. | C'est une bête colossale au corps en forme de tonneau, couverte d'une fourrure incroyablement épaisse, longue et brune, doublée d'un sous-poil laineux. Sa tête massive porte de petites oreilles poilues, de minuscules yeux enfoncés et une trompe musculeuse pendant jusqu'aux genoux. Deux défenses immenses, courbes et ivoirines, s'élancent de sa mâchoire supérieure et se recourbent vers le ciel. Ses pattes colonnaires, semblables à des troncs, se terminent par de larges pieds coussinés aux ongles épais. Sa queue courte et cordée bat contre ses flancs velus. |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Age` | null | null |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Environment` | Frozen steppes, tundra, and wind-scoured valleys in Trudvang's far north. | Steppes glacées, toundras et vallées battues par les vents du Grand Nord de Trudvang. |
+| `TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Weapon0Part0` | Kick | Ruade |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Name` | Mule/Donkey | Mule/âne |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Description` | This sturdy equine has a compact body, prominent spine, and straight hard back. Its coarse short gray, brown, or reddish coat is lighter around muzzle and belly. Its long head bears very large mobile ears, gentle eyes, and a narrow tough-mouthed muzzle. Fine but surprisingly strong legs end in narrow very durable hooves. A thin tail with a dark tuft and a short upright mane complete its frugal appearance. | C'est un équidé robuste au corps compact, à l'échine saillante et au dos droit et dur. Son pelage rude et court, gris, brun ou vineux, est plus clair autour du museau et du ventre. Sa tête longue porte de très grandes oreilles mobiles, des yeux doux et un museau étroit à la bouche dure. Ses jambes fines mais étonnamment solides se terminent par des sabots étroits et très résistants. Sa queue fine terminée par un toupet sombre et sa crinière rase et dressée complètent son aspect frugal. |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Age` | null | null |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Environment` | Mountain trails, stony passes, and isolated Trudvang farms; a caravan pack animal. | Sentiers de montagne, cols pierreux et fermes isolées de Trudvang, bête de somme des caravanes. |
+| `TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Name` | Moose | Orignal |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Description` | This largest deer has a massive body, humped shoulders, and very long pale legs. Its thick brown-black fur contrasts with an enormous hanging hairy muzzle and broad nostrils. Males bear gigantic palmate antlers like toothed shovels, spanning several fathoms. Broad ears and small eyes give its head a heavy expression. Wide splayed hooves carry it easily through marshes and deep snow. | C'est le plus grand des cervidés, au corps massif, au garrot bossu et aux pattes très longues et pâles. Son pelage épais brun-noir contraste avec son museau énorme, pendant et velu, surmonté de naseaux larges. Le mâle porte une ramure palmée et gigantesque, en forme de pelles dentelées pouvant s'étendre sur plusieurs brasses. Ses oreilles larges et ses yeux petits donnent à sa tête une expression lourde. Ses sabots larges et évasés le portent sans peine dans les marais et la neige profonde. |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Age` | null | null |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Environment` | Boreal forests, peat bogs, and shallow lakes in northern Trudvang. | Forêts boréales, tourbières et lacs peu profonds du nord de Trudvang. |
+| `TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon1Part0` | Claws | Griffes |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Name` | Bear | Ours |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Description` | This massive plantigrade animal has a barrel-shaped body, humped shoulders, and a broad round head. Thick shaggy brown-to-black fur forms a neck ruff and sometimes lightens to silver tips on its back. Its elongated muzzle has a wet black nose, small dark eyes, and short rounded ears. Powerful feet bear long nonretractile claws that plow the ground. Its tiny tail almost vanishes beneath the rump's fur. | C'est un plantigrade massif au corps en tonneau, aux épaules bossues et à la tête large et ronde. Sa fourrure épaisse et hirsute, brune à noire, forme une collerette autour du cou et s'éclaircit parfois en pointe argentée sur le dos. Son museau allongé porte une truffe noire et humide, de petits yeux sombres et de courtes oreilles arrondies. Ses pattes puissantes sont armées de longues griffes non rétractiles qui labourent le sol. Sa queue minuscule disparaît presque sous les poils de sa croupe. |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Age` | null | null |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Environment` | Deep forests, caves, and berry-covered slopes throughout Trudvang, from Mittland woods to the mountains. | Forêts profondes, cavernes et pentes à baies de tout Trudvang, des bois de Mittland aux montagnes. |
+| `TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Name` | Fox | Renard |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Description` | This small slender canine has an elongated body, fine legs, and a light carriage. Dense silky fur, bright red on the back, white beneath the throat, and black on lower legs and ear backs, thickens in winter. Its fine head bears a pointed black-nosed muzzle, upright triangular ears, and amber slit-pupiled eyes. Delicate feet have hairy pads adapted to snow. Its long thick bushy white-tipped tail serves as both balance and blanket. | C'est un petit canidé svelte au corps allongé, aux pattes fines et au port léger. Son pelage dense et soyeux, roux vif sur le dos, blanc sous la gorge et noir sur le bas des pattes et l'arrière des oreilles, s'épaissit en hiver. Sa tête fine porte un museau pointu à la truffe noire, des oreilles triangulaires dressées et des yeux ambrés à pupilles fendues. Ses pattes délicates se terminent par des coussinets poilus adaptés à la neige. Sa queue longue, épaisse et touffue, terminée de blanc, lui sert de balancier et de couverture. |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Age` | null | null |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Environment` | Trudvang forest edges, clearings, and moors, prowling close to farms and villages. | Lisières, clairières et landes de Trudvang, rôdant jusqu'aux abords des fermes et villages. |
+| `TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Weapon0Part0` | Tusks | Défense |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Name` | Snow Boar | Sanglier des neiges |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Description` | This stocky wild pig has a wedge-shaped body, taller in front than behind, covered in long rough whitish bristles over dense underfur. Its massive wedge-shaped head bears a broad mobile snout, small sunken eyes, and pointed hair-fringed ears. Two yellowish upward-curving tusks protrude from its jaws and sharpen against each other. Short muscular legs end in dark hooves that scrape snow. Its thin tuft-ended tail flicks nervously when it charges. | C'est un porc sauvage trapu au corps en forme de coin, plus haut à l'avant qu'à l'arrière, couvert de soies longues, rêches et blanchâtres mêlées d'un sous-poil dense. Sa tête massive et cunéiforme porte un groin large et mobile, de petits yeux enfoncés et des oreilles pointues bordées de poils. Deux défenses jaunâtres recourbées vers le haut saillent de sa gueule et s'aiguisent l'une contre l'autre. Ses pattes courtes et musclées se terminent par des sabots noirâtres qui raclent la neige. Sa queue fine terminée par un pinceau claque nerveusement quand il charge. |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Age` | null | null |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Environment` | Snowy forests, taiga, and frozen Trudvang plains, rooting beneath the snow in clearings. | Forêts enneigées, taïgas et plaines glacées de Trudvang, fouissant sous la neige des clairières. |
+| `TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Weapon0Part0` | Horns | Cornes |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Name` | Cow | Vache |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Description` | This peaceful bovine has a full body, broad belly, and straight back covered in short soft brown, black, white, or piebald fur. Its long head bears a broad pink or black muzzle, great long-lashed eyes, and mobile side-facing ears. Small curved horns, or no horns depending on the individual, adorn its forehead. Strong legs end in cloven hooves suited to wet pasture. Its full udder and long fly-swatting tail mark its familiar silhouette. | C'est un bovidé paisible au corps plein, au ventre large et au dos droit, couvert d'un pelage court et doux, brun, noir, blanc ou pie. Sa tête allongée porte un large mufle rose ou noir, de grands yeux bordés de longs cils et des oreilles latérales mobiles. De petites cornes courbes ou une simple absence de cornes selon les individus ornent son front. Ses pattes robustes se terminent par des sabots fendus bien adaptés aux pâtures humides. Sa mamelle pleine et sa queue longue chassant les mouches marquent sa silhouette familière. |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Age` | null | null |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Environment` | Lush meadows, cowsheds, and farm enclosures in Mittland and sheltered Trudvang valleys. | Prairies grasses, étables et enclos des fermes de Mittland et des vallées abritées de Trudvang. |
+| `TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Weapon0Part0` | Bite | Morsure |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Name` | Wulter | Wulter |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Description` | This titanic sea monster has an elongated serpentine body covered in thick slate-colored skin shining as if oiled. Its enormous flattened head bears gaping jaws with rows of conical teeth, bulging eyes gleaming underwater, and hissing blowholes. Powerful side fins and a massive paddle-shaped tail drive it through raging seas. Ridges of spines or rough baleen bristle on its back and neck. Pale scars and encrusted barnacles mottle its ancient hide. | C'est un monstre marin titanesque au corps allongé et serpentiforme, couvert d'une peau épaisse, ardoisée et luisante comme huilée. Sa tête énorme et aplatie porte une gueule béante hérissée de rangées de dents coniques, des yeux globuleux luisant sous l'eau et des évents sifflants. Des nageoires latérales puissantes et une queue massive en forme de rame le propulsent dans les flots déchaînés. Des crêtes d'épines ou de fanons rugueux hérissent son dos et sa nuque. Des cicatrices pâles et des balanes incrustées marbrent son cuir ancien. |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Age` | null | null |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Environment` | Frozen seas, deep fjords, and storm-battered breakers around Trudvang. | Mers glacées, fjords profonds et brisants battus par les tempêtes autour de Trudvang. |
+| `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |

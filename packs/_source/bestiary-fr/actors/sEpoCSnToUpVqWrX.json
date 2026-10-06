@@ -1,0 +1,137 @@
+{
+  "name": "Cheval (petit)",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg",
+  "items": [
+    {
+      "_id": "0f8lD8C8D9EaGbHc",
+      "name": "Ruade",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "kick",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!sEpoCSnToUpVqWrX.0f8lD8C8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Rapide",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+        "description": "<p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!sEpoCSnToUpVqWrX.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "sEpoCSnToUpVqWrX",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Ruade",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 62,
+        "max": 62
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "C'est un petit cheval robuste au corps compact, au ventre rond et aux jambes courtes et solides. Sa robe épaisse et hirsute en hiver, souvent baie, brune ou pie, le protège du froid. Sa tête un peu forte porte un toupet abondant, de petites oreilles poilues et des yeux doux. Sa crinière drue et sa queue très fournie ne sont presque jamais taillées. Ses sabots petits mais très durs supportent sans peine les terrains pierreux.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "1.5",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 62,
+      "bodyMax": 62,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Petit, poilu et infatigable.",
+      "environment": "Collines venteuses, tourbières et fermes pauvres des confins de Trudvang, sentiers de montagne.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "sEpoCSnToUpVqWrX",
+  "_key": "!actors!sEpoCSnToUpVqWrX",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

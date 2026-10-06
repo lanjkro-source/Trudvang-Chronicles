@@ -1,0 +1,19 @@
+{
+  "_id": "dPcuOKeKfLgMhNiO",
+  "name": "Fog",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "dPcuOKeKfLgMhNiO",
+    "summary": "The diser surrounds itself with fog.",
+    "description": "<p>The diser has the ability to summon a fog that spreads out from the wraith at a speed of 1-5 meters per action round. How far the fog can spread, how high above the ground it stretches, and how long it lasts is all up to the game master to decide. Most disers have this ability.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!dPcuOKeKfLgMhNiO",
+  "folder": null
+}

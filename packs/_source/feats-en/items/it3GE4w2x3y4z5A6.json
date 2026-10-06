@@ -1,0 +1,19 @@
+{
+  "_id": "it3GE4w2x3y4z5A6",
+  "name": "Frenzy (hrim troll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "it3GE4w2x3y4z5A6",
+    "summary": "For the first 1d6 combat rounds: +2 to attacks and -2 to parries.",
+    "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 159
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!it3GE4w2x3y4z5A6",
+  "folder": null
+}

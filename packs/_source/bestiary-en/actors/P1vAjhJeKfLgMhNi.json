@@ -1,0 +1,256 @@
+{
+  "name": "Hrimtursir",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
+  "items": [
+    {
+      "_id": "cJH8URlRmSnToUpV",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.cJH8URlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "name": "Breid spjót (broad spear)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "4d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 3.5,
+        "value": 20,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "RtGzHkMhNiOjPkQl",
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.RtGzHkMhNiOjPkQl",
+      "effects": []
+    },
+    {
+      "_id": "VJdXu9D9EaGbHcId",
+      "name": "Hrim Body (hrimtursir)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "VJdXu9D9EaGbHcId",
+        "summary": "Cold sphere 10 m in diameter, resist at situation value 6 (Psyche), increasing d6 damage.",
+        "description": "<p>The hrimtursir has lived in the cold for such an extensive amount of time that its body has absorbed the cold. An ever-present frost pulsates in a sphere around the giant. The sphere is 10 meters in diameter. All who stand within it must make a situation roll with a situation value of 6 (Psyche modifiers apply) in order to not flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves. A character with a full set of winter clothing that is made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 134
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.VJdXu9D9EaGbHcId"
+    },
+    {
+      "_id": "BlV2voQlRmSnToUp",
+      "name": "Grip",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BlV2voQlRmSnToUp",
+        "summary": "After a successful unarmed attack, grips without further CP; crush damage depends on size, or a throw deals 1d10 (OR 10) per 3 m fallen.",
+        "description": "<p>After a successful unarmed attack, a giant can attempt to grip a victim of Size 1/2 to 3 without spending additional CP. Make a skill roll whose SV depends on the victim's size. The victim can avoid the grip with Agility, preferably the Evade specialty.</p><p>Each round the giant can crush or throw the victim. Crushing damage depends on the victim's size. A throw deals 1d10 (OR 10) damage for every 3 meters fallen; use the actual fall height. A firdtursir is usually 20-22 m tall, giving 6d10-7d10 (OR 10); a hrimtursir 14-15 m, giving 4d10-5d10 (OR 10); a muspeljotun 25-27 m, giving 8d10-9d10 (OR 10). A vidrjotun is also 25-27 m tall, but its lower body is often half buried: the GM determines the actual height and falling damage.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.BlV2voQlRmSnToUp"
+    },
+    {
+      "_id": "WOIjW3u0v1w2x3y4",
+      "name": "Frenzy (hrimtursir)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "WOIjW3u0v1w2x3y4",
+        "summary": "After losing half its BP, +4 to attacks and no parries.",
+        "description": "<p>When a hrimtursir has taken half its Body Points in damage, it fights with a greater frenzy. In this state, it has +4 on all attacks. This also means that the giant will not parry.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 132
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.WOIjW3u0v1w2x3y4"
+    },
+    {
+      "_id": "1ASxnvZu0v1w2x3y",
+      "name": "Horn Throw",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "1ASxnvZu0v1w2x3y",
+        "summary": "Horn sweep for up to 1d10 damage followed by a throw; falling damage depends on height.",
+        "description": "<p>The hrimtursir uses its great horns in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the giant then throws those enemies high into the air. The sweep itself seldom causes more than 1d10 points of damage, but the fall that comes after having been thrown so high causes severe fall damage to be established by the GM according to how far one falls (check the falling rules in the Game Master Guide book).</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 134
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.1ASxnvZu0v1w2x3y"
+    },
+    {
+      "_id": "VyAXJ4y4z5A6B7C8",
+      "name": "Fire Weakness",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "VyAXJ4y4z5A6B7C8",
+        "summary": "The hrimtursir takes double damage from fire.",
+        "description": "<p>Hrimtursirs take double damage from any sort of fire.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 132
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!P1vAjhJeKfLgMhNi.VyAXJ4y4z5A6B7C8"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "P1vAjhJeKfLgMhNi",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 5,
+    "height": 5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 5,
+        "kind": "discipline"
+      },
+      {
+        "name": "Two-Handed Weapons",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 5,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Breid spjót (broad spear)",
+          "value": 15
+        },
+        {
+          "attack": "Breid spjót (broad spear)",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 231,
+        "max": 231
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 64
+    },
+    "description": "The hrimtursir is the smallest giant, usually fourteen to fifteen meters tall. It walks bent forward, and its face resembles a gray troll's. Its body has absorbed the cold and is described as an ice body that constantly releases cold around it. It bears great horns used in battle to strike and throw enemies into the air. Giants carry many skulls and objects tied to their bodies and clothing. Its belly holds white gold called hrimguld, or ice gold.",
+    "details": {
+      "creatureType": "Jotuns and thurses",
+      "type": "humanoid",
+      "size": "8",
+      "age": "100, max 175",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 208,
+      "bodyMax": 255,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "8 m",
+          "max": "64 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Small hunched ice giant with horns and a gray troll's face.",
+      "environment": "Northern cold, ice, and Jarngand slopes, in ice strongholds; observed as far as Wildland",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 132
+      }
+    }
+  },
+  "_id": "P1vAjhJeKfLgMhNi",
+  "_key": "!actors!P1vAjhJeKfLgMhNi",
+  "folder": "f5hlljKfLgMhNiOj"
+}

@@ -1,0 +1,143 @@
+{
+  "name": "Falcon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/qvQbCJeKfLgMhNiO.jpg",
+  "items": [
+    {
+      "_id": "2Mk8KQjPkQlRmSnT",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d3",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!qvQbCJeKfLgMhNiO.2Mk8KQjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!qvQbCJeKfLgMhNiO.41hqc1sYtZu0v1w2"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "qvQbCJeKfLgMhNiO",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/qvQbCJeKfLgMhNiO.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 16,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 16,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "action": "movement",
+          "mode": "flight",
+          "distance": 20,
+          "value": 10
+        },
+        {
+          "attack": "Claws",
+          "value": 16
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 15,
+        "max": 15
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "This small slender raptor has a streamlined body and compact chest, with blue-gray plumage on its back and white below, finely barred in black. Its round head bears a short strongly hooked beak with a tomial tooth, and a dark moustache below piercing yellow-ringed eyes. Long narrow pointed sickle-shaped wings give it lightning-fast flight. Fine yellow feet end in sharp talons. Its narrow barred tail steers its dizzying dives.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "bird",
+      "size": "0.33",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 15,
+      "bodyMax": 15,
+      "move": [
+        {
+          "mode": "vol",
+          "distance": "4 m",
+          "max": "32 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Lightning-fast gray-and-white hunter with a hooked beak.",
+      "environment": "Rocky coasts, cliffs, and open Trudvang skies, sometimes trained by clan falconers.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "qvQbCJeKfLgMhNiO",
+  "_key": "!actors!qvQbCJeKfLgMhNiO",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

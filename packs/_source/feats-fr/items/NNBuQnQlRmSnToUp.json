@@ -1,0 +1,19 @@
+{
+  "_id": "NNBuQnQlRmSnToUp",
+  "name": "Transformation corporelle",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NNBuQnQlRmSnToUp",
+    "summary": "Le démon peut se transformer en une créature de son choix.",
+    "description": "<p>Le démon peut se transformer en une créature de son choix.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NNBuQnQlRmSnToUp",
+  "folder": null
+}

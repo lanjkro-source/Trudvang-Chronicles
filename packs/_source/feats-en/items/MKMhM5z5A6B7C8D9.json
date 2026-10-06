@@ -1,0 +1,19 @@
+{
+  "_id": "MKMhM5z5A6B7C8D9",
+  "name": "Change Shape (fjol troll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MKMhM5z5A6B7C8D9",
+    "summary": "The fjol troll can transform at will into almost anything.",
+    "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 148
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MKMhM5z5A6B7C8D9",
+  "folder": null
+}

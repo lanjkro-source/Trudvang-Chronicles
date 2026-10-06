@@ -1,0 +1,19 @@
+{
+  "_id": "zcDFK9A6B7C8D9Ea",
+  "name": "Vision dans le noir (10 à 60 m)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "zcDFK9A6B7C8D9Ea",
+    "summary": "Vision dans le noir total normale jusqu’à 10 m, puis décroissante jusqu’à environ 60 m.",
+    "description": "<p>Un griffon voit à 10 mètres dans l’obscurité totale comme s’il était en plein jour. Cette vision diminue graduellement avec la distance et porte jusqu’à 60 mètres environ.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 23
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!zcDFK9A6B7C8D9Ea",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "gkcwjKdJeKfLgMhN",
+  "name": "Tête de huvfurwurm",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gkcwjKdJeKfLgMhN",
+    "summary": "Chaque tête du huvfurwurm lui donne +2PC pour les morsures.",
+    "description": "<p>La tête du huvfurwurm ajoute sa réserve de points de combat de Morsure à celle du corps et utilise la réserve du corps pour les attaques.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 111
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gkcwjKdJeKfLgMhN",
+  "folder": null
+}

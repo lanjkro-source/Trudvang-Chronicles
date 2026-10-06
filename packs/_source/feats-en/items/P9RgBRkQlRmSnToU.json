@@ -1,0 +1,19 @@
+{
+  "_id": "P9RgBRkQlRmSnToU",
+  "name": "Healing Dance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "P9RgBRkQlRmSnToU",
+    "summary": "Each fairy dancing above a wounded creature heals 1d3 damage.",
+    "description": "<p>A fairy that performs this dance above a wounded person heals the person of 1d3 points of damage. The more fairies dancing, the greater the healing.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 73
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!P9RgBRkQlRmSnToU",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "flAdvMhNiOjPkQlR",
+  "name": "Corps de fumée",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "flAdvMhNiOjPkQlR",
+    "summary": "Transformation en 3 tours sans défense ; déplacement 30 m/tour, récupération de 10 PS/jour sous forme de fumée.",
+    "description": "<p>Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.</p><p>Le draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.</p><p>La transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 50
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!flAdvMhNiOjPkQlR",
+  "folder": null
+}

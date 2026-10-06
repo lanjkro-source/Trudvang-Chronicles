@@ -1,0 +1,209 @@
+{
+  "name": "Grendel",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg",
+  "items": [
+    {
+      "_id": "0oSkq8A6B7C8D9Ea",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.0oSkq8A6B7C8D9Ea",
+      "effects": []
+    },
+    {
+      "_id": "hox6RsVqWrXsYtZu",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.hox6RsVqWrXsYtZu",
+      "effects": []
+    },
+    {
+      "_id": "AAWA3VqWrXsYtZu0",
+      "name": "Regard terrifiant",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "AAWA3VqWrXsYtZu0",
+        "summary": "Le regard du grendel fait fuir même les guerriers les plus aguerris.",
+        "description": "<p>Un grendel est un ennemi vraiment horrible à contempler. Même le plus aguerri des guerriers fuit en le voyant, principalement à cause de son terrifiant regard. Quand une victime croise le regard d’un grendel, elle doit effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). Un test réussi signifie que la victime se sort indemne de cette épreuve. Un test raté signifie qu’elle obtient 1d10 (JO 9-10) points de peur et un modificateur négatif de -4 à toutes ses actions tant que le grendel est présent. Ce modificateur s’ajoute à ceux normalement appliqués par le niveau de peur atteint. Le test de situation doit être effectué lorsqu’un grendel spécifique est aperçu pour la première fois, et à chaque fois que le MJ l’exige.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 75
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.AAWA3VqWrXsYtZu0"
+    },
+    {
+      "_id": "UZodjJdJeKfLgMhN",
+      "name": "Sang de morkvitner",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "UZodjJdJeKfLgMhN",
+        "summary": "Protection naturelle élevée et immunité aux sorts de vitner et aux talents divins.",
+        "description": "<p>Le sang du grendel semble saturé de morkvitner. C’est également le cas de sa peau couleur de boue qui le protège efficacement (cette protection est déjà prise en compte dans la valeur très élevée de son armure naturelle).</p><p>Le sang de morkvitner confère également au grendel une immunité aux sorts de vitner et aux talents divins.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 75
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.UZodjJdJeKfLgMhN"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!zUKXHbFaGbHcIdJe.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zUKXHbFaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 6,
+      "dexterity": -2,
+      "strength": 3
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 12
+        },
+        {
+          "attack": "Griffes",
+          "value": 13
+        },
+        {
+          "attack": "Griffes",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 79,
+        "max": 79
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 27
+    },
+    "description": "Le grendel est une créature géante et monstrueuse des marais. Il ne montre son infect visage qu'une fois la nuit tombée. Son regard est terrifiant et fait fuir même les guerriers les plus aguerris. Sa peau est couleur de boue et le protège efficacement. Il possède un cou, des bras et des jambes, ainsi qu'une gueule pour mordre et des griffes. Son sang semble saturé de morkvitner.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "humanoid",
+      "size": "3",
+      "age": "25, max 60",
+      "naturalArmor": 4,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 71,
+      "bodyMax": 87,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "3 m",
+          "max": "27 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Géant des marais à la peau de boue, au visage infect et au regard terrifiant",
+      "environment": "Marais, étangs aux eaux boueuses au plus profond des forêts, surtout en Soj, au Mittland et dans les Stormländer",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 74
+      }
+    }
+  },
+  "_id": "zUKXHbFaGbHcIdJe",
+  "_key": "!actors!zUKXHbFaGbHcIdJe",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

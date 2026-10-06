@@ -1,0 +1,19 @@
+{
+  "_id": "9uVrYHcIdJeKfLgM",
+  "name": "Saisie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "9uVrYHcIdJeKfLgM",
+    "summary": "Après une morsure, prise en gueule à VC 10 opposée à la Force ; maintien testé à chaque tour et 1d10 (JO 9-10) dégâts/tour.",
+    "description": "<p>Après avoir réussi une attaque de Morsure, un lindwurm peut tenter de saisir une victime dans sa gueule. S’il y parvient, il peut tenter de maintenir la victime entre ses mâchoires. En réussissant un test de Saisie (valeur de compétence 10), le lindwurm garde la victime dans sa gueule (si la victime a une Force exceptionnelle, on déduit son modificateur de la valeur de compétence). Un lindwurm retourne le plus souvent à son antre en rampant dès qu’il réussit à saisir une proie.</p><p>Le lindwurm doit réussir un test de compétence de Saisie à chaque nouveau tour de jeu afin de maintenir sa prise sur la victime. À chaque tour pendant lequel le lindwurm maintient la victime dans sa gueule, celle-ci subit 1d10 (JO 9-10) points de dégâts.</p><p>Le maître de jeu décide si le lindwurm lâche sa prise lorsqu’il est attaqué ou blessé par un ennemi. Par exemple, un test de situation avec une valeur de situation de 15 peut être effectué chaque fois que le wurm subit plus de 15 points de dégâts pour savoir s’il lâche sa prise. Pour chaque point de dégâts au-dessus de 15, la valeur de situation est réduite de 1. Ainsi, Si le lindwurm subit 20 points de dégâts, il doit effectuer un test de situation avec une valeur de situation de 10 (15-5).</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 120
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!9uVrYHcIdJeKfLgM",
+  "folder": null
+}

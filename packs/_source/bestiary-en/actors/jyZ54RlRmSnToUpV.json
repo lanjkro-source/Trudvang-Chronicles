@@ -1,0 +1,212 @@
+{
+  "name": "Thorn Beast",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV.jpg",
+  "items": [
+    {
+      "_id": "he4YoTlRmSnToUpV",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!jyZ54RlRmSnToUpV.he4YoTlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "_id": "gEvWVXpVqWrXsYtZ",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!jyZ54RlRmSnToUpV.gEvWVXpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "_id": "GbEsz3v1w2x3y4z5",
+      "name": "Terrifying Stench",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "GbEsz3v1w2x3y4z5",
+        "summary": "The thorn beast’s foul smell spreads fear nearby.",
+        "description": "<p>The inner organs of a thorn beast are in a constant process of rot due to the unpleasant effects of the thornroot. This means that the great winged lizard carries a horrid and pungent stench of dead flesh and decay. A human being with a normal sense of smell can detect the stench at a distance of 50 meters. Anyone who approaches the beast closer than 5 meters gains 1d10 (OR 9-10) Fear Points due to the stench. This does not apply to tamers and expert riders which usually get used to the stench due to the long time spent with the beast.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!jyZ54RlRmSnToUpV.GbEsz3v1w2x3y4z5"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!jyZ54RlRmSnToUpV.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "XNbb4nRmSnToUpVq",
+      "name": "Attack From Above (thorn beast)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "XNbb4nRmSnToUpVq",
+        "summary": "Dive at SV 8: bite 2d10 (OR 7-10) +6 and claws 2d10 (OR 8-10) +6; usable every 6 rounds.",
+        "description": "<p>For a thorn beast to succeed with an attack from above, it must succeed on a skill roll for the ability (SV 8). As part of the attack, the power and speed of the thorn beast is used, which increases the damage of the bite attack to 2d10 (OR 7-10) +6 and the claw attack to 2d10 (OR 8-10) + 6. The thorn beast can perform one attack from above every 6 action rounds, since it must circle around for at least 5 rounds.</p><p>One who wishes to attack a thorn beast performing a flyby attack has a modifier of -3 on all attacks. However, it is easier to see where the thorn beast will attack, which means the victim has a modifier of +2 when parrying the attacks of a thorn beast.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 25
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!jyZ54RlRmSnToUpV.XNbb4nRmSnToUpVq"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "jyZ54RlRmSnToUpV",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        },
+        {
+          "attack": "Claws",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 170,
+        "max": 170
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "This gigantic winged lizard arose from a small bat that became monstrous. Its broad-winged body stands about two and a half meters high. Its jaws hold long, strong fangs. Its empty eyes reflect a pale gleam of death at night. Its body continually rots from within, trailing an acrid stench of dead flesh and decay. Clawed feet and a powerful bite complete its shape as a flying predator.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "winged quadruped",
+      "size": "6",
+      "age": "70, max. 150",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 7-10)",
+      "bodyMin": 153,
+      "bodyMax": 188,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "18 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "12 m",
+          "max": "36 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Rotting giant bat with a corpse-like stench and enormous fangs.",
+      "environment": "Not specified",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 25
+      }
+    }
+  },
+  "_id": "jyZ54RlRmSnToUpV",
+  "_key": "!actors!jyZ54RlRmSnToUpV",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

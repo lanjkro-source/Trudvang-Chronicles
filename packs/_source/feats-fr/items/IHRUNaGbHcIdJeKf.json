@@ -1,0 +1,19 @@
+{
+  "_id": "IHRUNaGbHcIdJeKf",
+  "name": "Persuasion",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "IHRUNaGbHcIdJeKf",
+    "summary": "Résister aux paroles du kungstroll demande VS 12 (Psychisme).",
+    "description": "<p>Au lieu de capturer ses proies par la force, le kungstroll aime faire appel au vitner ou à son pouvoir de persuasion. Les victimes qui entendent ce que leur dit le troll roi doivent chacune réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) afin de résister à son pouvoir de persuasion.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 160
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!IHRUNaGbHcIdJeKf",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "KldIdUlRmSnToUpV",
+  "name": "Sacrifice vital",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "KldIdUlRmSnToUpV",
+    "summary": "Boire le sang prolonge le séjour du draugr : 30 jours pour le sang humain, 60 pour le sang elfique.",
+    "description": "<p>Un draugr qui a bu du sang humain jusqu’à satiété peut prolonger son séjour dans le monde des vivants d’un mois lunaire (30 jours et 30 nuits). Le sang d’elfe lui permet de prolonger son séjour de deux mois lunaires alors que le sang de troll ne lui accorde qu’une semaine ou deux seulement. Le sang des animaux lui procure moins de temps, une journée ou quelques heures seulement, en fonction de la force de l’animal. Le draugr peut se nourrir jusqu’à être rassasié (10 points de santé) plusieurs fois par jour.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 50
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!KldIdUlRmSnToUpV",
+  "folder": null
+}

@@ -287,7 +287,10 @@ export class NpcData extends foundry.abstract.TypeDataModel {
           name: string(),
           protection: integer(0),
           initiative: integer(0)
-        }), {required: true, initial: []})
+        }), {required: true, initial: []}),
+        summary: string(),
+        environment: string(),
+        source: schema({book: string(), page: integer(0, {min: 0})})
       }),
       skills: skillsSchema(),
       // Book skill tree (flat, tree-ordered): reference and roll rows on the NPC sheet for
@@ -307,6 +310,9 @@ export class NpcData extends foundry.abstract.TypeDataModel {
       // existing worlds validate without any migration.
       attacks: new fields.ArrayField(new fields.ArrayField(schema({
         attack: string(),
+        action: string(),
+        mode: string(),
+        distance: number(0, {min: 0}),
         value: integer(0)
       }), {required: true, initial: []}), {required: true, initial: []}),
       description: html()
@@ -527,6 +533,12 @@ export class AbilityData extends BaseItemData {
 }
 
 export const ACTOR_DATA_MODELS = {character: CharacterData, npc: NpcData};
+export class CreatureAbilityData extends foundry.abstract.TypeDataModel {
+  static defineSchema() {
+    return {catalogId: string(), description: html(), summary: string(),
+      source: schema({book: string(), page: integer(0, {min: 0})}), ignoreWoundPenalties: boolean(false)};
+  }
+}
 export const ITEM_DATA_MODELS = {
   weapon: WeaponData,
   armor: ArmorData,
@@ -536,5 +548,6 @@ export const ITEM_DATA_MODELS = {
   spell: SpellData,
   tablet: TabletData,
   divineFeat: DivineFeatData,
-  ability: AbilityData
+  ability: AbilityData,
+  creatureAbility: CreatureAbilityData
 };

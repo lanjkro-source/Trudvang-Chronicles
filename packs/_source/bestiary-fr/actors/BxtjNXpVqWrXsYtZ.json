@@ -1,0 +1,250 @@
+{
+  "name": "Vidrjotun",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg",
+  "items": [
+    {
+      "_id": "9noFvlPkQlRmSnTo",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": -6,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.9noFvlPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Arbre déraciné ou rocher",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "4d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -7,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "WpQT1ZtZu0v1w2x3",
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.WpQT1ZtZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "_id": "BlV2voQlRmSnToUp",
+      "name": "Empoignement",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BlV2voQlRmSnToUp",
+        "summary": "Après une attaque à mains nues réussie, saisie sans PC supplémentaires ; écrasement selon la taille ou projection infligeant 1d10 (JO 10) par tranche de 3 m de chute.",
+        "description": "<p>Après une attaque à mains nues réussie, le géant peut tenter d’empoigner une victime de Taille 1/2 à 3 sans dépenser de PC supplémentaires. Il effectue un test de compétence dont la VC dépend de la taille de la victime. Celle-ci peut éviter l’empoignement grâce à Agilité, de préférence avec la spécialité Esquive.</p><p>À chaque tour, le géant peut écraser sa victime ou la projeter. Les dégâts d’écrasement dépendent de la taille de la victime. Une projection inflige 1d10 (JO 10) points de dégâts par tranche de 3 mètres de chute ; il faut utiliser la hauteur effective de la chute. Un firdtursir mesure généralement 20 à 22 m, soit 6d10 à 7d10 (JO 10) ; un hrimtursir 14 à 15 m, soit 4d10 à 5d10 (JO 10) ; un muspeljotun 25 à 27 m, soit 8d10 à 9d10 (JO 10). Un vidrjotun mesure également 25 à 27 m mais a souvent le bas du corps à moitié enfoui dans la terre : le MJ détermine donc la hauteur réelle et les dégâts de chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.BlV2voQlRmSnToUp"
+    },
+    {
+      "_id": "A0zCfjKfLgMhNiOj",
+      "name": "Façonnage des arbres",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "A0zCfjKfLgMhNiOj",
+        "summary": "Le vidrjotun modèle les arbres et les bois à sa guise.",
+        "description": "<p>Les vidrjotuns ont développé le pouvoir de refaçonner les arbres comme ils le souhaitent. Ils peuvent réorganiser de grandes forêts entières ou refaçonner des troncs pris individuellement.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 142
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.A0zCfjKfLgMhNiOj"
+    },
+    {
+      "_id": "Orm9QLfLgMhNiOjP",
+      "name": "Sève curative",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Orm9QLfLgMhNiOjP",
+        "summary": "Sève fraîche : 1d10 (JO 6-10) PS ; durcie : 1d10 (JO 8-10) PS ; ambre porté : +1 PS/jour de guérison.",
+        "description": "<p>Les vidrjotuns sont très proches de Trudvang et détiennent en eux la force vitale de la terre. Au lieu d’avoir, comme de nombreuses autres créatures de ce monde, du sang dans leurs veines, ils ont de la sève, comme les arbres. Cette sève est pleine de vie et peut être utilisée pour soigner tous les êtres vivants.</p><p>Quand un vidrjotun est blessé et que sa sève touche le sol, de jolies fleurs et de l’herbe verte se mettent à pousser. La sève peut redonner vigueur aux plantes mortes et faire en sorte que les étendues les plus désolées redeviennent fertiles et abritent de nouveau quantité de plantes. La sève peut même dissiper la magie noire des choses avec laquelle elle entre en contact. Une créature blessée qui boit une gorgée de sève soignera instantanément 1d10 (JO 6-10) points de dégâts.</p><p>Quand la sève se solidifie, elle prend une consistance caoutchouteuse et collante et devient une substance aux propriétés curatives. Un morceau de sève durcie de la taille d’un gland permettra à ceux qui l’avalent de récupérer 1d10 (JO 8-10) points de santé. Une sève qui a durci pendant plusieurs centaines d’années prend une teinte ambrée et possède toujours des propriétés curatives. Ceux qui portent un morceau de cet ambre augmentent leur faculté de guérison naturelle de +1 point de santé par jour.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 142
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.Orm9QLfLgMhNiOjP"
+    },
+    {
+      "_id": "FNLRphJeKfLgMhNi",
+      "name": "Sève protectrice",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "FNLRphJeKfLgMhNi",
+        "summary": "Une arme ayant blessé le vidrjotun reste collée sur 1-4 au d10 ; extraction VS 12 (Force), -1 par tour suivant.",
+        "description": "<p>La sève qui coule dans les veines de ce géant à la place du sang est très collante. Quand un vidrjotun est blessé par une arme qui provoque l’écoulement de sa sève, il y a une probabilité que l’arme reste collée dans cette substance.</p><p>Un test de chance est effectué à chaque fois qu’une arme inflige des dégâts au géant. Un résultat de 1 à 4 sur 1d10 signifie que l’arme reste collée dans la sève et que le personnage qui souhaite la décoller doit réussir un test de situation avec une valeur de situation de 12 (le modificateur de Force s’applique). En cas d’échec, l’arme reste collée, mais un nouveau test de situation peut être tenté au tour suivant. La valeur de situation diminue de 1 pour chaque tour de jeu écoulé par la suite.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 143
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BxtjNXpVqWrXsYtZ.FNLRphJeKfLgMhNi"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "BxtjNXpVqWrXsYtZ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -1,
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 2,
+        "kind": "discipline"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 10
+        },
+        {
+          "attack": "Arbre déraciné ou rocher",
+          "value": 8
+        },
+        {
+          "attack": "Arbre déraciné ou rocher",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 434,
+        "max": 434
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 75
+    },
+    "description": "Le vidrjotun est un géant massif mesurant le plus souvent entre vingt-cinq et vingt-sept mètres de haut, dont la partie inférieure du corps est souvent à moitié enfouie dans la terre. La surface de son corps se compose de terre et non de peau, ce qui le fait ressembler à un grand monticule ou à une colline tapissée d'herbe. Assoupi pendant des générations, il laisse arbres et buissons pousser sur lui et fait fleurir tout végétal sur son sol fertile. Sa taille dépend de la nature du sol où il s'est assoupi : petite dans les sols rocheux et arides, bien plus grande dans les sols fertiles. Au lieu de sang, il a de la sève dans les veines, comme les arbres, une sève collante qui durcit à l'air. Il porte en lui les semences d'innombrables fleurs, arbres et autres végétaux qu'il dissémine à son réveil.",
+    "details": {
+      "creatureType": "Jotuns et thurses",
+      "type": "humanoid",
+      "size": "15",
+      "age": "350, max 600",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 391,
+      "bodyMax": 478,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "15 m",
+          "max": "75 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colline vivante de terre fertile à la sève curative, couverte de végétation.",
+      "environment": "Forêts, de préférence près d'un point d'eau où le sol reste fertile ; s'enfonce dans le sol pour dormir",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 141
+      }
+    }
+  },
+  "_id": "BxtjNXpVqWrXsYtZ",
+  "_key": "!actors!BxtjNXpVqWrXsYtZ",
+  "folder": "f5hlljKfLgMhNiOj"
+}

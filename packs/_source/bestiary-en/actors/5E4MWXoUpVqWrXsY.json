@@ -1,0 +1,2280 @@
+{
+  "name": "Byse",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg",
+  "items": [
+    {
+      "_id": "hde2nVpVqWrXsYtZ",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d2",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.hde2nVpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Seax (Dagger or Knife)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "A ubiquitous single-edged knife used for work, ritual blood gifting, throwing, and as a last-resort weapon.",
+        "source": "Game Master's Guide, p. 69",
+        "category": "oneHandedLight",
+        "damage": "1d5",
+        "openRoll": 0,
+        "weaponActions": 4,
+        "initiativeModifier": -1,
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "weight": 0.3,
+        "value": 2,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedLightWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "K7oe0NiOjPkQlRmS",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.K7oe0NiOjPkQlRmS",
+      "effects": []
+    },
+    {
+      "name": "Thick fabric armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "source": "Rulebook, p. 119",
+        "protection": 1,
+        "breach": {
+          "value": 10,
+          "max": 10
+        },
+        "heft": 1,
+        "weight": 4,
+        "value": 5,
+        "initiativeModifier": 0,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "KNSkJQhNiOjPkQlR",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.KNSkJQhNiOjPkQlR",
+      "effects": []
+    },
+    {
+      "_id": "D3rbkjKfLgMhNiOj",
+      "name": "Byse’s Luck",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "D3rbkjKfLgMhNiOj",
+        "summary": "The byse judges a bodily offering and grants luck or misfortune; effects and duration are decided by the GM.",
+        "description": "<p>A person that sacrifices something from their body, for example, giving a large amount of blood, cutting off a finger, or shaving their hair or beard, and puts it in a bowl for a byse might be rewarded with great luck. If the byse thinks that the gift was too small or unworthy, the person will instead become terribly unlucky. How long the enchantment lasts is up to the byse. The game master decides the effects of being lucky or unlucky.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 70
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.D3rbkjKfLgMhNiOj"
+    },
+    {
+      "_id": "NZdeU9D9EaGbHcId",
+      "name": "Vitner",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NZdeU9D9EaGbHcId",
+        "summary": "The byse can channel vitner.",
+        "description": "<p>A byse can use vitner and has learned levels of spells belonging to some of the Vitner Tablets (such as Flame Craft, Vitner of Objects, and Soil Craft). It will use these spells to help or destroy, depending on its current mood.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 70
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.NZdeU9D9EaGbHcId"
+    },
+    {
+      "name": "Flame Craft",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft",
+        "description": "The vitner the mage weaves increases, decreases, or stabilizes the flow of vitner in surrounding environments and objects. By increasing the flow in an explosive manner, the mage can heat objects to a point where they suddenly catch on fire. If the mage is a little more careful with the supply, they can gradually increase the heat in a place to a comfortable level of generous warmth and joviality. Or by cutting off the supply of vitner, the mage can do the opposite and suffocate fires or suddenly drop surrounding temperatures. They can also grant protection from fire and heat by making the vitner stand completely still in a protective layer that the turbulent and hot energy of flame is unable to affect.",
+        "summary": "Creates, controls, or wards off fire and heat.",
+        "swedishName": "Loganojd",
+        "negation": "When a mage creates fire or decides to heat an area, it causes a significant change in the intensity of the vitner. This added vitner is taken from somewhere else in the greater area where the temperature change occurs, which suddenly turns very cold. Frost may appear on bushes and trees, but also on creatures that weavers of vitner | 109 unexpectedly sense their t emperature dropping and their s urroundings beginning to chill. Water freezes to ice and hot food instantly turns cold. Or if the mage chooses to remove the heat, there must be a place nearby for it to go. If a mage wants to control fire, the opposite occurs e lsewhere: fire that burns calmly in a hearth suddenly leaps from its confines and spreads with the potential to cause great damage. Candles and torches burn with such intensity that something in their vicinity might catch on fire.",
+        "affinity": {
+          "hvitavitner": 1,
+          "vaagrivitner": -1,
+          "morkvitner": -1
+        },
+        "source": "Player's Handbook, p. 109",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "Gp1uJ3v1w2x3y4z5",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.Gp1uJ3v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Heat Water",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:heat-water:0",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:heat-water:0",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "By touching water, the mage can bring up to 5 liters to a boil in that location. The water will boil for five minutes, after which it will slowly decrease in temperature as normal. The mage does not create extra water, however, so if only 2 liters of water exist, then only 2 liters will boil. The mage cannot move a boiling mass of water within a larger body of water. The spell is not meant to harm creatures, but the effect of boiling water may do so on its own. Boiling water does 1d6 points of damage for every action round that a person or creature is in contact with it. Metal armor gives no protection, as it conducts heat. Other types of armor protect for a number of rounds equal to their assigned Protection Value. A person who is wholly or partly in water can avoid the damage by getting up or away from the boiling water.",
+        "summary": "By touching water, the mage can bring up to 5 liters to a boil in that location.",
+        "swedishName": "Vannhetja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:heat-water:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:2",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the amount of water boiled by 1 liter"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the amount of water boiled by 10 liters"
+          },
+          {
+            "id": "vitner-flame-craft:heat-water:0:4",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the amount of water brought to a boil by 100 liters"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "teHsqJaGbHcIdJeK",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.teHsqJaGbHcIdJeK",
+      "effects": []
+    },
+    {
+      "name": "Spark",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:spark:1",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:spark:1",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage makes a small flame spark in their hand, with light equal to that of a large candle. The flame can ignite flammable material, just like any normal flame, but it does not harm the mage. At any time, the mage can choose to extinguish the flame.",
+        "summary": "Vitner Type Effects for Flame Craft",
+        "swedishName": "Gnistlogir",
+        "duration": "1 minute",
+        "range": "personal",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:spark:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:3",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "Increase the intensity of the flame so it equals that of a torch (the mage can decrease or increase the flame’s effect, from minimum to maximum, as desired for the duration)"
+          },
+          {
+            "id": "vitner-flame-craft:spark:1:4",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "The enchanter can release the flame so that it burns wherever desired, like a candle or torch, on a stick, a stone, or another object (the object itself does not catch fire)"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "5aaMOmPkQlRmSnTo",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.5aaMOmPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Burning Hand",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:burning-hand:2",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:burning-hand:2",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune). In battle, a successful hit is still needed to touch an enemy. The damage caused by Burning Hand is addition to the normal damage a fist does with a successful attack (1d5). To avoid the mage’s attack, the same rules apply as for typical combat, which means that the target can attempt to parry or evade the attack. Aside from causing damage, there is a small chance that the burning hand ignites fl ammable objects that it touches, which is up to the game master to determine. Armor absorbs damage in the normal fashion, but it may ignite if it is made from fl ammable materials. The mage cannot take any armed actions in the same action round in which they conjure the spell.",
+        "summary": "The vitner heats up one of the mage’s hands to the point where it begins glowing, and its very touch causes 1d10 points of damage (the mage is immune).",
+        "swedishName": "Loghönd",
+        "duration": "4 action rounds",
+        "range": "personal",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:burning-hand:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "The enchanter's other hand catches fire (and gains the spell's basic effect)"
+          },
+          {
+            "id": "vitner-flame-craft:burning-hand:2:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase the damage by one step:"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "2qZ8N4v1w2x3y4z5",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.2qZ8N4v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Flame Burst",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-burst:3",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-burst:3",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The spell creates a sudden fire that ignites within 10 meters of the enchanter. The fire takes the form of a cylinder with an approximate diameter of 1 meter. Within this cylinder, it is not only the fire that causes harm, but also the air that is heated to several hundred degrees in the blink of an eye. The fire and air together cause 1d10 points of damage to everyone within the area of effect. Regular armor offers no protection against this u nimaginably intense fire and heat. Magical armors, however, protect as usual. The flame disappears as quickly as it came if the duration is not prolonged with levels of power. Therefore, any easy-to-ignite objects within the area risk combustion only during the initial burst. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. By choosing to extend the duration, the mage can also move the fire burst to a new area within range.",
+        "summary": "The spell creates a sudden fire that ignites within 10 meters of the enchanter.",
+        "swedishName": "Logild",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-burst:3:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase range by 5 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the diameter of the flame burst by 1 meter"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:flame-burst:3:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase duration by 1 action round, so the flame burst continues burning in the next round"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "sseR1oToUpVqWrXs",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.sseR1oToUpVqWrXs",
+      "effects": []
+    },
+    {
+      "name": "Protection from Fire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:protection-from-fire:4",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:protection-from-fire:4",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The spell creates a film of protective vitner around the body of the enchanter or a selected creature. The vitner prevents the enchanted and all of their equipment from the effects of fire. However, the protective effect applies only to natural fire, dragon’s fire or any other magical flames are not covered by the spell’s effect.",
+        "summary": "The spell creates a film of protective vitner around the body of the enchanter or a selected creature.",
+        "swedishName": "Muspelskjold",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minute"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-flame-craft:protection-from-fire:4:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Affects an extra being (with the spell’s basic version)"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "G2xeh0u0v1w2x3y4",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.G2xeh0u0v1w2x3y4",
+      "effects": []
+    },
+    {
+      "name": "Flame Control",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:flame-control:5",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:flame-control:5",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage can control an existing flame by cutting off or supplying oxygen to the fire in specific directions or space. For example, the mage can open a passage free of flame in the middle of an inferno, make a fire stretch and spread to places where it is not currently burning, or even suffocate it completely. The area of flame that the mage controls can be as large as a small room.",
+        "summary": "The mage controls an existing flame by increasing or cutting off its supply of air.",
+        "swedishName": "Loganrauda",
+        "duration": "5 minutes",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:flame-control:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:3",
+            "cost": 9,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Allow control of an area as large as a hall"
+          },
+          {
+            "id": "vitner-flame-craft:flame-control:5:5",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Allow control of an area as large as a large longhouse"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "xUD5kXpVqWrXsYtZ",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.xUD5kXpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "name": "Warmth",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:warmth:6",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:warmth:6",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C). The mage can choose what temperature to create within that ten-degree range. Depending on where the spell is conjured, the duration might be different. For example, if it is conjured in a somewhat isolated and controlled room, the duration is doubled, but if it is conjured on a windy plain, the duration is halved. A mage<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).</td></tr></tbody></table>who uses this spell to create extreme temperatures runs the risk of harming creatures or objects within the affected area. WARMTH: TEMPERATURES AND DAMAGE Temperature Damage in Body Points 50° C 1d6 + 1 BP per day 60° C 1 BP per hour 70° C 1d6 + 1 BP per hour 80° C 1 BP per minute 90° C 1 BP per action round 100° C + 1d6 BP per action round",
+        "summary": "The mage causes the temperature within a sphere around a fixed point (radius of 3 meters) to immediately rise up to ten degrees (+10° C).",
+        "swedishName": "Vjerma",
+        "duration": "5 hours",
+        "range": "3 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:warmth:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the radius of the sphere by"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:3",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the radius of the sphere of effect by 10 meters"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the temperature range by another +10° C"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Anchor the spell to an object, which makes the sphere portable with the object as its center"
+          },
+          {
+            "id": "vitner-flame-craft:warmth:6:6",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Change the type of the spell to"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "SzbcryZu0v1w2x3y",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.SzbcryZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "name": "Sea of Fire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-flame-craft:sea-of-fire:7",
+          "tabletId": "vitner-flame-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-flame-craft:sea-of-fire:7",
+        "tabletId": "vitner-flame-craft",
+        "tablet": "Flame Craft",
+        "description": "The mage points to an area within range, and it suddenly explodes in a sea of flame. The fire engulfs a circular area within a radius of 2 meters from the mage’s chosen point. All who are caught in the affected area receive 1d10 points of damage. Regular armor gives no protection. Magical armor protects as usual. The sea of fire disappears as quickly as it came if the duration is not extended. Therefore, any easy-to-ignite objects within that area risk combustion only during the initial burst. Victims who are standing inside the area or at its perimeter receive damage. If a potential victim has the Evade specialty, they can attempt to jump free from the affected area and avoid the damage as long as they have not yet acted in the action round. The attempt suffers -1 to the Skill Value for every point of initiative that character’s own initiative falls behind the current moment. Anyone who takes actions while within the sea of fire or who tries to attack someone within that area suffers -5 to the SV since it is so hard to see in the burning inferno.",
+        "summary": "The mage points to an area within range, and it suddenly explodes in a sea of flame.",
+        "swedishName": "Muspelhaf",
+        "duration": "",
+        "range": "20 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the sea of fire’s radius by"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:2",
+            "cost": 5,
+            "maxCount": 4,
+            "effect": "Increase damage by one step: 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          },
+          {
+            "id": "vitner-flame-craft:sea-of-fire:7:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the spell's duration by 1 action round, so that the sea of fire keeps burning during the next round"
+          }
+        ],
+        "source": "Player's Handbook, p. 109",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "0ixzDD7C8D9EaGbH",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.0ixzDD7C8D9EaGbH",
+      "effects": []
+    },
+    {
+      "name": "Soil Craft",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft",
+        "description": "The enchanter has learned to control the vitner that flows within and around the rich ground of Trudvang. By concentrating on a single place, they can get soil and stone to sink or quake. The enchanter can also shape the land according to their wishes, making it take new shape or curl away as if paving a path. It’s also possible weavers of vitner | 123 to enchant a fistful of clay and hurl it toward an adversary, causing devastating damage when the clay grows significantly in size and increases the speed of its lethal course. With this craft, the enchanter can even go so far as to transform a living creature to stone.",
+        "summary": "Shapes earth and stone or turns them against targets.",
+        "swedishName": "Jördkraftla",
+        "negation": "When an enchanter weaves a spell, the negation is usually the opposite. A seeming exception is that when an enchanter causes a quake, the negation is also a quake that happens elsewhere, shifting land in one place causes land to shift in opposite ways somewhere else, and both result in a quake. If the enchanter creates a quagmire, a marsh already present will dry up for a moment. If they shape soil and stone in a desired way, elsewhere another creation of such material returns to its origins, such as a mound sinking back into the ground, or an excavated pathway shattering. If the enchanter hurls a vitner-woven rock against an opponent, stone in another location disappears as the vitner filches it to amplify what was thrown (which can be devastating if the stone that disappears has an important place in a building or structure).",
+        "affinity": {
+          "hvitavitner": -1,
+          "vaagrivitner": -1,
+          "morkvitner": 1
+        },
+        "source": "Player's Handbook, p. 123",
+        "level": 2,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "2iC3SeKfLgMhNiOj",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.2iC3SeKfLgMhNiOj",
+      "effects": []
+    },
+    {
+      "name": "Rock Throw",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:rock-throw:0",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:rock-throw:0",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The enchanter picks up a small rock and throws it at a target within range. The vitner evoked by this spell causes the rock to grow to a normal-sized barrow stone as it hurls toward its target, inflicting 1d10 (OR 10) points of damage. Armor protects normally. The enchanter does not need to throw the rock to enlarge it in this way. If they simply desire a huge stone for some reason, this spell works in the same manner as long as the enchanter has a small stone to begin with. A target who carries a shield may be lucky and use it to block the gigantic stone, benefitting from its passive protection. If the intended target has the Evade specialty, they can attempt to jump away from the attack and avoid injury as long as they have not yet acted during the action round, modifying the Skill Value by -1 for every point between their initiative and the current initiative.",
+        "summary": "The enchanter picks up a small rock and throws it at a target within range.",
+        "swedishName": "Steinflegja",
+        "duration": "",
+        "range": "5 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:rock-throw:0:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-soil-craft:rock-throw:0:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Create a small stone in the enchanter's hand (so one need not be picked up)"
+          },
+          {
+            "id": "vitner-soil-craft:rock-throw:0:2",
+            "cost": 5,
+            "maxCount": 3,
+            "effect": "Increase the damage by one step:"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "TEHj94v1w2x3y4z5",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.TEHj94v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Shape Soil",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:shape-soil:1",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:shape-soil:1",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The spell transforms all forms of local ground and soil, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to its original consistency, in the new shape the enchanter has given it. If an area of land is flat and low, it can almost seem as if new soil is created out of thin air as the enchanter uses the vitner to mold upward. However, it only appears to create new land because the spell draws from such a wide area around the enchanter that the minor drop in elevation is hardly noticeable (though it is up to the game master to decide if an area has enough soil). Likewise, if the enchanter chooses to level a clay structure or giant landmark, the subtle rise in elevation would hardly be noticed as the stone and soil spreads beneath one’s feet. The duration for the spell is 5 minutes, which indicates how long the molded land is able to maintain the new shape. As soon as the spell expires, the soil immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted soil at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning mass of land; someone on a molded staircase is likely to have their legs stuck in mud and soil once it shifts back to its original form.",
+        "summary": "Softens and reshapes nearby earth and soil according to the mage's will.",
+        "swedishName": "Jördforma",
+        "duration": "5 minutes",
+        "range": "5 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:shape-soil:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-soil-craft:shape-soil:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-soil-craft:shape-soil:1:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the amount of affected soil by that of another stormhall, and increase the time to shape it by another 3 minutes"
+          },
+          {
+            "id": "vitner-soil-craft:shape-soil:1:3",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Give the soil a permanent shape"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "ZjAfzeGbHcIdJeKf",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.ZjAfzeGbHcIdJeKf",
+      "effects": []
+    },
+    {
+      "name": "Earthquake",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:earthquake:2",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:earthquake:2",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "This spell causes a violent earthquake in an area within range. The affected area is a circle 4 meters in diameter. Unsecured objects inside it fall or collapse. Firmly anchored objects such as trees and buildings are not otherwise affected, though additional power levels may affect them at the game master's discretion.<br>Every creature caught in the earthquake must succeed on an Agility Skill roll modified by its size to avoid falling. A creature knocked down also suffers 1d6 damage. All creatures in the area, including those not knocked down, suffer -3 to their Skill Values and Situation Values for the spell's duration. If the spell is cast underground, there is a 20% chance (1-4 on 1d20) of a landslide or cave-in; the game master determines its consequences.<table><thead><tr><th colspan=\"7\">EFFECTS BY POWER LEVEL</th></tr><tr><th>Size</th><th>0</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr></thead><tbody><tr><td>&lt;1/3</td><td>-5</td><td>-7</td><td>-9</td><td>-11</td><td>-13</td><td>-15</td></tr><tr><td>≥1/3–1/2</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td><td>-12</td></tr><tr><td>≥1/2–1.5</td><td>0</td><td>-2</td><td>-4</td><td>-6</td><td>-8</td><td>-10</td></tr><tr><td>≥1.5–3</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td><td>-7</td></tr><tr><td>≥3–5</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td><td>-5</td></tr><tr><td>≥5–10</td><td>+7</td><td>+5</td><td>+3</td><td>+1</td><td>-1</td><td>-3</td></tr><tr><td>≥10</td><td>+10</td><td>+8</td><td>+6</td><td>+4</td><td>+2</td><td>0</td></tr><tr><td>Landslide risk</td><td>20%</td><td>30%</td><td>40%</td><td>50%</td><td>60%</td><td>70%</td></tr><tr><td>Damage</td><td>1d6</td><td>1d6+1</td><td>1d6+2</td><td>1d6+3</td><td>1d6+4</td><td>1d6+5</td></tr></tbody></table>",
+        "summary": "The spell causes an area within the range to rumble with a single, heavy tremor.",
+        "swedishName": "Jördabavur",
+        "duration": "1 action round",
+        "range": "10 meters",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:earthquake:2:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-soil-craft:earthquake:2:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the diameter of the affected area by 2 meters"
+          },
+          {
+            "id": "vitner-soil-craft:earthquake:2:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration in which all vulnerable creatures must make another Skill roll by 1 round"
+          },
+          {
+            "id": "vitner-soil-craft:earthquake:2:3",
+            "cost": 4,
+            "maxCount": 5,
+            "effect": "Increase the earthquake's effect by one step on the EFFECTS table (one column to the right)"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "go3Yu4w2x3y4z5A6",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.go3Yu4w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "name": "Quagmire",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:quagmire:3",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:quagmire:3",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters. Water suddenly seeps into the soil and turns the ground into impassable mud. The movement capacity of anyone passing through the area is reduced by -1 for every 10 centimeters of depth. If someone in the affected area has their movement reduced to 0 or lower, they are stuck in the quagmire and unable to escape on their own until the spell expires or they get assistance. If someone throws a rope (or something similar) to the trapped character, and the victim succeeds on a Situation roll with a Situation value of 12 (Strength modifiers apply), they are able to crawl 1 meter per action round until free of the quagmire.",
+        "summary": "The spell creates a thick swamp in the form of a large circle with a diameter of 3 meters and a depth of 10 centimeters.",
+        "swedishName": "Tröljörd",
+        "duration": "1 minute",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:quagmire:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the quagmire’s diameter by 1 meter"
+          },
+          {
+            "id": "vitner-soil-craft:quagmire:3:1",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the quagmire's depth by 10 centimeters"
+          },
+          {
+            "id": "vitner-soil-craft:quagmire:3:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-soil-craft:quagmire:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-soil-craft:quagmire:3:4",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "NwPNFtXsYtZu0v1w",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.NwPNFtXsYtZu0v1w",
+      "effects": []
+    },
+    {
+      "name": "Soil Blast",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:soil-blast:4",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:soil-blast:4",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The enchanter picks up a handful of soil from the ground (or a pocket) and hurls it at a target within range. On its path toward the target, the soil greatly increases in quantity and speed. After traveling only 2 meters, the soil has amassed its full strength and will blast its target at full power, inflicting 1d10 (OR 9-10) points of damage. Armor protects as usual, but the shrapnel has a P enetration Value of 1 (so it ignores 1 Protection Value). A target who carries a shield may be lucky and block the blast of soil, benefitting from the shield’s passive protection. If the target has the Evade specialty, they can attempt to jump away from the attack and avoid injury as long as they have not yet acted during the action round, modifying the Skill Value by -1 for every point between their initiative and the current initiative.",
+        "summary": "The enchanter picks up a handful of soil from the ground (or a pocket) and hurls it at a target within range.",
+        "swedishName": "Jördfleigja",
+        "duration": "",
+        "range": "10 meters",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:soil-blast:4:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-soil-craft:soil-blast:4:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Create a handful of soil (none needs to be picked up)"
+          },
+          {
+            "id": "vitner-soil-craft:soil-blast:4:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase minimum damage by +1"
+          },
+          {
+            "id": "vitner-soil-craft:soil-blast:4:3",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the amount of shrapnel so it can hit another target (with the spell’s basic version)"
+          },
+          {
+            "id": "vitner-soil-craft:soil-blast:4:4",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round so the enchanter can throw another handful of soil in the next round (using the spell’s basic version)"
+          },
+          {
+            "id": "vitner-soil-craft:soil-blast:4:5",
+            "cost": 5,
+            "maxCount": 2,
+            "effect": "Increase the damage by one step:"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "zcjP1XqWrXsYtZu0",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.zcjP1XqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Soil Walk",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:soil-walk:5",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:soil-walk:5",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them. In this way, the vitner permits the target to move through all types of soil uninhibited. Each action round, they can move through soil at a number of meters equal to their movement capacity divided by 4. The vitner only repels soil that is static and unmoving. This spell cannot be used to avoid landslides or soil attacks unless the target were to travel below the soil that is moving. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to their body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the ground at a speed of 1 meter per action round. If the spell’s duration expires while the target is still in the soil, it compacts tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in soil when the spell runs out, they begin to suffocate as well.",
+        "summary": "The spell creates a coating of vitner around the target that pushes away any soil that comes close to them.",
+        "swedishName": "Jördvandr",
+        "duration": "2 minutes",
+        "range": "personal",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:soil-walk:5:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-soil-craft:soil-walk:5:1",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 10"
+          },
+          {
+            "id": "vitner-soil-craft:soil-walk:5:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the final movement capacity by +1 meter per action round (never higher than the creature’s normal movement capacity)"
+          },
+          {
+            "id": "vitner-soil-craft:soil-walk:5:3",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "Weave the spell over a second person who can also go into the soil (only if the range is Contact)"
+          },
+          {
+            "id": "vitner-soil-craft:soil-walk:5:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Weave the spell on a second target, who can also move through the earth (only if the spell's range was changed to touch)"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "FhSR83v1w2x3y4z5",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.FhSR83v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Shape Stone",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:shape-stone:6",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:shape-stone:6",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay. The enchanter is then able to use the vitner to mold this enchanted clay into any desired shape up to the size of a stormhall. They have three minutes to shape the clay, and once that time has passed (or the enchanter is satisfied with the created shape), the clay returns to the stone’s original c onsistency, in the new shape the enchanter has given it. If there doesn’t appear to be much stone in an area where the spell is woven, it can almost seem as if the stone is created out of thin air as the enchanter begins gathering and molding. However, it only appears to create new stone because it is drawing every bit of rocky sediment from the ground and amassing it in a single spot. It is up to the game master to decide if the area has enough stone. The duration for the spell is 5 minutes, which indicates how long the stone is able to maintain the new shape. As soon as the spell expires, the stone immediately returns to its original shape and placement. If any creatures or objects remain on or in the crafted rock at that time, the game master determines the outcome. Someone in a crafted hole or pathway would be trapped in the returning stone; someone on a molded staircase is likely to have their legs stuck in rock once it shifts back to its original form.",
+        "summary": "The spell transforms all kinds of stone and ore, making it soft and pliable like thick clay.",
+        "swedishName": "Steinforma",
+        "duration": "5 minutes",
+        "range": "5 meters",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:shape-stone:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-soil-craft:shape-stone:6:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-soil-craft:shape-stone:6:2",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the amount of affected stone by that of another stormhall, and increase the time to shape it by another 3 minutes"
+          },
+          {
+            "id": "vitner-soil-craft:shape-stone:6:3",
+            "cost": 20,
+            "maxCount": 1,
+            "effect": "Give the rock a permanent shape"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "QuES9VnToUpVqWrX",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.QuES9VnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Stone Walk",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:stone-walk:7",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:stone-walk:7",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The spell creates a coating of vitner around the target that pushes away any stone or metal that comes close to them. In this way, the vitner permits the target to move through all types of stone and ore uninhibited. Each action round, they can move through it at a number of meters equal to their movement capacity divided by 4. The vitner only repels stone and metal that is static and unmoving. This spell cannot be used to pass through metal or stone weapons since they are in motion. Since the coating of vitner surrounds the target’s body, they can carry only equipment and items that are held close to the body (no big backpacks). Every action round, the target decides which direction to travel by concentrating on that path. If their concentration is disturbed or interrupted, they slowly begin to sink deeper into the rock at a speed of 1 meter per action round. If the spell’s duration expires while the target is still within the stone, it forms tightly around them, imprisoning them. The trapped target cannot get free on their own. If their face is encased in stone when the spell runs out, they begin to suffocate as well.",
+        "summary": "The spell creates a coating of vitner around the target that pushes away",
+        "swedishName": "Malmavandr",
+        "duration": "2 minutes",
+        "range": "personal",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:stone-walk:7:0",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the final movement capacity by +1 meter per action round (never higher than the target’s normal movement capacity)"
+          },
+          {
+            "id": "vitner-soil-craft:stone-walk:7:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-soil-craft:stone-walk:7:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-soil-craft:stone-walk:7:3",
+            "cost": 2,
+            "maxCount": 1,
+            "effect": "Change the range from Personal to Contact"
+          },
+          {
+            "id": "vitner-soil-craft:stone-walk:7:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Weave the spell over a second person who can also go into the stone (only if the range is Contact)"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "T4CVQYrXsYtZu0v1",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.T4CVQYrXsYtZu0v1",
+      "effects": []
+    },
+    {
+      "name": "Petrify/Remove Petrification",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-soil-craft:petrify-remove-petrification:8",
+          "tabletId": "vitner-soil-craft"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-soil-craft:petrify-remove-petrification:8",
+        "tabletId": "vitner-soil-craft",
+        "tablet": "Soil Craft",
+        "description": "The Petrify spell’s energy is so powerful that it can turn a victim’s body to stone. The victim’s clothes and equipment are also turned to stone; however, magic items are spared (though they may be caught in a stone grip or stone pack). The victim can attempt to resist the transformation by making a s uccessful Situation roll with a Situation value determined<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>by their size, according to the table below (Psyche modifiers apply). SIZE AND SITUATION VALUES Size Situation Value &lt;1/3 4 ≥1/3 – 1/2 6 ≥1/2 – 1.5t 8 ≥1.5 – 3t 10 ≥3 – 5t 12 ≥5 – 10t 15 ≥10t 19 If the victim fails the Situation roll, they are turned into solid stone, along with any equipment that is held, worn, or carried. The stone is extremely hard and almost indestructible.<br>The petrified victim has a Protection Value of 10 and a Break Value of 100. Once the Break Value is depleted, the victim takes damage as normal, and if they take double their Body Points in damage, the stone shatters and they die. A victim who is turned to stone is in<br>a complete daze and unable to perceive their surroundings or the passage of time. Therefore, they are no longer able to affect anything that happens around them. Once the spell’s duration expires, the victim returns to their original form. It is possible to liberate a p etrified creature using the spells Remove Petrification<br>or Dispel Vitner. A petrified creature is not attached to the ground in any way besides gravity, and can be moved by someone strong enough to do so. The<br>statue weighs around ten times the victim’s original weight. The enchanter can also use the Remove Petrification version of this spell. By turning the vitner used to petrify a target, the enchanter can restore a stone creature to its original form. Using the spell in this manner also restores any attached and unbroken equipment that was p etrified. To successfully restore a petrified creature, the target must first succeed on a Situation roll with a Situation value of 12 (C onstitution<table><tbody><tr><td>Turns a creature to stone or restores a petrified creature to flesh.</td></tr></tbody></table>modifiers apply), modified depending on how long they have been a statue, according to the table below. With a successful restoration, the victim awakens in the space of 1 action round. They have no realization of what happened, believing it is the moment immediately after they first were petrified, and they have no memory of the events that occurred or the time that elapsed. For the first three days, the victim feels very stiff, which halves their movement capacity and Skill Values for any Skill rolls or Situation rolls involving Dexterity. For the next three days following that, movement capacity and Skill Values increase to twoPETRIFY/REMOVE PETRIFICATION MODIFIERS Time Modifier &lt; 1 day +8 1-3 days +4 4-7 days +2 2 weeks ±0 3 weeks -2 4 weeks -4 2 months -6 3 months -10 6 months -14 1 year -18 10 years -25 100 years -35 &gt; 100 years -50 thirds their normal capacity. After six days, the victim completely recovers from the ordeal. The game master can alter this timeline depending on how long the victim was petrified.",
+        "summary": "Turns a creature to stone or restores a petrified creature to flesh.",
+        "swedishName": "Braskeltrölja/braskelbrotja",
+        "duration": "1d6 + 2 days",
+        "range": "10 meters",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:1",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 month"
+          },
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:2",
+            "cost": 20,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 year"
+          },
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Decrease the victim’s chance of succeeding on the Situation roll by -1"
+          },
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          },
+          {
+            "id": "vitner-soil-craft:petrify-remove-petrification:8:5",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the victim’s chance to succeed on the Situation roll during restoration by moving up one step on the table (e.g. from -35 to -25, or -4 to -2)"
+          }
+        ],
+        "source": "Player's Handbook, p. 123",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "Vj9uxC5A6B7C8D9E",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.Vj9uxC5A6B7C8D9E",
+      "effects": []
+    },
+    {
+      "name": "Vitner of Objects",
+      "type": "tablet",
+      "img": "icons/svg/book.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects",
+        "description": "By examining the vitner within and around an object, the enchanter can sense the object’s structure as well as direct and control its functions. The enchanter can accomplish tasks such as securing and opening locks, or merging two similar objects so that they become one, and are now inseparable. The enchanter can also change the composition of an object’s vitner in order to change the object itself. This may involve giving the object a protective layer against moisture, reducing or enlarging an object, or altering its appearance and characteristics. The enchanter can also create an alarm out of a standard object by giving it a supplement of vitner that will be unleashed when a designated event occurs in its environment.",
+        "summary": "Analyzes, alters, protects, or creates objects.",
+        "swedishName": "Efnatingvitna",
+        "negation": "When an enchanter changes an object’s characteristics or appearance, the resulting negation means that one or more items elsewhere are also altered for a short period of time. Impermeable objects suddenly start to leak whenever the enchanter waterproofs an object, an object grows significantly whenever the enchanter reduces another and vice versa, and the appearances of one or more objects shift whenever the enchanter manipulates an object’s appearance. When an enchanter alarms an object, the negation doesn’t occur until the alarm has been activated. When the alarm does go off, the negation varies; perhaps a bell, jingle, or clock is muted, or something else that makes sounds to designate the time, such as a rooster or crickets, goes silent. When the enchanter uses the vitner to pick a lock, another lock freezes shut; if two objects are merged, two others fall apart; and so on.",
+        "affinity": {
+          "hvitavitner": 0,
+          "vaagrivitner": 0,
+          "morkvitner": 0
+        },
+        "source": "Player's Handbook, p. 132",
+        "level": 3,
+        "tabletType": "vitner",
+        "religion": ""
+      },
+      "_id": "ffmMyB2x3y4z5A6B",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.ffmMyB2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "name": "Detect Composition",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:detect-composition:0",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:detect-composition:0",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The enchanter can identify all nonorganic materials, such as metals and gemstones. An enchanter who finds an object, weaves this spell, and touches the object will immediately know what substances it is composed of and the quantities of each substance. They might even discover how an object is constructed. Although the enchanter cannot see straight through the object, they might discover that inside the object is another object altogether composed of metal, that inside the object is a hollow cavity created to contain something else, and so on. The enchanter is unable to evaluate the object’s material unless they have an idea of how much it is worth. The spell does not allow the enchanter to discover magical characteristics of the object.",
+        "summary": "The enchanter can identify all nonorganic materials, such as metals and If the vitner wall manages to protect against a spell, no effects from the magic can pass through the wall.",
+        "swedishName": "Skönja efnating",
+        "duration": "10 action rounds",
+        "range": "contact",
+        "weavingTime": "2 action rounds",
+        "dailyActivation": "",
+        "spellType": "sustained",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:detect-composition:0:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-of-objects:detect-composition:0:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-of-objects:detect-composition:0:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:detect-composition:0:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "utoIyIcIdJeKfLgM",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.utoIyIcIdJeKfLgM",
+      "effects": []
+    },
+    {
+      "name": "Waterproof",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:waterproof:1",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:waterproof:1",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "✦ Modifier: None The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction. The enchanted surface becomes completely impermeable, but receives no other enhanced characteristics. The enchanter can waterproof any surface up to the area of a large tent by touching the material.",
+        "summary": "The spell creates a watertight seal around organic materials such as fabric or leather, and seals the cracks between assembled planks or similar construction.",
+        "swedishName": "Vanngegna",
+        "duration": "1 hour",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the amount of material affected by the equivalent of a large tent"
+          },
+          {
+            "id": "vitner-vitner-of-objects:waterproof:1:5",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the amount of material affected by the equivalent of a longhouse"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 1,
+        "cost": 2,
+        "modifier": -2
+      },
+      "_id": "GGywJWoUpVqWrXsY",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.GGywJWoUpVqWrXsY",
+      "effects": []
+    },
+    {
+      "name": "Bind",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:bind:2",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:bind:2",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue. The items must fit well together, not be in motion, and not consist of living matter. For example, one cannot bind a door frame to an unlucky person passing through it. Appropriate targets to bind include door and door frame, lid and box, sword and scabbard, boulder and cave opening, drawer and hatch, or cork and bottle. The two objects become one for the spell’s duration and cannot be separated by normal means. It is possible to use force on the objects, such as by bashing through a door that is bound to a door frame, but the objects will not open in a normal fashion or separate cleanly. The enchanter, however, can separate the objects whenever they want to.",
+        "summary": "The spell weaves the vitner of two objects together, binding them as if they were joined using an incredibly powerful glue.",
+        "swedishName": "Sigla",
+        "duration": "3 minutes",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:bind:2:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-of-objects:bind:2:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-vitner-of-objects:bind:2:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:bind:2:3",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-of-objects:bind:2:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "xhBmeUnToUpVqWrX",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.xhBmeUnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "name": "Rust",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:rust:3",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:rust:3",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on. The mechanical effect of this means that the object’s quality level is lowered by one step, for example, from Normal to Poor, for the duration of the spell. (See the Quality table under Equipment in the Game Master’s Guide for more information on quality levels.) Magical objects are not affected by this spell. The effect can be made permanent with a level of power. Even if made permanent, an object affected by Rust can still be restored with the Dispel Vitner spell.",
+        "summary": "The enchanter touches an object, which immediately begins to rust if it is made of metal, crumble if it is made of stone, rot and fray if it is made of fabric, and so on.",
+        "swedishName": "Röste efnating",
+        "duration": "5 action rounds",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:rust:3:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 action round"
+          },
+          {
+            "id": "vitner-vitner-of-objects:rust:3:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-of-objects:rust:3:2",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:rust:3:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:rust:3:4",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Lower the object’s quality level one step further"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 2,
+        "cost": 4,
+        "modifier": -4
+      },
+      "_id": "jgWVqsWrXsYtZu0v",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.jgWVqsWrXsYtZu0v",
+      "effects": []
+    },
+    {
+      "name": "Alarm Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:alarm-object:4",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:alarm-object:4",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed. The spell is woven over an object together with a designated condition. The condition must be precisely defined and based on physical events that must occur within 10 meters of the object. Once the specified condition is met, the enchanter is immediately made aware, no matter how far away they may be. The enchanter can also choose to have a very loud, conspicuous noise blare from the object, causing everyone within range to suffer -3 on all Skill Values and Situation values that involve hearing for the next 1d3 days. To avoid this negative modifier, the victim must succeed on a Situation roll with a Situation value of 8 ( Constitution modifiers apply). Alternatively, the enchanter could let the alarm go entirely unnoticed by those who triggered it. Examples of acceptable conditions: a being of a particular species comes within range, a certain person comes within range, anything living moves within range, something comes in contact with or moves the object, and so on.",
+        "summary": "The enchanter weaves a delicate fabric of vitner around an object, which will trigger an alarm woven into it the moment it is disturbed.",
+        "swedishName": "Vakefnating",
+        "duration": "5 hours",
+        "range": "10 meters",
+        "weavingTime": "1 minute",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:2",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 week"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:3",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the range by 10 meters"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:4",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the range by 100 meters"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:5",
+            "cost": 16,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 1 kilometer"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alarm-object:4:6",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Create another alarm on the object with another condition"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "PThxJMdJeKfLgMhN",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.PThxJMdJeKfLgMhN",
+      "effects": []
+    },
+    {
+      "name": "Unlock/Lock",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:unlock-lock:5",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items. By simply touching the locked object and enchanting it, the enchanter can attempt to either unlock or lock it with a Situation roll (Situation value determined<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.</td></tr></tbody></table>by the type of lock, as shown on the table below). The spell cannot unlock or lock magical locks. UNLOCK/LOCK SITUATION VALUES Type of Lock Situation Value Grapple 14 Hook 12 Wedge 10 Door bar 8 Simple padlock 6 Advanced lock 4 Dwarvish lock 2",
+        "summary": "The spell works like a universal key that can open any locked doors, drawers, chests, or similar items.",
+        "swedishName": "Vidvanga",
+        "duration": "",
+        "range": "contact",
+        "weavingTime": "1 action round",
+        "dailyActivation": "",
+        "spellType": "instant",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:unlock-lock:5:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the chance to succeed on the Situation roll by +1"
+          },
+          {
+            "id": "vitner-vitner-of-objects:unlock-lock:5:1",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 3,
+        "cost": 6,
+        "modifier": -6
+      },
+      "_id": "jnUNTZqWrXsYtZu0",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.jnUNTZqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "name": "Enlarge/Reduce Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:enlarge-reduce-object:6",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³). The enchanter can make it grow twice as large or shrink to half its size; either way, the weight of the object remains constant. The enchanter can also distort the object’s dimensions a bit so that, for example, it grows only in length, but not width, like a rope getting longer but not thicker. When enlarged, a narrow rope of 5 meters (2 cm × 2 cm × 500 cm) may be 10 meters long (fully doubled in length); when reduced, the rope may be 2.5 meters long (fully halved in length).",
+        "summary": "The spell enlarges or reduces a designated object that is less than or equal to 2 dm³ (the shape of the object can be 1 cm thick, 40 cm wide, and 50 cm long, which is equal to 2,000 cm³ or 2 dm³).",
+        "swedishName": "Tingvidge/tingknyttje",
+        "duration": "4 minutes",
+        "range": "contact",
+        "weavingTime": "3 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:2",
+            "cost": 10,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:3",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:4",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the amount of material affected by 1 dm³"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the amount of material affected by 10 dm³"
+          },
+          {
+            "id": "vitner-vitner-of-objects:enlarge-reduce-object:6:6",
+            "cost": 8,
+            "maxCount": null,
+            "effect": "Double the enlargement or reduction effect (size ×4 or ÷4)"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "75PrZ2x3y4z5A6B7",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.75PrZ2x3y4z5A6B7",
+      "effects": []
+    },
+    {
+      "name": "Alter Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:alter-object:7",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:alter-object:7",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "The spell affects any object with a size equal to or smaller than a large box. The enchanter may choose one of the f ollowing alterations when enchanting the object: Alter Appearance: The enchanter can change the object’s appearance to any shape desired. The object is shaped entirely by the enchanter’s thoughts and maintains this position for five minutes, according to the basic version of the spell. Alter Characteristics: The enchanter can change the object’s characteristics, such as hard surfaces becoming soft and vice versa. In this case, an object that was soft and flexible would t hereafter become impossible to bend or move, even though it looks the same as it did before. By strengthening an object, one can increase its Protection Value by +1 and Breach Value by +10. Other than using the changed object, the only way for anyone to recognize that it no longer has its proper shape or characteristics is through the use of the True Sight or Read Vitner spells. Once the spell ends, the object regains its original shape. The enchanter can use levels of power to alter objects into more valuable items, though size parameters still apply (the size of a large box in its basic version). The new item can then be sold for far more than it is worth, and later it will turn back into the original object. This might begin long adventures in which the enchanter gains bitter enemies.",
+        "summary": "The spell affects any object with a size equal to or smaller than a large box.",
+        "swedishName": "Tingbreijtja",
+        "duration": "5 minutes",
+        "range": "contact",
+        "weavingTime": "5 action rounds",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 minute"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:1",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the duration by 10 minutes"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:2",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Increase the duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:3",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase the object's maximum size by the equivalent of a large box"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the affected amount to the size of a coffin"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:5",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase the spell's range by 5 meters (physical contact is no longer necessary)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:6",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase Protection Value by 1 and Integrity Value by +10"
+          },
+          {
+            "id": "vitner-vitner-of-objects:alter-object:7:7",
+            "cost": 5,
+            "maxCount": null,
+            "effect": "Change the object’s appearance and characteristics"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 4,
+        "cost": 8,
+        "modifier": -8
+      },
+      "_id": "bfToqRjPkQlRmSnT",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.bfToqRjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "name": "Create Object",
+      "type": "spell",
+      "img": "icons/svg/daze.svg",
+      "flags": {
+        "trudvang-chronicles": {
+          "catalogId": "vitner-vitner-of-objects:create-object:8",
+          "tabletId": "vitner-vitner-of-objects"
+        }
+      },
+      "system": {
+        "catalogId": "vitner-vitner-of-objects:create-object:8",
+        "tabletId": "vitner-vitner-of-objects",
+        "tablet": "Vitner of Objects",
+        "description": "Vitner Points This rare and powerful spell creates objects out of thin air. It is one of the most closely guarded magical songs of the mighty misturelves. With the basic spell, the enchanter can only conjure objects that are tiny, extremely common,<br>and useless. By adding extra levels of power, however, the object can be improved in terms of size, rarity, and quality according to the tables below. The time it takes to conjure the object is a number of hours equal to half its total cost in Vitner Points. Thus, an object that costs 20 Vitner Points would take ten hours to conjure. Creating 1 kg of gold with normal quality that lasts one day (duration levels of power are listed below) would cost 44 Vitner Points (normal quality 6 + extremely rare 18 + normal size 6 + one day of duration 4 + cost of spell 10 = 44)<table><thead><tr><th colspan=\"1\">OBJECT</th></tr><tr><th>Cost Extra Levels of Power</th></tr></thead><tbody><tr><td>1 Increase the duration by 1 hour</td></tr><tr><td>2 Increase the range by 10 meters</td></tr></tbody></table>and would take 22 hours to conjure. LEVEL OF POWER FOR CREATE OBJECT Cost Extra Levels of Power 1 Increase the duration by 1 hour 2 Increase the range by 10 meters I n c r ea s e t h e s i z e by o ne step (for 3 e x a m p l e, t in y t o s m a ll ) I n c r ea s e th e qu a l i ty b y o n e s tep 3 (f o r e x a m p le , w o r t h le s s t o p o o r ) Increase the rarity by one step (for 3 example, extremely ordinary to very ordinary) 4 Increase the duration by 1 day CREATE OBJECT SIZE, RARITY AND Size Rarity Building Extremely (up to 10 tons, House/Tower) (Gold) Huge Very (up to 1 ton, Ship/Low wall) (Darkblood Massive Rare (up to 100 kg, Throne/Wagon) (Silver) Large Unusual (up to 10 kg, Bench) (Iron) Normal Ordinary (up to 1 kg, Arm’s length) (Copper) Small Very (up to 1 hg, Jewelry) (Stone Tiny Extremely (up to 10 grams, Coin) (Soil/Grass) W C ater raft The enchanter has learned to control the vitner that flows through water. By weaving the vitner in a certain way, they can locate water that might be nearby, create water in extremely dry places, and purify water gathered from foul substances or sources. The enchanter has also learned to control the water itself and can separate it so as to allow dry passage, walk on water as if it were made of solid ground, or dive into water without getting wet and travel through the element. Negations for Water Craft When an enchanter attempts to create water, the negation will naturally be that water disappears from somewhere else. When an enchanter finds a source of water and dries it out, another is filled or increased to overflowing; when the enchanter purifies the moisture f r o m a f o u l s u b s t a n c e o r s o u rc e , s o m e w h er e e l s e a c l e a n s o ur c e be c o m e s i m p u r e . If t h e e n c h an t e r c o n t r o ls w a te r , s om e w h e r e e l s e w h e r e w a t er h a s been controlled (such as dams, vessels, or channels) the implements that contained it will break. This can be anything from a small leak to a massive hole in a reservoir wall. QUALITY Quality Cost rare Enchanted 18 or divine rare Legendary 15 iron) Masterful 12 Capital 9 Normal 6 ordinary Poor 3 /Wood) ordinary Worthless - Vitner Type Effects for Water Craft ✦ White Vitner: Levels of power cost -1, but no less than 1 per level. ✦ Vaagrivitner: Levels of power cost -1, but no less than 1 per level. ✦ Dark Vitner: Levels of power cost +1. Water Craft is by nature balanced, but also includes the act of creation. Water is the source of all life, and though it can be easily manipulated, it is dangerous if not controlled.",
+        "summary": "Vitner Points This rare and powerful spell creates objects out of thin air.",
+        "swedishName": "Efnatingkallja",
+        "duration": "1 hour",
+        "range": "10 meters",
+        "weavingTime": "1 hour per 2 Vitner Points",
+        "dailyActivation": "",
+        "spellType": "lasting",
+        "isRune": false,
+        "powerLevels": [
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:0",
+            "cost": 1,
+            "maxCount": null,
+            "effect": "Increase duration by 1 hour"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:1",
+            "cost": 4,
+            "maxCount": null,
+            "effect": "Increase duration by 1 day"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:2",
+            "cost": 2,
+            "maxCount": null,
+            "effect": "Increase range by 10 meters"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:3",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the object's size by one step (for example, from very small to small)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:4",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the object's quality by one step (for example, from worthless to poor)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:5",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Increase the object's rarity by one step (for example, from extremely common to very common)"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:6",
+            "cost": 18,
+            "maxCount": null,
+            "effect": "Enchanted"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:7",
+            "cost": 15,
+            "maxCount": null,
+            "effect": "Legendary"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:8",
+            "cost": 12,
+            "maxCount": null,
+            "effect": "Masterful"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:9",
+            "cost": 9,
+            "maxCount": null,
+            "effect": "Good"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:10",
+            "cost": 6,
+            "maxCount": null,
+            "effect": "Normal"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:11",
+            "cost": 3,
+            "maxCount": null,
+            "effect": "Poor"
+          },
+          {
+            "id": "vitner-vitner-of-objects:create-object:8:12",
+            "cost": 7,
+            "maxCount": null,
+            "effect": "Chapter"
+          }
+        ],
+        "source": "Player's Handbook, p. 132",
+        "level": 5,
+        "cost": 10,
+        "modifier": -10
+      },
+      "_id": "Eokp3OgMhNiOjPkQ",
+      "_key": "!actors.items!5E4MWXoUpVqWrXsY.Eokp3OgMhNiOjPkQ",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "5E4MWXoUpVqWrXsY",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": -4,
+      "constitution": -4,
+      "intelligence": -6
+    },
+    "skills": {
+      "agility": {
+        "value": 10,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 8,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 8,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 8,
+        "bonus": 0
+      },
+      "vitnerCraft": {
+        "value": 10,
+        "bonus": 0
+      },
+      "care": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadowing",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage & Hiding",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Finding & Spotting",
+        "skillId": "shadowArts",
+        "catalogId": "findingSpotting",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Walking in Shadows",
+        "skillId": "shadowArts",
+        "catalogId": "walkingShadows",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Thievery",
+        "skillId": "shadowArts",
+        "catalogId": "thievery",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Locks & Traps",
+        "skillId": "shadowArts",
+        "catalogId": "locksTraps",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Stealing",
+        "skillId": "shadowArts",
+        "catalogId": "stealing",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Learning",
+        "skillId": "knowledge",
+        "catalogId": "learning",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Insight",
+        "skillId": "knowledge",
+        "catalogId": "insight",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Craft",
+        "skillId": "vitnerCraft",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Call of Vitner",
+        "skillId": "vitnerCraft",
+        "catalogId": "callVitner",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Vaagritalja",
+        "skillId": "vitnerCraft",
+        "catalogId": "vaagritalja",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Vitner Shaping",
+        "skillId": "vitnerCraft",
+        "catalogId": "vitnerShaping",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Vyrding",
+        "skillId": "vitnerCraft",
+        "catalogId": "vyrding",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Handicraft",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Counterfeiting",
+        "skillId": "care",
+        "catalogId": "counterfeiting",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Hard Materials",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Soft Materials",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Tradesman",
+        "skillId": "care",
+        "catalogId": "tradesman",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brewer",
+        "skillId": "care",
+        "catalogId": "brewer",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Cook",
+        "skillId": "care",
+        "catalogId": "cook",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Trader",
+        "skillId": "care",
+        "catalogId": "trader",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Healing & Drugs",
+        "skillId": "care",
+        "catalogId": "healingDrugs",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Extracts & Potions",
+        "skillId": "care",
+        "catalogId": "extractsPotions",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "First Aid & Nursing",
+        "skillId": "care",
+        "catalogId": "firstAidNursing",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 8
+        }
+      ],
+      [
+        {
+          "attack": "Seax (Dagger or Knife)",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 12,
+        "max": 12
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 6
+    },
+    "description": "The byse is a very small troll-like creature. People say it can grow as large as a goblin. The only specimen the author met was no larger than his hand. It was extraordinarily small, with a sullen face. Its size supposedly decreases with age, since a byse is said to shrink as it grows older. In extreme old age it would eventually disappear entirely.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "humanoid",
+      "size": "0.33",
+      "age": "75, max. 200",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 10,
+      "bodyMax": 14,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "6 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Tiny troll-like rogue, no larger than a hand, with a sullen face.",
+      "environment": "Forests, and Runvjiik farms for the field byse",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 70
+      }
+    }
+  },
+  "_id": "5E4MWXoUpVqWrXsY",
+  "_key": "!actors!5E4MWXoUpVqWrXsY",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

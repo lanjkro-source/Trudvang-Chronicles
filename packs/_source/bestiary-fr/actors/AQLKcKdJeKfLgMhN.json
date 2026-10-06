@@ -1,0 +1,246 @@
+{
+  "name": "Firdtursir",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
+  "items": [
+    {
+      "_id": "uWTZ84v1w2x3y4z5",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.uWTZ84v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (massue à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "4d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -2,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "XGJs0x2x3y4z5A6B",
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.XGJs0x2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "_id": "BlV2voQlRmSnToUp",
+      "name": "Empoignement",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "BlV2voQlRmSnToUp",
+        "summary": "Après une attaque à mains nues réussie, saisie sans PC supplémentaires ; écrasement selon la taille ou projection infligeant 1d10 (JO 10) par tranche de 3 m de chute.",
+        "description": "<p>Après une attaque à mains nues réussie, le géant peut tenter d’empoigner une victime de Taille 1/2 à 3 sans dépenser de PC supplémentaires. Il effectue un test de compétence dont la VC dépend de la taille de la victime. Celle-ci peut éviter l’empoignement grâce à Agilité, de préférence avec la spécialité Esquive.</p><p>À chaque tour, le géant peut écraser sa victime ou la projeter. Les dégâts d’écrasement dépendent de la taille de la victime. Une projection inflige 1d10 (JO 10) points de dégâts par tranche de 3 mètres de chute ; il faut utiliser la hauteur effective de la chute. Un firdtursir mesure généralement 20 à 22 m, soit 6d10 à 7d10 (JO 10) ; un hrimtursir 14 à 15 m, soit 4d10 à 5d10 (JO 10) ; un muspeljotun 25 à 27 m, soit 8d10 à 9d10 (JO 10). Un vidrjotun mesure également 25 à 27 m mais a souvent le bas du corps à moitié enfoui dans la terre : le MJ détermine donc la hauteur réelle et les dégâts de chute.</p><table><thead><tr><th>Taille de la victime</th><th>VC</th><th>Dégâts d’écrasement</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (JO 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (JO 9-10)</td></tr><tr><td>1,5</td><td>7</td><td>1d10 (JO 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (JO 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.BlV2voQlRmSnToUp"
+    },
+    {
+      "_id": "uM9vugLgMhNiOjPk",
+      "name": "Lancer de rocher",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "uM9vugLgMhNiOjPk",
+        "summary": "Le géant arrache et lance d'énormes rochers sur ses ennemis.",
+        "description": "<p>Grâce à leur force incroyable, les firdtursirs peuvent arracher de grands rochers des flancs des montagnes et les lancer sur leurs ennemis pour les écraser. Ces rochers sont si gros et si lourds qu’il est impossible de les bouger lorsqu’ils retombent sur le sol. Dans tous les lieux de Trudvang où sont passés des firdtursirs, on peut voir ces rochers communément appelés « jets de géant ». Un rocher lancé qui retombe sur un personnage joueur provoquera à coup sûr sa mort et, en tant que maître de jeu, vous devriez plutôt utiliser ce pouvoir pour effrayer les personnages et, pourquoi pas, pour détruire des bâtiments ou des choses similaires.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.uM9vugLgMhNiOjPk"
+    },
+    {
+      "_id": "Xouc0rUpVqWrXsYt",
+      "name": "Ventre d’or",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Xouc0rUpVqWrXsYt",
+        "summary": "Or rare, dur et léger ; les armes forgées dans cet or gagnent +1 VP / 10 PS.",
+        "description": "<p>Contrairement aux autres géants, les firdtursirs ont véritablement de l’or dans le ventre. Dans la plupart des cas, il n’y en a pas beaucoup, mais l’or est d’un type spécial que l’on ne trouve nulle part ailleurs. Une fois raffiné et travaillé, il devient beaucoup plus dur et plus léger que l’or normal. Les armes forgées dans cet or sont légères et très affûtées. De plus, elles bénéficient d’une solidité qui leur permet de résister aux dégâts (+1 VP/10 PS).</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 130
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.Xouc0rUpVqWrXsYt"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!AQLKcKdJeKfLgMhN.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "AQLKcKdJeKfLgMhN",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "psyche": 2,
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 5,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 3,
+        "kind": "discipline"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 15
+        },
+        {
+          "attack": "Mains nues",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 347,
+        "max": 347
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 48
+    },
+    "description": "Le firdtursir est un géant colossal mesurant le plus souvent entre vingt et vingt-deux mètres de haut. Issu de la pierre, son corps massif semble fusionner avec les montagnes lorsqu'il dort et devient partie intégrante de la nature. Sa carrure puissante lui permet d'arracher de grands rochers aux flancs des montagnes. Son ventre recèle véritablement de l'or, d'un type spécial qui devient plus dur et plus léger une fois raffiné et travaillé. Taillé pour la montagne, il résiste au froid presque aussi bien que les hrimtursirs. Endormi, il se confond avec la roche des versants et des falaises.",
+    "details": {
+      "creatureType": "Jotuns et thurses",
+      "type": "humanoid",
+      "size": "12",
+      "age": "400, max 800",
+      "naturalArmor": 3,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 313,
+      "bodyMax": 382,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "12 m",
+          "max": "48 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Colosse de pierre au ventre d'or qui fusionne avec la montagne.",
+      "environment": "Versants et falaises des montagnes de Jarngand, dans de gigantesques halles de pierre",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 130
+      }
+    }
+  },
+  "_id": "AQLKcKdJeKfLgMhN",
+  "_key": "!actors!AQLKcKdJeKfLgMhN",
+  "folder": "f5hlljKfLgMhNiOj"
+}

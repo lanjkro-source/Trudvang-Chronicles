@@ -1,0 +1,19 @@
+{
+  "_id": "a0A7iPhNiOjPkQlR",
+  "name": "Storm Control",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "a0A7iPhNiOjPkQlR",
+    "summary": "The yggwurm controls winds and storms.",
+    "description": "<p>The dragon can call forth a sudden storm that whirls and blows away everything that weighs less than 75 kg within a radius of 50 meters from the dragon. It is also this storm, if not as concentrated, that the dragon uses to lift its wings on the very rare occasions when it needs to strike out with its wings to gain speed. To withstand the directed storm, a creature that is exposed to it must make a situation roll (modified by the average of Strength and Dexterity) based on weight, according to the table below. The table also shows how far they are flung on a failed roll. If the victim is blown straight into a wall, he takes the same damage as if he had fallen that distance.</p><p>If the blown-away creature is still within the radius of the storm, it can get up but must make a new situation roll to be able to move within the area without being blown away again. The victims that are not blown away can act normally within the affected area but have a negative modifier on all actions according to the table below.</p><table><thead><tr><th>Victim's weight</th><th>Situation value</th><th>Thrown</th><th>Action modifier</th></tr></thead><tbody><tr><td>3 times the affected weight</td><td>18</td><td>No distance</td><td>None</td></tr><tr><td>2 times the affected weight</td><td>14</td><td>1d3 m</td><td>-2</td></tr><tr><td>1.5 times the affected weight</td><td>10</td><td>1d3 m</td><td>-4</td></tr><tr><td>Affected weight (75 kg)</td><td>6</td><td>1d6 m</td><td>-6</td></tr><tr><td>Half the affected weight</td><td>4</td><td>1d10 m</td><td>-8</td></tr><tr><td>One third of the affected weight</td><td>No roll</td><td>2d10 m</td><td>-10</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 127
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!a0A7iPhNiOjPkQlR",
+  "folder": null
+}

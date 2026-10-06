@@ -1,0 +1,19 @@
+{
+  "_id": "UgB46VpVqWrXsYtZ",
+  "name": "Immunité au feu et au froid",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UgB46VpVqWrXsYtZ",
+    "summary": "Le feu et le froid n'ont aucune prise sur la créature.",
+    "description": "<p>Un stenhinje est complètement immunisé au feu et au froid.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 97
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UgB46VpVqWrXsYtZ",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "pjrisUmSnToUpVqW",
+  "name": "Immune",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "pjrisUmSnToUpVqW",
+    "summary": "The demon is immune to poisons, spells or prayers, and may be immune to ordinary weapons so that only magical weapons can harm it.",
+    "description": "<p>The demon is immune to poison, spells or prayers. It can also be immune to normal weapons and can only be damaged by magical weapons.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!pjrisUmSnToUpVqW",
+  "folder": null
+}

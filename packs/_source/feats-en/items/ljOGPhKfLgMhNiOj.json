@@ -1,0 +1,19 @@
+{
+  "_id": "ljOGPhKfLgMhNiOj",
+  "name": "Hylja (log troll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "ljOGPhKfLgMhNiOj",
+    "summary": "Blends into the forest: -10 to notice it while fully concentrating, -5 while also using Roots.",
+    "description": "<p>The log troll has the ability to blend in and almost become one with the forest. If a log troll completely concentrates on this ability, anyone seeking it has a modifier of -10. If the log troll activates the Roots ability at the same time, the modifier is lessened to -5.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 86
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!ljOGPhKfLgMhNiOj",
+  "folder": null
+}

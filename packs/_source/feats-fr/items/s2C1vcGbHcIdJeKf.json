@@ -1,0 +1,19 @@
+{
+  "_id": "s2C1vcGbHcIdJeKf",
+  "name": "Perception de la vie",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "s2C1vcGbHcIdJeKf",
+    "summary": "Détecte les vivants à portée et identifie les plus faibles mentalement par des tests de compétence ; les sorts et talents divins peuvent la contrer.",
+    "description": "<p>Un diser a le pouvoir de percevoir où se situe une créature vivante située à portée. À chaque tour de jeu, le diser peut effectuer un test de compétence pour essayer de percevoir qui parmi les créatures vivantes situées à portée est la plus faible mentalement (on compare les valeurs de Psychisme). En réussissant deux tests de compétence, le diser peut percevoir les deux cibles les plus faibles mentalement situées à portée. Cependant, les cibles peuvent se cacher du diser en faisant appel à des sorts et des talents divins.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 46
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!s2C1vcGbHcIdJeKf",
+  "folder": null
+}

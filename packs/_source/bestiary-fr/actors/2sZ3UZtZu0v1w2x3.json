@@ -1,0 +1,119 @@
+{
+  "name": "Orignal",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2sZ3UZtZu0v1w2x3.jpg",
+  "items": [
+    {
+      "_id": "8ZL2Sz2x3y4z5A6B",
+      "name": "Cornes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!2sZ3UZtZu0v1w2x3.8ZL2Sz2x3y4z5A6B",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "2sZ3UZtZu0v1w2x3",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/2sZ3UZtZu0v1w2x3.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Cornes",
+          "value": 16
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 45,
+        "max": 45
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "C'est le plus grand des cervidés, au corps massif, au garrot bossu et aux pattes très longues et pâles. Son pelage épais brun-noir contraste avec son museau énorme, pendant et velu, surmonté de naseaux larges. Le mâle porte une ramure palmée et gigantesque, en forme de pelles dentelées pouvant s'étendre sur plusieurs brasses. Ses oreilles larges et ses yeux petits donnent à sa tête une expression lourde. Ses sabots larges et évasés le portent sans peine dans les marais et la neige profonde.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "quadruped",
+      "size": "2",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "",
+      "bodyMin": 45,
+      "bodyMax": 45,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Géant sombre à la ramure palmée immense.",
+      "environment": "Forêts boréales, tourbières et lacs peu profonds du nord de Trudvang.",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 11
+      }
+    }
+  },
+  "_id": "2sZ3UZtZu0v1w2x3",
+  "_key": "!actors!2sZ3UZtZu0v1w2x3",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

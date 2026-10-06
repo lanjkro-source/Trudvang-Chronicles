@@ -1,0 +1,19 @@
+{
+  "_id": "DaPcOQlRmSnToUpV",
+  "name": "Shriek of Death",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "DaPcOQlRmSnToUpV",
+    "summary": "Diser’s shriek: resistance at situation value 9 (Psyche), partial or full fear according to the result, repeated while the shriek lasts.",
+    "description": "<p>When the diser lets forth its horrid shriek, one would do best to let go of everything and cover one’s ears. Everyone who hears the shriek must truly be brave to avoid becoming paralyzed. How long this inability to act lasts depends on the victim’s Psyche and the strength of the diser. A person who hears the shriek can go unscathed, receive half the Fear Points, or receive all of the Fear Points. The victim makes a situation roll against the shriek’s SV 9 (the Psyche trait is used for the roll). The chart below illustrates the effect.</p><p>It is up to the game master to decide the fear factor of a shriek of death. A weak diser produces 1d10 (OR 10), while a strong diser can produce 1d10 (OR 6-10).</p><p>Depending on how far away a victim is from the diser when the wraith lets out its shriek of death, the victim can gain a positive modifier to the situation roll. For example, the modifier might be +1 in the middle of the range and +6 at the far edge of it.</p><p>How long a shriek lasts depends on the strength of the wraith. The truly strong spirits can shriek for up to 5 action rounds in a row, while the weaker ones will let out a short shriek (3 segments of an action round). A failed situation roll means that the character receives new Fear Points for each action round in which the shriek is sounding.</p><p>Usually, a diser can let forth a shriek of death once per day. However, some can do this several times a day, while others must wait for several days before they can shriek again.</p><table><thead><tr><th>Roll result</th><th>Effect</th></tr></thead><tbody><tr><td>Less than SV/2</td><td>No effect</td></tr><tr><td>Between SV/2 and SV</td><td>Half the Fear Points</td></tr><tr><td>Greater than or equal to SV</td><td>All the Fear Points</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!DaPcOQlRmSnToUpV",
+  "folder": null
+}

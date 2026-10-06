@@ -1,0 +1,273 @@
+{
+  "name": "Jarnwurm",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/gP59DE9EaGbHcIdJ.jpg",
+  "items": [
+    {
+      "_id": "xaQaSYpVqWrXsYtZ",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 11,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.xaQaSYpVqWrXsYtZ",
+      "effects": []
+    },
+    {
+      "_id": "sxYdR8D9EaGbHcId",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.sxYdR8D9EaGbHcId",
+      "effects": []
+    },
+    {
+      "_id": "Bx5dS3x3y4z5A6B7",
+      "name": "Magma breath",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": -4,
+        "naturalCombatPool": "magmabreath",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.Bx5dS3x3y4z5A6B7",
+      "effects": []
+    },
+    {
+      "_id": "eEOmsjNiOjPkQlRm",
+      "name": "Tail Whip",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "eEOmsjNiOjPkQlRm",
+        "summary": "Sweeps all targets within a 3-meter radius (SV 6, initiative 0); damage depends on the number of creatures affected and victims are knocked prone.",
+        "description": "<p>The wurm can use his tail like a whip to hit all the targets within a radius of 3 m. The wurm must make a successful SV6 roll and cannot perform any other action. The Initiative Modifier is 0. The damage taken depends on the number of people affected according to the chart below and anyone who is hit is thrown down and remains prone until he makes a Stand Up combat action.</p><p>The only way to protect oneself from the tail whip is to avoid it with a successful Evade roll.</p><table><thead><tr><th>Number of creatures</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>2d10 (OR 8-10)</td></tr><tr><td>2</td><td>2d10 (OR 9-10)</td></tr><tr><td>3</td><td>2d10 (OR 10)</td></tr><tr><td>4</td><td>1d10 (OR 8-10)</td></tr><tr><td>More than 4</td><td>1d10 (OR 10)</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 117
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.eEOmsjNiOjPkQlRm"
+    },
+    {
+      "_id": "7UKkQbHcIdJeKfLg",
+      "name": "Magma Blood",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "7UKkQbHcIdJeKfLg",
+        "summary": "Heat within 6 m, resist at situation value 6 (Psyche); splash on 1-3 on a d10, dealing 1d6 damage.",
+        "description": "<p>Underneath the skin of the jarnwurm flows the horrid and prized magma blood. The dragon radiates such heat that anyone who comes within 6 meters must make a situation roll with a situation value of 6 (Psyche modifiers apply) in order to hold his ground. Anyone who manages to remain within the sphere of heat takes the following damage per action round.</p><p>Weapons that pierce the heavy scale armor cause magma blood to spew from the wound. An attacker at close quarters could be hit by the blood and take damage from the extreme heat (make a luck roll with 1d10, where 1-3 means that the attacker is hit by the blood). The attacker can avoid this by succeeding on an Agility skill roll. If the roll fails, they take 1d6 points of damage (armor protects normally but risks catching on fire).</p><p>The magma blood is of use not only to the jarnwurm but also to all the blacksmiths in Trudvang. If the blood is mixed with iron, a binding is formed that is both harder and more durable than the dwarves’ mitraka. The metal is colored scarlet and called ironblood iron. Weapons made out of ironblood iron increase the chance of an open roll by 2. The Protection Value, Breach Value, and weight of weapons and armors made from ironblood iron is increased by 1d3.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1</td></tr><tr><td>3</td><td>1d3</td></tr><tr><td>4</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6 per round</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 117
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.7UKkQbHcIdJeKfLg"
+    },
+    {
+      "_id": "pjghN3w2x3y4z5A6",
+      "name": "Magma Breath",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "pjghN3w2x3y4z5A6",
+        "summary": "SV 12 without CP; range 1d10 (OR 9-10)+20 m, cone 6 m wide. Each breath loses magma blood; more than three breaths in one day kill the dragon.",
+        "description": "<p>Like all dragons, a jarnwurm can attack with its breath without spending Combat Points, but must succeed on a skill roll at SV 12. This weapon is called magma breath, and the dragon and its opponents take the same damage. The dragon's damage is caused by the quantity of magma blood lost in the attack; if it breathes more than three times in one day, it dies from blood loss. Its magma blood recovers at the rate of one breath attack per day.</p><p>The breath has a range of 1d10 (OR 9-10) +20 meters and forms an enormous cone 6 meters in diameter at its farthest end.</p><p>The jarnwurm's profile specifies 3d10 (OR 8-10) damage for its magma breath.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 117
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.pjghN3w2x3y4z5A6"
+    },
+    {
+      "_id": "qkzJr2tZu0v1w2x3",
+      "name": "Darkvision (100-300 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "qkzJr2tZu0v1w2x3",
+        "summary": "Normal sight in total darkness up to 100 m, fading until approximately 300 m.",
+        "description": "<p>The dragon can see up to 100 meters in pitch darkness as if it were daylight. Beyond that, visibility decreases and disappears completely at about 300 meters.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.qkzJr2tZu0v1w2x3"
+    },
+    {
+      "_id": "XJLfjcHcIdJeKfLg",
+      "name": "Thermal Sight",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "XJLfjcHcIdJeKfLg",
+        "summary": "Detects heat, size and distance up to 300 m; can be suppressed and is not stunned by sudden heat sources.",
+        "description": "<p>The creature detects heat sources up to 300 meters away. This allows it to estimate their magnitude and distance. The dragon can suppress its thermal sight when necessary and cannot be stunned by the sudden appearance of a heat source.</p><p>This ability works identically for the hrimwurm, jarnwurm, and logiwurm; it is distinct from their darkvision.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 114
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!gP59DE9EaGbHcIdJ.XJLfjcHcIdJeKfLg"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "gP59DE9EaGbHcIdJ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 5,
+    "height": 5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/gP59DE9EaGbHcIdJ.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": 4,
+      "strength": 10
+    },
+    "skills": {
+      "fighting": {
+        "value": 12,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 12,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 15
+        },
+        {
+          "attack": "Claws",
+          "value": 11
+        },
+        {
+          "attack": "Claws",
+          "value": 11
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 434,
+        "max": 434
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 40
+    },
+    "description": "This dragon is more compact than a logiwurm, its body covered in thousands of scales. Its iron-like hide bears black, sturdy, thick, almost impenetrable scales. Its true distinguishing feature is its thick black-and-red shell, combining dragon hide and solidified magma. Its underside is also protected by sturdy scales reinforced with a still thicker layer. Its fangs are as long as Mittland short swords, and a strongly sulfurous horn rises from its nose. A typical scale is hand-sized and thumb-thick, and its small wings cannot carry it far in flight.",
+    "details": {
+      "creatureType": "Wurms",
+      "type": "winged quadruped",
+      "size": "10",
+      "age": "500, max 1 000",
+      "naturalArmor": 5,
+      "fearFactor": "1d10 (JO 6-10)",
+      "bodyMin": 391,
+      "bodyMax": 478,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "20 m",
+          "max": "40 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "20 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Compact black-and-red armored dragon, horned, with small wings unable to sustain long flight.",
+      "environment": "Trudvang mountain ranges, in their oldest, deepest, darkest places where stone becomes almost liquid, in underground tunnels and caves",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 115
+      }
+    }
+  },
+  "_id": "gP59DE9EaGbHcIdJ",
+  "_key": "!actors!gP59DE9EaGbHcIdJ",
+  "folder": "hHkEitXsYtZu0v1w"
+}

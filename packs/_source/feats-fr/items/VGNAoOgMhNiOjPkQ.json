@@ -1,0 +1,19 @@
+{
+  "_id": "VGNAoOgMhNiOjPkQ",
+  "name": "Connaissances de la magie cachée",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VGNAoOgMhNiOjPkQ",
+    "summary": "Vitner sans limite quotidienne, sorts humains et secrets ; peut annuler de grands événements en arrêtant le temps et l’espace.",
+    "description": "<p>Ces connaissances permettent aux fjoltrolls d’être toujours en contact avec le vitner sous toutes ses formes. Il n’y a donc aucune limite au nombre de sorts qu’ils peuvent utiliser lors d’une même journée. Les fjoltrolls peuvent incanter tous les sorts connus des hommes et de nombreux autres sorts qu’eux seuls connaissent. Ils n’utilisent cependant ce pouvoir que très rarement.</p><p>Lorsque de grands événements sont provoqués par les forces du mal ou du bien, les fjoltrolls peuvent arrêter le temps et l’espace et annuler ces événements s’ils considèrent qu’ils posent un véritable problème.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 148
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VGNAoOgMhNiOjPkQ",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "NEu59F7C8D9EaGbH",
+  "name": "Projection à coup de défenses",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NEu59F7C8D9EaGbH",
+    "summary": "Le hrimtroll frappe de ses grandes défenses pour projeter ses ennemis dans les airs ; le coup lui-même n'inflige généralement pas de dégâts, mais la chute qui s'ensuit inflige d'importants dégâts de chute (esquive possible avec Agilité, de préférence Esquive).",
+    "description": "<p>Le hrimtroll utilise ses grandes défenses lorsqu’il combat. Il donne de grands et larges coups pour frapper le plus d’ennemis possible, qu’il projette ensuite dans les airs d’un grand coup sec vers le haut. Le coup de défenses en lui-même n’inflige généralement pas de dégât, mais la chute qui s’ensuit inflige d’importants dégâts de chute.</p><p>Une victime de la Projection à coup de défenses peut tenter d’esquiver l’attaque avec la compétence Agilité, de préférence avec la spécialité Esquive.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 156
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NEu59F7C8D9EaGbH",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "VGNAoOgMhNiOjPkQ",
+  "name": "Teachings of the Hidden Magics",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VGNAoOgMhNiOjPkQ",
+    "summary": "Unlimited daily vitner, human and secret spells; can undo major events by stopping time and space.",
+    "description": "<p>The teachings give fjol trolls the ability to always be in contact with the vitner in all its forms and shapes. Therefore they have no limit on how many spells they can use during one day. The fjol trolls can wield all spells known to man and many that only they know of. However, they use this power very seldom.</p><p>During great events that have been summoned by evil or good forces, the fjol trolls can, if they feel the need to be dire, stop time and space and cause the event to be undone.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 148
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VGNAoOgMhNiOjPkQ",
+  "folder": null
+}

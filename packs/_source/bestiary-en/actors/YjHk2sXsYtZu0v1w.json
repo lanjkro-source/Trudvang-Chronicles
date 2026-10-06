@@ -1,0 +1,215 @@
+{
+  "name": "Wolf",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/YjHk2sXsYtZu0v1w.jpg",
+  "items": [
+    {
+      "_id": "ZFqQ5YqWrXsYtZu0",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!YjHk2sXsYtZu0v1w.ZFqQ5YqWrXsYtZu0",
+      "effects": []
+    },
+    {
+      "_id": "QZ1qdWnToUpVqWrX",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!YjHk2sXsYtZu0v1w.QZ1qdWnToUpVqWrX",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!YjHk2sXsYtZu0v1w.41hqc1sYtZu0v1w2"
+    },
+    {
+      "_id": "YZuZVRjPkQlRmSnT",
+      "name": "Jump Attack",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "YZuZVRjPkQlRmSnT",
+        "summary": "When initiating combat, the warg leaps onto its prey with bite and claws, gaining an additional Claws attack without spending further CP that round.",
+        "description": "<p>When a warg beast initiates a combat, it will jump at the prey and attack both with its bite and with its claws. The jump attack means that the beast gains an extra attack with its hind legs and claws in this action round (SV 10 claws) without spending further CP. This is valid only for the round when the jump attack happens.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!YjHk2sXsYtZu0v1w.YZuZVRjPkQlRmSnT"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!YjHk2sXsYtZu0v1w.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "YjHk2sXsYtZu0v1w",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/YjHk2sXsYtZu0v1w.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 16
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Bite",
+          "value": 12
+        },
+        {
+          "attack": "Bite",
+          "value": 6
+        },
+        {
+          "attack": "Claws",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 16,
+        "max": 16
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "This is the smallest of the warg lineage and a distant cousin of the warg. Its four-legged canine body is of conventional size. Its head is smaller and finer than a warg's. Fur covers an agile, fast-moving body. Its biting jaws and clawed feet serve it in pack hunting. Its familiar silhouette provides a reference against which to compare wargs, skolls, and garms.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "quadruped",
+      "size": "0.5",
+      "age": "6, max. 14",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 14,
+      "bodyMax": 18,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "4 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Conventional wolf, the small agile cousin of the warg lineage.",
+      "environment": "Wilderness around villages and farms, particularly in Stormlands",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 30
+      }
+    }
+  },
+  "_id": "YjHk2sXsYtZu0v1w",
+  "_key": "!actors!YjHk2sXsYtZu0v1w",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

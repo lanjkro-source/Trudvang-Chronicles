@@ -1,0 +1,19 @@
+{
+  "_id": "NEu59F7C8D9EaGbH",
+  "name": "Tusk Throw",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "NEu59F7C8D9EaGbH",
+    "summary": "The hrim troll throws enemies into the air with its tusks; the sweep usually does no damage but the fall does (avoid with Agility, preferably Evade).",
+    "description": "<p>The hrim troll uses its great tusks in battle. It sweeps them from side to side to gather as many of its enemies as possible. With a great thrust, the troll then throws those enemies high into the air. The sweep itself seldom causes damage, but the fall that comes after having been thrown so high causes severe fall damage.</p><p>A victim of the tusk throw can try to avoid the attack with the Agility skill, preferably with the Evade specialty.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 159
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!NEu59F7C8D9EaGbH",
+  "folder": null
+}

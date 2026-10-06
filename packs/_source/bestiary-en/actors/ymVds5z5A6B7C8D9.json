@@ -1,0 +1,199 @@
+{
+  "name": "Logrjotun",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg",
+  "items": [
+    {
+      "_id": "M1tGyxZu0v1w2x3y",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.M1tGyxZu0v1w2x3y",
+      "effects": []
+    },
+    {
+      "_id": "xqhnZRmSnToUpVqW",
+      "name": "Water Control",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "xqhnZRmSnToUpVqW",
+        "summary": "The logrjotun controls water and currents.",
+        "description": "<p>A logrjotun can control the water it moves through. It does not do this through the use of vitner but rather by movement. The giant can, for example, create horrid waves that it can send toward a threat. It can create huge maelstroms that suck boats down into the depths or water currents that make boats stray along a different path no matter how the wind blows.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 136
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.xqhnZRmSnToUpVqW"
+    },
+    {
+      "_id": "iTN16SlRmSnToUpV",
+      "name": "Grip (logrjotun)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "iTN16SlRmSnToUpV",
+        "summary": "Grips without further CP after an unarmed attack; crush damage depends on size, or a throw deals 1d10 (OR 10) to 1d10 (OR 4-10).",
+        "description": "<p>When the giant succeeds in an unarmed attack roll he can try to grab hold of a victim, without spending further Combat Points, but making a SV roll. The creature must be between 1/2t and 3t in size and the value of the SV depends on the size of the victim, according to the table below.</p><p>A victim of the grip can try to avoid the attack with the Agility skill, preferably with the Evade specialty. Each round, the giant can choose to crush or throw the victim. A crush causes the victim to take between 1d10 and 1d10 (OR 9–10) points of damage per action round (the damage depends on the size of the victim), while a fall can deal anything from 1d10 (OR 10) to 1d10 (OR 4–10) points of damage, depending on the severity of the fall.</p><table><thead><tr><th>Victim's size</th><th>Skill value</th><th>Crushing damage</th></tr></thead><tbody><tr><td>1/2</td><td>4</td><td>1d10 (OR 9-10)</td></tr><tr><td>1</td><td>6</td><td>1d10 (OR 9-10)</td></tr><tr><td>1.5</td><td>7</td><td>1d10 (OR 10)</td></tr><tr><td>2</td><td>8</td><td>1d10 (OR 10)</td></tr><tr><td>3</td><td>9</td><td>1d10</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 135
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.iTN16SlRmSnToUpV"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "LTLHNqSnToUpVqWr",
+      "name": "Mooneyes",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "LTLHNqSnToUpVqWr",
+        "summary": "At night, situation value 8 (Psyche) to avoid steering a ship toward the light of the giant’s eyes.",
+        "description": "<p>The great eyes of the logrjotun radiate with light like a full moon during the night. This is not something that can be seen during the day, but when night falls, a seafarer may see the eyes of a logrjotun like small round moons at a distance.</p><p>Even if it is not the intention of the giant, their eye light can be treacherously attractive. Seafarers must make a situation roll with a situation value of 8 (Psyche modifiers apply) to not unintentionally steer their ship toward the light.</p><p>Even if the logrjotun is a peaceful creature, it can be annoyed by ships that stray too close or steer into them.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 135
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!ymVds5z5A6B7C8D9.LTLHNqSnToUpVqWr"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "ymVds5z5A6B7C8D9",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 6,
+    "height": 6,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": -4,
+      "strength": 8
+    },
+    "skills": {
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 404,
+        "max": 404
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -6
+    },
+    "movement": {
+      "base": 60
+    },
+    "description": "The logrjotun is the largest giant, of imposing shape and impressive height. Shellfish, algae, and seaweed cover its green-and-blue skin. Its great head shelters seabirds that circle it looking for nesting places. After nightfall its large luminous eyes give off a glow like the full moon. From afar at night, they resemble two small round moons in the distance. Sitting motionless in the sea for decades, it can be mistaken for a small island.",
+    "details": {
+      "creatureType": "Jotuns and thurses",
+      "type": "humanoid",
+      "size": "15",
+      "age": "1 000, max variable",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 364,
+      "bodyMax": 445,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "15 m",
+          "max": "60 m"
+        },
+        {
+          "mode": "nage",
+          "distance": "15 m",
+          "max": "60 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Sea giant with shell-encrusted green-and-blue skin and moon eyes.",
+      "environment": "Endless oceans and the seabed; rises to sit amid turbulent waters, as off Dalheim",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 135
+      }
+    }
+  },
+  "_id": "ymVds5z5A6B7C8D9",
+  "_key": "!actors!ymVds5z5A6B7C8D9",
+  "folder": "f5hlljKfLgMhNiOj"
+}

@@ -345,6 +345,7 @@ function missingFeatPayloads(existingEffects, featNames) {
 // Authoritative creature stats on the create payload; starter-content.json mirrors the
 // same values so new worlds are correct even before this runs. Explicit JSON wins on
 // conflicts so hand-tuned starters are never clobbered.
+// TEMPORARY WORLD MIGRATION — legacy starter NPC data; new NPCs come from Bestiary packs.
 function applyBakedCreatureStats(payload, key) {
   const baked = creatureDataForStarter(key);
   if (!baked || payload.type !== "npc") return;
@@ -413,6 +414,7 @@ export const sameComboList = (a, b) => (a ?? []).length === (b ?? []).length
     return pair.attack === other.attack && pair.action === other.action && pair.mode === other.mode
       && Number(pair.distance ?? 0) === Number(other.distance ?? 0) && Number(pair.value) === Number(other.value);
   }));
+// TEMPORARY WORLD MIGRATION — complete historical starter copies without replacing custom stats.
 async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
   const baked = creatureDataForStarter(key);
   if (!baked || actor.type !== "npc") return;
@@ -489,6 +491,7 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
   if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);
 }
 
+// TEMPORARY WORLD MIGRATION — no actors remain in the current starter content.
 async function upsertActors(source, folders, translationsByKey) {
   let updated = 0;
   for (const entry of source.actors) {

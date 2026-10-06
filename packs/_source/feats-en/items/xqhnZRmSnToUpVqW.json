@@ -1,0 +1,19 @@
+{
+  "_id": "xqhnZRmSnToUpVqW",
+  "name": "Water Control",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "xqhnZRmSnToUpVqW",
+    "summary": "The logrjotun controls water and currents.",
+    "description": "<p>A logrjotun can control the water it moves through. It does not do this through the use of vitner but rather by movement. The giant can, for example, create horrid waves that it can send toward a threat. It can create huge maelstroms that suck boats down into the depths or water currents that make boats stray along a different path no matter how the wind blows.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 136
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!xqhnZRmSnToUpVqW",
+  "folder": null
+}

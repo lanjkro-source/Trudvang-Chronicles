@@ -1,0 +1,19 @@
+{
+  "_id": "8nD540sYtZu0v1w2",
+  "name": "Attaque des hauteurs (happja)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "8nD540sYtZu0v1w2",
+    "summary": "Piqué à VC 8 : griffes 1d10 (JO 7-10) ; réutilisable tous les 4 tours.",
+    "description": "<p>Pour parvenir à attaquer des hauteurs, une happja doit réussir un test de compétence dans le cadre de l’utilisation de ce pouvoir (VC 8). La vitesse de mouvement de la happja renforce la violence de cette attaque, ce qui augmente les dégâts de l’attaque de griffes à 1d10 (JO 7-10).</p><p>Une happja ne peut accomplir qu'une seule attaque des hauteurs tous les quatre tours de jeu, car elle doit faire un grand cercle pendant au moins trois tours sans attaquer.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 76
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!8nD540sYtZu0v1w2",
+  "folder": null
+}

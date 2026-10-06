@@ -1,0 +1,19 @@
+{
+  "_id": "fM9m2B3y4z5A6B7C",
+  "name": "Frighten",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "fM9m2B3y4z5A6B7C",
+    "summary": "Terrible visions; Fear Points and resistance situation value (Psyche) are set by the GM according to the diser’s power.",
+    "description": "<p>The piercing gaze of a diser can expose a victim to terrible visions. The victim can completely or partially resist by succeeding on a situation roll with a situation value that is decided by the game master, taking into consideration the strength of the diser (Psyche modifiers apply).</p><p>What visions the victim sees will differ from case to case and will yield different amounts of Fear Points. It is up to the game master to decide how many Fear Points are appropriate and whether a successful situation roll completely frees the victim from any fear (and therefore nullifies the Fear Points).</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 53
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!fM9m2B3y4z5A6B7C",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "pjrisUmSnToUpVqW",
+  "name": "Immunité",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "pjrisUmSnToUpVqW",
+    "summary": "Le démon est immunisé aux poisons, aux sorts ou aux prières, et peut aussi être immunisé aux armes normales, seules les armes magiques pouvant alors le blesser.",
+    "description": "<p>Le démon est immunisé aux poisons, aux sorts ou aux prières. Il peut également être immunisé aux armes normales et, le cas échéant, seules les armes magiques peuvent donc le blesser.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!pjrisUmSnToUpVqW",
+  "folder": null
+}

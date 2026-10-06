@@ -1,0 +1,255 @@
+{
+  "name": "Beinbaiter",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg",
+  "items": [
+    {
+      "_id": "QQMU9bGbHcIdJeKf",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 5,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!NNALQ9EaGbHcIdJe.QQMU9bGbHcIdJeKf",
+      "effects": []
+    },
+    {
+      "_id": "RqlXC7B7C8D9EaGb",
+      "name": "Griffure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 7,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!NNALQ9EaGbHcIdJe.RqlXC7B7C8D9EaGb",
+      "effects": []
+    },
+    {
+      "_id": "GzpMMB3y4z5A6B7C",
+      "name": "Maladie de la mort",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "GzpMMB3y4z5A6B7C",
+        "summary": "Empêche toute guérison et inflige 1 dégât par semaine ; seul un prêtre peut la soigner.",
+        "description": "<p>Une victime mordue ou griffée par un beinbaiter risque de succomber à l’effroyable maladie de la mort. La victime s’affaiblit peu à peu en subissant 1 point de dégâts par semaine. La maladie empêche la guérison des blessures, que ce soit par le biais de soins, d’extraits ou par la guérison naturelle, tant que la victime est malade. La seule façon de soigner cette maladie consiste à consulter un prêtre, quelle que soit sa religion, capable de soigner les dégâts qu’elle cause.</p><p>Une personne qui meurt de la maladie de la mort se relève après un cycle lunaire, envahie par une effroyable faim de moelle.</p><p>Les risques qu’une victime contracte cette maladie dépendent du nombre de points de dégâts que le beinbaiter lui a infligés en combat. Jetez 1d10 et consultez la table suivante au regard des dégâts infligés à la victime. Si le résultat du jet correspond à celui indiqué dans la colonne « Résultat du d10 », cela signifie que l’individu contracte la maladie.</p><table><thead><tr><th>Dégâts infligés</th><th>Résultat du d10 infectieux</th></tr></thead><tbody><tr><td>1 à 5</td><td>1</td></tr><tr><td>6 à 10</td><td>1 à 3</td></tr><tr><td>11 à 20</td><td>1 à 4</td></tr><tr><td>21 à 30</td><td>1 à 5</td></tr><tr><td>Plus de 30</td><td>1 à 6</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 36
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!NNALQ9EaGbHcIdJe.GzpMMB3y4z5A6B7C"
+    },
+    {
+      "_id": "GDLIzz3y4z5A6B7C",
+      "name": "Puanteur du bein",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "GDLIzz3y4z5A6B7C",
+        "summary": "Contamination à moins de 5 m : puanteur persistante, portée 10 m, perte de deux niveaux de Charisme.",
+        "description": "<p>Quiconque s’approche à moins de 5 mètres d’un beinbaiter subit les effets de la puanteur du bein. Plus une personne reste exposée longtemps à cette puanteur, plus celle-ci persiste. La puanteur est impossible à dissiper et est si horrible et puissante que tous ceux situés à moins de 10 mètres de la victime s’arrêtent instantanément. Une victime qui souhaite réduire l’intensité de la puanteur doit brûler tous ses vêtements imprégnés puis se recouvrir de cendres. Tant que son corps est recouvert de cendre, la portée de la puanteur est réduite de 5 mètres.</p><p>Le Charisme de la victime est réduit de 2 niveaux pendant toute la durée de la puanteur. La table suivante indique la durée pendant laquelle une victime subit la puanteur en fonction du nombre de tours de jeu pendant lesquels elle est restée en contact avec la créature.</p><table><thead><tr><th>Contact</th><th>Durée</th></tr></thead><tbody><tr><td>1 à 2 tours</td><td>1d3 jours</td></tr><tr><td>3 à 10 tours</td><td>2d3 jours</td></tr><tr><td>11 à 20 tours</td><td>2d6 jours</td></tr><tr><td>Plus de 20 tours</td><td>4d6 jours</td></tr></tbody></table>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 36
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!NNALQ9EaGbHcIdJe.GDLIzz3y4z5A6B7C"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!NNALQ9EaGbHcIdJe.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "NNALQ9EaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": -2,
+      "constitution": 2,
+      "strength": 2
+    },
+    "skills": {
+      "agility": {
+        "value": 8,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Discrétion",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Trouver et remarquer",
+        "skillId": "shadowArts",
+        "catalogId": "findingSpotting",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Camouflage et dissimulation",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Marcher dans les ombres",
+        "skillId": "shadowArts",
+        "catalogId": "walkingShadows",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 12
+        },
+        {
+          "attack": "Griffure",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 86,
+        "max": 86
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "Le beinbaiter est une créature primitive née du cadavre d'un homme atteint de la peste noire. Sa gueule est armée pour mordre la chair et briser les os afin d'en sucer la moelle. Ses pattes sont munies de griffes acérées capables de lacérer ses victimes. Son corps en décomposition exhale une horrible puanteur impossible à dissiper. Cette puanteur imprègne durablement les vêtements et diffère de celle des trolls ou des latrines. Elle trahit sa présence bien avant qu'on ne le voie.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "2",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 78,
+      "bodyMax": 95,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Rongeur de cadavres pestiféré à la puanteur insoutenable.",
+      "environment": "Vieux sites funéraires et lieux d'inhumation humaine, comme les plaines de Silvtrunder au pied des monts Silferspiir, caché dans des terriers et des buissons durant le jour",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 36
+      }
+    }
+  },
+  "_id": "NNALQ9EaGbHcIdJe",
+  "_key": "!actors!NNALQ9EaGbHcIdJe",
+  "folder": "nhZGosWrXsYtZu0v"
+}

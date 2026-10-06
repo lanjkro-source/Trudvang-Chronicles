@@ -1,0 +1,19 @@
+{
+  "_id": "10klNtVqWrXsYtZu",
+  "name": "Sang de lave",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "10klNtVqWrXsYtZu",
+    "summary": "Chaleur à moins de 6 m, résistance VS 12 (Psychisme) ; éclaboussures sur 1-2 au d10, infligeant 1d5 dégâts.",
+    "description": "<p>Sous la peau durcie d’un muspeljotun coule de la lave brûlante. Le géant dégage une telle chaleur que les créatures situées à moins de 6 mètres doivent réussir un test de situation avec une valeur de situation de 12 (le modificateur de Psychisme s’applique) pour y résister. À chaque tour de jeu, les créatures qui restent à proximité subissent les dégâts de chaleur indiqués ci-dessous.</p><p>Les armes qui tranchent la peau du géant provoquent des blessures d’où gicle de la lave. Un attaquant au corps à corps peut être aspergé de sang et subir les dégâts de chaleur (faites un test de chance avec 1d10 : un résultat de 1 ou 2 signifie que l’attaquant est aspergé de sang). L’attaquant peut esquiver une giclée en réussissant un test de compétence d’Agilité. S’il échoue, le personnage subit 1d5 points de dégâts (l’armure protège normalement mais peut prendre feu).</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1 à 3</td><td>Aucun</td></tr><tr><td>4</td><td>1</td></tr><tr><td>5</td><td>1d3</td></tr><tr><td>6</td><td>2d3</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d3</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 140
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!10klNtVqWrXsYtZu",
+  "folder": null
+}

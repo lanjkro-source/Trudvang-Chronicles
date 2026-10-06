@@ -1,0 +1,207 @@
+{
+  "name": "Net Spider",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg",
+  "items": [
+    {
+      "_id": "1X3jmC6B7C8D9EaG",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.1X3jmC6B7C8D9EaG",
+      "effects": []
+    },
+    {
+      "_id": "UhT3DqSnToUpVqWr",
+      "name": "Impaling leg",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 7,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "impalingleg",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.UhT3DqSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "_id": "ka2CP6A6B7C8D9Ea",
+      "name": "Attack Web",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "ka2CP6A6B7C8D9Ea",
+        "summary": "The net spider projects a sticky web to trap prey.",
+        "description": "<p>Apart from its bite, the net spider will attack with its sticky net making a SV 9 roll. If the spider succeeds with the attack, everyone within an area that is approximately 8 meters long and 3 meters broad will be hit by the net. Victims must make a situation roll with a situation value of 7 (Strength modifiers apply) to break free from the web. The net spider can use this attack three times per day.</p><p>The net has legendary capabilities. From it, one can make silky ropes and bowstrings. A silky rope from a great net spider weighs a fourth of a normal rope’s weight and holds double the load. A bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1.</p><p>Making a rope can take more than a month’s time. Making a bowstring takes two to three months of time. The rope or bowstring is always black. Some of Trudvang’s most well-known elven bows, such as Verisias, the silver dragon, are said to have a bowstring made from the attack web of the great net spider.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.ka2CP6A6B7C8D9Ea"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.yCooPeIdJeKfLgMh"
+    },
+    {
+      "_id": "EdVMy2u0v1w2x3y4",
+      "name": "Spin Cocoon",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "EdVMy2u0v1w2x3y4",
+        "summary": "Cocoon formed in 1d10+10 rounds; escaping requires three successes, in order, at situation values 3, 7 and 11 (Strength).",
+        "description": "<p>Both the eye spider and the net spider have the ability to wrap their victim in cocoons of web and hang them upside down in the forest. As soon as the giant spider has either paralyzed its victim or trapped it in a net, it will begin to encapsulate its prey in a cocoon, assuming that nothing else is calling for its attention.</p><p>The cocoon takes 1d10 + 10 action rounds to create, and a trapped victim who wants to break free must make three situation rolls with the situation values of 3, 7, and 11 (Strength modifiers apply) to break free. The successful rolls do not need to be in a row. One or more failures can separate them. But the three successes must be in the order of SV 3, SV 7, and SV 11.</p><p>If the victim fails to break free, it remains in the deadly cocoon and might soon die of starvation or being eaten by the giant spider.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Dy2cOUlRmSnToUpV.EdVMy2u0v1w2x3y4"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Dy2cOUlRmSnToUpV",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 6
+    },
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Impaling leg",
+          "value": 10
+        },
+        {
+          "attack": "Impaling leg",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 94,
+        "max": 94
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -4
+    },
+    "movement": {
+      "base": 50
+    },
+    "description": "This solitary giant spider has a massive body and lurks in the forest shadows. Its head bears more than one pair of eyes and enormous mandibles used to attack. Its long legs include sharp impaling legs. Its already sturdy armor grows with age into a carapace almost like stone skin. An organic substance secreted through pores coats this shell as additional protection. Older specimens often carry moss and fungi growing on their backs.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "other",
+      "size": "5",
+      "age": "3 500, max. 5 000",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 8-10)",
+      "bodyMin": 84,
+      "bodyMax": 105,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "10 m",
+          "max": "50 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Canopy weaver that casts a heavy net of black sticky web.",
+      "environment": "Dark forests, nests in high branches and the canopy",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 18
+      }
+    }
+  },
+  "_id": "Dy2cOUlRmSnToUpV",
+  "_key": "!actors!Dy2cOUlRmSnToUpV",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

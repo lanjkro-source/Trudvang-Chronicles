@@ -1,0 +1,541 @@
+{
+  "name": "Draugr",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7.jpg",
+  "items": [
+    {
+      "_id": "0UvJZ7C8D9EaGbHc",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d5",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.0UvJZ7C8D9EaGbHc",
+      "effects": []
+    },
+    {
+      "name": "Krum swerd (cimeterre)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1.3,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "TH76L1tZu0v1w2x3",
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.TH76L1tZu0v1w2x3",
+      "effects": []
+    },
+    {
+      "name": "Barda klót (chaîne de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 12,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "C9e11kNiOjPkQlRm",
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.C9e11kNiOjPkQlRm",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (massue à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "1d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "n0Rnhz1w2x3y4z5A",
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.n0Rnhz1w2x3y4z5A",
+      "effects": []
+    },
+    {
+      "name": "Petit bouclier en bois",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier rapide permettant trois actions d'arme par tour. Les boucliers servent avant tout à parer les attaques au contact réussies.",
+        "source": "Guide du maître, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "aHpCV7z5A6B7C8D9",
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.aHpCV7z5A6B7C8D9",
+      "effects": []
+    },
+    {
+      "name": "cotte de mailles",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+      "system": {
+        "description": "Des milliers d'anneaux métalliques entrelacés portés sur un rembourrage. Lourde mais comparativement souple.",
+        "source": "Guide du maître, p. 77",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "heft": 5,
+        "movementModifier": -2,
+        "initiativeModifier": -2,
+        "weight": 21,
+        "value": 70,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "DciRj1sYtZu0v1w2",
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.DciRj1sYtZu0v1w2",
+      "effects": []
+    },
+    {
+      "_id": "flAdvMhNiOjPkQlR",
+      "name": "Corps de fumée",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "flAdvMhNiOjPkQlR",
+        "summary": "Transformation en 3 tours sans défense ; déplacement 30 m/tour, récupération de 10 PS/jour sous forme de fumée.",
+        "description": "<p>Un draugr peut se transformer en fumée dès qu’il le souhaite. Quand un draugr est sous forme de fumée, il peut se déplacer à une vitesse de 30 mètres par tour de jeu, mais les vents forts peuvent grandement réduire cette vitesse. Pour chaque journée pendant laquelle le draugr reste sous cette forme, il soigne ses blessures de 10 points de santé.</p><p>Le draugr met 3 tours de jeu pour se transformer en fumée. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se transformer si des ennemis le menacent.</p><p>La transformation du corps physique en fumée et le retour à la forme physique coûtent chacun 50 jours et 50 nuits de séjour au draugr.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 50
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.flAdvMhNiOjPkQlR"
+    },
+    {
+      "_id": "pjY95vXsYtZu0v1w",
+      "name": "Métamorphose (draugr)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "pjY95vXsYtZu0v1w",
+        "summary": "Transformation à volonté en animal ; 3 tours sans pouvoir se défendre, et un coût de 30 jours et nuits de séjour.",
+        "description": "<p>Dès qu’il le souhaite, un draugr peut se métamorphoser en animal, souvent en loup, en corbeau ou en cheval. C’est de cette façon qu’il parcourt de longues distances.</p><p>Le draugr met 3 tours de jeu pour se métamorphoser. Pendant ce temps, il ne peut absolument plus se défendre. Il est donc peu probable qu’il décide de se métamorphoser si des ennemis à proximité le menacent.</p><p>Chaque métamorphose d’une forme à une autre coûte 30 jours et 30 nuits de séjour au draugr.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 50
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.pjY95vXsYtZu0v1w"
+    },
+    {
+      "_id": "KldIdUlRmSnToUpV",
+      "name": "Sacrifice vital",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "KldIdUlRmSnToUpV",
+        "summary": "Boire le sang prolonge le séjour du draugr : 30 jours pour le sang humain, 60 pour le sang elfique.",
+        "description": "<p>Un draugr qui a bu du sang humain jusqu’à satiété peut prolonger son séjour dans le monde des vivants d’un mois lunaire (30 jours et 30 nuits). Le sang d’elfe lui permet de prolonger son séjour de deux mois lunaires alors que le sang de troll ne lui accorde qu’une semaine ou deux seulement. Le sang des animaux lui procure moins de temps, une journée ou quelques heures seulement, en fonction de la force de l’animal. Le draugr peut se nourrir jusqu’à être rassasié (10 points de santé) plusieurs fois par jour.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 50
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.KldIdUlRmSnToUpV"
+    },
+    {
+      "_id": "5H4W4NhNiOjPkQlR",
+      "name": "Tenace",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5H4W4NhNiOjPkQlR",
+        "summary": "Ignore tous les malus des niveaux de blessure, sans empêcher la perte de PS.",
+        "description": "<p>La créature est un mort-vivant dont le corps est animé par des énergies provenant du royaume des morts. Elle ne ressent plus les atteintes physiques comme une créature vivante et dispose généralement de nombreux points de santé.</p><p>Elle continue de perdre des points de santé lorsqu’elle subit des dégâts, mais ne souffre d’aucun des malus normalement associés aux niveaux de blessure. Il est donc inutile de noter ses niveaux de blessure. Cet effet est identique pour les démons tangibles, draugrs, lyktgubbes, mylings, revenants des tumulus, sálheles et sombres horreurs ; il ne constitue pas à lui seul une immunité aux dégâts ni une régénération.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 40
+        },
+        "ignoreWoundPenalties": true
+      },
+      "effects": [],
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.5H4W4NhNiOjPkQlR"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Vision dans le noir",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Vision sans aucune lumière, comme en plein jour ; aucune portée particulière n’est fixée par cette capacité.",
+        "description": "<p>La créature voit sans aucune source de lumière, y compris dans l’obscurité totale, comme en plein jour. Les descriptions de ces créatures ne fixent pas de limite de portée propre à ce pouvoir.</p><p>L’absence de lumière ne réduit donc pas la vision, mais les autres obstacles et conditions de visibilité restent applicables. Le draugr voit aussi loin que le lui permettent les conditions, quel que soit l’environnement. La capacité Vue du diser précise séparément son comportement face au brouillard, à la fumée et aux effets magiques ; Vision dans le noir seule ne confère pas ces propriétés.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 16
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!XXAWJ4x3y4z5A6B7.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "XXAWJ4x3y4z5A6B7",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "psyche": 3,
+      "strength": 4
+    },
+    "skills": {
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 4,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Discrétion",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage et dissimulation",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes légères à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 4,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle : …",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Mains nues",
+          "value": 14
+        },
+        {
+          "attack": "Mains nues",
+          "value": 13
+        }
+      ],
+      [
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 14
+        },
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 12
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 10
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 16
+        },
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 12
+        }
+      ],
+      [
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 12
+        },
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 7
+        },
+        {
+          "attack": "Barda klót (chaîne de bataille)",
+          "value": 9
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 10
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 8
+        }
+      ],
+      [
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 11
+        },
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 9
+        },
+        {
+          "attack": "Krum swerd (cimeterre)",
+          "value": 8
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 10
+        },
+        {
+          "attack": "Petit bouclier en bois",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 115,
+        "max": 115
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "Le draugr est un mort-vivant capable de changer d'apparence, de taille et de traits physiques. Selon le temps écoulé depuis sa mort, son corps présente un stade de décomposition variable, d'un état apparemment intact à celui de squelette aux os manquants. Sa peau, quand il en reste, est d'un gris terne. La couleur de ses yeux a disparu pour ne laisser que la noirceur des pupilles. De nombreux draugrs peuvent aussi transformer leur corps physique en fumée.",
+    "details": {
+      "creatureType": "Créatures des brumes",
+      "type": "humanoid",
+      "size": "1",
+      "age": "variable, max variable",
+      "naturalArmor": 0,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 104,
+      "bodyMax": 127,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "15 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Mort assoiffé de sang à la peau gris terne et aux pupilles noires.",
+      "environment": "Tumulus, cairns et anciens champs de bataille où se sont déroulées de grandes batailles ou des guerres",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 47
+      }
+    }
+  },
+  "_id": "XXAWJ4x3y4z5A6B7",
+  "_key": "!actors!XXAWJ4x3y4z5A6B7",
+  "folder": "nhZGosWrXsYtZu0v"
+}

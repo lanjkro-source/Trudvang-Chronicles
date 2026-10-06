@@ -1,0 +1,19 @@
+{
+  "_id": "G4RBaoRmSnToUpVq",
+  "name": "Noyade (myling)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "G4RBaoRmSnToUpVq",
+    "summary": "Résister à pied : VS 14, -1 par myling ; en eau profonde, Natation -1 par myling.",
+    "description": "<p>Quand un myling entend des gens approcher, il peut se faire passer pour un enfant sur le point de se noyer (il se comporte généralement de la sorte uniquement s’il y a d’autres mylings à proximité). Le myling se comporte comme un enfant humain, barbote dans l’eau et demande aux voyageurs leurs noms. S’il n’obtient pas les vrais noms des voyageurs ou si quelqu’un saute dans l’eau pour venir en aide à ce qui lui semble être un enfant, le myling passe à l’attaque, mais seulement s’il est soutenu par un groupe de myling plus important que les voyageurs.</p><p>Une victime menacée par les mylings doit parvenir à retrouver la terre ferme pour ne pas risquer la noyade. Si la victime a pied dans un lac ou une autre étendue d’eau, elle doit réussir un test de situation avec une valeur de situation de 14 (les modificateurs de Force ou de Dextérité s’appliquent). Pour chaque myling qui tente de tirer la victime vers le fond, la valeur de situation est réduite de -1. Si l’eau est trop profonde et nécessite que la victime nage pour garder la tête hors de l’eau, un test de compétence d’Agilité avec la spécialité Natation est effectué à la place du test de situation. La valeur de compétence d’Agilité est réduite de -1 pour chaque myling qui tente de noyer la victime. Si la victime ne maîtrise pas la spécialité Natation, aucun test n’est effectué et la victime se noie automatiquement.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 55
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!G4RBaoRmSnToUpVq",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "MKMhM5z5A6B7C8D9",
+  "name": "Changement de forme (fjoltroll)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "MKMhM5z5A6B7C8D9",
+    "summary": "Le fjoltroll peut se transformer à volonté en pratiquement n’importe quoi.",
+    "description": "<p>Dès qu’il le souhaite, un fjoltroll peut se transformer en pratiquement n’importe quoi pour ne pas se faire remarquer des voyageurs et des créatures de passage.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 148
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!MKMhM5z5A6B7C8D9",
+  "folder": null
+}

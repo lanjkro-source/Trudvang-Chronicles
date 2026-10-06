@@ -1,0 +1,19 @@
+{
+  "_id": "txzkedE9EaGbHcId",
+  "name": "Hrim Body (hrimwurm)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "txzkedE9EaGbHcId",
+    "summary": "Cold sphere 15 m in diameter without CP, resist at situation value 10 (Psyche), increasing d6 damage.",
+    "description": "<p>The hrimwurm has lived in the cold for such an extensive amount of time that its body has absorbed the cold, constantly releasing it in a phenomenon called “Hrim Body” which does not require the expense of any CP. An ever-present frost pulsates in a sphere around the dragon. The sphere is 15 meters in diameter. All who stand within the sphere must make a situation roll with a situation value of 10 (Psyche modifiers apply) in order not to flee from the sphere. The cold within the sphere deals the following damage per action round to any who stand within it.</p><p>Winter clothes halve the damage during the first three rounds, but for this to have any effect, the clothes must be counted as winter clothing. The following count: thick pants, fur coat, fur hat, fur shoes, and thick gloves.</p><p>A character with a full set of winter clothing made from the fur of a mastomant takes no damage.</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>3</td><td>2d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 114
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!txzkedE9EaGbHcId",
+  "folder": null
+}

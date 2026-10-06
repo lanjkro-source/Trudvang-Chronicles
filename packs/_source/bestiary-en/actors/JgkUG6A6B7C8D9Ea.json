@@ -1,0 +1,205 @@
+{
+  "name": "Logi",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/JgkUG6A6B7C8D9Ea.jpg",
+  "items": [
+    {
+      "_id": "FmhLbkLgMhNiOjPk",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!JgkUG6A6B7C8D9Ea.FmhLbkLgMhNiOjPk",
+      "effects": []
+    },
+    {
+      "_id": "UvEoW5w2x3y4z5A6",
+      "name": "Claws",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 10,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!JgkUG6A6B7C8D9Ea.UvEoW5w2x3y4z5A6",
+      "effects": []
+    },
+    {
+      "_id": "n85BQGaGbHcIdJeK",
+      "name": "Fire Body (logi)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "n85BQGaGbHcIdJeK",
+        "summary": "Burning sphere 10 m in diameter, resist at situation value 8 (Psyche); damage increases with exposure.",
+        "description": "<p>Since the logi is made of fire, it is perhaps not so strange that its body is surrounded by extreme heat. A constant heat pulsates out in a sphere around the logi. The sphere is 10 meters in diameter. Everyone that stands within it must make a situation roll with a situation value of 8 (Psyche modifiers apply) to avoid fleeing from the sphere. The heat in the sphere deals the following damage per action round to anyone within it:</p><table><thead><tr><th>Action round</th><th>Damage</th></tr></thead><tbody><tr><td>1</td><td>None</td></tr><tr><td>2</td><td>1d6</td></tr><tr><td>Each additional round</td><td>+1d6</td></tr></tbody></table>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 88
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!JgkUG6A6B7C8D9Ea.n85BQGaGbHcIdJeK"
+    },
+    {
+      "_id": "nNCiHQlRmSnToUpV",
+      "name": "Fire’s Hand",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "nNCiHQlRmSnToUpV",
+        "summary": "A successful attack coats the victim in burning oil: 1d6 damage/round for 1d3 rounds; only nonconductive armor protects.",
+        "description": "<p>The logi is a manifestation of fire itself. To simply be in its presence carries a risk of burning damage. To fight a logi is no easy task, and anyone who takes on such a challenge without proper protection will soon regret the decision. When the logi successfuly attacks someone in close quarters, it will leave burning oil on its victim. The oil will extinguish itself after 1d3 action rounds. During these action rounds, the victim will suffer 1d6 points of damage from the burning heat (only armor that does not conduct heat offers any protection). Afterward, it is possible for the victim’s clothes to catch fire; the game master will decide how likely this is.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 88
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!JgkUG6A6B7C8D9Ea.nNCiHQlRmSnToUpV"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!JgkUG6A6B7C8D9Ea.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "JgkUG6A6B7C8D9Ea",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/JgkUG6A6B7C8D9Ea.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "charisma": -2,
+      "psyche": 3,
+      "strength": 3
+    },
+    "skills": {
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 13
+        },
+        {
+          "attack": "Claws",
+          "value": 10
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 65,
+        "max": 65
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 12
+    },
+    "description": "The logi is a pure manifestation of fire, made entirely of flames. Its body gives off extreme heat pulsing in a sphere ten meters in diameter. It feeds on fire and greedily devours its heat. Away from lava flows, its body blackens and hardens. Near a heat source again, it immediately regains its fiery consistency.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "other",
+      "size": "1.5",
+      "age": "650, max 1 500",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 59,
+      "bodyMax": 71,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,5 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Being of pure fire, hungry for heat, blackened and hardened away from lava.",
+      "environment": "Great underground lava flows, close to fire and lava",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 88
+      }
+    }
+  },
+  "_id": "JgkUG6A6B7C8D9Ea",
+  "_key": "!actors!JgkUG6A6B7C8D9Ea",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

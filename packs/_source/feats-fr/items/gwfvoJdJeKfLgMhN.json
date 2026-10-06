@@ -1,0 +1,19 @@
+{
+  "_id": "gwfvoJdJeKfLgMhN",
+  "name": "Suceur de sang",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "gwfvoJdJeKfLgMhN",
+    "summary": "Sur une victime endormie, 1d3 dégâts puis 1d6 par tour pendant quatre tours ; réveil possible à VS 8 (Perception).",
+    "description": "<p>Un nattulm peut approcher une victime endormie et tenter d’aspirer son sang. Cette capacité s’utilise en dehors des combats.</p><p>La créature prend 5 tours de jeu pour boire du sang. Au premier tour, la victime subit 1d3 points de dégâts de morsure. Au cours des 4 tours suivants, elle subit 1d6 points de dégâts par tour en raison de la perte de sang. À chaque tour de jeu, la victime a la possibilité de se réveiller et de surprendre l’ulm nocturne en réussissant un test de situation avec une valeur de situation de 8 (en intégrant le modificateur de Perception). Si elle découvre le nattulm, celui-ci prend immédiatement la fuite. Un nattulm combat uniquement s’il est acculé. Dans ce cas, il utilise sa morsure et ses griffes.</p><p>Parfois, plusieurs ulms nocturnes boivent le sang d’une même créature. Si la victime ne se réveille pas au cours des 5 tours de jeu décrits ci-dessus, elle subit un malus de -2 au prochain test de situation correspondant au suceur de sang suivant.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 26
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!gwfvoJdJeKfLgMhN",
+  "folder": null
+}

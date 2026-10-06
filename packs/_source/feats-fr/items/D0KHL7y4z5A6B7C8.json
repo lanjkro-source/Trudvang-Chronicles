@@ -1,0 +1,19 @@
+{
+  "_id": "D0KHL7y4z5A6B7C8",
+  "name": "Levée de brouillard",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "D0KHL7y4z5A6B7C8",
+    "summary": "Brouillard de 100 à 10 000 m de rayon ; VS 10 (Psychisme) pour ne pas se diriger en somnolant vers le revenant.",
+    "description": "<p>Le revenant des tumulus maîtrise un pouvoir spécial qui lui permet de créer de grandes nappes de brouillard. Ce brouillard épais persiste dans tous les endroits visités par le revenant car ce pouvoir de nature passive peut parfois se déclencher sans même que le revenant en ait conscience. Le brouillard est épais, froid et parfois humide, et quiconque se trouve à l’intérieur doit immédiatement effectuer un test de situation avec une valeur de situation de 10 (le modificateur de Psychisme s’applique). Si le test est raté, la victime tombe dans une sorte de sommeil éveillé et a à peine conscience de ce qu’elle fait. Elle se rendra ensuite inexorablement vers le centre de la zone où se trouve le plus souvent le site funéraire du revenant des tumulus. Une victime qui subit des dégâts sortira immédiatement de sa somnolence créée par le brouillard. Le brouillard peut couvrir une zone d’un rayon de 100 à 10 000 mètres, en fonction de la puissance du revenant des tumulus et de l’appréciation du MJ. Le revenant des tumulus peut dissiper le brouillard dès qu’il le souhaite, auquel cas il disparaît complètement en quelques minutes.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 59
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!D0KHL7y4z5A6B7C8",
+  "folder": null
+}

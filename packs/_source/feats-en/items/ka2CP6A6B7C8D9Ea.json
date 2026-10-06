@@ -1,0 +1,19 @@
+{
+  "_id": "ka2CP6A6B7C8D9Ea",
+  "name": "Attack Web",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "ka2CP6A6B7C8D9Ea",
+    "summary": "The net spider projects a sticky web to trap prey.",
+    "description": "<p>Apart from its bite, the net spider will attack with its sticky net making a SV 9 roll. If the spider succeeds with the attack, everyone within an area that is approximately 8 meters long and 3 meters broad will be hit by the net. Victims must make a situation roll with a situation value of 7 (Strength modifiers apply) to break free from the web. The net spider can use this attack three times per day.</p><p>The net has legendary capabilities. From it, one can make silky ropes and bowstrings. A silky rope from a great net spider weighs a fourth of a normal rope’s weight and holds double the load. A bowstring made from a net spider’s web increases the damage of the bow, which increases the chance of an open roll by 1.</p><p>Making a rope can take more than a month’s time. Making a bowstring takes two to three months of time. The rope or bowstring is always black. Some of Trudvang’s most well-known elven bows, such as Verisias, the silver dragon, are said to have a bowstring made from the attack web of the great net spider.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 20
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!ka2CP6A6B7C8D9Ea",
+  "folder": null
+}

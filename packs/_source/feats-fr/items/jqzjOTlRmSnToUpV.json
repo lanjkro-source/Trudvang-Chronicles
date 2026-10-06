@@ -1,0 +1,19 @@
+{
+  "_id": "jqzjOTlRmSnToUpV",
+  "name": "Perception des êtres vivants",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "jqzjOTlRmSnToUpV",
+    "summary": "Détecte tous les êtres vivants à moins de 100 m, quels que soient leurs moyens de dissimulation.",
+    "description": "<p>Les sálheles peuvent percevoir la présence de créatures vivantes situées à moins de 100 mètres. Par conséquent, ils peuvent débusquer des créatures vivantes, quels que soient les moyens qu’elles utilisent pour se cacher.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 62
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!jqzjOTlRmSnToUpV",
+  "folder": null
+}

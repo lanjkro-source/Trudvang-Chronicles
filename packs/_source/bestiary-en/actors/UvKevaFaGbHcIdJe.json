@@ -1,0 +1,457 @@
+{
+  "name": "Goblin",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
+  "items": [
+    {
+      "_id": "IWTqS2v1w2x3y4z5",
+      "name": "Unarmed",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d3",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 3,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.IWTqS2v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "name": "Split axi (hand axe)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "source": "Rulebook, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "isThrowingWeapon": false,
+        "damage": "1d10",
+        "openRoll": 0,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 1.2,
+        "value": 6,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "bXoedy1w2x3y4z5A",
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.bXoedy1w2x3y4z5A",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "x9pLIx0v1w2x3y4z",
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.x9pLIx0v1w2x3y4z",
+      "effects": []
+    },
+    {
+      "_id": "SLHo7lQlRmSnToUp",
+      "name": "Camouflage (goblin)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "SLHo7lQlRmSnToUp",
+        "summary": "Gray skin conceals the goblin in caves: -4 to detect it while still, -8 while moving stealthily.",
+        "description": "<p>The gray skin of the goblins gives them the ability to adapt to their background. Those that stand still against a cave wall are incredibly hard to detect (-4 on all skill rolls to discover the goblin), and goblins that are moving but trying to be sneaky are still very hard to spot (-8). Goblins that move through a cave without trying to stay hidden are also hard to spot and require a successful roll with the Shadow Arts skill to be discovered.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 152
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.SLHo7lQlRmSnToUp"
+    },
+    {
+      "_id": "Vuy4tVpVqWrXsYtZ",
+      "name": "Spiderlegs",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "Vuy4tVpVqWrXsYtZ",
+        "summary": "Moves on walls at half its movement and on ceilings at one third.",
+        "description": "<p>Goblins have the ability to move along the walls and ceiling of a cave. A goblin moves at half their movement rate on walls and a third on ceilings.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 152
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.Vuy4tVpVqWrXsYtZ"
+    },
+    {
+      "_id": "x25bl6A6B7C8D9Ea",
+      "name": "Superstitious",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "x25bl6A6B7C8D9Ea",
+        "summary": "Faced with an unexplained phenomenon, the goblin must succeed at situation value 8 or flee.",
+        "description": "<p>The goblins are very superstitious and afraid of the unknown, especially vitner and other trollcraft. When a goblin bears witness to something that in their eyes has no natural explanation (game master’s discretion), they must make a situation roll with a situation value of 8, and on a failed roll they will flee.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 153
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.x25bl6A6B7C8D9Ea"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.yCooPeIdJeKfLgMh"
+    },
+    {
+      "_id": "NquAmWpVqWrXsYtZ",
+      "name": "Sunlight Weakness",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "NquAmWpVqWrXsYtZ",
+        "summary": "In sunlight, the goblin suffers -5 to all rolls.",
+        "description": "<p>Goblins that are exposed to sunlight have a modifier of -5 to all SV-rolls.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 153
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!UvKevaFaGbHcIdJe.NquAmWpVqWrXsYtZ"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "UvKevaFaGbHcIdJe",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": 2,
+      "intelligence": -4,
+      "strength": -2
+    },
+    "skills": {
+      "entertainment": {
+        "value": 3,
+        "bonus": 0
+      },
+      "care": {
+        "value": 5,
+        "bonus": 0
+      },
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 7,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 3,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Agility",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Body Control",
+        "skillId": "agility",
+        "catalogId": "bodyControl",
+        "value": 2,
+        "kind": "discipline"
+      },
+      {
+        "name": "Jumping, Climbing & Balancing",
+        "skillId": "agility",
+        "catalogId": "jumpingClimbingBalancing",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadowing",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage & Hiding",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Unarmed Fighting",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Brawling",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Light Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Battle Experience",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armor Bearer",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (Bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Wilderness",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Hunting Experience",
+        "skillId": "wilderness",
+        "catalogId": "huntingExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Hunting & Fishing",
+        "skillId": "wilderness",
+        "catalogId": "huntingFishing",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Survival",
+        "skillId": "wilderness",
+        "catalogId": "survival",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Terrain Experience (mountain)",
+        "skillId": "wilderness",
+        "catalogId": "terrainExperience",
+        "value": 2,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Unarmed",
+          "value": 8
+        },
+        {
+          "attack": "Unarmed",
+          "value": 5
+        }
+      ],
+      [
+        {
+          "attack": "Split axi (hand axe)",
+          "value": 8
+        },
+        {
+          "attack": "Split axi (hand axe)",
+          "value": 5
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 13,
+        "max": 13
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 3
+    },
+    "movement": {
+      "base": 7
+    },
+    "description": "Goblins are small creatures, about one meter tall, with gray skin. Almost all have a small muscular body and an elongated head and nose. Nose shape distinguishes individuals. Most have noses somewhat like pigs'. Some have noses more like those of humans or trolls.",
+    "details": {
+      "creatureType": "Trolls",
+      "type": "humanoid",
+      "size": "0.5",
+      "age": "15, max 30",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 11,
+      "bodyMax": 16,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "7 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Small muscular gray creature, one meter tall, with an elongated head and projecting pig-like or human nose.",
+      "environment": "Underground mountain lairs of ten to a hundred small rooms and narrow glittering tunnels",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 152
+      }
+    }
+  },
+  "_id": "UvKevaFaGbHcIdJe",
+  "_key": "!actors!UvKevaFaGbHcIdJe",
+  "folder": "bS3GdhJeKfLgMhNi"
+}

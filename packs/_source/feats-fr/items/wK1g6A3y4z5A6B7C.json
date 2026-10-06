@@ -1,0 +1,19 @@
+{
+  "_id": "wK1g6A3y4z5A6B7C",
+  "name": "Regard paralysant (araignée hypnotique)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "wK1g6A3y4z5A6B7C",
+    "summary": "Résistance VS 7 (Psychisme) ; paralysie 1d3+2 tours modifiée par le Psychisme, rompue si l’araignée disparaît ou meurt.",
+    "description": "<p>L’araignée hypnotique aime utiliser le pouvoir paralysant que lui confèrent ses yeux. À chaque tour de jeu, l’araignée peut tenter d’hypnotiser une victime. Celle-ci doit faire un test de situation avec une valeur de situation de 7 (en appliquant le modificateur de Psychisme) pour éviter la paralysie. Si le test échoue, la victime sera paralysée pendant 1d3 + 2 tours de jeu (le modificateur de Psychisme s’applique à la durée). Une victime paralysée ne peut rien faire d’autre que regarder fixement l’araignée. Si l’araignée disparaît ou meurt, le sort est rompu.</p><p>Lors du tour pendant lequel l’araignée utilise l’attaque Regard paralysant, elle ne peut effectuer aucune autre action. L’araignée ne perd qu’un seul tour ; si son regard réussit, elle peut agir au cours des tours suivants, alors que la victime est paralysée.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 16
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!wK1g6A3y4z5A6B7C",
+  "folder": null
+}

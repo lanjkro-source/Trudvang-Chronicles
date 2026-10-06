@@ -1,0 +1,19 @@
+{
+  "_id": "G8S7IUlRmSnToUpV",
+  "name": "Appearance",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "G8S7IUlRmSnToUpV",
+    "summary": "Intangible body, immune to ordinary weapons; at 0 BP the diser is banished to Misthal.",
+    "description": "<p>There is nothing that says how a diser should look. Sometimes they seem colorless and almost transparent, and sometimes they can be as real as any person on the street, with the only difference being that they lack a physical body. But no matter how real they may seem, there is always one thing by which you can identify a diser: its eyes. These ghosts have a very difficult time recreating eyes. Their eyes are almost always milky and faintly glowing. If one looks very closely, which one should of course avoid, one can actually see the very fog of Misthal move in them.</p><p>The Body Points of a diser are a measure of how strong it is and how much damage it can absorb. Even if the diser is not a physical creature, it has a Body Point value. When the Body Points fall to zero, the wraith is banished to the realm of the dead. The diser takes no damage from normal weapons. Only holy or highly magical weapons can harm it (up to the game master to decide). Banishing a diser back to the realm of the dead can be done in a wide range of ways. Below is a short list of things that in some way harm a diser or banish it to the realm of the dead.</p><ul><li>Spells: Dismiss Undead, Control Undead, and Detect Undead.</li><li>Gerbanis prayers: Death Gust, Breath of Mogunda, and Will of Bodvildur.</li><li>Tenet of Nid prayers: Blessed Spear, Rowthguard’s Battle Scourge, Belo Seoth’s Axe, Holy Bolt, Sacred Burst, and Divine Purge.</li><li>Complete a task the wraith wishes to finish.</li><li>Say aloud the name the wraith had in life.</li><li>Persuade a victim to forgive the wraith for what it did while alive.</li></ul><p>Even if something is represented in the list above, it is up to the game master to decide whether the diser is affected by it or immune to it, just as there can be other things not on the list that affect the diser.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 52
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!G8S7IUlRmSnToUpV",
+  "folder": null
+}

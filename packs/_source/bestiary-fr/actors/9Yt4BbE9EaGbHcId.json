@@ -1,0 +1,194 @@
+{
+  "name": "Griffon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg",
+  "items": [
+    {
+      "_id": "Kd40jfIdJeKfLgMh",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 9,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.Kd40jfIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "DzBvcSlRmSnToUpV",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 14,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.DzBvcSlRmSnToUpV",
+      "effects": []
+    },
+    {
+      "_id": "TBZzpE9EaGbHcIdJ",
+      "name": "Attaque des hauteurs (griffon)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "TBZzpE9EaGbHcIdJ",
+        "summary": "Piqué à VC 8 : griffes 2d10 (JO 9-10) +4 ; réutilisable tous les 4 tours.",
+        "description": "<p>Pour effectuer avec succès une attaque des hauteurs, un griffon doit réussir un test de compétence correspondant (VC 8). La force générée par la vitesse du griffon fait partie intégrante de l’attaque et augmente les dégâts infligés par les griffes à 2d10 (JO 9-10) +4. Le griffon peut lancer une attaque des hauteurs tous les quatre tours étant donné qu’il lui faut survoler la zone pendant au moins 3 tours.</p><p>Le joueur qui souhaite attaquer un griffon en train d’effectuer une attaque aérienne subit un modificateur de -3 à toutes ses attaques. Cependant, comme il est plus facile de déterminer la cible de l’attaque du griffon, la victime dispose d’un modificateur de +2 à la parade contre cette attaque.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 22
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.TBZzpE9EaGbHcIdJ"
+    },
+    {
+      "_id": "zcDFK9A6B7C8D9Ea",
+      "name": "Vision dans le noir (10 à 60 m)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "zcDFK9A6B7C8D9Ea",
+        "summary": "Vision dans le noir total normale jusqu’à 10 m, puis décroissante jusqu’à environ 60 m.",
+        "description": "<p>Un griffon voit à 10 mètres dans l’obscurité totale comme s’il était en plein jour. Cette vision diminue graduellement avec la distance et porte jusqu’à 60 mètres environ.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 23
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!9Yt4BbE9EaGbHcId.zcDFK9A6B7C8D9Ea"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "9Yt4BbE9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "strength": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Morsure",
+          "value": 8
+        },
+        {
+          "attack": "Griffes",
+          "value": 10
+        },
+        {
+          "attack": "Griffes",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 87,
+        "max": 87
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -2
+    },
+    "movement": {
+      "base": 18
+    },
+    "description": "C'est une bête puissante au corps de lynx, décrit aussi comme corps de warg, couvert de pelage. Sa tête, ses pattes avant et ses ailes sont celles d'un aigle. Son grand bec est aussi dur que du silex. Ses yeux distinguent de très haut dans le ciel les moindres détails d'une proie. Ses griffes géantes, semblables à des serres d'aigle, sont assez acérées pour se ficher profondément dans la chair. Ses belles plumes et son pelage coiffent une silhouette de grande envergure.",
+    "details": {
+      "creatureType": "Bêtes",
+      "type": "winged quadruped",
+      "size": "3",
+      "age": "25, max. 40",
+      "naturalArmor": 1,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 78,
+      "bodyMax": 96,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "6 m",
+          "max": "18 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "6 m",
+          "max": "36 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Lynx ailé à tête d'aigle, bec de silex et serres gigantesques.",
+      "environment": "Plaines du Mittland en tanières creusées dans le sol, montagnes de Silferspiir en nids au sommet des hautes falaises",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 22
+      }
+    }
+  },
+  "_id": "9Yt4BbE9EaGbHcId",
+  "_key": "!actors!9Yt4BbE9EaGbHcId",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

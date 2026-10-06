@@ -1,0 +1,19 @@
+{
+  "_id": "1ItoEXoUpVqWrXsY",
+  "name": "Corps hérissé",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "1ItoEXoUpVqWrXsY",
+    "summary": "Le corps du démon est couvert de 2d20 pointes qu'il peut projeter (test VC 12, portée 14 mètres, 1d10 (JO 9-10) points de dégâts chacune) sans dépenser de points de combat.",
+    "description": "<p>Le corps du démon est couvert de pointes qu’il peut projeter sur ses victimes sans dépenser le moindre point de combat. Au total, le corps du démon comporte 2d20 pointes qu’il peut projeter en effectuant un test avec une VC de 12. Les pointes ont une portée de 14 mètres et infligent chacune 1d10 (JO 9-10) points de dégâts. Le démon ne lance généralement pas plus d’une pointe par tour, sauf si le maître de jeu en décide autrement.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!1ItoEXoUpVqWrXsY",
+  "folder": null
+}

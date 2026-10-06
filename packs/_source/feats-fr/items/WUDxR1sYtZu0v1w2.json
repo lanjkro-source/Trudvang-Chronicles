@@ -1,0 +1,19 @@
+{
+  "_id": "WUDxR1sYtZu0v1w2",
+  "name": "Chant enchanteur",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WUDxR1sYtZu0v1w2",
+    "summary": "Le chant de la nymphe charme ceux qui l'écoutent.",
+    "description": "<p>Quiconque entend le chant d’une nymphe se représente la femme de ses rêves et ressent un grand désir pour elle. La victime doit effectuer un test de situation avec une valeur de situation de 5 à 10 en fonction de la puissance de la nymphe (le modificateur de Psychisme s’applique). En cas de réussite, la victime ne se laisse pas berner par l’illusion et voit l’aspect naturel de la nymphe (qui est celui d’une jolie fille, mais pas celui de la femme des rêves de la victime). En cas d’échec, la victime est charmée et des tests supplémentaires sont nécessaires pour déterminer l’effet du charme.</p><p>Lors du tour de jeu suivant (après l’échec du test de résistance au charme), la victime doit effectuer un autre test de situation avec la même valeur de situation et les mêmes modificateurs que ceux du test précédent. En cas de réussite, la nymphe apparaît toujours comme la femme de ses rêves, mais la victime peut penser de manière rationnelle (c’est ce qu’on appelle le premier stade de l’envoûtement). Si ce test est lui aussi raté, le désir de la victime est si obsédant qu’elle n’usera pas de violence envers la nymphe, sauf s’il s’agit de se défendre (c’est le deuxième stade de l’envoûtement). Lors du tour de jeu suivant, une victime qui a raté son test doit à nouveau effectuer un test de situation avec la même valeur de situation et les mêmes modificateurs que précédemment. En cas de réussite, la victime reste au deuxième stade de l’envoûtement. En cas d’échec, l’envoûtement est total et la victime ne se défendrait pas si la nymphe l’agressait. Elle est prête à mourir pour cette dernière.</p><p>Si plusieurs personnes sont envoûtées en même temps, elles ont chacune leur propre vision de la femme de leurs rêves. Lorsqu'une attaque est menée par un groupe complet de nymphes, les victimes n'ont à affronter que la meneuse. Les nymphes attendent toujours trois tours de jeu, le temps que le charme fasse effet, avant d’attaquer en essayant de mordre.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 91
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WUDxR1sYtZu0v1w2",
+  "folder": null
+}

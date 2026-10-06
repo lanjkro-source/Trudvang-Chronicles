@@ -1,0 +1,19 @@
+{
+  "_id": "EowN18C8D9EaGbHc",
+  "name": "Éléments corporels supplémentaires",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "EowN18C8D9EaGbHc",
+    "summary": "Le démon possède un ou plusieurs éléments corporels supplémentaires, comme des bras en plus pour attaquer, ce qui se traduit par des points de combat en bonus.",
+    "description": "<p>Le démon possède un ou plusieurs éléments corporels en plus de ceux d’origine. Il est ainsi possible qu’il dispose de bras supplémentaires avec lesquels il peut attaquer, ce qui se traduit par des points de combat en bonus.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!EowN18C8D9EaGbHc",
+  "folder": null
+}

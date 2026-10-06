@@ -1,0 +1,19 @@
+{
+  "_id": "7UKkQbHcIdJeKfLg",
+  "name": "Sang magmatique",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "7UKkQbHcIdJeKfLg",
+    "summary": "Chaleur à moins de 6 m, résistance VS 6 (Psychisme) ; éclaboussures sur 1-3 au d10, infligeant 1d6 dégâts.",
+    "description": "<p>Sous le cuir du jarnwurm coule l’horrible et précieux sang magmatique. Du dragon émane tant de chaleur que les créatures qui approchent à moins de 6 mètres de lui doivent chacune réussir un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique) pour ne pas reculer. Les créatures qui parviennent à rester dans la sphère de chaleur subissent les dégâts suivants par tour de jeu.</p><p>En combat rapproché, lorsque l’attaquant parvient à traverser la lourde protection d’écailles et à infliger une blessure au monstre, il peut être aspergé de sang magmatique et subir les dégâts de chaleur (effectuez un test de chance avec 1d10 : un résultat de 1 à 3 signifie que du sang gicle sur l’attaquant). L’attaquant peut esquiver les giclures en réussissant un test de compétence d’Agilité. Si le test rate, il subit 1d6 points de dégâts (l’armure protège normalement mais risque de prendre feu).</p><p>Si le sang magmatique est utile aux jarnwurms, il l’est aussi pour les forgerons de Trudvang. S’il est mélangé à du minerai de fer, l’alliage qui en résulte est à la fois plus solide et plus résistant que le mitrakk des nains. Ce métal aux reflets écarlates porte le nom de fer sang-de-fer. Les armes en fer sang-de-fer augmentent les chances de réaliser un jet ouvert de 2. La valeur de protection et le poids des armes et armures en fer sang-de-fer sont augmentés de 1d3.</p><table><thead><tr><th>Tour de jeu</th><th>Dégâts</th></tr></thead><tbody><tr><td>1</td><td>Aucun</td></tr><tr><td>2</td><td>1</td></tr><tr><td>3</td><td>1d3</td></tr><tr><td>4</td><td>1d6</td></tr><tr><td>Chaque tour supplémentaire</td><td>+1d6 par tour</td></tr></tbody></table>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 117
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!7UKkQbHcIdJeKfLg",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "XNbb4nRmSnToUpVq",
+  "name": "Attaque des hauteurs (bête épineuse)",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "XNbb4nRmSnToUpVq",
+    "summary": "Piqué à VC 8 : morsure 2d10 (JO 7-10) +6 et griffes 2d10 (JO 8-10) +6 ; réutilisable tous les 6 tours.",
+    "description": "<p>Pour effectuer avec succès une attaque des hauteurs, une bête épineuse doit réussir un test de compétence correspondant (VC 8). La force et la vitesse de la bête épineuse font partie intégrante de l’attaque et augmentent les dégâts infligés par la morsure à 2d10 (JO 7-10) +6 et les griffes à 2d10 (JO 8-10) +6. La bête épineuse peut lancer une attaque des hauteurs tous les 6 tours étant donné qu’il lui faut survoler la zone pendant au moins 5 tours.</p><p>Le joueur qui souhaite attaquer une bête épineuse en train d’effectuer une attaque aérienne subit un modificateur de -3 à toutes ses attaques. Cependant, il est plus facile de déterminer la cible de l’attaque de la bête épineuse ; la victime dispose donc d’un modificateur de +2 à la parade contre cette attaque.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 17
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!XNbb4nRmSnToUpVq",
+  "folder": null
+}

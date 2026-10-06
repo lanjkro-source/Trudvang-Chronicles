@@ -1,0 +1,19 @@
+{
+  "_id": "aU3d29D9EaGbHcId",
+  "name": "Pouvoirs",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "aU3d29D9EaGbHcId",
+    "summary": "Le skjuld dispose de pouvoirs surnaturels variés.",
+    "description": "<p>Il n’est pas rare qu’un skjuld ait appris des sorts ou des pouvoirs elfiques.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 94
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!aU3d29D9EaGbHcId",
+  "folder": null
+}

@@ -1,0 +1,19 @@
+{
+  "_id": "mGIwBIdJeKfLgMhN",
+  "name": "Roots",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "mGIwBIdJeKfLgMhN",
+    "summary": "Roots grow 3 m/round, attack at SV 8; hold, crush or pierce, with damage and number of victims determined by size.",
+    "description": "<p>A log troll can sprout snake-like roots that slither through the earth toward a chosen victim. The root fingers grow 3 meters per action round and usually become no more than 2d10 (OR 8-10) meters long, but this is up to the game master to decide.</p><p>A log troll that attacks with his roots cannot do anything else in the same round. This is why it always tries to remain hidden when it performs this attack so it will inflict as much damage as possible before it is discovered.</p><p>Firstly the log troll will try to hug its victim with its roots (SV 8). The number of victims which can be attacked at the same time depends of their size, according to the chart below. Each different victim requires a different SV roll.</p><p>Once a check is successful the log troll can choose to simply hold the victim immobile, crush the victim, or pierce the victim. Both the crushing and the piercing deal between 1d10 and 1d10 (OR 8-10) points of damage, depending on how big the log troll is in comparison to its victim. Use the following table for guidance.</p><table><thead><tr><th>Victim's size</th><th>Damage</th><th>Number of victims</th></tr></thead><tbody><tr><td>1 or less</td><td>1d10 (OR 8-10)</td><td>4</td></tr><tr><td>2</td><td>1d10 (OR 9-10)</td><td>3</td></tr><tr><td>3</td><td>1d10 (OR 10)</td><td>2</td></tr><tr><td>4 or more</td><td>1d10</td><td>1</td></tr></tbody></table>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 86
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!mGIwBIdJeKfLgMhN",
+  "folder": null
+}

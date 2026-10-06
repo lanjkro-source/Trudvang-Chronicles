@@ -1,0 +1,179 @@
+{
+  "name": "Yggdras",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg",
+  "items": [
+    {
+      "name": "Stafur (staff)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "damage": "1d5",
+        "openRoll": 0,
+        "weaponActions": 3,
+        "initiativeModifier": 0,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "weight": 1,
+        "value": 0.5,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "uIbKTA2x3y4z5A6B",
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.uIbKTA2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "_id": "5OJtBbGbHcIdJeKf",
+      "name": "Speak With Animals",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "5OJtBbGbHcIdJeKf",
+        "summary": "The yggdras understands animals and can communicate with them.",
+        "description": "<p>Throughout the years, the yggdras have learned to speak with animals. This has led to the animals in the forest protecting the yggdras from evil intruders.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 103
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.5OJtBbGbHcIdJeKf"
+    },
+    {
+      "_id": "HtsoWMgMhNiOjPkQ",
+      "name": "Feel Hostility",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "HtsoWMgMhNiOjPkQ",
+        "summary": "Senses intelligent creatures and hostile intentions within 200 m.",
+        "description": "<p>An yggdras can feel the presence of intelligent creatures within 200 meters and know whether such a creature is hostile or not.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 103
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.HtsoWMgMhNiOjPkQ"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!BWRXF3w2x3y4z5A6.yCooPeIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "BWRXF3w2x3y4z5A6",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "intelligence": 4,
+      "perception": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Stafur (staff)",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -5
+    },
+    "movement": {
+      "base": 3
+    },
+    "description": "The yggdras is a nature spirit hidden inside a host tree. If a face appears on a tree trunk, an yggdras is almost certainly within. It is most often found in old butternut trees with thick knotted trunks. It lives in symbiosis with its tree, sharing nutrients while strengthening it. Not all yggdras look alike, since they hide within nature, sometimes even in animals or flowers.",
+    "details": {
+      "creatureType": "Nature beings",
+      "type": "entity",
+      "size": "1.5",
+      "age": "variable, max variable",
+      "naturalArmor": 3,
+      "fearFactor": "1d5",
+      "bodyMin": 31,
+      "bodyMax": 39,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1,5 m",
+          "max": "3 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Wise face on a knotted trunk, a collective soul of the forest.",
+      "environment": "Forests, old butternut trees and other host trees, in groups of about twenty caring for the forest",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 101
+      }
+    }
+  },
+  "_id": "BWRXF3w2x3y4z5A6",
+  "_key": "!actors!BWRXF3w2x3y4z5A6",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

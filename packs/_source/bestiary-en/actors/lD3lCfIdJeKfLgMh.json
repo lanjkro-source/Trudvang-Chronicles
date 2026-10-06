@@ -1,0 +1,123 @@
+{
+  "name": "Wulter",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg",
+  "items": [
+    {
+      "_id": "yGi379D9EaGbHcId",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "3d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 13,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!lD3lCfIdJeKfLgMh.yGi379D9EaGbHcId",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "lD3lCfIdJeKfLgMh",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 4,
+    "height": 4,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 12,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 12,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 13
+        },
+        {
+          "attack": "Bite",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 180,
+        "max": 180
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "This titanic sea monster has an elongated serpentine body covered in thick slate-colored skin shining as if oiled. Its enormous flattened head bears gaping jaws with rows of conical teeth, bulging eyes gleaming underwater, and hissing blowholes. Powerful side fins and a massive paddle-shaped tail drive it through raging seas. Ridges of spines or rough baleen bristle on its back and neck. Pale scars and encrusted barnacles mottle its ancient hide.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "other",
+      "size": "7",
+      "age": "null",
+      "naturalArmor": 4,
+      "fearFactor": "1d10",
+      "bodyMin": 180,
+      "bodyMax": 180,
+      "move": [
+        {
+          "mode": "nage",
+          "distance": "7 m",
+          "max": "42 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Scaled leviathan of the frozen seas.",
+      "environment": "Frozen seas, deep fjords, and storm-battered breakers around Trudvang.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "lD3lCfIdJeKfLgMh",
+  "_key": "!actors!lD3lCfIdJeKfLgMh",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

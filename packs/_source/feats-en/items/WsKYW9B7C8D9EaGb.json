@@ -1,0 +1,19 @@
+{
+  "_id": "WsKYW9B7C8D9EaGb",
+  "name": "Telepathy",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "WsKYW9B7C8D9EaGb",
+    "summary": "The diser can read minds and whisper into them.",
+    "description": "<p>The diser has the ability to speak to one or several people mentally. The addressed will hear voices as if someone is speaking to them, with the only difference being that they are the only ones hearing what the wraith is saying.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 54
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!WsKYW9B7C8D9EaGb",
+  "folder": null
+}

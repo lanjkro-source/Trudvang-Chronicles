@@ -1,0 +1,196 @@
+{
+  "name": "Happja",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
+  "items": [
+    {
+      "_id": "5X4PoSkQlRmSnToU",
+      "name": "Morsure",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.5X4PoSkQlRmSnToU",
+      "effects": []
+    },
+    {
+      "_id": "WDQ1WfIdJeKfLgMh",
+      "name": "Griffes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "claws",
+        "naturalCombatPoints": 12,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.WDQ1WfIdJeKfLgMh",
+      "effects": []
+    },
+    {
+      "_id": "8nD540sYtZu0v1w2",
+      "name": "Attaque des hauteurs (happja)",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "8nD540sYtZu0v1w2",
+        "summary": "Piqué à VC 8 : griffes 1d10 (JO 7-10) ; réutilisable tous les 4 tours.",
+        "description": "<p>Pour parvenir à attaquer des hauteurs, une happja doit réussir un test de compétence dans le cadre de l’utilisation de ce pouvoir (VC 8). La vitesse de mouvement de la happja renforce la violence de cette attaque, ce qui augmente les dégâts de l’attaque de griffes à 1d10 (JO 7-10).</p><p>Une happja ne peut accomplir qu'une seule attaque des hauteurs tous les quatre tours de jeu, car elle doit faire un grand cercle pendant au moins trois tours sans attaquer.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 76
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.8nD540sYtZu0v1w2"
+    },
+    {
+      "_id": "15ITDLfLgMhNiOjP",
+      "name": "Hurlement sauvage",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "15ITDLfLgMhNiOjP",
+        "summary": "Cri de la happja : résistance VS 8 (Psychisme), +5 si elle est vue avant ; échec : 1d10 (JO 10) peur.",
+        "description": "<p>Au début d’un combat, la happja pousse un abominable cri qui peut plonger dans l’horreur tous ceux qui l’entendent. Si la happja surprend ses victimes grâce à ce cri, celles-ci doivent effectuer un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique). En cas d’échec, elles subissent 1d10 (JO 10) points de peur. Ceux qui voient la happja avant qu’elle ne crie ne sont pas surpris et bénéficient alors d’un bonus de +5 sur le test (valeur de situation 13).</p><p>Si le résultat du test de situation est un 20 naturel, la victime lâche les armes qu’elle tient en main et ne peut plus agir pendant 1d3 tours de jeu.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 77
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Mv94QSmSnToUpVqW.15ITDLfLgMhNiOjP"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Mv94QSmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": -2,
+      "dexterity": 2,
+      "perception": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Griffes",
+          "value": 12
+        },
+        {
+          "attack": "Griffes",
+          "value": 6
+        },
+        {
+          "attack": "Morsure",
+          "value": 6
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 29,
+        "max": 29
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 15
+    },
+    "description": "La happja ressemble à une vieille femme crasseuse au corps nu. Ses yeux sont blancs et luisants dans la nuit. Elle possède des ailes robustes qui soulèvent son corps nu lorsqu'elle prend son envol. Au repos, elle replie ses ailes autour d'elle et enfouit sa tête dans ses plumes. Elle est peut-être l'hybride d'une femme et d'une chouette. Ses griffes laissent de grandes griffures au visage.",
+    "details": {
+      "creatureType": "Êtres de la nature",
+      "type": "winged humanoid",
+      "size": "1",
+      "age": "15, max 35",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 26,
+      "bodyMax": 32,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "15 m"
+        },
+        {
+          "mode": "vol",
+          "distance": "2 m",
+          "max": "15 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Vieille femme-chouette nue aux yeux blancs luisants et aux ailes robustes",
+      "environment": "Haute canopée des arbres, grands nids construits sur les plus hautes branches",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 76
+      }
+    }
+  },
+  "_id": "Mv94QSmSnToUpVqW",
+  "_key": "!actors!Mv94QSmSnToUpVqW",
+  "folder": "7VZ0VqUpVqWrXsYt"
+}

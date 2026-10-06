@@ -1,0 +1,19 @@
+{
+  "_id": "UDncGbGbHcIdJeKf",
+  "name": "Têtes nombreuses",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "UDncGbGbHcIdJeKf",
+    "summary": "Le wurm porte de nombreuses têtes capables d'attaquer séparément.",
+    "description": "<p>Les huvfurwurms ne possèdent pas tous le même nombre de têtes. C’est le maître de jeu qui détermine le nombre de têtes que possède le dragon et le nombre de régénérations que chacune d’elles a déjà opérées. Pour déterminer le nombre de têtes au hasard, le MJ peut lancer 3d6+2. Considérez chaque tête comme une créature individuelle. Chacune a un cou qui peut encaisser environ 25 (+ ou – 5) points de dégâts avant d’être tranchée. Les têtes ne subissent pas les malus normalement infligés par les Niveaux de blessure associés à leurs propres PS, mais uniquement ceux associés aux PS du corps du wurm. Le MJ peut autoriser les personnages à prendre pour cible des têtes spécifiques mais les malus imposés dans ce cas sont laissés à sa totale appréciation. Rappelez-vous que le huvfurwurm est une créature de Taille 7. Ses points de combat doivent donc être dépensés en les répartissant sur 3 tours et ne seront récupérés qu’une fois ces trois tours passés. Toutes les têtes partagent la même réserve de points de combat et n’ont pas de points de combat distincts.</p><p>Considérez que le nombre de têtes peut augmenter et diminuer au fil du combat et que les blessures, et surtout les décapitations, peuvent déclencher la création de têtes supplémentaires, en fonction de l’appréciation du MJ et des règles décrites ci-contre.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 111
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!UDncGbGbHcIdJeKf",
+  "folder": null
+}

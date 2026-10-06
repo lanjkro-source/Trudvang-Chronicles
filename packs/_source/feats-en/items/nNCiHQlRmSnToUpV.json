@@ -1,0 +1,19 @@
+{
+  "_id": "nNCiHQlRmSnToUpV",
+  "name": "Fire’s Hand",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "nNCiHQlRmSnToUpV",
+    "summary": "A successful attack coats the victim in burning oil: 1d6 damage/round for 1d3 rounds; only nonconductive armor protects.",
+    "description": "<p>The logi is a manifestation of fire itself. To simply be in its presence carries a risk of burning damage. To fight a logi is no easy task, and anyone who takes on such a challenge without proper protection will soon regret the decision. When the logi successfuly attacks someone in close quarters, it will leave burning oil on its victim. The oil will extinguish itself after 1d3 action rounds. During these action rounds, the victim will suffer 1d6 points of damage from the burning heat (only armor that does not conduct heat offers any protection). Afterward, it is possible for the victim’s clothes to catch fire; the game master will decide how likely this is.</p>",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 88
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!nNCiHQlRmSnToUpV",
+  "folder": null
+}

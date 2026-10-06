@@ -1,0 +1,19 @@
+{
+  "_id": "VyAXJ4y4z5A6B7C8",
+  "name": "Vulnérabilité au feu",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "VyAXJ4y4z5A6B7C8",
+    "summary": "Toutes les attaques de feu infligent le double des dégâts au hrimtursir.",
+    "description": "<p>Les hrimtursirs subissent le double des dégâts lorsqu’ils subissent une attaque de feu, quel que soit son type.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 134
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!VyAXJ4y4z5A6B7C8",
+  "folder": null
+}

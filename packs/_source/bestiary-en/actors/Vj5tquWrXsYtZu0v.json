@@ -1,0 +1,331 @@
+{
+  "name": "Galtir",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Vj5tquWrXsYtZu0v.jpg",
+  "items": [
+    {
+      "_id": "Impea1sYtZu0v1w2",
+      "name": "Bite",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": -1,
+        "naturalCombatPool": "bite",
+        "naturalCombatPoints": 4,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.Impea1sYtZu0v1w2",
+      "effects": []
+    },
+    {
+      "_id": "JnnG2lOjPkQlRmSn",
+      "name": "Tusks",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "initiativeModifier": -1,
+        "naturalCombatPool": "tusks",
+        "naturalCombatPoints": 6,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.JnnG2lOjPkQlRmSn",
+      "effects": []
+    },
+    {
+      "name": "Split axi (hand axe)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "source": "Rulebook, p. 111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "isThrowingWeapon": false,
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 1.2,
+        "value": 6,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "wMP5vvYtZu0v1w2x",
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.wMP5vvYtZu0v1w2x",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "DZmjMB4z5A6B7C8D",
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.DZmjMB4z5A6B7C8D",
+      "effects": []
+    },
+    {
+      "_id": "eYf1GqSnToUpVqWr",
+      "name": "Deep Bellow",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "eYf1GqSnToUpVqWr",
+        "summary": "The galtir’s bellow, inaudible to humans, calls its tribe to the rescue.",
+        "description": "<p>Galtirs in the thick of combat will often roar for as long as they can, a so-called deep bellow. To humans, it will not sound too strange, but during the bellowing, there is a deep sound that humans and similar creatures cannot hear. This deep bellowing can be heard by galtirs far and wide. The more galtirs that perform the deep bellowing together, the easier it is for the sound to spread. Galtirs belonging to the same tribe, and sometimes other tribes, will hurry to the rescue as they answer with their own deep bellowing. When many galtirs perform the deep bellow together, they can form a great herd that will attack anything that comes close to them.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 14
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.eYf1GqSnToUpVqWr"
+    },
+    {
+      "_id": "1Kx1hlMhNiOjPkQl",
+      "name": "Fearless",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "1Kx1hlMhNiOjPkQl",
+        "summary": "Feels no fear and never makes fear rolls.",
+        "description": "<p>Just like forest trolls, a galtir does not have the ability to feel fear. Once they engage in combat, they remain there until they die or strike down their foe.</p><p>Forest trolls likewise feel no fear and never need to make fear rolls.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 14
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Vj5tquWrXsYtZu0v.1Kx1hlMhNiOjPkQl"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Vj5tquWrXsYtZu0v",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Vj5tquWrXsYtZu0v.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "dexterity": -1,
+      "intelligence": -4,
+      "strength": 2
+    },
+    "skills": {
+      "care": {
+        "value": 5,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 3,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 4,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 3,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 7,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Care",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Entertainment",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 4,
+        "kind": "skill"
+      },
+      {
+        "name": "Armed Fighting",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "1H Light Weapons",
+        "skillId": "fighting",
+        "catalogId": "oneHandedLightWeapons",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Knowledge",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 3,
+        "kind": "skill"
+      },
+      {
+        "name": "Language",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Mother Tongue (bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Shadow Arts",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Shadowing",
+        "skillId": "shadowArts",
+        "catalogId": "shadowing",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Camouflage & Hiding",
+        "skillId": "shadowArts",
+        "catalogId": "camouflageHiding",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Bite",
+          "value": 8
+        },
+        {
+          "attack": "Tusks",
+          "value": 6
+        }
+      ],
+      [
+        {
+          "attack": "Split axi (hand axe)",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 23,
+        "max": 23
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": -1
+    },
+    "movement": {
+      "base": 8
+    },
+    "description": "This humanoid is slightly smaller than a dwarf. Its stocky, powerful body resembles a strange cross between a small troll and a boar. Its porcine head is armed with a bite and protruding tusks. Its short, resilient limbs carry muscles quick to violence. Its tough skin is supplemented by worn leather armor. Its stubborn appearance as a woodland warrior makes it immediately recognizable.",
+    "details": {
+      "creatureType": "Beasts",
+      "type": "humanoid",
+      "size": "0.5",
+      "age": "15, max. 35",
+      "naturalArmor": 0,
+      "fearFactor": "1d5",
+      "bodyMin": 21,
+      "bodyMax": 26,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "8 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Small, stocky and aggressive boar humanoid armed with tusks.",
+      "environment": "Eastern Svartliden, earthen hollows beneath great rocks in the deepest forests",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 14
+      }
+    }
+  },
+  "_id": "Vj5tquWrXsYtZu0v",
+  "_key": "!actors!Vj5tquWrXsYtZu0v",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

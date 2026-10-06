@@ -1,0 +1,19 @@
+{
+  "_id": "QqkRW8C8D9EaGbHc",
+  "name": "Vif",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "QqkRW8C8D9EaGbHc",
+    "summary": "Le démon se déplace très rapidement et attaque toujours en premier lors d'un tour de jeu.",
+    "description": "<p>Le démon se déplace très rapidement. Il attaque toujours en premier lors d’un tour de jeu.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!QqkRW8C8D9EaGbHc",
+  "folder": null
+}

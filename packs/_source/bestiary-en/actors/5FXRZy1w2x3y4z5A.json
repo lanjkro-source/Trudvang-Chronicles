@@ -1,0 +1,123 @@
+{
+  "name": "Ox/Bull",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg",
+  "items": [
+    {
+      "_id": "hE7gyE6B7C8D9EaG",
+      "name": "Horns",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 8,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "horns",
+        "naturalCombatPoints": 16,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!5FXRZy1w2x3y4z5A.hE7gyE6B7C8D9EaG",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "5FXRZy1w2x3y4z5A",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg"
+    }
+  },
+  "system": {
+    "traits": {},
+    "skills": {
+      "fighting": {
+        "value": 6,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Horns",
+          "value": 14
+        },
+        {
+          "attack": "Horns",
+          "value": 8
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 86,
+        "max": 86
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "This massive beast has a deep chest and thick neck crowned with a muscular hump. Its broad head bears a wet muzzle and flared nostrils, with two thick curved pointed horns. Rough dense fur, brown-black or brindled, thickens around neck and shoulders in winter. Pillar-like legs end in broad cloven hooves capable of trampling snow. Its long tuft-ended tail drives away insects with nervous flicks.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "quadruped",
+      "size": "3",
+      "age": "null",
+      "naturalArmor": 2,
+      "fearFactor": "1d6",
+      "bodyMin": 86,
+      "bodyMax": 86,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "8 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Muscular colossus with formidable horns.",
+      "environment": "Pastures, grassy valleys, and lowland farms in Mittland and Ovanga.",
+      "source": {
+        "book": "Jorgi's Bestiary",
+        "page": 10
+      }
+    }
+  },
+  "_id": "5FXRZy1w2x3y4z5A",
+  "_key": "!actors!5FXRZy1w2x3y4z5A",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

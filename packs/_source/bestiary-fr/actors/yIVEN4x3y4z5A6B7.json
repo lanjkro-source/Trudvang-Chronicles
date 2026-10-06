@@ -1,0 +1,513 @@
+{
+  "name": "Minokks",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg",
+  "items": [
+    {
+      "name": "Barda makir (masse de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 3.5,
+        "value": 14,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "3PFDQRjPkQlRmSnT",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.3PFDQRjPkQlRmSnT",
+      "effects": []
+    },
+    {
+      "name": "Grand bouclier en bois",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier lent mais très protecteur, permettant une seule action d'arme par tour.",
+        "source": "Guide du maître, p. 76",
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "passiveProtection": 6,
+        "weaponActions": 1,
+        "initiativeModifier": -3,
+        "weight": 6,
+        "value": 3,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "iZ2gBD5A6B7C8D9E",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.iZ2gBD5A6B7C8D9E",
+      "effects": []
+    },
+    {
+      "name": "Tvei klubb (massue à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 114",
+        "category": "twoHanded",
+        "combatSpecialty": "twoHandedWeapons",
+        "damage": "2d10",
+        "openRoll": 7,
+        "weaponActions": 2,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 60,
+          "max": 60
+        },
+        "weight": 3,
+        "value": 0.4,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": false,
+        "hand": "weapon"
+      },
+      "_id": "zxVmlkMhNiOjPkQl",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.zxVmlkMhNiOjPkQl",
+      "effects": []
+    },
+    {
+      "_id": "KFs4J6x3y4z5A6B7",
+      "name": "Cornes",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "2d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "natural",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.KFs4J6x3y4z5A6B7",
+      "effects": []
+    },
+    {
+      "_id": "pLk4DMgMhNiOjPkQ",
+      "name": "Mains nues",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": true,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "unarmed",
+        "naturalCombatPoints": 0,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.pLk4DMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Armure de fourrure",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord.",
+        "source": "Guide du maître, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "CpKzanOjPkQlRmSn",
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.CpKzanOjPkQlRmSn",
+      "effects": []
+    },
+    {
+      "_id": "zLdTbC6B7C8D9EaG",
+      "name": "Charge",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "zLdTbC6B7C8D9EaG",
+        "summary": "Charge du minokks : 2d10 (JO 9-10) dégâts, PC de mouvement et d’attaque ; Agilité -5 pour ne pas être renversé.",
+        "description": "<p>Les minokks commencent leurs attaques par une charge. Ils baissent la tête et se précipitent droit sur leur victime pour lui infliger des dégâts et la renverser. En raison du poids du minokks, de sa grande vitesse et de ses cornes pointues, la charge inflige 2d10 (JO 9-10) points de dégâts. Une charge se résout en dépensant des PC pour le mouvement en plus de ceux destinés à l’attaque à l’arme naturelle (cornes).</p><p>La cible touchée par l’attaque doit réussir un test d’Agilité avec un malus de -5 pour garder l’équilibre. Une victime renversée par la charge doit faire un jet de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Dextérité) pour éviter de lâcher les éventuels objets qu’elle tient en main.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 24
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.zLdTbC6B7C8D9EaG"
+    },
+    {
+      "_id": "lHbj4E6B7C8D9EaG",
+      "name": "Cœur de minokks",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "lHbj4E6B7C8D9EaG",
+        "summary": "Manger le cœur retire 1d10 (JO 10) peur, mais peut provoquer une charge pour défendre ses amis : résistance VS 10 (Psychisme).",
+        "description": "<p>Manger le cœur d’un taureau troll emplit de courage et de force intérieure. Le personnage qui en bénéficie perd 1d10 (JO 10) points de peur, se sent plus vivace et devient plus protecteur envers ses amis. Si un ennemi menace l’un d’entre eux, il existe un risque que le consommateur du cœur le charge et l’attaque. Ce dernier doit alors faire un test de situation avec une valeur de situation de 10 (en tenant compte du modificateur de Psychisme) pour éviter de céder à la pulsion de charger l’ennemi.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 24
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!yIVEN4x3y4z5A6B7.lHbj4E6B7C8D9EaG"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "yIVEN4x3y4z5A6B7",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg"
+    }
+  },
+  "system": {
+    "traits": {
+      "constitution": 4,
+      "strength": 4
+    },
+    "skills": {
+      "agility": {
+        "value": 9,
+        "bonus": 0
+      },
+      "entertainment": {
+        "value": 2,
+        "bonus": 0
+      },
+      "faith": {
+        "value": 5,
+        "bonus": 0
+      },
+      "shadowArts": {
+        "value": 6,
+        "bonus": 0
+      },
+      "wilderness": {
+        "value": 8,
+        "bonus": 0
+      },
+      "care": {
+        "value": 7,
+        "bonus": 0
+      },
+      "fighting": {
+        "value": 10,
+        "bonus": 0
+      },
+      "knowledge": {
+        "value": 5,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Agilité",
+        "skillId": "agility",
+        "catalogId": "",
+        "value": 9,
+        "kind": "skill"
+      },
+      {
+        "name": "Divertissement",
+        "skillId": "entertainment",
+        "catalogId": "",
+        "value": 2,
+        "kind": "skill"
+      },
+      {
+        "name": "Foi",
+        "skillId": "faith",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Arts des ombres",
+        "skillId": "shadowArts",
+        "catalogId": "",
+        "value": 6,
+        "kind": "skill"
+      },
+      {
+        "name": "Nature",
+        "skillId": "wilderness",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      },
+      {
+        "name": "Savoir-faire",
+        "skillId": "care",
+        "catalogId": "",
+        "value": 7,
+        "kind": "skill"
+      },
+      {
+        "name": "Artisanat",
+        "skillId": "care",
+        "catalogId": "handicraft",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Matériaux durs",
+        "skillId": "care",
+        "catalogId": "hardMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Matériaux souples",
+        "skillId": "care",
+        "catalogId": "softMaterials",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 10,
+        "kind": "skill"
+      },
+      {
+        "name": "Combat armé",
+        "skillId": "fighting",
+        "catalogId": "armedFighting",
+        "value": 3,
+        "kind": "discipline"
+      },
+      {
+        "name": "Armes lourdes à une main",
+        "skillId": "fighting",
+        "catalogId": "oneHandedHeavyWeapons",
+        "value": 4,
+        "kind": "specialty"
+      },
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "fighting",
+        "catalogId": "shieldBearer",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Armes à deux mains",
+        "skillId": "fighting",
+        "catalogId": "twoHandedWeapons",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Expérience du combat",
+        "skillId": "fighting",
+        "catalogId": "battleExperience",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Porteur d'armure",
+        "skillId": "fighting",
+        "catalogId": "armorBearer",
+        "value": 1,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combattant",
+        "skillId": "fighting",
+        "catalogId": "fighter",
+        "value": 2,
+        "kind": "specialty"
+      },
+      {
+        "name": "Combat à mains nues",
+        "skillId": "fighting",
+        "catalogId": "unarmedFighting",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Bagarre",
+        "skillId": "fighting",
+        "catalogId": "brawling",
+        "value": 3,
+        "kind": "specialty"
+      },
+      {
+        "name": "Connaissances",
+        "skillId": "knowledge",
+        "catalogId": "",
+        "value": 5,
+        "kind": "skill"
+      },
+      {
+        "name": "Langage",
+        "skillId": "knowledge",
+        "catalogId": "language",
+        "value": 1,
+        "kind": "discipline"
+      },
+      {
+        "name": "Langue maternelle (bastjumal)",
+        "skillId": "knowledge",
+        "catalogId": "motherTongue",
+        "value": 3,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "attack": "Cornes",
+          "value": 13
+        },
+        {
+          "attack": "Cornes",
+          "value": 10
+        }
+      ],
+      [
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 15
+        },
+        {
+          "attack": "Tvei klubb (massue à deux mains)",
+          "value": 9
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 14
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 12
+        },
+        {
+          "attack": "Grand bouclier en bois",
+          "value": 15
+        }
+      ],
+      [
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 12
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 8
+        },
+        {
+          "attack": "Barda makir (masse de bataille)",
+          "value": 6
+        },
+        {
+          "attack": "Grand bouclier en bois",
+          "value": 8
+        },
+        {
+          "attack": "Grand bouclier en bois",
+          "value": 7
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 58,
+        "max": 58
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 0
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "C'est un grand humanoïde à la musculature très développée. Son corps imposant est couvert d'une fourrure épaisse, plus épaisse au nord. Son torse massif abrite quatre petits estomacs. Son impressionnante tête de taureau est affublée de longues cornes, plus longues à Soj, dont il se sert au combat. Ses bras puissants manient d'imposantes massues de fer. Sa stature de taureau dressé sur deux jambes domine les plaines.",
+    "details": {
+      "creatureType": "Bêtes",
+      "type": "humanoid",
+      "size": "2",
+      "age": "40, max. 75",
+      "naturalArmor": 2,
+      "fearFactor": "1d10 (JO 10)",
+      "bodyMin": 52,
+      "bodyMax": 64,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "2 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Taureau humanoïde colossal et velu à longues cornes de combat.",
+      "environment": "Partout sur Trudvang, particulièrement les grandes plaines des étendues occidentales",
+      "source": {
+        "book": "Bestiaire de Jorge",
+        "page": 24
+      }
+    }
+  },
+  "_id": "yIVEN4x3y4z5A6B7",
+  "_key": "!actors!yIVEN4x3y4z5A6B7",
+  "folder": "fOZfQ0rXsYtZu0v1"
+}

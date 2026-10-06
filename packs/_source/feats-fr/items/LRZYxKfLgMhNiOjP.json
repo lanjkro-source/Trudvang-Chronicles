@@ -1,0 +1,19 @@
+{
+  "_id": "LRZYxKfLgMhNiOjP",
+  "name": "Illusions",
+  "type": "creatureAbility",
+  "img": "icons/svg/aura.svg",
+  "system": {
+    "catalogId": "LRZYxKfLgMhNiOjP",
+    "summary": "Le kungstroll tisse des illusions pour tromper ses victimes.",
+    "description": "<p>Tous les kungstrolls peuvent créer des illusions très simples pour duper ou tromper autrui. Ces illusions peuvent par exemple être utilisées pour faire croire qu’une assiette déborde de vers ou de grenouilles alors qu’elle est en réalité simplement remplie de nourriture.</p>",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 160
+    },
+    "ignoreWoundPenalties": false
+  },
+  "effects": [],
+  "_key": "!items!LRZYxKfLgMhNiOjP",
+  "folder": null
+}
