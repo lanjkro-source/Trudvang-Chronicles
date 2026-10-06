@@ -62,6 +62,12 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-2.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-3.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
     "traits": {
       "charisma": 4,
       "dexterity": 2,

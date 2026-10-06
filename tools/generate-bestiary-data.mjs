@@ -133,17 +133,21 @@ const entries = sources.fr.map((creature, index) => {
     if (!tablet) throw new Error(`Unmatched creature tablet: ${creature.name}/${row.name}`);
     return {id: tablet.id, level: row.level};
   });
-  const imageSource = join("game doc/fr", creature.images[0]);
-  const imageTarget = `assets/bestiary/${id}${extname(imageSource).toLowerCase()}`;
-  if (check) {
-    if (!existsSync(imageTarget) || !readFileSync(imageSource).equals(readFileSync(imageTarget))) throw new Error(`Creature portrait needs generation: ${creature.name}`);
-  } else {mkdirSync("assets/bestiary", {recursive: true}); copyFileSync(imageSource, imageTarget);}
-  const img = `systems/trudvang-chronicles/${imageTarget}`;
+  const portraits = creature.images.map((image, imageIndex) => {
+    const imageSource = join("game doc/fr", image);
+    // Preserve the first portrait's 0.65.0 path; additional images get stable numbered paths.
+    const imageTarget = `assets/bestiary/${id}${imageIndex ? `-${imageIndex + 1}` : ""}${extname(imageSource).toLowerCase()}`;
+    if (check) {
+      if (!existsSync(imageTarget) || !readFileSync(imageSource).equals(readFileSync(imageTarget))) throw new Error(`Creature portrait needs generation: ${creature.name}/${imageIndex + 1}`);
+    } else {mkdirSync("assets/bestiary", {recursive: true}); copyFileSync(imageSource, imageTarget);}
+    return `systems/trudvang-chronicles/${imageTarget}`;
+  });
+  const img = portraits[0];
   const body = Math.floor((creature.bodyPoint.min + creature.bodyPoint.max) / 2);
   const actor = {nameKey: key("Name", creature.name, english.name), type: "npc", img, items, effects: [],
     flags: {"trudvang-chronicles": {bestiaryId: id, inventoryInitialized: true}},
     prototypeToken: {actorLink: false, ...creatureTokenDimensions(creature.size), texture: {src: img}},
-    system: {traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
+    system: {portraits, sharedPortrait: img, traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
       if (!traitKeys[trait]) throw new Error(`Unknown trait ${trait}`); return [traitKeys[trait], value];
     })), skills: Object.fromEntries(rawRows.filter(row => row.kind === "skill" && row.skillKey).map(row => [row.skillKey, {value: row.value, bonus: 0}])),
     skillTree, attacks, resources: {body: {value: body, max: body}}, combatPools: {free: {spent: 0, weaponSpent: 0, offHandSpent: 0}},

@@ -2417,6 +2417,12 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-2.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-3.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
     "traits": {
       "strength": 4
     },

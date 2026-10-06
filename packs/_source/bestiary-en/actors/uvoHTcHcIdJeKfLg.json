@@ -3255,6 +3255,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg",
     "traits": {
       "intelligence": 6,
       "perception": 4,

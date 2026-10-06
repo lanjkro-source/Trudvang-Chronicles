@@ -98,6 +98,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM-2.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
     "traits": {
       "intelligence": -4,
       "perception": 2,

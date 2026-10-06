@@ -158,6 +158,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg",
     "traits": {
       "dexterity": 1
     },

@@ -9021,6 +9021,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg",
     "traits": {
       "dexterity": -2,
       "intelligence": 10,

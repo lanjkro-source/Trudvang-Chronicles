@@ -104,6 +104,13 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-2.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-3.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-4.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
     "traits": {
       "constitution": -2,
       "dexterity": 2,

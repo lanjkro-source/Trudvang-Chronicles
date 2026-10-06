@@ -210,6 +210,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
     "traits": {
       "constitution": 1,
       "intelligence": -2,

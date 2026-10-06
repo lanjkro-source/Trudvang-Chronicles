@@ -74,6 +74,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Dy2cOUlRmSnToUpV.jpg",
         "traits": {
           "strength": 6
         },
@@ -234,6 +238,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/mlmpT0u0v1w2x3y4.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/mlmpT0u0v1w2x3y4.jpg",
         "traits": {
           "strength": 6
         },
@@ -394,6 +402,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/jyZ54RlRmSnToUpV.jpg",
         "traits": {
           "strength": 6
         },
@@ -607,6 +620,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/Vj5tquWrXsYtZu0v.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Vj5tquWrXsYtZu0v.jpg",
         "traits": {
           "dexterity": -1,
           "intelligence": -4,
@@ -856,6 +873,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/9Yt4BbE9EaGbHcId.jpg",
         "traits": {
           "strength": 4
         },
@@ -1118,6 +1140,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/yIVEN4x3y4z5A6B7.jpg",
         "traits": {
           "constitution": 4,
           "strength": 4
@@ -1495,6 +1521,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/xs7CT0sYtZu0v1w2.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -1637,6 +1668,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/i4meLKfLgMhNiOjP.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/i4meLKfLgMhNiOjP.jpg",
         "traits": {
           "strength": 6
         },
@@ -1798,6 +1833,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/zy9rVjOjPkQlRmSn.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -1967,6 +2006,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/YjHk2sXsYtZu0v1w.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/YjHk2sXsYtZu0v1w.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -2135,6 +2178,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/vQylEPiOjPkQlRmS.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/vQylEPiOjPkQlRmS.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -2308,6 +2355,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/vdNvhdE9EaGbHcId.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/vdNvhdE9EaGbHcId.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -2481,6 +2532,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/NNALQ9EaGbHcIdJe.jpg",
         "traits": {
           "charisma": -2,
           "constitution": 2,
@@ -2831,6 +2886,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/vRp0IPgMhNiOjPkQ.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/vRp0IPgMhNiOjPkQ.jpg",
         "traits": {
           "constitution": 6,
           "intelligence": -4,
@@ -3318,6 +3377,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
         "traits": {},
         "skills": {},
         "skillTree": [],
@@ -3560,6 +3624,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/XXAWJ4x3y4z5A6B7.jpg",
         "traits": {
           "psyche": 3,
           "strength": 4
@@ -3911,6 +3980,12 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-2.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-3.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg",
         "traits": {
           "dexterity": -2,
           "strength": 1
@@ -4073,6 +4148,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cDsPScFaGbHcIdJe.jpg",
         "traits": {
           "dexterity": 1
         },
@@ -4291,6 +4370,12 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-2.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-3.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
         "traits": {
           "strength": 4
         },
@@ -4777,6 +4862,12 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-2.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-3.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
         "traits": {
           "charisma": -4,
           "constitution": -4,
@@ -5115,6 +5206,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/ZKvM6WoUpVqWrXsY.jpg",
         "traits": {
           "constitution": 1,
           "intelligence": -4,
@@ -5336,6 +5432,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg",
         "traits": {
           "charisma": -4,
           "constitution": -4,
@@ -5722,6 +5822,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/yhighfHcIdJeKfLg.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/yhighfHcIdJeKfLg.jpg",
         "traits": {
           "dexterity": 4,
           "intelligence": 2
@@ -5862,6 +5966,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg",
         "traits": {
           "constitution": 6,
           "dexterity": -2,
@@ -6024,6 +6132,13 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-2.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-3.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-4.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
         "traits": {
           "constitution": -2,
           "dexterity": 2,
@@ -6168,6 +6283,12 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-2.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-3.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
         "traits": {
           "charisma": 4,
           "dexterity": 2,
@@ -6325,6 +6446,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2xYo22w2x3y4z5A6.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -6438,6 +6563,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg",
         "traits": {},
         "skills": {},
         "skillTree": [],
@@ -6566,6 +6695,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/JgkUG6A6B7C8D9Ea.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/JgkUG6A6B7C8D9Ea.jpg",
         "traits": {
           "charisma": -2,
           "psyche": 3,
@@ -6724,6 +6857,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/C2JQJUlRmSnToUpV.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/C2JQJUlRmSnToUpV.jpg",
         "traits": {
           "charisma": 1,
           "dexterity": 1,
@@ -6891,6 +7028,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
         "traits": {
           "charisma": 2,
           "intelligence": 1
@@ -7239,6 +7381,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
         "traits": {
           "dexterity": 4,
           "intelligence": 2
@@ -7549,6 +7696,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/QY69m6y4z5A6B7C8.jpg",
         "traits": {
           "strength": 6
         },
@@ -7714,6 +7866,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg",
         "traits": {
           "intelligence": -4,
           "strength": 6
@@ -7852,6 +8008,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/BWRXF3w2x3y4z5A6.jpg",
         "traits": {
           "intelligence": 4,
           "perception": 4
@@ -7983,6 +8144,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg",
         "traits": {
           "perception": 2
         },
@@ -8140,6 +8305,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/LY49GIcIdJeKfLgM.jpg",
         "traits": {
           "intelligence": -4,
           "perception": 2,
@@ -8280,6 +8450,13 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc-2.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc-3.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc-4.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/D4E2o9C8D9EaGbHc.jpg",
         "traits": {
           "strength": 6
         },
@@ -8427,6 +8604,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/HWl2zsVqWrXsYtZu.jpg",
         "traits": {
           "perception": 2,
           "strength": 6
@@ -8617,6 +8798,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/gP59DE9EaGbHcIdJ.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/gP59DE9EaGbHcIdJ.jpg",
         "traits": {
           "intelligence": 4,
           "strength": 10
@@ -8763,6 +8948,12 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb-2.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb-3.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/AOI0ZaC7C8D9EaGb.jpg",
         "traits": {
           "constitution": 4,
           "strength": 6
@@ -8947,6 +9138,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0-2.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/CjkhIYqWrXsYtZu0.jpg",
         "traits": {
           "intelligence": 4,
           "strength": 10
@@ -9119,6 +9315,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/uvoHTcHcIdJeKfLg.jpg",
         "traits": {
           "intelligence": 6,
           "perception": 4,
@@ -9345,6 +9545,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
         "traits": {
           "psyche": 2,
           "strength": 8
@@ -9527,6 +9731,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
         "traits": {
           "strength": 8
         },
@@ -9677,6 +9886,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg",
         "traits": {
           "intelligence": -4,
           "strength": 8
@@ -9814,6 +10027,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
         "traits": {
           "strength": 8
         },
@@ -9971,6 +10189,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg",
         "traits": {
           "intelligence": -1,
           "strength": 8
@@ -10157,6 +10380,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg",
         "traits": {
           "dexterity": -2,
           "intelligence": 10,
@@ -10610,6 +10837,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
         "traits": {
           "dexterity": 2,
           "intelligence": -4,
@@ -11056,6 +11288,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
         "traits": {
           "constitution": 1,
           "intelligence": -2,
@@ -11540,6 +11776,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
         "traits": {
           "constitution": 4,
           "strength": 6
@@ -11991,6 +12232,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg",
         "traits": {
           "constitution": 4,
           "dexterity": -4,
@@ -12474,6 +12719,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg",
         "traits": {
           "intelligence": 4,
           "strength": 4
@@ -13006,6 +13256,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
         "traits": {
           "constitution": 2,
           "dexterity": -2,
@@ -13463,6 +13717,11 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg",
+          "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW-2.jpeg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg",
         "traits": {
           "dexterity": 2,
           "intelligence": -4
@@ -13849,6 +14108,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/gX0tuiKfLgMhNiOj.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -13981,6 +14244,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/wprpkdFaGbHcIdJe.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/wprpkdFaGbHcIdJe.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14105,6 +14372,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/5FXRZy1w2x3y4z5A.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14255,6 +14526,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/OjaxlXoUpVqWrXsY.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/OjaxlXoUpVqWrXsY.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14387,6 +14662,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/x4cqdG9EaGbHcIdJ.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/x4cqdG9EaGbHcIdJ.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14513,6 +14792,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/0o5gF9A6B7C8D9Ea.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/0o5gF9A6B7C8D9Ea.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14637,6 +14920,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/1bVcYSlRmSnToUpV.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/1bVcYSlRmSnToUpV.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14763,6 +15050,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -14889,6 +15180,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/Ii4dUOiOjPkQlRmS.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Ii4dUOiOjPkQlRmS.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15041,6 +15336,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/wVmetmRmSnToUpVq.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/wVmetmRmSnToUpVq.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15175,6 +15474,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/qvQbCJeKfLgMhNiO.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/qvQbCJeKfLgMhNiO.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15329,6 +15632,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/wYxOQTmSnToUpVqW.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/wYxOQTmSnToUpVqW.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15457,6 +15764,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/p841mQjPkQlRmSnT.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15581,6 +15892,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/2sZ3UZtZu0v1w2x3.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2sZ3UZtZu0v1w2x3.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15727,6 +16042,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/h3NsTz4z5A6B7C8D.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/h3NsTz4z5A6B7C8D.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15859,6 +16178,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/cP0QED8D9EaGbHcI.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cP0QED8D9EaGbHcI.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -15989,6 +16312,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/8Yv3GSkQlRmSnToU.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/8Yv3GSkQlRmSnToU.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -16117,6 +16444,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/NmxSC7A6B7C8D9Ea.jpg",
         "traits": {},
         "skills": {
           "fighting": {
@@ -16241,6 +16572,10 @@ export const BESTIARY_ENTRIES = [
         }
       },
       "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg"
+        ],
+        "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/lD3lCfIdJeKfLgMh.jpg",
         "traits": {},
         "skills": {
           "fighting": {

@@ -193,6 +193,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4-2.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
     "traits": {
       "constitution": 4,
       "strength": 6

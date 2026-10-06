@@ -107,6 +107,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN-2.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
     "traits": {
       "charisma": 2,
       "intelligence": 1

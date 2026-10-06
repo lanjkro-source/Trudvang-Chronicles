@@ -1936,6 +1936,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/5E4MWXoUpVqWrXsY.jpg",
     "traits": {
       "charisma": -4,
       "constitution": -4,

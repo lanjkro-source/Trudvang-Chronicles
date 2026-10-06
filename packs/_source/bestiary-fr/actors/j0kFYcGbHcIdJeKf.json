@@ -2161,6 +2161,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf-2.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/j0kFYcGbHcIdJeKf.jpg",
     "traits": {
       "dexterity": 4,
       "intelligence": 2

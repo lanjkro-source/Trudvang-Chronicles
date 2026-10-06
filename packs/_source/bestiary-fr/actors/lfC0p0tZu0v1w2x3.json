@@ -138,6 +138,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
     "traits": {
       "constitution": 2,
       "dexterity": -2,

@@ -62,6 +62,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/sEpoCSnToUpVqWrX.jpg",
     "traits": {},
     "skills": {
       "fighting": {

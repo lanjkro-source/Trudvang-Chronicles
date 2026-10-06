@@ -827,6 +827,16 @@
       "LegacyTraitSituationRoll": "Trait situation roll"
     },
     "Portrait": {
+      "ManageMenu": "Choose portraits",
+      "GalleryTitle": "Portraits of {actor}",
+      "GalleryHint": "Choose the sheet portrait and the shared portrait separately. The token image stays unchanged.",
+      "ShareHint": "Choose the portrait to share. This choice will be remembered if you can edit the character.",
+      "Numbered": "Portrait {number}",
+      "Sheet": "Sheet",
+      "Shared": "Sharing",
+      "Add": "Add an image",
+      "Remove": "Remove from gallery (without deleting the file)",
+      "Save": "Save",
       "ShareMenu": "Share portrait",
       "DialogTitle": "Share the portrait of {actor}",
       "ForceAll": "Force large display for all players",

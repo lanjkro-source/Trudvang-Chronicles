@@ -1,6 +1,6 @@
 <div class="trudvang-sheet character-sheet">
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
+    <img class="profile-img" src="{{actor.img}}" alt="{{actor.name}}" {{#if editable}}data-action="manage-portraits" role="button" tabindex="0" title="{{localize 'TRUDVANG.Portrait.ManageMenu'}}"{{else}}title="{{actor.name}}"{{/if}}>
     <div class="identity">
       <input class="actor-name" name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'TRUDVANG.Field.Name'}}">
       <div class="identity-grid">

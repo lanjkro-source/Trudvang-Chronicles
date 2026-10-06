@@ -12,6 +12,7 @@ import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../creature-ability-data.mjs";
 import {isNpcEquipment} from "../npc-inventory.mjs";
+import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -46,6 +47,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     },
     dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}],
     actions: {
+      "manage-portraits": TrudvangActorSheet.#onAction,
+      "share-portrait": TrudvangActorSheet.#onAction,
       "roll-skill": TrudvangActorSheet.#onAction,
       "show-skill-detail": TrudvangActorSheet.#onAction,
       "show-npc-book-skill": TrudvangActorSheet.#onAction,
@@ -102,6 +105,13 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "inspect-global-stat": TrudvangActorSheet.#onAction
     }
   };
+
+  _getHeaderControls() {
+    return [...super._getHeaderControls(),
+      {action: "manage-portraits", icon: "fas fa-images", label: "TRUDVANG.Portrait.ManageMenu", visible: () => this.isEditable},
+      {action: "share-portrait", icon: "fas fa-image", label: "TRUDVANG.Portrait.ShareMenu"}
+    ];
+  }
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
@@ -407,6 +417,13 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   async _onRender(context, options) {
     await super._onRender(context, options);
     const root = this.element;
+    root.querySelectorAll('.profile-img[data-action="manage-portraits"]').forEach(image => {
+      image.addEventListener("keydown", event => {
+        if (!["Enter", " "].includes(event.key)) return;
+        event.preventDefault();
+        image.click();
+      });
+    });
     root.querySelectorAll("details[data-tree-key]").forEach(element => {
       element.addEventListener("toggle", () => {
         this._treeState ??= new Map();
@@ -462,6 +479,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const item = itemId ? this.actor.items.get(itemId) : null;
     const effect = target.dataset.effectUuid ? foundry.utils.fromUuidSync(target.dataset.effectUuid) : null;
     switch (action) {
+      case "manage-portraits": return this.isEditable ? manageActorPortraits(this.actor) : false;
+      case "share-portrait": return showActorPortraitDialog(this.actor);
       case "roll-skill": return this.actor.rollSkill(target.dataset.skill);
       case "show-skill-detail": return this._showDetail(game.i18n.localize(TRUDVANG.skills[target.dataset.skill]), game.i18n.localize(TRUDVANG.skillDescriptions[target.dataset.skill]));
       case "show-npc-book-skill": return this._openNpcBookSkill(Number(target.dataset.index));

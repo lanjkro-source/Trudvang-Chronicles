@@ -156,6 +156,8 @@ function rollModifiersSchema() {
 
 function actorCommonSchema() {
   return {
+    portraits: new fields.ArrayField(string(), {required: true, initial: []}),
+    sharedPortrait: string(),
     traits: traitSchema(),
     effective: schema({
       traits: effectiveTraitSchema(),

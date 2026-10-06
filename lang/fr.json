@@ -827,6 +827,16 @@
       "LegacyTraitSituationRoll": "Jet de situation de trait"
     },
     "Portrait": {
+      "ManageMenu": "Choisir les portraits",
+      "GalleryTitle": "Portraits de {actor}",
+      "GalleryHint": "Choisissez séparément le portrait de la feuille et celui à partager. L’image du token reste inchangée.",
+      "ShareHint": "Choisissez le portrait à partager. Ce choix sera mémorisé si vous pouvez modifier le personnage.",
+      "Numbered": "Portrait {number}",
+      "Sheet": "Feuille",
+      "Shared": "Partage",
+      "Add": "Ajouter une image",
+      "Remove": "Retirer de la galerie (sans supprimer le fichier)",
+      "Save": "Enregistrer",
       "ShareMenu": "Partager le portrait",
       "DialogTitle": "Partager le portrait de {actor}",
       "ForceAll": "Forcer l'affichage en grand chez tous les joueurs",

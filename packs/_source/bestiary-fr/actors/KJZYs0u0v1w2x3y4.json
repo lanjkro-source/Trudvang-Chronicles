@@ -38,6 +38,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/KJZYs0u0v1w2x3y4.jpg",
     "traits": {},
     "skills": {},
     "skillTree": [],

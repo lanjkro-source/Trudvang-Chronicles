@@ -37,7 +37,7 @@ globalThis.foundry = {
         async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
         render(options) { this.renderOptions = options; return this; }
       }},
-    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} }, ItemSheetV2: class {
+    sheets: {ActorSheetV2: class { async _prepareContext() { return {}; } async _onRender() {} _getHeaderControls() { return [{action: "configureSheet"}]; } }, ItemSheetV2: class {
       constructor({document} = {}) { this.document = document; this.item = document; }
       async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
     }},
@@ -54,7 +54,7 @@ globalThis.game = {user: {isGM: true}, combat: null, i18n: {
 }};
 const {NpcData, CharacterData, AbilityData} = await import("../modules/data-models.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
-const {TrudvangActorSheet, TrudvangNpcSheet} = await import("../modules/sheets/actor-sheet.mjs");
+const {TrudvangActorSheet, TrudvangNpcSheet, TrudvangCharacterSheet} = await import("../modules/sheets/actor-sheet.mjs");
 const {TrudvangItemSheet} = await import("../modules/sheets/item-sheet.mjs");
 const feat = (enabled = true, level = 1) => ({type: "ability", name: "Tenace",
   system: {kind: "feat", ignoreWoundPenalties: enabled, level}});
@@ -87,6 +87,34 @@ test("NPC current traits follow intrinsic traits by default, but accept zero and
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: null}}, "strength"), 4);
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: 0}}, "strength"), 0);
   assert.equal(npcCurrentTrait({traits: {strength: 4}, traitCurrent: {strength: -8}}, "strength"), -8);
+});
+
+test("both actor models store galleries, and both sheet menus expose portrait management and sharing", async () => {
+  for (const Model of [CharacterData, NpcData]) {
+    const schema = Model.defineSchema();
+    assert.ok(schema.portraits); assert.ok(schema.sharedPortrait);
+  }
+  const previous = foundry.applications.api.DialogV2;
+  const previousDocument = globalThis.document;
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  let shared = 0;
+  foundry.applications.api.DialogV2 = class { static async wait(options) {
+    assert.equal(options.window.title, game.i18n.format("TRUDVANG.Portrait.DialogTitle", {actor: "Test creature"}));
+    shared += 1; return false;
+  }};
+  try {
+    for (const Sheet of [TrudvangCharacterSheet, TrudvangNpcSheet]) {
+      const sheet = new Sheet(); sheet.actor = actor(); sheet.actor.img = "portrait.webp"; sheet.isEditable = true;
+      const controls = sheet._getHeaderControls();
+      assert.ok(controls.some(control => control.action === "configureSheet"), "native controls remain present");
+      assert.equal(controls.filter(control => control.action === "share-portrait").length, 1);
+      const manage = controls.find(control => control.action === "manage-portraits");
+      assert.equal(manage.visible(), true); sheet.isEditable = false; assert.equal(manage.visible(), false);
+      await TrudvangActorSheet.DEFAULT_OPTIONS.actions["share-portrait"].call(sheet,
+        {preventDefault() {}, stopPropagation() {}}, {dataset: {action: "share-portrait"}, closest: () => null});
+    }
+    assert.equal(shared, 2);
+  } finally { foundry.applications.api.DialogV2 = previous; globalThis.document = previousDocument; }
 });
 
 test("NPC creation initializes its prototype dimensions and generated tokens follow the current size", async () => {

@@ -143,6 +143,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
     "traits": {
       "psyche": 2,
       "strength": 8

@@ -272,6 +272,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG-2.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/5ouPJD6B7C8D9EaG.jpg",
     "traits": {},
     "skills": {},
     "skillTree": [],

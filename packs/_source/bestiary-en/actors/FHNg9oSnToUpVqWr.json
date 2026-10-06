@@ -122,6 +122,12 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-2.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr-3.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/FHNg9oSnToUpVqWr.jpg",
     "traits": {
       "dexterity": -2,
       "strength": 1

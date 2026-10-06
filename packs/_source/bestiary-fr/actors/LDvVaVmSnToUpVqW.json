@@ -116,6 +116,10 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/LDvVaVmSnToUpVqW.jpg",
     "traits": {
       "perception": 2
     },

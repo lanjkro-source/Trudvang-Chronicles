@@ -271,6 +271,12 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-2.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi-3.jpg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/WXp0rgJeKfLgMhNi.jpg",
     "traits": {
       "charisma": -4,
       "constitution": -4,

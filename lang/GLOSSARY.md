@@ -980,6 +980,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Portrait.ManageMenu` | Choose portraits | Choisir les portraits |
+| `TRUDVANG.Portrait.GalleryTitle` | Portraits of {actor} | Portraits de {actor} |
+| `TRUDVANG.Portrait.GalleryHint` | Choose the sheet portrait and the shared portrait separately. The token image stays unchanged. | Choisissez séparément le portrait de la feuille et celui à partager. L’image du token reste inchangée. |
+| `TRUDVANG.Portrait.ShareHint` | Choose the portrait to share. This choice will be remembered if you can edit the character. | Choisissez le portrait à partager. Ce choix sera mémorisé si vous pouvez modifier le personnage. |
+| `TRUDVANG.Portrait.Numbered` | Portrait {number} | Portrait {number} |
+| `TRUDVANG.Portrait.Sheet` | Sheet | Feuille |
+| `TRUDVANG.Portrait.Shared` | Sharing | Partage |
+| `TRUDVANG.Portrait.Add` | Add an image | Ajouter une image |
+| `TRUDVANG.Portrait.Remove` | Remove from gallery (without deleting the file) | Retirer de la galerie (sans supprimer le fichier) |
+| `TRUDVANG.Portrait.Save` | Save | Enregistrer |
 | `TRUDVANG.Portrait.ShareMenu` | Share portrait | Partager le portrait |
 | `TRUDVANG.Portrait.DialogTitle` | Share the portrait of {actor} | Partager le portrait de {actor} |
 | `TRUDVANG.Portrait.ForceAll` | Force large display for all players | Forcer l'affichage en grand chez tous les joueurs |

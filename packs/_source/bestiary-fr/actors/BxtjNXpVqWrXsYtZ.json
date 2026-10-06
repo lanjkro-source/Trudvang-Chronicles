@@ -143,6 +143,11 @@
     }
   },
   "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ-2.jpeg"
+    ],
+    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/BxtjNXpVqWrXsYtZ.jpeg",
     "traits": {
       "intelligence": -1,
       "strength": 8
