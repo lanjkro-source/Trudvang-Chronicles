@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
-import {rebuildCompendiumFromBlueprints} from "../modules/content-importer.mjs";
+import {rebuildCompendiumFromBlueprints, sameComboList} from "../modules/content-importer.mjs";
 import {buildSkillPackDocuments, deterministicId} from "../modules/skill-pack-data.mjs";
 import {buildTabletPackDocuments} from "../modules/tablet-pack-data.mjs";
 import {findTabletPower} from "../modules/tablet-power-links.mjs";
@@ -10,6 +10,15 @@ const french = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.ur
 const lookup = key => key.split(".").reduce((value, part) => value?.[part], french) ?? "";
 const resolvers = {localize: lookup, format: (key, params) => Object.entries(params ?? {})
   .reduce((text, [name, value]) => text.replaceAll(`{${name}}`, String(value)), lookup(key)), isFrench: () => true};
+
+test("prepared combinations compare names, costs and movement steps before replacing existing NPC data", () => {
+  const old = [[{attack: "Cornes", value: 13}, {attack: "Cornes", value: 10}]];
+  assert.equal(sameComboList(old, structuredClone(old)), true);
+  assert.equal(sameComboList(old, [[{attack: "Mains nues", value: 13}, {attack: "Cornes", value: 10}]]), false);
+  assert.equal(sameComboList(old, [[{attack: "Cornes", value: 12}, {attack: "Cornes", value: 11}]]), false);
+  assert.equal(sameComboList([[{action: "movement", mode: "flight", distance: 20, value: 10}]],
+    [[{action: "movement", mode: "flight", distance: 16, value: 10}]]), false);
+});
 
 test("a tablet and its powers share one folder at the proper religion depth", () => {
   for (const tabletType of ["vitner", "holy"]) {

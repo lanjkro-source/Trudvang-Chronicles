@@ -142,6 +142,18 @@ export function weaponType(item) {
   return CATEGORY_SPECIALTIES[item.system?.category] || "";
 }
 
+/** Bare hands are not interchangeable with a creature's claws, horns or bite. */
+export function isUnarmedWeapon(item) {
+  if (weaponType(item) !== "natural") return false;
+  const pool = String(item.system?.naturalCombatPool || "").toLowerCase();
+  // TEMPORARY WORLD MIGRATION — older embedded NPC fists lack isUnarmed.
+  const legacyName = String(item.name || "").normalize("NFD").replace(/\p{Diacritic}/gu, "")
+    .toLowerCase().replace(/[^a-z]/g, "");
+  return item.system?.isUnarmed === true || item.id === "humanoid-natural"
+    || ["unarmed", "mainsnues"].includes(pool)
+    || ["unarmed", "mainsnues"].includes(legacyName);
+}
+
 /** Keep the legacy category synchronized while older worlds and modules still read it. */
 export function categoryForWeaponType(type, current = "oneHandedLight") {
   if (type === "throwingWeapons") {
@@ -210,19 +222,21 @@ function poolMaximum(actor, id) {
 function poolEligibility(id, item, context) {
   const action = context.action || context.usage || "";
   if (!action) return true;
-  if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "combatActions", "unarmedFighting", "wrestling"].includes(id);
+  // Saisie and glima draw solely on Combat, Combat à mains nues and Lutte.
+  if (["wrestling", "grapple", "glima"].includes(action)) return ["free", "unarmedFighting", "wrestling"].includes(id);
   const rangedParry = action === "parry" && item?.type === "weapon" && ["crossbow", "bowsSlings"].includes(weaponType(item));
   if (rangedParry) return id === "free";
   if (id === "free") return true;
 
   const weaponAction = ["attack", "parry", "brawling"].includes(action);
   const natural = item?.type === "weapon" && weaponType(item) === "natural";
+  const unarmed = natural && isUnarmedWeapon(item);
   const armed = ["weapon", "shield"].includes(item?.type) && !natural;
   if (id === "attacksParries") return weaponAction;
   if (id === "combatActions") return !weaponAction;
   if (id === "armedFighting") return weaponAction && armed;
-  if (id === "unarmedFighting") return ["brawling", "wrestling", "grapple", "glima"].includes(action) || (natural && ["attack", "parry"].includes(action));
-  if (id === "brawling") return action === "brawling" || (natural && ["attack", "parry"].includes(action));
+  if (id === "unarmedFighting") return action === "brawling" || (unarmed && ["attack", "parry"].includes(action));
+  if (id === "brawling") return action === "brawling" || (unarmed && ["attack", "parry"].includes(action));
   if (id === "wrestling") return ["wrestling", "grapple", "glima"].includes(action);
   if (id === "shieldParry") return action === "parry" && item?.type === "shield";
   const specialty = weaponCombatSpecialty(item);
@@ -286,7 +300,8 @@ export function resolveCombatPools({actor, item = null, context = {}} = {}) {
   // Its expenditure is mirrored on those items, never duplicated in the total.
   if (actor?.type === "npc") {
     const groups = new Map();
-    for (const weapon of Array.from(actor.items ?? []).filter(entry => weaponType(entry) === "natural" && entry.type === "weapon")) {
+    for (const weapon of Array.from(actor.items ?? []).filter(entry => weaponType(entry) === "natural" && entry.type === "weapon"
+      && !(isUnarmedWeapon(entry) && entry.system.naturalCombatPool === "natural"))) {
       const id = `natural:${weapon.system.naturalCombatPool || weapon.id}`;
       if (!groups.has(id)) groups.set(id, []);
       groups.get(id).push(weapon);
@@ -348,11 +363,21 @@ export function suggestCombatAllocation(pools, requested) {
 }
 
 /** Clamp a user allocation to the eligible points that are actually available. */
-export function normalizeCombatAllocation(pools, allocation = {}) {
+export function normalizeCombatAllocation(pools, allocation = {}, {multiple = 1} = {}) {
   const normalized = {};
   for (const pool of pools) {
     if (!pool.eligible || pool.current <= 0) continue;
     normalized[pool.id] = Math.max(0, Math.min(pool.current, Math.trunc(finite(allocation[pool.id], 0))));
+  }
+  const unit = Math.max(1, Math.trunc(finite(multiple, 1)));
+  let excess = Object.values(normalized).reduce((sum, amount) => sum + amount, 0) % unit;
+  // Leave the unusable remainder unspent, taking it from the least specific
+  // allocated reserve first. Individual pools may still contribute odd amounts.
+  for (const pool of [...pools].sort((left, right) => left.priority - right.priority)) {
+    if (!excess) break;
+    const removed = Math.min(excess, normalized[pool.id] || 0);
+    normalized[pool.id] -= removed;
+    excess -= removed;
   }
   return {
     allocation: normalized,

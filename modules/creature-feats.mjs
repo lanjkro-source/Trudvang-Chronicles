@@ -1,9 +1,9 @@
 // Baked creature reference for NPC imports (tracked runtime source; game doc/ is NOT shipped).
 //
-// Sources (read-only, private nested repo): "game doc/fr/trudvang-creatures-fr.json" (74 creatures)
+// Sources (read-only, private nested repo): "game doc/fr/trudvang-creatures-fr.json" (75 creatures)
 // and "game doc/fr/trudvang-feats-fr.json" (149 feats). Only the minimal set needed by the
 // 8 starter NPCs is baked here: 21 feat summaries (name + French description as-is) and the
-// 8 creatures' stats. Baking all 149 feats / the whole 74-creature file was rejected to avoid
+// 8 creatures' stats. Baking all 149 feats / the whole 75-creature file was rejected to avoid
 // shipping the full proprietary bestiary in the public system.
 //
 // Starter mapping (French names vs nameKeys matched by hand): Galtir->Galtir,
@@ -465,11 +465,11 @@ export const CREATURE_NPC_DATA = {
       [
         {
           "attack": "Barda makir (masse de bataille)",
-          "value": 12
+          "value": 14
         },
         {
           "attack": "Barda makir (masse de bataille)",
-          "value": 11
+          "value": 12
         },
         {
           "attack": "Grand bouclier en bois",
@@ -479,7 +479,7 @@ export const CREATURE_NPC_DATA = {
       [
         {
           "attack": "Barda makir (masse de bataille)",
-          "value": 15
+          "value": 12
         },
         {
           "attack": "Barda makir (masse de bataille)",

@@ -4,6 +4,7 @@ import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs"
 import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
+import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -455,7 +456,7 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, targetPointCost = 1, allocationMultiple = 1}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
@@ -466,6 +467,8 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     const allocation = mode.defaultAllocation || {};
     const initialTotal = Object.values(allocation).reduce((sum, amount) => sum + Number(amount || 0), 0);
     const maximum = modePools.reduce((sum, pool) => sum + Number(pool.current || 0), 0);
+    const sliderMaximum = maximum - maximum % allocationMultiple;
+    const sliderInitial = initialTotal - initialTotal % allocationMultiple;
     const modeMaximumFeint = Math.max(0, Math.floor(Number(mode.feintMax ?? maximumFeint)));
     const rows = modePools.map(pool => {
       const amount = Number(allocation[pool.id] || 0);
@@ -482,10 +485,11 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     </div>` : "";
     return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
       ${rangeSelection}
+      ${movementModes?.length ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Movement"))}</label><select data-movement-mode>${movementModes.map(movement => `<option value="${escapeHtml(movement.id)}">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.CombatMovementRate", {mode: movement.label, meters: movement.metersPerTwo}))}</option>`).join("")}</select></div>` : ""}
       ${rows}
-      <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${maximum}" step="1" value="${initialTotal}"></div>
+      <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${sliderMaximum}" step="${allocationMultiple}" value="${sliderInitial}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
-      <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${initialTotal}</strong></p>
+      <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${Math.floor(sliderInitial / targetPointCost)}</strong></p>
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
       ${rangedTargetOptions}
@@ -534,15 +538,15 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         if (feintInput) { feintInput.max = String(Math.min(modeMaximumFeint, total)); feintInput.value = String(feint); }
         const attackTotal = total - feint;
         const output = section.querySelector("[data-combat-total]");
-        if (output) output.textContent = String(attackTotal);
+        if (output) output.textContent = String(Math.floor(attackTotal / targetPointCost));
         const finalTarget = section.querySelector("[data-combat-final-target]");
         if (finalTarget) {
           const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
           const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
-          finalTarget.textContent = String(attackTotal + manual + fixed + rangedModifier);
+          finalTarget.textContent = String(Math.floor(attackTotal / targetPointCost) + manual + fixed + rangedModifier);
         }
         const slider = section.querySelector("[data-combat-slider]");
-        if (slider) slider.value = String(total);
+        if (slider) slider.value = String(total - total % allocationMultiple);
       };
       const allocate = (section, requested) => {
         let remaining = Math.max(0, Number(requested || 0));
@@ -591,8 +595,9 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
           rangeSelection: section.querySelector("[data-range-selection]")?.value || "short",
           ...Object.fromEntries(Array.from(section.querySelectorAll("[data-ranged-option]")).map(input => [input.dataset.rangedOption, input.checked]))
         },
-        allocation: Object.fromEntries(Array.from(section.querySelectorAll("[data-pool-id]"))
-          .map(input => [input.dataset.poolId, Number(input.value || 0)]))
+        movementMode: section.querySelector("[data-movement-mode]")?.value || "",
+        allocation: normalizeCombatAllocation((modes.find(candidate => candidate.id === mode) ?? defaultMode).pools, Object.fromEntries(Array.from(section.querySelectorAll("[data-pool-id]"))
+          .map(input => [input.dataset.poolId, Number(input.value || 0)])), {multiple: allocationMultiple}).allocation
       };
     }
   });

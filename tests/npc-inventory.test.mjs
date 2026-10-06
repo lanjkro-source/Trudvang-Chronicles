@@ -116,5 +116,6 @@ test("natural profiles preserve source damage and independent or shared reserves
   assert.deepEqual(natural("Galtir").map(item => item.system.naturalCombatPoints), [4, 6]);
   assert.deepEqual(natural("GiantSpider").map(item => [item.system.damage, item.system.openRoll, item.system.naturalCombatPoints]), [["2d10", 9, 6], ["1d10", 7, 12]]);
   assert.equal(natural("TrollBull").length, 2);
-  assert.ok(natural("TrollBull").every(item => item.system.naturalCombatPool === "natural" && item.system.naturalCombatPoints === 8));
+  assert.deepEqual(natural("TrollBull").map(item => [item.system.isUnarmed, item.system.naturalCombatPool, item.system.naturalCombatPoints]),
+    [[false, "natural", 8], [true, "Unarmed", 0]]);
 });

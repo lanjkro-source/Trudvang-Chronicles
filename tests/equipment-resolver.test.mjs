@@ -583,7 +583,7 @@ test("manual brawling and wrestling actions expose their own linked pools", () =
   const brawling = resolveCombatPools({actor, context: {action: "brawling"}});
   const wrestling = resolveCombatPools({actor, context: {action: "wrestling"}});
   assert.deepEqual(brawling.eligible.map(pool => pool.id), ["free", "attacksParries", "unarmedFighting", "brawling"]);
-  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "combatActions", "unarmedFighting", "wrestling"]);
+  assert.deepEqual(wrestling.eligible.map(pool => pool.id), ["free", "unarmedFighting", "wrestling"]);
 });
 
 test("Combat Point allocations are always whole numbers", () => {
@@ -614,8 +614,35 @@ test("ranged weapon parries may spend only free combat points", () => {
   assert.deepEqual(eligible, ["free"]);
 });
 
-test("glima may use Combat Actions in addition to unarmed and wrestling pools", () => {
+test("glima may use only Combat, unarmed fighting and wrestling pools", () => {
   const actor = combatActor({battleExperience: 2, combatActions: 1, unarmedFighting: 2, fighter: 2, wrestling: 3});
   const eligible = resolveCombatPools({actor, context: {action: "glima"}}).eligible.map(pool => pool.id);
-  assert.deepEqual(eligible, ["free", "combatActions", "unarmedFighting", "wrestling"]);
+  assert.deepEqual(eligible, ["free", "unarmedFighting", "wrestling"]);
+});
+
+test("natural horns never spend Brawling while explicit unarmed fists can", () => {
+  const actor = combatActor({battleExperience: 1, fighter: 2, unarmedFighting: 1, brawling: 3}, {fighting: 10});
+  actor.type = "npc";
+  const horns = {id: "horns", type: "weapon", name: "Cornes", system: {
+    category: "natural", naturalCombatPool: "natural", naturalCombatPoints: 8
+  }};
+  const fists = {id: "fists", type: "weapon", name: "Mains nues", system: {
+    category: "natural", isUnarmed: true, naturalCombatPool: "natural", naturalCombatPoints: 8
+  }};
+  actor.items.push(horns, fists);
+  const hornsPools = resolveCombatPools({actor, item: horns, context: {action: "attack", ignoreSpent: true}});
+  assert.deepEqual(hornsPools.eligible.map(pool => pool.id), ["free", "attacksParries", "natural:natural"]);
+  assert.equal(hornsPools.eligibleCurrent, 23);
+  const fistsPools = resolveCombatPools({actor, item: fists, context: {action: "attack", ignoreSpent: true}});
+  assert.deepEqual(fistsPools.eligible.map(pool => pool.id), ["free", "attacksParries", "unarmedFighting", "brawling"]);
+  assert.equal(fistsPools.eligibleCurrent, 22);
+});
+
+test("wrestling leaves an odd Combat Point unspent, preserving linked specialty points", () => {
+  const actor = combatActor({combatActions: 2, fighter: 2, brawling: 2, unarmedFighting: 1, wrestling: 2}, {fighting: 8});
+  const pools = resolveCombatPools({actor, context: {action: "grapple"}}).eligible;
+  assert.deepEqual(pools.map(pool => pool.id), ["free", "unarmedFighting", "wrestling"]);
+  const normalized = normalizeCombatAllocation(pools, {free: 3, unarmedFighting: 1, wrestling: 1}, {multiple: 2});
+  assert.equal(normalized.total, 4);
+  assert.deepEqual(normalized.allocation, {free: 2, unarmedFighting: 1, wrestling: 1});
 });

@@ -10,7 +10,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, res
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
 import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
-import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange} from "../rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
 
 const BaseActor = foundry.documents.Actor;
@@ -712,7 +712,7 @@ export class TrudvangActor extends BaseActor {
       id: "humanoid-natural", uuid: "", type: "weapon",
       name: game.i18n.localize("TRUDVANG.Combat.HumanoidNaturalWeapons"),
       img: "icons/svg/combat.svg",
-      system: {category: "natural", equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4}
+      system: {category: "natural", isUnarmed: true, equipped: true, hand: "weapon", damage: "1d5", damageBonus: 0, openRoll: 0, strengthApplies: true, weaponActions: 4}
     };
   }
 
@@ -748,17 +748,22 @@ export class TrudvangActor extends BaseActor {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     const poolResolution = resolveCombatPools({actor: this, context: {action: kind, ignoreSpent: !inCombat}});
+    const strength = this.getTraitValue("strength");
+    const actionModifier = this.getRollModifier({kind: "attack", movement: true}) - Number(this.system.armorVCPenalty || 0);
+    const availableEven = poolResolution.eligibleCurrent - poolResolution.eligibleCurrent % 2;
     const options = await combatPointDialog({
       title: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"),
       pools: poolResolution.eligible,
-      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(10, poolResolution.eligibleCurrent))
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(10, availableEven)),
+      targetPointCost: 2,
+      allocationMultiple: 2,
+      modifierRows: [{label: game.i18n.localize("TRUDVANG.Trait.Strength"), value: strength},
+        ...(actionModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.Modifier"), value: actionModifier}] : [])]
     });
     if (!options) return null;
-    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
+    const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation, {multiple: 2});
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
-    const strength = this.getTraitValue("strength");
     const target = Math.floor(spending.total / 2);
-    const actionModifier = this.getRollModifier({kind: "attack", movement: true}) - Number(this.system.armorVCPenalty || 0);
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const flavor = [
       game.i18n.format("TRUDVANG.Calculation.WrestlingCost", {points: spending.total, target, strength}),
@@ -1237,10 +1242,15 @@ export class TrudvangActor extends BaseActor {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
+    const movementRows = this.type === "npc" ? npcMovementRows(this.system, {localize: key => game.i18n.localize(key)}) : [];
+    const movementModes = this.type === "npc" ? npcCombatMovementModes(this.system).map(mode => ({
+      ...mode, label: movementRows[Number(mode.id)]?.mode || mode.mode
+    })) : [];
     const options = await combatPointDialog({
       title: game.i18n.localize("TRUDVANG.Combat.MovementAction"),
       pools: poolResolution.eligible,
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(2, poolResolution.eligibleCurrent)),
+      movementModes,
       buttonLabelKey: "TRUDVANG.Action.SpendCombat",
       showModifier: false,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
@@ -1248,7 +1258,8 @@ export class TrudvangActor extends BaseActor {
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0 || spending.total % 2 !== 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidCombatMovementCost"));
-    const paidMeters = spending.total / 2;
+    const selectedMode = movementModes.find(mode => mode.id === options.movementMode) ?? movementModes[0];
+    const paidMeters = spending.total / 2 * (selectedMode?.metersPerTwo ?? 1);
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));
     return {...spending, paidMeters};

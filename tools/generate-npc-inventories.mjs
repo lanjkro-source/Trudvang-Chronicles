@@ -36,13 +36,15 @@ export function withNpcInventories(content, creatures, french) {
         for (const name of names) {
           const id = naturalIds[normalize(name)];
           if (!id) throw new Error(`Unknown natural weapon: ${name}`);
+          const isUnarmed = id === "Unarmed";
           const reserve = (creature.combatReserves ?? []).find(pool => normalize(pool.name) === normalize(name))
             ?? (creature.combatReserves ?? []).find(pool => normalize(pool.name) === "armesnaturelles");
+          const sharedNatural = reserve && normalize(reserve.name) === "armesnaturelles";
           natural.push({nameKey: `TRUDVANG.Content.NaturalWeapon.${id}.Name`, type: "weapon", img: "icons/svg/combat.svg",
-            system: {category: "natural", combatSpecialty: "natural", equipped: true, quantity: 1, strengthApplies: true,
+            system: {category: "natural", combatSpecialty: "natural", isUnarmed, equipped: true, quantity: 1, strengthApplies: true,
               ...parseDamage(entry.damage), initiativeModifier: Number(entry.initiative),
-              naturalCombatPool: reserve && normalize(reserve.name) === "armesnaturelles" ? "natural" : id,
-              naturalCombatPoints: Number(reserve?.reserve ?? 0)}});
+              naturalCombatPool: sharedNatural && !isUnarmed ? "natural" : id,
+              naturalCombatPoints: sharedNatural && isUnarmed ? 0 : Number(reserve?.reserve ?? 0)}});
         }
         continue;
       }

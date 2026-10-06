@@ -2592,6 +2592,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -2609,6 +2610,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -2744,6 +2746,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -2891,6 +2894,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -2908,6 +2912,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3060,6 +3065,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3077,6 +3083,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3216,6 +3223,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3233,6 +3241,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3398,6 +3407,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3415,6 +3425,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3582,11 +3593,11 @@
           [
             {
               "attack": "Barda makir (masse de bataille)",
-              "value": 12
+              "value": 14
             },
             {
               "attack": "Barda makir (masse de bataille)",
-              "value": 11
+              "value": 12
             },
             {
               "attack": "Grand bouclier en bois",
@@ -3596,7 +3607,7 @@
           [
             {
               "attack": "Barda makir (masse de bataille)",
-              "value": 15
+              "value": 12
             },
             {
               "attack": "Barda makir (masse de bataille)",
@@ -3871,6 +3882,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -3888,14 +3900,15 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": true,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
             "damage": "1d10",
             "openRoll": 10,
             "initiativeModifier": 0,
-            "naturalCombatPool": "natural",
-            "naturalCombatPoints": 8
+            "naturalCombatPool": "Unarmed",
+            "naturalCombatPoints": 0
           }
         }
       ],
@@ -4032,6 +4045,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,
@@ -4049,6 +4063,7 @@
           "system": {
             "category": "natural",
             "combatSpecialty": "natural",
+            "isUnarmed": false,
             "equipped": true,
             "quantity": 1,
             "strengthApplies": true,

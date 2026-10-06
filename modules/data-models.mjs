@@ -384,6 +384,7 @@ export class WeaponData extends BaseItemData {
       category: string("oneHandedLight"),
       combatSpecialty: string(),
       isThrowingWeapon: boolean(false),
+      isUnarmed: boolean(false),
       hand: string("weapon"),
       damage: string("1d10"),
       openRoll: integer(10, {min: 0, max: 10}),

@@ -362,6 +362,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     if (this.actor.type === "npc") {
       context.npcHealthRange = npcHealthRange(this.actor);
       context.npcMovement = npcMovementRows(this.actor.system, {localize: key => game.i18n.localize(key)});
+      context.npcMovementHint = context.npcMovement.map(row => `${row.mode} : ${row.distance} / ${row.max}`).join(" | ");
       context.npcBookSkills = this._npcBookSkillRows();
       context.npcSkillTrees = npcSkillTrees(context.skillTrees).map(tree => ({...tree,
         visible: tree.visible && !context.npcBookSkills.some(row => row.kind === "skill" && row.skillKey === tree.key)

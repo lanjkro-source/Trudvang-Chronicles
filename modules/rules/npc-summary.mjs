@@ -42,6 +42,15 @@ export function npcMovementRows(system, {localize}) {
   });
 }
 
+/** Book movement per 2 CP; shared by NPC actions and prepared-combination audits. */
+export function npcCombatMovementModes(system) {
+  return Array.from(system.details?.move ?? [], (row, index) => {
+    const match = String(row.distance ?? "").trim().match(/^(\d+(?:[.,]\d+)?)\s*m$/i);
+    const metersPerTwo = match ? Number(match[1].replace(",", ".")) : 0;
+    return {id: String(index), mode: row.mode, metersPerTwo};
+  }).filter(row => Number.isFinite(row.metersPerTwo) && row.metersPerTwo > 0);
+}
+
 /** Creature feats use explicit mechanics, never their translated display name. */
 export function ignoresWoundPenalties(actor) {
   return Array.from(actor.items ?? []).some(item => item.type === "ability"

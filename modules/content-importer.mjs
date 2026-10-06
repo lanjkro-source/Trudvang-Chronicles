@@ -6,9 +6,9 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 46 also updates intact Galtir/Minokks
-// attack labels in existing worlds; version 45 renamed the potion table.
-const CONTENT_VERSION = 46;
+// TEMPORARY WORLD MIGRATION — version 47 also updates intact Minokks attack
+// allocations in existing worlds; version 46 updated historical attack labels.
+const CONTENT_VERSION = 47;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -407,8 +407,12 @@ function applyBakedCreatureStats(payload, key) {
 // book tree — a GM tune never matches a book tree exactly, so tuned values survive.
 const samePairList = (a, b) => (a ?? []).length === (b ?? []).length
   && (a ?? []).every((row, i) => row.name === b[i].name && Number(row.value) === Number(b[i].value) && (row.kind ?? null) === (b[i].kind ?? null));
-const sameComboList = (a, b) => (a ?? []).length === (b ?? []).length
-  && (a ?? []).every((combo, i) => samePairList(combo.map(pair => ({...pair, kind: null})), b[i].map(pair => ({...pair, kind: null}))));
+export const sameComboList = (a, b) => (a ?? []).length === (b ?? []).length
+  && (a ?? []).every((combo, i) => combo.length === b[i].length && combo.every((pair, j) => {
+    const other = b[i][j];
+    return pair.attack === other.attack && pair.action === other.action && pair.mode === other.mode
+      && Number(pair.distance ?? 0) === Number(other.distance ?? 0) && Number(pair.value) === Number(other.value);
+  }));
 async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} = {}) {
   const baked = creatureDataForStarter(key);
   if (!baked || actor.type !== "npc") return;
@@ -467,8 +471,18 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
     {"Barda makir (masse de bataille)": "Arme lourde", "Tvei klubb (massue à deux mains)": "Arme à deux mains", "Grand bouclier en bois": "Bouclier"},
     {"Barda makir (masse de bataille)": "Armes à une main", "Tvei klubb (massue à deux mains)": "Armes à deux mains", "Grand bouclier en bois": "Bouclier"}
   ] : [];
-  const obsoleteAttacks = currentAttacks.length && legacyLabelVariants.some(labels => sameComboList(currentAttacks,
-    baked.attacks.map(combo => combo.map(pair => ({...pair, attack: labels[pair.attack] ?? pair.attack})))));
+  // TEMPORARY WORLD MIGRATION — replace only the exact old Minokks allocation;
+  // a GM-edited combination (including a changed weapon or movement) is retained.
+  const oldMinokksAttacks = baked.creature === "Minokks" ? foundry.utils.deepClone(baked.attacks) : null;
+  if (oldMinokksAttacks) {
+    oldMinokksAttacks[2][0].value = 12;
+    oldMinokksAttacks[2][1].value = 11;
+    oldMinokksAttacks[3][0].value = 15;
+  }
+  const obsoleteAttacks = currentAttacks.length && [baked.attacks, oldMinokksAttacks].filter(Boolean).some(version =>
+    (version === oldMinokksAttacks && sameComboList(currentAttacks, version))
+    || legacyLabelVariants.some(labels => sameComboList(currentAttacks,
+      version.map(combo => combo.map(pair => ({...pair, attack: labels[pair.attack] ?? pair.attack}))))));
   if (foreignTree) await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
   if (foreignAttacks || obsoleteAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   const missing = missingFeatPayloads([...actor.effects], baked.feats);

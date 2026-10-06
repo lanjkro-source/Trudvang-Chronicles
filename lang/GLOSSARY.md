@@ -873,6 +873,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.CombatPoints` | Combat Points to Spend | CP à dépenser |
 | `TRUDVANG.Dialog.AllocatedCombatPoints` | SV from allocated Combat Points | VC obtenue par les CP alloués |
 | `TRUDVANG.Dialog.AllocatedPoints` | Allocated CP | PC alloués |
+| `TRUDVANG.Dialog.CombatMovementRate` | {mode}: {meters} m per 2 CP | {mode} : {meters} m pour 2 PC |
 | `TRUDVANG.Dialog.CombatActionSpendingTitle` | Combat action, movement, or positioning | Action de combat, mouvement ou positionnement |
 | `TRUDVANG.Dialog.DrawTitle` | Draw: {item} (10 CP) | Dégainer : {item} (10 PC) |
 | `TRUDVANG.Dialog.SheatheTitle` | Sheathe: {item} (free) | Rengainer : {item} (gratuit) |
@@ -1059,7 +1060,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NoEffectTarget` | Select at least one target before applying this effect. | Sélectionnez au moins une cible avant d'appliquer cet effet. |
 | `TRUDVANG.Warning.NotEnoughCombatPointsToReady` | Drawing requires 10 available CP, or no CP spent yet so the entire round can be devoted to it. | Il faut 10 PC disponibles pour dégainer, ou n’avoir encore dépensé aucun PC afin d’y consacrer tout le tour. |
 | `TRUDVANG.Warning.NoWeaponActionsLeft` | {item} has no weapon actions remaining this round. | {item} n’a plus d’action d’arme disponible pour ce tour. |
-| `TRUDVANG.Warning.InvalidCombatMovementCost` | Combat movement costs exactly 2 CP per metre; allocate a positive, even number of CP. | Le mouvement de combat coûte exactement 2 PC par mètre ; allouez un nombre positif et pair de PC. |
+| `TRUDVANG.Warning.InvalidCombatMovementCost` | Allocate a positive, even number of CP for combat movement. | Allouez un nombre positif et pair de PC pour le mouvement de combat. |
 | `TRUDVANG.Warning.ExactCombatCost` | This action requires an exact allocation of {cost} CP. | Cette action exige une allocation exacte de {cost} PC. |
 | `TRUDVANG.Warning.HandsOccupied` | Cannot ready {item}: {conflicts} already occupies one or more required hands. | Impossible de prendre {item} en main : {conflicts} occupe déjà la ou les mains requises. |
 | `TRUDVANG.Warning.InvalidStageChanges` | The changes for effect stage {stage} are not valid JSON. | Les modifications du palier d'effet {stage} ne constituent pas un JSON valide. |

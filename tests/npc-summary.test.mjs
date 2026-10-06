@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
 import Handlebars from "handlebars";
-import {ignoresWoundPenalties, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
+import {ignoresWoundPenalties, npcCombatMovementModes, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
 import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
 import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
@@ -367,6 +367,17 @@ test("a single NPC movement mode has no separator and keeps its conditional dist
   assert.doesNotMatch(html, /npc-movement-separator/);
 });
 
+test("NPC combat movement parses the book's per-2-CP rate, including fractional metres", () => {
+  assert.deepEqual(npcCombatMovementModes({details: {move: [
+    {mode: "vol", distance: "4 m", max: "32 m"},
+    {mode: "nage", distance: "1,5 m", max: "12 m"},
+    {mode: "spécial", distance: "—", max: "10 m"}
+  ]}}), [
+    {id: "0", mode: "vol", metersPerTwo: 4},
+    {id: "1", mode: "nage", metersPerTwo: 1.5}
+  ]);
+});
+
 function inventoryItem(type, id, extra = {}) {
   return {type, id, name: id, uuid: `Actor.npc.Item.${id}`, img: "icons/svg/sword.svg",
     system: {quantity: 1, weight: 1, equipped: false, damage: "1d10", openRoll: 10, combatSpecialty: "oneHandedLightWeapons",
@@ -556,6 +567,62 @@ test("NPC weapon spends only its hand, generic actions spend both, and outside c
   assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 5);
 });
 
+test("NPC movement spends both Free hands and uses the selected bestiary movement mode", async t => {
+  const previous = {combat: game.combat, ui: globalThis.ui, document: globalThis.document, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { game.combat = previous.combat; globalThis.ui = previous.ui; globalThis.document = previous.document;
+    foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  const notices = [];
+  globalThis.ui = {notifications: {info: message => notices.push(message), warn: message => assert.fail(message)}};
+  let dialog;
+  foundry.applications.api.DialogV2 = class { static async wait(options) {
+    dialog = options;
+    return {allocation: {free: 4}, movementMode: "1"};
+  }};
+  const npc = spendableNpc([]);
+  npc.system.details.move = [{mode: "terrestre", distance: "2 m", max: "16 m"},
+    {mode: "vol", distance: "4 m", max: "32 m"}];
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  const result = await npc.rollCombatMovement();
+  assert.match(dialog.content, /Terrestre : 2 m pour 2 PC/);
+  assert.match(dialog.content, /Vol : 4 m pour 2 PC/);
+  assert.equal(result.paidMeters, 8);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 8);
+  assert.equal(npc.system.combatPools.free.offHandSpent, 4);
+  assert.match(notices[0], /8 mètre/);
+});
+
+test("a wrestling roll ignores Combat Actions and never spends an odd total", async t => {
+  const previous = {combat: game.combat, ui: globalThis.ui, document: globalThis.document,
+    Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { game.combat = previous.combat; globalThis.ui = previous.ui; globalThis.document = previous.document;
+    globalThis.Roll = previous.Roll; globalThis.ChatMessage = previous.ChatMessage; foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  globalThis.ui = {notifications: {warn: message => assert.fail(message)}};
+  globalThis.Roll = class { constructor(formula) { this.formula = formula; } async evaluate() { this.total = 1; } };
+  const messages = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor: source}) => ({actor: source.id}),
+    create: async data => { messages.push(data); return data; }};
+  let dialog;
+  foundry.applications.api.DialogV2 = class { static async wait(options) {
+    dialog = options;
+    return {allocation: {free: 3, unarmedFighting: 1, wrestling: 1, combatActions: 2}, modifier: 0};
+  }};
+  const npc = spendableNpc([
+    {type: "ability", name: "Combat à mains nues", system: {catalogId: "unarmedFighting", kind: "discipline", level: 1}},
+    {type: "ability", name: "Lutte", system: {catalogId: "wrestling", kind: "specialty", level: 1}},
+    {type: "ability", name: "Actions de combat", system: {catalogId: "combatActions", kind: "specialty", level: 1}}
+  ]);
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  const result = await npc.rollWrestlingAction("grapple");
+  assert.doesNotMatch(dialog.content, /data-pool-id="combatActions"/);
+  assert.match(dialog.content, /data-combat-slider min="0" max="[0-9]+" step="2"/);
+  assert.equal(result.target, 2);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 6);
+  assert.equal(npc.system.combatPools.free.offHandSpent, 2);
+  assert.equal(messages.length, 1);
+});
+
 test("NPC actions show sticky reserve data, material weapons, natural profiles, then Other without inventory clutter", async t => {
   const before = game.combat; t.after(() => { game.combat = before; });
   const axe = inventoryItem("weapon", "Axe", {combatSpecialty: "oneHandedLightWeapons", weaponActions: 2, equipped: true});
@@ -568,6 +635,7 @@ test("NPC actions show sticky reserve data, material weapons, natural profiles, 
   assert.ok(actions.indexOf("combat-reserves-panel") < actions.indexOf('data-item-id="Axe"'));
   assert.ok(actions.indexOf('data-item-id="Spare"') < actions.indexOf('data-item-id="Bite"'));
   assert.ok(actions.indexOf('data-item-id="Bite"') < actions.indexOf('data-action="generic-combat-action"'));
+  assert.ok(actions.indexOf('data-action="movement-action"') < actions.indexOf('data-action="generic-combat-action"'));
   assert.match(actions, /aria-valuenow="4" aria-valuemax="8"/);
   assert.match(actions, /aria-valuenow="6" aria-valuemax="6"/);
   assert.doesNotMatch(actions, /Rope|Tenace|item-delete|TRUDVANG\./);
