@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import {existsSync, readFileSync} from "node:fs";
+import {existsSync, readFileSync, readdirSync} from "node:fs";
 import test from "node:test";
 import {BESTIARY_ENTRIES} from "../modules/bestiary-catalog-data.mjs";
 import {CREATURE_ABILITY_ENTRIES} from "../modules/creature-ability-data.mjs";
@@ -27,6 +27,9 @@ test("the four declared packs contain all creatures/capacities and stable biling
     ["feats-fr", "Item", "Capacités (fr)"], ["feats-en", "Item", "Feats (en)"]]) {
     const pack = manifest.packs.find(p => p.name === name);
     assert.equal(pack.type, type); assert.equal(pack.label, label);
+    assert.equal(pack.banner, "systems/trudvang-chronicles/assets/banners/banniere_armes.jpeg");
+    const banner = readFileSync(new URL(`../${pack.banner.replace("systems/trudvang-chronicles/", "")}`, import.meta.url));
+    assert.deepEqual([...banner.subarray(0, 2)], [0xff, 0xd8], "the shared banner must be an available JPEG");
   }
   assert.equal(packs.fr.actors.length, 75); assert.equal(featPacks.fr.items.length, 150);
   assert.deepEqual(packs.fr.actors.map(a => a._id), packs.en.actors.map(a => a._id));
@@ -59,6 +62,14 @@ test("each bestiary actor has valid folders, embedded identities, independent to
 
 test("all 110 source images are available in both Bestiary portrait galleries", () => {
   for (const {actors} of Object.values(packs)) assert.equal(actors.reduce((sum, actor) => sum + actor.system.portraits.length, 0), 110);
+});
+
+test("Bestiary assets contain the current portraits, without obsolete copies or starter creature art", () => {
+  const current = [...new Set(packs.fr.actors.flatMap(actor => actor.system.portraits).map(path => path.split("/").at(-1)))].sort();
+  const files = readdirSync(new URL("../assets/bestiary/", import.meta.url)).sort();
+  assert.deepEqual(files, current);
+  for (const name of ["galtir", "giant-snake", "giant-spider", "gryphon", "night-ulm", "thorn-beast", "troll-bull", "warg-beast"])
+    for (const directory of ["art", "tokens"]) assert.equal(existsSync(new URL(`../assets/${directory}/${name}.webp`, import.meta.url)), false);
 });
 
 test("bilingual creatures use identical FR-authoritative mechanics, CP capacities and health ranges", () => {
