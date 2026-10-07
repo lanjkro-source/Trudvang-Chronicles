@@ -60,6 +60,7 @@ export function prepareDamageRoll({item, actor = null, context = {}}) {
 
 /** Validate roll-only adjustments. Neither item data nor Combat Points are changed. */
 export function damageRollChoice(profile, options = {}) {
+  if (!options || typeof options !== "object" || Array.isArray(options)) return null;
   const dice = Number(options.dice ?? profile.parsed?.dice);
   const openRoll = Number(options.openRoll ?? profile.openRoll);
   const modifier = Number(options.modifier ?? profile.situational);

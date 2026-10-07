@@ -98,6 +98,7 @@ test("confirmation adjustments are validated without changing any source", () =>
   assert.equal(choice.fixedModifier, 1); assert.equal(choice.longRange, false); // A melee weapon cannot accidentally halve damage.
   for (const invalid of [{dice: 0}, {dice: -2}, {dice: 1.5}, {dice: 101}, {openRoll: 11}, {openRoll: -1}, {modifier: NaN}])
     assert.equal(damageRollChoice(profile, invalid), null);
+  for (const invalid of [null, false, "cancel", "roll", 1, []]) assert.equal(damageRollChoice(profile, invalid), null);
   assert.equal(JSON.stringify({item, wearer}), before);
 });
 
@@ -120,6 +121,28 @@ test("no die, animation or chat card is created while confirming, closing or can
   assert.equal(await closed, null); assert.equal(rolls.length, 0);
 });
 
+test("cancelling through Foundry V14's nullish callback fallback never rolls", async t => {
+  const {rolls, cards, warnings} = runtime(t);
+  foundry.applications.api.DialogV2 = class {
+    static async wait(options) {
+      const button = options.buttons.find(button => button.action === "cancel");
+      // DialogV2 substitutes the button action for a null/undefined callback result.
+      return (await button.callback({}, {}, {})) ?? button.action;
+    }
+  };
+  assert.equal(await rollDamage({actor: actor(), item: weapon()}), null);
+  assert.equal(rolls.length, 0); assert.equal(cards.length, 0); assert.equal(warnings.length, 0);
+});
+
+test("button action strings and other non-object results cannot confirm a damage roll", async t => {
+  const {rolls, cards, warnings} = runtime(t);
+  for (const response of ["cancel", "roll", true, 1, []]) {
+    foundry.applications.api.DialogV2 = class {static async wait() {return response;}};
+    assert.equal(await rollDamage({actor: actor(), item: weapon()}), null);
+  }
+  assert.equal(rolls.length, 0); assert.equal(cards.length, 0); assert.equal(warnings.length, 0);
+});
+
 test("the V2 button reads edited fields, while native validity rejects invalid dice and thresholds", async t => {
   const {dialogs} = runtime(t, {response: null});
   const profile = prepareDamageRoll({item: weapon({combatSpecialty: "bowsSlings"}), actor: actor()});
@@ -132,7 +155,7 @@ test("the V2 button reads edited fields, while native validity rejects invalid d
   assert.match(dialogs[0].content, /name="damage-dice"[^>]*min="1"[^>]*required/);
   assert.match(dialogs[0].content, /name="damage-open-roll"[^>]*max="10"[^>]*required/);
   inputs["damage-dice"].value = "0";
-  assert.equal(callback({}, {form: root}, {}), null);
+  assert.equal(callback({}, {form: root}, {}), false);
 });
 
 test("edited dice and JO explode at or above the threshold, and all adjustments appear in chat", async t => {

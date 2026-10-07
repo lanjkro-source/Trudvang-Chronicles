@@ -319,7 +319,7 @@ export async function damageRollDialog({item, profile}) {
       refresh();
     }
   }
-  return DamageRollDialog.wait({
+  const response = await DamageRollDialog.wait({
     classes: ["dialog", "trudvang", "damage-roll-window"],
     window: {title: game.i18n.format("TRUDVANG.DamageRoll.Title", {item: item.name})},
     position: {width: 480},
@@ -328,13 +328,17 @@ export async function damageRollDialog({item, profile}) {
       {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true,
         callback: (event, button, dialog) => {
           const root = button.form ?? dialog.element;
-          return readChoice(root);
+          return readChoice(root) ?? false;
         }},
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+      // DialogV2 replaces nullish callback results with the action string.
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],
     modal: false,
     rejectClose: false
   });
+  // Only the roll callback's structured choice confirms a roll. In particular,
+  // "cancel"/"roll" action fallbacks must never select the default damage values.
+  return response && typeof response === "object" && !Array.isArray(response) ? response : null;
 }
 
 export async function rollDamage({actor, item, context = {}}) {
