@@ -46,10 +46,12 @@ export function npcPreparedActionRows(actor, {format, localize}) {
   return Array.from(actor.system.attacks ?? [], (combo, comboIndex) => ({index: comboIndex,
     actions: Array.from(combo, (row, stepIndex) => {
       const action = resolveNpcPreparedAction(actor, row);
+      const name = action.action === "movement" && !String(action.name ?? "").trim()
+        ? localize("TRUDVANG.Npc.PreparedMovement") : action.name;
       const done = used.has(`${comboIndex}:${stepIndex}`);
       const reason = !action.supported ? "MissingPreparedAction" : !action.ready ? "PreparedWeaponNotReady"
         : !action.hasActions ? "PreparedWeaponDepleted" : !action.enoughPoints ? "PreparedPointsUnavailable" : "PreparedActionHint";
-      return {...action, comboIndex, stepIndex, used: done,
-        tooltip: `${format(`TRUDVANG.Npc.${reason}`, {name: action.name, points: action.points, available: action.available})}${done ? ` — ${localize("TRUDVANG.Npc.PreparedActionUsed")}` : ""}`};
+      return {...action, name, comboIndex, stepIndex, used: done,
+        tooltip: `${format(`TRUDVANG.Npc.${reason}`, {name, points: action.points, available: action.available})}${done ? ` — ${localize("TRUDVANG.Npc.PreparedActionUsed")}` : ""}`};
     })}));
 }

@@ -672,6 +672,7 @@
       "ConfigureMagicMethod": "Set casting skills, or the innate magic SV in the NPC’s Magic tab.",
       "CombatCycleHint": "Remaining action rounds / phase length. CP, WA and usage marks refresh at the start of the next phase.",
       "PreparedActionLabel": "{name} · {points} CP",
+      "PreparedMovement": "Move",
       "PreparedActionUsed": "Already used during this phase",
       "NoPreparedActions": "No prepared action combinations.",
       "MissingPreparedAction": "{name}: the corresponding weapon or action could not be found.",

@@ -672,6 +672,7 @@
       "ConfigureMagicMethod": "Renseignez les compétences d’incantation, ou la VC de magie innée dans l’onglet Magie du PNJ.",
       "CombatCycleHint": "Tours de jeu restants / durée de la phase. Les PC, AA et marques d’utilisation sont renouvelés au prochain début de phase.",
       "PreparedActionLabel": "{name} · {points} PC",
+      "PreparedMovement": "Déplacement",
       "PreparedActionUsed": "Déjà utilisée durant cette phase",
       "NoPreparedActions": "Aucune combinaison d’actions préparée.",
       "MissingPreparedAction": "{name} : arme ou action correspondante introuvable.",

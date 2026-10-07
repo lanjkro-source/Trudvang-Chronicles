@@ -46,6 +46,34 @@ test("every prepared action in both bestiaries resolves to an actual weapon or s
   }
 });
 
+test("nameless prepared movement has a localized label and tooltip without changing its cost", () => {
+  for (const [code, expected] of [["fr", "Déplacement"], ["en", "Move"]]) {
+    const options = language(code);
+    const actors = buildBestiaryPackDocuments(options).actors.map(adapter);
+    let movements = 0;
+    for (const actor of actors) {
+      const rows = npcPreparedActionRows(actor, options);
+      for (const combo of rows) for (const action of combo.actions) {
+        const source = actor.system.attacks[action.comboIndex][action.stepIndex];
+        if (action.action !== "movement" || String(source.attack ?? "").trim()) continue;
+        movements += 1;
+        assert.equal(action.name, expected, `${code}/${actor.name}`);
+        assert.equal(action.points, source.value);
+        assert.ok(action.tooltip.includes(expected));
+        assert.equal(options.format("TRUDVANG.Npc.PreparedActionLabel", action),
+          `${expected} · ${source.value} ${code === "fr" ? "PC" : "CP"}`);
+      }
+    }
+    assert.ok(movements >= 2, "eagle and falcon prepared movement must have labels");
+    const actor = actors.find(actor => actor.system.attacks.flat().some(row => row.action === "movement"));
+    const row = actor.system.attacks.flat().find(row => row.action === "movement");
+    actor.system.attacks = [[{...row, attack: "Custom movement"}, {...row, attack: "   "}]];
+    const actions = npcPreparedActionRows(actor, options)[0].actions;
+    assert.equal(actions[0].name, "Custom movement");
+    assert.equal(actions[1].name, expected);
+  }
+});
+
 test("stable IDs survive a renamed weapon and usage colors belong to individual combination steps", () => {
   const options = language("fr");
   const actor = adapter(buildBestiaryPackDocuments(options).actors.find(actor => actor.name === "Minokks"));

@@ -792,6 +792,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.ConfigureMagicMethod` | Set casting skills, or the innate magic SV in the NPC’s Magic tab. | Renseignez les compétences d’incantation, ou la VC de magie innée dans l’onglet Magie du PNJ. |
 | `TRUDVANG.Npc.CombatCycleHint` | Remaining action rounds / phase length. CP, WA and usage marks refresh at the start of the next phase. | Tours de jeu restants / durée de la phase. Les PC, AA et marques d’utilisation sont renouvelés au prochain début de phase. |
 | `TRUDVANG.Npc.PreparedActionLabel` | {name} · {points} CP | {name} · {points} PC |
+| `TRUDVANG.Npc.PreparedMovement` | Move | Déplacement |
 | `TRUDVANG.Npc.PreparedActionUsed` | Already used during this phase | Déjà utilisée durant cette phase |
 | `TRUDVANG.Npc.NoPreparedActions` | No prepared action combinations. | Aucune combinaison d’actions préparée. |
 | `TRUDVANG.Npc.MissingPreparedAction` | {name}: the corresponding weapon or action could not be found. | {name} : arme ou action correspondante introuvable. |
