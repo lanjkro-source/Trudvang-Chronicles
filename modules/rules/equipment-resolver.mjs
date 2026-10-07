@@ -356,7 +356,11 @@ export function resolveDamage({item, actor = null, context = {}, modifiers = []}
     modifier: resolveNumericEquipmentStat({
       key: "damageModifier",
       base: item?.system?.damageBonus,
-      modifiers: [...improvisedThrowingDamageModifiers(item, context), ...strengthDamageModifiers(item, actor, context), ...modifiers]
+      modifiers: [...improvisedThrowingDamageModifiers(item, context), ...strengthDamageModifiers(item, actor, context),
+        ...(actor?.system?.modifiers?.damage ? [{id: "actor-damage", target: "damageModifier", operation: "add", phase: "effect",
+          amount: actor.system.modifiers.damage, source: {kind: "effect", id: "actor-damage"},
+          explanationKey: "TRUDVANG.Calculation.Equipment.ActorDamageBonus", explanationData: {amount: actor.system.modifiers.damage}}] : []),
+        ...modifiers]
     }),
     minimumTotal: 1
   };

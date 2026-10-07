@@ -13,7 +13,7 @@ Handlebars.registerHelper("localize", (key, options) => {
   const data = options.hash ?? {};
   return String(get(lang, key) ?? key).replace(/\{(\w+)\}/g, (_, key) => data[key] ?? "");
 });
-const template = name => Handlebars.compile(readFileSync(new URL(`../templates/chat/${name}.hbs`, import.meta.url), "utf8"));
+const template = name => Handlebars.compile(readFileSync(new URL(`../templates/${name === "damage-roll-dialog" ? "app" : "chat"}/${name}.hbs`, import.meta.url), "utf8"));
 globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, data) => template(path.split("/").at(-1).replace(".hbs", ""))(data)}},
   utils: {fromUuid: async uuid => documents.get(uuid)}};
 globalThis.ChatMessage = {create: () => assert.fail("applications must update the source card, never create another message")};
@@ -233,6 +233,9 @@ test("a real damage roll stores its initial targets and the final halved amount 
   const {makeActor, makeToken} = runtime(t);
   const previous = {Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage};
   t.after(() => Object.assign(globalThis, previous));
+  const previousApi = foundry.applications.api;
+  t.after(() => {foundry.applications.api = previousApi;});
+  foundry.applications.api = {DialogV2: class {static async wait() {return {dice: 1, openRoll: 0, modifier: 0, longRange: true};}}};
   const target = makeActor("Target"), token = makeToken("first", target), linked = makeToken("linked", target);
   game.user = {...gm, targets: new Set([token, linked])};
   const cards = [];

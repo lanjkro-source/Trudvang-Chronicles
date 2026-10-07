@@ -46,3 +46,20 @@ test("power-description tables use readable palette colors in every theme", () =
     }
   }
 });
+
+test("damage confirmation uses high-contrast palette text on its own dark window and breakdown", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.damage-roll-window \.window-content\s*\{[^}]*color: var\(--trudvang-on-header\); background: var\(--trudvang-header\)/);
+  assert.match(css, /\.damage-roll-dialog \.damage-roll-breakdown small\s*\{[^}]*color: var\(--trudvang-on-header-muted\)/);
+  const luminance = hex => [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16) / 255)
+    .map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+    .reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
+  for (const [id, palette] of Object.entries(PALETTES)) {
+    for (const foreground of [palette.onHeader, palette.onHeaderMuted]) {
+      for (const background of [palette.header, palette.headerAlt]) {
+        const a = luminance(foreground), b = luminance(background);
+        assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, `${id}: damage dialog contrast`);
+      }
+    }
+  }
+});

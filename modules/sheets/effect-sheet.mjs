@@ -97,7 +97,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         "system.modifiers.rolls.allActions", "system.modifiers.rolls.combatActions",
         "system.modifiers.rolls.movementActions", "system.modifiers.rolls.attack",
         "system.modifiers.rolls.parry", "system.modifiers.rolls.magic",
-        "system.modifiers.movement", "system.modifiers.protection",
+        "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.damage",
         "system.modifiers.bodyMax", "system.modifiers.combatMax",
         "system.modifiers.vitnerMax", "system.modifiers.divinityMax",
         "system.modifiers.bodyValue", "system.modifiers.combatValue",

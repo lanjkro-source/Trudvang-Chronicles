@@ -1043,6 +1043,32 @@ function mockActionRuntime(t, {die = 7} = {}) {
   return runtime;
 }
 
+for (const Sheet of [TrudvangCharacterSheet, TrudvangNpcSheet]) {
+  test(`${Sheet.name}: combat weapon/natural damage icons wait for confirmation without spending PC or AA`, async t => {
+    const runtime = mockActionRuntime(t, {die: 4});
+    const item = inventoryItem("weapon", "Test axe", {damage: "1d10", damageBonus: 0, openRoll: 0, strengthApplies: true});
+    item.id = "axe";
+    const wearer = actor([item]); wearer.items.get = id => id === item.id ? item : null;
+    wearer.update = async () => assert.fail("confirming damage must not spend PC or AA");
+    const sheet = new Sheet(); sheet.actor = wearer;
+    const resources = JSON.stringify(wearer.system);
+    const target = {dataset: {action: "item-damage"}, closest: selector => selector === "[data-item-id]" ? {dataset: {itemId: item.id}} : null};
+    const event = {preventDefault() {}, stopPropagation() {}};
+    renderedCards.length = 0;
+    assert.equal(await TrudvangActorSheet.DEFAULT_OPTIONS.actions["item-damage"].call(sheet, event, target), null);
+    assert.equal(runtime.messages.length, 0);
+    assert.equal(renderedCards[0].path, "systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs");
+    runtime.response = {};
+    assert.equal(await TrudvangActorSheet.DEFAULT_OPTIONS.actions["item-damage"].call(sheet, event, target), 4);
+    target.dataset.action = "natural-damage";
+    assert.equal(await TrudvangActorSheet.DEFAULT_OPTIONS.actions["natural-damage"].call(sheet, event, target), 4);
+    assert.equal(runtime.messages.length, 2);
+    assert.equal(JSON.stringify(wearer.system), resources);
+    assert.equal(renderedCards.filter(card => card.path.endsWith("damage-roll-dialog.hbs")).length, 3);
+    assert.equal(renderedCards.at(-3).data.parsed.faces, 5);
+  });
+}
+
 for (const combatSpecialty of ["bowsSlings", "crossbow"]) {
   test(`${combatSpecialty} attack dialogs expose both ranges and target modifiers, unlike parry`, async t => {
     const runtime = mockActionRuntime(t);

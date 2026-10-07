@@ -759,6 +759,30 @@
         "mad": "−7 aux VC et à l’initiative"
       }
     },
+    "DamageRoll": {
+      "Title": "Jet de dégâts : {item}",
+      "DiceCount": "Nombre de dés",
+      "Formula": "Formule de dégâts",
+      "Intrinsic": "Modificateur propre à l’objet",
+      "Strength": "Force",
+      "ActorEffects": "Effets sur le personnage",
+      "ImprovisedThrow": "Arme non conçue pour le lancer",
+      "ItemEffects": "Effets sur les dégâts de l’objet",
+      "DiceEffects": "Modification de la formule par les effets",
+      "OpenRollEffects": "Modification du jet ouvert par les effets",
+      "Situational": "Modificateur de dégâts supplémentaire",
+      "SituationalDetail": "Modificateur de dégâts supplémentaire : {amount}.",
+      "LongRange": "Longue portée — dégâts divisés par deux",
+      "Calculation": "Calcul du jet",
+      "OpenRollPreview": "(JO ≥ {threshold})",
+      "HalfDamage": "÷ 2 (arrondi au supérieur)",
+      "Order": "Les modificateurs s’appliquent après les jets ouverts, avec un minimum de 1 dégât. À longue portée, le résultat est ensuite divisé par deux, arrondi au supérieur.",
+      "ComplexFormula": "Cette formule personnalisée gère ses propres dés et jets ouverts : modifiez-les directement dans la formule.",
+      "InvalidSelection": "Vérifiez le nombre de dés, le seuil de jet ouvert et le modificateur de dégâts.",
+      "DiceAdjusted": "Nombre de dés modifié pour ce jet : {before} → {after}.",
+      "OpenRollAdjusted": "Seuil de jet ouvert modifié pour ce jet : {before} → {after}.",
+      "FormulaAdjusted": "Formule modifiée pour ce jet : {before} → {after}."
+    },
     "Dialog": {
       "BaseTarget": "Cible de base: {target}",
       "CombatPoolSlider": "Allocation rapide",
@@ -995,6 +1019,7 @@
         "AmbidexterityShieldHand": "Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier.",
         "ShieldBearerShieldHand": "Porteur de bouclier niveau {level} : annule le malus restant de la main de bouclier.",
         "IntrinsicDamageBonus": "Modificateur de dégâts propre à l’objet : {amount}.",
+        "ActorDamageBonus": "Effets sur le personnage : {amount} aux dégâts.",
         "ImprovisedThrowingDamage": "Arme non conçue pour le lancer : {amount} dégâts.",
         "MinimumDamage": "Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât.",
         "IgnoredCondition": "Les conditions de la modification ne sont pas remplies.",

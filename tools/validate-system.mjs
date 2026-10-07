@@ -207,8 +207,13 @@ if (!characterSheetText.includes('data-action="adjust-trait"') || characterSheet
 if (!actorSheetText.includes("getWeaponActionState(item)") || actorSheetText.includes("catBonusMap")) {
   failures.push("The character sheet must display current weapon actions through the actor's shared equipment resolver state.");
 }
-if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !diceText.includes("resolveDamage({actor, item")) {
+const damageRollResolverText = readFileSync(join(root, "modules/rules/damage-roll-resolver.mjs"), "utf8");
+if (!actorSheetText.includes("resolveDamage({item, actor: this.actor})") || !diceText.includes("prepareDamageRoll({actor, item")
+  || !damageRollResolverText.includes("resolveDamage({item, actor")) {
   failures.push("Damage display and rolls must use the shared equipment resolver.");
+}
+if (!diceText.includes("await damageRollDialog({item, profile})") || !diceText.includes("if (!response) return null;")) {
+  failures.push("Damage rolls must wait for confirmation and never roll when the dialog is cancelled.");
 }
 if (!actorSheetText.includes("resolveCombatActionModifier({item, actor: this.actor})") || !actorDocumentText.includes("resolveCombatActionModifier({item:")) {
   failures.push("Shield-hand display and rolls must use the shared equipment resolver.");

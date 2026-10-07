@@ -1,6 +1,7 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
 import { TRUDVANG } from "./config.mjs";
-import { resolveDamage, resolveEquipment } from "./rules/equipment-resolver.mjs";
+import { resolveEquipment } from "./rules/equipment-resolver.mjs";
+import { prepareDamageRoll, damageRollChoice, signedDamage } from "./rules/damage-roll-resolver.mjs";
 import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
@@ -280,41 +281,101 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
   });
 }
 
+function damageBreakdownRows(profile) {
+  return profile.rows.map(row => ({...row,
+    label: game.i18n.format(row.labelKey, {...row.data, amount: signedDamage(row.amount)})
+  }));
+}
+
+/** All weapon-damage entry points confirm the same immutable calculation before rolling. */
+export async function damageRollDialog({item, profile}) {
+  const DialogClass = foundry.applications.api.DialogV2;
+  const readChoice = root => damageRollChoice(profile, {
+    dice: root.querySelector("[name=damage-dice]")?.value,
+    formula: root.querySelector("[name=damage-formula]")?.value,
+    openRoll: root.querySelector("[name=damage-open-roll]")?.value,
+    modifier: root.querySelector("[name=damage-modifier]")?.value,
+    longRange: Boolean(root.querySelector("[name=damage-long-range]")?.checked)
+  });
+  const content = await renderTemplate("systems/trudvang-chronicles/templates/app/damage-roll-dialog.hbs", {
+    ...profile, rows: damageBreakdownRows(profile)
+  });
+  class DamageRollDialog extends DialogClass {
+    async _onRender(context, options) {
+      await super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const choice = readChoice(root);
+        const output = root.querySelector("[data-damage-preview]");
+        if (!output) return;
+        if (!choice) { output.textContent = "—"; return; }
+        const dice = profile.parsed ? `${choice.dice}d${profile.parsed.faces}` : `(${choice.formula})`;
+        const openRoll = profile.parsed && choice.openRoll
+          ? ` ${game.i18n.format("TRUDVANG.DamageRoll.OpenRollPreview", {threshold: choice.openRoll})}` : "";
+        const fixed = choice.fixedModifier ? ` ${signedDamage(choice.fixedModifier)}` : "";
+        output.textContent = `${dice}${openRoll}${fixed}${choice.longRange ? ` · ${game.i18n.localize("TRUDVANG.DamageRoll.HalfDamage")}` : ""}`;
+      };
+      root.querySelectorAll("input").forEach(input => input.addEventListener("input", refresh));
+      refresh();
+    }
+  }
+  return DamageRollDialog.wait({
+    classes: ["dialog", "trudvang", "damage-roll-window"],
+    window: {title: game.i18n.format("TRUDVANG.DamageRoll.Title", {item: item.name})},
+    position: {width: 480},
+    content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d10", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true,
+        callback: (event, button, dialog) => {
+          const root = button.form ?? dialog.element;
+          return readChoice(root);
+        }},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => null}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+}
+
 export async function rollDamage({actor, item, context = {}}) {
-  const damage = resolveDamage({actor, item, context});
-  const formula = damage.formula;
-  const parsed = damage.parsed;
+  const profile = prepareDamageRoll({actor, item, context});
+  const response = await damageRollDialog({item, profile});
+  if (!response) return null;
+  const choice = damageRollChoice(profile, response);
+  if (!choice) {
+    ui.notifications.warn(game.i18n.localize("TRUDVANG.DamageRoll.InvalidSelection"));
+    return null;
+  }
+  const parsed = profile.parsed;
   let total;
   let unclampedTotal;
   let detail;
   let rolls = [];
   if (parsed) {
-    const fixed = parsed.modifier + damage.modifier.value;
-    const exploded = await openDice({dice: parsed.dice, faces: parsed.faces, threshold: damage.openRoll.value, modifier: fixed});
+    const fixed = choice.fixedModifier;
+    const exploded = await openDice({dice: choice.dice, faces: parsed.faces, threshold: choice.openRoll, modifier: fixed});
     unclampedTotal = exploded.total;
-    total = Math.max(damage.minimumTotal, unclampedTotal);
+    total = Math.max(profile.minimumTotal, unclampedTotal);
     detail = exploded.rolls.join(" + ");
     if (fixed > 0) detail += ` + ${fixed}`;
     else if (fixed < 0) detail += ` - ${Math.abs(fixed)}`;
     rolls = exploded.diceRolls; // Pass the open-ended Roll objects so Dice So Nice animates them too.
   } else {
-    const roll = await evaluate(`(${formula}) + (${damage.modifier.value})`);
+    const roll = await evaluate(`(${choice.formula}) + (${choice.fixedModifier})`);
     unclampedTotal = Number(roll.total);
-    total = Math.max(damage.minimumTotal, unclampedTotal);
+    total = Math.max(profile.minimumTotal, unclampedTotal);
     detail = roll.formula;
     rolls = [roll];
   }
-  const modifierDetails = [];
-  const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
-  const intrinsicModifier = Number(parsed?.modifier || 0) + damage.modifier.base;
-  if (intrinsicModifier) modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus", {amount: signed(intrinsicModifier)}));
-  for (const step of damage.modifier.steps) {
-    if (step.delta && step.explanationKey) modifierDetails.push(game.i18n.format(step.explanationKey, {...step.explanationData, amount: signed(step.delta)}));
-  }
+  const modifierDetails = damageBreakdownRows(profile).map(row => `${row.label} : ${row.value}${row.source ? ` (${row.source})` : ""}`);
+  if (choice.modifier) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.SituationalDetail", {amount: signedDamage(choice.modifier)}));
+  if (parsed && choice.dice !== parsed.dice) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.DiceAdjusted", {before: parsed.dice, after: choice.dice}));
+  if (parsed && choice.openRoll !== profile.openRoll) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.OpenRollAdjusted", {before: profile.openRoll, after: choice.openRoll}));
+  if (!parsed && choice.formula !== profile.formula) modifierDetails.push(game.i18n.format("TRUDVANG.DamageRoll.FormulaAdjusted", {before: profile.formula, after: choice.formula}));
   if (total !== unclampedTotal) {
     modifierDetails.push(game.i18n.localize("TRUDVANG.Calculation.Equipment.MinimumDamage"));
   }
-  if (context.longRange) {
+  if (choice.longRange) {
     const beforeLongRange = total;
     total = Math.ceil(total / 2);
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
@@ -328,7 +389,7 @@ export async function rollDamage({actor, item, context = {}}) {
     itemImg: item.img,
     total,
     detail,
-    openRoll: damage.openRoll.value,
+    openRoll: parsed ? choice.openRoll : 0,
     modifierDetails,
     targetsHTML
   });

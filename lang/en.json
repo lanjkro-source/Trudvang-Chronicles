@@ -759,6 +759,30 @@
         "mad": "−7 to SV and initiative"
       }
     },
+    "DamageRoll": {
+      "Title": "Damage roll: {item}",
+      "DiceCount": "Number of dice",
+      "Formula": "Damage formula",
+      "Intrinsic": "Item damage modifier",
+      "Strength": "Strength",
+      "ActorEffects": "Effects on the character",
+      "ImprovisedThrow": "Weapon not designed for throwing",
+      "ItemEffects": "Effects on item damage",
+      "DiceEffects": "Damage formula changed by effects",
+      "OpenRollEffects": "Open-roll threshold changed by effects",
+      "Situational": "Additional damage modifier",
+      "SituationalDetail": "Additional damage modifier: {amount}.",
+      "LongRange": "Long range — half damage",
+      "Calculation": "Roll calculation",
+      "OpenRollPreview": "(OR ≥ {threshold})",
+      "HalfDamage": "÷ 2 (rounded up)",
+      "Order": "Modifiers apply after all open rolls, with a minimum of 1 damage. At long range, the result is then halved, rounded up.",
+      "ComplexFormula": "This custom formula handles its own dice and open rolls: edit them directly in the formula.",
+      "InvalidSelection": "Check the number of dice, open-roll threshold and damage modifier.",
+      "DiceAdjusted": "Number of dice adjusted for this roll: {before} → {after}.",
+      "OpenRollAdjusted": "Open-roll threshold adjusted for this roll: {before} → {after}.",
+      "FormulaAdjusted": "Formula adjusted for this roll: {before} → {after}."
+    },
     "Dialog": {
       "BaseTarget": "Base target: {target}",
       "CombatPoolSlider": "Quick allocation",
@@ -995,6 +1019,7 @@
         "AmbidexterityShieldHand": "Ambidexterity level {level}: +{amount} SV with the shield hand.",
         "ShieldBearerShieldHand": "Shield Bearer level {level}: cancels the remaining shield-hand penalty.",
         "IntrinsicDamageBonus": "Item damage modifier: {amount}.",
+        "ActorDamageBonus": "Effects on the character: {amount} damage.",
         "ImprovisedThrowingDamage": "Weapon not designed for throwing: {amount} damage.",
         "MinimumDamage": "The negative modifier cannot reduce a successful attack below 1 damage.",
         "IgnoredCondition": "The modifier's conditions are not met.",

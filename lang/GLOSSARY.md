@@ -900,6 +900,33 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Status.FearConsequence.five` | −7 to SV and initiative | −7 aux VC et à l’initiative |
 | `TRUDVANG.Status.FearConsequence.mad` | −7 to SV and initiative | −7 aux VC et à l’initiative |
 
+## `TRUDVANG.DamageRoll`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.DamageRoll.Title` | Damage roll: {item} | Jet de dégâts : {item} |
+| `TRUDVANG.DamageRoll.DiceCount` | Number of dice | Nombre de dés |
+| `TRUDVANG.DamageRoll.Formula` | Damage formula | Formule de dégâts |
+| `TRUDVANG.DamageRoll.Intrinsic` | Item damage modifier | Modificateur propre à l’objet |
+| `TRUDVANG.DamageRoll.Strength` | Strength | Force |
+| `TRUDVANG.DamageRoll.ActorEffects` | Effects on the character | Effets sur le personnage |
+| `TRUDVANG.DamageRoll.ImprovisedThrow` | Weapon not designed for throwing | Arme non conçue pour le lancer |
+| `TRUDVANG.DamageRoll.ItemEffects` | Effects on item damage | Effets sur les dégâts de l’objet |
+| `TRUDVANG.DamageRoll.DiceEffects` | Damage formula changed by effects | Modification de la formule par les effets |
+| `TRUDVANG.DamageRoll.OpenRollEffects` | Open-roll threshold changed by effects | Modification du jet ouvert par les effets |
+| `TRUDVANG.DamageRoll.Situational` | Additional damage modifier | Modificateur de dégâts supplémentaire |
+| `TRUDVANG.DamageRoll.SituationalDetail` | Additional damage modifier: {amount}. | Modificateur de dégâts supplémentaire : {amount}. |
+| `TRUDVANG.DamageRoll.LongRange` | Long range — half damage | Longue portée — dégâts divisés par deux |
+| `TRUDVANG.DamageRoll.Calculation` | Roll calculation | Calcul du jet |
+| `TRUDVANG.DamageRoll.OpenRollPreview` | (OR ≥ {threshold}) | (JO ≥ {threshold}) |
+| `TRUDVANG.DamageRoll.HalfDamage` | ÷ 2 (rounded up) | ÷ 2 (arrondi au supérieur) |
+| `TRUDVANG.DamageRoll.Order` | Modifiers apply after all open rolls, with a minimum of 1 damage. At long range, the result is then halved, rounded up. | Les modificateurs s’appliquent après les jets ouverts, avec un minimum de 1 dégât. À longue portée, le résultat est ensuite divisé par deux, arrondi au supérieur. |
+| `TRUDVANG.DamageRoll.ComplexFormula` | This custom formula handles its own dice and open rolls: edit them directly in the formula. | Cette formule personnalisée gère ses propres dés et jets ouverts : modifiez-les directement dans la formule. |
+| `TRUDVANG.DamageRoll.InvalidSelection` | Check the number of dice, open-roll threshold and damage modifier. | Vérifiez le nombre de dés, le seuil de jet ouvert et le modificateur de dégâts. |
+| `TRUDVANG.DamageRoll.DiceAdjusted` | Number of dice adjusted for this roll: {before} → {after}. | Nombre de dés modifié pour ce jet : {before} → {after}. |
+| `TRUDVANG.DamageRoll.OpenRollAdjusted` | Open-roll threshold adjusted for this roll: {before} → {after}. | Seuil de jet ouvert modifié pour ce jet : {before} → {after}. |
+| `TRUDVANG.DamageRoll.FormulaAdjusted` | Formula adjusted for this roll: {before} → {after}. | Formule modifiée pour ce jet : {before} → {after}. |
+
 ## `TRUDVANG.Dialog`
 
 | Clé | English | Français |
@@ -1173,6 +1200,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Equipment.AmbidexterityShieldHand` | Ambidexterity level {level}: +{amount} SV with the shield hand. | Ambidextrie niveau {level} : +{amount} à la VC de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.ShieldBearerShieldHand` | Shield Bearer level {level}: cancels the remaining shield-hand penalty. | Porteur de bouclier niveau {level} : annule le malus restant de la main de bouclier. |
 | `TRUDVANG.Calculation.Equipment.IntrinsicDamageBonus` | Item damage modifier: {amount}. | Modificateur de dégâts propre à l’objet : {amount}. |
+| `TRUDVANG.Calculation.Equipment.ActorDamageBonus` | Effects on the character: {amount} damage. | Effets sur le personnage : {amount} aux dégâts. |
 | `TRUDVANG.Calculation.Equipment.ImprovisedThrowingDamage` | Weapon not designed for throwing: {amount} damage. | Arme non conçue pour le lancer : {amount} dégâts. |
 | `TRUDVANG.Calculation.Equipment.MinimumDamage` | The negative modifier cannot reduce a successful attack below 1 damage. | Le modificateur négatif ne peut pas réduire une attaque réussie à moins de 1 dégât. |
 | `TRUDVANG.Calculation.Equipment.IgnoredCondition` | The modifier's conditions are not met. | Les conditions de la modification ne sont pas remplies. |

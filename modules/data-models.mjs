@@ -166,6 +166,7 @@ function actorCommonSchema() {
       rolls: rollModifiersSchema(),
       movement: integer(0, {persisted: false}),
       protection: integer(0, {persisted: false}),
+      damage: integer(0, {persisted: false}),
       fearFactor: integer(0, {persisted: false}),
       bodyMax: integer(0, {persisted: false}),
       combatMax: integer(0, {persisted: false}),
