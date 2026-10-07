@@ -647,6 +647,8 @@
     },
     "Damage": {
       "Targets": "Targets",
+      "AddSelectedTokens": "Add selected tokens to targets",
+      "NoSelectedTokens": "Select a PC or NPC token to add to the targets.",
       "Apply": "Apply damage",
       "ApplyIgnoringArmor": "Apply damage ignoring armor",
       "ApplyToDefense": "Apply damage to {item}",
@@ -1555,6 +1557,9 @@
         },
         "LillSpjotThrown": {
           "Name": "Lill spjót (throwing)"
+        },
+        "SeaxThrown": {
+          "Name": "Seax (throwing)"
         },
         "SplitAxiThrown": {
           "Name": "Split axi (throwing)"

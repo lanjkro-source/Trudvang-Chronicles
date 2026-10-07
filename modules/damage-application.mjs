@@ -22,10 +22,12 @@ export function prepareDamageTargets(targets) {
     if (!actor?.uuid || seen.has(actor.uuid)) return [];
     seen.add(actor.uuid);
     const defense = defensiveItem(actor);
+    const document = token.document ?? token;
     return [{
       actorUuid: actor.uuid,
+      tokenUuid: document.uuid || "",
       name: token.name || actor.name,
-      img: token.document?.texture?.src || actor.img,
+      img: document.texture?.src || actor.img,
       defenseItemUuid: defense?.uuid || "",
       defenseItemName: defense?.name || ""
     }];

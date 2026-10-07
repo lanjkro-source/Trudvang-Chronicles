@@ -60,6 +60,7 @@
         "category": "oneHandedLight",
         "combatSpecialty": "oneHandedLightWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 10,
         "weaponActions": 4,

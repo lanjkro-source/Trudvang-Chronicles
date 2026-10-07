@@ -8,7 +8,7 @@ import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
-import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
+import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, combatPoolsAreFull, isDesignedForThrowing, isThrowingWeapon, normalizeCombatAllocation, readiedHandConflicts, resolveCombatPools, suggestCombatAllocation, weaponForUsage, weaponType } from "../rules/combat-pool-resolver.mjs";
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
@@ -854,11 +854,13 @@ export class TrudvangActor extends BaseActor {
     const prepareMode = throwing => {
       const usageItem = weaponForUsage(item, {throwing});
       const poolResolution = resolveCombatPools({actor: this, item: usageItem, context: {action: kind, ignoreSpent: !inCombat}});
-      const ranged = throwing || ["crossbow", "bowsSlings"].includes(weaponType(usageItem));
+      const ranged = kind === "attack" && (throwing || ["crossbow", "bowsSlings"].includes(weaponType(usageItem)));
       const range = ranged ? resolveWeaponRange({item, actor: this, throwing}) : null;
       return {
         id: throwing ? "throwing" : "melee",
         throwing,
+        ruleNotice: throwing && !isDesignedForThrowing(item)
+          ? game.i18n.format("TRUDVANG.Calculation.Equipment.ImprovisedThrowingDamage", {amount: -5}) : "",
         usageItem,
         poolResolution,
         pools: poolResolution.eligible,
@@ -892,14 +894,15 @@ export class TrudvangActor extends BaseActor {
       modifierRows,
       feintMax: defaultMode.feintMax,
       ruleNotice,
-      combatModes: canThrow ? {
+      combatModes: {
+        toggle: canThrow,
         label: game.i18n.localize(defaultThrowing ? "TRUDVANG.Dialog.MeleeAttack" : "TRUDVANG.Dialog.ThrowWeapon"),
         checked: defaultThrowing !== isThrowingWeapon(item),
         uncheckedMode: isThrowingWeapon(item) ? "throwing" : "melee",
         checkedMode: isThrowingWeapon(item) ? "melee" : "throwing",
         defaultMode: defaultMode.id,
         modes
-      } : null
+      }
     });
     if (!options) return null;
     const mode = modes.find(candidate => candidate.id === options.mode) ?? defaultMode;
@@ -944,7 +947,7 @@ export class TrudvangActor extends BaseActor {
       flavor,
       item,
       feint,
-      usage: mode.throwing ? "throwing" : "melee",
+      usage: mode.throwing ? "throwing" : mode.ranged ? "ranged" : "melee",
       longRange: rangedOptions.longRange
     });
   }

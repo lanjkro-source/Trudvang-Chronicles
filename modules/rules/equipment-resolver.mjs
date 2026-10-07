@@ -1,4 +1,4 @@
-import { weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
+import { isDesignedForThrowing, weaponType, weaponUsesSeparateHands } from "./combat-pool-resolver.mjs";
 
 // Intentional house rule: these MI/MM values use a finer progression than the
 // official grouped table. Do not “correct” them to the book values without an
@@ -229,7 +229,7 @@ export function resolveThrowingRange({item, actor = null, modifiers = []} = {}) 
 }
 
 function improvisedThrowingDamageModifiers(item, context) {
-  if (context.usage !== "throwing" || item?.system?.isThrowingWeapon) return [];
+  if (context.usage !== "throwing" || isDesignedForThrowing(item)) return [];
   return [{
     id: "improvised-throwing-damage",
     target: "damageModifier",

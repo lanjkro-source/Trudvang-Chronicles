@@ -17,7 +17,8 @@ const template = name => Handlebars.compile(readFileSync(new URL(`../templates/c
 globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, data) => template(path.split("/").at(-1).replace(".hbs", ""))(data)}},
   utils: {fromUuid: async uuid => documents.get(uuid)}};
 globalThis.ChatMessage = {create: () => assert.fail("applications must update the source card, never create another message")};
-const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication} = await import("../modules/chat-application.mjs");
+const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets} = await import("../modules/chat-application.mjs");
+const {rollDamage} = await import("../modules/dice.mjs");
 
 function runtime(t, kind = "damage") {
   const previous = globalThis.game;
@@ -32,10 +33,11 @@ function runtime(t, kind = "damage") {
   const updates = [];
   const message = {id: crypto.randomUUID(), author: gm, whisper: [], content: kind === "fear"
     ? template("fear-card")({actorName: "Monster", total: 10})
-    : template("damage-card")({actorName: "Attacker", itemName: "Sword", total: 8, targets: []}),
+    : template("damage-card")({actorName: "Attacker", itemName: "Sword", total: 8,
+      targetsHTML: template("damage-targets")({total: 8, targets: []})}),
     getFlag: (_scope, key) => flags[key], update: async changes => {
       updates.push(changes); message.content = changes.content;
-      flags.applications = changes["flags.trudvang-chronicles.applications"];
+      for (const [key, value] of Object.entries(changes)) if (key.startsWith("flags.trudvang-chronicles.")) flags[key.split(".").at(-1)] = value;
     }};
   messages.set(message.id, message);
   const makeActor = (id, protection = 0) => {
@@ -56,7 +58,11 @@ function runtime(t, kind = "damage") {
   };
   const payload = (actor, extra = {}) => ({messageId: message.id, userId: player.id, actorUuid: actor.uuid,
     channel: kind === "fear" ? "fear" : "body", ...extra});
-  return {message, flags, updates, makeActor, addDamageTarget, payload};
+  const makeToken = (id, actor) => {
+    const token = {uuid: `Scene.scene.Token.${id}`, documentName: "Token", actor, name: `${id} token`, texture: {src: `${id}.webp`}};
+    documents.set(token.uuid, token); return token;
+  };
+  return {message, flags, updates, makeActor, makeToken, addDamageTarget, payload};
 }
 
 test("damage rows grow on the original roll card, with the actual loss after each target's protection", async t => {
@@ -161,12 +167,18 @@ test("the requesting GM can update the source directly, while a player without a
 });
 
 test("a player's click is relayed to one GM and appends a row without creating any message", async t => {
-  const {message, makeActor, addDamageTarget} = runtime(t);
-  const actor = makeActor("Target"); addDamageTarget(actor);
+  const {message, makeActor, makeToken} = runtime(t);
+  const actor = makeActor("Target"), token = makeToken("target", actor);
   const emitted = []; let handler;
   game.socket = {on: (_channel, callback) => { handler = callback; }, emit: (_channel, data) => { emitted.push(data); }};
   registerChatApplicationSocket();
   game.user = player;
+  const adding = requestDamageTargets({message, tokens: [{actor, document: token}]});
+  const addition = emitted.shift();
+  assert.equal(addition.type, "chatDamageTargets");
+  game.user = gm; await handler(addition);
+  game.user = player; await handler(emitted.shift());
+  assert.deepEqual(await adding, {status: "added", added: 1});
   const pending = requestChatApplication({message, actor, channel: "body"});
   const request = emitted.shift();
   assert.equal(request.type, "chatApplication");
@@ -176,6 +188,63 @@ test("a player's click is relayed to one GM and appends a row without creating a
   game.user = player; await handler(emitted.shift());
   assert.deepEqual(await pending, {status: "applied", amount: 8});
   assert.match(message.content, /−8 PS/);
+});
+
+test("the plus button exists even with no initial target and deduplicates linked tokens by actor", async t => {
+  const {message, flags, updates, makeActor, makeToken} = runtime(t);
+  assert.match(message.content, /data-action="add-damage-targets"/);
+  const actor = makeActor("Target"), first = makeToken("first", actor), linked = makeToken("linked", actor);
+  assert.deepEqual(await requestDamageTargets({message, tokens: [first, linked, first]}), {status: "added", added: 1});
+  assert.equal(flags.damageTargets.length, 1);
+  assert.equal((message.content.match(/class="damage-target"/g) ?? []).length, 1);
+  assert.equal(flags.damageTargets[0].tokenUuid, first.uuid);
+  assert.match(message.content, /first.webp/);
+  assert.deepEqual(await requestDamageTargets({message, tokens: [linked]}), {status: "unchanged", added: 0});
+  assert.equal(updates.length, 1);
+  assert.equal(actor.system.resources.body.value, 20, "adding a target does not apply damage");
+});
+
+test("adding targets serializes with applications without losing prior targets or results", async t => {
+  const {message, flags, makeActor, makeToken, payload} = runtime(t);
+  const first = makeActor("First"), second = makeActor("Second");
+  await requestDamageTargets({message, tokens: [makeToken("first", first)]});
+  await Promise.all([applyChatApplication(payload(first)), requestDamageTargets({message, tokens: [makeToken("second", second)]})]);
+  assert.equal(flags.damageTargets.length, 2); assert.equal(flags.applications.length, 1);
+  assert.match(message.content, /−8 PS/);
+  assert.equal((message.content.match(/data-application-results/g) ?? []).length, 1);
+  assert.equal((message.content.match(/class="damage-target"/g) ?? []).length, 2);
+  await applyChatApplication(payload(second));
+  assert.equal(flags.applications.length, 2);
+});
+
+test("target addition checks token identity, ownership and message access on the GM", async t => {
+  const {message, makeActor, makeToken, updates} = runtime(t);
+  const actor = makeActor("Target"), token = makeToken("target", actor);
+  const payload = {type: "chatDamageTargets", messageId: message.id, userId: observer.id, tokenUuids: [token.uuid]};
+  assert.equal((await applyChatApplication(payload)).added, 0);
+  payload.userId = player.id; message.blind = true;
+  assert.equal((await applyChatApplication(payload)).status, "unavailable");
+  message.blind = false; payload.tokenUuids = [actor.uuid, "Scene.missing.Token.missing"];
+  assert.equal((await applyChatApplication(payload)).added, 0);
+  assert.equal(updates.length, 0);
+});
+
+test("a real damage roll stores its initial targets and the final halved amount on the expandable card", async t => {
+  const {makeActor, makeToken} = runtime(t);
+  const previous = {Roll: globalThis.Roll, ChatMessage: globalThis.ChatMessage};
+  t.after(() => Object.assign(globalThis, previous));
+  const target = makeActor("Target"), token = makeToken("first", target), linked = makeToken("linked", target);
+  game.user = {...gm, targets: new Set([token, linked])};
+  const cards = [];
+  globalThis.Roll = class {constructor(formula) {this.formula = formula;} async evaluate() {this.total = 8;}};
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.uuid}), create: async data => {cards.push(data); return data;}};
+  const result = await rollDamage({actor: makeActor("Attacker"), item: {type: "weapon", name: "Bow",
+    system: {damage: "1d10", openRoll: 0, category: "ranged", strengthApplies: true}}, context: {usage: "ranged", longRange: true}});
+  assert.equal(result, 4); assert.equal(cards.length, 1);
+  assert.match(cards[0].content, /data-damage="4"/);
+  assert.match(cards[0].content, /data-action="add-damage-targets"/);
+  assert.equal(cards[0].flags["trudvang-chronicles"].damageTargets.length, 1);
+  assert.equal(cards[0].flags["trudvang-chronicles"].damageTargets[0].actorUuid, target.uuid);
 });
 
 test("application rows escape custom token names and provide the same map-location control as resistance rows", async t => {

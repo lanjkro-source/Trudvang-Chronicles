@@ -176,6 +176,19 @@ export function isThrowingWeapon(item) {
   return Boolean(item?.type === "weapon" && item.system?.isThrowingWeapon);
 }
 
+/** Suitability for throwing is intrinsic, independent of the default attack mode. */
+export function isDesignedForThrowing(item) {
+  if (item?.type !== "weapon") return false;
+  if (item.system?.designedForThrowing || isThrowingWeapon(item)) return true;
+  // TEMPORARY WORLD MIGRATION — old melee copies of these five catalogue
+  // weapons predate designedForThrowing. Recognize their stable id, or their
+  // exact Nordic name when older NPC inventories did not retain a starter id.
+  const starterId = item.getFlag?.("trudvang-chronicles", "starterId") ?? item.flags?.["trudvang-chronicles"]?.starterId;
+  if (["LillSpjot", "Miekka", "SplitAxi", "StaafSpjot", "Seax"].some(id => starterId === `TRUDVANG.Content.Item.${id}`)) return true;
+  const name = String(item.name ?? "").split("(")[0].trim().normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
+  return ["lill spjot", "miekka", "split axi", "staaf spjot", "seax"].includes(name);
+}
+
 /**
  * Return a transient item profile for the selected attack mode. The persisted
  * weapon category remains its melee category; only a thrown attack spends the

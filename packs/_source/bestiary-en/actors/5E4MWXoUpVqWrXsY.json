@@ -35,6 +35,7 @@
         "description": "A ubiquitous single-edged knife used for work, ritual blood gifting, throwing, and as a last-resort weapon.",
         "source": "Game Master's Guide, p. 69",
         "category": "oneHandedLight",
+        "designedForThrowing": true,
         "damage": "1d5",
         "openRoll": 0,
         "weaponActions": 4,

@@ -36,6 +36,7 @@
         "category": "oneHandedHeavy",
         "combatSpecialty": "oneHandedHeavyWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "2d10",
         "openRoll": 8,
         "weaponActions": 3,

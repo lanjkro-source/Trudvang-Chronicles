@@ -16,6 +16,7 @@ import {
 import {
   actorParticipatesInCombat,
   canThrowWeapon,
+  isDesignedForThrowing,
   combatPoolsAreFull,
   freeCombatPoolScope,
   categoryForWeaponType,
@@ -411,6 +412,23 @@ test("only an improvised thrown weapon receives the five-damage reduction", () =
   const purposeBuilt = resolveDamage({item: weapon({category: "oneHandedLight", isThrowingWeapon: true, strengthApplies: false}), actor, context: {usage: "throwing"}});
   assert.equal(improvised.modifier.value, -5);
   assert.equal(purposeBuilt.modifier.value, 0);
+});
+
+test("all five throwable catalogue weapons work in melee or throwing without an improvised penalty", async () => {
+  const {readFileSync} = await import("node:fs");
+  const source = JSON.parse(readFileSync(new URL("../data/starter-content.json", import.meta.url), "utf8"));
+  for (const id of ["LillSpjot", "Miekka", "SplitAxi", "StaafSpjot", "Seax"]) {
+    const entry = source.items.find(item => item.nameKey === `TRUDVANG.Content.Item.${id}.Name`);
+    assert.equal(entry.system.designedForThrowing, true, id);
+    assert.equal(Boolean(entry.system.isThrowingWeapon), false, "keep melee as the default mode");
+    assert.equal(isDesignedForThrowing(entry), true);
+    assert.equal(resolveDamage({item: entry, context: {usage: "throwing"}}).modifier.value, 0);
+    const old = {...entry, system: {...entry.system, designedForThrowing: false}, flags: {"trudvang-chronicles": {starterId: `TRUDVANG.Content.Item.${id}`}}};
+    assert.equal(isDesignedForThrowing(old), true, "existing copies keep their intrinsic suitability");
+  }
+  const seax = source.items.find(item => item.nameKey === "TRUDVANG.Content.Item.SeaxThrown.Name");
+  assert.equal(seax.folderOverride, "weaponsRanged"); assert.equal(seax.system.isThrowingWeapon, true);
+  assert.equal(isDesignedForThrowing({...weapon(), name: "Hring seax (couteau à anneau)"}), false, "do not mistake the ring knife for the Seax");
 });
 
 test("two-handed weapons, bows, and crossbows occupy both hands", () => {

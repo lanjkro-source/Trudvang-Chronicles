@@ -6,9 +6,9 @@ import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 47 also updates intact Minokks attack
-// allocations in existing worlds; version 46 updated historical attack labels.
-const CONTENT_VERSION = 47;
+// TEMPORARY WORLD MIGRATION — version 48 installs the throwing Seax in
+// existing worlds; earlier versions updated intact prepared NPC attacks.
+const CONTENT_VERSION = 48;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

@@ -319,6 +319,8 @@ export async function rollDamage({actor, item, context = {}}) {
     total = Math.ceil(total / 2);
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
+  const targets = prepareDamageTargets(game.user?.targets);
+  const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
     actorImg: actor.img,
@@ -328,9 +330,9 @@ export async function rollDamage({actor, item, context = {}}) {
     detail,
     openRoll: damage.openRoll.value,
     modifierDetails,
-    targets: prepareDamageTargets(game.user?.targets)
+    targetsHTML
   });
-  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls});
+  await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor}), content, rolls, flags: {"trudvang-chronicles": {damageTargets: targets}}});
   return total;
 }
 
@@ -460,6 +462,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
+  const hasModeToggle = combatModes && combatModes.toggle !== false;
   const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(row.label)}</span><b>${Number(row.value) > 0 ? "+" : ""}${Number(row.value || 0)}</b></li>`).join("");
   const renderMode = mode => {
@@ -493,13 +496,13 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
       ${rangedTargetOptions}
-      ${ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(ruleNotice)}</p>` : ""}
+      ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
       ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
-    ${combatModes ? `<label class="checkbox"><input type="checkbox" data-combat-mode-toggle ${combatModes.checked ? "checked" : ""}> ${escapeHtml(combatModes.label)}</label>` : ""}
+    ${hasModeToggle ? `<label class="checkbox"><input type="checkbox" data-combat-mode-toggle ${combatModes.checked ? "checked" : ""}> ${escapeHtml(combatModes.label)}</label>` : ""}
     ${modes.map(renderMode).join("")}
   </div>`;
 
@@ -508,7 +511,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       super._onRender(context, options);
       const root = this.element;
       const selectedMode = () => {
-        if (!combatModes) return defaultMode;
+        if (!hasModeToggle) return defaultMode;
         return modes.find(mode => mode.id === (root.querySelector("[data-combat-mode-toggle]")?.checked ? combatModes.checkedMode : combatModes.uncheckedMode)) ?? defaultMode;
       };
       const selectedSection = () => root.querySelector(`[data-combat-mode="${selectedMode().id}"]`);
@@ -583,7 +586,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     default: true,
     callback: (event, button, dialog) => {
       const root = button.form ?? dialog.element;
-      const mode = combatModes
+      const mode = hasModeToggle
         ? (root.querySelector("[data-combat-mode-toggle]")?.checked ? combatModes.checkedMode : combatModes.uncheckedMode)
         : defaultMode.id;
       const section = root.querySelector(`[data-combat-mode="${mode}"]`) ?? root;

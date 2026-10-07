@@ -19,6 +19,7 @@ const set = (object, path, value) => {
   parent[leaf] = value;
 };
 class Field { constructor(options) { this.options = options; } }
+const renderedCards = [];
 globalThis.foundry = {
   abstract: {TypeDataModel: class { prepareBaseData() {} }},
   data: {ActiveEffectTypeDataModel: class {}, fields: {
@@ -43,7 +44,7 @@ globalThis.foundry = {
       async _prepareContext() { return {document: this.document, editable: this.isEditable}; }
     }},
     ux: {TextEditor: {implementation: {enrichHTML: async value => value}}},
-    handlebars: {renderTemplate: async () => ""}
+    handlebars: {renderTemplate: async (path, data) => { renderedCards.push({path, data}); return ""; }}
   },
   utils: {getProperty: get, setProperty: set, hasProperty: (object, path) => get(object, path) !== undefined,
     expandObject: flat => { const output = {}; for (const [key, value] of Object.entries(flat)) set(output, key, value); return output; }}
@@ -1041,6 +1042,48 @@ function mockActionRuntime(t, {die = 7} = {}) {
   foundry.applications.api.DialogV2 = class { static async wait(options) { dialogs.push(options); return runtime.response; } };
   return runtime;
 }
+
+for (const combatSpecialty of ["bowsSlings", "crossbow"]) {
+  test(`${combatSpecialty} attack dialogs expose both ranges and target modifiers, unlike parry`, async t => {
+    const runtime = mockActionRuntime(t);
+    const item = inventoryItem("weapon", "Ranged", {category: "ranged", combatSpecialty, equipped: true,
+      range: {short: 50, long: 110}, rangeSelection: "long"});
+    const npc = spendableNpc([item]);
+    await npc.rollWeaponAction(item, "attack");
+    const html = runtime.dialogs.at(-1).content;
+    assert.match(html, /data-range-selection-value="short"/);
+    assert.match(html, /data-range-selection-value="long" aria-pressed="true"/);
+    assert.match(html, /50 m/); assert.match(html, /110 m/);
+    assert.match(html, /data-ranged-option="targetInMelee"/); assert.match(html, /data-ranged-option="targetMoving"/);
+    assert.doesNotMatch(html, /data-combat-mode-toggle|name="feint"/);
+    item.update = async changes => { for (const [key, value] of Object.entries(changes)) set(item, key, value); };
+    const withoutRange = npc.getRollModifier({kind: "attack", movement: true}) - Number(npc.system.armorVCPenalty || 0);
+    runtime.response = {modifier: 2, allocation: {free: 4}, ranged: {rangeSelection: "long", targetInMelee: true, targetMoving: true}};
+    const result = await npc.rollWeaponAction(item, "attack");
+    assert.equal(result.target, 4 + 2 + withoutRange - 25);
+    assert.equal(renderedCards.at(-1).data.usage, "ranged"); assert.equal(renderedCards.at(-1).data.longRange, true);
+    assert.match(renderedCards.at(-1).data.flavor, /longue portée|Portée longue/);
+    await npc.rollWeaponAction(item, "parry");
+    assert.doesNotMatch(runtime.dialogs.at(-1).content, /data-range-selection-value|data-ranged-option/);
+  });
+}
+
+test("the improvised throwing penalty is visible only in thrown mode and never subtracted from SV", async t => {
+  const runtime = mockActionRuntime(t);
+  const item = inventoryItem("weapon", "Sword", {equipped: true, rangeSelection: "short"});
+  item.update = async changes => { for (const [key, value] of Object.entries(changes)) set(item, key, value); };
+  const npc = spendableNpc([item]);
+  runtime.response = {mode: "throwing", modifier: 0, allocation: {free: 4}, ranged: {rangeSelection: "short"}};
+  const expected = 4 + npc.getRollModifier({kind: "attack", movement: true}) - Number(npc.system.armorVCPenalty || 0);
+  const result = await npc.rollWeaponAction(item, "attack");
+  assert.equal(result.target, expected);
+  const html = runtime.dialogs[0].content;
+  assert.doesNotMatch(html.split('data-combat-mode="melee"')[1].split('data-combat-mode="throwing"')[0], /-5 dégâts/);
+  assert.match(html.split('data-combat-mode="throwing"')[1], /Arme non conçue pour le lancer : -5 dégâts/);
+  item.system.designedForThrowing = true;
+  await npc.rollWeaponAction(item, "attack");
+  assert.doesNotMatch(runtime.dialogs.at(-1).content, /-5 dégâts/);
+});
 
 test("prepared natural attacks preallocate the book CP on both fields and slider, spend and mark only after confirmation", async t => {
   const runtime = mockActionRuntime(t);

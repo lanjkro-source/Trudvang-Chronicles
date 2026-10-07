@@ -1,4 +1,4 @@
-import {hasChatApplication, registerChatApplicationSocket, requestChatApplication} from "./chat-application.mjs";
+import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets} from "./chat-application.mjs";
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
@@ -140,6 +140,19 @@ function attachListeners(message, html) {
       if (["Enter", " "].includes(event.key)) rollAvailability(event);
     });
   });
+  html.querySelectorAll("[data-action='add-damage-targets']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const tokens = Array.from(canvas.tokens?.controlled ?? []).filter(token => token.actor?.isOwner);
+      if (!tokens.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Damage.NoSelectedTokens"));
+      button.disabled = true;
+      try {
+        const result = await requestDamageTargets({message, tokens});
+        if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+      } finally { button.disabled = false; }
+    });
+  });
   html.querySelectorAll("[data-action='apply-damage']").forEach(button => {
     if (hasChatApplication(message, button.dataset.targetActorUuid, "body")) button.disabled = true;
     button.addEventListener("click", async event => {
@@ -148,7 +161,8 @@ function attachListeners(message, html) {
       const actor = await foundry.utils.fromUuid(button.dataset.targetActorUuid);
       button.disabled = true;
       try {
-        const result = await requestChatApplication({message, actor, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true"});
+        const token = button.dataset.targetTokenUuid ? await foundry.utils.fromUuid(button.dataset.targetTokenUuid) : null;
+        const result = await requestChatApplication({message, actor, token, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true"});
         if (!["applied", "alreadyApplied"].includes(result.status)) {
           button.disabled = false;
           ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));

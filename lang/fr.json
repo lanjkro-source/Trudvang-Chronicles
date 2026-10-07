@@ -647,6 +647,8 @@
     },
     "Damage": {
       "Targets": "Cibles",
+      "AddSelectedTokens": "Ajouter les tokens sélectionnés aux cibles",
+      "NoSelectedTokens": "Sélectionnez un token de PJ ou de PNJ à ajouter aux cibles.",
       "Apply": "Appliquer les dégâts",
       "ApplyIgnoringArmor": "Appliquer les dégâts sans armure",
       "ApplyToDefense": "Appliquer les dégâts à {item}",
@@ -1555,6 +1557,9 @@
         },
         "LillSpjotThrown": {
           "Name": "Lill spjót (lancer)"
+        },
+        "SeaxThrown": {
+          "Name": "Seax (lancer)"
         },
         "SplitAxiThrown": {
           "Name": "Split axi (lancer)"

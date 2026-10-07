@@ -764,6 +764,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Damage.Targets` | Targets | Cibles |
+| `TRUDVANG.Damage.AddSelectedTokens` | Add selected tokens to targets | Ajouter les tokens sélectionnés aux cibles |
+| `TRUDVANG.Damage.NoSelectedTokens` | Select a PC or NPC token to add to the targets. | Sélectionnez un token de PJ ou de PNJ à ajouter aux cibles. |
 | `TRUDVANG.Damage.Apply` | Apply damage | Appliquer les dégâts |
 | `TRUDVANG.Damage.ApplyIgnoringArmor` | Apply damage ignoring armor | Appliquer les dégâts sans armure |
 | `TRUDVANG.Damage.ApplyToDefense` | Apply damage to {item} | Appliquer les dégâts à {item} |
@@ -1977,6 +1979,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Item.LillSpjotThrown.Name` | Lill spjót (throwing) | Lill spjót (lancer) |
+
+## `TRUDVANG.Content.Item.SeaxThrown`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Item.SeaxThrown.Name` | Seax (throwing) | Seax (lancer) |
 
 ## `TRUDVANG.Content.Item.SplitAxiThrown`
 

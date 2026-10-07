@@ -35,6 +35,7 @@
         "description": "Un couteau à un seul tranchant omniprésent, utilisé pour le travail, le don rituel de sang, le jet et comme arme de dernier recours.",
         "source": "Guide du maître, p. 69",
         "category": "oneHandedLight",
+        "designedForThrowing": true,
         "damage": "1d5",
         "openRoll": 0,
         "weaponActions": 4,

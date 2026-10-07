@@ -157,6 +157,7 @@
         "category": "oneHandedLight",
         "combatSpecialty": "oneHandedLightWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 10,
         "weaponActions": 4,
@@ -199,6 +200,7 @@
         "descriptionKey": "TRUDVANG.Content.Item.Seax.Description",
         "sourceKey": "TRUDVANG.Content.Source.GMG69",
         "category": "oneHandedLight",
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 10,
         "weaponActions": 4,
@@ -222,6 +224,7 @@
         "category": "oneHandedLight",
         "combatSpecialty": "oneHandedLightWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 10,
         "weaponActions": 4,
@@ -499,6 +502,7 @@
         "category": "oneHandedHeavy",
         "combatSpecialty": "oneHandedHeavyWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 9,
         "weaponActions": 3,
@@ -521,6 +525,7 @@
         "category": "oneHandedHeavy",
         "combatSpecialty": "oneHandedHeavyWeapons",
         "isThrowingWeapon": false,
+        "designedForThrowing": true,
         "damage": "1d10",
         "openRoll": 9,
         "weaponActions": 3,
@@ -822,6 +827,30 @@
           "max": 30
         },
         "weight": 0.6,
+        "value": 2
+      }
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Item.SeaxThrown.Name",
+      "type": "weapon",
+      "img": "icons/weapons/thrown/dagger-simple.webp",
+      "folder": "weapons",
+      "folderOverride": "weaponsRanged",
+      "system": {
+        "sourceKey": "TRUDVANG.Content.Source.Rulebook111",
+        "category": "oneHandedLight",
+        "combatSpecialty": "oneHandedLightWeapons",
+        "isThrowingWeapon": true,
+        "designedForThrowing": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -1,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "weight": 0.3,
         "value": 2
       }
     },
