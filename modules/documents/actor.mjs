@@ -15,6 +15,7 @@ import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
 import {nextNpcCombatCycle} from "../rules/npc-combat-cycle.mjs";
 import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
 import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
+import {postActorEvent} from "../actor-event-chat.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -89,7 +90,11 @@ export class TrudvangActor extends BaseActor {
     if (update === current) return this;
     const updates = {"system.resources.body.value": update};
     const allowed = Hooks.call("modifyTokenAttribute", {attribute, value, isDelta, isBar}, updates, this);
-    return allowed !== false ? this.update(updates) : this;
+    if (allowed === false) return this;
+    const updated = await this.update(updates);
+    const after = Number(this.system.resources.body.value || 0);
+    if (updated && after < current) await postActorEvent({actor: this, kind: "damage", amount: current - after});
+    return updated;
   }
 
   prepareDerivedData() {
@@ -1181,6 +1186,7 @@ export class TrudvangActor extends BaseActor {
     const applied = Math.max(0, rolled + modifier);
     const stored = Number(this._source.system.resources?.fear?.value || 0);
     await this.update({"system.resources.fear.value": stored + applied});
+    await postActorEvent({actor: this, kind: "fear", amount: applied});
     return {rolled, modifier, applied};
   }
 
@@ -1272,6 +1278,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollCombatMovement({defaultPoints = 2, movementMode = ""} = {}) {
+    if (!this.isOwner) return null;
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
@@ -1295,6 +1302,8 @@ export class TrudvangActor extends BaseActor {
     const selectedMode = movementModes.find(mode => mode.id === options.movementMode) ?? movementModes[0];
     const paidMeters = spending.total / 2 * (selectedMode?.metersPerTwo ?? 1);
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    await postActorEvent({actor: this, kind: "movement", amount: spending.total, meters: paidMeters,
+      mode: selectedMode?.label ?? game.i18n.localize("TRUDVANG.Npc.MovementModes.land")});
     ui.notifications.info(game.i18n.format("TRUDVANG.Notification.CombatMovement", {points: spending.total, meters: paidMeters}));
     return {...spending, paidMeters};
   }

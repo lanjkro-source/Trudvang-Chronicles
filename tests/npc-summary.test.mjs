@@ -603,9 +603,10 @@ test("NPC weapon spends only its hand, generic actions spend both, and outside c
 });
 
 test("NPC movement spends both Free hands and uses the selected bestiary movement mode", async t => {
-  const previous = {combat: game.combat, ui: globalThis.ui, document: globalThis.document, dialog: foundry.applications.api.DialogV2};
+  const previous = {combat: game.combat, ui: globalThis.ui, document: globalThis.document, dialog: foundry.applications.api.DialogV2,
+    users: game.users, ChatMessage: globalThis.ChatMessage};
   t.after(() => { game.combat = previous.combat; globalThis.ui = previous.ui; globalThis.document = previous.document;
-    foundry.applications.api.DialogV2 = previous.dialog; });
+    foundry.applications.api.DialogV2 = previous.dialog; game.users = previous.users; globalThis.ChatMessage = previous.ChatMessage; });
   globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
   const notices = [];
   globalThis.ui = {notifications: {info: message => notices.push(message), warn: message => assert.fail(message)}};
@@ -615,6 +616,11 @@ test("NPC movement spends both Free hands and uses the selected bestiary movemen
     return {allocation: {free: 4}, movementMode: "1"};
   }};
   const npc = spendableNpc([]);
+  const messages = [];
+  game.users = [{id: "gm", isGM: true}, {id: "owner"}, {id: "observer"}];
+  npc.testUserPermission = user => user.id === "owner";
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}),
+    create: async data => { messages.push(data); return data; }};
   npc.system.details.move = [{mode: "terrestre", distance: "2 m", max: "16 m"},
     {mode: "vol", distance: "4 m", max: "32 m"}];
   game.combat = {started: true, combatants: [{actor: npc}]};
@@ -625,6 +631,12 @@ test("NPC movement spends both Free hands and uses the selected bestiary movemen
   assert.equal(npc.system.combatPools.free.weaponSpent, 8);
   assert.equal(npc.system.combatPools.free.offHandSpent, 4);
   assert.match(notices[0], /8 mètre/);
+  assert.equal(messages.length, 2);
+  assert.match(messages[0].content, /Vol, 8 m/);
+  assert.doesNotMatch(messages[0].content, /4 PC/);
+  assert.deepEqual(messages[0].whisper, []);
+  assert.match(messages[1].content, /4 PC dépensés/);
+  assert.deepEqual(messages[1].whisper, ["gm", "owner"]);
 });
 
 test("a wrestling roll ignores Combat Actions and never spends an odd total", async t => {
@@ -656,6 +668,35 @@ test("a wrestling roll ignores Combat Actions and never spends an odd total", as
   assert.equal(npc.system.combatPools.free.weaponSpent, 6);
   assert.equal(npc.system.combatPools.free.offHandSpent, 2);
   assert.equal(messages.length, 1);
+});
+
+test("PC movement announces terrestrial distance, and cancellations, invalid costs or observers announce nothing", async t => {
+  const runtime = mockActionRuntime(t);
+  const before = game.users;
+  t.after(() => { game.users = before; });
+  game.users = [{id: "gm", isGM: true}, {id: "owner"}];
+  const pc = spendableNpc([]);
+  pc.type = "character";
+  pc.testUserPermission = user => user.id === "owner";
+  game.combat = {started: true, combatants: [{actor: pc}]};
+  const spent = {...pc.system.combatPools.free};
+  assert.equal(await pc.rollCombatMovement(), null);
+  assert.equal(runtime.messages.length, 0);
+  runtime.response = {allocation: {free: 3}};
+  await pc.rollCombatMovement();
+  assert.equal(runtime.messages.length, 0);
+  assert.deepEqual(pc.system.combatPools.free, spent);
+  runtime.response = {allocation: {free: 4}};
+  pc.isOwner = false;
+  assert.equal(await pc.rollCombatMovement(), null);
+  assert.equal(runtime.messages.length, 0);
+  pc.isOwner = true;
+  const result = await pc.rollCombatMovement();
+  assert.equal(result.paidMeters, 2);
+  assert.equal(runtime.messages.length, 2);
+  assert.match(runtime.messages[0].content, /Terrestre, 2 m/);
+  assert.doesNotMatch(runtime.messages[0].content, /4 PC/);
+  assert.match(runtime.messages[1].content, /4 PC dépensés/);
 });
 
 test("NPC actions show sticky reserve data, material weapons, natural profiles, then Other without inventory clutter", async t => {
@@ -1036,12 +1077,14 @@ test("prepared movement presets the correct mode, charges both hands and does no
   game.combat = {id: "combat", round: 1, started: true, combatants: [{actor: npc}]};
   runtime.response = {allocation: {free: 3}, movementMode: "1"};
   await npc.rollNpcPreparedAction(0, 0);
+  assert.equal(runtime.messages.length, 0, "invalid movement costs must not produce an announcement");
   assert.deepEqual(npc.system.usedPreparedActions ?? [], []);
   assert.match(runtime.dialogs[0].content, /option value="1" selected/);
   assert.match(runtime.dialogs[0].content, /data-combat-slider[^>]+value="4"/);
   runtime.response = {allocation: {free: 4}, movementMode: "1"};
   const result = await npc.rollNpcPreparedAction(0, 0);
   assert.equal(result.paidMeters, 8);
+  assert.match(runtime.messages[0].content, /Vol, 8 m/, "prepared movement uses the same chat announcement as a normal movement action");
   assert.deepEqual(npc.system.usedPreparedActions, ["0:0"]);
   assert.equal(npc.system.combatPools.free.weaponSpent, 8); assert.equal(npc.system.combatPools.free.offHandSpent, 4);
 });

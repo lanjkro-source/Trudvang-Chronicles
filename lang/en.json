@@ -1018,6 +1018,14 @@
       "psyche": "Situation modifier {value}. Wilderness persistence {value} days and fear-factor modifier {inverse}. Pathwalker, Terrain Experience, and Weathered cost modifier: {inverse} points per level.",
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
+    "ChatEvent": {
+      "DamagePublic": "Damage is applied to {actor}.",
+      "DamagePrivate": "{actor}: {amount} BP lost.",
+      "FearPublic": "Fear is applied to {actor}.",
+      "FearPrivate": "{actor}: +{amount} Fear point(s).",
+      "MovementPublic": "{actor} moves: {mode}, {meters} m.",
+      "MovementPrivate": "{actor} moves: {mode}, {meters} m — {amount} CP spent."
+    },
     "Notification": {
       "DamageApplied": "{damage} damage applied to {target}.",
       "DefenseDamageApplied": "{damage} damage applied to {item}.",

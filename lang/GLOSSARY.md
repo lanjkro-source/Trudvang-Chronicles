@@ -1201,6 +1201,17 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.TraitBenefit.psyche` | Situation modifier {value}. Wilderness persistence {value} days and fear-factor modifier {inverse}. Pathwalker, Terrain Experience, and Weathered cost modifier: {inverse} points per level. | Modificateur de situation {value}. Persistance dans la nature {value} jours et modificateur de facteur de peur {inverse}. Modificateur de coût pour Exploration, Connaissance de l'environnement et Endurci : {inverse} points par niveau. |
 | `TRUDVANG.TraitBenefit.strength` | Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons. | Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables. |
 
+## `TRUDVANG.ChatEvent`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.ChatEvent.DamagePublic` | Damage is applied to {actor}. | Des dégâts sont appliqués à {actor}. |
+| `TRUDVANG.ChatEvent.DamagePrivate` | {actor}: {amount} BP lost. | {actor} : {amount} PS perdus. |
+| `TRUDVANG.ChatEvent.FearPublic` | Fear is applied to {actor}. | De la peur est appliquée à {actor}. |
+| `TRUDVANG.ChatEvent.FearPrivate` | {actor}: +{amount} Fear point(s). | {actor} : +{amount} point(s) de peur. |
+| `TRUDVANG.ChatEvent.MovementPublic` | {actor} moves: {mode}, {meters} m. | {actor} se déplace : {mode}, {meters} m. |
+| `TRUDVANG.ChatEvent.MovementPrivate` | {actor} moves: {mode}, {meters} m — {amount} CP spent. | {actor} se déplace : {mode}, {meters} m — {amount} PC dépensés. |
+
 ## `TRUDVANG.Notification`
 
 | Clé | English | Français |

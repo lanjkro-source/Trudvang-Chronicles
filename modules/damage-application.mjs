@@ -1,4 +1,5 @@
 import { weaponUsesTwoHands } from "./rules/combat-pool-resolver.mjs";
+import {postActorEvent} from "./actor-event-chat.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -62,6 +63,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false} = 
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value);
   if (result.bodyDamage) await actor.update({"system.resources.body.value": body - result.bodyDamage});
+  await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});
   return result;
 }
 

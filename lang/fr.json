@@ -1018,6 +1018,14 @@
       "psyche": "Modificateur de situation {value}. Persistance dans la nature {value} jours et modificateur de facteur de peur {inverse}. Modificateur de coût pour Exploration, Connaissance de l'environnement et Endurci : {inverse} points par niveau.",
       "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
     },
+    "ChatEvent": {
+      "DamagePublic": "Des dégâts sont appliqués à {actor}.",
+      "DamagePrivate": "{actor} : {amount} PS perdus.",
+      "FearPublic": "De la peur est appliquée à {actor}.",
+      "FearPrivate": "{actor} : +{amount} point(s) de peur.",
+      "MovementPublic": "{actor} se déplace : {mode}, {meters} m.",
+      "MovementPrivate": "{actor} se déplace : {mode}, {meters} m — {amount} PC dépensés."
+    },
     "Notification": {
       "DamageApplied": "{damage} dégâts appliqués à {target}.",
       "DefenseDamageApplied": "{damage} dégâts appliqués à {item}.",
