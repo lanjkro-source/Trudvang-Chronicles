@@ -50,7 +50,7 @@ export function calculateArmoredDamage({damage, totalProtection, armor = []} = {
 }
 
 /** Apply damage to the target's Body Points, optionally bypassing all protection. */
-export async function applyDamageToActor({actor, damage, ignoreArmor = false} = {}) {
+export async function applyDamageToActor({actor, damage, ignoreArmor = false, announce = true} = {}) {
   if (!actor?.isOwner) return null;
   const amount = Math.max(0, Math.trunc(number(damage)));
   const armor = Array.from(actor.items || []).filter(item => item.type === "armor" && item.system?.equipped);
@@ -63,7 +63,7 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false} = 
   if (armorUpdates.length) await actor.updateEmbeddedDocuments("Item", armorUpdates);
   const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value);
   if (result.bodyDamage) await actor.update({"system.resources.body.value": body - result.bodyDamage});
-  await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});
+  if (announce) await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});
   return result;
 }
 

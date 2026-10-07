@@ -1,4 +1,4 @@
-import { applyDamageToActor, applyDamageToDefenseItem } from "./damage-application.mjs";
+import {hasChatApplication, registerChatApplicationSocket, requestChatApplication} from "./chat-application.mjs";
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
@@ -21,6 +21,7 @@ export function registerChatListeners() {
   Hooks.on("updateChatMessage", message => clearIndicatedTraitToken(message.id));
   Hooks.on("deleteChatMessage", message => clearIndicatedTraitToken(message.id));
   registerTraitSituationSocket();
+  registerChatApplicationSocket();
 }
 
 /**
@@ -140,31 +141,51 @@ function attachListeners(message, html) {
     });
   });
   html.querySelectorAll("[data-action='apply-damage']").forEach(button => {
+    if (hasChatApplication(message, button.dataset.targetActorUuid, "body")) button.disabled = true;
     button.addEventListener("click", async event => {
       event.preventDefault();
+      if (button.disabled) return;
       const actor = await foundry.utils.fromUuid(button.dataset.targetActorUuid);
-      const result = await applyDamageToActor({actor, damage: button.dataset.damage, ignoreArmor: button.dataset.ignoreArmor === "true"});
-      if (!result) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotApplyDamage"));
-      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DamageApplied", {target: actor.name, damage: result.bodyDamage}));
+      button.disabled = true;
+      try {
+        const result = await requestChatApplication({message, actor, channel: "body", ignoreArmor: button.dataset.ignoreArmor === "true"});
+        if (!["applied", "alreadyApplied"].includes(result.status)) {
+          button.disabled = false;
+          ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+        }
+      } catch (error) { button.disabled = false; throw error; }
     });
   });
   html.querySelectorAll("[data-action='apply-fear']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();
-      const controlledActors = Array.from(canvas.tokens?.controlled || []).map(token => token.actor).filter(actor => actor?.type === "character" && actor.isOwner);
-      if (!controlledActors.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledFearCharacters"));
-      const results = await Promise.all(controlledActors.map(actor => actor.applyFearFactor(button.dataset.fear)));
-      const applied = results.reduce((total, result) => total + Number(result?.applied || 0), 0);
-      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.FearApplied", {targets: results.filter(Boolean).length, amount: applied}));
+      if (button.disabled) return;
+      const controlled = [...new Map(Array.from(canvas.tokens?.controlled || [])
+        .filter(token => token.actor?.type === "character" && token.actor.isOwner).map(token => [token.actor.uuid, token])).values()];
+      if (!controlled.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoControlledFearCharacters"));
+      button.disabled = true;
+      try {
+        const results = await Promise.all(controlled.map(token => requestChatApplication({message, actor: token.actor, token, channel: "fear"})));
+        if (results.some(result => result.status === "unavailable")) ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+        else if (results.every(result => result.status === "alreadyApplied")) ui.notifications.info(game.i18n.localize("TRUDVANG.ChatApplication.AlreadyApplied"));
+      } finally { button.disabled = false; }
     });
   });
   html.querySelectorAll("[data-action='apply-defense-damage']").forEach(button => {
+    const actorUuid = button.closest(".damage-target")?.querySelector("[data-target-actor-uuid]")?.dataset.targetActorUuid;
+    if (hasChatApplication(message, actorUuid, "defense", button.dataset.targetItemUuid)) button.disabled = true;
     button.addEventListener("click", async event => {
       event.preventDefault();
+      if (button.disabled) return;
       const item = await foundry.utils.fromUuid(button.dataset.targetItemUuid);
-      const result = await applyDamageToDefenseItem({item, damage: button.dataset.damage});
-      if (!result) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CannotApplyDamage"));
-      ui.notifications.info(game.i18n.format("TRUDVANG.Notification.DefenseDamageApplied", {item: item.name, damage: result.integrityLoss}));
+      button.disabled = true;
+      try {
+        const result = await requestChatApplication({message, actor: item?.parent, channel: "defense", itemUuid: item?.uuid});
+        if (!["applied", "alreadyApplied"].includes(result.status)) {
+          button.disabled = false;
+          ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+        }
+      } catch (error) { button.disabled = false; throw error; }
     });
   });
   html.querySelectorAll("[data-action='roll-trait-situation']").forEach(button => {

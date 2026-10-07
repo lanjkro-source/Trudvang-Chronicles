@@ -1,0 +1,11 @@
+<section data-application-results>
+  <ul class="trait-situation-results application-results" aria-label="{{localize 'TRUDVANG.ChatApplication.Results'}}">
+    {{#each rows}}
+    <li class="trait-situation-result application-result">
+      {{#if tokenUuid}}<button type="button" class="trait-situation-token" data-action="locate-trait-situation-token" data-token-uuid="{{tokenUuid}}" title="{{localize 'TRUDVANG.Dialog.TraitSituationTokenHint'}}">{{label}}</button>{{else}}<span class="trait-situation-token-name">{{label}}</span>{{/if}}
+      <i class="fas {{icon}}" aria-hidden="true"></i>
+      <strong>{{result}}</strong>
+    </li>
+    {{/each}}
+  </ul>
+</section>

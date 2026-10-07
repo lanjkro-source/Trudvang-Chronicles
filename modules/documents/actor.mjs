@@ -1179,14 +1179,14 @@ export class TrudvangActor extends BaseActor {
   }
 
   /** Add a rolled fear factor to this character after its personal mitigation. */
-  async applyFearFactor(factor) {
+  async applyFearFactor(factor, {announce = true} = {}) {
     if (this.type !== "character" || !this.isOwner) return null;
     const rolled = Math.max(0, Math.trunc(Number(factor) || 0));
     const modifier = Number(this.system.fearFactorModifier || 0);
     const applied = Math.max(0, rolled + modifier);
     const stored = Number(this._source.system.resources?.fear?.value || 0);
     await this.update({"system.resources.fear.value": stored + applied});
-    await postActorEvent({actor: this, kind: "fear", amount: applied});
+    if (announce) await postActorEvent({actor: this, kind: "fear", amount: applied});
     return {rolled, modifier, applied};
   }
 

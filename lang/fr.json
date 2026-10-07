@@ -1019,12 +1019,18 @@
       "strength": "Modificateur de situation {value}. Modificateur de dégâts de mêlée et de points de santé (PS) {value} ; une Force très faible limite les armes utilisables."
     },
     "ChatEvent": {
-      "DamagePublic": "Des dégâts sont appliqués à {actor}.",
-      "DamagePrivate": "{actor} : {amount} PS perdus.",
-      "FearPublic": "De la peur est appliquée à {actor}.",
-      "FearPrivate": "{actor} : +{amount} point(s) de peur.",
-      "MovementPublic": "{actor} se déplace : {mode}, {meters} m.",
-      "MovementPrivate": "{actor} se déplace : {mode}, {meters} m — {amount} PC dépensés."
+      "Damage": "{actor} : {amount} PS perdus.",
+      "Fear": "{actor} : +{amount} point(s) de peur.",
+      "Movement": "{actor} se déplace : {mode}, {meters} m — {amount} PC dépensés."
+    },
+    "ChatApplication": {
+      "Results": "Applications",
+      "BodyAmount": "−{amount} PS",
+      "FearAmount": "+{amount} peur",
+      "IntegrityAmount": "−{amount} VI",
+      "DefenseName": "{actor} — {item}",
+      "AlreadyApplied": "Cette application a déjà été effectuée pour ce personnage ou cet équipement.",
+      "Unavailable": "L’application n’a pas pu être effectuée. Un MJ connecté est nécessaire pour compléter la carte partagée."
     },
     "Notification": {
       "DamageApplied": "{damage} dégâts appliqués à {target}.",

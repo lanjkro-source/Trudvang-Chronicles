@@ -1205,12 +1205,21 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.ChatEvent.DamagePublic` | Damage is applied to {actor}. | Des dégâts sont appliqués à {actor}. |
-| `TRUDVANG.ChatEvent.DamagePrivate` | {actor}: {amount} BP lost. | {actor} : {amount} PS perdus. |
-| `TRUDVANG.ChatEvent.FearPublic` | Fear is applied to {actor}. | De la peur est appliquée à {actor}. |
-| `TRUDVANG.ChatEvent.FearPrivate` | {actor}: +{amount} Fear point(s). | {actor} : +{amount} point(s) de peur. |
-| `TRUDVANG.ChatEvent.MovementPublic` | {actor} moves: {mode}, {meters} m. | {actor} se déplace : {mode}, {meters} m. |
-| `TRUDVANG.ChatEvent.MovementPrivate` | {actor} moves: {mode}, {meters} m — {amount} CP spent. | {actor} se déplace : {mode}, {meters} m — {amount} PC dépensés. |
+| `TRUDVANG.ChatEvent.Damage` | {actor}: {amount} BP lost. | {actor} : {amount} PS perdus. |
+| `TRUDVANG.ChatEvent.Fear` | {actor}: +{amount} Fear point(s). | {actor} : +{amount} point(s) de peur. |
+| `TRUDVANG.ChatEvent.Movement` | {actor} moves: {mode}, {meters} m — {amount} CP spent. | {actor} se déplace : {mode}, {meters} m — {amount} PC dépensés. |
+
+## `TRUDVANG.ChatApplication`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.ChatApplication.Results` | Applications | Applications |
+| `TRUDVANG.ChatApplication.BodyAmount` | −{amount} BP | −{amount} PS |
+| `TRUDVANG.ChatApplication.FearAmount` | +{amount} Fear | +{amount} peur |
+| `TRUDVANG.ChatApplication.IntegrityAmount` | −{amount} VI | −{amount} VI |
+| `TRUDVANG.ChatApplication.DefenseName` | {actor} — {item} | {actor} — {item} |
+| `TRUDVANG.ChatApplication.AlreadyApplied` | This application has already been performed for this character or equipment. | Cette application a déjà été effectuée pour ce personnage ou cet équipement. |
+| `TRUDVANG.ChatApplication.Unavailable` | The application could not be performed. A connected GM is needed to update the shared card. | L’application n’a pas pu être effectuée. Un MJ connecté est nécessaire pour compléter la carte partagée. |
 
 ## `TRUDVANG.Notification`
 

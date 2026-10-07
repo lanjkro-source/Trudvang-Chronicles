@@ -631,12 +631,11 @@ test("NPC movement spends both Free hands and uses the selected bestiary movemen
   assert.equal(npc.system.combatPools.free.weaponSpent, 8);
   assert.equal(npc.system.combatPools.free.offHandSpent, 4);
   assert.match(notices[0], /8 mètre/);
-  assert.equal(messages.length, 2);
+  assert.equal(messages.length, 1);
   assert.match(messages[0].content, /Vol, 8 m/);
-  assert.doesNotMatch(messages[0].content, /4 PC/);
+  assert.match(messages[0].content, /4 PC dépensés/);
   assert.deepEqual(messages[0].whisper, []);
-  assert.match(messages[1].content, /4 PC dépensés/);
-  assert.deepEqual(messages[1].whisper, ["gm", "owner"]);
+  assert.doesNotMatch(messages[0].content, /chat-card/);
 });
 
 test("a wrestling roll ignores Combat Actions and never spends an odd total", async t => {
@@ -693,10 +692,9 @@ test("PC movement announces terrestrial distance, and cancellations, invalid cos
   pc.isOwner = true;
   const result = await pc.rollCombatMovement();
   assert.equal(result.paidMeters, 2);
-  assert.equal(runtime.messages.length, 2);
+  assert.equal(runtime.messages.length, 1);
   assert.match(runtime.messages[0].content, /Terrestre, 2 m/);
-  assert.doesNotMatch(runtime.messages[0].content, /4 PC/);
-  assert.match(runtime.messages[1].content, /4 PC dépensés/);
+  assert.match(runtime.messages[0].content, /4 PC dépensés/);
 });
 
 test("NPC actions show sticky reserve data, material weapons, natural profiles, then Other without inventory clutter", async t => {

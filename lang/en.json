@@ -1019,12 +1019,18 @@
       "strength": "Situation modifier {value}. Melee damage and Body Points modifier {value}; very low Strength restricts usable weapons."
     },
     "ChatEvent": {
-      "DamagePublic": "Damage is applied to {actor}.",
-      "DamagePrivate": "{actor}: {amount} BP lost.",
-      "FearPublic": "Fear is applied to {actor}.",
-      "FearPrivate": "{actor}: +{amount} Fear point(s).",
-      "MovementPublic": "{actor} moves: {mode}, {meters} m.",
-      "MovementPrivate": "{actor} moves: {mode}, {meters} m — {amount} CP spent."
+      "Damage": "{actor}: {amount} BP lost.",
+      "Fear": "{actor}: +{amount} Fear point(s).",
+      "Movement": "{actor} moves: {mode}, {meters} m — {amount} CP spent."
+    },
+    "ChatApplication": {
+      "Results": "Applications",
+      "BodyAmount": "−{amount} BP",
+      "FearAmount": "+{amount} Fear",
+      "IntegrityAmount": "−{amount} VI",
+      "DefenseName": "{actor} — {item}",
+      "AlreadyApplied": "This application has already been performed for this character or equipment.",
+      "Unavailable": "The application could not be performed. A connected GM is needed to update the shared card."
     },
     "Notification": {
       "DamageApplied": "{damage} damage applied to {target}.",
