@@ -123,10 +123,15 @@ const entries = sources.fr.map((creature, index) => {
   const attacks = creature.attacks.map((combo, comboIndex) => combo.map((attack, attackIndex) => {
     if (attack.action === "movement") return {...attack};
     const matched = items.find(item => normalize(texts.fr[item.nameKey?.split(".").at(-1)]) === normalize(attack.attack));
+    const alias = matched ?? (attack.attack.includes("/") ? items.find(item => attack.attack.split("/")
+      .some(name => normalize(texts.fr[item.nameKey?.split(".").at(-1)]) === normalize(name))) : null);
     const old = english.attacks[comboIndex]?.[attackIndex];
     const fallback = normalize(attack.attack).startsWith("mouvement") ? "Movement" : ["lutte", "glima"].includes(normalize(attack.attack)) ? "Wrestling" : normalize(attack.attack) === "saisie" ? "Grapple" : null;
     const attackKey = matched?.nameKey ?? key(`Attack${comboIndex}Step${attackIndex}`, attack.attack, fallback ?? old?.attack ?? attack.attack);
-    return {attackKey, value: attack.value};
+    const action = attack.action || (alias ? alias.type === "shield" ? "parry" : "attack"
+      : fallback === "Wrestling" ? "glima" : fallback === "Grapple" ? "grapple"
+        : creature.feats.some(name => normalize(name) === normalize(attack.attack)) ? "special" : "");
+    return {attackKey, itemId: alias?._id ?? "", ...(action ? {action} : {}), value: attack.value};
   }));
   const tablets = creature.tablets.map(row => {
     const tablet = TABLET_CATALOG.find(t => normalize(localize("fr", `TRUDVANG.Content.Tablet.${t.id}.Name`)) === normalize(row.name));

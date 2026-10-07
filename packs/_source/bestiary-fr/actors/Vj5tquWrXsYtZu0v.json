@@ -269,16 +269,22 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "Impea1sYtZu0v1w2",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Défenses",
+          "itemId": "JnnG2lOjPkQlRmSn",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Split axi (hache à une main)",
+          "itemId": "wMP5vvYtZu0v1w2x",
+          "action": "attack",
           "value": 7
         }
       ]

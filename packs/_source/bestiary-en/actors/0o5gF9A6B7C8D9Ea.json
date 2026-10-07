@@ -67,6 +67,8 @@
       [
         {
           "attack": "Kick",
+          "itemId": "dCNDfdFaGbHcIdJe",
+          "action": "attack",
           "value": 12
         }
       ]

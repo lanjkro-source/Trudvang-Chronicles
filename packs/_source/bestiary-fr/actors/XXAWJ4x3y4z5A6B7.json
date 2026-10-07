@@ -414,82 +414,118 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "0UvJZ7C8D9EaGbHc",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Mains nues",
+          "itemId": "0UvJZ7C8D9EaGbHc",
+          "action": "attack",
           "value": 13
         }
       ],
       [
         {
           "attack": "Barda klót (chaîne de bataille)",
+          "itemId": "C9e11kNiOjPkQlRm",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Barda klót (chaîne de bataille)",
+          "itemId": "C9e11kNiOjPkQlRm",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "n0Rnhz1w2x3y4z5A",
+          "action": "attack",
           "value": 16
         },
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "n0Rnhz1w2x3y4z5A",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Barda klót (chaîne de bataille)",
+          "itemId": "C9e11kNiOjPkQlRm",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Barda klót (chaîne de bataille)",
+          "itemId": "C9e11kNiOjPkQlRm",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Barda klót (chaîne de bataille)",
+          "itemId": "C9e11kNiOjPkQlRm",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 8
         }
       ],
       [
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "TH76L1tZu0v1w2x3",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "TH76L1tZu0v1w2x3",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "TH76L1tZu0v1w2x3",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "aHpCV7z5A6B7C8D9",
+          "action": "parry",
           "value": 8
         }
       ]

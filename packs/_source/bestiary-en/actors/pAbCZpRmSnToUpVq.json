@@ -461,64 +461,92 @@
       [
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Krum swerd (scimitar)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Krum swerd (scimitar)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Krum swerd (scimitar)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 5
         },
         {
           "attack": "Small fur-reinforced shield",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 9
         },
         {
           "attack": "Small fur-reinforced shield",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 6
         }
       ],
       [
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Small fur-reinforced shield",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 7
         },
         {
           "attack": "Small fur-reinforced shield",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 6
         }
       ],
       [
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "VLjjwVnToUpVqWrX",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "VLjjwVnToUpVqWrX",
+          "action": "attack",
           "value": 7
         }
       ]

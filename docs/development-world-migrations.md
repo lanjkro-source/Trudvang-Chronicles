@@ -12,6 +12,12 @@ Toute nouvelle migration de monde doit :
 
 À la première release publique, ces chemins pourront être retirés après suppression des mondes de développement historiques.
 
+## `modules/rules/magic-capacity.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| `feats` et les replis sur le catalogue dans `creatureMagicTraits()` | Reconnaissent, grâce à `catalogId`, le vitner illimité du fjoltroll et les +10 PV du revenant dans les capacités importées avant 0.67.0. Les nouveaux objets portent directement `unlimitedVitner` et `vitnerCapacityBonus`. Aucun texte ni aucune réserve actuelle n’est réécrit. | Les capacités de tous les PNJ proviennent des nouveaux compendiums, ou les mondes antérieurs ont été supprimés. Conserver le calcul utilisant les champs des objets ; retirer uniquement la table et les replis. |
+
 ## `modules/content-importer.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |

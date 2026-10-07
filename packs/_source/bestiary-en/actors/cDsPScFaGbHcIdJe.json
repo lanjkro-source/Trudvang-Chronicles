@@ -183,14 +183,20 @@
       [
         {
           "attack": "Bite",
+          "itemId": "q9jJWrToUpVqWrXs",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Bite",
+          "itemId": "q9jJWrToUpVqWrXs",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Unarmed",
+          "itemId": "xhy2SRlRmSnToUpV",
+          "action": "attack",
           "value": 8
         }
       ]

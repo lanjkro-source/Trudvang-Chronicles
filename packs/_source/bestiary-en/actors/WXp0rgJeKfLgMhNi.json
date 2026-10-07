@@ -407,56 +407,80 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "crxGEHcIdJeKfLgM",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Unarmed",
+          "itemId": "crxGEHcIdJeKfLgM",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Barda swerd (battle sword)",
+          "itemId": "0tHmvoSnToUpVqWr",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Barda swerd (battle sword)",
+          "itemId": "0tHmvoSnToUpVqWr",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Small Wooden Shield",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 12
         },
         {
           "attack": "Small Wooden Shield",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 9
         }
       ],
       [
         {
           "attack": "Glaaf (Short Sword)",
+          "itemId": "fD4ZfaE9EaGbHcId",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Glaaf (Short Sword)",
+          "itemId": "fD4ZfaE9EaGbHcId",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Small Wooden Shield",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 8
         },
         {
           "attack": "Small Wooden Shield",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 7
         }
       ],
       [
         {
           "attack": "Tvei Swerd (Two-Handed Sword)",
+          "itemId": "LkkJKC6B7C8D9EaG",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Tvei Swerd (Two-Handed Sword)",
+          "itemId": "LkkJKC6B7C8D9EaG",
+          "action": "attack",
           "value": 11
         }
       ]

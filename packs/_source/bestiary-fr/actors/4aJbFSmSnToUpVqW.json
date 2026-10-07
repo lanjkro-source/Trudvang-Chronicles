@@ -494,30 +494,42 @@
       [
         {
           "attack": "Morsure/Griffes",
+          "itemId": "VznrwsWrXsYtZu0v",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Veidi bogi (arc de chasse)",
+          "itemId": "cdJ1z1tZu0v1w2x3",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Veidi bogi (arc de chasse)",
+          "itemId": "cdJ1z1tZu0v1w2x3",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Lill spjót (lance courte)",
+          "itemId": "tLB7jIaGbHcIdJeK",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Lill spjót (lance courte)",
+          "itemId": "tLB7jIaGbHcIdJeK",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "IUYK4tWrXsYtZu0v",
+          "action": "parry",
           "value": 12
         }
       ]

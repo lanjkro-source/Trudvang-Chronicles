@@ -99,14 +99,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon0Part0",
+              "itemId": "1X3jmC6B7C8D9EaG",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon1Part0",
+              "itemId": "UhT3DqSnToUpVqWr",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Dy2cOUlRmSnToUpV.Weapon1Part0",
+              "itemId": "UhT3DqSnToUpVqWr",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -262,14 +268,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon0Part0",
+              "itemId": "CVpRL3y4z5A6B7C8",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon1Part0",
+              "itemId": "HHcyU2tZu0v1w2x3",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mlmpT0u0v1w2x3y4.Weapon1Part0",
+              "itemId": "HHcyU2tZu0v1w2x3",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -426,14 +438,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon0Part0",
+              "itemId": "he4YoTlRmSnToUpV",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon1Part0",
+              "itemId": "gEvWVXpVqWrXsYtZ",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.jyZ54RlRmSnToUpV.Weapon1Part0",
+              "itemId": "gEvWVXpVqWrXsYtZ",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -730,16 +748,22 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon0Part0",
+              "itemId": "Impea1sYtZu0v1w2",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon1Part0",
+              "itemId": "JnnG2lOjPkQlRmSn",
+              "action": "attack",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.Vj5tquWrXsYtZu0v.Weapon2",
+              "itemId": "wMP5vvYtZu0v1w2x",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -895,14 +919,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon0Part0",
+              "itemId": "Kd40jfIdJeKfLgMh",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon1Part0",
+              "itemId": "DzBvcSlRmSnToUpV",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.9Yt4BbE9EaGbHcId.Weapon1Part0",
+              "itemId": "DzBvcSlRmSnToUpV",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -1336,56 +1366,80 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon3Part0",
+              "itemId": "KFs4J6x3y4z5A6B7",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon3Part0",
+              "itemId": "KFs4J6x3y4z5A6B7",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon2",
+              "itemId": "zxVmlkMhNiOjPkQl",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon2",
+              "itemId": "zxVmlkMhNiOjPkQl",
+              "action": "attack",
               "value": 9
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0",
+              "itemId": "3PFDQRjPkQlRmSnT",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0",
+              "itemId": "3PFDQRjPkQlRmSnT",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon1",
+              "itemId": "iZ2gBD5A6B7C8D9E",
+              "action": "parry",
               "value": 15
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0",
+              "itemId": "3PFDQRjPkQlRmSnT",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0",
+              "itemId": "3PFDQRjPkQlRmSnT",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon0",
+              "itemId": "3PFDQRjPkQlRmSnT",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon1",
+              "itemId": "iZ2gBD5A6B7C8D9E",
+              "action": "parry",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.yIVEN4x3y4z5A6B7.Weapon1",
+              "itemId": "iZ2gBD5A6B7C8D9E",
+              "action": "parry",
               "value": 7
             }
           ]
@@ -1539,14 +1593,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon0Part0",
+              "itemId": "j1xPF7y4z5A6B7C8",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon1Part0",
+              "itemId": "i0znNMdJeKfLgMhN",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.xs7CT0sYtZu0v1w2.Weapon1Part0",
+              "itemId": "i0znNMdJeKfLgMhN",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -1686,10 +1746,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Weapon0Part0",
+              "itemId": "tssRXnToUpVqWrXs",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.i4meLKfLgMhNiOjP.Weapon0Part0",
+              "itemId": "tssRXnToUpVqWrXs",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -1848,24 +1912,34 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon0Part0",
+              "itemId": "o0gAh1tZu0v1w2x3",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon1Part0",
+              "itemId": "vGrQZcIdJeKfLgMh",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon0Part0",
+              "itemId": "o0gAh1tZu0v1w2x3",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon0Part0",
+              "itemId": "o0gAh1tZu0v1w2x3",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.zy9rVjOjPkQlRmSn.Weapon1Part0",
+              "itemId": "vGrQZcIdJeKfLgMh",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -2020,24 +2094,34 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon0Part0",
+              "itemId": "ZFqQ5YqWrXsYtZu0",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon1Part0",
+              "itemId": "QZ1qdWnToUpVqWrX",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon0Part0",
+              "itemId": "ZFqQ5YqWrXsYtZu0",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon0Part0",
+              "itemId": "ZFqQ5YqWrXsYtZu0",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.YjHk2sXsYtZu0v1w.Weapon1Part0",
+              "itemId": "QZ1qdWnToUpVqWrX",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -2191,28 +2275,40 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0",
+              "itemId": "Y7imCOjPkQlRmSnT",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0",
+              "itemId": "Y7imCOjPkQlRmSnT",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon1Part0",
+              "itemId": "3KajDE5A6B7C8D9E",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0",
+              "itemId": "Y7imCOjPkQlRmSnT",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon0Part0",
+              "itemId": "Y7imCOjPkQlRmSnT",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vQylEPiOjPkQlRmS.Weapon1Part0",
+              "itemId": "3KajDE5A6B7C8D9E",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -2367,28 +2463,40 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0",
+              "itemId": "8jnXJ3x3y4z5A6B7",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0",
+              "itemId": "8jnXJ3x3y4z5A6B7",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon1Part0",
+              "itemId": "jcMR7iLgMhNiOjPk",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0",
+              "itemId": "8jnXJ3x3y4z5A6B7",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon0Part0",
+              "itemId": "8jnXJ3x3y4z5A6B7",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vdNvhdE9EaGbHcId.Weapon1Part0",
+              "itemId": "jcMR7iLgMhNiOjPk",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -2597,10 +2705,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon0Part0",
+              "itemId": "QQMU9bGbHcIdJeKf",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.NNALQ9EaGbHcIdJe.Weapon1Part0",
+              "itemId": "RqlXC7B7C8D9EaGb",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -3167,82 +3279,118 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon1Part0",
+              "itemId": "rtMsoaD8D9EaGbHc",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Attack0Step1",
+              "itemId": "8tTxMYtZu0v1w2x3",
+              "action": "attack",
               "value": 16
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 17
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon4",
+              "itemId": "MlJa99EaGbHcIdJe",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon4",
+              "itemId": "MlJa99EaGbHcIdJe",
+              "action": "attack",
               "value": 15
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon3",
+              "itemId": "5Jw8hbGbHcIdJeKf",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5",
+              "itemId": "xDLWNNiOjPkQlRmS",
+              "action": "parry",
               "value": 10
             }
           ]
@@ -3756,82 +3904,118 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon0Part0",
+              "itemId": "0UvJZ7C8D9EaGbHc",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon0Part0",
+              "itemId": "0UvJZ7C8D9EaGbHc",
+              "action": "attack",
               "value": 13
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
+              "itemId": "C9e11kNiOjPkQlRm",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
+              "itemId": "C9e11kNiOjPkQlRm",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon3",
+              "itemId": "n0Rnhz1w2x3y4z5A",
+              "action": "attack",
               "value": 16
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon3",
+              "itemId": "n0Rnhz1w2x3y4z5A",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
+              "itemId": "C9e11kNiOjPkQlRm",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
+              "itemId": "C9e11kNiOjPkQlRm",
+              "action": "attack",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon2",
+              "itemId": "C9e11kNiOjPkQlRm",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 8
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon1",
+              "itemId": "TH76L1tZu0v1w2x3",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon1",
+              "itemId": "TH76L1tZu0v1w2x3",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon1",
+              "itemId": "TH76L1tZu0v1w2x3",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.XXAWJ4x3y4z5A6B7.Weapon4",
+              "itemId": "aHpCV7z5A6B7C8D9",
+              "action": "parry",
               "value": 8
             }
           ]
@@ -3992,10 +4176,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon0Part0",
+              "itemId": "732maeGbHcIdJeKf",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.FHNg9oSnToUpVqWr.Weapon1Part0",
+              "itemId": "6b0Ep2tZu0v1w2x3",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -4156,14 +4344,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon0Part0",
+              "itemId": "q9jJWrToUpVqWrXs",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon0Part0",
+              "itemId": "q9jJWrToUpVqWrXs",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cDsPScFaGbHcIdJe.Weapon1Part0",
+              "itemId": "xhy2SRlRmSnToUpV",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -4545,50 +4739,72 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon0Part0",
+              "itemId": "xkqFHWqWrXsYtZu0",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon0Part0",
+              "itemId": "xkqFHWqWrXsYtZu0",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1",
+              "itemId": "45fRzKeKfLgMhNiO",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1",
+              "itemId": "45fRzKeKfLgMhNiO",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2",
+              "itemId": "lE8WjrVqWrXsYtZu",
+              "action": "parry",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2",
+              "itemId": "lE8WjrVqWrXsYtZu",
+              "action": "parry",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1",
+              "itemId": "45fRzKeKfLgMhNiO",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1",
+              "itemId": "45fRzKeKfLgMhNiO",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon1",
+              "itemId": "45fRzKeKfLgMhNiO",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2",
+              "itemId": "lE8WjrVqWrXsYtZu",
+              "action": "parry",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.SCJYHSnToUpVqWrX.Weapon2",
+              "itemId": "lE8WjrVqWrXsYtZu",
+              "action": "parry",
               "value": 10
             }
           ]
@@ -4979,56 +5195,80 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon0Part0",
+              "itemId": "crxGEHcIdJeKfLgM",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon0Part0",
+              "itemId": "crxGEHcIdJeKfLgM",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon2",
+              "itemId": "0tHmvoSnToUpVqWr",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon2",
+              "itemId": "0tHmvoSnToUpVqWr",
+              "action": "attack",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4",
+              "itemId": "wbX5ZQkQlRmSnToU",
+              "action": "parry",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4",
+              "itemId": "wbX5ZQkQlRmSnToU",
+              "action": "parry",
               "value": 9
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon1",
+              "itemId": "fD4ZfaE9EaGbHcId",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon1",
+              "itemId": "fD4ZfaE9EaGbHcId",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4",
+              "itemId": "wbX5ZQkQlRmSnToU",
+              "action": "parry",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon4",
+              "itemId": "wbX5ZQkQlRmSnToU",
+              "action": "parry",
               "value": 7
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon3",
+              "itemId": "LkkJKC6B7C8D9EaG",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.WXp0rgJeKfLgMhNi.Weapon3",
+              "itemId": "LkkJKC6B7C8D9EaG",
+              "action": "attack",
               "value": 11
             }
           ]
@@ -5242,20 +5482,28 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon0Part0",
+              "itemId": "0ISxU4z5A6B7C8D9",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon1Part0",
+              "itemId": "5lKuVUlRmSnToUpV",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon2",
+              "itemId": "KjZF4aC7C8D9EaGb",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.ZKvM6WoUpVqWrXsY.Weapon2",
+              "itemId": "KjZF4aC7C8D9EaGb",
+              "action": "attack",
               "value": 11
             }
           ]
@@ -5697,12 +5945,16 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Weapon0Part0",
+              "itemId": "hde2nVpVqWrXsYtZ",
+              "action": "attack",
               "value": 8
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.5E4MWXoUpVqWrXsY.Weapon1",
+              "itemId": "K7oe0NiOjPkQlRmS",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -5970,14 +6222,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Weapon0Part0",
+              "itemId": "0oSkq8A6B7C8D9Ea",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Weapon1Part0",
+              "itemId": "hox6RsVqWrXsYtZu",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.zUKXHbFaGbHcIdJe.Weapon1Part0",
+              "itemId": "hox6RsVqWrXsYtZu",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -6137,14 +6395,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Weapon1Part0",
+              "itemId": "WDQ1WfIdJeKfLgMh",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Weapon1Part0",
+              "itemId": "WDQ1WfIdJeKfLgMh",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Mv94QSmSnToUpVqW.Weapon0Part0",
+              "itemId": "5X4PoSkQlRmSnToU",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -6286,6 +6550,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.2j6A3LeKfLgMhNiO.Weapon0Part0",
+              "itemId": "Tz48vNhNiOjPkQlR",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -6442,10 +6708,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Weapon0Part0",
+              "itemId": "aldpxB6B7C8D9EaG",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.2xYo22w2x3y4z5A6.Weapon0Part1",
+              "itemId": "VbQLMPkQlRmSnToU",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -6693,10 +6963,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Weapon0Part0",
+              "itemId": "FmhLbkLgMhNiOjPk",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.JgkUG6A6B7C8D9Ea.Weapon0Part1",
+              "itemId": "UvEoW5w2x3y4z5A6",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -6854,16 +7128,22 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Weapon0Part0",
+              "itemId": "IDeCcH8D9EaGbHcI",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Weapon1Part0",
+              "itemId": "RXsqEjLgMhNiOjPk",
+              "action": "attack",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.C2JQJUlRmSnToUpV.Weapon1Part0",
+              "itemId": "RXsqEjLgMhNiOjPk",
+              "action": "attack",
               "value": 14
             }
           ]
@@ -7209,12 +7489,16 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Weapon0Part0",
+              "itemId": "INS7jeIdJeKfLgMh",
+              "action": "attack",
               "value": 8
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.9TaOaMdJeKfLgMhN.Weapon1",
+              "itemId": "DB7i6QjPkQlRmSnT",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -7505,14 +7789,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Weapon0Part0",
+              "itemId": "vjRMuH8D9EaGbHcI",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Weapon1Part0",
+              "itemId": "AxqiZLeKfLgMhNiO",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.j0kFYcGbHcIdJeKf.Weapon1Part0",
+              "itemId": "AxqiZLeKfLgMhNiO",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -7710,20 +8000,28 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon0Part0",
+              "itemId": "EWWSpRiOjPkQlRmS",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon0Part0",
+              "itemId": "EWWSpRiOjPkQlRmS",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon1",
+              "itemId": "F0NaAI9EaGbHcIdJ",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.QY69m6y4z5A6B7C8.Weapon1",
+              "itemId": "F0NaAI9EaGbHcIdJ",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -7858,10 +8156,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Weapon0Part0",
+              "itemId": "VbvKesWrXsYtZu0v",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pQzlpUnToUpVqWrX.Weapon0Part0",
+              "itemId": "VbvKesWrXsYtZu0v",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -8000,6 +8302,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.BWRXF3w2x3y4z5A6.Weapon0",
+              "itemId": "uIbKTA2x3y4z5A6B",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -8133,32 +8437,46 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 5
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LDvVaVmSnToUpVqW.Weapon0Part0",
+              "itemId": "6Hq24sYtZu0v1w2x",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -8296,14 +8614,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Weapon0Part0",
+              "itemId": "HOJDJOjPkQlRmSnT",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Weapon0Part0",
+              "itemId": "HOJDJOjPkQlRmSnT",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.LY49GIcIdJeKfLgM.Weapon0Part0",
+              "itemId": "HOJDJOjPkQlRmSnT",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -8591,14 +8915,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon0Part0",
+              "itemId": "2nlEv2w2x3y4z5A6",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon1Part0",
+              "itemId": "3XTGYXsYtZu0v1w2",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.HWl2zsVqWrXsYtZu.Weapon1Part0",
+              "itemId": "3XTGYXsYtZu0v1w2",
+              "action": "attack",
               "value": 9
             }
           ]
@@ -8784,14 +9114,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon0Part0",
+              "itemId": "xaQaSYpVqWrXsYtZ",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon1Part0",
+              "itemId": "sxYdR8D9EaGbHcId",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.gP59DE9EaGbHcIdJ.Weapon1Part0",
+              "itemId": "sxYdR8D9EaGbHcId",
+              "action": "attack",
               "value": 11
             }
           ]
@@ -8935,14 +9271,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Weapon0Part0",
+              "itemId": "WzK83cIdJeKfLgMh",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Weapon0Part0",
+              "itemId": "WzK83cIdJeKfLgMh",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.AOI0ZaC7C8D9EaGb.Weapon0Part0",
+              "itemId": "WzK83cIdJeKfLgMh",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -9123,18 +9465,26 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon0Part0",
+              "itemId": "SqQRYC5A6B7C8D9E",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon1Part0",
+              "itemId": "TrOjRXqWrXsYtZu0",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon1Part0",
+              "itemId": "TrOjRXqWrXsYtZu0",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.CjkhIYqWrXsYtZu0.Weapon1Part0",
+              "itemId": "TrOjRXqWrXsYtZu0",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -9338,10 +9688,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon0Part0",
+              "itemId": "LCRI5YrXsYtZu0v1",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.uvoHTcHcIdJeKfLg.Weapon1Part0",
+              "itemId": "KBTgdE6B7C8D9EaG",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -9548,10 +9902,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon1",
+              "itemId": "XGJs0x2x3y4z5A6B",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.AQLKcKdJeKfLgMhN.Weapon0Part0",
+              "itemId": "uWTZ84v1w2x3y4z5",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -9726,10 +10084,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon1",
+              "itemId": "RtGzHkMhNiOjPkQl",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.P1vAjhJeKfLgMhNi.Weapon1",
+              "itemId": "RtGzHkMhNiOjPkQl",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -9867,6 +10229,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.ymVds5z5A6B7C8D9.Weapon0Part0",
+              "itemId": "M1tGyxZu0v1w2x3y",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -10007,6 +10371,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.urjmtIdJeKfLgMhN.Weapon0Part0",
+              "itemId": "oqOsINhNiOjPkQlR",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -10190,14 +10556,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon0Part0",
+              "itemId": "9noFvlPkQlRmSnTo",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon1",
+              "itemId": "WpQT1ZtZu0v1w2x3",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.BxtjNXpVqWrXsYtZ.Weapon1",
+              "itemId": "WpQT1ZtZu0v1w2x3",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -10565,16 +10937,22 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon0Part0",
+              "itemId": "EtsVtqUpVqWrXsYt",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon1",
+              "itemId": "RK3l0C7C8D9EaGbH",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.2HYRncE9EaGbHcId.Weapon1",
+              "itemId": "RK3l0C7C8D9EaGbH",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -10994,20 +11372,28 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon0Part0",
+              "itemId": "IWTqS2v1w2x3y4z5",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon0Part0",
+              "itemId": "IWTqS2v1w2x3y4z5",
+              "action": "attack",
               "value": 5
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon1",
+              "itemId": "bXoedy1w2x3y4z5A",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.UvKevaFaGbHcIdJe.Weapon1",
+              "itemId": "bXoedy1w2x3y4z5A",
+              "action": "attack",
               "value": 5
             }
           ]
@@ -11489,64 +11875,92 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
+              "itemId": "aVGWgH9EaGbHcIdJ",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
+              "itemId": "aVGWgH9EaGbHcIdJ",
+              "action": "attack",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
+              "itemId": "aVGWgH9EaGbHcIdJ",
+              "action": "attack",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon1",
+              "itemId": "rUYrqNfLgMhNiOjP",
+              "action": "attack",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon1",
+              "itemId": "rUYrqNfLgMhNiOjP",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon1",
+              "itemId": "rUYrqNfLgMhNiOjP",
+              "action": "attack",
               "value": 5
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4",
+              "itemId": "EdrdMeHcIdJeKfLg",
+              "action": "parry",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4",
+              "itemId": "EdrdMeHcIdJeKfLg",
+              "action": "parry",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
+              "itemId": "aVGWgH9EaGbHcIdJ",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon2",
+              "itemId": "aVGWgH9EaGbHcIdJ",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4",
+              "itemId": "EdrdMeHcIdJeKfLg",
+              "action": "parry",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon4",
+              "itemId": "EdrdMeHcIdJeKfLg",
+              "action": "parry",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon3",
+              "itemId": "VLjjwVnToUpVqWrX",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.pAbCZpRmSnToUpVq.Weapon3",
+              "itemId": "VLjjwVnToUpVqWrX",
+              "action": "attack",
               "value": 7
             }
           ]
@@ -11969,34 +12383,48 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon0Part0",
+              "itemId": "7RwzVmOjPkQlRmSn",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon0Part0",
+              "itemId": "7RwzVmOjPkQlRmSn",
+              "action": "attack",
               "value": 7
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon1",
+              "itemId": "mpgkLKeKfLgMhNiO",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon1",
+              "itemId": "mpgkLKeKfLgMhNiO",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2",
+              "itemId": "DX8pvrVqWrXsYtZu",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2",
+              "itemId": "DX8pvrVqWrXsYtZu",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cRrA21u0v1w2x3y4.Weapon2",
+              "itemId": "DX8pvrVqWrXsYtZu",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -12424,40 +12852,56 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Attack0Step0",
+              "itemId": "",
+              "action": "special",
               "value": 11
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon0Part0",
+              "itemId": "nEO9lz0v1w2x3y4z",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon0Part0",
+              "itemId": "nEO9lz0v1w2x3y4z",
+              "action": "attack",
               "value": 7
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon1",
+              "itemId": "KagEscHcIdJeKfLg",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon1",
+              "itemId": "KagEscHcIdJeKfLg",
+              "action": "attack",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon2",
+              "itemId": "19x9BiNiOjPkQlRm",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon2",
+              "itemId": "19x9BiNiOjPkQlRm",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.mH3DrVnToUpVqWrX.Weapon2",
+              "itemId": "19x9BiNiOjPkQlRm",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -12963,54 +13407,76 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon0Part0",
+              "itemId": "BMhZMZrXsYtZu0v1",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon0Part0",
+              "itemId": "BMhZMZrXsYtZu0v1",
+              "action": "attack",
               "value": 6
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon0Part0",
+              "itemId": "BMhZMZrXsYtZu0v1",
+              "action": "attack",
               "value": 5
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Attack1Step0",
+              "itemId": "",
+              "action": "glima",
               "value": 12
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon1",
+              "itemId": "Qbb4BPkQlRmSnToU",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon1",
+              "itemId": "Qbb4BPkQlRmSnToU",
+              "action": "attack",
               "value": 7
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon1",
+              "itemId": "Qbb4BPkQlRmSnToU",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon1",
+              "itemId": "Qbb4BPkQlRmSnToU",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon3",
+              "itemId": "mkQcwHcIdJeKfLgM",
+              "action": "parry",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon2",
+              "itemId": "7atzLVqWrXsYtZu0",
+              "action": "attack",
               "value": 11
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.fXocmhLgMhNiOjPk.Weapon2",
+              "itemId": "7atzLVqWrXsYtZu0",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -13404,30 +13870,42 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon0Part0",
+              "itemId": "sq8iNRmSnToUpVqW",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon0Part0",
+              "itemId": "sq8iNRmSnToUpVqW",
+              "action": "attack",
               "value": 5
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon1",
+              "itemId": "f5bvQ2u0v1w2x3y4",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon1",
+              "itemId": "f5bvQ2u0v1w2x3y4",
+              "action": "attack",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon2",
+              "itemId": "Y5TZGWoUpVqWrXsY",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.lfC0p0tZu0v1w2x3.Weapon2",
+              "itemId": "Y5TZGWoUpVqWrXsY",
+              "action": "attack",
               "value": 6
             }
           ]
@@ -13920,30 +14398,42 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Attack0Step0",
+              "itemId": "VznrwsWrXsYtZu0v",
+              "action": "attack",
               "value": 10
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon1",
+              "itemId": "cdJ1z1tZu0v1w2x3",
+              "action": "attack",
               "value": 9
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon1",
+              "itemId": "cdJ1z1tZu0v1w2x3",
+              "action": "attack",
               "value": 6
             }
           ],
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon2",
+              "itemId": "tLB7jIaGbHcIdJeK",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon2",
+              "itemId": "tLB7jIaGbHcIdJeK",
+              "action": "attack",
               "value": 7
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.4aJbFSmSnToUpVqW.Weapon3",
+              "itemId": "IUYK4tWrXsYtZu0v",
+              "action": "parry",
               "value": 12
             }
           ]
@@ -14081,6 +14571,8 @@ export const BESTIARY_ENTRIES = [
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.gX0tuiKfLgMhNiOj.Weapon0Part0",
+              "itemId": "FdN3u1u0v1w2x3y4",
+              "action": "attack",
               "value": 16
             }
           ]
@@ -14210,6 +14702,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.wprpkdFaGbHcIdJe.Weapon0Part0",
+              "itemId": "2A91gZrXsYtZu0v1",
+              "action": "attack",
               "value": 14
             }
           ]
@@ -14337,10 +14831,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Weapon0Part0",
+              "itemId": "hE7gyE6B7C8D9EaG",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.5FXRZy1w2x3y4z5A.Weapon0Part0",
+              "itemId": "hE7gyE6B7C8D9EaG",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -14490,14 +14988,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon1Part0",
+              "itemId": "s5sa1B5A6B7C8D9E",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon1Part0",
+              "itemId": "s5sa1B5A6B7C8D9E",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.OjaxlXoUpVqWrXsY.Weapon0Part0",
+              "itemId": "tXvSLNhNiOjPkQlR",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -14625,6 +15129,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.x4cqdG9EaGbHcIdJ.Weapon0Part0",
+              "itemId": "KPUT6dFaGbHcIdJe",
+              "action": "attack",
               "value": 14
             }
           ]
@@ -14754,6 +15260,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.0o5gF9A6B7C8D9Ea.Weapon0Part0",
+              "itemId": "dCNDfdFaGbHcIdJe",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -14881,6 +15389,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.1bVcYSlRmSnToUpV.Weapon0Part0",
+              "itemId": "JAZMlmQlRmSnToUp",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -15010,6 +15520,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.sEpoCSnToUpVqWrX.Weapon0Part0",
+              "itemId": "0f8lD8C8D9EaGbHc",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -15139,10 +15651,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Weapon0Part0",
+              "itemId": "rI0Fiy3y4z5A6B7C",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.Ii4dUOiOjPkQlRmS.Weapon0Part0",
+              "itemId": "rI0Fiy3y4z5A6B7C",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -15294,14 +15810,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon1Part0",
+              "itemId": "XB3KW4z5A6B7C8D9",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon1Part0",
+              "itemId": "XB3KW4z5A6B7C8D9",
+              "action": "attack",
               "value": 8
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.wVmetmRmSnToUpVq.Weapon0Part0",
+              "itemId": "GCoZuKfLgMhNiOjP",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -15437,6 +15959,8 @@ export const BESTIARY_ENTRIES = [
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.qvQbCJeKfLgMhNiO.Weapon0Part0",
+              "itemId": "2Mk8KQjPkQlRmSnT",
+              "action": "attack",
               "value": 16
             }
           ]
@@ -15588,10 +16112,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon0Part0",
+              "itemId": "PvQLddE9EaGbHcId",
+              "action": "attack",
               "value": 14
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.wYxOQTmSnToUpVqW.Weapon1Part0",
+              "itemId": "ywb0LSjPkQlRmSnT",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -15719,6 +16247,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.p841mQjPkQlRmSnT.Weapon0Part0",
+              "itemId": "CND8c6x3y4z5A6B7",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -15846,6 +16376,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.2sZ3UZtZu0v1w2x3.Weapon0Part0",
+              "itemId": "8ZL2Sz2x3y4z5A6B",
+              "action": "attack",
               "value": 16
             }
           ]
@@ -15995,14 +16527,20 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon0Part0",
+              "itemId": "7rmIXLfLgMhNiOjP",
+              "action": "attack",
               "value": 15
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon1Part0",
+              "itemId": "YLXi5IcIdJeKfLgM",
+              "action": "attack",
               "value": 10
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.h3NsTz4z5A6B7C8D.Weapon1Part0",
+              "itemId": "YLXi5IcIdJeKfLgM",
+              "action": "attack",
               "value": 9
             }
           ]
@@ -16130,10 +16668,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Weapon0Part0",
+              "itemId": "sgh4k9D9EaGbHcId",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.cP0QED8D9EaGbHcI.Weapon0Part0",
+              "itemId": "sgh4k9D9EaGbHcId",
+              "action": "attack",
               "value": 8
             }
           ]
@@ -16263,10 +16805,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Weapon0Part0",
+              "itemId": "HVwPDnSnToUpVqWr",
+              "action": "attack",
               "value": 12
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.8Yv3GSkQlRmSnToU.Weapon0Part0",
+              "itemId": "HVwPDnSnToUpVqWr",
+              "action": "attack",
               "value": 10
             }
           ]
@@ -16394,6 +16940,8 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.NmxSC7A6B7C8D9Ea.Weapon0Part0",
+              "itemId": "hWPkJB5A6B7C8D9E",
+              "action": "attack",
               "value": 12
             }
           ]
@@ -16521,10 +17069,14 @@ export const BESTIARY_ENTRIES = [
           [
             {
               "attackKey": "TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Weapon0Part0",
+              "itemId": "yGi379D9EaGbHcId",
+              "action": "attack",
               "value": 13
             },
             {
               "attackKey": "TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Weapon0Part0",
+              "itemId": "yGi379D9EaGbHcId",
+              "action": "attack",
               "value": 12
             }
           ]

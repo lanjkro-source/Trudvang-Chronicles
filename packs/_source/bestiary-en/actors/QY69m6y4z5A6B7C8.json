@@ -172,20 +172,28 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "EWWSpRiOjPkQlRmS",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Unarmed",
+          "itemId": "EWWSpRiOjPkQlRmS",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Stjorn makir (morning star)",
+          "itemId": "F0NaAI9EaGbHcIdJ",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Stjorn makir (morning star)",
+          "itemId": "F0NaAI9EaGbHcIdJ",
+          "action": "attack",
           "value": 10
         }
       ]

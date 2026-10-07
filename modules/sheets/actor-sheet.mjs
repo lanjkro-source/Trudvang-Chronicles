@@ -12,6 +12,9 @@ import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../creature-ability-data.mjs";
 import {isNpcEquipment} from "../npc-inventory.mjs";
+import {npcPreparedActionRows} from "../rules/npc-prepared-actions.mjs";
+import {npcCombatCycleDisplay} from "../rules/npc-combat-cycle.mjs";
+import {magicCapacities} from "../rules/magic-capacity.mjs";
 import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
@@ -73,6 +76,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "roll-fear-factor": TrudvangActorSheet.#onAction,
       "roll-npc-health": TrudvangActorSheet.#onAction,
       "reset-combat": TrudvangActorSheet.#onAction,
+      "npc-prepared-action": TrudvangActorSheet.#onAction,
+      "restore-vitner": TrudvangActorSheet.#onAction,
       "reset-traits": TrudvangActorSheet.#onAction,
       "movement-action": TrudvangActorSheet.#onAction,
       "item-roll": TrudvangActorSheet.#onAction,
@@ -376,6 +381,21 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
     if (this.actor.type === "npc") {
+      context.npcPreparedActions = npcPreparedActionRows(this.actor, {format: (key, data) => game.i18n.format(key, data), localize: key => game.i18n.localize(key)});
+      context.npcCombatCycle = npcCombatCycleDisplay(this.actor, game.combat);
+      context.unlimitedVitner = this.actor.unlimitedVitner;
+      const level = id => Number(this.actor.findRuleKnowledge(id)?.system.level || 0);
+      const capacities = magicCapacities({skill: key => this.actor.getSkillValue(key), level,
+        hasReligion: Boolean(this.actor.selectedReligion)});
+      context.npcManualVitnerMax = capacities.vitner === null;
+      context.npcManualDivinityMax = capacities.divinity === null;
+      const hasSpells = tablets.some(item => item.system.tabletType === "vitner") || this.actor.items.some(item => item.type === "spell");
+      const hasPowers = tablets.some(item => item.system.tabletType === "holy") || this.actor.items.some(item => item.type === "divineFeat");
+      context.npcHasVitner = hasSpells || Boolean(this.actor.selectedVitnerType) || this.actor.unlimitedVitner || Number(this.actor.system.resources.vitner.max) > 0;
+      context.npcHasDivinity = hasPowers || Boolean(this.actor.selectedReligion) || Number(this.actor.system.resources.divinity.max) > 0
+        || Number(this.actor.system.resources.divinity.temporary) > 0;
+      context.needsInnateMagic = (hasSpells && !(level("vitnerShaping") > 0 && ["galding", "sejding", "vyrding"].some(id => level(id) > 0)))
+        || (hasPowers && !(level("invoke") > 0 && Object.values(TRUDVANG.religions).some(religion => level(religion.specialty) > 0)));
       context.npcHealthRange = npcHealthRange(this.actor);
       context.npcMovement = npcMovementRows(this.actor.system, {localize: key => game.i18n.localize(key)});
       context.npcMovementHint = context.npcMovement.map(row => `${row.mode} : ${row.distance} / ${row.max}`).join(" | ");
@@ -389,8 +409,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       }));
     }
     const powers = this.actor.items.filter(item => ["spell", "divineFeat"].includes(item.type));
-    context.hasActiveSpellTracker = Boolean(context.vitnerProfile && Number(this.actor.system.resources.vitner.max || 0) > 0);
-    context.activeSpellLimit = context.hasActiveSpellTracker ? Number(context.vitnerProfile.level || 0) : 0;
+    context.hasActiveSpellTracker = Boolean(this.actor.activeSpellLimit > 0
+      && (Number(this.actor.system.resources.vitner.max || 0) > 0 || this.actor.unlimitedVitner));
+    context.activeSpellLimit = context.hasActiveSpellTracker ? Number.isFinite(this.actor.activeSpellLimit) ? this.actor.activeSpellLimit : "∞" : 0;
     context.activeSpells = context.hasActiveSpellTracker
       ? activeSpellInstances(this.actor)
         .map(({id, item, cost, duration}) => ({id: item.id, name: item.name, img: item.img, castId: id, cost, duration}))
@@ -473,7 +494,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
       "item-equip", "item-ready", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
-      "reset-traits"
+      "reset-traits", "npc-prepared-action", "reset-combat", "restore-vitner"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
     const itemId = target.closest("[data-item-id]")?.dataset.itemId;
@@ -512,6 +533,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-fear-factor": return this.actor.rollFearFactor();
       case "inspect-global-stat": return showInspectionDialog(prepareActorStatInspection(this.actor, target.dataset.stat, TRUDVANG));
       case "reset-combat": return this.actor.resetCombatPoints();
+      case "npc-prepared-action": return this.actor.rollNpcPreparedAction(Number(target.dataset.combo), Number(target.dataset.step));
+      case "restore-vitner": return this.actor.restoreVitner();
       case "reset-traits": return this.actor.resetNpcTraits();
       case "movement-action": return this.actor.rollCombatMovement();
       case "item-roll": return item?.roll();
@@ -557,6 +580,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
     if (this.actor.type === "npc") {
+      if (foundry.utils.hasProperty(changes, "system.magic.castingTarget")
+        && foundry.utils.getProperty(changes, "system.magic.castingTarget") === "") {
+        foundry.utils.setProperty(changes, "system.magic.castingTarget", null);
+      }
       for (const key of Object.keys(TRUDVANG.traits)) {
         const path = `system.traitCurrent.${key}`;
         if (!foundry.utils.hasProperty(changes, path)) continue;

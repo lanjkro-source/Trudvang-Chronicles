@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { activateHighestInitiativeCombatant, combatInitiativesAreReady, combatResourcesRefreshIsDue, decrementSurvivalRounds, isCombatRoundStart, isCombatTurnStart, refreshCombatantResources, resetCombatInitiatives, resetCurrentCombatantResources } from "../modules/combat.mjs";
 import {npcCombatActionRounds} from "../modules/rules/npc-summary.mjs";
+import {nextNpcCombatCycle, npcCombatCycleDisplay} from "../modules/rules/npc-combat-cycle.mjs";
 
 test("combat resource resets occur only when the tracker advances to a turn", () => {
   assert.equal(isCombatTurnStart({round: 0, turn: null, combatantId: null}, {round: 1, turn: 0, combatantId: "combatant-id"}), true);
@@ -70,13 +71,45 @@ test("large NPCs retain spent PC and AA across their size-based combat cycles", 
   assert.equal(npcCombatActionRounds("12t"), 4);
   assert.equal(npcCombatActionRounds("1/2"), 1);
   let resets = 0;
-  const actor = {type: "npc", system: {details: {size: "10t"}}, resetCombatPoints: async () => { resets += 1; }};
+  const actor = {type: "npc", system: {details: {size: "10t"}},
+    update: async changes => { actor.system.combatCycle = changes["system.combatCycle"]; },
+    resetCombatPoints: async ({cycle}) => { resets += 1; actor.system.combatCycle = cycle; }};
   const combat = {started: true, combatants: new Map([["large", {id: "large", actor}]])};
   for (const round of [1, 2, 3, 4]) {
     await resetCurrentCombatantResources(combat, {combatantId: "large", round}, {isActiveGM: true});
   }
   assert.equal(resets, 2, "a size-10 NPC refreshes only on rounds 1 and 4");
   assert.equal(combatResourcesRefreshIsDue({...actor, type: "character"}, 2), true);
+});
+
+test("an NPC joining a later round receives a full phase, whose countdown survives duplicate hooks", async () => {
+  let resets = 0;
+  const actor = {type: "npc", system: {details: {size: "8t"}, usedPreparedActions: ["0:1"]},
+    update: async changes => { actor.system.combatCycle = changes["system.combatCycle"]; },
+    resetCombatPoints: async ({cycle}) => { resets += 1; actor.system.combatCycle = cycle; actor.system.usedPreparedActions = []; }};
+  const combat = {id: "late", started: true, combatants: new Map([["late", {id: "late", actor}]])};
+  const turn = round => resetCurrentCombatantResources(combat, {combatantId: "late", round}, {isActiveGM: true});
+  await Promise.all([turn(5), turn(5)]);
+  assert.equal(resets, 1);
+  assert.deepEqual(npcCombatCycleDisplay(actor, combat), {remaining: 3, max: 3});
+  actor.system.usedPreparedActions = ["0:1"];
+  await turn(6); await turn(6);
+  assert.equal(actor.system.combatCycle.remaining, 2);
+  assert.deepEqual(actor.system.usedPreparedActions, ["0:1"]);
+  await turn(7);
+  assert.equal(actor.system.combatCycle.remaining, 1);
+  await turn(8);
+  assert.equal(resets, 2); assert.deepEqual(actor.system.usedPreparedActions, []);
+  assert.equal(actor.system.combatCycle.remaining, 3);
+  assert.deepEqual(npcCombatCycleDisplay(actor, {id: "different"}), {remaining: 3, max: 3});
+});
+
+test("cycle state handles skipped rounds, rewinds, new combats and size changes", () => {
+  const initial = nextNpcCombatCycle({}, {combatId: "combat", round: 4, size: "5"}).state;
+  assert.equal(nextNpcCombatCycle(initial, {combatId: "combat", round: 3, size: "5"}).changed, false);
+  assert.equal(nextNpcCombatCycle(initial, {combatId: "combat", round: 7, size: "5"}).state.remaining, 1);
+  assert.equal(nextNpcCombatCycle(initial, {combatId: "other", round: 4, size: "5"}).refresh, true);
+  assert.equal(nextNpcCombatCycle(initial, {combatId: "combat", round: 4, size: "10"}).state.remaining, 3);
 });
 
 test("turn resource resets ignore inactive combats, missing combatants, and non-GMs", async () => {

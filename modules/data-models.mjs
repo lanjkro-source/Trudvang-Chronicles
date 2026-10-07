@@ -311,11 +311,17 @@ export class NpcData extends foundry.abstract.TypeDataModel {
       // existing worlds validate without any migration.
       attacks: new fields.ArrayField(new fields.ArrayField(schema({
         attack: string(),
+        itemId: string(),
         action: string(),
         mode: string(),
         distance: number(0, {min: 0}),
         value: integer(0)
       }), {required: true, initial: []}), {required: true, initial: []}),
+      combatCycle: schema({combatId: string(), round: integer(0, {min: 0}),
+        remaining: integer(0, {min: 0}), max: integer(1, {min: 1}), generation: integer(0, {min: 0})}),
+      usedPreparedActions: new fields.ArrayField(string(), {required: true, initial: []}),
+      magic: schema({castingTarget: new fields.NumberField({required: true, nullable: true, initial: null}),
+        unlimitedVitner: boolean(false)}),
       description: html()
     };
   }
@@ -537,7 +543,8 @@ export const ACTOR_DATA_MODELS = {character: CharacterData, npc: NpcData};
 export class CreatureAbilityData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {catalogId: string(), description: html(), summary: string(),
-      source: schema({book: string(), page: integer(0, {min: 0})}), ignoreWoundPenalties: boolean(false)};
+      source: schema({book: string(), page: integer(0, {min: 0})}), ignoreWoundPenalties: boolean(false),
+      vitnerCapacityBonus: integer(0), unlimitedVitner: boolean(false)};
   }
 }
 export const ITEM_DATA_MODELS = {

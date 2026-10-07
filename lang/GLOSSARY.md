@@ -780,6 +780,27 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Npc.MagicTab` | Magic | Magie |
+| `TRUDVANG.Npc.NoMagic` | No known tablets, spells or divine powers. | Aucune tablette, aucun sortilège ni pouvoir connu. |
+| `TRUDVANG.Npc.UnlimitedVitner` | Unlimited daily vitner | Vitner sans limite quotidienne |
+| `TRUDVANG.Npc.RestoreVitner` | Restore Vitner Points | Renouveler les points de vitner |
+| `TRUDVANG.Npc.TemporaryDivinity` | Temporary Divinity Points | Points de divinité temporaires |
+| `TRUDVANG.Npc.InnateMagic` | Innate magic | Magie innée |
+| `TRUDVANG.Npc.InnateMagicTargetLabel` | Innate casting SV | VC d’incantation innée |
+| `TRUDVANG.Npc.InnateMagicTarget` | Innate magic: base SV {target} | Magie innée : VC de base {target} |
+| `TRUDVANG.Npc.InnateMagicHint` | The profile gives no numerical casting method: the GM must set this SV before casting spells. | Aucune méthode d’incantation chiffrée dans le profil : le MJ doit renseigner cette VC avant de lancer les sortilèges. |
+| `TRUDVANG.Npc.ConfigureMagicMethod` | Set casting skills, or the innate magic SV in the NPC’s Magic tab. | Renseignez les compétences d’incantation, ou la VC de magie innée dans l’onglet Magie du PNJ. |
+| `TRUDVANG.Npc.CombatCycleHint` | Remaining action rounds / phase length. CP, WA and usage marks refresh at the start of the next phase. | Tours de jeu restants / durée de la phase. Les PC, AA et marques d’utilisation sont renouvelés au prochain début de phase. |
+| `TRUDVANG.Npc.PreparedActionLabel` | {name} · {points} CP | {name} · {points} PC |
+| `TRUDVANG.Npc.PreparedActionUsed` | Already used during this phase | Déjà utilisée durant cette phase |
+| `TRUDVANG.Npc.NoPreparedActions` | No prepared action combinations. | Aucune combinaison d’actions préparée. |
+| `TRUDVANG.Npc.MissingPreparedAction` | {name}: the corresponding weapon or action could not be found. | {name} : arme ou action correspondante introuvable. |
+| `TRUDVANG.Npc.PreparedWeaponNotReady` | {name}: this weapon is not readied. | {name} : cette arme n’est pas dégainée. |
+| `TRUDVANG.Npc.PreparedWeaponDepleted` | {name}: no Weapon Actions left. | {name} : aucune action d’arme restante. |
+| `TRUDVANG.Npc.PreparedPointsUnavailable` | {name}: {points} CP planned, {available} CP currently available. | {name} : {points} PC prévus, {available} PC actuellement disponibles. |
+| `TRUDVANG.Npc.PreparedActionHint` | Open {name} with {points} CP preallocated ({available} available). | Ouvrir la fenêtre de {name} avec {points} PC préalloués ({available} disponibles). |
+| `TRUDVANG.Npc.PreparedActionUnavailable` | Prepared action “{name}” is unavailable (weapon, CP, WA or movement). | L’action préparée « {name} » n’est pas disponible (arme, PC, AA ou mouvement). |
+| `TRUDVANG.Npc.SpecialActionCost` | {points} CP allocated to the special action. | {points} PC investis dans l’action spéciale. |
 | `TRUDVANG.Npc.Initial` | Initial | Initiale |
 | `TRUDVANG.Npc.Current` | Current | Actuelle |
 | `TRUDVANG.Npc.EditInitialTraits` | Edit initial traits | Modifier les traits initiaux |

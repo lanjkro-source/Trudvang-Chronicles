@@ -67,10 +67,14 @@
       [
         {
           "attack": "Défense",
+          "itemId": "HVwPDnSnToUpVqWr",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Défense",
+          "itemId": "HVwPDnSnToUpVqWr",
+          "action": "attack",
           "value": 10
         }
       ]

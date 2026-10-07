@@ -205,20 +205,28 @@
       [
         {
           "attack": "Bite",
+          "itemId": "0ISxU4z5A6B7C8D9",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Unarmed",
+          "itemId": "5lKuVUlRmSnToUpV",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Barda klót (battle chain)",
+          "itemId": "KjZF4aC7C8D9EaGb",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Barda klót (battle chain)",
+          "itemId": "KjZF4aC7C8D9EaGb",
+          "action": "attack",
           "value": 11
         }
       ]

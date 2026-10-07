@@ -8,7 +8,7 @@
     <div class="resource body"><span class="npc-health-label">{{localize "TRUDVANG.Resource.Body"}} <button type="button" class="npc-health-roll" data-action="roll-npc-health" title="{{localize 'TRUDVANG.Npc.RollHealth' min=npcHealthRange.min max=npcHealthRange.max}}" aria-label="{{localize 'TRUDVANG.Npc.RollHealth' min=npcHealthRange.min max=npcHealthRange.max}}" {{#unless (and editable npcHealthRange.valid)}}disabled{{/unless}}><i class="fas fa-dice"></i></button></span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}" aria-label="{{localize 'TRUDVANG.Npc.Current'}}"> / <input name="system.resources.body.max" type="number" value="{{system.resources.body.max}}" aria-label="{{localize 'TRUDVANG.Npc.Initial'}}"></span></div>
     <div class="resource npc-movement"><span>{{localize "TRUDVANG.Resource.Movement"}} <small>{{localize "TRUDVANG.Npc.MovementValues"}}</small></span><div class="npc-movement-list">{{#each npcMovement as |movement|}}<span class="npc-movement-mode">{{#unless @first}}<span class="npc-movement-separator" aria-hidden="true">|</span>{{/unless}}{{movement.mode}} : <strong>{{movement.distance}} / {{movement.max}}</strong></span>{{/each}}</div></div>
   </section>
-  <nav class="sheet-tabs tabs" data-group="primary"><a class="item" data-tab="summary">{{localize "TRUDVANG.Tab.Summary"}}</a><a class="item" data-tab="actions">{{localize "TRUDVANG.Tab.Actions"}}</a><a class="item" data-tab="equipment">{{localize "TRUDVANG.Tab.Equipment"}}</a><a class="item" data-tab="effects">{{localize "TRUDVANG.Tab.Effects"}}</a><a class="item" data-tab="notes">{{localize "TRUDVANG.Tab.Notes"}}</a></nav>
+  <nav class="sheet-tabs tabs" data-group="primary"><a class="item" data-tab="summary">{{localize "TRUDVANG.Tab.Summary"}}</a><a class="item" data-tab="combat">{{localize "TRUDVANG.Tab.Combat"}}</a><a class="item" data-tab="magic">{{localize "TRUDVANG.Npc.MagicTab"}}</a><a class="item" data-tab="equipment">{{localize "TRUDVANG.Tab.Equipment"}}</a><a class="item" data-tab="effects">{{localize "TRUDVANG.Tab.Effects"}}</a><a class="item" data-tab="notes">{{localize "TRUDVANG.Tab.Notes"}}</a></nav>
   <section class="sheet-body">
     <div class="tab summary" data-group="primary" data-tab="summary">
       <section class="panel npc-health-panel" aria-label="{{localize 'TRUDVANG.Section.Status'}}">
@@ -122,7 +122,7 @@
         </ol>
       </section>
     </div>
-    <div class="tab actions" data-group="primary" data-tab="actions">
+    <div class="tab combat" data-group="primary" data-tab="combat">
       <section class="panel combat-reserves-panel">
         <div class="section-heading"><h2>{{localize "TRUDVANG.Resource.CombatPools"}}</h2><span><button type="button" data-action="inspect-global-stat" data-stat="combat" title="{{localize 'TRUDVANG.Inspection.Inspect'}}"><i class="fas fa-circle-info"></i></button><button type="button" data-action="reset-combat" {{#unless editable}}disabled{{/unless}}><i class="fas fa-rotate"></i> {{localize "TRUDVANG.Action.ResetCombat"}}</button></span></div>
         <div class="combat-pool-grid" aria-label="{{localize 'TRUDVANG.Resource.CombatPools'}}">
@@ -137,6 +137,18 @@
           {{/if}}
           {{/each}}
         </div>
+      </section>
+      <section class="panel npc-prepared-panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Tab.Actions"}}</h2><strong class="npc-cycle-counter" title="{{localize 'TRUDVANG.Npc.CombatCycleHint'}}"><i class="fas fa-hourglass-half" aria-hidden="true"></i> {{npcCombatCycle.remaining}} / {{npcCombatCycle.max}}</strong></div>
+        <ol class="npc-prepared-combinations">
+          {{#each npcPreparedActions as |combo|}}
+          <li class="npc-prepared-combination">
+            {{#each combo.actions as |action|}}
+            <button type="button" class="npc-prepared-action {{#if action.used}}used{{/if}}" data-action="npc-prepared-action" data-combo="{{action.comboIndex}}" data-step="{{action.stepIndex}}" title="{{action.tooltip}}" {{#unless (and @root.editable action.canUse)}}disabled{{/unless}}>{{#if action.used}}<i class="fas fa-check" aria-hidden="true"></i>{{/if}}{{localize "TRUDVANG.Npc.PreparedActionLabel" name=action.name points=action.points}}</button>
+            {{/each}}
+          </li>
+          {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoPreparedActions"}}</li>{{/each}}
+        </ol>
       </section>
       <section class="panel">
         <h2>{{localize "TRUDVANG.Section.Weapons"}}</h2>
@@ -175,6 +187,40 @@
         <li class="item natural-action"><img src="icons/svg/wingfoot.svg" alt=""><span class="item-name">{{localize "TRUDVANG.Combat.MovementAction"}}</span><span class="item-detail" title="{{npcMovementHint}}">{{npcMovementHint}}</span><button type="button" data-action="movement-action" title="{{localize 'TRUDVANG.Combat.MovementAction'}}" {{#unless (and editable isInCombat)}}disabled{{/unless}}><i class="fas fa-person-walking"></i></button><span class="icon-placeholder"></span><span class="icon-placeholder"></span><span class="icon-placeholder"></span></li>
         <li class="item generic-action"><img src="icons/svg/d20-grey.svg" alt=""><span class="item-name">{{localize "TRUDVANG.Combat.OtherAction"}}</span><span class="item-detail" title="{{localize 'TRUDVANG.Combat.OtherActionHint'}}">{{localize "TRUDVANG.Combat.OtherActionHint"}}</span><button type="button" data-action="generic-combat-action" title="{{localize 'TRUDVANG.Action.SpendCombat'}}" {{#unless (and editable isInCombat)}}disabled{{/unless}}><i class="fas fa-person"></i></button></li>
       </ol></section>
+    </div>
+    <div class="tab magic" data-group="primary" data-tab="magic">
+      <div class="magic-concentration-row"><button type="button" data-action="roll-concentration" {{#unless editable}}disabled{{/unless}}><i class="fas fa-dice-d20"></i> {{localize "TRUDVANG.Dialog.ConcentrationRoll"}}</button></div>
+      {{#if (or npcHasVitner npcHasDivinity)}}<section class="panel npc-magic-resources">
+        {{#if npcHasVitner}}
+        <div class="npc-magic-resource">
+          <label>{{localize "TRUDVANG.Resource.Vitner"}}</label>
+          {{#if unlimitedVitner}}<strong title="{{localize 'TRUDVANG.Npc.UnlimitedVitner'}}">∞</strong>{{else}}
+          <span><input name="system.resources.vitner.value" type="number" min="0" value="{{system.resources.vitner.value}}" aria-label="{{localize 'TRUDVANG.Resource.Vitner'}} — {{localize 'TRUDVANG.Npc.Current'}}" {{#unless editable}}readonly{{/unless}}> /
+            {{#if npcManualVitnerMax}}<input name="system.resources.vitner.max" type="number" min="0" value="{{system.resources.vitner.max}}" aria-label="{{localize 'TRUDVANG.Resource.Vitner'}} — {{localize 'TRUDVANG.Npc.Initial'}}" {{#unless editable}}readonly{{/unless}}>{{else}}<strong>{{system.resources.vitner.max}}</strong>{{/if}}</span>
+          <button type="button" data-action="restore-vitner" title="{{localize 'TRUDVANG.Npc.RestoreVitner'}}" {{#unless editable}}disabled{{/unless}}><i class="fas fa-rotate"></i></button>{{/if}}
+        </div>
+        {{/if}}{{#if npcHasDivinity}}<div class="npc-magic-resource">
+          <label>{{localize "TRUDVANG.Resource.Divinity"}}</label>
+          <span><input name="system.resources.divinity.value" type="number" min="0" value="{{system.resources.divinity.value}}" aria-label="{{localize 'TRUDVANG.Resource.Divinity'}} — {{localize 'TRUDVANG.Npc.Current'}}" {{#unless editable}}readonly{{/unless}}> /
+            {{#if npcManualDivinityMax}}<input name="system.resources.divinity.max" type="number" min="0" value="{{system.resources.divinity.max}}" aria-label="{{localize 'TRUDVANG.Resource.Divinity'}} — {{localize 'TRUDVANG.Npc.Initial'}}" {{#unless editable}}readonly{{/unless}}>{{else}}<strong>{{system.resources.divinity.max}}</strong>{{/if}} +
+            <input name="system.resources.divinity.temporary" type="number" min="0" value="{{system.resources.divinity.temporary}}" aria-label="{{localize 'TRUDVANG.Npc.TemporaryDivinity'}}" {{#unless editable}}readonly{{/unless}}></span>
+        </div>{{/if}}
+        <dl class="status-list">{{#if npcHasVitner}}<dt>{{localize "TRUDVANG.Field.VitnerType"}}</dt><dd>{{#if vitnerProfile}}{{localize vitnerProfile.label}}{{else}}—{{/if}}</dd>{{/if}}{{#if npcHasDivinity}}<dt>{{localize "TRUDVANG.Field.Religion"}}</dt><dd>{{#if religionProfile}}{{localize religionProfile.label}}{{else}}—{{/if}}</dd>{{/if}}</dl>
+        {{#if needsInnateMagic}}<label class="npc-innate-magic">{{localize "TRUDVANG.Npc.InnateMagicTargetLabel"}}<input name="system.magic.castingTarget" type="number" value="{{system.magic.castingTarget}}" {{#unless editable}}readonly{{/unless}}></label><p class="hint">{{localize "TRUDVANG.Npc.InnateMagicHint"}}</p>{{/if}}
+      </section>{{/if}}
+      {{#if hasActiveSpellTracker}}<section class="panel active-spell-panel"><div class="section-heading"><h2>{{localize "TRUDVANG.Section.ActiveSpells"}}</h2><strong>{{localize "TRUDVANG.Field.ActiveSpellsCount" current=activeSpells.length max=activeSpellLimit}}</strong></div><ol class="item-list active-spell-list">{{#each activeSpells as |item|}}<li class="item" data-item-id="{{item.id}}"><img src="{{item.img}}" alt=""><button type="button" class="item-name" data-action="item-edit">{{item.name}}</button><span class="item-detail" title="{{item.duration}}">{{localize "TRUDVANG.Field.ActiveCost"}} {{item.cost}}</span><button type="button" data-action="end-active-spell" data-cast-id="{{item.castId}}" title="{{localize 'TRUDVANG.Action.EndActiveSpell'}}" {{#unless @root.editable}}disabled{{/unless}}><i class="fas fa-xmark"></i></button></li>{{else}}<li class="empty">{{localize "TRUDVANG.Empty.ActiveSpells"}}</li>{{/each}}</ol></section>{{/if}}
+      <section class="panel">
+        <div class="section-heading"><h2>{{localize "TRUDVANG.Section.Magic"}}</h2><span class="tree-controls"><button type="button" data-action="toggle-inactive-magic" title="{{localize 'TRUDVANG.Action.HideInactiveMagic'}}"><i class="fas fa-eye-slash"></i></button><button type="button" data-action="add-tablet" {{#unless editable}}disabled{{/unless}}><i class="fas fa-plus"></i> {{localize "TRUDVANG.Action.AddTablet"}}</button></span></div>
+        <div class="knowledge-tree magic-tree npc-magic-tree">
+          {{#each magicTree as |node|}}
+          <details class="magic-branch" data-tree-key="tablet:{{node.item.id}}" open>
+            <summary><div class="knowledge-node tablet-node" data-item-id="{{node.item.id}}"><button type="button" class="image-toggle" data-action="toggle-tree"><img src="{{node.item.img}}" alt=""></button><button type="button" class="item-name" data-action="item-edit" title="{{node.item.system.summary}}">{{node.item.name}}</button><span>{{localize "TRUDVANG.Field.Level"}} {{node.item.system.level}}</span></div></summary>
+            {{#each node.children as |child|}}<div class="knowledge-node spell-node {{#if child.inactive}}inactive-magic{{/if}}" data-item-id="{{child.item.id}}"><img src="{{child.item.img}}" alt=""><button type="button" class="roll-icon" data-action="item-roll" title="{{#if child.item.system.isRune}}{{localize 'TRUDVANG.Power.RuneObjectNeeded'}}{{else}}{{localize 'TRUDVANG.Action.Roll'}}{{/if}}" {{#if child.item.system.isRune}}disabled{{else}}{{#if child.inactive}}disabled{{else}}{{#unless @root.editable}}disabled{{/unless}}{{/if}}{{/if}}><i class="fas fa-wand-sparkles"></i></button><button type="button" class="item-name" data-action="item-edit" title="{{child.item.system.summary}}">{{child.item.name}}</button><span>{{localize "TRUDVANG.Field.Level"}} {{child.displayLevel}}</span><span class="power-cost">{{#unless child.item.system.isRune}}{{localize "TRUDVANG.Field.Cost"}} {{child.item.system.cost}}{{/unless}}</span></div>{{/each}}
+          </details>
+          {{/each}}
+          {{#if unassignedMagic.length}}<h3>{{localize "TRUDVANG.Field.Unassigned"}}</h3>{{#each unassignedMagic as |item|}}<div class="knowledge-node spell-node orphan" data-item-id="{{item.id}}"><img src="{{item.img}}" alt=""><button type="button" class="roll-icon" data-action="item-roll" {{#if item.system.isRune}}disabled{{else}}{{#unless @root.editable}}disabled{{/unless}}{{/if}}><i class="fas fa-wand-sparkles"></i></button><button type="button" class="item-name" data-action="item-edit" title="{{item.system.summary}}">{{item.name}}</button><span>{{localize "TRUDVANG.Field.Level"}} {{item.system.level}}</span><span class="power-cost">{{localize "TRUDVANG.Field.Cost"}} {{item.system.cost}}</span></div>{{/each}}{{else}}{{#unless magicTree.length}}<p class="empty">{{localize "TRUDVANG.Npc.NoMagic"}}</p>{{/unless}}{{/if}}
+        </div>
+      </section>
     </div>
     <div class="tab effects" data-group="primary" data-tab="effects"><section class="panel effects-panel"><div class="section-heading"><h2>{{localize "TRUDVANG.Section.Effects"}}</h2><span><button type="button" data-action="effect-add"><i class="fas fa-plus"></i> {{localize "TRUDVANG.Action.AddEffect"}}</button></span></div><ol class="effect-list">{{#each effects as |effect|}}<li class="effect-row {{#unless effect.active}}inactive{{/unless}}"><img src="{{effect.img}}"><button type="button" class="effect-name" data-action="effect-edit" data-effect-uuid="{{effect.uuid}}">{{effect.name}}</button><span class="effect-source">{{effect.source}}</span><span class="effect-duration"><i class="fas fa-clock"></i> {{effect.duration}}</span>{{#if effect.canEdit}}<button type="button" data-action="effect-toggle" data-effect-uuid="{{effect.uuid}}"><i class="fas {{#if effect.disabled}}fa-toggle-off{{else}}fa-toggle-on{{/if}}"></i></button><button type="button" data-action="effect-delete" data-effect-uuid="{{effect.uuid}}"><i class="fas fa-trash"></i></button>{{/if}}</li>{{else}}<li class="empty">{{localize "TRUDVANG.Empty.Effects"}}</li>{{/each}}</ol></section></div>
     <div class="tab notes" data-group="primary" data-tab="notes"><section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Description"}}</h2>{{editor enriched.description target="system.description" button=true editable=editable}}</section><section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Notes"}}</h2>{{editor enriched.notes target="system.notes" button=true editable=editable}}</section></div>

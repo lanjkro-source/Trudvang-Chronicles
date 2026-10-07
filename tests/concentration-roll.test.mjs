@@ -90,7 +90,7 @@ test("the actor concentration action rolls, posts to chat, and animates after di
     canPerformAction: () => true,
     getTraitValue: () => 2,
     getRollModifier: () => -1,
-    findKnowledgeItem: key => ({system: {level: {vitnerFocus: 1, safeWeaving: 2}[key] || 0}})
+    findRuleKnowledge: key => ({system: {level: {vitnerFocus: 1, safeWeaving: 2}[key] || 0}})
   };
   const messagesBefore = chatMessages.length;
   const animationsBefore = diceSoNiceCalls.length;

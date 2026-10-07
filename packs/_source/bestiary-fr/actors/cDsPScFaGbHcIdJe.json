@@ -183,14 +183,20 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "q9jJWrToUpVqWrXs",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Morsure",
+          "itemId": "q9jJWrToUpVqWrXs",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Mains nues",
+          "itemId": "xhy2SRlRmSnToUpV",
+          "action": "attack",
           "value": 8
         }
       ]

@@ -12,6 +12,9 @@ import { actorParticipatesInCombat, canThrowWeapon, combatPointSpendingUpdates, 
 import { parseFearFactor, resolveFearStatus, resolveInsanityState } from "../rules/fear-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcCombatMovementModes, npcHealthRange, npcMovementRows} from "../rules/npc-summary.mjs";
 import {creatureTokenDimensions} from "../rules/creature-token-size.mjs";
+import {nextNpcCombatCycle} from "../rules/npc-combat-cycle.mjs";
+import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
+import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -105,20 +108,13 @@ export class TrudvangActor extends BaseActor {
     }
     if (isImmobilized(this)) system.movement.current = 0;
 
-    if (this.type === "character") {
-      const vitnerType = this.selectedVitnerType;
-      const callVitner = Number(this.findKnowledgeItem("callVitner")?.system.level || 0);
-      const vitnerHabit = Number(this.findKnowledgeItem("vitnerHabit")?.system.level || 0);
-      system.resources.vitner.max = vitnerType && callVitner
-        ? this.getSkillValue("vitnerCraft") + (5 * callVitner) + (vitnerType.capacityPerLevel * vitnerType.level) + (10 * vitnerHabit) + Number(system.modifiers.vitnerMax || 0)
-        : 0;
-      const religion = this.selectedReligion;
-      const divinePower = Number(this.findKnowledgeItem("divinePower")?.system.level || 0);
-      const faithful = Number(this.findKnowledgeItem("faithful")?.system.level || 0);
-      const powerful = Number(this.findKnowledgeItem("powerful")?.system.level || 0);
-      system.resources.divinity.max = religion && divinePower
-        ? this.getSkillValue("faith") + (3 * divinePower) + (7 * faithful) + (7 * powerful) + Number(system.modifiers.divinityMax || 0)
-        : 0;
+    const capacities = magicCapacities({skill: key => this.getSkillValue(key),
+      level: id => Number(this.findRuleKnowledge(id)?.system.level || 0),
+      hasReligion: Boolean(this.selectedReligion),
+      vitnerBonus: this.type === "npc" ? creatureMagicTraits(this.items).vitnerBonus : 0});
+    for (const resource of ["vitner", "divinity"]) {
+      const base = capacities[resource] ?? (this.type === "npc" ? Number(system.resources[resource].max || 0) : 0);
+      system.resources[resource].max = Math.max(0, base + Number(system.modifiers[`${resource}Max`] || 0));
     }
 
     const combatPools = resolveCombatPools({actor: this});
@@ -203,15 +199,33 @@ export class TrudvangActor extends BaseActor {
 
   get selectedVitnerType() {
     for (const [id, config] of Object.entries(TRUDVANG.vitnerTypes)) {
-      const level = Number(this.findKnowledgeItem(id)?.system.level || 0);
+      const level = Number(this.findRuleKnowledge(id)?.system.level || 0);
       if (level > 0) return {id, level, ...config};
     }
     return null;
   }
 
+  get unlimitedVitner() {
+    return this.type === "npc" && (this.system.magic?.unlimitedVitner === true || creatureMagicTraits(this.items).unlimitedVitner);
+  }
+
+  get activeSpellLimit() {
+    // Innate casters without a published vitner specialty have no documented
+    // simultaneous-spell limit; do not invent a rank or block them at rank zero.
+    const innateTarget = this.system.magic?.castingTarget;
+    return Number(this.selectedVitnerType?.level || 0) || (this.type === "npc"
+      && (this.unlimitedVitner || (innateTarget !== null && innateTarget !== undefined)) ? Infinity : 0);
+  }
+
+  async restoreVitner() {
+    if (!this.isOwner || this.unlimitedVitner) return null;
+    const recovered = Math.max(0, Number(this.system.resources.vitner.max || 0) - Number(this.system.resources.vitner.current || 0));
+    return this.update({"system.resources.vitner.value": Number(this._source.system.resources.vitner.value || 0) + recovered});
+  }
+
   get selectedReligion() {
     for (const [id, religion] of Object.entries(TRUDVANG.religions)) {
-      if (Number(this.findKnowledgeItem(religion.specialty)?.system.level || 0) > 0) return {id, ...religion};
+      if (Number(this.findRuleKnowledge(religion.specialty)?.system.level || 0) > 0) return {id, ...religion};
     }
     const configured = this.system.details?.religion;
     if (TRUDVANG.religions[configured]) return {id: configured, ...TRUDVANG.religions[configured]};
@@ -219,6 +233,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   get allowedReligionIds() {
+    if (this.type === "npc") return Object.keys(TRUDVANG.religions);
     return TRUDVANG.raceReligions[this.system.details?.race] ?? [];
   }
 
@@ -273,16 +288,17 @@ export class TrudvangActor extends BaseActor {
     if (!tablet) return {ok: false, reason: "TRUDVANG.Warning.UnknownTablet"};
     if (this.items.some(item => item.type === "tablet" && (item.system.catalogId === tablet.id || item.getFlag("trudvang-chronicles", "catalogId") === tablet.id))) return {ok: false, reason: "TRUDVANG.Warning.TabletAlreadyKnown"};
     const skillKey = tablet.tabletType === "holy" ? "faith" : "vitnerCraft";
-    if (Number(this.system.skills?.[skillKey]?.value || 1) < this.getRequiredSkillValue(1)) return {ok: false, reason: "TRUDVANG.Warning.TabletSkillRequirement"};
+    if (!(this.type === "npc" && this.unlimitedVitner && tablet.tabletType === "vitner")
+      && this.getSkillValue(skillKey) < this.getRequiredSkillValue(1)) return {ok: false, reason: "TRUDVANG.Warning.TabletSkillRequirement"};
     if (tablet.tabletType === "vitner") {
-      if (!this.selectedVitnerType) return {ok: false, reason: "TRUDVANG.Warning.VitnerRequired"};
-      if (Number(this.findKnowledgeItem("vitnerShaping")?.system.level || 0) < 1) return {ok: false, reason: "TRUDVANG.Warning.TabletKnowledgeRequired"};
+      if (!this.selectedVitnerType && !this.unlimitedVitner) return {ok: false, reason: "TRUDVANG.Warning.VitnerRequired"};
+      if (Number(this.findRuleKnowledge("vitnerShaping")?.system.level || 0) < 1 && !this.unlimitedVitner) return {ok: false, reason: "TRUDVANG.Warning.TabletKnowledgeRequired"};
     }
     if (tablet.tabletType === "holy") {
       const selected = this.selectedReligion;
       if (!selected) return {ok: false, reason: "TRUDVANG.Warning.ReligionRequired"};
       if (!this.allowedReligionIds.includes(selected.id) || selected.id !== tablet.religion) return {ok: false, reason: "TRUDVANG.Warning.TabletReligionMismatch"};
-      if (Number(this.findKnowledgeItem(selected.specialty)?.system.level || 0) < 1) return {ok: false, reason: "TRUDVANG.Warning.TabletKnowledgeRequired"};
+      if (Number(this.findRuleKnowledge(selected.specialty)?.system.level || 0) < 1) return {ok: false, reason: "TRUDVANG.Warning.TabletKnowledgeRequired"};
     }
     return {ok: true, reason: ""};
   }
@@ -744,7 +760,7 @@ export class TrudvangActor extends BaseActor {
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "dodge"});
   }
 
-  async rollWrestlingAction(kind = "grapple") {
+  async rollWrestlingAction(kind = "grapple", {defaultPoints = 10} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     const poolResolution = resolveCombatPools({actor: this, context: {action: kind, ignoreSpent: !inCombat}});
@@ -754,7 +770,7 @@ export class TrudvangActor extends BaseActor {
     const options = await combatPointDialog({
       title: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"),
       pools: poolResolution.eligible,
-      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(10, availableEven)),
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, availableEven)),
       targetPointCost: 2,
       allocationMultiple: 2,
       modifierRows: [{label: game.i18n.localize("TRUDVANG.Trait.Strength"), value: strength},
@@ -822,12 +838,12 @@ export class TrudvangActor extends BaseActor {
     return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Drawn", {item: item.name, cost}));
   }
 
-  async rollWeaponAction(item, kind) {
+  async rollWeaponAction(item, kind, {defaultPoints = 5, throwing = null} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const canThrow = kind === "attack" && canThrowWeapon(item);
-    const defaultThrowing = canThrow && isThrowingWeapon(item);
+    const defaultThrowing = canThrow && (throwing ?? isThrowingWeapon(item));
     const targetActor = Array.from(game.user.targets || []).map(target => target?.actor).find(Boolean);
     const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
     const prepareMode = throwing => {
@@ -841,7 +857,7 @@ export class TrudvangActor extends BaseActor {
         usageItem,
         poolResolution,
         pools: poolResolution.eligible,
-        defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(5, poolResolution.eligibleCurrent)),
+        defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, poolResolution.eligibleCurrent)),
         ranged,
         rangeSelection: item.system.rangeSelection === "long" ? "long" : "short",
         feintMax: kind === "attack" && !ranged ? Math.max(0, 5 - (targetActor ? targetPerception : 0)) : 0,
@@ -873,16 +889,19 @@ export class TrudvangActor extends BaseActor {
       ruleNotice,
       combatModes: canThrow ? {
         label: game.i18n.localize(defaultThrowing ? "TRUDVANG.Dialog.MeleeAttack" : "TRUDVANG.Dialog.ThrowWeapon"),
-        checked: false,
-        uncheckedMode: defaultThrowing ? "throwing" : "melee",
-        checkedMode: defaultThrowing ? "melee" : "throwing",
+        checked: defaultThrowing !== isThrowingWeapon(item),
+        uncheckedMode: isThrowingWeapon(item) ? "throwing" : "melee",
+        checkedMode: isThrowingWeapon(item) ? "melee" : "throwing",
         defaultMode: defaultMode.id,
         modes
       } : null
     });
     if (!options) return null;
     const mode = modes.find(candidate => candidate.id === options.mode) ?? defaultMode;
-    const poolResolution = mode.poolResolution;
+    // Another prepared action may have spent points while this dialog was open.
+    // Refresh eligibility before committing rather than rolling a stale total.
+    const poolResolution = resolveCombatPools({actor: this, item: mode.usageItem, context: {action: kind, ignoreSpent: !inCombat}});
+    if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     const feint = kind === "attack" && !mode.ranged ? Math.min(spending.total, mode.feintMax, Math.max(0, Math.floor(Number(options.feint || 0)))) : 0;
     const rangedOptions = mode.ranged ? {
@@ -933,21 +952,28 @@ export class TrudvangActor extends BaseActor {
     const skillKey = isDivine ? "faith" : "vitnerCraft";
     const disciplineId = isDivine ? "invoke" : "vitnerShaping";
     const specialtyIds = isDivine ? Object.values(TRUDVANG.religions).map(religion => religion.specialty) : ["galding", "sejding", "vyrding"];
-    const disciplineLevel = Number(this.findKnowledgeItem(disciplineId)?.system.level || 0);
+    const disciplineLevel = Number(this.findRuleKnowledge(disciplineId)?.system.level || 0);
     const skillValue = this.getSkillTarget(skillKey, 0, {kind: "magic"});
-    const methods = specialtyIds.map(id => ({id, item: this.findKnowledgeItem(id)})).filter(entry => Number(entry.item?.system.level || 0) > 0).map(entry => {
+    const methods = specialtyIds.map(id => ({id, item: this.findRuleKnowledge(id)})).filter(entry => Number(entry.item?.system.level || 0) > 0).map(entry => {
       const specialtyBonus = 2 * Number(entry.item.system.level || 0);
       const target = skillValue + disciplineLevel + specialtyBonus;
       return {id: entry.id, label: entry.item.name, target, breakdown: game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: skillValue, discipline: disciplineLevel, specialty: specialtyBonus, total: target})};
     });
-    if (!methods.length || disciplineLevel < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.MagicMethodRequired"));
+    if (!methods.length || disciplineLevel < 1) {
+      const target = this.type === "npc" ? this.system.magic?.castingTarget : null;
+      if (target !== null && target !== undefined && Number.isFinite(Number(target))) {
+        methods.splice(0, methods.length, {id: "innate", label: game.i18n.localize("TRUDVANG.Npc.InnateMagic"),
+          target: Number(target) + this.getRollModifier({kind: "magic"}) + Number(this.system.damage?.penalty || 0) + Number(this.system.fearPenalty || 0),
+          breakdown: game.i18n.format("TRUDVANG.Npc.InnateMagicTarget", {target})});
+      } else return ui.notifications.warn(game.i18n.localize(this.type === "npc" ? "TRUDVANG.Npc.ConfigureMagicMethod" : "TRUDVANG.Warning.MagicMethodRequired"));
+    }
     const defaultCost = Number(item.system.cost ?? TRUDVANG.spellCosts[item.system.level] ?? 0);
     const strenuousId = isDivine ? "rigorous" : "strenuous";
-    const strenuousMax = Number(this.findKnowledgeItem(strenuousId)?.system.level || 0);
+    const strenuousMax = Number(this.findRuleKnowledge(strenuousId)?.system.level || 0);
     const activeSpellCount = isDivine ? 0 : activeSpellInstances(this).length;
     const persistent = item.system.spellType === "lasting";
     const trackedPersistent = persistent && !isDivine;
-    const activeSpellLimit = Number(this.selectedVitnerType?.level || 0);
+    const activeSpellLimit = this.activeSpellLimit;
     if (trackedPersistent && activeSpellCount >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const vitnerType = this.selectedVitnerType;
     const affinityType = {hwitalja: "hvitavitner", darkhwitalja: "morkvitner", vaagritalja: "vaagrivitner"}[vitnerType?.id];
@@ -978,7 +1004,7 @@ export class TrudvangActor extends BaseActor {
     if (trackedPersistent && activeSpellInstances(this).length >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
-    if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
+    if (options.cost > available && !(this.unlimitedVitner && !isDivine)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
     const perfectSuccessMax = isDivine ? 0 : (vitnerType?.perfectSuccessMax ?? 1);
     const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format(isDivine ? "TRUDVANG.Calculation.Rigorous" : "TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";
@@ -1003,7 +1029,7 @@ export class TrudvangActor extends BaseActor {
           "system.resources.divinity.temporary": storedTemporary - temporarySpent,
           "system.resources.divinity.value": Math.max(0, stored - (spent - temporarySpent))
         });
-      } else await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
+      } else if (!this.unlimitedVitner) await this.update({[`system.resources.${resource}.value`]: Math.max(0, stored - spent)});
     }
     if (trackedPersistent && result?.success && this.isOwner) {
       await this.update({"system.activeSpellCastings": [...activeSpellRecords(this), {
@@ -1024,10 +1050,10 @@ export class TrudvangActor extends BaseActor {
     if (!this.canPerformAction()) return this.warnCannotAct();
     const psycheModifier = this.getTraitValue("psyche");
     const effectModifier = this.getRollModifier({kind: "situation", traitKey: "psyche"});
-    const spellDisciplineLevel = Number(this.findKnowledgeItem("vitnerFocus")?.system.level || 0);
-    const spellSpecialtyLevel = Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0);
-    const divineDisciplineLevel = Number(this.findKnowledgeItem("godFocus")?.system.level || 0);
-    const divineSpecialtyLevel = Number(this.findKnowledgeItem("composed")?.system.level || 0);
+    const spellDisciplineLevel = Number(this.findRuleKnowledge("vitnerFocus")?.system.level || 0);
+    const spellSpecialtyLevel = Number(this.findRuleKnowledge("safeWeaving")?.system.level || 0);
+    const divineDisciplineLevel = Number(this.findRuleKnowledge("godFocus")?.system.level || 0);
+    const divineSpecialtyLevel = Number(this.findRuleKnowledge("composed")?.system.level || 0);
     const defaultType = defaultConcentrationType({
       vitnerMax: this.system.resources?.vitner?.max,
       divinityMax: this.system.resources?.divinity?.max
@@ -1088,8 +1114,8 @@ export class TrudvangActor extends BaseActor {
   fatalEffectModifier(kind, cost = 0) {
     const isDivine = kind === "faith";
     const mitigation = isDivine
-      ? Number(this.findKnowledgeItem("godFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("composed")?.system.level || 0))
-      : Number(this.findKnowledgeItem("vitnerFocus")?.system.level || 0) + (2 * Number(this.findKnowledgeItem("safeWeaving")?.system.level || 0));
+      ? Number(this.findRuleKnowledge("godFocus")?.system.level || 0) + (2 * Number(this.findRuleKnowledge("composed")?.system.level || 0))
+      : Number(this.findRuleKnowledge("vitnerFocus")?.system.level || 0) + (2 * Number(this.findRuleKnowledge("safeWeaving")?.system.level || 0));
     const activeCost = isDivine ? 0 : fatalActiveSpellCost(this);
     return Number(cost || 0) + activeCost - mitigation;
   }
@@ -1102,11 +1128,18 @@ export class TrudvangActor extends BaseActor {
       "system.activeSpellCastingsMigrated": true});
   }
 
-  async resetCombatPoints() {
+  async resetCombatPoints({cycle = null} = {}) {
     const updates = Object.keys(this.system.combatPools || {}).flatMap(id => [
       [`system.combatPools.${id}.spent`, 0],
       ...(id === "free" ? [["system.combatPools.free.weaponSpent", 0], ["system.combatPools.free.offHandSpent", 0]] : [])
     ]);
+    if (this.type === "npc") {
+      const combat = this.isInActiveCombat ? game.combat : null;
+      const phase = cycle ?? nextNpcCombatCycle({}, {combatId: combat?.id ?? "", round: combat?.round ?? 0,
+        size: this.system.details?.size}).state;
+      updates.push(["system.combatCycle", {...phase, generation: Number(this.system.combatCycle?.generation || 0) + 1}],
+        ["system.usedPreparedActions", []]);
+    }
     await this.update(Object.fromEntries(updates));
     const combatEquipment = this.items.filter(item => ["weapon", "shield"].includes(item.type));
     if (combatEquipment.length) await this.updateEmbeddedDocuments("Item", combatEquipment.map(item => ({_id: item.id, "system.combatPointBonusUsed": false, "system.weaponActionsSpent": 0,
@@ -1238,7 +1271,7 @@ export class TrudvangActor extends BaseActor {
     return {healthRecovered, fear};
   }
 
-  async rollCombatMovement() {
+  async rollCombatMovement({defaultPoints = 2, movementMode = ""} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "movement"}});
@@ -1249,8 +1282,9 @@ export class TrudvangActor extends BaseActor {
     const options = await combatPointDialog({
       title: game.i18n.localize("TRUDVANG.Combat.MovementAction"),
       pools: poolResolution.eligible,
-      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(2, poolResolution.eligibleCurrent)),
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, poolResolution.eligibleCurrent)),
       movementModes,
+      defaultMovementMode: movementMode,
       buttonLabelKey: "TRUDVANG.Action.SpendCombat",
       showModifier: false,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
@@ -1266,22 +1300,60 @@ export class TrudvangActor extends BaseActor {
   }
 
   /** Spend Combat Points on a manoeuvre not otherwise represented in the sheet. */
-  async spendGenericCombatAction() {
+  async spendGenericCombatAction({defaultPoints = 0, title = "", roll = false} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     if (!this.isInActiveCombat) return null;
     const poolResolution = resolveCombatPools({actor: this, context: {action: "other"}});
+    const actionModifier = this.getRollModifier({kind: "ability", movement: true}) - Number(this.system.armorVCPenalty || 0);
     const options = await combatPointDialog({
-      title: game.i18n.localize("TRUDVANG.Combat.OtherAction"),
+      title: title || game.i18n.localize("TRUDVANG.Combat.OtherAction"),
       pools: poolResolution.eligible,
-      buttonLabelKey: "TRUDVANG.Action.SpendCombat",
-      showModifier: false,
+      defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, poolResolution.eligibleCurrent)),
+      buttonLabelKey: roll ? "TRUDVANG.Action.Roll" : "TRUDVANG.Action.SpendCombat",
+      showModifier: roll,
+      modifierRows: roll && actionModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: actionModifier}] : [],
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation);
     if (spending.total <= 0) return null;
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
+    if (roll) return rollUnder({actor: this, label: title, target: spending.total,
+      modifier: actionModifier + Number(options.modifier || 0), kind: "ability",
+      flavor: game.i18n.format("TRUDVANG.Npc.SpecialActionCost", {points: spending.total})});
     return spending;
+  }
+
+  /** Open the usual action dialog with the book's PC allocation; mark only a
+   * confirmed execution, and never mark a new phase after an old dialog closes.
+   */
+  async rollNpcPreparedAction(comboIndex, stepIndex) {
+    if (this.type !== "npc" || !this.isOwner) return null;
+    const row = this.system.attacks?.[comboIndex]?.[stepIndex];
+    if (!row) return null;
+    const key = `${comboIndex}:${stepIndex}`;
+    this._pendingPreparedActions ??= new Set();
+    if (this._pendingPreparedActions.has(key)) return null;
+    const action = resolveNpcPreparedAction(this, row);
+    if (!action.canUse) return ui.notifications.warn(game.i18n.format("TRUDVANG.Npc.PreparedActionUnavailable", {name: action.name}));
+    const generation = this.system.combatCycle?.generation ?? 0;
+    this._pendingPreparedActions.add(key);
+    try {
+      const options = {defaultPoints: action.points};
+      const result = ["attack", "parry", "throwing"].includes(action.action)
+        ? await this.rollWeaponAction(action.item, action.action === "parry" ? "parry" : "attack", {...options, throwing: action.throwing})
+        : ["glima", "grapple"].includes(action.action)
+          ? await this.rollWrestlingAction(action.action, options)
+          : action.action === "movement"
+            ? await this.rollCombatMovement({...options, movementMode: action.movementMode})
+            : await this.spendGenericCombatAction({...options, title: action.name, roll: action.action === "special"});
+      const executed = ["attack", "parry", "throwing", "glima", "grapple", "special"].includes(action.action)
+        ? Boolean(result?.roll) : Boolean(result?.allocation && Number.isFinite(result.total));
+      if (executed && (this.system.combatCycle?.generation ?? 0) === generation) {
+        await this.update({"system.usedPreparedActions": [...new Set([...(this.system.usedPreparedActions ?? []), key])]});
+      }
+      return result;
+    } finally { this._pendingPreparedActions.delete(key); }
   }
 
   async spendCombatPoints(allocation = {}, {freeScope = "both"} = {}) {

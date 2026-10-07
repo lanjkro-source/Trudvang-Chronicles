@@ -1243,7 +1243,8 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 148,
       "en": 148
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "unlimitedVitner": true
   },
   {
     "id": "JBOXObHcIdJeKfLg",
@@ -1675,7 +1676,8 @@ export const CREATURE_ABILITY_ENTRIES = [
       "fr": 59,
       "en": 39
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "vitnerCapacityBonus": 10
   },
   {
     "id": "eYf1GqSnToUpVqWr",

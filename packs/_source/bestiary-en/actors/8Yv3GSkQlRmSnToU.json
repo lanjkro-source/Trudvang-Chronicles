@@ -67,10 +67,14 @@
       [
         {
           "attack": "Tusks",
+          "itemId": "HVwPDnSnToUpVqWr",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Tusks",
+          "itemId": "HVwPDnSnToUpVqWr",
+          "action": "attack",
           "value": 10
         }
       ]

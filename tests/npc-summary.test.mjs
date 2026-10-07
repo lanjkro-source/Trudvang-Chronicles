@@ -9,6 +9,7 @@ import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
+import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -423,7 +424,7 @@ test("the NPC equipment tab displays only material equipment and its editable co
     {id: "rope", name: "Rope", type: "gear", system: {}}, inventoryItem("weapon", "Bite", {combatSpecialty: "natural"}), feat()];
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(items); sheet.isEditable = true;
   const context = await sheet._prepareContext({});
-  const inventory = render(context).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  const inventory = render(context).split('<div class="tab equipment')[1].split('<div class="tab combat')[0];
   for (const name of ["Axe", "Leather", "Shield", "rope"]) assert.match(inventory, new RegExp(`data-item-id="${name}"`));
   assert.doesNotMatch(inventory, /Bite|Tenace|item-parry|item-damage/);
   assert.equal((inventory.match(/data-item-field="quantity"/g) || []).length, 4);
@@ -437,7 +438,7 @@ test("the NPC equipment tab displays only material equipment and its editable co
 
 test("NPC token inventories have a local hint and no mutable controls for read-only viewers", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor([inventoryItem("weapon", "Axe")]); sheet.actor.isToken = true; sheet.isEditable = false;
-  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab combat')[0];
   assert.match(inventory, /Inventaire de cet exemplaire/);
   assert.doesNotMatch(inventory, /data-action="item-create"/);
   for (const tag of inventory.match(/<(?:input|button)[^>]+(?:data-item-field="quantity"|data-action="item-(?:delete|ready|equip)")[^>]*>/g)) assert.match(tag, /disabled/);
@@ -447,7 +448,7 @@ test("NPC token inventories have a local hint and no mutable controls for read-o
 
 test("empty creature inventories are usable and show three properly localized empty states", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
-  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab actions')[0];
+  const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab combat')[0];
   assert.match(inventory, /Aucune arme dans l’inventaire/);
   assert.match(inventory, /Aucune armure ni aucun bouclier/);
   assert.match(inventory, /Aucun autre équipement/);
@@ -665,7 +666,7 @@ test("NPC actions show sticky reserve data, material weapons, natural profiles, 
   const sheet = new TrudvangNpcSheet(); sheet.actor = spendableNpc([axe, spare, bite, inventoryItem("gear", "Rope"), feat()]); sheet.isEditable = true;
   game.combat = {started: true, combatants: [{actor: sheet.actor}]};
   const context = await sheet._prepareContext({});
-  const actions = render(context).split('<div class="tab actions"')[1].split('<div class="tab effects"')[0];
+  const actions = render(context).split('<div class="tab combat"')[1].split('<div class="tab magic"')[0];
   assert.ok(actions.indexOf("combat-reserves-panel") < actions.indexOf('data-item-id="Axe"'));
   assert.ok(actions.indexOf('data-item-id="Spare"') < actions.indexOf('data-item-id="Bite"'));
   assert.ok(actions.indexOf('data-item-id="Bite"') < actions.indexOf('data-action="generic-combat-action"'));
@@ -685,7 +686,7 @@ test("NPC wrestling actions appear only when the creature can use them", async (
   assert.equal(context.npcWrestling.glima, false);
   sheet.actor.system.attacks = [[{attack: "Lutte", value: 10}]];
   context = await sheet._prepareContext({});
-  const actions = render(context).split('<div class="tab actions"')[1].split('<div class="tab effects"')[0];
+  const actions = render(context).split('<div class="tab combat"')[1].split('<div class="tab magic"')[0];
   assert.equal(context.npcWrestling.grapple, true);
   assert.equal(context.npcWrestling.glima, true);
   assert.match(actions, /data-action="wrestling-action" data-kind="grapple"/);
@@ -753,7 +754,7 @@ test("catalogue disciplines and specialties render on separate linked rows, not 
   assert.equal(root.disciplines.length, 1);
   assert.equal(root.disciplines[0].specialties.length, 1);
   assert.equal(root.unassigned.length, 0);
-  const html = render(context).split('<div class="tab actions"')[0];
+  const html = render(context).split('<div class="tab combat"')[0];
   assert.equal((html.match(/data-item-id="parent"/g) || []).length, 1);
   assert.equal((html.match(/data-item-id="child"/g) || []).length, 1);
   assert.match(html, /3 \| 2/);
@@ -801,7 +802,7 @@ test("NPC capacities open a dedicated sheet and never appear among actual effect
   const context = await sheet._prepareContext({});
   assert.deepEqual(context.npcAbilities.map(entry => entry.name), ["Vision nocturne"]);
   assert.deepEqual(context.effects.map(entry => entry.name), ["Charge"]);
-  const html = render(context).split('<div class="tab actions"')[0];
+  const html = render(context).split('<div class="tab combat"')[0];
   assert.match(html, /data-action="capacity-edit" data-effect-uuid="Actor.npc.ActiveEffect.vision"/);
   assert.equal(context.npcAbilities[0].summary, creatureAbilityDetails(sheet.actor.effects[0], {localize: key => game.i18n.localize(key)}).summary);
   assert.doesNotMatch(html, /data-effect-uuid="Actor.npc.ActiveEffect.manual"/);
@@ -982,4 +983,176 @@ test("negative health and death remain visible with a bounded gauge", async () =
   assert.equal(context.healthStatus.meterValue, 0);
   assert.match(render(context), /-12 \/ 40/);
   assert.match(render(context), /fa-skull-crossbones/);
+});
+
+function mockActionRuntime(t, {die = 7} = {}) {
+  const previous = {combat: game.combat, document: globalThis.document, Roll: globalThis.Roll,
+    ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2, ui: globalThis.ui,
+    randomID: foundry.utils.randomID};
+  t.after(() => { game.combat = previous.combat; globalThis.document = previous.document; globalThis.Roll = previous.Roll;
+    globalThis.ChatMessage = previous.ChatMessage; foundry.applications.api.DialogV2 = previous.dialog;
+    globalThis.ui = previous.ui; foundry.utils.randomID = previous.randomID; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  globalThis.Roll = class { constructor(formula) { this.formula = formula; } async evaluate() { this.total = die; } };
+  const messages = [], dialogs = [], warnings = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: async data => { messages.push(data); return data; }};
+  globalThis.ui = {notifications: {warn: message => { warnings.push(message); return "notification"; }, info() {}}};
+  foundry.utils.randomID = () => `casting-${messages.length}`;
+  const runtime = {messages, dialogs, warnings, response: null};
+  foundry.applications.api.DialogV2 = class { static async wait(options) { dialogs.push(options); return runtime.response; } };
+  return runtime;
+}
+
+test("prepared natural attacks preallocate the book CP on both fields and slider, spend and mark only after confirmation", async t => {
+  const runtime = mockActionRuntime(t);
+  const bite = naturalItem("Bite", "bite", 6);
+  bite.update = async changes => { for (const [key, value] of Object.entries(changes)) set(bite, key, value); };
+  const npc = spendableNpc([bite]);
+  npc.system.attacks = [[{attack: "Bite", itemId: "Bite", value: 7}]];
+  game.combat = {id: "combat", round: 1, started: true, combatants: [{actor: npc}]};
+  assert.equal(await npc.rollNpcPreparedAction(0, 0), null);
+  assert.match(runtime.dialogs[0].content, /data-pool-id="natural:bite"[^>]+value="6"/);
+  assert.match(runtime.dialogs[0].content, /data-pool-id="free"[^>]+value="1"/);
+  assert.match(runtime.dialogs[0].content, /data-combat-slider[^>]+value="7"/);
+  assert.deepEqual(npc.system.usedPreparedActions ?? [], []);
+  assert.equal(bite.system.naturalCombatPointsSpent, 0);
+  runtime.response = {modifier: 0, feint: 0, allocation: {"natural:bite": 6, free: 1}};
+  const result = await npc.rollNpcPreparedAction(0, 0);
+  assert.equal(result.target, 7); assert.equal(runtime.messages.length, 1);
+  assert.deepEqual(npc.system.usedPreparedActions, ["0:0"]);
+  assert.equal(bite.system.naturalCombatPointsSpent, 6); assert.equal(bite.system.weaponActionsSpent, 1);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 5); assert.equal(npc.system.combatPools.free.offHandSpent, 1);
+  await npc.resetCombatPoints();
+  assert.deepEqual(npc.system.usedPreparedActions, []);
+  assert.equal(npc.system.combatCycle.remaining, 1);
+  assert.equal(npc.system.combatCycle.generation, 1);
+});
+
+test("prepared movement presets the correct mode, charges both hands and does not mark an invalid expenditure", async t => {
+  const runtime = mockActionRuntime(t);
+  const npc = spendableNpc([]);
+  npc.system.details.move = [{mode: "terrestre", distance: "1 m", max: "8 m"}, {mode: "vol", distance: "4 m", max: "32 m"}];
+  npc.system.attacks = [[{action: "movement", mode: "flight", value: 4}]];
+  game.combat = {id: "combat", round: 1, started: true, combatants: [{actor: npc}]};
+  runtime.response = {allocation: {free: 3}, movementMode: "1"};
+  await npc.rollNpcPreparedAction(0, 0);
+  assert.deepEqual(npc.system.usedPreparedActions ?? [], []);
+  assert.match(runtime.dialogs[0].content, /option value="1" selected/);
+  assert.match(runtime.dialogs[0].content, /data-combat-slider[^>]+value="4"/);
+  runtime.response = {allocation: {free: 4}, movementMode: "1"};
+  const result = await npc.rollNpcPreparedAction(0, 0);
+  assert.equal(result.paidMeters, 8);
+  assert.deepEqual(npc.system.usedPreparedActions, ["0:0"]);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 8); assert.equal(npc.system.combatPools.free.offHandSpent, 4);
+});
+
+test("prepared wrestling uses the prescribed even PC total, and special actions use ordinary combat pools", async t => {
+  const runtime = mockActionRuntime(t);
+  const npc = spendableNpc([{type: "ability", name: "Unarmed", system: {catalogId: "unarmedFighting", level: 1}},
+    {type: "ability", name: "Wrestling", system: {catalogId: "wrestling", level: 2}}]);
+  npc.system.attacks = [[{attack: "Lutte", action: "glima", value: 6}], [{attack: "Special", action: "special", value: 2}]];
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  runtime.response = {allocation: {free: 1, unarmedFighting: 1, wrestling: 4}, modifier: 0};
+  const wrestling = await npc.rollNpcPreparedAction(0, 0);
+  assert.equal(wrestling.target, 3);
+  assert.match(runtime.dialogs[0].content, /data-combat-slider[^>]+step="2" value="6"/);
+  runtime.response = {allocation: {free: 2}, modifier: 0};
+  const special = await npc.rollNpcPreparedAction(1, 0);
+  assert.equal(special.target, 2);
+  assert.doesNotMatch(runtime.dialogs[1].content, /data-pool-id="(?:wrestling|unarmedFighting)"/);
+  assert.equal(runtime.dialogs[1].buttons[0].label, game.i18n.localize("TRUDVANG.Action.Roll"));
+  assert.deepEqual(npc.system.usedPreparedActions, ["0:0", "1:0"]);
+});
+
+test("a pending prepared action cannot be double-clicked or mark the following phase", async () => {
+  const bite = naturalItem("Bite", "bite", 6);
+  const npc = spendableNpc([bite]); npc.system.attacks = [[{attack: "Bite", value: 3}]];
+  let release, count = 0;
+  npc.rollWeaponAction = async () => { count += 1; return new Promise(resolve => { release = resolve; }); };
+  const pending = npc.rollNpcPreparedAction(0, 0);
+  assert.equal(await npc.rollNpcPreparedAction(0, 0), null);
+  assert.equal(count, 1);
+  npc.system.combatCycle = {generation: 1};
+  release({roll: {total: 7}}); await pending;
+  assert.deepEqual(npc.system.usedPreparedActions ?? [], []);
+});
+
+function magicalNpc(name) {
+  const source = buildBestiaryPackDocuments({code: "fr", localize: key => game.i18n.localize(key),
+    format: (key, data) => game.i18n.format(key, data), isFrench: () => true}).actors.find(actor => actor.name === name);
+  const items = source.items.map(item => ({...item, id: item._id, uuid: `Actor.npc.Item.${item._id}`, getFlag: () => null}));
+  const npc = spendableNpc(items);
+  npc.system.skillTree = source.system.skillTree;
+  npc.system.skills = {...npc.system.skills, ...source.system.skills};
+  npc.system.effective.skills = Object.fromEntries(Object.entries(npc.system.skills).map(([key, skill]) => [key, skill.value]));
+  npc.system.resources = {...npc.system.resources, ...source.system.resources};
+  npc.system.details = source.system.details;
+  npc._source.system = structuredClone(npc.system);
+  npc.prepareDerivedData();
+  return npc;
+}
+
+test("NPC casting reads book skills, deducts vitner, rolls and tracks each persistent casting independently", async t => {
+  const runtime = mockActionRuntime(t);
+  const npc = magicalNpc("Démon tangible");
+  const spell = {id: "test-spell", type: "spell", name: "Test", system: {cost: 3, modifier: 0, spellType: "lasting", powerLevels: []}};
+  npc.items.push(spell);
+  runtime.response = {method: {label: "Galda", breakdown: "VC 17"}, target: 17, modifier: 0, cost: 3,
+    powerLevelCounts: [], costBreakdown: {entries: []}};
+  assert.equal(npc.selectedVitnerType.id, "darkhwitalja");
+  assert.equal(npc.system.resources.vitner.max, 95);
+  await npc.rollSpell(spell); await npc.rollSpell(spell);
+  assert.match(runtime.dialogs[0].content, /value="galding"[^>]*>Galda/);
+  assert.equal(runtime.messages.length, 2);
+  assert.equal(npc._source.system.resources.vitner.value, 89);
+  assert.equal(npc.system.activeSpellCastings.length, 2);
+  assert.deepEqual(npc.system.activeSpellCastings.map(record => record.cost), [3, 3]);
+  assert.notEqual(npc.system.activeSpellCastings[0].id, npc.system.activeSpellCastings[1].id);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
+  const context = await sheet._prepareContext({});
+  const html = render(context).split('<div class="tab magic"')[1].split('<div class="tab effects"')[0];
+  assert.equal(context.activeSpells.length, 2);
+  assert.match(html, /npc-magic-tree/); assert.match(html, /fa-wand-sparkles/);
+  assert.doesNotMatch(html, /TRUDVANG\./);
+});
+
+test("innate NPC magic requires an explicit casting SV and respects the unlimited-vitner feat", async t => {
+  const runtime = mockActionRuntime(t);
+  const npc = magicalNpc("Fjoltroll");
+  const spell = npc.items.find(item => item.type === "spell" && item.system.spellType !== "lasting");
+  assert.equal(npc.unlimitedVitner, true);
+  await npc.rollSpell(spell);
+  assert.equal(runtime.dialogs.length, 0);
+  assert.match(runtime.warnings[0], /VC de magie innée/);
+  npc.system.magic = {castingTarget: 14};
+  runtime.response = {method: {label: "Magie innée", breakdown: "VC 14"}, target: 14, modifier: 0, cost: 20,
+    powerLevelCounts: [], costBreakdown: {entries: []}};
+  const result = await npc.rollSpell(spell);
+  assert.equal(result.target, 14); assert.equal(runtime.messages.length, 1);
+  assert.equal(npc._source.system.resources.vitner.value, 0, "no artificial finite reserve was created or depleted");
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
+  const context = await sheet._prepareContext({});
+  assert.equal(context.needsInnateMagic, true);
+  const html = render(context).split('<div class="tab magic"')[1].split('<div class="tab effects"')[0];
+  assert.match(html, /VC d’incantation innée/); assert.match(html, /Vitner sans limite quotidienne/);
+  assert.doesNotMatch(html, /TRUDVANG\./);
+});
+
+test("a prepared attack never rolls or spends the stale CP shown by a previously opened dialog", async t => {
+  const runtime = mockActionRuntime(t);
+  const bite = naturalItem("Bite", "bite", 6);
+  bite.update = async changes => { for (const [key, value] of Object.entries(changes)) set(bite, key, value); };
+  const npc = spendableNpc([bite]); npc.system.attacks = [[{attack: "Bite", value: 7}]];
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  foundry.applications.api.DialogV2 = class {static async wait() {
+    bite.system.naturalCombatPointsSpent = 4;
+    await npc.update({"system.combatPools.free.offHandSpent": 7});
+    return {allocation: {"natural:bite": 6, free: 3}, modifier: 0};
+  }};
+  const result = await npc.rollNpcPreparedAction(0, 0);
+  assert.equal(result.target, 3, "only 2 natural CP plus 1 CP shared by both hands remain");
+  assert.equal(runtime.messages.length, 1);
+  assert.equal(bite.system.naturalCombatPointsSpent, 6);
+  assert.equal(npc.system.combatPools.free.weaponSpent, 5);
+  assert.equal(npc.system.combatPools.free.offHandSpent, 8);
 });

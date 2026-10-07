@@ -91,6 +91,8 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "Tz48vNhNiOjPkQlR",
+          "action": "attack",
           "value": 7
         }
       ]

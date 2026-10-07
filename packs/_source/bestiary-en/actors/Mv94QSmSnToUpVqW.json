@@ -133,14 +133,20 @@
       [
         {
           "attack": "Claws",
+          "itemId": "WDQ1WfIdJeKfLgMh",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Claws",
+          "itemId": "WDQ1WfIdJeKfLgMh",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Bite",
+          "itemId": "5X4PoSkQlRmSnToU",
+          "action": "attack",
           "value": 6
         }
       ]

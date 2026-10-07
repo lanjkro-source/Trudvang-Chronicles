@@ -127,10 +127,14 @@
       [
         {
           "attack": "Bite",
+          "itemId": "aldpxB6B7C8D9EaG",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Hooves",
+          "itemId": "VbQLMPkQlRmSnToU",
+          "action": "attack",
           "value": 12
         }
       ]

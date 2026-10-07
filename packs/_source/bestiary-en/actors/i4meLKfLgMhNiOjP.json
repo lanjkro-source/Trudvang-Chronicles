@@ -123,10 +123,14 @@
       [
         {
           "attack": "Bite",
+          "itemId": "tssRXnToUpVqWrXs",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Bite",
+          "itemId": "tssRXnToUpVqWrXs",
+          "action": "attack",
           "value": 8
         }
       ]

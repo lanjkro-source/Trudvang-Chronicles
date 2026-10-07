@@ -126,14 +126,20 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "HOJDJOjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Morsure",
+          "itemId": "HOJDJOjPkQlRmSnT",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Morsure",
+          "itemId": "HOJDJOjPkQlRmSnT",
+          "action": "attack",
           "value": 8
         }
       ]

@@ -458,40 +458,56 @@
       [
         {
           "attack": "Tusk Throw",
+          "itemId": "",
+          "action": "special",
           "value": 11
         }
       ],
       [
         {
           "attack": "Unarmed",
+          "itemId": "nEO9lz0v1w2x3y4z",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Unarmed",
+          "itemId": "nEO9lz0v1w2x3y4z",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Barda hammri (battle hammer)",
+          "itemId": "KagEscHcIdJeKfLg",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Barda hammri (battle hammer)",
+          "itemId": "KagEscHcIdJeKfLg",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Tvei Axi (Two-Handed Axe)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei Axi (Two-Handed Axe)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei Axi (Two-Handed Axe)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 6
         }
       ]

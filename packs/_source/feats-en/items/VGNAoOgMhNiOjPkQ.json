@@ -11,7 +11,8 @@
       "book": "Jorgi's Bestiary",
       "page": 148
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "unlimitedVitner": true
   },
   "effects": [],
   "_key": "!items!VGNAoOgMhNiOjPkQ",

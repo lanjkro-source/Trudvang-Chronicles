@@ -494,30 +494,42 @@
       [
         {
           "attack": "Bite/Claws",
+          "itemId": "VznrwsWrXsYtZu0v",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Veidi Bogi (Hunting Bow)",
+          "itemId": "cdJ1z1tZu0v1w2x3",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Veidi Bogi (Hunting Bow)",
+          "itemId": "cdJ1z1tZu0v1w2x3",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Lill spjót (short spear)",
+          "itemId": "tLB7jIaGbHcIdJeK",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Lill spjót (short spear)",
+          "itemId": "tLB7jIaGbHcIdJeK",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Small Wooden Shield",
+          "itemId": "IUYK4tWrXsYtZu0v",
+          "action": "parry",
           "value": 12
         }
       ]

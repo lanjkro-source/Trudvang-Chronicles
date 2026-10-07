@@ -147,14 +147,20 @@
       [
         {
           "attack": "Bite",
+          "itemId": "1X3jmC6B7C8D9EaG",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Impaling leg",
+          "itemId": "UhT3DqSnToUpVqWr",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Impaling leg",
+          "itemId": "UhT3DqSnToUpVqWr",
+          "action": "attack",
           "value": 8
         }
       ]

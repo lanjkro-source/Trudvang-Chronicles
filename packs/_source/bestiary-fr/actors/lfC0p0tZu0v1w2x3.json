@@ -340,30 +340,42 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "sq8iNRmSnToUpVqW",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Mains nues",
+          "itemId": "sq8iNRmSnToUpVqW",
+          "action": "attack",
           "value": 5
         }
       ],
       [
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "f5bvQ2u0v1w2x3y4",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "f5bvQ2u0v1w2x3y4",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "Y5TZGWoUpVqWrXsY",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "Y5TZGWoUpVqWrXsY",
+          "action": "attack",
           "value": 6
         }
       ]

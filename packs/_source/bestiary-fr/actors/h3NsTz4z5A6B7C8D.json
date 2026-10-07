@@ -91,14 +91,20 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "7rmIXLfLgMhNiOjP",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Griffes",
+          "itemId": "YLXi5IcIdJeKfLgM",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Griffes",
+          "itemId": "YLXi5IcIdJeKfLgM",
+          "action": "attack",
           "value": 9
         }
       ]

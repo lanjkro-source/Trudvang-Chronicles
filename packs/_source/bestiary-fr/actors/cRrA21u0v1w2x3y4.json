@@ -437,34 +437,48 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "7RwzVmOjPkQlRmSn",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Mains nues",
+          "itemId": "7RwzVmOjPkQlRmSn",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "mpgkLKeKfLgMhNiO",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "mpgkLKeKfLgMhNiO",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 6
         }
       ]

@@ -2558,54 +2558,76 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Mains nues",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Mains nues",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 5
         }
       ],
       [
         {
           "attack": "Lutte",
+          "itemId": "",
+          "action": "glima",
           "value": 12
         }
       ],
       [
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Staaf spjót (lance de chasse)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Bouclier moyen renforcé de métal",
+          "itemId": "mkQcwHcIdJeKfLgM",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "7atzLVqWrXsYtZu0",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "7atzLVqWrXsYtZu0",
+          "action": "attack",
           "value": 6
         }
       ]
@@ -2614,6 +2636,10 @@
       "body": {
         "value": 91,
         "max": 91
+      },
+      "vitner": {
+        "value": 51,
+        "max": 51
       }
     },
     "combatPools": {

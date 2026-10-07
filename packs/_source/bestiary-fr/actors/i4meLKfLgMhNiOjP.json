@@ -123,10 +123,14 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "tssRXnToUpVqWrXs",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Morsure",
+          "itemId": "tssRXnToUpVqWrXs",
+          "action": "attack",
           "value": 8
         }
       ]

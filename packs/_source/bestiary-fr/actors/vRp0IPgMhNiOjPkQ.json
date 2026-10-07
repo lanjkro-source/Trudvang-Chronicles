@@ -3571,82 +3571,118 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "rtMsoaD8D9EaGbHc",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Cornes/griffes",
+          "itemId": "8tTxMYtZu0v1w2x3",
+          "action": "attack",
           "value": 16
         }
       ],
       [
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 17
         },
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 16
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "MlJa99EaGbHcIdJe",
+          "action": "attack",
           "value": 16
         },
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "MlJa99EaGbHcIdJe",
+          "action": "attack",
           "value": 15
         }
       ],
       [
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Dropi axi (hache pendule)",
+          "itemId": "5Jw8hbGbHcIdJeKf",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "xDLWNNiOjPkQlRmS",
+          "action": "parry",
           "value": 10
         }
       ]
@@ -3655,6 +3691,10 @@
       "body": {
         "value": 181,
         "max": 181
+      },
+      "vitner": {
+        "value": 95,
+        "max": 95
       }
     },
     "combatPools": {

@@ -3321,10 +3321,14 @@
       [
         {
           "attack": "Bite",
+          "itemId": "LCRI5YrXsYtZu0v1",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Claws",
+          "itemId": "KBTgdE6B7C8D9EaG",
+          "action": "attack",
           "value": 10
         }
       ]
@@ -3333,6 +3337,10 @@
       "body": {
         "value": 196,
         "max": 196
+      },
+      "vitner": {
+        "value": 110,
+        "max": 110
       }
     },
     "combatPools": {

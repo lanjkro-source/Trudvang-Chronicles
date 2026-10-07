@@ -2558,54 +2558,76 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Unarmed",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Unarmed",
+          "itemId": "BMhZMZrXsYtZu0v1",
+          "action": "attack",
           "value": 5
         }
       ],
       [
         {
           "attack": "Wrestling",
+          "itemId": "",
+          "action": "glima",
           "value": 12
         }
       ],
       [
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "Qbb4BPkQlRmSnToU",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Medium metal-reinforced shield",
+          "itemId": "mkQcwHcIdJeKfLgM",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "7atzLVqWrXsYtZu0",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "7atzLVqWrXsYtZu0",
+          "action": "attack",
           "value": 6
         }
       ]
@@ -2614,6 +2636,10 @@
       "body": {
         "value": 91,
         "max": 91
+      },
+      "vitner": {
+        "value": 51,
+        "max": 51
       }
     },
     "combatPools": {

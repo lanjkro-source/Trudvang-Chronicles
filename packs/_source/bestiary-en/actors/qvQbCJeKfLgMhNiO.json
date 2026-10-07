@@ -91,6 +91,8 @@
         },
         {
           "attack": "Claws",
+          "itemId": "2Mk8KQjPkQlRmSnT",
+          "action": "attack",
           "value": 16
         }
       ]

@@ -147,14 +147,20 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "1X3jmC6B7C8D9EaG",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Patte empaleuse",
+          "itemId": "UhT3DqSnToUpVqWr",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Patte empaleuse",
+          "itemId": "UhT3DqSnToUpVqWr",
+          "action": "attack",
           "value": 8
         }
       ]

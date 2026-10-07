@@ -163,28 +163,40 @@
       [
         {
           "attack": "Bite",
+          "itemId": "Y7imCOjPkQlRmSnT",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Bite",
+          "itemId": "Y7imCOjPkQlRmSnT",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Claws",
+          "itemId": "3KajDE5A6B7C8D9E",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Bite",
+          "itemId": "Y7imCOjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Bite",
+          "itemId": "Y7imCOjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Claws",
+          "itemId": "3KajDE5A6B7C8D9E",
+          "action": "attack",
           "value": 10
         }
       ]

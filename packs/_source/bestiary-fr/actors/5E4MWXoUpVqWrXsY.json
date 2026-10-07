@@ -2222,12 +2222,16 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "hde2nVpVqWrXsYtZ",
+          "action": "attack",
           "value": 8
         }
       ],
       [
         {
           "attack": "Seax (dague/couteau)",
+          "itemId": "K7oe0NiOjPkQlRmS",
+          "action": "attack",
           "value": 8
         }
       ]
@@ -2236,6 +2240,10 @@
       "body": {
         "value": 12,
         "max": 12
+      },
+      "vitner": {
+        "value": 45,
+        "max": 45
       }
     },
     "combatPools": {

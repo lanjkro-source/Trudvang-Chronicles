@@ -411,56 +411,80 @@
       [
         {
           "attack": "Cornes",
+          "itemId": "KFs4J6x3y4z5A6B7",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Cornes",
+          "itemId": "KFs4J6x3y4z5A6B7",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "zxVmlkMhNiOjPkQl",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Tvei klubb (massue à deux mains)",
+          "itemId": "zxVmlkMhNiOjPkQl",
+          "action": "attack",
           "value": 9
         }
       ],
       [
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Grand bouclier en bois",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 15
         }
       ],
       [
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Grand bouclier en bois",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 8
         },
         {
           "attack": "Grand bouclier en bois",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 7
         }
       ]

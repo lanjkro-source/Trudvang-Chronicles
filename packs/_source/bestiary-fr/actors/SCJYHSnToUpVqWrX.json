@@ -155,7 +155,8 @@
           "book": "Bestiaire de Jorge",
           "page": 59
         },
-        "ignoreWoundPenalties": false
+        "ignoreWoundPenalties": false,
+        "vitnerCapacityBonus": 10
       },
       "effects": [],
       "_key": "!actors.items!SCJYHSnToUpVqWrX.KD0m2dHcIdJeKfLg"
@@ -2610,50 +2611,72 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "xkqFHWqWrXsYtZu0",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Mains nues",
+          "itemId": "xkqFHWqWrXsYtZu0",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Stakk swerd (épée d’armes)",
+          "itemId": "45fRzKeKfLgMhNiO",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Stakk swerd (épée d’armes)",
+          "itemId": "45fRzKeKfLgMhNiO",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "lE8WjrVqWrXsYtZu",
+          "action": "parry",
           "value": 12
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "lE8WjrVqWrXsYtZu",
+          "action": "parry",
           "value": 10
         }
       ],
       [
         {
           "attack": "Stakk swerd (épée d’armes)",
+          "itemId": "45fRzKeKfLgMhNiO",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Stakk swerd (épée d’armes)",
+          "itemId": "45fRzKeKfLgMhNiO",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Stakk swerd (épée d’armes)",
+          "itemId": "45fRzKeKfLgMhNiO",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "lE8WjrVqWrXsYtZu",
+          "action": "parry",
           "value": 10
         },
         {
           "attack": "Bouclier moyen en bois",
+          "itemId": "lE8WjrVqWrXsYtZu",
+          "action": "parry",
           "value": 10
         }
       ]
@@ -2662,6 +2685,10 @@
       "body": {
         "value": 87,
         "max": 87
+      },
+      "vitner": {
+        "value": 61,
+        "max": 61
       }
     },
     "combatPools": {

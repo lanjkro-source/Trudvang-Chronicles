@@ -163,28 +163,40 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "8jnXJ3x3y4z5A6B7",
+          "action": "attack",
           "value": 16
         },
         {
           "attack": "Morsure",
+          "itemId": "8jnXJ3x3y4z5A6B7",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Griffes",
+          "itemId": "jcMR7iLgMhNiOjPk",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Morsure",
+          "itemId": "8jnXJ3x3y4z5A6B7",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Morsure",
+          "itemId": "8jnXJ3x3y4z5A6B7",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Griffes",
+          "itemId": "jcMR7iLgMhNiOjPk",
+          "action": "attack",
           "value": 12
         }
       ]

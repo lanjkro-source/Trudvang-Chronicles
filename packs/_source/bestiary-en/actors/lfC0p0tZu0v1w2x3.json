@@ -340,30 +340,42 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "sq8iNRmSnToUpVqW",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Unarmed",
+          "itemId": "sq8iNRmSnToUpVqW",
+          "action": "attack",
           "value": 5
         }
       ],
       [
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "f5bvQ2u0v1w2x3y4",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "f5bvQ2u0v1w2x3y4",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "Y5TZGWoUpVqWrXsY",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "Y5TZGWoUpVqWrXsY",
+          "action": "attack",
           "value": 6
         }
       ]

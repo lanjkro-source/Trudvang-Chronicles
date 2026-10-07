@@ -91,14 +91,20 @@
       [
         {
           "attack": "Griffes",
+          "itemId": "s5sa1B5A6B7C8D9E",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Griffes",
+          "itemId": "s5sa1B5A6B7C8D9E",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Morsure",
+          "itemId": "tXvSLNhNiOjPkQlR",
+          "action": "attack",
           "value": 8
         }
       ]

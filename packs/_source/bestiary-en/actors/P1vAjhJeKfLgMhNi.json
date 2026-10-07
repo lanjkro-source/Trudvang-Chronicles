@@ -201,10 +201,14 @@
       [
         {
           "attack": "Breid spjót (broad spear)",
+          "itemId": "RtGzHkMhNiOjPkQl",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Breid spjót (broad spear)",
+          "itemId": "RtGzHkMhNiOjPkQl",
+          "action": "attack",
           "value": 10
         }
       ]

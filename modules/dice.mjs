@@ -456,7 +456,7 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, targetPointCost = 1, allocationMultiple = 1}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
@@ -485,7 +485,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     </div>` : "";
     return `<section data-combat-mode="${escapeHtml(mode.id)}" ${mode.id === defaultMode.id ? "" : "hidden"}>
       ${rangeSelection}
-      ${movementModes?.length ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Movement"))}</label><select data-movement-mode>${movementModes.map(movement => `<option value="${escapeHtml(movement.id)}">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.CombatMovementRate", {mode: movement.label, meters: movement.metersPerTwo}))}</option>`).join("")}</select></div>` : ""}
+      ${movementModes?.length ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Resource.Movement"))}</label><select data-movement-mode>${movementModes.map(movement => `<option value="${escapeHtml(movement.id)}"${movement.id === defaultMovementMode ? " selected" : ""}>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.CombatMovementRate", {mode: movement.label, meters: movement.metersPerTwo}))}</option>`).join("")}</select></div>` : ""}
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${sliderMaximum}" step="${allocationMultiple}" value="${sliderInitial}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}

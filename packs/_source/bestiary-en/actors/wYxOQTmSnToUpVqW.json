@@ -91,10 +91,14 @@
       [
         {
           "attack": "Sweep",
+          "itemId": "PvQLddE9EaGbHcId",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Tusks",
+          "itemId": "ywb0LSjPkQlRmSnT",
+          "action": "attack",
           "value": 10
         }
       ]

@@ -461,64 +461,92 @@
       [
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 6
         }
       ],
       [
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Krum swerd (cimeterre)",
+          "itemId": "rUYrqNfLgMhNiOjP",
+          "action": "attack",
           "value": 5
         },
         {
           "attack": "Petit bouclier renforcé de fourrure",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 9
         },
         {
           "attack": "Petit bouclier renforcé de fourrure",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 6
         }
       ],
       [
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Barda makir (masse de bataille)",
+          "itemId": "aVGWgH9EaGbHcIdJ",
+          "action": "attack",
           "value": 9
         },
         {
           "attack": "Petit bouclier renforcé de fourrure",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 7
         },
         {
           "attack": "Petit bouclier renforcé de fourrure",
+          "itemId": "EdrdMeHcIdJeKfLg",
+          "action": "parry",
           "value": 6
         }
       ],
       [
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "VLjjwVnToUpVqWrX",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Tvei faldir (fléau à deux mains)",
+          "itemId": "VLjjwVnToUpVqWrX",
+          "action": "attack",
           "value": 7
         }
       ]

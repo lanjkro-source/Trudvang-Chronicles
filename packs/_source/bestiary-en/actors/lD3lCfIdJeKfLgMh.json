@@ -67,10 +67,14 @@
       [
         {
           "attack": "Bite",
+          "itemId": "yGi379D9EaGbHcId",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Bite",
+          "itemId": "yGi379D9EaGbHcId",
+          "action": "attack",
           "value": 12
         }
       ]

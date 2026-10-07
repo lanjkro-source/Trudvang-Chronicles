@@ -411,56 +411,80 @@
       [
         {
           "attack": "Horns",
+          "itemId": "KFs4J6x3y4z5A6B7",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Horns",
+          "itemId": "KFs4J6x3y4z5A6B7",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "zxVmlkMhNiOjPkQl",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "zxVmlkMhNiOjPkQl",
+          "action": "attack",
           "value": 9
         }
       ],
       [
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Large Wooden Shield",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 15
         }
       ],
       [
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Barda makir (battle mace)",
+          "itemId": "3PFDQRjPkQlRmSnT",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Large Wooden Shield",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 8
         },
         {
           "attack": "Large Wooden Shield",
+          "itemId": "iZ2gBD5A6B7C8D9E",
+          "action": "parry",
           "value": 7
         }
       ]

@@ -1,4 +1,6 @@
-import {npcCombatActionRounds} from "./rules/npc-summary.mjs";
+import {nextNpcCombatCycle} from "./rules/npc-combat-cycle.mjs";
+
+const resourceUpdates = new WeakMap();
 
 /** Whether Foundry advanced to a combatant's turn rather than rewinding the tracker. */
 export function isCombatTurnStart(previous = {}, current = {}) {
@@ -29,11 +31,9 @@ export function combatInitiativesAreReady(combat) {
 }
 
 /** PCs and weapon actions of a large NPC last for its entire size-based cycle. */
-export function combatResourcesRefreshIsDue(actor, round) {
+export function combatResourcesRefreshIsDue(actor, round, combatId = actor?.system?.combatCycle?.combatId ?? "") {
   if (actor?.type !== "npc") return true;
-  const cycle = npcCombatActionRounds(actor.system?.details?.size);
-  const currentRound = Number(round);
-  return !Number.isInteger(currentRound) || currentRound < 1 || (currentRound - 1) % cycle === 0;
+  return nextNpcCombatCycle(actor.system.combatCycle, {combatId, round, size: actor.system.details?.size}).refresh;
 }
 
 /** Activate the highest-initiative combatant once every participant has rolled. */
@@ -47,9 +47,7 @@ export async function activateHighestInitiativeCombatant(combat, {isActiveGM = g
   combat.setupTurns?.();
   const turn = Array.from(combat.turns ?? []).findIndex(candidate => candidate.id === combatant.id);
   if (combat.current?.combatantId !== combatant.id) await combat.update({turn: turn >= 0 ? turn : 0});
-  if (combatResourcesRefreshIsDue(combatant.actor, combat.round ?? combat.current?.round)) {
-    await combatant.actor.resetCombatPoints();
-  }
+  await resetCurrentCombatantResources(combat, {combatantId: combatant.id, round: combat.round ?? combat.current?.round}, {isActiveGM});
   return true;
 }
 
@@ -67,9 +65,25 @@ export async function resetCurrentCombatantResources(combat, current, {isActiveG
   const combatant = combat.combatants?.get?.(current.combatantId)
     ?? Array.from(combat.combatants?.values?.() ?? combat.combatants ?? []).find(candidate => candidate.id === current.combatantId);
   if (typeof combatant?.actor?.resetCombatPoints !== "function") return false;
-  if (!combatResourcesRefreshIsDue(combatant.actor, current.round ?? combat.round)) return false;
-  await combatant.actor.resetCombatPoints();
-  return true;
+  const actor = combatant.actor;
+  if (actor.type !== "npc") {
+    await actor.resetCombatPoints();
+    return true;
+  }
+  // Leader activation and Foundry's turn hook can overlap. Serialize them and
+  // read the persisted phase only after the preceding actor update completed.
+  const pending = (resourceUpdates.get(actor) ?? Promise.resolve()).catch(() => {}).then(async () => {
+    const cycle = nextNpcCombatCycle(actor.system.combatCycle, {combatId: combat.id ?? "",
+      round: current.round ?? combat.round, size: actor.system.details?.size});
+    if (!cycle.changed) return false;
+    if (cycle.refresh) await actor.resetCombatPoints({cycle: cycle.state});
+    else await actor.update({"system.combatCycle": cycle.state});
+    return true;
+  });
+  resourceUpdates.set(actor, pending);
+  try { return await pending; } finally {
+    if (resourceUpdates.get(actor) === pending) resourceUpdates.delete(actor);
+  }
 }
 
 /** Decrease the remaining life-spark duration of every dying combatant once per round. */

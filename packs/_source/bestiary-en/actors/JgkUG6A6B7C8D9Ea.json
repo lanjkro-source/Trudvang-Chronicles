@@ -149,10 +149,14 @@
       [
         {
           "attack": "Bite",
+          "itemId": "FmhLbkLgMhNiOjPk",
+          "action": "attack",
           "value": 13
         },
         {
           "attack": "Claws",
+          "itemId": "UvEoW5w2x3y4z5A6",
+          "action": "attack",
           "value": 10
         }
       ]

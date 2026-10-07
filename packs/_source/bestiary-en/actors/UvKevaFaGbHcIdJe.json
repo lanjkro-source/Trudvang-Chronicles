@@ -392,20 +392,28 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "IWTqS2v1w2x3y4z5",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Unarmed",
+          "itemId": "IWTqS2v1w2x3y4z5",
+          "action": "attack",
           "value": 5
         }
       ],
       [
         {
           "attack": "Split axi (hand axe)",
+          "itemId": "bXoedy1w2x3y4z5A",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Split axi (hand axe)",
+          "itemId": "bXoedy1w2x3y4z5A",
+          "action": "attack",
           "value": 5
         }
       ]

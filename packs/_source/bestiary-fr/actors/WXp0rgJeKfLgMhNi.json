@@ -407,56 +407,80 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "crxGEHcIdJeKfLgM",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Mains nues",
+          "itemId": "crxGEHcIdJeKfLgM",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Barda swerd (épée de bataille)",
+          "itemId": "0tHmvoSnToUpVqWr",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Barda swerd (épée de bataille)",
+          "itemId": "0tHmvoSnToUpVqWr",
+          "action": "attack",
           "value": 7
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 12
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 9
         }
       ],
       [
         {
           "attack": "Glaaf (épée courte)",
+          "itemId": "fD4ZfaE9EaGbHcId",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Glaaf (épée courte)",
+          "itemId": "fD4ZfaE9EaGbHcId",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 8
         },
         {
           "attack": "Petit bouclier en bois",
+          "itemId": "wbX5ZQkQlRmSnToU",
+          "action": "parry",
           "value": 7
         }
       ],
       [
         {
           "attack": "Tvei swerd (épée à deux mains)",
+          "itemId": "LkkJKC6B7C8D9EaG",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Tvei swerd (épée à deux mains)",
+          "itemId": "LkkJKC6B7C8D9EaG",
+          "action": "attack",
           "value": 11
         }
       ]

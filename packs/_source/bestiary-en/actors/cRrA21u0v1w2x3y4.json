@@ -437,34 +437,48 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "7RwzVmOjPkQlRmSn",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Unarmed",
+          "itemId": "7RwzVmOjPkQlRmSn",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "mpgkLKeKfLgMhNiO",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Staaf spjót (hunting spear)",
+          "itemId": "mpgkLKeKfLgMhNiO",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei faldir (two-handed flail)",
+          "itemId": "DX8pvrVqWrXsYtZu",
+          "action": "attack",
           "value": 6
         }
       ]

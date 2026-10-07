@@ -67,10 +67,14 @@
       [
         {
           "attack": "Horns",
+          "itemId": "hE7gyE6B7C8D9EaG",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Horns",
+          "itemId": "hE7gyE6B7C8D9EaG",
+          "action": "attack",
           "value": 8
         }
       ]

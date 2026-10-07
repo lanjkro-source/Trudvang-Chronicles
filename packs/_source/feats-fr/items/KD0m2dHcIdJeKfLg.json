@@ -11,7 +11,8 @@
       "book": "Bestiaire de Jorge",
       "page": 59
     },
-    "ignoreWoundPenalties": false
+    "ignoreWoundPenalties": false,
+    "vitnerCapacityBonus": 10
   },
   "effects": [],
   "_key": "!items!KD0m2dHcIdJeKfLg",

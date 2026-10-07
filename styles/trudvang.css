@@ -151,7 +151,25 @@
 .trudvang-sheet.npc-sheet .npc-combat-actions .item { grid-template-columns: 26px minmax(90px, 1fr) minmax(0, 1fr) repeat(4, 25px); }
 .trudvang-sheet.npc-sheet .npc-combat-actions .item button:not(.item-name) { width: 25px; min-width: 0; padding: 2px; }
 .trudvang-sheet.npc-sheet .npc-combat-actions .icon-placeholder { width: 25px; }
-.trudvang-sheet.npc-sheet .tab.actions > .panel { margin-bottom: 10px; }
+.trudvang-sheet.npc-sheet :is(.tab.combat, .tab.magic) > .panel { margin-bottom: 10px; }
+.trudvang-sheet.npc-sheet .npc-cycle-counter { display: inline-flex; gap: 6px; align-items: center; color: var(--trudvang-accent); white-space: nowrap; }
+.trudvang-sheet.npc-sheet .npc-prepared-combinations { list-style: decimal; margin: 0; padding-left: 22px; }
+.trudvang-sheet.npc-sheet .npc-prepared-combination { margin: 5px 0; padding: 3px 0; border-bottom: 1px dotted var(--trudvang-line); }
+.trudvang-sheet.npc-sheet .npc-prepared-combination::marker { color: var(--trudvang-muted); }
+.trudvang-sheet.npc-sheet .npc-prepared-action { display: inline-flex; align-items: center; gap: 5px; width: auto; min-height: 28px; margin: 2px 3px 2px 0; padding: 4px 7px; color: var(--trudvang-ink); background: var(--trudvang-paper); border: 1px solid var(--trudvang-line); border-radius: 3px; font-size: .8rem; line-height: 1.2; white-space: normal; text-align: left; }
+.trudvang-sheet.npc-sheet .npc-prepared-action.used { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); border-color: var(--trudvang-positive); }
+.trudvang-sheet.npc-sheet .npc-prepared-action:disabled { color: var(--trudvang-muted); background: var(--trudvang-paper); opacity: 1; cursor: not-allowed; }
+.trudvang-sheet.npc-sheet .npc-prepared-action.used:disabled { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
+.trudvang-sheet.npc-sheet .npc-magic-resource { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 30px; }
+.trudvang-sheet.npc-sheet .npc-magic-resource > span { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+.trudvang-sheet.npc-sheet .npc-magic-resource input { width: 46px; height: 25px; padding: 0 3px; text-align: center; }
+.trudvang-sheet.npc-sheet .npc-magic-resource > button { flex: 0 0 26px; width: 26px; }
+.trudvang-sheet.npc-sheet .npc-innate-magic { display: flex; align-items: center; gap: 8px; }
+.trudvang-sheet.npc-sheet .npc-innate-magic input { width: 60px; height: 25px; }
+.trudvang-sheet.npc-sheet .npc-magic-tree .tablet-node { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; }
+.trudvang-sheet.npc-sheet .npc-magic-tree .spell-node { display: grid; grid-template-columns: 24px 24px minmax(0, 1fr) auto auto; margin-left: 12px; gap: 5px; font-size: .8rem; }
+.trudvang-sheet.npc-sheet .npc-magic-tree .knowledge-node > span { white-space: nowrap; color: var(--trudvang-muted); }
+.trudvang-sheet.npc-sheet .npc-magic-tree .knowledge-node .item-name { white-space: normal; line-height: 1.2; font-size: .82rem; }
 .trudvang-sheet.npc-sheet .npc-combat-actions .item-detail { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--trudvang-ink); }
 .trudvang-sheet .combat-pool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 28px; gap: 5px 8px; }
 .trudvang-sheet .combat-pool-progress { position: relative; display: flex; min-width: 0; align-items: center; justify-content: space-between; overflow: hidden; padding: 0 8px; border: 1px solid color-mix(in srgb, var(--trudvang-gold) 55%, transparent); border-radius: 3px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); font-size: .72rem; }

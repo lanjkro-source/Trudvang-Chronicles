@@ -319,12 +319,16 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "INS7jeIdJeKfLgMh",
+          "action": "attack",
           "value": 8
         }
       ],
       [
         {
           "attack": "Nagli klubb (spiked club)",
+          "itemId": "DB7i6QjPkQlRmSnT",
+          "action": "attack",
           "value": 8
         }
       ]

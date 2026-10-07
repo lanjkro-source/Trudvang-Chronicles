@@ -190,10 +190,14 @@
       [
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "XGJs0x2x3y4z5A6B",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Unarmed",
+          "itemId": "uWTZ84v1w2x3y4z5",
+          "action": "attack",
           "value": 12
         }
       ]

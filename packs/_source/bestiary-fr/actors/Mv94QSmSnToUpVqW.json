@@ -133,14 +133,20 @@
       [
         {
           "attack": "Griffes",
+          "itemId": "WDQ1WfIdJeKfLgMh",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Griffes",
+          "itemId": "WDQ1WfIdJeKfLgMh",
+          "action": "attack",
           "value": 6
         },
         {
           "attack": "Morsure",
+          "itemId": "5X4PoSkQlRmSnToU",
+          "action": "attack",
           "value": 6
         }
       ]

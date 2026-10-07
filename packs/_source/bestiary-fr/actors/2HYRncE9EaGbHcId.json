@@ -85,7 +85,8 @@
           "book": "Bestiaire de Jorge",
           "page": 148
         },
-        "ignoreWoundPenalties": false
+        "ignoreWoundPenalties": false,
+        "unlimitedVitner": true
       },
       "effects": [],
       "_key": "!actors.items!2HYRncE9EaGbHcId.VGNAoOgMhNiOjPkQ"
@@ -9254,16 +9255,22 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "EtsVtqUpVqWrXsYt",
+          "action": "attack",
           "value": 10
         }
       ],
       [
         {
           "attack": "Stafur (bâton)",
+          "itemId": "RK3l0C7C8D9EaGbH",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Stafur (bâton)",
+          "itemId": "RK3l0C7C8D9EaGbH",
+          "action": "attack",
           "value": 7
         }
       ]

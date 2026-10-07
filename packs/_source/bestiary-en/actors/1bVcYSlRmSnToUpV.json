@@ -85,6 +85,8 @@
       [
         {
           "attack": "Kick",
+          "itemId": "JAZMlmQlRmSnToUp",
+          "action": "attack",
           "value": 12
         }
       ]

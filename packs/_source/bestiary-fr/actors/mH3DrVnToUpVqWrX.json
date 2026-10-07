@@ -458,40 +458,56 @@
       [
         {
           "attack": "Projection à coup de défenses",
+          "itemId": "",
+          "action": "special",
           "value": 11
         }
       ],
       [
         {
           "attack": "Mains nues",
+          "itemId": "nEO9lz0v1w2x3y4z",
+          "action": "attack",
           "value": 15
         },
         {
           "attack": "Mains nues",
+          "itemId": "nEO9lz0v1w2x3y4z",
+          "action": "attack",
           "value": 7
         }
       ],
       [
         {
           "attack": "Barda hammri (marteau de bataille)",
+          "itemId": "KagEscHcIdJeKfLg",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Barda hammri (marteau de bataille)",
+          "itemId": "KagEscHcIdJeKfLg",
+          "action": "attack",
           "value": 12
         }
       ],
       [
         {
           "attack": "Tvei axi (hache à deux mains)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei axi (hache à deux mains)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei axi (hache à deux mains)",
+          "itemId": "19x9BiNiOjPkQlRm",
+          "action": "attack",
           "value": 6
         }
       ]

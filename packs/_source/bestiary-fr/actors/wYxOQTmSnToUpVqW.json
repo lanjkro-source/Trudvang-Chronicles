@@ -91,10 +91,14 @@
       [
         {
           "attack": "Balayage",
+          "itemId": "PvQLddE9EaGbHcId",
+          "action": "attack",
           "value": 14
         },
         {
           "attack": "Défense",
+          "itemId": "ywb0LSjPkQlRmSnT",
+          "action": "attack",
           "value": 10
         }
       ]

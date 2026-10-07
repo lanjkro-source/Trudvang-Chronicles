@@ -85,6 +85,8 @@
       [
         {
           "attack": "Cornes",
+          "itemId": "KPUT6dFaGbHcIdJe",
+          "action": "attack",
           "value": 14
         }
       ]

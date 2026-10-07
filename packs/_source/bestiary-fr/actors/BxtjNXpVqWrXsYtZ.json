@@ -191,14 +191,20 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "9noFvlPkQlRmSnTo",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Arbre déraciné ou rocher",
+          "itemId": "WpQT1ZtZu0v1w2x3",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Arbre déraciné ou rocher",
+          "itemId": "WpQT1ZtZu0v1w2x3",
+          "action": "attack",
           "value": 8
         }
       ]

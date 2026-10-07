@@ -2317,14 +2317,20 @@
       [
         {
           "attack": "Morsure",
+          "itemId": "vjRMuH8D9EaGbHcI",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Griffes",
+          "itemId": "AxqiZLeKfLgMhNiO",
+          "action": "attack",
           "value": 11
         },
         {
           "attack": "Griffes",
+          "itemId": "AxqiZLeKfLgMhNiO",
+          "action": "attack",
           "value": 7
         }
       ]
@@ -2333,6 +2339,10 @@
       "body": {
         "value": 45,
         "max": 45
+      },
+      "vitner": {
+        "value": 43,
+        "max": 43
       }
     },
     "combatPools": {

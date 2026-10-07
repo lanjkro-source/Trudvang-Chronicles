@@ -191,14 +191,20 @@
       [
         {
           "attack": "Unarmed",
+          "itemId": "9noFvlPkQlRmSnTo",
+          "action": "attack",
           "value": 10
         },
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "WpQT1ZtZu0v1w2x3",
+          "action": "attack",
           "value": 8
         },
         {
           "attack": "Tvei klubb (two-handed club)",
+          "itemId": "WpQT1ZtZu0v1w2x3",
+          "action": "attack",
           "value": 8
         }
       ]

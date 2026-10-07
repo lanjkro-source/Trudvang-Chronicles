@@ -124,10 +124,14 @@
       [
         {
           "attack": "Mains nues",
+          "itemId": "VbvKesWrXsYtZu0v",
+          "action": "attack",
           "value": 12
         },
         {
           "attack": "Mains nues",
+          "itemId": "VbvKesWrXsYtZu0v",
+          "action": "attack",
           "value": 10
         }
       ]

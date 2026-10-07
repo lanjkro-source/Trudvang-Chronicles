@@ -2,6 +2,7 @@ import {deterministicId} from "./skill-pack-data.mjs";
 import {CREATURE_ABILITY_ENTRIES} from "./creature-ability-data.mjs";
 import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {TABLET_BY_ID, powerItemData, tabletItemData} from "./tablet-catalog.mjs";
+import {creatureMagicTraits, magicCapacities} from "./rules/magic-capacity.mjs";
 
 // Pure builders: the same stable identities survive a later move to a content module.
 export const BESTIARY_PACKS = [
@@ -29,7 +30,9 @@ export function creatureAbilityItemData(entry, {code, localize, strict = false})
   };
   return {_id: entry.id, name: text("Name"), type: "creatureAbility", img: "icons/svg/aura.svg",
     system: {catalogId: entry.id, summary: text("Summary"), description: text("Description"),
-      source: {book: text("SourceBook"), page: entry.pages[code]}, ignoreWoundPenalties: entry.ignoreWoundPenalties},
+      source: {book: text("SourceBook"), page: entry.pages[code]}, ignoreWoundPenalties: entry.ignoreWoundPenalties,
+      ...(entry.unlimitedVitner ? {unlimitedVitner: true} : {}),
+      ...(entry.vitnerCapacityBonus ? {vitnerCapacityBonus: entry.vitnerCapacityBonus} : {})},
     effects: []};
 }
 
@@ -64,6 +67,12 @@ export function buildBestiaryPackDocuments({code, localize, format, isFrench, st
       actor.items.push({...tabletItem, _id: deterministicId(`tablet:${id}`),
         system: {...tabletItem.system, level}},
       ...tablet.powers.map(power => ({...powerItemData(power, tablet, resolvers), _id: deterministicId(`power:${power.id}`)})));
+    }
+    const capacities = magicCapacities({skill: key => Number(actor.system.skills?.[key]?.value || 0),
+      level: id => Number(actor.system.skillTree.find(row => row.catalogId === id)?.value || 0),
+      vitnerBonus: creatureMagicTraits(actor.items).vitnerBonus});
+    for (const resource of ["vitner", "divinity"]) {
+      if (capacities[resource] !== null) actor.system.resources[resource] = {value: capacities[resource], max: capacities[resource]};
     }
     actor.items = actor.items.map(item => ({...item, _key: `!actors.items!${entry.id}.${item._id}`, effects: item.effects ?? []}));
     return {...actor, _id: entry.id, _key: `!actors!${entry.id}`,
