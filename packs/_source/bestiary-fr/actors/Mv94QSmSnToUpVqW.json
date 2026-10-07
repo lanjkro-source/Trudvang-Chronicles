@@ -1,7 +1,7 @@
 {
   "name": "Happja",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpg",
   "items": [
     {
       "_id": "5X4PoSkQlRmSnToU",
@@ -100,17 +100,15 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-2.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-3.jpg",
-      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-4.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-2.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW-3.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/Mv94QSmSnToUpVqW.jpeg",
     "traits": {
       "constitution": -2,
       "dexterity": 2,

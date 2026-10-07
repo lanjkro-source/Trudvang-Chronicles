@@ -92,7 +92,7 @@ test("NPC current traits follow intrinsic traits by default, but accept zero and
 test("both actor models store galleries, and both sheet menus expose portrait management and sharing", async () => {
   for (const Model of [CharacterData, NpcData]) {
     const schema = Model.defineSchema();
-    assert.ok(schema.portraits); assert.ok(schema.sharedPortrait);
+    assert.ok(schema.portraits); assert.equal(schema.sharedPortrait, undefined);
   }
   const previous = foundry.applications.api.DialogV2;
   const previousDocument = globalThis.document;
@@ -108,10 +108,12 @@ test("both actor models store galleries, and both sheet menus expose portrait ma
       const controls = sheet._getHeaderControls();
       assert.ok(controls.some(control => control.action === "configureSheet"), "native controls remain present");
       assert.equal(controls.filter(control => control.action === "share-portrait").length, 1);
+      const share = controls.find(control => control.action === "share-portrait");
+      assert.equal(typeof share.onClick, "function");
       const manage = controls.find(control => control.action === "manage-portraits");
+      assert.equal(typeof manage.onClick, "function");
       assert.equal(manage.visible(), true); sheet.isEditable = false; assert.equal(manage.visible(), false);
-      await TrudvangActorSheet.DEFAULT_OPTIONS.actions["share-portrait"].call(sheet,
-        {preventDefault() {}, stopPropagation() {}}, {dataset: {action: "share-portrait"}, closest: () => null});
+      await share.onClick();
     }
     assert.equal(shared, 2);
   } finally { foundry.applications.api.DialogV2 = previous; globalThis.document = previousDocument; }

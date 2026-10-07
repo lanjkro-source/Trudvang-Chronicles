@@ -1,7 +1,7 @@
 {
   "name": "Vieux hrimtroll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpg",
   "items": [
     {
       "_id": "nEO9lz0v1w2x3y4z",
@@ -210,14 +210,13 @@
     "width": 4,
     "height": 4,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/mH3DrVnToUpVqWrX.jpeg",
     "traits": {
       "constitution": 4,
       "dexterity": -4,

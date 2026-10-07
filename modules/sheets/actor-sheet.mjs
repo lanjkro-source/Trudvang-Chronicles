@@ -108,8 +108,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   _getHeaderControls() {
     return [...super._getHeaderControls(),
-      {action: "manage-portraits", icon: "fas fa-images", label: "TRUDVANG.Portrait.ManageMenu", visible: () => this.isEditable},
-      {action: "share-portrait", icon: "fas fa-image", label: "TRUDVANG.Portrait.ShareMenu"}
+      {action: "manage-portraits", icon: "fas fa-images", label: "TRUDVANG.Portrait.ManageMenu", visible: () => this.isEditable,
+        onClick: () => manageActorPortraits(this.actor)},
+      {action: "share-portrait", icon: "fas fa-image", label: "TRUDVANG.Portrait.ShareMenu",
+        onClick: () => showActorPortraitDialog(this.actor)}
     ];
   }
 

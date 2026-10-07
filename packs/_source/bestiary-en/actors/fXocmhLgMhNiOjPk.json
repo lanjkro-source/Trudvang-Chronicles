@@ -1,7 +1,7 @@
 {
   "name": "King Troll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpg",
   "items": [
     {
       "_id": "BMhZMZrXsYtZu0v1",
@@ -2257,15 +2257,14 @@
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/fXocmhLgMhNiOjPk.jpeg",
     "traits": {
       "intelligence": 4,
       "strength": 4

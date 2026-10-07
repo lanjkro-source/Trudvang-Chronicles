@@ -1,7 +1,7 @@
 {
   "name": "Goblin",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpg",
   "items": [
     {
       "_id": "IWTqS2v1w2x3y4z5",
@@ -182,15 +182,14 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/UvKevaFaGbHcIdJe.jpeg",
     "traits": {
       "dexterity": 2,
       "intelligence": -4,

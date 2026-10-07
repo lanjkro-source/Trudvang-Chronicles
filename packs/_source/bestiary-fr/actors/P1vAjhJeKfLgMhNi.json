@@ -1,7 +1,7 @@
 {
   "name": "Hrimtursir",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpg",
   "items": [
     {
       "_id": "cJH8URlRmSnToUpV",
@@ -157,15 +157,14 @@
     "width": 5,
     "height": 5,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/P1vAjhJeKfLgMhNi.jpeg",
     "traits": {
       "strength": 8
     },

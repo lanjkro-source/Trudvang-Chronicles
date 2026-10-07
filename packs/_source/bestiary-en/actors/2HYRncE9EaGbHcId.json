@@ -1,7 +1,7 @@
 {
   "name": "Fjol Troll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg",
   "items": [
     {
       "_id": "EtsVtqUpVqWrXsYt",
@@ -9017,14 +9017,13 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2HYRncE9EaGbHcId.jpeg",
     "traits": {
       "dexterity": -2,
       "intelligence": 10,

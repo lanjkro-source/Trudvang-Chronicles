@@ -43,7 +43,6 @@ test("each bestiary actor has valid folders, embedded identities, independent to
     const dimensions = creatureTokenDimensions(actor.system.details.size);
     assert.equal(actor.prototypeToken.width, dimensions.width); assert.equal(actor.prototypeToken.height, dimensions.height);
     assert.ok(existsSync(new URL(`../${actor.img.replace("systems/trudvang-chronicles/", "")}`, import.meta.url)));
-    assert.equal(actor.system.sharedPortrait, actor.img);
     assert.equal(actor.system.portraits[0], actor.img);
     for (const src of actor.system.portraits) assert.ok(existsSync(new URL(`../${src.replace("systems/trudvang-chronicles/", "")}`, import.meta.url)));
     assert.equal(new Set(actor.items.map(item => item._id)).size, actor.items.length);

@@ -1,7 +1,7 @@
 {
   "name": "Nymph",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpg",
   "items": [
     {
       "_id": "INS7jeIdJeKfLgMh",
@@ -103,15 +103,14 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/9TaOaMdJeKfLgMhN.jpeg",
     "traits": {
       "charisma": 2,
       "intelligence": 1

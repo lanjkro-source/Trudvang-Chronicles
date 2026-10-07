@@ -1,7 +1,7 @@
 {
   "name": "Ogre",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpg",
   "items": [
     {
       "_id": "sq8iNRmSnToUpVqW",
@@ -134,14 +134,13 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/lfC0p0tZu0v1w2x3.jpeg",
     "traits": {
       "constitution": 2,
       "dexterity": -2,

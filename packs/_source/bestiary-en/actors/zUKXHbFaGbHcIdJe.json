@@ -1,7 +1,7 @@
 {
   "name": "Grendel",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpg",
   "items": [
     {
       "_id": "0oSkq8A6B7C8D9Ea",
@@ -118,14 +118,13 @@
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/zUKXHbFaGbHcIdJe.jpeg",
     "traits": {
       "constitution": 6,
       "dexterity": -2,

@@ -1,7 +1,7 @@
 {
   "name": "Muspeljotun",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpg",
   "items": [
     {
       "_id": "oqOsINhNiOjPkQlR",
@@ -130,15 +130,14 @@
     "width": 5,
     "height": 5,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/urjmtIdJeKfLgMhN.jpeg",
     "traits": {
       "strength": 8
     },

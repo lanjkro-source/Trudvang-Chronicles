@@ -1,7 +1,7 @@
 {
   "name": "Gråtroll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg",
   "items": [
     {
       "_id": "4lYnNMgMhNiOjPkQ",
@@ -206,14 +206,13 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/pAbCZpRmSnToUpVq.jpeg",
     "traits": {
       "constitution": 1,
       "intelligence": -2,

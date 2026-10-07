@@ -1,7 +1,7 @@
 {
   "name": "Revenant des tumulus",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpg",
   "items": [
     {
       "_id": "xkqFHWqWrXsYtZu0",
@@ -2413,16 +2413,15 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-2.jpeg",
+      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-2.jpg",
       "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX-3.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/SCJYHSnToUpVqWrX.jpeg",
     "traits": {
       "strength": 4
     },

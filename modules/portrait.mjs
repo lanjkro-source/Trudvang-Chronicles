@@ -1,5 +1,5 @@
 import { escapeHtml, renderTemplate } from "./helpers.mjs";
-import {actorPortraitSelectionUpdate, actorPortraitSources, normalizePortraitSources, sharedActorPortrait} from "./actor-portraits.mjs";
+import {actorPortraitSelectionUpdate, actorPortraitSources, normalizePortraitSources} from "./actor-portraits.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const SOCKET_CHANNEL = `system.${SYSTEM_ID}.showPortrait`;
@@ -23,29 +23,28 @@ async function availablePortraits(actor) {
   return sources;
 }
 
-function portraitGalleryHTML(actor, sources, {managing = false, sheet = actor.img, share = sharedActorPortrait(actor)} = {}) {
+function portraitGalleryHTML(actor, sources, {managing = false, sheet = actor.img} = {}) {
   const text = key => escapeHtml(game.i18n.localize(`TRUDVANG.Portrait.${key}`));
   const attribute = value => escapeHtml(value).replaceAll('"', "&quot;");
   return sources.map((src, index) => {
     const name = escapeHtml(game.i18n.format("TRUDVANG.Portrait.Numbered", {number: index + 1}));
-    const shared = src === share;
-    return `<div class="portrait-choice${shared ? " selected" : ""}" data-portrait-index="${index}">
+    const selected = src === sheet;
+    return `<div class="portrait-choice${selected ? " selected" : ""}" data-portrait-index="${index}">
       ${managing ? `<img src="${attribute(src)}" alt="${name}" loading="lazy">`
-        : `<label class="portrait-choice-preview"><input type="radio" name="sharePortrait" value="${index}" ${shared ? "checked" : ""}><img src="${attribute(src)}" alt="${name}" loading="lazy"></label>`}
+        : `<label class="portrait-choice-preview"><input type="radio" name="sharePortrait" value="${index}" ${selected ? "checked" : ""}><img src="${attribute(src)}" alt="${name}" loading="lazy"></label>`}
       <span class="portrait-choice-name" title="${attribute(src)}">${name}</span>
       ${managing ? `<div class="portrait-use-options">
         <label><input type="radio" name="sheetPortrait" value="${index}" ${src === sheet ? "checked" : ""}>${text("Sheet")}</label>
-        <label><input type="radio" name="sharePortrait" value="${index}" ${shared ? "checked" : ""}>${text("Shared")}</label>
       </div><button type="button" class="portrait-remove" data-remove-portrait="${index}" title="${text("Remove")}" aria-label="${text("Remove")}" ${sources.length === 1 ? "disabled" : ""}><i class="fas fa-trash" aria-hidden="true"></i></button>` : ""}
     </div>`;
   }).join("");
 }
 
-/** Manage avatar and share choices together; cancellation does not save any change. */
+/** Manage the sheet portrait and gallery; cancellation does not save any change. */
 export async function manageActorPortraits(actor) {
   if (!canEditPortraits(actor)) return false;
   let sources = await availablePortraits(actor);
-  let sheet = actor.img, share = sharedActorPortrait(actor);
+  let sheet = actor.img;
   const DialogClass = foundry.applications.api.DialogV2;
   class PortraitGalleryDialog extends DialogClass {
     async _onRender(context, options) {
@@ -54,12 +53,11 @@ export async function manageActorPortraits(actor) {
       const grid = root.querySelector(".portrait-grid");
       const readSelections = () => {
         sheet = sources[Number(root.querySelector('[name="sheetPortrait"]:checked')?.value)] ?? sheet;
-        share = sources[Number(root.querySelector('[name="sharePortrait"]:checked')?.value)] ?? share;
       };
-      const refresh = () => { grid.innerHTML = portraitGalleryHTML(actor, sources, {managing: true, sheet, share}); };
+      const refresh = () => { grid.innerHTML = portraitGalleryHTML(actor, sources, {managing: true, sheet}); };
       grid.addEventListener("change", () => {
         readSelections();
-        grid.querySelectorAll(".portrait-choice").forEach(card => card.classList.toggle("selected", sources[Number(card.dataset.portraitIndex)] === share));
+        grid.querySelectorAll(".portrait-choice").forEach(card => card.classList.toggle("selected", sources[Number(card.dataset.portraitIndex)] === sheet));
       });
       grid.addEventListener("click", event => {
         const button = event.target.closest("[data-remove-portrait]");
@@ -67,7 +65,6 @@ export async function manageActorPortraits(actor) {
         readSelections();
         sources.splice(Number(button.dataset.removePortrait), 1);
         if (!sources.includes(sheet)) sheet = sources[0];
-        if (!sources.includes(share)) share = sheet;
         refresh();
       });
       root.querySelector("[data-add-portrait]").addEventListener("click", () => {
@@ -85,15 +82,14 @@ export async function manageActorPortraits(actor) {
     classes: ["trudvang", "portrait-picker-window"], position: {width: 640},
     content: `<div class="trudvang roll-dialog portrait-dialog portrait-manager">
       <p>${escapeHtml(game.i18n.localize("TRUDVANG.Portrait.GalleryHint"))}</p>
-      <div class="portrait-grid">${portraitGalleryHTML(actor, sources, {managing: true, sheet, share})}</div>
+      <div class="portrait-grid">${portraitGalleryHTML(actor, sources, {managing: true, sheet})}</div>
       <button type="button" data-add-portrait><i class="fas fa-plus" aria-hidden="true"></i> ${escapeHtml(game.i18n.localize("TRUDVANG.Portrait.Add"))}</button>
     </div>`,
     buttons: [{action: "save", label: game.i18n.localize("TRUDVANG.Portrait.Save"), default: true,
       callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
         return actorPortraitSelectionUpdate(actor, {sources,
-          sheet: sources[Number(root.querySelector('[name="sheetPortrait"]:checked')?.value)],
-          share: sources[Number(root.querySelector('[name="sharePortrait"]:checked')?.value)]});
+          sheet: sources[Number(root.querySelector('[name="sheetPortrait"]:checked')?.value)]});
       }}, {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}],
     modal: false, rejectClose: false
   });
@@ -124,7 +120,7 @@ export function openPortraitPopout({ src, title = "", uuid = "" } = {}) {
  * large popout on every connected client. A non-GM `forceAll` request only
  * posts the chat card: the socket emit is silently skipped.
  */
-export async function showActorPortrait(actor, { forceAll = false, src = sharedActorPortrait(actor) } = {}) {
+export async function showActorPortrait(actor, { forceAll = false, src = actor?.img } = {}) {
   if (!actor) return null;
   if (!src) return null;
   forceAll = Boolean(forceAll && game.user?.isGM);
@@ -179,7 +175,7 @@ export async function showActorPortraitDialog(actor) {
         default: true,
         callback: (event, button, dialog) => {
           const root = button.form ?? dialog.element;
-          return {src: sources[Number(root.querySelector('[name="sharePortrait"]:checked')?.value)] ?? sharedActorPortrait(actor),
+          return {src: sources[Number(root.querySelector('[name="sharePortrait"]:checked')?.value)] ?? actor.img,
             forceAll: Boolean(root.querySelector("[name=forceAll]")?.checked) };
         }
       },
@@ -189,7 +185,6 @@ export async function showActorPortraitDialog(actor) {
     rejectClose: false
   });
   if (!answered) return false;
-  if (canEditPortraits(actor) && answered.src !== sharedActorPortrait(actor)) await actor.update({"system.sharedPortrait": answered.src});
   return showActorPortrait(actor, answered);
 }
 

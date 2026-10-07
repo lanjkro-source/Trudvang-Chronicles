@@ -1,7 +1,7 @@
 {
   "name": "Forest Troll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpg",
   "items": [
     {
       "_id": "VznrwsWrXsYtZu0v",
@@ -232,15 +232,14 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/4aJbFSmSnToUpVqW.jpeg",
     "traits": {
       "dexterity": 2,
       "intelligence": -4

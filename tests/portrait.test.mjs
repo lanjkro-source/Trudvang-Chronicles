@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
 import Handlebars from "handlebars";
-import {actorPortraitSelectionUpdate, actorPortraitSources, normalizePortraitSources, sharedActorPortrait} from "../modules/actor-portraits.mjs";
+import {actorPortraitSelectionUpdate, actorPortraitSources, normalizePortraitSources} from "../modules/actor-portraits.mjs";
 
 const lang = JSON.parse(readFileSync(new URL("../lang/fr.json", import.meta.url), "utf8"));
 const localize = key => key.split(".").reduce((value, part) => value?.[part], lang) ?? key;
@@ -32,48 +32,56 @@ Handlebars.registerHelper("localize", localize);
 globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: async data => { messages.push(data); return data; }};
 const {manageActorPortraits, showActorPortrait, showActorPortraitDialog, registerPortraitDirectoryHook} = await import("../modules/portrait.mjs");
 const actor = extra => ({id: "actor", uuid: "Actor.actor", name: "Portrait <test>", img: "sheet.webp", isOwner: true,
-  system: {portraits: ["sheet.webp", "shared.webp", "third.webp"], sharedPortrait: "shared.webp"},
+  system: {portraits: ["sheet.webp", "shared.webp", "third.webp"]},
   updates: [], async update(changes) { this.updates.push(changes); return changes; }, ...extra});
-const selectionRoot = (sheet = "0", share = "1", forceAll = false) => ({querySelector: selector =>
+const selectionRoot = (sheet = "0", share = "0", forceAll = false) => ({querySelector: selector =>
   selector.includes("sheetPortrait") ? {value: sheet} : selector.includes("sharePortrait") ? {value: share}
     : selector.includes("forceAll") ? {checked: forceAll} : null});
 
 test("single-portrait actors need no migration and gallery sources are deduplicated", () => {
   assert.deepEqual(actorPortraitSources({img: "existing.webp", system: {}}), ["existing.webp"]);
-  assert.equal(sharedActorPortrait({img: "existing.webp", system: {}}), "existing.webp");
   assert.deepEqual(normalizePortraitSources(["a", " a ", "", null, 12, "b"]), ["a", "b"]);
   assert.deepEqual(actorPortraitSources(actor()), ["sheet.webp", "shared.webp", "third.webp"]);
+  assert.deepEqual(actorPortraitSources({img: "sheet.webp", system: {sharedPortrait: "legacy-share.webp"}}), ["sheet.webp"]);
 });
 
-test("independent choices never update the token texture, and invalid selections fall back safely", () => {
-  const changes = actorPortraitSelectionUpdate(actor(), {sources: ["shared.webp", "third.webp"], sheet: "third.webp", share: "shared.webp"});
-  assert.deepEqual(changes, {img: "third.webp", "system.portraits": ["shared.webp", "third.webp"], "system.sharedPortrait": "shared.webp"});
-  assert.deepEqual(actorPortraitSelectionUpdate(actor(), {sources: ["third.webp"], sheet: "missing", share: "missing"}),
-    {img: "third.webp", "system.portraits": ["third.webp"], "system.sharedPortrait": "third.webp"});
+test("the sheet portrait is the only saved selection and invalid selections fall back safely", () => {
+  const changes = actorPortraitSelectionUpdate(actor(), {sources: ["shared.webp", "third.webp"], sheet: "third.webp"});
+  assert.deepEqual(changes, {img: "third.webp", "system.portraits": ["shared.webp", "third.webp"]});
+  assert.deepEqual(actorPortraitSelectionUpdate(actor(), {sources: ["third.webp"], sheet: "missing"}),
+    {img: "third.webp", "system.portraits": ["third.webp"]});
   assert.equal(actorPortraitSelectionUpdate(actor(), {sources: []}), null);
 });
 
-test("the chat card, local popout and socket all use the selected shared image", async () => {
+test("the chat card, local popout and socket use the sheet image by default and accept an override", async () => {
   const npc = actor();
   await showActorPortrait(npc, {forceAll: true});
+  assert.match(messages.at(-1).content, /data-src="sheet.webp"/);
+  assert.equal(popouts.at(-1).src, "sheet.webp");
+  assert.equal(sockets.at(-1)[1].src, "sheet.webp");
+  await showActorPortrait(npc, {src: "shared.webp"});
   assert.match(messages.at(-1).content, /data-src="shared.webp"/);
-  assert.doesNotMatch(messages.at(-1).content, /sheet.webp/);
-  assert.equal(popouts.at(-1).src, "shared.webp");
-  assert.equal(sockets.at(-1)[1].src, "shared.webp");
   assert.equal(npc.updates.length, 0);
 });
 
-test("share picker remembers its selection without changing the sheet portrait", async () => {
+test("share picker defaults to the sheet portrait every time and never changes it", async () => {
   const npc = actor();
   answerDialog = options => {
     assert.equal((options.content.match(/name="sharePortrait"/g) ?? []).length, 3);
-    assert.match(options.content, /value="1" checked/);
+    assert.match(options.content, /value="0" checked/);
     assert.doesNotMatch(options.content, /Portrait <test>/);
     return options.buttons[0].callback(null, {form: selectionRoot("0", "2")}, {});
   };
   await showActorPortraitDialog(npc);
-  assert.deepEqual(npc.updates, [{"system.sharedPortrait": "third.webp"}]);
+  assert.deepEqual(npc.updates, []);
   assert.match(messages.at(-1).content, /data-src="third.webp"/);
+  answerDialog = options => {
+    assert.match(options.content, /value="0" checked/);
+    return options.buttons[0].callback(null, {form: selectionRoot("0", "1")}, {});
+  };
+  await showActorPortraitDialog(npc);
+  assert.deepEqual(npc.updates, []);
+  assert.match(messages.at(-1).content, /data-src="shared.webp"/);
 });
 
 test("cancelling either picker leaves portraits and chat unchanged", async () => {
@@ -84,15 +92,16 @@ test("cancelling either picker leaves portraits and chat unchanged", async () =>
   assert.equal(messages.length, count); assert.equal(npc.updates.length, 0);
 });
 
-test("gallery saves both choices together, and a synthetic token actor is the update target", async () => {
+test("gallery saves its single sheet choice, and a synthetic token actor is the update target", async () => {
   const npc = actor({uuid: "Scene.scene.Token.token.Actor.actor", isToken: true});
   answerDialog = options => {
     assert.match(options.content, /name="sheetPortrait"/);
+    assert.doesNotMatch(options.content, /name="sharePortrait"/);
     assert.match(options.content, /data-add-portrait/);
     return options.buttons[0].callback(null, {form: selectionRoot("2", "1")}, {});
   };
   await manageActorPortraits(npc);
-  assert.deepEqual(npc.updates, [{img: "third.webp", "system.portraits": ["sheet.webp", "shared.webp", "third.webp"], "system.sharedPortrait": "shared.webp"}]);
+  assert.deepEqual(npc.updates, [{img: "third.webp", "system.portraits": ["sheet.webp", "shared.webp", "third.webp"]}]);
 });
 
 test("read-only actors and locked compendiums can share but cannot change stored portraits", async () => {

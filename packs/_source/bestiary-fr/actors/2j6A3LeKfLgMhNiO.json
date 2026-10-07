@@ -1,7 +1,7 @@
 {
   "name": "Hulder",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpg",
   "items": [
     {
       "_id": "Tz48vNhNiOjPkQlR",
@@ -58,16 +58,15 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-2.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-3.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-2.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO-3.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/2j6A3LeKfLgMhNiO.jpeg",
     "traits": {
       "charisma": 4,
       "dexterity": 2,

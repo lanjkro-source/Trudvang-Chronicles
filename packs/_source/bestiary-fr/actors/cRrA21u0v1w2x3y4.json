@@ -1,7 +1,7 @@
 {
   "name": "Jeune hrimtroll",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpg",
   "items": [
     {
       "_id": "7RwzVmOjPkQlRmSn",
@@ -189,15 +189,14 @@
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
-      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4-2.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/cRrA21u0v1w2x3y4.jpeg",
     "traits": {
       "constitution": 4,
       "strength": 6

@@ -1,7 +1,7 @@
 {
   "name": "Logrjotun",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpg",
   "items": [
     {
       "_id": "M1tGyxZu0v1w2x3y",
@@ -112,14 +112,14 @@
     "width": 6,
     "height": 6,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9-2.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/ymVds5z5A6B7C8D9.jpeg",
     "traits": {
       "intelligence": -4,
       "strength": 8

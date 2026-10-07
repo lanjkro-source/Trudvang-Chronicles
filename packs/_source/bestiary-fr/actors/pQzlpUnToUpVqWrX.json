@@ -1,7 +1,7 @@
 {
   "name": "Troll de bois",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpg",
   "items": [
     {
       "_id": "VbvKesWrXsYtZu0v",
@@ -94,14 +94,13 @@
     "width": 3,
     "height": 3,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/pQzlpUnToUpVqWrX.jpeg",
     "traits": {
       "intelligence": -4,
       "strength": 6

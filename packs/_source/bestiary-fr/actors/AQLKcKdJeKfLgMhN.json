@@ -1,7 +1,7 @@
 {
   "name": "Firdtursir",
   "type": "npc",
-  "img": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
+  "img": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpg",
   "items": [
     {
       "_id": "uWTZ84v1w2x3y4z5",
@@ -139,14 +139,13 @@
     "width": 6,
     "height": 6,
     "texture": {
-      "src": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+      "src": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpg"
     }
   },
   "system": {
     "portraits": [
-      "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg"
+      "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpg"
     ],
-    "sharedPortrait": "systems/trudvang-chronicles/assets/bestiary/AQLKcKdJeKfLgMhN.jpeg",
     "traits": {
       "psyche": 2,
       "strength": 8
