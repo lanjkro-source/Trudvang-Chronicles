@@ -785,6 +785,22 @@ test("humanoid bare hands deplete a persisted actor-level AA counter capped at 4
   assert.equal(pc.getWeaponActionState(fists).current, 4);
 });
 
+test("a bare-hands attack rolls end to end without touching item.update", async t => {
+  const previous = {combat: game.combat, document: globalThis.document, Roll: globalThis.Roll,
+    ChatMessage: globalThis.ChatMessage, dialog: foundry.applications.api.DialogV2};
+  t.after(() => { game.combat = previous.combat; globalThis.document = previous.document; globalThis.Roll = previous.Roll;
+    globalThis.ChatMessage = previous.ChatMessage; foundry.applications.api.DialogV2 = previous.dialog; });
+  globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
+  globalThis.Roll = class { constructor(formula) { this.formula = formula; } async evaluate() { this.total = 1; } };
+  const messages = [];
+  globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: async data => { messages.push(data); return data; }};
+  foundry.applications.api.DialogV2 = class { static async wait() { return {modifier: 0, feint: 0, allocation: {free: 2}}; } };
+  const pc = spendableNpc([]); pc.type = "character"; game.combat = {started: true, combatants: [{actor: pc}]};
+  await pc.rollNaturalCombatAction("attack");
+  assert.equal(pc.system.unarmedActionsSpent, 1);
+  assert.equal(messages.length, 1);
+});
+
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {
   const armor = {id: "mail", name: "Mail", type: "armor", uuid: "Item.mail",
     system: {equipped: true, heft: 1, breach: {value: 40, max: 50}, weight: 2}};

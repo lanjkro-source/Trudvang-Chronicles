@@ -929,7 +929,7 @@ export class TrudvangActor extends BaseActor {
     const rangedModifier = (rangedOptions.longRange ? -10 : 0) + (rangedOptions.targetInMelee ? -5 : 0) + (rangedOptions.targetMoving ? -10 : 0);
     if (inCombat && this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (inCombat) await this.spendWeaponAction(item);
-    if (inCombat && this.isOwner && !item.system.combatPointBonusUsed) await item.update({"system.combatPointBonusUsed": true});
+    if (inCombat && this.isOwner && !item.system.combatPointBonusUsed && typeof item.update === "function") await item.update({"system.combatPointBonusUsed": true});
     if (mode.ranged && this.isOwner && item.system.rangeSelection !== options.ranged?.rangeSelection) await item.update({"system.rangeSelection": rangedOptions.longRange ? "long" : "short"});
     const poolById = Object.fromEntries(poolResolution.eligible.map(pool => [pool.id, pool]));
     const spendingFlavor = inCombat ? Object.entries(spending.allocation)
