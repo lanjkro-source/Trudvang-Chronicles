@@ -263,6 +263,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return {item, readied: Boolean(item.system.equipped), hoverTitle: item._hoverTitle, damageText: item._damageText, weaponActions, canUseAction: weaponActions.current > 0, depleted: weaponActions.current <= 0};
       });
     context.naturalWeapon = this.actor.humanoidNaturalWeapon;
+    const unarmedActions = this.actor.getWeaponActionState(this.actor.humanoidNaturalWeapon);
+    context.unarmedActionDetail = `${game.i18n.lang === "en" ? "WA" : "AA"}:${unarmedActions.current}/${unarmedActions.max} · 1d5`;
     context.npcCombatItems = context.combatItems.filter(row => isNpcEquipment(row.item));
     context.npcNaturalWeapons = context.combatItems.filter(row => row.item.type === "weapon" && !isNpcEquipment(row.item));
     const npcAttackNames = new Set((this.actor.system.attacks ?? []).flat().map(row => String(row.attack || "")
