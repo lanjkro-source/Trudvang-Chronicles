@@ -377,6 +377,26 @@ test("the real NPC sheet context and template render natural armor without integ
   assert.doesNotMatch(html, /TRUDVANG\./, "every visible label must be translated");
 });
 
+test("the NPC initiative info button opens the same inspection as PCs without rolling", async t => {
+  const sheet = new TrudvangNpcSheet(); sheet.actor = actor();
+  sheet.actor.rollInitiativeTrudvang = () => assert.fail("inspection must not roll initiative");
+  const header = render(await sheet._prepareContext({})).split("</header>")[0];
+  assert.match(header, /class="initiative-controls"/);
+  assert.match(header, /class="stat-inspect-button" data-action="inspect-global-stat" data-stat="initiative"/);
+  assert.match(header, /class="fas fa-circle-info"/);
+  const previous = {document: globalThis.document, dialog: foundry.applications.api.DialogV2};
+  t.after(() => {globalThis.document = previous.document; foundry.applications.api.DialogV2 = previous.dialog;});
+  globalThis.document = {createElement: () => ({set textContent(value) {this.value = value;}, get innerHTML() {return this.value;}})};
+  const dialogs = [];
+  foundry.applications.api.DialogV2 = {wait: async options => {dialogs.push(options); return null;}};
+  await TrudvangActorSheet.DEFAULT_OPTIONS.actions["inspect-global-stat"].call(sheet,
+    {preventDefault() {}, stopPropagation() {}}, {dataset: {action: "inspect-global-stat", stat: "initiative"}, closest: () => null});
+  assert.equal(dialogs.length, 1);
+  assert.equal(dialogs[0].window.title, game.i18n.localize("TRUDVANG.Resource.Initiative"));
+  assert.match(dialogs[0].content, /class="trudvang inspection-dialog"/);
+  assert.ok(dialogs[0].content.includes(`<strong>${sheet.actor.system.initiative.current}</strong>`));
+});
+
 test("the NPC header has only health and read-only movement, and compact traits can be edited", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
   sheet.actor.system.details.move = [{mode: "terrestre", distance: "3 m", max: "24 m"}, {mode: "nage", distance: "3 m", max: "24 m"}];
