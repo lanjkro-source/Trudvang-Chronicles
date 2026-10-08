@@ -562,8 +562,8 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
       ${rangedTargetOptions}
       ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
-      ${showModifier || combatPointBonus || breakdown ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-combat-final-target></strong></p>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
+      ${showModifier || combatPointBonus || breakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span><strong data-combat-final-target></strong></p>` : ""}
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">

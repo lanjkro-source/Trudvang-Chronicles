@@ -63,3 +63,18 @@ test("damage confirmation uses high-contrast palette text on its own dark window
     }
   }
 });
+
+test("combat final skill value uses a distinct readable theme accent in every palette", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.combat-final-target\s*\{[^}]*color: color-mix\(in srgb, var\(--trudvang-accent\) 85%, var\(--trudvang-ink\)\); background: var\(--trudvang-paper-light\)/);
+  assert.match(css, /\.combat-final-target strong\s*\{[^}]*color: inherit/);
+  const rgb = hex => [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16) / 255);
+  const luminance = rgb => rgb.map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+    .reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
+  for (const [id, palette] of Object.entries(PALETTES)) {
+    const ink = rgb(palette.ink);
+    const accent = rgb(palette.accent).map((value, index) => value * .85 + ink[index] * .15);
+    const a = luminance(accent), b = luminance(rgb(palette.paperLight));
+    assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, `${id}: combat final value contrast`);
+  }
+});
