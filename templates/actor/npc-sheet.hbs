@@ -64,7 +64,7 @@
           <h2>{{localize "TRUDVANG.Section.Capacities"}}</h2>
           <ol class="npc-ability-list">
             {{#each npcAbilities as |ability|}}
-            <li><button type="button" class="npc-ability-row" data-action="capacity-edit" data-effect-uuid="{{ability.effectUuid}}" title="{{ability.summary}}"><img src="{{ability.img}}" alt=""><span>{{ability.name}}</span></button></li>
+            <li><button type="button" class="npc-ability-row" data-action="capacity-edit" data-effect-uuid="{{ability.effectUuid}}" title="{{ability.summary}}"><i class="fas {{ability.iconClass}} npc-ability-icon" aria-hidden="true"></i><span>{{ability.name}}</span></button></li>
             {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoCapacities"}}</li>{{/each}}
           </ol>
         </section>
