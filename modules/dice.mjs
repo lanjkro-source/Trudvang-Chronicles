@@ -6,8 +6,17 @@ import { prepareDamageTargets } from "./damage-application.mjs";
 import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
+import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-resolver.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
+
+const modifierLabel = row => row.labelKey ? game.i18n.localize(row.labelKey) : row.label;
+const signedModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value || 0)}`;
+const modifierList = rows => rows.length ? `<ul class="roll-state-modifiers">${rows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("")}</ul>` : "";
+
+export function rollModifierFlavor(rows) {
+  return rows.map(row => `${escapeHtml(modifierLabel(row))}: ${signedModifier(row.value)}`).join("<br>");
+}
 
 async function evaluate(formula) {
   const roll = new Roll(formula);
@@ -129,15 +138,16 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   });
 }
 
-export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = ""}) {
+export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
+  const stateModifier = rollModifierTotal(modifierRows);
   const options = methods.map(method => {
     const target = Number(method.target || 0);
     return `<option value="${escapeHtml(method.id)}">${escapeHtml(method.label)} — VC ${target}</option>`;
   }).join("");
   const formatModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value)}`;
-  const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty;
+  const initialTarget = Number(methods[0]?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + stateModifier;
   const strenuousOptions = Array.from({length: Number(strenuousMax || 0) + 1}, (_, bonus) => `<option value="${bonus}">+${bonus} VC (+${bonus * 2} ${escapeHtml(game.i18n.localize(strenuousResource))})</option>`).join("");
   const levelRows = powerLevels.map((level, index) => {
     const unit = powerLevelUnitCost(level.cost, affinity);
@@ -149,12 +159,13 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   }).join("");
   const countsFrom = root => powerLevels.map((_, index) => Number(root.querySelector(`[data-power-count="${index}"]`)?.textContent || 0));
   const costFrom = (root, strenuousBonus) => resolvePowerLevelCost({baseCost: defaultCost, powerLevels, counts: countsFrom(root), affinity, strenuousBonus});
-  const finalTargetFrom = (root, method, strenuousBonus) => Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty
+  const finalTargetFrom = (root, method, strenuousBonus) => Number(method?.target || 0) + Number(spellModifier || 0) + activeSpellPenalty + stateModifier
     + strenuousBonus + Number(root.querySelector("[name=modifier]")?.value || 0);
   const content = `<div class="trudvang roll-dialog magic-roll-dialog">
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.MagicMethod"))}</label><select name="method">${options}</select></div>
     <p class="magic-breakdown">${escapeHtml(methods[0]?.breakdown || "")}</p>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PowerModifier"))} : <strong>${escapeHtml(formatModifier(spellModifier))}</strong></p>
+    ${modifierList(modifierRows)}
     ${activeSpellCount ? `<p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.ActiveSpellsPenalty", {count: activeSpellCount, penalty: activeSpellPenalty}))}</p>` : ""}
     ${persistent ? `<p class="magic-affinity-note">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PersistentSpellNotice"))}</p>` : ""}
     <p>${escapeHtml(game.i18n.format("TRUDVANG.Power.BaseCost", {cost: defaultCost}))}</p>
@@ -227,7 +238,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   });
 }
 
-export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0}) {
+export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const tracks = {
     spell: {discipline: "TRUDVANG.Knowledge.vitnerFocus", specialty: "TRUDVANG.Knowledge.safeWeaving", disciplineLevel: Number(spellDisciplineLevel) || 0, specialtyLevel: Number(spellSpecialtyLevel) || 0},
@@ -243,6 +254,7 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
       <dt data-concentration-discipline-name></dt><dd data-concentration-discipline-value></dd>
       <dt data-concentration-specialty-name></dt><dd data-concentration-specialty-value></dd>
       ${effectModifier ? `<dt>${localize("TRUDVANG.Dialog.EffectModifier")}</dt><dd>${signed(effectModifier)}</dd>` : ""}
+      ${modifierRows.map(row => `<dt>${escapeHtml(modifierLabel(row))}</dt><dd>${signed(row.value)}</dd>`).join("")}
     </dl>
     <p>${localize("TRUDVANG.Dialog.ConcentrationTotal")}: <strong data-concentration-total></strong></p>
   </div>`;
@@ -259,7 +271,7 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
         root.querySelector("[data-concentration-discipline-value]").textContent = signed(disciplineBonus);
         root.querySelector("[data-concentration-specialty-name]").textContent = `${game.i18n.localize(track.specialty)} (${track.specialtyLevel})`;
         root.querySelector("[data-concentration-specialty-value]").textContent = signed(specialtyBonus);
-        root.querySelector("[data-concentration-total]").textContent = base + Number(psycheModifier) + Number(effectModifier) + disciplineBonus + specialtyBonus;
+        root.querySelector("[data-concentration-total]").textContent = base + Number(psycheModifier) + Number(effectModifier) + disciplineBonus + specialtyBonus + rollModifierTotal(modifierRows);
       };
       root.querySelector("[name=concentration-type]")?.addEventListener("change", refresh);
       root.querySelector("[name=concentration-base]")?.addEventListener("input", refresh);
@@ -408,7 +420,7 @@ export async function rollDamage({actor, item, context = {}}) {
  * reserved for roll modifiers supplied by active effects. Keeping the two
  * visible makes the source of the final value clear to the player.
  */
-export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0}) {
+export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -425,7 +437,8 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
     </div>
     <section data-roll-mode="situation">
       <div class="form-group"><label>${localize("TRUDVANG.Dialog.SituationValue")}</label><input name="situationValue" type="number" value="10"></div>
-      <p>${localize("TRUDVANG.Dialog.TotalSituationValue")}: <strong data-final-target>${10 + trait + effectModifier}</strong></p>
+      ${modifierList(modifierRows)}
+      <p>${localize("TRUDVANG.Dialog.TotalSituationValue")}: <strong data-final-target>${10 + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
     </section>
     <section data-roll-mode="open" hidden>
       <div class="form-group"><label>${localize("TRUDVANG.Dialog.OpenRollBonus")}</label><input name="bonus" type="number" value="0"></div>
@@ -441,7 +454,7 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
         root.querySelector("[data-roll-mode=situation]")?.toggleAttribute("hidden", mode !== "situation");
         root.querySelector("[data-roll-mode=open]")?.toggleAttribute("hidden", mode !== "open");
         const target = root.querySelector("[data-final-target]");
-        if (target) target.textContent = Number(root.querySelector("[name=situationValue]")?.value || 0) + trait + effectModifier;
+        if (target) target.textContent = Number(root.querySelector("[name=situationValue]")?.value || 0) + trait + effectModifier + rollModifierTotal(modifierRows);
         const openModifier = root.querySelector("[data-open-modifier]");
         if (openModifier) openModifier.textContent = displayModifier(trait + Number(root.querySelector("[name=bonus]")?.value || 0) + effectModifier);
       };
@@ -470,15 +483,29 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
   });
 }
 
-export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = ""}) {
+export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
     <div class="trudvang roll-dialog">
-      <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
+      <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target) - rollModifierTotal(modifierRows)}))}</p>
+      ${modifierList(modifierRows)}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
+      <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${Number(target)}</strong></p>
     </div>`;
-  return DialogClass.wait({
+  class SkillRollDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const output = root.querySelector("[data-final-target]");
+        if (output) output.textContent = Number(target) + Number(root.querySelector("[name=modifier]")?.value || 0);
+      };
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return SkillRollDialog.wait({
     window: {title},
     content,
     buttons: [
@@ -529,7 +556,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
   const hasModeToggle = combatModes && combatModes.toggle !== false;
   const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
-  const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(row.label)}</span><b>${Number(row.value) > 0 ? "+" : ""}${Number(row.value || 0)}</b></li>`).join("");
+  const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
   const renderMode = mode => {
     const modePools = mode.pools || [];
     const allocation = mode.defaultAllocation || {};
@@ -691,15 +718,31 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
  * Ask for a Situation Value (SV) without requiring any actor: the dialog used by
  * the generic situation-roll macro and by `game.trudvang.rollGenericSituation()`.
  */
-export async function genericSituationDialog({defaultTarget = 10} = {}) {
+export async function genericSituationDialog({defaultTarget = 10, modifierRows = []} = {}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const content = `
     <div class="trudvang roll-dialog">
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SituationLabel"))}</label><input name="label" type="text" value="${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"))}"></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationSV"))}</label><input name="target" type="number" value="${Number(defaultTarget) || 0}"></div>
+      ${modifierList(modifierRows)}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.GenericSituationModifier"))}</label><input name="modifier" type="number" value="0"></div>
+      <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TotalSituationValue"))}: <strong data-final-target>${Number(defaultTarget) + rollModifierTotal(modifierRows)}</strong></p>
     </div>`;
-  return DialogClass.wait({
+  class SituationRollDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const output = root.querySelector("[data-final-target]");
+        if (output) output.textContent = Number(root.querySelector("[name=target]")?.value || 0)
+          + Number(root.querySelector("[name=modifier]")?.value || 0) + rollModifierTotal(modifierRows);
+      };
+      root.querySelector("[name=target]")?.addEventListener("input", refresh);
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return SituationRollDialog.wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")},
     content,
     buttons: [
@@ -736,17 +779,20 @@ export async function genericSituationDialog({defaultTarget = 10} = {}) {
  * on the current user. Natural 1 always succeeds, natural 20 always fails.
  */
 export async function rollGenericSituation({target, label, modifier} = {}) {
+  // Fix the performer before opening the dialog: displayed states and the
+  // resulting roll must belong to the same actor even if selection changes.
+  const actor = globalThis.canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
+  const modifierRows = actor ? actorStateRollModifiers(actor) : [];
   let situationTarget = target;
   let situationLabel = label;
   let situationModifier = modifier;
   if (situationTarget === undefined && situationLabel === undefined && situationModifier === undefined) {
-    const answered = await genericSituationDialog({});
+    const answered = await genericSituationDialog({modifierRows});
     if (!answered) return null;
     ({target: situationTarget, label: situationLabel, modifier: situationModifier} = answered);
   }
-  const finalTarget = Number(situationTarget ?? 10) + Number(situationModifier || 0);
+  const finalTarget = Number(situationTarget ?? 10) + Number(situationModifier || 0) + rollModifierTotal(modifierRows);
   const resolvedLabel = String(situationLabel || game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
-  const actor = canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
   const actorName = actor?.name ?? game.user?.name ?? "";
   const actorImg = actor?.img ?? "icons/svg/d20.svg";
   const actorUuid = actor?.uuid ?? "";
@@ -761,12 +807,12 @@ export async function rollGenericSituation({target, label, modifier} = {}) {
     label: resolvedLabel,
     result,
     target: finalTarget,
-    modifier: Number(situationModifier || 0),
+    modifier: Number(situationModifier || 0) + rollModifierTotal(modifierRows),
     success,
     margin,
     critical,
     kind: "situation",
-    flavor: "",
+    flavor: rollModifierFlavor(modifierRows),
     itemUuid: "",
     naturalDamage: false,
     actorUuid,
@@ -855,7 +901,7 @@ export async function requestTraitSituationRoll({traitKey, situationValue} = {})
  * Player dialog: SV is fixed (chosen by GM), only the modifier is editable.
  * Shows a live summary of the final SV.
  */
-export async function playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv}) {
+export async function playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -866,8 +912,9 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
     </div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerSV"))}</label><input name="sv" type="number" value="${base}" readonly></div>
+    ${modifierList(modifierRows)}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
-    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${base + trait + effectModifier}</strong></p>
+    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${base + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
   </div>`;
   class PlayerTraitDialog extends DialogClass {
     _onRender(context, options) {
@@ -875,7 +922,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       const root = this.element;
       const refresh = () => {
         const target = root.querySelector("[data-final-target]");
-        if (target) target.textContent = base + trait + effectModifier + Number(root.querySelector("[name=modifier]")?.value || 0);
+        if (target) target.textContent = base + trait + effectModifier + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       refresh();

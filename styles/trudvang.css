@@ -188,6 +188,9 @@
 .trudvang.roll-dialog .combat-pool-allocation label { min-width: 0; white-space: normal; }
 .trudvang.roll-dialog .combat-pool-allocation .combat-pool-current { color: inherit; font-size: inherit; text-align: center; }
 .trudvang.roll-dialog .combat-pool-allocation input { width: 100%; min-width: 0; }
+.trudvang.roll-dialog .roll-state-modifiers { margin: 8px 0; padding: 6px 8px; list-style: none; background: var(--trudvang-header-alt); border-left: 2px solid var(--trudvang-gold); }
+.trudvang.roll-dialog .roll-state-modifiers li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-on-header-muted); }
+.trudvang.roll-dialog .roll-state-modifiers b { color: var(--trudvang-on-header); font-variant-numeric: tabular-nums; }
 .trudvang.roll-dialog .initiative-equipment { display: grid; gap: 4px; margin: 8px 0; padding: 7px 9px; border: 1px solid var(--trudvang-gold); }
 .trudvang.roll-dialog .initiative-equipment legend { padding: 0 5px; font-weight: 700; }
 .trudvang.roll-dialog .initiative-equipment .checkbox { display: flex; gap: 6px; align-items: center; }

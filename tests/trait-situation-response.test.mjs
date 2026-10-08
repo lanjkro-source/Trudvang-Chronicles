@@ -2,12 +2,15 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 globalThis.foundry = {
+  documents: {Actor: class {}, ActiveEffect: class {}},
+  data: {ActiveEffectTypeDataModel: class {}},
   applications: {handlebars: {renderTemplate: async (_path, data) => JSON.stringify(data)}},
   utils: {fromUuid: async uuid => documents.get(uuid)}
 };
 const {
   claimTraitSituationRoll, recordTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse
 } = await import("../modules/trait-situation-request.mjs");
+const {TrudvangActor} = await import("../modules/documents/actor.mjs");
 
 const documents = new Map();
 const gm = {id: "gm", name: "MJ", isGM: true, active: true};
@@ -142,4 +145,19 @@ test("the player rolls locally and the GM automatically updates the original car
   assert.equal(row.target, 15);
   assert.equal(updates, 6);
   game.user = gm;
+});
+
+test("the GM recalculates wounds and fear for a resistance, rather than trusting a client's target", async () => {
+  for (const durable of [false, true]) {
+    const performer = actor(`states-${durable}`, 2);
+    performer.system = {damage: {penalty: -3}, fearPenalty: -1, modifiers: {rolls: {allActions: 1}}};
+    performer.items = durable ? [{type: "creatureAbility", system: {ignoreWoundPenalties: true}}] : [];
+    performer.isInCombatActive = () => false;
+    performer.getRollModifier = TrudvangActor.prototype.getRollModifier;
+    const payload = await claim(performer);
+    assert.equal(await recordTraitSituationResponse({...payload, result: 10, modifier: 2, target: 99}), "recorded");
+    const response = request.responses.at(-1);
+    assert.equal(response.target, durable ? 14 : 11, "10 SV +2 trait +1 effect +2 situational -1 fear (-3 wounds unless Tenace)");
+    assert.equal(response.success, true);
+  }
 });

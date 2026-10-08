@@ -992,6 +992,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.OpenRoll` | Open Roll | Jet ouvert |
 | `TRUDVANG.Dialog.SituationValue` | Situation Value | Valeur de situation |
 | `TRUDVANG.Dialog.EffectModifier` | Effects | Effets |
+| `TRUDVANG.Dialog.WoundPenalty` | Wound penalty | Malus de blessures |
 | `TRUDVANG.Dialog.TotalSituationValue` | Total Situation Value | Valeur de situation totale |
 | `TRUDVANG.Dialog.OpenRollBonus` | Bonus | Bonus |
 | `TRUDVANG.Dialog.OpenRollBreakdown` | Total modifier | Modificateur total |

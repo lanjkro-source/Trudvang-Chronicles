@@ -10,6 +10,7 @@ import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
+import {actorStateRollModifiers, rollModifierTotal} from "../modules/rules/roll-state-resolver.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -684,7 +685,7 @@ test("a wrestling roll ignores Combat Actions and never spends an odd total", as
   const result = await npc.rollWrestlingAction("grapple");
   assert.doesNotMatch(dialog.content, /data-pool-id="combatActions"/);
   assert.match(dialog.content, /data-combat-slider min="0" max="[0-9]+" step="2"/);
-  assert.equal(result.target, 2);
+  assert.equal(result.target, -1, "the 2 VC obtained from CP still take the creature's -3 wound penalty");
   assert.equal(npc.system.combatPools.free.weaponSpent, 6);
   assert.equal(npc.system.combatPools.free.offHandSpent, 2);
   assert.equal(messages.length, 1);
@@ -977,7 +978,7 @@ test("book skill D20 buttons use the PJ roll dialog and the correct discipline/s
     {name: "Armes légères à une main", value: 3, kind: "specialty"}
   ];
   const dialogs = [];
-  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  foundry.applications.api.DialogV2 = class {static async wait(options) { dialogs.push(options); return null; }};
   try {
     for (const index of [0, 1, 2]) await sheet._rollNpcBookSkill(index);
     assert.deepEqual(dialogs.map(dialog => dialog.window.title), ["Combat", "Combat armé", "Armes légères à une main"]);
@@ -1005,7 +1006,7 @@ test("validating a book specialty roll evaluates a D20 and creates a chat messag
   const messages = [];
   globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}),
     create: async data => { messages.push(data); return data; }};
-  foundry.applications.api.DialogV2 = {wait: async () => ({modifier: -2})};
+  foundry.applications.api.DialogV2 = class {static async wait() { return {modifier: -2}; }};
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()], {fighting: 1});
   sheet.actor.system.skillTree = [
     {name: "Combat", value: 8, kind: "skill"},
@@ -1028,7 +1029,7 @@ test("book skill rolls keep bonuses and effects without adding the actor base tw
   t.after(() => { globalThis.document = previous.document; foundry.applications.api.DialogV2 = previous.dialog; });
   globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
   const dialogs = [];
-  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  foundry.applications.api.DialogV2 = class {static async wait(options) { dialogs.push(options); return null; }};
   for (const base of [1, 8]) {
     const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()], {fighting: base});
     sheet.actor.system.skills.fighting.bonus = 2;
@@ -1051,7 +1052,7 @@ test("unmatched book skill names still use their own parent values", async t => 
   t.after(() => { globalThis.document = previous.document; foundry.applications.api.DialogV2 = previous.dialog; });
   globalThis.document = {createElement: () => ({set textContent(value) { this.value = value; }, get innerHTML() { return this.value; }})};
   const dialogs = [];
-  foundry.applications.api.DialogV2 = {wait: async options => { dialogs.push(options); return null; }};
+  foundry.applications.api.DialogV2 = class {static async wait(options) { dialogs.push(options); return null; }};
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor([feat()]);
   sheet.actor.system.skillTree = [
     {name: "Compétence personnalisée", value: 7, kind: "skill"},
@@ -1176,7 +1177,7 @@ test("prepared natural attacks preallocate the book CP on both fields and slider
   assert.equal(bite.system.naturalCombatPointsSpent, 0);
   runtime.response = {modifier: 0, feint: 0, allocation: {"natural:bite": 6, free: 1}};
   const result = await npc.rollNpcPreparedAction(0, 0);
-  assert.equal(result.target, 7); assert.equal(runtime.messages.length, 1);
+  assert.equal(result.target, 4, "prepared CP do not bypass the -3 wound penalty"); assert.equal(runtime.messages.length, 1);
   assert.deepEqual(npc.system.usedPreparedActions, ["0:0"]);
   assert.equal(bite.system.naturalCombatPointsSpent, 6); assert.equal(bite.system.weaponActionsSpent, 1);
   assert.equal(npc.system.combatPools.free.weaponSpent, 5); assert.equal(npc.system.combatPools.free.offHandSpent, 1);
@@ -1214,11 +1215,11 @@ test("prepared wrestling uses the prescribed even PC total, and special actions 
   game.combat = {started: true, combatants: [{actor: npc}]};
   runtime.response = {allocation: {free: 1, unarmedFighting: 1, wrestling: 4}, modifier: 0};
   const wrestling = await npc.rollNpcPreparedAction(0, 0);
-  assert.equal(wrestling.target, 3);
+  assert.equal(wrestling.target, 0, "6 CP give 3 VC, reduced by the -3 wound penalty");
   assert.match(runtime.dialogs[0].content, /data-combat-slider[^>]+step="2" value="6"/);
   runtime.response = {allocation: {free: 2}, modifier: 0};
   const special = await npc.rollNpcPreparedAction(1, 0);
-  assert.equal(special.target, 2);
+  assert.equal(special.target, -1, "special manoeuvres also take wound penalties");
   assert.doesNotMatch(runtime.dialogs[1].content, /data-pool-id="(?:wrestling|unarmedFighting)"/);
   assert.equal(runtime.dialogs[1].buttons[0].label, game.i18n.localize("TRUDVANG.Action.Roll"));
   assert.deepEqual(npc.system.usedPreparedActions, ["0:0", "1:0"]);
@@ -1310,9 +1311,182 @@ test("a prepared attack never rolls or spends the stale CP shown by a previously
     return {allocation: {"natural:bite": 6, free: 3}, modifier: 0};
   }};
   const result = await npc.rollNpcPreparedAction(0, 0);
-  assert.equal(result.target, 3, "only 2 natural CP plus 1 CP shared by both hands remain");
+  assert.equal(result.target, 0, "only 2 natural CP plus 1 shared free CP remain, then apply -3 wounds");
   assert.equal(runtime.messages.length, 1);
   assert.equal(bite.system.naturalCombatPointsSpent, 6);
   assert.equal(npc.system.combatPools.free.weaponSpent, 5);
   assert.equal(npc.system.combatPools.free.offHandSpent, 8);
+});
+
+function woundedAndAfraid(items = [], type = "npc") {
+  const instance = spendableNpc(items);
+  instance.type = type;
+  instance.system.resources.fear.value = 15;
+  instance.prepareDerivedData();
+  assert.equal(instance.system.damage.penalty, items.some(item => item.system.ignoreWoundPenalties) ? 0 : -3);
+  assert.equal(instance.system.fearPenalty, -1);
+  return instance;
+}
+
+function assertStateBreakdown(runtime, wounds = -3, fear = -1) {
+  const content = runtime.dialogs.at(-1).content;
+  const flavor = renderedCards.at(-1).data.flavor;
+  if (wounds) {
+    assert.match(content, new RegExp(`Malus de blessures[^]*?>${wounds}<`));
+    assert.match(flavor, new RegExp(`Malus de blessures: ${wounds}`));
+  } else {
+    assert.doesNotMatch(content, /Malus de blessures/);
+    assert.doesNotMatch(flavor, /Malus de blessures/);
+  }
+  assert.match(content, new RegExp(`Pénalité de peur[^]*?>${fear}<`));
+  assert.match(flavor, new RegExp(`Pénalité de peur: ${fear}`));
+}
+
+test("state penalties are shared by every test kind, without changing initiative or the CP maxima", () => {
+  const instance = woundedAndAfraid();
+  instance.system.modifiers.rolls = {allActions: 2, attack: 1, skills: {fighting: 3}, traits: {constitution: 1}};
+  for (const kind of ["skill", "ability", "magic", "situation", "trait", "attack", "parry"]) {
+    const context = {kind, skillKey: "fighting", traitKey: "constitution"};
+    assert.equal(instance.getRollModifier(context) - instance.getRollModifier({...context, includeState: false}), -4);
+  }
+  assert.equal(instance.system.initiative.current, -1, "3 base -3 wounds -1 fear, counted only once");
+  assert.equal(resolveCombatPools({actor: instance}).pools.find(pool => pool.id === "free").max, 8);
+  assert.equal(instance.getSkillTarget("fighting"), 9, "8 skill +2 all actions +3 skill effects -4 states");
+});
+
+test("Tenace suppresses only wounds, and recovering or calming down removes the corresponding test penalty", () => {
+  const durable = woundedAndAfraid([feat()]);
+  assert.deepEqual(actorStateRollModifiers(durable), [{labelKey: "TRUDVANG.Resource.FearPenalty", value: -1}]);
+  const ordinary = woundedAndAfraid();
+  ordinary.system.resources.body.value = 40;
+  ordinary.prepareDerivedData();
+  assert.equal(ordinary.getRollModifier({kind: "situation"}), -1);
+  ordinary.system.resources.fear.value = 0;
+  ordinary.prepareDerivedData();
+  assert.deepEqual(actorStateRollModifiers(ordinary), []);
+  assert.equal(ordinary.getRollModifier({kind: "skill"}), 0);
+  ordinary.system.resources.body.value = -12;
+  ordinary.system.resources.fear.value = 80;
+  ordinary.prepareDerivedData();
+  assert.equal(rollModifierTotal(actorStateRollModifiers(ordinary)), -14);
+});
+
+for (const type of ["character", "npc"]) {
+  test(`${type}: skills, disciplines, specialties, situations and concentration apply and explain both penalties`, async t => {
+    const runtime = mockActionRuntime(t);
+    const instance = woundedAndAfraid([], type);
+    runtime.response = {modifier: 2};
+    assert.equal((await instance.rollSkill("fighting")).target, 6);
+    assertStateBreakdown(runtime);
+    assert.match(runtime.dialogs.at(-1).content, /Cible de base: 8/);
+    assert.match(runtime.dialogs.at(-1).content, /data-final-target>4</);
+    for (const [kind, level, target] of [["discipline", 2, 8], ["specialty", 3, 14]]) {
+      const ability = {name: kind, system: {kind, level, parentSkill: "fighting"}};
+      assert.equal((await instance.rollAbility(ability, {disciplineLevel: 2})).target, target);
+      assertStateBreakdown(runtime);
+    }
+    runtime.response = {mode: "situation", situationValue: 10};
+    assert.equal((await instance.rollTrait("constitution")).target, 8);
+    assertStateBreakdown(runtime);
+    runtime.response = {type: "spell", base: 6};
+    assert.equal((await instance.rollConcentration()).target, 2);
+    assertStateBreakdown(runtime);
+    assert.equal(runtime.messages.length, 5);
+    assert.ok(runtime.messages.every(message => message.rolls[0].formula === "1d20"));
+  });
+
+  test(`${type}: melee, ranged, shield and natural attacks/parries apply states independently of CP spending`, async t => {
+    const runtime = mockActionRuntime(t);
+    for (const [itemType, specialty, kind, throwing] of [
+      ["weapon", "oneHandedLightWeapons", "attack", false], ["weapon", "oneHandedLightWeapons", "parry", false],
+      ["weapon", "oneHandedLightWeapons", "attack", true], ["shield", "shieldBearer", "parry", false],
+      ["weapon", "bowsSlings", "attack", false], ["weapon", "crossbow", "attack", false],
+      ["weapon", "natural", "attack", false], ["weapon", "natural", "parry", false]
+    ]) {
+      const item = inventoryItem(itemType, "Test", {equipped: true, combatSpecialty: specialty,
+        category: specialty === "natural" ? "natural" : "melee", combatPointBonus: 0, range: {short: 20, long: 40}});
+      const instance = woundedAndAfraid([item], type);
+      runtime.response = {allocation: {free: 4}, modifier: 2, feint: 0};
+      const result = await instance.rollWeaponAction(item, kind, {throwing});
+      assert.equal(result.target, itemType === "shield" ? -13 : 2,
+        `${specialty} ${kind}: 4 CP +2 situational -3 wounds -1 fear, plus the ordinary shield-hand penalty if applicable`);
+      assertStateBreakdown(runtime);
+    }
+  });
+
+  test(`${type}: Tenace still applies fear to actual attacks and skill tests`, async t => {
+    const runtime = mockActionRuntime(t);
+    const instance = woundedAndAfraid([feat()], type);
+    runtime.response = {modifier: 0};
+    assert.equal((await instance.rollSkill("fighting")).target, 7);
+    assertStateBreakdown(runtime, 0);
+    runtime.response = {allocation: {free: 4}, modifier: 0};
+    assert.equal((await instance.rollNaturalCombatAction()).target, 3);
+    assertStateBreakdown(runtime, 0);
+  });
+
+  test(`${type}: spell and divine invocations show states separately and the confirmed target includes them once`, async t => {
+    const runtime = mockActionRuntime(t);
+    for (const divine of [false, true]) {
+      const knowledgeItems = (divine ? ["invoke", "stormkelt"] : ["vitnerShaping", "galding"]).map((id, index) => ({
+        type: "ability", name: id, system: {catalogId: id, kind: index ? "specialty" : "discipline", level: index ? 2 : 1}
+      }));
+      const instance = woundedAndAfraid(knowledgeItems, type);
+      const resource = divine ? "divinity" : "vitner";
+      instance.system.resources[resource] = {value: 50, current: 50, max: 50};
+      instance._source.system.resources[resource] = {value: 50, max: 50};
+      const power = {type: divine ? "divineFeat" : "spell", name: "Power", system: {cost: 3, modifier: -2, spellType: "instant"}};
+      foundry.applications.api.DialogV2 = class {static async wait(options) {
+        runtime.dialogs.push(options);
+        const method = options.content.match(/<option value="([^"]+)"/)[1];
+        const fields = {"[name=method]": {value: method}, "[name=modifier]": {value: "3"}};
+        const form = {querySelector: selector => fields[selector]};
+        return options.buttons[0].callback({}, {form}, {element: form});
+      }};
+      const result = await instance.rollSpell(power);
+      assert.equal(result.target, 3, "1 skill +1 discipline +4 specialty -2 power -4 states +3 situational");
+      assertStateBreakdown(runtime);
+      assert.match(runtime.dialogs.at(-1).content, /data-final-target>0</);
+      assert.equal(instance._source.system.resources[resource].value, 47);
+    }
+  });
+}
+
+test("innate NPC casting applies wound/fear penalties only once, and open trait comparisons remain unchanged", async t => {
+  const runtime = mockActionRuntime(t);
+  const instance = woundedAndAfraid();
+  instance.system.magic = {castingTarget: 14};
+  instance.system.resources.vitner = {value: 50, current: 50, max: 50};
+  instance._source.system.resources.vitner = {value: 50, max: 50};
+  const spell = {type: "spell", name: "Innate", system: {cost: 3, modifier: 0, spellType: "instant"}};
+  foundry.applications.api.DialogV2 = class {static async wait(options) {
+    runtime.dialogs.push(options);
+    const form = {querySelector: selector => selector === "[name=method]" ? {value: "innate"} : null};
+    return options.buttons[0].callback({}, {form}, {element: form});
+  }};
+  assert.equal((await instance.rollSpell(spell)).target, 10);
+  assertStateBreakdown(runtime);
+  foundry.applications.api.DialogV2 = class {static async wait() { return {mode: "open", bonus: 1}; }};
+  assert.equal((await instance.rollTrait("constitution")).modifier, 3, "constitution +2, optional bonus +1, no skill/situation states");
+});
+
+test("dodge applies both penalties while consuming complete reserves, and special/wrestling actions use the same states", async t => {
+  const runtime = mockActionRuntime(t);
+  let instance = woundedAndAfraid();
+  await instance.update({"system.combatPools.free.weaponSpent": 0, "system.combatPools.free.offHandSpent": 0});
+  game.combat = {started: true, combatants: [{actor: instance}]};
+  runtime.response = {modifier: 2};
+  assert.equal((await instance.rollDodge()).target, -1, "agility 1 -4 states +2 situational");
+  assertStateBreakdown(runtime);
+  assert.equal(resolveCombatPools({actor: instance}).pools.find(pool => pool.id === "free").current, 0);
+  for (const special of [true, false]) {
+    instance = woundedAndAfraid();
+    game.combat = {started: true, combatants: [{actor: instance}]};
+    runtime.response = {allocation: {free: 4}, modifier: 2};
+    const result = special ? await instance.spendGenericCombatAction({roll: true}) : await instance.rollWrestlingAction("glima");
+    assert.equal(result.target, special ? 2 : 0);
+    assertStateBreakdown(runtime);
+    assert.equal(instance.system.combatPools.free.weaponSpent, 8);
+    assert.equal(instance.system.combatPools.free.offHandSpent, 4);
+  }
 });

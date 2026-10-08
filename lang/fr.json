@@ -845,6 +845,7 @@
       "OpenRoll": "Jet ouvert",
       "SituationValue": "Valeur de situation",
       "EffectModifier": "Effets",
+      "WoundPenalty": "Malus de blessures",
       "TotalSituationValue": "Valeur de situation totale",
       "OpenRollBonus": "Bonus",
       "OpenRollBreakdown": "Modificateur total",

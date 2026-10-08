@@ -2,6 +2,7 @@ import {hasChatApplication, registerChatApplicationSocket, requestChatApplicatio
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
+import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
 import {openPortraitPopout} from "./portrait.mjs";
 import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse} from "./trait-situation-request.mjs";
 
@@ -230,12 +231,13 @@ function attachListeners(message, html) {
       }
       const token = controlled ?? canvas.tokens?.placeables?.find(entry => entry.actor?.uuid === actor.uuid);
       const trait = actor.getTraitValue(traitKey);
-      const effect = actor.getRollModifier({kind: "trait", traitKey});
+      const effect = actor.getRollModifier({kind: "trait", traitKey, includeState: false});
+      const modifierRows = actorStateRollModifiers(actor);
       const traitLabel = game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey);
       const title = game.i18n.format("TRUDVANG.Dialog.TraitSituationPlayerTitle", {trait: traitLabel});
       button.disabled = true;
       try {
-        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv});
+        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv, modifierRows});
         if (!options) return;
         const status = await requestTraitSituationResponse({message, actor, token, modifier: options.modifier});
         if (status !== "recorded") ui.notifications.warn(game.i18n.localize(
