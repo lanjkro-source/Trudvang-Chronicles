@@ -11,6 +11,8 @@ import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
 import {buildBestiaryPackDocuments} from "../modules/bestiary-pack-data.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../modules/rules/roll-state-resolver.mjs";
+import {TABLET_CATALOG, powerItemData, tabletItemData} from "../modules/tablet-catalog.mjs";
+import {POWER_COMPENDIUM_ICON_BY_ITEM_ID, powerIconClassForId, powerIconClassForItem} from "../modules/power-icons.mjs";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -1564,3 +1566,66 @@ for (const [type, rune] of [["spell", false], ["divineFeat", false], ["divineFea
     assert.equal(updates.length, 1, "neither observers nor owners of locked sheets can submit edits");
   });
 }
+
+test("every bilingual magic sheet uses the exact thematic icon from actor lists and compendiums", async () => {
+  const source = readFileSync(new URL("../templates/item/item-sheet.hbs", import.meta.url), "utf8");
+  const renderHeader = Handlebars.compile(source.slice(0, source.indexOf("</header>") + "</header>".length));
+  for (const language of ["fr", "en"]) {
+    const strings = JSON.parse(readFileSync(new URL(`../lang/${language}.json`, import.meta.url), "utf8"));
+    const resolvers = {localize: (key, fallback = "") => get(strings, key) ?? fallback, isFrench: () => language === "fr"};
+    for (const tablet of TABLET_CATALOG) for (const power of tablet.powers) {
+      const item = {...powerItemData(power, tablet, resolvers), isOwner: false, effects: [], getFlag: () => null};
+      const sheet = new TrudvangItemSheet({document: item}); sheet.isEditable = false;
+      const context = await sheet._prepareContext({});
+      const expected = powerIconClassForId(power.id);
+      assert.equal(context.powerIconClass, expected, `${language} ${power.id}`);
+      assert.equal(context.powerIconClass, powerIconClassForItem(item), "same resolver as actor lists");
+      assert.equal(expected, POWER_COMPENDIUM_ICON_BY_ITEM_ID.get(deterministicId(`power:${power.id}`)), "same icon as the compendium");
+      const header = renderHeader(context);
+      assert.ok(header.includes(`class="fas ${expected} profile-img power-sheet-icon"`));
+      assert.doesNotMatch(header, /<img|data-edit="img"/);
+      assert.ok(header.includes(game.i18n.localize(item.system.isRune ? "TRUDVANG.Tablet.ThuulRune" : `TYPES.Item.${item.type}`)));
+    }
+  }
+});
+
+test("all tablet power lists replace ordinal numbers with the corresponding icons without changing order or links", async () => {
+  const template = Handlebars.compile(readFileSync(new URL("../templates/item/item-sheet.hbs", import.meta.url), "utf8"));
+  for (const tablet of TABLET_CATALOG) {
+    const item = {...tabletItemData(tablet), isOwner: true, effects: [], getFlag: () => null};
+    const sheet = new TrudvangItemSheet({document: item}); sheet.isEditable = true;
+    const context = await sheet._prepareContext({});
+    const rows = context.tabletPowerGroups.flatMap(group => group.powers);
+    assert.deepEqual(rows.map(row => row.catalogId), tablet.powers.map(power => power.id));
+    const html = template(context).split('data-tab="tablet-powers"><section')[1];
+    assert.ok(html, `${tablet.id} has its list`);
+    assert.match(html, /<ul class="tablet-power-list">/);
+    assert.doesNotMatch(html, /<ol|<img/);
+    assert.equal((html.match(/tablet-power-icon/g) || []).length, tablet.powers.length);
+    for (const row of rows) {
+      assert.equal(row.iconClass, powerIconClassForId(row.catalogId));
+      assert.ok(html.includes(`class="fas ${row.iconClass} tablet-power-icon"`));
+      assert.ok(html.includes(`data-action="tablet-power-open" data-catalog-id="${row.catalogId}"`));
+    }
+    assert.equal(context.powerIconClass, null, "tablets keep their own image");
+    assert.match(template(context).split("</header>")[0], /<img class="profile-img"/);
+  }
+});
+
+test("custom magic items have thematic fallback icons, while ordinary item portraits remain untouched", async () => {
+  const template = Handlebars.compile(readFileSync(new URL("../templates/item/item-sheet.hbs", import.meta.url), "utf8"));
+  for (const [type, name, isRune, icon] of [
+    ["spell", "Feu expérimental", false, "fa-fire-flame-curved"],
+    ["divineFeat", "Pouvoir personnel", false, "fa-hands-praying"],
+    ["divineFeat", "Rune personnelle", true, "fa-gem"],
+    ["gear", "Objet personnel", false, null]
+  ]) {
+    const item = {type, name, img: "custom.webp", isOwner: true, effects: [], getFlag: () => null, system: {isRune}};
+    const sheet = new TrudvangItemSheet({document: item}); sheet.isEditable = true;
+    const context = await sheet._prepareContext({});
+    assert.equal(context.powerIconClass, icon);
+    const header = template(context).split("</header>")[0];
+    if (icon) assert.ok(header.includes(`class="fas ${icon} profile-img power-sheet-icon"`));
+    else assert.match(header, /<img class="profile-img" src="custom.webp" data-edit="img">/);
+  }
+});

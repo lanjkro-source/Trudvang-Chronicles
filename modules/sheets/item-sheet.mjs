@@ -8,6 +8,7 @@ import { TABLET_BY_ID, getPowerSummary, powerName } from "../tablet-catalog.mjs"
 import { findTabletPower } from "../tablet-power-links.mjs";
 import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.mjs";
 import {activeSpellCosts} from "../rules/active-spell-resolver.mjs";
+import {powerIconClassForId, powerIconClassForItem} from "../power-icons.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -83,6 +84,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     })) : [];
     context.canApplyEffects = context.effects.some(effect => !effect.transfer && !effect.disabled);
     context.isMagicPower = ["spell", "divineFeat"].includes(this.item.type);
+    context.powerIconClass = context.isMagicPower ? powerIconClassForItem(this.item) : null;
     context.isRunePower = context.isMagicPower && Boolean(this.item.system.isRune);
     context.isPersistentSpell = this.item.type === "spell" && this.item.system.spellType === "lasting";
     const activeCosts = context.isPersistentSpell && this.item.parent?.documentName === "Actor"
@@ -124,7 +126,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       level: index + 1,
       accessible: !context.isEmbeddedTablet || Number(this.item.system.level || 0) >= index + 1,
       powers: catalogTablet.powers.filter(power => power.level === index + 1).map(power => ({
-        catalogId: power.id, name: powerName(power), summary: getPowerSummary(power)
+        catalogId: power.id, name: powerName(power), summary: getPowerSummary(power), iconClass: powerIconClassForId(power.id)
       }))
     })).filter(group => group.powers.length) : [];
     context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.tabletPowerGroups.length > 0;
