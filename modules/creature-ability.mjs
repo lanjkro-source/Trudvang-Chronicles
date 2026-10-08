@@ -2,6 +2,7 @@ import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 const flag = (document, key) => document.getFlag?.(SYSTEM_ID, key) ?? document.flags?.[SYSTEM_ID]?.[key];
+const creatureAbilityNameById = new Map(Object.entries(CREATURE_ABILITY_REFERENCES).map(([name, reference]) => [reference.id, name]));
 // TEMPORARY WORLD MIGRATION — keep historical flagged ActiveEffect capacities readable.
 export const isCreatureAbility = document => document?.type === "creatureAbility" || Boolean(flag(document, "feat"));
 
@@ -60,9 +61,14 @@ function iconForAbility(label) {
   return abilityIconRules.find(([pattern]) => pattern.test(normalized))?.[1] ?? "fa-sparkles";
 }
 
+export function creatureAbilityIconClassForId(id) {
+  const name = creatureAbilityNameById.get(id);
+  return name ? iconForAbility(name) : null;
+}
+
 function catalogNameFor(document, name) {
   if (document.type === "creatureAbility") {
-    return Object.entries(CREATURE_ABILITY_REFERENCES).find(([, reference]) => reference.id === document.system.catalogId)?.[0] ?? name;
+    return creatureAbilityNameById.get(document.system.catalogId) ?? name;
   }
   return flag(document, "feat") ?? name;
 }
