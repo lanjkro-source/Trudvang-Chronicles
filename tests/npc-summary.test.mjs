@@ -771,6 +771,20 @@ test("a natural attack dialog spends its reserve and both Free hands, rolls a D2
   assert.equal(npc.system.combatPools.free.weaponSpent, 6); assert.equal(npc.system.combatPools.free.offHandSpent, 2);
 });
 
+test("humanoid bare hands deplete a persisted actor-level AA counter capped at 4", async t => {
+  const before = game.combat; t.after(() => { game.combat = before; });
+  const pc = spendableNpc([]); pc.type = "character"; game.combat = {started: true, combatants: [{actor: pc}]};
+  const fists = pc.humanoidNaturalWeapon;
+  assert.equal(pc.getWeaponActionState(fists).max, 4);
+  assert.equal(pc.getWeaponActionState(fists).current, 4);
+  for (let i = 0; i < 4; i++) assert.equal(await pc.spendWeaponAction(fists), true);
+  assert.equal(pc.system.unarmedActionsSpent, 4);
+  assert.equal(pc.getWeaponActionState(fists).current, 0);
+  assert.equal(await pc.spendWeaponAction(fists), false, "5th bare-hands action blocked (p317: max 4 per round)");
+  await pc.resetCombatPoints();
+  assert.equal(pc.getWeaponActionState(fists).current, 4);
+});
+
 test("worn armor adds protection and VI while natural armor never acquires VI", async () => {
   const armor = {id: "mail", name: "Mail", type: "armor", uuid: "Item.mail",
     system: {equipped: true, heft: 1, breach: {value: 40, max: 50}, weight: 2}};

@@ -716,15 +716,24 @@ export class TrudvangActor extends BaseActor {
 
   getWeaponActionState(item, {ignoreSpent = !this.isInActiveCombat} = {}) {
     const max = resolveEquipment({item, actor: this}).characteristics.weaponActions.value;
-    const spent = ignoreSpent ? 0 : Math.min(max, Math.max(0, Number(item?.system?.weaponActionsSpent || 0)));
+    // The transient humanoid-natural item has no update() and cannot persist its
+    // counter: bare-hands AA (p317, max 4) is read from the actor instead.
+    const rawSpent = typeof item?.update === "function"
+      ? Number(item?.system?.weaponActionsSpent || 0)
+      : Number(this.system?.unarmedActionsSpent || 0);
+    const spent = ignoreSpent ? 0 : Math.min(max, Math.max(0, rawSpent));
     return {max, spent, current: Math.max(0, max - spent)};
   }
 
   async spendWeaponAction(item) {
-    if (!this.isInActiveCombat || !item?.id || typeof item.update !== "function") return true;
+    if (!this.isInActiveCombat || !item?.id) return true;
     const state = this.getWeaponActionState(item);
     if (state.current <= 0) return false;
-    if (this.isOwner) await item.update({"system.weaponActionsSpent": state.spent + 1});
+    if (typeof item.update === "function") {
+      if (this.isOwner) await item.update({"system.weaponActionsSpent": state.spent + 1});
+    } else if (this.isOwner) {
+      await this.update({"system.unarmedActionsSpent": state.spent + 1});
+    }
     return true;
   }
 
@@ -1137,10 +1146,10 @@ export class TrudvangActor extends BaseActor {
   }
 
   async resetCombatPoints({cycle = null} = {}) {
-    const updates = Object.keys(this.system.combatPools || {}).flatMap(id => [
+    const updates = [...Object.keys(this.system.combatPools || {}).flatMap(id => [
       [`system.combatPools.${id}.spent`, 0],
       ...(id === "free" ? [["system.combatPools.free.weaponSpent", 0], ["system.combatPools.free.offHandSpent", 0]] : [])
-    ]);
+    ]), ["system.unarmedActionsSpent", 0]];
     if (this.type === "npc") {
       const combat = this.isInActiveCombat ? game.combat : null;
       const phase = cycle ?? nextNpcCombatCycle({}, {combatId: combat?.id ?? "", round: combat?.round ?? 0,

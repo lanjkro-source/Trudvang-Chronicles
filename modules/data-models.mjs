@@ -197,6 +197,9 @@ function actorCommonSchema() {
       powerLevelCounts: new fields.ArrayField(new fields.NumberField({required: true, integer: true, min: 0}), {required: true, initial: []})
     }), {required: true, initial: []}),
     combatPools: combatPoolsSchema(),
+    // Bare-hands weapon-action counter (p317: max 4 unarmed actions per round).
+    // The transient humanoid-natural item cannot persist it, so it lives here.
+    unarmedActionsSpent: integer(0, {min: 0}),
     initiative: schema({base: integer(0), current: integer(0)}),
     movement: schema({base: integer(10), current: integer(10)}),
     rest: schema({healthRecoveryNights: integer(0, {min: 0})}),
