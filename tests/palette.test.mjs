@@ -78,3 +78,25 @@ test("combat final skill value uses a distinct readable theme accent in every pa
     assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, `${id}: combat final value contrast`);
   }
 });
+
+test("native rich-text toolbars and dropdowns use high-contrast palette roles in every theme", () => {
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.trudvang\.sheet \.editor-menu :is\(\.pm-dropdown, \.pm-dropdown ul, \.pm-dropdown-content\)\s*\{[^}]*color: var\(--trudvang-ink\);[^}]*background: var\(--trudvang-paper-light\)/);
+  assert.match(css, /\.trudvang\.sheet \.editor-menu :is\(button, a, li\) :is\(i, svg, span\)\s*\{ color: inherit/);
+  assert.match(css, /\.trudvang\.sheet \.editor-menu svg\s*\{ fill: currentColor/);
+  assert.match(css, /\.trudvang\.sheet \.editor-menu[^{}]*:is\(\.active, \[aria-pressed="true"\]\)[^{]*\{[^}]*color: var\(--trudvang-on-header\);[^}]*background: var\(--trudvang-header-alt\)/);
+  const rgb = hex => [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16) / 255);
+  const luminance = rgb => rgb.map(value => value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4)
+    .reduce((sum, value, index) => sum + value * [.2126, .7152, .0722][index], 0);
+  for (const [id, palette] of Object.entries(PALETTES)) {
+    const ink = rgb(palette.ink), muted = rgb(palette.muted);
+    const disabled = ink.map((value, index) => value * .85 + muted[index] * .15);
+    for (const [foreground, background] of [
+      [ink, rgb(palette.paperLight)], [ink, rgb(palette.paper)],
+      [rgb(palette.onHeader), rgb(palette.headerAlt)], [disabled, rgb(palette.paper)]
+    ]) {
+      const a = luminance(foreground), b = luminance(background);
+      assert.ok((Math.max(a, b) + .05) / (Math.min(a, b) + .05) >= 4.5, `${id}: editor toolbar contrast`);
+    }
+  }
+});
