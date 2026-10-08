@@ -3,7 +3,7 @@ import { TRUDVANG } from "./config.mjs";
 import { resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { prepareDamageRoll, damageRollChoice, signedDamage } from "./rules/damage-roll-resolver.mjs";
 import { prepareDamageTargets } from "./damage-application.mjs";
-import { powerLevelUnitCost, resolvePowerLevelCost } from "./rules/magic-power-resolver.mjs";
+import { powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice } from "./rules/magic-power-resolver.mjs";
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-resolver.mjs";
@@ -138,7 +138,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   });
 }
 
-export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = []}) {
+export async function magicDialog({title, methods, spellModifier = 0, defaultCost = 0, resourceLabel = "", strenuousMax = 0, strenuousLabel = "TRUDVANG.Dialog.Strenuous", strenuousResource = "TRUDVANG.Resource.Vitner", activeSpellCount = 0, persistent = false, powerLevels = [], affinity = 0, affinityDescription = "", modifierRows = [], sacrifice = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const activeSpellPenalty = -2 * Math.max(0, Number(activeSpellCount || 0));
   const stateModifier = rollModifierTotal(modifierRows);
@@ -174,6 +174,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
     ${levelRows ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Power.LevelsInvested"))} : <strong data-level-cost>0</strong></p>` : ""}
     ${strenuousMax ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize(strenuousLabel))}</label><select name="strenuous">${strenuousOptions}</select></div>` : ""}
     <p>${escapeHtml(resourceLabel)} : <strong data-final-cost>${Number(defaultCost || 0)}</strong></p>
+    ${sacrifice ? `<label class="magic-sacrifice-option" data-sacrifice-option hidden><input type="checkbox" name="sacrifice"><span data-sacrifice-text></span></label>` : ""}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
     <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${initialTarget}</strong></p>
   </div>`;
@@ -200,6 +201,27 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         }
         const breakdown = root.querySelector(".magic-breakdown");
         if (breakdown) breakdown.textContent = method?.breakdown || "";
+        // Health-for-vitner sacrifice (spells only): offer the opt-in red line under
+        // the total cost while the shortfall stays feasible, hide it otherwise.
+        const sacrificeOption = root.querySelector("[data-sacrifice-option]");
+        if (sacrificeOption) {
+          let offer = null;
+          try {
+            const costs = costFrom(root, strenuousBonus);
+            offer = resolveVitnerSacrifice({totalCost: costs.total, currentVitner: sacrifice?.currentVitner,
+              currentHP: sacrifice?.currentHP, maxHP: sacrifice?.maxHP});
+          }
+          catch { offer = null; }
+          const show = Boolean(offer?.feasible);
+          sacrificeOption.hidden = !show;
+          const sacrificeText = sacrificeOption.querySelector?.("[data-sacrifice-text]");
+          if (sacrificeText && offer) sacrificeText.textContent = game.i18n.format("TRUDVANG.Power.SacrificeOffer",
+            {health: offer.health, vitner: offer.vitner});
+          if (!show) {
+            const sacrificeBox = sacrificeOption.querySelector?.("[name=sacrifice]");
+            if (sacrificeBox) sacrificeBox.checked = false;
+          }
+        }
       };
       root.querySelector("[name=method]")?.addEventListener("change", refresh);
       root.querySelector("[name=strenuous]")?.addEventListener("change", refresh);
@@ -229,7 +251,8 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
         let cost;
         try { cost = costFrom(root, strenuousBonus); }
         catch { ui.notifications.warn(game.i18n.localize("TRUDVANG.Power.InvalidSelection")); return false; }
-        return {method, strenuousBonus, activeSpellPenalty, target: finalTargetFrom(root, method, strenuousBonus), situationalModifier, cost: cost.total, costBreakdown: cost};
+        return {method, strenuousBonus, activeSpellPenalty, target: finalTargetFrom(root, method, strenuousBonus), situationalModifier, cost: cost.total, costBreakdown: cost,
+          sacrificeAccepted: Boolean(root.querySelector("[name=sacrifice]")?.checked)};
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

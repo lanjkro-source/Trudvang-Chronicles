@@ -548,6 +548,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Power.AffinityCost` | Cost adjusted by affinity: {base} → {adjusted} per level | Coût ajusté par l'affinité : {base} → {adjusted} par niveau |
 | `TRUDVANG.Power.AffinitySource` | {type} affinity of {tablet}: {effect} | Affinité {type} de {tablet} : {effect} |
 | `TRUDVANG.Power.PerfectBonus` | Perfect success: {points} free Vitner points to enhance the spell (allocate manually). | Réussite parfaite : {points} points de vitner gratuits pour renforcer le sort (à répartir manuellement). |
+| `TRUDVANG.Power.SacrificeOffer` | Insufficient vitner reserve: {health} Body Points will be sacrificed to generate {vitner} Vitner Points. | Réserve de vitner insuffisante : {health} points de santé seront sacrifiés pour générer {vitner} points de vitner. |
+| `TRUDVANG.Power.SacrificeTitle` | Sacrifice health for vitner | Sacrifier de la santé pour du vitner |
+| `TRUDVANG.Power.SacrificeConfirm` | Sacrifice {health} Body Points to generate {vitner} Vitner Points? Remaining health: {hp} ({state}). | Sacrifier {health} points de santé pour générer {vitner} points de vitner ? Santé restante : {hp} ({state}). |
 | `TRUDVANG.Power.Unlimited` | Unlimited | Sans limite |
 | `TRUDVANG.Power.DailyActivation` | Daily activations | Activations quotidiennes |
 | `TRUDVANG.Power.RuneObjectNeeded` | Full activation requires a rune bound to a sacred item and its own divinity reserve. | L'activation complète nécessite une rune liée à un objet sacré et sa propre réserve de divinité. |

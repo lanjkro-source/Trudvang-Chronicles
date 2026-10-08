@@ -1457,6 +1457,83 @@ for (const type of ["character", "npc"]) {
   });
 }
 
+function sacrificingCaster(t, {vitner = 1, body = 10, divine = false} = {}) {
+  const runtime = mockActionRuntime(t);
+  const knowledgeItems = (divine ? ["invoke", "stormkelt"] : ["vitnerShaping", "galding"]).map((id, index) => ({
+    type: "ability", name: id, system: {catalogId: id, kind: index ? "specialty" : "discipline", level: index ? 2 : 1}
+  }));
+  const instance = woundedAndAfraid(knowledgeItems);
+  const resource = divine ? "divinity" : "vitner";
+  instance.system.resources[resource] = {value: vitner, current: vitner, max: 50};
+  instance._source.system.resources[resource] = {value: vitner, max: 50};
+  instance.system.resources.body = {value: body, current: body, max: 40};
+  instance._source.system.resources.body = {value: body, max: 40};
+  const queue = [];
+  foundry.applications.api.DialogV2 = class { static async wait(options) {
+    runtime.dialogs.push(options);
+    return queue.length ? queue.shift() : runtime.response;
+  }};
+  return {runtime, instance, queue};
+}
+
+function sacrificeSpellOptions(cost, sacrificeAccepted = true) {
+  return {method: {label: "Galda", breakdown: "VC 10"}, target: 10, modifier: 0, cost,
+    costBreakdown: {entries: []}, sacrificeAccepted};
+}
+
+test("confirming a vitner sacrifice deducts health, covers the cost and rolls the spell", async t => {
+  const {runtime, instance, queue} = sacrificingCaster(t);
+  const spell = {id: "spell", type: "spell", name: "Power", system: {cost: 6, modifier: 0, spellType: "instant"}};
+  queue.push(sacrificeSpellOptions(6), true);
+  const result = await instance.rollSpell(spell);
+  assert.ok(result, "the spell rolls after confirmation");
+  assert.equal(runtime.dialogs.length, 2);
+  assert.match(runtime.dialogs[0].content, /data-sacrifice-option/);
+  assert.match(runtime.dialogs[1].window.title, /Sacrifier de la santé/);
+  assert.match(runtime.dialogs[1].content, /Santé restante : 7 \(Mortellement blessé\)/);
+  assert.equal(runtime.messages.length, 1);
+  assert.equal(instance._source.system.resources.body.value, 7, "3 health sacrificed from 10");
+  assert.equal(instance._source.system.resources.vitner.value, 1, "6 granted minus 6 spent leaves the +1 leftover");
+});
+
+test("cancelling a vitner sacrifice spends nothing and rolls nothing", async t => {
+  const {runtime, instance, queue} = sacrificingCaster(t);
+  const spell = {id: "spell", type: "spell", name: "Power", system: {cost: 6, modifier: 0, spellType: "instant"}};
+  queue.push(sacrificeSpellOptions(6), false);
+  assert.equal(await instance.rollSpell(spell), null);
+  assert.equal(runtime.dialogs.length, 2);
+  assert.equal(runtime.messages.length, 0);
+  assert.equal(instance._source.system.resources.body.value, 10);
+  assert.equal(instance._source.system.resources.vitner.value, 1);
+});
+
+test("an infeasible or declined vitner sacrifice keeps the insufficient-vitner block", async t => {
+  for (const [vitner, body, cost, accepted] of [[0, 2, 90, true], [1, 10, 6, false]]) {
+    const {runtime, instance, queue} = sacrificingCaster(t, {vitner, body});
+    const spell = {id: "spell", type: "spell", name: "Power", system: {cost, modifier: 0, spellType: "instant"}};
+    queue.push(sacrificeSpellOptions(cost, accepted));
+    const blocked = await instance.rollSpell(spell);
+    assert.equal(blocked?.target, undefined, "no roll result is produced");
+    assert.match(runtime.warnings[0], /réserve/);
+    assert.equal(runtime.dialogs.length, 1, "no confirmation dialog is shown");
+    assert.equal(runtime.messages.length, 0);
+    assert.equal(instance._source.system.resources.body.value, body);
+    assert.equal(instance._source.system.resources.vitner.value, vitner);
+  }
+});
+
+test("divine powers never offer the health-for-vitner sacrifice", async t => {
+  const {runtime, instance, queue} = sacrificingCaster(t, {divine: true});
+  const power = {id: "power", type: "divineFeat", name: "Power", system: {cost: 6, modifier: 0, spellType: "instant"}};
+  queue.push({method: {label: "Bruide", breakdown: "VC 10"}, target: 10, modifier: 0, cost: 6, costBreakdown: {entries: []}});
+  const blocked = await instance.rollSpell(power);
+  assert.equal(blocked?.target, undefined, "no roll result is produced");
+  assert.match(runtime.warnings[0], /réserve/);
+  assert.equal(runtime.dialogs.length, 1, "no confirmation dialog is shown");
+  assert.doesNotMatch(runtime.dialogs[0].content, /data-sacrifice-option/);
+  assert.equal(instance._source.system.resources.divinity.value, 1);
+});
+
 test("innate NPC casting applies wound/fear penalties only once, and open trait comparisons remain unchanged", async t => {
   const runtime = mockActionRuntime(t);
   const instance = woundedAndAfraid();

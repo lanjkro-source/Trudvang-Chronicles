@@ -1,7 +1,7 @@
 import { TRUDVANG } from "../config.mjs";
 import { combatPointDialog, concentrationDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
-import { spentMagicPoints } from "../rules/magic-power-resolver.mjs";
+import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
@@ -1014,6 +1014,11 @@ export class TrudvangActor extends BaseActor {
       effect: game.i18n.localize(`TRUDVANG.Tablet.AffinityEffect.${affinityState}`)
     }) : "";
     const powerLevels = Array.from(item.system.powerLevels ?? []);
+    const offerVitner = isDivine || this.unlimitedVitner ? null : {
+      currentVitner: Number(this.system.resources.vitner.current ?? this.system.resources.vitner.value ?? 0),
+      currentHP: Number(this.system.resources.body.current ?? this.system.resources.body.value ?? 0),
+      maxHP: Number(this.system.resources.body.max || 0)
+    };
     const options = await magicDialog({
       title: item.name,
       methods,
@@ -1028,13 +1033,52 @@ export class TrudvangActor extends BaseActor {
       strenuousResource: isDivine ? "TRUDVANG.Resource.Divinity" : "TRUDVANG.Resource.Vitner",
       activeSpellCount,
       persistent,
-      resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost")
+      resourceLabel: game.i18n.localize(isDivine ? "TRUDVANG.Resource.DivinityCost" : "TRUDVANG.Resource.VitnerCost"),
+      sacrifice: offerVitner
     });
     if (!options) return null;
     if (trackedPersistent && activeSpellInstances(this).length >= activeSpellLimit) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ActiveSpellLimit"));
     const temporaryDivinity = isDivine ? Number(this.system.resources.divinity.temporary || 0) : 0;
     const available = Number(this.system.resources[resource].current ?? this.system.resources[resource].value ?? 0) + temporaryDivinity;
-    if (options.cost > available && !(this.unlimitedVitner && !isDivine)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
+    if (isDivine || this.unlimitedVitner) {
+      if (options.cost > available && !(this.unlimitedVitner && !isDivine)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
+    } else {
+      // Health-for-vitner sacrifice (FR Rules, pp. 141-142): only spells, never divine powers.
+      const sacrifice = resolveVitnerSacrifice({totalCost: options.cost,
+        currentVitner: Number(this.system.resources.vitner.current ?? this.system.resources.vitner.value ?? 0),
+        currentHP: Number(this.system.resources.body.current ?? this.system.resources.body.value ?? 0),
+        maxHP: Number(this.system.resources.body.max || 0)});
+      if (!sacrifice) {
+        if (options.cost > available) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
+      } else {
+        if (!sacrifice.feasible || !options.sacrificeAccepted) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NotEnoughPower"));
+        const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+        const woundLevel = getDamageStatus(Number(this.system.resources.body.max || 0), sacrifice.resultingHP).level;
+        const woundLabel = game.i18n.localize(`TRUDVANG.Damage.${woundLevel}`);
+        const confirmed = await DialogClass.wait({
+          window: {title: game.i18n.localize("TRUDVANG.Power.SacrificeTitle")},
+          content: `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.format("TRUDVANG.Power.SacrificeConfirm",
+            {health: sacrifice.health, vitner: sacrifice.vitner, hp: sacrifice.resultingHP, state: woundLabel}))}</p></div>`,
+          buttons: [
+            {action: "confirm", label: game.i18n.localize("TRUDVANG.Action.Continue"), default: true, callback: () => true},
+            {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+          ],
+          modal: false,
+          rejectClose: false
+        });
+        if (!confirmed) return null;
+        // Ordinary Body Point loss (heals normally) plus temporary vitner; the normal
+        // cost deduction below then spends the spell cost, keeping any +1 leftover.
+        if (this.isOwner) {
+          const storedBody = Number(this._source.system.resources.body.value || 0);
+          const storedVitner = Number(this._source.system.resources.vitner.value || 0);
+          await this.update({
+            "system.resources.body.value": storedBody - sacrifice.health,
+            "system.resources.vitner.value": storedVitner + sacrifice.vitner
+          });
+        }
+      }
+    }
     const perfectSuccessMax = isDivine ? 0 : (vitnerType?.perfectSuccessMax ?? 1);
     const strenuousFlavor = options.strenuousBonus ? `<br>${game.i18n.format(isDivine ? "TRUDVANG.Calculation.Rigorous" : "TRUDVANG.Calculation.Strenuous", {bonus: options.strenuousBonus, cost: options.strenuousBonus * 2})}` : "";
     const activeSpellsFlavor = options.activeSpellPenalty ? `<br>${game.i18n.format("TRUDVANG.Calculation.ActiveSpellsPenalty", {count: activeSpellCount, penalty: options.activeSpellPenalty})}` : "";

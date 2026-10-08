@@ -123,6 +123,46 @@ test("generic situation dialogs explain states and recompute after changing the 
   assert.equal(confirm().target, 12, "the input remains the intrinsic SV, not an already-penalized SV");
 });
 
+test("magic dialogs offer the red sacrifice line only for feasible shortfalls", async () => {
+  const previousFormat = game.i18n.format;
+  game.i18n.format = (key, data) => `${key} ${Object.entries(data || {}).map(([name, value]) => `${name}=${value}`).join(" ")}`;
+  try {
+    const sacrificeForm = () => {
+      const text = node(); const box = {checked: false};
+      const option = {hidden: true, querySelector: selector => selector === "[data-sacrifice-text]" ? text : box};
+      const base = fields({"[name=method]": "first", "[name=modifier]": "0"},
+        ["[data-final-target]", "[data-final-cost]"]);
+      return {form: {...base, querySelector: selector => selector === "[data-sacrifice-option]" ? option
+        : selector === "[name=sacrifice]" ? box : base.querySelector(selector)}, option, text, box};
+    };
+    const methods = [{id: "first", label: "First", target: 10}];
+    let setup = sacrificeForm(); form = setup.form;
+    await magicDialog({title: "Magic", methods, defaultCost: 6,
+      sacrifice: {currentVitner: 2, currentHP: 10, maxHP: 10}});
+    assert.match(config.content, /magic-sacrifice-option/);
+    assert.equal(setup.option.hidden, false);
+    assert.match(setup.text.textContent, /health=2/);
+    assert.match(setup.text.textContent, /vitner=4/);
+    setup.box.checked = true;
+    assert.equal(confirm().sacrificeAccepted, true);
+    setup = sacrificeForm(); form = setup.form;
+    await magicDialog({title: "Magic", methods, defaultCost: 6,
+      sacrifice: {currentVitner: 10, currentHP: 10, maxHP: 10}});
+    assert.equal(setup.option.hidden, true, "no shortfall means no offer");
+    assert.equal(confirm().sacrificeAccepted, false);
+    setup = sacrificeForm(); form = setup.form;
+    await magicDialog({title: "Magic", methods, defaultCost: 30,
+      sacrifice: {currentVitner: 0, currentHP: 1, maxHP: 10}});
+    assert.equal(setup.option.hidden, true, "an infeasible shortfall keeps the blocking behavior");
+    form = fields({"[name=method]": "first", "[name=modifier]": "0"}, ["[data-final-target]", "[data-final-cost]"]);
+    await magicDialog({title: "Magic", methods, defaultCost: 30});
+    assert.doesNotMatch(config.content, /data-sacrifice-option/);
+    assert.equal(confirm().sacrificeAccepted, false);
+  } finally {
+    game.i18n.format = previousFormat;
+  }
+});
+
 test("the generic situation macro applies states from the controlled actor or assigned PC, but works without an actor", async () => {
   const messages = [];
   globalThis.Roll = class {constructor(formula) {this.formula = formula;} async evaluate() {this.total = 8;}};
