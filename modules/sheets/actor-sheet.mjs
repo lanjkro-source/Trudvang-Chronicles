@@ -10,6 +10,7 @@ import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
+import {powerIconClassForItem} from "../power-icons.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../creature-ability-data.mjs";
 import {isNpcEquipment} from "../npc-inventory.mjs";
 import {npcPreparedActionRows} from "../rules/npc-prepared-actions.mjs";
@@ -426,7 +427,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         refundCost: this.actor.getKnowledgeLevelCost(item, level),
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
         children: sortTabletPowers(powers.filter(power => power.system.tabletId === tabletId || normalized(power.system.tablet) === normalized(item.name)), tabletId)
-          .map(power => ({item: power, displayLevel: power.system.isRune ? level : Number(power.system.level || 1), inactive: Number(power.system.level || 1) > level})),
+          .map(power => ({item: power, iconClass: powerIconClassForItem(power), displayLevel: power.system.isRune ? level : Number(power.system.level || 1), inactive: Number(power.system.level || 1) > level})),
         decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: this.actor.getKnowledgeLevelCost(item, level)}),
         increaseTitle: game.i18n.format("TRUDVANG.Cost.Increase", {cost: this.actor.getKnowledgeLevelCost(item, level + 1)}),
         canDecrease: level > 1,
@@ -434,7 +435,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       };
     });
     const linkedPowers = new Set(context.magicTree.flatMap(node => node.children.map(child => child.item.id)));
-    context.unassignedMagic = sortTabletPowers(powers.filter(item => !linkedPowers.has(item.id)));
+    context.unassignedMagic = sortTabletPowers(powers.filter(item => !linkedPowers.has(item.id)))
+      .map(item => ({item, iconClass: powerIconClassForItem(item)}));
     context.compatibleTabletCount = this.actor.compatibleTablets.length;
     return context;
   }

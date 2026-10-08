@@ -11,7 +11,7 @@ import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
 import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules/portrait.mjs";
-import {registerCompendiumCapacityIcons} from "./modules/compendium-capacity-icons.mjs";
+import {registerCompendiumIcons} from "./modules/compendium-capacity-icons.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
 import { applyPalette } from "./modules/palette.mjs";
@@ -29,7 +29,7 @@ Hooks.once("init", () => {
   // never fire. Socket setup stays in ready (needs game.socket).
   registerPortraitDirectoryHook();
   registerExtractStageDirectoryIcon();
-  registerCompendiumCapacityIcons();
+  registerCompendiumIcons();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);
   Object.assign(CONFIG.Item.dataModels, ITEM_DATA_MODELS);
   CONFIG.Actor.trackableAttributes = {

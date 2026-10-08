@@ -630,7 +630,8 @@
 .trudvang-sheet.npc-sheet .npc-ability-list { list-style: none; margin: 0; padding: 0; }
 .trudvang-sheet.npc-sheet .npc-ability-row { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 6px; align-items: center; width: 100%; margin: 0; padding: 4px 0; border: 0; border-bottom: 1px dotted var(--trudvang-line); background: transparent; color: var(--trudvang-ink); text-align: left; font-size: .85rem; line-height: 1.25; }
 .trudvang-sheet.npc-sheet .npc-ability-icon { display: grid; place-items: center; width: 28px; height: 28px; box-sizing: border-box; color: var(--trudvang-ink); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 92%, transparent); font-size: .95rem; }
-.trudvang-capacity-compendium-icon { display: inline-flex; flex: 0 0 24px; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--trudvang-on-header); font-size: 1rem; }
+.trudvang-compendium-icon { display: inline-flex; flex: 0 0 24px; align-items: center; justify-content: center; width: 24px; height: 24px; color: var(--trudvang-on-header); font-size: 1rem; }
+.trudvang-sheet .knowledge-node .power-type-icon { display: grid; place-items: center; width: 25px; height: 25px; color: var(--trudvang-ink); font-size: .95rem; }
 .trudvang-sheet.npc-sheet .npc-knowledge-row:hover, .trudvang-sheet.npc-sheet .npc-ability-row:hover { outline: 1px solid var(--trudvang-accent); outline-offset: -1px; box-shadow: none; }
 
 .trudvang.creature-ability-sheet .window-content { overflow-y: auto; }
