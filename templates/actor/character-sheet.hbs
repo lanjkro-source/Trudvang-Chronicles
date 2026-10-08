@@ -258,9 +258,9 @@
 
     <div class="tab notes" data-group="primary" data-tab="notes">
       <div class="notes-grid">
-        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Appearance"}}</h2>{{editor enriched.appearance target="system.appearance" button=true editable=editable}}</section>
-        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.History"}}</h2>{{editor enriched.history target="system.history" button=true editable=editable}}</section>
-        <section class="panel editor-panel full"><h2>{{localize "TRUDVANG.Section.Notes"}}</h2>{{editor enriched.notes target="system.notes" button=true editable=editable}}</section>
+        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.Appearance"}}</h2>{{#if editable}}<prose-mirror name="system.appearance" value="{{system.appearance}}" data-document-uuid="{{actor.uuid}}" toggled>{{{enriched.appearance}}}</prose-mirror>{{else}}<div class="editor-content">{{{enriched.appearance}}}</div>{{/if}}</section>
+        <section class="panel editor-panel"><h2>{{localize "TRUDVANG.Section.History"}}</h2>{{#if editable}}<prose-mirror name="system.history" value="{{system.history}}" data-document-uuid="{{actor.uuid}}" toggled>{{{enriched.history}}}</prose-mirror>{{else}}<div class="editor-content">{{{enriched.history}}}</div>{{/if}}</section>
+        <section class="panel editor-panel full"><h2>{{localize "TRUDVANG.Section.Notes"}}</h2>{{#if editable}}<prose-mirror name="system.notes" value="{{system.notes}}" data-document-uuid="{{actor.uuid}}" toggled>{{{enriched.notes}}}</prose-mirror>{{else}}<div class="editor-content">{{{enriched.notes}}}</div>{{/if}}</section>
       </div>
     </div>
   </section>

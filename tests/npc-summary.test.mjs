@@ -266,14 +266,15 @@ test("editing an effective trait removes its temporary effect without changing t
 
 test("unrelated form submissions do not persist effect bonuses or break the intrinsic fallback", async () => {
   const npc = actor();
+  npc.isOwner = true;
   npc.system.effective.traits.constitution = 5;
   const changes = [];
   npc.update = async update => changes.push(update);
   const submit = TrudvangActorSheet.DEFAULT_OPTIONS.form.handler;
   const values = {"system.traitCurrent.constitution": 5};
-  await submit.call({actor: npc}, {target: {name: "name"}}, {}, {object: values});
+  await submit.call({actor: npc, isEditable: true}, {target: {name: "name"}}, {}, {object: values});
   assert.equal(changes.at(-1).system.traitCurrent.constitution, null);
-  await submit.call({actor: npc}, {target: {name: "system.traitCurrent.constitution"}}, {}, {object: values});
+  await submit.call({actor: npc, isEditable: true}, {target: {name: "system.traitCurrent.constitution"}}, {}, {object: values});
   assert.equal(changes.at(-1).system.traitCurrent.constitution, 2);
 });
 
@@ -400,6 +401,7 @@ test("the NPC initiative info button opens the same inspection as PCs without ro
 
 test("the NPC header has only health and read-only movement, and compact traits can be edited", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet.actor.isOwner = true;
   sheet.actor.system.details.move = [{mode: "terrestre", distance: "3 m", max: "24 m"}, {mode: "nage", distance: "3 m", max: "24 m"}];
   const html = render(await sheet._prepareContext({}));
   const header = html.split('<nav class="sheet-tabs')[0];
@@ -470,6 +472,7 @@ test("NPC token inventories have a local hint and no mutable controls for read-o
 
 test("empty creature inventories are usable and show three properly localized empty states", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet.actor.isOwner = true;
   const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab combat')[0];
   assert.match(inventory, /Aucune arme dans l’inventaire/);
   assert.match(inventory, /Aucune armure ni aucun bouclier/);
@@ -1490,3 +1493,74 @@ test("dodge applies both penalties while consuming complete reserves, and specia
     assert.equal(instance.system.combatPools.free.offHandSpent, 4);
   }
 });
+
+for (const [Sheet, type, fields] of [
+  [TrudvangCharacterSheet, "character", ["appearance", "history", "notes"]],
+  [TrudvangNpcSheet, "npc", ["description", "notes"]]
+]) {
+  test(`${type}: notes use native form-associated rich-text editors and save for a non-GM owner only`, async t => {
+    const previousGM = game.user.isGM;
+    game.user.isGM = false; t.after(() => {game.user.isGM = previousGM;});
+    const sheet = new Sheet(); sheet.actor = actor(); sheet.actor.type = type;
+    sheet.actor.uuid = "Actor.notes"; sheet.actor.isOwner = true; sheet.isEditable = true;
+    const text = '<p>Texte <strong>formaté</strong> et "guillemets".</p>';
+    const values = Object.fromEntries(fields.map(field => [`system.${field}`, text]));
+    for (const field of fields) sheet.actor.system[field] = text;
+    const updates = [];
+    sheet.actor.update = async changes => {
+      updates.push(changes);
+      for (const [key, value] of Object.entries(changes.system ?? {})) sheet.actor.system[key] = value;
+    };
+    const template = Handlebars.compile(readFileSync(new URL(`../templates/actor/${type === "character" ? "character" : "npc"}-sheet.hbs`, import.meta.url), "utf8"));
+    const renderSheet = context => template(context, {allowedProtoProperties: {dodgeTarget: true}});
+    const context = await sheet._prepareContext({});
+    const html = renderSheet(context);
+    for (const field of fields) {
+      assert.match(html, new RegExp(`<prose-mirror name="system\\.${field}" value="&lt;p&gt;`));
+      assert.match(html, new RegExp(`name="system\\.${field}"[^>]+data-document-uuid="Actor.notes" toggled>`));
+    }
+    assert.doesNotMatch(html, /editor-edit|\{\{editor/);
+    await TrudvangActorSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {target: {name: "system.notes"}}, {}, {object: values});
+    assert.deepEqual(updates[0], {system: Object.fromEntries(fields.map(field => [field, text]))});
+    assert.equal(sheet.actor.system.notes, text, "formatted HTML survives saving");
+    sheet.isEditable = false;
+    const readonly = renderSheet(await sheet._prepareContext({}));
+    assert.doesNotMatch(readonly, /<prose-mirror/);
+    assert.ok(readonly.includes(text), "observers still see enriched content");
+    await TrudvangActorSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {"system.notes": "Blocked"}});
+    assert.equal(updates.length, 1);
+    sheet.isEditable = true; sheet.actor.isOwner = false;
+    assert.doesNotMatch(renderSheet(await sheet._prepareContext({})), /<prose-mirror/);
+    await TrudvangActorSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {"system.notes": "Blocked"}});
+    assert.equal(updates.length, 1);
+  });
+}
+
+for (const [type, rune] of [["spell", false], ["divineFeat", false], ["divineFeat", true]]) {
+  test(`${type}${rune ? " rune" : ""}: magic sheets are resizable and descriptions use the native editor with ownership checks`, async () => {
+    const updates = [];
+    const description = '<p>Texte détaillé et <em>formaté</em>.</p>';
+    const item = {type, name: "Test power", uuid: "Item.power", isOwner: true, effects: [], getFlag: () => null,
+      system: {description, summary: "Résumé", level: 1, spellType: "instant", cost: 3, modifier: 0, isRune: rune,
+        powerLevels: [{cost: 2, maxCount: null, effect: "Amélioration"}]}, update: async changes => {updates.push(changes);}};
+    const sheet = new TrudvangItemSheet({document: item}); sheet.isEditable = true;
+    assert.equal(TrudvangItemSheet.DEFAULT_OPTIONS.window.resizable, true);
+    assert.equal(TrudvangItemSheet.DEFAULT_OPTIONS.resizable, undefined, "ApplicationV2 expects window.resizable");
+    assert.ok(TrudvangItemSheet.PARTS.main.scrollable.includes(".item-description .editor-content"));
+    const template = Handlebars.compile(readFileSync(new URL("../templates/item/item-sheet.hbs", import.meta.url), "utf8"));
+    const html = template(await sheet._prepareContext({}));
+    assert.match(html, /item-sheet magic-power-sheet/);
+    assert.match(html, /prose-mirror name="system.description"[^>]+data-document-uuid="Item.power" toggled/);
+    assert.ok(html.includes(description)); assert.match(html, /power-level-table/);
+    await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {"system.description": description}});
+    assert.deepEqual(updates, [{system: {description}}]);
+    item.isOwner = false;
+    const readonly = template(await sheet._prepareContext({}));
+    assert.doesNotMatch(readonly, /<prose-mirror/); assert.ok(readonly.includes(description));
+    await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {"system.description": "Blocked"}});
+    item.isOwner = true; sheet.isEditable = false;
+    assert.doesNotMatch(template(await sheet._prepareContext({})), /<prose-mirror/);
+    await TrudvangItemSheet.DEFAULT_OPTIONS.form.handler.call(sheet, {}, {}, {object: {"system.description": "Blocked"}});
+    assert.equal(updates.length, 1, "neither observers nor owners of locked sheets can submit edits");
+  });
+}

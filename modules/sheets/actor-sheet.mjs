@@ -126,7 +126,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.actor = this.actor;
     context.isToken = this.actor.isToken;
     context.system = this.actor.system;
-    context.editable = this.isEditable;
+    context.editable = this.isEditable && this.actor.isOwner;
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
     context.fearFactor = parseFearFactor(this.actor.system.details?.fearFactor);
@@ -581,6 +581,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   }
 
   static async #onSubmit(event, form, formData) {
+    if (!this.isEditable || !this.actor.isOwner) return;
     const changes = foundry.utils.expandObject(formData.object);
     const editedPath = event.target?.name || "";
     if (this.actor.type === "npc") {

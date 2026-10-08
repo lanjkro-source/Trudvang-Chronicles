@@ -589,6 +589,8 @@
 .trudvang-sheet .editor-panel { min-height: 205px; display: flex; flex-direction: column; }
 .trudvang-sheet .editor-panel .editor { min-height: 150px; flex: 1; }
 .trudvang-sheet .editor-panel .editor-content { min-height: 140px; }
+.trudvang-sheet .editor-panel > prose-mirror { display: flex; flex-direction: column; flex: 1; min-height: 150px; color: var(--trudvang-ink); }
+.trudvang-sheet .editor-panel prose-mirror .editor-content { color: var(--trudvang-ink); }
 .trudvang-sheet.npc-sheet .npc-health-panel { margin-bottom: 10px; }
 .trudvang-sheet.npc-sheet .npc-health-panel .status-vitals { margin-bottom: 0; }
 .trudvang-sheet.npc-sheet .npc-health-panel .health-vital { padding-bottom: 0; border-bottom: 0; }
@@ -805,6 +807,18 @@
 .trudvang-tablet-picker .tablet-picker-option small { display: block; margin-top: 2px; color: var(--trudvang-muted); }
 .trudvang-sheet.item-sheet .panel.summary-panel textarea { resize: none; }
 .trudvang-sheet.item-sheet .editor-container { min-height: 150px; flex: 1; }
+.trudvang-sheet.item-sheet .editor-container > prose-mirror { display: flex; flex-direction: column; min-height: 150px; height: 100%; color: var(--trudvang-ink); }
+/* Magic descriptions fill the spare height; only their rich text scrolls in
+   normal-sized windows. Small windows still allow scrolling the whole tab. */
+.trudvang-sheet.magic-power-sheet > .sheet-header { flex: 0 0 auto; }
+.trudvang-sheet.magic-power-sheet .item-sheet-body > .tab[data-tab="details"] { display: flex; flex-direction: column; }
+.trudvang-sheet.magic-power-sheet .tab[data-tab="details"] > :not(.item-description) { flex: 0 0 auto; }
+.trudvang-sheet.magic-power-sheet .item-description { flex: 1 0 160px; min-height: 160px; overflow: hidden; }
+.trudvang-sheet.magic-power-sheet .item-description h2 { flex: 0 0 auto; }
+.trudvang-sheet.magic-power-sheet .editor-container { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; }
+.trudvang-sheet.magic-power-sheet .editor-container > prose-mirror { flex: 1; height: auto; min-height: 0; overflow: hidden; }
+.trudvang-sheet.magic-power-sheet .editor-container :is(.editor-content, .prosemirror) { flex: 1; min-height: 0; overflow-y: auto; }
+.trudvang-sheet.magic-power-sheet .editor-container .editor-menu { flex: 0 0 auto; }
 .trudvang-sheet.item-sheet .item-description table { width: 100%; border-collapse: collapse; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); --table-background-color: var(--trudvang-header-alt); --table-row-color-odd: var(--trudvang-header-alt); --table-row-color-even: color-mix(in srgb, var(--trudvang-header) 55%, var(--trudvang-header-alt)); --table-header-bg-color: var(--trudvang-header); --table-header-border-color: var(--trudvang-gold); --table-header-text-color: var(--trudvang-on-header); }
 .trudvang-sheet.item-sheet .item-description table :is(th, td, p, span) { color: var(--trudvang-on-header); }
 .trudvang-sheet.item-sheet .item-description table :is(th, td) { border: 1px solid color-mix(in srgb, var(--trudvang-gold) 45%, var(--trudvang-header-alt)); padding: 5px 8px; }

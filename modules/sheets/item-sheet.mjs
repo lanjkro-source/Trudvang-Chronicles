@@ -33,7 +33,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     tag: "form",
     classes: ["trudvang", "sheet", "item"],
     position: { width: 640, height: 700 },
-    resizable: true,
+    window: {resizable: true},
     form: {
       handler: TrudvangItemSheet.#onSubmit,
       submitOnChange: true,
@@ -53,13 +53,14 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   };
 
   static PARTS = {
-    main: { template: "systems/trudvang-chronicles/templates/item/item-sheet.hbs" }
+    main: {template: "systems/trudvang-chronicles/templates/item/item-sheet.hbs",
+      scrollable: [".item-sheet-body > .tab", ".item-description .editor-content"]}
   };
 
   async _prepareContext(options) {
     const context = await super._prepareContext(options);
     context.item = this.item;
-    context.editable = this.item.isOwner;
+    context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
     context.itemType = this.item.type;
     context.supportsEffects = EFFECT_ITEM_TYPES.has(this.item.type);
@@ -134,8 +135,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   async _onRender(context, options) {
     await super._onRender(context, options);
     const root = this.element;
-    if (!this.item.isOwner) {
-      root.querySelectorAll("input, select, textarea").forEach(element => element.setAttribute("disabled", "disabled"));
+    if (!this.isEditable || !this.item.isOwner) {
+      root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
     }
     if (this.levelManaged) root.querySelector("[name='system.level']")?.setAttribute("disabled", "disabled");
     if (this.structuralLocked) {
@@ -195,6 +196,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   }
 
   static async #onSubmit(event, form, formData) {
+    if (!this.isEditable || !this.item.isOwner) return;
     const updateData = foundry.utils.expandObject(formData.object);
     const editedLevels = updateData.system?.powerLevels;
     if (editedLevels && !Array.isArray(editedLevels)) {
