@@ -648,6 +648,7 @@
     "Damage": {
       "Targets": "Targets",
       "AddSelectedTokens": "Add selected tokens to targets",
+      "RemoveTarget": "Remove this target from the card (without undoing damage already applied)",
       "NoSelectedTokens": "Select a PC or NPC token to add to the targets.",
       "Apply": "Apply damage",
       "ApplyIgnoringArmor": "Apply damage ignoring armor",

@@ -17,7 +17,7 @@ const template = name => Handlebars.compile(readFileSync(new URL(`../templates/$
 globalThis.foundry = {applications: {handlebars: {renderTemplate: async (path, data) => template(path.split("/").at(-1).replace(".hbs", ""))(data)}},
   utils: {fromUuid: async uuid => documents.get(uuid)}};
 globalThis.ChatMessage = {create: () => assert.fail("applications must update the source card, never create another message")};
-const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets} = await import("../modules/chat-application.mjs");
+const {applyChatApplication, hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval} = await import("../modules/chat-application.mjs");
 const {rollDamage} = await import("../modules/dice.mjs");
 
 function runtime(t, kind = "damage") {
@@ -188,6 +188,14 @@ test("a player's click is relayed to one GM and appends a row without creating a
   game.user = player; await handler(emitted.shift());
   assert.deepEqual(await pending, {status: "applied", amount: 8});
   assert.match(message.content, /−8 PS/);
+  const removing = requestDamageTargetRemoval({message, actorUuid: actor.uuid});
+  const removal = emitted.shift();
+  assert.equal(removal.type, "chatRemoveDamageTarget");
+  game.user = gm; await handler(removal);
+  game.user = player; await handler(emitted.shift());
+  assert.deepEqual(await removing, {status: "removed", removed: 1});
+  assert.match(message.content, /−8 PS/, "removing a target preserves its recorded damage");
+  assert.equal(actor.system.resources.body.value, 12);
 });
 
 test("the plus button exists even with no initial target and deduplicates linked tokens by actor", async t => {
@@ -227,6 +235,86 @@ test("target addition checks token identity, ownership and message access on the
   message.blind = false; payload.tokenUuids = [actor.uuid, "Scene.missing.Token.missing"];
   assert.equal((await applyChatApplication(payload)).added, 0);
   assert.equal(updates.length, 0);
+});
+
+test("a minus removes only its target and preserves damage history even if the target is re-added", async t => {
+  const {message, flags, makeActor, makeToken, payload} = runtime(t);
+  const first = makeActor("First"), second = makeActor("Second");
+  const token = makeToken("first", first);
+  await requestDamageTargets({message, tokens: [token, makeToken("second", second)]});
+  await applyChatApplication(payload(first));
+  assert.deepEqual(await requestDamageTargetRemoval({message, actorUuid: first.uuid}), {status: "removed", removed: 1});
+  assert.deepEqual(flags.damageTargets.map(target => target.actorUuid), [second.uuid]);
+  assert.equal(flags.applications.length, 1);
+  assert.match(message.content, /−8 PS/);
+  assert.equal(first.system.resources.body.value, 12);
+  assert.equal(second.system.resources.body.value, 20);
+  assert.deepEqual(await requestDamageTargets({message, tokens: [token]}), {status: "added", added: 1});
+  assert.equal((await applyChatApplication(payload(first))).status, "alreadyApplied");
+  assert.equal(first.system.resources.body.value, 12);
+});
+
+test("removing targets serializes with additions and damage applications on the same card", async t => {
+  const {message, flags, makeActor, makeToken, payload} = runtime(t);
+  const first = makeActor("First"), second = makeActor("Second");
+  await requestDamageTargets({message, tokens: [makeToken("first", first)]});
+  const results = await Promise.all([applyChatApplication(payload(first)),
+    requestDamageTargetRemoval({message, actorUuid: first.uuid}),
+    requestDamageTargets({message, tokens: [makeToken("second", second)]})]);
+  assert.deepEqual(results.map(result => result.status), ["applied", "removed", "added"]);
+  assert.deepEqual(flags.damageTargets.map(target => target.actorUuid), [second.uuid]);
+  assert.equal(flags.applications.length, 1);
+  assert.match(message.content, /−8 PS/);
+  assert.equal((await applyChatApplication(payload(first))).status, "unavailable");
+});
+
+test("target removal checks ownership, message access, card type and the existing target list", async t => {
+  const {message, flags, makeActor, makeToken, updates} = runtime(t);
+  const actor = makeActor("Target");
+  await requestDamageTargets({message, tokens: [makeToken("target", actor)]});
+  const request = {type: "chatRemoveDamageTarget", messageId: message.id, userId: observer.id, actorUuid: actor.uuid};
+  assert.equal((await applyChatApplication(request)).status, "unavailable");
+  request.userId = player.id; message.blind = true;
+  assert.equal((await applyChatApplication(request)).status, "unavailable");
+  message.blind = false; request.actorUuid = "Actor.notListed";
+  assert.deepEqual(await applyChatApplication(request), {status: "unchanged", removed: 0});
+  request.actorUuid = actor.uuid;
+  const original = message.content;
+  message.content = template("fear-card")({total: 10});
+  assert.equal((await applyChatApplication(request)).status, "unavailable");
+  message.content = original;
+  assert.equal(updates.length, 1);
+  assert.equal(flags.damageTargets.length, 1);
+  assert.deepEqual(await applyChatApplication(request), {status: "removed", removed: 1});
+  assert.deepEqual(await applyChatApplication(request), {status: "unchanged", removed: 0});
+  assert.equal(updates.length, 2);
+});
+
+test("the card author can remove deleted targets and removing the last target keeps the plus", async t => {
+  const {message, flags, makeActor, makeToken} = runtime(t);
+  const actor = makeActor("Target"), token = makeToken("target", actor);
+  await requestDamageTargets({message, tokens: [token]});
+  message.author = observer;
+  documents.delete(actor.uuid); documents.delete(token.uuid);
+  assert.deepEqual(await applyChatApplication({type: "chatRemoveDamageTarget", messageId: message.id,
+    userId: observer.id, actorUuid: actor.uuid}), {status: "removed", removed: 1});
+  assert.deepEqual(flags.damageTargets, []);
+  assert.match(message.content, /data-action="add-damage-targets"/);
+  assert.doesNotMatch(message.content, /class="damage-target"/);
+});
+
+test("damage target names use the shared hover/centering control and both editing icons are compact", async t => {
+  const {message, makeActor, makeToken} = runtime(t);
+  const token = makeToken("target", makeActor("Target"));
+  token.name = '<img src=x onerror="attack()">';
+  await requestDamageTargets({message, tokens: [token]});
+  assert.match(message.content, /class="trait-situation-token damage-target-name" data-action="locate-trait-situation-token" data-token-uuid="Scene\.scene\.Token\.target"/);
+  assert.match(message.content, /&lt;img/);
+  assert.doesNotMatch(message.content, /<img src=x/);
+  assert.match(message.content, /class="damage-target-edit" data-action="add-damage-targets"/);
+  assert.match(message.content, /class="damage-target-edit" data-action="remove-damage-target"/);
+  const css = readFileSync(new URL("../styles/trudvang.css", import.meta.url), "utf8");
+  assert.match(css, /\.damage-target-edit\s*\{[^}]*width: 18px;[^}]*background: transparent; border: 0; box-shadow: none/);
 });
 
 test("a real damage roll stores its initial targets and the final halved amount on the expandable card", async t => {

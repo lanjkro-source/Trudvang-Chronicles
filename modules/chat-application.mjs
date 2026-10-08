@@ -9,6 +9,7 @@ const replies = new Map();
 let registered = false;
 const authorId = message => message?.author?.id ?? message?._source?.author;
 const rowsFor = message => message.getFlag(SYSTEM_ID, "applications") ?? [];
+const damageTargetsSection = /<section\b[^>]*\bdata-damage-targets(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
 
 export function hasChatApplication(message, actorUuid, channel, itemUuid = "") {
   return rowsFor(message).some(row => row.actorUuid === actorUuid && row.channel === channel
@@ -39,9 +40,8 @@ function canReadMessage(message, user) {
 async function addDamageTargetsOnGM(payload) {
   const message = game.messages.get(payload.messageId), user = game.users.get(payload.userId);
   if (!game.user.isGM || !message || !user?.active || !canReadMessage(message, user)) return {status: "unavailable"};
-  const section = /<section\b[^>]*\bdata-damage-targets(?:=["'][^"']*["'])?[^>]*>[\s\S]*?<\/section>/;
   const total = sourceAmount(message, "body");
-  if (total === null || !section.test(message.content)) return {status: "unavailable"};
+  if (total === null || !damageTargetsSection.test(message.content)) return {status: "unavailable"};
   const targets = [...(message.getFlag(SYSTEM_ID, "damageTargets") ?? [])];
   const seen = new Set(targets.map(target => target.actorUuid));
   let added = 0;
@@ -54,9 +54,33 @@ async function addDamageTargetsOnGM(payload) {
     targets.push(target); seen.add(target.actorUuid); added++;
   }
   if (!added) return {status: "unchanged", added: 0};
-  const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
-  await message.update({content: message.content.replace(section, () => html), [`flags.${SYSTEM_ID}.damageTargets`]: targets});
+  await updateDamageTargets(message, total, targets);
   return {status: "added", added};
+}
+
+async function updateDamageTargets(message, total, targets) {
+  const html = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
+  await message.update({content: message.content.replace(damageTargetsSection, () => html), [`flags.${SYSTEM_ID}.damageTargets`]: targets});
+}
+
+async function removeDamageTargetOnGM(payload) {
+  const message = game.messages.get(payload.messageId), user = game.users.get(payload.userId);
+  if (!game.user.isGM || !message || !user?.active || !canReadMessage(message, user)) return {status: "unavailable"};
+  const total = sourceAmount(message, "body");
+  if (total === null || !damageTargetsSection.test(message.content)) return {status: "unavailable"};
+  const targets = message.getFlag(SYSTEM_ID, "damageTargets") ?? [];
+  if (!targets.some(target => target.actorUuid === payload.actorUuid)) return {status: "unchanged", removed: 0};
+  // The GM/card author can remove any listed target, including a deleted token.
+  // Other readers may remove only targets whose actor they control.
+  if (!user.isGM && authorId(message) !== user.id) {
+    const actor = await foundry.utils.fromUuid(payload.actorUuid);
+    if (!actor?.testUserPermission(user, "OWNER")) return {status: "unavailable"};
+  }
+  const remaining = targets.filter(target => target.actorUuid !== payload.actorUuid);
+  // Retain application records: removing/re-adding a target must never undo
+  // damage or make the same roll applicable twice.
+  await updateDamageTargets(message, total, remaining);
+  return {status: "removed", removed: targets.length - remaining.length};
 }
 
 async function applyOnGM(payload) {
@@ -117,7 +141,8 @@ async function applyOnGM(payload) {
  */
 export async function applyChatApplication(payload) {
   const previous = queues.get(payload.messageId) ?? Promise.resolve();
-  const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload) : applyOnGM(payload));
+  const next = previous.catch(() => {}).then(() => payload.type === "chatDamageTargets" ? addDamageTargetsOnGM(payload)
+    : payload.type === "chatRemoveDamageTarget" ? removeDamageTargetOnGM(payload) : applyOnGM(payload));
   queues.set(payload.messageId, next);
   try { return await next; }
   finally { if (queues.get(payload.messageId) === next) queues.delete(payload.messageId); }
@@ -133,7 +158,7 @@ export function registerChatApplicationSocket() {
       clearTimeout(pending.timeout); replies.delete(payload.requestId); pending.resolve(payload.result);
       return;
     }
-    if (!["chatApplication", "chatDamageTargets"].includes(payload?.type) || !game.user.isGM
+    if (!["chatApplication", "chatDamageTargets", "chatRemoveDamageTarget"].includes(payload?.type) || !game.user.isGM
       || responderFor(game.messages.get(payload.messageId))?.id !== game.user.id) return;
     let result;
     try { result = await applyChatApplication(payload); }
@@ -157,6 +182,12 @@ export async function requestDamageTargets({message, tokens}) {
   if (!tokenUuids.length) return {status: "unavailable"};
   return requestChatUpdate(message, {type: "chatDamageTargets", requestId: crypto.randomUUID(),
     messageId: message.id, userId: game.user.id, tokenUuids});
+}
+
+export async function requestDamageTargetRemoval({message, actorUuid}) {
+  if (!actorUuid) return {status: "unavailable"};
+  return requestChatUpdate(message, {type: "chatRemoveDamageTarget", requestId: crypto.randomUUID(),
+    messageId: message.id, userId: game.user.id, actorUuid});
 }
 
 async function requestChatUpdate(message, payload) {

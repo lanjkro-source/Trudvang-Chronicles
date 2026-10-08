@@ -648,6 +648,7 @@
     "Damage": {
       "Targets": "Cibles",
       "AddSelectedTokens": "Ajouter les tokens sélectionnés aux cibles",
+      "RemoveTarget": "Retirer cette cible de la carte (sans annuler les dégâts déjà appliqués)",
       "NoSelectedTokens": "Sélectionnez un token de PJ ou de PNJ à ajouter aux cibles.",
       "Apply": "Appliquer les dégâts",
       "ApplyIgnoringArmor": "Appliquer les dégâts sans armure",

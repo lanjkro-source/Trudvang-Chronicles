@@ -765,6 +765,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Damage.Targets` | Targets | Cibles |
 | `TRUDVANG.Damage.AddSelectedTokens` | Add selected tokens to targets | Ajouter les tokens sélectionnés aux cibles |
+| `TRUDVANG.Damage.RemoveTarget` | Remove this target from the card (without undoing damage already applied) | Retirer cette cible de la carte (sans annuler les dégâts déjà appliqués) |
 | `TRUDVANG.Damage.NoSelectedTokens` | Select a PC or NPC token to add to the targets. | Sélectionnez un token de PJ ou de PNJ à ajouter aux cibles. |
 | `TRUDVANG.Damage.Apply` | Apply damage | Appliquer les dégâts |
 | `TRUDVANG.Damage.ApplyIgnoringArmor` | Apply damage ignoring armor | Appliquer les dégâts sans armure |

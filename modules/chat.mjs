@@ -1,4 +1,4 @@
-import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets} from "./chat-application.mjs";
+import {hasChatApplication, registerChatApplicationSocket, requestChatApplication, requestDamageTargets, requestDamageTargetRemoval} from "./chat-application.mjs";
 import { useExtract } from "./extract-roll.mjs";
 import { rollPackageAvailability } from "./package-roll.mjs";
 import {playerTraitSituationDialog} from "./dice.mjs";
@@ -149,6 +149,17 @@ function attachListeners(message, html) {
       button.disabled = true;
       try {
         const result = await requestDamageTargets({message, tokens});
+        if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
+      } finally { button.disabled = false; }
+    });
+  });
+  html.querySelectorAll("[data-action='remove-damage-target']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      button.disabled = true;
+      try {
+        const result = await requestDamageTargetRemoval({message, actorUuid: button.dataset.targetActorUuid});
         if (result.status === "unavailable") ui.notifications.warn(game.i18n.localize("TRUDVANG.ChatApplication.Unavailable"));
       } finally { button.disabled = false; }
     });
