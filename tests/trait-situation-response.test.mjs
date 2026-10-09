@@ -161,3 +161,22 @@ test("the GM recalculates wounds and fear for a resistance, rather than trusting
     assert.equal(response.success, true);
   }
 });
+
+test("a no-trait resistance uses a normal situation modifier and never reads a trait", async () => {
+  request.traitKey = "aucun";
+  request.sv = 10;
+  const performer = actor("no-trait", 0);
+  const modifierCalls = [];
+  performer.getTraitValue = () => { throw new Error("A no-trait roll must not read a trait"); };
+  performer.getRollModifier = options => {
+    modifierCalls.push(options);
+    assert.deepEqual(options, {kind: "situation"});
+    return 3;
+  };
+  const payload = await claim(performer);
+  assert.equal(await recordTraitSituationResponse({...payload, result: 12, modifier: 2}), "recorded");
+  assert.equal(request.responses.at(-1).target, 15);
+  assert.deepEqual(modifierCalls, [{kind: "situation"}]);
+  request.traitKey = "strength";
+  request.sv = 10;
+});

@@ -3,13 +3,23 @@
     <img src="{{gmImg}}" alt="">
     <div>
       <strong>{{gmName}}</strong>
-      <h3>{{label}}</h3>
+      <h3>{{title}}</h3>
     </div>
   </header>
   <p class="card-flavor">{{localize "TRUDVANG.Dialog.TraitSituationHint"}}</p>
   <button type="button" data-action="roll-trait-situation" data-trait="{{traitKey}}" data-sv="{{sv}}">
     <i class="fas fa-shield-halved" aria-hidden="true"></i> {{buttonLabel}}
   </button>
+  {{#if success}}
+  <p class="trait-situation-consequence trait-situation-consequence--success">
+    <strong>{{localize "TRUDVANG.Dialog.TraitSituationResult.success"}} :</strong> {{success}}
+  </p>
+  {{/if}}
+  {{#if failure}}
+  <p class="trait-situation-consequence trait-situation-consequence--failure">
+    <strong>{{localize "TRUDVANG.Dialog.TraitSituationResult.failure"}} :</strong> {{failure}}
+  </p>
+  {{/if}}
   {{#if responses.length}}
   <ul class="trait-situation-results" aria-label="{{localize "TRUDVANG.Dialog.TraitSituationResults"}}">
     {{#each responses}}

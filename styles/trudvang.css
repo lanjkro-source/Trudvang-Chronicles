@@ -899,6 +899,9 @@
 .trudvang.chat-card .roll-details.is-collapsed { display: none !important; }
 .trudvang.chat-card > button { margin: 6px; width: calc(100% - 12px); border: 1px solid var(--trudvang-line); background: color-mix(in srgb, var(--trudvang-paper-light) 35%, transparent); }
 .trudvang.chat-card .trait-situation-results { margin: 2px 8px 8px; padding: 0; list-style: none; }
+.trudvang.chat-card .trait-situation-consequence { margin: 4px 8px; padding: 4px 7px; border-left: 2px solid currentColor; background: color-mix(in srgb, currentColor 8%, var(--trudvang-paper-light)); }
+.trudvang.chat-card .trait-situation-consequence--success { color: var(--trudvang-positive); }
+.trudvang.chat-card .trait-situation-consequence--failure { color: var(--trudvang-negative); }
 .trudvang.chat-card .trait-situation-result { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: 8px; margin-top: 4px; padding: 5px 7px; border-left: 3px solid currentColor; background: color-mix(in srgb, currentColor 8%, var(--trudvang-paper-light)); }
 .trudvang.chat-card .trait-situation-result--success, .trudvang.chat-card .trait-situation-result--perfectSuccess { color: var(--trudvang-positive); }
 .trudvang.chat-card .trait-situation-result--failure, .trudvang.chat-card .trait-situation-result--perfectFailure { color: var(--trudvang-negative); }

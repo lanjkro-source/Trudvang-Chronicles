@@ -221,7 +221,7 @@ function attachListeners(message, html) {
       const request = message.getFlag("trudvang-chronicles", "traitSituation");
       const traitKey = request?.traitKey;
       const sv = Number(request?.sv);
-      if (!traitKey || !Number.isInteger(sv)) return;
+      if (!(traitKey === "aucun" || CONFIG.TRUDVANG?.traits?.[traitKey]) || !Number.isInteger(sv)) return;
       const controlled = Array.from(canvas.tokens?.controlled || []).find(token =>
         ["character", "npc"].includes(token.actor?.type) && token.actor.isOwner);
       const actor = controlled?.actor ?? game.user.character;
@@ -230,11 +230,18 @@ function attachListeners(message, html) {
         return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.TraitSituationAlreadyRolled"));
       }
       const token = controlled ?? canvas.tokens?.placeables?.find(entry => entry.actor?.uuid === actor.uuid);
-      const trait = actor.getTraitValue(traitKey);
-      const effect = actor.getRollModifier({kind: "trait", traitKey, includeState: false});
+      const hasTrait = traitKey !== "aucun";
+      const trait = hasTrait ? actor.getTraitValue(traitKey) : 0;
+      const effect = actor.getRollModifier(hasTrait
+        ? {kind: "trait", traitKey, includeState: false}
+        : {kind: "situation", includeState: false});
       const modifierRows = actorStateRollModifiers(actor);
-      const traitLabel = game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey);
-      const title = game.i18n.format("TRUDVANG.Dialog.TraitSituationPlayerTitle", {trait: traitLabel});
+      const traitLabel = hasTrait
+        ? game.i18n.localize(CONFIG.TRUDVANG?.traits?.[traitKey] ?? traitKey)
+        : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
+      const title = String(request.title ?? "").trim() || (hasTrait
+        ? game.i18n.format("TRUDVANG.Dialog.TraitSituationPlayerTitle", {trait: traitLabel})
+        : game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
       button.disabled = true;
       try {
         const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv, modifierRows});

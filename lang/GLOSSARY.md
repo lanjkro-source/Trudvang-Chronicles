@@ -1007,6 +1007,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.SituationLabel` | Label | Intitulé |
 | `TRUDVANG.Dialog.TraitSituationTitle` | Request a resistance roll | Provoquer un jet de résistance |
 | `TRUDVANG.Dialog.TraitSituationTrait` | Trait | Trait |
+| `TRUDVANG.Dialog.TraitSituationNoTrait` | No trait | Aucun trait |
+| `TRUDVANG.Dialog.TraitSituationSpecificTitle` | Specific roll title | Intitulé spécifique du jet |
+| `TRUDVANG.Dialog.TraitSituationSuccessConsequence` | Consequence on success | Conséquence en cas de succès |
+| `TRUDVANG.Dialog.TraitSituationFailureConsequence` | Consequence on failure | Conséquence en cas d’échec |
 | `TRUDVANG.Dialog.TraitSituationSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationHint` | Select your PC or NPC, then make its resistance roll. | Sélectionnez votre PJ ou PNJ, puis lancez son jet de résistance. |
 | `TRUDVANG.Dialog.TraitSituationButton` | Roll {trait} | Jet de {trait} |

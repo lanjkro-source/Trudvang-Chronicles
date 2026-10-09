@@ -858,10 +858,16 @@ export async function rollGenericSituation({target, label, modifier} = {}) {
 export async function gmTraitSituationDialog() {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const traits = Object.entries(TRUDVANG.traits).map(([id, label]) => ({id, label: game.i18n.localize(label)}));
-  const traitOptions = traits.map(trait => `<option value="${escapeHtml(trait.id)}">${escapeHtml(trait.label)}</option>`).join("");
+  const traitOptions = [
+    ...traits.map(trait => `<option value="${escapeHtml(trait.id)}">${escapeHtml(trait.label)}</option>`),
+    `<option value="aucun">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait"))}</option>`
+  ].join("");
   const content = `<div class="trudvang roll-dialog">
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait"))}</label><select name="trait">${traitOptions}</select></div>
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSV"))}</label><input name="sv" type="number" value="10"></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSpecificTitle"))}</label><input name="title" type="text"></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSuccessConsequence"))}</label><textarea name="success"></textarea></div>
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationFailureConsequence"))}</label><textarea name="failure"></textarea></div>
   </div>`;
   return DialogClass.wait({
     window: {title: game.i18n.localize("TRUDVANG.Dialog.TraitSituationTitle")},
@@ -871,7 +877,10 @@ export async function gmTraitSituationDialog() {
         const root = button.form ?? dialog.element;
         return {
           traitKey: root.querySelector("[name=trait]")?.value,
-          situationValue: Number(root.querySelector("[name=sv]")?.value || 0)
+          situationValue: Number(root.querySelector("[name=sv]")?.value || 0),
+          title: root.querySelector("[name=title]")?.value?.trim() ?? "",
+          success: root.querySelector("[name=success]")?.value?.trim() ?? "",
+          failure: root.querySelector("[name=failure]")?.value?.trim() ?? ""
         };
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
@@ -885,7 +894,7 @@ export async function gmTraitSituationDialog() {
  * Post a trait situation request card. Called by the GM macro after the dialog,
  * or directly with explicit arguments. No `rolls` field — Dice So Nice stays silent.
  */
-export async function requestTraitSituationRoll({traitKey, situationValue} = {}) {
+export async function requestTraitSituationRoll({traitKey, situationValue, title = "", success = "", failure = ""} = {}) {
   if (!game.user.isGM) {
     ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.GMOnly"));
     return null;
@@ -893,31 +902,42 @@ export async function requestTraitSituationRoll({traitKey, situationValue} = {})
   if (traitKey === undefined && situationValue === undefined) {
     const answered = await gmTraitSituationDialog();
     if (!answered) return null;
-    ({traitKey, situationValue} = answered);
+    ({traitKey, situationValue, title, success, failure} = answered);
   }
-  if (!TRUDVANG.traits[traitKey] || !Number.isInteger(Number(situationValue))) {
+  if (!(traitKey === "aucun" || TRUDVANG.traits[traitKey]) || !Number.isInteger(Number(situationValue))) {
     ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.InvalidTraitSituation"));
     return null;
   }
   const sv = Number(situationValue);
-  const traitLabel = game.i18n.localize(TRUDVANG.traits[traitKey]);
-  const label = game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel});
+  const traitLabel = traitKey === "aucun"
+    ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait")
+    : game.i18n.localize(TRUDVANG.traits[traitKey]);
+  const buttonLabel = traitKey === "aucun"
+    ? game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")
+    : game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel});
+  const rollTitle = String(title ?? "").trim() || buttonLabel;
+  const successConsequence = String(success ?? "").trim();
+  const failureConsequence = String(failure ?? "").trim();
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/trait-situation-request-card.hbs", {
     gmName: game.user.name,
     gmImg: game.user.avatar || "icons/svg/d20.svg",
-    label,
-    buttonLabel: label,
+    title: rollTitle,
+    buttonLabel,
     traitKey,
     sv,
+    success: successConsequence,
+    failure: failureConsequence,
     responses: []
   });
   await ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
     style: CONST.CHAT_MESSAGE_STYLES.OTHER,
-    flags: {[SYSTEM_ID]: {traitSituation: {traitKey, sv, responses: []}}}
+    flags: {[SYSTEM_ID]: {traitSituation: {
+      traitKey, sv, title: rollTitle, success: successConsequence, failure: failureConsequence, responses: []
+    }}}
   });
-  return {traitKey, sv};
+  return {traitKey, sv, title: rollTitle, success: successConsequence, failure: failureConsequence};
 }
 
 /**

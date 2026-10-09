@@ -28,15 +28,21 @@ function responseView(entry) {
 
 async function cardContent(message, request, responses) {
   const author = game.users.get(message.user);
-  const traitLabel = game.i18n.localize(TRUDVANG.traits[request.traitKey]);
-  const label = game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel});
+  const traitLabel = request.traitKey === "aucun"
+    ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait")
+    : game.i18n.localize(TRUDVANG.traits[request.traitKey]);
+  const buttonLabel = request.traitKey === "aucun"
+    ? game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle")
+    : game.i18n.format("TRUDVANG.Dialog.TraitSituationButton", {trait: traitLabel});
   return renderTemplate("systems/trudvang-chronicles/templates/chat/trait-situation-request-card.hbs", {
     gmName: author?.name ?? "",
     gmImg: author?.avatar || "icons/svg/d20.svg",
-    label,
-    buttonLabel: label,
+    title: String(request.title ?? "").trim() || buttonLabel,
+    buttonLabel,
     traitKey: request.traitKey,
     sv: request.sv,
+    success: request.success ?? "",
+    failure: request.failure ?? "",
     responses: responses.map(responseView)
   });
 }
@@ -45,7 +51,8 @@ async function contextFor({messageId, actorUuid, userId}) {
   const message = game.messages.get(messageId);
   const request = message?.getFlag(SYSTEM_ID, "traitSituation");
   const user = game.users.get(userId);
-  if (!game.user.isGM || !message || !request || !TRUDVANG.traits[request.traitKey]
+  if (!game.user.isGM || !message || !request
+    || !(request.traitKey === "aucun" || TRUDVANG.traits[request.traitKey])
     || !Number.isInteger(request.sv) || !user?.active) return null;
   const actor = await foundry.utils.fromUuid(actorUuid);
   if (!actor || !["character", "npc"].includes(actor.type) || !actor.testUserPermission(user, "OWNER")) return null;
@@ -85,8 +92,10 @@ export async function recordTraitSituationResponse(payload) {
   try {
     const token = payload.tokenUuid ? await foundry.utils.fromUuid(payload.tokenUuid) : null;
     const linkedToken = token?.documentName === "Token" && token.actor?.uuid === actor.uuid ? token : null;
-    const target = request.sv + Number(actor.getTraitValue(request.traitKey))
-      + Number(actor.getRollModifier({kind: "trait", traitKey: request.traitKey})) + payload.modifier;
+    const hasTrait = request.traitKey !== "aucun";
+    const target = request.sv + (hasTrait ? Number(actor.getTraitValue(request.traitKey)) : 0)
+      + Number(actor.getRollModifier(hasTrait ? {kind: "trait", traitKey: request.traitKey} : {kind: "situation"}))
+      + payload.modifier;
     const {success} = resolveRollUnderOutcome(payload.result, target);
     const responses = [...(request.responses ?? []), {
       actorUuid: actor.uuid,
