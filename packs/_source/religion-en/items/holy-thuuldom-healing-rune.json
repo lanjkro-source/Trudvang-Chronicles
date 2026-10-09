@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-healing-rune",
-    "description": "This tablet gathers powers associated with Healing Rune, including Healing Rune.",
-    "summary": "Gathers divine powers tied to this tablet’s themes and religious precepts.",
+    "description": "Heals wounded creatures touching the active rune.",
+    "summary": "Heals wounded creatures touching the active rune.",
     "swedishName": "",
     "negation": "",
     "affinity": {

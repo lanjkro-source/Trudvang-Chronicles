@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-anvil-shock",
     "tablet": "Anvil Shock",
     "description": "The rune is attached to a blunt weapon (any non-edged weapon), which is then capable of causing an earthshattering shock<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>Makes a blunt weapon release an earth-shattering shock when it strikes.</td></tr></tbody></table>whenever the Thuul attacks. Any victim struck by this shock is paralyzed by the force and incapable of acting. Every time the weapon’s damage roll scores an open roll, the victim is exposed to the Anvil Shock’s effect, which depends on the level of the rune (see the table below). This rune is always active but must still have the requisite number of Divinity Points linked to it.",
-    "summary": "Makes a blunt weapon release an earth-shattering shock when it strikes.",
+    "summary": "Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim.",
     "swedishName": "",
     "duration": "",
     "range": "",

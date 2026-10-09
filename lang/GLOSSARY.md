@@ -3198,6 +3198,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn.Name` | Influence of Jorn | Influence de Jorn |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn.Description` | This tablet gathers powers associated with Influence of Jorn, including Wall of Dusk, Death Gust, Falfax. | Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-influence-of-jorn.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken`
 
@@ -3205,6 +3206,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken.Name` | Power of Enken | Pouvoir d'Enken |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken.Description` | This tablet gathers powers associated with Power of Enken, including Night Vision, Willpower, Wind Shield. | Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-power-of-enken.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi`
 
@@ -3212,6 +3214,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi.Name` | Strength of Stormi | Force de Storme |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi.Description` | This tablet gathers powers associated with Strength of Stormi, including Troll Strength, Voice of Command, Hinji Strength. | Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-strength-of-stormi.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei`
 
@@ -3219,6 +3222,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei.Name` | Warmth of Sunvei | Chaleur de Solvei |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei.Description` | This tablet gathers powers associated with Warmth of Sunvei, including Sunray, Healing, Summer Place. | Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-warmth-of-sunvei.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna`
 
@@ -3226,6 +3230,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna.Name` | Wisdom of Windinna | Sagesse de Windinna |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna.Description` | This tablet gathers powers associated with Wisdom of Windinna, including Inspiration, Sixth Sense, Steel Mind. | Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-wisdom-of-windinna.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd`
 
@@ -3233,6 +3238,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd.Name` | Wrath of Tyrd | Fureur de Tyrd |
 | `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd.Description` | This tablet gathers powers associated with Wrath of Tyrd, including Battle Cry, Fire Iron, Wolf Tongue. | Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat. |
+| `TRUDVANG.Content.Tablet.holy-gerbanis-wrath-of-tyrd.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja`
 
@@ -3240,6 +3246,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja.Name` | Gift of Thanja | Don de Thanja |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja.Description` | This tablet gathers powers associated with Gift of Thanja, including Behind Tree and Pine, Animal Speech, Stagshape. | Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-gift-of-thanja.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering`
 
@@ -3247,6 +3254,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering.Name` | Halawen's Offering | Offrande de Halawen |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering.Description` | This tablet gathers powers associated with Halawen's Offering, including Willpower of the Ancestors, Vitner Shield, Boldness of the Ancestors. | Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-halawen-s-offering.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne`
 
@@ -3254,6 +3262,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne.Name` | Heritage of Majne | Héritage de Majne |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne.Description` | This tablet gathers powers associated with Heritage of Majne, including Strong Beer, Trollslayer, King's Militia. | Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-heritage-of-majne.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift`
 
@@ -3261,6 +3270,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift.Name` | Magh's Gift | Don de Magh |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift.Description` | This tablet gathers powers associated with Magh's Gift, including Journey Wind, Rider's Melody, Magh's Tether. | Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-magh-s-gift.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness`
 
@@ -3268,6 +3278,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness.Name` | Nema's Usefulness | Utilité de Nema |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness.Description` | This tablet gathers powers associated with Nema's Usefulness, including Horse Ears, Gust of Release, Owl Hearing. | Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-nema-s-usefulness.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu`
 
@@ -3275,6 +3286,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu.Name` | Tribute of Morgu | Tribut de Morgu |
 | `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu.Description` | This tablet gathers powers associated with Tribute of Morgu, including Battle Arrow, Simmering Blood, Boiling Blood. | Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière. |
+| `TRUDVANG.Content.Tablet.holy-ealdtradition-tribute-of-morgu.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger`
 
@@ -3282,6 +3294,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger.Name` | Tablet of Anger | Tablette de la colère |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger.Description` | This tablet gathers powers associated with Tablet of Anger, including Power of Blood, Holy Bolt, Stone Senses. | Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-anger.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace`
 
@@ -3289,6 +3302,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace.Name` | Tablet of Grace | Tablette de la grâce |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace.Description` | This tablet gathers powers associated with Tablet of Grace, including Hand of Mercy, Holy Mending, Life Spirit. | Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-grace.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight`
 
@@ -3296,6 +3310,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight.Name` | Tablet of the Knight | Tablette du chevalier |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight.Description` | Blessed Armor Blessed Spear Holy Authority Rowthguard Cuirass Majestic Revelation Rowthguard’s Battle Scourge Belo Seoth’s White Armor Belo Seoth’s Axe Guise of Gave Tablet of Voices Holy Consideration Sirowerd’s Ear Blood Brothers Sirowerd’s Tongue Kindred’s Bond Grace of Gave Sanity of Gave Favorites of Gave Divine Pact value of 12 (Psyche modifiers apply). If the Situation roll is unsuccessful, the victim must deduct -1 from every Skill roll and Situation roll for the next 1d6 hours. | Cette tablette rassemble des pouvoirs liés à Tablette du chevalier, dont Armure bénie, Lance bénie, Cuirasse des gardiens du Rortan. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-knight.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield`
 
@@ -3303,6 +3318,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield.Name` | Tablet of the Shield | Tablette du bouclier |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield.Description` | This tablet gathers powers associated with Tablet of the Shield, including Snares of the Holy Ground, Sheltering, Thornwall. | Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-shield.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun`
 
@@ -3310,6 +3326,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun.Name` | Tablet of the Sun | Tablette du soleil |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun.Description` | This tablet gathers powers associated with Tablet of the Sun, including Dawn Shine, Protective Ground, Augury. | Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-the-sun.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices`
 
@@ -3317,6 +3334,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices.Name` | Tablet of Voices | Tablette des voix |
 | `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices.Description` | Holy Consideration Sirowerd’s Ear Blood Brothers Sirowerd’s Tongue Kindred’s Bond Grace of Gave Sanity of Gave Favorites of Gave Divine Pact value of 12 (Psyche modifiers apply). If the Situation roll is unsuccessful, the victim must deduct -1 from every Skill roll and Situation roll for the next 1d6 hours. | Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu. |
+| `TRUDVANG.Content.Tablet.holy-tenetnid-tablet-of-voices.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast`
 
@@ -3324,6 +3342,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast.Name` | Power of the Beast | Pouvoir de la bête |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast.Description` | This tablet gathers powers associated with Power of the Beast, including Resilience, Mind of the Predator, Mastomant's Tusks. | Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-beast.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon`
 
@@ -3331,6 +3350,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon.Name` | Power of the Dragon | Puissance du dragon |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon.Description` | This tablet gathers powers associated with Power of the Dragon, including Constriction, Rampage of the Huvfurwurm, Flame Hardened. | Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-dragon.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-men`
 
@@ -3338,6 +3358,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-men.Name` | Power of Men | Puissance des hommes |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-men.Description` | This tablet gathers powers associated with Power of Men, including Sight of the Dwarves, Accomplished, Mastery. | Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-men.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale`
 
@@ -3345,13 +3366,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale.Name` | Power of the Scale | Puissance de l'écaille |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale.Description` | This tablet gathers powers associated with Power of the Scale, including Dreadful Screech, Shattered Mind, Terrifying Howl. | Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-scale.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Name` | Power of Thurses | Puissance des tursirs |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Name` | Power of the Thurses | Puissance des tursirs |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Description` | This tablet gathers powers associated with Power of the Thurses, including Troll Strength, Skin of the Hrim Troll, Strength of the Stone Hinji. | Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-the-thurses.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls`
 
@@ -3359,125 +3382,143 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls.Name` | Power of Trolls | Puissance des trolls |
 | `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls.Description` | This tablet gathers powers associated with Power of Trolls, including Disease Carrier, Willpower, Illusion Tricks. | Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts. |
+| `TRUDVANG.Content.Tablet.holy-haminges-power-of-trolls.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Name` | Anvil Shock | Choc de l'enclume |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Description` | alaWen s fferIng The Bruid has turned to his ancestor Halawen Longlife for power, and the erstwhile hero bestows the ability to evoke the great heroes’ spears, courage, and protection against vitner. | Cette tablette rassemble des pouvoirs liés à Choc de l'enclume, dont Choc de l'enclume. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Description` | Gives a blunt weapon an earth-shaking impact that weakens or immobilizes its victim. | Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-anvil-shock.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Name` | Borjorn's Hand | Main de Borjorn |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Description` | This tablet gathers powers associated with Borjorn's Hand, including Borjorn's Hand. | Cette tablette rassemble des pouvoirs liés à Main de Borjorn, dont Main de Borjorn. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Description` | Grants the Thuul the mountain’s guidance to help succeed at their next action. | Accorde au thuul les conseils de la montagne pour réussir sa prochaine action. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-borjorn-s-hand.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Name` | Cave Spider's Grip | Prise de l'araignée des cavernes |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Description` | This tablet gathers powers associated with Cave Spider's Grip, including Cave Spider's Grip. | Cette tablette rassemble des pouvoirs liés à Prise de l'araignée des cavernes, dont Prise de l’araignée des cavernes. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Description` | Lets the Thuul climb walls and ceilings like a spider. | Permet d’escalader murs et plafonds comme une araignée. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-cave-spider-s-grip.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Name` | Earthquake | Tremblement de terre |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Description` | This tablet gathers powers associated with Earthquake, including Earthquake. | Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Description` | Shakes the ground, topples creatures, and damages fragile structures. | Secoue le sol, fait chuter les créatures et endommage les constructions fragiles. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-earthquake.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Name` | Fang of Yukk | Croc de Yukk |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Description` | This tablet gathers powers associated with Fang of Yukk, including Fang of Yukk. | Cette tablette rassemble des pouvoirs liés à Croc de Yukk, dont Croc de Yukk. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Description` | Empowers a cutting weapon to deal more damage and trigger open rolls more often. | Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-fang-of-yukk.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Name` | Gills of the Blackfish | Branchies du brochet |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Description` | This tablet gathers powers associated with Gills of the Blackfish, including Gills of the Blackfish. | Cette tablette rassemble des pouvoirs liés à Branchies du brochet, dont Branchies du brochet. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Description` | Lets the bearer of the runic object breathe underwater. | Permet au porteur de l’objet runique de respirer sous l’eau. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-gills-of-the-blackfish.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Name` | Hammer Fists | Poings d'acier |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | Cette tablette rassemble des pouvoirs liés à Poings d'acier, dont Poings d’acier. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Description` | Strengthens the bearer’s barehanded blows and fist weapons. | Renforce les coups à mains nues ou les armes de poing du porteur. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-hammer-fists.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Name` | Healing Rune | Rune de guérison |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Description` | This tablet gathers powers associated with Healing Rune, including Healing Rune. | Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Description` | Heals wounded creatures touching the active rune. | Soigne les blessures des créatures au contact de la rune active. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-healing-rune.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Name` | Heat of the Depths | Chaleur des profondeurs |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Description` | This tablet gathers powers associated with Heat of the Depths, including Heat of the Depths. | Cette tablette rassemble des pouvoirs liés à Chaleur des profondeurs, dont Chaleur des profondeurs. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Description` | Can warm or cool the ground around a runic object for an extended time. | Réchauffe ou refroidit durablement le sol autour d’un objet runique. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-heat-of-the-depths.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Name` | Labyrinth Blood | Sang du labyrinthe |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Description` | This tablet gathers powers associated with Labyrinth Blood, including Labyrinth Blood. | Cette tablette rassemble des pouvoirs liés à Sang du labyrinthe, dont Sang du labyrinthe. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Description` | Gives the Thuul a supernatural memory of the way and helps them find their path again. | Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-labyrinth-blood.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Name` | Mark of Brokk | Marque de Brokk |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Description` | This tablet gathers powers associated with Mark of Brokk, including Mark of Brokk. | Cette tablette rassemble des pouvoirs liés à Marque de Brokk, dont Marque de Brokk. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Description` | Strengthens a sacred object and enhances the rune it bears. | Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-mark-of-brokk.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Name` | Power of Repair | Pouvoir de réparation |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Description` | This tablet gathers powers associated with Power of Repair, including Power of Repair. | Cette tablette rassemble des pouvoirs liés à Pouvoir de réparation, dont Pouvoir de réparation. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Description` | Miraculously repairs a broken or damaged object. | Répare miraculeusement un objet brisé ou endommagé. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-power-of-repair.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-scales`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Name` | Scales | Écailles |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Description` | This tablet gathers powers associated with Scales, including Scales. | Cette tablette rassemble des pouvoirs liés à Écailles, dont Écailles. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Description` | Grows scales that grant the beneficiary lasting protection. | Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-scales.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Name` | Stoneling | Enfant de la pierre |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Description` | This tablet gathers powers associated with Stoneling, including Stoneling. | Cette tablette rassemble des pouvoirs liés à Enfant de la pierre, dont Enfant de la pierre. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Description` | Animates a stone with a mountain spirit, creating a small servant. | Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneling.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Name` | Stone to Clay | Transformation de pierre en argile |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Description` | This tablet gathers powers associated with Stone to Clay, including Stone to Clay. | Cette tablette rassemble des pouvoirs liés à Transformation de pierre en argile, dont Transformation de pierre en argile. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Description` | Temporarily softens stone so it can be shaped like clay. | Ramollit temporairement la pierre pour la modeler comme de l’argile. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stone-to-clay.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape`
 
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Name` | Stoneshape | Aspect de la pierre |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Description` | This tablet gathers powers associated with Stoneshape, including Stoneshape. | Cette tablette rassemble des pouvoirs liés à Aspect de la pierre, dont Aspect de la pierre. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Description` | Conceals the Thuul and its gear within stone or mountain. | Camoufle le thuul et son équipement dans la pierre ou la montagne. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-stoneshape.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water`
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Name` | Well of Water | Source d'eau |
-| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Description` | This tablet gathers powers associated with Well of Water, including Well of Water. | Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Name` | Well of Water | Source d’eau |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Description` | Makes a spring of fresh, pure water well up from the ground. | Fait sourdre une source d’eau fraîche et pure depuis le sol. |
+| `TRUDVANG.Content.Tablet.holy-thuuldom-well-of-water.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind`
 
@@ -3485,6 +3526,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind.Name` | Animal Mind | Esprit animal |
 | `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind.Description` | This tablet gathers powers associated with Animal Mind, including Animal Friend, Animal Tracks, Invisible to Animals. | Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit. |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-animal-mind.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power`
 
@@ -3492,6 +3534,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power.Name` | Lynx Power | Agilité du lynx |
 | `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power.Description` | This tablet gathers powers associated with Lynx Power, including Tree Walk, Orientation, Feline Leap. | L’ihana a la faculté de se déplacer dans les bois avec la prouesse et l’agilité d’un lynx. |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-lynx-power.Negation` |  |  |
 
 ## `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements`
 
@@ -3499,6 +3542,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Name` | Master of Elements | Maître des éléments |
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments. |
+| `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Negation` |  |  |
 
 ## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1`
 

@@ -2322,19 +2322,19 @@
         },
         "holy-gerbanis-influence-of-jorn": {
           "Name": "Influence de Jorn",
-          "Summary": "Dissimule les fidèles dans les ténèbres et appelle les montures et esprits du royaume de Jorn.",
+          "Summary": "Dissimule les fidèles dans les ténèbres et appelle les montures et les esprits du royaume de Jorn.",
           "Description": "Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit.",
           "Negation": ""
         },
         "holy-gerbanis-power-of-enken": {
           "Name": "Pouvoir d'Enken",
-          "Summary": "Aiguise la perception surnaturelle et trempe l’esprit contre la peur et les influences néfastes.",
+          "Summary": "Aiguise les sens surnaturels et protège l’esprit contre la peur et les influences néfastes.",
           "Description": "Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk.",
           "Negation": ""
         },
         "holy-gerbanis-strength-of-stormi": {
           "Name": "Force de Storme",
-          "Summary": "Démultiplie la force des fidèles et place les esprits guerriers sous l’autorité des prêtres.",
+          "Summary": "Confère une force colossale et met les esprits guerriers au service du prêtre.",
           "Description": "Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance.",
           "Negation": ""
         },
@@ -2370,13 +2370,13 @@
         },
         "holy-ealdtradition-heritage-of-majne": {
           "Name": "Héritage de Majne",
-          "Summary": "Célèbre les anciens rois par des bières bénies, des esprits protecteurs et des dons contre les monstres.",
+          "Summary": "Honore les anciens rois par des boissons bénies, des esprits protecteurs et des dons contre les monstres.",
           "Description": "Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes.",
           "Negation": ""
         },
         "holy-ealdtradition-magh-s-gift": {
           "Name": "Don de Magh",
-          "Summary": "Guide les voyages par les vents et les chants guérisseurs, impose des geasa et bénit les récoltes.",
+          "Summary": "Associe vents et chants guérisseurs aux serments sacrés et à la bénédiction des récoltes.",
           "Description": "Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait.",
           "Negation": ""
         },
@@ -2442,7 +2442,7 @@
         },
         "holy-haminges-power-of-men": {
           "Name": "Puissance des hommes",
-          "Summary": "Accroît maîtrise, talent guerrier et savoir-faire humain, jusqu’à préparer de puissants élixirs curatifs.",
+          "Summary": "Développe les talents humains, de la maîtrise martiale et artisanale à la préparation d’élixirs curatifs.",
           "Description": "Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe.",
           "Negation": ""
         },

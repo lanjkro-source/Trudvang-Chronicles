@@ -13,7 +13,7 @@
     "tabletId": "holy-thuuldom-stone-to-clay",
     "tablet": "Stone to Clay",
     "description": "✦ Modifier: -2 By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level). The clay can be shaped like any other mud. Once the Thuul is satisfied with the clay’s new form (after at least three minutes per level of the rune), the clay becomes hard as a rock again. When this occurs, the duration begins (listed below). When the full duration ends, the stone shifts back to its original form.",
-    "summary": "By placing the rune-inscribed item on a stone, the Thuul can transform the stone into soft clay (in the amount of 1 cubic meter of stone per rune level).",
+    "summary": "Temporarily softens stone so it can be shaped like clay.",
     "swedishName": "",
     "duration": "special",
     "range": "1 cubic meter/level",
