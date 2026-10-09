@@ -5,6 +5,7 @@ import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-r
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
 import { escapeHtml, renderTemplate } from "../helpers.mjs";
 import { powerItemData, TABLET_BY_ID, TABLET_CATALOG, tabletItemData } from "../tablet-catalog.mjs";
+import { holyTabletCapacity } from "../rules/tablet-learning.mjs";
 import { isIncapacitated, isImmobilized } from "../effects.mjs";
 import { resolveArmorProfile, resolveCombatActionModifier, resolveEquipment, resolveWeaponRange } from "../rules/equipment-resolver.mjs";
 import { defaultConcentrationType } from "../rules/concentration-resolver.mjs";
@@ -306,6 +307,7 @@ export class TrudvangActor extends BaseActor {
       if (!selected) return {ok: false, reason: "TRUDVANG.Warning.ReligionRequired"};
       if (!this.allowedReligionIds.includes(selected.id) || selected.id !== tablet.religion) return {ok: false, reason: "TRUDVANG.Warning.TabletReligionMismatch"};
       if (Number(this.findRuleKnowledge(selected.specialty)?.system.level || 0) < 1) return {ok: false, reason: "TRUDVANG.Warning.TabletKnowledgeRequired"};
+      if (this.holyTabletCapacity.full) return {ok: false, reason: "TRUDVANG.Warning.HolyTabletLimit", data: this.holyTabletCapacity};
     }
     return {ok: true, reason: ""};
   }
@@ -314,10 +316,33 @@ export class TrudvangActor extends BaseActor {
     return TABLET_CATALOG.filter(tablet => this.getTabletCompatibility(tablet).ok);
   }
 
+  get holyTabletCapacity() {
+    const source = this._source?.system ?? this.system;
+    const bookFaith = this.type === "npc" ? npcBookSkillRows(source.skillTree, {skills: TRUDVANG.skills,
+      knowledgeTree: TRUDVANG.knowledgeTree, localize: key => game.i18n.localize(key)})
+      .find(row => row.kind === "skill" && row.skillKey === "faith")?.value : undefined;
+    // Learning uses the acquired skill rank; temporary roll bonuses cannot grant permanent tablets.
+    return holyTabletCapacity({items: this.items, faith: bookFaith ?? source.skills?.faith?.value ?? 0});
+  }
+
+  async createEmbeddedDocuments(embeddedName, data, operation = {}) {
+    if (embeddedName === "Item" && data.some(item => item.type === "tablet" && item.system?.tabletType === "holy")) {
+      const capacity = this.holyTabletCapacity;
+      const projected = holyTabletCapacity({items: [...this.items, ...data], faith: capacity.max});
+      // Check the entire batch so multiple dropped/imported tablets cannot bypass the learning limit.
+      if (projected.exceeded && projected.current > capacity.current) {
+        ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.HolyTabletBatchLimit", {...capacity, added: projected.current - capacity.current}));
+        return [];
+      }
+    }
+    return super.createEmbeddedDocuments(embeddedName, data, operation);
+  }
+
   async addTabletFromCatalog(catalogId) {
     const tablet = TABLET_BY_ID.get(catalogId);
     const compatibility = this.getTabletCompatibility(tablet);
-    if (!compatibility.ok) return ui.notifications.warn(game.i18n.localize(compatibility.reason));
+    if (!compatibility.ok) return ui.notifications.warn(compatibility.data
+      ? game.i18n.format(compatibility.reason, compatibility.data) : game.i18n.localize(compatibility.reason));
     const documents = [tabletItemData(tablet), ...tablet.powers.map(power => powerItemData(power, tablet))];
     return this.createEmbeddedDocuments("Item", documents);
   }
@@ -511,6 +536,7 @@ export class TrudvangActor extends BaseActor {
   }
 
   canLowerSkill(skillKey, nextValue) {
+    if (skillKey === "faith" && this.holyTabletCapacity.current > nextValue) return false;
     return !this.items.some(item => ["ability", "tablet"].includes(item.type)
       && this.getKnowledgeSkillKey(item) === skillKey
       && Math.max(Number(item.system.level || 0), Number(item.system.offHandLevel || 0)) > Number(item.system.freeLevels || 0)
@@ -1533,6 +1559,7 @@ export class TrudvangActor extends BaseActor {
     if (this.pendingAdvancements.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ResolveAdvancementsFirst"));
     const entering = !this.system.experience?.creationMode;
     if (!entering) {
+      if (this.holyTabletCapacity.exceeded) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.HolyTabletLimit", this.holyTabletCapacity));
       if (!this.system.details?.culture || !TRUDVANG.cultures[this.system.details.culture]) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CultureRequired"));
       if (!TRUDVANG.archetypes[this.system.details?.archetype]) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ArchetypeRequired"));
       if (this.system.details?.religion && !this.allowedReligionIds.includes(this.system.details.religion)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ReligionIncompatible"));

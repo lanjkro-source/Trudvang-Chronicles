@@ -8,7 +8,14 @@
     <div class="resource body"><span class="npc-health-label">{{localize "TRUDVANG.Resource.Body"}} <button type="button" class="npc-health-roll" data-action="roll-npc-health" title="{{localize 'TRUDVANG.Npc.RollHealth' min=npcHealthRange.min max=npcHealthRange.max}}" aria-label="{{localize 'TRUDVANG.Npc.RollHealth' min=npcHealthRange.min max=npcHealthRange.max}}" {{#unless (and editable npcHealthRange.valid)}}disabled{{/unless}}><i class="fas fa-dice"></i></button></span><span><input name="system.resources.body.value" type="number" value="{{system.resources.body.value}}" aria-label="{{localize 'TRUDVANG.Npc.Current'}}"> / <input name="system.resources.body.max" type="number" value="{{system.resources.body.max}}" aria-label="{{localize 'TRUDVANG.Npc.Initial'}}"></span></div>
     <div class="resource npc-movement"><span>{{localize "TRUDVANG.Resource.Movement"}} <small>{{localize "TRUDVANG.Npc.MovementValues"}}</small></span><div class="npc-movement-list">{{#each npcMovement as |movement|}}<span class="npc-movement-mode">{{#unless @first}}<span class="npc-movement-separator" aria-hidden="true">|</span>{{/unless}}{{movement.mode}} : <strong>{{movement.distance}} / {{movement.max}}</strong></span>{{/each}}</div></div>
   </section>
-  <nav class="sheet-tabs tabs" data-group="primary"><a class="item" data-tab="summary">{{localize "TRUDVANG.Tab.Summary"}}</a><a class="item" data-tab="combat">{{localize "TRUDVANG.Tab.Combat"}}</a><a class="item" data-tab="magic">{{localize "TRUDVANG.Npc.MagicTab"}}</a><a class="item" data-tab="equipment">{{localize "TRUDVANG.Tab.Equipment"}}</a><a class="item" data-tab="effects">{{localize "TRUDVANG.Tab.Effects"}}</a><a class="item" data-tab="notes">{{localize "TRUDVANG.Tab.Notes"}}</a></nav>
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="summary"><i class="fas fa-shield-halved" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Summary"}}</a>
+    <a class="item" data-tab="combat"><i class="fas fa-swords" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Combat"}}</a>
+    <a class="item" data-tab="magic"><i class="fas fa-wand-sparkles" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Magic"}}</a>
+    <a class="item" data-tab="equipment"><i class="fas fa-backpack" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Equipment"}}</a>
+    <a class="item" data-tab="effects"><i class="fas fa-person-rays" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Effects"}}</a>
+    <a class="item" data-tab="notes"><i class="fas fa-book-open" aria-hidden="true"></i> {{localize "TRUDVANG.Tab.Notes"}}</a>
+  </nav>
   <section class="sheet-body">
     <div class="tab summary" data-group="primary" data-tab="summary">
       <section class="panel npc-health-panel" aria-label="{{localize 'TRUDVANG.Section.Status'}}">

@@ -409,6 +409,8 @@
     "Tablet": {
       "vitner": "Tablette de vitner",
       "holy": "Tablette sacrée",
+      "HolyKnown": "Tablettes sacrées / runes apprises",
+      "LearningLimitHint": "Maximum égal au niveau de Foi appris. Chaque tablette sacrée ou rune compte une seule fois, quel que soit son niveau.",
       "ThuulRune": "Rune thuul",
       "CatalogEntry": "Entrée du catalogue — niveau acquis sur le personnage",
       "SwedishName": "Nom suédois",
@@ -666,7 +668,7 @@
       "dead": "Mort"
     },
     "Npc": {
-      "MagicTab": "Magie",
+      "MagicTab": "Vitner & Foi",
       "NoMagic": "Aucune tablette, aucun sortilège ni pouvoir connu.",
       "UnlimitedVitner": "Vitner sans limite quotidienne",
       "RestoreVitner": "Renouveler les points de vitner",
@@ -956,6 +958,8 @@
       "TabletPowerMissing": "Ce sort ou pouvoir est introuvable dans les compendiums.",
       "UnknownTablet": "Cet objet n'est pas une tablette du catalogue du système.",
       "TabletAlreadyKnown": "Cette tablette est déjà connue.",
+      "HolyTabletLimit": "Limite des tablettes sacrées / runes atteinte : {current} apprises pour un maximum de {max}, égal au niveau de Foi.",
+      "HolyTabletBatchLimit": "Impossible d'apprendre {added} nouvelle(s) tablette(s) sacrée(s) / rune(s) : {current} déjà apprises pour un maximum de {max}, égal au niveau de Foi.",
       "TabletSkillRequirement": "Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4.",
       "TabletKnowledgeRequired": "Apprenez Modelage du vitner ou la spécialité d'Invocation de la religion choisie avant d'ajouter l'une de ses tablettes.",
       "VitnerRequired": "Choisissez une tradition du vitner avant d'ajouter une tablette de vitner.",

@@ -438,6 +438,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.unassignedMagic = sortTabletPowers(powers.filter(item => !linkedPowers.has(item.id)))
       .map(item => ({item, iconClass: powerIconClassForItem(item)}));
     context.compatibleTabletCount = this.actor.compatibleTablets.length;
+    context.holyTabletCapacity = this.actor.holyTabletCapacity;
     return context;
   }
 
@@ -956,7 +957,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   _openTabletPicker() {
     const tablets = this.actor.compatibleTablets;
-    if (!tablets.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.NoCompatibleTablets"));
+    if (!tablets.length) return ui.notifications.warn(this.actor.holyTabletCapacity.full
+      ? game.i18n.format("TRUDVANG.Warning.HolyTabletLimit", this.actor.holyTabletCapacity)
+      : game.i18n.localize("TRUDVANG.Warning.NoCompatibleTablets"));
     const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
     const options = tablets.map((tablet, index) => {
       const summary = tabletSummary(tablet);

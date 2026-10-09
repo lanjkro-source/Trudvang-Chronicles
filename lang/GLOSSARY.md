@@ -490,6 +490,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Tablet.vitner` | Vitner Tablet | Tablette de vitner |
 | `TRUDVANG.Tablet.holy` | Holy Tablet | Tablette sacrée |
+| `TRUDVANG.Tablet.HolyKnown` | Holy Tablets / runes learned | Tablettes sacrées / runes apprises |
+| `TRUDVANG.Tablet.LearningLimitHint` | The maximum equals the learned Faith skill level. Each Holy Tablet or rune counts once, regardless of its level. | Maximum égal au niveau de Foi appris. Chaque tablette sacrée ou rune compte une seule fois, quel que soit son niveau. |
 | `TRUDVANG.Tablet.ThuulRune` | Thuul rune | Rune thuul |
 | `TRUDVANG.Tablet.CatalogEntry` | Catalogue entry — learned level shown on the character | Entrée du catalogue — niveau acquis sur le personnage |
 | `TRUDVANG.Tablet.SwedishName` | Swedish name | Nom suédois |
@@ -786,7 +788,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Npc.MagicTab` | Magic | Magie |
+| `TRUDVANG.Npc.MagicTab` | Vitner & Faith | Vitner & Foi |
 | `TRUDVANG.Npc.NoMagic` | No known tablets, spells or divine powers. | Aucune tablette, aucun sortilège ni pouvoir connu. |
 | `TRUDVANG.Npc.UnlimitedVitner` | Unlimited daily vitner | Vitner sans limite quotidienne |
 | `TRUDVANG.Npc.RestoreVitner` | Restore Vitner Points | Renouveler les points de vitner |
@@ -1126,6 +1128,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.TabletPowerMissing` | This spell or power cannot be found in the compendiums. | Ce sort ou pouvoir est introuvable dans les compendiums. |
 | `TRUDVANG.Warning.UnknownTablet` | This item is not a tablet from the system catalogue. | Cet objet n'est pas une tablette du catalogue du système. |
 | `TRUDVANG.Warning.TabletAlreadyKnown` | This tablet is already known. | Cette tablette est déjà connue. |
+| `TRUDVANG.Warning.HolyTabletLimit` | Holy Tablet / rune limit reached: {current} learned out of a maximum of {max}, equal to the Faith skill level. | Limite des tablettes sacrées / runes atteinte : {current} apprises pour un maximum de {max}, égal au niveau de Foi. |
+| `TRUDVANG.Warning.HolyTabletBatchLimit` | Cannot learn {added} new Holy Tablet(s) / rune(s): {current} already learned out of a maximum of {max}, equal to the Faith skill level. | Impossible d'apprendre {added} nouvelle(s) tablette(s) sacrée(s) / rune(s) : {current} déjà apprises pour un maximum de {max}, égal au niveau de Foi. |
 | `TRUDVANG.Warning.TabletSkillRequirement` | Faith or Vitner Craft must have a Skill Value of at least 4. | Foi ou Maîtrise du vitner doit avoir une valeur de compétence d'au moins 4. |
 | `TRUDVANG.Warning.TabletKnowledgeRequired` | Learn Vitner Shaping or the Invoke specialty of the chosen religion before adding one of its tablets. | Apprenez Modelage du vitner ou la spécialité d'Invocation de la religion choisie avant d'ajouter l'une de ses tablettes. |
 | `TRUDVANG.Warning.VitnerRequired` | Choose a Vitner tradition before adding a Vitner Tablet. | Choisissez une tradition du vitner avant d'ajouter une tablette de vitner. |

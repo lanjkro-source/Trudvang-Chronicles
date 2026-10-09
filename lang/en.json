@@ -409,6 +409,8 @@
     "Tablet": {
       "vitner": "Vitner Tablet",
       "holy": "Holy Tablet",
+      "HolyKnown": "Holy Tablets / runes learned",
+      "LearningLimitHint": "The maximum equals the learned Faith skill level. Each Holy Tablet or rune counts once, regardless of its level.",
       "ThuulRune": "Thuul rune",
       "CatalogEntry": "Catalogue entry — learned level shown on the character",
       "SwedishName": "Swedish name",
@@ -666,7 +668,7 @@
       "dead": "Dead"
     },
     "Npc": {
-      "MagicTab": "Magic",
+      "MagicTab": "Vitner & Faith",
       "NoMagic": "No known tablets, spells or divine powers.",
       "UnlimitedVitner": "Unlimited daily vitner",
       "RestoreVitner": "Restore Vitner Points",
@@ -958,6 +960,8 @@
       "TabletPowerMissing": "This spell or power cannot be found in the compendiums.",
       "UnknownTablet": "This item is not a tablet from the system catalogue.",
       "TabletAlreadyKnown": "This tablet is already known.",
+      "HolyTabletLimit": "Holy Tablet / rune limit reached: {current} learned out of a maximum of {max}, equal to the Faith skill level.",
+      "HolyTabletBatchLimit": "Cannot learn {added} new Holy Tablet(s) / rune(s): {current} already learned out of a maximum of {max}, equal to the Faith skill level.",
       "TabletSkillRequirement": "Faith or Vitner Craft must have a Skill Value of at least 4.",
       "TabletKnowledgeRequired": "Learn Vitner Shaping or the Invoke specialty of the chosen religion before adding one of its tablets.",
       "VitnerRequired": "Choose a Vitner tradition before adding a Vitner Tablet.",
