@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-earthquake",
-    "description": "Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre.",
-    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "description": "Secoue le sol, fait chuter les créatures et endommage les constructions fragiles.",
+    "summary": "Secoue le sol, fait chuter les créatures et endommage les constructions fragiles.",
     "swedishName": "",
     "negation": "",
     "affinity": {

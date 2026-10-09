@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-power-of-repair",
-    "description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de réparation, dont Pouvoir de réparation.",
-    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "description": "Répare miraculeusement un objet brisé ou endommagé.",
+    "summary": "Répare miraculeusement un objet brisé ou endommagé.",
     "swedishName": "",
     "negation": "",
     "affinity": {

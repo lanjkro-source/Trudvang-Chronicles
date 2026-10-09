@@ -1,5 +1,5 @@
 {
-  "name": "Source d'eau",
+  "name": "Source d’eau",
   "type": "tablet",
   "img": "icons/svg/holy-shield.svg",
   "flags": {
@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-well-of-water",
-    "description": "Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau.",
-    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "description": "Fait sourdre une source d’eau fraîche et pure depuis le sol.",
+    "summary": "Fait sourdre une source d’eau fraîche et pure depuis le sol.",
     "swedishName": "",
     "negation": "",
     "affinity": {

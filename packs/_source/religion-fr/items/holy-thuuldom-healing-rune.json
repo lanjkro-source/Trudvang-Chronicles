@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-healing-rune",
-    "description": "Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison.",
-    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "description": "Soigne les blessures des créatures au contact de la rune active.",
+    "summary": "Soigne les blessures des créatures au contact de la rune active.",
     "swedishName": "",
     "negation": "",
     "affinity": {

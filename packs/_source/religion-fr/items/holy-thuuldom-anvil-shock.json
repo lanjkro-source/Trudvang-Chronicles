@@ -9,8 +9,8 @@
   },
   "system": {
     "catalogId": "holy-thuuldom-anvil-shock",
-    "description": "Cette tablette rassemble des pouvoirs liés à Choc de l'enclume, dont Choc de l'enclume.",
-    "summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
+    "description": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
+    "summary": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
     "swedishName": "",
     "negation": "",
     "affinity": {

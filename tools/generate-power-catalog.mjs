@@ -13,6 +13,7 @@ import {englishPowerField} from "./power-source-fields.mjs";
 const root = process.cwd();
 const check = process.argv.includes("--check");
 const read = path => JSON.parse(readFileSync(resolve(root, path), "utf8"));
+const tabletSource = read("game doc/fr/trudvang-tablets-fr.json");
 const fr = read("game doc/fr/trudvang-powers-fr.json");
 const en = read("game doc/en/trudvang-powers-en.json");
 const types = new Map([
@@ -34,6 +35,25 @@ const mapById = (entries, language) => {
 const french = mapById(fr, "FR"), english = mapById(en, "EN");
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 if (!same([...french.keys()].sort(), [...english.keys()].sort())) fail("FR and EN catalogId sets differ");
+
+// French tablet prose is mastered in the FR tablet source. Resolve its identity
+// through the tablet field on French powers, then generate the presentation text
+// in lang/fr as part of the same source-to-catalogue step.
+const tabletSourceByName = new Map(tabletSource.map(tablet => [tablet.name, tablet]));
+if (tabletSourceByName.size !== tabletSource.length) fail("FR tablet source has duplicate names");
+const tabletsById = {};
+for (const power of fr) {
+  const id = power.catalogId.split(":")[0];
+  const tablet = tabletSourceByName.get(power.tablet);
+  if (!tablet) fail(`${power.catalogId}: missing tablet "${power.tablet}" in FR tablet source`);
+  const content = {Name: tablet.name, Summary: tablet.summary, Description: tablet.description, Negation: tablet.negation ?? ""};
+  if (Object.values(content).some(value => typeof value !== "string") || !content.Name.trim() || !content.Summary.trim() || !content.Description.trim()) {
+    fail(`${id}: incomplete FR tablet source for "${tablet.name}"`);
+  }
+  if (tabletsById[id] && !same(tabletsById[id], content)) fail(`${id}: powers refer to inconsistent FR tablet text`);
+  tabletsById[id] = content;
+}
+if (Object.keys(tabletsById).length !== tabletSource.length) fail("not every FR tablet is linked to the power source");
 
 const powerDetails = {};
 const powersByTablet = {};
@@ -112,6 +132,14 @@ const outputs = new Map([[modulePath, moduleText]]);
 for (const language of ["fr", "en"]) {
   const path = resolve(root, `lang/${language}.json`);
   const pack = read(`lang/${language}.json`);
+  if (language === "fr") {
+    const existingTablets = pack.TRUDVANG.Content.Tablet ?? {};
+    for (const [id, content] of Object.entries(tabletsById)) {
+      if (!existingTablets[id]) fail(`lang/fr.json: missing tablet localization ${id}`);
+      existingTablets[id] = {...existingTablets[id], ...content};
+    }
+    pack.TRUDVANG.Content.Tablet = existingTablets;
+  }
   pack.TRUDVANG.Content.Power = localized[language];
   outputs.set(path, `${JSON.stringify(pack, null, 2)}\n`);
 }
@@ -120,4 +148,4 @@ for (const [path, content] of outputs) {
     if (readFileSync(path, "utf8") !== content) fail(`${path} is stale; regenerate from the source JSON files`);
   } else writeFileSync(path, content, "utf8");
 }
-console.log(`${check ? "Validated" : "Generated"} ${french.size} powers and ${optionCount} improvements from FR/EN source JSON.`);
+console.log(`${check ? "Validated" : "Generated"} ${Object.keys(tabletsById).length} French tablets, ${french.size} powers and ${optionCount} improvements from source JSON.`);

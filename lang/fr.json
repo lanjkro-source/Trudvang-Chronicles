@@ -2322,223 +2322,267 @@
         },
         "holy-gerbanis-influence-of-jorn": {
           "Name": "Influence de Jorn",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit."
+          "Summary": "Dissimule les fidèles dans les ténèbres et appelle les montures et esprits du royaume de Jorn.",
+          "Description": "Le stormikjalt a affirmé sa loyauté envers le dieu Jorn afin de bénéficier de son influence. Cette Tablette sacrée confère au stormikjalt le pouvoir d’anéantir les morts-vivants, d’invoquer les étalons de la tempête et des dieux, et d’invoquer les ténèbres de la nuit.",
+          "Negation": ""
         },
         "holy-gerbanis-power-of-enken": {
           "Name": "Pouvoir d'Enken",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk."
+          "Summary": "Aiguise la perception surnaturelle et trempe l’esprit contre la peur et les influences néfastes.",
+          "Description": "Le stormikjalt a créé un lien particulièrement fort avec le dieu Enken, qu’il peut invoquer pour améliorer sa vision, son courage, et même son armure en faisant appel à la tempête qui rugit entre Trudvang et Stormvakk.",
+          "Negation": ""
         },
         "holy-gerbanis-strength-of-stormi": {
           "Name": "Force de Storme",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance."
+          "Summary": "Démultiplie la force des fidèles et place les esprits guerriers sous l’autorité des prêtres.",
+          "Description": "Le stormikjalt s’abandonne au dieu Storme et devient son fidèle serviteur. Storme lui confère une force colossale, lui offre l’aide d’esprits guerriers, et lui octroie le pouvoir de contraindre à l’obéissance.",
+          "Negation": ""
         },
         "holy-gerbanis-warmth-of-sunvei": {
           "Name": "Chaleur de Solvei",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été."
+          "Summary": "Diffuse la lumière et la chaleur solaires pour soigner, purifier et soutenir la vie.",
+          "Description": "Le stormikjalt a juré allégeance à Solvei, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été.",
+          "Negation": ""
         },
         "holy-gerbanis-wisdom-of-windinna": {
           "Name": "Sagesse de Windinna",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration."
+          "Summary": "Inspire la création, révèle les intentions et préserve l’esprit du mensonge et du vitner.",
+          "Description": "Le stormikjalt fait un sacrifice réfléchi et établit un lien puissant avec la déesse Windinna. En retour, elle lui confère sagesse, résilience mentale et inspiration.",
+          "Negation": ""
         },
         "holy-gerbanis-wrath-of-tyrd": {
           "Name": "Fureur de Tyrd",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat."
+          "Summary": "Enflamme les corps et les cœurs pour susciter terreur, rage et ardeur guerrière.",
+          "Description": "Le stormikjalt verse son propre sang et offre sa vie à Tyrd la vengeresse, qui lui confère en retour le pouvoir de brûler et de terrifier ses ennemis, ainsi que la faculté de renforcer ou de saper le moral en combat.",
+          "Negation": ""
         },
         "holy-ealdtradition-gift-of-thanja": {
           "Name": "Don de Thanja",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature."
+          "Summary": "Permet au bruide d’adopter les formes animales, de parler aux bêtes et de se cacher dans la nature.",
+          "Description": "Le bruide a attiré l’attention de la Flowra Thanja, qui confère à l’arpenteur des brumes la faculté de communiquer avec les créatures sauvages, de prendre l’apparence d’un animal, et de se fondre plus facilement dans la nature.",
+          "Negation": ""
         },
         "holy-ealdtradition-halawen-s-offering": {
           "Name": "Offrande de Halawen",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner."
+          "Summary": "Invoque la volonté des ancêtres pour fortifier l’esprit et repousser le vitner et la sorcellerie.",
+          "Description": "Le bruide s’est tourné vers son ancêtre Halawen Longue-Vie en quête de pouvoir, et l’antique héros lui confère la faculté d’évoquer les lances des grands héros, leur courage et leur résistance au vitner.",
+          "Negation": ""
         },
         "holy-ealdtradition-heritage-of-majne": {
           "Name": "Héritage de Majne",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes."
+          "Summary": "Célèbre les anciens rois par des bières bénies, des esprits protecteurs et des dons contre les monstres.",
+          "Description": "Le bruide a renforcé ses liens avec le tout premier roi de Majnjord, l’un des neuf rois nés d’Yggdhraasil, et l’un des premiers humains à avoir foulé le sol de Trudvang. Majne confère à l’arpenteur des brumes la faculté d’accomplir d’incroyables prouesses, de contacter des esprits guerriers, et même de brasser des boissons exaltantes.",
+          "Negation": ""
         },
         "holy-ealdtradition-magh-s-gift": {
           "Name": "Don de Magh",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait."
+          "Summary": "Guide les voyages par les vents et les chants guérisseurs, impose des geasa et bénit les récoltes.",
+          "Description": "Le bruide a consacré sa vie à la Flowra Magh, qui dote en retour l’arpenteur des brumes de la faculté de contrôler le destin d’autrui, entonner des chants guérisseurs et modifier le temps qu’il fait.",
+          "Negation": ""
         },
         "holy-ealdtradition-nema-s-usefulness": {
           "Name": "Utilité de Nema",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition."
+          "Summary": "Libère des entraves et guide les voyageurs grâce aux vents, aux brumes et aux sens aiguisés du bruide.",
+          "Description": "Le bruide a attiré l’attention de la Flowra Nema et renforcé le lien qui les unit. Nema offre à l’arpenteur des brumes la faculté d’échapper aux prisons physiques et mentales, d’emprunter des raccourcis à travers la brume et d’améliorer son sens de l’audition.",
+          "Negation": ""
         },
         "holy-ealdtradition-tribute-of-morgu": {
           "Name": "Tribut de Morgu",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière."
+          "Summary": "Déchaîne la force vitale en rage guerrière et en pluies de flèches divines.",
+          "Description": "Le bruide a offert son sang et prêté allégeance à la Flowra Morgu. Sa nature assoiffée de sang confère à l’arpenteur des brumes la faculté de gagner temporairement des points de santé supplémentaires, de projeter des flèches noires, et de se plonger volontairement dans une rage guerrière.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-anger": {
           "Name": "Tablette de la colère",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis."
+          "Summary": "Frappe de douleur, aveugle ou pétrifie les ennemis et purifie les influences néfastes.",
+          "Description": "Le gavlien a choisi d’emprunter le chemin de l’inquisiteur, et Gave lui confère le pouvoir d’éradiquer les morts-vivants, de lapider les créatures, voire de faire apparaître des stigmates sur le corps de ses ennemis.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-grace": {
           "Name": "Tablette de la grâce",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts."
+          "Summary": "Accorde la grâce de Gave par la guérison, les soins sacrés et le retour à la vie.",
+          "Description": "Le gavlien est lié à Gave et incarne la grâce et la miséricorde de son dieu. Gave confère à l’arpenteur des brumes la faculté de soigner les maladies et blessures graves, et même de ressusciter les morts.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-the-knight": {
           "Name": "Tablette du chevalier",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Tablette du chevalier, dont Armure bénie, Lance bénie, Cuirasse des gardiens du Rortan."
+          "Summary": "Consacre armes et armures, et confère au prêtre l’autorité sacrée des chevaliers.",
+          "Description": "Cette tablette rassemble des pouvoirs liés à Tablette du chevalier, dont Armure bénie, Lance bénie, Cuirasse des gardiens du Rortan.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-the-shield": {
           "Name": "Tablette du bouclier",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons."
+          "Summary": "Protège les lieux et leurs occupants des intempéries, des démons et de la magie hostile.",
+          "Description": "Le gavlien a choisi d’emprunter le chemin du frère démon tout en montrant une loyauté sans faille envers Gave. Ce dernier octroie à l’arpenteur des brumes la protection du chêne noir, mais aussi une meilleure protection contre les éléments, le vitner et les démons.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-the-sun": {
           "Name": "Tablette du soleil",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi."
+          "Summary": "Révèle les signes de l’avenir et place foyers ou bosquets sous une lumière divine protectrice.",
+          "Description": "Le gavlien vénère l’éclat et la lumière de Gave, et quand le lien qui unit le prêtre à son dieu se renforce, ce dernier confère à l’arpenteur des brumes la faculté de créer de la lumière, de recevoir des visions de l’avenir, et de conforter la foi.",
+          "Negation": ""
         },
         "holy-tenetnid-tablet-of-voices": {
           "Name": "Tablette des voix",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu."
+          "Summary": "Fait entendre et comprendre les langues, puis lie les personnes par fraternité, faveur ou pacte sacré.",
+          "Description": "Le gavlien a renforcé ses liens avec Gave et il est devenu le médiateur du dieu.",
+          "Negation": ""
         },
         "holy-haminges-power-of-the-beast": {
           "Name": "Pouvoir de la bête",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes."
+          "Summary": "Prête au conjurateur l’instinct, l’endurance et les traits des bêtes, ou les appelle comme alliées.",
+          "Description": "Le noaj devient le maître des bêtes en recueillant la relique d’un mastomant, d’un loup ou d’un sanglier des cavernes.",
+          "Negation": ""
         },
         "holy-haminges-power-of-the-dragon": {
           "Name": "Puissance du dragon",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm."
+          "Summary": "Éveille les dons draconiques : force, souffle de feu, protection et attaques aux bras multiples.",
+          "Description": "Le noaj est devenu le maître des dragons en recueillant les reliques d’un huvfurwurm, d’un serpent géant ou d’un logiwurm.",
+          "Negation": ""
         },
         "holy-haminges-power-of-men": {
           "Name": "Puissance des hommes",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe."
+          "Summary": "Accroît maîtrise, talent guerrier et savoir-faire humain, jusqu’à préparer de puissants élixirs curatifs.",
+          "Description": "Le noaj est devenu le maître des hommes en recueillant la relique d’un humain, d’un nain ou d’un elfe.",
+          "Negation": ""
         },
         "holy-haminges-power-of-the-scale": {
           "Name": "Puissance de l'écaille",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm."
+          "Summary": "Inspire la terreur, brise les esprits et pétrifie les ennemis, tandis que le sang des lindwurms régénère.",
+          "Description": "Le noaj est devenu le maître des bêtes écailleuses en recueillant la relique d’un braskelwurm ou d’un lindwurm.",
+          "Negation": ""
         },
         "holy-haminges-power-of-the-thurses": {
           "Name": "Puissance des tursirs",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll."
+          "Summary": "Accorde force titanesque, fureur guerrière et souffle glacé des hrimtrolls.",
+          "Description": "Le noaj est devenu maître des tursirs en recueillant la relique d’un ogre des montagnes, d’un hrimtursir ou d’un hrimtroll.",
+          "Negation": ""
         },
         "holy-haminges-power-of-trolls": {
           "Name": "Puissance des trolls",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts."
+          "Summary": "Prête aux trolls ruse, influence et résistance à la peur, mais aussi contagion et maladie.",
+          "Description": "Le noaj est devenu le maître des trolls en collectant les reliques d’un troll gris, d’un troll roi ou d’un troll des forêts.",
+          "Negation": ""
         },
         "holy-thuuldom-anvil-shock": {
           "Name": "Choc de l'enclume",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Choc de l'enclume, dont Choc de l'enclume."
+          "Summary": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
+          "Description": "Donne à une arme contondante un impact sismique qui affaiblit ou immobilise la victime.",
+          "Negation": ""
         },
         "holy-thuuldom-borjorn-s-hand": {
           "Name": "Main de Borjorn",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Main de Borjorn, dont Main de Borjorn."
+          "Summary": "Accorde au thuul les conseils de la montagne pour réussir sa prochaine action.",
+          "Description": "Accorde au thuul les conseils de la montagne pour réussir sa prochaine action.",
+          "Negation": ""
         },
         "holy-thuuldom-cave-spider-s-grip": {
           "Name": "Prise de l'araignée des cavernes",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Prise de l'araignée des cavernes, dont Prise de l’araignée des cavernes."
+          "Summary": "Permet d’escalader murs et plafonds comme une araignée.",
+          "Description": "Permet d’escalader murs et plafonds comme une araignée.",
+          "Negation": ""
         },
         "holy-thuuldom-earthquake": {
           "Name": "Tremblement de terre",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Tremblement de terre, dont Tremblement de terre."
+          "Summary": "Secoue le sol, fait chuter les créatures et endommage les constructions fragiles.",
+          "Description": "Secoue le sol, fait chuter les créatures et endommage les constructions fragiles.",
+          "Negation": ""
         },
         "holy-thuuldom-fang-of-yukk": {
           "Name": "Croc de Yukk",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Croc de Yukk, dont Croc de Yukk."
+          "Summary": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
+          "Description": "Renforce une arme tranchante pour infliger davantage de dégâts et provoquer des jets ouverts plus fréquents.",
+          "Negation": ""
         },
         "holy-thuuldom-gills-of-the-blackfish": {
           "Name": "Branchies du brochet",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Branchies du brochet, dont Branchies du brochet."
+          "Summary": "Permet au porteur de l’objet runique de respirer sous l’eau.",
+          "Description": "Permet au porteur de l’objet runique de respirer sous l’eau.",
+          "Negation": ""
         },
         "holy-thuuldom-hammer-fists": {
           "Name": "Poings d'acier",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Poings d'acier, dont Poings d’acier."
+          "Summary": "Renforce les coups à mains nues ou les armes de poing du porteur.",
+          "Description": "Renforce les coups à mains nues ou les armes de poing du porteur.",
+          "Negation": ""
         },
         "holy-thuuldom-healing-rune": {
           "Name": "Rune de guérison",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Rune de guérison, dont Rune de guérison."
+          "Summary": "Soigne les blessures des créatures au contact de la rune active.",
+          "Description": "Soigne les blessures des créatures au contact de la rune active.",
+          "Negation": ""
         },
         "holy-thuuldom-heat-of-the-depths": {
           "Name": "Chaleur des profondeurs",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Chaleur des profondeurs, dont Chaleur des profondeurs."
+          "Summary": "Réchauffe ou refroidit durablement le sol autour d’un objet runique.",
+          "Description": "Réchauffe ou refroidit durablement le sol autour d’un objet runique.",
+          "Negation": ""
         },
         "holy-thuuldom-labyrinth-blood": {
           "Name": "Sang du labyrinthe",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Sang du labyrinthe, dont Sang du labyrinthe."
+          "Summary": "Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route.",
+          "Description": "Aide le thuul à se souvenir surnaturellement de son chemin et à retrouver sa route.",
+          "Negation": ""
         },
         "holy-thuuldom-mark-of-brokk": {
           "Name": "Marque de Brokk",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Marque de Brokk, dont Marque de Brokk."
+          "Summary": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
+          "Description": "Renforce un objet sacré et améliore l’efficacité de la rune qu’il porte.",
+          "Negation": ""
         },
         "holy-thuuldom-power-of-repair": {
           "Name": "Pouvoir de réparation",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Pouvoir de réparation, dont Pouvoir de réparation."
+          "Summary": "Répare miraculeusement un objet brisé ou endommagé.",
+          "Description": "Répare miraculeusement un objet brisé ou endommagé.",
+          "Negation": ""
         },
         "holy-thuuldom-scales": {
           "Name": "Écailles",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Écailles, dont Écailles."
+          "Summary": "Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire.",
+          "Description": "Fait pousser des écailles qui renforcent durablement la protection du bénéficiaire.",
+          "Negation": ""
         },
         "holy-thuuldom-stoneling": {
           "Name": "Enfant de la pierre",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Enfant de la pierre, dont Enfant de la pierre."
+          "Summary": "Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur.",
+          "Description": "Anime une pierre avec un esprit de la montagne pour en faire un petit serviteur.",
+          "Negation": ""
         },
         "holy-thuuldom-stone-to-clay": {
           "Name": "Transformation de pierre en argile",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Transformation de pierre en argile, dont Transformation de pierre en argile."
+          "Summary": "Ramollit temporairement la pierre pour la modeler comme de l’argile.",
+          "Description": "Ramollit temporairement la pierre pour la modeler comme de l’argile.",
+          "Negation": ""
         },
         "holy-thuuldom-stoneshape": {
           "Name": "Aspect de la pierre",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Aspect de la pierre, dont Aspect de la pierre."
+          "Summary": "Camoufle le thuul et son équipement dans la pierre ou la montagne.",
+          "Description": "Camoufle le thuul et son équipement dans la pierre ou la montagne.",
+          "Negation": ""
         },
         "holy-thuuldom-well-of-water": {
-          "Name": "Source d'eau",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Cette tablette rassemble des pouvoirs liés à Source d’eau, dont Source d’eau."
+          "Name": "Source d’eau",
+          "Summary": "Fait sourdre une source d’eau fraîche et pure depuis le sol.",
+          "Description": "Fait sourdre une source d’eau fraîche et pure depuis le sol.",
+          "Negation": ""
         },
         "holy-toikalokke-animal-mind": {
           "Name": "Esprit animal",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit."
+          "Summary": "Lie l’ihana aux animaux pour communiquer avec eux, les guider et prendre leur forme.",
+          "Description": "Grâce à ce haut don, l’elfe peut développer un lien unique avec les animaux de la forêt. Cela signifie qu’un ihana a souvent plus de facilité à communiquer avec les animaux qu’avec les gens, et que les animaux montrent de la déférence envers l’elfe. L’ihana développe un lien spirituel particulier avec une race animale spécifique de la forêt, et ce don permet même à l’elfe de prendre la forme de cet animal. C’est l’ihana qui décide de l’animal de la forêt dont il s’agit.",
+          "Negation": ""
         },
         "holy-toikalokke-lynx-power": {
           "Name": "Agilité du lynx",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "L’ihana a la faculté de se déplacer dans les bois avec la prouesse et l’agilité d’un lynx."
+          "Summary": "Dote l’ihana des sens et de l’agilité du lynx pour explorer, bondir et se cacher en forêt.",
+          "Description": "L’ihana a la faculté de se déplacer dans les bois avec la prouesse et l’agilité d’un lynx.",
+          "Negation": ""
         },
         "holy-toikalokke-master-of-elements": {
           "Name": "Maître des éléments",
-          "Summary": "Réunit des pouvoirs sacrés liés aux thèmes et aux préceptes de cette tablette.",
-          "Description": "L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments."
+          "Summary": "Façonne terre, eau, air et feu pour modeler le terrain, se déplacer ou frapper à distance.",
+          "Description": "L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments.",
+          "Negation": ""
         }
       },
       "Power": {
