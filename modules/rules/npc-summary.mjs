@@ -82,11 +82,11 @@ export function clampPickerLevel(value, kind) {
   return Math.max(1, Math.min(maximum, Math.trunc(parsed)));
 }
 
-/** Unlearned discipline options of one catalogue skill for the cascading NPC knowledge picker. */
-export function unlearnedDisciplineOptions(skillKey, knowledgeTree, findKnowledgeItem, localize) {
-  return (knowledgeTree[skillKey] ?? [])
-    .filter(discipline => !findKnowledgeItem(discipline.id))
-    .map(discipline => ({id: discipline.id, label: localize(discipline.label)}));
+/** Discipline options of one catalogue skill for the cascading NPC knowledge picker: unlearned first, then learned ones (learned disciplines stay selectable as specialty parents). */
+export function disciplinePickerOptions(skillKey, knowledgeTree, findKnowledgeItem, localize) {
+  const entries = (knowledgeTree[skillKey] ?? [])
+    .map(discipline => ({id: discipline.id, label: localize(discipline.label), learned: Boolean(findKnowledgeItem(discipline.id))}));
+  return [...entries.filter(option => !option.learned), ...entries.filter(option => option.learned)];
 }
 
 /** Unlearned specialty options of one catalogue discipline for the cascading NPC knowledge picker. */

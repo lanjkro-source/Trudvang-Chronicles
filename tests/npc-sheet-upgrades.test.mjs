@@ -4,7 +4,7 @@ import test from "node:test";
 import Handlebars from "handlebars";
 import {TRUDVANG} from "../modules/config.mjs";
 import {clampPickerLevel, matchesPickerFilter, npcKnowledgeAddGate, normalizePickerText,
-  unlearnedDisciplineOptions, unlearnedSpecialtyOptions} from "../modules/rules/npc-summary.mjs";
+  disciplinePickerOptions, unlearnedSpecialtyOptions} from "../modules/rules/npc-summary.mjs";
 import {resolveNpcSkillTreeSync} from "../modules/npc-inventory.mjs";
 import {COMBAT_POOL_IDS} from "../modules/rules/combat-pool-resolver.mjs";
 
@@ -86,14 +86,16 @@ test("picker levels clamp to the skill (1-10) and knowledge (1-5) bounds", () =>
   assert.equal(clampPickerLevel(2.9, "discipline"), 2);
 });
 
-test("cascading options list unlearned disciplines/specialties with parent status", () => {
+test("cascading options keep learned disciplines as specialty parents", () => {
   const learned = new Set(["armedFighting", "wrestling"]);
   const find = id => learned.has(id) ? {system: {level: 2}} : null;
   const localize = key => key;
-  const disciplines = unlearnedDisciplineOptions("fighting", TRUDVANG.knowledgeTree, find, localize);
+  const disciplines = disciplinePickerOptions("fighting", TRUDVANG.knowledgeTree, find, localize);
   assert.ok(disciplines.length > 0);
-  assert.ok(disciplines.every(option => !learned.has(option.id)));
-  assert.ok(!disciplines.some(option => option.id === "armedFighting"));
+  assert.ok(disciplines.some(option => option.id === "armedFighting"), "learned discipline stays selectable as parent");
+  const ids = disciplines.map(option => option.id);
+  const firstLearned = ids.findIndex(id => learned.has(id));
+  assert.ok(firstLearned === -1 || ids.slice(0, firstLearned).every(id => !learned.has(id)), "unlearned first, learned parents after");
   const specialties = unlearnedSpecialtyOptions("fighting", "unarmedFighting", TRUDVANG.knowledgeTree, find, localize);
   assert.ok(!specialties.some(option => option.id === "wrestling"));
   assert.ok(specialties.every(option => option.parentId === "unarmedFighting"));

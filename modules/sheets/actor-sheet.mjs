@@ -7,7 +7,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolv
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
-import {clampPickerLevel, ignoresWoundPenalties, matchesPickerFilter, npcBookSkillRows, npcHealthRange, npcKnowledgeAddGate, npcMovementRows, npcSkillTrees, npcTraitEdit, unlearnedDisciplineOptions, unlearnedSpecialtyOptions} from "../rules/npc-summary.mjs";
+import {clampPickerLevel, ignoresWoundPenalties, matchesPickerFilter, npcBookSkillRows, npcHealthRange, npcKnowledgeAddGate, npcMovementRows, npcSkillTrees, npcTraitEdit, disciplinePickerOptions, unlearnedSpecialtyOptions} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityItemData} from "../bestiary-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
@@ -1031,7 +1031,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         const noneLabel = localize("TRUDVANG.Npc.KnowledgeNoChoice");
         const refreshDisciplines = () => {
           const skillKey = skillSelect.value;
-          const options = unlearnedDisciplineOptions(skillKey, TRUDVANG.knowledgeTree, id => sheet.actor.findKnowledgeItem(id), localize);
+          const options = disciplinePickerOptions(skillKey, TRUDVANG.knowledgeTree, id => sheet.actor.findKnowledgeItem(id), localize);
           disciplineSelect.innerHTML = `<option value="">${escapeHtml(noneLabel)}</option>` + options.map(option =>
             `<option value="${escapeHtml(option.id)}">${escapeHtml(option.label)}</option>`).join("");
           refreshSpecialties();
