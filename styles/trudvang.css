@@ -255,6 +255,7 @@
 .trudvang-sheet .experience-grid input, .trudvang-sheet .experience-grid output { width: 46px; text-align: center; font-weight: 600; }
 .trudvang-sheet .creation-mode-button { width: 100%; margin: 3px 0 7px; border: 1px solid var(--trudvang-line); }
 .trudvang-sheet .creation-mode-button.active { color: var(--trudvang-on-header); background: var(--trudvang-accent); }
+.trudvang-sheet.npc-sheet .identity-grid .creation-mode-button { width: auto; justify-self: start; align-self: center; margin: 0 0 0 4px; padding: 4px 8px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); border: 1px solid var(--trudvang-gold); }
 .trudvang-sheet .advancement-review { display: flex; flex-direction: column; gap: 5px; margin-top: 7px; padding: 6px; border: 1px solid var(--trudvang-gold); background: color-mix(in srgb, var(--trudvang-gold) 12%, transparent); text-align: center; }
 .trudvang-sheet .advancement-review span { display: flex; gap: 5px; }
 .trudvang-sheet .advancement-review button { flex: 1; font-size: .72rem; }
@@ -479,10 +480,7 @@
 .trudvang.effect-sheet .editor-container > prose-mirror { display: flex; flex-direction: column; flex: 1; width: 100%; max-width: 100%; min-height: 150px; color: var(--trudvang-ink); }
 .trudvang.effect-sheet .editor-container .ProseMirror,
 .trudvang.effect-sheet .editor-container .editor-content { width: 100%; max-width: 100%; box-sizing: border-box; }
-/* Toggled prose-mirror button: force a clickable box and a guaranteed glyph
- * (fa-edit alias may be absent from the shipped FA subset). */
 .trudvang.effect-sheet prose-mirror > button.toggle { min-width: 26px; min-height: 26px; }
-.trudvang.effect-sheet prose-mirror > button.toggle i.fa-edit::before { content: "\f044"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
 
 .trudvang.effect-sheet button {
   color: var(--trudvang-ink);
