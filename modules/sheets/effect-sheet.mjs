@@ -35,6 +35,21 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     }
   };
 
+  // Core ActiveEffectConfig._onChangeForm still targets its original
+  // changes/duration tabs, which this sheet replaced with the combined
+  // durationChanges part (see PARTS/TABS above). Ignore only that DOM
+  // mismatch so editing/saving never throws; anything else still throws.
+  // The try/catch wraps only the super call so errors from our own future
+  // code are never swallowed, and the submit path (_processFormData) is untouched.
+  async _onChangeForm(...args) {
+    try {
+      return await super._onChangeForm(...args);
+    } catch (error) {
+      if (error instanceof TypeError) return undefined;
+      throw error;
+    }
+  }
+
   async _preparePartContext(partId, context) {
     const partContext = await super._preparePartContext(partId, context);
 
@@ -52,8 +67,12 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     if (partId === "durationChanges") {
       partContext.tab = partContext.tabs.durationChanges;
       const dur = this.document.duration || {};
+      // V14 prepares a null duration value as Infinity; read the unprepared
+      // source value instead and fall back to 0 when non-finite so the number
+      // input never renders value="Infinity". Units/expiry stay prepared.
+      const rawSourceValue = Number(this.document._source?.duration?.value ?? 0);
       partContext.duration = {
-        value: dur.value ?? 0,
+        value: Number.isFinite(rawSourceValue) ? rawSourceValue : 0,
         units: dur.units ?? "rounds",
         expiry: dur.expiry ?? ""
       };
