@@ -833,12 +833,26 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.AddKnowledge` | Add a discipline or specialty | Ajouter une discipline ou spécialité |
 | `TRUDVANG.Npc.KnowledgePickerTitle` | Add NPC knowledge | Ajouter une connaissance au PNJ |
 | `TRUDVANG.Npc.KnowledgeParentHint` | Parent discipline: {parent} | Discipline parente : {parent} |
+| `TRUDVANG.Npc.KnowledgeSkillLabel` | Skill | Compétence |
+| `TRUDVANG.Npc.KnowledgeDisciplineLabel` | Discipline | Discipline |
+| `TRUDVANG.Npc.KnowledgeSpecialtyLabel` | Specialty | Spécialité |
+| `TRUDVANG.Npc.KnowledgeLevelLabel` | Level | Niveau |
+| `TRUDVANG.Npc.KnowledgeNoChoice` | — | — |
+| `TRUDVANG.Npc.KnowledgeSkillValueHint` | Sets the base skill value (1–10). | Fixe la valeur de base de la compétence (1–10). |
+| `TRUDVANG.Npc.KnowledgeParentMissing` | Parent discipline {parent} not learned — specialty blocked. | Discipline parente {parent} non apprise — spécialité bloquée. |
+| `TRUDVANG.Npc.KnowledgeParentLearned` | Parent discipline {parent}: level {level}. | Discipline parente {parent} : niveau {level}. |
 | `TRUDVANG.Npc.NoAvailableKnowledge` | No further disciplines or specialties available. | Aucune autre discipline ou spécialité disponible. |
 | `TRUDVANG.Npc.NoCapacities` | No abilities. | Aucune capacité. |
 | `TRUDVANG.Npc.AddCapacity` | Add a capacity | Ajouter une capacité |
 | `TRUDVANG.Npc.CapacityPickerTitle` | Add NPC capacity | Ajouter une capacité au PNJ |
+| `TRUDVANG.Npc.CapacityFilterPlaceholder` | Filter capacities by name… | Filtrer les capacités par nom… |
 | `TRUDVANG.Npc.NoAvailableCapacity` | No further capacities available. | Aucune autre capacité disponible. |
 | `TRUDVANG.Npc.DeleteCapacity` | Delete capacity | Supprimer la capacité |
+| `TRUDVANG.Npc.EnableEditMode` | Edit mode | Mode édition |
+| `TRUDVANG.Npc.DisableEditMode` | View mode | Mode vue |
+| `TRUDVANG.Npc.EditModeTitle` | Toggle NPC edit mode | Basculer le mode édition du PNJ |
+| `TRUDVANG.Npc.BookNameTitle` | Book reference name (edit mode) | Nom de la référence du livre (mode édition) |
+| `TRUDVANG.Npc.BookValueTitle` | Book reference value (edit mode) | Valeur de la référence du livre (mode édition) |
 | `TRUDVANG.Npc.NoWeapons` | No weapons in the inventory. | Aucune arme dans l’inventaire. |
 | `TRUDVANG.Npc.NoProtection` | No armor or shields in the inventory. | Aucune armure ni aucun bouclier dans l’inventaire. |
 | `TRUDVANG.Npc.DefaultInventoryHint` | The creature’s default inventory is inherited by each new unlinked token. Changes made on a token do not change this model. | Inventaire par défaut de la créature, transmis à chaque nouveau token non lié. Les modifications faites sur un token ne modifient pas ce modèle. |

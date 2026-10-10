@@ -142,23 +142,62 @@ test("NPC knowledge decrease to zero deletes the embedded item and leaves book r
     knowledgeTree: TRUDVANG.knowledgeTree, localize: game.i18n.localize}).map(row => row.catalogId));
 });
 
-test("NPC knowledge picker creates a level-0 linked item, enforcing the parent gate", async () => {
+test("NPC knowledge picker cascades skill/discipline/specialty and enforces the parent gate", async () => {
   warnings.length = 0;
   const npc = npcActor([]);
   const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
-  let opened = null;
-  sheet._openKnowledgeSheet = async catalogId => { opened = catalogId; return catalogId; };
+  let createdAtLevel = null;
+  sheet._createNpcKnowledgeAtLevel = async (catalogId, level) => { createdAtLevel = {catalogId, level}; return catalogId; };
   const DialogClass = foundry.applications.api.DialogV2;
-  const previous = DialogClass.prompt;
-  DialogClass.prompt = async ({ok}) => ok.callback({}, {form: null}, {element: {querySelector: () => ({value: "wrestling"})}});
+  const previous = DialogClass.wait;
+  // Capture the dialog definition and drive its Add callback with a fake root.
+  let captured = null;
+  DialogClass.wait = async definition => { captured = definition; return null; };
   try {
     await sheet._openNpcKnowledgePicker();
+    assert.ok(captured, "cascading picker dialog is shown");
+    assert.match(captured.content, /name="skillKey"/);
+    assert.match(captured.content, /name="disciplineId"/);
+    assert.match(captured.content, /name="specialtyId"/);
+    assert.match(captured.content, /name="level"/);
+    const add = captured.buttons.find(button => button.action === "add");
+    const rootFor = values => ({querySelector: selector =>
+      ({'[name="skillKey"]': {value: values.skillKey ?? "fighting"},
+        '[name="disciplineId"]': {value: values.disciplineId ?? ""},
+        '[name="specialtyId"]': {value: values.specialtyId ?? ""},
+        '[name="level"]': {value: values.level ?? "1"}}[selector] ?? null)});
+    // Specialty blocked without its parent discipline at level 1+.
+    await add.callback({}, {form: rootFor({specialtyId: "wrestling", level: "2"})}, {element: rootFor({})});
     assert.match(warnings.at(-1), /discipline parente|Parent discipline/i);
-    assert.equal(opened, null);
-    npc.items.push(abilityItem("p1", "unarmedFighting", "discipline", 1));
-    await sheet._openNpcKnowledgePicker();
-    assert.equal(opened, "wrestling");
-  } finally { DialogClass.prompt = previous; }
+    assert.equal(createdAtLevel, null);
+    // Discipline creates at the picked level once selectable.
+    await add.callback({}, {form: rootFor({disciplineId: "unarmedFighting", level: "3"})}, {element: rootFor({})});
+    assert.deepEqual(createdAtLevel, {catalogId: "unarmedFighting", level: 3});
+    // A bare skill selection sets the base skill value instead (1-10).
+    createdAtLevel = null;
+    await add.callback({}, {form: rootFor({skillKey: "fighting", level: "9"})}, {element: rootFor({})});
+    assert.equal(createdAtLevel, null);
+    assert.equal(npc.system.skills.fighting.value, 9);
+  } finally { DialogClass.wait = previous; }
+});
+
+test("NPC _createNpcKnowledgeAtLevel reuses the knowledge-sheet path at the picked level", async () => {
+  const npc = npcActor([]);
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
+  let rendered = 0;
+  npc.createEmbeddedDocuments = async (embedded, data) => {
+    assert.equal(data[0].type, "ability");
+    assert.equal(data[0].system.catalogId, "evade");
+    assert.equal(data[0].system.level, 0);
+    const doc = {...data[0], id: "ev0",
+      sheet: {render: () => { rendered += 1; return doc; }},
+      update: async changes => { for (const [path, value] of Object.entries(changes)) set(doc, path, value); return doc; }};
+    npc.items.push(doc);
+    return [doc];
+  };
+  await sheet._createNpcKnowledgeAtLevel("evade", 3);
+  assert.equal(npc.findKnowledgeItem("evade").system.level, 3);
+  assert.equal(rendered, 1);
 });
 
 test("NPC _openKnowledgeSheet-equivalent creates a level-0 catalogue-linked ability", async () => {
@@ -189,11 +228,12 @@ test("NPC capacity add creates a catalogue-linked item and delete routes items v
     return data.map((entry, index) => ({...entry, id: `cap${index}`}));
   };
   const DialogClass = foundry.applications.api.DialogV2;
-  const previous = DialogClass.prompt;
-  DialogClass.prompt = async ({ok}) => ok.callback({}, {form: null}, {element: {querySelector: () => ({value: firstId})}});
+  const previous = DialogClass.wait;
+  DialogClass.wait = async ({buttons}) => buttons.find(button => button.action === "add")
+    .callback({}, {form: null}, {element: {querySelector: () => ({value: firstId})}});
   try {
     await sheet._openNpcCapacityPicker();
-  } finally { DialogClass.prompt = previous; }
+  } finally { DialogClass.wait = previous; }
   assert.equal(created.length, 1);
   assert.equal(created[0].type, "creatureAbility");
   assert.equal(created[0].system.catalogId, firstId);
@@ -234,9 +274,10 @@ test("NPC sheet renders +/- and delete only on learned embedded rows, never on b
   const armed = abilityItem("d1", "armedFighting", "discipline", 2);
   armed.img = "icons/svg/book.svg";
   const npc = npcActor([armed], book);
-  const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true;
+  const sheet = new TrudvangNpcSheet(); sheet.actor = npc; sheet.isEditable = true; sheet._npcEditMode = true;
   const context = await sheet._prepareContext({});
   context.editable = true;
+  context.npcEditMode = true;
   const render = Handlebars.compile(readFileSync(new URL("../templates/actor/npc-sheet.hbs", import.meta.url), "utf8"));
   const html = render(context);
   const bookBlock = html.split("npc-book-skills")[1].split("npc-knowledge-tree")[0];

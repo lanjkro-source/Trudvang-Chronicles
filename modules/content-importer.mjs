@@ -4,7 +4,7 @@ import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
-import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment} from "./npc-inventory.mjs";
+import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
 
 // TEMPORARY WORLD MIGRATION — version 48 installs the throwing Seax in
 // existing worlds; earlier versions updated intact prepared NPC attacks.
@@ -453,14 +453,15 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
     await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   }
   // Book skill tree heals the same additive way: filled only when empty, so a
-  // GM-tuned tree is never clobbered. Re-running is idempotent.
-  if (baked.skillTree?.length && !(actor.system?.skillTree ?? []).length) {
-    await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
+  // GM-tuned tree is never clobbered. Re-running is idempotent. Since NPC sheets
+  // now persist GM book edits (name/value) to system.skillTree, a non-empty tree
+  // is ALWAYS preserved as-is — the former foreign-tree duplicate repair is
+  // intentionally not applied to skill trees (attacks keep theirs below).
+  const seededTree = resolveNpcSkillTreeSync(actor.system?.skillTree, baked.skillTree);
+  if (seededTree) {
+    await actor.update({"system.skillTree": seededTree});
   }
   const currentAttacks = actor.system?.attacks ?? [];
-  const currentTree = actor.system?.skillTree ?? [];
-  const foreignTree = currentTree.length && baked.skillTree?.length && !samePairList(currentTree, baked.skillTree)
-    && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && samePairList(currentTree, other.skillTree));
   const foreignAttacks = currentAttacks.length && baked.attacks?.length && !sameComboList(currentAttacks, baked.attacks)
     && Object.values(CREATURE_NPC_DATA).some(other => other !== baked && sameComboList(currentAttacks, other.attacks));
   // TEMPORARY WORLD MIGRATION — rename only intact historical Galtir/Minokks
@@ -485,7 +486,6 @@ async function syncNpcCreatureData(actor, key, {legacyDescriptions = new Set()} 
     (version === oldMinokksAttacks && sameComboList(currentAttacks, version))
     || legacyLabelVariants.some(labels => sameComboList(currentAttacks,
       version.map(combo => combo.map(pair => ({...pair, attack: labels[pair.attack] ?? pair.attack}))))));
-  if (foreignTree) await actor.update({"system.skillTree": foundry.utils.deepClone(baked.skillTree)});
   if (foreignAttacks || obsoleteAttacks) await actor.update({"system.attacks": foundry.utils.deepClone(baked.attacks)});
   const missing = missingFeatPayloads([...actor.effects], baked.feats);
   if (missing.length) await actor.createEmbeddedDocuments("ActiveEffect", missing);

@@ -62,6 +62,66 @@ const learned = node => Number(node.level || 0) > 0 || Number(node.offHandLevel 
 const normalize = name => String(name || "").trim().toLocaleLowerCase();
 const referenceName = name => normalize(name).replace(/\s*\([^)]*\)/g, "").normalize("NFD").replace(/\p{Diacritic}/gu, "");
 
+/** Case/diacritic-insensitive picker text, mirroring referenceName (shared by capacity + knowledge filters). */
+export function normalizePickerText(value) {
+  return referenceName(value).replace(/œ/g, "oe").replace(/æ/g, "ae");
+}
+
+/** Live picker row filter: empty needle matches everything, otherwise substring match. */
+export function matchesPickerFilter(name, filter) {
+  const needle = normalizePickerText(filter);
+  if (!needle) return true;
+  return normalizePickerText(name).includes(needle);
+}
+
+/** Clamp a picker level input to its rules bounds (skills 1-10, disciplines/specialties 1-5). */
+export function clampPickerLevel(value, kind) {
+  const maximum = kind === "skill" ? 10 : 5;
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return 1;
+  return Math.max(1, Math.min(maximum, Math.trunc(parsed)));
+}
+
+/** Unlearned discipline options of one catalogue skill for the cascading NPC knowledge picker. */
+export function unlearnedDisciplineOptions(skillKey, knowledgeTree, findKnowledgeItem, localize) {
+  return (knowledgeTree[skillKey] ?? [])
+    .filter(discipline => !findKnowledgeItem(discipline.id))
+    .map(discipline => ({id: discipline.id, label: localize(discipline.label)}));
+}
+
+/** Unlearned specialty options of one catalogue discipline for the cascading NPC knowledge picker. */
+export function unlearnedSpecialtyOptions(skillKey, disciplineId, knowledgeTree, findKnowledgeItem, localize) {
+  const discipline = (knowledgeTree[skillKey] ?? []).find(entry => entry.id === disciplineId);
+  if (!discipline) return [];
+  return discipline.specialties
+    .filter(specialty => !findKnowledgeItem(specialty.id))
+    .map(specialty => ({id: specialty.id, label: localize(specialty.label), parentId: discipline.id,
+      parentLabel: localize(discipline.label),
+      parentLevel: Number(findKnowledgeItem(discipline.id)?.system.level || 0)}));
+}
+
+/**
+ * Shared hierarchy gates for the NPC knowledge picker Add (mirrors
+ * adjustNpcCatalogKnowledge, GM fiat: no XP cost, never auto-creates parents).
+ * Returns null when the deepest selection may be created, otherwise a {key, data} warning.
+ */
+export function npcKnowledgeAddGate({kind, skillKey, catalogId, level, entry, findKnowledgeItem, getSkillValue, getRequiredSkillValue, catalogRestriction}) {
+  const target = clampPickerLevel(level, kind);
+  if (kind === "skill") {
+    if (!skillKey) return {key: "TRUDVANG.Warning.SkillLimit", data: {}};
+    return null;
+  }
+  if (!entry) return {key: "TRUDVANG.Warning.KnowledgeLimit", data: {}};
+  if (catalogRestriction) return {key: catalogRestriction, data: {}};
+  if (Number(getSkillValue(entry.skillKey) || 1) < getRequiredSkillValue(target)) {
+    return {key: "TRUDVANG.Warning.SkillRequirement", data: {sv: getRequiredSkillValue(target)}};
+  }
+  if (kind === "specialty" && Number(findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) {
+    return {key: "TRUDVANG.Warning.ParentDisciplineRequired", data: {}};
+  }
+  return null;
+}
+
 /** Link book rows to their reference, respecting the book's skill/discipline hierarchy. */
 export function npcBookSkillRows(rows, {skills, knowledgeTree, localize}) {
   let skillKey = "";

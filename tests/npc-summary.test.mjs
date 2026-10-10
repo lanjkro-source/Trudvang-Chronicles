@@ -403,6 +403,7 @@ test("the NPC initiative info button opens the same inspection as PCs without ro
 
 test("the NPC header has only health and read-only movement, and compact traits can be edited", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet._npcEditMode = true;
   sheet.actor.isOwner = true;
   sheet.actor.system.details.move = [{mode: "terrestre", distance: "3 m", max: "24 m"}, {mode: "nage", distance: "3 m", max: "24 m"}];
   const html = render(await sheet._prepareContext({}));
@@ -474,6 +475,7 @@ test("NPC token inventories have a local hint and no mutable controls for read-o
 
 test("empty creature inventories are usable and show three properly localized empty states", async () => {
   const sheet = new TrudvangNpcSheet(); sheet.actor = actor(); sheet.isEditable = true;
+  sheet._npcEditMode = true;
   sheet.actor.isOwner = true;
   const inventory = render(await sheet._prepareContext({})).split('<div class="tab equipment')[1].split('<div class="tab combat')[0];
   assert.match(inventory, /Aucune arme dans l’inventaire/);
@@ -1581,6 +1583,7 @@ for (const [Sheet, type, fields] of [
     const previousGM = game.user.isGM;
     game.user.isGM = false; t.after(() => {game.user.isGM = previousGM;});
     const sheet = new Sheet(); sheet.actor = actor(); sheet.actor.type = type;
+    if (type === "npc") sheet._npcEditMode = true;
     sheet.actor.uuid = "Actor.notes"; sheet.actor.isOwner = true; sheet.isEditable = true;
     const text = '<p>Texte <strong>formaté</strong> et "guillemets".</p>';
     const values = Object.fromEntries(fields.map(field => [`system.${field}`, text]));

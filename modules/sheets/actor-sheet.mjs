@@ -7,7 +7,7 @@ import { resolveArmorProfile, resolveCombatActionModifier, resolveDamage, resolv
 import { combatPoolsAreFull, resolveCombatPools, weaponUsesSeparateHands } from "../rules/combat-pool-resolver.mjs";
 import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/fear-resolver.mjs";
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
-import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
+import {clampPickerLevel, ignoresWoundPenalties, matchesPickerFilter, npcBookSkillRows, npcHealthRange, npcKnowledgeAddGate, npcMovementRows, npcSkillTrees, npcTraitEdit, unlearnedDisciplineOptions, unlearnedSpecialtyOptions} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
 import {creatureAbilityItemData} from "../bestiary-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
@@ -111,6 +111,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "effect-edit": TrudvangActorSheet.#onAction,
       "effect-toggle": TrudvangActorSheet.#onAction,
       "effect-delete": TrudvangActorSheet.#onAction,
+      "toggle-npc-edit-mode": TrudvangActorSheet.#onAction,
       "inspect-item": TrudvangActorSheet.#onAction,
       "inspect-global-stat": TrudvangActorSheet.#onAction
     }
@@ -387,6 +388,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       };
     });
     const tablets = this.actor.items.filter(item => item.type === "tablet");
+    // Sheet-local NPC edit mode (creation-mode style): view mode rolls only, edit
+    // mode unlocks all mutating controls. Stored on the instance like _treeState —
+    // never in actor data — so it survives re-renders without touching documents.
+    if (this.actor.type === "npc") context.npcEditMode = Boolean(this._npcEditMode);
     if (this.actor.type === "npc") {
       context.npcPreparedActions = npcPreparedActionRows(this.actor, {format: (key, data) => game.i18n.format(key, data), localize: key => game.i18n.localize(key)});
       context.npcCombatCycle = npcCombatCycleDisplay(this.actor, game.combat);
@@ -501,7 +506,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const root = target.closest("form") ?? this.element;
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
-      "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
+      "toggle-creation-mode", "toggle-npc-edit-mode", "confirm-advancement", "cancel-advancement", "item-delete",
       "item-equip", "item-ready", "item-create", "add-npc-knowledge", "add-npc-capacity", "capacity-delete",
       "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
       "reset-traits", "npc-prepared-action", "reset-combat", "restore-vitner"
@@ -533,6 +538,11 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "roll-catalog": return item && Number(item.system.level || 0) > 0 ? item.roll() : ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeNotLearned"));
       case "show-catalog-detail": return this._openKnowledgeSheet(catalogId);
       case "toggle-creation-mode": return this.actor.toggleCreationMode();
+      // Sheet-local NPC edit mode (instance property like _treeState, never actor
+      // data): view mode rolls only, edit mode unlocks every mutating control.
+      case "toggle-npc-edit-mode":
+        this._npcEditMode = !this._npcEditMode;
+        return this.render();
       case "confirm-advancement": return this.actor.confirmAdvancements();
       case "cancel-advancement": return this.actor.cancelAdvancements();
       case "roll-initiative": return this.actor.rollInitiativeTrudvang();
@@ -987,76 +997,185 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     });
   }
 
-  /** NPC knowledge picker: catalogue disciplines/specialties not yet learned; creates a level-0 embedded ability. */
+  /** NPC knowledge picker: cascading skill -> discipline -> specialty selects + level.
+   * The Add button creates the DEEPEST selected node: a skill sets the base value
+   * (1-10) via a system.skills update, while a discipline/specialty creates a
+   * level-N embedded ability through the _openKnowledgeSheet path. Existing gates
+   * (parent discipline, skill requirements, religion) apply — parents are never
+   * auto-created. */
   _openNpcKnowledgePicker() {
     if (this.actor.type !== "npc" || !this.isEditable) return null;
-    const options = [];
-    for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
-      for (const discipline of disciplines) {
-        if (!this.actor.findKnowledgeItem(discipline.id)) {
-          options.push({id: discipline.id, kind: "discipline",
-            label: game.i18n.localize(discipline.label), parent: game.i18n.localize(TRUDVANG.skills[skillKey])});
-        }
-        for (const specialty of discipline.specialties) {
-          if (!this.actor.findKnowledgeItem(specialty.id)) {
-            options.push({id: specialty.id, kind: "specialty",
-              label: game.i18n.localize(specialty.label),
-              parent: game.i18n.format("TRUDVANG.Npc.KnowledgeParentHint", {parent: game.i18n.localize(discipline.label)})});
+    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+    const localize = key => game.i18n.localize(key);
+    const skillKeys = Object.keys(TRUDVANG.skills);
+    const skillOptions = skillKeys.map((skillKey, index) =>
+      `<option value="${escapeHtml(skillKey)}"${index === 0 ? " selected" : ""}>${escapeHtml(localize(TRUDVANG.skills[skillKey]))}</option>`).join("");
+    const content = `<div class="trudvang-knowledge-picker">
+      <label>${escapeHtml(localize("TRUDVANG.Npc.KnowledgeSkillLabel"))}<select name="skillKey">${skillOptions}</select></label>
+      <label>${escapeHtml(localize("TRUDVANG.Npc.KnowledgeDisciplineLabel"))}<select name="disciplineId"></select></label>
+      <label>${escapeHtml(localize("TRUDVANG.Npc.KnowledgeSpecialtyLabel"))}<select name="specialtyId"></select></label>
+      <label>${escapeHtml(localize("TRUDVANG.Npc.KnowledgeLevelLabel"))}<input name="level" type="number" min="1" max="10" step="1" value="1"></label>
+      <p class="hint" data-parent-hint></p>
+    </div>`;
+    const sheet = this;
+    class NpcKnowledgePickerDialog extends DialogClass {
+      _onRender(context, options) {
+        super._onRender(context, options);
+        const root = this.element;
+        const skillSelect = root.querySelector('[name="skillKey"]');
+        const disciplineSelect = root.querySelector('[name="disciplineId"]');
+        const specialtySelect = root.querySelector('[name="specialtyId"]');
+        const levelInput = root.querySelector('[name="level"]');
+        const hint = root.querySelector("[data-parent-hint]");
+        if (!skillSelect || !disciplineSelect || !specialtySelect) return;
+        const noneLabel = localize("TRUDVANG.Npc.KnowledgeNoChoice");
+        const refreshDisciplines = () => {
+          const skillKey = skillSelect.value;
+          const options = unlearnedDisciplineOptions(skillKey, TRUDVANG.knowledgeTree, id => sheet.actor.findKnowledgeItem(id), localize);
+          disciplineSelect.innerHTML = `<option value="">${escapeHtml(noneLabel)}</option>` + options.map(option =>
+            `<option value="${escapeHtml(option.id)}">${escapeHtml(option.label)}</option>`).join("");
+          refreshSpecialties();
+        };
+        const refreshSpecialties = () => {
+          const skillKey = skillSelect.value;
+          const disciplineId = disciplineSelect.value;
+          const options = disciplineId
+            ? unlearnedSpecialtyOptions(skillKey, disciplineId, TRUDVANG.knowledgeTree, id => sheet.actor.findKnowledgeItem(id), localize)
+            : [];
+          specialtySelect.innerHTML = `<option value="">${escapeHtml(noneLabel)}</option>` + options.map(option =>
+            `<option value="${escapeHtml(option.id)}">${escapeHtml(option.label)}</option>`).join("");
+          refreshHint();
+        };
+        const refreshHint = () => {
+          if (specialtySelect.value) {
+            const entry = sheet.actor.getCatalogEntry(specialtySelect.value);
+            const parentEntry = entry?.parentCatalogId ? sheet.actor.getCatalogEntry(entry.parentCatalogId) : null;
+            const parentLabel = parentEntry ? localize(parentEntry.label) : "";
+            const parentLevel = Number(sheet.actor.findKnowledgeItem(entry?.parentCatalogId)?.system.level || 0);
+            if (hint) hint.textContent = parentLevel >= 1
+              ? game.i18n.format("TRUDVANG.Npc.KnowledgeParentLearned", {parent: parentLabel, level: parentLevel})
+              : game.i18n.format("TRUDVANG.Npc.KnowledgeParentMissing", {parent: parentLabel});
+          } else if (disciplineSelect.value) {
+            if (hint) hint.textContent = game.i18n.format("TRUDVANG.Npc.KnowledgeParentHint", {parent: localize(TRUDVANG.skills[skillSelect.value])});
+          } else if (hint) {
+            hint.textContent = localize("TRUDVANG.Npc.KnowledgeSkillValueHint");
           }
-        }
+          if (levelInput) levelInput.max = (specialtySelect.value || disciplineSelect.value) ? "5" : "10";
+        };
+        skillSelect.addEventListener("change", refreshDisciplines);
+        disciplineSelect.addEventListener("change", refreshSpecialties);
+        specialtySelect.addEventListener("change", refreshHint);
+        refreshDisciplines();
       }
     }
-    if (!options.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.NoAvailableKnowledge"));
-    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-    const rows = options.map((option, index) => `<label class="tablet-picker-option"><input type="radio" name="knowledgeId" value="${escapeHtml(option.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(option.label)}</strong><small>${escapeHtml(option.parent)}</small></span></label>`).join("");
-    return DialogClass.prompt({
-      window: {title: game.i18n.localize("TRUDVANG.Npc.KnowledgePickerTitle")},
-      content: `<div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Npc.KnowledgePickerTitle"))}">${rows}</div>`,
-      ok: {icon: "fas fa-plus", label: game.i18n.localize("TRUDVANG.Action.Add"),
-        callback: (event, button, dialog) => {
-          const catalogId = (button.form ?? dialog.element)?.querySelector('[name="knowledgeId"]:checked')?.value;
-          if (!catalogId) return null;
-          const entry = this.actor.getCatalogEntry(catalogId);
-          if (entry?.kind === "specialty" && Number(this.actor.findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) {
-            return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
-          }
-          return this._openKnowledgeSheet(catalogId);
-        }},
-      cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
+    const readSelection = root => {
+      const skillKey = root.querySelector('[name="skillKey"]')?.value || skillKeys[0];
+      const disciplineId = root.querySelector('[name="disciplineId"]')?.value || "";
+      const specialtyId = root.querySelector('[name="specialtyId"]')?.value || "";
+      const level = Number(root.querySelector('[name="level"]')?.value || 1);
+      if (specialtyId) return {kind: "specialty", skillKey, catalogId: specialtyId, level};
+      if (disciplineId) return {kind: "discipline", skillKey, catalogId: disciplineId, level};
+      return {kind: "skill", skillKey, catalogId: "", level};
+    };
+    return NpcKnowledgePickerDialog.wait({
+      window: {title: localize("TRUDVANG.Npc.KnowledgePickerTitle")},
+      content,
+      buttons: [
+        {action: "add", icon: "fas fa-plus", label: localize("TRUDVANG.Action.Add"), default: true,
+          callback: async (event, button, dialog) => {
+            const root = button.form ?? dialog.element;
+            const selection = readSelection(root);
+            if (selection.kind === "skill") {
+              const level = clampPickerLevel(selection.level, "skill");
+              return this.actor.update({[`system.skills.${selection.skillKey}.value`]: level});
+            }
+            const entry = this.actor.getCatalogEntry(selection.catalogId);
+            const level = clampPickerLevel(selection.level, entry?.kind ?? "discipline");
+            const blocked = npcKnowledgeAddGate({kind: entry?.kind ?? "discipline", skillKey: selection.skillKey,
+              catalogId: selection.catalogId, level, entry,
+              findKnowledgeItem: id => this.actor.findKnowledgeItem(id),
+              getSkillValue: key => this.actor.getSkillValue(key),
+              getRequiredSkillValue: rank => this.actor.getRequiredSkillValue(rank),
+              catalogRestriction: this.actor.catalogKnowledgeRestriction(selection.catalogId)});
+            if (blocked) return ui.notifications.warn(blocked.data?.sv !== undefined
+              ? game.i18n.format(blocked.key, blocked.data) : localize(blocked.key));
+            return this._createNpcKnowledgeAtLevel(selection.catalogId, level);
+          }},
+        {action: "cancel", label: localize("TRUDVANG.Action.Cancel"), callback: () => false}
+      ],
       modal: false,
       rejectClose: false
     });
   }
 
-  /** NPC capacity picker: catalogue-linked creatureAbility items; legacy flagged effects are only deleted, never created here. */
+  /** Create (or raise) an NPC knowledge ability at an explicit level, reusing the
+   * _openKnowledgeSheet creation path, then setting the picked level and opening
+   * the item sheet. Gated by the caller; never auto-creates parents. */
+  async _createNpcKnowledgeAtLevel(catalogId, level) {
+    const existing = this.actor.findKnowledgeItem(catalogId);
+    if (existing) {
+      if (Number(existing.system.level || 0) !== Number(level)) await existing.update({"system.level": Number(level)});
+      return existing.sheet.render({force: true});
+    }
+    await this._openKnowledgeSheet(catalogId);
+    const created = this.actor.findKnowledgeItem(catalogId);
+    // The creation path already rendered the sheet; the level update re-renders
+    // it through the normal document-update cycle, so no second render is needed.
+    if (created && Number(level) !== Number(created.system.level || 0)) await created.update({"system.level": Number(level)});
+    return created;
+  }
+
+  /** NPC capacity picker: catalogue-linked creatureAbility items with a live name
+   * filter; legacy flagged effects are only deleted, never created here. The
+   * filter input hides non-matching radio rows in place (DialogV2 subclass
+   * overriding _onRender, same convention as the dice dialogs) using the shared
+   * case/diacritic-insensitive matchesPickerFilter helper. */
   _openNpcCapacityPicker() {
     if (this.actor.type !== "npc" || !this.isEditable) return null;
     const owned = new Set(this.actor.items.filter(item => item.type === "creatureAbility").map(item => item.system.catalogId));
     const options = Object.entries(CREATURE_ABILITY_REFERENCES).filter(([, reference]) => !owned.has(reference.id));
     if (!options.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.NoAvailableCapacity"));
     const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-    const rows = options.map(([name, reference], index) => `<label class="tablet-picker-option"><input type="radio" name="capacityId" value="${escapeHtml(reference.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(name)}</strong></span></label>`).join("");
-    return DialogClass.prompt({
-      window: {title: game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle")},
-      content: `<div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle"))}">${rows}</div>`,
-      ok: {icon: "fas fa-plus", label: game.i18n.localize("TRUDVANG.Action.Add"),
-        callback: async (event, button, dialog) => {
-          const catalogId = (button.form ?? dialog.element)?.querySelector('[name="capacityId"]:checked')?.value;
-          if (!catalogId) return null;
-          const name = Object.entries(CREATURE_ABILITY_REFERENCES).find(([, reference]) => reference.id === catalogId)?.[0] ?? catalogId;
-          let data;
-          try {
-            const entry = {id: catalogId, pages: CREATURE_ABILITY_REFERENCES[name]?.pages ?? {fr: 0, en: 0}};
-            data = creatureAbilityItemData(entry, {code: game.i18n.lang === "en" ? "en" : "fr",
-              localize: key => game.i18n.localize(key), strict: false});
-            if (!data.name || data.name === `TRUDVANG.Content.CreatureAbility.${catalogId}.Name`) data.name = name;
-          } catch {
-            data = null;
+    const placeholder = game.i18n.localize("TRUDVANG.Npc.CapacityFilterPlaceholder");
+    const rows = options.map(([name, reference], index) => `<label class="tablet-picker-option" data-capacity-name="${escapeHtml(name)}"><input type="radio" name="capacityId" value="${escapeHtml(reference.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(name)}</strong></span></label>`).join("");
+    class NpcCapacityPickerDialog extends DialogClass {
+      _onRender(context, options) {
+        super._onRender(context, options);
+        const root = this.element;
+        const input = root.querySelector('[name="capacityFilter"]');
+        if (!input) return;
+        const rows = [...root.querySelectorAll(".tablet-picker-option")];
+        input.addEventListener("input", () => {
+          for (const row of rows) {
+            const label = row.querySelector("strong")?.textContent ?? row.dataset.capacityName ?? row.textContent;
+            row.hidden = !matchesPickerFilter(label, input.value);
           }
-          const [item] = await this.actor.createEmbeddedDocuments("Item", [data ?? {name, type: "creatureAbility", system: {catalogId}}]);
-          return item;
-        }},
-      cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
+        });
+      }
+    }
+    return NpcCapacityPickerDialog.wait({
+      window: {title: game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle")},
+      content: `<div class="trudvang-tablet-picker-wrap"><input class="trudvang-picker-filter" type="search" name="capacityFilter" placeholder="${escapeHtml(placeholder)}" aria-label="${escapeHtml(placeholder)}"><div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle"))}">${rows}</div></div>`,
+      buttons: [
+        {action: "add", icon: "fas fa-plus", label: game.i18n.localize("TRUDVANG.Action.Add"), default: true,
+          callback: async (event, button, dialog) => {
+            const catalogId = (button.form ?? dialog.element)?.querySelector('[name="capacityId"]:checked')?.value;
+            if (!catalogId) return null;
+            const name = Object.entries(CREATURE_ABILITY_REFERENCES).find(([, reference]) => reference.id === catalogId)?.[0] ?? catalogId;
+            let data;
+            try {
+              const entry = {id: catalogId, pages: CREATURE_ABILITY_REFERENCES[name]?.pages ?? {fr: 0, en: 0}};
+              data = creatureAbilityItemData(entry, {code: game.i18n.lang === "en" ? "en" : "fr",
+                localize: key => game.i18n.localize(key), strict: false});
+              if (!data.name || data.name === `TRUDVANG.Content.CreatureAbility.${catalogId}.Name`) data.name = name;
+            } catch {
+              data = null;
+            }
+            const [item] = await this.actor.createEmbeddedDocuments("Item", [data ?? {name, type: "creatureAbility", system: {catalogId}}]);
+            return item;
+          }},
+        {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+      ],
       modal: false,
       rejectClose: false
     });

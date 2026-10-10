@@ -820,6 +820,14 @@
 .trudvang-tablet-picker .tablet-picker-option input { margin: 2px 0 0; flex: none; }
 .trudvang-tablet-picker .tablet-picker-option strong { display: block; }
 .trudvang-tablet-picker .tablet-picker-option small { display: block; margin-top: 2px; color: var(--trudvang-muted); }
+.trudvang-tablet-picker-wrap { display: grid; gap: 6px; }
+.trudvang-picker-filter { width: 100%; height: 28px; padding: 2px 8px; }
+.trudvang-knowledge-picker { display: grid; gap: 8px; padding: 4px; }
+.trudvang-knowledge-picker label { display: grid; gap: 3px; color: var(--trudvang-ink); font-size: .8rem; font-weight: 700; }
+.trudvang-knowledge-picker select, .trudvang-knowledge-picker input[type="number"] { width: 100%; height: 28px; font-weight: normal; }
+.trudvang-knowledge-picker .hint { margin: 0; color: var(--trudvang-muted); font-size: .75rem; font-weight: normal; }
+.trudvang-sheet.npc-sheet .npc-book-skills .npc-book-name { min-width: 0; height: 23px; padding: 0 4px; font-size: inherit; }
+.trudvang-sheet.npc-sheet .npc-book-skills .npc-book-value { width: 52px; height: 23px; padding: 0 2px; text-align: center; }
 .trudvang-sheet.item-sheet .panel.summary-panel textarea { resize: none; }
 .trudvang-sheet.item-sheet .editor-container { min-height: 150px; flex: 1; }
 .trudvang-sheet.item-sheet .editor-container > prose-mirror { display: flex; flex-direction: column; min-height: 150px; height: 100%; color: var(--trudvang-ink); }
