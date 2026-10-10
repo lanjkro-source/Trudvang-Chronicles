@@ -228,7 +228,8 @@ export function buildPreparedIcons(actor) {
 }
 
 /**
- * Tooltip description (HTML string): NPC prepared-attack list (name + points +
+ * Tooltip description (plain text: the dock module escapes this field, so markup
+ * would display as raw tags): NPC prepared-attack list (name + points +
  * used state, NON-clickable), quantified health/fear effect lines, and a
  * reserves reminder. Tooltips cannot host working buttons — the dock module
  * registers zero tooltip listeners and hover tears tooltips down — so the
@@ -262,17 +263,15 @@ export function buildDockDescription(actor) {
     ["fearValue", finiteNumber(modifiers.fearValue, 0)],
     ["bodyMax", finiteNumber(modifiers.bodyMax, 0)]
   ].filter(([, value]) => value !== 0);
-  parts.push(`<p class="dock-health">${escapeDockHtml(format("TRUDVANG.CombatDock.HealthLine",
-    {current: bodyCurrent, max: bodyMax, state: state.label}))}</p>`);
-  parts.push(`<p class="dock-state">${escapeDockHtml(format("TRUDVANG.CombatDock.EffectsLine",
-    {wound: woundPenalty, fear: fearPenalty}))} `
-    + `<span class="dock-fear">${escapeDockHtml(format("TRUDVANG.CombatDock.FearLine",
-      {value: fearValue, state: fearLabel, penalty: fearPenalty}))}</span>`
-    + (extraModifiers.length
-      ? ` <span class="dock-modifiers">${escapeDockHtml(extraModifiers.map(([key, value]) => `${key} ${value > 0 ? `+${value}` : value}`).join(", "))}</span>`
-      : "")
-    + (state.tenace ? ` <span class="dock-tenace">${escapeDockHtml(localize("TRUDVANG.CombatDock.TenaceNote", "Tenace"))}</span>` : "")
-    + "</p>");
+  // Plain text: the dock module HTML-escapes the description field, so any
+  // markup would display as raw tags in the tooltip.
+  parts.push(escapeDockHtml(format("TRUDVANG.CombatDock.HealthLine",
+    {current: bodyCurrent, max: bodyMax, state: state.label})));
+  let effectLine = `${format("TRUDVANG.CombatDock.EffectsLine", {wound: woundPenalty, fear: fearPenalty})}`
+    + ` ${format("TRUDVANG.CombatDock.FearLine", {value: fearValue, state: fearLabel, penalty: fearPenalty})}`;
+  if (extraModifiers.length) effectLine += ` (${extraModifiers.map(([key, value]) => `${key} ${value > 0 ? `+${value}` : value}`).join(", ")})`;
+  if (state.tenace) effectLine += ` ${localize("TRUDVANG.CombatDock.TenaceNote", "Tenace")}`;
+  parts.push(escapeDockHtml(effectLine));
   const combat = actor.system?.resources?.combat ?? {};
   const reserves = [`${finiteNumber(combat.current ?? combat.value, 0)} ${escapeDockHtml(localize("TRUDVANG.CombatDock.CombatUnits", "CP"))}`,
     `${bodyCurrent}/${bodyMax} ${escapeDockHtml(localize("TRUDVANG.CombatDock.HealthUnits", "HP"))}`];
@@ -284,28 +283,27 @@ export function buildDockDescription(actor) {
       key === "vitner" ? "VP" : "DP"));
     reserves.push(`${value}/${finiteNumber(reserve.max, 0)} ${units}`);
   }
-  parts.push(`<p class="dock-reserves">${escapeDockHtml(format("TRUDVANG.CombatDock.ReservesLine",
-    {reserves: reserves.join(" · ")}))}</p>`);
+  parts.push(escapeDockHtml(format("TRUDVANG.CombatDock.ReservesLine", {reserves: reserves.join(" · ")})));
   if (actor.type === "npc") {
     const steps = preparedSteps(actor);
     if (steps.length) {
       const rows = actorStateRollModifiers(actor).map(row => `${row.value > 0 ? `+${row.value}` : row.value}`).join(", ");
       const items = steps.map(step => {
-        const name = escapeDockHtml(step.action.name ?? step.row?.attack ?? "");
         const line = escapeDockHtml(format("TRUDVANG.CombatDock.PreparedRow",
           {name: step.action.name ?? step.row?.attack ?? "", points: step.action.points ?? 0,
             available: step.action.available ?? 0}));
-        const used = step.used ? ` <em>${escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedUsed", "used"))}</em>` : "";
-        return `<li><span>${name}</span> <span>${line}</span>${used}</li>`;
-      }).join("");
-      parts.push(`<p class="dock-prepared-title">${escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedTitle", "Prepared attacks"))}`
-        + (rows ? ` <span class="dock-roll-modifiers">(${escapeDockHtml(rows)})</span>` : "") + "</p>"
-        + `<ul class="dock-prepared">${items}</ul>`);
+        const used = step.used ? ` (${escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedUsed", "used"))})` : "";
+        return `${line}${used}`;
+      }).join(", ");
+      let title = escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedTitle", "Prepared attacks"));
+      if (rows) title += ` (${escapeDockHtml(rows)})`;
+      parts.push(`${title} : ${items}`);
     } else {
-      parts.push(`<p class="dock-prepared-title">${escapeDockHtml(localize("TRUDVANG.CombatDock.NoPrepared", "No prepared actions"))}</p>`);
+      parts.push(escapeDockHtml(localize("TRUDVANG.CombatDock.NoPrepared", "No prepared actions")));
     }
   }
-  return `<div class="trudvang-combat-dock">${parts.join("")}</div>`;
+  // Joined as plain text: see the note above about module-side escaping.
+  return parts.join(" · ");
 }
 
 /**
@@ -356,6 +354,11 @@ function appendTrudvangDockData(portrait, data) {
     if (icons.length) {
       if (!Array.isArray(data.resSystemIcons)) data.resSystemIcons = [];
       data.resSystemIcons.push(...icons);
+      try {
+        portrait._trudvangDockIconCallbacks = icons.map(icon => icon.callback);
+      } catch {
+        // Callback stash is best-effort (frozen portrait objects).
+      }
     }
   } catch {
     // Prepared icons are optional.
@@ -391,6 +394,35 @@ export function registerCombatDockSupport() {
             // Never break portrait rendering.
           }
           return data;
+        }
+        activateListeners(...args) {
+          let bound = true;
+          try {
+            super.activateListeners(...args);
+          } catch {
+            // The module binds .system-icon nodes against its own icon array,
+            // which knows nothing of our appended prepared-attack icons
+            // (undefined.callback). Its own icons precede ours in the DOM and
+            // are already bound at that point; bind ours below.
+            bound = false;
+          }
+          if (bound) return;
+          try {
+            const root = this.element?.querySelectorAll ? this.element
+              : this.element?.[0]?.querySelectorAll ? this.element[0] : null;
+            const callbacks = Array.isArray(this._trudvangDockIconCallbacks)
+              ? this._trudvangDockIconCallbacks : [];
+            if (!root || !callbacks.length) return;
+            const nodes = Array.from(root.querySelectorAll(".system-icon"));
+            const ours = nodes.slice(Math.max(0, nodes.length - callbacks.length));
+            ours.forEach((node, index) => {
+              const fire = callbacks[index];
+              if (typeof fire !== "function") return;
+              node.addEventListener("click", event => fire(event));
+            });
+          } catch {
+            // Never break portrait rendering.
+          }
         }
       }
       // The module instantiates portraits through this config namespace, so

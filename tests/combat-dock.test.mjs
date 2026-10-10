@@ -195,6 +195,7 @@ test("description lists prepared attacks non-clickably with quantified effects a
   assert.match(html, /3\/6/);
   assert.match(html, /8/);
   assert.ok(!html.includes("Active Effects") || html.includes("trudvang-combat-dock"));
+  assert.doesNotMatch(html, /<[a-z]/i, "tooltip description must stay tag-free (module escapes it)");
 });
 
 test("description escapes actor-controlled text", () => {
@@ -248,6 +249,37 @@ test("handler wires config defensively and subclasses the portrait", async () =>
   assert.deepEqual(npc.rolls, [[0, 0]]);
 });
 
+test("portrait subclass binds prepared icons when the module lookup throws", async () => {
+  registerCombatDockSupport();
+  const init = hookListeners["combat-tracker-dock-init"].at(-1);
+  const makeNode = () => ({listeners: {},
+    addEventListener(type, fn) { (this.listeners[type] ??= []).push(fn); }});
+  class ModulePortrait {
+    constructor() { this.systemIcons = [{callback: () => { this.moduleClicked = true; }}]; }
+    async getData() { return {attributes: [], resSystemIcons: []}; }
+    activateListeners() {
+      // Mimics module 5.0.2: .system-icon nodes bound against its own array.
+      this.element.querySelectorAll(".system-icon").forEach((node, index) => {
+        node._moduleBound = this.systemIcons[index].callback;
+      });
+    }
+  }
+  const config = {CombatantPortrait: ModulePortrait, defaultAttributesConfig: {}};
+  init(config);
+  const npc = npcStub();
+  const portrait = new config.CombatantPortrait();
+  portrait.actor = npc;
+  const modNode = makeNode();
+  const ourNode = makeNode();
+  const nodes = [modNode, ourNode];
+  portrait.element = {querySelectorAll: selector => (selector === ".system-icon" ? nodes : [])};
+  await portrait.getData();
+  assert.doesNotThrow(() => portrait.activateListeners());
+  assert.equal(typeof modNode._moduleBound, "function", "module icons keep their binding");
+  assert.equal((ourNode.listeners.click ?? []).length, 1, "our trailing icon gets a click binding");
+  ourNode.listeners.click[0]({});
+  assert.deepEqual(npc.rolls, [[0, 0]]);
+});
 test("handler never throws on drifted module shapes", () => {
   const init = hookListeners["combat-tracker-dock-init"].at(-1);
   assert.doesNotThrow(() => init({CombatantPortrait: class {
