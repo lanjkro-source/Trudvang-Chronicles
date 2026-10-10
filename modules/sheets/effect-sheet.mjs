@@ -157,6 +157,11 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     const raw = foundry.utils.expandObject(foundry.utils.deepClone(formData.object || {}));
     const submitData = super._processFormData(event, form, formData);
 
+    // This sheet stores changes at system.changes; a top-level `changes` key
+    // can only come from the core ActiveEffectConfig path, which must never
+    // clobber or duplicate our namespaced storage on save.
+    delete submitData.changes;
+
     // Process Trudvang stages (JSON textareas in Trudvang tab)
     if (foundry.utils.isPlainObject(submitData.system?.stages)) {
       submitData.system.stages = Object.values(submitData.system.stages);
@@ -184,7 +189,16 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     // Sync active stage when stages exist
     if (submitData.system?.stages?.length) {
-      const stageIndex = Math.min(Number(submitData.system.stage || 0), submitData.system.stages.length - 1);
+      let stageIndex = Number(submitData.system.stage || 0);
+      if (!Number.isInteger(stageIndex) || stageIndex < 0) {
+        // A malformed stage (e.g. hand-edited form data) must never throw via
+        // stages[NaN]; warn with the existing stage warning and fall back to
+        // the first stage, mirroring the absent-field default.
+        ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.InvalidStageChanges", {stage: String(submitData.system.stage ?? "?")}));
+        stageIndex = 0;
+      } else {
+        stageIndex = Math.min(stageIndex, submitData.system.stages.length - 1);
+      }
       submitData.system.stage = stageIndex;
 
       // Copy current changes into the active stage

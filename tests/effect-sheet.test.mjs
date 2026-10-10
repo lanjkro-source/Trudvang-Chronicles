@@ -206,6 +206,13 @@ test("createTrudvangEffect stacking matrix keeps current stack/refresh/replace/h
   }
 });
 
+// P1-1 intent lock: suppressing transferred effects parented to item types
+// outside EFFECT_ITEM_TYPES is deliberate, not a bug. Only
+// weapon/armor/shield/gear can author transfer:true effects (TrudvangItemSheet
+// gates supportsEffects/creation on EFFECT_ITEM_TYPES and forces potion
+// templates to transfer:false; applyEffects copies with transfer:false), so a
+// transferred spell/divineFeat/tablet/ability effect can only come from
+// foreign or migrated data and has no equipped/active transfer path.
 test("TrudvangActiveEffect.isSuppressed matrix follows item type, equipped, and transfer", () => {
   const effectFor = ({superSuppressed = false, item, transfer = false} = {}) => {
     const effect = new TrudvangActiveEffect();
@@ -226,4 +233,73 @@ test("TrudvangActiveEffect.isSuppressed matrix follows item type, equipped, and 
   }
   assert.equal(effectFor({item: {type: "potion", system: {equipped: true}}, transfer: true}).isSuppressed, true, "potion is always suppressed");
   assert.equal(effectFor({item: {type: "potion", system: {}}, transfer: true}).isSuppressed, true, "potion without equipped is suppressed");
+});
+
+test("TrudvangEffectSheet save drops legacy top-level changes from the core path", () => {
+  const proto = Object.getPrototypeOf(TrudvangEffectSheet.prototype);
+  const original = proto._processFormData;
+  try {
+    proto._processFormData = () => ({
+      changes: [{key: "legacy.path", type: "add", value: "99"}],
+      system: {changes: {0: {key: "system.effective.traits.strength", type: "add", value: "1", priority: "", phase: "final"}}},
+      duration: {value: 1, units: "rounds", expiry: ""}
+    });
+    const document = {_source: {duration: {}, system: {stages: []}}, system: {stages: []}};
+    const formData = {object: {
+      "system.changes.0.key": "system.effective.traits.strength",
+      "system.changes.0.type": "add",
+      "system.changes.0.value": "1",
+      "system.changes.0.priority": "",
+      "system.changes.0.phase": "final"
+    }};
+    const submitData = sheetFor(document)._processFormData({}, {}, formData);
+    assert.ok(!("changes" in submitData), "legacy top-level changes must not reach the document update");
+    assert.deepEqual(submitData.system.changes,
+      [{key: "system.effective.traits.strength", type: "add", value: "1", priority: null, phase: "final"}]);
+  } finally {
+    proto._processFormData = original;
+  }
+});
+
+test("TrudvangEffectSheet save warns and ignores a malformed system.stage", () => {
+  const proto = Object.getPrototypeOf(TrudvangEffectSheet.prototype);
+  const originalProcess = proto._processFormData;
+  const originalWarn = globalThis.ui.notifications.warn;
+  const warnings = [];
+  globalThis.ui.notifications.warn = message => warnings.push(message);
+  const saveWithStage = stage => {
+    const document = {
+      _source: {duration: {value: 1, units: "rounds", expiry: null, expired: false}, system: {stages: []}},
+      system: {stages: []}
+    };
+    const formData = {object: {
+      "system.stage": stage,
+      "system.stages.0.label": "First",
+      "system.stages.0.durationValue": 1,
+      "system.stages.0.durationUnit": "rounds",
+      "system.changes.0.key": "system.modifiers.protection",
+      "system.changes.0.type": "add",
+      "system.changes.0.value": "1",
+      "system.changes.0.priority": "",
+      "system.changes.0.phase": "final",
+      "duration.value": 1,
+      "duration.units": "rounds",
+      "duration.expiry": "",
+      "trudvang.stageChanges.0": "[]"
+    }};
+    return sheetFor(document)._processFormData({}, {}, formData);
+  };
+  try {
+    proto._processFormData = (event, form, formData) =>
+      foundry.utils.expandObject(foundry.utils.deepClone(formData.object || {}));
+    const malformed = saveWithStage("bogus");
+    assert.equal(malformed.system.stage, 0, "malformed stage falls back to the first stage");
+    assert.equal(warnings.length, 1, "malformed stage warns once instead of throwing");
+    const valid = saveWithStage("0");
+    assert.equal(valid.system.stage, 0, "valid stage keeps the success path");
+    assert.equal(warnings.length, 1, "valid stage does not warn");
+  } finally {
+    proto._processFormData = originalProcess;
+    globalThis.ui.notifications.warn = originalWarn;
+  }
 });

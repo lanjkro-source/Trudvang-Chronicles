@@ -40,7 +40,15 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
   }
 }
 
-/** Suppress transferred effects when their source item is not currently usable. */
+/** Suppress transferred effects when their source item is not currently usable.
+ * Only weapon/armor/shield/gear author transfer:true effects (see
+ * TrudvangItemSheet, which gates supportsEffects and effect creation on
+ * EFFECT_ITEM_TYPES, and forces potion templates to transfer:false); the
+ * applyEffects path copies with transfer:false. A transferred effect parented
+ * to any other type (spell/divineFeat/tablet/ability) can only come from
+ * foreign or migrated data and has no equipped/active transfer path, so it is
+ * intentionally always suppressed. Potion templates are likewise always
+ * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
   get isSuppressed() {
     if (super.isSuppressed) return true;
