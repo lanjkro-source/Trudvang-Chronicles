@@ -329,7 +329,8 @@ test("TrudvangEffectSheet details exposes raw description and prose-mirror templ
   assert.ok(template.includes('<prose-mirror name="description"'), "details template must use prose-mirror for description");
   assert.ok(template.includes("{{{enrichedDescription}}}"), "prose-mirror must render the enriched description");
   assert.ok(template.includes("{{#if editable}}"), "house pattern: static fallback when read-only");
-  assert.ok(template.includes('data-document-uuid="{{documentUuid}}"'), "prose-mirror must bind the document or it stays inert");
+  assert.ok(template.includes('button="true"'), "prose-mirror needs the documented button attribute or the toggle stays dead");
+  assert.ok(template.includes('editable="{{editable}}"'), "prose-mirror needs the documented editable attribute or content stays read-only");
   assert.ok(template.includes("editor-container"), "description needs a sized container");
   assert.ok(!template.includes("{{editor"), "V12 {{editor}} helper must be gone from the details template");
 });
