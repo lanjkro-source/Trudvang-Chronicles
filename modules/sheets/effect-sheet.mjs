@@ -55,7 +55,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
-      partContext.editable = this.isEditable;
+      // Prefer the framework-provided context flag: this.isEditable is not a
+      // reliable source here and wrongly forced the read-only branch.
+      partContext.editable = context?.editable ?? this.isEditable;
       partContext.documentUuid = this.document.uuid ?? "";
       partContext.description = this.document._source?.description ?? this.document.description ?? "";
       partContext.enrichedDescription = await TextEditorImpl.enrichHTML(
@@ -247,8 +249,11 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
   static async #silentSubmitData(sheet, target) {
     const form = TrudvangEffectSheet.#sheetForm(sheet, target);
-    if (!form) return null;
-    const formData = new foundry.utils.FormDataExtended(form);
+    // FormDataExtended moved from foundry.utils to foundry.applications.ux
+    // (absent from utils in V14); try both so a drifted client fails inert.
+    const FormDataExtended = foundry.applications?.ux?.FormDataExtended ?? foundry.utils?.FormDataExtended ?? null;
+    if (!form || !FormDataExtended) return null;
+    const formData = new FormDataExtended(form);
     return sheet._processFormData(new Event("submit"), form, formData);
   }
 

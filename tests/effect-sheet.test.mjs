@@ -380,8 +380,8 @@ function typedDocument() {
 
 test("TrudvangEffectSheet onAddChange preserves typed content with a single update", async () => {
   const restoreCore = stubCoreFormTransform();
-  const originalFDE = globalThis.foundry.utils.FormDataExtended;
-  globalThis.foundry.utils.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
+  const originalFDE = globalThis.foundry.applications.ux.FormDataExtended;
+  globalThis.foundry.applications.ux.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
   try {
     const document = typedDocument();
     const sheet = sheetWithTypedForm(document, TYPED_FLAT());
@@ -398,15 +398,25 @@ test("TrudvangEffectSheet onAddChange preserves typed content with a single upda
     assert.equal(sheet.renderCalls, 1, "sheet must re-render once after the update");
   } finally {
     restoreCore();
-    if (originalFDE === undefined) delete globalThis.foundry.utils.FormDataExtended;
-    else globalThis.foundry.utils.FormDataExtended = originalFDE;
+    if (originalFDE === undefined) delete globalThis.foundry.applications.ux.FormDataExtended;
+    else globalThis.foundry.applications.ux.FormDataExtended = originalFDE;
   }
+});
+
+test("TrudvangEffectSheet row buttons stay inert without any form instead of throwing", async () => {
+  const document = typedDocument();
+  const sheet = sheetFor(document);
+  sheet.renderCalls = 0;
+  sheet.render = async function () { this.renderCalls += 1; return this; };
+  await TrudvangEffectSheet.onAddChange.call(sheet);
+  assert.equal(document.updates.length, 0, "no form means no update");
+  assert.equal(sheet.renderCalls, 0, "no form means no re-render");
 });
 
 test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other rows", async () => {
   const restoreCore = stubCoreFormTransform();
-  const originalFDE = globalThis.foundry.utils.FormDataExtended;
-  globalThis.foundry.utils.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
+  const originalFDE = globalThis.foundry.applications.ux.FormDataExtended;
+  globalThis.foundry.applications.ux.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
   try {
     const document = typedDocument();
     const flat = {
@@ -430,8 +440,8 @@ test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other
     assert.equal(sheet.renderCalls, 1, "sheet must re-render once after the update");
   } finally {
     restoreCore();
-    if (originalFDE === undefined) delete globalThis.foundry.utils.FormDataExtended;
-    else globalThis.foundry.utils.FormDataExtended = originalFDE;
+    if (originalFDE === undefined) delete globalThis.foundry.applications.ux.FormDataExtended;
+    else globalThis.foundry.applications.ux.FormDataExtended = originalFDE;
   }
 });
 
