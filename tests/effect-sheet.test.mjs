@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
 import test from "node:test";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
@@ -302,4 +303,141 @@ test("TrudvangEffectSheet save warns and ignores a malformed system.stage", () =
     proto._processFormData = originalProcess;
     globalThis.ui.notifications.warn = originalWarn;
   }
+});
+
+test("TrudvangEffectSheet details exposes raw description and prose-mirror template", async () => {
+  const document = {
+    isOwner: true,
+    _source: {description: "<p>Raw typed</p>"},
+    description: "<p>Raw typed</p>",
+    origin: "actor-1"
+  };
+  const ctx = await sheetFor(document)._preparePartContext("details", {});
+  assert.equal(ctx.description, "<p>Raw typed</p>", "details context must expose the raw description source");
+
+  const fallback = {
+    isOwner: true,
+    description: "<p>Fallback</p>",
+    origin: ""
+  };
+  const fallbackCtx = await sheetFor(fallback)._preparePartContext("details", {});
+  assert.equal(fallbackCtx.description, "<p>Fallback</p>", "missing _source falls back to document.description");
+
+  const template = readFileSync(new URL("../templates/effect/details.hbs", import.meta.url), "utf8");
+  assert.ok(template.includes('<prose-mirror name="description"'), "details template must use prose-mirror for description");
+  assert.ok(template.includes("{{{enrichedDescription}}}"), "prose-mirror must render the enriched description");
+  assert.ok(!template.includes("{{editor"), "V12 {{editor}} helper must be gone from the details template");
+});
+
+function stubCoreFormTransform() {
+  const proto = Object.getPrototypeOf(TrudvangEffectSheet.prototype);
+  const original = proto._processFormData;
+  // Mimic the core ActiveEffectConfig path: it only transforms the live
+  // formData into a nested object; our override then processes it.
+  proto._processFormData = function (event, form, formData) {
+    return foundry.utils.expandObject(foundry.utils.deepClone(formData.object || {}));
+  };
+  return () => { proto._processFormData = original; };
+}
+
+function sheetWithTypedForm(document, flatObject) {
+  const sheet = sheetFor(document);
+  sheet.form = {_testObject: flatObject};
+  sheet.renderCalls = 0;
+  sheet.render = async function (options) { this.renderCalls += 1; this.renderOptions = options; return this; };
+  return sheet;
+}
+
+const TYPED_FLAT = () => ({
+  description: "Typed description",
+  "duration.value": 4,
+  "duration.units": "rounds",
+  "duration.expiry": "",
+  "system.changes.0.key": "system.modifiers.protection",
+  "system.changes.0.type": "add",
+  "system.changes.0.value": "2",
+  "system.changes.0.priority": "",
+  "system.changes.0.phase": "final"
+});
+
+function typedDocument() {
+  const document = {
+    isOwner: true,
+    _source: {description: "", duration: {value: 0, units: "rounds"}, system: {stages: [], changes: []}},
+    description: "",
+    duration: {value: 0, units: "rounds"},
+    system: {stages: [], changes: [], stage: 0},
+    updates: [],
+    update: async function (payload) { this.updates.push(deepClone(payload)); return this; }
+  };
+  return document;
+}
+
+test("TrudvangEffectSheet onAddChange preserves typed content with a single update", async () => {
+  const restoreCore = stubCoreFormTransform();
+  const originalFDE = globalThis.foundry.utils.FormDataExtended;
+  globalThis.foundry.utils.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
+  try {
+    const document = typedDocument();
+    const sheet = sheetWithTypedForm(document, TYPED_FLAT());
+    await TrudvangEffectSheet.onAddChange.call(sheet);
+    assert.equal(document.updates.length, 1, "structural action must persist through ONE document.update");
+    const payload = document.updates[0];
+    assert.ok(!Object.keys(payload).some(key => key.includes(".")), "payload must use nested assignments, never dotted keys");
+    assert.equal(payload.description, "Typed description", "typed description must survive the row button");
+    assert.equal(payload.duration?.value, 4, "typed duration must survive the row button");
+    assert.equal(payload.system.changes.length, 2, "typed row plus one appended blank row");
+    assert.equal(payload.system.changes[0].key, "system.modifiers.protection", "typed row key must be kept");
+    assert.equal(payload.system.changes[0].value, "2", "typed row value must be kept");
+    assert.deepEqual(payload.system.changes[1], {key: "", type: "add", value: "0", priority: null, phase: "final"});
+    assert.equal(sheet.renderCalls, 1, "sheet must re-render once after the update");
+  } finally {
+    restoreCore();
+    if (originalFDE === undefined) delete globalThis.foundry.utils.FormDataExtended;
+    else globalThis.foundry.utils.FormDataExtended = originalFDE;
+  }
+});
+
+test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other rows", async () => {
+  const restoreCore = stubCoreFormTransform();
+  const originalFDE = globalThis.foundry.utils.FormDataExtended;
+  globalThis.foundry.utils.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
+  try {
+    const document = typedDocument();
+    const flat = {
+      ...TYPED_FLAT(),
+      "system.changes.1.key": "system.modifiers.movement",
+      "system.changes.1.type": "add",
+      "system.changes.1.value": "3",
+      "system.changes.1.priority": "",
+      "system.changes.1.phase": "final"
+    };
+    const sheet = sheetWithTypedForm(document, flat);
+    const target = {closest: () => ({dataset: {changeIndex: "0"}})};
+    await TrudvangEffectSheet.onDeleteChange.call(sheet, {}, target);
+    assert.equal(document.updates.length, 1, "structural action must persist through ONE document.update");
+    const payload = document.updates[0];
+    assert.equal(payload.description, "Typed description", "typed description must survive the row button");
+    assert.equal(payload.duration?.value, 4, "typed duration must survive the row button");
+    assert.equal(payload.system.changes.length, 1, "deleting one of two rows keeps the other");
+    assert.equal(payload.system.changes[0].key, "system.modifiers.movement", "the surviving row must be kept");
+    assert.equal(payload.system.changes[0].value, "3", "the surviving row value must be kept");
+    assert.equal(sheet.renderCalls, 1, "sheet must re-render once after the update");
+  } finally {
+    restoreCore();
+    if (originalFDE === undefined) delete globalThis.foundry.utils.FormDataExtended;
+    else globalThis.foundry.utils.FormDataExtended = originalFDE;
+  }
+});
+
+test("TrudvangEffectSheet trudvang tab exposes no stacking UI", async () => {
+  const template = readFileSync(new URL("../templates/effect/effect-rules.hbs", import.meta.url), "utf8");
+  assert.ok(!template.includes("system.stacking"), "no stacking select may remain in the Trudvang tab");
+  assert.ok(!template.includes("stackId"), "no stackId input may remain in the Trudvang tab");
+  assert.ok(!template.includes("potency"), "no potency input may remain in the Trudvang tab");
+  assert.ok(!template.includes("stackingChoices"), "no stacking choices binding may remain in the Trudvang tab");
+
+  const document = {isOwner: true, system: {stages: [], stacking: "stack", stackId: "fire", potency: 5}};
+  const ctx = await sheetFor(document)._preparePartContext("trudvang", {});
+  assert.ok(!("stackingChoices" in ctx), "trudvang context must drop the now-unused stackingChoices");
 });

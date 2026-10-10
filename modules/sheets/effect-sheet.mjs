@@ -56,6 +56,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
       partContext.editable = this.isEditable;
+      partContext.description = this.document._source?.description ?? this.document.description ?? "";
       partContext.enrichedDescription = await TextEditorImpl.enrichHTML(
         this.document.description || "",
         {async: true, secrets: this.document.isOwner}
@@ -128,12 +129,6 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "trudvang") {
       partContext.tab = partContext.tabs.trudvang;
-      partContext.stackingChoices = {
-        stack: game.i18n.localize("TRUDVANG.Effect.Stack"),
-        refresh: game.i18n.localize("TRUDVANG.Effect.Refresh"),
-        replace: game.i18n.localize("TRUDVANG.Effect.Replace"),
-        highest: game.i18n.localize("TRUDVANG.Effect.Highest")
-      };
       partContext.durationUnits = DURATION_UNITS.reduce((choices, unit) => {
         choices[unit] = game.i18n.localize(`EFFECT.DURATION.UNITS.${unit}`);
         return choices;
@@ -234,42 +229,59 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   /*  Stage actions (Trudvang tab)                                       */
   /* ------------------------------------------------------------------ */
 
+  // Silently persist the live form through the existing submit pipeline so
+  // structural buttons (add/delete stage or change row) never discard
+  // typed-but-unsaved content. Returns the nested submit payload which each
+  // caller then extends with its structural change before a single update.
+  static async #silentSubmitData(sheet) {
+    const formData = new foundry.utils.FormDataExtended(sheet.form);
+    return sheet._processFormData(new Event("submit"), sheet.form, formData);
+  }
+
   static async onAddStage() {
-    const stages = foundry.utils.deepClone(this.document._source.system.stages || []);
+    if (!this.form) return;
+    const silent = await TrudvangEffectSheet.#silentSubmitData(this);
+    silent.system ??= {};
+    const stages = foundry.utils.deepClone(
+      Array.isArray(silent.system.stages) ? silent.system.stages : (this.document._source.system.stages || [])
+    );
     stages.push({label: "", durationValue: 1, durationUnit: "rounds", changes: []});
-    const update = {"system.stages": stages};
+    silent.system.stages = stages;
     if (stages.length === 1) {
-      update["system.stage"] = 0;
-      update["system.changes"] = [];
-      update.duration = {value: 1, units: "rounds", expired: false};
-      update.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
+      silent.system.stage = 0;
+      silent.system.changes = [];
+      silent.duration = {value: 1, units: "rounds", expired: false};
+      silent.start = foundry.documents.ActiveEffect.implementation.getEffectStart();
     }
-    await this.document.update(update);
+    await this.document.update(silent);
     return this.render({force: true});
   }
 
   static async onDeleteStage(event, target) {
+    if (!this.form) return;
     const index = Number(target.closest("[data-stage-index]")?.dataset.stageIndex);
-    const stages = foundry.utils.deepClone(this.document._source.system.stages || []);
+    const silent = await TrudvangEffectSheet.#silentSubmitData(this);
+    silent.system ??= {};
+    const stages = foundry.utils.deepClone(
+      Array.isArray(silent.system.stages) ? silent.system.stages : (this.document._source.system.stages || [])
+    );
     if (!Number.isInteger(index) || index < 0 || index >= stages.length) return;
     let stageIndex = Number(this.document.system.stage || 0);
     stages.splice(index, 1);
     if (index < stageIndex) stageIndex -= 1;
     else if (index === stageIndex) stageIndex = Math.min(stageIndex, Math.max(0, stages.length - 1));
     const stage = stages[stageIndex];
-    const update = {
-      "system.stages": stages,
-      "system.stage": stageIndex,
-      "system.changes": foundry.utils.deepClone(stage?.changes || []),
-      duration: stage ? {
-        value: Number(stage.durationValue || 0),
-        units: stage.durationUnit || "seconds",
-        expiry: null,
-        expired: false
-      } : {value: null, units: null, expiry: null, expired: false},
-      start: stage ? foundry.documents.ActiveEffect.implementation.getEffectStart() : null
-    };
-    await this.document.update(update);
+    silent.system.stages = stages;
+    silent.system.stage = stageIndex;
+    silent.system.changes = foundry.utils.deepClone(stage?.changes || []);
+    silent.duration = stage ? {
+      value: Number(stage.durationValue || 0),
+      units: stage.durationUnit || "seconds",
+      expiry: null,
+      expired: false
+    } : {value: null, units: null, expiry: null, expired: false};
+    silent.start = stage ? foundry.documents.ActiveEffect.implementation.getEffectStart() : null;
+    await this.document.update(silent);
     return this.render({force: true});
   }
 
@@ -278,18 +290,30 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   /* ------------------------------------------------------------------ */
 
   static async onAddChange() {
-    const changes = foundry.utils.deepClone(this.document._source.system?.changes || []);
+    if (!this.form) return;
+    const silent = await TrudvangEffectSheet.#silentSubmitData(this);
+    silent.system ??= {};
+    const changes = foundry.utils.deepClone(
+      Array.isArray(silent.system.changes) ? silent.system.changes : (this.document._source.system?.changes || [])
+    );
     changes.push({key: "", type: "add", value: "0", priority: null, phase: "final"});
-    await this.document.update({"system.changes": changes});
+    silent.system.changes = changes;
+    await this.document.update(silent);
     return this.render({force: true});
   }
 
   static async onDeleteChange(event, target) {
+    if (!this.form) return;
     const index = Number(target.closest("[data-change-index]")?.dataset.changeIndex);
-    const changes = foundry.utils.deepClone(this.document._source.system?.changes || []);
+    const silent = await TrudvangEffectSheet.#silentSubmitData(this);
+    silent.system ??= {};
+    const changes = foundry.utils.deepClone(
+      Array.isArray(silent.system.changes) ? silent.system.changes : (this.document._source.system?.changes || [])
+    );
     if (!Number.isInteger(index) || index < 0 || index >= changes.length) return;
     changes.splice(index, 1);
-    await this.document.update({"system.changes": changes});
+    silent.system.changes = changes;
+    await this.document.update(silent);
     return this.render({force: true});
   }
 }

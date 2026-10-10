@@ -2,7 +2,7 @@
   <fieldset>
     <legend>{{localize "EFFECT.Description"}}</legend>
     <div class="form-group stacked">
-      {{editor enrichedDescription target="description" button=true editable=editable}}
+      <prose-mirror name="description" button="true" editable="{{editable}}" toggled="false" value="{{description}}">{{{enrichedDescription}}}</prose-mirror>
     </div>
   </fieldset>
   <fieldset>
