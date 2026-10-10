@@ -12,7 +12,6 @@
  */
 import {ignoresWoundPenalties} from "./rules/npc-summary.mjs";
 import {resolveNpcPreparedAction} from "./rules/npc-prepared-actions.mjs";
-import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
 import {resolveFearStatus} from "./rules/fear-resolver.mjs";
 
 export const COMBAT_DOCK_SYSTEM_ID = "trudvang-chronicles";
@@ -229,13 +228,11 @@ export function buildPreparedIcons(actor) {
 
 /**
  * Tooltip description (plain text: the dock module escapes this field, so markup
- * would display as raw tags): NPC prepared-attack list (name + points +
- * used state, NON-clickable), quantified health/fear effect lines, and a
- * reserves reminder. Tooltips cannot host working buttons — the dock module
- * registers zero tooltip listeners and hover tears tooltips down — so the
- * prepared list is plain text here; rolling happens through the clickable
- * portrait icons from buildPreparedIcons() instead. The module already renders
- * the active-effects list itself, so this description never repeats it.
+ * would display as raw tags): quantified health/fear lines plus a reserves
+ * reminder. The module already renders the active-effects list itself, so this
+ * description never repeats it. (No prepared-attack list: unreadable in one
+ * line, and tooltips cannot host working buttons — rolling happens through
+ * the clickable portrait icons from buildPreparedIcons() instead.)
  */
 export function buildDockDescription(actor) {
   if (!actor) return "";
@@ -284,24 +281,6 @@ export function buildDockDescription(actor) {
     reserves.push(`${value}/${finiteNumber(reserve.max, 0)} ${units}`);
   }
   parts.push(escapeDockHtml(format("TRUDVANG.CombatDock.ReservesLine", {reserves: reserves.join(" · ")})));
-  if (actor.type === "npc") {
-    const steps = preparedSteps(actor);
-    if (steps.length) {
-      const rows = actorStateRollModifiers(actor).map(row => `${row.value > 0 ? `+${row.value}` : row.value}`).join(", ");
-      const items = steps.map(step => {
-        const line = escapeDockHtml(format("TRUDVANG.CombatDock.PreparedRow",
-          {name: step.action.name ?? step.row?.attack ?? "", points: step.action.points ?? 0,
-            available: step.action.available ?? 0}));
-        const used = step.used ? ` (${escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedUsed", "used"))})` : "";
-        return `${line}${used}`;
-      }).join(", ");
-      let title = escapeDockHtml(localize("TRUDVANG.CombatDock.PreparedTitle", "Prepared attacks"));
-      if (rows) title += ` (${escapeDockHtml(rows)})`;
-      parts.push(`${title} : ${items}`);
-    } else {
-      parts.push(escapeDockHtml(localize("TRUDVANG.CombatDock.NoPrepared", "No prepared actions")));
-    }
-  }
   // Joined as plain text: see the note above about module-side escaping.
   return parts.join(" · ");
 }

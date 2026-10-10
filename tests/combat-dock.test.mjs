@@ -186,9 +186,8 @@ test("description lists prepared attacks non-clickably with quantified effects a
   const npc = npcStub();
   npc.system.usedPreparedActions = ["0:0"];
   const html = buildDockDescription(npc);
-  assert.match(html, /Claws/);
-  assert.match(html, /4/);
-  assert.match(html, new RegExp(localize("TRUDVANG.CombatDock.PreparedUsed")));
+  assert.doesNotMatch(html, /Claws/, "no prepared-attack list in the tooltip");
+  assert.doesNotMatch(html, new RegExp(localize("TRUDVANG.CombatDock.PreparedTitle")));
   assert.doesNotMatch(html, /<button/);
   assert.match(html, /-1/);
   assert.match(html, /12/);
@@ -198,12 +197,11 @@ test("description lists prepared attacks non-clickably with quantified effects a
   assert.doesNotMatch(html, /<[a-z]/i, "tooltip description must stay tag-free (module escapes it)");
 });
 
-test("description escapes actor-controlled text", () => {
+test("description contains no actor-controlled attack names", () => {
   const npc = npcStub();
   npc.system.attacks = [[{attack: "<script>alert(1)</script>", value: 99}]];
   const html = buildDockDescription(npc);
-  assert.doesNotMatch(html, /<script>/);
-  assert.match(html, /&lt;script&gt;/);
+  assert.doesNotMatch(html, /script/);
   assert.equal(escapeDockHtml('<a href="x">&'), "&lt;a href=&quot;x&quot;&gt;&amp;");
 });
 
@@ -241,7 +239,7 @@ test("handler wires config defensively and subclasses the portrait", async () =>
   assert.ok(data.attributes.length >= 3);
   assert.ok(data.attributes.some(entry => entry.units === "VP"));
   assert.equal(typeof data.description, "string");
-  assert.match(data.description, /Claws/);
+  assert.doesNotMatch(data.description, /Claws/, "no prepared list in tooltip (icons stay clickable)");
   assert.ok(Array.isArray(data.resSystemIcons));
   assert.equal(data.resSystemIcons.length, 1);
   warnings.length = 0;
@@ -299,7 +297,7 @@ test("without the module nothing is registered and nothing changes", () => {
 
 test("new CombatDock keys exist in both languages", () => {
   for (const key of ["HealthUnits", "CombatUnits", "VitnerUnits", "DivinityUnits",
-    "PreparedTitle", "NoPrepared", "PreparedRow", "PreparedUsed", "IconTitle",
+    "IconTitle",
     "HealthLine", "EffectsLine", "FearLine", "ReservesLine", "TenaceNote"]) {
     assert.ok(typeof en.TRUDVANG.CombatDock[key] === "string", `missing en ${key}`);
     assert.ok(typeof fr.TRUDVANG.CombatDock[key] === "string", `missing fr ${key}`);

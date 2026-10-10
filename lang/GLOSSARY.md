@@ -427,10 +427,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.CombatDock.CombatUnits` | CP | PC |
 | `TRUDVANG.CombatDock.VitnerUnits` | VP | PV |
 | `TRUDVANG.CombatDock.DivinityUnits` | DP | PD |
-| `TRUDVANG.CombatDock.PreparedTitle` | Prepared attacks | Attaques préparées |
-| `TRUDVANG.CombatDock.NoPrepared` | No prepared actions | Aucune action préparée |
-| `TRUDVANG.CombatDock.PreparedRow` | {name}: {points} CP planned ({available} available) | {name} : {points} PC prévus ({available} disponibles) |
-| `TRUDVANG.CombatDock.PreparedUsed` | used | utilisée |
 | `TRUDVANG.CombatDock.IconTitle` | {name} · {points} CP | {name} · {points} PC |
 | `TRUDVANG.CombatDock.HealthLine` | Health {current}/{max} ({state}) | Santé {current}/{max} ({state}) |
 | `TRUDVANG.CombatDock.EffectsLine` | Wound {wound}, fear {fear} | Blessures {wound}, peur {fear} |
