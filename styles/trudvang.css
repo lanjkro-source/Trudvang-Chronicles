@@ -479,6 +479,10 @@
 .trudvang.effect-sheet .editor-container > prose-mirror { display: flex; flex-direction: column; flex: 1; width: 100%; max-width: 100%; min-height: 150px; color: var(--trudvang-ink); }
 .trudvang.effect-sheet .editor-container .ProseMirror,
 .trudvang.effect-sheet .editor-container .editor-content { width: 100%; max-width: 100%; box-sizing: border-box; }
+/* Toggled prose-mirror button: force a clickable box and a guaranteed glyph
+ * (fa-edit alias may be absent from the shipped FA subset). */
+.trudvang.effect-sheet prose-mirror > button.toggle { min-width: 26px; min-height: 26px; }
+.trudvang.effect-sheet prose-mirror > button.toggle i.fa-edit::before { content: "\f044"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
 
 .trudvang.effect-sheet button {
   color: var(--trudvang-ink);
@@ -811,6 +815,8 @@
 .trudvang-tablet-picker { max-height: 420px; overflow-y: auto; display: grid; gap: 5px; padding: 4px; }
 .trudvang-tablet-picker .tablet-picker-option { display: flex; align-items: flex-start; gap: 7px; padding: 7px; color: var(--trudvang-ink); border: 1px solid var(--trudvang-line); border-radius: 4px; background: var(--trudvang-paper-light); cursor: pointer; }
 .trudvang-tablet-picker .tablet-picker-option:has(input:checked) { border-color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
+.trudvang-tablet-picker .tablet-picker-option:has(input:checked),
+.trudvang-tablet-picker .tablet-picker-option:has(input:checked) small { color: var(--trudvang-on-header); }
 .trudvang-tablet-picker .tablet-picker-option input { margin: 2px 0 0; flex: none; }
 .trudvang-tablet-picker .tablet-picker-option strong { display: block; }
 .trudvang-tablet-picker .tablet-picker-option small { display: block; margin-top: 2px; color: var(--trudvang-muted); }
