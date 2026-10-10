@@ -830,7 +830,15 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.EditInitialTraits` | Edit initial traits | Modifier les traits initiaux |
 | `TRUDVANG.Npc.EditSkills` | Configure skills | Régler les compétences |
 | `TRUDVANG.Npc.NoLearnedSkills` | No skill above level 1, learned discipline or specialty. | Aucune compétence au-delà du niveau 1, discipline ou spécialité apprise. |
+| `TRUDVANG.Npc.AddKnowledge` | Add a discipline or specialty | Ajouter une discipline ou spécialité |
+| `TRUDVANG.Npc.KnowledgePickerTitle` | Add NPC knowledge | Ajouter une connaissance au PNJ |
+| `TRUDVANG.Npc.KnowledgeParentHint` | Parent discipline: {parent} | Discipline parente : {parent} |
+| `TRUDVANG.Npc.NoAvailableKnowledge` | No further disciplines or specialties available. | Aucune autre discipline ou spécialité disponible. |
 | `TRUDVANG.Npc.NoCapacities` | No abilities. | Aucune capacité. |
+| `TRUDVANG.Npc.AddCapacity` | Add a capacity | Ajouter une capacité |
+| `TRUDVANG.Npc.CapacityPickerTitle` | Add NPC capacity | Ajouter une capacité au PNJ |
+| `TRUDVANG.Npc.NoAvailableCapacity` | No further capacities available. | Aucune autre capacité disponible. |
+| `TRUDVANG.Npc.DeleteCapacity` | Delete capacity | Supprimer la capacité |
 | `TRUDVANG.Npc.NoWeapons` | No weapons in the inventory. | Aucune arme dans l’inventaire. |
 | `TRUDVANG.Npc.NoProtection` | No armor or shields in the inventory. | Aucune armure ni aucun bouclier dans l’inventaire. |
 | `TRUDVANG.Npc.DefaultInventoryHint` | The creature’s default inventory is inherited by each new unlinked token. Changes made on a token do not change this model. | Inventaire par défaut de la créature, transmis à chaque nouveau token non lié. Les modifications faites sur un token ne modifient pas ce modèle. |

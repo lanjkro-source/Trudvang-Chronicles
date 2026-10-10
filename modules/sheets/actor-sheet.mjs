@@ -9,6 +9,7 @@ import { formatFearFactor, parseFearFactor, resolveFearStatus } from "../rules/f
 import {activeSpellInstances} from "../rules/active-spell-resolver.mjs";
 import {ignoresWoundPenalties, npcBookSkillRows, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../rules/npc-summary.mjs";
 import {deterministicId} from "../skill-pack-data.mjs";
+import {creatureAbilityItemData} from "../bestiary-pack-data.mjs";
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 import {powerIconClassForItem} from "../power-icons.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../creature-ability-data.mjs";
@@ -98,6 +99,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       "generic-combat-action": TrudvangActorSheet.#onAction,
       "item-create": TrudvangActorSheet.#onAction,
       "add-tablet": TrudvangActorSheet.#onAction,
+      "add-npc-knowledge": TrudvangActorSheet.#onAction,
+      "add-npc-capacity": TrudvangActorSheet.#onAction,
+      "capacity-delete": TrudvangActorSheet.#onAction,
       "toggle-tree": TrudvangActorSheet.#onAction,
       "toggle-zero-knowledge": TrudvangActorSheet.#onAction,
       "toggle-inactive-magic": TrudvangActorSheet.#onAction,
@@ -498,7 +502,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     const rerenderingActions = new Set([
       "adjust-trait", "adjust-skill", "adjust-item-level", "adjust-catalog-knowledge",
       "toggle-creation-mode", "confirm-advancement", "cancel-advancement", "item-delete",
-      "item-equip", "item-ready", "item-create", "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
+      "item-equip", "item-ready", "item-create", "add-npc-knowledge", "add-npc-capacity", "capacity-delete",
+      "show-catalog-detail", "effect-add", "effect-toggle", "effect-delete",
       "reset-traits", "npc-prepared-action", "reset-combat", "restore-vitner"
     ]);
     if (rerenderingActions.has(action)) this._captureViewState(root);
@@ -560,6 +565,9 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       case "generic-combat-action": return this.actor.spendGenericCombatAction();
       case "item-create": return this._createItem(target.dataset.type, {natural: target.dataset.natural === "true"});
       case "add-tablet": return this._openTabletPicker();
+      case "add-npc-knowledge": return this._openNpcKnowledgePicker();
+      case "add-npc-capacity": return this._openNpcCapacityPicker();
+      case "capacity-delete": return effect ? effect.delete() : null;
       case "toggle-tree": {
         const details = target.closest("details");
         if (details) details.open = !details.open;
@@ -973,6 +981,81 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         label: game.i18n.localize("TRUDVANG.Action.Add"),
         callback: (event, button, dialog) => this.actor.addTabletFromCatalog((button.form ?? dialog.element)?.querySelector('[name="tabletId"]:checked')?.value)
       },
+      cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
+      modal: false,
+      rejectClose: false
+    });
+  }
+
+  /** NPC knowledge picker: catalogue disciplines/specialties not yet learned; creates a level-0 embedded ability. */
+  _openNpcKnowledgePicker() {
+    if (this.actor.type !== "npc" || !this.isEditable) return null;
+    const options = [];
+    for (const [skillKey, disciplines] of Object.entries(TRUDVANG.knowledgeTree)) {
+      for (const discipline of disciplines) {
+        if (!this.actor.findKnowledgeItem(discipline.id)) {
+          options.push({id: discipline.id, kind: "discipline",
+            label: game.i18n.localize(discipline.label), parent: game.i18n.localize(TRUDVANG.skills[skillKey])});
+        }
+        for (const specialty of discipline.specialties) {
+          if (!this.actor.findKnowledgeItem(specialty.id)) {
+            options.push({id: specialty.id, kind: "specialty",
+              label: game.i18n.localize(specialty.label),
+              parent: game.i18n.format("TRUDVANG.Npc.KnowledgeParentHint", {parent: game.i18n.localize(discipline.label)})});
+          }
+        }
+      }
+    }
+    if (!options.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.NoAvailableKnowledge"));
+    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+    const rows = options.map((option, index) => `<label class="tablet-picker-option"><input type="radio" name="knowledgeId" value="${escapeHtml(option.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(option.label)}</strong><small>${escapeHtml(option.parent)}</small></span></label>`).join("");
+    return DialogClass.prompt({
+      window: {title: game.i18n.localize("TRUDVANG.Npc.KnowledgePickerTitle")},
+      content: `<div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Npc.KnowledgePickerTitle"))}">${rows}</div>`,
+      ok: {icon: "fas fa-plus", label: game.i18n.localize("TRUDVANG.Action.Add"),
+        callback: (event, button, dialog) => {
+          const catalogId = (button.form ?? dialog.element)?.querySelector('[name="knowledgeId"]:checked')?.value;
+          if (!catalogId) return null;
+          const entry = this.actor.getCatalogEntry(catalogId);
+          if (entry?.kind === "specialty" && Number(this.actor.findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) {
+            return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
+          }
+          return this._openKnowledgeSheet(catalogId);
+        }},
+      cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
+      modal: false,
+      rejectClose: false
+    });
+  }
+
+  /** NPC capacity picker: catalogue-linked creatureAbility items; legacy flagged effects are only deleted, never created here. */
+  _openNpcCapacityPicker() {
+    if (this.actor.type !== "npc" || !this.isEditable) return null;
+    const owned = new Set(this.actor.items.filter(item => item.type === "creatureAbility").map(item => item.system.catalogId));
+    const options = Object.entries(CREATURE_ABILITY_REFERENCES).filter(([, reference]) => !owned.has(reference.id));
+    if (!options.length) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Npc.NoAvailableCapacity"));
+    const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+    const rows = options.map(([name, reference], index) => `<label class="tablet-picker-option"><input type="radio" name="capacityId" value="${escapeHtml(reference.id)}" ${index === 0 ? "checked" : ""}><span><strong>${escapeHtml(name)}</strong></span></label>`).join("");
+    return DialogClass.prompt({
+      window: {title: game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle")},
+      content: `<div class="trudvang-tablet-picker" role="radiogroup" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Npc.CapacityPickerTitle"))}">${rows}</div>`,
+      ok: {icon: "fas fa-plus", label: game.i18n.localize("TRUDVANG.Action.Add"),
+        callback: async (event, button, dialog) => {
+          const catalogId = (button.form ?? dialog.element)?.querySelector('[name="capacityId"]:checked')?.value;
+          if (!catalogId) return null;
+          const name = Object.entries(CREATURE_ABILITY_REFERENCES).find(([, reference]) => reference.id === catalogId)?.[0] ?? catalogId;
+          let data;
+          try {
+            const entry = {id: catalogId, pages: CREATURE_ABILITY_REFERENCES[name]?.pages ?? {fr: 0, en: 0}};
+            data = creatureAbilityItemData(entry, {code: game.i18n.lang === "en" ? "en" : "fr",
+              localize: key => game.i18n.localize(key), strict: false});
+            if (!data.name || data.name === `TRUDVANG.Content.CreatureAbility.${catalogId}.Name`) data.name = name;
+          } catch {
+            data = null;
+          }
+          const [item] = await this.actor.createEmbeddedDocuments("Item", [data ?? {name, type: "creatureAbility", system: {catalogId}}]);
+          return item;
+        }},
       cancel: {label: game.i18n.localize("TRUDVANG.Action.Cancel")},
       modal: false,
       rejectClose: false

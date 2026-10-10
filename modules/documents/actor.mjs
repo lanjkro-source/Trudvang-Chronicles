@@ -566,6 +566,9 @@ export class TrudvangActor extends BaseActor {
   }
 
   async adjustItemLevel(item, direction) {
+    // NPC knowledge/capacity edits are GM fiat: direct level changes with the
+    // same hierarchy gates as PCs, but never any XP/adventure-point payment.
+    if (this.type === "npc") return this.adjustNpcItemLevel(item, direction);
     if (!this.system.experience?.creationMode) {
       if (direction < 0) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.CreationModeRequired"));
       return this.advanceItem(item);
@@ -590,6 +593,11 @@ export class TrudvangActor extends BaseActor {
   }
 
   async adjustCatalogKnowledge(catalogId, direction, hand = "weapon") {
+    // NPC knowledge/capacity edits are GM fiat: direct level changes with the
+    // same hierarchy gates as PCs, but never any XP/adventure-point payment.
+    // Embedded ability items stay the source of truth; system.skillTree book
+    // rows are never edited by the UI.
+    if (this.type === "npc") return this.adjustNpcCatalogKnowledge(catalogId, direction, hand);
     const entry = this.getCatalogEntry(catalogId);
     if (!entry) return;
     let item = this.findKnowledgeItem(catalogId);
@@ -642,6 +650,69 @@ export class TrudvangActor extends BaseActor {
     if (religion) await this.update({"system.details.religion": religion.id});
     await this.update({"system.experience.adventureAvailable": available - cost, "system.experience.adventureSpent": Number(this.system.experience.adventureSpent || 0) + cost});
     return this._queueAdvancement({kind: "item", itemId: item.id, field: levelField, from: 0, to: 1, cost, created: true});
+  }
+
+  /** NPC GM-fiat knowledge editing: same hierarchy gates as PCs, no XP cost. Book rows untouched. */
+  async adjustNpcCatalogKnowledge(catalogId, direction, hand = "weapon") {
+    const entry = this.getCatalogEntry(catalogId);
+    if (!entry) return;
+    const item = this.findKnowledgeItem(catalogId);
+    const levelField = hand === "offHand" && SEPARATE_HAND_SPECIALTIES.has(catalogId) ? "offHandLevel" : "level";
+    const current = Number(item?.system?.[levelField] || 0);
+    if (direction < 0) {
+      const minimum = levelField === "level" ? Number(item?.system.freeLevels || 0) : 0;
+      if (!item || current <= minimum) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
+      if (entry.kind === "discipline") {
+        const hasSpecialties = entry.specialties.some(specialty => {
+          const specialtyItem = this.findKnowledgeItem(specialty.id);
+          return Math.max(Number(specialtyItem?.system.level || 0), Number(specialtyItem?.system.offHandLevel || 0)) > 0;
+        });
+        if (current === 1 && hasSpecialties) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DisciplineSupportsSpecialty"));
+      }
+      if (current === 1 && Number(item.system[levelField === "level" ? "offHandLevel" : "level"] || 0) === 0) return item.delete();
+      return item.update({[`system.${levelField}`]: current - 1});
+    }
+    if (current >= 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.LevelMaximum"));
+    const restriction = this.catalogKnowledgeRestriction(catalogId);
+    if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
+    const next = current + 1;
+    const requirement = this.getRequiredSkillValue(next);
+    if (Number(this.getSkillValue(entry.skillKey) || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
+    if (entry.kind === "specialty" && Number(this.findKnowledgeItem(entry.parentCatalogId)?.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
+    if (item) return item.update({[`system.${levelField}`]: next});
+    const name = game.i18n.localize(entry.label);
+    const discipline = entry.parentCatalogId ? this.getCatalogEntry(entry.parentCatalogId) : null;
+    const topics = entry.kind === "discipline" ? new Intl.ListFormat(game.i18n.lang, {style: "long", type: "conjunction"}).format(entry.specialties.map(specialty => game.i18n.localize(specialty.label))) : "";
+    const description = this.catalogText(catalogId, "Description") || (TRUDVANG.knowledgeDescriptions[entry.id] ? game.i18n.localize(TRUDVANG.knowledgeDescriptions[entry.id]) : entry.kind === "discipline"
+      ? game.i18n.format("TRUDVANG.Description.DisciplineSummary", {name, topics})
+      : game.i18n.format("TRUDVANG.Description.SpecialtySummary", {name, discipline: discipline ? game.i18n.localize(discipline.label) : entry.parentDiscipline}));
+    const summary = this.catalogText(catalogId, "Summary") || description;
+    const data = {name, type: "ability", system: {description, summary, catalogId, kind: entry.kind, parentSkill: entry.skillKey, parentDiscipline: entry.parentDiscipline, level: levelField === "level" ? 1 : 0, offHandLevel: levelField === "offHandLevel" ? 1 : 0, rollBonus: entry.rollBonus}};
+    const created = await this.createEmbeddedDocuments("Item", [data]);
+    const religion = this.getReligionForSpecialty(catalogId);
+    if (religion) await this.update({"system.details.religion": religion.id});
+    return created;
+  }
+
+  /** NPC GM-fiat embedded-item level editing (custom/unassigned rows): no XP cost. */
+  async adjustNpcItemLevel(item, direction) {
+    if (!item || !["ability", "tablet"].includes(item.type)) return;
+    const current = Number(item.system.level ?? 0);
+    const next = current + Math.sign(direction);
+    if (next < 0 || next > 5) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.KnowledgeLimit"));
+    if (direction > 0) {
+      const restriction = item.system.catalogId ? this.catalogKnowledgeRestriction(item.system.catalogId) : null;
+      if (restriction) return ui.notifications.warn(game.i18n.localize(restriction));
+      const skillKey = this.getKnowledgeSkillKey(item);
+      const requirement = this.getRequiredSkillValue(next);
+      if (Number(this.getSkillValue(skillKey) || 1) < requirement) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.SkillRequirement", {sv: requirement}));
+      if (item.type === "ability" && item.system.kind === "specialty") {
+        const parent = this.findParentDiscipline(item);
+        if (!parent || Number(parent.system.level || 0) < 1) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.ParentDisciplineRequired"));
+      }
+    }
+    if (next === 0) return item.delete();
+    return item.update({"system.level": next});
   }
 
   async advanceKnowledgeTrack(item, levelField = "level") {
