@@ -10,6 +10,7 @@ import {TrudvangCreatureAbilityItemSheet} from "./modules/sheets/creature-abilit
 import { registerHandlebarsHelpers } from "./modules/helpers.mjs";
 import { ensureGenericSituationMacro, ensureTraitSituationMacro, importStarterContent, repairKnowledgePacks, syncImportedKnowledgeItems } from "./modules/content-importer.mjs";
 import { registerChatListeners } from "./modules/chat.mjs";
+import { registerCombatDockSupport } from "./modules/combat-dock.mjs";
 import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules/portrait.mjs";
 import {registerCompendiumIcons} from "./modules/compendium-capacity-icons.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
@@ -28,6 +29,7 @@ Hooks.once("init", () => {
   // ready), so this must be registered at init — a ready-time Hooks.on would
   // never fire. Socket setup stays in ready (needs game.socket).
   registerPortraitDirectoryHook();
+  registerCombatDockSupport();
   registerExtractStageDirectoryIcon();
   registerCompendiumIcons();
   Object.assign(CONFIG.Actor.dataModels, ACTOR_DATA_MODELS);

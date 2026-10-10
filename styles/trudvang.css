@@ -960,3 +960,65 @@
   .trudvang-sheet .knowledge-node { grid-template-columns: 25px 25px minmax(100px,1fr) 70px 38px 76px 24px 24px; }
   .trudvang-sheet .tablet-node { grid-template-columns: 25px minmax(100px,1fr) 70px 38px 76px 24px; }
 }
+
+/* Combat-tracker-dock support (TheRipper93 module, classes as of 5.0.2).
+ * All selectors stay scoped under .combat-dock so the base system is
+ * untouched when the module is absent. */
+.combat-dock .combatant-wrapper {
+  /* Browser default smoothing; true resampling control is impossible on CSS
+   * backgrounds — larger portraitSize + overflow hidden in the module settings
+   * is the real lever for sharper portraits. */
+  image-rendering: auto;
+  background-size: cover;
+  background-position: top center;
+}
+/* Dark pill/backdrop behind the initiative pip for readability. */
+.combat-dock .roll-initiative,
+.combat-dock .initiative-pip,
+.combat-dock .combatant-initiative {
+  background: color-mix(in srgb, var(--trudvang-header) 82%, transparent);
+  border-radius: 999px;
+  color: var(--trudvang-on-header);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--trudvang-header) 85%, transparent), 0 0 6px color-mix(in srgb, var(--trudvang-header) 70%, transparent);
+}
+/* Dark backdrop behind hover function buttons. */
+.combat-dock .combatant-wrapper .action,
+.combat-dock .combatant-wrapper button.action,
+.combat-dock .combatant-actions button {
+  background: color-mix(in srgb, var(--trudvang-header) 82%, transparent);
+  border-radius: 6px;
+  color: var(--trudvang-on-header);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--trudvang-header) 85%, transparent);
+}
+.combat-dock .combatant-wrapper .action:hover,
+.combat-dock .combatant-wrapper button.action:hover,
+.combat-dock .combatant-actions button:hover,
+.combat-dock .combatant-wrapper .action:focus-visible,
+.combat-dock .combatant-wrapper button.action:focus-visible {
+  background: color-mix(in srgb, var(--trudvang-header-alt) 88%, transparent);
+  color: var(--trudvang-on-header);
+}
+/* Dark backdrop behind tracked resource values. */
+.combat-dock .combatant-wrapper .resource,
+.combat-dock .combatant-wrapper .resource-value,
+.combat-dock .combatant-resources .resource,
+.combat-dock .attribute .resource-value {
+  background: color-mix(in srgb, var(--trudvang-header) 78%, transparent);
+  border-radius: 6px;
+  color: var(--trudvang-on-header);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--trudvang-header) 85%, transparent), 0 0 6px color-mix(in srgb, var(--trudvang-header) 70%, transparent);
+}
+/* Readable dock tooltip. */
+.combat-dock .combat-dock-tooltip,
+.combat-dock-tooltip {
+  background: color-mix(in srgb, var(--trudvang-header) 94%, transparent);
+  border: 1px solid var(--trudvang-gold);
+  border-radius: 8px;
+  color: var(--trudvang-on-header);
+  text-shadow: 0 1px 2px color-mix(in srgb, var(--trudvang-header) 85%, transparent);
+}
+.combat-dock .combat-dock-tooltip .dock-prepared,
+.combat-dock-tooltip .dock-prepared {
+  margin: 4px 0;
+  padding-left: 18px;
+}

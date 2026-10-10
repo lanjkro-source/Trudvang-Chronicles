@@ -356,6 +356,22 @@
       "Brawling": "Bagarre ou parade à mains nues",
       "Wrestling": "Lutte, saisie ou glima"
     },
+    "CombatDock": {
+      "HealthUnits": "PS",
+      "CombatUnits": "PC",
+      "VitnerUnits": "PV",
+      "DivinityUnits": "PD",
+      "PreparedTitle": "Attaques préparées",
+      "NoPrepared": "Aucune action préparée",
+      "PreparedRow": "{name} : {points} PC prévus ({available} disponibles)",
+      "PreparedUsed": "utilisée",
+      "IconTitle": "{name} · {points} PC",
+      "HealthLine": "Santé {current}/{max} ({state})",
+      "EffectsLine": "Blessures {wound}, peur {fear}",
+      "FearLine": "Peur {value} ({state}, {penalty})",
+      "ReservesLine": "Réserves : {reserves}",
+      "TenaceNote": "Tenace : ignore les malus de blessures"
+    },
     "Trait": {
       "Charisma": "Charisme",
       "Constitution": "Constitution",

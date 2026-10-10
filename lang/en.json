@@ -356,6 +356,22 @@
       "Brawling": "Brawling or unarmed parry",
       "Wrestling": "Wrestling, grapple, or glima"
     },
+    "CombatDock": {
+      "HealthUnits": "HP",
+      "CombatUnits": "CP",
+      "VitnerUnits": "VP",
+      "DivinityUnits": "DP",
+      "PreparedTitle": "Prepared attacks",
+      "NoPrepared": "No prepared actions",
+      "PreparedRow": "{name}: {points} CP planned ({available} available)",
+      "PreparedUsed": "used",
+      "IconTitle": "{name} · {points} CP",
+      "HealthLine": "Health {current}/{max} ({state})",
+      "EffectsLine": "Wound {wound}, fear {fear}",
+      "FearLine": "Fear {value} ({state}, {penalty})",
+      "ReservesLine": "Reserves: {reserves}",
+      "TenaceNote": "Tenace: ignores wound penalties"
+    },
     "Trait": {
       "Charisma": "Charisma",
       "Constitution": "Constitution",
