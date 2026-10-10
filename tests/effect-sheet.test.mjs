@@ -445,6 +445,33 @@ test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other
   }
 });
 
+test("TrudvangEffectSheet onDeleteChange removes a just-added blank row", async () => {
+  const restoreCore = stubCoreFormTransform();
+  const originalFDE = globalThis.foundry.applications.ux.FormDataExtended;
+  globalThis.foundry.applications.ux.FormDataExtended = class { constructor(form) { this.object = form._testObject; } };
+  try {
+    const document = typedDocument();
+    const flat = {
+      ...TYPED_FLAT(),
+      "system.changes.1.key": "",
+      "system.changes.1.type": "add",
+      "system.changes.1.value": "0",
+      "system.changes.1.priority": "",
+      "system.changes.1.phase": "final"
+    };
+    const sheet = sheetWithTypedForm(document, flat);
+    const target = {closest: () => ({dataset: {changeIndex: "1"}})};
+    await TrudvangEffectSheet.onDeleteChange.call(sheet, {}, target);
+    assert.equal(document.updates.length, 1, "deleting the blank row must persist");
+    assert.deepEqual(document.updates[0].system.changes.map(row => row.key),
+      ["system.modifiers.protection"], "blank row gone, typed row kept");
+    assert.equal(document.updates[0].description, "Typed description", "typed content must survive");
+  } finally {
+    restoreCore();
+    if (originalFDE === undefined) delete globalThis.foundry.applications.ux.FormDataExtended;
+    else globalThis.foundry.applications.ux.FormDataExtended = originalFDE;
+  }
+});
 test("TrudvangEffectSheet trudvang tab exposes no stacking UI", async () => {
   const template = readFileSync(new URL("../templates/effect/effect-rules.hbs", import.meta.url), "utf8");
   assert.ok(!template.includes("system.stacking"), "no stacking select may remain in the Trudvang tab");

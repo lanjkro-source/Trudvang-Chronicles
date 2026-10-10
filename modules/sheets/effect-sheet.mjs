@@ -55,9 +55,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     if (partId === "details") {
       partContext.tab = partContext.tabs.details;
-      // Prefer the framework-provided context flag: this.isEditable is not a
-      // reliable source here and wrongly forced the read-only branch.
-      partContext.editable = context?.editable ?? this.isEditable;
+      // Prefer the framework-provided context flag, then document ownership:
+      // this.isEditable proved an unreliable source and wrongly forced the
+      // read-only branch.
+      partContext.editable = context?.editable ?? this.document?.isOwner ?? this.isEditable;
       partContext.documentUuid = this.document.uuid ?? "";
       partContext.description = this.document._source?.description ?? this.document.description ?? "";
       partContext.enrichedDescription = await TextEditorImpl.enrichHTML(
@@ -180,9 +181,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     }
     // Filter out empty change rows and normalise priority
     if (Array.isArray(submitData.system?.changes)) {
-      submitData.system.changes = submitData.system.changes
-        .filter(c => c?.key)
-        .map(c => ({...c, priority: c.priority != null && c.priority !== "" ? Number(c.priority) : null}));
+      submitData.system.changes = TrudvangEffectSheet.#normalizeChangeRows(submitData.system.changes);
     }
 
     // Sync active stage when stages exist
@@ -247,14 +246,23 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     return fromElement?.elements ? fromElement : null;
   }
 
+  static #formDataCtor() {
+    return foundry.applications?.ux?.FormDataExtended ?? foundry.utils?.FormDataExtended ?? null;
+  }
+
   static async #silentSubmitData(sheet, target) {
     const form = TrudvangEffectSheet.#sheetForm(sheet, target);
-    // FormDataExtended moved from foundry.utils to foundry.applications.ux
-    // (absent from utils in V14); try both so a drifted client fails inert.
-    const FormDataExtended = foundry.applications?.ux?.FormDataExtended ?? foundry.utils?.FormDataExtended ?? null;
+    const FormDataExtended = TrudvangEffectSheet.#formDataCtor();
     if (!form || !FormDataExtended) return null;
     const formData = new FormDataExtended(form);
     return sheet._processFormData(new Event("submit"), form, formData);
+  }
+
+  // Same row normalization as the save path (drop keyless rows, coerce
+  // priority) so delete-by-DOM-index and save agree on row identity.
+  static #normalizeChangeRows(rows) {
+    return (Array.isArray(rows) ? rows : []).filter(c => c?.key)
+      .map(c => ({...c, priority: c.priority != null && c.priority !== "" ? Number(c.priority) : null}));
   }
 
   static async onAddStage(event, target) {
@@ -322,16 +330,21 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   }
 
   static async onDeleteChange(event, target) {
+    const form = TrudvangEffectSheet.#sheetForm(this, target);
+    if (!form) return;
+    const index = Number(target.closest("[data-change-index]")?.dataset.changeIndex);
+    // Raw DOM-order rows (blank rows included) so the clicked index always
+    // matches; the save-path filter below drops keyless rows afterwards.
+    const FormDataExtended = TrudvangEffectSheet.#formDataCtor();
+    if (!FormDataExtended) return;
+    const rawRows = Object.values(
+      foundry.utils.expandObject(new FormDataExtended(form).object ?? {}).system?.changes ?? {});
+    if (!Number.isInteger(index) || index < 0 || index >= rawRows.length) return;
+    rawRows.splice(index, 1);
     const silent = await TrudvangEffectSheet.#silentSubmitData(this, target);
     if (!silent) return;
     silent.system ??= {};
-    const index = Number(target.closest("[data-change-index]")?.dataset.changeIndex);
-    const changes = foundry.utils.deepClone(
-      Array.isArray(silent.system.changes) ? silent.system.changes : (this.document._source.system?.changes || [])
-    );
-    if (!Number.isInteger(index) || index < 0 || index >= changes.length) return;
-    changes.splice(index, 1);
-    silent.system.changes = changes;
+    silent.system.changes = TrudvangEffectSheet.#normalizeChangeRows(rawRows);
     await this.document.update(silent);
     return this.render({force: true});
   }
