@@ -308,12 +308,14 @@ test("TrudvangEffectSheet save warns and ignores a malformed system.stage", () =
 test("TrudvangEffectSheet details exposes raw description and prose-mirror template", async () => {
   const document = {
     isOwner: true,
+    uuid: "Effect.abc123",
     _source: {description: "<p>Raw typed</p>"},
     description: "<p>Raw typed</p>",
     origin: "actor-1"
   };
   const ctx = await sheetFor(document)._preparePartContext("details", {});
   assert.equal(ctx.description, "<p>Raw typed</p>", "details context must expose the raw description source");
+  assert.equal(ctx.documentUuid, "Effect.abc123", "details context must expose the document uuid for prose-mirror");
 
   const fallback = {
     isOwner: true,
@@ -326,6 +328,9 @@ test("TrudvangEffectSheet details exposes raw description and prose-mirror templ
   const template = readFileSync(new URL("../templates/effect/details.hbs", import.meta.url), "utf8");
   assert.ok(template.includes('<prose-mirror name="description"'), "details template must use prose-mirror for description");
   assert.ok(template.includes("{{{enrichedDescription}}}"), "prose-mirror must render the enriched description");
+  assert.ok(template.includes("{{#if editable}}"), "house pattern: static fallback when read-only");
+  assert.ok(template.includes('data-document-uuid="{{documentUuid}}"'), "prose-mirror must bind the document or it stays inert");
+  assert.ok(template.includes("editor-container"), "description needs a sized container");
   assert.ok(!template.includes("{{editor"), "V12 {{editor}} helper must be gone from the details template");
 });
 
@@ -342,7 +347,7 @@ function stubCoreFormTransform() {
 
 function sheetWithTypedForm(document, flatObject) {
   const sheet = sheetFor(document);
-  sheet.form = {_testObject: flatObject};
+  sheet.element = {querySelector: () => ({_testObject: flatObject, elements: {}})};
   sheet.renderCalls = 0;
   sheet.render = async function (options) { this.renderCalls += 1; this.renderOptions = options; return this; };
   return sheet;

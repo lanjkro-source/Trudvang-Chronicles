@@ -475,6 +475,8 @@
 .trudvang.effect-sheet .editor-content,
 .trudvang.effect-sheet .ProseMirror { padding: 6px; border: 1px solid var(--trudvang-line); }
 .trudvang.effect-sheet .editor-edit { color: var(--trudvang-accent); }
+.trudvang.effect-sheet .editor-container { display: flex; flex-direction: column; min-height: 150px; }
+.trudvang.effect-sheet .editor-container > prose-mirror { display: flex; flex-direction: column; flex: 1; min-height: 150px; color: var(--trudvang-ink); }
 
 .trudvang.effect-sheet button {
   color: var(--trudvang-ink);
