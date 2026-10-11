@@ -365,6 +365,12 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         return null;
       }
       await editor.save();
+      // element.save() only syncs to the form field: persist to the document
+      // as well (without closing the sheet, unlike the footer submit), so the
+      // text survives more than the editor session.
+      const value = typeof editor.value === "string" ? editor.value : null;
+      const stored = this.document?._source?.description ?? "";
+      if (value !== null && value !== stored) await this.document.update({description: value});
     } catch (error) {
       console.warn("Trudvang Chronicles | Save description failed:", error);
     }

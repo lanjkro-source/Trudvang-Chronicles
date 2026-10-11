@@ -448,15 +448,26 @@ test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other
 
 test("TrudvangEffectSheet onSaveDescription saves and collapses through the element", async () => {
   let saved = 0;
-  const sheet = {element: {querySelector: selector =>
-    (selector === 'prose-mirror[name="description"]' ? {save: async () => { saved += 1; }} : null)}};
+  const updates = [];
+  const document = {_source: {description: "<p>Old</p>"},
+    update: async changes => { updates.push(changes); return document; }};
+  const sheet = {document, element: {querySelector: selector =>
+    (selector === 'prose-mirror[name="description"]'
+      ? {save: async () => { saved += 1; }, value: "<p>New</p>"} : null)}};
   await TrudvangEffectSheet.onSaveDescription.call(sheet);
   assert.equal(saved, 1, "element.save() must run (same as the core menu save button)");
+  assert.deepEqual(updates, [{description: "<p>New</p>"}], "changed text must persist to the document without closing");
   const bare = {};
   await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(bare), "missing editor must stay inert");
   const unupgraded = {element: {querySelector: () => ({})}};
   await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(unupgraded),
     "non-upgraded element without save() must stay inert instead of throwing");
+  const unchanged = {document: {_source: {description: "<p>Same</p>"},
+    update: async changes => { updates.push(changes); return document; }},
+    element: {querySelector: () => ({save: async () => {}, value: "<p>Same</p>"})}};
+  const count = updates.length;
+  await TrudvangEffectSheet.onSaveDescription.call(unchanged);
+  assert.equal(updates.length, count, "unchanged text must not trigger a document update");
 });
 
 test("TrudvangEffectSheet onDeleteChange removes a just-added blank row", async () => {
