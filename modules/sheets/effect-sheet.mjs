@@ -354,8 +354,20 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   // to the form and collapses a toggled editor); the footer submit still
   // writes to the document, exactly as with the core button.
   static async onSaveDescription() {
-    const editor = this.element?.querySelector?.('prose-mirror[name="description"]');
-    if (typeof editor?.save === "function") await editor.save();
+    try {
+      const editor = this.element?.querySelector?.('prose-mirror[name="description"]');
+      if (!editor) {
+        console.warn("Trudvang Chronicles | Save description: no prose-mirror element found.");
+        return null;
+      }
+      if (typeof editor.save !== "function") {
+        console.warn("Trudvang Chronicles | Save description: editor element has no save() (not upgraded?).");
+        return null;
+      }
+      await editor.save();
+    } catch (error) {
+      console.warn("Trudvang Chronicles | Save description failed:", error);
+    }
     return null;
   }
 }

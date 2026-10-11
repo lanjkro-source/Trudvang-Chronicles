@@ -454,6 +454,9 @@ test("TrudvangEffectSheet onSaveDescription saves and collapses through the elem
   assert.equal(saved, 1, "element.save() must run (same as the core menu save button)");
   const bare = {};
   await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(bare), "missing editor must stay inert");
+  const unupgraded = {element: {querySelector: () => ({})}};
+  await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(unupgraded),
+    "non-upgraded element without save() must stay inert instead of throwing");
 });
 
 test("TrudvangEffectSheet onDeleteChange removes a just-added blank row", async () => {
