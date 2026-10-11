@@ -1365,6 +1365,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Effect.Stage` | Stage | Palier |
 | `TRUDVANG.Effect.StageChanges` | Changes (JSON) | Modifications (JSON) |
 | `TRUDVANG.Effect.AddStage` | Add stage | Ajouter un palier |
+| `TRUDVANG.Effect.SaveDescription` | Save and close the editor | Enregistrer et fermer l'éditeur |
 | `TRUDVANG.Effect.SupportedPaths` | Supported change paths | Chemins de modification pris en charge |
 | `TRUDVANG.Effect.SupportedPathsHint` | Trait identifiers are charisma, constitution, dexterity, intelligence, perception, psyche, and strength. Skill identifiers are agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft, and wilderness. Use the initial phase for changes that must feed derived calculations. | Les identifiants de traits sont charisma, constitution, dexterity, intelligence, perception, psyche et strength. Les identifiants de compétences sont agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft et wilderness. Utilisez la phase initiale pour les modifications qui doivent alimenter les calculs dérivés. |
 | `TRUDVANG.Effect.TabDurationChanges` | Duration & Changes | Durée & Modifications |

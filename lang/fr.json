@@ -1158,6 +1158,7 @@
       "Stage": "Palier",
       "StageChanges": "Modifications (JSON)",
       "AddStage": "Ajouter un palier",
+      "SaveDescription": "Enregistrer et fermer l'éditeur",
       "SupportedPaths": "Chemins de modification pris en charge",
       "SupportedPathsHint": "Les identifiants de traits sont charisma, constitution, dexterity, intelligence, perception, psyche et strength. Les identifiants de compétences sont agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft et wilderness. Utilisez la phase initiale pour les modifications qui doivent alimenter les calculs dérivés.",
       "TabDurationChanges": "Durée & Modifications",

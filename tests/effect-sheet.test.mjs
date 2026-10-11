@@ -446,6 +446,16 @@ test("TrudvangEffectSheet onDeleteChange preserves typed content and keeps other
   }
 });
 
+test("TrudvangEffectSheet onSaveDescription saves and collapses through the element", async () => {
+  let saved = 0;
+  const sheet = {element: {querySelector: selector =>
+    (selector === 'prose-mirror[name="description"]' ? {save: async () => { saved += 1; }} : null)}};
+  await TrudvangEffectSheet.onSaveDescription.call(sheet);
+  assert.equal(saved, 1, "element.save() must run (same as the core menu save button)");
+  const bare = {};
+  await assert.doesNotReject(TrudvangEffectSheet.onSaveDescription.call(bare), "missing editor must stay inert");
+});
+
 test("TrudvangEffectSheet onDeleteChange removes a just-added blank row", async () => {
   const restoreCore = stubCoreFormTransform();
   const originalFDE = globalThis.foundry.applications.ux.FormDataExtended;

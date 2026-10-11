@@ -11,7 +11,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       addTrudvangStage: TrudvangEffectSheet.onAddStage,
       deleteTrudvangStage: TrudvangEffectSheet.onDeleteStage,
       addChange: TrudvangEffectSheet.onAddChange,
-      deleteChange: TrudvangEffectSheet.onDeleteChange
+      deleteChange: TrudvangEffectSheet.onDeleteChange,
+      saveDescription: TrudvangEffectSheet.onSaveDescription
     }
   };
 
@@ -347,5 +348,14 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     silent.system.changes = TrudvangEffectSheet.#normalizeChangeRows(rawRows);
     await this.document.update(silent);
     return this.render({force: true});
+  }
+
+  // Mirror the core menu save button (element.save() persists the edited text
+  // to the form and collapses a toggled editor); the footer submit still
+  // writes to the document, exactly as with the core button.
+  static async onSaveDescription() {
+    const editor = this.element?.querySelector?.('prose-mirror[name="description"]');
+    if (typeof editor?.save === "function") await editor.save();
+    return null;
   }
 }

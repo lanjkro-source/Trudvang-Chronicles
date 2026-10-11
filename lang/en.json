@@ -1158,6 +1158,7 @@
       "Stage": "Stage",
       "StageChanges": "Changes (JSON)",
       "AddStage": "Add stage",
+      "SaveDescription": "Save and close the editor",
       "SupportedPaths": "Supported change paths",
       "SupportedPathsHint": "Trait identifiers are charisma, constitution, dexterity, intelligence, perception, psyche, and strength. Skill identifiers are agility, care, entertainment, faith, fighting, knowledge, shadowArts, vitnerCraft, and wilderness. Use the initial phase for changes that must feed derived calculations.",
       "TabDurationChanges": "Duration & Changes",
