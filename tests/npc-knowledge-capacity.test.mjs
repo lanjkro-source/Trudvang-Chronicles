@@ -111,6 +111,16 @@ test("NPC catalogue +/- adjusts learned rows with the PC hierarchy gates and no 
   assert.equal(armed.system.level, 1);
 });
 
+test("NPC tablet level +/- reuses the GM-fiat adjust path within 0-5", async () => {
+  const tablet = {id: "t1", type: "tablet", name: "Tablette", uuid: "Actor.npc.Item.t1",
+    system: {level: 2}, sheet: {render: () => tablet}};
+  tablet.update = async changes => { for (const [path, value] of Object.entries(changes)) set(tablet, path, value); return tablet; };
+  const npc = npcActor([tablet]);
+  await npc.adjustItemLevel(tablet, 1);
+  assert.equal(tablet.system.level, 3);
+  await npc.adjustItemLevel(tablet, -1);
+  assert.equal(tablet.system.level, 2);
+});
 test("NPC specialty increase requires its parent discipline at level 1+", async () => {
   warnings.length = 0;
   const npc = npcActor([]);

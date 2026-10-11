@@ -848,6 +848,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.CapacityFilterPlaceholder` | Filter capacities by name… | Filtrer les capacités par nom… |
 | `TRUDVANG.Npc.NoAvailableCapacity` | No further capacities available. | Aucune autre capacité disponible. |
 | `TRUDVANG.Npc.DeleteCapacity` | Delete capacity | Supprimer la capacité |
+| `TRUDVANG.Npc.TabletLevelDecrease` | Decrease tablet level | Diminuer le niveau de la tablette |
+| `TRUDVANG.Npc.TabletLevelIncrease` | Increase tablet level | Augmenter le niveau de la tablette |
 | `TRUDVANG.Npc.EnableEditMode` | Edit mode | Mode édition |
 | `TRUDVANG.Npc.DisableEditMode` | View mode | Mode vue |
 | `TRUDVANG.Npc.EditModeTitle` | Toggle NPC edit mode | Basculer le mode édition du PNJ |

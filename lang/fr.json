@@ -725,6 +725,8 @@
       "CapacityFilterPlaceholder": "Filtrer les capacités par nom…",
       "NoAvailableCapacity": "Aucune autre capacité disponible.",
       "DeleteCapacity": "Supprimer la capacité",
+      "TabletLevelDecrease": "Diminuer le niveau de la tablette",
+      "TabletLevelIncrease": "Augmenter le niveau de la tablette",
       "EnableEditMode": "Mode édition",
       "DisableEditMode": "Mode vue",
       "EditModeTitle": "Basculer le mode édition du PNJ",

@@ -204,7 +204,10 @@ test("NPC sheets default to view mode with a mode toggle; the toggle flips sheet
 
 test("view mode rolls only: no mutating controls, but rolls/damage/toggles/movement stay active", async () => {
   const book = [{name: "Combat", kind: "skill", value: 8}];
-  const npc = npcActor([abilityItem("d1", "armedFighting", "discipline", 2)], book);
+  const npc = npcActor([abilityItem("d1", "armedFighting", "discipline", 2),
+    {id: "g1", type: "gear", name: "Corde", uuid: "Actor.npc.Item.g1", img: "icons/svg/book.svg",
+      system: {quantity: 1, equipped: false}}], book);
+  npc.system.resources.vitner = {value: 0, max: 6};
   npc.allApplicableEffects = () => [{uuid: "Effect.1", name: "Bénédiction", img: "icons/svg/aura.svg",
     sourceName: "MJ", duration: {}, active: true, disabled: false, isSuppressed: false,
     parent: {documentName: "Actor"}, system: {changes: []}, canUserModify: () => true}];
@@ -213,12 +216,14 @@ test("view mode rolls only: no mutating controls, but rolls/damage/toggles/movem
   assert.match(html, /data-action="toggle-npc-edit-mode"/);
   assert.match(html, /Mode édition/);
   for (const action of ["adjust-catalog-knowledge", "adjust-item-level", "add-npc-knowledge", "add-npc-capacity",
-    "capacity-delete", "item-create", "item-delete", "effect-delete",
-    "reset-traits", "restore-vitner"]) {
+    "capacity-delete"]) {
     assert.doesNotMatch(html, new RegExp(`data-action="${action}"(?!-)`), `${action} must stay hidden in view mode`);
   }
   assert.match(html, /data-action="effect-add"/, "effect add stays available outside edit mode, like PCs");
-  assert.match(html, /data-action="reset-combat"[^>]*disabled/, "combat reset stays visible but disabled in view mode");
+  for (const action of ["item-create", "item-delete", "effect-delete", "reset-traits", "restore-vitner"]) {
+    assert.match(html, new RegExp(`data-action="${action}"`), `${action} is back outside edit mode`);
+  }
+  assert.doesNotMatch(html, /data-action="reset-combat"[^>]*disabled/, "combat reset usable outside edit mode");
   assert.match(html, /data-action="add-tablet"[^>]*disabled/, "tablet add stays visible but disabled in view mode");
   assert.doesNotMatch(html, /name="system\.skillTree\.0\.name"/);
   assert.doesNotMatch(html, /name="system\.skillTree\.0\.value"/);

@@ -725,6 +725,8 @@
       "CapacityFilterPlaceholder": "Filter capacities by name…",
       "NoAvailableCapacity": "No further capacities available.",
       "DeleteCapacity": "Delete capacity",
+      "TabletLevelDecrease": "Decrease tablet level",
+      "TabletLevelIncrease": "Increase tablet level",
       "EnableEditMode": "Edit mode",
       "DisableEditMode": "View mode",
       "EditModeTitle": "Toggle NPC edit mode",
