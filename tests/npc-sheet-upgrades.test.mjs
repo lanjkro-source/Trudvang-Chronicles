@@ -213,10 +213,11 @@ test("view mode rolls only: no mutating controls, but rolls/damage/toggles/movem
   assert.match(html, /data-action="toggle-npc-edit-mode"/);
   assert.match(html, /Mode édition/);
   for (const action of ["adjust-catalog-knowledge", "adjust-item-level", "add-npc-knowledge", "add-npc-capacity",
-    "capacity-delete", "item-create", "item-delete", "effect-add", "effect-delete",
+    "capacity-delete", "item-create", "item-delete", "effect-delete",
     "reset-traits", "restore-vitner"]) {
     assert.doesNotMatch(html, new RegExp(`data-action="${action}"(?!-)`), `${action} must stay hidden in view mode`);
   }
+  assert.match(html, /data-action="effect-add"/, "effect add stays available outside edit mode, like PCs");
   assert.match(html, /data-action="reset-combat"[^>]*disabled/, "combat reset stays visible but disabled in view mode");
   assert.match(html, /data-action="add-tablet"[^>]*disabled/, "tablet add stays visible but disabled in view mode");
   assert.doesNotMatch(html, /name="system\.skillTree\.0\.name"/);

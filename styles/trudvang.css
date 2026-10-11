@@ -255,7 +255,7 @@
 .trudvang-sheet .experience-grid input, .trudvang-sheet .experience-grid output { width: 46px; text-align: center; font-weight: 600; }
 .trudvang-sheet .creation-mode-button { width: 100%; margin: 3px 0 7px; border: 1px solid var(--trudvang-line); }
 .trudvang-sheet .creation-mode-button.active { color: var(--trudvang-on-header); background: var(--trudvang-accent); }
-.trudvang-sheet.npc-sheet .identity-grid .creation-mode-button { width: auto; justify-self: start; align-self: center; margin: 0 0 0 4px; padding: 4px 8px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); border: 1px solid var(--trudvang-gold); }
+.trudvang-sheet.npc-sheet .identity-grid .creation-mode-button { width: 100%; justify-self: stretch; align-self: end; margin: 0; padding: 4px 8px; color: var(--trudvang-on-header); background: var(--trudvang-header-alt); border: 1px solid var(--trudvang-gold); }
 .trudvang-sheet .advancement-review { display: flex; flex-direction: column; gap: 5px; margin-top: 7px; padding: 6px; border: 1px solid var(--trudvang-gold); background: color-mix(in srgb, var(--trudvang-gold) 12%, transparent); text-align: center; }
 .trudvang-sheet .advancement-review span { display: flex; gap: 5px; }
 .trudvang-sheet .advancement-review button { flex: 1; font-size: .72rem; }
