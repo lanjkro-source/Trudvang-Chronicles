@@ -1,5 +1,6 @@
 import { TRUDVANG } from "../config.mjs";
-import { combatPointDialog, concentrationDialog, fearFactorDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
+import { combatPointDialog, concentrationDialog, fearFactorDialog, fixedAttackDialog, initiativeDialog, magicDialog, modifierDialog, openD10, openDice, rollDamage, rollModifierFlavor, rollUnder, traitRollDialog } from "../dice.mjs";
+import {resolveFixedAttackTargets} from "../rules/fixed-attack.mjs";
 import { fatalRollFormula, fatalTableId } from "../rules/fatal-table.mjs";
 import { resolveVitnerSacrifice, spentMagicPoints } from "../rules/magic-power-resolver.mjs";
 import {activeSpellInstances, activeSpellRecords, fatalActiveSpellCost} from "../rules/active-spell-resolver.mjs";
@@ -886,12 +887,14 @@ export class TrudvangActor extends BaseActor {
     const otherModifier = this.getRollModifier({kind: "attack", movement: true, includeState: false}) - Number(this.system.armorVCPenalty || 0);
     const actionModifier = otherModifier + rollModifierTotal(modifierRows);
     const availableEven = poolResolution.eligibleCurrent - poolResolution.eligibleCurrent % 2;
+    const targetLabels = Array.from(game.user.targets || []).map(token => token?.name || token?.actor?.name || "");
     const options = await combatPointDialog({
       title: game.i18n.localize(kind === "glima" ? "TRUDVANG.Combat.Glima" : "TRUDVANG.Combat.Grapple"),
       pools: poolResolution.eligible,
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, availableEven)),
       targetPointCost: 2,
       allocationMultiple: 2,
+      targetLabels,
       modifierRows: [{label: game.i18n.localize("TRUDVANG.Trait.Strength"), value: strength},
         ...(otherModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.Modifier"), value: otherModifier}] : []), ...modifierRows]
     });
@@ -958,13 +961,64 @@ export class TrudvangActor extends BaseActor {
     return ui.notifications.info(game.i18n.format("TRUDVANG.Notification.Drawn", {item: item.name, cost}));
   }
 
+  async rollFixedAttack({name, target, targetTrait = "none", successConsequence = ""} = {}) {
+    if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
+    const baseVC = Number.isFinite(Number(target)) ? Math.trunc(Number(target)) : 0;
+    const targets = resolveFixedAttackTargets({baseVC, targetTrait, targets: Array.from(game.user.targets || [])});
+    const traitLabel = targetTrait === "none"
+      ? game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTrait")
+      : game.i18n.localize(TRUDVANG.traits[targetTrait] ?? targetTrait);
+    const stateRows = actorStateRollModifiers(this);
+    const effectModifier = this.getRollModifier({kind: "attack", movement: true, includeState: false});
+    const armorModifier = -Number(this.system.armorVCPenalty || 0);
+    const modifierRows = [
+      {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
+      {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
+      ...stateRows
+    ].filter(row => Number(row.value));
+    const options = await fixedAttackDialog({
+      title: game.i18n.format("TRUDVANG.Dialog.FixedAttackTitle", {item: name}),
+      baseVC, targets, targetTraitLabel: traitLabel, modifierRows
+    });
+    if (!options) return null;
+    const stateModifier = rollModifierTotal(stateRows);
+    const results = [];
+    for (const targetRow of targets) {
+      const traitModifier = -Number(targetRow.traitValue || 0);
+      const modifier = traitModifier + effectModifier + armorModifier + stateModifier + Number(options.modifier || 0);
+      const traitFlavor = targetRow.actor && targetTrait !== "none"
+        ? game.i18n.format("TRUDVANG.Calculation.FixedAttackTargetTrait", {
+          trait: traitLabel,
+          value: traitModifier > 0 ? `+${traitModifier}` : String(traitModifier)
+        }) : "";
+      const manualValue = Number(options.modifier || 0);
+      const manualFlavor = manualValue
+        ? game.i18n.format("TRUDVANG.Dialog.ManualModifierFlavor", {modifier: manualValue > 0 ? `+${manualValue}` : manualValue}) : "";
+      const result = await rollUnder({
+        actor: this,
+        label: targetRow.actor && targetRow.name
+          ? game.i18n.format("TRUDVANG.Dialog.FixedAttackTargetLabel", {attack: name, target: targetRow.name}) : name,
+        target: baseVC,
+        modifier,
+        kind: "attack",
+        flavor: [traitFlavor, manualFlavor, rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>"),
+        successConsequence,
+        effectTarget: targetRow.effectTarget
+      });
+      results.push({...result, targetName: targetRow.name});
+    }
+    return {roll: results.length === 1 ? results[0].roll : results.map(result => result.roll), results};
+  }
+
   async rollWeaponAction(item, kind, {defaultPoints = 5, throwing = null} = {}) {
     if (!this.canPerformAction({movement: true})) return this.warnCannotAct();
     const inCombat = this.isInActiveCombat;
     if (inCombat && this.getWeaponActionState(item).current <= 0) return ui.notifications.warn(game.i18n.format("TRUDVANG.Warning.NoWeaponActionsLeft", {item: item.name}));
     const canThrow = kind === "attack" && canThrowWeapon(item);
     const defaultThrowing = canThrow && (throwing ?? isThrowingWeapon(item));
-    const targetActor = Array.from(game.user.targets || []).map(target => target?.actor).find(Boolean);
+    const targetTokens = Array.from(game.user.targets || []);
+    const targetLabels = targetTokens.map(token => token?.name || token?.actor?.name || "");
+    const targetActor = targetTokens.map(target => target?.actor).find(Boolean);
     const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
     const prepareMode = throwing => {
       const usageItem = weaponForUsage(item, {throwing});
@@ -1009,6 +1063,7 @@ export class TrudvangActor extends BaseActor {
       defaultAllocation: defaultMode.defaultAllocation,
       combatPointBonus,
       modifierRows,
+      targetLabels: kind === "attack" ? targetLabels : null,
       feintMax: defaultMode.feintMax,
       ruleNotice,
       combatModes: {
@@ -1492,6 +1547,7 @@ export class TrudvangActor extends BaseActor {
       buttonLabelKey: roll ? "TRUDVANG.Action.Roll" : "TRUDVANG.Action.SpendCombat",
       showModifier: roll,
       modifierRows: roll ? [...(otherModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: otherModifier}] : []), ...modifierRows] : [],
+      targetLabels: roll ? Array.from(game.user.targets || []).map(token => token?.name || token?.actor?.name || "") : null,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
     });
     if (!options) return null;
@@ -1520,14 +1576,16 @@ export class TrudvangActor extends BaseActor {
     this._pendingPreparedActions.add(key);
     try {
       const options = {defaultPoints: action.points};
-      const result = ["attack", "parry", "throwing"].includes(action.action)
+      const result = action.action === "fixedAttack"
+        ? await this.rollFixedAttack({name: action.name, target: action.fixedVC, targetTrait: action.targetTrait, successConsequence: action.successConsequence})
+        : ["attack", "parry", "throwing"].includes(action.action)
         ? await this.rollWeaponAction(action.item, action.action === "parry" ? "parry" : "attack", {...options, throwing: action.throwing})
         : ["glima", "grapple"].includes(action.action)
           ? await this.rollWrestlingAction(action.action, options)
           : action.action === "movement"
             ? await this.rollCombatMovement({...options, movementMode: action.movementMode})
             : await this.spendGenericCombatAction({...options, title: action.name, roll: action.action === "special"});
-      const executed = ["attack", "parry", "throwing", "glima", "grapple", "special"].includes(action.action)
+      const executed = ["attack", "parry", "throwing", "glima", "grapple", "special", "fixedAttack"].includes(action.action)
         ? Boolean(result?.roll) : Boolean(result?.allocation && Number.isFinite(result.total));
       if (executed && (this.system.combatCycle?.generation ?? 0) === generation) {
         await this.update({"system.usedPreparedActions": [...new Set([...(this.system.usedPreparedActions ?? []), key])]});

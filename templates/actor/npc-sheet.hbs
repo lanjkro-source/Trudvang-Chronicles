@@ -151,7 +151,7 @@
           {{#each npcPreparedActions as |combo|}}
           <li class="npc-prepared-combination">
             {{#each combo.actions as |action|}}
-            <button type="button" class="npc-prepared-action {{#if action.used}}used{{/if}}" data-action="npc-prepared-action" data-combo="{{action.comboIndex}}" data-step="{{action.stepIndex}}" title="{{action.tooltip}}" {{#unless action.canUse}}disabled{{/unless}}>{{#if action.used}}<i class="fas fa-check" aria-hidden="true"></i>{{/if}}{{localize "TRUDVANG.Npc.PreparedActionLabel" name=action.name points=action.points}}</button>
+            <button type="button" class="npc-prepared-action {{#if action.used}}used{{/if}}" data-action="npc-prepared-action" data-combo="{{action.comboIndex}}" data-step="{{action.stepIndex}}" title="{{action.tooltip}}" {{#unless action.canUse}}disabled{{/unless}}>{{#if action.used}}<i class="fas fa-check" aria-hidden="true"></i>{{/if}}{{#if action.fixedAttack}}{{localize "TRUDVANG.Npc.PreparedFixedAttackLabel" name=action.name value=action.fixedVC}}{{else}}{{localize "TRUDVANG.Npc.PreparedActionLabel" name=action.name points=action.points}}{{/if}}</button>
             {{/each}}
           </li>
           {{else}}<li class="empty">{{localize "TRUDVANG.Npc.NoPreparedActions"}}</li>{{/each}}

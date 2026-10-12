@@ -46,6 +46,24 @@ test("every prepared action in both bestiaries resolves to an actual weapon or s
   }
 });
 
+test("fixed-VC attacks are available without combat-point spending and carry their success outcome", () => {
+  const options = language("fr");
+  const actor = adapter(buildBestiaryPackDocuments(options).actors[0]);
+  const row = {attack: "Absorption de vie", action: "fixedAttack", value: 12,
+    targetTrait: "psyche", successConsequence: "La cible perd son énergie vitale."};
+  actor.system.attacks = [[row]];
+  const action = resolveNpcPreparedAction(actor, row);
+  assert.equal(action.supported, true);
+  assert.equal(action.canUse, true);
+  assert.equal(action.points, 0);
+  assert.equal(action.fixedVC, 12);
+  assert.equal(action.targetTrait, "psyche");
+  assert.equal(action.successConsequence, row.successConsequence);
+  const displayed = npcPreparedActionRows(actor, options)[0].actions[0];
+  assert.equal(options.format("TRUDVANG.Npc.PreparedFixedAttackLabel", {...displayed, value: displayed.fixedVC}), "Absorption de vie · VC 12");
+  assert.match(displayed.tooltip, /VC fixe 12/);
+});
+
 test("nameless prepared movement has a localized label and tooltip without changing its cost", () => {
   for (const [code, expected] of [["fr", "Déplacement"], ["en", "Move"]]) {
     const options = language(code);

@@ -319,7 +319,9 @@ export class NpcData extends foundry.abstract.TypeDataModel {
         action: string(),
         mode: string(),
         distance: number(0, {min: 0}),
-        value: integer(0)
+        value: integer(0),
+        targetTrait: string("none"),
+        successConsequence: string()
       }), {required: true, initial: []}), {required: true, initial: []}),
       combatCycle: schema({combatId: string(), round: integer(0, {min: 0}),
         remaining: integer(0, {min: 0}), max: integer(1, {min: 1}), generation: integer(0, {min: 0})}),

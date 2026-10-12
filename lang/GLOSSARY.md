@@ -815,6 +815,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.ConfigureMagicMethod` | Set casting skills, or the innate magic SV in the NPC’s Magic tab. | Renseignez les compétences d’incantation, ou la VC de magie innée dans l’onglet Magie du PNJ. |
 | `TRUDVANG.Npc.CombatCycleHint` | Remaining action rounds / phase length. CP, WA and usage marks refresh at the start of the next phase. | Tours de jeu restants / durée de la phase. Les PC, AA et marques d’utilisation sont renouvelés au prochain début de phase. |
 | `TRUDVANG.Npc.PreparedActionLabel` | {name} · {points} CP | {name} · {points} PC |
+| `TRUDVANG.Npc.PreparedFixedAttackLabel` | {name} · CV {value} | {name} · VC {value} |
+| `TRUDVANG.Npc.PreparedFixedAttackHint` | {name}: fixed CV {value}; no Combat Points are spent. | {name} : VC fixe {value}, sans dépense de points de combat. |
 | `TRUDVANG.Npc.PreparedMovement` | Move | Déplacement |
 | `TRUDVANG.Npc.PreparedActionUsed` | Already used during this phase | Déjà utilisée durant cette phase |
 | `TRUDVANG.Npc.NoPreparedActions` | No prepared action combinations. | Aucune combinaison d’actions préparée. |
@@ -989,6 +991,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.SheatheTitle` | Sheathe: {item} (free) | Rengainer : {item} (gratuit) |
 | `TRUDVANG.Dialog.CombatActionType` | Action type | Type d’action |
 | `TRUDVANG.Dialog.AttackTitle` | Attack: {item} | Attaque: {item} |
+| `TRUDVANG.Dialog.FixedAttackTitle` | Fixed-CV attack: {item} | Attaque à VC fixe : {item} |
 | `TRUDVANG.Dialog.ParryTitle` | Parry: {item} |  Parade: {item} |
 | `TRUDVANG.Dialog.MagicAction` | Magic or Divine Action | Action magique ou divine |
 | `TRUDVANG.Dialog.NoMagicAction` | No magic modifier | Aucun modificateur magique |
@@ -1008,6 +1011,16 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.ConcentrationTrait` | Psyche | Psychisme |
 | `TRUDVANG.Dialog.ConcentrationTotal` | Total | Total |
 | `TRUDVANG.Dialog.FinalTarget` | Final Skill Value | Valeur de compétence finale |
+| `TRUDVANG.Dialog.AttackTargets` | Targets | Cibles visées |
+| `TRUDVANG.Dialog.NoAttackTargets` | No target selected. This attack is still allowed without a target. | Aucune cible sélectionnée. Cette attaque reste possible sans cible. |
+| `TRUDVANG.Dialog.FixedAttackNoTargets` | No target selected. The fixed CV applies without a target-trait reduction. | Aucune cible sélectionnée. La VC fixe s’applique sans réduction par un trait de cible. |
+| `TRUDVANG.Dialog.FixedAttackBaseTarget` | Fixed Combat Value | Valeur de combat fixe |
+| `TRUDVANG.Dialog.FixedAttackTargetValue` | {trait}: {value} | {trait} : {value} |
+| `TRUDVANG.Dialog.FixedAttackTargetLabel` | {attack} — {target} | {attack} — {target} |
+| `TRUDVANG.Dialog.FixedAttackNoTrait` | no trait reduction | aucune réduction par un trait |
+| `TRUDVANG.Dialog.FixedAttackFinalTarget` | Final Combat Value | Valeur de combat finale |
+| `TRUDVANG.Dialog.ManualModifierFlavor` | Manual modifier: {modifier} | Modificateur manuel : {modifier} |
+| `TRUDVANG.Dialog.SuccessConsequence` | On success: {text} | En cas de réussite : {text} |
 | `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
 | `TRUDVANG.Dialog.Feint` | Feint (max. {max} CP) | Feinte (max. {max} PC) |
@@ -1225,6 +1238,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.Rigorous` | Rigorous: +{bonus} SV for {cost} additional Divinity Points | Rigoureux : +{bonus} VC pour {cost} points de divinité supplémentaires |
 | `TRUDVANG.Calculation.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Calculation.CombatPoolSpent` | {amount} CP spent from the {pool} pool. | {amount} PC dépensé(s) depuis la réserve {pool}. |
+| `TRUDVANG.Calculation.FixedAttackTargetTrait` | Target trait {trait}: {value} | Trait de la cible {trait} : {value} |
 | `TRUDVANG.Calculation.FeintCost` | Feint: -{points} SV ({points} CP). | Feinte : -{points} VC ({points} PC). |
 | `TRUDVANG.Calculation.EquipmentCombatPointBonus` | Equipment CP bonus: {amount}. | Bonus de PC de l’équipement : {amount}. |
 | `TRUDVANG.Calculation.WrestlingCost` | {points} CP provide a base SV of {target} (2 CP/SV), then Strength {strength} applies. | {points} PC donnent une VC de base de {target} (2 PC/VC), puis Force {strength} s’applique. |

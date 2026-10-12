@@ -48,7 +48,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", effectTarget = null}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -67,6 +67,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor,
+    successConsequence,
+    effectTarget,
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
     actorUuid: actor.uuid,
@@ -89,7 +91,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       console.error("Trudvang | Dice So Nice could not animate a concentration roll", error);
     }
   }
-  return {roll, result, target: finalTarget, success, critical, margin};
+  return {roll, result, target: finalTarget, success, critical, margin, effectTarget};
 }
 
 export async function initiativeDialog({actor, target, lightningQuickLevel = 0, rememberedEquipment = []}) {
@@ -573,13 +575,16 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
   const hasModeToggle = combatModes && combatModes.toggle !== false;
   const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
+  const targets = Array.isArray(targetLabels) ? `<section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))}</strong>${targetLabels.length
+    ? `<ul>${targetLabels.map(name => `<li>${escapeHtml(name)}</li>`).join("")}</ul>`
+    : `<p class="combat-no-targets">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoAttackTargets"))}</p>`}</section>` : "";
   const renderMode = mode => {
     const modePools = mode.pools || [];
     const allocation = mode.defaultAllocation || {};
@@ -617,6 +622,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
+    ${targets}
     ${hasModeToggle ? `<label class="checkbox"><input type="checkbox" data-combat-mode-toggle ${combatModes.checked ? "checked" : ""}> ${escapeHtml(combatModes.label)}</label>` : ""}
     ${modes.map(renderMode).join("")}
   </div>`;
@@ -734,6 +740,55 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
     buttons,
     modal: false,
     rejectClose: false
+  });
+}
+
+export async function fixedAttackDialog({title, baseVC = 0, targets = [], targetTraitLabel = "", modifierRows = []} = {}) {
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const base = Number.isFinite(Number(baseVC)) ? Math.trunc(Number(baseVC)) : 0;
+  const fixedModifier = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), 0);
+  const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
+  const hasTargets = targets.some(target => target?.token || target?.actor);
+  const targetRows = hasTargets ? `<ul class="fixed-attack-targets">${targets.filter(target => target?.token || target?.actor).map(target => {
+    const name = escapeHtml(target.name || target.actor?.name || "");
+    const traitText = target.trait === "none" ? game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTrait")
+      : game.i18n.format("TRUDVANG.Dialog.FixedAttackTargetValue", {
+        trait: targetTraitLabel, value: signedModifier(target.traitValue)
+      });
+    return `<li data-fixed-attack-target data-trait-value="${Number(target.traitValue || 0)}"><span>${name}<small>${escapeHtml(traitText)}</small></span><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackFinalTarget"))} <b data-fixed-attack-final>${base - Number(target.traitValue || 0) + fixedModifier}</b></strong></li>`;
+  }).join("")}</ul>` : `<p class="combat-no-targets">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTargets"))}<strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackFinalTarget"))} <b data-fixed-attack-no-target-final>${base + fixedModifier}</b></strong></p>`;
+  const content = `<div class="trudvang roll-dialog fixed-attack-dialog">
+    <section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))}</strong>${targetRows}</section>
+    <p class="fixed-attack-base-target">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackBaseTarget"))}: <strong>${base}</strong></p>
+    ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
+    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
+  </div>`;
+  class FixedAttackDialog extends DialogClass {
+    _onRender(context, options) {
+      super._onRender(context, options);
+      const root = this.element;
+      const refresh = () => {
+        const manual = Number(root.querySelector("[name=modifier]")?.value || 0);
+        root.querySelectorAll("[data-fixed-attack-target]").forEach(row => {
+          const total = base - Number(row.dataset.traitValue || 0) + fixedModifier + manual;
+          const output = row.querySelector("[data-fixed-attack-final]");
+          if (output) output.textContent = String(total);
+        });
+        const noTargetOutput = root.querySelector("[data-fixed-attack-no-target-final]");
+        if (noTargetOutput) noTargetOutput.textContent = String(base + fixedModifier + manual);
+      };
+      root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
+      refresh();
+    }
+  }
+  return FixedAttackDialog.wait({
+    window: {title}, content,
+    buttons: [
+      {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true,
+        callback: (event, button, dialog) => ({modifier: Number((button.form ?? dialog.element).querySelector("[name=modifier]")?.value || 0)})},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false, rejectClose: false
   });
 }
 

@@ -706,6 +706,17 @@
 .trudvang.inspection-dialog li small { color: var(--trudvang-muted); font-size: .7rem; }
 .trudvang.inspection-dialog li.conditional { border-left: 3px solid var(--trudvang-gold); padding-left: 7px; }
 .trudvang.combat-pool-dialog .combat-pool-slider { display: grid; grid-template-columns: 1fr; gap: 3px; margin: 8px 0 4px; }
+.trudvang.roll-dialog .combat-target-list { margin: 7px 0; padding: 7px 9px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); border-left: 3px solid var(--trudvang-gold); }
+.trudvang.roll-dialog .combat-target-list > strong { display: block; margin-bottom: 3px; }
+.trudvang.roll-dialog .combat-target-list ul, .trudvang.roll-dialog .fixed-attack-targets { margin: 0; padding: 0; list-style: none; }
+.trudvang.roll-dialog .combat-target-list li { padding: 2px 0; }
+.trudvang.roll-dialog .combat-no-targets { margin: 3px 0 0; padding: 5px 7px; color: var(--trudvang-negative); background: color-mix(in srgb, var(--trudvang-negative) 10%, var(--trudvang-header)); font-weight: 700; }
+.trudvang.roll-dialog .combat-no-targets strong { display: block; margin-top: 4px; color: var(--trudvang-on-header); }
+.trudvang.roll-dialog .fixed-attack-targets li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 5px 0; border-top: 1px solid color-mix(in srgb, var(--trudvang-gold) 38%, transparent); }
+.trudvang.roll-dialog .fixed-attack-targets li > span { display: grid; gap: 2px; min-width: 0; font-weight: 700; }
+.trudvang.roll-dialog .fixed-attack-targets small { color: var(--trudvang-on-header-muted); font-weight: 400; }
+.trudvang.roll-dialog .fixed-attack-targets li > strong { text-align: right; font-size: .85em; }
+.trudvang.roll-dialog .fixed-attack-base-target { text-align: right; }
 .trudvang.combat-pool-dialog .combat-pool-slider input { width: 100%; accent-color: var(--trudvang-gold); }
 .trudvang.combat-pool-dialog .combat-modifier-breakdown { margin: 5px 0; padding: 5px 7px; list-style: none; background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); border-left: 2px solid var(--trudvang-gold); }
 .trudvang.combat-pool-dialog .combat-modifier-breakdown li { display: flex; justify-content: space-between; gap: 12px; color: var(--trudvang-on-header-muted); }
@@ -905,6 +916,7 @@
 .trudvang.chat-card.failure .outcome { color: var(--trudvang-negative); }
 .trudvang.chat-card .outcome, .trudvang.chat-card.damage p, .trudvang.chat-card.initiative p { margin: 0; padding: 5px 8px; text-align: center; font-weight: 700; }
 .trudvang.chat-card .success-margin { margin: 0; padding: 0 8px 7px; color: var(--trudvang-positive); text-align: center; font-weight: 700; }
+.trudvang.chat-card .success-consequence { margin: 0 8px 8px; padding: 6px 8px; color: var(--trudvang-positive); background: color-mix(in srgb, var(--trudvang-positive) 10%, var(--trudvang-paper-light)); border-left: 3px solid var(--trudvang-positive); }
 .trudvang.chat-card .feint-result { margin: 0; padding: 0 8px 7px; color: var(--trudvang-accent); text-align: center; font-weight: 700; }
 .trudvang.chat-card .damage-result { margin: 10px auto 2px; color: var(--trudvang-negative); }
 .trudvang.chat-card .card-flavor { padding: 8px; font-size: .9rem; }
