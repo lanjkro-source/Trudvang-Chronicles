@@ -31,7 +31,7 @@ test("the four declared packs contain all creatures/capacities and stable biling
     const banner = readFileSync(new URL(`../${pack.banner.replace("systems/trudvang-chronicles/", "")}`, import.meta.url));
     assert.deepEqual([...banner.subarray(0, 2)], [0xff, 0xd8], "the shared banner must be an available JPEG");
   }
-  assert.equal(packs.fr.actors.length, 75); assert.equal(featPacks.fr.items.length, 150);
+  assert.equal(packs.fr.actors.length, 86); assert.equal(featPacks.fr.items.length, 150);
   assert.deepEqual(packs.fr.actors.map(a => a._id), packs.en.actors.map(a => a._id));
   assert.deepEqual(featPacks.fr.items.map(a => a._id), featPacks.en.items.map(a => a._id));
   assert.equal(new Set(BESTIARY_ENTRIES.map(e => e.id)).size, BESTIARY_ENTRIES.length);
@@ -60,8 +60,8 @@ test("each bestiary actor has valid folders, embedded identities, independent to
   }
 });
 
-test("all 110 source images are available in both Bestiary portrait galleries", () => {
-  for (const {actors} of Object.values(packs)) assert.equal(actors.reduce((sum, actor) => sum + actor.system.portraits.length, 0), 110);
+test("all 121 source images are available in both Bestiary portrait galleries", () => {
+  for (const {actors} of Object.values(packs)) assert.equal(actors.reduce((sum, actor) => sum + actor.system.portraits.length, 0), 121);
 });
 
 test("Bestiary assets contain the current portraits, without obsolete copies or starter creature art", () => {
@@ -84,6 +84,16 @@ test("bilingual creatures use identical FR-authoritative mechanics, CP capacitie
   }
   const ygg = packs.en.actors.find(a => a.name === "Yggwurm");
   assert.equal(ygg.system.traits.strength, 6, "recent FR corrections also drive the EN compendium");
+});
+
+test("summoned profiles retain the fixed combat-point totals printed in the Rulebook", () => {
+  const expected = new Map([["Milicien de la milice royale", 10], ["Garde royale", 15], ["Roi des neuf", 32],
+    ["Einharjar", 30], ["Havar", 16], ["Skölddíser", 20]]);
+  for (const [name, points] of expected) {
+    const actor = packs.fr.actors.find(entry => entry.name === name);
+    assert.ok(actor, `${name} is present in the Bestiary compendium`);
+    assert.equal(resolveCombatPools({actor: adapter(actor)}).pools.find(pool => pool.id === "free").max, points, name);
+  }
 });
 
 test("Tenace, the separate Huvfurwurm head and movement steps survive bestiary generation", () => {

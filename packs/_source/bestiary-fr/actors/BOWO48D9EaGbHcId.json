@@ -1,0 +1,104 @@
+{
+  "name": "Svartasi",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg",
+  "items": [
+    {
+      "name": "Cotte de mailles",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+      "system": {
+        "description": "Des milliers d'anneaux métalliques entrelacés portés sur un rembourrage. Lourde mais comparativement souple.",
+        "source": "Guide du maître, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "heft": 5,
+        "movementModifier": -2,
+        "initiativeModifier": -2,
+        "weight": 21,
+        "value": 70,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "xwrhTZu0v1w2x3y4",
+      "_key": "!actors.items!BOWO48D9EaGbHcId.xwrhTZu0v1w2x3y4",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "BOWO48D9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+    ],
+    "traits": {
+      "strength": 5
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 75,
+        "max": 75
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "Svartasi surgit d’un banc de brume sous la forme d’un cheval de guerre de taille moyenne, équipé d’une cotte de mailles intégrale. Il obéit à son appelant ou à toute personne explicitement autorisée et disparaît si le pouvoir prend fin ou s’il meurt. Son arrivée prend 1d10 tours; un seul peut être appelé à la fois. Son profil donne Force +5, 75 points de santé, une protection de 3 et un mouvement de combat de 20 mètres par tour. Il n’a pas d’aptitude particulière par rapport à un destrier classique.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "quadruped",
+      "size": "2",
+      "age": "non précisé",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 75,
+      "bodyMax": 75,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "20 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Destrier noir spirituel : Force +5, 75 PS, VP 3, déplacement 20 m/tour.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 223
+      }
+    }
+  },
+  "_id": "BOWO48D9EaGbHcId",
+  "_key": "!actors!BOWO48D9EaGbHcId",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

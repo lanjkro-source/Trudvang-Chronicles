@@ -1,0 +1,77 @@
+{
+  "name": "Enfant de la pierre",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "TCZWLv0v1w2x3y4z",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 1
+    },
+    "description": "Un esprit mineur de la montagne est lié à une pierre de la taille d’un poing. Il peut localiser des objets et avertir d’un danger si ses consignes sont précises; il fait un bruit de pierres qui s’entrechoquent pour attirer l’attention. Au niveau 1 de la rune, il voit comme en plein jour dans le noir jusqu’à 5 mètres et comme sous un faible éclairage au-delà, porte 500 grammes, se déplace de 1 mètre par tour et reste lié pendant 1 heure. Ces valeurs augmentent avec le niveau de la rune. La source ne donne aucune valeur de santé, d’attaque ou de protection.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "other",
+      "size": "<1/3",
+      "age": "non précisé",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 0,
+      "bodyMax": 0,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "1 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Esprit lié à une pierre : vision spéciale, portage 500 g, mouvement 1 m/tour au niveau 1.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 286
+      }
+    }
+  },
+  "_id": "TCZWLv0v1w2x3y4z",
+  "_key": "!actors!TCZWLv0v1w2x3y4z",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

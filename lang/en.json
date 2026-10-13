@@ -766,7 +766,8 @@
         "troll": "Trolls",
         "wurm": "Wurms",
         "jotunTursir": "Jotuns and thurses",
-        "animal": "Animals"
+        "animal": "Animals",
+        "summoned": "Summoned beings"
       }
     },
     "Fear": {
@@ -11703,6 +11704,115 @@
           "Summary": "Scaled leviathan of the frozen seas.",
           "Environment": "Frozen seas, deep fjords, and storm-battered breakers around Trudvang.",
           "SourceBook": "Jorgi's Bestiary"
+        },
+        "haa3Yx0v1w2x3y4z": {
+          "Skill0": "Shield Bearer",
+          "Weapon0": "Glaaf (Short Sword)",
+          "Weapon1": "Small Wooden Shield",
+          "Armor0": "Fur / Leather Armor",
+          "Name": "Royal Militiaman",
+          "Description": "A simple royal militiaman appears from mist to protect the bruide. It stays within 10 metres, cannot undertake any other task, and disappears into mist when the power ends or it dies. The source profile gives 20 health points, Protection 2, 10 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +4 Combat Points. The VC for attacks is not specified in the power.",
+          "Age": "not specified",
+          "Summary": "Basic spirit-warrior summoned to protect and fight.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "p7e142v1w2x3y4z5": {
+          "Skill0": "Shield Bearer",
+          "Weapon0": "Breid Swerd (Broadsword)",
+          "Weapon1": "Small Wooden Shield",
+          "Armor0": "Fur / Leather Armor",
+          "Name": "Royal Guard",
+          "Description": "A disciplined royal guard appears from mist to protect the bruide. It stays within 10 metres, undertakes only protection and combat, and disappears into mist when the power ends or it dies. Up to four may be active. The profile gives Strength +1, 25 health points, Protection 3, 15 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +8 Combat Points. The VC for attacks is not specified in the power.",
+          "Age": "not specified",
+          "Summary": "Disciplined royal spirit-guard summoned to protect and fight.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "MGm3FUoUpVqWrXsY": {
+          "Weapon0": "Tvei Swerd (Two-Handed Sword)",
+          "Name": "One of the Nine Kings",
+          "Description": "A spirit-king appears from mist to protect the bruide. It stays within 10 metres, cannot undertake any task other than protection or combat, and disappears into mist when the power ends or it dies. Up to nine may be active. The profile gives Strength +4, 50 health points, Protection 9, 32 Combat Points, Initiative 1d10 (OR 10) + 4, a sacred two-handed sword dealing 1d10 (OR 8–10) + 2 damage, and Fear Factor 1d10 (OR 9–10).",
+          "Age": "not specified",
+          "Summary": "A towering spirit-king summoned to protect and fight.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "YTMlzaD8D9EaGbHc": {
+          "Skill0": "Shield Bearer",
+          "Weapon0": "Tvei Swerd (Two-Handed Sword)",
+          "Name": "Einharjar",
+          "Description": "An einharjar appears from mist to protect the stormikjalt. It stays within 10 metres, undertakes only protection and combat, and disappears when the power ends or it dies. Up to six may be active. The profile gives Strength +4, 35 health points, Protection 5, 30 Combat Points, Initiative 1d10 (OR 10) + 4, the Armed Combat discipline, and Shield Bearer +13 Combat Points. They usually wield two-handed swords. The source does not specify an attack VC.",
+          "Age": "not specified",
+          "Summary": "A sacred berserker spirit summoned to protect and fight.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "87qS4qSnToUpVqWr": {
+          "Skill0": "Shield Bearer",
+          "Weapon0": "Barda Axi (Battle Axe)",
+          "Weapon1": "Medium Wooden Shield",
+          "Armor0": "Fur / Leather Armor",
+          "Name": "Havar",
+          "Description": "A havar appears from mist to protect the stormikjalt and vanishes if the power ends or it dies. Only one may be active. It stays within 10 metres and does nothing but protect or fight attackers. It wears leather, a nasal helmet, and carries a round shield and traditional battle axe. The profile gives Strength +1, 25 health points, Protection 2, 16 Combat Points, Initiative 1d10 (OR 10) + 4, and Shield Bearer +4 Combat Points. The attack VC is not specified.",
+          "Age": "not specified",
+          "Summary": "A holy warrior-spirit summoned by Storme to protect its caller.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "zPJ2A4v1w2x3y4z5": {
+          "Skill0": "Shield Bearer",
+          "Weapon0": "Barda swerd (battle sword)",
+          "Weapon1": "Large Wooden Shield",
+          "Armor0": "Fur / Leather Armor",
+          "Name": "Skölddíser",
+          "Description": "Skölddísers appear from mist to protect the stormikjalt and vanish when the power ends or they die. Up to three may be active. They remain within 10 metres and only protect or fight. They wear reinforced leather, have blond manes and blue spiral face-paint, and usually carry battle swords and reinforced large round shields. The profile gives Strength +2, 30 health points, Protection 3, 20 Combat Points, Initiative 1d10 (OR 10) + 2, and Shield Bearer +8 Combat Points. The attack VC is not specified.",
+          "Age": "not specified",
+          "Summary": "A sacred warrior-woman spirit summoned to protect its caller.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "gJtS12x3y4z5A6B7": {
+          "Armor0": "Fur / Leather Armor",
+          "Name": "Falfax",
+          "Description": "Falfax appears from a bank of mist as a medium warhorse in full-body leather armour. It obeys its caller, or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +4, 60 health points, Protection 2, and combat movement 16 metres per round. It has no special ability beyond that of a conventional warhorse.",
+          "Age": "not specified",
+          "Summary": "A summoned warhorse spirit in full-body leather armour.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "BOWO48D9EaGbHcId": {
+          "Armor0": "Chain Mail",
+          "Name": "Svartasi",
+          "Description": "Svartasi appears from a bank of mist as a medium warhorse in full-body chainmail. It obeys its caller or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +5, 75 health points, Protection 3, and combat movement 20 metres per round. It has no special ability beyond that of a conventional warhorse.",
+          "Age": "not specified",
+          "Summary": "A summoned black warhorse spirit in full-body mail.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "u7fg4G9EaGbHcIdJ": {
+          "Name": "Snarfari",
+          "Description": "Snarfari appears from mist as a very large, six-legged, two-headed stallion and a master warhorse. It obeys its caller or an explicitly authorized rider; only one may be called at a time. It can cover a five-day journey in one day, its nostrils produce mist that gives attackers −3 precision, and it regenerates 1 health point per round. The profile gives Strength +6, 90 health points, Protection 6, movement 24 metres per round, and Fear Factor 1d5. The source does not give a numeric size coefficient; the compendium uses size 3 as a display estimate.",
+          "Age": "not specified",
+          "Summary": "A six-legged, two-headed divine stallion that travels with the wind.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "TCZWLv0v1w2x3y4z": {
+          "Name": "Stone Child",
+          "Description": "A minor mountain spirit is bound to a fist-sized stone. It can locate objects and warn of danger when given precise instructions, making a clattering-stone sound to attract attention. At rune level 1 it sees clearly in darkness to 5 metres and in dim light beyond that distance, carries 500 grams, moves 1 metre per round, and remains bound for 1 hour. These values scale with rune level. The source gives no health, attack, or protection values.",
+          "Age": "not specified",
+          "Summary": "A minor mountain spirit bound to a fist-sized stone.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
+        },
+        "6CXofdE9EaGbHcId": {
+          "Name": "Animated Undead Slave",
+          "Description": "The ritual animates a reasonably complete corpse or skeleton and gives the creator control over its actions. The base profile rolls 1d10 (OR 10) + 5 health points and 1d10 (OR 10) + 20 skill points to distribute. It has exceptional traits Dexterity −4 and Intelligence −4, plus an untrained sense that can detect living beings within 10 metres after a situation test SV 8, even if invisible or camouflaged (except grindblom or the Domain of Mists). The power must expire before the ritual can be cast again. This compendium template shows the ordinary 1–10 result range before open rolls; skill points remain unallocated.",
+          "Age": "not specified",
+          "Summary": "A corpse or skeleton animated and controlled by its creator.",
+          "Environment": "Temporary manifestation produced by a power or ritual.",
+          "SourceBook": "Rulebook"
         }
       }
     }

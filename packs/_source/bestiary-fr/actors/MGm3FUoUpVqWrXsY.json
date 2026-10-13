@@ -1,0 +1,104 @@
+{
+  "name": "Roi des neuf",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg",
+  "items": [
+    {
+      "name": "Tvei swerd (épée sacrée à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "Une épée immense et lourde qui sacrifie la vitesse à la portée, à la puissance et à la terreur sur le champ de bataille.",
+        "source": "Guide du maître, p. 72",
+        "category": "twoHanded",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 10,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 4,
+        "value": 28,
+        "damageBonus": 2,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "oYwStcHcIdJeKfLg",
+      "_key": "!actors.items!MGm3FUoUpVqWrXsY.oYwStcHcIdJeKfLg",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "MGm3FUoUpVqWrXsY",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+    ],
+    "traits": {
+      "strength": 4
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 50,
+        "max": 50
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 32,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Un roi-esprit apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à neuf rois peuvent être actifs. Le profil donne Force +4, 50 points de santé, une protection de 9, 32 points de combat, une initiative de 1d10 (JO 10) + 4, une épée sacrée à deux mains infligeant 1d10 (JO 8–10) + 2 dégâts et un facteur de peur de 1d10 (JO 9–10).",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "humanoid",
+      "size": "1",
+      "age": "non précisé",
+      "naturalArmor": 9,
+      "fearFactor": "1d10 (JO 9-10)",
+      "bodyMin": 50,
+      "bodyMax": 50,
+      "move": [],
+      "armor": [],
+      "summary": "Roi-esprit : Force +4, 50 PS, VP 9, 32 PC; épée sacrée et facteur de peur.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 238
+      }
+    }
+  },
+  "_id": "MGm3FUoUpVqWrXsY",
+  "_key": "!actors!MGm3FUoUpVqWrXsY",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

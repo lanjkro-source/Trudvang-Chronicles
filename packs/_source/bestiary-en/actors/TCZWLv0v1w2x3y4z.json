@@ -1,0 +1,77 @@
+{
+  "name": "Stone Child",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "TCZWLv0v1w2x3y4z",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 0,
+        "max": 0
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 1
+    },
+    "description": "A minor mountain spirit is bound to a fist-sized stone. It can locate objects and warn of danger when given precise instructions, making a clattering-stone sound to attract attention. At rune level 1 it sees clearly in darkness to 5 metres and in dim light beyond that distance, carries 500 grams, moves 1 metre per round, and remains bound for 1 hour. These values scale with rune level. The source gives no health, attack, or protection values.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "other",
+      "size": "<1/3",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 0,
+      "bodyMax": 0,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "1 m",
+          "max": "1 m"
+        }
+      ],
+      "armor": [],
+      "summary": "A minor mountain spirit bound to a fist-sized stone.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 286
+      }
+    }
+  },
+  "_id": "TCZWLv0v1w2x3y4z",
+  "_key": "!actors!TCZWLv0v1w2x3y4z",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

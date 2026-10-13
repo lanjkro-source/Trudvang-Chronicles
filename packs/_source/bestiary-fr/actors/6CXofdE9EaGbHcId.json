@@ -1,0 +1,74 @@
+{
+  "name": "Esclave mort-vivant",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "6CXofdE9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+    ],
+    "traits": {
+      "intelligence": -4,
+      "dexterity": -4
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 10,
+        "max": 10
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Le rituel anime un cadavre ou squelette raisonnablement complet et permet au créateur de contrôler ses actes. Le profil de base tire 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir. Il reçoit les traits exceptionnels Dextérité -4 et Intelligence -4, ainsi qu’un sens inné qui détecte les êtres vivants dans un rayon de 10 mètres après un test de situation SV 8, même invisibles ou camouflés (sauf grindblom ou Domaine des Brumes). Le sort doit expirer avant que le rituel puisse être relancé. Ce modèle du compendium affiche la plage ordinaire de 1 à 10 avant jets ouverts; les points de compétence restent à répartir.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "humanoid",
+      "size": "1",
+      "age": "non précisé",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 6,
+      "bodyMax": 15,
+      "move": [],
+      "armor": [],
+      "summary": "Mort-vivant animé : 1d10 (JO 10) + 5 PS, Dextérité -4, Intelligence -4, perception de la vie.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 156
+      }
+    }
+  },
+  "_id": "6CXofdE9EaGbHcId",
+  "_key": "!actors!6CXofdE9EaGbHcId",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

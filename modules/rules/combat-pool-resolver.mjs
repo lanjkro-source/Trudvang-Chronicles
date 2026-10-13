@@ -223,6 +223,8 @@ export function readiedHandConflicts(items, candidate) {
 
 function poolMaximum(actor, id) {
   if (id === "free") {
+    const fixedMaximum = Number(sourcePoolData(actor, id).maxOverride);
+    if (Number.isFinite(fixedMaximum)) return Math.max(0, Math.trunc(fixedMaximum));
     const fighting = finite(actor?.getSkillValue?.("fighting") ?? actor?.system?.effective?.skills?.fighting ?? actor?.system?.skills?.fighting?.value, 1);
     const battleExperience = finite(knowledge(actor, "battleExperience")?.system?.level, 0);
     return Math.max(0, Math.trunc(fighting + battleExperience + finite(actor?.system?.modifiers?.combatMax, 0)));

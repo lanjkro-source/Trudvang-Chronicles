@@ -1,0 +1,164 @@
+{
+  "name": "Royal Guard",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg",
+  "items": [
+    {
+      "name": "Breid Swerd (Broadsword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "A robust cutting sword, commonly wielded by Mittlander warriors and sometimes used as a paired weapon.",
+        "source": "Game Master's Guide, p. 70",
+        "category": "oneHandedHeavy",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "protection": 8,
+        "breach": {
+          "value": 80,
+          "max": 80
+        },
+        "weight": 1.8,
+        "value": 15,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "f1pqWpSnToUpVqWr",
+      "_key": "!actors.items!p7e142v1w2x3y4z5.f1pqWpSnToUpVqWr",
+      "effects": []
+    },
+    {
+      "name": "Small Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A quick shield allowing three weapon actions per round. Shields are used primarily to parry successful melee attacks.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "uaN3GbE9EaGbHcId",
+      "_key": "!actors.items!p7e142v1w2x3y4z5.uaN3GbE9EaGbHcId",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "wXHAGF7C8D9EaGbH",
+      "_key": "!actors.items!p7e142v1w2x3y4z5.wXHAGF7C8D9EaGbH",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "p7e142v1w2x3y4z5",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+    ],
+    "traits": {
+      "strength": 1
+    },
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Shield Bearer",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 8,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 25,
+        "max": 25
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 15,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 5
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A disciplined royal guard appears from mist to protect the bruide. It stays within 10 metres, undertakes only protection and combat, and disappears into mist when the power ends or it dies. Up to four may be active. The profile gives Strength +1, 25 health points, Protection 3, 15 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +8 Combat Points. The VC for attacks is not specified in the power.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 25,
+      "bodyMax": 25,
+      "move": [],
+      "armor": [],
+      "summary": "Disciplined royal spirit-guard summoned to protect and fight.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 238
+      }
+    }
+  },
+  "_id": "p7e142v1w2x3y4z5",
+  "_key": "!actors!p7e142v1w2x3y4z5",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

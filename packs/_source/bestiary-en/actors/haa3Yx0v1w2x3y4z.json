@@ -1,0 +1,162 @@
+{
+  "name": "Royal Militiaman",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg",
+  "items": [
+    {
+      "name": "Glaaf (Short Sword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "A short sword, usually double-edged, common in eastern Trudvang and associated with the ancient Brots.",
+        "source": "Game Master's Guide, p. 69",
+        "category": "oneHandedLight",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1,
+        "value": 9,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedLightWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "1foUHMgMhNiOjPkQ",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.1foUHMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Small Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A quick shield allowing three weapon actions per round. Shields are used primarily to parry successful melee attacks.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "gpLxsy2x3y4z5A6B",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.gpLxsy2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "WJr6U6A6B7C8D9Ea",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.WJr6U6A6B7C8D9Ea",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "haa3Yx0v1w2x3y4z",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Shield Bearer",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 4,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 20,
+        "max": 20
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 10,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 5
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A simple royal militiaman appears from mist to protect the bruide. It stays within 10 metres, cannot undertake any other task, and disappears into mist when the power ends or it dies. The source profile gives 20 health points, Protection 2, 10 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +4 Combat Points. The VC for attacks is not specified in the power.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 20,
+      "bodyMax": 20,
+      "move": [],
+      "armor": [],
+      "summary": "Basic spirit-warrior summoned to protect and fight.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 237
+      }
+    }
+  },
+  "_id": "haa3Yx0v1w2x3y4z",
+  "_key": "!actors!haa3Yx0v1w2x3y4z",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

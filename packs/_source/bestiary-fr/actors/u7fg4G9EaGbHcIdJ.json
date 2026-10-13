@@ -1,0 +1,79 @@
+{
+  "name": "Snarfari",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "u7fg4G9EaGbHcIdJ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+    ],
+    "traits": {
+      "strength": 6
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "Snarfari surgit d’un banc de brume sous la forme d’un très grand étalon à six pattes et deux têtes, un destrier de maître. Il obéit à son appelant ou à un cavalier explicitement autorisé; un seul peut être appelé à la fois. Il parcourt en une journée un trajet de cinq jours; la brume qui sort de ses naseaux impose -3 en précision aux attaquants, et il régénère 1 point de santé par tour. Le profil donne Force +6, 90 points de santé, une protection de 6, un mouvement de 24 mètres par tour et un facteur de peur de 1d5. La source ne précise pas de coefficient de taille; le compendium utilise 3 comme estimation d’affichage.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "quadruped",
+      "size": "3",
+      "age": "non précisé",
+      "naturalArmor": 6,
+      "fearFactor": "1d5",
+      "bodyMin": 90,
+      "bodyMax": 90,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "24 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Destrier spirituel à six pattes et deux têtes : Force +6, 90 PS, VP 6, 24 m/tour.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 224
+      }
+    }
+  },
+  "_id": "u7fg4G9EaGbHcIdJ",
+  "_key": "!actors!u7fg4G9EaGbHcIdJ",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

@@ -1,0 +1,79 @@
+{
+  "name": "Snarfari",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "u7fg4G9EaGbHcIdJ",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 3,
+    "height": 3,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+    ],
+    "traits": {
+      "strength": 6
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 90,
+        "max": 90
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 24
+    },
+    "description": "Snarfari appears from mist as a very large, six-legged, two-headed stallion and a master warhorse. It obeys its caller or an explicitly authorized rider; only one may be called at a time. It can cover a five-day journey in one day, its nostrils produce mist that gives attackers −3 precision, and it regenerates 1 health point per round. The profile gives Strength +6, 90 health points, Protection 6, movement 24 metres per round, and Fear Factor 1d5. The source does not give a numeric size coefficient; the compendium uses size 3 as a display estimate.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "quadruped",
+      "size": "3",
+      "age": "not specified",
+      "naturalArmor": 6,
+      "fearFactor": "1d5",
+      "bodyMin": 90,
+      "bodyMax": 90,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "24 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "A six-legged, two-headed divine stallion that travels with the wind.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 224
+      }
+    }
+  },
+  "_id": "u7fg4G9EaGbHcIdJ",
+  "_key": "!actors!u7fg4G9EaGbHcIdJ",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

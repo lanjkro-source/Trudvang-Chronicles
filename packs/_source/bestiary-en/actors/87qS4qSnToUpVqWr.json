@@ -1,0 +1,164 @@
+{
+  "name": "Havar",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg",
+  "items": [
+    {
+      "name": "Barda Axi (Battle Axe)",
+      "type": "weapon",
+      "img": "icons/weapons/axes/axe-battle-blackened.webp",
+      "system": {
+        "description": "A refined and enlarged hand axe designed for combat.",
+        "source": "Game Master's Guide, p. 70",
+        "category": "oneHandedHeavy",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -4,
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 2,
+        "value": 11,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "sEbJnD8D9EaGbHcI",
+      "_key": "!actors.items!87qS4qSnToUpVqWr.sEbJnD8D9EaGbHcI",
+      "effects": []
+    },
+    {
+      "name": "Medium Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A balanced shield allowing two weapon actions per round. On a successful parry, damage is applied to the shield.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 5,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "passiveProtection": 4,
+        "weaponActions": 2,
+        "initiativeModifier": -2,
+        "weight": 4,
+        "value": 2,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "dvO5CRmSnToUpVqW",
+      "_key": "!actors.items!87qS4qSnToUpVqWr.dvO5CRmSnToUpVqW",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "fnW5yNeKfLgMhNiO",
+      "_key": "!actors.items!87qS4qSnToUpVqWr.fnW5yNeKfLgMhNiO",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "87qS4qSnToUpVqWr",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+    ],
+    "traits": {
+      "strength": 1
+    },
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Shield Bearer",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 4,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 25,
+        "max": 25
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 16,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A havar appears from mist to protect the stormikjalt and vanishes if the power ends or it dies. Only one may be active. It stays within 10 metres and does nothing but protect or fight attackers. It wears leather, a nasal helmet, and carries a round shield and traditional battle axe. The profile gives Strength +1, 25 health points, Protection 2, 16 Combat Points, Initiative 1d10 (OR 10) + 4, and Shield Bearer +4 Combat Points. The attack VC is not specified.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 25,
+      "bodyMax": 25,
+      "move": [],
+      "armor": [],
+      "summary": "A holy warrior-spirit summoned by Storme to protect its caller.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 218
+      }
+    }
+  },
+  "_id": "87qS4qSnToUpVqWr",
+  "_key": "!actors!87qS4qSnToUpVqWr",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

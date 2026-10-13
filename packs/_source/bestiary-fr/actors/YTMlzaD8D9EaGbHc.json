@@ -1,0 +1,112 @@
+{
+  "name": "Einharjar",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg",
+  "items": [
+    {
+      "name": "Tvei swerd (épée à deux mains)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "Une épée immense et lourde qui sacrifie la vitesse à la portée, à la puissance et à la terreur sur le champ de bataille.",
+        "source": "Guide du maître, p. 72",
+        "category": "twoHanded",
+        "damage": "1d10",
+        "openRoll": 8,
+        "weaponActions": 2,
+        "initiativeModifier": -6,
+        "protection": 10,
+        "breach": {
+          "value": 100,
+          "max": 100
+        },
+        "weight": 4,
+        "value": 28,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "twoHandedWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "ZfJTF9C8D9EaGbHc",
+      "_key": "!actors.items!YTMlzaD8D9EaGbHc.ZfJTF9C8D9EaGbHc",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "YTMlzaD8D9EaGbHc",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+    ],
+    "traits": {
+      "strength": 4
+    },
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 13,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 35,
+        "max": 35
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 30,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 4
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Un einharjar apparaît dans une brume pour protéger le stormikjalt. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à six peuvent être actifs. Le profil donne Force +4, 35 points de santé, une protection de 5, 30 points de combat, une initiative de 1d10 (JO 10) + 4, la discipline Combat armé et Porteur de bouclier +13 points de combat. Ils brandissent généralement des épées à deux mains. La source ne précise pas la VC d’attaque.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "humanoid",
+      "size": "1",
+      "age": "non précisé",
+      "naturalArmor": 5,
+      "fearFactor": "",
+      "bodyMin": 35,
+      "bodyMax": 35,
+      "move": [],
+      "armor": [],
+      "summary": "Einharjar : Force +4, 35 PS, VP 5, 30 PC; épée à deux mains.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 220
+      }
+    }
+  },
+  "_id": "YTMlzaD8D9EaGbHc",
+  "_key": "!actors!YTMlzaD8D9EaGbHc",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

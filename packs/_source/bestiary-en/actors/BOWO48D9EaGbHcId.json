@@ -1,0 +1,104 @@
+{
+  "name": "Svartasi",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg",
+  "items": [
+    {
+      "name": "Chain Mail",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+      "system": {
+        "description": "Thousands of interlinked metal rings worn over padding. Mail is heavy but comparatively flexible.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 50,
+          "max": 50
+        },
+        "heft": 5,
+        "movementModifier": -2,
+        "initiativeModifier": -2,
+        "weight": 21,
+        "value": 70,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "xwrhTZu0v1w2x3y4",
+      "_key": "!actors.items!BOWO48D9EaGbHcId.xwrhTZu0v1w2x3y4",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "BOWO48D9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+    ],
+    "traits": {
+      "strength": 5
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 75,
+        "max": 75
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 20
+    },
+    "description": "Svartasi appears from a bank of mist as a medium warhorse in full-body chainmail. It obeys its caller or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +5, 75 health points, Protection 3, and combat movement 20 metres per round. It has no special ability beyond that of a conventional warhorse.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "quadruped",
+      "size": "2",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 75,
+      "bodyMax": 75,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "20 m",
+          "max": "20 m"
+        }
+      ],
+      "armor": [],
+      "summary": "A summoned black warhorse spirit in full-body mail.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 223
+      }
+    }
+  },
+  "_id": "BOWO48D9EaGbHcId",
+  "_key": "!actors!BOWO48D9EaGbHcId",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

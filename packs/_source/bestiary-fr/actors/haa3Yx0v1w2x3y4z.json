@@ -1,0 +1,162 @@
+{
+  "name": "Milicien de la milice royale",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg",
+  "items": [
+    {
+      "name": "Glaaf (épée courte)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "description": "Une épée courte généralement à double tranchant, courante dans l'est de Trudvang et associée aux anciens Brots.",
+        "source": "Guide du maître, p. 69",
+        "category": "oneHandedLight",
+        "damage": "1d10",
+        "openRoll": 10,
+        "weaponActions": 4,
+        "initiativeModifier": -3,
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "weight": 1,
+        "value": 9,
+        "damageBonus": 0,
+        "quantity": 1,
+        "combatSpecialty": "oneHandedLightWeapons",
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "1foUHMgMhNiOjPkQ",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.1foUHMgMhNiOjPkQ",
+      "effects": []
+    },
+    {
+      "name": "Petit bouclier en bois",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier rapide permettant trois actions d'arme par tour. Les boucliers servent avant tout à parer les attaques au contact réussies.",
+        "source": "Guide du maître, p. 76",
+        "protection": 4,
+        "breach": {
+          "value": 40,
+          "max": 40
+        },
+        "passiveProtection": 2,
+        "weaponActions": 3,
+        "initiativeModifier": -1,
+        "weight": 2,
+        "value": 1,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "gpLxsy2x3y4z5A6B",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.gpLxsy2x3y4z5A6B",
+      "effects": []
+    },
+    {
+      "name": "Cuir",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord.",
+        "source": "Guide du maître, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "WJr6U6A6B7C8D9Ea",
+      "_key": "!actors.items!haa3Yx0v1w2x3y4z.WJr6U6A6B7C8D9Ea",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "haa3Yx0v1w2x3y4z",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 4,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 20,
+        "max": 20
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 10,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 5
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Un milicien royal apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne peut rien faire d’autre que le protéger ou combattre ses assaillants, et disparaît dans la brume à la fin du pouvoir ou s’il meurt. Le profil donne 20 points de santé, une protection de 2, 10 points de combat, une initiative de 1d10 (JO 10) + 5 et Porteur de bouclier +4 points de combat. La VC d’attaque n’est pas précisée par le pouvoir.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "humanoid",
+      "size": "1",
+      "age": "non précisé",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 20,
+      "bodyMax": 20,
+      "move": [],
+      "armor": [],
+      "summary": "Milicien royal spectral : 20 PS, VP 2, 10 PC; épée courte et petit bouclier.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 237
+      }
+    }
+  },
+  "_id": "haa3Yx0v1w2x3y4z",
+  "_key": "!actors!haa3Yx0v1w2x3y4z",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

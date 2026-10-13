@@ -22,14 +22,16 @@ const content = load("data/starter-content.json");
 const equipment = content.items.filter(item => ["weapon", "armor", "shield"].includes(item.type));
 const armorIds = {cuir: "FurLeather", fourrure: "FurLeather", armuredefourrure: "FurLeather", armuredecuir: "HardenedLeather",
   cottedemailles: "ChainMail", tissuepais: "ThickFabric", cuirrenforcedemetal: "MetalReinforcedLeather"};
-const weaponIds = {branchesdarbre: "Stafur", branchedarbre: "Stafur", arbrederacineourocher: "TveiKlubb", glaaf: "Glaaf"};
+const weaponIds = {branchesdarbre: "Stafur", branchedarbre: "Stafur", arbrederacineourocher: "TveiKlubb", glaaf: "Glaaf",
+  grandbouclierrondrenforce: "LargeShield"};
 const naturalNames = {morsure: "Bite", defenses: "Tusks", defense: "Tusks", griffes: "Claws", griffure: "Claws",
   cornes: "Horns", mainsnues: "Unarmed", patteempaleuse: "Impaling leg", sabots: "Hooves", ruade: "Kick", balayage: "Sweep",
   souffledeglace: "Ice breath", soufflemagmatique: "Magma breath", souffledefeu: "Fire breath"};
 const traitKeys = {force: "strength", dextérité: "dexterity", constitution: "constitution", intelligence: "intelligence",
   charisme: "charisma", psychisme: "psyche", perception: "perception"};
 const families = {beast: ["Beasts", "Bêtes"], mist: ["Mist creatures", "Créatures des brumes"], nature: ["Nature beings", "Êtres de la nature"],
-  troll: ["Trolls", "Trolls"], wurm: ["Wurms", "Wurms"], jotunTursir: ["Jotuns and thurses", "Jotuns et thurses"], animal: ["Animals", "Animaux"]};
+  troll: ["Trolls", "Trolls"], wurm: ["Wurms", "Wurms"], jotunTursir: ["Jotuns and thurses", "Jotuns et thurses"], animal: ["Animals", "Animaux"],
+  summoned: ["Summoned beings", "Êtres invoqués"]};
 for (const code of ["fr", "en"]) languages[code].TRUDVANG.Npc.CreatureTypes = Object.fromEntries(Object.entries(families).map(([id, names]) => [id, names[code === "fr" ? 1 : 0]]));
 const knowledge = Object.entries(TRUDVANG.knowledgeTree).flatMap(([skillKey, disciplines]) => disciplines.flatMap(d =>
   [{...d, skillKey}, ...d.specialties.map(s => ({...s, skillKey}))]));
@@ -155,7 +157,9 @@ const entries = sources.fr.map((creature, index) => {
     system: {portraits, traits: Object.fromEntries(Object.entries(creature.traits).map(([trait, value]) => {
       if (!traitKeys[trait]) throw new Error(`Unknown trait ${trait}`); return [traitKeys[trait], value];
     })), skills: Object.fromEntries(rawRows.filter(row => row.kind === "skill" && row.skillKey).map(row => [row.skillKey, {value: row.value, bonus: 0}])),
-    skillTree, attacks, resources: {body: {value: body, max: body}}, combatPools: {free: {spent: 0, weaponSpent: 0, offHandSpent: 0}},
+    skillTree, attacks, resources: {body: {value: body, max: body}}, combatPools: {free: {
+      ...(Number.isFinite(creature.combatPoints) ? {maxOverride: Math.max(0, Math.trunc(creature.combatPoints))} : {}),
+      spent: 0, weaponSpent: 0, offHandSpent: 0}},
     initiative: {base: creature.initiativeBase}, movement: {base: Number.parseFloat(creature.move.find(m=>m.mode === "terrestre")?.max || "0") || 0},
     descriptionKey: key("Description", creature.description, english.description),
     details: {creatureTypeKey: `TRUDVANG.Npc.CreatureTypes.${creature.creatureType}`, type: creature.type, size: String(creature.size),

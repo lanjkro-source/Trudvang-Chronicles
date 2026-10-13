@@ -897,6 +897,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.CreatureTypes.wurm` | Wurms | Wurms |
 | `TRUDVANG.Npc.CreatureTypes.jotunTursir` | Jotuns and thurses | Jotuns et thurses |
 | `TRUDVANG.Npc.CreatureTypes.animal` | Animals | Animaux |
+| `TRUDVANG.Npc.CreatureTypes.summoned` | Summoned beings | Êtres invoqués |
 
 ## `TRUDVANG.Fear`
 
@@ -9651,3 +9652,134 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Age` | null | null |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.Environment` | Frozen seas, deep fjords, and storm-battered breakers around Trudvang. | Mers glacées, fjords profonds et brisants battus par les tempêtes autour de Trudvang. |
 | `TRUDVANG.Content.Creature.lD3lCfIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
+
+## `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Skill0` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon0` | Glaaf (Short Sword) | Glaaf (épée courte) |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon1` | Small Wooden Shield | Petit bouclier en bois |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Name` | Royal Militiaman | Milicien de la milice royale |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Description` | A simple royal militiaman appears from mist to protect the bruide. It stays within 10 metres, cannot undertake any other task, and disappears into mist when the power ends or it dies. The source profile gives 20 health points, Protection 2, 10 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +4 Combat Points. The VC for attacks is not specified in the power. | Un milicien royal apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne peut rien faire d’autre que le protéger ou combattre ses assaillants, et disparaît dans la brume à la fin du pouvoir ou s’il meurt. Le profil donne 20 points de santé, une protection de 2, 10 points de combat, une initiative de 1d10 (JO 10) + 5 et Porteur de bouclier +4 points de combat. La VC d’attaque n’est pas précisée par le pouvoir. |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Skill0` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon0` | Breid Swerd (Broadsword) | Breid swerd (épée large) |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon1` | Small Wooden Shield | Petit bouclier en bois |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Name` | Royal Guard | Garde royale |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Description` | A disciplined royal guard appears from mist to protect the bruide. It stays within 10 metres, undertakes only protection and combat, and disappears into mist when the power ends or it dies. Up to four may be active. The profile gives Strength +1, 25 health points, Protection 3, 15 Combat Points, Initiative 1d10 (OR 10) + 5, and Shield Bearer +8 Combat Points. The VC for attacks is not specified in the power. | Un garde royal discipliné apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à quatre gardes peuvent être actifs. Le profil donne Force +1, 25 points de santé, une protection de 3, 15 points de combat, une initiative de 1d10 (JO 10) + 5 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée par le pouvoir. |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Weapon0` | Tvei Swerd (Two-Handed Sword) | Tvei swerd (épée sacrée à deux mains) |
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Name` | One of the Nine Kings | Roi des neuf |
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Description` | A spirit-king appears from mist to protect the bruide. It stays within 10 metres, cannot undertake any task other than protection or combat, and disappears into mist when the power ends or it dies. Up to nine may be active. The profile gives Strength +4, 50 health points, Protection 9, 32 Combat Points, Initiative 1d10 (OR 10) + 4, a sacred two-handed sword dealing 1d10 (OR 8–10) + 2 damage, and Fear Factor 1d10 (OR 9–10). | Un roi-esprit apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à neuf rois peuvent être actifs. Le profil donne Force +4, 50 points de santé, une protection de 9, 32 points de combat, une initiative de 1d10 (JO 10) + 4, une épée sacrée à deux mains infligeant 1d10 (JO 8–10) + 2 dégâts et un facteur de peur de 1d10 (JO 9–10). |
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Skill0` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Weapon0` | Tvei Swerd (Two-Handed Sword) | Tvei swerd (épée à deux mains) |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Name` | Einharjar | Einharjar |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Description` | An einharjar appears from mist to protect the stormikjalt. It stays within 10 metres, undertakes only protection and combat, and disappears when the power ends or it dies. Up to six may be active. The profile gives Strength +4, 35 health points, Protection 5, 30 Combat Points, Initiative 1d10 (OR 10) + 4, the Armed Combat discipline, and Shield Bearer +13 Combat Points. They usually wield two-handed swords. The source does not specify an attack VC. | Un einharjar apparaît dans une brume pour protéger le stormikjalt. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à six peuvent être actifs. Le profil donne Force +4, 35 points de santé, une protection de 5, 30 points de combat, une initiative de 1d10 (JO 10) + 4, la discipline Combat armé et Porteur de bouclier +13 points de combat. Ils brandissent généralement des épées à deux mains. La source ne précise pas la VC d’attaque. |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Skill0` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon0` | Barda Axi (Battle Axe) | Barda axi (hache de bataille) |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon1` | Medium Wooden Shield | Bouclier moyen en bois |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Name` | Havar | Havar |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Description` | A havar appears from mist to protect the stormikjalt and vanishes if the power ends or it dies. Only one may be active. It stays within 10 metres and does nothing but protect or fight attackers. It wears leather, a nasal helmet, and carries a round shield and traditional battle axe. The profile gives Strength +1, 25 health points, Protection 2, 16 Combat Points, Initiative 1d10 (OR 10) + 4, and Shield Bearer +4 Combat Points. The attack VC is not specified. | Un havar apparaît dans une brume pour protéger le stormikjalt et disparaît à la fin du pouvoir ou s’il meurt. Un seul peut être actif. Il reste à moins de 10 mètres et ne fait que protéger ou combattre ses assaillants. Il porte du cuir, un casque à nasal, un bouclier rond et une hache de bataille traditionnelle. Le profil donne Force +1, 25 points de santé, une protection de 2, 16 points de combat, une initiative de 1d10 (JO 10) + 4 et Porteur de bouclier +4 points de combat. La VC d’attaque n’est pas précisée. |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Skill0` | Shield Bearer | Porteur de bouclier |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon0` | Barda swerd (battle sword) | Barda swerd (épée de bataille) |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon1` | Large fur-reinforced shield | Grand bouclier renforcé de fourrure |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Name` | Skölddíser | Skölddíser |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Description` | Skölddísers appear from mist to protect the stormikjalt and vanish when the power ends or they die. Up to three may be active. They remain within 10 metres and only protect or fight. They wear reinforced leather, have blond manes and blue spiral face-paint, and usually carry battle swords and reinforced large round shields. The profile gives Strength +2, 30 health points, Protection 3, 20 Combat Points, Initiative 1d10 (OR 10) + 2, and Shield Bearer +8 Combat Points. The attack VC is not specified. | Les skölddísers apparaissent dans une brume pour protéger le stormikjalt et disparaissent à la fin du pouvoir ou si elles meurent. Jusqu’à trois peuvent être actives. Elles restent à moins de 10 mètres et ne font que protéger ou combattre. Elles portent du cuir renforcé, ont une longue crinière blonde et des spirales bleues peintes sur le visage; elles portent généralement une épée de bataille et un grand bouclier rond renforcé. Le profil donne Force +2, 30 points de santé, une protection de 3, 20 points de combat, une initiative de 1d10 (JO 10) + 2 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée. |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Armor0` | Fur / Leather Armor | Cuir |
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Name` | Falfax | Falfax |
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Description` | Falfax appears from a bank of mist as a medium warhorse in full-body leather armour. It obeys its caller, or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +4, 60 health points, Protection 2, and combat movement 16 metres per round. It has no special ability beyond that of a conventional warhorse. | Falfax surgit d’un banc de brume sous la forme d’un cheval de guerre de taille moyenne, équipé d’une armure de cuir intégrale. Il obéit à son appelant ou à toute personne explicitement autorisée et disparaît si le pouvoir prend fin ou s’il meurt. Son arrivée prend 1d10 tours; un seul peut être appelé à la fois. Son profil donne Force +4, 60 points de santé, une protection de 2 et un mouvement de combat de 16 mètres par tour. Il n’a pas d’aptitude particulière par rapport à un destrier classique. |
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Armor0` | Chain Mail | Cotte de mailles |
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Name` | Svartasi | Svartasi |
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Description` | Svartasi appears from a bank of mist as a medium warhorse in full-body chainmail. It obeys its caller or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +5, 75 health points, Protection 3, and combat movement 20 metres per round. It has no special ability beyond that of a conventional warhorse. | Svartasi surgit d’un banc de brume sous la forme d’un cheval de guerre de taille moyenne, équipé d’une cotte de mailles intégrale. Il obéit à son appelant ou à toute personne explicitement autorisée et disparaît si le pouvoir prend fin ou s’il meurt. Son arrivée prend 1d10 tours; un seul peut être appelé à la fois. Son profil donne Force +5, 75 points de santé, une protection de 3 et un mouvement de combat de 20 mètres par tour. Il n’a pas d’aptitude particulière par rapport à un destrier classique. |
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Name` | Snarfari | Snarfari |
+| `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Description` | Snarfari appears from mist as a very large, six-legged, two-headed stallion and a master warhorse. It obeys its caller or an explicitly authorized rider; only one may be called at a time. It can cover a five-day journey in one day, its nostrils produce mist that gives attackers −3 precision, and it regenerates 1 health point per round. The profile gives Strength +6, 90 health points, Protection 6, movement 24 metres per round, and Fear Factor 1d5. The source does not give a numeric size coefficient; the compendium uses size 3 as a display estimate. | Snarfari surgit d’un banc de brume sous la forme d’un très grand étalon à six pattes et deux têtes, un destrier de maître. Il obéit à son appelant ou à un cavalier explicitement autorisé; un seul peut être appelé à la fois. Il parcourt en une journée un trajet de cinq jours; la brume qui sort de ses naseaux impose -3 en précision aux attaquants, et il régénère 1 point de santé par tour. Le profil donne Force +6, 90 points de santé, une protection de 6, un mouvement de 24 mètres par tour et un facteur de peur de 1d5. La source ne précise pas de coefficient de taille; le compendium utilise 3 comme estimation d’affichage. |
+| `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Name` | Stone Child | Enfant de la pierre |
+| `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Description` | A minor mountain spirit is bound to a fist-sized stone. It can locate objects and warn of danger when given precise instructions, making a clattering-stone sound to attract attention. At rune level 1 it sees clearly in darkness to 5 metres and in dim light beyond that distance, carries 500 grams, moves 1 metre per round, and remains bound for 1 hour. These values scale with rune level. The source gives no health, attack, or protection values. | Un esprit mineur de la montagne est lié à une pierre de la taille d’un poing. Il peut localiser des objets et avertir d’un danger si ses consignes sont précises; il fait un bruit de pierres qui s’entrechoquent pour attirer l’attention. Au niveau 1 de la rune, il voit comme en plein jour dans le noir jusqu’à 5 mètres et comme sous un faible éclairage au-delà, porte 500 grammes, se déplace de 1 mètre par tour et reste lié pendant 1 heure. Ces valeurs augmentent avec le niveau de la rune. La source ne donne aucune valeur de santé, d’attaque ou de protection. |
+| `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Name` | Animated Undead Slave | Esclave mort-vivant |
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Description` | The ritual animates a reasonably complete corpse or skeleton and gives the creator control over its actions. The base profile rolls 1d10 (OR 10) + 5 health points and 1d10 (OR 10) + 20 skill points to distribute. It has exceptional traits Dexterity −4 and Intelligence −4, plus an untrained sense that can detect living beings within 10 metres after a situation test SV 8, even if invisible or camouflaged (except grindblom or the Domain of Mists). The power must expire before the ritual can be cast again. This compendium template shows the ordinary 1–10 result range before open rolls; skill points remain unallocated. | Le rituel anime un cadavre ou squelette raisonnablement complet et permet au créateur de contrôler ses actes. Le profil de base tire 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir. Il reçoit les traits exceptionnels Dextérité -4 et Intelligence -4, ainsi qu’un sens inné qui détecte les êtres vivants dans un rayon de 10 mètres après un test de situation SV 8, même invisibles ou camouflés (sauf grindblom ou Domaine des Brumes). Le sort doit expirer avant que le rituel puisse être relancé. Ce modèle du compendium affiche la plage ordinaire de 1 à 10 avant jets ouverts; les points de compétence restent à répartir. |
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Age` | not specified | non précisé |
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
+| `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.SourceBook` | Rulebook | Livre des règles |

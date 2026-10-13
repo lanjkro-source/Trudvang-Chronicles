@@ -17135,5 +17135,1356 @@ export const BESTIARY_ENTRIES = [
     },
     "featIds": [],
     "tablets": []
+  },
+  {
+    "id": "haa3Yx0v1w2x3y4z",
+    "family": "summoned",
+    "pages": {
+      "fr": 237,
+      "en": 237
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon0",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.Glaaf.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG69",
+            "category": "oneHandedLight",
+            "damage": "1d10",
+            "openRoll": 10,
+            "weaponActions": 4,
+            "initiativeModifier": -3,
+            "protection": 7,
+            "breach": {
+              "value": 70,
+              "max": 70
+            },
+            "weight": 1,
+            "value": 9,
+            "damageBonus": 0,
+            "quantity": 1,
+            "combatSpecialty": "oneHandedLightWeapons",
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "1foUHMgMhNiOjPkQ"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Weapon1",
+          "type": "shield",
+          "img": "icons/svg/shield.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.SmallShield.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG76",
+            "protection": 4,
+            "breach": {
+              "value": 40,
+              "max": 40
+            },
+            "passiveProtection": 2,
+            "weaponActions": 3,
+            "initiativeModifier": -1,
+            "weight": 2,
+            "value": 1,
+            "damage": "1d10",
+            "openRoll": 0,
+            "damageBonus": 0,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "gpLxsy2x3y4z5A6B"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 2,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "WJr6U6A6B7C8D9Ea"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "haa3Yx0v1w2x3y4z",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/haa3Yx0v1w2x3y4z.svg"
+        ],
+        "traits": {},
+        "skills": {},
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Skill0",
+            "skillId": "",
+            "catalogId": "shieldBearer",
+            "value": 4,
+            "kind": "specialty"
+          }
+        ],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 20,
+            "max": 20
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 10,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 5
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 20,
+          "bodyMax": 20,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.haa3Yx0v1w2x3y4z.SourceBook",
+            "page": 237
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "p7e142v1w2x3y4z5",
+    "family": "summoned",
+    "pages": {
+      "fr": 238,
+      "en": 238
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon0",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.Broadsword.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG70",
+            "category": "oneHandedHeavy",
+            "damage": "1d10",
+            "openRoll": 9,
+            "weaponActions": 3,
+            "initiativeModifier": -4,
+            "protection": 8,
+            "breach": {
+              "value": 80,
+              "max": 80
+            },
+            "weight": 1.8,
+            "value": 15,
+            "damageBonus": 0,
+            "quantity": 1,
+            "combatSpecialty": "oneHandedHeavyWeapons",
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "f1pqWpSnToUpVqWr"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Weapon1",
+          "type": "shield",
+          "img": "icons/svg/shield.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.SmallShield.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG76",
+            "protection": 4,
+            "breach": {
+              "value": 40,
+              "max": 40
+            },
+            "passiveProtection": 2,
+            "weaponActions": 3,
+            "initiativeModifier": -1,
+            "weight": 2,
+            "value": 1,
+            "damage": "1d10",
+            "openRoll": 0,
+            "damageBonus": 0,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "uaN3GbE9EaGbHcId"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 3,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "wXHAGF7C8D9EaGbH"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "p7e142v1w2x3y4z5",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/p7e142v1w2x3y4z5.svg"
+        ],
+        "traits": {
+          "strength": 1
+        },
+        "skills": {},
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Skill0",
+            "skillId": "",
+            "catalogId": "shieldBearer",
+            "value": 8,
+            "kind": "specialty"
+          }
+        ],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 25,
+            "max": 25
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 15,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 5
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 25,
+          "bodyMax": 25,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.p7e142v1w2x3y4z5.SourceBook",
+            "page": 238
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "MGm3FUoUpVqWrXsY",
+    "family": "summoned",
+    "pages": {
+      "fr": 238,
+      "en": 238
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Weapon0",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.TwoHandedSword.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG72",
+            "category": "twoHanded",
+            "damage": "1d10",
+            "openRoll": 8,
+            "weaponActions": 2,
+            "initiativeModifier": -6,
+            "protection": 10,
+            "breach": {
+              "value": 100,
+              "max": 100
+            },
+            "weight": 4,
+            "value": 28,
+            "damageBonus": 2,
+            "quantity": 1,
+            "combatSpecialty": "twoHandedWeapons",
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "oYwStcHcIdJeKfLg"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "MGm3FUoUpVqWrXsY",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/MGm3FUoUpVqWrXsY.svg"
+        ],
+        "traits": {
+          "strength": 4
+        },
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 50,
+            "max": 50
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 32,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 4
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Age",
+          "naturalArmor": 9,
+          "fearFactor": "1d10 (JO 9-10)",
+          "bodyMin": 50,
+          "bodyMax": 50,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.MGm3FUoUpVqWrXsY.SourceBook",
+            "page": 238
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "YTMlzaD8D9EaGbHc",
+    "family": "summoned",
+    "pages": {
+      "fr": 220,
+      "en": 220
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Weapon0",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.TwoHandedSword.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG72",
+            "category": "twoHanded",
+            "damage": "1d10",
+            "openRoll": 8,
+            "weaponActions": 2,
+            "initiativeModifier": -6,
+            "protection": 10,
+            "breach": {
+              "value": 100,
+              "max": 100
+            },
+            "weight": 4,
+            "value": 28,
+            "damageBonus": 0,
+            "quantity": 1,
+            "combatSpecialty": "twoHandedWeapons",
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "ZfJTF9C8D9EaGbHc"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "YTMlzaD8D9EaGbHc",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/YTMlzaD8D9EaGbHc.svg"
+        ],
+        "traits": {
+          "strength": 4
+        },
+        "skills": {},
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Skill0",
+            "skillId": "",
+            "catalogId": "shieldBearer",
+            "value": 13,
+            "kind": "specialty"
+          }
+        ],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 35,
+            "max": 35
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 30,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 4
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Age",
+          "naturalArmor": 5,
+          "fearFactor": "",
+          "bodyMin": 35,
+          "bodyMax": 35,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.YTMlzaD8D9EaGbHc.SourceBook",
+            "page": 220
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "87qS4qSnToUpVqWr",
+    "family": "summoned",
+    "pages": {
+      "fr": 218,
+      "en": 218
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon0",
+          "type": "weapon",
+          "img": "icons/weapons/axes/axe-battle-blackened.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.BattleAxe.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG70",
+            "category": "oneHandedHeavy",
+            "damage": "1d10",
+            "openRoll": 9,
+            "weaponActions": 3,
+            "initiativeModifier": -4,
+            "protection": 7,
+            "breach": {
+              "value": 70,
+              "max": 70
+            },
+            "weight": 2,
+            "value": 11,
+            "damageBonus": 0,
+            "quantity": 1,
+            "combatSpecialty": "oneHandedHeavyWeapons",
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "sEbJnD8D9EaGbHcI"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Weapon1",
+          "type": "shield",
+          "img": "icons/svg/shield.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.MediumShield.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG76",
+            "protection": 5,
+            "breach": {
+              "value": 50,
+              "max": 50
+            },
+            "passiveProtection": 4,
+            "weaponActions": 2,
+            "initiativeModifier": -2,
+            "weight": 4,
+            "value": 2,
+            "damage": "1d10",
+            "openRoll": 0,
+            "damageBonus": 0,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "dvO5CRmSnToUpVqW"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 2,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "fnW5yNeKfLgMhNiO"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "87qS4qSnToUpVqWr",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/87qS4qSnToUpVqWr.svg"
+        ],
+        "traits": {
+          "strength": 1
+        },
+        "skills": {},
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Skill0",
+            "skillId": "",
+            "catalogId": "shieldBearer",
+            "value": 4,
+            "kind": "specialty"
+          }
+        ],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 25,
+            "max": 25
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 16,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 4
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 25,
+          "bodyMax": 25,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.87qS4qSnToUpVqWr.SourceBook",
+            "page": 218
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "zPJ2A4v1w2x3y4z5",
+    "family": "summoned",
+    "pages": {
+      "fr": 219,
+      "en": 219
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon0",
+          "type": "weapon",
+          "img": "icons/svg/sword.svg",
+          "system": {
+            "sourceKey": "TRUDVANG.Content.Source.Rulebook112",
+            "category": "oneHandedHeavy",
+            "combatSpecialty": "oneHandedHeavyWeapons",
+            "damage": "1d10",
+            "openRoll": 9,
+            "weaponActions": 3,
+            "initiativeModifier": -5,
+            "breach": {
+              "value": 90,
+              "max": 90
+            },
+            "weight": 2.5,
+            "value": 18,
+            "damageBonus": 0,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "3gKcYB3y4z5A6B7C"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon1",
+          "type": "shield",
+          "img": "icons/svg/shield.svg",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.LargeShield.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG76",
+            "protection": 7,
+            "breach": {
+              "value": 70,
+              "max": 70
+            },
+            "passiveProtection": 6,
+            "weaponActions": 1,
+            "initiativeModifier": -3,
+            "weight": 6,
+            "value": 3,
+            "damage": "1d10",
+            "openRoll": 0,
+            "damageBonus": 0,
+            "quantity": 1,
+            "equipped": true,
+            "hand": "weapon"
+          },
+          "_id": "iq7PInPkQlRmSnTo"
+        },
+        {
+          "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 3,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "Q8PwC9B7C8D9EaGb"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "zPJ2A4v1w2x3y4z5",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+        ],
+        "traits": {
+          "strength": 2
+        },
+        "skills": {},
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Skill0",
+            "skillId": "",
+            "catalogId": "shieldBearer",
+            "value": 8,
+            "kind": "specialty"
+          }
+        ],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 30,
+            "max": 30
+          }
+        },
+        "combatPools": {
+          "free": {
+            "maxOverride": 20,
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": 2
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 30,
+          "bodyMax": 30,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.SourceBook",
+            "page": 219
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "gJtS12x3y4z5A6B7",
+    "family": "summoned",
+    "pages": {
+      "fr": 222,
+      "en": 222
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.FurLeather.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 2,
+            "breach": {
+              "value": 20,
+              "max": 20
+            },
+            "heft": 2,
+            "movementModifier": -1,
+            "initiativeModifier": -1,
+            "weight": 7.5,
+            "value": 8.6,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "q84EJ2v1w2x3y4z5"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "gJtS12x3y4z5A6B7",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 2,
+        "height": 2,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+        ],
+        "traits": {
+          "strength": 4
+        },
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 60,
+            "max": 60
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 16
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "quadruped",
+          "size": "2",
+          "ageKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 60,
+          "bodyMax": 60,
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "16 m",
+              "max": "16 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.gJtS12x3y4z5A6B7.SourceBook",
+            "page": 222
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "BOWO48D9EaGbHcId",
+    "family": "summoned",
+    "pages": {
+      "fr": 223,
+      "en": 223
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg",
+      "items": [
+        {
+          "nameKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Armor0",
+          "type": "armor",
+          "img": "icons/equipment/chest/breastplate-banded-steel-grey.webp",
+          "system": {
+            "descriptionKey": "TRUDVANG.Content.Item.ChainMail.Description",
+            "sourceKey": "TRUDVANG.Content.Source.GMG77",
+            "protection": 3,
+            "breach": {
+              "value": 50,
+              "max": 50
+            },
+            "heft": 5,
+            "movementModifier": -2,
+            "initiativeModifier": -2,
+            "weight": 21,
+            "value": 70,
+            "quantity": 1,
+            "equipped": true
+          },
+          "_id": "xwrhTZu0v1w2x3y4"
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "BOWO48D9EaGbHcId",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 2,
+        "height": 2,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/BOWO48D9EaGbHcId.svg"
+        ],
+        "traits": {
+          "strength": 5
+        },
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 75,
+            "max": 75
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 20
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "quadruped",
+          "size": "2",
+          "ageKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 75,
+          "bodyMax": 75,
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "20 m",
+              "max": "20 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.BOWO48D9EaGbHcId.SourceBook",
+            "page": 223
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "u7fg4G9EaGbHcIdJ",
+    "family": "summoned",
+    "pages": {
+      "fr": 224,
+      "en": 224
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg",
+      "items": [],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "u7fg4G9EaGbHcIdJ",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 3,
+        "height": 3,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/u7fg4G9EaGbHcIdJ.svg"
+        ],
+        "traits": {
+          "strength": 6
+        },
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 90,
+            "max": 90
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 24
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "quadruped",
+          "size": "3",
+          "ageKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Age",
+          "naturalArmor": 6,
+          "fearFactor": "1d5",
+          "bodyMin": 90,
+          "bodyMax": 90,
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "24 m",
+              "max": "24 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.u7fg4G9EaGbHcIdJ.SourceBook",
+            "page": 224
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "TCZWLv0v1w2x3y4z",
+    "family": "summoned",
+    "pages": {
+      "fr": 286,
+      "en": 286
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg",
+      "items": [],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "TCZWLv0v1w2x3y4z",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 0.5,
+        "height": 0.5,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/TCZWLv0v1w2x3y4z.svg"
+        ],
+        "traits": {},
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 0,
+            "max": 0
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 1
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "other",
+          "size": "<1/3",
+          "ageKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 0,
+          "bodyMax": 0,
+          "move": [
+            {
+              "mode": "terrestre",
+              "distance": "1 m",
+              "max": "1 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.TCZWLv0v1w2x3y4z.SourceBook",
+            "page": 286
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "6CXofdE9EaGbHcId",
+    "family": "summoned",
+    "pages": {
+      "fr": 156,
+      "en": 156
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg",
+      "items": [],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "6CXofdE9EaGbHcId",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+        ],
+        "traits": {
+          "intelligence": -4,
+          "dexterity": -4
+        },
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 10,
+            "max": 10
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.summoned",
+          "type": "humanoid",
+          "size": "1",
+          "ageKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 6,
+          "bodyMax": 15,
+          "move": [],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.SourceBook",
+            "page": 156
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
   }
 ];

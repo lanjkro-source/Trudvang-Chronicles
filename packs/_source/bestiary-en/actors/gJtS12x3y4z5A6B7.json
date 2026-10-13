@@ -1,0 +1,104 @@
+{
+  "name": "Falfax",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg",
+  "items": [
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 2,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "q84EJ2v1w2x3y4z5",
+      "_key": "!actors.items!gJtS12x3y4z5A6B7.q84EJ2v1w2x3y4z5",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "gJtS12x3y4z5A6B7",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 2,
+    "height": 2,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/gJtS12x3y4z5A6B7.svg"
+    ],
+    "traits": {
+      "strength": 4
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 60,
+        "max": 60
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 16
+    },
+    "description": "Falfax appears from a bank of mist as a medium warhorse in full-body leather armour. It obeys its caller, or anyone explicitly authorized by them, and disappears if the power ends or it dies. Arrival takes 1d10 rounds; only one may be called at a time. Its profile gives Strength +4, 60 health points, Protection 2, and combat movement 16 metres per round. It has no special ability beyond that of a conventional warhorse.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "quadruped",
+      "size": "2",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 60,
+      "bodyMax": 60,
+      "move": [
+        {
+          "mode": "terrestre",
+          "distance": "16 m",
+          "max": "16 m"
+        }
+      ],
+      "armor": [],
+      "summary": "A summoned warhorse spirit in full-body leather armour.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 222
+      }
+    }
+  },
+  "_id": "gJtS12x3y4z5A6B7",
+  "_key": "!actors!gJtS12x3y4z5A6B7",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

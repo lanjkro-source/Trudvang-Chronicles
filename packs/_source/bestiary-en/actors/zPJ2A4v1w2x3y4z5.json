@@ -1,0 +1,162 @@
+{
+  "name": "Skölddíser",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg",
+  "items": [
+    {
+      "name": "Barda swerd (battle sword)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Rulebook, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 2.5,
+        "value": 18,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "3gKcYB3y4z5A6B7C",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.3gKcYB3y4z5A6B7C",
+      "effects": []
+    },
+    {
+      "name": "Large Wooden Shield",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "A slow but highly protective shield allowing one weapon action per round.",
+        "source": "Game Master's Guide, p. 76",
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "passiveProtection": 6,
+        "weaponActions": 1,
+        "initiativeModifier": -3,
+        "weight": 6,
+        "value": 3,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "iq7PInPkQlRmSnTo",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.iq7PInPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Fur / Leather Armor",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Warm, quiet armor of tanned fur or soft leather. It is common among Wildfolk, troll peoples, and northern humans.",
+        "source": "Game Master's Guide, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "Q8PwC9B7C8D9EaGb",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.Q8PwC9B7C8D9EaGb",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zPJ2A4v1w2x3y4z5",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+    ],
+    "traits": {
+      "strength": 2
+    },
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Shield Bearer",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 8,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 30,
+        "max": 30
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 20,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Skölddísers appear from mist to protect the stormikjalt and vanish when the power ends or they die. Up to three may be active. They remain within 10 metres and only protect or fight. They wear reinforced leather, have blond manes and blue spiral face-paint, and usually carry battle swords and reinforced large round shields. The profile gives Strength +2, 30 health points, Protection 3, 20 Combat Points, Initiative 1d10 (OR 10) + 2, and Shield Bearer +8 Combat Points. The attack VC is not specified.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 30,
+      "bodyMax": 30,
+      "move": [],
+      "armor": [],
+      "summary": "A sacred warrior-woman spirit summoned to protect its caller.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 219
+      }
+    }
+  },
+  "_id": "zPJ2A4v1w2x3y4z5",
+  "_key": "!actors!zPJ2A4v1w2x3y4z5",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

@@ -1,0 +1,162 @@
+{
+  "name": "Skölddíser",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg",
+  "items": [
+    {
+      "name": "Barda swerd (épée de bataille)",
+      "type": "weapon",
+      "img": "icons/svg/sword.svg",
+      "system": {
+        "source": "Livre des règles, p. 112",
+        "category": "oneHandedHeavy",
+        "combatSpecialty": "oneHandedHeavyWeapons",
+        "damage": "1d10",
+        "openRoll": 9,
+        "weaponActions": 3,
+        "initiativeModifier": -5,
+        "breach": {
+          "value": 90,
+          "max": 90
+        },
+        "weight": 2.5,
+        "value": 18,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "3gKcYB3y4z5A6B7C",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.3gKcYB3y4z5A6B7C",
+      "effects": []
+    },
+    {
+      "name": "Grand bouclier rond renforcé",
+      "type": "shield",
+      "img": "icons/svg/shield.svg",
+      "system": {
+        "description": "Un bouclier lent mais très protecteur, permettant une seule action d'arme par tour.",
+        "source": "Guide du maître, p. 76",
+        "protection": 7,
+        "breach": {
+          "value": 70,
+          "max": 70
+        },
+        "passiveProtection": 6,
+        "weaponActions": 1,
+        "initiativeModifier": -3,
+        "weight": 6,
+        "value": 3,
+        "damage": "1d10",
+        "openRoll": 0,
+        "damageBonus": 0,
+        "quantity": 1,
+        "equipped": true,
+        "hand": "weapon"
+      },
+      "_id": "iq7PInPkQlRmSnTo",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.iq7PInPkQlRmSnTo",
+      "effects": []
+    },
+    {
+      "name": "Cuir",
+      "type": "armor",
+      "img": "icons/equipment/chest/breastplate-collared-leather-brown.webp",
+      "system": {
+        "description": "Une armure chaude et silencieuse de fourrure tannée ou de cuir souple, courante chez les Sauvages, les peuples trolls et les humains du nord.",
+        "source": "Guide du maître, p. 77",
+        "protection": 3,
+        "breach": {
+          "value": 20,
+          "max": 20
+        },
+        "heft": 2,
+        "movementModifier": -1,
+        "initiativeModifier": -1,
+        "weight": 7.5,
+        "value": 8.6,
+        "quantity": 1,
+        "equipped": true
+      },
+      "_id": "Q8PwC9B7C8D9EaGb",
+      "_key": "!actors.items!zPJ2A4v1w2x3y4z5.Q8PwC9B7C8D9EaGb",
+      "effects": []
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "zPJ2A4v1w2x3y4z5",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/zPJ2A4v1w2x3y4z5.svg"
+    ],
+    "traits": {
+      "strength": 2
+    },
+    "skills": {},
+    "skillTree": [
+      {
+        "name": "Porteur de bouclier",
+        "skillId": "",
+        "catalogId": "shieldBearer",
+        "value": 8,
+        "kind": "specialty"
+      }
+    ],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 30,
+        "max": 30
+      }
+    },
+    "combatPools": {
+      "free": {
+        "maxOverride": 20,
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": 2
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Les skölddísers apparaissent dans une brume pour protéger le stormikjalt et disparaissent à la fin du pouvoir ou si elles meurent. Jusqu’à trois peuvent être actives. Elles restent à moins de 10 mètres et ne font que protéger ou combattre. Elles portent du cuir renforcé, ont une longue crinière blonde et des spirales bleues peintes sur le visage; elles portent généralement une épée de bataille et un grand bouclier rond renforcé. Le profil donne Force +2, 30 points de santé, une protection de 3, 20 points de combat, une initiative de 1d10 (JO 10) + 2 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée.",
+    "details": {
+      "creatureType": "Êtres invoqués",
+      "type": "humanoid",
+      "size": "1",
+      "age": "non précisé",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 30,
+      "bodyMax": 30,
+      "move": [],
+      "armor": [],
+      "summary": "Skölddíser : Force +2, 30 PS, VP 3, 20 PC; épée de bataille et grand bouclier.",
+      "environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 219
+      }
+    }
+  },
+  "_id": "zPJ2A4v1w2x3y4z5",
+  "_key": "!actors!zPJ2A4v1w2x3y4z5",
+  "folder": "uhE5KE7C8D9EaGbH"
+}

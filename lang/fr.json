@@ -766,7 +766,8 @@
         "troll": "Trolls",
         "wurm": "Wurms",
         "jotunTursir": "Jotuns et thurses",
-        "animal": "Animaux"
+        "animal": "Animaux",
+        "summoned": "Êtres invoqués"
       }
     },
     "Fear": {
@@ -11703,6 +11704,115 @@
           "Summary": "Léviathan écailleux des mers glacées.",
           "Environment": "Mers glacées, fjords profonds et brisants battus par les tempêtes autour de Trudvang.",
           "SourceBook": "Bestiaire de Jorge"
+        },
+        "haa3Yx0v1w2x3y4z": {
+          "Skill0": "Porteur de bouclier",
+          "Weapon0": "Glaaf (épée courte)",
+          "Weapon1": "Petit bouclier en bois",
+          "Armor0": "Cuir",
+          "Name": "Milicien de la milice royale",
+          "Description": "Un milicien royal apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne peut rien faire d’autre que le protéger ou combattre ses assaillants, et disparaît dans la brume à la fin du pouvoir ou s’il meurt. Le profil donne 20 points de santé, une protection de 2, 10 points de combat, une initiative de 1d10 (JO 10) + 5 et Porteur de bouclier +4 points de combat. La VC d’attaque n’est pas précisée par le pouvoir.",
+          "Age": "non précisé",
+          "Summary": "Milicien royal spectral : 20 PS, VP 2, 10 PC; épée courte et petit bouclier.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "p7e142v1w2x3y4z5": {
+          "Skill0": "Porteur de bouclier",
+          "Weapon0": "Breid swerd (épée large)",
+          "Weapon1": "Petit bouclier en bois",
+          "Armor0": "Cuir",
+          "Name": "Garde royale",
+          "Description": "Un garde royal discipliné apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à quatre gardes peuvent être actifs. Le profil donne Force +1, 25 points de santé, une protection de 3, 15 points de combat, une initiative de 1d10 (JO 10) + 5 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée par le pouvoir.",
+          "Age": "non précisé",
+          "Summary": "Garde royal spectral : Force +1, 25 PS, VP 3, 15 PC; épée large et bouclier.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "MGm3FUoUpVqWrXsY": {
+          "Weapon0": "Tvei swerd (épée sacrée à deux mains)",
+          "Name": "Roi des neuf",
+          "Description": "Un roi-esprit apparaît dans une brume pour protéger le bruide. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à neuf rois peuvent être actifs. Le profil donne Force +4, 50 points de santé, une protection de 9, 32 points de combat, une initiative de 1d10 (JO 10) + 4, une épée sacrée à deux mains infligeant 1d10 (JO 8–10) + 2 dégâts et un facteur de peur de 1d10 (JO 9–10).",
+          "Age": "non précisé",
+          "Summary": "Roi-esprit : Force +4, 50 PS, VP 9, 32 PC; épée sacrée et facteur de peur.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "YTMlzaD8D9EaGbHc": {
+          "Skill0": "Porteur de bouclier",
+          "Weapon0": "Tvei swerd (épée à deux mains)",
+          "Name": "Einharjar",
+          "Description": "Un einharjar apparaît dans une brume pour protéger le stormikjalt. Il reste à moins de 10 mètres, ne fait que protéger ou combattre, puis disparaît à la fin du pouvoir ou s’il meurt. Jusqu’à six peuvent être actifs. Le profil donne Force +4, 35 points de santé, une protection de 5, 30 points de combat, une initiative de 1d10 (JO 10) + 4, la discipline Combat armé et Porteur de bouclier +13 points de combat. Ils brandissent généralement des épées à deux mains. La source ne précise pas la VC d’attaque.",
+          "Age": "non précisé",
+          "Summary": "Einharjar : Force +4, 35 PS, VP 5, 30 PC; épée à deux mains.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "87qS4qSnToUpVqWr": {
+          "Skill0": "Porteur de bouclier",
+          "Weapon0": "Barda axi (hache de bataille)",
+          "Weapon1": "Bouclier moyen en bois",
+          "Armor0": "Cuir",
+          "Name": "Havar",
+          "Description": "Un havar apparaît dans une brume pour protéger le stormikjalt et disparaît à la fin du pouvoir ou s’il meurt. Un seul peut être actif. Il reste à moins de 10 mètres et ne fait que protéger ou combattre ses assaillants. Il porte du cuir, un casque à nasal, un bouclier rond et une hache de bataille traditionnelle. Le profil donne Force +1, 25 points de santé, une protection de 2, 16 points de combat, une initiative de 1d10 (JO 10) + 4 et Porteur de bouclier +4 points de combat. La VC d’attaque n’est pas précisée.",
+          "Age": "non précisé",
+          "Summary": "Havar : Force +1, 25 PS, VP 2, 16 PC; hache et bouclier rond.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "zPJ2A4v1w2x3y4z5": {
+          "Skill0": "Porteur de bouclier",
+          "Weapon0": "Barda swerd (épée de bataille)",
+          "Weapon1": "Grand bouclier rond renforcé",
+          "Armor0": "Cuir",
+          "Name": "Skölddíser",
+          "Description": "Les skölddísers apparaissent dans une brume pour protéger le stormikjalt et disparaissent à la fin du pouvoir ou si elles meurent. Jusqu’à trois peuvent être actives. Elles restent à moins de 10 mètres et ne font que protéger ou combattre. Elles portent du cuir renforcé, ont une longue crinière blonde et des spirales bleues peintes sur le visage; elles portent généralement une épée de bataille et un grand bouclier rond renforcé. Le profil donne Force +2, 30 points de santé, une protection de 3, 20 points de combat, une initiative de 1d10 (JO 10) + 2 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée.",
+          "Age": "non précisé",
+          "Summary": "Skölddíser : Force +2, 30 PS, VP 3, 20 PC; épée de bataille et grand bouclier.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "gJtS12x3y4z5A6B7": {
+          "Armor0": "Cuir",
+          "Name": "Falfax",
+          "Description": "Falfax surgit d’un banc de brume sous la forme d’un cheval de guerre de taille moyenne, équipé d’une armure de cuir intégrale. Il obéit à son appelant ou à toute personne explicitement autorisée et disparaît si le pouvoir prend fin ou s’il meurt. Son arrivée prend 1d10 tours; un seul peut être appelé à la fois. Son profil donne Force +4, 60 points de santé, une protection de 2 et un mouvement de combat de 16 mètres par tour. Il n’a pas d’aptitude particulière par rapport à un destrier classique.",
+          "Age": "non précisé",
+          "Summary": "Cheval de guerre spirituel : Force +4, 60 PS, VP 2, déplacement 16 m/tour.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "BOWO48D9EaGbHcId": {
+          "Armor0": "Cotte de mailles",
+          "Name": "Svartasi",
+          "Description": "Svartasi surgit d’un banc de brume sous la forme d’un cheval de guerre de taille moyenne, équipé d’une cotte de mailles intégrale. Il obéit à son appelant ou à toute personne explicitement autorisée et disparaît si le pouvoir prend fin ou s’il meurt. Son arrivée prend 1d10 tours; un seul peut être appelé à la fois. Son profil donne Force +5, 75 points de santé, une protection de 3 et un mouvement de combat de 20 mètres par tour. Il n’a pas d’aptitude particulière par rapport à un destrier classique.",
+          "Age": "non précisé",
+          "Summary": "Destrier noir spirituel : Force +5, 75 PS, VP 3, déplacement 20 m/tour.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "u7fg4G9EaGbHcIdJ": {
+          "Name": "Snarfari",
+          "Description": "Snarfari surgit d’un banc de brume sous la forme d’un très grand étalon à six pattes et deux têtes, un destrier de maître. Il obéit à son appelant ou à un cavalier explicitement autorisé; un seul peut être appelé à la fois. Il parcourt en une journée un trajet de cinq jours; la brume qui sort de ses naseaux impose -3 en précision aux attaquants, et il régénère 1 point de santé par tour. Le profil donne Force +6, 90 points de santé, une protection de 6, un mouvement de 24 mètres par tour et un facteur de peur de 1d5. La source ne précise pas de coefficient de taille; le compendium utilise 3 comme estimation d’affichage.",
+          "Age": "non précisé",
+          "Summary": "Destrier spirituel à six pattes et deux têtes : Force +6, 90 PS, VP 6, 24 m/tour.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "TCZWLv0v1w2x3y4z": {
+          "Name": "Enfant de la pierre",
+          "Description": "Un esprit mineur de la montagne est lié à une pierre de la taille d’un poing. Il peut localiser des objets et avertir d’un danger si ses consignes sont précises; il fait un bruit de pierres qui s’entrechoquent pour attirer l’attention. Au niveau 1 de la rune, il voit comme en plein jour dans le noir jusqu’à 5 mètres et comme sous un faible éclairage au-delà, porte 500 grammes, se déplace de 1 mètre par tour et reste lié pendant 1 heure. Ces valeurs augmentent avec le niveau de la rune. La source ne donne aucune valeur de santé, d’attaque ou de protection.",
+          "Age": "non précisé",
+          "Summary": "Esprit lié à une pierre : vision spéciale, portage 500 g, mouvement 1 m/tour au niveau 1.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
+        },
+        "6CXofdE9EaGbHcId": {
+          "Name": "Esclave mort-vivant",
+          "Description": "Le rituel anime un cadavre ou squelette raisonnablement complet et permet au créateur de contrôler ses actes. Le profil de base tire 1d10 (JO 10) + 5 points de santé et 1d10 (JO 10) + 20 points de compétence à répartir. Il reçoit les traits exceptionnels Dextérité -4 et Intelligence -4, ainsi qu’un sens inné qui détecte les êtres vivants dans un rayon de 10 mètres après un test de situation SV 8, même invisibles ou camouflés (sauf grindblom ou Domaine des Brumes). Le sort doit expirer avant que le rituel puisse être relancé. Ce modèle du compendium affiche la plage ordinaire de 1 à 10 avant jets ouverts; les points de compétence restent à répartir.",
+          "Age": "non précisé",
+          "Summary": "Mort-vivant animé : 1d10 (JO 10) + 5 PS, Dextérité -4, Intelligence -4, perception de la vie.",
+          "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
+          "SourceBook": "Livre des règles"
         }
       }
     }

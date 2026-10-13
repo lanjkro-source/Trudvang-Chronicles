@@ -1,0 +1,74 @@
+{
+  "name": "Animated Undead Slave",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "6CXofdE9EaGbHcId",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/6CXofdE9EaGbHcId.svg"
+    ],
+    "traits": {
+      "intelligence": -4,
+      "dexterity": -4
+    },
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 10,
+        "max": 10
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "The ritual animates a reasonably complete corpse or skeleton and gives the creator control over its actions. The base profile rolls 1d10 (OR 10) + 5 health points and 1d10 (OR 10) + 20 skill points to distribute. It has exceptional traits Dexterity −4 and Intelligence −4, plus an untrained sense that can detect living beings within 10 metres after a situation test SV 8, even if invisible or camouflaged (except grindblom or the Domain of Mists). The power must expire before the ritual can be cast again. This compendium template shows the ordinary 1–10 result range before open rolls; skill points remain unallocated.",
+    "details": {
+      "creatureType": "Summoned beings",
+      "type": "humanoid",
+      "size": "1",
+      "age": "not specified",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 6,
+      "bodyMax": 15,
+      "move": [],
+      "armor": [],
+      "summary": "A corpse or skeleton animated and controlled by its creator.",
+      "environment": "Temporary manifestation produced by a power or ritual.",
+      "source": {
+        "book": "Rulebook",
+        "page": 156
+      }
+    }
+  },
+  "_id": "6CXofdE9EaGbHcId",
+  "_key": "!actors!6CXofdE9EaGbHcId",
+  "folder": "uhE5KE7C8D9EaGbH"
+}
