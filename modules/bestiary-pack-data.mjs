@@ -47,7 +47,8 @@ export function buildBestiaryPackDocuments({code, localize, format, isFrench, st
   const families = [...new Set(BESTIARY_ENTRIES.map(entry => entry.family))];
   const folders = families.map(family => {
     const id = deterministicId(`folder:bestiary:${family}`);
-    return {_id: id, _key: `!folders!${id}`, name: localize(`TRUDVANG.Npc.CreatureTypes.${family}`),
+    const nameKey = family === "summoned" ? "TRUDVANG.Npc.BestiaryFolders.summoned" : `TRUDVANG.Npc.CreatureTypes.${family}`;
+    return {_id: id, _key: `!folders!${id}`, name: localize(nameKey),
       type: "Actor", folder: null, sorting: "a", sort: 0};
   });
   const abilities = new Map(CREATURE_ABILITY_ENTRIES.map(entry => [entry.id, entry]));

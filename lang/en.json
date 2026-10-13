@@ -768,6 +768,9 @@
         "jotunTursir": "Jotuns and thurses",
         "animal": "Animals",
         "summoned": "Summoned beings"
+      },
+      "BestiaryFolders": {
+        "summoned": "Invocations"
       }
     },
     "Fear": {

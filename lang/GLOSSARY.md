@@ -899,6 +899,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Npc.CreatureTypes.animal` | Animals | Animaux |
 | `TRUDVANG.Npc.CreatureTypes.summoned` | Summoned beings | Êtres invoqués |
 
+## `TRUDVANG.Npc.BestiaryFolders`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Npc.BestiaryFolders.summoned` | Invocations | Invocations |
+
 ## `TRUDVANG.Fear`
 
 | Clé | English | Français |
@@ -9724,7 +9730,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Skill0` | Shield Bearer | Porteur de bouclier |
 | `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon0` | Barda swerd (battle sword) | Barda swerd (épée de bataille) |
-| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon1` | Large fur-reinforced shield | Grand bouclier renforcé de fourrure |
+| `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Weapon1` | Large Wooden Shield | Grand bouclier rond renforcé |
 | `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Armor0` | Fur / Leather Armor | Cuir |
 | `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Name` | Skölddíser | Skölddíser |
 | `TRUDVANG.Content.Creature.zPJ2A4v1w2x3y4z5.Description` | Skölddísers appear from mist to protect the stormikjalt and vanish when the power ends or they die. Up to three may be active. They remain within 10 metres and only protect or fight. They wear reinforced leather, have blond manes and blue spiral face-paint, and usually carry battle swords and reinforced large round shields. The profile gives Strength +2, 30 health points, Protection 3, 20 Combat Points, Initiative 1d10 (OR 10) + 2, and Shield Bearer +8 Combat Points. The attack VC is not specified. | Les skölddísers apparaissent dans une brume pour protéger le stormikjalt et disparaissent à la fin du pouvoir ou si elles meurent. Jusqu’à trois peuvent être actives. Elles restent à moins de 10 mètres et ne font que protéger ou combattre. Elles portent du cuir renforcé, ont une longue crinière blonde et des spirales bleues peintes sur le visage; elles portent généralement une épée de bataille et un grand bouclier rond renforcé. Le profil donne Force +2, 30 points de santé, une protection de 3, 20 points de combat, une initiative de 1d10 (JO 10) + 2 et Porteur de bouclier +8 points de combat. La VC d’attaque n’est pas précisée. |
