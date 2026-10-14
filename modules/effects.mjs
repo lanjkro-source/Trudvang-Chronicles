@@ -1,3 +1,5 @@
+import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
+
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
 
@@ -94,6 +96,7 @@ export function configureEffects() {
     const status = CONFIG.statusEffects[id];
     if (status) status.hud = false;
   }
+  for (const status of ACTOR_STATE_STATUSES) CONFIG.statusEffects[status.id] = {...status};
 }
 
 /** Advance staged extracts and poisons once Foundry expires the current stage. */

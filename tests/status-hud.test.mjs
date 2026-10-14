@@ -36,8 +36,8 @@ test("only the seven requested statuses disappear from the manual Token HUD choi
   configureWith(definitions);
 
   assert.strictEqual(CONFIG.statusEffects, definitions, "the status registry must not be replaced");
-  assert.deepEqual(Object.keys(definitions), Object.keys(before), "no status definition may be deleted");
-  assert.deepEqual(Object.values(definitions).filter(status => status.hud === false).map(status => status.id),
+  assert.ok(Object.keys(before).every(id => definitions[id]), "no existing status definition may be deleted");
+  assert.deepEqual(Object.values(definitions).filter(status => coreStatusIds.includes(status.id) && status.hud === false).map(status => status.id),
     hiddenStatusIds);
   for (const [id, original] of originals) {
     assert.strictEqual(definitions[id], original, `${id}: keep the definition available to ActiveEffects`);

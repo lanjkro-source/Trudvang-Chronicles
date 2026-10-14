@@ -777,6 +777,7 @@
       "ApplyToTargets": "Apply to controlled characters"
     },
     "Status": {
+      "Sacrilege": "Sacrilegious",
       "RecoveryDaily": "{amount} BP/day",
       "RecoveryEveryDays": "{amount} BP/{days} days",
       "DamageConsequence": {

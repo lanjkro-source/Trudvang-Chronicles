@@ -915,6 +915,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
+| `TRUDVANG.Status.Sacrilege` | Sacrilegious | Sacrilège |
 | `TRUDVANG.Status.RecoveryDaily` | {amount} BP/day | {amount} PS/jour |
 | `TRUDVANG.Status.RecoveryEveryDays` | {amount} BP/{days} days | {amount} PS/{days} jours |
 | `TRUDVANG.Status.LifeSparkCountdown` | The last spark of life will go out in {rounds} rounds. | La dernière étincelle de vie s’éteindra dans {rounds} rounds. |

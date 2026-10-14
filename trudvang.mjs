@@ -15,6 +15,7 @@ import { registerPortraitDirectoryHook, registerPortraitSocket } from "./modules
 import {registerCompendiumIcons} from "./modules/compendium-capacity-icons.mjs";
 import { ACTOR_DATA_MODELS, ITEM_DATA_MODELS } from "./modules/data-models.mjs";
 import { configureEffects, registerEffectHooks } from "./modules/effects.mjs";
+import {registerActorStatusHooks} from "./modules/actor-statuses.mjs";
 import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
 import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
@@ -24,6 +25,7 @@ Hooks.once("init", () => {
   CONFIG.TRUDVANG = TRUDVANG;
   configureEffects();
   registerEffectHooks();
+  registerActorStatusHooks();
   registerCombatHooks();
   // Directory context menus are built once at sidebar first render (before
   // ready), so this must be registered at init — a ready-time Hooks.on would

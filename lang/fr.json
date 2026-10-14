@@ -777,6 +777,7 @@
       "ApplyToTargets": "Appliquer aux personnages contrôlés"
     },
     "Status": {
+      "Sacrilege": "Sacrilège",
       "RecoveryDaily": "{amount} PS/jour",
       "RecoveryEveryDays": "{amount} PS/{days} jours",
       "DamageConsequence": {
