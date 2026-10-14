@@ -78,6 +78,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
 
 export const INCAPACITATING_STATUSES = new Set(["dead", "unconscious", "sleep", "stun", "paralysis"]);
 export const IMMOBILIZING_STATUSES = new Set([...INCAPACITATING_STATUSES, "restrain"]);
+const TOKEN_HUD_HIDDEN_STATUSES = ["shock", "corrode", "regen", "degen", "fireShield", "coldShield", "holyShield"];
 
 export function configureEffects() {
   CONFIG.ActiveEffect.documentClass = TrudvangActiveEffect;
@@ -86,6 +87,13 @@ export function configureEffects() {
   CONFIG.ActiveEffect.typeLabels.effect = "TYPES.ActiveEffect.effect";
   CONFIG.ActiveEffect.typeIcons.effect = "fa-solid fa-person-rays";
   CONFIG.time.roundTime = 5;
+
+  // Hide only the manual Token HUD shortcuts. Keep the status definitions so
+  // ActiveEffects can still apply them and display their icons on actors/tokens.
+  for (const id of TOKEN_HUD_HIDDEN_STATUSES) {
+    const status = CONFIG.statusEffects[id];
+    if (status) status.hud = false;
+  }
 }
 
 /** Advance staged extracts and poisons once Foundry expires the current stage. */
