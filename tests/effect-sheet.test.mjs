@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import test from "node:test";
+import Handlebars from "handlebars";
 
 const get = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
 const set = (object, path, value) => {
@@ -64,10 +65,11 @@ globalThis.game = {user: {id: "tester"}, combat: null, i18n: {
   format: (key, data) => String(key).replace(/\{(\w+)\}/g, (_, name) => data[name] ?? "")
 }};
 globalThis.ui = {notifications: {warn: () => undefined, error: () => undefined, info: () => undefined}};
+globalThis.CONFIG = {statusEffects: {}};
 
 const {TrudvangEffectSheet} = await import("../modules/sheets/effect-sheet.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
-const {TrudvangActiveEffect, EFFECT_ITEM_TYPES} = await import("../modules/effects.mjs");
+const {TrudvangActiveEffect, EFFECT_ITEM_TYPES, registerEffectHooks} = await import("../modules/effects.mjs");
 
 function sheetFor(document) {
   return new TrudvangEffectSheet({document});
@@ -507,4 +509,57 @@ test("TrudvangEffectSheet trudvang tab exposes no stacking UI", async () => {
   const document = {isOwner: true, system: {stages: [], stacking: "stack", stackId: "fire", potency: 5}};
   const ctx = await sheetFor(document)._preparePartContext("trudvang", {});
   assert.ok(!("stackingChoices" in ctx), "trudvang context must drop the now-unused stackingChoices");
+});
+
+for (const type of ["base", "effect"]) {
+  test(`${type}: Details offers multiple states below the origin, preserving hidden and unknown states`, async t => {
+    const previous = CONFIG.statusEffects;
+    t.after(() => {CONFIG.statusEffects = previous;});
+    CONFIG.statusEffects = {sleep: {id: "sleep", name: "Sleep"}, blind: {id: "blind", name: "Blind"},
+      hidden: {id: "hidden", name: "Hidden from HUD", hud: false}};
+    const document = {type, isOwner: true, statuses: new Set(["sleep", "custom-state"]), description: "", origin: "Actor.test"};
+    const sheet = sheetFor(document);
+    const context = await sheet._preparePartContext("details", {});
+    assert.equal(context.statusChoices.find(row => row.id === "sleep").selected, true);
+    assert.equal(context.statusChoices.find(row => row.id === "blind").selected, false);
+    assert.equal(context.statusChoices.find(row => row.id === "custom-state").selected, true);
+    assert.ok(context.statusChoices.some(row => row.id === "hidden"));
+    const hbs = Handlebars.create(); hbs.registerHelper("localize", key => key);
+    const template = hbs.compile(readFileSync(new URL("../templates/effect/details.hbs", import.meta.url), "utf8"));
+    const html = template(context);
+    assert.ok(html.indexOf("EFFECT.StatusConditions") > html.indexOf("EFFECT.Origin"));
+    assert.match(html, /<multi-select name="statuses"/);
+    assert.match(html, /value="sleep" selected/);
+    assert.match(html, /value="custom-state" selected/);
+    const readOnly = await sheet._preparePartContext("details", {editable: false});
+    assert.match(template(readOnly), /<multi-select name="statuses" disabled/);
+    const restore = stubCoreFormTransform();
+    try {
+      for (const statuses of [["blind", "sleep", "blind"], [], ["custom-state"]]) {
+        const result = sheet._processFormData({}, {}, {object: {statuses, "system.changes": [{key: "system.modifiers.protection", type: "add", value: "2"}]}});
+        assert.deepEqual(result.statuses, [...new Set(statuses)]);
+        assert.equal(result.system.changes[0].value, "2");
+        assert.equal(result.type, undefined, "editing states must not convert existing document types");
+      }
+      const partial = sheet._processFormData({}, {}, {object: {description: "New description"}});
+      assert.equal(partial.statuses, undefined, "partial edits must not erase statuses");
+    } finally {restore();}
+  });
+}
+
+test("native and custom effect types advance stages through the same lifecycle", async t => {
+  const previousHooks = globalThis.Hooks, previousUsers = game.users;
+  t.after(() => {globalThis.Hooks = previousHooks; game.users = previousUsers;});
+  let hook;
+  globalThis.Hooks = {on: (event, callback) => {assert.equal(event, "updateActiveEffect"); hook = callback;}};
+  game.users = {activeGM: {isSelf: true}};
+  registerEffectHooks();
+  for (const type of ["base", "effect"]) {
+    let saved;
+    const effect = {type, name: "Effect", system: {stage: 0, stages: [{}, {label: "Next", durationValue: 2, durationUnit: "rounds", changes: []}]},
+      update: async data => {saved = data;}};
+    await hook(effect, {duration: {expired: true}}, {});
+    assert.equal(saved["system.stage"], 1);
+    assert.equal(saved.duration.expired, false);
+  }
 });

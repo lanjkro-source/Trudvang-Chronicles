@@ -77,6 +77,14 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         {async: true, secrets: this.document.isOwner}
       ), this.document);
       partContext.origin = this.document.origin || "";
+      const selected = new Set(this.document.statuses ?? this.document._source?.statuses ?? []);
+      const choices = new Map(Object.entries(CONFIG.statusEffects ?? {}).map(([key, status]) => {
+        const id = status.id ?? key;
+        return [id, {id, label: game.i18n.localize(status.name ?? status.label ?? id), selected: selected.has(id)}];
+      }));
+      // Keep module/custom IDs even if their original definition is unavailable.
+      for (const id of selected) if (!choices.has(id)) choices.set(id, {id, label: id, selected: true});
+      partContext.statusChoices = [...choices.values()].sort((a, b) => a.label.localeCompare(b.label, game.i18n.lang));
       return partContext;
     }
 
@@ -171,6 +179,11 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
     // can only come from the core ActiveEffectConfig path, which must never
     // clobber or duplicate our namespaced storage on save.
     delete submitData.changes;
+    if (Object.hasOwn(raw, "statuses")) {
+      const statuses = raw.statuses instanceof Set ? [...raw.statuses]
+        : Array.isArray(raw.statuses) ? raw.statuses : raw.statuses ? [raw.statuses] : [];
+      submitData.statuses = [...new Set(statuses)];
+    }
 
     // Process Trudvang stages (JSON textareas in Trudvang tab)
     if (foundry.utils.isPlainObject(submitData.system?.stages)) {

@@ -11,4 +11,12 @@
       <input type="text" name="origin" value="{{origin}}" readonly>
     </div>
   </fieldset>
+  <fieldset class="effect-statuses">
+    <legend>{{localize "EFFECT.StatusConditions"}}</legend>
+    <div class="form-group stacked">
+      <multi-select name="statuses" {{#unless editable}}disabled{{/unless}} aria-label="{{localize 'EFFECT.StatusConditions'}}">
+        {{#each statusChoices as |status|}}<option value="{{status.id}}" {{#if status.selected}}selected{{/if}}>{{status.label}}</option>{{/each}}
+      </multi-select>
+    </div>
+  </fieldset>
 </section>

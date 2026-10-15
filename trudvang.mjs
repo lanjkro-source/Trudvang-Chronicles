@@ -57,7 +57,7 @@ Hooks.once("init", () => {
   const DocumentSheetConfig = foundry.applications?.apps?.DocumentSheetConfig;
   if (DocumentSheetConfig) {
     DocumentSheetConfig.registerSheet(foundry.documents.ActiveEffect, "trudvang-chronicles", TrudvangEffectSheet, {
-      types: ["effect"],
+      types: ["base", "effect"],
       makeDefault: true,
       label: "TRUDVANG.Sheets.Effect"
     });

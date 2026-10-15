@@ -98,6 +98,8 @@ const TOKEN_HUD_HIDDEN_STATUSES = ["shock", "corrode", "regen", "degen", "fireSh
 export function configureEffects() {
   CONFIG.ActiveEffect.documentClass = TrudvangActiveEffect;
   CONFIG.ActiveEffect.dataModels.effect = TrudvangEffectData;
+  // Native status effects keep their base type and gain the same editing schema.
+  CONFIG.ActiveEffect.dataModels.base = TrudvangEffectData;
   CONFIG.ActiveEffect.defaultType = "effect";
   CONFIG.ActiveEffect.typeLabels.effect = "TYPES.ActiveEffect.effect";
   CONFIG.ActiveEffect.typeIcons.effect = "fa-solid fa-person-rays";
@@ -116,7 +118,7 @@ export function configureEffects() {
 export function registerEffectHooks() {
   Hooks.on("updateActiveEffect", async (effect, changed, options) => {
     if (options?.trudvangStageTransition || changed.duration?.expired !== true) return;
-    if (!game.users.activeGM?.isSelf || effect.type !== "effect") return;
+    if (!game.users.activeGM?.isSelf || !["base", "effect"].includes(effect.type)) return;
     const stages = Array.from(effect.system.stages || []);
     const nextIndex = Number(effect.system.stage || 0) + 1;
     const next = stages[nextIndex];

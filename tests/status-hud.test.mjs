@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import {readFileSync} from "node:fs";
 
 globalThis.foundry = {
   data: {fields: {}, ActiveEffectTypeDataModel: class {}},
   documents: {ActiveEffect: class {}}
 };
 
-const {configureEffects} = await import("../modules/effects.mjs");
+const {configureEffects, TrudvangEffectData} = await import("../modules/effects.mjs");
 
 const coreStatusIds = [
   "dead", "unconscious", "sleep", "stun", "prone", "restrain", "paralysis", "fly", "blind", "deaf",
@@ -24,6 +25,14 @@ function configureWith(statusEffects) {
   };
   configureEffects();
 }
+
+test("native and system ActiveEffects share the Trudvang model and default sheet", () => {
+  configureWith({});
+  assert.equal(CONFIG.ActiveEffect.dataModels.base, TrudvangEffectData);
+  assert.equal(CONFIG.ActiveEffect.dataModels.effect, TrudvangEffectData);
+  const entrypoint = readFileSync(new URL("../trudvang.mjs", import.meta.url), "utf8");
+  assert.match(entrypoint, /registerSheet\(foundry\.documents\.ActiveEffect, "trudvang-chronicles", TrudvangEffectSheet, \{\s*types: \["base", "effect"\],\s*makeDefault: true/);
+});
 
 test("only the seven requested statuses disappear from the manual Token HUD choices", () => {
   const definitions = Object.fromEntries(coreStatusIds.map(id => [id, {
