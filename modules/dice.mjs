@@ -166,7 +166,7 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const traitValue = calculateTraitModifier(traitEffectValues.map(row => row.value + row.effect), test.traitMethod || "first");
   const effect = sharedEffect;
   const modifierRows = actorStateRollModifiers(actor);
-  const traitLabel = hasTrait ? game.i18n.localize(TRUDVANG.Dialog.TraitSituationTrait)
+  const traitLabel = hasTrait ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait")
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   const title = game.i18n.format("TRUDVANG.RuleTest.ResistanceTitle", {source: sourceName || "", action: test.action || ""});
   const options = await playerTraitSituationDialog({title, traitLabel, traitValue, traitValues: traitEffectValues,

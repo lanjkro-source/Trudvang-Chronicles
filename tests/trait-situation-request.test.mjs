@@ -60,7 +60,7 @@ globalThis.TRUDVANG = {
   }
 };
 
-const {gmTraitSituationDialog, requestTraitSituationRoll, playerTraitSituationDialog} = await import("../modules/dice.mjs");
+const {gmTraitSituationDialog, requestTraitSituationRoll, playerTraitSituationDialog, rollConfiguredTraitSituation} = await import("../modules/dice.mjs");
 
 test("gmTraitSituationDialog returns trait and SV from dialog", async () => {
   dialogResult = {traitKey: "perception", situationValue: 12, title: "Resist the call", success: "Keep control", failure: "Follow the voice"};
@@ -179,4 +179,24 @@ test("playerTraitSituationDialog cancel returns null", async () => {
     sv: 10
   });
   assert.equal(result, null);
+});
+
+test("configured resistance opens its roll dialog without a missing translation namespace", async () => {
+  dialogResult = null;
+  const callsBefore = dialogCalls;
+  const actor = {
+    system: {},
+    canPerformAction: () => true,
+    getTraitValue: () => 2,
+    getRollModifier: () => 0
+  };
+
+  const result = await rollConfiguredTraitSituation({
+    actor,
+    test: {action: "résister à la peur", trait: ["psyche", "aucun"], traitMethod: "first", sv: 8}
+  });
+
+  assert.equal(result, null);
+  assert.equal(dialogCalls, callsBefore + 1);
+  assert.match(dialogConfig.content, /trait-roll-dialog/);
 });
