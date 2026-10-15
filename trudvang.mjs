@@ -19,6 +19,7 @@ import {registerActorStatusHooks} from "./modules/actor-statuses.mjs";
 import { applyPalette } from "./modules/palette.mjs";
 import { registerCombatHooks } from "./modules/combat.mjs";
 import { rollGenericSituation, requestTraitSituationRoll } from "./modules/dice.mjs";
+import {registerShareContextMenus} from "./modules/chat-sharing.mjs";
 
 Hooks.once("init", () => {
   console.info("Trudvang Chronicles | Initializing");
@@ -31,6 +32,7 @@ Hooks.once("init", () => {
   // ready), so this must be registered at init — a ready-time Hooks.on would
   // never fire. Socket setup stays in ready (needs game.socket).
   registerPortraitDirectoryHook();
+  registerShareContextMenus();
   registerCombatDockSupport();
   registerExtractStageDirectoryIcon();
   registerCompendiumIcons();

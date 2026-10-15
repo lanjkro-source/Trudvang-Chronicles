@@ -1,3 +1,6 @@
+import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
+import {shareDocumentInChat} from "../chat-sharing.mjs";
+
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
 const DURATION_UNITS = ["rounds", "turns", "seconds", "minutes", "hours", "days", "weeks", "months", "years"];
@@ -12,7 +15,9 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       deleteTrudvangStage: TrudvangEffectSheet.onDeleteStage,
       addChange: TrudvangEffectSheet.onAddChange,
       deleteChange: TrudvangEffectSheet.onDeleteChange,
-      saveDescription: TrudvangEffectSheet.onSaveDescription
+      saveDescription: TrudvangEffectSheet.onSaveDescription,
+      "share-in-chat": TrudvangEffectSheet.onShareInChat,
+      "roll-rule-test": TrudvangEffectSheet.onRollRuleTest
     }
   };
 
@@ -62,10 +67,10 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       partContext.editable = context?.editable ?? this.document?.isOwner ?? this.isEditable;
       partContext.documentUuid = this.document.uuid ?? "";
       partContext.description = this.document._source?.description ?? this.document.description ?? "";
-      partContext.enrichedDescription = await TextEditorImpl.enrichHTML(
+      partContext.enrichedDescription = annotateRuleTestDescription(await TextEditorImpl.enrichHTML(
         this.document.description || "",
         {async: true, secrets: this.document.isOwner}
-      );
+      ), this.document);
       partContext.origin = this.document.origin || "";
       return partContext;
     }
@@ -226,6 +231,16 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     delete submitData.trudvang;
     return submitData;
+  }
+
+  static async onShareInChat(event) {
+    event.preventDefault();
+    return shareDocumentInChat(this.document);
+  }
+
+  static async onRollRuleTest(event, target) {
+    event.preventDefault();
+    return performRuleTest({document: this.document, index: target.dataset.testIndex});
   }
 
   /* ------------------------------------------------------------------ */

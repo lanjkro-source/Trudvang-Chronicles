@@ -192,6 +192,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Action.ToggleEffect` | Enable or disable effect | Activer ou désactiver l'effet |
 | `TRUDVANG.Action.ApplyEffects` | Apply effects to selected targets | Appliquer les effets aux cibles sélectionnées |
 | `TRUDVANG.Action.ShowInChat` | Show in chat | Afficher dans le chat |
+| `TRUDVANG.Action.ShareInChat` | Share in chat | Partager dans le chat |
 
 ## `TRUDVANG.Field`
 
@@ -1151,6 +1152,22 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Extract.DurationEnds` | for {duration}, then the effect ends | pendant {duration}, puis l’effet prend fin |
 | `TRUDVANG.Extract.UnknownDuration` | unspecified duration | durée non précisée |
 
+## `TRUDVANG.RuleTest`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.RuleTest.AvailableTests` | Available tests | Tests disponibles |
+| `TRUDVANG.RuleTest.ResistanceShort` | Resistance | Résistance |
+| `TRUDVANG.RuleTest.SkillShort` | Skill test | Test de compétence |
+| `TRUDVANG.RuleTest.VariableValue` | variable SV | SV variable |
+| `TRUDVANG.RuleTest.RollResistance` | Roll the resistance test | Lancer le test de résistance |
+| `TRUDVANG.RuleTest.RollSkill` | Roll the skill test | Lancer le test de compétence |
+| `TRUDVANG.RuleTest.VariableTitle` | Choose the situation value — {source} | Choisir la valeur de situation — {source} |
+| `TRUDVANG.RuleTest.VariableHint` | This test has a variable situation value. Choose the value described by the rule. | La valeur de situation varie selon la règle. Choisissez celle qui correspond à la situation décrite. |
+| `TRUDVANG.RuleTest.ValueOption` | Option {index} | Option {index} |
+| `TRUDVANG.RuleTest.ResistanceTitle` | Resistance test — {source} {action} | Test de résistance — {source} {action} |
+| `TRUDVANG.RuleTest.SkillAction` | Skill test — {source}: {action} | Test de compétence — {source} : {action} |
+
 ## `TRUDVANG.Warning`
 
 | Clé | English | Français |
@@ -1159,6 +1176,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.InvalidFearFactor` | The fear factor must use the form 1d10 or 1d10 (OR 8-10). | Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10). |
 | `TRUDVANG.Warning.NoControlledFearCharacters` | Control at least one character to apply Fear to. | Contrôlez au moins un personnage auquel appliquer la peur. |
 | `TRUDVANG.Warning.NoControlledActor` | Control a character or NPC before using an extract. | Contrôlez un personnage ou un PNJ avant d’utiliser un extrait. |
+| `TRUDVANG.Warning.InvalidRuleTestSkill` | This skill test refers to an unknown skill. | Ce test fait référence à une compétence inconnue. |
+| `TRUDVANG.Warning.NoShareableDocument` | This entry cannot be shared in chat. | Cette entrée ne peut pas être partagée dans le chat. |
 | `TRUDVANG.Warning.GMOnly` | Only the Game Master can use this macro. | Seul le maître de jeu peut utiliser cette macro. |
 | `TRUDVANG.Warning.InvalidTraitSituation` | Invalid trait or situation value. | Trait ou valeur de situation invalide. |
 | `TRUDVANG.Warning.NotEnoughPower` | There are not enough points in this power reserve. | Il n'y a plus assez de points en réserve. |

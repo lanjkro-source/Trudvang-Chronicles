@@ -48,7 +48,7 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", effectTarget = null}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", effectTarget = null}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
@@ -68,6 +68,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     feint: Math.max(0, Number(feint || 0)),
     flavor,
     successConsequence,
+    failureConsequence,
     effectTarget,
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
@@ -92,6 +93,49 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     }
   }
   return {roll, result, target: finalTarget, success, critical, margin, effectTarget};
+}
+
+async function configuredSituationValue(test, sourceName) {
+  if (Number.isInteger(test?.sv)) return test.sv;
+  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  const values = Array.isArray(test?.sv?.by) ? test.sv.by : [];
+  const variableHint = String(test?.sv?.otherValues || test?.sv?.modifier || "").trim();
+  const valueControl = values.length
+    ? `<select name="situationValue">${values.map((entry, index) => `<option value="${Number(entry.value)}" ${index === 0 ? "selected" : ""}>${escapeHtml(entry.condition || game.i18n.format("TRUDVANG.RuleTest.ValueOption", {index: index + 1}))} — ${Number(entry.value)}</option>`).join("")}</select>`
+    : `<input name="situationValue" type="number" value="10">`;
+  const content = `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.localize("TRUDVANG.RuleTest.VariableHint"))}</p>${variableHint ? `<p class="hint">${escapeHtml(variableHint)}</p>` : ""}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSV"))}</label>${valueControl}</div></div>`;
+  const answer = await DialogClass.wait({
+    window: {title: game.i18n.format("TRUDVANG.RuleTest.VariableTitle", {source: sourceName || ""})},
+    content,
+    buttons: [
+      {action: "continue", label: game.i18n.localize("TRUDVANG.Action.Continue"), default: true, callback: (event, button, dialog) => Number((button.form ?? dialog.element).querySelector("[name=situationValue]")?.value)},
+      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
+    ],
+    modal: false,
+    rejectClose: false
+  });
+  if (answer === false || answer === null || answer === undefined) return null;
+  return Number.isInteger(answer) ? answer : null;
+}
+
+/** Run a resistance test from a rule description; the clicking user rolls for their selected PC/NPC. */
+export async function rollConfiguredTraitSituation({actor, test, sourceName = ""} = {}) {
+  if (!actor || !test || !actor.canPerformAction()) return actor?.warnCannotAct?.() ?? null;
+  const sv = await configuredSituationValue(test, sourceName);
+  if (sv === null) return null;
+  const traitKey = test.trait && test.trait !== "aucun" && TRUDVANG.traits[test.trait] ? test.trait : "aucun";
+  const hasTrait = traitKey !== "aucun";
+  const traitValue = hasTrait ? actor.getTraitValue(traitKey) : 0;
+  const effect = actor.getRollModifier(hasTrait ? {kind: "trait", traitKey, includeState: false} : {kind: "situation", includeState: false});
+  const modifierRows = actorStateRollModifiers(actor);
+  const traitLabel = hasTrait ? game.i18n.localize(TRUDVANG.traits[traitKey])
+    : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
+  const title = game.i18n.format("TRUDVANG.RuleTest.ResistanceTitle", {source: sourceName || "", action: test.action || ""});
+  const options = await playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv, modifierRows});
+  if (!options) return null;
+  const target = sv + traitValue + effect + rollModifierTotal(modifierRows);
+  return rollUnder({actor, label: title, target, modifier: options.modifier, kind: "situation",
+    flavor: rollModifierFlavor(modifierRows), successConsequence: test.success || "", failureConsequence: test.failure || ""});
 }
 
 export async function initiativeDialog({actor, target, lightningQuickLevel = 0, rememberedEquipment = []}) {

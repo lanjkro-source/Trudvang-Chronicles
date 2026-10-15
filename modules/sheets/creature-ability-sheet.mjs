@@ -1,4 +1,6 @@
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
+import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
+import {shareDocumentInChat} from "../chat-sharing.mjs";
 
 const {DocumentSheetV2, HandlebarsApplicationMixin} = foundry.applications.api;
 const TextEditorImpl = foundry.applications.ux.TextEditor.implementation;
@@ -12,7 +14,18 @@ async function capacityContext(sheet) {
     summaryField: item ? "system.summary" : "flags.trudvang-chronicles.capacitySummary",
     sourceBookField: item ? "system.source.book" : "flags.trudvang-chronicles.capacitySource.book",
     sourcePageField: item ? "system.source.page" : "flags.trudvang-chronicles.capacitySource.page",
-    enrichedDescription: await TextEditorImpl.enrichHTML(ability.description, {async: true, secrets: sheet.document.isOwner})};
+    enrichedDescription: annotateRuleTestDescription(
+      await TextEditorImpl.enrichHTML(ability.description, {async: true, secrets: sheet.document.isOwner}), sheet.document)};
+}
+
+async function shareAction(event) {
+  event.preventDefault();
+  return shareDocumentInChat(this.document);
+}
+
+async function ruleTestAction(event, target) {
+  event.preventDefault();
+  return performRuleTest({document: this.document, index: target.dataset.testIndex});
 }
 
 // TEMPORARY WORLD MIGRATION — sheet for capacities stored as ActiveEffects in old worlds.
@@ -26,6 +39,7 @@ export class TrudvangCreatureAbilitySheet extends HandlebarsApplicationMixin(Doc
     canCreate: false,
     ownershipConfig: false,
     sheetConfig: false,
+    actions: {"share-in-chat": shareAction, "roll-rule-test": ruleTestAction},
     form: {handler: TrudvangCreatureAbilitySheet.#onSubmit, submitOnChange: true, closeOnSubmit: false}
   };
 
@@ -57,7 +71,8 @@ export class TrudvangCreatureAbilityItemSheet extends HandlebarsApplicationMixin
   static DEFAULT_OPTIONS = {
     classes: ["trudvang", "sheet", "creature-ability-sheet"], tag: "form",
     position: {width: 520, height: 560}, window: {resizable: true},
-    form: {handler: TrudvangCreatureAbilityItemSheet.#onSubmit, submitOnChange: true, closeOnSubmit: false}
+    form: {handler: TrudvangCreatureAbilityItemSheet.#onSubmit, submitOnChange: true, closeOnSubmit: false},
+    actions: {"share-in-chat": shareAction, "roll-rule-test": ruleTestAction}
   };
   static PARTS = TrudvangCreatureAbilitySheet.PARTS;
   async _prepareContext(options) {

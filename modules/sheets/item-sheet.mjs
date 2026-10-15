@@ -9,6 +9,8 @@ import { findTabletPower } from "../tablet-power-links.mjs";
 import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.mjs";
 import {activeSpellCosts} from "../rules/active-spell-resolver.mjs";
 import {powerIconClassForId, powerIconClassForItem} from "../power-icons.mjs";
+import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
+import {shareDocumentInChat} from "../chat-sharing.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -49,7 +51,9 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "effect-delete": TrudvangItemSheet.#onEffectDelete,
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
-      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen
+      "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
+      "share-in-chat": TrudvangItemSheet.#onShareInChat,
+      "roll-rule-test": TrudvangItemSheet.#onRollRuleTest
     }
   };
 
@@ -130,7 +134,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       }))
     })).filter(group => group.powers.length) : [];
     context.hasItemTabs = context.supportsEffects || context.hasModifiers || context.tabletPowerGroups.length > 0;
-    context.enrichedDescription = await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner});
+    context.enrichedDescription = annotateRuleTestDescription(
+      await TextEditorImpl.enrichHTML(this.item.system.description || "", {async: true, secrets: this.item.isOwner}), this.item);
     return context;
   }
 
@@ -241,6 +246,16 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static async #onRoll(event, target) {
     event.preventDefault();
     await this.item.roll();
+  }
+
+  static async #onShareInChat(event) {
+    event.preventDefault();
+    return shareDocumentInChat(this.item);
+  }
+
+  static async #onRollRuleTest(event, target) {
+    event.preventDefault();
+    return performRuleTest({document: this.item, index: target.dataset.testIndex});
   }
 
   static async #onTabletPowerOpen(event, target) {

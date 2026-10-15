@@ -776,12 +776,14 @@ export class TrudvangActor extends BaseActor {
 
   async rollAbility(item, context = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
-    const key = item.system.parentSkill;
-    const target = this.getAbilityBreakdown(item, context).total;
+    const target = this.getAbilityBreakdown(item, context).total + Number(context.bonus || 0);
     const modifierRows = actorStateRollModifiers(this);
-    const options = await modifierDialog({title: item.name, target, modifierRows});
+    const label = context.label || item.name;
+    const options = await modifierDialog({title: label, target, modifierRows});
     if (!options) return null;
-    return rollUnder({actor: this, label: item.name, target, modifier: options.modifier, kind: "ability", item, flavor: rollModifierFlavor(modifierRows)});
+    return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
+      flavor: rollModifierFlavor(modifierRows), successConsequence: context.successConsequence || "",
+      failureConsequence: context.failureConsequence || ""});
   }
 
   async rollInitiativeTrudvang({combatant = null} = {}) {

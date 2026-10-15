@@ -158,7 +158,8 @@
       "AddEffect": "Ajouter un effet",
       "ToggleEffect": "Activer ou désactiver l'effet",
       "ApplyEffects": "Appliquer les effets aux cibles sélectionnées",
-      "ShowInChat": "Afficher dans le chat"
+      "ShowInChat": "Afficher dans le chat",
+      "ShareInChat": "Partager dans le chat"
     },
     "Field": {
       "Name": "Nom",
@@ -980,11 +981,26 @@
       "DurationEnds": "pendant {duration}, puis l’effet prend fin",
       "UnknownDuration": "durée non précisée"
     },
+    "RuleTest": {
+      "AvailableTests": "Tests disponibles",
+      "ResistanceShort": "Résistance",
+      "SkillShort": "Test de compétence",
+      "VariableValue": "SV variable",
+      "RollResistance": "Lancer le test de résistance",
+      "RollSkill": "Lancer le test de compétence",
+      "VariableTitle": "Choisir la valeur de situation — {source}",
+      "VariableHint": "La valeur de situation varie selon la règle. Choisissez celle qui correspond à la situation décrite.",
+      "ValueOption": "Option {index}",
+      "ResistanceTitle": "Test de résistance — {source} {action}",
+      "SkillAction": "Test de compétence — {source} : {action}"
+    },
     "Warning": {
       "CannotApplyDamage": "Vous ne pouvez pas appliquer ces dégâts à cette cible.",
       "InvalidFearFactor": "Le facteur de peur doit avoir la forme 1d10 ou 1d10 (JO 8-10).",
       "NoControlledFearCharacters": "Contrôlez au moins un personnage auquel appliquer la peur.",
       "NoControlledActor": "Contrôlez un personnage ou un PNJ avant d’utiliser un extrait.",
+      "InvalidRuleTestSkill": "Ce test fait référence à une compétence inconnue.",
+      "NoShareableDocument": "Cette entrée ne peut pas être partagée dans le chat.",
       "NotEnoughPower": "Il n'y a plus assez de points en réserve.",
       "ActiveSpellLimit": "La limite de sortilèges actifs est atteinte ; terminez-en un avant de lancer ce sort.",
       "CannotRollForActor": "Vous ne pouvez pas lancer le jet de cet acteur.",

@@ -5,6 +5,7 @@ import {playerTraitSituationDialog} from "./dice.mjs";
 import {actorStateRollModifiers} from "./rules/roll-state-resolver.mjs";
 import {openPortraitPopout} from "./portrait.mjs";
 import {hasTraitSituationResponse, registerTraitSituationSocket, requestTraitSituationResponse} from "./trait-situation-request.mjs";
+import {performRuleTest} from "./rule-tests.mjs";
 
 const indicatedTraitTokens = new Map();
 
@@ -117,6 +118,34 @@ function attachListeners(message, html) {
       event.preventDefault();
       const item = await foundry.utils.fromUuid(button.closest("[data-item-uuid]")?.dataset.itemUuid);
       item?.sheet.render({force: true});
+    });
+  });
+  html.querySelectorAll("[data-action='open-effect-sheet']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const effect = await foundry.utils.fromUuid(button.closest("[data-rule-document-uuid]")?.dataset.ruleDocumentUuid);
+      effect?.sheet.render({force: true});
+    });
+  });
+  html.querySelectorAll("[data-action='open-actor-sheet']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const actor = await foundry.utils.fromUuid(button.closest("[data-actor-uuid]")?.dataset.actorUuid);
+      actor?.sheet.render({force: true});
+    });
+  });
+  html.querySelectorAll("[data-action='roll-rule-test']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      if (button.disabled) return;
+      const document = await foundry.utils.fromUuid(button.closest("[data-rule-document-uuid]")?.dataset.ruleDocumentUuid);
+      if (!document) return;
+      button.disabled = true;
+      try {
+        await performRuleTest({document, index: button.dataset.testIndex});
+      } finally {
+        button.disabled = false;
+      }
     });
   });
   html.querySelectorAll("[data-action='use-extract']").forEach(button => {
