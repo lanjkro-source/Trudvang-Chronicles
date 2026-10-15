@@ -937,6 +937,13 @@
       "RuleTestRepeat": "Répéter : {repeat}",
       "RuleTestSVRange": "SV entre {min} et {max} (déterminée par : {determinedBy})",
       "RuleTestBaseVC": "VC de base indiquée : {value}",
+      "RuleTestTraitMethod": "Calcul des modificateurs de traits",
+      "RuleTestTraitFirst": "Premier trait",
+      "RuleTestTraitSecond": "Deuxième trait",
+      "RuleTestTraitAverage": "Moyenne des deux traits",
+      "RuleTestTraitSum": "Somme des deux traits",
+      "RuleTestTraitBest": "Meilleur modificateur des deux traits",
+      "RuleTestTraitSpecificEffect": "Modificateur propre au trait : {value}",
       "TraitSituationResults": "Résultats des jets de résistance",
       "TraitSituationTokenHint": "Survolez pour repérer le token ; cliquez pour centrer la vue.",
       "TraitSituationResult": {

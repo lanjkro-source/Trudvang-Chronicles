@@ -8,6 +8,13 @@ test("the French rule-test catalogue maps powers and creature abilities by stabl
   const absorptionId = CREATURE_ABILITY_REFERENCES["Absorption de vie"].id;
   assert.equal(RULE_TESTS_BY_CATALOG_ID[absorptionId][0].trait, "psyche");
   assert.equal(RULE_TESTS_BY_CATALOG_ID[absorptionId][0].sv.by.length, 2);
+  const howlId = CREATURE_ABILITY_REFERENCES["Hurlement sauvage"].id;
+  const howl = RULE_TESTS_BY_CATALOG_ID[howlId][0];
+  assert.deepEqual(howl.sv, {base: 8, modifiers: [{condition: "la cible n’est pas surprise", value: 5}]});
+  assert.equal(howl.criticalFailure, "lâche ses armes et perd 1d3 tours.");
+  assert.equal(RULE_TESTS_BY_CATALOG_ID["a0A7iPhNiOjPkQlR"][0].traitMethod, "average");
+  assert.equal(RULE_TESTS_BY_CATALOG_ID["WKMBG3v1w2x3y4z5"][0].traitMethod, "sum");
+  assert.equal(RULE_TESTS_BY_CATALOG_ID["HeVWKE5A6B7C8D9E"][0].traitMethod, "first");
 });
 
 test("rule-test annotations follow test-of-situation and skill-test order", async () => {
@@ -19,13 +26,15 @@ test("rule-test annotations follow test-of-situation and skill-test order", asyn
     }};
   }};
   globalThis.CONFIG = {TRUDVANG: {
-    traits: {psyche: "Trait.Psyche"},
+    traits: {psyche: "Trait.Psyche", strength: "Trait.Strength", dexterity: "Trait.Dexterity"},
     skills: {},
     knowledgeTree: {agility: [{id: "jumpingClimbingBalancing", label: "Skill.Jump", kind: "specialty", specialties: []}]}
   }};
   globalThis.game = {i18n: {lang: "fr", localize: key => ({
     "TRUDVANG.RuleTest.RollResistance": "Lancer la résistance",
-    "TRUDVANG.RuleTest.RollSkill": "Lancer la compétence"
+    "TRUDVANG.RuleTest.RollSkill": "Lancer la compétence",
+    "Trait.Strength": "Force",
+    "Trait.Dexterity": "Dextérité"
   })[key] ?? key}};
   const {annotateRuleTestDescription} = await import(`../modules/rule-tests.mjs?test=${Date.now()}`);
   const document = {system: {catalogId: "vitner-vitner-craft:vitner-pouch:1"}};
@@ -34,5 +43,7 @@ test("rule-test annotations follow test-of-situation and skill-test order", asyn
   assert.match(annotated, /data-test-index="0"/);
   assert.match(annotated, />test de situation<\/button>/);
   assert.match(annotateRuleTestDescription("<p>Aucun jet indiqué.</p>", document), /Aucun jet indiqué/);
+  const multiTrait = annotateRuleTestDescription("<p>test de Force</p>", {system: {catalogId: "a0A7iPhNiOjPkQlR"}});
+  assert.match(multiTrait, /data-test-index="0"/);
 });
 

@@ -2366,6 +2366,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "strength",
         "dexterity"
       ],
+      "traitMethod": "average",
       "success": "évite d’être emporté; le malus d’action indiqué dans la table s’applique quand même tant que la créature est dans la zone.",
       "traitRule": "moyenne des modificateurs de Force et de Dextérité",
       "repeat": "nouveau test pour se déplacer dans la zone après avoir été projeté à terre",
@@ -2376,7 +2377,6 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "n85BQGaGbHcIdJeK": [
     {
       "action": "supporter la chaleur de la sphère",
-      "sv": 8,
       "trait": "psyche",
       "success": "peut rester dans la sphère de chaleur.",
       "kind": "resist",
@@ -2469,11 +2469,18 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "15ITDLfLgMhNiOjP": [
     {
       "action": "résister à la peur du hurlement",
-      "sv": 8,
+      "sv": {
+        "base": 8,
+        "modifiers": [
+          {
+            "condition": "la cible n’est pas surprise",
+            "value": 5
+          }
+        ]
+      },
       "trait": "psyche",
       "success": "n’est pas effrayé.",
-      "condition": "SV 13 si la cible n’est pas surprise",
-      "criticalFailure": "sur un résultat de 20, lâche ses armes et perd 1d3 tours.",
+      "criticalFailure": "lâche ses armes et perd 1d3 tours.",
       "kind": "resist",
       "index": 0
     }
@@ -2540,6 +2547,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "psyche",
         "constitution"
       ],
+      "traitMethod": "sum",
       "success": "évite la transformation déclenchée par la lune.",
       "traitRule": "les modificateurs de Psychisme et de Constitution s’appliquent",
       "kind": "resist",
@@ -2571,6 +2579,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "psyche",
         "constitution"
       ],
+      "traitMethod": "sum",
       "success": "évite la transformation déclenchée par la lune.",
       "traitRule": "les modificateurs de Psychisme et de Constitution s’appliquent",
       "kind": "resist",
@@ -2602,6 +2611,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "psyche",
         "constitution"
       ],
+      "traitMethod": "sum",
       "success": "évite la transformation déclenchée par la lune.",
       "traitRule": "les modificateurs de Psychisme et de Constitution s’appliquent",
       "kind": "resist",
@@ -2643,6 +2653,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "strength",
         "dexterity"
       ],
+      "traitMethod": "first",
       "success": "résiste à la traction et rejoint la terre ferme.",
       "traitRule": "modificateur de Force ou de Dextérité selon le test effectué",
       "kind": "resist",
@@ -2673,6 +2684,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "strength",
         "dexterity"
       ],
+      "traitMethod": "first",
       "success": "résiste à la traction et rejoint la terre ferme.",
       "traitRule": "modificateur de Force ou de Dextérité selon le test effectué",
       "kind": "resist",

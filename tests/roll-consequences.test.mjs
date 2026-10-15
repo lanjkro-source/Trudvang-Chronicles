@@ -31,5 +31,11 @@ for (const language of ["fr", "en"]) {
       assert.doesNotMatch(html, /TRUDVANG\./);
       assert.doesNotMatch(html, /En cas|On success|On failure/);
     }
+    const criticalSuccess = render({success: true, critical: "success", successConsequence: "Normal success", criticalSuccessConsequence: "Critical success"});
+    assert.match(criticalSuccess, /Normal success/);
+    assert.match(criticalSuccess, /Critical success/);
+    const criticalFailure = render({success: false, critical: "failure", failureConsequence: "Normal failure", criticalFailureConsequence: "Critical failure"});
+    assert.match(criticalFailure, /Normal failure/);
+    assert.match(criticalFailure, /Critical failure/);
   });
 }

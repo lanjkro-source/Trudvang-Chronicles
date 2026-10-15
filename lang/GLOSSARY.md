@@ -1090,6 +1090,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.RuleTestRepeat` | Repeat: {repeat} | Répéter : {repeat} |
 | `TRUDVANG.Dialog.RuleTestSVRange` | SV between {min} and {max} (determined by: {determinedBy}) | SV entre {min} et {max} (déterminée par : {determinedBy}) |
 | `TRUDVANG.Dialog.RuleTestBaseVC` | Listed base SV: {value} | VC de base indiquée : {value} |
+| `TRUDVANG.Dialog.RuleTestTraitMethod` | Trait modifier calculation | Calcul des modificateurs de traits |
+| `TRUDVANG.Dialog.RuleTestTraitFirst` | First trait | Premier trait |
+| `TRUDVANG.Dialog.RuleTestTraitSecond` | Second trait | Deuxième trait |
+| `TRUDVANG.Dialog.RuleTestTraitAverage` | Average of both traits | Moyenne des deux traits |
+| `TRUDVANG.Dialog.RuleTestTraitSum` | Sum of both traits | Somme des deux traits |
+| `TRUDVANG.Dialog.RuleTestTraitBest` | Best modifier of both traits | Meilleur modificateur des deux traits |
+| `TRUDVANG.Dialog.RuleTestTraitSpecificEffect` | Trait-specific modifier: {value} | Modificateur propre au trait : {value} |
 | `TRUDVANG.Dialog.TraitSituationResults` | Resistance roll results | Résultats des jets de résistance |
 | `TRUDVANG.Dialog.TraitSituationTokenHint` | Hover to indicate the token; click to center the view. | Survolez pour repérer le token ; cliquez pour centrer la vue. |
 

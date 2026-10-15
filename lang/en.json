@@ -937,6 +937,13 @@
       "RuleTestRepeat": "Repeat: {repeat}",
       "RuleTestSVRange": "SV between {min} and {max} (determined by: {determinedBy})",
       "RuleTestBaseVC": "Listed base SV: {value}",
+      "RuleTestTraitMethod": "Trait modifier calculation",
+      "RuleTestTraitFirst": "First trait",
+      "RuleTestTraitSecond": "Second trait",
+      "RuleTestTraitAverage": "Average of both traits",
+      "RuleTestTraitSum": "Sum of both traits",
+      "RuleTestTraitBest": "Best modifier of both traits",
+      "RuleTestTraitSpecificEffect": "Trait-specific modifier: {value}",
       "TraitSituationResults": "Resistance roll results",
       "TraitSituationTokenHint": "Hover to indicate the token; click to center the view.",
       "TraitSituationResult": {

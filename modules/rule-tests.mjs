@@ -28,8 +28,10 @@ export function ruleTestValueLabel(test, localize = key => game.i18n.localize(ke
     return `${localize("TRUDVANG.RuleTest.SkillShort")}${skill ? ` · ${localize(skill.label)}` : ""} ${sign}${modifier}`;
   }
   const sv = Number.isInteger(test.sv) ? test.sv : localize("TRUDVANG.RuleTest.VariableValue");
-  const trait = test.trait && test.trait !== "aucun" && config.traits?.[test.trait]
-    ? localize(config.traits[test.trait]) : localize("TRUDVANG.Dialog.TraitSituationNoTrait");
+  const traitKeys = (Array.isArray(test.trait) ? test.trait : [test.trait]).filter(key => key && key !== "aucun" && config.traits?.[key]);
+  const trait = traitKeys.length
+    ? traitKeys.map(key => localize(config.traits[key])).join(" / ")
+    : localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   return `${localize("TRUDVANG.RuleTest.ResistanceShort")} · ${trait} · SV ${sv}`;
 }
 
@@ -100,7 +102,7 @@ function descriptionAnchors(description, tests) {
 function testMatchesAnchor(test, anchor) {
   if (anchor.kind && test.kind !== anchor.kind) return false;
   if (!anchor.namedId) return true;
-  if (test.kind === "resist") return test.trait === anchor.namedId;
+  if (test.kind === "resist") return (Array.isArray(test.trait) ? test.trait : [test.trait]).includes(anchor.namedId);
   if (test.skill === anchor.namedId || test.skill === anchor.skillKey) return true;
   return Boolean(anchor.skillKey && Object.entries(globalThis.CONFIG?.TRUDVANG?.knowledgeTree ?? {}).some(([skillKey, rows]) =>
     skillKey === anchor.skillKey && rows.some(row => row.id === test.skill || row.specialties?.some(specialty => specialty.id === test.skill))));
@@ -208,6 +210,8 @@ export async function performRuleTest({document, index, actor = testActorForUser
     notes,
     label: game.i18n.format("TRUDVANG.RuleTest.SkillAction", {source: document?.name ?? "", action: test.action || ""}),
     successConsequence: test.success || "",
-    failureConsequence: test.failure || ""
+    failureConsequence: test.failure || "",
+    criticalSuccessConsequence: test.criticalSuccess || "",
+    criticalFailureConsequence: test.criticalFailure || ""
   });
 }

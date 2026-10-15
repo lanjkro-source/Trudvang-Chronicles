@@ -795,7 +795,9 @@ export class TrudvangActor extends BaseActor {
     if (!options) return null;
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
       flavor: rollModifierFlavor(modifierRows), successConsequence: context.successConsequence || "",
-      failureConsequence: context.failureConsequence || ""});
+      failureConsequence: context.failureConsequence || "",
+      criticalSuccessConsequence: context.criticalSuccessConsequence || "",
+      criticalFailureConsequence: context.criticalFailureConsequence || ""});
   }
 
   async rollInitiativeTrudvang({combatant = null} = {}) {
