@@ -4,9 +4,11 @@ import {deterministicId} from "./skill-pack-data.mjs";
 import {findTabletPower} from "./tablet-power-links.mjs";
 import {isCreatureAbility} from "./creature-ability.mjs";
 
-/** Reuse the frame's existing icon; do not add controls to the sheet body. */
+/** Share from the image beside the document name, preserving actor portraits. */
 export function bindTitleSharing(sheet) {
-  const icon = sheet.window?.icon;
+  const source = sheet.document ?? sheet.item ?? sheet.actor;
+  if (!["Item", "ActiveEffect"].includes(source?.documentName)) return;
+  const icon = sheet.element?.querySelector(".sheet-header .profile-img, .capacity-header .capacity-icon, .sheet-header img");
   if (!icon || icon.parentElement?.classList.contains("trudvang-share-title")) return;
   const button = icon.ownerDocument.createElement("button");
   button.type = "button";
@@ -24,7 +26,7 @@ export function bindTitleSharing(sheet) {
     event.preventDefault(); event.stopPropagation();
     if (button.disabled) return;
     button.disabled = true;
-    try { await shareDocumentInChat(sheet.document ?? sheet.actor ?? sheet.item); }
+    try { await shareDocumentInChat(source); }
     finally { button.disabled = false; }
   });
 }

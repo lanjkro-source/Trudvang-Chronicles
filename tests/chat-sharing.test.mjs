@@ -10,7 +10,7 @@ globalThis.ChatMessage = {getSpeaker: ({actor}) => ({actor: actor.id}), create: 
 const documents = new Map();
 const {bindTitleSharing, bindSheetListMenus, sheetEntry} = await import("../modules/chat-sharing.mjs");
 
-test("the existing window icon stays in place and becomes the share control, once per frame", async () => {
+test("the image beside the item name becomes the share control, leaving the window-frame icon alone", async () => {
   const make = () => ({listeners: {}, children: [], attrs: {}, className: "", disabled: false,
     setAttribute(key, value) {this.attrs[key] = value;},
     addEventListener(key, listener) {this.listeners[key] = listener;},
@@ -18,15 +18,28 @@ test("the existing window icon stays in place and becomes the share control, onc
     get classList() {return {contains: value => this.className.split(" ").includes(value)};}});
   let replacement, shares = 0;
   const icon = make(); icon.ownerDocument = {createElement: make}; icon.replaceWith = node => {replacement = node;};
-  const sheet = {window: {icon}, document: {documentName: "Item", toChat: async () => {shares++;}}};
+  const frameIcon = {replaceWith: () => assert.fail("frame icon must not be changed")};
+  const sheet = {element: {querySelector: selector => {
+    assert.match(selector, /\.sheet-header \.profile-img/);
+    return icon;
+  }}, window: {icon: frameIcon}, document: {documentName: "Item", toChat: async () => {shares++;}}};
   bindTitleSharing(sheet); bindTitleSharing(sheet);
-  assert.equal(replacement.children[0], icon, "preserves Foundry's reference to the original icon");
+  assert.equal(replacement.children[0], icon, "preserves the image's original size and appearance");
   assert.equal(replacement.children[1].className, "fas fa-comment-dots trudvang-share-bubble");
   assert.equal(replacement.title, "TRUDVANG.Action.ShareInChat");
   const event = {preventDefault() {}, stopPropagation() {}};
   await replacement.listeners.click(event);
   assert.equal(shares, 1);
   assert.equal(replacement.disabled, false);
+});
+
+test("PC and NPC portraits and frame icons retain their original click handlers", () => {
+  for (const type of ["character", "npc"]) {
+    const sheet = {document: {documentName: "Actor", type}, element: {
+      querySelector: () => assert.fail("actor images must not even be selected for sharing")
+    }};
+    bindTitleSharing(sheet);
+  }
 });
 
 function row(dataset = {}, nested = {}) {

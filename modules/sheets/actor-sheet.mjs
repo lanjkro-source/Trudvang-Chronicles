@@ -18,7 +18,7 @@ import {npcPreparedActionRows} from "../rules/npc-prepared-actions.mjs";
 import {npcCombatCycleDisplay} from "../rules/npc-combat-cycle.mjs";
 import {magicCapacities} from "../rules/magic-capacity.mjs";
 import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
-import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
+import {bindSheetListMenus} from "../chat-sharing.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -458,7 +458,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   async _onRender(context, options) {
     await super._onRender(context, options);
-    bindTitleSharing(this);
     bindSheetListMenus(this);
     const root = this.element;
     root.querySelectorAll('.profile-img[data-action="manage-portraits"]').forEach(image => {
