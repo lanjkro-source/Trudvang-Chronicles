@@ -145,23 +145,26 @@ function ruleTestSituationOptions(test) {
 export async function rollConfiguredTraitSituation({actor, test, sourceName = ""} = {}) {
   if (!actor || !test || !actor.canPerformAction()) return actor?.warnCannotAct?.() ?? null;
   const situation = ruleTestSituationOptions(test);
-  const configuredTraits = (Array.isArray(test.trait) ? test.trait : [test.trait])
-    .filter(key => key && key !== "aucun" && TRUDVANG.traits[key]).slice(0, 2);
-  const traitValues = configuredTraits.map(key => ({
-    key,
-    label: game.i18n.localize(TRUDVANG.traits[key]),
-    value: Number(actor.getTraitValue(key)) || 0
-  }));
-  const hasTrait = traitValues.length > 0;
+  const configuredTraits = (Array.isArray(test.trait) ? test.trait : [test.trait]).slice(0, 2);
+  while (configuredTraits.length < 2) configuredTraits.push("aucun");
+  const traitValues = configuredTraits.map(key => {
+    const hasTrait = key && key !== "aucun" && TRUDVANG.traits[key];
+    return {
+      key: hasTrait ? key : "aucun",
+      label: hasTrait
+        ? game.i18n.localize(TRUDVANG.traits[key])
+        : game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTrait"),
+      value: hasTrait ? Number(actor.getTraitValue(key)) || 0 : 0
+    };
+  });
+  const hasTrait = traitValues.some(row => row.key !== "aucun");
   const sharedEffect = actor.getRollModifier({kind: "situation", includeState: false});
   const traitEffectValues = traitValues.map(trait => ({
     ...trait,
-    effect: actor.getRollModifier({kind: "trait", traitKey: trait.key, includeState: false}) - sharedEffect
+    effect: trait.key === "aucun" ? 0 : actor.getRollModifier({kind: "trait", traitKey: trait.key, includeState: false}) - sharedEffect
   }));
-  const traitValue = traitValues.length > 1
-    ? calculateTraitModifier(traitEffectValues.map(row => row.value + row.effect), test.traitMethod)
-    : (traitEffectValues[0]?.value || 0);
-  const effect = hasTrait ? sharedEffect + (traitValues.length === 1 ? traitEffectValues[0].effect : 0) : sharedEffect;
+  const traitValue = calculateTraitModifier(traitEffectValues.map(row => row.value + row.effect), test.traitMethod || "first");
+  const effect = sharedEffect;
   const modifierRows = actorStateRollModifiers(actor);
   const traitLabel = hasTrait ? game.i18n.localize(TRUDVANG.Dialog.TraitSituationTrait)
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
@@ -1088,8 +1091,9 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
   const situationBase = Number(base ?? sv) || 0;
-  const multiTrait = traitValues.length > 1;
-  const multiTraitRows = multiTrait ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div></div>` : "";
+  const hasTwoTraitSlots = traitValues.length > 1;
+  const multiTrait = traitValues.filter(row => row.key !== "aucun").length > 1;
+  const multiTraitRows = hasTwoTraitSlots ? `<div class="trait-roll-values">${traitValues.map(row => `<div class="form-group"><label>${escapeHtml(row.label)}</label><input type="number" value="${Number(row.value) || 0}" readonly><p class="hint">${escapeHtml(game.i18n.format("TRUDVANG.Dialog.RuleTestTraitSpecificEffect", {value: Number(row.effect) || 0}))}</p></div>`).join("")}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div></div>` : "";
   const traitMethodControl = multiTrait ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitMethod"))}</label><select name="trait-method">${[
     ["first", game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitFirst")],
     ["second", game.i18n.localize("TRUDVANG.Dialog.RuleTestTraitSecond")],
@@ -1137,7 +1141,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       super._onRender(context, options);
       const root = this.element;
       const configuredModifierValue = () => Number(root.querySelector("[name=condition-modifier]")?.value || 0);
-      const currentTraitModifier = () => multiTrait
+      const currentTraitModifier = () => hasTwoTraitSlots
         ? calculateTraitModifier(traitValues.map(row => Number(row.value) + Number(row.effect || 0)), root.querySelector("[name=trait-method]")?.value || traitMethod)
         : trait;
       const refresh = () => {

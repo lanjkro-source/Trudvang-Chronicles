@@ -5,8 +5,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se libérer de la bourse astrale",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "se libère de la bourse.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -39,8 +43,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "modifier": "reprend aussi le malus dû aux niveaux de puissance supplémentaires du sort adverse"
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "neutralise le vitner et interrompt le sort hostile, qui n’a aucun effet.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -73,8 +81,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "bonus": " +2 si l’enchanteur utilise le même type de vitner que le sort ciblé"
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "neutralise et disperse le vitner du sort.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -106,9 +118,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "empêche tous les effets du sort de traverser le mur.",
       "repeat": "à chaque tentative de traversée",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -140,8 +156,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "découvre l’origine, le tisseur et le lieu de tissage du sort; pour une négation, découvre le sort et le lieu qu’il a affecté.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -150,8 +170,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "repérer les êtres vivants à moins de 10 mètres",
       "sv": 8,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "remarque les êtres vivants, même invisibles ou camouflés; la capacité ne repère pas ceux qui utilisent de la grindblom ou sont dans le Domaine des Brumes.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -160,9 +184,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux dégâts de Main funeste pendant le tour",
       "sv": 6,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite tous les dégâts du sort pour le tour en cours.",
       "repeat": "une fois par tour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -171,18 +199,26 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "déceler le mensonge de l’esprit",
       "sv": 10,
-      "trait": "intelligence",
+      "trait": [
+        "intelligence",
+        "aucun"
+      ],
       "success": "comprend que l’esprit n’est pas celui recherché.",
       "condition": "le résultat du tableau 1d20 est 17 ou 18",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "déceler le mensonge de l’esprit",
       "sv": 6,
-      "trait": "intelligence",
+      "trait": [
+        "intelligence",
+        "aucun"
+      ],
       "success": "comprend que l’esprit n’est pas celui recherché.",
       "condition": "le résultat du tableau 1d20 est 19",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -239,9 +275,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": -4
         }
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "tranche le lien avec Dimhall et bannit l’âme du ou des morts-vivants.",
       "note": "Pour plusieurs cibles, additionner leurs PS max. avant de choisir le modificateur.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -250,9 +290,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au vol de vitner",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche le vol de vitner (ou de points de santé) pendant ce tour.",
       "repeat": "au début de chaque tour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -309,9 +353,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": -4
         }
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "prend le contrôle du lien; le mort-vivant obéit à tous les ordres.",
       "note": "Pour plusieurs cibles, additionner leurs PS max. avant de choisir le modificateur; le contrôle cesse si l’enchanteur perd conscience.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -320,9 +368,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "avancer dans le bourbier avec l’aide d’une corde",
       "sv": 12,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "avance de 1 mètre vers la sortie par tour.",
       "condition": "la victime piégée reçoit une corde ou un objet similaire",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -372,8 +424,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la pétrification.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -436,9 +492,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "rend sa forme d’origine à la victime; elle se réveille au bout d’un tour.",
       "condition": "version Annuler une pétrification",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -447,9 +507,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "rester concentré sous la pluie",
       "sv": 10,
-      "trait": "intelligence",
+      "trait": [
+        "intelligence",
+        "aucun"
+      ],
       "success": "n’est pas distrait ni désorienté par la pluie.",
       "condition": "pendant Sourcier, sous la pluie",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -458,19 +522,27 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au soulèvement par le vent",
       "sv": 8,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "n’est pas soulevé par le sort.",
       "condition": "la cible ne consent pas au sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "garder ou reprendre le contrôle des vents",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "conserve ou reprend le contrôle; la cible ne continue pas sa chute.",
       "condition": "l’enchanteur subit des dégâts ou est déconcentré",
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -516,8 +588,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "permet à l’entité de traverser le bouclier.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -536,19 +612,27 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au soulèvement par les vents",
       "sv": 6,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "n’est pas soulevé par le sort.",
       "condition": "la cible ne consent pas au sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "garder ou reprendre le contrôle des vents",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "conserve ou reprend le contrôle; la cible ne continue pas sa chute.",
       "condition": "l’enchanteur subit des dégâts ou est déconcentré",
       "repeat": "à chaque tour tant que le sort dure après une perte de contrôle",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -581,8 +665,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "noTest": "à trois fois le poids affecté, aucun test n’est demandé; la cible n’est pas projetée."
       },
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "évite d’être projeté par la tempête; le malus d’action de la table s’applique toujours tant que la créature reste dans la zone.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -643,8 +731,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "localise l’objet; un jet de 1d20 détermine ensuite la précision des informations.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -705,9 +797,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "localise la cible; un jet de 1d20 détermine ensuite la précision des informations.",
       "note": "La description renvoie à la même table de modificateurs que Détection d’objet.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -768,8 +864,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "détecte sa présence; un jet de 1d20 détermine ensuite les informations obtenues.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -778,8 +878,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la peur magique",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite les points de peur infligés par le sort.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -788,26 +892,38 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’émotion imposée",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas affecté par l’émotion.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "ne pas s’endormir sous l’effet de la fatigue",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste éveillé.",
       "condition": "émotion Fatigué, dans les cinq prochaines minutes",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
     {
       "action": "garder un secret important",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne révèle pas ses secrets importants ou incriminants.",
       "condition": "émotion Sincère",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -816,8 +932,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’idée implantée",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche l’idée d’être implantée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -826,9 +946,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "percer l’aura de puissance",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "voit l’enchanteur tel qu’il est réellement et ne se soumet pas à son autorité.",
       "repeat": "nouveau test si l’enchanteur demande quelque chose d’inhabituel",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -837,8 +961,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au contrôle de la créature",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’obéir aveuglément aux ordres.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -847,9 +975,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "protéger un secret contre la lecture des pensées",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche le lecteur d’accéder à ce secret; il doit recommencer son test.",
       "repeat": "pour chaque secret protégé",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -858,8 +990,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la possession",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche l’enchanteur de prendre le contrôle du corps.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -892,8 +1028,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "bonus": " +2 si le même type de vitner est utilisé"
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "identifie le type, les effets et le mode d’activation du sort.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -925,8 +1065,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "perçoit la présence du sort ou de l’enchantement.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -935,8 +1079,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la peur provoquée par le pouvoir",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas effrayé.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -945,9 +1093,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "percer l’illusion et comprendre la vérité",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "découvre la vérité derrière l’illusion.",
       "repeat": "un nouveau test peut être tenté chaque jour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -956,8 +1108,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux dégâts de la fièvre",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite les 1d10 points de dégâts.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -966,19 +1122,27 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la perte des souvenirs",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "conserve son identité et ses souvenirs.",
       "condition": "test initial",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "récupérer un souvenir",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "se rappelle un détail important; chaque réussite ajoute +2 aux chances des tests suivants.",
       "condition": "après l’échec initial",
       "repeat": "une fois par jour; si la SV atteint 20, la victime retrouve tous ses souvenirs",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -987,9 +1151,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la transformation en arbre",
       "sv": 4,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "ne subit qu’une transformation partielle: peau d’écorce si elle pèse au plus 60 kg, parties du corps transformées au-delà.",
       "failure": "la victime est entièrement transformée et enracinée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -998,8 +1166,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la distraction des corbeaux",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "réduit à −1 le malus d’action pour le tour au lieu de −3.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1008,9 +1180,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la perte du sens",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1019,9 +1195,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la perte du sens",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1030,9 +1210,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la perte du sens",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite l’effet négatif sur le sens concerné.",
       "condition": "lorsque le malus de perception atteindrait −10",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1047,8 +1231,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 2
         }
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être immobilisé.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1057,9 +1245,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la modification d’apparence",
       "sv": 6,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "conserve son apparence.",
       "condition": "la cible connaît le sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1068,9 +1260,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’inversion de Dextérité",
       "sv": 6,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "conserve sa Dextérité normale.",
       "condition": "utilisation inversée du sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1079,9 +1275,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’inversion de Force",
       "sv": 6,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "conserve sa Force normale.",
       "condition": "utilisation inversée du sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1090,9 +1290,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "franchir la barrière mentale de la prison",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "passe la barrière et s’évade; la décharge électrique reste à subir.",
       "failure": "subit 1d10 dégâts et ne franchit pas la barrière.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1107,8 +1311,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 2
         }
       },
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite la transformation.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1117,8 +1325,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la modification de la voix",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "garde sa voix naturelle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1230,8 +1442,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la peur du lindwurm illusoire",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne subit que 1d5 points de peur au lieu de 1d10.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1240,8 +1456,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au malus auditif de l’alarme",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "n’est pas gêné par le son de l’alarme.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1281,8 +1501,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "verrouille ou déverrouille la serrure.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1291,9 +1515,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "ne pas accepter sans condition les propos du stormikjalt",
       "sv": 8,
-      "trait": "intelligence",
+      "trait": [
+        "intelligence",
+        "aucun"
+      ],
       "success": "garde son libre arbitre et n’accepte pas ses propos sans condition.",
       "failure": "accepte sans condition tout ce que dit le stormikjalt.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1302,8 +1530,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’ordre",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’obéit pas à l’ordre imposé.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1312,8 +1544,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’ordre",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’obéit pas à l’ordre imposé.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1322,9 +1558,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "garder sa concentration pour lancer le pouvoir",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "parvient à lancer le pouvoir malgré la distraction ou les dégâts.",
       "condition": "si le Stormikjalt subit des dégâts ou est distrait",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1333,9 +1573,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "garder sa concentration pour maintenir la protection",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "maintient la protection malgré la distraction ou les dégâts.",
       "condition": "si le Stormikjalt subit des dégâts ou est distrait",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1344,8 +1588,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "protéger ses pensées du regard de Windinna",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche la lecture des pensées.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1404,8 +1652,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "neutralise le sort hostile.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1437,8 +1689,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche le sort hostile d’affecter la cible.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1470,8 +1726,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "empêche le sort hostile d’affecter la cible.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1496,8 +1756,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "entend clairement le son.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1506,8 +1770,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se dégager d’un obstacle physique",
       "sv": 8,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "se libère de l’obstacle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1532,8 +1800,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "entend clairement le son.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1542,25 +1814,37 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "libérer une personne du Souffle libérateur",
       "sv": 14,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "annule l’effet qui retient la personne.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "débloquer une serrure ou un obstacle",
       "sv": 8,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "débloque ou libère l’obstacle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
     {
       "action": "dissiper un sort de contrôle",
       "sv": 6,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "libère la cible du contrôle.",
       "condition": "sort de niveau 1 à 3; aucun test n’est indiqué pour les niveaux 4 et 5",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -1585,8 +1869,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "entend clairement le son.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1595,8 +1883,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se libérer d’un obstacle physique",
       "sv": 14,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "surmonte l’obstacle physique.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -1614,8 +1906,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "libère la cible du contrôle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -1624,8 +1920,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la douleur psychologique",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite les malus d’action dus à la douleur; les dégâts physiques restent.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1634,8 +1934,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la douleur",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite le malus de −3 aux compétences et aux situations jusqu’à la fin de la journée; les dégâts physiques restent.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1644,8 +1948,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la pétrification",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être changé en pierre.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1654,8 +1962,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la pétrification",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être changé en pierre.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1664,9 +1976,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la douleur psychologique",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste conscient et ne subit le malus de −3 que pendant 1d6 heures.",
       "failure": "le malus dure jusqu’à la fin de la journée et la victime perd connaissance pendant 1d6 minutes.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1675,8 +1991,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "recevoir la guérison complète",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1685,8 +2005,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "recevoir la guérison complète",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1695,8 +2019,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "recevoir la guérison complète",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "se débarrasse entièrement des afflictions et de leurs effets.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1705,8 +2033,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au lien de fraternité",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1715,8 +2047,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au lien de fraternité",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1725,8 +2061,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au lien d’amitié",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas lié par l’amitié surnaturelle.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1735,8 +2075,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "pénétrer l’aura de résistance",
       "sv": 10,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "pénètre l’aura et dissipe le sort.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1745,9 +2089,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la malédiction ou à l’infection",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "repousse ou supprime l’influence néfaste.",
       "repeat": "une fois par jour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1756,8 +2104,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "attaquer le prêtre ou mentir en sa présence",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "peut attaquer le prêtre ou mentir malgré sa présence divine.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1766,9 +2118,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "attaquer, mentir ou intriguer contre le prêtre",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "peut attaquer, mentir ou intriguer contre le prêtre malgré sa présence divine.",
       "condition": "l’intrigue est aussi concernée si la cible est à portée du sort",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1777,8 +2133,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la pétrification d’un membre",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite que le membre ciblé soit changé en pierre.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1787,8 +2147,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la pétrification",
       "sv": 4,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être changé en pierre.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1797,8 +2161,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’infection",
       "sv": 8,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "est immunisé à la maladie pendant une journée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1807,8 +2175,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la contagion",
       "sv": 6,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "est immunisé à la maladie pendant une journée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1817,8 +2189,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la tâche imposée",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas contraint d’accomplir la tâche.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1827,8 +2203,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’infection",
       "sv": 4,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "est immunisé à la maladie pendant une journée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1837,17 +2217,25 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au charme et à la suggestion",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "résiste au charme et n’exécute pas la suggestion.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "résister à une suggestion meurtrière",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "s’arrête avant d’accomplir l’acte irréversible.",
       "condition": "test immédiat juste avant de tuer sous l’effet de la suggestion",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -1856,8 +2244,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’aura de froid",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne fuit pas la source du froid.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1866,8 +2258,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’aura de froid",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne fuit pas la source du froid.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1876,8 +2272,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la paralysie",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la paralysie.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -1902,9 +2302,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 1
         }
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "se rappelle la distance et la direction.",
       "condition": "déplacement effectué en étant conscient",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -1917,9 +2321,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 1
         }
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "se rappelle la distance et la direction.",
       "condition": "déplacement subi alors que le thuul était inconscient",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -1962,8 +2370,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "immune": "taille ≥10"
       },
-      "trait": "dexterity",
+      "trait": [
+        "dexterity",
+        "aucun"
+      ],
       "success": "évite d’être déséquilibré et de perdre sa capacité d’agir pendant le tour en cours et le suivant.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2023,8 +2435,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "base": 15,
         "modifierRule": "malus selon la force du poison ou le niveau du sort"
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "purifie la boisson.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2055,9 +2471,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         ],
         "otherValues": "le MJ fixe la valeur selon la puissance du diser"
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "se libère de l’emprise.",
       "repeat": "un nouveau test peut être tenté à chaque tour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2066,27 +2486,39 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se réveiller du sommeil profond",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "se réveille; peut ensuite tenter d’apercevoir la hantise.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "apercevoir la hantise avant sa fuite",
       "sv": 6,
-      "trait": "perception",
+      "trait": [
+        "perception",
+        "aucun"
+      ],
       "success": "aperçoit la hantise avant qu’elle ne s’enfuie.",
       "condition": "après la réussite du premier test",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
     {
       "action": "se réveiller pendant le baiser",
       "sv": 5,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "se réveille; les conséquences suivent celles du premier test.",
       "condition": "après l’échec du premier test",
       "repeat": "à chaque tour pendant les 1d10 tours du baiser",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -2142,8 +2574,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "perception",
+      "trait": [
+        "perception",
+        "aucun"
+      ],
       "success": "repère le hrimwurm.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -2175,8 +2611,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas détourné de son chemin.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2189,8 +2629,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "max": 10,
         "determinedBy": "puissance de la nymphe"
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne se laisse pas berner par l’illusion et voit l’apparence naturelle de la nymphe.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -2201,9 +2645,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "max": 10,
         "determinedBy": "même SV et modificateurs que le test initial"
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste au premier stade du charme et peut penser de manière rationnelle.",
       "condition": "tour suivant un premier échec",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
@@ -2214,9 +2662,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "max": 10,
         "determinedBy": "même SV et modificateurs que le test initial"
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste au deuxième stade du charme et n’est pas totalement soumis à la nymphe.",
       "condition": "tour suivant un nouvel échec au stade intermédiaire",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -2225,9 +2677,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "éviter de lâcher les objets tenus après la chute",
       "sv": 10,
-      "trait": "dexterity",
+      "trait": [
+        "dexterity",
+        "aucun"
+      ],
       "success": "garde les objets tenus.",
       "failure": "lâche les objets tenus.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -2243,27 +2699,39 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se dégager du cocon, première étape",
       "sv": 3,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "valide la première réussite nécessaire à la libération.",
       "note": "Les trois réussites doivent être obtenues dans l’ordre 3, 7, 11; elles ne doivent pas être consécutives.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "se dégager du cocon, deuxième étape",
       "sv": 7,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "valide la deuxième réussite nécessaire à la libération.",
       "note": "Les trois réussites doivent être obtenues dans l’ordre 3, 7, 11; elles ne doivent pas être consécutives.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
     {
       "action": "se dégager du cocon, troisième étape",
       "sv": 11,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "libère la victime si les deux étapes précédentes ont été réussies.",
       "note": "Les trois réussites doivent être obtenues dans l’ordre 3, 7, 11; elles ne doivent pas être consécutives.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -2272,8 +2740,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’impulsion de charger l’ennemi",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne charge pas l’ennemi menaçant.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2282,8 +2754,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au sommeil et à la transformation",
       "sv": 16,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "ne s’endort pas et ne se transforme pas; le cœur conserve ses effets de guérison.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2304,9 +2780,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "se libère de la constriction.",
       "repeat": "une fois par round",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2327,9 +2807,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "se libère de la constriction.",
       "repeat": "une fois par round",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2377,8 +2861,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
   "n85BQGaGbHcIdJeK": [
     {
       "action": "supporter la chaleur de la sphère",
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "peut rester dans la sphère de chaleur.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2387,8 +2875,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "supporter le froid de l’aura",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne fuit pas l’aura de froid.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2397,8 +2889,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "supporter le froid de l’aura",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne fuit pas l’aura de froid.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2407,8 +2903,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "supporter le froid de l’aura",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne fuit pas l’aura de froid.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2425,8 +2925,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite l’effet du regard.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2437,8 +2941,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "sv": {
         "rule": "valeur fixée par le MJ selon la puissance du diser"
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "réduit ou annule la peur selon la valeur fixée par le MJ.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2447,9 +2955,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux indications trompeuses du troll",
       "sv": 7,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne suit pas la mauvaise direction.",
       "repeat": "chaque fois que le troll suggère un nouvel itinéraire",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2458,10 +2970,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au hurlement funeste",
       "sv": 9,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "si le résultat est inférieur à la moitié de la SV, aucun effet; entre la moitié de la SV et la SV, la victime ne subit que la moitié de la peur.",
       "failure": "à partir de la SV, la victime subit toute la peur.",
       "note": "La distance peut modifier la SV.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2478,9 +2994,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas effrayé.",
       "criticalFailure": "lâche ses armes et perd 1d3 tours.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2515,8 +3035,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "s’éloigne de la source de l’imitation.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2525,8 +3049,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "rester conscient dans le brouillard",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste conscient et ne marche pas vers le centre du brouillard.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2556,9 +3084,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la transformation en situation stressante",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la transformation déclenchée par le stress.",
       "condition": "Psychisme négatif et situation stressante",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2588,9 +3120,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la transformation en situation stressante",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la transformation déclenchée par le stress.",
       "condition": "Psychisme négatif et situation stressante",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2620,9 +3156,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la transformation en situation stressante",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la transformation déclenchée par le stress.",
       "condition": "Psychisme négatif et situation stressante",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2631,8 +3171,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "comprendre les intentions du myling",
       "sv": 6,
-      "trait": "intelligence",
+      "trait": [
+        "intelligence",
+        "aucun"
+      ],
       "success": "reconnaît les manigances du myling, se méfie et sait qu’il doit s’arrêter.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2653,7 +3197,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "strength",
         "dexterity"
       ],
-      "traitMethod": "first",
+      "traitMethod": "best",
       "success": "résiste à la traction et rejoint la terre ferme.",
       "traitRule": "modificateur de Force ou de Dextérité selon le test effectué",
       "kind": "resist",
@@ -2684,7 +3228,7 @@ export const RULE_TESTS_BY_CATALOG_ID = {
         "strength",
         "dexterity"
       ],
-      "traitMethod": "first",
+      "traitMethod": "best",
       "success": "résiste à la traction et rejoint la terre ferme.",
       "traitRule": "modificateur de Force ou de Dextérité selon le test effectué",
       "kind": "resist",
@@ -2703,8 +3247,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la persuasion du roi des trolls",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’accomplit pas la tâche imposée.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2725,16 +3273,24 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite de croiser le regard.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "résister à la pétrification",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être transformé en statue.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2743,8 +3299,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la pétrification",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite d’être transformé en pierre.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2753,17 +3313,25 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la peur au contact de la magie",
       "sv": 8,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "évite le malus de −3.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "résister à la fuite provoquée par la magie",
       "sv": 12,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "ne fuit pas la source de magie.",
       "condition": "après l’échec du premier test",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     },
@@ -2777,9 +3345,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "minimum": 0
         }
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "se rapproche de la source sans repartir en fuite.",
       "condition": "après avoir fui pendant 1d6 tours",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 2
     }
@@ -2788,8 +3360,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’attraction du kelpie",
       "sv": 10,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "n’est pas attiré vers le kelpie.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2798,8 +3374,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la paralysie du regard",
       "sv": 7,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la paralysie.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2808,8 +3388,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la paralysie du regard",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la paralysie.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2818,10 +3402,14 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister au regard terrifiant",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste indemne et n’est pas effrayé.",
       "failure": "subit 1d10 points de peur et un malus de −4 à toutes ses actions tant que le Grendel reste présent.",
       "repeat": "le MJ peut demander un nouveau test",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2830,19 +3418,27 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux yeux hypnotiques d’une tête régénérée",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "évite la paralysie pendant 2d6 tours ou jusqu’à subir au moins 1 dégât.",
       "condition": "si la tête régénérée possède des yeux hypnotiques",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "résister à la gueule agrippeuse",
       "sv": 12,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "évite d’être retenu par la gueule.",
       "condition": "si la tête régénérée possède une grande gueule agrippeuse",
       "failure": "reste coincé jusqu’à une nouvelle réussite.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2851,17 +3447,25 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux cauchemars de la hantise",
       "sv": 9,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "fait des cauchemars sans conséquence durable.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "éviter la perte de Psychisme",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne perd pas de niveau de Psychisme.",
       "condition": "première nuit si le résultat du tableau des cauchemars est 20",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -2876,9 +3480,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 1
         }
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "le lindwurm lâche la victime.",
       "condition": "si le lindwurm subit plus de 15 points de dégâts",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
@@ -2896,9 +3504,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "remarquer la morsure",
       "sv": 8,
-      "trait": "perception",
+      "trait": [
+        "perception",
+        "aucun"
+      ],
       "success": "se rend compte de la morsure et peut surprendre le nattulm.",
       "condition": "2d6 tours après l’application de la salive",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2907,8 +3519,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à la chaleur du géant",
       "sv": 12,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "résiste à la chaleur qui émane du muspeljotun.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2917,8 +3533,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "ne pas reculer devant la chaleur du jarnwurm",
       "sv": 6,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "reste dans la sphère de chaleur; les dégâts de chaleur par tour continuent de s’appliquer.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2933,9 +3553,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           "value": 1
         }
       },
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "récupère son arme.",
       "repeat": "un nouveau test peut être tenté à chaque tour",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2952,11 +3576,15 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "subit des engelures et un malus de −3 aux actions pendant 1d10 tours au lieu d’être immobilisé.",
       "failure": "est immobilisé; un nouvel échec à un second souffle provoque le sommeil de glace.",
       "repeat": "nouveau test lors de chaque exposition",
       "note": "La tenue complète en fourrure de mastomant réduit aussi les dégâts de moitié.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2973,9 +3601,13 @@ export const RULE_TESTS_BY_CATALOG_ID = {
           }
         ]
       },
-      "trait": "perception",
+      "trait": [
+        "perception",
+        "aucun"
+      ],
       "success": "se réveille et découvre le nattulm, qui prend immédiatement la fuite.",
       "repeat": "chaque tour pendant que le nattulm boit",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2984,8 +3616,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "ne pas fuir un phénomène inexplicable",
       "sv": 8,
-      "trait": "aucun",
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "ne fuit pas le phénomène.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -2996,8 +3632,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
       "sv": {
         "rule": "valeur déterminée par le MJ selon le poids de la créature et la force du diser"
       },
-      "trait": null,
+      "trait": [
+        "aucun",
+        "aucun"
+      ],
       "success": "évite d’être soulevé par le pouvoir.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -3006,8 +3646,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "se libérer de la toile",
       "sv": 7,
-      "trait": "strength",
+      "trait": [
+        "strength",
+        "aucun"
+      ],
       "success": "se libère de la toile.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -3016,17 +3660,25 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister aux maladies du troll",
       "sv": 7,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "est immunisé aux maladies des trolls pendant un mois.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
     {
       "action": "empêcher la prolongation des rougeurs",
       "sv": 7,
-      "trait": "constitution",
+      "trait": [
+        "constitution",
+        "aucun"
+      ],
       "success": "évite que les rougeurs durent 1d3 jours de plus.",
       "condition": "à la fin des rougeurs si le résultat du tableau 1d20 est 17 ou 18",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 1
     }
@@ -3035,8 +3687,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "résister à l’appel des yeux lumineux",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ne navigue pas inconsciemment vers la lumière.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     }
@@ -3045,8 +3701,12 @@ export const RULE_TESTS_BY_CATALOG_ID = {
     {
       "action": "ignorer l’enchantement de la brume luisante",
       "sv": 8,
-      "trait": "psyche",
+      "trait": [
+        "psyche",
+        "aucun"
+      ],
       "success": "ignore l’enchantement et ne se perd pas.",
+      "traitMethod": "first",
       "kind": "resist",
       "index": 0
     },
