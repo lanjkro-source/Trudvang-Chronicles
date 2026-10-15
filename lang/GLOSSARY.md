@@ -1082,6 +1082,14 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.TraitSituationPlayerSV` | SV | SV |
 | `TRUDVANG.Dialog.TraitSituationPlayerModifier` | Modifier | Modificateur |
 | `TRUDVANG.Dialog.TraitSituationPlayerFinal` | Final SV | SV final |
+| `TRUDVANG.Dialog.RuleTestSVCondition` | SV by condition | SV selon la condition |
+| `TRUDVANG.Dialog.RuleTestModifierCondition` | Modifier by condition | Modificateur selon la condition |
+| `TRUDVANG.Dialog.RuleTestConditionModifierValue` | Conditional modifier value | Valeur du modificateur conditionnel |
+| `TRUDVANG.Dialog.RuleTestRepeatedModifier` | Number of repetitions | Nombre de répétitions |
+| `TRUDVANG.Dialog.RuleTestNoCondition` | No condition selected | Aucune condition sélectionnée |
+| `TRUDVANG.Dialog.RuleTestRepeat` | Repeat: {repeat} | Répéter : {repeat} |
+| `TRUDVANG.Dialog.RuleTestSVRange` | SV between {min} and {max} (determined by: {determinedBy}) | SV entre {min} et {max} (déterminée par : {determinedBy}) |
+| `TRUDVANG.Dialog.RuleTestBaseVC` | Listed base SV: {value} | VC de base indiquée : {value} |
 | `TRUDVANG.Dialog.TraitSituationResults` | Resistance roll results | Résultats des jets de résistance |
 | `TRUDVANG.Dialog.TraitSituationTokenHint` | Hover to indicate the token; click to center the view. | Survolez pour repérer le token ; cliquez pour centrer la vue. |
 

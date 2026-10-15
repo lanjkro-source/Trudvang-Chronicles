@@ -96,34 +96,52 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
   return {roll, result, target: finalTarget, success, critical, margin, effectTarget};
 }
 
-async function configuredSituationValue(test, sourceName) {
-  if (Number.isInteger(test?.sv)) return test.sv;
-  const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
-  const values = Array.isArray(test?.sv?.by) ? test.sv.by : [];
-  const variableHint = String(test?.sv?.otherValues || test?.sv?.modifier || "").trim();
-  const valueControl = values.length
-    ? `<select name="situationValue">${values.map((entry, index) => `<option value="${Number(entry.value)}" ${index === 0 ? "selected" : ""}>${escapeHtml(entry.condition || game.i18n.format("TRUDVANG.RuleTest.ValueOption", {index: index + 1}))} — ${Number(entry.value)}</option>`).join("")}</select>`
-    : `<input name="situationValue" type="number" value="10">`;
-  const content = `<div class="trudvang roll-dialog"><p>${escapeHtml(game.i18n.localize("TRUDVANG.RuleTest.VariableHint"))}</p>${variableHint ? `<p class="hint">${escapeHtml(variableHint)}</p>` : ""}<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationSV"))}</label>${valueControl}</div></div>`;
-  const answer = await DialogClass.wait({
-    window: {title: game.i18n.format("TRUDVANG.RuleTest.VariableTitle", {source: sourceName || ""})},
-    content,
-    buttons: [
-      {action: "continue", label: game.i18n.localize("TRUDVANG.Action.Continue"), default: true, callback: (event, button, dialog) => Number((button.form ?? dialog.element).querySelector("[name=situationValue]")?.value)},
-      {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
-    ],
-    modal: false,
-    rejectClose: false
-  });
-  if (answer === false || answer === null || answer === undefined) return null;
-  return Number.isInteger(answer) ? answer : null;
+function numericModifier(value) {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  if (typeof value !== "string") return null;
+  const normalized = value.trim().replace(/[−–]/g, "-").replace(/\s/g, "");
+  return /^[+-]?\d+(?:\.\d+)?$/u.test(normalized) ? Number(normalized) : null;
+}
+
+function ruleTestSituationOptions(test) {
+  const configured = test?.sv;
+  const structured = configured && typeof configured === "object" ? configured : {};
+  const base = Number.isFinite(numericModifier(configured)) ? numericModifier(configured)
+    : Number.isFinite(numericModifier(structured.base)) ? numericModifier(structured.base) : 0;
+  const svChoices = Array.isArray(structured.by) ? structured.by : [];
+  const modifierChoices = Array.isArray(structured.modifiers) ? structured.modifiers : [];
+  const repeatedModifiers = [];
+  if (structured.repeatedModifier) repeatedModifiers.push(structured.repeatedModifier);
+  if (structured.increment) repeatedModifiers.push({...structured.increment, direction: 1});
+  if (structured.decrement) repeatedModifiers.push({...structured.decrement, direction: -1});
+
+  const notes = [test?.note, test?.condition];
+  if (test?.repeat) notes.push(game.i18n.format("TRUDVANG.Dialog.RuleTestRepeat", {repeat: test.repeat}));
+  for (const key of ["rule", "determinedBy", "otherValues", "modifier", "modifierRule", "bonus", "noTest", "immune"]) {
+    const value = structured[key];
+    if (value !== undefined && value !== null && value !== "") notes.push(typeof value === "string" ? value : JSON.stringify(value));
+  }
+  if (Number.isFinite(numericModifier(structured.min)) || Number.isFinite(numericModifier(structured.max))) {
+    notes.push(game.i18n.format("TRUDVANG.Dialog.RuleTestSVRange", {
+      min: numericModifier(structured.min) ?? 0,
+      max: numericModifier(structured.max) ?? 0,
+      determinedBy: structured.determinedBy || ""
+    }));
+  }
+  return {
+    base,
+    svChoices,
+    modifierChoices,
+    repeatedModifiers,
+    notes: [...new Set(notes.map(value => String(value ?? "").trim()).filter(Boolean))],
+    svEditable: Number.isInteger(configured) === false && (svChoices.length > 0 || !Number.isFinite(numericModifier(structured.base)))
+  };
 }
 
 /** Run a resistance test from a rule description; the clicking user rolls for their selected PC/NPC. */
 export async function rollConfiguredTraitSituation({actor, test, sourceName = ""} = {}) {
   if (!actor || !test || !actor.canPerformAction()) return actor?.warnCannotAct?.() ?? null;
-  const sv = await configuredSituationValue(test, sourceName);
-  if (sv === null) return null;
+  const situation = ruleTestSituationOptions(test);
   const traitKey = test.trait && test.trait !== "aucun" && TRUDVANG.traits[test.trait] ? test.trait : "aucun";
   const hasTrait = traitKey !== "aucun";
   const traitValue = hasTrait ? actor.getTraitValue(traitKey) : 0;
@@ -132,9 +150,9 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const traitLabel = hasTrait ? game.i18n.localize(TRUDVANG.traits[traitKey])
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   const title = game.i18n.format("TRUDVANG.RuleTest.ResistanceTitle", {source: sourceName || "", action: test.action || ""});
-  const options = await playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv, modifierRows});
+  const options = await playerTraitSituationDialog({title, traitLabel, traitValue, effect, ...situation, modifierRows});
   if (!options) return null;
-  const target = sv + traitValue + effect + rollModifierTotal(modifierRows);
+  const target = (options.situationValue ?? situation.base) + traitValue + effect + Number(options.configuredModifier || 0) + Number(options.repeatedModifier || 0) + rollModifierTotal(modifierRows);
   return rollUnder({actor, label: title, target, modifier: options.modifier, kind: "situation",
     flavor: rollModifierFlavor(modifierRows), successConsequence: test.success || "", failureConsequence: test.failure || ""});
 }
@@ -553,7 +571,7 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
   });
 }
 
-export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = []}) {
+export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = [], notes = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   // target is always the intrinsic VC. Every fixed modifier is a separate row.
   const finalTarget = Number(target) + rollModifierTotal(modifierRows);
@@ -561,6 +579,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target)}))}</p>
       ${modifierList(modifierRows)}
+      ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
       <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${finalTarget}</strong></p>
@@ -1043,32 +1062,74 @@ export async function requestTraitSituationRoll({traitKey, situationValue, title
 }
 
 /**
- * Player dialog: SV is fixed (chosen by GM), only the modifier is editable.
- * Shows a live summary of the final SV.
+ * Player dialog for configured resistance tests. Known values are prefilled while
+ * conditional and repeated modifiers remain explicit choices in the same roll window.
  */
-export async function playerTraitSituationDialog({title, traitLabel, traitValue, effect, sv, modifierRows = []}) {
+export async function playerTraitSituationDialog({title, traitLabel, traitValue, effect, base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
-  const base = Number(sv) || 0;
+  const situationBase = Number(base ?? sv) || 0;
+  const choiceText = choice => `${choice.condition || ""}${choice.value === undefined ? "" : ` — ${typeof choice.value === "number" ? signedModifier(choice.value) : String(choice.value)}`}`;
+  const svChoiceControl = svChoices.length ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestSVCondition"))}</label><select name="sv-choice"><option value="">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestNoCondition"))}</option>${svChoices.map((choice, index) => `<option value="${index}">${escapeHtml(choiceText(choice))}</option>`).join("")}</select></div>` : "";
+  const modifierChoiceControl = modifierChoices.length ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestModifierCondition"))}</label><select name="modifier-choice"><option value="">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestNoCondition"))}</option>${modifierChoices.map((choice, index) => `<option value="${index}">${escapeHtml(choiceText(choice))}</option>`).join("")}</select><input name="condition-modifier" type="number" value="0" aria-label="${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestConditionModifierValue"))}"></div>` : "";
+  const repeatedModifierControls = repeatedModifiers.map((modifier, index) => {
+    const value = numericModifier(modifier.value);
+    const signed = value === null ? String(modifier.value ?? "") : signedModifier(value * (modifier.direction ?? 1));
+    return `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.RuleTestRepeatedModifier"))}</label><input name="repeat-${index}" type="number" min="0" step="1" value="0"><p class="hint">${escapeHtml(`${modifier.condition || ""}${signed ? ` (${signed})` : ""}`)}</p></div>`;
+  }).join("");
+  const situationField = `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerSV"))}</label><input name="sv" type="number" value="${situationBase}" ${svEditable || svChoices.length ? "" : "readonly"}></div>`;
+  const repeatedModifierTotal = root => {
+    const raw = repeatedModifiers.reduce((sum, modifier, index) => {
+      const count = Math.max(0, Number(root.querySelector(`[name=repeat-${index}]`)?.value || 0));
+      return sum + count * (numericModifier(modifier.value) ?? 0) * (modifier.direction ?? 1);
+    }, 0);
+    const minimum = repeatedModifiers.map(modifier => numericModifier(modifier.minimum)).filter(Number.isFinite);
+    if (!minimum.length) return raw;
+    const selectedModifier = Number(root.querySelector("[name=condition-modifier]")?.value || 0);
+    const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
+    return Math.max(raw, ...minimum.map(value => value - situationValue - selectedModifier));
+  };
   const content = `<div class="trudvang roll-dialog trait-roll-dialog">
     <div class="trait-roll-values">
       <div class="form-group"><label>${escapeHtml(traitLabel)}</label><input name="trait" type="number" value="${trait}" readonly></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
     </div>
-    <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerSV"))}</label><input name="sv" type="number" value="${base}" readonly></div>
+    ${svChoiceControl}
+    ${situationField}
+    ${modifierChoiceControl}
+    ${repeatedModifierControls}
     ${modifierList(modifierRows)}
+    ${notes.length ? `<aside class="rule-test-notes">${notes.map(note => `<p>${escapeHtml(note)}</p>`).join("")}</aside>` : ""}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerModifier"))}</label><input name="modifier" type="number" value="0"></div>
-    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${base + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
+    <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.TraitSituationPlayerFinal"))}: <strong data-final-target>${situationBase + trait + effectModifier + rollModifierTotal(modifierRows)}</strong></p>
   </div>`;
   class PlayerTraitDialog extends DialogClass {
     _onRender(context, options) {
       super._onRender(context, options);
       const root = this.element;
+      const configuredModifierValue = () => Number(root.querySelector("[name=condition-modifier]")?.value || 0);
       const refresh = () => {
         const target = root.querySelector("[data-final-target]");
-        if (target) target.textContent = base + trait + effectModifier + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
+        const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
+        if (target) target.textContent = situationValue + trait + effectModifier + configuredModifierValue() + repeatedModifierTotal(root) + rollModifierTotal(modifierRows) + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
+      root.querySelector("[name=sv-choice]")?.addEventListener("change", event => {
+        const choice = event.currentTarget.value === "" ? null : svChoices[Number(event.currentTarget.value)];
+        const value = choice ? numericModifier(choice.value) : null;
+        const input = root.querySelector("[name=sv]");
+        if (input && value !== null) input.value = value;
+        refresh();
+      });
+      root.querySelector("[name=modifier-choice]")?.addEventListener("change", event => {
+        const choice = event.currentTarget.value === "" ? null : modifierChoices[Number(event.currentTarget.value)];
+        const input = root.querySelector("[name=condition-modifier]");
+        if (input) input.value = choice ? numericModifier(choice.value) ?? 0 : 0;
+        refresh();
+      });
+      root.querySelector("[name=sv]")?.addEventListener("input", refresh);
+      root.querySelector("[name=condition-modifier]")?.addEventListener("input", refresh);
+      repeatedModifiers.forEach((_, index) => root.querySelector(`[name=repeat-${index}]`)?.addEventListener("input", refresh));
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       refresh();
     }
@@ -1079,7 +1140,14 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
     buttons: [
       {action: "roll", icon: "fas fa-dice-d20", label: game.i18n.localize("TRUDVANG.Action.Roll"), default: true, callback: (event, button, dialog) => {
         const root = button.form ?? dialog.element;
-        return {modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+        const situationValue = Number(root.querySelector("[name=sv]")?.value ?? situationBase);
+        const configuredModifier = Number(root.querySelector("[name=condition-modifier]")?.value || 0);
+        const repeatedModifier = repeatedModifierTotal(root);
+        const result = {modifier: Number(root.querySelector("[name=modifier]")?.value || 0)};
+        if (base !== undefined || svChoices.length || modifierChoices.length || repeatedModifiers.length || svEditable) {
+          Object.assign(result, {situationValue, configuredModifier, repeatedModifier});
+        }
+        return result;
       }},
       {action: "cancel", label: game.i18n.localize("TRUDVANG.Action.Cancel"), callback: () => false}
     ],

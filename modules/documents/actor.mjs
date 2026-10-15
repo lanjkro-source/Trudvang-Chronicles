@@ -791,7 +791,7 @@ export class TrudvangActor extends BaseActor {
     if (Number(context.bonus || 0)) modifierRows.push({labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows});
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: context.notes ?? []});
     if (!options) return null;
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
       flavor: rollModifierFlavor(modifierRows), successConsequence: context.successConsequence || "",

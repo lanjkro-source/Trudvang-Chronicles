@@ -200,9 +200,12 @@ export async function performRuleTest({document, index, actor = testActorForUser
     }
   };
   const modifier = Number(test.sv || 0);
+  const notes = [test.condition, test.modifier].filter(Boolean);
+  if (Number.isFinite(Number(test.base))) notes.push(game.i18n.format("TRUDVANG.Dialog.RuleTestBaseVC", {value: Number(test.base)}));
   return actor.rollAbility(rollItem, {
     disciplineLevel: Number(discipline?.system?.level || 0),
     bonus: modifier,
+    notes,
     label: game.i18n.format("TRUDVANG.RuleTest.SkillAction", {source: document?.name ?? "", action: test.action || ""}),
     successConsequence: test.success || "",
     failureConsequence: test.failure || ""
