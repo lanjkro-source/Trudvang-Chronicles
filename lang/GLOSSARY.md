@@ -1029,6 +1029,9 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.FixedAttackNoTrait` | no trait reduction | aucune réduction par un trait |
 | `TRUDVANG.Dialog.FixedAttackFinalTarget` | Final Combat Value | Valeur de combat finale |
 | `TRUDVANG.Dialog.ManualModifierFlavor` | Manual modifier: {modifier} | Modificateur manuel : {modifier} |
+| `TRUDVANG.Dialog.FailureConsequence` | On failure: {text} | En cas d’échec : {text} |
+| `TRUDVANG.Dialog.ArmorModifier` | Armor penalty | Malus d’armure |
+| `TRUDVANG.Dialog.TestModifier` | Test modifier | Modificateur du test |
 | `TRUDVANG.Dialog.SuccessConsequence` | On success: {text} | En cas de réussite : {text} |
 | `TRUDVANG.Dialog.ActiveSpellsPenalty` | Active spells ({count}): {penalty} SV | Sortilèges actifs ({count}) : {penalty} VC |
 | `TRUDVANG.Dialog.PersistentSpellNotice` | This power is lasting: if successful, it will remain active for its duration. | Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée. |
@@ -1258,8 +1261,8 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 
 | Clé | English | Français |
 |---|---|---|
-| `TRUDVANG.Calculation.Discipline` | Skill SV {skill} + Discipline {discipline} = SV {total} | VC de la compétence {skill} + discipline {discipline} = VC {total} |
-| `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
+| `TRUDVANG.Calculation.Discipline` | Skill SV {skill} + Discipline {discipline}{modifiers} = SV {total} | VC de la compétence {skill} + discipline {discipline}{modifiers} = VC {total} |
+| `TRUDVANG.Calculation.Specialty` | Skill SV {skill} + Discipline {discipline} + Specialty {specialty}{modifiers} = SV {total} | VC de la compétence {skill} + discipline {discipline} + spécialité {specialty}{modifiers} = VC {total} |
 | `TRUDVANG.Calculation.MagicMethod` | Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total} | Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total} |
 | `TRUDVANG.Calculation.Strenuous` | Strenuous: +{bonus} SV for {cost} additional Vitner Points | Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires |
 | `TRUDVANG.Calculation.Rigorous` | Rigorous: +{bonus} SV for {cost} additional Divinity Points | Rigoureux : +{bonus} VC pour {cost} points de divinité supplémentaires |

@@ -1049,7 +1049,10 @@ test("book skill rolls keep bonuses and effects without adding the actor base tw
     ];
     dialogs.length = 0;
     for (const index of [0, 1, 2]) await sheet._rollNpcBookSkill(index);
-    for (const [index, target] of [11, 13, 19].entries()) assert.match(dialogs[index].content, new RegExp(`Cible de base: ${target}\\b`));
+    for (const [index, target] of [13, 15, 21].entries()) {
+      assert.match(dialogs[index].content, new RegExp(`Cible de base: ${target}\\b`));
+      assert.match(dialogs[index].content, new RegExp(`data-final-target>${target - 2}<`));
+    }
     assert.equal(sheet.actor.system.skills.fighting.value, base, "rolling never rewrites the actor's base skill");
   }
 });
@@ -1708,4 +1711,67 @@ test("custom magic items have thematic fallback icons, while ordinary item portr
     if (icon) assert.ok(header.includes(`class="fas ${icon} profile-img power-sheet-icon"`));
     else assert.match(header, /<img class="profile-img" src="custom.webp" data-edit="img">/);
   }
+});
+
+for (const type of ["character", "npc"]) {
+  test(`${type}: real skill dialog confirmation applies fear, wounds and the configured -5 once`, async t => {
+    mockActionRuntime(t);
+    const instance = woundedAndAfraid([], type);
+    instance.system.effective.skills.fighting = 4;
+    instance.system.damage.penalty = 0;
+    instance.system.fearPenalty = -3;
+    const ability = {name: "Discipline", system: {kind: "discipline", level: 1, parentSkill: "fighting"}};
+    let displayed, content;
+    const manual = {value: "0", addEventListener() {}};
+    const output = {textContent: ""};
+    const form = {querySelector: selector => selector === "[name=modifier]" ? manual : selector === "[data-final-target]" ? output : null};
+    foundry.applications.api.DialogV2 = class {
+      _onRender() {}
+      static async wait(options) {
+        const dialog = new this(); dialog.element = form; dialog._onRender({}, {});
+        displayed = Number(output.textContent); content = options.content;
+        return options.buttons[0].callback({}, {form}, dialog);
+      }
+    };
+    assert.equal((await instance.rollAbility(ability)).target, 2);
+    assert.equal(displayed, 2);
+    assert.match(content, /Cible de base: 5/);
+    assert.match(content, /Pénalité de peur<[^]*?-3/);
+    assert.equal((await instance.rollAbility(ability, {bonus: -5})).target, -3);
+    assert.equal(displayed, -3);
+    assert.match(content, /Cible de base: 5/);
+    assert.match(content, /Modificateur du test<[^]*?-5/);
+    instance.system.damage.penalty = -3;
+    manual.value = "2";
+    assert.equal((await instance.rollAbility(ability, {bonus: -5})).target, -4);
+    assert.equal(displayed, -4);
+    assert.equal((await instance.rollSkill("fighting", {bonus: -5})).target, -5);
+    assert.equal(displayed, -5);
+    assert.equal(instance.getAbilityBreakdown(ability).base, 5);
+    assert.equal(instance.getAbilityBreakdown(ability).total, -1);
+  });
+}
+
+test("a -5 test from the prepared JSON catalogue reaches the real dialog and die unchanged", async t => {
+  const runtime = mockActionRuntime(t);
+  const previous = globalThis.CONFIG; globalThis.CONFIG = {TRUDVANG};
+  t.after(() => {globalThis.CONFIG = previous;});
+  const {RULE_TESTS_BY_CATALOG_ID} = await import("../modules/rule-test-data.mjs");
+  const {performRuleTest} = await import("../modules/rule-tests.mjs");
+  const [catalogId, tests] = Object.entries(RULE_TESTS_BY_CATALOG_ID).find(([, tests]) => tests.some(test => test.kind === "skill" && test.sv === -5));
+  const index = tests.findIndex(test => test.kind === "skill" && test.sv === -5);
+  const instance = woundedAndAfraid([], "character");
+  const skill = instance.getCatalogEntry(tests[index].skill).skillKey;
+  instance.system.effective.skills[skill] = 10;
+  foundry.applications.api.DialogV2 = class {
+    static async wait(options) {
+      runtime.dialogs.push(options);
+      return options.buttons[0].callback({}, {form: {querySelector: selector => selector === "[name=modifier]" ? {value: "0"} : null}}, {});
+    }
+  };
+  const result = await performRuleTest({document: {name: "Source", system: {catalogId}}, index, actor: instance});
+  assert.equal(result.target, 1, "10 base -3 wounds -1 fear -5 test");
+  assert.match(runtime.dialogs[0].content, /Cible de base: 10/);
+  assert.match(runtime.dialogs[0].content, /data-final-target>1</);
+  assert.match(runtime.dialogs[0].content, /Modificateur du test<[^]*?-5/);
 });

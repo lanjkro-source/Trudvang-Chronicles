@@ -443,10 +443,10 @@ export class TrudvangActor extends BaseActor {
     const parent = item.system.kind === "specialty" ? this.findParentDiscipline(item) : null;
     const discipline = item.system.kind === "specialty" && disciplineLevel != null ? Number(disciplineLevel)
       : parent ? Number(parent.system.level || 0) * Number(parent.system.rollBonus || 1) : 0;
-    const modifier = this.getRollModifier({kind: "ability", skillKey: item.system.parentSkill});
-    let total = skill + discipline + own + modifier;
-    if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
-    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, modifier, total};
+    const modifierRows = this.skillRollModifierRows(item.system.parentSkill, {kind: "ability"});
+    const base = skill + discipline + own;
+    const modifier = rollModifierTotal(modifierRows);
+    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, base, modifier, modifierRows, total: base + modifier};
   }
 
   async alignCreationOrigins() {
@@ -732,17 +732,27 @@ export class TrudvangActor extends BaseActor {
   }
 
   getSkillTarget(skillKey, extra = 0, {kind = "skill", movement = false, includeState = true} = {}) {
-    let total = this.getSkillValue(skillKey) + Number(extra || 0) + this.getRollModifier({kind, skillKey, movement, includeState});
-    if (this.isInCombatActive() && Number(this.system.armorVCPenalty || 0) > 0) total -= Number(this.system.armorVCPenalty);
-    return total;
+    return this.getSkillValue(skillKey) + rollModifierTotal(this.skillRollModifierRows(skillKey, {kind, movement, includeState, bonus: extra}));
+  }
+
+  skillRollModifierRows(skillKey, {kind = "skill", movement = false, bonus = 0, includeState = true} = {}) {
+    const effect = this.getRollModifier({kind, skillKey, movement, includeState: false});
+    const armor = this.isInCombatActive() ? -Number(this.system.armorVCPenalty || 0) : 0;
+    return [
+      ...(includeState ? actorStateRollModifiers(this) : []),
+      {labelKey: "TRUDVANG.Dialog.EffectModifier", value: effect},
+      {labelKey: "TRUDVANG.Dialog.ArmorModifier", value: armor},
+      {labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(bonus || 0)}
+    ].filter(row => row.value !== 0);
   }
 
   async rollSkill(skillKey, {label = null, bonus = 0} = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
-    const target = this.getSkillTarget(skillKey, bonus);
+    const base = this.getSkillValue(skillKey);
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
-    const modifierRows = actorStateRollModifiers(this);
-    const options = await modifierDialog({title: name, target, modifierRows});
+    const modifierRows = this.skillRollModifierRows(skillKey, {bonus});
+    const target = base + rollModifierTotal(modifierRows);
+    const options = await modifierDialog({title: name, target: base, modifierRows});
     if (!options) return null;
     return rollUnder({actor: this, label: name, target, modifier: options.modifier, kind: "skill", flavor: rollModifierFlavor(modifierRows)});
   }
@@ -776,10 +786,12 @@ export class TrudvangActor extends BaseActor {
 
   async rollAbility(item, context = {}) {
     if (!this.canPerformAction()) return this.warnCannotAct();
-    const target = this.getAbilityBreakdown(item, context).total + Number(context.bonus || 0);
-    const modifierRows = actorStateRollModifiers(this);
+    const breakdown = this.getAbilityBreakdown(item, context);
+    const modifierRows = [...breakdown.modifierRows];
+    if (Number(context.bonus || 0)) modifierRows.push({labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
+    const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
-    const options = await modifierDialog({title: label, target, modifierRows});
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows});
     if (!options) return null;
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
       flavor: rollModifierFlavor(modifierRows), successConsequence: context.successConsequence || "",
@@ -871,9 +883,14 @@ export class TrudvangActor extends BaseActor {
     if (!this.isInActiveCombat) return null;
     if (!combatPoolsAreFull(this)) return ui.notifications.warn(game.i18n.localize("TRUDVANG.Warning.DodgeRequiresFullCombatPools"));
     const label = game.i18n.localize("TRUDVANG.Combat.Dodge");
-    const target = this.dodgeTarget;
-    const modifierRows = actorStateRollModifiers(this);
-    const options = await modifierDialog({title: label, target, modifierRows});
+    const evade = this.findKnowledgeItem("evade");
+    const breakdown = evade ? this.getAbilityBreakdown(evade) : {
+      base: this.getSkillValue("agility") + Number(this.findKnowledgeItem("battleManeuver")?.system.level || 0),
+      modifierRows: this.skillRollModifierRows("agility", {kind: "ability", movement: true})
+    };
+    const {base, modifierRows} = breakdown;
+    const target = base + rollModifierTotal(modifierRows);
+    const options = await modifierDialog({title: label, target: base, modifierRows});
     if (!options) return null;
     const pools = resolveCombatPools({actor: this}).active;
     if (this.isOwner) await this.spendCombatPoints(Object.fromEntries(pools.map(pool => [pool.id, pool.current])));

@@ -876,6 +876,9 @@
       "FixedAttackNoTrait": "no trait reduction",
       "FixedAttackFinalTarget": "Final Combat Value",
       "ManualModifierFlavor": "Manual modifier: {modifier}",
+      "FailureConsequence": "On failure: {text}",
+      "ArmorModifier": "Armor penalty",
+      "TestModifier": "Test modifier",
       "SuccessConsequence": "On success: {text}",
       "ActiveSpellsPenalty": "Active spells ({count}): {penalty} SV",
       "PersistentSpellNotice": "This power is lasting: if successful, it will remain active for its duration.",
@@ -1072,8 +1075,8 @@
       "IncreaseCore": "Increase: {cost} points, including {bonus} from the archetype bonus and {creation} regular creation points"
     },
     "Calculation": {
-      "Discipline": "Skill SV {skill} + Discipline {discipline} = SV {total}",
-      "Specialty": "Skill SV {skill} + Discipline {discipline} + Specialty {specialty} = SV {total}",
+      "Discipline": "Skill SV {skill} + Discipline {discipline}{modifiers} = SV {total}",
+      "Specialty": "Skill SV {skill} + Discipline {discipline} + Specialty {specialty}{modifiers} = SV {total}",
       "MagicMethod": "Skill {skill} + discipline {discipline} + specialty {specialty} = SV {total}",
       "Strenuous": "Strenuous: +{bonus} SV for {cost} additional Vitner Points",
       "Rigorous": "Rigorous: +{bonus} SV for {cost} additional Divinity Points",

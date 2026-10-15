@@ -26,6 +26,10 @@ const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? g
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const normalized = value => String(value || "").trim().toLocaleLowerCase();
 
+function calculationModifiers(breakdown) {
+  return (breakdown.modifierRows ?? []).map(row => ` · ${game.i18n.localize(row.labelKey)} ${signed(row.value)}`).join("");
+}
+
 function percent(value, max) {
   const maximum = Math.max(1, Number(max || 1));
   return Math.max(0, Math.min(100, (Number(value || 0) / maximum) * 100));
@@ -337,8 +341,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         catalogId: entry.id, item, level, breakdown, separateHands, offHandLevel, offHandBreakdown,
         summary: existing?.system.summary || summaryText,
         calculation: kind === "specialty"
-          ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total})
-          : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
+          ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)})
+          : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
         refundCost: level ? this.actor.getKnowledgeLevelCost(item, level) : 0,
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
         decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: level ? this.actor.getKnowledgeLevelCost(item, level) : 0}),
@@ -365,7 +369,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return {
           item, level: itemLevel, breakdown,
           summary: item.system.summary || (entry ? (this._abilityText(entry.id, "Summary") || this._knowledgeSummary(entry)) : item.system.description || ""),
-          calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total}),
+          calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
           refundCost: this.actor.getKnowledgeLevelCost(item, itemLevel),
           nextCost: this.actor.getKnowledgeLevelCost(item, itemLevel + 1),
           decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: this.actor.getKnowledgeLevelCost(item, itemLevel)}),

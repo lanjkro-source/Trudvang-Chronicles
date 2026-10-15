@@ -43,7 +43,7 @@ function assertRows() {
 
 test("skill dialogs explain the already-applied states and update the final VC without applying them twice", async () => {
   form = fields({"[name=modifier]": "0"}, ["[data-final-target]"]);
-  await modifierDialog({title: "Skill", target: 4, modifierRows: rows});
+  await modifierDialog({title: "Skill", target: 8, modifierRows: rows});
   assert.match(config.content, /TRUDVANG.Dialog.BaseTarget: 8/);
   assertRows();
   assert.equal(output("[data-final-target]"), 4);

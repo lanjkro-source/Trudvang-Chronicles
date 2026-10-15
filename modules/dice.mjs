@@ -554,13 +554,15 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
 
 export async function modifierDialog({title, target, showCost = false, defaultCost = 0, resourceLabel = "", modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
+  // target is always the intrinsic VC. Every fixed modifier is a separate row.
+  const finalTarget = Number(target) + rollModifierTotal(modifierRows);
   const content = `
     <div class="trudvang roll-dialog">
-      <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target) - rollModifierTotal(modifierRows)}))}</p>
+      <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target: Number(target)}))}</p>
       ${modifierList(modifierRows)}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
       ${showCost ? `<div class="form-group"><label>${escapeHtml(resourceLabel)}</label><input name="cost" type="number" min="0" value="${Number(defaultCost)}"></div>` : ""}
-      <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${Number(target)}</strong></p>
+      <p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}: <strong data-final-target>${finalTarget}</strong></p>
     </div>`;
   class SkillRollDialog extends DialogClass {
     _onRender(context, options) {
@@ -568,7 +570,7 @@ export async function modifierDialog({title, target, showCost = false, defaultCo
       const root = this.element;
       const refresh = () => {
         const output = root.querySelector("[data-final-target]");
-        if (output) output.textContent = Number(target) + Number(root.querySelector("[name=modifier]")?.value || 0);
+        if (output) output.textContent = finalTarget + Number(root.querySelector("[name=modifier]")?.value || 0);
       };
       root.querySelector("[name=modifier]")?.addEventListener("input", refresh);
       refresh();

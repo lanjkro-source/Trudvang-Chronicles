@@ -876,6 +876,9 @@
       "FixedAttackNoTrait": "aucune réduction par un trait",
       "FixedAttackFinalTarget": "Valeur de combat finale",
       "ManualModifierFlavor": "Modificateur manuel : {modifier}",
+      "FailureConsequence": "En cas d’échec : {text}",
+      "ArmorModifier": "Malus d’armure",
+      "TestModifier": "Modificateur du test",
       "SuccessConsequence": "En cas de réussite : {text}",
       "ActiveSpellsPenalty": "Sortilèges actifs ({count}) : {penalty} VC",
       "PersistentSpellNotice": "Ce pouvoir est persistant : s’il réussit, il restera actif pendant sa durée.",
@@ -1072,8 +1075,8 @@
       "IncreaseCore": "Augmentation : {cost} points, dont {bonus} pris sur le bonus d'archétype et {creation} points de création ordinaires"
     },
     "Calculation": {
-      "Discipline": "VC de la compétence {skill} + discipline {discipline} = VC {total}",
-      "Specialty": "VC de la compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total}",
+      "Discipline": "VC de la compétence {skill} + discipline {discipline}{modifiers} = VC {total}",
+      "Specialty": "VC de la compétence {skill} + discipline {discipline} + spécialité {specialty}{modifiers} = VC {total}",
       "MagicMethod": "Compétence {skill} + discipline {discipline} + spécialité {specialty} = VC {total}",
       "Strenuous": "Renforcement : +{bonus} VC pour {cost} points de vitner supplémentaires",
       "Rigorous": "Rigoureux : +{bonus} VC pour {cost} points de divinité supplémentaires",
