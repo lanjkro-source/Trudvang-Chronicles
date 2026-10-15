@@ -18,7 +18,8 @@ export function ruleTestsForDocument(document) {
 }
 
 export function ruleTestValueLabel(test, localize = key => game.i18n.localize(key)) {
-  const tree = CONFIG.TRUDVANG?.knowledgeTree ?? {};
+  const config = globalThis.CONFIG?.TRUDVANG ?? {};
+  const tree = config.knowledgeTree ?? {};
   const skill = Object.values(tree).flatMap(rows => rows.flatMap(row => [row, ...(row.specialties || [])]))
     .find(entry => entry.id === test.skill);
   if (test.kind === "skill") {
@@ -27,8 +28,8 @@ export function ruleTestValueLabel(test, localize = key => game.i18n.localize(ke
     return `${localize("TRUDVANG.RuleTest.SkillShort")}${skill ? ` · ${localize(skill.label)}` : ""} ${sign}${modifier}`;
   }
   const sv = Number.isInteger(test.sv) ? test.sv : localize("TRUDVANG.RuleTest.VariableValue");
-  const trait = test.trait && test.trait !== "aucun" && CONFIG.TRUDVANG?.traits?.[test.trait]
-    ? localize(CONFIG.TRUDVANG.traits[test.trait]) : localize("TRUDVANG.Dialog.TraitSituationNoTrait");
+  const trait = test.trait && test.trait !== "aucun" && config.traits?.[test.trait]
+    ? localize(config.traits[test.trait]) : localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   return `${localize("TRUDVANG.RuleTest.ResistanceShort")} · ${trait} · SV ${sv}`;
 }
 
@@ -41,23 +42,110 @@ export function ruleTestViews(document, localize = key => game.i18n.localize(key
   }));
 }
 
-/** Wrap the description's matching test phrase in its corresponding configured button. */
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function descriptionAnchors(description, tests) {
+  const source = String(description ?? "");
+  const anchors = [];
+  const addMatches = (pattern, classify) => {
+    for (const match of source.matchAll(pattern)) {
+      const anchor = classify(match);
+      if (anchor) anchors.push({...anchor, start: match.index, end: match.index + match[0].length, phrase: match[0]});
+    }
+  };
+
+  addMatches(/\b(?:tests?|jets?|épreuves?)\s+(?:de\s+)?(situation|comp[eé]tence)s?\b/giu, match => ({
+    kind: match[1].toLocaleLowerCase().startsWith("situ") ? "resist" : "skill"
+  }));
+  addMatches(/\b(?:tests?|jets?|épreuves?|résistance)\s+(?:de\s+)?VS\b/giu, () => ({kind: "resist"}));
+
+  const config = globalThis.CONFIG?.TRUDVANG ?? {};
+  const tree = config.knowledgeTree ?? {};
+  const localizedNames = [];
+  for (const [id, label] of Object.entries(config.traits ?? {})) {
+    const name = game.i18n.localize(label);
+    if (name && name !== label) localizedNames.push({id, kind: "resist", name});
+  }
+  for (const [skillKey, label] of Object.entries(config.skills ?? {})) {
+    const name = game.i18n.localize(label);
+    if (name && name !== label) localizedNames.push({id: skillKey, skillKey, kind: "skill", name});
+  }
+  for (const [skillKey, disciplines] of Object.entries(tree)) {
+    for (const discipline of disciplines) {
+      localizedNames.push({id: discipline.id, skillKey, kind: "skill", name: game.i18n.localize(discipline.label)});
+      for (const specialty of discipline.specialties ?? []) {
+        localizedNames.push({id: specialty.id, skillKey, kind: "skill", name: game.i18n.localize(specialty.label)});
+      }
+    }
+  }
+  const namedTerms = [...new Map(localizedNames
+    .filter(entry => entry.name && !entry.name.startsWith("TRUDVANG."))
+    .map(entry => [`${entry.kind}:${entry.id}:${entry.name}`, entry])).values()]
+    .sort((a, b) => b.name.length - a.name.length);
+  if (namedTerms.length) {
+    const terms = namedTerms.map(entry => escapeRegExp(entry.name)).join("|");
+    addMatches(new RegExp(`\\b(?:tests?|jets?|épreuves?)\\s+(?:(?:avec\\s+(?:la\\s+)?comp[eé]tence\\s+(?:de|d['’])\\s*)|(?:de|d['’])\\s*)(${terms})(?![\\p{L}\\p{N}_])`, "giu"), match => {
+      const name = match[1].toLocaleLowerCase();
+      const entry = namedTerms.find(candidate => candidate.name.toLocaleLowerCase() === name);
+      return entry ? {kind: entry.kind, namedId: entry.id, skillKey: entry.skillKey} : null;
+    });
+  }
+
+  anchors.sort((a, b) => a.start - b.start || b.end - a.end);
+  return anchors.filter((anchor, index) => !anchors.slice(0, index).some(previous => anchor.start < previous.end && previous.start < anchor.end));
+}
+
+function testMatchesAnchor(test, anchor) {
+  if (anchor.kind && test.kind !== anchor.kind) return false;
+  if (!anchor.namedId) return true;
+  if (test.kind === "resist") return test.trait === anchor.namedId;
+  if (test.skill === anchor.namedId || test.skill === anchor.skillKey) return true;
+  return Boolean(anchor.skillKey && Object.entries(globalThis.CONFIG?.TRUDVANG?.knowledgeTree ?? {}).some(([skillKey, rows]) =>
+    skillKey === anchor.skillKey && rows.some(row => row.id === test.skill || row.specialties?.some(specialty => specialty.id === test.skill))));
+}
+
+function inlineTestButton(test, index, phrase, label = phrase) {
+  const kind = test.kind;
+  const buttonTitle = game.i18n.localize(kind === "resist"
+    ? "TRUDVANG.RuleTest.RollResistance" : "TRUDVANG.RuleTest.RollSkill");
+  return `<button type="button" class="trudvang-inline-rule-test" data-action="roll-rule-test" data-test-index="${index}" title="${escapeHtml(buttonTitle)}">${escapeHtml(label)}</button>`;
+}
+
+/** Link configured tests to the closest matching situation, skill, trait or resistance wording. */
 export function annotateRuleTestDescription(description, document) {
   const tests = ruleTestsForDocument(document);
   if (!tests.length) return String(description ?? "");
-  const queues = {
-    resist: tests.map((test, index) => ({test, index})).filter(row => row.test.kind === "resist"),
-    skill: tests.map((test, index) => ({test, index})).filter(row => row.test.kind === "skill")
-  };
-  const pattern = /\btests?\s+(?:de\s+)?(situation|comp[eé]tence)s?\b/giu;
-  return String(description ?? "").replace(pattern, (phrase, label) => {
-    const kind = label.toLocaleLowerCase().startsWith("situ") ? "resist" : "skill";
-    const row = queues[kind].shift();
-    if (!row) return phrase;
-    const buttonTitle = game.i18n.localize(kind === "resist"
-      ? "TRUDVANG.RuleTest.RollResistance" : "TRUDVANG.RuleTest.RollSkill");
-    return `<button type="button" class="trudvang-inline-rule-test" data-action="roll-rule-test" data-test-index="${row.index}" title="${escapeHtml(buttonTitle)}">${phrase}</button>`;
-  });
+  const anchors = descriptionAnchors(description, tests).map(anchor => ({...anchor, rows: []}));
+  const remaining = new Set(tests.map((test, index) => index));
+
+  for (const anchor of anchors) {
+    const index = [...remaining].find(candidate => testMatchesAnchor(tests[candidate], anchor));
+    if (index === undefined) continue;
+    anchor.rows.push(index);
+    remaining.delete(index);
+  }
+
+  // A single phrase can describe several configured variants (for example, one test per distance band).
+  // Keep every variant reachable beside the shared phrase, with its value visible as the link label.
+  for (const index of remaining) {
+    const anchor = anchors.find(candidate => testMatchesAnchor(tests[index], candidate));
+    if (!anchor) continue;
+    anchor.rows.push(index);
+    remaining.delete(index);
+  }
+
+  let result = String(description ?? "");
+  for (const anchor of [...anchors].reverse()) {
+    if (!anchor.rows.length) continue;
+    const buttons = anchor.rows.map((index, position) => inlineTestButton(
+      tests[index], index, anchor.phrase,
+      position === 0 ? anchor.phrase : `(${ruleTestValueLabel(tests[index])})`
+    )).join(" ");
+    result = `${result.slice(0, anchor.start)}${buttons}${result.slice(anchor.end)}`;
+  }
+  return result;
 }
 
 export function testActorForUser(user = game.user) {
