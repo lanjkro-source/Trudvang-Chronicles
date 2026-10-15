@@ -1,7 +1,7 @@
 <section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
   <fieldset>
     <legend>{{localize "EFFECT.Description"}}</legend>
-    <button type="button" data-action="share-in-chat" title="{{localize 'TRUDVANG.Action.ShareInChat'}}"><i class="fas fa-comment-dots"></i> {{localize "TRUDVANG.Action.ShareInChat"}}</button>
+
     <div class="form-group stacked editor-container">{{#if editable}}<prose-mirror name="description" button="true" value="{{description}}" data-document-uuid="{{documentUuid}}" toggled>{{{enrichedDescription}}}</prose-mirror>{{else}}<div class="editor-content">{{{enrichedDescription}}}</div>{{/if}}</div>
     {{#if editable}}<button type="button" data-action="saveDescription" title="{{localize 'TRUDVANG.Effect.SaveDescription'}}"><i class="fa-solid fa-floppy-disk"></i> {{localize "TRUDVANG.Effect.SaveDescription"}}</button>{{/if}}
   </fieldset>

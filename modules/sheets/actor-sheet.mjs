@@ -18,7 +18,7 @@ import {npcPreparedActionRows} from "../rules/npc-prepared-actions.mjs";
 import {npcCombatCycleDisplay} from "../rules/npc-combat-cycle.mjs";
 import {magicCapacities} from "../rules/magic-capacity.mjs";
 import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
-import {shareDocumentInChat} from "../chat-sharing.mjs";
+import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -58,7 +58,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}],
     actions: {
       "manage-portraits": TrudvangActorSheet.#onAction,
-      "share-in-chat": TrudvangActorSheet.#onAction,
       "share-portrait": TrudvangActorSheet.#onAction,
       "roll-skill": TrudvangActorSheet.#onAction,
       "show-skill-detail": TrudvangActorSheet.#onAction,
@@ -125,8 +124,6 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   _getHeaderControls() {
     return [...super._getHeaderControls(),
-      {action: "share-in-chat", icon: "fas fa-comment-dots", label: "TRUDVANG.Action.ShareInChat",
-        onClick: () => shareDocumentInChat(this.actor)},
       {action: "manage-portraits", icon: "fas fa-images", label: "TRUDVANG.Portrait.ManageMenu", visible: () => this.isEditable,
         onClick: () => manageActorPortraits(this.actor)},
       {action: "share-portrait", icon: "fas fa-image", label: "TRUDVANG.Portrait.ShareMenu",
@@ -461,6 +458,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
 
   async _onRender(context, options) {
     await super._onRender(context, options);
+    bindTitleSharing(this);
+    bindSheetListMenus(this);
     const root = this.element;
     root.querySelectorAll('.profile-img[data-action="manage-portraits"]').forEach(image => {
       image.addEventListener("keydown", event => {

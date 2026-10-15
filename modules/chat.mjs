@@ -134,6 +134,18 @@ function attachListeners(message, html) {
       actor?.sheet.render({force: true});
     });
   });
+  html.querySelectorAll("[data-action='open-skill-detail']").forEach(button => {
+    button.addEventListener("click", async event => {
+      event.preventDefault();
+      const card = button.closest("[data-actor-uuid]");
+      const actor = await foundry.utils.fromUuid(card?.dataset.actorUuid);
+      if (!actor) return;
+      const {TRUDVANG} = await import("./config.mjs");
+      const skill = card.dataset.skillKey;
+      if (TRUDVANG.skills[skill]) return actor.sheet._showDetail(game.i18n.localize(TRUDVANG.skills[skill]), game.i18n.localize(TRUDVANG.skillDescriptions[skill]));
+      if (card.dataset.bookIndex !== "") return actor.sheet._openNpcBookSkill(Number(card.dataset.bookIndex));
+    });
+  });
   html.querySelectorAll("[data-action='roll-rule-test']").forEach(button => {
     button.addEventListener("click", async event => {
       event.preventDefault();

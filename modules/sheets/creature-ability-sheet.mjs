@@ -1,6 +1,6 @@
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
-import {shareDocumentInChat} from "../chat-sharing.mjs";
+import {bindTitleSharing} from "../chat-sharing.mjs";
 
 const {DocumentSheetV2, HandlebarsApplicationMixin} = foundry.applications.api;
 const TextEditorImpl = foundry.applications.ux.TextEditor.implementation;
@@ -16,11 +16,6 @@ async function capacityContext(sheet) {
     sourcePageField: item ? "system.source.page" : "flags.trudvang-chronicles.capacitySource.page",
     enrichedDescription: annotateRuleTestDescription(
       await TextEditorImpl.enrichHTML(ability.description, {async: true, secrets: sheet.document.isOwner}), sheet.document)};
-}
-
-async function shareAction(event) {
-  event.preventDefault();
-  return shareDocumentInChat(this.document);
 }
 
 async function ruleTestAction(event, target) {
@@ -39,9 +34,14 @@ export class TrudvangCreatureAbilitySheet extends HandlebarsApplicationMixin(Doc
     canCreate: false,
     ownershipConfig: false,
     sheetConfig: false,
-    actions: {"share-in-chat": shareAction, "roll-rule-test": ruleTestAction},
+    actions: {"roll-rule-test": ruleTestAction},
     form: {handler: TrudvangCreatureAbilitySheet.#onSubmit, submitOnChange: true, closeOnSubmit: false}
   };
+
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    bindTitleSharing(this);
+  }
 
   static PARTS = {
     main: {template: "systems/trudvang-chronicles/templates/item/creature-ability-sheet.hbs", scrollable: [""]}
@@ -72,8 +72,12 @@ export class TrudvangCreatureAbilityItemSheet extends HandlebarsApplicationMixin
     classes: ["trudvang", "sheet", "creature-ability-sheet"], tag: "form",
     position: {width: 520, height: 560}, window: {resizable: true},
     form: {handler: TrudvangCreatureAbilityItemSheet.#onSubmit, submitOnChange: true, closeOnSubmit: false},
-    actions: {"share-in-chat": shareAction, "roll-rule-test": ruleTestAction}
+    actions: {"roll-rule-test": ruleTestAction}
   };
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    bindTitleSharing(this);
+  }
   static PARTS = TrudvangCreatureAbilitySheet.PARTS;
   async _prepareContext(options) {
     return Object.assign(await super._prepareContext(options), await capacityContext(this));

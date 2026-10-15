@@ -10,7 +10,7 @@ import { affinityState, VITNER_AFFINITY_TYPES } from "../rules/tablet-affinity.m
 import {activeSpellCosts} from "../rules/active-spell-resolver.mjs";
 import {powerIconClassForId, powerIconClassForItem} from "../power-icons.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
-import {shareDocumentInChat} from "../chat-sharing.mjs";
+import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ItemSheetV2 } = foundry.applications.sheets;
@@ -52,7 +52,6 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
       "apply-effects": TrudvangItemSheet.#onApplyEffects,
       "inspect-equipment-stat": TrudvangItemSheet.#onInspectEquipmentStat,
       "tablet-power-open": TrudvangItemSheet.#onTabletPowerOpen,
-      "share-in-chat": TrudvangItemSheet.#onShareInChat,
       "roll-rule-test": TrudvangItemSheet.#onRollRuleTest
     }
   };
@@ -141,6 +140,8 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
 
   async _onRender(context, options) {
     await super._onRender(context, options);
+    bindTitleSharing(this);
+    bindSheetListMenus(this);
     const root = this.element;
     if (!this.isEditable || !this.item.isOwner) {
       root.querySelectorAll("input, select, textarea, prose-mirror").forEach(element => element.setAttribute("disabled", "disabled"));
@@ -246,11 +247,6 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
   static async #onRoll(event, target) {
     event.preventDefault();
     await this.item.roll();
-  }
-
-  static async #onShareInChat(event) {
-    event.preventDefault();
-    return shareDocumentInChat(this.item);
   }
 
   static async #onRollRuleTest(event, target) {

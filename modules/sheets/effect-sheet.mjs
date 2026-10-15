@@ -1,5 +1,5 @@
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
-import {shareDocumentInChat} from "../chat-sharing.mjs";
+import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -16,7 +16,6 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       addChange: TrudvangEffectSheet.onAddChange,
       deleteChange: TrudvangEffectSheet.onDeleteChange,
       saveDescription: TrudvangEffectSheet.onSaveDescription,
-      "share-in-chat": TrudvangEffectSheet.onShareInChat,
       "roll-rule-test": TrudvangEffectSheet.onRollRuleTest
     }
   };
@@ -40,6 +39,12 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
       initial: "details"
     }
   };
+
+  async _onRender(context, options) {
+    await super._onRender(context, options);
+    bindTitleSharing(this);
+    bindSheetListMenus(this);
+  }
 
   // Core ActiveEffectConfig._onChangeForm still targets its original
   // changes/duration tabs, which this sheet replaced with the combined
@@ -231,11 +236,6 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
 
     delete submitData.trudvang;
     return submitData;
-  }
-
-  static async onShareInChat(event) {
-    event.preventDefault();
-    return shareDocumentInChat(this.document);
   }
 
   static async onRollRuleTest(event, target) {

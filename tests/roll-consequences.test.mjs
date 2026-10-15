@@ -2,6 +2,15 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import Handlebars from "handlebars";
+import {consequenceText} from "../modules/rules/consequence-text.mjs";
+
+test("consequence headings are removed without deleting conditional rules inside the consequence", () => {
+  assert.equal(consequenceText("En cas d’échec : lâche les objets tenus"), "lâche les objets tenus");
+  assert.equal(consequenceText("En cas de réussite : garde les objets tenus"), "garde les objets tenus");
+  assert.equal(consequenceText("On failure: drops held items"), "drops held items");
+  const rule = "En cas d’échec à un second test, s’endort";
+  assert.equal(consequenceText(rule), rule);
+});
 
 for (const language of ["fr", "en"]) {
   test(`${language}: actual roll card renders only the localized consequence of its outcome`, () => {
@@ -20,6 +29,7 @@ for (const language of ["fr", "en"]) {
       assert.match(html, success ? /Consequence A/ : /Consequence B/);
       assert.doesNotMatch(html, success ? /Consequence B/ : /Consequence A/);
       assert.doesNotMatch(html, /TRUDVANG\./);
+      assert.doesNotMatch(html, /En cas|On success|On failure/);
     }
   });
 }

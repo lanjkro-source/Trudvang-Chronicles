@@ -7,6 +7,7 @@ import { powerLevelUnitCost, resolvePowerLevelCost, resolveVitnerSacrifice } fro
 import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-resolver.mjs";
+import {consequenceText} from "./rules/consequence-text.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -67,8 +68,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     kind,
     feint: Math.max(0, Number(feint || 0)),
     flavor,
-    successConsequence,
-    failureConsequence,
+    successConsequence: consequenceText(successConsequence),
+    failureConsequence: consequenceText(failureConsequence),
     effectTarget,
     itemUuid: item?.uuid ?? "",
     naturalDamage: item?.id === "humanoid-natural",
