@@ -994,13 +994,6 @@ export const CREATURE_ABILITY_REFERENCES = {
       "en": 26
     }
   },
-  "Vision nocturne ou Vision dans le noir (démon)": {
-    "id": "scVIa3u0v1w2x3y4",
-    "pages": {
-      "fr": 41,
-      "en": 48
-    }
-  },
   "Vision thermique": {
     "id": "XJLfjcHcIdJeKfLg",
     "pages": {
@@ -2188,14 +2181,6 @@ export const CREATURE_ABILITY_ENTRIES = [
     "pages": {
       "fr": 18,
       "en": 26
-    },
-    "ignoreWoundPenalties": false
-  },
-  {
-    "id": "scVIa3u0v1w2x3y4",
-    "pages": {
-      "fr": 41,
-      "en": 48
     },
     "ignoreWoundPenalties": false
   },

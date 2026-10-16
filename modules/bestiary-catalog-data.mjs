@@ -3444,7 +3444,8 @@ export const BESTIARY_ENTRIES = [
     },
     "featIds": [
       "5H4W4NhNiOjPkQlR",
-      "scVIa3u0v1w2x3y4",
+      "jrI2efIdJeKfLgMh",
+      "yCooPeIdJeKfLgMh",
       "EVhUocGbHcIdJeKf",
       "9MMfvcE9EaGbHcId",
       "MXNXW2x3y4z5A6B7",

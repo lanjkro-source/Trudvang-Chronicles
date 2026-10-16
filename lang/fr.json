@@ -10430,12 +10430,6 @@
           "Description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
           "SourceBook": "Bestiaire de Jorge"
         },
-        "scVIa3u0v1w2x3y4": {
-          "Name": "Vision nocturne ou Vision dans le noir (démon)",
-          "Summary": "Le MJ choisit entre vision sous faible lumière et vision sans aucune lumière.",
-          "Description": "<p>Le MJ détermine le type de vision du démon. Certains démons voient comme en plein jour dans les environnements faiblement éclairés (étoiles, lune, torche) : c’est la Vision nocturne. D’autres voient dans le noir total, sans aucune lumière : c’est la Vision dans le noir. Ce sont deux possibilités distinctes et non deux pouvoirs automatiquement cumulés. Aucune portée particulière n’est fixée dans cette description.</p>",
-          "SourceBook": "Bestiaire de Jorge"
-        },
         "XJLfjcHcIdJeKfLg": {
           "Name": "Vision thermique",
           "Summary": "Perçoit la chaleur et sa distance jusqu’à 300 m ; peut désactiver cette vision et n’est pas étourdi par une chaleur soudaine.",

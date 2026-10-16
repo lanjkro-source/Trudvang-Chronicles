@@ -224,22 +224,40 @@
       "_key": "!actors.items!vRp0IPgMhNiOjPkQ.5H4W4NhNiOjPkQlR"
     },
     {
-      "_id": "scVIa3u0v1w2x3y4",
-      "name": "Low-Light Vision or Darkvision (demon)",
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
       "type": "creatureAbility",
       "img": "icons/svg/aura.svg",
       "system": {
-        "catalogId": "scVIa3u0v1w2x3y4",
-        "summary": "Depending on the demon: either low-light vision or sight in total darkness, as chosen by the GM.",
-        "description": "<p>The demon's exact nature is decided by the GM. Some demons see by weak light as if it were daylight; others see in total darkness.</p><p>Choose Low-Light Vision or Darkvision as appropriate to that demon. The two possibilities are not automatically cumulative, and this entry does not give every demon both types of vision.</p>",
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
         "source": {
           "book": "Jorgi's Bestiary",
-          "page": 48
+          "page": 26
         },
         "ignoreWoundPenalties": false
       },
       "effects": [],
-      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.scVIa3u0v1w2x3y4"
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.jrI2efIdJeKfLgMh"
+    },
+    {
+      "_id": "yCooPeIdJeKfLgMh",
+      "name": "Darkvision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "yCooPeIdJeKfLgMh",
+        "summary": "Sees without any light as in daylight; this ability sets no particular range.",
+        "description": "<p>The creature sees without any light source, including in total darkness, as if it were daylight. These creatures' descriptions set no particular range limit for this ability.</p><p>Absence of light therefore does not reduce vision, but other obstacles and visibility conditions still apply. A draugr sees as far as conditions allow, regardless of the environment. The diser's Sight ability separately describes its behavior in fog, smoke, and magical effects; Darkvision alone does not grant those properties.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 20
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!vRp0IPgMhNiOjPkQ.yCooPeIdJeKfLgMh"
     },
     {
       "_id": "EVhUocGbHcIdJeKf",

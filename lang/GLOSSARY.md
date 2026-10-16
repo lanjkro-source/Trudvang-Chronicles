@@ -8220,14 +8220,6 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.Description` | <p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p> | <p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p> |
 | `TRUDVANG.Content.CreatureAbility.jrI2efIdJeKfLgMh.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
 
-## `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4`
-
-| Clé | English | Français |
-|---|---|---|
-| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.Name` | Low-Light Vision or Darkvision (demon) | Vision nocturne ou Vision dans le noir (démon) |
-| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.Description` | <p>The demon's exact nature is decided by the GM. Some demons see by weak light as if it were daylight; others see in total darkness.</p><p>Choose Low-Light Vision or Darkvision as appropriate to that demon. The two possibilities are not automatically cumulative, and this entry does not give every demon both types of vision.</p> | <p>Le MJ détermine le type de vision du démon. Certains démons voient comme en plein jour dans les environnements faiblement éclairés (étoiles, lune, torche) : c’est la Vision nocturne. D’autres voient dans le noir total, sans aucune lumière : c’est la Vision dans le noir. Ce sont deux possibilités distinctes et non deux pouvoirs automatiquement cumulés. Aucune portée particulière n’est fixée dans cette description.</p> |
-| `TRUDVANG.Content.CreatureAbility.scVIa3u0v1w2x3y4.SourceBook` | Jorgi's Bestiary | Bestiaire de Jorge |
-
 ## `TRUDVANG.Content.CreatureAbility.XJLfjcHcIdJeKfLg`
 
 | Clé | English | Français |

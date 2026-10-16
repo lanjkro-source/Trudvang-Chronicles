@@ -10430,12 +10430,6 @@
           "Description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
           "SourceBook": "Jorgi's Bestiary"
         },
-        "scVIa3u0v1w2x3y4": {
-          "Name": "Low-Light Vision or Darkvision (demon)",
-          "Summary": "Depending on the demon: either low-light vision or sight in total darkness, as chosen by the GM.",
-          "Description": "<p>The demon's exact nature is decided by the GM. Some demons see by weak light as if it were daylight; others see in total darkness.</p><p>Choose Low-Light Vision or Darkvision as appropriate to that demon. The two possibilities are not automatically cumulative, and this entry does not give every demon both types of vision.</p>",
-          "SourceBook": "Jorgi's Bestiary"
-        },
         "XJLfjcHcIdJeKfLg": {
           "Name": "Thermal Sight",
           "Summary": "Detects heat, size and distance up to 300 m; can be suppressed and is not stunned by sudden heat sources.",
