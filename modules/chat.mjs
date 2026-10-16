@@ -124,6 +124,11 @@ function attachListeners(message, html) {
     button.addEventListener("click", async event => {
       event.preventDefault();
       const effect = await foundry.utils.fromUuid(button.closest("[data-rule-document-uuid]")?.dataset.ruleDocumentUuid);
+      // TEMPORARY WORLD MIGRATION — legacy creature capacities are still ActiveEffects.
+      if (effect?.getFlag?.("trudvang-chronicles", "feat")) {
+        const {openCreatureAbilitySheet} = await import("./sheets/creature-ability-sheet.mjs");
+        return openCreatureAbilitySheet(effect);
+      }
       effect?.sheet.render({force: true});
     });
   });

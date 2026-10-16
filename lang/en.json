@@ -1074,7 +1074,8 @@
       "InvalidStageChanges": "The changes for effect stage {stage} are not valid JSON.",
       "NoControlledActorForTraitRoll": "Select a PC or NPC before making a resistance roll.",
       "TraitSituationAlreadyRolled": "This PC or NPC has already made its resistance roll on this card.",
-      "TraitSituationUnavailable": "The resistance roll could not be recorded. Check that a GM is connected."
+      "TraitSituationUnavailable": "The resistance roll could not be recorded. Check that a GM is connected.",
+      "NoActorForAbilityUse": "Select a PC or NPC you own before using an ability."
     },
     "Description": {
       "SkillSummary": "{name} is a general skill used as the base value for its related actions and knowledge.",

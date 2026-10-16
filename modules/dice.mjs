@@ -10,6 +10,7 @@ import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-res
 import {consequenceText} from "./rules/consequence-text.mjs";
 import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
+import {ruleTestActionViews} from "./rule-tests.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -76,6 +77,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
     effectTarget,
     itemUuid: item?.uuid ?? "",
+    ruleTests: success && item && (["spell", "divine", "rune"].includes(kind)
+      || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
     naturalDamage: item?.id === "humanoid-natural",
     actorUuid: actor.uuid,
     usage,

@@ -1,6 +1,7 @@
 import {creatureAbilityDetails, isCreatureAbility} from "../creature-ability.mjs";
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing} from "../chat-sharing.mjs";
+import {useCreatureAbility} from "../rule-use.mjs";
 
 const {DocumentSheetV2, HandlebarsApplicationMixin} = foundry.applications.api;
 const TextEditorImpl = foundry.applications.ux.TextEditor.implementation;
@@ -23,6 +24,11 @@ async function ruleTestAction(event, target) {
   return performRuleTest({document: this.document, index: target.dataset.testIndex});
 }
 
+async function useAbilityAction(event) {
+  event.preventDefault();
+  return useCreatureAbility(this.document);
+}
+
 // TEMPORARY WORLD MIGRATION — sheet for capacities stored as ActiveEffects in old worlds.
 export class TrudvangCreatureAbilitySheet extends HandlebarsApplicationMixin(DocumentSheetV2) {
   static DEFAULT_OPTIONS = {
@@ -34,7 +40,7 @@ export class TrudvangCreatureAbilitySheet extends HandlebarsApplicationMixin(Doc
     canCreate: false,
     ownershipConfig: false,
     sheetConfig: false,
-    actions: {"roll-rule-test": ruleTestAction},
+    actions: {"roll-rule-test": ruleTestAction, "use-ability": useAbilityAction},
     form: {handler: TrudvangCreatureAbilitySheet.#onSubmit, submitOnChange: true, closeOnSubmit: false}
   };
 
@@ -72,7 +78,7 @@ export class TrudvangCreatureAbilityItemSheet extends HandlebarsApplicationMixin
     classes: ["trudvang", "sheet", "creature-ability-sheet"], tag: "form",
     position: {width: 520, height: 560}, window: {resizable: true},
     form: {handler: TrudvangCreatureAbilityItemSheet.#onSubmit, submitOnChange: true, closeOnSubmit: false},
-    actions: {"roll-rule-test": ruleTestAction}
+    actions: {"roll-rule-test": ruleTestAction, "use-ability": useAbilityAction}
   };
   async _onRender(context, options) {
     await super._onRender(context, options);

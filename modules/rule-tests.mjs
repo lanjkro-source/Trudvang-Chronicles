@@ -17,6 +17,12 @@ export function ruleTestsForDocument(document) {
   return id ? RULE_TESTS_BY_CATALOG_ID[id] ?? [] : [];
 }
 
+/** Usage cards label each response with the action from the French source data. */
+export function ruleTestActionViews(document) {
+  return ruleTestsForDocument(document).map((test, index) => ({index, action: test.action,
+    title: game.i18n.localize(test.kind === "skill" ? "TRUDVANG.RuleTest.RollSkill" : "TRUDVANG.RuleTest.RollResistance")}));
+}
+
 export function ruleTestValueLabel(test, localize = key => game.i18n.localize(key)) {
   const config = globalThis.CONFIG?.TRUDVANG ?? {};
   const tree = config.knowledgeTree ?? {};

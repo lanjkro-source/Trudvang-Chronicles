@@ -1074,7 +1074,8 @@
       "InvalidTraitSituation": "Trait ou valeur de situation invalide.",
       "NoControlledActorForTraitRoll": "Sélectionnez un PJ ou un PNJ avant de lancer un jet de résistance.",
       "TraitSituationAlreadyRolled": "Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte.",
-      "TraitSituationUnavailable": "Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté."
+      "TraitSituationUnavailable": "Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté.",
+      "NoActorForAbilityUse": "Sélectionnez un PJ ou un PNJ que vous contrôlez avant d’utiliser une capacité."
     },
     "Description": {
       "SkillSummary": "{name} est une compétence générale servant de valeur de base aux actions et connaissances associées.",

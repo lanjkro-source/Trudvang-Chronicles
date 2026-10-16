@@ -20,6 +20,7 @@ import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs"
 import {postActorEvent} from "../actor-event-chat.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-resolver.mjs";
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
+import {useCreatureAbility} from "../rule-use.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -1807,10 +1808,11 @@ export class TrudvangActor extends BaseActor {
   }
 
   async rollItem(item) {
+    if (item.type === "creatureAbility") return useCreatureAbility(item);
     if (item.type === "weapon" || item.type === "shield") return this.rollWeaponAttack(item);
     if (item.type === "spell" || item.type === "divineFeat") return this.rollSpell(item);
     if (item.type === "ability") {
-      if (item.system.kind === "feat" && !item.system.parentSkill && !Number(item.system.rollBonus || 0)) return item.toChat();
+      if (item.system.kind === "feat" && !item.system.parentSkill && !Number(item.system.rollBonus || 0)) return useCreatureAbility(item);
       return this.rollAbility(item);
     }
     return item.toChat();

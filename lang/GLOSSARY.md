@@ -1252,6 +1252,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Warning.NoControlledActorForTraitRoll` | Select a PC or NPC before making a resistance roll. | Sélectionnez un PJ ou un PNJ avant de lancer un jet de résistance. |
 | `TRUDVANG.Warning.TraitSituationAlreadyRolled` | This PC or NPC has already made its resistance roll on this card. | Ce PJ ou PNJ a déjà effectué son jet de résistance sur cette carte. |
 | `TRUDVANG.Warning.TraitSituationUnavailable` | The resistance roll could not be recorded. Check that a GM is connected. | Le jet de résistance n’a pas pu être enregistré. Vérifiez que le MJ est connecté. |
+| `TRUDVANG.Warning.NoActorForAbilityUse` | Select a PC or NPC you own before using an ability. | Sélectionnez un PJ ou un PNJ que vous contrôlez avant d’utiliser une capacité. |
 
 ## `TRUDVANG.Description`
 
