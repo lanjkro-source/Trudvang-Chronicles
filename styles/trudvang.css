@@ -930,11 +930,11 @@
 .trudvang .trudvang-share-title:is(:hover, :focus-visible) > .trudvang-share-bubble { display: grid; }
 .trudvang.chat-card .shared-description > :first-child { margin-top: 0; }
 .trudvang.chat-card .shared-description > :last-child { margin-bottom: 0; }
-.trudvang-inline-rule-test { display: inline; margin: 0 2px; padding: 0 3px; color: var(--trudvang-accent); border: 1px solid color-mix(in srgb, var(--trudvang-accent) 55%, transparent); border-radius: 3px; background: color-mix(in srgb, var(--trudvang-accent) 8%, transparent); font: inherit; text-decoration: underline; cursor: pointer; }
-.trudvang-inline-rule-test:hover, .trudvang-inline-rule-test:focus-visible { color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-accent) 22%, var(--trudvang-paper-light)); }
-.trudvang.chat-card .rule-test-list { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; padding: 0 8px 8px; }
-.trudvang.chat-card .rule-test-list > strong { flex-basis: 100%; color: var(--trudvang-muted); font: 700 .75rem Arial, sans-serif; }
-.trudvang.chat-card .rule-test-list > button { min-height: 26px; padding: 3px 6px; font-size: .8rem; }
+/* Override sheet and native button geometry so these controls follow prose. */
+.trudvang button.trudvang-inline-rule-test { appearance: none; display: inline; width: auto; height: auto; min-height: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--trudvang-accent); font: inherit; line-height: inherit; vertical-align: baseline; white-space: normal; box-shadow: none; text-shadow: none; text-decoration: underline; text-underline-offset: .12em; cursor: pointer; }
+.trudvang button.trudvang-inline-rule-test > i { color: inherit; font-size: .8em; line-height: 1; margin: 0 .15em 0 0; }
+.trudvang button.trudvang-inline-rule-test:is(:hover, :focus-visible) { color: var(--trudvang-ink); background: color-mix(in srgb, var(--trudvang-accent) 15%, var(--trudvang-paper-light)); text-shadow: none; }
+.trudvang button.trudvang-inline-rule-test:focus-visible { outline: 1px solid var(--trudvang-accent); outline-offset: 2px; }
 .trudvang.chat-card .extract-stage-result { padding: 0 8px 8px; }
 .trudvang.chat-card .extract-stage-result p { margin: 3px 0; }
 .trudvang.chat-card .extract-stage { font-weight: 700; }

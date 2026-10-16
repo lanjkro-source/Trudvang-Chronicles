@@ -52,7 +52,7 @@ test("rule-test annotations follow test-of-situation and skill-test order", asyn
   const html = "<p>La cible fait un test de situation pour se libérer.</p>";
   const annotated = annotateRuleTestDescription(html, document);
   assert.match(annotated, /data-test-index="0"/);
-  assert.match(annotated, />test de situation<\/button>/);
+  assert.match(annotated, /<i class="fas fa-dice-d20" aria-hidden="true"><\/i> test de situation<\/button>/);
   assert.match(annotateRuleTestDescription("<p>Aucun jet indiqué.</p>", document), /Aucun jet indiqué/);
   const multiTrait = annotateRuleTestDescription("<p>test de Force</p>", {system: {catalogId: "a0A7iPhNiOjPkQlR"}});
   assert.match(multiTrait, /data-test-index="0"/);

@@ -1,5 +1,4 @@
 <article class="trudvang chat-card item effect-card" data-rule-document-uuid="{{effect.uuid}}">
   <header><img src="{{effect.img}}"><div><button type="button" class="card-title" data-action="open-effect-sheet">{{effect.name}}</button><small>{{localize "TYPES.ActiveEffect.effect"}}</small></div></header>
   <div class="card-flavor shared-description">{{{description}}}</div>
-  {{#if ruleTests.length}}<div class="rule-test-list"><strong>{{localize "TRUDVANG.RuleTest.AvailableTests"}}</strong>{{#each ruleTests as |test|}}<button type="button" data-action="roll-rule-test" data-test-index="{{test.index}}" title="{{test.title}}"><i class="fas {{#if (eq test.kind 'resist')}}fa-shield-halved{{else}}fa-person-running{{/if}}"></i> {{test.label}}</button>{{/each}}</div>{{/if}}
 </article>

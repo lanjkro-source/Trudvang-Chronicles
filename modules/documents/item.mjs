@@ -1,6 +1,6 @@
 import { renderTemplate } from "../helpers.mjs";
 import { EFFECT_ITEM_TYPES } from "../effects.mjs";
-import {annotateRuleTestDescription, ruleTestViews} from "../rule-tests.mjs";
+import {annotateRuleTestDescription} from "../rule-tests.mjs";
 
 const BaseItem = foundry.documents.Item;
 
@@ -16,7 +16,6 @@ export class TrudvangItem extends BaseItem {
       system: this.system,
       canUseExtract: this.type === "potion",
       canApplyEffects: EFFECT_ITEM_TYPES.has(this.type) && this.effects.some(effect => !effect.transfer && !effect.disabled),
-      ruleTests: ruleTestViews(this),
       description: annotateRuleTestDescription(
         await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.system.description || "", {async: true}), this)
     });

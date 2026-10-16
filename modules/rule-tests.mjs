@@ -35,15 +35,6 @@ export function ruleTestValueLabel(test, localize = key => game.i18n.localize(ke
   return `${localize("TRUDVANG.RuleTest.ResistanceShort")} · ${trait} · SV ${sv}`;
 }
 
-export function ruleTestViews(document, localize = key => game.i18n.localize(key)) {
-  return ruleTestsForDocument(document).map((test, index) => ({
-    index,
-    kind: test.kind,
-    label: ruleTestValueLabel(test, localize),
-    title: localize(test.kind === "skill" ? "TRUDVANG.RuleTest.RollSkill" : "TRUDVANG.RuleTest.RollResistance")
-  }));
-}
-
 function escapeRegExp(value) {
   return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -112,7 +103,7 @@ function inlineTestButton(test, index, phrase, label = phrase) {
   const kind = test.kind;
   const buttonTitle = game.i18n.localize(kind === "resist"
     ? "TRUDVANG.RuleTest.RollResistance" : "TRUDVANG.RuleTest.RollSkill");
-  return `<button type="button" class="trudvang-inline-rule-test" data-action="roll-rule-test" data-test-index="${index}" title="${escapeHtml(buttonTitle)}">${escapeHtml(label)}</button>`;
+  return `<button type="button" class="trudvang-inline-rule-test" data-action="roll-rule-test" data-test-index="${index}" title="${escapeHtml(buttonTitle)}"><i class="fas fa-dice-d20" aria-hidden="true"></i> ${escapeHtml(label)}</button>`;
 }
 
 /** Link configured tests to the closest matching situation, skill, trait or resistance wording. */

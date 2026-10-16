@@ -2,7 +2,7 @@ import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
 import {effectChangePhase} from "./rules/effect-contributions.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
-import {annotateRuleTestDescription, ruleTestViews} from "./rule-tests.mjs";
+import {annotateRuleTestDescription} from "./rule-tests.mjs";
 
 const fields = foundry.data.fields;
 const BaseActiveEffect = foundry.documents.ActiveEffect;
@@ -65,8 +65,7 @@ export class TrudvangActiveEffect extends BaseActiveEffect {
     const description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.description || "", {async: true});
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/effect-card.hbs", {
       effect: this,
-      description: annotateRuleTestDescription(description, this),
-      ruleTests: ruleTestViews(this)
+      description: annotateRuleTestDescription(description, this)
     });
     return ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this.parent?.documentName === "Actor" ? this.parent : null}), content});
   }
