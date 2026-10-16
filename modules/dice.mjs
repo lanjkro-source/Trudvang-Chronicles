@@ -11,6 +11,7 @@ import {consequenceText} from "./rules/consequence-text.mjs";
 import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
 import {ruleTestActionViews} from "./rule-tests.mjs";
+import {allocatedCombatVC} from "./rules/attack-size.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
@@ -52,11 +53,17 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = []}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
-  const {critical, success, margin} = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
+  const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
+  const {critical, margin} = outcome;
+  const targetResults = attackTargets.map(row => {
+    const target = finalTarget + row.modifier - attackTargets[0].modifier;
+    return {...row, target, ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
+  });
+  const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
     actorName: actor.name,
     actorImg: actor.img,
@@ -76,6 +83,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     criticalSuccessConsequence: consequenceText(criticalSuccessConsequence),
     criticalFailureConsequence: consequenceText(criticalFailureConsequence),
     effectTarget,
+    attackTargets: targetResults,
+    multipleAttackTargets: targetResults.length > 1,
     itemUuid: item?.uuid ?? "",
     ruleTests: success && item && (["spell", "divine", "rune"].includes(kind)
       || ["creatureAbility", "ability"].includes(item.type) || item.system?.isRune) ? ruleTestActionViews(item) : [],
@@ -91,7 +100,10 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     speaker: ChatMessage.getSpeaker({actor}),
     content,
     rolls: [roll],
-    ...(useDiceSoNice ? {flags: {"dice-so-nice": {skip: true}}} : {})
+    ...((useDiceSoNice || targetResults.length) ? {flags: {
+      ...(useDiceSoNice ? {"dice-so-nice": {skip: true}} : {}),
+      ...(targetResults.length ? {[SYSTEM_ID]: {attackTargets: targetResults}} : {})
+    }} : {})
   });
   if (useDiceSoNice) {
     try {
@@ -100,7 +112,7 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
       console.error("Trudvang | Dice So Nice could not animate a concentration roll", error);
     }
   }
-  return {roll, result, target: finalTarget, success, critical, margin, effectTarget};
+  return {roll, result, target: finalTarget, success, critical, margin, effectTarget, attackTargets: targetResults};
 }
 
 function numericModifier(value) {
@@ -516,7 +528,7 @@ export async function rollDamage({actor, item, context = {}}) {
     total = Math.ceil(total / 2);
     modifierDetails.push(game.i18n.format("TRUDVANG.Calculation.LongRangeDamage", {before: beforeLongRange, after: total}));
   }
-  const targets = prepareDamageTargets(game.user?.targets);
+  const targets = prepareDamageTargets(context.targets ?? game.user?.targets);
   const targetsHTML = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-targets.hbs", {total, targets});
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/damage-card.hbs", {
     actorName: actor.name,
@@ -674,12 +686,15 @@ export async function fearFactorDialog({title, factor}) {
   ], modal: false, rejectClose: false});
 }
 
-export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null}) {
+export async function combatPointDialog({title, pools, defaultAllocation = {}, buttonLabelKey = "TRUDVANG.Action.Roll", showModifier = true, totalLabelKey = "TRUDVANG.Dialog.AllocatedCombatPoints", alternateButtonLabelKey = "", hidePrimary = false, combatPointBonus = 0, modifierRows = [], feintMax = 0, ruleNotice = "", combatModes = null, movementModes = null, defaultMovementMode = "", targetPointCost = 1, allocationMultiple = 1, targetLabels = null, sizeTargets = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const modes = combatModes?.modes?.length ? combatModes.modes : [{id: "default", pools, defaultAllocation, rangeText: ""}];
   const defaultMode = modes.find(mode => mode.id === combatModes?.defaultMode) ?? modes[0];
   const hasModeToggle = combatModes && combatModes.toggle !== false;
   const maximumFeint = Math.max(0, Math.floor(Number(feintMax || 0)));
+  const sizeModifier = Number(sizeTargets[0]?.modifier || 0);
+  const varyingSizes = new Set(sizeTargets.map(target => target.modifier)).size > 1;
+  const sizeRows = sizeTargets.filter(target => target.modifier !== 0);
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
   const targets = Array.isArray(targetLabels) ? `<section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))}</strong>${targetLabels.length
     ? `<ul>${targetLabels.map(name => `<li>${escapeHtml(name)}</li>`).join("")}</ul>`
@@ -711,13 +726,14 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${sliderMaximum}" step="${allocationMultiple}" value="${sliderInitial}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
-      <p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${Math.floor(sliderInitial / targetPointCost)}</strong></p>
+      ${sizeRows.length ? `<div class="combat-size-modifiers"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))}</span>${varyingSizes ? `<ul>${sizeRows.map(target => `<li>${escapeHtml(target.name)} : <b>${signedModifier(target.modifier)}</b></li>`).join("")}</ul>` : `<b>${signedModifier(sizeModifier)}</b>`}</div>` : ""}
+      ${varyingSizes ? `<div class="combat-size-values"><span>${escapeHtml(game.i18n.localize(totalLabelKey))}</span><ul>${sizeTargets.map(target => `<li>${escapeHtml(target.name)} : <strong data-combat-target-total data-size-modifier="${target.modifier}">${allocatedCombatVC(sliderInitial, 0, target.modifier, targetPointCost)}</strong></li>`).join("")}</ul></div>` : `<p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${allocatedCombatVC(sliderInitial, 0, sizeModifier, targetPointCost)}</strong></p>`}
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
       ${rangedTargetOptions}
       ${mode.ruleNotice || ruleNotice ? `<p class="combat-rule-notice"><i class="fas fa-circle-info"></i> ${escapeHtml(mode.ruleNotice || ruleNotice)}</p>` : ""}
       ${showModifier ? `<div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>` : ""}
-      ${showModifier || combatPointBonus || breakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span><strong data-combat-final-target></strong></p>` : ""}
+      ${showModifier || combatPointBonus || breakdown ? `<p class="combat-final-target"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FinalTarget"))}</span>${varyingSizes ? `<span>${sizeTargets.map(target => `<span>${escapeHtml(target.name)} : <strong data-combat-target-final data-size-modifier="${target.modifier}"></strong></span>`).join("<br>")}</span>` : `<strong data-combat-final-target></strong>`}</p>` : ""}
     </section>`;
   };
   const content = `<div class="trudvang roll-dialog combat-pool-dialog">
@@ -759,15 +775,22 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
         const modeMaximumFeint = Math.max(0, Math.floor(Number(selectedMode().feintMax ?? maximumFeint)));
         const feint = feintInput ? Math.min(Math.max(0, Number(feintInput.value || 0)), modeMaximumFeint, total) : 0;
         if (feintInput) { feintInput.max = String(Math.min(modeMaximumFeint, total)); feintInput.value = String(feint); }
-        const attackTotal = total - feint;
+        const attackTotal = allocatedCombatVC(total, feint, sizeModifier, targetPointCost);
         const output = section.querySelector("[data-combat-total]");
-        if (output) output.textContent = String(Math.floor(attackTotal / targetPointCost));
+        if (output) output.textContent = String(attackTotal);
+        section.querySelectorAll("[data-combat-target-total]").forEach(output => {
+          output.textContent = String(allocatedCombatVC(total, feint, Number(output.dataset.sizeModifier), targetPointCost));
+        });
         const finalTarget = section.querySelector("[data-combat-final-target]");
         if (finalTarget) {
           const manual = Number(section.querySelector("[name=modifier]")?.value || 0);
-          const fixed = modifierRows.reduce((sum, row) => sum + Number(row.value || 0), Number(combatPointBonus || 0));
-          finalTarget.textContent = String(Math.floor(attackTotal / targetPointCost) + manual + fixed + rangedModifier);
+          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0);
+          finalTarget.textContent = String(attackTotal + manual + fixed + rangedModifier);
         }
+        section.querySelectorAll("[data-combat-target-final]").forEach(output => {
+          const fixed = rollModifierTotal(modifierRows) + Number(combatPointBonus || 0);
+          output.textContent = String(allocatedCombatVC(total, feint, Number(output.dataset.sizeModifier), targetPointCost) + Number(section.querySelector("[name=modifier]")?.value || 0) + fixed + rangedModifier);
+        });
         const slider = section.querySelector("[data-combat-slider]");
         if (slider) slider.value = String(total - total % allocationMultiple);
       };

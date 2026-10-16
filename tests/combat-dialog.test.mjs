@@ -68,3 +68,33 @@ test("fixed attacks show their target-specific VC and keep no-target attacks ava
   assert.match(dialogs[1].content, /data-fixed-attack-no-target-final>12</);
   assert.ok(dialogs[1].buttons.some(button => button.action === "roll"));
 });
+
+test("size is below feint, omitted at zero, and updates allocated and final VC for each target", async t => {
+  const dialogs = runtime(t);
+  await combatPointDialog({title: "Attack", pools, feintMax: 5, defaultAllocation: {free: 10}, sizeTargets: [{name: "Large", modifier: 4}]});
+  const html = dialogs[0].content;
+  assert.ok(html.indexOf('name="feint"') < html.indexOf('class="combat-size-modifiers"'));
+  assert.match(html, /data-combat-total>14</);
+  await combatPointDialog({title: "Attack", pools, sizeTargets: [{name: "Same", modifier: 0}]});
+  assert.doesNotMatch(dialogs[1].content, /combat-size-modifiers/);
+
+  const node = (value = "", dataset = {}) => ({value, dataset, textContent: "", addEventListener(_event, handler) {this.handler = handler;}});
+  const allocation = node("10", {poolId: "free"}), feint = node("2"), modifier = node("1");
+  const allocated = [-3, 4].map(size => node("", {sizeModifier: String(size)}));
+  const final = [-3, 4].map(size => node("", {sizeModifier: String(size)}));
+  const section = {
+    querySelector: selector => ({'[name=feint]': feint, '[name=modifier]': modifier})[selector] ?? null,
+    querySelectorAll: selector => ({'[data-pool-id]': [allocation], '[data-combat-target-total]': allocated, '[data-combat-target-final]': final})[selector] ?? []
+  };
+  const root = {querySelector: () => section, querySelectorAll: selector => selector.startsWith("[data-pool-id],") ? [allocation, feint, modifier] : []};
+  foundry.applications.api.DialogV2 = class {
+    _onRender() {}
+    static async wait() {const dialog = new this(); dialog.element = root; dialog._onRender({}, {}); return null;}
+  };
+  await combatPointDialog({title: "Attack", pools, feintMax: 5, modifierRows: [{label: "Blessing", value: 2}], sizeTargets: [{name: "Small", modifier: -3}, {name: "Large", modifier: 4}]});
+  assert.deepEqual(allocated.map(row => row.textContent), ["5", "12"]);
+  assert.deepEqual(final.map(row => row.textContent), ["8", "15"]);
+  allocation.value = "6"; allocation.handler();
+  assert.deepEqual(allocated.map(row => row.textContent), ["1", "8"]);
+  assert.deepEqual(final.map(row => row.textContent), ["4", "11"]);
+});

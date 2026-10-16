@@ -336,6 +336,10 @@ test("a real damage roll stores its initial targets and the final halved amount 
   assert.match(cards[0].content, /data-action="add-damage-targets"/);
   assert.equal(cards[0].flags["trudvang-chronicles"].damageTargets.length, 1);
   assert.equal(cards[0].flags["trudvang-chronicles"].damageTargets[0].actorUuid, target.uuid);
+  const hit = makeToken("hit", makeActor("Hit"));
+  await rollDamage({actor: makeActor("Attacker"), item: {type: "weapon", name: "Bow",
+    system: {damage: "1d10", openRoll: 0, category: "ranged", strengthApplies: true}}, context: {usage: "ranged", targets: [hit]}});
+  assert.deepEqual(cards[1].flags["trudvang-chronicles"].damageTargets.map(row => row.actorUuid), [hit.actor.uuid], "damage from an attack keeps only the hit targets even if another token is currently targeted");
 });
 
 test("application rows escape custom token names and provide the same map-location control as resistance rows", async t => {

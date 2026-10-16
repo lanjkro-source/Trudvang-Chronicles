@@ -1100,6 +1100,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.TraitSituationResults` | Resistance roll results | Résultats des jets de résistance |
 | `TRUDVANG.Dialog.TraitSituationTokenHint` | Hover to indicate the token; click to center the view. | Survolez pour repérer le token ; cliquez pour centrer la vue. |
 | `TRUDVANG.Dialog.IncludedModifier` | already included in the base value | déjà compris dans la valeur de base |
+| `TRUDVANG.Dialog.SizeAttackModifier` | Size difference | Différence de taille |
 
 ## `TRUDVANG.Dialog.TraitSituationResult`
 
@@ -1297,6 +1298,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Calculation.LongRangeDamage` | Long-range target: {before} → {after} damage (halved). | Cible à longue portée : {before} → {after} dégâts (divisés par deux). |
 | `TRUDVANG.Calculation.FearAcclimatization` | Acclimatization: {amount} Fear point(s). | Acclimatation : {amount} point(s) de peur. |
 | `TRUDVANG.Calculation.FearSituation` | Situation: {amount} Fear point(s). | Situation : {amount} point(s) de peur. |
+| `TRUDVANG.Calculation.SizeAttackModifier` | Size difference — {target}: {modifier} SV. | Différence de taille — {target} : {modifier} VC. |
 
 ## `TRUDVANG.Calculation.Equipment`
 

@@ -1857,3 +1857,31 @@ test("magic dialog separates intrinsic skill from every named effect and keeps t
     assert.match(content, /data-final-target>13</);
   } finally { foundry.applications.api.DialogV2 = before; }
 });
+
+test("weapon attacks use size-adjusted VC per target with one allocation, one action and one die; parries ignore size", async t => {
+  const runtime = mockActionRuntime(t, {die: 7});
+  const oldTargets = game.user.targets;
+  t.after(() => {game.user.targets = oldTargets;});
+  const item = inventoryItem("weapon", "Axe", {equipped: true});
+  const npc = spendableNpc([item]);
+  npc.system.damage.penalty = 0;
+  npc.system.details.size = "1t";
+  let spending = 0, actions = 0;
+  npc.spendCombatPoints = async allocation => {spending++; assert.deepEqual(allocation, {free: 4});};
+  npc.spendWeaponAction = async () => {actions++;};
+  npc.getWeaponActionState = () => ({current: 1});
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  game.user.targets = [
+    {name: "Giant", document: {uuid: "Scene.s.Token.g"}, actor: {uuid: "Actor.g", system: {details: {size: "10+"}}}},
+    {name: "Tiny", document: {uuid: "Scene.s.Token.t"}, actor: {uuid: "Actor.t", system: {details: {size: "1/3"}}}}
+  ];
+  runtime.response = {allocation: {free: 4}, feint: 1, modifier: 0};
+  const result = await npc.rollWeaponAction(item, "attack");
+  assert.deepEqual(result.attackTargets.map(row => [row.target, row.success]), [[7, true], [2, false]]);
+  assert.equal(spending, 1); assert.equal(actions, 1);
+  assert.equal(runtime.messages.length, 1); assert.equal(runtime.messages[0].rolls.length, 1);
+  assert.match(runtime.dialogs[0].content, /combat-size-modifiers/);
+  runtime.response = null;
+  await npc.rollWeaponAction(item, "parry");
+  assert.doesNotMatch(runtime.dialogs.at(-1).content, /combat-size-modifiers/);
+});

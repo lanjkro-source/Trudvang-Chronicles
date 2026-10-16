@@ -78,12 +78,15 @@ function attachListeners(message, html) {
     button.addEventListener("click", async event => {
       event.preventDefault();
       const actor = await foundry.utils.fromUuid(button.dataset.actorUuid);
+      const attackTargets = message.flags?.["trudvang-chronicles"]?.attackTargets;
+      const targets = Array.isArray(attackTargets) ? (await Promise.all(attackTargets.filter(row => row.success)
+        .map(row => foundry.utils.fromUuid(row.tokenUuid || row.actorUuid)))).filter(Boolean) : undefined;
       if (button.dataset.naturalDamage === "true") {
-        if (actor?.isOwner) await actor.rollNaturalDamage();
+        if (actor?.isOwner) await actor.rollNaturalDamage({targets});
         return;
       }
       const item = await foundry.utils.fromUuid(button.dataset.itemUuid);
-      if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true"});
+      if (actor?.isOwner && item) await actor.rollDamage(item, {usage: button.dataset.usage || "", longRange: button.dataset.longRange === "true", targets});
     });
   });
   html.querySelectorAll("[data-action='roll-fatal-effect']").forEach(button => {

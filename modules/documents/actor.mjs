@@ -21,6 +21,7 @@ import {postActorEvent} from "../actor-event-chat.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-resolver.mjs";
 import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 import {useCreatureAbility} from "../rule-use.mjs";
+import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -897,8 +898,8 @@ export class TrudvangActor extends BaseActor {
     return this.rollWeaponAction(this.humanoidNaturalWeapon, kind);
   }
 
-  async rollNaturalDamage() {
-    return this.rollDamage(this.humanoidNaturalWeapon);
+  async rollNaturalDamage(context = {}) {
+    return this.rollDamage(this.humanoidNaturalWeapon, context);
   }
 
   get dodgeTarget() {
@@ -1067,6 +1068,7 @@ export class TrudvangActor extends BaseActor {
     const canThrow = kind === "attack" && canThrowWeapon(item);
     const defaultThrowing = canThrow && (throwing ?? isThrowingWeapon(item));
     const targetTokens = Array.from(game.user.targets || []);
+    const sizeTargets = kind === "attack" ? attackSizeTargets(this, targetTokens) : [];
     const targetLabels = targetTokens.map(token => token?.name || token?.actor?.name || "");
     const targetActor = targetTokens.map(target => target?.actor).find(Boolean);
     const targetPerception = Number(targetActor?.getTraitValue?.("perception") ?? targetActor?.system?.effective?.traits?.perception ?? targetActor?.system?.traits?.perception ?? 0);
@@ -1114,6 +1116,7 @@ export class TrudvangActor extends BaseActor {
       combatPointBonus,
       modifierRows,
       targetLabels: kind === "attack" ? targetLabels : null,
+      sizeTargets,
       feintMax: defaultMode.feintMax,
       ruleNotice,
       combatModes: {
@@ -1154,6 +1157,7 @@ export class TrudvangActor extends BaseActor {
     const flavor = [
       ...spendingFlavor,
       ...(feint ? [game.i18n.format("TRUDVANG.Calculation.FeintCost", {points: feint})] : []),
+      ...sizeTargets.filter(target => target.modifier !== 0).map(target => escapeHtml(game.i18n.format("TRUDVANG.Calculation.SizeAttackModifier", {target: target.name, modifier: target.modifier > 0 ? `+${target.modifier}` : target.modifier}))),
       ...(rangedOptions.longRange ? [game.i18n.localize("TRUDVANG.Calculation.LongRangeAttack")] : []),
       ...(rangedOptions.targetInMelee ? [game.i18n.localize("TRUDVANG.Calculation.TargetInMelee")] : []),
       ...(rangedOptions.targetMoving ? [game.i18n.localize("TRUDVANG.Calculation.TargetMoving")] : []),
@@ -1163,9 +1167,10 @@ export class TrudvangActor extends BaseActor {
     return rollUnder({
       actor: this,
       label: `${item.name} — ${game.i18n.localize(kind === "parry" ? "TRUDVANG.Action.Parry" : mode.throwing ? "TRUDVANG.Action.Throw" : "TRUDVANG.Action.Attack")}`,
-      target: spending.total - feint,
+      target: allocatedCombatVC(spending.total, feint, sizeTargets[0]?.modifier || 0),
       modifier: options.modifier + combatPointBonus + effectModifier + armorModifier + equipmentModifier.value + rangedModifier + rollModifierTotal(stateRows),
       kind,
+      attackTargets: sizeTargets,
       flavor,
       item,
       feint,

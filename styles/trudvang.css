@@ -1072,3 +1072,11 @@
   margin: 4px 0;
   padding-left: 18px;
 }
+
+.trudvang .combat-size-modifiers { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin: 6px 0; color: var(--trudvang-accent); }
+.trudvang .combat-size-modifiers ul, .trudvang .combat-size-values ul { list-style: none; margin: 0; padding: 0; }
+.trudvang .combat-size-values li { display: flex; justify-content: space-between; gap: 8px; }
+.trudvang.chat-card .attack-target-results { list-style: none; margin: 8px; padding: 0; }
+.trudvang.chat-card .attack-target-result { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; padding: 5px; border-left: 2px solid currentColor; }
+.trudvang.chat-card .attack-target-result.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
+.trudvang.chat-card .attack-target-result.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }

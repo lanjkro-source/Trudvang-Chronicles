@@ -3,6 +3,7 @@
  * Run after editing the creatureSize labels: node tools/generate-creature-size-journal.mjs
  */
 import {readFileSync, writeFileSync} from "node:fs";
+import {attackSizeModifier} from "../modules/rules/attack-size.mjs";
 
 const sizeValues = [1 / 6, 1 / 3, 1 / 2, 1, 1.5, 2, 3, 5, 10];
 const unarmed = [
@@ -41,7 +42,7 @@ function journalHtml(labels, locale) {
   const headers = values => `<tr>${values.map(value => cell(value, true, ' scope="col"')).join("")}</tr>`;
   const attackSizes = labels.Sizes.slice(0, -1).concat("10");
   const attackRows = attackSizes.map((size, attacker) => `<tr>${cell(size, true, ' scope="row"')}${attackSizes.map((_, target) => {
-    const modifier = Math.max(0, Math.abs(target - attacker) - 1) * Math.sign(target - attacker);
+    const modifier = attackSizeModifier(sizeValues[attacker], sizeValues[target]);
     return cell(modifier === 0 ? "-" : modifier > 0 ? `+${modifier}` : modifier);
   }).join("")}</tr>`).join("");
   table("Attack", `<tr>${cell("", true)}${cell(c.TargetSize, true, ' colspan="9"')}</tr>${headers([c.AttackerSize, ...attackSizes])}`, attackRows, {numeric: true, note: labels.Notes.Attack});

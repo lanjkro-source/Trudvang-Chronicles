@@ -952,7 +952,8 @@
         "failure": "échec",
         "perfectFailure": "!échec!"
       },
-      "IncludedModifier": "déjà compris dans la valeur de base"
+      "IncludedModifier": "déjà compris dans la valeur de base",
+      "SizeAttackModifier": "Différence de taille"
     },
     "Macro": {
       "SituationRoll": "Jet de situation générique",
@@ -1130,7 +1131,8 @@
         "UnsupportedOperation": "La modification utilise une opération non prise en charge.",
         "InvalidAmount": "La modification ne contient pas de valeur numérique valide.",
         "Constraint": "La valeur a été ajustée aux limites autorisées pour cette caractéristique."
-      }
+      },
+      "SizeAttackModifier": "Différence de taille — {target} : {modifier} VC."
     },
     "Religion": {
       "Gerbanis": "Gerbanis",

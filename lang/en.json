@@ -952,7 +952,8 @@
         "failure": "failure",
         "perfectFailure": "!failure!"
       },
-      "IncludedModifier": "already included in the base value"
+      "IncludedModifier": "already included in the base value",
+      "SizeAttackModifier": "Size difference"
     },
     "Macro": {
       "SituationRoll": "Generic situation roll",
@@ -1130,7 +1131,8 @@
         "UnsupportedOperation": "The modifier uses an unsupported operation.",
         "InvalidAmount": "The modifier does not contain a valid numeric value.",
         "Constraint": "The value was adjusted to the characteristic's permitted range."
-      }
+      },
+      "SizeAttackModifier": "Size difference — {target}: {modifier} SV."
     },
     "Religion": {
       "Gerbanis": "Gerbanis",

@@ -68,3 +68,21 @@ test("using owned and catalogue creature abilities announces only performer, abi
   assert.equal(messages.length, before);
   canvas.tokens.controlled = [];
 });
+
+test("one attack die gives target-specific outcomes and keeps critical outcomes for every size", async () => {
+  const targets = [{name: "Small", modifier: -2, tokenUuid: "Scene.s.Token.small"}, {name: "Large", modifier: 4, tokenUuid: "Scene.s.Token.large"}];
+  die = 10;
+  const mixed = await rollUnder({actor, kind: "attack", target: 6, attackTargets: targets, label: "Attack", item: {uuid: "Actor.A.Item.axe"}});
+  assert.deepEqual(mixed.attackTargets.map(row => [row.target, row.success]), [[6, false], [12, true]]);
+  assert.equal(mixed.success, true);
+  assert.equal(messages.at(-1).rolls.length, 1);
+  assert.equal(messages.at(-1).flags["trudvang-chronicles"].attackTargets[1].success, true);
+  assert.match(messages.at(-1).content, /attack-target-result failure/);
+  assert.match(messages.at(-1).content, /attack-target-result success/);
+  assert.match(messages.at(-1).content, /data-action="damage"/);
+  for (const value of [1, 20]) {
+    die = value;
+    const result = await rollUnder({actor, kind: "attack", target: 6, attackTargets: targets, label: "Attack"});
+    assert.ok(result.attackTargets.every(row => row.success === (value === 1)));
+  }
+});
