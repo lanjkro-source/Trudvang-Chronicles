@@ -37,8 +37,10 @@ export function npcMovementRows(system, {localize}) {
     max: `${Number(system.movement?.current || 0)} m`}];
   return Array.from(rows, row => {
     const modeKey = modes[String(row.mode || "").trim().toLocaleLowerCase()];
+    const modifier = Number(system.modifiers?.movement || 0);
+    const max = String(row.max || "").match(/^(\d+(?:[.,]\d+)?)\s*m$/iu);
     return {mode: modeKey ? localize(`TRUDVANG.Npc.MovementModes.${modeKey}`) : row.mode,
-      distance: row.distance || "—", max: row.max || "—"};
+      distance: row.distance || "—", max: max ? `${Math.max(0, Number(max[1].replace(",", ".")) + modifier)} m` : row.max || "—"};
   });
 }
 

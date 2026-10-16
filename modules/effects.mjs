@@ -1,4 +1,5 @@
 import {ACTOR_STATE_STATUSES} from "./rules/actor-status-resolver.mjs";
+import {effectChangePhase} from "./rules/effect-contributions.mjs";
 
 import {renderTemplate} from "./helpers.mjs";
 import {annotateRuleTestDescription, ruleTestViews} from "./rule-tests.mjs";
@@ -55,6 +56,11 @@ export class TrudvangEffectData extends foundry.data.ActiveEffectTypeDataModel {
  * intentionally always suppressed. Potion templates are likewise always
  * suppressed because they never transfer. */
 export class TrudvangActiveEffect extends BaseActiveEffect {
+  prepareBaseData() {
+    super.prepareBaseData();
+    for (const change of this.system?.changes ?? []) change.phase = effectChangePhase(change);
+  }
+
   async toChat() {
     const description = await foundry.applications.ux.TextEditor.implementation.enrichHTML(this.description || "", {async: true});
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/effect-card.hbs", {

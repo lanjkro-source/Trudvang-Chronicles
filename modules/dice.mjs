@@ -8,11 +8,12 @@ import { resolveRollUnderOutcome } from "./rules/roll-under-resolver.mjs";
 import { normalizeCombatAllocation } from "./rules/combat-pool-resolver.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "./rules/roll-state-resolver.mjs";
 import {consequenceText} from "./rules/consequence-text.mjs";
+import {effectContributions} from "./rules/effect-contributions.mjs";
 import {calculateTraitModifier} from "./rules/trait-roll-resolver.mjs";
 
 const SYSTEM_ID = "trudvang-chronicles";
 
-const modifierLabel = row => row.labelKey ? game.i18n.localize(row.labelKey) : row.label;
+const modifierLabel = row => `${row.labelKey ? game.i18n.localize(row.labelKey) : row.label}${row.included ? ` (${game.i18n.localize("TRUDVANG.Dialog.IncludedModifier")})` : ""}`;
 const signedModifier = value => `${Number(value) > 0 ? "+" : ""}${Number(value || 0)}`;
 const modifierList = rows => rows.length ? `<ul class="roll-state-modifiers">${rows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("")}</ul>` : "";
 
@@ -169,12 +170,17 @@ export async function rollConfiguredTraitSituation({actor, test, sourceName = ""
   const traitLabel = hasTrait ? game.i18n.localize("TRUDVANG.Dialog.TraitSituationTrait")
     : game.i18n.localize("TRUDVANG.Dialog.TraitSituationNoTrait");
   const title = game.i18n.format("TRUDVANG.RuleTest.ResistanceTitle", {source: sourceName || "", action: test.action || ""});
+  const effectRows = [...(actor.rollEffectRows?.({kind: "situation"}) ?? []),
+    ...traitValues.flatMap(row => row.key === "aucun" ? [] : [
+      ...(actor.traitEffectRows?.(row.key) ?? []),
+      ...effectContributions(actor, `system.modifiers.rolls.traits.${row.key}`)
+    ])].map(row => ({...row, included: true}));
   const options = await playerTraitSituationDialog({title, traitLabel, traitValue, traitValues: traitEffectValues,
-    traitMethod: test.traitMethod || "first", effect, ...situation, modifierRows});
+    traitMethod: test.traitMethod || "first", effect, effectRows, ...situation, modifierRows});
   if (!options) return null;
   const target = (options.situationValue ?? situation.base) + (options.traitModifier ?? traitValue) + effect + Number(options.configuredModifier || 0) + Number(options.repeatedModifier || 0) + rollModifierTotal(modifierRows);
   return rollUnder({actor, label: title, target, modifier: options.modifier, kind: "situation",
-    flavor: rollModifierFlavor(modifierRows), successConsequence: test.success || "", failureConsequence: test.failure || "",
+    flavor: rollModifierFlavor([...effectRows, ...modifierRows]), successConsequence: test.success || "", failureConsequence: test.failure || "",
     criticalSuccessConsequence: test.criticalSuccess || "", criticalFailureConsequence: test.criticalFailure || ""});
 }
 
@@ -199,6 +205,7 @@ export async function initiativeDialog({actor, target, lightningQuickLevel = 0, 
   const content = `
     <div class="trudvang roll-dialog">
       <p>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.BaseTarget", {target}))}</p>
+      ${modifierList([...effectContributions(actor, "system.modifiers.rolls.initiative"), ...(actor.traitEffectRows?.("dexterity") ?? [])].map(row => ({...row, included: true})))}
       ${equipmentChoices || drawChoice ? `<fieldset class="initiative-equipment"><legend>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeEquipment"))}</legend>${equipmentChoices}${drawChoice}</fieldset>` : ""}
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.InitiativeMagic"))}</label><select name="magicModifier"><option value="0">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoInitiativeAction"))}</option>${magicChoices}</select></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
@@ -347,7 +354,7 @@ export async function magicDialog({title, methods, spellModifier = 0, defaultCos
   });
 }
 
-export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0, modifierRows = []}) {
+export async function concentrationDialog({title, defaultType = "spell", psycheModifier = 0, effectModifier = 0, effectRows = [], spellDisciplineLevel = 0, spellSpecialtyLevel = 0, divineDisciplineLevel = 0, divineSpecialtyLevel = 0, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const tracks = {
     spell: {discipline: "TRUDVANG.Knowledge.vitnerFocus", specialty: "TRUDVANG.Knowledge.safeWeaving", disciplineLevel: Number(spellDisciplineLevel) || 0, specialtyLevel: Number(spellSpecialtyLevel) || 0},
@@ -362,9 +369,10 @@ export async function concentrationDialog({title, defaultType = "spell", psycheM
       <dt>${localize("TRUDVANG.Dialog.ConcentrationTrait")}</dt><dd>${signed(psycheModifier)}</dd>
       <dt data-concentration-discipline-name></dt><dd data-concentration-discipline-value></dd>
       <dt data-concentration-specialty-name></dt><dd data-concentration-specialty-value></dd>
-      ${effectModifier ? `<dt>${localize("TRUDVANG.Dialog.EffectModifier")}</dt><dd>${signed(effectModifier)}</dd>` : ""}
+      ${effectModifier ? `<dt>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</dt><dd>${signed(effectModifier)}</dd>` : ""}
       ${modifierRows.map(row => `<dt>${escapeHtml(modifierLabel(row))}</dt><dd>${signed(row.value)}</dd>`).join("")}
     </dl>
+    ${modifierList(effectRows.map(row => ({...row, included: true})))}
     <p>${localize("TRUDVANG.Dialog.ConcentrationTotal")}: <strong data-concentration-total></strong></p>
   </div>`;
   class ConcentrationDialog extends DialogClass {
@@ -529,7 +537,7 @@ export async function rollDamage({actor, item, context = {}}) {
  * reserved for roll modifiers supplied by active effects. Keeping the two
  * visible makes the source of the final value clear to the player.
  */
-export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0, modifierRows = []}) {
+export async function traitRollDialog({title, traitLabel, traitValue = 0, effect = 0, effectRows = [], modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -542,8 +550,9 @@ export async function traitRollDialog({title, traitLabel, traitValue = 0, effect
     </select></div>
     <div class="trait-roll-values">
       <div class="form-group"><label>${escapeHtml(traitLabel)}</label><input name="trait" type="number" value="${trait}" readonly></div>
-      <div class="form-group"><label>${localize("TRUDVANG.Dialog.EffectModifier")}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
+      <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
     </div>
+    ${modifierList(effectRows.map(row => ({...row, included: true})))}
     <section data-roll-mode="situation">
       <div class="form-group"><label>${localize("TRUDVANG.Dialog.SituationValue")}</label><input name="situationValue" type="number" value="10"></div>
       ${modifierList(modifierRows)}
@@ -947,7 +956,7 @@ export async function rollGenericSituation({target, label, modifier} = {}) {
   // Fix the performer before opening the dialog: displayed states and the
   // resulting roll must belong to the same actor even if selection changes.
   const actor = globalThis.canvas?.tokens?.controlled?.[0]?.actor ?? game.user?.character ?? null;
-  const modifierRows = actor ? actorStateRollModifiers(actor) : [];
+  const modifierRows = actor ? [...(actor.rollEffectRows?.({kind: "situation"}) ?? []), ...actorStateRollModifiers(actor)] : [];
   let situationTarget = target;
   let situationLabel = label;
   let situationModifier = modifier;
@@ -1086,7 +1095,7 @@ export async function requestTraitSituationRoll({traitKey, situationValue, title
  * Player dialog for configured resistance tests. Known values are prefilled while
  * conditional and repeated modifiers remain explicit choices in the same roll window.
  */
-export async function playerTraitSituationDialog({title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = []}) {
+export async function playerTraitSituationDialog({title, traitLabel, traitValue, traitValues = [], traitMethod = "first", effect, effectRows = [], base, sv, svChoices = [], modifierChoices = [], repeatedModifiers = [], notes = [], svEditable = false, modifierRows = []}) {
   const DialogClass = foundry.applications?.api?.DialogV2 ?? globalThis.DialogV2;
   const trait = Number(traitValue) || 0;
   const effectModifier = Number(effect) || 0;
@@ -1126,6 +1135,7 @@ export async function playerTraitSituationDialog({title, traitLabel, traitValue,
       <div class="form-group"><label>${escapeHtml(traitLabel)}</label><input name="trait" type="number" value="${trait}" readonly></div>
       <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EffectModifier"))}</label><input name="effect" type="number" value="${effectModifier}" readonly></div>
     </div>`}
+    ${modifierList(effectRows.map(row => ({...row, included: true})))}
     ${traitMethodControl}
     ${svChoiceControl}
     ${situationField}

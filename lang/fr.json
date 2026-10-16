@@ -951,7 +951,8 @@
         "perfectSuccess": "!succès!",
         "failure": "échec",
         "perfectFailure": "!échec!"
-      }
+      },
+      "IncludedModifier": "déjà compris dans la valeur de base"
     },
     "Macro": {
       "SituationRoll": "Jet de situation générique",

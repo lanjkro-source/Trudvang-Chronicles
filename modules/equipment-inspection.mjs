@@ -1,6 +1,8 @@
 import { escapeHtml } from "./helpers.mjs";
 import { resolveEquipment } from "./rules/equipment-resolver.mjs";
 import { resolveCombatPools } from "./rules/combat-pool-resolver.mjs";
+import {effectContributions} from "./rules/effect-contributions.mjs";
+import {npcMovementRows} from "./rules/npc-summary.mjs";
 
 const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(value)}`;
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
@@ -50,18 +52,7 @@ function effectChangeTone(change) {
 }
 
 function applicableEffectRows(actor, key, total) {
-  const rows = [];
-  let additive = 0;
-  for (const effect of Array.from(actor.allApplicableEffects?.() || [])) {
-    if (effect.disabled || effect.isSuppressed || effect.active === false) continue;
-    for (const change of Array.from(effect.system?.changes || []).filter(entry => entry.key === key)) {
-      if (change.type === "add" || Number(change.mode) === 2) additive += number(change.value);
-      rows.push(row(effect.name, effectChangeDisplay(change), {source: effect.parent?.documentName === "Item" ? effect.parent.name : effect.sourceName || "", tone: effectChangeTone(change)}));
-    }
-  }
-  const residual = number(total) - additive;
-  if (residual) rows.push(row(localized("TRUDVANG.Inspection.OtherModifiers"), residual));
-  return rows;
+  return effectContributions(actor, key, {total}).map(entry => row(entry.labelKey ? localized(entry.labelKey) : entry.label, entry.value));
 }
 
 function damageDisplay(value) {
@@ -168,6 +159,13 @@ function row(label, value, {source = "", conditional = false, tone = typeof valu
   return {label, value: typeof value === "number" ? signed(value) : value, source, conditional, tone};
 }
 
+function traitInspectionRows(actor, key, factor = 1) {
+  const effects = actor.traitEffectRows?.(key) ?? [];
+  const base = actor.getTraitValue(key) - effects.reduce((sum, entry) => sum + entry.value, 0);
+  return [row(localized(`TRUDVANG.Trait.${key[0].toUpperCase()}${key.slice(1)}`), factor * base),
+    ...effects.map(entry => row(entry.labelKey ? localized(entry.labelKey) : entry.label, factor * entry.value))];
+}
+
 export function prepareActorStatInspection(actor, key, config = {}) {
   const equipped = Array.from(actor.items || []).filter(item => item.system?.equipped);
   const permanent = [];
@@ -178,7 +176,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
     title = localized("TRUDVANG.Resource.Initiative");
     permanent.push(
       row(localized("TRUDVANG.Inspection.Base"), number(actor.system.initiative?.base)),
-      row(localized("TRUDVANG.Trait.Dexterity"), actor.getTraitValue("dexterity")),
+      ...traitInspectionRows(actor, "dexterity"),
       row(localized("TRUDVANG.Resource.DamageLevel"), number(actor.system.damage?.penalty)),
       row(localized("TRUDVANG.Resource.FearPenalty"), number(actor.system.fearPenalty)),
       row(localized("TRUDVANG.Knowledge.battleExperience"), number(actor.findKnowledgeItem("battleExperience")?.system.level)),
@@ -195,9 +193,10 @@ export function prepareActorStatInspection(actor, key, config = {}) {
   } else if (key === "movement") {
     title = localized("TRUDVANG.Resource.Movement");
     const race = config.races?.[actor.system.details?.race];
-    permanent.push(
+    if (actor.type === "npc") permanent.push(row(localized("TRUDVANG.Inspection.Base"), number(actor.system.movement?.base)));
+    else permanent.push(
       row(race ? localized(race.label) : localized("TRUDVANG.Field.Race"), number(race?.movement)),
-      row(localized("TRUDVANG.Trait.Dexterity"), actor.getTraitValue("dexterity"))
+      ...traitInspectionRows(actor, "dexterity")
     );
     for (const item of equipped) {
       const impact = prepareEquipmentInspection(item, actor)?.impacts.find(entry => entry.key === "movement");
@@ -205,6 +204,11 @@ export function prepareActorStatInspection(actor, key, config = {}) {
     }
     permanent.push(...applicableEffectRows(actor, "system.modifiers.movement", actor.system.modifiers?.movement));
     total = number(actor.system.movement?.current);
+    if (actor.type === "npc" && actor.system.details?.move?.length) {
+      permanent.shift();
+      for (const mode of actor.system.details.move) permanent.unshift(row(mode.mode, mode.max || "—"));
+      total = npcMovementRows(actor.system, {localize: localized}).map(mode => `${mode.mode}: ${mode.max}`).join(" · ");
+    }
   } else if (key === "protection") {
     title = localized("TRUDVANG.Resource.Protection");
     permanent.push(row(localized("TRUDVANG.Field.NaturalArmor"), number(actor.system.details?.naturalArmor)));
@@ -221,7 +225,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
     title = localized("TRUDVANG.Resource.PersistenceInWild");
     permanent.push(
       row(localized("TRUDVANG.Inspection.Base"), 10),
-      row(localized("TRUDVANG.Trait.Psyche"), actor.getTraitValue("psyche")),
+      ...traitInspectionRows(actor, "psyche"),
       row(localized("TRUDVANG.Knowledge.survival"), number(actor.findKnowledgeItem("survival")?.system.level || 0)),
       row(localized("TRUDVANG.Knowledge.weathered"), number(actor.findKnowledgeItem("weathered")?.system.level || 0) * 2)
     );
@@ -229,7 +233,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
   } else if (key === "fearFactor") {
     title = localized("TRUDVANG.Field.FearFactor");
     permanent.push(
-      row(localized("TRUDVANG.Trait.Psyche"), -actor.getTraitValue("psyche")),
+      ...traitInspectionRows(actor, "psyche", -1),
       ...applicableEffectRows(actor, "system.modifiers.fearFactor", actor.system.modifiers?.fearFactor)
     );
     total = signed(actor.system.fearFactorModifier);
@@ -242,6 +246,7 @@ export function prepareActorStatInspection(actor, key, config = {}) {
       }));
     }
     permanent.push(...applicableEffectRows(actor, "system.modifiers.combatMax", actor.system.modifiers?.combatMax));
+    permanent.push(...applicableEffectRows(actor, "system.modifiers.combatValue", actor.system.modifiers?.combatValue));
     total = `${pools.totalCurrent}/${pools.totalMax}`;
   }
   return {key, title, total, permanent: permanent.filter(entry => entry.value !== "0" || entry.label === localized("TRUDVANG.Inspection.Base")), conditional};

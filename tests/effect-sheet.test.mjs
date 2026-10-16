@@ -258,7 +258,7 @@ test("TrudvangEffectSheet save drops legacy top-level changes from the core path
     const submitData = sheetFor(document)._processFormData({}, {}, formData);
     assert.ok(!("changes" in submitData), "legacy top-level changes must not reach the document update");
     assert.deepEqual(submitData.system.changes,
-      [{key: "system.effective.traits.strength", type: "add", value: "1", priority: null, phase: "final"}]);
+      [{key: "system.effective.traits.strength", type: "add", value: "1", priority: null, phase: "initial"}]);
   } finally {
     proto._processFormData = original;
   }

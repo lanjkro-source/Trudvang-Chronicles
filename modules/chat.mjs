@@ -285,7 +285,7 @@ function attachListeners(message, html) {
         : game.i18n.localize("TRUDVANG.Dialog.GenericSituationTitle"));
       button.disabled = true;
       try {
-        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, sv, modifierRows});
+        const options = await playerTraitSituationDialog({title, traitLabel, traitValue: trait, effect, effectRows: [...(hasTrait ? actor.traitEffectRows?.(traitKey) ?? [] : []), ...(actor.rollEffectRows?.(hasTrait ? {kind: "trait", traitKey} : {kind: "situation"}) ?? [])], sv, modifierRows});
         if (!options) return;
         const status = await requestTraitSituationResponse({message, actor, token, modifier: options.modifier});
         if (status !== "recorded") ui.notifications.warn(game.i18n.localize(

@@ -19,6 +19,7 @@ import {npcCombatCycleDisplay} from "../rules/npc-combat-cycle.mjs";
 import {magicCapacities} from "../rules/magic-capacity.mjs";
 import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 import {bindSheetListMenus} from "../chat-sharing.mjs";
+import {effectContributions, effectContributionText} from "../rules/effect-contributions.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -27,7 +28,7 @@ const signed = value => Number(value) > 0 ? `+${Number(value)}` : `${Number(valu
 const normalized = value => String(value || "").trim().toLocaleLowerCase();
 
 function calculationModifiers(breakdown) {
-  return (breakdown.modifierRows ?? []).map(row => ` · ${game.i18n.localize(row.labelKey)} ${signed(row.value)}`).join("");
+  return (breakdown.modifierRows ?? []).map(row => ` · ${row.labelKey ? game.i18n.localize(row.labelKey) : row.label} ${signed(row.value)}${row.included ? ` (${game.i18n.localize("TRUDVANG.Dialog.IncludedModifier")})` : ""}`).join("");
 }
 
 function percent(value, max) {
@@ -136,6 +137,20 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
     context.actor = this.actor;
     context.isToken = this.actor.isToken;
     context.system = this.actor.system;
+    context.effectHints = Object.fromEntries(Object.entries(this.actor.system.modifiers ?? {}).filter(([key]) => key !== "rolls")
+      .map(([key, total]) => [key, effectContributionText(effectContributions(this.actor, `system.modifiers.${key}`, {total}))]));
+    const traitHint = (key, factor = 1) => effectContributionText(this.actor.traitEffectRows(key).map(row => ({...row, value: factor * row.value})));
+    const skillHint = key => effectContributionText(this.actor.skillEffectRows(key));
+    const addHint = (key, ...hints) => context.effectHints[key] = [context.effectHints[key], ...hints].filter(Boolean).join(" · ");
+    addHint("bodyMax", traitHint("strength"), traitHint("constitution"));
+    addHint("combatMax", skillHint("fighting"));
+    addHint("vitnerMax", skillHint("vitnerCraft"));
+    addHint("divinityMax", skillHint("faith"));
+    addHint("fearFactor", traitHint("psyche", -1));
+    if (this.actor.type === "character") addHint("movement", traitHint("dexterity"));
+    context.resourceEffectHints = Object.fromEntries(["body", "combat", "vitner", "divinity", "raud", "fear"].map(key =>
+      [key, [context.effectHints[`${key}Value`], context.effectHints[`${key}Max`]].filter(Boolean).join(" · ")]));
+
     context.editable = this.isEditable && this.actor.isOwner;
     context.owner = this.actor.isOwner;
     context.isGM = game.user.isGM;
@@ -311,7 +326,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const next = choices[index + 1];
       return {
         key, label, value, baseValue, modified: value !== baseValue,
-        tooltip: game.i18n.format(`TRUDVANG.TraitBenefit.${key}`, {value: signed(value), inverse: signed(-value)}),
+        tooltip: [game.i18n.format(`TRUDVANG.TraitBenefit.${key}`, {value: signed(value), inverse: signed(-value)}),
+          effectContributionText(effectContributions(this.actor, `system.effective.traits.${key}`, {base: baseValue, total: value}))].filter(Boolean).join(" · "),
         decreaseTitle: previous === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Refund", {cost: (baseValue - previous) * 15}),
         increaseTitle: next === undefined ? game.i18n.localize("TRUDVANG.Warning.TraitLimit") : game.i18n.format("TRUDVANG.Cost.Increase", {cost: (next - baseValue) * 15}),
         canDecrease: previous !== undefined,
@@ -338,8 +354,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         catalogId: entry.id, item, level, breakdown, separateHands, offHandLevel, offHandBreakdown,
         summary: existing?.system.summary || summaryText,
         calculation: kind === "specialty"
-          ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)})
-          : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
+          ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skillLabel ?? breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)})
+          : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skillLabel ?? breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
         refundCost: level ? this.actor.getKnowledgeLevelCost(item, level) : 0,
         nextCost: this.actor.getKnowledgeLevelCost(item, level + 1),
         decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: level ? this.actor.getKnowledgeLevelCost(item, level) : 0}),
@@ -366,7 +382,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         return {
           item, level: itemLevel, breakdown,
           summary: item.system.summary || (entry ? (this._abilityText(entry.id, "Summary") || this._knowledgeSummary(entry)) : item.system.description || ""),
-          calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
+          calculation: item.system.kind === "specialty" ? game.i18n.format("TRUDVANG.Calculation.Specialty", {skill: breakdown.skillLabel ?? breakdown.skill, discipline: breakdown.discipline, specialty: breakdown.specialty, total: breakdown.total, modifiers: calculationModifiers(breakdown)}) : game.i18n.format("TRUDVANG.Calculation.Discipline", {skill: breakdown.skillLabel ?? breakdown.skill, discipline: breakdown.own, total: breakdown.total, modifiers: calculationModifiers(breakdown)}),
           refundCost: this.actor.getKnowledgeLevelCost(item, itemLevel),
           nextCost: this.actor.getKnowledgeLevelCost(item, itemLevel + 1),
           decreaseTitle: game.i18n.format("TRUDVANG.Cost.Refund", {cost: this.actor.getKnowledgeLevelCost(item, itemLevel)}),
@@ -380,6 +396,7 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       const knownCatalogIds = new Set(Object.values(TRUDVANG.knowledgeTree).flatMap(disciplines => [disciplines.map(d => d.id), ...disciplines.map(d => d.specialties.map(s => s.id))].flat()));
       return {
         key, label, skill, level, baseLevel, modified: level !== baseLevel,
+        calculation: this.actor.skillValueLabel(key),
         description: game.i18n.localize(TRUDVANG.skillDescriptions[key]),
         isCore: Boolean(TRUDVANG.archetypes[this.actor.system.details?.archetype]?.core.includes(key)),
         refundCost: baseLevel,
@@ -904,7 +921,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   }
 
   _npcBookSkillRows() {
-    return npcBookSkillRows(this.actor.system.skillTree, {...TRUDVANG, localize: key => game.i18n.localize(key)});
+    return npcBookSkillRows(this.actor.system.skillTree, {...TRUDVANG, localize: key => game.i18n.localize(key)}).map(row => ({...row,
+      displayValue: row.kind === "skill" && row.skillKey ? this.actor.getSkillValue(row.skillKey) : row.value,
+      calculation: row.skillKey ? this.actor.skillValueLabel(row.skillKey) : row.value
+    }));
   }
 
   async _openNpcBookSkill(index) {

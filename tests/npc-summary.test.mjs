@@ -34,7 +34,7 @@ globalThis.foundry = {
     getFlag() { return null; }
     async _preCreate() { return this.creationAllowed; }
     async getTokenDocument(data, options) { return {data, options}; }
-  }, ActiveEffect: class {}},
+  }, ActiveEffect: class { prepareBaseData() {} }},
   applications: {
     api: {HandlebarsApplicationMixin: Base => Base,
       DocumentSheetV2: class {
@@ -59,6 +59,7 @@ globalThis.game = {user: {isGM: true}, combat: null, i18n: {
 }};
 const {NpcData, CharacterData, AbilityData} = await import("../modules/data-models.mjs");
 const {TrudvangActor} = await import("../modules/documents/actor.mjs");
+const {TrudvangActiveEffect} = await import("../modules/effects.mjs");
 const {TrudvangActorSheet, TrudvangNpcSheet, TrudvangCharacterSheet} = await import("../modules/sheets/actor-sheet.mjs");
 const {TrudvangItemSheet} = await import("../modules/sheets/item-sheet.mjs");
 const feat = (enabled = true, level = 1) => ({type: "ability", name: "Tenace",
@@ -1774,4 +1775,85 @@ test("a -5 test from the prepared JSON catalogue reaches the real dialog and die
   assert.match(runtime.dialogs[0].content, /Cible de base: 10/);
   assert.match(runtime.dialogs[0].content, /data-final-target>1</);
   assert.match(runtime.dialogs[0].content, /Modificateur du test<[^]*?-5/);
+});
+
+
+test("native initial effects feed derived protection, movement, reserves and NPC book skills exactly once", () => {
+  const instance = actor();
+  instance.system = structuredClone(instance._source.system);
+  instance.system.resources.raud = {value: 0, max: 10};
+  instance.system.resources.body.value = 30;
+  instance.system.skillTree = [{kind: "skill", name: "Combat", skillId: "fighting", value: 7}];
+  instance._source.system.combatPools.free.spent = 2;
+  NpcData.prototype.prepareBaseData.call(instance.system);
+  const effect = new TrudvangActiveEffect();
+  const changes = Object.entries({movement: 3, protection: 2, bodyMax: 2, bodyValue: 1,
+    combatMax: 3, combatValue: 1, vitnerMax: 4, vitnerValue: 2, divinityMax: 3, divinityValue: 2,
+    raudValue: 1, fearValue: 2, fearFactor: -2, "rolls.initiative": 2})
+    .map(([key, value]) => ({key: `system.modifiers.${key}`, type: "add", value: String(value), phase: "final"}));
+  changes.push({key: "system.effective.skills.fighting", type: "add", value: "2", phase: "final"});
+  Object.assign(effect, {name: "Bénédiction", system: {changes}});
+  effect.prepareBaseData();
+  instance.allApplicableEffects = () => [effect];
+  for (const phase of ["initial", "final"]) {
+    for (const change of changes.filter(change => change.phase === phase)) set(instance, change.key, Number(get(instance, change.key) || 0) + Number(change.value));
+    if (phase === "initial") instance.prepareDerivedData();
+  }
+  assert.equal(instance.system.protection, 6);
+  assert.equal(instance.system.movement.current, 13);
+  assert.equal(instance.getSkillValue("fighting"), 9);
+  assert.equal(instance.system.resources.body.max, 42);
+  assert.equal(instance.system.resources.body.current, 31);
+  assert.equal(instance.system.resources.combat.max, 12);
+  assert.equal(instance.system.resources.combat.current, 11);
+  assert.equal(instance.system.resources.vitner.max, 4);
+  assert.equal(instance.system.resources.vitner.current, 2);
+  assert.equal(instance.system.resources.divinity.max, 3);
+  assert.equal(instance.system.resources.divinity.current, 2);
+  assert.equal(instance.system.resources.raud.current, 1);
+  assert.equal(instance.system.resources.fear.current, 2);
+  assert.equal(instance.system.fearFactorModifier, -2);
+  assert.equal(instance.system.initiative.current, 5);
+  assert.match(instance.skillValueLabel("fighting"), /Bénédiction \+2/);
+  assert.equal(instance._source.system.skills.fighting.value, 8);
+});
+
+test("skill effects remain individually visible without being added twice, including cancelling roll effects", () => {
+  const instance = actor();
+  instance.system.damage.penalty = 0;
+  instance.system.effective.skills.fighting = 10;
+  instance.system.modifiers.rolls.allActions = 0;
+  instance.allApplicableEffects = () => [
+    {name: "Entraînement", system: {changes: [{key: "system.effective.skills.fighting", type: "add", value: "2"}]}},
+    {name: "Bénédiction", system: {changes: [{key: "system.modifiers.rolls.allActions", type: "add", value: "3"}]}},
+    {name: "Malédiction", system: {changes: [{key: "system.modifiers.rolls.allActions", type: "subtract", value: "3"}]}}
+  ];
+  const rows = instance.skillRollModifierRows("fighting");
+  assert.equal(instance.getSkillTarget("fighting"), 10);
+  assert.deepEqual(rows.map(row => [row.label, row.value, Boolean(row.included)]), [
+    ["Entraînement", 2, true], ["Bénédiction", 3, false], ["Malédiction", -3, false]
+  ]);
+});
+
+test("magic dialog separates intrinsic skill from every named effect and keeps the final VC", async () => {
+  const instance = actor([...["vitnerShaping", "galding"].map(catalogId => ({type: "ability", name: catalogId,
+    system: {kind: catalogId === "vitnerShaping" ? "discipline" : "specialty", catalogId, level: 1}}))]);
+  instance.system.skills.vitnerCraft.value = 7;
+  instance.system.effective.skills.vitnerCraft = 7;
+  instance.system.modifiers.rolls = {magic: 2, allActions: 1};
+  instance.system.damage.penalty = 0;
+  instance.allApplicableEffects = () => [
+    {name: "Faveur du vitner", system: {changes: [{key: "system.modifiers.rolls.magic", type: "add", value: "2"}]}},
+    {name: "Inspiration", system: {changes: [{key: "system.modifiers.rolls.allActions", type: "add", value: "1"}]}}
+  ];
+  const before = foundry.applications.api.DialogV2;
+  let content;
+  foundry.applications.api.DialogV2 = class {static async wait(config) {content = config.content; return null;}};
+  try {
+    await instance.rollSpell({type: "spell", name: "Test", system: {level: 1, cost: 0}});
+    assert.match(content, /Faveur du vitner/);
+    assert.match(content, /Inspiration/);
+    assert.match(content, /Compétence 7/);
+    assert.match(content, /data-final-target>13</);
+  } finally { foundry.applications.api.DialogV2 = before; }
 });

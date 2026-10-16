@@ -19,6 +19,7 @@ import {resolveNpcPreparedAction} from "../rules/npc-prepared-actions.mjs";
 import {creatureMagicTraits, magicCapacities} from "../rules/magic-capacity.mjs";
 import {postActorEvent} from "../actor-event-chat.mjs";
 import {actorStateRollModifiers, rollModifierTotal} from "../rules/roll-state-resolver.mjs";
+import {effectContributions, effectContributionText, rollEffectKeys} from "../rules/effect-contributions.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -194,6 +195,29 @@ export class TrudvangActor extends BaseActor {
     if (traitKey) total += Number(modifiers.traits?.[traitKey] || 0);
     if (includeState) total += rollModifierTotal(actorStateRollModifiers(this));
     return total;
+  }
+
+  rollEffectRows(options = {}) {
+    return rollEffectKeys(this, options).flatMap(key => effectContributions(this, key));
+  }
+
+  skillEffectRows(skillKey) {
+    const skill = this.system.skills?.[skillKey];
+    return effectContributions(this, `system.effective.skills.${skillKey}`, {
+      base: Number(skill?.value || 0), total: this.system.effective?.skills?.[skillKey] ?? Number(skill?.value || 0) + Number(skill?.bonus || 0)
+    });
+  }
+
+  traitEffectRows(traitKey) {
+    return effectContributions(this, `system.effective.traits.${traitKey}`, {
+      base: Number(this.system.traitCurrent?.[traitKey] ?? this.system.traits?.[traitKey] ?? 0), total: this.getTraitValue(traitKey)
+    });
+  }
+
+  skillValueLabel(skillKey) {
+    const value = this.getSkillValue(skillKey);
+    const rows = this.skillEffectRows(skillKey);
+    return rows.length ? `${value} (${value - rollModifierTotal(rows)} · ${effectContributionText(rows)})` : value;
   }
 
   canPerformAction({movement = false} = {}) {
@@ -446,7 +470,7 @@ export class TrudvangActor extends BaseActor {
     const modifierRows = this.skillRollModifierRows(item.system.parentSkill, {kind: "ability"});
     const base = skill + discipline + own;
     const modifier = rollModifierTotal(modifierRows);
-    return {skill, discipline, specialty: item.system.kind === "specialty" ? own : 0, own, base, modifier, modifierRows, total: base + modifier};
+    return {skill, skillLabel: this.skillValueLabel(item.system.parentSkill), discipline, specialty: item.system.kind === "specialty" ? own : 0, own, base, modifier, modifierRows, total: base + modifier};
   }
 
   async alignCreationOrigins() {
@@ -736,11 +760,11 @@ export class TrudvangActor extends BaseActor {
   }
 
   skillRollModifierRows(skillKey, {kind = "skill", movement = false, bonus = 0, includeState = true} = {}) {
-    const effect = this.getRollModifier({kind, skillKey, movement, includeState: false});
     const armor = this.isInCombatActive() ? -Number(this.system.armorVCPenalty || 0) : 0;
     return [
+      ...this.skillEffectRows(skillKey).map(row => ({...row, included: true})),
       ...(includeState ? actorStateRollModifiers(this) : []),
-      {labelKey: "TRUDVANG.Dialog.EffectModifier", value: effect},
+      ...this.rollEffectRows({kind, skillKey, movement}),
       {labelKey: "TRUDVANG.Dialog.ArmorModifier", value: armor},
       {labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(bonus || 0)}
     ].filter(row => row.value !== 0);
@@ -752,9 +776,9 @@ export class TrudvangActor extends BaseActor {
     const name = label ?? game.i18n.localize(TRUDVANG.skills[skillKey] ?? skillKey);
     const modifierRows = this.skillRollModifierRows(skillKey, {bonus});
     const target = base + rollModifierTotal(modifierRows);
-    const options = await modifierDialog({title: name, target: base, modifierRows});
+    const options = await modifierDialog({title: name, target: base, modifierRows, notes: [String(this.skillValueLabel(skillKey))]});
     if (!options) return null;
-    return rollUnder({actor: this, label: name, target, modifier: options.modifier, kind: "skill", flavor: rollModifierFlavor(modifierRows)});
+    return rollUnder({actor: this, label: name, target, modifier: options.modifier, kind: "skill", flavor: [escapeHtml(this.skillValueLabel(skillKey)), rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>")});
   }
 
   async rollTrait(traitKey) {
@@ -763,11 +787,12 @@ export class TrudvangActor extends BaseActor {
     const effect = this.getRollModifier({kind: "trait", traitKey, includeState: false});
     const modifierRows = actorStateRollModifiers(this);
     const label = game.i18n.localize(TRUDVANG.traits[traitKey] ?? traitKey);
-    const options = await traitRollDialog({title: label, traitLabel: label, traitValue: trait, effect, modifierRows});
+    const effectRows = [...this.traitEffectRows(traitKey), ...this.rollEffectRows({kind: "trait", traitKey})];
+    const options = await traitRollDialog({title: label, traitLabel: label, traitValue: trait, effect, effectRows, modifierRows});
     if (!options) return null;
     if (options.mode === "situation") {
       const target = options.situationValue + trait + effect + rollModifierTotal(modifierRows);
-      return rollUnder({actor: this, label, target, kind: "situation", flavor: rollModifierFlavor(modifierRows)});
+      return rollUnder({actor: this, label, target, kind: "situation", flavor: rollModifierFlavor([...effectRows.map(row => ({...row, included: true})), ...modifierRows])});
     }
     const openRoll = await openD10({threshold: 10, modifier: trait + options.bonus + effect});
     const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/open-trait-roll-card.hbs", {
@@ -778,7 +803,8 @@ export class TrudvangActor extends BaseActor {
       rolls: openRoll.rolls.join(" + "),
       trait,
       bonus: options.bonus,
-      effect
+      effect,
+      flavor: rollModifierFlavor(effectRows.map(row => ({...row, included: true})))
     });
     await ChatMessage.create({speaker: ChatMessage.getSpeaker({actor: this}), content, rolls: openRoll.diceRolls});
     return openRoll;
@@ -791,10 +817,10 @@ export class TrudvangActor extends BaseActor {
     if (Number(context.bonus || 0)) modifierRows.push({labelKey: "TRUDVANG.Dialog.TestModifier", value: Number(context.bonus)});
     const target = breakdown.base + rollModifierTotal(modifierRows);
     const label = context.label || item.name;
-    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: context.notes ?? []});
+    const options = await modifierDialog({title: label, target: breakdown.base, modifierRows, notes: [String(breakdown.skillLabel), ...(context.notes ?? [])]});
     if (!options) return null;
     return rollUnder({actor: this, label, target, modifier: options.modifier, kind: "ability", item,
-      flavor: rollModifierFlavor(modifierRows), successConsequence: context.successConsequence || "",
+      flavor: [escapeHtml(breakdown.skillLabel), rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>"), successConsequence: context.successConsequence || "",
       failureConsequence: context.failureConsequence || "",
       criticalSuccessConsequence: context.criticalSuccessConsequence || "",
       criticalFailureConsequence: context.criticalFailureConsequence || ""});
@@ -817,6 +843,7 @@ export class TrudvangActor extends BaseActor {
       actorImg: this.img,
       total: result.total,
       detail,
+      flavor: rollModifierFlavor([...effectContributions(this, "system.modifiers.rolls.initiative"), ...this.traitEffectRows("dexterity")].map(row => ({...row, included: true}))),
       modifier: result.modifier
     });
     // Pass the raw d10 Roll objects (V16/Dice So Nice): without `rolls` the chat card renders
@@ -917,7 +944,8 @@ export class TrudvangActor extends BaseActor {
       allocationMultiple: 2,
       targetLabels,
       modifierRows: [{label: game.i18n.localize("TRUDVANG.Trait.Strength"), value: strength},
-        ...(otherModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.Modifier"), value: otherModifier}] : []), ...modifierRows]
+        ...this.rollEffectRows({kind: "attack", movement: true}),
+        {labelKey: "TRUDVANG.Dialog.ArmorModifier", value: -Number(this.system.armorVCPenalty || 0)}, ...modifierRows]
     });
     if (!options) return null;
     const spending = normalizeCombatAllocation(poolResolution.eligible, options.allocation, {multiple: 2});
@@ -993,7 +1021,7 @@ export class TrudvangActor extends BaseActor {
     const effectModifier = this.getRollModifier({kind: "attack", movement: true, includeState: false});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const modifierRows = [
-      {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
+      ...this.rollEffectRows({kind: "attack", movement: true}),
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
       ...stateRows
     ].filter(row => Number(row.value));
@@ -1070,7 +1098,7 @@ export class TrudvangActor extends BaseActor {
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
     const equipmentModifier = resolveCombatActionModifier({item: defaultMode.usageItem, actor: this, context: {usage: kind, hand: item.system.hand}});
     const modifierRows = [
-      {label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: effectModifier},
+      ...this.rollEffectRows({kind, movement: true}),
       {label: game.i18n.localize("TRUDVANG.Resource.ArmorVCPenalty"), value: armorModifier},
       ...stateRows,
       ...equipmentModifier.steps.map(step => ({label: game.i18n.format(step.explanationKey, step.explanationData), value: step.delta}))
@@ -1154,18 +1182,18 @@ export class TrudvangActor extends BaseActor {
     const disciplineId = isDivine ? "invoke" : "vitnerShaping";
     const specialtyIds = isDivine ? Object.values(TRUDVANG.religions).map(religion => religion.specialty) : ["galding", "sejding", "vyrding"];
     const disciplineLevel = Number(this.findRuleKnowledge(disciplineId)?.system.level || 0);
-    const modifierRows = actorStateRollModifiers(this);
-    const skillValue = this.getSkillTarget(skillKey, 0, {kind: "magic", includeState: false});
+    const modifierRows = this.skillRollModifierRows(skillKey, {kind: "magic"});
+    const skillValue = this.getSkillValue(skillKey);
     const methods = specialtyIds.map(id => ({id, item: this.findRuleKnowledge(id)})).filter(entry => Number(entry.item?.system.level || 0) > 0).map(entry => {
       const specialtyBonus = 2 * Number(entry.item.system.level || 0);
       const target = skillValue + disciplineLevel + specialtyBonus;
-      return {id: entry.id, label: entry.item.name, target, breakdown: game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: skillValue, discipline: disciplineLevel, specialty: specialtyBonus, total: target})};
+      return {id: entry.id, label: entry.item.name, target, breakdown: game.i18n.format("TRUDVANG.Calculation.MagicMethod", {skill: this.skillValueLabel(skillKey), discipline: disciplineLevel, specialty: specialtyBonus, total: target})};
     });
     if (!methods.length || disciplineLevel < 1) {
       const target = this.type === "npc" ? this.system.magic?.castingTarget : null;
       if (target !== null && target !== undefined && Number.isFinite(Number(target))) {
         methods.splice(0, methods.length, {id: "innate", label: game.i18n.localize("TRUDVANG.Npc.InnateMagic"),
-          target: Number(target) + this.getRollModifier({kind: "magic", includeState: false}),
+          target: Number(target),
           breakdown: game.i18n.format("TRUDVANG.Npc.InnateMagicTarget", {target})});
       } else return ui.notifications.warn(game.i18n.localize(this.type === "npc" ? "TRUDVANG.Npc.ConfigureMagicMethod" : "TRUDVANG.Warning.MagicMethodRequired"));
     }
@@ -1260,7 +1288,7 @@ export class TrudvangActor extends BaseActor {
     const powerModifierFlavor = item.system.modifier ? `<br>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.PowerModifier"))} : ${Number(item.system.modifier) > 0 ? "+" : ""}${Number(item.system.modifier)}` : "";
     const situationalFlavor = options.situationalModifier ? `<br>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))} : ${options.situationalModifier > 0 ? "+" : ""}${options.situationalModifier}` : "";
     const stateFlavor = modifierRows.length ? `<br>${rollModifierFlavor(modifierRows)}` : "";
-    const flavor = `${options.method.breakdown}${powerModifierFlavor}${stateFlavor}${activeSpellsFlavor}${strenuousFlavor}${situationalFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
+    const flavor = `${escapeHtml(options.method.breakdown)}${powerModifierFlavor}${stateFlavor}${activeSpellsFlavor}${strenuousFlavor}${situationalFlavor}${affinityDescription ? `<br>${escapeHtml(affinityDescription)}` : ""}${costFlavor}`;
     const fatalKind = isDivine ? "faith" : "vitner";
     const result = await rollUnder({actor: this, label: `${item.name} — ${options.method.label}`,
       target: options.target, modifier: options.modifier, kind: isDivine ? "divine" : "spell",
@@ -1307,11 +1335,13 @@ export class TrudvangActor extends BaseActor {
       vitnerMax: this.system.resources?.vitner?.max,
       divinityMax: this.system.resources?.divinity?.max
     });
+    const effectRows = [...this.traitEffectRows("psyche"), ...this.rollEffectRows({kind: "situation", traitKey: "psyche"})];
     const options = await concentrationDialog({
       title: game.i18n.localize("TRUDVANG.Dialog.ConcentrationRoll"),
       defaultType,
       psycheModifier,
       effectModifier,
+      effectRows,
       modifierRows,
       spellDisciplineLevel,
       spellSpecialtyLevel,
@@ -1331,8 +1361,8 @@ export class TrudvangActor extends BaseActor {
       `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationTrait")} : ${signed(psycheModifier)}`,
       `${game.i18n.localize(disciplineKey)} (${disciplineLevel}) : ${signed(disciplineLevel)}`,
       `${game.i18n.localize(specialtyKey)} (${specialtyLevel}) : ${signed(2 * specialtyLevel)}`,
-      ...(effectModifier ? [`${game.i18n.localize("TRUDVANG.Dialog.EffectModifier")} : ${signed(effectModifier)}`] : [])
-    ].map(escapeHtml).concat(modifierRows.length ? [rollModifierFlavor(modifierRows)] : []).join("<br>");
+      ...this.rollEffectRows({kind: "situation", traitKey: "psyche"}).map(row => `${row.labelKey ? game.i18n.localize(row.labelKey) : row.label} : ${signed(row.value)}`)
+    ].map(escapeHtml).concat([rollModifierFlavor(this.traitEffectRows("psyche").map(row => ({...row, included: true}))), rollModifierFlavor(modifierRows)].filter(Boolean)).join("<br>");
     return rollUnder({
       actor: this,
       label: `${game.i18n.localize("TRUDVANG.Dialog.ConcentrationRoll")} — ${game.i18n.localize(isDivine ? "TRUDVANG.Dialog.ConcentrationDivine" : "TRUDVANG.Dialog.ConcentrationSpell")}`,
@@ -1567,7 +1597,7 @@ export class TrudvangActor extends BaseActor {
       defaultAllocation: suggestCombatAllocation(poolResolution.eligible, Math.min(defaultPoints, poolResolution.eligibleCurrent)),
       buttonLabelKey: roll ? "TRUDVANG.Action.Roll" : "TRUDVANG.Action.SpendCombat",
       showModifier: roll,
-      modifierRows: roll ? [...(otherModifier ? [{label: game.i18n.localize("TRUDVANG.Dialog.EffectModifier"), value: otherModifier}] : []), ...modifierRows] : [],
+      modifierRows: roll ? [...this.rollEffectRows({kind: "ability", movement: true}), {labelKey: "TRUDVANG.Dialog.ArmorModifier", value: -Number(this.system.armorVCPenalty || 0)}, ...modifierRows] : [],
       targetLabels: roll ? Array.from(game.user.targets || []).map(token => token?.name || token?.actor?.name || "") : null,
       totalLabelKey: "TRUDVANG.Dialog.AllocatedPoints"
     });
@@ -1577,7 +1607,7 @@ export class TrudvangActor extends BaseActor {
     if (this.isOwner) await this.spendCombatPoints(spending.allocation, {freeScope: poolResolution.freeScope});
     if (roll) return rollUnder({actor: this, label: title, target: spending.total,
       modifier: actionModifier + Number(options.modifier || 0), kind: "ability",
-      flavor: [game.i18n.format("TRUDVANG.Npc.SpecialActionCost", {points: spending.total}), rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>")});
+      flavor: [game.i18n.format("TRUDVANG.Npc.SpecialActionCost", {points: spending.total}), rollModifierFlavor([...this.rollEffectRows({kind: "ability", movement: true}), ...modifierRows])].filter(Boolean).join("<br>")});
     return spending;
   }
 

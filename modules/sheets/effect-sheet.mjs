@@ -1,5 +1,6 @@
 import {annotateRuleTestDescription, performRuleTest} from "../rule-tests.mjs";
 import {bindTitleSharing, bindSheetListMenus} from "../chat-sharing.mjs";
+import {effectChangePhase} from "../rules/effect-contributions.mjs";
 
 const ActiveEffectConfig = foundry.applications.sheets.ActiveEffectConfig;
 const TextEditorImpl = foundry.applications?.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
@@ -116,7 +117,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         type: c.type ?? "add",
         value: String(c.value ?? ""),
         priority: c.priority != null ? Number(c.priority) : null,
-        phase: c.phase ?? "final"
+        phase: effectChangePhase(c)
       }));
       partContext.changeTypes = {
         custom: game.i18n.localize("TRUDVANG.Effect.ChangeTypeCustom"),
@@ -139,8 +140,8 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
         "system.effective.skills.wilderness",
         "system.modifiers.rolls.allActions", "system.modifiers.rolls.combatActions",
         "system.modifiers.rolls.movementActions", "system.modifiers.rolls.attack",
-        "system.modifiers.rolls.parry", "system.modifiers.rolls.magic",
-        "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.damage",
+        "system.modifiers.rolls.parry", "system.modifiers.rolls.magic", "system.modifiers.rolls.initiative",
+        "system.modifiers.movement", "system.modifiers.protection", "system.modifiers.damage", "system.modifiers.fearFactor",
         "system.modifiers.bodyMax", "system.modifiers.combatMax",
         "system.modifiers.vitnerMax", "system.modifiers.divinityMax",
         "system.modifiers.bodyValue", "system.modifiers.combatValue",
@@ -291,7 +292,7 @@ export class TrudvangEffectSheet extends ActiveEffectConfig {
   // priority) so delete-by-DOM-index and save agree on row identity.
   static #normalizeChangeRows(rows) {
     return (Array.isArray(rows) ? rows : []).filter(c => c?.key)
-      .map(c => ({...c, priority: c.priority != null && c.priority !== "" ? Number(c.priority) : null}));
+      .map(c => ({...c, phase: effectChangePhase(c), priority: c.priority != null && c.priority !== "" ? Number(c.priority) : null}));
   }
 
   static async onAddStage(event, target) {

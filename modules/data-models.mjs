@@ -1,5 +1,6 @@
 import { ARMOR_ENCUMBRANCE_PENALTIES } from "./rules/equipment-resolver.mjs";
-import {npcCurrentTrait} from "./rules/npc-summary.mjs";
+import {npcCurrentTrait, npcBookSkillRows} from "./rules/npc-summary.mjs";
+import {TRUDVANG} from "./config.mjs";
 
 const fields = foundry.data.fields;
 
@@ -218,6 +219,11 @@ function actorCommonSchema() {
 }
 
 function prepareEffectiveActorData(model) {
+  // Book skill levels are the NPC's intrinsic values. Seed them before native
+  // effects so override/multiply/upgrade use the same base as additive changes.
+  for (const row of npcBookSkillRows(model.skillTree ?? [], {...TRUDVANG, localize: key => globalThis.game?.i18n?.localize(key) ?? key})) {
+    if (row.kind === "skill" && row.skillKey && model.skills?.[row.skillKey]) model.skills[row.skillKey].value = row.value;
+  }
   for (const key of Object.keys(model.effective.traits)) {
     model.effective.traits[key] = model.traitCurrent ? npcCurrentTrait(model, key) : Number(model.traits?.[key] || 0);
   }

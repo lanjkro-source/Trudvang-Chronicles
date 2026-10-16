@@ -1099,6 +1099,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Dialog.RuleTestTraitSpecificEffect` | Trait-specific modifier: {value} | Modificateur propre au trait : {value} |
 | `TRUDVANG.Dialog.TraitSituationResults` | Resistance roll results | Résultats des jets de résistance |
 | `TRUDVANG.Dialog.TraitSituationTokenHint` | Hover to indicate the token; click to center the view. | Survolez pour repérer le token ; cliquez pour centrer la vue. |
+| `TRUDVANG.Dialog.IncludedModifier` | already included in the base value | déjà compris dans la valeur de base |
 
 ## `TRUDVANG.Dialog.TraitSituationResult`
 

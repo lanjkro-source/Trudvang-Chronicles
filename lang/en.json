@@ -951,7 +951,8 @@
         "perfectSuccess": "!success!",
         "failure": "failure",
         "perfectFailure": "!failure!"
-      }
+      },
+      "IncludedModifier": "already included in the base value"
     },
     "Macro": {
       "SituationRoll": "Generic situation roll",

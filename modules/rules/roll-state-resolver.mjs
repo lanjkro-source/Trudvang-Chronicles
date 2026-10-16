@@ -12,5 +12,5 @@ export function actorStateRollModifiers(actor) {
 }
 
 export function rollModifierTotal(rows) {
-  return rows.reduce((total, row) => total + Number(row.value || 0), 0);
+  return rows.reduce((total, row) => total + (row.included ? 0 : Number(row.value || 0)), 0);
 }
