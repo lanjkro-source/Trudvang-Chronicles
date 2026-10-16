@@ -1052,6 +1052,7 @@ export class TrudvangActor extends BaseActor {
         target: baseVC,
         modifier,
         kind: "attack",
+        targetName: targetRow.name,
         flavor: [traitFlavor, manualFlavor, rollModifierFlavor(modifierRows)].filter(Boolean).join("<br>"),
         successConsequence,
         effectTarget: targetRow.effectTarget

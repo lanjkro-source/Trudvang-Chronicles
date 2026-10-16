@@ -53,15 +53,16 @@ export async function openD10(options = {}) {
   return openDice({...options, faces: 10});
 }
 
-export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = []}) {
+export async function rollUnder({actor, label, target, modifier = 0, kind = "skill", flavor = "", item = null, perfectSuccessMax = 1, automaticSuccessMax = 0, fatalEffect = null, feint = 0, usage = "", longRange = false, animateWithDiceSoNice = false, successConsequence = "", failureConsequence = "", criticalSuccessConsequence = "", criticalFailureConsequence = "", effectTarget = null, attackTargets = [], targetName = ""}) {
   const finalTarget = Number(target) + Number(modifier || 0);
   const roll = await evaluate("1d20");
   const result = Number(roll.total);
   const outcome = resolveRollUnderOutcome(result, finalTarget, {perfectSuccessMax, automaticSuccessMax});
   const {critical, margin} = outcome;
+  const attackMargin = target => `${target - result >= 0 ? "+" : ""}${target - result}`;
   const targetResults = attackTargets.map(row => {
     const target = finalTarget + row.modifier - attackTargets[0].modifier;
-    return {...row, target, ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
+    return {...row, target, attackMargin: attackMargin(target), ...resolveRollUnderOutcome(result, target, {perfectSuccessMax, automaticSuccessMax})};
   });
   const success = targetResults.length ? targetResults.some(row => row.success) : outcome.success;
   const content = await renderTemplate("systems/trudvang-chronicles/templates/chat/roll-card.hbs", {
@@ -73,6 +74,8 @@ export async function rollUnder({actor, label, target, modifier = 0, kind = "ski
     modifier: Number(modifier || 0),
     success,
     margin,
+    attackMargin: attackMargin(finalTarget),
+    targetName,
     critical,
     fatalEffect: critical === "failure" ? fatalEffect : null,
     kind,
@@ -696,8 +699,8 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
   const varyingSizes = new Set(sizeTargets.map(target => target.modifier)).size > 1;
   const sizeRows = sizeTargets.filter(target => target.modifier !== 0);
   const breakdown = modifierRows.map(row => `<li><span>${escapeHtml(modifierLabel(row))}</span><b>${signedModifier(row.value)}</b></li>`).join("");
-  const targets = Array.isArray(targetLabels) ? `<section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))}</strong>${targetLabels.length
-    ? `<ul>${targetLabels.map(name => `<li>${escapeHtml(name)}</li>`).join("")}</ul>`
+  const targets = Array.isArray(targetLabels) ? `<section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))} :</strong> ${targetLabels.length
+    ? `<span class="combat-target-names">${targetLabels.map(name => escapeHtml(name)).join(", ")}</span>`
     : `<p class="combat-no-targets">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoAttackTargets"))}</p>`}</section>` : "";
   const renderMode = mode => {
     const modePools = mode.pools || [];
@@ -726,7 +729,7 @@ export async function combatPointDialog({title, pools, defaultAllocation = {}, b
       ${rows}
       <div class="combat-pool-slider"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.CombatPoolSlider"))}</label><input type="range" data-combat-slider min="0" max="${sliderMaximum}" step="${allocationMultiple}" value="${sliderInitial}"></div>
       ${modeMaximumFeint ? `<div class="form-group"><label>${escapeHtml(game.i18n.format("TRUDVANG.Dialog.Feint", {max: modeMaximumFeint}))}</label><input name="feint" type="number" min="0" max="${Math.min(modeMaximumFeint, initialTotal)}" step="1" value="0"></div>` : ""}
-      ${sizeRows.length ? `<div class="combat-size-modifiers"><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))}</span>${varyingSizes ? `<ul>${sizeRows.map(target => `<li>${escapeHtml(target.name)} : <b>${signedModifier(target.modifier)}</b></li>`).join("")}</ul>` : `<b>${signedModifier(sizeModifier)}</b>`}</div>` : ""}
+      ${sizeRows.length ? `<ul class="combat-modifier-breakdown combat-size-modifiers">${varyingSizes ? sizeRows.map(target => `<li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))} · ${escapeHtml(target.name)}</span><b>${signedModifier(target.modifier)}</b></li>`).join("") : `<li><span>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.SizeAttackModifier"))}</span><b>${signedModifier(sizeModifier)}</b></li>`}</ul>` : ""}
       ${varyingSizes ? `<div class="combat-size-values"><span>${escapeHtml(game.i18n.localize(totalLabelKey))}</span><ul>${sizeTargets.map(target => `<li>${escapeHtml(target.name)} : <strong data-combat-target-total data-size-modifier="${target.modifier}">${allocatedCombatVC(sliderInitial, 0, target.modifier, targetPointCost)}</strong></li>`).join("")}</ul></div>` : `<p>${escapeHtml(game.i18n.localize(totalLabelKey))}: <strong data-combat-total>${allocatedCombatVC(sliderInitial, 0, sizeModifier, targetPointCost)}</strong></p>`}
       ${combatPointBonus ? `<p>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.EquipmentCombatPointBonus"))}: <strong>${combatPointBonus > 0 ? "+" : ""}${combatPointBonus}</strong></p>` : ""}
       ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
@@ -880,8 +883,9 @@ export async function fixedAttackDialog({title, baseVC = 0, targets = [], target
     return `<li data-fixed-attack-target data-trait-value="${Number(target.traitValue || 0)}"><span>${name}<small>${escapeHtml(traitText)}</small></span><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackFinalTarget"))} <b data-fixed-attack-final>${base - Number(target.traitValue || 0) + fixedModifier}</b></strong></li>`;
   }).join("")}</ul>` : `<p class="combat-no-targets">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackNoTargets"))}<strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackFinalTarget"))} <b data-fixed-attack-no-target-final>${base + fixedModifier}</b></strong></p>`;
   const content = `<div class="trudvang roll-dialog fixed-attack-dialog">
-    <section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))}</strong>${targetRows}</section>
+    <section class="combat-target-list"><strong>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.AttackTargets"))} :</strong> ${hasTargets ? `<span class="combat-target-names">${targets.filter(target => target?.token || target?.actor).map(target => escapeHtml(target.name || target.actor?.name || "")).join(", ")}</span>` : escapeHtml(game.i18n.localize("TRUDVANG.Dialog.NoAttackTargets"))}</section>
     <p class="fixed-attack-base-target">${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.FixedAttackBaseTarget"))}: <strong>${base}</strong></p>
+    ${targetRows}
     ${breakdown ? `<ul class="combat-modifier-breakdown">${breakdown}</ul>` : ""}
     <div class="form-group"><label>${escapeHtml(game.i18n.localize("TRUDVANG.Dialog.Modifier"))}</label><input name="modifier" type="number" value="0"></div>
   </div>`;

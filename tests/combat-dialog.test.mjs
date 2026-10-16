@@ -27,8 +27,9 @@ test("combat final skill value is highlighted after the situational modifier in 
   await combatPointDialog({title: "Attack / parry", pools, combatModes: {
     uncheckedMode: "melee", checkedMode: "throwing", defaultMode: "melee",
     modes: [{id: "melee", pools}, {id: "throwing", pools}]
-  }, targetLabels: ["Troll"]});
+  }, targetLabels: ["Troll", "Wolf", "Dragon"]});
   assert.match(dialogs[0].content, /TRUDVANG\.Dialog\.AttackTargets[\s\S]*Troll/);
+  assert.match(dialogs[0].content, /class="combat-target-names">Troll, Wolf, Dragon<\/span>/);
   const sections = [...dialogs[0].content.matchAll(/<section data-combat-mode="[^"]+"[^>]*>([\s\S]*?)<\/section>/g)];
   assert.equal(sections.length, 2);
   for (const [, content] of sections) {
@@ -73,7 +74,7 @@ test("size is below feint, omitted at zero, and updates allocated and final VC f
   const dialogs = runtime(t);
   await combatPointDialog({title: "Attack", pools, feintMax: 5, defaultAllocation: {free: 10}, sizeTargets: [{name: "Large", modifier: 4}]});
   const html = dialogs[0].content;
-  assert.ok(html.indexOf('name="feint"') < html.indexOf('class="combat-size-modifiers"'));
+  assert.ok(html.indexOf('name="feint"') < html.indexOf('class="combat-modifier-breakdown combat-size-modifiers"'));
   assert.match(html, /data-combat-total>14</);
   await combatPointDialog({title: "Attack", pools, sizeTargets: [{name: "Same", modifier: 0}]});
   assert.doesNotMatch(dialogs[1].content, /combat-size-modifiers/);

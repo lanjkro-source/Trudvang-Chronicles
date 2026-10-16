@@ -80,6 +80,14 @@ test("one attack die gives target-specific outcomes and keeps critical outcomes 
   assert.match(messages.at(-1).content, /attack-target-result failure/);
   assert.match(messages.at(-1).content, /attack-target-result success/);
   assert.match(messages.at(-1).content, /data-action="damage"/);
+  assert.deepEqual(mixed.attackTargets.map(row => row.attackMargin), ["-4", "+2"]);
+  assert.doesNotMatch(messages.at(-1).content, /success-margin/);
+  assert.match(messages.at(-1).content, /Small<\/strong>: TRUDVANG\.Roll\.Failure \(-4\)/);
+  for (const [target, margin] of [[16, "+6"], [9, "-1"]]) {
+    await rollUnder({actor, kind: "attack", target, label: "Attack", attackTargets: [{name: "Solo", modifier: 0}]});
+    assert.ok(messages.at(-1).content.includes(`(${margin})`));
+    assert.doesNotMatch(messages.at(-1).content, /success-margin/);
+  }
   for (const value of [1, 20]) {
     die = value;
     const result = await rollUnder({actor, kind: "attack", target: 6, attackTargets: targets, label: "Attack"});

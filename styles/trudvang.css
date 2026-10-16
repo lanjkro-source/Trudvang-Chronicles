@@ -710,8 +710,9 @@
 .trudvang.inspection-dialog li.conditional { border-left: 3px solid var(--trudvang-gold); padding-left: 7px; }
 .trudvang.combat-pool-dialog .combat-pool-slider { display: grid; grid-template-columns: 1fr; gap: 3px; margin: 8px 0 4px; }
 .trudvang.roll-dialog .combat-target-list { margin: 7px 0; padding: 7px 9px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); border-left: 3px solid var(--trudvang-gold); }
-.trudvang.roll-dialog .combat-target-list > strong { display: block; margin-bottom: 3px; }
+.trudvang.roll-dialog .combat-target-list > strong { display: inline; margin: 0; }
 .trudvang.roll-dialog .combat-target-list ul, .trudvang.roll-dialog .fixed-attack-targets { margin: 0; padding: 0; list-style: none; }
+.trudvang.roll-dialog .fixed-attack-targets { padding: 5px 9px; color: var(--trudvang-on-header); background: color-mix(in srgb, var(--trudvang-header-alt) 84%, var(--trudvang-header)); }
 .trudvang.roll-dialog .combat-target-list li { padding: 2px 0; }
 .trudvang.roll-dialog .combat-no-targets { margin: 3px 0 0; padding: 5px 7px; color: var(--trudvang-negative); background: color-mix(in srgb, var(--trudvang-negative) 10%, var(--trudvang-header)); font-weight: 700; }
 .trudvang.roll-dialog .combat-no-targets strong { display: block; margin-top: 4px; color: var(--trudvang-on-header); }
@@ -1073,10 +1074,9 @@
   padding-left: 18px;
 }
 
-.trudvang .combat-size-modifiers { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin: 6px 0; color: var(--trudvang-accent); }
-.trudvang .combat-size-modifiers ul, .trudvang .combat-size-values ul { list-style: none; margin: 0; padding: 0; }
+.trudvang .combat-size-values ul { list-style: none; margin: 0; padding: 0; }
 .trudvang .combat-size-values li { display: flex; justify-content: space-between; gap: 8px; }
 .trudvang.chat-card .attack-target-results { list-style: none; margin: 8px; padding: 0; }
-.trudvang.chat-card .attack-target-result { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; padding: 5px; border-left: 2px solid currentColor; }
+.trudvang.chat-card .attack-target-result { padding: 5px; border-left: 2px solid currentColor; }
 .trudvang.chat-card .attack-target-result.success { color: var(--trudvang-positive); background: var(--trudvang-positive-soft); }
 .trudvang.chat-card .attack-target-result.failure { color: var(--trudvang-negative); background: var(--trudvang-negative-soft); }
