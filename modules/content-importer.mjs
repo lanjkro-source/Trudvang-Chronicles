@@ -624,7 +624,7 @@ async function importBestiaryAnimals(folders) {
   // world startup for a path that only runs during the starter import.
   let animalIds;
   try {
-    ({BESTIARY_ENTRIES} = await import("./bestiary-catalog-data.mjs"));
+    const {BESTIARY_ENTRIES} = await import("./bestiary-catalog-data.mjs");
     animalIds = new Set(BESTIARY_ENTRIES.filter(entry => entry.family === "animal").map(entry => entry.id));
   } catch (error) {
     console.warn("Trudvang Chronicles | Bestiary catalogue unavailable; the Animals folder stays empty.", error);
@@ -1019,7 +1019,7 @@ const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accuei
 // A scene with no thumbnail is a blank entry in the sidebar, and Foundry only rebuilds the
 // thumbnail when its background actually changes — so the import has to say what it found.
 function reportScene(scene, label) {
-  const src = scene?.levels.get(0)?.background?.src;
+  const src = scene?.levels[0]?.background?.src;
   console.info(`Trudvang Chronicles | ${label}: ${scene
     ? `background ${src ?? "none"}, thumbnail ${scene.thumb ? "present" : "absent"}`
     : "not created"}.`);
