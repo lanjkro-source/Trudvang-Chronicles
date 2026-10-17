@@ -31,8 +31,8 @@
     "attacks": [],
     "resources": {
       "body": {
-        "value": 10,
-        "max": 10
+        "value": 11,
+        "max": 11
       }
     },
     "combatPools": {
@@ -57,7 +57,7 @@
       "naturalArmor": 0,
       "fearFactor": "",
       "bodyMin": 6,
-      "bodyMax": 15,
+      "bodyMax": 17,
       "move": [],
       "armor": [],
       "summary": "Mort-vivant animé : 1d10 (JO 10) + 5 PS, Dextérité -4, Intelligence -4, perception de la vie.",

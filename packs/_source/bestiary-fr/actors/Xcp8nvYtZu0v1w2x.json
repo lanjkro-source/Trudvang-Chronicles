@@ -1,0 +1,169 @@
+{
+  "name": "Corbeau",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg",
+  "items": [
+    {
+      "_id": "carw52v1w2x3y4z5",
+      "name": "Bec",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "beak",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.carw52v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Rapide",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Double le mouvement de combat habituel lié à la taille, sans dépasser le mouvement maximum par tour.",
+        "description": "<p>La créature coordonne ses membres mieux que d’autres animaux et peut, en combat, se déplacer jusqu’à deux fois plus vite que ne le permet habituellement sa taille, tout en gardant le contrôle de son environnement. Elle ne peut jamais dépasser son mouvement maximum par tour de jeu.</p><p>Le bestiaire applique ce trait aux animaux signalés « Rapide » dans la table des animaux, ainsi qu’aux loups, wargs, skolls, garms et braskelwurms. Loups, wargs et skolls se déplacent de 4 m pour 2 PC ; les garms de Taille 3 se déplacent de 12 m pour 2 PC ; le braskelwurm de 4 m pour 2 PC. Pour les autres animaux, les valeurs du mouvement par 2 PC et du maximum sont celles de leur ligne dans la table des animaux.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.41hqc1sYtZu0v1w2"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Vision nocturne",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Vision comme en plein jour sous une faible lumière (étoiles, lune, torche), mais pas dans le noir total.",
+        "description": "<p>La créature voit dans les environnements faiblement éclairés comme en plein jour : lumière des étoiles, de la lune ou d’une torche, par exemple. Cette capacité nécessite donc une source lumineuse, même faible ; elle ne permet pas de voir dans le noir total.</p><p>Les wargs concernés voient dans ces mêmes conditions. Les variantes de ce pouvoir décrites pour les bêtes épineuses, beinbaiters, fées, nymphes, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjoltrolls, gråtrolls, hrimtrolls et skogstrolls ont le même effet technique.</p>",
+        "source": {
+          "book": "Bestiaire de Jorge",
+          "page": 18
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Xcp8nvYtZu0v1w2x",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+    ],
+    "traits": {
+      "dexterity": 4,
+      "constitution": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Combat",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "action": "movement",
+          "mode": "flight",
+          "distance": 8,
+          "value": 4
+        },
+        {
+          "attack": "Bec",
+          "itemId": "carw52v1w2x3y4z5",
+          "action": "attack",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 9,
+        "max": 9
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Petit corvidé noir au plumage lustré aux reflets irisés, au bec lourd et incurvé, aux ailes larges et aux yeux d'une intelligence redoutable. Hardis opportunistes, les corbeaux suivent les armées, se repaissent des morts et hantent les anciens champs de bataille ; ils se souviennent avec la même précision des faveurs reçues et des outrages subis. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du corbeau.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "bird",
+      "size": "0.25",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 8,
+      "bodyMax": 10,
+      "move": [
+        {
+          "mode": "vol",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Corvidé noir, rapide et hardi, dressé au pillage des champs de bataille.",
+      "environment": "Partout en Trudvang : champs de bataille, forêts, villages et fermes. Les corbeaux sont rarement loin d'un établissement ou d'une mort récente.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 236
+      }
+    }
+  },
+  "_id": "Xcp8nvYtZu0v1w2x",
+  "_key": "!actors!Xcp8nvYtZu0v1w2x",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

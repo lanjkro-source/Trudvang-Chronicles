@@ -1,0 +1,78 @@
+{
+  "name": "Saumon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "jMX2BTmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW-2.jpg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 7,
+        "max": 7
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "Saumon argenté des rivières et fleuves de Trudvang, moucheté de noir sur les flancs et doté d'un maxillaire robuste et accrocheur. Il remonte des estuaires vers les sources pour y frayer, franchissant les cataractes à contre-courant, puis meurt après la ponte sans jamais redescendre. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du saumon.",
+    "details": {
+      "creatureType": "Animaux",
+      "type": "other",
+      "size": "0.5",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 6,
+      "bodyMax": 8,
+      "move": [
+        {
+          "mode": "nage",
+          "distance": "4 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Saumon argenté des rivières, infatigable remontée des courants.",
+      "environment": "Rivières et fleuves de Trudvang, pendant la remontée de la montaison.",
+      "source": {
+        "book": "Livre des règles",
+        "page": 235
+      }
+    }
+  },
+  "_id": "jMX2BTmSnToUpVqW",
+  "_key": "!actors!jMX2BTmSnToUpVqW",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

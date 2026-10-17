@@ -11849,6 +11849,24 @@
           "Summary": "A corpse or skeleton animated and controlled by its creator.",
           "Environment": "Temporary manifestation produced by a power or ritual.",
           "SourceBook": "Rulebook"
+        },
+        "Xcp8nvYtZu0v1w2x": {
+          "Skill0": "Fighting",
+          "Weapon0Part0": "Beak",
+          "Name": "Raven",
+          "Description": "A small glossy-black corvid with faintly iridescent plumage, a heavy curved beak and startlingly clever eyes. Ravens are bold opportunists that follow armies, feast on the fallen and haunt old battlefields, remembering favours and slights with equal precision.",
+          "Age": "null",
+          "Summary": "Glossy black corvid, quick and watchful, credited with seeing the invisible.",
+          "Environment": "Everywhere in Trudvang: battlefields, forests, villages and farms. Ravens are rarely far from a settlement or a recent death.",
+          "SourceBook": "Player's Handbook"
+        },
+        "jMX2BTmSnToUpVqW": {
+          "Name": "Salmon",
+          "Description": "A silvery salmon of Trudvang's rivers, dark-spotted along the flank and heavy of jaw. Salmon migrate upstream from the sea to lay their eggs, leaping the shallows on the way.",
+          "Age": "null",
+          "Summary": "Silvery river fish, migrating upstream in great shoals.",
+          "Environment": "Rivers and streams of Trudvang, during their upstream migration.",
+          "SourceBook": "Player's Handbook"
         }
       }
     }

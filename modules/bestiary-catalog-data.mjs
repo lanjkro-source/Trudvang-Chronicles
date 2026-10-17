@@ -18447,8 +18447,8 @@ export const BESTIARY_ENTRIES = [
         "attacks": [],
         "resources": {
           "body": {
-            "value": 10,
-            "max": 10
+            "value": 11,
+            "max": 11
           }
         },
         "combatPools": {
@@ -18473,7 +18473,7 @@ export const BESTIARY_ENTRIES = [
           "naturalArmor": 0,
           "fearFactor": "",
           "bodyMin": 6,
-          "bodyMax": 15,
+          "bodyMax": 17,
           "move": [],
           "armor": [],
           "summaryKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Summary",
@@ -18481,6 +18481,232 @@ export const BESTIARY_ENTRIES = [
           "source": {
             "bookKey": "TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.SourceBook",
             "page": 156
+          }
+        }
+      }
+    },
+    "featIds": [],
+    "tablets": []
+  },
+  {
+    "id": "Xcp8nvYtZu0v1w2x",
+    "family": "animal",
+    "pages": {
+      "fr": 236,
+      "en": 178
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg",
+      "items": [
+        {
+          "_id": "carw52v1w2x3y4z5",
+          "nameKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Weapon0Part0",
+          "type": "weapon",
+          "img": "icons/svg/combat.svg",
+          "system": {
+            "category": "natural",
+            "combatSpecialty": "natural",
+            "isUnarmed": false,
+            "equipped": true,
+            "quantity": 1,
+            "strengthApplies": true,
+            "damage": "1d10",
+            "openRoll": 10,
+            "damageBonus": 0,
+            "initiativeModifier": 0,
+            "naturalCombatPool": "beak",
+            "naturalCombatPoints": 8,
+            "naturalCombatPointsSpent": 0,
+            "weaponActionsSpent": 0
+          }
+        }
+      ],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "Xcp8nvYtZu0v1w2x",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 0.5,
+        "height": 0.5,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+        ],
+        "traits": {
+          "dexterity": 4,
+          "constitution": 4
+        },
+        "skills": {
+          "fighting": {
+            "value": 8,
+            "bonus": 0
+          }
+        },
+        "skillTree": [
+          {
+            "nameKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Skill0",
+            "skillId": "fighting",
+            "catalogId": "",
+            "value": 8,
+            "kind": "skill"
+          }
+        ],
+        "attacks": [
+          [
+            {
+              "action": "movement",
+              "mode": "flight",
+              "distance": 8,
+              "value": 4
+            },
+            {
+              "attackKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Weapon0Part0",
+              "itemId": "carw52v1w2x3y4z5",
+              "action": "attack",
+              "value": 12
+            }
+          ]
+        ],
+        "resources": {
+          "body": {
+            "value": 9,
+            "max": 9
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.animal",
+          "type": "bird",
+          "size": "0.25",
+          "ageKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 8,
+          "bodyMax": 10,
+          "move": [
+            {
+              "mode": "vol",
+              "distance": "4 m",
+              "max": "24 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.SourceBook",
+            "page": 236
+          }
+        }
+      }
+    },
+    "featIds": [
+      "41hqc1sYtZu0v1w2",
+      "jrI2efIdJeKfLgMh"
+    ],
+    "tablets": []
+  },
+  {
+    "id": "jMX2BTmSnToUpVqW",
+    "family": "animal",
+    "pages": {
+      "fr": 235,
+      "en": 177
+    },
+    "actor": {
+      "nameKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Name",
+      "type": "npc",
+      "img": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+      "items": [],
+      "effects": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "bestiaryId": "jMX2BTmSnToUpVqW",
+          "inventoryInitialized": true
+        }
+      },
+      "prototypeToken": {
+        "actorLink": false,
+        "width": 1,
+        "height": 1,
+        "texture": {
+          "src": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg"
+        }
+      },
+      "system": {
+        "portraits": [
+          "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+          "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW-2.jpg"
+        ],
+        "traits": {},
+        "skills": {},
+        "skillTree": [],
+        "attacks": [],
+        "resources": {
+          "body": {
+            "value": 7,
+            "max": 7
+          }
+        },
+        "combatPools": {
+          "free": {
+            "spent": 0,
+            "weaponSpent": 0,
+            "offHandSpent": 0
+          }
+        },
+        "initiative": {
+          "base": null
+        },
+        "movement": {
+          "base": 0
+        },
+        "descriptionKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Description",
+        "details": {
+          "creatureTypeKey": "TRUDVANG.Npc.CreatureTypes.animal",
+          "type": "other",
+          "size": "0.5",
+          "ageKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Age",
+          "naturalArmor": 0,
+          "fearFactor": "",
+          "bodyMin": 6,
+          "bodyMax": 8,
+          "move": [
+            {
+              "mode": "nage",
+              "distance": "4 m",
+              "max": "12 m"
+            }
+          ],
+          "armor": [],
+          "summaryKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Summary",
+          "environmentKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Environment",
+          "source": {
+            "bookKey": "TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.SourceBook",
+            "page": 235
           }
         }
       }

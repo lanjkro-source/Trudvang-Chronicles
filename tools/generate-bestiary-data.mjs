@@ -26,7 +26,7 @@ const weaponIds = {branchesdarbre: "Stafur", branchedarbre: "Stafur", arbrederac
   grandbouclierrondrenforce: "LargeShield"};
 const naturalNames = {morsure: "Bite", defenses: "Tusks", defense: "Tusks", griffes: "Claws", griffure: "Claws",
   cornes: "Horns", mainsnues: "Unarmed", patteempaleuse: "Impaling leg", sabots: "Hooves", ruade: "Kick", balayage: "Sweep",
-  souffledeglace: "Ice breath", soufflemagmatique: "Magma breath", souffledefeu: "Fire breath"};
+  bec: "Beak", souffledeglace: "Ice breath", soufflemagmatique: "Magma breath", souffledefeu: "Fire breath"};
 const traitKeys = {force: "strength", dextérité: "dexterity", constitution: "constitution", intelligence: "intelligence",
   charisme: "charisma", psychisme: "psyche", perception: "perception"};
 const families = {beast: ["Beasts", "Bêtes"], mist: ["Mist creatures", "Créatures des brumes"], nature: ["Nature beings", "Êtres de la nature"],

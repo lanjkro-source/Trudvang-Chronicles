@@ -1,0 +1,78 @@
+{
+  "name": "Salmon",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+  "items": [],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "jMX2BTmSnToUpVqW",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 1,
+    "height": 1,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW.jpg",
+      "systems/trudvang-chronicles/assets/bestiary/jMX2BTmSnToUpVqW-2.jpg"
+    ],
+    "traits": {},
+    "skills": {},
+    "skillTree": [],
+    "attacks": [],
+    "resources": {
+      "body": {
+        "value": 7,
+        "max": 7
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A silvery salmon of Trudvang's rivers, dark-spotted along the flank and heavy of jaw. Salmon migrate upstream from the sea to lay their eggs, leaping the shallows on the way.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "other",
+      "size": "0.5",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 6,
+      "bodyMax": 8,
+      "move": [
+        {
+          "mode": "nage",
+          "distance": "4 m",
+          "max": "12 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Silvery river fish, migrating upstream in great shoals.",
+      "environment": "Rivers and streams of Trudvang, during their upstream migration.",
+      "source": {
+        "book": "Player's Handbook",
+        "page": 177
+      }
+    }
+  },
+  "_id": "jMX2BTmSnToUpVqW",
+  "_key": "!actors!jMX2BTmSnToUpVqW",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

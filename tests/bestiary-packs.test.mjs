@@ -31,7 +31,7 @@ test("the four declared packs contain all creatures/capacities and stable biling
     const banner = readFileSync(new URL(`../${pack.banner.replace("systems/trudvang-chronicles/", "")}`, import.meta.url));
     assert.deepEqual([...banner.subarray(0, 2)], [0xff, 0xd8], "the shared banner must be an available JPEG");
   }
-  assert.equal(packs.fr.actors.length, 86); assert.equal(featPacks.fr.items.length, 149);
+  assert.equal(packs.fr.actors.length, 88); assert.equal(featPacks.fr.items.length, 149);
   assert.deepEqual(packs.fr.actors.map(a => a._id), packs.en.actors.map(a => a._id));
   assert.deepEqual(featPacks.fr.items.map(a => a._id), featPacks.en.items.map(a => a._id));
   assert.equal(new Set(BESTIARY_ENTRIES.map(e => e.id)).size, BESTIARY_ENTRIES.length);
@@ -60,8 +60,8 @@ test("each bestiary actor has valid folders, embedded identities, independent to
   }
 });
 
-test("all 121 source images are available in both Bestiary portrait galleries", () => {
-  for (const {actors} of Object.values(packs)) assert.equal(actors.reduce((sum, actor) => sum + actor.system.portraits.length, 0), 121);
+test("all 124 source images are available in both Bestiary portrait galleries", () => {
+  for (const {actors} of Object.values(packs)) assert.equal(actors.reduce((sum, actor) => sum + actor.system.portraits.length, 0), 124);
 });
 
 test("Bestiary assets contain the current portraits, without obsolete copies or starter creature art", () => {

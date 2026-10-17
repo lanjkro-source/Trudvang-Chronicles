@@ -1,0 +1,169 @@
+{
+  "name": "Raven",
+  "type": "npc",
+  "img": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg",
+  "items": [
+    {
+      "_id": "carw52v1w2x3y4z5",
+      "name": "Beak",
+      "type": "weapon",
+      "img": "icons/svg/combat.svg",
+      "system": {
+        "category": "natural",
+        "combatSpecialty": "natural",
+        "isUnarmed": false,
+        "equipped": true,
+        "quantity": 1,
+        "strengthApplies": true,
+        "damage": "1d10",
+        "openRoll": 10,
+        "damageBonus": 0,
+        "initiativeModifier": 0,
+        "naturalCombatPool": "beak",
+        "naturalCombatPoints": 8,
+        "naturalCombatPointsSpent": 0,
+        "weaponActionsSpent": 0
+      },
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.carw52v1w2x3y4z5",
+      "effects": []
+    },
+    {
+      "_id": "41hqc1sYtZu0v1w2",
+      "name": "Fast",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "41hqc1sYtZu0v1w2",
+        "summary": "Doubles normal size-based combat movement without exceeding maximum movement per round.",
+        "description": "<p>The creature coordinates its limbs better than other animals and can move in combat up to twice as fast as its size normally permits, while remaining aware of its surroundings. It can never exceed its maximum movement per action round.</p><p>The bestiary applies this feat to the animals marked Fast in the animal table, as well as wolves, wargs, skolls, garms, and braskelwurms. Wolves, wargs, and skolls move 4 m per 2 CP; Size 3 garms move 12 m per 2 CP; a braskelwurm moves 4 m per 2 CP. For other animals, movement per 2 CP and maximum movement are those in their row of the animal table.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 30
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.41hqc1sYtZu0v1w2"
+    },
+    {
+      "_id": "jrI2efIdJeKfLgMh",
+      "name": "Low-Light Vision",
+      "type": "creatureAbility",
+      "img": "icons/svg/aura.svg",
+      "system": {
+        "catalogId": "jrI2efIdJeKfLgMh",
+        "summary": "Daylight-like vision under weak light (stars, moon, torch), but not in total darkness.",
+        "description": "<p>The creature sees in dimly lit surroundings as in daylight: starlight, moonlight, or torchlight, for example. This ability therefore requires a light source, however weak; it does not provide vision in total darkness.</p><p>The relevant warg beasts see under these same conditions. The versions described for thorn beasts, beinbaiters, fairies, nymphs, skjulds, firdtursirs, logrjotuns, muspeljotuns, fjol trolls, gray trolls, hrim trolls, and forest trolls have the same mechanical effect.</p>",
+        "source": {
+          "book": "Jorgi's Bestiary",
+          "page": 26
+        },
+        "ignoreWoundPenalties": false
+      },
+      "effects": [],
+      "_key": "!actors.items!Xcp8nvYtZu0v1w2x.jrI2efIdJeKfLgMh"
+    }
+  ],
+  "effects": [],
+  "flags": {
+    "trudvang-chronicles": {
+      "bestiaryId": "Xcp8nvYtZu0v1w2x",
+      "inventoryInitialized": true
+    }
+  },
+  "prototypeToken": {
+    "actorLink": false,
+    "width": 0.5,
+    "height": 0.5,
+    "texture": {
+      "src": "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+    }
+  },
+  "system": {
+    "portraits": [
+      "systems/trudvang-chronicles/assets/bestiary/Xcp8nvYtZu0v1w2x.jpg"
+    ],
+    "traits": {
+      "dexterity": 4,
+      "constitution": 4
+    },
+    "skills": {
+      "fighting": {
+        "value": 8,
+        "bonus": 0
+      }
+    },
+    "skillTree": [
+      {
+        "name": "Fighting",
+        "skillId": "fighting",
+        "catalogId": "",
+        "value": 8,
+        "kind": "skill"
+      }
+    ],
+    "attacks": [
+      [
+        {
+          "action": "movement",
+          "mode": "flight",
+          "distance": 8,
+          "value": 4
+        },
+        {
+          "attack": "Beak",
+          "itemId": "carw52v1w2x3y4z5",
+          "action": "attack",
+          "value": 12
+        }
+      ]
+    ],
+    "resources": {
+      "body": {
+        "value": 9,
+        "max": 9
+      }
+    },
+    "combatPools": {
+      "free": {
+        "spent": 0,
+        "weaponSpent": 0,
+        "offHandSpent": 0
+      }
+    },
+    "initiative": {
+      "base": null
+    },
+    "movement": {
+      "base": 0
+    },
+    "description": "A small glossy-black corvid with faintly iridescent plumage, a heavy curved beak and startlingly clever eyes. Ravens are bold opportunists that follow armies, feast on the fallen and haunt old battlefields, remembering favours and slights with equal precision.",
+    "details": {
+      "creatureType": "Animals",
+      "type": "bird",
+      "size": "0.25",
+      "age": "null",
+      "naturalArmor": 0,
+      "fearFactor": "",
+      "bodyMin": 8,
+      "bodyMax": 10,
+      "move": [
+        {
+          "mode": "vol",
+          "distance": "4 m",
+          "max": "24 m"
+        }
+      ],
+      "armor": [],
+      "summary": "Glossy black corvid, quick and watchful, credited with seeing the invisible.",
+      "environment": "Everywhere in Trudvang: battlefields, forests, villages and farms. Ravens are rarely far from a settlement or a recent death.",
+      "source": {
+        "book": "Player's Handbook",
+        "page": 178
+      }
+    }
+  },
+  "_id": "Xcp8nvYtZu0v1w2x",
+  "_key": "!actors!Xcp8nvYtZu0v1w2x",
+  "folder": "WQpx9x1w2x3y4z5A"
+}

@@ -31,8 +31,8 @@
     "attacks": [],
     "resources": {
       "body": {
-        "value": 10,
-        "max": 10
+        "value": 11,
+        "max": 11
       }
     },
     "combatPools": {
@@ -57,7 +57,7 @@
       "naturalArmor": 0,
       "fearFactor": "",
       "bodyMin": 6,
-      "bodyMax": 15,
+      "bodyMax": 17,
       "move": [],
       "armor": [],
       "summary": "A corpse or skeleton animated and controlled by its creator.",

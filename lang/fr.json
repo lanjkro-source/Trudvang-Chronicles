@@ -11849,6 +11849,24 @@
           "Summary": "Mort-vivant animé : 1d10 (JO 10) + 5 PS, Dextérité -4, Intelligence -4, perception de la vie.",
           "Environment": "Manifestation temporaire produite par un pouvoir ou un rituel.",
           "SourceBook": "Livre des règles"
+        },
+        "Xcp8nvYtZu0v1w2x": {
+          "Skill0": "Combat",
+          "Weapon0Part0": "Bec",
+          "Name": "Corbeau",
+          "Description": "Petit corvidé noir au plumage lustré aux reflets irisés, au bec lourd et incurvé, aux ailes larges et aux yeux d'une intelligence redoutable. Hardis opportunistes, les corbeaux suivent les armées, se repaissent des morts et hantent les anciens champs de bataille ; ils se souviennent avec la même précision des faveurs reçues et des outrages subis. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du corbeau.",
+          "Age": "null",
+          "Summary": "Corvidé noir, rapide et hardi, dressé au pillage des champs de bataille.",
+          "Environment": "Partout en Trudvang : champs de bataille, forêts, villages et fermes. Les corbeaux sont rarement loin d'un établissement ou d'une mort récente.",
+          "SourceBook": "Livre des règles"
+        },
+        "jMX2BTmSnToUpVqW": {
+          "Name": "Saumon",
+          "Description": "Saumon argenté des rivières et fleuves de Trudvang, moucheté de noir sur les flancs et doté d'un maxillaire robuste et accrocheur. Il remonte des estuaires vers les sources pour y frayer, franchissant les cataractes à contre-courant, puis meurt après la ponte sans jamais redescendre. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du saumon.",
+          "Age": "null",
+          "Summary": "Saumon argenté des rivières, infatigable remontée des courants.",
+          "Environment": "Rivières et fleuves de Trudvang, pendant la remontée de la montaison.",
+          "SourceBook": "Livre des règles"
         }
       }
     }

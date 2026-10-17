@@ -9823,3 +9823,25 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Age` | not specified | non précisé |
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.Environment` | Temporary manifestation produced by a power or ritual. | Manifestation temporaire produite par un pouvoir ou un rituel. |
 | `TRUDVANG.Content.Creature.6CXofdE9EaGbHcId.SourceBook` | Rulebook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Skill0` | Fighting | Combat |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Weapon0Part0` | Beak | Bec |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Name` | Raven | Corbeau |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Description` | A small glossy-black corvid with faintly iridescent plumage, a heavy curved beak and startlingly clever eyes. Ravens are bold opportunists that follow armies, feast on the fallen and haunt old battlefields, remembering favours and slights with equal precision. | Petit corvidé noir au plumage lustré aux reflets irisés, au bec lourd et incurvé, aux ailes larges et aux yeux d'une intelligence redoutable. Hardis opportunistes, les corbeaux suivent les armées, se repaissent des morts et hantent les anciens champs de bataille ; ils se souviennent avec la même précision des faveurs reçues et des outrages subis. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du corbeau. |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Age` | null | null |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.Environment` | Everywhere in Trudvang: battlefields, forests, villages and farms. Ravens are rarely far from a settlement or a recent death. | Partout en Trudvang : champs de bataille, forêts, villages et fermes. Les corbeaux sont rarement loin d'un établissement ou d'une mort récente. |
+| `TRUDVANG.Content.Creature.Xcp8nvYtZu0v1w2x.SourceBook` | Player's Handbook | Livre des règles |
+
+## `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Name` | Salmon | Saumon |
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Description` | A silvery salmon of Trudvang's rivers, dark-spotted along the flank and heavy of jaw. Salmon migrate upstream from the sea to lay their eggs, leaping the shallows on the way. | Saumon argenté des rivières et fleuves de Trudvang, moucheté de noir sur les flancs et doté d'un maxillaire robuste et accrocheur. Il remonte des estuaires vers les sources pour y frayer, franchissant les cataractes à contre-courant, puis meurt après la ponte sans jamais redescendre. C'est l'une des formes que prend le bruide lorsqu'il use de l'Aspect du saumon. |
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Age` | null | null |
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.Environment` | Rivers and streams of Trudvang, during their upstream migration. | Rivières et fleuves de Trudvang, pendant la remontée de la montaison. |
+| `TRUDVANG.Content.Creature.jMX2BTmSnToUpVqW.SourceBook` | Player's Handbook | Livre des règles |
