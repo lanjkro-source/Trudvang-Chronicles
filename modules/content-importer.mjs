@@ -7,11 +7,14 @@ import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import { PALETTES } from "./palette.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 49 installs the starter Actor/Macro folders, the
+// TEMPORARY WORLD MIGRATION — version 50 re-runs the starter import in worlds whose
+// `starterContentVersion` was already recorded by the broken 49 release: those worlds never
+// received the animals, the macro folder or the scene backgrounds at all.
+// version 49 installs the starter Actor/Macro folders, the
 // world copies of the bestiary animals and the journal hierarchy in existing worlds;
 // version 48 installed the throwing Seax where earlier versions updated intact prepared
 // NPC attacks.
-const CONTENT_VERSION = 49;
+const CONTENT_VERSION = 50;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -608,11 +611,36 @@ async function importBestiaryAnimals(folders) {
   const folder = folders.animals;
   if (!folder) return 0;
   const packs = bestiaryPacks();
+  if (!packs.length) {
+    console.warn("Trudvang Chronicles | No bestiary compendium found in this world; the Animals folder stays empty.");
+    return 0;
+  }
   const pack = packs.find(candidate => candidate.metadata.name.endsWith(activeLanguage())) ?? packs[0];
   if (!pack) return 0;
-  const sources = (await pack.getDocuments({type: "Actor"}))
-    .filter(actor => actor.system?.details?.creatureTypeKey?.endsWith(".animal"));
-  if (!sources.length) return 0;
+
+  // The shipped pack stores the localised family label in `system.details.creatureType`
+  // ("Animaux"), never the raw family, so the catalogue is the only reliable way to tell
+  // animals apart. Loaded on demand: importing it statically would add ~500 kB to every
+  // world startup for a path that only runs during the starter import.
+  let animalIds;
+  try {
+    ({BESTIARY_ENTRIES} = await import("./bestiary-catalog-data.mjs"));
+    animalIds = new Set(BESTIARY_ENTRIES.filter(entry => entry.family === "animal").map(entry => entry.id));
+  } catch (error) {
+    console.warn("Trudvang Chronicles | Bestiary catalogue unavailable; the Animals folder stays empty.", error);
+    return 0;
+  }
+  if (!animalIds.size) {
+    console.warn("Trudvang Chronicles | No animal family in the bestiary catalogue; the Animals folder stays empty.");
+    return 0;
+  }
+
+  const all = await pack.getDocuments({type: "Actor"});
+  const sources = all.filter(actor => animalIds.has(actor.getFlag(SYSTEM_ID, "bestiaryId")));
+  if (!sources.length) {
+    console.warn(`Trudvang Chronicles | Bestiary pack ${pack.metadata.name} holds ${all.length} actors but none of the ${animalIds.size} catalogue animals; the Animals folder stays empty.`);
+    return 0;
+  }
 
   const existingById = new Map(game.actors
     .filter(actor => actor.getFlag(SYSTEM_ID, "animalId"))
@@ -633,6 +661,7 @@ async function importBestiaryAnimals(folders) {
     });
   }
   if (toCreate.length) await Actor.createDocuments(toCreate);
+  console.info(`Trudvang Chronicles | ${sources.length} animals available in the Animals folder (${toCreate.length} imported, ${sources.length - toCreate.length} already present).`);
   return sources.length;
 }
 
@@ -987,6 +1016,16 @@ export async function ensureTraitSituationMacro() {
 const DEFAULT_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/carte.webp";
 const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accueil.webp";
 
+// A scene with no thumbnail is a blank entry in the sidebar, and Foundry only rebuilds the
+// thumbnail when its background actually changes — so the import has to say what it found.
+function reportScene(scene, label) {
+  const src = scene?.levels.get(0)?.background?.src;
+  console.info(`Trudvang Chronicles | ${label}: ${scene
+    ? `background ${src ?? "none"}, thumbnail ${scene.thumb ? "present" : "absent"}`
+    : "not created"}.`);
+  return scene;
+}
+
 function setSceneBackground(scene, src) {
   const levels = scene.levels.map(level => level.toObject());
   if (levels.length === 0) {
@@ -1006,17 +1045,19 @@ async function upsertDefaultScene() {
     if (bgSrc !== DEFAULT_SCENE_BACKGROUND) {
       await existing.update(setSceneBackground(existing, DEFAULT_SCENE_BACKGROUND));
     }
-    return existing;
+    return reportScene(existing, "World map scene");
   }
-  const [created] = await Scene.createDocuments([{
+const [created] = await Scene.createDocuments([{
     name,
     width: 2514,
     height: 1629,
     grid: {distance: 1, units: "m"},
-    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: DEFAULT_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
-    flags: {[SYSTEM_ID]: {starterId: "world-map"}}
+    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: WELCOME_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
+    navigation: true,
+    navOrder: 0,
+    flags: {[SYSTEM_ID]: {starterId: "welcome"}}
   }]);
-  return created;
+  return reportScene(created, "Welcome scene");
 }
 
 async function upsertWelcomeScene() {
@@ -1033,7 +1074,7 @@ async function upsertWelcomeScene() {
     if (existing.navOrder !== 0) updates.navOrder = 0;
     if (Object.keys(updates).length) await existing.update(updates);
     await existing.activate();
-    return existing;
+    return reportScene(existing, "Welcome scene");
   }
   const [created] = await Scene.createDocuments([{
     name,

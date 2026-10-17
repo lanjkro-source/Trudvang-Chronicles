@@ -31,6 +31,18 @@ test("folder roles resolve against the V14 ownership enumeration", t => {
   }
 });
 
+// Regression: the animal filter first read `system.details.creatureTypeKey`, a key that only
+// exists in the catalogue module. The shipped packs store the localised family label instead,
+// so the filter matched nothing and the folder stayed empty with no error at all.
+test("the bestiary catalogue exposes a stable animal family for the world copies", async t => {
+  const {BESTIARY_ENTRIES} = await import("../modules/bestiary-catalog-data.mjs");
+  const animals = BESTIARY_ENTRIES.filter(entry => entry.family === "animal");
+  assert.ok(animals.length >= 21, "the catalogue still lists the bestiary animals");
+  assert.ok(animals.every(entry => typeof entry.id === "string" && entry.id.length), "every animal carries an id");
+  const families = new Set(BESTIARY_ENTRIES.map(entry => entry.family));
+  assert.ok(families.has("animal"), "the animal family exists in the catalogue");
+});
+
 test("every starter folder colour comes from the theme palette instead of a hardcoded hex", () => {
   const configured = Object.entries(starter.folders)
     .filter(([, config]) => config.colorRole)
