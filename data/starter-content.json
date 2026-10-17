@@ -53,11 +53,31 @@
     },
     "tables": {
       "nameKey": "TRUDVANG.Content.Folder.Tables",
-      "type": "RollTable"
+      "type": "RollTable",
+      "colorRole": "ink"
     },
     "divers": {
       "nameKey": "TRUDVANG.Content.Folder.Divers",
-      "type": "RollTable"
+      "type": "RollTable",
+      "colorRole": "ink"
+    },
+    "characters": {
+      "nameKey": "TRUDVANG.Content.Folder.Characters",
+      "type": "Actor",
+      "colorRole": "green",
+      "defaultRole": "OWNER"
+    },
+    "animals": {
+      "nameKey": "TRUDVANG.Content.Folder.Animals",
+      "type": "Actor",
+      "colorRole": "gold",
+      "defaultRole": "OBSERVER"
+    },
+    "macros": {
+      "nameKey": "TRUDVANG.Content.Folder.Macros",
+      "type": "Macro",
+      "colorRole": "warning",
+      "defaultRole": "OWNER"
     }
   },
   "items": [

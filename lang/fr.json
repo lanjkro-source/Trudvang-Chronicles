@@ -1289,7 +1289,11 @@
         "Abilities": "Disciplines & Spécialités",
         "Tables": "Magie",
         "Divers": "Divers",
-        "Creatures": "Créatures"
+        "Creatures": "Créatures",
+        "Characters": "Joueurs",
+        "Animals": "Animaux",
+        "CharacterCreation": "Création de Personnages",
+        "Macros": "Macros"
       },
       "Scene": {
         "WorldMap": "Carte du monde",

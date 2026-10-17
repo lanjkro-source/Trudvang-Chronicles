@@ -1524,6 +1524,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Folder.Tables` | Magic | Magie |
 | `TRUDVANG.Content.Folder.Divers` | Miscellaneous | Divers |
 | `TRUDVANG.Content.Folder.Creatures` | Creatures | Créatures |
+| `TRUDVANG.Content.Folder.Characters` | Players | Joueurs |
+| `TRUDVANG.Content.Folder.Animals` | Animals | Animaux |
+| `TRUDVANG.Content.Folder.CharacterCreation` | Character Creation | Création de Personnages |
+| `TRUDVANG.Content.Folder.Macros` | Macros | Macros |
 
 ## `TRUDVANG.Content.Scene`
 

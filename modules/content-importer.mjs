@@ -4,11 +4,14 @@ import { TRUDVANG } from "./config.mjs";
 import { buildSkillPackDocuments, SKILL_PACKS, toCreateData } from "./skill-pack-data.mjs";
 import { TABLET_PACKS, buildTabletPackDocuments } from "./tablet-pack-data.mjs";
 import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
+import { PALETTES } from "./palette.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 48 installs the throwing Seax in
-// existing worlds; earlier versions updated intact prepared NPC attacks.
-const CONTENT_VERSION = 48;
+// TEMPORARY WORLD MIGRATION — version 49 installs the starter Actor/Macro folders, the
+// world copies of the bestiary animals and the journal hierarchy in existing worlds;
+// version 48 installed the throwing Seax where earlier versions updated intact prepared
+// NPC attacks.
+const CONTENT_VERSION = 49;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -187,18 +190,52 @@ async function loadTranslations(keys) {
 
 const renamedOrCustom = (document, translations) => !translations.has(document.name);
 
+// Folder presentation is declared as role names rather than raw values: colours come from
+// the default theme palette so no folder carries a hardcoded hex, and permissions resolve
+// against CONST so the intent ("OBSERVER") stays readable in data/starter-content.json.
+function folderColor(config) {
+  if (!config.colorRole) return undefined;
+  const color = PALETTES.default[config.colorRole];
+  if (!color || !/^#[\da-f]{6}$/i.test(color)) throw new Error(`No solid palette colour for folder role ${config.colorRole}`);
+  return color;
+}
+
+// Resolved per call: Foundry globals only exist inside the client, and importing this module
+// from Node-side tooling must not evaluate them at load time.
+function folderOwnership(config) {
+  if (!config.defaultRole) return undefined;
+  const level = globalThis.CONST?.ENTITY_PERMISSIONS?.[config.defaultRole.toUpperCase()];
+  if (level === undefined) throw new Error(`Unknown default role for a folder: ${config.defaultRole}`);
+  return {default: level};
+}
+
+// Resolves a starter folder when a call site has no folder map (e.g. the GM-entry repair
+// path), so documents still land in the folder created by the last import.
+function starterFolder(slug, type) {
+  return game.folders.find(folder => folder.type === type && flagOf(folder, "starterId") === slug) ?? null;
+}
+
 async function upsertFolder(slug, config, translations, parent) {
   const localized = game.i18n.localize(config.nameKey);
   const legacySlugs = {equipment: ["gear"], protections: ["armor"]};
+  const color = folderColor(config);
+  const ownership = folderOwnership(config);
   const existing = game.folders.find(folder => folder.type === config.type && flagOf(folder, "starterId") === slug)
     ?? game.folders.find(folder => folder.type === config.type && legacySlugs[slug]?.includes(flagOf(folder, "starterId")))
     ?? game.folders.find(folder => folder.type === config.type && !flagOf(folder, "starterId") && translations.has(folder.name));
   if (existing) {
     const update = {[`flags.${SYSTEM_ID}.starterId`]: slug, folder: parent?.id ?? null};
     if (existing.name !== localized) update.name = localized;
+    if (color && existing.color !== color) update.color = color;
+    // Only folders that opt in carry a role, so this never touches per-user grants the GM
+    // made on the other starter folders.
+    if (ownership) update.ownership = ownership;
     await existing.update(update);
   }
-  const canonical = existing ?? await Folder.create({name: localized, type: config.type, folder: parent?.id ?? null, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}});
+  const createData = {name: localized, type: config.type, folder: parent?.id ?? null, sorting: "a", flags: {[SYSTEM_ID]: {starterId: slug}}};
+  if (color) createData.color = color;
+  if (ownership) createData.ownership = ownership;
+  const canonical = existing ?? await Folder.create(createData);
 
   // Previous imports could leave empty duplicates named in another language — fold them into the canonical folder.
   const duplicates = game.folders.filter(folder => folder.id !== canonical.id
@@ -550,10 +587,56 @@ async function upsertActors(source, folders, translationsByKey) {
   return updated;
 }
 
+// Compendium packs are named bestiary-<lang>; they are discovered from the live registry so
+// this path never duplicates the list declared in system.json nor imports the 500 kB
+// generated catalogue module at startup.
+function bestiaryPacks() {
+  return [...game.packs.values()].filter(pack => /^bestiary-\w+$/.test(pack.metadata?.name ?? ""));
+}
+
+// Animals live only in the distributed Bestiary packs: a compendium document cannot be moved
+// into a world folder, so the Animaux folder is populated with world copies that stay editable
+// for the GM. Copies are tracked by `animalId` so reimports neither duplicate nor clobber them,
+// and the GM's edits to a copy are never overwritten. TEMPORARY WORLD MIGRATION — this also
+// backfills the folder into worlds created before CONTENT_VERSION 49; see
+// docs/development-world-migrations.md.
+async function importBestiaryAnimals(folders) {
+  const folder = folders.animals;
+  if (!folder) return 0;
+  const packs = bestiaryPacks();
+  const pack = packs.find(candidate => candidate.metadata.name.endsWith(activeLanguage())) ?? packs[0];
+  if (!pack) return 0;
+  const sources = (await pack.getDocuments({type: "Actor"}))
+    .filter(actor => actor.system?.details?.creatureTypeKey?.endsWith(".animal"));
+  if (!sources.length) return 0;
+
+  const existingById = new Map(game.actors
+    .filter(actor => actor.getFlag(SYSTEM_ID, "animalId"))
+    .map(actor => [actor.getFlag(SYSTEM_ID, "animalId"), actor]));
+  const toCreate = [];
+  for (const source of sources) {
+    const animalId = source.getFlag(SYSTEM_ID, "bestiaryId");
+    if (existingById.has(animalId)) continue;
+    const { _id, folder: _folder, sort: _sort, ownership, ...data } = source.toObject();
+    toCreate.push({
+      ...data,
+      folder: folder.id,
+      // Read-only for players, exactly like the Animaux folder itself; the GM is unaffected.
+      ownership: {default: globalThis.CONST?.ENTITY_PERMISSIONS?.OBSERVER ?? 2},
+      flags: {...data.flags, [SYSTEM_ID]: {...data.flags?.[SYSTEM_ID], animalId}}
+    });
+  }
+  if (toCreate.length) await Actor.createDocuments(toCreate);
+  return sources.length;
+}
+
 async function upsertJournals() {
   const folders = {};
   const translations = await loadTranslations(Object.values(JOURNAL_FOLDERS).map(config => config.nameKey));
-  for (const [slug, config] of Object.entries(JOURNAL_FOLDERS)) folders[slug] = await upsertFolder(slug, config, translations.get(config.nameKey));
+  for (const [slug, config] of Object.entries(JOURNAL_FOLDERS)) {
+    folders[slug] = await upsertFolder(slug, config, translations.get(config.nameKey),
+      config.parent ? folders[config.parent] : undefined);
+  }
   for (const payload of journalDocuments(folders)) {
     const existing = game.journal.find(entry => flagOf(entry) === payload.flags[SYSTEM_ID].starterId);
     if (existing) {
@@ -798,10 +881,16 @@ const TRAIT_SITUATION_MACRO_FLAG = "trait-situation";
 const TRAIT_SITUATION_COMMAND = "await game.trudvang.requestTraitSituationRoll();";
 const TRAIT_SITUATION_IMAGE = "systems/trudvang-chronicles/assets/icons/shield-halved.svg";
 
-export async function ensureGenericSituationMacro() {
+export async function ensureGenericSituationMacro(folder) {
   try {
+    const target = folder ?? starterFolder("macros", "Macro");
     const flagged = game.macros.find(macro => macro.getFlag(SYSTEM_ID, "macro") === GENERIC_SITUATION_MACRO_FLAG);
-    if (flagged) return flagged;
+    if (flagged) {
+      // TEMPORARY WORLD MIGRATION — worlds created before the starter Macros folder existed
+      // keep their macro at the root until the next install.
+      if (target && flagged.folder !== target.id) await flagged.update({folder: target.id});
+      return flagged;
+    }
     const name = game.i18n.localize("TRUDVANG.Macro.SituationRoll");
     const translations = await loadTranslations(["TRUDVANG.Macro.SituationRoll"]);
     const knownNames = translations.get("TRUDVANG.Macro.SituationRoll") ?? new Set([name]);
@@ -818,6 +907,7 @@ export async function ensureGenericSituationMacro() {
         [`flags.${SYSTEM_ID}.macro`]: GENERIC_SITUATION_MACRO_FLAG
       };
       if (adopted.name !== name) update.name = name;
+      if (target) update.folder = target.id;
       await adopted.update(update);
       return adopted;
     }
@@ -827,6 +917,7 @@ export async function ensureGenericSituationMacro() {
       scope: "global",
       command: GENERIC_SITUATION_COMMAND,
       img: "icons/svg/d20.svg",
+      folder: target?.id ?? null,
       flags: {[SYSTEM_ID]: {macro: GENERIC_SITUATION_MACRO_FLAG}}
     }]);
     return created;
@@ -838,6 +929,7 @@ export async function ensureGenericSituationMacro() {
 
 export async function ensureTraitSituationMacro() {
   try {
+    const target = starterFolder("macros", "Macro");
     const name = game.i18n.localize("TRUDVANG.Macro.TraitSituationRoll");
     // TEMPORARY WORLD MIGRATION — rename existing resistance macros and adopt
     // unflagged copies still carrying the old bilingual trait-roll name.
@@ -852,6 +944,7 @@ export async function ensureTraitSituationMacro() {
       const update = {};
       if (knownNames.has(flagged.name) && flagged.name !== name) update.name = name;
       if (flagged.img !== TRAIT_SITUATION_IMAGE) update.img = TRAIT_SITUATION_IMAGE;
+      if (target && flagged.folder !== target.id) update.folder = target.id;
       if (Object.keys(update).length) await flagged.update(update);
       return flagged;
     }
@@ -865,6 +958,7 @@ export async function ensureTraitSituationMacro() {
         [`flags.${SYSTEM_ID}.macro`]: TRAIT_SITUATION_MACRO_FLAG
       };
       if (adopted.name !== name) update.name = name;
+      if (target) update.folder = target.id;
       await adopted.update(update);
       return adopted;
     }
@@ -874,6 +968,7 @@ export async function ensureTraitSituationMacro() {
       scope: "global",
       command: TRAIT_SITUATION_COMMAND,
       img: TRAIT_SITUATION_IMAGE,
+      folder: target?.id ?? null,
       flags: {[SYSTEM_ID]: {macro: TRAIT_SITUATION_MACRO_FLAG}}
     }]);
     return created;
@@ -985,10 +1080,11 @@ export async function importStarterContent({force = false} = {}) {
 
     await rebuildTables(source, folders, translationsByKey);
     await upsertActors(source, folders, translationsByKey);
+    await importBestiaryAnimals(folders);
     await upsertJournals();
     await upsertDefaultScene();
     await upsertWelcomeScene();
-    await ensureGenericSituationMacro();
+    await ensureGenericSituationMacro(folders.macros);
 
     // TEMPORARY WORLD MIGRATION: before v0.23.0, purpose-built throwing weapons
     // were stored as the throwing specialty itself. Restore their melee profile

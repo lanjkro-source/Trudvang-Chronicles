@@ -12,7 +12,8 @@ This repository contains a bilingual (English/French) Foundry VTT game system fo
 - Native Active Effects with separate base/effective traits and skills, temporary resource and roll modifiers, item-transferred effects, stacking policies, and staged durations.
 - Creation-cost display plus rule-aware Adventure Point purchases for Skill Values, disciplines, specialties, and tablets.
 - Drag-and-drop Item documents for weapons, armor, shields, gear, extracts, spells, tablets, divine feats, disciplines, specialties, and creature feats.
-- An automatically installed starter library with 40+ detailed Items, the Fatal Magic and Fatal Failure Roll Tables, and 8 illustrated NPCs.
+- An automatically installed starter library with 40+ detailed Items, the Fatal Magic and Fatal Failure Roll Tables, and colour-coded folders for weapons, protections, gear, roll tables, players, animals and macros.
+- A character-creation journal tree grouping the races, archetypes and religions under a shared parent, beside the equipment and rules journals.
 - Extracted Trudvang artwork for sheet decoration and eight ready-to-use creature tokens.
 - Every user-facing string — interface labels, starter content, and the full tablet catalogue (names, themes, power summaries) — is centralized in `lang/en.json` and `lang/fr.json`, with French text taken from the official edition.
 - Native `TypeDataModel` schemas are registered for every Actor and Item subtype; the deprecated `template.json` mechanism is not used.
@@ -22,7 +23,7 @@ This repository contains a bilingual (English/French) Foundry VTT game system fo
 1. Place or link this directory at `Data/systems/trudvang-chronicles` in the Foundry user-data directory.
 2. Restart Foundry VTT.
 3. Create a world and select **Trudvang Chronicles** as its game system.
-4. Enter the world as a GM. The starter Item, Roll Table, and NPC folders are installed once automatically.
+4. Enter the world as a GM. The starter Item, RollTable, Actor and Macro folders are installed once automatically, along with the journal tree and world copies of the bestiary animals.
 
 Run the local validation suite with:
 
@@ -56,6 +57,7 @@ npm run build:packs
 - Click a weapon name to attack, the shield icon to parry, or the burst icon to roll damage. The attack/parry dialog chooses how many Combat Points to spend.
 - Click a spell or divine feat to roll and spend Vitner or Divinity Points. The cost can be raised for levels of power.
 - Drag world Items into an Actor sheet, or duplicate any starter NPC and edit the copy.
+- The **Players** folder holds player characters and stays editable for everyone; the **Animals** folder holds a world copy of each of the 21 bestiary animals and is read-only for players — only the GM can edit or place them. Both folders take their colour from the system theme.
 - NPCs have an Equipment tab for weapons, armor and shields. Edit the creature model’s inventory to equip future tokens; new NPC tokens are unlinked by default, so editing their inventory affects only that individual. Animals keep an empty material inventory: natural attacks and natural armor are not loot. Starter inventories are generated from `game doc/fr/trudvang-creatures-fr.json` and the base equipment with `npm run generate:npc-inventories`; the local validator audits that source when present.
 - Use the Effects tab to create a temporary modifier. Item effects can transfer while equipped/active, or be applied to selected tokens from the Item sheet or chat card.
 - In an effect's Trudvang tab, choose its stacking policy and optional timed stages. The supported data paths are listed directly in the editor.

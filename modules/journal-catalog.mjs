@@ -1,11 +1,15 @@
 const SYSTEM_ID = "trudvang-chronicles";
 
+// Parent folders are declared before their children: upsertJournals() walks this
+// object in order and hands each folder its already-created parent. `colorRole`
+// resolves against the theme palette in upsertFolder().
 export const JOURNAL_FOLDERS = {
-  equipment: {nameKey: "TRUDVANG.Content.Folder.Equipment", type: "JournalEntry"},
-  races: {nameKey: "TRUDVANG.Content.Folder.Races", type: "JournalEntry"},
-  archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry"},
-  religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry"},
-  rules: {nameKey: "TRUDVANG.Content.Folder.Rules", type: "JournalEntry"}
+  characterCreation: {nameKey: "TRUDVANG.Content.Folder.CharacterCreation", type: "JournalEntry", colorRole: "red"},
+  equipment: {nameKey: "TRUDVANG.Content.Folder.Equipment", type: "JournalEntry", colorRole: "muted"},
+  races: {nameKey: "TRUDVANG.Content.Folder.Races", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
+  archetypes: {nameKey: "TRUDVANG.Content.Folder.Archetypes", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
+  religions: {nameKey: "TRUDVANG.Content.Folder.Religions", type: "JournalEntry", colorRole: "red", parent: "characterCreation"},
+  rules: {nameKey: "TRUDVANG.Content.Folder.Rules", type: "JournalEntry", colorRole: "muted"}
 };
 
 const raceStats = {
