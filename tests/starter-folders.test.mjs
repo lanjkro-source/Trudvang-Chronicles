@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import {test} from "node:test";
+import {folderColor, folderOwnership} from "../modules/content-importer.mjs";
 import {JOURNAL_FOLDERS} from "../modules/journal-catalog.mjs";
 import {PALETTES} from "../modules/palette.mjs";
 
@@ -10,14 +11,34 @@ const locales = Object.fromEntries(["fr", "en"].map(lang =>
 
 const resolve = (pack, lang, keyPath) => keyPath.split(".").reduce((value, part) => value?.[part], pack?.[lang]) ?? keyPath;
 
+// Regression: the first release resolved folder roles through CONST.ENTITY_PERMISSIONS, which
+// does not exist in Foundry V14, so every starter import failed on a brand-new world.
+test("folder roles resolve against the V14 ownership enumeration", t => {
+  const previous = globalThis.CONST;
+  t.after(() => { globalThis.CONST = previous; });
+  globalThis.CONST = {DOCUMENT_OWNERSHIP_LEVELS: {INHERIT: -1, NONE: 0, LIMITED: 1, OBSERVER: 2, OWNER: 3}};
+
+  assert.deepEqual(folderOwnership({defaultRole: "OWNER"}), {default: 3});
+  assert.deepEqual(folderOwnership({defaultRole: "OBSERVER"}), {default: 2});
+  assert.deepEqual(folderOwnership({defaultRole: "observer"}), {default: 2});
+  assert.deepEqual(folderOwnership({}), undefined, "folders without a role keep Foundry's default");
+  assert.throws(() => folderOwnership({defaultRole: "INHERIT"}), /Unknown default role/, "INHERIT is not a folder default");
+  assert.throws(() => folderOwnership({defaultRole: "TYPO"}), /Unknown default role/);
+
+  for (const [slug, config] of Object.entries(starter.folders)) {
+    if (!config.defaultRole) continue;
+    assert.ok(folderOwnership(config), `${slug} resolves to a real level`);
+  }
+});
+
 test("every starter folder colour comes from the theme palette instead of a hardcoded hex", () => {
   const configured = Object.entries(starter.folders)
     .filter(([, config]) => config.colorRole)
     .concat(Object.entries(JOURNAL_FOLDERS));
   assert.ok(configured.length, "the starter folders declare colours");
   for (const [slug, config] of configured) {
-    const color = PALETTES.default[config.colorRole];
-    assert.match(color, /^#[\da-f]{6}$/, `${slug} resolves to a solid palette colour`);
+    assert.ok(folderColor(config), `${slug} resolves to a colour`);
+    assert.match(PALETTES.default[config.colorRole], /^#[\da-f]{6}$/, `${slug} is a solid palette colour`);
   }
 });
 

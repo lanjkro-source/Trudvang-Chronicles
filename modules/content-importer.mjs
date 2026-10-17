@@ -192,8 +192,9 @@ const renamedOrCustom = (document, translations) => !translations.has(document.n
 
 // Folder presentation is declared as role names rather than raw values: colours come from
 // the default theme palette so no folder carries a hardcoded hex, and permissions resolve
-// against CONST so the intent ("OBSERVER") stays readable in data/starter-content.json.
-function folderColor(config) {
+// against Foundry's ownership enumeration so the intent ("OBSERVER") stays readable in
+// data/starter-content.json. Exported for the regression test that pins the Foundry shape.
+export function folderColor(config) {
   if (!config.colorRole) return undefined;
   const color = PALETTES.default[config.colorRole];
   if (!color || !/^#[\da-f]{6}$/i.test(color)) throw new Error(`No solid palette colour for folder role ${config.colorRole}`);
@@ -202,10 +203,13 @@ function folderColor(config) {
 
 // Resolved per call: Foundry globals only exist inside the client, and importing this module
 // from Node-side tooling must not evaluate them at load time.
-function folderOwnership(config) {
+export function folderOwnership(config) {
   if (!config.defaultRole) return undefined;
-  const level = globalThis.CONST?.ENTITY_PERMISSIONS?.[config.defaultRole.toUpperCase()];
-  if (level === undefined) throw new Error(`Unknown default role for a folder: ${config.defaultRole}`);
+  // CONST.DOCUMENT_OWNERSHIP_LEVELS is the V14 enumeration ({NONE: 0, LIMITED: 1,
+  // OBSERVER: 2, OWNER: 3}); CONST.ENTITY_PERMISSIONS does not exist in V14.
+  // INHERIT (-1) is a fallback marker, never a folder default.
+  const level = globalThis.CONST?.DOCUMENT_OWNERSHIP_LEVELS?.[config.defaultRole.toUpperCase()];
+  if (typeof level !== "number" || level < 0) throw new Error(`Unknown default role for a folder: ${config.defaultRole}`);
   return {default: level};
 }
 
@@ -621,8 +625,10 @@ async function importBestiaryAnimals(folders) {
     toCreate.push({
       ...data,
       folder: folder.id,
-      // Read-only for players, exactly like the Animaux folder itself; the GM is unaffected.
-      ownership: {default: globalThis.CONST?.ENTITY_PERMISSIONS?.OBSERVER ?? 2},
+      // Read-only for players, exactly like the Animaux folder itself: the copies inherit
+      // the folder's own default level rather than restating it, so the two can never drift.
+      // The GM is unaffected — Foundry always grants a GM full access.
+      ownership: {default: folder.ownership.default},
       flags: {...data.flags, [SYSTEM_ID]: {...data.flags?.[SYSTEM_ID], animalId}}
     });
   }
