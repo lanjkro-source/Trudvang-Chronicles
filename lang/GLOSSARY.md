@@ -8534,7 +8534,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon4` | Tvei faldir (two-handed flail) | Tvei faldir (fléau à deux mains) |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Weapon5` | Medium Wooden Shield | Bouclier moyen en bois |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Armor0` | Chain Mail | cotte de mailles |
-| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Attack0Step1` | Horns | Cornes/griffes |
+| `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Attack0Step1` | Horns/Claws | Cornes/griffes |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Name` | Physical Demon | Démon tangible |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Description` | A physical demon is an entity of pure malice born from darkness so compact that it formed a body. Its physical manifestation is the condensation of all the darkness it has accumulated, and its body has become truly flesh. It fights with claws, horns, and fangs. Some have wings that let them fly. Others have launchable spikes, strong iron scales, extra arms, or bodies of fire. | Le démon tangible est une entité de pure malveillance née de ténèbres si compactes qu'elles ont donné naissance à un corps. Sa manifestation physique est la concrétion de toutes les ténèbres qu'il a accumulées, et son corps est devenu réellement charnel. Il se bat avec ses griffes, ses cornes et ses crocs. Certains sont dotés d'ailes permettant de voler. D'autres sont couverts de pointes projetables, d'écailles de fer solides ou de bras supplémentaires, ou ont un corps en feu. |
 | `TRUDVANG.Content.Creature.vRp0IPgMhNiOjPkQ.Age` | variable, max variable | variable, max variable |
