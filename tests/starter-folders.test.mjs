@@ -47,11 +47,12 @@ test("the bestiary catalogue exposes a stable animal family for the world copies
 // never matches an actor subtype, so the pack reported 0 actors) and read `scene.levels[0]`
 // on an embedded collection, which always returns undefined — the Animals folder stayed
 // empty and every scene reported a missing background.
-test("animals load unfiltered and scene levels read through the mapped array", () => {
+test("animal copies resolve through documented V14 APIs", () => {
   const source = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
   assert.ok(!source.includes("getDocuments({type:"), "pack documents are never filtered by document class");
   assert.ok(!/levels\[0\]\?\.background/.test(source), "scene backgrounds are read through sceneBackgroundSrc");
   assert.ok(!/levels\.get\(/.test(source), "embedded collections are never queried by numeric id");
+  assert.ok(!source.includes("folder.ownership"), "folder ownership is read back through getUserLevel");
 });
 
 // Regression: a mismatched splice once created the world map from the welcome template, so

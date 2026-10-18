@@ -658,8 +658,10 @@ async function importBestiaryAnimals(folders) {
       folder: folder.id,
       // Read-only for players, exactly like the Animaux folder itself: the copies inherit
       // the folder's own default level rather than restating it, so the two can never drift.
+      // V14 Folder documents do not expose `ownership` as an instance property (unlike
+      // `color`), so the recorded default is read back through the documented getUserLevel.
       // The GM is unaffected — Foundry always grants a GM full access.
-      ownership: {default: folder.ownership.default},
+      ownership: {default: folder.getUserLevel()},
       flags: {...data.flags, [SYSTEM_ID]: {...data.flags?.[SYSTEM_ID], animalId}}
     });
   }
