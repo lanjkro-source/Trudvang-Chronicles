@@ -12,7 +12,7 @@ This repository contains a bilingual (English/French) Foundry VTT game system fo
 - Native Active Effects with separate base/effective traits and skills, temporary resource and roll modifiers, item-transferred effects, stacking policies, and staged durations.
 - Creation-cost display plus rule-aware Adventure Point purchases for Skill Values, disciplines, specialties, and tablets.
 - Drag-and-drop Item documents for weapons, armor, shields, gear, extracts, spells, tablets, divine feats, disciplines, specialties, and creature feats.
-- An automatically installed starter library with 40+ detailed Items, the Fatal Magic and Fatal Failure Roll Tables, and colour-coded folders for weapons, protections, gear, roll tables, players, animals and macros.
+- An automatically installed starter library with 40+ detailed Items, the Fatal Magic, Fatal Failure, Extract Stage and Special Stormlander Traits Roll Tables (the last one concatenating the Stormlands book tables 1A and 1B into a single 1d40), and colour-coded folders for weapons, protections, gear, roll tables, character creation, players, animals and macros.
 - A character-creation journal tree grouping the races, archetypes and religions under a shared parent, beside the equipment and rules journals.
 - Extracted Trudvang artwork for sheet decoration and eight ready-to-use creature tokens.
 - Every user-facing string — interface labels, starter content, and the full tablet catalogue (names, themes, power summaries) — is centralized in `lang/en.json` and `lang/fr.json`, with French text taken from the official edition.

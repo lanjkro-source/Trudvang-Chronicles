@@ -61,6 +61,11 @@
       "type": "RollTable",
       "colorRole": "ink"
     },
+    "characterCreationTables": {
+      "nameKey": "TRUDVANG.Content.Folder.CharacterCreationTables",
+      "type": "RollTable",
+      "colorRole": "ink"
+    },
     "characters": {
       "nameKey": "TRUDVANG.Content.Folder.Characters",
       "type": "Actor",
@@ -2397,6 +2402,341 @@
             999
           ],
           "textKey": "TRUDVANG.Content.Table.ExtractStage.Total"
+        }
+      ]
+    },
+    {
+      "nameKey": "TRUDVANG.Content.Table.StormlanderTraits.Name",
+      "img": "icons/svg/d20.svg",
+      "folder": "characterCreationTables",
+      "formula": "1d40",
+      "displayRoll": true,
+      "replacement": false,
+      "flags": {
+        "trudvang-chronicles": {
+          "starterId": "stormlander-traits"
+        }
+      },
+      "results": [
+        {
+          "type": "text",
+          "range": [
+            1,
+            1
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A01"
+        },
+        {
+          "type": "text",
+          "range": [
+            2,
+            2
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A02"
+        },
+        {
+          "type": "text",
+          "range": [
+            3,
+            3
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A03"
+        },
+        {
+          "type": "text",
+          "range": [
+            4,
+            4
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A04"
+        },
+        {
+          "type": "text",
+          "range": [
+            5,
+            5
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A05"
+        },
+        {
+          "type": "text",
+          "range": [
+            6,
+            6
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A06"
+        },
+        {
+          "type": "text",
+          "range": [
+            7,
+            7
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A07"
+        },
+        {
+          "type": "text",
+          "range": [
+            8,
+            8
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A08"
+        },
+        {
+          "type": "text",
+          "range": [
+            9,
+            9
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A09"
+        },
+        {
+          "type": "text",
+          "range": [
+            10,
+            10
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A10"
+        },
+        {
+          "type": "text",
+          "range": [
+            11,
+            11
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A11"
+        },
+        {
+          "type": "text",
+          "range": [
+            12,
+            12
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A12"
+        },
+        {
+          "type": "text",
+          "range": [
+            13,
+            13
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A13"
+        },
+        {
+          "type": "text",
+          "range": [
+            14,
+            14
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A14"
+        },
+        {
+          "type": "text",
+          "range": [
+            15,
+            15
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A15"
+        },
+        {
+          "type": "text",
+          "range": [
+            16,
+            16
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A16"
+        },
+        {
+          "type": "text",
+          "range": [
+            17,
+            17
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A17"
+        },
+        {
+          "type": "text",
+          "range": [
+            18,
+            18
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A18"
+        },
+        {
+          "type": "text",
+          "range": [
+            19,
+            19
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A19"
+        },
+        {
+          "type": "text",
+          "range": [
+            20,
+            20
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.A20"
+        },
+        {
+          "type": "text",
+          "range": [
+            21,
+            21
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B01"
+        },
+        {
+          "type": "text",
+          "range": [
+            22,
+            22
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B02"
+        },
+        {
+          "type": "text",
+          "range": [
+            23,
+            23
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B03"
+        },
+        {
+          "type": "text",
+          "range": [
+            24,
+            24
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B04"
+        },
+        {
+          "type": "text",
+          "range": [
+            25,
+            25
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B05"
+        },
+        {
+          "type": "text",
+          "range": [
+            26,
+            26
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B06"
+        },
+        {
+          "type": "text",
+          "range": [
+            27,
+            27
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B07"
+        },
+        {
+          "type": "text",
+          "range": [
+            28,
+            28
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B08"
+        },
+        {
+          "type": "text",
+          "range": [
+            29,
+            29
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B09"
+        },
+        {
+          "type": "text",
+          "range": [
+            30,
+            30
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B10"
+        },
+        {
+          "type": "text",
+          "range": [
+            31,
+            31
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B11"
+        },
+        {
+          "type": "text",
+          "range": [
+            32,
+            32
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B12"
+        },
+        {
+          "type": "text",
+          "range": [
+            33,
+            33
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B13"
+        },
+        {
+          "type": "text",
+          "range": [
+            34,
+            34
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B14"
+        },
+        {
+          "type": "text",
+          "range": [
+            35,
+            35
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B15"
+        },
+        {
+          "type": "text",
+          "range": [
+            36,
+            36
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B16"
+        },
+        {
+          "type": "text",
+          "range": [
+            37,
+            37
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B17"
+        },
+        {
+          "type": "text",
+          "range": [
+            38,
+            38
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B18"
+        },
+        {
+          "type": "text",
+          "range": [
+            39,
+            39
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B19"
+        },
+        {
+          "type": "text",
+          "range": [
+            40,
+            999
+          ],
+          "textKey": "TRUDVANG.Content.Table.StormlanderTraits.B20"
         }
       ]
     }
