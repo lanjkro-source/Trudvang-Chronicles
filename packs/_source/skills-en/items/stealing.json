@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "9E2QCA3y4z5A6B7C",
-  "sort": 9500000,
+  "sort": 9600000,
   "system": {
     "description": "The person has learned the basics of stealing items from other people and can add +2 to their Skill Value per level in the ability. People present when the theft occurs are allowed to make a specific Situation roll decided by the GM or a Shadows Arts (Finding and Spotting) Skill roll to try to discover or notice the theft.",
     "summary": "Covers stealing objects from people, with a risk that bystanders notice.",

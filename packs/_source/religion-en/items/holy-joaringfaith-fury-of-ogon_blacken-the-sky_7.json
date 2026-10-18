@@ -1,0 +1,50 @@
+{
+  "name": "Blacken the Sky",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "The mopor calls on the power of Ogon, who unleashes a shower of arrows into the battle to come to her aid. The arrows count as magical projectiles, but armor grants full protection as normal. Shields also provide passive protection against the arrows as normal. The mopor takes aim at a group of enemies within range, who are then struck by a volley of black arrows. In its basic version, this ability unleashes two arrows, which are evenly and randomly distributed among enemies within the designated group. The arrows automatically hit with a successful invocation, each causing 1d10 (OR 8-10) points of damage with Penetration Value 3.",
+    "summary": "Creates a rain of projectiles that darkens the sky and strikes enemies.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 meters",
+    "weavingTime": "2 action rounds",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the number of arrows by +1"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!FJL3ciMhNiOjPkQl",
+  "_id": "FJL3ciMhNiOjPkQl",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36700000,
+  "ownership": {
+    "default": 0
+  }
+}

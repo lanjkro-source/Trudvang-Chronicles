@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11900000,
+  "sort": 12000000,
   "system": {
     "description": "The person is good at hunting in the wilderness or on a lake. The person can also build and manage traps used in hunting. The specialty bonus is used when the person goes hunting or fishing.",
     "summary": "Knows how to hunt in the wild, fish lakes, and build and set traps.",

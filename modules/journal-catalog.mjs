@@ -38,6 +38,7 @@ const journals = [
   {id: "haminges", folder: "religions", key: "haminges"},
   {id: "thuuldom", folder: "religions", key: "thuuldom"},
   {id: "toikalokke", folder: "religions", key: "toikalokke"},
+  {id: "joaringFaith", folder: "religions", key: "joaringFaith"},
   {id: "creatureSize", folder: "rules", key: "creatureSize"}
 ];
 

@@ -1,0 +1,44 @@
+{
+  "name": "Firon Power",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Power of Sille",
+    "description": "The mopor reaches out with her arms stretched toward the sky and calls upon Sille. The mopor’s hands then begin to glow with a purifying fire that the S tormkelt lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 3 Body Points and stops any bleeding.",
+    "summary": "Purifies a target's body and heals its wounds or afflictions.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:firon-power:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Heal +2 Body Points"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!ee8vRmQlRmSnToUp",
+  "_id": "ee8vRmQlRmSnToUp",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37600000,
+  "ownership": {
+    "default": 0
+  }
+}

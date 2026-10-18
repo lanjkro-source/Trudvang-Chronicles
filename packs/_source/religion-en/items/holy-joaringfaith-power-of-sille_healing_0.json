@@ -1,0 +1,50 @@
+{
+  "name": "Healing",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:healing:0",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing:0",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Power of Sille",
+    "description": "The mopor reaches out with her arms stretched toward the sky and calls upon Sille. The mopor’s hands then begin to glow with a purifying fire that the mopor lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 10 Body Points and stops any bleeding.",
+    "summary": "Accelerates the natural healing of an injured creature's wounds.",
+    "swedishName": "",
+    "duration": "1 day",
+    "range": "contact",
+    "weavingTime": "6 action rounds",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 day"
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing:0:1",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Increase healing rate by +1 Body Point per day"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!RPZ9v3w2x3y4z5A6",
+  "_id": "RPZ9v3w2x3y4z5A6",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37100000,
+  "ownership": {
+    "default": 0
+  }
+}

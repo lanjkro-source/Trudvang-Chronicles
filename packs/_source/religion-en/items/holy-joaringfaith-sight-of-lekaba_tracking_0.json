@@ -1,0 +1,56 @@
+{
+  "name": "Tracking",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:tracking:0",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:tracking:0",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Sight of Lekaba",
+    "description": "The power allows the mopor to easily see and track another creature’s footprints on the ground. The tracks light up with a reddish glow that only the mopor can see. If the creature being tracked crossed a body of water at some point or traveled in a manner that does not leave tracks (such as jumping over a ravine, swimming, or riding a horse), small pieces of power light will collect on the water or in the air to indicate the direction. The mopor can also follow tracks of a creature that has been enchanted with the Traceless power. In order to use the power to track a creature, the mopor must possess a single hair, a drop of blood, a fingernail, or something similar from the one being pursued. The object used will be consumed once the mopor successfully invokes the power, so the power cannot be repeated unless the mopor finds another item from the creature.",
+    "summary": "Reveals and helps follow the tracks left by a creature.",
+    "swedishName": "Sporskönja",
+    "duration": "1 hour",
+    "range": "contact",
+    "weavingTime": "2 action rounds",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the duration by 12 hours"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!DaIf57y4z5A6B7C8",
+  "_id": "DaIf57y4z5A6B7C8",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38200000,
+  "ownership": {
+    "default": 0
+  }
+}

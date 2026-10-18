@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11700000,
+  "sort": 11800000,
   "system": {
     "description": "Grâce à la discipline Expérience de la chasse, un personnage sait comment traquer et chasser une proie, mais aussi comment survivre dans des environnements sauvages et difficiles. Il en connaît un rayon sur les différentes proies et a appris à lire leurs traces, leurs habitudes et leurs comportements. Le personnage connaît aussi la meilleure façon de traquer une proie ou de pêcher dans les différents cours ou plans d’eau.",
     "summary": "Enseigne traquer et chasser une proie, lire ses traces et ses habitudes, et survivre dans les milieux sauvages.",

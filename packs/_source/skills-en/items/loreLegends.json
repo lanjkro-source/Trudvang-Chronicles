@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 7300000,
+  "sort": 7400000,
   "system": {
     "description": "(Specification Required) The person knows a lot about a certain culture’s history , myths, and legends. each for a different foreign language. A character must have the Foreign Tongues specialty for the selected language before they can learn to read and write it.",
     "summary": "Well versed in the history, myths and legends of one chosen culture.",

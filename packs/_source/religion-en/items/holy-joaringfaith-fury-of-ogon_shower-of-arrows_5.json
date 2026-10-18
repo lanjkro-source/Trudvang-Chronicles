@@ -1,0 +1,50 @@
+{
+  "name": "Shower of Arrows",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "The mopor calls on the power of Ogon, who unleashes a shower of arrows into the battle to come to her aid. The arrows count as magical projectiles, but armor grants full protection as normal. Shields also provide passive protection against the arrows as normal. The mopor takes aim at a group of enemies within range, who are then struck by a volley of black arrows. In its basic version, this ability unleashes two arrows, which are evenly and randomly distributed among enemies within the designated group. The arrows automatically hit with a successful invocation, each causing 1d10 (OR 8-10) points of damage with Penetration Value 2.",
+    "summary": "Makes arrows rain on an area to strike several enemies.",
+    "swedishName": "",
+    "duration": "",
+    "range": "30 meters",
+    "weavingTime": "2 action rounds",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Increase the number of arrows by 1"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!OIDPL4v1w2x3y4z5",
+  "_id": "OIDPL4v1w2x3y4z5",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Flèche de bataille",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:battle-arrow:0",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:battle-arrow:0",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fureur d’Ogon",
+    "description": "La mopor en appelle à la puissance de Ogon, qui décoche une flèche dans la bataille afin de lui venir en aide. Cette flèche est considérée comme un projectile magique, mais les armures conservent toute leur protection contre elle. Les boucliers confèrent également une protection passive contre cette flèche selon les règles habituelles. La mopor vise un ennemi situé à portée, qui est alors frappé par une flèche noire. Cette flèche touche automatiquement si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+    "summary": "Tire une flèche divine qui inflige des dégâts à distance.",
+    "swedishName": "",
+    "duration": "",
+    "range": "20 mètres",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:battle-arrow:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!cSpeELcIdJeKfLgM",
+  "_id": "cSpeELcIdJeKfLgM",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36000000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 7400000,
+  "sort": 7500000,
   "system": {
     "description": "Cette spécialité permet de savoir comment fonctionne la religion d’une culture. Quels sont ses dieux et que représentent-ils ? Comment vivent les fidèles ? Quelles sont leurs fêtes ? Quelle est l’histoire de la religion ? Toutes ces questions trouvent une réponse sur un test de compétence réussi. Le personnage bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer s’il sait quelque chose sur la religion d’un peuple. La spécialité est centrée sur une seule culture : les Stormlanders, les Mittlanders, les Viranns, les Sauvages, les nains ou les elfes.",
     "summary": "Explique le fonctionnement de la religion d’une culture : dieux, fidèles, fêtes et histoire.",

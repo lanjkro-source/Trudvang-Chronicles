@@ -1,0 +1,56 @@
+{
+  "name": "Espionage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Sight of Lekaba",
+    "description": "The mopor can enchant an object in her possession (1 action round), then plant it strategically and use it to perceive whatever is happening around it. For the duration of the power, the mopor can view whatever is happening around the object at any point by slipping in a trance (weaving time of five action rounds) and temporarily shifting her consciousness into the object. Once the mopor has put the power on the object, the distance between her and it no longer matters. Right before the power expires, the mopor can choose to see everything that has happened around the object for the duration, all at once. The memories of events appear instantaneously, just as if they were the mopor’s own memories.",
+    "summary": "Turns an object into an observation point to see and hear what surrounds it at a distance.",
+    "swedishName": "Hlustspyrja",
+    "duration": "1 hour",
+    "range": "contact",
+    "weavingTime": "1 action round/5 action rounds",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 day"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 week"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!IZSbZUpVqWrXsYtZ",
+  "_id": "IZSbZUpVqWrXsYtZ",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38500000,
+  "ownership": {
+    "default": 0
+  }
+}

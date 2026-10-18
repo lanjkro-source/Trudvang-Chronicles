@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 12000000,
+  "sort": 12100000,
   "system": {
     "description": "Cette spécialité a pour objet la chasse d’un animal spécifique. Le personnage a appris où et comment l’animal vit, et les traces qu’il doit suivre lorsqu’il le traque. Parmi les espèces animales, on compte le lièvre, le loup, l’ours, le renard, le lynx, le cheval sauvage, le cerf, le saumon, etc. Le bonus de spécialité est utilisé lorsque le personnage piste un animal de l’espèce choisie, ainsi que lorsqu’il chasse dans une zone où l’espèce est établie.",
     "summary": "Spécialise la chasse sur un animal précis : son habitat, ses mœurs et les traces qui mènent à lui.",

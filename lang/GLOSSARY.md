@@ -773,6 +773,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Knowledge.pathwalker` | Pathwalker | Exploration |
 | `TRUDVANG.Knowledge.terrainExperience` | Terrain Experience | Connaissance de l'environnement |
 | `TRUDVANG.Knowledge.weathered` | Weathered | Endurci |
+| `TRUDVANG.Knowledge.mopor` | Mopor | Mopor |
 
 ## `TRUDVANG.KnowledgeDescription`
 
@@ -1333,6 +1334,7 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Religion.Haminges` | Haminges | Haminges |
 | `TRUDVANG.Religion.Thuuldom` | Thuuldom | Thuuldom |
 | `TRUDVANG.Religion.Toikalokke` | Toikalokke | Toikalokke |
+| `TRUDVANG.Religion.JoaringFaith` | Joaring Faith | Foi Joaring |
 
 ## `TRUDVANG.TraitBenefit`
 
@@ -3702,6 +3704,38 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Description` | aBlet of the hIeld The Gavlian has chosen to walk the path of the demon brother, while showing greater loyalty to Gave. The god bestows the dimwalker with the black oak’s protection, but also greater protection against weather, vitner, and demons. chapter 4. | L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments. |
 | `TRUDVANG.Content.Tablet.holy-toikalokke-master-of-elements.Negation` |  |  |
 
+## `TRUDVANG.Content.Tablet.holy-joaringfaith-fury-of-ogon`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-fury-of-ogon.Name` | Fury of Ogon | Fureur d’Ogon |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-fury-of-ogon.Description` | The mopor has sworn allegiance to Ogon, the dark war god of the East, who grants her in return storms of divine arrows and a blood rage that turns any Stormlander into a fearless warrior. | La mopor a juré allégeance à Ogon, le dieu de la guerre des terres de l’Est, qui lui offre en retour des tempêtes de flèches divines et une rage sanglante qui fait de tout stormlander un guerrier sans peur. |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-fury-of-ogon.Negation` |  |  |
+
+## `TRUDVANG.Content.Tablet.holy-joaringfaith-power-of-sille`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-power-of-sille.Name` | Power of Sille | Puissance de Sille |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-power-of-sille.Description` | The mopor has sworn allegiance to Sille, goddess of love and plenty, known as Esilis of the West, who grants her in return powers of healing and relief as well as the warmth and the blossoming life of summer. | La mopor a juré allégeance à Sille, déesse de l’amour et de l’abondance, également connue comme Esilis de l’ouest, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été. |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-power-of-sille.Negation` |  |  |
+
+## `TRUDVANG.Content.Tablet.holy-joaringfaith-sight-of-lekaba`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-sight-of-lekaba.Name` | Sight of Lekaba | Vue de Lekaba |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-sight-of-lekaba.Description` | The mopor has sworn allegiance to Lekaba, guide and god of the holy speech, always facing North, who grants her in return the far sight and the clairvoyance of the one who reads the world and the memories of things. | La mopor a juré allégeance à Lekaba, guide et dieu de la parole sacrée, toujours tourné vers le Nord, qui lui offre en retour la vue lointaine et la clairvoyance de celle qui sait lire le monde et la mémoire des choses. |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-sight-of-lekaba.Negation` |  |  |
+
+## `TRUDVANG.Content.Tablet.holy-joaringfaith-curses-of-sonntag`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-curses-of-sonntag.Name` | Curses of Sonntag | Malédictions de Sonntag |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-curses-of-sonntag.Description` | The mopor has sworn allegiance to Sonntag, god of death, facing South, who grants her in return the terrible blessings of decay, ruin and the unmaking of all living things. | La mopor a juré allégeance à Sonntag, dieu de la mort, tourné vers le Sud, qui lui offre en retour les épouvantables bénédictions de la corruption, de la ruine et de la décomposition de toute chose vivante. |
+| `TRUDVANG.Content.Tablet.holy-joaringfaith-curses-of-sonntag.Negation` |  |  |
+
 ## `TRUDVANG.Content.Power.holy-ealdtradition-gift-of-thanja:animal-speech:1`
 
 | Clé | English | Français |
@@ -4673,6 +4707,210 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | Clé | English | Français |
 |---|---|---|
 | `TRUDVANG.Content.Power.holy-haminges-power-of-trolls:willpower:1.Name` | Willpower | Volonté |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:amnesia:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:amnesia:4.Name` | Amnesia | Amnésie |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:bad-harvest:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:bad-harvest:6.Name` | Bad Harvest | Mauvaise récolte |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:curse-creature:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:curse-creature:5.Name` | Curse Creature | Malédiction de créature |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:curse-object:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:curse-object:3.Name` | Curse Object | Malédiction d’objet |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:fever:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:fever:2.Name` | Fever | Fièvre |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:phantom-plague:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:phantom-plague:1.Name` | Phantom Plague | Mal imaginaire |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:tree-curse:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:tree-curse:7.Name` | Tree Curse | Malédiction de l’arbre |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:uprooted-tree:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-curses-of-sonntag:uprooted-tree:0.Name` | Uprooted Tree | Déracinement |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:battle-arrow:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:battle-arrow:0.Name` | Battle Arrow | Flèche de bataille |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:blacken-the-sky:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:blacken-the-sky:7.Name` | Blacken the Sky | Cieux obscurcis |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:bloodfire:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:bloodfire:6.Name` | Bloodfire | Embrasement du sang |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:boiling-blood:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:boiling-blood:3.Name` | Boiling Blood | Sang bouillant |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:madness:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:madness:4.Name` | Madness | Folie |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:rage:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:rage:2.Name` | Rage | Rage |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:riastarthae:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:riastarthae:8.Name` | Riastarthae | Riastarthae |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:shower-of-arrows:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:shower-of-arrows:5.Name` | Shower of Arrows | Pluie de flèches |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:simmering-blood:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-fury-of-ogon:simmering-blood:1.Name` | Simmering Blood | Sang brûlant |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:breath-of-sille:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:breath-of-sille:7.Name` | Breath of Sille | Souffle de Sille |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:firon-power:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:firon-power:5.Name` | Firon Power | Pouvoir de Firon |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-glow:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-glow:3.Name` | Healing Glow | Lumière guérisseuse |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-sun:8`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-sun:8.Name` | Healing Sun | Soleil guérisseur |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-warmth:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing-warmth:4.Name` | Healing Warmth | Chaleur guérisseuse |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:healing:0.Name` | Healing | Guérison |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:summer-place:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:summer-place:2.Name` | Summer Place | Cœur de l’été |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:sunray:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:sunray:1.Name` | Sunray | Rayons du soleil |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:time-of-the-hunt:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-power-of-sille:time-of-the-hunt:6.Name` | Time of the Hunt | Heure de la chasse |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:astral-voyage:6`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:astral-voyage:6.Name` | Astral Voyage | Voyage astral |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:espionage:3`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:espionage:3.Name` | Espionage | Espionnage |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:far-sight:2`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:far-sight:2.Name` | Far Sight | Vision lointaine |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:read-powers:5`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:read-powers:5.Name` | Read Powers | Lecture des pouvoirs |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:scanning:1`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:scanning:1.Name` | Scanning | Examen d’objet |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:seeing:4`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:seeing:4.Name` | Seeing | Vision parfaite |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:tracking:0`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:tracking:0.Name` | Tracking | Pistage |
+
+## `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:true-sight:7`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Power.holy-joaringfaith-sight-of-lekaba:true-sight:7.Name` | True Sight | Vision véritable |
 
 ## `TRUDVANG.Content.Power.holy-tenetnid-tablet-of-anger:divine-purge:6`
 
@@ -6111,6 +6349,10 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 | `TRUDVANG.Content.Theme.holy-toikalokke-animal-mind` | Powers for befriending, tracking, speaking with, mastering, and assuming the forms of animals. | Pouvoirs pour se lier d'amitié avec les animaux, les pister, leur parler, les maîtriser et prendre leur forme. |
 | `TRUDVANG.Content.Theme.holy-toikalokke-lynx-power` | Feline gifts of hearing, leaping, reflexes, aim, tracking, concealment, and pathfinding. | Dons félins d'ouïe, de bond, de réflexes, de visée, de pistage, de camouflage et de repérage des sentiers. |
 | `TRUDVANG.Content.Theme.holy-toikalokke-master-of-elements` | Elemental powers controlling earth, fire, water, wind, temperature, and elemental projectiles. | Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires. |
+| `TRUDVANG.Content.Theme.holy-joaringfaith-fury-of-ogon` | Storms of divine arrows and the blood rage granted by Ogon, the dark war god of the East. | Tempêtes de flèches divines et rage sanglante accordées par Ogon, le dieu de la guerre des terres de l’Est. |
+| `TRUDVANG.Content.Theme.holy-joaringfaith-power-of-sille` | Powers of love, plenty, healing and the warmth of summer granted by Sille, goddess of the West. | Pouvoirs de l’amour, de l’abondance, de guérison et de la chaleur de l’été accordés par Sille, la déesse de l’ouest. |
+| `TRUDVANG.Content.Theme.holy-joaringfaith-sight-of-lekaba` | Far sight, sharpened senses and the reading of objects, memories and tracks granted by Lekaba. | Vue lointaine, sens aiguisés et lecture des objets, des souvenirs et des traces accordés par Lekaba. |
+| `TRUDVANG.Content.Theme.holy-joaringfaith-curses-of-sonntag` | Curses of decay, ruin and the unmaking of the living granted by Sonntag, god of death. | Malédictions de corruption, de ruine et de décomposition des vivants accordées par Sonntag, le dieu de la mort. |
 
 ## `TRUDVANG.Content`
 
@@ -6928,6 +7170,12 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Ability.weathered.Description` | The person is used to spending long periods of time in the wilderness, and can therefore endure rain, wind, and cold. The specialty bonus is used when the person needs to overcome the weather in the wild. There are three types of vitner that together form the worldwide force, which makes up all of the worlds as well as the gap between them. Together, the three powers build and surround everyone and everything, from the smallest piece of gravel to the largest mountain, from the smallest mouse to the largest giant. | Le personnage est habitué à passer de longues périodes dans la nature et est donc capable de supporter la pluie, le vent et le froid. Le bonus de spécialité est utilisé lorsque le personnage doit affronter une météo défavorable en pleine nature. |
 
+## `TRUDVANG.Content.Ability.mopor`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Ability.mopor.Description` | The dimwalker has chosen to devote herself to the Joaring Faith and can learn to invoke the gods of Dain for access to supernatural powers. By acquiring the Holy Tablet specialty (Joaring Faith), the dimwalker gains access to the divine talents of the Holy Tablet she has learned. The Mopor can raise the number of her Divinity Points by performing a two-hour ritual at the stone altar of a Joaring Village; the basic form of this rite involves food gifting and only yields 1 DP, while Bloodgifting performed on the same altar follows the Gerbanis rules, Gloomgifting risk included. Choosing this specialty means forgoing the specialties of the other religions. | L’arpenteur des brumes a choisi de se consacrer à la Foi Joaring et peut apprendre à invoquer les dieux de Dain pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Foi Joaring), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring : cette forme de base ne rapporte que 1 PD, tandis qu’une offrande de sang accomplie sur le même autel suit les règles de Gerbanis, risque de sacrilège inclus. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions. |
+
 ## `TRUDVANG.Content.Journal.human`
 
 | Clé | English | Français |
@@ -7141,6 +7389,13 @@ La terminologie française s'appuie sur l'édition officielle Black Book Éditio
 |---|---|---|
 | `TRUDVANG.Content.Journal.toikalokke.Name` | Toikalokke | Toikalokke |
 | `TRUDVANG.Content.Journal.toikalokke.Content` | <article class="trudvang-religion-journal"><p>Toikalokke is the name for the divine practice learned by elven stargazers and priests (though the elves call them the “high gifts,” after the “high gods”). Those who master these gifts are called Ihana.</p><h2>Star Harp</h2><ul><li>Toikalokke’s prerequisite for Holy Tablets)</li></ul><p>The star harp is the elven priest’s most valuable possession, and with the help of that object the priest is able to decipher the stars and make contact with the gods which give the knowledge of Holy Tablets. All star harps are different. Some are as small as the palm of a hand, while others may be as big as a house, but all of them appear as a wicker tree without leaves. A star harp is created from the unusual alfarka wood and is powerfully connected to the priest who owns it (as every priest needs to possess their own star harp). From the branches of the harp, the priest hangs different prisms and lenses, and by studying how the starlight breaks against the prisms, the priest can make contact with the gods.</p><p>If the priest’s star harp breaks or disappears, the priest must get a new one, otherwise no stargazing will be possible, although normal Divinity Points can be used. Another Ihana’s star harp may not be used as a replacement, even temporarily.</p><h2>Stargazing and Extra Divinity Points</h2><p>Elven priests can obtain extra Divinity Points in much the same way that Gerbanis priests perform blood sacrifice or Gavlians of Westmark pray , though the method obviously differs. By studying stars and astral bodies with a star harp, they acquire their extra Divinity Points.</p><p>To decipher the signs of the gods, two things are required: it must be a starry night (in this way , the elves are influenced more by the unpredictable nature of weather than are the priests of Gerbanis or the Tenet of Nid), and the elf must have their star harp ready for use.</p><p>A dimwalker can decipher the stars only on singular occasions and must wait until all the Divinity Points from the last stargazing have disappeared before doing so again.</p><ul><li>Divinity points obtained through stargazing are fleeting and disappear at a rate of 1 point per day.</li></ul><h2>Time Spent Stargazing and External Conditions</h2><p>Both the time that the Ihana spends stargazing and the conditions in which the ritual is performed garner different amounts of Divinity Points.</p><p>During the time that an Ihana spends stargazing, they must remain undisturbed. Each time the priest’s peace and meditation is disturbed, they must succeed on an appropriate Situation roll to maintain concentration.</p><p>If the priest loses concentration, that stargazing attempt has failed and no Divinity Points are obtained.</p><section class="trudvang-religion-table"><h3>Time Spent Stargazing</h3><table><thead><tr><th>Time spent</th><th>Divinity Points</th></tr></thead><tbody><tr><td>1 hour</td><td>1</td></tr><tr><td>4 hours</td><td>3</td></tr><tr><td>8 hours</td><td>6</td></tr><tr><td>2 × 8 hours (2 nights)</td><td>12</td></tr><tr><td>3 × 8 hours (3 nights)</td><td>24</td></tr><tr><td>7 × 8 hours (7 nights)</td><td>32</td></tr></tbody></table></section><p>Based on the stargazing conditions, a multiplier is applied to the Divinity Points gained over time. An Ihana is unable to stargaze at all if the sky is completely covered in clouds or if the location is one where the stars are not visible, such as underground or beneath a thick canopy of trees.</p><p>The table below indicates the multiplier for different conditions.</p><section class="trudvang-religion-table"><h3>Stargazing Conditions</h3><table><thead><tr><th>Visibility</th><th>Divinity Points</th></tr></thead><tbody><tr><td>Partially starry</td><td>×1</td></tr><tr><td>Starry</td><td>×2</td></tr><tr><td>Partially starry and full moon</td><td>×3</td></tr><tr><td>Starry and full moon</td><td>×4</td></tr><tr><td>Summer solstice</td><td>×5</td></tr><tr><td>Storm</td><td>/2</td></tr></tbody></table></section><p>To succeed in studying the stars, the stargazer must make a successful Skill roll for the Ihana specialty.</p><p>Stargazing is the well of power from which an Ihana priest draws strength. The amount of time spent stargazing and the predominant weather conditions during the process are quite important, as is the location, since the worthier a place is and the longer the time spent there, the more power the priest will gain to use in divine abilities. Without stargazing with a star harp the Ihana has only a limited amount of Divinity Points to spend on abilities. Stargazing allows the Ihana the opportunity to obtain extra points when needed.</p></article> | <article class="trudvang-religion-journal"><p>Toikalokke est le nom donné à la pratique divine enseignée par les prêtres et astrologues elfes (Ces derniers l’appellent « hauts dons », d’après les « hauts dieux »). Ceux qui maîtrisent ces dons sont appelés ihanas.</p><h2>La harpe des étoiles</h2><ul><li>Prérequis du Toikalokke pour l’apprentissage des Tablettes sacrées.</li></ul><p>La harpe des étoiles est l’objet le plus précieux que peut posséder un prêtre elfe, car il lui permet de déchiffrer les étoiles et d’entrer en contact avec les dieux qui lui confèrent la connaissance des tablettes sacrées. Toutes les harpes des étoiles sont différentes. Certaines sont aussi petites que la paume de la main, tandis que d’autres sont aussi grandes qu’une maison, mais toutes ressemblent à un saule sans feuille.</p><p>Les harpes des étoiles sont fabriquées à partir du bois d’alfarka, qui est assez rare, et elles sont fortement liées à leur propriétaire (chaque prêtre doit posséder sa propre harpe). Le prêtre accroche divers prismes et lentilles aux branches de la harpe, et en étudiant la façon dont ils décomposent la lumière des étoiles, il peut entrer en contact avec les dieux.</p><p>Si le prêtre brise sa harpe ou la perd, il doit en obtenir une nouvelle, sans quoi il ne pourra plus interpréter les étoiles, même s’il demeure capable d’utiliser normalement ses points de divinité. Il lui est impossible de la remplacer par la harpe d’un autre prêtre, même de façon temporaire.</p><h2>Astrologie et points de divinité supplémentaires</h2><p>Les prêtres elfes peuvent obtenir des points de divinité supplémentaires de façon similaire aux prêtres de Gerbanis qui font des sacrifices de sang ou aux gavliens du Vastermark qui prient, mais leur méthode est évidemment différente. C’est en étudiant les étoiles et les corps célestes à travers leurs harpes des étoiles qu’ils se procurent leurs points de divinité supplémentaires.</p><p>Pour déchiffrer les signes des dieux, l’ihana a besoin de deux choses : une nuit étoilée (en cela, les elfes subissent davantage l’influence de la nature imprévisible des éléments que les prêtres de Gerbanis ou de la Doctrine de Nid), et sa harpe des étoiles à portée de main.</p><p>Un arpenteur des brumes ne peut déchiffrer les étoiles qu’en des occasions particulières et il doit attendre que tous les points de divinité qu’il a reçus lors de sa précédente observation des étoiles aient disparu avant de pouvoir recommencer.</p><p>Pour parvenir à étudier les étoiles, l’arpenteur des brumes doit réussir un test de compétence avec la spécialité Ihana.</p><p>L’astrologie est le puits de pouvoir dans lequel les prêtres ihanas puisent leur force. Le temps passé à observer les étoiles et les conditions météorologiques qui accompagnent cette pratique sont plutôt importants, de même que l’endroit où l’ihana s’installe : plus le lieu est significatif et plus il y passe du temps, plus la quantité de pouvoir que recevra le prêtre pour utiliser ses talents divins sera importante. S’il n’observe pas les étoiles à l’aide d’une harpe des étoiles, l’ihana ne dispose que d’une quantité limitée de points de divinité à dépenser pour utiliser ses pouvoirs. L’astrologie donne à l’ihana l’occasion d’obtenir des points supplémentaires quand le besoin s’en fait sentir.</p><ul><li>Les points de divinité obtenus par le biais de l’astrologie sont volatiles et disparaissent au rythme de 1 point par jour.</li></ul><h2>Temps passé à observer les étoiles, conditions externes</h2><p>Le temps que passe l’ihana à observer les étoiles et les conditions dans lesquelles il accomplit ce rituel influent largement sur le nombre de points de divinité que l’arpenteur des brumes peut recueillir.</p><p>Pendant tout le temps qu’il observe les étoiles, l’ihana ne doit subir aucune distraction. Chaque fois que la tranquillité du prêtre est menacée, il doit réussir un test de situation adéquat pour conserver sa concentration. Si le prêtre est déconcentré, son rituel échoue et il n’en retire aucun point de divinité.</p><section class="trudvang-religion-table"><h3>Temps passé à observer les étoiles</h3><table><thead><tr><th>Temps passé</th><th>Points de divinité</th></tr></thead><tbody><tr><td>1 heure</td><td>1</td></tr><tr><td>4 heures</td><td>3</td></tr><tr><td>8 heures</td><td>6</td></tr><tr><td>2 × 8 heures (2 nuits)</td><td>12</td></tr><tr><td>3 × 8 heures (3 nuits)</td><td>24</td></tr><tr><td>7 × 8 heures (7 nuits)</td><td>32</td></tr></tbody></table></section><p>En fonction des conditions dans lesquelles l’ihana observe les étoiles, on applique un multiplicateur au nombre de points de divinité qu’il obtient au fil du temps. Un ihana est dans l’impossibilité d’observer les étoiles si le ciel est complètement voilé par les nuages ou s’il se trouve à un endroit où les étoiles ne sont pas visibles (en sous-sol ou sous la canopée d’une épaisse forêt, par exemple). Si l’ihana observe les étoiles plus de 8 heures, alors il doit passer la journée à dormir et effectue des calculs astronomiques le soir avant de reprendre l’observation.</p><p>La table ci-dessous précise le multiplicateur selon les conditions.</p><section class="trudvang-religion-table"><h3>Conditions externes</h3><table><thead><tr><th>Visibilité</th><th>Points de divinité</th></tr></thead><tbody><tr><td>Partiellement étoilé</td><td>×1</td></tr><tr><td>Étoilé</td><td>×2</td></tr><tr><td>Partiellement étoilé et pleine lune</td><td>×3</td></tr><tr><td>Étoilé et pleine lune</td><td>×4</td></tr><tr><td>Solstice d’été</td><td>×5</td></tr><tr><td>Orage</td><td>/2</td></tr></tbody></table></section></article> |
+
+## `TRUDVANG.Content.Journal.joaringFaith`
+
+| Clé | English | Français |
+|---|---|---|
+| `TRUDVANG.Content.Journal.joaringFaith.Name` | Joaring Faith | Foi Joaring |
+| `TRUDVANG.Content.Journal.joaringFaith.Content` | <article class="trudvang-religion-journal"><h2>The Mopor</h2><p>The Mopor is the woman who holds the secrets of ancient knowledge in the Joaring villages of Dain. She is the one who performs religious rituals, calls the power of the gods, and educates the Joarings by using the Mopor Rods with their mysteriously carved signs.</p><h2>The Visions</h2><p>She is occasionally taken by visions and trances through which the Gods speak to her (according to GM judgement). These visions can be facilitated by complicated rituals, but they can also happen spontaneously, especially when the Mopor must choose her Manpi or apprentice.</p><h2>Differences from a Normal Dimwalker</h2><p>Treat the Mopor as a normal dimwalker with the following differences:</p><ul><li>They need the specific &#8220;Mopor&#8221; specialty of the Invoke discipline.</li><li>To become a Mopor the woman must have appeared in a vision to an older Mopor.</li><li>The Mopor can raise the number of her divinity points by performing a 2-hours long ritual at the stone altar of a Joaring Village. This basic form involves food gifting and gives only 1 DP. Bloodgifting can also be performed on the altar, following the same mechanics for Bloodgifting in Gerbanis, including the risk of Gloomgifting. Unused DP disappear at a rate of 1 per day.</li></ul></article> | <article class="trudvang-religion-journal"><h2>La mopor</h2><p>La mopor est la femme qui détient les secrets du savoir ancien dans les villages joaring de Dain. C’est elle qui accomplit les rites religieux, appelle la puissance des dieux, et instruit les Joaring en se servant des bâtons de mopor et de leurs signes mystérieusement gravés.</p><h2>Les visions</h2><p>Elle est parfois saisie par des visions et des transes au travers desquelles les dieux lui parlent (selon l’appréciation du MJ). Ces visions peuvent être facilitées par des rites complexes, mais elles peuvent aussi survenir spontanément, en particulier lorsque la mopor doit choisir sa Manpi ou son apprentie.</p><h2>Différences avec un arpenteur des brumes normal</h2><p>Traitez la mopor comme un arpenteur des brumes normal avec les différences suivantes :</p><ul><li>Elle a besoin de la spécialité « Mopor » de la discipline Invocation.</li><li>Pour devenir mopor, la femme doit être apparue dans une vision à une mopor plus ancienne.</li><li>La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring. Cette forme de base implique une offrande de nourriture et ne rapporte que 1 PD. Une offrande de sang peut également être accomplie sur l’autel, en suivant les mêmes règles que l’offrande de sang de Gerbanis, y compris le risque de sacrilège. Les PD inutilisés disparaissent au rythme de 1 par jour.</li></ul></article> |
 
 ## `TRUDVANG.Content.CreatureAbility.5SL1RE8D9EaGbHcI`
 

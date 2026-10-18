@@ -1,0 +1,44 @@
+{
+  "name": "Rage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "Normally, it’s not in the Stormlanders’ nature to go berserk, as their battle technique and prowess often involve more style than raw power, but those who worship Ogon can evoke an overwhelming influence that causes them to fly into a rage in p articularly hard battles. This effect can be so o verpowering that their figures distort, their bodies spasms, their skin begins to bubble, their muscles expand, their veins bulge, and their faces twists into a horrific grimace. This battle craze, however, is very demanding on their system and once the duration ends, the mopor will collapse exhausted to the ground for an amount of time equal to half of what was spent berserk. The mopor’s body also needs to be cooled down from its boiling state following the battle craze; otherwise she will suffer damage from the extreme temperature. As soon as the duration ends, the mopor will receive 1 point of damage per action round for 2 rounds (armor will not protect) unless s ufficiently cooled. Simply lying down in water (or being thrown into it) is enough to prevent this damage. ✦ Effects of Rage: ✦ The mopor grows half a meter taller and gains 30 kg in additional muscle ✦ +5 Body Points (withdraw damage from this bonus before normal Body Points are affected) ✦ +2 in damage with melee weapons or thrown weapons ✦ +1 on SV of all attacks ✦ The mopor is unable to parry or evade attacks ✦ The mopor ignores all effects from fear",
+    "summary": "Plunges the mopor into a battle rage that increases her offensive power.",
+    "swedishName": "",
+    "duration": "3 action rounds",
+    "range": "personal",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:rage:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 action round"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!JujNegKfLgMhNiOj",
+  "_id": "JujNegKfLgMhNiOj",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36200000,
+  "ownership": {
+    "default": 0
+  }
+}

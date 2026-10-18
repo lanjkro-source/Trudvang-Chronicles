@@ -111,7 +111,7 @@ globalThis.game = {
 };
 const {getPowerSummary, TABLET_CATALOG} = await import("../modules/tablet-catalog.mjs");
 
-const expectedTabletCounts = {vitner: 14, gerbanis: 6, ealdTradition: 6, tenetNid: 6, haminges: 6, thuuldom: 17, toikalokke: 3};
+const expectedTabletCounts = {vitner: 14, gerbanis: 6, ealdTradition: 6, tenetNid: 6, haminges: 6, thuuldom: 17, toikalokke: 3, joaringFaith: 4};
 const actualTabletCounts = {};
 const catalogIds = new Set();
 for (const tablet of TABLET_CATALOG) {
@@ -128,7 +128,7 @@ for (const tablet of TABLET_CATALOG) {
   }
 }
 for (const [family, count] of Object.entries(expectedTabletCounts)) if (actualTabletCounts[family] !== count) failures.push(`${family} must contain ${count} tablets, found ${actualTabletCounts[family] || 0}.`);
-if (TABLET_CATALOG.reduce((total, tablet) => total + tablet.powers.length, 0) !== 394) failures.push("The complete tablet catalogue must contain 394 spell/divine-power entries.");
+  if (TABLET_CATALOG.reduce((total, tablet) => total + tablet.powers.length, 0) !== 428) failures.push("The complete tablet catalogue must contain 428 spell/divine-power entries.");
 
 try {
   readFileSync(join(root, "template.json"));

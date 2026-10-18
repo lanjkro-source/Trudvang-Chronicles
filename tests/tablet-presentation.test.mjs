@@ -16,7 +16,7 @@ const resolvers = language => ({
 });
 
 test("all 58 tablets ship bilingual summaries and full descriptions", () => {
-  assert.equal(TABLET_CATALOG.length, 58);
+  assert.equal(TABLET_CATALOG.length, 62);
   for (const tablet of TABLET_CATALOG) {
     for (const language of ["en", "fr"]) {
       const data = tabletItemData(tablet, resolvers(language));
@@ -26,9 +26,9 @@ test("all 58 tablets ship bilingual summaries and full descriptions", () => {
   }
 });
 
-test("all 394 powers ship descriptions and French-authoritative power levels in both languages", () => {
+test("all 428 powers ship descriptions and French-authoritative power levels in both languages", () => {
   const powers = TABLET_CATALOG.flatMap(tablet => tablet.powers.map(power => ({tablet, power})));
-  assert.equal(powers.length, 394);
+  assert.equal(powers.length, 428);
   for (const {tablet, power} of powers) {
     for (const language of ["en", "fr"]) {
       const data = powerItemData(power, tablet, resolvers(language)).system;

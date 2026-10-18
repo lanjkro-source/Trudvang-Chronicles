@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11600000,
+  "sort": 11700000,
   "system": {
     "description": "The person is familiar with the sea that surrounds a specific coast, and can add +2 per level to their Skill Value when trying to learn about the seas of a selected region.",
     "summary": "Makes the shoreline and waters of a specific coast familiar territory.",

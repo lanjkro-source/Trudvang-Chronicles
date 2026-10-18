@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 8300000,
+  "sort": 8400000,
   "system": {
     "description": "Cette spécialité peut être acquise plusieurs fois, une fois pour chaque langue étrangère. Certaines langues sont plus compliquées à apprendre que d’autres, et ont donc un prérequis concernant le niveau de la discipline Langage, même pour le premier niveau de cette spécialité (cf. la table Langues parlées ci-dessus).",
     "summary": "Acquiert une langue étrangère ; cette spécialité peut être répétée pour chaque nouvelle langue, sous conditions de niveau.",

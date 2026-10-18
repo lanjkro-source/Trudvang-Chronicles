@@ -1,0 +1,33 @@
+{
+  "name": "Fury of Ogon",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon",
+    "description": "The mopor has sworn allegiance to Ogon, the dark war god of the East, who grants her in return storms of divine arrows and a blood rage that turns any Stormlander into a fearless warrior.",
+    "summary": "Calls the dark war god of the East for storms of divine arrows and a berserk rage.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!tXlBCnPkQlRmSnTo",
+  "_id": "tXlBCnPkQlRmSnTo",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 35900000,
+  "ownership": {
+    "default": 0
+  }
+}

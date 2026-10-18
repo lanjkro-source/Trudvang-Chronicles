@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 7000000,
+  "sort": 7100000,
   "system": {
     "description": "Le personnage a participé à de nombreux combats et a appris à attaquer et à se défendre. Il reçoit un bonus supplémentaire de 2 points de combat par niveau à répartir entre ses attaques et parades au cours d’un tour de combat.",
     "summary": "Vétéran des champs de bataille : des points de combat supplémentaires à répartir entre attaques et parades.",

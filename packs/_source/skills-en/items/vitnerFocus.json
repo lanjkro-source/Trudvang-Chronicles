@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "xLsr00rXsYtZu0v1",
-  "sort": 9800000,
+  "sort": 9900000,
   "system": {
     "description": "The conjurer has learned to focus their mind on the vitner energies receiving the following modifiers per level: +1 on situation rolls to remain focused while distrurbed and -1 to rolls on the table for fatal failure.",
     "summary": "Focuses the conjurer’s mind on vitner energies: resisting distractions better and softening critical failures.",

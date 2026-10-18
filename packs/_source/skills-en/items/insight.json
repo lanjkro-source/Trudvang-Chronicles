@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 7600000,
+  "sort": 7700000,
   "system": {
     "description": "The person knows a lot about a particular chosen subject. The person can add +2 to their Skill Value per level when trying to learn about the chosen subject.",
     "summary": "Makes the character a scholar of the specific field they have embraced.",

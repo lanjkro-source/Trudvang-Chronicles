@@ -48,7 +48,8 @@ const TABLET_FALLBACKS = [
   ["vitner-craft", "fa-wand-magic-sparkles"], ["vitner-of-objects", "fa-gears"], ["water-craft", "fa-water"],
   ["wind-craft", "fa-wind"], ["witchcraft", "fa-moon"], ["thuuldom", "fa-gem"],
   ["ealdtradition", "fa-leaf"], ["haminges", "fa-paw"], ["gerbanis", "fa-bolt"],
-  ["tenetnid", "fa-scale-balanced"], ["toikalokke", "fa-feather-pointed"]
+  ["tenetnid", "fa-scale-balanced"], ["toikalokke", "fa-feather-pointed"],
+  ["joaringfaith", "fa-ankh"]
 ];
 
 function iconForPower({id = "", name = "", type = "", isRune = false} = {}) {

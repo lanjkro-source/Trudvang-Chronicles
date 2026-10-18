@@ -1,0 +1,50 @@
+{
+  "name": "Embrasement du sang",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fureur d’Ogon",
+    "description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+    "summary": "Enflamme l’essence vitale de la mopor pour accroître sa puissance guerrière.",
+    "swedishName": "",
+    "duration": "1 heure",
+    "range": "personnelle",
+    "weavingTime": "1 tour de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente le nombre de points de santé gagnés de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!AagK10u0v1w2x3y4",
+  "_id": "AagK10u0v1w2x3y4",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36600000,
+  "ownership": {
+    "default": 0
+  }
+}

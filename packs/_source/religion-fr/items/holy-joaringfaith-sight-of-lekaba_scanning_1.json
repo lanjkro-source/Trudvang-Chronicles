@@ -1,0 +1,50 @@
+{
+  "name": "Examen d’objet",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "La mopor touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. La mopor perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais elle ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que la mopor passe concentrée sur ce pouvoir, elle peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que la mopor perçoit ou apprend précisément.",
+    "summary": "Révèle l’histoire et les souvenirs marquants d’un objet touché.",
+    "swedishName": "Tingspyrja",
+    "duration": "9 tours de jeu",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:scanning:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la période sur laquelle la mopor peut remonter dans l’histoire de l’objet de : 1 année"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:scanning:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 3 tours de jeu"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!G0bLhcFaGbHcIdJe",
+  "_id": "G0bLhcFaGbHcIdJe",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38300000,
+  "ownership": {
+    "default": 0
+  }
+}

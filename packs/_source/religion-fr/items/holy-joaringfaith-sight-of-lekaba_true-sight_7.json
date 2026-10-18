@@ -1,0 +1,86 @@
+{
+  "name": "Vision véritable",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:true-sight:7",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:true-sight:7",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "Ce pouvoir permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de pouvoir illusoire qui entourent les êtres et les objets. Le bénéficiaire du pouvoir est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce pouvoir lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de pouvoirs comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce pouvoir, la portée effective de la Vision véritable est de 25 mètres. La mopor peut également se servir de ce pouvoir pour déterminer si un objet ou une créature ont été enchantés et si leur pouvoir a été manipulé autrement que par des illusions. Pour ce faire, elle doit réussir un test de situation avec une valeur de situation qui dépend du pouvoir tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, la mopor n’a aucun moyen de deviner la véritable nature du pouvoir découvert sans recourir également au pouvoir Lecture des pouvoirs. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+    "summary": "Permet de voir à travers les illusions, l’invisibilité et les camouflages magiques.",
+    "swedishName": "Sannskönja",
+    "duration": "1 minute",
+    "range": "contact",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 10 minutes"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:4",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée effective de : 5 mètres"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "Augmente la portée effective de : 25 mètres"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:6",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de découvrir si le sujet est sous le coup d’un pouvoir de : +1"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:7",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affecte un autre être vivant (qui bénéficie de la version de base du pouvoir)"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!NqT5acE9EaGbHcId",
+  "_id": "NqT5acE9EaGbHcId",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38900000,
+  "ownership": {
+    "default": 0
+  }
+}

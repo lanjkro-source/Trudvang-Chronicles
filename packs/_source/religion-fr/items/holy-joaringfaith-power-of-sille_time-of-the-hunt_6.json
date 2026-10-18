@@ -1,0 +1,50 @@
+{
+  "name": "Heure de la chasse",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Puissance de Sille",
+    "description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour de la mopor deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+    "summary": "Fait apparaître une lumière solaire favorable à la chasse et aux déplacements.",
+    "swedishName": "",
+    "duration": "1 jour",
+    "range": "rayon de 10 km",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Augmente la portée de : 10 kilomètres"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!onc1MPhNiOjPkQlR",
+  "_id": "onc1MPhNiOjPkQlR",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37700000,
+  "ownership": {
+    "default": 0
+  }
+}

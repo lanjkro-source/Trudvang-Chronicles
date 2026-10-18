@@ -1,0 +1,50 @@
+{
+  "name": "Simmering Blood",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +1d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aid of this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+    "summary": "Strengthens the mopor's life essence and increases her resistance to combat.",
+    "swedishName": "",
+    "duration": "1 hour",
+    "range": "personal",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the number of Body"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!HpjMOmQlRmSnToUp",
+  "_id": "HpjMOmQlRmSnToUp",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36100000,
+  "ownership": {
+    "default": 0
+  }
+}

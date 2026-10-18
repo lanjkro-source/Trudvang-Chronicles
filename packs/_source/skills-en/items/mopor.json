@@ -1,0 +1,24 @@
+{
+  "_key": "!items!gsX0jJcIdJeKfLgM",
+  "_id": "gsX0jJcIdJeKfLgM",
+  "name": "Mopor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5400000,
+  "system": {
+    "description": "The dimwalker has chosen to devote herself to the Joaring Faith and can learn to invoke the gods of Dain for access to supernatural powers. By acquiring the Holy Tablet specialty (Joaring Faith), the dimwalker gains access to the divine talents of the Holy Tablet she has learned. The Mopor can raise the number of her Divinity Points by performing a two-hour ritual at the stone altar of a Joaring Village; the basic form of this rite involves food gifting and only yields 1 DP, while Bloodgifting performed on the same altar follows the Gerbanis rules, Gloomgifting risk included. Choosing this specialty means forgoing the specialties of the other religions.",
+    "summary": "Devotes the invoker to the Joaring Faith: raise Divinity Points at a Joaring village altar to call the gods of Dain through her Holy Tablet.",
+    "catalogId": "mopor",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

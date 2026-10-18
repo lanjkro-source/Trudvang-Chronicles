@@ -1,0 +1,56 @@
+{
+  "name": "Espionnage",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "La mopor peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du pouvoir, la mopor peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps d'invocation de 5 tours de jeu, le pouvoir devient soutenu tant que la mopor est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que la mopor a lancé ce pouvoir sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du pouvoir, la mopor peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le pouvoir était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de la mopor.",
+    "summary": "Transforme un objet en point d’observation pour voir et entendre ce qui l’entoure à distance.",
+    "swedishName": "Hlustspyrja",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 tour de jeu/5 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 journée"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:2",
+        "cost": 12,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 semaine"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!IZSbZUpVqWrXsYtZ",
+  "_id": "IZSbZUpVqWrXsYtZ",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38500000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "xLsr00rXsYtZu0v1",
-  "sort": 11100000,
+  "sort": 11200000,
   "system": {
     "description": "Niveau L’invocateur atteint une compréhension importante de l’art du vitner qui augmente sa capacité à puiser dans le vitner de son environnement. L’invocateur doit avoir un niveau minimum de 1 dans l’une des autres spécialités : Hwitalja, Morkvitalja ou Vaagritalja. L’augmentation de sa réserve est de 10 points de vitner par niveau d’Habitude du vitner.",
     "summary": "Approfondit la maîtrise de l’art du vitner pour accroître la capacité à puiser dans les énergies environnantes.",

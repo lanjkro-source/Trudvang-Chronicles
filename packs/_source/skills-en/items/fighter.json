@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 7000000,
+  "sort": 7100000,
   "system": {
     "description": "The person has been in battle many times and learned how to attack and defend. They receive an additional +2 Combat Points per level to distribute on their attacks and parries during a combat round.",
     "summary": "A veteran of many battles: extra Combat Points to split between attacks and parries.",

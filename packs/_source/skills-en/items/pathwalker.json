@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 13300000,
+  "sort": 13400000,
   "system": {
     "description": "The person has great stamina when traveling in the wild. The specialty bonus is used when a Skill roll is required during long trips through the wilderness. A person with this specialty also increases the distance covered during one day by 10% per level.",
     "summary": "Exceptional stamina on long journeys through the wilds, with an increased daily distance.",

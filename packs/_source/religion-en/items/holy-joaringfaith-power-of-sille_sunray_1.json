@@ -1,0 +1,44 @@
+{
+  "name": "Sunray",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:sunray:1",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:sunray:1",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Power of Sille",
+    "description": "Sille sees to the mopor’s wish and lets the sun’s rays shine down on them. For the duration of the ability, sunlight shines down on the mopor and an area surrounding them with a radius determined by her Skill Value in the Faith skill. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. However, this ability works only outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. The affected area is fixed for the duration of the ability, and does not move if the mopor moves away.",
+    "summary": "Makes the sun shine on an area to light it and warm it.",
+    "swedishName": "",
+    "duration": "1 hour",
+    "range": "radius of SV meters",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:sunray:1:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 hour"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!s5chBxYtZu0v1w2x",
+  "_id": "s5chBxYtZu0v1w2x",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37200000,
+  "ownership": {
+    "default": 0
+  }
+}

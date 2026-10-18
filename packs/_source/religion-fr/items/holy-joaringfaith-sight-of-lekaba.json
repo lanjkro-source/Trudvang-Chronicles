@@ -1,0 +1,33 @@
+{
+  "name": "Vue de Lekaba",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba",
+    "description": "La mopor a juré allégeance à Lekaba, guide et dieu de la parole sacrée, toujours tourné vers le Nord, qui lui offre en retour la vue lointaine et la clairvoyance de celle qui sait lire le monde et la mémoire des choses.",
+    "summary": "Appelle le dieu de la parole sacrée pour aiguiser les sens, porter la vue au loin et lire les objets et les traces.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Livre des règles, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!td0YjxYtZu0v1w2x",
+  "_id": "td0YjxYtZu0v1w2x",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 8300000,
+  "sort": 8400000,
   "system": {
     "description": "This specialty can be purchased multiple times, each for a different foreign language. Some languages are harder to learn than others and therefore have a requirement that the character achieve a certain level of the Languages discipline, even for the first level of this specialty.",
     "summary": "Learns a foreign tongue; this specialty may be repeated for each new language, subject to level requirements.",

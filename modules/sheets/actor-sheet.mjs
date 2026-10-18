@@ -678,7 +678,8 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
       await this.actor.alignCreationOrigins();
       await this.actor.syncCreationDefaults();
     }
-    if (this.actor.system.details?.race !== previousOrigins.race) {
+    // Joaring Faith is offered by culture rather than race, so both origins can invalidate it.
+    if (this.actor.system.details?.race !== previousOrigins.race || this.actor.system.details?.culture !== previousOrigins.culture) {
       const allowed = this.actor.allowedReligionIds;
       if (allowed.length === 1 && !this.actor.system.details.religion) await this.actor.update({"system.details.religion": allowed[0]});
       else if (!allowed.includes(this.actor.system.details.religion)) await this.actor.update({"system.details.religion": ""});

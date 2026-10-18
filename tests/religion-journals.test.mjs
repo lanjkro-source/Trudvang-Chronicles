@@ -3,11 +3,11 @@ import fs from "node:fs";
 import {test} from "node:test";
 import {JOURNAL_FOLDERS, journalDocuments} from "../modules/journal-catalog.mjs";
 
-const ids = ["gerbanis", "ealdTradition", "tenetNid", "haminges", "thuuldom", "toikalokke"];
-const tableCounts = [2, 1, 2, 2, 2, 2];
-const exampleCounts = [1, 1, 2, 1, 1, 0];
+const ids = ["gerbanis", "ealdTradition", "tenetNid", "haminges", "thuuldom", "toikalokke", "joaringFaith"];
+const tableCounts = [2, 1, 2, 2, 2, 2, 0];
+const exampleCounts = [1, 1, 2, 1, 1, 0, 0];
 
-test("all six religions have localized structured journal content", () => {
+test("all seven religions have localized structured journal content", () => {
   for (const lang of ["fr", "en"]) {
     const locale = JSON.parse(fs.readFileSync(new URL(`../lang/${lang}.json`, import.meta.url), "utf8"));
     const journals = locale.TRUDVANG.Content.Journal;

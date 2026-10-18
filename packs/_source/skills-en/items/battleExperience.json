@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 6500000,
+  "sort": 6600000,
   "system": {
     "description": "Having taken part in many battles, the character has learned to react, fight and attempt risky maneuvers. They receive 1 extra Combat Point per level to assign to their combat actions during a combat round, plus a +1 per level bonus to combat initiative.",
     "summary": "Tempered by many battles: more combat actions available and an edge on initiative.",

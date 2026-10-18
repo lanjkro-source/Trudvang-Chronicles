@@ -1,0 +1,50 @@
+{
+  "name": "Cieux obscurcis",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fureur d’Ogon",
+    "description": "La mopor en appelle à la puissance de Ogon, qui libère une volée de flèches dans la bataille afin de lui venir en aide. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. La mopor vise un groupe d’ennemis situés à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère quatre flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+    "summary": "Crée une pluie de projectiles qui assombrit le ciel et frappe les ennemis.",
+    "swedishName": "",
+    "duration": "",
+    "range": "50 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la quantité de flèches de : +1"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!FJL3ciMhNiOjPkQl",
+  "_id": "FJL3ciMhNiOjPkQl",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36700000,
+  "ownership": {
+    "default": 0
+  }
+}

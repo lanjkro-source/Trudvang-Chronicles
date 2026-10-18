@@ -269,7 +269,12 @@ export class TrudvangActor extends BaseActor {
 
   get allowedReligionIds() {
     if (this.type === "npc") return Object.keys(TRUDVANG.religions);
-    return TRUDVANG.raceReligions[this.system.details?.race] ?? [];
+    const raceReligions = TRUDVANG.raceReligions[this.system.details?.race] ?? [];
+    // Culture-scoped religions (Joaring Faith) are additive: a faith tied to one culture is
+    // never granted through raceReligions, so a Mittlander or Virann of the same race stays
+    // locked out of it. Race order is preserved and culture extras are appended.
+    const cultureReligions = TRUDVANG.cultureReligions[this.system.details?.culture] ?? [];
+    return [...new Set([...raceReligions, ...cultureReligions])];
   }
 
   getReligionForSpecialty(catalogId) {
@@ -484,6 +489,11 @@ export class TrudvangActor extends BaseActor {
     const cultureId = changes["system.details.culture"] ?? details.culture;
     const allowedLanguages = TRUDVANG.cultureLanguages[cultureId] ?? Object.keys(TRUDVANG.nativeLanguages);
     if (!allowedLanguages.includes(details.nativeLanguage)) changes["system.details.nativeLanguage"] = allowedLanguages[0];
+    // Joaring Faith is culture-scoped, so an origin change can invalidate the chosen religion
+    // even when the race is unchanged (a stormlander who becomes a mittlander, for instance).
+    const raceId = changes["system.details.race"] ?? details.race;
+    const allowedReligions = [...new Set([...(TRUDVANG.raceReligions[raceId] ?? []), ...(TRUDVANG.cultureReligions[cultureId] ?? [])])];
+    if (details.religion && !allowedReligions.includes(details.religion)) changes["system.details.religion"] = "";
     if (Object.keys(changes).length) {
       await this.update(changes);
       await this.syncCreationDefaults();

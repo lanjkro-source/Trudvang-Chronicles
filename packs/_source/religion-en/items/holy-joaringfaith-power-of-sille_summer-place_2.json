@@ -1,0 +1,44 @@
+{
+  "name": "Summer Place",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:summer-place:2",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:summer-place:2",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Power of Sille",
+    "description": "Sille sees to the mopor’s wish and lets the sun’s rays appear. For the duration of the ability, the sunlight shines down within the area ( determined by the mopor’s Skill Value in the Faith skill). This ability only works outdoors during daytime. The warmth of the sun is equal to summer’s heat for the current region. Those within this sunlight are not afflicted negatively by being out in nature, and all negative modifiers caused by enduring life in the wilds are reduced to 0. If the duration lasts until after dusk, a warm summer evening and night will continue within the blessed area until the power ends. As long as the ability persists, any hunting grounds in the vicinity of the mopor (SV x 100 meters) also become more prosperous (+3 for the Wilderness skill when hunting).",
+    "summary": "Brings summer warmth and light that dispel the cold and the darkness.",
+    "swedishName": "",
+    "duration": "3 hours",
+    "range": "radius of SV x 100 meters",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:summer-place:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!Q1O0dUoUpVqWrXsY",
+  "_id": "Q1O0dUoUpVqWrXsY",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37300000,
+  "ownership": {
+    "default": 0
+  }
+}

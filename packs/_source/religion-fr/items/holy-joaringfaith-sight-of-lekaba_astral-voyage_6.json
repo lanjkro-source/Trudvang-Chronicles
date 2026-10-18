@@ -1,0 +1,62 @@
+{
+  "name": "Voyage astral",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "En quittant le plan matériel, la mopor permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de la mopor se déplace à la frontière entre Trudvang et Dimhall. Là, elle peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la mopor quitte son enveloppe charnelle, cette dernière entre en hibernation. La mopor entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de la mopor. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. La mopor doit prendre soin de se rapprocher de son corps avant l’expiration du corps. Si elle ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que la mopor subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de pouvoir, et qui la plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au pouvoir Vision véritable. Un autre mopor qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le pouvoir Dissipation des pouvoirs. Le personnage ainsi banni subit alors les mêmes effets que si le pouvoir avait expiré.",
+    "summary": "Envoie l’esprit hors du corps pour explorer à distance sans subir les attaques physiques.",
+    "swedishName": "Dimvandr",
+    "duration": "5 minutes",
+    "range": "personnelle",
+    "weavingTime": "10 minutes",
+    "dailyActivation": "",
+    "spellType": "sustained",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 minute"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:2",
+        "cost": 18,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 journée"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la capacité de mouvement de : 1 kilomètre par minute"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!P6pbEjNiOjPkQlRm",
+  "_id": "P6pbEjNiOjPkQlRm",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38800000,
+  "ownership": {
+    "default": 0
+  }
+}

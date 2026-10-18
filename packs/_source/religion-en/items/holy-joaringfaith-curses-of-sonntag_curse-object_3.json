@@ -1,0 +1,68 @@
+{
+  "name": "Curse Object",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+      "tabletId": "holy-joaringfaith-curses-of-sonntag"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+    "tabletId": "holy-joaringfaith-curses-of-sonntag",
+    "tablet": "Curses of Sonntag",
+    "description": "The curse is put on a single object within range, which then significantly decreases its traits when in use. The conjured power sticks to the object like a foul and degenerate force. Any person attempting to use the object suffers a negative modifier of -2 on all Skill rolls and Situation rolls in which the object is used. If the object is a weapon, damage is also decreased by -1, and if the object is armor, Protection Value is also decreased by -1.",
+    "summary": "Curses an object to greatly reduce its effectiveness or render it faulty.",
+    "swedishName": "Nidtrölja eftnating",
+    "duration": "5 action rounds",
+    "range": "contact",
+    "weavingTime": "2 action rounds",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:1",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:2",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the power's duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:4",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Affect another target (which suffers the power's basic effect)"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!jd6LD6z5A6B7C8D9",
+  "_id": "jd6LD6z5A6B7C8D9",
+  "folder": "iRa0P8C8D9EaGbHc",
+  "sort": 39500000,
+  "ownership": {
+    "default": 0
+  }
+}

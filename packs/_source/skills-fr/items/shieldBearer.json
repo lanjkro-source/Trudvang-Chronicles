@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 5800000,
+  "sort": 5900000,
   "system": {
     "description": "Le porteur de bouclier a appris l’art d’utiliser un bouclier au combat. Grâce à cette connaissance, il bénéficie de 2 points de combat supplémentaires par niveau qu’il peut répartir entre ses parades réalisées avec le bouclier. Ces points de combat ne peuvent être utilisés que lorsque le personnage pare avec son bouclier. Les personnages ayant la spécialité Porteur de bouclier ne subissent pas le malus habituel de -15 dû aux actions réalisées avec la main de bouclier (cette exception ne s’applique que lorsque le personnage utilise un bouclier).",
     "summary": "Apprend l’art du bouclier : des points de combat supplémentaires réservés aux parades réalisées avec celui-ci.",

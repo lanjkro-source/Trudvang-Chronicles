@@ -3259,6 +3259,783 @@ export const POWER_DETAILS_BY_ID = {
     "page": 223,
     "pageFr": 274
   },
+  "holy-joaringfaith-curses-of-sonntag:amnesia:4": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:1",
+        "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:2",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "permanent",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:bad-harvest:6": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:1",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:2",
+        "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:4",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:5",
+        "cost": 5,
+        "maxCount": null
+      }
+    ],
+    "spellType": "permanent",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:curse-creature:5": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:1",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:3",
+        "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5:4",
+        "cost": 4,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:curse-object:3": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:1",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:2",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3:4",
+        "cost": 3,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:fever:2": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:1",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:2",
+        "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:4",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:fever:2:5",
+        "cost": 5,
+        "maxCount": 4
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1:2",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:tree-curse:7": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:1",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:2",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:3",
+        "cost": 8,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:4",
+        "cost": 20,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7:5",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0:2",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0:3",
+        "cost": 10,
+        "maxCount": null
+      }
+    ],
+    "spellType": "sustained",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:battle-arrow:0": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:battle-arrow:0:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7:1",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:bloodfire:6": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:1",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:boiling-blood:3": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:1",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:madness:4": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:madness:4:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:rage:2": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:rage:2:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:riastarthae:8": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:riastarthae:8:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:1",
+        "cost": 2,
+        "maxCount": 4
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-fury-of-ogon:simmering-blood:1": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1:1",
+        "cost": 3,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:breath-of-sille:7": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:breath-of-sille:7:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:breath-of-sille:7:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:breath-of-sille:7:2",
+        "cost": 3,
+        "maxCount": 3
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:firon-power:5": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:firon-power:5:0",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:healing-glow:3": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-glow:3:0",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:healing-sun:8": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-sun:8:0",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:healing-warmth:4": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:2",
+        "cost": 3,
+        "maxCount": 3
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:healing:0": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing:0:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing:0:1",
+        "cost": 3,
+        "maxCount": 3
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:summer-place:2": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:summer-place:2:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:sunray:1": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:sunray:1:0",
+        "cost": 1,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-power-of-sille:time-of-the-hunt:6": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6:1",
+        "cost": 3,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:astral-voyage:6": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:1",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:2",
+        "cost": 18,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6:3",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "sustained",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:espionage:3": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:espionage:3:2",
+        "cost": 12,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:far-sight:2": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:1",
+        "cost": 4,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:2",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:3",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:4",
+        "cost": 10,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:5",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:6",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:7",
+        "cost": 4,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:read-powers:5": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:1",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "instant",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:scanning:1": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:scanning:1:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:scanning:1:1",
+        "cost": 3,
+        "maxCount": null
+      }
+    ],
+    "spellType": "sustained",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:seeing:4": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:1",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:2",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:3",
+        "cost": 4,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:tracking:0": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:0",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:1",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:tracking:0:2",
+        "cost": 2,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
+  "holy-joaringfaith-sight-of-lekaba:true-sight:7": {
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:0",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:1",
+        "cost": 3,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:2",
+        "cost": 6,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:3",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:4",
+        "cost": 2,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:5",
+        "cost": 5,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:6",
+        "cost": 1,
+        "maxCount": null
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7:7",
+        "cost": 3,
+        "maxCount": null
+      }
+    ],
+    "spellType": "lasting",
+    "page": 123,
+    "pageFr": 123
+  },
   "holy-tenetnid-tablet-of-anger:divine-purge:6": {
     "isRune": false,
     "powerLevels": [
@@ -11408,6 +12185,286 @@ export const POWER_CATALOG_BY_TABLET = {
     {
       "id": "holy-haminges-power-of-trolls:taken-by-the-mountain:8",
       "name": "Taken by the Mountain",
+      "level": 5,
+      "type": "divineFeat",
+      "cost": 10,
+      "modifier": -10
+    }
+  ],
+  "holy-joaringfaith-curses-of-sonntag": [
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0",
+      "name": "Uprooted Tree",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:phantom-plague:1",
+      "name": "Phantom Plague",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:fever:2",
+      "name": "Fever",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:curse-object:3",
+      "name": "Curse Object",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
+      "name": "Amnesia",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:curse-creature:5",
+      "name": "Curse Creature",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+      "name": "Bad Harvest",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
+      "name": "Tree Curse",
+      "level": 5,
+      "type": "divineFeat",
+      "cost": 10,
+      "modifier": -10
+    }
+  ],
+  "holy-joaringfaith-fury-of-ogon": [
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:battle-arrow:0",
+      "name": "Battle Arrow",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
+      "name": "Simmering Blood",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:rage:2",
+      "name": "Rage",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
+      "name": "Boiling Blood",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:madness:4",
+      "name": "Madness",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5",
+      "name": "Shower of Arrows",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
+      "name": "Bloodfire",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7",
+      "name": "Blacken the Sky",
+      "level": 5,
+      "type": "divineFeat",
+      "cost": 10,
+      "modifier": -10
+    },
+    {
+      "id": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
+      "name": "Riastarthae",
+      "level": 5,
+      "type": "divineFeat",
+      "cost": 10,
+      "modifier": -10
+    }
+  ],
+  "holy-joaringfaith-power-of-sille": [
+    {
+      "id": "holy-joaringfaith-power-of-sille:healing:0",
+      "name": "Healing",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:sunray:1",
+      "name": "Sunray",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:summer-place:2",
+      "name": "Summer Place",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:healing-glow:3",
+      "name": "Healing Glow",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:healing-warmth:4",
+      "name": "Healing Warmth",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:firon-power:5",
+      "name": "Firon Power",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:time-of-the-hunt:6",
+      "name": "Time of the Hunt",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:breath-of-sille:7",
+      "name": "Breath of Sille",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-power-of-sille:healing-sun:8",
+      "name": "Healing Sun",
+      "level": 5,
+      "type": "divineFeat",
+      "cost": 10,
+      "modifier": -10
+    }
+  ],
+  "holy-joaringfaith-sight-of-lekaba": [
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:tracking:0",
+      "name": "Tracking",
+      "level": 1,
+      "type": "divineFeat",
+      "cost": 2,
+      "modifier": -2
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:scanning:1",
+      "name": "Scanning",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+      "name": "Far Sight",
+      "level": 2,
+      "type": "divineFeat",
+      "cost": 4,
+      "modifier": -4
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:espionage:3",
+      "name": "Espionage",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+      "name": "Seeing",
+      "level": 3,
+      "type": "divineFeat",
+      "cost": 6,
+      "modifier": -6
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5",
+      "name": "Read Powers",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:astral-voyage:6",
+      "name": "Astral Voyage",
+      "level": 4,
+      "type": "divineFeat",
+      "cost": 8,
+      "modifier": -8
+    },
+    {
+      "id": "holy-joaringfaith-sight-of-lekaba:true-sight:7",
+      "name": "True Sight",
       "level": 5,
       "type": "divineFeat",
       "cost": 10,

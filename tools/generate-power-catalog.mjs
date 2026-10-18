@@ -27,7 +27,7 @@ const types = new Map([
 ]);
 const fail = message => { throw new Error(`Power catalogue: ${message}`); };
 const mapById = (entries, language) => {
-  if (entries.length !== 394) fail(`${language}: expected 394 entries, found ${entries.length}`);
+  if (entries.length !== 428) fail(`${language}: expected 428 entries, found ${entries.length}`);
   const map = new Map();
   for (const entry of entries) {
     if (!entry.catalogId || map.has(entry.catalogId)) fail(`${language}: missing/duplicate catalogId ${entry.catalogId}`);

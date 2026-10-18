@@ -1,0 +1,56 @@
+{
+  "name": "Chaleur guérisseuse",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:healing-warmth:4",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-warmth:4",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Puissance de Sille",
+    "description": "La mopor place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains. La vitesse de guérison de la personne bénéficiant de l’imposition des mains augmente de +3 points de santé par jour, tant que le sujet continue à se reposer. Si le personnage blessé fait quoi que ce soit d’autre que se reposer, le pouvoir est rompu et le sujet retrouve sa vitesse de guérison normale. La mopor peut également tenter de guérir n’importe quelle maladie en conférant à la personne malade un bonus de +3 à un jet de situation pour vaincre la maladie.",
+    "summary": "Accélère la récupération d’une créature au repos.",
+    "swedishName": "",
+    "duration": "2 jours",
+    "range": "contact",
+    "weavingTime": "6 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 jour"
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente le modificateur pour surmonter la maladie de : +1"
+      },
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-warmth:4:2",
+        "cost": 3,
+        "maxCount": 3,
+        "effect": "Augmente la vitesse de guérison de : +2 points de santé par jour"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!rLG1CQkQlRmSnToU",
+  "_id": "rLG1CQkQlRmSnToU",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37500000,
+  "ownership": {
+    "default": 0
+  }
+}

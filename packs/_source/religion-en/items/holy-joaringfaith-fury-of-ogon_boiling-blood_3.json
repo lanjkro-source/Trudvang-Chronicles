@@ -1,0 +1,50 @@
+{
+  "name": "Boiling Blood",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+    "summary": "Increases the mopor's vigour and fighting strength.",
+    "swedishName": "",
+    "duration": "1 hour",
+    "range": "personal",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:boiling-blood:3:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the Body Points gained by +1"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!sAlRkoToUpVqWrXs",
+  "_id": "sAlRkoToUpVqWrXs",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36300000,
+  "ownership": {
+    "default": 0
+  }
+}

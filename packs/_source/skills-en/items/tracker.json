@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 12100000,
+  "sort": 12200000,
   "system": {
     "description": "The person is good at spotting trails in the terrain. The specialty bonus is used when they try to find or follow a trail.",
     "summary": "Spots tracks in the wild and follows their trail.",

@@ -658,7 +658,8 @@
       "camper": "Campement",
       "pathwalker": "Exploration",
       "terrainExperience": "Connaissance de l'environnement",
-      "weathered": "Endurci"
+      "weathered": "Endurci",
+      "mopor": "Mopor"
     },
     "KnowledgeDescription": {
       "strenuous": "Renforcement permet au tisseur de dépenser 2 points de vitner supplémentaires par niveau de spécialité pour gagner +1 VC par tranche dépensée lors du tissage d'un sortilège."
@@ -1140,7 +1141,8 @@
       "EaldTradition": "Ancienne tradition",
       "Haminges": "Haminges",
       "Thuuldom": "Thuuldom",
-      "Toikalokke": "Toikalokke"
+      "Toikalokke": "Toikalokke",
+      "JoaringFaith": "Foi Joaring"
     },
     "TraitBenefit": {
       "charisma": "Modificateur de situation {value}. Modificateur de Raud {value} (-4 supprime tout le Raud). Modificateur de coût pour Divertissement et Commerce : {inverse} points par niveau.",
@@ -2728,6 +2730,30 @@
           "Name": "Maître des éléments",
           "Summary": "Façonne terre, eau, air et feu pour modeler le terrain, se déplacer ou frapper à distance.",
           "Description": "L’elfe possède la faculté rare de façonner et de contrôler les quatre éléments.",
+          "Negation": ""
+        },
+        "holy-joaringfaith-fury-of-ogon": {
+          "Name": "Fureur d’Ogon",
+          "Summary": "Appelle le dieu de la guerre des terres de l’Est pour obtenir des tempêtes de flèches divines et une rage sanglante.",
+          "Description": "La mopor a juré allégeance à Ogon, le dieu de la guerre des terres de l’Est, qui lui offre en retour des tempêtes de flèches divines et une rage sanglante qui fait de tout stormlander un guerrier sans peur.",
+          "Negation": ""
+        },
+        "holy-joaringfaith-power-of-sille": {
+          "Name": "Puissance de Sille",
+          "Summary": "Appelle la déesse de l’amour et de l’abondance pour guérir, réchauffer et faire fleurir la vie.",
+          "Description": "La mopor a juré allégeance à Sille, déesse de l’amour et de l’abondance, également connue comme Esilis de l’ouest, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été.",
+          "Negation": ""
+        },
+        "holy-joaringfaith-sight-of-lekaba": {
+          "Name": "Vue de Lekaba",
+          "Summary": "Appelle le dieu de la parole sacrée pour aiguiser les sens, porter la vue au loin et lire les objets et les traces.",
+          "Description": "La mopor a juré allégeance à Lekaba, guide et dieu de la parole sacrée, toujours tourné vers le Nord, qui lui offre en retour la vue lointaine et la clairvoyance de celle qui sait lire le monde et la mémoire des choses.",
+          "Negation": ""
+        },
+        "holy-joaringfaith-curses-of-sonntag": {
+          "Name": "Malédictions de Sonntag",
+          "Summary": "Appelle le dieu de la mort pour des malédictions qui fanent les terres et défont ce qui vit.",
+          "Description": "La mopor a juré allégeance à Sonntag, dieu de la mort, tourné vers le Sud, qui lui offre en retour les épouvantables bénédictions de la corruption, de la ruine et de la décomposition de toute chose vivante.",
           "Negation": ""
         }
       },
@@ -5064,6 +5090,515 @@
           "PowerLevels": {
             "0": "Augmente la durée du pouvoir de : 1 minute",
             "1": "Augmente la durée du pouvoir de : 1 heure"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:amnesia:4": {
+          "Name": "Amnésie",
+          "Summary": "Efface une partie importante des souvenirs d’une victime.",
+          "Description": "Ce pouvoir génère une énergie perturbatrice dans la tête de la victime qui lui fait perdre une grande partie de ses souvenirs. La victime peut résister en réussissant un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme). En cas d’échec, elle oublie immédiatement son identité et son passé. Chaque jour, la victime peut faire un nouveau test de situation avec une valeur de situation de 6. En cas de réussite, elle se rappelle un détail important de sa vie passée : au choix du maître de jeu, il peut s’agir d’un souvenir de famille, d’une compétence importante ou de quelque autre attribut. Le jour suivant, la victime peut faire un nouveau test pour récupérer davantage de souvenirs. Chaque test de situation réussi augmente de +2 les chances de se remémorer quelque chose les jours suivants. Ce bonus ne disparaît pas si la victime rate un test de situation : bien qu’elle ne regagne aucun souvenir ce jour-là, la victime a droit à un nouveau test de situation avec la même valeur de situation et le même bonus le jour suivant. La victime conserve au fond d’elle ses compétences et ses attributs, et c’est au maître de jeu de déterminer quand ces réflexes peuvent intervenir. Par exemple, un personnage fuyant à travers un village pourra sauter instinctivement sur un cheval et s’enfuir au grand galop (la compétence Agilité avec la spécialité Équitation) ; ou bien une personne face à face avec la brute du village voyant l’énorme poing voler vers son visage avec une puissance inquiétante pourra soudain esquiver l’attaque et répondre par un coup bien placé sur le nez déjà cassé de la brute pour lui faire mordre le sol crasseux de la taverne (la compétence Combat et la spécialité Bagarre). Plus la personne possède une valeur élevée dans une compétence, plus elle a de chances de l’utiliser de manière instinctive. Dès l’instant où la victime réussit le test de situation avec une valeur de situation de 20, elle se rappelle tout ce qu’elle avait oublié.",
+          "SwedishName": "Húgvilsa",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée de : 5 mètres (le contact physique n’est plus nécessaire)",
+            "1": "Augmente la portée de : 50 mètres",
+            "2": "Diminue le test de situation initial de la victime (sans pouvoir le faire descendre en dessous de : 1) de : -1"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:bad-harvest:6": {
+          "Name": "Mauvaise récolte",
+          "Summary": "Flétrit la végétation d’une zone et compromet une récolte.",
+          "Description": "Ce pouvoir fait apparaître une brume de pouvoir sur un champ de céréales, une forêt ou toute autre zone de végétation. Le brouillard ne reste en place que quelques minutes, mais cela lui suffit pour empoisonner toutes les plantes et toutes les graines présentes. La végétation meurt lentement au lieu de pousser (cela prend une journée). La zone affectée a un rayon de 20 mètres dans la version de base du pouvoir. Les plantes touchées par ce pouvoir ne peuvent pas être sauvées, que ce soit par des moyens normaux ou magiques, et elles sont condamnées. Une fois les plantes mortes, aucune nouvelle plante ne pourra pousser ou germer sur le site maudit avant que quatre saisons ne soient passées (12 mois). La seule manière de contrer cette stérilité du sol est de recourir aux dons divins.",
+          "SwedishName": "Nidskord",
+          "Duration": "",
+          "Range": "100 mètres",
+          "CastingTime": "4 heures",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente le rayon d’action du pouvoir de : 20 mètres",
+            "1": "Augmente le rayon d’action du pouvoir de : 100 mètres",
+            "2": "Augmente le rayon d’action du pouvoir de : 500 mètres",
+            "3": "Augmente la portée du pouvoir de : 100 mètres",
+            "4": "Augmente la portée du pouvoir de : 1 kilomètre",
+            "5": "Il faut deux saisons de plus (6 mois) avant qu’on puisse planter ou semer quoi que ce soit sur le site maudit"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:curse-creature:5": {
+          "Name": "Malédiction de créature",
+          "Summary": "Affaiblit une créature en lui imposant un malus à ses actions.",
+          "Description": "Pour maudire une créature, la mopor doit connaître le véritable nom de sa cible et la percevoir par n’importe lequel de ses sens (la vision, l’ouïe, l’odorat…) ou par le biais de pouvoirs tels que Détection des êtres vivants. Ce pouvoir permet à la mopor d’altérer la composition des énergies autour de la cible. Les sens conventionnels ne peuvent percevoir cette subtile modification, mais l’intuition permet de la ressentir. C’est un manque d’harmonie difficile à décrire avec des mots, un peu comme un son aigu, strident et insistant qui émanerait en permanence de la cible, un son qui ne cesse de faire écho à la limite de notre conscience. Toutes les créatures vivantes qui croisent la cible sont frappées par cette sensation étrange, une violente aversion, une puissante impression de quelque chose d’à la fois déplacé et surnaturel. L’instinct pousse tous les êtres vivants à éviter autant que possible la cible. En outre, les êtres intelligents sont remplis de peur et croient que tout ce que la cible porte ou touche pourrait également s’avérer contagieux. Même les amis de la cible ressentent souvent une puissante aversion et ne supportent pas de rester en sa présence malgré toute l’affection qu’ils lui portent. Les marchands et les négociants annulent leurs transactions avec la cible, les mères chassent leurs enfants et les maintiennent hors de leur vue, les gens gardent leurs distances dans la rue et dans les tavernes, et les compagnons d’aventure ne peuvent pas dormir en présence de la cible et leur repos n’est pas réparateur. Pour faire court, les gens évitent le personnage maudit comme s’il avait la lèpre. Le plus tragique dans cette malédiction, c’est que la cible n’en a pas conscience, et n’a au début aucune idée de ce qui pousse les autres à réagir ainsi en sa présence. Si la cible ne connaît rien à la magie et aux pouvoirs, elle pourrait très bien ne jamais comprendre. Quoi qu’elle fasse, elle se retrouvera de plus en plus isolée et submergée par le doute et l’inquiétude. Avec le temps, la victime risque fort de sombrer dans la folie. Le pouvoir maléfique qui entoure la cible ne se contente pas de lui rendre la vie insupportable. Il inflige également un malus de -1 à toutes ses valeurs de compétence et de situation jusqu’à expiration de la malédiction. Si la mopor à l’origine de la malédiction meurt, cette dernière est immédiatement levée.",
+          "SwedishName": "Nidtrölja skopjaten",
+          "Duration": "10 jours",
+          "Range": "10 kilomètres",
+          "CastingTime": "3 heures",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 journée",
+            "1": "Augmente la durée du pouvoir de : 1 semaine",
+            "2": "Augmente la durée du pouvoir de : 1 mois",
+            "3": "Augmente la durée du pouvoir de : 1 année",
+            "4": "Augmente le malus infligé à la victime de : +1"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:curse-object:3": {
+          "Name": "Malédiction d’objet",
+          "Summary": "Maudit un objet afin de réduire fortement son efficacité ou de le rendre défaillant.",
+          "Description": "Cette malédiction se lance sur un objet spécifique situé à portée, dont l’efficacité diminue de manière significative. Le pouvoir conjuré s’accroche à l’objet comme une force délétère et malsaine. Toute personne qui tente d’utiliser l’objet en question subit un malus de -2 à tous les tests de compétence et de situation reposant sur cet objet. S’il s’agit d’une arme, ses dégâts subissent aussi un malus de -1, et dans le cas d’une armure, sa valeur de protection diminue de 1.",
+          "SwedishName": "Nidtrölja eftnating",
+          "Duration": "5 tours de jeu",
+          "Range": "contact",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente la durée du pouvoir de : 1 heure",
+            "3": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)",
+            "4": "Affecte une autre cible (qui subit la version de base du pouvoir)"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:fever:2": {
+          "Name": "Fièvre",
+          "Summary": "Inflige une fièvre surnaturelle qui affaiblit les actions de la victime.",
+          "Description": "En pointant du doigt une victime située à portée, la mopor peut faire monter considérablement sa température corporelle interne. La victime a l’impression que son sang se met à bouillir, ce qui lui fait perdre à la fois son énergie et sa vitalité. Cette fièvre dure une heure et s’avère incurable, et tant qu’elle dure, elle inflige à la victime un malus de -1d3 à la VC de toutes ses actions. De plus, la victime doit effectuer un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Constitution), faute de quoi la fièvre brûlante lui inflige également 1d10 points de dégâts.",
+          "SwedishName": "Muspelblot",
+          "Duration": "1 heure",
+          "Range": "10 mètres",
+          "CastingTime": "3 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 5 mètres",
+            "1": "Augmente la durée du pouvoir de : 1 heure",
+            "2": "Augmente la durée du pouvoir de : 1 journée",
+            "3": "Diminue les chances de la victime de réussir son test de situation de : -1",
+            "4": "Augmente les effets de la fièvre de pouvoire que la victime subit un malus supplémentaire de : -1 à la VC (ou VS) de toutes les actions qu’elle entreprend jusqu’à expiration du pouvoir",
+            "5": "Augmente les dégâts d’un degré : 1d10 > 1d10JO10 > 1d10JO9 > 1d10JO8 > 1d10JO8 + 1"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:phantom-plague:1": {
+          "Name": "Mal imaginaire",
+          "Summary": "Fait croire à une victime qu’elle souffre d’une maladie et lui en impose les symptômes apparents.",
+          "Description": "La mopor peut ensorceler une victime qui commence à manifester tous les symptômes potentiels d’une maladie qu’elle redoute. Ce pouvoir ne fait apparaître que les symptômes de la maladie, et la victime ne fait qu’imaginer ressentir la fièvre, les frissons ou les douleurs. La santé véritable de la victime n’est en rien affectée, même si la victime est convaincue du contraire. Les symptômes sont si réalistes qu’il faut avoir de bonnes connaissances médicales (à travers la compétence Savoirfaire et la discipline Soins et remèdes) pour découvrir la vérité. La victime peut également découvrir le subterfuge en réussissant un test de situation avec une valeur de situation de 8 (prendre en compte le modificateur de Psychisme). À chaque nouvelle journée que dure le pouvoir, la victime a droit à un nouveau test de situation pour essayer de découvrir la vérité. Une personne souffrant d’un mal imaginaire subit un malus de -5 à tous les tests reposant sur les interactions sociales, car tous ses interlocuteurs voient les symptômes de la maladie.",
+          "SwedishName": "Skenplauga",
+          "Duration": "3 jours",
+          "Range": "contact",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "la valeur de situation de la cible diminue de : +1",
+            "1": "la valeur de compétence du guérisseur (Savoir-faire) diminue de : 1 quand il examine la victime",
+            "2": "Augmente la durée du pouvoir de : 1 journée"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:tree-curse:7": {
+          "Name": "Malédiction de l’arbre",
+          "Summary": "Transforme une créature en arbre conscient, incapable de se déplacer mais encore capable de percevoir.",
+          "Description": "Ce pouvoir modifie l’équilibre corporel de la victime choisie de manière si radicale qu’elle commence à se changer lentement en arbre et à prendre racine. Ce pouvoir ne peut être tissé que sur une créature dont le poids n’excède pas 60 kg et qui se tient sur un sol suffisamment épais et fertile pour qu’un arbre puisse s’y enraciner et pousser. La victime peut tenter de résister à cette transformation en effectuant un test de situation avec une valeur de situation de 4 (prendre en compte le modificateur de Constitution). En cas de réussite, seule la peau de la victime se transforme en écorce, ce qui n’a d’autre effet que de modifier son apparence et de réduire son Agilité : toutes ses valeurs de compétence et de situation associées à l’Agilité subissent un malus de -3 jusqu’à expiration du pouvoir. Si la cible est trop lourde pour être complètement transformée, seules certaines parties de la victime se verront altérées (au maître de jeu de déterminer lesquelles), tandis que le reste du corps de la victime voit seulement sa peau se changer en écorce, avec les mêmes effets que ci-dessus. Dans ce cas, un test de situation réussi signifie que la victime ne subit qu’un malus de -1 (au lieu de -3). Si la cible rate son test de situation et que son poids ne dépasse pas 60 kg, elle prend immédiatement racine et se retrouve incapable de bouger. Dès lors, au cours de l’heure qui suit, la victime se change en un arbre d’une essence choisie par la mopor (il doit cependant s’agir d’une espèce capable de survivre dans la région, même si elle n’y est pas courante). L’arbre conserve la taille et les points de santé que la victime possédait sous sa forme normale. Il conserve également son apparence faciale, incrustée dans son écorce, et des membres ressemblant à des bras et des jambes. Tant que la créature est sous cette forme, elle conserve les mêmes facultés sensorielles qu’elle possédait au moment où la malédiction l’a frappée. La créature voit tout ce qui est visible de son point de vue (selon l’orientation de son visage) et entend les sons, perçoit les odeurs, et ressent les contacts normalement. La créature conserve tous les dégâts qu’elle subit sous cette forme quand elle recouvre sa forme naturelle. Les possessions telles que les vêtements et l’équipement sont intégrées à l’arbre (pour peu que leur poids n’excède pas la limite imposée par le pouvoir). Sous forme d’arbre, la victime profite d’une valeur de protection de 4. Elle n’a pas besoin de boire ou de manger pour survivre, mais il lui arrivera de s’endormir. Si quelqu’un grave l’écorce de l’arbre ou tente de l’abattre (ce qui inflige des dégâts à la victime), l’arbre se met à saigner. Si cela ne dissuade pas l’assaillant, la victime meurt si elle encaisse suffisamment de dégâts. La mopor peut à tout moment mettre un terme à cette malédiction et rendre à sa victime sa forme d’origine. Une créature qui subit la malédiction de l’arbre pendant toute la durée du pouvoir demeure très raide même après avoir retrouvé sa forme d’origine, et pendant les trois jours qui suivent, ses tests de compétence et de situation associés à l’Agilité et au mouvement sont diminués de moitié.",
+          "SwedishName": "Nidtreid",
+          "Duration": "2d6 jours",
+          "Range": "contact",
+          "CastingTime": "3 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente le poids affecté de : 10 kg",
+            "1": "Augmente la durée du pouvoir de : 1 journée",
+            "2": "Augmente la durée du pouvoir de : 1 semaine",
+            "3": "Augmente la durée du pouvoir de : 1 mois",
+            "4": "Augmente la durée du pouvoir de : 1 année",
+            "5": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)"
+          }
+        },
+        "holy-joaringfaith-curses-of-sonntag:uprooted-tree:0": {
+          "Name": "Déracinement",
+          "Summary": "Fait pousser et déracine un arbre pour créer un obstacle ou écraser ce qui se trouve dans sa chute.",
+          "Description": "Ce pouvoir déracine un arbre et provoque son effondrement. La mopor insuffle le pouvoir dans le sol directement sous un arbre et provoque un léger soulèvement. Dès que le pouvoir a été tissé, le pouvoir commence à gonfler comme une panse de vache, au point que l’arbre qui se trouve au-dessus est rapidement arraché du sol et renversé. Un observateur peut voir qu’il se passe quelque chose car le sol se met soudain à trembler et à se soulever. Au quatrième tour de jeu du pouvoir, le sol semble exploser, et au cinquième tour l’arbre s’effondre et disparaît. Pour qu’un arbre puisse être abattu de cette façon, la circonférence de son tronc ne doit pas dépasser 1,50 mètre au niveau du sol. Si le tronc dépasse cette taille, le pouvoir n’aura pas la force de le soulever. La mopor, qui doit se concentrer constamment sur ce pouvoir, peut choisir dans quel sens l’arbre va tomber. S’il perd sa concentration ou perd le contrôle du pouvoir pour quelque raison que ce soit, le pouvoir continuera d’enfler et finira par déraciner l’arbre, mais ce sera au maître de jeu de déterminer le sens de la chute. Tous les témoins de ce phénomène qui ne sont pas conscients des actions de la mopor doivent immédiatement effectuer un test de situation avec une valeur de situation de 6 (prendre en compte le modificateur de Psychisme) pour ne pas subir 1d10 points de peur quand le déracinement soulève le sol. En cas de réussite, un observateur ne reçoit aucun point de peur. Le déracinement pourrait aussi être placé sous un gros rocher, sous un terrain dégagé, ou même sous une maison. Il reste alors au maître de jeu de déterminer le résultat final d’une telle utilisation de ce pouvoir et dans quelle mesure l’objet visé s’effondre. Dans sa version de base, ce pouvoir peut soulever ou renverser environ 100 kg.",
+          "SwedishName": "Rotveltja",
+          "Duration": "5 tours de jeu",
+          "Range": "10 mètres",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 5 mètres",
+            "1": "+0,5 mètre de circonférence et soulever ou pousser 30 kg de plus",
+            "2": "+1,5 mètre de circonférence et soulever ou pousser 100 kg de plus",
+            "3": "+7,5 mètres de circonférence et soulever ou pousser 500 kg de plus"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:battle-arrow:0": {
+          "Name": "Flèche de bataille",
+          "Summary": "Tire une flèche divine qui inflige des dégâts à distance.",
+          "Description": "La mopor en appelle à la puissance de Ogon, qui décoche une flèche dans la bataille afin de lui venir en aide. Cette flèche est considérée comme un projectile magique, mais les armures conservent toute leur protection contre elle. Les boucliers confèrent également une protection passive contre cette flèche selon les règles habituelles. La mopor vise un ennemi situé à portée, qui est alors frappé par une flèche noire. Cette flèche touche automatiquement si l’invocation est réussie, et elle inflige 1d10 (JO 8-10) dégâts.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "20 mètres",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 10 mètres"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:blacken-the-sky:7": {
+          "Name": "Cieux obscurcis",
+          "Summary": "Crée une pluie de projectiles qui assombrit le ciel et frappe les ennemis.",
+          "Description": "La mopor en appelle à la puissance de Ogon, qui libère une volée de flèches dans la bataille afin de lui venir en aide. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. La mopor vise un groupe d’ennemis situés à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère quatre flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "50 mètres",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 10 mètres",
+            "1": "Augmente la quantité de flèches de : +1"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:bloodfire:6": {
+          "Name": "Embrasement du sang",
+          "Summary": "Enflamme l’essence vitale de la mopor pour accroître sa puissance guerrière.",
+          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "SwedishName": "",
+          "Duration": "1 heure",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure",
+            "1": "Augmente le nombre de points de santé gagnés de : +1"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:boiling-blood:3": {
+          "Name": "Sang bouillant",
+          "Summary": "Accroît la vigueur et la force combattive de la mopor.",
+          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 2d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "SwedishName": "",
+          "Duration": "1 heure",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure",
+            "1": "Augmente le nombre de points de santé gagnés de : +1"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:madness:4": {
+          "Name": "Folie",
+          "Summary": "Plonge la mopor dans une frénésie qui la rend plus dangereuse au combat.",
+          "Description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la Folie :</p><ul><li>La mopor grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)</li><li>La mopor a un facteur de peur de 1d10 (JO 10)</li><li>+10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+4 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+2 à la VC de toutes les attaques</li><li>La mopor ne peut ni parer ni esquiver les attaques</li><li>La mopor ignore tous les effets de la peur</li><li>La mopor peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort</li></ul>",
+          "SwedishName": "",
+          "Duration": "5 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:rage:2": {
+          "Name": "Rage",
+          "Summary": "Plonge la mopor dans une rage guerrière qui augmente sa puissance offensive.",
+          "Description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 1 point de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la Rage :</p><ul><li>La mopor grandit de 50 cm et gagne 30 kg de muscles</li><li>La mopor a un facteur de peur de 1d10</li><li>+5 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+2 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+1 à la VC de toutes les attaques</li><li>La mopor ne peut ni parer ni esquiver les attaques</li><li>La mopor ignore tous les effets de la peur</li></ul>",
+          "SwedishName": "",
+          "Duration": "3 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:riastarthae:8": {
+          "Name": "Riastarthae",
+          "Summary": "Déchaîne une frénésie destructrice qui renforce les attaques de la mopor.",
+          "Description": "Normalement, il n’est pas dans la nature des Stormlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Ogon peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’elle peut déformer sa silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, la mopor s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. La mopor doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, la mopor subit 4 point de dégâts par tour de jeu pendant 2 tours (son armure ne lui offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.<p>Effets de la riastarthae :</p><ul><li>La mopor grandit de 1,5 mètre et gagne 100 kg de muscle (ce qui correspond à une Taille 2)</li><li>La mopor a un facteur de peur de 1d10 (JO 9-10)</li><li>+15 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)</li><li>+6 aux dégâts avec les armes de corps à corps ou les armes de jet</li><li>+3 à la VC de toutes les attaques</li><li>La mopor ne peut ni parer ni esquiver les attaques</li><li>La mopor ignore tous les effets de la peur</li><li>La mopor ignore les effets des blessures graves</li><li>La mopor peut continuer à se battre pendant 1d6 + 1 tours de jeu après avoir atteint l’état de mort</li></ul>",
+          "SwedishName": "",
+          "Duration": "7 tours de jeu",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5": {
+          "Name": "Pluie de flèches",
+          "Summary": "Fait pleuvoir des flèches sur une zone pour frapper plusieurs ennemis.",
+          "Description": "La mopor en appelle à la puissance de Ogon, qui libère une pluie de flèches dans la bataille afin de lui venir en aide. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. La mopor vise un groupe d’ennemis situé à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère deux flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "30 mètres",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 10 mètres",
+            "1": "Augmente le nombre de flèches de : 1"
+          }
+        },
+        "holy-joaringfaith-fury-of-ogon:simmering-blood:1": {
+          "Name": "Sang brûlant",
+          "Summary": "Renforce l’essence vitale de la mopor et augmente sa résistance au combat.",
+          "Description": "Par ce pouvoir, Ogon renforce l’essence vitale de la mopor, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si la mopor a subi davantage de dégâts qu’elle n’a de points de santé sans l’aide de ce pouvoir, elle a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+          "SwedishName": "",
+          "Duration": "1 heure",
+          "Range": "personnelle",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure",
+            "1": "Augmente le nombre de points de santé gagnés de : +1"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:breath-of-sille:7": {
+          "Name": "Souffle de Sille",
+          "Summary": "Accélère fortement la guérison naturelle d’une créature.",
+          "Description": "La mopor place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains. La vitesse de guérison de la personne bénéficiant de l’imposition des mains augmente de +5 points de santé par jour tant que le sujet continue à se reposer. Si le personnage blessé fait quoi que ce soit d’autre que se reposer, le pouvoir est rompu et le sujet retrouve sa vitesse de guérison normale. La mopor peut également tenter de neutraliser les empoisonnements ou dissiper les malédictions en conférant à la personne affectée un bonus de +10 à un jet de situation pour neutraliser un poison ou dissiper une malédiction.",
+          "SwedishName": "",
+          "Duration": "3 jours",
+          "Range": "contact",
+          "CastingTime": "6 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 jour",
+            "1": "Augmente le modificateur pour neutraliser un poison ou dissiper une malédiction de : +1",
+            "2": "Augmente la vitesse de guérison de : +3 points de santé par jour"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:firon-power:5": {
+          "Name": "Pouvoir de Firon",
+          "Summary": "Purifie le corps d’une cible et soigne ses blessures ou afflictions.",
+          "Description": "La mopor tend les bras vers le ciel et en appelle à Sille. Les mains de la mopor se mettent alors à luire d’un feu purificateur que la mopor dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 5 points de santé et fait cesser les saignements.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Soigne de : +2 points de santé"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:healing-glow:3": {
+          "Name": "Lumière guérisseuse",
+          "Summary": "Soigne les blessures d’une cible par une lumière solaire purificatrice.",
+          "Description": "La mopor tend les bras vers le ciel et en appelle à Sille. Les mains de la mopor se mettent alors à luire d’un feu purificateur que la mopor dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 1 point de santé et fait cesser les saignements.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Soigne de : +1 point de santé"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:healing-sun:8": {
+          "Name": "Soleil guérisseur",
+          "Summary": "Inonde une zone de lumière solaire qui soigne les créatures alliées.",
+          "Description": "La mopor tend les bras vers le ciel et en appelle à Sille. Les mains de la mopor se mettent alors à luire d’un feu purificateur que la mopor dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 10 points de santé et met fin à tous les saignements.",
+          "SwedishName": "",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Soigne de : 3 points de santé"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:healing-warmth:4": {
+          "Name": "Chaleur guérisseuse",
+          "Summary": "Accélère la récupération d’une créature au repos.",
+          "Description": "La mopor place ses mains sur les blessures d’une personne et une faible lueur pleine de chaleur commence à se répandre à partir de ses mains. La vitesse de guérison de la personne bénéficiant de l’imposition des mains augmente de +3 points de santé par jour, tant que le sujet continue à se reposer. Si le personnage blessé fait quoi que ce soit d’autre que se reposer, le pouvoir est rompu et le sujet retrouve sa vitesse de guérison normale. La mopor peut également tenter de guérir n’importe quelle maladie en conférant à la personne malade un bonus de +3 à un jet de situation pour vaincre la maladie.",
+          "SwedishName": "",
+          "Duration": "2 jours",
+          "Range": "contact",
+          "CastingTime": "6 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 jour",
+            "1": "Augmente le modificateur pour surmonter la maladie de : +1",
+            "2": "Augmente la vitesse de guérison de : +2 points de santé par jour"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:healing:0": {
+          "Name": "Guérison",
+          "Summary": "Accélère la guérison naturelle des blessures d’une créature touchée.",
+          "Description": "La mopor place ses mains sur les membres blessés d’une personne, et ses paumes commencent à émettre une faible lumière chaude. La vitesse de guérison de la personne qui bénéficie de ce toucher guérisseur augmente de 1 point de santé par jour tant qu’elle continue de se reposer. Si le blessé fait quoi que ce soit d’autre que se reposer, l’effet de ce pouvoir est rompu et le blessé retrouve sa vitesse de guérison normale.",
+          "SwedishName": "",
+          "Duration": "1 jour",
+          "Range": "contact",
+          "CastingTime": "6 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 jour",
+            "1": "Augmente la vitesse de guérison de : +1 point de santé par jour"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:summer-place:2": {
+          "Name": "Cœur de l’été",
+          "Summary": "Apporte une chaleur et une lumière estivales qui dissipent le froid et l’obscurité.",
+          "Description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée (qui dépend de la valeur de compétence en Foi de la mopor). Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Si la durée du pouvoir se prolonge après le crépuscule, une chaude soirée d’été se poursuit dans la zone bénie jusqu’à expiration du pouvoir. Tant que ce pouvoir perdure, les terrains de chasse situés à proximité de la mopor (VC × 100 mètres) deviennent également plus giboyeux (+3 en compétence Nature pour chasser).",
+          "SwedishName": "",
+          "Duration": "3 heures",
+          "Range": "rayon de VC x 100 mètres",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:sunray:1": {
+          "Name": "Rayons du soleil",
+          "Summary": "Fait briller le soleil dans une zone pour l’éclairer et la réchauffer.",
+          "Description": "Sille répond au souhait de la mopor et fait briller les rayons du soleil sur lui. Pendant la durée du pouvoir, le soleil brille sur la mopor et dans une zone qui l’entoure dont le rayon dépend de sa valeur de compétence en Foi. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Cela dit, ce pouvoir ne fonctionne qu’à l’extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. La zone affectée est déterminée au moment où la mopor active ce pouvoir, et elle ne se déplace pas si ce dernier s’éloigne.",
+          "SwedishName": "",
+          "Duration": "1 heure",
+          "Range": "rayon de VC mètres",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure"
+          }
+        },
+        "holy-joaringfaith-power-of-sille:time-of-the-hunt:6": {
+          "Name": "Heure de la chasse",
+          "Summary": "Fait apparaître une lumière solaire favorable à la chasse et aux déplacements.",
+          "Description": "Sille répond aux souhaits de la mopor et fait apparaître les rayons du soleil. Pour toute la durée de ce pouvoir, le soleil brille sur la zone affectée. Ce pouvoir ne fonctionne qu’en extérieur et de jour. La chaleur du soleil est celle d’un jour d’été dans la région actuelle. Tous ceux qui se trouvent dans la lumière du soleil n’éprouvent aucune gêne à évoluer en pleine nature, et tous les malus qu’ils devraient subir à cause de la nature sauvage sont réduits à 0. Tant que ce pouvoir perdure, les terrains de chasse dans un rayon de 10 kilomètres autour de la mopor deviennent particulièrement giboyeux (+6 en compétence Nature pour chasser ou pêcher).",
+          "SwedishName": "",
+          "Duration": "1 jour",
+          "Range": "rayon de 10 km",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 jour",
+            "1": "Augmente la portée de : 10 kilomètres"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:astral-voyage:6": {
+          "Name": "Voyage astral",
+          "Summary": "Envoie l’esprit hors du corps pour explorer à distance sans subir les attaques physiques.",
+          "Description": "En quittant le plan matériel, la mopor permet à son esprit d’évoluer librement dans son environnement à une vitesse incroyable de 1 kilomètre à la minute. L’esprit de la mopor se déplace à la frontière entre Trudvang et Dimhall. Là, elle peut continuer d’observer ce qui se trouve sur Trudvang, mais tout lui paraît gris, brumeux et brouillé. Une fois que l’esprit de la mopor quitte son enveloppe charnelle, cette dernière entre en hibernation. La mopor entend et voit normalement sous sa forme spirituelle. Il est cependant incapable d’interagir ou de communiquer avec son environnement. Le corps astral est totalement transparent, puisqu’il se compose uniquement de la conscience de la mopor. Le corps astral est immunisé contre toutes les attaques physiques et perçoit immédiatement si son corps physique est blessé de quelque façon que ce soit. La mopor doit prendre soin de se rapprocher de son corps avant l’expiration du corps. Si elle ne le fait pas, sa conscience est arrachée au plan astral et projetée dans l’enveloppe charnelle à laquelle elle appartient, une expérience si horrible et douloureuse que la mopor subit un choc extrême qui se traduit par une diminution permanente de 1d6 points de sa réserve de pouvoir, et qui la plonge dans un profond sommeil pendant 1d6 jours. L’enveloppe physique subit quant à elle 1d10 (JO 10) points de dégâts. Le seul moyen de percevoir le corps astral est de recourir au pouvoir Vision véritable. Un autre mopor qui découvre un corps astral peut le renvoyer dans son corps d’origine en utilisant le pouvoir Dissipation des pouvoirs. Le personnage ainsi banni subit alors les mêmes effets que si le pouvoir avait expiré.",
+          "SwedishName": "Dimvandr",
+          "Duration": "5 minutes",
+          "Range": "personnelle",
+          "CastingTime": "10 minutes",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 minute",
+            "1": "Augmente la durée du pouvoir de : 1 heure",
+            "2": "Augmente la durée du pouvoir de : 1 journée",
+            "3": "Augmente la capacité de mouvement de : 1 kilomètre par minute"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:espionage:3": {
+          "Name": "Espionnage",
+          "Summary": "Transforme un objet en point d’observation pour voir et entendre ce qui l’entoure à distance.",
+          "Description": "La mopor peut enchanter un objet en sa possession (ce qui lui prend 1 tour de jeu) puis le placer de façon stratégique et l’utiliser pour percevoir tout ce qui se passe autour. Pendant toute la durée du pouvoir, la mopor peut voir tout ce qui se passe autour de l’objet ; il lui suffit pour cela d’entrer en transe (temps d'invocation de 5 tours de jeu, le pouvoir devient soutenu tant que la mopor est en transe) et de projeter temporairement sa conscience dans l’objet choisi. Une fois que la mopor a lancé ce pouvoir sur l’objet, peu importe la distance qui les sépare. Juste avant l’expiration du pouvoir, la mopor peut choisir de percevoir d’un seul coup tout ce qui s’est produit autour de l’objet pendant que le pouvoir était actif. Les souvenirs des événements apparaissent instantanément, comme s’il s’agissait des propres souvenirs de la mopor.",
+          "SwedishName": "Hlustspyrja",
+          "Duration": "1 heure",
+          "Range": "contact",
+          "CastingTime": "1 tour de jeu/5 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure",
+            "1": "Augmente la durée du pouvoir de : 1 journée",
+            "2": "Augmente la durée du pouvoir de : 1 semaine"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:far-sight:2": {
+          "Name": "Vision lointaine",
+          "Summary": "Améliore la vision à grande distance et facilite les attaques lointaines.",
+          "Description": "La mopor se concentre sur un espace, et les énergies tourbillonnantes qui s’y trouvent forment un tunnel d’air et d’énergie comprimés. Tant que la mopor regarde à travers ce tunnel, le pouvoir fonctionne comme un télescope et permet au personnage de voir jusqu’à 500 mètres de distance, aussi clairement qu’à quelques mètres. La mopor peut se concentrer sur n’importe quel endroit à portée du pouvoir avec la même précision. Le pouvoir Vision lointaine confère un bonus de +1 à la valeur de compétence pour toucher à l’aide d’une arme à distance. Ce bonus est également pris en compte dans la portée maximale de l’arme à distance utilisée.",
+          "SwedishName": "Fjarrskönja",
+          "Duration": "2 tours de jeu",
+          "Range": "contact",
+          "CastingTime": "1 tour de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 tour de jeu",
+            "1": "Augmente la durée du pouvoir de : 1 minute",
+            "2": "Augmente la distance de vision de : 100 mètres",
+            "3": "Augmente la distance de vision de : 500 mètres",
+            "4": "Augmente la distance de vision de : 10 kilomètres",
+            "5": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)",
+            "6": "Affecte une cible supplémentaire (qui profite des effets du pouvoir de base)",
+            "7": "Confère un bonus supplémentaire de : +1 à l’utilisation des armes à distance"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:read-powers:5": {
+          "Name": "Lecture des pouvoirs",
+          "Summary": "Révèle les traces de pouvoir et les pouvoirs tissés autour d’une créature ou d’un objet.",
+          "Description": "Ce pouvoir confère à la mopor la faculté d’observer avec attention les motifs de pouvoir qui entourent une créature ou un objet et de discerner les éventuels pouvoirs qui y ont été tissés. Les pouvoirs qu’on peut ainsi observer ont été tissés en utilisant l’un des trois types de pouvoir (le hvitavitner, le vaagrivitner ou le morkvitner) ; si la mopor qui tisse le pouvoir Lecture des pouvoirs utilise la même nature, son observation en sera facilitée, ce qui se traduit par un bonus de +2 au test de situation associé à ce pouvoir. Quand la mopor commence à examiner une créature ou un objet, il observe d’abord le pouvoir le moins évolué (celui dont le niveau est le plus faible). La mopor doit ensuite réussir un test de situation pour découvrir les secrets de ce pouvoir. Si le sujet observé est sous le coup de plusieurs pouvoirs, la mopor les découvre dans l’ordre de leur complexité. La table ci-dessous indique la valeur de situation en fonction de la complexité d’un pouvoir. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Un test de situation réussi signifie que la mopor est parvenu à identifier un pouvoir tissé sur l’objet ou la créature, et il sait également comment activer cette magie dans les objets magiques et autres choses similaires. Si la mopor ne parvient pas à discerner un pouvoir, elle ne peut pas non plus lire les suivants. Même en cas d’échec, la mopor est conscient que le sujet est sous le coup d’un ou plusieurs pouvoirs, sans pour autant savoir lesquels. Le pouvoir Lecture des pouvoirs peut également servir à découvrir si une créature possède une ou plusieurs aptitudes magiques, mais pas leur nature précise.",
+          "SwedishName": "Vitnaskönja",
+          "Duration": "",
+          "Range": "contact",
+          "CastingTime": "1 heure",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente les chances de réussir le test de situation de : 1 (la mopor peut intégrer cet effet avant chaque nouveau test)",
+            "1": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:scanning:1": {
+          "Name": "Examen d’objet",
+          "Summary": "Révèle l’histoire et les souvenirs marquants d’un objet touché.",
+          "Description": "La mopor touche un objet et entre en transe, ce qui lui permet d’explorer les souvenirs de cet objet à travers le plan astral. La mopor perçoit une série d’images racontant dans les grandes lignes l’histoire de l’objet, mais elle ne peut remonter ainsi que d’une année dans le passé. Pour chaque tranche de 3 tours de jeu que la mopor passe concentrée sur ce pouvoir, elle peut se remémorer un événement significatif de l’histoire de l’objet. Il peut également poser des questions spécifiques à l’objet, et lui demander par exemple quelle a été la dernière personne à le tenir entre ses mains. La réponse à chaque question prend également 3 tours de jeu. C’est au maître de jeu de déterminer ce que la mopor perçoit ou apprend précisément.",
+          "SwedishName": "Tingspyrja",
+          "Duration": "9 tours de jeu",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la période sur laquelle la mopor peut remonter dans l’histoire de l’objet de : 1 année",
+            "1": "Augmente la durée du pouvoir de : 3 tours de jeu"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:seeing:4": {
+          "Name": "Vision parfaite",
+          "Summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+          "Description": "Ce pouvoir permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du pouvoir, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des pouvoirs gênant la vision. Ce pouvoir ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce pouvoir peut également servir à annuler les effets des pouvoirs qui gênent la vision (du moins pendant la durée du pouvoir) comme par exemple le pouvoir Vision/cécité.",
+          "SwedishName": "Edliauga",
+          "Duration": "1 heure",
+          "Range": "contact",
+          "CastingTime": "1 minute",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)",
+            "1": "Augmente la durée du pouvoir de : 1 heure",
+            "2": "Augmente la durée du pouvoir de : 1 journée",
+            "3": "Affecte un autre être vivant (qui bénéficie des effets du pouvoir de base)"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:tracking:0": {
+          "Name": "Pistage",
+          "Summary": "Révèle et aide à suivre les traces laissées par une créature.",
+          "Description": "Ce pouvoir permet au personnage enchanté de discerner aisément et de suivre les empreintes d’une autre créature sur le sol. Ces empreintes s’éclairent d’une lueur rougeâtre que seule la mopor peut percevoir. Si la créature suivie a traversé une étendue d’eau ou s’est déplacée d’une manière qui ne laisse pas de traces (en sautant par-dessus un ravin, en nageant ou en chevauchant une monture par exemple), de petites taches de pouvoir lumineux se rassembleront sur l’eau ou dans l’air pour indiquer le chemin. La mopor peut également suivre les traces d’une créature ayant bénéficié du pouvoir Sans trace. Pour pouvoir utiliser le pouvoir en vue de pister une créature, la mopor doit posséder un cheveu, une goutte de sang, un ongle ou tout autre élément similaire provenant de la cible. L’objet utilisé sera consumé une fois le invocation du pouvoir réussi : la mopor ne peut donc pas répéter le même pouvoir à moins de se procurer un autre échantillon de la créature visée.",
+          "SwedishName": "Sporskönja",
+          "Duration": "1 heure",
+          "Range": "contact",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 heure",
+            "1": "Augmente la durée du pouvoir de : 12 heures",
+            "2": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+          }
+        },
+        "holy-joaringfaith-sight-of-lekaba:true-sight:7": {
+          "Name": "Vision véritable",
+          "Summary": "Permet de voir à travers les illusions, l’invisibilité et les camouflages magiques.",
+          "Description": "Ce pouvoir permet d’enchanter les yeux d’un humanoïde ou d’une créature afin qu’ils puissent identifier les motifs de pouvoir illusoire qui entourent les êtres et les objets. Le bénéficiaire du pouvoir est capable de voir à travers toutes les illusions, les camouflages et les images magiques. Ce pouvoir lui confère également la faculté de voir les objets et les êtres vivants invisibles (que ce soit par leur nature même ou par quelque aptitude spéciale). Enfin, il perçoit les objets ou créatures invisibles ou camouflés par le biais de pouvoirs comme s’ils ne bénéficiaient d’aucun enchantement. Dans la version de base de ce pouvoir, la portée effective de la Vision véritable est de 25 mètres. La mopor peut également se servir de ce pouvoir pour déterminer si un objet ou une créature ont été enchantés et si leur pouvoir a été manipulé autrement que par des illusions. Pour ce faire, elle doit réussir un test de situation avec une valeur de situation qui dépend du pouvoir tissé sur l’objet ou la créature (voir table ci-dessous). Le maître de jeu peut appliquer les modificateurs de son choix à ce test, et il devrait toujours l’effectuer en secret afin que le joueur ignore s’il y a réellement quelque chose à découvrir. Cependant, la mopor n’a aucun moyen de deviner la véritable nature du pouvoir découvert sans recourir également au pouvoir Lecture des pouvoirs. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>Valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>12</td></tr><tr><td>2</td><td>10</td></tr><tr><td>3</td><td>8</td></tr><tr><td>4</td><td>6</td></tr><tr><td>5</td><td>4</td></tr></tbody></table>",
+          "SwedishName": "Sannskönja",
+          "Duration": "1 minute",
+          "Range": "contact",
+          "CastingTime": "2 tours de jeu",
+          "DailyActivation": "",
+          "PowerLevels": {
+            "0": "Augmente la durée du pouvoir de : 1 minute",
+            "1": "Augmente la durée du pouvoir de : 10 minutes",
+            "2": "Augmente la durée du pouvoir de : 1 heure",
+            "3": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)",
+            "4": "Augmente la portée effective de : 5 mètres",
+            "5": "Augmente la portée effective de : 25 mètres",
+            "6": "Augmente les chances de découvrir si le sujet est sous le coup d’un pouvoir de : +1",
+            "7": "Affecte un autre être vivant (qui bénéficie de la version de base du pouvoir)"
           }
         },
         "holy-tenetnid-tablet-of-anger:divine-purge:6": {
@@ -8884,7 +9419,11 @@
         "holy-haminges-power-of-trolls": "Pouvoirs des trolls de maladie, illusion, persuasion, intrépidité, ruse et enchantement de la montagne.",
         "holy-toikalokke-animal-mind": "Pouvoirs pour se lier d'amitié avec les animaux, les pister, leur parler, les maîtriser et prendre leur forme.",
         "holy-toikalokke-lynx-power": "Dons félins d'ouïe, de bond, de réflexes, de visée, de pistage, de camouflage et de repérage des sentiers.",
-        "holy-toikalokke-master-of-elements": "Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires."
+        "holy-toikalokke-master-of-elements": "Pouvoirs élémentaires contrôlant terre, feu, eau, vent, température et projectiles élémentaires.",
+        "holy-joaringfaith-fury-of-ogon": "Tempêtes de flèches divines et rage sanglante accordées par Ogon, le dieu de la guerre des terres de l’Est.",
+        "holy-joaringfaith-power-of-sille": "Pouvoirs de l’amour, de l’abondance, de guérison et de la chaleur de l’été accordés par Sille, la déesse de l’ouest.",
+        "holy-joaringfaith-sight-of-lekaba": "Vue lointaine, sens aiguisés et lecture des objets, des souvenirs et des traces accordés par Lekaba.",
+        "holy-joaringfaith-curses-of-sonntag": "Malédictions de corruption, de ruine et de décomposition des vivants accordées par Sonntag, le dieu de la mort."
       },
       "ThuulRunePrefix": "Une rune thuul sacrée qui {summary}",
       "Ability": {
@@ -9427,6 +9966,10 @@
         "weathered": {
           "Description": "Le personnage est habitué à passer de longues périodes dans la nature et est donc capable de supporter la pluie, le vent et le froid. Le bonus de spécialité est utilisé lorsque le personnage doit affronter une météo défavorable en pleine nature.",
           "Summary": "Habitué aux longues expositions aux éléments : pluie, vent et froid ne lui font plus peur."
+        },
+        "mopor": {
+          "Description": "L’arpenteur des brumes a choisi de se consacrer à la Foi Joaring et peut apprendre à invoquer les dieux de Dain pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Foi Joaring), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring : cette forme de base ne rapporte que 1 PD, tandis qu’une offrande de sang accomplie sur le même autel suit les règles de Gerbanis, risque de sacrilège inclus. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+          "Summary": "Consacre l’invocatrice au culte joaring : convertir des points de divinité sur l’autel d’un village joaring pour appeler les dieux de Dain via sa Tablette sacrée."
         }
       },
       "Journal": {
@@ -9627,6 +10170,10 @@
         "toikalokke": {
           "Name": "Toikalokke",
           "Content": "<article class=\"trudvang-religion-journal\"><p>Toikalokke est le nom donné à la pratique divine enseignée par les prêtres et astrologues elfes (Ces derniers l’appellent « hauts dons », d’après les « hauts dieux »). Ceux qui maîtrisent ces dons sont appelés ihanas.</p><h2>La harpe des étoiles</h2><ul><li>Prérequis du Toikalokke pour l’apprentissage des Tablettes sacrées.</li></ul><p>La harpe des étoiles est l’objet le plus précieux que peut posséder un prêtre elfe, car il lui permet de déchiffrer les étoiles et d’entrer en contact avec les dieux qui lui confèrent la connaissance des tablettes sacrées. Toutes les harpes des étoiles sont différentes. Certaines sont aussi petites que la paume de la main, tandis que d’autres sont aussi grandes qu’une maison, mais toutes ressemblent à un saule sans feuille.</p><p>Les harpes des étoiles sont fabriquées à partir du bois d’alfarka, qui est assez rare, et elles sont fortement liées à leur propriétaire (chaque prêtre doit posséder sa propre harpe). Le prêtre accroche divers prismes et lentilles aux branches de la harpe, et en étudiant la façon dont ils décomposent la lumière des étoiles, il peut entrer en contact avec les dieux.</p><p>Si le prêtre brise sa harpe ou la perd, il doit en obtenir une nouvelle, sans quoi il ne pourra plus interpréter les étoiles, même s’il demeure capable d’utiliser normalement ses points de divinité. Il lui est impossible de la remplacer par la harpe d’un autre prêtre, même de façon temporaire.</p><h2>Astrologie et points de divinité supplémentaires</h2><p>Les prêtres elfes peuvent obtenir des points de divinité supplémentaires de façon similaire aux prêtres de Gerbanis qui font des sacrifices de sang ou aux gavliens du Vastermark qui prient, mais leur méthode est évidemment différente. C’est en étudiant les étoiles et les corps célestes à travers leurs harpes des étoiles qu’ils se procurent leurs points de divinité supplémentaires.</p><p>Pour déchiffrer les signes des dieux, l’ihana a besoin de deux choses : une nuit étoilée (en cela, les elfes subissent davantage l’influence de la nature imprévisible des éléments que les prêtres de Gerbanis ou de la Doctrine de Nid), et sa harpe des étoiles à portée de main.</p><p>Un arpenteur des brumes ne peut déchiffrer les étoiles qu’en des occasions particulières et il doit attendre que tous les points de divinité qu’il a reçus lors de sa précédente observation des étoiles aient disparu avant de pouvoir recommencer.</p><p>Pour parvenir à étudier les étoiles, l’arpenteur des brumes doit réussir un test de compétence avec la spécialité Ihana.</p><p>L’astrologie est le puits de pouvoir dans lequel les prêtres ihanas puisent leur force. Le temps passé à observer les étoiles et les conditions météorologiques qui accompagnent cette pratique sont plutôt importants, de même que l’endroit où l’ihana s’installe : plus le lieu est significatif et plus il y passe du temps, plus la quantité de pouvoir que recevra le prêtre pour utiliser ses talents divins sera importante. S’il n’observe pas les étoiles à l’aide d’une harpe des étoiles, l’ihana ne dispose que d’une quantité limitée de points de divinité à dépenser pour utiliser ses pouvoirs. L’astrologie donne à l’ihana l’occasion d’obtenir des points supplémentaires quand le besoin s’en fait sentir.</p><ul><li>Les points de divinité obtenus par le biais de l’astrologie sont volatiles et disparaissent au rythme de 1 point par jour.</li></ul><h2>Temps passé à observer les étoiles, conditions externes</h2><p>Le temps que passe l’ihana à observer les étoiles et les conditions dans lesquelles il accomplit ce rituel influent largement sur le nombre de points de divinité que l’arpenteur des brumes peut recueillir.</p><p>Pendant tout le temps qu’il observe les étoiles, l’ihana ne doit subir aucune distraction. Chaque fois que la tranquillité du prêtre est menacée, il doit réussir un test de situation adéquat pour conserver sa concentration. Si le prêtre est déconcentré, son rituel échoue et il n’en retire aucun point de divinité.</p><section class=\"trudvang-religion-table\"><h3>Temps passé à observer les étoiles</h3><table><thead><tr><th>Temps passé</th><th>Points de divinité</th></tr></thead><tbody><tr><td>1 heure</td><td>1</td></tr><tr><td>4 heures</td><td>3</td></tr><tr><td>8 heures</td><td>6</td></tr><tr><td>2 × 8 heures (2 nuits)</td><td>12</td></tr><tr><td>3 × 8 heures (3 nuits)</td><td>24</td></tr><tr><td>7 × 8 heures (7 nuits)</td><td>32</td></tr></tbody></table></section><p>En fonction des conditions dans lesquelles l’ihana observe les étoiles, on applique un multiplicateur au nombre de points de divinité qu’il obtient au fil du temps. Un ihana est dans l’impossibilité d’observer les étoiles si le ciel est complètement voilé par les nuages ou s’il se trouve à un endroit où les étoiles ne sont pas visibles (en sous-sol ou sous la canopée d’une épaisse forêt, par exemple). Si l’ihana observe les étoiles plus de 8 heures, alors il doit passer la journée à dormir et effectue des calculs astronomiques le soir avant de reprendre l’observation.</p><p>La table ci-dessous précise le multiplicateur selon les conditions.</p><section class=\"trudvang-religion-table\"><h3>Conditions externes</h3><table><thead><tr><th>Visibilité</th><th>Points de divinité</th></tr></thead><tbody><tr><td>Partiellement étoilé</td><td>×1</td></tr><tr><td>Étoilé</td><td>×2</td></tr><tr><td>Partiellement étoilé et pleine lune</td><td>×3</td></tr><tr><td>Étoilé et pleine lune</td><td>×4</td></tr><tr><td>Solstice d’été</td><td>×5</td></tr><tr><td>Orage</td><td>/2</td></tr></tbody></table></section></article>"
+        },
+        "joaringFaith": {
+          "Name": "Foi Joaring",
+          "Content": "<article class=\"trudvang-religion-journal\"><h2>La mopor</h2><p>La mopor est la femme qui détient les secrets du savoir ancien dans les villages joaring de Dain. C’est elle qui accomplit les rites religieux, appelle la puissance des dieux, et instruit les Joaring en se servant des bâtons de mopor et de leurs signes mystérieusement gravés.</p><h2>Les visions</h2><p>Elle est parfois saisie par des visions et des transes au travers desquelles les dieux lui parlent (selon l’appréciation du MJ). Ces visions peuvent être facilitées par des rites complexes, mais elles peuvent aussi survenir spontanément, en particulier lorsque la mopor doit choisir sa Manpi ou son apprentie.</p><h2>Différences avec un arpenteur des brumes normal</h2><p>Traitez la mopor comme un arpenteur des brumes normal avec les différences suivantes :</p><ul><li>Elle a besoin de la spécialité « Mopor » de la discipline Invocation.</li><li>Pour devenir mopor, la femme doit être apparue dans une vision à une mopor plus ancienne.</li><li>La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring. Cette forme de base implique une offrande de nourriture et ne rapporte que 1 PD. Une offrande de sang peut également être accomplie sur l’autel, en suivant les mêmes règles que l’offrande de sang de Gerbanis, y compris le risque de sacrilège. Les PD inutilisés disparaissent au rythme de 1 par jour.</li></ul></article>"
         }
       },
       "CreatureAbility": {

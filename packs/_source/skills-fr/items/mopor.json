@@ -1,0 +1,24 @@
+{
+  "_key": "!items!gsX0jJcIdJeKfLgM",
+  "_id": "gsX0jJcIdJeKfLgM",
+  "name": "Mopor",
+  "type": "ability",
+  "img": "icons/svg/book.svg",
+  "folder": "JtakOH9EaGbHcIdJ",
+  "sort": 5400000,
+  "system": {
+    "description": "L’arpenteur des brumes a choisi de se consacrer à la Foi Joaring et peut apprendre à invoquer les dieux de Dain pour accéder à des pouvoirs surnaturels. En acquérant la spécialité Tablette sacrée (Foi Joaring), l’arpenteur des brumes peut accéder aux talents divins de la Tablette sacrée apprise. La mopor peut augmenter le nombre de ses points de divinité en accomplissant un rite de deux heures sur l’autel de pierre d’un village joaring : cette forme de base ne rapporte que 1 PD, tandis qu’une offrande de sang accomplie sur le même autel suit les règles de Gerbanis, risque de sacrilège inclus. En choisissant cette spécialité, le personnage renonce à la possibilité d’acquérir les spécialités des autres religions.",
+    "summary": "Consacre l’invocatrice au culte joaring : convertir des points de divinité sur l’autel d’un village joaring pour appeler les dieux de Dain via sa Tablette sacrée.",
+    "catalogId": "mopor",
+    "kind": "specialty",
+    "parentSkill": "faith",
+    "parentDiscipline": "Invoke",
+    "level": 0,
+    "rollBonus": 2,
+    "freeLevels": 0
+  },
+  "flags": {},
+  "ownership": {
+    "default": 0
+  }
+}

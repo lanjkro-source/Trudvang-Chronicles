@@ -1,0 +1,86 @@
+{
+  "name": "Far Sight",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:far-sight:2",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Sight of Lekaba",
+    "description": "The mopor concentrates on a space, and the swirling energies there form a tunnel of compressed air and energy. While the mopor looks through the tunnel, the power works like a telescope, enabling that character to see things up to 500 meters away as if there were only a few meters between her. The enchanted person can focus on anything within that range at will, without losing any clarity. Far Sight improves the Skill Value to hit with ranged weapons at a long distance by +1. This bonus is also considered when determining the maximum distance of the long-range weapon.",
+    "summary": "Improves long-distance sight and makes distant attacks easier.",
+    "swedishName": "Fjarrskönja",
+    "duration": "2 action rounds",
+    "range": "contact",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 action round"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:1",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 minute"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:2",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range of sight by 100 meters"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:3",
+        "cost": 3,
+        "maxCount": null,
+        "effect": "Increase the range of sight by 500 meters"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:4",
+        "cost": 10,
+        "maxCount": null,
+        "effect": "Increase the range of sight by 10"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:5",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range of casting the power by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:6",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Affect an extra being (with the power’s basic version)"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:far-sight:2:7",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Increase the modifier for long- range weapons by an additional +1"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 2,
+    "cost": 4,
+    "modifier": -4
+  },
+  "_key": "!items!1oNuWRlRmSnToUpV",
+  "_id": "1oNuWRlRmSnToUpV",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38400000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 12100000,
+  "sort": 12200000,
   "system": {
     "description": "Le personnage sait repérer des pistes dans la nature. Le bonus de spécialité est utilisé lorsqu’il essaie de trouver ou de suivre une piste.",
     "summary": "Sait repérer des pistes dans la nature puis suivre leur trace.",

@@ -1,0 +1,56 @@
+{
+  "name": "Amnesia",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
+      "tabletId": "holy-joaringfaith-curses-of-sonntag"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:amnesia:4",
+    "tabletId": "holy-joaringfaith-curses-of-sonntag",
+    "tablet": "Curses of Sonntag",
+    "description": "The power creates a disruptive energy in the victim’s head that causes them to lose large parts of their memory. The victim can avoid this loss by s ucceeding on a Situation roll with a Situation value of 6 (Psyche modifiers apply). On a failure, the victim immediately forgets their identity and past. Each day, the victim can make a new Situation roll with a Situation value of 6. On a success, the victim regains an important detail of their previous life as determined by the game master, perhaps a family memory, an i mportant skill, or some other a ttribute. The next day the victim can make another S ituation roll to remember more. Every successful Situation roll increases the chance of remembering something on the f ollowing days by +2. This bonus is not lost if the victim fails a Situation roll, though they would not recover any memories that day. The victim gets to make a new Situation roll the next day with the same Situation value and bonus. Skills and other attributes still exist within the victim, and it is up to the game master to decide when these reflexes kick in. Examples include a person fleeing through a village and by reflex jumping up on a horse and riding off at full speed (the Agility skill with the Riding k nowledge), or a person standing eye to eye with the village brute, watching that enormous fist plummet toward his face with worrisome force, then suddenly avoiding the attack and delivering a well-aimed blow to the brute’s already broken nose, knocking him to the dirty tavern floor (the Fighting skill and the W restling knowledge). The higher value a person has in a skill, the more likely it is for these reflex actions to instinctively come forth. Once the victim eventually makes a Situation roll with a Situation value of 20, they remember everything that was forgotten.",
+    "summary": "Erases a significant part of a victim's memories.",
+    "swedishName": "Húgvilsa",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 5 meters (contact is no longer necessary)"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:1",
+        "cost": 8,
+        "maxCount": null,
+        "effect": "Increase the range by 50 meters"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:amnesia:4:2",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Reduce the victim's initial Situation roll by 1 (to a minimum of 1)"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!0kfSsiLgMhNiOjPk",
+  "_id": "0kfSsiLgMhNiOjPk",
+  "folder": "iRa0P8C8D9EaGbHc",
+  "sort": 39600000,
+  "ownership": {
+    "default": 0
+  }
+}

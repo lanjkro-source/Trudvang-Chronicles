@@ -1,0 +1,74 @@
+{
+  "name": "Bad Harvest",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+      "tabletId": "holy-joaringfaith-curses-of-sonntag"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6",
+    "tabletId": "holy-joaringfaith-curses-of-sonntag",
+    "tablet": "Curses of Sonntag",
+    "description": "The power places a mist of power over a cornfield, forest, or any other area of vegetation. The fog settles over the area for only a few minutes, but during this brief period, it poisons all present vegetation and seed. The plants slowly begin to die instead of grow (which takes one day). The area affected has a radius of 20 meters in the power’s basic version. Plants that have been harmed by this power cannot be saved by natural or magical means, but are sentenced to inevitable death. After the plants die, no new plants can grow or take seed at the site until four seasons have passed (12 months). The only way to c ounteract the crop failure is with Divine feats.",
+    "summary": "Blights the vegetation of an area and spoils a harvest.",
+    "swedishName": "Nidskord",
+    "duration": "",
+    "range": "100 meters",
+    "weavingTime": "4 hours",
+    "dailyActivation": "",
+    "spellType": "permanent",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the radius by 20 meters"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:1",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the radius by 100 meters"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:2",
+        "cost": 20,
+        "maxCount": null,
+        "effect": "Increase the radius by 500 meters"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:3",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Increase the range by 100 meters"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:4",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Increase the power's range by 1 kilometer"
+      },
+      {
+        "id": "holy-joaringfaith-curses-of-sonntag:bad-harvest:6:5",
+        "cost": 5,
+        "maxCount": null,
+        "effect": "It takes an additional two seasons (+6 months) before anything can be planted or grown on the affected site"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!5FHr6XqWrXsYtZu0",
+  "_id": "5FHr6XqWrXsYtZu0",
+  "folder": "iRa0P8C8D9EaGbHc",
+  "sort": 39800000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 13400000,
+  "sort": 13500000,
   "system": {
     "description": "Le personnage possède une grande expertise en matière de survie dans un environnement spécifique. Le bonus de spécialité est utilisé lorsque le personnage doit effectuer un test de compétence pour trouver un abri, de la nourriture, de l’eau ou d’autres produits indispensables dans l’environnement choisi. Les différents environnements sont : montagne, forêt, mer, neige et froid, et plaines.",
     "summary": "Expertise de survie dans un environnement spécifique : montagne, forêt, mer, neige et froid, etc.",

@@ -86,7 +86,14 @@ const DEFINITIONS = [
   ...[["Anvil Shock",229,285],["Borjorn's Hand",229,287],["Cave Spider's Grip",229,287],["Earthquake",229,288],["Fang of Yukk",230,286],["Gills of the Blackfish",231,285],["Hammer Fists",231,287],["Healing Rune",231,287],["Heat of the Depths",231,285],["Labyrinth Blood",231,288],["Mark of Brokk",231,287],["Power of Repair",231,287],["Scales",232,286],["Stoneling",232,286],["Stone to Clay",232,288],["Stoneshape",232,285],["Well of Water",232,288]].map(([name, page, pageFr]) => [name,"holy","thuuldom",page,pageFr]),
   ["Animal Mind","holy","toikalokke",237,295],
   ["Lynx Power","holy","toikalokke",239,293],
-  ["Master of Elements","holy","toikalokke",241,297]
+  ["Master of Elements","holy","toikalokke",241,297],
+  // Stormlands p. 123: the Joaring Faith tablets, each a copy of an existing tablet with its
+  // own god. The two copied from vitner tablets keep their mechanics, with the costs read in
+  // Divinity Points and the vitner types ignored.
+  ["Fury of Ogon","holy","joaringFaith",123,123],
+  ["Power of Sille","holy","joaringFaith",123,123],
+  ["Sight of Lekaba","holy","joaringFaith",123,123],
+  ["Curses of Sonntag","holy","joaringFaith",123,123]
 ];
 
 export const TABLET_CATALOG = DEFINITIONS.map(([name, tabletType, religion, page, pageFr]) => {

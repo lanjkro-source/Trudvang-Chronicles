@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11900000,
+  "sort": 12000000,
   "system": {
     "description": "Le personnage sait chasser dans la nature ou pêcher sur un lac. Il peut également fabriquer et poser des pièges pour attraper des animaux. Le bonus de spécialité est utilisé lorsque le personnage part à la chasse ou à la pêche.",
     "summary": "Sait chasser en pleine nature, pêcher au lac et tendre des pièges.",

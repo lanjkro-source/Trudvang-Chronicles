@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 5900000,
+  "sort": 6000000,
   "system": {
     "description": "This specialty develops the character’s ability to use two-handed weapons, such as a two-handed sword or axe. The character gains +2 per level in Skill Value when using two-handed weapons. character also receives an extra weapon action per round. Thus, instead of the usual two weapon actions per round, they could perform three (at levels 3 and 4) or four (at level 5) weapon actions per combat round with a two-handed weapon.",
     "summary": "Specializes in two-handed swords and axes; at higher levels an extra weapon action per round is added.",

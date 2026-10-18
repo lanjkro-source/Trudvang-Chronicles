@@ -1,0 +1,44 @@
+{
+  "name": "Battle Arrow",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:battle-arrow:0",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:battle-arrow:0",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "The mopor calls on the power of Ogon, who unleashes an arrow into the battle to come to her aid. The arrow counts as a magical projectile, but armor grants full protection as normal. Shields also provide passive protection against the arrow as normal. The mopor takes aim at an enemy within range, who is then struck by a black arrow. The arrow automatically hits with a successful invocation and inflicts 1d10 (OR 8-10) points of damage with Penetration Value 1.",
+    "summary": "Fires a divine arrow that inflicts damage at range.",
+    "swedishName": "",
+    "duration": "",
+    "range": "20 meters",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:battle-arrow:0:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the range by 10 meters"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "cost": 2,
+    "modifier": -2
+  },
+  "_key": "!items!cSpeELcIdJeKfLgM",
+  "_id": "cSpeELcIdJeKfLgM",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36000000,
+  "ownership": {
+    "default": 0
+  }
+}

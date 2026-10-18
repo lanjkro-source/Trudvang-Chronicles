@@ -1,0 +1,33 @@
+{
+  "name": "Power of Sille",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille",
+    "description": "The mopor has sworn allegiance to Sille, goddess of love and plenty, known as Esilis of the West, who grants her in return powers of healing and relief as well as the warmth and the blossoming life of summer.",
+    "summary": "Calls the goddess of love and plenty for healing, warmth and the blossoming of life.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!u2VFs9A6B7C8D9Ea",
+  "_id": "u2VFs9A6B7C8D9Ea",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37000000,
+  "ownership": {
+    "default": 0
+  }
+}

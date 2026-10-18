@@ -26,7 +26,7 @@ test("a tablet and its powers share one folder at the proper religion depth", ()
     const folderById = new Map(folders.map(folder => [folder._id, folder]));
     const tablets = items.filter(item => item.type === "tablet");
     const powers = items.filter(item => ["spell", "divineFeat"].includes(item.type));
-    assert.equal(tablets.length, tabletType === "vitner" ? 14 : 44);
+    assert.equal(tablets.length, tabletType === "vitner" ? 14 : 48);
     for (const tablet of tablets) {
       assert.ok(folderById.has(tablet.folder), `${tablet.system.catalogId} has a folder`);
       const siblings = powers.filter(power => power.system.tabletId === tablet.system.catalogId);

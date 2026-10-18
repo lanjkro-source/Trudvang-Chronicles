@@ -1,0 +1,33 @@
+{
+  "name": "Malédictions de Sonntag",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-curses-of-sonntag"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag",
+    "description": "La mopor a juré allégeance à Sonntag, dieu de la mort, tourné vers le Sud, qui lui offre en retour les épouvantables bénédictions de la corruption, de la ruine et de la décomposition de toute chose vivante.",
+    "summary": "Appelle le dieu de la mort pour des malédictions qui fanent les terres et défont ce qui vit.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Livre des règles, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!lHXo6z5A6B7C8D9E",
+  "_id": "lHXo6z5A6B7C8D9E",
+  "folder": "iRa0P8C8D9EaGbHc",
+  "sort": 39100000,
+  "ownership": {
+    "default": 0
+  }
+}

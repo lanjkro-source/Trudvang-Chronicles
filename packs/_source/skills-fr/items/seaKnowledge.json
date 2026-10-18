@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11600000,
+  "sort": 11700000,
   "system": {
     "description": "Le personnage est familier avec la mer ou l’océan qui borde une côte spécifique, et bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer ce qu’il sait des eaux d’un secteur donné.",
     "summary": "Rend familier le littoral et les eaux d’un secteur côtier particulier.",

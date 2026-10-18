@@ -1,0 +1,33 @@
+{
+  "name": "Puissance de Sille",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille",
+    "description": "La mopor a juré allégeance à Sille, déesse de l’amour et de l’abondance, également connue comme Esilis de l’ouest, qui lui offre en retour des pouvoirs de guérison et de soulagement ainsi que la chaleur et la vie florissante de l’été.",
+    "summary": "Appelle la déesse de l’amour et de l’abondance pour guérir, réchauffer et faire fleurir la vie.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Livre des règles, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!u2VFs9A6B7C8D9Ea",
+  "_id": "u2VFs9A6B7C8D9Ea",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37000000,
+  "ownership": {
+    "default": 0
+  }
+}

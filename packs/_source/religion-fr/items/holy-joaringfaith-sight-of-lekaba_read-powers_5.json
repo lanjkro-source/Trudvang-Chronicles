@@ -1,0 +1,50 @@
+{
+  "name": "Lecture des pouvoirs",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:read-powers:5",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:read-powers:5",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "Ce pouvoir confère à la mopor la faculté d’observer avec attention les motifs de pouvoir qui entourent une créature ou un objet et de discerner les éventuels pouvoirs qui y ont été tissés. Les pouvoirs qu’on peut ainsi observer ont été tissés en utilisant l’un des trois types de pouvoir (le hvitavitner, le vaagrivitner ou le morkvitner) ; si la mopor qui tisse le pouvoir Lecture des pouvoirs utilise la même nature, son observation en sera facilitée, ce qui se traduit par un bonus de +2 au test de situation associé à ce pouvoir. Quand la mopor commence à examiner une créature ou un objet, il observe d’abord le pouvoir le moins évolué (celui dont le niveau est le plus faible). La mopor doit ensuite réussir un test de situation pour découvrir les secrets de ce pouvoir. Si le sujet observé est sous le coup de plusieurs pouvoirs, la mopor les découvre dans l’ordre de leur complexité. La table ci-dessous indique la valeur de situation en fonction de la complexité d’un pouvoir. <table><thead><tr><th colspan=\"2\">VALEURS DE SITUATION</th></tr><tr><th>Niveau du pouvoir</th><th>valeur de situation</th></tr></thead><tbody><tr><td>1</td><td>10</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>6</td></tr><tr><td>4</td><td>4</td></tr><tr><td>5</td><td>2</td></tr></tbody></table> Un test de situation réussi signifie que la mopor est parvenu à identifier un pouvoir tissé sur l’objet ou la créature, et il sait également comment activer cette magie dans les objets magiques et autres choses similaires. Si la mopor ne parvient pas à discerner un pouvoir, elle ne peut pas non plus lire les suivants. Même en cas d’échec, la mopor est conscient que le sujet est sous le coup d’un ou plusieurs pouvoirs, sans pour autant savoir lesquels. Le pouvoir Lecture des pouvoirs peut également servir à découvrir si une créature possède une ou plusieurs aptitudes magiques, mais pas leur nature précise.",
+    "summary": "Révèle les traces de pouvoir et les pouvoirs tissés autour d’une créature ou d’un objet.",
+    "swedishName": "Vitnaskönja",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 heure",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente les chances de réussir le test de situation de : 1 (la mopor peut intégrer cet effet avant chaque nouveau test)"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:read-powers:5:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (le contact physique n’est plus nécessaire)"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!01kBMRmSnToUpVqW",
+  "_id": "01kBMRmSnToUpVqW",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38700000,
+  "ownership": {
+    "default": 0
+  }
+}

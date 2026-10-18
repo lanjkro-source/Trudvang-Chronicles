@@ -54,7 +54,8 @@ export const TRUDVANG = {
     ealdTradition: {label: "TRUDVANG.Religion.EaldTradition", specialty: "bruid"},
     haminges: {label: "TRUDVANG.Religion.Haminges", specialty: "noaj"},
     thuuldom: {label: "TRUDVANG.Religion.Thuuldom", specialty: "thuulForging"},
-    toikalokke: {label: "TRUDVANG.Religion.Toikalokke", specialty: "ihana"}
+    toikalokke: {label: "TRUDVANG.Religion.Toikalokke", specialty: "ihana"},
+    joaringFaith: {label: "TRUDVANG.Religion.JoaringFaith", specialty: "mopor"}
   },
   raceReligions: {
     human: ["gerbanis", "tenetNid", "ealdTradition", "haminges"],
@@ -66,6 +67,12 @@ export const TRUDVANG = {
     changeling: ["gerbanis", "tenetNid", "ealdTradition", "haminges"],
     grayBrute: ["gerbanis", "tenetNid", "ealdTradition", "haminges"],
     ogro: ["gerbanis", "tenetNid", "ealdTradition", "haminges"]
+  },
+  // Second, culture-scoped restriction layer. A religion listed here is only offered to
+  // characters of that culture, whatever their race; Joaring Faith (Stormlands p. 123) is
+  // the religion of the Joaring villages of Dain and exists nowhere else.
+  cultureReligions: {
+    stormlander: ["joaringFaith"]
   },
   cultures: {
     stormlander: "TRUDVANG.Culture.Stormlander", mittlander: "TRUDVANG.Culture.Mittlander", virann: "TRUDVANG.Culture.Virann", wildfolk: "TRUDVANG.Culture.Wildfolk",
@@ -134,7 +141,7 @@ export const TRUDVANG = {
     faith: [
       knowledge("godFocus", "God Focus", [["composed", "Composed"], ["lightningQuickInvocation", "Lightning-Quick Invocation"], ["potent", "Potent"], ["rigorous", "Rigorous"]]),
       knowledge("divinePower", "Divine Power", [["faithful", "Faithful"], ["powerful", "Powerful"]]),
-      knowledge("invoke", "Invoke", [["bruid", "Bruid"], ["gavlian", "Gavlian"], ["ihana", "Ihana"], ["noaj", "Noaj"], ["thuulForging", "Thuul Forging"], ["stormkelt", "Stormkelt"]])
+      knowledge("invoke", "Invoke", [["bruid", "Bruid"], ["gavlian", "Gavlian"], ["ihana", "Ihana"], ["noaj", "Noaj"], ["thuulForging", "Thuul Forging"], ["stormkelt", "Stormkelt"], ["mopor", "Mopor"]])
     ],
     fighting: [
       knowledge("armedFighting", "Armed Fighting", [["oneHandedLightWeapons", "1H Light Weapons"], ["oneHandedHeavyWeapons", "1H Heavy Weapons"], ["throwingWeapons", "Throwing Weapons"], ["shieldBearer", "Shield Bearer"], ["twoHandedWeapons", "Two-Handed Weapons"], ["crossbow", "Crossbow"], ["bowsSlings", "Bows & Slings"]]),

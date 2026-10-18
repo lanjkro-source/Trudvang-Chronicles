@@ -1,0 +1,44 @@
+{
+  "name": "Pouvoir de Firon",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:firon-power:5",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Puissance de Sille",
+    "description": "La mopor tend les bras vers le ciel et en appelle à Sille. Les mains de la mopor se mettent alors à luire d’un feu purificateur que la mopor dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 5 points de santé et fait cesser les saignements.",
+    "summary": "Purifie le corps d’une cible et soigne ses blessures ou afflictions.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:firon-power:5:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Soigne de : +2 points de santé"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!ee8vRmQlRmSnToUp",
+  "_id": "ee8vRmQlRmSnToUp",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37600000,
+  "ownership": {
+    "default": 0
+  }
+}

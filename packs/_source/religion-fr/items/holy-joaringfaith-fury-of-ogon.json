@@ -1,0 +1,33 @@
+{
+  "name": "Fureur d’Ogon",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon",
+    "description": "La mopor a juré allégeance à Ogon, le dieu de la guerre des terres de l’Est, qui lui offre en retour des tempêtes de flèches divines et une rage sanglante qui fait de tout stormlander un guerrier sans peur.",
+    "summary": "Appelle le dieu de la guerre des terres de l’Est pour obtenir des tempêtes de flèches divines et une rage sanglante.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Livre des règles, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!tXlBCnPkQlRmSnTo",
+  "_id": "tXlBCnPkQlRmSnTo",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 35900000,
+  "ownership": {
+    "default": 0
+  }
+}

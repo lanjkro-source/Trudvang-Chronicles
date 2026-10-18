@@ -1,0 +1,33 @@
+{
+  "name": "Curses of Sonntag",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-curses-of-sonntag"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag",
+    "description": "The mopor has sworn allegiance to Sonntag, god of death, facing South, who grants her in return the terrible blessings of decay, ruin and the unmaking of all living things.",
+    "summary": "Calls the god of death for curses that wither the land and unmake what lives.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!lHXo6z5A6B7C8D9E",
+  "_id": "lHXo6z5A6B7C8D9E",
+  "folder": "iRa0P8C8D9EaGbHc",
+  "sort": 39100000,
+  "ownership": {
+    "default": 0
+  }
+}

@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 7100000,
+  "sort": 7200000,
   "system": {
     "description": "Cette discipline recouvre la plupart des choses qui ont un rapport avec la culture, la religion, l’histoire et les légendes d’une race. Le personnage est familier avec le mode de vie de la culture, ses fêtes, ses lois et son contexte général. De base, le personnage a le niveau 1 dans cette discipline (pour sa culture d’origine). Les Stormlanders, Mittlanders, Viranns, Sauvages, nains et elfes ont chacun leur propre culture.",
     "summary": "Connaissance profonde d’une culture : mode de vie, fêtes, lois et histoire ; acquise de base pour sa propre culture.",

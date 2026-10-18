@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "70rhhMhNiOjPkQlR",
-  "sort": 7600000,
+  "sort": 7700000,
   "system": {
     "description": "Le personnage sait beaucoup de choses sur un sujet spécifique de son choix. Il bénéficie d’un modificateur de +2 par niveau à sa valeur de compétence lorsqu’il doit déterminer ce qu’il sait sur le sujet choisi.",
     "summary": "Fait du personnage un érudit du sujet précis qu’il a retenu.",

@@ -1,0 +1,50 @@
+{
+  "name": "Bloodfire",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fury of Ogon",
+    "description": "Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +3d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aid of this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.",
+    "summary": "Sets the mopor's life essence ablaze to increase her fighting power.",
+    "swedishName": "",
+    "duration": "1 hour",
+    "range": "personal",
+    "weavingTime": "1 action round",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the duration by 1 hour"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:bloodfire:6:1",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Increase the number of Body"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 4,
+    "cost": 8,
+    "modifier": -8
+  },
+  "_key": "!items!AagK10u0v1w2x3y4",
+  "_id": "AagK10u0v1w2x3y4",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36600000,
+  "ownership": {
+    "default": 0
+  }
+}

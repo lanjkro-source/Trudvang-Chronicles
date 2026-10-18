@@ -1,0 +1,62 @@
+{
+  "name": "Vision parfaite",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+      "tabletId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba:seeing:4",
+    "tabletId": "holy-joaringfaith-sight-of-lekaba",
+    "tablet": "Vue de Lekaba",
+    "description": "Ce pouvoir permet à son bénéficiaire de voir aussi clairement qu’en plein jour, même dans les circonstances les plus difficiles. Pendant toute la durée du pouvoir, la vision du personnage enchanté ne subit aucun malus, qu’il soit dû à l’obscurité, au brouillard, à la fumée, à la luminosité ou à des pouvoirs gênant la vision. Ce pouvoir ne permet toutefois pas à son bénéficiaire de détecter des choses qu’il n’aurait pas été en mesure de voir dans des circonstances normales. Ce pouvoir peut également servir à annuler les effets des pouvoirs qui gênent la vision (du moins pendant la durée du pouvoir) comme par exemple le pouvoir Vision/cécité.",
+    "summary": "Permet de voir clairement malgré l’obscurité et les conditions de visibilité difficiles.",
+    "swedishName": "Edliauga",
+    "duration": "1 heure",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "lasting",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 5 mètres (il n’est plus nécessaire d’établir un contact physique)"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:1",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 heure"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:2",
+        "cost": 6,
+        "maxCount": null,
+        "effect": "Augmente la durée du pouvoir de : 1 journée"
+      },
+      {
+        "id": "holy-joaringfaith-sight-of-lekaba:seeing:4:3",
+        "cost": 4,
+        "maxCount": null,
+        "effect": "Affecte un autre être vivant (qui bénéficie des effets du pouvoir de base)"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!5lXHiMeKfLgMhNiO",
+  "_id": "5lXHiMeKfLgMhNiO",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38600000,
+  "ownership": {
+    "default": 0
+  }
+}

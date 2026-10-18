@@ -1,0 +1,33 @@
+{
+  "name": "Sight of Lekaba",
+  "type": "tablet",
+  "img": "icons/svg/holy-shield.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-sight-of-lekaba"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-sight-of-lekaba",
+    "description": "The mopor has sworn allegiance to Lekaba, guide and god of the holy speech, always facing North, who grants her in return the far sight and the clairvoyance of the one who reads the world and the memories of things.",
+    "summary": "Calls the god of holy speech for sharpened senses, far sight and the reading of objects and traces.",
+    "swedishName": "",
+    "negation": "",
+    "affinity": {
+      "hvitavitner": 0,
+      "vaagrivitner": 0,
+      "morkvitner": 0
+    },
+    "source": "Player's Handbook, p. 123",
+    "level": 1,
+    "tabletType": "holy",
+    "religion": "joaringFaith"
+  },
+  "_key": "!items!td0YjxYtZu0v1w2x",
+  "_id": "td0YjxYtZu0v1w2x",
+  "folder": "65WMQMhNiOjPkQlR",
+  "sort": 38100000,
+  "ownership": {
+    "default": 0
+  }
+}

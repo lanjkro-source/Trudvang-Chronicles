@@ -1,0 +1,44 @@
+{
+  "name": "Healing Sun",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Power of Sille",
+    "description": "The mopor reaches out with her arms stretched toward the sky and calls upon Sille. The mopor’s hands then begin to glow with a purifying fire that the mopor lowers toward an injured character. Scar tissue immediately appears over the places where the fire has purified the body. ✦ Heals 10 Body Points and stops any bleeding.",
+    "summary": "Floods an area with sunlight that heals allied creatures.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-sun:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Heal 3 Body Points"
+      }
+    ],
+    "source": "Player's Handbook, p. 123",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!o2l0J3y4z5A6B7C8",
+  "_id": "o2l0J3y4z5A6B7C8",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37900000,
+  "ownership": {
+    "default": 0
+  }
+}

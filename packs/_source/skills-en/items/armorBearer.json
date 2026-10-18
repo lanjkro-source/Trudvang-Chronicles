@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 6600000,
+  "sort": 6700000,
   "system": {
     "description": "The person has learned to wear armor in battle, allowing armor with Heft Value of 2 per level of the specialty. For example, a person with level 3 can wear armor with a Heft Value of up to 6.",
     "summary": "Accustoms the character to armor’s weight, letting them wear heavier armor as level rises.",

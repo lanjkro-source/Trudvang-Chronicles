@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 5800000,
+  "sort": 5900000,
   "system": {
     "description": "The shield bearer has learned the art of using a shield in battle, gaining 2 extra Combat Points per level to distribute among parries made with the shield — points usable only when parrying with it. Characters with Shield Bearer also ignore the usual -15 penalty for actions performed with the shield hand (this exception applies only while the character is using a shield).",
     "summary": "Teaches the art of the shield: extra Combat Points reserved for parries made with it.",

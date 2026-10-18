@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 6200000,
+  "sort": 6300000,
   "system": {
     "description": "The Unarmed Fighting discipline teaches a person to battle without weapons. The character receives +2 Combat Points per level from this discipline to use when performing the acts that the following specialties describe.",
     "summary": "Teaches fighting without weapons, granting Combat Points dedicated to the actions described by its specialties.",

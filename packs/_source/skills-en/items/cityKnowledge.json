@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 11300000,
+  "sort": 11400000,
   "system": {
     "description": "( Specification Required) The person has learned all about a particular city and gained knowledge of things like where the ruler lives and where trading houses, inns, baths, sacred buildings, and other places of interest are located. The specialty must be designated to a specific town or city.",
     "summary": "Knows everything about one particular city: where the ruler lives, shops, taverns, sacred sites and other useful spots.",

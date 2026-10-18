@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "dqOeVcGbHcIdJeKf",
-  "sort": 13000000,
+  "sort": 13100000,
   "system": {
     "description": "Le personnage a l’habitude de passer de longues périodes en mer et n’a pas besoin de descendre à terre aussi souvent qu’une personne moins expérimentée. Il fait appel à cette spécialité lorsqu’il est nécessaire d’effectuer un test de compétence pour éviter d’avoir le mal de mer à cause d’une tempête, ou pour toute autre raison liée à la vie à bord d’un navire. Le personnage a également appris la plupart des tâches quotidiennes et des corvées qui doivent être réalisées lorsqu’on travaille sur un navire. Il sait par exemple comment amener les voiles, comment charger la cargaison, quels cordes et nœuds utiliser et, tâche probablement la plus importante, comment naviguer.",
     "summary": "Supporte les longues traversées sans descendre à terre, du mal de mer à toutes les corvées du bord.",

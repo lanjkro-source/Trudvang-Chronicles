@@ -1,0 +1,44 @@
+{
+  "name": "Soleil guérisseur",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+      "tabletId": "holy-joaringfaith-power-of-sille"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-power-of-sille:healing-sun:8",
+    "tabletId": "holy-joaringfaith-power-of-sille",
+    "tablet": "Puissance de Sille",
+    "description": "La mopor tend les bras vers le ciel et en appelle à Sille. Les mains de la mopor se mettent alors à luire d’un feu purificateur que la mopor dirige vers un personnage blessé. Du tissu cicatriciel apparaît sur toutes les parties du corps que le feu a purifiées. Ce pouvoir soigne 10 points de santé et met fin à tous les saignements.",
+    "summary": "Inonde une zone de lumière solaire qui soigne les créatures alliées.",
+    "swedishName": "",
+    "duration": "",
+    "range": "contact",
+    "weavingTime": "1 minute",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-power-of-sille:healing-sun:8:0",
+        "cost": 2,
+        "maxCount": null,
+        "effect": "Soigne de : 3 points de santé"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 5,
+    "cost": 10,
+    "modifier": -10
+  },
+  "_key": "!items!o2l0J3y4z5A6B7C8",
+  "_id": "o2l0J3y4z5A6B7C8",
+  "folder": "BlFTjeGbHcIdJeKf",
+  "sort": 37900000,
+  "ownership": {
+    "default": 0
+  }
+}

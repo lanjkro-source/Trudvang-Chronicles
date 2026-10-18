@@ -5,7 +5,7 @@
   "type": "ability",
   "img": "icons/svg/book.svg",
   "folder": "l154h0tZu0v1w2x3",
-  "sort": 6800000,
+  "sort": 6900000,
   "system": {
     "description": "Le personnage a appris à réagir rapidement durant un combat. Cette spécialité lui accorde un bonus de +2 par niveau à l’initiative au combat.",
     "summary": "Aiguise les réflexes du personnage pendant un combat.",

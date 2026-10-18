@@ -1,0 +1,50 @@
+{
+  "name": "Pluie de flèches",
+  "type": "divineFeat",
+  "img": "icons/svg/angel.svg",
+  "flags": {
+    "trudvang-chronicles": {
+      "catalogId": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5",
+      "tabletId": "holy-joaringfaith-fury-of-ogon"
+    }
+  },
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5",
+    "tabletId": "holy-joaringfaith-fury-of-ogon",
+    "tablet": "Fureur d’Ogon",
+    "description": "La mopor en appelle à la puissance de Ogon, qui libère une pluie de flèches dans la bataille afin de lui venir en aide. Ces flèches sont considérées comme des projectiles magiques, mais les armures conservent toute leur protection contre elles. Les boucliers confèrent également une protection passive contre ces flèches selon les règles habituelles. La mopor vise un groupe d’ennemis situé à portée, qui sont alors frappés par une volée de flèches noires. Dans sa version de base, ce pouvoir libère deux flèches, qui sont réparties équitablement parmi les ennemis du groupe désigné. Ces flèches touchent automatiquement si l’invocation est réussie, et elles infligent 1d10 (JO 8-10) dégâts.",
+    "summary": "Fait pleuvoir des flèches sur une zone pour frapper plusieurs ennemis.",
+    "swedishName": "",
+    "duration": "",
+    "range": "30 mètres",
+    "weavingTime": "2 tours de jeu",
+    "dailyActivation": "",
+    "spellType": "instant",
+    "isRune": false,
+    "powerLevels": [
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:0",
+        "cost": 1,
+        "maxCount": null,
+        "effect": "Augmente la portée du pouvoir de : 10 mètres"
+      },
+      {
+        "id": "holy-joaringfaith-fury-of-ogon:shower-of-arrows:5:1",
+        "cost": 2,
+        "maxCount": 4,
+        "effect": "Augmente le nombre de flèches de : 1"
+      }
+    ],
+    "source": "Livre des règles, p. 123",
+    "level": 3,
+    "cost": 6,
+    "modifier": -6
+  },
+  "_key": "!items!OIDPL4v1w2x3y4z5",
+  "_id": "OIDPL4v1w2x3y4z5",
+  "folder": "QjOqofJeKfLgMhNi",
+  "sort": 36500000,
+  "ownership": {
+    "default": 0
+  }
+}
