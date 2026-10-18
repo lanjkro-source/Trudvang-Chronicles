@@ -43,6 +43,28 @@ test("the bestiary catalogue exposes a stable animal family for the world copies
   assert.ok(families.has("animal"), "the animal family exists in the catalogue");
 });
 
+// Regression: v0.92.3 filtered pack.getDocuments by the document class (`{type: "Actor"}`
+// never matches an actor subtype, so the pack reported 0 actors) and read `scene.levels[0]`
+// on an embedded collection, which always returns undefined — the Animals folder stayed
+// empty and every scene reported a missing background.
+test("animals load unfiltered and scene levels read through the mapped array", () => {
+  const source = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
+  assert.ok(!source.includes("getDocuments({type:"), "pack documents are never filtered by document class");
+  assert.ok(!/levels\[0\]\?\.background/.test(source), "scene backgrounds are read through sceneBackgroundSrc");
+  assert.ok(!/levels\.get\(/.test(source), "embedded collections are never queried by numeric id");
+});
+
+// Regression: a mismatched splice once created the world map from the welcome template, so
+// an import could leave a second Accueil clone carrying the world map's localised name. Each
+// create block must pair its own starter id with its own background.
+test("starter scenes are created from distinct data blocks", () => {
+  const source = fs.readFileSync(new URL("../modules/content-importer.mjs", import.meta.url), "utf8");
+  assert.ok(/src: DEFAULT_SCENE_BACKGROUND[\s\S]{0,200}starterId: "world-map"/.test(source),
+    "the world map create data pairs the map background with the map starter id");
+  assert.ok(/src: WELCOME_SCENE_BACKGROUND[\s\S]{0,200}starterId: "welcome"/.test(source),
+    "the welcome create data pairs the welcome background with the welcome starter id");
+});
+
 test("every starter folder colour comes from the theme palette instead of a hardcoded hex", () => {
   const configured = Object.entries(starter.folders)
     .filter(([, config]) => config.colorRole)

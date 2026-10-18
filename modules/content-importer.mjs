@@ -7,14 +7,14 @@ import { JOURNAL_FOLDERS, journalDocuments } from "./journal-catalog.mjs";
 import { PALETTES } from "./palette.mjs";
 import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, resolveNpcSkillTreeSync} from "./npc-inventory.mjs";
 
-// TEMPORARY WORLD MIGRATION — version 50 re-runs the starter import in worlds whose
-// `starterContentVersion` was already recorded by the broken 49 release: those worlds never
-// received the animals, the macro folder or the scene backgrounds at all.
-// version 49 installs the starter Actor/Macro folders, the
-// world copies of the bestiary animals and the journal hierarchy in existing worlds;
-// version 48 installed the throwing Seax where earlier versions updated intact prepared
-// NPC attacks.
-const CONTENT_VERSION = 50;
+// TEMPORARY WORLD MIGRATION — version 51 replays the starter import in worlds whose
+// `starterContentVersion` was recorded by the broken v0.92.3 import: it queried the bestiary
+// pack by the document class (0 actors), read scene levels through unsupported collection
+// indexing, and the world map create data had been merged with the welcome template.
+// version 50 replayed the import of worlds whose version target was recorded by the broken
+// 49 release; version 48 installed the throwing Seax where earlier versions updated intact
+// prepared NPC attacks.
+const CONTENT_VERSION = 51;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([
@@ -635,7 +635,10 @@ async function importBestiaryAnimals(folders) {
     return 0;
   }
 
-  const all = await pack.getDocuments({type: "Actor"});
+  // No query here: getDocuments filters on document data, where `type` is the actor
+  // subtype ("npc"), not the document class. An Actor pack only ever holds actors, and
+  // every other call site in this project loads it unfiltered.
+  const all = await pack.getDocuments();
   const sources = all.filter(actor => animalIds.has(actor.getFlag(SYSTEM_ID, "bestiaryId")));
   if (!sources.length) {
     console.warn(`Trudvang Chronicles | Bestiary pack ${pack.metadata.name} holds ${all.length} actors but none of the ${animalIds.size} catalogue animals; the Animals folder stays empty.`);
@@ -1016,10 +1019,17 @@ export async function ensureTraitSituationMacro() {
 const DEFAULT_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/carte.webp";
 const WELCOME_SCENE_BACKGROUND = "systems/trudvang-chronicles/assets/maps/accueil.webp";
 
+// `scene.levels` is an embedded collection — numeric indexing (`levels[0]`) and `get(0)`
+// both miss, but mapping it yields the plain data array, the same shape setSceneBackground
+// writes back.
+function sceneBackgroundSrc(scene) {
+  return scene?.levels.map(level => level.toObject())[0]?.background?.src;
+}
+
 // A scene with no thumbnail is a blank entry in the sidebar, and Foundry only rebuilds the
 // thumbnail when its background actually changes — so the import has to say what it found.
 function reportScene(scene, label) {
-  const src = scene?.levels[0]?.background?.src;
+  const src = sceneBackgroundSrc(scene);
   console.info(`Trudvang Chronicles | ${label}: ${scene
     ? `background ${src ?? "none"}, thumbnail ${scene.thumb ? "present" : "absent"}`
     : "not created"}.`);
@@ -1036,28 +1046,44 @@ function setSceneBackground(scene, src) {
   return {levels};
 }
 
+// A starter scene gains its sidebar thumbnail only when someone draws it on the canvas;
+// `createThumbnail` is the documented, canvas-independent way. Refreshed for scenes the
+// importer just created or whose background it just changed — any existing thumbnail there
+// is by definition outdated. Custom thumbnails of untouched scenes are never clobbered.
+async function refreshSceneThumbnail(scene) {
+  try {
+    const {thumb} = await scene.createThumbnail();
+    if (thumb && thumb !== scene.thumb) await scene.update({thumb});
+  } catch (error) {
+    console.warn(`Trudvang Chronicles | Thumbnail generation failed for scene "${scene.name}"; Foundry will rebuild it when the scene is drawn.`, error);
+  }
+}
+
 async function upsertDefaultScene() {
   const name = game.i18n.localize("TRUDVANG.Content.Scene.WorldMap");
   const existing = game.scenes.find(scene => scene.getFlag(SYSTEM_ID, "starterId") === "world-map")
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
-    const bgSrc = existing.levels[0]?.background?.src;
-    if (bgSrc !== DEFAULT_SCENE_BACKGROUND) {
+    let backgroundChanged = false;
+    if (sceneBackgroundSrc(existing) !== DEFAULT_SCENE_BACKGROUND) {
       await existing.update(setSceneBackground(existing, DEFAULT_SCENE_BACKGROUND));
+      backgroundChanged = true;
     }
+    if (backgroundChanged || !existing.thumb) await refreshSceneThumbnail(existing);
     return reportScene(existing, "World map scene");
   }
-const [created] = await Scene.createDocuments([{
+  const [created] = await Scene.createDocuments([{
     name,
     width: 2514,
     height: 1629,
     grid: {distance: 1, units: "m"},
-    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: WELCOME_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
+    levels: [{name: "Niveau", elevation: {top: 4, bottom: 0}, background: {color: "#999999", src: DEFAULT_SCENE_BACKGROUND, tint: "#ffffff", alphaThreshold: 0.75}}],
     navigation: true,
     navOrder: 0,
-    flags: {[SYSTEM_ID]: {starterId: "welcome"}}
+    flags: {[SYSTEM_ID]: {starterId: "world-map"}}
   }]);
-  return reportScene(created, "Welcome scene");
+  await refreshSceneThumbnail(created);
+  return reportScene(created, "World map scene");
 }
 
 async function upsertWelcomeScene() {
@@ -1066,13 +1092,15 @@ async function upsertWelcomeScene() {
     ?? game.scenes.find(scene => !scene.getFlag(SYSTEM_ID, "starterId") && scene.name === name);
   if (existing) {
     const updates = {};
-    const bgSrc = existing.levels[0]?.background?.src;
-    if (bgSrc !== WELCOME_SCENE_BACKGROUND) {
+    let backgroundChanged = false;
+    if (sceneBackgroundSrc(existing) !== WELCOME_SCENE_BACKGROUND) {
       Object.assign(updates, setSceneBackground(existing, WELCOME_SCENE_BACKGROUND));
+      backgroundChanged = true;
     }
     if (!existing.navigation) updates.navigation = true;
     if (existing.navOrder !== 0) updates.navOrder = 0;
     if (Object.keys(updates).length) await existing.update(updates);
+    if (backgroundChanged || !existing.thumb) await refreshSceneThumbnail(existing);
     await existing.activate();
     return reportScene(existing, "Welcome scene");
   }
@@ -1087,7 +1115,8 @@ async function upsertWelcomeScene() {
     flags: {[SYSTEM_ID]: {starterId: "welcome"}}
   }]);
   await created.activate();
-  return created;
+  await refreshSceneThumbnail(created);
+  return reportScene(created, "Welcome scene");
 }
 
 export async function importStarterContent({force = false} = {}) {
