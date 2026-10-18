@@ -60,6 +60,10 @@ test("sheet menus resolve and open/share embedded items and effects from an even
       _createContextMenu(handler, selector, options) {
         constructions++; menu = handler();
         assert.equal(selector, ".trudvang-share-row"); assert.equal(options.container, this.element);
+        for (const entry of menu) {
+          assert.ok(typeof entry.label === "string" && entry.label, "sheet menu entries carry the V14 label");
+          assert.ok(!("name" in entry), "the deprecated name field never appears in a sheet menu");
+        }
       }};
     bindSheetListMenus(sheet); bindSheetListMenus(sheet);
     assert.equal(constructions, 1);
@@ -77,7 +81,10 @@ test("base skills, book rows and unlearned knowledge can be shared without creat
   let menu, detail;
   const skillRow = row({}, {["[data-skill]"]: {dataset: {skill: skillKey}}});
   const sheet = {actor, element: {querySelectorAll: () => [skillRow]},
-    _createContextMenu: handler => {menu = handler();}, _showDetail: (...args) => {detail = args;}};
+    _createContextMenu: handler => {menu = handler(); for (const entry of menu) {
+      assert.ok(typeof entry.label === "string" && entry.label, "sheet menu entries carry the V14 label");
+      assert.ok(!("name" in entry), "the deprecated name field never appears in a sheet menu");
+    }}, _showDetail: (...args) => {detail = args;}};
   bindSheetListMenus(sheet);
   await menu[0].onClick({}, skillRow); await menu[1].onClick({}, skillRow);
   assert.equal(detail[0], TRUDVANG.skills[skillKey]);
