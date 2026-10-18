@@ -4,6 +4,7 @@ import test from "node:test";
 import Handlebars from "handlebars";
 import {ignoresWoundPenalties, npcCombatMovementModes, npcCurrentTrait, npcHealthRange, npcMovementRows, npcSkillTrees, npcTraitEdit} from "../modules/rules/npc-summary.mjs";
 import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
+import {resolveCombatActionModifier} from "../modules/rules/equipment-resolver.mjs";
 import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
@@ -1171,6 +1172,35 @@ test("the improvised throwing penalty is visible only in thrown mode and never s
   item.system.designedForThrowing = true;
   await npc.rollWeaponAction(item, "attack");
   assert.doesNotMatch(runtime.dialogs.at(-1).content, /-5 dégâts/);
+});
+
+test("the weapon CP bonus applies outside combat even with a stale round marker, and once per round inside combat", async t => {
+  const runtime = mockActionRuntime(t);
+  const plain = inventoryItem("weapon", "Plain sword", {equipped: true, weaponActions: 4});
+  const quality = inventoryItem("weapon", "Quality sword", {equipped: true, weaponActions: 4,
+    combatPointBonus: 2, combatPointBonusUsed: true});
+  for (const item of [plain, quality]) item.update = async changes => { for (const [key, value] of Object.entries(changes)) set(item, key, value); };
+  const npc = spendableNpc([plain, quality]);
+  runtime.response = {modifier: 0, allocation: {free: 4}};
+  const outside = await npc.rollWeaponAction(quality, "attack");
+  assert.match(runtime.dialogs.at(-1).content, /Bonus de PC de l’équipement/);
+  assert.match(renderedCards.at(-1).data.flavor, /Bonus de PC de l’équipement/);
+  const reference = await npc.rollWeaponAction(plain, "attack");
+  assert.equal(outside.target, reference.target + 2);
+  assert.equal(quality.system.combatPointBonusUsed, true, "out-of-combat rolls never consume the round marker");
+
+  game.combat = {started: true, combatants: [{actor: npc}]};
+  await npc.resetCombatPoints(); // the combat tracker performs this reset when the combatant's turn begins
+  runtime.response = {modifier: 0, allocation: {free: 2}};
+  const plainInCombat = await npc.rollWeaponAction(plain, "attack");
+  const first = await npc.rollWeaponAction(quality, "attack");
+  assert.equal(first.target, plainInCombat.target + 2);
+  assert.equal(quality.system.combatPointBonusUsed, true);
+  runtime.response = {modifier: 0, allocation: {free: 0}};
+  const zero = await npc.rollWeaponAction(plain, "attack");
+  const second = await npc.rollWeaponAction(quality, "attack");
+  assert.equal(second.target, zero.target, "the spent round marker withholds the bonus until the next reset");
+  assert.doesNotMatch(runtime.dialogs.at(-1).content, /Bonus de PC/);
 });
 
 test("prepared natural attacks preallocate the book CP on both fields and slider, spend and mark only after confirmation", async t => {

@@ -1096,7 +1096,9 @@ export class TrudvangActor extends BaseActor {
     const modes = canThrow ? [prepareMode(false), prepareMode(true)] : [prepareMode(false)];
     const defaultMode = modes.find(mode => mode.throwing === defaultThrowing) ?? modes[0];
     const equipment = resolveEquipment({item, actor: this, context: {usage: defaultMode.throwing ? "throwing" : kind, hand: item.system.hand}});
-    const combatPointBonus = item.system.combatPointBonusUsed ? 0 : equipment.characteristics.combatPointBonus.value;
+    // The once-per-round marker only limits an active combat: outside combat there
+    // is no round reset, so a stale marker would silence the bonus forever.
+    const combatPointBonus = inCombat && item.system.combatPointBonusUsed ? 0 : equipment.characteristics.combatPointBonus.value;
     const stateRows = actorStateRollModifiers(this);
     const effectModifier = this.getRollModifier({kind, movement: true, includeState: false});
     const armorModifier = -Number(this.system.armorVCPenalty || 0);
