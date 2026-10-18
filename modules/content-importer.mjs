@@ -12,9 +12,9 @@ import {initializeNpcCombatKnowledge, initializeNpcInventory, isNpcEquipment, re
 // pack by the document class (0 actors), read scene levels through unsupported collection
 // indexing, and the world map create data had been merged with the welcome template.
 // version 50 replayed the import of worlds whose version target was recorded by the broken
-// 49 release; version 48 installed the throwing Seax where earlier versions updated intact
-// prepared NPC attacks.
-const CONTENT_VERSION = 51;
+// 49 release; version 51 fixed the bestiary animal import and scene thumbnails; version 52
+// installs the equipment-quality journal.
+const CONTENT_VERSION = 52;
 const SYSTEM_ID = "trudvang-chronicles";
 const LEGACY_TABLE_KEYS = ["StormlanderMale", "StormlanderFemale", "ExtractEffect", "FearLevel", "StartingExperience", "RandomExtract", "TraitCost", "DisciplineCost", "WeaponDamage", "RaceStats"];
 const REMOVED_STARTER_ITEM_KEYS = new Set([

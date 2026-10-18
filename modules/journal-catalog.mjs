@@ -31,6 +31,7 @@ const journals = [
   {id: "vitnerWeaver", folder: "archetypes", key: "vitnerWeaver", image: "assets/art/journals/vitner-weaver.png"},
   {id: "armorEncumbrance", folder: "equipment", key: "armorEncumbrance"},
   {id: "purchasePrices", folder: "equipment", key: "purchasePrices"},
+  {id: "equipmentQuality", folder: "equipment", key: "equipmentQuality"},
   {id: "gerbanis", folder: "religions", key: "gerbanis"},
   {id: "ealdTradition", folder: "religions", key: "ealdTradition"},
   {id: "tenetNid", folder: "religions", key: "tenetNid"},
