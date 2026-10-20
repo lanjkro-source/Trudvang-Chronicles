@@ -21,6 +21,7 @@ import {manageActorPortraits, showActorPortraitDialog} from "../portrait.mjs";
 import {bindSheetListMenus} from "../chat-sharing.mjs";
 import {effectContributions, effectContributionText} from "../rules/effect-contributions.mjs";
 import {effectStatus} from "../rules/effect-status.mjs";
+import {bodyHealthUpdate} from "../rules/body-health.mjs";
 
 const { HandlebarsApplicationMixin } = foundry.applications.api;
 const { ActorSheetV2 } = foundry.applications.sheets;
@@ -670,6 +671,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         const modifier = Number(this.actor.system.modifiers?.[maxModifiers[key]] || 0);
         foundry.utils.setProperty(changes, maxPath, editedPath === maxPath ? Math.max(0, shown - modifier) : source.max);
       }
+    }
+    if(editedPath==="system.resources.body.value"){
+      const displayed=Number(foundry.utils.getProperty(changes,"system.resources.body.value"))+Number(this.actor.system.modifiers?.bodyValue||0);
+      for(const [key,value]of Object.entries(bodyHealthUpdate(this.actor,displayed)))foundry.utils.setProperty(changes,key,value);
     }
     const previousOrigins = {
       race: this.actor.system.details?.race,

@@ -7,6 +7,7 @@ import {CREATURE_NPC_DATA} from "../modules/creature-feats.mjs";
 import {resolveCombatActionModifier} from "../modules/rules/equipment-resolver.mjs";
 import {COMBAT_POOL_IDS, normalizeCombatAllocation, resolveCombatPools, suggestCombatAllocation} from "../modules/rules/combat-pool-resolver.mjs";
 import {TRUDVANG} from "../modules/config.mjs";
+import {bodyHealthPersistence} from "../modules/rules/body-health.mjs";
 import {deterministicId} from "../modules/skill-pack-data.mjs";
 import {creatureAbilityDetails} from "../modules/creature-ability.mjs";
 import {CREATURE_ABILITY_REFERENCES} from "../modules/creature-ability-data.mjs";
@@ -88,6 +89,27 @@ function actor(items = [], {fighting = 8} = {}) {
   instance.prepareDerivedData();
   return instance;
 }
+
+test("real character and NPC preparation preserve health proportions as traits or maximum effects enter and expire",()=>{
+ for(const type of ["character","npc"]){
+  const instance=actor();instance.type=type;
+  Object.assign(instance._source.system.resources.body,{value:30,max:40,maxAtValue:40,modifierAtValue:0});
+  Object.assign(instance._source.system.traits,{strength:4,constitution:4});
+  const prepare=active=>{
+   instance.system=structuredClone(instance._source.system);
+   if(type==="character"){
+    instance.system.effective.traits={...instance.system.traits,strength:active?5:4,constitution:active?8:4};
+   }else if(active)instance.system.modifiers.bodyMax=5;
+   instance.prepareDerivedData();
+  };
+  prepare(true);
+  assert.equal(instance.system.resources.body.max,45);
+  assert.equal(instance.system.resources.body.current,34);
+  for(const [key,value]of Object.entries(bodyHealthPersistence(instance)))instance._source.system.resources.body[key.split('.').at(-1)]=value;
+  prepare(true);assert.equal(instance.system.resources.body.current,34,"repeated preparation cannot rescale twice");
+  prepare(false);assert.equal(instance.system.resources.body.max,40);assert.equal(instance.system.resources.body.current,31);
+ }
+});
 
 test("NPC current traits follow intrinsic traits by default, but accept zero and negatives", () => {
   assert.equal(npcCurrentTrait({traits: {strength: 4}}, "strength"), 4);
@@ -1833,7 +1855,7 @@ test("native initial effects feed derived protection, movement, reserves and NPC
   assert.equal(instance.system.movement.current, 13);
   assert.equal(instance.getSkillValue("fighting"), 9);
   assert.equal(instance.system.resources.body.max, 42);
-  assert.equal(instance.system.resources.body.current, 31);
+  assert.equal(instance.system.resources.body.current, 32, "30/40 scales to ceil(30×42/40), without applying bodyValue twice");
   assert.equal(instance.system.resources.combat.max, 12);
   assert.equal(instance.system.resources.combat.current, 11);
   assert.equal(instance.system.resources.vitner.max, 4);

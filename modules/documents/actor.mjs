@@ -24,6 +24,7 @@ import {useCreatureAbility} from "../rule-use.mjs";
 import {attackSizeTargets, allocatedCombatVC} from "../rules/attack-size.mjs";
 import {transformationProfile, movementProfile, transformationRollRows, temporaryHealthLayers, effectRules, remainingStoneIntegrity} from "../rules/transformation-profile.mjs";
 import {transformationItemActive} from "../transformations.mjs";
+import {proportionalBodyHealth,bodyHealthUpdate} from "../rules/body-health.mjs";
 
 const BaseActor = foundry.documents.Actor;
 const SEPARATE_HAND_SPECIALTIES = new Set(["oneHandedLightWeapons", "oneHandedHeavyWeapons", "throwingWeapons"]);
@@ -86,6 +87,16 @@ export class TrudvangActor extends BaseActor {
       if (insane !== Boolean(this._source.system.fearInsane)) changed["system.fearInsane"] = insane;
     }
     const body = changed["system.resources.body.value"] ?? changed.system?.resources?.body?.value;
+    const explicitBasis=changed["system.resources.body.maxAtValue"]??changed.system?.resources?.body?.maxAtValue;
+    if(body!==undefined&&explicitBasis===undefined&&!options?.trudvangHealthRatioSync&&Number(body)!==Number(this._source.system.resources?.body?.value)){
+      // An explicit HP edit wins over scaling, including a simultaneous NPC
+      // maximum edit. Clone only for structural edits; ordinary damage is cheap.
+      const structural=changed.system?.traits||changed.system?.details||changed.system?.resources?.body?.max!==undefined
+        ||Object.keys(changed).some(k=>k.startsWith("system.traits.")||k.startsWith("system.details.")||k==="system.resources.body.max");
+      const projected=structural&&this.clone?await this.clone(changed,{keepId:true}):this;
+      const maximum=Number(projected.system.resources?.body?.max);
+      if(maximum>0){changed["system.resources.body.maxAtValue"]=maximum;changed["system.resources.body.modifierAtValue"]=Number(projected.system.modifiers?.bodyValue||0);}
+    }
     if (body !== undefined && Number(body) > 0) changed["system.survivalRounds"] = -1;
   }
 
@@ -104,6 +115,7 @@ export class TrudvangActor extends BaseActor {
       await applyDamageToActor({actor: this, damage: current - update, ignoreArmor: true});
       return this;
     }
+    if(updates["system.resources.body.value"]!==undefined)Object.assign(updates,bodyHealthUpdate(this,updates["system.resources.body.value"]));
     const updated = await this.update(updates);
     const after = Number(this.system.resources.body.value || 0);
     if (updated && after < current) await postActorEvent({actor: this, kind: "damage", amount: current - after});
@@ -166,6 +178,18 @@ export class TrudvangActor extends BaseActor {
     for (const [key, resource] of Object.entries(system.resources)) {
       if (key === "combat") continue;
       const modifier = Number(system.modifiers?.[`${key}Value`] || 0);
+      if(key==="body"){
+        const source=this._source?.system?.resources?.body??resource;
+        // Existing actors establish their baseline on first preparation. This
+        // preserves their current health when loading an already active effect.
+        this._initialBodyBasis??={maximum:Number(resource.max),modifier};
+        const initialized=Number(source.maxAtValue)>0;
+        this.bodyHealthState=proportionalBodyHealth({value:resource.value,modifier,maximum:resource.max,
+          referenceMaximum:initialized?source.maxAtValue:this._initialBodyBasis.maximum,
+          referenceModifier:initialized?source.modifierAtValue:this._initialBodyBasis.modifier});
+        resource.current=resource.value=this.bodyHealthState.current;
+        continue;
+      }
       const value = Number(resource.value || 0) + modifier;
       const current = key === "body"
         ? Math.min(Number(resource.max || 0), value)
@@ -1329,10 +1353,9 @@ export class TrudvangActor extends BaseActor {
         // Ordinary Body Point loss (heals normally) plus temporary vitner; the normal
         // cost deduction below then spends the spell cost, keeping any +1 leftover.
         if (this.isOwner) {
-          const storedBody = Number(this._source.system.resources.body.value || 0);
           const storedVitner = Number(this._source.system.resources.vitner.value || 0);
           await this.update({
-            "system.resources.body.value": storedBody - sacrifice.health,
+            ...bodyHealthUpdate(this,Number(this.system.resources.body.current)-sacrifice.health),
             "system.resources.vitner.value": storedVitner + sacrifice.vitner
           });
         }
@@ -1555,7 +1578,7 @@ export class TrudvangActor extends BaseActor {
       "system.details.bodyMin": min,
       "system.details.bodyMax": max,
       "system.resources.body.max": health,
-      "system.resources.body.value": effectiveMax - Number(this.system.modifiers?.bodyValue || 0),
+      ...bodyHealthUpdate(this,effectiveMax,{maximum:effectiveMax}),
       "system.survivalRounds": -1
     });
     await ChatMessage.create({
@@ -1590,10 +1613,9 @@ export class TrudvangActor extends BaseActor {
     const bodyBefore = Number(this.system.resources.body.current || 0);
     const bodyMax = Number(this.system.resources.body.max || 0);
     const healthRecovered = canRecoverHealth ? Math.min(Number(recovery.amount || 0), Math.max(0, bodyMax - bodyBefore)) : 0;
-    const bodyStored = Number(this._source.system.resources.body.value || 0);
     const updates = {
       "system.rest.healthRecoveryNights": canRecoverHealth ? 0 : recoveryNights,
-      "system.resources.body.value": Math.min(bodyMax, bodyStored + healthRecovered),
+      ...bodyHealthUpdate(this,Math.min(bodyMax,bodyBefore+healthRecovered)),
       "system.resources.vitner.value": Number(this.system.resources.vitner.max || 0),
       "system.resources.divinity.temporary": 0
     };

@@ -67,12 +67,13 @@ function effectiveTraitSchema() {
   });
 }
 
-function resource(initialValue, initialMax, {temporary = false} = {}) {
+function resource(initialValue, initialMax, {temporary = false, proportional = false} = {}) {
   return schema({
     value: number(initialValue),
     max: number(initialMax),
     current: number(initialValue, {persisted: false}),
-    ...(temporary ? {temporary: number(0)} : {})
+    ...(temporary ? {temporary: number(0)} : {}),
+    ...(proportional ? {maxAtValue:number(0,{min:0}),modifierAtValue:number(0)} : {})
   });
 }
 
@@ -184,7 +185,7 @@ function actorCommonSchema() {
     transformation: schema(Object.fromEntries(EFFECT_RULE_KEYS.map(key => [key,
       new fields.StringField({required: true, nullable: false, initial: "", persisted: false})]))),
     resources: schema({
-      body: resource(32, 32),
+      body: resource(32,32,{proportional:true}),
       raud: resource(0, 0),
       fear: resource(0, 50),
       combat: resource(1, 1),

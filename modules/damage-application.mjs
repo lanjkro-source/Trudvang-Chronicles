@@ -2,6 +2,7 @@ import { weaponUsesTwoHands } from "./rules/combat-pool-resolver.mjs";
 import {postActorEvent} from "./actor-event-chat.mjs";
 import {temporaryHealthLayers, consumeTemporaryHealth, activeTransformations, effectRules, remainingStoneIntegrity, TRANSFORMATION_SCOPE} from "./rules/transformation-profile.mjs";
 import {hasProfileChanges} from "./rules/effect-rule-changes.mjs";
+import {bodyHealthUpdate} from "./rules/body-health.mjs";
 
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const integrity = item => number(item?.system?.breach?.value);
@@ -81,8 +82,8 @@ export async function applyDamageToActor({actor, damage, ignoreArmor = false, an
   result.temporaryDamage = result.bodyDamage - buffered.damage;
   result.bodyDamage = buffered.damage;
   for (const effect of activeTransformations(actor)) if (effectRules(effect).endAtEmptyHP && !temporaryHealthLayers(actor).some(layer=>layer.effect===effect)) await effect.delete();
-  const body = number(actor._source?.system?.resources?.body?.value ?? actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value);
-  if (result.bodyDamage) await actor.update({"system.resources.body.value": body - result.bodyDamage});
+  const body = number(actor.system?.resources?.body?.current ?? actor.system?.resources?.body?.value ?? actor._source?.system?.resources?.body?.value);
+  if (result.bodyDamage) await actor.update(bodyHealthUpdate(actor,body-result.bodyDamage));
   if (announce) await postActorEvent({actor, kind: "damage", amount: result.bodyDamage});
   return result;
 }

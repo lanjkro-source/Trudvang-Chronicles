@@ -3,6 +3,7 @@ import {existsSync, readFileSync} from "node:fs";
 import test from "node:test";
 import {ACTOR_STATE_STATUSES, actorStateStatuses} from "../modules/rules/actor-status-resolver.mjs";
 import {registerActorStatusHooks, syncActorStateStatuses, syncWorldActorStatuses} from "../modules/actor-statuses.mjs";
+import {proportionalBodyHealth} from "../modules/rules/body-health.mjs";
 
 const gm = {id: "gm", active: true};
 const owner = {id: "owner", active: true};
@@ -58,6 +59,81 @@ function makeActor({uuid = "Actor.test", type = "character", current = 20, level
 }
 
 const statusIds = actor => actor.effects.flatMap(effect => Array.from(effect.statuses ?? []));
+
+test("the elected synchronizer commits health ratios once on application and expiry",async()=>{
+ const actor=makeActor();
+ actor._source={system:{resources:{body:{value:30,maxAtValue:40,modifierAtValue:0}}}};
+ let maximum=45,writes=0;
+ const prepare=()=>{
+  const body=actor._source.system.resources.body;
+  actor.bodyHealthState=proportionalBodyHealth({value:body.value,referenceMaximum:body.maxAtValue,referenceModifier:body.modifierAtValue,maximum});
+  Object.assign(actor.system.resources.body,{current:actor.bodyHealthState.current,value:actor.bodyHealthState.current,max:maximum});
+ };
+ actor.update=async(changes,options)=>{
+  assert.equal(options.trudvangHealthRatioSync,true);assert.equal(options.trudvangStatusSync,true);
+  writes++;
+  for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split('.').at(-1)]=value;
+  prepare();
+ };
+ prepare();
+ await Promise.all([syncActorStateStatuses(actor),syncActorStateStatuses(actor)]);
+ assert.equal(writes,1);assert.equal(actor.system.resources.body.current,34);
+ assert.equal(actor._source.system.resources.body.maxAtValue,45);
+ maximum=40;prepare();
+ await syncActorStateStatuses(actor);
+ assert.equal(writes,2);assert.equal(actor.system.resources.body.current,31);
+ await syncActorStateStatuses(actor);assert.equal(writes,2);
+});
+
+test("initial world synchronization establishes independent unlinked-token baselines before updating their base",async t=>{
+ const previous={actors:game.actors,scenes:game.scenes};
+ t.after(()=>Object.assign(game,previous));
+ const base=makeActor({uuid:"Actor.base"}),token=makeActor({uuid:"Scene.s.Token.t.Actor.base"});
+ token.isToken=true;token.token={persisted:true};
+ const order=[];
+ for(const [actor,maximum]of [[base,40],[token,45]]){
+  actor._source={system:{resources:{body:{value:30,maxAtValue:0,modifierAtValue:0}}}};
+  actor.bodyHealthState=proportionalBodyHealth({value:30,maximum});
+  actor.update=async changes=>{
+   order.push(actor.uuid);
+   for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split('.').at(-1)]=value;
+  };
+ }
+ game.actors=[base];game.scenes=[{tokens:[{actor:token}]}];
+ await syncWorldActorStatuses();
+ assert.deepEqual(order,[token.uuid,base.uuid]);
+ assert.equal(token._source.system.resources.body.maxAtValue,45);
+ assert.equal(base._source.system.resources.body.maxAtValue,40);
+ assert.equal(token._source.system.resources.body.value,30,"existing health is preserved at initial load");
+});
+
+test("base maximum changes scale an injured unlinked token before its inherited reference is replaced",async t=>{
+ const previous=globalThis.Hooks;
+ t.after(()=>{globalThis.Hooks=previous;});
+ const hooks=new Map();globalThis.Hooks={on:(name,fn)=>hooks.set(name,fn),once:()=>{}};
+ registerActorStatusHooks();
+ const base=makeActor({uuid:"Actor.base"}),child=makeActor({uuid:"Scene.s.Token.t.Actor.base"});
+ child.isToken=true;child.token={persisted:true};
+ base.getDependentTokens=()=>[{actor:child}];
+ for(const [actor,value]of [[base,40],[child,30]])actor._source={system:{resources:{body:{value,maxAtValue:40,modifierAtValue:0}}}};
+ let childOwnReference=false;
+ const prepare=actor=>{
+  const source=actor._source.system.resources.body;
+  actor.bodyHealthState=proportionalBodyHealth({value:source.value,referenceMaximum:source.maxAtValue,referenceModifier:0,maximum:45});
+  Object.assign(actor.system.resources.body,{current:actor.bodyHealthState.current,value:actor.bodyHealthState.current,max:45});
+ };
+ for(const actor of [base,child])actor.update=async changes=>{
+  if(actor===child)childOwnReference=true;
+  for(const [key,value]of Object.entries(changes))actor._source.system.resources.body[key.split('.').at(-1)]=value;
+  if(actor===base&&!childOwnReference)child._source.system.resources.body.maxAtValue=actor._source.system.resources.body.maxAtValue;
+  prepare(base);prepare(child);
+ };
+ prepare(base);prepare(child);
+ await hooks.get("updateActor")(base,{},{});
+ assert.equal(base.system.resources.body.current,45);
+ assert.equal(child.system.resources.body.current,34);
+ assert.equal(child._source.system.resources.body.maxAtValue,45);
+});
 
 test("automatic definitions use localized names, distinct shipped icons, and no numerical changes", () => {
   assert.equal(ACTOR_STATE_STATUSES.length, 12);

@@ -75,6 +75,21 @@ séparée des PS et de leur maximum : retirer l’effet ne soigne pas les blessu
 L’intégrité des statues est suivie séparément. Les formes de Transformation qui
 doivent conserver leurs PS ne recalculent pas leur maximum selon la nouvelle Force.
 
+Un changement du maximum de PS conserve la proportion de PS actuels, arrondie au
+supérieur : `nouveaux PS = plafond(anciens PS × nouveau maximum / ancien maximum)`.
+Ainsi, `30/40` devient `34/45` ; au retour à un maximum de 40, `34/45` devient
+`31/40`. Cela s’applique aux changements de traits et de maximum, à l’application,
+à la désactivation, à l’expiration et à la suppression d’un effet. Les PS temporaires
+restent une réserve distincte et ne participent pas à ce calcul. Les effets qui
+conservent explicitement le maximum d’origine ne déclenchent aucun recalcul.
+Le maximum de référence et le modificateur de PS associé sont conservés dans
+`system.resources.body.maxAtValue` et `modifierAtValue`, puis actualisés par le
+même client élu que les marqueurs d’état. Une préparation ou un rechargement ne
+réapplique pas l’arrondi. Les dégâts, soins, sacrifices et éditions explicites des
+PS enregistrent atomiquement leur nouvelle référence. Au premier chargement d’un
+acteur existant, son état actuel est conservé ; les tokens non liés établissent
+leur propre référence avant celle de leur acteur de base.
+
 La vision utilise le mode natif du token. Le mode initial est conservé, puis rétabli
 quand le dernier effet de vision disparaît ; une modification manuelle ultérieure
 du mode est préservée. Les communications, la respiration et les autres facultés

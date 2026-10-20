@@ -1,4 +1,5 @@
 import {actorStateStatuses} from "./rules/actor-status-resolver.mjs";
+import {bodyHealthPersistence} from "./rules/body-health.mjs";
 
 const systemId = "trudvang-chronicles";
 const pendingSyncs = new WeakMap();
@@ -45,6 +46,8 @@ function markerMatches(effect, data) {
 
 async function synchronize(actor) {
   if (!canSynchronize(actor)) return false;
+  const health=bodyHealthPersistence(actor);
+  if(health)await actor.update(health,{...syncOptions,trudvangHealthRatioSync:true});
   const desired = new Map(actorStateStatuses(actor).map(state => [state.group, state]));
   const effects = values(actor.effects);
   const create = [], update = [], remove = [];
@@ -68,7 +71,7 @@ async function synchronize(actor) {
   if (remove.length) await actor.deleteEmbeddedDocuments("ActiveEffect", remove, syncOptions);
   if (update.length) await actor.updateEmbeddedDocuments("ActiveEffect", update, syncOptions);
   if (create.length) await actor.createEmbeddedDocuments("ActiveEffect", create, syncOptions);
-  return Boolean(remove.length || update.length || create.length);
+  return Boolean(health || remove.length || update.length || create.length);
 }
 
 /** Serialize resource/effect changes and reread the latest prepared state each time. */
@@ -90,13 +93,21 @@ function queueSync(actor, options) {
 }
 
 async function queueActorAndDependents(actor, options) {
-  const changed = await queueSync(actor, options);
-  if (!actor || actor.isToken) return changed;
+  if(!actor||actor.isToken)return queueSync(actor,options);
   // Base actor/equipment updates also reprepare unlinked tokens, but Foundry
   // does not emit updateActor for those synthetic actors. Reconcile their own
   // markers as well, including after a marker inherited from the base changes.
   const dependents = new Set(values(actor.getDependentTokens?.({concreteOnly: true}))
     .map(token => token.actor).filter(dependent => dependent && dependent !== actor));
+  // A dependent may have its own current HP but inherit the base maximum
+  // reference. Commit its ratio before that reference changes on the base.
+  if(!options?.trudvangStatusSync&&bodyHealthPersistence(actor)?.["system.resources.body.value"]!==undefined){
+    await Promise.all([...dependents].filter(canSynchronize).map(async dependent=>{
+      const health=bodyHealthPersistence(dependent);
+      if(health)await dependent.update(health,{...syncOptions,trudvangHealthRatioSync:true});
+    }));
+  }
+  const changed = await queueSync(actor, options);
   await Promise.all(Array.from(dependents, dependent => queueSync(dependent)));
   return changed;
 }
@@ -104,11 +115,19 @@ async function queueActorAndDependents(actor, options) {
 export async function syncWorldActorStatuses() {
   const actors = new Map();
   const include = actor => { if (actor) actors.set(actor.uuid ?? actor, actor); };
+  for (const scene of values(game.scenes)) for (const token of values(scene.tokens)) include(token.actor);
+  // Give legacy unlinked tokens their own baseline before base-actor fields
+  // start inheriting into their deltas. Their existing forms can have a
+  // different maximum from the base actor already at initial world load.
+  await Promise.all([...actors.values()].filter(actor=>actor.isToken&&canSynchronize(actor)
+    &&!(Number(actor._source?.system?.resources?.body?.maxAtValue)>0)).map(async actor=>{
+    const health=bodyHealthPersistence(actor);
+    if(health)await actor.update(health,{...syncOptions,trudvangHealthRatioSync:true});
+  }));
   // Synchronize bases first: token deltas can inherit their marker documents.
   await Promise.all(values(game.actors).map(actor => queueSync(actor)));
   // Include synthetic NPC actors on inactive scenes too, without modifying the
   // base creature or assuming that a canvas is currently rendered.
-  for (const scene of values(game.scenes)) for (const token of values(scene.tokens)) include(token.actor);
   await Promise.all(Array.from(actors.values(), actor => queueSync(actor)));
 }
 
