@@ -69,6 +69,12 @@ intervention. Supprimer une transformation ne guérit pas une maladie distincte.
 
 ## Vérification
 
+Les modifications des effets de sortilèges et pouvoirs utilisent une priorité de
+`10 × niveau` du sort ou pouvoir source. Cette priorité est définie dans les JSON
+FR, alignée en anglais, puis conservée dans les compendiums et lors de la création
+des modifications calculées (traits, améliorations, vitalité). Les capacités sans
+niveau conservent leurs priorités usuelles.
+
 Tests isolés des offres bilingues, liens Joaring, profils, réserves temporaires,
 application des attaques accordées, pénalités de récupération et restauration de la
 vision. Aucun accès à une installation Foundry n’est utilisé.

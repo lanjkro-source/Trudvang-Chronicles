@@ -17,6 +17,10 @@ test("all generated effect offers have bilingual text, valid numeric changes and
    assert.ok(language.TRUDVANG.Content.Transformation[key].Name,key);
    assert.ok(language.TRUDVANG.Content.Transformation[key].Description,key);
    for(const c of t.changes)assert.ok(Number.isFinite(Number(c.value)),key);
+   if(t.priority!==undefined){
+    assert.ok([10,20,30,40,50].includes(t.priority),key);
+    for(const c of t.changes)assert.equal(c.priority,t.priority,key);
+   }
    for(const id of t.related)assert.ok(templates[`${t.sourceId}#${id}`],`${key} -> ${id}`);
   }
  }
@@ -66,6 +70,8 @@ test("applying a form creates independent owned grants and native trait changes,
  await applyTransformation(actor,key);
  assert.equal(created.duration.value,60);assert.equal(created.transfer,false);
  assert.ok(created.system.changes.some(c=>c.key==="system.effective.traits.dexterity"&&c.value==="4"));
+ assert.ok(created.system.changes.length>0);
+ assert.ok(created.system.changes.every(c=>c.priority===50),"level 5 applies priority 50 to dynamically generated trait changes");
  assert.equal(created.flags[S].transformation.rules.traitsApplied,true);
  assert.equal(items[0].flags[S].transformationGrant,"new-form");
  assert.equal(items[0].system.damage,"1d10");

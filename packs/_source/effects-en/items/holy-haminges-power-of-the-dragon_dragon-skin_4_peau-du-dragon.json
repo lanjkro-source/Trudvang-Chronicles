@@ -31,7 +31,8 @@
             "key": "system.modifiers.protection",
             "type": "add",
             "value": "4",
-            "phase": "initial"
+            "phase": "initial",
+            "priority": 30
           }
         ]
       },

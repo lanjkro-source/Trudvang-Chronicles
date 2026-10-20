@@ -11,6 +11,9 @@ for(const kind of ["powers","feats"]){
  if(fr.length!==en.length)throw Error(`Unaligned ${kind}`);
  for(const [i,entry]of fr.entries()){
   if(!entry.effectTemplates?.length)continue;
+  if(kind==="powers")for(const t of entry.effectTemplates){
+   if(t.priority!==10*entry.level||(t.changes??[]).some(c=>c.priority!==t.priority))throw Error(`Invalid effect priority for ${entry.name}`);
+  }
   const id=entry.catalogId||CREATURE_ABILITY_REFERENCES[entry.name]?.id;
   if(!id)throw Error(`Unknown effect source ${entry.name}`);
   bySource[id]=[];
@@ -18,6 +21,7 @@ for(const kind of ["powers","feats"]){
    const key=`${id}#${t.id}`;
    const translated=en[i].effectTemplates?.[j];
    if(!translated)throw Error(`Missing EN effect ${key}`);
+   if(translated.priority!==t.priority||(t.priority!==undefined&&(translated.changes??[]).some(c=>c.priority!==t.priority)))throw Error(`Unaligned EN effect priority ${key}`);
    for(const c of ["fr","en"])references[c].push({key,sourceId:id,
      source:{...(c==="fr"?entry:en[i]).source,name:(c==="fr"?entry:en[i]).name},
      ...structuredClone(c==="fr"?t:translated),id:deterministicId(`effect-reference:${key}`),templateId:t.id,parameters:/recovery|exhaustion/.test(t.id)?[]:entry.effectParameters??[]});

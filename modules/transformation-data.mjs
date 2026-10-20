@@ -9,7 +9,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "10",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
@@ -25,6 +26,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": [
       {
@@ -65,6 +67,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
@@ -87,6 +90,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 50,
     "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
     "parameters": []
   },
@@ -99,7 +103,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "4",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
@@ -112,6 +117,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "tree-recovery"
     ],
+    "priority": 50,
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": [
       {
@@ -149,6 +155,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 50,
     "sourceId": "vitner-witchcraft:tree-curse:7",
     "parameters": []
   },
@@ -168,6 +175,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "vitner-body-vitner:hasten:9",
     "parameters": [
       {
@@ -198,6 +206,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "vitner-body-vitner:hasten:9",
     "parameters": [
       {
@@ -228,6 +237,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "vitner-body-vitner:strengthen:8",
     "parameters": [
       {
@@ -258,6 +268,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "vitner-body-vitner:strengthen:8",
     "parameters": [
       {
@@ -285,6 +296,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "suspendEquipment": true
     },
     "related": [],
+    "priority": 50,
     "sourceId": "vitner-body-vitner:change-creature:11",
     "parameters": [
       {
@@ -325,6 +337,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-gerbanis-strength-of-stormi:troll-strength:0",
     "parameters": [
       {
@@ -355,6 +368,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
     "parameters": [
       {
@@ -385,6 +399,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
     "parameters": [
       {
@@ -415,6 +430,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-gerbanis-power-of-enken:willpower:1",
     "parameters": [
       {
@@ -445,6 +461,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-gerbanis-power-of-enken:bold:2",
     "parameters": [
       {
@@ -475,6 +492,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
     "parameters": [
       {
@@ -528,6 +546,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "capabilityCount": 1
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
     "parameters": [
       {
@@ -573,6 +592,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "capabilityCount": 2
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-ealdtradition-gift-of-thanja:salmonshape:4",
     "parameters": [
       {
@@ -632,6 +652,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "capabilityCount": 2
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-ealdtradition-gift-of-thanja:ravenshape:8",
     "parameters": [
       {
@@ -656,6 +677,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "1d10"
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
     "parameters": [
       {
@@ -679,7 +701,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "1",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
@@ -702,6 +725,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
     "parameters": []
   },
@@ -715,6 +739,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
     "parameters": []
   },
@@ -728,6 +753,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "2d10"
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:boiling-blood:2",
     "parameters": [
       {
@@ -751,7 +777,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
@@ -774,6 +801,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 30,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
     "parameters": []
   },
@@ -787,6 +815,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:madness:5",
     "parameters": []
   },
@@ -800,6 +829,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "3d10"
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
     "parameters": [
       {
@@ -823,7 +853,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "3",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -847,6 +878,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 50,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
     "parameters": []
   },
@@ -860,6 +892,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
     "parameters": []
   },
@@ -871,6 +904,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 20,
     "sourceId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
     "parameters": [
       {
@@ -888,6 +922,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 40,
     "sourceId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
     "parameters": [
       {
@@ -914,6 +949,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
     ],
+    "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
     "parameters": []
   },
@@ -938,6 +974,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "petrification-recovery-two-thirds"
     ],
+    "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
     "parameters": []
   },
@@ -960,6 +997,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
     "parameters": []
   },
@@ -980,6 +1018,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": [
       {
@@ -1010,6 +1049,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
   },
@@ -1032,6 +1072,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-anger:stone-monument:8",
     "parameters": []
   },
@@ -1046,6 +1087,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "endAtEmptyHP": true
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-tenetnid-tablet-of-the-shield:bark-skin:4",
     "parameters": [
       {
@@ -1074,7 +1116,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "8",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
@@ -1085,6 +1128,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "damageTakenFactor": 0.2
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-tenetnid-tablet-of-the-shield:tree-port:8",
     "parameters": [
       {
@@ -1115,6 +1159,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-haminges-power-of-the-beast:resilience:0",
     "parameters": [
       {
@@ -1145,6 +1190,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
     "parameters": [
       {
@@ -1175,6 +1221,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
     "parameters": [
       {
@@ -1209,6 +1256,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
     "parameters": [
       {
@@ -1232,7 +1280,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "4",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -1259,6 +1308,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "suspendEquipment": true
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
     "parameters": [
       {
@@ -1291,6 +1341,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
     "parameters": [
       {
@@ -1308,6 +1359,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
     "parameters": [
       {
@@ -1325,6 +1377,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
     "parameters": [
       {
@@ -1342,6 +1395,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
     "parameters": [
       {
@@ -1359,6 +1413,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
     "parameters": [
       {
@@ -1390,6 +1445,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "petrification-recovery-half",
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": [
       {
@@ -1420,6 +1476,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "petrification-recovery-two-thirds"
     ],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": []
   },
@@ -1442,6 +1499,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
     "parameters": []
   },
@@ -1461,6 +1519,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
     "parameters": [
       {
@@ -1491,6 +1550,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
     "parameters": [
       {
@@ -1526,6 +1586,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "ignoreFear": true
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
     "parameters": [
       {
@@ -1549,7 +1610,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "1",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
@@ -1568,6 +1630,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "ignoreFear": true
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
     "parameters": [
       {
@@ -1598,6 +1661,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
     "parameters": [
       {
@@ -1621,7 +1685,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 40
       }
     ],
     "statuses": [],
@@ -1641,6 +1706,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "fearFactor": "1d10 (JO 10)"
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
     "parameters": [
       {
@@ -1667,6 +1733,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-haminges-power-of-the-dragon:rampage-of-the-huvfurwurm:1",
     "parameters": []
   },
@@ -1679,7 +1746,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
@@ -1697,6 +1765,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
     "parameters": [
       {
@@ -1721,6 +1790,7 @@ export const TRANSFORMATION_TEMPLATES = {
     ],
     "rules": {},
     "related": [],
+    "priority": 20,
     "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
     "parameters": []
   },
@@ -1733,7 +1803,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "4",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
@@ -1751,6 +1822,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
     "parameters": [
       {
@@ -1778,6 +1850,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "statuses": [],
     "rules": {},
     "related": [],
+    "priority": 40,
     "sourceId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
     "parameters": [
       {
@@ -1801,7 +1874,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "6",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -1820,6 +1894,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
     "parameters": [
       {
@@ -1848,7 +1923,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -1873,6 +1949,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
     "parameters": [
       {
@@ -1913,6 +1990,7 @@ export const TRANSFORMATION_TEMPLATES = {
       ]
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
     "parameters": []
   },
@@ -1925,7 +2003,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
@@ -1949,6 +2028,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "parameters": [
       {
@@ -1993,6 +2073,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "parameters": [
       {
@@ -2036,6 +2117,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "parameters": [
       {
@@ -2070,6 +2152,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "parameters": [
       {
@@ -2117,6 +2200,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
     "parameters": [
       {
@@ -2140,7 +2224,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "3",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -2174,6 +2259,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
     "parameters": [
       {
@@ -2224,6 +2310,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
     "parameters": [
       {
@@ -2270,6 +2357,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
     "parameters": [
       {
@@ -2327,6 +2415,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
     "parameters": [
       {
@@ -2379,6 +2468,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vision": "lightAmplification"
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-toikalokke-animal-mind:animal-shape:6",
     "parameters": [
       {
@@ -2405,6 +2495,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-toikalokke-master-of-elements:gift-of-water:3",
     "parameters": [
       {
@@ -2424,6 +2515,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "1d10"
     },
     "related": [],
+    "priority": 10,
     "sourceId": "holy-joaringfaith-fury-of-ogon:simmering-blood:1",
     "parameters": [
       {
@@ -2447,7 +2539,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "1",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 20
       }
     ],
     "statuses": [],
@@ -2470,6 +2563,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
     "parameters": []
   },
@@ -2483,6 +2577,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
     "parameters": []
   },
@@ -2496,6 +2591,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "2d10"
     },
     "related": [],
+    "priority": 20,
     "sourceId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
     "parameters": [
       {
@@ -2519,7 +2615,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "2",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 30
       }
     ],
     "statuses": [],
@@ -2542,6 +2639,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 30,
     "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
     "parameters": []
   },
@@ -2555,6 +2653,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 30,
     "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
     "parameters": []
   },
@@ -2568,6 +2667,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "vitality": "3d10"
     },
     "related": [],
+    "priority": 40,
     "sourceId": "holy-joaringfaith-fury-of-ogon:bloodfire:6",
     "parameters": [
       {
@@ -2591,7 +2691,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.rolls.attack",
         "type": "add",
         "value": "3",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [],
@@ -2615,6 +2716,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "frenzy-exhaustion"
     ],
+    "priority": 50,
     "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
     "parameters": []
   },
@@ -2628,6 +2730,7 @@ export const TRANSFORMATION_TEMPLATES = {
       "durationFromElapsed": 0.5
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-joaringfaith-fury-of-ogon:riastarthae:8",
     "parameters": []
   },
@@ -2640,7 +2743,8 @@ export const TRANSFORMATION_TEMPLATES = {
         "key": "system.modifiers.protection",
         "type": "add",
         "value": "4",
-        "phase": "initial"
+        "phase": "initial",
+        "priority": 50
       }
     ],
     "statuses": [
@@ -2653,6 +2757,7 @@ export const TRANSFORMATION_TEMPLATES = {
     "related": [
       "tree-recovery"
     ],
+    "priority": 50,
     "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
     "parameters": [
       {
@@ -2690,6 +2795,7 @@ export const TRANSFORMATION_TEMPLATES = {
       }
     },
     "related": [],
+    "priority": 50,
     "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
     "parameters": []
   },

@@ -31,7 +31,8 @@
             "key": "system.modifiers.rolls.attack",
             "type": "add",
             "value": "1",
-            "phase": "initial"
+            "phase": "initial",
+            "priority": 30
           }
         ]
       },
