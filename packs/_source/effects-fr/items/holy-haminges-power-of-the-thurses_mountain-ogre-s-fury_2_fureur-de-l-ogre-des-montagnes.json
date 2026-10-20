@@ -1,0 +1,57 @@
+{
+  "_id": "j8n6rZsYtZu0v1w2",
+  "_key": "!items!j8n6rZsYtZu0v1w2",
+  "name": "Fureur de l’ogre des montagnes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFureur de l’ogre des montagnes confère les traits suivants :\n• +3 points de santé (les dégâts affectent ces points de santé en priorité)\n• +1 aux dégâts des armes de corps à corps ou de lancer\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+    "summary": "Fureur de l’ogre des montagnes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 276
+    }
+  },
+  "effects": [
+    {
+      "_id": "QNlsQOgMhNiOjPkQ",
+      "_key": "!items.effects!j8n6rZsYtZu0v1w2.QNlsQOgMhNiOjPkQ",
+      "name": "Fureur de l’ogre des montagnes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFureur de l’ogre des montagnes confère les traits suivants :\n• +3 points de santé (les dégâts affectent ces points de santé en priorité)\n• +1 aux dégâts des armes de corps à corps ou de lancer\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+            "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+            "rules": {
+              "temporaryHP": 3,
+              "damage": {
+                "value": 1,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

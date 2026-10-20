@@ -1,0 +1,46 @@
+{
+  "_id": "TwbkXKeKfLgMhNiO",
+  "_key": "!items!TwbkXKeKfLgMhNiO",
+  "name": "Épuisement après frénésie",
+  "type": "effect",
+  "img": "icons/svg/sleep.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+    "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+    "summary": "Folie",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "E2zaH9A6B7C8D9Ea",
+      "_key": "!items.effects!TwbkXKeKfLgMhNiO.E2zaH9A6B7C8D9Ea",
+      "name": "Épuisement après frénésie",
+      "type": "effect",
+      "img": "icons/svg/sleep.svg",
+      "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+            "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
+            "rules": {
+              "durationFromElapsed": 0.5
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

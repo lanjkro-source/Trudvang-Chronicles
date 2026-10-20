@@ -1,0 +1,68 @@
+{
+  "_id": "B4A6B6y4z5A6B7C8",
+  "_key": "!items!B4A6B6y4z5A6B7C8",
+  "name": "Rage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
+    "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+    "summary": "Rage",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "SEvJuC7C8D9EaGbH",
+      "_key": "!items.effects!B4A6B6y4z5A6B7C8.SEvJuC7C8D9EaGbH",
+      "name": "Rage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-fury-of-ogon:rage:2#rage",
+            "sourceId": "holy-joaringfaith-fury-of-ogon:rage:2",
+            "rules": {
+              "temporaryHP": 5,
+              "damage": {
+                "value": 2,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true,
+              "fearFactor": "1d10",
+              "size": 1
+            },
+            "related": [
+              "frenzy-exhaustion"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

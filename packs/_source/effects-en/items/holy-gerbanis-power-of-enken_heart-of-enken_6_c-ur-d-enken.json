@@ -1,0 +1,52 @@
+{
+  "_id": "VraHDhKfLgMhNiOj",
+  "_key": "!items!VraHDhKfLgMhNiOj",
+  "name": "Heart of Enken",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
+    "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual. The person who is granted this power receives the exceptional trait of Psyche +8 for the ability’s duration. Even the dimwalker (if the Stormkelt offered the power to someone else) and up to two friends within range also receive a lesser exceptional trait of Psyche +4 for the ability’s duration.",
+    "summary": "Heart of Enken",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "qYoD2iKfLgMhNiOj",
+      "_key": "!items.effects!VraHDhKfLgMhNiOj.qYoD2iKfLgMhNiOj",
+      "name": "Heart of Enken",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt prays to Enken and is granted courage for himself or bestows courage upon a chosen individual. The person who is granted this power receives the exceptional trait of Psyche +8 for the ability’s duration. Even the dimwalker (if the Stormkelt offered the power to someone else) and up to two friends within range also receive a lesser exceptional trait of Psyche +4 for the ability’s duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:heart-of-enken:6#c-ur-d-enken",
+            "sourceId": "holy-gerbanis-power-of-enken:heart-of-enken:6",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "psyche",
+                  "method": "replace",
+                  "value": 8
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

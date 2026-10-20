@@ -1,0 +1,44 @@
+{
+  "_id": "HYPCa0sYtZu0v1w2",
+  "_key": "!items!HYPCa0sYtZu0v1w2",
+  "name": "Membre de pierre — Bras droit",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+    "description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+    "summary": "Membre de pierre",
+    "source": {
+      "book": "Livre des règles",
+      "page": 271
+    }
+  },
+  "effects": [
+    {
+      "_id": "i4VPWcGbHcIdJeKf",
+      "_key": "!items.effects!HYPCa0sYtZu0v1w2.i4VPWcGbHcIdJeKf",
+      "name": "Membre de pierre — Bras droit",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur dirige son regard pétrificateur vers l’un des membres d’un adversaire (un bras ou une jambe) qui se change en pierre jusqu’à expiration du pouvoir, en même temps que l’armure ou les vêtements qui le recouvrent. Un membre pétrifié devient assez lourd et encombrant, et la victime ne peut pas l’utiliser pour quoi que ce soit. Si un membre pétrifié est frappé avec une force assez puissante, il risque de se briser et de tomber. C’est au maître de jeu d’en décider, en fonction de la puissance du coup reçu. La cible peut tenter de résister à la pétrification par un test de situation avec une valeur de situation de 6 (le modificateur de Psychisme s’applique). En cas de réussite, elle échappe complètement à la pétrification. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5).",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+            "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

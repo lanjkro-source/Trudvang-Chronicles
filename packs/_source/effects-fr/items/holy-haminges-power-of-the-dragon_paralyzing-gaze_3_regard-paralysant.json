@@ -1,0 +1,46 @@
+{
+  "_id": "B460Z1v1w2x3y4z5",
+  "_key": "!items!B460Z1v1w2x3y4z5",
+  "name": "Regard paralysant",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+    "description": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de paralyser ses adversaires avec son puissant regard. Le conjurateur doit d’abord attirer l’attention de son adversaire afin de croiser son regard. Une fois le contact visuel établi, l’adversaire doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ou être paralysé pendant 1 tour. Un adversaire paralysé ne peut rien faire jusqu’à ce que l’effet se dissipe. Si la cible n’a pas encore agi au cours du tour de jeu en cours, l’effet paralysant lui coûte ce tour de jeu ; autrement l’effet commence au prochain tour de jeu. Dans l’un ou l’autre cas, l’adversaire perd 1 tour de jeu dans la version de base du pouvoir.",
+    "summary": "Regard paralysant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 279
+    }
+  },
+  "effects": [
+    {
+      "_id": "kpGQwD6B7C8D9EaG",
+      "_key": "!items.effects!B460Z1v1w2x3y4z5.kpGQwD6B7C8D9EaG",
+      "name": "Regard paralysant",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Les yeux du conjurateur prennent un aspect reptilien et lui permettent de paralyser ses adversaires avec son puissant regard. Le conjurateur doit d’abord attirer l’attention de son adversaire afin de croiser son regard. Une fois le contact visuel établi, l’adversaire doit réussir un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique) ou être paralysé pendant 1 tour. Un adversaire paralysé ne peut rien faire jusqu’à ce que l’effet se dissipe. Si la cible n’a pas encore agi au cours du tour de jeu en cours, l’effet paralysant lui coûte ce tour de jeu ; autrement l’effet commence au prochain tour de jeu. Dans l’un ou l’autre cas, l’adversaire perd 1 tour de jeu dans la version de base du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "paralysis"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+            "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

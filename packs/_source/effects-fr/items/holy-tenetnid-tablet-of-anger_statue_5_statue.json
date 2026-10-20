@@ -1,0 +1,53 @@
+{
+  "_id": "RkceGeGbHcIdJeKf",
+  "_key": "!items!RkceGeGbHcIdJeKf",
+  "name": "Statue",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:statue:5#statue",
+    "description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique), elle est changée en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud en activant ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
+    "summary": "Statue",
+    "source": {
+      "book": "Livre des règles",
+      "page": 252
+    }
+  },
+  "effects": [
+    {
+      "_id": "sGkKLXrXsYtZu0v1",
+      "_key": "!items.effects!RkceGeGbHcIdJeKf.sGkKLXrXsYtZu0v1",
+      "name": "Statue",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le prêtre dirige son regard puissant vers un adversaire. Si la cible ne parvient pas à résister en réussissant un test de situation avec une valeur de situation de 8 (le modificateur de Psychisme s’applique), elle est changée en statue jusqu’à expiration de ce pouvoir. Si le prêtre dépense un point de raud en activant ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut se servir de ce pouvoir que sur des personnes et des créatures de taille humaine ou presque (créatures de Taille 1/2 à 1,5 ; pour plus d’information sur les tailles, cf. Le bestiaire de Jorge ). Le prêtre n’a besoin que d’un seul tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la pétrification prenne pleinement effet. Pour chaque tour que dure la transformation en pierre, la victime réduit de moitié ses valeurs de compétence effectives (en aggravant la réduction à chaque tour, et en arrondissant à la valeur supérieure). Par exemple, si la victime a une VC de 16 dans la compétence Combat (y compris les disciplines et les spécialités), sa VC passera à 8 au premier tour de jeu suivant le lancement du sort ; au suivant, elle tombera à 4, et ainsi de suite. Ce malus disparaît en même temps que la pétrification.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:statue:5#statue",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "paralysis"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:statue:5#statue",
+            "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
+            "rules": {
+              "suspendEquipment": true,
+              "preserveHP": true,
+              "statueIntegrity": 0
+            },
+            "related": [
+              "petrification-recovery-half",
+              "petrification-recovery-two-thirds"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

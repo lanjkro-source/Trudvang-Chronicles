@@ -1,0 +1,55 @@
+{
+  "_id": "wHbIsJaGbHcIdJeK",
+  "_key": "!items!wHbIsJaGbHcIdJeK",
+  "name": "Raideur après pétrification — deux tiers",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Pétrification",
+    "source": {
+      "book": "Livre des règles",
+      "page": 272
+    }
+  },
+  "effects": [
+    {
+      "_id": "hh8HkxZu0v1w2x3y",
+      "_key": "!items.effects!wHbIsJaGbHcIdJeK.hh8HkxZu0v1w2x3y",
+      "name": "Raideur après pétrification — deux tiers",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:petrify:7#petrification-recovery-two-thirds",
+            "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.6666666666666666
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.6666666666666666
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

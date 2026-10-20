@@ -1,0 +1,44 @@
+{
+  "_id": "KI27ZgMhNiOjPkQl",
+  "_key": "!items!KI27ZgMhNiOjPkQl",
+  "name": "Ouïe du hibou",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou",
+    "description": "Le bruide perçoit tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du hibou, aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 12. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+    "summary": "Ouïe du hibou",
+    "source": {
+      "book": "Livre des règles",
+      "page": 244
+    }
+  },
+  "effects": [
+    {
+      "_id": "RHN1LPjPkQlRmSnT",
+      "_key": "!items.effects!KI27ZgMhNiOjPkQl.RHN1LPjPkQlRmSnT",
+      "name": "Ouïe du hibou",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide perçoit tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du hibou, aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 12. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3#ouie-du-hibou",
+            "sourceId": "holy-ealdtradition-nema-s-usefulness:owl-hearing:3",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

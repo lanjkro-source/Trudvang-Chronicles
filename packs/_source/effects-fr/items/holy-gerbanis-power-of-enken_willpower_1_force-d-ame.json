@@ -1,0 +1,52 @@
+{
+  "_id": "xtb5ktXsYtZu0v1w",
+  "_key": "!items!xtb5ktXsYtZu0v1w",
+  "name": "Force d’âme",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+    "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +4 en Psychisme pendant la durée du pouvoir.",
+    "summary": "Force d’âme",
+    "source": {
+      "book": "Livre des règles",
+      "page": 224
+    }
+  },
+  "effects": [
+    {
+      "_id": "AwPuKXrXsYtZu0v1",
+      "_key": "!items.effects!xtb5ktXsYtZu0v1w.AwPuKXrXsYtZu0v1",
+      "name": "Force d’âme",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le stormikjalt en appelle à Enken qui confère du courage au prêtre ou à l’individu de son choix. Le bénéficiaire de ce pouvoir reçoit le trait exceptionnel de +4 en Psychisme pendant la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+            "sourceId": "holy-gerbanis-power-of-enken:willpower:1",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "psyche",
+                  "method": "replace",
+                  "value": 4
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

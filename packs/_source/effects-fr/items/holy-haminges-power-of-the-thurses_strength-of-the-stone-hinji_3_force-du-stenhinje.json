@@ -1,0 +1,52 @@
+{
+  "_id": "kDiNObE9EaGbHcId",
+  "_key": "!items!kDiNObE9EaGbHcId",
+  "name": "Force du stenhinje",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje. L’arpenteur des brumes reçoit un trait exceptionnel de +6 en Force jusqu’à expiration du pouvoir.",
+    "summary": "Force du stenhinje",
+    "source": {
+      "book": "Livre des règles",
+      "page": 276
+    }
+  },
+  "effects": [
+    {
+      "_id": "JYdHf3w2x3y4z5A6",
+      "_key": "!items.effects!kDiNObE9EaGbHcId.JYdHf3w2x3y4z5A6",
+      "name": "Force du stenhinje",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’esprit du hrimtursir confère au conjurateur la force d’un stenhinje. L’arpenteur des brumes reçoit un trait exceptionnel de +6 en Force jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+            "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

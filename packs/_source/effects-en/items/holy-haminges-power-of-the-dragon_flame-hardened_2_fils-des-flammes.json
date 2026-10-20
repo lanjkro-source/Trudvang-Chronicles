@@ -1,0 +1,63 @@
+{
+  "_id": "0X11LMfLgMhNiOjP",
+  "_key": "!items!0X11LMfLgMhNiOjP",
+  "name": "Flame Hardened",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which m anifests through burning breath and skin that appears to darken slightly and grow somewhat scaly. ✦ Flame Hardened’s<ul><li>Flame Hardened’s Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer gains a natural Protection Value of +2. ✦ The spirit conjurer deals +1 extra damage with all melee weapons and throwing weapons.</p>",
+    "summary": "Flame Hardened",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "HDq5V4x3y4z5A6B7",
+      "_key": "!items.effects!0X11LMfLgMhNiOjP.HDq5V4x3y4z5A6B7",
+      "name": "Flame Hardened",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which m anifests through burning breath and skin that appears to darken slightly and grow somewhat scaly. ✦ Flame Hardened’s<ul><li>Flame Hardened’s Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer gains a natural Protection Value of +2. ✦ The spirit conjurer deals +1 extra damage with all melee weapons and throwing weapons.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+            "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
+            "rules": {
+              "damage": {
+                "value": 1,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

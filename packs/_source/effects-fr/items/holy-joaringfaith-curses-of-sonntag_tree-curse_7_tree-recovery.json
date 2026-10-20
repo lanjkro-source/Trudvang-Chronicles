@@ -1,0 +1,49 @@
+{
+  "_id": "jf7FuvWrXsYtZu0v",
+  "_key": "!items!jf7FuvWrXsYtZu0v",
+  "name": "Raideur après la malédiction de l’arbre",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Malédiction de l’arbre",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "sD5HE2tZu0v1w2x3",
+      "_key": "!items.effects!jf7FuvWrXsYtZu0v.sD5HE2tZu0v1w2x3",
+      "name": "Raideur après la malédiction de l’arbre",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-curses-of-sonntag:tree-curse:7#tree-recovery",
+            "sourceId": "holy-joaringfaith-curses-of-sonntag:tree-curse:7",
+            "rules": {
+              "testFactor": {
+                "agility": 0.5,
+                "movement": 0.5
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

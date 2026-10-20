@@ -1,0 +1,44 @@
+{
+  "_id": "oZcsibD8D9EaGbHc",
+  "_key": "!items!oZcsibD8D9EaGbHc",
+  "name": "Changement de forme (fjoltroll)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+    "description": "Dès qu’il le souhaite, un fjoltroll peut se transformer en pratiquement n’importe quoi pour ne pas se faire remarquer des voyageurs et des créatures de passage.",
+    "summary": "Changement de forme (fjoltroll)",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 148
+    }
+  },
+  "effects": [
+    {
+      "_id": "BtxzzVmSnToUpVqW",
+      "_key": "!items.effects!oZcsibD8D9EaGbHc.BtxzzVmSnToUpVqW",
+      "name": "Changement de forme (fjoltroll)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Dès qu’il le souhaite, un fjoltroll peut se transformer en pratiquement n’importe quoi pour ne pas se faire remarquer des voyageurs et des créatures de passage.",
+      "transfer": false,
+      "system": {
+        "stackId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+            "sourceId": "MKMhM5z5A6B7C8D9",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

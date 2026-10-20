@@ -1,0 +1,65 @@
+{
+  "_id": "2xBFyFaGbHcIdJeK",
+  "_key": "!items!2xBFyFaGbHcIdJeK",
+  "name": "The Destroyer's Rage",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Destroyer’s Rage grants<ul><li>The Destroyer’s Rage grants the</li></ul>the following: ✦ Spirit conjurer receives a fear factor of 1d10 (OR 10) ✦ +10 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +5 in damage with melee weapons or throwing weapons ✦ +2 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+    "summary": "The Destroyer's Rage",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "7QZRPPkQlRmSnToU",
+      "_key": "!items.effects!2xBFyFaGbHcIdJeK.7QZRPPkQlRmSnToU",
+      "name": "The Destroyer's Rage",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Destroyer’s Rage grants<ul><li>The Destroyer’s Rage grants the</li></ul>the following: ✦ Spirit conjurer receives a fear factor of 1d10 (OR 10) ✦ +10 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +5 in damage with melee weapons or throwing weapons ✦ +2 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+            "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+            "rules": {
+              "temporaryHP": 10,
+              "damage": {
+                "value": 5,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true,
+              "fearFactor": "1d10 (JO 10)"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

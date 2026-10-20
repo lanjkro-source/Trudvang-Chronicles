@@ -1,0 +1,49 @@
+{
+  "_id": "7ibqhbGbHcIdJeKf",
+  "_key": "!items!7ibqhbGbHcIdJeKf",
+  "name": "Raideur après la malédiction de l’arbre",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-witchcraft:tree-curse:7#tree-recovery",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Malédiction de l’arbre",
+    "source": {
+      "book": "Livre des règles",
+      "page": 187
+    }
+  },
+  "effects": [
+    {
+      "_id": "s2ePVSlRmSnToUpV",
+      "_key": "!items.effects!7ibqhbGbHcIdJeKf.s2ePVSlRmSnToUpV",
+      "name": "Raideur après la malédiction de l’arbre",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-witchcraft:tree-curse:7#tree-recovery",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-witchcraft:tree-curse:7#tree-recovery",
+            "sourceId": "vitner-witchcraft:tree-curse:7",
+            "rules": {
+              "testFactor": {
+                "agility": 0.5,
+                "movement": 0.5
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

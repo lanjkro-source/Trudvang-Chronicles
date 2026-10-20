@@ -1,0 +1,46 @@
+{
+  "_id": "MLeJsC4z5A6B7C8D",
+  "_key": "!items!MLeJsC4z5A6B7C8D",
+  "name": "Épuisement après frénésie",
+  "type": "effect",
+  "img": "icons/svg/sleep.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
+    "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+    "summary": "Rage",
+    "source": {
+      "book": "Livre des règles",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "BOtee7B7C8D9EaGb",
+      "_key": "!items.effects!MLeJsC4z5A6B7C8D.BOtee7B7C8D9EaGb",
+      "name": "Épuisement après frénésie",
+      "type": "effect",
+      "img": "icons/svg/sleep.svg",
+      "description": "Le personnage s’effondre et demeure épuisé pendant la moitié de la durée effective de sa frénésie. Refroidir son corps ; sinon Rage/Folie/Riastarthae infligent respectivement 1/2/4 dégâts par tour pendant 2 tours, sans armure.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-tribute-of-morgu:rage:3#frenzy-exhaustion",
+            "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
+            "rules": {
+              "durationFromElapsed": 0.5
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

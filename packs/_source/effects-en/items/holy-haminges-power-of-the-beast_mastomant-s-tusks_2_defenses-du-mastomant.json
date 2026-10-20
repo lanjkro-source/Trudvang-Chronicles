@@ -1,0 +1,52 @@
+{
+  "_id": "HOvvkQhNiOjPkQlR",
+  "_key": "!items!HOvvkQhNiOjPkQlR",
+  "name": "Mastomant's Tusks",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+    "description": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw. The dimwalker can use these tusks in unarmed fighting, dealing 1d10 points of damage. An attack with the tusks counts as a bonus attack, though the character must still spend Combat Points as a standard attack to determine the Situation value. The spirit conjurer can attempt only one attack with the tusks per action round.",
+    "summary": "Mastomant's Tusks",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "62XmGLeKfLgMhNiO",
+      "_key": "!items.effects!HOvvkQhNiOjPkQlR.62XmGLeKfLgMhNiO",
+      "name": "Mastomant's Tusks",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls on the power of the mastomant spirit, and a pair of half-meter-long tusks emerges from their jaw. The dimwalker can use these tusks in unarmed fighting, dealing 1d10 points of damage. An attack with the tusks counts as a bonus attack, though the character must still spend Combat Points as a standard attack to determine the Situation value. The spirit conjurer can attempt only one attack with the tusks per action round.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+            "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
+            "rules": {
+              "attacks": [
+                {
+                  "damage": "1d10",
+                  "openRoll": 0,
+                  "maxActions": 1
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -13,6 +13,14 @@ dans sa description, sans migration ni modification d’un monde installé.
 
 ## Utilisation
 
+Les compendiums « Effets (fr) » et « Effects (en) » proposent chaque variante sous
+forme d’objet de référence contenant son ActiveEffect natif. Le glisser-déposer de
+l’entrée ou de cet effet ouvre la même application paramétrée que depuis un sort.
+Les fichiers `game doc/fr/trudvang-effects-fr.json` et
+`game doc/en/trudvang-effects-en.json` sont des exports de référence générés ; ils
+contiennent l’identité stable, la provenance, les textes, la durée, les changements,
+les états, les règles et les liens des 110 variantes.
+
 Les descriptions et les annonces d’utilisation proposent des boutons d’effets. On
 peut les glisser sur la fiche d’un acteur ou sur son token ; cliquer applique l’effet
 au propriétaire de la source ou à l’acteur contrôlé/assigné. Les permissions de

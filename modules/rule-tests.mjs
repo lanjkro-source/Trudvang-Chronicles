@@ -15,7 +15,7 @@ export function ruleTestsForDocument(document) {
   const id = document?.flags?.[SYSTEM_ID]?.transformation?.sourceId || document?.system?.catalogId
     || legacyAbilityIdByName.get(flag(document, "feat"))
     || legacyAbilityIdByName.get(document?.name);
-  return id ? RULE_TESTS_BY_CATALOG_ID[id] ?? [] : [];
+  return id ? RULE_TESTS_BY_CATALOG_ID[id] ?? RULE_TESTS_BY_CATALOG_ID[id.split("#")[0]] ?? [] : [];
 }
 
 /** Usage cards label each response with the action from the French source data. */

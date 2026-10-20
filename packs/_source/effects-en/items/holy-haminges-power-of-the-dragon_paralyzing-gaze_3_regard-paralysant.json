@@ -1,0 +1,46 @@
+{
+  "_id": "B460Z1v1w2x3y4z5",
+  "_key": "!items!B460Z1v1w2x3y4z5",
+  "name": "Paralyzing Gaze",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+    "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze. First the spirit conjurer must gain the opponent’s attention so they meet the gaze. Once eye contact is made, the opponent must make a successful Situation roll with a S ituation value of 8 (Psyche modifiers apply) or become paralyzed for 1 round. A paralyzed opponent cannot do anything until the effect wears off. If the target has not yet acted in the current action round, the paralyzing effect costs them this round of action; otherwise the effect commences in the next action round. Either way, the opponent loses 1 round of action (current or next) in the ability’s basic version.",
+    "summary": "Paralyzing Gaze",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "kpGQwD6B7C8D9EaG",
+      "_key": "!items.effects!B460Z1v1w2x3y4z5.kpGQwD6B7C8D9EaG",
+      "name": "Paralyzing Gaze",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer’s eyes turn reptilian and they gain the ability to paralyze opponents with a powerful gaze. First the spirit conjurer must gain the opponent’s attention so they meet the gaze. Once eye contact is made, the opponent must make a successful Situation roll with a S ituation value of 8 (Psyche modifiers apply) or become paralyzed for 1 round. A paralyzed opponent cannot do anything until the effect wears off. If the target has not yet acted in the current action round, the paralyzing effect costs them this round of action; otherwise the effect commences in the next action round. Either way, the opponent loses 1 round of action (current or next) in the ability’s basic version.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "paralysis"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3#regard-paralysant",
+            "sourceId": "holy-haminges-power-of-the-dragon:paralyzing-gaze:3",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

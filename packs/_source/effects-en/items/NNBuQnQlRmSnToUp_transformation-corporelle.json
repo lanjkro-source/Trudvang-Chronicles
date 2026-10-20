@@ -1,0 +1,49 @@
+{
+  "_id": "JGQ5joPkQlRmSnTo",
+  "_key": "!items!JGQ5joPkQlRmSnTo",
+  "name": "Body Transformation",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "NNBuQnQlRmSnToUp#transformation-corporelle",
+    "description": "<p>The demon can transform into a creature of its choice.</p>",
+    "summary": "Body Transformation",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    }
+  },
+  "effects": [
+    {
+      "_id": "U2FW1iMhNiOjPkQl",
+      "_key": "!items.effects!JGQ5joPkQlRmSnTo.U2FW1iMhNiOjPkQl",
+      "name": "Body Transformation",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The demon can transform into a creature of its choice.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "NNBuQnQlRmSnToUp#transformation-corporelle",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "NNBuQnQlRmSnToUp#transformation-corporelle",
+            "sourceId": "NNBuQnQlRmSnToUp",
+            "rules": {
+              "chooseBestiary": true,
+              "formPolicy": "animal",
+              "preserveHP": false,
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

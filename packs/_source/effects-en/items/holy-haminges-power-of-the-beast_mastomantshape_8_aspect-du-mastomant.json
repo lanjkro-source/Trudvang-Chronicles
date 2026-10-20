@@ -1,0 +1,72 @@
+{
+  "_id": "CE3zNPiOjPkQlRmS",
+  "_key": "!items!CE3zNPiOjPkQlRmS",
+  "name": "Mastomantshape",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
+    "description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
+    "summary": "Mastomantshape",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "LC5D5TlRmSnToUpV",
+      "_key": "!items.effects!CE3zNPiOjPkQlRmS.LC5D5TlRmSnToUpV",
+      "name": "Mastomantshape",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls on the power of the bound spirit and is transformed (along with any gear) into a giant mastomant for the duration of the ability. ✦ The Mastomantshape has the following traits: ✦ As large as a real mastomant (x7) and weighs around 15 tons ✦ Natural Protection Value of 4 ✦ Natural weapon: tusks 2d10 (OR 9-10) points of damage ✦ Immune to all types of cold ✦ Strength +6, which adds +6 to its damage ✦ +30 Body Points (used before the spirit conjurer’s natural Body Points are affected) ✦ Can be ridden by four people at a time",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "4",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mastomantshape:8#aspect-du-mastomant",
+            "sourceId": "holy-haminges-power-of-the-beast:mastomantshape:8",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 6
+                }
+              ],
+              "immunities": [
+                "toutes les formes de froid"
+              ],
+              "size": 7,
+              "temporaryHP": 30,
+              "attacks": [
+                {
+                  "damage": "2d10",
+                  "openRoll": 9,
+                  "maxActions": 0
+                }
+              ],
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

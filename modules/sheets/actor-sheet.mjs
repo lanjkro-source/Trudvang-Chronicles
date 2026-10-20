@@ -707,7 +707,20 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
   }
 
   /** @override — ActorSheetV2 passes un Item document résolu ; on gère aussi les données brutes par sécurité. */
+  async _onDropActiveEffect(event, effect) {
+    const key=effect.flags?.["trudvang-chronicles"]?.transformation?.key;
+    if(key){
+      const {applyTransformation}=await import("../transformations.mjs");
+      return applyTransformation(this.actor,key,{source:effect});
+    }
+    return super._onDropActiveEffect(event,effect);
+  }
+
   async _onDropItem(event, item) {
+    if (item?.type === "effect") {
+      const {applyTransformation} = await import("../transformations.mjs");
+      return applyTransformation(this.actor,item.system.catalogId,{source:item});
+    }
     let itemDoc = item;
     // Défensif : si ce n'est pas déjà un Document Foundry (drop brut / compat), le résoudre.
     if (!itemDoc?.documentName) {
@@ -723,6 +736,10 @@ export class TrudvangActorSheet extends HandlebarsApplicationMixin(ActorSheetV2)
         console.error("Trudvang | _onDropItem: impossible de résoudre le drop", err, item);
         return false;
       }
+    }
+    if (itemDoc.type === "effect") {
+      const {applyTransformation} = await import("../transformations.mjs");
+      return applyTransformation(this.actor,itemDoc.system.catalogId,{source:itemDoc});
     }
     // Tri interne si l'item appartient déjà à cet acteur
     if ((itemDoc.actor ?? itemDoc.parent)?.uuid === this.actor.uuid && this.actor.uuid && this.actor.items.has(itemDoc.id)) {

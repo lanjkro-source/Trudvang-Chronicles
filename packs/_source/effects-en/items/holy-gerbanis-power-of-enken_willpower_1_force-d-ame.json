@@ -1,0 +1,52 @@
+{
+  "_id": "xtb5ktXsYtZu0v1w",
+  "_key": "!items!xtb5ktXsYtZu0v1w",
+  "name": "Night Vision",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+    "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
+    "summary": "Night Vision",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "AwPuKXrXsYtZu0v1",
+      "_key": "!items.effects!xtb5ktXsYtZu0v1w.AwPuKXrXsYtZu0v1",
+      "name": "Night Vision",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The Stormkelt is granted night vision for one minute. With night vision the dimwalker is able to see in pitch-black darkness, though not quite as well as if it were daytime. The dimwalker has clear vision up to 20 meters, beyond which the v isibility of details is diminished considerably and ends completely after about 60 meters.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:willpower:1#force-d-ame",
+            "sourceId": "holy-gerbanis-power-of-enken:willpower:1",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "psyche",
+                  "method": "replace",
+                  "value": 4
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

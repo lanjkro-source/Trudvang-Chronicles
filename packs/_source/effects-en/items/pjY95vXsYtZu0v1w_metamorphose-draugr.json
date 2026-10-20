@@ -1,0 +1,49 @@
+{
+  "_id": "jMjnjZsYtZu0v1w2",
+  "_key": "!items!jMjnjZsYtZu0v1w2",
+  "name": "Shapeshifter (draugr)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
+    "description": "<p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p>",
+    "summary": "Shapeshifter (draugr)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 58
+    }
+  },
+  "effects": [
+    {
+      "_id": "wXb4WwZu0v1w2x3y",
+      "_key": "!items.effects!jMjnjZsYtZu0v1w2.wXb4WwZu0v1w2x3y",
+      "name": "Shapeshifter (draugr)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Whenever it wishes, a draugr can transform into an animal, often a wolf, raven, or horse. This is how it travels for longer distances.</p><p>It takes the draugr 3 action rounds to change shape. During these rounds, the draugr cannot defend itself in any way. Therefore, it is unlikely to change shape when enemies pose a threat.</p><p>Each transformation costs 30 days and nights of the draugr’s remaining stay.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "pjY95vXsYtZu0v1w#metamorphose-draugr",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "pjY95vXsYtZu0v1w#metamorphose-draugr",
+            "sourceId": "pjY95vXsYtZu0v1w",
+            "rules": {
+              "chooseBestiary": true,
+              "formPolicy": "animal",
+              "preserveHP": false,
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "_id": "Qgw6slPkQlRmSnTo",
+  "_key": "!items!Qgw6slPkQlRmSnTo",
+  "name": "Stiffness after petrification — half",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half",
+    "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+    "summary": "Statue",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 194
+    }
+  },
+  "effects": [
+    {
+      "_id": "RSwI2YrXsYtZu0v1",
+      "_key": "!items.effects!Qgw6slPkQlRmSnTo.RSwI2YrXsYtZu0v1",
+      "name": "Stiffness after petrification — half",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-half",
+            "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.5
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.5
+              }
+            },
+            "related": [
+              "petrification-recovery-two-thirds"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "_id": "HJHDFLgMhNiOjPkQ",
+  "_key": "!items!HJHDFLgMhNiOjPkQ",
+  "name": "Exhaustion after frenzy",
+  "type": "effect",
+  "img": "icons/svg/sleep.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion",
+    "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+    "summary": "Riastarthae",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 187
+    }
+  },
+  "effects": [
+    {
+      "_id": "e5IAhiMhNiOjPkQl",
+      "_key": "!items.effects!HJHDFLgMhNiOjPkQ.e5IAhiMhNiOjPkQl",
+      "name": "Exhaustion after frenzy",
+      "type": "effect",
+      "img": "icons/svg/sleep.svg",
+      "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-tribute-of-morgu:riastarthae:7#frenzy-exhaustion",
+            "sourceId": "holy-ealdtradition-tribute-of-morgu:riastarthae:7",
+            "rules": {
+              "durationFromElapsed": 0.5
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

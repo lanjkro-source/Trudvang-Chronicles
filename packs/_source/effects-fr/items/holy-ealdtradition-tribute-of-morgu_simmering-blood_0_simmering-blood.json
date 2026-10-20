@@ -1,0 +1,46 @@
+{
+  "_id": "pTqj9XsYtZu0v1w2",
+  "_key": "!items!pTqj9XsYtZu0v1w2",
+  "name": "Sang brûlant",
+  "type": "effect",
+  "img": "icons/svg/blood.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
+    "description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+    "summary": "Sang brûlant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 241
+    }
+  },
+  "effects": [
+    {
+      "_id": "40VVfC6B7C8D9EaG",
+      "_key": "!items.effects!pTqj9XsYtZu0v1w2.40VVfC6B7C8D9EaG",
+      "name": "Sang brûlant",
+      "type": "effect",
+      "img": "icons/svg/blood.svg",
+      "description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 1d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0#simmering-blood",
+            "sourceId": "holy-ealdtradition-tribute-of-morgu:simmering-blood:0",
+            "rules": {
+              "vitality": "1d10"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

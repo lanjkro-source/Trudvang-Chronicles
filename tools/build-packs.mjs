@@ -19,6 +19,7 @@ import {tmpdir} from "node:os";
 import {SKILL_PACKS, buildSkillPackDocuments} from "../modules/skill-pack-data.mjs";
 import {TABLET_PACKS, buildTabletPackDocuments} from "../modules/tablet-pack-data.mjs";
 import {BESTIARY_PACKS, CREATURE_ABILITY_PACKS, buildBestiaryPackDocuments, buildCreatureAbilityPackDocuments} from "../modules/bestiary-pack-data.mjs";
+import {EFFECT_PACKS, buildEffectPackDocuments} from "../modules/effect-pack-data.mjs";
 
 const root = process.cwd();
 const sourcesOnly = process.argv.includes("--sources-only");
@@ -148,6 +149,10 @@ for (const {code, packName, label, tabletType} of TABLET_PACKS) {
   await processPack({packName, label, documents: [...folders, ...items].map(sanitize), summary: `${tablets} tablets, ${powers} powers, ${folders.length} folders`});
 }
 
+for (const {code,packName,label} of EFFECT_PACKS) {
+  const {folders,items}=buildEffectPackDocuments(resolversFor(code));
+  await processPack({packName,label,documents:[...folders,...items].map(sanitize),summary:`${items.length} effects`});
+}
 for (const {code, packName, label} of CREATURE_ABILITY_PACKS) {
   const {items} = buildCreatureAbilityPackDocuments({code, ...resolversFor(code), strict: true});
   await processPack({packName, label, documents: items.map(sanitize), summary: `${items.length} capacities`});

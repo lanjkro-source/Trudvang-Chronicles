@@ -1,0 +1,46 @@
+{
+  "_id": "PRa0QYqWrXsYtZu0",
+  "_key": "!items!PRa0QYqWrXsYtZu0",
+  "name": "Embrasement du sang",
+  "type": "effect",
+  "img": "icons/svg/blood.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire",
+    "description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+    "summary": "Embrasement du sang",
+    "source": {
+      "book": "Livre des règles",
+      "page": 243
+    }
+  },
+  "effects": [
+    {
+      "_id": "MdZKXC7C8D9EaGbH",
+      "_key": "!items.effects!PRa0QYqWrXsYtZu0.MdZKXC7C8D9EaGbH",
+      "name": "Embrasement du sang",
+      "type": "effect",
+      "img": "icons/svg/blood.svg",
+      "description": "Par ce pouvoir, Morgu renforce l’essence vitale du bruide, qui reçoit 3d10 points de santé supplémentaires jusqu’à expiration du pouvoir. Cette vitalité supplémentaire disparaît dès la fin du pouvoir, mais les blessures subies demeurent. Cela signifie que si le bruide a subi davantage de dégâts qu’il n’a de points de santé sans l’aide de ce pouvoir, il a de fortes chances de mourir quand la vitalité accrue se dissipe et que son corps succombe sous le poids véritable de ses blessures.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-tribute-of-morgu:bloodfire:6#bloodfire",
+            "sourceId": "holy-ealdtradition-tribute-of-morgu:bloodfire:6",
+            "rules": {
+              "vitality": "3d10"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

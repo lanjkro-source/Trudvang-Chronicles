@@ -1,0 +1,52 @@
+{
+  "_id": "HOvvkQhNiOjPkQlR",
+  "_key": "!items!HOvvkQhNiOjPkQlR",
+  "name": "Défenses du mastomant",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+    "description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cinquantaine de centimètres surgissent de sa mâchoire. L’arpenteur des brumes peut utiliser ces défenses qui infligent 1d10 points de dégâts en combat à mains nues. Une attaque de défenses compte comme une attaque bonus, mais le personnage doit tout de même dépenser des points de combat comme pour une attaque standard afin de déterminer la valeur de situation (compétence Combat, discipline Combat à mains nues, spécialité Bagarre). Le conjurateur ne peut tenter qu’une seule attaque de défenses par tour de jeu.",
+    "summary": "Défenses du mastomant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "62XmGLeKfLgMhNiO",
+      "_key": "!items.effects!HOvvkQhNiOjPkQlR.62XmGLeKfLgMhNiO",
+      "name": "Défenses du mastomant",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur fait appel à l’esprit du mastomant, et deux défenses d’une cinquantaine de centimètres surgissent de sa mâchoire. L’arpenteur des brumes peut utiliser ces défenses qui infligent 1d10 points de dégâts en combat à mains nues. Une attaque de défenses compte comme une attaque bonus, mais le personnage doit tout de même dépenser des points de combat comme pour une attaque standard afin de déterminer la valeur de situation (compétence Combat, discipline Combat à mains nues, spécialité Bagarre). Le conjurateur ne peut tenter qu’une seule attaque de défenses par tour de jeu.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2#defenses-du-mastomant",
+            "sourceId": "holy-haminges-power-of-the-beast:mastomant-s-tusks:2",
+            "rules": {
+              "attacks": [
+                {
+                  "damage": "1d10",
+                  "openRoll": 0,
+                  "maxActions": 1
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "_id": "E5WHNuWrXsYtZu0v",
+  "_key": "!items!E5WHNuWrXsYtZu0v",
+  "name": "Endurance du géant",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
+    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
+    "summary": "Endurance du géant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "T13HXWqWrXsYtZu0",
+      "_key": "!items.effects!E5WHNuWrXsYtZu0v.T13HXWqWrXsYtZu0",
+      "name": "Endurance du géant",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +8 en Constitution jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6#endurance-du-geant",
+            "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-giant:6",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "constitution",
+                  "method": "replace",
+                  "value": 8
+                }
+              ],
+              "immunities": [
+                "poison",
+                "maladie"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

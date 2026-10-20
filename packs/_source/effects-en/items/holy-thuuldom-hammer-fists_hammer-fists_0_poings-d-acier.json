@@ -1,0 +1,52 @@
+{
+  "_id": "ButENrVqWrXsYtZu",
+  "_key": "!items!ButENrVqWrXsYtZu",
+  "name": "Hammer Fists",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
+    "description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
+    "summary": "Hammer Fists",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 231
+    }
+  },
+  "effects": [
+    {
+      "_id": "4bwrv9B7C8D9EaGb",
+      "_key": "!items.effects!ButENrVqWrXsYtZu.4bwrv9B7C8D9EaGb",
+      "name": "Hammer Fists",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "If inscribed on a pair of gloves, arm rings, or bracelets (one rune on each), the rune grants the wearer extra strength during unarmed combat. Attacks made with the Brawling specialty cause damage as listed in the table below. If the Thuul loses one of the gloves/bracelets/rings, the effect is unusable because both runes must be worn. This rune is always active but must still have the requisite number of Divinity Points linked to it. If the Thuul has an exceptional character trait for Strength, the damage modifier from the trait is also added to or subtracted from the damage.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-thuuldom-hammer-fists:hammer-fists:0#poings-d-acier",
+            "sourceId": "holy-thuuldom-hammer-fists:hammer-fists:0",
+            "rules": {
+              "unarmedDamage": [
+                "1d6",
+                "1d6 + 2",
+                "1d10 + 2",
+                "1d10 + 2",
+                "1d10 + 2"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

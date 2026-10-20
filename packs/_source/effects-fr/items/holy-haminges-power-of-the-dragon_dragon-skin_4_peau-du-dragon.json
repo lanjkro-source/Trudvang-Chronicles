@@ -1,0 +1,63 @@
+{
+  "_id": "cHt1OE9EaGbHcIdJ",
+  "_key": "!items!cHt1OE9EaGbHcIdJ",
+  "name": "Peau du dragon",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.\nLa Peau du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +4.\n• Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+    "summary": "Peau du dragon",
+    "source": {
+      "book": "Livre des règles",
+      "page": 279
+    }
+  },
+  "effects": [
+    {
+      "_id": "1Rk4e7z5A6B7C8D9",
+      "_key": "!items.effects!cHt1OE9EaGbHcIdJ.1Rk4e7z5A6B7C8D9",
+      "name": "Peau du dragon",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme à l’occasion, et une peau qui devient sombre et se couvre d’écailles.\nLa Peau du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur ne subit que la moitié des dégâts infligés par les flammes magiques (comme le souffle du logiwurm).\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +4.\n• Le conjurateur inflige 2 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "4",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+            "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+            "rules": {
+              "damage": {
+                "value": 2,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

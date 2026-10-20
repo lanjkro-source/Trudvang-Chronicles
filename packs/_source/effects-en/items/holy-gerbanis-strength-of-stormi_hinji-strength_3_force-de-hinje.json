@@ -1,0 +1,52 @@
+{
+  "_id": "5EfolKeKfLgMhNiO",
+  "_key": "!items!5EfolKeKfLgMhNiO",
+  "name": "Hinji Strength",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
+    "summary": "Hinji Strength",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "eq0aOsWrXsYtZu0v",
+      "_key": "!items.effects!5EfolKeKfLgMhNiO.eq0aOsWrXsYtZu0v",
+      "name": "Hinji Strength",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the d imwalker or someone of their choosing) receives the exceptional characteristic of Strength +6 for the ability’s duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:hinji-strength:3#force-de-hinje",
+            "sourceId": "holy-gerbanis-strength-of-stormi:hinji-strength:3",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

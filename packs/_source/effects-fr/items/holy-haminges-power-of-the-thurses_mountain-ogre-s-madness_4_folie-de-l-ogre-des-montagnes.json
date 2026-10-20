@@ -1,0 +1,64 @@
+{
+  "_id": "alxgNQkQlRmSnToU",
+  "_key": "!items!alxgNQkQlRmSnToU",
+  "name": "Folie de l’ogre des montagnes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFolie de l’ogre des montagnes confère les traits suivants :\n• +6 points de santé (les dégâts affectent ces points de santé en priorité)\n• +3 aux dégâts des armes de corps à corps ou de lancer\n• +1 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+    "summary": "Folie de l’ogre des montagnes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 276
+    }
+  },
+  "effects": [
+    {
+      "_id": "jmLaiw1w2x3y4z5A",
+      "_key": "!items.effects!alxgNQkQlRmSnToU.jmLaiw1w2x3y4z5A",
+      "name": "Folie de l’ogre des montagnes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nFolie de l’ogre des montagnes confère les traits suivants :\n• +6 points de santé (les dégâts affectent ces points de santé en priorité)\n• +3 aux dégâts des armes de corps à corps ou de lancer\n• +1 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+            "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+            "rules": {
+              "temporaryHP": 6,
+              "damage": {
+                "value": 3,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

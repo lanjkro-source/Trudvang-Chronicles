@@ -1,0 +1,52 @@
+{
+  "_id": "YJ8QVqWrXsYtZu0v",
+  "_key": "!items!YJ8QVqWrXsYtZu0v",
+  "name": "Force du troll",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+    "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+    "summary": "Force du troll",
+    "source": {
+      "book": "Livre des règles",
+      "page": 275
+    }
+  },
+  "effects": [
+    {
+      "_id": "zcXLe1tZu0v1w2x3",
+      "_key": "!items.effects!YJ8QVqWrXsYtZu0v.zcXLe1tZu0v1w2x3",
+      "name": "Force du troll",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’esprit du hrimtursir confère au conjurateur la force d’un troll. L’arpenteur des brumes gagne un trait exceptionnel de +4 en Force jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+            "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 4
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

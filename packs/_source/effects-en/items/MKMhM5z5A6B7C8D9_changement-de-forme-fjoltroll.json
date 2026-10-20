@@ -1,0 +1,44 @@
+{
+  "_id": "oZcsibD8D9EaGbHc",
+  "_key": "!items!oZcsibD8D9EaGbHc",
+  "name": "Change Shape (fjol troll)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+    "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+    "summary": "Change Shape (fjol troll)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 148
+    }
+  },
+  "effects": [
+    {
+      "_id": "BtxzzVmSnToUpVqW",
+      "_key": "!items.effects!oZcsibD8D9EaGbHc.BtxzzVmSnToUpVqW",
+      "name": "Change Shape (fjol troll)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Whenever it wants to, a fjol troll can change its shape to largely anything to remain unseen to passersby and wanderers.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "MKMhM5z5A6B7C8D9#changement-de-forme-fjoltroll",
+            "sourceId": "MKMhM5z5A6B7C8D9",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

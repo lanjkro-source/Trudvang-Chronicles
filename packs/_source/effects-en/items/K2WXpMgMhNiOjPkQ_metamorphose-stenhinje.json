@@ -1,0 +1,44 @@
+{
+  "_id": "X6asH4w2x3y4z5A6",
+  "_key": "!items!X6asH4w2x3y4z5A6",
+  "name": "Metamorph (stonehinje)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+    "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+    "summary": "Metamorph (stonehinje)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 99
+    }
+  },
+  "effects": [
+    {
+      "_id": "QpLgYWqWrXsYtZu0",
+      "_key": "!items.effects!X6asH4w2x3y4z5A6.QpLgYWqWrXsYtZu0",
+      "name": "Metamorph (stonehinje)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Depending on its assigned task, the stonehinje can transform into a simple object such as a chest, door, wall, floor, and the like. Its bodily mass will make up the material of the object, and it is up to the game master to decide what conditions will cause the metamorphed stonehinje to attack. Often it attacks when someone uses violence against it or when a predetermined enemy comes nearby.</p><p>Normally one cannot detect that the object is in fact a living creature. To detect this, an observer needs to weave the correct type of vitner around the transformed stonehinje.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+            "sourceId": "K2WXpMgMhNiOjPkQ",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "_id": "FoQxVsXsYtZu0v1w",
+  "_key": "!items!FoQxVsXsYtZu0v1w",
+  "name": "Esprit de la bête — Cerf",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
+    "description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+    "summary": "Esprit de la bête",
+    "source": {
+      "book": "Livre des règles",
+      "page": 295
+    }
+  },
+  "effects": [
+    {
+      "_id": "WB3iKOhNiOjPkQlR",
+      "_key": "!items.effects!FoQxVsXsYtZu0v1w.WB3iKOhNiOjPkQlR",
+      "name": "Esprit de la bête — Cerf",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’ihana peut devenir un reflet de l’animal de son choix, ce qui lui confère certains des traits physiques et de personnalité de l’animal en question. L’elfe commence à adopter la forme de l’animal par quelques petits changements physiques. Les autres traits de l’elfe ne sont jamais dégradés par cette transformation. Les animaux de la même espèce perçoivent l’elfe comme un ami jusqu’à expiration de ce pouvoir et ils ne l’attaqueront sous aucun prétexte. C’est au maître de jeu de déterminer les traits que reçoit l’elfe.\nVoici quelques exemples correspondant à différents animaux :\n• Lièvre : +4 en Dextérité ; mouvement x1,5 ; +3 dans la discipline Discrétion\n• Corbeau : vision nocturne ; voit tout ce qui est invisible ; son bec est une arme naturelle infligeant 1d10 (JO 10) points de dégâts\n• Ours : +4 en Force ; valeur de protection naturelle 2 ; ses griffes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts\n• Renard : +4 en Intelligence ; mouvement x1,5 ; +3 dans la discipline Larcin\n• Cerf : +4 en Constitution ; mouvement x1,5 ; ses cornes sont des armes naturelles infligeant 1d10 (JO 10) points de dégâts",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-cerf",
+            "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
+            "rules": {
+              "suspendEquipment": false,
+              "traits": [
+                {
+                  "trait": "constitution",
+                  "method": "highest",
+                  "value": 4
+                }
+              ],
+              "movement": [
+                {
+                  "mode": "land",
+                  "method": "multiply",
+                  "value": 1.5
+                }
+              ],
+              "attacks": [
+                {
+                  "damage": "1d10",
+                  "openRoll": 10,
+                  "maxActions": 0
+                }
+              ],
+              "senseCount": 1,
+              "vision": "lightAmplification"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

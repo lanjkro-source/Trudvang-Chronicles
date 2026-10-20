@@ -1,0 +1,64 @@
+{
+  "_id": "pOVdrToUpVqWrXsY",
+  "_key": "!items!pOVdrToUpVqWrXsY",
+  "name": "Âme du dragon",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+    "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.\nL’Âme du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +6\n• Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+    "summary": "Âme du dragon",
+    "source": {
+      "book": "Livre des règles",
+      "page": 279
+    }
+  },
+  "effects": [
+    {
+      "_id": "MYPjjvWrXsYtZu0v",
+      "_key": "!items.effects!pOVdrToUpVqWrXsY.MYPjjvWrXsYtZu0v",
+      "name": "Âme du dragon",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur est envahi par la puissance du logiwurm, qui se manifeste par un souffle ardent qui s’enflamme souvent, et une peau qui devient très sombre et se couvre d’écailles.\nL’Âme du dragon confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur n’est pas blessé par les flammes magiques (comme le souffle du logiwurm)\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +6\n• Le conjurateur inflige 4 points de dégâts supplémentaires avec toutes les armes de corps à corps et les armes de jet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "6",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+            "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
+            "rules": {
+              "damage": {
+                "value": 4,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques",
+                "flammes magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

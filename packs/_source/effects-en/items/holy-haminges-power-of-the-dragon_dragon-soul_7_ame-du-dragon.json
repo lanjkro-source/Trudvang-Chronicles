@@ -1,0 +1,64 @@
+{
+  "_id": "pOVdrToUpVqWrXsY",
+  "_key": "!items!pOVdrToUpVqWrXsY",
+  "name": "Dragon Soul",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that often ignites, and skin that significantly darkens and grows scaly. ✦ Dragon Soul<ul><li>Dragon Soul Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer is not harmed by magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +6. ✦ The spirit conjurer deals +4 extra damage with all melee weapons and throwing weapons.</p>",
+    "summary": "Dragon Soul",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "MYPjjvWrXsYtZu0v",
+      "_key": "!items.effects!pOVdrToUpVqWrXsY.MYPjjvWrXsYtZu0v",
+      "name": "Dragon Soul",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that often ignites, and skin that significantly darkens and grows scaly. ✦ Dragon Soul<ul><li>Dragon Soul Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>Bonuses: ✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer is not harmed by magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +6. ✦ The spirit conjurer deals +4 extra damage with all melee weapons and throwing weapons.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "6",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:dragon-soul:7#ame-du-dragon",
+            "sourceId": "holy-haminges-power-of-the-dragon:dragon-soul:7",
+            "rules": {
+              "damage": {
+                "value": 4,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques",
+                "flammes magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

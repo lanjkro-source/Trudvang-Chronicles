@@ -6,6 +6,10 @@ const BaseItem = foundry.documents.Item;
 
 export class TrudvangItem extends BaseItem {
   async roll() {
+    if (this.type === "effect") {
+      const {applyTransformation} = await import("../transformations.mjs");
+      return applyTransformation(this.actor ?? globalThis.canvas?.tokens?.controlled?.find(t=>t.actor?.isOwner)?.actor ?? game.user.character, this.system.catalogId, {source:this});
+    }
     if (this.actor) return this.actor.rollItem(this);
     return this.toChat();
   }

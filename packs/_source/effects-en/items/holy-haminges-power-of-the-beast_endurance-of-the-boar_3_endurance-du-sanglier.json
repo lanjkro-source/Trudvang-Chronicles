@@ -1,0 +1,52 @@
+{
+  "_id": "Svrr6D7C8D9EaGbH",
+  "_key": "!items!Svrr6D7C8D9EaGbH",
+  "name": "Endurance of the Boar",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+    "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +6 for the duration of the ability.",
+    "summary": "Endurance of the Boar",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 212
+    }
+  },
+  "effects": [
+    {
+      "_id": "BafDRVmSnToUpVqW",
+      "_key": "!items.effects!Svrr6D7C8D9EaGbH.BafDRVmSnToUpVqW",
+      "name": "Endurance of the Boar",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit gives power to the dimwalker that manifests in a greater chance of withstanding opposition or enduring injury. The spirit conjurer receives the exceptional characteristic of Constitution +6 for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+            "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "constitution",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

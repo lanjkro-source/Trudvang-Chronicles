@@ -1,0 +1,52 @@
+{
+  "_id": "M1F4dWpVqWrXsYtZ",
+  "_key": "!items!M1F4dWpVqWrXsYtZ",
+  "name": "Force du jotun",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+    "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
+    "summary": "Force du jotun",
+    "source": {
+      "book": "Livre des règles",
+      "page": 219
+    }
+  },
+  "effects": [
+    {
+      "_id": "tfwES0v1w2x3y4z5",
+      "_key": "!items.effects!M1F4dWpVqWrXsYtZ.tfwES0v1w2x3y4z5",
+      "name": "Force du jotun",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Storme répond à la prière du stormikjalt et confère au personnage choisi une force phénoménale. Le bénéficiaire (qui peut être le stormikjalt lui-même ou la personne de son choix) reçoit un trait exceptionnel de +8 en Force pour la durée du pouvoir. Tous les autres alliés (y compris le stormikjalt, s’il n’est pas le bénéficiaire du pouvoir) situés à portée du stormikjalt reçoivent également le trait exceptionnel de +4 en Force pour la durée du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 8
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

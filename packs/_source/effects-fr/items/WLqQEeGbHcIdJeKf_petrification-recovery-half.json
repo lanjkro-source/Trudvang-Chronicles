@@ -1,0 +1,57 @@
+{
+  "_id": "aVO56YrXsYtZu0v1",
+  "_key": "!items!aVO56YrXsYtZu0v1",
+  "name": "Raideur après pétrification — moitié",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Pétrification (braskelwurm)",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 106
+    }
+  },
+  "effects": [
+    {
+      "_id": "36roPMdJeKfLgMhN",
+      "_key": "!items.effects!aVO56YrXsYtZu0v1.36roPMdJeKfLgMhN",
+      "name": "Raideur après pétrification — moitié",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "WLqQEeGbHcIdJeKf#petrification-recovery-half",
+            "sourceId": "WLqQEeGbHcIdJeKf",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.5
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.5
+              }
+            },
+            "related": [
+              "petrification-recovery-two-thirds"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

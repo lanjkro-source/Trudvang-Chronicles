@@ -1,0 +1,49 @@
+{
+  "_id": "JGQ5joPkQlRmSnTo",
+  "_key": "!items!JGQ5joPkQlRmSnTo",
+  "name": "Transformation corporelle",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "NNBuQnQlRmSnToUp#transformation-corporelle",
+    "description": "Le démon peut se transformer en une créature de son choix.",
+    "summary": "Transformation corporelle",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 40
+    }
+  },
+  "effects": [
+    {
+      "_id": "U2FW1iMhNiOjPkQl",
+      "_key": "!items.effects!JGQ5joPkQlRmSnTo.U2FW1iMhNiOjPkQl",
+      "name": "Transformation corporelle",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le démon peut se transformer en une créature de son choix.",
+      "transfer": false,
+      "system": {
+        "stackId": "NNBuQnQlRmSnToUp#transformation-corporelle",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "NNBuQnQlRmSnToUp#transformation-corporelle",
+            "sourceId": "NNBuQnQlRmSnToUp",
+            "rules": {
+              "chooseBestiary": true,
+              "formPolicy": "animal",
+              "preserveHP": false,
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

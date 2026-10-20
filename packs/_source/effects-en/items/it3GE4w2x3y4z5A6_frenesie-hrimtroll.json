@@ -1,0 +1,57 @@
+{
+  "_id": "rNENWoSnToUpVqWr",
+  "_key": "!items!rNENWoSnToUpVqWr",
+  "name": "Frenzy (hrim troll)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
+    "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+    "summary": "Frenzy (hrim troll)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 159
+    }
+  },
+  "effects": [
+    {
+      "_id": "ys89TJbHcIdJeKfL",
+      "_key": "!items.effects!rNENWoSnToUpVqWr.ys89TJbHcIdJeKfL",
+      "name": "Frenzy (hrim troll)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The normally leisurely hrim troll becomes a changed creature when it enters battle. For the first 1d6 action rounds, they fight with an amplified frenzy, gaining +2 on all their attacks, but at the same time having a modifier of -2 on all attempted parries. During these action rounds, the troll appears very threatening. It shouts incomprehensibly with its animalistic roar and makes wild gestures with its mighty tusks. The hrim troll does this in an attempt to intimidate their enemies so they are paralyzed or flee the scene.</p><p>Hrim trolls often enter battle with a great combat sword or big iron-laid clubs.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          },
+          {
+            "key": "system.modifiers.rolls.parry",
+            "type": "add",
+            "value": "-2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "it3GE4w2x3y4z5A6#frenesie-hrimtroll",
+            "sourceId": "it3GE4w2x3y4z5A6",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

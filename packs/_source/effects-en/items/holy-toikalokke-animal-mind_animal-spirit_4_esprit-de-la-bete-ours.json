@@ -1,0 +1,69 @@
+{
+  "_id": "qHTbPcE9EaGbHcId",
+  "_key": "!items!qHTbPcE9EaGbHcId",
+  "name": "Animal Spirit — Bear",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
+    "description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+    "summary": "Animal Spirit",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 237
+    }
+  },
+  "effects": [
+    {
+      "_id": "fHFSJ8D9EaGbHcId",
+      "_key": "!items.effects!qHTbPcE9EaGbHcId.fHFSJ8D9EaGbHcId",
+      "name": "Animal Spirit — Bear",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The Ihana can become a reflection of their chosen animal, granting the dimwalker some of the animal’s personality and traits. The elf begins to take on the shape of the animal through small physical changes. The elf’s other predominant traits are never made worse by this change. Animals of the same species will perceive the elf as a friend for the duration of the ability and will not attack them under any c ircumstances. The game master decides which traits the elf receives. Below are examples<ul><li>Animal Spirits:</li><li>Hare: Dexterity +4; movement x 1.5;</li></ul>from different animals. ✦ Animal Spirits: ✦ Hare: Dexterity +4; movement x 1.5; Shadowing discipline +3 ✦ Raven: Night vision; sees all invisible beings and things; beak as a natural weapon with 1d10 (OR 10) points of damage ✦ Bear: Strength +4; Natural P rotection Value 2; Claws as natural weapon with 1d10 (OR 10) points of damage ✦ Fox: Intelligence +4; Movement x 1.5; Thievery discipline +3 ✦ Stag: Constitution +4; Movement x 1.5; Horns as natural weapons with 1d10 (OR 10) points of damage</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-toikalokke-animal-mind:animal-spirit:4#esprit-de-la-bete-ours",
+            "sourceId": "holy-toikalokke-animal-mind:animal-spirit:4",
+            "rules": {
+              "suspendEquipment": false,
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "highest",
+                  "value": 4
+                }
+              ],
+              "attacks": [
+                {
+                  "damage": "1d10",
+                  "openRoll": 10,
+                  "maxActions": 0
+                }
+              ],
+              "senseCount": 1,
+              "vision": "lightAmplification"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "_id": "ewkxwJeKfLgMhNiO",
+  "_key": "!items!ewkxwJeKfLgMhNiO",
+  "name": "Force du tursir",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
+    "description": "L’esprit du hrimtursir confère toute sa force au conjurateur, qui gagne un trait exceptionnel de +8 en Force jusqu’à expiration du pouvoir.",
+    "summary": "Force du tursir",
+    "source": {
+      "book": "Livre des règles",
+      "page": 277
+    }
+  },
+  "effects": [
+    {
+      "_id": "rRdVb1tZu0v1w2x3",
+      "_key": "!items.effects!ewkxwJeKfLgMhNiO.rRdVb1tZu0v1w2x3",
+      "name": "Force du tursir",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’esprit du hrimtursir confère toute sa force au conjurateur, qui gagne un trait exceptionnel de +8 en Force jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:thurse-strength:7#force-du-tursir",
+            "sourceId": "holy-haminges-power-of-the-thurses:thurse-strength:7",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 8
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

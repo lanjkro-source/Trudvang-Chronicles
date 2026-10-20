@@ -1,0 +1,52 @@
+{
+  "_id": "YJ8QVqWrXsYtZu0v",
+  "_key": "!items!YJ8QVqWrXsYtZu0v",
+  "name": "Troll Strength",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+    "description": "The hrimthurse’s spirit bestows strength like that of a troll upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +4 for the duration of the ability.",
+    "summary": "Troll Strength",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "zcXLe1tZu0v1w2x3",
+      "_key": "!items.effects!YJ8QVqWrXsYtZu0v.zcXLe1tZu0v1w2x3",
+      "name": "Troll Strength",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The hrimthurse’s spirit bestows strength like that of a troll upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +4 for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:troll-strength:1#force-du-troll",
+            "sourceId": "holy-haminges-power-of-the-thurses:troll-strength:1",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 4
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

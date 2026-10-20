@@ -1,0 +1,49 @@
+{
+  "_id": "00RUvwYtZu0v1w2x",
+  "_key": "!items!00RUvwYtZu0v1w2x",
+  "name": "Change Self (logiwurm)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+    "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+    "summary": "Change Self (logiwurm)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 124
+    }
+  },
+  "effects": [
+    {
+      "_id": "7TTdQ0rXsYtZu0v1",
+      "_key": "!items.effects!00RUvwYtZu0v1w2x.7TTdQ0rXsYtZu0v1",
+      "name": "Change Self (logiwurm)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Over the years, the logiwurm has gained an ability that is based on the spell Change Creature, which allows it to transform into any creature it desires. It uses this power to infiltrate places and get close to people of importance. The transformation lasts for an unlimited duration of time, and the dragon can return to its original form whenever it chooses. The ability is, however, limited to one use per year. Since the dragon does not keep any physical attributes of its original shape, it is vulnerable while in another form and uses this power only in rare situations.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+            "sourceId": "MLPIuC5A6B7C8D9E",
+            "rules": {
+              "chooseBestiary": true,
+              "formPolicy": "physical",
+              "preserveHP": true,
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

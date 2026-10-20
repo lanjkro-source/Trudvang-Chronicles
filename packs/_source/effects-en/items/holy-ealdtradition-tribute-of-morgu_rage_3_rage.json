@@ -1,0 +1,68 @@
+{
+  "_id": "E6v5BjMhNiOjPkQl",
+  "_key": "!items!E6v5BjMhNiOjPkQl",
+  "name": "Boiling Blood",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
+    "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+    "summary": "Boiling Blood",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 187
+    }
+  },
+  "effects": [
+    {
+      "_id": "l8S3nnQlRmSnToUp",
+      "_key": "!items.effects!E6v5BjMhNiOjPkQl.l8S3nnQlRmSnToUp",
+      "name": "Boiling Blood",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>Through this ability, Morgu bestows more life essence upon the Bruid. The Bruid will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the Bruid has received more damage than they have in Body Points without the aid<ul><li>Through this ability , Morgu bestows more life essence upon the Bruid.</li></ul>of this ability, there is a strong risk that they will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-tribute-of-morgu:rage:3#rage",
+            "sourceId": "holy-ealdtradition-tribute-of-morgu:rage:3",
+            "rules": {
+              "temporaryHP": 5,
+              "damage": {
+                "value": 2,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true,
+              "fearFactor": "1d10",
+              "size": 1
+            },
+            "related": [
+              "frenzy-exhaustion"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

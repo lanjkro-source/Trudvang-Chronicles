@@ -1,0 +1,52 @@
+{
+  "_id": "vHNRf7y4z5A6B7C8",
+  "_key": "!items!vHNRf7y4z5A6B7C8",
+  "name": "Bold",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-power-of-enken:bold:2#temerite",
+    "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
+    "summary": "Bold",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "CLIZ4lOjPkQlRmSn",
+      "_key": "!items.effects!vHNRf7y4z5A6B7C8.CLIZ4lOjPkQlRmSn",
+      "name": "Bold",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The ancestors hear the Bruid’s desire, and bestow courage that fills the target (the Bruid or another person they choose) with the strength necessary to resist fear and mental disturbances. The target receives the exceptional character trait Psyche +6 for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-power-of-enken:bold:2#temerite",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-power-of-enken:bold:2#temerite",
+            "sourceId": "holy-gerbanis-power-of-enken:bold:2",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "psyche",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

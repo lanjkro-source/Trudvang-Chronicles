@@ -1,0 +1,70 @@
+{
+  "_id": "pBW8pToUpVqWrXsY",
+  "_key": "!items!pBW8pToUpVqWrXsY",
+  "name": "Aspect du serpent géant",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+    "description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expiration de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits. Cela dit, le conjurateur peut voir certaines de ses capacités limitées par sa nouvelle forme (par exemple, un serpent géant ne peut pas manier d’armes en combat ni invoquer des pouvoirs divins au-delà de ceux mentionnés ci-dessous).\nL’Aspect du serpent géant confère les traits suivants :\n• Aussi long que la hauteur d’un sanctuaire (Taille 4), et d’un poids pouvant aller de 500 kg à 8 tonnes\n• +20 points de santé (ces points sont utilisés avant les points de santé naturels du conjurateur)\n• Valeur de protection naturelle de 2\n• Pouvoir de Regard paralysant (Cf. le pouvoir de niveau 2 page précédente)\n• Pouvoir de Constriction (Cf. le pouvoir de niveau 1 page précédente)\n• Trait de personnage de +6 en Force, qui confère un bonus de +6 aux dégâts\n• Arme naturelle : morsure, 2d10 (JO 9-10) points de dégâts\n• Arme naturelle : écrasement (uniquement après une utilisation réussie de la Constriction), 2d10 points de dégâts (contre lesquelles l’armure ne protège pas)\n• Facteur de peur : 1d5",
+    "summary": "Aspect du serpent géant",
+    "source": {
+      "book": "Livre des règles",
+      "page": 280
+    }
+  },
+  "effects": [
+    {
+      "_id": "4mFPb3x3y4z5A6B7",
+      "_key": "!items.effects!pBW8pToUpVqWrXsY.4mFPb3x3y4z5A6B7",
+      "name": "Aspect du serpent géant",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur se transforme (avec tout son équipement) en serpent géant, une forme qu’il conserve jusqu’à expiration de ce pouvoir, qui donne au conjurateur un certain nombre d’avantages qui viennent s’ajouter à ses propres traits. Cela dit, le conjurateur peut voir certaines de ses capacités limitées par sa nouvelle forme (par exemple, un serpent géant ne peut pas manier d’armes en combat ni invoquer des pouvoirs divins au-delà de ceux mentionnés ci-dessous).\nL’Aspect du serpent géant confère les traits suivants :\n• Aussi long que la hauteur d’un sanctuaire (Taille 4), et d’un poids pouvant aller de 500 kg à 8 tonnes\n• +20 points de santé (ces points sont utilisés avant les points de santé naturels du conjurateur)\n• Valeur de protection naturelle de 2\n• Pouvoir de Regard paralysant (Cf. le pouvoir de niveau 2 page précédente)\n• Pouvoir de Constriction (Cf. le pouvoir de niveau 1 page précédente)\n• Trait de personnage de +6 en Force, qui confère un bonus de +6 aux dégâts\n• Arme naturelle : morsure, 2d10 (JO 9-10) points de dégâts\n• Arme naturelle : écrasement (uniquement après une utilisation réussie de la Constriction), 2d10 points de dégâts (contre lesquelles l’armure ne protège pas)\n• Facteur de peur : 1d5",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+            "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+            "rules": {
+              "size": 4,
+              "temporaryHP": 20,
+              "suspendEquipment": true,
+              "attacks": [
+                {
+                  "damage": "2d10",
+                  "openRoll": 9,
+                  "maxActions": 0
+                },
+                {
+                  "damage": "2d10",
+                  "openRoll": 0,
+                  "maxActions": 0
+                }
+              ],
+              "capabilityNames": [
+                "Regard paralysant"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

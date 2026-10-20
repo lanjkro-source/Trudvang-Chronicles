@@ -1,0 +1,48 @@
+{
+  "_id": "Hj0I3vXsYtZu0v1w",
+  "_key": "!items!Hj0I3vXsYtZu0v1w",
+  "name": "Lindwurm form",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "oRxJE6A6B7C8D9Ea#forme-de-lindwurm",
+    "description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+    "summary": "Regenerating Heart (lindwurm)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 120
+    }
+  },
+  "effects": [
+    {
+      "_id": "cWcdKwYtZu0v1w2x",
+      "_key": "!items.effects!Hj0I3vXsYtZu0v1w.cWcdKwYtZu0v1w2x",
+      "name": "Lindwurm form",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The regenerating heart of the lindwurm is why people hunt this massive, snakelike creature. When a lindwurm dies, a new one is created from the heart, which takes 1d10 weeks. However, if someone eats a lindwurm’s heart, they heal all wounds, they become free from all diseases, body parts that were unusable become fully functional, and body parts that were removed grow back. Depending on the severity of the damage, these effects can take different amounts of time, and it is up to the game master to determine how much time should pass before damage is healed.</p><p>However, eating a lindwurm heart is risky. If someone eats the heart, entire or in part, they must make a situation roll with a situation value of 16 (Constitution modifiers apply). On a failure, they fall into a deep and magical sleep and will be transformed into a lindwurm within 1d10 weeks. Such a lindwurm is transformed back into its previous form when it dies.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "oRxJE6A6B7C8D9Ea#forme-de-lindwurm",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "oRxJE6A6B7C8D9Ea#forme-de-lindwurm",
+            "sourceId": "oRxJE6A6B7C8D9Ea",
+            "rules": {
+              "formName": "Lindwurm",
+              "formPolicy": "animal",
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

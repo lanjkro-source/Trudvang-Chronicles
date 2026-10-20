@@ -1,0 +1,65 @@
+{
+  "_id": "2xBFyFaGbHcIdJeK",
+  "_key": "!items!2xBFyFaGbHcIdJeK",
+  "name": "Rage du destructeur",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+    "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nRage du destructeur confère les traits suivants :\n• Le conjurateur reçoit un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (les dégâts affectent ces points de santé en priorité)\n• +5 aux dégâts des armes de corps à corps ou de lancer\n• +2 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+    "summary": "Rage du destructeur",
+    "source": {
+      "book": "Livre des règles",
+      "page": 277
+    }
+  },
+  "effects": [
+    {
+      "_id": "7QZRPPkQlRmSnToU",
+      "_key": "!items.effects!2xBFyFaGbHcIdJeK.7QZRPPkQlRmSnToU",
+      "name": "Rage du destructeur",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur entre dans une rage folle qui fait pousser des poils sur ses bras et jaillir des cornes incurvées de son front.\nRage du destructeur confère les traits suivants :\n• Le conjurateur reçoit un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (les dégâts affectent ces points de santé en priorité)\n• +5 aux dégâts des armes de corps à corps ou de lancer\n• +2 à la VC de toutes les attaques\n• Le conjurateur ne peut ni parer, ni esquiver les attaques\n• Le conjurateur ignore tous les effets de la peur",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6#rage-du-destructeur",
+            "sourceId": "holy-haminges-power-of-the-thurses:the-destroyer-s-rage:6",
+            "rules": {
+              "temporaryHP": 10,
+              "damage": {
+                "value": 5,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true,
+              "fearFactor": "1d10 (JO 10)"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

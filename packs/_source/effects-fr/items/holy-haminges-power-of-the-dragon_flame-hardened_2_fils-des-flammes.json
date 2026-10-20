@@ -1,0 +1,63 @@
+{
+  "_id": "0X11LMfLgMhNiOjP",
+  "_key": "!items!0X11LMfLgMhNiOjP",
+  "name": "Fils des flammes",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+    "description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.\nFils des flammes confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +2.\n• Le conjurateur inflige 1 point de dégâts supplémentaire avec toutes les armes de corps à corps et les armes de jet.",
+    "summary": "Fils des flammes",
+    "source": {
+      "book": "Livre des règles",
+      "page": 277
+    }
+  },
+  "effects": [
+    {
+      "_id": "HDq5V4x3y4z5A6B7",
+      "_key": "!items.effects!0X11LMfLgMhNiOjP.HDq5V4x3y4z5A6B7",
+      "name": "Fils des flammes",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur est investi du pouvoir du logiwurm, qui se manifeste par un souffle ardent et une peau qui semble s’assombrir légèrement et devenir quelque peu écailleuse.\nFils des flammes confère les traits suivants :\n• Le conjurateur peut utiliser son souffle pour mettre le feu au bois et aux branches sèches.\n• Le conjurateur n’est pas blessé par les flammes non magiques.\n• Le conjurateur bénéficie d’une valeur de protection naturelle de +2.\n• Le conjurateur inflige 1 point de dégâts supplémentaire avec toutes les armes de corps à corps et les armes de jet.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:flame-hardened:2#fils-des-flammes",
+            "sourceId": "holy-haminges-power-of-the-dragon:flame-hardened:2",
+            "rules": {
+              "damage": {
+                "value": 1,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

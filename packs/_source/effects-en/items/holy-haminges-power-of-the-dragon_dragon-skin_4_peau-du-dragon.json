@@ -1,0 +1,63 @@
+{
+  "_id": "cHt1OE9EaGbHcIdJ",
+  "_key": "!items!cHt1OE9EaGbHcIdJ",
+  "name": "Dragon Skin",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+    "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
+    "summary": "Dragon Skin",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "1Rk4e7z5A6B7C8D9",
+      "_key": "!items.effects!cHt1OE9EaGbHcIdJ.1Rk4e7z5A6B7C8D9",
+      "name": "Dragon Skin",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer is filled with the power of the logirwurm, which manifests through burning breath that occasionally ignites, and skin that darkens and grows scaly. ✦ Dragon Skin Bonuses:<ul><li>Dragon Skin Bonuses:</li><li>The spirit conjurer can ignite wood</li></ul>✦ The spirit conjurer can ignite wood and dry branches with their breath. ✦ The spirit conjurer is not harmed by non-magical fire. ✦ The spirit conjurer receives only half damage from magical fire (such as the logirwurm’s breath weapon). ✦ The spirit conjurer gains a natural Protection Value of +4. ✦ The spirit conjurer deals +2 extra damage with all melee weapons and throwing weapons.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "4",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:dragon-skin:4#peau-du-dragon",
+            "sourceId": "holy-haminges-power-of-the-dragon:dragon-skin:4",
+            "rules": {
+              "damage": {
+                "value": 2,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "immunities": [
+                "flammes non magiques"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

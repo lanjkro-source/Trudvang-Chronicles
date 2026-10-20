@@ -1,0 +1,70 @@
+{
+  "_id": "pBW8pToUpVqWrXsY",
+  "_key": "!items!pBW8pToUpVqWrXsY",
+  "name": "Giant Snakeshape",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+    "description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
+    "summary": "Giant Snakeshape",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "4mFPb3x3y4z5A6B7",
+      "_key": "!items.effects!pBW8pToUpVqWrXsY.4mFPb3x3y4z5A6B7",
+      "name": "Giant Snakeshape",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer (and their gear) transforms into a giant snake for the duration of the ability. Giant Snakeshape has certain advantages that the spirit conjurer receives in addition to their own traits. However, the conjurer’s own abilities might be limited by the new form (for example, a giant snake cannot use weapons in combat or invoke divine feats beyond those permitted below). ✦ Giant<ul><li>Giant Snakeshape’s Traits:</li><li>As long as a shrine is high (x4) and</li></ul>Snakeshape’s Traits: ✦ As long as a shrine is high (x4) and weighs anywhere from half a ton to 8 tons ✦ +20 Body Points (these points are used first before the spirit conjurer’s natural Body Points are affected) ✦ Natural Protection Value of 2 ✦ Paralyzing Gaze ability (see level 2) ✦ Constriction ability (see level 1) ✦ Character trait Strength +6, which adds +6 to damage ✦ Natural weapon: bite does 2d10 (OR 9-10) points of damage ✦ Natural weapon: squeezing (only after successful Constriction) does 2d10 points of damage (armor does not protect) ✦ Fear factor 1d5</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.protection",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:giant-snakeshape:8#aspect-du-serpent-geant",
+            "sourceId": "holy-haminges-power-of-the-dragon:giant-snakeshape:8",
+            "rules": {
+              "size": 4,
+              "temporaryHP": 20,
+              "suspendEquipment": true,
+              "attacks": [
+                {
+                  "damage": "2d10",
+                  "openRoll": 9,
+                  "maxActions": 0
+                },
+                {
+                  "damage": "2d10",
+                  "openRoll": 0,
+                  "maxActions": 0
+                }
+              ],
+              "capabilityNames": [
+                "Regard paralysant"
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

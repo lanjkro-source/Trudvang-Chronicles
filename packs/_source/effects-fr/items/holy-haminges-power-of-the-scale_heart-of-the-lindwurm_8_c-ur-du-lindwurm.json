@@ -1,0 +1,44 @@
+{
+  "_id": "4BKYWWqWrXsYtZu0",
+  "_key": "!items!4BKYWWqWrXsYtZu0",
+  "name": "Cœur du lindwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
+    "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
+    "summary": "Cœur du lindwurm",
+    "source": {
+      "book": "Livre des règles",
+      "page": 271
+    }
+  },
+  "effects": [
+    {
+      "_id": "zgvnOeIdJeKfLgMh",
+      "_key": "!items.effects!4BKYWWqWrXsYtZu0.zgvnOeIdJeKfLgMh",
+      "name": "Cœur du lindwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur invoque la puissance du lindwurm, et l’esprit lié transforme le cœur du conjurateur en cœur de lindwurm jusqu’à expiration du pouvoir. Si le conjurateur meurt tandis qu’il possède un cœur de lindwurm, il ressuscite, complètement guéri, au bout de 1d6 jours. Ce pouvoir ne peut servir qu’une seule fois, après quoi la relique se brise et devient inutilisable. Pour pouvoir recourir de nouveau à ce pouvoir, le conjurateur doit créer une nouvelle relique.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8#c-ur-du-lindwurm",
+            "sourceId": "holy-haminges-power-of-the-scale:heart-of-the-lindwurm:8",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

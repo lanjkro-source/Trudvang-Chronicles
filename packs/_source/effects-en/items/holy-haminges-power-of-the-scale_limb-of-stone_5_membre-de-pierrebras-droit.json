@@ -1,0 +1,44 @@
+{
+  "_id": "HYPCa0sYtZu0v1w2",
+  "_key": "!items!HYPCa0sYtZu0v1w2",
+  "name": "Blood of the Lindwurm — Right arm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+    "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+    "summary": "Blood of the Lindwurm",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 218
+    }
+  },
+  "effects": [
+    {
+      "_id": "i4VPWcGbHcIdJeKf",
+      "_key": "!items.effects!HYPCa0sYtZu0v1w2.i4VPWcGbHcIdJeKf",
+      "name": "Blood of the Lindwurm — Right arm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer calls on the power of the lindwurm and gains the ability to heal 1 Body Point per action round for the duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:limb-of-stone:5#membre-de-pierrebras-droit",
+            "sourceId": "holy-haminges-power-of-the-scale:limb-of-stone:5",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -570,5 +570,6 @@ export const ITEM_DATA_MODELS = {
   tablet: TabletData,
   divineFeat: DivineFeatData,
   ability: AbilityData,
-  creatureAbility: CreatureAbilityData
+  creatureAbility: CreatureAbilityData,
+  effect: CreatureAbilityData
 };

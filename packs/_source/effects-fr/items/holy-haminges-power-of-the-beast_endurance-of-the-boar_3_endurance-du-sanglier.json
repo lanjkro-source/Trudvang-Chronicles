@@ -1,0 +1,52 @@
+{
+  "_id": "Svrr6D7C8D9EaGbH",
+  "_key": "!items!Svrr6D7C8D9EaGbH",
+  "name": "Endurance du sanglier",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+    "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +6 en Constitution jusqu’à expiration du pouvoir.",
+    "summary": "Endurance du sanglier",
+    "source": {
+      "book": "Livre des règles",
+      "page": 269
+    }
+  },
+  "effects": [
+    {
+      "_id": "BafDRVmSnToUpVqW",
+      "_key": "!items.effects!Svrr6D7C8D9EaGbH.BafDRVmSnToUpVqW",
+      "name": "Endurance du sanglier",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "L’esprit donne à l’arpenteur des brumes un pouvoir qui se manifeste par une meilleure chance de résister à l’opposition et d’encaisser les blessures. Le conjurateur reçoit un trait exceptionnel de +6 en Constitution jusqu’à expiration du pouvoir.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3#endurance-du-sanglier",
+            "sourceId": "holy-haminges-power-of-the-beast:endurance-of-the-boar:3",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "constitution",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

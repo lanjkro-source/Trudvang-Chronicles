@@ -1,0 +1,55 @@
+{
+  "_id": "OqKgM5w2x3y4z5A6",
+  "_key": "!items!OqKgM5w2x3y4z5A6",
+  "name": "Stiffness after petrification — two thirds",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
+    "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+    "summary": "Petrify (braskelwurm)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 106
+    }
+  },
+  "effects": [
+    {
+      "_id": "ptYzISnToUpVqWrX",
+      "_key": "!items.effects!OqKgM5w2x3y4z5A6.ptYzISnToUpVqWrX",
+      "name": "Stiffness after petrification — two thirds",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "WLqQEeGbHcIdJeKf#petrification-recovery-two-thirds",
+            "sourceId": "WLqQEeGbHcIdJeKf",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.6666666666666666
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.6666666666666666
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

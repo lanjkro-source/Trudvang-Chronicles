@@ -10,7 +10,8 @@ const sourceId = doc => doc?.system?.catalogId || CREATURE_ABILITY_REFERENCES[do
 export function transformationKeys(document){
  const meta=metadata(document);
  if(meta)return (meta.related??[]).map(id=>`${meta.sourceId}#${id}`).filter(key=>TRANSFORMATION_TEMPLATES[key]);
- return TRANSFORMATIONS_BY_SOURCE[sourceId(document)]??[];
+ const id=sourceId(document);
+ return TRANSFORMATION_TEMPLATES[id]?[id]:TRANSFORMATIONS_BY_SOURCE[id]??[];
 }
 export function transformationLinks(document,counts=[]){
  return transformationKeys(document).map(key=>`<button type="button" draggable="true" class="trudvang-transformation-link" data-transformation-key="${escapeHtml(key)}" data-transformation-counts="${escapeHtml(JSON.stringify(counts))}" data-transformation-source="${escapeHtml(document.uuid||"")}" title="${escapeHtml(local("DragHint"))}"><i class="fas fa-person-rays" aria-hidden="true"></i> ${escapeHtml(text(key,"Name"))}</button>`).join(" ");
@@ -139,6 +140,13 @@ export function registerTransformationHooks(){
   }catch(error){console.error("Trudvang transformation",error);ui.notifications.error(error.message);}
  },true);
  Hooks.on("dropCanvasData",(canvas,data)=>{
+  const referencePack=/^Compendium\.trudvang-chronicles\.effects-(?:fr|en)\./.test(data.uuid??"");
+  const worldReference=data.type==="Item"&&data.uuid?.startsWith("Item.")&&game.items?.get(data.uuid.split(".")[1])?.type==="effect";
+  if(referencePack||worldReference){
+   const token=canvas.tokens.placeables.find(t=>data.x>=t.bounds.x&&data.x<=t.bounds.right&&data.y>=t.bounds.y&&data.y<=t.bounds.bottom);
+   if(token)void (async()=>{const doc=await foundry.utils.fromUuid(data.uuid);const key=doc?.type==="effect"&&doc.documentName==="Item"?doc.system.catalogId:metadata(doc)?.key;if(key)await applyTransformation(token.actor,key,{source:doc});})().catch(e=>ui.notifications.error(e.message));
+   return false;
+  }
   if(data.type!=="TrudvangTransformation")return;
   const token=canvas.tokens.placeables.find(t=>data.x>=t.bounds.x&&data.x<=t.bounds.right&&data.y>=t.bounds.y&&data.y<=t.bounds.bottom);
   if(token)void (async()=>applyTransformation(token.actor,data.key,{source:data.sourceUuid?await foundry.utils.fromUuid(data.sourceUuid):null,counts:data.counts??[]}))().catch(e=>ui.notifications.error(e.message));

@@ -1,0 +1,57 @@
+{
+  "_id": "j8n6rZsYtZu0v1w2",
+  "_key": "!items!j8n6rZsYtZu0v1w2",
+  "name": "Mountain Ogre's Fury",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following:<ul><li>Mountain Ogre’s Fury grants the</li></ul>✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+    "summary": "Mountain Ogre's Fury",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "QNlsQOgMhNiOjPkQ",
+      "_key": "!items.effects!j8n6rZsYtZu0v1w2.QNlsQOgMhNiOjPkQ",
+      "name": "Mountain Ogre's Fury",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ Mountain Ogre’s Fury grants the following:<ul><li>Mountain Ogre’s Fury grants the</li></ul>✦ +3 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +1 in damage with melee weapons or throwing weapons ✦ Spirit conjurer cannot parry or avoid attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2#fureur-de-l-ogre-des-montagnes",
+            "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-fury:2",
+            "rules": {
+              "temporaryHP": 3,
+              "damage": {
+                "value": 1,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

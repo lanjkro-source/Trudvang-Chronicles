@@ -1,0 +1,52 @@
+{
+  "_id": "tKqbqtUpVqWrXsYt",
+  "_key": "!items!tKqbqtUpVqWrXsYt",
+  "name": "Strengthen — reversed",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
+    "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+    "summary": "Strengthen",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 96
+    }
+  },
+  "effects": [
+    {
+      "_id": "2oRT5VpVqWrXsYtZ",
+      "_key": "!items.effects!tKqbqtUpVqWrXsYt.2oRT5VpVqWrXsYtZ",
+      "name": "Strengthen — reversed",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "This spell increases the enchanted character’s muscles, which immediately grow both in size and power. The enchanted character’s strength increases, which leads to an increased<table><thead><tr><th>Rule details</th></tr></thead><tbody><tr><td>This spell increases the enchanted character’s muscles, which immediately grow both in size and power.</td></tr></tbody></table>damage modifier and an increased chance of success on any Situation rolls related to strength. Suddenly the enchanted can wield enormous trunks as if they were small branches, or throw boulders as if they were mere pebbles. The enchanted rises STRENGTHEN’S MODIFIERS/DAMAGE Strength Situation Power of Giants Strength of the Stonehinji Strength of the Trolls Mighty Strong Average Weak Feeble Powerless Soft Limp one step in the Strength character trait according to the following table, with a maximum of +8. The spell can also be woven for the reverse effect, causing a victim’s muscles to languish and atrophy. The victim’s strength immediately decreases, which leads to a reduced damage modifier and a reduced chance of success on Situation rolls related to strength. The enchanted character drops a step on the table above. The victim may resist the spell’s effect on a successful Situation roll with a Situation value of 6 (Constitution modifiers apply).",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-body-vitner:strengthen:8#vigueur-inverse",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-body-vitner:strengthen:8#vigueur-inverse",
+            "sourceId": "vitner-body-vitner:strengthen:8",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "degrees",
+                  "value": -1
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

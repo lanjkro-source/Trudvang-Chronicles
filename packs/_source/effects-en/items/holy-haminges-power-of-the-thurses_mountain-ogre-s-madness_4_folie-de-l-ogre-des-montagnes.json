@@ -1,0 +1,64 @@
+{
+  "_id": "alxgNQkQlRmSnToU",
+  "_key": "!items!alxgNQkQlRmSnToU",
+  "name": "Mountain Ogre's Madness",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+    "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+    "summary": "Mountain Ogre's Madness",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "jmLaiw1w2x3y4z5A",
+      "_key": "!items.effects!alxgNQkQlRmSnToU.jmLaiw1w2x3y4z5A",
+      "name": "Mountain Ogre's Madness",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>The spirit conjurer flies into a furious rage, which also causes hair to grow out of their arms and crooked horns to emerge from their forehead. ✦ The Mountain Ogre’s Madness grants the following:<ul><li>The Mountain Ogre’s Madness</li></ul>✦ Spirit conjurer has a fear factor of 1d5 ✦ +6 Body Points (damage is taken from these bonus points before normal Body Points are affected) ✦ +3 in damage with melee weapons or throwing weapons ✦ +1 on SV of all attacks ✦ Spirit conjurer cannot parry or evade attacks ✦ Spirit conjurer ignores all effects from fear</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "1",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4#folie-de-l-ogre-des-montagnes",
+            "sourceId": "holy-haminges-power-of-the-thurses:mountain-ogre-s-madness:4",
+            "rules": {
+              "temporaryHP": 6,
+              "damage": {
+                "value": 3,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

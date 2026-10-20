@@ -1,0 +1,53 @@
+{
+  "_id": "6yIUoXrXsYtZu0v1",
+  "_key": "!items!6yIUoXrXsYtZu0v1",
+  "name": "Pétrification",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
+    "description": "Le conjurateur dirige son puissant regard vers un adversaire qui se change en pierre. L’adversaire se change en statue de pierre jusqu’à expiration du pouvoir, à moins de résister à la métamorphose en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Si le conjurateur dépense un point de raud quand il active ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5). Un arpenteur des brumes qui dépense un point de raud peut également pétrifier des créatures bien plus grandes qu’un être humain (Taille supérieure à 1,5). Le conjurateur n’a besoin que d’un tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la cible soit entièrement pétrifiée. À chaque tour au cours duquel la cible se change en pierre, ses valeurs de compétence sont diminuées de moitié (cette diminution se cumule à chaque tour, en arrondissant à l’entier supérieur quand cela est applicable). Par exemple, si une personne a une valeur de compétence de 16 dans la compétence Combat (en prenant en compte les disciplines et les spécialités), cette valeur tombera à 8 au premier tour, à 4 au tour suivant, et ainsi de suite. La cible retrouve ses valeurs d’origine à l’expiration de la pétrification.",
+    "summary": "Pétrification",
+    "source": {
+      "book": "Livre des règles",
+      "page": 272
+    }
+  },
+  "effects": [
+    {
+      "_id": "ljvTO2v1w2x3y4z5",
+      "_key": "!items.effects!6yIUoXrXsYtZu0v1.ljvTO2v1w2x3y4z5",
+      "name": "Pétrification",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le conjurateur dirige son puissant regard vers un adversaire qui se change en pierre. L’adversaire se change en statue de pierre jusqu’à expiration du pouvoir, à moins de résister à la métamorphose en réussissant un test de situation avec une valeur de situation de 4 (le modificateur de Psychisme s’applique). Si le conjurateur dépense un point de raud quand il active ce pouvoir, la pétrification devient permanente si l’adversaire rate son test de situation. On ne peut utiliser ce pouvoir que sur les personnes et créatures proches de la taille humaine (Taille 1/2 à 1,5). Un arpenteur des brumes qui dépense un point de raud peut également pétrifier des créatures bien plus grandes qu’un être humain (Taille supérieure à 1,5). Le conjurateur n’a besoin que d’un tour de jeu pour invoquer ce pouvoir, mais il faut 1d6 tours pour que la cible soit entièrement pétrifiée. À chaque tour au cours duquel la cible se change en pierre, ses valeurs de compétence sont diminuées de moitié (cette diminution se cumule à chaque tour, en arrondissant à l’entier supérieur quand cela est applicable). Par exemple, si une personne a une valeur de compétence de 16 dans la compétence Combat (en prenant en compte les disciplines et les spécialités), cette valeur tombera à 8 au premier tour, à 4 au tour suivant, et ainsi de suite. La cible retrouve ses valeurs d’origine à l’expiration de la pétrification.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-scale:petrify:7#petrification",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [
+        "paralysis"
+      ],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-scale:petrify:7#petrification",
+            "sourceId": "holy-haminges-power-of-the-scale:petrify:7",
+            "rules": {
+              "suspendEquipment": true,
+              "preserveHP": true,
+              "statueIntegrity": 0
+            },
+            "related": [
+              "petrification-recovery-half",
+              "petrification-recovery-two-thirds"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

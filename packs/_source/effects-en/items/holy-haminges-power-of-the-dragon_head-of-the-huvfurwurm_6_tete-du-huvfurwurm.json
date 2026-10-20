@@ -1,0 +1,44 @@
+{
+  "_id": "iE0rPF8D9EaGbHcI",
+  "_key": "!items!iE0rPF8D9EaGbHcI",
+  "name": "Head of the Huvfurwurm",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
+    "description": "The spirit conjurer is able to survive the normally fatal blow of having their head severed from the body. When the spirit conjurer suffers an attack that would kill them, roll 1d10. If the result is 9-10, the head sustains the attack and is lopped off. The spirit conjurer immediately goes into hibernation, though they appear to be slain, and after a month a new head has grown and the spirit conjurer wakes up from the slumber. This ability works only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic. A spirit conjurer who has enabled this ability seems to have a slightly longer neck than usual, which pushes the head a bit forward as a leading appendage.",
+    "summary": "Head of the Huvfurwurm",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 214
+    }
+  },
+  "effects": [
+    {
+      "_id": "TKARx3x3y4z5A6B7",
+      "_key": "!items.effects!iE0rPF8D9EaGbHcI.TKARx3x3y4z5A6B7",
+      "name": "Head of the Huvfurwurm",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The spirit conjurer is able to survive the normally fatal blow of having their head severed from the body. When the spirit conjurer suffers an attack that would kill them, roll 1d10. If the result is 9-10, the head sustains the attack and is lopped off. The spirit conjurer immediately goes into hibernation, though they appear to be slain, and after a month a new head has grown and the spirit conjurer wakes up from the slumber. This ability works only once, after which the Holy Tablet’s relic cracks and becomes unusable. To use the ability again, the spirit conjurer must create a new relic. A spirit conjurer who has enabled this ability seems to have a slightly longer neck than usual, which pushes the head a bit forward as a leading appendage.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6#tete-du-huvfurwurm",
+            "sourceId": "holy-haminges-power-of-the-dragon:head-of-the-huvfurwurm:6",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

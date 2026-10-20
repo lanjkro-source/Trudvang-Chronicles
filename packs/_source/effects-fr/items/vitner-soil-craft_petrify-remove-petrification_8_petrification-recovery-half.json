@@ -1,0 +1,57 @@
+{
+  "_id": "XJzT3MeKfLgMhNiO",
+  "_key": "!items!XJzT3MeKfLgMhNiO",
+  "name": "Raideur après pétrification — moitié",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Pétrification/Annuler une pétrification",
+    "source": {
+      "book": "Livre des règles",
+      "page": 162
+    }
+  },
+  "effects": [
+    {
+      "_id": "eluPIQlRmSnToUpV",
+      "_key": "!items.effects!XJzT3MeKfLgMhNiO.eluPIQlRmSnToUpV",
+      "name": "Raideur après pétrification — moitié",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "vitner-soil-craft:petrify-remove-petrification:8#petrification-recovery-half",
+            "sourceId": "vitner-soil-craft:petrify-remove-petrification:8",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.5
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.5
+              }
+            },
+            "related": [
+              "petrification-recovery-two-thirds"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

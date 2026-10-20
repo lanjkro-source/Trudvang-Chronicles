@@ -1,0 +1,75 @@
+{
+  "_id": "1W7vpYsYtZu0v1w2",
+  "_key": "!items!1W7vpYsYtZu0v1w2",
+  "name": "Stagshape",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
+    "description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
+    "summary": "Stagshape",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 176
+    }
+  },
+  "effects": [
+    {
+      "_id": "GJKK29D9EaGbHcId",
+      "_key": "!items.effects!1W7vpYsYtZu0v1w2.GJKK29D9EaGbHcId",
+      "name": "Stagshape",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "<p>This ability grants the Bruid the power to transform into a stag. In the animal shape, the dimwalker receives a number of new traits in addition to their own. If the Bruid’s traits are superior to those listed below, they maintain the original traits, but if the traits listed below are better, they use those instead. The Bruid keeps all personal belongings when transformed, and these items are altered in appearance to adapt to the new form. A Bruid who wears armor, carries several weapons, and has various other pieces of gear will still take on the form of a standard stag without any such equipment visible. Once the Bruid returns to their normal appearance, all armor, weapons, and equipment<hr>will take on their normal appearance as well. ✦ Stagshape Traits ✦ A Bruid transformed with Stagshape<ul><li>Stagshape Traits</li><li>A Bruid transformed with Stagshape</li></ul>has the following traits: ✦ Communicate with deer ✦ Movement on land is doubled ( character’s movement x 2) ✦ See at night ✦ Exceptional character trait for Strength +1 ✦ Exceptional character trait for Constitution +4 ✦ Can be ridden by a person ✦ Can eat grass for full nourishment ✦ Has horns as natural weapons, 1d10 (OR 9-10) points of damage</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-gift-of-thanja:stagshape:2#aspect-du-cerf",
+            "sourceId": "holy-ealdtradition-gift-of-thanja:stagshape:2",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "highest",
+                  "value": 1
+                },
+                {
+                  "trait": "constitution",
+                  "method": "highest",
+                  "value": 4
+                }
+              ],
+              "movement": [
+                {
+                  "mode": "land",
+                  "method": "multiply",
+                  "value": 2
+                }
+              ],
+              "attacks": [
+                {
+                  "damage": "1d10",
+                  "openRoll": 9,
+                  "maxActions": 0
+                }
+              ],
+              "suspendEquipment": true,
+              "senseCount": 1,
+              "vision": "lightAmplification",
+              "capabilityCount": 1
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

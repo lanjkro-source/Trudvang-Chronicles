@@ -1,0 +1,52 @@
+{
+  "_id": "kDiNObE9EaGbHcId",
+  "_key": "!items!kDiNObE9EaGbHcId",
+  "name": "Strength of the Stone Hinji",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+    "description": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +6 for the duration of the ability.",
+    "summary": "Strength of the Stone Hinji",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 221
+    }
+  },
+  "effects": [
+    {
+      "_id": "JYdHf3w2x3y4z5A6",
+      "_key": "!items.effects!kDiNObE9EaGbHcId.JYdHf3w2x3y4z5A6",
+      "name": "Strength of the Stone Hinji",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "The hrimthurse’s spirit bestows strength like that of a stone hinji upon the spirit conjurer. The dimwalker gains the exceptional character trait of Strength +6 for the duration of the ability.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3#force-du-stenhinje",
+            "sourceId": "holy-haminges-power-of-the-thurses:strength-of-the-stone-hinji:3",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 6
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

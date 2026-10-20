@@ -1,0 +1,55 @@
+{
+  "_id": "9UJKMTmSnToUpVqW",
+  "_key": "!items!9UJKMTmSnToUpVqW",
+  "name": "Stiffness after petrification — two thirds",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
+    "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+    "summary": "Petrify (physical demon)",
+    "source": {
+      "book": "Jorgi's Bestiary",
+      "page": 48
+    }
+  },
+  "effects": [
+    {
+      "_id": "aSmLkXrXsYtZu0v1",
+      "_key": "!items.effects!9UJKMTmSnToUpVqW.aSmLkXrXsYtZu0v1",
+      "name": "Stiffness after petrification — two thirds",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Movement and Dexterity-related tests are reduced for three days. Apply the next recovery stage manually.",
+      "transfer": false,
+      "system": {
+        "stackId": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "MxUgKE5A6B7C8D9E#petrification-recovery-two-thirds",
+            "sourceId": "MxUgKE5A6B7C8D9E",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.6666666666666666
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.6666666666666666
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

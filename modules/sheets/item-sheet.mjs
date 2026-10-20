@@ -67,7 +67,7 @@ export class TrudvangItemSheet extends HandlebarsApplicationMixin(ItemSheetV2) {
     context.editable = this.isEditable && this.item.isOwner;
     context.system = this.item.system;
     context.itemType = this.item.type;
-    context.supportsEffects = EFFECT_ITEM_TYPES.has(this.item.type);
+    context.supportsEffects = this.item.type === "effect" || EFFECT_ITEM_TYPES.has(this.item.type);
     context.weaponType = weaponType(this.item);
     context.isRangedWeapon = ["crossbow", "bowsSlings"].includes(context.weaponType);
     context.isThrowingWeapon = isThrowingWeapon(this.item);

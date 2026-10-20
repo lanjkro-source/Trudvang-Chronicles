@@ -1,0 +1,44 @@
+{
+  "_id": "cSYp3WoUpVqWrXsY",
+  "_key": "!items!cSYp3WoUpVqWrXsY",
+  "name": "Sens du griffon",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
+    "description": "Le bruide entend tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du griffon aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 14. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+    "summary": "Sens du griffon",
+    "source": {
+      "book": "Livre des règles",
+      "page": 245
+    }
+  },
+  "effects": [
+    {
+      "_id": "zMFM1rVqWrXsYtZu",
+      "_key": "!items.effects!cSYp3WoUpVqWrXsY.zMFM1rVqWrXsYtZu",
+      "name": "Sens du griffon",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Le bruide entend tous les bruits et conversations à portée. Le système auditif du bruide se transforme pour devenir semblable à celui du griffon aussi longtemps que ce pouvoir est actif. Pour être en mesure d’entendre précisément un bruit ou une conversation spécifique, le bruide doit réussir un test de situation avec une valeur de situation de 14. Le maître de jeu est libre d’augmenter ou de réduire cette valeur de situation en fonction du niveau de bruit global dans les environs de l’arpenteur des brumes. Par exemple : +5 dans la nature, +0 dans un village, -5 dans une ville agitée, et ainsi de suite.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7#sens-du-griffon",
+            "sourceId": "holy-ealdtradition-nema-s-usefulness:griffon-s-sense:7",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

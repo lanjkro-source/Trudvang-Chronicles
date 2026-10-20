@@ -1,0 +1,49 @@
+{
+  "_id": "00RUvwYtZu0v1w2x",
+  "_key": "!items!00RUvwYtZu0v1w2x",
+  "name": "Changement de corps (logewurm)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+    "description": "Au fil des années, le logewurm a développé un pouvoir basé sur le sort Transformation qui lui permet de se transformer en n’importe quelle créature de son choix. Il utilise ce pouvoir pour s’infiltrer et approcher des personnes importantes. La durée de la transformation est illimitée et le dragon peut retrouver sa forme d’origine dès qu’il le souhaite. Cependant, le dragon ne peut utiliser ce pouvoir qu’une seule fois par an. Étant donné qu’il ne conserve aucun attribut physique de sa forme de dragon, en adoptant une autre forme, il devient vulnérable. Aussi, il n’utilise ce pouvoir que lorsque la situation l’exige.",
+    "summary": "Changement de corps (logewurm)",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 124
+    }
+  },
+  "effects": [
+    {
+      "_id": "7TTdQ0rXsYtZu0v1",
+      "_key": "!items.effects!00RUvwYtZu0v1w2x.7TTdQ0rXsYtZu0v1",
+      "name": "Changement de corps (logewurm)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Au fil des années, le logewurm a développé un pouvoir basé sur le sort Transformation qui lui permet de se transformer en n’importe quelle créature de son choix. Il utilise ce pouvoir pour s’infiltrer et approcher des personnes importantes. La durée de la transformation est illimitée et le dragon peut retrouver sa forme d’origine dès qu’il le souhaite. Cependant, le dragon ne peut utiliser ce pouvoir qu’une seule fois par an. Étant donné qu’il ne conserve aucun attribut physique de sa forme de dragon, en adoptant une autre forme, il devient vulnérable. Aussi, il n’utilise ce pouvoir que lorsque la situation l’exige.",
+      "transfer": false,
+      "system": {
+        "stackId": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "MLPIuC5A6B7C8D9E#changement-de-corps-logewurm",
+            "sourceId": "MLPIuC5A6B7C8D9E",
+            "rules": {
+              "chooseBestiary": true,
+              "formPolicy": "physical",
+              "preserveHP": true,
+              "suspendEquipment": true
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

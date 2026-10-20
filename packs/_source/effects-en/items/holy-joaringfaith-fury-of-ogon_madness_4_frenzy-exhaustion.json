@@ -1,0 +1,46 @@
+{
+  "_id": "TwbkXKeKfLgMhNiO",
+  "_key": "!items!TwbkXKeKfLgMhNiO",
+  "name": "Exhaustion after frenzy",
+  "type": "effect",
+  "img": "icons/svg/sleep.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+    "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+    "summary": "Madness",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "E2zaH9A6B7C8D9Ea",
+      "_key": "!items.effects!TwbkXKeKfLgMhNiO.E2zaH9A6B7C8D9Ea",
+      "name": "Exhaustion after frenzy",
+      "type": "effect",
+      "img": "icons/svg/sleep.svg",
+      "description": "Exhaustion lasts half the actual frenzy duration. Cool the body; otherwise Rage/Madness/Riastarthae inflict respectively 1/2/4 damage per round for two rounds, ignoring armor.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-fury-of-ogon:madness:4#frenzy-exhaustion",
+            "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
+            "rules": {
+              "durationFromElapsed": 0.5
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

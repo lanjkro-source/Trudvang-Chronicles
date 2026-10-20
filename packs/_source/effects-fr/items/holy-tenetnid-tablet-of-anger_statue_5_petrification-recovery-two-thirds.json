@@ -1,0 +1,55 @@
+{
+  "_id": "oi5BwSlRmSnToUpV",
+  "_key": "!items!oi5BwSlRmSnToUpV",
+  "name": "Raideur après pétrification — deux tiers",
+  "type": "effect",
+  "img": "icons/svg/downgrade.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds",
+    "description": "Raideur temporaire après le retour à la forme normale.",
+    "summary": "Statue",
+    "source": {
+      "book": "Livre des règles",
+      "page": 252
+    }
+  },
+  "effects": [
+    {
+      "_id": "xRBECQiOjPkQlRmS",
+      "_key": "!items.effects!oi5BwSlRmSnToUpV.xRBECQiOjPkQlRmS",
+      "name": "Raideur après pétrification — deux tiers",
+      "type": "effect",
+      "img": "icons/svg/downgrade.svg",
+      "description": "Raideur temporaire après le retour à la forme normale.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-tenetnid-tablet-of-anger:statue:5#petrification-recovery-two-thirds",
+            "sourceId": "holy-tenetnid-tablet-of-anger:statue:5",
+            "rules": {
+              "movement": [
+                {
+                  "mode": "all",
+                  "method": "multiply",
+                  "value": 0.6666666666666666
+                }
+              ],
+              "testFactor": {
+                "dexterity": 0.6666666666666666
+              }
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "_id": "M1F4dWpVqWrXsYtZ",
+  "_key": "!items!M1F4dWpVqWrXsYtZ",
+  "name": "Jotun Strength",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+    "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
+    "summary": "Jotun Strength",
+    "source": {
+      "book": "Player's Handbook",
+      "page": 164
+    }
+  },
+  "effects": [
+    {
+      "_id": "tfwES0v1w2x3y4z5",
+      "_key": "!items.effects!M1F4dWpVqWrXsYtZ.tfwES0v1w2x3y4z5",
+      "name": "Jotun Strength",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Stormi hears the Stormkelt’s wish and grants a chosen character incredible strength. The recipient (the dimwalker or someone of their choosing) receives the exceptional characteristic of Strength +8 for the ability’s duration. Any other allies (including the dimwalker, if the ability targets someone else) within range of the Stormkelt also receive the exceptional characteristic of Strength +4 for the ability’s duration.",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-gerbanis-strength-of-stormi:jotun-strength:6#force-du-jotun",
+            "sourceId": "holy-gerbanis-strength-of-stormi:jotun-strength:6",
+            "rules": {
+              "traits": [
+                {
+                  "trait": "strength",
+                  "method": "replace",
+                  "value": 8
+                }
+              ]
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

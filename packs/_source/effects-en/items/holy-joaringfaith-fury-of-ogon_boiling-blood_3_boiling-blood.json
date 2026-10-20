@@ -1,0 +1,46 @@
+{
+  "_id": "U1AauwXsYtZu0v1w",
+  "_key": "!items!U1AauwXsYtZu0v1w",
+  "name": "Boiling Blood",
+  "type": "effect",
+  "img": "icons/svg/blood.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
+    "description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+    "summary": "Boiling Blood",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "VIBX8cFaGbHcIdJe",
+      "_key": "!items.effects!U1AauwXsYtZu0v1w.VIBX8cFaGbHcIdJe",
+      "name": "Boiling Blood",
+      "type": "effect",
+      "img": "icons/svg/blood.svg",
+      "description": "<p>Through this ability, Ogon bestows more life essence upon the mopor. The mopor will receive an additional +2d10 Body Points for the duration of the ability. This additional vitality will disappear as soon as the ability’s duration ends, but any injuries sustained will remain. This means that if the mopor has received more damage than she has in Body Points without the aidof this ability, there is a strong risk that she will die when the increased vitality fades and the body succumbs to the full weight of its wounds.</p>",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-fury-of-ogon:boiling-blood:3#boiling-blood",
+            "sourceId": "holy-joaringfaith-fury-of-ogon:boiling-blood:3",
+            "rules": {
+              "vitality": "2d10"
+            },
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

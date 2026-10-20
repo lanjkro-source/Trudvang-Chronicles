@@ -1,0 +1,44 @@
+{
+  "_id": "X6asH4w2x3y4z5A6",
+  "_key": "!items!X6asH4w2x3y4z5A6",
+  "name": "Métamorphose (stenhinje)",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+    "description": "En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.\nIl est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.",
+    "summary": "Métamorphose (stenhinje)",
+    "source": {
+      "book": "Bestiaire de Jorge",
+      "page": 97
+    }
+  },
+  "effects": [
+    {
+      "_id": "QpLgYWqWrXsYtZu0",
+      "_key": "!items.effects!X6asH4w2x3y4z5A6.QpLgYWqWrXsYtZu0",
+      "name": "Métamorphose (stenhinje)",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "En fonction de la tâche qu’on lui a assignée, le stenhinje peut se transformer en objet simple tel qu’un coffre, une porte, un mur, un sol ou une chose similaire. C’est sa masse corporelle qui forme l’objet et c’est le maître de jeu qui décide quelles conditions pousseront le stenhinje métamorphosé à passer à l’attaque. Il attaque souvent quand quelqu’un utilise la violence à son encontre ou lorsqu’un ennemi prédéterminé vient à proximité.\nIl est normalement impossible de détecter que l’objet est en réalité une créature vivante. Pour ce faire, un observateur doit tisser le type approprié de vitner autour du stenhinje métamorphosé.",
+      "transfer": false,
+      "system": {
+        "stackId": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+        "stacking": "replace",
+        "changes": []
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "K2WXpMgMhNiOjPkQ#metamorphose-stenhinje",
+            "sourceId": "K2WXpMgMhNiOjPkQ",
+            "rules": {},
+            "related": []
+          }
+        }
+      }
+    }
+  ]
+}

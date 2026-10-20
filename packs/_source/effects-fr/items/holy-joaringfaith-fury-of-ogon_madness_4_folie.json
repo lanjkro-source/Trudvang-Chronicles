@@ -1,0 +1,68 @@
+{
+  "_id": "b2sTChKfLgMhNiOj",
+  "_key": "!items!b2sTChKfLgMhNiOj",
+  "name": "Folie",
+  "type": "effect",
+  "img": "icons/svg/aura.svg",
+  "folder": null,
+  "system": {
+    "catalogId": "holy-joaringfaith-fury-of-ogon:madness:4#folie",
+    "description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Folie :\n• Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)\n• Le bruide a un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +4 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +2 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort",
+    "summary": "Folie",
+    "source": {
+      "book": "Stormlands",
+      "page": 123
+    }
+  },
+  "effects": [
+    {
+      "_id": "ev6sdHcIdJeKfLgM",
+      "_key": "!items.effects!b2sTChKfLgMhNiOj.ev6sdHcIdJeKfLgM",
+      "name": "Folie",
+      "type": "effect",
+      "img": "icons/svg/aura.svg",
+      "description": "Normalement, il n’est pas dans la nature des Mittlanders de devenir des berserkers, car leurs techniques de combat reposent plus souvent sur le style que sur la puissance brute, mais ceux qui vénèrent Morgu peuvent invoquer une vague d’influence qui les plonge dans une profonde rage lors des batailles particulièrement difficiles. Cet effet est si intense qu’il peut déformer leur silhouette, provoquer des spasmes corporels, faire apparaître des cloques sur leur peau, gonfler leurs muscles et leurs veines, et distordre leur visage en d’horribles grimaces. Cette frénésie guerrière est toutefois très exigeante physiquement et une fois sa durée expirée, le bruide s’effondre à terre et demeure épuisé pendant une durée égale à la moitié du temps qu’a duré sa rage. Le bruide doit également refroidir son corps surchauffé par la frénésie guerrière, sinon la température extrême risque de lui infliger des dégâts. Dès que ce pouvoir expire, le bruide subit 2 points de dégâts par tour de jeu pendant 2 tours (son armure n’offre aucune protection) à moins d’avoir été correctement refroidi. Il suffit de s’allonger dans l’eau (ou d’y être plongé) pour éviter ces dégâts.\nEffets de la Folie :\n• Le bruide grandit de 1 mètre et gagne 60 kg de muscle (ce qui correspond à une Taille 1,5)\n• Le bruide a un facteur de peur de 1d10 (JO 10)\n• +10 points de santé (appliquez les dégâts reçus à ces points supplémentaires avant de les appliquer aux points de santé normaux)\n• +4 aux dégâts avec les armes de corps à corps ou les armes de jet\n• +2 à la VC de toutes les attaques\n• Le bruide ne peut ni parer ni esquiver les attaques\n• Le bruide ignore tous les effets de la peur\n• Le bruide peut continuer à se battre pendant 1d3 tours de jeu après avoir atteint l’état de mort",
+      "transfer": false,
+      "system": {
+        "stackId": "holy-joaringfaith-fury-of-ogon:madness:4#folie",
+        "stacking": "replace",
+        "changes": [
+          {
+            "key": "system.modifiers.rolls.attack",
+            "type": "add",
+            "value": "2",
+            "phase": "initial"
+          }
+        ]
+      },
+      "statuses": [],
+      "flags": {
+        "trudvang-chronicles": {
+          "transformation": {
+            "key": "holy-joaringfaith-fury-of-ogon:madness:4#folie",
+            "sourceId": "holy-joaringfaith-fury-of-ogon:madness:4",
+            "rules": {
+              "temporaryHP": 10,
+              "damage": {
+                "value": 4,
+                "usages": [
+                  "melee",
+                  "throwing",
+                  "natural"
+                ]
+              },
+              "noParry": true,
+              "noDodge": true,
+              "ignoreFear": true,
+              "fearFactor": "1d10 (JO 10)",
+              "size": 1.5
+            },
+            "related": [
+              "frenzy-exhaustion"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

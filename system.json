@@ -2,10 +2,10 @@
   "id": "trudvang-chronicles",
   "title": "Trudvang Chronicles",
   "description": "A bilingual (English/French) Foundry VTT system for Trudvang Chronicles, using the official French terminology.",
-  "version": "0.95.0",
+  "version": "0.96.0",
   "url": "https://github.com/lanjkro-source/Trudvang-Chronicles",
   "manifest": "https://raw.githubusercontent.com/lanjkro-source/Trudvang-Chronicles/main/system.json",
-  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.95.0/trudvang-chronicles.zip",
+  "download": "https://github.com/lanjkro-source/Trudvang-Chronicles/releases/download/v0.96.0/trudvang-chronicles.zip",
   "packs": [
     {
       "name": "skills-en",
@@ -86,6 +86,22 @@
       "type": "Item",
       "system": "trudvang-chronicles",
       "banner": "systems/trudvang-chronicles/assets/banners/banniere_armes.jpeg"
+    },
+    {
+      "name": "effects-fr",
+      "label": "Effets (fr)",
+      "path": "packs/effects-fr",
+      "type": "Item",
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/banniere_poings.jpeg"
+    },
+    {
+      "name": "effects-en",
+      "label": "Effects (en)",
+      "path": "packs/effects-en",
+      "type": "Item",
+      "system": "trudvang-chronicles",
+      "banner": "systems/trudvang-chronicles/assets/banners/banniere_poings.jpeg"
     }
   ],
   "compatibility": {
@@ -182,7 +198,14 @@
         ]
       },
       "creatureAbility": {
-        "htmlFields": ["description"]
+        "htmlFields": [
+          "description"
+        ]
+      },
+      "effect": {
+        "htmlFields": [
+          "description"
+        ]
       }
     }
   },
