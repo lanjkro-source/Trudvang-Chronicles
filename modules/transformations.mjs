@@ -3,8 +3,8 @@ import {CREATURE_ABILITY_REFERENCES} from "./creature-ability-data.mjs";
 import {BESTIARY_ENTRIES} from "./bestiary-catalog-data.mjs";
 import {escapeHtml} from "./helpers.mjs";
 import {activeTransformations,effectRules,transformedTrait,transformationProfile,TRANSFORMATION_SCOPE as SCOPE} from "./rules/transformation-profile.mjs";
-import {changesFromRules,rulesFromChanges,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
-import {effectChangesSource} from "./rules/effect-source.mjs";
+import {changesFromRules,rulesFromChanges,hasProfileChanges,validProfileChange,EFFECT_RULE_PREFIX} from "./rules/effect-rule-changes.mjs";
+import {effectSource} from "./rules/effect-source.mjs";
 const local = key => game.i18n.localize(`TRUDVANG.Transformation.${key}`);
 const text = (key,field) => game.i18n.localize(`TRUDVANG.Content.Transformation.${key}.${field}`);
 const metadata = doc => doc?.flags?.[SCOPE]?.transformation;
@@ -44,7 +44,26 @@ export async function applyTransformation(actor,key,{source=null,elapsed=0,count
  const reference=TRANSFORMATION_TEMPLATES[key];if(!reference)throw Error(`Unknown transformation ${key}`);
  const supplied=source?.documentName==="ActiveEffect"?source:source?.documentName==="Item"&&source.type==="effect"
   ?Array.from(source.effects??[]).find(e=>metadata(e)?.key===key):null;
- const template=supplied?{...reference,changes:effectChangesSource(supplied.system.changes),statuses:Array.from(supplied.statuses??[]),icon:supplied.img??reference.icon}:reference;
+ const stored=supplied?effectSource(supplied):null;
+ const template=stored?{...reference,changes:stored.system.changes,statuses:Array.from(stored.statuses??[]),icon:stored.img??reference.icon}:reference;
+ // TEMPORARY WORLD MIGRATION — pre-0.97 references kept dynamic rules in flags.
+ // Convert only that historical format on the new copy. Never refill rows that
+ // the GM deliberately cleared in the current editable format.
+ const legacy=metadata(stored);
+ if(legacy?.rules&&!legacy.editableChanges&&!hasProfileChanges(stored)){
+  const rules=structuredClone(legacy.rules),defaults=rulesFromChanges(reference.changes);
+  if(rules.traitsApplied)delete rules.traits;
+  else if(rules.traits)rules.traits=rules.traits.map(row=>{
+   const current=defaults.traits?.find(r=>r.trait===row.trait&&r.method===row.method);
+   return current?.skillBonus&&!row.skillBonus?{...row,skillBonus:structuredClone(current.skillBonus)}:row;
+  });
+  if(rules.senseCount)rules.senses=defaults.senses;
+  if(rules.capabilityCount)rules.capabilities=defaults.capabilities;
+  template.changes.push(...changesFromRules(rules,{priority:reference.priority}));
+ }
+ // Invalid structured rows must not be stripped and silently create an empty
+ // effect. Keep the same validation/error as the effect editor.
+ for(const row of template.changes)if(!validProfileChange(row))throw new Error(game.i18n.format("TRUDVANG.Effect.InvalidProfileChange",{path:row.key}));
  const effectName=supplied?.name||text(key,"Name");
  const rules=rulesFromChanges(template.changes);
  for(const field of ["senses","capabilities"])if(rules[field])rules[field]=rules[field].map(s=>game.i18n.localize(s));

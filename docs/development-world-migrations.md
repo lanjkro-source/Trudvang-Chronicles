@@ -12,6 +12,12 @@ Toute nouvelle migration de monde doit :
 
 À la première release publique, ces chemins pourront être retirés après suppression des mondes de développement historiques.
 
+## `modules/transformations.mjs`
+
+| Code | Rôle transitoire | Suppression possible lorsque |
+|---|---|---|
+| Conversion de `transformation.rules` dans `applyTransformation()` | Les références antérieures à 0.97 stockaient les modifications dynamiques dans les flags ; Hâte avait donc `system.changes: []`. Lors d'un nouveau dépôt, convertir ces règles en lignes éditables avant de calculer les traits. Compléter l'ancienne règle de Hâte avec sa table de VC actuelle issue du catalogue JSON, sans remplacer les choix de trait du MJ. Ne pas recalculer les traits déjà résolus (`traitsApplied`), ni rétablir les lignes d'une référence au format actuel volontairement vidée. Aucun document source n'est réécrit. | Toutes les références des mondes de développement utilisent les modifications éditables ; supprimer le bloc identifié `TEMPORARY WORLD MIGRATION`. Conserver la lecture des données source et la validation des lignes. |
+
 ## `modules/rules/magic-capacity.mjs`
 
 | Code | Rôle transitoire | Suppression possible lorsque |

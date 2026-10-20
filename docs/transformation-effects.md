@@ -78,6 +78,14 @@ p. 194–195. Le détail des compétences et des jets nomme l’effet contribute
 Les effets déjà appliqués avant ce correctif conservent leurs anciennes lignes :
 les supprimer puis les réappliquer pour obtenir les deux nouvelles modifications.
 
+Les références antérieures à 0.97 conservaient leurs règles dynamiques dans
+`flags.trudvang-chronicles.transformation.rules`, parfois sans aucune ligne native
+(Hâte). Le dépôt convertit ce format avant le calcul, y compris la table de VC de
+Hâte, sans réécrire la référence originale. Les références au format éditable actuel
+restent prioritaires : une liste délibérément vidée n'est pas remplie à nouveau.
+Une ligne structurée invalide provoque une erreur explicite au lieu de créer un
+effet privé de ses modifications.
+
 Les modifications de traits utilisent les changements natifs, avant les calculs
 dérivés, avec leurs noms dans les contributions. Les modes de mouvement, la taille
 effective, les restrictions de parade/esquive et les bonus de dégâts ciblés sont

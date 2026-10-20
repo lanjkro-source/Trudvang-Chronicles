@@ -131,6 +131,57 @@ test("Hasten and its reverse resolve the book's separate skill-VC table from spe
   }
  }
 });
+
+test("legacy compendium Hasten stores its dynamic rules in flags and must not become an empty effect on drop",async()=>{
+ const key="vitner-body-vitner:hasten:9#hate";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"5 tours de jeu"});
+ // Exact storage used by the v0.96.2 effect compendium: no scalar changes,
+ // with the dynamic DEX step in transformation.rules instead.
+ const effect={documentName:"ActiveEffect",name:"Hâte",system:{changes:[]},statuses:[],
+  flags:{[S]:{transformation:{key,sourceId:templates[key].sourceId,rules:{traits:[{trait:"dexterity",method:"degrees",value:1}]}}}}};
+ for(const source of [effect,{documentName:"Item",type:"effect",system:{catalogId:key},effects:[effect]}]){
+  let created;
+  const actor={canUserModify:()=>true,getTraitValue:()=>2,createTrudvangEffect:async data=>{created=data;return null;}};
+  await applyTransformation(actor,key,{source});
+  assert.equal(created.system.changes.find(c=>c.key==="system.effective.traits.dexterity")?.value,"4");
+  for(const skill of ["agility","fighting"])assert.equal(created.system.changes.find(c=>c.key===`system.effective.skills.${skill}`)?.value,"3");
+  assert.equal(created.flags[S].transformation.editableChanges,true);
+  assert.equal(created.flags[S].transformation.rules,undefined);
+ }
+});
+
+test("legacy drop compatibility preserves resolved traits and current references deliberately cleared by the GM",async()=>{
+ const key="vitner-body-vitner:hasten:9#hate";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"5 tours de jeu"});
+ const rules={traits:[{trait:"dexterity",method:"degrees",value:1}],traitsApplied:true};
+ const source={documentName:"ActiveEffect",system:{changes:[{key:"system.effective.traits.dexterity",type:"override",value:"4",phase:"initial",priority:40}]},
+  flags:{[S]:{transformation:{key,rules}}}};
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>4,createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,key,{source});
+ assert.deepEqual(created.system.changes.map(c=>[c.key,c.value]),[["system.effective.traits.dexterity","4"]]);
+ source.system.changes=[];
+ source.flags[S].transformation.editableChanges=true;
+ await applyTransformation(actor,key,{source});
+ assert.deepEqual(created.system.changes,[]);
+});
+
+test("compendium drops read persisted source rows and reject malformed dynamic rules before creating an effect",async()=>{
+ const key="vitner-body-vitner:hasten:9#hate";
+ globalThis.game={user:{id:"gm"},time:{worldTime:0},i18n:{localize:key=>key,format:(key,{path})=>`${key}: ${path}`}};
+ globalThis.foundry.applications.api.DialogV2.wait=async()=>({duration:"5 tours de jeu"});
+ const saved={name:"Hâte",system:{changes:structuredClone(templates[key].changes)}};
+ const source={documentName:"ActiveEffect",system:{changes:[]},toObject:()=>structuredClone(saved)};
+ let created;
+ const actor={canUserModify:()=>true,getTraitValue:()=>0,createTrudvangEffect:async data=>{created=data;return null;}};
+ await applyTransformation(actor,key,{source});
+ assert.equal(created.system.changes.find(c=>c.key==="system.effective.traits.dexterity").value,"1");
+ saved.system.changes[0].value="invalid JSON";created=null;
+ await assert.rejects(()=>applyTransformation(actor,key,{source}),/InvalidProfileChange.*system.transformation.traits/);
+ assert.equal(created,null);
+});
 test("vision is restored after removal, while later manual token edits remain intact",async()=>{
  const token={sight:{visionMode:"basic"},flags:{},async update(data){
   if(data["sight.visionMode"])this.sight.visionMode=data["sight.visionMode"];
